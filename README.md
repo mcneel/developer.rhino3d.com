@@ -1,11 +1,10 @@
 # developer-rhino3d-com
 
-This repo contains the content that gets generated to create http://mcneel.github.io/developer-rhino3d-com.  The system uses Jekyll,
-in combination with GitHub pages, to generate and publish the site.
+This repo contains the contents of http://mcneel.github.io/developer-rhino3d-com.  The system uses Jekyll, in combination with GitHub pages, to generate and publish the site.
 
 ## Getting Started
 
-Detailed instructions about pre-reqs, etc go here.
+These instructions presume you are working on Mac OS X and are comfortable with basic posix/bash terminal commands.  If you are not proficient with command-line git, GitHub has a [client for OS X](https://mac.github.com/).
 
 #### Testing and authoring gh pages locally with Jekyll
 
