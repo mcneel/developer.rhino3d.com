@@ -1,13 +1,11 @@
 # developer-rhino3d-com
 
-This repo contains the content that gets generated to create developer.rhino3d.com.  The system uses Jekyll,
-in combination with GitHub pages, to publish the site http://mcneel.github.io/developer-rhino3d-com.
+This repo contains the content that gets generated to create http://mcneel.github.io/developer-rhino3d-com.  The system uses Jekyll,
+in combination with GitHub pages, to generate and publish the site.
 
 ## Getting Started
 
 Detailed instructions about pre-reqs, etc go here.
-
-## 
 
 #### Testing and authoring gh pages locally with Jekyll
 
@@ -26,7 +24,14 @@ Detailed instructions about pre-reqs, etc go here.
  ```
 
 ##### Using Jekyll: serving / building
+
+Open Terminal and cd to the folder that contains the cloned developer-rhino3d-com.git repository.
+
   - launch webserver:  
     ```jekyll serve```
+
+    Once Jekyll has served the page it will print out:
+    ```http://127.0.0.1:4000/developer-rhino3d-com``` (for example).  Local changes to the repository should be reflected upon a page-refresh of the locally served page.
+
   - build w/o plugins.  gh pages doesn't allow plugins:  
     ```jekyll build --safe```
