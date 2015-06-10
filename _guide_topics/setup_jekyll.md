@@ -1,6 +1,6 @@
 ---
 layout: tab-page
-title: Run Jekyll locally to author and test docs
+title: Run Jekyll locally
 ---
 #### Testing and authoring gh pages locally with Jekyll
 

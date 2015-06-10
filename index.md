@@ -11,4 +11,6 @@ The site is hosted on [GitHub Pages](https://pages.github.com/) and we are using
 The [Kramdown] markdown parser, the default parser with Jekyll, has support for LaTeX to PNG rendering via [MathJax](http://www.mathjax.org/).  
 
 ex:  
-$$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$
+$$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$  
+
+See the [guides]({{ '/guides' | prepend: site.baseurl }}) to read about how to [run jekyll locally]({{ '/guides/setup_jekyll' | prepend: site.baseurl }}) or [write content]({{ '/guides/write_content' | prepend: site.baseurl }}).
