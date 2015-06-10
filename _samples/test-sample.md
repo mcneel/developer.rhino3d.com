@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: tab-page
 title: Test Sample
 ---
-### Test Sample
+We need to come up with a template for samples

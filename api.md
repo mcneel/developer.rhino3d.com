@@ -1,20 +1,10 @@
 ---
 layout: tab-page
-title: API
+title: api
 permalink: /api/
 order: 3
 ---
 
-### Testing and authoring gh pages locally with Jekyll
+#### doxygen generated API reference will go here.
 
-## install
-
-  - Requirements: (instead of following the links below I use [homebrew](http://brew.sh/))
-    - [Ruby](http://www.ruby-lang.org/en/downloads/) probably already on your mac  
-    - [RubyGems](http://rubygems.org/pages/download)  
-    - [NodeJS](NodeJS)  
-
-  - Install Jekyll  
-    ```bash
-      gem install jekyll
-    ```
+In the meantime [here](http://phab.mcneel.com/docs/rhino/6/rhinocommon/) is one that Nathan generated.  You need to be on the intranet.

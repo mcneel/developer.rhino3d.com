@@ -2,7 +2,7 @@
 layout: bootstrap
 title: welcome
 permalink: /welcome/
-order: 1
+<!-- order: 1 -->
 ---
 
 <div class="container">
@@ -43,6 +43,9 @@ order: 1
       </div>
     </div>
     <div class="col-md-9">
+
+      <h3>The menu on the left looks pretty bad.  I'm not done yet :-)  </h3>
+
       <section id="overview">
         {% include junk_data.html %}
       </section>

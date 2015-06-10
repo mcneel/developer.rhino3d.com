@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tab-page
+title: blog
+permalink: /blog/
+order: 5
 ---
-
 <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
 
   <ul class="post-list">
     {% for post in site.posts %}
