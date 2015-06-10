@@ -9,7 +9,7 @@ These instructions presume you are working on Mac OS X and are comfortable with 
 #### Testing and authoring gh pages locally with Jekyll
 
 ##### clone the ```https://github.com/mcneel/developer-rhino3d-com.git``` repo:  
- - notice that 'gh-pages' is the only branch.  Everithing commited to this branch is automatically published.
+ - notice that 'gh-pages' is the only branch.  Everything committed to this branch is automatically published.
  - find the docs [here](http://mcneel.github.io/developer-rhino3d-com).  
 
 ##### Requirements: (instead of following the links below I installed with [homebrew](http://brew.sh/))
@@ -29,7 +29,7 @@ Open Terminal and cd to the folder that contains the cloned developer-rhino3d-co
   - launch webserver:  
     ```jekyll serve```
 
-    Once Jekyll has served the page it will print out:
+    Once Jekyll has served the page it will print:
     ```http://127.0.0.1:4000/developer-rhino3d-com``` (for example).  Local changes to the repository should be reflected upon a page-refresh of the locally served page.
 
   - build w/o plugins.  gh pages doesn't allow plugins:  
