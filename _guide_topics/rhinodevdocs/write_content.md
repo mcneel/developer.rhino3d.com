@@ -1,7 +1,7 @@
 ---
 layout: user-page
 title: Write and Edit content
-order: 1
+order: 2
 tags: ['Guide', 'DevDocs']
 ---
 

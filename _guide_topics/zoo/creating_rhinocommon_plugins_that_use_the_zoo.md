@@ -1,7 +1,7 @@
 ---
 layout: user-page
 title: Creating RhinoCommon Plugins that use the Zoo
-order: 1
+order: 3
 tags: ['Guide', 'Zoo', 'Windows']
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: user-page
 title: Creating C/C++ Plugins that use the Zoo
-order: 1
+order: 4
 tags: ['Guide', 'Zoo', 'Windows']
 ---
 

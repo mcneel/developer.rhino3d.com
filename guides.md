@@ -12,10 +12,11 @@ order: 2
 ## [General]({{ site.baseurl }}/guides/general/)
 
 <div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in site.guide_topics %}
+  {% for topic in guides %}
     {% if topic.tags contains 'Guide' and topic.tags contains 'General' %}
-      {% if topic.title  %}
+      {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
     {% endif %}
@@ -29,10 +30,11 @@ order: 2
 
 ### Overview
 <div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in site.guide_topics %}
+  {% for topic in guides %}
     {% if topic.tags contains 'Guide' and topic.tags contains 'About' and topic.tags contains 'RhinoCommon' %}
-      {% if topic.title  %}
+      {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
     {% endif %}
@@ -42,10 +44,11 @@ order: 2
 
 ### Getting Started
 <div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in site.guide_topics %}
+  {% for topic in guides %}
     {% if topic.tags contains 'Guide' and topic.tags contains 'GettingStarted' and topic.tags contains 'RhinoCommon' %}
-      {% if topic.title  %}
+      {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
     {% endif %}
@@ -138,10 +141,11 @@ TODO
 ## [Zoo License Manager]({{ site.baseurl }}/guides/zoo/) (Windows)
 
 <div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in site.guide_topics %}
+  {% for topic in guides %}
     {% if topic.tags contains 'Guide' and topic.tags contains 'Zoo' %}
-      {% if topic.title  %}
+      {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
     {% endif %}
@@ -155,10 +159,11 @@ TODO
 ## [Developer Docs]({{ site.baseurl }}/guides/rhinodevdocs/) (This Website)
 
 <div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in site.guide_topics %}
+  {% for topic in guides %}
     {% if topic.tags contains 'Guide' and topic.tags contains 'DevDocs' %}
-      {% if topic.title  %}
+      {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
     {% endif %}

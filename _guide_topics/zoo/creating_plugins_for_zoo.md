@@ -1,7 +1,7 @@
 ---
 layout: user-page
 title: Creating Plugins for Zoo
-order: 1
+order: 2
 tags: ['Guide', 'Zoo', 'Windows']
 ---
 
