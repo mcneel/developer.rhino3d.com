@@ -1,7 +1,6 @@
 ---
 layout: tab-page
 title: RhinoCommon Guides
-order: 1
 ---
 
 # RhinoCommon Guides
