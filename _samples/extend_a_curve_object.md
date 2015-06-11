@@ -5,7 +5,7 @@ tags: ['C#', '.NET', 'RhinoCommon']
 ---
 #### Extend a Curve Object  
 
-```cs
+```c#
 
 public class ExtendCurveCommand : Command
 {

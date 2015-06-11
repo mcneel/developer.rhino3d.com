@@ -11,7 +11,7 @@ url: "http://developer.rhino3d.com" # the base hostname & protocol for your site
 github_username:  mcneel
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 
 #port: 4444
 
