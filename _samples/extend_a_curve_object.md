@@ -1,12 +1,11 @@
 ---
-layout: user-page
+layout: tab-page
 title: Extend a Curve Object
 tags: ['C#', '.NET', 'RhinoCommon']
 ---
 #### Extend a Curve Object  
 
 ```c#
-
 public class ExtendCurveCommand : Command
 {
   public override string EnglishName { get { return "SampleExtendCurve"; } }
