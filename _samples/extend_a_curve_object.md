@@ -1,11 +1,15 @@
 ---
-layout: tab-page
+layout: user-page
 title: Extend a Curve Object
 tags: ['C#', '.NET', 'RhinoCommon']
 ---
 #### Extend a Curve Object  
 
+<<<<<<< HEAD
 {% highlight C# %}
+=======
+```
+>>>>>>> origin/gh-pages
 public class ExtendCurveCommand : Command
 {
   public override string EnglishName { get { return "csExtendCurve"; } }
@@ -53,4 +57,4 @@ public class ExtendCurveCommand : Command
     return Result.Success;
   }
 }
-{% endhighlight %}
+```
