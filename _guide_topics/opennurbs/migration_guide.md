@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: openNURBS 5.0 Migration Guide
 order: 1
 tags: ['Guide', 'openNURBS', 'Windows', 'Mac']

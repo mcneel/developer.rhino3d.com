@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: Getting Started with RhinoMobile
 order: 1
 tags: ['Guide', 'GettingStarted', 'RhinoMobile', 'iOS', 'Android']

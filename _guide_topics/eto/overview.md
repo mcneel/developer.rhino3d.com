@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: Overview of Eto in Rhino
 order: 1
 tags: ['Guide', 'Overview', 'Eto', 'Windows', 'Mac']

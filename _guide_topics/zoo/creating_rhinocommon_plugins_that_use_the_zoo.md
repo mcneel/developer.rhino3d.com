@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: Creating RhinoCommon Plugins that use the Zoo
 order: 3
 tags: ['Guide', 'Zoo', 'Windows']

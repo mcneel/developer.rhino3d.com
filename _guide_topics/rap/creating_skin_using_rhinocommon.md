@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: Creating a skin using RhinoCommon
 order: 1
 tags: ['Guide', 'RAP', 'RhinoCommon', 'Windows']

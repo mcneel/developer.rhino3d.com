@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: What is a Zoo Plugin?
 order: 1
 tags: ['Guide', 'Zoo', 'Windows']

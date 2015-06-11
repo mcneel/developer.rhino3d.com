@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: Creating Plugins for Zoo
 order: 2
 tags: ['Guide', 'Zoo', 'Windows']

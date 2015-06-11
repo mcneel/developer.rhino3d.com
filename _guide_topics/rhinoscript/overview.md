@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: Overview of RhinoScript
 order: 1
 tags: ['Guide', 'Overview', 'RhinoScript', 'Windows']

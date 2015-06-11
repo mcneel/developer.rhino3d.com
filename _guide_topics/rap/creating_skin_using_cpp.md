@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: Creating a skin using C/C++
 order: 1
 tags: ['Guide', 'RAP', 'cpp', 'Windows']

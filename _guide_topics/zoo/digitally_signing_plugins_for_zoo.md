@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: Digitally Signing Plugins for Zoo
 order: 5
 tags: ['Guide', 'Zoo', 'Windows']

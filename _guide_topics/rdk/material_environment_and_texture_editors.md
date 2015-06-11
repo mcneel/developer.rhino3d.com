@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: Material, Environment, and Texture Editors
 order: 1
 tags: ['Guide', 'GettingStarted', 'RDK', 'Windows']

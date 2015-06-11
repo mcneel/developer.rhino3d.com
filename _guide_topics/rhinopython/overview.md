@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: Overview of Rhino.Python
 order: 1
 tags: ['Guide', 'Overview', 'RhinoPython', 'Windows', 'Mac']
