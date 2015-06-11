@@ -5,11 +5,8 @@ tags: ['C#', '.NET', 'RhinoCommon']
 ---
 #### Extend a Curve Object  
 
-<<<<<<< HEAD
-{% highlight C# %}
-=======
-```
->>>>>>> origin/gh-pages
+```cs
+
 public class ExtendCurveCommand : Command
 {
   public override string EnglishName { get { return "csExtendCurve"; } }
