@@ -6,10 +6,10 @@ order: 2
 ---
 
 # All Guides
+
 ---
 
 ## [General]({{ site.baseurl }}/guides/general/)
----
 
 <div class="trigger">
   <ul>
@@ -23,8 +23,9 @@ order: 2
   </ul>
 </div>
 
-## [RhinoCommon (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/)
 ---
+
+## [RhinoCommon]({{ site.baseurl }}/guides/rhinocommon/) (Cross-Platform)
 
 ### Overview
 <div class="trigger">
@@ -69,66 +70,89 @@ order: 2
 - Rendering
 - Custom Objects
 
-{% comment %}
-## C/C++ (Windows)
 ---
 
-TODO
-
-## Rhino.Python (Cross-Platform)
----
-
-TODO
-
-## Grasshopper (Windows)
----
-
-TODO
-
-## RhinoScript (Windows)
----
-
-TODO
-
-## Eto (Cross-Platform)
----
+## [Eto]({{ site.baseurl }}/guides/eto/) (Cross-Platform)
 
 TODO
 
 
-## openNURBS Toolkit (Cross-Platform)
 ---
+
+## [Rhino.Python]({{ site.baseurl }}/guides/rhinopython/) (Cross-Platform)
 
 TODO
 
 
-## Render Development Kit (RDK)
 ---
+
+## [openNURBS Toolkit]({{ site.baseurl }}/guides/opennurbs/) (Cross-Platform)
 
 TODO
 
 
-## Rhino Application Platform (RAP)
 ---
+
+## [C/C++]({{ site.baseurl }}/guides/cpp/) (Windows)
 
 TODO
 
 
-## RhinoMobile
 ---
+
+## [Grasshopper]({{ site.baseurl }}/guides/grasshopper/) (Windows)
 
 TODO
 
 
-## Zoo License Manager
 ---
+
+## [RhinoScript]({{ site.baseurl }}/guides/rhinoscript/) (Windows)
 
 TODO
 
-{% endcomment %}
 
-## Developer Docs - This Website
 ---
+
+## [Render Development Kit (RDK)]({{ site.baseurl }}/guides/rdk/) (Windows)
+
+TODO
+
+
+---
+
+## [Rhino Application Platform (RAP)]({{ site.baseurl }}/guides/rap/) (Windows)
+
+TODO
+
+
+---
+
+## [RhinoMobile]({{ site.baseurl }}/guides/rhinomobile/) (iOS & Android)
+
+TODO
+
+
+---
+
+## [Zoo License Manager]({{ site.baseurl }}/guides/zoo/) (Windows)
+
+<div class="trigger">
+  <ul>
+  {% for topic in site.guide_topics %}
+    {% if topic.tags contains 'Guide' and topic.tags contains 'Zoo' %}
+      {% if topic.title  %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+
+---
+
+## [Developer Docs]({{ site.baseurl }}/guides/rhinodevdocs/) (This Website)
 
 <div class="trigger">
   <ul>
