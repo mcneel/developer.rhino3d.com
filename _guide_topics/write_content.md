@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: user-page
 title: Write and Edit content
 ---
 

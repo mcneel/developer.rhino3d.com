@@ -1,10 +1,10 @@
 ---
-layout: tab-page
+layout: user-page
 title: Extend a Curve Object
 ---
 #### Extend a Curve Object  
-  
-{% highlight C# %}
+
+```
 public class ExtendCurveCommand : Command
 {
   public override string EnglishName { get { return "csExtendCurve"; } }
@@ -52,4 +52,4 @@ public class ExtendCurveCommand : Command
     return Result.Success;
   }
 }
-{% endhighlight %}
+```
