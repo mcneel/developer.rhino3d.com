@@ -8,7 +8,7 @@ The site is hosted on [GitHub Pages](https://pages.github.com/) and we are using
 
 These instructions presume you are working on Mac OS X and are comfortable with basic posix/bash terminal commands.  If you are not proficient with command-line git, GitHub has a [client for OS X](https://mac.github.com/).
 
-#### Testing and authoring gh pages locally with Jekyll
+#### Testing and authoring gh pages locally on your Mac
 
 ##### clone the ```https://github.com/mcneel/developer-rhino3d-com.git``` repo:  
  - notice that 'gh-pages' is the only branch.  Everything committed to this branch is automatically published.
@@ -17,12 +17,14 @@ These instructions presume you are working on Mac OS X and are comfortable with 
 ##### Requirements: (instead of following the links below I installed with [homebrew](http://brew.sh/))
  - [Ruby](http://www.ruby-lang.org/en/downloads/) probably already on your mac.  
  - [RubyGems](http://rubygems.org/pages/download)  
- - [NodeJS](https://nodejs.org/)  - click the large Install button to download the package.
+ - [GitHub Pages Gem](https://github.com/github/pages-gem)
 
-##### Install Jekyll  
+##### Install GitHub Pages Gem  
  ```bash
-   sudo gem install jekyll
+   https://github.com/github/pages-gem
  ```
+
+(these instructions need work/updating)
 
 ##### Using Jekyll: serving / building
 
