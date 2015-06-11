@@ -4,7 +4,7 @@ title: RDK Developer Guides
 order: 1
 ---
 
-# Render Development Kit (RDK) Guides
+# Renderer Development Kit (RDK) Guides
 ---
 
 TODO

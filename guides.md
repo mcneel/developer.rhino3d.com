@@ -114,7 +114,7 @@ TODO
 
 ---
 
-## [Render Development Kit (RDK)]({{ site.baseurl }}/guides/rdk/) (Windows)
+## [Renderer Development Kit (RDK)]({{ site.baseurl }}/guides/rdk/) (Windows)
 
 TODO
 
