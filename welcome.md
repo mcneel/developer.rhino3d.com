@@ -1,6 +1,6 @@
 ---
 layout: bootstrap
-title: welcome
+title: Welcome
 permalink: /welcome/
 <!-- order: 1 -->
 ---

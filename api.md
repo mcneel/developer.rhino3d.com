@@ -1,6 +1,6 @@
 ---
 layout: tab-page
-title: api
+title: API
 permalink: /api/
 order: 3
 ---

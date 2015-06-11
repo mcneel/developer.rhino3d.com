@@ -1,19 +1,19 @@
 <header class="site-header">
 
-    
+
     <a class="site-title" href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/rhinodevlogo128x128.png" alt="Rhino Developer Docs" height="48" width="48"></a><a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
 
     <nav class="site-nav">
 
       {% assign pages = site.pages | sort:"order"  %}
       <div class="trigger">
-      	<a class="page-link" href="{{ site.baseurl }}/">welcome</a>
+      	<a class="page-link" href="{{ site.baseurl }}/">Welcome</a>
         {% for page in pages %}
           {% if page.title and page.order %}
           <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
-        <a class="page-link" href="http://discourse.mcneel.com/c/rhino-developer">forums</a>
+        <a class="page-link" href="http://discourse.mcneel.com/c/rhino-developer">Forums</a>
       </div>
     </nav>
 

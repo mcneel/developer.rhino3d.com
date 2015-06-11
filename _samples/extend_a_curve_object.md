@@ -1,9 +1,10 @@
 ---
 layout: tab-page
 title: Extend a Curve Object
+tags: ['C#', '.NET', 'RhinoCommon']
 ---
 #### Extend a Curve Object  
-  
+
 {% highlight C# %}
 public class ExtendCurveCommand : Command
 {

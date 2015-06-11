@@ -1,6 +1,8 @@
 ---
 layout: tab-page
 title: Run Jekyll locally
+order: 2
+tags: ['Guide', 'DevDocs']
 ---
 #### Testing and authoring gh pages locally with Jekyll
 

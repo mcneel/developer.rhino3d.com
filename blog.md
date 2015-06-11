@@ -1,6 +1,6 @@
 ---
 layout: tab-page
-title: blog
+title: Blog
 permalink: /blog/
 order: 5
 ---

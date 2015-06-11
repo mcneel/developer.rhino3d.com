@@ -1,6 +1,8 @@
 ---
 layout: tab-page
 title: Write and Edit content
+order: 1
+tags: ['Guide', 'DevDocs']
 ---
 
 We need to come up with templates / conventions for content but for now add your markdown files in the following directories:  

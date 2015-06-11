@@ -1,6 +1,6 @@
 ---
 layout: tab-page
-title: samples
+title: Samples
 permalink: /samples/
 order: 4
 ---
