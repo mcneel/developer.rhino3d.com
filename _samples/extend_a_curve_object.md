@@ -9,7 +9,7 @@ tags: ['C#', '.NET', 'RhinoCommon']
 
 public class ExtendCurveCommand : Command
 {
-  public override string EnglishName { get { return "csExtendCurve"; } }
+  public override string EnglishName { get { return "SampleExtendCurve"; } }
 
   protected override Result RunCommand(RhinoDoc doc, RunMode mode)
   {
