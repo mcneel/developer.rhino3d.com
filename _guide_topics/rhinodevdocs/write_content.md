@@ -1,5 +1,5 @@
 ---
-layout: user-page
+layout: tab-page
 title: Write and Edit content
 order: 2
 tags: ['Guide', 'DevDocs']
