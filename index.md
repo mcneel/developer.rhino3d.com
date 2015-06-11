@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Welcome 
+# Welcome
 
 This site is the *future home* of developer.rhino3d.com.  This is very much a Work In Progress.  This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link beneath the page title (COMING SOON). See contributing to the website for more details.
 
@@ -53,12 +53,13 @@ All about editing or contributing to this website.
 
 Who to talk to for what:
 
-- Alain Cormier (RhinoPython) - [alain@mcneel.com](mailto:alain@mcneel.com) - [github.com/acormier](http://github.com/acormier)
 - Steve Baer (RhinoCommon) - [steve@mcneel.com](mailto:steve@mcneel.com) - [github.com/sbaer](http://github.com/sbaer)
+- Dale Fugier (C/C++ SDK, Zoo, RAP) - [dale@mcneel.com](mailto:dale@mcneel.com) - [github.com/dalefugier](http://github.com/dalefugier)
+- Alain Cormier (RhinoPython) - [alain@mcneel.com](mailto:alain@mcneel.com) - [github.com/acormier](http://github.com/acormier)
 - David Rutten (Grasshopper) - [david@mcneel.com](mailto:david@mcneel.com) - [github.com/DavidRutten](http://github.com/DavidRutten)
-- Dale Fugier (C/C++ SDK) - [dale@mcneel.com](mailto:dale@mcneel.com) - [github.com/dalefugier](http://github.com/dalefugier)
-- Dan Belcher (RhinoMobile) - [dan@mcneel.com](mailto:dan@mcneel.com) - [github.com/dbelcher](http://github.com/dbelcher)
+- Andy le Bihan (RDK) - [andy@mcneel.com](mailto:andy@mcneel.com) - [github.com/andylebihan](http://github.com/andylebihan)
 - Curtis Wensley (Eto) - [curtis@mcneel.com](mailto:curtis@mcneel.com) - [github.com/cwensley](http://github.com/cwensley)
+- Dan Belcher (RhinoMobile) - [dan@mcneel.com](mailto:dan@mcneel.com) - [github.com/dbelcher](http://github.com/dbelcher)
 
 ## Plugin Distribution
 
