@@ -2,7 +2,7 @@
 layout: tab-page
 title: What is RhinoCommon?
 order: 1
-tags: ['Guide', 'About', 'RhinoCommon', 'Mac', 'Windows']
+tags: ['Guide', 'Overview', 'RhinoCommon', 'Mac', 'Windows']
 ---
 
 # What is RhinoCommon?

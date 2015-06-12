@@ -33,7 +33,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.tags contains 'Guide' and topic.tags contains 'About' and topic.tags contains 'RhinoCommon' %}
+    {% if topic.tags contains 'Guide' and topic.tags contains 'Overview' and topic.tags contains 'RhinoCommon' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -56,29 +56,46 @@ order: 2
   </ul>
 </div>
 
-- Installing the tools (Windows)
-- Installing the tools (Mac)
-- Hello Rhino (Cross-Platform)
-- Debugging Hello Rhino (Windows)
-- Debugging Hello Rhino (Mac)
-
-### Plugin Fundamentals
-
+### Fundamentals
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.tags contains 'Guide' and topic.tags contains 'Fundamentals' and topic.tags contains 'RhinoCommon' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 - [How the Commands Work](http://wiki.mcneel.com/developer/runrhinocommandfromplugincommand) - Needs porting
 - [Event Watchers](http://wiki.mcneel.com/developer/rhinocommonsamples/dotneteventwatcher) - Needs porting
 
 ### Advanced
-
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.tags contains 'Guide' and topic.tags contains 'Advanced' and topic.tags contains 'RhinoCommon' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 - [Display Conduits](http://wiki.mcneel.com/developer/rhinocommonsamples/displayconduit) - Needs porting
 - Rendering
 - Custom Objects
 
+
+{% comment %}
 ---
 
 ## [Eto]({{ site.baseurl }}/guides/eto/) (Cross-Platform)
 
 TODO
-
 
 ---
 
@@ -153,6 +170,7 @@ TODO
   </ul>
 </div>
 
+{% endcomment %}
 
 ---
 
