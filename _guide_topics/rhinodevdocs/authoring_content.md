@@ -1,9 +1,16 @@
 ---
 layout: tab-page
-title: Write and Edit content
+title: Authoring content
+author: dan@mcneel.com
+categories: ['General']
+platforms: ['Mac', 'Windows']
+apis: ['DevDocs', 'Jekyll', 'Liquid']
+languages: ['Markdown']
+keywords: ['authoring', 'writing', 'editing']
 order: 2
-tags: ['Guide', 'DevDocs']
 ---
+
+# Authoring content
 
 We need to come up with templates / conventions for content but for now add your markdown files in the following directories:  
 

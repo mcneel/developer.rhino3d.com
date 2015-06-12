@@ -15,7 +15,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.tags contains 'Guide' and topic.tags contains 'General' %}
+    {% if topic.platforms contains 'Cross-Platform' and topic.apis contains 'All' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -33,7 +33,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.tags contains 'Guide' and topic.tags contains 'Overview' and topic.tags contains 'RhinoCommon' %}
+    {% if topic.apis contains 'RhinoCommon' and topic.categories contains 'Overview' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -47,7 +47,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.tags contains 'Guide' and topic.tags contains 'GettingStarted' and topic.tags contains 'RhinoCommon' %}
+    {% if topic.apis contains 'RhinoCommon' and topic.categories contains 'GettingStarted' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -61,7 +61,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.tags contains 'Guide' and topic.tags contains 'Fundamentals' and topic.tags contains 'RhinoCommon' %}
+    {% if topic.apis contains 'RhinoCommon' and topic.categories contains 'Fundamentals' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -77,7 +77,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.tags contains 'Guide' and topic.tags contains 'Advanced' and topic.tags contains 'RhinoCommon' %}
+    {% if topic.apis contains 'RhinoCommon' and topic.categories contains 'Advanced' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -89,8 +89,6 @@ order: 2
 - Rendering
 - Custom Objects
 
-
-{% comment %}
 ---
 
 ## [Eto]({{ site.baseurl }}/guides/eto/) (Cross-Platform)
@@ -161,7 +159,7 @@ TODO
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.tags contains 'Guide' and topic.tags contains 'Zoo' %}
+    {% if topic.apis contains 'Zoo' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -170,7 +168,6 @@ TODO
   </ul>
 </div>
 
-{% endcomment %}
 
 ---
 
@@ -180,7 +177,7 @@ TODO
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.tags contains 'Guide' and topic.tags contains 'DevDocs' %}
+    {% if topic.apis contains 'DevDocs' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}

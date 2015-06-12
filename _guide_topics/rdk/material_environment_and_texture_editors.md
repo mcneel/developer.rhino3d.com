@@ -1,9 +1,15 @@
 ---
 layout: tab-page
 title: Material, Environment, and Texture Editors
+author: andy@mcneel.com
+categories: ['Fundamentals']
+platforms: ['Windows']
+apis: ['RDK']
+languages: ['CPP']
+keywords: ['material', 'environment', 'texture', 'RDK']
 order: 1
-tags: ['Guide', 'GettingStarted', 'RDK', 'Windows']
 ---
+
 
 # Material, Environment, and Texture Editors
 

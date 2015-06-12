@@ -1,8 +1,13 @@
 ---
 layout: tab-page
 title: Overview of Grasshopper Components
+author: steve@mcneel.com
+categories: ['Overview']
+platforms: ['Windows']
+apis: ['Grasshopper']
+languages: ['C#', 'VB.NET']
+keywords: ['developer', 'grasshopper', 'components']
 order: 1
-tags: ['Guide', 'Overview', 'Grasshopper', 'Windows']
 ---
 
 # Overview of Grasshopper Components

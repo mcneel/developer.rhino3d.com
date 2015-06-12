@@ -1,8 +1,13 @@
 ---
 layout: tab-page
 title: Creating a skin using RhinoCommon
-order: 1
-tags: ['Guide', 'RAP', 'RhinoCommon', 'Windows']
+author: dale@mcneel.com
+categories: ['Advanced']
+platforms: ['Windows']
+apis: ['RAP', 'RhinoCommon']
+languages: ['C#']
+keywords: ['skin', 'RAP', 'rhino']
+order: 2
 ---
 
 # Creating a skin using RhinoCommon

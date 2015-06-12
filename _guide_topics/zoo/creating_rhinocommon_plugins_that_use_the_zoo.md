@@ -1,8 +1,13 @@
 ---
 layout: tab-page
 title: Creating RhinoCommon Plugins that use the Zoo
+author: dale@mcneel.com
+categories: ['Advanced']
+platforms: ['Windows']
+apis: ['Zoo', 'RhinoCommon']
+languages: ['C#']
+keywords: ['Zoo', 'Plugin']
 order: 3
-tags: ['Guide', 'Zoo', 'Windows']
 ---
 
 # Creating RhinoCommon Plugins that use the Zoo

@@ -1,8 +1,13 @@
 ---
 layout: tab-page
 title: Creating C/C++ Plugins that use the Zoo
+author: dale@mcneel.com
+categories: ['Fundamentals']
+platforms: ['Windows']
+apis: ['Zoo']
+languages: ['CPP']
+keywords: ['Zoo', 'Plugin']
 order: 4
-tags: ['Guide', 'Zoo', 'Windows']
 ---
 
 # Creating C/C++ Plugins that use the Zoo

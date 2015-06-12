@@ -1,7 +1,13 @@
 ---
 layout: tab-page
 title: Extend a Curve Object
-tags: ['C#', '.NET', 'RhinoCommon']
+author: dale@mcneel.com
+categories: ['Curves']
+platforms: ['Cross-Platform']
+apis: ['RhinoCommon']
+languages: ['C#']
+keywords: ['Extend', 'Curve', 'Sample']
+order: 1
 ---
 #### Extend a Curve Object  
 

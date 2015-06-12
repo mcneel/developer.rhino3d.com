@@ -1,8 +1,13 @@
 ---
 layout: tab-page
 title: openNURBS 5.0 Migration Guide
+author: dalelear@mcneel.com
+categories: ['Overview']
+platforms: ['Cross-Platform']
+apis: ['openNURBS']
+languages: ['CPP']
+keywords: ['migrating', 'opennurbs', 'versions']
 order: 1
-tags: ['Guide', 'openNURBS', 'Windows', 'Mac']
 ---
 
 # openNURBS 5.0 Migration Guide

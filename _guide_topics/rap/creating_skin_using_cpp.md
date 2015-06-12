@@ -1,8 +1,13 @@
 ---
 layout: tab-page
 title: Creating a skin using C/C++
+author: dale@mcneel.com
+categories: ['Advanced']
+platforms: ['Windows']
+apis: ['RAP', 'CPP']
+languages: ['CPP']
+keywords: ['skin', 'RAP', 'rhino']
 order: 1
-tags: ['Guide', 'RAP', 'cpp', 'Windows']
 ---
 
 # Creating a skin using C/C++

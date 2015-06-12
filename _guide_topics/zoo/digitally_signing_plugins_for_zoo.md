@@ -1,8 +1,13 @@
 ---
 layout: tab-page
 title: Digitally Signing Plugins for Zoo
+author: dale@mcneel.com
+categories: ['Fundamentals']
+platforms: ['Windows']
+apis: ['Zoo']
+languages: ['BAT']
+keywords: ['Zoo', 'Plugin', 'Digital']
 order: 5
-tags: ['Guide', 'Zoo', 'Windows']
 ---
 
 # Digitally Signing Plugins for Zoo

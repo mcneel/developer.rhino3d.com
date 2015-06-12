@@ -1,6 +1,7 @@
 ---
 layout: tab-page
 title: Zoo Developer Guides
+order: 11
 ---
 
 # Zoo Guides

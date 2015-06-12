@@ -1,8 +1,13 @@
 ---
 layout: tab-page
 title: Getting Started with RhinoMobile
+author: dan@mcneel.com
+categories: ['GettingStarted']
+platforms: ['iOS', 'Android']
+apis: ['RhinoMobile']
+languages: ['C#']
+keywords: ['RhinoMobile', 'iRhino 3D']
 order: 1
-tags: ['Guide', 'GettingStarted', 'RhinoMobile', 'iOS', 'Android']
 ---
 
 # Getting Started with RhinoMobile

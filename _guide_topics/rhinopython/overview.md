@@ -1,8 +1,13 @@
 ---
 layout: tab-page
 title: Overview of Rhino.Python
+author: alain@mcneel.com
+categories: ['Overview']
+platforms: ['Windows', 'Mac', 'Cross-Platform']
+apis: ['RhinoPython']
+languages: ['Python']
+keywords: ['Rhino.Python', 'Python']
 order: 1
-tags: ['Guide', 'Overview', 'RhinoPython', 'Windows', 'Mac']
 ---
 
 # Overview of Rhino.Python

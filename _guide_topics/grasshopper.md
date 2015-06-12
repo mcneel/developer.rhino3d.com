@@ -1,6 +1,7 @@
 ---
 layout: tab-page
 title: Grasshopper Developer Guides
+order: 6
 ---
 
 # Grasshopper Developer Guides
