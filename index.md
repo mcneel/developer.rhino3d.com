@@ -6,8 +6,18 @@ layout: default
 
 **Rhino developer tools are royalty free and include support.**
 
-This site is the _future home_ of developer.rhino3d.com.  This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of the page.  See [contributing to this website](#this-website) below for more details.
+This site is the _future home_ of developer.rhino3d.com.  The goal of this site is to consolidate all the (now) scattered developer documentation into a single canonical site that is clear, easy-to-navigate, with consistent formatting and nomenclature.  _This site is a work-in-progress_.  
 
+The sources of content-to-be-consolidated are:
+
+- [Rhino Developer Tools wiki](http://wiki.mcneel.com/developer/home)
+- [RhinoCommon API references](http://4.rhino3d.com/5/rhinocommon/)
+- [C++ SDK API references](http://4.rhino3d.com/5/rhinocppsdk/idx.html)
+- [RhinoCommon samples on GitHub](https://github.com/mcneel/rhinocommon/tree/master/examples)
+- [DaleF's CsCommands](https://github.com/dalefugier/SampleCsCommands/)
+- [Doxygen Docs (on McNeel intranet)](http://phab.mcneel.com/docs/rhino/6/rhinocommon/)
+
+This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of the page.  See [contributing to this website](#this-website) below for more details.
 
 ## Overview
 
@@ -48,7 +58,9 @@ At McNeel, we use [YouTrack](http://mcneel.myjetbrains.com/youtrack/) to track i
 
 #### This website <a id="this-website"></a>
 
-All about editing or contributing to this website.
+This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of any page.  If you are a McNeel employee, you should already have permissions to commit to this repository.  If you are a Rhino Plugin Developer, you can [request permissions to commit](mailto:steve@mcneel.com).  Anyone can clone the repository and submit a pull-request.
+
+This site uses GitHub Flavored Markdown as the base-format for all content.  In the [Guides]({{ site.baseurl }}/guides) area of the site, in the [Developer Docs]({{ site.baseurl }}/guides#dev-docs) section, you will find a number of helpful references to get started contributing to this site.
 
 ## Contacts
 
@@ -76,4 +88,4 @@ Port from:
 
 - What SDK is right for me?
 - What is Mono?
-- Question?
+- Other questions?
