@@ -4,9 +4,10 @@ layout: default
 
 # Welcome
 
-This site is the *future home* of developer.rhino3d.com.  This is very much a Work In Progress.  This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of the page. See contributing to the website for more details.
+**Rhino developer tools are royalty free and include support.**
 
-Rhino developer tools are royalty free and include support.
+This site is the _future home_ of developer.rhino3d.com.  This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of the page.  See [contributing to this website](#this-website) below for more details.
+
 
 ## Overview
 
@@ -45,7 +46,7 @@ Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub]
 
 At McNeel, we use [YouTrack](http://mcneel.myjetbrains.com/youtrack/) to track issues and bugs.  YouTrack requires that you create a login. The vast majority of bugs are visible to the public.  Please report issues or bugs with our APIs or SDKs on YouTrack.
 
-#### This website
+#### This website <a id="this-website"></a>
 
 All about editing or contributing to this website.
 
