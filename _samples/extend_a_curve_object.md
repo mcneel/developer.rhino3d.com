@@ -5,7 +5,7 @@ tags: ['C#', '.NET', 'RhinoCommon']
 ---
 #### Extend a Curve Object  
 
-```c#
+```cs
 public class ExtendCurveCommand : Command
 {
   public override string EnglishName { get { return "SampleExtendCurve"; } }
