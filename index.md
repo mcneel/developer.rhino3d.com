@@ -4,7 +4,7 @@ layout: default
 
 # Welcome
 
-This site is the *future home* of developer.rhino3d.com.  This is very much a Work In Progress.  This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link beneath the page title (COMING SOON). See contributing to the website for more details.
+This site is the *future home* of developer.rhino3d.com.  This is very much a Work In Progress.  This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of the page. See contributing to the website for more details.
 
 Rhino developer tools are royalty free and include support.
 
@@ -37,7 +37,7 @@ Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub]
 
 [discourse.mcneel.com](http://discourse.mcneel.com) is the McNeel forum.  This is the fastest place to get help.  Specific categories to  in are:
 
-- [Rhino developer](http://discourse.mcneel.com/c/rhino-developer): Customizing Rhino through VB.NET, C#, C++, RhinoScript, and Python.
+- [Rhino Developer](http://discourse.mcneel.com/c/rhino-developer): Customizing Rhino through VB.NET, C#, C++, RhinoScript, and Python.
 - [Scripting](http://discourse.mcneel.com/c/scripting): Topics related to RhinoScript and Python scripting.
 - [Grasshopper developer](http://discourse.mcneel.com/c/grasshopper-developer): VB.NET, C#, and Python in Grasshopper components.
 
