@@ -10,7 +10,8 @@ These instructions cover running this project on the Mac OSX client and on Windo
 
 If you are not proficient with command-line git, GitHub has a [client for OS X](https://mac.github.com/).
 
-![Mac Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/mac_logo_small.png) #### Testing and authoring gh pages locally on your Mac
+![Mac Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/mac_logo_small.png) 
+#### Testing and authoring gh pages locally on your Mac
 
 ##### clone the ```https://github.com/mcneel/developer-rhino3d-com.git``` repo:  
  - notice that 'gh-pages' is the only branch.  Everything committed to this branch is automatically published.
@@ -40,3 +41,9 @@ Open Terminal and cd to the folder that contains the cloned developer-rhino3d-co
 
   - build w/o plugins.  gh pages doesn't allow plugins:  
     ```jekyll build --safe```
+
+
+![Windows Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/win_logo_small.png) 
+#### Testing and authoring gh pages locally on your Windows computer.
+
+
