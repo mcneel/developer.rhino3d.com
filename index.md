@@ -16,6 +16,7 @@ The sources of content-to-be-consolidated are:
 - [RhinoCommon samples on GitHub](https://github.com/mcneel/rhinocommon/tree/master/examples)
 - [DaleF's CsCommands](https://github.com/dalefugier/SampleCsCommands/)
 - [Doxygen Docs (on McNeel intranet)](http://phab.mcneel.com/docs/rhino/6/rhinocommon/)
+- Dale Lear's Developer Meeting Notes
 
 This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of the page.  See [contributing to this website](#this-website) below for more details.
 
