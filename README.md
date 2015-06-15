@@ -6,12 +6,11 @@ The site is hosted on [GitHub Pages](https://pages.github.com/) and we are using
 
 ## Getting Started
 
-These instructions cover running this project on the Mac OSX client and on Windows. Running on Mac OS X is a bit more straight forward. This process requires use of the command-line.  
-The windows set-up instruction works to emulate the same process we use to develop our Google App website.
+These instructions cover running this project on the Mac OSX client and on Windows. Running on Mac OS X is a bit more straight forward. These instructions are a in flux with the Windows version.
 
 If you are not proficient with command-line git, GitHub has a [client for OS X](https://mac.github.com/).
 
-#### Testing and authoring gh pages locally on your Mac
+![Mac Logo](/img/mac_logo_small.jpg)#### Testing and authoring gh pages locally on your Mac
 
 ##### clone the ```https://github.com/mcneel/developer-rhino3d-com.git``` repo:  
  - notice that 'gh-pages' is the only branch.  Everything committed to this branch is automatically published.
