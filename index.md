@@ -124,7 +124,7 @@ Developer training is free. You are responsible for paying for travel, lodging, 
 
 For scheduling and travel arrangements in Seattle, contact [Janet Brock](mailto:janet@mcneel.com).
 
-For scheduling and travel arrangements in Barcelona, contact [Carlos Pérez](mailtp:carlos@mcneel.com).
+For scheduling and travel arrangements in Barcelona, contact [Carlos Pérez](mailto:carlos@mcneel.com).
 
 {% comment %}
 Ported from: http://wiki.mcneel.com/developer/training
