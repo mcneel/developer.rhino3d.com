@@ -21,19 +21,24 @@ This website is [open source on GitHub](https://github.com/mcneel/developer-rhin
 
 ## Overview
 
-Choose your own adventure...
+Rhino exposes purpose-built APIs in C#, C/C++, VB.NET, and Python...
 
-- RhinoCommon
-- C/C++
-- RhinoScript
-- Rhino.Python
-- Grasshopper
-- openNURBS Toolkit
-- Render Development Kit (RDK)
-- Rhino Application Platform (RAP)
-- RhinoMobile
-- Eto
-- Zoo License Manager
+| API | &nbsp; &nbsp; &nbsp; &nbsp; | Platforms | &nbsp; &nbsp; &nbsp; &nbsp; | Languages |  &nbsp; &nbsp; &nbsp; &nbsp; | Primary Uses |
+|:----|:----:|:------------------------:|:----:|:----------:|:----:|:----|
+| RhinoCommon  |  &nbsp; &nbsp; &nbsp; &nbsp; | ![Windows]({{ site.baseurl }}/images/win_logo_small.png){:height="35px" width="35px"} &nbsp; ![Mac OS X]({{ site.baseurl }}/images/mac_logo_small.png){:height="35px" width="35px"} |  &nbsp; &nbsp; &nbsp; &nbsp;  | ![C#]({{ site.baseurl }}/images/cs_logo_small.png){:height="35px" width="35px"} &nbsp; ![VB.NET]({{ site.baseurl }}/images/vb_logo_small.png){:height="35px" width="35px"} &nbsp; ![Python]({{ site.baseurl }}/images/python_logo_small.png){:height="35px" width="35px"} |   &nbsp; &nbsp; &nbsp; &nbsp; |  Cross-platform plugins.  Grasshopper plugins.
+| Rhino.Python  |  &nbsp; &nbsp; &nbsp; &nbsp; | ![Windows]({{ site.baseurl }}/images/win_logo_small.png){:height="35px" width="35px"} &nbsp; ![Mac OS X]({{ site.baseurl }}/images/mac_logo_small.png){:height="35px" width="35px"} |  &nbsp; &nbsp; &nbsp; &nbsp;  | ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} &nbsp; ![Python]({{ site.baseurl }}/images/python_logo_small.png){:height="35px" width="35px"} |   &nbsp; &nbsp; &nbsp; &nbsp; |  Cross-platform scripting.
+| openNURBS  |  &nbsp; &nbsp; &nbsp; &nbsp; | ![Windows]({{ site.baseurl }}/images/win_logo_small.png){:height="35px" width="35px"} &nbsp; ![Mac OS X]({{ site.baseurl }}/images/mac_logo_small.png){:height="35px" width="35px"} |  &nbsp; &nbsp; &nbsp; &nbsp;  | ![C#]({{ site.baseurl }}/images/cs_logo_small.png){:height="35px" width="35px"} &nbsp; ![C/C++]({{ site.baseurl }}/images/cpp_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |   &nbsp; &nbsp; &nbsp; &nbsp; |  openNURBS 3dm file IO outside Rhino.
+| RhinoScript  |  &nbsp; &nbsp; &nbsp; &nbsp; | ![Windows]({{ site.baseurl }}/images/win_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |  &nbsp; &nbsp; &nbsp; &nbsp;  | ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} &nbsp; ![VB.NET]({{ site.baseurl }}/images/vb_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |   &nbsp; &nbsp; &nbsp; &nbsp; |  Rhino for Windows scripting.
+| C/C++  |  &nbsp; &nbsp; &nbsp; &nbsp; | ![Windows]({{ site.baseurl }}/images/win_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |  &nbsp; &nbsp; &nbsp; &nbsp;  | ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} &nbsp; ![C/C++]({{ site.baseurl }}/images/cpp_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |   &nbsp; &nbsp; &nbsp; &nbsp; |  Rhino for Windows plugins.
+| Grasshopper  |  &nbsp; &nbsp; &nbsp; &nbsp; | ![Windows]({{ site.baseurl }}/images/win_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |  &nbsp; &nbsp; &nbsp; &nbsp;  | ![C#]({{ site.baseurl }}/images/cs_logo_small.png){:height="35px" width="35px"} &nbsp; ![VB.NET]({{ site.baseurl }}/images/vb_logo_small.png){:height="35px" width="35px"} &nbsp; ![Python]({{ site.baseurl }}/images/python_logo_small.png){:height="35px" width="35px"} |   &nbsp; &nbsp; &nbsp; &nbsp; |  Grasshopper plugins.
+| RDK  |  &nbsp; &nbsp; &nbsp; &nbsp; | ![Windows]({{ site.baseurl }}/images/win_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |  &nbsp; &nbsp; &nbsp; &nbsp;  | ![C#]({{ site.baseurl }}/images/cs_logo_small.png){:height="35px" width="35px"} &nbsp; ![C/C++]({{ site.baseurl }}/images/cpp_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |   &nbsp; &nbsp; &nbsp; &nbsp; |  Renderer plugin development on Windows.
+| RAP  |  &nbsp; &nbsp; &nbsp; &nbsp; | ![Windows]({{ site.baseurl }}/images/win_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |  &nbsp; &nbsp; &nbsp; &nbsp;  | ![C#]({{ site.baseurl }}/images/cs_logo_small.png){:height="35px" width="35px"} &nbsp; ![C/C++]({{ site.baseurl }}/images/cpp_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |   &nbsp; &nbsp; &nbsp; &nbsp; |  "Skinning" Rhino for Windows.
+| Zoo  |  &nbsp; &nbsp; &nbsp; &nbsp; | ![Windows]({{ site.baseurl }}/images/win_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |  &nbsp; &nbsp; &nbsp; &nbsp;  | ![C#]({{ site.baseurl }}/images/cs_logo_small.png){:height="35px" width="35px"} &nbsp; ![C/C++]({{ site.baseurl }}/images/cpp_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |   &nbsp; &nbsp; &nbsp; &nbsp; |  Zoo license manager plugins on Windows.
+| RhinoMobile  |  &nbsp; &nbsp; &nbsp; &nbsp; | ![Android]({{ site.baseurl }}/images/android_logo_small.png){:height="35px" width="35px"} &nbsp; ![iOS]({{ site.baseurl }}/images/ios_logo_small.png){:height="35px" width="35px"} |  &nbsp; &nbsp; &nbsp; &nbsp;  | ![C#]({{ site.baseurl }}/images/cs_logo_small.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} |   &nbsp; &nbsp; &nbsp; &nbsp; |  3D mobile application development.
+|=====
+| &nbsp; &nbsp; |
+{: rules="groups"}
+
 
 ## Contributing
 
@@ -52,15 +57,15 @@ Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub]
 - [Scripting](http://discourse.mcneel.com/c/scripting): Topics related to RhinoScript and Python scripting.
 - [Grasshopper developer](http://discourse.mcneel.com/c/grasshopper-developer): VB.NET, C#, and Python in Grasshopper components.
 
-#### YouTrack
+#### Report Bugs
 
-At McNeel, we use [YouTrack](http://mcneel.myjetbrains.com/youtrack/) to track issues and bugs.  YouTrack requires that you create a login. The vast majority of bugs are visible to the public.  Please report issues or bugs with our APIs or SDKs on YouTrack.
+Whenever you encounter something that doesn't work as it should, we'd love it if you could file a bug report.  At McNeel, we use [YouTrack](http://mcneel.myjetbrains.com/youtrack/) to track issues and bugs.  YouTrack requires that you create a login. The vast majority of bugs are visible to the public.  Please report issues or bugs with our APIs or SDKs on YouTrack.
 
 #### This website <a id="this-website"></a>
 
 This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of any page.  If you are a McNeel employee, you should already have permissions to commit to this repository.  If you are a Rhino Plugin Developer, you can [request permissions to commit](mailto:steve@mcneel.com).  Anyone can clone the repository and submit a pull-request.
 
-This site uses [Markdown](http://daringfireball.net/projects/markdown/) - specifically [Kramdown](http://kramdown.gettalong.org/quickref.html) - as the base-format for all content.  In the [Guides]({{ site.baseurl }}/guides) area of the site, in the [Developer Docs]({{ site.baseurl }}/guides#dev-docs) section, you will find a number of helpful references to get started contributing to this site.
+This site uses [Markdown](http://daringfireball.net/projects/markdown/) - specifically [Kramdown](http://kramdown.gettalong.org/quickref.html) - as the base-format for all content.  In the [Guides]({{ site.baseurl }}/guides) area of the site, in the [Developer Docs]({{ site.baseurl }}/guides#dev-docs) section, you will find a number of references to get started contributing to this site.
 
 ## Contacts
 
@@ -79,10 +84,50 @@ Who to talk to for what:
 - Food4Rhino
 - package manager
 
-## Rhino Developer Training
+## Rhino Developer Training <a id="rhino-developer-training"></a>
 
-Port from:
-[http://wiki.mcneel.com/developer/training](http://wiki.mcneel.com/developer/training)
+Developer training is a custom, one-on-one session designed to help you become more familiar with the Rhino C++ SDK or the RhinoCommon (.NET) SDK, and to get help in improving your Rhino plug-in product.
+
+Rhino Developer Training is available at both the McNeel Headquarters in **Seattle**, and at our European Headquarters in **Barcelona**.
+
+**We provide**:
+
+* A room and a desk for you to set up your computer.
+* A high-speed Internet connection.
+* Access to senior Rhino developers for questions and support.
+* Inexpensive lodging may be available.
+
+**You should bring**:
+
+Your computer with:
+
+* Rhino C++ SDK:
+  * Microsoft Visual C++ 2010 for Rhino 5 64-bit.
+  * Microsoft Visual C++ 2005 for Rhino 5 32-bit.
+  * The [Rhino C++ SDK](http://www.rhino3d.com/download/rhino-sdk/5.0/release).
+  * _Note, Visual C++ 2008, 2012, 2013, and the Express Editions of Visual C++ **will not** work._
+
+
+* RhinoCommon SDK:
+  * Microsoft Visual Studio 2010, 2012 or 2013, with either C# or Visual Basic; or
+  * Xamarin Studio (for Mac plugin development).
+  * The [RhinoCommon Templates](http://visualstudiogallery.msdn.microsoft.com/16053049-7db2-4c9f-961a-53274ac92ace).
+  * _Note, the Express Editions of Visual Studio 2010, 2012, 2013 **will** work._
+
+  * Your Rhino plug-in project source code.
+  * Any software you will need to test your plug-in, including copies of your own software.
+
+**Pricing and scheduling**
+
+Developer training is free. You are responsible for paying for travel, lodging, and any other expenses.
+
+For scheduling and travel arrangements in Seattle, contact [Janet Brock](mailto:janet@mcneel.com).
+
+For scheduling and travel arrangements in Barcelona, contact [Carlos Pérez](mailtp:carlos@mcneel.com).
+
+{% comment %}
+Ported from: http://wiki.mcneel.com/developer/training
+{% endcomment %}
 
 ## FAQ
 

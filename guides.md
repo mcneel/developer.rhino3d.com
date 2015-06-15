@@ -176,7 +176,7 @@ TODO
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  <li><a class="page-link" href="https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/README.md">Running this site locally</a></li>
+  <li><a class="page-link" href="https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/README.md">Getting Started with Dev Docs</a></li>
   {% for topic in guides %}
     {% if topic.apis contains 'DevDocs' %}
       {% if topic.title and topic.order %}
