@@ -6,7 +6,9 @@ The site is hosted on [GitHub Pages](https://pages.github.com/) and we are using
 
 ## Getting Started
 
-These instructions presume you are working on Mac OS X and are comfortable with basic posix/bash terminal commands.  If you are not proficient with command-line git, GitHub has a [client for OS X](https://mac.github.com/).
+These instructions cover running this project on the Mac OSX client and on Windows. Running on Mac OS X is a bit more straight forward. This process requires use of the command-line.  
+The windows setup instruction works to emulate the same process we use to develop our Google App website.
+If you are not proficient with command-line git, GitHub has a [client for OS X](https://mac.github.com/).
 
 #### Testing and authoring gh pages locally on your Mac
 
