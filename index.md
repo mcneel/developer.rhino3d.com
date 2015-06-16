@@ -6,7 +6,7 @@ layout: default
 
 **Rhino developer tools are royalty free and include support.**
 
-This site is the [future home](#todo) of all Developer Documentation relating to [Rhinoceros 3D](www.rhino3d.com).  [_This website is a work-in-progress_](#todo).  The entire site is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of the page.  See [contributing to this website](#this-website) below for more details.
+This site is the [future home](#todo) of all Developer Documentation relating to [Rhinoceros 3D](http://www.rhino3d.com).  [_This website is a work-in-progress_](#todo).  The entire site is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of the page.  See [contributing to this website](#this-website) below for more details.
 
 ## Start Here
 
