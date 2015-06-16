@@ -2,17 +2,17 @@
 
 This repo contains the contents of http://mcneel.github.io/developer-rhino3d-com
 
-The site is hosted on [GitHub Pages](https://pages.github.com/) using [Jekyll](http://jekyllrb.com/) a a static site generator.  
+The site is hosted on [GitHub Pages](https://pages.github.com/) using [Jekyll](http://jekyllrb.com/) a static site generator.  
 
 ## Getting Started
 
-These instructions cover running this project on the Mac OSX client and on Windows. Running on Mac OS X is a bit more straight forward. These instructions are a in flux with the Windows version.
+These instructions cover running this project locally on the OS X and on Windows. Running on OS X is a bit more straight forward. These instructions are in flux with the Windows version.
 
-If you are not proficient with command-line git, GitHub has a [client for OS X](https://mac.github.com/).
+If you are not proficient with command-line git, GitHub has clients for [OS X](https://mac.github.com/) and [Windows](https://windows.github.com/).  [Sourcetree](https://www.sourcetreeapp.com/) is a more full-featured (but also more complicated) client.
 
-![Mac Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/mac_logo_small.png) 
+![OS X Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/mac_logo_small.png) 
 
-#### Testing and authoring gh pages locally on your Mac OS X.
+#### Authoring & Testing this site locally on your Mac
 
 ##### clone the ```https://github.com/mcneel/developer-rhino3d-com.git``` repo:  
  - notice that 'gh-pages' is the only branch.  Everything committed to this branch is automatically published.
@@ -30,10 +30,11 @@ Open Terminal and cd to the folder that contains the cloned developer-rhino3d-co
   - launch webserver:  
     ```jekyll serve```
 
-    Once Jekyll has served the page it will print: http://127.0.0.1:4000/developer-rhino3d-com
+    Once Jekyll has served the page it will print: ```http://127.0.0.1:4000/developer-rhino3d-com```. 
+    Local changes to the repository should be reflected upon a page-refresh of the locally served page.
 
 ![Windows Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/win_logo_small.png) 
-#### Testing and authoring gh pages locally on your Windows computer
+#### Authoring & Testing this site locally on Windows
 
 **[Jekyll](http://jekyllrb.com/docs/windows/)** is the main tools to compile and serve the website.  While not officially supported in Windows, it does work.  These instructions are an based on, but updated from the original instructions to [install Jekyll on Windows](http://jekyll-windows.juthilo.com/)
 
