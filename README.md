@@ -2,88 +2,92 @@
 
 This repo contains the contents of http://mcneel.github.io/developer-rhino3d-com
 
-The site is hosted on [GitHub Pages](https://pages.github.com/) using [Jekyll](http://jekyllrb.com/) a static site generator.  
+The site is hosted on [GitHub Pages](https://pages.github.com/) which uses a static site generator called [Jekyll](http://jekyllrb.com/).
+
 
 ## Getting Started
 
-These instructions cover running this project locally on the OS X and on Windows. Running on OS X is a bit more straight forward. These instructions are in flux with the Windows version.
+These instructions cover running this project locally on both Mac OS X and Windows so that you can preview changes before pushing them to GitHub Pages.
 
-If you are not proficient with command-line git, GitHub has clients for [OS X](https://mac.github.com/) and [Windows](https://windows.github.com/).  [Sourcetree](https://www.sourcetreeapp.com/) is a more full-featured (but also more complicated) client.
+First, navigate somewhere safe and clone the repository.
 
-![OS X Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/mac_logo_small.png) 
+```
+git clone https://github.com/mcneel/developer-rhino3d-com.git
+```
 
-#### Authoring & Testing this site locally on your Mac
+If you are not comfortable using git on the command-line, then try [GitHub for Mac](https://mac.github.com/) and [GitHub for Windows](https://windows.github.com/). There's also the [git cheat sheet](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf).
 
-##### clone the ```https://github.com/mcneel/developer-rhino3d-com.git``` repo:  
- - notice that 'gh-pages' is the only branch.  Everything committed to this branch is automatically published.
- - find the docs [here](http://mcneel.github.io/developer-rhino3d-com).  
-
-##### Requirements:
- - [Ruby](http://www.ruby-lang.org/en/downloads/) probably already on your mac.  
- - [RubyGems](http://rubygems.org/pages/download)  
- - [GitHub Pages Gem](https://github.com/github/pages-gem)
-
-##### Using Jekyll: serving / building
-
-Open Terminal and cd to the folder that contains the cloned developer-rhino3d-com.git repository.
-
-  - launch webserver:  
-    ```jekyll serve```
-
-    Once Jekyll has served the page it will print: ```http://127.0.0.1:4000/developer-rhino3d-com```. 
-    Local changes to the repository should be reflected upon a page-refresh of the locally served page.
-
-![Windows Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/win_logo_small.png) 
-#### Authoring & Testing this site locally on Windows
-
-**[Jekyll](http://jekyllrb.com/docs/windows/)** is the main tools to compile and serve the website.  While not officially supported in Windows, it does work.  These instructions are an based on, but updated from the original instructions to [install Jekyll on Windows](http://jekyll-windows.juthilo.com/)
-
-##### Install Ruby: 2.1.6 (x86 or x64) - http://rubyinstaller.org/downloads/
-
-Use Ruby 2.1.X installers. These provide a stable language and a extensive list of packages (gems) that are compatible and updated.
-
-When at the "Installation Destination and Optional Tasks" dialog, make sure to check the **"Add Ruby executable to your PATH"** box.
- 
-##### Install Ruby DevKit - http://rubyinstaller.org/downloads/
-
-  1. On Ruby page under the Development Kit heading along the left column of the page, find the kit that corresponds to your operating system and Ruby installation.  For Ruby v2.0.0 the file will begin with ```DevKet-mingw64```.
-  2. Download the self extracting archive.
-  3. When executing the tile, it will ask for a directory. Enter a path with no spaces, for instance ```C:\rubydevkit\```
- 
-##### Initialize the DevKit and bind it to Ruby
-
-  1. Open the Commandline as Administrator in Windows
-  2. Navigate to the RubyDevKit folder  ```C:\rubydevkit\```
-  3. Type the command to initialize 
-    ```ruby dk.rb init```
-  4. A message should apear that reads  
-    ```Intialization complete!...```
-
-##### Install Python - https://www.python.org/
-These insturcutions were written using Python 2.7. Python is required for ```pygments.rb``` used by the Liquid templating engine.
-  1. Download and install the appropriate Python for Windows.
-  2. Add the Python directory to the Windows Environment Path.
- 
-##### Install Jekyll and Git-pages
-  1. Using the Commandline in Windows
-  2. Type: ```gem install jekyll```
-  3. After a minute it should go through a large install process
-  4. Type: ```gem install git-pages```
-
-##### Using Jekyll: serving / building
-
-Open command line and cd to the folder that contains the cloned developer-rhino3d-com.git repository.
-
-  - launch webserver:  
-    ```jekyll serve```
-
-    Once Jekyll has served the page it will print:
-    ```http://127.0.0.1:4000/developer-rhino3d-com```.  Local changes to the repository should be reflected upon a page-refresh of the locally served page.
+Notice that **'gh-pages'** is the only branch. Everything committed to this branch is automatically published when pushed to GitHub.
 
 
+![Mac Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/mac_logo_small.png)
+### Mac OS X
+
+Mac OS X Yosemite ships with Ruby and RubyGems, however it's not wise to mess around with this installation. Instead, install your own Ruby using [Homebrew](http://brew.sh).
+
+#### Install Homebrew and Ruby
+
+As per the Homebrew website, install via the following one-liner (which will prompt you to install the Xcode Command Line Tools, if you don't already have them).
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Then we can brew Ruby.
+
+```
+brew install ruby
+```
+
+Now close and reopen the Terminal window to make sure the system knows about the new version of Ruby.
+
+#### Install Jekyll
+
+The [GitHub Pages Ruby Gem](https://github.com/github/pages-gem) provides the same version of Jekyll as exists on the GitHub Pages servers. This ensures we aren't accidentally using features that have either been deprecated or simply don't exist yet!
+
+```
+gem install github-pages
+```
+
+You can now serve your local copy of this site by running the following commands, remembering to replace `CLONE_DIRECTORY` with the location to which you checked out this repository.
+
+```
+cd CLONE_DIRECTORY
+jekyll serve
+```
+
+Navigate to http://localhost:4000/developer-rhino3d-com in your browser to view the site.
 
 
+![Windows Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/win_logo_small.png)
+### Windows
 
+While **[Jekyll](http://jekyllrb.com/docs/windows/)** is not officially supported in Windows, it does work.  These instructions are based on the official _unofficial_ guide to [installing Jekyll on Windows](http://jekyll-windows.juthilo.com/).
 
+#### Install Ruby and Ruby DevKit
 
+Go to http://rubyinstaller.org/downloads/ and download the installer for Ruby 2.1.X that matches your system architecture (x86/x64).
 
+At the "Installation Destination and Optional Tasks" dialog, make sure to check the **"Add Ruby executable to your PATH"** box.
+
+Then, from the same page download the Development Kit that corresponds to your Ruby installation. Jekyll won't be fully functional without this.
+
+Run the self extracting archive, entering the path `C:\RubyDevKit` when prompted.
+
+To initialise and install the DevKit, open up a command prompt and roll up your sleeves...
+
+```
+cd C:\RubyDevKit
+ruby dk.rb init
+ruby dk.rb install
+```
+
+#### Install Jekyll and serve
+
+As with OS X, install the GitHub Pages Ruby Gem, navigate to the clone directory and run jekyll.
+
+```
+gem install github-pages
+cd CLONE_DIRECTORY
+jekyll serve
+```
