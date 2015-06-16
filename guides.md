@@ -91,11 +91,15 @@ order: 2
 
 ---
 
+{% comment %}
+
 ## [Eto]({{ site.baseurl }}/guides/eto/) (Cross-Platform)
 
 TODO
 
 ---
+
+{% endcomment %}
 
 ## [Rhino.Python]({{ site.baseurl }}/guides/rhinopython/) (Cross-Platform)
 

@@ -8,21 +8,26 @@ layout: default
 
 This site is the _future home_ of developer.rhino3d.com.  The goal of this site is to consolidate all the (now) scattered developer documentation into a single canonical site that is clear, easy-to-navigate, with consistent formatting and nomenclature.  _This site is a work-in-progress_.  
 
-The sources of content-to-be-consolidated are:
+#### If you want to...
 
-- [Rhino Developer Tools wiki](http://wiki.mcneel.com/developer/home)
-- [RhinoCommon API references](http://4.rhino3d.com/5/rhinocommon/)
-- [C++ SDK API references](http://4.rhino3d.com/5/rhinocppsdk/idx.html)
-- [RhinoCommon samples on GitHub](https://github.com/mcneel/rhinocommon/tree/master/examples)
-- [DaleF's CsCommands](https://github.com/dalefugier/SampleCsCommands/)
-- [Doxygen Docs (on McNeel intranet)](http://phab.mcneel.com/docs/rhino/6/rhinocommon/)
-- Dale Lear's Developer Meeting Notes
+<style>
+table {
+    margin-left:auto;
+    margin-right:auto;
+}
+</style>
+
+| Write a plugin, use... | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Automate tasks, use... | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |  Read & write 3dm files, use... |
+|:----:|:----:|:----:|:----:|:----:|
+| <a href="{{ site.baseurl }}/guides/rhinocommon/"> ![RhinoCommon]({{ site.baseurl }}/images/rhinocommon_logo.png){:height="140px" width="160px"} </a> | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | <a href="{{ site.baseurl }}/guides/rhinopython/"> ![Rhino.Python]({{ site.baseurl }}/images/rhino_python_logo.png){:height="140px" width="160px"} </a> | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | <a href="{{ site.baseurl }}/guides/opennurbs/"> ![openNURBS]({{ site.baseurl }}/images/opennurbs_logo.png){:height="140px" width="160px"} </a> |
+
+<br />
 
 This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of the page.  See [contributing to this website](#this-website) below for more details.
 
 ## Overview
 
-Rhino exposes purpose-built APIs in C#, C/C++, VB.NET, and Python...
+Rhino exposes purpose-built APIs in C#, C/C++, VB.NET, VBScript, and Python...
 
 | API | &nbsp; &nbsp; &nbsp; &nbsp; | Platforms | &nbsp; &nbsp; &nbsp; &nbsp; | Languages |  &nbsp; &nbsp; &nbsp; &nbsp; | Primary Uses |
 |:----|:----:|:------------------------:|:----:|:----------:|:----:|:----|
@@ -130,8 +135,22 @@ For scheduling and travel arrangements in Barcelona, contact [Carlos Pérez](mai
 Ported from: http://wiki.mcneel.com/developer/training
 {% endcomment %}
 
+
 ## FAQ
 
 - What SDK is right for me?
 - What is Mono?
 - Other questions?
+
+
+## TODO
+
+The sources of content-to-be-consolidated are:
+
+- [Rhino Developer Tools wiki](http://wiki.mcneel.com/developer/home)
+- [RhinoCommon API references](http://4.rhino3d.com/5/rhinocommon/)
+- [C++ SDK API references](http://4.rhino3d.com/5/rhinocppsdk/idx.html)
+- [RhinoCommon samples on GitHub](https://github.com/mcneel/rhinocommon/tree/master/examples)
+- [DaleF's CsCommands](https://github.com/dalefugier/SampleCsCommands/)
+- [Doxygen Docs (on McNeel intranet)](http://phab.mcneel.com/docs/rhino/6/rhinocommon/)
+- Dale Lear's Developer Meeting Notes
