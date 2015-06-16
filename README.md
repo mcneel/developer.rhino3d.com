@@ -46,5 +46,64 @@ Open Terminal and cd to the folder that contains the cloned developer-rhino3d-co
 ![Windows Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/win_logo_small.png) 
 #### Testing and authoring gh pages locally on your Windows computer before pushing them to GitHub web.
 
+**[Jekyll](http://jekyllrb.com/docs/windows/)** is the main tools to compile and serve the website.  While not officially supported in Windows, it does work. There are many prodcuts to install to prepare the computer for Jekyll. These instructiosn are an based on, but updated from the original instructions to [install Jekyll on Windows](http://jekyll-windows.juthilo.com/)
+
+##### Install Ruby: 2.1.6 (x86 or x64) - http://rubyinstaller.org/downloads/
+
+We recommend you use Ruby 2.1.X installers. These provide a stable language and a extensive list of packages (gems) that are compatible and updated.
+
+  1. **Important** - This file may downloaded as a blocked application in Windows.  
+   1. Move the exe out of the downloads folders. 
+   2. Right-click and go to propterties.
+   3.  If it is activated, click on Unblock.
+  2.  Start the installer.
+  3. When at the "Installation Destination and Optional Tasks" dialog, make sure to check the **"Add Ruby executable to your PATH"** box.
+ 
+##### Install Ruby DevKit - http://rubyinstaller.org/downloads/
+
+  1. On Ruby page under the Development Kit heading along the left column of the page, find the kit that corresponds to your operating system and Ruby installation.  For Ruby v2.0.0 the file will begin with ```DevKet-mingw64```.
+  2. Download the self extracting archive.
+  3. When executing the tile, it will ask for a directory. Enter a path with no spaces, for instance ```C:\rubydevkit\```
+ 
+##### Initialize the DevKit and bind it to Ruby
+
+  1. Open the Commandline as Administrator in Windows
+  2. Navigate to the RubyDevKit folder  ```C:\rubydevkit\```
+  3. Type the command to initialize 
+    ```ruby dk.rb init```
+  4. A message should apear that reads  
+    ```Intialization complete!...```
+
+##### Install Python - https://www.python.org/
+These insturcutions were written using Python 2.7. As of February, 2015, there is a new Python 3.x available.  Python is required for ```pygments.rb``` used by the Liquid templating engine.
+  1. Downlaod the appropriate Python for Windows.
+  2. Install Python.
+  3. Add the Python directory to the Windows Environment Path.
+ 
+##### Install Jekyll
+  1. Using the Commandline in Windows
+  2. Type: ```gem install jekyll```
+  3. After a minute it should go through a large install process
+
+##### Install Git-Pages
+  1. Using the Commandline in Windows
+  2. Type: ```gem install git-pages```
+  3. After a minute it should go through a large install process
+
+##### Using Jekyll: serving / building
+
+Open Terminal and cd to the folder that contains the cloned developer-rhino3d-com.git repository.
+
+  - launch webserver:  
+    ```jekyll serve```
+
+    Once Jekyll has served the page it will print:
+    ```http://127.0.0.1:4000/developer-rhino3d-com``` (for example).  Local changes to the repository should be reflected upon a page-refresh of the locally served page.
+
+
+
+
+
+
 
 
