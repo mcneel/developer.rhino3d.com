@@ -23,7 +23,7 @@ Notice that **'gh-pages'** is the only branch. Everything committed to this bran
 ![Mac Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/mac_logo_small.png)
 ### Mac OS X
 
-Mac OS X Yosemite ships with Ruby and RubyGems, however it's not wise to mess around with this installation. Instead, install your own Ruby using [Homebrew](http://brew.sh).
+Mac OS X Yosemite ships with Ruby and RubyGems, however it's [not wise](https://github.com/mcneel/developer-rhino3d-com/pull/2#issuecomment-112601698) to mess around with this installation. Instead, install your own Ruby using [Homebrew](http://brew.sh).
 
 #### Install Homebrew and Ruby
 
