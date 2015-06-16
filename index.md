@@ -6,7 +6,7 @@ layout: default
 
 **Rhino developer tools are royalty free and include support.**
 
-This site is the home of all Developer Documentation relating to [Rhinoceros 3D](www.rhino3d.com).  _This website is a work-in-progress_.  The entire site is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of the page.  See [contributing to this website](#this-website) below for more details.
+This site is the [future home](#todo) of all Developer Documentation relating to [Rhinoceros 3D](www.rhino3d.com).  _This website is a work-in-progress_.  The entire site is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of the page.  See [contributing to this website](#this-website) below for more details.
 
 ## Start Here
 
@@ -47,15 +47,21 @@ Rhino exposes purpose-built APIs in C#, C/C++, VB.NET, VBScript, and Python...
 | &nbsp; &nbsp; |
 {: rules="groups"}
 
+Still unclear?  Browse the [Guides]({{ site.baseurl }}/guides/).  Ask a question in [the Forum](#discourse).  Check out the [FAQ](#faq) below. Ask [a developer](#contacts).
+
+<a id="contributing"></a>
 
 ## Contributing
 
 Hey, make yourself useful!
 
+<a id="github"></a>
+
 #### GitHub
 
 Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub](http://github.com/).  [RhinoCommon](https://github.com/mcneel/rhinocommon) - our cross-platform .NET API - is a great example. Even [this very website](https://github.com/mcneel/developer-rhino3d-com) you are reading now. Browse source, fork a repo, correct a typo: we welcome participation and pull-requests.
 
+<a id="discourse"></a>
 
 #### Discourse
 
@@ -65,15 +71,21 @@ Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub]
 - [Scripting](http://discourse.mcneel.com/c/scripting): Topics related to RhinoScript and Python scripting.
 - [Grasshopper developer](http://discourse.mcneel.com/c/grasshopper-developer): VB.NET, C#, and Python in Grasshopper components.
 
+<a id="report-bugs"></a>
+
 #### Report Bugs
 
 Whenever you encounter something that doesn't work as it should, we'd love it if you could file a bug report.  At McNeel, we use [YouTrack](http://mcneel.myjetbrains.com/youtrack/) to track issues and bugs.  YouTrack requires that you create a login. The vast majority of bugs are visible to the public.  Please report issues or bugs with our APIs or SDKs on YouTrack.
 
-#### This website <a id="this-website"></a>
+<a id="this-website"></a>
+
+#### This website
 
 This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of any page.  If you are a McNeel employee, you should already have permissions to commit to this repository.  If you are a Rhino Plugin Developer, you can [request permissions to commit](mailto:steve@mcneel.com).  Anyone can clone the repository and submit a pull-request.
 
 This site uses [Markdown](http://daringfireball.net/projects/markdown/) - specifically [Kramdown](http://kramdown.gettalong.org/quickref.html) - as the base-format for all content.  In the [Guides]({{ site.baseurl }}/guides) area of the site, in the [Developer Docs]({{ site.baseurl }}/guides#dev-docs) section, you will find a number of references to get started contributing to this site.
+
+<a id="contacts"></a>
 
 ## Contacts
 
@@ -87,12 +99,16 @@ Who to talk to for what:
 - Curtis Wensley (Eto) - [curtis@mcneel.com](mailto:curtis@mcneel.com) - [github.com/cwensley](http://github.com/cwensley)
 - Dan Belcher (RhinoMobile) - [dan@mcneel.com](mailto:dan@mcneel.com) - [github.com/dbelcher](http://github.com/dbelcher)
 
+<a id="plugin-distribution"></a>
+
 ## Plugin Distribution
 
 - Food4Rhino
 - package manager
 
-## Rhino Developer Training <a id="rhino-developer-training"></a>
+<a id="rhino-developer-training"></a>
+
+## Rhino Developer Training
 
 Developer training is a custom, one-on-one session designed to help you become more familiar with the Rhino C++ SDK or the RhinoCommon (.NET) SDK, and to get help in improving your Rhino plug-in product.
 
@@ -137,6 +153,7 @@ For scheduling and travel arrangements in Barcelona, contact [Carlos Pérez](mai
 Ported from: http://wiki.mcneel.com/developer/training
 {% endcomment %}
 
+<a id="faq"></a>
 
 ## FAQ
 
@@ -144,6 +161,7 @@ Ported from: http://wiki.mcneel.com/developer/training
 - What is Mono?
 - Other questions?
 
+<a id="todo"></a>
 
 ## TODO
 
