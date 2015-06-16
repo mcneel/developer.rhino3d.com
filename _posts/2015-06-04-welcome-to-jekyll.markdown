@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Future home of the developer blog aggregator!"
 date:   2015-06-04 15:38:23
 categories: jekyll update
 ---
