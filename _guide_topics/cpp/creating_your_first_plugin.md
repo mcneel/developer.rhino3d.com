@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Creating your first C/C++ plugin for Rhino
 author: dale@mcneel.com
 categories: ['General']

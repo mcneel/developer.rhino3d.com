@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Overview of RhinoScript
 author: dale@mcneel.com
 categories: ['Overview']

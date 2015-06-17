@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: openNURBS 5.0 Migration Guide
 author: dalelear@mcneel.com
 categories: ['Overview']

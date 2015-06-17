@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Material, Environment, and Texture Editors
 author: andy@mcneel.com
 categories: ['Fundamentals']

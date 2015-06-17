@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Overview of Grasshopper Components
 author: steve@mcneel.com
 categories: ['Overview']

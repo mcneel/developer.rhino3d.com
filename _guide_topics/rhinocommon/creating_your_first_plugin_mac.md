@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Creating Your First Plugin (Mac)
 author: dan@mcneel.com
 categories: ['GettingStarted']

@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Blog
 permalink: /blog/
 order: 5

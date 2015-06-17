@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Installing Tools (Mac)
 author: dan@mcneel.com
 categories: ['GettingStarted']

@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Creating Plugins for Zoo
 author: dale@mcneel.com
 categories: ['Fundamentals']

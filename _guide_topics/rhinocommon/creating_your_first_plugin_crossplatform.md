@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Creating Your First Plugin (Cross-Platform)
 author: steve@mcneel.com
 categories: ['GettingStarted']

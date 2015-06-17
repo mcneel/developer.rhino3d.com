@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: API
 permalink: /api/
 order: 3

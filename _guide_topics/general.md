@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: General Guides
 order: 0
 ---

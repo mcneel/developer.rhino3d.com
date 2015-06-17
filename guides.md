@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Guides
 permalink: /guides/
 order: 2

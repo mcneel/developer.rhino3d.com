@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Authoring content
 author: dan@mcneel.com
 categories: ['General']
@@ -50,7 +50,7 @@ Here is an example of the YAML for [a page]({{ site.baseurl }}/guides/general):
 
 ```yaml
 ---
-layout: tab-page
+layout: toc-page
 title: General Guides
 order: 0
 ---
@@ -74,7 +74,7 @@ Here is an example of the YAML for this guide:
 
 ```yaml
 ---
-layout: tab-page
+layout: toc-page
 title: Authoring content
 author: dan@mcneel.com
 categories: ['General']

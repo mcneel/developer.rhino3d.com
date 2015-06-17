@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Rhino Developer Docs Guides
 order: 12
 ---

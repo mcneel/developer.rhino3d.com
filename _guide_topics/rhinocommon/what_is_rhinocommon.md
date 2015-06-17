@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: What is RhinoCommon?
 author: steve@mcneel.com
 categories: ['Overview']

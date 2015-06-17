@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Creating C/C++ Plugins that use the Zoo
 author: dale@mcneel.com
 categories: ['Fundamentals']

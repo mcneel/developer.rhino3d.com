@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Getting Started with RhinoMobile
 author: dan@mcneel.com
 categories: ['GettingStarted']

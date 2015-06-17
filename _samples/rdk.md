@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: RDK Samples
 order: 8
 ---

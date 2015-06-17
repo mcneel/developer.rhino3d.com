@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: C/C++ Samples
 order: 5
 ---

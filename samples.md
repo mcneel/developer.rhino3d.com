@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Samples
 permalink: /samples/
 order: 4

@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Zoo Developer Guides
 order: 11
 ---

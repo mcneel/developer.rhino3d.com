@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: What is a Zoo Plugin?
 author: dale@mcneel.com
 categories: ['Overview']

@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: What are Mono and Xamarin?
 author: dan@mcneel.com
 categories: ['Overview']

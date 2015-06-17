@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Grasshopper Developer Guides
 order: 6
 ---

@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Creating Your First Plugin (Windows)
 author: giulio@mcneel.com
 categories: ['GettingStarted']

@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: RhinoCommon Samples
 order: 1
 ---

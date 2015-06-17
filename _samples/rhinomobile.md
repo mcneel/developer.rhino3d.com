@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: RhinoMobile Samples
 order: 10
 ---

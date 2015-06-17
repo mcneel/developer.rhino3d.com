@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Creating a skin using C/C++
 author: dale@mcneel.com
 categories: ['Advanced']

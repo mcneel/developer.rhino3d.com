@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Overview of Rhino.Python
 author: alain@mcneel.com
 categories: ['Overview']

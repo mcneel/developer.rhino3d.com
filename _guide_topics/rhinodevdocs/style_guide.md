@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Rhino Developer Docs Style Guide
 author: dan@mcneel.com
 categories: ['General']

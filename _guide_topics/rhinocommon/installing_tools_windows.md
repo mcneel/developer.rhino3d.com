@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Installing Tools (Windows)
 author: steve@mcneel.com
 categories: ['GettingStarted']

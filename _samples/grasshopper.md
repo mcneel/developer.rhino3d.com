@@ -1,5 +1,5 @@
 ---
-layout: tab-page
+layout: toc-page
 title: Grasshopper Component Samples
 order: 6
 ---
