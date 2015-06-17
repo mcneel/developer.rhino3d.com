@@ -29,6 +29,7 @@ collections:
   - faqs
   - guide_topics
   - guide_advanced_topics
+  - api
   - glossary
   - cheat_sheet_items
   - samples
@@ -37,6 +38,9 @@ collections:
   guide_topics:
     output: true
     permalink: /guides/:path/
+  api:
+    output: true
+    permalink: /api/:path/
   samples:
     output: true
     permalink: /samples/:path/

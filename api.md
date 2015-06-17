@@ -6,7 +6,7 @@ order: 3
 ---
 # API Reference  
 
-<a href="http://mcneel.github.io/rhinocommon-api-docs/" target="_blank">RhinoCommon</a>
-<a href="http://mcneel.github.io/rhinoscriptsyntax-api-docs/" target="_blank">RhinoScriptSyntax</a>  
+<a href="{{ site.baseurl }}/api/RhinoCommon" target="_blank">RhinoCommon</a>
+<a href="{{ site.baseurl }}/api/RhinoScriptSyntax" target="_blank">RhinoScriptSyntax</a>  
 
 (open in separate tabs)

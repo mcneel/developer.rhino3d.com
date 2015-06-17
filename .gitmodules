@@ -1,0 +1,6 @@
+[submodule "api/RhinoScriptSyntax"]
+	path = api/RhinoScriptSyntax
+	url = https://github.com/mcneel/rhinoscriptsyntax-api-docs.git
+[submodule "api/RhinoCommon"]
+	path = api/RhinoCommon
+	url = https://github.com/mcneel/rhinocommon-api-docs.git
