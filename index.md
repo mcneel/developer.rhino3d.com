@@ -85,14 +85,14 @@ This site uses [Markdown](http://daringfireball.net/projects/markdown/) - specif
 
 Who to talk to for what:
 
-- Steve Baer (RhinoCommon) - [steve@mcneel.com](mailto:steve@mcneel.com) - [github.com/sbaer](http://github.com/sbaer)
-- Alain Cormier (Rhino.Python) - [alain@mcneel.com](mailto:alain@mcneel.com) - [github.com/acormier](http://github.com/acormier)
-- Dale Fugier (C/C++ SDK, Zoo, RAP) - [dale@mcneel.com](mailto:dale@mcneel.com) - [github.com/dalefugier](http://github.com/dalefugier)
-- Dale Lear (openNURBS) - [dalelear@mcneel.com(mailto:dalelear@mcneel.com) - [github.com/dalelear](https://github.com/dalelear)
-- David Rutten (Grasshopper) - [david@mcneel.com](mailto:david@mcneel.com) - [github.com/DavidRutten](http://github.com/DavidRutten)
-- Andy le Bihan (RDK) - [andy@mcneel.com](mailto:andy@mcneel.com) - [github.com/andylebihan](http://github.com/andylebihan)
-- Curtis Wensley (Eto) - [curtis@mcneel.com](mailto:curtis@mcneel.com) - [github.com/cwensley](http://github.com/cwensley)
-- Dan Belcher (RhinoMobile) - [dan@mcneel.com](mailto:dan@mcneel.com) - [github.com/dbelcher](http://github.com/dbelcher)
+- **Steve Baer** (RhinoCommon) - **@stevebaer** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- **Alain Cormier** (Rhino.Python) - **@alain** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- **Dale Fugier** (C/C++ SDK, Zoo, RAP) - **@dale** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- **Dale Lear** (openNURBS) - **@dalelear** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- **David Rutten** (Grasshopper) - **[David Rutten](http://www.grasshopper3d.com/profile/DavidRutten)** on the [Grasshopper 3D forum](http://www.grasshopper3d.com)
+- **Andy le Bihan** (RDK) - **@andy** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- **Curtis Wensley** (Eto) - **@curtisw** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- **Dan Belcher** (RhinoMobile) - **@dan** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
 
 
 ## Plugin Distribution
