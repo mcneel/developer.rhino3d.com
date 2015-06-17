@@ -8,7 +8,7 @@ apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['Extend', 'Curve', 'Sample']
 order: 1
-description: This is a sample that shows how to extend a curve object
+description: This shows how to extend a curve object
 ---
 
 ```cs
