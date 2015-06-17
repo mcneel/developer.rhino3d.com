@@ -5,7 +5,7 @@ author: dale@mcneel.com
 categories: ['Curves']
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
-languages: ['C#']
+languages: ['C#', 'Python', 'VB.NET']
 keywords: ['Extend', 'Curve', 'Sample']
 order: 1
 description: This shows how to extend a curve object

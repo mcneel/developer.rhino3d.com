@@ -107,19 +107,20 @@ The [API documentation]({{ site.baseurl }}/api/) is automatically generated from
 
 Samples are contained in the `/_samples/` directory.
 
-Here is an example of the YAML for a sample:
+Here is an example of the YAML for [this sample]({{ site.baseurl }}/samples/rhinocommon/extend_a_curve_object/):
 
 ```yaml
 ---
-layout: tab-page
+layout: code-sample
 title: Extend a Curve Object
 author: dale@mcneel.com
 categories: ['Curves']
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
-languages: ['C#']
+languages: ['C#', 'Python', 'VB.NET']
 keywords: ['Extend', 'Curve', 'Sample']
 order: 1
+description: This shows how to extend a curve object
 ---
 ```
 
@@ -134,6 +135,7 @@ The YAML fields for Samples determine:
 * **languages**: The programming languages this sample references.
 * **keywords**: Keywords related to this sample (un-used, as of yet).
 * **order**: The relative sort-order of this sample in any list.
+* **description**: A brief description of what the sample does.
 
 ### Glossary Entries <a id="glossary_entries"></a>
 
