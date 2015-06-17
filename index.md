@@ -66,6 +66,7 @@ Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub]
 
 - [Rhino Developer](http://discourse.mcneel.com/c/rhino-developer): Customizing Rhino through VB.NET, C#, C++, RhinoScript, and Python.
 - [Scripting](http://discourse.mcneel.com/c/scripting): Topics related to RhinoScript and Python scripting.
+- [openNURBS](http://discourse.mcneel.com/c/opennurbs): Topics related to the openNURBS toolkit.
 - [Grasshopper developer](http://discourse.mcneel.com/c/grasshopper-developer): VB.NET, C#, and Python in Grasshopper components.
 
 
