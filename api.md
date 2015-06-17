@@ -4,7 +4,9 @@ title: API
 permalink: /api/
 order: 3
 ---
+# API Reference  
 
-#### doxygen generated API reference will go here.
+<a href="http://mcneel.github.io/rhinocommon-api-docs/" target="_blank">RhinoCommon</a>
+<a href="http://mcneel.github.io/rhinoscriptsyntax-api-docs/" target="_blank">RhinoScriptSyntax</a>  
 
-In the meantime [here](http://phab.mcneel.com/docs/rhino/6/rhinocommon/) is one that Dan generated.  You need to be on the intranet.
+(open in separate tabs)

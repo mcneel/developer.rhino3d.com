@@ -4,6 +4,7 @@ title: Samples
 permalink: /samples/
 order: 4
 ---
+# All Samples  
 
 <div class="trigger">
   <ul>
