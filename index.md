@@ -29,9 +29,9 @@ The above three paths are not the only options!  Keep reading for more...
 
 ## Overview
 
-Rhino exposes purpose-built APIs in C#, C/C++, VB.NET, VBScript, and Python...
+Rhino exposes purpose-built SDKs in C#, C/C++, VB.NET, VBScript, and Python...
 
-| API | &nbsp; &nbsp; &nbsp; &nbsp; | Platforms | &nbsp; &nbsp; &nbsp; &nbsp; | Languages |  &nbsp; &nbsp; &nbsp; &nbsp; | Primary Uses |
+| SDK | &nbsp; &nbsp; &nbsp; &nbsp; | Platforms | &nbsp; &nbsp; &nbsp; &nbsp; | Languages |  &nbsp; &nbsp; &nbsp; &nbsp; | Primary Uses |
 |:----|:----:|:------------------------:|:----:|:----------:|:----:|:----|
 | [RhinoCommon]({{ site.baseurl }}/guides/rhinocommon/ "RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper")  |  &nbsp; &nbsp; &nbsp; &nbsp; | ![Windows]({{ site.baseurl }}/images/win_logo_small.png "Microsoft Windows"){:height="35px" width="35px"} &nbsp; ![Mac OS X]({{ site.baseurl }}/images/mac_logo_small.png "Mac OS X"){:height="35px" width="35px"} |  &nbsp; &nbsp; &nbsp; &nbsp;  | ![C#]({{ site.baseurl }}/images/cs_logo_small.png "C# .NET"){:height="35px" width="35px"} &nbsp; ![VB.NET]({{ site.baseurl }}/images/vb_logo_small.png "Microsoft VB.NET"){:height="35px" width="35px"} &nbsp; ![Python]({{ site.baseurl }}/images/python_logo_small.png "Python via IronPython"){:height="35px" width="35px"} |   &nbsp; &nbsp; &nbsp; &nbsp; |  Cross-platform plugins.  Grasshopper plugins.
 | [Rhino.Python]({{ site.baseurl }}/guides/rhinopython/ "Rhino.Python: Pythonic in three dimensions!")  |  &nbsp; &nbsp; &nbsp; &nbsp; | ![Windows]({{ site.baseurl }}/images/win_logo_small.png "Microsoft Windows"){:height="35px" width="35px"} &nbsp; ![Mac OS X]({{ site.baseurl }}/images/mac_logo_small.png "Mac OS X"){:height="35px" width="35px"} |  &nbsp; &nbsp; &nbsp; &nbsp;  | ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} &nbsp; ![na]({{ site.baseurl }}/images/blank.png){:height="35px" width="35px"} &nbsp; ![Python]({{ site.baseurl }}/images/python_logo_small.png "Python via IronPython"){:height="35px" width="35px"} |   &nbsp; &nbsp; &nbsp; &nbsp; |  Cross-platform scripting.
