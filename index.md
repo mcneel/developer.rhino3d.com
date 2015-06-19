@@ -46,55 +46,55 @@ Rhino exposes purpose-built SDKs in C#, C/C++, VB.NET, VBScript, and Python...
   <tr>
     <td><a href="{{ site.baseurl }}/guides/rhinopython/" title="Rhino.Python: Pythonic in three dimensions!"> Rhino.Python</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon"></td>
-	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon"><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon"></td>
     <td class="index_table_primary_use">Cross-platform scripting.</td>  
   </tr>
   <tr>
     <td><a href="{{ site.baseurl }}/guides/opennurbs/" title="openNURBS is free and open source"> openNURBS</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon"></td>
-	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon"><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon"></td>
     <td class="index_table_primary_use">openNURBS 3dm file IO outside Rhino.</td>  
   </tr>
   <tr>
     <td><a href="{{ site.baseurl }}/guides/rhinoscript/" title="RhinoScript is based on Microsoft's VBScript language"> RhinoScript</a></td>
-	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon"></td>
-	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon"><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon"></td>
     <td class="index_table_primary_use">Rhino for Windows scripting.</td>  
   </tr>
   <tr>
     <td><a href="{{ site.baseurl }}/guides/cpp/" title="C/C++ SDK for Rhino for Windows"> C/C++</a></td>
-	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon"></td>
-	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon"><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon"></td>
     <td class="index_table_primary_use">Grasshopper plugins.</td>  
   </tr>
    <tr>
     <td><a href="{{ site.baseurl }}/guides/grasshopper/" title="Grasshopper Component Development"> Grasshopper</a></td>
-	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon"><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon"></td>
     <td class="index_table_primary_use">Renderer plugin development on Windows.</td>  
   </tr>
   <tr>
     <td><a href="{{ site.baseurl }}/guides/rdk/" title="Renderer Development Kit"> RDK</a></td>
-	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon"></td>
-	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon"><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon"></td>
     <td class="index_table_primary_use">Renderer plugin development on Windows.</td>  
   </tr>
   <tr>
     <td><a href="{{ site.baseurl }}/guides/rap/" title="Rhino Application Platform"> RAP</a></td>
-	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon"></td>
-	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon"><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon"></td>
     <td class="index_table_primary_use">"Skinning" Rhino for Windows.</td>  
   </tr>
   <tr>
     <td><a href="{{ site.baseurl }}/guides/zoo/" title="Zoo License Manager Plugins"> Zoo</a></td>
-	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon"></td>
-	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon"><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon"></td>
     <td class="index_table_primary_use">RZoo license manager plugins on Windows.</td>  
   </tr>
   <tr>
     <td><a href="{{ site.baseurl }}/guides/rhinomobile/" title="Tools for using 3dm files in mobile applications"> RhinoMobile</a></td>
-	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon"></td>
-	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon"><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="index_table_icon"><img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"></td>
     <td class="index_table_primary_use">3D mobile application development.</td>  
   </tr>
  </tbody>
