@@ -5,3 +5,17 @@
 .tab-content .active {
   display: block;
 }
+
+/*
+##############################################################################
+##  Index.md Page
+##############################################################################
+*/
+.index_table_icon {
+	width:32px;
+	height:32px;
+}
+.index_table_primary_use {
+	margin:10px;
+	font-size:0.85em;
+}
