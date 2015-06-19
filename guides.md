@@ -26,7 +26,7 @@ order: 2
 
 ---
 
-## [RhinoCommon]({{ site.baseurl }}/guides/rhinocommon/) (Cross-Platform)
+## [RhinoCommon]({{ site.baseurl }}/guides/rhinocommon/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
 ### Overview
 <div class="trigger">
@@ -93,7 +93,7 @@ order: 2
 
 {% comment %}
 
-## [Eto]({{ site.baseurl }}/guides/eto/) (Cross-Platform)
+## [Eto]({{ site.baseurl }}/guides/eto/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
 TODO
 
@@ -101,63 +101,63 @@ TODO
 
 {% endcomment %}
 
-## [Rhino.Python]({{ site.baseurl }}/guides/rhinopython/) (Cross-Platform)
+## [Rhino.Python]({{ site.baseurl }}/guides/rhinopython/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
 TODO
 
 
 ---
 
-## [openNURBS Toolkit]({{ site.baseurl }}/guides/opennurbs/) (Cross-Platform)
+## [openNURBS Toolkit]({{ site.baseurl }}/guides/opennurbs/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
 TODO
 
 
 ---
 
-## [C/C++]({{ site.baseurl }}/guides/cpp/) (Windows)
+## [C/C++]({{ site.baseurl }}/guides/cpp/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
 TODO
 
 
 ---
 
-## [Grasshopper]({{ site.baseurl }}/guides/grasshopper/) (Windows)
+## [Grasshopper]({{ site.baseurl }}/guides/grasshopper/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
 TODO
 
 
 ---
 
-## [RhinoScript]({{ site.baseurl }}/guides/rhinoscript/) (Windows)
+## [RhinoScript]({{ site.baseurl }}/guides/rhinoscript/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
 TODO
 
 
 ---
 
-## [Renderer Development Kit (RDK)]({{ site.baseurl }}/guides/rdk/) (Windows)
+## [Renderer Development Kit (RDK)]({{ site.baseurl }}/guides/rdk/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
 TODO
 
 
 ---
 
-## [Rhino Application Platform (RAP)]({{ site.baseurl }}/guides/rap/) (Windows)
+## [Rhino Application Platform (RAP)]({{ site.baseurl }}/guides/rap/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
 TODO
 
 
 ---
 
-## [RhinoMobile]({{ site.baseurl }}/guides/rhinomobile/) (iOS & Android)
+## [RhinoMobile]({{ site.baseurl }}/guides/rhinomobile/) <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
 
 TODO
 
 
 ---
 
-## [Zoo License Manager]({{ site.baseurl }}/guides/zoo/) (Windows)
+## [Zoo License Manager]({{ site.baseurl }}/guides/zoo/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
