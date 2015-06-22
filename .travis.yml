@@ -1,4 +1,8 @@
 language: ruby
 rvm:
-  - 2.1.0
+  - 2.1
 script: "bundle exec jekyll build --safe"
+branches:
+  only:
+    - gh-pages
+    - /pages-(.*)/ # test every branch which starts with "pages-"
