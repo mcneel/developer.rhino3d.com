@@ -12,13 +12,11 @@ This site is the [future home](#todo) of all Developer Documentation relating to
 
 #### If you want to...
 
+<br>
 
-| <a href="{{ site.baseurl }}/guides/rhinocommon/"> ![RhinoCommon]({{ site.baseurl }}/images/rhinocommon_logo.png "RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper"){:class="index_use_images img-responsive"} </a> | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | <a href="{{ site.baseurl }}/guides/rhinopython/"> ![Rhino.Python]({{ site.baseurl }}/images/rhino_python_logo.png "Rhino.Python: Pythonic in three dimensions!"){:class="index_use_images img-responsive"} </a> | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | <a href="{{ site.baseurl }}/guides/opennurbs/"> ![openNURBS]({{ site.baseurl }}/images/opennurbs_logo.png "openNURBS is free and open source"){:class="index_use_images img-responsive"} </a> |
-|:----:|:----:|:----:|:----:|:----:|
-| Write a plugin, use... | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Automate tasks, use... | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |  Read & write 3dm files, use... |
+| <a href="{{ site.baseurl }}/guides/rhinocommon/"> ![RhinoCommon]({{ site.baseurl }}/images/rhinocommon_logo_intro.png "RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper"){:class="index_use_images img-responsive"} </a> | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | <a href="{{ site.baseurl }}/guides/rhinopython/"> ![Rhino.Python]({{ site.baseurl }}/images/rhino_python_logo_intro.png "Rhino.Python: Pythonic in three dimensions!"){:class="index_use_images img-responsive"} </a> | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | <a href="{{ site.baseurl }}/guides/opennurbs/"> ![openNURBS]({{ site.baseurl }}/images/opennurbs_logo_intro.png "openNURBS is free and open source"){:class="index_use_images img-responsive"} </a> |
 
-
-<br />
+<br>
 
 The above three paths are not the only options!  Keep reading for more...
 
@@ -36,7 +34,7 @@ Rhino exposes purpose-built SDKs in C#, C/C++, VB.NET, VBScript, and Python...
       <th>Primary Uses</th>
     </tr>
   </thead>
-  <tbody class="table-striped">
+  <tbody class="table-striped index_table">
   <tr>
     <td><a href="{{ site.baseurl }}/guides/rhinocommon/" title="RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper"> RhinoCommon</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon"></td>

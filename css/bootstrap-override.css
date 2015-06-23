@@ -12,7 +12,11 @@
 ##############################################################################
 */
 .index_use_images {
+/* Use only width to control an image responsive img.  Bootstrap will flot the height. */
 	width:160px;
+}
+tbody.index_table tr td{
+	vertical-align:middle;
 }
 .index_table_icon {
 	width:32px;
