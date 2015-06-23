@@ -11,7 +11,9 @@
 ##  Index.md Page
 ##############################################################################
 */
-
+.index_use_images {
+	width:160px;
+}
 .index_table_icon {
 	width:32px;
 	height:32px;

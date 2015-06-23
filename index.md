@@ -13,7 +13,7 @@ This site is the [future home](#todo) of all Developer Documentation relating to
 #### If you want to...
 
 
-| <a href="{{ site.baseurl }}/guides/rhinocommon/"> ![RhinoCommon]({{ site.baseurl }}/images/rhinocommon_logo.png "RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper"){:height="140px" width="160px" class="img-responsive"} </a> | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | <a href="{{ site.baseurl }}/guides/rhinopython/"> ![Rhino.Python]({{ site.baseurl }}/images/rhino_python_logo.png "Rhino.Python: Pythonic in three dimensions!"){:height="140px" width="160px" class="img-responsive"} </a> | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | <a href="{{ site.baseurl }}/guides/opennurbs/"> ![openNURBS]({{ site.baseurl }}/images/opennurbs_logo.png "openNURBS is free and open source"){:height="140px" width="160px" class="img-responsive"} </a> |
+| <a href="{{ site.baseurl }}/guides/rhinocommon/"> ![RhinoCommon]({{ site.baseurl }}/images/rhinocommon_logo.png "RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper"){:class="index_use_images img-responsive"} </a> | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | <a href="{{ site.baseurl }}/guides/rhinopython/"> ![Rhino.Python]({{ site.baseurl }}/images/rhino_python_logo.png "Rhino.Python: Pythonic in three dimensions!"){:class="index_use_images img-responsive"} </a> | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | <a href="{{ site.baseurl }}/guides/opennurbs/"> ![openNURBS]({{ site.baseurl }}/images/opennurbs_logo.png "openNURBS is free and open source"){:class="index_use_images img-responsive"} </a> |
 |:----:|:----:|:----:|:----:|:----:|
 | Write a plugin, use... | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Automate tasks, use... | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |  Read & write 3dm files, use... |
 
