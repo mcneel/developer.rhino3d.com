@@ -2,13 +2,17 @@
 layout: toc-page
 ---
 
+
 # Welcome
+{: .group }
 
 **Rhino developer tools are royalty free and include support.**
 
 This site is the [future home](#todo) of all Developer Documentation relating to [Rhinoceros 3D](http://www.rhino3d.com).  [_This website is a work-in-progress_](#todo).  The entire site is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of the page.  See [contributing to this website](#this-website) below for more details.
 
+
 ## Start Here
+{: .group }
 
 #### If you want to...
 
@@ -21,6 +25,7 @@ This site is the [future home](#todo) of all Developer Documentation relating to
 The above three paths are not the only options!  Keep reading for more...
 
 ## Overview
+{: .group }
 
 Rhino exposes purpose-built SDKs in C#, C/C++, VB.NET, VBScript, and Python...
 
@@ -87,7 +92,7 @@ Rhino exposes purpose-built SDKs in C#, C/C++, VB.NET, VBScript, and Python...
     <td><a href="{{ site.baseurl }}/guides/zoo/" title="Zoo License Manager Plugins"> Zoo</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon"></td>
-    <td class="index_table_primary_use">RZoo license manager plugins on Windows.</td>  
+    <td class="index_table_primary_use">Zoo license manager plugins on Windows.</td>  
   </tr>
   <tr>
     <td><a href="{{ site.baseurl }}/guides/rhinomobile/" title="Tools for using 3dm files in mobile applications"> RhinoMobile</a></td>
@@ -106,16 +111,19 @@ Still unclear?  Browse the [Guides]({{ site.baseurl }}/guides/).  Ask a question
 
 
 ## Contributing
+{: .group }
 
 Hey, make yourself useful!
 
 
 #### GitHub
+{: .subgroup }
 
 Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub](http://github.com/).  [RhinoCommon](https://github.com/mcneel/rhinocommon) - our cross-platform .NET API - is a great example. Even [this very website](https://github.com/mcneel/developer-rhino3d-com) you are reading now. Browse source, fork a repo, correct a typo: we welcome participation and pull-requests.
 
 
 #### Discourse
+{: .subgroup }
 
 [discourse.mcneel.com](http://discourse.mcneel.com) is the McNeel forum.  This is the fastest place to get help.  Specific categories to  in are:
 
@@ -126,11 +134,13 @@ Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub]
 
 
 #### Report Bugs
+{: .subgroup }
 
 Whenever you encounter something that doesn't work as it should, we'd love it if you could file a bug report.  At McNeel, we use [YouTrack](http://mcneel.myjetbrains.com/youtrack/) to track issues and bugs.  YouTrack requires that you create a login. The vast majority of bugs are visible to the public.  Please report issues or bugs with our APIs or SDKs on YouTrack.
 
 
 #### This website
+{: .subgroup }
 
 This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of any page.  If you are a McNeel employee, you should already have permissions to commit to this repository.  If you are a Rhino Plugin Developer, you can [request permissions to commit](mailto:steve@mcneel.com).  Anyone can clone the repository and submit a pull-request.
 
@@ -138,6 +148,7 @@ This site uses [Markdown](http://daringfireball.net/projects/markdown/) - specif
 
 
 ## Contacts
+{: .group }
 
 Who to talk to for what:
 
@@ -152,10 +163,17 @@ Who to talk to for what:
 
 
 ## Plugin Distribution
+{: .group }
 
-- Food4Rhino
-- package manager
+#### Food4Rhino
+{: .subgroup }
 
+Lorem ipsum
+
+#### Yak
+{: .subgroup }
+
+Lorem ipsum
 
 ## Rhino Developer Training
 
@@ -204,13 +222,16 @@ Ported from: http://wiki.mcneel.com/developer/training
 
 
 ## FAQ
+{: .group }
 
 - What SDK is right for me?
 - What is Mono?
 - Other questions?
+- Foo
 
 
 ## TODO
+{: .group }
 
 This site is the _future home_ of developer.rhino3d.com.
 
