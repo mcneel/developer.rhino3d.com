@@ -83,7 +83,7 @@ tbody.index_table tr td{
     color: #999;
     border-left: 2px solid transparent;
     padding: 4px 20px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -92,7 +92,7 @@ tbody.index_table tr td{
     padding-top: 1px;
     padding-bottom: 1px;
     padding-left: 10px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /* active & hover links */
