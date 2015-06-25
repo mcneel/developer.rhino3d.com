@@ -125,7 +125,7 @@ Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub]
 #### Discourse
 {: .subgroup }
 
-[discourse.mcneel.com](http://discourse.mcneel.com) is the McNeel forum.  This is the fastest place to get help.  Specific categories to  in are:
+[discourse.mcneel.com](http://discourse.mcneel.com) is the McNeel forum.  This is the fastest place to get help.  Specific categories to post in are:
 
 - [Rhino Developer](http://discourse.mcneel.com/c/rhino-developer): Customizing Rhino through VB.NET, C#, C++, RhinoScript, and Python.
 - [Scripting](http://discourse.mcneel.com/c/scripting): Topics related to RhinoScript and Python scripting.
@@ -182,14 +182,16 @@ Developer training is a custom, one-on-one session designed to help you become m
 
 Rhino Developer Training is available at both the McNeel Headquarters in **Seattle**, and at our European Headquarters in **Barcelona**.
 
-**We provide**:
+#### We provide
+{: .subgroup }
 
 * A room and a desk for you to set up your computer.
 * A high-speed Internet connection.
 * Access to senior Rhino developers for questions and support.
 * Inexpensive lodging may be available.
 
-**You should bring**:
+#### You should bring
+{: .subgroup }
 
 Your computer with:
 
@@ -209,7 +211,8 @@ Your computer with:
   * Your Rhino plug-in project source code.
   * Any software you will need to test your plug-in, including copies of your own software.
 
-**Pricing and scheduling**
+#### Pricing and scheduling
+{: .subgroup }
 
 Developer training is free. You are responsible for paying for travel, lodging, and any other expenses.
 
