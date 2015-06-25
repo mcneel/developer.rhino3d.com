@@ -49,10 +49,8 @@
   <script>
     if (navigator.appVersion.indexOf("Win")!=-1)
     {
-      var paragraphs = document.getElementsByTagName("p");　　　　
-      for (var i = 0; i < paragraphs.length; i++) {　　　　
-        paragraphs[i].style.fontWeight = '400';　　　　
-      }
+      var body = document.getElementsByTagName("body");
+      body[0].style.fontWeight = '400';
     }
   </script>
 
