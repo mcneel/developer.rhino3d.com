@@ -61,7 +61,7 @@ Rhino exposes purpose-built SDKs in C#, C/C++, VB.NET, VBScript, and Python...
   <tr>
     <td><a href="{{ site.baseurl }}/guides/rhinoscript/" title="RhinoScript is based on Microsoft's VBScript language"> RhinoScript</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"></td>
-	<td><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/vbscript_logo_small.png" alt="Microsoft VBScript" class="index_table_icon"></td>
     <td class="index_table_primary_use">Rhino for Windows scripting.</td>  
   </tr>
   <tr>
@@ -79,7 +79,7 @@ Rhino exposes purpose-built SDKs in C#, C/C++, VB.NET, VBScript, and Python...
   <tr>
     <td><a href="{{ site.baseurl }}/guides/rdk/" title="Renderer Development Kit"> RDK</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon"></td>
-	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon"></td>
+	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon"><img src="{{ site.baseurl }}/images/vbscript_logo_small.png" alt="Microsoft VBScript" class="index_table_icon"></td>
     <td class="index_table_primary_use">Renderer plugin development on Windows.</td>  
   </tr>
   <tr>
@@ -239,7 +239,9 @@ Ported from: http://wiki.mcneel.com/developer/training
 
 This site is the _future home_ of developer.rhino3d.com.
 
-The goal of this site is to consolidate all the (now) scattered developer documentation into a single canonical site that is clear, easy-to-navigate, with consistent formatting and nomenclature.  
+The goal of this site is to consolidate all the (now) scattered developer documentation into a single canonical site that is clear, easy-to-navigate, with consistent formatting and nomenclature.
+
+This is the: [BIG TODO LIST]({{ site.baseurl }}/todolist.html)
 
 The sources of content-to-be-consolidated are:
 
@@ -250,4 +252,3 @@ The sources of content-to-be-consolidated are:
 - [DaleF's CsCommands](https://github.com/dalefugier/SampleCsCommands/)
 - [Doxygen Docs (on McNeel intranet)](http://phab.mcneel.com/docs/rhino/6/rhinocommon/)
 - Dale Lear's Developer Meeting Notes
-- [BIG TODO LIST]({{ site.baseurl }}/todolist.html)
