@@ -1,0 +1,127 @@
+---
+layout: code-sample
+title:  Screen Capture a Viewport 
+author: 
+categories: ['Other'] 
+platforms: ['Cross-Platform']
+apis: ['RhinoCommon']
+languages: ['C#', 'Python', 'VB.NET']
+keywords: ['screen', 'capture', 'viewport']
+order: 146
+description:  
+---
+
+
+
+```cs
+public class CaptureViewToBitmapCommand : Rhino.Commands.Command
+{
+  public override string EnglishName
+  {
+    get { return "csCaptureViewToBitmap"; }
+  }
+
+  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  {
+    var file_name = "";
+
+    var bitmap = doc.Views.ActiveView.CaptureToBitmap(true, true, true);
+    bitmap.MakeTransparent();
+
+    // copy bitmap to clipboard
+    Clipboard.SetImage(bitmap);
+
+    // save bitmap to file
+    var save_file_dialog = new Rhino.UI.SaveFileDialog
+    {
+      Filter = "*.bmp",
+      InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+    };
+    if (save_file_dialog.ShowDialog() == DialogResult.OK)
+    {
+      file_name = save_file_dialog.FileName;
+    }
+
+    if (file_name != "")
+      bitmap.Save(file_name);
+
+    return Rhino.Commands.Result.Success;
+  }
+}
+```
+{: #cs .tab-pane .fade .in .active}
+
+
+```vbnet
+Public Class CaptureViewToBitmapCommand
+  Inherits Rhino.Commands.Command
+  Public Overrides ReadOnly Property EnglishName() As String
+    Get
+      Return "vbCaptureViewToBitmap"
+    End Get
+  End Property
+
+  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
+    Dim file_name = ""
+
+    Dim bitmap = doc.Views.ActiveView.CaptureToBitmap(True, True, True)
+
+    ' copy bitmap to clipboard
+    Clipboard.SetImage(bitmap)
+
+    ' save bitmap to file
+    Dim save_file_dialog = New Rhino.UI.SaveFileDialog()
+    save_file_dialog.Filter = "*.bmp"
+    save_file_dialog.InitialDirectory =
+      Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+
+    If save_file_dialog.ShowDialog() = DialogResult.OK Then
+      file_name = save_file_dialog.FileName
+    End If
+
+    If file_name <> "" Then
+      bitmap.Save(file_name)
+    End If
+
+    Return Rhino.Commands.Result.Success
+  End Function
+End Class
+```
+{: #vb .tab-pane .fade .in}
+
+
+```python
+from scriptcontext import doc
+from System.Windows.Forms import *
+import Rhino.UI
+from System import Environment
+
+def RunCommand():
+  file_name = "";
+
+  bitmap = doc.Views.ActiveView.CaptureToBitmap(True, True, True)
+
+  # copy bitmap to clipboard
+  Clipboard.SetImage(bitmap)
+
+
+  # save bitmap to file
+  save_file_dialog = Rhino.UI.SaveFileDialog()
+  save_file_dialog.Filter = "*.bmp"
+  save_file_dialog.InitialDirectory = \
+    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+
+  if save_file_dialog.ShowDialog() == DialogResult.OK:
+    file_name = save_file_dialog.FileName
+
+  if file_name != "":
+    bitmap.Save(file_name)
+
+  return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+  RunCommand()
+```
+{: #py .tab-pane .fade .in}
+
+

@@ -1,0 +1,196 @@
+---
+layout: code-sample
+title:  Add Background Bitmap 
+author: 
+categories: ['Other'] 
+platforms: ['Cross-Platform']
+apis: ['RhinoCommon']
+languages: ['C#', 'Python', 'VB.NET']
+keywords: ['background', 'bitmap']
+order: 2
+description:  
+---
+
+
+
+```cs
+public static Rhino.Commands.Result AddBackgroundBitmap(Rhino.RhinoDoc doc)
+{
+  // Allow the user to select a bitmap file
+  var fd = new Rhino.UI.OpenFileDialog { Filter = "Image Files (*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg" };
+ if (!fd.ShowOpenDialog())
+    return Rhino.Commands.Result.Cancel;
+
+  // Verify the file that was selected
+  System.Drawing.Image image;
+  try
+  {
+    image = System.Drawing.Image.FromFile(fd.FileName);
+  }
+  catch (Exception)
+  {
+    return Rhino.Commands.Result.Failure;
+  }
+
+  // Allow the user to pick the bitmap origin
+  var gp = new Rhino.Input.Custom.GetPoint();
+  gp.SetCommandPrompt("Bitmap Origin");
+  gp.ConstrainToConstructionPlane(true);
+  gp.Get();
+  if (gp.CommandResult() != Rhino.Commands.Result.Success)
+    return gp.CommandResult();
+
+  // Get the view that the point was picked in.
+  // This will be the view that the bitmap appears in.
+  var view = gp.View();
+  if (view == null)
+  {
+    view = doc.Views.ActiveView;
+    if (view == null)
+      return Rhino.Commands.Result.Failure;
+  }
+
+  // Allow the user to specify the bitmap width in model units
+  var gn = new Rhino.Input.Custom.GetNumber();
+  gn.SetCommandPrompt("Bitmap width");
+  gn.SetLowerLimit(1.0, false);
+  gn.Get();
+  if (gn.CommandResult() != Rhino.Commands.Result.Success)
+    return gn.CommandResult();
+
+  // Cook up some scale factors
+  var w = gn.Number();
+  var image_width = image.Width;
+  var image_height = image.Height;
+  var h = w * (image_height / image_width);
+
+  var plane = view.ActiveViewport.ConstructionPlane();
+  plane.Origin = gp.Point();
+  view.ActiveViewport.SetTraceImage(fd.FileName, plane, w, h, false, false);
+  view.Redraw();
+  return Rhino.Commands.Result.Success;
+}
+```
+{: #cs .tab-pane .fade .in .active}
+
+
+```vbnet
+Public Shared Function AddBackgroundBitmap(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+  ' Allow the user to select a bitmap file
+  Dim fd As New Rhino.UI.OpenFileDialog()
+  fd.Filter = "Image Files (*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg"
+  If fd.ShowDialog() <> System.Windows.Forms.DialogResult.OK Then
+    Return Rhino.Commands.Result.Cancel
+  End If
+
+  ' Verify the file that was selected
+  Dim image As System.Drawing.Image
+  Try
+    image = System.Drawing.Image.FromFile(fd.FileName)
+  Catch generatedExceptionName As Exception
+    Return Rhino.Commands.Result.Failure
+  End Try
+
+  ' Allow the user to pick the bitmap origin
+  Dim gp As New Rhino.Input.Custom.GetPoint()
+  gp.SetCommandPrompt("Bitmap Origin")
+  gp.ConstrainToConstructionPlane(True)
+  gp.Get()
+  If gp.CommandResult() <> Rhino.Commands.Result.Success Then
+    Return gp.CommandResult()
+  End If
+
+  ' Get the view that the point was picked in.
+  ' This will be the view that the bitmap appears in.
+  Dim view As Rhino.Display.RhinoView = gp.View()
+  If view Is Nothing Then
+    view = doc.Views.ActiveView
+    If view Is Nothing Then
+      Return Rhino.Commands.Result.Failure
+    End If
+  End If
+
+  ' Allow the user to specify the bitmap with in model units
+  Dim gn As New Rhino.Input.Custom.GetNumber()
+  gn.SetCommandPrompt("Bitmap width")
+  gn.SetLowerLimit(1.0, False)
+  gn.Get()
+  If gn.CommandResult() <> Rhino.Commands.Result.Success Then
+    Return gn.CommandResult()
+  End If
+
+  ' Cook up some scale factors
+  Dim w As Double = gn.Number()
+  Dim image_width As Double = CDbl(image.Width)
+  Dim image_height As Double = CDbl(image.Height)
+  Dim h As Double = w * (image_height / image_width)
+
+  Dim plane As Rhino.Geometry.Plane = view.ActiveViewport.ConstructionPlane()
+  plane.Origin = gp.Point()
+  view.ActiveViewport.SetTraceImage(fd.FileName, plane, w, h, False, False)
+  view.Redraw()
+  Return Rhino.Commands.Result.Success
+End Function
+```
+{: #vb .tab-pane .fade .in}
+
+
+```python
+import Rhino
+import scriptcontext
+import System.Windows.Forms.DialogResult
+import System.Drawing.Image
+
+def AddBackgroundBitmap():
+    # Allow the user to select a bitmap file
+    fd = Rhino.UI.OpenFileDialog()
+    fd.Filter = "Image Files (*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg"
+    if fd.ShowDialog()!=System.Windows.Forms.DialogResult.OK:
+        return Rhino.Commands.Result.Cancel
+
+    # Verify the file that was selected
+    image = None
+    try:
+        image = System.Drawing.Image.FromFile(fd.FileName)
+    except:
+        return Rhino.Commands.Result.Failure
+
+    # Allow the user to pick the bitmap origin
+    gp = Rhino.Input.Custom.GetPoint()
+    gp.SetCommandPrompt("Bitmap Origin")
+    gp.ConstrainToConstructionPlane(True)
+    gp.Get()
+    if gp.CommandResult()!=Rhino.Commands.Result.Success:
+        return gp.CommandResult()
+
+    # Get the view that the point was picked in.
+    # This will be the view that the bitmap appears in.
+    view = gp.View()
+    if view is None:
+        view = scriptcontext.doc.Views.ActiveView
+        if view is None: return Rhino.Commands.Result.Failure
+
+    # Allow the user to specify the bitmap with in model units
+    gn = Rhino.Input.Custom.GetNumber()
+    gn.SetCommandPrompt("Bitmap width")
+    gn.SetLowerLimit(1.0, False)
+    gn.Get()
+    if gn.CommandResult()!=Rhino.Commands.Result.Success:
+        return gn.CommandResult()
+
+    # Cook up some scale factors
+    w = gn.Number()
+    h = w * (image.Width / image.Height)
+
+    plane = view.ActiveViewport.ConstructionPlane()
+    plane.Origin = gp.Point()
+    view.ActiveViewport.SetTraceImage(fd.FileName, plane, w, h, False, False)
+    view.Redraw()
+    return Rhino.Commands.Result.Success
+
+if __name__=="__main__":
+    AddBackgroundBitmap()
+```
+{: #py .tab-pane .fade .in}
+
+
