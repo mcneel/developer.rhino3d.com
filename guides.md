@@ -139,6 +139,31 @@ TODO
 {: .group }
 
 TODO
+#### Overview
+{: .subgroup }
+RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino, or automate repetitive tasks.
+
+#### Learning Resources
+{: .subgroup}
+
+- [Microsoft VBScript User's Guide and Language Reference](http://msdn.microsoft.com/en-us/library/t0aew7h6(VS.85).aspx)
+- [RhinoScript 101 Primer](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
+- [RhinoScript Help File On-Line](http://www.rhino3d.com/5/rhinoscript/index.html)
+- [RhinoScript Dash Docset](http://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
+- [RhinoScript Samples on GitHub](https://github.com/mcneel/rhinoscript)
+- [RhinoScript Resources](http://www.microsoft.com/technet/scriptcenter/default.mspx)
+- [Microsoft TechNet Script Center](http://www.microsoft.com/technet/scriptcenter/default.mspx)
+- [Pascal Golay's scripted utilities for Rhino](http://wiki.mcneel.com/people/pascalgolay)
+
+#### VBScript Basics
+{: .subgroup}
+
+<!-- TODO - This section could be auto Generated -->
+
+- [VBScript Procedures](/developer-rhino3d-com/guides/rhinoscript/vbscript_procedures/)
+- [VBScript Statements](/developer-rhino3d-com/guides/rhinoscript/vbscript_statements/)
+- [VBScript String Literals](/developer-rhino3d-com/guides/rhinoscript/vbscript_string_literals/)
+- [VBScript Variables](/developer-rhino3d-com/guides/rhinoscript/vbscript_variables/)
 
 
 ---
