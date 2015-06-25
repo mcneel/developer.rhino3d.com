@@ -112,6 +112,6 @@ tbody.index_table tr td{
     display: block;
 }
 
-@media screen and (max-width: 1000px) { .bs-docs-sidebar {
+@media screen and (max-width: 990px) { .bs-docs-sidebar {
     display: none;
 } }
