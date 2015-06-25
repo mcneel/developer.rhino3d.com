@@ -6,10 +6,12 @@ order: 2
 ---
 
 # All Guides
+{: .group }
 
 ---
 
-## [General]({{ site.baseurl }}/guides/general/)
+## General
+{: .group }
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -26,9 +28,12 @@ order: 2
 
 ---
 
-## [RhinoCommon]({{ site.baseurl }}/guides/rhinocommon/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+## RhinoCommon <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+{: .group }
 
-### Overview
+#### Overview
+{: .subgroup }
+
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
@@ -42,7 +47,9 @@ order: 2
   </ul>
 </div>
 
-### Getting Started
+#### Getting Started
+{: .subgroup }
+
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
@@ -56,7 +63,9 @@ order: 2
   </ul>
 </div>
 
-### Fundamentals
+#### Fundamentals
+{: .subgroup }
+
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
@@ -72,7 +81,9 @@ order: 2
 - [How the Commands Work](http://wiki.mcneel.com/developer/runrhinocommandfromplugincommand) - Needs porting
 - [Event Watchers](http://wiki.mcneel.com/developer/rhinocommonsamples/dotneteventwatcher) - Needs porting
 
-### Advanced
+#### Advanced
+{: .subgroup }
+
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
@@ -91,73 +102,65 @@ order: 2
 
 ---
 
-{% comment %}
 
-## [Eto]({{ site.baseurl }}/guides/eto/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
-
-TODO
-
----
-
-{% endcomment %}
-
-## [Rhino.Python]({{ site.baseurl }}/guides/rhinopython/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+## Rhino.Python <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [openNURBS Toolkit]({{ site.baseurl }}/guides/opennurbs/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+## openNURBS Toolkit <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [C/C++]({{ site.baseurl }}/guides/cpp/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## C/C++ <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [Grasshopper]({{ site.baseurl }}/guides/grasshopper/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## Grasshopper <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [RhinoScript]({{ site.baseurl }}/guides/rhinoscript/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## RhinoScript <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [Renderer Development Kit (RDK)]({{ site.baseurl }}/guides/rdk/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## Renderer Development Kit <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [Rhino Application Platform (RAP)]({{ site.baseurl }}/guides/rap/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## RhinoMobile <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [RhinoMobile]({{ site.baseurl }}/guides/rhinomobile/) <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
-
-TODO
-
-
----
-
-## [Zoo License Manager]({{ site.baseurl }}/guides/zoo/) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## Zoo License Manager <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: .group }
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -175,7 +178,8 @@ TODO
 
 ---
 
-## [Developer Docs]({{ site.baseurl }}/guides/rhinodevdocs/) (This Website) <a id="dev-docs"></a>
+## Developer Docs <a id="dev-docs"></a>
+{: .group }
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}

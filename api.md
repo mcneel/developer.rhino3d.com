@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: fullwidth-page
 title: API
 permalink: /api/
 order: 3

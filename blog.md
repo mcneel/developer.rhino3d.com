@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: fullwidth-page
 title: Blog
 permalink: /blog/
 order: 5

@@ -8,7 +8,8 @@ order: 4
 
 ---
 
-## [General]({{ site.baseurl }}/samples/general/)
+## General
+{: .group }
 
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
@@ -25,11 +26,15 @@ order: 4
 
 ---
 
-## [RhinoCommon]({{ site.baseurl }}/samples/rhinocommon/) (Cross-Platform)
+## RhinoCommon <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+{: .group }
 
-### Adding Objects
+#### Adding Objects
+{: .subgroup }
 
-### Curves
+#### Curves
+{: .subgroup }
+
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
   <ul>
@@ -43,83 +48,78 @@ order: 4
   </ul>
 </div>
 
-### Layers
+#### Layers
+{: .subgroup }
 
-### Picking and Selection
+#### Picking and Selection
+{: .subgroup }
 
-### Foo
+#### Foo
+{: .subgroup }
 
-### Bar
-
-
----
-
-{% comment %}
-
-## [Eto]({{ site.baseurl }}/samples/eto/) (Cross-Platform)
-
-TODO
+#### Bar
+{: .subgroup }
 
 ---
 
-{% endcomment %}
 
-## [Rhino.Python]({{ site.baseurl }}/samples/rhinopython/) (Cross-Platform)
+## Rhino.Python <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [openNURBS Toolkit]({{ site.baseurl }}/samples/opennurbs/) (Cross-Platform)
+## openNURBS Toolkit <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [C/C++]({{ site.baseurl }}/samples/cpp/) (Windows)
+## C/C++ <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [Grasshopper]({{ site.baseurl }}/samples/grasshopper/) (Windows)
+## Grasshopper <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [RhinoScript]({{ site.baseurl }}/samples/rhinoscript/) (Windows)
+## RhinoScript <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [Renderer Development Kit (RDK)]({{ site.baseurl }}/samples/rdk/) (Windows)
+## Renderer Development Kit <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [Rhino Application Platform (RAP)]({{ site.baseurl }}/samples/rap/) (Windows)
+## RhinoMobile <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
+{: .group }
 
 TODO
 
 
 ---
 
-## [RhinoMobile]({{ site.baseurl }}/samples/rhinomobile/) (iOS & Android)
-
-TODO
-
-
----
-
-## [Zoo License Manager]({{ site.baseurl }}/samples/zoo/) (Windows)
+## Zoo License Manager <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: .group }
 
 TODO

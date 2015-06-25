@@ -175,7 +175,8 @@ Lorem ipsum
 
 Lorem ipsum
 
-## Rhino Developer Training
+## Developer Training
+{: .group }
 
 Developer training is a custom, one-on-one session designed to help you become more familiar with the Rhino C++ SDK or the RhinoCommon (.NET) SDK, and to get help in improving your Rhino plug-in product.
 

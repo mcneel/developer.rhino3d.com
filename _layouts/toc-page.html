@@ -7,43 +7,43 @@ layout: bootstrap
     <!--Nav Bar -->
     <nav class="col-xs-0 col-md-3 bs-docs-sidebar">
         <ul id="sidebar" class="nav nav-stacked fixed">
+
+          <!-- Check to see if content "group" and if not throw error -->
+
+          <!-- Find the h1 handle and title -->
+
+          <!-- Find the h2 group and any h4 subgroups -->
+          {% assign groups = content | split:'<h2 class="group" id="' %}
+
+          {% for group in groups offset:1 %}
+            {% assign dividedGroup = group | split:'<' %}
+            {% assign groupToProcess = dividedGroup[0] %}
+            {% assign groupHeading = groupToProcess | split:'">' %}
+            {% assign groupHandle = groupHeading[0] %}
+            {% assign groupTitle = groupHeading[1] %}
             <li>
-                <a href="#welcome">Welcome</a>
-            </li>
-            <li>
-                <a href="#start-here">Start Here</a>
-            </li>
-            <li>
-                <a href="#overview">Overview</a>
-            </li>
-            <li>
-                <a href="#contributing">Contributing</a>
+              <a href="#{{groupHandle}}">{{ groupTitle }}</a>
+
+              {% if group contains '<h4 class="subgroup" id="' %}
                 <ul class="nav nav-stacked">
-                    <li><a href="#github">GitHub</a></li>
-                    <li><a href="#discourse">Discourse</a></li>
-                    <li><a href="#report-bugs">Report Bugs</a></li>
-                    <li><a href="#this-website">This website</a></li>
+                  {% assign subgroups = group | split:'<h4 class="subgroup" id="' %}
+
+                  {% for subgroup in subgroups offset:1 %}
+                    {% assign dividedSubgroup = subgroup | split:'<' %}
+                    {% assign subgroupToProcess = dividedSubgroup[0] %}
+                    {% assign subgroupHeading = subgroupToProcess | split:'">' %}
+                    {% assign subgroupHandle = subgroupHeading[0] %}
+                    {% assign subgroupTitle = subgroupHeading[1] %}
+                    <li>
+                        <a href="#{{subgroupHandle}}">{{ subgroupTitle }}</a>
+                    </li>
+                  {% endfor %}
+
                 </ul>
+              {% endif %}
+
             </li>
-            <li>
-                <a href="#contacts">Contacts</a>
-            </li>
-            <li>
-                <a href="#plugin-distribution">Plugin Distribution</a>
-                <ul class="nav nav-stacked">
-                    <li><a href="#food4rhino">Food4Rhino</a></li>
-                    <li><a href="#yak">Yak</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#rhino-developer-training">Rhino Developer Training</a>
-            </li>
-            <li>
-                <a href="#faq">FAQ</a>
-            </li>
-            <li>
-                <a href="#todo">TODO</a>
-            </li>
+          {% endfor %}
         </ul>
     </nav>
     <!--Main Content -->
@@ -53,6 +53,7 @@ layout: bootstrap
         <article class="post-content">
           {{ content }}
         </article>
+
       <!--</div>-->
 
     </div>
