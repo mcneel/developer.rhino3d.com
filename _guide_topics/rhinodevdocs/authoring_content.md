@@ -16,6 +16,7 @@ We need to come up with templates / conventions for content but for now add your
 
 
 ## Markdown & Kramdown
+{: .group }
 
 A [Rhino Developer Docs Style]({{ site.baseurl }}/guides/rhinodevdocs/style_guide/) guide - with organizational and content conventions is currently under-construction.
 
@@ -30,6 +31,7 @@ $$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$
 
 
 ## Types of content
+{: .group }
 
 There are 5 types of content on this site:
 
@@ -42,7 +44,8 @@ There are 5 types of content on this site:
 All types of content - with the exception of APIs - begin with YAML, which the site uses to categories and sort the content into appropriate areas.
 
 
-### Pages <a id="pages"></a>
+#### Pages
+{: .subgroup }
 
 Pages are interspersed throughout the site.  The [Welcome page]({{ site.baseurl }}/), the [Guides page]( {{ site.baseurl }}/guides), and RhinoCommon Samples page, are all examples of Pages.
 
@@ -64,7 +67,8 @@ The YAML fields for Pages determine:
 
 TODO: What about pages with permalinks?
 
-### Guides <a id="guides"></a>
+#### Guides
+{: .subgroup }
 
 Guides are contained in the `/_guide_topics/` directory.  This very document you are reading is a Guide.
 
@@ -99,11 +103,13 @@ The YAML fields for Guides determine:
 * **order**: The relative sort-order of this guide in any list.
 
 
-### APIs <a id="apis"></a>
+#### APIs
+{: .subgroup }
 
 The [API documentation]({{ site.baseurl }}/api/) is automatically generated from source-code and cannot be edited "by hand."
 
-### Samples <a id="samples"></a>
+#### Samples
+{: .subgroup }
 
 Samples are contained in the `/_samples/` directory.
 
@@ -137,6 +143,12 @@ The YAML fields for Samples determine:
 * **order**: The relative sort-order of this sample in any list.
 * **description**: A brief description of what the sample does.
 
-### Glossary Entries <a id="glossary_entries"></a>
+#### Glossary Entries
+{: .subgroup }
+
+Lorem ipsum
+
+## Templates
+{: .group }
 
 Lorem ipsum

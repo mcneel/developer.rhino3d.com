@@ -33,7 +33,7 @@ Rhino exposes purpose-built SDKs in C#, C/C++, VB.NET, VBScript, and Python...
 <table class="table">
   <thead>
     <tr style="border-bottom:1pt solid black;">
-      <th>API</th>
+      <th>SDK</th>
       <th width="95px">Platforms</th>
       <th width="125px">Languages</th>
       <th>Primary Uses</th>
