@@ -7,12 +7,10 @@ platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB.NET']
 keywords: ['RhinoCommon', 'What']
+TODO: 1
+origin: http://wiki.mcneel.com/developer/rhinocommon
 order: 1
 ---
-
-{% comment %}
-Porting from: http://wiki.mcneel.com/developer/rhinocommon
-{% endcomment %}
 
 # What is RhinoCommon?
 

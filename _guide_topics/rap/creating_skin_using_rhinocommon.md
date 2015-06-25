@@ -7,9 +7,9 @@ platforms: ['Windows']
 apis: ['RAP', 'RhinoCommon']
 languages: ['C#']
 keywords: ['skin', 'RAP', 'rhino']
+TODO: 1
+origin: http://wiki.mcneel.com/developer/rhinocommon/skin
 order: 2
 ---
 
 # Creating a skin using RhinoCommon
-
-TODO: [http://wiki.mcneel.com/developer/rhinocommon/skin](http://wiki.mcneel.com/developer/rhinocommon/skin)

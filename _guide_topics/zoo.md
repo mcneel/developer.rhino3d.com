@@ -1,13 +1,13 @@
 ---
 layout: toc-page
 title: Zoo Developer Guides
+TODO: 1
+origin: http://wiki.mcneel.com/developer/zoo
 order: 11
 ---
 
 # Zoo Guides
 ---
-
-TODO: [http://wiki.mcneel.com/developer/zoo](http://wiki.mcneel.com/developer/zoo)
 
 <div class="trigger">
   <ul>

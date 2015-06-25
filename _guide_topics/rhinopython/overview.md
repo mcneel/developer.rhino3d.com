@@ -7,9 +7,9 @@ platforms: ['Windows', 'Mac', 'Cross-Platform']
 apis: ['RhinoPython']
 languages: ['Python']
 keywords: ['Rhino.Python', 'Python']
+TODO: 1
+origin: http://wiki.mcneel.com/developer/python
 order: 1
 ---
 
 # Overview of Rhino.Python
-
-TODO: [http://wiki.mcneel.com/developer/python](http://wiki.mcneel.com/developer/python)
