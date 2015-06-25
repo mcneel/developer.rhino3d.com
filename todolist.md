@@ -18,7 +18,7 @@ order: 1
   {% for topic in guides %}
     {% if topic.TODO == 1 %}
       <li>
-        <a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a> needs porting from: <a href="{{ topic.origin }}">{{ topic.origin }}</a>
+        <a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a> needs porting from: {% if topic.origin == 'unset' %} unset {% endif %}{% if topic.origin != 'unset' %} <a href="{{ topic.origin }}">{{ topic.origin }}</a> {% endif %}
       </li>
     {% endif %}
   {% endfor %}
