@@ -7,9 +7,9 @@ platforms: ['Windows']
 apis: ['Zoo']
 languages: ['C#']
 keywords: ['Zoo', 'Plugin']
+TODO: 1
+origin: http://wiki.mcneel.com/developer/zooplugin
 order: 2
 ---
 
 # Creating Plugins for Zoo
-
-TODO: [http://wiki.mcneel.com/developer/zooplugin](http://wiki.mcneel.com/developer/zooplugin)

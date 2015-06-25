@@ -7,9 +7,9 @@ platforms: ['Windows']
 apis: ['Zoo']
 languages: ['All']
 keywords: ['Zoo', 'Plugin']
+TODO: 1
+origin: http://wiki.mcneel.com/developer/zoowhat
 order: 1
 ---
 
 # What is a Zoo Plugin?
-
-TODO: [http://wiki.mcneel.com/developer/zoowhat](http://wiki.mcneel.com/developer/zoowhat)

@@ -7,9 +7,9 @@ platforms: ['Windows']
 apis: ['Zoo', 'RhinoCommon']
 languages: ['C#']
 keywords: ['Zoo', 'Plugin']
+TODO: 1
+origin: http://wiki.mcneel.com/developer/zoorhinocommonplugin
 order: 3
 ---
 
 # Creating RhinoCommon Plugins that use the Zoo
-
-TODO: [http://wiki.mcneel.com/developer/zoorhinocommonplugin](http://wiki.mcneel.com/developer/zoorhinocommonplugin)
