@@ -6,12 +6,12 @@ order: 2
 ---
 
 # All Guides
-{: .group }
+{: .toc-header }
 
 ---
 
 ## General
-{: .group }
+{: .toc-header }
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -29,10 +29,10 @@ order: 2
 ---
 
 ## RhinoCommon <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 #### Overview
-{: .subgroup }
+{: .toc-subheader }
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -48,7 +48,7 @@ order: 2
 </div>
 
 #### Getting Started
-{: .subgroup }
+{: .toc-subheader }
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -64,7 +64,7 @@ order: 2
 </div>
 
 #### Fundamentals
-{: .subgroup }
+{: .toc-subheader }
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -82,7 +82,7 @@ order: 2
 - [Event Watchers](http://wiki.mcneel.com/developer/rhinocommonsamples/dotneteventwatcher) - Needs porting
 
 #### Advanced
-{: .subgroup }
+{: .toc-subheader }
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -104,7 +104,7 @@ order: 2
 
 
 ## Rhino.Python <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -112,7 +112,7 @@ TODO
 ---
 
 ## openNURBS Toolkit <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -120,7 +120,7 @@ TODO
 ---
 
 ## C/C++ <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -128,7 +128,7 @@ TODO
 ---
 
 ## Grasshopper <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -136,12 +136,12 @@ TODO
 ---
 
 ## RhinoScript <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
 #### Overview
-{: .subgroup }
+{: .toc-subheader }
 RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino, or automate repetitive tasks.
 
 #### Learning Resources
@@ -170,7 +170,7 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 ---
 
 ## Renderer Development Kit <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -178,7 +178,7 @@ TODO
 ---
 
 ## RhinoMobile <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -186,7 +186,7 @@ TODO
 ---
 
 ## Zoo License Manager <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -205,7 +205,7 @@ TODO
 ---
 
 ## Developer Docs <a id="dev-docs"></a>
-{: .group }
+{: .toc-header }
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}

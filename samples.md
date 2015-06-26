@@ -9,7 +9,7 @@ order: 4
 ---
 
 ## General
-{: .group }
+{: .toc-header }
 
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
@@ -27,13 +27,13 @@ order: 4
 ---
 
 ## RhinoCommon <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 #### Adding Objects
-{: .subgroup }
+{: .toc-subheader }
 
 #### Curves
-{: .subgroup }
+{: .toc-subheader }
 
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
@@ -49,13 +49,13 @@ order: 4
 </div>
 
 #### Layers
-{: .subgroup }
+{: .toc-subheader }
 
 #### Picking and Selection
-{: .subgroup }
+{: .toc-subheader }
 
 #### Other
-{: .subgroup }
+{: .toc-subheader }
 
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
@@ -73,7 +73,7 @@ order: 4
 
 
 ## Rhino.Python <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -81,7 +81,7 @@ TODO
 ---
 
 ## openNURBS Toolkit <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -89,7 +89,7 @@ TODO
 ---
 
 ## C/C++ <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -97,7 +97,7 @@ TODO
 ---
 
 ## Grasshopper <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -105,7 +105,7 @@ TODO
 ---
 
 ## RhinoScript <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -113,7 +113,7 @@ TODO
 ---
 
 ## Renderer Development Kit <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -121,7 +121,7 @@ TODO
 ---
 
 ## RhinoMobile <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO
 
@@ -129,6 +129,6 @@ TODO
 ---
 
 ## Zoo License Manager <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: .group }
+{: .toc-header }
 
 TODO

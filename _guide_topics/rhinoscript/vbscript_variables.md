@@ -13,12 +13,12 @@ order: 1
 # VBScript Variables
 
 ## Overview
-{: .group }
+{: .toc-header }
 
 A variable is a convenient placeholder that refers to a computer memory location where you can store program information that may change during the time your script is running. For example, you might create a variable called ClickCount to store the number of times a user performs a certain operation. Where the variable is stored in computer memory is unimportant. What is important is that you only have to refer to a variable by name to see or change its value. In VBScript, variables are always of one fundamental data type, [Variant](http://wiki.mcneel.com/developer/vbsdatatype).
 
 ## Declaring Variables
-{: .group }
+{: .toc-header }
 
 You declare variables explicitly in your script using the *Dim* statement, the *Public* statement, and the *Private* statement. For example:
 
@@ -29,7 +29,7 @@ You declare multiple variables by separating each variable name with a comma. Fo
 	 Dim Top, Bottom, Left, Right
 
 ## Naming Restrictions
-{: .group }
+{: .toc-header }
 
 Variable names follow the standard rules for naming anything in VBScript. A variable name:
 
@@ -39,21 +39,21 @@ Variable names follow the standard rules for naming anything in VBScript. A vari
 - Must be unique in the scope in which it is declared.
 
 ## Scope and Lifetime of Variables
-{: .group }
+{: .toc-header }
 
 A variable's scope is determined by where you declare it. When you declare a variable within a procedure, only code within that procedure can access or change the value of that variable. It has local scope and is a procedure-level variable. If you declare a variable outside a procedure, you make it recognizable to all the procedures in your script. This is a script-level variable, and it has script-level scope.
 
 The lifetime of a variable depends on how long it exists. The lifetime of a script-level variable extends from the time it is declared until the time the script is finished running. At procedure level, a variable exists only as long as you are in the procedure. When the procedure exits, the variable is destroyed. Local variables are ideal as temporary storage space when a procedure is executing. You can have local variables of the same name in several different procedures because each is recognized only by the procedure in which it is declared.
 
 ## Assigning Values to Variables
-{: .group }
+{: .toc-header }
 
 Values are assigned to variables creating an expression as follows: the variable is on the left side of the expression and the value you want to assign to the variable is on the right. For example:
 
 	B = 200
 
 ## Scalar Variables and Array Variables
-{: .group }
+{: .toc-header }
 
 Much of the time, you only want to assign a single value to a variable you have declared. A variable containing a single value is a scalar variable. Other times, it is convenient to assign more than one related value to a single variable. Then you can create a variable that can contain a series of values. This is called an array variable. Array variables and scalar variables are declared in the same way, except that the declaration of an array variable uses parentheses ( ) following the variable name. In the following example, a single-dimension array containing 11 elements is declared:
 

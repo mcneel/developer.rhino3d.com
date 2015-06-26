@@ -4,7 +4,7 @@ layout: toc-page
 
 
 # Welcome
-{: .group }
+
 
 **Rhino developer tools are royalty free and include support.**
 
@@ -12,7 +12,7 @@ This site is the [future home](#todo) of all Developer Documentation relating to
 
 
 ## Start Here
-{: .group }
+{: .toc-header }
 
 #### If you want to...
 
@@ -25,7 +25,7 @@ This site is the [future home](#todo) of all Developer Documentation relating to
 The above three paths are not the only options!  Keep reading for more...
 
 ## Overview
-{: .group }
+{: .toc-header }
 
 Rhino exposes purpose-built SDKs in C#, C/C++, VB.NET, VBScript, and Python...
 
@@ -111,19 +111,19 @@ Still unclear?  Browse the [Guides]({{ site.baseurl }}/guides/).  Ask a question
 
 
 ## Contributing
-{: .group }
+{: .toc-header }
 
 Hey, make yourself useful!
 
 
 #### GitHub
-{: .subgroup }
+{: .toc-subheader }
 
 Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub](http://github.com/).  [RhinoCommon](https://github.com/mcneel/rhinocommon) - our cross-platform .NET API - is a great example. Even [this very website](https://github.com/mcneel/developer-rhino3d-com) you are reading now. Browse source, fork a repo, correct a typo: we welcome participation and pull-requests.
 
 
 #### Discourse
-{: .subgroup }
+{: .toc-subheader }
 
 [discourse.mcneel.com](http://discourse.mcneel.com) is the McNeel forum.  This is the fastest place to get help.  Specific categories to post in are:
 
@@ -134,13 +134,13 @@ Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub]
 
 
 #### Report Bugs
-{: .subgroup }
+{: .toc-subheader }
 
 Whenever you encounter something that doesn't work as it should, we'd love it if you could file a bug report.  At McNeel, we use [YouTrack](http://mcneel.myjetbrains.com/youtrack/) to track issues and bugs.  YouTrack requires that you create a login. The vast majority of bugs are visible to the public.  Please report issues or bugs with our APIs or SDKs on YouTrack.
 
 
 #### This website
-{: .subgroup }
+{: .toc-subheader }
 
 This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of any page.  If you are a McNeel employee, you should already have permissions to commit to this repository.  If you are a Rhino Plugin Developer, you can [request permissions to commit](mailto:steve@mcneel.com).  Anyone can clone the repository and submit a pull-request.
 
@@ -148,7 +148,7 @@ This site uses [Markdown](http://daringfireball.net/projects/markdown/) - specif
 
 
 ## Contacts
-{: .group }
+{: .toc-header }
 
 Who to talk to for what:
 
@@ -163,27 +163,27 @@ Who to talk to for what:
 
 
 ## Plugin Distribution
-{: .group }
+{: .toc-header }
 
 #### Food4Rhino
-{: .subgroup }
+{: .toc-subheader }
 
 Lorem ipsum
 
 #### Yak
-{: .subgroup }
+{: .toc-subheader }
 
 Lorem ipsum
 
 ## Developer Training
-{: .group }
+{: .toc-header }
 
 Developer training is a custom, one-on-one session designed to help you become more familiar with the Rhino C++ SDK or the RhinoCommon (.NET) SDK, and to get help in improving your Rhino plug-in product.
 
 Rhino Developer Training is available at both the McNeel Headquarters in **Seattle**, and at our European Headquarters in **Barcelona**.
 
 #### We provide
-{: .subgroup }
+{: .toc-subheader }
 
 * A room and a desk for you to set up your computer.
 * A high-speed Internet connection.
@@ -191,7 +191,7 @@ Rhino Developer Training is available at both the McNeel Headquarters in **Seatt
 * Inexpensive lodging may be available.
 
 #### You should bring
-{: .subgroup }
+{: .toc-subheader }
 
 Your computer with:
 
@@ -212,7 +212,7 @@ Your computer with:
   * Any software you will need to test your plug-in, including copies of your own software.
 
 #### Pricing and scheduling
-{: .subgroup }
+{: .toc-subheader }
 
 Developer training is free. You are responsible for paying for travel, lodging, and any other expenses.
 
@@ -226,7 +226,7 @@ Ported from: http://wiki.mcneel.com/developer/training
 
 
 ## FAQ
-{: .group }
+{: .toc-header }
 
 - What SDK is right for me?
 - What is Mono?
@@ -235,7 +235,7 @@ Ported from: http://wiki.mcneel.com/developer/training
 
 
 ## TODO
-{: .group }
+{: .toc-header }
 
 This site is the _future home_ of developer.rhino3d.com.
 

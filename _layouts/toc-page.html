@@ -14,7 +14,7 @@ layout: bootstrap
           <!-- Find the h1 handle and title -->
 
           <!-- Find the h2 group and any h4 subgroups -->
-          {% assign groups = content | split:'<h2 class="group" id="' %}
+          {% assign groups = content | split:'<h2 class="toc-header" id="' %}
 
           {% for group in groups offset:1 %}
             {% assign dividedGroup = group | split:'<' %}
@@ -25,9 +25,9 @@ layout: bootstrap
             <li>
               <a href="#{{groupHandle}}">{{ groupTitle }}</a>
 
-              {% if group contains '<h4 class="subgroup" id="' %}
+              {% if group contains '<h4 class="toc-subheader" id="' %}
                 <ul class="nav nav-stacked">
-                  {% assign subgroups = group | split:'<h4 class="subgroup" id="' %}
+                  {% assign subgroups = group | split:'<h4 class="toc-subheader" id="' %}
 
                   {% for subgroup in subgroups offset:1 %}
                     {% assign dividedSubgroup = subgroup | split:'<' %}

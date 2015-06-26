@@ -5,12 +5,12 @@ order: 1
 ---
 
 # TODO List
-{: .group }
+{: .toc-header }
 
 ---
 
 ## Guides
-{: .group }
+{: .toc-header }
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}

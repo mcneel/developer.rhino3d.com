@@ -7,11 +7,11 @@ order: 7
 ---
 
 # RhinoScript Guides
-{: .group }
+{: .toc-header }
 
 
 ## Overview
-{: .subgroup }
+{: .toc-subheader }
 RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino, or automate repetitive tasks.
 
 ## Learning Resources

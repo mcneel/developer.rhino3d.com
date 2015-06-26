@@ -18,7 +18,7 @@ We need to come up with templates / conventions for content but for now add your
 
 
 ## Markdown & Kramdown
-{: .group }
+{: .toc-header }
 
 A [Rhino Developer Docs Style]({{ site.baseurl }}/guides/rhinodevdocs/style_guide/) guide - with organizational and content conventions is currently under-construction.
 
@@ -33,7 +33,7 @@ $$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$
 
 
 ## Types of content
-{: .group }
+{: .toc-header }
 
 There are 5 types of content on this site:
 
@@ -47,7 +47,7 @@ All types of content - with the exception of APIs - begin with YAML, which the s
 
 
 #### Pages
-{: .subgroup }
+{: .toc-subheader }
 
 Pages are interspersed throughout the site.  The [Welcome page]({{ site.baseurl }}/), the [Guides page]( {{ site.baseurl }}/guides), and RhinoCommon Samples page, are all examples of Pages.
 
@@ -70,7 +70,7 @@ The YAML fields for Pages determine:
 TODO: What about pages with permalinks?
 
 #### Guides
-{: .subgroup }
+{: .toc-subheader }
 
 Guides are contained in the `/_guide_topics/` directory.  This very document you are reading is a Guide.
 
@@ -106,12 +106,12 @@ The YAML fields for Guides determine:
 
 
 #### APIs
-{: .subgroup }
+{: .toc-subheader }
 
 The [API documentation]({{ site.baseurl }}/api/) is automatically generated from source-code and cannot be edited "by hand."
 
 #### Samples
-{: .subgroup }
+{: .toc-subheader }
 
 Samples are contained in the `/_samples/` directory.
 
@@ -146,11 +146,11 @@ The YAML fields for Samples determine:
 * **description**: A brief description of what the sample does.
 
 #### Glossary Entries
-{: .subgroup }
+{: .toc-subheader }
 
 Lorem ipsum
 
 ## Templates
-{: .group }
+{: .toc-header }
 
 Lorem ipsum

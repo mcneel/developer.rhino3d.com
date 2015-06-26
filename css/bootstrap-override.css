@@ -56,14 +56,14 @@ tbody.index_table tr td{
 
 /*
 ##############################################################################
-##  bootstrap docs sidebar
+##  bootstrap docs sidebar - table of contents (toc)
 ##############################################################################
 */
 
-.group {
+.toc-header {
   background: white;
 }
-.group .subgroup {
+.toc-header .toc-subheader {
   background: white;
 }
 .fixed {
