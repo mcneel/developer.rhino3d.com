@@ -1,18 +1,18 @@
 ---
 layout: toc-page
-title: Authoring content
+title: How This Site Works
 author: dan@mcneel.com
 categories: ['General']
 platforms: ['Mac', 'Windows']
 apis: ['DevDocs', 'Jekyll', 'Liquid']
 languages: ['Markdown', 'Kramdown', 'YAML']
-keywords: ['authoring', 'writing', 'editing']
+keywords: ['authoring', 'writing', 'editing', 'overview']
 TODO: 1
 origin: unset
 order: 2
 ---
 
-# Authoring content
+# How This Site Works
 
 We need to come up with templates / conventions for content but for now add your markdown files.
 
@@ -28,7 +28,8 @@ A complete guide to Markdown and Kramdown is beyond the scope of this guide.  Fo
 
 Kramdown has support for LaTeX to PNG rendering via [MathJax](http://www.mathjax.org/).  
 
-For example:  
+For example:
+
 $$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$  
 
 
