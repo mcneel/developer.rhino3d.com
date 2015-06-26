@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: fullwidth-page
 title: TODO List
 order: 1
 ---
