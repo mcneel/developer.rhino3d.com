@@ -1,6 +1,6 @@
 ---
 layout: toc-page
-title: Installing Your Plugin (Mac)
+title: Creating a Plugin Installer (Mac)
 author: dan@mcneel.com
 categories: ['GettingStarted']
 platforms: ['Mac']
@@ -13,9 +13,9 @@ order: 6
 ---
 
 
-# Installing Your Plugin (Mac)
+# Creating a Plugin Installer (Mac)
 
-This guide explains how to install a plugin for Rhino for Mac, which presumes you have a plugin that successfully builds and runs already.  If you are not there yet, see [Creating Your First Plugin]({{ site.baseurl }}/guides/rhinocommon/creating_your_first_plugin_mac).
+This guide explains how to create a plugin installer for Rhino for Mac, which presumes you have a plugin that successfully builds and runs already.  If you are not there yet, see [Creating Your First Plugin]({{ site.baseurl }}/guides/rhinocommon/creating_your_first_plugin_mac).
 
 ## Overview
 {: .toc-header }
@@ -50,7 +50,7 @@ The `.macrhi` extension is a file extension associated with the Rhino for Mac ap
 
 When Rhino for Mac launches, it scans the contents of the `~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/` folder scanning the sub-folders recursively looking for `.rhp` files.  When it finds such file, Rhino for Mac attempts to load this plugin.  If it cannot load the plugin, it will show an error at launch time.
 
-For uninstallation/removal instructions, please see [Uninstalling Your Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/uninstalling_your_plugin_mac).
+For uninstallation/removal instructions, please see [Uninstalling Plugins (Mac)]({{ site.baseurl }}/guides/rhinocommon/uninstalling_plugins_mac).
 
 ---
 

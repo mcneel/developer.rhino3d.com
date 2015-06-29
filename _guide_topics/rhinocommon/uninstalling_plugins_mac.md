@@ -13,6 +13,6 @@ order: 7
 ---
 
 
-# Uninstalling Your Plugin (Mac)
+# Uninstalling Plugins (Mac)
 
 TODO
