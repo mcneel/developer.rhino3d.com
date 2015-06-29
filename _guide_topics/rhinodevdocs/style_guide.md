@@ -12,17 +12,22 @@ origin: unset
 order: 3
 ---
 
+<a id="top"></a> <!-- this is just a sample anchor -->
+
 # Rhino Developer Docs Style Guide
 ---
 
 This is a sample page that serves as a quick reference for the syntax and structure of Rhino Developer Documentation content.  Below are examples of nearly all the available syntax using Markdown, Kramdown (a superset of Markdown), the table-of-contents UI widget, etc.
+
+Some portions of this page were adapted from the [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html).
 
 ---
 
 ## Conventions
 {: .toc-header }
 
-Division of content:
+#### Division of content
+{: .toc-subheader }
 
 `# Title` become H1 headers and are reserved for the title of the page only.
 
@@ -30,8 +35,10 @@ Division of content:
 
 `#### Sub Header` become H4 headers and are reserved for sub-sections within a major section.
 
-Fonts:
-TODO: Note on Segou UI on Windows, Helvetica on Mac
+#### Fonts
+{: .toc-subheader }
+
+On Windows, this site attempts to use Segou UI (font size: 16 px, font weight: 400,  line height: 1.6) and falls back to Frutiger Linotype, Dejavu Sans, Helvetica Neue, Helvetica, Arial, in that order.  On Mac OS X, the site will (almost) certainly use Helvetica Neue or Helvetica (font size: 16 px, font weight: 300,  line height: 1.6).  The operating system-specific font weight is set in the footer using javascript.
 
 ---
 
@@ -84,7 +91,7 @@ Just like with H2 headers, H4 headers also create an #anchor tag in the generate
 ## Table of Contents
 {: .toc-header }
 
-The UI-widget to the left of this paragraph is a the Table of Contents (TOC) for this page.  If you are authoring a page that requires a TOC, you can generate one automatically by using a TOC-enabled template (see Authoring Content for more information).  To get a TOC-enabled template to generate the TOC, you simply have to add the correct class decorations underneath the Headers and Sub Headers.
+The UI-widget to the left of this column is a the Table of Contents (TOC) for this page.  If you are authoring a page that requires a TOC, you can generate one automatically by using a TOC-enabled template (see Authoring Content for more information).  To get a TOC-enabled template to generate the TOC, you simply have to add the correct class decorations underneath the Headers and Sub Headers.
 
 For example, to get a Header to show up in the TOC, you would type this:
 
@@ -389,44 +396,187 @@ I like *my* coffee **bold**.
 A simple link can be created by surrounding the text with square brackets and the link URL with parentheses:
 
 ```kramdown
-TODO
+This is a [link](http://www.rhino3d.com) to the Rhino 3D homepage.
 ```
+
+yields:
+
+This is a [link](http://www.rhino3d.com) to the Rhino 3D homepage.
+
+You can also add title information to the link:
+
+```kramdown
+A [link](http://www.rhino3d.com "Rhino 3D homepage") to the homepage.
+```
+
+yields:
+
+A [link](http://www.rhino3d.com "Rhino 3D homepage") to the homepage.
+
+There is another way to create links which does not interrupt the text flow. The URL and title are defined using a reference name and this reference name is then used in square brackets instead of the link URL:
+
+```kramdown
+A [link][rhino3d homepage] to the homepage.
+
+[rhino3d homepage]: http://www.rhino3d.com "Modeling tools for designers"
+```
+
+yields:
+
+A [link][Rhino3D homepage] to the homepage.
+
+[Rhino3D homepage]: http://www.rhino3d.com "Modeling tools for designers"
+
+If the link text itself is the reference name, the second set of square brackets can be omitted:
+
+```kramdown
+A link to the [Rhino3D homepage].
+
+[Rhino3D homepage]: http://www.rhino3d.com "Modeling tools for designers"
+```
+
+yields:
+
+A link to the [Rhino3D homepage].
+
 
 **Anchor Links**
 
+As discussed above, [Headers](#headers) and [Sub Headers](#sub-headers) automatically create anchors in the resulting rendered html output.
 
+You can link to any anchor within a page using the hash `#` symbol in a normal link.  For example:
+
+```kramdown
+[Sub Headers](#sub-headers) automatically create anchors in the resulting rendered html output
+```
+
+yields the sentence fragment shown above.
+
+To create new anchors within the site, you can use html inline.  For example:
+
+```html
+<a id="top"></a>
+```
+
+was added to the [top of this page](#top).
 
 ---
 
 #### Images
 {: .toc-subheader }
 
+Images can be created in a similar way to links: just use an exclamation mark before the square brackets. The link text will become the alternative text of the image and the link URL specifies the image source:
+
+```kramdown
+![pluginlogo]({{ site.baseurl }}/images/rhinocommonlogo256x256.png)
+```
+
+yields:
+
+![pluginlogo]({{ site.baseurl }}/images/rhinocommonlogo256x256.png)
+
+**NOTE**: Use the `site.baseurl` macro.  See the source of this page for this section for an example.
 
 ---
 
 #### Inline Code
 {: .toc-subheader }
 
+Text phrases can be easily marked up as code by surrounding them with back-ticks:
+
+```kramdown
+To write a line to the command line use the `Rhino.RhinoApp.WriteLine` method.
+```
+
+yields:
+
+To write a line to the command line use the `Rhino.RhinoApp.WriteLine` method.
 
 ---
 
 #### Footnotes
 {: .toc-subheader }
 
+Footnotes can easily be used in Kramdown. Just set a footnote marker (consists of square brackets with a caret and the footnote name inside) in the text and somewhere else the footnote definition (which basically looks like a reference link definition):
+
+```kramdown
+This is a text with a footnote[^1].
+
+[^1]: This is an example of a footnote.
+```
+
+yields:
+
+This is a text with a footnote[^1].
+
+[^1]: This is an example of a footnote.
 
 ---
 
 #### Abbreviations
 {: .toc-subheader }
 
+Abbreviations will work once you add an abbreviation definition.  So you can just write the text and add the definitions later on.  For example:
+
+```kramdown
+For optimal code reuse, use the MVC paradigm.
+
+*[MVC]: Model View Controller
+```
+
+yields:
+
+For optimal code reuse, use the MVC paradigm.
+
+*[MVC]: Model View Controller
+
+Abbreviations are case-sensitive.
 
 ---
 
 #### HTML Elements
 {: .toc-subheader }
 
+HTML is not only supported on the block-level but also on the span-level:
+
+```html
+This is <span style="color: red">written in red</span>.
+```
+
+yields:
+
+This is <span style="color: red">written in red</span>.
 
 ---
 
 #### Inline Attributes
 {: .toc-subheader }
+
+As with a block-level element you can assign any attribute to a span-level elements using a *span inline attribute list* (or short: span IAL). A span IAL has the same syntax as a block IAL and must immediately follow the span-level element:
+
+```html
+This is *red*{: style="color: red"}.
+```
+
+yields:
+
+This is *red*{: style="color: red"}.
+
+---
+
+#### MathJax & LaTeX
+{: .toc-subheader }
+
+Kramdown has support for LaTeX to PNG rendering via [MathJax](http://www.mathjax.org/).  
+
+For example:
+
+```LaTeX
+$$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$
+```
+
+yields:
+
+$$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$
+
+---

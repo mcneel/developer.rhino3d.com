@@ -14,7 +14,7 @@ order: 2
 
 # How This Site Works
 
-We need to come up with templates / conventions for content but for now add your markdown files.
+TODO: We need to come up with templates / conventions for content but for now add your markdown files.
 
 
 ## Markdown & Kramdown
@@ -25,12 +25,6 @@ A [Rhino Developer Docs Style]({{ site.baseurl }}/guides/rhinodevdocs/style_guid
 Nearly all content on this site uses [Markdown](http://daringfireball.net/projects/markdown/basics) as the base format.  We are using the [Kramdown](http://kramdown.gettalong.org/quickref.html) markdown parser, which is the default parser with Jekyll.
 
 A complete guide to Markdown and Kramdown is beyond the scope of this guide.  For markdown syntax, refer to the [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html) or use other files on this site as examples.
-
-Kramdown has support for LaTeX to PNG rendering via [MathJax](http://www.mathjax.org/).  
-
-For example:
-
-$$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$  
 
 
 ## Types of content
