@@ -1,6 +1,6 @@
 ---
 layout: toc-page
-title: Uninstalling Your Plugin (Mac)
+title: Uninstalling Plugins (Mac)
 author: dan@mcneel.com
 categories: ['GettingStarted']
 platforms: ['Mac']
