@@ -44,3 +44,5 @@ collections:
   samples:
     output: true
     permalink: /samples/:path/
+
+exclude: test
