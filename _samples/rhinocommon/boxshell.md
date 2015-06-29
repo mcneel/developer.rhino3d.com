@@ -40,3 +40,15 @@ public static Rhino.Commands.Result BoxShell(Rhino.RhinoDoc doc)
 {: #cs .tab-pane .fade .in .active}
 
 
+```vbnet
+no vb code sample available
+```
+{: #vb .tab-pane .fade .in}
+
+
+```python
+no python code sample available
+```
+{: #py .tab-pane .fade .in}
+
+
