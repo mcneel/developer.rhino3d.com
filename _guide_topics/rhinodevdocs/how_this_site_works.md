@@ -20,11 +20,9 @@ TODO: We need to come up with templates / conventions for content but for now ad
 ## Markdown & Kramdown
 {: .toc-header }
 
-A [Rhino Developer Docs Style]({{ site.baseurl }}/guides/rhinodevdocs/style_guide/) guide - with organizational and content conventions is currently under-construction.
+Use the [Rhino Developer Docs Style]({{ site.baseurl }}/guides/rhinodevdocs/style_guide/) guide as a reference when writing content for this site.
 
-Nearly all content on this site uses [Markdown](http://daringfireball.net/projects/markdown/basics) as the base format.  We are using the [Kramdown](http://kramdown.gettalong.org/quickref.html) markdown parser, which is the default parser with Jekyll.
-
-A complete guide to Markdown and Kramdown is beyond the scope of this guide.  For markdown syntax, refer to the [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html) or use other files on this site as examples.
+Nearly all content on this site uses [Markdown](http://daringfireball.net/projects/markdown/basics) as the base format.  We are using the [Kramdown](http://kramdown.gettalong.org/quickref.html) markdown parser, which is the default parser with Jekyll.  A complete guide to Markdown and Kramdown is beyond the scope of this guide.  For markdown syntax, refer to the [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html) or use other files on this site as examples.
 
 
 ## Types of content
