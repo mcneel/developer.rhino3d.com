@@ -32,12 +32,12 @@ Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins
 1. **Single-click the name** of the new archive you created in step 2.  This allows you **to rename** the archive.
 1. Change the **extension** from `.zip` to `.macrhi`.  
 1. You will be prompted to confirm this change.  Select the "**Use .macrhi**" button:
-![use_macrhi]({{ site.baseurl }}/images/install_plugin_mac_01.png)
+![use_macrhi]({{ site.baseurl }}/images/plugin_installer_mac_01.png)
 1. Notice that **the icon changes** from a zip archive to a Rhino RHI:
-![use_macrhi_confirm]({{ site.baseurl }}/images/install_plugin_mac_02.png)
+![use_macrhi_confirm]({{ site.baseurl }}/images/plugin_installer_mac_02.png)
 1. If Rhino for Mac is open, **drag the `.macrhi`** archive onto Rhino for Mac's icon in the **dock**; OR:
 1. If Rhino for Mac is *not* currently open, **double-click the `.macrhi` archive** to launch and install the plugin...
-   ![plugin_loaded]({{ site.baseurl }}/images/install_plugin_mac_03.png)
+   ![plugin_loaded]({{ site.baseurl }}/images/plugin_installer_mac_03.png)
 1. **Quit** Rhino.
 1. **Restart** Rhino.
 
@@ -48,9 +48,27 @@ Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins
 
 The `.macrhi` extension is a file extension associated with the Rhino for Mac application (both Rhinoceros.app and RhinoWIP.app).  This extension denotes a "Rhino for Mac plugin installer."  Rhino for Mac knows that such files are actually .zip archives that need to be decompressed and copied into the user's Library folder at the appropriate location, specifically the `~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/` folder[^1].
 
-When Rhino for Mac launches, it scans the contents of the `~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/` folder scanning the sub-folders recursively looking for `.rhp` files.  When it finds such file, Rhino for Mac attempts to load this plugin.  If it cannot load the plugin, it will show an error at launch time.
+When Rhino for Mac launches, it searches the contents of the
+
+`~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/`
+
+folder scanning the sub-folders recursively looking for `.rhp` files.  When it finds such file, Rhino for Mac attempts to load this plugin.  If it cannot load the plugin, it will show an error at launch time.
 
 For uninstallation/removal instructions, please see [Uninstalling Plugins (Mac)]({{ site.baseurl }}/guides/rhinocommon/uninstalling_plugins_mac).
+
+
+#### User Library
+{: .toc-subheader }
+
+By default, the User Library folder is hidden from view.  
+
+To make your Library visible in the Finder:
+
+1. In **Finder**, navigate to your **Home** (`~`) folder.  You must be in your Home folder for this to work.
+1. Press **Command-J** to bring up the **Finder View** options dialog...
+![finder_view_options]({{ site.baseurl }}/images/finder_view_options.png)
+1. Check the **Show Library Folder** check box.  Now your Library should show up in the view.  You may want to drag this folder to your Favorites area of the Finder sidebar for easy access later.
+
 
 ---
 
