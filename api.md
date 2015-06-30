@@ -6,7 +6,5 @@ order: 3
 ---
 # API Reference  
 
-<a href="{{ site.baseurl }}/api/RhinoCommon" target="_blank">RhinoCommon</a>
-<a href="{{ site.baseurl }}/api/RhinoScriptSyntax" target="_blank">RhinoScriptSyntax</a>  
-
-(open in separate tabs)
+<a href="{{ site.baseurl }}/api/RhinoCommon" target="_blank">RhinoCommon (open in separate tab)</a>
+<a href="{{ site.baseurl }}/api/RhinoScriptSyntax">RhinoScriptSyntax</a>  
