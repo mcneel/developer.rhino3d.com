@@ -16,11 +16,29 @@ This site is the [future home](#todo) of all Developer Documentation relating to
 
 #### If you want to...
 
-<br>
-
-| <a href="{{ site.baseurl }}/guides/rhinocommon/"> ![RhinoCommon]({{ site.baseurl }}/images/rhinocommon_logo_intro.png "RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper"){:class="index_use_images img-responsive"} </a> | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | <a href="{{ site.baseurl }}/guides/rhinopython/"> ![Rhino.Python]({{ site.baseurl }}/images/rhino_python_logo_intro.png "Rhino.Python: Pythonic in three dimensions!"){:class="index_use_images img-responsive"} </a> | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | <a href="{{ site.baseurl }}/guides/opennurbs/"> ![openNURBS]({{ site.baseurl }}/images/opennurbs_logo_intro.png "openNURBS is free and open source"){:class="index_use_images img-responsive"} </a> |
-
-<br>
+<div>
+  <table style="width:100%; border: 1px; margin: 0 auto; padding:0; border-spacing: 0px; border-collapse: separate;">
+    <tbody>
+      <tr>
+        <td style="padding: 20px;">
+          <a href="{{ site.baseurl }}/guides/rhinocommon/" title="RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper">
+            <img src="{{ site.baseurl }}/images/rhinocommon_logo_intro.png">
+          </a>
+        </td>
+        <td style="padding: 20px;">
+          <a href="{{ site.baseurl }}/guides/rhinopython/" title="Rhino.Python: Pythonic in three dimensions!">
+            <img src="{{ site.baseurl }}/images/rhino_python_logo_intro.png">
+          </a>
+        </td>
+        <td style="padding: 20px;">
+          <a href="{{ site.baseurl }}/guides/opennurbs/" title="openNURBS is free and open source">
+            <img src="{{ site.baseurl }}/images/opennurbs_logo_intro.png">
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 The above three paths are not the only options!  Keep reading for more...
 
