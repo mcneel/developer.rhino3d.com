@@ -33,7 +33,6 @@ This guide presumes you have an:
 [Xcode](https://developer.apple.com/xcode/) is Apple's development platform and IDE.  Though it is not *absolutely* required that you install Xcode in order to build, debug, and run C# plugins using RhinoCommon, it is *recommended* that you do.  In short: the Xamarin on OS X works best with Xcode installed.  
 
 #### Step-by-Step
-{: .toc-subheader }
 
 1. **[Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)** is free in the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).  Click the **View in Mac App Store** button.
 1. Click the **Get** > **Install App** button underneath the Xcode icon.
@@ -50,7 +49,6 @@ This guide presumes you have an:
 Xamarin's platform is currently required to build RhinoCommon plugins on OS X.  The core components of the Xamarin platform that are required are the Mono Framework and Xamarin Studio.  Please check out the [What are Mono and Xamarin?]({{ site.baseurl }}/guides/what_are_mono_and_xamarin/) guide for more information.
 
 #### Step-by-Step
-{: .toc-subheader }
 
 1. **[Download the Xamarin Platform](http://xamarin.com/download)**.
 1. Xamarin uses an Installer app, which downloads and installs the components that you select.  Once you have downloaded the **XamarinInstaller.dmg**, double-click it to mount the disk image.  Click the big **Install Xamarin** button to launch the installer.
@@ -75,7 +73,6 @@ Xamarin's platform is currently required to build RhinoCommon plugins on OS X.  
 The [Rhino Xamarin Studio Add-in](https://github.com/mcneel/RhinoMonodevelopAddin/releases) (TODO: Update links to new version) is required to debug your plugin code in an active session of Rhino for Mac.  Additionally, it contains project wizards (TODO) and templates to get you started creating plugins quickly.
 
 #### Step-by-Step
-{: .toc-subheader }
 
 1. Download the latest release of the [Rhino Xamarin Studio Add-in](https://github.com/mcneel/RhinoMonodevelopAddin/releases) (TODO: Update links to new version).
 1. Extract the downloaded zip file to get an **.mpack**.
