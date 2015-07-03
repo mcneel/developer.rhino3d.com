@@ -22,17 +22,17 @@ This site is the [future home](#todo) of all Developer Documentation relating to
       <tr>
         <td style="padding: 20px;">
           <a href="{{ site.baseurl }}/guides/rhinocommon/" title="RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper">
-            <img src="{{ site.baseurl }}/images/rhinocommon_logo_intro.png">
+            <img src="{{ site.baseurl }}/images/rhinocommon_logo_intro.png" width="130" height="135">
           </a>
         </td>
         <td style="padding: 20px;">
           <a href="{{ site.baseurl }}/guides/rhinopython/" title="Rhino.Python: Pythonic in three dimensions!">
-            <img src="{{ site.baseurl }}/images/rhino_python_logo_intro.png">
+            <img src="{{ site.baseurl }}/images/rhino_python_logo_intro.png" width="130" height="135">
           </a>
         </td>
         <td style="padding: 20px;">
           <a href="{{ site.baseurl }}/guides/opennurbs/" title="openNURBS is free and open source">
-            <img src="{{ site.baseurl }}/images/opennurbs_logo_intro.png">
+            <img src="{{ site.baseurl }}/images/opennurbs_logo_intro.png" width="130" height="135">
           </a>
         </td>
       </tr>
