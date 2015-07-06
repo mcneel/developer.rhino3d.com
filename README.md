@@ -1,6 +1,6 @@
 # developer-rhino3d-com
 
-This repo contains the contents of http://mcneel.github.io/developer-rhino3d-com
+This repo contains the contents of http://developer.rhino3d.com
 
 The site is hosted on [GitHub Pages](https://pages.github.com/) which uses a static site generator called [Jekyll](http://jekyllrb.com/).
 
