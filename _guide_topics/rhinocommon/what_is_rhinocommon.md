@@ -24,14 +24,16 @@ RhinoCommon is the cross-platform .NET plug-in SDK available for:
 The term _common_ is meant to be just that: an SDK that can be used across Rhino platforms. A plug-in built with RhinoCommon could potentially run on both Windows and Mac platforms with no changes.
 
 ## Technically, what is it?
+{: .toc-header }
 
 RhinoCommon is composed of the following pieces.  These files are included with Rhino 5 for Windows and Mac:
 
 1. **RhinoCommon.dll** - This is a pure .NET DLL that plug-ins can reference and use to work with Rhino.
 1. **RhinoCommon.xml** - This is an XML file that contains SDK documentation comments specific to RhinoCommon.dll. Programming development environments like Visual Studio and MonoDevelop use this XML file to display tooltips and other helpful information while the developer writes code.
-1. **rhcommon_c.dll** and **monomanager.rhp** - These are C++ shared libraries compiled for specific target platforms (Win32, Win64, and OSX). These libraries are used by RhinoCommon, but should never be directly accessed by plug-in developers.
+1. **rhcommon_c.dll** and **monomanager.rhp** - These are C++ shared libraries compiled for specific target platforms (Win32, Win64, and OS X). These libraries are used by RhinoCommon, but should never be directly accessed by plug-in developers.
 
 ## Eating our own dog food
+{: .toc-header }
 
 The Python plug-in for Windows and Mac, Grasshopper, and all Rhino for Mac based .NET plug-ins are being built against RhinoCommon.
 
@@ -41,7 +43,8 @@ Grasshopper will maintain a special build of RhinoCommon to allow it to continue
 
 The Python script engine is entirely based on RhinoCommon.  All python scripts directly use RhinoCommon to work with Rhino. Typically if something in RhinoCommon is difficult to write a python script for, then the RhinoCommon SDK needs to be fixed in that area.
 
-## What about the old Rhino.NET SDK?
+## What about the Rhino.NET SDK?
+{: .toc-header }
 
 RhinoCommon is version 2 of the Rhino.NET SDK, and it improves on the design and implementation of version 1.  Rhino.NET still works in Rhino 5 for Windows, but will be replaced with RhinoCommon in future versions of Rhino.  
 

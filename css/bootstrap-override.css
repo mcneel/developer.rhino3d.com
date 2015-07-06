@@ -73,7 +73,7 @@ tbody.index_table tr td{
 
 /* sidebar */
 .bs-docs-sidebar {
-    padding-left: 20px;
+    padding-left: 1px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
