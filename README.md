@@ -56,7 +56,7 @@ cd CLONE_DIRECTORY
 jekyll serve
 ```
 
-Navigate to http://localhost:4000/developer-rhino3d-com in your browser to view the site.
+Navigate to http://localhost:4000 in your browser to view the site.
 
 
 ![Windows Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/win_logo_small.png)
