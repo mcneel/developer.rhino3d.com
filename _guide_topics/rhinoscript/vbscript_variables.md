@@ -22,7 +22,9 @@ A variable is a convenient placeholder that refers to a computer memory location
 
 You declare variables explicitly in your script using the *Dim* statement, the *Public* statement, and the *Private* statement. For example:
 
-	 Dim AngleDegrees
+```vbnet
+Dim AngleDegrees
+```
 
 You declare multiple variables by separating each variable name with a comma. For example:
 
