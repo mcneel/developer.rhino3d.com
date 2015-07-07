@@ -147,3 +147,13 @@ Lorem ipsum
 {: .toc-header }
 
 Lorem ipsum
+
+---
+
+## Related topics
+{: .toc-header }
+
+- [Rhino Developer Docs Style Guide]({{ site.baseurl }}/guides/rhinodevdocs/style_guide/)
+- [Jekyll Documentation](http://jekyllrb.com/docs/home/)
+- [Liquid Docs](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)
+- [Shopify Liquid Cheatsheet](http://cheat.markdunkley.com/)

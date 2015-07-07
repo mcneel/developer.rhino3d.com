@@ -63,4 +63,14 @@ To make your Library visible in the Finder:
 
 ---
 
+## Related topics
+{: .toc-header }
+
+- [Creating a Plugin Installer (Mac)]({{ site.baseurl }}/guides/rhinocommon/creating_a_plugin_installer_mac/)
+
+---
+
+## Footnotes
+{: .toc-header }
+
 [^1]: Do not confuse this path with `/Library/Application Support/McNeel/Rhinoceros/`, which is the system-wide Library location.

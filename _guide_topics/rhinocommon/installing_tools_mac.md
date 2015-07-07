@@ -90,6 +90,9 @@ The [Rhino Xamarin Studio Add-in](https://github.com/mcneel/RhinoMonodevelopAddi
 
 ---
 
+## Footnotes
+{: .toc-header }
+
 [^1]: Xamarin.Android is used to build C# .NET applications for Android devices.  This is useful to have installed if you wish to use the RhinoMobile toolkit, but not required for RhinoCommon in Rhino for Mac.
 
 [^2]: Xamarin.iOS is used to build C# .NET applications for Apple iOS devices.  This is useful to have installed if you wish to use the RhinoMobile toolkit, but not required for RhinoCommon in Rhino for Mac.

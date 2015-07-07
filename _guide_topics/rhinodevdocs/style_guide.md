@@ -580,3 +580,14 @@ yields:
 $$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$
 
 ---
+
+## Related topics
+{: .toc-header }
+
+- [How This Site Works]({{ site.baseurl }}/guides/rhinodevdocs/how_this_site_works/) 
+- [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html)
+
+---
+
+## Footnotes
+{: .toc-header }

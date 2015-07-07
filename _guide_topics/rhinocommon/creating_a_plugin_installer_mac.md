@@ -69,7 +69,18 @@ To make your Library visible in the Finder:
 ![finder_view_options]({{ site.baseurl }}/images/finder_view_options.png)
 1. Check the **Show Library Folder** check box.  Now your Library should show up in the view.  You may want to drag this folder to your Favorites area of the Finder sidebar for easy access later.
 
+---
+
+## Related topics
+{: .toc-header }
+
+- [Creating Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/creating_your_first_plugin_mac)
+- [Creating Your First Plugin (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/creating_your_first_plugin_crossplatform)
+- [Uninstalling Plugins (Mac)]({{ site.baseurl }}/guides/rhinocommon/uninstalling_plugins_mac)
 
 ---
+
+## Footnotes
+{: .toc-header }
 
 [^1]: Do not confuse this path with `/Library/Application Support/McNeel/Rhinoceros/`, which is the system-wide Library location.
