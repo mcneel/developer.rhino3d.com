@@ -14,8 +14,23 @@ order: 2
 
 # How This Site Works
 
-TODO: We need to come up with templates / conventions for content but for now add your markdown files.
+[This site](http://developer.rhino3d.com) is hosted on [GitHub Pages](https://pages.github.com/).  Every time a commit is made to [this git repository](https://github.com/mcneel/developer-rhino3d-com), a static site-generator called [Jekyll](http://jekyllrb.com/) churns through all the markdown content to generate html for the site.  Behind the scenes, Jekyll uses a templating language called [Liquid](https://github.com/Shopify/liquid/wiki), which allows for automatic generation of some content based upon yaml fields or page contents.
 
+
+## Workflow
+{: .toc-header }
+
+The best way to understand how this site works is to make a change to it.  Follow these steps:
+
+1. If you have not already, read the [Getting Started with Dev Docs](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/README.md) guide.  This guide will get you setup building the entire site locally on your computer so you can preview changes before making them live (by committing).
+1. With the site up and running on your localhost, make a change to one of the pages (find a typo...there are many).  A good editor for Markdown is the [Atom editor](https://atom.io/).  Once you save your changes to the .md file, wait a moment, then refresh the localhost site in your browser to preview your change.
+1. If you are satisfied with your change, use git to commit your change to the GitHub repository (or submit a pull-request for review).
+1. Wait a couple minutes - this site is large and it may take a minute or two for Jekyll to process all the markdown and render the html contents.  (If you issued a pull-request, your change won't be live until a git administrator accepts it).
+1. On the live [developer.rhino3d.com](http://developer.rhino3d.com), you should see your change.
+
+*NOTE*: For those familiar with Google's AppEngine workflow, this workflow should seem similar.
+
+---
 
 ## Markdown & Kramdown
 {: .toc-header }
@@ -24,6 +39,14 @@ Use the [Rhino Developer Docs Style]({{ site.baseurl }}/guides/rhinodevdocs/styl
 
 Nearly all content on this site uses [Markdown](http://daringfireball.net/projects/markdown/basics) as the base format.  We are using the [Kramdown](http://kramdown.gettalong.org/quickref.html) markdown parser, which is the default parser with Jekyll.  A complete guide to Markdown and Kramdown is beyond the scope of this guide.  For markdown syntax, refer to the [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html) or use other files on this site as examples.
 
+---
+
+## Templates
+{: .toc-header }
+
+Lorem ipsum
+
+---
 
 ## Types of content
 {: .toc-header }
@@ -60,14 +83,13 @@ The YAML fields for Pages determine:
 * **title**: This is the title of the page.  This is the html page title.
 * **order**: The relative sort-order of this page in any collection of pages.
 
-TODO: What about pages with permalinks?
 
 #### Guides
 {: .toc-subheader }
 
 Guides are contained in the `/_guide_topics/` directory.  This very document you are reading is a Guide.
 
-To create a new guide, simply create a new markdown file and place it in the `/_guide_topics/` folder.  The file must have a .md file extension and begin with some YAML that is used to determine what it is and where it should be placed on the site.
+To create a new guide, simply create a new markdown file and place it in the `/_guide_topics/` folder.  The file must have a `.md` file extension and begin with some YAML that is used to determine what it is and where it should be placed on the site.
 
 Here is an example of the YAML for this guide:
 
@@ -143,10 +165,26 @@ The YAML fields for Samples determine:
 
 Lorem ipsum
 
-## Templates
+
+
+## TODO & origin fields
 {: .toc-header }
 
-Lorem ipsum
+Many of the pages, guides, and samples have a `TODO` and `origin` yaml field.  These fields are used by this site to [report content]({{ site.baseurl }}/todolist.html) that:
+
+- Needs review
+- Has not yet been authored
+- Needs to be ported from another source
+
+#### TODO
+
+If `TODO` is set to `1` (`TODO: 1`), the site will add this content to the [TODO list]({{ site.baseurl }}/todolist.html).
+
+If the TODO field is not present or is set to `0` (`TODO: 0`), the content will not be on the list.
+
+#### origin
+
+Much of this site is (or was) ported from a previous location.  The `origin` yaml field is reserved for a backlink to the original content.  If the `origin` yaml field is set to a URL - and `TODO` is set to `1` - the content will show up on the [TODO list]({{ site.baseurl }}/todolist.html) as needs porting from the `origin` URL.
 
 ---
 
