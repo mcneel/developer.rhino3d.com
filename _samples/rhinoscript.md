@@ -5,4 +5,6 @@ order: 7
 ---
 
 # RhinoScript Samples
+{: .toc-title }
+
 ---

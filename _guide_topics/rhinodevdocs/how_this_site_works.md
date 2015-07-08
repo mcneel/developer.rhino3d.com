@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: How This Site Works
 author: dan@mcneel.com
 categories: ['General']
@@ -13,6 +13,7 @@ order: 2
 ---
 
 # How This Site Works
+{: .toc-title }
 
 [This site](http://developer.rhino3d.com) is hosted on [GitHub Pages](https://pages.github.com/).  Every time a commit is made to [this git repository](https://github.com/mcneel/developer-rhino3d-com), a static site-generator called [Jekyll](http://jekyllrb.com/) churns through all the markdown content to generate html for the site.  Behind the scenes, Jekyll uses a templating language called [Liquid](https://github.com/Shopify/liquid/wiki), which allows for automatic generation of some content based upon yaml fields or page contents.
 
@@ -35,7 +36,7 @@ The best way to understand how this site works is to make a change to it.  Follo
 ## Markdown & Kramdown
 {: .toc-header }
 
-Use the [Rhino Developer Docs Style]({{ site.baseurl }}/guides/rhinodevdocs/style_guide/) guide as a reference when writing content for this site.
+Use the [Style Guide]({{ site.baseurl }}/guides/rhinodevdocs/style_guide/) guide as a reference when writing content for this site.
 
 Nearly all content on this site uses [Markdown](http://daringfireball.net/projects/markdown/basics) as the base format.  We are using the [Kramdown](http://kramdown.gettalong.org/quickref.html) markdown parser, which is the default parser with Jekyll.  A complete guide to Markdown and Kramdown is beyond the scope of this guide.  For markdown syntax, refer to the [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html) or use other files on this site as examples.
 
@@ -71,7 +72,7 @@ Here is an example of the YAML for [a page]({{ site.baseurl }}/guides/general):
 
 ```yaml
 ---
-layout: toc-page
+layout: toc-guide-page
 title: General Guides
 order: 0
 ---
@@ -95,7 +96,7 @@ Here is an example of the YAML for this guide:
 
 ```yaml
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Authoring content
 author: dan@mcneel.com
 categories: ['General']

@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: What is RhinoCommon?
 author: steve@mcneel.com
 categories: ['Overview']
@@ -12,7 +12,9 @@ origin: http://wiki.mcneel.com/developer/rhinocommon
 order: 1
 ---
 
+
 # What is RhinoCommon?
+{: .toc-title }
 
 RhinoCommon is the cross-platform .NET plug-in SDK available for:
 

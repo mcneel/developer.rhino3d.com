@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Creating Your First Plugin (Mac)
 author: dan@mcneel.com
 categories: ['GettingStarted']
@@ -13,7 +13,5 @@ order: 4
 ---
 
 
-
 # Creating Your First Plugin (Mac)
-
-TODO
+{: .toc-title }

@@ -5,4 +5,6 @@ order: 11
 ---
 
 # Zoo Samples
+{: .toc-title }
+
 ---

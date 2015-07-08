@@ -4,7 +4,9 @@ title: Samples
 permalink: /samples/
 order: 4
 ---
-# All Samples  
+
+# Samples  
+{: .toc-title }
 
 ---
 

@@ -4,7 +4,7 @@ layout: toc-page
 
 
 # Welcome
-
+{: .toc-title }
 
 **Rhino developer tools are royalty free and include support.**
 

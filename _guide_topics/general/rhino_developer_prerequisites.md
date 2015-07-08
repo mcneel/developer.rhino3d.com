@@ -1,10 +1,10 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Rhino Developer Prerequisites
 author: steve@mcneel.com
 categories: ['General']
 platforms: ['Cross-Platform']
-apis: ['All']
+apis: ['General']
 languages: ['All']
 keywords: ['developer', 'rhino']
 TODO: 1
@@ -14,3 +14,4 @@ order: 1
 
 
 # Rhino Developer Prerequisites
+{: .toc-title }

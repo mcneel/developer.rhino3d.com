@@ -9,42 +9,56 @@ layout: bootstrap
     <nav class="col-xs-0 col-md-3 bs-docs-sidebar">
         <ul id="sidebar" class="nav nav-stacked fixed">
 
-          <!-- Check to see if content "group" and if not throw error -->
-
           <!-- Find the h1 handle and title -->
+          {% assign splitAtFirstHeader = content | split:'<h1 class="toc-title" id="' %}
+          {% assign firstSideOfFirstHeader = splitAtFirstHeader[1] %}
+          {% assign dividedMainTitle = firstSideOfFirstHeader | split:'<' %}
+          {% assign firstSideOfDividedMainTitle = dividedMainTitle[0] %}
+          {% assign titleToProcess = firstSideOfDividedMainTitle | split:'">' %}
+          {% assign mainTitleHandle = titleToProcess[0] %}
+          {% assign mainTitleTitle = titleToProcess[1] %}
+          <li>
+            <a href="#{{ mainTitleHandle }}">{{ mainTitleTitle }}</a>
 
-          <!-- Find the h2 group and any h4 subgroups -->
-          {% assign groups = content | split:'<h2 class="toc-header" id="' %}
+            <ul class="nav nav-stacked">
+              <!-- Find the h2 group and any h4 subgroups -->
+              {% assign groups = content | split:'<h2 class="toc-header" id="' %}
 
-          {% for group in groups offset:1 %}
-            {% assign dividedGroup = group | split:'<' %}
-            {% assign groupToProcess = dividedGroup[0] %}
-            {% assign groupHeading = groupToProcess | split:'">' %}
-            {% assign groupHandle = groupHeading[0] %}
-            {% assign groupTitle = groupHeading[1] %}
-            <li>
-              <a href="#{{groupHandle}}">{{ groupTitle }}</a>
+              {% for group in groups offset:1 %}
+                {% assign dividedGroup = group | split:'<' %}
+                {% assign groupToProcess = dividedGroup[0] %}
+                {% assign groupHeading = groupToProcess | split:'">' %}
+                {% assign groupHandle = groupHeading[0] %}
+                {% assign groupTitle = groupHeading[1] %}
+                <li>
+                  <a href="#{{groupHandle}}">{{ groupTitle }}</a>
 
-              {% if group contains '<h4 class="toc-subheader" id="' %}
-                <ul class="nav nav-stacked">
-                  {% assign subgroups = group | split:'<h4 class="toc-subheader" id="' %}
+                  {% if group contains '<h4 class="toc-subheader" id="' %}
+                    <ul class="nav nav-stacked">
+                      {% assign subgroups = group | split:'<h4 class="toc-subheader" id="' %}
 
-                  {% for subgroup in subgroups offset:1 %}
-                    {% assign dividedSubgroup = subgroup | split:'<' %}
-                    {% assign subgroupToProcess = dividedSubgroup[0] %}
-                    {% assign subgroupHeading = subgroupToProcess | split:'">' %}
-                    {% assign subgroupHandle = subgroupHeading[0] %}
-                    {% assign subgroupTitle = subgroupHeading[1] %}
-                    <li>
-                        <a href="#{{subgroupHandle}}">{{ subgroupTitle }}</a>
-                    </li>
-                  {% endfor %}
+                      {% for subgroup in subgroups offset:1 %}
+                        {% assign dividedSubgroup = subgroup | split:'<' %}
+                        {% assign subgroupToProcess = dividedSubgroup[0] %}
+                        {% assign subgroupHeading = subgroupToProcess | split:'">' %}
+                        {% assign subgroupHandle = subgroupHeading[0] %}
+                        {% assign subgroupTitle = subgroupHeading[1] %}
+                        <li>
+                            <a href="#{{subgroupHandle}}">{{ subgroupTitle }}</a>
+                        </li>
+                      {% endfor %}
 
-                </ul>
-              {% endif %}
+                    </ul>
+                  {% endif %}
 
-            </li>
-          {% endfor %}
+                </li>
+              {% endfor %}
+
+            </ul>
+
+          </li>
+
+
         </ul>
     </nav>
     <!--Main Content -->

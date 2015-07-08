@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: VBScript Looping
 author: dale@mcneel.com
 categories: ['VBScript Basics']
@@ -11,6 +11,7 @@ order: 1
 ---
 
 # VBScript Looping
+{: .toc-title }
 
 ## Overview
 
@@ -42,7 +43,7 @@ Use the **While** keyword to check a condition in a **Doâ€¦Loop** statement. You
    Loop
    MsgBox "The loop made " & counter & " repetitions."
  End Sub
- 
+
  Sub ChkLastWhile()
    Dim counter, myNum
    counter = 0
@@ -70,7 +71,7 @@ There are two ways to use the **Until** keyword to check a condition in a **Doâ€
    Loop
    MsgBox "The loop made " & counter & " repetitions."
  End Sub
- 
+
  Sub ChkLastUntil()
    Dim counter, myNum
    counter = 0
@@ -120,7 +121,7 @@ The following example causes a procedure called *MyProc* to execute 50 times. Th
    Next
  End Sub
 ```
- 
+
 Using the **Step** keyword, you can increase or decrease the counter variable by the value you specify. In the following example, the counter variable *j* is incremented by 2 each time the loop repeats. When the loop is finished, the total is the sum of 2, 4, 6, 8, and 10.
 
 ```vbnet
@@ -132,7 +133,7 @@ Using the **Step** keyword, you can increase or decrease the counter variable by
    MsgBox "The total is " & total
  End Sub
 ```
- 
+
 To decrease the counter variable, use a negative **Step** value. You must specify an end value that is less than the start value. In the following example, the counter variable *myNum* is decreased by 2 each time the loop repeats. When the loop is finished, total is the sum of 16, 14, 12, 10, 8, 6, 4, and 2.
 
 ```vbnet

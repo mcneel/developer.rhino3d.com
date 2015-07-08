@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Creating a Plugin Installer (Mac)
 author: dan@mcneel.com
 categories: ['GettingStarted']
@@ -14,6 +14,7 @@ order: 6
 
 
 # Creating a Plugin Installer (Mac)
+{: .toc-title }
 
 This guide explains how to create a plugin installer for Rhino for Mac, which presumes you have a plugin that successfully builds and runs already.  If you are not there yet, see [Creating Your First Plugin]({{ site.baseurl }}/guides/rhinocommon/creating_your_first_plugin_mac).
 

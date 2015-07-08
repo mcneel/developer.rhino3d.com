@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: VBScript Operators
 author: dale@mcneel.com
 categories: ['VBScript Basics']
@@ -11,6 +11,7 @@ order: 1
 ---
 
 # VBScript Operators
+{: .toc-title }
 
 ## Overview
 
@@ -39,7 +40,7 @@ When expressions contain operators from more than one category, arithmetic opera
  | Comparison |    |  |
 
 ### Comparison
- 
+
  |--
  | Description |    | Symbol |
  |--
@@ -50,7 +51,7 @@ When expressions contain operators from more than one category, arithmetic opera
  | Less than or equal to |    | ⇐ |
  | Greater than or equal to |    | >= |
  | Object equivalence |    | Is |
- 
+
 ### Logical
 
  |--

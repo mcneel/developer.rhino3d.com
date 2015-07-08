@@ -5,8 +5,8 @@ permalink: /guides/
 order: 2
 ---
 
-# All Guides
-{: .toc-header }
+# Guides
+{: .toc-title }
 
 ---
 
@@ -17,7 +17,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.platforms contains 'Cross-Platform' and topic.apis contains 'All' %}
+    {% if topic.platforms contains 'Cross-Platform' and topic.apis contains 'General' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -161,10 +161,10 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 
 <!-- TODO - This section could be auto Generated -->
 
-- [VBScript Procedures](/developer-rhino3d-com/guides/rhinoscript/vbscript_procedures/)
-- [VBScript Statements](/developer-rhino3d-com/guides/rhinoscript/vbscript_statements/)
-- [VBScript String Literals](/developer-rhino3d-com/guides/rhinoscript/vbscript_string_literals/)
-- [VBScript Variables](/developer-rhino3d-com/guides/rhinoscript/vbscript_variables/)
+- [VBScript Procedures]({{ site.baseurl }}/guides/rhinoscript/vbscript_procedures/)
+- [VBScript Statements]({{ site.baseurl }}/guides/rhinoscript/vbscript_statements/)
+- [VBScript String Literals]({{ site.baseurl }}/guides/rhinoscript/vbscript_string_literals/)
+- [VBScript Variables]({{ site.baseurl }}/guides/rhinoscript/vbscript_variables/)
 
 
 ---

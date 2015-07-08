@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Creating Your First Plugin (Cross-Platform)
 author: steve@mcneel.com
 categories: ['GettingStarted']
@@ -13,3 +13,4 @@ order: 5
 ---
 
 # Creating Your First Plugin (Cross-Platform)
+{: .toc-title }

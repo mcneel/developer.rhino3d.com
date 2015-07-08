@@ -5,6 +5,8 @@ order: 8
 ---
 
 # Renderer Development Kit (RDK) Samples
+{: .toc-title }
+
 ---
 
 TODO

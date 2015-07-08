@@ -5,6 +5,8 @@ order: 10
 ---
 
 # RhinoMobile Samples
+{: .toc-title }
+
 ---
 
 TODO

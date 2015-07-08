@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: What are Mono and Xamarin?
 author: dan@mcneel.com
 categories: ['Overview']
@@ -13,5 +13,6 @@ order: 2
 ---
 
 # What are Mono and Xamarin?
+{: .toc-title }
 
 TODO

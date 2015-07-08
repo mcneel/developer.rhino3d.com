@@ -1,0 +1,137 @@
+---
+layout: bootstrap
+---
+
+<div class="container-fluid">
+
+<div class="row-fluid">
+    <!--Nav Bar -->
+    <nav class="col-xs-0 col-md-3 bs-docs-sidebar">
+        <ul id="sidebar" class="nav nav-stacked fixed">
+
+          <li>
+            <a href="{{ site.baseurl }}/guides/">Guides</a>
+
+            <ul class="nav nav-stacked">
+
+              <li>
+
+                {% if page.apis.first == 'General' %}
+                  <a href="{{ site.baseurl }}/guides/#general">General</a>
+                {% endif %}
+
+                {% if page.apis.first == 'RhinoCommon' %}
+                  <a href="{{ site.baseurl }}/guides/#rhinocommon-img-srcimageswinlogosmallpng-altwindows-classguideicon-img-srcimagesmaclogosmallpng-altos-x-classguideicon">RhinoCommon</a>
+                {% endif %}
+
+                {% if page.apis.first == 'RhinoPython' %}
+                  <a href="{{ site.baseurl }}/guides/#rhinopython-img-srcimageswinlogosmallpng-altwindows-classguideicon-img-srcimagesmaclogosmallpng-altos-x-classguideicon">Rhino.Python</a>
+                {% endif %}
+
+                {% if page.apis.first == 'openNURBS' %}
+                  <a href="{{ site.baseurl }}/guides/#ropennurbs-toolkit-img-srcimageswinlogosmallpng-altwindows-classguideicon-img-srcimagesmaclogosmallpng-altos-x-classguideicon">openNURBS Toolkit</a>
+                {% endif %}
+
+                {% if page.apis.first == 'CPP' %}
+                  <a href="{{ site.baseurl }}/guides/#cc-img-srcimageswinlogosmallpng-altwindows-classguideicon">C/C++</a>
+                {% endif %}
+
+                {% if page.apis.first == 'Grasshopper' %}
+                  <a href="{{ site.baseurl }}/guides/#grasshopper-img-srcimageswinlogosmallpng-altwindows-classguideicon">Grasshopper</a>
+                {% endif %}
+
+                {% if page.apis.first == 'RhinoScript' %}
+                  <a href="{{ site.baseurl }}/guides/#rhinoscript-img-srcimageswinlogosmallpng-altwindows-classguideicon">RhinoScript</a>
+                {% endif %}
+
+                {% if page.apis.first == 'RDK' %}
+                  <a href="{{ site.baseurl }}/guides/#renderer-development-kit-img-srcimageswinlogosmallpng-altwindows-classguideicon">RDK</a>
+                {% endif %}
+
+                {% if page.apis.first == 'RhinoMobile' %}
+                  <a href="{{ site.baseurl }}/guides/#rhinomobile-img-srcimagesandroidlogosmallpng-altandroid-classguideicon-img-srcimagesioslogosmallpng-altios-classguideicon">RhinoMobile</a>
+                {% endif %}
+
+                {% if page.apis.first == 'Zoo' %}
+                  <a href="{{ site.baseurl }}/guides/#zoo-license-manager-img-srcimageswinlogosmallpng-altwindows-classguideicon">Zoo License Manager</a>
+                {% endif %}
+
+                {% if page.apis.first == 'DevDocs' %}
+                  <a href="{{ site.baseurl }}/guides/#developer-docs-a-iddev-docsa">Developer Docs</a>
+                {% endif %}
+
+                <ul class="nav nav-stacked">
+
+                  <!-- Find the h1 handle and title -->
+                  {% assign splitAtFirstHeader = content | split:'<h1 class="toc-title" id="' %}
+                  {% assign firstSideOfFirstHeader = splitAtFirstHeader[1] %}
+                  {% assign dividedMainTitle = firstSideOfFirstHeader | split:'<' %}
+                  {% assign firstSideOfDividedMainTitle = dividedMainTitle[0] %}
+                  {% assign titleToProcess = firstSideOfDividedMainTitle | split:'">' %}
+                  {% assign mainTitleHandle = titleToProcess[0] %}
+                  {% assign mainTitleTitle = titleToProcess[1] %}
+                  <li>
+                    <a href="#{{ mainTitleHandle }}">{{ mainTitleTitle }}</a>
+
+                    <ul class="nav nav-stacked">
+
+                      <!-- Find the h2 group and any h4 subgroups -->
+                      {% assign groups = content | split:'<h2 class="toc-header" id="' %}
+
+                      {% for group in groups offset:1 %}
+                        {% assign dividedGroup = group | split:'<' %}
+                        {% assign groupToProcess = dividedGroup[0] %}
+                        {% assign groupHeading = groupToProcess | split:'">' %}
+                        {% assign groupHandle = groupHeading[0] %}
+                        {% assign groupTitle = groupHeading[1] %}
+                        <li>
+                          <a href="#{{groupHandle}}">{{ groupTitle }}</a>
+
+                          {% if group contains '<h4 class="toc-subheader" id="' %}
+                            <ul class="nav nav-stacked">
+                              {% assign subgroups = group | split:'<h4 class="toc-subheader" id="' %}
+
+                              {% for subgroup in subgroups offset:1 %}
+                                {% assign dividedSubgroup = subgroup | split:'<' %}
+                                {% assign subgroupToProcess = dividedSubgroup[0] %}
+                                {% assign subgroupHeading = subgroupToProcess | split:'">' %}
+                                {% assign subgroupHandle = subgroupHeading[0] %}
+                                {% assign subgroupTitle = subgroupHeading[1] %}
+                                <li>
+                                    <a href="#{{subgroupHandle}}">{{ subgroupTitle }}</a>
+                                </li>
+                              {% endfor %}
+
+                            </ul>
+                          {% endif %}
+
+                        </li>
+                      {% endfor %}
+
+                    </ul>
+
+                  </li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+
+          </li>
+
+        </ul>
+    </nav>
+    <!--Main Content -->
+    <div class="col-xs-12 col-md-9">
+      <!--<div class="post">-->
+
+        <article class="post-content">
+          {{ content }}
+        </article>
+
+      <!--</div>-->
+
+    </div>
+</div>
+</div>

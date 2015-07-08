@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Installing Tools (Windows)
 author: steve@mcneel.com
 categories: ['GettingStarted']
@@ -13,5 +13,6 @@ order: 1
 ---
 
 # Installing Tools (Windows)
+{: .toc-title }
 
 TODO

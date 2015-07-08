@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Creating a skin using C/C++
 author: dale@mcneel.com
 categories: ['Advanced']
@@ -13,3 +13,4 @@ order: 1
 ---
 
 # Creating a skin using C/C++
+{: .toc-title }

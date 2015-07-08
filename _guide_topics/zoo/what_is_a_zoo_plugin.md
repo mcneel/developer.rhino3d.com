@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: What is a Zoo Plugin?
 author: dale@mcneel.com
 categories: ['Overview']
@@ -13,3 +13,4 @@ order: 1
 ---
 
 # What is a Zoo Plugin?
+{: .toc-title }

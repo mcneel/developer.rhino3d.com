@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Creating RhinoCommon Plugins that use the Zoo
 author: dale@mcneel.com
 categories: ['Advanced']
@@ -13,3 +13,4 @@ order: 3
 ---
 
 # Creating RhinoCommon Plugins that use the Zoo
+{: .toc-title }

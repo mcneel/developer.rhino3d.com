@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Getting Started with RhinoMobile
 author: dan@mcneel.com
 categories: ['GettingStarted']
@@ -13,3 +13,4 @@ order: 1
 ---
 
 # Getting Started with RhinoMobile
+{: .toc-title }

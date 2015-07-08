@@ -5,4 +5,6 @@ order: 9
 ---
 
 # Rhino Application Platform (RAP) Samples
+{: .toc-title }
+
 ---

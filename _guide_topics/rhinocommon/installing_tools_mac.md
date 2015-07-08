@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Installing Tools (Mac)
 author: dan@mcneel.com
 categories: ['GettingStarted']
@@ -13,6 +13,7 @@ order: 2
 ---
 
 # Installing Tools (Mac)
+{: .toc-title }
 
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C# .NET plugins using RhinoCommon in Rhino for Mac.
 

@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Overview of Rhino.Python
 author: alain@mcneel.com
 categories: ['Overview']
@@ -13,3 +13,4 @@ order: 1
 ---
 
 # Overview of Rhino.Python
+{: .toc-title }

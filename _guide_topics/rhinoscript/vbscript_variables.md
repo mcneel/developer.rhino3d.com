@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: VBScript Variables
 author: dale@mcneel.com
 categories: ['VBScript Basics']
@@ -11,6 +11,7 @@ order: 1
 ---
 
 # VBScript Variables
+{: .toc-title }
 
 ## Overview
 {: .toc-header }
@@ -95,4 +96,3 @@ To use a dynamic array, you must subsequently use ReDim to determine the number 
 	ReDim Preserve MyArray(30)
 
 There is no limit to the number of times you can resize a dynamic array, although if you make an array smaller, you lose the data in the eliminated elements.
-

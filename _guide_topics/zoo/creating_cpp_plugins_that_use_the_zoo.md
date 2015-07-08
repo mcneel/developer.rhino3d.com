@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Creating C/C++ Plugins that use the Zoo
 author: dale@mcneel.com
 categories: ['Fundamentals']
@@ -13,3 +13,4 @@ order: 4
 ---
 
 # Creating C/C++ Plugins that use the Zoo
+{: .toc-title }

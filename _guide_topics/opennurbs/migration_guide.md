@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: openNURBS 5.0 Migration Guide
 author: dalelear@mcneel.com
 categories: ['Overview']
@@ -13,3 +13,4 @@ order: 1
 ---
 
 # openNURBS 5.0 Migration Guide
+{: .toc-title }

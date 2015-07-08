@@ -1,6 +1,6 @@
 ---
-layout: toc-page
-title: Rhino Developer Docs Style Guide
+layout: toc-guide-page
+title: Style Guide
 author: dan@mcneel.com
 categories: ['General']
 platforms: ['Mac', 'Windows']
@@ -14,7 +14,9 @@ order: 3
 
 <a id="top"></a> <!-- this is just a sample anchor -->
 
-# Rhino Developer Docs Style Guide
+# Style Guide
+{: .toc-title }
+
 ---
 
 This is a sample page that serves as a quick reference for the syntax and structure of Rhino Developer Documentation content.  Below are examples of nearly all the available syntax using Markdown, Kramdown (a superset of Markdown), the table-of-contents UI widget, etc.
@@ -584,7 +586,7 @@ $$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$
 ## Related topics
 {: .toc-header }
 
-- [How This Site Works]({{ site.baseurl }}/guides/rhinodevdocs/how_this_site_works/) 
+- [How This Site Works]({{ site.baseurl }}/guides/rhinodevdocs/how_this_site_works/)
 - [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html)
 
 ---

@@ -20,7 +20,6 @@ body {
   display: block;
 }
 
-
 /*
 ##############################################################################
 ##  Index.md Page
@@ -60,6 +59,9 @@ tbody.index_table tr td{
 ##############################################################################
 */
 
+.toc-title {
+  background: white;
+}
 .toc-header {
   background: white;
 }
@@ -78,12 +80,28 @@ tbody.index_table tr td{
     margin-bottom: 20px;
 }
 
-/* all links */
+.bs-docs-sidebar .nav {
+  margin-left:10px;
+}
+
+.bs-docs-sidebar .nav .nav {
+  margin-left:20px;
+}
+
+.bs-docs-sidebar .nav .nav .nav {
+  margin-left:20px;
+}
+
+.bs-docs-sidebar .nav .nav .nav .nav {
+  margin-left:20px;
+}
+
+/* title links */
 .bs-docs-sidebar .nav>li>a {
     color: #999;
-    border-left: 2px solid transparent;
-    padding: 4px 20px;
-    font-size: 14px;
+    border-left: 1px solid transparent;
+    padding: 4px 5px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -91,8 +109,24 @@ tbody.index_table tr td{
 .bs-docs-sidebar .nav .nav>li>a {
     padding-top: 1px;
     padding-bottom: 1px;
-    padding-left: 10px;
-    font-size: 12px;
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+/* sub-nested links */
+.bs-docs-sidebar .nav .nav .nav>li>a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    font-size: 14px;
+}
+
+/* sub-sub-nested links */
+.bs-docs-sidebar .nav .nav .nav .nav>li>a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    font-size: 13px;
 }
 
 /* active & hover links */
@@ -114,6 +148,13 @@ tbody.index_table tr td{
 .bs-docs-sidebar .nav .nav>.active>a,
 .bs-docs-sidebar .nav .nav>.active:hover>a,
 .bs-docs-sidebar .nav .nav>.active:focus>a {
+    font-weight: 500;
+}
+
+/* sub-nested active links */
+.bs-docs-sidebar .nav .nav .nav>.active>a,
+.bs-docs-sidebar .nav .nav .nav>.active:hover>a,
+.bs-docs-sidebar .nav .nav .nav>.active:focus>a {
     font-weight: 500;
 }
 

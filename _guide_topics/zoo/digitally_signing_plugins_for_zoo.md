@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Digitally Signing Plugins for Zoo
 author: dale@mcneel.com
 categories: ['Fundamentals']
@@ -13,3 +13,4 @@ order: 5
 ---
 
 # Digitally Signing Plugins for Zoo
+{: .toc-title }

@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Uninstalling Plugins (Mac)
 author: dan@mcneel.com
 categories: ['GettingStarted']
@@ -14,6 +14,7 @@ order: 7
 
 
 # Uninstalling Plugins (Mac)
+{: .toc-title }
 
 This guide explains how to uninstall/remove plugins in Rhino for Mac.  This guide presumes you have plugins installed that you would like to remove.
 

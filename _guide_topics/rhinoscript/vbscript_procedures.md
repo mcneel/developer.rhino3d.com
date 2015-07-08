@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: VBScript Procedures
 author: dale@mcneel.com
 categories: ['VBScript Basics']
@@ -11,6 +11,7 @@ order: 1
 ---
 
 # VBScript Procedures
+{: .toc-title }
 
 ## Overview
 
@@ -37,7 +38,7 @@ In the following example, the Celsius *Function* calculates degrees Celsius from
 		temp = InputBox("Please enter the temperature in degrees F.", 1)
 		MsgBox "The temperature is " & Celsius(temp) & " degrees C."
 	End Sub
-	
+
 	Function Celsius(fDegrees)
 		Celsius = (fDegrees - 32) * 5 / 9
 	End Function

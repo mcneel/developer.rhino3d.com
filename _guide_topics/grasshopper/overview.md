@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Overview of Grasshopper Components
 author: steve@mcneel.com
 categories: ['Overview']
@@ -13,3 +13,4 @@ order: 1
 ---
 
 # Overview of Grasshopper Components
+{: .toc-title }

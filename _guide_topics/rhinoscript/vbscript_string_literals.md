@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: VBScript String Literals
 author: dale@mcneel.com
 categories: ['VBScript Basics']
@@ -11,6 +11,7 @@ order: 1
 ---
 
 # VBScript String Literals
+{: .toc-title }
 
 In VBScript, you enclose strings with double quote characters, and you use the ampersand (&) operator to concatenate strings. For example:
 
@@ -36,8 +37,8 @@ Or, to make your code more readable, you can write a function.
 			Quote = Chr(34) & CStr(s) & Chr(34)
 	End If
 	End Function
-	 
+
 	'...
-	
+
 	Dim s
 	s = Quote("Hello Rhino!")

@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: RhinoScript Guides
 TODO: 1
 origin: unset
@@ -7,7 +7,7 @@ order: 7
 ---
 
 # RhinoScript Guides
-{: .toc-header }
+{: .toc-title }
 
 
 ## Overview

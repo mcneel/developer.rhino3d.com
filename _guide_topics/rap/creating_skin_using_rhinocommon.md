@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Creating a skin using RhinoCommon
 author: dale@mcneel.com
 categories: ['Advanced']
@@ -13,3 +13,4 @@ order: 2
 ---
 
 # Creating a skin using RhinoCommon
+{: .toc-title }

@@ -1,5 +1,5 @@
 ---
-layout: toc-page
+layout: toc-guide-page
 title: Material, Environment, and Texture Editors
 author: andy@mcneel.com
 categories: ['Fundamentals']
@@ -14,3 +14,4 @@ order: 1
 
 
 # Material, Environment, and Texture Editors
+{: .toc-title }
