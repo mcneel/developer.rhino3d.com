@@ -230,7 +230,7 @@ TODO
   <ul>
   <li><a class="page-link" href="https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/README.md">Getting Started with Dev Docs</a></li>
   {% for topic in guides %}
-    {% if topic.apis contains 'DevDocs' %}
+    {% if topic.apis contains 'Developer Docs' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
