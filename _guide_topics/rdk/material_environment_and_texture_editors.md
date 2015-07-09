@@ -5,7 +5,7 @@ author: andy@mcneel.com
 categories: ['Fundamentals']
 platforms: ['Windows']
 apis: ['RDK']
-languages: ['CPP']
+languages: ['C/C++']
 keywords: ['material', 'environment', 'texture', 'RDK']
 TODO: 1
 origin: http://wiki.mcneel.com/labs/rendererdevelopmentkit10

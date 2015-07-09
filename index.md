@@ -31,7 +31,7 @@ This site is the [future home](#todo) of all Developer Documentation relating to
           </a>
         </td>
         <td style="padding: 20px;">
-          <a href="{{ site.baseurl }}/guides/#opennurbs-toolkit" title="openNURBS is free and open source">
+          <a href="{{ site.baseurl }}/guides/#opennurbs" title="openNURBS is free and open source">
             <img src="{{ site.baseurl }}/images/opennurbs_logo_intro.png" width="130" height="135">
           </a>
         </td>
@@ -71,7 +71,7 @@ Rhino exposes purpose-built SDKs in C#, C/C++, VB.NET, VBScript, and Python...
     <td class="index_table_primary_use">Cross-platform scripting.</td>  
   </tr>
   <tr>
-    <td><a href="{{ site.baseurl }}/guides/#opennurbs-toolkit" title="openNURBS is free and open source"> openNURBS</a></td>
+    <td><a href="{{ site.baseurl }}/guides/#opennurbs" title="openNURBS is free and open source"> openNURBS</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon" title="Mac OS X"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon" title="C#"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
     <td class="index_table_primary_use">openNURBS 3dm file IO outside Rhino.</td>  
@@ -95,19 +95,19 @@ Rhino exposes purpose-built SDKs in C#, C/C++, VB.NET, VBScript, and Python...
     <td class="index_table_primary_use">Grasshopper plugins.</td>  
   </tr>
   <tr>
-    <td><a href="{{ site.baseurl }}/guides/#renderer-development-kit" title="Renderer Development Kit"> RDK</a></td>
+    <td><a href="{{ site.baseurl }}/guides/#rdk" title="Renderer Development Kit"> RDK</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon" title="C#"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon" title="C/C++"><img src="{{ site.baseurl }}/images/vbscript_logo_small.png" alt="Microsoft VBScript" class="index_table_icon" title="Microsoft VBScript"></td>
     <td class="index_table_primary_use">Renderer plugin development on Windows.</td>  
   </tr>
   <tr>
-    <td><a href="{{ site.baseurl }}/guides/rap/" title="Rhino Application Platform"> RAP</a></td>
+    <td><a href="{{ site.baseurl }}/guides/#rap" title="Rhino Application Platform"> RAP</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon" title="C#"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
     <td class="index_table_primary_use">"Skinning" Rhino for Windows.</td>  
   </tr>
   <tr>
-    <td><a href="{{ site.baseurl }}/guides/#zoo-license-manager" title="Zoo License Manager Plugins"> Zoo</a></td>
+    <td><a href="{{ site.baseurl }}/guides/#zoo" title="Zoo License Manager Plugins"> Zoo</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon" title="C#"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
     <td class="index_table_primary_use">Zoo license manager plugins on Windows.</td>  

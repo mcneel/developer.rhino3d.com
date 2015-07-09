@@ -4,7 +4,7 @@ title: How This Site Works
 author: dan@mcneel.com
 categories: ['General']
 platforms: ['Mac', 'Windows']
-apis: ['DevDocs', 'Jekyll', 'Liquid']
+apis: ['Developer Docs', 'Jekyll', 'Liquid']
 languages: ['Markdown', 'Kramdown', 'YAML']
 keywords: ['authoring', 'writing', 'editing', 'overview']
 TODO: 1
@@ -101,7 +101,7 @@ title: Authoring content
 author: dan@mcneel.com
 categories: ['General']
 platforms: ['Mac', 'Windows']
-apis: ['DevDocs', 'Jekyll', 'Liquid']
+apis: ['Developer Docs', 'Jekyll', 'Liquid']
 languages: ['Markdown']
 keywords: ['authoring', 'writing', 'editing']
 order: 2

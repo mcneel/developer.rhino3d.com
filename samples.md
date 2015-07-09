@@ -86,7 +86,7 @@ TODO
 
 ---
 
-## openNURBS Toolkit
+## openNURBS
 {: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
@@ -126,7 +126,7 @@ TODO
 
 ---
 
-## Renderer Development Kit
+## RDK
 {: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
@@ -146,7 +146,7 @@ TODO
 
 ---
 
-## Zoo License Manager
+## Zoo
 {: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">

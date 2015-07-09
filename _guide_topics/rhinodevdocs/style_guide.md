@@ -4,7 +4,7 @@ title: Style Guide
 author: dan@mcneel.com
 categories: ['General']
 platforms: ['Mac', 'Windows']
-apis: ['DevDocs', 'Jekyll', 'Liquid']
+apis: ['Developer Docs', 'Jekyll', 'Liquid']
 languages: ['Markdown']
 keywords: ['style', 'guide']
 TODO: 0

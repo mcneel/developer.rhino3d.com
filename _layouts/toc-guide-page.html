@@ -16,49 +16,7 @@ layout: bootstrap
 
               <li>
 
-                {% if page.apis.first == 'General' %}
-                  <a href="{{ site.baseurl }}/guides/#general">General</a>
-                {% endif %}
-
-                {% if page.apis.first == 'RhinoCommon' %}
-                  <a href="{{ site.baseurl }}/guides/#rhinocommon">RhinoCommon</a>
-                {% endif %}
-
-                {% if page.apis.first == 'RhinoPython' %}
-                  <a href="{{ site.baseurl }}/guides/#rhinopython">Rhino.Python</a>
-                {% endif %}
-
-                {% if page.apis.first == 'openNURBS' %}
-                  <a href="{{ site.baseurl }}/guides/#ropennurbs-toolkit">openNURBS Toolkit</a>
-                {% endif %}
-
-                {% if page.apis.first == 'CPP' %}
-                  <a href="{{ site.baseurl }}/guides/#cc">C/C++</a>
-                {% endif %}
-
-                {% if page.apis.first == 'Grasshopper' %}
-                  <a href="{{ site.baseurl }}/guides/#grasshopper">Grasshopper</a>
-                {% endif %}
-
-                {% if page.apis.first == 'RhinoScript' %}
-                  <a href="{{ site.baseurl }}/guides/#rhinoscript">RhinoScript</a>
-                {% endif %}
-
-                {% if page.apis.first == 'RDK' %}
-                  <a href="{{ site.baseurl }}/guides/#renderer-development-kit">RDK</a>
-                {% endif %}
-
-                {% if page.apis.first == 'RhinoMobile' %}
-                  <a href="{{ site.baseurl }}/guides/#rhinomobile">RhinoMobile</a>
-                {% endif %}
-
-                {% if page.apis.first == 'Zoo' %}
-                  <a href="{{ site.baseurl }}/guides/#zoo-license-manager">Zoo License Manager</a>
-                {% endif %}
-
-                {% if page.apis.first == 'DevDocs' %}
-                  <a href="{{ site.baseurl }}/guides/#developer-docs">Developer Docs</a>
-                {% endif %}
+                <a href="{{ site.baseurl }}/guides/#{{ page.apis.first | handleize | downcase }}">{{ page.apis.first }}</a>
 
                 <ul class="nav nav-stacked">
 
