@@ -16,7 +16,7 @@ layout: bootstrap
 
               <li>
 
-                <a href="{{ site.baseurl }}/guides/#{{ page.apis.first | handleize | downcase }}">{{ page.apis.first }}</a>
+                <a href="{{ site.baseurl }}/guides/#{{ page.apis.first | handle | downcase | replace: ' ', '-' }}">{{ page.apis.first }}</a>
 
                 <ul class="nav nav-stacked">
 
