@@ -93,9 +93,16 @@ Just like with H2 headers, H4 headers also create an #anchor tag in the generate
 ## Table of Contents
 {: .toc-header }
 
-The UI-widget to the left of this column is a the Table of Contents (TOC) for this page.  If you are authoring a page that requires a TOC, you can generate one automatically by using a TOC-enabled template (see Authoring Content for more information).  To get a TOC-enabled template to generate the TOC, you simply have to add the correct class decorations underneath the Headers and Sub Headers.
+The UI-widget to the left of this column is a the Table of Contents (TOC) for this page.  If you are authoring a page that requires a TOC, you can generate one automatically by using a TOC-enabled layouts (see [How This Site Works]({{ site.baseurl }}/guides/rhinodevdocs/how_this_site_works/) for more information).  To get a TOC-enabled template to generate the TOC, you simply have to add the correct class decorations underneath the Headers and Sub Headers.
 
-For example, to get a Header to show up in the TOC, you would type this:
+For example, to get the main title to show up in the TOC, you would type this:
+
+```yaml
+# The Title
+{: .toc-title }
+```
+
+To get a Header to show up in the TOC, you would type this:
 
 ```yaml
 ## Cool Header
@@ -109,7 +116,7 @@ To get a Sub Header to show up in the TOC, you would type this:
 {: .toc-subheader }
 ```
 
-**NOTE**: TOCs are only generated from **H2** and **H4** headers (.toc-header and .toc-subheader respectively).
+**NOTE**: TOCs are only generated from **H1**, **H2**, and **H4** headers (`.toc-title`, `.toc-header`, and `.toc-subheader` respectively).
 
 ---
 

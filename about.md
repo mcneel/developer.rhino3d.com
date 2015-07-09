@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: fullwidth-page
 title: about
 permalink: /about/
 <!-- order: 5 -->
