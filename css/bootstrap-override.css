@@ -27,7 +27,7 @@ body {
 */
 .index_use_images {
 /* Use only width to control an img-responsive img.  Bootstrap will float the height. */
-	width:160px;
+	width:130px;
 }
 tbody.index_table tr td{
 	vertical-align:middle;
