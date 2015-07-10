@@ -47,14 +47,15 @@ This guide presumes you have an:
 ## Install Xamarin
 {: .toc-header }
 
-Xamarin's platform is currently required to build RhinoCommon plugins on OS X.  The core components of the Xamarin platform that are required are the Mono Framework and Xamarin Studio.  Please check out the [What are Mono and Xamarin?]({{ site.baseurl }}/guides/what_are_mono_and_xamarin/) guide for more information.
+Xamarin's platform is currently required to build RhinoCommon plugins on OS X.  The core components of the Xamarin platform that are required are the Mono Framework and Xamarin Studio.  Please check out the [What are Mono and Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/) guide for more information.
 
 #### Step-by-Step
 
 1. **[Download the Xamarin Platform](http://xamarin.com/download)**.
 1. Xamarin uses an Installer app, which downloads and installs the components that you select.  Once you have downloaded the **XamarinInstaller.dmg**, double-click it to mount the disk image.  Click the big **Install Xamarin** button to launch the installer.
 1. You must accept the Xamarin Software License Agreement to use the Xamarin platform.
-1. The **Xamarin Platform** is comprised of three products:
+1. The **Xamarin Platform** is comprised of these pieces:
+   - Xamarin Studio
    - Xamarin.Android[^1]
    - Xamarin.iOS[^2]
    - Xamarin.Mac[^3]
@@ -88,6 +89,15 @@ The [Rhino Xamarin Studio Add-in](https://github.com/mcneel/RhinoMonodevelopAddi
 1. Verify that **Mono Soft Debugger Support for Rhinoceros** exists under the **Debugging** section of the **Installed** tab of the **Add-in Manager**.
 
 **TODO**: Update the above steps when the Rhino Xamarin Studio Add-in has been updated.
+
+---
+
+## Next Steps
+{: .toc-header }
+
+**Congratulations!**  You have all the tools necessary to build a RhinoCommon plugin for Rhino for Mac.  **Now what?**
+
+Check out the [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac) guide for instructions building - your guessed it - your first plugin.
 
 ---
 

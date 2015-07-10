@@ -79,6 +79,8 @@ Some of the major improvements in RhinoCommon are:
    - We are making an effort to provide descriptive XML comments for all classes/functions/properties
    - The current API documentation found on this site
 
+---
+
 ## Related topics
 {: .toc-header }
 

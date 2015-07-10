@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Creating Your First Plugin (Windows)
+title: Your First Plugin (Windows)
 author: giulio@mcneel.com
 categories: ['GettingStarted']
 platforms: ['Windows']
@@ -12,7 +12,7 @@ origin: unset
 order: 3
 ---
 
-# Creating Your First Plugin (Windows)
+# Your First Plugin (Windows)
 {: .toc-title }
 
 TODO

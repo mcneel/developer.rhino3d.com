@@ -16,7 +16,7 @@ order: 6
 # Plugin Installers (Mac)
 {: .toc-title }
 
-This guide explains how to create a plugin installer for Rhino for Mac, which presumes you have a plugin that successfully builds and runs already.  If you are not there yet, see [Creating Your First Plugin]({{ site.baseurl }}/guides/rhinocommon/creating_your_first_plugin_mac).
+This guide explains how to create a plugin installer for Rhino for Mac, which presumes you have a plugin that successfully builds and runs already.  If you are not there yet, see [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac).
 
 ## Overview
 {: .toc-header }
