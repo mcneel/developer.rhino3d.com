@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: What are Mono and Xamarin?
+title: What are Mono & Xamarin?
 author: dan@mcneel.com
 categories: ['Overview']
 platforms: ['Cross-Platform']
@@ -12,7 +12,7 @@ origin: unset
 order: 2
 ---
 
-# What are Mono and Xamarin?
+# What are Mono & Xamarin?
 {: .toc-title }
 
 TODO
