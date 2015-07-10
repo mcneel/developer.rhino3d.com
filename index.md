@@ -271,3 +271,4 @@ The sources of content-to-be-consolidated are:
 - [DaleF's CsCommands](https://github.com/dalefugier/SampleCsCommands/)
 - [Doxygen Docs (on McNeel intranet)](http://phab.mcneel.com/docs/rhino/6/rhinocommon/)
 - Dale Lear's Developer Meeting Notes
+- RhinoScript and Rhino.Python Primers
