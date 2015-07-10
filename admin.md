@@ -68,5 +68,3 @@ The sources of content-to-be-consolidated are:
 TODO TODO ...meta.
 
 Here we could report samples that are not passing tests.
-
----

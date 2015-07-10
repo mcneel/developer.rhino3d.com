@@ -23,7 +23,13 @@ RhinoCommon is the cross-platform .NET plug-in SDK available for:
 - Rhino.Python scripting
 - [Grasshopper](http://www.grasshopper3d.com)
 
-The term _common_ is meant to be just that: an SDK that can be used across Rhino platforms. A plug-in built with RhinoCommon could potentially run on both Windows and Mac platforms with no changes.
+The term _common_ is meant to be just that: an SDK that can be used across Rhino platforms. A plug-in built with RhinoCommon could potentially run on both Windows and Mac platforms with no changes...
+
+<div align="center">
+  <img src="{{ site.baseurl }}/images/rhinocommon_one_binary_two_platforms.png">
+</div>
+
+{::options parse_block_html="true" /}
 
 ## Technically, what is it?
 {: .toc-header }
