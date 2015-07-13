@@ -7,6 +7,7 @@ title: Rhino Developer Docs
 #   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://developer.rhino3d.com" # the base hostname & protocol for your site
+editMeOnGhBaseUrl: "mcneel/developer-rhino3d-com"
 # twitter_username: ""
 github_username:  mcneel
 

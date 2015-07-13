@@ -11,7 +11,7 @@
         <ul class="social-media-list">
 
           <li>
-          {% assign burl = 'https://github.com/' | append: (site.github_username | append: site.baseurl) %}
+          {% assign burl = 'https://github.com/' | append: site.editMeOnGhBaseUrl %}
           {% if page.path contains '/repo/' %}
             {% assign tailurl = page.path | replace:'/repo/', '/blob/gh-pages/' %}
           {% else %}
