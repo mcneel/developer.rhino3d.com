@@ -52,7 +52,7 @@ Xamarin's platform is currently required to build RhinoCommon plugins on OS X.  
 #### Step-by-Step
 
 1. **[Download the Xamarin Platform](http://xamarin.com/download)**.
-1. Xamarin uses an Installer app, which downloads and installs the components that you select.  Once you have downloaded the **XamarinInstaller.dmg**, double-click it to mount the disk image.  Click the big **Install Xamarin** button to launch the installer.
+1. Xamarin uses an Installer app, which downloads and installs the components that you select.  Once you have downloaded the **XamarinInstaller.dmg**, double-click it to mount the disk image.  Double-click the big **Install Xamarin** icon to launch the installer.
 1. You must accept the Xamarin Software License Agreement to use the Xamarin platform.
 1. The **Xamarin Platform** is comprised of these pieces:
    - Xamarin Studio

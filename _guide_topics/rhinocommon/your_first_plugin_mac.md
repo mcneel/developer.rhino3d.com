@@ -52,31 +52,51 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 ![Play Button]({{ site.baseurl }}/images/your_first_plugin_mac_05.png)
 1. **Rhinoceros** launches.  Create a **New Model**...
 ![New Model Button]({{ site.baseurl }}/images/your_first_plugin_mac_06.png)
-1. Enter the **HelloRhinoCommonCommand** command.  TODO: Describe what it does.
-TODO: screencapture
+1. Enter the **HelloRhinoCommonCommand** command.  Notice that the command autocompletes...
+![Command Autocompletes]({{ site.baseurl }}/images/your_first_plugin_mac_07.png)
+1. The **HelloRhinoCommonCommand** command begins and prompts you...
+![Command Prompt]({{ site.baseurl }}/images/your_first_plugin_mac_08.png)
+1. Notice there is **also a command status** in Rhino's command history area when the command begins...
+![Command Starts]({{ site.baseurl }}/images/your_first_plugin_mac_09.png)
+1. Also note there is **a command status** in Rhino's command history area when the command ends...
+![Command Ends]({{ site.baseurl }}/images/your_first_plugin_mac_10.png)
 1. **Quit** Rhinoceros.  This stops the session.  Go back to **Xamarin Studio**.  Let's take a look at the...
 
 
-#### Project Anatomy
+#### Plugin Anatomy
 {: .toc-subheader }
 
-1. Do more stuff...
-1. Do even more stuff...
-
-TODO
+1. Use the **Solution Explorer** to expand the **Solution** (`.sln`) so that it looks like this...
+![Solution Anatomy]({{ site.baseurl }}/images/your_first_plugin_mac_11.png)
+1. The **HelloRhinoCommon** project (`.csproj`) has the same name as its parent solution...this is the project that was created for us by the **RhinoCommon Plugin** template wizard earlier.
+1. **References**: Just as with most projects, you will be referencing other libraries.  The **RhinoCommon Plugin** template added the necessary references to create a basic RhinoCommon plugin.
+1. **Eto** is the cross-platform User Interface (UI) library Rhino uses.  If you examine its properties, you will notice it comes bundled as part of Rhino for Mac (just like Rhino for Windows).
+1. **Rhino.UI** is the Rhino-specific User Interface (UI) library associated with...
+1. **RhinoCommon** is *the* critical reference for our purposes here.
+1. **System**, **System.Core**, and **System.Drawing** are .NET foundational libraries...in this case, we are referencing the Mono versions of these libraries (on Windows, these references will point to the canonical, Microsoft-provided, versions).
+1. **Packages** is used the the [NuGet](https://www.nuget.org/) package-manager.  There are no referenced packages in this boilerplate project, but note that Xamarin Studio supports NuGet, just like Visual Studio does.
+1. **Properties** contains the **AssemblyInfo.cs** source file.  This file contains the meta-data (author, version, etc), including the very-important Guid, which identifies the plugin.
+1. **HelloRhinoCommonPlugin.cs** is where this template plugin derives from `Rhino.Plugins.Plugin` and returns a static `Instance` of itself.  
+1. **HelloRhinoCommonCommand.cs** is where the action is.  Let's take a look at this file...
 
 
 #### Make Changes
 {: .toc-subheader }
 
-1. Do more stuff...
-1. Do even more stuff...
+1. Open **HelloRhinoCommonCommand.cs** in Xamarin Studio's editor window (if it isn't already).
+1. Above the class declaration, notice
+
+```cs
+[System.Runtime.InteropServices.Guid ("e6092508-6dae-4a72-9ca8-a03e544e9507")]
+public class HelloRhinoCommonCommand : Rhino.Commands.Command
+{
+```
 
 TODO
 
 
-## Debugging
-{: .toc-header }
+#### Debugging
+{: .toc-subheader }
 
 1. Do more stuff...
 1. Do even more stuff...
