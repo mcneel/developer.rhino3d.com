@@ -54,7 +54,7 @@ The **[Xamarin Platform](http://xamarin.com/platform)** is comprised of the foll
 - **[Xamarin Studio](http://xamarin.com/studio)**: C# IDE that runs on both Windows and Mac.
 - **Xamarin.Android**: Used to build C# .NET applications for Android devices.  This is useful to have installed if you wish to use the [RhinoMobile]({{ site.baseurl }}/guides/#rhinomobile/) toolkit, but not required for RhinoCommon in Rhino for Mac.
 - **Xamarin.iOS**: Used to build C# .NET applications for Apple iOS devices.  This is useful to have installed if you wish to use the [RhinoMobile]({{ site.baseurl }}/guides/#rhinomobile/) toolkit, but not required for RhinoCommon in Rhino for Mac.
-- **[Xamarin.Mac](#xamarinmac)**: Xamarin's closed-source version of MonoMac.
+- **Xamarin.Mac**: Xamarin's closed-source version of MonoMac.
 
 For developing RhinoCommon plugins, we use *only* Xamarin Studio.
 
@@ -68,7 +68,7 @@ This is Xamarin's C# IDE that runs on both Windows and Mac.  Xamarin Studio has 
 
 Rhino for Mac does not currently use Xamarin.Mac.
 
-Xamarin.Mac is Xamarin's proprietary closed-source toolkit build on the open-source MonoMac (aka Mono for Mac OS X).  Xamarin.Mac provides a commercial license of Mono, bindings to additional frameworks, and the ability to create self-contained application bundles that do not require Mono.  
+Xamarin.Mac is Xamarin's proprietary closed-source toolkit used to provide .NET access to native features of the Mac Operating System and to allow for compiling .NET projects into self-contained application bundles.  Rhino uses the open source MonoMac framework instead of Xamarin.Mac for accessing native OS X features (primarily native user interface features).
 
 #### Visual Studio support
 {: .toc-subheader }
@@ -89,7 +89,7 @@ Xamarin is [free for students](https://xamarin.com/student).
 ## Porting .NET code
 {: .toc-header }
 
-All of .NET is not yet implemented in Mono (although an awful lot is).  A good tool to use for finding potential problem spots is the [Mono Migration Analyzer (MoMA)](http://www.mono-project.com/docs/tools+libraries/tools/moma/). This application can examine your DLLs to see find functions that are not supported by Mono.
+All of .NET is not yet implemented in Mono (although an awful lot is).  We recommend launching your plug-in project in Xamarin Studio and attempting to compile. That is the best way to find and potential problems with getting your plug-in to run on Mac Rhino. Please let McNeel know if you find something is missing from the SDK that you need, we may be able to provide this funcitonality in a Mac Rhino service release.
 
 #### P/Invoke
 {: .toc-subheader }
@@ -99,7 +99,7 @@ One of the areas that developers need to be aware of is any .NET code that uses 
 #### UI and Eto
 {: .toc-subheader }
 
-One of the largest areas to consider is UI (User Interface).  We use [Eto](https://github.com/picoe/Eto).  Using Eto can make your plugin look and work as a native application on all platforms, using a single UI codebase.  Eto ships with Rhino for Windows and Rhino for Mac.  Eto has an easy to use API and uses native toolkits, abstracting the platform-specific implementations for [WinForms](https://en.wikipedia.org/wiki/Windows_Forms) (GDI and Direct2D), [WPF](https://en.wikipedia.org/wiki/Windows_Presentation_Foundation), and [Cocoa](https://en.wikipedia.org/wiki/Cocoa_(API)) (on OS X).  Though Eto is powerful, it has a shallow learning curve and we're confident you will be hooked as quickly as we were.
+User interface is typically the area where developers run into trouble with platform specific dependencies and features.  We use and support development of [Eto](https://github.com/picoe/Eto).  Using Eto can make your plugin look and work as a native application on all platforms, using a single UI codebase.  Eto ships with Rhino for Windows and Rhino for Mac.  Eto has an easy to use API and uses native toolkits, abstracting the platform-specific implementations for [WinForms](https://en.wikipedia.org/wiki/Windows_Forms) (GDI and Direct2D), [WPF](https://en.wikipedia.org/wiki/Windows_Presentation_Foundation), and [Cocoa](https://en.wikipedia.org/wiki/Cocoa_(API)) (on OS X).  Though Eto is powerful, it has a shallow learning curve and we're confident you will be hooked as quickly as we were.
 
 ---
 
