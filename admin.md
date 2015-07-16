@@ -63,6 +63,11 @@ The sources of content-to-be-consolidated are:
   </ul>
 </div>
 
+#### Misc
+{: .toc-subheader }
+
+- [http://www.rhino3d.com/developer](http://www.rhino3d.com/developer) should redirect to [http://developer.rhino3d.com](http://developer.rhino3d.com) (this website) - the link is in all the .h files top comments
+
 #### Samples
 
 TODO TODO ...meta.
