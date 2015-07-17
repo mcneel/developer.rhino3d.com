@@ -89,6 +89,8 @@ The [Rhino Xamarin Studio Add-in](https://github.com/mcneel/RhinoMonodevelopAddi
 1. Verify that **Mono Soft Debugger Support for Rhinoceros** exists under the **Debugging** section of the **Installed** tab of the **Add-in Manager**.
 
 **TODO**: Update the above steps when the Rhino Xamarin Studio Add-in has been updated.
+**TODO**: There is [a known bug](https://forums.xamarin.com/discussion/39098/packaging-add-ins) in the Xamarin AddIn installer engine that might display ("The installation failed!  Could not read add-in description.")  Ignore this warning.  The AddIn will work.
+**TODO**: A **restart** of Xamarin Studio **is required** after installing the AddIn.
 
 ---
 
