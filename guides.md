@@ -112,19 +112,7 @@ order: 2
 
 #### Overview
 {: .toc-subheader }
-
-<div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
-  <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoPython' and topic.categories contains 'Overview' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
+RhinoPython is a scripting tool that let's you quickly add functionality to Rhino or automate repetitive tasks.
 
 #### Getting Started
 {: .toc-subheader }
@@ -141,6 +129,19 @@ order: 2
   {% endfor %}
   </ul>
 </div>
+
+#### Learning Resources
+{: .toc-subheader}
+
+##### Python Applied to Rhino
+- <a href="http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101" target="_blank">RhinoPython101 Primer</a>
+- <a href="http://discourse.mcneel.com/c/scripting" target="_blank">Rhino Scripting Forum</a>
+- <a href="http://wiki.mcneel.com/developer/python%22" target="_blank">McNeel Python Scripting Wiki</a>
+
+##### Learning Python
+- <a href="https://docs.python.org/2/tutorial/index.html" target="_blank">The Python Tutorial</a>
+- <a href="http://learnpythonthehardway.org/book/" target="_blank">Learn Python the Hard Way</a> (despite the title this is a beginner's book)
+- <a href="https://automatetheboringstuff.com/" target="_blank">Automate The Boring Stuff With Python</a>
 
 ---
 
