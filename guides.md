@@ -110,8 +110,37 @@ order: 2
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
-TODO
+#### Overview
+{: .toc-subheader }
 
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'RhinoPython' and topic.categories contains 'Overview' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+#### Getting Started
+{: .toc-subheader }
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'RhinoPython' and topic.categories contains 'GettingStarted' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 ---
 
