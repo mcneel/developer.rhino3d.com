@@ -7,7 +7,7 @@ platforms: ['Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['first', 'RhinoCommon', 'Plugin']
-TODO: 1
+TODO: 0
 origin: unset
 order: 2
 ---
@@ -72,25 +72,19 @@ Xamarin's platform is currently required to build RhinoCommon plugins on OS X.  
 ## Install the Rhino Add-in
 {: .toc-header }
 
-The [Rhino Xamarin Studio Add-in](https://github.com/mcneel/RhinoMonodevelopAddin/releases) (TODO: Update links to new version) is required to debug your plugin code in an active session of Rhino for Mac.  Additionally, it contains project wizards (TODO) and templates to get you started creating plugins quickly.
+The [Rhino Xamarin Studio AddIn](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases/download/5.9.7/RhinoXamarinStudioAddIn_5.9.7.0.mpack) is required to debug your plugin code in an active session of Rhino for Mac.  Additionally, it contains project templates to get you started creating plugins quickly.
 
 #### Step-by-Step
 
-1. Download the latest release of the [Rhino Xamarin Studio Add-in](https://github.com/mcneel/RhinoMonodevelopAddin/releases) (TODO: Update links to new version).
-1. Extract the downloaded zip file to get an **.mpack**.
+1. **[Download](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases/download/5.9.7/RhinoXamarinStudioAddIn_5.9.7.0.mpack)** the latest release of the [Rhino Xamarin Studio Add-in](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases/download/5.9.7/RhinoXamarinStudioAddIn_5.9.7.0.mpack).
 1. Launch **Xamarin Studio**.
-1. Navigate to **Xamarin Studio** > **Add-in manager...**.
-2. Expand **Debugging**.
-3. Uninstall all previous versions of the Mono Soft Debugger for Rhinoceros (BUT NOT the Mono Soft Debugger) - TODO: Update this.
-1. Click **Install from file...** button in the lower-right corner.
-1. Navigate to the mpack file you extracted, then click **Open**.
-1. Click **Install**.
-1. Click **Close**.
-1. Verify that **Mono Soft Debugger Support for Rhinoceros** exists under the **Debugging** section of the **Installed** tab of the **Add-in Manager**.
-
-**TODO**: Update the above steps when the Rhino Xamarin Studio Add-in has been updated.
-**TODO**: There is [a known bug](https://forums.xamarin.com/discussion/39098/packaging-add-ins) in the Xamarin AddIn installer engine that might display ("The installation failed!  Could not read add-in description.")  Ignore this warning.  The AddIn will work.
-**TODO**: A **restart** of Xamarin Studio **is required** after installing the AddIn.
+1. Navigate to **Xamarin Studio** > **Add-in Manager...**.
+1. Click **Install from file...** button in the lower-left corner.
+1. Navigate to the mpack file you downloaded in step 1, then click **Open**.
+1. Click **Install**.  The plugin should install.
+1. *WARNING*: There is [a known bug](https://forums.xamarin.com/discussion/39098/packaging-add-ins) in the Xamarin AddIn installer engine that might display "The installation failed!  Could not read add-in description."  **Ignore this warning**.  Click **Close**.  Despite the bug, the AddIn *should* work.  **However, you must**...
+1. **Quit** and **Restart** Xamarin Studio.
+1. Navigate to **Xamarin Studio** > **Add-in Manager..** > **Install** tab.  Verify that **RhinoCommon Plugin Support** exists under the **Debugging** category.  If it's there, you have successfully installed the AddIn and you are **DONE**.
 
 ---
 
