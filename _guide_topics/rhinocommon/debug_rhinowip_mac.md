@@ -42,30 +42,27 @@ We want to target those found in the `RhinoWIP.app` bundle.  Unfortunately, Xama
 
 1. In Xamarin Studio, **right/option-click** on the project name and select **Tools** > **Edit File**...  
 ![Xamarin Studio Edit File]({{ site.baseurl }}/images/debug_rhinowip_mac_02.png)
-2. Use Xamarin Studio's **Search** > **Replace** function to find `\Applications\Rhinoceros.app` and replace it with `\Applications\RhinoWIP.app`...
+1. Use Xamarin Studio's **Search** > **Replace** function to find `\Applications\Rhinoceros.app` and replace it with `\Applications\RhinoWIP.app`...
 ![Search and Replace]({{ site.baseurl }}/images/debug_rhinowip_mac_03.png)
-3. Verify that these changes are only happening with the `<ItemGroup>` that contains `<Reference>` entries.  Accept your `\Applications\RhinoWIP.app` replacements to make the change...
+1. Verify that these changes are only happening with the `<ItemGroup>` that contains `<Reference>` entries.  Accept your `\Applications\RhinoWIP.app` replacements to make the change...
 
-```xml
-<ItemGroup>
-  <Reference Include="System" />
-  <Reference Include="System.Core" />
-  <Reference Include="System.Drawing" />
-  <Reference Include="RhinoCommon">
-    <HintPath>..\..\..\..\Applications\RhinoWIP.app\Contents\Resources\RhinoCommon.dll</HintPath>
-    <Private>False</Private>
-  </Reference>
-  <Reference Include="Rhino.UI">
-    <HintPath>..\..\..\..\Applications\RhinoWIP.app\Contents\Resources\Rhino.UI.dll</HintPath>
-    <Private>False</Private>
-  </Reference>
-  <Reference Include="Eto">
-    <HintPath>..\..\..\..\Applications\RhinoWIP.app\Contents\Resources\Eto.dll</HintPath>
-    <Private>False</Private>
-  </Reference>
-</ItemGroup>
-```
-
-4. **Save** and **Close** your project's `.csproj`.
-5. The project will reload automatically.  In the **Solution Explorer**, select any of the three references you just changed above.  If you examine their properties (**right/option-click** > **Properties**), you will notice they are now referencing the `RhinoWIP.app` versions.
-6. **Build** and **Run**.  Your plugin's **debugging session** should now **launch with RhinoWIP**.
+        <ItemGroup>
+          <Reference Include="System" />
+          <Reference Include="System.Core" />
+          <Reference Include="System.Drawing" />
+          <Reference Include="RhinoCommon">
+            <HintPath>..\..\Applications\RhinoWIP.app\Contents\Resources\RhinoCommon.dll</HintPath>
+            <Private>False</Private>
+          </Reference>
+          <Reference Include="Rhino.UI">
+            <HintPath>..\..\Applications\RhinoWIP.app\Contents\Resources\Rhino.UI.dll</HintPath>
+            <Private>False</Private>
+          </Reference>
+          <Reference Include="Eto">
+            <HintPath>..\..\Applications\RhinoWIP.app\Contents\Resources\Eto.dll</HintPath>
+            <Private>False</Private>
+          </Reference>
+        </ItemGroup>
+1. **Save** and **Close** your project's `.csproj`.
+1. The project will reload automatically.  In the **Solution Explorer**, select any of the three references you just changed above.  If you examine their properties (**right/option-click** > **Properties**), you will notice they are now referencing the `RhinoWIP.app` versions.
+1. **Build** and **Run**.  Your plugin's **debugging session** should now **launch with RhinoWIP**.
