@@ -72,11 +72,11 @@ Xamarin's platform is currently required to build RhinoCommon plugins on OS X.  
 ## Install the Rhino Add-in
 {: .toc-header }
 
-The [Rhino Xamarin Studio AddIn](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases/download/5.9.4.0/RhinoXamarinStudioAddIn_5.9.4.0.mpack) is required to debug your plugin code in an active session of Rhino for Mac.  Additionally, it contains project templates to get you started creating plugins quickly.
+The Rhino Xamarin Studio AddIn is required to debug your plugin code in an active session of Rhino for Mac.  Additionally, it contains project templates to get you started creating plugins quickly.
 
 #### Step-by-Step
 
-1. **[Download](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases/download/5.9.4.0/RhinoXamarinStudioAddIn_5.9.4.0.mpack)** the latest release of the [Rhino Xamarin Studio Add-in](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases/download/5.9.4.0/RhinoXamarinStudioAddIn_5.9.4.0.mpack).
+1. **[Download](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases/download/5.9.4.0/RhinoXamarinStudioAddIn_5.9.4.0.mpack)** the latest release of the Rhino Xamarin Studio Add-in.
 1. Launch **Xamarin Studio**.
 1. Navigate to **Xamarin Studio** > **Add-in Manager...**.
 1. Click **Install from file...** button in the lower-left corner.
