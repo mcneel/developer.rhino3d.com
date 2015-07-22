@@ -37,7 +37,7 @@ Mono allows C# developers to write cross platform code targeting Windows, Mac OS
 
 {::options parse_block_html="true" /}
 
-RhinoCommon on Mac is executed through an embedded, custom, Mono framework.  That means we are not using the public Mono, nor premium Xamarin.Mac.  However, the differences between public MonoMac and Rhino for Mac's MonoMac are inconsequential.
+RhinoCommon on Mac is executed through an embedded, custom, Mono framework.  That means Rhino for Mac is not using the public Mono, nor premium Xamarin.Mac.  However, the differences between public MonoMac and Rhino for Mac's MonoMac are inconsequential.
 
 ---
 
@@ -56,12 +56,12 @@ The **[Xamarin Platform](http://xamarin.com/platform)** is comprised of the foll
 - **Xamarin.iOS**: Used to build C# .NET applications for Apple iOS devices.  This is useful to have installed if you wish to use the [RhinoMobile]({{ site.baseurl }}/guides/#rhinomobile/) toolkit, but not required for RhinoCommon in Rhino for Mac.
 - **Xamarin.Mac**: Xamarin's closed-source version of MonoMac.
 
-For developing RhinoCommon plugins, we use *only* Xamarin Studio.
+For developing RhinoCommon plugins, *only* Xamarin Studio is required.
 
 #### Xamarin Studio
 {: .toc-subheader }
 
-This is Xamarin's C# IDE that runs on both Windows and Mac.  Xamarin Studio has many of the features of Microsoft's Visual Studio and uses *exactly the same formats* as Visual Studio: solutions (`.sln`) and C# projects (`.csproj`).  At McNeel, we use Xamarin Studio to develop [Rhino for Mac](http://www.rhino3d.com/mac) and [iRhino 3D](https://www.rhino3d.com/ios).  We highly recommend you use Xamarin Studio when developing RhinoCommon plugins for the Mac (or for Windows as well).
+This is Xamarin's C# developer environment that runs on both Windows and Mac.  Xamarin Studio has many of the features of Microsoft's Visual Studio and uses *exactly the same formats* as Visual Studio: solutions (`.sln`) and C# projects (`.csproj`).  At McNeel, we use Xamarin Studio to develop [Rhino for Mac](http://www.rhino3d.com/mac) and [iRhino 3D](https://www.rhino3d.com/ios).  We highly recommend you use Xamarin Studio when developing RhinoCommon plugins for the Mac (or for Windows as well).
 
 #### Xamarin.Mac?
 {: .toc-subheader }
@@ -94,7 +94,7 @@ All of .NET is not yet implemented in Mono (although an awful lot is).  We recom
 #### P/Invoke
 {: .toc-subheader }
 
-One of the areas that developers need to be aware of is any .NET code that uses P/invoke will have problems on OS X/Mono. P/invoke is a technique to call unmanaged native functions from .NET code and typically these native functions are functions made available by the Windows Operating System. Windows native functions won't exist on Mac and therefore will throw an exception at runtime.  Many commercial .NET components use P/invoke so this is something we highly recommend you investigate.
+One of the areas that developers need to be aware of is any .NET code that uses P/invoke may experience problems when running on Mac. P/invoke is a technique to call unmanaged native functions from .NET code.  The feature is available on OS X/mono, but the developer need to make sure that the P/invoke calls are calling native code written for OS X and not for Windows.  Many commercial .NET components use P/invoke so this is something we highly recommend you investigate.
 
 #### UI and Eto
 {: .toc-subheader }
