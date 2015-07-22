@@ -94,7 +94,7 @@ All of .NET is not yet implemented in Mono (although an awful lot is).  We recom
 #### P/Invoke
 {: .toc-subheader }
 
-One of the areas that developers need to be aware of is any .NET code that uses P/invoke may experience problems when running on Mac. P/invoke is a technique to call unmanaged native functions from .NET code.  The feature is available on OS X/mono, but the developer need to make sure that the P/invoke calls are calling native code written for OS X and not for Windows.  Many commercial .NET components use P/invoke so this is something we highly recommend you investigate.
+One of the areas that developers need to be aware of is any .NET code that uses P/invoke may experience problems when running on Mac. P/invoke is a technique to call unmanaged native functions from .NET code.  The feature is available on OS X/mono, but developers need to make sure that the P/invoke calls are calling native code written for OS X and not for Windows.  Many commercial .NET components use P/invoke so this is something we highly recommend you investigate.
 
 #### UI and Eto
 {: .toc-subheader }
