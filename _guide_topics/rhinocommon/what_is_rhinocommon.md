@@ -49,8 +49,6 @@ The Python plug-in for Windows and Mac, [Grasshopper](http://www.grasshopper3d.c
 
 During 2011, Grasshopper was rewritten to be based on RhinoCommon.  This was a big project and took some time to complete, but once done it provided performance improvements and better memory management.  This has also been a step toward being able to run Grasshopper on Rhino for Mac!
 
-Grasshopper will maintain a special build of RhinoCommon to allow it to continue to run on Rhino 4.  Because Grasshopper needs to run on Rhino 4, there will still be some dependencies in Grasshopper on the older Rhino.NET SDK.
-
 The [Python]({{ site.baseurl }}/guides/rhinopython) script engine is entirely based on RhinoCommon.  All python scripts directly use RhinoCommon to work with Rhino. Typically if something in RhinoCommon is difficult to write a python script for, then the RhinoCommon SDK needs to be fixed in that area.
 
 ## And the Rhino.NET SDK?
