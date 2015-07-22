@@ -36,7 +36,7 @@ Your plugin requires references to RhinoCommon dlls that are contained within th
 
 ...which are all contained within the `Rhinoceros.app` bundle.
 
-We want to target those found in the `RhinoWIP.app` bundle.  Unfortunately, Xamarin Studio does not allow you to browse to references that are contained within an application bundle.  We will have to use a text editor to change these references so that they target the appropriate versions contained in RhinoWIP.
+We want to target those found in the `RhinoWIP.app` bundle.  Unfortunately, Xamarin Studio does not allow you to browse to references that are contained within an application bundle.  We will have to "manually" change these references so that they target the appropriate versions contained in RhinoWIP.
 
 #### Step-by-Step
 
