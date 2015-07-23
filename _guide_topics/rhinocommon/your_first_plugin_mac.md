@@ -7,7 +7,7 @@ platforms: ['Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['first', 'RhinoCommon', 'Plugin']
-TODO: 1
+TODO: 0
 origin: unset
 order: 4
 ---
@@ -81,7 +81,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 1. **RhinoCommon** is *the* critical reference for our purposes here.
 1. **System**, **System.Core**, and **System.Drawing** are .NET foundational libraries...in this case, we are referencing the Mono versions of these libraries (on Windows, these references will point to the canonical, Microsoft-provided, versions).
 1. **Packages** is used the the [NuGet](https://www.nuget.org/) package-manager.  There are no referenced packages in this boilerplate project, but note that Xamarin Studio supports NuGet, just like Visual Studio does.
-1. **Properties** contains the **AssemblyInfo.cs** source file.  This file contains the meta-data (author, version, etc), including the very-important Guid, which identifies the plugin.
+1. **Properties** contains the **AssemblyInfo.cs** source file.  This file contains the meta-data (author, version, etc), including the very-important `Guid`, which identifies the plugin.
 1. **HelloRhinoCommonPlugin.cs** is where this template plugin derives from `Rhino.Plugins.Plugin` and returns a static `Instance` of itself.  
 1. **HelloRhinoCommonCommand.cs** is where the action is.  Let's take a look at this file...
 
@@ -89,51 +89,67 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 #### Make Changes
 {: .toc-subheader }
 
-1. Open **HelloRhinoCommonCommand.cs** in Xamarin Studio's editor window (if it isn't already).
-1. Above the class declaration, notice
+1. Open **HelloRhinoCommonCommand.cs** in Xamarin Studio's Source Editor (if it isn't already).
+1. Notice that `HelloRhinoCommonCommand` inherits from `Rhino.Commands.Command` ...
 
-```cs
-[System.Runtime.InteropServices.Guid ("e6092508-6dae-4a72-9ca8-a03e544e9507")]
-public class HelloRhinoCommonCommand : Rhino.Commands.Command
-{
-```
+        public class HelloRhinoCommonCommand : Rhino.Commands.Command
+1. ...and overrides one inherited property called `EnglishName` ...
 
-TODO
+        public override string EnglishName {
+          get { return "HelloRhinoCommonCommand"; }
+        }
+1. All Rhino commands must have a `EnglishName` property.  This command name is not very accurate.  We know from running the boilerplate code that this command prompts the user to draw a line.  Let's rename the command to `HelloDrawLine`:
+
+        public override string EnglishName {
+          get { return "HelloDrawLine"; }
+        }
+1. Further down, notice that `HelloRhinoCommandCommand` overrides the `RunCommand` method:
+
+        protected override Result RunCommand (Rhino.RhinoDoc doc, RunMode mode)
+1. All Rhino commands must have a `RunCommand` method.  As you can see, this is where the action happens.  Let's create an intermediary line object that we can feed to the `AddLine` method.  Find the spot in `RunCommand` after the user has been prompted to select two points.  Type in...
+
+        Rhino.Geometry.Line line1 = new Line (pt0, pt1);
+1. Notice that - as you type - Xamarin Studio uses IntelliSense, just like Visual Studio (and many other editors).  Now, feed `line1` as an argument to the `doc.Objects.AddLine` method...
+
+        doc.Objects.AddLine (line1);
+1. Now that we have a line of our own, let's examine it...
 
 
 #### Debugging
 {: .toc-subheader }
 
-1. Do more stuff...
-1. Do even more stuff...
+1. Set a breakpoint on line[^1] 55 of `HelloRhinoCommonCommand.cs`.  You set breakpoints in Xamarin Studio by clicking in the gutter...
+![Set a breakpoint]({{ site.baseurl }}/images/your_first_plugin_mac_12.png)
+1. **Build** and **Run**.  Run `HelloDrawLine` in Rhino.  Create the two points...as soon as you do, you should hit your breakpoint and pause...
+![Hit a breakpoint]({{ site.baseurl }}/images/your_first_plugin_mac_13.png)
+1. With Rhino paused, in **Xamarin Studio** switch to the **Locals** tab.  In the list, find the `line1` object we authored.  Click the dropdown **arrow** to expand the list of members on `line1`.  Our `line1` is a `Rhino.Geometry.Line` and these types have a `Length` property...  
+![Locals panel]({{ site.baseurl }}/images/your_first_plugin_mac_14.png)
+1. **Continue Executing** in Rhino by pressing the **Play** button in the upper navigation menu of **Xamarin Studio**...
+![Continue Executing]({{ site.baseurl }}/images/your_first_plugin_mac_15.png)
+1. Control is passed back to **Rhino** and your command finishes.  **Quit** Rhino or **Stop** the debugging session.
+1. **Remove** the breakpoint you created above by clicking on it in the gutter.
+1. Now, let's use the `Length` value to report something to the user.  Near the very end of `RunCommand`, add the following line...
 
-TODO
+        RhinoApp.WriteLine ("The distance between the two points is {0}.", line1.Length);
+1. **Build** and **Run**.  Run `HelloDrawLine` in Rhino yet again (create the two points...).  Rhino now reports the length of the line you created.  However, this is not very clean.
+1. **Quit** Rhino to **Stop** the debugging session once more.
+1. Let's add a unit system and be explicit about what we're reporting...
 
----
+        RhinoApp.WriteLine ("The distance between the two points is {0} {1}.", line1.Length.ToString(), doc.ModelUnitSystem.ToString().ToLower());
+1. **Build** and **Run** again.  Now we're reporting the length of the line we created with the document's unit system (`doc.ModelUnitSystem`) with the proper case (`ToLower()`).  Much better.
 
-## Solution & Project
-{: .toc-header }
+**DONE!**
 
-Xamarin Studio uses the same formats as Visual Studio:
+Well, we could go on and on - `line1` was never necessary, we could have just used `pt0.DistanceTo(pt1).ToString()`, etc. - but that is beside the point:
 
-- **.sln**
-- **.csproj**
-
-It is important to stress: these *are* Visual Studio solutions and projects.  You can open solutions and projects created in Xamarin Studio in Visual Studio and vice-versa.
-
-1. Do more stuff...
-1. Do even more stuff...
-
-TODO
+**Congratulations!**  You have just built your first RhinoCommon plugin for Rhino for Mac.  **Now what?**
 
 ---
 
 ## Next Steps
 {: .toc-header }
 
-**Congratulations!**  You have just built your first RhinoCommon plugin for Rhino for Mac.  **Now what?**
-
-Well, you're using RhinoCommon, so this plugin will actually run on both platforms.  Check out the [Your First Plugin (Cross Platform)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform) guide.
+You're using RhinoCommon, so this plugin will actually run on both platforms.  Check out the [Your First Plugin (Cross Platform)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform) guide.
 
 ---
 
@@ -143,3 +159,11 @@ Well, you're using RhinoCommon, so this plugin will actually run on both platfor
 - [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac)
 - [Your First Plugin (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform)
 - [Plugin Installers (Mac)]({{ site.baseurl }}/guides/rhinocommon/plugin_installers_mac)
+
+
+---
+
+## Footnotes
+{: .toc-header }
+
+[^1]: **Line numbers** in Xamarin Studio can be enabled and disabled in **Xamarin Studio** > **Preferences...** > **Text Editor** section > **Markers and Rulers** entry > check **Show line numbers**.

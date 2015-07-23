@@ -75,8 +75,8 @@ To make your Library visible in the Finder:
 ## Related topics
 {: .toc-header }
 
-- [Creating Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/creating_your_first_plugin_mac)
-- [Creating Your First Plugin (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/creating_your_first_plugin_crossplatform)
+- [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac)
+- [Your First Plugin (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform)
 - [Uninstalling Plugins (Mac)]({{ site.baseurl }}/guides/rhinocommon/uninstalling_plugins_mac)
 
 ---

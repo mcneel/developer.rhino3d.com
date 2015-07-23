@@ -86,6 +86,18 @@ Xamarin is [free for students](https://xamarin.com/student).
 
 ---
 
+## Solution & Project
+{: .toc-header }
+
+Xamarin Studio uses the same formats as Visual Studio:
+
+- **.sln**
+- **.csproj**
+
+It is important to stress: these *are* Visual Studio solutions and projects.  You can open solutions and projects created in Xamarin Studio in Visual Studio and vice-versa.
+
+---
+
 ## Porting .NET code
 {: .toc-header }
 
