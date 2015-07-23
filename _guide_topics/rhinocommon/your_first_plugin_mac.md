@@ -135,7 +135,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 1. **Quit** Rhino to **Stop** the debugging session once more.
 1. Let's add a unit system and be explicit about what we're reporting...
 
-        RhinoApp.WriteLine ("The distance between the two points is {0} {1}.", line1.Length.ToString(), doc.ModelUnitSystem.ToString().ToLower());
+        RhinoApp.WriteLine ("The distance between the two points is {0} {1}.", line1.Length, doc.ModelUnitSystem.ToString().ToLower());
 1. **Build** and **Run** again.  Now we're reporting the length of the line we created with the document's unit system (`doc.ModelUnitSystem`) with the proper case (`ToLower()`).  Much better.
 
 **DONE!**
