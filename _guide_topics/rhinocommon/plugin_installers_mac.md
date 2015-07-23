@@ -29,6 +29,7 @@ Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins
 {: .toc-header }
 
 1. **Locate** your plugin folder **in Finder**.
+1. Rename your plugin folder to the name of your plug-in assembly with a .rhp suffix. For example, if your plug-in is called HelloRhino.dll, name the directory that contains this file HelloRhino.rhp.
 1. Right-click (option-click) the plugin folder and select "**Compress** (your plugin name)."  This creates a zip archive of the contents of the folder.
 1. **Single-click the name** of the new archive you created in step 2.  This allows you **to rename** the archive.
 1. Change the **extension** from `.zip` to `.macrhi`.  
