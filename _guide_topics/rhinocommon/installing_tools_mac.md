@@ -76,14 +76,14 @@ The Rhino Xamarin Studio AddIn is required to debug your plugin code in an activ
 
 #### Step-by-Step
 
-1. **[Download](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases/download/5.9.4.0/RhinoXamarinStudioAddIn_5.9.4.0.mpack)** the latest release of the Rhino Xamarin Studio Add-in.
 1. Launch **Xamarin Studio**.
-1. Navigate to **Xamarin Studio** > **Add-in Manager...**.
-1. Click **Install from file...** button in the lower-left corner.
-1. Navigate to the mpack file you downloaded in step 1, then click **Open**.
+1. Navigate to **Xamarin Studio** > **Add-in Manager...**...
+1. Navigate to the **Gallery** tab...
+![AddIn Manager]({{ site.baseurl }}/images/installing_tools_mac_01.png)
+1. In the **Search** field, search for `rhino`.  This filters the gallery list below.
+1. Find **RhinoCommon Plugin Support** and select it.
 1. Click **Install**.  The plugin should install.
-1. *WARNING*: There is [a known bug](https://forums.xamarin.com/discussion/39098/packaging-add-ins) in the Xamarin AddIn installer engine that might display "The installation failed!  Could not read add-in description."  **Ignore this warning**.  Click **Close**.  Despite the bug, the AddIn *should* work.  **However, you must**...
-1. **Quit** and **Restart** Xamarin Studio.
+1. **IMPORTANT**: You must **Quit** and **Restart** Xamarin Studio.
 1. Navigate to **Xamarin Studio** > **Add-in Manager..** > **Install** tab.  Verify that **RhinoCommon Plugin Support** exists under the **Debugging** category.  If it's there, you have successfully installed the AddIn and you are **DONE**.
 
 ---
