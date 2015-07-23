@@ -20,6 +20,18 @@ body {
   display: block;
 }
 
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+.bs-callout-danger {
+    border-left-color: #ce4844;
+}
+
 /*
 ##############################################################################
 ##  Index.md Page
