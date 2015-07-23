@@ -180,8 +180,6 @@ TODO
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
-TODO
-
 #### Overview
 {: .toc-subheader }
 RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino, or automate repetitive tasks.
