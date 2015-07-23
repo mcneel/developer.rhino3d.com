@@ -31,7 +31,7 @@ The term _common_ is meant to be just that: an SDK that can be used across Rhino
 
 {::options parse_block_html="true" /}
 
-## Technically, what is it?
+## Inside RhinoCommon
 {: .toc-header }
 
 RhinoCommon is composed of the following pieces.  These files are included with Rhino 5 for Windows and Mac:
@@ -51,7 +51,7 @@ During 2011, Grasshopper was rewritten to be based on RhinoCommon.  This was a b
 
 The [Python]({{ site.baseurl }}/guides/rhinopython) script engine is entirely based on RhinoCommon.  All python scripts directly use RhinoCommon to work with Rhino. Typically if something in RhinoCommon is difficult to write a python script for, then the RhinoCommon SDK needs to be fixed in that area.
 
-## And the Rhino.NET SDK?
+## Rhino.NET is dead
 {: .toc-header }
 
 RhinoCommon is *version 2* of the deprecated Rhino.NET SDK, and it improves on the design and implementation of *version 1*.  Rhino.NET still works in Rhino 5 for Windows, but will be replaced with RhinoCommon in future versions of Rhino.  
