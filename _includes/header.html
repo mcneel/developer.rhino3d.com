@@ -10,8 +10,10 @@
       	<a class="page-link" href="{{ site.baseurl }}/">Welcome</a>
         {% for page in pages %}
           {% if page.title != 'Administration' %}
-            {% if page.title and page.order %}
-            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            {% if page.title != 'Blog' %}
+              {% if page.title and page.order %}
+                <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+              {% endif %}
             {% endif %}
           {% endif %}
         {% endfor %}
