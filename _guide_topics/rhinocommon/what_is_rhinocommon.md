@@ -21,7 +21,7 @@ RhinoCommon is the cross-platform .NET plug-in SDK available for:
 - Rhino 5 for Windows (both 32 and 64-bit versions)
 - Rhino 5 for Mac
 - Rhino.Python scripting
-- [Grasshopper](http://www.grasshopper3d.com)
+- Grasshopper
 
 The term _common_ is meant to be just that: an SDK that can be used across Rhino platforms. A plug-in built with RhinoCommon could potentially run on both Windows and Mac platforms with no changes...
 
@@ -45,7 +45,7 @@ RhinoCommon on Mac OS X is executed through an embedded [Mono framework](http://
 ## Eating our own dog food
 {: .toc-header }
 
-The Python plug-in for Windows and Mac, [Grasshopper](http://www.grasshopper3d.com), and all Rhino for Mac based .NET plug-ins are being built against RhinoCommon.
+The Python plug-in for Windows and Mac, Grasshopper, and all Rhino for Mac based .NET plug-ins are being built against RhinoCommon.
 
 During 2011, Grasshopper was rewritten to be based on RhinoCommon.  This was a big project and took some time to complete, but once done it provided performance improvements and better memory management.  This has also been a step toward being able to run Grasshopper on Rhino for Mac!
 
