@@ -23,6 +23,7 @@ The sources of content-to-be-consolidated are:
 - [Doxygen Docs (on McNeel intranet)](http://phab.mcneel.com/docs/rhino/6/rhinocommon/)
 - Dale Lear's Developer Meeting Notes
 - RhinoScript and Rhino.Python Primers
+- [Grasshopper SDK Help file (chm)](http://s3.amazonaws.com/files.na.mcneel.com/grasshopper/1.0/docs/en/GrasshopperSDK.chm).
 
 ---
 

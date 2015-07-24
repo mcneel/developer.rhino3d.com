@@ -1,16 +1,18 @@
 ---
 layout: toc-guide-page
-title: Overview of Grasshopper Components
-author: steve@mcneel.com
+title: Component Installers (Windows)
+author: dan@mcneel.com
 categories: ['Overview']
 platforms: ['Windows']
 apis: ['Grasshopper']
 languages: ['C#', 'VB.NET']
 keywords: ['developer', 'grasshopper', 'components']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/grasshopper/gha
-order: 1
+origin: unset
+order: 4
 ---
 
-# Overview of Grasshopper Components
+# Component Installers (Windows)
 {: .toc-title }
+
+TODO
