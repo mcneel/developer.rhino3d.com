@@ -68,6 +68,8 @@ The sources of content-to-be-consolidated are:
 
 - [http://www.rhino3d.com/developer](http://www.rhino3d.com/developer) should redirect to [http://developer.rhino3d.com](http://developer.rhino3d.com) (this website) - the link is in all the .h files top comments
 
+- **DO NOT** port any content that relates to pre-Rhino 5 (Visual Studio 2010 for the C/C++ SDK), etc.  This is old information.
+
 #### Samples
 
 TODO TODO ...meta.
