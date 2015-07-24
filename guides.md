@@ -13,6 +13,8 @@ order: 2
 ## General
 {: .toc-header }
 
+*Guides that apply across platforms and SDKs*
+
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
@@ -32,6 +34,8 @@ order: 2
 {: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+
+*The cross-platform .NET plugin SDK for Rhino.*
 
 #### Overview
 {: .toc-subheader }
@@ -108,9 +112,11 @@ order: 2
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
+*Quickly add functionality to Rhino or automate repetitive tasks.*
+
 #### Overview
 {: .toc-subheader }
-RhinoPython is a scripting tool that let's you quickly add functionality to Rhino or automate repetitive tasks.
+
 
 #### Getting Started
 {: .toc-subheader }
@@ -147,6 +153,8 @@ RhinoPython is a scripting tool that let's you quickly add functionality to Rhin
 {: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+
+*Read/Write Rhino 3dm files in your application.*
 
 #### Overview
 {: .toc-subheader }
@@ -219,6 +227,8 @@ RhinoPython is a scripting tool that let's you quickly add functionality to Rhin
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
+*Native SDK for Rhino for Windows plugins.*
+
 TODO
 
 
@@ -229,6 +239,8 @@ TODO
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
+*Create custom Grasshopper components and plugins.*
+
 TODO
 
 
@@ -238,6 +250,8 @@ TODO
 {: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+
+*Customize Rhino for Windows or automate repetitive tasks.*
 
 #### Overview
 {: .toc-subheader }
@@ -273,6 +287,8 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
+*Renderer plugin development in Rhino for Windows.*
+
 TODO
 
 
@@ -282,6 +298,8 @@ TODO
 {: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
+
+*3D mobile application development.*
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -305,6 +323,8 @@ TODO
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
+*Zoo license manager plugins in Rhino for Windows.*
+
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
@@ -323,6 +343,8 @@ TODO
 
 ## Developer Docs
 {: .toc-header }
+
+*Guides to this very website.*
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
