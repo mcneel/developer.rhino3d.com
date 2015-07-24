@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Find Objects by Name 
+title: Find Objects by Name
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Extract Preview Image 
+title: Extract Preview Image
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

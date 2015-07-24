@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Use a constrained GetPoint to copy a curve 
+title: Use a constrained GetPoint to copy a curve
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

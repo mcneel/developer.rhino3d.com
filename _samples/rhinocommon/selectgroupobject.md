@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Select Objects in an Object's Groups 
+title: Select Objects in an Object's Groups
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

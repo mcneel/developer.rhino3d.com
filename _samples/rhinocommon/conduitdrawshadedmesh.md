@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: conduitdrawshadedmesh
+title: Conduit Draw Shaded Mesh
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['conduitdrawshadedmesh']
+keywords: ['conduit', 'draw', 'shaded', 'mesh']
 order: 39
 description:  
 ---

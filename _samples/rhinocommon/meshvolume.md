@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Volume of Meshes 
+title: Volume of Meshes
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

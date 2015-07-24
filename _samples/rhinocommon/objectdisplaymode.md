@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Set object display mode 
+title: Set object display mode
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

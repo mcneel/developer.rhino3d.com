@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Find point on curve at distance 
+title: Find point on curve at distance
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

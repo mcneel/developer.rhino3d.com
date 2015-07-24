@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Furthest Z value on Surface for Given X,Y 
+title: Furthest Z value on Surface for Given X,Y
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

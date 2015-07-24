@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Increasing the degree of a Nurbs curve 
+title: Increasing the degree of a Nurbs curve
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

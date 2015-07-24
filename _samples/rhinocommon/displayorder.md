@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Display Order 
+title: Display Order
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

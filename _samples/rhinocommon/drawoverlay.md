@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Display conduit to draw overlay text 
+title: Display conduit to draw overlay text
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

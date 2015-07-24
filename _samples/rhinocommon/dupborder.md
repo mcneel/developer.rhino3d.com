@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Duplicate borders of a surface 
+title: Duplicate borders of a surface
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

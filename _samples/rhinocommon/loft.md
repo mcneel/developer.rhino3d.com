@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Loft Surfaces 
+title: Loft Surfaces
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

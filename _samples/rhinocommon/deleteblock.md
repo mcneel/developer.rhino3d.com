@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Delete Instance Definition (Block) 
+title: Delete Instance Definition (Block)
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

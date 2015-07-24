@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Boolean Difference 
+title: Boolean Difference
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

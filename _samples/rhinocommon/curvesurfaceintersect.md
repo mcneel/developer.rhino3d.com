@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Curve-Surface Intersection 
+title: Curve-Surface Intersection
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

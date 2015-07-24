@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Changing Display Precision 
+title: Changing Display Precision
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  fillet curves 
+title: fillet curves
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

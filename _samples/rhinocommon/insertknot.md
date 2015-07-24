@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: insertknot
+title: Insert Knot
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['insertknot']
+keywords: ['insert', 'knot']
 order: 95
 description:  
 ---

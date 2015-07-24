@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  IsBrepBox Test
+title: IsBrepBox Test
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Child Layer 
+title: Add Child Layer
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

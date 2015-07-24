@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Create Radial Dimensions 
+title: Create Radial Dimensions
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

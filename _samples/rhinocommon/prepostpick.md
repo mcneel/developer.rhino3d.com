@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Pre-Pick and Post-Pick Objects 
+title: Pre-Pick and Post-Pick Objects
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

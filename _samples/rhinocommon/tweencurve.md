@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: tweencurve
+title: Tween Curve
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['tweencurve']
+keywords: ['tween', 'curve']
 order: 165
 description:  
 ---

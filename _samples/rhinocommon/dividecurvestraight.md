@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Divide a curve using equi-distance points 
+title: Divide a curve using equi-distance points
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

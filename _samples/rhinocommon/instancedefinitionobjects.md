@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  List Block Definition Geometry 
+title: List Block Definition Geometry
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

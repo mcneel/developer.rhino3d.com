@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add a layout with a detail view 
+title: Add a layout with a detail view
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title: = Display Conduit Introduction for RhinoCommon =
+title: Display Conduit Introduction for RhinoCommon
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

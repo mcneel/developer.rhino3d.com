@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title: = Drawing Arrowheads in a Display Conduit =
+title: Drawing Arrowheads in a Display Conduit
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

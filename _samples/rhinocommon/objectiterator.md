@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Iterate through Rhino's Geometry Table 
+title: Iterate through Rhino's Geometry Table
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

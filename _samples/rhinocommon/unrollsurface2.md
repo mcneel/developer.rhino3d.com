@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Unroll developable surface and associated mesh 
+title: Unroll developable surface and associated mesh
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

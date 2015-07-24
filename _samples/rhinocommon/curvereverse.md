@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Reversing the Direction of Curves 
+title: Reversing the Direction of Curves
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

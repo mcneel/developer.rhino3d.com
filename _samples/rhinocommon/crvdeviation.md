@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Determine the Deviation between two Curves 
+title: Determine the Deviation between two Curves
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

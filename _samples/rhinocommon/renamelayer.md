@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Rename a Layer 
+title: Rename a Layer
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: extractrendermesh
+title: Extract Render Mesh
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['extractrendermesh']
+keywords: ['extract', 'render', 'mesh']
 order: 81
 description:  
 ---

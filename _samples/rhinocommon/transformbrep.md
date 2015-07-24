@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Transform a Brep 
+title: Transform a Brep
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

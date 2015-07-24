@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Set RhinoPageView Width and Height 
+title: Set RhinoPageView Width and Height
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

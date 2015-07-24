@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Create Contour Curves 
+title: Create Contour Curves
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

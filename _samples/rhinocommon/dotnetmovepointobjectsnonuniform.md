@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Moving Point Objects (non-uniform) 
+title: Moving Point Objects (non-uniform)
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

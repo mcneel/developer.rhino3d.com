@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: singlecolorbackfaces
+title: Single Color Back Faces
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['singlecolorbackfaces']
+keywords: ['single', 'color', 'back', 'faces']
 order: 153
 description:  
 ---

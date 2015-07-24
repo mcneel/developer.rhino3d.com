@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Text 
+title: Add Text
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

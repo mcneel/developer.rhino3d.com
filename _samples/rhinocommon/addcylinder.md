@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Cylinder to Rhino 
+title: Add Cylinder to Rhino
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

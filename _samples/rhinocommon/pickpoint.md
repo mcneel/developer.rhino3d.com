@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Pick and Select Point Objects 
+title: Pick and Select Point Objects
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

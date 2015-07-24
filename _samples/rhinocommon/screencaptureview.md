@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Screen Capture a Viewport 
+title: Screen Capture a Viewport
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

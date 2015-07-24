@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Creating a hatch from a curve 
+title: Creating a hatch from a curve
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

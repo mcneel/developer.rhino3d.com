@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Get and Set the Active View 
+title: Get and Set the Active View
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

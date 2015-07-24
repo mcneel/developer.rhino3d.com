@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Objects to Group 
+title: Add Objects to Group
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

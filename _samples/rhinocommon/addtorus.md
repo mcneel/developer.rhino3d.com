@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Torus 
+title: Add Torus
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

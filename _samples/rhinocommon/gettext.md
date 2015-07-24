@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Retrieving Annotation Text 
+title: Retrieving Annotation Text
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

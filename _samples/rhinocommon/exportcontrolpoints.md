@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: exportcontrolpoints
+title: Export Control Points
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['exportcontrolpoints']
+keywords: ['export', 'control', 'points']
 order: 77
 description:  
 ---

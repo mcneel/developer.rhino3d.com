@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Adjusting Surface Isocurve Density 
+title: Adjusting Surface Isocurve Density
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

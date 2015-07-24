@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: pickobjects
+title: Pick Objects
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['pickobjects']
+keywords: ['pick', 'objects']
 order: 129
 description:  
 ---

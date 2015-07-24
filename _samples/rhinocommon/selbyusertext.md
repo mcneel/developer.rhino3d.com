@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: selbyusertext
+title: Select by User Text
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['selbyusertext']
+keywords: ['select', 'user', 'text']
 order: 147
 description:  
 ---

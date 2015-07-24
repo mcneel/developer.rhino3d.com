@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Determining the Normal Direction of a Brep Face 
+title: Determining the Normal Direction of a Brep Face
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

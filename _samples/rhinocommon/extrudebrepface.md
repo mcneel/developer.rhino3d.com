@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: extrudebrepface
+title: Extrude Brep Face
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['extrudebrepface']
+keywords: ['extrude', 'brep', 'face']
 order: 83
 description:  
 ---

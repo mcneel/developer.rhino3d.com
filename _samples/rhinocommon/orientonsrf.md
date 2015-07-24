@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Orient On Surface 
+title: Orient On Surface
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

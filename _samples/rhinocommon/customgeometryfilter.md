@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Create a specialized GetObject with a Custom Geometry Filter 
+title: Create a specialized GetObject with a Custom Geometry Filter
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

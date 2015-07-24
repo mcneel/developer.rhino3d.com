@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Increasing the degree of a Nurbs surface 
+title: Increasing the degree of a Nurbs surface
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

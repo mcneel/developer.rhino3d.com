@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Print Instance Definition (Block) Tree 
+title: Print Instance Definition (Block) Tree
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

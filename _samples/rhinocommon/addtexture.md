@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Texture 
+title: Add Texture
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

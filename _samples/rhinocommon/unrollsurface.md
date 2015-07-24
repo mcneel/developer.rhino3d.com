@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Unrolling a developable surface 
+title: Unrolling a developable surface
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

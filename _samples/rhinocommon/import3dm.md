@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: import3dm
+title: Import 3dm
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['import3dm']
+keywords: ['import']
 order: 94
 description:  
 ---

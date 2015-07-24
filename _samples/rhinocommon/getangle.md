@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Interactively Pick an Angle 
+title: Interactively Pick an Angle
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

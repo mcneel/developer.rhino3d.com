@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Modify an Object's Color 
+title: Modify an Object's Color
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

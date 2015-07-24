@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Custom Undo 
+title: Custom Undo
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

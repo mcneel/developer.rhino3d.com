@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: dividebysegments
+title: Divide By Segments
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['dividebysegments']
+keywords: ['divide', 'segments']
 order: 62
 description:  
 ---

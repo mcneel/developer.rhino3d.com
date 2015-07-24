@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add NURBS Curve 
+title: Add NURBS Curve
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

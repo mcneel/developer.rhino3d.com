@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: getmultiplewithoptions
+title: Get Multiple With Options
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['getmultiplewithoptions']
+keywords: ['multiple', 'with', 'options']
 order: 87
 description:  
 ---

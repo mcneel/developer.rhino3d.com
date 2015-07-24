@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Array By Distance Command 
+title: Array By Distance Command
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

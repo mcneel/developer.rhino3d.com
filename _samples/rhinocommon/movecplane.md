@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: movecplane
+title: Move CPlane
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['movecplane']
+keywords: ['move', 'cplane']
 order: 114
 description:  
 ---

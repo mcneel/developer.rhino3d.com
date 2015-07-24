@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Duplicating Objects With Group 
+title: Duplicating Objects With Group
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

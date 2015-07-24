@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: spritedrawing
+title: Sprite Drawing
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['spritedrawing']
+keywords: ['sprite', 'drawing']
 order: 156
 description:  
 ---

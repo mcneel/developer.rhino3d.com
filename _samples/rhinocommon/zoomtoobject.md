@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Zoom to a Selected Object 
+title: Zoom to a Selected Object
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

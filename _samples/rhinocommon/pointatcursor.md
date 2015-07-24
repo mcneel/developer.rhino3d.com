@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Get the point at the current cursor position 
+title: Get the point at the current cursor position
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Brep Box 
+title: Add Brep Box
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

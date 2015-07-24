@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Bounding Polyline from Naked Edges of Open Mesh 
+title: Bounding Polyline from Naked Edges of Open Mesh
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

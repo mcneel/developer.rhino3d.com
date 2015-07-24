@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Is Surface In Plane 
+title: Is Surface In Plane
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

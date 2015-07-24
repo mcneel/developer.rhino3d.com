@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Maximize a View 
+title: Maximize a View
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Background Bitmap 
+title: Add Background Bitmap
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

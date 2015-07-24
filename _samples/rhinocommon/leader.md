@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Creating a Leader 
+title: Creating a Leader
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

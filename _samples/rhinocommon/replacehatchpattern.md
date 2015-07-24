@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Replacing a Hatch Object's Pattern 
+title: Replacing a Hatch Object's Pattern
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

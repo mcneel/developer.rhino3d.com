@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Enabling Orthogonal Mode 
+title: Enabling Orthogonal Mode
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

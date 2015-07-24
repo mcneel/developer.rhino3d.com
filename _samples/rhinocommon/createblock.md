@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add a block definition 
+title: Add a block definition
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

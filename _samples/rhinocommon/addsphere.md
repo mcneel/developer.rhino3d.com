@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Sphere 
+title: Add Sphere
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

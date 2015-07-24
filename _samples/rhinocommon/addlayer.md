@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Layer 
+title: Add Layer
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

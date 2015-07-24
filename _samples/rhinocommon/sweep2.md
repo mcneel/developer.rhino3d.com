@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title: sweep2
+title: Sweep2
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

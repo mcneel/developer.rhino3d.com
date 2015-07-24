@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Create a Surface from Edge Curves
+title: Create a Surface from Edge Curves
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

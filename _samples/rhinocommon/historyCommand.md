@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: historyCommand
+title: History Command
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['historycommand']
+keywords: ['history', 'command']
 order: 93
 description:  
 ---

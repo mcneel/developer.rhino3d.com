@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Named View 
+title: Add Named View
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

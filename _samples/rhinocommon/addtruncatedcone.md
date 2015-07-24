@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Truncated Cone 
+title: Add Truncated Cone
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

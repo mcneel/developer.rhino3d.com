@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: movegripobjects
+title: Move Grip Objects
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['movegripobjects']
+keywords: ['move', 'grip', 'objects']
 order: 115
 description:  
 ---

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Tight Bounding Boxes for Breps 
+title: Tight Bounding Boxes for Breps
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

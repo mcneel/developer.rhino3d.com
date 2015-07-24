@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Create a Box From a Curve's Bounding Box 
+title: Create a Box From a Curve's Bounding Box
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

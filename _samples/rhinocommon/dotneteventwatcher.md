@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title: = UI Controls and multiple threads (Event Watchers) =
+title: UI Controls and multiple threads (Event Watchers)
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

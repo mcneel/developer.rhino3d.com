@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Split a Set of BReps with a Plane 
+title: Split a Set of BReps with a Plane
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Create Meshes from Brep 
+title: Create Meshes from Brep
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

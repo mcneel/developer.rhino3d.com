@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Mesh Drawing 
+title: Mesh Drawing
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

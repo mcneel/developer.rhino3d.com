@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Dynamically Drawing Text Strings 
+title: Dynamically Drawing Text Strings
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

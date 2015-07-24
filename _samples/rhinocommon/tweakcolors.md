@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: tweakcolors
+title: Tweak Colors
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['tweakcolors']
+keywords: ['tweak', 'colors']
 order: 164
 description:  
 ---

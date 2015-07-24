@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Find Circles and their centers 
+title: Find Circles and their centers
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Print Instance Definition (Block) Names 
+title: Print Instance Definition (Block) Names
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

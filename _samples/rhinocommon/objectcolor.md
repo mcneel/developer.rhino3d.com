@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: objectcolor
+title: Object Color
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['objectcolor']
+keywords: ['object', 'color']
 order: 120
 description:  
 ---

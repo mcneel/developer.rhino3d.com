@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Linear Dimension 
+title: Add Linear Dimension
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

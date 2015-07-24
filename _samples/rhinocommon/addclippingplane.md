@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Clipping Plane 
+title: Add Clipping Plane
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

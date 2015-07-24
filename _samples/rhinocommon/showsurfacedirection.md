@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: showsurfacedirection
+title: Show Surface Direction
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['showsurfacedirection']
+keywords: ['show', 'surface', 'direction']
 order: 152
 description:  
 ---

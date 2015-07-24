@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Moving Point Objects 
+title: Moving Point Objects
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

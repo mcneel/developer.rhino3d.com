@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Replace Rhino's Color Picking Dialog 
+title: Replace Rhino's Color Picking Dialog
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

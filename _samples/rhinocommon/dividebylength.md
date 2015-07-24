@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Divide Curve By Length 
+title: Divide Curve By Length
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

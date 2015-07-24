@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add NURBS Circle 
+title: Add NURBS Circle
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

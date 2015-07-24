@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: addmeshbox
+title: Add Mesh Box
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['addmeshbox']
+keywords: ['mesh']
 order: 16
 description:  
 ---

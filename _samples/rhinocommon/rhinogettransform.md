@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Showing Dynamic Object Transformations 
+title: Showing Dynamic Object Transformations
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

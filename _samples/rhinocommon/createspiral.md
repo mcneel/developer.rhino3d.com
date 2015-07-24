@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: createspiral
+title: Create Spiral
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['createspiral']
+keywords: ['create', 'spiral']
 order: 44
 description:  
 ---

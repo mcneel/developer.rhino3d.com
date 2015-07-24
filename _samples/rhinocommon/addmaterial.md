@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add a basic Material 
+title: Add a basic Material
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

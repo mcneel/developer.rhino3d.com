@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Justifying Text Entities 
+title: Justifying Text Entities
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

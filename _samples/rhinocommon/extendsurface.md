@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Extend a Surface 
+title: Extend a Surface
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

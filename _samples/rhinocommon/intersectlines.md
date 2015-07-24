@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Intersecting line curves 
+title: Intersecting line curves
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

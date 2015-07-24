@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Determine Rhino's Language Setting 
+title: Determine Rhino's Language Setting
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

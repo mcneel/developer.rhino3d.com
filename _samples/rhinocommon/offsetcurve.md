@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Offset a Curve 
+title: Offset a Curve
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

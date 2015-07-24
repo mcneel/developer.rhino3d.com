@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: userdataCommand
+title: User Data Command
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['userdatacommand']
+keywords: ['user', 'data', 'command']
 order: 168
 description:  
 ---

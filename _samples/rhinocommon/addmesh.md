@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Mesh 
+title: Add Mesh
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

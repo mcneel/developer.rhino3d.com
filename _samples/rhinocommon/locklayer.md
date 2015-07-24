@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Lock a Layer 
+title: Lock a Layer
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Command Line Options 
+title: Add Command Line Options
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

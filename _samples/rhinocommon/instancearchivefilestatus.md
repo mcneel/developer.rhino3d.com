@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: instancearchivefilestatus
+title: Instance Archive File Status
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['instancearchivefilestatus']
+keywords: ['instance', 'archive', 'file', 'status']
 order: 96
 description:  
 ---

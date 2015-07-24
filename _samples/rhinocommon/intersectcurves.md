@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Calculate Curve Intersections 
+title: Calculate Curve Intersections
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

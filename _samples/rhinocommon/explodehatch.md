@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Explode a Hatch 
+title: Explode a Hatch
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

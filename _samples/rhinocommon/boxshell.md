@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: boxshell
+title: Box Shell
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['boxshell']
+keywords: ['shell']
 order: 33
 description:  
 ---

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Extend a Curve Object 
+title: Extend a Curve Object
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

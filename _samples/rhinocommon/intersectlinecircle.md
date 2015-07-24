@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Intersecting a Line with a Circle 
+title: Intersecting a Line with a Circle
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Modifying an Annotation Object's Dimension Style 
+title: Modifying an Annotation Object's Dimension Style
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Closest Point Calculations with an RTree 
+title: Closest Point Calculations with an RTree
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: custompython
+title: Custom Python
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['custompython']
+keywords: ['custom', 'python']
 order: 53
 description:  
 ---

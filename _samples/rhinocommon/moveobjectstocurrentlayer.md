@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Move Selected Objects to Current Layer 
+title: Move Selected Objects to Current Layer
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

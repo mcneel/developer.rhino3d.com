@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Obtain insertion point of block 
+title: Obtain insertion point of block
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

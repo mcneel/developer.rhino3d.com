@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Setting a Viewport's Title 
+title: Setting a Viewport's Title
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

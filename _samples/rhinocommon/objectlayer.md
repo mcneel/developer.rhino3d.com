@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Determine Object's Layer 
+title: Determine Object's Layer
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

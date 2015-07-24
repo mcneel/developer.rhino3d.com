@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Find the Parameter of a Curve at a Point 
+title: Find the Parameter of a Curve at a Point
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

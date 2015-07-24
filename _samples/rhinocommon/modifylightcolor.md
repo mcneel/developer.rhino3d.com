@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Modify a Light's Color 
+title: Modify a Light's Color
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

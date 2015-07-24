@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Create a NURBS Surface 
+title: Create a NURBS Surface
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

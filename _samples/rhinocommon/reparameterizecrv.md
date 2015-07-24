@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Reparamemterize a Curve 
+title: Reparamemterize a Curve
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

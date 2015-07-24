@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Sweeping Surfaces using Sweep1 
+title: Sweeping Surfaces using Sweep1
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

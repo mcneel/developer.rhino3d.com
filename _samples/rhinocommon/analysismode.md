@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Visual Analysis Modes 
+title: Visual Analysis Modes
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

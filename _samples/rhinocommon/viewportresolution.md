@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Print Active Viewport Resolution 
+title: Print Active Viewport Resolution
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

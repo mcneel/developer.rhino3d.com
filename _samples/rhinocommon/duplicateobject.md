@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Clone (Copy, Duplicate) a Rhino Object 
+title: Clone (Copy, Duplicate) a Rhino Object
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

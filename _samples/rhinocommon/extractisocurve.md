@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Extracting Isoparametric Curves from Surfaces 
+title: Extracting Isoparametric Curves from Surfaces
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

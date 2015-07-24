@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Gumball 
+title: Add Gumball
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

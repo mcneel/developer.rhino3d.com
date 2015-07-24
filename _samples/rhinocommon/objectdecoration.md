@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Adding Arrowheads to Curves 
+title: Adding Arrowheads to Curves
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Get an Object's UUID 
+title: Get an Object's UUID
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

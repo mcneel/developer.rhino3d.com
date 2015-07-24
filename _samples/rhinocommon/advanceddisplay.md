@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Modifying Advanced Display Settings 
+title: Modifying Advanced Display Settings
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

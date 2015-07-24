@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  draw a non-square bitmap in a display conduit 
+title: draw a non-square bitmap in a display conduit
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

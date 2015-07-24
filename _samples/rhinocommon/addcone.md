@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Cone 
+title: Add Cone
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

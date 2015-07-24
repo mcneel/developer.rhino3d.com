@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Rename Instance Definition (Block) 
+title: Rename Instance Definition (Block)
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

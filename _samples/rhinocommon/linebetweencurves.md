@@ -1,12 +1,12 @@
 ---
 layout: code-sample
-title: linebetweencurves
+title: Line Between Curves
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['linebetweencurves']
+keywords: ['line', 'between', 'curves']
 order: 105
 description:  
 ---

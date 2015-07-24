@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Modify an Object's Name 
+title: Modify an Object's Name
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

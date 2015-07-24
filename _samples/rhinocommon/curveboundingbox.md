@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Curve Bounding Box (world and plane oriented) 
+title: Curve Bounding Box (world and plane oriented)
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

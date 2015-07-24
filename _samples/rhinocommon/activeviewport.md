@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Determine Active Viewport 
+title: Determine Active Viewport
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

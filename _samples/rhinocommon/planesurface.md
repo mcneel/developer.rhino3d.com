@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Create a Plane Surface 
+title: Create a Plane Surface
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

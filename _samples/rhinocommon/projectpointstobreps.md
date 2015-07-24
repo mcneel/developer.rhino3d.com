@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Projecting Points to Breps 
+title: Projecting Points to Breps
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

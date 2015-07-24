@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Add Circle 
+title: Add Circle
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

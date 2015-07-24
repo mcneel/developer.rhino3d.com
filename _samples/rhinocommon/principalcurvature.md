@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Calculate Surface Curvature 
+title: Calculate Surface Curvature
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

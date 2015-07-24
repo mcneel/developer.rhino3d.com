@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Surface from Corner Points 
+title: Surface from Corner Points
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

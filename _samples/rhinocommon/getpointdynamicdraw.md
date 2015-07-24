@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Dynamically Draw Geometry when Picking Points 
+title: Dynamically Draw Geometry when Picking Points
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']

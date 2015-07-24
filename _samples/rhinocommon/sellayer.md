@@ -1,6 +1,6 @@
 ---
 layout: code-sample
-title:  Select objects on layer 
+title: Select objects on layer
 author: 
 categories: ['Other'] 
 platforms: ['Cross-Platform']
