@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: RhinoMobile Overview
+title: What is RhinoMobile?
 author: dan@mcneel.com
 categories: ['Overview']
 platforms: ['iOS', 'Android']
@@ -12,7 +12,7 @@ origin: http://wiki.mcneel.com/developer/rhinomobile
 order: 1
 ---
 
-# RhinoMobile Overview
+# What is RhinoMobile?
 {: .toc-title }
 
 <img align="right" src="{{ site.baseurl }}/images/rhinomobile_overview_01.png" width="242">

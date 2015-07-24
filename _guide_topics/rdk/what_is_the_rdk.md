@@ -1,19 +1,19 @@
 ---
 layout: toc-guide-page
-title: Material, Environment, and Texture Editors
+title: What is the RDK?
 author: andy@mcneel.com
-categories: ['Fundamentals']
+categories: ['Overview']
 platforms: ['Windows']
 apis: ['RDK']
 languages: ['C/C++']
-keywords: ['material', 'environment', 'texture', 'RDK']
+keywords: ['RDK', 'Rhino', 'Renderer', 'Development', 'Plugin']
 TODO: 1
 origin: http://wiki.mcneel.com/labs/rendererdevelopmentkit10
-order: 4
+order: 1
 ---
 
 
-# Material, Environment, and Texture Editors
+# What is the RDK?
 {: .toc-title }
 
 TODO

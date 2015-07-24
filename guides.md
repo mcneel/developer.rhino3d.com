@@ -289,7 +289,18 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 
 *Renderer plugin development in Rhino for Windows.*
 
-TODO
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'RDK' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 
 ---
