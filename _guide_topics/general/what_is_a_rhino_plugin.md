@@ -1,17 +1,19 @@
 ---
 layout: toc-guide-page
-title: Rhino Developer Prerequisites
-author: steve@mcneel.com
+title: What is a Rhino Plugin?
+author: dan@mcneel.com
 categories: ['General']
 platforms: ['Cross-Platform']
 apis: ['General']
 languages: ['All']
 keywords: ['developer', 'rhino']
 TODO: 1
-origin: unset
+origin: https://wiki.mcneel.com/developer/whatisarhinoplugin
 order: 1
 ---
 
 
-# Rhino Developer Prerequisites
+# What is a Rhino Plugin?
 {: .toc-title }
+
+TODO

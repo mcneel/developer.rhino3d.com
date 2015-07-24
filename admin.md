@@ -15,6 +15,7 @@ The goal of this site is to consolidate all the (now) scattered developer docume
 The sources of content-to-be-consolidated are:
 
 - [Rhino Developer Tools wiki](http://wiki.mcneel.com/developer/home)
+- [C/C++ Knowledge Base](https://wiki.mcneel.com/developer/sdksamples/knowledgebasecpp) - a mix of samples, how-tos, and guides
 - [RhinoCommon API references](http://4.rhino3d.com/5/rhinocommon/)
 - [C++ SDK API references](http://4.rhino3d.com/5/rhinocppsdk/idx.html)
 - [RhinoCommon samples on GitHub](https://github.com/mcneel/rhinocommon/tree/master/examples)
