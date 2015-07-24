@@ -9,7 +9,7 @@ languages: ['C/C++']
 keywords: ['c', 'C/C++', 'plugin']
 TODO: 1
 origin: https://wiki.mcneel.com/developer/cplusplusplugins
-order: 1
+order: 2
 ---
 
 # Installing Tools (Windows)

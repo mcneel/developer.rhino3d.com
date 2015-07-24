@@ -9,7 +9,7 @@ languages: ['C/C++']
 keywords: ['skin', 'RAP', 'rhino']
 TODO: 1
 origin: http://wiki.mcneel.com/developer/sdksamples/skin
-order: 1
+order: 4
 ---
 
 # Creating a Skin

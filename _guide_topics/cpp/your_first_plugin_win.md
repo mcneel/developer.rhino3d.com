@@ -9,7 +9,7 @@ languages: ['C/C++']
 keywords: ['c', 'C/C++', 'plugin']
 TODO: 1
 origin: https://wiki.mcneel.com/developer/sdksamples/rhino5pluginwiz
-order: 2
+order: 3
 ---
 
 # Your First Plugin (Windows)
