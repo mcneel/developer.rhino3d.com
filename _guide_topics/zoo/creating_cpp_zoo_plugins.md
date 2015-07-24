@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Creating C/C++ Plugins that use the Zoo
+title: Creating C/C++ Zoo Plugins
 author: dale@mcneel.com
 categories: ['Fundamentals']
 platforms: ['Windows']
@@ -12,5 +12,7 @@ origin: http://wiki.mcneel.com/developer/zoorhinoplugin
 order: 4
 ---
 
-# Creating C/C++ Plugins that use the Zoo
+# Creating C/C++ Zoo Plugins
 {: .toc-title }
+
+TODO

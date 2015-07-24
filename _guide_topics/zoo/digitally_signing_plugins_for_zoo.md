@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Digitally Signing Plugins for Zoo
+title: Digitally Signing Zoo Plugins
 author: dale@mcneel.com
 categories: ['Fundamentals']
 platforms: ['Windows']
@@ -12,5 +12,7 @@ origin: http://wiki.mcneel.com/developer/digital-signatures/create-request
 order: 5
 ---
 
-# Digitally Signing Plugins for Zoo
+# Digitally Signing Zoo Plugins
 {: .toc-title }
+
+TODO

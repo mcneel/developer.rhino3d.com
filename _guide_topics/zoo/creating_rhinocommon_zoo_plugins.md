@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Creating RhinoCommon Plugins that use the Zoo
+title: Creating RhinoCommon Zoo Plugins
 author: dale@mcneel.com
 categories: ['Advanced']
 platforms: ['Windows']
@@ -12,5 +12,7 @@ origin: http://wiki.mcneel.com/developer/zoorhinocommonplugin
 order: 3
 ---
 
-# Creating RhinoCommon Plugins that use the Zoo
+# Creating RhinoCommon Zoo Plugins
 {: .toc-title }
+
+TODO
