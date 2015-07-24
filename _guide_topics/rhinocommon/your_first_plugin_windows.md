@@ -8,7 +8,7 @@ apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['first', 'RhinoCommon', 'Plugin']
 TODO: 1
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addcommand
 order: 3
 ---
 
@@ -16,3 +16,5 @@ order: 3
 {: .toc-title }
 
 TODO
+
+Also port from: [https://wiki.mcneel.com/developer/rhinocommonsamples/dotnetexpresseditions](https://wiki.mcneel.com/developer/rhinocommonsamples/dotnetexpresseditions)

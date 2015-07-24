@@ -80,8 +80,6 @@ order: 2
   {% endfor %}
   </ul>
 </div>
-- [How the Commands Work](http://wiki.mcneel.com/developer/runrhinocommandfromplugincommand) - Needs porting
-- [Event Watchers](http://wiki.mcneel.com/developer/rhinocommonsamples/dotneteventwatcher) - Needs porting
 
 #### Advanced
 {: .toc-subheader }
@@ -98,7 +96,7 @@ order: 2
   {% endfor %}
   </ul>
 </div>
-- [Display Conduits](http://wiki.mcneel.com/developer/rhinocommonsamples/displayconduit) - Needs porting
+
 - Rendering
 - Custom Objects
 

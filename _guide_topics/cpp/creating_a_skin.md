@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Creating a skin using C/C++
+title: Creating a Skin
 author: dale@mcneel.com
 categories: ['Advanced']
 platforms: ['Windows']
@@ -12,5 +12,7 @@ origin: http://wiki.mcneel.com/developer/sdksamples/skin
 order: 1
 ---
 
-# Creating a skin using C/C++
+# Creating a Skin
 {: .toc-title }
+
+TODO

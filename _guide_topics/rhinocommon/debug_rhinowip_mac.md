@@ -2,7 +2,7 @@
 layout: toc-guide-page
 title: Debug in RhinoWIP (Mac)
 author: dan@mcneel.com
-categories: ['Fundamentals']
+categories: ['Advanced']
 platforms: ['Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
