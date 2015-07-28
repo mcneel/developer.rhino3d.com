@@ -80,7 +80,7 @@ The Rhino Xamarin Studio AddIn is required to debug your plugin code in an activ
 1. Navigate to **Xamarin Studio** > **Add-in Manager...**...
 1. Navigate to the **Gallery** tab...
 ![AddIn Manager]({{ site.baseurl }}/images/installing_tools_mac_01.png)
-1. In the **Search** field, search for `rhino`.  This filters the gallery list below.
+1. In the **Search** field, search for *rhino*.  This filters the gallery list below.
 1. Find **RhinoCommon Plugin Support** and select it.
 1. Click **Install**.  The plugin should install.
 1. **IMPORTANT**: You must **Quit** and **Restart** Xamarin Studio.
