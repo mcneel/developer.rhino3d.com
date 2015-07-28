@@ -42,6 +42,20 @@ Some portions of this page were adapted from the [Kramdown Quick Reference](http
 
 On Windows, this site attempts to use Segoe UI (font size: 16 px, font weight: 400,  line height: 1.6) and falls back to Frutiger Linotype, Dejavu Sans, Helvetica Neue, Helvetica, Arial, in that order.  On Mac OS X, the site will (almost) certainly use Helvetica Neue or Helvetica (font size: 16 px, font weight: 300,  line height: 1.6).  The operating system-specific font weight is set in the footer using javascript.
 
+#### Paths & Filenames
+{: .toc-subheader }
+
+`*Italics*` are used to denote filenames, paths, and file extensions.  For example:
+
+Navigate to *C:\Program Files\Rhinoceros 5 (64-bit)\Plug-ins*.
+
+#### Bold in Instructions
+{: .toc-subheader }
+
+`**Bold**` (strong emphasis) is used in instructions to highlight keywords for the individual instruction.  It is frequently used to hightlight the **verb** and/or the **object** of a sentence.  For example:
+
+1. Click the **OK** button to accept your changes.
+
 ---
 
 ## Headers
@@ -375,10 +389,31 @@ Block attributes are used to generate the [classes for the TOC](#table-of-conten
 
 ---
 
+#### Warnings
+{: .toc-subheader }
+
+Warnings are used in text to call out major traps, gotchas, or caveats in guides.  HTML is required to create warnings.  For example:
+
+```html
+<div class="bs-callout bs-callout-danger">
+  <h4>WARNING</h4>
+  <p><b>Early-adopters</b>: the following steps will <b>NOT</b> work with the currently released Rhinoceros (5.x.x).  You will need to use WIP version of Rhinoceros.</p>
+</div>
+```
+
+yields:
+
+<div class="bs-callout bs-callout-danger">
+  <h4>WARNING</h4>
+  <p><b>Early-adopters</b>: the following steps will <b>NOT</b> work with the currently released Rhinoceros (5.x.x).  You will need to use WIP version of Rhinoceros.</p>
+</div>
+
+
+---
+
 ## Text Modifiers
 {: .toc-header }
 
----
 
 #### Emphasis
 {: .toc-subheader }

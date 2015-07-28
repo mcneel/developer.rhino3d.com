@@ -38,7 +38,7 @@ This guide presumes you have an:
 1. **[Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)** is free in the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).  Click the **View in Mac App Store** button.
 1. Click the **Get** > **Install App** button underneath the Xcode icon.
 1. You will be prompted for your [Apple ID](https://appleid.apple.com/) (required to download apps on the App Store).
-1. Xcode is large download - nearly 2.6 GB in size.  You can monitor the progress of the download in Launchpad.  When Xcode is finished downloading an installing, it will be your `/Applications` folder.
+1. Xcode is large download - nearly 2.6 GB in size.  You can monitor the progress of the download in Launchpad.  When Xcode is finished downloading an installing, it will be your */Applications* folder.
 1. **Launch** Xcode.  On initial launch, Xcode will install some additional components.
 1. **Quit** Xcode.
 
@@ -65,7 +65,7 @@ Xamarin's platform is currently required to build RhinoCommon plugins on OS X.  
 1. Xamarin is will now download and install.  Depending on which products you selected in step 4 above, this can take a while.
 1. When the installer is finished, click the **Launch Xamarin Studio** button.
 1. **Xamarin Studio** - along with the Mono Framework and Xamarin.Mac - are now installed.
-1. Xamarin Studio is installed in your `/Applications` folder. You will want to **drag its icon to your Dock** for future use or - if it's running - right/option-click the icon in the Dock and select **Keep in Dock**.
+1. Xamarin Studio is installed in your */Applications* folder. You will want to **drag its icon to your Dock** for future use or - if it's running - right/option-click the icon in the Dock and select **Keep in Dock**.
 
 ---
 

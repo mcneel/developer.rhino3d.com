@@ -38,7 +38,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 1. A **New Project** wizard should appear.  In the left column, find the **Other** > **Miscellaneous** section.  Under General, select the RhinoCommon Plug-In template...
 ![New Project]({{ site.baseurl }}/images/your_first_plugin_mac_02.png)
 1. Click the **Next** button.
-1. You will now **Configure your new project**.  For the purposes of this Guide, we will name our demo plugin `HelloRhinoCommon`.  Fill in the **Project Name** field.  **Browse** and select a location for this plugin on your Mac...
+1. You will now **Configure your new project**.  For the purposes of this Guide, we will name our demo plugin *HelloRhinoCommon*.  Fill in the **Project Name** field.  **Browse** and select a location for this plugin on your Mac...
 ![Project Configuration]({{ site.baseurl }}/images/your_first_plugin_mac_03.png)
 1. Check **Create a project within the solution directory**.  *NOTE*: This is optional depending on how you want to structure your projects.
 1. Click the **Create** button.  *NOTE*: You don't have to create a .git repository for this demo.
@@ -71,9 +71,9 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 #### Plugin Anatomy
 {: .toc-subheader }
 
-1. Use the **Solution Explorer** to expand the **Solution** (`.sln`) so that it looks like this...
+1. Use the **Solution Explorer** to expand the **Solution** (*.sln*) so that it looks like this...
 ![Solution Anatomy]({{ site.baseurl }}/images/your_first_plugin_mac_11.png)
-1. The **HelloRhinoCommon** project (`.csproj`) has the same name as its parent solution...this is the project that was created for us by the **RhinoCommon Plugin** template wizard earlier.
+1. The **HelloRhinoCommon** project (*.csproj*) has the same name as its parent solution...this is the project that was created for us by the **RhinoCommon Plugin** template wizard earlier.
 1. **References**: Just as with most projects, you will be referencing other libraries.  The **RhinoCommon Plugin** template added the necessary references to create a basic RhinoCommon plugin.
 1. **Eto** is the cross-platform User Interface (UI) library Rhino uses.  If you examine its properties, you will notice it comes bundled as part of Rhino for Mac (just like Rhino for Windows).
 1. **Rhino.UI** is the Rhino-specific User Interface (UI) library associated with...
@@ -81,7 +81,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 1. **System**, **System.Core**, and **System.Drawing** are .NET foundational libraries...in this case, we are referencing the Mono versions of these libraries (on Windows, these references will point to the canonical, Microsoft-provided, versions).
 1. **Packages** is used the the [NuGet](https://www.nuget.org/) package-manager.  There are no referenced packages in this boilerplate project, but note that Xamarin Studio supports NuGet, just like Visual Studio does.
 1. **Properties** contains the **AssemblyInfo.cs** source file.  This file contains the meta-data (author, version, etc), including the very-important `Guid`, which identifies the plugin.
-1. **HelloRhinoCommonPlugin.cs** is where this template plugin derives from `Rhino.Plugins.Plugin` and returns a static `Instance` of itself.  
+1. **HelloRhinoCommonPlugin.cs** is where this template plugin derives from *Rhino.Plugins.Plugin* and returns a static Instance of itself.  
 1. **HelloRhinoCommonCommand.cs** is where the action is.  Let's take a look at this file...
 
 
@@ -97,7 +97,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
         public override string EnglishName {
           get { return "HelloRhinoCommonCommand"; }
         }
-1. All Rhino commands must have a `EnglishName` property.  This command name is not very accurate.  We know from running the boilerplate code that this command prompts the user to draw a line.  Let's rename the command to `HelloDrawLine`:
+1. All Rhino commands must have a `EnglishName` property.  This command name is not very accurate.  We know from running the boilerplate code that this command prompts the user to draw a line.  Let's rename the command to *HelloDrawLine*:
 
         public override string EnglishName {
           get { return "HelloDrawLine"; }
@@ -117,9 +117,9 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 #### Debugging
 {: .toc-subheader }
 
-1. Set a breakpoint on line[^1] 55 of `HelloRhinoCommonCommand.cs`.  You set breakpoints in Xamarin Studio by clicking in the gutter...
+1. Set a breakpoint on line[^1] 55 of *HelloRhinoCommonCommand.cs*.  You set breakpoints in Xamarin Studio by clicking in the gutter...
 ![Set a breakpoint]({{ site.baseurl }}/images/your_first_plugin_mac_12.png)
-1. **Build** and **Run**.  Run `HelloDrawLine` in Rhino.  Create the two points...as soon as you do, you should hit your breakpoint and pause...
+1. **Build** and **Run**.  Run **HelloDrawLine** in Rhino.  Create the two points...as soon as you do, you should hit your breakpoint and pause...
 ![Hit a breakpoint]({{ site.baseurl }}/images/your_first_plugin_mac_13.png)
 1. With Rhino paused, in **Xamarin Studio** switch to the **Locals** tab.  In the list, find the `line1` object we authored.  Click the dropdown **arrow** to expand the list of members on `line1`.  Our `line1` is a `Rhino.Geometry.Line` this class has a `Length` property...  
 ![Locals panel]({{ site.baseurl }}/images/your_first_plugin_mac_14.png)
