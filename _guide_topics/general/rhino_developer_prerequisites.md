@@ -105,7 +105,7 @@ To write plugins for Rhino using the C/C++ SDK, you first need to learn the [C++
 
 - [RhinoPython Primer](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101) by Skylar Tibbits, Arthur van der Harten, Steve Baer, and David Rutten
 - [The Python Tutorial](https://docs.python.org/2/tutorial/index.html) by the Python Software Foundation
-- [Learn Python the Hard Way](http://learnpythonthehardway.org/book/) by Zed A. Shaw - despite the title this is a beginner's book
+- [Learn Python the Hard Way](http://learnpythonthehardway.org/book/) by Zed A. Shaw - despite the title, this is a beginner's book
 - [Automate The Boring Stuff With Python](https://automatetheboringstuff.com/) by Al Sweigart
 
 
@@ -135,6 +135,6 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language.  RhinoSc
 {: .toc-header }
 
 - [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what_is_a_rhino_plugin/)
-- [C Sharp on Wikipedia](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)
+- <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language">C Sharp on Wikipedia</a>
 - [C++ on Wikipedia](https://en.wikipedia.org/wiki/C%2B%2B)
 - [Python on Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language))
