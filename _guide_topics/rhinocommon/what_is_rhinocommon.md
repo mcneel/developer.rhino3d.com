@@ -42,7 +42,7 @@ RhinoCommon is composed of the following pieces.  These files are included with 
 
 RhinoCommon on Mac OS X is executed through an embedded [Mono framework](http://www.mono-project.com/).
 
-## Eating our own dog food
+## Rhino uses RhinoCommon
 {: .toc-header }
 
 All .NET plug-ins that ship with Rhino 5 for Windows and Rhino 5 for Mac, including the Python interpreter, reference RhinoCommon.
@@ -50,32 +50,6 @@ All .NET plug-ins that ship with Rhino 5 for Windows and Rhino 5 for Mac, includ
 In 2011, Grasshopper was rewritten using RhinoCommon.  This was a big project and took some time to complete, but once done it provided performance improvements and better memory management.  This is also a step toward Grasshopper running on Rhino for Mac.
 
 The [Python]({{ site.baseurl }}/guides/rhinopython) script engine is entirely based on RhinoCommon.  All python scripts use RhinoCommon to work with Rhino. Typically, if it is difficult to write a Python script using a RhinoCommon API, then the RhinoCommon SDK needs to be fixed.
-
-## Rhino.NET is dead
-{: .toc-header }
-
-RhinoCommon is *version 2* of the deprecated Rhino.NET SDK, and it improves on the design and implementation of *version 1*.  Rhino.NET still works in Rhino 5 for Windows, but will be replaced with RhinoCommon in future versions of Rhino.  
-
-Some of the major improvements in RhinoCommon are:
-
-- **Platform neutral**: RhinoCommon is built to run on Windows 32 bit, Windows 64 bit, and Mac OS X.
-- **Faster for some data types**: All data types in Rhino.NET were wrappers around C++ pointers created on the unmanaged heap. This was a mistake when working with primitive data types (like 3D points and vectors). Primitive Rhino data types in RhinoCommon are written as value classes and implemented entirely in .NET.
-   - Allows data type to be placed on the stack when only temporarily needed in a function
-   - There is no requirement to call through to C++ to simply get the value of something like X,Y,Z in a point
-   - No potential fragmentation of the C++ unmanaged heap because the type is entirely inside of .NET and under the control of the garbage collector
-   - Operator overloading works much cleaner since value types can not have a value of null
-- **A .NET style SDK**:
-   - Multiple appropriately named namespaces in an attempt to better organize the SDK
-   - Properties are used when they make sense
-   - All parameter arguments are clearly named to describe their purpose
-   - Standard .NET style events are used instead of forced subclassing when it makes sense
-   - Descriptive enumerations are used instead of vague int for function parameters and returns
-   - .NET attributes are used where appropriate
-   - This is not a one-to-one conversion from C++ SDK to .NET
-   - Removal of separate const/non-const versions of classes
-- **Improved documentation**:
-   - We are making an effort to provide descriptive XML comments for all classes/functions/properties
-   - The current API documentation found on this site
 
 ---
 
