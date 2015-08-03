@@ -45,11 +45,11 @@ RhinoCommon on Mac OS X is executed through an embedded [Mono framework](http://
 ## Eating our own dog food
 {: .toc-header }
 
-The Python plug-in for Windows and Mac, Grasshopper, and all Rhino for Mac based .NET plug-ins are being built against RhinoCommon.
+The Python plug-in for Windows and Mac, Grasshopper, and all Rhino for Mac based .NET plug-ins are built against RhinoCommon.
 
-During 2011, Grasshopper was rewritten to be based on RhinoCommon.  This was a big project and took some time to complete, but once done it provided performance improvements and better memory management.  This has also been a step toward being able to run Grasshopper on Rhino for Mac!
+In 2011, Grasshopper was rewritten using RhinoCommon.  This was a big project and took some time to complete, but once done it provided performance improvements and better memory management.  This is also a step toward Grasshopper running on Rhino for Mac.
 
-The [Python]({{ site.baseurl }}/guides/rhinopython) script engine is entirely based on RhinoCommon.  All python scripts directly use RhinoCommon to work with Rhino. Typically if something in RhinoCommon is difficult to write a python script for, then the RhinoCommon SDK needs to be fixed in that area.
+The [Python]({{ site.baseurl }}/guides/rhinopython) script engine is entirely based on RhinoCommon.  All python scripts use RhinoCommon to work with Rhino. Typically, if it is difficult to write a Python script using a RhinoCommon API, then the RhinoCommon SDK needs to be fixed.
 
 ## Rhino.NET is dead
 {: .toc-header }
