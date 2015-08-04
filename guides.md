@@ -40,34 +40,18 @@ order: 2
 #### Overview
 {: .toc-subheader }
 
-<div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
-  <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoCommon' and topic.categories contains 'Overview' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
+- [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon/)
+- [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/)
+
 
 #### Getting Started
 {: .toc-subheader }
 
-<div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
-  <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoCommon' and topic.categories contains 'GettingStarted' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
+- Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac/))
+- Your First Plugin ([Windows]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac/), [Cross-Platform]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform/))
+- Plugin Installers (Windows, [Mac]({{ site.baseurl }}/guides/rhinocommon/plugin_installers_mac/))
+- Uninstalling Plugins (Windows, [Mac]({{ site.baseurl }}/guides/rhinocommon/uninstalling_plugins_mac/))
+
 
 #### Fundamentals
 {: .toc-subheader }
