@@ -61,7 +61,7 @@ For developing RhinoCommon plugins, *only* Xamarin Studio is required.
 #### Xamarin Studio
 {: .toc-subheader }
 
-This is Xamarin's C# developer environment that runs on both Windows and Mac.  Xamarin Studio has many of the features of Microsoft's Visual Studio and uses *exactly the same formats* as Visual Studio: solutions (`.sln`) and C# projects (`.csproj`).  At McNeel, we use Xamarin Studio to develop [Rhino for Mac](http://www.rhino3d.com/mac) and [iRhino 3D](https://www.rhino3d.com/ios).  We highly recommend you use Xamarin Studio when developing RhinoCommon plugins for the Mac (or for Windows as well).
+This is Xamarin's C# developer environment that runs on both Windows and Mac.  Xamarin Studio has many of the features of Microsoft's Visual Studio and uses *exactly the same formats* as Visual Studio: solutions (*.sln*) and C# projects (*.csproj*).  At McNeel, we use Xamarin Studio to develop [Rhino for Mac](http://www.rhino3d.com/mac) and [iRhino 3D](https://www.rhino3d.com/ios).  We highly recommend you use Xamarin Studio when developing RhinoCommon plugins for the Mac (or for Windows as well).
 
 #### Xamarin.Mac?
 {: .toc-subheader }
