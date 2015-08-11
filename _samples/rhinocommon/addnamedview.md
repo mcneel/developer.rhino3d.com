@@ -2,7 +2,7 @@
 layout: code-sample
 title: Add Named View
 author: 
-categories: ['Other'] 
+categories: ['Viewports and Views'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

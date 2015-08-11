@@ -2,7 +2,7 @@
 layout: code-sample
 title: Explode a Hatch
 author: 
-categories: ['Other'] 
+categories: ['Drafting'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

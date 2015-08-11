@@ -2,7 +2,7 @@
 layout: code-sample
 title: Find the Parameter of a Curve at a Point
 author: 
-categories: ['Other'] 
+categories: ['Curves'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

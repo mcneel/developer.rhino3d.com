@@ -2,7 +2,7 @@
 layout: code-sample
 title: Select Objects in an Object's Groups
 author: 
-categories: ['Other'] 
+categories: ['Picking and Selection'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

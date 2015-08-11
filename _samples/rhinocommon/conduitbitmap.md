@@ -2,7 +2,7 @@
 layout: code-sample
 title: draw a non-square bitmap in a display conduit
 author: 
-categories: ['Other'] 
+categories: ['Draw'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

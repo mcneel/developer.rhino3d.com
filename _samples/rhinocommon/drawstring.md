@@ -2,7 +2,7 @@
 layout: code-sample
 title: Dynamically Drawing Text Strings
 author: 
-categories: ['Other'] 
+categories: ['Draw'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

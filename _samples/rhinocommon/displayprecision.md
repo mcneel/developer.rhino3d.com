@@ -2,7 +2,7 @@
 layout: code-sample
 title: Changing Display Precision
 author: 
-categories: ['Other'] 
+categories: ['Draw'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

@@ -2,7 +2,7 @@
 layout: code-sample
 title: Setting a Viewport's Title
 author: 
-categories: ['Other'] 
+categories: ['Viewports and Views'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

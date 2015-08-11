@@ -2,7 +2,7 @@
 layout: code-sample
 title: Reversing the Direction of Curves
 author: 
-categories: ['Other'] 
+categories: ['Curves'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

@@ -35,10 +35,21 @@ order: 4
 
 #### Adding Objects
 {: .toc-subheader }
+<div class="trigger">
+  {% assign samples = site.samples | sort:"order" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Adding Objects'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 #### Curves
 {: .toc-subheader }
-
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
   <ul>
@@ -54,9 +65,93 @@ order: 4
 
 #### Layers
 {: .toc-subheader }
+<div class="trigger">
+  {% assign samples = site.samples | sort:"order" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Layers'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 #### Picking and Selection
 {: .toc-subheader }
+<div class="trigger">
+  {% assign samples = site.samples | sort:"order" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Picking and Selection'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+#### Viewports and Views
+{: .toc-subheader }
+<div class="trigger">
+  {% assign samples = site.samples | sort:"order" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Viewports and Views'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+#### Blocks
+{: .toc-subheader }
+<div class="trigger">
+  {% assign samples = site.samples | sort:"order" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Blocks'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+#### Drawing
+{: .toc-subheader }
+<div class="trigger">
+  {% assign samples = site.samples | sort:"order" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Draw'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+#### Drafting
+{: .toc-subheader }
+<div class="trigger">
+  {% assign samples = site.samples | sort:"order" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Drafting'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 #### Other
 {: .toc-subheader }

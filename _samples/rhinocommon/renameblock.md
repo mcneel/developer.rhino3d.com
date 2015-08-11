@@ -2,7 +2,7 @@
 layout: code-sample
 title: Rename Instance Definition (Block)
 author: 
-categories: ['Other'] 
+categories: ['Blocks'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

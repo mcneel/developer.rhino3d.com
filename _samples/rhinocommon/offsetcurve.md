@@ -2,7 +2,7 @@
 layout: code-sample
 title: Offset a Curve
 author: 
-categories: ['Other'] 
+categories: ['Curves'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

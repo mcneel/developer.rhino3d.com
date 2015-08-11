@@ -2,7 +2,7 @@
 layout: code-sample
 title: Add Child Layer
 author: 
-categories: ['Other'] 
+categories: ['Adding Objects'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

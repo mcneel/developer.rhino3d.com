@@ -2,7 +2,7 @@
 layout: code-sample
 title: Pre-Pick and Post-Pick Objects
 author: 
-categories: ['Other'] 
+categories: ['Picking and Selection'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

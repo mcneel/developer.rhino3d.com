@@ -2,7 +2,7 @@
 layout: code-sample
 title: Add a block definition
 author: 
-categories: ['Other'] 
+categories: ['Blocks'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

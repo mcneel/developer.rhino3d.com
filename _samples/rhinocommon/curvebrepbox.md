@@ -2,7 +2,7 @@
 layout: code-sample
 title: Create a Box From a Curve's Bounding Box
 author: 
-categories: ['Other'] 
+categories: ['Curves'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

@@ -2,7 +2,7 @@
 layout: code-sample
 title: Determine Active Viewport
 author: 
-categories: ['Other'] 
+categories: ['Viewports and Views'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

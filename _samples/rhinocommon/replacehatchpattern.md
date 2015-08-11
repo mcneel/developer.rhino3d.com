@@ -2,7 +2,7 @@
 layout: code-sample
 title: Replacing a Hatch Object's Pattern
 author: 
-categories: ['Other'] 
+categories: ['Drafting'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

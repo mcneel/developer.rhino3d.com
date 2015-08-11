@@ -2,7 +2,7 @@
 layout: code-sample
 title: Obtain insertion point of block
 author: 
-categories: ['Other'] 
+categories: ['Blocks'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

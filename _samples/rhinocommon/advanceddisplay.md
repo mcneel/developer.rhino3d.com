@@ -2,7 +2,7 @@
 layout: code-sample
 title: Modifying Advanced Display Settings
 author: 
-categories: ['Other'] 
+categories: ['Viewports and Views'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

@@ -2,7 +2,7 @@
 layout: code-sample
 title: Determine the Deviation between two Curves
 author: 
-categories: ['Other'] 
+categories: ['Curves'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

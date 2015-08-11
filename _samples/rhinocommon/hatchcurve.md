@@ -2,7 +2,7 @@
 layout: code-sample
 title: Creating a hatch from a curve
 author: 
-categories: ['Other'] 
+categories: ['Drafting'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

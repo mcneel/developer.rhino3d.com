@@ -2,7 +2,7 @@
 layout: code-sample
 title: Curve Bounding Box (world and plane oriented)
 author: 
-categories: ['Other'] 
+categories: ['Curves'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

@@ -2,7 +2,7 @@
 layout: code-sample
 title: Rename a Layer
 author: 
-categories: ['Other'] 
+categories: ['Layers'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

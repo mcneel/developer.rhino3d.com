@@ -2,7 +2,7 @@
 layout: code-sample
 title: Add Linear Dimension2
 author: 
-categories: ['Other'] 
+categories: ['Drafting'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

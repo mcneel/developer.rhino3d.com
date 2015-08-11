@@ -2,7 +2,7 @@
 layout: code-sample
 title: Display Conduit Introduction for RhinoCommon
 author: 
-categories: ['Other'] 
+categories: ['Draw'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

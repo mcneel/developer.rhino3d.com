@@ -2,7 +2,7 @@
 layout: code-sample
 title: Extend a Curve Object
 author: 
-categories: ['Other'] 
+categories: ['Curves'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']

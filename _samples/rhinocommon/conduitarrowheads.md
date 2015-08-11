@@ -2,7 +2,7 @@
 layout: code-sample
 title: Drawing Arrowheads in a Display Conduit
 author: 
-categories: ['Other'] 
+categories: ['Draw'] 
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
