@@ -4,9 +4,10 @@ rvm:
 sudo: required
 before_install:
   - curl -s http://download.mono-project.com/repo/xamarin.gpg | sudo apt-key add -
-  - echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/xamarin.list
+  - echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
+  - echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
   - sudo apt-get update -y
-  - sudo apt-get install -y mono-complete
+  - sudo apt-get install -y mono-devel
   - mono --version
   - curl -O -L https://www.nuget.org/nuget.exe
   - mono nuget.exe  
