@@ -4,7 +4,7 @@ rvm:
 sudo: required
 before_install:
   - sudo apt-get update -y
-  - sudo apt-get install -y mono-mcs
+  - sudo apt-get install -y mono-devel mono-mcs
 script:
   - "bundle exec jekyll build --safe"
   - curl -O -L https://www.nuget.org/nuget.exe
