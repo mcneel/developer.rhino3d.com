@@ -4,10 +4,11 @@ rvm:
 sudo: required
 before_install:
   - sudo apt-get update -y
-  - sudo apt-get install -y mono-mcs nuget
+  - sudo apt-get install -y mono-mcs
 script:
   - "bundle exec jekyll build --safe"
-  - nuget install RhinoCommon -source https://pyget.herokuapp.com/
+  - curl -O -L https://www.nuget.org/nuget.exe
+  - mono nuget.exe install RhinoCommon -source https://pyget.herokuapp.com/
   - cp RhinoCommon*/lib/RhinoCommon.dll .
   - ruby test/compile-sample.rb _samples/rhinocommon/meshvolume.md
 branches:
