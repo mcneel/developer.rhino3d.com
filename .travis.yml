@@ -10,12 +10,13 @@ before_install:
   - sudo apt-get install -y mono-devel
   - mono --version
   - curl -O -L https://www.nuget.org/nuget.exe
-  - mono nuget.exe  
+  - mono nuget.exe
 script:
   - "bundle exec jekyll build --safe"
+  - cd _samples
   - mono nuget.exe install RhinoCommon -source https://pyget.herokuapp.com/
   - cp RhinoCommon*/lib/RhinoCommon.dll .
-  - ruby test/compile-sample.rb _samples/rhinocommon/meshvolume.md
+  - ruby ../test/compile-sample.rb rhinocommon/m*.md
 branches:
   only:
     - gh-pages
