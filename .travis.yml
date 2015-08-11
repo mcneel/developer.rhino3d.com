@@ -5,9 +5,11 @@ sudo: required
 before_install:
   - sudo apt-get update -y
   - sudo apt-get install -y mono-devel mono-mcs
+  - mono --version
+  - curl -O -L https://www.nuget.org/nuget.exe
+  - mono nuget.exe  
 script:
   - "bundle exec jekyll build --safe"
-  - curl -O -L https://www.nuget.org/nuget.exe
   - mono nuget.exe install RhinoCommon -source https://pyget.herokuapp.com/
   - cp RhinoCommon*/lib/RhinoCommon.dll .
   - ruby test/compile-sample.rb _samples/rhinocommon/meshvolume.md
