@@ -7,7 +7,7 @@ platforms: ['Windows']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['first', 'RhinoCommon', 'Plugin']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/rhinocommon
 order: 1
 ---
@@ -57,8 +57,9 @@ The [RhinoCommon templates](https://visualstudiogallery.msdn.microsoft.com/16053
 ![Extensions and Updates]({{ site.baseurl }}/images/installing_tools_windows_01.png)
 1. In the **Search** field, search for *rhino*.  This filters the gallery list below.
 1. Find **RhinoCommon templates for v5** and select it.
-1. Click the **Download** button.  The extension should install.
-1. TODO: Next steps.
+1. Click the **Download** button.  The extension installation should begin.
+1. You must **Accept** the license agreement by clicking on the **Install** button.
+1. If the installation is successful, you will be redirected to the RhinoCommon website and the extension should appear in your list of **Installed** extensions.
 
 ---
 
