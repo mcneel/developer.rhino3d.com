@@ -1,7 +1,22 @@
 language: ruby
 rvm:
   - 2.1
-script: "bundle exec jekyll build --safe"
+sudo: required
+before_install:
+  - curl -s http://download.mono-project.com/repo/xamarin.gpg | sudo apt-key add -
+  - echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
+  - echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
+  - sudo apt-get update -y
+  - sudo apt-get install -y mono-devel
+  - mono --version
+  - curl -O -L https://www.nuget.org/nuget.exe
+  - mono nuget.exe
+script:
+  - "bundle exec jekyll build --safe"
+  - cd _samples
+  - mono ../nuget.exe install RhinoCommon -version 5.12.50702.20095 -source https://pyget.herokuapp.com/
+  - cp RhinoCommon*/lib/RhinoCommon.dll .
+  - ruby ../test/compile-sample.rb rhinocommon/*.md
 branches:
   only:
     - gh-pages
