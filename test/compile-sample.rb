@@ -1,17 +1,53 @@
+#
+# compile-sample.rb
+# ~~~~~~~~~~~~~~~~~
+#
+
+_version = "0.0.4"
+
 # get filenames from commandline, e.g. ruby compile_sample.rb meshvolume.md addtext.md
-files = []
-ARGV.each do |name|
-  if File.directory?(name)
-    puts name + ' is a folder. I only eat files!'
-    exit
-  else
-    files << name
-  end
+
+if ARGV.count < 1
+  puts "compile-sample.rb (#{_version})\n\n"
+  puts "USAGE: ruby compile_sample.rb meshvolume.md addtext.md"
+  puts "       ruby compile_sample.rb rhinocommon/*.md"
+  exit
 end
 
+# define some handy string formatting
+class String
+  def black;          "\033[30m#{self}\033[0m" end
+  def red;            "\033[31m#{self}\033[0m" end
+  def green;          "\033[32m#{self}\033[0m" end
+  def yellow;          "\033[33m#{self}\033[0m" end
+  def magenta;        "\033[35m#{self}\033[0m" end
+  def cyan;           "\033[36m#{self}\033[0m" end
+  def grey;           "\033[37m#{self}\033[0m" end
+  def success;        "\u2713 ".encode('utf-8') + self end
+  def failure;        "\u2717 ".encode('utf-8') + self end
+  def wut;        "\u271D ".encode('utf-8') + self end
+end
+
+
+files = ARGV
 state = [] # record state of each test
+skip_count = 0
+t1 = Time.now
 
 files.each do |filename|
+  t11 = Time.now
+  # check if markdown
+  if File.directory?(filename)
+    puts "#{filename} is a folder. I only eat files!".wut
+    skip_count += 1
+    next
+  end
+  unless filename.end_with? ".md"
+    puts "#{filename} is not a markdown file!".wut
+    skip_count += 1
+    next
+  end
+
   # extract cs code block from markdown
   code = []
   File.open(filename, 'r') do |file|
@@ -60,9 +96,9 @@ files.each do |filename|
   # write to file
   File.open(filename + '.cs', 'w') do |file|
     preamble.each { |line| file.puts(line) }
-    file.puts("class CompileClass\n\{") # wrap sample in a class, in case it is not already
+    file.puts("class TestCompileWrapperClass\n\{") # wrap sample in a class, in case it is not already
     code.each { |line| file.puts(line) }
-    file.puts("\}")
+    file.puts("\}") # end wrapper class
   end
 
   # compile against rhinocommon and throw a wobbly if there's an error
@@ -70,25 +106,30 @@ files.each do |filename|
   # > nuget install RhinoCommon -source https://pyget.herokuapp.com/
   # > cp RhinoCommon*/lib/RhinoCommon.dll .
   output = `mcs #{filename}.cs -pkg:dotnet -r:RhinoCommon.dll -t:library 2>&1`
+  delta = ((Time.now - t11) * 1000).round()
   unless $?.success?
     # print output
     output.split("\n").each do |line|
-      puts "    \033[37m%s\033[0m" % line # print line in grey with indent
+      puts "    " + line.grey # indent
     end
     # TODO last line is unnecessary (e.g. Compilation failed: 2 error(s), 0 warnings)
-    puts "\u2717".encode('utf-8') + ' Could not compile ' + filename
+    puts "Could not compile #{filename} (#{delta} ms)".failure.red
     state << false
   else
     # TODO show warnings
-    puts "\u2713".encode('utf-8') + ' Successfully compiled ' + filename
+    puts "Successfully compiled #{filename}  (#{delta} ms)".success.green
     state << true
   end
 end
+
+t2 = Time.now
 
 # tally up the passes and fails
 counts = Hash[true => 0, false => 0]
 state.each { |s| counts[s] += 1 }
 
-puts "\n%d/%d samples compiled successfully" % [counts[true], state.count]
+puts "\nFinished in %.2f seconds" % (t2 - t1)
+skip_count = ARGV.count - state.count
+puts "#{counts[true]}/#{state.count} samples compiled successfully (#{skip_count} skipped)".yellow
 
 if counts[false] > 0 then exit 1 end
