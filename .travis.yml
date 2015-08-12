@@ -14,7 +14,7 @@ before_install:
 script:
   - "bundle exec jekyll build --safe"
   - cd _samples
-  - mono ../nuget.exe install RhinoCommon -source https://pyget.herokuapp.com/
+  - mono ../nuget.exe install RhinoCommon -version 5.12.50702.20095 -source https://pyget.herokuapp.com/
   - cp RhinoCommon*/lib/RhinoCommon.dll .
   - ruby ../test/compile-sample.rb rhinocommon/*.md
 branches:
