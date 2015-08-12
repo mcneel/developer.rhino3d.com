@@ -67,7 +67,7 @@ To make your Library visible in the Finder:
 ## Related topics
 {: .toc-header }
 
-- [Creating a Plugin Installer (Mac)]({{ site.baseurl }}/guides/rhinocommon/creating_a_plugin_installer_mac/)
+- [Creating a Plugin Installer (Mac)]({{ site.baseurl }}/guides/rhinocommon/plugin_installers_mac/)
 
 ---
 
