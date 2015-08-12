@@ -75,7 +75,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 ![Solution Anatomy]({{ site.baseurl }}/images/your_first_plugin_mac_11.png)
 1. The **HelloRhinoCommon** project (*.csproj*) has the same name as its parent solution...this is the project that was created for us by the **RhinoCommon Plugin** template wizard earlier.
 1. **References**: Just as with most projects, you will be referencing other libraries.  The **RhinoCommon Plugin** template added the necessary references to create a basic RhinoCommon plugin.
-1. **Eto** is the cross-platform User Interface (UI) library Rhino uses.  If you examine its properties, you will notice it comes bundled as part of Rhino for Mac (just like Rhino for Windows).
+1. **Eto** is the cross-platform User Interface (UI) library Rhino uses.  If you examine its properties, you will notice it comes bundled as part of Rhino for Mac.
 1. **Rhino.UI** is the Rhino-specific User Interface (UI) library associated with...
 1. **RhinoCommon** is *the* critical reference for our purposes here.
 1. **System**, **System.Core**, and **System.Drawing** are .NET foundational libraries...in this case, we are referencing the Mono versions of these libraries (on Windows, these references will point to the canonical, Microsoft-provided, versions).
