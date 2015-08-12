@@ -91,6 +91,7 @@ files.each do |filename|
   preamble << 'using Rhino.Input.Custom;'
   preamble << 'using Rhino.UI;'
   preamble << 'using Rhino.UI.Gumball;'
+  preamble << 'using System.Runtime.InteropServices;'
   preamble << ''
 
   # write to file
