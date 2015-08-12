@@ -111,7 +111,7 @@ One of the areas that developers need to be aware of is any .NET code that uses 
 #### UI and Eto
 {: .toc-subheader }
 
-User interface is where developers typically run into trouble with platform specific dependencies and features.  We use and support development of [Eto](https://github.com/picoe/Eto).  Using Eto can make your plugin look and work as a native application on all platforms, using a single UI codebase.  Eto ships with Rhino for Windows and Rhino for Mac.  Eto has an easy to use API and uses native toolkits, abstracting the platform-specific implementations for [WinForms](https://en.wikipedia.org/wiki/Windows_Forms) (GDI and Direct2D), [WPF](https://en.wikipedia.org/wiki/Windows_Presentation_Foundation), and [Cocoa](https://en.wikipedia.org/wiki/Cocoa_(API)) (on OS X).  Though Eto is powerful, it has a shallow learning curve and we're confident you will be hooked as quickly as we were.
+User interface is where developers typically run into trouble with platform specific dependencies and features.  We use and support development of [Eto](https://github.com/picoe/Eto).  Using Eto can make your plugin look and work as a native application on all platforms, using a single UI codebase.  Eto ships with Rhino for Mac (and will ship with Rhino 6 for Windows).  Eto has an easy to use API and uses native toolkits, abstracting the platform-specific implementations for [WinForms](https://en.wikipedia.org/wiki/Windows_Forms) (GDI and Direct2D), [WPF](https://en.wikipedia.org/wiki/Windows_Presentation_Foundation), and [Cocoa](https://en.wikipedia.org/wiki/Cocoa_(API)) (on OS X).  Though Eto is powerful, it has a shallow learning curve and we're confident you will be hooked as quickly as we were.
 
 ---
 
