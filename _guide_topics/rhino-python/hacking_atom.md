@@ -13,6 +13,9 @@ order: 1
 ---
 
 # Running and Testing the Atom rhino-python package from source
+
+I updated the rhino-python Atom package to support configuring the Python search path which I plan to deploy when we release MR5.1.  The document describes how to install and run it from source so some of you can test and give feedback.  
+
   - open a terminal window pointing to the directory where you want to clone the rhino-python package and type:
     ```
     git clone https://github.com/mcneel/rhino-python.git
