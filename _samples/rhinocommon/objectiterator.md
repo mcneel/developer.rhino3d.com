@@ -1,27 +1,20 @@
 ---
 layout: code-sample
-title: Iterate through Rhino's Geometry Table
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Iterate through Rhino's Geometry Table
 keywords: ['iterate', 'through', 'rhinos', 'geometry', 'table']
-order: 123
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class ObjectEnumeratorCommand : Command
+partial class Examples
 {
-  public override string EnglishName
-  {
-    get { return "csObjectEnumerator"; }
-  }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result ObjectIterator(RhinoDoc doc)
   {
     var object_enumerator_settings = new ObjectEnumeratorSettings();
     object_enumerator_settings.IncludeLights = true;
@@ -51,36 +44,29 @@ public class ObjectEnumeratorCommand : Command
 
 
 ```vbnet
-Public Class ObjectEnumeratorCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbObjectEnumerator"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function ObjectIterator(ByVal doc As RhinoDoc) As Result
+	Dim object_enumerator_settings = New ObjectEnumeratorSettings()
+	object_enumerator_settings.IncludeLights = True
+	object_enumerator_settings.IncludeGrips = False
+	Dim rhino_objects = doc.Objects.GetObjectList(object_enumerator_settings)
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim object_enumerator_settings = New ObjectEnumeratorSettings()
-    object_enumerator_settings.IncludeLights = True
-    object_enumerator_settings.IncludeGrips = False
-    Dim rhino_objects = doc.Objects.GetObjectList(object_enumerator_settings)
-
-    Dim count As Integer = 0
-    For Each rhino_object As RhinoObject In rhino_objects
-      If rhino_object.IsSelectable() AndAlso rhino_object.IsSelected(False) = 0 Then
-        rhino_object.[Select](True)
-        count += 1
-      End If
-    Next
-    If count > 0 Then
-      doc.Views.Redraw()
-      RhinoApp.WriteLine("{0} object{1} selected", count, If(count = 1, "", "s"))
-    End If
-    Return Result.Success
+	Dim count As Integer = 0
+	For Each rhino_object In rhino_objects
+	  If rhino_object.IsSelectable() AndAlso rhino_object.IsSelected(False) = 0 Then
+		rhino_object.Select(True)
+		count += 1
+	  End If
+	Next rhino_object
+	If count > 0 Then
+	  doc.Views.Redraw()
+	  RhinoApp.WriteLine("{0} object{1} selected", count,If(count = 1, "", "s"))
+	End If
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -111,6 +97,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

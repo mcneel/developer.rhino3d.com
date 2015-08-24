@@ -1,112 +1,111 @@
 ---
 layout: code-sample
-title: Intersecting line curves
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Intersecting line curves
 keywords: ['intersecting', 'line', 'curves']
-order: 100
-description:  
+categories: ['Curves']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result IntersectLines(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.Input.Custom.GetObject go = new Rhino.Input.Custom.GetObject();
-  go.SetCommandPrompt( "Select lines" );
-  go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;
-  go.GetMultiple( 2, 2);
-  if( go.CommandResult() != Rhino.Commands.Result.Success )
-    return go.CommandResult();
-  if( go.ObjectCount != 2 )
-    return Rhino.Commands.Result.Failure;
-
-  LineCurve crv0 = go.Object(0).Geometry() as LineCurve;
-  LineCurve crv1 = go.Object(1).Geometry() as LineCurve;
-  if( crv0==null || crv1==null )
-    return Rhino.Commands.Result.Failure;
-
-  Line line0 = crv0.Line;
-  Line line1 = crv1.Line;
-  Vector3d v0 = line0.Direction;
-  v0.Unitize();
-  Vector3d v1 = line1.Direction;
-  v1.Unitize();
-
-  if( v0.IsParallelTo(v1) != 0 )
+  public static Rhino.Commands.Result IntersectLines(Rhino.RhinoDoc doc)
   {
-    Rhino.RhinoApp.WriteLine("Selected lines are parallel.");
-    return Rhino.Commands.Result.Nothing;
-  }
+    Rhino.Input.Custom.GetObject go = new Rhino.Input.Custom.GetObject();
+    go.SetCommandPrompt( "Select lines" );
+    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;
+    go.GetMultiple( 2, 2);
+    if( go.CommandResult() != Rhino.Commands.Result.Success )
+      return go.CommandResult();
+    if( go.ObjectCount != 2 )
+      return Rhino.Commands.Result.Failure;
 
-  double a, b;
-  if( !Rhino.Geometry.Intersect.Intersection.LineLine(line0, line1, out a, out b))
-  {
-    Rhino.RhinoApp.WriteLine("No intersection found.");
-    return Rhino.Commands.Result.Nothing;
-  }
+    LineCurve crv0 = go.Object(0).Geometry() as LineCurve;
+    LineCurve crv1 = go.Object(1).Geometry() as LineCurve;
+    if( crv0==null || crv1==null )
+      return Rhino.Commands.Result.Failure;
 
-  Point3d pt0 = line0.PointAt(a);
-  Point3d pt1 = line1.PointAt(b);
-  // pt0 and pt1 should be equal, so we will only add pt0 to the document
-  doc.Objects.AddPoint( pt0 );
-  doc.Views.Redraw();
-  return Rhino.Commands.Result.Success;
+    Line line0 = crv0.Line;
+    Line line1 = crv1.Line;
+    Vector3d v0 = line0.Direction;
+    v0.Unitize();
+    Vector3d v1 = line1.Direction;
+    v1.Unitize();
+
+    if( v0.IsParallelTo(v1) != 0 )
+    {
+      Rhino.RhinoApp.WriteLine("Selected lines are parallel.");
+      return Rhino.Commands.Result.Nothing;
+    }
+
+    double a, b;
+    if( !Rhino.Geometry.Intersect.Intersection.LineLine(line0, line1, out a, out b))
+    {
+      Rhino.RhinoApp.WriteLine("No intersection found.");
+      return Rhino.Commands.Result.Nothing;
+    }
+
+    Point3d pt0 = line0.PointAt(a);
+    doc.Objects.AddPoint( pt0 );
+    doc.Views.Redraw();
+    return Rhino.Commands.Result.Success;
+  }
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function IntersectLines(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim go As New Rhino.Input.Custom.GetObject()
-  go.SetCommandPrompt("Select lines")
-  go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
-  go.GetMultiple(2, 2)
-  If go.CommandResult() <> Rhino.Commands.Result.Success Then
-    Return go.CommandResult()
-  End If
-  If go.ObjectCount <> 2 Then
-    Return Rhino.Commands.Result.Failure
-  End If
+Partial Friend Class Examples
+  Public Shared Function IntersectLines(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim go As New Rhino.Input.Custom.GetObject()
+	go.SetCommandPrompt("Select lines")
+	go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
+	go.GetMultiple(2, 2)
+	If go.CommandResult() <> Rhino.Commands.Result.Success Then
+	  Return go.CommandResult()
+	End If
+	If go.ObjectCount <> 2 Then
+	  Return Rhino.Commands.Result.Failure
+	End If
 
-  Dim crv0 As LineCurve = TryCast(go.Object(0).Geometry(), LineCurve)
-  Dim crv1 As LineCurve = TryCast(go.Object(1).Geometry(), LineCurve)
-  If crv0 Is Nothing OrElse crv1 Is Nothing Then
-    Return Rhino.Commands.Result.Failure
-  End If
+	Dim crv0 As LineCurve = TryCast(go.Object(0).Geometry(), LineCurve)
+	Dim crv1 As LineCurve = TryCast(go.Object(1).Geometry(), LineCurve)
+	If crv0 Is Nothing OrElse crv1 Is Nothing Then
+	  Return Rhino.Commands.Result.Failure
+	End If
 
-  Dim line0 As Line = crv0.Line
-  Dim line1 As Line = crv1.Line
-  Dim v0 As Vector3d = line0.Direction
-  v0.Unitize()
-  Dim v1 As Vector3d = line1.Direction
-  v1.Unitize()
+	Dim line0 As Line = crv0.Line
+	Dim line1 As Line = crv1.Line
+	Dim v0 As Vector3d = line0.Direction
+	v0.Unitize()
+	Dim v1 As Vector3d = line1.Direction
+	v1.Unitize()
 
-  If v0.IsParallelTo(v1) <> 0 Then
-    Rhino.RhinoApp.WriteLine("Selected lines are parallel.")
-    Return Rhino.Commands.Result.[Nothing]
-  End If
+	If v0.IsParallelTo(v1) <> 0 Then
+	  Rhino.RhinoApp.WriteLine("Selected lines are parallel.")
+	  Return Rhino.Commands.Result.Nothing
+	End If
 
-  Dim a As Double, b As Double
-  If Not Rhino.Geometry.Intersect.Intersection.LineLine(line0, line1, a, b) Then
-    Rhino.RhinoApp.WriteLine("No intersection found.")
-    Return Rhino.Commands.Result.[Nothing]
-  End If
+	Dim a As Double = Nothing, b As Double = Nothing
+	If Not Rhino.Geometry.Intersect.Intersection.LineLine(line0, line1, a, b) Then
+	  Rhino.RhinoApp.WriteLine("No intersection found.")
+	  Return Rhino.Commands.Result.Nothing
+	End If
 
-  Dim pt0 As Point3d = line0.PointAt(a)
-  Dim pt1 As Point3d = line1.PointAt(b)
-  ' pt0 and pt1 should be equal, so we will only add pt0 to the document
-  doc.Objects.AddPoint(pt0)
-  doc.Views.Redraw()
-  Return Rhino.Commands.Result.Success
-End Function
+	Dim pt0 As Point3d = line0.PointAt(a)
+	doc.Objects.AddPoint(pt0)
+	doc.Views.Redraw()
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -152,6 +151,5 @@ def IntersectLines():
 if __name__=="__main__":
     IntersectLines()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

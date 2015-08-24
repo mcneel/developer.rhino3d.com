@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Create a Surface from Edge Curves
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Create a Surface from Edge Curves
 keywords: ['create', 'surface', 'edge', 'curves']
-order: 72
-description:  
+categories: ['Curves']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class EdgeSrfCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csEdgeSrf"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result EdgeSrf(RhinoDoc doc)
   {
     var go = new GetObject();
     go.SetCommandPrompt("Select 2, 3, or 4 open curves");
@@ -46,38 +42,31 @@ public class EdgeSrfCommand : Command
 
 
 ```vbnet
-Public Class EdgeSrfCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbEdgeSrf"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function EdgeSrf(ByVal doc As RhinoDoc) As Result
+	Dim go = New GetObject()
+	go.SetCommandPrompt("Select 2, 3, or 4 open curves")
+	go.GeometryFilter = ObjectType.Curve
+	go.GeometryAttributeFilter = GeometryAttributeFilter.OpenCurve
+	go.GetMultiple(2, 4)
+	If go.CommandResult() <> Result.Success Then
+	  Return go.CommandResult()
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim go = New GetObject()
-    go.SetCommandPrompt("Select 2, 3, or 4 open curves")
-    go.GeometryFilter = ObjectType.Curve
-    go.GeometryAttributeFilter = GeometryAttributeFilter.OpenCurve
-    go.GetMultiple(2, 4)
-    If go.CommandResult() <> Result.Success Then
-      Return go.CommandResult()
-    End If
+	Dim curves = go.Objects().Select(Function(o) o.Curve())
 
-    Dim curves = go.Objects().[Select](Function(o) o.Curve())
+	Dim brep = Brep.CreateEdgeSurface(curves)
 
-    Dim brep__1 = Brep.CreateEdgeSurface(curves)
+	If brep IsNot Nothing Then
+	  doc.Objects.AddBrep(brep)
+	  doc.Views.Redraw()
+	End If
 
-    If brep__1 IsNot Nothing Then
-      doc.Objects.AddBrep(brep__1)
-      doc.Views.Redraw()
-    End If
-
-    Return Result.Success
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -110,6 +99,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

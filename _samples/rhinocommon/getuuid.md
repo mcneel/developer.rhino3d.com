@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Get an Object's UUID
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Get an Object's UUID
 keywords: ['objects', 'uuid']
-order: 90
-description:  
+categories: ['Adding Objects']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class GetUuidCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csGetUUID"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result GetUUID(RhinoDoc doc)
   {
     ObjRef obj_ref;
     var rc = RhinoGet.GetOneObject("Select object", false, ObjectType.AnyObject, out obj_ref);
@@ -37,31 +33,24 @@ public class GetUuidCommand : Command
 
 
 ```vbnet
-Public Class GetUuidCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbGetUUID"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function GetUUID(ByVal doc As RhinoDoc) As Result
+	Dim obj_ref As ObjRef = Nothing
+	Dim rc = RhinoGet.GetOneObject("Select object", False, ObjectType.AnyObject, obj_ref)
+	If rc IsNot Result.Success Then
+	  Return rc
+	End If
+	If obj_ref Is Nothing Then
+	  Return Result.Nothing
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim obj_ref As ObjRef = Nothing
-    Dim rc = RhinoGet.GetOneObject("Select object", False, ObjectType.AnyObject, obj_ref)
-    If rc <> Result.Success Then
-      Return rc
-    End If
-    If obj_ref Is Nothing Then
-      Return Result.[Nothing]
-    End If
-
-    Dim uuid = obj_ref.ObjectId
-    RhinoApp.WriteLine("The object's unique id is {0}", uuid.ToString())
-    Return Result.Success
+	Dim uuid = obj_ref.ObjectId
+	RhinoApp.WriteLine("The object's unique id is {0}", uuid.ToString())
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -71,6 +60,5 @@ obj_id = rs.GetObject("Select object")
 if obj_id <> None:
   print "The object's unique id is {0}".format(obj_id)
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

@@ -1,63 +1,66 @@
 ---
 layout: code-sample
-title: Add NURBS Curve
-author: 
-categories: ['Adding Objects'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['nurbs', 'curve']
-order: 19
-description:  
+title: Add NURBS Curve
+keywords: ['add', 'nurbs', 'curve']
+categories: ['Adding Objects', 'Curves']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result AddNurbsCurve(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.Collections.Point3dList points = new Rhino.Collections.Point3dList(5);
-  points.Add(0, 0, 0);
-  points.Add(0, 2, 0);
-  points.Add(2, 3, 0);
-  points.Add(4, 2, 0);
-  points.Add(4, 0, 0);
-  Rhino.Geometry.NurbsCurve nc = Rhino.Geometry.NurbsCurve.Create(false, 3, points);
-  Rhino.Commands.Result rc = Rhino.Commands.Result.Failure;
-  if (nc != null && nc.IsValid)
+  public static Rhino.Commands.Result AddNurbsCurve(Rhino.RhinoDoc doc)
   {
-    if (doc.Objects.AddCurve(nc) != Guid.Empty)
+    Rhino.Collections.Point3dList points = new Rhino.Collections.Point3dList(5);
+    points.Add(0, 0, 0);
+    points.Add(0, 2, 0);
+    points.Add(2, 3, 0);
+    points.Add(4, 2, 0);
+    points.Add(4, 0, 0);
+    Rhino.Geometry.NurbsCurve nc = Rhino.Geometry.NurbsCurve.Create(false, 3, points);
+    Rhino.Commands.Result rc = Rhino.Commands.Result.Failure;
+    if (nc != null && nc.IsValid)
     {
-      doc.Views.Redraw();
-      rc = Rhino.Commands.Result.Success;
+      if (doc.Objects.AddCurve(nc) != Guid.Empty)
+      {
+        doc.Views.Redraw();
+        rc = Rhino.Commands.Result.Success;
+      }
     }
+    return rc;
   }
-  return rc;
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function AddNurbsCurve(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim points As New Rhino.Collections.Point3dList(5)
-  points.Add(0, 0, 0)
-  points.Add(0, 2, 0)
-  points.Add(2, 3, 0)
-  points.Add(4, 2, 0)
-  points.Add(4, 0, 0)
-  Dim nc As Rhino.Geometry.NurbsCurve = Rhino.Geometry.NurbsCurve.Create(False, 3, points)
-  Dim rc As Rhino.Commands.Result = Rhino.Commands.Result.Failure
-  If nc IsNot Nothing AndAlso nc.IsValid Then
-    If doc.Objects.AddCurve(nc) <> Guid.Empty Then
-      doc.Views.Redraw()
-      rc = Rhino.Commands.Result.Success
-    End If
-  End If
-  Return rc
-End Function
+Partial Friend Class Examples
+  Public Shared Function AddNurbsCurve(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim points As New Rhino.Collections.Point3dList(5)
+	points.Add(0, 0, 0)
+	points.Add(0, 2, 0)
+	points.Add(2, 3, 0)
+	points.Add(4, 2, 0)
+	points.Add(4, 0, 0)
+	Dim nc As Rhino.Geometry.NurbsCurve = Rhino.Geometry.NurbsCurve.Create(False, 3, points)
+	Dim rc As Rhino.Commands.Result = Rhino.Commands.Result.Failure
+	If nc IsNot Nothing AndAlso nc.IsValid Then
+	  If doc.Objects.AddCurve(nc) <> Guid.Empty Then
+		doc.Views.Redraw()
+		rc = Rhino.Commands.Result.Success
+	  End If
+	End If
+	Return rc
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -84,6 +87,5 @@ def AddNurbsCurve():
 if __name__=="__main__":
     AddNurbsCurve()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

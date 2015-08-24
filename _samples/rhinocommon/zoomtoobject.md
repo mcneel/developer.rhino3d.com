@@ -1,74 +1,76 @@
 ---
 layout: code-sample
-title: Zoom to a Selected Object
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Zoom to a Selected Object
 keywords: ['zoom', 'selected', 'object']
-order: 170
-description:  
+categories: ['Adding Objects']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result ZoomToObject(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.DocObjects.ObjRef rhObject;
-  var rc = Rhino.Input.RhinoGet.GetOneObject("Select object to zoom", false, Rhino.DocObjects.ObjectType.None, out rhObject);
-  if (rc != Rhino.Commands.Result.Success)
-    return rc;
+  public static Rhino.Commands.Result ZoomToObject(Rhino.RhinoDoc doc)
+  {
+    Rhino.DocObjects.ObjRef rhObject;
+    var rc = Rhino.Input.RhinoGet.GetOneObject("Select object to zoom", false, Rhino.DocObjects.ObjectType.None, out rhObject);
+    if (rc != Rhino.Commands.Result.Success)
+      return rc;
 
-  var obj = rhObject.Object();
-  var view = doc.Views.ActiveView;
-  if (obj == null || view == null)
-    return Rhino.Commands.Result.Failure;
+    var obj = rhObject.Object();
+    var view = doc.Views.ActiveView;
+    if (obj == null || view == null)
+      return Rhino.Commands.Result.Failure;
 
-  var bbox = obj.Geometry.GetBoundingBox(true);
+    var bbox = obj.Geometry.GetBoundingBox(true);
 
-  const double pad = 0.05;    // A little padding...
-  double dx = (bbox.Max.X - bbox.Min.X) * pad;
-  double dy = (bbox.Max.Y - bbox.Min.Y) * pad;
-  double dz = (bbox.Max.Z - bbox.Min.Z) * pad;
-  bbox.Inflate(dx, dy, dz);
-  view.ActiveViewport.ZoomBoundingBox(bbox);
-  view.Redraw();
-  return Rhino.Commands.Result.Success;
+    const double pad = 0.05;    // A little padding...
+    double dx = (bbox.Max.X - bbox.Min.X) * pad;
+    double dy = (bbox.Max.Y - bbox.Min.Y) * pad;
+    double dz = (bbox.Max.Z - bbox.Min.Z) * pad;
+    bbox.Inflate(dx, dy, dz);
+    view.ActiveViewport.ZoomBoundingBox(bbox);
+    view.Redraw();
+    return Rhino.Commands.Result.Success;
+  }
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function ZoomToObject(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim rhObject As Rhino.DocObjects.ObjRef = Nothing
-  Dim rc = Rhino.Input.RhinoGet.GetOneObject("Select object to zoom", False, Rhino.DocObjects.ObjectType.None, rhObject)
-  If rc <> Rhino.Commands.Result.Success Then
-    Return rc
-  End If
+Partial Friend Class Examples
+  Public Shared Function ZoomToObject(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim rhObject As Rhino.DocObjects.ObjRef = Nothing
+	Dim rc = Rhino.Input.RhinoGet.GetOneObject("Select object to zoom", False, Rhino.DocObjects.ObjectType.None, rhObject)
+	If rc IsNot Rhino.Commands.Result.Success Then
+	  Return rc
+	End If
 
-  Dim obj = rhObject.Object()
-  Dim view = doc.Views.ActiveView
-  If obj Is Nothing OrElse view Is Nothing Then
-    Return Rhino.Commands.Result.Failure
-  End If
+	Dim obj = rhObject.Object()
+	Dim view = doc.Views.ActiveView
+	If obj Is Nothing OrElse view Is Nothing Then
+	  Return Rhino.Commands.Result.Failure
+	End If
 
-  Dim bbox = obj.Geometry.GetBoundingBox(True)
+	Dim bbox = obj.Geometry.GetBoundingBox(True)
 
-  Const pad As Double = 0.05
-  ' A little padding...
-  Dim dx As Double = (bbox.Max.X - bbox.Min.X) * pad
-  Dim dy As Double = (bbox.Max.Y - bbox.Min.Y) * pad
-  Dim dz As Double = (bbox.Max.Z - bbox.Min.Z) * pad
-  bbox.Inflate(dx, dy, dz)
-  view.ActiveViewport.ZoomBoundingBox(bbox)
-  view.Redraw()
-  Return Rhino.Commands.Result.Success
-End Function
+	Const pad As Double = 0.05 ' A little padding...
+	Dim dx As Double = (bbox.Max.X - bbox.Min.X) * pad
+	Dim dy As Double = (bbox.Max.Y - bbox.Min.Y) * pad
+	Dim dz As Double = (bbox.Max.Z - bbox.Min.Z) * pad
+	bbox.Inflate(dx, dy, dz)
+	view.ActiveViewport.ZoomBoundingBox(bbox)
+	view.Redraw()
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -96,6 +98,5 @@ def ZoomToObject():
 if __name__=="__main__":
     ZoomToObject()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

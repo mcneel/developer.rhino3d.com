@@ -1,0 +1,86 @@
+---
+layout: code-sample
+author:
+platforms: ['Cross-Platform']
+apis: ['RhinoCommon']
+languages: ['C#', 'Python', 'VB.NET']
+title: Select Objects in an Object's Groups
+keywords: ['select', 'objects', 'groups']
+categories: ['Picking and Selection', 'Adding Objects']
+description:
+order: 1
+---
+
+```cs
+partial class Examples
+{
+  public static Result SelectObjectsInObjectGroups(RhinoDoc doc)
+  {
+    ObjRef obj_ref;
+    var rs = RhinoGet.GetOneObject(
+      "Select object", false, ObjectType.AnyObject, out obj_ref);
+    if (rs != Result.Success)
+      return rs;
+    var rhino_object = obj_ref.Object();
+    if (rhino_object == null)
+      return Result.Failure;
+
+    var rhino_object_groups = rhino_object.Attributes.GetGroupList().DefaultIfEmpty(-1);
+
+    var selectable_objects= from obj in doc.Objects.GetObjectList(ObjectType.AnyObject)
+                            where obj.IsSelectable(true, false, false, false)
+                            select obj;
+
+    foreach (var selectable_object in selectable_objects)
+    {
+      foreach (var group in selectable_object.Attributes.GetGroupList())
+      {
+        if (rhino_object_groups.Contains(group))
+        {
+            selectable_object.Select(true);
+            continue;
+        }
+      }
+    }
+    doc.Views.Redraw();
+    return Result.Success;
+  }
+}
+```
+{: #cs .tab-pane .fade .in .active}
+
+
+```vbnet
+Partial Friend Class Examples
+  Public Shared Function SelectObjectsInObjectGroups(ByVal doc As RhinoDoc) As Result
+	Dim obj_ref As ObjRef = Nothing
+	Dim rs = RhinoGet.GetOneObject("Select object", False, ObjectType.AnyObject, obj_ref)
+	If rs IsNot Result.Success Then
+	  Return rs
+	End If
+	Dim rhino_object = obj_ref.Object()
+	If rhino_object Is Nothing Then
+	  Return Result.Failure
+	End If
+
+	Dim rhino_object_groups = rhino_object.Attributes.GetGroupList().DefaultIfEmpty(-1)
+
+	Dim selectable_objects = From obj In doc.Objects.GetObjectList(ObjectType.AnyObject)
+	                         Where obj.IsSelectable(True, False, False, False)
+	                         Select obj
+
+	For Each selectable_object In selectable_objects
+	  For Each group In selectable_object.Attributes.GetGroupList()
+		If rhino_object_groups.Contains(group) Then
+			selectable_object.Select(True)
+			Continue For
+		End If
+	  Next group
+	Next selectable_object
+	doc.Views.Redraw()
+	Return Result.Success
+  End Function
+End Class
+```
+{: #vb .tab-pane .fade .in .active}
+

@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Setting a Viewport's Title
-author: 
-categories: ['Viewports and Views'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Setting a Viewport's Title
 keywords: ['setting', 'viewports', 'title']
-order: 151
-description:  
+categories: ['Viewports and Views']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class SetViewNameCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csSetViewName"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result SetViewName(RhinoDoc doc)
   {
     var view = doc.Views.ActiveView;
     if (view == null)
@@ -33,26 +29,19 @@ public class SetViewNameCommand : Command
 
 
 ```vbnet
-Public Class SetViewNameCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbSetViewName"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function SetViewName(ByVal doc As RhinoDoc) As Result
+	Dim view = doc.Views.ActiveView
+	If view Is Nothing Then
+	  Return Result.Failure
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim view As Rhino.Display.RhinoView = doc.Views.ActiveView
-    If view Is Nothing Then
-      Return Rhino.Commands.Result.Failure
-    End If
-
-    view.MainViewport.Name = "Facade"
-    Return Result.Success
+	view.MainViewport.Name = "Facade"
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -71,6 +60,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

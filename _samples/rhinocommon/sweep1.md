@@ -1,110 +1,113 @@
 ---
 layout: code-sample
-title: Sweeping Surfaces using Sweep1
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Sweeping Surfaces using Sweep1
 keywords: ['sweeping', 'surfaces', 'using', 'sweep1']
-order: 159
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result Sweep1(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.DocObjects.ObjRef rail_ref;
-  var rc = RhinoGet.GetOneObject("Select rail curve", false, Rhino.DocObjects.ObjectType.Curve, out rail_ref);
-  if(rc!=Rhino.Commands.Result.Success)
-    return rc;
-
-  var rail_crv = rail_ref.Curve();
-  if( rail_crv==null )
-    return Rhino.Commands.Result.Failure;
-
-  var gx = new Rhino.Input.Custom.GetObject();
-  gx.SetCommandPrompt("Select cross section curves");
-  gx.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;
-  gx.EnablePreSelect(false, true);
-  gx.GetMultiple(1,0);
-  if( gx.CommandResult() != Rhino.Commands.Result.Success )
-    return gx.CommandResult();
-  
-  var cross_sections = new List<Rhino.Geometry.Curve>();
-  for( int i=0; i<gx.ObjectCount; i++ )
+  public static Rhino.Commands.Result Sweep1(Rhino.RhinoDoc doc)
   {
-    var crv = gx.Object(i).Curve();
-    if( crv!= null)
-      cross_sections.Add(crv);
-  }
-  if( cross_sections.Count<1 )
-    return Rhino.Commands.Result.Failure;
+    Rhino.DocObjects.ObjRef rail_ref;
+    var rc = RhinoGet.GetOneObject("Select rail curve", false, Rhino.DocObjects.ObjectType.Curve, out rail_ref);
+    if(rc!=Rhino.Commands.Result.Success)
+      return rc;
 
-  var sweep = new Rhino.Geometry.SweepOneRail();
-  sweep.AngleToleranceRadians = doc.ModelAngleToleranceRadians;
-  sweep.ClosedSweep = false;
-  sweep.SweepTolerance = doc.ModelAbsoluteTolerance;
-  sweep.SetToRoadlikeTop();
-  var breps = sweep.PerformSweep(rail_crv, cross_sections);
-  for( int i=0; i<breps.Length; i++ )
-    doc.Objects.AddBrep(breps[i]);
-  doc.Views.Redraw();
-  return Rhino.Commands.Result.Success;
+    var rail_crv = rail_ref.Curve();
+    if( rail_crv==null )
+      return Rhino.Commands.Result.Failure;
+
+    var gx = new Rhino.Input.Custom.GetObject();
+    gx.SetCommandPrompt("Select cross section curves");
+    gx.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;
+    gx.EnablePreSelect(false, true);
+    gx.GetMultiple(1,0);
+    if( gx.CommandResult() != Rhino.Commands.Result.Success )
+      return gx.CommandResult();
+    
+    var cross_sections = new List<Rhino.Geometry.Curve>();
+    for( int i=0; i<gx.ObjectCount; i++ )
+    {
+      var crv = gx.Object(i).Curve();
+      if( crv!= null)
+        cross_sections.Add(crv);
+    }
+    if( cross_sections.Count<1 )
+      return Rhino.Commands.Result.Failure;
+
+    var sweep = new Rhino.Geometry.SweepOneRail();
+    sweep.AngleToleranceRadians = doc.ModelAngleToleranceRadians;
+    sweep.ClosedSweep = false;
+    sweep.SweepTolerance = doc.ModelAbsoluteTolerance;
+    sweep.SetToRoadlikeTop();
+    var breps = sweep.PerformSweep(rail_crv, cross_sections);
+    for( int i=0; i<breps.Length; i++ )
+      doc.Objects.AddBrep(breps[i]);
+    doc.Views.Redraw();
+    return Rhino.Commands.Result.Success;
+  }
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function Sweep1(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim rail_ref As Rhino.DocObjects.ObjRef = Nothing
-  Dim rc = RhinoGet.GetOneObject("Select rail curve", False, Rhino.DocObjects.ObjectType.Curve, rail_ref)
-  If rc <> Rhino.Commands.Result.Success Then
-    Return rc
-  End If
+Partial Friend Class Examples
+  Public Shared Function Sweep1(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim rail_ref As Rhino.DocObjects.ObjRef = Nothing
+	Dim rc = RhinoGet.GetOneObject("Select rail curve", False, Rhino.DocObjects.ObjectType.Curve, rail_ref)
+	If rc IsNot Rhino.Commands.Result.Success Then
+	  Return rc
+	End If
 
-  Dim rail_crv = rail_ref.Curve()
-  If rail_crv Is Nothing Then
-    Return Rhino.Commands.Result.Failure
-  End If
+	Dim rail_crv = rail_ref.Curve()
+	If rail_crv Is Nothing Then
+	  Return Rhino.Commands.Result.Failure
+	End If
 
-  Dim gx = New Rhino.Input.Custom.GetObject()
-  gx.SetCommandPrompt("Select cross section curves")
-  gx.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
-  gx.EnablePreSelect(False, True)
-  gx.GetMultiple(1, 0)
-  If gx.CommandResult() <> Rhino.Commands.Result.Success Then
-    Return gx.CommandResult()
-  End If
+	Dim gx = New Rhino.Input.Custom.GetObject()
+	gx.SetCommandPrompt("Select cross section curves")
+	gx.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
+	gx.EnablePreSelect(False, True)
+	gx.GetMultiple(1,0)
+	If gx.CommandResult() <> Rhino.Commands.Result.Success Then
+	  Return gx.CommandResult()
+	End If
 
-  Dim cross_sections = New List(Of Rhino.Geometry.Curve)()
-  For i As Integer = 0 To gx.ObjectCount - 1
-    Dim crv = gx.Object(i).Curve()
-    If crv IsNot Nothing Then
-      cross_sections.Add(crv)
-    End If
-  Next
-  If cross_sections.Count < 1 Then
-    Return Rhino.Commands.Result.Failure
-  End If
+	Dim cross_sections = New List(Of Rhino.Geometry.Curve)()
+	For i As Integer = 0 To gx.ObjectCount - 1
+	  Dim crv = gx.Object(i).Curve()
+	  If crv IsNot Nothing Then
+		cross_sections.Add(crv)
+	  End If
+	Next i
+	If cross_sections.Count<1 Then
+	  Return Rhino.Commands.Result.Failure
+	End If
 
-  Dim sweep = New Rhino.Geometry.SweepOneRail()
-  sweep.AngleToleranceRadians = doc.ModelAngleToleranceRadians
-  sweep.ClosedSweep = False
-  sweep.SweepTolerance = doc.ModelAbsoluteTolerance
-  sweep.SetToRoadlikeTop()
-  Dim breps = sweep.PerformSweep(rail_crv, cross_sections)
-  For i As Integer = 0 To breps.Length - 1
-    doc.Objects.AddBrep(breps(i))
-  Next
-  doc.Views.Redraw()
-  Return Rhino.Commands.Result.Success
-End Function
+	Dim sweep = New Rhino.Geometry.SweepOneRail()
+	sweep.AngleToleranceRadians = doc.ModelAngleToleranceRadians
+	sweep.ClosedSweep = False
+	sweep.SweepTolerance = doc.ModelAbsoluteTolerance
+	sweep.SetToRoadlikeTop()
+	Dim breps = sweep.PerformSweep(rail_crv, cross_sections)
+	For i As Integer = 0 To breps.Length - 1
+	  doc.Objects.AddBrep(breps(i))
+	Next i
+	doc.Views.Redraw()
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -133,6 +136,5 @@ def Sweep1():
 if __name__ == "__main__":
     Sweep1()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

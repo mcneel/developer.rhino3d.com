@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Creating a Leader
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Creating a Leader
 keywords: ['creating', 'leader']
-order: 104
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class LeaderCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csLeader"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result Leader(RhinoDoc doc)
   {
     var points = new Point3d[]
     {
@@ -52,42 +48,35 @@ public class LeaderCommand : Command
 
 
 ```vbnet
-Public Class LeaderCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbLeader"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function Leader(ByVal doc As RhinoDoc) As Result
+	Dim points = New Point3d() {
+		New Point3d(1, 1, 0),
+		New Point3d(5, 1, 0),
+		New Point3d(5, 5, 0),
+		New Point3d(9, 5, 0)
+	}
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim points = New List(Of Point3d)() From { _
-      New Point3d(1, 1, 0), _
-      New Point3d(5, 1, 0), _
-      New Point3d(5, 5, 0), _
-      New Point3d(9, 5, 0) _
-    }
+	Dim xy_plane = Plane.WorldXY
 
-    Dim xyPlane = Plane.WorldXY
+	Dim points2d = New List(Of Point2d)()
+	For Each point3d In points
+	  Dim x As Double = Nothing, y As Double = Nothing
+	  If xy_plane.ClosestParameter(point3d, x, y) Then
+		Dim point2d = New Point2d(x, y)
+		If points2d.Count < 1 OrElse point2d.DistanceTo(points2d.Last()) > RhinoMath.SqrtEpsilon Then
+		  points2d.Add(point2d)
+		End If
+	  End If
+	Next point3d
 
-    Dim points2d = New List(Of Point2d)()
-    For Each point3d As Point3d In points
-      Dim x As Double, y As Double
-      If xyPlane.ClosestParameter(point3d, x, y) Then
-        Dim point2d = New Point2d(x, y)
-        If points2d.Count < 1 OrElse point2d.DistanceTo(points2d.Last()) > RhinoMath.SqrtEpsilon Then
-          points2d.Add(point2d)
-        End If
-      End If
-    Next
-
-    doc.Objects.AddLeader(xyPlane, points2d)
-    doc.Views.Redraw()
-    Return Result.Success
+	doc.Objects.AddLeader(xy_plane, points2d)
+	doc.Views.Redraw()
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -100,6 +89,5 @@ def RunCommand():
 if __name__ == "__main__":
     RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Single Color Back Faces
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Single Color Back Faces
 keywords: ['single', 'color', 'back', 'faces']
-order: 153
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class SingleColorBackfacesCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csSingleColorBackfaces"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result SingleColorBackfaces(RhinoDoc doc)
   {
     var display_mode_descs = //DisplayModeDescription.GetDisplayModes();
       from dm in DisplayModeDescription.GetDisplayModes()
@@ -38,14 +34,19 @@ public class SingleColorBackfacesCommand : Command
 
 
 ```vbnet
-no vb code sample available
+Partial Friend Class Examples
+  Public Shared Function SingleColorBackfaces(ByVal doc As RhinoDoc) As Result
+	Dim display_mode_descs = From dm In DisplayModeDescription.GetDisplayModes()
+	                         Where dm.EnglishName = "Shaded"
+	                         Select dm 'DisplayModeDescription.GetDisplayModes();
+
+	For Each dmd In display_mode_descs
+	  RhinoApp.WriteLine("CurveColor {0}", dmd.DisplayAttributes.CurveColor.ToKnownColor())
+	  RhinoApp.WriteLine("ObjectColor {0}", dmd.DisplayAttributes.ObjectColor.ToKnownColor())
+	Next dmd
+	Return Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
-
-
-```python
-no python code sample available
-```
-{: #py .tab-pane .fade .in}
-
+{: #vb .tab-pane .fade .in .active}
 

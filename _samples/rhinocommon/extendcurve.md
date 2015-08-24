@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Extend a Curve Object
-author: 
-categories: ['Curves'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Extend a Curve Object
 keywords: ['extend', 'curve', 'object']
-order: 78
-description:  
+categories: ['Curves', 'Adding Objects']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class ExtendCurveCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csExtendCurve"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result ExtendCurve(RhinoDoc doc)
   {
     ObjRef[] boundary_obj_refs;
     var rc = RhinoGet.GetMultipleObjects("Select boundary objects", false, ObjectType.AnyObject, out boundary_obj_refs);
@@ -31,6 +27,7 @@ public class ExtendCurveCommand : Command
     gc.SetCommandPrompt("Select curve to extend");
     gc.GeometryFilter = ObjectType.Curve;
     gc.GeometryAttributeFilter = GeometryAttributeFilter.OpenCurve;
+    gc.DisablePreSelect ();
     gc.Get();
     if (gc.CommandResult() != Result.Success)
       return gc.CommandResult();
@@ -65,61 +62,55 @@ public class ExtendCurveCommand : Command
 
 
 ```vbnet
-Public Class ExtendCurveCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbExtendCurve"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function ExtendCurve(ByVal doc As RhinoDoc) As Result
+	Dim boundary_obj_refs() As ObjRef = Nothing
+	Dim rc = RhinoGet.GetMultipleObjects("Select boundary objects", False, ObjectType.AnyObject, boundary_obj_refs)
+	If rc IsNot Result.Success Then
+	  Return rc
+	End If
+	If boundary_obj_refs Is Nothing OrElse boundary_obj_refs.Length = 0 Then
+	  Return Result.Nothing
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim boundary_obj_refs As ObjRef() = Nothing
-    Dim rc = RhinoGet.GetMultipleObjects("Select boundary objects", False, ObjectType.AnyObject, boundary_obj_refs)
-    If rc <> Result.Success Then
-      Return rc
-    End If
-    If boundary_obj_refs Is Nothing OrElse boundary_obj_refs.Length = 0 Then
-      Return Result.[Nothing]
-    End If
+	Dim gc = New GetObject()
+	gc.SetCommandPrompt("Select curve to extend")
+	gc.GeometryFilter = ObjectType.Curve
+	gc.GeometryAttributeFilter = GeometryAttributeFilter.OpenCurve
+	gc.DisablePreSelect()
+	gc.Get()
+	If gc.CommandResult() <> Result.Success Then
+	  Return gc.CommandResult()
+	End If
+	Dim curve_obj_ref = gc.Object(0)
 
-    Dim gc = New GetObject()
-    gc.SetCommandPrompt("Select curve to extend")
-    gc.GeometryFilter = ObjectType.Curve
-    gc.GeometryAttributeFilter = GeometryAttributeFilter.OpenCurve
-    gc.[Get]()
-    If gc.CommandResult() <> Result.Success Then
-      Return gc.CommandResult()
-    End If
-    Dim curve_obj_ref = gc.[Object](0)
+	Dim curve = curve_obj_ref.Curve()
+	If curve Is Nothing Then
+		Return Result.Failure
+	End If
+	Dim t As Double = Nothing
+	If Not curve.ClosestPoint(curve_obj_ref.SelectionPoint(), t) Then
+	  Return Result.Failure
+	End If
+	Dim curve_end = If(t <= curve.Domain.Mid, CurveEnd.Start, CurveEnd.End)
 
-    Dim curve = curve_obj_ref.Curve()
-    If curve Is Nothing Then
-      Return Result.Failure
-    End If
-    Dim t As Double
-    If Not curve.ClosestPoint(curve_obj_ref.SelectionPoint(), t) Then
-      Return Result.Failure
-    End If
-    Dim curve_end = If(t <= curve.Domain.Mid, CurveEnd.Start, CurveEnd.[End])
+	Dim geometry = boundary_obj_refs.Select(Function(obj) obj.Geometry())
+	Dim extended_curve = curve.Extend(curve_end, CurveExtensionStyle.Line, geometry)
+	If extended_curve IsNot Nothing AndAlso extended_curve.IsValid Then
+	  If Not doc.Objects.Replace(curve_obj_ref.ObjectId, extended_curve) Then
+		Return Result.Failure
+	  End If
+	  doc.Views.Redraw()
+	Else
+	  RhinoApp.WriteLine("No boundary object was intersected so curve not extended")
+	  Return Result.Nothing
+	End If
 
-    Dim geometry = boundary_obj_refs.[Select](Function(obj) obj.Geometry())
-    Dim extended_curve = curve.Extend(curve_end, CurveExtensionStyle.Line, geometry)
-    If extended_curve IsNot Nothing AndAlso extended_curve.IsValid Then
-      If Not doc.Objects.Replace(curve_obj_ref.ObjectId, extended_curve) Then
-        Return Result.Failure
-      End If
-      doc.Views.Redraw()
-    Else
-      RhinoApp.WriteLine("No boundary object was intersected so curve not extended")
-      Return Result.[Nothing]
-    End If
-
-    Return Result.Success
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -133,7 +124,8 @@ from scriptcontext import doc
 
 def RunCommand():
   
-  rc, boundary_obj_refs = RhinoGet.GetMultipleObjects("Select boundary objects", False, ObjectType.AnyObject)
+  rc, boundary_obj_refs = RhinoGet.GetMultipleObjects(
+    "Select boundary objects", False, ObjectType.AnyObject)
   if rc <> Result.Success:
     return rc
   if boundary_obj_refs == None or boundary_obj_refs.Length == 0:
@@ -168,6 +160,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

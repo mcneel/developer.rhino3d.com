@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Justifying Text Entities
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Justifying Text Entities
 keywords: ['justifying', 'text', 'entities']
-order: 161
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class TextJustifyCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csTextJustify"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result TextJustify(RhinoDoc doc)
   {
     var text_entity = new TextEntity
     {
@@ -39,29 +35,18 @@ public class TextJustifyCommand : Command
 
 
 ```vbnet
-Public Class TextJustifyCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbTextJustify"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function TextJustify(ByVal doc As RhinoDoc) As Result
+	Dim text_entity = New TextEntity With {.Plane = Plane.WorldXY, .Text = "Hello Rhino!", .Justification = TextJustification.MiddleCenter, .FontIndex = doc.Fonts.FindOrCreate("Arial", False, False)}
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim text_entity = New TextEntity()
-    text_entity.Plane = Plane.WorldXY
-    text_entity.Text = "Hello Rhino!"
-    text_entity.Justification = TextJustification.MiddleCenter
-    text_entity.FontIndex = doc.Fonts.FindOrCreate("Arial", False, False)
+	doc.Objects.AddText(text_entity)
+	doc.Views.Redraw()
 
-    doc.Objects.AddText(text_entity)
-    doc.Views.Redraw()
-
-    Return Result.Success
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -77,6 +62,5 @@ text_entity.FontIndex = doc.Fonts.FindOrCreate("Arial", False, False)
 doc.Objects.AddText(text_entity)
 doc.Views.Redraw()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Delete Instance Definition (Block)
-author: 
-categories: ['Blocks'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['delete', 'instance', 'definition', '(block)']
-order: 55
-description:  
+title: Delete Instance Definition (Block)
+keywords: ['delete', 'instance', 'definition', 'block']
+categories: ['Blocks']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class DeleteBlockCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csDeleteInstanceDefinition"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result DeleteBlock(RhinoDoc doc)
   {
     // Get the name of the instance definition to rename
     string instance_definition_name = "";
@@ -55,49 +51,42 @@ public class DeleteBlockCommand : Command
 
 
 ```vbnet
-Public Class DeleteBlockCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbDeleteInstanceDefinition"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function DeleteBlock(ByVal doc As RhinoDoc) As Result
+	' Get the name of the instance definition to rename
+	Dim instance_definition_name As String = ""
+	Dim rc = RhinoGet.GetString("Name of block to delete", True, instance_definition_name)
+	If rc IsNot Result.Success Then
+	  Return rc
+	End If
+	If String.IsNullOrWhiteSpace(instance_definition_name) Then
+	  Return Result.Nothing
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    ' Get the name of the instance definition to rename
-    Dim instanceDefinitionName As String = ""
-    Dim rc = Rhino.Input.RhinoGet.GetString("Name of block to delete", True, instanceDefinitionName)
-    If rc <> Result.Success Then
-      Return rc
-    End If
-    If [String].IsNullOrWhiteSpace(instanceDefinitionName) Then
-      Return Result.[Nothing]
-    End If
+	' Verify instance definition exists
+	Dim instance_definition = doc.InstanceDefinitions.Find(instance_definition_name, True)
+	If instance_definition Is Nothing Then
+	  RhinoApp.WriteLine("Block ""{0}"" not found.", instance_definition_name)
+	  Return Result.Nothing
+	End If
 
-    ' Verify instance definition exists
-    Dim instanceDefinition = doc.InstanceDefinitions.Find(instanceDefinitionName, True)
-    If instanceDefinition Is Nothing Then
-      RhinoApp.WriteLine([String].Format("Block ""{0}"" not found.", instanceDefinitionName))
-      Return Result.[Nothing]
-    End If
+	' Verify instance definition can be deleted
+	If instance_definition.IsReference Then
+	  RhinoApp.WriteLine("Unable to delete block ""{0}"".", instance_definition_name)
+	  Return Result.Nothing
+	End If
 
-    ' Verify instance definition can be deleted
-    If instanceDefinition.IsReference Then
-      RhinoApp.WriteLine([String].Format("Unable to delete block ""{0}"".", instanceDefinitionName))
-      Return Result.[Nothing]
-    End If
+	' delete block and all references
+	If Not doc.InstanceDefinitions.Delete(instance_definition.Index, True, True) Then
+	  RhinoApp.WriteLine("Could not delete {0} block", instance_definition.Name)
+	  Return Result.Failure
+	End If
 
-    ' delete block and all references
-    If Not doc.InstanceDefinitions.Delete(instanceDefinition.Index, True, True) Then
-      RhinoApp.WriteLine([String].Format("Could not delete {0} block", instanceDefinition.Name))
-      Return Result.Failure
-    End If
-
-    Return Result.Success
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -116,6 +105,5 @@ def Delete():
 if __name__ == "__main__":
     Delete()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

@@ -1,58 +1,20 @@
 ---
 layout: code-sample
-title: Determine the Deviation between two Curves
-author: 
-categories: ['Curves'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Determine the Deviation between two Curves
 keywords: ['determine', 'deviation', 'between', 'curves']
-order: 46
-description:  
+categories: ['Curves']
+description:
+order: 1
 ---
 
-
-
 ```cs
-class DeviationConduit : Rhino.Display.DisplayConduit
+partial class Examples
 {
-  private readonly Curve m_curve_a;
-  private readonly Curve m_curve_b;
-  private readonly Point3d m_min_dist_point_a ;
-  private readonly Point3d m_min_dist_point_b ;
-  private readonly Point3d m_max_dist_point_a ;
-  private readonly Point3d m_max_dist_point_b ;
-
-  public DeviationConduit(Curve curveA, Curve curveB, Point3d minDistPointA, Point3d minDistPointB, Point3d maxDistPointA, Point3d maxDistPointB)
-  {
-    m_curve_a = curveA;
-    m_curve_b = curveB;
-    m_min_dist_point_a = minDistPointA;
-    m_min_dist_point_b = minDistPointB;
-    m_max_dist_point_a = maxDistPointA;
-    m_max_dist_point_b = maxDistPointB;
-  }
-
-  protected override void DrawForeground(Rhino.Display.DrawEventArgs e)
-  {
-    e.Display.DrawCurve(m_curve_a, Color.Red);
-    e.Display.DrawCurve(m_curve_b, Color.Red);
-
-    e.Display.DrawPoint(m_min_dist_point_a, Color.LawnGreen);
-    e.Display.DrawPoint(m_min_dist_point_b, Color.LawnGreen);
-    e.Display.DrawLine(new Line(m_min_dist_point_a, m_min_dist_point_b), Color.LawnGreen);
-    e.Display.DrawPoint(m_max_dist_point_a, Color.Red);
-    e.Display.DrawPoint(m_max_dist_point_b, Color.Red);
-    e.Display.DrawLine(new Line(m_max_dist_point_a, m_max_dist_point_b), Color.Red);
-  }
-}
-
-
-public class CurveDeviationCommand : Command
-{
-  public override string EnglishName { get { return "csCurveDeviation"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result CrvDeviation(RhinoDoc doc)
   {
     doc.Objects.UnselectAll();
 
@@ -128,38 +90,81 @@ public class CurveDeviationCommand : Command
 
 
 ```vbnet
-Class DeviationConduit
-  Inherits Rhino.Display.DisplayConduit
-  Private ReadOnly _curveA As Curve
-  Private ReadOnly _curveB As Curve
-  Private ReadOnly _minDistPointA As Point3d
-  Private ReadOnly _minDistPointB As Point3d
-  Private ReadOnly _maxDistPointA As Point3d
-  Private ReadOnly _maxDistPointB As Point3d
+Partial Friend Class Examples
+  Public Shared Function CrvDeviation(ByVal doc As RhinoDoc) As Result
+	doc.Objects.UnselectAll()
 
-  Public Sub New(curveA As Curve, curveB As Curve, minDistPointA As Point3d, minDistPointB As Point3d, maxDistPointA As Point3d, maxDistPointB As Point3d)
-    _curveA = curveA
-    _curveB = curveB
-    _minDistPointA = minDistPointA
-    _minDistPointB = minDistPointB
-    _maxDistPointA = maxDistPointA
-    _maxDistPointB = maxDistPointB
-  End Sub
+	Dim obj_ref1 As ObjRef = Nothing
+	Dim rc1 = RhinoGet.GetOneObject("first curve", True, ObjectType.Curve, obj_ref1)
+	If rc1 IsNot Result.Success Then
+	  Return rc1
+	End If
+	Dim curve_a As Curve = Nothing
+	If obj_ref1 IsNot Nothing Then
+	  curve_a = obj_ref1.Curve()
+	End If
+	If curve_a Is Nothing Then
+	  Return Result.Failure
+	End If
 
-  Protected Overrides Sub DrawForeground(e As Rhino.Display.DrawEventArgs)
-    e.Display.DrawCurve(_curveA, Color.Red)
-    e.Display.DrawCurve(_curveB, Color.Red)
+	' Since you already selected a curve if you don't unselect it
+	' the next GetOneObject won't stop as it considers that curve 
+	' input, i.e., curveA and curveB will point to the same curve.
+	' Another option would be to use an instance of Rhino.Input.Custom.GetObject
+	' instead of Rhino.Input.RhinoGet as GetObject has a DisablePreSelect() method.
+	doc.Objects.UnselectAll()
 
-    e.Display.DrawPoint(_minDistPointA, Color.LawnGreen)
-    e.Display.DrawPoint(_minDistPointB, Color.LawnGreen)
-    e.Display.DrawLine(New Line(_minDistPointA, _minDistPointB), Color.LawnGreen)
-    e.Display.DrawPoint(_maxDistPointA, Color.Red)
-    e.Display.DrawPoint(_maxDistPointB, Color.Red)
-    e.Display.DrawLine(New Line(_maxDistPointA, _maxDistPointB), Color.Red)
-  End Sub
+	Dim obj_ref2 As ObjRef = Nothing
+	Dim rc2 = RhinoGet.GetOneObject("second curve", True, ObjectType.Curve, obj_ref2)
+	If rc2 IsNot Result.Success Then
+	  Return rc2
+	End If
+	Dim curve_b As Curve = Nothing
+	If obj_ref2 IsNot Nothing Then
+	  curve_b = obj_ref2.Curve()
+	End If
+	If curve_b Is Nothing Then
+	  Return Result.Failure
+	End If
+
+	Dim tolerance = doc.ModelAbsoluteTolerance
+
+	Dim max_distance As Double = Nothing
+	Dim max_distance_parameter_a As Double = Nothing
+	Dim max_distance_parameter_b As Double = Nothing
+	Dim min_distance As Double = Nothing
+	Dim min_distance_parameter_a As Double = Nothing
+	Dim min_distance_parameter_b As Double = Nothing
+
+	Dim conduit As DeviationConduit
+	If Not Curve.GetDistancesBetweenCurves(curve_a, curve_b, tolerance, max_distance, max_distance_parameter_a, max_distance_parameter_b, min_distance, min_distance_parameter_a, min_distance_parameter_b) Then
+	  RhinoApp.WriteLine("Unable to find overlap intervals.")
+	  Return Result.Success
+	Else
+	  If min_distance <= RhinoMath.ZeroTolerance Then
+		min_distance = 0.0
+	  End If
+	  Dim max_dist_pt_a = curve_a.PointAt(max_distance_parameter_a)
+	  Dim max_dist_pt_b = curve_b.PointAt(max_distance_parameter_b)
+	  Dim min_dist_pt_a = curve_a.PointAt(min_distance_parameter_a)
+	  Dim min_dist_pt_b = curve_b.PointAt(min_distance_parameter_b)
+
+	  conduit = New DeviationConduit(curve_a, curve_b, min_dist_pt_a, min_dist_pt_b, max_dist_pt_a, max_dist_pt_b) With {.Enabled = True}
+	  doc.Views.Redraw()
+
+	  RhinoApp.WriteLine("Minimum deviation = {0}   pointA({1}), pointB({2})", min_distance, min_dist_pt_a, min_dist_pt_b)
+	  RhinoApp.WriteLine("Maximum deviation = {0}   pointA({1}), pointB({2})", max_distance, max_dist_pt_a, max_dist_pt_b)
+	End If
+
+	Dim str = ""
+	RhinoGet.GetString("Press Enter when done", True, str)
+	conduit.Enabled = False
+
+	Return Result.Success
+  End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -192,6 +197,5 @@ def RunCommand():
 if __name__=="__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

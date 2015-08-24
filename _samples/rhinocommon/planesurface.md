@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Create a Plane Surface
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Create a Plane Surface
 keywords: ['create', 'plane', 'surface']
-order: 131
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class PlaneSurfaceCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csPlaneSurface"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result PlanarSurface(RhinoDoc doc)
   {
     Point3d[] corners;
     var rc = Rhino.Input.RhinoGet.GetRectangle(out corners);
@@ -41,30 +37,25 @@ public class PlaneSurfaceCommand : Command
 
 
 ```vbnet
-Public Class PlaneSurfaceCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbPlaneSurface"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function PlanarSurface(ByVal doc As RhinoDoc) As Result
+	Dim corners() As Point3d = Nothing
+	Dim rc = Rhino.Input.RhinoGet.GetRectangle(corners)
+	If rc IsNot Result.Success Then
+	  Return rc
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim corners As Point3d() = Nothing
-    Dim rc = Input.RhinoGet.GetRectangle(corners)
-    If rc <> Result.Success Then
-      Return rc
-    End If
+	Dim plane = New Plane(corners(0), corners(1), corners(2))
 
-    Dim plane = New Plane(corners(0), corners(1), corners(2))
-    Dim plane_surface = New PlaneSurface(plane, New Interval(0, corners(0).DistanceTo(corners(1))), New Interval(0, corners(1).DistanceTo(corners(2))))
-    doc.Objects.Add(plane_surface)
-    doc.Views.Redraw()
-    Return Result.Success
+	Dim plane_surface = New PlaneSurface(plane, New Interval(0, corners(0).DistanceTo(corners(1))), New Interval(0, corners(1).DistanceTo(corners(2))))
+
+	doc.Objects.Add(plane_surface)
+	doc.Views.Redraw()
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -84,6 +75,5 @@ def RunCommand():
 if __name__ == "__main__":
     RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

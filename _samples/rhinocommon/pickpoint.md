@@ -1,27 +1,20 @@
 ---
 layout: code-sample
-title: Pick and Select Point Objects
-author: 
-categories: ['Picking and Selection'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Pick and Select Point Objects
 keywords: ['pick', 'select', 'point', 'objects']
-order: 130
-description:  
+categories: ['Picking and Selection', 'Adding Objects']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class PickPointCommand : Rhino.Commands.Command
+partial class Examples
 {
-  public override string EnglishName
-  {
-    get { return "csPickPoint"; }
-  }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result PickPoint(RhinoDoc doc)
   {
     // this creates a point where the mouse is clicked.
     var gp = new GetPoint();
@@ -87,70 +80,63 @@ public class PickPointCommand : Rhino.Commands.Command
 
 
 ```vbnet
-Public Class PickPointCommand
-  Inherits Rhino.Commands.Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbPickPoint"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function PickPoint(ByVal doc As RhinoDoc) As Result
+	' this creates a point where the mouse is clicked.
+	Dim gp = New GetPoint()
+	gp.SetCommandPrompt("Click for new point")
+	gp.Get()
+	If gp.CommandResult() <> Result.Success Then
+	  Return gp.CommandResult()
+	End If
+	Dim point3d = gp.Point()
+	doc.Objects.AddPoint(point3d)
+	doc.Views.Redraw()
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    ' this creates a point where the mouse is clicked.
-    Dim gp = New GetPoint()
-    gp.SetCommandPrompt("Click for new point")
-    gp.[Get]()
-    If gp.CommandResult() <> Result.Success Then
-      Return gp.CommandResult()
-    End If
-    Dim point3d = gp.Point()
-    doc.Objects.AddPoint(point3d)
-    doc.Views.Redraw()
+	' selects a point that already exists
+	Dim obj_ref As ObjRef = Nothing
+	Dim rc = RhinoGet.GetOneObject("Select point", False, ObjectType.Point, obj_ref)
+	If rc IsNot Result.Success Then
+	  Return rc
+	End If
+	Dim point = obj_ref.Point()
+	RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}", point.Location.X, point.Location.Y, point.Location.Z)
+	doc.Objects.UnselectAll()
 
-    ' selects a point that already exists
-    Dim obj_ref As ObjRef = Nothing
-    Dim rc = RhinoGet.GetOneObject("Select point", False, ObjectType.Point, obj_ref)
-    If rc <> Result.Success Then
-      Return rc
-    End If
-    Dim point = obj_ref.Point()
-    RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}", point.Location.X, point.Location.Y, point.Location.Z)
-    doc.Objects.UnselectAll()
+	' selects multiple points that already exist
+	Dim obj_refs() As ObjRef = Nothing
+	rc = RhinoGet.GetMultipleObjects("Select point", False, ObjectType.Point, obj_refs)
+	If rc IsNot Result.Success Then
+	  Return rc
+	End If
+	For Each o_ref In obj_refs
+	  point = o_ref.Point()
+	  RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}", point.Location.X, point.Location.Y, point.Location.Z)
+	Next o_ref
+	doc.Objects.UnselectAll()
 
-    ' selects multiple points that already exist
-    Dim obj_refs As ObjRef() = Nothing
-    rc = RhinoGet.GetMultipleObjects("Select point", False, ObjectType.Point, obj_refs)
-    If rc <> Result.Success Then
-      Return rc
-    End If
-    For Each o_ref As ObjRef In obj_refs
-      point = o_ref.Point()
-      RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}", point.Location.X, point.Location.Y, point.Location.Z)
-    Next
-    doc.Objects.UnselectAll()
+	' also selects a point that already exists.
+	' Used when RhinoGet doesn't provide enough control
+	Dim go = New GetObject()
+	go.SetCommandPrompt("Select point")
+	go.GeometryFilter = ObjectType.Point
+	go.GetMultiple(1, 0)
+	If go.CommandResult() <> Result.Success Then
+	  Return go.CommandResult()
+	End If
+	For Each o_ref In go.Objects()
+	  point = o_ref.Point()
+	  If point IsNot Nothing Then
+		RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}", point.Location.X, point.Location.Y, point.Location.Z)
+	  End If
+	Next o_ref
 
-    ' also selects a point that already exists.
-    ' Used when RhinoGet doesn't provide enough control
-    Dim go = New GetObject()
-    go.SetCommandPrompt("Select point")
-    go.GeometryFilter = ObjectType.Point
-    go.GetMultiple(1, 0)
-    If go.CommandResult() <> Result.Success Then
-      Return go.CommandResult()
-    End If
-    For Each o_ref As ObjRef In go.Objects()
-      point = o_ref.Point()
-      If point IsNot Nothing Then
-        RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}", point.Location.X, point.Location.Y, point.Location.Z)
-      End If
-    Next
-
-    doc.Views.Redraw()
-    Return Result.Success
+	doc.Views.Redraw()
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -175,7 +161,7 @@ def RunCommand():
   doc.Views.Redraw()
   
   # creates a point where the mouse is clicked
-  # using the RhinoScript syntax 
+  # using RhinoScript syntax 
   point3d = rs.GetPoint("Click for point")
   if point3d == None: return Result.Nothing
   rs.AddPoint(point3d)
@@ -221,7 +207,6 @@ def RunCommand():
   print "point id: {0}".format(point_id)
   rs.UnselectAllObjects()
 
-
   # selects multiple points that already exist
   rc, obj_refs = RhinoGet.GetMultipleObjects(
     "Select point", False, ObjectType.Point)
@@ -236,7 +221,7 @@ def RunCommand():
   doc.Objects.UnselectAll()
 
   # selects multiple poins that already exists
-  # using the RhinoScript syntax
+  # using RhinoScript syntax
   point_ids = rs.GetObjects(
     "Select point", rs.filter.point)
   for p_id in point_ids:
@@ -247,6 +232,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

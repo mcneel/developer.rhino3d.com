@@ -1,30 +1,26 @@
 ---
 layout: code-sample
-title: Maximize a View
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Maximize a View
 keywords: ['maximize', 'view']
-order: 109
-description:  
+categories: ['Viewports and Views']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class MaximizeViewCommand : Command
+partial class Examples
 {
   [DllImport("user32.dll", ExactSpelling = true, CharSet = CharSet.Auto)]
   public static extern IntPtr GetParent(IntPtr hWnd);
- 
+
   [DllImport("user32.dll")]
   static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
-  public override string EnglishName { get { return "csMaximizeView"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result MaximizeView(RhinoDoc doc)
   {
     IntPtr parent_handle = GetParent(doc.Views.ActiveView.Handle);
     if (parent_handle != IntPtr.Zero)
@@ -37,37 +33,28 @@ public class MaximizeViewCommand : Command
 
 
 ```vbnet
-Public Class MaximizeViewCommand
-  Inherits Command
-  <DllImport("user32.dll", ExactSpelling:=True, CharSet:=CharSet.Auto)> _
-  Public Shared Function GetParent(hWnd As IntPtr) As IntPtr
+Partial Friend Class Examples
+  <DllImport("user32.dll", ExactSpelling := True, CharSet := CharSet.Auto)>
+  Public Shared Function GetParent(ByVal hWnd As IntPtr) As IntPtr
   End Function
 
-  <DllImport("user32.dll")> _
-  Private Shared Function ShowWindow(hWnd As IntPtr, nCmdShow As Integer) As Boolean
+  <DllImport("user32.dll")>
+  Shared Function ShowWindow(ByVal hWnd As IntPtr, ByVal nCmdShow As Integer) As Boolean
   End Function
 
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbMaximizeView"
-    End Get
-  End Property
-
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim parent_handle As IntPtr = GetParent(doc.Views.ActiveView.Handle)
-    If parent_handle <> IntPtr.Zero Then
-      ShowWindow(parent_handle, 3)
-    End If
-    Return Result.Success
+  Public Shared Function MaximizeView(ByVal doc As RhinoDoc) As Result
+	Dim parent_handle As IntPtr = GetParent(doc.Views.ActiveView.Handle)
+	If parent_handle <> IntPtr.Zero Then
+	  ShowWindow(parent_handle, 3)
+	End If
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
-no python code sample available
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

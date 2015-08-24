@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Interactively Pick an Angle
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Interactively Pick an Angle
 keywords: ['interactively', 'pick', 'angle']
-order: 86
-description:  
+categories: ['Picking and Selection']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class GetAngleCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csGetAngle"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result GetAngle(RhinoDoc doc)
   {
     var gp = new GetPoint();
     gp.SetCommandPrompt("Base point");
@@ -47,41 +43,35 @@ public class GetAngleCommand : Command
 
 
 ```vbnet
-Public Class GetAngleCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbGetAngle"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function GetAngle(ByVal doc As RhinoDoc) As Result
+	Dim gp = New GetPoint()
+	gp.SetCommandPrompt("Base point")
+	gp.Get()
+	If gp.CommandResult() <> Result.Success Then
+	  Return gp.CommandResult()
+	End If
+	Dim base_point = gp.Point()
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim gp = New GetPoint()
-    gp.SetCommandPrompt("Base point")
-    gp.[Get]()
-    If gp.CommandResult() <> Result.Success Then
-      Return gp.CommandResult()
-    End If
-    Dim base_point = gp.Point()
+	gp.SetCommandPrompt("First reference point")
+	gp.DrawLineFromPoint(base_point, True)
+	gp.Get()
+	If gp.CommandResult() <> Result.Success Then
+	  Return gp.CommandResult()
+	End If
+	Dim first_point = gp.Point()
 
-    gp.SetCommandPrompt("First reference point")
-    gp.DrawLineFromPoint(base_point, True)
-    gp.[Get]()
-    If gp.CommandResult() <> Result.Success Then
-      Return gp.CommandResult()
-    End If
-    Dim first_point = gp.Point()
+	Dim angle_radians As Double = Nothing
+	Dim rc = RhinoGet.GetAngle("Second reference point", base_point, first_point, 0, angle_radians)
+	If rc Is Result.Success Then
+	  RhinoApp.WriteLine("Angle = {0} degrees", RhinoMath.ToDegrees(angle_radians))
+	End If
 
-    Dim angle_radians As Double
-    Dim rc = RhinoGet.GetAngle("Second reference point", base_point, first_point, 0, angle_radians)
-    If rc = Result.Success Then
-      RhinoApp.WriteLine("Angle = {0} degrees", RhinoMath.ToDegrees(angle_radians))
-    End If
-    Return rc
+	Return rc
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -106,7 +96,8 @@ def RunCommand():
   first_point = gp.Point()
 
   
-  rc, angle_radians = RhinoGet.GetAngle("Second reference point", base_point, first_point, 0)
+  rc, angle_radians = RhinoGet.GetAngle(
+    "Second reference point", base_point, first_point, 0)
   if rc == Result.Success:
     print "Angle = {0} degrees".format(RhinoMath.ToDegrees(angle_radians))
   return rc
@@ -114,6 +105,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

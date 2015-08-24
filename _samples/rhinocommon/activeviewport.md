@@ -1,74 +1,77 @@
 ---
 layout: code-sample
-title: Determine Active Viewport
-author: 
-categories: ['Viewports and Views'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Determine Active Viewport
 keywords: ['determine', 'active', 'viewport']
+categories: ['Viewports and Views']
+description:
 order: 1
-description:  
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result ActiveViewport(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.Display.RhinoView view = doc.Views.ActiveView;
-  if (view == null)
-    return Rhino.Commands.Result.Failure;
-
-  Rhino.Display.RhinoPageView pageview = view as Rhino.Display.RhinoPageView;
-  if (pageview != null)
+  public static Rhino.Commands.Result ActiveViewport(Rhino.RhinoDoc doc)
   {
-    string layout_name = pageview.PageName;
-    if (pageview.PageIsActive)
+    Rhino.Display.RhinoView view = doc.Views.ActiveView;
+    if (view == null)
+      return Rhino.Commands.Result.Failure;
+
+    Rhino.Display.RhinoPageView pageview = view as Rhino.Display.RhinoPageView;
+    if (pageview != null)
     {
-      Rhino.RhinoApp.WriteLine("The layout {0} is active", layout_name);
+      string layout_name = pageview.PageName;
+      if (pageview.PageIsActive)
+      {
+        Rhino.RhinoApp.WriteLine("The layout {0} is active", layout_name);
+      }
+      else
+      {
+        string detail_name = pageview.ActiveViewport.Name;
+        Rhino.RhinoApp.WriteLine("The detail {0} on layout {1} is active", detail_name, layout_name);
+      }
     }
     else
     {
-      string detail_name = pageview.ActiveViewport.Name;
-      Rhino.RhinoApp.WriteLine("The detail {0} on layout {1} is active", detail_name, layout_name);
+      string viewport_name = view.MainViewport.Name;
+      Rhino.RhinoApp.WriteLine("The viewport {0} is active", viewport_name);
     }
+    return Rhino.Commands.Result.Success;
   }
-  else
-  {
-    string viewport_name = view.MainViewport.Name;
-    Rhino.RhinoApp.WriteLine("The viewport {0} is active", viewport_name);
-  }
-  return Rhino.Commands.Result.Success;
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function ActiveViewport(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim view As Rhino.Display.RhinoView = doc.Views.ActiveView
-  If view Is Nothing Then
-    Return Rhino.Commands.Result.Failure
-  End If
+Partial Friend Class Examples
+  Public Shared Function ActiveViewport(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim view As Rhino.Display.RhinoView = doc.Views.ActiveView
+	If view Is Nothing Then
+	  Return Rhino.Commands.Result.Failure
+	End If
 
-  Dim pageview As Rhino.Display.RhinoPageView = TryCast(view, Rhino.Display.RhinoPageView)
-  If pageview IsNot Nothing Then
-    Dim layout_name As String = pageview.PageName
-    If pageview.PageIsActive Then
-      Rhino.RhinoApp.WriteLine("The layout {0} is active", layout_name)
-    Else
-      Dim detail_name As String = pageview.ActiveViewport.Name
-      Rhino.RhinoApp.WriteLine("The detail {0} on layout {1} is active", detail_name, layout_name)
-    End If
-  Else
-    Dim viewport_name As String = view.MainViewport.Name
-    Rhino.RhinoApp.WriteLine("The viewport {0} is active", viewport_name)
-  End If
-  Return Rhino.Commands.Result.Success
-End Function
+	Dim pageview As Rhino.Display.RhinoPageView = TryCast(view, Rhino.Display.RhinoPageView)
+	If pageview IsNot Nothing Then
+	  Dim layout_name As String = pageview.PageName
+	  If pageview.PageIsActive Then
+		Rhino.RhinoApp.WriteLine("The layout {0} is active", layout_name)
+	  Else
+		Dim detail_name As String = pageview.ActiveViewport.Name
+		Rhino.RhinoApp.WriteLine("The detail {0} on layout {1} is active", detail_name, layout_name)
+	  End If
+	Else
+	  Dim viewport_name As String = view.MainViewport.Name
+	  Rhino.RhinoApp.WriteLine("The viewport {0} is active", viewport_name)
+	End If
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -91,6 +94,5 @@ def ActiveViewport():
 if __name__ == "__main__":
     ActiveViewport()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

@@ -1,27 +1,20 @@
 ---
 layout: code-sample
-title: Get and Set the Active View
-author: 
-categories: ['Viewports and Views'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Get and Set the Active View
 keywords: ['active', 'view']
-order: 150
-description:  
+categories: ['Viewports and Views']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class SetActiveViewCommand : Rhino.Commands.Command
+partial class Examples
 {
-  public override string EnglishName
-  {
-    get { return "csSetActiveView"; }
-  }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result SetActiveView(RhinoDoc doc)
   {
     // view and view names
     var active_view_name = doc.Views.ActiveView.ActiveViewport.Name;
@@ -59,48 +52,41 @@ public class SetActiveViewCommand : Rhino.Commands.Command
 
 
 ```vbnet
-Public Class SetActiveViewCommand
-  Inherits Rhino.Commands.Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbSetActiveView"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function SetActiveView(ByVal doc As RhinoDoc) As Result
+	' view and view names
+	Dim active_view_name = doc.Views.ActiveView.ActiveViewport.Name
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    ' view and view names
-    Dim active_view_name = doc.Views.ActiveView.ActiveViewport.Name
+	Dim non_active_views = doc.Views.Where(Function(v) v.ActiveViewport.Name <> active_view_name).ToDictionary(Function(v) v.ActiveViewport.Name, Function(v) v)
 
-    Dim non_active_views = doc.Views.Where(Function(v) v.ActiveViewport.Name <> active_view_name).ToDictionary(Function(v) v.ActiveViewport.Name, Function(v) v)
+	' get name of view to set active
+	Dim gs = New GetString()
+	gs.SetCommandPrompt("Name of view to set active")
+	gs.AcceptNothing(True)
+	gs.SetDefaultString(active_view_name)
+	For Each view_name In non_active_views.Keys
+	  gs.AddOption(view_name)
+	Next view_name
+	Dim result = gs.Get()
+	If gs.CommandResult() <> Result.Success Then
+	  Return gs.CommandResult()
+	End If
 
-    ' get name of view to set active
-    Dim gs = New GetString()
-    gs.SetCommandPrompt("Name of view to set active")
-    gs.AcceptNothing(True)
-    gs.SetDefaultString(active_view_name)
-    For Each view_name As String In non_active_views.Keys
-      gs.AddOption(view_name)
-    Next
-    Dim result__1 = gs.[Get]()
-    If gs.CommandResult() <> Result.Success Then
-      Return gs.CommandResult()
-    End If
+	Dim selected_view_name = If(result Is GetResult.Option, gs.Option().EnglishName, gs.StringResult())
 
-    Dim selected_view_name = If(result__1 = GetResult.[Option], gs.[Option]().EnglishName, gs.StringResult())
+	If selected_view_name IsNot active_view_name Then
+	  If non_active_views.ContainsKey(selected_view_name) Then
+		doc.Views.ActiveView = non_active_views(selected_view_name)
+	  Else
+		RhinoApp.WriteLine("""{0}"" is not a view name", selected_view_name)
+	  End If
+	End If
 
-    If selected_view_name <> active_view_name Then
-      If non_active_views.ContainsKey(selected_view_name) Then
-        doc.Views.ActiveView = non_active_views(selected_view_name)
-      Else
-        RhinoApp.WriteLine("""{0}"" is not a view name", selected_view_name)
-      End If
-    End If
-
-    Return Rhino.Commands.Result.Success
+	Return Rhino.Commands.Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -144,6 +130,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

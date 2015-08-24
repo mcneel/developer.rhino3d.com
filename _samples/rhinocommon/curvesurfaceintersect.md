@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Curve-Surface Intersection
-author: 
-categories: ['Curves'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Curve-Surface Intersection
 keywords: ['curve-surface', 'intersection']
-order: 51
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class CurveSurfaceIntersectCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csCurveSurfaceIntersect"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result CurveSurfaceIntersect(RhinoDoc doc)
   {
     var gs = new GetObject();
     gs.SetCommandPrompt("select brep");
@@ -69,65 +65,58 @@ public class CurveSurfaceIntersectCommand : Command
 
 
 ```vbnet
-Public Class CurveSurfaceIntersectCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbCurveSurfaceIntersect"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function CurveSurfaceIntersect(ByVal doc As RhinoDoc) As Result
+	Dim gs = New GetObject()
+	gs.SetCommandPrompt("select brep")
+	gs.GeometryFilter = ObjectType.Brep
+	gs.DisablePreSelect()
+	gs.SubObjectSelect = False
+	gs.Get()
+	If gs.CommandResult() <> Result.Success Then
+	  Return gs.CommandResult()
+	End If
+	Dim brep = gs.Object(0).Brep()
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim gs = New GetObject()
-    gs.SetCommandPrompt("select brep")
-    gs.GeometryFilter = ObjectType.Brep
-    gs.DisablePreSelect()
-    gs.SubObjectSelect = False
-    gs.Get()
-    If gs.CommandResult() <> Result.Success Then
-      Return gs.CommandResult()
-    End If
-    Dim brep = gs.[Object](0).Brep()
+	Dim gc = New GetObject()
+	gc.SetCommandPrompt("select curve")
+	gc.GeometryFilter = ObjectType.Curve
+	gc.DisablePreSelect()
+	gc.SubObjectSelect = False
+	gc.Get()
+	If gc.CommandResult() <> Result.Success Then
+	  Return gc.CommandResult()
+	End If
+	Dim curve = gc.Object(0).Curve()
 
-    Dim gc = New GetObject()
-    gc.SetCommandPrompt("select curve")
-    gc.GeometryFilter = ObjectType.Curve
-    gc.DisablePreSelect()
-    gc.SubObjectSelect = False
-    gc.Get()
-    If gc.CommandResult() <> Result.Success Then
-      Return gc.CommandResult()
-    End If
-    Dim curve = gc.Object(0).Curve()
+	If brep Is Nothing OrElse curve Is Nothing Then
+	  Return Result.Failure
+	End If
 
-    If brep Is Nothing OrElse curve Is Nothing Then
-      Return Result.Failure
-    End If
+	Dim tolerance = doc.ModelAbsoluteTolerance
 
-    Dim tolerance = doc.ModelAbsoluteTolerance
+	Dim intersection_points() As Point3d = Nothing
+	Dim overlap_curves() As Curve = Nothing
+	If Not Intersection.CurveBrep(curve, brep, tolerance, overlap_curves, intersection_points) Then
+	  RhinoApp.WriteLine("curve brep intersection failed")
+	  Return Result.Nothing
+	End If
 
-    Dim intersectionPoints As Point3d() = Nothing
-    Dim overlapCurves As Curve() = Nothing
-    If Not Intersection.CurveBrep(curve, brep, tolerance, overlapCurves, intersectionPoints) Then
-      RhinoApp.WriteLine("curve brep intersection failed")
-      Return Result.Nothing
-    End If
+	For Each overlap_curve In overlap_curves
+	  doc.Objects.AddCurve(overlap_curve)
+	Next overlap_curve
+	For Each intersection_point In intersection_points
+	  doc.Objects.AddPoint(intersection_point)
+	Next intersection_point
 
-    For Each overlapCurve As Curve In overlapCurves
-      doc.Objects.AddCurve(overlapCurve)
-    Next
-    For Each intersectionPoint As Point3d In intersectionPoints
-      doc.Objects.AddPoint(intersectionPoint)
-    Next
+	RhinoApp.WriteLine("{0} overlap curves, and {1} intersection points", overlap_curves.Length, intersection_points.Length)
+	doc.Views.Redraw()
 
-    RhinoApp.WriteLine("{0} overlap curves, and {1} intersection points", overlapCurves.Length, intersectionPoints.Length)
-    doc.Views.Redraw()
-
-    Return Result.Success
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -160,6 +149,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

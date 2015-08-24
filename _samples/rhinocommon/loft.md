@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Loft Surfaces
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Loft Surfaces
 keywords: ['loft', 'surfaces']
-order: 107
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class LoftCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csLoft"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result Loft(RhinoDoc doc)
   {
     // select curves to loft
     var gs = new GetObject();
@@ -45,42 +41,32 @@ public class LoftCommand : Command
 
 
 ```vbnet
-Public Class LoftCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbLoft"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function Loft(ByVal doc As RhinoDoc) As Result
+	' select curves to loft
+	Dim gs = New GetObject()
+	gs.SetCommandPrompt("select curves to loft")
+	gs.GeometryFilter = ObjectType.Curve
+	gs.DisablePreSelect()
+	gs.SubObjectSelect = False
+	gs.GetMultiple(2, 0)
+	If gs.CommandResult() <> Result.Success Then
+	  Return gs.CommandResult()
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As Rhino.Commands.RunMode) As Result
-    ' select curves to loft
-    Dim gs = New GetObject()
-    gs.SetCommandPrompt("select curves to loft")
-    gs.GeometryFilter = ObjectType.Curve
-    gs.DisablePreSelect()
-    gs.SubObjectSelect = False
-    gs.GetMultiple(2, 0)
-    If gs.CommandResult() <> Result.Success Then
-      Return gs.CommandResult()
-    End If
+	Dim curves = gs.Objects().Select(Function(obj) obj.Curve()).ToList()
 
-    Dim curves = New List(Of Curve)()
-    For Each obj As ObjRef In gs.Objects()
-      curves.Add(obj.Curve())
-    Next
+	Dim breps = Brep.CreateFromLoft(curves, Point3d.Unset, Point3d.Unset, LoftType.Tight, False)
+	For Each brep In breps
+	  doc.Objects.AddBrep(brep)
+	Next brep
 
-    Dim breps = Rhino.Geometry.Brep.CreateFromLoft(curves, Point3d.Unset, Point3d.Unset, LoftType.Tight, False)
-    For Each brep As Brep In breps
-      doc.Objects.AddBrep(brep)
-    Next
-
-    doc.Views.Redraw()
-    Return Result.Success
+	doc.Views.Redraw()
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -95,6 +81,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

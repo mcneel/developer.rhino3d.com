@@ -1,143 +1,143 @@
 ---
 layout: code-sample
-title: IsBrepBox Test
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: IsBrepBox Test
 keywords: ['isbrepbox', 'test']
-order: 101
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static bool IsBrepBox(Rhino.Geometry.Brep brep)
+partial class Examples
 {
-  const double zero_tolerance = 1.0e-6; // or whatever
-  bool rc = brep.IsSolid;
-  if( rc )
-    rc = brep.Faces.Count == 6;
-
-  var N = new Rhino.Geometry.Vector3d[6];
-  for (int i = 0; rc && i < 6; i++)
+  private static bool IsBrepBox(Rhino.Geometry.Brep brep)
   {
-    Rhino.Geometry.Plane plane;
-    rc = brep.Faces[i].TryGetPlane(out plane, zero_tolerance);
+    const double zero_tolerance = 1.0e-6; // or whatever
+    bool rc = brep.IsSolid;
     if( rc )
-    {
-      N[i] = plane.ZAxis;
-      N[i].Unitize();
-    }
-  }
- 
-  for (int i = 0; rc && i < 6; i++)
-  {
-    int count = 0;
-    for (int j = 0; rc && j < 6; j++)
-    {
-      double dot = Math.Abs(N[i] * N[j]);
-      if (dot <= zero_tolerance)
-        continue;
-      if (Math.Abs(dot - 1.0) <= zero_tolerance) 
-        count++;
-      else
-        rc = false;
-    }
- 
-    if (rc)
-    {
-      if (2 != count)
-        rc = false;
-    }
-  }
-  return rc;
-}
+      rc = brep.Faces.Count == 6;
 
-public static Rhino.Commands.Result TestBrepBox(Rhino.RhinoDoc doc)
-{
-  Rhino.DocObjects.ObjRef obj_ref;
-  var rc = Rhino.Input.RhinoGet.GetOneObject("Select Brep", true, Rhino.DocObjects.ObjectType.Brep, out obj_ref);
-  if (rc == Rhino.Commands.Result.Success)
-  {
-    var brep = obj_ref.Brep();
-    if (brep != null)
+    var N = new Rhino.Geometry.Vector3d[6];
+    for (int i = 0; rc && i < 6; i++)
     {
-      Rhino.RhinoApp.WriteLine(IsBrepBox(brep) ? "Yes it is a box" : "No it is not a box");
+      Rhino.Geometry.Plane plane;
+      rc = brep.Faces[i].TryGetPlane(out plane, zero_tolerance);
+      if( rc )
+      {
+        N[i] = plane.ZAxis;
+        N[i].Unitize();
+      }
     }
+ 
+    for (int i = 0; rc && i < 6; i++)
+    {
+      int count = 0;
+      for (int j = 0; rc && j < 6; j++)
+      {
+        double dot = Math.Abs(N[i] * N[j]);
+        if (dot <= zero_tolerance)
+          continue;
+        if (Math.Abs(dot - 1.0) <= zero_tolerance) 
+          count++;
+        else
+          rc = false;
+      }
+ 
+      if (rc)
+      {
+        if (2 != count)
+          rc = false;
+      }
+    }
+    return rc;
   }
-  return rc;
+
+  public static Rhino.Commands.Result IsBrepBox(Rhino.RhinoDoc doc)
+  {
+    Rhino.DocObjects.ObjRef obj_ref;
+    var rc = Rhino.Input.RhinoGet.GetOneObject("Select Brep", true, Rhino.DocObjects.ObjectType.Brep, out obj_ref);
+    if (rc == Rhino.Commands.Result.Success)
+    {
+      var brep = obj_ref.Brep();
+      if (brep != null)
+      {
+        Rhino.RhinoApp.WriteLine(IsBrepBox(brep) ? "Yes it is a box" : "No it is not a box");
+      }
+    }
+    return rc;
+  }
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function IsBrepBox(brep As Rhino.Geometry.Brep) As Boolean
-  Const zero_tolerance As Double = 0.000001 ' or whatever
-  Dim rc As Boolean = brep.IsSolid
-  If rc Then
-    rc = brep.Faces.Count = 6
-  End If
+Partial Friend Class Examples
+  Private Shared Function IsBrepBox(ByVal brep As Rhino.Geometry.Brep) As Boolean
+	Const zero_tolerance As Double = 1.0e-6 ' or whatever
+	Dim rc As Boolean = brep.IsSolid
+	If rc Then
+	  rc = brep.Faces.Count = 6
+	End If
 
-  Dim N = New Rhino.Geometry.Vector3d(5) {}
-  Dim i As Integer = 0
-  While rc AndAlso i < 6
-    Dim plane As Rhino.Geometry.Plane
-    rc = brep.Faces(i).TryGetPlane(plane, zero_tolerance)
-    If rc Then
-      N(i) = plane.ZAxis
-      N(i).Unitize()
-    End If
-    i += 1
-  End While
+	Dim N = New Rhino.Geometry.Vector3d(5){}
+	Dim i As Integer = 0
+	Do While rc AndAlso i < 6
+	  Dim plane As Rhino.Geometry.Plane = Nothing
+	  rc = brep.Faces(i).TryGetPlane(plane, zero_tolerance)
+	  If rc Then
+		N(i) = plane.ZAxis
+		N(i).Unitize()
+	  End If
+		i += 1
+	Loop
 
-  i = 0
-  While rc AndAlso i < 6
-    Dim count As Integer = 0
-    Dim j As Integer = 0
-    While rc AndAlso j < 6
-      Dim dot As Double = Math.Abs(N(i) * N(j))
-      If dot <= zero_tolerance Then
-        Continue While
-      End If
-      If Math.Abs(dot - 1.0) <= zero_tolerance Then
-        count += 1
-      Else
-        rc = False
-      End If
-      j += 1
-    End While
+	i = 0
+	Do While rc AndAlso i < 6
+	  Dim count As Integer = 0
+	  Dim j As Integer = 0
+	  Do While rc AndAlso j < 6
+		Dim dot As Double = Math.Abs(N(i) * N(j))
+		If dot <= zero_tolerance Then
+		  j += 1
+		  Continue Do
+		End If
+		If Math.Abs(dot - 1.0) <= zero_tolerance Then
+		  count += 1
+		Else
+		  rc = False
+		End If
+		  j += 1
+	  Loop
 
-    If rc Then
-      If 2 <> count Then
-        rc = False
-      End If
-    End If
-    i += 1
-  End While
-  Return rc
-End Function
+	  If rc Then
+		If 2 <> count Then
+		  rc = False
+		End If
+	  End If
+		i += 1
+	Loop
+	Return rc
+  End Function
 
-Public Shared Function TestBrepBox(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim obj_ref As Rhino.DocObjects.ObjRef = Nothing
-  Dim rc = Rhino.Input.RhinoGet.GetOneObject("Select Brep", True, Rhino.DocObjects.ObjectType.Brep, obj_ref)
-  If rc = Rhino.Commands.Result.Success Then
-    Dim brep = obj_ref.Brep()
-    If brep IsNot Nothing Then
-      If IsBrepBox(brep) Then
-        Rhino.RhinoApp.WriteLine("Yes it is a box")
-      Else
-        Rhino.RhinoApp.WriteLine("No it is not a box")
-      End If
-    End If
-  End If
-  Return rc
-End Function
+  Public Shared Function IsBrepBox(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim obj_ref As Rhino.DocObjects.ObjRef = Nothing
+	Dim rc = Rhino.Input.RhinoGet.GetOneObject("Select Brep", True, Rhino.DocObjects.ObjectType.Brep, obj_ref)
+	If rc Is Rhino.Commands.Result.Success Then
+	  Dim brep = obj_ref.Brep()
+	  If brep IsNot Nothing Then
+		Rhino.RhinoApp.WriteLine(If(IsBrepBox(brep), "Yes it is a box", "No it is not a box"))
+	  End If
+	End If
+	Return rc
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -181,6 +181,5 @@ if __name__=="__main__":
             if IsBrepBox(brep): print "Yes it is a box"
             else: print "No it is not a box"
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

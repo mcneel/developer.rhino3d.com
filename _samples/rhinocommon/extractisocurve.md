@@ -1,27 +1,20 @@
 ---
 layout: code-sample
-title: Extracting Isoparametric Curves from Surfaces
-author: 
-categories: ['Curves'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Extracting Isoparametric Curves from Surfaces
 keywords: ['extracting', 'isoparametric', 'curves', 'surfaces']
-order: 80
-description:  
+categories: ['Curves']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class ExtractIsocurveCommand : Rhino.Commands.Command
+partial class Examples
 {
-  public override string EnglishName
-  {
-    get { return "csExtractIsocurve"; }
-  }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result ExtractIsoCurve(RhinoDoc doc)
   {
     ObjRef obj_ref;
     var rc = RhinoGet.GetOneObject("Select surface", false, ObjectType.Surface, out obj_ref);
@@ -68,63 +61,54 @@ public class ExtractIsocurveCommand : Rhino.Commands.Command
 
 
 ```vbnet
-Public Class ExtractIsocurveCommand
-  Inherits Rhino.Commands.Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbExtractIsocurve"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function ExtractIsoCurve(ByVal doc As RhinoDoc) As Result
+	Dim obj_ref As ObjRef = Nothing
+	Dim rc = RhinoGet.GetOneObject("Select surface", False, ObjectType.Surface, obj_ref)
+	If rc IsNot Result.Success OrElse obj_ref Is Nothing Then
+	  Return rc
+	End If
+	Dim surface = obj_ref.Surface()
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim obj_ref As ObjRef = Nothing
-    Dim rc = RhinoGet.GetOneObject("Select surface", False, ObjectType.Surface, obj_ref)
-    If rc <> Result.Success OrElse obj_ref Is Nothing Then
-      Return rc
-    End If
-    Dim surface = obj_ref.Surface()
+	Dim gp = New GetPoint()
+	gp.SetCommandPrompt("Point on surface")
+	gp.Constrain(surface, False)
+	Dim option_toggle = New OptionToggle(False, "U", "V")
+	gp.AddOptionToggle("Direction", option_toggle)
+	Dim point As Point3d = Point3d.Unset
+	Do
+	  Dim grc = gp.Get()
+	  If grc Is GetResult.Option Then
+		Continue Do
+	  ElseIf grc Is GetResult.Point Then
+		point = gp.Point()
+		Exit Do
+	  Else
+		Return Result.Nothing
+	  End If
+	Loop
+	If point Is Point3d.Unset Then
+	  Return Result.Nothing
+	End If
 
-    Dim gp = New GetPoint()
-    gp.SetCommandPrompt("Point on surface")
-    gp.Constrain(surface, False)
-    'gp.GeometryFilter = ObjectType.Point;
-    Dim option_toggle = New OptionToggle(False, "U", "V")
-    gp.AddOptionToggle("Direction", option_toggle)
-    Dim point As Point3d = Point3d.Unset
-    While True
-      Dim grc = gp.[Get]()
-      If grc = GetResult.[Option] Then
-        Continue While
-      ElseIf grc = GetResult.Point Then
-        point = gp.Point()
-        Exit While
-      Else
-        Return Result.[Nothing]
-      End If
-    End While
-    If point = Point3d.Unset Then
-      Return Result.[Nothing]
-    End If
+	Dim direction As Integer = If(option_toggle.CurrentValue, 1, 0) ' V : U
+	Dim u_parameter As Double = Nothing, v_parameter As Double = Nothing
+	If Not surface.ClosestPoint(point, u_parameter, v_parameter) Then
+		Return Result.Failure
+	End If
 
-    Dim direction As Integer = If(option_toggle.CurrentValue, 1, 0)
-    ' V : U
-    Dim u_parameter As Double, v_parameter As Double
-    If Not surface.ClosestPoint(point, u_parameter, v_parameter) Then
-      Return Result.Failure
-    End If
+	Dim iso_curve = surface.IsoCurve(direction,If(direction = 1, u_parameter, v_parameter))
+	If iso_curve Is Nothing Then
+		Return Result.Failure
+	End If
 
-    Dim iso_curve = surface.IsoCurve(direction, If(direction = 1, u_parameter, v_parameter))
-    If iso_curve Is Nothing Then
-      Return Result.Failure
-    End If
-
-    doc.Objects.AddCurve(iso_curve)
-    doc.Views.Redraw()
-    Return Result.Success
+	doc.Objects.AddCurve(iso_curve)
+	doc.Views.Redraw()
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -137,7 +121,8 @@ from Rhino.Geometry import *
 from scriptcontext import doc
 
 def RunCommand():
-  rc, obj_ref = RhinoGet.GetOneObject("Select surface", False, ObjectType.Surface)
+  rc, obj_ref = RhinoGet.GetOneObject(
+    "Select surface", False, ObjectType.Surface)
   if rc <> Result.Success or obj_ref == None:
     return rc
   surface = obj_ref.Surface()
@@ -166,7 +151,8 @@ def RunCommand():
   b, u_parameter, v_parameter = surface.ClosestPoint(point)
   if not b: return Result.Failure
 
-  iso_curve = surface.IsoCurve(direction, u_parameter if direction == 1 else v_parameter)
+  iso_curve = surface.IsoCurve(
+    direction, u_parameter if direction == 1 else v_parameter)
   if iso_curve == None: 
     return Result.Failure
 
@@ -177,6 +163,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

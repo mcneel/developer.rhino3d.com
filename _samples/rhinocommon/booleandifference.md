@@ -1,116 +1,118 @@
 ---
 layout: code-sample
-title: Boolean Difference
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Boolean Difference
 keywords: ['boolean', 'difference']
-order: 32
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result BooleanDifference(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.DocObjects.ObjRef[] objrefs;
-  Result rc = Rhino.Input.RhinoGet.GetMultipleObjects("Select first set of polysurfaces",
-                                                      false, Rhino.DocObjects.ObjectType.PolysrfFilter, out objrefs);
-  if (rc != Rhino.Commands.Result.Success)
-    return rc;
-  if (objrefs == null || objrefs.Length < 1)
-    return Rhino.Commands.Result.Failure;
-
-  List<Rhino.Geometry.Brep> in_breps0 = new List<Rhino.Geometry.Brep>();
-  for (int i = 0; i < objrefs.Length; i++)
+  public static Rhino.Commands.Result BooleanDifference(Rhino.RhinoDoc doc)
   {
-    Rhino.Geometry.Brep brep = objrefs[i].Brep();
-    if (brep != null)
-      in_breps0.Add(brep);
+    Rhino.DocObjects.ObjRef[] objrefs;
+    Result rc = Rhino.Input.RhinoGet.GetMultipleObjects("Select first set of polysurfaces",
+                                                        false, Rhino.DocObjects.ObjectType.PolysrfFilter, out objrefs);
+    if (rc != Rhino.Commands.Result.Success)
+      return rc;
+    if (objrefs == null || objrefs.Length < 1)
+      return Rhino.Commands.Result.Failure;
+
+    List<Rhino.Geometry.Brep> in_breps0 = new List<Rhino.Geometry.Brep>();
+    for (int i = 0; i < objrefs.Length; i++)
+    {
+      Rhino.Geometry.Brep brep = objrefs[i].Brep();
+      if (brep != null)
+        in_breps0.Add(brep);
+    }
+
+    doc.Objects.UnselectAll();
+    rc = Rhino.Input.RhinoGet.GetMultipleObjects("Select second set of polysurfaces",
+      false, Rhino.DocObjects.ObjectType.PolysrfFilter, out objrefs);
+    if (rc != Rhino.Commands.Result.Success)
+      return rc;
+    if (objrefs == null || objrefs.Length < 1)
+      return Rhino.Commands.Result.Failure;
+
+    List<Rhino.Geometry.Brep> in_breps1 = new List<Rhino.Geometry.Brep>();
+    for (int i = 0; i < objrefs.Length; i++)
+    {
+      Rhino.Geometry.Brep brep = objrefs[i].Brep();
+      if (brep != null)
+        in_breps1.Add(brep);
+    }
+
+    double tolerance = doc.ModelAbsoluteTolerance;
+    Rhino.Geometry.Brep[] breps = Rhino.Geometry.Brep.CreateBooleanDifference(in_breps0, in_breps1, tolerance);
+    if (breps.Length < 1)
+      return Rhino.Commands.Result.Nothing;
+    for (int i = 0; i < breps.Length; i++)
+      doc.Objects.AddBrep(breps[i]);
+    doc.Views.Redraw();
+    return Rhino.Commands.Result.Success;
   }
-
-  doc.Objects.UnselectAll();
-  rc = Rhino.Input.RhinoGet.GetMultipleObjects("Select second set of polysurfaces",
-    false, Rhino.DocObjects.ObjectType.PolysrfFilter, out objrefs);
-  if (rc != Rhino.Commands.Result.Success)
-    return rc;
-  if (objrefs == null || objrefs.Length < 1)
-    return Rhino.Commands.Result.Failure;
-
-  List<Rhino.Geometry.Brep> in_breps1 = new List<Rhino.Geometry.Brep>();
-  for (int i = 0; i < objrefs.Length; i++)
-  {
-    Rhino.Geometry.Brep brep = objrefs[i].Brep();
-    if (brep != null)
-      in_breps1.Add(brep);
-  }
-
-  double tolerance = doc.ModelAbsoluteTolerance;
-  Rhino.Geometry.Brep[] breps = Rhino.Geometry.Brep.CreateBooleanDifference(in_breps0, in_breps1, tolerance);
-  if (breps.Length < 1)
-    return Rhino.Commands.Result.Nothing;
-  for (int i = 0; i < breps.Length; i++)
-    doc.Objects.AddBrep(breps[i]);
-  doc.Views.Redraw();
-  return Rhino.Commands.Result.Success;
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function BooleanDifference(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim rc As Rhino.Commands.Result
-  Dim objrefs As Rhino.DocObjects.ObjRef() = Nothing
-  rc = Rhino.Input.RhinoGet.GetMultipleObjects("Select first set of polysurfaces", False, Rhino.DocObjects.ObjectType.PolysrfFilter, objrefs)
-  If rc <> Rhino.Commands.Result.Success Then
-    Return rc
-  End If
-  If objrefs Is Nothing OrElse objrefs.Length < 1 Then
-    Return Rhino.Commands.Result.Failure
-  End If
+Partial Friend Class Examples
+  Public Shared Function BooleanDifference(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim objrefs() As Rhino.DocObjects.ObjRef = Nothing
+	Dim rc As Result = Rhino.Input.RhinoGet.GetMultipleObjects("Select first set of polysurfaces", False, Rhino.DocObjects.ObjectType.PolysrfFilter, objrefs)
+	If rc IsNot Rhino.Commands.Result.Success Then
+	  Return rc
+	End If
+	If objrefs Is Nothing OrElse objrefs.Length < 1 Then
+	  Return Rhino.Commands.Result.Failure
+	End If
 
-  Dim in_breps0 As New List(Of Rhino.Geometry.Brep)()
-  For i As Integer = 0 To objrefs.Length - 1
-    Dim brep As Rhino.Geometry.Brep = objrefs(i).Brep()
-    If brep IsNot Nothing Then
-      in_breps0.Add(brep)
-    End If
-  Next
+	Dim in_breps0 As New List(Of Rhino.Geometry.Brep)()
+	For i As Integer = 0 To objrefs.Length - 1
+	  Dim brep As Rhino.Geometry.Brep = objrefs(i).Brep()
+	  If brep IsNot Nothing Then
+		in_breps0.Add(brep)
+	  End If
+	Next i
 
-  doc.Objects.UnselectAll()
-  rc = Rhino.Input.RhinoGet.GetMultipleObjects("Select second set of polysurfaces", False, Rhino.DocObjects.ObjectType.PolysrfFilter, objrefs)
-  If rc <> Rhino.Commands.Result.Success Then
-    Return rc
-  End If
-  If objrefs Is Nothing OrElse objrefs.Length < 1 Then
-    Return Rhino.Commands.Result.Failure
-  End If
+	doc.Objects.UnselectAll()
+	rc = Rhino.Input.RhinoGet.GetMultipleObjects("Select second set of polysurfaces", False, Rhino.DocObjects.ObjectType.PolysrfFilter, objrefs)
+	If rc IsNot Rhino.Commands.Result.Success Then
+	  Return rc
+	End If
+	If objrefs Is Nothing OrElse objrefs.Length < 1 Then
+	  Return Rhino.Commands.Result.Failure
+	End If
 
-  Dim in_breps1 As New List(Of Rhino.Geometry.Brep)()
-  For i As Integer = 0 To objrefs.Length - 1
-    Dim brep As Rhino.Geometry.Brep = objrefs(i).Brep()
-    If brep IsNot Nothing Then
-      in_breps1.Add(brep)
-    End If
-  Next
+	Dim in_breps1 As New List(Of Rhino.Geometry.Brep)()
+	For i As Integer = 0 To objrefs.Length - 1
+	  Dim brep As Rhino.Geometry.Brep = objrefs(i).Brep()
+	  If brep IsNot Nothing Then
+		in_breps1.Add(brep)
+	  End If
+	Next i
 
-  Dim tolerance As Double = doc.ModelAbsoluteTolerance
-  Dim breps As Rhino.Geometry.Brep() = Rhino.Geometry.Brep.CreateBooleanDifference(in_breps0, in_breps1, tolerance)
-  If breps.Length < 1 Then
-    Return Rhino.Commands.Result.[Nothing]
-  End If
-  For i As Integer = 0 To breps.Length - 1
-    doc.Objects.AddBrep(breps(i))
-  Next
-  doc.Views.Redraw()
-  Return Rhino.Commands.Result.Success
-End Function
+	Dim tolerance As Double = doc.ModelAbsoluteTolerance
+	Dim breps() As Rhino.Geometry.Brep = Rhino.Geometry.Brep.CreateBooleanDifference(in_breps0, in_breps1, tolerance)
+	If breps.Length < 1 Then
+	  Return Rhino.Commands.Result.Nothing
+	End If
+	For i As Integer = 0 To breps.Length - 1
+	  doc.Objects.AddBrep(breps(i))
+	Next i
+	doc.Views.Redraw()
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -148,6 +150,5 @@ def BooleanDifference():
 if __name__=="__main__":
     BooleanDifference()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

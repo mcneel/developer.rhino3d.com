@@ -1,27 +1,20 @@
 ---
 layout: code-sample
-title: Enabling Orthogonal Mode
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Enabling Orthogonal Mode
 keywords: ['enabling', 'orthogonal', 'mode']
-order: 128
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class OrthoCommand : Command
+partial class Examples
 {
-  public override string EnglishName
-  {
-    get { return "csOrtho"; }
-  }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result Ortho(RhinoDoc doc)
   {
     var gp = new GetPoint();
     gp.SetCommandPrompt("Start of line");
@@ -55,48 +48,41 @@ public class OrthoCommand : Command
 
 
 ```vbnet
-Public Class OrthoCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbOrtho"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function Ortho(ByVal doc As RhinoDoc) As Result
+	Dim gp = New GetPoint()
+	gp.SetCommandPrompt("Start of line")
+	gp.Get()
+	If gp.CommandResult() <> Result.Success Then
+	  Return gp.CommandResult()
+	End If
+	Dim start_point = gp.Point()
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim gp = New GetPoint()
-    gp.SetCommandPrompt("Start of line")
-    gp.[Get]()
-    If gp.CommandResult() <> Result.Success Then
-      Return gp.CommandResult()
-    End If
-    Dim start_point = gp.Point()
+	Dim original_ortho = ModelAidSettings.Ortho
+	If Not original_ortho Then
+	  ModelAidSettings.Ortho = True
+	End If
 
-    Dim original_ortho = ModelAidSettings.Ortho
-    If Not original_ortho Then
-      ModelAidSettings.Ortho = True
-    End If
+	gp.SetCommandPrompt("End of line")
+	gp.SetBasePoint(start_point, False)
+	gp.DrawLineFromPoint(start_point, True)
+	gp.Get()
+	If gp.CommandResult() <> Result.Success Then
+	  Return gp.CommandResult()
+	End If
+	Dim end_point = gp.Point()
 
-    gp.SetCommandPrompt("End of line")
-    gp.SetBasePoint(start_point, False)
-    gp.DrawLineFromPoint(start_point, True)
-    gp.[Get]()
-    If gp.CommandResult() <> Result.Success Then
-      Return gp.CommandResult()
-    End If
-    Dim end_point = gp.Point()
+	If ModelAidSettings.Ortho IsNot original_ortho Then
+	  ModelAidSettings.Ortho = original_ortho
+	End If
 
-    If ModelAidSettings.Ortho <> original_ortho Then
-      ModelAidSettings.Ortho = original_ortho
-    End If
-
-    doc.Objects.AddLine(start_point, end_point)
-    doc.Views.Redraw()
-    Return Result.Success
+	doc.Objects.AddLine(start_point, end_point)
+	doc.Views.Redraw()
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -136,6 +122,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

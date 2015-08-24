@@ -1,128 +1,120 @@
 ---
 layout: code-sample
-title: Explode a Hatch
-author: 
-categories: ['Drafting'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Explode a Hatch
 keywords: ['explode', 'hatch']
-order: 76
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result ExplodeHatch(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  const ObjectType filter = Rhino.DocObjects.ObjectType.Hatch;
-  Rhino.DocObjects.ObjRef objref;
-  Rhino.Commands.Result rc = Rhino.Input.RhinoGet.GetOneObject("Select hatch to explode", false, filter, out objref);
-  if (rc != Rhino.Commands.Result.Success || objref == null)
-    return rc;
-
-  Rhino.Geometry.Hatch hatch = objref.Geometry() as Rhino.Geometry.Hatch;
-  if (null == hatch)
-    return Rhino.Commands.Result.Failure;
-
-  Rhino.Geometry.GeometryBase[] hatch_geom = hatch.Explode();
-  if (null != hatch_geom)
+  public static Rhino.Commands.Result ExplodeHatch(Rhino.RhinoDoc doc)
   {
-    for (int i = 0; i < hatch_geom.Length; i++)
+    const ObjectType filter = Rhino.DocObjects.ObjectType.Hatch;
+    Rhino.DocObjects.ObjRef objref;
+    Rhino.Commands.Result rc = Rhino.Input.RhinoGet.GetOneObject("Select hatch to explode", false, filter, out objref);
+    if (rc != Rhino.Commands.Result.Success || objref == null)
+      return rc;
+
+    Rhino.Geometry.Hatch hatch = objref.Geometry() as Rhino.Geometry.Hatch;
+    if (null == hatch)
+      return Rhino.Commands.Result.Failure;
+
+    Rhino.Geometry.GeometryBase[] hatch_geom = hatch.Explode();
+    if (null != hatch_geom)
     {
-      Rhino.Geometry.GeometryBase geom = hatch_geom[i];
-      if (null != geom)
+      for (int i = 0; i < hatch_geom.Length; i++)
       {
-        switch (geom.ObjectType)
+        Rhino.Geometry.GeometryBase geom = hatch_geom[i];
+        if (null != geom)
         {
-          case Rhino.DocObjects.ObjectType.Point:
-            {
-              Rhino.Geometry.Point point = geom as Rhino.Geometry.Point;
-              if (null != point)
-                doc.Objects.AddPoint(point.Location);
-            }
-            break;
-          case Rhino.DocObjects.ObjectType.Curve:
-            {
-              Rhino.Geometry.Curve curve = geom as Rhino.Geometry.Curve;
-              if (null != curve)
-                doc.Objects.AddCurve(curve);
-            }
-            break;
-          case Rhino.DocObjects.ObjectType.Brep:
-            {
-              Rhino.Geometry.Brep brep = geom as Rhino.Geometry.Brep;
-              if (null != brep)
-                doc.Objects.AddBrep(brep);
-            }
-            break;
+          switch (geom.ObjectType)
+          {
+            case Rhino.DocObjects.ObjectType.Point:
+              {
+                Rhino.Geometry.Point point = geom as Rhino.Geometry.Point;
+                if (null != point)
+                  doc.Objects.AddPoint(point.Location);
+              }
+              break;
+            case Rhino.DocObjects.ObjectType.Curve:
+              {
+                Rhino.Geometry.Curve curve = geom as Rhino.Geometry.Curve;
+                if (null != curve)
+                  doc.Objects.AddCurve(curve);
+              }
+              break;
+            case Rhino.DocObjects.ObjectType.Brep:
+              {
+                Rhino.Geometry.Brep brep = geom as Rhino.Geometry.Brep;
+                if (null != brep)
+                  doc.Objects.AddBrep(brep);
+              }
+              break;
+          }
         }
       }
     }
-  }
 
-  return Rhino.Commands.Result.Success;
+    return Rhino.Commands.Result.Success;
+  }
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function ExplodeHatch(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+Partial Friend Class Examples
+  Public Shared Function ExplodeHatch(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Const filter As ObjectType = Rhino.DocObjects.ObjectType.Hatch
+	Dim objref As Rhino.DocObjects.ObjRef = Nothing
+	Dim rc As Rhino.Commands.Result = Rhino.Input.RhinoGet.GetOneObject("Select hatch to explode", False, filter, objref)
+	If rc IsNot Rhino.Commands.Result.Success OrElse objref Is Nothing Then
+	  Return rc
+	End If
 
-  Const filter As ObjectType = Rhino.DocObjects.ObjectType.Hatch
-  Dim objref As Rhino.DocObjects.ObjRef = Nothing
-  Dim rc As Rhino.Commands.Result = Rhino.Input.RhinoGet.GetOneObject("Select hatch to explode", False, filter, objref)
-  If rc <> Rhino.Commands.Result.Success OrElse objref Is Nothing Then
-    Return rc
-  End If
+	Dim hatch As Rhino.Geometry.Hatch = TryCast(objref.Geometry(), Rhino.Geometry.Hatch)
+	If Nothing Is hatch Then
+	  Return Rhino.Commands.Result.Failure
+	End If
 
-  Dim hatch As Rhino.Geometry.Hatch = DirectCast(objref.Geometry(), Rhino.Geometry.Hatch)
-  If hatch Is Nothing Then
-    Return Rhino.Commands.Result.Failure
-  End If
+	Dim hatch_geom() As Rhino.Geometry.GeometryBase = hatch.Explode()
+	If Nothing IsNot hatch_geom Then
+	  For i As Integer = 0 To hatch_geom.Length - 1
+		Dim geom As Rhino.Geometry.GeometryBase = hatch_geom(i)
+		If Nothing IsNot geom Then
+		  Select Case geom.ObjectType
+			Case Rhino.DocObjects.ObjectType.Point
+				Dim point As Rhino.Geometry.Point = TryCast(geom, Rhino.Geometry.Point)
+				If Nothing IsNot point Then
+				  doc.Objects.AddPoint(point.Location)
+				End If
+			Case Rhino.DocObjects.ObjectType.Curve
+				Dim curve As Rhino.Geometry.Curve = TryCast(geom, Rhino.Geometry.Curve)
+				If Nothing IsNot curve Then
+				  doc.Objects.AddCurve(curve)
+				End If
+			Case Rhino.DocObjects.ObjectType.Brep
+				Dim brep As Rhino.Geometry.Brep = TryCast(geom, Rhino.Geometry.Brep)
+				If Nothing IsNot brep Then
+				  doc.Objects.AddBrep(brep)
+				End If
+		  End Select
+		End If
+	  Next i
+	End If
 
-  Dim hatch_geom As Rhino.Geometry.GeometryBase() = hatch.Explode()
-  If hatch_geom IsNot Nothing Then
-    For i As Integer = 0 To hatch_geom.Length - 1
-      Dim geom As Rhino.Geometry.GeometryBase = hatch_geom(i)
-      If geom IsNot Nothing Then
-        Select Case geom.ObjectType
-          Case Rhino.DocObjects.ObjectType.Point
-            If True Then
-              Dim point As Rhino.Geometry.Point = TryCast(geom, Rhino.Geometry.Point)
-              If point IsNot Nothing Then
-                doc.Objects.AddPoint(point.Location)
-              End If
-            End If
-            Exit Select
-          Case Rhino.DocObjects.ObjectType.Curve
-            If True Then
-              Dim curve As Rhino.Geometry.Curve = TryCast(geom, Rhino.Geometry.Curve)
-              If curve IsNot Nothing Then
-                doc.Objects.AddCurve(curve)
-              End If
-            End If
-            Exit Select
-          Case Rhino.DocObjects.ObjectType.Brep
-            If True Then
-              Dim brep As Rhino.Geometry.Brep = TryCast(geom, Rhino.Geometry.Brep)
-              If brep IsNot Nothing Then
-                doc.Objects.AddBrep(brep)
-              End If
-            End If
-            Exit Select
-        End Select
-      End If
-    Next
-  End If
-
-  Return Rhino.Commands.Result.Success
-End Function
-
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -151,6 +143,5 @@ def ExplodeHatch():
 if __name__=="__main__":
     ExplodeHatch()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

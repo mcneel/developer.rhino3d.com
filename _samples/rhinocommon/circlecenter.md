@@ -1,84 +1,87 @@
 ---
 layout: code-sample
-title: Find Circles and their centers
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Find Circles and their centers
 keywords: ['find', 'circles', 'their', 'centers']
-order: 34
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result CircleCenter(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.Input.Custom.GetObject go = new Rhino.Input.Custom.GetObject();
-  go.SetCommandPrompt("Select objects");
-  go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;
-  go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve;
-  go.GetMultiple(1, 0);
-  if( go.CommandResult() != Rhino.Commands.Result.Success )
-    return go.CommandResult();
-
-  Rhino.DocObjects.ObjRef[] objrefs = go.Objects();
-  if( objrefs==null )
-    return Rhino.Commands.Result.Nothing;
-
-  double tolerance = doc.ModelAbsoluteTolerance;
-  for( int i=0; i<objrefs.Length; i++ )
+  public static Rhino.Commands.Result CircleCenter(Rhino.RhinoDoc doc)
   {
-    // get the curve geometry
-    Rhino.Geometry.Curve curve = objrefs[i].Curve();
-    if( curve==null )
-      continue;
-    Rhino.Geometry.Circle circle;
-    if( curve.TryGetCircle(out circle, tolerance) )
+    Rhino.Input.Custom.GetObject go = new Rhino.Input.Custom.GetObject();
+    go.SetCommandPrompt("Select objects");
+    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;
+    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve;
+    go.GetMultiple(1, 0);
+    if( go.CommandResult() != Rhino.Commands.Result.Success )
+      return go.CommandResult();
+
+    Rhino.DocObjects.ObjRef[] objrefs = go.Objects();
+    if( objrefs==null )
+      return Rhino.Commands.Result.Nothing;
+
+    double tolerance = doc.ModelAbsoluteTolerance;
+    for( int i=0; i<objrefs.Length; i++ )
     {
-      Rhino.RhinoApp.WriteLine("Circle{0}: center = {1}", i+1, circle.Center);
+      // get the curve geometry
+      Rhino.Geometry.Curve curve = objrefs[i].Curve();
+      if( curve==null )
+        continue;
+      Rhino.Geometry.Circle circle;
+      if( curve.TryGetCircle(out circle, tolerance) )
+      {
+        Rhino.RhinoApp.WriteLine("Circle{0}: center = {1}", i+1, circle.Center);
+      }
     }
+    return Rhino.Commands.Result.Success;
   }
-  return Rhino.Commands.Result.Success;
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function CircleCenter(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim go As New Rhino.Input.Custom.GetObject()
-  go.SetCommandPrompt("Select objects")
-  go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
-  go.GeometryAttributeFilter = Rhino.Input.[Custom].GeometryAttributeFilter.ClosedCurve
-  go.GetMultiple(1, 0)
-  If go.CommandResult() <> Rhino.Commands.Result.Success Then
-    Return go.CommandResult()
-  End If
+Partial Friend Class Examples
+  Public Shared Function CircleCenter(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim go As New Rhino.Input.Custom.GetObject()
+	go.SetCommandPrompt("Select objects")
+	go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
+	go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve
+	go.GetMultiple(1, 0)
+	If go.CommandResult() <> Rhino.Commands.Result.Success Then
+	  Return go.CommandResult()
+	End If
 
-  Dim objrefs As Rhino.DocObjects.ObjRef() = go.Objects()
-  If objrefs Is Nothing Then
-    Return Rhino.Commands.Result.[Nothing]
-  End If
+	Dim objrefs() As Rhino.DocObjects.ObjRef = go.Objects()
+	If objrefs Is Nothing Then
+	  Return Rhino.Commands.Result.Nothing
+	End If
 
-  Dim tolerance As Double = doc.ModelAbsoluteTolerance
-  For i As Integer = 0 To objrefs.Length - 1
-    ' get the curve geometry
-    Dim curve As Rhino.Geometry.Curve = objrefs(i).Curve()
-    If curve Is Nothing Then
-      Continue For
-    End If
-    Dim circle As Rhino.Geometry.Circle
-    If curve.TryGetCircle(circle, tolerance) Then
-      Rhino.RhinoApp.WriteLine("Circle{0}: center = {1}", i + 1, circle.Center)
-    End If
-  Next
-  Return Rhino.Commands.Result.Success
-End Function
+	Dim tolerance As Double = doc.ModelAbsoluteTolerance
+	For i As Integer = 0 To objrefs.Length - 1
+	  ' get the curve geometry
+	  Dim curve As Rhino.Geometry.Curve = objrefs(i).Curve()
+	  If curve Is Nothing Then
+		Continue For
+	  End If
+	  Dim circle As Rhino.Geometry.Circle = Nothing
+	  If curve.TryGetCircle(circle, tolerance) Then
+		Rhino.RhinoApp.WriteLine("Circle{0}: center = {1}", i+1, circle.Center)
+	  End If
+	Next i
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -110,6 +113,5 @@ def CircleCenter():
 if __name__=="__main__":
     CircleCenter()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

@@ -1,48 +1,51 @@
 ---
 layout: code-sample
-title: Add Sphere
-author: 
-categories: ['Adding Objects'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['sphere']
-order: 22
-description:  
+title: Add Sphere
+keywords: ['add', 'sphere']
+categories: ['Adding Objects']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result AddSphere(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.Geometry.Point3d center = new Rhino.Geometry.Point3d(0, 0, 0);
-  const double radius = 5.0;
-  Rhino.Geometry.Sphere sphere = new Rhino.Geometry.Sphere(center, radius);
-  if( doc.Objects.AddSphere(sphere) != Guid.Empty )
+  public static Rhino.Commands.Result AddSphere(Rhino.RhinoDoc doc)
   {
-    doc.Views.Redraw();
-    return Rhino.Commands.Result.Success;
+    Rhino.Geometry.Point3d center = new Rhino.Geometry.Point3d(0, 0, 0);
+    const double radius = 5.0;
+    Rhino.Geometry.Sphere sphere = new Rhino.Geometry.Sphere(center, radius);
+    if( doc.Objects.AddSphere(sphere) != Guid.Empty )
+    {
+      doc.Views.Redraw();
+      return Rhino.Commands.Result.Success;
+    }
+    return Rhino.Commands.Result.Failure;
   }
-  return Rhino.Commands.Result.Failure;
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function AddSphere(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim center As New Rhino.Geometry.Point3d(0, 0, 0)
-  Const radius As Double = 5.0
-  Dim sphere As New Rhino.Geometry.Sphere(center, radius)
-  If doc.Objects.AddSphere(sphere) <> Guid.Empty Then
-    doc.Views.Redraw()
-    Return Rhino.Commands.Result.Success
-  End If
-  Return Rhino.Commands.Result.Failure
-End Function
+Partial Friend Class Examples
+  Public Shared Function AddSphere(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim center As New Rhino.Geometry.Point3d(0, 0, 0)
+	Const radius As Double = 5.0
+	Dim sphere As New Rhino.Geometry.Sphere(center, radius)
+	If doc.Objects.AddSphere(sphere) <> Guid.Empty Then
+	  doc.Views.Redraw()
+	  Return Rhino.Commands.Result.Success
+	End If
+	Return Rhino.Commands.Result.Failure
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -63,6 +66,5 @@ def AddSphere():
 if __name__ == "__main__":
     AddSphere()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

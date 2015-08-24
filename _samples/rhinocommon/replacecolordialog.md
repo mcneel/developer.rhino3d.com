@@ -1,38 +1,34 @@
 ---
 layout: code-sample
-title: Replace Rhino's Color Picking Dialog
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Replace Rhino's Color Picking Dialog
 keywords: ['replace', 'rhinos', 'color', 'picking', 'dialog']
-order: 142
-description:  
+categories: ['Picking and Selection']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class ReplaceColorDialogCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csReplaceColorDialog"; } }
+  private static ColorDialog m_dlg = null;
 
-  private ColorDialog m_dlg = null;
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result ReplaceColorDialog(RhinoDoc doc)
   {
     Dialogs.SetCustomColorDialog(OnSetCustomColorDialog);
     return Result.Success;
   }
 
-  void OnSetCustomColorDialog(object sender, GetColorEventArgs e)
+  static void OnSetCustomColorDialog(object sender, GetColorEventArgs e)
   {
     m_dlg = new ColorDialog();
-    if (m_dlg.ShowDialog(null) == DialogResult.OK)
+    if (m_dlg.ShowDialog(null) == DialogResult.Ok)
     {
       var c = m_dlg.Color;
-      e.SelectedColor = c;
+      e.SelectedColor = System.Drawing.Color.FromArgb (c.Ab, c.Rb, c.Gb, c.Bb);
     }
   }
 }
@@ -41,32 +37,24 @@ public class ReplaceColorDialogCommand : Command
 
 
 ```vbnet
-Public Class ReplaceColorDialogCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbReplaceColorDialog"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Private Shared m_dlg As ColorDialog = Nothing
 
-  Private m_dlg As ColorDialog = Nothing
-
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dialogs.SetCustomColorDialog(AddressOf OnSetCustomColorDialog)
-    Return Result.Success
+  Public Shared Function ReplaceColorDialog(ByVal doc As RhinoDoc) As Result
+	Dialogs.SetCustomColorDialog(AddressOf OnSetCustomColorDialog)
+	Return Result.Success
   End Function
 
-  Private Sub OnSetCustomColorDialog(sender As Object, e As GetColorEventArgs)
-
-    m_dlg = New ColorDialog()
-    If m_dlg.ShowDialog(Nothing) = DialogResult.OK Then
-      Dim c = m_dlg.Color
-      e.SelectedColor = c
-    End If
+  Private Shared Sub OnSetCustomColorDialog(ByVal sender As Object, ByVal e As GetColorEventArgs)
+	m_dlg = New ColorDialog()
+	If m_dlg.ShowDialog(Nothing) = DialogResult.Ok Then
+	  Dim c = m_dlg.Color
+	  e.SelectedColor = System.Drawing.Color.FromArgb(c.Ab, c.Rb, c.Gb, c.Bb)
+	End If
   End Sub
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -90,6 +78,5 @@ def OnSetCustomColorDialog(sender, e):
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

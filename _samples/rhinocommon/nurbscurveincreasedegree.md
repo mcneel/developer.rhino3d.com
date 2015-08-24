@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Increasing the degree of a Nurbs curve
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Increasing the degree of a Nurbs curve
 keywords: ['increasing', 'degree', 'nurbs', 'curve']
-order: 118
-description:  
+categories: ['Curves']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class NurbsCurveIncreaseDegreeCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csNurbsCrvIncreaseDegree"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result NurbsCurveIncreaseDegree(RhinoDoc doc)
   {
     ObjRef obj_ref;
     var rc = RhinoGet.GetOneObject(
@@ -49,49 +45,42 @@ public class NurbsCurveIncreaseDegreeCommand : Command
 
 
 ```vbnet
-Public Class NurbsCurveIncreaseDegreeCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbNurbsCrvIncreaseDegree"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function NurbsCurveIncreaseDegree(ByVal doc As RhinoDoc) As Result
+	Dim obj_ref As ObjRef = Nothing
+	Dim rc = RhinoGet.GetOneObject("Select curve", False, ObjectType.Curve, obj_ref)
+	If rc IsNot Result.Success Then
+		Return rc
+	End If
+	If obj_ref Is Nothing Then
+		Return Result.Failure
+	End If
+	Dim curve = obj_ref.Curve()
+	If curve Is Nothing Then
+		Return Result.Failure
+	End If
+	Dim nurbs_curve = curve.ToNurbsCurve()
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim obj_ref As ObjRef
-    Dim rc = RhinoGet.GetOneObject("Select curve", False, ObjectType.Curve, obj_ref)
-    If rc <> Result.Success Then
-      Return rc
-    End If
-    If obj_ref Is Nothing Then
-      Return Result.Failure
-    End If
-    Dim curve = obj_ref.Curve()
-    If curve Is Nothing Then
-      Return Result.Failure
-    End If
-    Dim nurbs_curve = curve.ToNurbsCurve()
+	Dim new_degree As Integer = -1
+	rc = RhinoGet.GetInteger(String.Format("New degree <{0}...11>", nurbs_curve.Degree), True, new_degree, nurbs_curve.Degree, 11)
+	If rc IsNot Result.Success Then
+		Return rc
+	End If
 
-    Dim new_degree As Integer = -1
-    rc = RhinoGet.GetInteger(String.Format("New degree <{0}...11>", nurbs_curve.Degree), True, new_degree, nurbs_curve.Degree, 11)
-    If rc <> Result.Success Then
-      Return rc
-    End If
+	rc = Result.Failure
+	If nurbs_curve.IncreaseDegree(new_degree) Then
+	  If doc.Objects.Replace(obj_ref.ObjectId, nurbs_curve) Then
+		rc = Result.Success
+	  End If
+	End If
 
-    rc = Result.Failure
-    If nurbs_curve.IncreaseDegree(new_degree) Then
-      If doc.Objects.Replace(obj_ref.ObjectId, nurbs_curve) Then
-        rc = Result.Success
-      End If
-    End If
-
-    RhinoApp.WriteLine("Result: {0}", rc.ToString())
-    doc.Views.Redraw()
-    Return rc
+	RhinoApp.WriteLine("Result: {0}", rc.ToString())
+	doc.Views.Redraw()
+	Return rc
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -126,6 +115,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

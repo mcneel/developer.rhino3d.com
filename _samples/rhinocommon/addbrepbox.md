@@ -1,52 +1,55 @@
 ---
 layout: code-sample
-title: Add Brep Box
-author: 
-categories: ['Adding Objects'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['brep']
-order: 3
-description:  
+title: Add Brep Box
+keywords: ['add', 'brep']
+categories: ['Adding Objects']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result AddBrepBox(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.Geometry.Point3d pt0 = new Rhino.Geometry.Point3d(0, 0, 0);
-  Rhino.Geometry.Point3d pt1 = new Rhino.Geometry.Point3d(10, 10, 10);
-  Rhino.Geometry.BoundingBox box = new Rhino.Geometry.BoundingBox(pt0, pt1);
-  Rhino.Geometry.Brep brep = box.ToBrep();
-  Rhino.Commands.Result rc = Rhino.Commands.Result.Failure;
-  if( doc.Objects.AddBrep(brep) != System.Guid.Empty )
+  public static Rhino.Commands.Result AddBrepBox(Rhino.RhinoDoc doc)
   {
-    rc = Rhino.Commands.Result.Success;
-    doc.Views.Redraw();
+    Rhino.Geometry.Point3d pt0 = new Rhino.Geometry.Point3d(0, 0, 0);
+    Rhino.Geometry.Point3d pt1 = new Rhino.Geometry.Point3d(10, 10, 10);
+    Rhino.Geometry.BoundingBox box = new Rhino.Geometry.BoundingBox(pt0, pt1);
+    Rhino.Geometry.Brep brep = box.ToBrep();
+    Rhino.Commands.Result rc = Rhino.Commands.Result.Failure;
+    if( doc.Objects.AddBrep(brep) != System.Guid.Empty )
+    {
+      rc = Rhino.Commands.Result.Success;
+      doc.Views.Redraw();
+    }
+    return rc;
   }
-  return rc;
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function AddBrepBox(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim pt0 As New Rhino.Geometry.Point3d(0, 0, 0)
-  Dim pt1 As New Rhino.Geometry.Point3d(10, 10, 10)
-  Dim box As New Rhino.Geometry.BoundingBox(pt0, pt1)
-  Dim brep As Rhino.Geometry.Brep = box.ToBrep()
-  Dim rc As Rhino.Commands.Result = Rhino.Commands.Result.Failure
-  If doc.Objects.AddBrep(brep) <> System.Guid.Empty Then
-    rc = Rhino.Commands.Result.Success
-    doc.Views.Redraw()
-  End If
-  Return rc
-End Function
+Partial Friend Class Examples
+  Public Shared Function AddBrepBox(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim pt0 As New Rhino.Geometry.Point3d(0, 0, 0)
+	Dim pt1 As New Rhino.Geometry.Point3d(10, 10, 10)
+	Dim box As New Rhino.Geometry.BoundingBox(pt0, pt1)
+	Dim brep As Rhino.Geometry.Brep = box.ToBrep()
+	Dim rc As Rhino.Commands.Result = Rhino.Commands.Result.Failure
+	If doc.Objects.AddBrep(brep) <> System.Guid.Empty Then
+	  rc = Rhino.Commands.Result.Success
+	  doc.Views.Redraw()
+	End If
+	Return rc
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -68,6 +71,5 @@ def AddBrepBox():
 if( __name__ == "__main__" ):
     AddBrepBox()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

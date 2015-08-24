@@ -1,58 +1,61 @@
 ---
 layout: code-sample
-title: Add Cylinder to Rhino
-author: 
-categories: ['Adding Objects'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['cylinder', 'rhino']
-order: 8
-description:  
+title: Add Cylinder to Rhino
+keywords: ['add', 'cylinder', 'rhino']
+categories: ['Adding Objects']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result AddCylinder(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.Geometry.Point3d center_point = new Rhino.Geometry.Point3d(0, 0, 0);
-  Rhino.Geometry.Point3d height_point = new Rhino.Geometry.Point3d(0, 0, 10);
-  Rhino.Geometry.Vector3d zaxis = height_point - center_point;
-  Rhino.Geometry.Plane plane = new Rhino.Geometry.Plane(center_point, zaxis);
-  const double radius = 5;
-  Rhino.Geometry.Circle circle = new Rhino.Geometry.Circle(plane, radius);
-  Rhino.Geometry.Cylinder cylinder = new Rhino.Geometry.Cylinder(circle, zaxis.Length);
-  Rhino.Geometry.Brep brep = cylinder.ToBrep(true, true);
-  if (brep != null)
+  public static Rhino.Commands.Result AddCylinder(Rhino.RhinoDoc doc)
   {
-    doc.Objects.AddBrep(brep);
-    doc.Views.Redraw();
+    Rhino.Geometry.Point3d center_point = new Rhino.Geometry.Point3d(0, 0, 0);
+    Rhino.Geometry.Point3d height_point = new Rhino.Geometry.Point3d(0, 0, 10);
+    Rhino.Geometry.Vector3d zaxis = height_point - center_point;
+    Rhino.Geometry.Plane plane = new Rhino.Geometry.Plane(center_point, zaxis);
+    const double radius = 5;
+    Rhino.Geometry.Circle circle = new Rhino.Geometry.Circle(plane, radius);
+    Rhino.Geometry.Cylinder cylinder = new Rhino.Geometry.Cylinder(circle, zaxis.Length);
+    Rhino.Geometry.Brep brep = cylinder.ToBrep(true, true);
+    if (brep != null)
+    {
+      doc.Objects.AddBrep(brep);
+      doc.Views.Redraw();
+    }
+    return Rhino.Commands.Result.Success;
   }
-  return Rhino.Commands.Result.Success;
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function AddCylinder(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim center_point As New Rhino.Geometry.Point3d(0, 0, 0)
-  Dim height_point As New Rhino.Geometry.Point3d(0, 0, 10)
-  Dim zaxis As Rhino.Geometry.Vector3d = height_point - center_point
-  Dim plane As New Rhino.Geometry.Plane(center_point, zaxis)
-  Const radius As Double = 5
-  Dim circle As New Rhino.Geometry.Circle(plane, radius)
-  Dim cylinder As New Rhino.Geometry.Cylinder(circle, zaxis.Length)
-  Dim brep As Rhino.Geometry.Brep = cylinder.ToBrep(True, True)
-  If brep IsNot Nothing Then
-    doc.Objects.AddBrep(brep)
-    doc.Views.Redraw()
-  End If
-  Return Rhino.Commands.Result.Success
-End Function
+Partial Friend Class Examples
+  Public Shared Function AddCylinder(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim center_point As New Rhino.Geometry.Point3d(0, 0, 0)
+	Dim height_point As New Rhino.Geometry.Point3d(0, 0, 10)
+	Dim zaxis As Rhino.Geometry.Vector3d = height_point - center_point
+	Dim plane As New Rhino.Geometry.Plane(center_point, zaxis)
+	Const radius As Double = 5
+	Dim circle As New Rhino.Geometry.Circle(plane, radius)
+	Dim cylinder As New Rhino.Geometry.Cylinder(circle, zaxis.Length)
+	Dim brep As Rhino.Geometry.Brep = cylinder.ToBrep(True, True)
+	If brep IsNot Nothing Then
+	  doc.Objects.AddBrep(brep)
+	  doc.Views.Redraw()
+	End If
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -78,6 +81,5 @@ def AddCylinder():
 if __name__=="__main__":
     AddCylinder()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

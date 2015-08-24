@@ -1,52 +1,55 @@
 ---
 layout: code-sample
-title: Transform a Brep
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Transform a Brep
 keywords: ['transform', 'brep']
-order: 163
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result TransformBrep(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.DocObjects.ObjRef rhobj;
-  var rc = RhinoGet.GetOneObject("Select brep", true, Rhino.DocObjects.ObjectType.Brep, out rhobj);
-  if(rc!= Rhino.Commands.Result.Success)
-    return rc;
+  public static Rhino.Commands.Result TransformBrep(Rhino.RhinoDoc doc)
+  {
+    Rhino.DocObjects.ObjRef rhobj;
+    var rc = RhinoGet.GetOneObject("Select brep", true, Rhino.DocObjects.ObjectType.Brep, out rhobj);
+    if(rc!= Rhino.Commands.Result.Success)
+      return rc;
 
-  // Simple translation transformation
-  var xform = Rhino.Geometry.Transform.Translation(18,-18,25);
-  doc.Objects.Transform(rhobj, xform, true);
-  doc.Views.Redraw();
-  return Rhino.Commands.Result.Success;
+    // Simple translation transformation
+    var xform = Rhino.Geometry.Transform.Translation(18,-18,25);
+    doc.Objects.Transform(rhobj, xform, true);
+    doc.Views.Redraw();
+    return Rhino.Commands.Result.Success;
+  }
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function TransformBrep(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim rhobj As Rhino.DocObjects.ObjRef = Nothing
-  Dim rc = RhinoGet.GetOneObject("Select brep", True, Rhino.DocObjects.ObjectType.Brep, rhobj)
-  If rc <> Rhino.Commands.Result.Success Then
-    Return rc
-  End If
+Partial Friend Class Examples
+  Public Shared Function TransformBrep(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim rhobj As Rhino.DocObjects.ObjRef = Nothing
+	Dim rc = RhinoGet.GetOneObject("Select brep", True, Rhino.DocObjects.ObjectType.Brep, rhobj)
+	If rc IsNot Rhino.Commands.Result.Success Then
+	  Return rc
+	End If
 
-  ' Simple translation transformation
-  Dim xform = Rhino.Geometry.Transform.Translation(18, -18, 25)
-  doc.Objects.Transform(rhobj, xform, True)
-  doc.Views.Redraw()
-  Return Rhino.Commands.Result.Success
-End Function
+	' Simple translation transformation
+	Dim xform = Rhino.Geometry.Transform.Translation(18,-18,25)
+	doc.Objects.Transform(rhobj, xform, True)
+	doc.Views.Redraw()
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -65,6 +68,5 @@ def TransformBrep():
 if __name__=="__main__":
     TransformBrep()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

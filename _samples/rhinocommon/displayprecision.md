@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Changing Display Precision
-author: 
-categories: ['Draw'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Changing Display Precision
 keywords: ['changing', 'display', 'precision']
-order: 60
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class DisplayPrecisionCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csDisplayPrecision"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result DisplayPrecision(RhinoDoc doc)
   {
     var gi = new GetInteger();
     gi.SetCommandPrompt("New display precision");
@@ -41,35 +37,28 @@ public class DisplayPrecisionCommand : Command
 
 
 ```vbnet
-Public Class DisplayPrecisionCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbDisplayPrecision"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function DisplayPrecision(ByVal doc As RhinoDoc) As Result
+	Dim gi = New GetInteger()
+	gi.SetCommandPrompt("New display precision")
+	gi.SetDefaultInteger(doc.ModelDistanceDisplayPrecision)
+	gi.SetLowerLimit(0, False)
+	gi.SetUpperLimit(7, False)
+	gi.Get()
+	If gi.CommandResult() <> Result.Success Then
+	  Return gi.CommandResult()
+	End If
+	Dim distance_display_precision = gi.Number()
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim gi = New GetInteger()
-    gi.SetCommandPrompt("New display precision")
-    gi.SetDefaultInteger(doc.ModelDistanceDisplayPrecision)
-    gi.SetLowerLimit(0, False)
-    gi.SetUpperLimit(7, False)
-    gi.[Get]()
-    If gi.CommandResult() <> Result.Success Then
-      Return gi.CommandResult()
-    End If
-    Dim distance_display_precision = gi.Number()
+	If distance_display_precision IsNot doc.ModelDistanceDisplayPrecision Then
+	  doc.ModelDistanceDisplayPrecision = distance_display_precision
+	End If
 
-    If distance_display_precision <> doc.ModelDistanceDisplayPrecision Then
-      doc.ModelDistanceDisplayPrecision = distance_display_precision
-    End If
-
-    Return Result.Success
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -92,6 +81,5 @@ def RunCommand():
 if __name__ ==  "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

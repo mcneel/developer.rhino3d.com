@@ -1,78 +1,82 @@
 ---
 layout: code-sample
-title: Add Linear Dimension2
-author: 
-categories: ['Drafting'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['linear', 'dimension2']
-order: 13
-description:  
+title: Add Linear Dimension2
+keywords: ['add', 'linear', 'dimension2']
+categories: ['Adding Objects']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result AddLinearDimension2(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Point3d origin = new Point3d(1,1,0);
-  Point3d offset = new Point3d(11,1,0);
-  Point3d pt = new Point3d((offset.X-origin.X)/2,3,0);
-
-  Plane plane = Plane.WorldXY;
-  plane.Origin = origin;
-
-  double u,v;
-  plane.ClosestParameter(origin, out u, out v);
-  Point2d ext1 = new Point2d(u, v);
-
-  plane.ClosestParameter(offset, out u, out v);
-  Point2d ext2 = new Point2d(u, v);
-
-  plane.ClosestParameter(pt, out u, out v);
-  Point2d linePt = new Point2d(u, v);
-
-  LinearDimension dimension = new LinearDimension(plane, ext1, ext2, linePt);
-  if (doc.Objects.AddLinearDimension(dimension) != Guid.Empty)
+  public static Rhino.Commands.Result AddLinearDimension2(Rhino.RhinoDoc doc)
   {
-    doc.Views.Redraw();
-    return Rhino.Commands.Result.Success;
+    Point3d origin = new Point3d(1,1,0);
+    Point3d offset = new Point3d(11,1,0);
+    Point3d pt = new Point3d((offset.X-origin.X)/2,3,0);
+
+    Plane plane = Plane.WorldXY;
+    plane.Origin = origin;
+
+    double u,v;
+    plane.ClosestParameter(origin, out u, out v);
+    Point2d ext1 = new Point2d(u, v);
+
+    plane.ClosestParameter(offset, out u, out v);
+    Point2d ext2 = new Point2d(u, v);
+
+    plane.ClosestParameter(pt, out u, out v);
+    Point2d linePt = new Point2d(u, v);
+
+    LinearDimension dimension = new LinearDimension(plane, ext1, ext2, linePt);
+    if (doc.Objects.AddLinearDimension(dimension) != Guid.Empty)
+    {
+      doc.Views.Redraw();
+      return Rhino.Commands.Result.Success;
+    }
+    return Rhino.Commands.Result.Failure;
   }
-  return Rhino.Commands.Result.Failure;
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function AddLinearDimension2(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim origin As New Point3d(1, 1, 0)
-  Dim offset As New Point3d(11, 1, 0)
-  Dim pt As New Point3d((offset.X - origin.X) / 2, 3, 0)
+Partial Friend Class Examples
+  Public Shared Function AddLinearDimension2(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim origin As New Point3d(1,1,0)
+	Dim offset As New Point3d(11,1,0)
+'INSTANT VB WARNING: Instant VB cannot determine whether both operands of this division are integer types - if they are then you should use the VB integer division operator:
+	Dim pt As New Point3d((offset.X-origin.X)/2,3,0)
 
-  Dim plane__1 As Plane = Plane.WorldXY
-  plane__1.Origin = origin
+	Dim plane As Plane = Plane.WorldXY
+	plane.Origin = origin
 
-  Dim u As Double, v As Double
-  plane__1.ClosestParameter(origin, u, v)
-  Dim ext1 As New Point2d(u, v)
+	Dim u As Double = Nothing, v As Double = Nothing
+	plane.ClosestParameter(origin, u, v)
+	Dim ext1 As New Point2d(u, v)
 
-  plane__1.ClosestParameter(offset, u, v)
-  Dim ext2 As New Point2d(u, v)
+	plane.ClosestParameter(offset, u, v)
+	Dim ext2 As New Point2d(u, v)
 
-  plane__1.ClosestParameter(pt, u, v)
-  Dim linePt As New Point2d(u, v)
+	plane.ClosestParameter(pt, u, v)
+	Dim linePt As New Point2d(u, v)
 
-  Dim dimension As New LinearDimension(plane__1, ext1, ext2, linePt)
-  If doc.Objects.AddLinearDimension(dimension) <> Guid.Empty Then
-    doc.Views.Redraw()
-    Return Rhino.Commands.Result.Success
-  End If
-  Return Rhino.Commands.Result.Failure
-End Function
+	Dim dimension As New LinearDimension(plane, ext1, ext2, linePt)
+	If doc.Objects.AddLinearDimension(dimension) <> Guid.Empty Then
+	  doc.Views.Redraw()
+	  Return Rhino.Commands.Result.Success
+	End If
+	Return Rhino.Commands.Result.Failure
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -103,6 +107,5 @@ def AddLinearDimension2():
 if __name__=="__main__":
     AddLinearDimension2()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

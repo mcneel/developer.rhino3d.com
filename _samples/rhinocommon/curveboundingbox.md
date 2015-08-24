@@ -1,103 +1,106 @@
 ---
 layout: code-sample
-title: Curve Bounding Box (world and plane oriented)
-author: 
-categories: ['Curves'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['curve', 'bounding', '(world', 'plane', 'oriented)']
-order: 47
-description:  
+title: Curve Bounding Box (world and plane oriented)
+keywords: ['curve', 'bounding', 'world', 'plane', 'oriented']
+categories: ['Curves']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result CurveBoundingBox(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  // Select a curve object
-  Rhino.DocObjects.ObjRef rhObject;
-  var rc = Rhino.Input.RhinoGet.GetOneObject("Select curve", false, Rhino.DocObjects.ObjectType.Curve, out rhObject);
-  if (rc != Rhino.Commands.Result.Success)
-    return rc;
+  public static Rhino.Commands.Result CurveBoundingBox(Rhino.RhinoDoc doc)
+  {
+    // Select a curve object
+    Rhino.DocObjects.ObjRef rhObject;
+    var rc = Rhino.Input.RhinoGet.GetOneObject("Select curve", false, Rhino.DocObjects.ObjectType.Curve, out rhObject);
+    if (rc != Rhino.Commands.Result.Success)
+      return rc;
 
-  // Validate selection
-  var curve = rhObject.Curve();
-  if (curve == null)
-    return Rhino.Commands.Result.Failure;
+    // Validate selection
+    var curve = rhObject.Curve();
+    if (curve == null)
+      return Rhino.Commands.Result.Failure;
 
-  // Get the active view's construction plane
-  var view = doc.Views.ActiveView;
-  if (view == null)
-    return Rhino.Commands.Result.Failure;
-  var plane = view.ActiveViewport.ConstructionPlane();
+    // Get the active view's construction plane
+    var view = doc.Views.ActiveView;
+    if (view == null)
+      return Rhino.Commands.Result.Failure;
+    var plane = view.ActiveViewport.ConstructionPlane();
 
-  // Compute the tight bounding box of the curve in world coordinates
-  var bbox = curve.GetBoundingBox(true);
-  if (!bbox.IsValid)
-    return Rhino.Commands.Result.Failure;
+    // Compute the tight bounding box of the curve in world coordinates
+    var bbox = curve.GetBoundingBox(true);
+    if (!bbox.IsValid)
+      return Rhino.Commands.Result.Failure;
 
-  // Print the min and max box coordinates in world coordinates
-  Rhino.RhinoApp.WriteLine("World min: {0}", bbox.Min);
-  Rhino.RhinoApp.WriteLine("World max: {0}", bbox.Max);
+    // Print the min and max box coordinates in world coordinates
+    Rhino.RhinoApp.WriteLine("World min: {0}", bbox.Min);
+    Rhino.RhinoApp.WriteLine("World max: {0}", bbox.Max);
 
-  // Compute the tight bounding box of the curve based on the 
-  // active view's construction plane
-  bbox = curve.GetBoundingBox(plane);
+    // Compute the tight bounding box of the curve based on the 
+    // active view's construction plane
+    bbox = curve.GetBoundingBox(plane);
 
-  // Print the min and max box coordinates in cplane coordinates
-  Rhino.RhinoApp.WriteLine("CPlane min: {0}", bbox.Min);
-  Rhino.RhinoApp.WriteLine("CPlane max: {0}", bbox.Max);
-  return Rhino.Commands.Result.Success;
+    // Print the min and max box coordinates in cplane coordinates
+    Rhino.RhinoApp.WriteLine("CPlane min: {0}", bbox.Min);
+    Rhino.RhinoApp.WriteLine("CPlane max: {0}", bbox.Max);
+    return Rhino.Commands.Result.Success;
+  }
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function CurveBoundingBox(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  ' Select a curve object
-  Dim rhObject As Rhino.DocObjects.ObjRef = Nothing
-  Dim rc = Rhino.Input.RhinoGet.GetOneObject("Select curve", False, Rhino.DocObjects.ObjectType.Curve, rhObject)
-  If rc <> Rhino.Commands.Result.Success Then
-    Return rc
-  End If
+Partial Friend Class Examples
+  Public Shared Function CurveBoundingBox(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	' Select a curve object
+	Dim rhObject As Rhino.DocObjects.ObjRef = Nothing
+	Dim rc = Rhino.Input.RhinoGet.GetOneObject("Select curve", False, Rhino.DocObjects.ObjectType.Curve, rhObject)
+	If rc IsNot Rhino.Commands.Result.Success Then
+	  Return rc
+	End If
 
-  ' Validate selection
-  Dim curve = rhObject.Curve()
-  If curve Is Nothing Then
-    Return Rhino.Commands.Result.Failure
-  End If
+	' Validate selection
+	Dim curve = rhObject.Curve()
+	If curve Is Nothing Then
+	  Return Rhino.Commands.Result.Failure
+	End If
 
-  ' Get the active view's construction plane
-  Dim view = doc.Views.ActiveView
-  If view Is Nothing Then
-    Return Rhino.Commands.Result.Failure
-  End If
-  Dim plane = view.ActiveViewport.ConstructionPlane()
+	' Get the active view's construction plane
+	Dim view = doc.Views.ActiveView
+	If view Is Nothing Then
+	  Return Rhino.Commands.Result.Failure
+	End If
+	Dim plane = view.ActiveViewport.ConstructionPlane()
 
-  ' Compute the tight bounding box of the curve in world coordinates
-  Dim bbox = curve.GetBoundingBox(True)
-  If Not bbox.IsValid Then
-    Return Rhino.Commands.Result.Failure
-  End If
+	' Compute the tight bounding box of the curve in world coordinates
+	Dim bbox = curve.GetBoundingBox(True)
+	If Not bbox.IsValid Then
+	  Return Rhino.Commands.Result.Failure
+	End If
 
-  ' Print the min and max box coordinates in world coordinates
-  Rhino.RhinoApp.WriteLine("World min: {0}", bbox.Min)
-  Rhino.RhinoApp.WriteLine("World max: {0}", bbox.Max)
+	' Print the min and max box coordinates in world coordinates
+	Rhino.RhinoApp.WriteLine("World min: {0}", bbox.Min)
+	Rhino.RhinoApp.WriteLine("World max: {0}", bbox.Max)
 
-  ' Compute the tight bounding box of the curve based on the 
-  ' active view's construction plane
-  bbox = curve.GetBoundingBox(plane)
+	' Compute the tight bounding box of the curve based on the 
+	' active view's construction plane
+	bbox = curve.GetBoundingBox(plane)
 
-  ' Print the min and max box coordinates in cplane coordinates
-  Rhino.RhinoApp.WriteLine("CPlane min: {0}", bbox.Min)
-  Rhino.RhinoApp.WriteLine("CPlane max: {0}", bbox.Max)
-  Return Rhino.Commands.Result.Success
-End Function
+	' Print the min and max box coordinates in cplane coordinates
+	Rhino.RhinoApp.WriteLine("CPlane min: {0}", bbox.Min)
+	Rhino.RhinoApp.WriteLine("CPlane max: {0}", bbox.Max)
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -137,6 +140,5 @@ def CurveBoundingBox():
 if __name__=="__main__":
     CurveBoundingBox()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

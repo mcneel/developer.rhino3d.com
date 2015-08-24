@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Volume of Meshes
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Volume of Meshes
 keywords: ['volume', 'meshes']
-order: 111
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class MeshVolumeCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csMeshVolume"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result MeshVolume(RhinoDoc doc)
   {
     var gm = new GetObject();
     gm.SetCommandPrompt("Select solid meshes for volume calculation");
@@ -54,44 +50,37 @@ public class MeshVolumeCommand : Command
 
 
 ```vbnet
-Public Class MeshVolumeCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbMeshVolume"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function MeshVolume(ByVal doc As RhinoDoc) As Result
+	Dim gm = New GetObject()
+	gm.SetCommandPrompt("Select solid meshes for volume calculation")
+	gm.GeometryFilter = ObjectType.Mesh
+	gm.GeometryAttributeFilter = GeometryAttributeFilter.ClosedMesh
+	gm.SubObjectSelect = False
+	gm.GroupSelect = True
+	gm.GetMultiple(1, 0)
+	If gm.CommandResult() <> Result.Success Then
+	  Return gm.CommandResult()
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim gm = New GetObject()
-    gm.SetCommandPrompt("Select solid meshes for volume calculation")
-    gm.GeometryFilter = ObjectType.Mesh
-    gm.GeometryAttributeFilter = GeometryAttributeFilter.ClosedMesh
-    gm.SubObjectSelect = False
-    gm.GroupSelect = True
-    gm.GetMultiple(1, 0)
-    If gm.CommandResult() <> Result.Success Then
-      Return gm.CommandResult()
-    End If
+	Dim volume As Double = 0.0
+	Dim volume_error As Double = 0.0
+	For Each obj_ref In gm.Objects()
+	  If obj_ref.Mesh() IsNot Nothing Then
+		Dim mass_properties = VolumeMassProperties.Compute(obj_ref.Mesh())
+		If mass_properties IsNot Nothing Then
+		  volume += mass_properties.Volume
+		  volume_error += mass_properties.VolumeError
+		End If
+	  End If
+	Next obj_ref
 
-    Dim volume As Double = 0.0
-    Dim volume_error As Double = 0.0
-    For Each obj_ref As ObjRef In gm.Objects()
-      If obj_ref.Mesh() IsNot Nothing Then
-        Dim mass_properties = VolumeMassProperties.Compute(obj_ref.Mesh())
-        If mass_properties IsNot Nothing Then
-          volume += mass_properties.Volume
-          volume_error += mass_properties.VolumeError
-        End If
-      End If
-    Next
-
-    RhinoApp.WriteLine("Total volume = {0:f} (+/- {1:f})", volume, volume_error)
-    Return Result.Success
+	RhinoApp.WriteLine("Total volume = {0:f} (+/- {1:f})", volume, volume_error)
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -126,6 +115,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

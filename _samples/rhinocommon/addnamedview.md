@@ -1,103 +1,106 @@
 ---
 layout: code-sample
-title: Add Named View
-author: 
-categories: ['Viewports and Views'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['named', 'view']
-order: 17
-description:  
+title: Add Named View
+keywords: ['add', 'named', 'view']
+categories: ['Adding Objects', 'Viewports and Views']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result AddNamedView(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.Display.RhinoView view;
-  Rhino.Commands.Result rc = Rhino.Input.RhinoGet.GetView("Select view to adjust", out view);
-  if (rc != Rhino.Commands.Result.Success)
-    return rc;
+  public static Rhino.Commands.Result AddNamedView(Rhino.RhinoDoc doc)
+  {
+    Rhino.Display.RhinoView view;
+    Rhino.Commands.Result rc = Rhino.Input.RhinoGet.GetView("Select view to adjust", out view);
+    if (rc != Rhino.Commands.Result.Success)
+      return rc;
 
-  Rhino.Geometry.Point3d location;
-  rc = Rhino.Input.RhinoGet.GetPoint("Camera Location", false, out location);
-  if (rc != Rhino.Commands.Result.Success)
-    return rc;
+    Rhino.Geometry.Point3d location;
+    rc = Rhino.Input.RhinoGet.GetPoint("Camera Location", false, out location);
+    if (rc != Rhino.Commands.Result.Success)
+      return rc;
 
-  Rhino.Input.Custom.GetPoint gp = new Rhino.Input.Custom.GetPoint();
-  gp.SetCommandPrompt("Look At Location");
-  gp.DrawLineFromPoint(location, false);
-  gp.Get();
-  if (gp.CommandResult() != Rhino.Commands.Result.Success)
-    return gp.CommandResult();
-  Rhino.Geometry.Point3d lookat = gp.Point();
-  
-  string name = view.ActiveViewport.Name;
-  rc = Rhino.Input.RhinoGet.GetString("Name", true, ref name);
-  if (rc != Rhino.Commands.Result.Success)
-    return rc;
+    Rhino.Input.Custom.GetPoint gp = new Rhino.Input.Custom.GetPoint();
+    gp.SetCommandPrompt("Look At Location");
+    gp.DrawLineFromPoint(location, false);
+    gp.Get();
+    if (gp.CommandResult() != Rhino.Commands.Result.Success)
+      return gp.CommandResult();
+    Rhino.Geometry.Point3d lookat = gp.Point();
+    
+    string name = view.ActiveViewport.Name;
+    rc = Rhino.Input.RhinoGet.GetString("Name", true, ref name);
+    if (rc != Rhino.Commands.Result.Success)
+      return rc;
 
-  Rhino.Display.RhinoViewport vp = view.ActiveViewport;
-  // save the current viewport projection
-  vp.PushViewProjection();
-  vp.CameraUp = Rhino.Geometry.Vector3d.ZAxis;
-  vp.SetCameraLocation(location, false);
-  vp.SetCameraDirection(lookat - location, true);
-  vp.Name = name;
+    Rhino.Display.RhinoViewport vp = view.ActiveViewport;
+    // save the current viewport projection
+    vp.PushViewProjection();
+    vp.CameraUp = Rhino.Geometry.Vector3d.ZAxis;
+    vp.SetCameraLocation(location, false);
+    vp.SetCameraDirection(lookat - location, true);
+    vp.Name = name;
 
-  doc.NamedViews.Add(name, vp.Id);
-  view.Redraw();
-  return Rhino.Commands.Result.Success;
+    doc.NamedViews.Add(name, vp.Id);
+    view.Redraw();
+    return Rhino.Commands.Result.Success;
+  }
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function AddNamedView(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim view As Rhino.Display.RhinoView = Nothing
-  Dim rc As Rhino.Commands.Result = Rhino.Input.RhinoGet.GetView("Select view to adjust", view)
-  If rc <> Rhino.Commands.Result.Success Then
-    Return rc
-  End If
+Partial Friend Class Examples
+  Public Shared Function AddNamedView(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim view As Rhino.Display.RhinoView = Nothing
+	Dim rc As Rhino.Commands.Result = Rhino.Input.RhinoGet.GetView("Select view to adjust", view)
+	If rc IsNot Rhino.Commands.Result.Success Then
+	  Return rc
+	End If
 
-  Dim location As Rhino.Geometry.Point3d
-  rc = Rhino.Input.RhinoGet.GetPoint("Camera Location", False, location)
-  If rc <> Rhino.Commands.Result.Success Then
-    Return rc
-  End If
+	Dim location As Rhino.Geometry.Point3d = Nothing
+	rc = Rhino.Input.RhinoGet.GetPoint("Camera Location", False, location)
+	If rc IsNot Rhino.Commands.Result.Success Then
+	  Return rc
+	End If
 
-  Dim gp As New Rhino.Input.Custom.GetPoint()
-  gp.SetCommandPrompt("Look At Location")
-  gp.DrawLineFromPoint(location, False)
-  gp.Get()
-  If gp.CommandResult() <> Rhino.Commands.Result.Success Then
-    Return gp.CommandResult()
-  End If
-  Dim lookat As Rhino.Geometry.Point3d = gp.Point()
+	Dim gp As New Rhino.Input.Custom.GetPoint()
+	gp.SetCommandPrompt("Look At Location")
+	gp.DrawLineFromPoint(location, False)
+	gp.Get()
+	If gp.CommandResult() <> Rhino.Commands.Result.Success Then
+	  Return gp.CommandResult()
+	End If
+	Dim lookat As Rhino.Geometry.Point3d = gp.Point()
 
-  Dim name As String = view.ActiveViewport.Name
-  rc = Rhino.Input.RhinoGet.GetString("Name", True, name)
-  If rc <> Rhino.Commands.Result.Success Then
-    Return rc
-  End If
+	Dim name As String = view.ActiveViewport.Name
+	rc = Rhino.Input.RhinoGet.GetString("Name", True, name)
+	If rc IsNot Rhino.Commands.Result.Success Then
+	  Return rc
+	End If
 
-  Dim vp As Rhino.Display.RhinoViewport = view.ActiveViewport
-  ' save the current viewport projection
-  vp.PushViewProjection()
-  vp.CameraUp = Rhino.Geometry.Vector3d.ZAxis
-  vp.SetCameraLocation(location, False)
-  vp.SetCameraDirection(lookat - location, True)
-  vp.Name = name
+	Dim vp As Rhino.Display.RhinoViewport = view.ActiveViewport
+	' save the current viewport projection
+	vp.PushViewProjection()
+	vp.CameraUp = Rhino.Geometry.Vector3d.ZAxis
+	vp.SetCameraLocation(location, False)
+	vp.SetCameraDirection(lookat - location, True)
+	vp.Name = name
 
-  doc.NamedViews.Add(name, vp.Id)
-  view.Redraw()
-  Return Rhino.Commands.Result.Success
-End Function
+	doc.NamedViews.Add(name, vp.Id)
+	view.Redraw()
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -139,6 +142,5 @@ def AddNamedView():
 if __name__=="__main__":
     AddNamedView()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

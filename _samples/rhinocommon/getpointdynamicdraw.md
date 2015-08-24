@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Dynamically Draw Geometry when Picking Points
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Dynamically Draw Geometry when Picking Points
 keywords: ['dynamically', 'draw', 'geometry', 'when', 'picking', 'points']
-order: 88
-description:  
+categories: ['Draw', 'Picking and Selection']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class GetPointDynamicDrawCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csGetPointDynamicDraw"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result GetPointDynamicDraw(RhinoDoc doc)
   {
     var gp = new GetPoint();
     gp.SetCommandPrompt("Center point");
@@ -49,7 +45,7 @@ public class GetPointDynamicDrawCommand : Command
 public class GetCircleRadiusPoint : GetPoint
 {
   private Point3d m_center_point;
- 
+
   public GetCircleRadiusPoint(Point3d centerPoint)
   {
     m_center_point = centerPoint;
@@ -69,45 +65,56 @@ public class GetCircleRadiusPoint : GetPoint
 
 
 ```vbnet
-Public Class GetPointDynamicDrawCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbGetPointDynamicDraw"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function GetPointDynamicDraw(ByVal doc As RhinoDoc) As Result
+	Dim gp = New GetPoint()
+	gp.SetCommandPrompt("Center point")
+	gp.Get()
+	If gp.CommandResult() <> Result.Success Then
+	  Return gp.CommandResult()
+	End If
+	Dim center_point = gp.Point()
+	If center_point Is Point3d.Unset Then
+	  Return Result.Failure
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim gp = New GetPoint()
-    gp.SetCommandPrompt("Center point")
-    gp.[Get]()
-    If gp.CommandResult() <> Result.Success Then
-      Return gp.CommandResult()
-    End If
-    Dim center_point = gp.Point()
-    If center_point = Point3d.Unset Then
-      Return Result.Failure
-    End If
+	Dim gcp = New GetCircleRadiusPoint(center_point)
+	gcp.SetCommandPrompt("Radius")
+	gcp.ConstrainToConstructionPlane(False)
+	gcp.SetBasePoint(center_point, True)
+	gcp.DrawLineFromPoint(center_point, True)
+	gcp.Get()
+	If gcp.CommandResult() <> Result.Success Then
+	  Return gcp.CommandResult()
+	End If
 
-    Dim gcp = New GetCircleRadiusPoint(center_point)
-    gcp.SetCommandPrompt("Radius")
-    gcp.ConstrainToConstructionPlane(False)
-    gcp.SetBasePoint(center_point, True)
-    gcp.DrawLineFromPoint(center_point, True)
-    gcp.[Get]()
-    If gcp.CommandResult() <> Result.Success Then
-      Return gcp.CommandResult()
-    End If
-
-    Dim radius = center_point.DistanceTo(gcp.Point())
-    Dim cplane = doc.Views.ActiveView.ActiveViewport.ConstructionPlane()
-    doc.Objects.AddCircle(New Circle(cplane, center_point, radius))
-    doc.Views.Redraw()
-    Return Result.Success
+	Dim radius = center_point.DistanceTo(gcp.Point())
+	Dim cplane = doc.Views.ActiveView.ActiveViewport.ConstructionPlane()
+	doc.Objects.AddCircle(New Circle(cplane, center_point, radius))
+	doc.Views.Redraw()
+	Return Result.Success
   End Function
 End Class
+
+Public Class GetCircleRadiusPoint
+	Inherits GetPoint
+
+  Private m_center_point As Point3d
+
+  Public Sub New(ByVal centerPoint As Point3d)
+	m_center_point = centerPoint
+  End Sub
+
+  Protected Overrides Sub OnDynamicDraw(ByVal e As GetPointDrawEventArgs)
+	MyBase.OnDynamicDraw(e)
+	Dim cplane = e.RhinoDoc.Views.ActiveView.ActiveViewport.ConstructionPlane()
+	Dim radius = m_center_point.DistanceTo(e.CurrentPoint)
+	Dim circle = New Circle(cplane, m_center_point, radius)
+	e.Display.DrawCircle(circle, System.Drawing.Color.Black)
+  End Sub
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -156,6 +163,5 @@ class GetCircleRadiusPoint (GetPoint):
 if __name__ == "__main__":
     RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

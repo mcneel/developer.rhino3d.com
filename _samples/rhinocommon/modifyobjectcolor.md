@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Modify an Object's Color
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Modify an Object's Color
 keywords: ['modify', 'objects', 'color']
-order: 113
-description:  
+categories: ['Adding Objects']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class ModifyObjectColorCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csModifyObjectColor"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result ModifyObjectColor(RhinoDoc doc)
   {
     ObjRef obj_ref;
     var rc = RhinoGet.GetOneObject("Select object", false, ObjectType.AnyObject, out obj_ref);
@@ -50,45 +46,38 @@ public class ModifyObjectColorCommand : Command
 
 
 ```vbnet
-Public Class ModifyObjectColorCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbModifyObjectColor"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function ModifyObjectColor(ByVal doc As RhinoDoc) As Result
+	Dim obj_ref As ObjRef = Nothing
+	Dim rc = RhinoGet.GetOneObject("Select object", False, ObjectType.AnyObject, obj_ref)
+	If rc IsNot Result.Success Then
+	  Return rc
+	End If
+	Dim rhino_object = obj_ref.Object()
+	Dim color = rhino_object.Attributes.ObjectColor
+	Dim b As Boolean = Rhino.UI.Dialogs.ShowColorDialog(color)
+	If Not b Then
+		Return Result.Cancel
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim obj_ref As ObjRef = Nothing
-    Dim rc = RhinoGet.GetOneObject("Select object", False, ObjectType.AnyObject, obj_ref)
-    If rc <> Result.Success Then
-      Return rc
-    End If
-    Dim rhino_object = obj_ref.[Object]()
-    Dim color__1 = rhino_object.Attributes.ObjectColor
-    Dim b As Boolean = Rhino.UI.Dialogs.ShowColorDialog(color__1)
-    If Not b Then
-      Return Result.Cancel
-    End If
+	rhino_object.Attributes.ObjectColor = color
+	rhino_object.Attributes.ColorSource = ObjectColorSource.ColorFromObject
+	rhino_object.CommitChanges()
 
-    rhino_object.Attributes.ObjectColor = color__1
-    rhino_object.Attributes.ColorSource = ObjectColorSource.ColorFromObject
-    rhino_object.CommitChanges()
+	' an object's color attributes can also be specified
+	' when the object is added to Rhino
+	Dim sphere = New Sphere(Point3d.Origin, 5.0)
+	Dim attributes = New ObjectAttributes()
+	attributes.ObjectColor = System.Drawing.Color.CadetBlue
+	attributes.ColorSource = ObjectColorSource.ColorFromObject
+	doc.Objects.AddSphere(sphere, attributes)
 
-    ' an object's color attributes can also be specified
-    ' when the object is added to Rhino
-    Dim sphere = New Sphere(Point3d.Origin, 5.0)
-    Dim attributes = New ObjectAttributes()
-    attributes.ObjectColor = Color.CadetBlue
-    attributes.ColorSource = ObjectColorSource.ColorFromObject
-    doc.Objects.AddSphere(sphere, attributes)
-
-    doc.Views.Redraw()
-    Return Result.Success
+	doc.Views.Redraw()
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -128,6 +117,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

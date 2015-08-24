@@ -1,25 +1,21 @@
 ---
 layout: code-sample
-title: Create a specialized GetObject with a Custom Geometry Filter
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Create a specialized GetObject with a Custom Geometry Filter
 keywords: ['create', 'specialized', 'getobject', 'with', 'custom', 'geometry', 'filter']
-order: 52
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class CustomGeometryFilterCommand : Command
+partial class Examples
 {
-  private double m_tolerance;
-  public override string EnglishName { get { return "csCustomGeometryFilter"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  private static double m_tolerance;
+  public static Result CustomGeometryFilter(RhinoDoc doc)
   {
     m_tolerance = doc.ModelAbsoluteTolerance;
     
@@ -69,7 +65,7 @@ public class CustomGeometryFilterCommand : Command
     return Result.Success;
   }
 
-  private bool CircleWithRadiusOf10GeometryFilter (Rhino.DocObjects.RhinoObject rhObject, GeometryBase geometry,
+  private static bool CircleWithRadiusOf10GeometryFilter (Rhino.DocObjects.RhinoObject rhObject, GeometryBase geometry,
     ComponentIndex componentIndex)
   {
     bool is_circle_with_radius_of10 = false;
@@ -84,82 +80,74 @@ public class CustomGeometryFilterCommand : Command
 
 
 ```vbnet
-Public Class CustomGeometryFilterCommand
-  Inherits Command
-  Private _tolerance As Double
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbCustomGeometryFilter"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Private Shared m_tolerance As Double
+  Public Shared Function CustomGeometryFilter(ByVal doc As RhinoDoc) As Result
+	m_tolerance = doc.ModelAbsoluteTolerance
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    _tolerance = doc.ModelAbsoluteTolerance
+	' only use a custom geometry filter if no simpler filter does the job
 
-    ' only use a custom geometry filter if no simpler filter does the job
+	' only curves
+	Dim gc = New GetObject()
+	gc.SetCommandPrompt("select curve")
+	gc.GeometryFilter = ObjectType.Curve
+	gc.DisablePreSelect()
+	gc.SubObjectSelect = False
+	gc.Get()
+	If gc.CommandResult() <> Result.Success Then
+	  Return gc.CommandResult()
+	End If
+	If Nothing Is gc.Object(0).Curve() Then
+	  Return Result.Failure
+	End If
+	Rhino.RhinoApp.WriteLine("curve was selected")
 
-    ' only curves
-    Dim gc = New GetObject()
-    gc.SetCommandPrompt("select curve")
-    gc.GeometryFilter = ObjectType.Curve
-    gc.DisablePreSelect()
-    gc.SubObjectSelect = False
-    gc.[Get]()
-    If gc.CommandResult() <> Result.Success Then
-      Return gc.CommandResult()
-    End If
-    If gc.[Object](0).Curve() Is Nothing Then
-      Return Result.Failure
-    End If
-    Rhino.RhinoApp.WriteLine("curve was selected")
+	' only closed curves
+	Dim gcc = New GetObject()
+	gcc.SetCommandPrompt("select closed curve")
+	gcc.GeometryFilter = ObjectType.Curve
+	gcc.GeometryAttributeFilter = GeometryAttributeFilter.ClosedCurve
+	gcc.DisablePreSelect()
+	gcc.SubObjectSelect = False
+	gcc.Get()
+	If gcc.CommandResult() <> Result.Success Then
+	  Return gcc.CommandResult()
+	End If
+	If Nothing Is gcc.Object(0).Curve() Then
+	  Return Result.Failure
+	End If
+	Rhino.RhinoApp.WriteLine("closed curve was selected")
 
-    ' only closed curves
-    Dim gcc = New GetObject()
-    gcc.SetCommandPrompt("select closed curve")
-    gcc.GeometryFilter = ObjectType.Curve
-    gcc.GeometryAttributeFilter = GeometryAttributeFilter.ClosedCurve
-    gcc.DisablePreSelect()
-    gcc.SubObjectSelect = False
-    gcc.[Get]()
-    If gcc.CommandResult() <> Result.Success Then
-      Return gcc.CommandResult()
-    End If
-    If gcc.[Object](0).Curve() Is Nothing Then
-      Return Result.Failure
-    End If
-    Rhino.RhinoApp.WriteLine("closed curve was selected")
+	' only circles with a radius of 10
+	Dim gcc10 = New GetObject()
+	gcc10.SetCommandPrompt("select circle with radius of 10")
+	gc.GeometryFilter = ObjectType.Curve
+	gcc10.SetCustomGeometryFilter(AddressOf CircleWithRadiusOf10GeometryFilter) ' custom geometry filter
+	gcc10.DisablePreSelect()
+	gcc10.SubObjectSelect = False
+	gcc10.Get()
+	If gcc10.CommandResult() <> Result.Success Then
+	  Return gcc10.CommandResult()
+	End If
+	If Nothing Is gcc10.Object(0).Curve() Then
+	  Return Result.Failure
+	End If
+	RhinoApp.WriteLine("circle with radius of 10 was selected")
 
-    ' only circles with a radius of 10
-    Dim gcc10 = New GetObject()
-    gcc10.SetCommandPrompt("select circle with radius of 10")
-    gc.GeometryFilter = ObjectType.Curve
-    gcc10.SetCustomGeometryFilter(AddressOf CircleWithRadiusOf10GeometryFilter)
-    ' custom geometry filter
-    gcc10.DisablePreSelect()
-    gcc10.SubObjectSelect = False
-    gcc10.[Get]()
-    If gcc10.CommandResult() <> Result.Success Then
-      Return gcc10.CommandResult()
-    End If
-    If gcc10.[Object](0).Curve() Is Nothing Then
-      Return Result.Failure
-    End If
-    Rhino.RhinoApp.WriteLine("circle with radius of 10 was selected")
-
-    Return Result.Success
+	Return Result.Success
   End Function
 
-  Private Function CircleWithRadiusOf10GeometryFilter(rhObject As Rhino.DocObjects.RhinoObject, geometry As GeometryBase, componentIndex As ComponentIndex) As Boolean
-    Dim isCircleWithRadiusOf10 As Boolean = False
-    Dim circle As Circle
-    If TypeOf geometry Is Curve AndAlso TryCast(geometry, Curve).TryGetCircle(circle) Then
-      isCircleWithRadiusOf10 = circle.Radius <= 10.0 + _tolerance AndAlso circle.Radius >= 10.0 - _tolerance
-    End If
-    Return isCircleWithRadiusOf10
+  Private Shared Function CircleWithRadiusOf10GeometryFilter(ByVal rhObject As Rhino.DocObjects.RhinoObject, ByVal geometry As GeometryBase, ByVal componentIndex As ComponentIndex) As Boolean
+	Dim is_circle_with_radius_of10 As Boolean = False
+	Dim circle As Circle = Nothing
+	If TypeOf geometry Is Curve AndAlso (TryCast(geometry, Curve)).TryGetCircle(circle) Then
+	  is_circle_with_radius_of10 = circle.Radius <= 10.0 + m_tolerance AndAlso circle.Radius >= 10.0 - m_tolerance
+	End If
+	Return is_circle_with_radius_of10
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -190,6 +178,5 @@ def RunCommand():
 if __name__=="__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

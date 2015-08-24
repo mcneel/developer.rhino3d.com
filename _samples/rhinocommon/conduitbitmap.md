@@ -1,48 +1,22 @@
 ---
 layout: code-sample
-title: draw a non-square bitmap in a display conduit
-author: 
-categories: ['Draw'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: draw a non-square bitmap in a display conduit
 keywords: ['draw', 'non-square', 'bitmap', 'display', 'conduit']
-order: 38
-description:  
+categories: ['Draw']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class DrawBitmapConduit : Rhino.Display.DisplayConduit
+partial class Examples
 {
-  private readonly DisplayBitmap m_display_bitmap;
+  static readonly DrawBitmapConduit m_conduit = new DrawBitmapConduit();
 
-  public DrawBitmapConduit()
-  {
-    var flag = new System.Drawing.Bitmap(100, 100);
-    for( int x = 0; x <  flag.Height; ++x )
-        for( int y = 0; y < flag.Width; ++y )
-            flag.SetPixel(x, y, Color.White);
-
-    var g = Graphics.FromImage(flag);
-    g.FillEllipse(Brushes.Blue, 25, 25, 50, 50);
-    m_display_bitmap = new DisplayBitmap(flag);
-  }
-
-  protected override void DrawForeground(Rhino.Display.DrawEventArgs e)
-  {
-    e.Display.DrawBitmap(m_display_bitmap, 50, 50, Color.White);
-  }
-}
-
-public class DrawBitmapCommand : Command
-{
-  public override string EnglishName { get { return "csDrawBitmap"; } }
-
-  readonly DrawBitmapConduit m_conduit = new DrawBitmapConduit();
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result ConduitBitmap(RhinoDoc doc)
   {
     // toggle conduit on/off
     m_conduit.Enabled = !m_conduit.Enabled;
@@ -57,29 +31,20 @@ public class DrawBitmapCommand : Command
 
 
 ```vbnet
-Public Class DrawBitmapConduit
-  Inherits Rhino.Display.DisplayConduit
-  Private ReadOnly m_display_bitmap As DisplayBitmap
+Partial Friend Class Examples
+  Private Shared ReadOnly m_conduit As New DrawBitmapConduit()
 
-  Public Sub New()
-    Dim flag = New System.Drawing.Bitmap(100, 100)
-    For x As Integer = 0 To flag.Height - 1
-      For y As Integer = 0 To flag.Width - 1
-        flag.SetPixel(x, y, Color.White)
-      Next
-    Next
+  Public Shared Function ConduitBitmap(ByVal doc As RhinoDoc) As Result
+	' toggle conduit on/off
+	m_conduit.Enabled = Not m_conduit.Enabled
 
-    Dim g = Graphics.FromImage(flag)
-    g.FillEllipse(Brushes.Blue, 25, 25, 50, 50)
-    m_display_bitmap = New DisplayBitmap(flag)
-  End Sub
-
-  Protected Overrides Sub DrawForeground(e As Rhino.Display.DrawEventArgs)
-    e.Display.DrawBitmap(m_display_bitmap, 50, 50, Color.White)
-  End Sub
+	RhinoApp.WriteLine("Custom conduit enabled = {0}", m_conduit.Enabled)
+	doc.Views.Redraw()
+	Return Result.Success
+  End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -111,6 +76,5 @@ if __name__== "__main__":
     conduit.Enabled = False
     scriptcontext.doc.Views.Redraw()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

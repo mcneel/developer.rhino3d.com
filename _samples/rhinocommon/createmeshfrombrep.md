@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Create Meshes from Brep
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Create Meshes from Brep
 keywords: ['create', 'meshes', 'brep']
-order: 43
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class CreateMeshFromBrepCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csCreateMeshFromBrep"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result CreateMeshFromBrep(RhinoDoc doc)
   {
     ObjRef obj_ref;
     var rc = RhinoGet.GetOneObject("Select surface or polysurface to mesh", true, ObjectType.Surface | ObjectType.PolysrfFilter, out obj_ref);
@@ -52,48 +48,41 @@ public class CreateMeshFromBrepCommand : Command
 
 
 ```vbnet
-Public Class CreateMeshFromBrepCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbCreateMeshFromBrep"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function CreateMeshFromBrep(ByVal doc As RhinoDoc) As Result
+	Dim obj_ref As ObjRef = Nothing
+	Dim rc = RhinoGet.GetOneObject("Select surface or polysurface to mesh", True, ObjectType.Surface Or ObjectType.PolysrfFilter, obj_ref)
+	If rc IsNot Result.Success Then
+	  Return rc
+	End If
+	Dim brep = obj_ref.Brep()
+	If Nothing Is brep Then
+	  Return Result.Failure
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim objRef As ObjRef = Nothing
-    Dim rc = Rhino.Input.RhinoGet.GetOneObject("Select surface or polysurface to mesh", True, ObjectType.Surface Or ObjectType.PolysrfFilter, objRef)
-    If rc <> Result.Success Then
-      Return rc
-    End If
-    Dim brep = objRef.Brep()
-    If brep Is Nothing Then
-      Return Result.Failure
-    End If
+	' you could choose anyone of these for example
+	Dim jagged_and_faster = MeshingParameters.Coarse
+	Dim smooth_and_slower = MeshingParameters.Smooth
+	Dim default_mesh_params = MeshingParameters.Default
+	Dim minimal = MeshingParameters.Minimal
 
-    ' you could choose any one of these for example
-    Dim jaggedAndFaster = MeshingParameters.Coarse
-    Dim smoothAndSlower = MeshingParameters.Smooth
-    Dim defaultMeshParams = MeshingParameters.Default
-    Dim minimal = MeshingParameters.Minimal
+	Dim meshes = Mesh.CreateFromBrep(brep, smooth_and_slower)
+	If meshes Is Nothing OrElse meshes.Length = 0 Then
+	  Return Result.Failure
+	End If
 
-    Dim meshes = Mesh.CreateFromBrep(brep, smoothAndSlower)
-    If meshes Is Nothing OrElse meshes.Length = 0 Then
-      Return Result.Failure
-    End If
+	Dim brep_mesh = New Mesh()
+	For Each mesh In meshes
+	  brep_mesh.Append(mesh)
+	Next mesh
+	doc.Objects.AddMesh(brep_mesh)
+	doc.Views.Redraw()
 
-    Dim brepmesh = New Mesh()
-    For Each facemesh As Mesh In meshes
-      brepmesh.Append(facemesh)
-    Next
-
-    doc.Objects.AddMesh(brepmesh)
-    doc.Views.Redraw()
-    Return Result.Success
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -132,6 +121,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

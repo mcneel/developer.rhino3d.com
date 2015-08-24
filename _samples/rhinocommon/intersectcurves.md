@@ -1,100 +1,103 @@
 ---
 layout: code-sample
-title: Calculate Curve Intersections
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Calculate Curve Intersections
 keywords: ['calculate', 'curve', 'intersections']
-order: 98
-description:  
+categories: ['Curves']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result IntersectCurves(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  // Select two curves to intersect
-  var go = new Rhino.Input.Custom.GetObject();
-  go.SetCommandPrompt("Select two curves");
-  go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;
-  go.GetMultiple(2, 2);
-  if (go.CommandResult() != Rhino.Commands.Result.Success)
-    return go.CommandResult();
-
-  // Validate input
-  var curveA = go.Object(0).Curve();
-  var curveB = go.Object(1).Curve();
-  if (curveA == null || curveB == null)
-    return Rhino.Commands.Result.Failure;
-
-  // Calculate the intersection
-  const double intersection_tolerance = 0.001;
-  const double overlap_tolerance = 0.0;
-  var events = Rhino.Geometry.Intersect.Intersection.CurveCurve(curveA, curveB, intersection_tolerance, overlap_tolerance);
-
-  // Process the results
-  if (events != null)
+  public static Rhino.Commands.Result IntersectCurves(Rhino.RhinoDoc doc)
   {
-    for (int i = 0; i < events.Count; i++)
+    // Select two curves to intersect
+    var go = new Rhino.Input.Custom.GetObject();
+    go.SetCommandPrompt("Select two curves");
+    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;
+    go.GetMultiple(2, 2);
+    if (go.CommandResult() != Rhino.Commands.Result.Success)
+      return go.CommandResult();
+
+    // Validate input
+    var curveA = go.Object(0).Curve();
+    var curveB = go.Object(1).Curve();
+    if (curveA == null || curveB == null)
+      return Rhino.Commands.Result.Failure;
+
+    // Calculate the intersection
+    const double intersection_tolerance = 0.001;
+    const double overlap_tolerance = 0.0;
+    var events = Rhino.Geometry.Intersect.Intersection.CurveCurve(curveA, curveB, intersection_tolerance, overlap_tolerance);
+
+    // Process the results
+    if (events != null)
     {
-      var ccx_event = events[i];
-      doc.Objects.AddPoint(ccx_event.PointA);
-      if (ccx_event.PointA.DistanceTo(ccx_event.PointB) > double.Epsilon)
+      for (int i = 0; i < events.Count; i++)
       {
-        doc.Objects.AddPoint(ccx_event.PointB);
-        doc.Objects.AddLine(ccx_event.PointA, ccx_event.PointB);
+        var ccx_event = events[i];
+        doc.Objects.AddPoint(ccx_event.PointA);
+        if (ccx_event.PointA.DistanceTo(ccx_event.PointB) > double.Epsilon)
+        {
+          doc.Objects.AddPoint(ccx_event.PointB);
+          doc.Objects.AddLine(ccx_event.PointA, ccx_event.PointB);
+        }
       }
+      doc.Views.Redraw();
     }
-    doc.Views.Redraw();
+    return Rhino.Commands.Result.Success;
   }
-  return Rhino.Commands.Result.Success;
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function IntersectCurves(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  ' Select two curves to intersect
-  Dim go = New Rhino.Input.Custom.GetObject()
-  go.SetCommandPrompt("Select two curves")
-  go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
-  go.GetMultiple(2, 2)
-  If go.CommandResult() <> Rhino.Commands.Result.Success Then
-    Return go.CommandResult()
-  End If
+Partial Friend Class Examples
+  Public Shared Function IntersectCurves(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	' Select two curves to intersect
+	Dim go = New Rhino.Input.Custom.GetObject()
+	go.SetCommandPrompt("Select two curves")
+	go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
+	go.GetMultiple(2, 2)
+	If go.CommandResult() <> Rhino.Commands.Result.Success Then
+	  Return go.CommandResult()
+	End If
 
-  ' Validate input
-  Dim curveA = go.[Object](0).Curve()
-  Dim curveB = go.[Object](1).Curve()
-  If curveA Is Nothing OrElse curveB Is Nothing Then
-    Return Rhino.Commands.Result.Failure
-  End If
+	' Validate input
+	Dim curveA = go.Object(0).Curve()
+	Dim curveB = go.Object(1).Curve()
+	If curveA Is Nothing OrElse curveB Is Nothing Then
+	  Return Rhino.Commands.Result.Failure
+	End If
 
-  ' Calculate the intersection
-  Const intersection_tolerance As Double = 0.001
-  Const overlap_tolerance As Double = 0.0
-  Dim events = Rhino.Geometry.Intersect.Intersection.CurveCurve(curveA, curveB, intersection_tolerance, overlap_tolerance)
+	' Calculate the intersection
+	Const intersection_tolerance As Double = 0.001
+	Const overlap_tolerance As Double = 0.0
+	Dim events = Rhino.Geometry.Intersect.Intersection.CurveCurve(curveA, curveB, intersection_tolerance, overlap_tolerance)
 
-  ' Process the results
-  If events IsNot Nothing Then
-    For i As Integer = 0 To events.Count - 1
-      Dim ccx_event = events(i)
-      doc.Objects.AddPoint(ccx_event.PointA)
-      If ccx_event.PointA.DistanceTo(ccx_event.PointB) > Double.Epsilon Then
-        doc.Objects.AddPoint(ccx_event.PointB)
-        doc.Objects.AddLine(ccx_event.PointA, ccx_event.PointB)
-      End If
-    Next
-    doc.Views.Redraw()
-  End If
-  Return Rhino.Commands.Result.Success
-End Function
+	' Process the results
+	If events IsNot Nothing Then
+	  For i As Integer = 0 To events.Count - 1
+		Dim ccx_event = events(i)
+		doc.Objects.AddPoint(ccx_event.PointA)
+		If ccx_event.PointA.DistanceTo(ccx_event.PointB) > Double.Epsilon Then
+		  doc.Objects.AddPoint(ccx_event.PointB)
+		  doc.Objects.AddLine(ccx_event.PointA, ccx_event.PointB)
+		End If
+	  Next i
+	  doc.Views.Redraw()
+	End If
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -131,6 +134,5 @@ def IntersectCurves():
 if __name__=="__main__":
     IntersectCurves()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

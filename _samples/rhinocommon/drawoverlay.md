@@ -1,41 +1,26 @@
 ---
 layout: code-sample
-title: Display conduit to draw overlay text
-author: 
-categories: ['Draw'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Display conduit to draw overlay text
 keywords: ['display', 'conduit', 'draw', 'overlay', 'text']
-order: 67
-description:  
+categories: ['Draw']
+description:
+order: 1
 ---
 
-
-
 ```cs
-class CustomConduit : Rhino.Display.DisplayConduit
+partial class Examples
 {
-  protected override void DrawForeground(Rhino.Display.DrawEventArgs e)
-  {
-    var bounds = e.Viewport.Bounds;
-    var pt = new Rhino.Geometry.Point2d(bounds.Right - 100, bounds.Bottom - 30);
-    e.Display.Draw2dText("Hello", System.Drawing.Color.Red, pt, false);
-  }
-}
-
-[System.Runtime.InteropServices.Guid("58e7d4b7-407a-43b7-867b-3c517dd53d9d")]
-public class ex_drawoverlay : Rhino.Commands.Command
-{
-  public override string EnglishName { get { return "csDrawOverlay"; } }
-
-  readonly CustomConduit m_conduit = new CustomConduit();
-  protected override Rhino.Commands.Result RunCommand(RhinoDoc doc, Rhino.Commands.RunMode mode)
+  readonly static CustomConduit m_customconduit = new CustomConduit();
+  public static Rhino.Commands.Result DrawOverlay(RhinoDoc doc)
   {
     // toggle conduit on/off
-    m_conduit.Enabled = !m_conduit.Enabled;
+    m_customconduit.Enabled = !m_conduit.Enabled;
     
-    RhinoApp.WriteLine("Custom conduit enabled = {0}", m_conduit.Enabled);
+    RhinoApp.WriteLine("Custom conduit enabled = {0}", m_customconduit.Enabled);
     doc.Views.Redraw();
     return Rhino.Commands.Result.Success;
   }
@@ -45,26 +30,19 @@ public class ex_drawoverlay : Rhino.Commands.Command
 
 
 ```vbnet
-Inherits Rhino.Commands.Command
+Partial Friend Class Examples
+  Private ReadOnly Shared m_customconduit As New CustomConduit()
+  Public Shared Function DrawOverlay(ByVal doc As RhinoDoc) As Rhino.Commands.Result
+	' toggle conduit on/off
+	m_customconduit.Enabled = Not m_conduit.Enabled
 
-Public Overrides ReadOnly Property EnglishName() As String
-  Get
-    Return "ex_drawoverlay"
-  End Get
-End Property
-
-ReadOnly m_conduit As New CustomConduit()
-
-Protected Overrides Function RunCommand(ByVal doc As RhinoDoc, ByVal mode As Rhino.Commands.RunMode) As Rhino.Commands.Result
-  ' toggle conduit on/off
-  m_conduit.Enabled = Not m_conduit.Enabled
-
-  RhinoApp.WriteLine("Custom conduit enabled = {0}", m_conduit.Enabled)
-  doc.Views.Redraw()
-  Return Rhino.Commands.Result.Success
-End Function
+	RhinoApp.WriteLine("Custom conduit enabled = {0}", m_customconduit.Enabled)
+	doc.Views.Redraw()
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -120,6 +98,5 @@ if __name__=="__main__":
     showinscript()
     #showafterscript()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

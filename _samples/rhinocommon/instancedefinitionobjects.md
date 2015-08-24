@@ -1,65 +1,68 @@
 ---
 layout: code-sample
-title: List Block Definition Geometry
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: List Block Definition Geometry
 keywords: ['list', 'block', 'definition', 'geometry']
-order: 97
-description:  
+categories: ['Blocks']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result InstanceDefinitionObjects(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.DocObjects.ObjRef objref;
-  var rc = Rhino.Input.RhinoGet.GetOneObject("Select instance", false, Rhino.DocObjects.ObjectType.InstanceReference, out objref);
-  if (rc != Rhino.Commands.Result.Success)
-    return rc;
-
-  var iref = objref.Object() as Rhino.DocObjects.InstanceObject;
-  if (iref != null)
+  public static Rhino.Commands.Result InstanceDefinitionObjects(Rhino.RhinoDoc doc)
   {
-    var idef = iref.InstanceDefinition;
-    if (idef != null)
+    Rhino.DocObjects.ObjRef objref;
+    var rc = Rhino.Input.RhinoGet.GetOneObject("Select instance", false, Rhino.DocObjects.ObjectType.InstanceReference, out objref);
+    if (rc != Rhino.Commands.Result.Success)
+      return rc;
+
+    var iref = objref.Object() as Rhino.DocObjects.InstanceObject;
+    if (iref != null)
     {
-      var rhino_objects = idef.GetObjects();
-      for (int i = 0; i < rhino_objects.Length; i++)
-        Rhino.RhinoApp.WriteLine("Object {0} = {1}", i, rhino_objects[i].Id);
+      var idef = iref.InstanceDefinition;
+      if (idef != null)
+      {
+        var rhino_objects = idef.GetObjects();
+        for (int i = 0; i < rhino_objects.Length; i++)
+          Rhino.RhinoApp.WriteLine("Object {0} = {1}", i, rhino_objects[i].Id);
+      }
     }
+    return Rhino.Commands.Result.Success;
   }
-  return Rhino.Commands.Result.Success;
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function InstanceDefinitionObjects(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim objref As Rhino.DocObjects.ObjRef = Nothing
-  Dim rc = Rhino.Input.RhinoGet.GetOneObject("Select instance", False, Rhino.DocObjects.ObjectType.InstanceReference, objref)
-  If rc <> Rhino.Commands.Result.Success Then
-    Return rc
-  End If
+Partial Friend Class Examples
+  Public Shared Function InstanceDefinitionObjects(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim objref As Rhino.DocObjects.ObjRef = Nothing
+	Dim rc = Rhino.Input.RhinoGet.GetOneObject("Select instance", False, Rhino.DocObjects.ObjectType.InstanceReference, objref)
+	If rc IsNot Rhino.Commands.Result.Success Then
+	  Return rc
+	End If
 
-  Dim iref = TryCast(objref.Object(), Rhino.DocObjects.InstanceObject)
-  If iref IsNot Nothing Then
-    Dim idef = iref.InstanceDefinition
-    If idef IsNot Nothing Then
-      Dim rhino_objects = idef.GetObjects()
-      For i As Integer = 0 To rhino_objects.Length - 1
-        Rhino.RhinoApp.WriteLine("Object {0} = {1}", i, rhino_objects(i).Id)
-      Next
-    End If
-  End If
-  Return Rhino.Commands.Result.Success
-End Function
+	Dim iref = TryCast(objref.Object(), Rhino.DocObjects.InstanceObject)
+	If iref IsNot Nothing Then
+	  Dim idef = iref.InstanceDefinition
+	  If idef IsNot Nothing Then
+		Dim rhino_objects = idef.GetObjects()
+		For i As Integer = 0 To rhino_objects.Length - 1
+		  Rhino.RhinoApp.WriteLine("Object {0} = {1}", i, rhino_objects(i).Id)
+		Next i
+	  End If
+	End If
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -81,6 +84,5 @@ def InstanceDefinitionObjects():
 if __name__=="__main__":
     InstanceDefinitionObjects()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

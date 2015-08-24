@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Clone (Copy, Duplicate) a Rhino Object
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['clone', '(copy,', 'duplicate)', 'rhino', 'object']
-order: 70
-description:  
+title: Clone (Copy, Duplicate) a Rhino Object
+keywords: ['clone', 'copy,', 'duplicate', 'rhino', 'object']
+categories: ['Adding Objects']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class DuplicateObjectCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csDuplicateObject"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result DuplicateObject(RhinoDoc doc)
   {
     ObjRef obj_ref;
     var rc = RhinoGet.GetOneObject("Select object to duplicate", false, ObjectType.AnyObject, out obj_ref);
@@ -39,35 +35,27 @@ public class DuplicateObjectCommand : Command
 
 
 ```vbnet
-Public Class DuplicateObjectCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbDuplicateObject"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function DuplicateObject(ByVal doc As RhinoDoc) As Result
+	Dim obj_ref As ObjRef = Nothing
+	Dim rc = RhinoGet.GetOneObject("Select object to duplicate", False, ObjectType.AnyObject, obj_ref)
+	If rc IsNot Result.Success Then
+	  Return rc
+	End If
+	Dim rhino_object = obj_ref.Object()
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim obj_ref As ObjRef = Nothing
+	Dim geometry_base = rhino_object.DuplicateGeometry()
+	If geometry_base IsNot Nothing Then
+	  If doc.Objects.Add(geometry_base) <> Guid.Empty Then
+		doc.Views.Redraw()
+	  End If
+	End If
 
-    Dim rc = RhinoGet.GetOneObject("Select object to duplicate", False, ObjectType.AnyObject, obj_ref)
-    If rc <> Result.Success Then
-      Return rc
-    End If
-    Dim rhino_object = obj_ref.[Object]()
-
-    Dim geometry_base = rhino_object.DuplicateGeometry()
-    If geometry_base IsNot Nothing Then
-      If doc.Objects.Add(geometry_base) <> Guid.Empty Then
-        doc.Views.Redraw()
-      End If
-    End If
-
-    Return Result.Success
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -80,7 +68,8 @@ from scriptcontext import doc
 
 def RunCommand():
   
-  rc, obj_ref = RhinoGet.GetOneObject("Select object to duplicate", False, ObjectType.AnyObject)
+  rc, obj_ref = RhinoGet.GetOneObject(
+    "Select object to duplicate", False, ObjectType.AnyObject)
   if rc <> Result.Success:
     return rc
   rhino_object = obj_ref.Object()
@@ -95,6 +84,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

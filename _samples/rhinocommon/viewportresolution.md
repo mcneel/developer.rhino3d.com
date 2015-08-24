@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Print Active Viewport Resolution
-author: 
-categories: ['Viewports and Views'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Print Active Viewport Resolution
 keywords: ['print', 'active', 'viewport', 'resolution']
-order: 169
-description:  
+categories: ['Viewports and Views']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class ViewportResolutionCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csViewportResolution"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result ViewportResolution(RhinoDoc doc)
   {
     var active_viewport = doc.Views.ActiveView.ActiveViewport;
     RhinoApp.WriteLine("Name = {0}: Width = {1}, Height = {2}", 
@@ -31,22 +27,15 @@ public class ViewportResolutionCommand : Command
 
 
 ```vbnet
-Public Class ViewportResolutionCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbViewportResolution"
-    End Get
-  End Property
-
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim activeViewport = doc.Views.ActiveView.ActiveViewport
-    RhinoApp.WriteLine([String].Format("Name = {0}: Width = {1}, Height = {2}", activeViewport.Name, activeViewport.Size.Width, activeViewport.Size.Height))
-    Return Result.Success
+Partial Friend Class Examples
+  Public Shared Function ViewportResolution(ByVal doc As RhinoDoc) As Result
+	Dim active_viewport = doc.Views.ActiveView.ActiveViewport
+	RhinoApp.WriteLine("Name = {0}: Width = {1}, Height = {2}", active_viewport.Name, active_viewport.Size.Width, active_viewport.Size.Height)
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -56,6 +45,5 @@ activeViewport = doc.Views.ActiveView.ActiveViewport
 print "Name = {0}: Width = {1}, Height = {2}".format(
     activeViewport.Name, activeViewport.Size.Width, activeViewport.Size.Height)
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

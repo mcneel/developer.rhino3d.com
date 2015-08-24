@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Bounding Polyline from Naked Edges of Open Mesh
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Bounding Polyline from Naked Edges of Open Mesh
 keywords: ['bounding', 'polyline', 'naked', 'edges', 'open', 'mesh']
-order: 71
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class DupMeshBoundaryCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csDupMeshBoundary"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result DupMeshBoundary(RhinoDoc doc)
   {
     var gm = new GetObject();
     gm.SetCommandPrompt("Select open mesh");
@@ -45,38 +41,31 @@ public class DupMeshBoundaryCommand : Command
 
 
 ```vbnet
-Public Class DupMeshBoundaryCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbDupMeshBoundary"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function DupMeshBoundary(ByVal doc As RhinoDoc) As Result
+	Dim gm = New GetObject()
+	gm.SetCommandPrompt("Select open mesh")
+	gm.GeometryFilter = ObjectType.Mesh
+	gm.GeometryAttributeFilter = GeometryAttributeFilter.OpenMesh
+	gm.Get()
+	If gm.CommandResult() <> Result.Success Then
+	  Return gm.CommandResult()
+	End If
+	Dim mesh = gm.Object(0).Mesh()
+	If mesh Is Nothing Then
+	  Return Result.Failure
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim gm = New GetObject()
-    gm.SetCommandPrompt("Select open mesh")
-    gm.GeometryFilter = ObjectType.Mesh
-    gm.GeometryAttributeFilter = GeometryAttributeFilter.OpenMesh
-    gm.[Get]()
-    If gm.CommandResult() <> Result.Success Then
-      Return gm.CommandResult()
-    End If
-    Dim mesh = gm.[Object](0).Mesh()
-    If mesh Is Nothing Then
-      Return Result.Failure
-    End If
+	Dim polylines = mesh.GetNakedEdges()
+	For Each polyline In polylines
+	  doc.Objects.AddPolyline(polyline)
+	Next polyline
 
-    Dim polylines = mesh.GetNakedEdges()
-    For Each polyline As Polyline In polylines
-      doc.Objects.AddPolyline(polyline)
-    Next
-
-    Return Result.Success
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -106,6 +95,5 @@ def RunCommand():
 if __name__ == "__main__":
     RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

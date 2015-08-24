@@ -1,126 +1,112 @@
 ---
 layout: code-sample
-title: Custom Undo
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Custom Undo
 keywords: ['custom', 'undo']
-order: 54
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public override string EnglishName { get { return "cs_CustomUndoCommand"; } }
-
-double MyFavoriteNumber { get; set; }
-
-protected override Rhino.Commands.Result RunCommand(RhinoDoc doc, Rhino.Commands.RunMode mode)
+partial class Examples
 {
-  // Rhino automatically sets up an undo record when a command is run,
-  // but... the undo record is not saved if nothing changes in the
-  // document (objects added/deleted, layers changed,...)
-  //
-  // If we have a command that doesn't change things in the document,
-  // but we want to have our own custom undo called then we need to do
-  // a little extra work
+  static double MyFavoriteNumber = 0;
 
-  double d = MyFavoriteNumber;
-  if (Rhino.Input.RhinoGet.GetNumber("Favorite number", true, ref d) == Rhino.Commands.Result.Success)
+  public static Rhino.Commands.Result CustomUndo(RhinoDoc doc)
   {
-    double current_value = MyFavoriteNumber;
-    doc.AddCustomUndoEvent("Favorite Number", OnUndoFavoriteNumber, current_value);
-    MyFavoriteNumber = d;
+    // Rhino automatically sets up an undo record when a command is run,
+    // but... the undo record is not saved if nothing changes in the
+    // document (objects added/deleted, layers changed,...)
+    //
+    // If we have a command that doesn't change things in the document,
+    // but we want to have our own custom undo called then we need to do
+    // a little extra work
+
+    double d = MyFavoriteNumber;
+    if (Rhino.Input.RhinoGet.GetNumber("Favorite number", true, ref d) == Rhino.Commands.Result.Success)
+    {
+      double current_value = MyFavoriteNumber;
+      doc.AddCustomUndoEvent("Favorite Number", OnUndoFavoriteNumber, current_value);
+      MyFavoriteNumber = d;
+    }
+    return Rhino.Commands.Result.Success;
   }
-  return Rhino.Commands.Result.Success;
-}
 
-// event handler for custom undo
-void OnUndoFavoriteNumber(object sender, Rhino.Commands.CustomUndoEventArgs e)
-{
-  // !!!!!!!!!!
-  // NEVER change any setting in the Rhino document or application.  Rhino
-  // handles ALL changes to the application and document and you will break
-  // the Undo/Redo commands if you make any changes to the application or
-  // document. This is meant only for your own private plug-in data
-  // !!!!!!!!!!
+  // event handler for custom undo
+  static void OnUndoFavoriteNumber(object sender, Rhino.Commands.CustomUndoEventArgs e)
+  {
+    // !!!!!!!!!!
+    // NEVER change any setting in the Rhino document or application.  Rhino
+    // handles ALL changes to the application and document and you will break
+    // the Undo/Redo commands if you make any changes to the application or
+    // document. This is meant only for your own private plug-in data
+    // !!!!!!!!!!
 
-  // This function can be called either by undo or redo
-  // In order to get redo to work, add another custom undo event with the
-  // current value.  If you don't want redo to work, just skip adding
-  // a custom undo event here
-  double current_value = MyFavoriteNumber;
-  e.Document.AddCustomUndoEvent("Favorite Number", OnUndoFavoriteNumber, current_value);
+    // This function can be called either by undo or redo
+    // In order to get redo to work, add another custom undo event with the
+    // current value.  If you don't want redo to work, just skip adding
+    // a custom undo event here
+    double current_value = MyFavoriteNumber;
+    e.Document.AddCustomUndoEvent("Favorite Number", OnUndoFavoriteNumber, current_value);
 
-  double old_value = (double)e.Tag;
-  RhinoApp.WriteLine("Going back to your favorite = {0}", old_value);
-  MyFavoriteNumber = old_value;
+    double old_value = (double)e.Tag;
+    RhinoApp.WriteLine("Going back to your favorite = {0}", old_value);
+    MyFavoriteNumber = old_value;
+  }
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Inherits Rhino.Commands.Command
-Public Overrides ReadOnly Property EnglishName() As String
-  Get
-    Return "vb_CustomUndoCommand"
-  End Get
-End Property
+Partial Friend Class Examples
+  Private Shared MyFavoriteNumber As Double = 0
 
-Private Property MyFavoriteNumber() As Double
-  Get
-    Return m_MyFavoriteNumber
-  End Get
-  Set(value As Double)
-    m_MyFavoriteNumber = value
-  End Set
-End Property
-Private m_MyFavoriteNumber As Double
+  Public Shared Function CustomUndo(ByVal doc As RhinoDoc) As Rhino.Commands.Result
+	' Rhino automatically sets up an undo record when a command is run,
+	' but... the undo record is not saved if nothing changes in the
+	' document (objects added/deleted, layers changed,...)
+	'
+	' If we have a command that doesn't change things in the document,
+	' but we want to have our own custom undo called then we need to do
+	' a little extra work
 
-Protected Overrides Function RunCommand(doc As RhinoDoc, mode As Rhino.Commands.RunMode) As Rhino.Commands.Result
-  ' Rhino automatically sets up an undo record when a command is run,
-  ' but... the undo record is not saved if nothing changes in the
-  ' document (objects added/deleted, layers changed,...)
-  '
-  ' If we have a command that doesn't change things in the document,
-  ' but we want to have our own custom undo called then we need to do
-  ' a little extra work
+	Dim d As Double = MyFavoriteNumber
+	If Rhino.Input.RhinoGet.GetNumber("Favorite number", True, d) = Rhino.Commands.Result.Success Then
+	  Dim current_value As Double = MyFavoriteNumber
+	  doc.AddCustomUndoEvent("Favorite Number", AddressOf OnUndoFavoriteNumber, current_value)
+	  MyFavoriteNumber = d
+	End If
+	Return Rhino.Commands.Result.Success
+  End Function
 
-  Dim d As Double = MyFavoriteNumber
-  If Rhino.Input.RhinoGet.GetNumber("Favorite number", True, d) = Rhino.Commands.Result.Success Then
-    Dim current_value As Double = MyFavoriteNumber
-    doc.AddCustomUndoEvent("Favorite Number", AddressOf OnUndoFavoriteNumber, current_value)
-    MyFavoriteNumber = d
-  End If
-  Return Rhino.Commands.Result.Success
-End Function
+  ' event handler for custom undo
+  Private Shared Sub OnUndoFavoriteNumber(ByVal sender As Object, ByVal e As Rhino.Commands.CustomUndoEventArgs)
+	' !!!!!!!!!!
+	' NEVER change any setting in the Rhino document or application.  Rhino
+	' handles ALL changes to the application and document and you will break
+	' the Undo/Redo commands if you make any changes to the application or
+	' document. This is meant only for your own private plug-in data
+	' !!!!!!!!!!
 
-' event handler for custom undo
-Private Sub OnUndoFavoriteNumber(sender As Object, e As Rhino.Commands.CustomUndoEventArgs)
-  ' !!!!!!!!!!
-  ' NEVER change any setting in the Rhino document or application.  Rhino
-  ' handles ALL changes to the application and document and you will break
-  ' the Undo/Redo commands if you make any changes to the application or
-  ' document. This is meant only for your own private plug-in data
-  ' !!!!!!!!!!
+	' This function can be called either by undo or redo
+	' In order to get redo to work, add another custom undo event with the
+	' current value.  If you don't want redo to work, just skip adding
+	' a custom undo event here
+	Dim current_value As Double = MyFavoriteNumber
+	e.Document.AddCustomUndoEvent("Favorite Number", AddressOf OnUndoFavoriteNumber, current_value)
 
-  ' This function can be called either by undo or redo
-  ' In order to get redo to work, add another custom undo event with the
-  ' current value.  If you don't want redo to work, just skip adding
-  ' a custom undo event here
-  Dim current_value As Double = MyFavoriteNumber
-  e.Document.AddCustomUndoEvent("Favorite Number", AddressOf OnUndoFavoriteNumber, current_value)
-
-  Dim old_value As Double = CDbl(e.Tag)
-  RhinoApp.WriteLine("Going back to your favorite = {0}", old_value)
-  MyFavoriteNumber = old_value
-End Sub
+	Dim old_value As Double = CDbl(e.Tag)
+	RhinoApp.WriteLine("Going back to your favorite = {0}", old_value)
+	MyFavoriteNumber = old_value
+  End Sub
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -171,6 +157,5 @@ if __name__=="__main__":
     TestCustomUndo()
 
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

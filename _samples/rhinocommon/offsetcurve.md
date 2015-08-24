@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Offset a Curve
-author: 
-categories: ['Curves'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Offset a Curve
 keywords: ['offset', 'curve']
-order: 126
-description:  
+categories: ['Curves']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class OffsetCurveCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csOffsetCurve"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result OffsetCurve(RhinoDoc doc)
   {
     ObjRef obj_ref;
     var rs = RhinoGet.GetOneObject(
@@ -51,46 +47,39 @@ public class OffsetCurveCommand : Command
 
 
 ```vbnet
-Public Class OffsetCurveCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbOffsetCurve"
-    End Get
-  End Property
+Partial Friend Class Examples
+  Public Shared Function OffsetCurve(ByVal doc As RhinoDoc) As Result
+	Dim obj_ref As ObjRef = Nothing
+	Dim rs = RhinoGet.GetOneObject("Select Curve", False, ObjectType.Curve, obj_ref)
+	If rs IsNot Result.Success Then
+	  Return rs
+	End If
+	Dim curve = obj_ref.Curve()
+	If curve Is Nothing Then
+	  Return Result.Nothing
+	End If
 
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim obj_ref As ObjRef = Nothing
-    Dim rs = RhinoGet.GetOneObject("Select Curve", False, ObjectType.Curve, obj_ref)
-    If rs <> Result.Success Then
-      Return rs
-    End If
-    Dim curve = obj_ref.Curve()
-    If curve Is Nothing Then
-      Return Result.[Nothing]
-    End If
+	Dim point As Point3d = Nothing
+	rs = RhinoGet.GetPoint("Select Side", False, point)
+	If rs IsNot Result.Success Then
+	  Return rs
+	End If
+	If point Is Point3d.Unset Then
+	  Return Result.Nothing
+	End If
 
-    Dim point As Point3d
-    rs = RhinoGet.GetPoint("Select Side", False, point)
-    If rs <> Result.Success Then
-      Return rs
-    End If
-    If point = Point3d.Unset Then
-      Return Result.[Nothing]
-    End If
+	Dim curves = curve.Offset(point, Vector3d.ZAxis, 1.0, doc.ModelAbsoluteTolerance, CurveOffsetCornerStyle.None)
 
-    Dim curves = curve.Offset(point, Vector3d.ZAxis, 1.0, doc.ModelAbsoluteTolerance, CurveOffsetCornerStyle.None)
+	For Each offset_curve In curves
+	  doc.Objects.AddCurve(offset_curve)
+	Next offset_curve
 
-    For Each offset_curve As Curve In curves
-      doc.Objects.AddCurve(offset_curve)
-    Next
-
-    doc.Views.Redraw()
-    Return Result.Success
+	doc.Views.Redraw()
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -128,6 +117,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

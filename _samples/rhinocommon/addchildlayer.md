@@ -1,100 +1,103 @@
 ---
 layout: code-sample
-title: Add Child Layer
-author: 
-categories: ['Adding Objects'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['child', 'layer']
-order: 4
-description:  
+title: Add Child Layer
+keywords: ['add', 'child', 'layer']
+categories: ['Adding Objects', 'Layers']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result AddChildLayer(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  // Get an existing layer
-  string default_name = doc.Layers.CurrentLayer.Name;
-
-  // Prompt the user to enter a layer name
-  Rhino.Input.Custom.GetString gs = new Rhino.Input.Custom.GetString();
-  gs.SetCommandPrompt("Name of existing layer");
-  gs.SetDefaultString(default_name);
-  gs.AcceptNothing(true);
-  gs.Get();
-  if (gs.CommandResult() != Rhino.Commands.Result.Success)
-    return gs.CommandResult();
-
-  // Was a layer named entered?
-  string layer_name = gs.StringResult().Trim();
-  int index = doc.Layers.Find(layer_name, true);
-  if (index<0)
-    return Rhino.Commands.Result.Cancel;
-
-  Rhino.DocObjects.Layer parent_layer = doc.Layers[index];
-
-  // Create a child layer
-  string child_name = parent_layer.Name + "_child";
-  Rhino.DocObjects.Layer childlayer = new Rhino.DocObjects.Layer();
-  childlayer.ParentLayerId = parent_layer.Id;
-  childlayer.Name = child_name;
-  childlayer.Color = System.Drawing.Color.Red;
-
-  index = doc.Layers.Add(childlayer);
-  if (index < 0)
+  public static Rhino.Commands.Result AddChildLayer(Rhino.RhinoDoc doc)
   {
-    Rhino.RhinoApp.WriteLine("Unable to add {0} layer.", child_name);
-    return Rhino.Commands.Result.Failure;
+    // Get an existing layer
+    string default_name = doc.Layers.CurrentLayer.Name;
+
+    // Prompt the user to enter a layer name
+    Rhino.Input.Custom.GetString gs = new Rhino.Input.Custom.GetString();
+    gs.SetCommandPrompt("Name of existing layer");
+    gs.SetDefaultString(default_name);
+    gs.AcceptNothing(true);
+    gs.Get();
+    if (gs.CommandResult() != Rhino.Commands.Result.Success)
+      return gs.CommandResult();
+
+    // Was a layer named entered?
+    string layer_name = gs.StringResult().Trim();
+    int index = doc.Layers.Find(layer_name, true);
+    if (index<0)
+      return Rhino.Commands.Result.Cancel;
+
+    Rhino.DocObjects.Layer parent_layer = doc.Layers[index];
+
+    // Create a child layer
+    string child_name = parent_layer.Name + "_child";
+    Rhino.DocObjects.Layer childlayer = new Rhino.DocObjects.Layer();
+    childlayer.ParentLayerId = parent_layer.Id;
+    childlayer.Name = child_name;
+    childlayer.Color = System.Drawing.Color.Red;
+
+    index = doc.Layers.Add(childlayer);
+    if (index < 0)
+    {
+      Rhino.RhinoApp.WriteLine("Unable to add {0} layer.", child_name);
+      return Rhino.Commands.Result.Failure;
+    }
+    return Rhino.Commands.Result.Success;
   }
-  return Rhino.Commands.Result.Success;
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function AddChildLayer(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  ' Get an existing layer
-  Dim default_name As String = doc.Layers.CurrentLayer.Name
+Partial Friend Class Examples
+  Public Shared Function AddChildLayer(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	' Get an existing layer
+	Dim default_name As String = doc.Layers.CurrentLayer.Name
 
-  ' Prompt the user to enter a layer name
-  Dim gs As New Rhino.Input.Custom.GetString()
-  gs.SetCommandPrompt("Name of existing layer")
-  gs.SetDefaultString(default_name)
-  gs.AcceptNothing(True)
-  gs.[Get]()
-  If gs.CommandResult() <> Rhino.Commands.Result.Success Then
-    Return gs.CommandResult()
-  End If
+	' Prompt the user to enter a layer name
+	Dim gs As New Rhino.Input.Custom.GetString()
+	gs.SetCommandPrompt("Name of existing layer")
+	gs.SetDefaultString(default_name)
+	gs.AcceptNothing(True)
+	gs.Get()
+	If gs.CommandResult() <> Rhino.Commands.Result.Success Then
+	  Return gs.CommandResult()
+	End If
 
-  ' Was a layer named entered?
-  Dim layer_name As String = gs.StringResult().Trim()
-  Dim index As Integer = doc.Layers.Find(layer_name, True)
-  If index < 0 Then
-    Return Rhino.Commands.Result.Cancel
-  End If
+	' Was a layer named entered?
+	Dim layer_name As String = gs.StringResult().Trim()
+	Dim index As Integer = doc.Layers.Find(layer_name, True)
+	If index<0 Then
+	  Return Rhino.Commands.Result.Cancel
+	End If
 
-  Dim parent_layer As Rhino.DocObjects.Layer = doc.Layers(index)
+	Dim parent_layer As Rhino.DocObjects.Layer = doc.Layers(index)
 
-  ' Create a child layer
-  Dim child_name As String = parent_layer.Name + "_child"
-  Dim childlayer As New Rhino.DocObjects.Layer()
-  childlayer.ParentLayerId = parent_layer.Id
-  childlayer.Name = child_name
-  childlayer.Color = System.Drawing.Color.Red
+	' Create a child layer
+	Dim child_name As String = parent_layer.Name & "_child"
+	Dim childlayer As New Rhino.DocObjects.Layer()
+	childlayer.ParentLayerId = parent_layer.Id
+	childlayer.Name = child_name
+	childlayer.Color = System.Drawing.Color.Red
 
-  index = doc.Layers.Add(childlayer)
-  If index < 0 Then
-    Rhino.RhinoApp.WriteLine("Unable to add {0} layer.", child_name)
-    Return Rhino.Commands.Result.Failure
-  End If
-  Return Rhino.Commands.Result.Success
-End Function
+	index = doc.Layers.Add(childlayer)
+	If index < 0 Then
+	  Rhino.RhinoApp.WriteLine("Unable to add {0} layer.", child_name)
+	  Return Rhino.Commands.Result.Failure
+	End If
+	Return Rhino.Commands.Result.Success
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -137,6 +140,5 @@ def AddChildLayer():
 if __name__=="__main__":
     AddChildLayer()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

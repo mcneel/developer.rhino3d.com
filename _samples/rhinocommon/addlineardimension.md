@@ -1,51 +1,54 @@
 ---
 layout: code-sample
-title: Add Linear Dimension
-author: 
-categories: ['Drafting'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-keywords: ['linear', 'dimension']
-order: 12
-description:  
+title: Add Linear Dimension
+keywords: ['add', 'linear', 'dimension']
+categories: ['Adding Objects']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public static Rhino.Commands.Result AddLinearDimension(Rhino.RhinoDoc doc)
+partial class Examples
 {
-  Rhino.Geometry.LinearDimension dimension;
-  Rhino.Commands.Result rc = Rhino.Input.RhinoGet.GetLinearDimension(out dimension);
-  if (rc == Rhino.Commands.Result.Success && dimension != null)
+  public static Rhino.Commands.Result AddLinearDimension(Rhino.RhinoDoc doc)
   {
-    if (doc.Objects.AddLinearDimension(dimension) == Guid.Empty)
-      rc = Rhino.Commands.Result.Failure;
-    else
-      doc.Views.Redraw();
+    Rhino.Geometry.LinearDimension dimension;
+    Rhino.Commands.Result rc = Rhino.Input.RhinoGet.GetLinearDimension(out dimension);
+    if (rc == Rhino.Commands.Result.Success && dimension != null)
+    {
+      if (doc.Objects.AddLinearDimension(dimension) == Guid.Empty)
+        rc = Rhino.Commands.Result.Failure;
+      else
+        doc.Views.Redraw();
+    }
+    return rc;
   }
-  return rc;
 }
 ```
 {: #cs .tab-pane .fade .in .active}
 
 
 ```vbnet
-Public Shared Function AddLinearDimension(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-  Dim dimension As Rhino.Geometry.LinearDimension = Nothing
-  Dim rc As Rhino.Commands.Result = Rhino.Input.RhinoGet.GetLinearDimension(dimension)
-  If rc = Rhino.Commands.Result.Success AndAlso dimension IsNot Nothing Then
-    If doc.Objects.AddLinearDimension(dimension) = Guid.Empty Then
-      rc = Rhino.Commands.Result.Failure
-    Else
-      doc.Views.Redraw()
-    End If
-  End If
-  Return rc
-End Function
+Partial Friend Class Examples
+  Public Shared Function AddLinearDimension(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
+	Dim dimension As Rhino.Geometry.LinearDimension = Nothing
+	Dim rc As Rhino.Commands.Result = Rhino.Input.RhinoGet.GetLinearDimension(dimension)
+	If rc Is Rhino.Commands.Result.Success AndAlso dimension IsNot Nothing Then
+	  If doc.Objects.AddLinearDimension(dimension) = Guid.Empty Then
+		rc = Rhino.Commands.Result.Failure
+	  Else
+		doc.Views.Redraw()
+	  End If
+	End If
+	Return rc
+  End Function
+End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -66,6 +69,5 @@ def AddLinearDimension():
 if __name__=="__main__":
     AddLinearDimension()
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 

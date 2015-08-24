@@ -1,24 +1,20 @@
 ---
 layout: code-sample
-title: Determine Rhino's Language Setting
-author: 
-categories: ['Other'] 
+author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
+title: Determine Rhino's Language Setting
 keywords: ['determine', 'rhinos', 'language', 'setting']
-order: 56
-description:  
+categories: ['Other']
+description:
+order: 1
 ---
 
-
-
 ```cs
-public class DetermineCurrentLanguageCommand : Command
+partial class Examples
 {
-  public override string EnglishName { get { return "csCurrentLanguage"; } }
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+  public static Result DetermineCurrentLanguage(RhinoDoc doc)
   {
     var language_id = Rhino.ApplicationSettings.AppearanceSettings.LanguageIdentifier;
     var culture = new System.Globalization.CultureInfo(language_id);
@@ -31,23 +27,16 @@ public class DetermineCurrentLanguageCommand : Command
 
 
 ```vbnet
-Public Class DetermineCurrentLanguageCommand
-  Inherits Command
-  Public Overrides ReadOnly Property EnglishName() As String
-    Get
-      Return "vbCurrentLanguage"
-    End Get
-  End Property
-
-  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
-    Dim language_id = Rhino.ApplicationSettings.AppearanceSettings.LanguageIdentifier
-    Dim culture = New System.Globalization.CultureInfo(language_id)
-    RhinoApp.WriteLine("The current language is {0}", culture.EnglishName)
-    Return Result.Success
+Partial Friend Class Examples
+  Public Shared Function DetermineCurrentLanguage(ByVal doc As RhinoDoc) As Result
+	Dim language_id = Rhino.ApplicationSettings.AppearanceSettings.LanguageIdentifier
+	Dim culture = New System.Globalization.CultureInfo(language_id)
+	RhinoApp.WriteLine("The current language is {0}", culture.EnglishName)
+	Return Result.Success
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in}
+{: #vb .tab-pane .fade .in .active}
 
 
 ```python
@@ -58,6 +47,5 @@ locale_id = rs.LocaleID()
 culture = System.Globalization.CultureInfo(locale_id)
 print culture.EnglishName
 ```
-{: #py .tab-pane .fade .in}
-
+{: #py .tab-pane .fade .in .active}
 
