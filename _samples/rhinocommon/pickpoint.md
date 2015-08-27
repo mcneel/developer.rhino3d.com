@@ -161,7 +161,7 @@ def RunCommand():
   doc.Views.Redraw()
   
   # creates a point where the mouse is clicked
-  # using RhinoScript syntax 
+  # using the RhinoScript syntax 
   point3d = rs.GetPoint("Click for point")
   if point3d == None: return Result.Nothing
   rs.AddPoint(point3d)
@@ -207,6 +207,7 @@ def RunCommand():
   print "point id: {0}".format(point_id)
   rs.UnselectAllObjects()
 
+
   # selects multiple points that already exist
   rc, obj_refs = RhinoGet.GetMultipleObjects(
     "Select point", False, ObjectType.Point)
@@ -221,7 +222,7 @@ def RunCommand():
   doc.Objects.UnselectAll()
 
   # selects multiple poins that already exists
-  # using RhinoScript syntax
+  # using the RhinoScript syntax
   point_ids = rs.GetObjects(
     "Select point", rs.filter.point)
   for p_id in point_ids:

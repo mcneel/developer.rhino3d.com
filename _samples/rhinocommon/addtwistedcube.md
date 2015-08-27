@@ -344,3 +344,15 @@ partial class Examples
 ```
 {: #cs .tab-pane .fade .in .active}
 
+
+```vbnet
+' No VB.NET sample available
+```
+{: #vb .tab-pane .fade .in}
+
+
+```python
+# No Python sample available
+```
+{: #py .tab-pane .fade .in}
+

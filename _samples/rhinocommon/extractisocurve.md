@@ -121,8 +121,7 @@ from Rhino.Geometry import *
 from scriptcontext import doc
 
 def RunCommand():
-  rc, obj_ref = RhinoGet.GetOneObject(
-    "Select surface", False, ObjectType.Surface)
+  rc, obj_ref = RhinoGet.GetOneObject("Select surface", False, ObjectType.Surface)
   if rc <> Result.Success or obj_ref == None:
     return rc
   surface = obj_ref.Surface()
@@ -151,8 +150,7 @@ def RunCommand():
   b, u_parameter, v_parameter = surface.ClosestPoint(point)
   if not b: return Result.Failure
 
-  iso_curve = surface.IsoCurve(
-    direction, u_parameter if direction == 1 else v_parameter)
+  iso_curve = surface.IsoCurve(direction, u_parameter if direction == 1 else v_parameter)
   if iso_curve == None: 
     return Result.Failure
 

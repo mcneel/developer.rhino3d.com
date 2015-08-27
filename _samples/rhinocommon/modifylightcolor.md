@@ -68,7 +68,6 @@ End Class
 ```python
 from Rhino import *
 from Rhino.DocObjects import *
-from Rhino.Commands import *
 from Rhino.Input import *
 from Rhino.UI import *
 from scriptcontext import doc

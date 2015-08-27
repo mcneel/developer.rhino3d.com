@@ -4,8 +4,8 @@ author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Info: RhinoCommon object plug-in user data
-keywords: ['info:', 'rhinocommon', 'object', 'plug-in', 'user', 'data']
+title: RhinoCommon object plug-in user data
+keywords: ['info', 'rhinocommon', 'object', 'plug-in', 'user', 'data']
 categories: ['Adding Objects']
 description:
 order: 1
@@ -85,6 +85,7 @@ End Class
 
 
 ```python
+# No Python sample available
 ```
 {: #py .tab-pane .fade .in}
 

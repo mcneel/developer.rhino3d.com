@@ -103,8 +103,7 @@ from Rhino.Input.Custom import *
 from scriptcontext import doc
 
 def RunCommand():
-  rc, obj_refs = RhinoGet.GetMultipleObjects(
-      "Select hatches to replace", False, ObjectType.Hatch)
+  rc, obj_refs = RhinoGet.GetMultipleObjects("Select hatches to replace", False, ObjectType.Hatch)
   if rc <> Result.Success or obj_refs == None:
     return rc
 
@@ -119,8 +118,7 @@ def RunCommand():
   pattern_index = doc.HatchPatterns.Find(hatch_name, True)
 
   if pattern_index < 0:
-    RhinoApp.WriteLine(
-        "The hatch pattern \"{0}\" not found  in the document.", hatch_name)
+    RhinoApp.WriteLine("The hatch pattern \"{0}\" not found  in the document.", hatch_name)
     return Result.Nothing
 
   for obj_ref in obj_refs:

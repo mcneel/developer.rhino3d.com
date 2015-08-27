@@ -124,8 +124,7 @@ from scriptcontext import doc
 
 def RunCommand():
   
-  rc, boundary_obj_refs = RhinoGet.GetMultipleObjects(
-    "Select boundary objects", False, ObjectType.AnyObject)
+  rc, boundary_obj_refs = RhinoGet.GetMultipleObjects("Select boundary objects", False, ObjectType.AnyObject)
   if rc <> Result.Success:
     return rc
   if boundary_obj_refs == None or boundary_obj_refs.Length == 0:
