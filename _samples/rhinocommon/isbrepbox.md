@@ -137,7 +137,7 @@ Partial Friend Class Examples
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in .active}
+{: #vb .tab-pane .fade .in}
 
 
 ```python
@@ -181,5 +181,5 @@ if __name__=="__main__":
             if IsBrepBox(brep): print "Yes it is a box"
             else: print "No it is not a box"
 ```
-{: #py .tab-pane .fade .in .active}
+{: #py .tab-pane .fade .in}
 

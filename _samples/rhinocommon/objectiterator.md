@@ -66,7 +66,7 @@ Partial Friend Class Examples
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in .active}
+{: #vb .tab-pane .fade .in}
 
 
 ```python
@@ -97,5 +97,5 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in .active}
+{: #py .tab-pane .fade .in}
 

@@ -46,7 +46,7 @@ Partial Friend Class Examples
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in .active}
+{: #vb .tab-pane .fade .in}
 
 
 ```python
@@ -62,5 +62,5 @@ text_entity.FontIndex = doc.Fonts.FindOrCreate("Arial", False, False)
 doc.Objects.AddText(text_entity)
 doc.Views.Redraw()
 ```
-{: #py .tab-pane .fade .in .active}
+{: #py .tab-pane .fade .in}
 

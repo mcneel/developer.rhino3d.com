@@ -129,5 +129,5 @@ Partial Friend Class Examples
 
 End Class
 ```
-{: #vb .tab-pane .fade .in .active}
+{: #vb .tab-pane .fade .in}
 

@@ -119,7 +119,7 @@ Partial Friend Class Examples
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in .active}
+{: #vb .tab-pane .fade .in}
 
 
 ```python
@@ -150,5 +150,5 @@ print "  Minimum principal curvature: {0} ({1}, {2}, {3})".format(
 print "  Gaussian curvature: {0}".format(gaussian)
 print "  Mean curvature: {0}".format(mean)
 ```
-{: #py .tab-pane .fade .in .active}
+{: #py .tab-pane .fade .in}
 

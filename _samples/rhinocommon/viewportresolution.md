@@ -35,7 +35,7 @@ Partial Friend Class Examples
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in .active}
+{: #vb .tab-pane .fade .in}
 
 
 ```python
@@ -45,5 +45,5 @@ activeViewport = doc.Views.ActiveView.ActiveViewport
 print "Name = {0}: Width = {1}, Height = {2}".format(
     activeViewport.Name, activeViewport.Size.Width, activeViewport.Size.Height)
 ```
-{: #py .tab-pane .fade .in .active}
+{: #py .tab-pane .fade .in}
 

@@ -64,7 +64,7 @@ Public Class GetDrawStringPoint
   End Sub
 End Class
 ```
-{: #vb .tab-pane .fade .in .active}
+{: #vb .tab-pane .fade .in}
 
 
 ```python
@@ -96,5 +96,5 @@ class GetDrawStringPoint(GetPoint):
 if __name__ == "__main__":
   RunCommand()
 ```
-{: #py .tab-pane .fade .in .active}
+{: #py .tab-pane .fade .in}
 

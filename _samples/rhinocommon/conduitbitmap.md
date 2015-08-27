@@ -44,7 +44,7 @@ Partial Friend Class Examples
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in .active}
+{: #vb .tab-pane .fade .in}
 
 
 ```python
@@ -76,5 +76,5 @@ if __name__== "__main__":
     conduit.Enabled = False
     scriptcontext.doc.Views.Redraw()
 ```
-{: #py .tab-pane .fade .in .active}
+{: #py .tab-pane .fade .in}
 

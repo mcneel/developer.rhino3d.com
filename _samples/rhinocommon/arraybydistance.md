@@ -206,7 +206,7 @@ Partial Friend Class Examples
   End Sub
 End Class
 ```
-{: #vb .tab-pane .fade .in .active}
+{: #vb .tab-pane .fade .in}
 
 
 ```python
@@ -287,5 +287,5 @@ def dynamic_array():
 if( __name__ == "__main__" ):
     dynamic_array()
 ```
-{: #py .tab-pane .fade .in .active}
+{: #py .tab-pane .fade .in}
 

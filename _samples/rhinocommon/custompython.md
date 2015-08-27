@@ -142,5 +142,5 @@ Public Class CustomObjectTable
   Private ReadOnly m_lines_dict As New System.Collections.Generic.Dictionary(Of Guid, Rhino.Geometry.Line)()
 End Class
 ```
-{: #vb .tab-pane .fade .in .active}
+{: #vb .tab-pane .fade .in}
 

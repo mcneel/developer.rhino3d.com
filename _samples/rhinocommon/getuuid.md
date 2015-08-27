@@ -50,7 +50,7 @@ Partial Friend Class Examples
   End Function
 End Class
 ```
-{: #vb .tab-pane .fade .in .active}
+{: #vb .tab-pane .fade .in}
 
 
 ```python
@@ -60,5 +60,5 @@ obj_id = rs.GetObject("Select object")
 if obj_id <> None:
   print "The object's unique id is {0}".format(obj_id)
 ```
-{: #py .tab-pane .fade .in .active}
+{: #py .tab-pane .fade .in}
 

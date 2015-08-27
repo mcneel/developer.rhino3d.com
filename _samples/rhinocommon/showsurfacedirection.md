@@ -309,5 +309,5 @@ Friend Class TestSurfaceDirConduit
   End Sub
 End Class
 ```
-{: #vb .tab-pane .fade .in .active}
+{: #vb .tab-pane .fade .in}
 
