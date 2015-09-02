@@ -52,7 +52,6 @@ I updated the rhino-python Atom package to support configuring the Python search
 # Notes on the Rhino Python Search Paths toolbar:
   - when the window is 1st opened only the add ( <kbd>+</kbd> ) button is enabled.
   - click on a path to select it and the other nav buttons become enabled.
-  - the "open selected path in Atom" button is not implemented yet.
   - None of the changes made in the UI are saved until the <kbd>save</kbd> button is clicked which sends the save request to Rhino.
   - Clicking the <kbd>revert</kbd> button discards all changes made since the last save by sending a request to Rhino for the last saved search paths.
 
