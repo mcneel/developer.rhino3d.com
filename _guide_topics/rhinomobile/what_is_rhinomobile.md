@@ -43,7 +43,7 @@ Visit the [Rhino Forum](http://discourse.mcneel.com/) and post your question in 
 #### Libraries & Samples
 {: .toc-subheader }
 
-- [RhinoCommon](http://github.com/mcneel/rhinocommon): The .NET plug-in SDK for Rhino and Grasshopper.
+- [RhinoCommon (rhino3dmio branch)](https://github.com/mcneel/rhinocommon/tree/rhino3dmio): The .NET plug-in SDK for Rhino and Grasshopper.
 - [openNURBS](http://www.rhino3d.com/opennurbs) Download: C++ openNURBS SDK.
 - [RhinoMobile](http://github.com/mcneel/RhinoMobile) Download or clone the RhinoMobile library.
 - [RhinoMobileSamples](http://github.com/mcneel/RhinoMobileSamples) Download or clone some sample projects that use RhinoMobile.
@@ -71,7 +71,7 @@ We sure do.
 
 **Wait, is this all of RhinoCommon?**
 
-No. RhinoMobile uses a subset of RhinoCommon, the limits of which are defined by the symbol: MOBILE_BUILD. There's a lot there: Rhino.DocObjects, Rhino.Geometry, Rhino.FileIO...pretty much everything you'd need to read, write, and draw Rhino 3dm.
+No. RhinoMobile uses a subset of RhinoCommon (rhino3dmio), the limits of which are defined by the symbol: MOBILE_BUILD. There's a lot there: Rhino.DocObjects, Rhino.Geometry, Rhino.FileIO...pretty much everything you'd need to read, write, and draw Rhino 3dm.
 
 **So I probably can't perform Meshing or run a Make2D command?**
 
