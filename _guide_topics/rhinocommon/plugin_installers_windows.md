@@ -1,9 +1,9 @@
 ---
 layout: toc-guide-page
-title: Plugin Installers (Mac)
+title: Plugin Installers (Windows)
 author: dan@mcneel.com
 categories: ['GettingStarted']
-platforms: ['Mac']
+platforms: ['Windows']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['first', 'RhinoCommon', 'Plugin', 'installing']
