@@ -62,3 +62,10 @@ Devices are the best place to test your app. The four areas where devices differ
 1. **OpenGL ES**
 
 The last two are the most critical to RhinoMobile apps. Large meshes in .3dm files can consume lots of memory; the simulator will try to invoke OutOfMemory warnings, but there will not be as consistent (or realistic) as running and debugging on the device. Finally, OpenGL ES calls will be interpreted differently on the simulator than on the device…it is possible that code working on the simulator will not work on all devices.
+
+---
+
+## Related Topics
+{: .toc-header }
+
+- [Using Simulators]({{ site.baseurl }}/guides/rhinomobile/using_simulators/)

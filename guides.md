@@ -318,19 +318,11 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 
 *3D mobile application development.*
 
-<div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
-  <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoMobile' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
-
+- [What is RhinoMobile?]({{ site.baseurl }}/guides/rhinomobile/what_is_rhinomobile/)
+- Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinomobile/installing_tools_windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/installing_tools_mac/))
+- Your First App ([Windows]({{ site.baseurl }}/guides/rhinomobile/your_first_app_windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/your_first_app_mac/))
+- [Using Simulators]({{ site.baseurl }}/guides/rhinomobile/using_simulators/)
+- [Testing On Devices]({{ site.baseurl }}/guides/rhinomobile/testing_on_devices/)
 
 ---
 
