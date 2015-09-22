@@ -52,8 +52,8 @@ Xamarin is a private, for-profit, software company founded by the engineers who 
 The **[Xamarin Platform](http://xamarin.com/platform)** is comprised of the following pieces:
 
 - **[Xamarin Studio](http://xamarin.com/studio)**: C# IDE that runs on both Windows and Mac.
-- **Xamarin.Android**: Used to build C# .NET applications for Android devices.  This is useful to have installed if you wish to use the [RhinoMobile]({{ site.baseurl }}/guides/#rhinomobile/) toolkit, but not required for RhinoCommon in Rhino for Mac.
-- **Xamarin.iOS**: Used to build C# .NET applications for Apple iOS devices.  This is useful to have installed if you wish to use the [RhinoMobile]({{ site.baseurl }}/guides/#rhinomobile/) toolkit, but not required for RhinoCommon in Rhino for Mac.
+- **Xamarin.Android**: Used to build C# .NET applications for Android devices.  This is useful to have installed if you wish to use the [RhinoMobile]({{ site.baseurl }}/guides/#rhinomobile) toolkit, but not required for RhinoCommon in Rhino for Mac.
+- **Xamarin.iOS**: Used to build C# .NET applications for Apple iOS devices.  This is useful to have installed if you wish to use the [RhinoMobile]({{ site.baseurl }}/guides/#rhinomobile) toolkit, but not required for RhinoCommon in Rhino for Mac.
 - **Xamarin.Mac**: Xamarin's closed-source version of MonoMac.
 
 For developing RhinoCommon plugins, *only* Xamarin Studio is required.
