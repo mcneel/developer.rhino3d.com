@@ -81,9 +81,8 @@ Once Xamarin Studio itself has been updated, you need to fetch the updates for t
 1. In the **Android SDK Manager** window, wait until manager has finished fetching the update manifest.
 1. Depending on when you downloaded the Xamarin tools, you will want to install the most recent API (21 at the time of writing) as well as the last couple (20 and 19) for backward compatibility. Select the small check boxes next the names and then click **Install N packages…** button.
 1. This brings up a (very buggy) window in which you must accept all the licenses of each item before continuing. If you can't get the **Install** button to work, exit out of the window, open it again, and individually click the Accept radio button on the left until it works.
+![android sdk]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_01.png)
 1. **NOTE:** Downloads can take awhile depending on your internet connection.
-
-![android sdk]({{ site.baseurl }}/images/rhinomobile_install_tools_mac_01.png)
 
 ---
 
@@ -111,10 +110,10 @@ RhinoMobile is built around [RhinoCommon's rhino3dmio branch](https://github.com
 #### Step-by-Step
 
 1. Unzip or clone **[rhinocommon (rhino3dmio branch)](https://github.com/mcneel/rhinocommon/tree/rhino3dmio)** in a convenient folder, such as `/Users/<you>/Development/Repositories/rhinocommon`:
-![clone rhinocommon]({{ site.baseurl }}/images/rhinomobile_install_tools_mac_02.png)
+![clone rhinocommon]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_02.png)
 1. **[Download openNURBS](http://www.rhino3d.com/download/opennurbs/5.0/commercial)**. RhinoMobile requires the C++ openNURBS SDK.
 1. Unzip openNURBS and place the contents in the `rhinocommon/c/opennurbs/` folder (the folder containing only the `readme.md` file):
-![opennurbs]({{ site.baseurl }}/images/rhinomobile_install_tools_mac_03.png)
+![opennurbs]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_03.png)
 
 ---
 
@@ -126,9 +125,9 @@ You will need to download or clone [RhinoMobile](http://github.com/mcneel/RhinoM
 #### Step-by-Step
 
 1. Unzip or clone **[RhinoMobile](http://github.com/mcneel/RhinoMobile)** into a folder **parallel to rhinocommon** (cloned above). For example, if `rhinocommon` is in the `/Users/<you>/Development/Repositories/rhinocommon` folder, then RhinoMobile should be in the `/Users/<you>/Development/Repositories/RhinoMobile` folder:
-![rhinomobile]({{ site.baseurl }}/images/rhinomobile_install_tools_mac_04.png)
+![rhinomobile]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_04.png)
 1. Unzip or clone **[RhinoMobileSamples](http://github.com/mcneel/RhinoMobileSamples)** into a folder **parallel to rhinocommon** and **RhinoMobile**:
-![rhinomobile]({{ site.baseurl }}/images/rhinomobile_install_tools_mac_05.png)
+![rhinomobilesamples]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_05.png)
 
 ---
 
