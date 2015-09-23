@@ -16,7 +16,7 @@ order: 2
 
 This guide demonstrates how to consistently read/write numbers to strings.
 
-## Culture
+## English Culture
 
 Depending on the user's culture settings, their computer may be set up to use commas instead of periods for decimal separators. This can cause problems when writing numbers into xml files and reading these xml files on a different culture setting.
 
