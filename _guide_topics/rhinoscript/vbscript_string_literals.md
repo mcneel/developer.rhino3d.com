@@ -8,7 +8,7 @@ apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 1
-origin: unset
+origin: http://wiki.mcneel.com/developer/scriptsamples/stringliterals
 order: 1
 ---
 
