@@ -12,13 +12,12 @@ order: 3
 ---
 
 # APIs Available to Python
-{: .toc-title }
 
-#### RhinoScriptSyntax
+## RhinoScriptSyntax
 
 RhinoScriptSyntax is divided into [modules](/api/RhinoScriptSyntax/namespaces.html) and each module contains functions that are meant to duplicate the functionality provided by the RhinoScript language that's supported in Rhino for Windows.[^1].  In other words this is a Python equivalent of those RhinoScript functions so if you are familiar with RhinoScript in Rhino for Windows the transition to Python in Rhino for the Mac should be natural.  Not all of the RhinoScript functions have been added yet but this document will be updated as more functions are added.
 
-#### RhinoCommon
+## RhinoCommon
 
 An important detail that will become important as you are learning to script Rhino with Python is that the implementation of Python that is embedded in Rhino is called IronPython: a Python implementation in C# that runs on the .Net/mono platform which means that in addition to the Python language features and the [rhinoscriptsyntax package](/api/RhinoScriptSyntax/namespaces.html), you also have access to all the libraries in .Net/mono and [RhinoCommon](../../rhinocommon/what_is_rhinocommon/).
 

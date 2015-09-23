@@ -13,6 +13,5 @@ order: 3
 ---
 
 # Your First Component (Windows)
-{: .toc-title }
 
 TODO

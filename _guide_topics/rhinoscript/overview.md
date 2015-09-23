@@ -13,7 +13,6 @@ order: 1
 ---
 
 # Overview of RhinoScript
-{: .toc-title }
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

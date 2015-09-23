@@ -13,13 +13,11 @@ order: 1
 ---
 
 # Debug in RhinoWIP (Mac)
-{: .toc-title }
 
 By the end of this guide, you should understand how to modify your plugin's C# project file in order to target and debug using RhinoWIP.
 
 
 ## Prerequisites
-{: .toc-header }
 
 This guide presumes you have [installed all the necessary tools]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac) and know how to [build and debug a plugin using RhinoCommon with Rhinoceros]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac).  
 
@@ -28,7 +26,6 @@ It also presumes you have downloaded and installed [the latest RhinoWIP](http://
 ---
 
 ## Edit References
-{: .toc-header }
 
 Your plugin requires references to RhinoCommon dlls that are contained within the Rhino application bundle.  The default RhinoCommon Plugin template that comes with the Rhino Xamarin Studio AddIn references **Eto**, **Rhino.UI**, and **RhinoCommon**:
 

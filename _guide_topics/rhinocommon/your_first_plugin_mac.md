@@ -14,23 +14,18 @@ order: 4
 
 
 # Your First Plugin (Mac)
-{: .toc-title }
 
 This guide walks you through your first plugin for Rhino for Mac using RhinoCommon and Xamarin Studio. It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac).
 
 ## HelloRhinoCommon
-{: .toc-header }
 
 We will use the Rhino Xamarin Addin to create a new, basic, command plugin called HelloRhinoCommon.
-
-#### Step-by-Step
 
 If you are familiar with Visual Studio or Xamarin Studio, these step-by-step instructions may be overly detailed for you.  The executive summary: create a new Solution using the RhinoCommon Plugin template, build and run, and then make a change.
 
 We are presuming you have never used Xamarin Studio before, so we'll go through this one step at a time.
 
-#### File New
-{: .toc-subheader }
+### File New
 
 1. If you have not done so already, **launch Xamarin Studio**.
 1. Navigate to **File** > **New** > **Solution**...
@@ -45,8 +40,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 1. A **new solution** called **HelloRhinoCommon** should open...
 ![HelloRhinoCommon Solution]({{ site.baseurl }}/images/your_first_plugin_mac_04.png)
 
-#### Boilerplate Build
-{: .toc-subheader }
+### Boilerplate Build
 
 <div class="bs-callout bs-callout-danger">
     <h4>WARNING</h4>
@@ -68,8 +62,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 1. **Quit** Rhinoceros.  This stops the session.  Go back to **Xamarin Studio**.  Let's take a look at the...
 
 
-#### Plugin Anatomy
-{: .toc-subheader }
+### Plugin Anatomy
 
 1. Use the **Solution Explorer** to expand the **Solution** (*.sln*) so that it looks like this...
 ![Solution Anatomy]({{ site.baseurl }}/images/your_first_plugin_mac_11.png)
@@ -85,8 +78,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 1. **HelloRhinoCommonCommand.cs** is where the action is.  Let's take a look at this file...
 
 
-#### Make Changes
-{: .toc-subheader }
+### Make Changes
 
 1. Open **HelloRhinoCommonCommand.cs** in Xamarin Studio's Source Editor (if it isn't already).
 1. Notice that `HelloRhinoCommonCommand` inherits from `Rhino.Commands.Command` ...
@@ -114,8 +106,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 1. Now that we have a line of our own, let's examine it...
 
 
-#### Debugging
-{: .toc-subheader }
+### Debugging
 
 1. Set a breakpoint on line[^1] 55 of *HelloRhinoCommonCommand.cs*.  You set breakpoints in Xamarin Studio by clicking in the gutter...
 ![Set a breakpoint]({{ site.baseurl }}/images/your_first_plugin_mac_12.png)
@@ -146,14 +137,12 @@ Well, we could go on and on - `line1` was never necessary, we could have just us
 ---
 
 ## Next Steps
-{: .toc-header }
 
 You're using RhinoCommon, so this plugin will actually run on both platforms.  Check out the [Your First Plugin (Cross Platform)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform) guide.
 
 ---
 
 ## Related topics
-{: .toc-header }
 
 - [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac)
 - [Your First Plugin (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform)
@@ -163,6 +152,5 @@ You're using RhinoCommon, so this plugin will actually run on both platforms.  C
 ---
 
 ## Footnotes
-{: .toc-header }
 
 [^1]: **Line numbers** in Xamarin Studio can be enabled and disabled in **Xamarin Studio** > **Preferences...** > **Text Editor** section > **Markers and Rulers** entry > check **Show line numbers**.

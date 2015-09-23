@@ -14,6 +14,5 @@ order: 6
 
 
 # Plugin Installers (Windows)
-{: .toc-title }
 
 TODO

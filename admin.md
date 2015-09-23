@@ -6,7 +6,6 @@ order: 1
 ---
 
 # Administration
-{: .toc-title }
 
 This site is the _future home_ of developer.rhino3d.com.
 
@@ -28,7 +27,6 @@ The sources of content-to-be-consolidated are:
 ---
 
 ## Dev Docs Guides
-{: .toc-header }
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -47,10 +45,8 @@ The sources of content-to-be-consolidated are:
 ---
 
 ## TODO List
-{: .toc-header }
 
-#### Guides
-{: .toc-subheader }
+### Guides
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -65,14 +61,13 @@ The sources of content-to-be-consolidated are:
   </ul>
 </div>
 
-#### Misc
-{: .toc-subheader }
+### Misc
 
 - [http://www.rhino3d.com/developer](http://www.rhino3d.com/developer) should redirect to [http://developer.rhino3d.com](http://developer.rhino3d.com) (this website) - the link is in all the .h files top comments
 
 - **DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
 
-#### Samples
+### Samples
 
 TODO TODO ...meta.
 

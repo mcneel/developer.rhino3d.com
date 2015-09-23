@@ -14,18 +14,15 @@ order: 7
 
 
 # Uninstalling Plugins (Mac)
-{: .toc-title }
 
 This guide explains how to uninstall/remove plugins in Rhino for Mac.  This guide presumes you have plugins installed that you would like to remove.
 
 
 ## Overview
-{: .toc-header }
 
 Rhino for Mac does not (yet) have a Plugin Manager.  However, uninstalling plugins is very easy.  You simply remove the plugin folder from the *~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/* folder[^1] and then restart Rhino.
 
 ## Step-by-Step
-{: .toc-header }
 
 1. **Quit Rhino**, if it is current running.
 1. In **Finder**, navigate to the *~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/* folder.  If you [can't find this folder](#user-library), you can do the following...
@@ -41,7 +38,6 @@ Rhino for Mac does not (yet) have a Plugin Manager.  However, uninstalling plugi
 
 
 ## Behind the Scenes
-{: .toc-header }
 
 When Rhino for Mac launches, it searches the contents of the:
 
@@ -51,7 +47,6 @@ folder scanning the sub-folders recursively looking for *.rhp* files.  When it f
 
 
 #### User Library
-{: .toc-subheader }
 
 By default, the User Library folder is hidden from view.  
 
@@ -65,13 +60,11 @@ To make your Library visible in the Finder:
 ---
 
 ## Related topics
-{: .toc-header }
 
 - [Creating a Plugin Installer (Mac)]({{ site.baseurl }}/guides/rhinocommon/plugin_installers_mac/)
 
 ---
 
 ## Footnotes
-{: .toc-header }
 
 [^1]: Do not confuse this path with */Library/Application Support/McNeel/Rhinoceros/*, which is the system-wide Library location.

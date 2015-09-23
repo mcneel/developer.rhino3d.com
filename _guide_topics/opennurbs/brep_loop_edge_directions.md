@@ -13,7 +13,6 @@ order: 1
 ---
 
 # Brep Loop & Edge Directions
-{: .toc-title }
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

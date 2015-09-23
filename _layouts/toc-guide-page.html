@@ -20,8 +20,8 @@ layout: bootstrap
 
                 <ul class="nav nav-stacked">
 
-                  <!-- Find the h1 handle and title -->
-                  {% assign splitAtFirstHeader = content | split:'<h1 class="toc-title" id="' %}
+                  <!-- Find the h1 handle for title -->
+                  {% assign splitAtFirstHeader = content | split:'<h1 id="' %}
                   {% assign firstSideOfFirstHeader = splitAtFirstHeader[1] %}
                   {% assign dividedMainTitle = firstSideOfFirstHeader | split:'<' %}
                   {% assign firstSideOfDividedMainTitle = dividedMainTitle[0] %}
@@ -33,8 +33,8 @@ layout: bootstrap
 
                     <ul class="nav nav-stacked">
 
-                      <!-- Find the h2 group and any h4 subgroups -->
-                      {% assign groups = content | split:'<h2 class="toc-header" id="' %}
+                      <!-- Find the h2 group and any h3 subgroups -->
+                      {% assign groups = content | split:'<h2 id="' %}
 
                       {% for group in groups offset:1 %}
                         {% assign dividedGroup = group | split:'<' %}
@@ -45,9 +45,9 @@ layout: bootstrap
                         <li>
                           <a href="#{{groupHandle}}">{{ groupTitle }}</a>
 
-                          {% if group contains '<h4 class="toc-subheader" id="' %}
+                          {% if group contains '<h3 id="' %}
                             <ul class="nav nav-stacked">
-                              {% assign subgroups = group | split:'<h4 class="toc-subheader" id="' %}
+                              {% assign subgroups = group | split:'<h3 id="' %}
 
                               {% for subgroup in subgroups offset:1 %}
                                 {% assign dividedSubgroup = subgroup | split:'<' %}

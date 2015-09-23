@@ -13,7 +13,6 @@ order: 1
 ---
 
 # Superfluous Knots
-{: .toc-title }
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

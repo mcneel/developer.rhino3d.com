@@ -14,7 +14,6 @@ order: 1
 
 
 # What is RhinoCommon?
-{: .toc-title }
 
 RhinoCommon is the cross-platform .NET plug-in SDK available for:
 
@@ -32,7 +31,6 @@ The term _common_ is meant to be just that: an SDK that can be used across Rhino
 {::options parse_block_html="true" /}
 
 ## Inside RhinoCommon
-{: .toc-header }
 
 RhinoCommon is composed of the following pieces.  These files are included with Rhino 5 for Windows and Mac:
 
@@ -43,7 +41,6 @@ RhinoCommon is composed of the following pieces.  These files are included with 
 RhinoCommon on Mac OS X is executed through an embedded [Mono framework](http://www.mono-project.com/).
 
 ## Rhino uses RhinoCommon
-{: .toc-header }
 
 All .NET plug-ins that ship with Rhino 5 for Windows and Rhino 5 for Mac, including the Python interpreter, reference RhinoCommon.
 
@@ -54,6 +51,5 @@ The [Python]({{ site.baseurl }}/guides/rhinopython) script engine is entirely ba
 ---
 
 ## Related topics
-{: .toc-header }
 
 - [What are Mono and Xamarin?](/guides/rhinocommon/what_are_mono_and_xamarin/)

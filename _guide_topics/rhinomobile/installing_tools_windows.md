@@ -13,12 +13,10 @@ order: 3
 ---
 
 # Installing Tools (Windows)
-{: .toc-title }
 
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C# mobile applications using RhinoMobile.
 
 ## Prerequisites
-{: .toc-header }
 
 If you have not done so already, please read the [What is RhinoMobile?]({{ site.baseurl }}/guides/rhinomobile/what_is_rhinomobile/) guide.
 
@@ -29,7 +27,6 @@ This guide presumes you have an:
 ---
 
 ## Install Visual Studio
-{: .toc-header }
 
 [Visual Studio](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx) is Microsoft's flagship development platform and Integrated Development Environment (IDE).  Visual Studio now comes in three "flavors": Visual Studio Code[^1], Visual Studio Online[^2], and Visual Studio "proper"[^3].  In order to author RhinoMobile apps, you will need Visual Studio "proper" (Visual Studio Code and Visual Studio Online are not supported).
 
@@ -46,7 +43,6 @@ For the purposes of this guide, we will presume you are using Visual Studio 2015
 ---
 
 ## Install Xcode (Optional)
-{: .toc-header }
 
 [Xcode](https://developer.apple.com/xcode/) is Apple's development platform and IDE. This step is optional and only required if you want to build for iOS. You will need to preform this step on your Mac build box running OS X.
 
@@ -62,7 +58,6 @@ For the purposes of this guide, we will presume you are using Visual Studio 2015
 ---
 
 ## Install Xamarin
-{: .toc-header }
 
 Xamarin's platform is currently required to build RhinoMobile apps.  Please check out the [What are Mono and Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/) guide for more information.
 
@@ -86,7 +81,6 @@ Xamarin's platform is currently required to build RhinoMobile apps.  Please chec
 ---
 
 ## Update the Android SDK
-{: .toc-header }
 
 Once Xamarin Studio itself has been updated, you need to fetch the updates for the Android SDK.
 
@@ -103,7 +97,6 @@ Once Xamarin Studio itself has been updated, you need to fetch the updates for t
 ---
 
 ## Install the Intel HAXM
-{: .toc-header }
 
 The [Intel HAXM is the Intel Hardware Acceleration Execution Manager](http://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager/).  HAXM provides a hardware-accelerated engine for the x86 Android emulators. Without HAXM, the emulators are nearly unusable, as their performance lags so much. However, with HAXM, the x86 emulators are responsive and usable. Not as fast as an actual device, but at least passable. It’s available to install via the Android SDK manager, but the version there is ineffective. Instead, get it from the link above.  HAXM will not work in a virtualized environment, e.g. a VM, so if you’re doing your Android development in a Windows VM, you will need to use a device.
 
@@ -118,7 +111,6 @@ The [Intel HAXM is the Intel Hardware Acceleration Execution Manager](http://sof
 ---
 
 ## Clone RhinoCommon
-{: .toc-header }
 
 RhinoMobile is built around [RhinoCommon's rhino3dmio branch](https://github.com/mcneel/rhinocommon/tree/rhino3dmio). You can either download RhinoCommon as a zip or clone the repository using git (recommended). (If you are new to GitHub, there is a [GitHub Windows Desktop](https://desktop.github.com/) app to get you started).
 
@@ -135,7 +127,6 @@ RhinoMobile is built around [RhinoCommon's rhino3dmio branch](https://github.com
 ---
 
 ## Clone RhinoMobile
-{: .toc-header }
 
 You will need to download or clone [RhinoMobile](http://github.com/mcneel/RhinoMobile) and the [RhinoMobileSamples](http://github.com/mcneel/RhinoMobileSamples) repositories. (If you are new to GitHub, there is a [GitHub Windows Desktop](https://desktop.github.com/) app to get you started).
 
@@ -149,7 +140,6 @@ You will need to download or clone [RhinoMobile](http://github.com/mcneel/RhinoM
 ---
 
 ## Next Steps
-{: .toc-header }
 
 **Congratulations!**  You have all the tools necessary to build a mobile app that uses RhinoMobile.  **Now what?**
 
@@ -158,7 +148,6 @@ Check out the [Your First App (Windows)]({{ site.baseurl }}/guides/rhinomobile/y
 ---
 
 ## Related Topics
-{: .toc-header }
 
 - [What is RhinoMobile?]({{ site.baseurl }}/guides/rhinomobile/what_is_rhinomobile/)
 - [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon/)
@@ -169,7 +158,6 @@ Check out the [Your First App (Windows)]({{ site.baseurl }}/guides/rhinomobile/y
 ---
 
 ## Footnotes
-{: .toc-header }
 
 [^1]: Visual Studio Code is Microsoft's cross-platform source code editor for Windows, Linux, and OS X.  At the time of this writing, Visual Studio code does not yet support the features required to author RhinoMobile apps.
 

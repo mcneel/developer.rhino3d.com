@@ -6,12 +6,10 @@ order: 2
 ---
 
 # Guides
-{: .toc-title }
 
 ---
 
 ## General
-{: .toc-header }
 
 *Guides that apply across platforms and SDKs*
 
@@ -31,21 +29,18 @@ order: 2
 ---
 
 ## RhinoCommon
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
 *The cross-platform .NET plugin SDK for Rhino.*
 
-#### Overview
-{: .toc-subheader }
+### Overview
 
 - [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon/)
 - [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/)
 
 
-#### Getting Started
-{: .toc-subheader }
+### Getting Started
 
 - Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac/))
 - Your First Plugin ([Windows]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac/), [Cross-Platform]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform/))
@@ -53,8 +48,7 @@ order: 2
 - [Uninstalling Plugins (Mac)]({{ site.baseurl }}/guides/rhinocommon/uninstalling_plugins_mac/)
 
 
-#### Fundamentals
-{: .toc-subheader }
+### Fundamentals
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -69,8 +63,7 @@ order: 2
   </ul>
 </div>
 
-#### Advanced
-{: .toc-subheader }
+### Advanced
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -90,20 +83,16 @@ order: 2
 
 ---
 
-
 ## Rhino.Python
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
 *Quickly add functionality to Rhino or automate repetitive tasks.*
 
-#### Overview
-{: .toc-subheader }
+### Overview
 
 
-#### Getting Started
-{: .toc-subheader }
+### Getting Started
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -118,10 +107,9 @@ order: 2
   </ul>
 </div>
 
-#### Learning Resources
-{: .toc-subheader}
+### Learning Resources
 
-##### Python Applied to Rhino
+#### Python Applied to Rhino
 - <a href="http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101" target="_blank">RhinoPython101 Primer</a>
 - <a href="http://discourse.mcneel.com/c/scripting" target="_blank">Rhino Scripting Forum</a>
 - <a href="http://wiki.mcneel.com/developer/python%22" target="_blank">McNeel Python Scripting Wiki</a>
@@ -134,14 +122,12 @@ order: 2
 ---
 
 ## openNURBS
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
 *Read/Write Rhino 3dm files in your application.*
 
-#### Overview
-{: .toc-subheader }
+### Overview
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -156,8 +142,7 @@ order: 2
   </ul>
 </div>
 
-#### Getting Started
-{: .toc-subheader }
+### Getting Started
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -172,8 +157,7 @@ order: 2
   </ul>
 </div>
 
-#### Fundamentals
-{: .toc-subheader }
+### Fundamentals
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -188,8 +172,7 @@ order: 2
   </ul>
 </div>
 
-#### Advanced
-{: .toc-subheader }
+### Advanced
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -207,7 +190,6 @@ order: 2
 ---
 
 ## C/C++
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
@@ -230,7 +212,6 @@ order: 2
 ---
 
 ## Grasshopper
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
@@ -253,18 +234,16 @@ order: 2
 ---
 
 ## RhinoScript
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
 *Customize Rhino for Windows or automate repetitive tasks.*
 
-#### Overview
-{: .toc-subheader }
+### Overview
+
 RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino, or automate repetitive tasks.
 
-#### Learning Resources
-{: .subgroup}
+### Learning Resources
 
 - [Microsoft VBScript User's Guide and Language Reference](http://msdn.microsoft.com/en-us/library/t0aew7h6(VS.85).aspx)
 - [RhinoScript 101 Primer](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
@@ -275,8 +254,7 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 - [Microsoft TechNet Script Center](http://www.microsoft.com/technet/scriptcenter/default.mspx)
 - [Pascal Golay's scripted utilities for Rhino](http://wiki.mcneel.com/people/pascalgolay)
 
-#### VBScript Basics
-{: .subgroup}
+### VBScript Basics
 
 <!-- TODO - This section could be auto Generated -->
 
@@ -289,7 +267,6 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 ---
 
 ## RDK
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
@@ -312,7 +289,6 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 ---
 
 ## RhinoMobile
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
 
@@ -327,7 +303,6 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 ---
 
 ## Zoo
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
@@ -350,7 +325,6 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 ---
 
 ## Developer Docs
-{: .toc-header }
 
 *Guides to this very website.*
 

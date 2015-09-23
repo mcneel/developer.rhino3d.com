@@ -5,6 +5,5 @@ order: 2
 ---
 
 # Rhino.Python Samples
-{: .toc-title }
 
 ---

@@ -13,13 +13,11 @@ order: 2
 ---
 
 # Installing Tools (Mac)
-{: .toc-title }
 
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C# .NET plugins using RhinoCommon in Rhino for Mac.
 
 
 ## Prerequisites
-{: .toc-header }
 
 This guide presumes you have an:
 
@@ -29,7 +27,6 @@ This guide presumes you have an:
 ---
 
 ## Install Xcode
-{: .toc-header }
 
 [Xcode](https://developer.apple.com/xcode/) is Apple's development platform and IDE.  Though it is not *absolutely* required that you install Xcode in order to build, debug, and run C# plugins using RhinoCommon, it is *recommended* that you do.  In short: the Xamarin on OS X works best with Xcode installed.  
 
@@ -45,7 +42,6 @@ This guide presumes you have an:
 ---
 
 ## Install Xamarin
-{: .toc-header }
 
 Xamarin's platform is currently required to build RhinoCommon plugins on OS X.  The core components of the Xamarin platform that are required are the Mono Framework and Xamarin Studio.  Please check out the [What are Mono and Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/) guide for more information.
 
@@ -70,7 +66,6 @@ Xamarin's platform is currently required to build RhinoCommon plugins on OS X.  
 ---
 
 ## Install the Rhino Add-in
-{: .toc-header }
 
 The Rhino Xamarin Studio AddIn is required to debug your plugin code in an active session of Rhino for Mac.  Additionally, it contains project templates to get you started creating plugins quickly.
 
@@ -89,7 +84,6 @@ The Rhino Xamarin Studio AddIn is required to debug your plugin code in an activ
 ---
 
 ## Next Steps
-{: .toc-header }
 
 **Congratulations!**  You have all the tools necessary to build a RhinoCommon plugin for Rhino for Mac.  **Now what?**
 
@@ -98,7 +92,6 @@ Check out the [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/yo
 ---
 
 ## Footnotes
-{: .toc-header }
 
 [^1]: Xamarin.Android is used to build C# .NET applications for Android devices.  This is useful to have installed if you wish to use the RhinoMobile toolkit, but not required for RhinoCommon in Rhino for Mac.
 

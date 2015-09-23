@@ -6,12 +6,10 @@ order: 4
 ---
 
 # Samples  
-{: .toc-title }
 
 ---
 
 ## General
-{: .toc-header }
 
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
@@ -29,12 +27,11 @@ order: 4
 ---
 
 ## RhinoCommon
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
-#### Adding Objects
-{: .toc-subheader }
+### Adding Objects
+
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
   <ul>
@@ -48,8 +45,8 @@ order: 4
   </ul>
 </div>
 
-#### Curves
-{: .toc-subheader }
+### Curves
+
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
   <ul>
@@ -63,8 +60,8 @@ order: 4
   </ul>
 </div>
 
-#### Layers
-{: .toc-subheader }
+### Layers
+
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
   <ul>
@@ -78,8 +75,8 @@ order: 4
   </ul>
 </div>
 
-#### Picking and Selection
-{: .toc-subheader }
+### Picking and Selection
+
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
   <ul>
@@ -93,8 +90,8 @@ order: 4
   </ul>
 </div>
 
-#### Viewports and Views
-{: .toc-subheader }
+### Viewports and Views
+
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
   <ul>
@@ -108,8 +105,8 @@ order: 4
   </ul>
 </div>
 
-#### Blocks
-{: .toc-subheader }
+### Blocks
+
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
   <ul>
@@ -123,8 +120,8 @@ order: 4
   </ul>
 </div>
 
-#### Drawing
-{: .toc-subheader }
+### Drawing
+
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
   <ul>
@@ -138,8 +135,8 @@ order: 4
   </ul>
 </div>
 
-#### Drafting
-{: .toc-subheader }
+### Drafting
+
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
   <ul>
@@ -153,8 +150,7 @@ order: 4
   </ul>
 </div>
 
-#### Other
-{: .toc-subheader }
+### Other
 
 <div class="trigger">
   {% assign samples = site.samples | sort:"order" %}
@@ -172,7 +168,6 @@ order: 4
 
 
 ## Rhino.Python
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
@@ -182,7 +177,6 @@ TODO
 ---
 
 ## openNURBS
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
@@ -192,7 +186,6 @@ TODO
 ---
 
 ## C/C++
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
@@ -202,7 +195,6 @@ TODO
 ---
 
 ## Grasshopper
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
@@ -212,7 +204,6 @@ TODO
 ---
 
 ## RhinoScript
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
@@ -222,7 +213,6 @@ TODO
 ---
 
 ## RDK
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
@@ -232,7 +222,6 @@ TODO
 ---
 
 ## RhinoMobile
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
 
@@ -242,7 +231,6 @@ TODO
 ---
 
 ## Zoo
-{: .toc-header }
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 

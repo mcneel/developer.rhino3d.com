@@ -5,7 +5,6 @@ order: 0
 ---
 
 # General Samples
-{: .toc-title }
 
 ---
 

@@ -7,11 +7,12 @@ platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
+TODO: 1
+origin: unset
 order: 1
 ---
 
 # VBScript String Literals
-{: .toc-title }
 
 In VBScript, you enclose strings with double quote characters, and you use the ampersand (&) operator to concatenate strings. For example:
 

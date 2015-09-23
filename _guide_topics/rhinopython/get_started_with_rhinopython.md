@@ -12,7 +12,6 @@ order: 2
 ---
 
 # Getting Started
-{: .toc-title }
 
 To get acquainted with how Python scripts can help you model in Rhino first run some of the sample scripts that are provided.
 

@@ -15,9 +15,6 @@ order: 3
 <a id="top"></a> <!-- this is just a sample anchor -->
 
 # Style Guide
-{: .toc-title }
-
----
 
 This is a sample page that serves as a quick reference for the syntax and structure of Rhino Developer Documentation content.  Below are examples of nearly all the available syntax using Markdown, Kramdown (a superset of Markdown), the table-of-contents UI widget, etc.
 
@@ -26,31 +23,26 @@ Some portions of this page were adapted from the [Kramdown Quick Reference](http
 ---
 
 ## Conventions
-{: .toc-header }
 
-#### Division of content
-{: .toc-subheader }
+### Division of content
 
 `# Title` become H1 headers and are reserved for the title of the page only.
 
 `## Header` become H2 headers and are reserved for major sections within the page.
 
-`#### Sub Header` become H4 headers and are reserved for sub-sections within a major section.
+`### Sub Header` become H3 headers and are reserved for sub-sections within a major section.
 
-#### Fonts
-{: .toc-subheader }
+### Fonts
 
 On Windows, this site attempts to use Segoe UI (font size: 16 px, font weight: 400,  line height: 1.6) and falls back to Frutiger Linotype, Dejavu Sans, Helvetica Neue, Helvetica, Arial, in that order.  On Mac OS X, the site will (almost) certainly use Helvetica Neue or Helvetica (font size: 16 px, font weight: 300,  line height: 1.6).  The operating system-specific font weight is set in the footer using javascript.
 
-#### Paths & Filenames
-{: .toc-subheader }
+### Paths & Filenames
 
 `*Italics*` are used to denote filenames, paths, and file extensions.  For example:
 
 Navigate to *C:\Program Files\Rhinoceros 5 (64-bit)\Plug-ins*.
 
-#### Bold in Instructions
-{: .toc-subheader }
+### Bold in Instructions
 
 `**Bold**` (strong emphasis) is used in instructions to highlight keywords for the individual instruction.  It is frequently used to hightlight the **verb** and/or the **object** of a sentence.  For example:
 
@@ -59,7 +51,6 @@ Navigate to *C:\Program Files\Rhinoceros 5 (64-bit)\Plug-ins*.
 ---
 
 ## Headers
-{: .toc-header }
 
 Headers demarcate major sections of the page, guide, etc.
 
@@ -87,67 +78,59 @@ the resulting html anchor tag would be:
 
 ---
 
-#### Sub Headers
-{: .toc-subheader }
+### Sub Headers
 
 Sub Headers demarcate sub-sections a major section underneath a header.
 
 Sub Headers are created like this:
 
 ```yaml
-#### Sub Header
+### Sub Header
 ```
 
-The example above is an H4 header, which we are calling a "Sub Header."
+The example above is an H3 header, which we are calling a "Sub Header."
 
-Just like with H2 headers, H4 headers also create an #anchor tag in the generated html.
+Just like with H3 headers, H3 headers also create an #anchor tag in the generated html.
 
 ---
 
 ## Table of Contents
-{: .toc-header }
 
-The UI-widget to the left of this column is a the Table of Contents (TOC) for this page.  If you are authoring a page that requires a TOC, you can generate one automatically by using a TOC-enabled layouts (see [How This Site Works]({{ site.baseurl }}/guides/rhinodevdocs/how_this_site_works/) for more information).  To get a TOC-enabled template to generate the TOC, you simply have to add the correct class decorations underneath the Headers and Sub Headers.
+The UI-widget to the left of this column is a the Table of Contents (TOC) for this page.  If you are authoring a page that requires a TOC, you can generate one automatically by using a TOC-enabled layouts (see [How This Site Works]({{ site.baseurl }}/guides/rhinodevdocs/how_this_site_works/) for more information).  To get a TOC-enabled templates to generate the TOC automatically from the H1, H2 and H3 headers.
 
 For example, to get the main title to show up in the TOC, you would type this:
 
 ```yaml
 # The Title
-{: .toc-title }
 ```
 
 To get a Header to show up in the TOC, you would type this:
 
 ```yaml
 ## Cool Header
-{: .toc-header }
 ```
 
 To get a Sub Header to show up in the TOC, you would type this:
 
 ```yaml
-#### Sweet Sub Header
-{: .toc-subheader }
+### Sweet Sub Header
 ```
 
-**NOTE**: TOCs are only generated from **H1**, **H2**, and **H4** headers (`.toc-title`, `.toc-header`, and `.toc-subheader` respectively).
+**NOTE**: TOCs are only generated from **H1**, **H2**, and **H3** headers...**H4** (and smaller) headers are ignored by the TOC-enabled templates.
 
 ---
 
 ## Structural Elements
-{: .toc-header }
 
 ---
 
-#### Paragraphs
-{: .toc-subheader }
+### Paragraphs
 
 Consecutive lines of text are considered to be one paragraph. You must add a blank line between paragraphs.
 
 ---
 
-#### Block Quotes
-{: .toc-subheader }
+### Block Quotes
 
 A blockquote is started using the > marker followed by an optional space; all following lines that are also started with the blockquote marker belong to the blockquote. You can use any block-level elements inside a blockquote:
 
@@ -164,8 +147,7 @@ Yields:
 
 ---
 
-#### Code Blocks
-{: .toc-subheader }
+### Code Blocks
 
 To create a code block, surround the code with three back-ticks, followed by a language abbreviation.  For example:
 
@@ -200,8 +182,7 @@ The abbreviation after the first set of back-ticks is the language code for synt
 
 ---
 
-#### Horizontal Rules
-{: .toc-subheader }
+### Horizontal Rules
 
 Horizontal rules (lines) are created by using three dashes:
 
@@ -213,8 +194,7 @@ You can an example of one of these right here...
 
 ---
 
-#### Lists
-{: .toc-subheader }
+### Lists
 
 You can create ordered lists and unordered lists.
 
@@ -282,8 +262,7 @@ This is a bullet list:
 
 ---
 
-#### Tables
-{: .toc-subheader }
+### Tables
 
 Kramdown supports a syntax for creating simple tables. A line starting with a pipe character starts a table row. However, if the pipe characters is immediately followed by a dash (-), a separator line is created. Separator lines are used to split the table header from the table body (and optionally align the table columns) and to split the table body into multiple parts. If the pipe character is followed by an equal sign (=), the tables rows below it are part of the table footer.
 
@@ -329,8 +308,7 @@ yields:
 
 ---
 
-#### HTML Elements
-{: .toc-subheader }
+### HTML Elements
 
 Kramdown allows you to use block-level HTML tags (`div`, `p`, `pre`, etc) to markup whole blocks of text – just start a line with a block-level HTML tag. Kramdown syntax is normally not processed inside an HTML tag but this can be changed with the `parse_block_html` option. If this options is set to true, then the content of a block-level HTML tag is parsed by Kramdown either as block level or span-level text, depending on the tag.
 
@@ -368,8 +346,7 @@ This can contain only *span* level elements.
 
 ---
 
-#### Block Attributes
-{: .toc-subheader }
+### Block Attributes
 
 You can assign any attribute to a block-level element. Just directly follow the block with a *block inline attribute list* (or short: block IAL). A block IAL consists of a left curly brace, followed by a colon, the attribute definitions and a right curly brace.
 
@@ -389,8 +366,7 @@ Block attributes are used to generate the [classes for the TOC](#table-of-conten
 
 ---
 
-#### Warnings
-{: .toc-subheader }
+### Warnings
 
 Warnings are used in text to call out major traps, gotchas, or caveats in guides.  HTML is required to create warnings.  For example:
 
@@ -412,11 +388,8 @@ yields:
 ---
 
 ## Text Modifiers
-{: .toc-header }
 
-
-#### Emphasis
-{: .toc-subheader }
+### Emphasis
 
 Emphasis (bold and italic) can be added to text by surrounding the text with asterisks:
 
@@ -432,8 +405,7 @@ I like *my* coffee **bold**.
 
 ---
 
-#### Links
-{: .toc-subheader }
+### Links
 
 **Simple Links**
 
@@ -506,8 +478,7 @@ was added to the [top of this page](#top).
 
 ---
 
-#### Images
-{: .toc-subheader }
+### Images
 
 Images can be created in a similar way to links: just use an exclamation mark before the square brackets. The link text will become the alternative text of the image and the link URL specifies the image source:
 
@@ -523,8 +494,7 @@ yields:
 
 ---
 
-#### Inline Code
-{: .toc-subheader }
+### Inline Code
 
 Text phrases can be easily marked up as code by surrounding them with back-ticks:
 
@@ -538,8 +508,7 @@ To write a line to the command line use the `Rhino.RhinoApp.WriteLine` method.
 
 ---
 
-#### Footnotes
-{: .toc-subheader }
+### Footnotes
 
 Footnotes can easily be used in Kramdown. Just set a footnote marker (consists of square brackets with a caret and the footnote name inside) in the text and somewhere else the footnote definition (which basically looks like a reference link definition):
 
@@ -553,12 +522,9 @@ yields:
 
 This is a text with a footnote[^1].
 
-[^1]: This is an example of a footnote.
-
 ---
 
-#### Abbreviations
-{: .toc-subheader }
+### Abbreviations
 
 Abbreviations will work once you add an abbreviation definition.  So you can just write the text and add the definitions later on.  For example:
 
@@ -578,8 +544,7 @@ Abbreviations are case-sensitive.
 
 ---
 
-#### HTML Elements
-{: .toc-subheader }
+### HTML Elements
 
 HTML is not only supported on the block-level but also on the span-level:
 
@@ -593,8 +558,7 @@ This is <span style="color: red">written in red</span>.
 
 ---
 
-#### Inline Attributes
-{: .toc-subheader }
+### Inline Attributes
 
 As with a block-level element you can assign any attribute to a span-level elements using a *span inline attribute list* (or short: span IAL). A span IAL has the same syntax as a block IAL and must immediately follow the span-level element:
 
@@ -608,8 +572,7 @@ This is *red*{: style="color: red"}.
 
 ---
 
-#### MathJax & LaTeX
-{: .toc-subheader }
+### MathJax & LaTeX
 
 Kramdown has support for LaTeX to PNG rendering via [MathJax](http://www.mathjax.org/).  
 
@@ -626,7 +589,6 @@ $$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$
 ---
 
 ## Related topics
-{: .toc-header }
 
 - [How This Site Works]({{ site.baseurl }}/guides/rhinodevdocs/how_this_site_works/)
 - [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html)
@@ -634,4 +596,5 @@ $$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$
 ---
 
 ## Footnotes
-{: .toc-header }
+
+[^1]: This is an example of a footnote.

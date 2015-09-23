@@ -7,11 +7,12 @@ platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
+TODO: 1
+origin: unset
 order: 1
 ---
 
 # VBScript Statements
-{: .toc-title }
 
 Many scripting and programming languages, such as JScript, C#, and C++, make no attempt to match the code that is run with the actual physical lines typed into the text editor. This is because they not recognize the end of a line of code until it sees the termination character (in these cases, the semicolon). Thus, the actual physical lines of type taken up by the code are irrelevant.
 

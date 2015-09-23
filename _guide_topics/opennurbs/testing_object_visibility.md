@@ -13,7 +13,6 @@ order: 1
 ---
 
 # Testing for Object Visibility
-{: .toc-title }
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

@@ -13,12 +13,10 @@ order: 1
 ---
 
 # Installing Tools (Windows)
-{: .toc-title }
 
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C# .NET plugins using RhinoCommon in Rhino for Windows.
 
 ## Prerequisites
-{: .toc-header }
 
 This guide presumes you have an:
 
@@ -28,7 +26,6 @@ This guide presumes you have an:
 ---
 
 ## Install Visual Studio
-{: .toc-header }
 
 [Visual Studio](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx) is Microsoft's flagship development platform and Integrated Development Environment (IDE).  Visual Studio now comes in three "flavors": Visual Studio Code[^1], Visual Studio Online[^2], and Visual Studio "proper"[^3].  In order to author RhinoCommon plugins, you will need Visual Studio "proper" (Visual Studio Code and Visual Studio Online are not supported).
 
@@ -45,7 +42,6 @@ At the time of this writing, Visual Studio 2015 "proper" comes in [three edition
 ---
 
 ## RhinoCommon templates
-{: .toc-header }
 
 The [RhinoCommon templates](https://visualstudiogallery.msdn.microsoft.com/16053049-7db2-4c9f-961a-53274ac92ace) contains wizards to get you started creating plugins quickly.
 
@@ -64,7 +60,6 @@ The [RhinoCommon templates](https://visualstudiogallery.msdn.microsoft.com/16053
 ---
 
 ## Next Steps
-{: .toc-header }
 
 **Congratulations!**  You have the tools to build a RhinoCommon plugin for Rhino for Windows.  **Now what?**
 
@@ -73,7 +68,6 @@ Check out the [Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommo
 ---
 
 ## Footnotes
-{: .toc-header }
 
 [^1]: Visual Studio Code is Microsoft's cross-platform source code editor for Windows, Linux, and OS X.  At the time of this writing, Visual Studio code does not yet support the features required to author RhinoCommon plugins.
 

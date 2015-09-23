@@ -14,7 +14,6 @@ order: 1
 
 
 # Developer Prerequisites
-{: .toc-title }
 
 There are a number of prerequisites required to do Rhino development.  Broadly speaking, these can be divided into three categories, ranked in ascending order of difficulty:
 
@@ -23,7 +22,6 @@ There are a number of prerequisites required to do Rhino development.  Broadly s
 1. [Programming Knowledge](#programming-knowledge)
 
 ## Hardware
-{: .toc-header }
 
 If you are reading this guide, you likely already have a computer that can run Rhino. (If not, Rhino has some minimum [System Requirements](http://www.rhino3d.com/system_requirements/) that you should review before acquiring any hardware).  Generally speaking, any computer that can run Rhino *ought* to be able to run the developer tools outlined in the [Software](#software) section.
 
@@ -31,7 +29,6 @@ If you are a Windows user and wish to develop plugins for Rhino for Mac, you wil
 
 
 ## Software
-{: .toc-header }
 
 Depending on what you want to do, the software prerequisites vary.  However, in general, you will need:
 
@@ -44,12 +41,10 @@ Depending on what you want to do, the software prerequisites vary.  However, in 
 See the [SDK-specific guides]({{ site.baseurl }}/guides/) for the software prerequisites...normally found in the *"Installing Tools"* guides.
 
 ## Programming Knowledge
-{: .toc-header }
 
 Acquiring programming knowledge is the most labor intensive prerequisite.  However, learning to program - even trying out a new language - is fun and enriching.  Learning to program using Rhino is a great way to begin...
 
-#### Learning C# .NET
-{: .toc-subheader }
+### Learning C# .NET
 
 If you wish to write plugins with RhinoCommon, you will need to understand a .NET compatible programming language like C# (or VB.NET).  We recommend [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) (C Sharp) because it is modern, safe, and easy to learn - and you can develop in C# on both Windows and OS X.
 
@@ -69,8 +64,7 @@ If you wish to write plugins with RhinoCommon, you will need to understand a .NE
 - [Check out samples]({{ site.baseurl }}/samples/#rhinocommon) on this site
 - [Ask for help on Discourse](http://discourse.mcneel.com/c/rhino-developer)
 
-#### Learning C/C++
-{: .toc-subheader }
+### Learning C/C++
 
 To write plugins for Rhino using the C/C++ SDK, you first need to learn the [C++ programing language](https://en.wikipedia.org/wiki/C%2B%2B) itself.  C/C++ is sometimes considered an "advanced" programming language.
 
@@ -90,8 +84,7 @@ To write plugins for Rhino using the C/C++ SDK, you first need to learn the [C++
 - [Check out samples]({{ site.baseurl }}/samples/#cc) on this site
 - [Ask for help on Discourse](http://discourse.mcneel.com/c/rhino-developer)
 
-#### Learning Python
-{: .toc-subheader }
+### Learning Python
 
 [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) is a fantastic first language and an amazingly flexible additional language to add to your toolkit.
 
@@ -114,8 +107,7 @@ To write plugins for Rhino using the C/C++ SDK, you first need to learn the [C++
 - [Check out samples]({{ site.baseurl }}/samples/#rhinopython) on this site
 - [Ask for help on Discourse](http://discourse.mcneel.com/c/scripting)
 
-#### Learning RhinoScript
-{: .toc-subheader }
+### Learning RhinoScript
 
 RhinoScript is a scripting tool based on Microsoft's VBScript language.  RhinoScript runs in Rhino for Windows.
 
@@ -132,7 +124,6 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language.  RhinoSc
 ---
 
 ## Related topics
-{: .toc-header }
 
 - [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what_is_a_rhino_plugin/)
 - <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language">C Sharp on Wikipedia</a>

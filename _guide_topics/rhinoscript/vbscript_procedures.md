@@ -7,11 +7,12 @@ platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
+TODO: 1
+origin: unset
 order: 1
 ---
 
 # VBScript Procedures
-{: .toc-title }
 
 ## Overview
 

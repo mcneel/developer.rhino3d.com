@@ -13,7 +13,6 @@ order: 2
 ---
 
 # What is Rhino3dmIO?
-{: .toc-title }
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

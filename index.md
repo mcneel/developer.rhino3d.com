@@ -4,7 +4,6 @@ layout: toc-page
 
 
 # Welcome
-{: .toc-title }
 
 **Rhino developer tools are royalty free and include support.**
 
@@ -12,7 +11,6 @@ This site is the *future home* of all Developer Documentation relating to [Rhino
 
 
 ## Start Here
-{: .toc-header }
 
 #### If you want to...
 
@@ -43,7 +41,6 @@ This site is the *future home* of all Developer Documentation relating to [Rhino
 The above three paths are not the only options!  Keep reading for more...
 
 ## Overview
-{: .toc-header }
 
 Rhino exposes purpose-built SDKs in C#, C/C++, VB.NET, VBScript, and Python...
 
@@ -131,19 +128,14 @@ Still unclear?  Browse the [Guides]({{ site.baseurl }}/guides/).  Ask a question
 
 
 ## Contributing
-{: .toc-header }
 
 Hey, make yourself useful!
 
-
-#### GitHub
-{: .toc-subheader }
+### GitHub
 
 Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub](http://github.com/).  [RhinoCommon](https://github.com/mcneel/rhinocommon) - our cross-platform .NET API - is a great example. Even [this very website](https://github.com/mcneel/developer-rhino3d-com) you are reading now. Browse source, fork a repo, correct a typo: we welcome participation and pull-requests.
 
-
-#### Discourse
-{: .toc-subheader }
+### Discourse
 
 [discourse.mcneel.com](http://discourse.mcneel.com) is the McNeel forum.  This is the fastest place to get help.  Specific categories to post in are:
 
@@ -153,14 +145,12 @@ Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub]
 - [Grasshopper developer](http://discourse.mcneel.com/c/grasshopper-developer): VB.NET, C#, and Python in Grasshopper components.
 
 
-#### Report Bugs
-{: .toc-subheader }
+### Report Bugs
 
 Whenever you encounter something that doesn't work as it should, we'd love it if you could file a bug report.  At McNeel, we use [YouTrack](http://mcneel.myjetbrains.com/youtrack/) to track issues and bugs.  YouTrack requires that you create a login. The vast majority of bugs are visible to the public.  Please report issues or bugs with our APIs or SDKs on YouTrack.
 
 
-#### This website
-{: .toc-subheader }
+### This website
 
 This website is [open source on GitHub](https://github.com/mcneel/developer-rhino3d-com). If you find errors or think a page could be improved, just click the “Edit page on GitHub” link at the bottom of any page.  If you are a McNeel employee, you should already have permissions to commit to this repository.  If you are a Rhino Plugin Developer, you can [request permissions to commit](mailto:steve@mcneel.com).  Anyone can clone the repository and submit a pull-request.
 
@@ -168,7 +158,6 @@ This site uses [Markdown](http://daringfireball.net/projects/markdown/) - specif
 
 
 ## Contacts
-{: .toc-header }
 
 Who to talk to for what:
 
@@ -184,36 +173,30 @@ Who to talk to for what:
 
 <!-- Removing until we have something meaningful to say
 ## Plugin Distribution
-{: .toc-header }
 
 #### Food4Rhino
-{: .toc-subheader }
 
 Lorem ipsum
 
 #### Yak
-{: .toc-subheader }
 
 Lorem ipsum
 -->
 
 ## Developer Training
-{: .toc-header }
 
 Developer training is a custom, one-on-one session designed to help you become more familiar with the Rhino C++ SDK or the RhinoCommon (.NET) SDK, and to get help in improving your Rhino plug-in product.
 
 Rhino Developer Training is available at both the McNeel Headquarters in **Seattle**, and at our European Headquarters in **Barcelona**.
 
-#### We provide
-{: .toc-subheader }
+### We provide
 
 * A room and a desk for you to set up your computer.
 * A high-speed Internet connection.
 * Access to senior Rhino developers for questions and support.
 * Inexpensive lodging may be available.
 
-#### You should bring
-{: .toc-subheader }
+### You should bring
 
 Your computer with:
 
@@ -222,7 +205,6 @@ Your computer with:
   * Microsoft Visual C++ 2005 for Rhino 5 32-bit.
   * The [Rhino C++ SDK](http://www.rhino3d.com/download/rhino-sdk/5.0/release).
   * _Note, Visual C++ 2008, 2012, 2013, and the Express Editions of Visual C++ **will not** work._
-
 
 * RhinoCommon SDK:
   * Microsoft Visual Studio 2010, 2012 or 2013, with either C# or Visual Basic; or
@@ -233,8 +215,7 @@ Your computer with:
   * Your Rhino plug-in project source code.
   * Any software you will need to test your plug-in, including copies of your own software.
 
-#### Pricing and scheduling
-{: .toc-subheader }
+### Pricing and scheduling
 
 Developer training is free. You are responsible for paying for travel, lodging, and any other expenses.
 
@@ -248,7 +229,6 @@ Ported from: http://wiki.mcneel.com/developer/training
 
 
 ## FAQ
-{: .toc-header }
 
 **Which SDK is right for me?**
 

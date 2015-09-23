@@ -13,7 +13,6 @@ order: 1
 ---
 
 # Reading Notes from a 3dm
-{: .toc-title }
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

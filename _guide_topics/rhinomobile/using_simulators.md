@@ -13,19 +13,16 @@ order: 6
 ---
 
 # Using Simulators
-{: .toc-title }
 
 This guide covers the basics of using Emulators or Simulators to debug your mobile application.  Android provides Emulators and iOS provides simulators, each with their benefits and weaknesses.
 
 ## Android Emulators
-{: .toc-header }
 
 <img align="right" src="{{ site.baseurl }}/images/using_simulators_01.png" width="121">
 
 Android Emulators are a decent approximation of actual devices themselves, though performance may vary slightly. The Android Emulator does a good job virtualizing hardware configurations and failing when they should (you can limit the amount of memory, for example, in a way that is not possible with the iOS simulator). That said, it's still important to test on actual devices, esp. given the functional limitations of the emulator (no multitouch, for example) and the wide variety of Android devices in the marketplace with their diverse hardware configurations and capabilities. Once setup properly, the emulators can get you a long way in the development process before testing on actual devices.
 
-#### Rotation & Multi-touch
-{: .toc-subheader }
+### Rotation & Multi-touch
 
 The following key combinations can be used to rotate emulators:
 
@@ -34,8 +31,7 @@ The following key combinations can be used to rotate emulators:
 
 **NOTE**: You cannot simulate multiple touches on the Android Emulator
 
-#### Emulator File System
-{: .toc-subheader }
+### Emulator File System
 
 The best way to access the internals of an Android device or an Emulator is to use the [Android Debug Bridge](http://developer.android.com/tools/help/adb.html) (ADB) which comes bundled with the Android SDK as part of the Xamarin Toolkit. The ADB comes with a shell utility that allows you to browse the Android file system as if you were a standard Linux file system - which it is. Running adb shell on a Mac is slightly different from running it on Windows, but here are the basics.
 
@@ -72,15 +68,13 @@ Before launching into the adb tools, let's make sure that the Android SDK and ND
 
 Open a `cmd.exe` prompt. Now type `adb shell`. Make sure you have an Emulator started or a device connected and you should see an adb shell tool similar to that shown above in the Mac instructions. You may use many standard linux commands to get around and mess with files. Note there are a number of special commands for pushing and pulling file on and off the device/emulator. See the [Android ADB documentation](Android ADB documentation) for a handy list. Data for many apps is store in the *data/data/AppName/* folder.
 
-#### Resetting Emulators
-{: .toc-subheader }
+### Resetting Emulators
 
 It is rarely necessary to reset the Android Emulators as the entire app is removed between builds. Should you need to reset it, the best way is to delete the entire AVD itself and create a new one from scratch. Open the Android Virtual Device Manager (In Xamarin Studio, navigate to **Tools** > **Open Android Emulator Manager…** in the Application toolbar), in the **Android Virtual Devices Tab**, select the Emulator from the list of AVDs and click the **Delete** button.
 
 ---
 
 ## iOS Simulators
-{: .toc-header }
 
 <img align="right" src="{{ site.baseurl }}/images/using_simulators_03.png" width="121">
 
@@ -93,8 +87,7 @@ The iOS Simulators are a convenient way to quickly test your app with multiple s
 
 To install older versions of the iOS Simulator, launch Xcode, and navigate to **Xcode** > **Preferences** > **Downloads** tab > **Components** section > *click small download arrows* to the right of the Simulator version you wish to install.
 
-#### Rotation & Multi-touch
-{: .toc-subheader }
+### Rotation & Multi-touch
 
 The following key combinations can be used to rotate simulate and simulate multiple touches:
 
@@ -102,8 +95,7 @@ The following key combinations can be used to rotate simulate and simulate multi
 - **alt/option** + **move the cursor around** = Simulate two touches
 - **alt/option** + **Shift** + **move the cursor around** = Two-touch panning
 
-#### Simulator File System
-{: .toc-subheader }
+### Simulator File System
 
 The best way to access the contents of the Simulator filesystem is to use a Terminal. In OS X, open a terminal window and navigate to:
 
@@ -115,14 +107,12 @@ Alternatively, you can use Finder to navigate to the same folder, but you will h
 
 For more information about where to store temporary or persistent resources, please check out the following [Xamarin documentation](http://docs.xamarin.com/guides/ios/application_fundamentals/working_with_the_file_system/).
 
-#### Resetting Simulators
-{: .toc-subheader }
+### Resetting Simulators
 
 It is often necessary to clean out the entire contents of the simulator between builds, especially those builds in which you have modified or removed resources that may get cached on the simulator. If you want a fresh start, you can reset the simulator to the virtual “factory settings” by navigating to the **iOS Simulator** > **Reset Content and Settings…** in the **Application** menu. Note that this deletes all app data as well as resets the App's UDID number.
 
 ---
 
 ## Related Topics
-{: .toc-header }
 
 - [Testing On Devices]({{ site.baseurl }}/guides/rhinomobile/testing_on_devices/)

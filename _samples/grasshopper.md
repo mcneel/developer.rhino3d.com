@@ -5,6 +5,5 @@ order: 6
 ---
 
 # Grasshopper Component Samples
-{: .toc-title }
 
 ---

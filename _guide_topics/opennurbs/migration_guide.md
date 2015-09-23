@@ -13,7 +13,6 @@ order: 2
 ---
 
 # openNURBS 5.0 Migration Guide
-{: .toc-title }
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

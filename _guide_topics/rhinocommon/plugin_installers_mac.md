@@ -14,19 +14,16 @@ order: 6
 
 
 # Plugin Installers (Mac)
-{: .toc-title }
 
 This guide explains how to create a plugin installer for Rhino for Mac, which presumes you have a plugin that successfully builds and runs already.  If you are not there yet, see [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac).
 
 ## Overview
-{: .toc-header }
 
 Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins is very easy.  You simply create a zip archive of your plugin folder with an special extension (*.rhp*), compress the folder, and change the extension from *.zip* to *.macrhi*.  Once this is done, you can double-click the archive and Rhino will launch and install the plugin.  You can also drag the *.macrhi* onto the dock icon of a running instance of Rhino and it will install the plugin as well.  You will, in any case, need to Quit an Restart Rhino for the plugin to activate.
 
 ---
 
 ## Step-by-Step
-{: .toc-header }
 
 1. **Locate** your plugin folder in **Finder**.  Let's imagine our plugin is called **HelloRhinoCommon** and we have built it for **Release**...
 ![Find Plugin In Finder]({{ site.baseurl }}/images/plugin_installer_mac_01.png)
@@ -50,7 +47,6 @@ Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins
 ---
 
 ## Behind the Scenes
-{: .toc-header }
 
 The *.macrhi* extension is a file extension associated with the Rhino for Mac application (both *Rhinoceros.app* and *RhinoWIP.app*).  This extension denotes a "Rhino for Mac plugin installer."  Rhino for Mac knows that such files are actually .zip archives that need to be decompressed and copied into the user's Library folder at the appropriate location, specifically the *~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/* folder[^2].
 
@@ -62,9 +58,7 @@ folder scanning the sub-folders looking for *.rhp* files.  When it finds such "f
 
 For uninstallation/removal instructions, please see [Uninstalling Plugins (Mac)]({{ site.baseurl }}/guides/rhinocommon/uninstalling_plugins_mac).
 
-
 #### User Library
-{: .toc-subheader }
 
 By default, the User Library folder is hidden from view.  
 
@@ -78,7 +72,6 @@ To make your Library visible in the Finder:
 ---
 
 ## Related topics
-{: .toc-header }
 
 - [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac)
 - [Your First Plugin (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform)
@@ -87,7 +80,6 @@ To make your Library visible in the Finder:
 ---
 
 ## Footnotes
-{: .toc-header }
 
 [^1]: OS X (and Unix) has a special kind of folder that masquerades as a file.  These are called "packages."  (Most apps found in */Applications/* are actually packages called "bundles").  You can access the contents in Finder by **right-clicking** on the package and selecting **Show Package Contents**.
 

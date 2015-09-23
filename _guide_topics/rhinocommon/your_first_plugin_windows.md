@@ -13,23 +13,18 @@ order: 3
 ---
 
 # Your First Plugin (Windows)
-{: .toc-title }
 
 This guide walks you through your first plugin for Rhino for Windows using RhinoCommon and Visual Studio. It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows).
 
 ## HelloRhinoCommon
-{: .toc-header }
 
 We will use the RhinoCommon Templates to create a new, basic, command plugin called HelloRhinoCommon.
-
-#### Step-by-Step
 
 If you are familiar with Visual Studio, these step-by-step instructions may be overly detailed for you.  The executive summary: create a new Solution using the RhinoCommon template, build and run, and then make a change.
 
 We are presuming you have never used Visual Studio before, so we'll go through this one step at a time.
 
-#### File New
-{: .toc-subheader }
+### File New
 
 1. If you have not done so already, **launch Visual Studio** (for the purposes of this guide, we are using Visual Studio 2015 Community Edition and C#).
 1. Navigate to **File** > **New** > **Project**...
@@ -47,8 +42,7 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 ![HelloRhinoCommon Solution]({{ site.baseurl }}/images/your_first_plugin_windows_05.png)
 
 
-#### Boilerplate Build
-{: .toc-subheader }
+### Boilerplate Build
 
 1. Before we do anything, let's **build** and **run** HelloRhinoCommon to make sure everything is working as expected.  We'll just build the boilerplate Plugin template.  Click **Start** (play) button in toolbar corner of Visual Studio (or press **F5**) to **Start Debugging**...
 ![Start Button]({{ site.baseurl }}/images/your_first_plugin_windows_06.png)
@@ -64,8 +58,7 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 1. **Exit** Rhinoceros.  This stops the session.  Go back to **Visual Studio**.  Let's take a look at the...
 
 
-#### Plugin Anatomy
-{: .toc-subheader }
+### Plugin Anatomy
 
 1. Use the **Solution Explorer** to expand the **Solution** (*.sln*) so that it looks like this...
 ![Solution Anatomy]({{ site.baseurl }}/images/your_first_plugin_windows_07.png)
@@ -80,8 +73,7 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 1. **HelloRhinoCommonCommand.cs** is where the action is.  Let's take a look at this file...
 
 
-#### Make Changes
-{: .toc-subheader }
+### Make Changes
 
 1. Open **HelloRhinoCommonCommand.cs** in Visual Studio's Source Editor (if it isn't already).
 1. Notice that `HelloRhinoCommonCommand` inherits from `Command` ...
@@ -110,8 +102,7 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 1. Now that we have a line of our own, let's examine it...
 
 
-#### Debugging
-{: .toc-subheader }
+### Debugging
 
 1. Set a breakpoint on line[^1] 67 of *HelloRhinoCommonCommand.cs*.  You set breakpoints in Visual Studio by clicking in the gutter...
 ![Set a breakpoint]({{ site.baseurl }}/images/your_first_plugin_windows_08.png)
@@ -143,14 +134,12 @@ Well, we could go on and on - `line1` was never necessary, we could have just us
 ---
 
 ## Next Steps
-{: .toc-header }
 
 You're using RhinoCommon, so this plugin will actually run on both platforms.  Check out the [Your First Plugin (Cross Platform)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform) guide.
 
 ---
 
 ## Related topics
-{: .toc-header }
 
 - [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows)
 - [Your First Plugin (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform)
@@ -158,6 +147,5 @@ You're using RhinoCommon, so this plugin will actually run on both platforms.  C
 ---
 
 ## Footnotes
-{: .toc-header }
 
 [^1]: **Line numbers** in Visual Studio can be enabled and disabled in **Tools** > **Options...** > **Text Editor** section > **All Languages** entry > **General** sub-entry > **Settings** subsection > check **Line numbers**.  Click **OK** to close the **Options** dialog.

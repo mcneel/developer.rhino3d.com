@@ -14,7 +14,6 @@ order: 2
 
 
 # What is a Rhino Plugin?
-{: .toc-title }
 
 A Rhino plugin is a software module that extends the functionality of Rhino or Grasshopper by adding commands, features, or capabilities.  A Rhino plugin is a Dynamic Link Library, or DLL.
 
@@ -26,7 +25,6 @@ Examples of Rhino plugins include [Grasshopper](http://www.grasshopper3d.com), [
 
 
 ## Types of Plugins
-{: .toc-header }
 
 Rhino supports five different types of plugins:
 
@@ -42,6 +40,5 @@ Rhino supports five different types of plugins:
 ---
 
 ## Related topics
-{: .toc-header }
 
 - [Developer Prerequisites]({{ site.baseurl }}/guides/general/rhino_developer_prerequisites)

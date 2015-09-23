@@ -13,6 +13,5 @@ order: 2
 ---
 
 # Installing Tools (Windows)
-{: .toc-title }
 
 TODO

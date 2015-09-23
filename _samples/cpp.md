@@ -5,7 +5,6 @@ order: 5
 ---
 
 # C/C++ Samples
-{: .toc-title }
 
 ---
 

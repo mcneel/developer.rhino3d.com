@@ -5,7 +5,6 @@ order: 1
 ---
 
 # RhinoCommon Samples
-{: .toc-title }
 
 ---
 

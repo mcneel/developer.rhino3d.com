@@ -13,6 +13,5 @@ order: 5
 ---
 
 # Your First Plugin (Cross-Platform)
-{: .toc-title }
 
 COMING SOON
