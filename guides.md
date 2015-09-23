@@ -78,9 +78,6 @@ order: 2
   </ul>
 </div>
 
-- Rendering
-- Custom Objects
-
 ---
 
 ## Rhino.Python
