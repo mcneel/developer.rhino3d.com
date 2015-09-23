@@ -16,8 +16,8 @@ order: 1
 
 There are two basic ways plug-ins can store information in Rhino .3dm files:
 
-1. [Document User Data](#document_user_data)
-1. [Object User Data](#object_user_data)
+1. [Document User Data](#document-user-data)
+1. [Object User Data](#object-user-data)
 
 For example, a rendering plug-in might save a scene descriptions as document user data and use object user data to attach rendering material information to individual surfaces.
 
