@@ -7,7 +7,7 @@ platforms: ['Windows', 'Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['RhinoCommon', 'Object', 'Selection', 'Options']
-TODO: 1
+TODO: 0
 origin: https://wiki.mcneel.com/developer/rhinocommonsamples/getobjectoption
 order: 1
 ---
