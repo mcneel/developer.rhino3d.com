@@ -41,7 +41,7 @@ The best way to access the internals of an Android device or an Emulator is to u
 
 **Mac OS X**
 
-Before launching into the adb tools, let's make sure that the Android SDK and NDK are part of our bash terminal environment. Open your `.bash_profile` (in your `~` or home folder) with a trusty text editor (we recommend [TextWrangler](http://www.barebones.com/products/textwrangler/) or [BBEdit](http://www.barebones.com/products/bbedit/)). Add the following lines to your profile if they are not already there:
+Before launching into the adb tools, let's make sure that the Android SDK and NDK are part of our bash terminal environment. Open your *.bash_profile* (in your *~* or home folder) with a trusty text editor (we recommend [TextWrangler](http://www.barebones.com/products/textwrangler/) or [BBEdit](http://www.barebones.com/products/bbedit/)). Add the following lines to your profile if they are not already there:
 
 ```
 export ANDROID_SDK="/Users/<you>/Library/Developer/Xamarin/android-sdk-mac_x86/"
@@ -56,7 +56,7 @@ Save your profile and launch a Terminal window. You should now be able to type a
 
 ![adb shell]({{ site.baseurl }}/images/using_simulators_02.png)
 
-You may use many standard linux commands to get around and mess with files. Note there are a number of special commands for pushing and pulling file on and off the device/emulator. See the [Android ADB documentation](http://developer.android.com/tools/help/adb.html) for a handy list. Data for many apps is store in the `data/data/AppName/` folder.
+You may use many standard linux commands to get around and mess with files. Note there are a number of special commands for pushing and pulling file on and off the device/emulator. See the [Android ADB documentation](http://developer.android.com/tools/help/adb.html) for a handy list. Data for many apps is store in the *data/data/AppName/* folder.
 
 **Windows**
 
@@ -67,10 +67,10 @@ Before launching into the adb tools, let's make sure that the Android SDK and ND
 1. You should now be the **System Properties** window. Click on the **Environment Variables…** button in the Advanced Tab.
 1. In the **System variables** box (the lower box), scroll through the list until you see **Path** under the Variable column.
 1. Click on **Path** to highlight it, then click the **Edit…** button.
-1. We are going to add our path to adb, where Xamarin installed the android-sdk. Make sure your curson is at the end of the last entry and then type: `;C:\Users\<you>\AppData\Local\Android\android-sdk\platform-tools\` replacing `<you>` with the name of your account. Make sure there aren't any spaces in this path. If the path to your android-sdk is somewhere custom, replace it with that path.
+1. We are going to add our path to adb, where Xamarin installed the android-sdk. Make sure your curson is at the end of the last entry and then type: *;C:\Users\<you>\AppData\Local\Android\android-sdk\platform-tools\* replacing *<you>* with the name of your account. Make sure there aren't any spaces in this path. If the path to your android-sdk is somewhere custom, replace it with that path.
 1. Click **OK** on everything and **close the Control Panel** if it's still open.
 
-Open a `cmd.exe` prompt. Now type `adb shell`. Make sure you have an Emulator started or a device connected and you should see an adb shell tool similar to that shown above in the Mac instructions. You may use many standard linux commands to get around and mess with files. Note there are a number of special commands for pushing and pulling file on and off the device/emulator. See the [Android ADB documentation](Android ADB documentation) for a handy list. Data for many apps is store in the `data/data/AppName/` folder.
+Open a `cmd.exe` prompt. Now type `adb shell`. Make sure you have an Emulator started or a device connected and you should see an adb shell tool similar to that shown above in the Mac instructions. You may use many standard linux commands to get around and mess with files. Note there are a number of special commands for pushing and pulling file on and off the device/emulator. See the [Android ADB documentation](Android ADB documentation) for a handy list. Data for many apps is store in the *data/data/AppName/* folder.
 
 #### Resetting Emulators
 {: .toc-subheader }
@@ -107,7 +107,7 @@ The following key combinations can be used to rotate simulate and simulate multi
 
 The best way to access the contents of the Simulator filesystem is to use a Terminal. In OS X, open a terminal window and navigate to:
 
-`~/Developer/CoreSimulator/Devices/<code>/data/Containers/Data/Application/<app UDID number>/`
+*~/Developer/CoreSimulator/Devices/<code>/data/Containers/Data/Application/<app UDID number>/*
 
 (Remember you can use Tab to autocomplete paths as you change directories - useful for auto-completing the longer app UDIDs).
 
