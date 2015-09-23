@@ -24,9 +24,17 @@ RhinoCommon's [GetObject class]({{ site.baseurl }}/api/RhinoCommon/html/T_Rhino_
 - [GetObject.EnableUnselectObjectsOnExit]({{ site.baseurl }}/api/RhinoCommon/html/M_Rhino_Input_Custom_GetObject_EnableUnselectObjectsOnExit.htm)
 - [GetObject.DeselectAllBeforePostSelect]({{ site.baseurl }}/api/RhinoCommon/html/P_Rhino_Input_Custom_GetObject_DeselectAllBeforePostSelect.htm)
 
-Also, after clicking a command line option, turn off pre-selection, using `GetObject.EnablePreSelect`. Otherwise, `GetObject.GetMultiple` will return with a `GetResult.Object` return code.
+Also, after clicking a command line option, turn off pre-selection, using `GetObject.EnablePreSelect`.  Otherwise, `GetObject.GetMultiple` will return with a `GetResult.Object` return code.
 
 For example:
+
+<ul class="nav nav-pills">
+  <li class="active"><a href="#cs" data-toggle="pill">C#</a></li>
+  <li><a href="#vb" data-toggle="pill">VB.NET</a></li>
+</ul>
+
+{::options parse_block_html="true" /}
+<div class="tab-content">
 
 ```cs
 using System;
@@ -111,3 +119,85 @@ protected override Result RunCommand(RhinoDoc doc, RunMode mode)
   return Result.Success;
 }
 ```
+{: #cs .tab-pane .fade .in .active}
+
+```vbnet
+Imports Rhino
+Imports Rhino.Commands
+Imports Rhino.DocObjects
+Imports Rhino.Input
+Imports Rhino.Input.Custom
+
+...
+
+Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
+  Const geometryFilter As ObjectType = ObjectType.Surface Or ObjectType.PolysrfFilter Or ObjectType.Mesh
+  Dim integer1 As Integer = 300
+  Dim integer2 As Integer = 300
+
+  Dim optionInteger1 As New OptionInteger(integer1, 200, 900)
+  Dim optionInteger2 As New OptionInteger(integer2, 200, 900)
+
+  Dim go As New GetObject()
+  go.SetCommandPrompt("Select surfaces, polysurfaces, or meshes")
+  go.GeometryFilter = geometryFilter
+  go.AddOptionInteger("Option1", optionInteger1)
+  go.AddOptionInteger("Option2", optionInteger2)
+  go.GroupSelect = True
+  go.SubObjectSelect = False
+  go.EnableClearObjectsOnEntry(False)
+  go.EnableUnselectObjectsOnExit(False)
+  go.DeselectAllBeforePostSelect = False
+
+  Dim bHavePreselectedObjects As Boolean = False
+
+  While True
+    Dim res As GetResult = go.GetMultiple(1, 0)
+
+    If res = GetResult.[Option] Then
+      go.EnablePreSelect(False, True)
+      Continue While
+
+    ElseIf res <> GetResult.[Object] Then
+      Return Result.Cancel
+    End If
+
+    If go.ObjectsWerePreselected Then
+      bHavePreselectedObjects = True
+      go.EnablePreSelect(False, True)
+      Continue While
+    End If
+
+    Exit While
+  End While
+
+  If bHavePreselectedObjects Then
+    ' Normally, pre-selected objects will remain selected, when a
+    ' command finishes, and post-selected objects will be unselected.
+    ' This this way of picking, it is possible to have a combination
+    ' of pre-selected and post-selected. So, to make sure everything
+    ' "looks the same", lets unselect everything before finishing
+    ' the command.
+    For i As Integer = 0 To go.ObjectCount - 1
+      Dim rhinoObject As RhinoObject = go.[Object](i).[Object]()
+      If rhinoObject IsNot Nothing Then
+        rhinoObject.[Select](False)
+      End If
+    Next
+    doc.Views.Redraw()
+  End If
+
+  Dim objectCount As Integer = go.ObjectCount
+  integer1 = optionInteger1.CurrentValue
+  integer2 = optionInteger2.CurrentValue
+
+  RhinoApp.WriteLine(String.Format("Select object count = {0}", objectCount))
+  RhinoApp.WriteLine(String.Format("Value of integer1 = {0}", integer1))
+  RhinoApp.WriteLine(String.Format("Value of integer2 = {0}", integer2))
+
+  Return Result.Success
+End Function
+```
+{: #vb .tab-pane .fade .in}
+
+</div>
