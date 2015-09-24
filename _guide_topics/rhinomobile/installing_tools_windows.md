@@ -88,7 +88,7 @@ Once Xamarin Studio itself has been updated, you need to fetch the updates for t
 
 1. In **Xamarin Studio**, navigate to **Tools** > **Open Android SDK Manager…**.
 1. In the **Android SDK Manager** window, wait until manager has finished fetching the update manifest.
-1. **NOTE**: you may need to run the SDK manager as Administrator. The default path to the Android SDK is: *C:\Users\<you>\AppData\Local\Android\android-sdk*.
+1. **NOTE**: you may need to run the SDK manager as Administrator. The default path to the Android SDK is: *C:\Users\you\AppData\Local\Android\android-sdk*.
 1. Depending on when you downloaded the Xamarin tools, you will want to install the most recent API (21 at the time of writing) as well as the last couple (20 and 19) for backward compatibility. Select the small check boxes next the names and then click **Install N packages…** button.
 1. This brings up a (very buggy) window in which you must accept all the licenses of each item before continuing. If you can't get the **Install** button to work, exit out of the window, open it again, and individually click the Accept radio button on the left until it works.
 ![android sdk]({{ site.baseurl }}/images/rhinomobile_installing_tools_windows_01.png)
@@ -116,7 +116,7 @@ RhinoMobile is built around [RhinoCommon's rhino3dmio branch](https://github.com
 
 #### Step-by-Step
 
-1. Unzip or clone **[rhinocommon (rhino3dmio branch)](https://github.com/mcneel/rhinocommon/tree/rhino3dmio)** in a convenient folder, such as *C:\Users\<you>\Development\Repositories\rhinocommon*:
+1. Unzip or clone **[rhinocommon (rhino3dmio branch)](https://github.com/mcneel/rhinocommon/tree/rhino3dmio)** in a convenient folder, such as *C:\Users\you\Development\Repositories\rhinocommon*:
 ![clone rhinocommon]({{ site.baseurl }}/images/rhinomobile_installing_tools_windows_02.png)
 1. **[Download openNURBS](http://www.rhino3d.com/download/opennurbs/5.0/commercial)**. RhinoMobile requires the C++ openNURBS SDK.
 1. Unzip openNURBS and place the contents in the *rhinocommon\c\opennurbs* folder (the folder containing only the *readme.md* file):
@@ -132,7 +132,7 @@ You will need to download or clone [RhinoMobile](http://github.com/mcneel/RhinoM
 
 #### Step-by-Step
 
-1. Unzip or clone **[RhinoMobile](http://github.com/mcneel/RhinoMobile)** into a folder **parallel to rhinocommon** (cloned above). For example, if *rhinocommon* is in the *C:\Users\<you>\Development\Repositories\rhinocommon* folder, then RhinoMobile should be in the *C:\Users\<you>\Development\Repositories\RhinoMobile* folder:
+1. Unzip or clone **[RhinoMobile](http://github.com/mcneel/RhinoMobile)** into a folder **parallel to rhinocommon** (cloned above). For example, if *rhinocommon* is in the *C:\Users\you\Development\Repositories\rhinocommon* folder, then RhinoMobile should be in the *C:\Users\you\Development\Repositories\RhinoMobile* folder:
 ![rhinomobile]({{ site.baseurl }}/images/rhinomobile_installing_tools_windows_05.png)
 1. Unzip or clone **[RhinoMobileSamples](http://github.com/mcneel/RhinoMobileSamples)** into a folder **parallel to rhinocommon** and **RhinoMobile**:
 ![rhinomobilesamples]({{ site.baseurl }}/images/rhinomobile_installing_tools_windows_06.png)
