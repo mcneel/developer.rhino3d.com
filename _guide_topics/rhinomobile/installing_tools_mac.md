@@ -102,7 +102,7 @@ RhinoMobile is built around [RhinoCommon's rhino3dmio branch](https://github.com
 
 #### Step-by-Step
 
-1. Unzip or clone **[rhinocommon (rhino3dmio branch)](https://github.com/mcneel/rhinocommon/tree/rhino3dmio)** in a convenient folder, such as */Users/<you>/Development/Repositories/rhinocommon*:
+1. Unzip or clone **[rhinocommon (rhino3dmio branch)](https://github.com/mcneel/rhinocommon/tree/rhino3dmio)** in a convenient folder, such as the */Users/you/Development/Repositories/rhinocommon* folder:
 ![clone rhinocommon]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_02.png)
 1. **[Download openNURBS](http://www.rhino3d.com/download/opennurbs/5.0/commercial)**. RhinoMobile requires the C++ openNURBS SDK.
 1. Unzip openNURBS and place the contents in the *rhinocommon/c/opennurbs/* folder (the folder containing only the *readme.md* file):
@@ -116,7 +116,7 @@ You will need to download or clone [RhinoMobile](http://github.com/mcneel/RhinoM
 
 #### Step-by-Step
 
-1. Unzip or clone **[RhinoMobile](http://github.com/mcneel/RhinoMobile)** into a folder **parallel to rhinocommon** (cloned above). For example, if *rhinocommon* is in the */Users/<you>/Development/Repositories/rhinocommon* folder, then RhinoMobile should be in the */Users/<you>/Development/Repositories/RhinoMobile* folder:
+1. Unzip or clone **[RhinoMobile](http://github.com/mcneel/RhinoMobile)** into a folder **parallel to rhinocommon** (cloned above). For example, if *rhinocommon* is in the     */Users/you/Development/Repositories/rhinocommon* folder, then RhinoMobile should be in the */Users/you/Development/Repositories/RhinoMobile* folder:
 ![rhinomobile]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_04.png)
 1. Unzip or clone **[RhinoMobileSamples](http://github.com/mcneel/RhinoMobileSamples)** into a folder **parallel to rhinocommon** and **RhinoMobile**:
 ![rhinomobilesamples]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_05.png)
