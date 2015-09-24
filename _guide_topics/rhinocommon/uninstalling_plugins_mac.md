@@ -2,7 +2,7 @@
 layout: toc-guide-page
 title: Uninstalling Plugins (Mac)
 author: dan@mcneel.com
-categories: ['GettingStarted']
+categories: ['Fundamentals']
 platforms: ['Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
