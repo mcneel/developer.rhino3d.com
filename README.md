@@ -58,6 +58,14 @@ jekyll serve
 
 Navigate to http://localhost:4000 in your browser to view the site.
 
+An alternative, faster local serve:
+
+```
+cd CLONE_DIRECTORY
+./jekyll_serve_exclude_api.sh
+```
+
+which temporarily excludes the */api* folder generation to speed things up.
 
 ![Windows Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/win_logo_small.png)
 ### Windows
