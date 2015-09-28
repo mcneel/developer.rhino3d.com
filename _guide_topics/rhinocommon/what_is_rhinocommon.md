@@ -52,4 +52,4 @@ The [Python]({{ site.baseurl }}/guides/rhinopython) script engine is entirely ba
 
 ## Related topics
 
-- [What are Mono and Xamarin?](/guides/rhinocommon/what_are_mono_and_xamarin/)
+- [What are Mono and Xamarin?]({{ site.baseurl}}/guides/rhinocommon/what_are_mono_and_xamarin/)
