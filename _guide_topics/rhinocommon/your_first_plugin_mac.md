@@ -42,11 +42,6 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 
 ### Boilerplate Build
 
-<div class="bs-callout bs-callout-danger">
-    <h4>WARNING</h4>
-    <p><b>Early-adopters</b>: the following steps will <b>NOT</b> work with the currently released Rhinoceros (5.0.2).  You will need to use <a href="http://www.rhino3d.com/go/download/rhino-for-mac/wip/latest" target="_blank">the latest RhinoWIP</a> and read the <b><a href="{{ site.baseurl }}/guides/rhinocommon/debug_rhinowip_mac">Debug in RhinoWIP (Mac)</a></b> guide.  This warning will be removed when Plugin Support is added to the stable, commercial Rhinoceros.</p>
-</div>
-
 1. Before we do anything, let's **build** and **run** HelloRhinoCommon to make sure everything is working as expected.  We'll just build the boilerplate Plugin template.  Click the large **Build > Run** (play) button in the upper-left corner of Xamarin Studio...
 ![Play Button]({{ site.baseurl }}/images/your_first_plugin_mac_05.png)
 1. **Rhinoceros** launches.  Create a **New Model**...
