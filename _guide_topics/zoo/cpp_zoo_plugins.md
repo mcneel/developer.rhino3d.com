@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Creating C/C++ Zoo Plugins
+title: C/C++ Zoo Plugins
 author: dale@mcneel.com
 categories: ['Fundamentals']
 platforms: ['Windows']
@@ -12,7 +12,7 @@ origin: http://wiki.mcneel.com/developer/zoorhinoplugin
 order: 4
 ---
 
-# Creating C/C++ Zoo Plugins
+# C/C++ Zoo Plugins
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

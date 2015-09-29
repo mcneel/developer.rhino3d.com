@@ -1,18 +1,18 @@
 ---
 layout: toc-guide-page
-title: Creating Plugins for Zoo
+title: RhinoCommon Zoo Plugins
 author: dale@mcneel.com
-categories: ['Fundamentals']
+categories: ['Advanced']
 platforms: ['Windows']
-apis: ['Zoo']
+apis: ['Zoo', 'RhinoCommon']
 languages: ['C#']
 keywords: ['Zoo', 'Plugin']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/zooplugin
-order: 2
+origin: http://wiki.mcneel.com/developer/zoorhinocommonplugin
+order: 3
 ---
 
-# Creating Plugins for Zoo
+# RhinoCommon Zoo Plugins
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>
