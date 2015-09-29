@@ -18,9 +18,7 @@ This guide discusses how to create Rhino plugins, based on RhinoCommon, that can
 
 ## Overview
 
-Zoo 5.0 allows 3rd party plugin developers to add licensing support for their products to the Zoo.
-
-The RhinoCommon allows developers to write plug-ins for Rhino that use the Rhino license manager and obtain licenses from Zoo servers.
+Zoo 5.0 allows 3rd party plugin developers to add licensing support for their products to the Zoo.  RhinoCommon allows developers to write plugins for Rhino that use the Rhino license manager and obtain licenses from Zoo servers.
 
 ## Prerequisites
 
