@@ -178,7 +178,7 @@ The abbreviation after the first set of back-ticks is the language code for synt
 - `cs` is C#
 - `vbnet` is VB.NET
 - `python` is Python
-- `c++` is C/C++
+- `cpp` is C/C++
 
 ---
 
