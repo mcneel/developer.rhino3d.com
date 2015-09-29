@@ -7,16 +7,50 @@ platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
 keywords: ['openNURBS', 'Extrusions', 'Importing']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/onextrusion
 order: 1
 ---
 
 # Importing Lightweight Extrusions
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+This guide demonstrates how to convert openNURBS Lightweight Extrusion objects into Breps for importing.
+
+## Question
+
+I was try to add some code for handling the `ON::extrusion_object` type object. But, I don't now know which API I could use to get data from extrusion object. I know there was a new class `ON_Extrusion` in *opennurbs_beam.cpp*. But I did not know how to use it.  Can you give me some suggestion or some sample code?  I would like know how should I import extrusion object?
+
+## Answer
+
+In most cases, you will want to convert the extrusion object to a Brep and then just pass the Brep to the Brep handling code that you've already written, for example:
+
+```cpp
+int i = 0;
+for( i = 0; i < model.m_object_table.Count(); i++ )
+{
+  const ONX_Model_Object& model_object = model.m_object_table[i];
+  if( 0 == model_object.m_object )
+    continue;
+
+  if( ON::extrusion_object != model_object.m_object->ObjectType() )
+    continue;
+
+  const ON_Extrusion* extrusion = ON_Extrusion::Cast( model_object.m_object );
+  if( 0 == extrusion )
+    continue;
+
+  ON_Brep* brep = ON_Brep::New();
+  if( 0 == brep )
+    continue;
+
+  if( brep != extrusion->BrepForm(brep, true) )
+  {
+    delete brep; // don't leak...
+    continue;
+  }
+
+  // TODO: do something with brep here...
+
+  delete brep; // don't leak...
+}
+```
