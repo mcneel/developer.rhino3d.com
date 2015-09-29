@@ -61,9 +61,11 @@ The sources of content-to-be-consolidated are:
   </ul>
 </div>
 
-### Misc
+- [RhinoScript Knowledge Base](http://wiki.mcneel.com/developer/rhinoscript) needs to be reviewed again...not everything was stubbed properly.
 
 - [http://www.rhino3d.com/developer](http://www.rhino3d.com/developer) should redirect to [http://developer.rhino3d.com](http://developer.rhino3d.com) (this website) - the link is in all the .h files top comments
+
+### Misc
 
 - **DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
 
