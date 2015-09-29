@@ -18,9 +18,9 @@ This guide walks you through your first plugin that targets both Rhino for Windo
 
 ## Overview
 
-There are many ways to architect a cross-platform solution, depending on your plugin, your projects, and your preferences.  In this guide we will employ a method called "cloned project files."  This method uses two very similar _.csproj_ files - each with platform-specific dependencies - that link to the same source files.  The main goal is to illustrate a straightforward way of handling platform-specific needs while sharing the maximum amount of code.
+There are many ways to architect a cross-platform solution, depending on your plugin, your projects, and your preferences.  In this guide we will employ a method called "cloned project files."  This method uses two very similar _.csproj_ files - each with platform-specific dependencies - that share the same source files.  The main goal is to illustrate a straightforward way of handling platform-specific needs while sharing the maximum amount of code.
 
-We will begin by using the same HelloRhinoCommon sample projects seen in [Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_windows) and [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac)...
+We will build on what we learned in the HelloRhinoCommon sample projects seen in [Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_windows) and [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac)...
 
 ## HelloRhino.CrossPlatform
 
@@ -100,7 +100,7 @@ public class HelloRhinoCommonPlugin : Rhino.PlugIns.PlugIn
 
 ### Platform Defines
 
-Though we are sharing cross-platform code, there will be inevitably be situations where you want to do one thing on Windows and another on Mac.  Within shared code, the best way to manage this is with platform-specific defines in your platform-targeted projects.  Let's define a symbol to get around the reference errors we just encountered.
+Though we are sharing cross-platform code, there will be inevitably be situations where you want to do one thing on Windows and another on Mac.  Within shared code, the way to manage this is with platform-specific defines in your platform-targeted projects.  Let's define a symbol to get around the reference errors we just encountered.
 
 #### Windows
 
