@@ -21,7 +21,12 @@
     &:visited {
         color: $grey-color-dark;
     }
+    @include media-query($on-phone) {
+        font-size: 20px;
+    }
 }
+
+
 
 .site-nav {
     float: right;
