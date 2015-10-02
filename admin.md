@@ -65,7 +65,7 @@ The sources of content-to-be-consolidated are:
 
 - [http://www.rhino3d.com/developer](http://www.rhino3d.com/developer) should redirect to [http://developer.rhino3d.com](http://developer.rhino3d.com) (this website) - the link is in all the .h files top comments
 
-- Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros)
+- Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
 
 ### Misc
 
