@@ -9,23 +9,6 @@ order: 4
 
 ---
 
-## General
-
-<div class="trigger">
-  {% assign samples = site.samples | sort:"order" %}
-  <ul>
-  {% for sample in samples %}
-    {% if sample.platforms contains 'Cross-Platform' and sample.apis contains 'All' %}
-      {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
-
----
-
 ## RhinoCommon
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
@@ -171,7 +154,13 @@ order: 4
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
-TODO
+<div class="bs-callout bs-callout-danger">
+  <h4>UNDER CONSTRUCTION</h4>
+  <p>Rhino.Python samples have yet to be ported to this site.  Please check back soon for updates.  
+  In the meantime, you can view the original documentation here:
+  <a href="http://wiki.mcneel.com/developer/python">http://wiki.mcneel.com/developer/python</a> or see the RhinoCommon samples above.</p>
+</div>
+
 
 
 ---
@@ -180,7 +169,12 @@ TODO
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 
-TODO
+<div class="bs-callout bs-callout-danger">
+  <h4>UNDER CONSTRUCTION</h4>
+  <p>openNURBS samples have yet to be ported to this site.  Please check back soon for updates.  
+  In the meantime, you can view the original documentation here:
+  <a href="http://wiki.mcneel.com/developer/opennurbs/home">http://wiki.mcneel.com/developer/opennurbs/home</a> or see the openNURBS samples bundled with the SDK.</p>
+</div>
 
 
 ---
@@ -189,8 +183,12 @@ TODO
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
-TODO
-
+<div class="bs-callout bs-callout-danger">
+  <h4>UNDER CONSTRUCTION</h4>
+  <p>C/C++ samples have yet to be ported to this site.  Please check back soon for updates.  
+  In the meantime, you can view the samples on GitHub here:
+  <a href="https://github.com/mcneel/Rhino5Samples_CPP">https://github.com/mcneel/Rhino5Samples_CPP</a></p>
+</div>
 
 ---
 
@@ -198,8 +196,12 @@ TODO
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
-TODO
-
+<div class="bs-callout bs-callout-danger">
+  <h4>UNDER CONSTRUCTION</h4>
+  <p>Grasshopper Component samples have yet to be ported to this site.  Please check back soon for updates.  
+  In the meantime, you can view the original documentation here:
+  <a href="http://wiki.mcneel.com/developer/grasshopper/gha">http://wiki.mcneel.com/developer/grasshopper/gha</a></p>
+</div>
 
 ---
 
@@ -207,7 +209,12 @@ TODO
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
-TODO
+<div class="bs-callout bs-callout-danger">
+  <h4>UNDER CONSTRUCTION</h4>
+  <p>RhinoScript samples have yet to be ported to this site.  Please check back soon for updates.  
+  In the meantime, you can view the original documentation here:
+  <a href="http://wiki.mcneel.com/developer/rhinoscript">http://wiki.mcneel.com/developer/rhinoscript</a></p>
+</div>
 
 
 ---
@@ -216,7 +223,12 @@ TODO
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
-TODO
+<div class="bs-callout bs-callout-danger">
+  <h4>UNDER CONSTRUCTION</h4>
+  <p>RDK samples have yet to be ported to this site.  Please check back soon for updates.  
+  In the meantime, you can view the original documentation here:
+  <a href="http://wiki.mcneel.com/labs/rendererdevelopmentkit10">http://wiki.mcneel.com/labs/rendererdevelopmentkit10</a></p>
+</div>
 
 
 ---
@@ -225,8 +237,12 @@ TODO
 
 **Platforms**: <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
 
-TODO
-
+<div class="bs-callout bs-callout-danger">
+  <h4>UNDER CONSTRUCTION</h4>
+  <p>RhinoMobile samples have yet to be ported to this site.  Please check back soon for updates.  
+  In the meantime, you can view the samples on GitHub here:
+  <a href="https://github.com/mcneel/RhinoMobileSamples">https://github.com/mcneel/RhinoMobileSamples</a></p>
+</div>
 
 ---
 
@@ -234,4 +250,9 @@ TODO
 
 **Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 
-TODO
+<div class="bs-callout bs-callout-danger">
+  <h4>UNDER CONSTRUCTION</h4>
+  <p>Zoo Plugin samples have yet to be ported to this site.  Please check back soon for updates.  
+  In the meantime, you can view the original documentation here:
+  <a href="http://wiki.mcneel.com/developer/zoo">http://wiki.mcneel.com/developer/zoo</a></p>
+</div>
