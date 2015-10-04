@@ -12,6 +12,39 @@ order: 1
 ---
 
 ```cs
+class DeviationConduit : Rhino.Display.DisplayConduit
+{
+  private readonly Curve m_curve_a;
+  private readonly Curve m_curve_b;
+  private readonly Point3d m_min_dist_point_a ;
+  private readonly Point3d m_min_dist_point_b ;
+  private readonly Point3d m_max_dist_point_a ;
+  private readonly Point3d m_max_dist_point_b ;
+
+  public DeviationConduit(Curve curveA, Curve curveB, Point3d minDistPointA, Point3d minDistPointB, Point3d maxDistPointA, Point3d maxDistPointB)
+  {
+    m_curve_a = curveA;
+    m_curve_b = curveB;
+    m_min_dist_point_a = minDistPointA;
+    m_min_dist_point_b = minDistPointB;
+    m_max_dist_point_a = maxDistPointA;
+    m_max_dist_point_b = maxDistPointB;
+  }
+
+  protected override void DrawForeground(Rhino.Display.DrawEventArgs e)
+  {
+    e.Display.DrawCurve(m_curve_a, Color.Red);
+    e.Display.DrawCurve(m_curve_b, Color.Red);
+
+    e.Display.DrawPoint(m_min_dist_point_a, Color.LawnGreen);
+    e.Display.DrawPoint(m_min_dist_point_b, Color.LawnGreen);
+    e.Display.DrawLine(new Line(m_min_dist_point_a, m_min_dist_point_b), Color.LawnGreen);
+    e.Display.DrawPoint(m_max_dist_point_a, Color.Red);
+    e.Display.DrawPoint(m_max_dist_point_b, Color.Red);
+    e.Display.DrawLine(new Line(m_max_dist_point_a, m_max_dist_point_b), Color.Red);
+  }
+}
+
 partial class Examples
 {
   public static Result CrvDeviation(RhinoDoc doc)
