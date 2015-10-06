@@ -19,7 +19,7 @@ This guide explains how to create a plugin installer for Rhino for Mac, which pr
 
 ## Overview
 
-Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins is very easy.  You simply create a zip archive of your plugin folder with an special extension (*.rhp*), compress the folder, and change the extension from *.zip* to *.macrhi*.  Once this is done, you can double-click the archive and Rhino will launch and install the plugin.  You can also drag the *.macrhi* onto the dock icon of a running instance of Rhino and it will install the plugin as well.  You will, in any case, need to Quit an Restart Rhino for the plugin to activate.
+Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins is very easy.  You simply rename your plugin's containing *folder* with an special extension (*.rhp*), compress the folder, and change the extension from *.zip* to *.macrhi*.  Once this is done, you can double-click the archive and Rhino will launch and install the plugin.  You can also drag the *.macrhi* onto the dock icon of a running instance of Rhino and it will install the plugin as well.  You will, in any case, need to Quit an Restart Rhino for the plugin to activate.
 
 ---
 
