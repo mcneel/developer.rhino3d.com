@@ -12,6 +12,27 @@ order: 1
 ---
 
 ```cs
+class MoveCPlanePoint : Rhino.Input.Custom.GetPoint
+{
+  readonly Rhino.DocObjects.ConstructionPlane m_cplane;
+  public MoveCPlanePoint(Rhino.DocObjects.ConstructionPlane cplane)
+  {
+    m_cplane = cplane;
+  }
+
+  protected override void OnMouseMove(Rhino.Input.Custom.GetPointMouseEventArgs e)
+  {
+    Plane pl = m_cplane.Plane;
+    pl.Origin = e.Point;
+    m_cplane.Plane = pl;
+  }
+
+  protected override void OnDynamicDraw(Rhino.Input.Custom.GetPointDrawEventArgs e)
+  {
+    e.Display.DrawConstructionPlane(m_cplane);
+  }
+}
+
 partial class Examples
 {
   public static Rhino.Commands.Result MoveCPlane(Rhino.RhinoDoc doc)
