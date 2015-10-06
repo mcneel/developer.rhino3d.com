@@ -39,7 +39,7 @@ body {
 */
 .index_use_images {
 /* Use only width to control an img-responsive img.  Bootstrap will float the height. */
-	width:130px;
+	width:290px;
 }
 tbody.index_table tr td{
 	vertical-align:middle;
@@ -50,7 +50,7 @@ tbody.index_table tr td{
 }
 .index_table_primary_use {
 	margin:10px;
-	font-size:0.85em;
+	font-size:1.0em;
 }
 
 /*
