@@ -7,7 +7,7 @@
       <img class="menu-icon" src="{{ site.baseurl }}/images/gi.svg">
       {% assign pages = site.pages | sort:"order"  %}
       <div class="trigger">
-      	<a class="page-link" href="{{ site.baseurl }}/">Welcome</a>
+      	<!--<a class="page-link" href="{{ site.baseurl }}/">Welcome</a>-->
         {% for page in pages %}
           {% if page.title != 'Administration' %}
             {% if page.title != 'Blog' %}
