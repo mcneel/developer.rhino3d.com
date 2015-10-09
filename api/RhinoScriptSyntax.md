@@ -1,6 +1,5 @@
 ---
 layout: toc-page
-title: RhinoScriptSyntax
 permalink: /api/RhinoScriptSyntax/
 order: 1
 ---
