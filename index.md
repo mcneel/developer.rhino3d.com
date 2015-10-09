@@ -9,6 +9,11 @@ layout: fullwidth-page
     <tbody>
       <tr>
         <td style="padding: 20px; text-align: center;">
+          <a href="{{ site.baseurl }}/guides/#grasshopper" title="Grasshopper Components">
+            <img src="{{ site.baseurl }}/images/ghcomponent_logo_intro.png" class="index_use_images">
+          </a>
+        </td>
+        <td style="padding: 20px; text-align: center;">
           <a href="{{ site.baseurl }}/guides/#rhinocommon" title="RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper">
             <img src="{{ site.baseurl }}/images/rhinocommon_logo_intro.png" class="index_use_images">
           </a>
@@ -16,11 +21,6 @@ layout: fullwidth-page
         <td style="padding: 20px; text-align: center;">
           <a href="{{ site.baseurl }}/guides/#rhinopython" title="Rhino.Python: Pythonic in three dimensions!">
             <img src="{{ site.baseurl }}/images/rhino_python_logo_intro.png" class="index_use_images">
-          </a>
-        </td>
-        <td style="padding: 20px; text-align: center;">
-          <a href="{{ site.baseurl }}/guides/#opennurbs" title="openNURBS is free and open source">
-            <img src="{{ site.baseurl }}/images/opennurbs_logo_intro.png" class="index_use_images">
           </a>
         </td>
       </tr>
