@@ -70,6 +70,7 @@ The sources of content-to-be-consolidated are:
 ### Misc
 
 - **DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
+- Mitch's MicMac tools: http://wiki.mcneel.com/people/mitchheynick
 
 ### Samples
 
