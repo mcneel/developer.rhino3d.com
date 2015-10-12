@@ -20,6 +20,7 @@ layout: bootstrap
     <div class="col-xs-12 col-md-10">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         {% for module in site.data.rhinoscriptsyntax-structured-docstring %}
+              {% assign mainloopfirst = forloop.first %}
               <div class="panel panel-simple">
                 <p class="p-ModuleName" id = "{{ module.ModuleName }}">{{ module.ModuleName }}</p>
               </div>
@@ -33,7 +34,7 @@ layout: bootstrap
                   <span class="label label-default {% if site.rss_show_missing_examples_links == true and moduleFunction.ExampleString == '' %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">ex</span>
                   <span class="label label-warning {% if site.rss_show_missing_examples_links == true and moduleFunction.SeeAlso.size == 0 %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">lnk</span>
                 </div>
-                <div id="collapse-{{ moduleFunction.Name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ moduleFunction.Name }}">
+                <div id="collapse-{{ moduleFunction.Name }}" class="panel-collapse collapse {% if mainloopfirst and forloop.first %}{{ 'in' }}{% endif %}" role="tabpanel" aria-labelledby="heading-{{ moduleFunction.Name }}">
                   <div class="panel-body docstring-panel">
                     <pre><code class="python">{{ moduleFunction.Signature }}</code></pre>
 
@@ -62,7 +63,7 @@ layout: bootstrap
                         {% endfor %}
                       </ul>
                     </div>
-                    
+
                   </div>
                 </div>
               </div>
