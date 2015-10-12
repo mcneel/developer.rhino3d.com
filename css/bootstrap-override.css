@@ -183,3 +183,69 @@ tbody.index_table tr td{
 @media screen and (max-width: 990px) { .bs-docs-sidebar {
     display: none;
 } }
+
+/*
+##############################################################################
+## RhinoScriptSyntax API docs
+##############################################################################
+*/
+
+#rhinoscriptsyntax-api-docs .panel {
+  margin: 0;
+  background-color: inherit;
+  background-image: none;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+#rhinoscriptsyntax-api-docs .panel-heading {
+  padding: 0 0 0 10px;
+  border-radius: 0;
+  background-color: inherit;
+  border: none;
+  box-shadow: none;
+}
+
+#rhinoscriptsyntax-api-docs .panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+  border-top: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#rhinoscriptsyntax-api-docs .panel-group .panel p.p-ModuleName {
+  margin: 20px 0 0 0;
+}
+#rhinoscriptsyntax-api-docs .panel-moduleFunction .docstring-panel {
+  padding: 0 0 0 15px;
+}
+
+#rhinoscriptsyntax-api-docs .panel-moduleFunction .docstring-panel h5 {
+  margin: 10px 0 2px 0;
+}
+#rhinoscriptsyntax-api-docs .panel-moduleFunction .docstring-panel h5 + div {
+  padding: 0 0 0 15px;
+}
+
+#rhinoscriptsyntax-api-docs .panel-group .panel-heading a {
+  font-size: 15px;
+  line-height: inherit;
+}
+#rhinoscriptsyntax-api-docs .panel-body .seealso a {
+  font-size: 12px;
+  line-height: 1.0;
+}
+#rhinoscriptsyntax-api-docs .panel-body ul {
+  list-style: none;
+}
+
+#rhinoscriptsyntax-api-docs .panel-moduleFunction .panel-heading .label {
+  font-size: 50%;
+}
+
+/* .show conflicts with bootstrap */
+#rhinoscriptsyntax-api-docs .docstring-panel .docstring-field .rss-show {
+  display: inline;
+}
+
+#rhinoscriptsyntax-api-docs .docstring-panel .docstring-field .hide {
+  display: none;
+}

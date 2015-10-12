@@ -11,6 +11,10 @@ editMeOnGhBaseUrl: "mcneel/developer-rhino3d-com"
 # twitter_username: ""
 github_username:  mcneel
 
+# RhinoScriptSyntax API docs
+rss_show_bad_docstring: true
+rss_show_missing_examples_links: false
+
 # Build settings
 #markdown: redcarpet
 
