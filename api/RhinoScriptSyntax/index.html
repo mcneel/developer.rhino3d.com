@@ -32,7 +32,7 @@ layout: bootstrap
                   </a>
                   <span class="label label-warning {% if site.rss_show_bad_docstring == true and moduleFunction.IsDocStringWellFormed == false %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">!</span>
                   <span class="label label-default {% if site.rss_show_missing_examples_links == true and moduleFunction.ExampleString == '' %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">ex</span>
-                  <span class="label label-warning {% if site.rss_show_missing_examples_links == true and moduleFunction.SeeAlso.size == 0 %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">lnk</span>
+                  <span class="label label-default {% if site.rss_show_missing_examples_links == true and moduleFunction.SeeAlso.size == 0 %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">lnk</span>
                 </div>
                 <div id="collapse-{{ moduleFunction.Name }}" class="panel-collapse collapse {% if mainloopfirst and forloop.first %}{{ 'in' }}{% endif %}" role="tabpanel" aria-labelledby="heading-{{ moduleFunction.Name }}">
                   <div class="panel-body docstring-panel">
