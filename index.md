@@ -36,9 +36,9 @@ layout: fullwidth-page
 <table class="table" style="width:940px;">
   <thead>
     <tr style="border-bottom:1pt solid black;">
-      <th width="175px">What</th>
-      <th width="145px">Where</th>
-      <th width="175px">How</th>
+      <th>What</th>
+      <th width="95px">Where</th>
+      <th width="125px">How</th>
       <th>Why</th>
     </tr>
   </thead>
@@ -111,7 +111,7 @@ layout: fullwidth-page
  </table>
  </div>
 
-<br>
+{: rules="groups"}
 
 <div align="center">
 <p>Still unclear?  Browse the <a href="{{ site.baseurl }}/guides/">Guides</a>.  Ask a question in <a href="{{ site.baseurl }}/guides/general/contributing/#discourse">the Forum</a>.  Check out the <a href="{{ site.baseurl }}/guides/general/frequently_asked_questions/">FAQ</a>. Ask <a href="{{ site.baseurl }}/guides/general/contributing/#contacts">a developer</a>.</p>
