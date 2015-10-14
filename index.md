@@ -37,8 +37,8 @@ layout: fullwidth-page
   <thead>
     <tr style="border-bottom:1pt solid black;">
       <th>What</th>
-      <th width="95px">Where</th>
-      <th width="125px">How</th>
+      <th>Where</th>
+      <th>How</th>
       <th>Why</th>
     </tr>
   </thead>
