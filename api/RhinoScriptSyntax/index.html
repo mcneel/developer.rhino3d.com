@@ -38,14 +38,16 @@ layout: bootstrap
                   <div class="panel-body docstring-panel">
                     <pre><code class="python">{{ moduleFunction.Signature }}</code></pre>
 
+                    <pre class="functionDescription">{{ moduleFunction.Description }}</pre>
+
                     <h5>Parameters:</h5>
                     <div>
-                      <span>{{ moduleFunction.ArgumentDesc }}</span>
+                      <pre class="functionDescription">{{ moduleFunction.ArgumentDesc }}</pre>
                     </div>
 
                     <h5>Returns:</h5>
                     <div>
-                      <span>{{ moduleFunction.Returns }}</span>
+                      <pre class="functionDescription">{{ moduleFunction.Returns }}</pre>
                     </div>
 
                     <div class="example docstring-field {% if moduleFunction.ExampleString != '' %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">

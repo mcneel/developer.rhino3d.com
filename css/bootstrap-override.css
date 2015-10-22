@@ -249,3 +249,8 @@ tbody.index_table tr td{
 #rhinoscriptsyntax-api-docs .docstring-panel .docstring-field .hide {
   display: none;
 }
+
+#rhinoscriptsyntax-api-docs pre.functionDescription {
+  background-color: inherit;
+  border: none;
+}
