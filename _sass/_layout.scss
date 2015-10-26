@@ -8,6 +8,12 @@
 
     // Positioning context for the mobile navigation icon
     position: relative;
+    @media print {
+      border-style: none;
+      min-height: 0px;
+      margin-bottom: 2px;
+      padding-bottom: 2px;
+    }
 }
 
 .site-title {
@@ -24,9 +30,18 @@
     @include media-query($on-phone) {
         font-size: 20px;
     }
+    @media print {
+        font-size: 14px;
+        line-height: 18px;
+        margin-left: 20px;
+    }
 }
 
-
+.site-title img {
+  @media print {
+    display: none;
+  }
+}
 
 .site-nav {
     float: right;
@@ -93,6 +108,12 @@
             padding: 5px 10px;
         }
     }
+    @media print {
+      .trigger {
+          clear: both;
+          display: none;
+      }
+    }
 }
 
 
@@ -114,6 +135,12 @@
 .social-media-list {
     list-style: none;
     margin-left: 0;
+}
+
+.social-media-list {
+  @media print{
+    display: none;
+  }
 }
 
 .footer-col-wrapper {
@@ -139,10 +166,23 @@
     width:         calc(20% - (#{$spacing-unit} / 2));
 }
 
+.footer-col-2 {
+  @media print {
+    display: none;
+  }
+}
+
 .footer-col-3 {
     width: -webkit-calc(45% - (#{$spacing-unit} / 2));
     width:         calc(45% - (#{$spacing-unit} / 2));
 }
+
+.footer-col-3 {
+  @media print {
+    display: none;
+  }
+}
+
 
 @include media-query($on-laptop) {
     .footer-col-1,
@@ -197,6 +237,13 @@
     font-size: 24px;
 }
 
+/** Remove html links when printing */
+
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}
 
 
 /**

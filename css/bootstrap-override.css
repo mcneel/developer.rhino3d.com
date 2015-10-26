@@ -184,6 +184,12 @@ tbody.index_table tr td{
     display: none;
 } }
 
+@media print { 
+  .bs-docs-sidebar {
+    display: none;
+  }
+}
+
 /*
 ##############################################################################
 ## RhinoScriptSyntax API docs

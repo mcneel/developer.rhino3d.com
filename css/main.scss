@@ -43,6 +43,12 @@ $on-laptop:        800px;
     }
 }
 
+ @media print {
+   .page-content {
+     padding-top: 5px;
+     padding-bottom: 5px;
+   }  
+}
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
