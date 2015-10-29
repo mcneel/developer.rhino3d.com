@@ -14,7 +14,7 @@ order: 1
 
 # What is RhinoMobile?
 
-<img align="right" src="{{ site.baseurl }}/images/rhinomobile_overview_01.png" width="242">
+![{{ site.baseurl }}/images/rhinomobile_overview_01.png]({{ site.baseurl }}/images/rhinomobile_overview_01.png){: .float-img-right width="325"}
 
 RhinoMobile is a C# .NET library for the development of 3D, cross-platform, mobile applications. RhinoMobile - like RhinoCommon - is based on the Xamarin Mono framework, a fully-functional .NET runtime that works on Android, iOS and OS X. RhinoMobile uses openNURBS (the 3dm NURBS library) and RhinoCommon (the .NET SDK for Rhinoceros and Grasshopper) and handles file IO, gesture recognition and 3D display (OpenGL ES 2.0). It's not the entirety of RhinoCommon, but a subset.
 
@@ -23,7 +23,7 @@ RhinoMobile is a C# .NET library for the development of 3D, cross-platform, mobi
 Anyone interested in developing, prototyping, or just experimenting with 3D mobile development. Though there are many good 3D libraries out there for mobile games, none are focused on 3D modeling and design. RhinoMobile seeks to fill that gap. If you want to develop in C# and target as many devices as possible, this is the library for you. No experience with mobile development necessary...just familiarity with C# and .NET.
 
 ## Where can I get help?
-
+{: .clear-img}
 Visit the [Rhino Forum](http://discourse.mcneel.com/) and post your question in the [Rhino Developer Category](http://discourse.mcneel.com/c/rhino-developer) and @mention the developer @dan.
 
 ## Downloads & Links

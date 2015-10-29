@@ -31,6 +31,31 @@ body {
 .bs-callout-danger {
     border-left-color: #ce4844;
 }
+/*
+##############################################################################
+## Image float overrides. Allows to wrap text around images.
+## {: .float-img-right}
+## To finish the wrapping, insert this text under next block object:
+## {: .clear-img}
+## That assures the next block element will stay clear of the image.
+##############################################################################
+*/
+.float-img-right {
+  float: right;
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.float-img-left {
+  float: left;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.clear-img {
+  clear:both;
+}
 
 /*
 ##############################################################################
@@ -184,7 +209,7 @@ tbody.index_table tr td{
     display: none;
 } }
 
-@media print { 
+@media print {
   .bs-docs-sidebar {
     display: none;
   }
