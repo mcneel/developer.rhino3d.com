@@ -8,7 +8,7 @@ layout: bootstrap
       <ul id="sidebar" class="nav nav-stacked fixed">
         <li class="active">modules
           <ul class="nav nav-stacked">
-            {% for module in site.data.rhinoscriptsyntax-structured-docstring-rwip %}
+            {% for module in site.data.rhinoscriptsyntax-structured-docstring-rmac %}
               <li><a href="#{{ module.ModuleName }}">{{ module.ModuleName }}</a></li>
             {% endfor %}
           </ul>
@@ -19,7 +19,7 @@ layout: bootstrap
     <!-- main content -->
     <div class="col-xs-12 col-md-10">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        {% for module in site.data.rhinoscriptsyntax-structured-docstring-rwip %}
+        {% for module in site.data.rhinoscriptsyntax-structured-docstring-rmac %}
               {% assign mainloopfirst = forloop.first %}
               <div class="panel panel-simple">
                 <p class="p-ModuleName" id = "{{ module.ModuleName }}">{{ module.ModuleName }}</p>
