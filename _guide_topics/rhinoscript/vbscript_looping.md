@@ -14,6 +14,8 @@ order: 1
 
 # VBScript Looping
 
+Also port from: [http://wiki.mcneel.com/developer/scriptsamples/vbcontinue](http://wiki.mcneel.com/developer/scriptsamples/vbcontinue)
+
 ## Overview
 
 Looping allows you to run a group of statements repeatedly. Some loops repeat statements until a condition is **False**; others repeat statements until a condition is **True**. There are also loops that repeat statements a specific number of times.
