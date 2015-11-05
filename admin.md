@@ -116,6 +116,20 @@ The following RhinoScript knowledge base articles from the wiki are really just 
 - [http://wiki.mcneel.com/developer/scriptsamples/acadschemes](http://wiki.mcneel.com/developer/scriptsamples/acadschemes)
 - [http://wiki.mcneel.com/developer/scriptsamples/igeschemes](http://wiki.mcneel.com/developer/scriptsamples/igeschemes)
 - [http://wiki.mcneel.com/developer/scriptsamples/listknotvector](http://wiki.mcneel.com/developer/scriptsamples/listknotvector)
+- [http://wiki.mcneel.com/developer/scriptsamples/createcenterpoint](http://wiki.mcneel.com/developer/scriptsamples/createcenterpoint)
+- [http://wiki.mcneel.com/developer/scriptsamples/markline](http://wiki.mcneel.com/developer/scriptsamples/markline)
+- [http://wiki.mcneel.com/developer/scriptsamples/matchobjectattributesex](http://wiki.mcneel.com/developer/scriptsamples/matchobjectattributesex)
+- [http://wiki.mcneel.com/developer/scriptsamples/matchtext](http://wiki.mcneel.com/developer/scriptsamples/matchtext)
+- [http://wiki.mcneel.com/developer/scriptsamples/morph](http://wiki.mcneel.com/developer/scriptsamples/morph)
+- [http://wiki.mcneel.com/developer/scriptsamples/movesurfacegrip](http://wiki.mcneel.com/developer/scriptsamples/movesurfacegrip)
+- [http://wiki.mcneel.com/developer/scriptsamples/pipeall](http://wiki.mcneel.com/developer/scriptsamples/pipeall)
+- [http://wiki.mcneel.com/developer/scriptsamples/offsetcurve](http://wiki.mcneel.com/developer/scriptsamples/offsetcurve)
+- [http://wiki.mcneel.com/developer/scriptsamples/positiononsrf](http://wiki.mcneel.com/developer/scriptsamples/positiononsrf)
+- [http://wiki.mcneel.com/developer/scriptsamples/printsurfacepoints](http://wiki.mcneel.com/developer/scriptsamples/printsurfacepoints)
+- [http://wiki.mcneel.com/developer/scriptsamples/rendernamedviews](http://wiki.mcneel.com/developer/scriptsamples/rendernamedviews)
+- [http://wiki.mcneel.com/developer/scriptsamples/revolve](http://wiki.mcneel.com/developer/scriptsamples/revolve)
+- [http://wiki.mcneel.com/developer/scriptsamples/rotateplaneparallel](http://wiki.mcneel.com/developer/scriptsamples/rotateplaneparallel)
+- [http://wiki.mcneel.com/developer/scriptsamples/rotateone](http://wiki.mcneel.com/developer/scriptsamples/rotateone)
 
 ### Misc
 

@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Quick Sort Key Value Pairs
+title: Offsetting Meshes
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/quicksortkeyvaluepair
+origin: http://wiki.mcneel.com/developer/scriptsamples/offsetmeshsolidify
 order: 1
 ---
 
-# Quick Sort Key Value Pairs
+# Offsetting Meshes
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>
@@ -20,5 +20,3 @@ order: 1
   In the meantime, you can view the original documentation here:
   <a href="{{ page.origin }}">{{ page.origin }}</a></p>
 </div>
-
-Also port from: [http://wiki.mcneel.com/developer/scriptsamples/sortkeyvalues](http://wiki.mcneel.com/developer/scriptsamples/sortkeyvalues)
