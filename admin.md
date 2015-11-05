@@ -49,7 +49,7 @@ The sources of content-to-be-consolidated are:
 ### Guides
 
 <div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
+  {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for topic in guides %}
     {% if topic.TODO == 1 %}
@@ -160,8 +160,6 @@ The following RhinoScript knowledge base articles from the wiki are really just 
 - [http://wiki.mcneel.com/developer/scriptsamples/unrollsrf](http://wiki.mcneel.com/developer/scriptsamples/unrollsrf)
 
 ### Misc
-
-- [RhinoScript Knowledge Base](http://wiki.mcneel.com/developer/rhinoscript) needs to be reviewed again...not everything was stubbed properly.
 
 - [http://www.rhino3d.com/developer](http://www.rhino3d.com/developer) should redirect to [http://developer.rhino3d.com](http://developer.rhino3d.com) (this website) - the link is in all the .h files top comments
 
