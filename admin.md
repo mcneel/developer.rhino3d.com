@@ -69,24 +69,53 @@ The sources of content-to-be-consolidated are:
 
 The following RhinoScript knowledge base articles from the wiki are really just samples and do not have enough explanatory content to be considered guides, so they should be evaluated as samples instead:
 
-- http://wiki.mcneel.com/developer/sdksamples/testnurbscurve
-- http://wiki.mcneel.com/developer/scriptsamples/excelcurveproperties
-- http://wiki.mcneel.com/developer/scriptsamples/batchconvertautocad
-- http://wiki.mcneel.com/developer/scriptsamples/meshvolumecentroid
-- http://wiki.mcneel.com/developer/scriptsamples/circlepacking
-- http://wiki.mcneel.com/developer/scriptsamples/convertblocktogroup
-- http://wiki.mcneel.com/developer/scriptsamples/countblocks
-- http://wiki.mcneel.com/developer/scriptsamples/countobjects
-- http://wiki.mcneel.com/developer/scriptsamples/dodecahedron
-- http://wiki.mcneel.com/developer/scriptsamples/parametricellipsoid
-- http://wiki.mcneel.com/developer/scriptsamples/icosahedron
-- http://wiki.mcneel.com/developer/scriptsamples/boxframe
-- http://wiki.mcneel.com/developer/scriptsamples/fibonaccispiral
-- http://wiki.mcneel.com/developer/scriptsamples/squarepipe
-- http://wiki.mcneel.com/developer/scriptsamples/arraypolar
-- http://wiki.mcneel.com/developer/scriptsamples/isupperbound
-- http://wiki.mcneel.com/developer/scriptsamples/selectedgroups
-
+- [http://wiki.mcneel.com/developer/sdksamples/testnurbscurve](http://wiki.mcneel.com/developer/sdksamples/testnurbscurve)
+- [http://wiki.mcneel.com/developer/scriptsamples/excelcurveproperties](http://wiki.mcneel.com/developer/scriptsamples/excelcurveproperties)
+- [http://wiki.mcneel.com/developer/scriptsamples/batchconvertautocad](http://wiki.mcneel.com/developer/scriptsamples/batchconvertautocad)
+- [http://wiki.mcneel.com/developer/scriptsamples/meshvolumecentroid](http://wiki.mcneel.com/developer/scriptsamples/meshvolumecentroid)
+- [http://wiki.mcneel.com/developer/scriptsamples/circlepacking](http://wiki.mcneel.com/developer/scriptsamples/circlepacking)
+- [http://wiki.mcneel.com/developer/scriptsamples/convertblocktogroup](http://wiki.mcneel.com/developer/scriptsamples/convertblocktogroup)
+- [http://wiki.mcneel.com/developer/scriptsamples/countblocks](http://wiki.mcneel.com/developer/scriptsamples/countblocks)
+- [http://wiki.mcneel.com/developer/scriptsamples/countobjects](http://wiki.mcneel.com/developer/scriptsamples/countobjects)
+- [http://wiki.mcneel.com/developer/scriptsamples/countobjects](http://wiki.mcneel.com/developer/scriptsamples/countobjects)
+- [http://wiki.mcneel.com/developer/scriptsamples/parametricellipsoid](http://wiki.mcneel.com/developer/scriptsamples/parametricellipsoid)
+- [http://wiki.mcneel.com/developer/scriptsamples/icosahedron](http://wiki.mcneel.com/developer/scriptsamples/icosahedron)
+- [http://wiki.mcneel.com/developer/scriptsamples/boxframe](http://wiki.mcneel.com/developer/scriptsamples/boxframe)
+- [http://wiki.mcneel.com/developer/scriptsamples/fibonaccispiral](http://wiki.mcneel.com/developer/scriptsamples/fibonaccispiral)
+- [http://wiki.mcneel.com/developer/scriptsamples/squarepipe](http://wiki.mcneel.com/developer/scriptsamples/squarepipe)
+- [http://wiki.mcneel.com/developer/scriptsamples/arraypolar](http://wiki.mcneel.com/developer/scriptsamples/arraypolar)
+- [http://wiki.mcneel.com/developer/scriptsamples/isupperbound](http://wiki.mcneel.com/developer/scriptsamples/isupperbound)
+- [http://wiki.mcneel.com/developer/scriptsamples/selectedgroups](http://wiki.mcneel.com/developer/scriptsamples/selectedgroups)
+- [http://wiki.mcneel.com/developer/dividecurvedashed](http://wiki.mcneel.com/developer/dividecurvedashed)
+- [http://wiki.mcneel.com/developer/scriptsamples/divideequidistance](http://wiki.mcneel.com/developer/scriptsamples/divideequidistance)
+- [http://wiki.mcneel.com/developer/scriptsamples/steelshapes](http://wiki.mcneel.com/developer/scriptsamples/steelshapes)
+- [http://wiki.mcneel.com/developer/scriptsamples/torsion](http://wiki.mcneel.com/developer/scriptsamples/torsion)
+- [http://wiki.mcneel.com/developer/scriptsamples/superexplodeblock](http://wiki.mcneel.com/developer/scriptsamples/superexplodeblock)
+- [http://wiki.mcneel.com/developer/scriptsamples/explodemesh](http://wiki.mcneel.com/developer/scriptsamples/explodemesh)
+- [http://wiki.mcneel.com/developer/scriptsamples/exportcontrolpoints](http://wiki.mcneel.com/developer/scriptsamples/exportcontrolpoints)
+- [http://wiki.mcneel.com/developer/scriptsamples/exportlayerobjects](http://wiki.mcneel.com/developer/scriptsamples/exportlayerobjects)
+- [http://wiki.mcneel.com/developer/scriptsamples/geomview](http://wiki.mcneel.com/developer/scriptsamples/geomview)
+- [http://wiki.mcneel.com/developer/scriptsamples/exportpointstoexcel](http://wiki.mcneel.com/developer/scriptsamples/exportpointstoexcel)
+- [http://wiki.mcneel.com/developer/scriptsamples/extractinterpcrvpoints](http://wiki.mcneel.com/developer/scriptsamples/extractinterpcrvpoints)
+- [http://wiki.mcneel.com/developer/scriptsamples/extractuvintersectpts](http://wiki.mcneel.com/developer/scriptsamples/extractuvintersectpts)
+- [http://wiki.mcneel.com/developer/scriptsamples/batchextractthumbnails](http://wiki.mcneel.com/developer/scriptsamples/batchextractthumbnails)
+- [http://wiki.mcneel.com/developer/scriptsamples/findclosestcurve](http://wiki.mcneel.com/developer/scriptsamples/findclosestcurve)
+- [http://wiki.mcneel.com/developer/scriptsamples/platonics](http://wiki.mcneel.com/developer/scriptsamples/platonics)
+- [http://wiki.mcneel.com/developer/scriptsamples/convertdotstotext](http://wiki.mcneel.com/developer/scriptsamples/convertdotstotext)
+- [http://wiki.mcneel.com/developer/scriptsamples/isolatelayers](http://wiki.mcneel.com/developer/scriptsamples/isolatelayers)
+- [http://wiki.mcneel.com/developer/scriptsamples/movecurvegrip](http://wiki.mcneel.com/developer/scriptsamples/movecurvegrip)
+- [http://wiki.mcneel.com/developer/scriptsamples/macaddress](http://wiki.mcneel.com/developer/scriptsamples/macaddress)
+- [http://wiki.mcneel.com/developer/scriptsamples/color](http://wiki.mcneel.com/developer/scriptsamples/color)
+- [http://wiki.mcneel.com/developer/scriptsamples/seltext](http://wiki.mcneel.com/developer/scriptsamples/seltext)
+- [http://wiki.mcneel.com/developer/scriptsamples/airfoil](http://wiki.mcneel.com/developer/scriptsamples/airfoil)
+- [http://wiki.mcneel.com/developer/scriptsamples/importinterpcrv](http://wiki.mcneel.com/developer/scriptsamples/importinterpcrv)
+- [http://wiki.mcneel.com/developer/scriptsamples/importtext](http://wiki.mcneel.com/developer/scriptsamples/importtext)
+- [http://wiki.mcneel.com/developer/scriptsamples/jointhedots](http://wiki.mcneel.com/developer/scriptsamples/jointhedots)
+- [http://wiki.mcneel.com/developer/scriptsamples/knotmultiplicity](http://wiki.mcneel.com/developer/scriptsamples/knotmultiplicity)
+- [http://wiki.mcneel.com/developer/scriptsamples/liquiddropsimulation](http://wiki.mcneel.com/developer/scriptsamples/liquiddropsimulation)
+- [http://wiki.mcneel.com/developer/scriptsamples/acadschemes](http://wiki.mcneel.com/developer/scriptsamples/acadschemes)
+- [http://wiki.mcneel.com/developer/scriptsamples/igeschemes](http://wiki.mcneel.com/developer/scriptsamples/igeschemes)
+- [http://wiki.mcneel.com/developer/scriptsamples/listknotvector](http://wiki.mcneel.com/developer/scriptsamples/listknotvector)
 
 ### Misc
 
