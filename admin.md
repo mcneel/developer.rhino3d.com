@@ -61,19 +61,41 @@ The sources of content-to-be-consolidated are:
   </ul>
 </div>
 
+### Samples
+
+- Here we could report samples that are not passing tests (TODO TODO ...very meta).
+
+**RhinoScript**
+
+The following RhinoScript knowledge base articles from the wiki are really just samples and do not have enough explanatory content to be considered guides, so they should be evaluated as samples instead:
+
+- http://wiki.mcneel.com/developer/sdksamples/testnurbscurve
+- http://wiki.mcneel.com/developer/scriptsamples/excelcurveproperties
+- http://wiki.mcneel.com/developer/scriptsamples/batchconvertautocad
+- http://wiki.mcneel.com/developer/scriptsamples/meshvolumecentroid
+- http://wiki.mcneel.com/developer/scriptsamples/circlepacking
+- http://wiki.mcneel.com/developer/scriptsamples/convertblocktogroup
+- http://wiki.mcneel.com/developer/scriptsamples/countblocks
+- http://wiki.mcneel.com/developer/scriptsamples/countobjects
+- http://wiki.mcneel.com/developer/scriptsamples/dodecahedron
+- http://wiki.mcneel.com/developer/scriptsamples/parametricellipsoid
+- http://wiki.mcneel.com/developer/scriptsamples/icosahedron
+- http://wiki.mcneel.com/developer/scriptsamples/boxframe
+- http://wiki.mcneel.com/developer/scriptsamples/fibonaccispiral
+- http://wiki.mcneel.com/developer/scriptsamples/squarepipe
+- http://wiki.mcneel.com/developer/scriptsamples/arraypolar
+- http://wiki.mcneel.com/developer/scriptsamples/isupperbound
+- http://wiki.mcneel.com/developer/scriptsamples/selectedgroups
+
+
+### Misc
+
 - [RhinoScript Knowledge Base](http://wiki.mcneel.com/developer/rhinoscript) needs to be reviewed again...not everything was stubbed properly.
 
 - [http://www.rhino3d.com/developer](http://www.rhino3d.com/developer) should redirect to [http://developer.rhino3d.com](http://developer.rhino3d.com) (this website) - the link is in all the .h files top comments
 
 - Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
 
-### Misc
-
 - **DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
+
 - Mitch's MicMac tools: http://wiki.mcneel.com/people/mitchheynick
-
-### Samples
-
-TODO TODO ...meta.
-
-Here we could report samples that are not passing tests.
