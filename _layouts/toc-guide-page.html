@@ -29,7 +29,7 @@ layout: bootstrap
                   {% assign mainTitleHandle = titleToProcess[0] %}
                   {% assign mainTitleTitle = titleToProcess[1] %}
                   <li>
-                    <a href="#{{ mainTitleHandle }}">{{ mainTitleTitle }}</a>
+                    <a href="#{{ mainTitleHandle }}">{{ mainTitleTitle | truncate: 28 }}</a>
 
                     <ul class="nav nav-stacked">
 
@@ -43,7 +43,7 @@ layout: bootstrap
                         {% assign groupHandle = groupHeading[0] %}
                         {% assign groupTitle = groupHeading[1] %}
                         <li>
-                          <a href="#{{groupHandle}}">{{ groupTitle }}</a>
+                          <a href="#{{groupHandle}}">{{ groupTitle | truncate: 28 }}</a>
 
                           {% if group contains '<h3 id="' %}
                             <ul class="nav nav-stacked">
@@ -56,7 +56,7 @@ layout: bootstrap
                                 {% assign subgroupHandle = subgroupHeading[0] %}
                                 {% assign subgroupTitle = subgroupHeading[1] %}
                                 <li>
-                                    <a href="#{{subgroupHandle}}">{{ subgroupTitle }}</a>
+                                    <a href="#{{subgroupHandle}}">{{ subgroupTitle | truncate: 28 }}</a>
                                 </li>
                               {% endfor %}
 
