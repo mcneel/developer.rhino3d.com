@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Generate Random Numbers
+title: Replacing Points with Blocks
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/scriptsamples/randomnumber
+origin: http://wiki.mcneel.com/developer/scriptsamples/replacepointswithblocks
 order: 1
 ---
 
-# Generate Random Numbers
+# Replacing Points with Blocks
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Convert GUIDs to Strings
+title: Converting to Grayscale
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/scriptsamples/guidtostring
+origin: http://wiki.mcneel.com/developer/scriptsamples/grayscale
 order: 1
 ---
 
-# Convert GUIDs to Strings
+# Converting to Grayscale
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

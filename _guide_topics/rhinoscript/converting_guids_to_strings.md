@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Copy to Excel
+title: Converting GUIDs to Strings
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/scriptsamples/copytoexcel
+origin: http://wiki.mcneel.com/developer/scriptsamples/guidtostring
 order: 1
 ---
 
-# Copy to Excel
+# Converting GUIDs to Strings
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

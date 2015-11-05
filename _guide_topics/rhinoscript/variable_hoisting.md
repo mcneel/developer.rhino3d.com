@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Convert Text to Geometry
+title: Variable Hoisting
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/scriptsamples/converttexttogeometry
+origin: http://wiki.mcneel.com/developer/scriptsamples/hoisting
 order: 1
 ---
 
-# Convert Text to Geometry
+# Variable Hoisting
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

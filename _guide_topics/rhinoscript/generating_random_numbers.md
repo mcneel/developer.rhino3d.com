@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Convert to Grayscale
+title: Generating Random Numbers
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/scriptsamples/grayscale
+origin: http://wiki.mcneel.com/developer/scriptsamples/randomnumber
 order: 1
 ---
 
-# Convert to Grayscale
+# Generating Random Numbers
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

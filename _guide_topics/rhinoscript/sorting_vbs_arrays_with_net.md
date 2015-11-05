@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Batch SaveSmall
+title: Sorting VBS Arrays with .NET
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/scriptsamples/batchsavesmall
+origin: http://wiki.mcneel.com/developer/scriptsamples/dotnetsort
 order: 1
 ---
 
-# Batch SaveSmall
+# Sorting VBS Arrays with .NET
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Batch Render
+title: VBScript Logic
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/scriptsamples/batchrender
+origin: http://wiki.mcneel.com/developer/scriptsamples/vbslogic
 order: 1
 ---
 
-# Batch Render
+# VBScript Logic
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

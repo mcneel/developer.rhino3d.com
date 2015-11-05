@@ -69,6 +69,8 @@ The sources of content-to-be-consolidated are:
 
 The following RhinoScript knowledge base articles from the wiki are really just samples and do not have enough explanatory content to be considered guides, so they should be evaluated as samples instead:
 
+- [http://wiki.mcneel.com/developer/scriptsamples/batchsavesmall](http://wiki.mcneel.com/developer/scriptsamples/batchsavesmall)
+- [http://wiki.mcneel.com/developer/scriptsamples/batchrender](http://wiki.mcneel.com/developer/scriptsamples/batchrender)
 - [http://wiki.mcneel.com/developer/sdksamples/testnurbscurve](http://wiki.mcneel.com/developer/sdksamples/testnurbscurve)
 - [http://wiki.mcneel.com/developer/scriptsamples/excelcurveproperties](http://wiki.mcneel.com/developer/scriptsamples/excelcurveproperties)
 - [http://wiki.mcneel.com/developer/scriptsamples/batchconvertautocad](http://wiki.mcneel.com/developer/scriptsamples/batchconvertautocad)
@@ -81,6 +83,7 @@ The following RhinoScript knowledge base articles from the wiki are really just 
 - [http://wiki.mcneel.com/developer/scriptsamples/parametricellipsoid](http://wiki.mcneel.com/developer/scriptsamples/parametricellipsoid)
 - [http://wiki.mcneel.com/developer/scriptsamples/icosahedron](http://wiki.mcneel.com/developer/scriptsamples/icosahedron)
 - [http://wiki.mcneel.com/developer/scriptsamples/boxframe](http://wiki.mcneel.com/developer/scriptsamples/boxframe)
+- [http://wiki.mcneel.com/developer/scriptsamples/exportblockcount](http://wiki.mcneel.com/developer/scriptsamples/exportblockcount)
 - [http://wiki.mcneel.com/developer/scriptsamples/fibonaccispiral](http://wiki.mcneel.com/developer/scriptsamples/fibonaccispiral)
 - [http://wiki.mcneel.com/developer/scriptsamples/squarepipe](http://wiki.mcneel.com/developer/scriptsamples/squarepipe)
 - [http://wiki.mcneel.com/developer/scriptsamples/arraypolar](http://wiki.mcneel.com/developer/scriptsamples/arraypolar)
@@ -130,6 +133,31 @@ The following RhinoScript knowledge base articles from the wiki are really just 
 - [http://wiki.mcneel.com/developer/scriptsamples/revolve](http://wiki.mcneel.com/developer/scriptsamples/revolve)
 - [http://wiki.mcneel.com/developer/scriptsamples/rotateplaneparallel](http://wiki.mcneel.com/developer/scriptsamples/rotateplaneparallel)
 - [http://wiki.mcneel.com/developer/scriptsamples/rotateone](http://wiki.mcneel.com/developer/scriptsamples/rotateone)
+- [http://wiki.mcneel.com/developer/scriptsamples/savelayerstates](http://wiki.mcneel.com/developer/scriptsamples/savelayerstates)
+- [http://wiki.mcneel.com/developer/scriptsamples/savefile](http://wiki.mcneel.com/developer/scriptsamples/savefile)
+- [http://wiki.mcneel.com/developer/scriptsamples/savepluginlist](http://wiki.mcneel.com/developer/scriptsamples/savepluginlist)
+- [http://wiki.mcneel.com/developer/scriptsamples/savevideoinfo](http://wiki.mcneel.com/developer/scriptsamples/savevideoinfo)
+- [http://wiki.mcneel.com/developer/scriptsamples/dimscaletext](http://wiki.mcneel.com/developer/scriptsamples/dimscaletext)
+- [http://wiki.mcneel.com/developer/scriptsamples/cutplane](http://wiki.mcneel.com/developer/scriptsamples/cutplane)
+- [http://wiki.mcneel.com/developer/scriptsamples/flowalongsrf](http://wiki.mcneel.com/developer/scriptsamples/flowalongsrf)
+- [http://wiki.mcneel.com/developer/scriptsamples/splitbrep](http://wiki.mcneel.com/developer/scriptsamples/splitbrep)
+- [http://wiki.mcneel.com/developer/scriptsamples/selcrvdegree](http://wiki.mcneel.com/developer/scriptsamples/selcrvdegree)
+- [http://wiki.mcneel.com/developer/scriptsamples/selnamedobject](http://wiki.mcneel.com/developer/scriptsamples/selnamedobject)
+- [http://wiki.mcneel.com/developer/scriptsamples/selz](http://wiki.mcneel.com/developer/scriptsamples/selz)
+- [http://wiki.mcneel.com/developer/scriptsamples/seltextheight](http://wiki.mcneel.com/developer/scriptsamples/seltextheight)
+- [http://wiki.mcneel.com/developer/scriptsamples/seldimstyle](http://wiki.mcneel.com/developer/scriptsamples/seldimstyle)
+- [http://wiki.mcneel.com/developer/scriptsamples/multilistbox](http://wiki.mcneel.com/developer/scriptsamples/multilistbox)
+- [http://wiki.mcneel.com/developer/scriptsamples/sellinetype](http://wiki.mcneel.com/developer/scriptsamples/sellinetype)
+- [http://wiki.mcneel.com/developer/scriptsamples/selplanarmesh](http://wiki.mcneel.com/developer/scriptsamples/selplanarmesh)
+- [http://wiki.mcneel.com/developer/scriptsamples/setrendercolor](http://wiki.mcneel.com/developer/scriptsamples/setrendercolor)
+- [http://wiki.mcneel.com/developer/scriptsamples/cameraangle](http://wiki.mcneel.com/developer/scriptsamples/cameraangle)
+- [http://wiki.mcneel.com/developer/scriptsamples/hierarchiallayers](http://wiki.mcneel.com/developer/scriptsamples/hierarchiallayers)
+- [http://wiki.mcneel.com/developer/scriptsamples/setcrvlength](http://wiki.mcneel.com/developer/scriptsamples/setcrvlength)
+- [http://wiki.mcneel.com/developer/scriptsamples/splitpath](http://wiki.mcneel.com/developer/scriptsamples/splitpath)
+- [http://wiki.mcneel.com/developer/scriptsamples/curvesplitter](http://wiki.mcneel.com/developer/scriptsamples/curvesplitter)
+- [http://wiki.mcneel.com/developer/scriptsamples/straightencircles](http://wiki.mcneel.com/developer/scriptsamples/straightencircles)
+- [http://wiki.mcneel.com/developer/scriptsamples/circletrimmer](http://wiki.mcneel.com/developer/scriptsamples/circletrimmer)
+- [http://wiki.mcneel.com/developer/scriptsamples/unrollsrf](http://wiki.mcneel.com/developer/scriptsamples/unrollsrf)
 
 ### Misc
 
