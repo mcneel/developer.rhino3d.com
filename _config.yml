@@ -25,7 +25,9 @@ rss_show_missing_examples_links: false
 markdown: kramdown
 kramdown:
   input: GFM
-
+gems:
+  - jekyll-sitemap
+  
 #port: 4444
 
 safe: true
