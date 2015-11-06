@@ -50,7 +50,7 @@ The sources of content-to-be-consolidated are:
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"title" %}
-  <ul>
+  <ol>
   {% for topic in guides %}
     {% if topic.TODO == 1 %}
       <li>
@@ -58,7 +58,7 @@ The sources of content-to-be-consolidated are:
       </li>
     {% endif %}
   {% endfor %}
-  </ul>
+  </ol>
 </div>
 
 ### Samples
