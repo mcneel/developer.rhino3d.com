@@ -160,6 +160,21 @@ The following RhinoScript knowledge base articles from the wiki are really just 
 - [http://wiki.mcneel.com/developer/scriptsamples/straightencircles](http://wiki.mcneel.com/developer/scriptsamples/straightencircles)
 - [http://wiki.mcneel.com/developer/scriptsamples/circletrimmer](http://wiki.mcneel.com/developer/scriptsamples/circletrimmer)
 - [http://wiki.mcneel.com/developer/scriptsamples/unrollsrf](http://wiki.mcneel.com/developer/scriptsamples/unrollsrf)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/setmaterial](http://wiki.mcneel.com/flamingo/flamingosdk/setmaterial)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/flamingo2plantwireframe](http://wiki.mcneel.com/flamingo/flamingosdk/flamingo2plantwireframe)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/getflamingo2plant](http://wiki.mcneel.com/flamingo/flamingosdk/getflamingo2plant)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/getmaterial](http://wiki.mcneel.com/flamingo/flamingosdk/getmaterial)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/getmateriallist](http://wiki.mcneel.com/flamingo/flamingosdk/getmateriallist)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/getplantpointcloud](http://wiki.mcneel.com/flamingo/flamingosdk/getplantpointcloud)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/importmaterial](http://wiki.mcneel.com/flamingo/flamingosdk/importmaterial)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/mappinginformation](http://wiki.mcneel.com/flamingo/flamingosdk/mappinginformation)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/modifyplant](http://wiki.mcneel.com/flamingo/flamingosdk/modifyplant)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/plantfromobject](http://wiki.mcneel.com/flamingo/flamingosdk/plantfromobject)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/setmapping](http://wiki.mcneel.com/flamingo/flamingosdk/setmapping)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/setmaterial](http://wiki.mcneel.com/flamingo/flamingosdk/setmaterial)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/tagobjectasplant](http://wiki.mcneel.com/flamingo/flamingosdk/tagobjectasplant)
+- [http://wiki.mcneel.com/flamingo/flamingosdk/untagobjectasplant](http://wiki.mcneel.com/flamingo/flamingosdk/untagobjectasplant)
+
 
 ### Misc
 
