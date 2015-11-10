@@ -28,9 +28,8 @@ order: 2
 
 ---
 
-## RhinoCommon
-
-**Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+## RhinoCommon <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+{: #rhinocommon }
 
 *The cross-platform .NET plugin SDK for Rhino.*
 
@@ -79,9 +78,8 @@ order: 2
 
 ---
 
-## Rhino.Python
-
-**Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+## Rhino.Python <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+{: #rhinopython }
 
 *Quickly add functionality to Rhino or automate repetitive tasks.*
 
@@ -117,9 +115,8 @@ order: 2
 
 ---
 
-## openNURBS
-
-**Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+## openNURBS <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+{: #opennurbs }
 
 *Read/Write Rhino 3dm files in your application.*
 
@@ -185,9 +182,8 @@ order: 2
 
 ---
 
-## C/C++
-
-**Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## C/C++ <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: #cc }
 
 *Native SDK for Rhino for Windows plugins.*
 
@@ -207,9 +203,8 @@ order: 2
 
 ---
 
-## Grasshopper
-
-**Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## Grasshopper <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: #grasshopper }
 
 *Create custom Grasshopper components and plugins.*
 
@@ -229,9 +224,8 @@ order: 2
 
 ---
 
-## RhinoScript
-
-**Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## RhinoScript <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: #rhinoscript }
 
 *Customize Rhino for Windows or automate repetitive tasks.*
 
@@ -276,9 +270,8 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 
 ---
 
-## RDK
-
-**Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## RDK <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: #rdk }
 
 *Renderer plugin development in Rhino for Windows.*
 
@@ -298,9 +291,8 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 
 ---
 
-## RhinoMobile
-
-**Platforms**: <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
+## RhinoMobile <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
+{: #rhinomobile }
 
 *3D mobile application development.*
 
@@ -312,9 +304,8 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 
 ---
 
-## Zoo
-
-**Platforms**: <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## Zoo <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+{: #zoo }
 
 *Zoo license manager plugins in Rhino for Windows.*
 
@@ -334,7 +325,8 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 
 ---
 
-## Developer Docs
+## Developer Docs <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+{: #developer_docs }
 
 *Guides to this very website.*
 
