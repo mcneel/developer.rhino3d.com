@@ -69,6 +69,8 @@ The sources of content-to-be-consolidated are:
 
 The following RhinoScript knowledge base articles from the wiki are really just samples and do not have enough explanatory content to be considered guides, so they should be evaluated as samples instead:
 
+- [http://wiki.mcneel.com/developer/scriptsamples/autolabel](http://wiki.mcneel.com/developer/scriptsamples/autolabel)
+- [http://wiki.mcneel.com/developer/scriptsamples/arraypointsonsurface](http://wiki.mcneel.com/developer/scriptsamples/arraypointsonsurface)
 - [http://wiki.mcneel.com/developer/scriptsamples/addcurveendpoints](http://wiki.mcneel.com/developer/scriptsamples/addcurveendpoints)
 - [http://wiki.mcneel.com/developer/scriptsamples/arcpointdistribution](http://wiki.mcneel.com/developer/scriptsamples/arcpointdistribution)
 - [http://wiki.mcneel.com/developer/scriptsamples/batchsavesmall](http://wiki.mcneel.com/developer/scriptsamples/batchsavesmall)
