@@ -21,5 +21,3 @@ order: 2
   In the meantime, you can view the original documentation here:
   <a href="{{ page.origin }}">{{ page.origin }}</a></p>
 </div>
-
-TODO
