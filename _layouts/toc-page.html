@@ -9,7 +9,8 @@ layout: bootstrap
     <nav class="col-xs-0 col-md-3 bs-docs-sidebar">
         <ul id="sidebar" class="nav nav-stacked fixed">
 
-          <!-- Find the h1 handle for title -->
+          <!-- Find the h1 handle and title -->
+          {% if content contains '<h1 id="' %}
           {% assign splitAtFirstHeader = content | split:'<h1 id="' %}
           {% assign firstSideOfFirstHeader = splitAtFirstHeader[1] %}
           {% assign dividedMainTitle = firstSideOfFirstHeader | split:'<' %}
@@ -53,11 +54,11 @@ layout: bootstrap
 
                 </li>
               {% endfor %}
+            {% endif %}
 
             </ul>
 
           </li>
-
 
         </ul>
     </nav>
