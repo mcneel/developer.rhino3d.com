@@ -227,11 +227,7 @@ order: 2
 ## RhinoScript <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 {: #rhinoscript }
 
-*Customize Rhino for Windows or automate repetitive tasks.*
-
-### Overview
-
-RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino, or automate repetitive tasks.
+*RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino for Windows, or automate repetitive tasks.*
 
 ### Learning Resources
 
