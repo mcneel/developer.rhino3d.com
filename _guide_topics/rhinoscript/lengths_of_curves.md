@@ -7,16 +7,37 @@ platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/curvelength
 order: 1
 ---
 
 # Lengths of Curves
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+This guide demonstrates how to calculate the lengths of curve objects using RhinoScript.
+
+## Problem
+
+Imagine you wish to list of lengths for a selected series of curves.  The Length command gives a composite length and the list command does not give the curve lengths.  You can work around these limitations with a RhinoScript.
+
+## Solution
+
+The following RhinoScript code demonstrates how to do the above...
+
+```vbnet
+Option Explicit
+
+Sub CurveLength ()
+  Dim arrCurves, dblTotal, dblLength, i
+  dblTotal = 0.0
+  arrCurves = Rhino.GetObjects("Select curves for length calculation", 4, True, True)
+  If IsArray(arrCurves) Then
+    For i = 0 To UBound(arrCurves)
+      dblLength = Rhino.CurveLength(arrCurves(i))
+      Rhino.Print("Curve" & CStr(i) & " = " & CStr(dblLength))
+      dblTotal = dblTotal + dblLength
+    Next
+    Rhino.Print "Total length: " & " = " & CStr(dblTotal)
+  End If
+End Sub
+```

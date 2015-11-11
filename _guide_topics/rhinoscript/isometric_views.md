@@ -7,16 +7,62 @@ platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/isometric
 order: 1
 ---
 
 # Isometric Views
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+This guide demonstrates how to create isometric views using RhinoScript.
+
+## Overview
+
+AutoCAD has a VPOINT command that allows you to create isometric views of the model.  The VPOINT command uses the point entered by the user to create a vector that defines the direction from which the drawing is viewed.  You can do this in Rhino using the ViewportProperties command.  In the ViewportProperties dialog, first set the view to parallel projection.  Then, set the target location to 0,0,0 and the camera location to where you want to be viewing from.
+
+If this seems too cumbersome, then you can also use the following RhinoScript subroutine...
+
+## Example
+
+The following example subroutine mimics the VPOINT command using RhinoScript...
+
+```vbnet
+Sub VPoint
+
+  Dim strView
+  strView = Rhino.CurrentView
+  If Rhino.ViewProjection(strView) = 2 Then
+    Rhino.Print "Viewport must be set for parallel projection."
+    Exit Sub
+  End If
+
+  Dim arrOptions
+  arrOptions = Array("NE Isometric", "NW Isometric", "SE Isometric", "SW Isometric", "User Defined")
+
+  Dim strOption
+  strOption = Rhino.ListBox(arrOptions, "Select viewing direction", "VPoint")
+  If IsNull(strOption) Then Exit Sub
+
+  Dim arrCamera
+  Select Case strOption
+    Case "NE Isometric" arrCamera = Array( 1, 1,1)
+    Case "NW Isometric" arrCamera = Array(-1, 1,1)
+    Case "SE Isometric" arrCamera = Array( 1,-1,1)
+    Case "SW Isometric" arrCamera = Array(-1,-1,1)
+    Case Else arrCamera = Rhino.GetPoint("View point")
+  End Select
+
+  If Not IsArray(arrCamera) Then Exit Sub
+
+  Dim arrTarget, v
+  arrTarget = Array(0,0,0)
+  v = Rhino.VectorCreate(arrCamera, arrTarget)
+  If Rhino.IsVectorTiny(v) Then Exit Sub
+
+  Rhino.EnableRedraw False    
+  Rhino.ViewCameraTarget strView, arrCamera, arrTarget
+  Rhino.ZoomExtents strView
+  Rhino.EnableRedraw True
+
+End Sub
+```
