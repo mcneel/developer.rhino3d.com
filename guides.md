@@ -183,7 +183,7 @@ order: 2
 ---
 
 ## C/C++ <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: #cc }
+{: #cpp }
 
 *Native SDK for Rhino for Windows plugins.*
 

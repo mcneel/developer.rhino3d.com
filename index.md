@@ -68,7 +68,7 @@ layout: fullwidth-page
     <td class="index_table_primary_use">Rhino for Windows scripting</td>  
   </tr>
   <tr>
-    <td><a href="{{ site.baseurl }}/guides/#cc" title="C/C++ SDK for Rhino for Windows"> C/C++</a></td>
+    <td><a href="{{ site.baseurl }}/guides/#cpp" title="C/C++ SDK for Rhino for Windows"> C/C++</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
     <td class="index_table_primary_use">Rhino for Windows plugins</td>  
