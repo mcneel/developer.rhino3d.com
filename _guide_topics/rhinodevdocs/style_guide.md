@@ -180,6 +180,8 @@ The abbreviation after the first set of back-ticks is the language code for synt
 - `python` is Python
 - `cpp` is C/C++
 
+A complete list of language aliases can be found in [the individual source files](https://github.com/isagalaev/highlight.js/tree/master/src/languages) for highlight.js.
+
 ---
 
 ### Horizontal Rules
