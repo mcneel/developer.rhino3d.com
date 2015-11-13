@@ -1,7 +1,7 @@
 ---
 layout: toc-guide-page
 title: Your First Plugin (Cross-Platform)
-author: steve@mcneel.com
+author: dan@mcneel.com
 categories: ['GettingStarted']
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
