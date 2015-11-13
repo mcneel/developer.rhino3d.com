@@ -1,7 +1,7 @@
 ---
 layout: toc-guide-page
 title: Your First Plugin (Windows)
-author: giulio@mcneel.com
+author: dan@mcneel.com
 categories: ['GettingStarted']
 platforms: ['Windows']
 apis: ['RhinoCommon']
