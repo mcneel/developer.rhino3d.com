@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Random Surface Points
+title: VBScript Passing Parameters
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/scriptsamples/randomsurfacepoints
+origin: http://wiki.mcneel.com/developer/scriptsamples/passingparameters
 order: 1
 ---
 
-# Random Surface Points
+# VBScript Passing Parameters
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>
