@@ -588,13 +588,15 @@ yields:
 
 $$y = {\sqrt{x^2+(x-1)} \over x-3} + \left| 2x \over x^{0.5x} \right|$$
 
+See the [MathJax basic tutorial and quick reference on StackExchange](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
+
 ---
 
 ## Related topics
 
 - [How This Site Works]({{ site.baseurl }}/guides/rhinodevdocs/how_this_site_works/)
 - [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html)
-
+- [MathJax basic tutorial and quick reference on StackExchange](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
 ---
 
 ## Footnotes

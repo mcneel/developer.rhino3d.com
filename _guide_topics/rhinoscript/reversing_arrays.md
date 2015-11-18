@@ -7,16 +7,58 @@ platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/reversearray
 order: 1
 ---
 
 # Reversing Arrays
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+This brief guide demonstrates how to reverse an array using RhinoScript.
+
+
+## Problem
+
+How does one quickly reverse the order of the elements in an array?
+
+
+## Solution
+
+Consider the following subroutine:
+
+```vbnet
+Sub ReverseArray(ByRef arr)
+
+  Dim i, j, last, half, temp
+  last = UBound(arr)
+  half = Int(last/2)
+
+  For i = 0 To half
+    temp = arr(i)
+    arr(i) = arr(last-i)
+    arr(last-i) = temp
+  Next
+
+End Sub
+```
+
+...which can be used as follows:
+
+```vbnet
+Sub Main()
+
+  Dim arr, i
+  arr = Array(1,2,3)
+
+  For i = 0 To UBound(arr)
+    Rhino.Print arr(i)
+  Next
+
+  Call ReverseArray(arr)
+
+  For i = 0 To UBound(arr)
+    Rhino.Print arr(i)
+  Next
+
+End Sub
+```

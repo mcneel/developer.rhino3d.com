@@ -7,16 +7,50 @@ platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['RhinoScript']
 keywords: ['script', 'Rhino', 'vbscript']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/readutf8
 order: 1
 ---
 
 # Read & Write UTF-8 Files
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+This brief guide demonstrates how to read and write UTF-8 encoded text files using VBScript.
+
+
+## Problem
+
+If you have a text file saved as UTF-8, sometimes - when you read the file - it reads in weird characters and not the correct characters.  This happens often when the files contain Chinese characters.  How can you make it read the correct characters?
+
+
+## Solution
+
+The [File System Object](http://msdn.microsoft.com/en-us/library/aa242706(v=vs.60).aspx), generally used by VBScript developers to read and write text files, can read only ASCII or Unicode text files. You cannot use it to read or write UTF-8 encoded text files.
+
+But, if you can use [Microsoft ActiveX Data Objects (ADO)](http://msdn.microsoft.com/en-us/library/windows/desktop/ms676526%28v=vs.85%29.aspx), you can read UTF-8 encoded text files like this:
+
+```vbnet
+Dim objStream, strData
+Set objStream = CreateObject("ADODB.Stream")
+objStream.CharSet = "utf-8"
+objStream.Open
+objStream.LoadFromFile("C:\Users\admin\Desktop\test.txt")
+strData = objStream.ReadText()
+```
+
+If you want to write a UTF-8 encode text file, you can do so like this:
+
+```vbnet
+Dim objStream
+Set objStream = CreateObject("ADODB.Stream")
+objStream.CharSet = "utf-8"
+objStream.Open
+objStream.WriteText "The data I want in utf-8"
+objStream.SaveToFile "C:\Users\admin\Desktop\test.txt", 2
+```
+
+---
+
+## Related Topics
+
+- [File System Object on MSDN](http://msdn.microsoft.com/en-us/library/aa242706(v=vs.60).aspx)
+- [Microsoft ActiveX Data Objects (ADO) on MSDN](http://msdn.microsoft.com/en-us/library/windows/desktop/ms676526%28v=vs.85%29.aspx)
