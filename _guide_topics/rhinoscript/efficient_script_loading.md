@@ -57,3 +57,9 @@ Call Hello
 The code above checks for the existence of a user-defined procedure (e.g. subroutine or function) named `"Hello"`. If the procedure is not found, then script file, were the procedure is stored, is loaded by running the *LoadScript* command.  Finally, the specified procedure is called.
 
 To ensure this technique works, make sure to included the path to Hello.rvb is included in Rhino's file search path by selecting **Tools** > **Options** > **Files**.
+
+---
+
+## Related Topics
+
+- [Script Demand Loading]({{ site.baseurl }}/guides/rhinoscript/script_demand_load)
