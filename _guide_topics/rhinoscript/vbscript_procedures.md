@@ -64,7 +64,7 @@ To get data out of a procedure, you must use a `Function`.  Remember, a `Functio
 
 ## Sub and Function
 
-A `Function` in your code must always be used on the right side of a variable assignment or in an expression. For example:
+A `Function` in your code must always be used on the right side of a variable assignment or in an expression.  For example:
 
 ```vbnet
 Temp = Celsius(fDegrees)

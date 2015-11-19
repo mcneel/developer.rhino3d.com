@@ -14,7 +14,7 @@ order: 1
 
 # ByRef vs ByVal
 
-This guide discusses VBScript argument passing.
+This guide discusses VBScript argument passing with a focus on `ByRef` and `ByVal`.
 
 ## Overview
 
