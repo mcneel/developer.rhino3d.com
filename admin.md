@@ -186,9 +186,9 @@ The following RhinoScript knowledge base articles from the wiki are really just 
 ### Misc
 
 - [http://www.rhino3d.com/developer](http://www.rhino3d.com/developer) should redirect to [http://developer.rhino3d.com](http://developer.rhino3d.com) (this website) - the link is in all the .h files top comments
-
 - Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
-
 - **DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
-
 - Mitch's MicMac tools: http://wiki.mcneel.com/people/mitchheynick
+- Stub out C/C++ Knowledge Base for porting staging
+- Move all samples to mcneel/github - in coordination with Dale Fugier
+- Link directly to samples on GitHub from gh-pages samples section
