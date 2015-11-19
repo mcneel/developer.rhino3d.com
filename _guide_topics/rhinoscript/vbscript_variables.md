@@ -22,7 +22,7 @@ A variable is a convenient placeholder that refers to a computer memory location
 
 ## Declaration
 
-You declare variables explicitly in your script using the `Dim` statement, the `Public` statement, and the `Private` statement. For example:
+You declare variables explicitly in your script using the `Dim` statement, the `Public` statement, and the `Private` statement.  For example:
 
 ```vbnet
 Dim AngleDegrees

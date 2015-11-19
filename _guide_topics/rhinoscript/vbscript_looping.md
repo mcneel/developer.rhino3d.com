@@ -18,7 +18,7 @@ This guide is an overview of looping through VBScript code.
 
 ## Overview
 
-Looping allows you to run a group of statements repeatedly. Some loops repeat statements until a condition is *False*; others repeat statements until a condition is *True*. There are also loops that repeat statements a specific number of times.
+Looping allows you to run a group of statements repeatedly.  Some loops repeat statements until a condition is *False*; others repeat statements until a condition is *True*.  There are also loops that repeat statements a specific number of times.
 
 The following looping statements are available in VBScript:
 
@@ -29,11 +29,11 @@ The following looping statements are available in VBScript:
 
 ## Do Loops
 
-You can use `Do...Loop` statements to run a block of statements an indefinite number of times. The statements are repeated either while a condition is *True* or until a condition becomes *True*.
+You can use `Do...Loop` statements to run a block of statements an indefinite number of times.  The statements are repeated either while a condition is *True* or until a condition becomes *True*.
 
 ## Do While
 
-Use the `While` keyword to check a condition in a `Do...Loop` statement. You can check the condition before you enter the loop (as shown in the following `ChkFirstWhile` example), or you can check it after the loop has run at least once (as shown in the `ChkLastWhile` example). In the `ChkFirstWhile` procedure, if myNum is set to 9 instead of 20, the statements inside the loop will never run. In the `ChkLastWhile` procedure, the statements inside the loop run only once because the condition is already *False*.
+Use the `While` keyword to check a condition in a `Do...Loop` statement.  You can check the condition before you enter the loop (as shown in the following `ChkFirstWhile` example), or you can check it after the loop has run at least once (as shown in the `ChkLastWhile` example).  In the `ChkFirstWhile` procedure, if myNum is set to 9 instead of 20, the statements inside the loop will never run.  In the `ChkLastWhile` procedure, the statements inside the loop run only once because the condition is already *False*.
 
 ```vbnet
  Sub ChkFirstWhile()
@@ -61,7 +61,7 @@ Use the `While` keyword to check a condition in a `Do...Loop` statement. You can
 
 ## Do Until
 
-There are two ways to use the `Until` keyword to check a condition in a `Do...Loop` statement. You can check the condition before you enter the loop (as shown in the following `ChkFirstUntil` example), or you can check it after the loop has run at least once (as shown in the `ChkLastUntil` example). As long as the condition is *False*, the looping occurs.
+There are two ways to use the `Until` keyword to check a condition in a `Do...Loop` statement.  You can check the condition before you enter the loop (as shown in the following `ChkFirstUntil` example), or you can check it after the loop has run at least once (as shown in the `ChkLastUntil` example).  As long as the condition is *False*, the looping occurs.
 
 ```vbnet
  Sub ChkFirstUntil()
@@ -89,7 +89,7 @@ There are two ways to use the `Until` keyword to check a condition in a `Do...Lo
 
 ## Exiting a Do Loop
 
-You can exit a `Do...Loop` by using the `Exit Do` statement. Because you usually want to exit only in certain situations, such as to avoid an endless loop, you should use the `Exit Do` statement in the True statement block of an `If...Then...Else` statement. If the condition is *False*, the loop runs as usual.
+You can exit a `Do...Loop` by using the `Exit Do` statement.  Because you usually want to exit only in certain situations, such as to avoid an endless loop, you should use the `Exit Do` statement in the True statement block of an `If...Then...Else` statement.  If the condition is *False*, the loop runs as usual.
 
 In the following example, myNum is assigned a value that creates an endless loop.  The `If...Then...Else` statement checks for this condition, preventing the endless repetition.
 
