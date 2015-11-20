@@ -1,18 +1,18 @@
 ---
 layout: toc-guide-page
-title: Variable Hoisting
+title: VBScript Variable Hoisting
 author: dale@mcneel.com
-categories: ['Miscellaneous']
+categories: ['Intermediate']
 platforms: ['Windows']
 apis: ['RhinoScript']
-languages: ['RhinoScript']
+languages: ['VBScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/hoisting
 order: 1
 ---
 
-# Variable Hoisting
+# VBScript Variable Hoisting
 
 This guides discusses variable scoping and hoisting in VBScript.
 

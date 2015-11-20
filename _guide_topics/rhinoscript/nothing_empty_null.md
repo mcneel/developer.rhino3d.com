@@ -2,10 +2,10 @@
 layout: toc-guide-page
 title: Nothing vs Empty vs Null
 author: dale@mcneel.com
-categories: ['Miscellaneous']
+categories: ['Miscellaneous', 'Intermediate']
 platforms: ['Windows']
 apis: ['RhinoScript']
-languages: ['RhinoScript']
+languages: ['VBScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/vbnothing

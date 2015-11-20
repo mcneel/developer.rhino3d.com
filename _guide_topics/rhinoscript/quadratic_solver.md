@@ -5,7 +5,7 @@ author: unknown
 categories: ['Advanced']
 platforms: ['Windows']
 apis: ['RhinoScript']
-languages: ['RhinoScript']
+languages: ['VBScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/quadraticsolver
@@ -23,7 +23,7 @@ If you are trying to solve quadratic equations like:
 
 $${-b \pm \sqrt{b^2 - 4ac} \over 2a }$$
 
-the results may seem incorrect at times.
+the results may seem incorrect at times. 
 
 ## Solution
 
