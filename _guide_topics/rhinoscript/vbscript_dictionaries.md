@@ -2,10 +2,10 @@
 layout: toc-guide-page
 title: VBScript Dictionaries
 author: dale@mcneel.com
-categories: ['Miscellaneous']
+categories: ['Intermediate']
 platforms: ['Windows']
 apis: ['RhinoScript']
-languages: ['RhinoScript']
+languages: ['VBScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/dictionaryobject

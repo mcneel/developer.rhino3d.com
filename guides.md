@@ -229,33 +229,13 @@ order: 2
 
 *RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino for Windows, or automate repetitive tasks.*
 
-### Learning Resources
-
-- [Microsoft VBScript User's Guide and Language Reference](http://msdn.microsoft.com/en-us/library/t0aew7h6(VS.85).aspx)
-- [RhinoScript 101 Primer](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
-- [RhinoScript Help File On-Line](http://www.rhino3d.com/5/rhinoscript/index.html)
-- [RhinoScript Dash Docset](http://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
-- [RhinoScript Samples on GitHub](https://github.com/mcneel/rhinoscript)
-- [RhinoScript Resources](http://www.microsoft.com/technet/scriptcenter/default.mspx)
-- [Microsoft TechNet Script Center](http://www.microsoft.com/technet/scriptcenter/default.mspx)
-- [Pascal Golay's scripted utilities for Rhino](http://wiki.mcneel.com/people/pascalgolay)
-
-### VBScript Basics
-
-<!-- TODO - This section could be auto Generated -->
-
-- [VBScript Procedures]({{ site.baseurl }}/guides/rhinoscript/vbscript_procedures/)
-- [VBScript Statements]({{ site.baseurl }}/guides/rhinoscript/vbscript_statements/)
-- [VBScript String Literals]({{ site.baseurl }}/guides/rhinoscript/vbscript_string_literals/)
-- [VBScript Variables]({{ site.baseurl }}/guides/rhinoscript/vbscript_variables/)
-
-### All (uncategorized)
+### Overview
 
 <div class="trigger">
-  {% assign guides = site.guide_topics | sort:"title" %}
+  {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.apis contains 'RhinoScript' %}
+    {% if topic.apis contains 'RhinoScript' and topic.categories contains 'Overview' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -263,6 +243,76 @@ order: 2
   {% endfor %}
   </ul>
 </div>
+
+### VBScript Basics
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'RhinoScript' and topic.categories contains 'Basics' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Intermediate
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"title" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'RhinoScript' and topic.categories contains 'Intermediate' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Advanced
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"title" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'RhinoScript' and topic.categories contains 'Advanced' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Troubleshooting
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"title" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'RhinoScript' and topic.categories contains 'Troubleshooting' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Other Resources
+
+- [Pascal Golay's scripted utilities for Rhino](http://wiki.mcneel.com/people/pascalgolay)
+- [RhinoScript Samples on GitHub](https://github.com/mcneel/rhinoscript)
+- [RhinoScript Dash Docset](http://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
+- [RhinoScript Help File On-Line](http://www.rhino3d.com/5/rhinoscript/index.html)
+- [RhinoScript 101 Primer](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
+- [VBScript User's Guide and Language Reference on MSDN](http://msdn.microsoft.com/en-us/library/t0aew7h6(VS.85).aspx)
+
 
 ---
 

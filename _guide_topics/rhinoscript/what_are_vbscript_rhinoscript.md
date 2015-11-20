@@ -1,20 +1,20 @@
 ---
 layout: toc-guide-page
-title: VBScript Fundamentals
+title: What are VBScript and RhinoScript?
 author: dale@mcneel.com
-categories: ['Miscellaneous']
+categories: ['Overview']
 platforms: ['Windows']
 apis: ['RhinoScript']
-languages: ['RhinoScript']
+languages: ['VBScript']
 keywords: ['script', 'Rhino', 'vbscript']
-TODO: 0
+TODO: 1
 origin: http://wiki.mcneel.com/developer/vbsfundamentals
 order: 1
 ---
 
-# VBScript Fundamentals
+# What are VBScript and RhinoScript?
 
-This guide outlines the VBScript fundamentals.
+This guide explains what VBScript and RhinoScript are.
 
 ## Overview
 

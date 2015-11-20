@@ -2,10 +2,10 @@
 layout: toc-guide-page
 title: Cancelling Scripts
 author: dale@mcneel.com
-categories: ['Miscellaneous']
+categories: ['Miscellaneous', 'Advanced']
 platforms: ['Windows']
 apis: ['RhinoScript']
-languages: ['RhinoScript']
+languages: ['VBScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/cancelscript

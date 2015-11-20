@@ -2,10 +2,10 @@
 layout: toc-guide-page
 title: VBScript Operators
 author: dale@mcneel.com
-categories: ['VBScript Basics']
+categories: ['Basics']
 platforms: ['Windows']
 apis: ['RhinoScript']
-languages: ['RhinoScript']
+languages: ['VBScript']
 keywords: ['script', 'Rhino', 'vbscript']
 TODO: 0
 origin: http://wiki.mcneel.com/developer/vbsoperators
