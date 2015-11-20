@@ -107,5 +107,5 @@ Notice that the `Select Case` structure evaluates an expression once at the top 
 
 ## Related Topics
 
-- [VBScript Fundamentals]({{ site.baseurl }}/guides/rhinoscript/vbscript_fundamentals)
+- [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what_are_vbscript_rhinoscript)
 - [VBScript Operators]({{ site.baseurl }}/guides/rhinoscript/vbscript_operators)

@@ -41,4 +41,4 @@ You may want to adopt a naming scheme to differentiate constants from variables.
 
 ## Related Topics
 
-- [VBScript Fundamentals]({{ site.baseurl }}/guides/rhinoscript/vbscript_fundamentals)
+- [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what_are_vbscript_rhinoscript)

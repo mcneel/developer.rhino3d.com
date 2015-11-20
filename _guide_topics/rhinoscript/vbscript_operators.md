@@ -79,4 +79,4 @@ The string concatenation (`&`) operator is not an arithmetic operator, but in pr
 
 ## Related Topics
 
-- [VBScript Fundamentals]({{ site.baseurl }}/guides/rhinoscript/vbscript_fundamentals)
+- [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what_are_vbscript_rhinoscript)

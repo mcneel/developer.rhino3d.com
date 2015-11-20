@@ -53,5 +53,5 @@ You can use VBScript conversion functions to convert data from one subtype to an
 
 ## Related topics
 
-- [VBScript Fundamentals]({{ site.baseurl }}/guides/rhinoscript/vbscript_fundamentals)
+- [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what_are_vbscript_rhinoscript)
 - [VBScript Variables]({{ site.baseurl }}/guides/rhinoscript/vbscript_variables/)
