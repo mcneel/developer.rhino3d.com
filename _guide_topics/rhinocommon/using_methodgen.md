@@ -26,7 +26,6 @@ For each of these tasks, we wrote a tool, methodgen.exe, that automatically writ
 ---
 
 
-
 ### Adding methodgen to your project ###
 
 To run the tool, place it in a folder that is a parent folder to both your C and your C\# solutions. Then, add a prebuild event to your project, either using the standard VS interface, of by adding this code to the `.csproj` solution:
@@ -40,6 +39,8 @@ To run the tool, place it in a folder that is a parent folder to both your C and
 Each path can be relative. Every `.h` and `.cpp` file in `lib_C_dir` will be parsed.
 A file called `AutoNativeMethods.cs`, and another one called `AutoNativeEnums.cs` if required, will be placed in `lib_CS_dir` at the end of the process. This will happen according to the rules below.
 
+
+---
 
 
 ### 1. Exporting C functions to C\# ###
@@ -69,8 +70,8 @@ RH_C_FUNCTION int ON_Brep_SplitEdgeAtParameters(ON_Brep* pBrep, int edge_index, 
 Inside `AutoNativeMethods.cs`, in an _internal partial class_ called `UnsafeNativeMethods`, `methodgen.exe` will create these lines of code:
 
 ```cs
-  [DllImport(Import.lib, CallingConvention=CallingConvention.Cdecl )]
-  internal static extern int ON_Brep_SplitEdgeAtParameters(IntPtr pBrep, int edgeIndex, int count, double[] parameters);
+[DllImport(Import.lib, CallingConvention=CallingConvention.Cdecl )]
+internal static extern int ON_Brep_SplitEdgeAtParameters(IntPtr pBrep, int edgeIndex, int count, double[] parameters);
 ```
 
 #### Parsing of function parameter and return types ####
@@ -81,7 +82,7 @@ Every parameter to the function will undergo some transformation to be useful in
 - `/*ARRAY*/` allows to treat pointers to fundamental types (such as `int`, `double`) as C\# arrays, rather than `ref` values. The `/*ARRAY*/` string token must not contain extra spaces (see example above).
 - Enum types exported with `RH_C_SHARED_ENUM` (see below for details) will be translated to the due C\# counterpart.
 
-
+---
 
 ### 2. Using helper enums for marshalling ###
 
@@ -105,7 +106,7 @@ enum MeshBoolConst : int
 };
 ```
 
-This can then be used in RH_C_FUNCTION lines:
+This can then be used in `RH_C_FUNCTION` lines:
 
 ```c
 RH_C_FUNCTION bool ON_Mesh_GetBool(const ON_Mesh* pMesh, enum MeshBoolConst which)
@@ -125,6 +126,7 @@ RH_C_FUNCTION bool ON_Mesh_GetBool(const ON_Mesh* pMesh, enum MeshBoolConst whic
 ```
 
 ...and will result in this C\# enum and the possibility to call it without using any enum value (just the field name).
+
 ```cs
 internal enum MeshBoolConst : int
 {
@@ -148,7 +150,7 @@ UnsafeNativeMethods.ON_Mesh_GetBool(ptr, UnsafeNativeMethods.MeshBoolConst.IsClo
 ```
 Notice that every enum field had some prefixed lower-case acronym, which is removed by the tool.
 
-
+---
 
 ### 3. Sharing enum values between the C++ and the C# project ###
 
@@ -171,18 +173,18 @@ The complete RH_C_SHARED_ENUM syntax will look like this:
 #pragma region RH_C_SHARED_ENUM [full_cpp_type] [full_cs_type] [options]
 ```
 
-- full_cpp_type: The full C++ type name. This should be the standard way to reference any instance.
-- full_cs_type: The full C\# type name. This will be the standard way to reference the instance type in .Net.
-- options: Any combination of one single item within each of these sets, `(`**`public`**`|internal)`, `(`**`unnested`**`|nested)`, `(sbyte|byte|`**`int`**`|uint|short|ushort|long|ulong)`, `(flags)`, `(clsfalse)`; separated by a colon (:). If an option from a set is not specified, the one in bold is used. Sets with no bold item have the option turned off.
+- **full_cpp_type**: the full C++ type name. This should be the standard way to reference any instance.
+- **full_cs_type**: the full C\# type name. This will be the standard way to reference the instance type in .Net.
+- **options**: any combination of one single item within each of these sets, `(`**`public`**`|internal)`, `(`**`unnested`**`|nested)`, `(sbyte|byte|`**`int`**`|uint|short|ushort|long|ulong)`, `(flags)`, `(clsfalse)`; separated by a colon (:). If an option from a set is not specified, the one in bold is used. Sets with no bold item have the option turned off.
 
 
 
 ##### Remarks for options #####
 
-- nested: please use this option with care. See the [.Net design guidelines for nested types](https://msdn.microsoft.com/en-us/library/ms229027.aspx). Keeping class design simple is paramount.
-- type (int, long, etc): usually, just choose the corresponding .Net type that is CLSCompliant. If you choose anything else than a type that is sized the same as the C++ one, you are responsible for differences in array sizes. Automatic marshalling usually gets the size of single arguments right, though, and casts accordingly. If the size of the C\# element is smaller than the C++ one, there will possibly be problems with uniqueness of fields. If you use any non-CLS-compliant type, then you might have to add the next option.
-- clsfalse: marks the resulting enum code with the [CLSCompliant(false)] attribute.
-- flags: marks the resulting enum code with the [Flags] attribute. Always mark the .Net type with this attribute if the enum is used as a bitmask.
+- **nested**: please use this option with care. See the [.Net design guidelines for nested types](https://msdn.microsoft.com/en-us/library/ms229027.aspx). Keeping class design simple is paramount.
+- **type** (int, long, etc): usually, just choose the corresponding .Net type that is CLSCompliant. If you choose anything else than a type that is sized the same as the C++ one, you are responsible for differences in array sizes. Automatic marshalling usually gets the size of single arguments right, though, and casts accordingly. If the size of the C\# element is smaller than the C++ one, there will possibly be problems with uniqueness of fields. If you use any non-CLS-compliant type, then you might have to add the next option.
+- **clsfalse**: marks the resulting enum code with the [CLSCompliant(false)] attribute.
+- **flags**: marks the resulting enum code with the [Flags] attribute. Always mark the .Net type with this attribute if the enum is used as a bitmask.
 
 ---
 Example: in a parsed file, place:
