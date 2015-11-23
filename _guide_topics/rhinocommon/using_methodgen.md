@@ -23,10 +23,13 @@ Besides other more high-level restructuring, wrapping usually involves:
 
 For each of these tasks, we wrote a tool, methodgen.exe, that automatically writes most of the boilerplate code.
 
+---
+
 ### Adding methodgen to your project ###
 
 To run the tool, place it in a folder that is a parent folder to both your C and your C\# solutions. Then, add a prebuild event to you project, either using the standard VS interface, of by adding this code to the `.csproj` solution:
-```xml
+
+```
 <PropertyGroup Condition=" '$(Configuration)' == 'Release' Or '$(Configuration)' == 'Debug' ">
   <PreBuildEvent>$(ProjectDir)..\methodgen.exe lib_C_dir lib_CS_dir</PreBuildEvent>
 </PropertyGroup>
@@ -40,14 +43,16 @@ A file called `AutoNativeMethods.cs`, and another one called `AutoNativeEnums.cs
 `methodgen.exe` looks for every line starting with **`RH_C_FUNCTION`** in every `.h` and `.cpp` file in `cpp_dir`.
 
 We define the `RH_C_FUNCTION` macro directive like this:
-```cpp
+
+```c
 #define RH_C_FUNCTION extern "C" __declspec(dllexport)
 ```
 
 ---
 
 A typical exported C function will look like this:
-```cpp
+
+```c
 RH_C_FUNCTION int ON_Brep_SplitEdgeAtParameters(ON_Brep* pBrep, int edge_index, int count, /*ARRAY*/const double* parameters)
 {
   int rc = 0;
@@ -58,6 +63,7 @@ RH_C_FUNCTION int ON_Brep_SplitEdgeAtParameters(ON_Brep* pBrep, int edge_index, 
 ```
 
 Inside `AutoNativeMethods.cs`, in an _internal partial class_ called `UnsafeNativeMethods`, `methodgen.exe` will create these lines of code:
+
 ```csharp
   [DllImport(Import.lib, CallingConvention=CallingConvention.Cdecl )]
   internal static extern int ON_Brep_SplitEdgeAtParameters(IntPtr pBrep, int edgeIndex, int count, double[] parameters);
@@ -80,7 +86,7 @@ Enums that are found while scanning every `.h` and `.cpp` file in `cpp_dir` will
 
 Example:
 
-```C
+```c
 enum MeshBoolConst : int
 {
   mbcHasVertexNormals = 0,
@@ -94,7 +100,8 @@ enum MeshBoolConst : int
 ```
 
 This can then be used in RH_C_FUNCTION lines:
-```C
+
+```c
 RH_C_FUNCTION bool ON_Mesh_GetBool(const ON_Mesh* pMesh, enum MeshBoolConst which)
 {
   bool rc = false;
