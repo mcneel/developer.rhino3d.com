@@ -25,9 +25,11 @@ For each of these tasks, we wrote a tool, methodgen.exe, that automatically writ
 
 ---
 
+
+
 ### Adding methodgen to your project ###
 
-To run the tool, place it in a folder that is a parent folder to both your C and your C\# solutions. Then, add a prebuild event to you project, either using the standard VS interface, of by adding this code to the `.csproj` solution:
+To run the tool, place it in a folder that is a parent folder to both your C and your C\# solutions. Then, add a prebuild event to your project, either using the standard VS interface, of by adding this code to the `.csproj` solution:
 
 ```
 <PropertyGroup Condition=" '$(Configuration)' == 'Release' Or '$(Configuration)' == 'Debug' ">
@@ -37,6 +39,8 @@ To run the tool, place it in a folder that is a parent folder to both your C and
 
 Each path can be relative. Every `.h` and `.cpp` file in `lib_C_dir` will be parsed.
 A file called `AutoNativeMethods.cs`, and another one called `AutoNativeEnums.cs` if required, will be placed in `lib_CS_dir` at the end of the process. This will happen according to the rules below.
+
+
 
 ### 1. Exporting C functions to C\# ###
 
@@ -64,19 +68,21 @@ RH_C_FUNCTION int ON_Brep_SplitEdgeAtParameters(ON_Brep* pBrep, int edge_index, 
 
 Inside `AutoNativeMethods.cs`, in an _internal partial class_ called `UnsafeNativeMethods`, `methodgen.exe` will create these lines of code:
 
-```csharp
+```cs
   [DllImport(Import.lib, CallingConvention=CallingConvention.Cdecl )]
   internal static extern int ON_Brep_SplitEdgeAtParameters(IntPtr pBrep, int edgeIndex, int count, double[] parameters);
 ```
 
 #### Parsing of function parameter and return types ####
-Every parameter to the function will undergo some trasformation to be useful in C\#.
+Every parameter to the function will undergo some transformation to be useful in C\#.
 - `const` will be removed. It might be a good idea to name parameter variables in a predictable manner relative to const-ness of the data that is passed.
 - Any `type*` will be transformed to a generic `IntPtr`. As an exception, if the pointer refers to a fundamental type (such as `int`, `unsigned char`), this will be passed as a inbuilt C\# type, with the keyword `ref` prefixed.
-- fundamental types will be translated to the corresponding C\# type. The `unsigned` modifier will usually be removed. E.g., `usigned int` will be transformed in `uint`.  `usigned char` will become `byte`.
+- fundamental types will be translated to the corresponding C\# type. The `unsigned` modifier will usually be removed. E.g., `unsigned int` will be transformed in `uint`.  `unsigned char` will become `byte`.
 - `/*ARRAY*/` allows to treat pointers to fundamental types (such as `int`, `double`) as C\# arrays, rather than `ref` values. The `/*ARRAY*/` string token must not contain extra spaces (see example above).
-- Enum types exported with RH_C_SHARED_ENUM (see below for details) will be translated to the due C\# counterpart.
- 
+- Enum types exported with `RH_C_SHARED_ENUM` (see below for details) will be translated to the due C\# counterpart.
+
+
+
 ### 2. Using helper enums for marshalling ###
 
 Enums that are found while scanning every `.h` and `.cpp` file in `cpp_dir` will be exported as nested enums in 
@@ -119,7 +125,7 @@ RH_C_FUNCTION bool ON_Mesh_GetBool(const ON_Mesh* pMesh, enum MeshBoolConst whic
 ```
 
 ...and will result in this C\# enum and the possibility to call it without using any enum value (just the field name).
-```csharp
+```cs
 internal enum MeshBoolConst : int
 {
   HasVertexNormals = 0,
@@ -142,6 +148,8 @@ UnsafeNativeMethods.ON_Mesh_GetBool(ptr, UnsafeNativeMethods.MeshBoolConst.IsClo
 ```
 Notice that every enum field had some prefixed lower-case acronym, which is removed by the tool.
 
+
+
 ### 3. Sharing enum values between the C++ and the C# project ###
 
 Similarly to 2., the tool also allows to harvest enum values directly from any file (being that `.h`, `.cpp`, or anything else) that follows the convention explained under this title.
@@ -159,14 +167,15 @@ Again, every `.h` and `.cpp` file in `lib_C_dir` is parsed, looking for lines st
 
 The complete RH_C_SHARED_ENUM syntax will look like this:
 
-```C
+```c
 #pragma region RH_C_SHARED_ENUM [full_cpp_type] [full_cs_type] [options]
 ```
 
 - full_cpp_type: The full C++ type name. This should be the standard way to reference any instance.
 - full_cs_type: The full C\# type name. This will be the standard way to reference the instance type in .Net.
 - options: Any combination of one single item within each of these sets, `(`**`public`**`|internal)`, `(`**`unnested`**`|nested)`, `(sbyte|byte|`**`int`**`|uint|short|ushort|long|ulong)`, `(flags)`, `(clsfalse)`; separated by a colon (:). If an option from a set is not specified, the one in bold is used. Sets with no bold item have the option turned off.
-- 
+
+
 
 ##### Remarks for options #####
 
@@ -205,6 +214,8 @@ enum class SubDType : unsigned char
 ```
 
 This will result in an enum called `SubDType`, placed inside a _public partial_ class `SubD`, inside `AutoNativeEnums.cs`.
+
+
 
 ### Appendix. The RH_C_PREPROCESSOR helper macro ###
 
