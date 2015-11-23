@@ -218,6 +218,8 @@ enum class SubDType : unsigned char
 This will result in an enum called `SubDType`, placed inside a _public partial_ class `SubD`, inside `AutoNativeEnums.cs`.
 
 
+---
+
 
 ### Appendix. The RH_C_PREPROCESSOR helper macro ###
 
