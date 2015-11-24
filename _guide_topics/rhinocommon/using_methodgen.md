@@ -12,7 +12,10 @@ origin: unset
 order: 6
 ---
 
-# Using methodgen #
+# Using methodgen
+This guide covers methodgen, our in-house automatic pInvoke call generator and enum syncronization assistant. It builds on top of notions from the [Wrapping Native Libraries]({{ site.baseurl }}/guides/rhinocommon/wrapping_native_libraries) guide. 
+
+## Overview
 Wrapping a C++ library for .Net consumption is a large task. Usually, there is a C/C++ library with every C exported function, that will link to or be itself the content of the exported functionality (we call this lib_C, in a directory called lib_C_dir), and a C# library that will provide access to the exported functionality (lib_CS, in lib_CS_dir).
 
 Besides other more high-level restructuring, wrapping usually involves:
@@ -26,7 +29,7 @@ For each of these tasks, we wrote a tool, methodgen.exe, that automatically writ
 ---
 
 
-### Adding methodgen to your project ###
+## Adding methodgen to your project ##
 
 To run the tool, place it in a folder that is a parent folder to both your C and your C\# solutions. Then, add a prebuild event to your project, either using the standard VS interface, of by adding this code to the `.csproj` solution:
 
@@ -43,7 +46,7 @@ A file called `AutoNativeMethods.cs`, and another one called `AutoNativeEnums.cs
 ---
 
 
-### 1. Exporting C functions to C\# ###
+## 1. Exporting C functions to C\# ##
 
 `methodgen.exe` looks for every line starting with **`RH_C_FUNCTION`** in every `.h` and `.cpp` file in `cpp_dir`.
 
@@ -74,7 +77,7 @@ Inside `AutoNativeMethods.cs`, in an _internal partial class_ called `UnsafeNati
 internal static extern int ON_Brep_SplitEdgeAtParameters(IntPtr pBrep, int edgeIndex, int count, double[] parameters);
 ```
 
-#### Parsing of function parameter and return types ####
+### Parsing of function parameter and return types ###
 Every parameter to the function will undergo some transformation to be useful in C\#.
 - `const` will be removed. It might be a good idea to name parameter variables in a predictable manner relative to const-ness of the data that is passed.
 - Any `type*` will be transformed to a generic `IntPtr`. As an exception, if the pointer refers to a fundamental type (such as `int`, `unsigned char`), this will be passed as a inbuilt C\# type, with the keyword `ref` prefixed.
@@ -84,7 +87,7 @@ Every parameter to the function will undergo some transformation to be useful in
 
 ---
 
-### 2. Using helper enums for marshalling ###
+## 2. Defining helper enums for marshalling ##
 
 Enums that are found while scanning every `.h` and `.cpp` file in `cpp_dir` will be exported as nested enums in 
 `AutoNativeMethods.cs`, in the same `UnsafeNativeMethods` class. These should be C enums.
@@ -125,7 +128,7 @@ RH_C_FUNCTION bool ON_Mesh_GetBool(const ON_Mesh* pMesh, enum MeshBoolConst whic
 }
 ```
 
-...and will result in this C\# enum and the possibility to call it without using any enum value (just the field name).
+and will result in this C\# enum and the possibility to call it without using any enum value (just the field name).
 
 ```cs
 internal enum MeshBoolConst : int
@@ -152,7 +155,7 @@ Notice that every enum field had some prefixed lower-case acronym, which is remo
 
 ---
 
-### 3. Sharing enum values between the C++ and the C# project ###
+## 3. Sharing enum values between the C++ and the C# project ##
 
 Similarly to 2., the tool also allows to harvest enum values directly from any file (being that `.h`, `.cpp`, or anything else) that follows the convention explained under this title.
 
@@ -179,7 +182,7 @@ The complete RH_C_SHARED_ENUM syntax will look like this:
 
 
 
-##### Remarks for options #####
+### Remarks for options ###
 
 - **nested**: please use this option with care. See the [.Net design guidelines for nested types](https://msdn.microsoft.com/en-us/library/ms229027.aspx). Keeping class design simple is paramount.
 - **type** (int, long, etc): usually, just choose the corresponding .Net type that is CLSCompliant. If you choose anything else than a type that is sized the same as the C++ one, you are responsible for differences in array sizes. Automatic marshalling usually gets the size of single arguments right, though, and casts accordingly. If the size of the C\# element is smaller than the C++ one, there will possibly be problems with uniqueness of fields. If you use any non-CLS-compliant type, then you might have to add the next option.
@@ -221,7 +224,7 @@ This will result in an enum called `SubDType`, placed inside a _public partial_ 
 ---
 
 
-### Appendix. The RH_C_PREPROCESSOR helper macro ###
+## The RH_C_PREPROCESSOR macro ##
 
 Inside every `.h` and `.cpp` file in `lib_C_dir`, the tool keeps track of `#ifdef`, `#ifndef`, `#if defined`, `#elif defined`, `#else` and `#endif` lines marked with an `RH_C_PREPROCESSOR` suffix.Lines with both preprocessor instructions and the mark will not be removed and will appear in `AutoNativeMethods.cs`, transformed to the appropriate C\# representation.
 The `RH_C_PREPROCESSOR` string can appear either in plain code or in a comment, provided it is the first word in the comment, e.g.: 
