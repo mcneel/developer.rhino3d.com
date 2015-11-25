@@ -24,11 +24,16 @@ First, we will build a very simple native library that adds two numbers together
 
 ### Prerequisites
 
-This guide does not presume you are a C/C++ expert or a .NET guru, but presumes you have a functional working knowledge of both.  This is an advanced guide; that said, the intent of this guide is to illustrate basic considerations of wrapping a native C/C++ library and the logistical issues calling it from a RhinoCommon plugin on both Windows and Mac.
+This guide does not presume you are a C/C++ expert or a .NET guru, but assumes you have a functional working knowledge of both.  This is an advanced guide; that said, the intent of this guide is to illustrate basic considerations of wrapping a native C/C++ library and the logistical issues calling it from a RhinoCommon plugin on both Windows and Mac.
 
 We will be analyzing an sample solution called **[SampleNativeLibrary](https://github.com/dalefugier/SampleNativeLibrary)**.  Please clone or download this repository.  **SampleNativeLibrary** builds against the RhinoWIP (on Windows) and Rhino 5 for Mac (on OS X).  (On Windows, it is possible to use Rhino 5, but you will have to change the RhinoCommon references).
 
 It is presumed you already have *all* the necessary tools installed and are ready to go.  If you are not there yet, see both [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows) and [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac).  It is also helpful to have read and understood [Your First Plugin (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform).
+
+<div class="bs-callout bs-callout-danger">
+  <h4>WARNING</h4>
+  <p>Other methods to create a .Net binding to a C# library exist. A notorious one is based on the compilation of the C++ library with the C++/CLI compiler. To keep things compatible with the Apple Mac OS, and because the IJW (_'it just works'_) technology sometimes does not, we suggest to use PInvoke.</p>
+</div>
 
 
 ## SampleLibrary
