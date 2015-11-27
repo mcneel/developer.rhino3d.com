@@ -174,6 +174,8 @@ The complete RH_C_SHARED_ENUM syntax will look like this:
 
 ```c
 #pragma region RH_C_SHARED_ENUM [full_cpp_type] [full_cs_type] [options]
+   //... enum
+#pragma endregion
 ```
 
 - **full_cpp_type**: the full C++ type name. This should be the standard way to reference any instance.
