@@ -191,10 +191,12 @@ The complete RH_C_SHARED_ENUM syntax will look like this:
 
 <div class="bs-callout bs-callout-danger">
   <h4>ENUM DESIGN</h4>
+  
   1. .Net enums are best defined as deriving from CLS-compliant types: byte, short, int and long. When sharing a C++ enum that translates to sbyte, ushort, uint, ulong, it might be tempting to use one of these non-CLS-compliant types, and apply the provided option. This is however a bad idea! The option is only there for support of already-existing enums. Every method with non-CLS-compliant parameters will be non-CLS-compliant. On the other hand, only a solvable issue with the first bit of high-valued enum fields needs to be addressed when translating an `unsigned int` enum to an `int` one in C#. .Net users of the library will find a library that is simpler to read as well.
   2. In an enum shared with .Net, do not define sentinel values or values catiously reserved for future use. They are evil. See the [enum guidelines](https://msdn.microsoft.com/en-us/library/ms229058%28v=vs.110%29.aspx).
   3. Because each enum field name will be the same as in .Net, it is best practice not to use constant prefixes like `k` in `kMyEnum`, and not to use ALL_CAPS. Simply use PascalCase for enum field names.
   4. You can consider using `class enums` in C++ to avoid name clashes. This is not an issue in .Net, because methodgen removes the `class` keyword automatically.
+
 </div>
 
 ---
