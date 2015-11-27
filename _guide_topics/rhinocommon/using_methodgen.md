@@ -83,7 +83,7 @@ Every parameter to the function will undergo some transformation to be useful in
 - Any `type*` will be transformed to a generic `IntPtr`. As an exception, if the pointer refers to a fundamental type (such as `int`, `unsigned char`), this will be passed as a inbuilt C\# type, with the keyword `ref` prefixed.
 - fundamental types will be translated to the corresponding C\# type. The `unsigned` modifier will usually be removed. E.g., `unsigned int` will be transformed in `uint`.  `unsigned char` will become `byte`.
 - `/*ARRAY*/` allows to treat pointers to fundamental types (such as `int`, `double`) as C\# arrays, rather than `ref` values. The `/*ARRAY*/` string token must not contain extra spaces (see example above).
-- Enum types exported with `RH_C_SHARED_ENUM` (see below for details) will be translated to the due C\# counterpart.
+- Enum types exported with `RH_C_SHARED_ENUM` will be translated to the defined C\# counterpart (see below for details).
 
 ---
 
@@ -186,8 +186,16 @@ The complete RH_C_SHARED_ENUM syntax will look like this:
 
 - **nested**: please use this option with care. See the [.Net design guidelines for nested types](https://msdn.microsoft.com/en-us/library/ms229027.aspx). Keeping class design simple is paramount.
 - **type** (int, long, etc): usually, just choose the corresponding .Net type that is CLSCompliant. If you choose anything else than a type that is sized the same as the C++ one, you are responsible for differences in array sizes. Automatic marshalling usually gets the size of single arguments right, though, and casts accordingly. If the size of the C\# element is smaller than the C++ one, there will possibly be problems with uniqueness of fields. If you use any non-CLS-compliant type, then you might have to add the next option.
-- **clsfalse**: marks the resulting enum code with the [CLSCompliant(false)] attribute.
+- **clsfalse**: marks the resulting enum code with the [CLSCompliant(false)] attribute. Only here for compatibility with already-defined C# enums.
 - **flags**: marks the resulting enum code with the [Flags] attribute. Always mark the .Net type with this attribute if the enum is used as a bitmask.
+
+<div class="bs-callout bs-callout-danger">
+  <h4>ENUM DESIGN</h4>
+  1. .Net enums are best defined as deriving from CLS-compliant types: byte, short, int and long. When sharing a C++ enum that translates to sbyte, ushort, uint, ulong, it might be tempting to use one of these non-CLS-compliant types, and apply the provided option. This is however a bad idea! The option is only there for support of already-existing enums. Every method with non-CLS-compliant parameters will be non-CLS-compliant. On the other hand, only a solvable issue with the first bit of high-valued enum fields needs to be addressed when translating an `unsigned int` enum to an `int` one in C#. .Net users of the library will find a library that is simpler to read as well.
+  2. In an enum shared with .Net, do not define sentinel values or values catiously reserved for future use. They are evil. See the [enum guidelines](https://msdn.microsoft.com/en-us/library/ms229058%28v=vs.110%29.aspx).
+  3. Because each enum field name will be the same as in .Net, it is best practice not to use constant prefixes like `k` in `kMyEnum`, and not to use ALL_CAPS. Simply use PascalCase for enum field names.
+  4. You can consider using `class enums` in C++ to avoid name clashes. This is not an issue in .Net, because methodgen removes the `class` keyword automatically.
+</div>
 
 ---
 Example: in a parsed file, place:
