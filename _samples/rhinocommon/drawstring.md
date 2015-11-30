@@ -84,7 +84,7 @@ def RunCommand():
 class GetDrawStringPoint(GetPoint):
   def OnDynamicDraw(self, e):
     xform = e.Viewport.GetTransform(
-      CoordinateSystem.World, CoordinateSystem.Screen)    
+      CoordinateSystem.World, CoordinateSystem.Screen)
 
     current_point = e.CurrentPoint
     current_point.Transform(xform)

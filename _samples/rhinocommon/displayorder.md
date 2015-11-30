@@ -163,7 +163,7 @@ def RunCommand():
   doc.Views.Redraw()
   Pause("Second (blue) line now in front.  Any key to continue ...")
 
-  for i in range(0, m_line_objects.Count - 1):
+  for i in range(1, m_line_objects.Count):
     m_line_objects[i].Attributes.DisplayOrder = i
     m_line_objects[i].CommitChanges()
 

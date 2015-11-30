@@ -68,7 +68,7 @@ import Rhino
 def ReverseCurves():
     crvs = rs.GetObjects("Select curves to reverse", rs.filter.curve)
     if not crvs: return
-    
+
     for crvid in crvs:
         crv = rs.coercecurve(crvid)
         if not crv: continue

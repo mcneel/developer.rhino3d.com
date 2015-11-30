@@ -159,15 +159,15 @@ def RunCommand():
   point3d = gp.Point()
   doc.Objects.AddPoint(point3d)
   doc.Views.Redraw()
-  
+
   # creates a point where the mouse is clicked
-  # using the RhinoScript syntax 
+  # using the RhinoScript syntax
   point3d = rs.GetPoint("Click for point")
   if point3d == None: return Result.Nothing
   rs.AddPoint(point3d)
   doc.Objects.AddPoint(point3d)
-  
-  
+
+
   # selects a point that already exists
   # using RhinoCommon
   rc, obj_ref = RhinoGet.GetOneObject(
@@ -175,12 +175,12 @@ def RunCommand():
   if rc <> Result.Success:
     return rc
   point = obj_ref.Point()
-  RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}", 
+  RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}",
     point.Location.X,
     point.Location.Y,
     point.Location.Z)
   doc.Objects.UnselectAll()
-  
+
   # also selects a point that already exists
   # using RhinoCommon
   # Used when RhinoGet doesn't provide enough control
@@ -193,12 +193,12 @@ def RunCommand():
   for o_ref in  go.Objects():
     point = o_ref.Point()
     if point <> None:
-      RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}", 
+      RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}",
         point.Location.X,
         point.Location.Y,
         point.Location.Z)
   doc.Objects.UnselectAll()
-  
+
   # selects a point that already exists
   # using RhinoScript syntax
   point_id = rs.GetObject(
@@ -227,7 +227,7 @@ def RunCommand():
     "Select point", rs.filter.point)
   for p_id in point_ids:
     print "point id: {0}".format(p_id)
-  
+
   return Result.Success
 
 if __name__ == "__main__":

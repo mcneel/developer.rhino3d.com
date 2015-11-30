@@ -126,7 +126,7 @@ class MoveCPlanePoint(Rhino.Input.Custom.GetPoint):
 def MoveCPlane():
     view = scriptcontext.doc.Views.ActiveView
     if not view: return Rhino.Commands.Result.Failure
-    
+
     cplane = view.ActiveViewport.GetConstructionPlane()
     origin = cplane.Plane.Origin
     gp = MoveCPlanePoint(cplane)

@@ -105,7 +105,7 @@ def AddMesh():
     mesh.Vertices.Add(1.0, 2.0, 1.0) #9
     mesh.Vertices.Add(2.0, 2.0, 1.0) #10
     mesh.Vertices.Add(3.0, 2.0, 1.0) #11
-    
+
     mesh.Faces.AddFace(0, 1, 5, 4)
     mesh.Faces.AddFace(1, 2, 6, 5)
     mesh.Faces.AddFace(2, 3, 7, 6)

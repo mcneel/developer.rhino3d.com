@@ -114,7 +114,7 @@ def AddNamedView():
 
     rc, location = Rhino.Input.RhinoGet.GetPoint("Camera Location", False)
     if rc!=Rhino.Commands.Result.Success: return rc
-    
+
     gp = Rhino.Input.Custom.GetPoint()
     gp.SetCommandPrompt("Look At Location")
     gp.DrawLineFromPoint(location, False)
@@ -134,7 +134,7 @@ def AddNamedView():
     vp.SetCameraLocation(location, False)
     vp.SetCameraDirection(lookat - location, True)
     vp.Name = name
-    
+
     scriptcontext.doc.NamedViews.Add(name, vp.Id)
     view.Redraw()
     return Rhino.Commands.Result.Success

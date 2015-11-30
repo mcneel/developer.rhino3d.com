@@ -93,7 +93,7 @@ def RunCommand():
   if not srfid: return
   brep = rs.coercebrep(srfid)
   if not brep: return
-  
+
   pts = Intersect.Intersection.ProjectPointsToBreps(
       [brep], # brep on which to project
       [Point3d(0, 0, 0), Point3d(3,0,3), Point3d(-2,0,-2)], # points to project

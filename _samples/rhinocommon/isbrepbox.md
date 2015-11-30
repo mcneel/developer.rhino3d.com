@@ -156,7 +156,7 @@ def IsBrepBox(brep):
             v = plane.ZAxis
             v.Unitize()
             N.append(v)
- 
+
     for i in range(6):
         count = 0
         for j in range(6):

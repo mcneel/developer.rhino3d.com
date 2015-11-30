@@ -126,13 +126,13 @@ End Class
 import rhinoscriptsyntax as rs
 
 surface_id,_,_,_,_,_ = rs.GetSurfaceObject("Select surface for curvature measurement")
-point = rs.GetPointOnSurface(surface_id, 
+point = rs.GetPointOnSurface(surface_id,
     "Select point on surface for curvature measurement")
 u,v = rs.SurfaceClosestPoint(surface_id, point)
 
 #point, normal, kappa_u, direction_u, kappa_v, direction_v, gaussian, mean =
 surface_curvature = rs.SurfaceCurvature(surface_id, (u,v))
-    
+
 point, normal, kappa_u, direction_u, kappa_v, direction_v, gaussian, mean = surface_curvature
 
 print "Surface curvature evaluation at parameter: ({0}, {1})".format(u,v)

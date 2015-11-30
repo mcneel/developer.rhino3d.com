@@ -216,13 +216,13 @@ import scriptcontext
 def dynamic_array():
     rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select object", True, Rhino.DocObjects.ObjectType.AnyObject)
     if rc!=Rhino.Commands.Result.Success: return
-    
+
     rc, pt_start = Rhino.Input.RhinoGet.GetPoint("Start point", False)
     if rc!=Rhino.Commands.Result.Success: return
-    
+
     obj = objref.Object()
     if not obj: return
-    
+
     dist = 1
     if scriptcontext.sticky.has_key("dynamic_array_distance"):
         dist = scriptcontext.sticky["dynamic_array_distance"]

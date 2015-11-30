@@ -166,7 +166,7 @@ def UnrollSurface():
     filter = Rhino.DocObjects.ObjectType.Brep | Rhino.DocObjects.ObjectType.Surface
     rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select surface or brep to unroll", False, filter)
     if rc!=Rhino.Commands.Result.Success: return rc;
-    
+
     unroll = Rhino.Geometry.Unroller(objref.Geometry())
     go = Rhino.Input.Custom.GetObject()
     go.SetCommandPrompt("Select points, curves, and dots to unroll with surface")
@@ -175,7 +175,7 @@ def UnrollSurface():
     go.GetMultiple(0, 0)
     if go.CommandResult()!=Rhino.Commands.Result.Success:
         return go.CommandResult()
-    
+
     for i in range(go.ObjectCount):
         objref = go.Object(i);
         g = objref.Geometry();

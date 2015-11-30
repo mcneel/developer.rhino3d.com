@@ -126,13 +126,13 @@ def CommandLineOptions():
     # "Get" classes support command line options.
     gp = Rhino.Input.Custom.GetPoint()
     gp.SetCommandPrompt("GetPoint with options")
-    
+
     # set up the options
     intOption = Rhino.Input.Custom.OptionInteger(1, 1, 99)
     dblOption = Rhino.Input.Custom.OptionDouble(2.2, 0, 99.9)
     boolOption = Rhino.Input.Custom.OptionToggle(True, "Off", "On")
     listValues = "Item0", "Item1", "Item2", "Item3", "Item4"
-    
+
     gp.AddOptionInteger("Integer", intOption)
     gp.AddOptionDouble("Double", dblOption)
     gp.AddOptionToggle("Boolean", boolOption)
@@ -164,7 +164,6 @@ def CommandLineOptions():
 
 if __name__ == "__main__":
     CommandLineOptions()
-
 ```
 {: #py .tab-pane .fade .in}
 

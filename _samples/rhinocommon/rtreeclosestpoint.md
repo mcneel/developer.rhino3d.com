@@ -201,7 +201,7 @@ class SearchData:
         self.Point = point
         self.Index = -1
         self.Distance = 0
-        
+
 
 def SearchCallback(sender, e):
     data = e.Tag
@@ -223,11 +223,11 @@ def RunSearch():
         # I can add a RhinoCommon function that just builds an rtree from the
         # vertices in one quick shot, but for now...
         for i,vertex in enumerate(mesh.Vertices): tree.Insert(vertex, i)
-        
+
         while(True):
             point = rs.GetPoint("test point")
             if not point: break
-            
+
             data = SearchData(mesh, point)
             # Use the first vertex in the mesh to define a start sphere
             distance = point.DistanceTo(mesh.Vertices[0])

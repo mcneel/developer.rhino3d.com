@@ -100,7 +100,7 @@ def RunCommand():
   # view and view names
   active_view_name = doc.Views.ActiveView.ActiveViewport.Name
 
-  non_active_views = [(view.ActiveViewport.Name, view) for view in doc.Views 
+  non_active_views = [(view.ActiveViewport.Name, view) for view in doc.Views
                       if view.ActiveViewport.Name <> active_view_name]
 
   # get name of view to set active
@@ -120,7 +120,7 @@ def RunCommand():
 
   if selected_view_name <> active_view_name:
     if selected_view_name in [seq[0] for seq in non_active_views]:
-      doc.Views.ActiveView = [seq[1] for seq in non_active_views 
+      doc.Views.ActiveView = [seq[1] for seq in non_active_views
                               if seq[0] == selected_view_name][0]
     else:
       print "\"{0}\" is not a view name".format(selected_view_name)

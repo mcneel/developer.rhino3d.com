@@ -153,7 +153,7 @@ def RunCommand():
 class GetCircleRadiusPoint (GetPoint):
   def __init__(self, centerPoint):
     self.m_center_point = centerPoint
-  
+
   def OnDynamicDraw(self, e):
     cplane = e.RhinoDoc.Views.ActiveView.ActiveViewport.ConstructionPlane()
     radius = self.m_center_point.DistanceTo(e.CurrentPoint)

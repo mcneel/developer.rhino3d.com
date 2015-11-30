@@ -139,7 +139,7 @@ def TestCustomUndo():
     """Rhino automatically sets up an undo record when a command is run,
        but... the undo record is not saved if nothing changes in the
        document (objects added/deleted, layers changed,...)
-    
+
        If we have a command that doesn't change things in the document,
        but we want to have our own custom undo called then we need to do
        a little extra work
@@ -155,7 +155,6 @@ def TestCustomUndo():
 
 if __name__=="__main__":
     TestCustomUndo()
-
 ```
 {: #py .tab-pane .fade .in}
 

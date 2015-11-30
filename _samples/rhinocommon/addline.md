@@ -108,7 +108,7 @@ def AddLine():
     v = pt_end - pt_start
     if v.IsTiny(Rhino.RhinoMath.ZeroTolerance):
         return Rhino.Commands.Result.Nothing
-    
+
     id = scriptcontext.doc.Objects.AddLine(pt_start, pt_end)
     if id!=System.Guid.Empty:
         scriptcontext.doc.Views.Redraw()

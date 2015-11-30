@@ -84,7 +84,7 @@ def showafterscript():
         # create a conduit and place it in sticky
         conduit = CustomConduit()
         scriptcontext.sticky["myconduit"] = conduit
-    
+
     # Toggle enabled state for conduit. Every time this script is
     # run, it will turn the conduit on and off
     conduit.Enabled = not conduit.Enabled

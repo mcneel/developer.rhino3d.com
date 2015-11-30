@@ -95,7 +95,7 @@ import rhinoscriptsyntax as rs
 from scriptcontext import doc
 
 def RunCommand():
-  rc, objRef = RhinoGet.GetOneObject("Select surface or polysurface to mesh", True, 
+  rc, objRef = RhinoGet.GetOneObject("Select surface or polysurface to mesh", True,
                                      ObjectType.Surface | ObjectType.PolysrfFilter)
   if rc <> Result.Success:
     return rc

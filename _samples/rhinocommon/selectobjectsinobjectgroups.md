@@ -95,7 +95,7 @@ from scriptcontext import doc
 def RunCommand():
   rs, obj_ref = RhinoGet.GetOneObject(
     "Select object", False, ObjectType.AnyObject)
-  if rs <> Result.Success:
+  if rs != Result.Success:
     return rs
   rhino_object = obj_ref.Object()
   if rhino_object == None:

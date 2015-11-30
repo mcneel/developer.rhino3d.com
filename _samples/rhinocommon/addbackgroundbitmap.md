@@ -151,7 +151,7 @@ def AddBackgroundBitmap():
     # Allow the user to select a bitmap file
     fd = Rhino.UI.OpenFileDialog()
     fd.Filter = "Image Files (*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg"
-    if fd.ShowDialog()!=System.Windows.Forms.DialogResult.OK:
+    if not fd.ShowDialog():
         return Rhino.Commands.Result.Cancel
 
     # Verify the file that was selected

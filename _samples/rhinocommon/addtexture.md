@@ -152,7 +152,7 @@ def AddTexture():
     # Select texture
     fd = Rhino.UI.OpenFileDialog()
     fd.Filter = "Image Files (*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg"
-    if fd.ShowDialog()!=System.Windows.Forms.DialogResult.OK:
+    if not fd.ShowDialog():
         return Rhino.Commands.Result.Cancel
 
     # Verify texture
@@ -173,21 +173,15 @@ def AddTexture():
 
     if material_index>=0:
         mat = scriptcontext.doc.Materials[material_index]
-        # find the texture
-        mi = mat.ToMaterialInfo()
-        texture_index = mi.FindBitmapTexture()
-        if texture_index>=0:
-            # already had a texture, so just replace it
-            mi.SetTextureFilename(texture_index, bitmap_filename)
-        else:
-            # Does not have a texture, so add one
-            mi.AddBitmapTexture(bitmap_filename)
-        scriptcontext.doc.Materials.Modify(mi, material_index, False)
+        mat.SetBumpTexture(bitmap_filename)
+        mat.CommitChanges()
+
         #Don't forget to update the object, if necessary
         rhino_object.CommitChanges()
+
         scriptcontext.doc.Views.Redraw()
         return Rhino.Commands.Result.Success
- 
+
     return Rhino.Commands.Result.Failure
 
 if __name__=="__main__":

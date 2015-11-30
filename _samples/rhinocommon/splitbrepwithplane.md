@@ -166,7 +166,7 @@ def RunCommand():
     bbox = brep.GetBoundingBox(False)
 
     #Grow the boundingbox in all directions
-    #If the boundingbox is flat (zero volume or even zero area) 
+    #If the boundingbox is flat (zero volume or even zero area)
     #then the CreateThroughBox method will fail.
     min_point = bbox.Min
     min_point.X -= 1.0

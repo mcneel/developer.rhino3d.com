@@ -121,9 +121,9 @@ def UnrollSurface2():
     filter = Rhino.DocObjects.ObjectType.Brep | Rhino.DocObjects.ObjectType.Surface
     rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select surface or brep to unroll", False, filter)
     if rc!=Rhino.Commands.Result.Success: return rc;
-    
+
     unroll = Rhino.Geometry.Unroller(objref.Geometry())
-    mesh = objref.Brep().Faces[0].GetMesh()
+    mesh = objref.Brep().Faces[0].GetMesh(0)
     if not mesh: return Rhino.Commands.Result.Cancel
 
     unroll.AddFollowingGeometry(mesh.Vertices.ToPoint3dArray())

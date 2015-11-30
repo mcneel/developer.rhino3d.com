@@ -116,7 +116,7 @@ def RunCommand():
   rc, new_u_degree = RhinoGet.GetInteger(
     "New U degree <{0}...11>".format(nurbs_surface.Degree(0)), True, new_u_degree, nurbs_surface.Degree(0), 11)
   if rc != Result.Success: return rc
-  
+
   new_v_degree = -1
   rc, new_v_degree = RhinoGet.GetInteger(
     "New V degree <{0}...11>".format(nurbs_surface.Degree(1)), True, new_v_degree, nurbs_surface.Degree(1), 11)

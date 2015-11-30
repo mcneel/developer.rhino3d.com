@@ -151,7 +151,7 @@ def RunCommand():
   if not b: return Result.Failure
 
   iso_curve = surface.IsoCurve(direction, u_parameter if direction == 1 else v_parameter)
-  if iso_curve == None: 
+  if iso_curve == None:
     return Result.Failure
 
   doc.Objects.AddCurve(iso_curve)

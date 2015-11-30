@@ -212,9 +212,9 @@ def RunCommand():
   crvB = rs.coercecurve(crvB)
   if crvA == None or crvB == None:
       return Rhino.Commands.Result.Failure
-      
+
   maxa, maxb, maxd, mina, minb, mind = rs.CurveDeviation(crvA, crvB)
-  
+
   if mind <= Rhino.RhinoMath.ZeroTolerance:
       mind = 0.0;
   maxDistPtA = crvA.PointAt(maxa)

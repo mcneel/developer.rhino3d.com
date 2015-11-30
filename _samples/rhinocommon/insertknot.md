@@ -94,7 +94,7 @@ def InsertKnot():
     filter = Rhino.DocObjects.ObjectType.Curve
     rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select curve for knot insertion", False, filter)
     if rc != Rhino.Commands.Result.Success: return rc
-    
+
     curve = objref.Curve()
     if not curve: return Rhino.Commands.Result.Failure
     nurb = curve.ToNurbsCurve()

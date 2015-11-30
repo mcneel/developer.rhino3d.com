@@ -70,11 +70,12 @@ from Rhino import *
 from Rhino.DocObjects import *
 from Rhino.Input import *
 from Rhino.UI import *
+from Rhino.Commands import Result
 from scriptcontext import doc
 
 def RunCommand():
   rc, obj_ref = RhinoGet.GetOneObject(
-    "Select light to change color", 
+    "Select light to change color",
     True,
     ObjectType.Light)
   if rc != Result.Success:
@@ -86,7 +87,7 @@ def RunCommand():
   b, color = Dialogs.ShowColorDialog(light.Diffuse)
   if b:
     light.Diffuse = color
-    
+
   doc.Lights.Modify(obj_ref.ObjectId, light)
   return Result.Success
 

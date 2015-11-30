@@ -123,7 +123,7 @@ from Rhino.Input.Custom import *
 from scriptcontext import doc
 
 def RunCommand():
-  
+
   rc, boundary_obj_refs = RhinoGet.GetMultipleObjects("Select boundary objects", False, ObjectType.AnyObject)
   if rc <> Result.Success:
     return rc

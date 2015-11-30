@@ -106,7 +106,7 @@ from  Rhino.Input import *
 from scriptcontext import doc
 
 def RunCommand():
-  
+
   rc, obj_ref = RhinoGet.GetOneObject("Select curve to reparameterize", False, ObjectType.Curve)
   if rc <> Result.Success:
     return rc

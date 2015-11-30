@@ -129,7 +129,7 @@ def CurveBoundingBox():
     print "World min:", bbox.Min
     print "World max:", bbox.Max
 
-    # Compute the tight bounding box of the curve based on the 
+    # Compute the tight bounding box of the curve based on the
     # active view's construction plane
     bbox = curve.GetBoundingBox(plane)
 

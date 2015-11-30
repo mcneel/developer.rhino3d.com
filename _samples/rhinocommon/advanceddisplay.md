@@ -155,7 +155,7 @@ def AdvancedDisplay():
     # Note, these are copies of the originals...
     display_modes = Rhino.Display.DisplayModeDescription.GetDisplayModes()
     if not display_modes: return Rhino.Commands.Result.Failure
-    
+
     # Construct an options picker so the user can pick which
     # display mode they want modified
     go = Rhino.Input.Custom.GetOption()
@@ -165,7 +165,7 @@ def AdvancedDisplay():
         english_name = mode.EnglishName
         english_name = english_name.translate(None, "_ -,.")
         opt_list.append( go.AddOption(english_name) )
-    
+
     # Get the command option
     go.Get()
     if go.CommandResult()!=Rhino.Commands.Result.Success:
@@ -179,7 +179,7 @@ def AdvancedDisplay():
             break
     # Validate...
     if not selected_description: return Rhino.Commands.Result.Failure
-    
+
     # Modify the desired display mode. In this case, we
     # will just set the mesh wireframe thickness to zero.
     selected_description.DisplayAttributes.MeshSpecificAttributes.MeshWireThickness = 0

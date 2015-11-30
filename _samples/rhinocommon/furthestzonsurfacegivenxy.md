@@ -238,9 +238,9 @@ def RunCommand():
 
   pts = [(abs(point.Z), point.Z) for point in Intersect.Intersection.ProjectPointsToBreps(
            [brep], [Point3d(x, y, 0)], Vector3d(0, 0, 1), doc.ModelAbsoluteTolerance)]
-           
+
   pts.sort(reverse=True)
-  
+
   if pts == []:
     print "no Z for given X, Y"
   else:

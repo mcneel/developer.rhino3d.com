@@ -77,7 +77,7 @@ def AddObjectsToGroup():
     go.GetMultiple(1, 0)
     if go.CommandResult()!=Rhino.Commands.Result.Success:
         return go.CommandResult()
-    
+
     ids = [go.Object(i).ObjectId for i in range(go.ObjectCount)]
     index = scriptcontext.doc.Groups.Add(ids)
     scriptcontext.doc.Views.Redraw()

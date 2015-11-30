@@ -213,7 +213,7 @@ def OrientOnSrf():
     gp.Get()
     if gp.CommandResult()!=Rhino.Commands.Result.Success:
         return gp.CommandResult()
-    
+
     # Define source plane
     view = gp.View()
     if not view:
