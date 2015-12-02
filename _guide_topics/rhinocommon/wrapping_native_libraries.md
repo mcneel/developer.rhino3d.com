@@ -14,19 +14,19 @@ order: 5
 
 # Wrapping Native Libraries
 
-This guide demonstrates how to wrap a native C/C++ library in order to call into it from .NET.  
+This guide demonstrates how to wrap a C/C++ library in order to call into it from .NET.  
 
 ## Overview
 
-We present a sample solution that uses Platform Invoke (PInvoke), which allows managed code to call unmanaged functions that are implemented in a C/C++ DLL (Windows) or a dylib (Mac OS X).  It is important to understand that the main utility of this advanced approach is in the ability to call the same C/C++ code on both platforms from .NET.  
+We present a sample solution that uses Platform Invoke (PInvoke), which allows .NET code to call functions that are implemented in a C/C++ DLL (Windows) or dylib (Mac OS X).  It is important to understand that the main utility of this advanced approach is in the ability to call the same C/C++ code on both platforms from .NET.  
 
-First, we will build a very simple native library that adds two numbers together.  After that, we will examine the wrapping .NET code required to call into our native library from within a RhinoCommon plugin on both Windows and Mac.
+First, we will build a simple C/C++ library that adds two numbers together.  After that, we will examine the wrapping .NET code required to call into our library from a RhinoCommon plugin on both Windows and Mac.
 
 ### Prerequisites
 
-This guide does not presume you are a C/C++ expert or a .NET guru, but assumes you have a functional working knowledge of both.  This is an advanced guide; that said, the intent of this guide is to illustrate basic considerations of wrapping a native C/C++ library and the logistical issues calling it from a RhinoCommon plugin on both Windows and Mac.
+This guide does not presume you are a C/C++ or .NET expert, but assumes you have a functional working knowledge of both.  This is an advanced guide; that said, the intent of this guide is to illustrate basic considerations of wrapping a C/C++ library and the logistical issues calling it from a RhinoCommon plugin on both Windows and Mac.
 
-We will be analyzing an sample solution called **[SampleNativeLibrary](https://github.com/dalefugier/SampleNativeLibrary)**.  Please clone or download this repository.  **SampleNativeLibrary** builds against the RhinoWIP (on Windows) and Rhino 5 for Mac (on OS X).  (On Windows, it is possible to use Rhino 5, but you will have to change the RhinoCommon references).
+We will be analyzing a sample solution called **[SampleNativeLibrary](https://github.com/dalefugier/SampleNativeLibrary)**.  Please clone or download this repository.  **SampleNativeLibrary** builds against the RhinoWIP (on Windows) and Rhino 5 for Mac (on OS X).  (On Windows, it is possible to use Rhino 5, but you will have to change the RhinoCommon references).
 
 It is presumed you already have *all* the necessary tools installed and are ready to go.  If you are not there yet, see both [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows) and [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac).  It is also helpful to have read and understood [Your First Plugin (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform).
 
