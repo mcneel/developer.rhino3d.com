@@ -193,3 +193,4 @@ The following RhinoScript knowledge base articles from the wiki are really just 
 - Move all samples to mcneel/github - in coordination with Dale Fugier
 - Link directly to samples on GitHub from gh-pages samples section
 - Re-capture images on retina display and replace them
+- What, Where, How, Why table on [homepage]({{ site.baseurl }}) does not work on iOS's Safari.  Fix it.
