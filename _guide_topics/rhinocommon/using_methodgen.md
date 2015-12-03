@@ -1,20 +1,20 @@
 ---
 layout: toc-guide-page
-title: Using Methodgen
+title: Using methodgen
 author: giulio@mcneel.com
 categories: ['Advanced']
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['Native', 'RhinoCommon', 'Plugin', 'Library', 'PInvoke', 'Methodgen', 'AutoNativeMethods']
+keywords: ['Native', 'RhinoCommon', 'Plugin', 'Library', 'PInvoke', 'methodgen', 'AutoNativeMethods']
 TODO: 0
 origin: unset
 order: 6
 ---
 
-# Using Methodgen
+# Using methodgen
 
-This guide covers *Methodgen*, our in-house automatic pInvoke call generator and enum synchronization utility.  It builds on top of concepts from the [Wrapping Native Libraries]({{ site.baseurl }}/guides/rhinocommon/wrapping_native_libraries) guide.
+This guide covers *methodgen*, our in-house automatic pInvoke call generator and enum synchronization utility.  It builds on top of concepts from the [Wrapping Native Libraries]({{ site.baseurl }}/guides/rhinocommon/wrapping_native_libraries) guide.
 
 
 ## Overview
@@ -30,7 +30,7 @@ Besides other more high-level restructuring, wrapping usually involves:
 For each of these tasks, we wrote a tool, *methodgen.exe*, that automatically writes most of the boilerplate code.
 
 
-## Methodgen in your project
+## methodgen in your project
 
 To run the tool, place it in a folder that is a parent folder to both your C and your C# solutions.  Then, add a prebuild event to your project, either using the standard Visual Studio or Xamarin Studio interface, of by adding this code to the `.csproj` solution:
 

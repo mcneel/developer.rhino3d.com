@@ -129,7 +129,7 @@ Let's take a look at SampleNativeLibrary on Windows using Visual Studio first...
 
         internal static extern double Add(double a, double b);
 1. **Build** the plugin.  No errors or warnings, right?   Now run the plugin and test the **SampleRhinoCommand** with this change.  Try adding 2 + 2.  What happens?  **2 + 2 no longer equals 4**.  That's bad (hopefully, Rhino did not crash).  The compiler did not detect the error we introduced.  Change the type of argument `a` back to an `int`, rather than a `double` and save the file.
-1. **You must ensure that the function in .NET exactly matches the function declaration in the header file made in the unmanaged code** (in this case, in *SampleLibraryInclude.h*).  Managing these correspondences is challenging with all but the most trivial libraries.  In [Using Methodgen]({{ site.baseurl }}/guides/rhinocommon/using_methodgen), we will discuss a way of generating these function signatures using a utility program we wrote to maintain RhinoCommon.  Before we do that, let's turn our attention to...
+1. **You must ensure that the function in .NET exactly matches the function declaration in the header file made in the unmanaged code** (in this case, in *SampleLibraryInclude.h*).  Managing these correspondences is challenging with all but the most trivial libraries.  In [Using methodgen]({{ site.baseurl }}/guides/rhinocommon/using_methodgen), we will discuss a way of generating these function signatures using a utility program we wrote to maintain RhinoCommon.  Before we do that, let's turn our attention to...
 
 ### Mac
 
@@ -170,7 +170,7 @@ Let's take a look at SampleNativeLibrary on Windows using Visual Studio first...
 
 You have seen how a basic C/C++ library can be wrapped and called from .NET in a Rhino Plugin.  You have also seen what can go wrong when a native method's export declaration is out-of-sync with its .NET counterpart.  **Now what?**
 
-Check out the [Using Methodgen]({{ site.baseurl }}/guides/rhinocommon/using_methodgen) guide for instructions on programmatically generating UnsafeNativeMethods export declarations.
+Check out the [Using methodgen]({{ site.baseurl }}/guides/rhinocommon/using_methodgen) guide for instructions on programmatically generating UnsafeNativeMethods export declarations.
 
 ---
 
@@ -181,4 +181,4 @@ Check out the [Using Methodgen]({{ site.baseurl }}/guides/rhinocommon/using_meth
 - [Attributes on MSDN](https://msdn.microsoft.com/en-us/library/z0w1kczw.aspx)
 - [Moose sample on GitHub](https://github.com/dalefugier/Moose)
 - [Your First Plugin (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform)
-- [Using Methodgen]({{ site.baseurl }}/guides/rhinocommon/using_methodgen)
+- [Using methodgen]({{ site.baseurl }}/guides/rhinocommon/using_methodgen)
