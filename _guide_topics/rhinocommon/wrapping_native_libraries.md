@@ -32,7 +32,7 @@ It is presumed you already have *all* the necessary tools installed and are read
 
 <div class="bs-callout bs-callout-danger">
   <h4>WARNING</h4>
-  <p>Other methods to create a .Net binding to a C# library exist. A notorious one is based on the compilation of the C++ library with the C++/CLI compiler. To keep things compatible with the Apple Mac OS, and because the IJW (it just works) technology sometimes does not, we suggest to use PInvoke.</p>
+  <p>Other methods to create a .NET binding to a C# library exist. A notorious one is based on the compilation of the C++ library with the C++/CLI compiler. To keep things compatible with the Apple Mac OS X, and because the IJW (it just works) technology sometimes does not, we suggest the use of PInvoke.</p>
 </div>
 
 
