@@ -203,13 +203,35 @@ order: 4
 ## RhinoScript <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 {: #rhinoscript }
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>RhinoScript samples have yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="http://wiki.mcneel.com/developer/rhinoscript">http://wiki.mcneel.com/developer/rhinoscript</a></p>
+### Uncategorized
+
+<div class="trigger">
+  {% assign samples = site.samples | sort:"title" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Uncategorized'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
 </div>
 
+### Flamingo
+
+<div class="trigger">
+  {% assign samples = site.samples | sort:"title" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Flamingo'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 ---
 
