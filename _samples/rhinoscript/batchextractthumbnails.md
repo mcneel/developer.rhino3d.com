@@ -1,0 +1,78 @@
+---
+layout: code-sample-rhinoscript
+title: Extracting Thumbnail Preview Images
+author: dale@mcneel.com
+platforms: ['Windows']
+apis: ['RhinoScript']
+languages: ['VBScript']
+keywords: ['rhinoscript', 'vbscript']
+categories: ['Uncategorized']
+description: Demonstrates how to extract the thumbnail preview image from .3DM files using RhinoScript.
+TODO: 0
+origin: http://wiki.mcneel.com/developer/scriptsamples/batchextractthumbnails
+order: 1
+---
+
+```vbnet
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' BatchExtractThumbnails.rvb -- October 2008
+' If this code works, it was written by Dale Fugier.
+' If not, I don't know who wrote it.
+' Works with Rhino 4.0.
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Option Explicit
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' BatchExtractThumbnails
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Sub BatchExtractThumbnails()
+
+  ' Allow the user to interactively pick a folder
+  Dim sFolder : sFolder = Rhino.WorkingFolder
+  sFolder = Rhino.BrowseForFolder(sFolder, "Select folder to process", "Batch Extract Thumbnails" )
+  If IsNull(sFolder) Then Exit Sub
+
+  ' Create a file system object
+  Dim oFSO : Set oFSO = CreateObject("Scripting.FileSystemObject")
+
+  ' Get a folder object based on the selected folder
+  Dim oFolder : Set oFolder = oFSO.GetFolder(sFolder)
+
+  ' Process the entire folder
+  Call DoThumbnailExtraction(oFSO, oFolder)
+
+  ' Done
+  Call Rhino.Print("Done!")  
+
+End Sub
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' DoThumbnailExtraction
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Sub DoThumbnailExtraction(oFSO, oFolder)
+
+  ' Process all 3dm files in the folder
+  Dim oFile, strOpen, strSave
+  For Each oFile In oFolder.Files
+    If LCase(oFSO.GetExtensionName(oFile.Path)) = "3dm" Then
+      strOpen = LCase(oFile.Path)
+      strSave = LCase(Replace(strOpen, ".3dm", ".jpg", 1, -1, 1))
+      Call Rhino.Print("Processing " & strOpen & "...")
+      Call Rhino.ExtractPreviewImage(strSave, strOpen)
+    End If
+  Next
+
+  ' Un-comment the following if you want to recurse this folder
+  'Dim oSubFolder
+  'For Each oSubFolder In oFolder.SubFolders
+  '  Call DoThumbnailExtraction(oFSO, oSubFolder)
+  'Next
+
+End Sub
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Rhino.AddStartupScript Rhino.LastLoadedScriptFile
+Rhino.AddAlias "BatchExtractThumbnails", "_NoEcho _-RunScript (BatchExtractThumbnails)"
+```
