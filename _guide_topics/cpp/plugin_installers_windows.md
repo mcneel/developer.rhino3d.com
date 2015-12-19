@@ -1,12 +1,12 @@
 ---
 layout: toc-guide-page
-title: Plugin Installers (Windows)
+title: Plugin Installers
 author: brian@mcneel.com
-categories: ['GettingStarted']
+categories: ['Fundamentals']
 platforms: ['Windows']
-apis: ['RhinoCommon']
-languages: ['C#']
-keywords: ['first', 'RhinoCommon', 'Plugin', 'installing']
+apis: ['C/C++']
+languages: ['C/C++']
+keywords: ['c', 'C/C++', 'plugin', 'installer']
 TODO: 1
 origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/authoring
 order: 6
@@ -22,4 +22,4 @@ order: 6
   <a href="{{ page.origin }}">{{ page.origin }}</a></p>
 </div>
 
-Also port from: http://wiki.mcneel.com/developer/rhinoinstallerengine/dotnet
+Also port from: http://wiki.mcneel.com/developer/rhinoinstallerengine/cpp

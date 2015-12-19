@@ -1,18 +1,18 @@
 ---
 layout: toc-guide-page
-title: What is openNURBS?
-author: dalelear@mcneel.com
+title: What is Rhino.Python?
+author: dan@mcneel.com
 categories: ['Overview']
 platforms: ['Cross-Platform']
-apis: ['openNURBS']
-languages: ['C/C++']
-keywords: ['openNURBS', 'overview']
+apis: ['RhinoPython']
+languages: ['Python']
+keywords: ['python', 'overview']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/opennurbs/faq
+origin: http://wiki.mcneel.com/developer/python
 order: 1
 ---
 
-# What is openNURBS?
+# What is Rhino.Python?
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>
@@ -20,7 +20,3 @@ order: 1
   In the meantime, you can view the original documentation here:
   <a href="{{ page.origin }}">{{ page.origin }}</a></p>
 </div>
-
-also port from: http://wiki.mcneel.com/developer/opennurbs/home
-also port from: http://wiki.mcneel.com/developer/opennurbs/limitations
-also port from: https://www.rhino3d.com/opennurbs

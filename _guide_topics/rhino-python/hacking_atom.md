@@ -4,7 +4,7 @@ title: Hacking and Testing latest Atom rhino-python package
 author: alain@mcneel.com
 categories: ['General']
 platforms: ['Mac']
-apis:
+apis: ['RhinoPython']
 languages: ['Markdown', 'Kramdown', 'YAML']
 keywords: ['hacking', 'atom', 'rhino-python']
 TODO: 0
