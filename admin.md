@@ -78,3 +78,6 @@ The sources of content-to-be-consolidated are:
 - What, Where, How, Why table on [homepage]({{ site.baseurl }}) does not work on iOS's Safari.  Fix it.
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.
 - Page width resizes each time templates are switched.  This is annoying.
+- Standarize yaml front-matter across all entries
+- Remove TODO tags if not necessary
+- Add TODO notes if there are TODO items
