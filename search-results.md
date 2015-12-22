@@ -5,7 +5,7 @@ layout: fullwidth-page
 <div id="page_content">
  <!-- #BeginEditable "content" -->
 
-<gcse:search as_sitesearch="developer.rhino3d.com"></gcse:search>
+<gcse:search as_sitesearch="developer.rhino3d.com" defaultToRefinement="Developer Tools"></gcse:search>
 
   <!-- #EndEditable -->
 </div>
