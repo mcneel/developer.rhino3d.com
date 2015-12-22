@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Add to Rhino's File Search Path
+title: Command Prompt Moves when Setting Language
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/sdksamples/addsearchpath
+origin: http://wiki.mcneel.com/developer/sdksamples/language
 order: 1
 ---
 
-# Add to Rhino's File Search Path
+# Command Prompt Moves when Setting Language
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Add Curve Objects
+title: Handling Enter and Escape from Modal Dialogs
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/sdksamples/addcurve
+origin: http://wiki.mcneel.com/developer/sdksamples/escmodaldialog
 order: 1
 ---
 
-# Add Curve Objects
+# Handling Enter and Escape from Modal Dialogs
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

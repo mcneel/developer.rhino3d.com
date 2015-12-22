@@ -1,6 +1,6 @@
 ---
 layout: code-sample-cpp
-title: Deviation between two Curves
+title: Create Surface from Edge Curves
 author: dale@mcneel.com
 platforms: ['Windows']
 apis: ['C/C++']
@@ -8,7 +8,7 @@ languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/sdksamples/crvdeviation
+origin: http://wiki.mcneel.com/developer/sdksamples/edgesrf
 description: unset
 order: 1
 ---
@@ -19,5 +19,3 @@ order: 1
   In the meantime, you can view the original documentation here:
   <a href="{{ page.origin }}">{{ page.origin }}</a></p>
 </div>
-
-See also: [http://wiki.mcneel.com/developer/sdksamples/curvedeviation](http://wiki.mcneel.com/developer/sdksamples/curvedeviation)

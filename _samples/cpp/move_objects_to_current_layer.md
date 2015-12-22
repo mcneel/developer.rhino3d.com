@@ -1,22 +1,21 @@
 ---
-layout: toc-guide-page
-title: Add a Mesh Object
+layout: code-sample-cpp
+title: Move Objects to the Current Layer
 author: dale@mcneel.com
-categories: ['Miscellaneous']
 platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
+categories: ['Unsorted']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/sdksamples/addmesh
+origin: http://wiki.mcneel.com/developer/sdksamples/moveobjectstocurrentlayer
+description: unset
 order: 1
 ---
 
-# Add a Mesh Object
-
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
+  <p>This sample has yet to be ported to this site.  Please check back soon for updates.  
   In the meantime, you can view the original documentation here:
   <a href="{{ page.origin }}">{{ page.origin }}</a></p>
 </div>
