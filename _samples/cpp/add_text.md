@@ -1,5 +1,5 @@
 ---
-layout: code-sample
+layout: code-sample-cpp
 title: Add Text
 author: dale@mcneel.com
 platforms: ['Windows']

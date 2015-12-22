@@ -1,5 +1,5 @@
 ---
-layout: code-sample
+layout: code-sample-cpp
 title: Basepoint of Block Instance
 author: dale@mcneel.com
 platforms: ['Windows']

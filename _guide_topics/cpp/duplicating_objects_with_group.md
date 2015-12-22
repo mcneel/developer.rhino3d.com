@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Finding Points on Curves at Arc Length Distances
+title: Duplicating Objects with Group
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/sdksamples/arclengthpoint
+origin: http://wiki.mcneel.com/developer/sdksamples/copygroups
 order: 1
 ---
 
-# Finding Points on Curves at Arc Length Distances
+# Duplicating Objects with Group
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>
@@ -20,5 +20,3 @@ order: 1
   In the meantime, you can view the original documentation here:
   <a href="{{ page.origin }}">{{ page.origin }}</a></p>
 </div>
-
-See also: http://wiki.mcneel.com/developer/sdksamples/crvarclengthpoint

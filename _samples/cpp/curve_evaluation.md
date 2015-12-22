@@ -1,6 +1,6 @@
 ---
 layout: code-sample-cpp
-title: Add Clipping Planes
+title: Curve Evaluation
 author: dale@mcneel.com
 platforms: ['Windows']
 apis: ['C/C++']
@@ -8,7 +8,7 @@ languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/sdksamples/addclippingplane
+origin: http://wiki.mcneel.com/developer/sdksamples/crvevaluate
 description: unset
 order: 1
 ---

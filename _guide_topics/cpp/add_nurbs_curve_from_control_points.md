@@ -20,3 +20,5 @@ order: 1
   In the meantime, you can view the original documentation here:
   <a href="{{ page.origin }}">{{ page.origin }}</a></p>
 </div>
+
+See also: http://wiki.mcneel.com/developer/sdksamples/createnurbscurve

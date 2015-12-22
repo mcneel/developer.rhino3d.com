@@ -1,5 +1,5 @@
 ---
-layout: code-sample
+layout: code-sample-cpp
 title: Add a NURBS Circle
 author: dale@mcneel.com
 platforms: ['Windows']

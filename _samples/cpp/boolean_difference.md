@@ -1,5 +1,5 @@
 ---
-layout: code-sample
+layout: code-sample-cpp
 title: Boolean Difference
 author: dale@mcneel.com
 platforms: ['Windows']

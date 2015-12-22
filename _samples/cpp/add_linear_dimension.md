@@ -1,5 +1,5 @@
 ---
-layout: code-sample
+layout: code-sample-cpp
 title: Add a Linear Dimension
 author: dale@mcneel.com
 platforms: ['Windows']

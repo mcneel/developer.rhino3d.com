@@ -1,5 +1,5 @@
 ---
-layout: code-sample
+layout: code-sample-cpp
 title: Add Background Bitmaps to Viewports
 author: dale@mcneel.com
 platforms: ['Windows']

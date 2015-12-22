@@ -1,5 +1,5 @@
 ---
-layout: code-sample
+layout: code-sample-cpp
 title: Calculate the Angle Between Two Vectors
 author: dale@mcneel.com
 platforms: ['Windows']

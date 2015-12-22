@@ -1,5 +1,5 @@
 ---
-layout: code-sample
+layout: code-sample-cpp
 title: Add Objects to a Group
 author: dale@mcneel.com
 platforms: ['Windows']

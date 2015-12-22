@@ -1,5 +1,5 @@
 ---
-layout: code-sample
+layout: code-sample-cpp
 title: Creating NURBS Cage Objects
 description: unset
 author: dale@mcneel.com

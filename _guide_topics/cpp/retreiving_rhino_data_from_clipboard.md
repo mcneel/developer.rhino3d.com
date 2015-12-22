@@ -1,21 +1,22 @@
 ---
-layout: code-sample
-title: Title
+layout: toc-guide-page
+title: Retrieving Rhino Data from the Clipboard
 author: dale@mcneel.com
+categories: ['Miscellaneous']
 platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
-categories: ['Unsorted']
 TODO: 1
-origin: unset
-description: unset
+origin: http://wiki.mcneel.com/developer/sdksamples/clipboard
 order: 1
 ---
 
+# Retrieving Rhino Data from the Clipboard
+
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>
-  <p>This sample has yet to be ported to this site.  Please check back soon for updates.  
+  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
   In the meantime, you can view the original documentation here:
   <a href="{{ page.origin }}">{{ page.origin }}</a></p>
 </div>
