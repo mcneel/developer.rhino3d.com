@@ -1,6 +1,6 @@
 ---
 layout: toc-guide-page
-title: Creating Sublayers
+title: Writing to Text Files
 author: dale@mcneel.com
 categories: ['Miscellaneous']
 platforms: ['Windows']
@@ -8,11 +8,11 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 TODO: 1
-origin: http://wiki.mcneel.com/developer/sdksamples/childlayer
+origin: http://wiki.mcneel.com/developer/sdksamples/writetextfile
 order: 1
 ---
 
-# Creating Sublayers
+# Writing to Text Files
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>
@@ -20,7 +20,3 @@ order: 1
   In the meantime, you can view the original documentation here:
   <a href="{{ page.origin }}">{{ page.origin }}</a></p>
 </div>
-
-Also see:
-
-- [http://wiki.mcneel.com/developer/sdksamples/sublayer](http://wiki.mcneel.com/developer/sdksamples/sublayer)
