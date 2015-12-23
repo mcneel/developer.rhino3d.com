@@ -21,6 +21,7 @@ The sources of content-to-be-consolidated are:
 - [Doxygen Docs (on McNeel intranet)](http://phab.mcneel.com/docs/rhino/6/rhinocommon/)
 - Dale Lear's Developer Meeting Notes
 - RhinoScript and Rhino.Python Primers
+- Mitch's MicMac tools: http://wiki.mcneel.com/people/mitchheynick
 - [Grasshopper SDK Help file (chm)](http://s3.amazonaws.com/files.na.mcneel.com/grasshopper/1.0/docs/en/GrasshopperSDK.chm).
 
 ---
@@ -82,13 +83,11 @@ The following samples have TODO items.  Most are stubbed, but not yet ported...
 
 ### Misc
 
-- Stub out C/C++ Knowledge Base for porting staging
 - code-sample layout template needs to be refactored to code-sample-rhinocommon
 - We could report samples that are not passing tests.
 - [http://www.rhino3d.com/developer](http://www.rhino3d.com/developer) should redirect to [http://developer.rhino3d.com](http://developer.rhino3d.com) (this website) - the link is in all the .h files top comments
 - Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
 - **DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
-- Mitch's MicMac tools: http://wiki.mcneel.com/people/mitchheynick
 - Move all samples to mcneel/github - in coordination with Dale Fugier
 - Link directly to samples on GitHub from gh-pages samples section
 - Re-capture images on retina display and replace them
