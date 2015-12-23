@@ -24,6 +24,11 @@ If you already know Visual Basic or Visual Basic for Applications (VBA), VBScrip
 
 RhinoScript is a plug-in for Rhino that implements active scripting. Besides providing support for VBScript, RhinoScript also runs as an OLE automation server that exposes the internal workings of Rhino to automation.
 
+*TODO*: Also port from:
+
+- [http://wiki.mcneel.com/developer/rhinoscript](http://wiki.mcneel.com/developer/rhinoscript)
+- [http://wiki.mcneel.com/developer/rhinoscript101](http://wiki.mcneel.com/developer/rhinoscript101)
+
 ---
 
 ## Related Topics

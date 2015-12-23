@@ -7,7 +7,7 @@ platforms: ['Cross-Platform']
 apis: ['General']
 languages: ['All']
 keywords: ['developer', 'rhino']
-TODO: 0
+TODO: 1
 origin: https://wiki.mcneel.com/developer/whatisarhinoplugin
 order: 3
 ---
@@ -36,6 +36,10 @@ Rhino supports five different types of plugins:
 
 ***Note***: File Import, File Export, Custom Rendering and 3D Digitizing plugins are all specialized enhancements to the General Utility plugin.  Thus, all plugin types can contain one or more commands.
 
+
+*TODO*: Also port from:
+
+- [http://wiki.mcneel.com/developer/rhinopluginlifetime](http://wiki.mcneel.com/developer/rhinopluginlifetime)
 
 ---
 

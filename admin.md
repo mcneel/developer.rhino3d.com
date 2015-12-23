@@ -47,34 +47,55 @@ The sources of content-to-be-consolidated are:
 
 ### Guides
 
+The following guides have TODO items.  Most are stubbed, but not yet ported...
+
+{% assign guides = site.guide_topics | sort:"title" | sort:"apis" %}
 <div class="trigger">
-  {% assign guides = site.guide_topics | sort:"title" %}
   <ol>
   {% for topic in guides %}
     {% if topic.TODO == 1 %}
       <li>
-        <a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a>{% if topic.origin != 'unset' %} needs porting from: <a href="{{ topic.origin }}">{{ topic.origin }}</a>{% endif %}
+        ({{ topic.apis }}) <a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a>{% if topic.origin != 'unset' %} needs porting from: <a href="{{ topic.origin }}">{{ topic.origin }}</a>{% endif %}
       </li>
     {% endif %}
   {% endfor %}
   </ol>
 </div>
 
+
 ### Samples
 
-- Here we could report samples that are not passing tests (TODO TODO ...very meta).
+The following samples have TODO items.  Most are stubbed, but not yet ported...
 
+{% assign samples = site.samples | sort:"title" | sort:"apis" %}
+<div class="trigger">
+  <ol>
+  {% for sample in samples %}
+    {% if sample.TODO == 1 %}
+      <li>
+        ({{ sample.apis }}) <a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a>{% if sample.origin != 'unset' %} needs porting from: <a href="{{ sample.origin }}">{{ sample.origin }}</a>{% endif %}
+    </li>
+    {% endif %}
+  {% endfor %}
+  </ol>
+</div>
 
 ### Misc
 
+- Stub out C/C++ Knowledge Base for porting staging
+- code-sample layout template needs to be refactored to code-sample-rhinocommon
+- We could report samples that are not passing tests.
 - [http://www.rhino3d.com/developer](http://www.rhino3d.com/developer) should redirect to [http://developer.rhino3d.com](http://developer.rhino3d.com) (this website) - the link is in all the .h files top comments
 - Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
 - **DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
 - Mitch's MicMac tools: http://wiki.mcneel.com/people/mitchheynick
-- Stub out C/C++ Knowledge Base for porting staging
 - Move all samples to mcneel/github - in coordination with Dale Fugier
 - Link directly to samples on GitHub from gh-pages samples section
 - Re-capture images on retina display and replace them
 - What, Where, How, Why table on [homepage]({{ site.baseurl }}) does not work on iOS's Safari.  Fix it.
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.
 - Page width resizes each time templates are switched.  This is annoying.
+- Standardize yaml front-matter across all entries
+- Switch to TODO: containing notes and check for that yaml tag
+- Standardize file names (underscores, verbiage, length, etc).
+- Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
