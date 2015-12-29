@@ -22,7 +22,7 @@ Rhino allows developers to customize most of Rhino's interface so that the appli
 
 Creating a custom Skin for Rhino involves creating a custom skin assembly:
 
-- *<skin name>.rhs* This is a regular .NET Assemmbly (*.DLL*) that implements the skin's icon, splash screen, application name, etc.  In this guide, we will refer this to the Skin DLL. See a full list of methods and properties on the [Skin class documentation]({{ site.baseurl }}/api/RhinoCommon/html/T_Rhino_Runtime_Skin.htm).
+*skin name.rhs* This is a regular .NET Assembly (*.DLL*) that implements the skin's icon, splash screen, application name, etc.  In this guide, we will refer this to the Skin DLL. See a full list of methods and properties on the [Skin class documentation]({{ site.baseurl }}/api/RhinoCommon/html/T_Rhino_Runtime_Skin.htm).
 
 ## Create the Skin DLL
 
