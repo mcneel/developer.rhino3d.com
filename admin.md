@@ -24,6 +24,8 @@ The sources of content-to-be-consolidated are:
 - Mitch's MicMac tools: http://wiki.mcneel.com/people/mitchheynick
 - [Grasshopper SDK Help file (chm)](http://s3.amazonaws.com/files.na.mcneel.com/grasshopper/1.0/docs/en/GrasshopperSDK.chm).
 
+**DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
+
 ---
 
 ## Dev Docs Guides
@@ -66,7 +68,7 @@ The following guides have TODO items.  Most are stubbed, but not yet ported...
 
 ### Samples
 
-The following samples have TODO items.  Most are stubbed, but not yet ported...
+The following samples have TODO items:
 
 {% assign samples = site.samples | sort:"title" | sort:"apis" %}
 <div class="trigger">
@@ -84,17 +86,17 @@ The following samples have TODO items.  Most are stubbed, but not yet ported...
 ### Misc
 
 - code-sample layout template needs to be refactored to code-sample-rhinocommon
+- Standardize yaml front-matter across all entries.
+- Switch to TODO: containing notes and check for that yaml tag
+- Standardize file names (underscores, verbiage, length, etc).
+- Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
+- RhinoScript Guides and RhinoScript Samples need to be organized and curated more.
+- C/C++ Samples need to be categorized and organized.
 - We could report samples that are not passing tests.
 - [http://www.rhino3d.com/developer](http://www.rhino3d.com/developer) should redirect to [http://developer.rhino3d.com](http://developer.rhino3d.com) (this website) - the link is in all the .h files top comments
 - Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
-- **DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
 - Move all samples to mcneel/github - in coordination with Dale Fugier
 - Link directly to samples on GitHub from gh-pages samples section for example: [https://github.com/mcneel/Rhino5Samples_CPP](https://github.com/mcneel/Rhino5Samples_CPP)
 - Re-capture images on retina display and replace them
 - What, Where, How, Why table on [homepage]({{ site.baseurl }}) does not work on iOS's Safari.  Fix it.
-- RhinoScript Guides and RhinoScript Samples need to be organized and curated more.
 - Page width resizes each time templates are switched.  This is annoying.
-- Standardize yaml front-matter across all entries
-- Switch to TODO: containing notes and check for that yaml tag
-- Standardize file names (underscores, verbiage, length, etc).
-- Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.

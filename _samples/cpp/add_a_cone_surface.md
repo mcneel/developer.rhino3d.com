@@ -9,7 +9,7 @@ keywords: ['rhino']
 categories: ['Unsorted']
 TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/addcone
-description: Demonstrates how to create a cone using ON_BrepCone and add it to Rhino.
+description: Demonstrates how to create a cone using ON_BrepCone.
 order: 1
 ---
 
