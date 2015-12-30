@@ -89,7 +89,7 @@ The following samples have TODO items.  Most are stubbed, but not yet ported...
 - Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
 - **DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
 - Move all samples to mcneel/github - in coordination with Dale Fugier
-- Link directly to samples on GitHub from gh-pages samples section
+- Link directly to samples on GitHub from gh-pages samples section for example: [https://github.com/mcneel/Rhino5Samples_CPP](https://github.com/mcneel/Rhino5Samples_CPP)
 - Re-capture images on retina display and replace them
 - What, Where, How, Why table on [homepage]({{ site.baseurl }}) does not work on iOS's Safari.  Fix it.
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.

@@ -7,15 +7,33 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/addcone
-description: unset
+description: Demonstrates how to create a cone using ON_BrepCone and add it to Rhino.
 order: 1
 ---
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This sample has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+```cpp
+CRhinoCommand::result CCommandTest::RunCommand( const CRhinoCommandContext& context )
+{
+  ON_Plane plane = ON_xy_plane;
+  double height = 10.0;
+  double radius = 5.0;
+  BOOL bCapBottom = FALSE;
+
+  ON_Cone cone( plane, height, radius );
+  if( cone.IsValid() )
+  {
+    ON_Brep* cone_brep = ON_BrepCone( cone, bCapBottom );
+    if( cone_brep )
+    {
+      CRhinoBrepObject* cone_object = new CRhinoBrepObject();
+      cone_object->SetBrep( cone_brep );
+      context.m_doc.AddObject( cone_object );
+      context.m_doc.Redraw();
+    }
+  }
+
+  return CRhinoCommand::success;
+}
+```

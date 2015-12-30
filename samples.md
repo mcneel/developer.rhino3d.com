@@ -179,11 +179,17 @@ order: 4
 ## C/C++ <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 {: #cpp }
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>C/C++ samples have yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the samples on GitHub here:
-  <a href="https://github.com/mcneel/Rhino5Samples_CPP">https://github.com/mcneel/Rhino5Samples_CPP</a></p>
+<div class="trigger">
+  {% assign samples = site.samples | sort:"title" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'C/C++' %}
+      {% if sample.title %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
 </div>
 
 ---
