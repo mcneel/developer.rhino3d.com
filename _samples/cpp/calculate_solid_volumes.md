@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/solidvolume
 description: Demonstrates how to calculating the volumes of closed surface, polysurface, and mesh objects.
 order: 1

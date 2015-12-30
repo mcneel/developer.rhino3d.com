@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to count blocks and then export the results to Microsoft Excel.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/exportblockcount
 order: 1
 ---

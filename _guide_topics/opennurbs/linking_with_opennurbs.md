@@ -7,7 +7,7 @@ platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
 keywords: ['openNURBS', 'linking', 'toolkit', 'pragma', 'pragmas']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/opennurbs/linkingpragma
 order: 1
 ---

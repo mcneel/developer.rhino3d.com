@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to chop up a curve into segments and spaces.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/dividecurvedashed
 order: 1
 ---

@@ -7,7 +7,7 @@ platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
 keywords: ['script', 'Rhino', 'vbscript']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/vbsfundamentals
 order: 1
 ---

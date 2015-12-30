@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/cplaneview
 description: Demonstrates how to set the construction plane in the active viewport parallel to the view.
 order: 1

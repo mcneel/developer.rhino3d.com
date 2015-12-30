@@ -7,7 +7,6 @@ platforms: ['Windows', 'Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['RhinoCommon', 'Locale', 'Threads', 'Culture', 'Internationalization', 'Commas', 'Periods']
-TODO: 0
 origin: https://wiki.mcneel.com/developer/sdksamples/threadculture
 order: 2
 ---

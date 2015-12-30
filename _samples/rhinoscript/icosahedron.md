@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates one way of creating a Icosahedron in RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/icosahedron
 order: 1
 ---

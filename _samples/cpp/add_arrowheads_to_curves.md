@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/objectdecoration
 description: Demonstrates how arrowheads can be added to any curve object my modifying attributes.
 order: 1

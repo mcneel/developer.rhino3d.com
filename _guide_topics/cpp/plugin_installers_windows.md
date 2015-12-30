@@ -7,7 +7,7 @@ platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['c', 'C/C++', 'plugin', 'installer']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/authoring
 order: 6
 ---

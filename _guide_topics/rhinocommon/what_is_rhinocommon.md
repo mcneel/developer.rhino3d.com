@@ -7,7 +7,6 @@ platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB.NET']
 keywords: ['RhinoCommon', 'What']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/rhinocommon
 order: 1
 ---

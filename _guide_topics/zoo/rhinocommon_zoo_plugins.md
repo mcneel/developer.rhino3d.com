@@ -7,7 +7,6 @@ platforms: ['Windows']
 apis: ['Zoo', 'RhinoCommon']
 languages: ['C#']
 keywords: ['Zoo', 'Plugin']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/zoorhinocommonplugin
 order: 3
 ---

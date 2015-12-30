@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/pullcurve
 description: Demonstrates how to use ON_Surface::Pullback() to pull a curve object to a surface object.
 order: 1

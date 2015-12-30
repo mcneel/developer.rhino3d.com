@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Illustrates RhinoScript code that converts annotation dots to text object.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/convertdotstotext
 order: 1
 ---

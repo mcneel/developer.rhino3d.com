@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/elevation
 description: Demonstrates how determine the maximum Z coordinate value of a surface or polysurface given some X,Y coordinate.
 order: 1

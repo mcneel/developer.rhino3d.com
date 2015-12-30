@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/showallhiddenobjects
 description: Demonstrates how to iterate through the geometry table and unhide hidden objects.
 order: 1

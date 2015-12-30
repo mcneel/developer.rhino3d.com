@@ -56,9 +56,9 @@ The following guides have TODO items.  Most are stubbed, but not yet ported...
 <div class="trigger">
   <ol>
   {% for topic in guides %}
-    {% if topic.TODO == 1 %}
+    {% if topic.TODO %}
       <li>
-        ({{ topic.apis }}) <a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a>{% if topic.origin != 'unset' %} needs porting from: <a href="{{ topic.origin }}">{{ topic.origin }}</a>{% endif %}
+        ({{ topic.apis }}) <a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a> {{ topic.TODO }} {% if topic.origin != 'unset' and topic.TODO == 'needs porting' %} from: <a href="{{ topic.origin }}">{{ topic.origin }}</a>{% endif %}
       </li>
     {% endif %}
   {% endfor %}
@@ -74,9 +74,9 @@ The following samples have TODO items:
 <div class="trigger">
   <ol>
   {% for sample in samples %}
-    {% if sample.TODO == 1 %}
+    {% if sample.TODO %}
       <li>
-        ({{ sample.apis }}) <a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a>{% if sample.origin != 'unset' %} needs porting from: <a href="{{ sample.origin }}">{{ sample.origin }}</a>{% endif %}
+        ({{ sample.apis }}) <a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a>  {{ sample.TODO }} {% if sample.origin != 'unset'  and sample.TODO == 'needs porting' %} from: <a href="{{ sample.origin }}">{{ sample.origin }}</a>{% endif %}
     </li>
     {% endif %}
   {% endfor %}
@@ -86,7 +86,6 @@ The following samples have TODO items:
 ### Misc
 
 - Standardize yaml front-matter across all entries.
-- Switch to TODO: containing notes and check for that yaml tag
 - Standardize file names (underscores, verbiage, length, etc).
 - Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.

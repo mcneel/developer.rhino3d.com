@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to calculate a vector that is perpendicular to another vector using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/perpendicularvector
 order: 1
 ---

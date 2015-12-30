@@ -7,7 +7,6 @@ platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['Mono', 'Xamarin', '.NET', 'Microsoft']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/rhinocommon
 order: 2
 ---

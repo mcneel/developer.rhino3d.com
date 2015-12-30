@@ -7,7 +7,7 @@ platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['All']
 keywords: ['developer', 'rhino', 'NURBS', 'geometry']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/ongeometry
 order: 3
 ---

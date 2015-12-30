@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to script the FlowAlongSrf command using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/flowalongsrf
 order: 1
 ---

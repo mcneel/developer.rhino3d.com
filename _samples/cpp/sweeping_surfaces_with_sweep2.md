@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/sweep2
 description: Demonstrates how to use the CArgsRhinoSweep2 class and the RhinoSweep2 function. The definitions of these can be found in rhinoSdkSweep.h.
 order: 1

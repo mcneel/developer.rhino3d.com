@@ -7,7 +7,7 @@ platforms: ['Windows']
 apis: ['RhinoCommon', 'C/C++']
 languages: ['C#', 'C/C++']
 keywords: ['RhinoCommon', 'Registering', 'Plugin']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/installingandregisteringaplugin
 order: 1
 ---

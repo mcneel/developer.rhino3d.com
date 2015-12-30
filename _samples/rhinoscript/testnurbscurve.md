@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to add a NURBS curve to Rhino using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/testnurbscurve
 order: 1
 ---

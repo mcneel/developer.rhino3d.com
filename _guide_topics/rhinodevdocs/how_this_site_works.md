@@ -7,7 +7,6 @@ platforms: ['Mac', 'Windows']
 apis: ['Developer Docs', 'Jekyll', 'Liquid']
 languages: ['Markdown', 'Kramdown', 'YAML']
 keywords: ['authoring', 'writing', 'editing', 'overview']
-TODO: 0
 origin: unset
 order: 2
 ---
@@ -174,13 +173,13 @@ Many of the pages, guides, and samples have a `TODO` and `origin` yaml field.  T
 
 #### TODO
 
-If `TODO` is set to `1` (`TODO: 1`), the site will add this content to the [TODO list]({{ site.baseurl }}/admin/index.html#todo-list).
+If `TODO` is present and set to `some string` (e.g.: `TODO: 'needs porting'`), the site will add this content to the [TODO list]({{ site.baseurl }}/admin/index.html#todo-list).
 
 If the TODO field is not present or is set to `0` (`TODO: 0`), the content will not be on the list.
 
 #### origin
 
-Much of this site is (or was) ported from a previous location.  The `origin` yaml field is reserved for a backlink to the original content.  If the `origin` yaml field is set to a URL - and `TODO` is set to `1` - the content will show up on the [TODO list]({{ site.baseurl }}/admin/index.html#todo-list) as needs porting from the `origin` URL.
+Much of this site is (or was) ported from a previous location.  The `origin` yaml field is reserved for a backlink to the original content.  If the `origin` yaml field is set to a URL - and `TODO` is set to `some value` - the content will show up on the [TODO list]({{ site.baseurl }}/admin/index.html#todo-list) as needs porting from the `origin` URL.
 
 ---
 

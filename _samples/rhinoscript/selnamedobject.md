@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to use a dialog box to select named objects using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/selnamedobject
 order: 1
 ---

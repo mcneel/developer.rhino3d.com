@@ -7,7 +7,6 @@ platforms: ['Cross-Platform']
 apis: ['General']
 languages: ['All']
 keywords: ['developer', 'rhino']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/learningresources
 order: 1
 ---

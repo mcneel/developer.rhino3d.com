@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to find the closest curve to test point using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/findclosestcurve
 order: 1
 ---

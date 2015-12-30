@@ -7,7 +7,6 @@ platforms: ['Windows', 'Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['RhinoCommon', 'Rhino', 'Command', 'Plugin']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/runrhinocommandfromplugincommand
 order: 1
 ---

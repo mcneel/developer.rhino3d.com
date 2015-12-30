@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to generate platonic and archimedean solids with RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/platonics
 order: 1
 ---

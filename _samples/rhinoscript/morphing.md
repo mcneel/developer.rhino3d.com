@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: An example of how to morph a surface using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/morph
 order: 1
 ---

@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Multi-radius circle packing algorithm in RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/circlepacking
 order: 1
 ---

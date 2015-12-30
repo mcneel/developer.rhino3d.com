@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates retrieve red, green, and blue color intensities using VBScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/color
 order: 1
 ---

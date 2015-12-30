@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/intersectcurves
 description: Demonstrates how to calculate the intersection of two curves and obtain their intersection points.
 order: 1

@@ -7,7 +7,6 @@ platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
 keywords: [openNURBS', 'migrating', 'versions']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/on5migrate
 order: 2
 ---

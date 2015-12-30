@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to split a curve into multiple segments using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/curvesplitter
 order: 1
 ---

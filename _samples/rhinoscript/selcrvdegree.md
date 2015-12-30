@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to use RhinoScript to select all curves that are of a specified degree.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/selcrvdegree
 order: 1
 ---

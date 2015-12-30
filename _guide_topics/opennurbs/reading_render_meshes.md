@@ -7,7 +7,6 @@ platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
 keywords: ['openNURBS', 'reading', 'render', 'mesh']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/onrendermesh
 order: 1
 ---

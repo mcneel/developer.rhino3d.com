@@ -7,7 +7,6 @@ platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
 keywords: ['openNURBS', 'Periodic', 'Curves', 'Surfaces']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/onperiodiccurvesurface
 order: 1
 ---

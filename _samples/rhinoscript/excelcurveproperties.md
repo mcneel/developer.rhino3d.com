@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Illustrates RhinoScript code that extracts curve properties into Excel.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/excelcurveproperties
 order: 1
 ---

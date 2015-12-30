@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to draw steel shapes using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/steelshapes
 order: 1
 ---

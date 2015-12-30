@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to create a surface by revolving one or more profile curves using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/revolve
 order: 1
 ---

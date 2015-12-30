@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: A couple of useful block utilities written in RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/blockutilities
 order: 1
 ---

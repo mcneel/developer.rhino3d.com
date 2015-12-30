@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to calculate the volume centroid of a mesh.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/meshvolumecentroid
 order: 1
 ---

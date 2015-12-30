@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to positioning objects on a surface using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/positiononsrf
 order: 1
 ---

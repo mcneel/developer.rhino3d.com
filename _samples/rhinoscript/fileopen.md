@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to open 3DM files using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/fileopen
 order: 1
 ---

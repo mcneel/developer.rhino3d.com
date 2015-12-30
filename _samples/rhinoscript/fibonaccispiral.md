@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to create a Fibonacci Spiral with RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/fibonaccispiral
 order: 1
 ---

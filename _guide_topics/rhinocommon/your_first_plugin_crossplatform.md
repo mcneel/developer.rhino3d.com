@@ -7,7 +7,6 @@ platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['first', 'RhinoCommon', 'Plugin']
-TODO: 0
 origin: unset
 order: 5
 ---

@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/getfiledialog
 description: Demonstrates how to use the CRhinoGetFileDialog class to preview bitmap images.
 order: 1

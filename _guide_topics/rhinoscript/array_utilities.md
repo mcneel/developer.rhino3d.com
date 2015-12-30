@@ -7,7 +7,6 @@ platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
 keywords: ['script', 'Rhino', 'vbscript']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/arrayutilities
 order: 1
 ---

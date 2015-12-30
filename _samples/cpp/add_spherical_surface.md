@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/addsphere
 description: Demonstrates how to create a sphere using ON_RevSurface and add it to Rhino.
 order: 1

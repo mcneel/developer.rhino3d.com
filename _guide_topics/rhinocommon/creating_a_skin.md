@@ -7,7 +7,6 @@ platforms: ['Windows']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['skin', 'RAP', 'rhino', 'RhinoCommon']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/rhinocommon/skin
 order: 2
 ---

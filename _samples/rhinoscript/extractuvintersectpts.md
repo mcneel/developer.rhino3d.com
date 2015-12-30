@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to get the intersection points of a surface's isocurves using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/extractuvintersectpts
 order: 1
 ---

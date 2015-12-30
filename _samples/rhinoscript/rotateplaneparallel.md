@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to rotate a plane so it's x-axis is parallel to the world using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/rotateplaneparallel
 order: 1
 ---

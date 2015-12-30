@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Illustrates RhinoScript code that exports Rhino point coordinates to Microsoft Excel.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/exportpointstoexcel
 order: 1
 ---

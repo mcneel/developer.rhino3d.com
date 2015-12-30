@@ -7,7 +7,6 @@ platforms: ['iOS', 'Android']
 apis: ['RhinoMobile']
 languages: ['C#']
 keywords: ['RhinoMobile', 'iRhino 3D']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/rhinomobile/devices_and_testing
 order: 7
 ---

@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to create polar arrays of objects using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/arraypolar
 order: 1
 ---

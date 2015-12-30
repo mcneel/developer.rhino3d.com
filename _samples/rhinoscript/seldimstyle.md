@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to select an objects (dimensions) by their dimension style using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/seldimstyle
 order: 1
 ---

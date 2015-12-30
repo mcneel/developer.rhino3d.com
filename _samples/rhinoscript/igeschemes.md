@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to build a list of IGES export schemes using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/igeschemes
 order: 1
 ---

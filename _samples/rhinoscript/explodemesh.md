@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to explode a mesh into individual faces using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/explodemesh
 order: 1
 ---

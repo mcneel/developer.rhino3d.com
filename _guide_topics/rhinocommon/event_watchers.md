@@ -7,7 +7,6 @@ platforms: ['Windows', 'Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['RhinoCommon', 'Event', 'Watchers', 'UI']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/dotneteventwatcher
 order: 4
 ---

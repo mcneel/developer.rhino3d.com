@@ -7,7 +7,6 @@ platforms: ['Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['first', 'RhinoCommon', 'Plugin', 'RhinoWIP']
-TODO: 0
 origin: unset
 order: 1
 ---

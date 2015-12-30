@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to select text objects by their text height using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/seltextheight
 order: 1
 ---

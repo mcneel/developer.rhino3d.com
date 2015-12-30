@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates arc point distribution.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/arcpointdistribution
 order: 1
 ---

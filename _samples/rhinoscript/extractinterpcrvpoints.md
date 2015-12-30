@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to reverse engineer an interpolated curve using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/extractinterpcrvpoints
 order: 1
 ---

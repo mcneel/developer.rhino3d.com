@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/rhinosrfcontrolptgrid
 description: Demonstrates how to create a surface from a grid of control points.
 order: 1

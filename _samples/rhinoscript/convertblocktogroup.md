@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to explode a block and group its components using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/convertblocktogroup
 order: 1
 ---

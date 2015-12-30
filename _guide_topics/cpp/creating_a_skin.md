@@ -7,7 +7,7 @@ platforms: ['Windows']
 apis: ['RAP', 'C/C++']
 languages: ['C/C++']
 keywords: ['skin', 'RAP', 'rhino']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/sdksamples/skin
 order: 4
 ---

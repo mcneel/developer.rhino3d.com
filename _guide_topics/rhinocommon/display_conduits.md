@@ -7,7 +7,6 @@ platforms: ['Windows']
 apis: ['RhinoCommon']
 languages: ['C#']
 keywords: ['RhinoCommon', 'Display', 'Conduits', 'Rhino']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/displayconduit
 order: 2
 ---

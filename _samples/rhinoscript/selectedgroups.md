@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to determine what object groups are selected usin RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/selectedgroups
 order: 1
 ---

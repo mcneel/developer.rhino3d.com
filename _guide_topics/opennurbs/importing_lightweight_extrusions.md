@@ -7,7 +7,6 @@ platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
 keywords: ['openNURBS', 'Extrusions', 'Importing']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/onextrusion
 order: 1
 ---
