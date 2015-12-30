@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/addclippingplane
 description: Demonstrates how to add a viewport clipping plane object.
 order: 1

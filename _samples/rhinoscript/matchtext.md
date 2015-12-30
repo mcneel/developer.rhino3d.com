@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to match text object properties in RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/matchtext
 order: 1
 ---

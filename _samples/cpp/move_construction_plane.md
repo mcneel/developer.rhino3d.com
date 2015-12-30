@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/movecplane
 description: Demonstrates how to move the origin of a construction plane.
 order: 1

@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/extractisocurve
 description: Demonstrates how to extract isoparametric curves from surfaces.
 order: 1

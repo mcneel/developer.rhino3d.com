@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/curvesplitter
 description: Demonstrates how to split a curve into multiple curve segments.
 order: 1

@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/planesurface
 description: Demonstrates how to create a plane surface.
 order: 1

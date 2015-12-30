@@ -7,7 +7,7 @@ platforms: ['Windows']
 apis: ['Grasshopper']
 languages: ['C#', 'VB.NET']
 keywords: ['developer', 'grasshopper', 'components']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/grasshopper/gha
 order: 1
 ---

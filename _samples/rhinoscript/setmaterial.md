@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript', 'flamingo']
 categories: ['Flamingo']
 description: Demonstrates how to assign a Flamingo nXt material to an object using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/flamingo/flamingosdk/setmaterial
 order: 1
 ---

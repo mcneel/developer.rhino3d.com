@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript', 'flamingo']
 categories: ['Flamingo']
 description: Demonstrates how to generate a wire-frame representation of a Flamingo 2.0 plant using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/flamingo/flamingosdk/flamingo2plantwireframe
 order: 1
 ---

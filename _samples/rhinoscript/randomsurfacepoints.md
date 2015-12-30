@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Generate random points on a surface using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/randomsurfacepoints
 order: 1
 ---

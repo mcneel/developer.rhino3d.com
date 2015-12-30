@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/crvdeviation
 description: Demonstrates how to determine the deviation between two curves using the RhinoGetOverlapDistance() function.
 order: 1

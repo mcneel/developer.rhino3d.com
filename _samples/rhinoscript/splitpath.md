@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to break a file path string in to its components using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/splitpath
 order: 1
 ---

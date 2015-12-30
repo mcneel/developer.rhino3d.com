@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to import text from a file using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/importtext
 order: 1
 ---

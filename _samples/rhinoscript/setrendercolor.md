@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to modify an object's material color to match its display color using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/setrendercolor
 order: 1
 ---

@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/addtruncatedcone
 description: Demonstrates how to create a truncated cone ON_BrepRevSurface and add it to Rhino.
 order: 1

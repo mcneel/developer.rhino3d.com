@@ -7,7 +7,7 @@ platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB.NET']
 keywords: ['adding', 'RhinoCommon', 'commands', 'projects']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addcommand
 order: 6
 ---

@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to properly scale text objects by the document's dimension scale in RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/dimscaletext
 order: 1
 ---

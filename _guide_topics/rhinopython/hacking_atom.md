@@ -7,7 +7,6 @@ platforms: ['Mac']
 apis: ['RhinoPython']
 languages: ['Markdown', 'Kramdown', 'YAML']
 keywords: ['hacking', 'atom', 'rhino-python']
-TODO: 0
 origin: unset
 order: 1
 ---

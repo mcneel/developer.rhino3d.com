@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to recurse through a folder and render every Rhino file using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/batchrender
 order: 1
 ---

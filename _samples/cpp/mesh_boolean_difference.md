@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/meshbooleandifference
 description: Demonstrates how to use the RhinoMeshBooleanDifference function.
 order: 1

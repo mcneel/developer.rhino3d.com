@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to select objects by linetype using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/sellinetype
 order: 1
 ---

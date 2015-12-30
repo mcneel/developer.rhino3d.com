@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript', 'flamingo']
 categories: ['Flamingo']
 description: Demonstrates how to set Flamingo nXt mapping properties for an object using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/flamingo/flamingosdk/setmapping
 order: 1
 ---

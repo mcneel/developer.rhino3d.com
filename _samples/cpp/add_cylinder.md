@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/addcylinder
 description: Demonstrates how to create a cylinder using ON_BrepCylinder and add it to Rhino.
 order: 1

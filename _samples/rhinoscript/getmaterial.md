@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript', 'flamingo']
 categories: ['Flamingo']
 description: Demonstrates how get an objects Flamingo nXt material assignment using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/flamingo/flamingosdk/getmaterial
 order: 1
 ---

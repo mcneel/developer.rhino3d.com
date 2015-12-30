@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates joining points into polylines in RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/jointhedots
 order: 1
 ---

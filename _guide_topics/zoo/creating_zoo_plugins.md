@@ -7,7 +7,7 @@ platforms: ['Windows']
 apis: ['Zoo']
 languages: ['C#']
 keywords: ['Zoo', 'Plugin']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/zooplugin
 order: 2
 ---

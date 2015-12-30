@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/moveobjectstocurrentlayer
 description: Demonstrates how to iterate through the Rhino geometry table and modify the layer of selected objects.
 order: 1

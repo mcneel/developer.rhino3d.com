@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/addbrepbox
 description: Demonstrates how to add a Brep Box from a Rhino C++ plug-in.
 order: 1

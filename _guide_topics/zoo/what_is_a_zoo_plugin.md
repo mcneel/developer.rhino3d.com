@@ -7,7 +7,6 @@ platforms: ['Windows']
 apis: ['Zoo']
 languages: ['All']
 keywords: ['Zoo', 'Plugin']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/zoowhat
 order: 1
 ---

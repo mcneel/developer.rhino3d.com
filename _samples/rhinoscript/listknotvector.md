@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to print the knot vector of NURBS curve using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/listknotvector
 order: 1
 ---

@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates a custom object attribute matching function in RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/matchobjectattributesex
 order: 1
 ---

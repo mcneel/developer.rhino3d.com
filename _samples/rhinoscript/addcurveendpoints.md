@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to add point at the starting and ending locations of curves.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/addcurveendpoints
 order: 1
 ---

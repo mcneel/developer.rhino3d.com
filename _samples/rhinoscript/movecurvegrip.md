@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to move a curve's grips using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/movecurvegrip
 order: 1
 ---

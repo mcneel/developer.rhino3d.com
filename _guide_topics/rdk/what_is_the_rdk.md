@@ -7,7 +7,7 @@ platforms: ['Windows']
 apis: ['RDK']
 languages: ['C/C++']
 keywords: ['RDK', 'Rhino', 'Renderer', 'Development', 'Plugin']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/labs/rendererdevelopmentkit10
 order: 1
 ---

@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/addlayer
 description: Demonstrates how to add a new layer to Rhino.
 order: 1
@@ -21,7 +20,7 @@ CRhinoCommand::result CCommandTest::RunCommand( const CRhinoCommandContext& cont
   // Cook up an unused layer name
   ON_wString unused_name;
   layer_table.GetUnusedLayerName( unused_name );
- 
+
   // Prompt the user to enter a layer name
   CRhinoGetString gs;
   gs.SetCommandPrompt( L"Name of layer to add" );

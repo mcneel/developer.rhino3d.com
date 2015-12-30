@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to select point objects with a user-specified z coordinate using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/selz
 order: 1
 ---

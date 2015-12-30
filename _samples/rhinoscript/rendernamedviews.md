@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to render named views using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/rendernamedviews
 order: 1
 ---

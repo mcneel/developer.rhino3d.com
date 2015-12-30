@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates equi-distance curve division using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/divideequidistance
 order: 1
 ---

@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/syncobjectmaterialcolor
 description: Demonstrates how to synchronize the basic material color of an object with the object's display color.
 order: 1

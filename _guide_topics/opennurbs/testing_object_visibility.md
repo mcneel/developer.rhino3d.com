@@ -7,7 +7,6 @@ platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
 keywords: ['openNURBS', 'object', 'visibility']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/onisobjectvisible
 order: 1
 ---

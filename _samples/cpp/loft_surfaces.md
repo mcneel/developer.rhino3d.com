@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/loft
 description: Demonstrates how to use the CArgsRhinoLoft class and the RhinoSdkLoftSurface function.
 order: 1

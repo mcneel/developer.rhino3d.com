@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/makerhinocontours
 description: Demonstrates how to create contour curves through surfaces, breps, and meshes using the MakeRhinoContours() function.
 order: 1

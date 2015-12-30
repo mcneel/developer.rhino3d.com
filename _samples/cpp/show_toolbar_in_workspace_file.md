@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/showtoolbar
 description: Demonstrates how to display a toolbar in a toolbar collection, or workspace, file.
 order: 1

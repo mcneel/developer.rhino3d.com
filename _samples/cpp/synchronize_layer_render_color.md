@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/synclayermaterialcolor
 description: Demonstrates how to synchronize the basic material color of a layer with the layer's color.
 order: 1

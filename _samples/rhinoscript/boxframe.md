@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to create a box frame with RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/boxframe
 order: 1
 ---

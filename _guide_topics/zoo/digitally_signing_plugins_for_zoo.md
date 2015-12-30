@@ -7,7 +7,7 @@ platforms: ['Windows']
 apis: ['Zoo']
 languages: ['BAT']
 keywords: ['Zoo', 'Plugin', 'Digital']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/digital-signatures/create-request
 order: 5
 ---

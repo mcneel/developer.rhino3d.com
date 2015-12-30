@@ -7,7 +7,7 @@ platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
 keywords: ['openNURBS', 'Ellipses']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/onellipse
 order: 1
 ---

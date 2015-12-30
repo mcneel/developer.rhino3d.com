@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/splitbrep
 description: Demonstrates how to split a brep with another brep using the RhinoSplitBrep function.
 order: 1

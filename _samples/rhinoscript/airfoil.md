@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: How to read point files that describe airfoils and create interpolated curves using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/airfoil
 order: 1
 ---

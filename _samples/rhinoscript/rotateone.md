@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to rotate an object around the centroid of its bounding box using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/rotateone
 order: 1
 ---

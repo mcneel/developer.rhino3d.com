@@ -7,7 +7,6 @@ platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
 keywords: ['openNURBS', 'knots']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/onsuperfluousknot
 order: 1
 ---

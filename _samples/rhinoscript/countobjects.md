@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to count all the different object types using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/countobjects
 order: 1
 ---

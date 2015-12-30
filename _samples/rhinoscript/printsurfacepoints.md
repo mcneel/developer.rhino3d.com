@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to print the location of a surface's control points using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/printsurfacepoints
 order: 1
 ---

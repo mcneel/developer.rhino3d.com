@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript', 'flamingo']
 categories: ['Flamingo']
 description: Demonstrates how to display the Flamingo nXt legacy plant browser using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/flamingo/flamingosdk/getflamingo2plant
 order: 1
 ---

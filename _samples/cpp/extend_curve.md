@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/extendcurve
 description: Demonstrates how to extend a curve by a line, arc or smooth extension until it intersects a collection of objects.
 order: 1

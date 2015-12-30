@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/curvelength
 description: Demonstrates how to calculate the length of a curve from the start point to some point on the curve.
 order: 1

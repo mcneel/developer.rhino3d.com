@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/duplicateobject
 description: Demonstrates how to make a copy of a CRhinoObject-derived object.
 order: 1

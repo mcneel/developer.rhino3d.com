@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/instancedefinitionobjects
 description: Demonstrates how to obtain a block instance's definition geometry.
 order: 1

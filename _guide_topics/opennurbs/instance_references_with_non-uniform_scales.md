@@ -7,7 +7,7 @@ platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
 keywords: ['openNURBS', 'Block', 'Instance', 'Reference', 'Scale']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/onblockscalenonuniform
 order: 1
 ---

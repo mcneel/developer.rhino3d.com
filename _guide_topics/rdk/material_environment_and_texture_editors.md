@@ -7,7 +7,7 @@ platforms: ['Windows']
 apis: ['RDK']
 languages: ['C/C++']
 keywords: ['material', 'environment', 'texture', 'RDK']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/labs/rendererdevelopmentkit10
 order: 4
 ---

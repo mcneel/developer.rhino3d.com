@@ -7,7 +7,6 @@ platforms: ['Mac', 'Windows']
 apis: ['Developer Docs', 'Jekyll', 'Liquid']
 languages: ['Markdown']
 keywords: ['style', 'guide']
-TODO: 0
 origin: unset
 order: 3
 ---

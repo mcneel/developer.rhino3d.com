@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to use RhinoScript's MultiListBox function to select multiple files.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/multilistbox
 order: 1
 ---

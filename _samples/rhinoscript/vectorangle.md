@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to calculate the angle between two vectors using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/vectorangle
 order: 1
 ---

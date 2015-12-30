@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to set the length of a curve object using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/setcrvlength
 order: 1
 ---

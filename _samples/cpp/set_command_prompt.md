@@ -7,7 +7,6 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/setcommandprompt
 description: Demonstrates how to set Rhino's command prompt text to show the progress of long processes.
 order: 1

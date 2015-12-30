@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to 'pipe' multiple curves at a time using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/pipeall
 order: 1
 ---

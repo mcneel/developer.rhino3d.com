@@ -7,7 +7,7 @@ platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
 keywords: ['openNURBS', 'release', 'notes', 'whats new']
-TODO: 1
+TODO: 'needs porting'
 origin: http://wiki.mcneel.com/developer/opennurbs/opennurbs_5_20130711_release_notes
 order: 4
 ---

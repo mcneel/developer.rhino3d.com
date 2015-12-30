@@ -8,7 +8,6 @@ languages: ['VBScript']
 keywords: ['rhinoscript', 'vbscript']
 categories: ['Uncategorized']
 description: Demonstrates how to save information about your system's video card to a text file using RhinoScript.
-TODO: 0
 origin: http://wiki.mcneel.com/developer/scriptsamples/savevideoinfo
 order: 1
 ---
