@@ -7,15 +7,35 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/printinstancedefinitions
-description: unset
+description: Demonstrates how to print the names of all instance definitions in the document.
 order: 1
 ---
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This sample has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+```cpp
+CRhinoCommand::result CCommandTest::RunCommand( const CRhinoCommandContext& context )
+{
+  const CRhinoInstanceDefinitionTable& idef_table = context.m_doc.m_instance_definition_table;
+  int idef_count = idef_table.InstanceDefinitionCount();
+  if (idef_count == 0)
+  {
+    RhinoApp().Print("No instance definitions found.\n");
+    return CRhinoCommand::nothing;
+  }
+
+  int num_printed = 0;
+  for (int i = 0; i < idef_count; i++)
+  {
+    const CRhinoInstanceDefinition* idef = idef_table[i];
+    if (idef != 0 && idef->IsDeleted() == false)
+    {
+      ON_wString idef_name = idef->Name();
+      RhinoApp().Print(L"Instance definition %d = %s\n", num_printed, idef_name);
+      num_printed += 1;
+    }
+  }
+
+  return CRhinoCommand::success;
+}
+```

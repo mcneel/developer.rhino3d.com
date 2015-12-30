@@ -7,15 +7,64 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/dividecurvesegments
-description: unset
+description: Demonstrates how to divide a selected curve object by a specified number of segments.
 order: 1
 ---
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This sample has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+```cpp
+CRhinoCommand::result CCommandTest::RunCommand(const CRhinoCommandContext& context)
+{
+  CRhinoGetObject go;
+  go.SetCommandPrompt( L"Select curve to divide" );
+  go.SetGeometryFilter( CRhinoGetObject::curve_object );
+  go.GetObjects( 1, 1 );
+
+  if( go.Result() == CRhinoGet::cancel )
+    return CRhinoCommand::cancel;
+
+  if( go.Result() != CRhinoGet::object | go.ObjectCount() <= 0 )
+    return CRhinoCommand::failure;
+
+  CRhinoObjRef& objref = go.Object(0);
+  const ON_Curve* crv = objref.Curve();
+  if( !crv )
+    return CRhinoCommand::failure;
+
+  CRhinoGetInteger gi;
+  gi.SetCommandPrompt( L"Number of segments" );
+  gi.SetDefaultInteger( 2 );
+  gi.SetLowerLimit( 2 );
+  gi.SetUpperLimit( 100 );
+  gi.GetInteger();
+
+  if( gi.Result() == CRhinoGet::cancel )
+    return CRhinoCommand::cancel;
+
+  if( gi.Result() != CRhinoGet::number )
+    return CRhinoCommand::failure;
+
+  int count = gi.Number();
+  count++;
+  ON_SimpleArray<double> t( count );
+  t.SetCount( count );
+
+  int i;
+  for( i = 0; i < count; i++ )
+  {
+    double param = (double)i / ((double)count-1);
+    t[i] = param;
+  }
+  if( crv->GetNormalizedArcLengthPoints(count, (double*)&t[0], (double*)&t[0]) )
+  {
+    for( i = 0; i < count; i++ )
+    {
+      ON_3dPoint pt = crv->PointAt( t[i] );
+      context.m_doc.AddPointObject( pt );
+    }
+    context.m_doc.Redraw();
+  }
+  return CRhinoCommand::success;
+}
+```

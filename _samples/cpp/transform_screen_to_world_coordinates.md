@@ -7,15 +7,45 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/screentoworld
-description: unset
+description: Demonstrates how to transform screen coordinates to world coordinates.
 order: 1
 ---
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This sample has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+```cpp
+CRhinoCommand::result CCommandTest::RunCommand( const CRhinoCommandContext& context )
+{
+  CRhinoCommand::result rc = failure;
+
+  // Get the active view
+  CRhinoView* view = RhinoApp().ActiveView();
+  if( view )
+  {
+    // Get the current cursor position
+    POINT point;
+    if( GetCursorPos(&point ) )
+    {
+      // Convert the screen coordinates to client coordinates
+      view->ScreenToClient( &point );
+
+      // Obtain the view's screen-to-world transformation
+      ON_Xform screen_to_world;
+      view->ActiveViewport().VP().GetXform( ON::screen_cs, ON::world_cs, screen_to_world );
+
+      // Create a 3-D point
+      ON_3dPoint pt( point.x, point.y, 0 );
+      // Transform it
+      pt.Transform( screen_to_world );
+
+      // Add it to the document
+      context.m_doc.AddPointObject( pt );
+      context.m_doc.Redraw();
+
+      rc = success;
+    }
+  }
+
+  return rc;
+}
+```

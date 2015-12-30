@@ -7,15 +7,21 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/blockinsertionpoint
-description: unset
+description: Demonstrates how to find the basepoint coordinates of a block instance.
 order: 1
 ---
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This sample has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+```cpp
+ON_3dPoint BlockInstanceInsertionPoint(const CRhinoInstanceObject* instance_obj)
+{
+  ON_3dPoint pt = ON_UNSET_POINT;
+  if (instance_obj != 0)
+  {
+    pt = ON_origin;
+    pt.Transform(instance_obj->InstanceXform());
+  }
+  return pt;
+}
+```

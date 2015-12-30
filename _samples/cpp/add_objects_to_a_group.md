@@ -7,15 +7,30 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/addobjectstogroup
-description: unset
+description: Demonstrates how to add selected objects to an object group.
 order: 1
 ---
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This sample has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+```cpp
+CRhinoCommand::result CCommandTest::RunCommand(const CRhinoCommandContext& context)
+{
+  CRhinoGetObject go;
+  go.SetCommandPrompt( L"Select objects to group" );
+  go.EnableGroupSelect();
+  go.GetObjects(1,0);
+  if( go.CommandResult() != CRhinoCommand::success )
+    return go.CommandResult();
+
+  int i = 0, count = go.ObjectCount();
+  ON_SimpleArray<const CRhinoObject*> members( count );
+
+  for( i = 0; i < count; i++ )
+    members.Append( go.Object(i).Object() );
+
+  int index = context.m_doc.m_group_table.AddGroup( ON_Group(), members );
+  context.m_doc.Redraw();
+  return (index >= 0) ? CRhinoCommand::success : CRhinoCommand::failure;
+}
+```

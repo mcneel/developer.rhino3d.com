@@ -7,15 +7,20 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/duplicateobject
-description: unset
+description: Demonstrates how to make a copy of a CRhinoObject-derived object.
 order: 1
 ---
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This sample has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+```cpp
+const CRhinoObject* object = ..... // some object
+CRhinoObject* duplicate = object->Duplicate();
+if( duplicate )
+{
+  if( context.m_doc.AddObject(duplicate) )
+    context.m_doc.Redraw;
+  else
+    delete duplicate;
+}
+```

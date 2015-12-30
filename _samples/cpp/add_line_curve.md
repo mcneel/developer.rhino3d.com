@@ -7,15 +7,40 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/addline
-description: unset
+description: Demonstrates how to add a line curve.
 order: 1
 ---
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This sample has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+```cpp
+CRhinoCommand::result CCommandTest::RunCommand(const CRhinoCommandContext& context)
+{
+  CRhinoGetPoint gp;
+  gp.SetCommandPrompt( L"Start of line" );
+  gp.GetPoint();
+  if( gp.CommandResult() != CRhinoCommand::success )
+    return gp.CommandResult();
+
+  ON_3dPoint pt_start = gp.Point();
+
+  gp.SetCommandPrompt( L"End of line" );
+  gp.SetBasePoint( pt_start );
+  gp.DrawLineFromPoint( pt_start, TRUE );
+  gp.GetPoint();
+  if( gp.CommandResult() != CRhinoCommand::success )
+    return gp.CommandResult();
+
+  ON_3dPoint pt_end = gp.Point();
+  ON_3dVector v = pt_end - pt_start;
+  if( v.IsTiny() )
+    return CRhinoCommand::nothing;
+
+  ON_Line line( pt_start, pt_end );
+
+  context.m_doc.AddCurveObject( line );
+  context.m_doc.Redraw();
+
+  return CRhinoCommand::success;
+}
+```

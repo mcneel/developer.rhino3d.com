@@ -7,15 +7,38 @@ apis: ['C/C++']
 languages: ['C/C++']
 keywords: ['rhino']
 categories: ['Unsorted']
-TODO: 1
+TODO: 0
 origin: http://wiki.mcneel.com/developer/sdksamples/showallhiddenobjects
-description: unset
+description: Demonstrates how to iterate through the geometry table and unhide hidden objects.
 order: 1
 ---
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This sample has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+```cpp
+int ShowAllHiddenObjects( CRhinoDoc& doc, bool bRedraw )
+{
+  CRhinoObjectIterator it(
+        doc,
+        CRhinoObjectIterator::undeleted_objects,
+        CRhinoObjectIterator::active_and_reference_objects
+        );
+  it.IncludeLights();
+
+  int count = 0;
+  CRhinoObject* obj = 0;
+  for( obj = it.First(); obj; obj = it.Next() )
+  {
+    // Ignore objects that are not hidden
+    if( obj->Attributes().Mode() != ON::hidden_object )
+      continue;
+    // Ignore objects on hidden or locked layers
+    if( ON::normal_layer != obj->ObjectLayer().Mode() )
+      continue;
+    if( doc.ShowObject(obj) )
+      count++;
+  }
+
+  if( count > 0 && bRedraw )
+    doc.Redraw();
+  return count;
+}
+```
