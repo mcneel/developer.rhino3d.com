@@ -175,7 +175,7 @@ Many of the pages, guides, and samples have a `TODO` and `origin` yaml field.  T
 
 If `TODO` is present and set to `some string` (e.g.: `TODO: 'needs porting'`), the site will add this content to the [TODO list]({{ site.baseurl }}/admin/index.html#todo-list).
 
-If the TODO field is not present or is set to `0` (`TODO: 0`), the content will not be on the list.
+If the TODO field is not present, the content will not be on the list.
 
 #### origin
 
