@@ -1,5 +1,5 @@
 ---
-layout: code-sample
+layout: code-sample-rhinocommon
 author:
 platforms: ['Cross-Platform']
 apis: ['RhinoCommon']

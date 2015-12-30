@@ -137,7 +137,7 @@ Here is an example of the YAML for [this sample]({{ site.baseurl }}/samples/rhin
 
 ```yaml
 ---
-layout: code-sample
+layout: code-sample-rhinocommon
 title: Extend a Curve Object
 author: dale@mcneel.com
 categories: ['Curves']

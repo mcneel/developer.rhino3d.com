@@ -85,7 +85,6 @@ The following samples have TODO items:
 
 ### Misc
 
-- code-sample layout template needs to be refactored to code-sample-rhinocommon
 - Standardize yaml front-matter across all entries.
 - Switch to TODO: containing notes and check for that yaml tag
 - Standardize file names (underscores, verbiage, length, etc).
