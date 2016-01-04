@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Display conduit to draw overlay text
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Display conduit to draw overlay text
-keywords: ['display', 'conduit', 'draw', 'overlay', 'text']
+platforms: ['Cross-Platform']
 categories: ['Draw']
-description:
+origin: unset
 order: 1
+keywords: ['display', 'conduit', 'draw', 'overlay', 'text']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

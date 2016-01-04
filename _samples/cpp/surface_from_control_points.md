@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Surface from Control Points
+description: Demonstrates how to create a surface from a grid of control points.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/rhinosrfcontrolptgrid
-description: Demonstrates how to create a surface from a grid of control points.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

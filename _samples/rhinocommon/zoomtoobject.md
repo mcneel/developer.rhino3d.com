@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Zoom to a Selected Object
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Zoom to a Selected Object
-keywords: ['zoom', 'selected', 'object']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['zoom', 'selected', 'object']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

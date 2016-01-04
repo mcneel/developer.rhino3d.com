@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Installing Tools (Windows)
+description: unset
 author: dan@mcneel.com
-categories: ['GettingStarted']
-platforms: ['Windows']
 apis: ['Grasshopper']
 languages: ['C#', 'VB.NET']
-keywords: ['developer', 'grasshopper', 'components']
-TODO: 'needs to be written'
+platforms: ['Windows']
+categories: ['GettingStarted']
 origin: unset
 order: 2
+keywords: ['developer', 'grasshopper', 'components']
+layout: toc-guide-page
+TODO: 'needs to be written'
 ---
 
 # Installing Tools (Windows)

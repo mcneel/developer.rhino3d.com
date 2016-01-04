@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Modifying Advanced Display Settings
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Modifying Advanced Display Settings
-keywords: ['modifying', 'advanced', 'display', 'settings']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['modifying', 'advanced', 'display', 'settings']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

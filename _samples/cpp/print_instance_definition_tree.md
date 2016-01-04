@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Print Instance Definition Tree
+description: Demonstrates how to print the names of all instance definitions, including objects and sub-instances, in a tree-style format.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/printinstancedefinitiontree
-description: Demonstrates how to print the names of all instance definitions, including objects and sub-instances, in a tree-style format.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

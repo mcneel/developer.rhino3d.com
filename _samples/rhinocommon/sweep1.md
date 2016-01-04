@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Sweeping Surfaces using Sweep1
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Sweeping Surfaces using Sweep1
-keywords: ['sweeping', 'surfaces', 'using', 'sweep1']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['sweeping', 'surfaces', 'using', 'sweep1']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

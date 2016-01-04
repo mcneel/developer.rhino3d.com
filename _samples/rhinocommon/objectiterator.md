@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Iterate through Rhino's Geometry Table
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Iterate through Rhino's Geometry Table
-keywords: ['iterate', 'through', 'rhinos', 'geometry', 'table']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['iterate', 'through', 'rhinos', 'geometry', 'table']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Increasing the degree of a Nurbs surface
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Increasing the degree of a Nurbs surface
-keywords: ['increasing', 'degree', 'nurbs', 'surface']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['increasing', 'degree', 'nurbs', 'surface']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

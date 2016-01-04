@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Tween Curve
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Tween Curve
-keywords: ['tween', 'curve']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['tween', 'curve']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

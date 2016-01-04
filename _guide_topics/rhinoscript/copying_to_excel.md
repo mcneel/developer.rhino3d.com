@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Copying to Excel
+description: unset
 author: dale@mcneel.com
-categories: ['Miscellaneous', 'Advanced']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Miscellaneous', 'Advanced']
 origin: http://wiki.mcneel.com/developer/scriptsamples/copytoexcel
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # Copying to Excel

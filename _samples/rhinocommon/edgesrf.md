@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Create a Surface from Edge Curves
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Create a Surface from Edge Curves
-keywords: ['create', 'surface', 'edge', 'curves']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['create', 'surface', 'edge', 'curves']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

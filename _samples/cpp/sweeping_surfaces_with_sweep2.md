@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Sweeping Surfaces with Sweep2
+description: Demonstrates how to use the CArgsRhinoSweep2 class and the RhinoSweep2 function. The definitions of these can be found in rhinoSdkSweep.h.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/sweep2
-description: Demonstrates how to use the CArgsRhinoSweep2 class and the RhinoSweep2 function. The definitions of these can be found in rhinoSdkSweep.h.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

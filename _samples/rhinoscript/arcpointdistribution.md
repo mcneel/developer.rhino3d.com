@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Arc Point Distribution
+description: Demonstrates arc point distribution.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates arc point distribution.
 origin: http://wiki.mcneel.com/developer/scriptsamples/arcpointdistribution
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

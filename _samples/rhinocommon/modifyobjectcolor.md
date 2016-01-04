@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Modify an Object's Color
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Modify an Object's Color
-keywords: ['modify', 'objects', 'color']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['modify', 'objects', 'color']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

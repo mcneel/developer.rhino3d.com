@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Modify a Light's Color
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Modify a Light's Color
-keywords: ['modify', 'lights', 'color']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['modify', 'lights', 'color']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Create Box Frames
+description: Demonstrates how to create a box frame with RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to create a box frame with RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/boxframe
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

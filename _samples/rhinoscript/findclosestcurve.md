@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Find Closest Curve to Test Point
+description: Demonstrates how to find the closest curve to test point using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to find the closest curve to test point using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/findclosestcurve
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Project Points to Mesh
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Project Points to Mesh
-keywords: ['project', 'points', 'mesh']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['project', 'points', 'mesh']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

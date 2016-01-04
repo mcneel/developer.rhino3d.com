@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Creating your first C/C++ plugin for Rhino
+description: unset
 author: dale@mcneel.com
-categories: ['GettingStarted']
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['c', 'C/C++', 'plugin']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['GettingStarted']
 origin: https://wiki.mcneel.com/developer/sdksamples/rhino5pluginwiz
 order: 3
+keywords: ['c', 'C/C++', 'plugin']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Your First Plugin (Windows)

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Selecting Objects by Linetype
+description: Demonstrates how to select objects by linetype using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to select objects by linetype using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/sellinetype
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

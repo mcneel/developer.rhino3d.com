@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Line
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Line
-keywords: ['add', 'line']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'line']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

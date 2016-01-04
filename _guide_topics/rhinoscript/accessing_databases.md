@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Accessing Databases
+description: unset
 author: dale@mcneel.com
-categories: ['Interoperability', 'Databases', 'Advanced']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Interoperability', 'Databases', 'Advanced']
 origin: http://wiki.mcneel.com/developer/scriptsamples/database
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # Accessing Databases

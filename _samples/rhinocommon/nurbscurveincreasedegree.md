@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Increasing the degree of a Nurbs curve
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Increasing the degree of a Nurbs curve
-keywords: ['increasing', 'degree', 'nurbs', 'curve']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['increasing', 'degree', 'nurbs', 'curve']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

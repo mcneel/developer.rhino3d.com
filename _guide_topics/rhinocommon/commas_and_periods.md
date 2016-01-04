@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Commas & Periods
+description: unset
 author: steve@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Windows', 'Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['RhinoCommon', 'Locale', 'Threads', 'Culture', 'Internationalization', 'Commas', 'Periods']
+platforms: ['Windows', 'Mac']
+categories: ['Fundamentals']
 origin: https://wiki.mcneel.com/developer/sdksamples/threadculture
 order: 2
+keywords: ['RhinoCommon', 'Locale', 'Threads', 'Culture', 'Internationalization', 'Commas', 'Periods']
+layout: toc-guide-page
 ---
 
 # Commas & Periods

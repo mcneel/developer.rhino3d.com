@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Instance References with Non-Uniform Scales
+description: unset
 author: dalelear@mcneel.com
-categories: ['Advanced']
-platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
-keywords: ['openNURBS', 'Block', 'Instance', 'Reference', 'Scale']
-TODO: 'needs porting'
+platforms: ['Cross-Platform']
+categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/onblockscalenonuniform
 order: 1
+keywords: ['openNURBS', 'Block', 'Instance', 'Reference', 'Scale']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Instance References with Non-Uniform Scales

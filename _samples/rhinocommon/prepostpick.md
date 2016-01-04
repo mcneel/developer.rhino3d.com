@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Pre-Pick and Post-Pick Objects
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Pre-Pick and Post-Pick Objects
-keywords: ['pre-pick', 'post-pick', 'objects']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['pre-pick', 'post-pick', 'objects']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

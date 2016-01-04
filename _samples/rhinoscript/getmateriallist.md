@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Get Material List
+description: Demonstrates how to get a the Flamingo nXt material list from the current document using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript', 'flamingo']
+platforms: ['Windows']
 categories: ['Flamingo']
-description: Demonstrates how to get a the Flamingo nXt material list from the current document using RhinoScript.
 origin: http://wiki.mcneel.com/flamingo/flamingosdk/getmateriallist
 order: 1
+keywords: ['rhinoscript', 'vbscript', 'flamingo']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

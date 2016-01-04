@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Change Construction Plane Modes
+description: Demonstrates how to switch between standard and universal construction plane modes.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/uplanemode
-description: Demonstrates how to switch between standard and universal construction plane modes.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

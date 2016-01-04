@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Rename Instance Definition (Block)
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Rename Instance Definition (Block)
-keywords: ['rename', 'instance', 'definition', 'block']
+platforms: ['Cross-Platform']
 categories: ['Blocks']
-description:
+origin: unset
 order: 1
+keywords: ['rename', 'instance', 'definition', 'block']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

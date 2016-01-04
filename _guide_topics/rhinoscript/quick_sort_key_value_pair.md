@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Quick Sort Key Value Pairs
+description: unset
 author: david@mcneel.com
-categories: ['Miscellaneous', 'Advanced']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Miscellaneous', 'Advanced']
 origin: http://wiki.mcneel.com/developer/quicksortkeyvaluepair
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # Quick Sort Key Value Pairs

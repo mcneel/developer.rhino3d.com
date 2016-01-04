@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Registering Plugins (Windows)
+description: unset
 author: dale@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Windows']
 apis: ['RhinoCommon', 'C/C++']
 languages: ['C#', 'C/C++']
-keywords: ['RhinoCommon', 'Registering', 'Plugin']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/installingandregisteringaplugin
 order: 1
+keywords: ['RhinoCommon', 'Registering', 'Plugin']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Registering Plugins (Windows)

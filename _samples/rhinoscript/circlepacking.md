@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Circle Packing
+description: Multi-radius circle packing algorithm in RhinoScript.
 author: Steven Janssen
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Multi-radius circle packing algorithm in RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/circlepacking
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

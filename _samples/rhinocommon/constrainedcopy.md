@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Use a constrained GetPoint to copy a curve
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Use a constrained GetPoint to copy a curve
-keywords: ['constrained', 'getpoint', 'copy', 'curve']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['constrained', 'getpoint', 'copy', 'curve']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

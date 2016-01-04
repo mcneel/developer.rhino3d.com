@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Custom Python
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Custom Python
-keywords: ['custom', 'python']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['custom', 'python']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Linking with openNURBS
+description: unset
 author: dalelear@mcneel.com
-categories: ['GettingStarted']
-platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
-keywords: ['openNURBS', 'linking', 'toolkit', 'pragma', 'pragmas']
-TODO: 'needs porting'
+platforms: ['Cross-Platform']
+categories: ['GettingStarted']
 origin: http://wiki.mcneel.com/developer/opennurbs/linkingpragma
 order: 1
+keywords: ['openNURBS', 'linking', 'toolkit', 'pragma', 'pragmas']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Linking with openNURBS

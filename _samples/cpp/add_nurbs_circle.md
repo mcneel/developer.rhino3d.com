@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Add a NURBS Circle
+description: Demonstrates how to use ON_NurbsCurve to create a circle.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/addnurbscircle
-description: Demonstrates how to use ON_NurbsCurve to create a circle.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

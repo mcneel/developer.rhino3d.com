@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Object Color
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Object Color
-keywords: ['object', 'color']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['object', 'color']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

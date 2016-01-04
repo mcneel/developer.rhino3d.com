@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: How This Site Works
+description: A guide to how this very developer document site works.
 author: dan@mcneel.com
-categories: ['General']
-platforms: ['Mac', 'Windows']
 apis: ['Developer Docs', 'Jekyll', 'Liquid']
 languages: ['Markdown', 'Kramdown', 'YAML']
-keywords: ['authoring', 'writing', 'editing', 'overview']
+platforms: ['Mac', 'Windows']
+categories: ['General']
 origin: unset
 order: 2
+keywords: ['authoring', 'writing', 'editing', 'overview']
+layout: toc-guide-page
 ---
 
 # How This Site Works
@@ -99,29 +100,33 @@ Here is an example of the YAML for this guide:
 
 ```yaml
 ---
-layout: toc-guide-page
-title: Authoring content
+title: How This Site Works
+description: A guide to how this very developer document site works.
 author: dan@mcneel.com
-categories: ['General']
-platforms: ['Mac', 'Windows']
 apis: ['Developer Docs', 'Jekyll', 'Liquid']
-languages: ['Markdown']
-keywords: ['authoring', 'writing', 'editing']
+languages: ['Markdown', 'Kramdown', 'YAML']
+platforms: ['Mac', 'Windows']
+categories: ['General']
+origin: unset
 order: 2
+keywords: ['authoring', 'writing', 'editing', 'overview']
+layout: toc-guide-page
 ---
 ```
 
 The YAML fields for Guides determine:
 
-* **layout**: The layout html file used by Liquid (found in `/_layouts/`) on the guide.
 * **title**: This is the title of the guide.  This is the html page title.
+* **description**: This is a brief description of the guide.
 * **author**: The original - or responsible - author.
-* **categories**: The category of the guide (General, Overview, Advanced).
-* **platforms**: The operating systems this guide is relevant to.
 * **apis**: The Rhino APIs that this guide pertains to.
 * **languages**: The programming languages this guide references.
-* **keywords**: Keywords related to this guide (un-used, as of yet).
+* **platforms**: The operating systems this guide is relevant to.
+* **categories**: The category of the guide (General, Overview, Advanced).
+* **origin**: If this guide was ported from another location, the URL backline to the origin(al) page.
 * **order**: The relative sort-order of this guide in any list.
+* **keywords**: Keywords related to this guide (un-used, as of yet).
+* **layout**: The layout html file used by Liquid (found in `/_layouts/`) on the guide.
 
 
 ### APIs
@@ -132,35 +137,37 @@ The [API documentation]({{ site.baseurl }}/api/) is automatically generated from
 
 Samples are contained in the `/_samples/` directory.
 
-Here is an example of the YAML for [this sample]({{ site.baseurl }}/samples/rhinocommon/extend_a_curve_object/):
+Here is an example of the YAML for [this sample]({{ site.baseurl }}/samples/cpp/add_a_cone_surface/):
 
 ```yaml
 ---
-layout: code-sample-rhinocommon
-title: Extend a Curve Object
+title: Add a Cone Surface
+description: Demonstrates how to create a cone using ON_BrepCone.
 author: dale@mcneel.com
-categories: ['Curves']
-platforms: ['Cross-Platform']
-apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
-keywords: ['Extend', 'Curve', 'Sample']
+apis: ['C/C++']
+languages: ['C/C++']
+platforms: ['Windows']
+categories: ['Unsorted']
+origin: http://wiki.mcneel.com/developer/sdksamples/addcone
 order: 1
-description: This shows how to extend a curve object
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 ```
 
 The YAML fields for Samples determine:
 
-* **layout**: The layout html file used by Liquid (found in `/_layouts/`) on the sample.
 * **title**: This is the title of the sample.  This is the html page title.
+* **description**: A brief description of what the sample does.
 * **author**: The original - or responsible - author.
-* **categories**: The category of the sample (Recipes, Snippet, Boilerplate, etc.).
-* **platforms**: The operating systems this sample is relevant to.
 * **apis**: The Rhino APIs or SDKs that this sample pertains to.
 * **languages**: The programming languages this sample references.
-* **keywords**: Keywords related to this sample (un-used, as of yet).
+* **platforms**: The operating systems this sample is relevant to.
+* **categories**: The category of the sample (Recipes, Snippet, Boilerplate, etc.).
+* **origin**: If this sample was ported from another location, the URL backline to the origin(al) page.
 * **order**: The relative sort-order of this sample in any list.
-* **description**: A brief description of what the sample does.
+* **keywords**: Keywords related to this sample (un-used, as of yet).
+* **layout**: The layout html file used by Liquid (found in `/_layouts/`) on the sample.
 
 
 ## TODO & origin fields

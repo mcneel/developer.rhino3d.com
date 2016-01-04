@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Intersecting line curves
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Intersecting line curves
-keywords: ['intersecting', 'line', 'curves']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['intersecting', 'line', 'curves']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

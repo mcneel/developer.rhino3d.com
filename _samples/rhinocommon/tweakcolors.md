@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Tweak Colors
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Tweak Colors
-keywords: ['tweak', 'colors']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['tweak', 'colors']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

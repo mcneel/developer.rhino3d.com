@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Intersecting a Line with a Circle
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Intersecting a Line with a Circle
-keywords: ['intersecting', 'line', 'with', 'circle']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['intersecting', 'line', 'with', 'circle']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

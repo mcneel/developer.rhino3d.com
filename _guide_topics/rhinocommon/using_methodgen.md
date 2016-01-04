@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Using methodgen
+description: unset
 author: giulio@mcneel.com
-categories: ['Advanced']
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['Native', 'RhinoCommon', 'Plugin', 'Library', 'PInvoke', 'methodgen', 'AutoNativeMethods']
+platforms: ['Cross-Platform']
+categories: ['Advanced']
 origin: unset
 order: 6
+keywords: ['Native', 'RhinoCommon', 'Plugin', 'Library', 'PInvoke', 'methodgen', 'AutoNativeMethods']
+layout: toc-guide-page
 ---
 
 # Using methodgen

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Mesh
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Mesh
-keywords: ['add', 'mesh']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'mesh']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

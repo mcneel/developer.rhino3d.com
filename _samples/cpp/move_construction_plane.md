@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Move a Construction Plane
+description: Demonstrates how to move the origin of a construction plane.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/movecplane
-description: Demonstrates how to move the origin of a construction plane.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

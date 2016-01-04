@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Add a Brep Box
+description: Demonstrates how to add a Brep Box from a Rhino C++ plug-in.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/addbrepbox
-description: Demonstrates how to add a Brep Box from a Rhino C++ plug-in.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

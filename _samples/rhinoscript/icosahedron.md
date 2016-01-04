@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Create an Icosahedron
+description: Demonstrates one way of creating a Icosahedron in RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates one way of creating a Icosahedron in RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/icosahedron
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

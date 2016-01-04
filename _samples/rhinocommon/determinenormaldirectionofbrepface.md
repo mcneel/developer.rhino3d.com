@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Determine Normal Direction of Brep Face
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Determine Normal Direction of Brep Face
-keywords: ['determine', 'normal', 'direction', 'brep', 'face']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['determine', 'normal', 'direction', 'brep', 'face']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

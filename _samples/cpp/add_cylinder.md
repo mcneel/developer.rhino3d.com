@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Add a Cylinder
+description: Demonstrates how to create a cylinder using ON_BrepCylinder and add it to Rhino.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/addcylinder
-description: Demonstrates how to create a cylinder using ON_BrepCylinder and add it to Rhino.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

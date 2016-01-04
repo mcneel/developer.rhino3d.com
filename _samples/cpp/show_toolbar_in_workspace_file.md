@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Show Toolbar in Workspace File
+description: Demonstrates how to display a toolbar in a toolbar collection, or workspace, file.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/showtoolbar
-description: Demonstrates how to display a toolbar in a toolbar collection, or workspace, file.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

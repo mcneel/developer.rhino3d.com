@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Get Flamingo nXt Material Assignment
+description: Demonstrates how get an objects Flamingo nXt material assignment using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript', 'flamingo']
+platforms: ['Windows']
 categories: ['Flamingo']
-description: Demonstrates how get an objects Flamingo nXt material assignment using RhinoScript.
 origin: http://wiki.mcneel.com/flamingo/flamingosdk/getmaterial
 order: 1
+keywords: ['rhinoscript', 'vbscript', 'flamingo']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

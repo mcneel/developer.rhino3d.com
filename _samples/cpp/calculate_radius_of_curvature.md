@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Calculate Radius of Curvature
+description: Demonstrates how to compute the radius of curvature of a curve object at a selected location.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/radiusofcurvature
-description: Demonstrates how to compute the radius of curvature of a curve object at a selected location.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

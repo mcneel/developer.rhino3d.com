@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Saving Plug-in Information to a Text File
+description: Demonstrates how to save the names of loaded and unloaded plug-ins to a text file using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to save the names of loaded and unloaded plug-ins to a text file using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/savepluginlist
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

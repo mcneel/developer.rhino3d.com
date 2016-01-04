@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: What are VBScript and RhinoScript?
+description: unset
 author: dale@mcneel.com
-categories: ['Overview']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Overview']
 origin: http://wiki.mcneel.com/developer/vbsfundamentals
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # What are VBScript and RhinoScript?

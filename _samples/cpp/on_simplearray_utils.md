@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: ON_SimpleArray Utilities
+description: Demonstrates how to sort and cull simple arrays.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/simplearray
-description: Demonstrates how to sort and cull simple arrays.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Curve-Surface Intersection
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Curve-Surface Intersection
-keywords: ['curve-surface', 'intersection']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['curve-surface', 'intersection']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

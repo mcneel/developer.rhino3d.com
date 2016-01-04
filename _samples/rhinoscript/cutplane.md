@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Scripting the CutPlane Command
+description: Demonstrates how to script the CutPlane command using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to script the CutPlane command using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/cutplane
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

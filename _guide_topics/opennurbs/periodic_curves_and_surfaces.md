@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Periodic Curves & Surfaces
+description: unset
 author: dalelear@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
-keywords: ['openNURBS', 'Periodic', 'Curves', 'Surfaces']
+platforms: ['Cross-Platform']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/onperiodiccurvesurface
 order: 1
+keywords: ['openNURBS', 'Periodic', 'Curves', 'Surfaces']
+layout: toc-guide-page
 ---
 
 # Periodic Curves & Surfaces

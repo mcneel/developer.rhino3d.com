@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Exporting Block Counts to Excel
+description: Demonstrates how to count blocks and then export the results to Microsoft Excel.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to count blocks and then export the results to Microsoft Excel.
 origin: http://wiki.mcneel.com/developer/scriptsamples/exportblockcount
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

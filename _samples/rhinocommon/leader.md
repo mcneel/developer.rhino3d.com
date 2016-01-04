@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Creating a Leader
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Creating a Leader
-keywords: ['creating', 'leader']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['creating', 'leader']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

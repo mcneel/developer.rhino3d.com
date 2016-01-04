@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Create a specialized GetObject with a Custom Geometry Filter
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Create a specialized GetObject with a Custom Geometry Filter
-keywords: ['create', 'specialized', 'getobject', 'with', 'custom', 'geometry', 'filter']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['create', 'specialized', 'getobject', 'with', 'custom', 'geometry', 'filter']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

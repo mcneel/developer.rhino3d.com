@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Uninstalling Plugins (Mac)
+description: unset
 author: dan@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['first', 'RhinoCommon', 'Plugin', 'removing', 'uninstalling']
+platforms: ['Mac']
+categories: ['Fundamentals']
 origin: unset
 order: 7
+keywords: ['first', 'RhinoCommon', 'Plugin', 'removing', 'uninstalling']
+layout: toc-guide-page
 ---
 
 

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Justifying Text Entities
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Justifying Text Entities
-keywords: ['justifying', 'text', 'entities']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['justifying', 'text', 'entities']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

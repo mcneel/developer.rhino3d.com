@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Get an Object's UUID
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Get an Object's UUID
-keywords: ['objects', 'uuid']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['objects', 'uuid']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

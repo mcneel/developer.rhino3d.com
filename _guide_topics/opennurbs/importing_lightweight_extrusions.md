@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Importing Lightweight Extrusions
+description: unset
 author: dalelear@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
-keywords: ['openNURBS', 'Extrusions', 'Importing']
+platforms: ['Cross-Platform']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/onextrusion
 order: 1
+keywords: ['openNURBS', 'Extrusions', 'Importing']
+layout: toc-guide-page
 ---
 
 # Importing Lightweight Extrusions

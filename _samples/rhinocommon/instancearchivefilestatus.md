@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Instance Archive File Status
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Instance Archive File Status
-keywords: ['instance', 'archive', 'file', 'status']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['instance', 'archive', 'file', 'status']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

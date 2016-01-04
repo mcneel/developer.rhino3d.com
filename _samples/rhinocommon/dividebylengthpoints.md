@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Divide by Length Points
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Divide by Length Points
-keywords: ['divide', 'length', 'points']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['divide', 'length', 'points']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

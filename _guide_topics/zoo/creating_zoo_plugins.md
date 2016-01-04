@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Creating Zoo Plugins
+description: unset
 author: dale@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Windows']
 apis: ['Zoo']
 languages: ['C#']
-keywords: ['Zoo', 'Plugin']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/zooplugin
 order: 2
+keywords: ['Zoo', 'Plugin']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Creating Zoo Plugins

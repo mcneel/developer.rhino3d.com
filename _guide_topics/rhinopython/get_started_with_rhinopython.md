@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Getting Started with Rhino.Python on the Mac
+description: unset
 author: alain@mcneel.com
-categories: ['GettingStarted']
-platforms: ['Mac']
 apis: ['RhinoPython']
 languages: ['Python']
-keywords: ['Rhino.Python', 'Python']
+platforms: ['Mac']
+categories: ['GettingStarted']
 origin: http://wiki.mcneel.com/developer/python
 order: 2
+keywords: ['Rhino.Python', 'Python']
+layout: toc-guide-page
 ---
 
 # Getting Started

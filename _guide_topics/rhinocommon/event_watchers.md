@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Event Watchers
+description: unset
 author: dale@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Windows', 'Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['RhinoCommon', 'Event', 'Watchers', 'UI']
+platforms: ['Windows', 'Mac']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/dotneteventwatcher
 order: 4
+keywords: ['RhinoCommon', 'Event', 'Watchers', 'UI']
+layout: toc-guide-page
 ---
 
 # Event Watchers

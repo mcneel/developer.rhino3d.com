@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Unrolling a developable surface
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Unrolling a developable surface
-keywords: ['unrolling', 'developable', 'surface']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['unrolling', 'developable', 'surface']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

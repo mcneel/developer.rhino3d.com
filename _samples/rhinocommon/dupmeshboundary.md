@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Bounding Polyline from Naked Edges of Open Mesh
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Bounding Polyline from Naked Edges of Open Mesh
-keywords: ['bounding', 'polyline', 'naked', 'edges', 'open', 'mesh']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['bounding', 'polyline', 'naked', 'edges', 'open', 'mesh']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

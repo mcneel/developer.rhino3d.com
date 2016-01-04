@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Background Bitmap
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Background Bitmap
-keywords: ['add', 'background', 'bitmap']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'background', 'bitmap']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

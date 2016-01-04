@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Adding Arrowheads to Curves
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Adding Arrowheads to Curves
-keywords: ['adding', 'arrowheads', 'curves']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Curves']
-description:
+origin: unset
 order: 1
+keywords: ['adding', 'arrowheads', 'curves']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

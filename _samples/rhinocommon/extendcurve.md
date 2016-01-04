@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
-author:
-platforms: ['Cross-Platform']
+title: Extend a Curve Object
+description: unset
+author: unset
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Extend a Curve Object
-keywords: ['extend', 'curve', 'object']
+platforms: ['Cross-Platform']
 categories: ['Curves', 'Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['extend', 'curve', 'object']
+layout: code-sample-rhinocommon
 ---
 
 ```cs
@@ -160,4 +161,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

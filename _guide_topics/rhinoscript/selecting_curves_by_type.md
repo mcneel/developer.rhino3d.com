@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Selecting Curves by Type
+description: unset
 author: dale@mcneel.com
-categories: ['Miscellaneous', 'Intermediate']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Miscellaneous', 'Intermediate']
 origin: http://wiki.mcneel.com/developer/scriptsamples/selcurve
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # Selecting Curves by Type

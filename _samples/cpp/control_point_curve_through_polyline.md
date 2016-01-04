@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Control Point Curve Through Polyline
+description: Demonstrates how to create a control points curve through a polyline.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/crvthroughpline
-description: Demonstrates how to create a control points curve through a polyline.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Creating Rhino Commands Using Python
+description: unset
 author: pascal@mcneel.com
-categories: ['GettingStarted']
-platforms: ['Cross-Platform']
 apis: ['RhinoPython']
 languages: ['Python']
-keywords: ['python', 'commands']
-TODO: 'needs porting'
+platforms: ['Cross-Platform']
+categories: ['GettingStarted']
 origin: http://wiki.mcneel.com/developer/python/commands
 order: 1
+keywords: ['python', 'commands']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Creating Rhino Commands Using Python

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: List Block Definition Geometry
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: List Block Definition Geometry
-keywords: ['list', 'block', 'definition', 'geometry']
+platforms: ['Cross-Platform']
 categories: ['Blocks']
-description:
+origin: unset
 order: 1
+keywords: ['list', 'block', 'definition', 'geometry']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

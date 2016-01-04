@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Boolean Difference
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Boolean Difference
-keywords: ['boolean', 'difference']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['boolean', 'difference']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

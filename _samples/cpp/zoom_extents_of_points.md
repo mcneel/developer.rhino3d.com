@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Zoom Extents of Points
+description: Demonstrates how to zoom to the extends of an array of 3D points.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/zoompoints
-description: Demonstrates how to zoom to the extends of an array of 3D points.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Shading Viewports
+description: Demonstrates how to set a viewport to shaded display.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/shadedisplay
-description: Demonstrates how to set a viewport to shaded display.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

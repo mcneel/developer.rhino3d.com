@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: openNURBS Latest Release Notes
+description: unset
 author: dalelear@mcneel.com
-categories: ['Overview']
-platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
-keywords: ['openNURBS', 'release', 'notes', 'whats new']
-TODO: 'needs porting'
+platforms: ['Cross-Platform']
+categories: ['Overview']
 origin: http://wiki.mcneel.com/developer/opennurbs/opennurbs_5_20130711_release_notes
 order: 4
+keywords: ['openNURBS', 'release', 'notes', 'whats new']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # openNURBS Latest Release Notes

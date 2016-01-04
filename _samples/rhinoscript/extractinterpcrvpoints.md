@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Extracting Interpolated Curve Construction Points
+description: Demonstrates how to reverse engineer an interpolated curve using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to reverse engineer an interpolated curve using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/extractinterpcrvpoints
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

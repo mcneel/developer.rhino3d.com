@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Test if an Object is a Circle
+description: Demonstrates how to test if an object looks like a circle.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/iscircle
-description: Demonstrates how to test if an object looks like a circle.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

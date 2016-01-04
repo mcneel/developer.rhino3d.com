@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add NURBS Curve
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add NURBS Curve
-keywords: ['add', 'nurbs', 'curve']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Curves']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'nurbs', 'curve']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

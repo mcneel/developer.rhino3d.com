@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Pull Curve to Surface
+description: Demonstrates how to use ON_Surface::Pullback() to pull a curve object to a surface object.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/pullcurve
-description: Demonstrates how to use ON_Surface::Pullback() to pull a curve object to a surface object.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

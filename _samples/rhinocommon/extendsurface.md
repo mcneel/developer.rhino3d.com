@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Extend a Surface
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Extend a Surface
-keywords: ['extend', 'surface']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['extend', 'surface']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

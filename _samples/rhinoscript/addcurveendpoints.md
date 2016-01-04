@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Adding Points at Curve Endpoints
+description: Demonstrates how to add point at the starting and ending locations of curves.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to add point at the starting and ending locations of curves.
 origin: http://wiki.mcneel.com/developer/scriptsamples/addcurveendpoints
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

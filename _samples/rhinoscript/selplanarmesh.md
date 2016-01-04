@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Selecting Planar Meshes
+description: Demonstrates how to select mesh objects that are planar using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to select mesh objects that are planar using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/selplanarmesh
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

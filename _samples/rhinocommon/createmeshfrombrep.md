@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Create Meshes from Brep
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Create Meshes from Brep
-keywords: ['create', 'meshes', 'brep']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['create', 'meshes', 'brep']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

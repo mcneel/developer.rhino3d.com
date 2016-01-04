@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Block Utilities
+description: A couple of useful block utilities written in RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: A couple of useful block utilities written in RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/blockutilities
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

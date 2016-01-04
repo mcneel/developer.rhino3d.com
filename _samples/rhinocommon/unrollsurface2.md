@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Unroll developable surface and associated mesh
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Unroll developable surface and associated mesh
-keywords: ['unroll', 'developable', 'surface', 'associated', 'mesh']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['unroll', 'developable', 'surface', 'associated', 'mesh']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

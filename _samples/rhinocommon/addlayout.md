@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add a layout with a detail view
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add a layout with a detail view
-keywords: ['add', 'layout', 'with', 'detail', 'view']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Viewports and Views']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'layout', 'with', 'detail', 'view']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

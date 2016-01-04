@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Quadratic Solver
+description: unset
 author: unknown
-categories: ['Advanced']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/scriptsamples/quadraticsolver
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # Quadratic Solver

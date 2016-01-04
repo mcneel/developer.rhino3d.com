@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Creating a hatch from a curve
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Creating a hatch from a curve
-keywords: ['creating', 'hatch', 'curve']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['creating', 'hatch', 'curve']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

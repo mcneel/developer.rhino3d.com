@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Creating a Skin
+description: unset
 author: dale@mcneel.com
-categories: ['Advanced']
-platforms: ['Windows']
 apis: ['RAP', 'C/C++']
 languages: ['C/C++']
-keywords: ['skin', 'RAP', 'rhino']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/sdksamples/skin
 order: 4
+keywords: ['skin', 'RAP', 'rhino']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Creating a Skin

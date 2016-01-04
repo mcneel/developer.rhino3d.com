@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Scripting Methods for RDK (Windows)
+description: unset
 author: andy@mcneel.com
-categories: ['Uncategorized']
-platforms: ['Windows']
 apis: ['RDK']
 languages: ['C/C++', 'RhinoScript']
-keywords: ['RDK', 'Rhino', 'Renderer', 'Scripting']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Uncategorized']
 origin: http://wiki.mcneel.com/developer/rdkrhinoscripting
 order: 2
+keywords: ['RDK', 'Rhino', 'Renderer', 'Scripting']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 

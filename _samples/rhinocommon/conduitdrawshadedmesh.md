@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Conduit Draw Shaded Mesh
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Conduit Draw Shaded Mesh
-keywords: ['conduit', 'draw', 'shaded', 'mesh']
+platforms: ['Cross-Platform']
 categories: ['Draw']
-description:
+origin: unset
 order: 1
+keywords: ['conduit', 'draw', 'shaded', 'mesh']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

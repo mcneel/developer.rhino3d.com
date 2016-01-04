@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Reverse Curve
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Reverse Curve
-keywords: ['reverse', 'curve']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['reverse', 'curve']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

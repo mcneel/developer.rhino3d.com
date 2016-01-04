@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Command Line Options
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Command Line Options
-keywords: ['add', 'command', 'line', 'options']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'command', 'line', 'options']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

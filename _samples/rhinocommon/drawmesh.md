@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Draw Mesh
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Draw Mesh
-keywords: ['draw', 'mesh']
+platforms: ['Cross-Platform']
 categories: ['Draw']
-description:
+origin: unset
 order: 1
+keywords: ['draw', 'mesh']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

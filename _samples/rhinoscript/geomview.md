@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Exporting Meshes to Geomview
+description: Demonstrates how to export a mesh object to Geomview's OFF file format using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to export a mesh object to Geomview's OFF file format using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/geomview
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

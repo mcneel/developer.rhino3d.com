@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Material, Environment, and Texture Editors
+description: unset
 author: andy@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Windows']
 apis: ['RDK']
 languages: ['C/C++']
-keywords: ['material', 'environment', 'texture', 'RDK']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/labs/rendererdevelopmentkit10
 order: 4
+keywords: ['material', 'environment', 'texture', 'RDK']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 

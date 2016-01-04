@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Plugin Installers
+description: unset
 author: brian@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['c', 'C/C++', 'plugin', 'installer']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/authoring
 order: 6
+keywords: ['c', 'C/C++', 'plugin', 'installer']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 

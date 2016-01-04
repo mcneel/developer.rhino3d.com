@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Extracting Isoparametric Curves from Surfaces
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Extracting Isoparametric Curves from Surfaces
-keywords: ['extracting', 'isoparametric', 'curves', 'surfaces']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['extracting', 'isoparametric', 'curves', 'surfaces']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

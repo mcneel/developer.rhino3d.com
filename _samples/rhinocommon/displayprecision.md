@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Changing Display Precision
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Changing Display Precision
-keywords: ['changing', 'display', 'precision']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['changing', 'display', 'precision']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

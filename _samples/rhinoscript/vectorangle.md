@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Calculate the Angle Between Two Vectors
+description: Demonstrates how to calculate the angle between two vectors using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to calculate the angle between two vectors using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/vectorangle
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

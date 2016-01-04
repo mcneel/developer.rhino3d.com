@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Calculate Surface Curvature
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Calculate Surface Curvature
-keywords: ['calculate', 'surface', 'curvature']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['calculate', 'surface', 'curvature']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

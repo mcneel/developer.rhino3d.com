@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Calculate the Angle Between Two Vectors
+description: Demonstrates how to calculate the angle between two vectors.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/anglebetweenvectors
-description: Demonstrates how to calculate the angle between two vectors.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

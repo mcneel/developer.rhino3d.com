@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Visual Analysis Modes
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Visual Analysis Modes
-keywords: ['visual', 'analysis', 'modes']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['visual', 'analysis', 'modes']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

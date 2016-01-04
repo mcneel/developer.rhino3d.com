@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Select Objects by Layer
+description: Demonstrates how to select all of the objects on a specified layer.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/sellayer
-description: Demonstrates how to select all of the objects on a specified layer.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

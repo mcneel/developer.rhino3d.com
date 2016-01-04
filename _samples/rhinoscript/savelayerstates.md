@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Save and Restore Layer States
+description: Demonstrates how to save and restore the states of layers using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to save and restore the states of layers using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/savelayerstates
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

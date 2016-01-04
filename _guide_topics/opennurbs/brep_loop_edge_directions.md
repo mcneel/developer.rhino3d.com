@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Brep Loop & Edge Directions
+description: unset
 author: dalelear@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
-keywords: ['openNURBS', 'Brep', 'Loop', 'Edge', 'Directions']
+platforms: ['Cross-Platform']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/onloopdirection
 order: 1
+keywords: ['openNURBS', 'Brep', 'Loop', 'Edge', 'Directions']
+layout: toc-guide-page
 ---
 
 # Brep Loop & Edge Directions

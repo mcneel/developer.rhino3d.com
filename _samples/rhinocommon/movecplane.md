@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Move CPlane
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Move CPlane
-keywords: ['move', 'cplane']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['move', 'cplane']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

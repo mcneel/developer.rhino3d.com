@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Clipping Plane
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Clipping Plane
-keywords: ['add', 'clipping', 'plane']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'clipping', 'plane']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Screen Capture Viewport
+description: Demonstrates how to screen capture a viewport to a file.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/screencaptureview
-description: Demonstrates how to screen capture a viewport to a file.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

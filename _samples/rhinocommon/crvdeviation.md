@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Determine the Deviation between two Curves
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Determine the Deviation between two Curves
-keywords: ['determine', 'deviation', 'between', 'curves']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['determine', 'deviation', 'between', 'curves']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

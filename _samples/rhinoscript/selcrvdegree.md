@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Select Curves of a Specified Degree
+description: Demonstrates how to use RhinoScript to select all curves that are of a specified degree.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to use RhinoScript to select all curves that are of a specified degree.
 origin: http://wiki.mcneel.com/developer/scriptsamples/selcrvdegree
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

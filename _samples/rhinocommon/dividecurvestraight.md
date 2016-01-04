@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Divide a curve using equi-distance points
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Divide a curve using equi-distance points
-keywords: ['divide', 'curve', 'using', 'equi-distance', 'points']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['divide', 'curve', 'using', 'equi-distance', 'points']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Print Active Viewport Resolution
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Print Active Viewport Resolution
-keywords: ['print', 'active', 'viewport', 'resolution']
+platforms: ['Cross-Platform']
 categories: ['Viewports and Views']
-description:
+origin: unset
 order: 1
+keywords: ['print', 'active', 'viewport', 'resolution']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Delete Instance Definition (Block)
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Delete Instance Definition (Block)
-keywords: ['delete', 'instance', 'definition', 'block']
+platforms: ['Cross-Platform']
 categories: ['Blocks']
-description:
+origin: unset
 order: 1
+keywords: ['delete', 'instance', 'definition', 'block']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

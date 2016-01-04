@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Determine an Object's Layer
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Determine an Object's Layer
-keywords: ['determine', 'objects', 'layer']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Layers']
-description:
+origin: unset
 order: 1
+keywords: ['determine', 'objects', 'layer']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Single Color Back Faces
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Single Color Back Faces
-keywords: ['single', 'color', 'back', 'faces']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['single', 'color', 'back', 'faces']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

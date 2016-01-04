@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Converting GUIDs to Strings
+description: unset
 author: dale@mcneel.com
-categories: ['Miscellaneous', 'Intermediate']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Miscellaneous', 'Intermediate']
 origin: http://wiki.mcneel.com/developer/scriptsamples/guidtostring
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # Converting GUIDs to Strings

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Attaching User Data to Brep Components
+description: Demonstrates how to attach object user data to components of a Brep.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/brepfaceuserdata
-description: Demonstrates how to attach object user data to components of a Brep.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

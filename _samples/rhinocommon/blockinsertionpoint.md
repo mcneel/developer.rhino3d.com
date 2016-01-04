@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Obtain insertion point of block
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Obtain insertion point of block
-keywords: ['obtain', 'insertion', 'point', 'block']
+platforms: ['Cross-Platform']
 categories: ['Blocks']
-description:
+origin: unset
 order: 1
+keywords: ['obtain', 'insertion', 'point', 'block']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

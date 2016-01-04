@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Calculate Curve Intersections
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Calculate Curve Intersections
-keywords: ['calculate', 'curve', 'intersections']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['calculate', 'curve', 'intersections']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

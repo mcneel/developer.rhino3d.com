@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Add Objects to a Group
+description: Demonstrates how to add selected objects to an object group.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/addobjectstogroup
-description: Demonstrates how to add selected objects to an object group.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

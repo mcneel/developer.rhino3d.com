@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Plugin Installers (Windows)
+description: unset
 author: brian@mcneel.com
-categories: ['GettingStarted']
-platforms: ['Windows']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['first', 'RhinoCommon', 'Plugin', 'installing']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['GettingStarted']
 origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/authoring
 order: 6
+keywords: ['first', 'RhinoCommon', 'Plugin', 'installing']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 

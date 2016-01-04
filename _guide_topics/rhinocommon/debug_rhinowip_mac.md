@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Debug in RhinoWIP (Mac)
+description: unset
 author: dan@mcneel.com
-categories: ['Advanced']
-platforms: ['Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['first', 'RhinoCommon', 'Plugin', 'RhinoWIP']
+platforms: ['Mac']
+categories: ['Advanced']
 origin: unset
 order: 1
+keywords: ['first', 'RhinoCommon', 'Plugin', 'RhinoWIP']
+layout: toc-guide-page
 ---
 
 # Debug in RhinoWIP (Mac)

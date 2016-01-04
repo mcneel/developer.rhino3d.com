@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Divide Curve by Segments
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Divide Curve by Segments
-keywords: ['divide', 'curve', 'segments']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['divide', 'curve', 'segments']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

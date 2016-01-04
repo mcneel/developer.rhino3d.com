@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Move Selected Objects to Current Layer
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Move Selected Objects to Current Layer
-keywords: ['move', 'selected', 'objects', 'current', 'layer']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Layers']
-description:
+origin: unset
 order: 1
+keywords: ['move', 'selected', 'objects', 'current', 'layer']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Style Guide
+description: unset
 author: dan@mcneel.com
-categories: ['General']
-platforms: ['Mac', 'Windows']
 apis: ['Developer Docs', 'Jekyll', 'Liquid']
 languages: ['Markdown']
-keywords: ['style', 'guide']
+platforms: ['Mac', 'Windows']
+categories: ['General']
 origin: unset
 order: 3
+keywords: ['style', 'guide']
+layout: toc-guide-page
 ---
 
 <a id="top"></a> <!-- this is just a sample anchor -->

@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Distance on a Curve from a Point
+description: unset
 author: dale@mcneel.com
-categories: ['Miscellaneous', 'Advanced']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Miscellaneous', 'Advanced']
 origin: http://wiki.mcneel.com/developer/scriptsamples/curvearclengthpoint
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # Distance on a Curve from a Point

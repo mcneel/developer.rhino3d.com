@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Rhino Installer Engine
+description: unset
 author: brian@mcneel.com
-categories: ['General']
-platforms: ['Cross-Platform']
 apis: ['General']
 languages: ['All']
-keywords: ['developer', 'rhino', 'installer']
-TODO: 'needs porting'
+platforms: ['Cross-Platform']
+categories: ['General']
 origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/overview
 order: 6
+keywords: ['developer', 'rhino', 'installer']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 

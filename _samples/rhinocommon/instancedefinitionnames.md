@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Instance Definition Names
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Instance Definition Names
-keywords: ['instance', 'definition', 'names']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['instance', 'definition', 'names']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

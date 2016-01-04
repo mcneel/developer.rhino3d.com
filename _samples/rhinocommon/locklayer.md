@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Lock a Layer
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Lock a Layer
-keywords: ['lock', 'layer']
+platforms: ['Cross-Platform']
 categories: ['Blocks', 'Layers']
-description:
+origin: unset
 order: 1
+keywords: ['lock', 'layer']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

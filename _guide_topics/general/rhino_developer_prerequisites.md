@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Developer Prerequisites
+description: unset
 author: dan@mcneel.com
-categories: ['General']
-platforms: ['Cross-Platform']
 apis: ['General']
 languages: ['All']
-keywords: ['developer', 'rhino']
+platforms: ['Cross-Platform']
+categories: ['General']
 origin: http://wiki.mcneel.com/developer/learningresources
 order: 1
+keywords: ['developer', 'rhino']
+layout: toc-guide-page
 ---
 
 

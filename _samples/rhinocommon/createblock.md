@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add a block definition
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add a block definition
-keywords: ['add', 'block', 'definition']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Blocks']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'block', 'definition']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

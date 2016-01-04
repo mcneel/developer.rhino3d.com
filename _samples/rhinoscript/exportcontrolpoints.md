@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Export Curve Control Points
+description: Demonstrates how to export the 3D coordinates of a curve's control points to a text file using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to export the 3D coordinates of a curve's control points to a text file using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/exportcontrolpoints
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

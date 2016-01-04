@@ -85,7 +85,6 @@ The following samples have TODO items:
 
 ### Misc
 
-- Standardize yaml front-matter across all entries.
 - Standardize file names (underscores, verbiage, length, etc).
 - Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.

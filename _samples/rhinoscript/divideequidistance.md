@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Divide a curve using equi-distance points
+description: Demonstrates equi-distance curve division using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates equi-distance curve division using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/divideequidistance
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

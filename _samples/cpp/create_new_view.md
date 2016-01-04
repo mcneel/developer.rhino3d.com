@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Create New View
+description: Demonstrates how to create a new view that has the properties of an existing view.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/newview
-description: Demonstrates how to create a new view that has the properties of an existing view.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

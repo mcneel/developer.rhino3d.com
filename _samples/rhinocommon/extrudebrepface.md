@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Extrude Brep Face
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Extrude Brep Face
-keywords: ['extrude', 'brep', 'face']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['extrude', 'brep', 'face']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

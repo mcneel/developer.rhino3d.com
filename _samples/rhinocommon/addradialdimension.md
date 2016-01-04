@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Create Radial Dimensions
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Create Radial Dimensions
-keywords: ['create', 'radial', 'dimensions']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['create', 'radial', 'dimensions']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

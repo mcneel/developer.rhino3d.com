@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Matching Object Attributes
+description: Demonstrates a custom object attribute matching function in RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates a custom object attribute matching function in RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/matchobjectattributesex
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

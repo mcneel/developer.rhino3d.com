@@ -1,14 +1,15 @@
 ---
-layout: bootstrap
 title: Hacking and Testing latest Atom rhino-python package
+description: unset
 author: alain@mcneel.com
-categories: ['General']
-platforms: ['Mac']
 apis: ['RhinoPython']
 languages: ['Markdown', 'Kramdown', 'YAML']
-keywords: ['hacking', 'atom', 'rhino-python']
+platforms: ['Mac']
+categories: ['General']
 origin: unset
 order: 1
+keywords: ['hacking', 'atom', 'rhino-python']
+layout: bootstrap
 ---
 
 # Running and Testing the Atom rhino-python package from source.  

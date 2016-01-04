@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Two View Layout
+description: Demonstrates how to create a two-view viewport layout.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/twoviewlayout
-description: Demonstrates how to create a two-view viewport layout.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Determine Rhino's Language Setting
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Determine Rhino's Language Setting
-keywords: ['determine', 'rhinos', 'language', 'setting']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['determine', 'rhinos', 'language', 'setting']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

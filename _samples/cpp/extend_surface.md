@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Extend Surface
+description: Demonstrates how to use RhinoExtendSurface() to extend a surface object.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/extendsurface
-description: Demonstrates how to use RhinoExtendSurface() to extend a surface object.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

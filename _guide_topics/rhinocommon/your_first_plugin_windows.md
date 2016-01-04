@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Your First Plugin (Windows)
+description: unset
 author: dan@mcneel.com
-categories: ['GettingStarted']
-platforms: ['Windows']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['first', 'RhinoCommon', 'Plugin']
+platforms: ['Windows']
+categories: ['GettingStarted']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addcommand
 order: 3
+keywords: ['first', 'RhinoCommon', 'Plugin']
+layout: toc-guide-page
 ---
 
 # Your First Plugin (Windows)

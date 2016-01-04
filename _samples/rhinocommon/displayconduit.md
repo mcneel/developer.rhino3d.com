@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Display Conduit Introduction for RhinoCommon
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Display Conduit Introduction for RhinoCommon
-keywords: ['display', 'conduit', 'introduction', 'rhinocommon']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['display', 'conduit', 'introduction', 'rhinocommon']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

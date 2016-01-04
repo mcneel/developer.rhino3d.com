@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Fibonacci Spirals
+description: Demonstrates how to create a Fibonacci Spiral with RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to create a Fibonacci Spiral with RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/fibonaccispiral
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

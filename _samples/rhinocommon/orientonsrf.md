@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Orient On Surface
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Orient On Surface
-keywords: ['orient', 'surface']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['orient', 'surface']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

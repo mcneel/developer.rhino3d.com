@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Wrapping Native Libraries
+description: unset
 author: dan@mcneel.com
-categories: ['Advanced']
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['Native', 'RhinoCommon', 'Plugin', 'Library', 'PInvoke']
+platforms: ['Cross-Platform']
+categories: ['Advanced']
 origin: unset
 order: 5
+keywords: ['Native', 'RhinoCommon', 'Plugin', 'Library', 'PInvoke']
+layout: toc-guide-page
 ---
 
 # Wrapping Native Libraries

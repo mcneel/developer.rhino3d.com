@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Enabling Orthogonal Mode
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Enabling Orthogonal Mode
-keywords: ['enabling', 'orthogonal', 'mode']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['enabling', 'orthogonal', 'mode']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

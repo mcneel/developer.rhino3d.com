@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Torus
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Torus
-keywords: ['add', 'torus']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'torus']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

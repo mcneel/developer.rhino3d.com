@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Get and Set the Active View
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Get and Set the Active View
-keywords: ['active', 'view']
+platforms: ['Cross-Platform']
 categories: ['Viewports and Views']
-description:
+origin: unset
 order: 1
+keywords: ['active', 'view']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

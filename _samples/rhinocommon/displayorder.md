@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Display Order
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Display Order
-keywords: ['display', 'order']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['display', 'order']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

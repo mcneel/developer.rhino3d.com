@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Convert Annotation Dots to Text
+description: Illustrates RhinoScript code that converts annotation dots to text object.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Illustrates RhinoScript code that converts annotation dots to text object.
 origin: http://wiki.mcneel.com/developer/scriptsamples/convertdotstotext
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

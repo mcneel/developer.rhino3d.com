@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Drawing Arrowheads in a Display Conduit
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Drawing Arrowheads in a Display Conduit
-keywords: ['drawing', 'arrowheads', 'display', 'conduit']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['drawing', 'arrowheads', 'display', 'conduit']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Mesh Boolean Difference
+description: Demonstrates how to use the RhinoMeshBooleanDifference function.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/meshbooleandifference
-description: Demonstrates how to use the RhinoMeshBooleanDifference function.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

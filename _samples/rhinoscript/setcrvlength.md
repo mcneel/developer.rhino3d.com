@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Setting the Length of a Curve
+description: Demonstrates how to set the length of a curve object using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to set the length of a curve object using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/setcrvlength
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Calculate Curve Intersections
+description: Demonstrates how to calculate the intersection of two curves and obtain their intersection points.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/intersectcurves
-description: Demonstrates how to calculate the intersection of two curves and obtain their intersection points.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp
