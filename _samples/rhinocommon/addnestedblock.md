@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Nested Block
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Nested Block
-keywords: ['add', 'nested', 'block']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Blocks']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'nested', 'block']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

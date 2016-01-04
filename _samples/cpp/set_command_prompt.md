@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Set Command Prompt
+description: Demonstrates how to set Rhino's command prompt text to show the progress of long processes.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/setcommandprompt
-description: Demonstrates how to set Rhino's command prompt text to show the progress of long processes.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

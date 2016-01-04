@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Splitting a File Path String
+description: Demonstrates how to break a file path string in to its components using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to break a file path string in to its components using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/splitpath
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

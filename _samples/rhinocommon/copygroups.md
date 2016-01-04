@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Duplicating Objects With Group
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Duplicating Objects With Group
-keywords: ['duplicating', 'objects', 'with', 'group']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['duplicating', 'objects', 'with', 'group']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

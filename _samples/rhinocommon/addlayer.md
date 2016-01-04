@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Layer
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Layer
-keywords: ['add', 'layer']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Layers']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'layer']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

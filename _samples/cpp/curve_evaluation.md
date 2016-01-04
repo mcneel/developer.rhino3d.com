@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Curve Evaluation
+description: Demonstrates how to evaluate a curve.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/crvevaluate
-description: Demonstrates how to evaluate a curve.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Reading Render Meshes
+description: unset
 author: dalelear@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
-keywords: ['openNURBS', 'reading', 'render', 'mesh']
+platforms: ['Cross-Platform']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/onrendermesh
 order: 1
+keywords: ['openNURBS', 'reading', 'render', 'mesh']
+layout: toc-guide-page
 ---
 
 # Reading Render Meshes

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Add Spherical Surface
+description: Demonstrates how to create a sphere using ON_RevSurface and add it to Rhino.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/addsphere
-description: Demonstrates how to create a sphere using ON_RevSurface and add it to Rhino.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

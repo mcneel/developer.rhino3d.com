@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Add a NURBS Curve to Rhino
+description: Demonstrates how to add a NURBS curve to Rhino using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to add a NURBS curve to Rhino using RhinoScript.
 origin: http://wiki.mcneel.com/developer/sdksamples/testnurbscurve
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

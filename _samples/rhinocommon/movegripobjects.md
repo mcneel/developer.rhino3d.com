@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Move Grip Objects
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Move Grip Objects
-keywords: ['move', 'grip', 'objects']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['move', 'grip', 'objects']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Matching Text Properties
+description: Demonstrates how to match text object properties in RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to match text object properties in RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/matchtext
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

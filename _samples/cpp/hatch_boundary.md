@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Hatch Boundary
+description: Demonstrates how to hatch a closed planar boundary.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/hatchcurve
-description: Demonstrates how to hatch a closed planar boundary.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

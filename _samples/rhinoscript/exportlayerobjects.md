@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Export Layer Objects
+description: Demonstrates how to export all objects by layer, with each layer exported to a new file using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to export all objects by layer, with each layer exported to a new file using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/exportlayerobjects
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Move Objects to the Current Layer
+description: Demonstrates how to iterate through the Rhino geometry table and modify the layer of selected objects.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/moveobjectstocurrentlayer
-description: Demonstrates how to iterate through the Rhino geometry table and modify the layer of selected objects.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

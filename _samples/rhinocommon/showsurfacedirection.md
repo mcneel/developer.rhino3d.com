@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Show Surface Direction
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Show Surface Direction
-keywords: ['show', 'surface', 'direction']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['show', 'surface', 'direction']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

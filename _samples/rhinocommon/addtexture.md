@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Texture
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Texture
-keywords: ['add', 'texture']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'texture']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

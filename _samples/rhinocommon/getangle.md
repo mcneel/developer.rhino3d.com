@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Interactively Pick an Angle
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Interactively Pick an Angle
-keywords: ['interactively', 'pick', 'angle']
+platforms: ['Cross-Platform']
 categories: ['Picking and Selection']
-description:
+origin: unset
 order: 1
+keywords: ['interactively', 'pick', 'angle']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Auto Label Objects
+description: Demonstrates how to automatically label objects using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to automatically label objects using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/autolabel
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Superfluous Knots
+description: unset
 author: dalelear@mcneel.com
-categories: ['Advanced']
-platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
-keywords: ['openNURBS', 'knots']
+platforms: ['Cross-Platform']
+categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/onsuperfluousknot
 order: 1
+keywords: ['openNURBS', 'knots']
+layout: toc-guide-page
 ---
 
 # Superfluous Knots

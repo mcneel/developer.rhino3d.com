@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Split Brep Edges
+description: Demonstrates how to split the edges of breps.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/splitedge
-description: Demonstrates how to split the edges of breps.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

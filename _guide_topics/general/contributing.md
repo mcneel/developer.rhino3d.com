@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Contributing
+description: unset
 author: dan@mcneel.com
-categories: ['General']
-platforms: ['Cross-Platform']
 apis: ['General']
 languages: ['All']
-keywords: ['developer', 'rhino']
-TODO: 'needs review'
+platforms: ['Cross-Platform']
+categories: ['General']
 origin: unset
 order: 6
+keywords: ['developer', 'rhino']
+layout: toc-guide-page
+TODO: 'needs review'
 ---
 
 

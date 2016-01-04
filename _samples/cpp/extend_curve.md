@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Extend Curve
+description: Demonstrates how to extend a curve by a line, arc or smooth extension until it intersects a collection of objects.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/extendcurve
-description: Demonstrates how to extend a curve by a line, arc or smooth extension until it intersects a collection of objects.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

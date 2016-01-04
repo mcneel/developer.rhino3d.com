@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Mesh Volume Centroid
+description: Demonstrates how to calculate the volume centroid of a mesh.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to calculate the volume centroid of a mesh.
 origin: http://wiki.mcneel.com/developer/scriptsamples/meshvolumecentroid
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

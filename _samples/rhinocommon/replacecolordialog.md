@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Replace Rhino's Color Picking Dialog
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Replace Rhino's Color Picking Dialog
-keywords: ['replace', 'rhinos', 'color', 'picking', 'dialog']
+platforms: ['Cross-Platform']
 categories: ['Picking and Selection']
-description:
+origin: unset
 order: 1
+keywords: ['replace', 'rhinos', 'color', 'picking', 'dialog']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

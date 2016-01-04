@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Determine Active Viewport
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Determine Active Viewport
-keywords: ['determine', 'active', 'viewport']
+platforms: ['Cross-Platform']
 categories: ['Viewports and Views']
-description:
+origin: unset
 order: 1
+keywords: ['determine', 'active', 'viewport']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: VBScript Err Objects
+description: unset
 author: dale@mcneel.com
-categories: ['Intermediate']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Intermediate']
 origin: http://wiki.mcneel.com/developer/scriptsamples/errobject
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # VBScript Err Objects

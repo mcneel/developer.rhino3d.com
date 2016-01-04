@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Split a Set of BReps with a Plane
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Split a Set of BReps with a Plane
-keywords: ['split', 'breps', 'with', 'plane']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['split', 'breps', 'with', 'plane']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

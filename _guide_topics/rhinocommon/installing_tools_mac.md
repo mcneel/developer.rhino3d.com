@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Installing Tools (Mac)
+description: unset
 author: dan@mcneel.com
-categories: ['GettingStarted']
-platforms: ['Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['first', 'RhinoCommon', 'Plugin']
+platforms: ['Mac']
+categories: ['GettingStarted']
 origin: unset
 order: 2
+keywords: ['first', 'RhinoCommon', 'Plugin']
+layout: toc-guide-page
 ---
 
 # Installing Tools (Mac)

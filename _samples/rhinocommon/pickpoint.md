@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Pick and Select Point Objects
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Pick and Select Point Objects
-keywords: ['pick', 'select', 'point', 'objects']
+platforms: ['Cross-Platform']
 categories: ['Picking and Selection', 'Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['pick', 'select', 'point', 'objects']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

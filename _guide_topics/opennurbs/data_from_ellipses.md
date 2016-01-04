@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Data from Ellipses
+description: unset
 author: dalelear@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
-keywords: ['openNURBS', 'Ellipses']
-TODO: 'needs porting'
+platforms: ['Cross-Platform']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/onellipse
 order: 1
+keywords: ['openNURBS', 'Ellipses']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Data from Ellipses

@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Creating a Skin (Windows)
+description: unset
 author: dale@mcneel.com
-categories: ['Advanced']
-platforms: ['Windows']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['skin', 'RAP', 'rhino', 'RhinoCommon']
+platforms: ['Windows']
+categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/rhinocommon/skin
 order: 2
+keywords: ['skin', 'RAP', 'rhino', 'RhinoCommon']
+layout: toc-guide-page
 ---
 
 # Creating a Skin (Windows)

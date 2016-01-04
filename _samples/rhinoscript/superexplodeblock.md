@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Exploding Block Instances
+description: Demonstrates how to explode an instance of a block using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to explode an instance of a block using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/superexplodeblock
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

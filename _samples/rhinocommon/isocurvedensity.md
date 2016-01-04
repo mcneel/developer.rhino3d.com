@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Adjusting Surface Isocurve Density
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Adjusting Surface Isocurve Density
-keywords: ['adjusting', 'surface', 'isocurve', 'density']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['adjusting', 'surface', 'isocurve', 'density']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

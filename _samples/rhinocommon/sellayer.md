@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Select objects on layer
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Select objects on layer
-keywords: ['select', 'objects', 'layer']
+platforms: ['Cross-Platform']
 categories: ['Picking and Selection', 'Adding Objects', 'Layers']
-description:
+origin: unset
 order: 1
+keywords: ['select', 'objects', 'layer']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

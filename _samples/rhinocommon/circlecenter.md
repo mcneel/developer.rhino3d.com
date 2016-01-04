@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Find Circles and their centers
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Find Circles and their centers
-keywords: ['find', 'circles', 'their', 'centers']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['find', 'circles', 'their', 'centers']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

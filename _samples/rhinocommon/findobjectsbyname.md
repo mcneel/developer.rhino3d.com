@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Find Objects by Name
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Find Objects by Name
-keywords: ['find', 'objects', 'name']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['find', 'objects', 'name']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

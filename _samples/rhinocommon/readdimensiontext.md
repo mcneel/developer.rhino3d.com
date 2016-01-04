@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Read Dimension Text
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Read Dimension Text
-keywords: ['read', 'dimension', 'text']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['read', 'dimension', 'text']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

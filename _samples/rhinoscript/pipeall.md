@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Multiple Pipe
+description: Demonstrates how to 'pipe' multiple curves at a time using RhinoScript.
 author: rajaa@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to 'pipe' multiple curves at a time using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/pipeall
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

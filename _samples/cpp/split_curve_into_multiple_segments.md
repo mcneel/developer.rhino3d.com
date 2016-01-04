@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Split Curve Into Multiple Segments
+description: Demonstrates how to split a curve into multiple curve segments.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/curvesplitter
-description: Demonstrates how to split a curve into multiple curve segments.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

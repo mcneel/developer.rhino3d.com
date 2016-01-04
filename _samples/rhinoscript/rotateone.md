@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Rotating an Object Around a Point
+description: Demonstrates how to rotate an object around the centroid of its bounding box using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to rotate an object around the centroid of its bounding box using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/rotateone
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

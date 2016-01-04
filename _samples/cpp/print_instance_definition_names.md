@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Print Instance Definition Names
+description: Demonstrates how to print the names of all instance definitions in the document.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/printinstancedefinitions
-description: Demonstrates how to print the names of all instance definitions in the document.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

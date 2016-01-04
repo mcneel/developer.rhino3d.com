@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Display Conduits
+description: unset
 author: dale@mcneel.com
-categories: ['Advanced']
-platforms: ['Windows']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['RhinoCommon', 'Display', 'Conduits', 'Rhino']
+platforms: ['Windows']
+categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/displayconduit
 order: 2
+keywords: ['RhinoCommon', 'Display', 'Conduits', 'Rhino']
+layout: toc-guide-page
 ---
 
 # Display Conduits

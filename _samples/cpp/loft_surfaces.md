@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Loft Surfaces
+description: Demonstrates how to use the CArgsRhinoLoft class and the RhinoSdkLoftSurface function.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/loft
-description: Demonstrates how to use the CArgsRhinoLoft class and the RhinoSdkLoftSurface function.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

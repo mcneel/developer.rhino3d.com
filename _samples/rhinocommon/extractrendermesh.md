@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Extract Render Mesh
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Extract Render Mesh
-keywords: ['extract', 'render', 'mesh']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['extract', 'render', 'mesh']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

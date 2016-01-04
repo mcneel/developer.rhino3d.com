@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: List IGES Export Schemes
+description: Demonstrates how to build a list of IGES export schemes using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to build a list of IGES export schemes using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/igeschemes
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

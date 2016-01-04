@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Select Points with a Specified Z Coordinate
+description: Demonstrates how to select point objects with a user-specified z coordinate using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to select point objects with a user-specified z coordinate using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/selz
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Annotation Text
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Annotation Text
-keywords: ['add', 'annotation', 'text']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'annotation', 'text']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

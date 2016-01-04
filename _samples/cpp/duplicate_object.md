@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Duplicate Object
+description: Demonstrates how to make a copy of a CRhinoObject-derived object.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/duplicateobject
-description: Demonstrates how to make a copy of a CRhinoObject-derived object.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

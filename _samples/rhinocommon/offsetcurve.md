@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Offset a Curve
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Offset a Curve
-keywords: ['offset', 'curve']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['offset', 'curve']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

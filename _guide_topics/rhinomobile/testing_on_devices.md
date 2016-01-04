@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Testing On Devices
+description: unset
 author: dan@mcneel.com
-categories: ['Fundamentals']
-platforms: ['iOS', 'Android']
 apis: ['RhinoMobile']
 languages: ['C#']
-keywords: ['RhinoMobile', 'iRhino 3D']
+platforms: ['iOS', 'Android']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/rhinomobile/devices_and_testing
 order: 7
+keywords: ['RhinoMobile', 'iRhino 3D']
+layout: toc-guide-page
 ---
 
 # Testing On Devices

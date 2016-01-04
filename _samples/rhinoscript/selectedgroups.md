@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Determining Selected Groups
+description: Demonstrates how to determine what object groups are selected usin RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to determine what object groups are selected usin RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/selectedgroups
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

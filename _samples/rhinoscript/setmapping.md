@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Set Flamingo nXt Object Mapping Properties
+description: Demonstrates how to set Flamingo nXt mapping properties for an object using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript', 'flamingo']
+platforms: ['Windows']
 categories: ['Flamingo']
-description: Demonstrates how to set Flamingo nXt mapping properties for an object using RhinoScript.
 origin: http://wiki.mcneel.com/flamingo/flamingosdk/setmapping
 order: 1
+keywords: ['rhinoscript', 'vbscript', 'flamingo']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

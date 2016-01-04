@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Linear Dimension
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Linear Dimension
-keywords: ['add', 'linear', 'dimension']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'linear', 'dimension']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

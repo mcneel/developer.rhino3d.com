@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Edit Text
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Edit Text
-keywords: ['edit', 'text']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['edit', 'text']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

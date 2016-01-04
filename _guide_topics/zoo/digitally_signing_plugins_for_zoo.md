@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Digitally Signing Zoo Plugins
+description: unset
 author: dale@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Windows']
 apis: ['Zoo']
 languages: ['BAT']
-keywords: ['Zoo', 'Plugin', 'Digital']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/digital-signatures/create-request
 order: 5
+keywords: ['Zoo', 'Plugin', 'Digital']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Digitally Signing Zoo Plugins

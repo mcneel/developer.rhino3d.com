@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Positioning Objects on a Surface
+description: Demonstrates how to positioning objects on a surface using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to positioning objects on a surface using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/positiononsrf
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

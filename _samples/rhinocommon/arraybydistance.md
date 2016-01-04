@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Array By Distance Command
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Array By Distance Command
-keywords: ['array', 'distance', 'command']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['array', 'distance', 'command']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

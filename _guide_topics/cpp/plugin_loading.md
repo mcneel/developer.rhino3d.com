@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Plugin Loading
+description: unset
 author: dale@mcneel.com
-categories: ['Miscellaneous']
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Miscellaneous']
 origin: http://wiki.mcneel.com/developer/sdksamples/loadlibraryex
 order: 1
+keywords: ['rhino']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Plugin Loading

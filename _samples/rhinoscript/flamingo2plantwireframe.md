@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Query plant wire-frame
+description: Demonstrates how to generate a wire-frame representation of a Flamingo 2.0 plant using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript', 'flamingo']
+platforms: ['Windows']
 categories: ['Flamingo']
-description: Demonstrates how to generate a wire-frame representation of a Flamingo 2.0 plant using RhinoScript.
 origin: http://wiki.mcneel.com/flamingo/flamingosdk/flamingo2plantwireframe
 order: 1
+keywords: ['rhinoscript', 'vbscript', 'flamingo']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

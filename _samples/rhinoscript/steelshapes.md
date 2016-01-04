@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Drawing Steel Shapes
+description: Demonstrates how to draw steel shapes using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to draw steel shapes using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/steelshapes
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

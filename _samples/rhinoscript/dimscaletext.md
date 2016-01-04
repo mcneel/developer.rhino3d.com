@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Scale Text by Dimension Scale
+description: Demonstrates how to properly scale text objects by the document's dimension scale in RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to properly scale text objects by the document's dimension scale in RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/dimscaletext
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

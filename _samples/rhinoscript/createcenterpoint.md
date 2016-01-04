@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Marking Center Points of Closed Curves
+description:  Demonstrates how to mark the center points of closed planar curves with a point object using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description:  Demonstrates how to mark the center points of closed planar curves with a point object using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/createcenterpoint
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

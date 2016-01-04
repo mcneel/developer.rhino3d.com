@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Failed to Create VBScript Error
+description: unset
 author: dale@mcneel.com
-categories: ['Miscellaneous', 'Troubleshooting']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Miscellaneous', 'Troubleshooting']
 origin: http://wiki.mcneel.com/developer/scriptsamples/vbsfailed
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # Failed to Create VBScript Error

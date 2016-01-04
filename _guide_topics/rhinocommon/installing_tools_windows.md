@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Installing Tools (Windows)
+description: unset
 author: steve@mcneel.com
-categories: ['GettingStarted']
-platforms: ['Windows']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['first', 'RhinoCommon', 'Plugin']
+platforms: ['Windows']
+categories: ['GettingStarted']
 origin: http://wiki.mcneel.com/developer/rhinocommon
 order: 1
+keywords: ['first', 'RhinoCommon', 'Plugin']
+layout: toc-guide-page
 ---
 
 # Installing Tools (Windows)

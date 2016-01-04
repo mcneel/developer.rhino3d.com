@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Sprite Drawing
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Sprite Drawing
-keywords: ['sprite', 'drawing']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['sprite', 'drawing']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

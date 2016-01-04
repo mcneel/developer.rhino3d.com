@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Insert Knot
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Insert Knot
-keywords: ['insert', 'knot']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['insert', 'knot']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Persistent Settings
+description: unset
 author: JessMaertterer
-categories: ['Miscellaneous', 'Advanced']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Miscellaneous', 'Advanced']
 origin: http://wiki.mcneel.com/developer/scriptsamples/persistentsettings
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # Persistent Settings

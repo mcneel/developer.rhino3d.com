@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Running Scripts from Macros
+description: unset
 author: dale@mcneel.com
-categories: ['Scripts', 'Macros', 'How To']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript', 'macros']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Scripts', 'Macros', 'How To']
 origin: http://wiki.mcneel.com/developer/scriptsamples/database
 order: 1
+keywords: ['script', 'Rhino', 'vbscript', 'macros']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Running Scripts from Macros

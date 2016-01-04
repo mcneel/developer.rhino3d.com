@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Setting a Viewport's Title
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Setting a Viewport's Title
-keywords: ['setting', 'viewports', 'title']
+platforms: ['Cross-Platform']
 categories: ['Viewports and Views']
-description:
+origin: unset
 order: 1
+keywords: ['setting', 'viewports', 'title']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Brep from Curve Bounding Box
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Brep from Curve Bounding Box
-keywords: ['brep', 'curve', 'bounding']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['brep', 'curve', 'bounding']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

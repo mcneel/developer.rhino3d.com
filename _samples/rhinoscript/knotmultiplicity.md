@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Knot Multiplicity
+description: Demonstrates how to determine curve and surface knot multiplicity using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to determine curve and surface knot multiplicity using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/knotmultiplicity
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

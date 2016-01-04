@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Isolate the Layers of Selected Objects
+description: Demonstrates how to isolate the layers of selected objects using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to isolate the layers of selected objects using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/isolatelayers
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Get and Set Active Viewport
+description: Demonstrates how to get and set the active view.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/setactiveview
-description: Demonstrates how to get and set the active view.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

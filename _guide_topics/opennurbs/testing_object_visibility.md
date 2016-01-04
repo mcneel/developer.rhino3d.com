@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Testing for Object Visibility
+description: unset
 author: dalelear@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Cross-Platform']
 apis: ['openNURBS']
 languages: ['C/C++']
-keywords: ['openNURBS', 'object', 'visibility']
+platforms: ['Cross-Platform']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/onisobjectvisible
 order: 1
+keywords: ['openNURBS', 'object', 'visibility']
+layout: toc-guide-page
 ---
 
 # Testing for Object Visibility

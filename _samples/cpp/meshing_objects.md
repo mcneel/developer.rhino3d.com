@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Meshing Objects
+description: Demonstrates how to mesh surface and polysurface objects using the RhinoMeshObjects function.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/meshobjects
-description: Demonstrates how to mesh surface and polysurface objects using the RhinoMeshObjects function.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

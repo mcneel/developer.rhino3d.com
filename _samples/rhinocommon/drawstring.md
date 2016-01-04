@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Dynamically Drawing Text Strings
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Dynamically Drawing Text Strings
-keywords: ['dynamically', 'drawing', 'text', 'strings']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['dynamically', 'drawing', 'text', 'strings']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

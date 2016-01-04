@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Is Planar Surface in Plane
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Is Planar Surface in Plane
-keywords: ['planar', 'surface', 'plane']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['planar', 'surface', 'plane']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

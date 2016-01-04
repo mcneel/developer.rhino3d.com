@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Determine if a Dynamic Array has been Dimensioned
+description: Demonstrates how to determine of a dynamic array has been dimensioned.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to determine of a dynamic array has been dimensioned.
 origin: http://wiki.mcneel.com/developer/scriptsamples/isupperbound
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

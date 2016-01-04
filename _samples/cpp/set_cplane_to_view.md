@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Set a CPlane to a View
+description: Demonstrates how to set the construction plane in the active viewport parallel to the view.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/cplaneview
-description: Demonstrates how to set the construction plane in the active viewport parallel to the view.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

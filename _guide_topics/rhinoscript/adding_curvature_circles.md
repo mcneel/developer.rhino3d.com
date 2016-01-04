@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Adding Curvature Circles
+description: unset
 author: dale@mcneel.com
-categories: ['Tasks', 'Analysis', 'Curves', 'Advanced']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Tasks', 'Analysis', 'Curves', 'Advanced']
 origin: http://wiki.mcneel.com/developer/scriptsamples/curvaturecircle
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # Adding Curvature Circles

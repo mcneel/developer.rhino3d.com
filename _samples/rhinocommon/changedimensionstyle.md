@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Change Dimension Style
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Change Dimension Style
-keywords: ['change', 'dimension', 'style']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['change', 'dimension', 'style']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Run a Rhino command from a Plugin
+description: unset
 author: dale@mcneel.com
-categories: ['Advanced']
-platforms: ['Windows', 'Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['RhinoCommon', 'Rhino', 'Command', 'Plugin']
+platforms: ['Windows', 'Mac']
+categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/runrhinocommandfromplugincommand
 order: 1
+keywords: ['RhinoCommon', 'Rhino', 'Command', 'Plugin']
+layout: toc-guide-page
 ---
 
 # Rhino commands from a Plugin

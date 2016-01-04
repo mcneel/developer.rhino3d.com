@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Duplicating Objects with Group
+description: unset
 author: dale@mcneel.com
-categories: ['Miscellaneous']
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Miscellaneous']
 origin: http://wiki.mcneel.com/developer/sdksamples/copygroups
 order: 1
+keywords: ['rhino']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Duplicating Objects with Group

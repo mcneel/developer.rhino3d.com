@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: VBScript Operators
+description: unset
 author: dale@mcneel.com
-categories: ['Basics']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Basics']
 origin: http://wiki.mcneel.com/developer/vbsoperators
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # VBScript Operators

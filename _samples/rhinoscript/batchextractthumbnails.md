@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Extracting Thumbnail Preview Images
+description: Demonstrates how to extract the thumbnail preview image from .3DM files using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to extract the thumbnail preview image from .3DM files using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/batchextractthumbnails
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

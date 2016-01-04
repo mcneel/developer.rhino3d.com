@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Dynamically Draw Geometry when Picking Points
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Dynamically Draw Geometry when Picking Points
-keywords: ['dynamically', 'draw', 'geometry', 'when', 'picking', 'points']
+platforms: ['Cross-Platform']
 categories: ['Draw', 'Picking and Selection']
-description:
+origin: unset
 order: 1
+keywords: ['dynamically', 'draw', 'geometry', 'when', 'picking', 'points']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: IsBrepBox Test
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: IsBrepBox Test
-keywords: ['isbrepbox', 'test']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['isbrepbox', 'test']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

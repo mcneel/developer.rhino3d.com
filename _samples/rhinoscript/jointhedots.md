@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Joining the Dots
+description: Demonstrates joining points into polylines in RhinoScript.
 author: Steven Janssen
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates joining points into polylines in RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/jointhedots
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

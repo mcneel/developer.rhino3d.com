@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Screen Capture All Viewports
+description: Demonstrates how to screen capture all the visible viewports to a file.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/screencapture
-description: Demonstrates how to screen capture all the visible viewports to a file.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

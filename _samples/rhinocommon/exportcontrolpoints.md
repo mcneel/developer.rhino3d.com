@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Export Control Points
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Export Control Points
-keywords: ['export', 'control', 'points']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['export', 'control', 'points']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

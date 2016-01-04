@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Scripting the Split Command
+description: Demonstrates how to script the Split command using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to script the Split command using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/splitbrep
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

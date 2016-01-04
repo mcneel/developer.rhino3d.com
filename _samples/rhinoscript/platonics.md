@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Generating Platonic and Archimedean Solids
+description: Demonstrates how to generate platonic and archimedean solids with RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to generate platonic and archimedean solids with RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/platonics
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

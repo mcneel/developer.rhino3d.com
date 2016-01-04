@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: C/C++ Zoo Plugins
+description: unset
 author: dale@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Windows']
 apis: ['Zoo']
 languages: ['C/C++']
-keywords: ['Zoo', 'Plugin']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/zoorhinoplugin
 order: 4
+keywords: ['Zoo', 'Plugin']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # C/C++ Zoo Plugins

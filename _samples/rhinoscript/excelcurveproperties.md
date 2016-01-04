@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Automating Curve Properties to Excel From RhinoScript
+description: Illustrates RhinoScript code that extracts curve properties into Excel.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Illustrates RhinoScript code that extracts curve properties into Excel.
 origin: http://wiki.mcneel.com/developer/scriptsamples/excelcurveproperties
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

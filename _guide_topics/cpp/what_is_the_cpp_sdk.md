@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: What is the C/C++ SDK?
+description: unset
 author: dale@mcneel.com
-categories: ['Overview']
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['c', 'C/C++', 'plugin']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Overview']
 origin: https://wiki.mcneel.com/developer/cplusplusplugins
 order: 1
+keywords: ['c', 'C/C++', 'plugin']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # What is the C/C++ SDK?

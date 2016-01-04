@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Create Bounding Polyline of a Mesh
+description: Demonstrates how to create a bounding polyline of a mesh object.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/dupmeshboundary
-description: Demonstrates how to create a bounding polyline of a mesh object.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

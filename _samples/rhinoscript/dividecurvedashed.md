@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Divide a curve into a dashed line
+description: Demonstrates how to chop up a curve into segments and spaces.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to chop up a curve into segments and spaces.
 origin: http://wiki.mcneel.com/developer/dividecurvedashed
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

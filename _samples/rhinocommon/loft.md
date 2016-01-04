@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Loft Surfaces
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Loft Surfaces
-keywords: ['loft', 'surfaces']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['loft', 'surfaces']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

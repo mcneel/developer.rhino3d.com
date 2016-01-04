@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Volume of Meshes
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Volume of Meshes
-keywords: ['volume', 'meshes']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['volume', 'meshes']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

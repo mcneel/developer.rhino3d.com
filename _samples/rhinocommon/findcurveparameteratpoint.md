@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Find Curve Parameter At Point
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Find Curve Parameter At Point
-keywords: ['find', 'curve', 'parameter', 'point']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['find', 'curve', 'parameter', 'point']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

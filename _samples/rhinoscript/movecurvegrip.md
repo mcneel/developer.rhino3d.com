@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Move Curve Grips
+description: Demonstrates how to move a curve's grips using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to move a curve's grips using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/movecurvegrip
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

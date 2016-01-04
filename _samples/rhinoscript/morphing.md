@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Morphing
+description: An example of how to morph a surface using RhinoScript.
 author: Stylianos Dritsas (dritsas@alum.mit.edu)
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: An example of how to morph a surface using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/morph
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

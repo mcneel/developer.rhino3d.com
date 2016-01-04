@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Modify an Object's Name
+description: Demonstrates how to modify an object's user-defined name.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/objectname
-description: Demonstrates how to modify an object's user-defined name.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

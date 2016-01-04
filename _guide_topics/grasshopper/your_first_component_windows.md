@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Your First Component (Windows)
+description: unset
 author: dan@mcneel.com
-categories: ['Overview']
-platforms: ['Windows']
 apis: ['Grasshopper']
 languages: ['C#', 'VB.NET']
-keywords: ['developer', 'grasshopper', 'components']
-TODO: 'needs to be written'
+platforms: ['Windows']
+categories: ['Overview']
 origin: unset
 order: 3
+keywords: ['developer', 'grasshopper', 'components']
+layout: toc-guide-page
+TODO: 'needs to be written'
 ---
 
 # Your First Component (Windows)

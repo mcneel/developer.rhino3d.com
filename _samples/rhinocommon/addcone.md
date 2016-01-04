@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Cone
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Cone
-keywords: ['add', 'cone']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'cone']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

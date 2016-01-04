@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Calculate Mesh Volume
+description: Demonstrates how to calculate the volumes of mesh objects.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/meshvolume
-description: Demonstrates how to calculate the volumes of mesh objects.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

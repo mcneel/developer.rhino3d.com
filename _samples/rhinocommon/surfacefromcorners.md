@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Surface from Corner Points
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Surface from Corner Points
-keywords: ['surface', 'corner', 'points']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['surface', 'corner', 'points']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Object Selection with Options
+description: unset
 author: steve@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Windows', 'Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['RhinoCommon', 'Object', 'Selection', 'Options']
+platforms: ['Windows', 'Mac']
+categories: ['Fundamentals']
 origin: https://wiki.mcneel.com/developer/rhinocommonsamples/getobjectoption
 order: 1
+keywords: ['RhinoCommon', 'Object', 'Selection', 'Options']
+layout: toc-guide-page
 ---
 
 # Object Selection with Options

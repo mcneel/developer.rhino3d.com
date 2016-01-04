@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Plugin Installers (Mac)
+description: unset
 author: dan@mcneel.com
-categories: ['GettingStarted']
-platforms: ['Mac']
 apis: ['RhinoCommon']
 languages: ['C#']
-keywords: ['first', 'RhinoCommon', 'Plugin', 'installing']
+platforms: ['Mac']
+categories: ['GettingStarted']
 origin: unset
 order: 6
+keywords: ['first', 'RhinoCommon', 'Plugin', 'installing']
+layout: toc-guide-page
 ---
 
 

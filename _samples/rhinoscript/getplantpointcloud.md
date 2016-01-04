@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Get Plant Points
+description: Demonstrates how get a list of points that represent a Flamingo nXt plant in RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript', 'flamingo']
+platforms: ['Windows']
 categories: ['Flamingo']
-description: Demonstrates how get a list of points that represent a Flamingo nXt plant in RhinoScript.
 origin: http://wiki.mcneel.com/flamingo/flamingosdk/getplantpointcloud
 order: 1
+keywords: ['rhinoscript', 'vbscript', 'flamingo']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

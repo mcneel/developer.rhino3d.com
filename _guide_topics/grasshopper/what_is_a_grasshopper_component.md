@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: What is a Grasshopper Component?
+description: unset
 author: steve@mcneel.com
-categories: ['Overview']
-platforms: ['Windows']
 apis: ['Grasshopper']
 languages: ['C#', 'VB.NET']
-keywords: ['developer', 'grasshopper', 'components']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Overview']
 origin: http://wiki.mcneel.com/developer/grasshopper/gha
 order: 1
+keywords: ['developer', 'grasshopper', 'components']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # What is a Grasshopper Component?

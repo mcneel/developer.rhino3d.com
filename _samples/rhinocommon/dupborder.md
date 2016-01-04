@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Duplicate borders of a surface
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Duplicate borders of a surface
-keywords: ['duplicate', 'borders', 'surface']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['duplicate', 'borders', 'surface']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Create Surface From Points and Knots
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Create Surface From Points and Knots
-keywords: ['create', 'surface', 'points', 'knots']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['create', 'surface', 'points', 'knots']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

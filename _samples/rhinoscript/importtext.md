@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Importing Text from a File
+description: Demonstrates how to import text from a file using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to import text from a file using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/importtext
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

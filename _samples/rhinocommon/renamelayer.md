@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Rename a Layer
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Rename a Layer
-keywords: ['rename', 'layer']
+platforms: ['Cross-Platform']
 categories: ['Layers']
-description:
+origin: unset
 order: 1
+keywords: ['rename', 'layer']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

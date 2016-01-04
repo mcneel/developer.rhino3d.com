@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Rotate Objects Around Center
+description: Demonstrates how rotate objects around the center point of their bounding box.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/rotatecenter
-description: Demonstrates how rotate objects around the center point of their bounding box.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

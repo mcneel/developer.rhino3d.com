@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Command Prompt Moves when Setting Language
+description: unset
 author: dale@mcneel.com
-categories: ['Miscellaneous']
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
-TODO: 'needs porting'
+platforms: ['Windows']
+categories: ['Miscellaneous']
 origin: http://wiki.mcneel.com/developer/sdksamples/language
 order: 1
+keywords: ['rhino']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 # Command Prompt Moves when Setting Language

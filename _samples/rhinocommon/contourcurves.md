@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Create Contour Curves
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Create Contour Curves
-keywords: ['create', 'contour', 'curves']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['create', 'contour', 'curves']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

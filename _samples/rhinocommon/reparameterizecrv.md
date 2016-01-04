@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Reparamemterize a Curve
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Reparamemterize a Curve
-keywords: ['reparamemterize', 'curve']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['reparamemterize', 'curve']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

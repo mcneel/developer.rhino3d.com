@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: RhinoCommon object plug-in user data
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: RhinoCommon object plug-in user data
-keywords: ['info', 'rhinocommon', 'object', 'plug-in', 'user', 'data']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['info', 'rhinocommon', 'object', 'plug-in', 'user', 'data']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

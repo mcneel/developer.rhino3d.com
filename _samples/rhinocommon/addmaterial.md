@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add a basic Material
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add a basic Material
-keywords: ['add', 'basic', 'material']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'basic', 'material']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

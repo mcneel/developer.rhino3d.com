@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Determine an Object's Layer Name
+description: Demonstrates how to determine a selected object's layer name using C++.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/objectlayer
-description: Demonstrates how to determine a selected object's layer name using C++.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

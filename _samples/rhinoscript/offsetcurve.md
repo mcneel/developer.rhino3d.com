@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Offsetting Curves Inside or Outside
+description: Demonstrates how to offset a curve using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to offset a curve using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/offsetcurve
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Curve Bounding Box (world and plane oriented)
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Curve Bounding Box (world and plane oriented)
-keywords: ['curve', 'bounding', 'world', 'plane', 'oriented']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['curve', 'bounding', 'world', 'plane', 'oriented']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

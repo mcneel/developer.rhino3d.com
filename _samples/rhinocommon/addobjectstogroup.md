@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Add Objects to Group
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Add Objects to Group
-keywords: ['add', 'objects', 'group']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['add', 'objects', 'group']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

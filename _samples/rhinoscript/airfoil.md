@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Importing Airfoil Shapes
+description: How to read point files that describe airfoils and create interpolated curves using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: How to read point files that describe airfoils and create interpolated curves using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/airfoil
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

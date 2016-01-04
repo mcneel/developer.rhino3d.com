@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Rename Object
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Rename Object
-keywords: ['rename', 'object']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['rename', 'object']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

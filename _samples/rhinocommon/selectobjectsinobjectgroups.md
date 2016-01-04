@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Select Objects in an Object's Groups
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Select Objects in an Object's Groups
-keywords: ['select', 'objects', 'groups']
+platforms: ['Cross-Platform']
 categories: ['Picking and Selection', 'Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['select', 'objects', 'groups']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-rhinoscript
 title: Splitting Curves into Multiple Segments
+description: Demonstrates how to split a curve into multiple segments using RhinoScript.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['rhinoscript', 'vbscript']
+platforms: ['Windows']
 categories: ['Uncategorized']
-description: Demonstrates how to split a curve into multiple segments using RhinoScript.
 origin: http://wiki.mcneel.com/developer/scriptsamples/curvesplitter
 order: 1
+keywords: ['rhinoscript', 'vbscript']
+layout: code-sample-rhinoscript
 ---
 
 ```vbnet

@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Pick Points
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Pick Points
-keywords: ['pick', 'points']
+platforms: ['Cross-Platform']
 categories: ['Picking and Selection']
-description:
+origin: unset
 order: 1
+keywords: ['pick', 'points']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

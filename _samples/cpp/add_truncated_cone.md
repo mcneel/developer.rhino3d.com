@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Add Truncated Cone
+description: Demonstrates how to create a truncated cone ON_BrepRevSurface and add it to Rhino.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/addtruncatedcone
-description: Demonstrates how to create a truncated cone ON_BrepRevSurface and add it to Rhino.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

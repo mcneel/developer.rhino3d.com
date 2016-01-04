@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Explode a Hatch
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Explode a Hatch
-keywords: ['explode', 'hatch']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['explode', 'hatch']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

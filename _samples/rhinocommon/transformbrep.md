@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Transform a Brep
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Transform a Brep
-keywords: ['transform', 'brep']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['transform', 'brep']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

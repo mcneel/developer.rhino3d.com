@@ -1,14 +1,15 @@
 ---
-layout: toc-guide-page
 title: Lengths of Curves
+description: unset
 author: dale@mcneel.com
-categories: ['Miscellaneous', 'Intermediate']
-platforms: ['Windows']
 apis: ['RhinoScript']
 languages: ['VBScript']
-keywords: ['script', 'Rhino', 'vbscript']
+platforms: ['Windows']
+categories: ['Miscellaneous', 'Intermediate']
 origin: http://wiki.mcneel.com/developer/scriptsamples/curvelength
 order: 1
+keywords: ['script', 'Rhino', 'vbscript']
+layout: toc-guide-page
 ---
 
 # Lengths of Curves

@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Intersect Curves with Meshes
+description: Demonstrates how to intersect a curve with a mesh.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/meshcurveintersect
-description: Demonstrates how to intersect a curve with a mesh.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

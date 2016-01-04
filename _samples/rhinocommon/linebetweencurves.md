@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Line Between Curves
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Line Between Curves
-keywords: ['line', 'between', 'curves']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['line', 'between', 'curves']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

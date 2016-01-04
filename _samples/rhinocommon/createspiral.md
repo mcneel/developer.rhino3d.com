@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Create Spiral
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Create Spiral
-keywords: ['create', 'spiral']
+platforms: ['Cross-Platform']
 categories: ['Other']
-description:
+origin: unset
 order: 1
+keywords: ['create', 'spiral']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

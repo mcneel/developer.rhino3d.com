@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Replacing a Hatch Object's Pattern
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Replacing a Hatch Object's Pattern
-keywords: ['replacing', 'hatch', 'objects', 'pattern']
+platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-description:
+origin: unset
 order: 1
+keywords: ['replacing', 'hatch', 'objects', 'pattern']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

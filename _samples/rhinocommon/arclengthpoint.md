@@ -1,14 +1,15 @@
 ---
-layout: code-sample-rhinocommon
+title: Find point on curve at distance
+description:
 author:
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-title: Find point on curve at distance
-keywords: ['find', 'point', 'curve', 'distance']
+platforms: ['Cross-Platform']
 categories: ['Curves']
-description:
+origin: unset
 order: 1
+keywords: ['find', 'point', 'curve', 'distance']
+layout: code-sample-rhinocommon
 ---
 
 ```cs

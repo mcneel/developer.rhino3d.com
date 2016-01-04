@@ -1,15 +1,15 @@
 ---
-layout: code-sample-cpp
 title: Pick Angle Interactively
+description: Demonstrates how to use the CRhinoGetAngle class to pick an angle.
 author: dale@mcneel.com
-platforms: ['Windows']
 apis: ['C/C++']
 languages: ['C/C++']
-keywords: ['rhino']
+platforms: ['Windows']
 categories: ['Unsorted']
 origin: http://wiki.mcneel.com/developer/sdksamples/getangle
-description: Demonstrates how to use the CRhinoGetAngle class to pick an angle.
 order: 1
+keywords: ['rhino']
+layout: code-sample-cpp
 ---
 
 ```cpp

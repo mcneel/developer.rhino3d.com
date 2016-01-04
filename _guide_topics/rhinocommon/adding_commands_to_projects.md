@@ -1,15 +1,16 @@
 ---
-layout: toc-guide-page
 title: Adding Commands to Projects
+description: unset
 author: dan@mcneel.com
-categories: ['Fundamentals']
-platforms: ['Cross-Platform']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB.NET']
-keywords: ['adding', 'RhinoCommon', 'commands', 'projects']
-TODO: 'needs porting'
+platforms: ['Cross-Platform']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addcommand
 order: 6
+keywords: ['adding', 'RhinoCommon', 'commands', 'projects']
+layout: toc-guide-page
+TODO: 'needs porting'
 ---
 
 
