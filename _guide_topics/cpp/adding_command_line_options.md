@@ -1,6 +1,6 @@
 ---
 title: Adding Command Line Options
-description: unset
+description: This guide discusses how to add a different type of command line options to a custom command.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -10,14 +10,92 @@ origin: http://wiki.mcneel.com/developer/sdksamples/commandlineoptions
 order: 1
 keywords: ['rhino']
 layout: toc-guide-page
-TODO: 'needs porting'
 ---
 
 # Adding Command Line Options
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+{{ page.description }}
+
+## Overview
+
+The Rhino C/C++ SDK has a number of CRhinoGet derived classes that you can use to interactively get information from the user.  Some of these classes include:
+
+- `CRhinoGetObject`: SDK user interface tool used to get objects.
+- `CRhinoGetPoint`:  SDK user interface tool used to get points.
+- `CRhinoGetString`: SDK user interface tool used to get strings.
+- `CRhinoGetNumber`: SDK user interface tool used to get floating point values.
+- `CRhinoGetInteger`: SDK user interface tool used to get integer values.
+- `CRhinoGetAngle`: SDK user interface tool used to get angles.
+- `CRhinoGetDistance`: SDK user interface tool used to get distances.
+- `CRhinoGetOption`: SDK user interface tool used to get command line options.
+
+Each `CRhinoGet` derived classes can, in addition to its primary function, prompt the user for additional options.  These options display on the command following the developer specified prompt, and appear as clickable hyperlinks.
+
+## Sample
+
+The following example code demonstrates how to add command line options to some user interaction.  In this example, we use the `CRhinoGetOption` class, which is only capable of displaying command line options.  But, we could have used any of the above `CRhinoGet` derived classes.
+
+```cpp
+CRhinoCommand::result CCommandTestOptions::RunCommand(const CRhinoCommandContext& context)
+{
+  CRhinoCommandOptionValue list_items[5];
+  list_items[0] = RHCMDOPTVALUE(L"Item0");
+  list_items[1] = RHCMDOPTVALUE(L"Item1");
+  list_items[2] = RHCMDOPTVALUE(L"Item2");
+  list_items[3] = RHCMDOPTVALUE(L"Item3");
+  list_items[4] = RHCMDOPTVALUE(L"Item4");
+
+  CRhinoGetOption go;
+  go.SetCommandPrompt( L"Command options" );
+  go.AcceptNothing();
+
+  for(;;)
+  {
+    go.ClearCommandOptions();
+
+    int nval_option_index = go.AddCommandOptionInteger(
+        RHCMDOPTNAME(L"Integer"), &m_nVal, L"integer value", 1, 99 );
+    int dval_option_index = go.AddCommandOptionNumber(
+        RHCMDOPTNAME(L"Double"), &m_dVal, L"double value", FALSE, 0.1, 99.9 );
+    int bval_option_index = go.AddCommandOptionToggle(
+        RHCMDOPTNAME(L"Boolean"), RHCMDOPTVALUE(L"False"), RHCMDOPTVALUE(L"True"),
+        m_bVal, &m_bVal );
+    int list_option_index = go.AddCommandOptionList( RHCMDOPTNAME(L"List"),
+        5, list_items, m_list_index );
+    int test_option_index = go.AddCommandOption( RHCMDOPTNAME(L"Test") );
+
+    CRhinoGet::result res = go.GetOption();
+
+    if( res == CRhinoGet::nothing )
+      break;
+
+    if( res == CRhinoGet::cancel )
+      return CRhinoCommand::cancel;
+
+    if( res != CRhinoGet::option )
+      return CRhinoCommand::failure;
+
+    const CRhinoCommandOption* option = go.Option();
+    if( !option )
+      return CRhinoCommand::failure;
+
+    int option_index = option->m_option_index;
+
+    if( option_index == nval_option_index )
+      continue; // nothing to do
+
+    if( option_index == dval_option_index )
+      continue; // nothing to do
+
+    if( option_index == bval_option_index )
+      continue; // nothing to do
+
+    if( option_index == list_option_index )
+    {
+      m_list_index = option->m_list_option_current;
+      continue;
+    }
+  }
+  return CRhinoCommand::success;
+}
+```
