@@ -16,8 +16,11 @@ layout: bootstrap
 
               <li>
 
-                <a href="{{ site.baseurl }}/guides/#{{ page.apis.first | handle | downcase | replace: ' ', '-' }}">{{ page.apis.first }}</a>
-
+                {% if page.apis.first == 'C/C++' %}
+                  <a href="{{ site.baseurl }}/guides/#cpp">C/C++</a>
+                {% else %}
+                  <a href="{{ site.baseurl }}/guides/#{{ page.apis.first | handle | downcase | replace: ' ', '-' }}">{{ page.apis.first }}</a>
+                {% endif %}
                 <ul class="nav nav-stacked">
 
                   <!-- Find the h1 handle for title -->
