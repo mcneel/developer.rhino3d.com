@@ -1,6 +1,6 @@
 ---
 title: Clear Undo and Redo Lists
-description: unset
+description: This brief guide demonstrates how to clear Rhino's Undo and Redo lists using C/C++.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -8,16 +8,27 @@ platforms: ['Windows']
 categories: ['Miscellaneous']
 origin: http://wiki.mcneel.com/developer/sdksamples/clearundo
 order: 1
-keywords: ['rhino']
+keywords: ['rhino', 'clear', 'undo', 'redo']
 layout: toc-guide-page
-TODO: 'needs porting'
 ---
 
 # Clear Undo and Redo Lists
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+{{ page.description }}
+
+## How To
+
+Rhino allows users to undo the most recent or several create, edit, or transform commands. If you are performing editing operations on large memory consuming objects, Rhino's undo list can quickly grow very large. When this happens, most Rhino users run the ClearUndo command to clear the undo list. It is also possible to clear the undo list from within a plug-in.
+
+The following sample code demonstrates how to clear Rhino's undo and redo lists...
+
+```cpp
+CRhinoCommand::result CCommandTest::RunCommand(
+        const CRhinoCommandContext& context
+        )
+{
+  RhinoApp().Print( L"Clearing undo and redo lists.\n" );
+  context.m_doc.ClearUndoRecords( true );
+  return CRhinoCommand::success;
+}
+```

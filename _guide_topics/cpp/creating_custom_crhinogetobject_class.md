@@ -1,19 +1,19 @@
 ---
-title: Barycentric Coordinates of a Quad
+title: Creating a Custom CRhinoGetObject Class
 description: unset
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Miscellaneous']
-origin: http://wiki.mcneel.com/developer/sdksamples/barycentric
+origin: http://wiki.mcneel.com/developer/sdksamples/customgeometryfilter
 order: 1
 keywords: ['rhino']
 layout: toc-guide-page
 TODO: 'needs porting'
 ---
 
-# Barycentric Coordinates of a Quad
+# Creating a Custom CRhinoGetObject Class
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>
