@@ -10,7 +10,7 @@ origin: http://wiki.mcneel.com/developer/rhino/5/sdkfeatures
 order: 1
 keywords: ['c', 'C/C++', 'plugin']
 layout: toc-guide-page
-TODO: 'needs review.  The original contained links to empty wiki entries."
+TODO: 'needs review and the original contained links to empty wiki entries.'
 ---
 
 # What's New?
