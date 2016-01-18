@@ -1,6 +1,6 @@
 ---
 title: Transforming Breps
-description: unset
+description: This brief guide demonstrates two ways of transforming Breps using C/C++
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -8,16 +8,86 @@ platforms: ['Windows']
 categories: ['Miscellaneous']
 origin: http://wiki.mcneel.com/developer/sdksamples/transformbrep
 order: 1
-keywords: ['rhino']
+keywords: ['rhino', 'transform', 'brep']
 layout: toc-guide-page
-TODO: 'needs porting'
+TODO: 'needs more explanatory content.'
 ---
 
 # Transforming Breps
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+{{ page.description }}
+
+## Samples
+
+### The Short Way
+
+```cpp
+CRhinoCommand::result CCommandTest::RunCommand( const CRhinoCommandContext& context )
+{
+  CRhinoGetObject go;
+  go.SetCommandPrompt( L"Select brep" );
+  go.SetGeometryFilter( ON::brep_object );
+  go.GetObjects(1,1);
+  if( go.CommandResult() != success )
+    return go.CommandResult();
+
+  CRhinoObjRef ref = go.Object(0);
+
+  // Simple translation transformation
+  ON_Xform xform;
+  xform.Translation( ON_3dVector(18,-18,-25) );
+
+  context.m_doc.TransformObject( ref, xform );
+  context.m_doc.Redraw();
+
+  return success;
+}
+```
+
+### The Long Way
+
+```cpp
+CRhinoCommand::result CCommandTest::RunCommand( const CRhinoCommandContext& context )
+{
+  CRhinoGetObject go;
+  go.SetCommandPrompt( L"Select brep" );
+  go.SetGeometryFilter( ON::brep_object );
+  go.GetObjects(1,1);
+  if( go.CommandResult() != success )
+    return go.CommandResult();
+
+  const CRhinoObjRef& ref = go.Object(0);
+  const CRhinoObject* obj = ref.Object();
+  if( !obj )
+    return failure;
+  const ON_Brep* brep = ref.Brep();
+  if( !brep )
+    return failure;
+  ON_Brep* dupe = brep->Duplicate();
+  if( !dupe )
+    return failure;
+
+  // Simple translation transformation
+  ON_Xform xform;
+  xform.Translation( ON_3dVector(18,-18,-25) );
+
+  if( !dupe->Transform( xform ) )
+  {
+    RhinoApp().Print( L"Unable to transform object.\n" );
+    delete dupe;
+    return failure;
+  }
+
+  ON_3dmObjectAttributes attribs = obj->Attributes();
+  context.m_doc.AddBrepObject( *dupe, &attribs );
+
+  // Since CRhinoDoc::AddBrepObject() make a copy of the input
+  // brep, we are responsible for deleting the original. Otherwise
+  // we will leak memory;
+  delete dupe;
+  // Delete the selected object
+  context.m_doc.DeleteObject( ref );
+  context.m_doc.Redraw();
+  return success;
+}
+```
