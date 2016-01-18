@@ -1,6 +1,6 @@
 ---
 title: Printing a Layer's Full Path
-description: unset
+description: This brief guide demonstrates now to obtain a layer's full path using C/C++.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -8,16 +8,53 @@ platforms: ['Windows']
 categories: ['Miscellaneous']
 origin: http://wiki.mcneel.com/developer/sdksamples/layerfullpath
 order: 1
-keywords: ['rhino']
+keywords: ['rhino', 'layer', 'printing']
 layout: toc-guide-page
-TODO: 'needs porting'
 ---
 
 # Printing a Layer's Full Path
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+{{ page.description }}
+
+## Problem
+
+You could like to print a layer's full path.  That is, if a layer "MyLayer"”" is nested, I would like to print out the nesting like this:
+
+`"GreatGrandParent / GrandParent / Parent / MyLayer"`
+
+## Solution
+
+The following sample function ought to do the trick:
+
+```cpp
+static ON_wString RhinoFullLayerPath( CRhinoDoc& doc, const CRhinoLayer& layer )
+{
+  ON_wString layer_path;
+
+  CRhinoLayerNode layer_node;
+  layer_node.Create(layer.m_layer_index, 2, 0, true );
+  if( layer_node.m_parent_count > 0 )
+  {
+    int i, layer_index = -1;
+    for( i = layer_node.m_parent_count - 1; i >= 0; i-- )
+    {
+      layer_index = layer_node.m_parent_list[i];
+      layer_path += doc.m_layer_table[layer_index].LayerName();
+      layer_path += L" / ";
+    }
+  }
+  layer_path += layer.LayerName();
+
+  return layer_path;
+}
+```
+
+You can use the function like this...
+
+```cpp
+CRhinoCommand::result CCommandTest::RunCommand( const CRhinoCommandContext& context )
+{
+  ON_wString s = RhinoFullLayerPath( context.m_doc, context.m_doc.m_layer_table.CurrentLayer() );
+  RhinoApp().Print( L"%s\n", s.Array() );
+  return CRhinoCommand::success;
+```
