@@ -1,6 +1,6 @@
 ---
 title: Mesh Types
-description: unset
+description: This brief guide discusses the types of meshes found in Rhino.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -8,16 +8,28 @@ platforms: ['Windows']
 categories: ['Miscellaneous']
 origin: http://wiki.mcneel.com/developer/sdksamples/meshtypes
 order: 1
-keywords: ['rhino']
+keywords: ['rhino', 'mesh']
 layout: toc-guide-page
-TODO: 'needs porting'
 ---
 
 # Mesh Types
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+{{ page.description }}
+
+## Which Mesh?
+
+There is an `ON_Brep::GetMeshes()` routine of the C/C++ SDK.  You might find that very adequate meshes can be pulled from this routine when specifying `ON::render_mesh`.  You may have also noticed that you can also run this routine with an enumeration for an "analysis mesh," a "default mesh," a "preview mesh," or "any mesh."
+
+What are the differences between all of these options?
+
+## Discussion
+
+Here is an overview of the mesh types:
+
+1. `ON::render_mesh` is a mesh for, obviously, rendering.  This rendering can be for shaded or rendered display. It can also be used by rendering plugins.  The quality of these meshes is controlled by the Meshes page in the Document Properties dialog, but can also be overridden on a per-object basis.
+1. `ON::analysis_mesh` is used by analysis modes, such as curvature, draft angle, environment map, and zebra.
+1. `ON::preview_mesh` is used when you use the Mesh command and poke the preview button - the pipeline needs a way to display preview meshes and this is it.
+1. `ON::default` mesh returns `ON::render_mesh` if it exists.  Otherwise it returns `ON::analysis_mesh` if it exists.
+1. `ON::any_mesh` is only used when we want delete all meshes at one time.
+
+**NOTE**: render and analysis meshes do not appear automatically.  Some command must trigger their creation, whether its just setting viewport for rendered display or running an analysis command.  The can also be generated from plugins that call SDK functions.
