@@ -1,6 +1,6 @@
 ---
 title: Light Attenuation
-description: unset
+description: This brief guide discusses light attenuation in Rhino.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -8,16 +8,58 @@ platforms: ['Windows']
 categories: ['Miscellaneous']
 origin: http://wiki.mcneel.com/developer/sdksamples/lightattenuation
 order: 1
-keywords: ['rhino']
+keywords: ['rhino', 'light']
 layout: toc-guide-page
-TODO: 'needs porting'
 ---
 
 # Light Attenuation
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+{{ page.description }}
+
+## Problem
+
+So you are interested in taking advantage `ON_Light::Attenuation` in your render plugin, and you need to clarify how you can use it.  Is the input vector supposed to represent the distance over which you want the light to attenuate to zero?
+
+## Solution
+
+Light attenuation determines how fast the light intensity decreases with distance from objects.
+
+The three coefficients to light attenuation are:
+
+1. Constant attenuation ($$C$$)
+1. Linear attenuation ($$L$$)
+1. Quadratic attenuation ($$Q$$)
+
+Thus, you could create the input vector as follows:
+
+```cpp
+ON_3dVector attenuation( C, L, Q );
+```
+
+**NOTE**: Rhino's user interface only uses constant attenuation so that adding a light reveals everything, no matter how far away the light source is from any given piece of geometry.
+
+## Types of Attenuation
+
+### Constant
+
+If you want constant attenuation, or:
+
+$$1 \over C$$
+
+then both $$L$$ and $$Q$$ must be $$0$$ and $$C > 0$$ (usually $$= 1.0$$).
+
+### Linear
+
+If you want linear attenuation:
+
+$$1 \over C + dL$$
+
+where $$d$$ = distance to light, then $$C$$ and $$L$$ vary and $$Q$$ must be $$0$$.
+
+### Quadratic
+
+If you want quadratic attenuation:
+
+$$1 \over C + dL + d^{2Q}$$
+
+then all 3 coefficients can and should vary.
