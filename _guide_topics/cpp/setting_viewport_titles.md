@@ -1,6 +1,6 @@
 ---
 title: Setting Viewport Titles
-description: unset
+description: This brief guide demonstrates how to set the title of a viewport using C/C++.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -8,16 +8,26 @@ platforms: ['Windows']
 categories: ['Miscellaneous']
 origin: http://wiki.mcneel.com/developer/sdksamples/setviewname
 order: 1
-keywords: ['rhino']
+keywords: ['rhino', 'viewport']
 layout: toc-guide-page
-TODO: 'needs porting'
 ---
 
 # Setting Viewport Titles
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+{{ page.description }}
+
+## Problem
+
+You would like to change the name, or title, or a viewport using the the Rhino C/C++ SDK.  For example, you would like to rename the "Front" viewport to say "Facade."
+
+## Solution
+
+To change the title of a viewport, use `CRhinoViewport::SetName`.  A Rhino view contains a "main viewport" that fills the entire view client window.  To get a view's main viewport, you can call `CRhinoView::MainViewport`.
+
+For example:
+
+```cpp
+CRhinoView* view = RhinoApp().ActiveView();
+if (view)
+  view->MainViewport().SetName("Facade");
+```
