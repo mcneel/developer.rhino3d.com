@@ -1,6 +1,6 @@
 ---
 title: Plugin Loading
-description: unset
+description: This guide discusses how Rhino loads C/C++ plugins.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -8,16 +8,45 @@ platforms: ['Windows']
 categories: ['Miscellaneous']
 origin: http://wiki.mcneel.com/developer/sdksamples/loadlibraryex
 order: 1
-keywords: ['rhino']
+keywords: ['rhino', 'plugins']
 layout: toc-guide-page
-TODO: 'needs porting'
+TODO: 'needs to be reviewed or consolidated with other plugin guides'
 ---
 
 # Plugin Loading
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+{{ page.description }}
+
+## Loading
+
+Rhino plugins are loaded twice.  The first time as follows:
+
+```cpp
+hModule = ::LoadLibraryEx(
+    lpFileName,
+    0,
+    DONT_RESOLVE_DLL_REFERENCES | LOAD_WITH_ALTERED_SEARCH_PATH
+    );
+```
+
+By using the `DONT_RESOLVE_DLL_REFERENCES` flag, the system does not call the plugin's `DllMain` for process and thread initialization and termination.  Also, the system does not load additional executable modules that are referenced by the specified module.  This allows Rhino to quickly verify the Rhino SDK version and that the proper plugin exports are available.
+
+The `LOAD_WITH_ALTERED_SEARCH_PATH` flag is used so `LoadLibraryEx` looks for dependent DLLs in the directory specified by `lpFileName`, not by *Rhino.exe*.
+
+The plugin module is freed as follows:
+
+```cpp
+::FreeLibrary( hModule );
+```
+
+If the above was successful, the plugin is loaded for a final time as follows:
+
+```cpp
+hModule = ::LoadLibraryEx(
+    lpFileName,
+    0,
+    LOAD_WITH_ALTERED_SEARCH_PATH
+    );
+```
+
+Again, the altered search path flag is used.
