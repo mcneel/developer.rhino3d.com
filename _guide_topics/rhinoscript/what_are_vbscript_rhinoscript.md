@@ -1,6 +1,6 @@
 ---
 title: What are VBScript and RhinoScript?
-description: unset
+description: This guide explains what VBScript and RhinoScript are.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -10,12 +10,12 @@ origin: http://wiki.mcneel.com/developer/vbsfundamentals
 order: 1
 keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
-TODO: 'needs porting'
+TODO: 'needs a bit more information to guide users through how to learn VBS.'
 ---
 
 # What are VBScript and RhinoScript?
 
-This guide explains what VBScript and RhinoScript are.
+{{ page.description }}
 
 ## Overview
 
@@ -23,12 +23,7 @@ VBScript (short for Visual Basic Scripting Edition) is an easy-to-use scripting 
 
 If you already know Visual Basic or Visual Basic for Applications (VBA), VBScript will be familiar. Even if you do not know Visual Basic, it should not take you long to get up-to-speed. VBScript is a relatively easy language to learn and use.
 
-RhinoScript is a plug-in for Rhino that implements active scripting. Besides providing support for VBScript, RhinoScript also runs as an OLE automation server that exposes the internal workings of Rhino to automation.
-
-*TODO*: Also port from:
-
-- [http://wiki.mcneel.com/developer/rhinoscript](http://wiki.mcneel.com/developer/rhinoscript)
-- [http://wiki.mcneel.com/developer/rhinoscript101](http://wiki.mcneel.com/developer/rhinoscript101)
+RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino, or automate repetitive tasks.  Besides providing support for VBScript, RhinoScript also runs as an OLE automation server that exposes the internal workings of Rhino to automation.
 
 ---
 
