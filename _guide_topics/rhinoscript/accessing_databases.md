@@ -1,6 +1,6 @@
 ---
 title: Accessing Databases
-description: unset
+description: This guide demonstrates how to access databases from VBScript using RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Accessing Databases
 
-This guide demonstrates how to access databases from VBScript using RhinoScript.
+{{ page.description }}
 
 ## Overview
 
