@@ -88,6 +88,8 @@ The following samples have TODO items:
 - Deprecate developer wiki - redirects, deprecated notices, etc.
 - Move Dev Docs guides into the General Section of the page.
 - Standardize file names (underscores, verbiage, length, etc).
+- Zoo API should be consolidated into categories in C/C++ and RhinoCommon respectively.
+- RDK API should be consolidated into categories in C/C++ and RhinoCommon respectively.
 - Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.
 - C/C++ Samples need to be categorized and organized.

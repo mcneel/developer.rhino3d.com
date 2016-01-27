@@ -24,7 +24,7 @@ When a customer attempts to add a product license to the Zoo, the product's plug
 
 ## Prerequisites
 
-Zoo plugins are .NET Framework 4.0 assemblies.  To create a plugins for Zoo 5, you need one of the following development tools:
+Zoo plugins are .NET Framework 4.0 assemblies.  To create a plugins for Zoo, you need one of the following development tools:
 
 1. Microsoft Visual C# 2010.
 1. Microsoft Visual Basic .NET 2010.

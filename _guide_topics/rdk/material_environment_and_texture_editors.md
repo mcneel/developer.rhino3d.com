@@ -6,13 +6,12 @@ apis: ['RDK']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Fundamentals']
-origin: http://wiki.mcneel.com/labs/rendererdevelopmentkit10
+origin: http://developer.rhino3d.com/files/rhino_rdk_documentation.pdf
 order: 4
 keywords: ['material', 'environment', 'texture', 'RDK']
 layout: toc-guide-page
 TODO: 'needs porting'
 ---
-
 
 # Material, Environment, and Texture Editors
 

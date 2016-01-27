@@ -10,7 +10,7 @@ origin: https://wiki.mcneel.com/developer/cplusplusplugins
 order: 1
 keywords: ['c', 'C/C++', 'plugin']
 layout: toc-guide-page
-TODO: 'needs porting'
+TODO: 'needs to be written'
 ---
 
 # What is the C/C++ SDK?
@@ -21,6 +21,10 @@ TODO: 'needs porting'
   In the meantime, you can view the original documentation here:
   <a href="{{ page.origin }}">{{ page.origin }}</a></p>
 </div>
+
+The Rhino C/C++ Software Development Kit (SDK) provides the tools to customize and extend Rhino for Windows with direct access to its database structures, geometry, graphics system, and command definitions, and much more.
+
+All of our development tools are free, royalty free, and include free support!
 
 Also port from [https://wiki.mcneel.com/developer/sdksamples/faq](https://wiki.mcneel.com/developer/sdksamples/faq)
 
