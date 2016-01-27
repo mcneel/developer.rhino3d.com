@@ -6,13 +6,12 @@ apis: ['RDK']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['GettingStarted']
-origin: http://wiki.mcneel.com/labs/rendererdevelopmentkit10
+origin: http://developer.rhino3d.com/files/rhino_rdk_documentation.pdf
 order: 3
 keywords: ['RDK', 'Rhino', 'Renderer', 'Development', 'Plugin']
 layout: toc-guide-page
 TODO: 'needs porting'
 ---
-
 
 # Your First Renderer Plugin (Windows)
 

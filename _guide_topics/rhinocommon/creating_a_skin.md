@@ -1,6 +1,6 @@
 ---
 title: Creating a Skin (Windows)
-description: unset
+description: This guide outlines the tools for RhinoCommon developers to wrap their application around Rhino by creating custom Skin.  Custom skins are supported on Windows only.
 author: dale@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -14,11 +14,11 @@ layout: toc-guide-page
 
 # Creating a Skin (Windows)
 
-This guide outlines the tools for RhinoCommon developers to wrap their application around Rhino by creating custom Skin.  Custom skins are supported on Windows only.
+{{ page.description }}
 
 ## Overview
 
-Rhino allows developers to customize most of Rhino's interface so that the application appears to be their own.  We call this a custom **Skin**.  With a custom Skin, you can change the application icon, splash screen, the application name etc.
+Rhino allows developers to customize most of Rhino's interface so that the application appears to be their own.  We call this a custom *Skin*.  With a custom Skin, you can change the application icon, splash screen, the application name etc.
 
 Creating a custom Skin for Rhino involves creating a custom skin assembly:
 
