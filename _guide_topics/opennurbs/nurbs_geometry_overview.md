@@ -1,6 +1,6 @@
 ---
 title: NURBS Geometry Overview
-description: unset
+description: This guide is brief overview of NURBS geometry from a mathematical and technical perspective.
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['All']
@@ -10,13 +10,12 @@ origin: http://wiki.mcneel.com/developer/ongeometry
 order: 3
 keywords: ['developer', 'rhino', 'NURBS', 'geometry']
 layout: toc-guide-page
-TODO: 'needs porting'
 ---
 
 
 # NURBS Geometry Overview
 
-This guide is brief overview of NURBS geometry from a mathematical and technical perspective.
+{{ page.description }}
 
 ## What is NURBS Geometry?
 

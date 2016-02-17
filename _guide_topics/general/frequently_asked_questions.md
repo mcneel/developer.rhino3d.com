@@ -10,7 +10,6 @@ origin: http://wiki.mcneel.com/developer/scriptspage
 order: 4
 keywords: ['developer', 'rhino', 'faq']
 layout: toc-guide-page
-TODO: 'needs porting'
 ---
 
 
@@ -28,4 +27,11 @@ Yes...even using [the same code]({{ site.baseurl }}/guides/rhinocommon/what_is_r
 
 Mono is an open-source version of Microsoft's .NET runtime that runs on Linux, Mac OS X, iOS, and Android.  Check out the [What are Mono and Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/) guide for more information.
 
-Also port from: [http://wiki.mcneel.com/developer/scriptspage](http://wiki.mcneel.com/developer/scriptspage)
+**What are Macros?**
+Macros are string of Rhino commands and command options that allow you to create an automated sequence of operations.  This macro (sequence) can then be repeated at the push of a toolbar button or by typing an alias.
+
+**What are Scripts?**
+For more complex tasks, macros are insufficient.  They lack the ability to make complex calculations, store and retrieve data, analyze that data and make conditional decisions, or reach deep into the inner workings of Rhino.  For this, one needs a real programming tool.  The simplest and most accessible of these is Python, which also includes its version of RhinoScript syntax.  When we talk about scripts we are usually referring to functions written with RhinoScript or Python.
+
+**What are Plugins?**
+Plugins are even more sophisticated tools: these are compiled computer programs that can be integrated into Rhino.  These can range from simple script-like functions to complex, full blown programs for doing rendering, animation, machining, etc.
