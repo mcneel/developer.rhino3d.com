@@ -94,6 +94,8 @@ The following samples have TODO items:
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.
 - C/C++ Samples need to be categorized and organized.
 - We could report samples that are not passing tests.
+- Standardize descriptions so they are only in the yaml.
+- Standardize titles so they are on in the yaml - requires reworking TOC generator.
 - Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
 - Move all samples to mcneel/github - in coordination with Dale Fugier
 - Link directly to samples on GitHub from gh-pages samples section for example: [https://github.com/mcneel/Rhino5Samples_CPP](https://github.com/mcneel/Rhino5Samples_CPP)
