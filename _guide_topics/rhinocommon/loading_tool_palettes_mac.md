@@ -7,32 +7,31 @@ languages: ['C#']
 platforms: ['Mac']
 categories: ['Fundamentals']
 origin: unset
-order: 4
+order: 7
 keywords: ['RhinoCommon', 'Tool', 'Palette', 'Collection', 'RUI']
 layout: toc-guide-page
-TODO: 'needs to be written'
 ---
 
 # Loading Tool Palettes (Mac)
 
 {{ page.description }}
 
-<div class="bs-callout bs-callout-danger">
-  <h4>WARNING</h4>
-  <p><b>Early-adopters</b>: This is a draft that is currently being revised...check back soon for updates.  The following instructions will <b>NOT</b> work with the currently released Rhinoceros (5.1).  You will need to use RhinoWIP version (5C133w) or later.</p>
-</div>
-
 ## Prerequisites
 
 This guide presumes that you have a RhinoCommon plugin that has commands that can be run from a tool palette.  In Rhino for Windows, this UI is normally stored in an *rui* file that includes the buttons, the icons, and their associated commands.  If you do not yet have a plugin, please begin with the [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac) guide.
+
+<div class="bs-callout bs-callout-danger">
+  <h4>WARNING</h4>
+  <p><b>Early-adopters</b>: The following instructions will <b>NOT</b> work with the currently released Rhinoceros (5.1).  You will need to use RhinoWIP version (5C133w) or later.</p>
+</div>
 
 ## Overview
 
 There are three steps in creating and loading a tool palette collection for your plugin in Rhino for Mac:  
 
-1. The first step is to [create a tool palette collection](#create-a-tool-palette-collection) that calls the appropriate commands - or to convert a Rhino for Windows *.rui* file - to *ToolPaletteCollection.plist* file.  
-1. The second step is to include this *.plist* in your plugin project as a resource.  
-1. The third and final step is to tell Rhino for Mac to load the tool palette from the appropriate file when your plugin is being loaded.
+1. The first step is to [create (or convert) a tool palette collection](#create-or-convert-a-tool-palette-collection) that calls the appropriate commands - or to convert a Rhino for Windows *.rui* file - to *ToolPaletteCollection.plist* file.  
+1. The second step is to [add this *.plist* in your plugin project](#add-the-palette-to-your-project) as a resource.  
+1. The third and final step is to tell Rhino for Mac to [load the tool palette from the appropriate file](#load-the-tool-palette) when your plugin is being loaded.
 
 ## Create or Convert A Tool Palette Collection
 
@@ -46,16 +45,35 @@ If you already have an existing *rui* file from Rhino for Windows, this job is e
 1. Enter the `TestEditToolPaletteCollection` command.  (You will need to type the entire command; it will not autocomplete).  This launches a developer tool similar to the Command Editor where tool palette collections can be created, organized, and saved to *plist* files...
 1. By default, the `TestEditToolPaletteCollection` editor presumes you have a Rhino for Windows *rui* file you would like to convert.  A finder window opens where you can navigate to the *rui* file to import.  
 1. If you do not have a Rhino for Windows *rui* file that you would like to convert, you will need to create your Tool Palette Collection "from scratch."  On the finder window, press *Cancel*.  An interface much like the [Command Editor](http://docs.mcneel.com/rhino/mac/help/en-us/index.htm#macpreferencesandsettings/commands.htm) window appears.  This is where you can create, configure, organize, and save your tool palette collection.
-1. Press the *+* (add) button in the *Palette Organizer*...
+1. Press the *+* (add) button in the *Palette Browser*...
 ![TestEditToolPaletteCollection]({{ site.baseurl }}/images/loading_tool_palettes_mac_01.png)
-1. TODO: Next step...
+1. An *Untitled* tool palette appears in the *Palette Browser* (upper left).  Click on the name of the *Untitled* palette and give your tool palette a name...
+![Name Tool Palette]({{ site.baseurl }}/images/loading_tool_palettes_mac_02.png)
+1. In the *Command Button Browser* (the area in the lower-left corner), click the *+* button to *add a new button*.  An *Untitled* button should appear.  Select it.
+![Add a button]({{ site.baseurl }}/images/loading_tool_palettes_mac_03.png)
+1. In the *Button Editor* (area at lower-right), you can configure your button.  Add a Text title, some Menu text, some informative tooltip, and - most importantly - the macro or command (from your plugin) that you wish to run when this button is clicked.
+![Button Editor]({{ site.baseurl }}/images/loading_tool_palettes_mac_04.png)
+1. You can drag new images onto the button icon displayed in the *Button Editor*.  Rhino for Mac prefers PDF icons as they will scale nicely between Retina and non-Retina displays.  If you do not have PDF assets for your icons, use 64 x 64 png images.
+![Add a PNG]({{ site.baseurl }}/images/loading_tool_palettes_mac_05.png)
+1. You may add as many buttons as you need to the *Command Button Browser*.  These are the buttons that can be added to Tool Palettes.
+1. With the tool palette you want to add buttons to, drag buttons from the *Command Button Browser* into the *Palette Contents* area (top, center)...
+![Add to Palette]({{ site.baseurl }}/images/loading_tool_palettes_mac_07.png)
+1. When you are satisfied with the contents of your tool palette(s), you can save your converted tool palette collection to a *plist* by clicking on the *Save* button in the lower-right corner of the *Command Editor* window.
+1. *NOTE*: Should you want to make changes to this tool palette collection, you can always reload the tool palette collection by re-running the `TestEditToolPaletteCollection` command and opening the *plist* file you created.  In order to add a menu to a tool palette button you must save and reload the tool palette in order for the menu to show up in the available menus.
 
 ### Convert RUI to plist
 
 1. Open Rhino - if it is not already open - and start a new modeling window.
 1. Enter the `TestEditToolPaletteCollection` command.  (You will need to type the entire command; it will not autocomplete).  This launches a developer tool similar to the Command Editor where tool palette collections can be created, organized, and saved to *plist* files...
 1. By default, the `TestEditToolPaletteCollection` editor presumes you have a Rhino for Windows *rui* file you would like to convert.  A finder window opens where you can navigate to the *rui* file to import.  Navigate to the folder containing your *rui*, select it, click *Open*.  Rhino for Mac imports this *rui* and uses it as a template.
-1. TODO: Next step...
+1. The contents of your *rui* should appear.  Notice that there is a *Modified Tool Palette* with the name of your toolbar(s)...
+![Imported RUI]({{ site.baseurl }}/images/loading_tool_palettes_mac_06.png)
+1. The buttons with their associated icons should appear in the *Command Button Browser* (the area in the lower-left corner).  If you select buttons in this area, you will notice their editable details appear in the *Button Editor* (area at lower-right).  
+1. You can drag new images onto the button icon displayed in the *Button Editor*.  Rhino for Mac prefers PDF icons as they will scale nicely between Retina and non-Retina displays.  If you do not have PDF assets for your icons, use 64 x 64 png images.
+1. With the tool palette you want to add buttons to, drag buttons from the *Command Button Browser* into the *Palette Contents* area (top, center)...
+![Add to Palette]({{ site.baseurl }}/images/loading_tool_palettes_mac_07.png)
+1. When you are satisfied with the contents of your tool palette(s), you can save your converted tool palette collection to a *plist* by clicking on the *Save* button in the lower-right corner of the *Command Editor* window.
+1. *NOTE*: Should you want to make changes to this tool palette collection, you can always reload the tool palette collection by re-running the `TestEditToolPaletteCollection` command and opening the *plist* file you created.  In order to add a menu to a tool palette button you must save and reload the tool palette in order for the menu to show up in the available menus.
 
 ## Add the Palette to your Project
 

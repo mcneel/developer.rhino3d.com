@@ -7,7 +7,7 @@ languages: ['C#']
 platforms: ['Mac']
 categories: ['Fundamentals']
 origin: unset
-order: 7
+order: 8
 keywords: ['first', 'RhinoCommon', 'Plugin', 'removing', 'uninstalling']
 layout: toc-guide-page
 ---
