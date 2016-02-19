@@ -10,7 +10,7 @@ origin: https://wiki.mcneel.com/developer/cplusplusplugins
 order: 2
 keywords: ['c', 'C/C++', 'plugin']
 layout: toc-guide-page
-TODO: 'needs porting'
+TODO: 'needs to be written.'
 ---
 
 # Installing Tools (Windows)
@@ -21,3 +21,23 @@ TODO: 'needs porting'
   In the meantime, you can view the original documentation here:
   <a href="{{ page.origin }}">{{ page.origin }}</a></p>
 </div>
+
+
+## Necessary Tools
+
+Microsoft Visual C++ 2010 for Rhino 5 for Windows 64-bit.
+Microsoft Visual C++ 2005 for Rhino 5 for Windows 32-bit and Rhino 4 for Windows.
+
+*Visual C++ 2008, 2012, 2013, and the Express Editions of Visual C++ will **not** work.*
+
+## Downloads
+
+- [Rhino 5 for Windows C++ SDK](http://download.rhino3d.com/rhino/5.0/sdk)
+- [Rhino 5 for Windows (Evaluation)](http://download.rhino3d.com/rhino/5.0/evaluation/download)
+- [Rhino 5 for Windows Service Release](http://www.rhino3d.com/download/rhino/5.0/sr)
+
+## Next Steps
+
+---
+
+## Related Topics

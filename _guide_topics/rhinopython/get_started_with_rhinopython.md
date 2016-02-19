@@ -10,6 +10,7 @@ origin: http://wiki.mcneel.com/developer/python
 order: 2
 keywords: ['Rhino.Python', 'Python']
 layout: toc-guide-page
+TODO: 'needs update, adding more resource links, etc.'
 ---
 
 # Getting Started

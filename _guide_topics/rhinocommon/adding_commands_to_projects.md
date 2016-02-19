@@ -1,6 +1,6 @@
 ---
 title: Adding Commands to Projects
-description: unset
+description: This brief guide demonstrates how to add additional commands to a RhinoCommon plugin project.
 author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'VB.NET']
@@ -10,15 +10,33 @@ origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addcommand
 order: 6
 keywords: ['adding', 'RhinoCommon', 'commands', 'projects']
 layout: toc-guide-page
-TODO: 'needs porting'
 ---
 
 
 # Adding Commands to Projects
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+{{ page.description }}
+
+## Problem
+
+The RhinoCommon Project Wizard ([Windows]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows/#rhinocommon-templates) or [Mac]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac/#install-the-rhino-add-in)) creates a skeleton plugin project with a single command.  However, plugins can contain more than one command.  How does one add additional commands to plugin projects?
+
+## Solution
+
+To add a new command to your RhinoCommon plugin project, you simply need to define a new class that inherits from `Rhino.Commands.Command`.
+
+An easy way to do this is to just use the *Empty RhinoCommmon Command* template. Here is how you do that:
+
+1. Make sure you have the RhinoCommon Project Wizard ([Windows]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows/#rhinocommon-templates) or [Mac]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac/#install-the-rhino-add-in)) installed.
+1. Launch *Visual Studio* (Windows) or *Xamarin Studio* (Mac) and open your plugin project.
+1. From *Visual Studio*, navigate to *Project* > *Add New Item* menu item.  From *Xamarin Studio*, right-click on the project name in the *Solution Explorer* and navigate to *Add* > *New File...*.
+1. Select the *Empty RhinoCommmon Command* template from the list of installed templates.
+1. Provide a unique file name that relates to the command you are adding.
+1. In *Visual Studio*, click the *Add* button.  In *Xamarin Studio*, click the *New* button.
+
+---
+
+## Related Topics
+
+- [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows)
+- [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac)
