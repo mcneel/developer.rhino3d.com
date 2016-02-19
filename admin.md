@@ -83,7 +83,7 @@ The following samples have TODO items:
 ### Misc
 
 - Set all origins that are unset in RhinoCommon samples (~158)
-- Deprecate developer wiki - add redirects
+- Deprecate developer wiki - [add redirects](https://wiki.mcneel.com/homepage?do=admin&page=redirect)
 - Move Dev Docs guides into the General Section of the page.
 - Standardize file names (underscores, verbiage, length, etc).
 - Entire Rhino.Python guides section needs complete reorganization and simplification.
