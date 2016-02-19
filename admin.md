@@ -7,16 +7,14 @@ order: 1
 
 # Administration
 
-This site is the _future home_ of developer.rhino3d.com.
-
 The goal of this site is to consolidate all the (now) scattered developer documentation into a single canonical site that is clear, easy-to-navigate, with consistent formatting and nomenclature.
 
 The sources of content-to-be-consolidated are:
 
-- [Rhino Developer wiki](http://wiki.mcneel.com/developer/home)
-- [RhinoCommon API references](http://4.rhino3d.com/5/rhinocommon/)
+- <strike>Rhino Developer wiki</strike>
+- [RhinoCommon API references](http://4.rhino3d.com/5/rhinocommon/)...underway
 - [C++ SDK API references](http://4.rhino3d.com/5/rhinocppsdk/idx.html)
-- [RhinoCommon samples on GitHub](https://github.com/mcneel/rhinocommon/tree/master/examples)
+- <strike>RhinoCommon samples on GitHub</strike>
 - [DaleF's CsCommands](https://github.com/dalefugier/SampleCsCommands/)
 - [Doxygen Docs (on McNeel intranet)](http://phab.mcneel.com/docs/rhino/6/rhinocommon/)
 - Dale Lear's Developer Meeting Notes
@@ -65,7 +63,6 @@ The following guides have TODO items:
   </ol>
 </div>
 
-
 ### Samples
 
 The following samples have TODO items:
@@ -85,7 +82,8 @@ The following samples have TODO items:
 
 ### Misc
 
-- Deprecate developer wiki - redirects, deprecated notices, etc.
+- Set all origins that are unset in RhinoCommon samples (~158)
+- Deprecate developer wiki - add redirects
 - Move Dev Docs guides into the General Section of the page.
 - Standardize file names (underscores, verbiage, length, etc).
 - Entire Rhino.Python guides section needs complete reorganization and simplification.
