@@ -10,6 +10,7 @@ origin: http://wiki.mcneel.com/developer/python
 order: 3
 keywords: ['Rhino.Python', 'Python']
 layout: toc-guide-page
+TODO: 'needs reorganization with regard to other guides'
 ---
 
 # APIs Available to Python

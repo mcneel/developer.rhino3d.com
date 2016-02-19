@@ -50,7 +50,7 @@ The sources of content-to-be-consolidated are:
 
 ### Guides
 
-The following guides have TODO items.  Most are stubbed, but not yet ported...
+The following guides have TODO items:
 
 {% assign guides = site.guide_topics | sort:"title" | sort:"apis" %}
 <div class="trigger">
@@ -88,6 +88,7 @@ The following samples have TODO items:
 - Deprecate developer wiki - redirects, deprecated notices, etc.
 - Move Dev Docs guides into the General Section of the page.
 - Standardize file names (underscores, verbiage, length, etc).
+- Entire Rhino.Python guides section needs complete reorganization and simplification.
 - Zoo API should be consolidated into categories in C/C++ and RhinoCommon respectively.
 - RDK API should be consolidated into categories in C/C++ and RhinoCommon respectively.
 - Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
@@ -102,3 +103,5 @@ The following samples have TODO items:
 - Re-capture images on retina display and replace them
 - What, Where, How, Why table on [homepage]({{ site.baseurl }}) does not work on iOS's Safari.  Fix it.
 - Page width resizes each time templates are switched.  This is annoying.
+- Add bylines to guides footer or some template?
+- Update openNURBS links here: https://www.rhino3d.com/opennurbs

@@ -21,8 +21,6 @@ This guide explains how to create a plugin installer for Rhino for Mac, which pr
 
 Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins is very easy.  You simply rename your plugin's containing *folder* with an special extension (*.rhp*), compress the folder, and change the extension from *.zip* to *.macrhi*.  Once this is done, you can double-click the archive and Rhino will launch and install the plugin.  You can also drag the *.macrhi* onto the dock icon of a running instance of Rhino and it will install the plugin as well.  You will, in any case, need to Quit an Restart Rhino for the plugin to activate.
 
----
-
 ## Step-by-Step
 
 1. **Locate** your plugin folder in **Finder**.  Let's imagine our plugin is called **HelloRhinoCommon** and we have built it for **Release**...
@@ -43,8 +41,6 @@ Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins
 1. If Rhino for Mac is *not* currently open, **double-click the** ***.macrhi*** **archive** to launch and install the plugin...
    ![plugin_loaded]({{ site.baseurl }}/images/plugin_installer_mac_06.png)
 1. Click **OK** then **Quit** and **Restart** Rhino.  Your plugin should load.
-
----
 
 ## Behind the Scenes
 
@@ -68,8 +64,6 @@ To make your Library visible in the Finder:
 1. Press **Command-J** to bring up the **Finder View** options dialog...
 ![finder_view_options]({{ site.baseurl }}/images/finder_view_options.png)
 1. Check the **Show Library Folder** check box.  Now your Library should show up in the view.  You may want to drag this folder to your Favorites area of the Finder sidebar for easy access later.
-
----
 
 ## Related topics
 

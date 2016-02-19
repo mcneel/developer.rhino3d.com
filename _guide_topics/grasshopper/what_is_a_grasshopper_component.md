@@ -10,7 +10,7 @@ origin: http://wiki.mcneel.com/developer/grasshopper/gha
 order: 1
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
-TODO: 'needs porting'
+TODO: 'needs to be written.  Draw upon sources from origin, but most things are out-of-date'
 ---
 
 # What is a Grasshopper Component?
