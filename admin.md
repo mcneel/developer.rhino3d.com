@@ -102,4 +102,3 @@ The following samples have TODO items:
 - What, Where, How, Why table on [homepage]({{ site.baseurl }}) does not work on iOS's Safari.  Fix it.
 - Page width resizes each time templates are switched.  This is annoying.
 - Add bylines to guides footer or some template?
-- Update openNURBS links here: https://www.rhino3d.com/opennurbs
