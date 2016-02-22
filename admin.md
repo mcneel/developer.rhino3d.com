@@ -83,7 +83,6 @@ The following samples have TODO items:
 ### Misc
 
 - Move Dev Docs guides into the General Section of the page.
-- RDK API should be consolidated into categories in C/C++ and RhinoCommon respectively.
 - Set all origins that are unset in RhinoCommon samples (~158)
 - Deprecate developer wiki - [add redirects](https://wiki.mcneel.com/homepage?do=admin&page=redirect)
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.

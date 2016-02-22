@@ -1,19 +1,19 @@
 ---
-title: Installing Tools (Windows)
+title: Your First Renderer Plugin (Windows)
 description: unset
 author: andy@mcneel.com
-apis: ['RDK']
+apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['GettingStarted']
+categories: ['RDK']
 origin: http://developer.rhino3d.com/files/rhino_rdk_documentation.pdf
-order: 2
+order: 3
 keywords: ['RDK', 'Rhino', 'Renderer', 'Development', 'Plugin']
 layout: toc-guide-page
 TODO: 'needs porting'
 ---
 
-# Installing Tools (Windows)
+# Your First Renderer Plugin (Windows)
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

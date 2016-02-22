@@ -339,28 +339,6 @@ order: 2
 - [RhinoScript 101 Primer](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 - [VBScript User's Guide and Language Reference on MSDN](http://msdn.microsoft.com/en-us/library/t0aew7h6(VS.85).aspx)
 
-
----
-
-## RDK <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: #rdk }
-
-*Renderer plugin development in Rhino for Windows.*
-
-<div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
-  <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RDK' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
-
-
 ---
 
 ## RhinoMobile <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">

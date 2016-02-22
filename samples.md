@@ -241,19 +241,6 @@ order: 4
 
 ---
 
-## RDK <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: #rdk }
-
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>RDK samples have yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="http://wiki.mcneel.com/labs/rendererdevelopmentkit10">http://wiki.mcneel.com/labs/rendererdevelopmentkit10</a></p>
-</div>
-
-
----
-
 ## RhinoMobile <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
 {: #rhinomobile }
 

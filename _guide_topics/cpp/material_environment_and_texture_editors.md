@@ -1,19 +1,19 @@
 ---
-title: Your First Renderer Plugin (Windows)
+title: Material, Environment, and Texture Editors
 description: unset
 author: andy@mcneel.com
-apis: ['RDK']
+apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['GettingStarted']
+categories: ['RDK']
 origin: http://developer.rhino3d.com/files/rhino_rdk_documentation.pdf
-order: 3
-keywords: ['RDK', 'Rhino', 'Renderer', 'Development', 'Plugin']
+order: 4
+keywords: ['material', 'environment', 'texture', 'RDK']
 layout: toc-guide-page
 TODO: 'needs porting'
 ---
 
-# Your First Renderer Plugin (Windows)
+# Material, Environment, and Texture Editors
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>
