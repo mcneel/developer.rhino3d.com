@@ -263,15 +263,3 @@ order: 4
   In the meantime, you can view the samples on GitHub here:
   <a href="https://github.com/mcneel/RhinoMobileSamples">https://github.com/mcneel/RhinoMobileSamples</a></p>
 </div>
-
----
-
-## Zoo <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: #zoo }
-
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>Zoo Plugin samples have yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="http://wiki.mcneel.com/developer/zoo">http://wiki.mcneel.com/developer/zoo</a></p>
-</div>

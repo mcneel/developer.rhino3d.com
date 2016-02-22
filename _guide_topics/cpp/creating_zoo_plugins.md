@@ -1,19 +1,19 @@
 ---
-title: C/C++ Zoo Plugins
+title: Creating Zoo Plugins
 description: This guide discusses how to create plugins for Zoo using C/C++
 author: dale@mcneel.com
-apis: ['Zoo']
+apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Fundamentals']
+categories: ['Zoo']
 origin: http://wiki.mcneel.com/developer/zoorhinoplugin
-order: 4
+order: 1
 keywords: ['Zoo', 'Plugin']
 layout: toc-guide-page
-TODO: 'needs to be renamed to Creating Zoo Plugins when moved to cpp folder and compared to RhinoCommon version'
+TODO: 'needs to be compared to RhinoCommon version'
 ---
 
-# C/C++ Zoo Plugins
+# Creating Zoo Plugins
 
 {{ page.description }}
 

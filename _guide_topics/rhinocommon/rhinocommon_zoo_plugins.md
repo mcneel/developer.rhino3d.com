@@ -2,14 +2,15 @@
 title: RhinoCommon Zoo Plugins
 description: unset
 author: dale@mcneel.com
-apis: ['Zoo', 'RhinoCommon']
+apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
-categories: ['Advanced']
+categories: ['Zoo']
 origin: http://wiki.mcneel.com/developer/zoorhinocommonplugin
 order: 3
 keywords: ['Zoo', 'Plugin']
 layout: toc-guide-page
+TODO: 'needs to be compared with creating_zoo_plugins'
 ---
 
 # RhinoCommon Zoo Plugins

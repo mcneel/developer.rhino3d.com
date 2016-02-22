@@ -82,17 +82,15 @@ The following samples have TODO items:
 
 ### Misc
 
+- Move Dev Docs guides into the General Section of the page.
+- RDK API should be consolidated into categories in C/C++ and RhinoCommon respectively.
 - Set all origins that are unset in RhinoCommon samples (~158)
 - Deprecate developer wiki - [add redirects](https://wiki.mcneel.com/homepage?do=admin&page=redirect)
-- Move Dev Docs guides into the General Section of the page.
-- Standardize file names (underscores, verbiage, length, etc).
-- Entire Rhino.Python guides section needs complete reorganization and simplification.
-- Zoo API should be consolidated into categories in C/C++ and RhinoCommon respectively.
-- RDK API should be consolidated into categories in C/C++ and RhinoCommon respectively.
-- Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.
 - C/C++ Samples need to be categorized and organized.
-- We could report samples that are not passing tests.
+- Entire Rhino.Python guides section needs complete reorganization and simplification.
+- Standardize file names (underscores, verbiage, length, etc).
+- Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
 - Standardize descriptions so they are only in the yaml.
 - Standardize titles so they are on in the yaml - requires reworking TOC generator.
 - Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
@@ -102,3 +100,7 @@ The following samples have TODO items:
 - What, Where, How, Why table on [homepage]({{ site.baseurl }}) does not work on iOS's Safari.  Fix it.
 - Page width resizes each time templates are switched.  This is annoying.
 - Add bylines to guides footer or some template?
+- New favicon that reads better
+- Rhino plungin logo puzzle-piece should fit with Grasshopper addin puzzle-piece
+- Main site logo needs reconsideration
+- We could report samples that are not passing tests.

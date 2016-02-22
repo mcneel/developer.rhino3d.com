@@ -95,12 +95,14 @@ layout: fullwidth-page
     <td class="index_table_primary_use">"Skinning" Rhino for Windows.</td>  
   </tr>
   -->
+  <!--
   <tr>
     <td><a href="{{ site.baseurl }}/guides/#zoo" title="Zoo License Manager Plugins"> Zoo</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon" title="C#"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
     <td class="index_table_primary_use">Zoo license manager plugins on Windows</td>  
   </tr>
+  -->
   <tr>
     <td><a href="{{ site.baseurl }}/guides/#rhinomobile" title="Tools for using 3dm files in mobile applications"> RhinoMobile</a></td>
 	<td><img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="index_table_icon" title="Android"><img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="index_table_icon" title="Apple iOS"></td>

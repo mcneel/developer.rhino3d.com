@@ -76,6 +76,21 @@ order: 2
   </ul>
 </div>
 
+### Zoo
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'RhinoCommon' and topic.categories contains 'Zoo' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
 ---
 
 ## Rhino.Python <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
@@ -211,7 +226,6 @@ order: 2
   {% endfor %}
   </ul>
 </div>
-
 
 ---
 
@@ -359,27 +373,6 @@ order: 2
 - Your First App ([Windows]({{ site.baseurl }}/guides/rhinomobile/your_first_app_windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/your_first_app_mac/))
 - [Using Simulators]({{ site.baseurl }}/guides/rhinomobile/using_simulators/)
 - [Testing On Devices]({{ site.baseurl }}/guides/rhinomobile/testing_on_devices/)
-
----
-
-## Zoo <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
-{: #zoo }
-
-*Zoo license manager plugins in Rhino for Windows.*
-
-<div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
-  <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'Zoo' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
-
 
 ---
 

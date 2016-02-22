@@ -2,10 +2,10 @@
 title: What is a Zoo Plugin?
 description: unset
 author: dale@mcneel.com
-apis: ['Zoo']
+apis: ['RhinoCommon', 'C/C++']
 languages: ['All']
 platforms: ['Windows']
-categories: ['Overview']
+categories: ['Zoo']
 origin: http://wiki.mcneel.com/developer/zoowhat
 order: 1
 keywords: ['Zoo', 'Plugin']
