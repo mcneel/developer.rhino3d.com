@@ -72,7 +72,6 @@ The following samples have TODO items:
 
 ### Misc
 
-- Deprecate developer wiki - [add redirects](https://wiki.mcneel.com/homepage?do=admin&page=redirect)
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.
 - C/C++ Samples need to be categorized and organized.
 - Entire Rhino.Python guides section needs complete reorganization and simplification.
