@@ -33,18 +33,18 @@ Zoo plug-ins are .NET Framework 4.0 assemblies. Thus, to create a plug-in for Zo
 1. Microsoft Visual C# 2010
 1. Microsoft Visual Basic .NET 2010
 
-Also, all plug-ins that use the Zoo license system must be signed with an Authenticode certificate issued by McNeel Plugin Security. These certificates are free, but must be requested by each developer. Developers must agree to the Terms of Use before a certificate is issued. For more information on plug-in signing, see [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/zoo/digitally_signing_plugins_for_zoo).
+Also, all plug-ins that use the Zoo license system must be signed with an Authenticode certificate issued by McNeel Plugin Security. These certificates are free, but must be requested by each developer. Developers must agree to the Terms of Use before a certificate is issued. For more information on plug-in signing, see [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo).
 
 ---
 
 ## Next Steps
 
-Check out the [Creating Plugins for Zoo]({{ site.baseurl }}/guides/zoo/creating_plugins_for_zoo) guide for instructions building - your guessed it - a Zoo Plugin.
+Check out the [Creating Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/creating_plugins_for_zoo) guide for instructions building - your guessed it - a Zoo Plugin.
 
 
 ---
 
 ## Related Topics
 
-- [Creating Plugins for Zoo]({{ site.baseurl }}/guides/zoo/creating_plugins_for_zoo)
-- [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/zoo/digitally_signing_plugins_for_zoo)
+- [Creating Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/creating_plugins_for_zoo)
+- [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo)

@@ -35,7 +35,7 @@ Rhino C/C++ plug-ins are MFC dynamic link libraries.  Thus, to create a plugin f
 
 **NOTE**: Express Editions of Microsoft Visual Studio will not work, as they do not include MFC.
 
-Also, all plugins that use the Zoo license system must be signed with an *Authenticode* certificate issued by *McNeel Plugin Security*.  These certificates are free, but must be requested by each developer.  Developers must agree to the *Terms of Use* before a certificate is issued.  For more information on plugin signing, see [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/zoo/digitally_signing_plugins_for_zoo).
+Also, all plugins that use the Zoo license system must be signed with an *Authenticode* certificate issued by *McNeel Plugin Security*.  These certificates are free, but must be requested by each developer.  Developers must agree to the *Terms of Use* before a certificate is issued.  For more information on plugin signing, see [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo).
 
 ## Writing a Rhino Plugin
 
@@ -60,10 +60,10 @@ After you have built and tested your basic plugin, you can add licensing support
 1. Create one (and only one) static instance of your object.
 1. In your plugin's `CRhinoPlugIn::OnLoadPlugIn` member, call `CRhinoPlugIn::GetLicense` to get a license.
 1. Build your plugin.
-1. [Digitally sign your plugin](({{ site.baseurl }}/guides/zoo/digitally_signing_plugins_for_zoo)).
+1. [Digitally sign your plugin](({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo)).
 1. Launch Rhino and test your plugin.  When your plugin is loaded for the first time, you will be prompted to enter a license.
 
 ## Related Topics
 
-- [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/zoo/digitally_signing_plugins_for_zoo)
+- [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo)
 - [Sample Zoo Plugin Projects (on GitHub)](https://github.com/mcneel/Zoo5)

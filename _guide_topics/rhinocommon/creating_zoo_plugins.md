@@ -29,7 +29,7 @@ Zoo plugins are .NET Framework 4.0 assemblies.  To create a plugins for Zoo, you
 1. Microsoft Visual C# 2010.
 1. Microsoft Visual Basic .NET 2010.
 
-Also, all plugins that use the Zoo license system must be signed with an *Authenticode* certificate issued by *McNeel Plugin Security*.  These certificates are free, but must be requested by each developer.  Developers must agree to the *Terms of Use* before a certificate is issued.  For more information on plugin signing, see [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/zoo/digitally_signing_plugins_for_zoo).
+Also, all plugins that use the Zoo license system must be signed with an *Authenticode* certificate issued by *McNeel Plugin Security*.  These certificates are free, but must be requested by each developer.  Developers must agree to the *Terms of Use* before a certificate is issued.  For more information on plugin signing, see [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo).
 
 ## Writing a Zoo Plugin
 
@@ -42,7 +42,7 @@ The general steps required to create a Zoo plugin are:
 1. Create a new public class that inherits from the `IZooPlugin` interface.
 1. Implement the interface members.  (For detailed information about the interface members, see the sample Zoo plugin listed below.)
 1. Build your plugin.
-1. [Digitally sign your plugin](({{ site.baseurl }}/guides/zoo/digitally_signing_plugins_for_zoo)).
+1. [Digitally sign your plugin](({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo)).
 
 ## Installing a Zoo Plugin
 
@@ -55,5 +55,5 @@ Once you have built your Zoo plugin, you can install it and test it:
 
 ## Related Topics
 
-- [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/zoo/digitally_signing_plugins_for_zoo)
+- [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo)
 - [Sample Zoo Plugin Projects (on GitHub)](https://github.com/mcneel/Zoo5)
