@@ -28,19 +28,9 @@ The sources of content-to-be-consolidated are:
 
 ## Dev Docs Guides
 
-<div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
-  <ul>
-  <li><a class="page-link" href="https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/README.md">Getting Started with Dev Docs</a></li>
-  {% for topic in guides %}
-    {% if topic.apis contains 'Developer Docs' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
+- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/README.md)
+- [How This Site Works]({{ site.baseurl }}/guides/general/how_this_site_works)
+- [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer_docs_style_guide)
 
 ---
 
@@ -82,7 +72,6 @@ The following samples have TODO items:
 
 ### Misc
 
-- Move Dev Docs guides into the General Section of the page.
 - Set all origins that are unset in RhinoCommon samples (~158)
 - Deprecate developer wiki - [add redirects](https://wiki.mcneel.com/homepage?do=admin&page=redirect)
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.

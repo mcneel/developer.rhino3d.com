@@ -2,12 +2,12 @@
 title: How This Site Works
 description: A guide to how this very developer document site works.
 author: dan@mcneel.com
-apis: ['Developer Docs', 'Jekyll', 'Liquid']
+apis: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
-platforms: ['Mac', 'Windows']
+platforms: ['Cross-Platform']
 categories: ['General']
 origin: unset
-order: 2
+order: 7
 keywords: ['authoring', 'writing', 'editing', 'overview']
 layout: toc-guide-page
 ---
@@ -33,7 +33,7 @@ The best way to understand how this site works is to make a change to it.  Follo
 
 ## Markdown & Kramdown
 
-Use the [Style Guide]({{ site.baseurl }}/guides/rhinodevdocs/style_guide/) guide as a reference when writing content for this site.
+Use the [Style Guide]({{ site.baseurl }}/guides/general/developer_docs_style_guide/) guide as a reference when writing content for this site.
 
 Nearly all content on this site uses [Markdown](http://daringfireball.net/projects/markdown/basics) as the base format.  We are using the [Kramdown](http://kramdown.gettalong.org/quickref.html) markdown parser, which is the default parser with Jekyll.  A complete guide to Markdown and Kramdown is beyond the scope of this guide.  For markdown syntax, refer to the [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html) or use other files on this site as examples.
 
@@ -192,7 +192,7 @@ Much of this site is (or was) ported from a previous location.  The `origin` yam
 
 ## Related topics
 
-- [Rhino Developer Docs Style Guide]({{ site.baseurl }}/guides/rhinodevdocs/style_guide/)
+- [Rhino Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer_docs_style_guide/)
 - [Jekyll Documentation](http://jekyllrb.com/docs/home/)
 - [Liquid Docs](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)
 - [Shopify Liquid Cheatsheet](http://cheat.markdunkley.com/)

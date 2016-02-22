@@ -1,20 +1,20 @@
 ---
-title: Style Guide
+title: Developer Docs Style Guide
 description: unset
 author: dan@mcneel.com
-apis: ['Developer Docs', 'Jekyll', 'Liquid']
-languages: ['Markdown']
-platforms: ['Mac', 'Windows']
+apis: ['General']
+languages: ['Markdown', 'Kramdown', 'YAML']
+platforms: ['Cross-Platform']
 categories: ['General']
 origin: unset
-order: 3
+order: 8
 keywords: ['style', 'guide']
 layout: toc-guide-page
 ---
 
 <a id="top"></a> <!-- this is just a sample anchor -->
 
-# Style Guide
+# Developer Docs Style Guide
 
 This is a sample page that serves as a quick reference for the syntax and structure of Rhino Developer Documentation content.  Below are examples of nearly all the available syntax using Markdown, Kramdown (a superset of Markdown), the table-of-contents UI widget, etc.
 
@@ -96,7 +96,7 @@ Just like with H3 headers, H3 headers also create an #anchor tag in the generate
 
 ## Table of Contents
 
-The UI-widget to the left of this column is a the Table of Contents (TOC) for this page.  If you are authoring a page that requires a TOC, you can generate one automatically by using a TOC-enabled layouts (see [How This Site Works]({{ site.baseurl }}/guides/rhinodevdocs/how_this_site_works/) for more information).  To get a TOC-enabled templates to generate the TOC automatically from the H1, H2 and H3 headers.
+The UI-widget to the left of this column is a the Table of Contents (TOC) for this page.  If you are authoring a page that requires a TOC, you can generate one automatically by using a TOC-enabled layouts (see [How This Site Works]({{ site.baseurl }}/guides/general/how_this_site_works/) for more information).  To get a TOC-enabled templates to generate the TOC automatically from the H1, H2 and H3 headers.
 
 For example, to get the main title to show up in the TOC, you would type this:
 
@@ -594,7 +594,7 @@ See the [MathJax basic tutorial and quick reference on StackExchange](http://met
 
 ## Related topics
 
-- [How This Site Works]({{ site.baseurl }}/guides/rhinodevdocs/how_this_site_works/)
+- [How This Site Works]({{ site.baseurl }}/guides/general/how_this_site_works/)
 - [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html)
 
 ---
