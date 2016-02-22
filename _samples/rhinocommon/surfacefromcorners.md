@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/srfpt
 order: 1
 keywords: ['surface', 'corner', 'points']
 layout: code-sample-rhinocommon
@@ -62,4 +62,3 @@ doc.Objects.AddSurface(surface);
 doc.Views.Redraw();
 ```
 {: #py .tab-pane .fade .in}
-

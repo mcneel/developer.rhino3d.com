@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addtexture
 order: 1
 keywords: ['add', 'texture']
 layout: code-sample-rhinocommon
@@ -53,7 +53,7 @@ partial class Examples
       // Assign the new material (index) to the object.
       rhino_object.Attributes.MaterialIndex = material_index;
     }
- 
+
     if (material_index >= 0)
     {
       Rhino.DocObjects.Material mat = doc.Materials[material_index];
@@ -66,7 +66,7 @@ partial class Examples
       doc.Views.Redraw();
       return Rhino.Commands.Result.Success;
     }
- 
+
     return Rhino.Commands.Result.Failure;
   }
 }
@@ -189,4 +189,3 @@ if __name__=="__main__":
     AddTexture()
 ```
 {: #py .tab-pane .fade .in}
-

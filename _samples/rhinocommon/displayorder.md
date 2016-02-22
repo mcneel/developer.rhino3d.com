@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/displayorder
 order: 1
 keywords: ['display', 'order']
 layout: code-sample-rhinocommon
@@ -15,7 +15,7 @@ layout: code-sample-rhinocommon
 ```cs
 partial class Examples
 {
-  private static List<RhinoObject> m_line_objects = new List<RhinoObject>(); 
+  private static List<RhinoObject> m_line_objects = new List<RhinoObject>();
 
   public static Result DisplayOrder(RhinoDoc doc)
   {
@@ -193,4 +193,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

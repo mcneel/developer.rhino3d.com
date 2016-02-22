@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/textjustify
 order: 1
 keywords: ['justifying', 'text', 'entities']
 layout: code-sample-rhinocommon
@@ -64,4 +64,3 @@ doc.Objects.AddText(text_entity)
 doc.Views.Redraw()
 ```
 {: #py .tab-pane .fade .in}
-

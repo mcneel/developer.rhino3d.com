@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addnurbscurve
 order: 1
 keywords: ['add', 'nurbs', 'curve']
 layout: code-sample-rhinocommon
@@ -89,4 +89,3 @@ if __name__=="__main__":
     AddNurbsCurve()
 ```
 {: #py .tab-pane .fade .in}
-

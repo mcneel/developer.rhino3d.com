@@ -72,7 +72,6 @@ The following samples have TODO items:
 
 ### Misc
 
-- Set all origins that are unset in RhinoCommon samples (~158)
 - Deprecate developer wiki - [add redirects](https://wiki.mcneel.com/homepage?do=admin&page=redirect)
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.
 - C/C++ Samples need to be categorized and organized.

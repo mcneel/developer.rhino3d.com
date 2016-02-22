@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/curveboundingbox
 order: 1
 keywords: ['curve', 'bounding', 'world', 'plane', 'oriented']
 layout: code-sample-rhinocommon
@@ -43,7 +43,7 @@ partial class Examples
     Rhino.RhinoApp.WriteLine("World min: {0}", bbox.Min);
     Rhino.RhinoApp.WriteLine("World max: {0}", bbox.Max);
 
-    // Compute the tight bounding box of the curve based on the 
+    // Compute the tight bounding box of the curve based on the
     // active view's construction plane
     bbox = curve.GetBoundingBox(plane);
 
@@ -90,7 +90,7 @@ Partial Friend Class Examples
 	Rhino.RhinoApp.WriteLine("World min: {0}", bbox.Min)
 	Rhino.RhinoApp.WriteLine("World max: {0}", bbox.Max)
 
-	' Compute the tight bounding box of the curve based on the 
+	' Compute the tight bounding box of the curve based on the
 	' active view's construction plane
 	bbox = curve.GetBoundingBox(plane)
 
@@ -142,4 +142,3 @@ if __name__=="__main__":
     CurveBoundingBox()
 ```
 {: #py .tab-pane .fade .in}
-

@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/edgesrf
 order: 1
 keywords: ['create', 'surface', 'edge', 'curves']
 layout: code-sample-rhinocommon
@@ -101,4 +101,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

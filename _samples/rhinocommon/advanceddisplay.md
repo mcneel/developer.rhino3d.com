@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/advanceddisplay
 order: 1
 keywords: ['modifying', 'advanced', 'display', 'settings']
 layout: code-sample-rhinocommon
@@ -43,7 +43,7 @@ partial class Examples
       int index = go.AddOption(english_name);
       opt_list.Add(index);
     }
-    
+
     // Get the command option
     go.Get();
     if( go.CommandResult() != Rhino.Commands.Result.Success )
@@ -59,7 +59,7 @@ partial class Examples
         break;
       }
     }
- 
+
     // Validate...
     if( selected_description==null )
       return Rhino.Commands.Result.Failure;
@@ -194,4 +194,3 @@ if __name__=="__main__":
     AdvancedDisplay()
 ```
 {: #py .tab-pane .fade .in}
-

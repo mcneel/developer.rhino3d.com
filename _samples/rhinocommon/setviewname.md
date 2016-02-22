@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Viewports and Views']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/setviewname
 order: 1
 keywords: ['setting', 'viewports', 'title']
 layout: code-sample-rhinocommon
@@ -20,7 +20,7 @@ partial class Examples
     var view = doc.Views.ActiveView;
     if (view == null)
       return Result.Failure;
-   
+
     view.MainViewport.Name = "Facade";
     return Result.Success;
   }
@@ -62,4 +62,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

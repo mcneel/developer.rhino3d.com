@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Picking and Selection', 'Adding Objects']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/selectgroupobject
 order: 1
 keywords: ['select', 'objects', 'groups']
 layout: code-sample-rhinocommon
@@ -122,4 +122,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

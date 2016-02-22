@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Viewports and Views']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addnamedview
 order: 1
 keywords: ['add', 'named', 'view']
 layout: code-sample-rhinocommon
@@ -34,7 +34,7 @@ partial class Examples
     if (gp.CommandResult() != Rhino.Commands.Result.Success)
       return gp.CommandResult();
     Rhino.Geometry.Point3d lookat = gp.Point();
-    
+
     string name = view.ActiveViewport.Name;
     rc = Rhino.Input.RhinoGet.GetString("Name", true, ref name);
     if (rc != Rhino.Commands.Result.Success)
@@ -144,4 +144,3 @@ if __name__=="__main__":
     AddNamedView()
 ```
 {: #py .tab-pane .fade .in}
-

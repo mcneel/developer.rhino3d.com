@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/crvdeviation
 order: 1
 keywords: ['determine', 'deviation', 'between', 'curves']
 layout: code-sample-rhinocommon
@@ -63,7 +63,7 @@ partial class Examples
       return Result.Failure;
 
     // Since you already selected a curve if you don't unselect it
-    // the next GetOneObject won't stop as it considers that curve 
+    // the next GetOneObject won't stop as it considers that curve
     // input, i.e., curveA and curveB will point to the same curve.
     // Another option would be to use an instance of Rhino.Input.Custom.GetObject
     // instead of Rhino.Input.RhinoGet as GetObject has a DisablePreSelect() method.
@@ -89,7 +89,7 @@ partial class Examples
     double min_distance_parameter_b;
 
     DeviationConduit conduit;
-    if (!Curve.GetDistancesBetweenCurves(curve_a, curve_b, tolerance, out max_distance, 
+    if (!Curve.GetDistancesBetweenCurves(curve_a, curve_b, tolerance, out max_distance,
               out max_distance_parameter_a, out max_distance_parameter_b,
               out min_distance, out min_distance_parameter_a, out min_distance_parameter_b))
     {
@@ -142,7 +142,7 @@ Partial Friend Class Examples
 	End If
 
 	' Since you already selected a curve if you don't unselect it
-	' the next GetOneObject won't stop as it considers that curve 
+	' the next GetOneObject won't stop as it considers that curve
 	' input, i.e., curveA and curveB will point to the same curve.
 	' Another option would be to use an instance of Rhino.Input.Custom.GetObject
 	' instead of Rhino.Input.RhinoGet as GetObject has a DisablePreSelect() method.
@@ -232,4 +232,3 @@ if __name__=="__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

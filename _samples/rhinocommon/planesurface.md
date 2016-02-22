@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/planesurface
 order: 1
 keywords: ['create', 'plane', 'surface']
 layout: code-sample-rhinocommon
@@ -24,8 +24,8 @@ partial class Examples
 
     var plane = new Plane(corners[0], corners[1], corners[2]);
 
-    var plane_surface = new PlaneSurface(plane, 
-      new Interval(0, corners[0].DistanceTo(corners[1])), 
+    var plane_surface = new PlaneSurface(plane,
+      new Interval(0, corners[0].DistanceTo(corners[1])),
       new Interval(0, corners[1].DistanceTo(corners[2])));
 
     doc.Objects.Add(plane_surface);
@@ -77,4 +77,3 @@ if __name__ == "__main__":
     RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

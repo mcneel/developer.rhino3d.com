@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/orientonsrf
 order: 1
 keywords: ['orient', 'surface']
 layout: code-sample-rhinocommon
@@ -274,4 +274,3 @@ if __name__=="__main__":
     OrientOnSrf()
 ```
 {: #py .tab-pane .fade .in}
-

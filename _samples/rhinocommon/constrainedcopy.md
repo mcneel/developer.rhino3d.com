@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/constrainedcopy
 order: 1
 keywords: ['constrained', 'getpoint', 'copy', 'curve']
 layout: code-sample-rhinocommon
@@ -156,4 +156,3 @@ if __name__=="__main__":
     constrainedcopy()
 ```
 {: #py .tab-pane .fade .in}
-

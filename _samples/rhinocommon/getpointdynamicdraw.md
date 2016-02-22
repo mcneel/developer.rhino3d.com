@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Draw', 'Picking and Selection']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/getpointdynamicdraw
 order: 1
 keywords: ['dynamically', 'draw', 'geometry', 'when', 'picking', 'points']
 layout: code-sample-rhinocommon
@@ -165,4 +165,3 @@ if __name__ == "__main__":
     RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

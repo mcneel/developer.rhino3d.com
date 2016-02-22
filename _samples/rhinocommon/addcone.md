@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addcone
 order: 1
 keywords: ['add', 'cone']
 layout: code-sample-rhinocommon
@@ -81,4 +81,3 @@ if __name__=="__main__":
     AddCone()
 ```
 {: #py .tab-pane .fade .in}
-

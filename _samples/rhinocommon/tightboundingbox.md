@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/tightboundingbox
 order: 1
 keywords: ['tight', 'bounding', 'boxes', 'breps']
 layout: code-sample-rhinocommon
@@ -66,7 +66,7 @@ partial class Examples
           doc.Objects.AddPolyline(rectangle_corners);
           doc.Views.Redraw();
           break;
-        case 0: 
+        case 0:
           // box
           var brep_box = new Box(bbox).ToBrep();
           doc.Objects.AddBrep(brep_box);
@@ -209,4 +209,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

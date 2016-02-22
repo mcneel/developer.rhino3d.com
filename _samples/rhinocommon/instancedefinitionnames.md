@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/printinstancedefinitions
 order: 1
 keywords: ['instance', 'definition', 'names']
 layout: code-sample-rhinocommon
@@ -17,7 +17,7 @@ partial class Examples
 {
   public static Result InstanceDefinitionNames(RhinoDoc doc)
   {
-    var instance_definition_names = (from instance_definition in doc.InstanceDefinitions 
+    var instance_definition_names = (from instance_definition in doc.InstanceDefinitions
                                      where instance_definition != null && !instance_definition.IsDeleted
                                      select instance_definition.Name);
 
@@ -64,4 +64,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

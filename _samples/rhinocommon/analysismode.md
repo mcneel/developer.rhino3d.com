@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/analysismode
 order: 1
 keywords: ['visual', 'analysis', 'modes']
 layout: code-sample-rhinocommon
@@ -102,7 +102,7 @@ public class ZAnalysisMode : Rhino.Display.VisualAnalysisMode
           colors[i] = FalseColor(z);
         }
         mesh.VertexColors.SetColors(colors);
-        // set the mesh's color tag 
+        // set the mesh's color tag
         mesh.VertexColors.Tag = mt;
       }
     }
@@ -117,7 +117,7 @@ public class ZAnalysisMode : Rhino.Display.VisualAnalysisMode
       // to see how Rhino handles the user interface.  If controlling
       // iso-curve visability is a feature you want to support, then provide
       // user interface to set this member variable.
-      return m_show_isocurves; 
+      return m_show_isocurves;
     }
   }
 
@@ -251,7 +251,7 @@ Public Class ZAnalysisMode
 		  colors(i) = FalseColor(z)
 		Next i
 		mesh.VertexColors.SetColors(colors)
-		' set the mesh's color tag 
+		' set the mesh's color tag
 		mesh.VertexColors.Tag = mt
 	  End If
 	Next mi
@@ -308,4 +308,3 @@ End Class
 # No Python sample available
 ```
 {: #py .tab-pane .fade .in}
-

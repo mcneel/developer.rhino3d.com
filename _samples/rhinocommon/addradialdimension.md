@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addradialdimension
 order: 1
 keywords: ['create', 'radial', 'dimensions']
 layout: code-sample-rhinocommon
@@ -18,7 +18,7 @@ partial class Examples
   public static Rhino.Commands.Result AddRadialDimension(Rhino.RhinoDoc doc)
   {
     ObjRef obj_ref;
-    var rc = RhinoGet.GetOneObject("Select curve for radius dimension", 
+    var rc = RhinoGet.GetOneObject("Select curve for radius dimension",
       true, ObjectType.Curve, out obj_ref);
     if (rc != Result.Success)
       return rc;
@@ -52,7 +52,7 @@ partial class Examples
     var center = point_on_curve + (curvature_vector/(len*len));
     Plane plane;
     curve.TryGetPlane(out plane);
-    var radial_dimension = 
+    var radial_dimension =
       new RadialDimension(center, point_on_curve, plane.XAxis, plane.Normal, 5.0);
     doc.Objects.AddRadialDimension(radial_dimension);
     doc.Views.Redraw();
@@ -154,4 +154,3 @@ if __name__=="__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

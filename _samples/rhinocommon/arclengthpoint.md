@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/arclengthpoint
 order: 1
 keywords: ['find', 'point', 'curve', 'distance']
 layout: code-sample-rhinocommon
@@ -25,13 +25,13 @@ partial class Examples
     Rhino.Geometry.Curve crv = objref.Curve();
     if( crv==null )
       return Rhino.Commands.Result.Failure;
- 
+
     double crv_length = crv.GetLength();
     double length = 0;
     rc = Rhino.Input.RhinoGet.GetNumber("Length from start", true, ref length, 0, crv_length);
     if(rc!= Rhino.Commands.Result.Success)
       return rc;
- 
+
     Rhino.Geometry.Point3d pt = crv.PointAtLength(length);
     if (pt.IsValid)
     {
@@ -100,4 +100,3 @@ if __name__=="__main__":
     ArcLengthPoint()
 ```
 {: #py .tab-pane .fade .in}
-

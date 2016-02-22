@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/issurfaceinplane
 order: 1
 keywords: ['planar', 'surface', 'plane']
 layout: code-sample-rhinocommon
@@ -42,7 +42,7 @@ partial class Examples
   {
     if (!surface.IsPlanar(tolerance))
       return false;
-   
+
     var bbox = surface.GetBoundingBox(true);
     return bbox.GetCorners().All(c => System.Math.Abs(plane.DistanceTo(c)) <= tolerance);
   }
@@ -130,4 +130,3 @@ if __name__ == "__main__":
     RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/conduitarrowheads
 order: 1
 keywords: ['drawing', 'arrowheads', 'display', 'conduit']
 layout: code-sample-rhinocommon
@@ -280,4 +280,3 @@ if __name__=="__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

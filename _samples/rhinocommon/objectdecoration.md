@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/objectdecoration
 order: 1
 keywords: ['adding', 'arrowheads', 'curves']
 layout: code-sample-rhinocommon
@@ -82,4 +82,3 @@ if __name__ == "__main__":
     ObjectDecoration()
 ```
 {: #py .tab-pane .fade .in}
-

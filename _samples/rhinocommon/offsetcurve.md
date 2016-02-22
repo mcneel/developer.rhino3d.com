@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/offsetcurve
 order: 1
 keywords: ['offset', 'curve']
 layout: code-sample-rhinocommon
@@ -33,7 +33,7 @@ partial class Examples
     if (point == Point3d.Unset)
       return Result.Nothing;
 
-    var curves = curve.Offset(point, Vector3d.ZAxis, 1.0, 
+    var curves = curve.Offset(point, Vector3d.ZAxis, 1.0,
       doc.ModelAbsoluteTolerance, CurveOffsetCornerStyle.None);
 
     foreach (var offset_curve in curves)
@@ -119,4 +119,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

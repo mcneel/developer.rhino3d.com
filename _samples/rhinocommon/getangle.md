@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Picking and Selection']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/getangle
 order: 1
 keywords: ['interactively', 'pick', 'angle']
 layout: code-sample-rhinocommon
@@ -106,4 +106,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/intertknot
 order: 1
 keywords: ['insert', 'knot']
 layout: code-sample-rhinocommon
@@ -116,4 +116,3 @@ if __name__=="__main__":
     InsertKnot()
 ```
 {: #py .tab-pane .fade .in}
-

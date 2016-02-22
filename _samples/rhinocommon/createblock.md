@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Blocks']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/createblock
 order: 1
 keywords: ['add', 'block', 'definition']
 layout: code-sample-rhinocommon
@@ -210,4 +210,3 @@ if __name__=="__main__":
     CreateBlock()
 ```
 {: #py .tab-pane .fade .in}
-

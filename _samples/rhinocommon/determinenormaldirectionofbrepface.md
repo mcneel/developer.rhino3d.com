@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/evnormal
 order: 1
 keywords: ['determine', 'normal', 'direction', 'brep', 'face']
 layout: code-sample-rhinocommon
@@ -50,7 +50,7 @@ partial class Examples
         direction.Reverse();
       RhinoApp.WriteLine(
         string.Format(
-          "Surface normal at uv({0:f},{1:f}) = ({2:f},{3:f},{4:f})", 
+          "Surface normal at uv({0:f},{1:f}) = ({2:f},{3:f},{4:f})",
           u, v, direction.X, direction.Y, direction.Z));
     }
     return Result.Success;
@@ -151,4 +151,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

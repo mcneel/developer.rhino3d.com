@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/circlecenter
 order: 1
 keywords: ['find', 'circles', 'their', 'centers']
 layout: code-sample-rhinocommon
@@ -115,4 +115,3 @@ if __name__=="__main__":
     CircleCenter()
 ```
 {: #py .tab-pane .fade .in}
-

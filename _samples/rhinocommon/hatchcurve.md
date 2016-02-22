@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/hatchcurve
 order: 1
 keywords: ['creating', 'hatch', 'curve']
 layout: code-sample-rhinocommon
@@ -137,4 +137,3 @@ if __name__=="__main__":
     HatchCurve()
 ```
 {: #py .tab-pane .fade .in}
-

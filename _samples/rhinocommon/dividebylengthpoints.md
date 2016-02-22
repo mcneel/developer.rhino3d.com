@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/dividebylength
 order: 1
 keywords: ['divide', 'length', 'points']
 layout: code-sample-rhinocommon
@@ -17,7 +17,7 @@ partial class Examples
 {
   public static Rhino.Commands.Result DivideByLengthPoints(Rhino.RhinoDoc doc)
   {
-    const ObjectType filter = Rhino.DocObjects.ObjectType.Curve; 
+    const ObjectType filter = Rhino.DocObjects.ObjectType.Curve;
     Rhino.DocObjects.ObjRef objref;
     Rhino.Commands.Result rc = Rhino.Input.RhinoGet.GetOneObject("Select curve to divide", false, filter, out objref);
     if (rc != Rhino.Commands.Result.Success || objref == null)
@@ -123,4 +123,3 @@ if __name__=="__main__":
     DivideByLengthPoints()
 ```
 {: #py .tab-pane .fade .in}
-

@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Viewports and Views']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/activeviewport
 order: 1
 keywords: ['determine', 'active', 'viewport']
 layout: code-sample-rhinocommon
@@ -96,4 +96,3 @@ if __name__ == "__main__":
     ActiveViewport()
 ```
 {: #py .tab-pane .fade .in}
-

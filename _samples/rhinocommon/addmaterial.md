@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addmaterial
 order: 1
 keywords: ['add', 'basic', 'material']
 layout: code-sample-rhinocommon
@@ -102,4 +102,3 @@ if __name__=="__main__":
     AddMaterial()
 ```
 {: #py .tab-pane .fade .in}
-

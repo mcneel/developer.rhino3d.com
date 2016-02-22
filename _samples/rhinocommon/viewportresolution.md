@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Viewports and Views']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/viewportresolution
 order: 1
 keywords: ['print', 'active', 'viewport', 'resolution']
 layout: code-sample-rhinocommon
@@ -18,7 +18,7 @@ partial class Examples
   public static Result ViewportResolution(RhinoDoc doc)
   {
     var active_viewport = doc.Views.ActiveView.ActiveViewport;
-    RhinoApp.WriteLine("Name = {0}: Width = {1}, Height = {2}", 
+    RhinoApp.WriteLine("Name = {0}: Width = {1}, Height = {2}",
       active_viewport.Name, active_viewport.Size.Width, active_viewport.Size.Height);
     return Result.Success;
   }
@@ -47,4 +47,3 @@ print "Name = {0}: Width = {1}, Height = {2}".format(
     activeViewport.Name, activeViewport.Size.Width, activeViewport.Size.Height)
 ```
 {: #py .tab-pane .fade .in}
-

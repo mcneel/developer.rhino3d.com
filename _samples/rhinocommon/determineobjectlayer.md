@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Layers']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/objectlayer
 order: 1
 keywords: ['determine', 'objects', 'layer']
 layout: code-sample-rhinocommon
@@ -75,4 +75,3 @@ if __name__ == "__main__":
     DetermineObjectLayer()
 ```
 {: #py .tab-pane .fade .in}
-

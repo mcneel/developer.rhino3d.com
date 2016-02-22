@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addcircle
 order: 1
 keywords: ['add', 'circle']
 layout: code-sample-rhinocommon
@@ -67,4 +67,3 @@ if __name__=="__main__":
     AddCircle()
 ```
 {: #py .tab-pane .fade .in}
-

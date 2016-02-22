@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/sweep1
 order: 1
 keywords: ['sweeping', 'surfaces', 'using', 'sweep1']
 layout: code-sample-rhinocommon
@@ -33,7 +33,7 @@ partial class Examples
     gx.GetMultiple(1,0);
     if( gx.CommandResult() != Rhino.Commands.Result.Success )
       return gx.CommandResult();
-    
+
     var cross_sections = new List<Rhino.Geometry.Curve>();
     for( int i=0; i<gx.ObjectCount; i++ )
     {
@@ -138,4 +138,3 @@ if __name__ == "__main__":
     Sweep1()
 ```
 {: #py .tab-pane .fade .in}
-

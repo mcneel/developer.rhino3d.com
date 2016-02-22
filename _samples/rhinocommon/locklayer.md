@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Blocks', 'Layers']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/locklayer
 order: 1
 keywords: ['lock', 'layer']
 layout: code-sample-rhinocommon
@@ -23,7 +23,7 @@ partial class Examples
       return rc;
     if (String.IsNullOrWhiteSpace(layer_name))
       return Result.Nothing;
-   
+
     // because of sublayers it's possible that mone than one layer has the same name
     // so simply calling doc.Layers.Find(layerName) isn't good enough.  If "layerName" returns
     // more than one layer then present them to the user and let him decide.
@@ -69,7 +69,7 @@ partial class Examples
     {
       RhinoApp.WriteLine("layer {0} is already locked.", layer_to_lock.FullPath);
       return Result.Nothing;
-    } 
+    }
   }
 }
 ```
@@ -171,4 +171,3 @@ if __name__ == "__main__":
     lock()
 ```
 {: #py .tab-pane .fade .in}
-

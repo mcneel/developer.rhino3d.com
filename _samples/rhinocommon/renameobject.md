@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/objectname
 order: 1
 keywords: ['rename', 'object']
 layout: code-sample-rhinocommon
@@ -83,4 +83,3 @@ object_new_name = rs.GetString("New object name")
 rs.ObjectName(obj_id, object_new_name)
 ```
 {: #py .tab-pane .fade .in}
-

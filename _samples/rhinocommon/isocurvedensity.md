@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/isocurvedensity
 order: 1
 keywords: ['adjusting', 'surface', 'isocurve', 'density']
 layout: code-sample-rhinocommon
@@ -76,4 +76,3 @@ if __name__=="__main__":
     IsocurveDensity()
 ```
 {: #py .tab-pane .fade .in}
-

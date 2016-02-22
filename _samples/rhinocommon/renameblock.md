@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Blocks']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/renameblock
 order: 1
 keywords: ['rename', 'instance', 'definition', 'block']
 layout: code-sample-rhinocommon
@@ -24,7 +24,7 @@ partial class Examples
       return rc;
     if (string.IsNullOrWhiteSpace(instance_definition_name))
       return Result.Nothing;
-   
+
     // Verify instance definition exists
     var instance_definition = doc.InstanceDefinitions.Find(instance_definition_name, true);
     if (instance_definition == null) {
@@ -37,7 +37,7 @@ partial class Examples
       RhinoApp.WriteLine("Unable to rename block \"{0}\".", instance_definition_name);
       return Result.Nothing;
     }
-   
+
     // Get the new instance definition name
     string instance_definition_new_name = "";
     rc = RhinoGet.GetString("Name of block to rename", true, ref instance_definition_new_name);
@@ -52,7 +52,7 @@ partial class Examples
       RhinoApp.WriteLine("Block \"{0}\" already exists.", existing_instance_definition);
       return Result.Nothing;
     }
-   
+
     // change the block name
     if (!doc.InstanceDefinitions.Modify(instance_definition.Index, instance_definition_new_name, instance_definition.Description, true)) {
       RhinoApp.WriteLine("Could not rename {0} to {1}", instance_definition.Name, instance_definition_new_name);
@@ -145,4 +145,3 @@ if __name__ == "__main__":
     Rename()
 ```
 {: #py .tab-pane .fade .in}
-

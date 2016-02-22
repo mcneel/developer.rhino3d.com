@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addcylinder
 order: 1
 keywords: ['add', 'cylinder', 'rhino']
 layout: code-sample-rhinocommon
@@ -83,4 +83,3 @@ if __name__=="__main__":
     AddCylinder()
 ```
 {: #py .tab-pane .fade .in}
-

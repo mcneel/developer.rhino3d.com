@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addlineardimension
 order: 1
 keywords: ['add', 'linear', 'dimension']
 layout: code-sample-rhinocommon
@@ -71,4 +71,3 @@ if __name__=="__main__":
     AddLinearDimension()
 ```
 {: #py .tab-pane .fade .in}
-

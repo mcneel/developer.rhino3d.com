@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Layers']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/renamelayer
 order: 1
 keywords: ['rename', 'layer']
 layout: code-sample-rhinocommon
@@ -23,7 +23,7 @@ partial class Examples
       return rc;
     if (String.IsNullOrWhiteSpace(layer_name))
       return Result.Nothing;
-   
+
     // because of sublayers it's possible that more than one layer has the same name
     // so simply calling doc.Layers.Find(layerName) isn't good enough.  If "layerName" returns
     // more than one layer then present them to the user and let him decide.
@@ -179,4 +179,3 @@ if __name__ == "__main__":
     rename()
 ```
 {: #py .tab-pane .fade .in}
-

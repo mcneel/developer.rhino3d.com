@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Picking and Selection', 'Adding Objects', 'Layers']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/sellayer
 order: 1
 keywords: ['select', 'objects', 'layer']
 layout: code-sample-rhinocommon
@@ -91,4 +91,3 @@ if __name__=="__main__":
     SelLayer()
 ```
 {: #py .tab-pane .fade .in}
-

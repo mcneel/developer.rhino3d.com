@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/gettext
 order: 1
 keywords: ['read', 'dimension', 'text']
 layout: code-sample-rhinocommon
@@ -21,7 +21,7 @@ partial class Examples
     go.SetCommandPrompt("Select annotation");
     go.GeometryFilter = ObjectType.Annotation;
     go.Get();
-    if (go.CommandResult() != Result.Success) 
+    if (go.CommandResult() != Result.Success)
       return Result.Failure;
     var annotation = go.Object(0).Object() as AnnotationObjectBase;
     if (annotation == null)
@@ -64,4 +64,3 @@ End Class
 # No Python sample available
 ```
 {: #py .tab-pane .fade .in}
-

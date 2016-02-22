@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Layers']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addlayer
 order: 1
 keywords: ['add', 'layer']
 layout: code-sample-rhinocommon
@@ -163,4 +163,3 @@ if __name__=="__main__":
     AddLayer()
 ```
 {: #py .tab-pane .fade .in}
-

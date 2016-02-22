@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/copygroups
 order: 1
 keywords: ['duplicating', 'objects', 'with', 'group']
 layout: code-sample-rhinocommon
@@ -35,7 +35,7 @@ partial class Examples
         var obj = obj_ref.Object();
         var duplicate = doc.Objects.Transform(obj_ref.ObjectId, xform, false);
         RhinoUpdateObjectGroups(ref obj, ref group_map);
-      } 
+      }
     }
     doc.Views.Redraw();
     return Result.Success;
@@ -237,4 +237,3 @@ if __name__ == "__main__":
     RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

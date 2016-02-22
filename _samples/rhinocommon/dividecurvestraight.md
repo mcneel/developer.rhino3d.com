@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/dividecurvestraight
 order: 1
 keywords: ['divide', 'curve', 'using', 'equi-distance', 'points']
 layout: code-sample-rhinocommon
@@ -39,13 +39,13 @@ partial class Examples
   {
     // user input
     ObjRef[] obj_refs;
-    var rc = RhinoGet.GetMultipleObjects("Select curve to divide", false, 
+    var rc = RhinoGet.GetMultipleObjects("Select curve to divide", false,
       ObjectType.Curve | ObjectType.EdgeFilter, out obj_refs);
     if (rc != Result.Success || obj_refs == null)
       return rc;
 
     double distance_between_divisions = 5;
-    rc = RhinoGet.GetNumber("Distance between divisions", false, 
+    rc = RhinoGet.GetNumber("Distance between divisions", false,
       ref distance_between_divisions, 1.0, Double.MaxValue);
     if (rc != Result.Success)
       return rc;
@@ -69,7 +69,7 @@ partial class Examples
         var sphere = new Sphere(sphere_center, distance_between_divisions);
         Curve[] overlap_curves;
         Point3d[] intersect_points;
-        var b = Intersection.CurveBrep(rest_of_curve, sphere.ToBrep(), 0.0, 
+        var b = Intersection.CurveBrep(rest_of_curve, sphere.ToBrep(), 0.0,
           out overlap_curves, out intersect_points);
         if (!b || (overlap_curves.Length == 0 && intersect_points.Length == 0))
           break;
@@ -231,4 +231,3 @@ if __name__ == "__main__":
     divide_curve()
 ```
 {: #py .tab-pane .fade .in}
-

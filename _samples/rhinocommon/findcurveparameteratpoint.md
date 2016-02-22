@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/curveclosestpoint
 order: 1
 keywords: ['find', 'curve', 'parameter', 'point']
 layout: code-sample-rhinocommon
@@ -115,4 +115,3 @@ if __name__=="__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

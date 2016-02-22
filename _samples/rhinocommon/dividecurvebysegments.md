@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/dividecurvesegments
 order: 1
 keywords: ['divide', 'curve', 'segments']
 layout: code-sample-rhinocommon
@@ -17,7 +17,7 @@ partial class Examples
 {
   public static Result DivideCurveBySegments(RhinoDoc doc)
   {
-    const ObjectType filter = ObjectType.Curve; 
+    const ObjectType filter = ObjectType.Curve;
     ObjRef objref;
     var rc = RhinoGet.GetOneObject("Select curve to divide", false, filter, out objref);
     if (rc != Result.Success || objref == null)
@@ -125,4 +125,3 @@ if __name__ == "__main__":
     RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Viewports and Views']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/setactiveview
 order: 1
 keywords: ['active', 'view']
 layout: code-sample-rhinocommon
@@ -20,7 +20,7 @@ partial class Examples
     // view and view names
     var active_view_name = doc.Views.ActiveView.ActiveViewport.Name;
 
-    var non_active_views = 
+    var non_active_views =
       doc.Views
       .Where(v => v.ActiveViewport.Name != active_view_name)
       .ToDictionary(v => v.ActiveViewport.Name, v => v);
@@ -36,7 +36,7 @@ partial class Examples
     if (gs.CommandResult() != Result.Success)
       return gs.CommandResult();
 
-    var selected_view_name = 
+    var selected_view_name =
       result == GetResult.Option ? gs.Option().EnglishName : gs.StringResult();
 
     if (selected_view_name != active_view_name)
@@ -132,4 +132,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

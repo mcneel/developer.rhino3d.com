@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/principalcurvature
 order: 1
 keywords: ['calculate', 'surface', 'curvature']
 layout: code-sample-rhinocommon
@@ -18,7 +18,7 @@ partial class Examples
   public static Result PrincipalCurvature(RhinoDoc doc)
   {
     ObjRef obj_ref;
-    var rc = RhinoGet.GetOneObject("Select surface for curvature measurement", true, 
+    var rc = RhinoGet.GetOneObject("Select surface for curvature measurement", true,
       ObjectType.Surface, out obj_ref);
     if (rc != Result.Success)
       return rc;
@@ -52,16 +52,16 @@ partial class Examples
       surface_curvature.Normal.Y,
       surface_curvature.Normal.Z);
 
-    RhinoApp.WriteLine(string.Format("  Maximum principal curvature: {0} ({1}, {2}, {3})", 
-      surface_curvature.Kappa(0), 
-      surface_curvature.Direction(0).X, 
-      surface_curvature.Direction(0).Y, 
+    RhinoApp.WriteLine(string.Format("  Maximum principal curvature: {0} ({1}, {2}, {3})",
+      surface_curvature.Kappa(0),
+      surface_curvature.Direction(0).X,
+      surface_curvature.Direction(0).Y,
       surface_curvature.Direction(0).Z));
 
-    RhinoApp.WriteLine(string.Format("  Minimum principal curvature: {0} ({1}, {2}, {3})", 
-      surface_curvature.Kappa(1), 
-      surface_curvature.Direction(1).X, 
-      surface_curvature.Direction(1).Y, 
+    RhinoApp.WriteLine(string.Format("  Minimum principal curvature: {0} ({1}, {2}, {3})",
+      surface_curvature.Kappa(1),
+      surface_curvature.Direction(1).X,
+      surface_curvature.Direction(1).Y,
       surface_curvature.Direction(1).Z));
 
     RhinoApp.WriteLine("  Gaussian curvature: {0}", surface_curvature.Gaussian);
@@ -152,4 +152,3 @@ print "  Gaussian curvature: {0}".format(gaussian)
 print "  Mean curvature: {0}".format(mean)
 ```
 {: #py .tab-pane .fade .in}
-

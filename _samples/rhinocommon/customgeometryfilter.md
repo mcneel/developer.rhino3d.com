@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/customgeometryfilter
 order: 1
 keywords: ['create', 'specialized', 'getobject', 'with', 'custom', 'geometry', 'filter']
 layout: code-sample-rhinocommon
@@ -19,7 +19,7 @@ partial class Examples
   public static Result CustomGeometryFilter(RhinoDoc doc)
   {
     m_tolerance = doc.ModelAbsoluteTolerance;
-    
+
     // only use a custom geometry filter if no simpler filter does the job
 
     // only curves
@@ -180,4 +180,3 @@ if __name__=="__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

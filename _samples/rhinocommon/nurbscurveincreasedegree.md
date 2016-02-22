@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/nurbscurveincreasedegree
 order: 1
 keywords: ['increasing', 'degree', 'nurbs', 'curve']
 layout: code-sample-rhinocommon
@@ -117,4 +117,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

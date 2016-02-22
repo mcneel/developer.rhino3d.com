@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/splitbrepwithplane
 order: 1
 keywords: ['split', 'breps', 'with', 'plane']
 layout: code-sample-rhinocommon
@@ -36,7 +36,7 @@ partial class Examples
       var bbox = brep.GetBoundingBox(false);
 
       //Grow the boundingbox in all directions
-      //If the boundingbox is flat (zero volume or even zero area) 
+      //If the boundingbox is flat (zero volume or even zero area)
       //then the CreateThroughBox method will fail.
       var min_point = bbox.Min;
       min_point.X -= 1.0;
@@ -103,7 +103,7 @@ Partial Friend Class Examples
 	  Dim bbox = brep.GetBoundingBox(False)
 
 	  'Grow the boundingbox in all directions
-	  'If the boundingbox is flat (zero volume or even zero area) 
+	  'If the boundingbox is flat (zero volume or even zero area)
 	  'then the CreateThroughBox method will fail.
 	  Dim min_point = bbox.Min
 	  min_point.X -= 1.0
@@ -201,4 +201,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

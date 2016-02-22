@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/determinecurrentlanguage
 order: 1
 keywords: ['determine', 'rhinos', 'language', 'setting']
 layout: code-sample-rhinocommon
@@ -49,4 +49,3 @@ culture = System.Globalization.CultureInfo(locale_id)
 print culture.EnglishName
 ```
 {: #py .tab-pane .fade .in}
-

@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/findobjectsbyname
 order: 1
 keywords: ['find', 'objects', 'name']
 layout: code-sample-rhinocommon
@@ -91,4 +91,3 @@ if __name__ == "__main__":
     FindObjectsByName()
 ```
 {: #py .tab-pane .fade .in}
-

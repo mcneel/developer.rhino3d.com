@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Viewports and Views']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addlayout
 order: 1
 keywords: ['add', 'layout', 'with', 'detail', 'view']
 layout: code-sample-rhinocommon
@@ -94,4 +94,3 @@ End Class
 # No Python sample available
 ```
 {: #py .tab-pane .fade .in}
-

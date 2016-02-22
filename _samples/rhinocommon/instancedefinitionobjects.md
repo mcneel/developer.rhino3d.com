@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Blocks']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/instancedefinitionobjects
 order: 1
 keywords: ['list', 'block', 'definition', 'geometry']
 layout: code-sample-rhinocommon
@@ -86,4 +86,3 @@ if __name__=="__main__":
     InstanceDefinitionObjects()
 ```
 {: #py .tab-pane .fade .in}
-

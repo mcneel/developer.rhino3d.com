@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/elevation
 order: 1
 keywords: ['determine', 'furthest', 'surface', 'given']
 layout: code-sample-rhinocommon
@@ -41,7 +41,7 @@ partial class Examples
     if (rc != Result.Success)
       return rc;
     #endregion
-    
+
     // an earlier version of this sample used a curve-brep intersection to find Z
     //var maxZ = maxZIntersectionMethod(brep, x, y, doc.ModelAbsoluteTolerance);
 
@@ -96,8 +96,8 @@ partial class Examples
     {
       if (overlap_curves.Length > 0 || inter_points.Length > 0)
       {
-        // grab all the points resulting frem the intersection. 
-        //    1st set: points from overlapping curves, 
+        // grab all the points resulting frem the intersection.
+        //    1st set: points from overlapping curves,
         //    2nd set: points when there was no overlap
         //    .Aggregate: furthest Z from XY plane.
         max_z = (from c in overlap_curves select Math.Abs(c.PointAtEnd.Z) > Math.Abs(c.PointAtStart.Z) ? c.PointAtEnd.Z : c.PointAtStart.Z)
@@ -200,8 +200,8 @@ Partial Friend Class Examples
 	Dim inter_points() As Point3d = Nothing
 	If Intersection.CurveBrep(line_curve, brep, tolerance, overlap_curves, inter_points) Then
 	  If overlap_curves.Length > 0 OrElse inter_points.Length > 0 Then
-		' grab all the points resulting frem the intersection. 
-		'    1st set: points from overlapping curves, 
+		' grab all the points resulting frem the intersection.
+		'    1st set: points from overlapping curves,
 		'    2nd set: points when there was no overlap
 		'    .Aggregate: furthest Z from XY plane.
 		max_z = (
@@ -251,4 +251,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

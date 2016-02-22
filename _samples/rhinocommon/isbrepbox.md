@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/isbrepbox
 order: 1
 keywords: ['isbrepbox', 'test']
 layout: code-sample-rhinocommon
@@ -33,7 +33,7 @@ partial class Examples
         N[i].Unitize();
       }
     }
- 
+
     for (int i = 0; rc && i < 6; i++)
     {
       int count = 0;
@@ -42,12 +42,12 @@ partial class Examples
         double dot = Math.Abs(N[i] * N[j]);
         if (dot <= zero_tolerance)
           continue;
-        if (Math.Abs(dot - 1.0) <= zero_tolerance) 
+        if (Math.Abs(dot - 1.0) <= zero_tolerance)
           count++;
         else
           rc = false;
       }
- 
+
       if (rc)
       {
         if (2 != count)
@@ -183,4 +183,3 @@ if __name__=="__main__":
             else: print "No it is not a box"
 ```
 {: #py .tab-pane .fade .in}
-

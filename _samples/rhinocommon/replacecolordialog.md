@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Picking and Selection']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/replacecolordialog
 order: 1
 keywords: ['replace', 'rhinos', 'color', 'picking', 'dialog']
 layout: code-sample-rhinocommon
@@ -62,4 +62,3 @@ End Class
 # No Python sample available
 ```
 {: #py .tab-pane .fade .in}
-

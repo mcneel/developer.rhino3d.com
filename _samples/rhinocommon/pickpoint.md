@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Picking and Selection', 'Adding Objects']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/pickpoint
 order: 1
 keywords: ['pick', 'select', 'point', 'objects']
 layout: code-sample-rhinocommon
@@ -33,7 +33,7 @@ partial class Examples
     if (rc != Result.Success)
       return rc;
     var point = obj_ref.Point();
-    RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}", 
+    RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}",
       point.Location.X,
       point.Location.Y,
       point.Location.Z);
@@ -62,11 +62,11 @@ partial class Examples
     go.GetMultiple(1, 0);
     if (go.CommandResult() != Result.Success)
       return go.CommandResult();
-    foreach (var o_ref in  go.Objects()) 
+    foreach (var o_ref in  go.Objects())
     {
       point = o_ref.Point();
       if (point != null)
-        RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}", 
+        RhinoApp.WriteLine("Point: x:{0}, y:{1}, z:{2}",
           point.Location.X,
           point.Location.Y,
           point.Location.Z);
@@ -235,4 +235,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

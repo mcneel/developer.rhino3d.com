@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/curvereverse
 order: 1
 keywords: ['reverse', 'curve']
 layout: code-sample-rhinocommon
@@ -17,7 +17,7 @@ partial class Examples
 {
   public static Result ReverseCurve(RhinoDoc doc)
   {
-    ObjRef[] obj_refs; 
+    ObjRef[] obj_refs;
     var rc = RhinoGet.GetMultipleObjects("Select curves to reverse", true, ObjectType.Curve, out obj_refs);
     if (rc != Result.Success)
       return rc;
@@ -82,4 +82,3 @@ if __name__ == "__main__":
     ReverseCurves()
 ```
 {: #py .tab-pane .fade .in}
-

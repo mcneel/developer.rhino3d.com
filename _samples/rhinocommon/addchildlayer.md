@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects', 'Layers']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addchildlayer
 order: 1
 keywords: ['add', 'child', 'layer']
 layout: code-sample-rhinocommon
@@ -142,4 +142,3 @@ if __name__=="__main__":
     AddChildLayer()
 ```
 {: #py .tab-pane .fade .in}
-

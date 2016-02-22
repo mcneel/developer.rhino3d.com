@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Adding Objects']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/getuuid
 order: 1
 keywords: ['objects', 'uuid']
 layout: code-sample-rhinocommon
@@ -62,4 +62,3 @@ if obj_id <> None:
   print "The object's unique id is {0}".format(obj_id)
 ```
 {: #py .tab-pane .fade .in}
-

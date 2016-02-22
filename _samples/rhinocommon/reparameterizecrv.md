@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/reparameterizecrv
 order: 1
 keywords: ['reparamemterize', 'curve']
 layout: code-sample-rhinocommon
@@ -35,7 +35,7 @@ partial class Examples
     if (rc != Result.Success)
       return rc;
 
-    if (Math.Abs(curve.Domain.T0 - domain_start) < RhinoMath.ZeroTolerance && 
+    if (Math.Abs(curve.Domain.T0 - domain_start) < RhinoMath.ZeroTolerance &&
         Math.Abs(curve.Domain.T1 - domain_end) < RhinoMath.ZeroTolerance)
       return Result.Nothing;
 
@@ -141,4 +141,3 @@ if __name__ == "__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

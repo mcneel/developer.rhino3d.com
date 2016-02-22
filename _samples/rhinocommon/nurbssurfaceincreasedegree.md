@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/nurbssurfaceincreasedegree
 order: 1
 keywords: ['increasing', 'degree', 'nurbs', 'surface']
 layout: code-sample-rhinocommon
@@ -30,7 +30,7 @@ partial class Examples
     rc = RhinoGet.GetInteger(string.Format("New U degree <{0}...11>", nurbs_surface.Degree(0)), true, ref new_u_degree,
       nurbs_surface.Degree(0), 11);
     if (rc != Result.Success) return rc;
-    
+
     int new_v_degree = -1;
     rc = RhinoGet.GetInteger(string.Format("New V degree <{0}...11>", nurbs_surface.Degree(1)), true, ref new_v_degree,
       nurbs_surface.Degree(1), 11);
@@ -137,4 +137,3 @@ if __name__=="__main__":
   RunCommand()
 ```
 {: #py .tab-pane .fade .in}
-

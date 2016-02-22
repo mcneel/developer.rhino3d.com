@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Other']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/unrollsurface
 order: 1
 keywords: ['unrolling', 'developable', 'surface']
 layout: code-sample-rhinocommon
@@ -196,4 +196,3 @@ if __name__=="__main__":
     UnrollSurface()
 ```
 {: #py .tab-pane .fade .in}
-

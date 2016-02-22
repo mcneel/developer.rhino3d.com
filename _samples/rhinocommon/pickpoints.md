@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Picking and Selection']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/pickpoint
 order: 1
 keywords: ['pick', 'points']
 layout: code-sample-rhinocommon
@@ -104,7 +104,7 @@ class PointsConduit : Rhino.Display.DisplayConduit
   protected override void DrawForeground(Rhino.Display.DrawEventArgs e)
   {
     if (m_conduit_points != null)
-      foreach (var cp in m_conduit_points) 
+      foreach (var cp in m_conduit_points)
       e.Display.DrawPoint(cp.Point, PointStyle.Simple, 3, cp.Color);
   }
 }
@@ -212,4 +212,3 @@ End Class
 # No Python sample available
 ```
 {: #py .tab-pane .fade .in}
-

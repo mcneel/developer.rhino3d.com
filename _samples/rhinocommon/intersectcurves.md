@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Curves']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/intersectcurves
 order: 1
 keywords: ['calculate', 'curve', 'intersections']
 layout: code-sample-rhinocommon
@@ -136,4 +136,3 @@ if __name__=="__main__":
     IntersectCurves()
 ```
 {: #py .tab-pane .fade .in}
-

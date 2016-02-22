@@ -6,7 +6,7 @@ apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
 platforms: ['Cross-Platform']
 categories: ['Draw']
-origin: unset
+origin: http://wiki.mcneel.com/developer/rhinocommonsamples/drawoverlay
 order: 1
 keywords: ['display', 'conduit', 'draw', 'overlay', 'text']
 layout: code-sample-rhinocommon
@@ -30,7 +30,7 @@ partial class Examples
   {
     // toggle conduit on/off
     m_customconduit.Enabled = !m_conduit.Enabled;
-    
+
     RhinoApp.WriteLine("Custom conduit enabled = {0}", m_customconduit.Enabled);
     doc.Views.Redraw();
     return Rhino.Commands.Result.Success;
@@ -110,4 +110,3 @@ if __name__=="__main__":
     #showafterscript()
 ```
 {: #py .tab-pane .fade .in}
-
