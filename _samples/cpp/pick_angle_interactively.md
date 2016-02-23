@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Unsorted']
+categories: ['Picking and Selection']
 origin: http://wiki.mcneel.com/developer/sdksamples/getangle
 order: 1
 keywords: ['rhino']

@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Unsorted']
+categories: ['Adding Objects', 'Curves']
 origin: http://wiki.mcneel.com/developer/sdksamples/addline
 order: 1
 keywords: ['rhino']

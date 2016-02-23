@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Unsorted']
+categories: ['Curves']
 origin: http://wiki.mcneel.com/developer/sdksamples/extendcurve
 order: 1
 keywords: ['rhino']

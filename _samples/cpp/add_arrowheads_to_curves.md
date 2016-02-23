@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Unsorted']
+categories: ['Adding Objects']
 origin: http://wiki.mcneel.com/developer/sdksamples/objectdecoration
 order: 1
 keywords: ['rhino']

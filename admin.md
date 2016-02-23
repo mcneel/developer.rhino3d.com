@@ -73,8 +73,9 @@ The following samples have TODO items:
 ### Misc
 
 - RhinoScript Guides and RhinoScript Samples need to be organized and curated more.
-- C/C++ Samples need to be categorized and organized.
+- C/C++ Guides need to be categorized and organized.
 - Entire Rhino.Python guides section needs complete reorganization and simplification.
+- Add API specific pages under guides and samples that filter that content.
 - Standardize file names (underscores, verbiage, length, etc).
 - Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
 - Standardize descriptions so they are only in the yaml.
