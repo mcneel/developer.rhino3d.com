@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Unsorted']
+categories: ['Surfaces']
 origin: http://wiki.mcneel.com/developer/sdksamples/sweep2
 order: 1
 keywords: ['rhino']
