@@ -5,7 +5,7 @@ author: alain@mcneel.com
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac', 'Cross-Platform']
-categories: ['GettingStarted']
+categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/python
 order: 3
 keywords: ['Rhino.Python', 'Python']

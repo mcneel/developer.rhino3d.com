@@ -5,9 +5,9 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['GettingStarted']
+categories: ['Getting Started']
 origin: https://wiki.mcneel.com/developer/sdksamples/rhino5pluginwiz
-order: 3
+order: 2
 keywords: ['c', 'C/C++', 'plugin']
 layout: toc-guide-page
 TODO: 'needs new screenshots, review, and cleanup.  Consider breaking out Adding Commands.'

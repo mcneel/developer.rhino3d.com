@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++', 'VBScript']
 platforms: ['Windows']
-categories: ['Miscellaneous']
+categories: ['Uncategorized']
 origin: http://wiki.mcneel.com/developer/sdksamples/getpluginobjectinterface
 order: 1
 keywords: ['rhino']

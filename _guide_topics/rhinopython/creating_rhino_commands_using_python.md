@@ -5,7 +5,7 @@ author: pascal@mcneel.com
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Cross-Platform']
-categories: ['GettingStarted']
+categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/python/commands
 order: 1
 keywords: ['python', 'commands']

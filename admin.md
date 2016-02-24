@@ -21,6 +21,7 @@ The sources of content-to-be-consolidated are:
 - RhinoScript and Rhino.Python Primers
 - Mitch's MicMac tools: http://wiki.mcneel.com/people/mitchheynick
 - [Grasshopper SDK Help file (chm)](http://s3.amazonaws.com/files.na.mcneel.com/grasshopper/1.0/docs/en/GrasshopperSDK.chm).
+- Grasshopper posts ([How and Why of Datatrees](http://www.grasshopper3d.com/forum/topics/the-why-and-how-of-data-trees)), etc.
 
 **DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
 
@@ -76,7 +77,7 @@ The following samples have TODO items:
 - C/C++ Guides need to be categorized and organized.
 - Entire Rhino.Python guides section needs complete reorganization and simplification.
 - Add API specific pages under guides and samples that filter that content.
-- Standardize file names (underscores, verbiage, length, etc).
+- Standardize file names (underscores, verbiage, length, etc). - update [redirects on wiki](https://wiki.mcneel.com/homepage?do=admin&page=redirect)
 - Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
 - Standardize descriptions so they are only in the yaml.
 - Standardize titles so they are on in the yaml - requires reworking TOC generator.

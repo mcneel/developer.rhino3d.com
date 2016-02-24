@@ -5,9 +5,9 @@ author: brian@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Fundamentals']
+categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/authoring
-order: 6
+order: 3
 keywords: ['c', 'C/C++', 'plugin', 'installer']
 layout: toc-guide-page
 TODO: 'needs porting - see additional TODO'

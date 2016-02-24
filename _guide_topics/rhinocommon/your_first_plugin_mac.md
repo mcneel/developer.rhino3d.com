@@ -5,7 +5,7 @@ author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Mac']
-categories: ['GettingStarted']
+categories: ['Getting Started']
 origin: unset
 order: 4
 keywords: ['first', 'RhinoCommon', 'Plugin']

@@ -119,7 +119,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.apis contains 'RhinoPython' and topic.categories contains 'GettingStarted' %}
+    {% if topic.apis contains 'RhinoPython' and topic.categories contains 'Getting Started' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -168,7 +168,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.apis contains 'openNURBS' and topic.categories contains 'GettingStarted' %}
+    {% if topic.apis contains 'openNURBS' and topic.categories contains 'Getting Started' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -214,11 +214,71 @@ order: 2
 
 *Native SDK for Rhino for Windows plugins.*
 
+### Overview
+
+- [What is the C/C++ SDK?]({{ site.baseurl }}/guides/cpp/what_is_the_cpp_sdk/)
+- [What's New?]({{ site.baseurl }}/guides/cpp/whats_new/)
+
+
+### Getting Started
+
+- [Installing Tools]({{ site.baseurl }}/guides/cpp/installing_tools_windows/)
+- [Your First Plugin]({{ site.baseurl }}/guides/cpp/your_first_plugin_windows/)
+- [Plugin Installers]({{ site.baseurl }}/guides/cpp/plugin_installers_windows/)
+
+
+### Fundamentals
+
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.apis contains 'C/C++' %}
+    {% if topic.apis contains 'C/C++' and topic.categories contains 'Fundamentals' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Advanced
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'C/C++' and topic.categories contains 'Advanced' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Zoo
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'C/C++' and topic.categories contains 'Zoo' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Uncategorized
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'C/C++' and topic.categories contains 'Uncategorized'%}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}

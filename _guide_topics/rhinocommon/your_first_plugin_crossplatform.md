@@ -5,7 +5,7 @@ author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Cross-Platform']
-categories: ['GettingStarted']
+categories: ['Getting Started']
 origin: unset
 order: 5
 keywords: ['first', 'RhinoCommon', 'Plugin']
