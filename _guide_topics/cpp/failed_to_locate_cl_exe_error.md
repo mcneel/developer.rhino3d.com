@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Troubleshooting']
 origin: http://wiki.mcneel.com/developer/sdksamples/trackererror
 order: 1
 keywords: ['rhino', 'troubleshooting']

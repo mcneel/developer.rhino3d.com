@@ -5,9 +5,9 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/sdksamples/loadlibraryex
-order: 1
+order: 7
 keywords: ['rhino', 'plugins']
 layout: toc-guide-page
 TODO: 'needs to be reviewed or consolidated with other plugin guides'

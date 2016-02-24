@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/conduitarrowheads
 order: 1
 keywords: ['rhino', 'display', 'conduit', 'arrowheads']

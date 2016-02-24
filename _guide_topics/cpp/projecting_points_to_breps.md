@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/sdksamples/projectpointstobreps
 order: 1
 keywords: ['rhino', 'projecting', 'points', 'breps']
@@ -66,7 +66,7 @@ CRhinoCommand::result CCommandFoobarCpp::RunCommand( const CRhinoCommandContext&
 
   bool rc = RhinoProjectPointsToBreps(
     Breps,
-    Points, 
+    Points,
     ProjDir,
     OutPoints,
     Indices,

@@ -5,9 +5,9 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['RDK']
 origin: http://wiki.mcneel.com/developer/sdksamples/texturesandmappings
-order: 1
+order: 3
 keywords: ['rhino', 'textures', 'materials', 'mapping']
 layout: toc-guide-page
 TODO: 'needs review and more explanatory content.'

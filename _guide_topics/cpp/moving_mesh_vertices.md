@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/sdksamples/movemeshvertext
 order: 1
 keywords: ['rhino', 'mesh', 'vertices']

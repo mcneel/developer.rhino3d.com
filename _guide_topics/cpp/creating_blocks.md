@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/sdksamples/createblock
 order: 1
 keywords: ['rhino', 'blocks']
@@ -147,4 +147,4 @@ CRhinoCommand::result CCommandTest::RunCommand( const CRhinoCommandContext& cont
 
 ## Related Topics
 
-- [Dynamically Inserting Blocks]({{ site.baseurl }}/guides/cpp/dynamically_inserting_blocks) 
+- [Dynamically Inserting Blocks]({{ site.baseurl }}/guides/cpp/dynamically_inserting_blocks)

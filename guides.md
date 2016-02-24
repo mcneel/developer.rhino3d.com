@@ -216,21 +216,38 @@ order: 2
 
 ### Overview
 
-- [What is the C/C++ SDK?]({{ site.baseurl }}/guides/cpp/what_is_the_cpp_sdk/)
-- [What's New?]({{ site.baseurl }}/guides/cpp/whats_new/)
-
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'C/C++' and topic.categories contains 'Overview' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 ### Getting Started
 
-- [Installing Tools]({{ site.baseurl }}/guides/cpp/installing_tools_windows/)
-- [Your First Plugin]({{ site.baseurl }}/guides/cpp/your_first_plugin_windows/)
-- [Plugin Installers]({{ site.baseurl }}/guides/cpp/plugin_installers_windows/)
-
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'C/C++' and topic.categories contains 'Getting Started' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 ### Fundamentals
 
 <div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
+  {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for topic in guides %}
     {% if topic.apis contains 'C/C++' and topic.categories contains 'Fundamentals' %}
@@ -245,10 +262,25 @@ order: 2
 ### Advanced
 
 <div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
+  {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for topic in guides %}
     {% if topic.apis contains 'C/C++' and topic.categories contains 'Advanced' %}
+      {% if topic.title and topic.order %}
+        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Rendering (RDK)
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for topic in guides %}
+    {% if topic.apis contains 'C/C++' and topic.categories contains 'RDK' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -272,13 +304,13 @@ order: 2
   </ul>
 </div>
 
-### Uncategorized
+### Troubleshooting
 
 <div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
+  {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.apis contains 'C/C++' and topic.categories contains 'Uncategorized'%}
+    {% if topic.apis contains 'C/C++' and topic.categories contains 'Troubleshooting' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}

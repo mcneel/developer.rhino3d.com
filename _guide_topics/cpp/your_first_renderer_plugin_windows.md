@@ -7,7 +7,7 @@ languages: ['C/C++']
 platforms: ['Windows']
 categories: ['RDK']
 origin: http://developer.rhino3d.com/files/rhino_rdk_documentation.pdf
-order: 3
+order: 2
 keywords: ['RDK', 'Rhino', 'Renderer', 'Development', 'Plugin']
 layout: toc-guide-page
 TODO: 'needs porting'

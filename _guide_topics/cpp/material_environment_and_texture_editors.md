@@ -7,7 +7,7 @@ languages: ['C/C++']
 platforms: ['Windows']
 categories: ['RDK']
 origin: http://developer.rhino3d.com/files/rhino_rdk_documentation.pdf
-order: 4
+order: 5
 keywords: ['material', 'environment', 'texture', 'RDK']
 layout: toc-guide-page
 TODO: 'needs porting'

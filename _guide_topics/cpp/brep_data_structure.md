@@ -5,9 +5,9 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/brepstructure
-order: 1
+order: 4
 keywords: ['rhino', 'brep', 'openNURBS', 'data']
 layout: toc-guide-page
 TODO: 'needs explanation, diagram style update'
