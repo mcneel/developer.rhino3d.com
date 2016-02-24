@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Miscellaneous']
+categories: ['Uncategorized']
 origin: http://wiki.mcneel.com/developer/sdksamples/open3dm
 order: 1
 keywords: ['rhino', 'open', '3dm']

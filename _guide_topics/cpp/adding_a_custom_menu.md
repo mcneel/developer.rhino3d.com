@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Miscellaneous']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/sdksamples/insertpluginmenu
 order: 1
 keywords: ['rhino', 'menu']

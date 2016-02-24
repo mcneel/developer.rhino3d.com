@@ -5,7 +5,7 @@ author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
-categories: ['GettingStarted']
+categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addcommand
 order: 3
 keywords: ['first', 'RhinoCommon', 'Plugin']

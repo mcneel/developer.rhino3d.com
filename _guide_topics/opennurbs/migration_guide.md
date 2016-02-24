@@ -5,7 +5,7 @@ author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Cross-Platform']
-categories: ['GettingStarted']
+categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/on5migrate
 order: 2
 keywords: [openNURBS', 'migrating', 'versions']

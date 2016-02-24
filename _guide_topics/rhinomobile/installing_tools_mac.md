@@ -5,7 +5,7 @@ author: dan@mcneel.com
 apis: ['RhinoMobile']
 languages: ['C#']
 platforms: ['iOS', 'Android']
-categories: ['GettingStarted']
+categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/rhinomobile/getting_started
 order: 2
 keywords: ['RhinoMobile', 'iRhino 3D']

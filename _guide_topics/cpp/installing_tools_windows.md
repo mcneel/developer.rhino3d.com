@@ -5,9 +5,9 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['GettingStarted']
+categories: ['Getting Started']
 origin: https://wiki.mcneel.com/developer/cplusplusplugins
-order: 2
+order: 1
 keywords: ['c', 'C/C++', 'plugin']
 layout: toc-guide-page
 TODO: 'needs to be written.'

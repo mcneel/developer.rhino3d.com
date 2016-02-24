@@ -5,7 +5,7 @@ author: brian@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
-categories: ['GettingStarted']
+categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/authoring
 order: 6
 keywords: ['first', 'RhinoCommon', 'Plugin', 'installing']
