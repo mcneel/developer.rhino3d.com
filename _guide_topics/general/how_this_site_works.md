@@ -103,7 +103,7 @@ Here is an example of the YAML for this guide:
 title: How This Site Works
 description: A guide to how this very developer document site works.
 author: dan@mcneel.com
-apis: ['Developer Docs', 'Jekyll', 'Liquid']
+apis: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Mac', 'Windows']
 categories: ['General']
