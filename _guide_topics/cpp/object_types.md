@@ -5,9 +5,9 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Overview']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/sdksamples/rhinoobject
-order: 1
+order: 3
 keywords: ['rhino', 'objects']
 layout: toc-guide-page
 ---

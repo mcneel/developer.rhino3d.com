@@ -5,9 +5,9 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/sdksamples/migratevs2010/64bitcompatibility
-order: 1
+order: 9
 keywords: ['rhino', 'compilers']
 layout: toc-guide-page
 ---

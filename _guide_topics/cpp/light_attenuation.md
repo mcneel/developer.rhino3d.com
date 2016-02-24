@@ -5,9 +5,9 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['RDK']
 origin: http://wiki.mcneel.com/developer/sdksamples/lightattenuation
-order: 1
+order: 4
 keywords: ['rhino', 'light']
 layout: toc-guide-page
 ---

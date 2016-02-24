@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/sdksamples/countof
 order: 1
 keywords: ['rhino', 'sizeof', 'UNICODE', 'TCHAR', 'wchar_t']
