@@ -87,7 +87,6 @@ The following samples have TODO items:
 - What, Where, How, Why table on [homepage]({{ site.baseurl }}) does not work on iOS's Safari.  Fix it.
 - Page width resizes each time templates are switched.  This is annoying.
 - Add bylines to guides footer or some template?
-- New favicon that reads better
-- Rhino plungin logo puzzle-piece should fit with Grasshopper addin puzzle-piece
 - Main site logo needs reconsideration
+- Rhino plungin logo puzzle-piece should fit with Grasshopper addin puzzle-piece
 - We could report samples that are not passing tests.
