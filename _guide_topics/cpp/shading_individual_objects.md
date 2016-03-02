@@ -20,7 +20,7 @@ layout: toc-guide-page
 
 The drawing display pipeline technology provides both users and developers great flexibility and control over how objects are drawn on the screen.  One of the features available is the ability to have objects draw using different display modes in the same viewport.  For example, it is possible for a viewport to display both wireframe and shaded objects at the same time.
 
-In order to allow for an object to draw in a display mode other than what the viewport is currently set to, all you need to do is to add an `ON_DisplayMaterialRef` object to an object's attributes.  A `ON_DisplayMaterialRef` defines what viewport an object will draw using a different display attributes and what display attributes it will use.
+To allow an object to draw in a display mode other than what the viewport is currently set to, all you need to do is to add an `ON_DisplayMaterialRef` object to an object's attributes.  A `ON_DisplayMaterialRef` defines what viewport an object will draw using a different display attributes and what display attributes it will use.
 
 ## Sample
 
