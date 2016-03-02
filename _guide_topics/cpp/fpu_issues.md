@@ -18,7 +18,7 @@ layout: toc-guide-page
 
 ## Problem
 
-When your plug-in tries to perform a certain calculation, you get the following text in Visual Studio's output window:
+When your plugin tries to perform a certain calculation, you get the following text in Visual Studio's output window:
 
 ```
 [[developer:opennurbs:home|opennurbs]] ERROR # 2 .\rhino3MathErrorHandling.cpp:154 Serious math library or floating point errors occurred.
@@ -38,7 +38,7 @@ ON_FPU_BeforeSloppyCall();
 ON_FPU_AfterSloppyCall();
 ```
 
-In doing this, we don't loose any information about exceptions in our own code and we don't get pestered about exceptions we can't do anything about.  (Note, if you are calling something that may run the .NET JIT, then use `ON_FPU_AfterDotNetJITUse` instead of `ON_FPU_AfterSloppyCall`).
+In doing this, we don't lose any information about exceptions in our own code and we don't get pestered about exceptions we can't do anything about.  (Note, if you are calling something that may run the .NET JIT, then use `ON_FPU_AfterDotNetJITUse` instead of `ON_FPU_AfterSloppyCall`).
 
 Also, the following error occurs when a serious divide by zero, overflow, or invalid operation happened sometime before the call to `ON_FPU_BeforeSloppyCall`:
 
