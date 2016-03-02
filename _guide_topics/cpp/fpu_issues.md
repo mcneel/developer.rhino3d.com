@@ -18,7 +18,7 @@ layout: toc-guide-page
 
 ## Problem
 
-When your plugin tries to perform a certain calculation, you get the following text in Visual Studio's output window:
+When your plug-in tries to perform a certain calculation, you get the following text in Visual Studio's output window:
 
 ```
 [[developer:opennurbs:home|opennurbs]] ERROR # 2 .\rhino3MathErrorHandling.cpp:154 Serious math library or floating point errors occurred.
