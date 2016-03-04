@@ -86,10 +86,10 @@ The following samples have TODO items:
 - Re-capture images on retina display and replace them
 - What, Where, How, Why table on [homepage]({{ site.baseurl }}) does not work on iOS's Safari.  Fix it.
 - Page width resizes each time templates are switched.  This is annoying.
-- Add bylines to guides footer or some template?
 - Main site logo needs reconsideration
 - Rhino plungin logo puzzle-piece should fit with Grasshopper addin puzzle-piece
 - We could report samples that are not passing tests.
+- Add last updated date to footer
 - Plugin vs Plug-in - be consistent
 - Some newer guides do not have proper bold formatting (find and fix those).
 - Opennurbs or openNURBS - be consistent
