@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Other']
+categories: ['Viewports and Views']
 origin: http://wiki.mcneel.com/developer/scriptsamples/rendernamedviews
 order: 1
 keywords: ['rhinoscript', 'vbscript']

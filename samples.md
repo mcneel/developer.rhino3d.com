@@ -319,13 +319,104 @@ order: 4
 ## RhinoScript <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 {: #rhinoscript }
 
-### Uncategorized
+### Adding Objects
 
 <div class="trigger">
   {% assign samples = site.samples | sort:"title" %}
   <ul>
   {% for sample in samples %}
-    {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Uncategorized'%}
+    {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Adding Objects'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Blocks
+
+<div class="trigger">
+  {% assign samples = site.samples | sort:"title" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Blocks'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Curves
+
+<div class="trigger">
+  {% assign samples = site.samples | sort:"title" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Curves'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+
+### Layers
+
+<div class="trigger">
+  {% assign samples = site.samples | sort:"title" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Layers'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Picking and Selection
+
+<div class="trigger">
+  {% assign samples = site.samples | sort:"title" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Picking and Selection'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Surfaces
+
+<div class="trigger">
+  {% assign samples = site.samples | sort:"title" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Surfaces'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Viewports and Views
+
+<div class="trigger">
+  {% assign samples = site.samples | sort:"title" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Viewports and Views'%}
       {% if sample.title and sample.order %}
         <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
       {% endif %}
@@ -341,6 +432,21 @@ order: 4
   <ul>
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Flamingo'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Other
+
+<div class="trigger">
+  {% assign samples = site.samples | sort:"title" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Other'%}
       {% if sample.title and sample.order %}
         <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
       {% endif %}
