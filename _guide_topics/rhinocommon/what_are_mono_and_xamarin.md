@@ -40,7 +40,7 @@ RhinoCommon on Mac is executed through an embedded, custom, Mono framework.  Tha
 
 ## Xamarin
 
-Xamarin is a private, for-profit, software company founded by the engineers who created Mono.  Xamarin is the primary maintainer and commercial sponsor of Mono.  Xamarin provides professional developer tools that make cross platform code easier to author, test, and maintain.
+Xamarin - a subsidiary of Microsoft - is a company founded by the engineers who created Mono.  Xamarin is the primary maintainer and commercial sponsor of Mono.  Xamarin provides professional developer tools that make cross platform code easier to author, test, and maintain.
 
 ### The Xamarin platform
 
