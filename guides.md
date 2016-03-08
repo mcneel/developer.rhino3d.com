@@ -349,26 +349,19 @@ order: 2
 
 ### Overview
 
-<div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
-  <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoScript' and topic.categories contains 'Overview' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
+- [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what_are_vbscript_rhinoscript)
 
-### VBScript Basics
+### Getting Started
+
+- [RhinoScript 101 Primer](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
+
+### Fundamentals
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for topic in guides %}
-    {% if topic.apis contains 'RhinoScript' and topic.categories contains 'Basics' %}
+    {% if topic.apis contains 'RhinoScript' and topic.categories contains 'Fundamentals' %}
       {% if topic.title and topic.order %}
         <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -428,8 +421,6 @@ order: 2
 - [RhinoScript Samples on GitHub](https://github.com/mcneel/rhinoscript)
 - [RhinoScript Dash Docset](http://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
 - [RhinoScript Help File On-Line](http://www.rhino3d.com/5/rhinoscript/index.html)
-- [RhinoScript 101 Primer](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
-- [VBScript User's Guide and Language Reference on MSDN](http://msdn.microsoft.com/en-us/library/t0aew7h6(VS.85).aspx)
 
 ---
 

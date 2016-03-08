@@ -29,6 +29,7 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language. With Rhi
 
 ## Related Topics
 
+- [VBScript User's Guide and Language Reference on MSDN](http://msdn.microsoft.com/en-us/library/t0aew7h6(VS.85).aspx)
 - [VBScript Data Types]({{ site.baseurl }}/guides/rhinoscript/vbscript_datatypes)
 - [VBScript Variables]({{ site.baseurl }}/guides/rhinoscript/vbscript_variables)
 - [VBScript Constants]({{ site.baseurl }}/guides/rhinoscript/vbscript_constants)

@@ -5,9 +5,9 @@ author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Intermediate']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/scriptsamples/hoisting
-order: 1
+order: 3
 keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---

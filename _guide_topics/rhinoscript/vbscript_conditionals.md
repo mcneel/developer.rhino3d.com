@@ -5,9 +5,9 @@ author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Basics']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/vbsconditional
-order: 1
+order: 5
 keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
