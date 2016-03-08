@@ -1,6 +1,6 @@
 ---
 title: Uncommon Numeric Conversions
-description: unset
+description: This brief guide demonstrates some useful (or not so useful) numeric conversions in RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Uncommon Numeric Conversions
 
-This brief guide demonstrates some useful (or not so useful) numeric conversions in RhinoScript.
+{{ page.description }}
 
 ## Hexadecimal
 

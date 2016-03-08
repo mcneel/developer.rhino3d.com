@@ -1,6 +1,6 @@
 ---
 title: Plugin User Data
-description: unset
+description: This guide gives an overview of user data and how to use it with RhinoCommon.
 author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -13,6 +13,8 @@ layout: toc-guide-page
 ---
 
 # Plugin User Data
+
+{{ page.description }}
 
 There are two basic ways plugins can store information in Rhino .3dm files:
 

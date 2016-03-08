@@ -1,6 +1,6 @@
 ---
 title: Commas & Periods
-description: unset
+description: This guide demonstrates how to consistently read/write numbers to strings.
 author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Commas & Periods
 
-This guide demonstrates how to consistently read/write numbers to strings.
+{{ page.description }}
 
 ## English Culture
 

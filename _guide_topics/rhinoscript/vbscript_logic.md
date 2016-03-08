@@ -1,6 +1,6 @@
 ---
 title: VBScript Logic
-description: unset
+description: This guide discusses the logic, or lack of, in VBScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript Logic
 
-This guide discusses the logic, or lack of, in VBScript.
+{{ page.description }}
 
 ## Logic?
 

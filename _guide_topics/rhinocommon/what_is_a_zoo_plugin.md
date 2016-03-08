@@ -1,6 +1,6 @@
 ---
 title: What is a Zoo Plugin?
-description: unset
+description: This guide describes what a Zoo Plugin is and what is does.
 author: dale@mcneel.com
 apis: ['RhinoCommon', 'C/C++']
 languages: ['All']
@@ -13,6 +13,8 @@ layout: toc-guide-page
 ---
 
 # What is a Zoo Plugin?
+
+{{ page.description }}
 
 A Zoo plugin is a software module, developed by a 3rd party, that extends the functionality of Zoo 5.0 by allowing it to validate product licenses.
 

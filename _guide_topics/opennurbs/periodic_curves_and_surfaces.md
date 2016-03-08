@@ -1,6 +1,6 @@
 ---
 title: Periodic Curves & Surfaces
-description: unset
+description: This guide discusses periodic curves and surfaces and openNURBS toolkit.
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Periodic Curves & Surfaces
 
-This guide discusses periodic curves and surfaces and openNURBS toolkit.
+{{ page.description }}
 
 A periodic knot vector can be either uniform or non-uniform.
 

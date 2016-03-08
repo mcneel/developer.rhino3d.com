@@ -1,6 +1,6 @@
 ---
 title: Contributing
-description: unset
+description: 'Hey, make yourself useful!'
 author: dan@mcneel.com
 apis: ['General']
 languages: ['All']
@@ -16,7 +16,7 @@ TODO: 'needs review'
 
 # Contributing
 
-Hey, make yourself useful!
+{{ page.description }}
 
 ## GitHub
 

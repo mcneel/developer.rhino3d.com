@@ -1,6 +1,6 @@
 ---
 title: Array Dimensions & Upper Bounds
-description: unset
+description: This guide discusses how to determine the dimension and the upper bounds of arrays in RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Array Dimensions & Upper Bounds
 
-This guide discusses how to determine the dimension and the upper bounds of arrays in RhinoScript.
+{{ page.description }}
 
 ## Overview
 

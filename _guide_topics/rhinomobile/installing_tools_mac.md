@@ -1,6 +1,6 @@
 ---
 title: Installing Tools (Mac)
-description: unset
+description: This guide covers all the necessary tools required for RhinoMobile on Mac.
 author: dan@mcneel.com
 apis: ['RhinoMobile']
 languages: ['C#']
@@ -13,6 +13,8 @@ layout: toc-guide-page
 ---
 
 # Installing Tools (Mac)
+
+{{ page.description }}
 
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C# mobile applications using RhinoMobile in Xamarin Studio.
 

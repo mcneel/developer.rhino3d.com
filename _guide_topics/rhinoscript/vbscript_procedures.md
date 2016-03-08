@@ -1,6 +1,6 @@
 ---
 title: VBScript Procedures
-description: unset
+description: This guide discusses VBScript procedures.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript Procedures
 
-This guide discusses VBScript procedures.
+{{ page.description }}
 
 ## Overview
 

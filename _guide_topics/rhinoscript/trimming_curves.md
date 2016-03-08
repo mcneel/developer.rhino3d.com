@@ -1,6 +1,6 @@
 ---
 title: Trimming Curves
-description: unset
+description: This guide demonstrates how to trim curves using RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Trimming Curves
 
-This guide demonstrates how to trim curves using RhinoScript.
+{{ page.description }}
 
 ## Problem
 

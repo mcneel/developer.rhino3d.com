@@ -1,6 +1,6 @@
 ---
 title: Your First Plugin (Mac)
-description: unset
+description: This guide walks you through your first plugin for Rhino for Mac using RhinoCommon and Xamarin Studio.
 author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -15,7 +15,9 @@ layout: toc-guide-page
 
 # Your First Plugin (Mac)
 
-This guide walks you through your first plugin for Rhino for Mac using RhinoCommon and Xamarin Studio. It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac).
+{{ page.description }}
+
+It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac).
 
 ## HelloRhinoCommon
 

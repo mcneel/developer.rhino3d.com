@@ -1,6 +1,6 @@
 ---
 title: VBScript Code Conventions
-description: unset
+description: This guide provides an overview of VBScript coding conventions.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript Code Conventions
 
-This guide provides an overview of VBScript coding conventions.
+{{ page.description }}
 
 ## Overview
 

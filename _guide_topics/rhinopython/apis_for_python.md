@@ -1,6 +1,6 @@
 ---
 title: APIs Available to Python
-description: unset
+description: This guide covers the APIs available to Python in Rhino.
 author: alain@mcneel.com
 apis: ['RhinoPython']
 languages: ['Python']
@@ -14,6 +14,8 @@ TODO: 'needs reorganization with regard to other guides'
 ---
 
 # APIs Available to Python
+
+{{ page.description }}
 
 ## RhinoScriptSyntax
 

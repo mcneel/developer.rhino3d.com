@@ -1,6 +1,6 @@
 ---
 title: VBScript Constants
-description: unset
+description: This brief guide is an overview of VBScript constants.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript Constants
 
-This brief guide is an overview of VBScript constants.
+{{ page.description }}
 
 ## Overview
 

@@ -1,6 +1,6 @@
 ---
 title: Efficient Script Loading
-description: unset
+description: This guide discusses different techniques of loading and running script and their efficiencies.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Efficient Script Loading
 
-This guide discusses different techniques of loading and running script and their efficiencies.
+{{ page.description }}
 
 ## LoadScript and RunScript
 

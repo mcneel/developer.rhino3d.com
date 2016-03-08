@@ -1,6 +1,6 @@
 ---
 title: VBScript Passing Parameters
-description: unset
+description: This guide discusses parameter passing in VBScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript Passing Parameters
 
-This guide discusses parameter passing in VBScript.
+{{ page.description }}
 
 ## Overview
 

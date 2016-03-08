@@ -1,6 +1,6 @@
 ---
 title: Comparing Arrays
-description: unset
+description: This guide discusses efficient VBScript array comparison.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Comparing Arrays
 
-This guide discusses efficient VBScript array comparison.
+{{ page.description }}
 
 ## Slow Comparison
 

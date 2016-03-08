@@ -1,6 +1,6 @@
 ---
 title: Your First App (Mac)
-description: unset
+description: This guide walks you through your first mobile app using RhinoMobile and Xamarin Studio on Mac.
 author: dan@mcneel.com
 apis: ['RhinoMobile']
 languages: ['C#']
@@ -14,7 +14,9 @@ layout: toc-guide-page
 
 # Your First App (Mac)
 
-This guide walks you through your first mobile app using RhinoMobile and Xamarin Studio.  This guide presumes you have gone through the [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinomobile/installing_tools_mac) guide and have successfully installed Xamarin Studio, Xcode, and all the requisite libraries.
+{{ page.description }}
+
+This guide presumes you have gone through the [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinomobile/installing_tools_mac) guide and have successfully installed Xamarin Studio, Xcode, and all the requisite libraries.
 
 ## HelloRhinoMobile
 

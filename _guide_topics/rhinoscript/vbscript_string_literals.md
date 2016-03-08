@@ -1,6 +1,6 @@
 ---
 title: VBScript String Literals
-description: unset
+description: This brief guide demonstrates how to use string literals in VBScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript String Literals
 
-This brief guide demonstrates how to use string literals in VBScript.
+{{ page.description }}
 
 ## Overview
 

@@ -1,6 +1,6 @@
 ---
 title: Generating Random Numbers
-description: unset
+description: This guide demonstrates how to generate random numbers that fall within a specified range using RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Generating Random Numbers
 
-This guide demonstrates how to generate random numbers that fall within a specified range using RhinoScript.
+{{ page.description }}
 
 ## Standard VBScript
 

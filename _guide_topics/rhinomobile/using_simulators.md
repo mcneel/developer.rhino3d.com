@@ -1,6 +1,6 @@
 ---
 title: Using Simulators
-description: unset
+description: This guide covers the basics of using Emulators or Simulators to debug your mobile application.
 author: dan@mcneel.com
 apis: ['RhinoMobile']
 languages: ['C#']
@@ -14,7 +14,9 @@ layout: toc-guide-page
 
 # Using Simulators
 
-This guide covers the basics of using Emulators or Simulators to debug your mobile application.  Android provides Emulators and iOS provides simulators, each with their benefits and weaknesses.
+{{ page.description }}
+
+Android provides Emulators and iOS provides simulators, each with their benefits and weaknesses.
 
 ## Android Emulators
 

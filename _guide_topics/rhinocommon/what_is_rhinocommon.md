@@ -1,6 +1,6 @@
 ---
 title: What is RhinoCommon?
-description: unset
+description: This guide gives an overview of RhinoCommon.
 author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'VB.NET']
@@ -14,6 +14,8 @@ layout: toc-guide-page
 
 
 # What is RhinoCommon?
+
+{{ page.description }}
 
 RhinoCommon is the cross-platform .NET plugin SDK available for:
 

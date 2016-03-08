@@ -1,6 +1,6 @@
 ---
 title: Lengths of Curves
-description: unset
+description: This guide demonstrates how to calculate the lengths of curve objects using RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Lengths of Curves
 
-This guide demonstrates how to calculate the lengths of curve objects using RhinoScript.
+{{ page.description }}
 
 ## Problem
 

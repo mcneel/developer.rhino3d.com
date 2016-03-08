@@ -1,6 +1,6 @@
 ---
 title: Developer Docs Style Guide
-description: unset
+description: This guide serves as an example and quick reference for the syntax and structure of this site.
 author: dan@mcneel.com
 apis: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
@@ -16,7 +16,9 @@ layout: toc-guide-page
 
 # Developer Docs Style Guide
 
-This is a sample page that serves as a quick reference for the syntax and structure of Rhino Developer Documentation content.  Below are examples of nearly all the available syntax using Markdown, Kramdown (a superset of Markdown), the table-of-contents UI widget, etc.
+{{ page.description }}
+
+Below are examples of nearly all the available syntax using Markdown, Kramdown (a superset of Markdown), the table-of-contents UI widget, etc.
 
 Some portions of this page were adapted from the [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html).
 

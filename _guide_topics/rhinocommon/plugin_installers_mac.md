@@ -1,6 +1,6 @@
 ---
 title: Plugin Installers (Mac)
-description: unset
+description: This guide explains how to create a plugin installer for Rhino for Mac.
 author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -15,7 +15,9 @@ layout: toc-guide-page
 
 # Plugin Installers (Mac)
 
-This guide explains how to create a plugin installer for Rhino for Mac, which presumes you have a plugin that successfully builds and runs already.  If you are not there yet, see [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac).
+{{ page.description }}
+
+It is presumed you have a plugin that successfully builds and runs already.  If you are not there yet, see [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac).
 
 ## Overview
 

@@ -1,6 +1,6 @@
 ---
 title: VBScript Conditionals
-description: unset
+description: This guide is an survey of VBScript conditional statements.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript Conditionals
 
-This guide is an survey of VBScript conditional statements.
+{{ page.description }}
 
 ## Overview
 

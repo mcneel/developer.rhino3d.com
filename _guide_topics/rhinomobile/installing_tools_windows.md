@@ -1,6 +1,6 @@
 ---
 title: Installing Tools (Windows)
-description: unset
+description: This guide covers all the necessary tools required for RhinoMobile on Windows
 author: dan@mcneel.com
 apis: ['RhinoMobile']
 languages: ['C#']
@@ -13,6 +13,8 @@ layout: toc-guide-page
 ---
 
 # Installing Tools (Windows)
+
+{{ page.description }}
 
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C# mobile applications using RhinoMobile.
 

@@ -1,6 +1,6 @@
 ---
 title: VBScript Variables
-description: unset
+description: This guide provides an overview of VBScript variables.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript Variables
 
-This guide provides an overview of VBScript variables.
+{{ page.description }}
 
 ## Overview
 

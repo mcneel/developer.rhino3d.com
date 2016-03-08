@@ -1,6 +1,6 @@
 ---
 title: Creating your first C/C++ plugin for Rhino
-description: unset
+description: This guide walks you through your first plugin for Rhino for Windows using C/C++ and Visual Studio.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -15,7 +15,9 @@ TODO: 'needs new screenshots, review, and cleanup.  Consider breaking out Adding
 
 # Your First Plugin (Windows)
 
-This guide walks you through your first [plugin]({{ site.baseurl }}/guides/general/what_is_a_rhino_plugin) for Rhino for Windows using C++ and Visual Studio.  It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing_tools_windows).
+{{ page.description }}
+
+It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing_tools_windows).
 
 ## Barebones Plugin
 

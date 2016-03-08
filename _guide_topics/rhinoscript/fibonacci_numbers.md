@@ -1,6 +1,6 @@
 ---
 title: Fibonacci Numbers
-description: unset
+description: This guide is a survey of Fibonacci number algorithms in RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Fibonacci Numbers
 
-This guide is a survey of Fibonacci number algorithms in RhinoScript.
+{{ page.description }}
 
 ## Overview
 

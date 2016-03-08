@@ -1,6 +1,6 @@
 ---
 title: Hacking and Testing latest Atom rhino-python package
-description: unset
+description: This guide describes how to run and test the latest Atom rhino-python package.
 author: alain@mcneel.com
 apis: ['RhinoPython']
 languages: ['Markdown', 'Kramdown', 'YAML']
@@ -12,7 +12,9 @@ keywords: ['hacking', 'atom', 'rhino-python']
 layout: bootstrap
 ---
 
-# Running and Testing the Atom rhino-python package from source.  
+# Hacking and Testing latest Atom rhino-python package
+
+{{ page.description }}
 
 ### Specifically, running from the "settings" branch of the source to test the search paths configuration.
 

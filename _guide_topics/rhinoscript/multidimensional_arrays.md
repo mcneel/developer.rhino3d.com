@@ -1,6 +1,6 @@
 ---
 title: Multidimensional Arrays
-description: unset
+description: This guide discusses rectangular and ragged multidimensional arrays.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Multidimensional Arrays
 
-Discusses rectangular and ragged multidimensional arrays.
+{{ page.description }}
 
 ## Overview
 

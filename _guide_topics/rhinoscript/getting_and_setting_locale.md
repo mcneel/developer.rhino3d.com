@@ -1,6 +1,6 @@
 ---
 title: Getting & Setting Locale
-description: unset
+description: This guide demonstrates how to format locale-sensitive numbers using RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Getting & Setting Locale
 
-This guide demonstrates how to format locale-sensitive numbers using RhinoScript.
+{{ page.description }}
 
 ## Overview
 

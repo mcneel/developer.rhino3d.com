@@ -1,6 +1,6 @@
 ---
 title: Optional Arguments
-description: unset
+description: This guide demonstrates how to implement optional arguments in VBScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Optional Arguments
 
-This guide demonstrates how to implement optional arguments in VBScript.
+{{ page.description }}
 
 ## Overview
 

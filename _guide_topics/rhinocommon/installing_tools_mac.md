@@ -1,6 +1,6 @@
 ---
 title: Installing Tools (Mac)
-description: unset
+description: This guide covers all the necessary tools required to author Rhino plugins on Mac.
 author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -14,8 +14,9 @@ layout: toc-guide-page
 
 # Installing Tools (Mac)
 
-By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C# .NET plugins using RhinoCommon in Rhino for Mac.
+{{ page.description }}
 
+By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C# .NET plugins using RhinoCommon in Rhino for Mac.
 
 ## Prerequisites
 

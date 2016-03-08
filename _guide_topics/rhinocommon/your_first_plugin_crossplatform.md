@@ -1,6 +1,6 @@
 ---
 title: Your First Plugin (Cross-Platform)
-description: unset
+description: This guide walks you through your first plugin that targets both Rhino for Windows and Rhino for Mac.
 author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -14,7 +14,9 @@ layout: toc-guide-page
 
 # Your First Plugin (Cross-Platform)
 
-This guide walks you through your first plugin that targets both Rhino for Windows and Rhino for Mac. It is presumed you already have *all* the necessary tools installed and are ready to go.  If you are not there yet, see both [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows) and [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac).  It is also helpful to have read and understood [Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_windows) and [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac).
+{{ page.description }}
+
+It is presumed you already have *all* the necessary tools installed and are ready to go.  If you are not there yet, see both [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows) and [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac).  It is also helpful to have read and understood [Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_windows) and [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac).
 
 ## Overview
 

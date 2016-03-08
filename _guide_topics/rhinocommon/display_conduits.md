@@ -1,6 +1,6 @@
 ---
 title: Display Conduits
-description: unset
+description: This guide gives an overview of Display Conduits and how to use them to access Rhino's display pipeline.
 author: dale@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -13,6 +13,8 @@ layout: toc-guide-page
 ---
 
 # Display Conduits
+
+{{ page.description }}
 
 Rhino lets you define your own display conduits, which provide access to many levels of the display pipeline.  They are a bit tricky.  This guide cover the concepts and basics of using display conduits.
 

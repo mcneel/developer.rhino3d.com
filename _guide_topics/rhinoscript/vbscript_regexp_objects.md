@@ -1,6 +1,6 @@
 ---
 title: VBScript RegExp Objects
-description: unset
+description: This guide discusses the VBScript RegExp object.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript RegExp Objects
 
-This guide discusses the VBScript RegExp object.
+{{ page.description }}
 
 ## Overview
 

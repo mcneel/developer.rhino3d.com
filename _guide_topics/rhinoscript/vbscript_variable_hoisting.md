@@ -1,6 +1,6 @@
 ---
 title: VBScript Variable Hoisting
-description: unset
+description: This guides discusses variable scoping and hoisting in VBScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript Variable Hoisting
 
-This guides discusses variable scoping and hoisting in VBScript.
+{{ page.description }}
 
 ## Problem
 

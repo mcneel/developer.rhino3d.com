@@ -1,6 +1,6 @@
 ---
 title: Converting GUIDs to Strings
-description: unset
+description: This guide demonstrates how convert an array of bytes containing a GUID to a string.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Converting GUIDs to Strings
 
-This guide demonstrates how convert an array of bytes containing a GUID to a string.
+{{ page.description }}
 
 ## Problem
 

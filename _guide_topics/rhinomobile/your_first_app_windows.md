@@ -1,6 +1,6 @@
 ---
 title: Your First App (Windows)
-description: unset
+description: This guide walks you through your first mobile app using RhinoMobile and Visual Studio on Windows.
 author: dan@mcneel.com
 apis: ['RhinoMobile']
 languages: ['C#']
@@ -14,7 +14,9 @@ layout: toc-guide-page
 
 # Your First App (Windows)
 
-This guide walks you through your first mobile app using RhinoMobile and Visual Studio.  This guide presumes you have gone through the [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinomobile/installing_tools_windows) guide and have successfully installed Xamarin  and all the requisite libraries.  These instructions presume you are using Visual Studio 2015 Professional.
+{{ page.description }}
+
+This guide presumes you have gone through the [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinomobile/installing_tools_windows) guide and have successfully installed Xamarin  and all the requisite libraries.  These instructions presume you are using Visual Studio 2015 Professional.
 
 ## HelloRhinoMobile
 

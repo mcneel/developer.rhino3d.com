@@ -1,6 +1,6 @@
 ---
 title: Error Handling
-description: unset
+description: This guide describes the error handling semantics of VBScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Error Handling
 
-This guide describes the error handling semantics of VBScript.
+{{ page.description }}
 
 ## Overview
 

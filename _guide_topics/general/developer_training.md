@@ -1,6 +1,6 @@
 ---
 title: Developer Training
-description: unset
+description: This guide describes our Rhino Developer Training.
 author: dan@mcneel.com
 apis: ['General']
 languages: ['All']
@@ -14,6 +14,8 @@ layout: toc-guide-page
 
 
 # Developer Training
+
+{{ page.description }}
 
 Developer training is a custom, one-on-one session designed to help you become more familiar with the Rhino C++ SDK or the RhinoCommon (.NET) SDK, and to get help in improving your Rhino plugin product.
 

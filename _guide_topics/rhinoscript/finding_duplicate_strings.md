@@ -1,6 +1,6 @@
 ---
 title: Finding Duplicate Strings
-description: unset
+description: This guide demonstrates finding duplicate string using RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Finding Duplicate Strings
 
-This guide demonstrates finding duplicate string using RhinoScript.
+{{ page.description }}
 
 ## Problem
 

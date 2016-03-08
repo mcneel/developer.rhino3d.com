@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Rhino.Python on the Mac
-description: unset
+description: This guide covers the basics of getting started writing Python in Rhino for Mac.
 author: alain@mcneel.com
 apis: ['RhinoPython']
 languages: ['Python']
@@ -14,6 +14,8 @@ TODO: 'needs update, adding more resource links, etc.'
 ---
 
 # Getting Started
+
+{{ page.description }}
 
 To get acquainted with how Python scripts can help you model in Rhino first run some of the sample scripts that are provided.
 

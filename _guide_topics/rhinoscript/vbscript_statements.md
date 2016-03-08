@@ -1,6 +1,6 @@
 ---
 title: VBScript Statements
-description: unset
+description: This guide presents an overview of VBScript statements.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript Statements
 
-This guide presents an overview of VBScript statements.
+{{ page.description }}
 
 ## Overview
 

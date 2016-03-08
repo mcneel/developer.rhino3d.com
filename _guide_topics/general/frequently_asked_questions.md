@@ -1,6 +1,6 @@
 ---
 title: Frequently Asked Questions
-description: unset
+description: This guide is a list of Frequently Asked Questions (FAQ).
 author: dan@mcneel.com
 apis: ['General']
 languages: ['All']

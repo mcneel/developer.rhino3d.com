@@ -77,7 +77,6 @@ The following samples have TODO items:
 - Add API specific pages under guides and samples that filter that content.
 - Standardize file names (underscores, verbiage, length, etc). - update [redirects on wiki](https://wiki.mcneel.com/homepage?do=admin&page=redirect)
 - Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
-- Standardize descriptions so they are only in the yaml.
 - Standardize titles so they are on in the yaml - requires reworking TOC generator.
 - Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
 - Move all samples to mcneel/github - in coordination with Dale Fugier

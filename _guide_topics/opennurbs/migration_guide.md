@@ -1,6 +1,6 @@
 ---
 title: openNURBS 5.0 Migration Guide
-description: unset
+description: This guide contains information to help you migrate your application to openNURBS 5.0.
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # openNURBS 5.0 Migration Guide
 
-This guide contains information to help you migrate your application to openNURBS 5.0.
+{{ page.description }}
 
 ## Overview
 

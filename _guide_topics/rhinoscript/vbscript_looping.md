@@ -1,6 +1,6 @@
 ---
 title: VBScript Looping
-description: unset
+description: This guide is an overview of looping through VBScript code.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript Looping
 
-This guide is an overview of looping through VBScript code.
+{{ page.description }}
 
 ## Overview
 

@@ -1,6 +1,6 @@
 ---
 title: RhinoCommon Zoo Plugins
-description: unset
+description: This guide discusses how to create RhinoCommon plugins that can obtain licenses the Zoo.
 author: dale@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -15,7 +15,7 @@ TODO: 'needs to be compared with creating_zoo_plugins'
 
 # RhinoCommon Zoo Plugins
 
-This guide discusses how to create Rhino plugins, based on RhinoCommon, that can obtain licenses from the Rhino license manager and the Zoo.
+{{ page.description }}
 
 ## Overview
 

@@ -1,6 +1,6 @@
 ---
 title: ByRef vs ByVal
-description: unset
+description: This guide discusses VBScript argument passing.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # ByRef vs ByVal
 
-This guide discusses VBScript argument passing with a focus on `ByRef` and `ByVal`.
+{{ page.description }}
 
 ## Overview
 

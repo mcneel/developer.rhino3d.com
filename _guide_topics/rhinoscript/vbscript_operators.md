@@ -1,6 +1,6 @@
 ---
 title: VBScript Operators
-description: unset
+description: This guide is an overview of VBScript operators.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript Operators
 
-This guide is an overview of VBScript operators.
+{{ page.description }}
 
 ## Overview
 

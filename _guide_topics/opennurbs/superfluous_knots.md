@@ -1,6 +1,6 @@
 ---
 title: Superfluous Knots
-description: unset
+description: This guide discusses superfluous knots and the openNURBS toolkit.
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Superfluous Knots
 
-This guide discusses superfluous knots and the openNURBS toolkit.
+{{ page.description }}
 
 ## Question
 

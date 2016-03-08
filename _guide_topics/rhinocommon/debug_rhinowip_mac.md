@@ -1,6 +1,6 @@
 ---
 title: Debug in RhinoWIP (Mac)
-description: unset
+description: This guide explains how to debug using the RhinoWIP for Mac.
 author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -14,8 +14,9 @@ layout: toc-guide-page
 
 # Debug in RhinoWIP (Mac)
 
-By the end of this guide, you should understand how to modify your plugin's C# project file in order to target and debug using RhinoWIP.
+{{ page.description }}
 
+By the end of this guide, you should understand how to modify your plugin's C# project file in order to target and debug using RhinoWIP.
 
 ## Prerequisites
 

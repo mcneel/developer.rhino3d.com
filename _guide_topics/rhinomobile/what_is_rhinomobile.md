@@ -1,6 +1,6 @@
 ---
 title: What is RhinoMobile?
-description: unset
+description: This guide gives and overview of RhinoMobile.
 author: dan@mcneel.com
 apis: ['RhinoMobile']
 languages: ['C#']

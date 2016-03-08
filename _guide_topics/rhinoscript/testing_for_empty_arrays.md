@@ -1,6 +1,6 @@
 ---
 title: Testing for Empty Arrays
-description: unset
+description: This guide discusses how to determine a VBScript array is empty.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Testing for Empty Arrays
 
-This guide discusses how to determine a VBScript array is empty.
+{{ page.description }}
 
 ## Problem
 

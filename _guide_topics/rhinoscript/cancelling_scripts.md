@@ -1,6 +1,6 @@
 ---
 title: Cancelling Scripts
-description: unset
+description: This guide demonstrates how to allow scripts to be cancelled by the user.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Cancelling Scripts
 
-This guide demonstrates how to allow scripts to be cancelled by the user.
+{{ page.description }}
 
 ## Overview
 

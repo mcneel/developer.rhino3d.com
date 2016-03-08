@@ -1,6 +1,6 @@
 ---
 title: Run a Rhino command from a Plugin
-description: unset
+description: This guide covers the proper techniques when running a Rhino command from within the context of a plugin command.
 author: dale@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Rhino commands from a Plugin
 
-This guide covers the proper techniques when running a Rhino command from within the context of a plugin command.
+{{ page.description }}
 
 ## The Problem
 

@@ -1,6 +1,6 @@
 ---
 title: Shortest Line between two Lines
-description: unset
+description: This brief guide demonstrates how to calculate the shortest line between two lines.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Shortest Line between two Lines
 
-This brief guide demonstrates how to calculate the shortest line between two lines.
+{{ page.description }}
 
 ## Overview
 

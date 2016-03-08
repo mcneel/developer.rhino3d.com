@@ -1,6 +1,6 @@
 ---
 title: Using .NET Classes
-description: unset
+description: This guide discusses several .NET classes that work with RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Using .NET Classes
 
-This guide discusses several .NET classes that work with RhinoScript.
+{{ page.description }}
 
 ## Overview
 

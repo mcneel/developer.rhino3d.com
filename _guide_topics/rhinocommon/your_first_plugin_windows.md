@@ -1,6 +1,6 @@
 ---
 title: Your First Plugin (Windows)
-description: unset
+description: This guide walks you through your first plugin for Rhino for Windows using RhinoCommon and Visual Studio.
 author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -14,7 +14,9 @@ layout: toc-guide-page
 
 # Your First Plugin (Windows)
 
-This guide walks you through your first plugin for Rhino for Windows using RhinoCommon and Visual Studio. It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows).
+{{ page.description }}
+
+It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows).
 
 ## HelloRhinoCommon
 

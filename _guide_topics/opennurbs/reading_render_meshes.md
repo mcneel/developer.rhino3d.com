@@ -1,6 +1,6 @@
 ---
 title: Reading Render Meshes
-description: unset
+description: This brief guide describes how to read render meshes using the openNURBS toolkit.
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
@@ -13,6 +13,8 @@ layout: toc-guide-page
 ---
 
 # Reading Render Meshes
+
+{{ page.description }}
 
 If you are developing software to read .3dm files, you might find that the software only *seems* to read NURBS data; but render meshes are ignored.  We do provide methods for third-party developers to read render meshes from .3dm files.
 

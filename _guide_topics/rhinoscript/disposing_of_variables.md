@@ -1,6 +1,6 @@
 ---
 title: Disposing of Variables
-description: unset
+description: This guide discusses VBScript variables, their scope, and how to clean them up.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Disposing of Variables
 
-This guide discusses VBScript variables, their scope, and how to clean them up.
+{{ page.description }}
 
 ## Overview
 

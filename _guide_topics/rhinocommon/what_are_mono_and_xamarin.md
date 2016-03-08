@@ -1,6 +1,6 @@
 ---
 title: What are Mono & Xamarin?
-description: unset
+description: This guide is an overview of Mono and Xamarin and how they relate to RhinoCommon plugins.
 author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # What are Mono & Xamarin?
 
-This guide is an overview of [Mono](http://www.mono-project.com/), [Xamarin](http://www.xamarin.com), and how they relate to [RhinoCommon plugins]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon/).
+{{ page.description }}
 
 ---
 

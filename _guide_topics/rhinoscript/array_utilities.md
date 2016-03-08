@@ -1,6 +1,6 @@
 ---
 title: Array Utilities
-description: unset
+description: This guide presents an array of VBScript Array utilities.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Array Utilities
 
-This guide presents an array of VBScript Array utilities.
+{{ page.description }}
 
 ## Overview
 

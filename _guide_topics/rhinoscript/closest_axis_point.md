@@ -1,6 +1,6 @@
 ---
 title: Closest Axis Point
-description: unset
+description: This guide demonstrates how to find the closest point on a planar curve to an axis.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Closest Axis Point
 
-This guide demonstrates how to find the closest point on a planar curve to an axis.
+{{ page.description }}
 
 ## Problem
 

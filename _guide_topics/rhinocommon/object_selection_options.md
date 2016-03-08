@@ -1,6 +1,6 @@
 ---
 title: Object Selection with Options
-description: unset
+description: This guide covers how to pick some objects, select command options, return to picking more objects, all while keeping your current selection set.
 author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Object Selection with Options
 
-This guide covers how to pick some objects, select command options, return to picking more objects, all while keeping your current selection set.
+{{ page.description }}
 
 ## GetObject
 

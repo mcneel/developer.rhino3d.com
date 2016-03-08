@@ -1,6 +1,6 @@
 ---
 title: Testing On Devices
-description: unset
+description: This guide walks you through setting up devices for testing mobile applications.
 author: dan@mcneel.com
 apis: ['RhinoMobile']
 languages: ['C#']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Testing On Devices
 
-This guide walks you through setting up devices for testing.
+{{ page.description }}
 
 ## Android Devices
 

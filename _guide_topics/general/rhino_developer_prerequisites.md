@@ -1,6 +1,6 @@
 ---
 title: Developer Prerequisites
-description: unset
+description: This guide describes the main requirements to develop for Rhino.
 author: dan@mcneel.com
 apis: ['General']
 languages: ['All']
@@ -14,6 +14,8 @@ layout: toc-guide-page
 
 
 # Developer Prerequisites
+
+{{ page.description }}
 
 There are a number of prerequisites required to do Rhino development.  Broadly speaking, these can be divided into three categories, ranked in ascending order of difficulty:
 

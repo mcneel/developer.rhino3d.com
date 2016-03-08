@@ -1,6 +1,6 @@
 ---
 title: Rounding Numbers
-description: unset
+description: This guide discusses number rounding in RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Rounding Numbers
 
-This guide discusses number rounding in RhinoScript.
+{{ page.description }}
 
 ## Overview
 

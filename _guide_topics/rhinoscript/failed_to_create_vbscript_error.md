@@ -1,6 +1,6 @@
 ---
 title: Failed to Create VBScript Error
-description: unset
+description: This guide discusses the Failed to create instance of VBScript engine error and how to fix it.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Failed to Create VBScript Error
 
-This guide discusses the "Failed to create instance of VBScript engine" error and how to fix it.
+{{ page.description }}
 
 ## Symptom
 

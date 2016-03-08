@@ -1,6 +1,6 @@
 ---
 title: Quick Sort Key Value Pairs
-description: unset
+description: This guide demonstrates how to sort an array of key-value pairs in RhinoScript.
 author: david@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Quick Sort Key Value Pairs
 
-This guide demonstrates how to sort an array of key-value pairs in RhinoScript.
+{{ page.description }}
 
 ## Overview
 

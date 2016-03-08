@@ -1,6 +1,6 @@
 ---
 title: Calculating Permutations
-description: unset
+description: This guide discusses how to calculate permutations using RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Calculating Permutations
 
-This guide discusses how to calculate permutations using RhinoScript.
+{{ page.description }}
 
 ## Overview
 

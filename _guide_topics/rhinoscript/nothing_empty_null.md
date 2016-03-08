@@ -1,6 +1,6 @@
 ---
 title: Nothing vs Empty vs Null
-description: unset
+description: This guide discusses what nothing means in VBScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # Nothing vs Empty vs Null
 
-This guide discusses what nothing means in VBScript.
+{{ page.description }}
 
 ## Overview
 

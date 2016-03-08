@@ -1,6 +1,6 @@
 ---
 title: VBScript Dictionaries
-description: unset
+description: This guide discusses using VBScript's Dictionary object in RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 # VBScript Dictionaries
 
-This guide discusses using VBScript's Dictionary object in RhinoScript.
+{{ page.description }}
 
 ## Overview
 
