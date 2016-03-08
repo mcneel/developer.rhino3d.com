@@ -5,9 +5,9 @@ author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Intermediate']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/scriptsamples/vbslogic
-order: 1
+order: 6
 keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---

@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Picking and Selection']
 origin: http://wiki.mcneel.com/developer/scriptsamples/seltext
 order: 1
 keywords: ['rhinoscript', 'vbscript']

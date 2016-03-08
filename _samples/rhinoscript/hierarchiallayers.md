@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Layers']
 origin: http://wiki.mcneel.com/developer/scriptsamples/hierarchiallayers
 order: 1
 keywords: ['rhinoscript', 'vbscript']

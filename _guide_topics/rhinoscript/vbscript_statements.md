@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Basics']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/vbsstatements
 order: 1
 keywords: ['script', 'Rhino', 'vbscript']

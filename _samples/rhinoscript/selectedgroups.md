@@ -1,11 +1,11 @@
 ---
 title: Determining Selected Groups
-description: Demonstrates how to determine what object groups are selected usin RhinoScript.
+description: Demonstrates how to determine what object groups are selected using RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Picking and Selection']
 origin: http://wiki.mcneel.com/developer/scriptsamples/selectedgroups
 order: 1
 keywords: ['rhinoscript', 'vbscript']

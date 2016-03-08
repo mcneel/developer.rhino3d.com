@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Blocks']
 origin: http://wiki.mcneel.com/developer/scriptsamples/convertblocktogroup
 order: 1
 keywords: ['rhinoscript', 'vbscript']

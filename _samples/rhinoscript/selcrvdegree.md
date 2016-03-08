@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Picking and Selection', 'Curves']
 origin: http://wiki.mcneel.com/developer/scriptsamples/selcrvdegree
 order: 1
 keywords: ['rhinoscript', 'vbscript']

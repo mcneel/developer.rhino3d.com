@@ -5,7 +5,7 @@ author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Curves']
 origin: http://wiki.mcneel.com/developer/scriptsamples/circletrimmer
 order: 1
 keywords: ['rhinoscript', 'vbscript']
