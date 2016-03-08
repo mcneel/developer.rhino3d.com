@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 # Developer Training
 
-Developer training is a custom, one-on-one session designed to help you become more familiar with the Rhino C++ SDK or the RhinoCommon (.NET) SDK, and to get help in improving your Rhino plug-in product.
+Developer training is a custom, one-on-one session designed to help you become more familiar with the Rhino C++ SDK or the RhinoCommon (.NET) SDK, and to get help in improving your Rhino plugin product.
 
 Rhino Developer Training is available at both the McNeel Headquarters in **Seattle**, and at our European Headquarters in **Barcelona**.
 
@@ -42,8 +42,8 @@ Your computer with:
   * The [RhinoCommon Templates](http://visualstudiogallery.msdn.microsoft.com/16053049-7db2-4c9f-961a-53274ac92ace).
   * _Note, the Express Editions of Visual Studio 2010, 2012, 2013 **will** work._
 
-  * Your Rhino plug-in project source code.
-  * Any software you will need to test your plug-in, including copies of your own software.
+  * Your Rhino plugin project source code.
+  * Any software you will need to test your plugin, including copies of your own software.
 
 ## Pricing and scheduling
 

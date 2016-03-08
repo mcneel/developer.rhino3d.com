@@ -44,7 +44,7 @@ For Rhino to successfully load and run your plugin, several conditions must be m
 1. The "RhinoSdkVersion" number of your plugin must match the "RhinoSdkVersion" of Rhino.
 1. The "RhinoSdkServiceRelease" number of your plugin must be less than or equal to the "RhinoSdkServiceRelease" of Rhino.
 
-We occasionally make changes to our SDKs.  When we do this, we change the "RhinoSdkVersion" number.  This will cause any existing 64-bit plug-ins on customer computers to not load.  Your customer will get an error message.
+We occasionally make changes to our SDKs.  When we do this, we change the "RhinoSdkVersion" number.  This will cause any existing 64-bit plugins on customer computers to not load.  Your customer will get an error message.
 
 If your customer gets this message, you need to get the latest Rhino SDK, recompile your plugin, and release it to your customers.
 

@@ -58,7 +58,7 @@ Let's begin by creating a new solution to contain both platforms' projects.  For
 ```cs
 public class HelloRhinoCommonPlugin : Rhino.PlugIns.PlugIn
   {  
-    ///<summary>Gets the only instance of the HelloRhinoCommonPlugin plug-in.</summary>
+    ///<summary>Gets the only instance of the HelloRhinoCommonPlugin plugin.</summary>
     public static HelloRhinoCommonPlugin Instance { get; private set; }
 
     public HelloRhinoCommonPlugin()

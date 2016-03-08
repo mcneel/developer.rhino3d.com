@@ -1,6 +1,6 @@
 ---
 title: Saving Persistent Settings
-description: This guide discusses how to save plug-in settings to the Registry using C/C++.
+description: This guide discusses how to save plugin settings to the Registry using C/C++.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']

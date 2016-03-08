@@ -15,10 +15,10 @@ layout: code-sample-cpp
 ```cpp
 BOOL LoadAndShowPlugInToolbar()
 {
-  // Get reference to our plug-in object
+  // Get reference to our plugin object
   CTestPlugIn& plugin = GetTestPlugIn();
 
-  // Get the full path to plug-in file
+  // Get the full path to plugin file
   ON_wString file_name;
   plugin.GetPlugInFileName( file_name );
 
@@ -59,10 +59,10 @@ Alternatively:
 ```cpp
 BOOL ShowPlugInToolbar()
 {
-  // Get reference to our plug-in object
+  // Get reference to our plugin object
   CTestPlugIn& plugin = GetTestPlugIn();
 
-  // Get the full path to plug-in file
+  // Get the full path to plugin file
   ON_wString file_name;
   plugin.GetPlugInFileName( file_name );
 

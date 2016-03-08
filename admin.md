@@ -89,6 +89,5 @@ The following samples have TODO items:
 - Rhino plungin logo puzzle-piece should fit with Grasshopper addin puzzle-piece
 - We could report samples that are not passing tests.
 - Add last updated date to footer
-- Plugin vs Plug-in - be consistent
 - Some newer guides do not have proper bold formatting (find and fix those).
 - Opennurbs or openNURBS - be consistent

@@ -80,10 +80,10 @@ Returns the render engine id of the content that this factory produces.
 **Returns:** String which is the identifier of the render engine. NULL in error conditions.
 
 `FactoryPlugInId(strFactoryId)`
-Returns the plug-in id of the plug-in that created this factory.
+Returns the plugin id of the plugin that created this factory.
 
 **Parameters:** strFactoryId = Required. String. The identifier of the factory.
-**Returns:** String which is the identifier of the plug-in. NULL in error conditions.
+**Returns:** String which is the identifier of the plugin. NULL in error conditions.
 
 `FactoryRebuildCache(strFactoryId)`
 Rebuild the factory cache. This forces a refresh of cached data such as the factory name.
@@ -98,10 +98,10 @@ Return Render engine identifier.
 **Returns:** String which is the identifier of the render engine. NULL in error conditions.
 
 `ContentPlugInId(strContentInstanceID)`
-Return The plug-in id of the plug-in that defines this content.
+Return The plugin id of the plugin that defines this content.
 
 **Parameters:** strContentInstanceID = Required. String. The identifier of the content.
-**Returns:** String which is the identifier of the plug-in. NULL in error conditions.
+**Returns:** String which is the identifier of the plugin. NULL in error conditions.
 
 `ContentTypeId(strContentInstanceID)`
 Return The unique id of the content type.
@@ -309,7 +309,7 @@ strInstance = Required. String. The identifier of the instance to search for.
 **Returns:** Boolean True or false indicating success or failure. NULL in error conditions.
 
 `ContentDestroyChildContent(strContentInstanceID, strPlugIn)`
-Unlink and destroy all child contents belonging to the specified plug-in.
+Unlink and destroy all child contents belonging to the specified plugin.
 
 **Parameters:** strContentInstanceID = Required. String. The identifier of the content.
 strPlugIn = Required. String. The identifier of the plug-In.

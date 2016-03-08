@@ -29,7 +29,7 @@ RhinoCommon plugins are .NET Framework 4.0 assemblies. Thus, to create a RhinoCo
 - Microsoft Visual Basic .NET 2010
 - RhinoCommon
 
-Also, all Rhino plugins that use the Rhino license manager to access the Zoo must be signed with an Authenticode certificate issued by McNeel Plugin Security.  These certificates are free, but must be requested by each developer.  Developers must agree to the Terms of Use before a certificate is issued. For more information on plug-in signing, see the [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo) guide.
+Also, all Rhino plugins that use the Rhino license manager to access the Zoo must be signed with an Authenticode certificate issued by McNeel Plugin Security.  These certificates are free, but must be requested by each developer.  Developers must agree to the Terms of Use before a certificate is issued. For more information on plugin signing, see the [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo) guide.
 
 It is presumed you have a RhinoCommon plugin you wish to add license support to.  See the [Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_windows/) guide for instructions.
 

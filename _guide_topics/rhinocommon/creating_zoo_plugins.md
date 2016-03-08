@@ -49,7 +49,7 @@ The general steps required to create a Zoo plugin are:
 Once you have built your Zoo plugin, you can install it and test it:
 
 1. Run *ZooAdmin.exe* and make sure the Zoo licensing service has stopped.
-1. Copy your plug-in assembly (*.dll*) and any dependent support libraries to the Zoo's plugin folder (i.e. *C:\Program Files\Zoo 5.0\Plugins*).
+1. Copy your plugin assembly (*.dll*) and any dependent support libraries to the Zoo's plugin folder (i.e. *C:\Program Files\Zoo 5.0\Plugins*).
 1. Restart the Zoo license service.
 1. When the service has restarted, click the *Add License* button. Y our product should be one of the available products for which to add a license.
 

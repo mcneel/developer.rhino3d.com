@@ -37,7 +37,7 @@ If you read a RhinoCrashDump.dmp file in Notepad.exe and search for “RHINOCRAS
 </RHINOCRASHINFO>
 ```
 
-If the crash happens in a command that is in a plugin, the name of the plug-in's *.RHP* file is in *<EXECUTABLE FILENAME>* and the id is in *<EXECUTABLE UUID>*.
+If the crash happens in a command that is in a plugin, the name of the plugin's *.RHP* file is in *<EXECUTABLE FILENAME>* and the id is in *<EXECUTABLE UUID>*.
 
 *<BUILD DATE>* and *<BUILD TIME>* are the date and time the *.cpp* file that contains the crash dump exception handing code was compiled.
 
@@ -66,6 +66,6 @@ You can use the symbol server to allow Visual Studio to automatically download t
 
 ## Try this yourself
 
-Below is a sample C++ plug-in that will crash Rhino.  To test out crash dump analysis, download and build the plugin.  Then, launch Rhino and load the plugin using the `PlugInManager` command.  Then run the `TestSdkCrash` command.  While the *McNeel Error Reporting* dialog is displayed, copy the *RhinoCrashDump.dmp* from the desktop to some other location, and then click *Don't Send*.  Then follow the steps above to analyze the crash dump.
+Below is a sample C++ plugin that will crash Rhino.  To test out crash dump analysis, download and build the plugin.  Then, launch Rhino and load the plugin using the `PlugInManager` command.  Then run the `TestSdkCrash` command.  While the *McNeel Error Reporting* dialog is displayed, copy the *RhinoCrashDump.dmp* from the desktop to some other location, and then click *Don't Send*.  Then follow the steps above to analyze the crash dump.
 
 <a href="{{ site.baseurl }}/files/testsdkcrash.zip"><span class="glyphicon glyphicon-download">&nbsp;testsdkcrash.zip</span></a>

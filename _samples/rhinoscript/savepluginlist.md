@@ -1,6 +1,6 @@
 ---
 title: Saving Plug-in Information to a Text File
-description: Demonstrates how to save the names of loaded and unloaded plug-ins to a text file using RhinoScript.
+description: Demonstrates how to save the names of loaded and unloaded plugins to a text file using RhinoScript.
 author: dale@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']

@@ -37,7 +37,7 @@ Visit the [Rhino Forum](http://discourse.mcneel.com/) and post your question in 
 
 ### Libraries & Samples
 
-- [RhinoCommon (rhino3dmio branch)](https://github.com/mcneel/rhinocommon/tree/rhino3dmio): The .NET plug-in SDK for Rhino and Grasshopper.
+- [RhinoCommon (rhino3dmio branch)](https://github.com/mcneel/rhinocommon/tree/rhino3dmio): The .NET plugin SDK for Rhino and Grasshopper.
 - [openNURBS](http://www.rhino3d.com/opennurbs) Download: C++ openNURBS SDK.
 - [RhinoMobile](http://github.com/mcneel/RhinoMobile) Download or clone the RhinoMobile library.
 - [RhinoMobileSamples](http://github.com/mcneel/RhinoMobileSamples) Download or clone some sample projects that use RhinoMobile.

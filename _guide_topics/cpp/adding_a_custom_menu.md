@@ -117,10 +117,10 @@ CRhinoCommand::result CCommandMyMenu::RunCommand( const CRhinoCommandContext& co
 BOOL CCommandMyMenu::LoadMyMenu()
 {
   // Switch the module state so resources are read
-  // from our plug-in (DLL), not Rhino.
+  // from our plugin (DLL), not Rhino.
   AFX_MANAGE_STATE( AfxGetStaticModuleState() );
 
-  // Try to load our menu resource from our plug-in.
+  // Try to load our menu resource from our plugin.
   // Note, m_my_menu is a CMenu member variable.
   if( 0 == m_menu.GetSafeHmenu() )
   {

@@ -42,7 +42,7 @@ works just as well as...
 
 On Windows, the Rhino Installer Engine examines each plugin and extracts the plugin GUID, Title, Version, and appropriate SDK version numbers.  It also examines each Rhino installed on the computer.
 
-On Windows, the Rhino Installer Engine supports installing AnyCPU plug-ins written in .NET and will register them with both 32- and 64-bit Rhino 5.  On Mac, the Rhino Installer Engine - and Rhino itself - only support 64-bit installation.
+On Windows, the Rhino Installer Engine supports installing AnyCPU plugins written in .NET and will register them with both 32- and 64-bit Rhino 5.  On Mac, the Rhino Installer Engine - and Rhino itself - only support 64-bit installation.
 
 On Windows, each plugin is compared to each installed version of Rhino.  The newest compatible plugin is registered with the corresponding version of Rhino.
 

@@ -24,15 +24,15 @@ The Rhino C/C++ SDK supports adding custom undo events.  This way plugins can ta
 
 Basically, you create a class derived from `CRhinoUndoEventHandler`, pass it to Rhino, and let Rhino deal with all the details.  Sample 1 below shows how to do this.
 
-In order to have stable plug-ins, developers must follow the rules for using `CRhinoDoc::AddCustomUndoEvent`...
+In order to have stable plugins, developers must follow the rules for using `CRhinoDoc::AddCustomUndoEvent`...
 
 ```cpp
 // Description:
-//   If you want to your plug-in to do something when the Rhino
+//   If you want to your plugin to do something when the Rhino
 //   Undo/Redo command runs, the call AddCustomUndoEvent during
 //   your command.
 //
-//   This function is for expert plug-in developers.  If you
+//   This function is for expert plugin developers.  If you
 //   don't do a good job here, you will really break Rhino.
 //
 // Parameters:

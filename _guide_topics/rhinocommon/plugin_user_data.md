@@ -14,16 +14,16 @@ layout: toc-guide-page
 
 # Plugin User Data
 
-There are two basic ways plug-ins can store information in Rhino .3dm files:
+There are two basic ways plugins can store information in Rhino .3dm files:
 
 1. [Document User Data](#document-user-data)
 1. [Object User Data](#object-user-data)
 
-For example, a rendering plug-in might save a scene descriptions as document user data and use object user data to attach rendering material information to individual surfaces.
+For example, a rendering plugin might save a scene descriptions as document user data and use object user data to attach rendering material information to individual surfaces.
 
 ## Document User Data
 
-To save document user data your plug-in must override three PlugIn base class functions:
+To save document user data your plugin must override three PlugIn base class functions:
 
 ```cs
 PlugIn.ShouldCallWriteDocument
@@ -33,9 +33,9 @@ PlugIn.ReadDocument
 
 SDK references for these functions can be found [here]({{ site.baseurl }}/api/RhinoCommon/html/Methods_T_Rhino_PlugIns_PlugIn.htm).
 
-When Rhino writes a .3dm file, it goes through all the plugins that are currently loaded. First Rhino calls `ShouldCallWriteDocument()` to see if the plugin wants to save document user data.  If `ShouldWriteDocument()` returns true, Rhino saves information that identifies the plug-in and then calls `WriteDocument()` when it is time for the plug-in to save its “document” user data.
+When Rhino writes a .3dm file, it goes through all the plugins that are currently loaded. First Rhino calls `ShouldCallWriteDocument()` to see if the plugin wants to save document user data.  If `ShouldWriteDocument()` returns true, Rhino saves information that identifies the plugin and then calls `WriteDocument()` when it is time for the plugin to save its “document” user data.
 
-When Rhino reads a .3dm file and it encounters document user data, it uses the plug-in identification information to load the plug-in and then calls the plug-in's `ReadDocument()` to read the plug-in's “document” user data.
+When Rhino reads a .3dm file and it encounters document user data, it uses the plugin identification information to load the plugin and then calls the plugin's `ReadDocument()` to read the plugin's “document” user data.
 
 ## Object User Data
 
@@ -47,7 +47,7 @@ There are three forms of object user data:
 1. UserDictionary
 1. Custom UserData
 
-It is **recommended to typically use the User Strings or the UserDictionary on an object** since the data is automatically serialized for you and it is easily shared between plug-ins and scripts.
+It is **recommended to typically use the User Strings or the UserDictionary on an object** since the data is automatically serialized for you and it is easily shared between plugins and scripts.
 
 In the case that you want to write your own private custom user data, you would derive a class from `Rhino.DocObjects.Custom.UserData`. Here's a sample:
 
@@ -176,4 +176,4 @@ namespace examples_cs
 ## Related topics
 
 - [Rhino.PlugIns.PlugIn Methods (API Reference)]({{ site.baseurl }}/api/RhinoCommon/html/Methods_T_Rhino_PlugIns_PlugIn.htm)
-- [RhinoCommon object plug-in user data]({{ site.baseurl }}/samples/rhinocommon/userdata/)
+- [RhinoCommon object plugin user data]({{ site.baseurl }}/samples/rhinocommon/userdata/)

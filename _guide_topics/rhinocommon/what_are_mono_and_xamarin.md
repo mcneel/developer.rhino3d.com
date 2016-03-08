@@ -90,7 +90,7 @@ It is important to stress: these *are* Visual Studio solutions and projects.  Yo
 
 ## Porting .NET code
 
-All of .NET is not yet implemented in Mono (although an awful lot is).  We recommend launching your plug-in project in Xamarin Studio and attempting to compile. That is the best way to find any potential problems with getting your plug-in to run on Mac Rhino. Please let McNeel know if you find something is missing from the SDK that you need, we may be able to provide this functionality in a Rhino for Mac service release.
+All of .NET is not yet implemented in Mono (although an awful lot is).  We recommend launching your plugin project in Xamarin Studio and attempting to compile. That is the best way to find any potential problems with getting your plugin to run on Mac Rhino. Please let McNeel know if you find something is missing from the SDK that you need, we may be able to provide this functionality in a Rhino for Mac service release.
 
 ### P/Invoke
 

@@ -27,7 +27,7 @@ When a customer attempts to add a product license to the Zoo, the product's plug
 
 ## Prerequisites
 
-Rhino C/C++ plug-ins are MFC dynamic link libraries.  Thus, to create a plugin for Rhino, you will need one of the following development tools:
+Rhino C/C++ plugins are MFC dynamic link libraries.  Thus, to create a plugin for Rhino, you will need one of the following development tools:
 
 1. Microsoft Visual C++ 2005 (required for Rhino 5.0 32-bit)
 1. Microsoft Visual C++ 2010 (required for Rhino 5.0 64-bit)

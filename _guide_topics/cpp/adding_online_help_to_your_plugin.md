@@ -1,6 +1,6 @@
 ---
 title: Adding Online Help to Your Plugin
-description: Discusses how to add online help support to your Rhino plug-in using C/C++.
+description: Discusses how to add online help support to your Rhino plugin using C/C++.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -32,10 +32,10 @@ There are several other tools available on the market.  Google "Create HTML Help
 
 ## Plugin Support
 
-You can add your plug-in to Rhino's *Help* > *Plug-ins* menu by overriding the following two virtual functions:
+You can add your plugin to Rhino's *Help* > *Plug-ins* menu by overriding the following two virtual functions:
 
-1. `CRhinoPlugIn::AddToPlugInHelpMenu`: Called by Rhino to determine if the plug-in name should be added to the Rhino *Help* > *Plug-ins* menu.
-1. `CRhinoPlugIn::OnDisplayPlugInHelp`: Called by Rhino if `CRhinoPlugIn::AddToPlugInHelpMenu` returns true and the menu item associated with this plug-in is selected.
+1. `CRhinoPlugIn::AddToPlugInHelpMenu`: Called by Rhino to determine if the plugin name should be added to the Rhino *Help* > *Plug-ins* menu.
+1. `CRhinoPlugIn::OnDisplayPlugInHelp`: Called by Rhino if `CRhinoPlugIn::AddToPlugInHelpMenu` returns true and the menu item associated with this plugin is selected.
 
 Details on both of these virtual function can be found in *rhinoSdkPlugIn.h*.
 

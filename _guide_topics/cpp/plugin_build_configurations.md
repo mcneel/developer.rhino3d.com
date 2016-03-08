@@ -38,7 +38,7 @@ In order to take advantage of the inclusion of debug Rhino, the build configurat
 - The *PseudoDebug* project is a *Release* project that disables optimizations and generates debugging information using the compiler’s *Program Database (/Zi)* option and the linker’s *Generate Debug Information (/DEBUG)* option.  These option settings allow you to use the debugger while you are developing your custom plugin.  The *PseudoDebug* configuration also links with release runtime libraries.  Plugins built with the *PseudoDebug* configuration will only load in release Rhino (*Rhino.exe*).
 - The *Release* configuration of your program contains no symbolic debug information and is fully optimized.  *Debug* information can be generated in PDB Files (C/C++) depending on the compiler options used.  Creating PDB files can be very useful if you later need to debug your release version.  The *Release* configuration also links with release runtime libraries.  Plugins built with the *Release* configuration will only load in release Rhino (*Rhino.exe*).
 
-These plug-in build configurations link with the following SDK libraries and target the following executables:
+These plugin build configurations link with the following SDK libraries and target the following executables:
 
 | Configuration     | | | | Rhino Lib     | | | | 	opennurbs Lib     | | | | Target Executable     |
 | :------------- | | | | :------------- | | | | :------------- | | | | :------------- |

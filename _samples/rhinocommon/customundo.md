@@ -44,7 +44,7 @@ partial class Examples
     // NEVER change any setting in the Rhino document or application.  Rhino
     // handles ALL changes to the application and document and you will break
     // the Undo/Redo commands if you make any changes to the application or
-    // document. This is meant only for your own private plug-in data
+    // document. This is meant only for your own private plugin data
     // !!!!!!!!!!
 
     // This function can be called either by undo or redo
@@ -91,7 +91,7 @@ Partial Friend Class Examples
 	' NEVER change any setting in the Rhino document or application.  Rhino
 	' handles ALL changes to the application and document and you will break
 	' the Undo/Redo commands if you make any changes to the application or
-	' document. This is meant only for your own private plug-in data
+	' document. This is meant only for your own private plugin data
 	' !!!!!!!!!!
 
 	' This function can be called either by undo or redo
@@ -120,7 +120,7 @@ def OnUndoFavoriteNumber(sender, e):
     NEVER change any setting in the Rhino document or application.  Rhino
     handles ALL changes to the application and document and you will break
     the Undo/Redo commands if you make any changes to the application or
-    document. This is meant only for your own private plug-in data
+    document. This is meant only for your own private plugin data
     !!!!!!!!!!
 
     This function can be called either by undo or redo

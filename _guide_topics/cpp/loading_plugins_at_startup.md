@@ -55,7 +55,7 @@ Or, you can just modify your plugin's "LoadMode" registry key value.  The availa
 
 | Load mode      | | | Registry Value    | | | Description     |
 | :------------- | | | :------------- | | | :------------- |
-| load_plugin_when_needed      | | | 2 - REG_DWORD, Decimal       | | | Default. Load the first time a plug-in command used     |
+| load_plugin_when_needed      | | | 2 - REG_DWORD, Decimal       | | | Default. Load the first time a plugin command used     |
 | load_plugin_at_startup      | | | 1 - REG_DWORD, Decimal       | | | Load when Rhino is loaded
     |
 

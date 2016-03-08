@@ -38,7 +38,7 @@ You recently downloaded the Rhino C/C++ SDK and installed it on my system, along
 
 ## Solution
 
-Visual Studio 2010 will only build 64-bit plug-ins for Rhino.  To build 32-bit plug-ins for Rhino, you need Visual Studio 2005.
+Visual Studio 2010 will only build 64-bit plugins for Rhino.  To build 32-bit plugins for Rhino, you need Visual Studio 2005.
 
 If you do not have a copy of Visual Studio 2005, you can obtain one by purchasing a Visual Studio Professional with MSDN subscription.
 

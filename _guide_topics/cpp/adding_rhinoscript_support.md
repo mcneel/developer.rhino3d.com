@@ -41,7 +41,7 @@ Once the Appwizard has completed creating the skeleton project, build the projec
 ### Create a COM object that supports IDispatch
 
 1. Create a new MFC class by running the MFC Class Wizard.  
-1. Name the class *CTestScriptObject*.  This class should be derived from `CCmdTarget`.  Also, under *Automation*, select the *Automation* radio button.  **NOTE**: this COM object will not be creatable by type ID because Rhino plug-ins (DLLs) are dependent on Rhino.
+1. Name the class *CTestScriptObject*.  This class should be derived from `CCmdTarget`.  Also, under *Automation*, select the *Automation* radio button.  **NOTE**: this COM object will not be creatable by type ID because Rhino plugins (DLLs) are dependent on Rhino.
 
 ![MFC Wizard]({{ site.baseurl }}/images/adding_rhinoscript_support_02.png)
 

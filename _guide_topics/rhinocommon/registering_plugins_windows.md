@@ -24,7 +24,7 @@ While reading this article, it is helpful to use the standard Windows Registry e
 
 ## Finding the Rhino Registry Key
 
-Rhino plug-ins are registered in the following locations in the Windows Registry:
+Rhino plugins are registered in the following locations in the Windows Registry:
 
 ### On 32-bit Windows
 
@@ -112,7 +112,7 @@ Data:   C:\Program Files (x86)\Rhinoceros 5\Plug-Ins\FooBar.rhp
 
 ## Automatic Loading
 
-Rhino will attempt to load your plug-in the next time Rhino launches if the *Name* and *FileName* Registry values and data are present in your plugin's Registry key.  Rhino will briefly display a *Preparing plugins for first use* dialog if the plugin loads correctly.
+Rhino will attempt to load your plugin the next time Rhino launches if the *Name* and *FileName* Registry values and data are present in your plugin's Registry key.  Rhino will briefly display a *Preparing plugins for first use* dialog if the plugin loads correctly.
 
 When your plugin loads for the first time, the rest of the normal Registry keys/value pairs in your plugin's Registry key will be filled in.
 

@@ -1,5 +1,5 @@
 ---
-title: RhinoCommon object plug-in user data
+title: RhinoCommon object plugin user data
 description:
 author:
 apis: ['RhinoCommon']
@@ -8,7 +8,7 @@ platforms: ['Cross-Platform']
 categories: ['Adding Objects']
 origin: unset
 order: 1
-keywords: ['info', 'rhinocommon', 'object', 'plug-in', 'user', 'data']
+keywords: ['info', 'rhinocommon', 'object', 'plugin', 'user', 'data']
 layout: code-sample-rhinocommon
 ---
 

@@ -334,7 +334,7 @@ ON_UUID CMyUserData3::Id()
 
 ON_UUID CMyUserData3::ApplicationId()
 {
-  return <<your plug-in name>>().PlugInID();
+  return <<your plugin name>>().PlugInID();
 }
 
 CMyUserData3** CMyUserData3::Get(const ON_Object** object)
@@ -459,9 +459,9 @@ CPlugInUserData::CPlugInUserData()
 
   /*
   CRITICAL:
-    m_application_uuid must be assigned the uuid of the plug-in
+    m_application_uuid must be assigned the uuid of the plugin
     that will be responsible for reading and writing our user data.
-    In this example, we'll use PlugIn1 as our primary plug-in.
+    In this example, we'll use PlugIn1 as our primary plugin.
   */
   m_application_uuid = CPlugInUserData::PlugInId();
 
