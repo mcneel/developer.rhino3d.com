@@ -24,7 +24,7 @@ Rhino registers custom Clipboard formats to store the temporary file names: a un
 
 ## Sample
 
-The following sample demonstrates how to determine of there is Rhino information in the Windows Clipboard.  If there is Rhino data in the Clipboard, the sample will retrieve the name of the temporary file.  Once this file name is known, you can whatever means necessary to retrieve the data.  For example, if you are using this code from a Rhino plugin, you could script the running of Rhino's *Paste* command to insert the geometry into the current document.  If you are in a standalone application, you would use the opennurbs toolkit to read the temporary .3DM file.
+The following sample demonstrates how to determine of there is Rhino information in the Windows Clipboard.  If there is Rhino data in the Clipboard, the sample will retrieve the name of the temporary file.  Once this file name is known, you can whatever means necessary to retrieve the data.  For example, if you are using this code from a Rhino plugin, you could script the running of Rhino's *Paste* command to insert the geometry into the current document.  If you are in a standalone application, you would use the openNURBS toolkit to read the temporary .3DM file.
 
 ```cpp
 /////////////////////////////////////////////////////////////////////////////

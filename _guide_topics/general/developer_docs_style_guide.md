@@ -48,6 +48,13 @@ Navigate to *C:\Program Files\Rhinoceros 5 (64-bit)\Plug-ins*.
 
 1. Click the **OK** button to accept your changes.
 
+### Spelling & Case
+
+The following spelling and case conventions are adopted on this site:
+
+- "Plugins" is not hyphenated unless it refers to a place in the Rhino UI where it is hyphenated.
+- "openNURBS" (not OpenNURBS, nor opennurbs, nor oPeNnURBs) unless it refers to a namespace in code where it is capitalized, or a path where it is not.
+
 ---
 
 ## Headers

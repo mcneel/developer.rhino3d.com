@@ -54,14 +54,14 @@ Below is sample that contains two header files that you can include in any proje
 #if defined(NDEBUG)
 
 // Release x64 (64 bit) libs
-#pragma message( " --- Opennurbs Release x64 (64 bit) build." )
+#pragma message( " --- openNURBS Release x64 (64 bit) build." )
 #pragma comment(lib, "../opennurbs/zlib/x64/Release/zlibx64.lib")
 #pragma comment(lib, "../opennurbs/x64/ReleaseStaticLib/opennurbsx64_static.lib")
 
 #else // _DEBUG
 
 // Debug x64 (64 bit) libs
-#pragma message( " --- Opennurbs Debug x64 (64 bit) build." )
+#pragma message( " --- openNURBS Debug x64 (64 bit) build." )
 #pragma comment(lib, "../opennurbs/zlib/x64/Debug/zlibx64_d.lib")
 #pragma comment(lib, "../opennurbs/x64/DebugStaticLib/opennurbsx64_staticd.lib")
 
@@ -74,14 +74,14 @@ Below is sample that contains two header files that you can include in any proje
 #if defined(NDEBUG)
 
 // Release x86 (32 bit) libs
-#pragma message( " --- Opennurbs Release x86 (32 bit) build." )
+#pragma message( " --- openNURBS Release x86 (32 bit) build." )
 #pragma comment(lib, "../opennurbs/zlib/Release/zlib.lib")
 #pragma comment(lib, "../opennurbs/ReleaseStaticLib/opennurbs_static.lib")
 
 #else // _DEBUG
 
 // Debug x86 (32 bit) libs
-#pragma message( " --- Opennurbs Debug x86 (32 bit) build." )
+#pragma message( " --- openNURBS Debug x86 (32 bit) build." )
 #pragma comment(lib, "../opennurbs/zlib/Debug/zlib_d.lib")
 #pragma comment(lib, "../opennurbs/DebugStaticLib/opennurbs_staticd.lib")
 
@@ -111,14 +111,14 @@ Below is sample that contains two header files that you can include in any proje
 #if defined(NDEBUG)
 
 // Release x64 (64 bit) libs
-#pragma message( " --- Opennurbs Release x64 (64 bit) build." )
+#pragma message( " --- openNURBS Release x64 (64 bit) build." )
 #pragma comment(lib, "../opennurbs/zlib/x64/Release/zlibx64.lib")
 #pragma comment(lib, "../opennurbs/x64/Release/opennurbsx64.lib")
 
 #else // _DEBUG
 
 // Debug x64 (64 bit) libs
-#pragma message( " --- Opennurbs Debug x64 (64 bit) build." )
+#pragma message( " --- openNURBS Debug x64 (64 bit) build." )
 #pragma comment(lib, "../opennurbs/zlib/x64/Debug/zlibx64_d.lib")
 #pragma comment(lib, "../opennurbs/x64/Debug/opennurbsx64_d.lib")
 
@@ -131,14 +131,14 @@ Below is sample that contains two header files that you can include in any proje
 #if defined(NDEBUG)
 
 // Release x86 (32 bit) libs
-#pragma message( " --- Opennurbs Release x86 (32 bit) build." )
+#pragma message( " --- openNURBS Release x86 (32 bit) build." )
 #pragma comment(lib, "../opennurbs/zlib/Release/zlib.lib")
 #pragma comment(lib, "../opennurbs/Release/opennurbs.lib")
 
 #else // _DEBUG
 
 // Debug x86 (32 bit) libs
-#pragma message( " --- Opennurbs Debug x86 (32 bit) build." )
+#pragma message( " --- openNURBS Debug x86 (32 bit) build." )
 #pragma comment(lib, "../opennurbs/zlib/Debug/zlib_d.lib")
 #pragma comment(lib, "../opennurbs/Debug/opennurbs_d.lib")
 
@@ -161,7 +161,7 @@ To use these headers, just include them to your project's *stdafx.h* file like t
 
 // TODO: reference additional headers your program requires here
 
-// Uncomment the following if you want to use the opennurbs dynamic link library
+// Uncomment the following if you want to use the openNURBS dynamic link library
 //#define ON_DLL_IMPORTS
 
 #include "../opennurbs/opennurbs.h"

@@ -19,7 +19,7 @@ TODO: 'needs an image for ON_Mesh vertices.'
 
 ## Prerequisites
 
-openNURBS is intended for *skilled* C++ and .NET developers. Please read [What is OpenNURBS?]({{ site.baseurl }}/guides/opennurbs/what_is_opennurbs) if you have not already.  It is also presumed that you have an application that wishes to access *3dm* files outside of Rhinoceros.
+openNURBS is intended for *skilled* C++ and .NET developers. Please read [What is openNURBS?]({{ site.baseurl }}/guides/opennurbs/what_is_opennurbs) if you have not already.  It is also presumed that you have an application that wishes to access *3dm* files outside of Rhinoceros.
 
 ## Supported Compilers
 
@@ -44,7 +44,7 @@ If your goal is to read and write 3DM files, then you may find that the class `O
 1. The comments in the openNURBS Toolkit header files are the primary source of documentation.  I suggest that you use a development environment that has high quality tags capabilities and a good class browser.
 1. In the code you write include only *opennurbs.h*. The *opennurbs.h* header file includes the necessary openNURBS toolkit header files in the appropriate order.
 1. Other items to note:
-     1. OpenNURBS uses UTF-16 to store text in *3dm* files and provides tools for converting UTF-16 strings to and from UTF-8, UTF-32 and `wchar_t` strings.  The `ON_wString` class has `wchar_t` characters.
+     1. openNURBS uses UTF-16 to store text in *3dm* files and provides tools for converting UTF-16 strings to and from UTF-8, UTF-32 and `wchar_t` strings.  The `ON_wString` class has `wchar_t` characters.
      1. All memory allocations and frees are done through `onmalloc()`, `onfree()`, and `onrealloc()`.  The source that ships with openNURBS has `onmalloc()` call `malloc()` and `onfree()` call `free()`.
      1. If you want to use Open GL to render openNURBS geometry, you may want to include *opennurbs_gl.h* after *opennurbs.h* and add *opennurbs_gl.cpp* to your openNURBS library.  See *example_gl.cpp* for details.
      1. The openNURBS Toolkit works correctly on both big and little endian CPUs. (Generally, Intel CPUs use little endian byte order and MIPS, Motorola, and Sparc CPUs use big endian byte order.)
@@ -121,5 +121,5 @@ If `ON_Brep::FaceIsSurface( face_index )` returns `TRUE`, then the face's geomet
 
 ## Related Topics
 
-- [What is OpenNURBS?]({{ site.baseurl }}/guides/opennurbs/what_is_opennurbs)
+- [What is openNURBS?]({{ site.baseurl }}/guides/opennurbs/what_is_opennurbs)
 - [What is Rhino3dmIO?]({{ site.baseurl }}/guides/opennurbs/what_is_rhino3dmio)

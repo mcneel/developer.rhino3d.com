@@ -22,7 +22,7 @@ layout: toc-guide-page
 
 Rhino 5 SR6 saves extrusion object render meshes in *.3dm* files.  The *11-July-2013* openNURBS toolkit reads and writes these meshes.  If you are a developer using openNURBS to read and display *.3dm* files in viewer applications, handle extrusion objects (`ON_Extrusion`) the same way you handle polysurface objects (`ON_Brep`).
 
-Earlier versions of Rhino simply calculated extrusion object render meshes as needed.  They did not save them in *.3dm* files.  OpenNURBS toolkit users had to write their own extrusion object meshing code.
+Earlier versions of Rhino simply calculated extrusion object render meshes as needed.  They did not save them in *.3dm* files.  openNURBS toolkit users had to write their own extrusion object meshing code.
 
 ### Strings and Unicode
 

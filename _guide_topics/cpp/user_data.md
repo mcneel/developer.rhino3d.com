@@ -156,12 +156,12 @@ else
 
 Make sure you completely understand the *CMyUserData1* sample above before studying this sample.
 
-To have your user data saved in files, you have to add several IO related functions and add full opennurbs object support to your class...
+To have your user data saved in files, you have to add several IO related functions and add full openNURBS object support to your class...
 
 ```cpp
 class CMyUserData2 : public ON_UserData
 {
-  // Opennurbs classes that are saved in .3dm files require
+  // openNURBS classes that are saved in .3dm files require
   // an ON_OBJECT_DECLARE call in their declaration.
   ON_OBJECT_DECLARE(CMyUserData2);
 

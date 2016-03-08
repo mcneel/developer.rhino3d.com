@@ -90,4 +90,3 @@ The following samples have TODO items:
 - We could report samples that are not passing tests.
 - Add last updated date to footer
 - Some newer guides do not have proper bold formatting (find and fix those).
-- Opennurbs or openNURBS - be consistent
