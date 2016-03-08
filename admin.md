@@ -73,7 +73,6 @@ The following samples have TODO items:
 
 ### Misc
 
-- RhinoScript Guides and RhinoScript Samples need to be organized and curated more.
 - Entire Rhino.Python guides section needs complete reorganization and simplification.
 - Add API specific pages under guides and samples that filter that content.
 - Standardize file names (underscores, verbiage, length, etc). - update [redirects on wiki](https://wiki.mcneel.com/homepage?do=admin&page=redirect)
