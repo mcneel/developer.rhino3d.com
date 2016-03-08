@@ -5,7 +5,7 @@ author: Stylianos Dritsas (dritsas@alum.mit.edu)
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Other']
 origin: http://wiki.mcneel.com/developer/scriptsamples/morph
 order: 1
 keywords: ['rhinoscript', 'vbscript']

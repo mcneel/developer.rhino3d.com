@@ -5,7 +5,7 @@ author: Steven Janssen
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Other']
 origin: http://wiki.mcneel.com/developer/scriptsamples/jointhedots
 order: 1
 keywords: ['rhinoscript', 'vbscript']

@@ -5,7 +5,7 @@ author: rajaa@mcneel.com
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Uncategorized']
+categories: ['Other']
 origin: http://wiki.mcneel.com/developer/scriptsamples/pipeall
 order: 1
 keywords: ['rhinoscript', 'vbscript']
