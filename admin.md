@@ -89,3 +89,5 @@ The following samples have TODO items:
 - We could report samples that are not passing tests.
 - Add last updated date to footer
 - Some newer guides do not have proper bold formatting (find and fix those).
+- Be consistent in use of the terms "API" and "SDK" ([Exhibit A]({{ site.baseurl }}/api/); [Exhibit B]({{ site.baseurl}}/api/RhinoCommonWin/html/N_Rhino.htm))
+- Syntax highlighting in C# samples for RhinoCommon are not as good as those in the API docs...actually the syntax highlight is kind of bad.
