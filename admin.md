@@ -22,6 +22,7 @@ The sources of content-to-be-consolidated are:
 - Mitch's MicMac tools: http://wiki.mcneel.com/people/mitchheynick
 - [Grasshopper SDK Help file (chm)](http://s3.amazonaws.com/files.na.mcneel.com/grasshopper/1.0/docs/en/GrasshopperSDK.chm).
 - Grasshopper posts ([How and Why of Datatrees](http://www.grasshopper3d.com/forum/topics/the-why-and-how-of-data-trees)), etc.
+- Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
 
 **DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
 
@@ -73,12 +74,11 @@ The following samples have TODO items:
 
 ### Misc
 
+- Standardize titles so they are only in the yaml - requires reworking TOC generator.
 - Entire Rhino.Python guides section needs complete reorganization and simplification.
-- Add API specific pages under guides and samples that filter that content.
 - Standardize file names (underscores, verbiage, length, etc). - update [redirects on wiki](https://wiki.mcneel.com/homepage?do=admin&page=redirect)
 - Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
-- Standardize titles so they are on in the yaml - requires reworking TOC generator.
-- Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
+- Add API specific pages under guides and samples that filter that content.
 - Move all samples to mcneel/github - in coordination with Dale Fugier
 - Link directly to samples on GitHub from gh-pages samples section for example: [https://github.com/mcneel/Rhino5Samples_CPP](https://github.com/mcneel/Rhino5Samples_CPP)
 - Re-capture images on retina display and replace them
