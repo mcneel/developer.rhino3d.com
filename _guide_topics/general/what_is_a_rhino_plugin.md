@@ -1,6 +1,6 @@
 ---
 title: What is a Rhino Plugin?
-description: This guide outlines what Rhino plugin is and what forms it comes it.
+description: This guide outlines what a Rhino plugin is and what forms it comes in.
 author: dan@mcneel.com
 apis: ['General']
 languages: ['All']
