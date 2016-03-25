@@ -74,20 +74,4 @@ The following samples have TODO items:
 
 ### Misc
 
-- Standardize titles so they are only in the yaml - requires reworking TOC generator.
-- Entire Rhino.Python guides section needs complete reorganization and simplification.
-- Standardize file names (underscores, verbiage, length, etc). - update [redirects on wiki](https://wiki.mcneel.com/homepage?do=admin&page=redirect)
-- Add filenaming conventions to style-guide: guides are "guides to..." "determining, adding..." etc.
-- Add API specific pages under guides and samples that filter that content.
-- Move all samples to mcneel/github - in coordination with Dale Fugier
-- Link directly to samples on GitHub from gh-pages samples section for example: [https://github.com/mcneel/Rhino5Samples_CPP](https://github.com/mcneel/Rhino5Samples_CPP)
-- Re-capture images on retina display and replace them
-- What, Where, How, Why table on [homepage]({{ site.baseurl }}) does not work on iOS's Safari.  Fix it.
-- Page width resizes each time templates are switched.  This is annoying.
-- Main site logo needs reconsideration
-- Rhino plugin logo puzzle-piece should fit with Grasshopper addin puzzle-piece
-- We could report samples that are not passing tests.
-- Add last updated date to footer
-- Some newer guides do not have proper bold formatting (find and fix those).
-- Be consistent in use of the terms "API" and "SDK" ([Exhibit A]({{ site.baseurl }}/api/); [Exhibit B]({{ site.baseurl}}/api/RhinoCommonWin/html/N_Rhino.htm))
-- Syntax highlighting in C# samples for RhinoCommon are not as good as those in the API docs...actually the syntax highlight is kind of bad.
+See [YouTrack: project: WWW subsystem: developer.rhino3d.com #unresolved](http://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved)
