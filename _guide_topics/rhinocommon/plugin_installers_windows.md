@@ -29,7 +29,7 @@ Imagine you have a more complex plugin and want to support multiple versions of 
 - Install an older version of the plugin for Rhino 4.0
 - Install a new version of the plugin for 32-bit Rhino 5
 - Install a plugin for 64-bit Rhino 5
-- Include a *MyToolbar.rhp* custom toolbar file
+- Include a *MyToolbar.rui* custom toolbar file
 
 This is possible.  You need to ...
 
