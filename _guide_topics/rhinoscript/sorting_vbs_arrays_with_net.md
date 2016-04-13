@@ -92,7 +92,7 @@ Copying items VBScript arrays and an `ArrayList` is just as easy.  In the follow
 LayerNames = Rhino.LayerNames
 Set DataList = CreateObject("System.Collections.ArrayList")
 For i = 0 To UBound(LayerNames)
-  DataList.Add DataList(i)
+  DataList.Add LayerNames(i)
 Next
 DataList.Sort()
 For i = 0 To UBound(LayerNames)
