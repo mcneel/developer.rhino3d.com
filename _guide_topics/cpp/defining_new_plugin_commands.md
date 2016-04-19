@@ -37,6 +37,8 @@ To use this tool in Visual Studio 2010:
 1. Navigate to *Tools* > *External Tools...*
 1. Use the Add button to add the *RhinoCommandGenerator.exe* file to the list.  This file can be found in the following folder: *C:\\Program Files\\Rhino 5.0 x64 SDK\\Wizards\\Command*.
 
+Once the tool is installed, you can create a new command by selecting *Tools* > *Rhino Command*. If you add the command declaration to a new header file, be sure to `#include "stdafx.h"` at the top.
+
 ## Sample
 
 The following sample code demonstrates a simple command class that essentially does nothing...
