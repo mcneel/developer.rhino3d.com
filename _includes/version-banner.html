@@ -1,0 +1,6 @@
+{% if site.git_branch and site.git_branch != "master" %}
+<div class="version-banner">
+  Hey, you're viewing the <strong>{{ site.git_branch }}</strong> version of this page!
+  Click <a href="{{site.baseurl_orig}}{{ page.url }}">here</a> to view the current (stable) version.
+</div>
+{% endif %}

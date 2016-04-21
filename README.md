@@ -17,7 +17,11 @@ git clone https://github.com/mcneel/developer-rhino3d-com.git
 
 If you are not comfortable using git on the command-line, then try [GitHub for Mac](https://mac.github.com/) and [GitHub for Windows](https://windows.github.com/). There's also the [git cheat sheet](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf).
 
-Notice that **'gh-pages'** is the only branch. Everything committed to this branch is automatically published when pushed to GitHub.
+~~Notice that `gh-pages` is the only branch. Everything committed to this branch is automatically published when pushed to GitHub.~~
+
+**UPDATE:** The site is now branch-aware and automatically deployed by [Travis CI](https://travis-ci.org/mcneel/developer-rhino3d-com). **DO NOT PUSH TO THE `gh-pages` BRANCH!**
+
+The `master` branch represents the current (_stable_) version of the site. Changes to the `master` branch will be built by Travis and deployed to http://developer.rhino3d.com. Other branches can be defined in `_config.yml` (under `version_branches`) and will be built and deployed into a subpath with the same name. For example, if you push to the `wip` branch (representing RhinoWIP) then this site will be deployed to http://developer.rhino3d.com/wip.
 
 
 ![Mac Instructions](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/images/mac_logo_small.png)

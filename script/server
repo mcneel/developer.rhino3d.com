@@ -6,7 +6,7 @@
 # site generation.
 
 printf 'exclude: ['/api']' >> _config.yml
-jekyll serve
+jekyll serve --incremental --host 0.0.0.0
 cp _config.yml _config.yml.tmp
 sed '$ d' _config.yml.tmp > _config.yml
 rm -f _config.yml.tmp

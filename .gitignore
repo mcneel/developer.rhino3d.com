@@ -6,3 +6,7 @@ bin
 obj
 
 *.userprefs
+
+Gemfile.lock
+script/.ssh
+.bundle

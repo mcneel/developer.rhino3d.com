@@ -290,3 +290,21 @@
         }
     }
 }
+
+/**
+ * Version banner
+ */
+
+.version-banner {
+  // width: 100%;
+  text-align: center;
+  background-color: #424242;
+  padding: 5px;
+  color: white;
+  font-style: italic;
+}
+
+.version-banner a {
+  color: white;
+  text-decoration: underline;
+}

@@ -1,0 +1,172 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+
+# define some handy string formatting
+class String
+  def black;          "\033[30m#{self}\033[0m" end
+  def red;            "\033[31m#{self}\033[0m" end
+  def green;          "\033[32m#{self}\033[0m" end
+  def yellow;          "\033[33m#{self}\033[0m" end
+  def magenta;        "\033[35m#{self}\033[0m" end
+  def cyan;           "\033[36m#{self}\033[0m" end
+  def grey;           "\033[37m#{self}\033[0m" end
+  def success;        "\u2713 ".encode('utf-8') + self end
+  def failure;        "\u2717 ".encode('utf-8') + self end
+  def wut;        "\u271D ".encode('utf-8') + self end
+
+  def bold;           "\e[1m#{self}\e[22m" end
+  def italic;         "\e[3m#{self}\e[23m" end
+  def underline;      "\e[4m#{self}\e[24m" end
+  def blink;          "\e[5m#{self}\e[25m" end
+  def reverse_color;  "\e[7m#{self}\e[27m" end
+end
+
+# # # # # # #
+# CONFIGURE #
+# # # # # # #
+
+# what's your name, branch?
+branch = ENV['TRAVIS_BRANCH'] || `git rev-parse --abbrev-ref HEAD`.strip()
+
+puts "You're on the #{branch.underline} branch"
+
+# get branches that count as "versions" from _config.yml
+config = YAML.load_file('_config.yml')
+version_branches = config['version_branches']
+
+# is this the stable branch? Should I build it?
+is_stable = branch == "master"
+# puts "\nstable? #{is_stable}"
+is_version = version_branches.include? branch
+# puts "build?  #{is_stable or is_version}\n\n"
+
+# abort if we're not on a recognised branch
+if not (is_stable or is_version)
+  puts "Uh oh, #{branch.underline} is not a recognised branch!".red
+  if ENV['CI'] == "true"
+    puts "Checking for errors in the site (but not deploying)..."
+    puts `jekyll build`.cyan
+    exit $?.exitstatus
+  else
+    exit 120
+  end
+end
+
+# get sha and check if working dir is dirty (shouldn't be the case if using CI)
+sha = `git rev-parse --verify --short HEAD`.rstrip
+dirty = `git status --porcelain` != ""
+puts `git status --porcelain`
+
+# load secondary (dev) config file, if possible
+config_dev_path = '_config_dev.yml'
+config_dev = File.exists?(config_dev_path) ? YAML.load_file(config_dev_path) : {}
+
+# add some extra keys to secondary config
+config_dev['git_branch'] = branch
+baseurl = config_dev['baseurl_orig'] || config_dev['baseurl'] || ""
+config_dev['baseurl'] = baseurl.chomp "/"
+if not is_stable then config_dev['baseurl'] += "/#{branch}" end
+config_dev['baseurl_orig'] = baseurl
+File.open(config_dev_path, 'w') {|f| f.write config_dev.to_yaml }
+
+# build directory: "path" is the branch build dir, whereas "base_path" is the
+# root build dir (if branch == master then path == base_path)
+path = base_path = "_site"
+
+# remove root build directory before we begin
+`rm -rf "#{base_path}"`
+
+# set path
+if version_branches.include? branch
+  path += "/#{branch}"
+end
+
+# # # # #
+# BUILD #
+# # # # #
+
+puts "WARNING: Dirty working directory!".red if dirty
+
+puts "Building #{sha}#{"+" if dirty} (#{branch.underline}) in #{path.magenta}!"
+
+# ensure the branch build directory exists
+`mkdir -p #{path}`
+
+# build the site
+puts `jekyll build -d #{path} --config _config.yml,_config_dev.yml`.cyan # _config_dev.yml contains custom baseurl
+
+if $?.exitstatus > 0
+  puts "Error building site... :(".red
+  exit 3
+end
+
+# # # # # #
+# DEPLOY! #
+# # # # # #
+
+# enter build directory...
+puts "Entering root build dir: #{base_path.magenta}"
+Dir.chdir(base_path)
+
+# check if the builder is CI
+if ENV['CI'] != "true"
+  puts "You're not a robot! (Expected $CI == true, got #{ENV['CI']}.)".red.underline
+  exit 128
+end
+
+remote = `git config remote.origin.url`
+remote.sub! "https://github.com/", "git@github.com:"
+puts "Deploying to #{remote.yellow}"
+
+# intialise git repo
+puts `git init`.cyan
+
+# setup the git user
+user = {
+  name: ENV['GITHUB_USER_NAME'] || "Bozo",
+  email: ENV['GITHUB_USER_EMAIL'] || "brian+build@mcneel.com"
+}
+
+# inside this git repo we'll pretend to be a new user
+puts "Configuring user: #{user}"
+`git config user.name "#{user[:name]}"`
+`git config user.email "#{user[:email]}"`
+
+# add remote git repo
+`git remote add production #{remote}`
+
+# fetch and reset
+puts `git fetch --depth=1 production`
+
+if $?.exitstatus > 0
+  puts "Failed to contact github... :(".red
+  exit 5
+end
+
+deploy_branch = ENV['GITHUB_PAGES_BRANCH'] || "gh-pages"
+`git reset production/#{deploy_branch}`
+
+if branch == "master"
+  # revert version branch directories so they don't get staged
+  version_branches.each do |branch|
+    puts `git checkout -- #{branch}`
+  end
+
+  # stage and commit
+  puts `git add -A .`
+
+  puts `git status -s` # debug
+
+  puts `git commit -m "Deploy #{sha}#{"+" if dirty}"`
+else
+  # stage and commit
+  puts `git add -A #{branch}`
+
+  puts `git status -s #{branch}` # debug
+
+  puts `git commit -m "Deploy #{sha}#{"+" if dirty} (#{branch})"`
+end
+
+# deploy (via ssh using bozo's deploy key)
+puts `git push production HEAD:#{deploy_branch}`
