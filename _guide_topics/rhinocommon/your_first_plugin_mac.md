@@ -41,6 +41,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 1. Click the **Create** button.  *NOTE*: You don't have to create a .git repository for this demo.
 1. A **new solution** called **HelloRhinoCommon** should open...
 ![HelloRhinoCommon Solution]({{ site.baseurl }}/images/your_first_plugin_mac_04.png)
+1. Right-click on the **HelloRhinoCommon** project, and select **Set As Startup Project** from the menu.
 
 ### Boilerplate Build
 
