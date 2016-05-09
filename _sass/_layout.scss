@@ -296,7 +296,6 @@
  */
 
 .version-banner {
-  // width: 100%;
   text-align: center;
   background-color: #424242;
   padding: 5px;
@@ -304,7 +303,7 @@
   font-style: italic;
 }
 
-.version-banner a {
+.version-banner a,
+.version-banner a:hover {
   color: white;
-  text-decoration: underline;
 }
