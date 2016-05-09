@@ -21,6 +21,15 @@ body {
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
+
+    // Make some space for the version banner
+    @if $branch != "" and $branch != "master" {
+      padding-top: 36px;
+
+      @include media-query($on-palm) {
+          padding-top: 61px;
+      }
+    }
 }
 
 
