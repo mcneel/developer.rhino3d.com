@@ -2,7 +2,7 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
+    /*border-top: 5px solid $grey-color-dark;*/
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
 
@@ -296,6 +296,10 @@
  */
 
 .version-banner {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1000000;
   text-align: center;
   background-color: #424242;
   padding: 5px;
@@ -304,6 +308,7 @@
 }
 
 .version-banner a,
-.version-banner a:hover {
-  color: white;
+.version-banner a:hover,
+.version-banner a:visited {
+  color: lighten($brand-color, 25%);
 }
