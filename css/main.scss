@@ -50,6 +50,7 @@ $on-laptop:        800px;
    }  
 }
 
+$branch: "{{ site.git_branch }}"; // used to pad body if version banner exists
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
