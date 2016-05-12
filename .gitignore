@@ -10,3 +10,4 @@ obj
 Gemfile.lock
 script/.ssh
 .bundle
+.jekyll-metadata
