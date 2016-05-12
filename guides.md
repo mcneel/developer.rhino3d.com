@@ -132,8 +132,8 @@ order: 2
 
 #### Python Applied to Rhino
 - <a href="http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101" target="_blank">RhinoPython101 Primer</a>
+- <a href="http://4.rhino3d.com/5/ironpython/index.html" target="_blank">Rhino.Python Programmer's Reference</a>
 - <a href="http://discourse.mcneel.com/c/scripting" target="_blank">Rhino Scripting Forum</a>
-- <a href="http://wiki.mcneel.com/developer/python%22" target="_blank">McNeel Python Scripting Wiki</a>
 
 ##### Learning Python
 - <a href="https://docs.python.org/2/tutorial/index.html" target="_blank">The Python Tutorial</a>
