@@ -37,7 +37,7 @@ order: 2
 
 - [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon/)
 - [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/)
-
+- [What's New/Changes?]({{ site.baseurl }}/guides/rhinocommon/whats_new/)
 
 ### Getting Started
 
