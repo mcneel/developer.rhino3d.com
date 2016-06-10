@@ -10,7 +10,7 @@ origin: unset
 order: 3
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
-TODO: 'needs to be written'
+TODO: 'Needs testing and elaboration.  Should be back-ported to master (Rhino 5)'
 ---
 
 # Your First Component (Windows)
@@ -29,11 +29,11 @@ TODO: 'needs to be written'
     5. Sub Category: name of group inside tab where icon will be shown
 6. Download [GrasshopperSDK.chm](http://s3.amazonaws.com/files.na.mcneel.com/grasshopper/1.0/docs/en/GrasshopperSDK.chm) and read about how to set up component inputs, output, and solve the component in the Examples.
 
-## Preparing to Debug Your Component 
+## Preparing to Debug Your Component
 1. Set your project as the start-up project in Visual Studio.
 2. From the *Debug* menu in Visual Studio, click *Start Debugging*
 3. After Rhino starts, run the *GrasshopperDeveloperSettings* command
-4. Clear the *Memory load .GHA assemblies using COFF byte arrays* checkbox 
+4. Clear the *Memory load .GHA assemblies using COFF byte arrays* checkbox
 5. Click *Add Folder* and add the bin\Debug output folder of your project to Grasshopper's search path
 6. (Optional) Automatically start Grasshopper every time Rhino starts
     1. From the *Tools* menu, click *Options*, then click *General*

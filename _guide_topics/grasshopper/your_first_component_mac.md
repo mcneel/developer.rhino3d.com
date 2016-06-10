@@ -10,6 +10,7 @@ origin: unset
 order: 3
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
+TODO: 'Needs review and image work.  Reported bug with missing step for copy components to library.'
 ---
 
 # Your First Component (Mac)
