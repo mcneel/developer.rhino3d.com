@@ -45,7 +45,7 @@ This site uses [Markdown](http://daringfireball.net/projects/markdown/) - specif
 
 To get started authoring content for this site, please read the following guides:
 
-- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/README.md)
+- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/wip/README.md)
 - [How This Site Works]({{ site.baseurl }}/guides/general/how_this_site_works)
 - [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer_docs_style_guide)
 

@@ -30,7 +30,7 @@ The sources of content-to-be-consolidated are:
 
 ## Dev Docs Guides
 
-- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/gh-pages/README.md)
+- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/wip/README.md)
 - [How This Site Works]({{ site.baseurl }}/guides/general/how_this_site_works)
 - [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer_docs_style_guide)
 
