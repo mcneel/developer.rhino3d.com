@@ -27,7 +27,29 @@ The best way to understand how this site works is to make a change to it.  Follo
 1. Wait a couple minutes - this site is large and it may take a minute or two for Jekyll to process all the markdown and render the html contents.  (If you issued a pull-request, your change won't be live until a git administrator accepts it).
 1. On the live [developer.rhino3d.com](http://developer.rhino3d.com), you should see your change.
 
-**NOTE**: For those familiar with Google's AppEngine workflow, this workflow should seem similar.
+### Versions
+
+This site is version aware.  What does this mean?  First, open these two links in two separate tabs:
+
+[http://developer.rhino3d.com/guides/general/how_this_site_works/](http://developer.rhino3d.com/guides/general/how_this_site_works/)
+
+and
+
+[http://developer.rhino3d.com/wip/guides/general/how_this_site_works/](http://developer.rhino3d.com/wip/guides/general/how_this_site_works/)
+
+Notice the banner along the top of the "wip" version of the site.  This tells the reader that they are on the version of the site that corresponds to information found in the Rhino Work-In-Progress (WIP) version of the software.  The "undecorated" ([http://developer.rhino3d.com](http://developer.rhino3d.com)) version of the site represents the current, stable, shipping version of Rhino.  (Legacy versions of documentation for legacy Rhino will be versioned accordingly.)
+
+How does this work for the author, developer, or contributor?  The `master` branch represents the current (_stable_) version of the site.  Changes to the `master` branch will be built by Travis and deployed to [http://developer.rhino3d.com](http://developer.rhino3d.com).  Other branches can be defined in `_config.yml` (under `version_branches`) and will be built and deployed into a subpath with the same name.  For example, if you push to the `wip` branch (representing RhinoWIP) then this site will be deployed to http://developer.rhino3d.com/wip.
+
+So, if you want to author a guide that applies to the current (_stable_) version of Rhino, you should work on the `master` branch.  If you would like to author a guide that applies to the RhinoWIP, then you should work in the `wip` branch.
+
+What if you want to write a guide that applies to both the current stable version of Rhino *and* the RhinoWIP?
+
+**TODO**   
+
+What if you want to just correct a typo in both the `master` and the `wip` versions of the site?
+
+**TODO**
 
 ---
 
