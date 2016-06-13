@@ -39,17 +39,21 @@ and
 
 Notice the banner along the top of the "wip" version of the site.  This tells the reader that they are on the version of the site that corresponds to information found in the Rhino Work-In-Progress (WIP) version of the software.  The "undecorated" ([http://developer.rhino3d.com](http://developer.rhino3d.com)) version of the site represents the current, stable, shipping version of Rhino.  (Legacy versions of documentation for legacy Rhino will be versioned accordingly.)
 
-How does this work for the author, developer, or contributor?  The `master` branch represents the current (_stable_) version of the site.  Changes to the `master` branch will be built by Travis and deployed to [http://developer.rhino3d.com](http://developer.rhino3d.com).  Other branches can be defined in `_config.yml` (under `version_branches`) and will be built and deployed into a subpath with the same name.  For example, if you push to the `wip` branch (representing RhinoWIP) then this site will be deployed to http://developer.rhino3d.com/wip.
+How does this work for the author, developer, or contributor?  The `master` branch represents the current (_stable_) version of the site.  Changes to the `master` branch will be built by Travis and deployed to [http://developer.rhino3d.com](http://developer.rhino3d.com).  Other branches can be defined in `_config.yml` (under `version_branches`) and will be built and deployed into a subpath with the same name.  For example, if you push to the `wip` branch (representing RhinoWIP) then this site will be deployed to [http://developer.rhino3d.com/wip](http://developer.rhino3d.com/wip).
 
 So, if you want to author a guide that applies to the current (_stable_) version of Rhino, you should work on the `master` branch.  If you would like to author a guide that applies to the RhinoWIP, then you should work in the `wip` branch.
 
-What if you want to write a guide that applies to both the current stable version of Rhino *and* the RhinoWIP?
+#### Change multiple versions
 
-**TODO**   
+What if you want to write a guide that applies to both the current stable version of Rhino *and* the RhinoWIP?  
 
-What if you want to just correct a typo in both the `master` and the `wip` versions of the site?
+The easiest way is to work in the stable `master` branch and then copy and paste your guide into the `wip` branch.  Alternatively, you can [cherry-pick](https://git-scm.com/docs/git-cherry-pick) your commit from the `master` branch into the `wip` branch as well.
 
-**TODO**
+#### Typos
+
+What if you want to just correct a typo in both the `master` and the `wip` versions of the site?  
+
+In this case, the fastest and easiest way is to simply correct the typo in both branches on the GitHub site itself.  For example, if you wanted to correct a typo on <a href="https://github.com/{{ site.nwo }}/blob/{{ site.git_branch }}/{{ page.path }}" target="_blank">this very guide</a>, just click the "Edit this file" - the little pencil icon in the upper right-hand corner.  Make your correction, then switch to the `wip` branch and do the same thing.  For small fixes, this works just as well as a [cherry-picked](https://git-scm.com/docs/git-cherry-pick) commit.
 
 ---
 
