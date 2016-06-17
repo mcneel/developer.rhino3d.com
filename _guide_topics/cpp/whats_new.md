@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs review and the original contained links to empty wiki entries.'
 ---
 
-# What's New?
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['openNURBS', 'overview']
 layout: toc-guide-page
 ---
 
-# What is openNURBS?
+# {{ page.title }}
 
 {{ page.description }}
 

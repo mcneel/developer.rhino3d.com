@@ -12,7 +12,7 @@ keywords: ['rhino', 'projecting', 'points', 'breps']
 layout: toc-guide-page
 ---
 
-# Projecting Points to Breps
+# {{ page.title }}
 
 {{ page.description }}
 

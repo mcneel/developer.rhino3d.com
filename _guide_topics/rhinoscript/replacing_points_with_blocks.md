@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Replacing Points with Blocks
+# {{ page.title }}
 
 {{ page.description }}
 

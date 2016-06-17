@@ -12,7 +12,7 @@ keywords: ['rhino', 'custom', 'grip']
 layout: toc-guide-page
 ---
 
-# Custom Picking Grip Objects
+# {{ page.title }}
 
 {{ page.description }}
 

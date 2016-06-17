@@ -12,7 +12,7 @@ keywords: ['rhino', 'text', 'file']
 layout: toc-guide-page
 ---
 
-# Writing to Text Files
+# {{ page.title }}
 
 {{ page.description }}
 

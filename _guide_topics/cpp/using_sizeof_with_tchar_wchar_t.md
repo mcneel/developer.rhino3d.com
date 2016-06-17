@@ -12,7 +12,7 @@ keywords: ['rhino', 'sizeof', 'UNICODE', 'TCHAR', 'wchar_t']
 layout: toc-guide-page
 ---
 
-# Using the sizeof operator with TCHAR and wchar_t
+# {{ page.title }}
 
 {{ page.description }}
 

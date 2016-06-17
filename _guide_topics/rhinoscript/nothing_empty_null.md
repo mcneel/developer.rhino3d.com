@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Nothing vs Empty vs Null
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['rhino', 'display', 'conduit']
 layout: toc-guide-page
 ---
 
-# Adjusting Clipping Planes from Conduits
+# {{ page.title }}
 
 {{ page.description }}
 

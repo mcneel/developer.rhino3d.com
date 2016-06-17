@@ -12,7 +12,7 @@ keywords: ['rhino', 'units', 'document']
 layout: toc-guide-page
 ---
 
-# Getting the Units of the Active Document
+# {{ page.title }}
 
 {{ page.description }}
 

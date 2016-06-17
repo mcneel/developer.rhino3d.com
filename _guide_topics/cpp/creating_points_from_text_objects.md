@@ -12,7 +12,7 @@ keywords: ['rhino', 'points', 'text', 'objects']
 layout: toc-guide-page
 ---
 
-# Creating Points from Text Objects
+# {{ page.title }}
 
 {{ page.description }}
 

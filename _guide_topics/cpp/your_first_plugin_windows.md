@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs new screenshots, review, and cleanup.  Consider breaking out Adding Commands.'
 ---
 
-# Your First Plugin (Windows)
+# {{ page.title }}
 
 {{ page.description }}
 

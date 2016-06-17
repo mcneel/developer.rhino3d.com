@@ -12,7 +12,7 @@ keywords: ['rhino', 'display', 'settings']
 layout: toc-guide-page
 ---
 
-# Modifying Advanced Display Settings
+# {{ page.title }}
 
 {{ page.description }}
 

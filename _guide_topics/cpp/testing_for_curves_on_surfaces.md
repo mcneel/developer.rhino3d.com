@@ -12,7 +12,7 @@ keywords: ['rhino', 'curves', 'surfaces']
 layout: toc-guide-page
 ---
 
-# Testing for Curves on Surfaces
+# {{ page.title }}
 
 {{ page.description }}
 

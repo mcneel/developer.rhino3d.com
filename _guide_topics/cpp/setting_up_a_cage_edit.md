@@ -12,7 +12,7 @@ keywords: ['rhino', 'cage', 'edit']
 layout: toc-guide-page
 ---
 
-# Setting Up a Cage Edit
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Read & Write UTF-8 Files
+# {{ page.title }}
 
 {{ page.description }}
 

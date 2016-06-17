@@ -13,8 +13,7 @@ layout: toc-guide-page
 TODO: 'needs review'
 ---
 
-
-# Contributing
+# {{ page.title }}
 
 {{ page.description }}
 

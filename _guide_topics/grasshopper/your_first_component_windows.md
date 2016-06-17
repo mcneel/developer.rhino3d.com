@@ -13,7 +13,9 @@ layout: toc-guide-page
 TODO: 'Needs testing and elaboration.  Should be back-ported to master (Rhino 5)'
 ---
 
-# Your First Component (Windows)
+# {{ page.title }}
+
+{{ page.description }}
 
 ## Create your component
 1. Open *Visual Studio*

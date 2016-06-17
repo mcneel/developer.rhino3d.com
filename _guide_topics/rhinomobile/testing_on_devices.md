@@ -12,7 +12,7 @@ keywords: ['RhinoMobile', 'iRhino 3D']
 layout: toc-guide-page
 ---
 
-# Testing On Devices
+# {{ page.title }}
 
 {{ page.description }}
 

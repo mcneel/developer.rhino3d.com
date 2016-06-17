@@ -12,7 +12,7 @@ keywords: ['RhinoCommon', 'Event', 'Watchers', 'UI']
 layout: toc-guide-page
 ---
 
-# Event Watchers
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['rhino', 'clear', 'undo', 'redo']
 layout: toc-guide-page
 ---
 
-# Clear Undo and Redo Lists
+# {{ page.title }}
 
 {{ page.description }}
 

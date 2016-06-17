@@ -13,6 +13,8 @@ layout: toc-guide-page
 TODO: 'needs to be written'
 ---
 
-# Component Installers (Windows)
+# {{ page.title }}
+
+{{ page.description }}
 
 TODO

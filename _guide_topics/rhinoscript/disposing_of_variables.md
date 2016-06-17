@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Disposing of Variables
+# {{ page.title }}
 
 {{ page.description }}
 

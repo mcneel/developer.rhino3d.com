@@ -12,7 +12,7 @@ keywords: ['rhino', 'mesh']
 layout: toc-guide-page
 ---
 
-# Mesh Types
+# {{ page.title }}
 
 {{ page.description }}
 

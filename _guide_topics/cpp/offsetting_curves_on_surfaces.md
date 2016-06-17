@@ -12,7 +12,7 @@ keywords: ['rhino', 'offset', 'curve', 'surface']
 layout: toc-guide-page
 ---
 
-# Offsetting Curves on Surfaces
+# {{ page.title }}
 
 {{ page.description }}
 

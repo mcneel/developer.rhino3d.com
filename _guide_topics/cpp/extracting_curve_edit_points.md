@@ -12,7 +12,7 @@ keywords: ['rhino', 'curve', 'points']
 layout: toc-guide-page
 ---
 
-# Extracting Curve Edit Points
+# {{ page.title }}
 
 {{ page.description }}
 

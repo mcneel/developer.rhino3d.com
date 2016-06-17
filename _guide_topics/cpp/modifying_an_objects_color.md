@@ -12,7 +12,7 @@ keywords: ['rhino', 'color']
 layout: toc-guide-page
 ---
 
-# Modify an Object's Color
+# {{ page.title }}
 
 {{ page.description }}
 

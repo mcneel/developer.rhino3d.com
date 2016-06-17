@@ -12,7 +12,7 @@ keywords: ['rhino', 'thumbnail']
 layout: toc-guide-page
 ---
 
-# Extracting Thumbnail Preview Images
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['rhino', 'curves']
 layout: toc-guide-page
 ---
 
-# Create Principal Curvature Curves
+# {{ page.title }}
 
 {{ page.description }}
 

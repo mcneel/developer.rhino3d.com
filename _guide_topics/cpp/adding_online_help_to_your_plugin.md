@@ -12,7 +12,7 @@ keywords: ['rhino', 'help']
 layout: toc-guide-page
 ---
 
-# Adding Online Help to Your Plugin
+# {{ page.title }}
 
 {{ page.description }}
 

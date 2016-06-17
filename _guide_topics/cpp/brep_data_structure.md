@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs explanation, diagram style update'
 ---
 
-# Brep Data Structure
+# {{ page.title }}
 
 {{ page.description }}
 

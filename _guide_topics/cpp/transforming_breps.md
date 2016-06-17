@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs more explanatory content.'
 ---
 
-# Transforming Breps
+# {{ page.title }}
 
 {{ page.description }}
 

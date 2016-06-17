@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs more GHPython info. Resources should be moved.'
 ---
 
-# What is Rhino.Python?
+# {{ page.title }}
 
 {{ page.description }}  ...but a better question is...
 

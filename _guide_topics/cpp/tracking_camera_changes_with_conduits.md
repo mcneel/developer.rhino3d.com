@@ -12,7 +12,7 @@ keywords: ['rhino', 'camera', 'conduit']
 layout: toc-guide-page
 ---
 
-# Tracking Camera Changes with Conduits
+# {{ page.title }}
 
 {{ page.description }}
 

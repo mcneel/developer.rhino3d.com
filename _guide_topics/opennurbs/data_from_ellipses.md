@@ -12,7 +12,7 @@ keywords: ['openNURBS', 'Ellipses']
 layout: toc-guide-page
 ---
 
-# Data from Ellipses
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['openNURBS', 'release', 'notes', 'whats new']
 layout: toc-guide-page
 ---
 
-# openNURBS Latest Release Notes
+# {{ page.title }}
 
 {{ page.description }}
 

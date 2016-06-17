@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs cleanup, standardization, editing, new images, etc.'
 ---
 
-# What is the RDK?
+# {{ page.title }}
 
 {{ page.description }}
 

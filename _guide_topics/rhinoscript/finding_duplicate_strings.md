@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Finding Duplicate Strings
+# {{ page.title }}
 
 {{ page.description }}
 

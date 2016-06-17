@@ -12,7 +12,7 @@ keywords: ['rhino', 'user', 'data']
 layout: toc-guide-page
 ---
 
-# Adding User Strings to Objects
+# {{ page.title }}
 
 {{ page.description }}
 

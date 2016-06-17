@@ -12,7 +12,7 @@ keywords: ['rhino']
 layout: toc-guide-page
 ---
 
-# Renaming Layers
+# {{ page.title }}
 
 {{ page.description }}
 

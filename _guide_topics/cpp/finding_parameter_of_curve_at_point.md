@@ -12,7 +12,7 @@ keywords: ['rhino', 'curve', 'point']
 layout: toc-guide-page
 ---
 
-# Finding the Parameter of a Curve at a Point
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['rhino', 'picking']
 layout: toc-guide-page
 ---
 
-# Creating a Custom CRhinoGetObject Class
+# {{ page.title }}
 
 {{ page.description }}
 

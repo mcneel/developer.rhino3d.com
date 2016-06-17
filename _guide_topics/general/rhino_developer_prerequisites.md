@@ -12,8 +12,7 @@ keywords: ['developer', 'rhino']
 layout: toc-guide-page
 ---
 
-
-# Developer Prerequisites
+# {{ page.title }}
 
 {{ page.description }}
 

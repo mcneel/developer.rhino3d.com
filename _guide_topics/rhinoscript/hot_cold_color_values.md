@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Hot & Cold Colors
+# {{ page.title }}
 
 {{ page.description }}
 

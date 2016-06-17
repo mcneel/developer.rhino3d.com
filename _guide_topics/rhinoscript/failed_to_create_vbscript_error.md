@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Failed to Create VBScript Error
+# {{ page.title }}
 
 {{ page.description }}
 

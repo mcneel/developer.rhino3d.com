@@ -12,7 +12,7 @@ keywords: ['rhino', 'layer', 'printing']
 layout: toc-guide-page
 ---
 
-# Printing a Layer's Full Path
+# {{ page.title }}
 
 {{ page.description }}
 

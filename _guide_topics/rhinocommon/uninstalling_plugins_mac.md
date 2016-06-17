@@ -12,8 +12,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin', 'removing', 'uninstalling']
 layout: toc-guide-page
 ---
 
-
-# Uninstalling Plugins (Mac)
+# {{ page.title }}
 
 {{ page.description }}
 

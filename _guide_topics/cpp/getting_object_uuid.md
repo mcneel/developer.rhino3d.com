@@ -12,7 +12,7 @@ keywords: ['rhino', 'uuid', 'guid']
 layout: toc-guide-page
 ---
 
-# Getting Object UUIDs
+# {{ page.title }}
 
 {{ page.description }}
 

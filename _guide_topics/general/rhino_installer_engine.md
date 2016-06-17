@@ -13,8 +13,7 @@ layout: toc-guide-page
 TODO: 'needs review for technical accuracy, mac info needed.'
 ---
 
-
-# Rhino Installer Engine
+# {{ page.title }}
 
 {{ page.description }}
 

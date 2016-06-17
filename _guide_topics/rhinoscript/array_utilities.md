@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Array Utilities
+# {{ page.title }}
 
 {{ page.description }}
 

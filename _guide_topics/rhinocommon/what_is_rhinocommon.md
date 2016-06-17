@@ -12,8 +12,7 @@ keywords: ['RhinoCommon', 'What']
 layout: toc-guide-page
 ---
 
-
-# What is RhinoCommon?
+# {{ page.title }}
 
 {{ page.description }}
 

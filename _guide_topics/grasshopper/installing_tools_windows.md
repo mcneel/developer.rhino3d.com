@@ -13,7 +13,9 @@ layout: toc-guide-page
 TODO: 'needs to be written'
 ---
 
-# Installing Tools (Windows)
+# {{ page.title }}
+
+{{ page.description }}
 
 1. Open *Visual Studio*
 2. From the *Tools* menu, click *Extensions and Updates*

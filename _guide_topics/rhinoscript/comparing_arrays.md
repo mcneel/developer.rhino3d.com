@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Comparing Arrays
+# {{ page.title }}
 
 {{ page.description }}
 

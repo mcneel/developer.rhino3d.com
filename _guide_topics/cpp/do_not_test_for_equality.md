@@ -12,7 +12,7 @@ keywords: ['rhino', 'floating point']
 layout: toc-guide-page
 ---
 
-# Do NOT Test for Equality
+# {{ page.title }}
 
 {{ page.description }}
 

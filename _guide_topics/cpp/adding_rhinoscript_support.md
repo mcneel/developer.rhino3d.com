@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs to be reviewed to check to see if steps are up to date.  New screencaptures as well.'
 ---
 
-# Adding RhinoScript Support
+# {{ page.title }}
 
 {{ page.description }}
 

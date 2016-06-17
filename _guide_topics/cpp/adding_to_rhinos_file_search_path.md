@@ -12,7 +12,7 @@ keywords: ['rhino', 'search', 'path']
 layout: toc-guide-page
 ---
 
-# Adding to Rhino's File Search Path
+# {{ page.title }}
 
 {{ page.description }}
 

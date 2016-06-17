@@ -12,7 +12,7 @@ keywords: ['rhino', 'display', 'precision']
 layout: toc-guide-page
 ---
 
-# Changing Display Precision
+# {{ page.title }}
 
 {{ page.description }}
 

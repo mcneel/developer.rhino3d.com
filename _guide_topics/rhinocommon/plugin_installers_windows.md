@@ -13,8 +13,7 @@ layout: toc-guide-page
 TODO: 'needs updating and/or review.'
 ---
 
-
-# Plugin Installers (Windows)
+# {{ page.title }}
 
 {{ page.description }}
 

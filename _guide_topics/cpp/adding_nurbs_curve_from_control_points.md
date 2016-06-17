@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs more explanation in order to be a guide'
 ---
 
-# Adding a NURBS Curve from Control Points
+# {{ page.title }}
 
 {{ page.description }}
 

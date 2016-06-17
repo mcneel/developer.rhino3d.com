@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Quick Sort Key Value Pairs
+# {{ page.title }}
 
 {{ page.description }}
 

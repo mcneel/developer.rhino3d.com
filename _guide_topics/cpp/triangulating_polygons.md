@@ -12,7 +12,7 @@ keywords: ['rhino', 'polygons']
 layout: toc-guide-page
 ---
 
-# Triangulating Polygons
+# {{ page.title }}
 
 {{ page.description }}
 

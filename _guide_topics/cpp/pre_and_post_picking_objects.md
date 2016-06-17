@@ -12,7 +12,7 @@ keywords: ['rhino', 'picking']
 layout: toc-guide-page
 ---
 
-# Pre- and Post-Picking Objects
+# {{ page.title }}
 
 {{ page.description }}
 

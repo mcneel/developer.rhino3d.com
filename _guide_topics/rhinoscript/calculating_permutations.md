@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Calculating Permutations
+# {{ page.title }}
 
 {{ page.description }}
 

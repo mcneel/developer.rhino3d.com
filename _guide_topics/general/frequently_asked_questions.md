@@ -12,8 +12,9 @@ keywords: ['developer', 'rhino', 'faq']
 layout: toc-guide-page
 ---
 
+# {{ page.title }}
 
-# Frequently Asked Questions
+{{ page.description }}
 
 **Which SDK is right for me?**
 
