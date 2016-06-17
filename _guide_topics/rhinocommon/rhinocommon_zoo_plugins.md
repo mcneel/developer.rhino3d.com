@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs to be compared with creating_zoo_plugins'
 ---
 
-# RhinoCommon Zoo Plugins
+# {{ page.title }}
 
 {{ page.description }}
 

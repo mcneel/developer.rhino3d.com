@@ -12,7 +12,7 @@ keywords: ['rhino', 'viewport']
 layout: toc-guide-page
 ---
 
-# Determining the Active Viewport
+# {{ page.title }}
 
 {{ page.description }}
 

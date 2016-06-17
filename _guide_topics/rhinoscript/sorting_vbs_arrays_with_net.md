@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Sorting VBS Arrays with .NET
+# {{ page.title }}
 
 {{ page.description }}
 

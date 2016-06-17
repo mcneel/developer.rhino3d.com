@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Disconnected Recordset Sorting
+# {{ page.title }}
 
 {{ page.description }}
 

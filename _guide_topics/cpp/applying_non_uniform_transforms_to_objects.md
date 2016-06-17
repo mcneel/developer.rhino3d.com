@@ -12,7 +12,7 @@ keywords: ['rhino', 'transformations', 'non-uniform']
 layout: toc-guide-page
 ---
 
-# Applying Non-Uniform Transformations to Objects
+# {{ page.title }}
 
 {{ page.description }}
 

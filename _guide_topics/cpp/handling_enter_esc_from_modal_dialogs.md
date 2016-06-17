@@ -12,7 +12,7 @@ keywords: ['rhino', 'escape', 'enter']
 layout: toc-guide-page
 ---
 
-# Handling Enter and Escape from Modal Dialogs
+# {{ page.title }}
 
 {{ page.description }}
 

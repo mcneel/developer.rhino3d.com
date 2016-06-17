@@ -12,7 +12,9 @@ keywords: ['authoring', 'writing', 'editing', 'overview']
 layout: toc-guide-page
 ---
 
-# How This Site Works
+# {{ page.title }}
+
+{{ page.description }}
 
 [This site](http://developer.rhino3d.com) is hosted on [GitHub Pages](https://pages.github.com/).  Every time a commit is made to [this git repository](https://github.com/mcneel/developer-rhino3d-com), a static site-generator called [Jekyll](http://jekyllrb.com/) churns through all the markdown content to generate html for the site.  Behind the scenes, Jekyll uses a templating language called [Liquid](https://github.com/Shopify/liquid/wiki), which allows for automatic generation of some content based upon yaml fields or page contents.
 

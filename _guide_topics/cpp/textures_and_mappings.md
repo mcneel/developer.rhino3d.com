@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs review and more explanatory content.'
 ---
 
-# Textures and Mappings
+# {{ page.title }}
 
 {{ page.description }}
 

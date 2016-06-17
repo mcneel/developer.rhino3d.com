@@ -12,7 +12,7 @@ keywords: ['RhinoCommon', 'Tool', 'Palette', 'Collection', 'RUI']
 layout: toc-guide-page
 ---
 
-# Loading Tool Palettes (Mac)
+# {{ page.title }}
 
 {{ page.description }}
 

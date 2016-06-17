@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# VBScript Variables
+# {{ page.title }}
 
 {{ page.description }}
 

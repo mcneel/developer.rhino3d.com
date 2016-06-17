@@ -12,7 +12,7 @@ keywords: ['rhino', 'picking', 'brep']
 layout: toc-guide-page
 ---
 
-# Picking Brep Components
+# {{ page.title }}
 
 {{ page.description }}
 

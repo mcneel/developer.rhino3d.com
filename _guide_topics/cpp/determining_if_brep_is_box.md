@@ -12,7 +12,7 @@ keywords: ['rhino', 'brep']
 layout: toc-guide-page
 ---
 
-# Determining if a Brep is a Box
+# {{ page.title }}
 
 {{ page.description }}
 

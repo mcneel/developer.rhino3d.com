@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Quadratic Solver
+# {{ page.title }}
 
 {{ page.description }}
 

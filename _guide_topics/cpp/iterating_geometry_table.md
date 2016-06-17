@@ -12,7 +12,7 @@ keywords: ['rhino', 'document', 'iteration']
 layout: toc-guide-page
 ---
 
-# Iterating the Geometry Table
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['RhinoCommon', 'Object', 'Plugin', 'User', 'Data']
 layout: toc-guide-page
 ---
 
-# Plugin User Data
+# {{ page.title }}
 
 {{ page.description }}
 

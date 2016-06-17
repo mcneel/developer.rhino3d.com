@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Accessing Databases
+# {{ page.title }}
 
 {{ page.description }}
 

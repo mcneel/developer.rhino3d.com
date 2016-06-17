@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs to be reviewed for accuracy and considered for consolidation with other plugin topics'
 ---
 
-# Plugin Build Configurations
+# {{ page.title }}
 
 {{ page.description }}
 

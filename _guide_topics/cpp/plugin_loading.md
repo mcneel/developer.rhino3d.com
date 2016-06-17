@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs to be reviewed or consolidated with other plugin guides'
 ---
 
-# Plugin Loading
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# VBScript Variable Hoisting
+# {{ page.title }}
 
 {{ page.description }}
 

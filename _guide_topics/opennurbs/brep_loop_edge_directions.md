@@ -12,7 +12,7 @@ keywords: ['openNURBS', 'Brep', 'Loop', 'Edge', 'Directions']
 layout: toc-guide-page
 ---
 
-# Brep Loop & Edge Directions
+# {{ page.title }}
 
 {{ page.description }}
 

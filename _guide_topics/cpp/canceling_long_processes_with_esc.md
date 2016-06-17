@@ -12,7 +12,7 @@ keywords: ['rhino', 'esc', 'commands']
 layout: toc-guide-page
 ---
 
-# Canceling Long Processes with ESC
+# {{ page.title }}
 
 {{ page.description }}
 

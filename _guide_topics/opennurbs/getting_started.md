@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs an image for ON_Mesh vertices.'
 ---
 
-# Getting Started
+# {{ page.title }}
 
 {{ page.description }}
 

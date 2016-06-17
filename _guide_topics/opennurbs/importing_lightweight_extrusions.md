@@ -12,7 +12,7 @@ keywords: ['openNURBS', 'Extrusions', 'Importing']
 layout: toc-guide-page
 ---
 
-# Importing Lightweight Extrusions
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['rhino', 'properties', 'icon']
 layout: toc-guide-page
 ---
 
-# Object Properties Page Icons
+# {{ page.title }}
 
 {{ page.description }}
 

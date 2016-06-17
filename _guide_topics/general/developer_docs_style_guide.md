@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 <a id="top"></a> <!-- this is just a sample anchor -->
 
-# Developer Docs Style Guide
+# {{ page.title }}
 
 {{ page.description }}
 

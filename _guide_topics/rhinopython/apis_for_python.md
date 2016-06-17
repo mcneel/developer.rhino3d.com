@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs reorganization with regard to other guides'
 ---
 
-# APIs Available to Python
+# {{ page.title }}
 
 {{ page.description }}
 

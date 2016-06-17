@@ -12,7 +12,7 @@ keywords: ['RhinoCommon', 'Locale', 'Threads', 'Culture', 'Internationalization'
 layout: toc-guide-page
 ---
 
-# Commas & Periods
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['rhino', 'loft', 'tangent']
 layout: toc-guide-page
 ---
 
-# Lofting Surfaces that Maintain Tangency
+# {{ page.title }}
 
 {{ page.description }}
 

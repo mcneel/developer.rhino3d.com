@@ -12,7 +12,7 @@ keywords: ['skin', 'RAP', 'rhino']
 layout: toc-guide-page
 ---
 
-# Creating a Skin
+# {{ page.title }}
 
 {{ page.description }}
 

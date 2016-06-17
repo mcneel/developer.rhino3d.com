@@ -12,7 +12,7 @@ keywords: ['skin', 'RAP', 'rhino', 'RhinoCommon']
 layout: toc-guide-page
 ---
 
-# Creating a Skin (Windows)
+# {{ page.title }}
 
 {{ page.description }}
 

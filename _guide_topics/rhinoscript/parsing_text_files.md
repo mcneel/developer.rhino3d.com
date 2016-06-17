@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Parsing Text Files
+# {{ page.title }}
 
 {{ page.description }}
 

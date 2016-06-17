@@ -12,7 +12,7 @@ keywords: ['rhino', 'moving', 'grips']
 layout: toc-guide-page
 ---
 
-# Moving Curve and Surface Grips
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['rhino', 'menu']
 layout: toc-guide-page
 ---
 
-# Adding a Custom Menu
+# {{ page.title }}
 
 {{ page.description }}
 

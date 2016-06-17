@@ -12,7 +12,7 @@ keywords: ['rhino', 'curve']
 layout: toc-guide-page
 ---
 
-# Determining Curve Object Types
+# {{ page.title }}
 
 {{ page.description }}
 

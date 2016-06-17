@@ -12,7 +12,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin']
 layout: toc-guide-page
 ---
 
-# Installing Tools (Windows)
+# {{ page.title }}
 
 {{ page.description }}
 

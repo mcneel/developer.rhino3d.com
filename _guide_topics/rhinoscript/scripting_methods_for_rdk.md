@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs cleanup and formatting work and to be added to rhinoscript guides'
 ---
 
-# Scripting Methods for RDK (Windows)
+# {{ page.title }}
 
 {{ page.description }}
 

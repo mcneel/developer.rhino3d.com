@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Isometric Views
+# {{ page.title }}
 
 {{ page.description }}
 

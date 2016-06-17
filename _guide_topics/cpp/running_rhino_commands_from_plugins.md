@@ -12,7 +12,7 @@ keywords: ['rhino', 'commands']
 layout: toc-guide-page
 ---
 
-# Running Rhino Commands from Plugins
+# {{ page.title }}
 
 {{ page.description }}
 

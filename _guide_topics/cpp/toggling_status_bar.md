@@ -12,7 +12,7 @@ keywords: ['rhino', 'status', 'toggle']
 layout: toc-guide-page
 ---
 
-# Toggling the Status Bar
+# {{ page.title }}
 
 {{ page.description }}
 

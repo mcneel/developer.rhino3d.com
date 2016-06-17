@@ -12,7 +12,7 @@ keywords: ['rhino', 'casting']
 layout: toc-guide-page
 ---
 
-# Type Casting Rhino Objects
+# {{ page.title }}
 
 {{ page.description }}
 

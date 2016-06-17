@@ -12,7 +12,7 @@ keywords: ['rhino', 'viewport']
 layout: toc-guide-page
 ---
 
-# Setting Viewport Titles
+# {{ page.title }}
 
 {{ page.description }}
 

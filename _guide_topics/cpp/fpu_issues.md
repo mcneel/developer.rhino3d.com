@@ -12,7 +12,7 @@ keywords: ['rhino', 'errors', 'floating-point']
 layout: toc-guide-page
 ---
 
-# FPU Issues
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['rhino', 'orthogonal']
 layout: toc-guide-page
 ---
 
-# Enabling Orthogonal Mode
+# {{ page.title }}
 
 {{ page.description }}
 

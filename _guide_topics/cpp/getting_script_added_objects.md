@@ -12,7 +12,7 @@ keywords: ['rhino', 'script']
 layout: toc-guide-page
 ---
 
-# Getting Script-Added Objects
+# {{ page.title }}
 
 {{ page.description }}
 

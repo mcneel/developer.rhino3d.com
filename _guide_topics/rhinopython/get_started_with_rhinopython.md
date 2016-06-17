@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs update, adding more resource links, etc.'
 ---
 
-# Getting Started
+# {{ page.title }}
 
 {{ page.description }}
 

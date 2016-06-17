@@ -12,8 +12,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin', 'installing']
 layout: toc-guide-page
 ---
 
-
-# Plugin Installers (Mac)
+# {{ page.title }}
 
 {{ page.description }}
 

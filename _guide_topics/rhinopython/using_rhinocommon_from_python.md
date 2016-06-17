@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs more information.'
 ---
 
-# Using RhinoCommon from Python
+# {{ page.title }}
 
 {{ page.description }}
 

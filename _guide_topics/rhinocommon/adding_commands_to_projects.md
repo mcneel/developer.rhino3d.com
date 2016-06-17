@@ -12,8 +12,7 @@ keywords: ['adding', 'RhinoCommon', 'commands', 'projects']
 layout: toc-guide-page
 ---
 
-
-# Adding Commands to Projects
+# {{ page.title }}
 
 {{ page.description }}
 

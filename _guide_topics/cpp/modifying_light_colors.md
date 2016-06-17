@@ -12,7 +12,7 @@ keywords: ['rhino', 'light', 'color']
 layout: toc-guide-page
 ---
 
-# Modifying a Light's Color
+# {{ page.title }}
 
 {{ page.description }}
 

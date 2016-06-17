@@ -12,7 +12,7 @@ keywords: ['RhinoMobile', 'iRhino 3D']
 layout: toc-guide-page
 ---
 
-# Installing Tools (Mac)
+# {{ page.title }}
 
 {{ page.description }}
 

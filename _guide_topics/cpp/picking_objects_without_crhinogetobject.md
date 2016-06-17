@@ -12,7 +12,7 @@ keywords: ['rhino', 'picking']
 layout: toc-guide-page
 ---
 
-# Picking Objects without CRhinoGetObject
+# {{ page.title }}
 
 {{ page.description }}
 

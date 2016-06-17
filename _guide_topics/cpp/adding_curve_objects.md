@@ -12,7 +12,7 @@ keywords: ['rhino', 'curve']
 layout: toc-guide-page
 ---
 
-# Adding Curve Objects
+# {{ page.title }}
 
 {{ page.description }}
 

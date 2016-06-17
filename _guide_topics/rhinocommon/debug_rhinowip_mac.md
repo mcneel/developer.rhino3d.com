@@ -12,7 +12,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin', 'RhinoWIP']
 layout: toc-guide-page
 ---
 
-# Debug in RhinoWIP (Mac)
+# {{ page.title }}
 
 {{ page.description }}
 

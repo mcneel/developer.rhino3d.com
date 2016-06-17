@@ -12,7 +12,7 @@ keywords: ['RhinoCommon', 'Registering', 'Plugin']
 layout: toc-guide-page
 ---
 
-# Registering Plugins (Windows)
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin']
 layout: toc-guide-page
 ---
 
-# Your First Plugin (Windows)
+# {{ page.title }}
 
 {{ page.description }}
 

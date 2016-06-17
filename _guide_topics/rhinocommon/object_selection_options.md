@@ -12,7 +12,7 @@ keywords: ['RhinoCommon', 'Object', 'Selection', 'Options']
 layout: toc-guide-page
 ---
 
-# Object Selection with Options
+# {{ page.title }}
 
 {{ page.description }}
 

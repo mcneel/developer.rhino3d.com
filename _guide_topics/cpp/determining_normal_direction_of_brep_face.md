@@ -12,7 +12,7 @@ keywords: ['rhino', 'normal', 'brep']
 layout: toc-guide-page
 ---
 
-# Determining the Normal Direction of a Brep Face
+# {{ page.title }}
 
 {{ page.description }}
 

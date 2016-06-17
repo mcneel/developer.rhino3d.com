@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs review and updated screencaptures'
 ---
 
-# Running Scripts from Macros
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['rhino']
 layout: toc-guide-page
 ---
 
-# Making Plugins That Expire
+# {{ page.title }}
 
 {{ page.description }}
 

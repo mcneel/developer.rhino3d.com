@@ -12,7 +12,7 @@ keywords: ['openNURBS', 'object', 'visibility']
 layout: toc-guide-page
 ---
 
-# Testing for Object Visibility
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs to be reclassified as a General guide if we can add OS X specifics'
 ---
 
-# Running Rhino from the Command Line
+# {{ page.title }}
 
 {{ page.description }}
 

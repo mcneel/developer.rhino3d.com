@@ -12,7 +12,7 @@ keywords: ['rhino', 'activex']
 layout: toc-guide-page
 ---
 
-# Using ActiveX Controls
+# {{ page.title }}
 
 {{ page.description }}
 

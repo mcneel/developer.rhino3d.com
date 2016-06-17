@@ -12,7 +12,7 @@ keywords: ['rhino', 'selecting', 'text', 'dots']
 layout: toc-guide-page
 ---
 
-# Picking Text Dots
+# {{ page.title }}
 
 {{ page.description }}
 

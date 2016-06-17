@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Padding Digits
+# {{ page.title }}
 
 {{ page.description }}
 

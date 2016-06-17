@@ -12,7 +12,7 @@ keywords: ['Native', 'RhinoCommon', 'Plugin', 'Library', 'PInvoke', 'methodgen',
 layout: toc-guide-page
 ---
 
-# Using methodgen
+# {{ page.title }}
 
 {{ page.description }}
 
