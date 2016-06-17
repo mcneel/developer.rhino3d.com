@@ -12,7 +12,7 @@ keywords: ['rhino']
 layout: toc-guide-page
 ---
 
-# Loading Plugins at Startup
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Using .NET Classes
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# VBScript Conditionals
+# {{ page.title }}
 
 {{ page.description }}
 

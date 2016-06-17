@@ -12,7 +12,7 @@ keywords: ['Zoo', 'Plugin']
 layout: toc-guide-page
 ---
 
-# What is a Zoo Plugin?
+# {{ page.title }}
 
 {{ page.description }}
 

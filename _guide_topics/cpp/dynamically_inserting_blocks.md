@@ -12,7 +12,7 @@ keywords: ['rhino', 'block']
 layout: toc-guide-page
 ---
 
-# Dynamically Inserting Blocks
+# {{ page.title }}
 
 {{ page.description }}
 

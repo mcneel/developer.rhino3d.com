@@ -12,7 +12,7 @@ keywords: ['rhino', 'isocurve']
 layout: toc-guide-page
 ---
 
-# Adjusting Isocurve Density
+# {{ page.title }}
 
 {{ page.description }}
 

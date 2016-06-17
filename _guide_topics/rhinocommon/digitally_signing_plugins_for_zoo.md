@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'move out of Zoo because it applies to both Zoo and Rhino plugins'
 ---
 
-# Digitally Signing Zoo Plugins
+# {{ page.title }}
 
 {{ page.description }}
 

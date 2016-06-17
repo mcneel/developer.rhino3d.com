@@ -12,7 +12,7 @@ keywords: ['rhino', 'picking', 'points']
 layout: toc-guide-page
 ---
 
-# Picking Surface Point
+# {{ page.title }}
 
 {{ page.description }}
 

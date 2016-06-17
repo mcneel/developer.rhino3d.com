@@ -12,7 +12,9 @@ keywords: ['RhinoMobile', 'iRhino 3D']
 layout: toc-guide-page
 ---
 
-# What is RhinoMobile?
+# {{ page.title }}
+
+{{ page.description }}
 
 ![{{ site.baseurl }}/images/rhinomobile_overview_01.png]({{ site.baseurl }}/images/rhinomobile_overview_01.png){: .float-img-right width="325"}
 

@@ -12,7 +12,7 @@ keywords: ['rhino', 'group', 'copy']
 layout: toc-guide-page
 ---
 
-# Duplicating Objects with Group
+# {{ page.title }}
 
 {{ page.description }}
 

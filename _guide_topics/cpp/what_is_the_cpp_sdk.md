@@ -13,7 +13,9 @@ layout: toc-guide-page
 TODO: 'needs to be written'
 ---
 
-# What is the C/C++ SDK?
+# {{ page.title }}
+
+{{ page.description }}
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

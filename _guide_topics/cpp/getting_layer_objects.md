@@ -12,7 +12,7 @@ keywords: ['rhino', 'layers']
 layout: toc-guide-page
 ---
 
-# Getting Layer Objects
+# {{ page.title }}
 
 {{ page.description }}
 

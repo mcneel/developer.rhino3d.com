@@ -12,7 +12,7 @@ keywords: ['RhinoCommon', 'Display', 'Conduits', 'Rhino']
 layout: toc-guide-page
 ---
 
-# Display Conduits
+# {{ page.title }}
 
 {{ page.description }}
 

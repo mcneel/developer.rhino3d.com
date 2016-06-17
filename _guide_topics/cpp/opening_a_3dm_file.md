@@ -12,7 +12,7 @@ keywords: ['rhino', 'open', '3dm']
 layout: toc-guide-page
 ---
 
-# Open a 3DM file
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Selecting Curves by Type
+# {{ page.title }}
 
 {{ page.description }}
 

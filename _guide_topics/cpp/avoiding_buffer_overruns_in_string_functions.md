@@ -12,7 +12,7 @@ keywords: ['rhino', 'overruns', 'strings']
 layout: toc-guide-page
 ---
 
-# Avoiding Buffer Overruns in String Functions
+# {{ page.title }}
 
 {{ page.description }}
 

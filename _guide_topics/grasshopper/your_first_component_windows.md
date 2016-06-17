@@ -13,6 +13,6 @@ layout: toc-guide-page
 TODO: 'needs to be written'
 ---
 
-# Your First Component (Windows)
+# {{ page.title }}
 
-TODO
+{{ page.description }}

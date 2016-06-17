@@ -12,7 +12,7 @@ keywords: ['python', 'commands']
 layout: toc-guide-page
 ---
 
-# Creating Rhino Commands Using Python
+# {{ page.title }}
 
 {{ page.description }}
 

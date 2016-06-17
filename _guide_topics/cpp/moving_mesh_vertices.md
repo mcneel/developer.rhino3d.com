@@ -12,7 +12,7 @@ keywords: ['rhino', 'mesh', 'vertices']
 layout: toc-guide-page
 ---
 
-# Moving Mesh Vertices
+# {{ page.title }}
 
 {{ page.description }}
 

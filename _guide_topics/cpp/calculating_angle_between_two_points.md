@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'image needs updating.'
 ---
 
-# Calculating the Angle Between Two Points
+# {{ page.title }}
 
 {{ page.description }}
 

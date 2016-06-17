@@ -12,7 +12,7 @@ keywords: ['Mono', 'Xamarin', '.NET', 'Microsoft']
 layout: toc-guide-page
 ---
 
-# What are Mono & Xamarin?
+# {{ page.title }}
 
 {{ page.description }}
 

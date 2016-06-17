@@ -12,7 +12,7 @@ keywords: ['rhino', 'registry', 'settings']
 layout: toc-guide-page
 ---
 
-# Saving Persistent Settings
+# {{ page.title }}
 
 {{ page.description }}
 

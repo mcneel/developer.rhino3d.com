@@ -12,7 +12,7 @@ keywords: ['rhino', 'shading']
 layout: toc-guide-page
 ---
 
-# Shading Individual Objects
+# {{ page.title }}
 
 {{ page.description }}
 

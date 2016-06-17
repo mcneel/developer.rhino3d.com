@@ -12,7 +12,7 @@ keywords: ['rhino', 'drawing', 'picking']
 layout: toc-guide-page
 ---
 
-# Dynamically Drawing Geometry when Picking Points
+# {{ page.title }}
 
 {{ page.description }}
 

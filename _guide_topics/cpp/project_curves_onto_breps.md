@@ -12,7 +12,7 @@ keywords: ['rhino', 'project', 'curve', 'brep']
 layout: toc-guide-page
 ---
 
-# Project Curves onto Breps
+# {{ page.title }}
 
 {{ page.description }}
 

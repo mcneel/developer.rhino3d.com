@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Distance on a Curve from a Point
+# {{ page.title }}
 
 {{ page.description }}
 

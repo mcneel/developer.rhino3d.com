@@ -12,7 +12,7 @@ keywords: [openNURBS', 'migrating', 'versions']
 layout: toc-guide-page
 ---
 
-# openNURBS 5.0 Migration Guide
+# {{ page.title }}
 
 {{ page.description }}
 

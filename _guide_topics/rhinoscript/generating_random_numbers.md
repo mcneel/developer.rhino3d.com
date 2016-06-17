@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Generating Random Numbers
+# {{ page.title }}
 
 {{ page.description }}
 

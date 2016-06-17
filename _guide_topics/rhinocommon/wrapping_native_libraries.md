@@ -12,7 +12,7 @@ keywords: ['Native', 'RhinoCommon', 'Plugin', 'Library', 'PInvoke']
 layout: toc-guide-page
 ---
 
-# Wrapping Native Libraries
+# {{ page.title }}
 
 {{ page.description }}
 

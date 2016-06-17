@@ -12,7 +12,7 @@ keywords: ['rhino', 'light']
 layout: toc-guide-page
 ---
 
-# Light Attenuation
+# {{ page.title }}
 
 {{ page.description }}
 

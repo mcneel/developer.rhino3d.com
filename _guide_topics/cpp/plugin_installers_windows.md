@@ -14,7 +14,7 @@ TODO: 'needs porting - see additional TODO'
 ---
 
 
-# Plugin Installers (Windows)
+# {{ page.title }}
 
 {{ page.description }}
 

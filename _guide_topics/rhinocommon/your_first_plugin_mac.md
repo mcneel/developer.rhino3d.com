@@ -12,8 +12,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin']
 layout: toc-guide-page
 ---
 
-
-# Your First Plugin (Mac)
+# {{ page.title }}
 
 {{ page.description }}
 

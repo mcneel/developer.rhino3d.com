@@ -12,7 +12,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin']
 layout: toc-guide-page
 ---
 
-# Your First Plugin (Cross-Platform)
+# {{ page.title }}
 
 {{ page.description }}
 

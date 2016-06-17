@@ -12,7 +12,7 @@ keywords: ['rhino']
 layout: toc-guide-page
 ---
 
-# Finding Rhino's Installation Folder
+# {{ page.title }}
 
 {{ page.description }}
 

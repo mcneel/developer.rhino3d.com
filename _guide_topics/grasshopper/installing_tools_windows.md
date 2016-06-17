@@ -13,6 +13,8 @@ layout: toc-guide-page
 TODO: 'needs to be written'
 ---
 
-# Installing Tools (Windows)
+# {{ page.title }}
+
+{{ page.description }}
 
 TODO

@@ -13,7 +13,9 @@ layout: toc-guide-page
 TODO: 'needs to be written.  Draw upon sources from origin, but most things are out-of-date'
 ---
 
-# What is a Grasshopper Component?
+# {{ page.title }}
+
+{{ page.description }}
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

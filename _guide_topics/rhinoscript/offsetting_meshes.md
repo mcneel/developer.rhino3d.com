@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Offsetting Meshes
+# {{ page.title }}
 
 {{ page.description }}
 

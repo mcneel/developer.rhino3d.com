@@ -12,7 +12,7 @@ keywords: ['rhino', 'objects']
 layout: toc-guide-page
 ---
 
-# Object Types
+# {{ page.title }}
 
 {{ page.description }}
 

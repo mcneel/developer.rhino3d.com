@@ -12,7 +12,7 @@ keywords: ['openNURBS', 'Periodic', 'Curves', 'Surfaces']
 layout: toc-guide-page
 ---
 
-# Periodic Curves & Surfaces
+# {{ page.title }}
 
 {{ page.description }}
 

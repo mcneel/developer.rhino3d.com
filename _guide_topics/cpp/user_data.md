@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'downloadable samples should be moved to GitHub and linked'
 ---
 
-# User Data
+# {{ page.title }}
 
 {{ page.description }}
 

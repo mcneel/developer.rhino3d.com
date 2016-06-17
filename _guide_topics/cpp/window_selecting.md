@@ -12,7 +12,7 @@ keywords: ['rhino', 'window', 'selecting']
 layout: toc-guide-page
 ---
 
-# Window Selecting
+# {{ page.title }}
 
 {{ page.description }}
 

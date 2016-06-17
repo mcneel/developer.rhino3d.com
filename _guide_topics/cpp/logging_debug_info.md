@@ -12,7 +12,7 @@ keywords: ['rhino', 'log', 'debug']
 layout: toc-guide-page
 ---
 
-# Logging Debug Info
+# {{ page.title }}
 
 {{ page.description }}
 

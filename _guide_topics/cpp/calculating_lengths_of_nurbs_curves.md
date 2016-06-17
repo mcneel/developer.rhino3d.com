@@ -12,7 +12,7 @@ keywords: ['rhino', 'NURBS', 'curve', 'length']
 layout: toc-guide-page
 ---
 
-# Calculating the Lengths of NURBS Curves
+# {{ page.title }}
 
 {{ page.description }}
 

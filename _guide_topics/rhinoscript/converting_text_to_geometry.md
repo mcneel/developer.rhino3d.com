@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Converting Text to Geometry
+# {{ page.title }}
 
 {{ page.description }}
 

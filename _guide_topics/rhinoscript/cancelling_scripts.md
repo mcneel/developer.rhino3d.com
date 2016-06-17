@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Cancelling Scripts
+# {{ page.title }}
 
 {{ page.description }}
 

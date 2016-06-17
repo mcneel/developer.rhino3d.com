@@ -12,7 +12,7 @@ keywords: ['rhino', 'text']
 layout: toc-guide-page
 ---
 
-# Dynamically Drawing Text Strings
+# {{ page.title }}
 
 {{ page.description }}
 

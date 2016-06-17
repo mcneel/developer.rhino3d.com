@@ -12,7 +12,7 @@ keywords: ['rhino', 'display', 'conduit', 'arrowheads']
 layout: toc-guide-page
 ---
 
-# Drawing Arrowheads in Display Conduits
+# {{ page.title }}
 
 {{ page.description }}
 

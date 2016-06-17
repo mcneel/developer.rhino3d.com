@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# VBScript RegExp Objects
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['rhino', 'clipboard']
 layout: toc-guide-page
 ---
 
-# Retrieving Rhino Data from the Clipboard
+# {{ page.title }}
 
 {{ page.description }}
 

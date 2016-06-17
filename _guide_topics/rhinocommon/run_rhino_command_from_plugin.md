@@ -12,7 +12,7 @@ keywords: ['RhinoCommon', 'Rhino', 'Command', 'Plugin']
 layout: toc-guide-page
 ---
 
-# Rhino commands from a Plugin
+# {{ page.title }}
 
 {{ page.description }}
 

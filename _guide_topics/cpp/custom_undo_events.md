@@ -12,7 +12,7 @@ keywords: ['rhino', 'undo']
 layout: toc-guide-page
 ---
 
-# Custom Undo Events
+# {{ page.title }}
 
 {{ page.description }}
 

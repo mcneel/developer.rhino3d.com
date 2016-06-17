@@ -12,7 +12,7 @@ keywords: ['rhino', 'mesh', 'normals']
 layout: toc-guide-page
 ---
 
-# Unifying Mesh Normals
+# {{ page.title }}
 
 {{ page.description }}
 

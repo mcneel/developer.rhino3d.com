@@ -12,7 +12,7 @@ keywords: ['openNURBS', 'linking', 'toolkit', 'pragma', 'pragmas']
 layout: toc-guide-page
 ---
 
-# Linking with openNURBS
+# {{ page.title }}
 
 {{ page.description }}
 

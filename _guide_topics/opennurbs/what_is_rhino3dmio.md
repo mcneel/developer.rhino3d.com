@@ -13,7 +13,9 @@ layout: toc-guide-page
 TODO: 'needs porting'
 ---
 
-# What is Rhino3dmIO?
+# {{ page.title }}
+
+{{ page.description }}
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

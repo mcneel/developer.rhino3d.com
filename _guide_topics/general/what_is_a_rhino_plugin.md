@@ -12,8 +12,7 @@ keywords: ['developer', 'rhino']
 layout: toc-guide-page
 ---
 
-
-# What is a Rhino Plugin?
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs screen-capture update and overall review.'
 ---
 
-# Crash Dump Analysis
+# {{ page.title }}
 
 {{ page.description }}
 

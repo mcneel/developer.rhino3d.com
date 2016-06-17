@@ -12,7 +12,7 @@ keywords: ['rhino', 'blocks']
 layout: toc-guide-page
 ---
 
-# Creating Blocks
+# {{ page.title }}
 
 {{ page.description }}
 

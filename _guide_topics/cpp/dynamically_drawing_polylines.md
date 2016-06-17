@@ -12,7 +12,7 @@ keywords: ['rhino', 'polylines']
 layout: toc-guide-page
 ---
 
-# Dynamically Drawing Polylines
+# {{ page.title }}
 
 {{ page.description }}
 

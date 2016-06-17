@@ -12,7 +12,7 @@ keywords: ['openNURBS', 'knots']
 layout: toc-guide-page
 ---
 
-# Superfluous Knots
+# {{ page.title }}
 
 {{ page.description }}
 

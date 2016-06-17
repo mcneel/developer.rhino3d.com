@@ -1,6 +1,6 @@
 ---
 title: Installing Tools (Windows)
-description: unset
+description: This guide covers all the necessary tools required to author Rhino plugins in C/C++ on Windows.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -13,7 +13,9 @@ layout: toc-guide-page
 TODO: 'needs to be written.'
 ---
 
-# Installing Tools (Windows)
+# {{ page.title }}
+
+{{ page.description }}
 
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

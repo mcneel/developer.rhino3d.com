@@ -12,7 +12,7 @@ keywords: ['rhino', 'language']
 layout: toc-guide-page
 ---
 
-# Determining Language Setting
+# {{ page.title }}
 
 {{ page.description }}
 

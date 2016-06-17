@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Closest Axis Point
+# {{ page.title }}
 
 {{ page.description }}
 

@@ -12,7 +12,7 @@ keywords: ['hacking', 'atom', 'rhino-python']
 layout: bootstrap
 ---
 
-# Hacking and Testing latest Atom rhino-python package
+# {{ page.title }}
 
 {{ page.description }}
 

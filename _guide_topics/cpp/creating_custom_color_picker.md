@@ -12,7 +12,7 @@ keywords: ['rhino', 'color', 'picker']
 layout: toc-guide-page
 ---
 
-# Creating a Custom Color Picker
+# {{ page.title }}
 
 {{ page.description }}
 

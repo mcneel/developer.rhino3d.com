@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Multidimensional Arrays
+# {{ page.title }}
 
 {{ page.description }}
 

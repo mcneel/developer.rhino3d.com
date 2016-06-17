@@ -13,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs a bit more information to guide users through how to learn VBS.'
 ---
 
-# What are VBScript and RhinoScript?
+# {{ page.title }}
 
 {{ page.description }}
 

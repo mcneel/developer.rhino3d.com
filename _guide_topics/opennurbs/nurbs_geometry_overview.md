@@ -12,8 +12,7 @@ keywords: ['developer', 'rhino', 'NURBS', 'geometry']
 layout: toc-guide-page
 ---
 
-
-# NURBS Geometry Overview
+# {{ page.title }}
 
 {{ page.description }}
 

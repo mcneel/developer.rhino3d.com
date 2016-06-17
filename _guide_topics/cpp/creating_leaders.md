@@ -12,7 +12,7 @@ keywords: ['rhino', 'leaders']
 layout: toc-guide-page
 ---
 
-# Creating Leaders
+# {{ page.title }}
 
 {{ page.description }}
 

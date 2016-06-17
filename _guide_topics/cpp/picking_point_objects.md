@@ -12,7 +12,7 @@ keywords: ['rhino', 'point', 'picking']
 layout: toc-guide-page
 ---
 
-# Picking Point Objects
+# {{ page.title }}
 
 {{ page.description }}
 

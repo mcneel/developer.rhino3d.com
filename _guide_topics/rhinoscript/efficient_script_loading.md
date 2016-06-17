@@ -12,7 +12,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# Efficient Script Loading
+# {{ page.title }}
 
 {{ page.description }}
 

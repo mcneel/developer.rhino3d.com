@@ -12,7 +12,7 @@ keywords: ['rhino', 'compilers']
 layout: toc-guide-page
 ---
 
-# Writing Code for 32- and 64-bit Compilers
+# {{ page.title }}
 
 {{ page.description }}
 

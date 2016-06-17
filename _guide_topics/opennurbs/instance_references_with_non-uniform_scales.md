@@ -12,7 +12,7 @@ keywords: ['openNURBS', 'Block', 'Instance', 'Reference', 'Scale']
 layout: toc-guide-page
 ---
 
-# Instance References with Non-Uniform Scales
+# {{ page.title }}
 
 {{ page.description }}
 
