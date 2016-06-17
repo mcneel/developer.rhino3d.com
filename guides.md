@@ -16,10 +16,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.platforms contains 'Cross-Platform' and topic.apis contains 'General' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.platforms contains 'Cross-Platform' and guide.apis contains 'General' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -51,10 +51,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoCommon' and topic.categories contains 'Fundamentals' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoCommon' and guide.categories contains 'Fundamentals' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -66,10 +66,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoCommon' and topic.categories contains 'Advanced' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoCommon' and guide.categories contains 'Advanced' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -81,10 +81,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoCommon' and topic.categories contains 'Zoo' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoCommon' and guide.categories contains 'Zoo' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -103,10 +103,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoPython' and topic.categories contains 'Overview' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Overview' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -118,10 +118,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoPython' and topic.categories contains 'Getting Started' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Getting Started' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -152,10 +152,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'openNURBS' and topic.categories contains 'Overview' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'openNURBS' and guide.categories contains 'Overview' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -167,10 +167,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'openNURBS' and topic.categories contains 'Getting Started' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'openNURBS' and guide.categories contains 'Getting Started' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -182,10 +182,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'openNURBS' and topic.categories contains 'Fundamentals' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'openNURBS' and guide.categories contains 'Fundamentals' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -197,10 +197,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'openNURBS' and topic.categories contains 'Advanced' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'openNURBS' and guide.categories contains 'Advanced' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -219,10 +219,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'C/C++' and topic.categories contains 'Overview' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'C/C++' and guide.categories contains 'Overview' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -234,10 +234,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'C/C++' and topic.categories contains 'Getting Started' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'C/C++' and guide.categories contains 'Getting Started' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -249,10 +249,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'C/C++' and topic.categories contains 'Fundamentals' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'C/C++' and guide.categories contains 'Fundamentals' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -264,10 +264,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'C/C++' and topic.categories contains 'Advanced' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'C/C++' and guide.categories contains 'Advanced' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -279,10 +279,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'C/C++' and topic.categories contains 'RDK' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'C/C++' and guide.categories contains 'RDK' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -294,10 +294,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'C/C++' and topic.categories contains 'Zoo' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'C/C++' and guide.categories contains 'Zoo' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -309,10 +309,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'C/C++' and topic.categories contains 'Troubleshooting' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'C/C++' and guide.categories contains 'Troubleshooting' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -329,10 +329,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'Grasshopper' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'Grasshopper' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -360,10 +360,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoScript' and topic.categories contains 'Fundamentals' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoScript' and guide.categories contains 'Fundamentals' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -375,10 +375,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoScript' and topic.categories contains 'Intermediate' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoScript' and guide.categories contains 'Intermediate' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -390,10 +390,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoScript' and topic.categories contains 'Advanced' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoScript' and guide.categories contains 'Advanced' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -405,10 +405,10 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
-  {% for topic in guides %}
-    {% if topic.apis contains 'RhinoScript' and topic.categories contains 'Troubleshooting' %}
-      {% if topic.title and topic.order %}
-        <li><a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a></li>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoScript' and guide.categories contains 'Troubleshooting' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
