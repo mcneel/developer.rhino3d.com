@@ -26,6 +26,14 @@ Some portions of this page were adapted from the [Kramdown Quick Reference](http
 
 ## Conventions
 
+### Site file naming
+
+The naming convention for files - guides, samples, etc - is lowercase with `_` used as spaces.  This leads to more consistent and legible URLs.  For example, consider the name of this guide: "Developer Docs Style Guide".  The file name for this guide is `developer_docs_style_guide`.
+
+In general, when considering new file names for *guides*, please imagine you are saying "Guide to _____".  This often leads to verbs ending in "-ing", the progressive or continuous verb tense.  Obviously, this is not a hard-and-fast rule, but rather a convention.
+
+In general, when considering new file names for *samples*, please imagine you are saying "_____ sample".  As with guides, this is not a hard-and-fast rule, but rather a general convention.
+
 ### Division of content
 
 `# Title` become H1 headers and are reserved for the title of the page only.
