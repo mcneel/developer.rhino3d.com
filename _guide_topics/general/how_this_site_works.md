@@ -99,13 +99,13 @@ All types of content - with the exception of APIs - begin with YAML, which the s
 
 Pages are interspersed throughout the site.  The [Welcome page]({{ site.baseurl }}/), the [Guides page]({{ site.baseurl }}/guides), and the [Samples page]({{ site.baseurl }}/samples), are all examples of Pages.
 
-Here is an example of the YAML for [a page]({{ site.baseurl }}/guides/general):
+Here is an example of the YAML for [a page]({{ site.baseurl }}/guides/):
 
 ```yaml
 ---
-layout: toc-guide-page
-title: General Guides
-order: 0
+layout: toc-page
+title: Guides
+permalink: /guides/
 ---
 ```
 

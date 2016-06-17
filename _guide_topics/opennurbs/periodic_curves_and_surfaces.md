@@ -36,7 +36,7 @@ For example a cubic periodic knot vector looks like:
 
 with a < b < c < d < e and e < p+a.
 
-Chapter 12 of The NURBS Book has a few pages discussing periodic [NURBS](({{ site.baseurl }}/guides/opennurbs/nurbs_geometry_overview/)) (look in the index), but the discussion is limited.  Chapter 14 of DeBoor's Practical Guide to Splines provides a few more details.
+Chapter 12 of The NURBS Book has a few pages discussing periodic [NURBS]({{ site.baseurl }}/guides/opennurbs/nurbs_geometry_overview/) (look in the index), but the discussion is limited.  Chapter 14 of DeBoor's Practical Guide to Splines provides a few more details.
 
 ---
 

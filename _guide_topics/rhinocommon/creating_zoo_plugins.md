@@ -42,7 +42,7 @@ The general steps required to create a Zoo plugin are:
 1. Create a new public class that inherits from the `IZooPlugin` interface.
 1. Implement the interface members.  (For detailed information about the interface members, see the sample Zoo plugin listed below.)
 1. Build your plugin.
-1. [Digitally sign your plugin](({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo)).
+1. [Digitally sign your plugin]({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo).
 
 ## Installing a Zoo Plugin
 
