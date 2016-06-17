@@ -56,6 +56,6 @@ Rhino plugins that use the Rhino license manager appear in the Licenses page of 
 
 ## Related Topics
 
-- [Creating Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/creating_plugins_for_zoo)
+- [Creating Zoo Plugins]({{ site.baseurl }}/guides/rhinocommon/creating_zoo_plugins)
 - [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo)
 - [Zoo 5 Developer Samples](https://github.com/mcneel/Zoo5)

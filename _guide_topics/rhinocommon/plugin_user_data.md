@@ -178,4 +178,4 @@ namespace examples_cs
 ## Related topics
 
 - [Rhino.PlugIns.PlugIn Methods (API Reference)]({{ site.baseurl }}/api/RhinoCommon/html/Methods_T_Rhino_PlugIns_PlugIn.htm)
-- [RhinoCommon object plugin user data]({{ site.baseurl }}/samples/rhinocommon/userdata/)
+- [RhinoCommon object plugin user data]({{ site.baseurl }}/samples/rhinocommon/user_data/)

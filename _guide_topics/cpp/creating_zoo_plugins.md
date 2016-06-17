@@ -60,7 +60,7 @@ After you have built and tested your basic plugin, you can add licensing support
 1. Create one (and only one) static instance of your object.
 1. In your plugin's `CRhinoPlugIn::OnLoadPlugIn` member, call `CRhinoPlugIn::GetLicense` to get a license.
 1. Build your plugin.
-1. [Digitally sign your plugin](({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo)).
+1. [Digitally sign your plugin]({{ site.baseurl }}/guides/rhinocommon/digitally_signing_plugins_for_zoo).
 1. Launch Rhino and test your plugin.  When your plugin is loaded for the first time, you will be prompted to enter a license.
 
 ## Related Topics

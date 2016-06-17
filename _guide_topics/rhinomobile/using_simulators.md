@@ -68,7 +68,7 @@ Before launching into the adb tools, let's make sure that the Android SDK and ND
 1. We are going to add our path to adb, where Xamarin installed the android-sdk. Make sure your curson is at the end of the last entry and then type: *;C:\Users\you\AppData\Local\Android\android-sdk\platform-tools\* replacing *you* with the name of your account. Make sure there aren't any spaces in this path. If the path to your android-sdk is somewhere custom, replace it with that path.
 1. Click **OK** on everything and **close the Control Panel** if it's still open.
 
-Open a `cmd.exe` prompt. Now type `adb shell`. Make sure you have an Emulator started or a device connected and you should see an adb shell tool similar to that shown above in the Mac instructions. You may use many standard linux commands to get around and mess with files. Note there are a number of special commands for pushing and pulling file on and off the device/emulator. See the [Android ADB documentation](Android ADB documentation) for a handy list. Data for many apps is store in the *data/data/AppName/* folder.
+Open a `cmd.exe` prompt. Now type `adb shell`. Make sure you have an Emulator started or a device connected and you should see an adb shell tool similar to that shown above in the Mac instructions. You may use many standard linux commands to get around and mess with files. Note there are a number of special commands for pushing and pulling file on and off the device/emulator. See the [Android ADB documentation](http://developer.android.com/tools/help/adb.html) for a handy list. Data for many apps is store in the *data/data/AppName/* folder.
 
 ### Resetting Emulators
 
