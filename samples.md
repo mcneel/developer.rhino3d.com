@@ -20,7 +20,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Adding Objects'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -35,7 +35,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Blocks'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -50,7 +50,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Curves'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -66,7 +66,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Drafting'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -82,7 +82,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Draw'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -97,7 +97,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Layers'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -112,7 +112,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Picking and Selection'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -127,7 +127,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Viewports and Views'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -142,7 +142,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoCommon' and sample.categories contains 'Other'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -190,7 +190,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'C/C++' and sample.categories contains 'Adding Objects'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -205,7 +205,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'C/C++' and sample.categories contains 'Blocks'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -220,7 +220,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'C/C++' and sample.categories contains 'Curves'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -235,7 +235,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'C/C++' and sample.categories contains 'Layers'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -250,7 +250,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'C/C++' and sample.categories contains 'Picking and Selection'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -265,7 +265,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'C/C++' and sample.categories contains 'Surfaces'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -280,7 +280,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'C/C++' and sample.categories contains 'Viewports and Views'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -295,7 +295,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'C/C++' and sample.categories contains 'Other'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -327,7 +327,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Adding Objects'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -342,7 +342,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Blocks'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -357,7 +357,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Curves'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -373,7 +373,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Layers'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -388,7 +388,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Picking and Selection'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -403,7 +403,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Surfaces'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -418,7 +418,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Viewports and Views'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -433,7 +433,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Flamingo'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -448,7 +448,7 @@ order: 4
   {% for sample in samples %}
     {% if sample.apis contains 'RhinoScript' and sample.categories contains 'Other'%}
       {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a></li>
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
