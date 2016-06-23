@@ -22,11 +22,11 @@
   <meta name="twitter:url" value="http://developer.rhino3d.com" />
   {% if page.platforms %}
   <meta name="twitter:label1" value="Supported Platform(s)" />
-  <meta name="twitter:data1" value="{{ page.platforms }}" />
+  <meta name="twitter:data1" value="{% for platform in page.platforms %}{{ platform }} {% endfor %}" />
   {% endif %}
   {% if page.languages %}
   <meta name="twitter:label2" value="Language(s)" />
-  <meta name="twitter:data2" value="{{ page.languages }}" />
+  <meta name="twitter:data2" value="{% for language in page.languages %}{{ language }} {% endfor %}" />
   {% endif %}
 
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github.min.css">
