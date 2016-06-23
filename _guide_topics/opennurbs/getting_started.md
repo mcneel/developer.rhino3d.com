@@ -5,7 +5,7 @@ author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++', 'C#']
 platforms: ['Cross-Platform']
-categories: ['Overview']
+categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/opennurbs/faq
 order: 2
 keywords: ['openNURBS', 'C#', '.NET', 'Rhino3dmIO']
