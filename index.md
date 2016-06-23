@@ -9,17 +9,17 @@ layout: fullwidth-page
     <tbody>
       <tr>
         <td style="padding: 20px; text-align: center;">
-          <a href="{{ site.baseurl }}/guides/#grasshopper" title="Grasshopper Components">
+          <a href="{{ site.baseurl }}/guides/grasshopper" title="Grasshopper Components">
             <img src="{{ site.baseurl }}/images/ghcomponent_logo_intro.png" class="index_use_images">
           </a>
         </td>
         <td style="padding: 20px; text-align: center;">
-          <a href="{{ site.baseurl }}/guides/#rhinocommon" title="RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper">
+          <a href="{{ site.baseurl }}/guides/rhinocommon" title="RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper">
             <img src="{{ site.baseurl }}/images/rhinocommon_logo_intro.png" class="index_use_images">
           </a>
         </td>
         <td style="padding: 20px; text-align: center;">
-          <a href="{{ site.baseurl }}/guides/#rhinopython" title="Rhino.Python: Pythonic in three dimensions!">
+          <a href="{{ site.baseurl }}/guides/rhinopython" title="Rhino.Python: Pythonic in three dimensions!">
             <img src="{{ site.baseurl }}/images/rhino_python_logo_intro.png" class="index_use_images">
           </a>
         </td>
@@ -44,37 +44,37 @@ layout: fullwidth-page
   </thead>
   <tbody class="table-striped index_table">
   <tr>
-    <td><a href="{{ site.baseurl }}/guides/#rhinocommon" title="RhinoCommon: The cross-platform toolkit for Rhino and Grasshopper"> RhinoCommon</a></td>
+    <td><a href="{{ site.baseurl }}/guides/rhinocommon" title="RhinoCommon: The cross-platform toolkit for Rhino and Grasshopper"> RhinoCommon</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon" title="Mac OS X"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon" title="C#"><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon" title="VB.NET"><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
     <td class="index_table_primary_use">Write Rhino plugins & Grasshopper components</td>  
   </tr>
   <tr>
-    <td><a href="{{ site.baseurl }}/guides/#rhinopython" title="Rhino.Python: Pythonic in three dimensions!"> Rhino.Python</a></td>
+    <td><a href="{{ site.baseurl }}/guides/rhinopython" title="Rhino.Python: Pythonic in three dimensions!"> Rhino.Python</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon" title="Mac OS X"></td>
 	<td><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
     <td class="index_table_primary_use">Cross-platform scripting</td>  
   </tr>
   <tr>
-    <td><a href="{{ site.baseurl }}/guides/#opennurbs" title="openNURBS is free and open source"> openNURBS</a></td>
+    <td><a href="{{ site.baseurl }}/guides/opennurbs" title="openNURBS is free and open source"> openNURBS</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon" title="Mac OS X"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon" title="C#"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
     <td class="index_table_primary_use">3dm file reading and writing</td>  
   </tr>
   <tr>
-    <td><a href="{{ site.baseurl }}/guides/#rhinoscript" title="RhinoScript is based on Microsoft's VBScript language"> RhinoScript</a></td>
+    <td><a href="{{ site.baseurl }}/guides/rhinoscript" title="RhinoScript is based on Microsoft's VBScript language"> RhinoScript</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="{{ site.baseurl }}/images/vbscript_logo_small.png" alt="Microsoft VBScript" class="index_table_icon" title="Microsoft VBScript"></td>
     <td class="index_table_primary_use">Rhino for Windows scripting</td>  
   </tr>
   <tr>
-    <td><a href="{{ site.baseurl }}/guides/#cpp" title="C/C++ SDK for Rhino for Windows"> C/C++</a></td>
+    <td><a href="{{ site.baseurl }}/guides/cpp" title="C/C++ SDK for Rhino for Windows"> C/C++</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
     <td class="index_table_primary_use">Rhino for Windows plugins</td>  
   </tr>
    <tr>
-    <td><a href="{{ site.baseurl }}/guides/#grasshopper" title="Grasshopper Component Development"> Grasshopper</a></td>
+    <td><a href="{{ site.baseurl }}/guides/grasshopper" title="Grasshopper Component Development"> Grasshopper</a></td>
 	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon" title="C#"><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="VB.NET" class="index_table_icon" title="VB.NET"><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
     <td class="index_table_primary_use">Grasshopper components</td>  
@@ -104,7 +104,7 @@ layout: fullwidth-page
   </tr>
   -->
   <tr>
-    <td><a href="{{ site.baseurl }}/guides/#rhinomobile" title="Tools for using 3dm files in mobile applications"> RhinoMobile</a></td>
+    <td><a href="{{ site.baseurl }}/guides/rhinomobile" title="Tools for using 3dm files in mobile applications"> RhinoMobile</a></td>
 	<td><img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="index_table_icon" title="Android"><img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="index_table_icon" title="Apple iOS"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon" title="C#"></td>
     <td class="index_table_primary_use">3D mobile application development</td>  
