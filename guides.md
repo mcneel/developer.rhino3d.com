@@ -10,6 +10,7 @@ order: 2
 ---
 
 ## [General]({{ site.baseurl }}/guides/general)
+{: #general }
 
 *Guides that apply across platforms and SDKs*
 
