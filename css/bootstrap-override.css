@@ -16,6 +16,10 @@ body {
   display: none;
 }
 
+.site-nav .page-link {
+  color:#337ab7
+}
+
 .tab-content .active {
   display: block;
 }

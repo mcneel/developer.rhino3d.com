@@ -1,0 +1,38 @@
+---
+layout: bootstrap
+---
+<div class="container-fluid">
+
+  <h1>{{ page.title }}
+  {% if page.platforms contains 'Windows' %}
+    <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+  {% endif %}
+  {% if page.platforms contains 'Mac' %}
+    <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+  {% endif %}
+  {% if page.platforms contains 'Android' %}
+    <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon">
+  {% endif %}
+  {% if page.platforms contains 'iOS' %}
+    <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
+  {% endif %}
+  </h1>
+
+  <p>{{ page.description }}</p>
+  {% assign contentArray = page.content | markdownify | split: "<!--column-->" %}
+
+  <div class="row-fluid">
+    <div class="col-md-4">
+      {{ contentArray[0] }}
+    </div>
+
+    <div class="col-md-4">
+      {{ contentArray[1] }}
+    </div>
+
+    <div class="col-md-4">
+      {{ contentArray[2] }}
+    </div>
+
+  </div>
+</div>

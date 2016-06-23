@@ -27,32 +27,66 @@ layout: bootstrap
 
               {% for group in groups offset:1 %}
                 {% assign dividedGroup = group | split:'<' %}
-                {% assign groupToProcess = dividedGroup[0] %}
-                {% assign groupHeading = groupToProcess | split:'">' %}
-                {% assign groupHandle = groupHeading[0] %}
-                {% assign groupTitle = groupHeading[1] %}
-                <li>
-                  <a href="#{{groupHandle}}">{{ groupTitle }}</a>
 
-                  {% if group contains '<h3 id="' %}
-                    <ul class="nav nav-stacked">
-                      {% assign subgroups = group | split:'<h3 id="' %}
+                {% if dividedGroup[1] contains 'a href="' %}
+                  {% assign groupToProcess = dividedGroup[1] %}
+                  {% assign anchorTag = groupToProcess | split:'">' %}
+                  {% assign groupTitle = anchorTag[1] %}
+                  {% assign anchorToProcess = anchorTag[0] | split:'="' %}
+                  {% assign linkToProcess = anchorToProcess[1] | split:'guides/'%}
+                  {% assign anchorTag = linkToProcess[1] %}
+                  <li>
+                    <a href="#{{anchorTag}}">{{ groupTitle }}</a>
 
-                      {% for subgroup in subgroups offset:1 %}
-                        {% assign dividedSubgroup = subgroup | split:'<' %}
-                        {% assign subgroupToProcess = dividedSubgroup[0] %}
-                        {% assign subgroupHeading = subgroupToProcess | split:'">' %}
-                        {% assign subgroupHandle = subgroupHeading[0] %}
-                        {% assign subgroupTitle = subgroupHeading[1] %}
-                        <li>
-                            <a href="#{{subgroupHandle}}">{{ subgroupTitle }}</a>
-                        </li>
-                      {% endfor %}
+                    {% if group contains '<h3 id="' %}
+                      <ul class="nav nav-stacked">
+                        {% assign subgroups = group | split:'<h3 id="' %}
 
-                    </ul>
-                  {% endif %}
+                        {% for subgroup in subgroups offset:1 %}
+                          {% assign dividedSubgroup = subgroup | split:'<' %}
+                          {% assign subgroupToProcess = dividedSubgroup[0] %}
+                          {% assign subgroupHeading = subgroupToProcess | split:'">' %}
+                          {% assign subgroupHandle = subgroupHeading[0] %}
+                          {% assign subgroupTitle = subgroupHeading[1] %}
+                          <li>
+                              <a href="#{{subgroupHandle}}">{{ subgroupTitle }}</a>
+                          </li>
+                        {% endfor %}
 
-                </li>
+                      </ul>
+                    {% endif %}
+
+                  </li>
+                {% else %}
+                  {% assign groupToProcess = dividedGroup[0] %}
+                  {% assign groupHeading = groupToProcess | split:'">' %}
+                  {% assign groupHandle = groupHeading[0] %}
+                  {% assign groupTitle = groupHeading[1] %}
+                  <li>
+                    <a href="#{{groupHandle}}">{{ groupTitle }}</a>
+
+                    {% if group contains '<h3 id="' %}
+                      <ul class="nav nav-stacked">
+                        {% assign subgroups = group | split:'<h3 id="' %}
+
+                        {% for subgroup in subgroups offset:1 %}
+                          {% assign dividedSubgroup = subgroup | split:'<' %}
+                          {% assign subgroupToProcess = dividedSubgroup[0] %}
+                          {% assign subgroupHeading = subgroupToProcess | split:'">' %}
+                          {% assign subgroupHandle = subgroupHeading[0] %}
+                          {% assign subgroupTitle = subgroupHeading[1] %}
+                          <li>
+                              <a href="#{{subgroupHandle}}">{{ subgroupTitle }}</a>
+                          </li>
+                        {% endfor %}
+
+                      </ul>
+                    {% endif %}
+
+                  </li>
+                {% endif %}
+
+
               {% endfor %}
             {% endif %}
 

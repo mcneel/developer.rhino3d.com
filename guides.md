@@ -9,7 +9,7 @@ order: 2
 
 ---
 
-## General
+## [General]({{ site.baseurl }}/guides/general)
 
 *Guides that apply across platforms and SDKs*
 
@@ -28,7 +28,7 @@ order: 2
 
 ---
 
-## RhinoCommon <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+## [RhinoCommon]({{ site.baseurl }}/guides/rhinocommon) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 {: #rhinocommon }
 
 *The cross-platform .NET plugin SDK for Rhino.*
@@ -93,7 +93,7 @@ order: 2
 
 ---
 
-## Rhino.Python <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+## [Rhino.Python]({{ site.baseurl }}/guides/rhinopython) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 {: #rhinopython }
 
 *Quickly add functionality to Rhino or automate repetitive tasks.*
@@ -128,21 +128,21 @@ order: 2
   </ul>
 </div>
 
-### Learning Resources
+### Learning Python
 
-#### Python Applied to Rhino
-- <a href="http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101" target="_blank">RhinoPython101 Primer</a>
-- <a href="http://4.rhino3d.com/5/ironpython/index.html" target="_blank">Rhino.Python Programmer's Reference</a>
-- <a href="http://discourse.mcneel.com/c/scripting" target="_blank">Rhino Scripting Forum</a>
-
-##### Learning Python
 - <a href="https://docs.python.org/2/tutorial/index.html" target="_blank">The Python Tutorial</a>
 - <a href="http://learnpythonthehardway.org/book/" target="_blank">Learn Python the Hard Way</a> (despite the title this is a beginner's book)
 - <a href="https://automatetheboringstuff.com/" target="_blank">Automate The Boring Stuff With Python</a>
 
+### Learning Rhino.Python
+
+- <a href="http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101" target="_blank">RhinoPython101 Primer</a>
+- <a href="http://4.rhino3d.com/5/ironpython/index.html" target="_blank">Rhino.Python Programmer's Reference</a>
+- <a href="http://discourse.mcneel.com/c/scripting" target="_blank">Rhino Scripting Forum</a>
+
 ---
 
-## openNURBS <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+## [openNURBS]({{ site.baseurl }}/guides/opennurbs) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 {: #opennurbs }
 
 *Read/Write Rhino 3dm files in your application.*
@@ -209,7 +209,7 @@ order: 2
 
 ---
 
-## C/C++ <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## [C/C++]({{ site.baseurl }}/guides/cpp) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 {: #cpp }
 
 *Native SDK for Rhino for Windows plugins.*
@@ -321,7 +321,7 @@ order: 2
 
 ---
 
-## Grasshopper <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## [Grasshopper]({{ site.baseurl }}/guides/grasshopper) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 {: #grasshopper }
 
 *Create custom Grasshopper components and plugins.*
@@ -342,7 +342,7 @@ order: 2
 
 ---
 
-## RhinoScript <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## [RhinoScript]({{ site.baseurl }}/guides/rhinoscript) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
 {: #rhinoscript }
 
 *RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino for Windows, or automate repetitive tasks.*
@@ -424,13 +424,21 @@ order: 2
 
 ---
 
-## RhinoMobile <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
+## [RhinoMobile]({{ site.baseurl }}/guides/rhinomobile) <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
 {: #rhinomobile }
 
 *3D mobile application development.*
 
+### Overview
+
 - [What is RhinoMobile?]({{ site.baseurl }}/guides/rhinomobile/what_is_rhinomobile/)
+
+### Getting Started
+
 - Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinomobile/installing_tools_windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/installing_tools_mac/))
 - Your First App ([Windows]({{ site.baseurl }}/guides/rhinomobile/your_first_app_windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/your_first_app_mac/))
+
+### Fundamentals
+
 - [Using Simulators]({{ site.baseurl }}/guides/rhinomobile/using_simulators/)
 - [Testing On Devices]({{ site.baseurl }}/guides/rhinomobile/testing_on_devices/)
