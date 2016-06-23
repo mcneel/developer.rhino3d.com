@@ -10,9 +10,24 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ page.url }}" />
   <meta property="og:title" content="{{ page.title }}" />
-  <meta property="og:description" content="{{ page.description}}" />
+  <meta property="og:description" content="{{ page.description }}" />
   <meta property=”og:site_name” content="developer.rhino3d.com"/>
-  <meta property=”og:image” content="{{ site.baseurl}}/images/rhinodevlogo_trans.png"/>
+  <meta property=”og:image” content="{{ site.baseurl }}/images/rhinodevlogo_trans.png"/>
+
+  <!-- twitter card tags additive with the og: tags -->
+  <meta name="twitter:domain" value="developer.rhino3d.com" />
+  <meta name="twitter:title" value="{{ page.title }}" />
+  <meta name="twitter:description" value="{{ page.description }}" />
+  <meta name="twitter:image" content="{{ site.baseurl }}/images/rhinodevlogo_trans.png" />
+  <meta name="twitter:url" value="http://developer.rhino3d.com" />
+  {% if page.platforms %}
+  <meta name="twitter:label1" value="Supported Platform(s)" />
+  <meta name="twitter:data1" value="{{ page.platforms }}" />
+  {% endif %}
+  {% if page.languages %}
+  <meta name="twitter:label2" value="Language(s)" />
+  <meta name="twitter:data2" value="{{ page.languages }}" />
+  {% endif %}
 
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github.min.css">
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
