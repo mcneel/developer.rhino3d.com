@@ -1,9 +1,9 @@
 ---
 title: User Data
 description: RhinoCommon object plugin user data
-author:
+author: steve@mcneel.com
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB']
+languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']
 origin: unset

@@ -1,6 +1,6 @@
 ---
 title: Your First Renderer Plugin (Windows)
-description: unset
+description: This guide has yet to be authored or ported.
 author: andy@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']

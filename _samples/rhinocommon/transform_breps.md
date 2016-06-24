@@ -1,7 +1,7 @@
 ---
 title: Transform Breps
-description:
-author:
+description: Demonstrates how to move (or transform) a user-specified Brep object.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

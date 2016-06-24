@@ -1,9 +1,9 @@
 ---
 title: Instance Archive File Status
-description:
-author:
+description: Demonstrates how to find the status of a file that contains an instance (block) definition.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB']
+languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']
 origin: unset

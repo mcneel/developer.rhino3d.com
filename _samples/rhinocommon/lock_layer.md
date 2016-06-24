@@ -1,7 +1,7 @@
 ---
 title: Lock Layer
-description:
-author:
+description: Demonstrates how to lock a user-specified layer.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

@@ -1,9 +1,9 @@
 ---
 title: Space Morph
-description:
-author:
+description: Demonstrates how to construct the Twist, Bend, Taper, Maelstrom, Stretch, Sporph, Flow, and Splop space morphs.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB']
+languages: ['C#']
 platforms: ['Windows', 'Mac']
 categories: ['Other']
 origin: unset

@@ -1,7 +1,7 @@
 ---
 title: Instance Definition Tree
-description:
-author:
+description: Demonstrates how to list or enumerate the objects that make up a nested block definition.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

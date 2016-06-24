@@ -1,9 +1,9 @@
 ---
 title: Add Layout
-description:
-author:
+description: Demonstrates how to generate a layout with a single detail view that zooms to a list of objects.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB']
+languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects', 'Viewports and Views']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addlayout

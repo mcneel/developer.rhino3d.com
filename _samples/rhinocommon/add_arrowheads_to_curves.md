@@ -1,7 +1,7 @@
 ---
 title: Add Arrowheads to Curves
-description:
-author:
+description: Demonstrates how to decorate curves in a Rhino model with arrowheads.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

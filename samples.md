@@ -1,6 +1,7 @@
 ---
 layout: toc-page
 title: Samples
+description: All the official sample code available for Rhino and Grasshopper developers.
 permalink: /samples/
 order: 4
 ---

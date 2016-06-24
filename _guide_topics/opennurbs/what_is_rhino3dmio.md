@@ -1,6 +1,6 @@
 ---
 title: What is Rhino3dmIO?
-description: unset
+description: This guide has yet to be authored or ported.
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++', 'C#']

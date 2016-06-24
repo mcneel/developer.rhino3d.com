@@ -1,7 +1,7 @@
 ---
 title: Add Circle
-description:
-author:
+description: Demonstrates how to add a circle from a center point and radius.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

@@ -1,7 +1,7 @@
 ---
 title: Add Radial Dimension
-description:
-author:
+description: Demonstrates how to add radial dimensions to a selected curve.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

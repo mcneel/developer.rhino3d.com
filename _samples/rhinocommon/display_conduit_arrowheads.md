@@ -1,7 +1,7 @@
 ---
 title: Display Conduit Arrowheads
-description: Drawing Arrowheads in a Display Conduit
-author:
+description: Demonstrates how to drawing arrowheads in a Display Conduit.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

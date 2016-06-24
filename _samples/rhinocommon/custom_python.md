@@ -1,9 +1,9 @@
 ---
 title: Custom Python
-description:
-author:
+description: Demonstrates how to run a custom python script from within a command.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB']
+languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']
 origin: unset

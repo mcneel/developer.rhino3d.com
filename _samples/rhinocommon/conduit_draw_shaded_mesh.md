@@ -1,9 +1,9 @@
 ---
 title: Conduit Draw Shaded Mesh
-description:
-author:
+description: Demonstrates how to draw a shaded mesh using a display conduit.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB']
+languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Draw']
 origin: unset

@@ -1,9 +1,9 @@
 ---
 title: Sprite Drawing
-description:
-author:
+description: Demonstrates how to draw bitmap sprites in Rhino.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB']
+languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']
 origin: unset

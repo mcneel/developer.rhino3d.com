@@ -1,6 +1,6 @@
 ---
 title: What is a Grasshopper Component?
-description: unset
+description: This guide has yet to be authored or ported.
 author: steve@mcneel.com
 apis: ['Grasshopper']
 languages: ['C#', 'VB']

@@ -1,7 +1,7 @@
 ---
 title: Tight Bounding Boxes for Breps
-description:
-author:
+description: Demonstrates how to generate tight bounding boxes for Brep objects.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

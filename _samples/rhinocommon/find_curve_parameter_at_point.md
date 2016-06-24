@@ -1,7 +1,7 @@
 ---
 title: Find Curve Parameter At Point
-description:
-author:
+description: Demonstrates how to find the curve parameter given a specific point on the curve.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

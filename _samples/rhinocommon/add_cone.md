@@ -1,7 +1,7 @@
 ---
 title: Add Cone
-description:
-author:
+description: Demonstrates how to construct a cone using a plane, height, and radius.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
