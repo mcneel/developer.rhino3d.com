@@ -1,7 +1,7 @@
 ---
 title: Instance Definition Objects
-description: List Block Definition Geometry
-author:
+description: Demonstrates how to print (or list) the objects that make up a block definition.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

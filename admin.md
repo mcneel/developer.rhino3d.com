@@ -1,6 +1,7 @@
 ---
 layout: fullwidth-page
 title: Administration
+description: The administrator's view of the developer.rhino3d.com website.
 permalink: /admin/
 order: 1
 ---

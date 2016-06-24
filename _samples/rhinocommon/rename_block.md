@@ -1,7 +1,7 @@
 ---
 title: Rename Block
-description: Rename an instance definition (block)
-author:
+description: Demonstrates how to rename an instance definition (block).
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

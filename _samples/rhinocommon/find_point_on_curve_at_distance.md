@@ -1,7 +1,7 @@
 ---
 title: Find point on curve at distance
-description:
-author:
+description: Demonstrates how find a point on a curve given a specified length from the start of the curve.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

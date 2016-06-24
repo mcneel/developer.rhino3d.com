@@ -1,7 +1,7 @@
 ---
 title: Get Multiple With Options
-description:
-author:
+description: Demonstrates how to get multiple objects in Rhino command-line options.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

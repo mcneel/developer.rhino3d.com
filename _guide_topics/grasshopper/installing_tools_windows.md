@@ -1,6 +1,6 @@
 ---
 title: Installing Tools (Windows)
-description: unset
+description: This guide has yet to be authored or ported.
 author: dan@mcneel.com
 apis: ['Grasshopper']
 languages: ['C#', 'VB']

@@ -1,9 +1,9 @@
 ---
 title: Pick Points
-description:
-author:
+description: Demonstrates how to pick and select point objects.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB']
+languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Picking and Selection']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/pickpoint

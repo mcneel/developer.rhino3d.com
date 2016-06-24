@@ -1,7 +1,7 @@
 ---
 title: Reparameterize Curves
-description:
-author:
+description: Demonstrates how to reparameterize - or change the domain of - user-specified curves.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

@@ -1,7 +1,7 @@
 ---
 title: Rename Layer
-description:
-author:
+description: Demonstrates how to rename a layer.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

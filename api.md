@@ -1,6 +1,7 @@
 ---
 layout: fullwidth-page
 title: API
+description: The API programmer references for Rhino and Grasshopper.
 permalink: /api/
 order: 3
 ---

@@ -1,7 +1,7 @@
 ---
-title: Diplicate Mesh Boundary
-description: Bounding Polyline from Naked Edges of Open Mesh
-author:
+title: Duplicate Mesh Boundary
+description: Demonstrates how to create a bounding polyline from naked edges of an open mesh.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

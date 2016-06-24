@@ -1,6 +1,7 @@
 ---
 layout: toc-page
 title: Guides
+description: All the guides available for developing for Rhino or Grasshopper.
 permalink: /guides/
 order: 2
 ---

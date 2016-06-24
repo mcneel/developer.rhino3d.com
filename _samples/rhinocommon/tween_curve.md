@@ -1,9 +1,9 @@
 ---
 title: Tween Curve
-description:
-author:
+description: Demonstrates how to tween two curves.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB']
+languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Curves']
 origin: unset

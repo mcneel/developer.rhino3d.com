@@ -1,7 +1,7 @@
 ---
 title: Add NURBS Circle
-description:
-author:
+description: Demonstrates how to create a NURBS circle from scratch using points and knots.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

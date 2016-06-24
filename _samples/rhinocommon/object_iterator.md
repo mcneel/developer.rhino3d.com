@@ -1,7 +1,7 @@
 ---
 title: Object Iterator
-description: Iterate through Rhino's Geometry Table
-author:
+description: Demonstrates how to iterate (or enumerate) through Rhino's geometry table.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

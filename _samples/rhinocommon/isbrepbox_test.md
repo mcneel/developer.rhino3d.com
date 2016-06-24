@@ -1,7 +1,7 @@
 ---
 title: IsBrepBox Test
-description:
-author:
+description: Demonstrates how to determine whether a given Brep is a box.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

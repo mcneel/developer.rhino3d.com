@@ -1,7 +1,7 @@
 ---
 title: Viewport Resolution
 description: Print Active Viewport Resolution
-author:
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

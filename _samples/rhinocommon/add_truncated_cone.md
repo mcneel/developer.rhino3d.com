@@ -1,7 +1,7 @@
 ---
 title: Add Truncated Cone
-description:
-author:
+description: Demonstrates how to construct a truncated cone (TCone) from two circles.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

@@ -1,7 +1,7 @@
 ---
 title: Move Points
-description:
-author:
+description: Demonstrates how to move user-specified points to a new location.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

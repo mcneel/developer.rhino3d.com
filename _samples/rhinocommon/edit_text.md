@@ -1,7 +1,7 @@
 ---
 title: Edit Text
-description:
-author:
+description: Demonstrates how to edit selected text, replacing it with new text.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

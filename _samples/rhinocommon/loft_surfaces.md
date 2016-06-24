@@ -1,7 +1,7 @@
 ---
 title: Loft Surfaces
-description:
-author:
+description: Demonstrates how to create a lofted surface from a set of user-specified curves.
+author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
