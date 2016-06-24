@@ -1,17 +1,6 @@
 {% if site.git_branch and site.git_branch != "master" %}
 <div class="version-banner">
     Hey, you're viewing the <strong>{{ site.git_branch }}</strong> version of this page!
-    <script>
-      var splitPath = window.location.pathname.split("/");
-  	  var nonWipURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
-
-  	  $.get(nonWipURL).fail(function ()
-  	  {
-        document.write('<a href="http://developer.rhino3d.com">View the current site instead.</a>');
-      }).done(function ()
-	    {
-        document.write('<a href="http://developer.rhino3d.com' + nonWipURL + '">View the current version instead.</a>');
-	    });
-    </script>
+    <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
 </div>
 {% endif %}
