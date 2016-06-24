@@ -2,17 +2,15 @@
 <div class="version-banner">
     Hey, you're viewing the <strong>{{ site.git_branch }}</strong> version of this page!
     <script>
-      function() {
-        var splitPath = window.location.pathname.split("/");
-  	    var nonWipURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
+      var splitPath = window.location.pathname.split("/");
+  	  var nonWipURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
 
-  	    $.get(nonWipURL).fail(function ()
-  	    {
-          <a href="{{site.baseurl_orig}}">View the current site instead.</a>
-        } else {
-          <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
-        });
-      }
+  	  $.get(nonWipURL).fail(function ()
+  	  {
+        document.write('<a href="http://developer.rhino3d.com">View the current site instead.</a>');
+      } else {
+        document.write('<a href="http://developer.rhino3d.com' + nonWipURL + '">View the current site instead.</a>');
+      });
     </script>
 </div>
 {% endif %}
