@@ -19,7 +19,7 @@ TODO: 'needs more GHPython info. Resources should be moved.'
 
 ## What is Python?
 
-[Python](https://www.python.org/) is a *modern programming language*.  It is easier to learn and use than other non-scripting style languages like VB.NET, C#, or C/C++.  Yet it is quite powerful.
+[Python](https://www.python.org/) is a *modern programming language*.  It is easier to learn and use than other non-scripting style languages like C#, VB, or C/C++.  Yet it is quite powerful.
 
 You may need Python if you want to:
 

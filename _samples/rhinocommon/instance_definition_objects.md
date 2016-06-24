@@ -3,7 +3,7 @@ title: Instance Definition Objects
 description: List Block Definition Geometry
 author:
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Blocks']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/instancedefinitionobjects

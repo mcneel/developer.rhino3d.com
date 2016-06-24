@@ -3,7 +3,7 @@ title: Your First Component (Windows)
 description: unset
 author: dan@mcneel.com
 apis: ['Grasshopper']
-languages: ['C#', 'VB.NET']
+languages: ['C#', 'VB']
 platforms: ['Windows']
 categories: ['Overview']
 origin: unset

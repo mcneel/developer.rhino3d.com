@@ -3,7 +3,7 @@ title: Copy Groups
 description: Duplicating Objects With Group
 author:
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/copygroups

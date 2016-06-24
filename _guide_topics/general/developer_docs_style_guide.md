@@ -193,7 +193,7 @@ public static Rhino.Commands.Result AddCircle(Rhino.RhinoDoc doc)
 The abbreviation after the first set of back-ticks is the language code for syntax highlighting.  We are using a syntax highlighting plugin called highlight.js.  [Many languages](https://highlightjs.org/download/) are supported.  The most common language abbreviations used on this site are:
 
 - `cs` is C#
-- `vbnet` is VB.NET
+- `vbnet` is Visual Basic
 - `python` is Python
 - `cpp` is C/C++
 

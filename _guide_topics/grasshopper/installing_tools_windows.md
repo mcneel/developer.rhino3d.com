@@ -3,7 +3,7 @@ title: Installing Tools (Windows)
 description: unset
 author: dan@mcneel.com
 apis: ['Grasshopper']
-languages: ['C#', 'VB.NET']
+languages: ['C#', 'VB']
 platforms: ['Windows']
 categories: ['Getting Started']
 origin: unset

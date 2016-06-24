@@ -3,7 +3,7 @@ title: Rename Block
 description: Rename an instance definition (block)
 author:
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Blocks']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/renameblock

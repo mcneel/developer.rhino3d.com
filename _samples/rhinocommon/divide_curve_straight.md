@@ -3,7 +3,7 @@ title: Divide Curve Straight
 description: Divide a curve using equi-distance points
 author:
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Curves']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/dividecurvestraight

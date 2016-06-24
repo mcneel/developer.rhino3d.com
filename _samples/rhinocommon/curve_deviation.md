@@ -3,7 +3,7 @@ title: Curve Deviation
 description: Determine the Deviation between two Curves
 author:
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Curves']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/crvdeviation

@@ -3,7 +3,7 @@ title: Instance Definition Tree
 description:
 author:
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/printinstancedefinitiontree

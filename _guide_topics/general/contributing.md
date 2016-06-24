@@ -25,10 +25,10 @@ Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub]
 
 [discourse.mcneel.com](http://discourse.mcneel.com) is the McNeel forum.  This is the fastest place to get help.  Specific categories to post in are:
 
-- [Rhino Developer](http://discourse.mcneel.com/c/rhino-developer): Customizing Rhino through VB.NET, C#, C++, RhinoScript, and Python.
+- [Rhino Developer](http://discourse.mcneel.com/c/rhino-developer): Customizing Rhino through VB, C#, C++, RhinoScript, and Python.
 - [Scripting](http://discourse.mcneel.com/c/scripting): Topics related to RhinoScript and Python scripting.
 - [openNURBS](http://discourse.mcneel.com/c/opennurbs): Topics related to the openNURBS toolkit.
-- [Grasshopper developer](http://discourse.mcneel.com/c/grasshopper-developer): VB.NET, C#, and Python in Grasshopper components.
+- [Grasshopper developer](http://discourse.mcneel.com/c/grasshopper-developer): VB, C#, and Python in Grasshopper components.
 
 
 ## Report Bugs

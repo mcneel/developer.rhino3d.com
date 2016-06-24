@@ -3,7 +3,7 @@ title: Custom Geometry Filter
 description: Create a specialized GetObject with a Custom Geometry Filter
 author:
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/customgeometryfilter

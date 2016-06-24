@@ -3,7 +3,7 @@ title: Set Viewport Name
 description: Set a viewport's name or title
 author:
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Viewports and Views']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/setviewname
