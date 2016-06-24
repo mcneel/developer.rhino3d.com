@@ -8,9 +8,10 @@
   	  $.get(nonWipURL).fail(function ()
   	  {
         document.write('<a href="http://developer.rhino3d.com">View the current site instead.</a>');
-      } else {
+      }).done(function ()
+	    {
         document.write('<a href="http://developer.rhino3d.com' + nonWipURL + '">View the current version instead.</a>');
-      });
+	    });
     </script>
 </div>
 {% endif %}
