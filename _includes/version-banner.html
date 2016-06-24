@@ -1,6 +1,18 @@
 {% if site.git_branch and site.git_branch != "master" %}
 <div class="version-banner">
     Hey, you're viewing the <strong>{{ site.git_branch }}</strong> version of this page!
-    <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
+    <script>
+      function() {
+        var splitPath = window.location.pathname.split("/");
+  	    var nonWipURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
+
+  	    $.get(nonWipURL).fail(function ()
+  	    {
+          <a href="{{site.baseurl_orig}}">View the current site instead.</a>
+        } else {
+          <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
+        });
+      }
+    </script>
 </div>
 {% endif %}
