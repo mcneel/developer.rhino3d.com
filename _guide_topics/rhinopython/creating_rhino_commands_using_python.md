@@ -4,7 +4,7 @@ description: This guide demonstrates how to create Rhino commands from Python sc
 author: pascal@mcneel.com
 apis: ['RhinoPython']
 languages: ['Python']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/python/commands
 order: 1

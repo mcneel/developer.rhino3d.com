@@ -4,7 +4,7 @@ description: This guide demonstrates how to wrap a C/C++ library in order to cal
 author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Advanced']
 origin: unset
 order: 5

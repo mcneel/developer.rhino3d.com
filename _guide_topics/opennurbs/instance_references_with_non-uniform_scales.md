@@ -4,7 +4,7 @@ description: This guide discusses non-uniform scaling issues when using the open
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/onblockscalenonuniform
 order: 1

@@ -4,7 +4,7 @@ description: 'Hey, make yourself useful!'
 author: dan@mcneel.com
 apis: ['General']
 languages: ['All']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['General']
 origin: unset
 order: 6

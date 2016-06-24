@@ -4,7 +4,7 @@ description: Curve Bounding Box (world and plane oriented)
 author:
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Curves']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/curveboundingbox
 order: 1

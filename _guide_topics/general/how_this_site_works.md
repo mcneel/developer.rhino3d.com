@@ -4,7 +4,7 @@ description: A guide to how this very developer document site works.
 author: dan@mcneel.com
 apis: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['General']
 origin: unset
 order: 7

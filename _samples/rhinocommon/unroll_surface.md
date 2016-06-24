@@ -4,7 +4,7 @@ description: Unrolling a developable surface
 author:
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Other']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/unrollsurface
 order: 1

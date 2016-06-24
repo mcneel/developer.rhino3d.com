@@ -4,7 +4,7 @@ description: This guide discusses ellipses and their representation in openNURBS
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/onellipse
 order: 1

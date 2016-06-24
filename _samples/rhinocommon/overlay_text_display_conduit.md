@@ -4,7 +4,7 @@ description: Display conduit to draw overlay text
 author:
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Draw']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/drawoverlay
 order: 1

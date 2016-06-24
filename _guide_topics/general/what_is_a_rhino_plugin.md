@@ -4,7 +4,7 @@ description: This guide outlines what a Rhino plugin is and what forms it comes 
 author: dan@mcneel.com
 apis: ['General']
 languages: ['All']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['General']
 origin: https://wiki.mcneel.com/developer/whatisarhinoplugin
 order: 3

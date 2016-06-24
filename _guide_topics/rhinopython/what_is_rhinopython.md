@@ -4,7 +4,7 @@ description: This guide is an overview of Python in Rhino.
 author: dan@mcneel.com
 apis: ['RhinoPython']
 languages: ['Python']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Overview']
 origin: http://wiki.mcneel.com/developer/python
 order: 1

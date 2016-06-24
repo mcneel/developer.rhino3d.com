@@ -4,7 +4,7 @@ description: This guide is a list of Frequently Asked Questions (FAQ).
 author: dan@mcneel.com
 apis: ['General']
 languages: ['All']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['General']
 origin: http://wiki.mcneel.com/developer/scriptspage
 order: 4

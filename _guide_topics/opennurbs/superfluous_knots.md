@@ -4,7 +4,7 @@ description: This guide discusses superfluous knots and the openNURBS toolkit.
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/onsuperfluousknot
 order: 1

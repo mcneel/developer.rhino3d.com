@@ -4,7 +4,7 @@ description: This guide is an overview of Mono and Xamarin and how they relate t
 author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Overview']
 origin: http://wiki.mcneel.com/developer/rhinocommon
 order: 2

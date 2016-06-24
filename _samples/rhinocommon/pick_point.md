@@ -4,7 +4,7 @@ description: Pick and Select Point Objects
 author:
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Picking and Selection', 'Adding Objects']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/pickpoint
 order: 1

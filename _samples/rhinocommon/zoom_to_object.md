@@ -4,7 +4,7 @@ description: Zoom to a Selected Object
 author:
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/zoomtoobject
 order: 1

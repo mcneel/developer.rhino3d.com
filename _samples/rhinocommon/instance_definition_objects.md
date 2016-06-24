@@ -4,7 +4,7 @@ description: List Block Definition Geometry
 author:
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Blocks']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/instancedefinitionobjects
 order: 1

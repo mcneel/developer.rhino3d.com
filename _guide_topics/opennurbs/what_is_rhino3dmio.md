@@ -4,7 +4,7 @@ description: unset
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++', 'C#']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Overview']
 origin: https://github.com/mcneel/rhinocommon/wiki/Rhino3dmIO-Toolkit-(OpenNURBS-build)
 order: 2

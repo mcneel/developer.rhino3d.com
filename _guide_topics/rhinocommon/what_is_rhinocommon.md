@@ -4,7 +4,7 @@ description: This guide gives an overview of RhinoCommon.
 author: steve@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Overview']
 origin: http://wiki.mcneel.com/developer/rhinocommon
 order: 1

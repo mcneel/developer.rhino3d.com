@@ -4,7 +4,7 @@ description: This guide walks you through your first plugin that targets both Rh
 author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 origin: unset
 order: 5

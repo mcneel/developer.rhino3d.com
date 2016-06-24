@@ -4,7 +4,7 @@ description: Interactively Pick an Angle
 author:
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Picking and Selection']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/getangle
 order: 1

@@ -4,7 +4,7 @@ description: This brief guide demonstrates how to add additional commands to a R
 author: dan@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addcommand
 order: 6

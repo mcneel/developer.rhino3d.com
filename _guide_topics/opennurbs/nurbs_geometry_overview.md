@@ -4,7 +4,7 @@ description: This guide is brief overview of NURBS geometry from a mathematical 
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['All']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Overview']
 origin: http://wiki.mcneel.com/developer/ongeometry
 order: 3
