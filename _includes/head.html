@@ -29,12 +29,12 @@
   {% endif %}
   <meta name="twitter:url" value="http://developer.rhino3d.com" />
   {% if page.platforms %}
-  <meta name="twitter:label1" value="Supported Platform(s)" />
-  <meta name="twitter:data1" value="{% for platform in page.platforms %}{{ platform }} {% endfor %}" />
+  <meta name="twitter:label1" value="Platform(s)" />
+  <meta name="twitter:data1" value="{{ page.platforms | join: ', ' }}" />
   {% endif %}
   {% if page.languages %}
   <meta name="twitter:label2" value="Language(s)" />
-  <meta name="twitter:data2" value="{% for language in page.languages %}{{ language }} {% endfor %}" />
+  <meta name="twitter:data2" value="{{ page.languages | join: ', ' }}" />
   {% endif %}
 
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github.min.css">
