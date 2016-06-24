@@ -4,7 +4,7 @@ description: This guide discusses Brep loop end edge directions in the openNURBS
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/onloopdirection
 order: 1

@@ -4,7 +4,7 @@ description: RhinoCommon object plugin user data
 author:
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']
 origin: unset
 order: 1

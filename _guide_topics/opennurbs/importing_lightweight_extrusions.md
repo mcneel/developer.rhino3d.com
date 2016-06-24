@@ -4,7 +4,7 @@ description: This guide demonstrates how to convert openNURBS Lightweight Extrus
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/onextrusion
 order: 1

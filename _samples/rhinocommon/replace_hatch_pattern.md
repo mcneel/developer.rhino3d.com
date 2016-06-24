@@ -4,7 +4,7 @@ description: Replacing a Hatch Object's Pattern
 author:
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/replacehatchpattern
 order: 1

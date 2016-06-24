@@ -4,7 +4,7 @@ description: This guide covers the automatic pInvoke call generator and enum syn
 author: giulio@mcneel.com
 apis: ['RhinoCommon']
 languages: ['C#']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Advanced']
 origin: unset
 order: 6

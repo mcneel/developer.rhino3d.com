@@ -4,7 +4,7 @@ description: Divide a curve using equi-distance points
 author:
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Curves']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/dividecurvestraight
 order: 1

@@ -4,7 +4,7 @@ description: Demonstrates how to read the user-added notes field from a 3DM file
 author: dalelear@mcneel.com
 apis: ['openNURBS', 'C/C++']
 languages: ['C/C++']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/onreadnotes
 order: 1

@@ -4,7 +4,7 @@ description: This guide contains information to help you migrate your applicatio
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/on5migrate
 order: 2

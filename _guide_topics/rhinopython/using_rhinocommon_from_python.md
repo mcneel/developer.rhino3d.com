@@ -4,7 +4,7 @@ description: This brief guide cover using RhinoCommon from Python.
 author: dan@mcneel.com
 apis: ['RhinoPython', 'RhinoCommon']
 languages: ['Python']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/pythonandrhinocommon
 order: 1

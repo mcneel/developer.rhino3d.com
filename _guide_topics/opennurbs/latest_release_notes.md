@@ -4,7 +4,7 @@ description: This brief guide covers what is new in the latest update to openNUR
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Overview']
 origin: http://wiki.mcneel.com/developer/opennurbs/opennurbs_5_20130711_release_notes
 order: 4

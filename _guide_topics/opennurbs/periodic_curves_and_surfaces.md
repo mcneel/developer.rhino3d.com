@@ -4,7 +4,7 @@ description: This guide discusses periodic curves and surfaces and openNURBS too
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/onperiodiccurvesurface
 order: 1

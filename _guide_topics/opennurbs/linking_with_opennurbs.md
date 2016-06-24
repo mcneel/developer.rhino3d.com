@@ -4,7 +4,7 @@ description: This guide discusses openNURBS linking.
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/opennurbs/linkingpragma
 order: 1

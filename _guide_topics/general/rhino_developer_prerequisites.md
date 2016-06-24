@@ -4,7 +4,7 @@ description: This guide describes the main requirements to develop for Rhino.
 author: dan@mcneel.com
 apis: ['General']
 languages: ['All']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['General']
 origin: http://wiki.mcneel.com/developer/learningresources
 order: 1

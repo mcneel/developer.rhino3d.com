@@ -4,7 +4,7 @@ description: Rename an instance definition (block)
 author:
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB.NET']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Blocks']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/renameblock
 order: 1

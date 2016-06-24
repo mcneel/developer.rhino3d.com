@@ -4,7 +4,7 @@ description: This guide is a brief introduction to the Rhino Installer Engine.
 author: brian@mcneel.com
 apis: ['General']
 languages: ['All']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['General']
 origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/overview
 order: 6

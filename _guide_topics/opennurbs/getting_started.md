@@ -4,7 +4,7 @@ description: This guide aims to get you started using openNURBS in your project.
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++', 'C#']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/opennurbs/faq
 order: 2

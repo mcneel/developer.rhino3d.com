@@ -4,7 +4,7 @@ description: This guide serves as an example and quick reference for the syntax 
 author: dan@mcneel.com
 apis: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['General']
 origin: unset
 order: 8

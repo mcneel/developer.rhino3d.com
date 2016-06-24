@@ -4,7 +4,7 @@ description: This guide covers the APIs available to Python in Rhino.
 author: alain@mcneel.com
 apis: ['RhinoPython']
 languages: ['Python']
-platforms: ['Windows', 'Mac', 'Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/python
 order: 3

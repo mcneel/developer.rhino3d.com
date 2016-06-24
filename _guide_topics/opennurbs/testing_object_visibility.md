@@ -4,7 +4,7 @@ description: This guide demonstrates how to detect whether or not an object is v
 author: dalelear@mcneel.com
 apis: ['openNURBS']
 languages: ['C/C++']
-platforms: ['Cross-Platform']
+platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/onisobjectvisible
 order: 1
