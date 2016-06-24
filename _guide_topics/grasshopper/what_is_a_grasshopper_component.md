@@ -3,7 +3,7 @@ title: What is a Grasshopper Component?
 description: unset
 author: steve@mcneel.com
 apis: ['Grasshopper']
-languages: ['C#', 'VB.NET']
+languages: ['C#', 'VB']
 platforms: ['Windows']
 categories: ['Overview']
 origin: http://wiki.mcneel.com/developer/grasshopper/gha

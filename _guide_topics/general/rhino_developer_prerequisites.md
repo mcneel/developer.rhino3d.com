@@ -47,7 +47,7 @@ Acquiring programming knowledge is the most labor intensive prerequisite.  Howev
 
 ### Learning C# .NET
 
-If you wish to write plugins with RhinoCommon, you will need to understand a .NET compatible programming language like C# (or VB.NET).  We recommend [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) (C Sharp) because it is modern, safe, and easy to learn - and you can develop in C# on both Windows and OS X.
+If you wish to write plugins with RhinoCommon, you will need to understand a .NET compatible programming language like C# (or VB).  We recommend [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) (C Sharp) because it is modern, safe, and easy to learn - and you can develop in C# on both Windows and OS X.
 
 *Watch*...
 

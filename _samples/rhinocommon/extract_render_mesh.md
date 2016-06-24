@@ -3,7 +3,7 @@ title: Extract Render Mesh
 description:
 author:
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']
 origin: unset

@@ -3,7 +3,7 @@ title: What is RhinoCommon?
 description: This guide gives an overview of RhinoCommon.
 author: steve@mcneel.com
 apis: ['RhinoCommon']
-languages: ['C#', 'VB.NET']
+languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Overview']
 origin: http://wiki.mcneel.com/developer/rhinocommon

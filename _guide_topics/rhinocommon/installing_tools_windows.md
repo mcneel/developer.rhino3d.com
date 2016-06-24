@@ -33,7 +33,7 @@ This guide presumes you have an:
 
 At the time of this writing, Visual Studio 2015 "proper" comes in [three editions](https://www.visualstudio.com/vs-2015-product-editions): Community, Professional, and Enterprise.  Any of these editions will work. Additionally, [Visual Studio Express 2015 for Windows Desktop](https://www.visualstudio.com/products/visual-studio-express-vs.aspx) will work with more limited debugging support[^4]. Other Express versions, such as Express for Windows, Express for Web or Team Foundation Server 2015 Express, will not work.
 
-*NOTE*: RhinoCommon plugins can be authored in Visual Studio 2010, 2012, 2013, and 2015 both in C# and Vb.Net, and included in Ultimate, Professional, Premium, C# Express, Vb Express and Windows Desktop Express (where available).  For the purposes of this guide, we will presume you are using Visual Studio 2015 Community Edition.
+*NOTE*: RhinoCommon plugins can be authored in Visual Studio 2010, 2012, 2013, and 2015 both in C# and VB, and included in Ultimate, Professional, Premium, C# Express, Vb Express and Windows Desktop Express (where available).  For the purposes of this guide, we will presume you are using Visual Studio 2015 Community Edition.
 
 #### Step-by-Step
 

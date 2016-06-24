@@ -3,7 +3,7 @@ title: Adding Commands to Projects
 description: This brief guide demonstrates how to add additional commands to a RhinoCommon plugin project.
 author: dan@mcneel.com
 apis: ['RhinoCommon']
-languages: ['C#', 'VB.NET']
+languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/addcommand

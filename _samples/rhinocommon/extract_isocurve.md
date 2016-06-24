@@ -3,7 +3,7 @@ title: Extract Isocurve
 description: Extracting Isoparametric Curves from Surfaces
 author:
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Curves']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/extractisocurve

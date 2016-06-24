@@ -3,7 +3,7 @@ title: Pick Point
 description: Pick and Select Point Objects
 author:
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Picking and Selection', 'Adding Objects']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/pickpoint

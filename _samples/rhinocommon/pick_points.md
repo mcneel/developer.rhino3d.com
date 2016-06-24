@@ -3,7 +3,7 @@ title: Pick Points
 description:
 author:
 apis: ['RhinoCommon']
-languages: ['C#', 'Python', 'VB.NET']
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Picking and Selection']
 origin: http://wiki.mcneel.com/developer/rhinocommonsamples/pickpoint
