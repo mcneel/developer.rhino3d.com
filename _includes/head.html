@@ -43,7 +43,20 @@
   <script>hljs.initHighlightingOnLoad();</script>
 
   <!-- Check the version banner for broken links and remove the link if found -->
-  <script type="text/javascript" src="/script/banner_sanity.js"></script>
+  <!-- <script type="text/javascript" src="/script/banner_sanity.js"></script> -->
+  <script>
+  $.ready(function()
+  {
+  	var splitPath = window.location.pathname.split("/");
+  	var nonWipURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
+
+  	$.get(nonWipURL).fail(function ()
+  	{
+  		var $aTag = $("div.version-banner > a");
+  		$aTag.remove();
+  	});
+  });
+  </script>
 
   <!-- Overridden theme -->
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
