@@ -53,7 +53,8 @@
 
   	$.get(nonWipURL).fail(function ()
   	{
-  		var $aTag = $("div.version-banner > a");
+      console.log("stripping link");
+      var $aTag = $("div.version-banner > a");
   		$aTag.remove();
   	});
   });
