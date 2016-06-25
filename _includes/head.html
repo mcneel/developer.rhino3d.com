@@ -42,22 +42,6 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/languages/vbnet.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 
-  <!-- Check the version banner for broken links and remove the link if found -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script>
-  $(document).ready(function()
-  {
-  	var splitPath = window.location.pathname.split("/");
-  	var nonWipURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
-
-  	$.get(nonWipURL).fail(function ()
-  	{
-      var $aTag = $("div.version-banner > a");
-  		$aTag.remove();
-  	});
-  });
-  </script>
-
   <!-- Overridden theme -->
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 
