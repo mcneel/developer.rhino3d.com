@@ -33,6 +33,10 @@ TODO: what has been added?
 
 ## Changes
 
+- CRhinoDisplayPipeline::GetRhinoVP() returns a CRhinoViewport* instead of a CRhinoViewport& - there was a potential case where a null pointer dereference could occur
+
+
+
 TODO: The following list was compiled while attempting to update C++ samples from 5.0 to 6.0. This list is currently just a series of jotted down notes and needs to be updated with information.
 
 V5: ON_3dmView::m_target
@@ -85,18 +89,6 @@ V5: CRhinoViewport::GetModelXform()
 V5: CRhinoViewport::SetModelXform()
 V6: CRhinoDisplayPipeline::PushModelTransform()
 V6: CRhinoDisplayPipeline::PopModelTransform()
-
-V5: CRhinoViewport::DrawColor()
-V6: CRhinoDisplayPipeline::ObjectColor()
-
-V5: CRhinoViewport::SetDrawColor()
-V6: CRhinoDisplayPipeline::SetObjectColor()
-
-V5: CRhinoObject::Draw(CRhinoViewport&)
-V6: CRhinoObject::Draw(CRhinoDisplayPipeline&)
-
-V5: CRhinoViewport::InterruptDrawing()
-V6: CRhinoDisplayPipeline::InterruptDrawing()
 
 V5: ON_Layer::SetLayerName()
 V5: ON_Layer::SetLayerIndex()
@@ -153,9 +145,6 @@ V6: ON::LengthUnitSystem CRhinoDigitizerPlugIn::UnitSystem() const;
 
 V5: CRhinoFileWriteOptions::Mode(CRhinoFileWriteOptions::SelectedMode)
 V6: CRhinoFileWriteOptions::SelectedObjectFilter()
-
-V5: CRhinoViewport& CRhinoDisplayPipeline::GetRhinoVP()
-V6: CRhinoViewport* CRhinoDisplayPipeline::GetRhinoVP()
 
 V5: ON_OBJECT_IMPLEMENT::m_##cls##_class_id
 V6: ON_OBJECT_IMPLEMENT::m_##cls##_class_rtti
