@@ -43,17 +43,15 @@
   <script>hljs.initHighlightingOnLoad();</script>
 
   <!-- Check the version banner for broken links and remove the link if found -->
-  <!-- <script type="text/javascript" src="/script/banner_sanity.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script>
   $(document).ready(function()
   {
   	var splitPath = window.location.pathname.split("/");
   	var nonWipURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
-    console.log("about to test for 404");
+
   	$.get(nonWipURL).fail(function ()
   	{
-      console.log("stripping link");
       var $aTag = $("div.version-banner > a");
   		$aTag.remove();
   	});
