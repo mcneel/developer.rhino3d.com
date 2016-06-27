@@ -22,7 +22,7 @@ body {
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
 
-    // Make some space for the version banner
+    // make some space so that the version banner doesn't obscure the header nav
     @if $branch != "" and $branch != "master" {
       padding-top: 36px;
 

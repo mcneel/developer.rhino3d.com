@@ -312,3 +312,24 @@
 .version-banner a:visited {
   color: lighten($brand-color, 25%);
 }
+
+// offset anchor location for headings so they're not obscured by the banner
+@if $branch != "" and $branch != "master" {
+  h1[id]:before,
+  h2[id]:before,
+  h3[id]:before,
+  h4[id]:before,
+  h5[id]:before,
+  h6[id]:before {
+    display: block;
+    content: "";
+    margin-top: -36px;
+    height: 36px;
+    visibility: hidden;
+
+    @include media-query($on-palm) {
+      margin-top: -61px;
+      height: 61px;
+    }
+  }
+}
