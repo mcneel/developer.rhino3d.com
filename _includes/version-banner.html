@@ -15,7 +15,8 @@ $(document).ready(function()
   $.get(nonWipURL).fail(function ()
   {
     var $aTag = $("div.version-banner > a");
-    $aTag.remove();
+    $aTag.text("View the current site instead.");
+    $aTag.attr("href", "/");
   });
 });
 </script>
