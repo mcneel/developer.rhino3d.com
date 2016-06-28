@@ -54,10 +54,16 @@
     .page-link {
         color: $text-color;
         line-height: $base-line-height;
+        padding-bottom: 16px; // pads nav so "active" border appears at bottom
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
             margin-left: 20px;
+        }
+
+        &.active {
+          border-bottom: 2px solid #e8e8e8;
+          // font-weight: 400;
         }
     }
 

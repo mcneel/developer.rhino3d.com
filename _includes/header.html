@@ -8,11 +8,20 @@
       {% assign pages = site.pages | sort:"order"  %}
       <div class="trigger">
       	<!--<a class="page-link" href="{{ site.baseurl }}/">Welcome</a>-->
+        <!-- get current page title and "collection" to figure out which nav
+             link should be "active" -->
+        {% assign current = page.title  %}
+        {% assign url_array = page.url | split: "/" %}
+        {% assign collection = url_array[1] | capitalize %}
         {% for page in pages %}
           {% if page.title != 'Administration' %}
             {% if page.title != 'Blog' %}
               {% if page.title and page.order %}
-                <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                {% if page.title == current or page.title == collection %}
+                  <a class="page-link active" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                {% else %}
+                  <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                {% endif %}
               {% endif %}
             {% endif %}
           {% endif %}
