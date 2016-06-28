@@ -13,6 +13,14 @@ layout: bootstrap
       <!--<div class="post">-->
 
         <article class="post-content">
+          <ol class="breadcrumb">
+              {% assign api = page.apis[0] %}
+              <li><a href="{{ site.baseurl }}/guides/#{{ api | downcase }}">{{ api }}</a></li>
+              {% if page.categories != page.apis %}
+              <li class="active">{{ page.categories }}</li>
+              {% endif %}
+          </ol>
+
           {{ content }}
         </article>
 
