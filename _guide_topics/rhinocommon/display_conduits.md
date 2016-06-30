@@ -56,7 +56,7 @@ class MyConduit : Rhino.Display.DisplayConduit
 
   protected override void PostDrawObjects(DrawEventArgs e)
   {
-    base.PreDrawObjects(e);
+    base.PostDrawObjects(e);
     // ..
   }
 }
