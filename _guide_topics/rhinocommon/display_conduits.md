@@ -80,9 +80,9 @@ class MyConduit : Rhino.Display.DisplayConduit
     e.BoundingBox.Union(new Point3d(0,0,0);
   }
 
-  protected override void PreDrawObjects(DrawEventArgs e)
+  protected override void PostDrawObjects(DrawEventArgs e)
   {
-    base.PreDrawObjects(e);
+    base.PostDrawObjects(e);
     e.Display.DrawPoint(new Point3d(0,0,0);
   }
 }
@@ -99,9 +99,9 @@ protected override void CalculateBoundingBox(CalculateBoundingBoxEventArgs e)
    e.BoundingBox.Union(e.Display.Viewport.ConstructionPlane().Origin);
 }
 
-protected override void PreDrawObjects(DrawEventArgs e)
+protected override void PostDrawObjects(DrawEventArgs e)
 {
-  base.PreDrawObjects(e);
+  base.PostDrawObjects(e);
 
   var cPlane = e.Display.Viewport.ConstructionPlane();
   var xColor = Rhino.ApplicationSettings.AppearanceSettings.GridXAxisLineColor;
