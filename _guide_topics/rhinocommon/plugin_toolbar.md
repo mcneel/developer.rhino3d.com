@@ -41,8 +41,6 @@ Also note, if you uninstall your plug-in and manually close the RUI file, within
 
 Finally, if you update your plug-in, Rhino will not re-stage the RUI file because it already exists. You can get Rhino to re-stage the RUI file by deleting it in %APPDATA% and restarting which will cause Rhino to copy the file again since it no longer exists. This can be done programmatically by adding the following code to your plug-in object's **OnLoad** override.
 
-## Example
-
 ```cs
 /// <summary>
 /// Called when the plug-in is being loaded.
