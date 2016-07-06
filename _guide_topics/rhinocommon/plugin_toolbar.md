@@ -39,7 +39,7 @@ Note, there is additional code in Rhino that saves the name of RUI files closed 
 
 Also note, if you uninstall your plug-in and manually close the RUI file, within Rhino, you are telling Rhino you no longer want to auto-load the RUI file. Thus, the RUI file will not load if you re-install your plug-in. If you were to uninstall your plug-in and delete the RUI file from the **%APPDATA%** folder, then the RUI file will load if you re-install your plug-in.
 
-Finally, if you update your plug-in, Rhino will not re-stage the RUI file because it already exists. You can get Rhino to re-stage the RUI file by deleting it in %APPDATA% and restarting which will cause Rhino to copy the file again since it no longer exists. This can be done programmatically by adding the following code to your plug-in object's **OnLoad** override.
+Finally, if you update your plug-in, Rhino will not re-stage the RUI file because it already exists. You can get Rhino to re-stage the RUI file by deleting it in **%APPDATA%** and restarting which will cause Rhino to copy the file again since it no longer exists. This can be done programmatically by adding the following code to your plug-in object's **OnLoad** override.
 
 ```cs
 /// <summary>
