@@ -1,5 +1,5 @@
 ---
-title: Creating and deploying plug-in toolbars
+title: Creating and Deploying Plug-in Toolbars
 description: This guide covers the creation and deployment of plug-in toolbars.
 author: dale@mcneel.com
 apis: ['RhinoCommon']
