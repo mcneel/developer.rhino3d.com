@@ -45,17 +45,17 @@ Finally, if you update your plug-in, Rhino will not re-stage the RUI file becaus
 
 ```cs
 /// <summary>
-/// Called when the plugin is being loaded.
+/// Called when the plug-in is being loaded.
 /// </summary>
 protected override LoadReturnCode OnLoad(ref string errorMessage)
 {
-  // Get the version number of our plugin, that was last used, from our settings file.
+  // Get the version number of our plug-in, that was last used, from our settings file.
   var plugin_version = Settings.GetString("PlugInVersion", null);
 
   if (!string.IsNullOrEmpty(plugin_version))
   {
-    // If the version number of the plugin that was last used does not match the
-    // version number of this plugin, proceed.
+    // If the version number of the plug-in that was last used does not match the
+    // version number of this plug-in, proceed.
     if (0 != string.Compare(Version, plugin_version, StringComparison.OrdinalIgnoreCase))
     {
       // Build a path to the user's staged RUI file.
@@ -87,7 +87,7 @@ protected override LoadReturnCode OnLoad(ref string errorMessage)
     }
   }
 
-  // After successfully loading the plugin, if Rhino detects a plugin RUI
+  // After successfully loading the plug-in, if Rhino detects a plug-in RUI
   // file, it will automatically stage it, if it doesn't already exist.
 
   return LoadReturnCode.Success;
