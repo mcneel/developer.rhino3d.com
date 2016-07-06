@@ -28,9 +28,11 @@ If you give your custom RUI file the exact same name as the plug-in RHP file and
 ## More Information
 
 The first time a plug-in is loaded, Rhino looks for an RUI file with the same name as the plug-in. If it is found, it is copied to the following location and opened:
+
 ```
 %APPDATA%\McNeel\Rhinoceros\<version>\Plug-ins\[plug-in name] ([plug-in UUID)\settings
 ```
+
 It is copied, or staged, to ensure that the file is writable and to provide a way to revert to the original, or default, RUI file if needed.
 
 You can revert to the original, or default, RUI file by deleting the RUI file in the **%APPDATA%** folder and then and restarting Rhino, which will cause the file to be staged again, as the file no longer exists.
