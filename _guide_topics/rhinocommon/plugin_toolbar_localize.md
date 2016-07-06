@@ -7,7 +7,7 @@ languages: ['C#', 'C/C++']
 platforms: ['Windows']
 categories: ['Advanced']
 order: 1
-keywords: ['RhinoCommon', 'Rhino', 'Toolbar', 'Plugin']
+keywords: ['RhinoCommon', 'C/C++', 'Rhino', 'Toolbar', 'Plugin']
 layout: toc-guide-page
 ---
 
