@@ -2,12 +2,12 @@
 title: Creating and Deploying Plug-in Toolbars
 description: This guide covers the creation and deployment of plug-in toolbars.
 author: dale@mcneel.com
-apis: ['RhinoCommon']
-languages: ['C#']
+apis: ['RhinoCommon', 'C/C++']
+languages: ['C#', 'C/C++']
 platforms: ['Windows']
 categories: ['Advanced']
 order: 1
-keywords: ['RhinoCommon', 'Rhino', 'Toolbar', 'Plugin']
+keywords: ['RhinoCommon', 'C/C++', 'Rhino', 'Toolbar', 'Plugin']
 layout: toc-guide-page
 ---
 
