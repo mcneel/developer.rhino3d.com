@@ -27,7 +27,7 @@ An RUI file is an XML file that can be viewed and edited in an ordinary text edi
 
 If you open an RUI file, that contains a toolbar that contains a button, you might see a block of XML that looks similar to the following:
 
-```
+```xml
 <macro_item guid="some_unique_guid" bitmap_id="some_unique_guid">
   <text>
     <locale_1033>RenderSettings</locale_1033>
@@ -46,7 +46,7 @@ Notice the ```<locale_1033>``` tag, which denotes the text used by Rhino when co
 
 It is possible to add additional locale tags for supported language.
 
-```
+```xml
 <macro_item guid="some_unique_guid" bitmap_id="some_unique_guid">
   <text>
     <locale_1033>RenderSettings</locale_1033>
