@@ -42,7 +42,7 @@ If you open an RUI file, that contains a toolbar that contains a button, you mig
 </macro_item>
 ```
 
-Notice the **\<locale_1033>** tag, which denotes the text used by Rhino when configured for English (United States).
+Notice the ```<locale_1033>``` tag, which denotes the text used by Rhino when configured for English (United States).
 
 Its possible to add additional locale tags for each supported language.
 
