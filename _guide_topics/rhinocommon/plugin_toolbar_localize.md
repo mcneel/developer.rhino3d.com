@@ -28,7 +28,7 @@ An RUI file is an XML file that can be viewed and edited in an ordinary text edi
 If you open an RUI file, that contains a toolbar that contains a button, you might see a block of XML that looks similar to the following:
 
 ```
-<macro_item guid="49b72876-5dcb-4b8c-89df-365e22627986" bitmap_id="ed060e4e-e092-4dfd-92f9-e20f4c688ba3">
+<macro_item guid="some_unique_guid" bitmap_id="some_unique_guid">
   <text>
     <locale_1033>RenderSettings</locale_1033>
   </text>
@@ -38,7 +38,7 @@ If you open an RUI file, that contains a toolbar that contains a button, you mig
   <button_text>
     <locale_1033>Render</locale_1033>
   </button_text>
-  <script>! _DocumentPropertiesPage _Render</script>
+  <script>_DocumentPropertiesPage _Render</script>
 </macro_item>
 ```
 
@@ -47,7 +47,7 @@ Notice the **\<locale_1033>** tag, which denotes the text used by Rhino when con
 Its possible to add additional locale tags for each supported language.
 
 ```
-<macro_item guid="49b72876-5dcb-4b8c-89df-365e22627986" bitmap_id="ed060e4e-e092-4dfd-92f9-e20f4c688ba3">
+<macro_item guid="some_unique_guid" bitmap_id="some_unique_guid">
   <text>
     <locale_1033>RenderSettings</locale_1033>
     <locale_1031>Rendereinstellungen</locale_1031>
@@ -80,7 +80,7 @@ Its possible to add additional locale tags for each supported language.
     <locale_2052>渲染</locale_2052>
     <locale_1028>彩現</locale_1028>
   </button_text>
-  <script>! _DocumentPropertiesPage _Render</script>
+  <script>_DocumentPropertiesPage _Render</script>
 </macro_item>
 ```
 
