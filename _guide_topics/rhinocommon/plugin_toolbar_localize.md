@@ -44,7 +44,7 @@ If you open an RUI file, that contains a toolbar that contains a button, you mig
 
 Notice the ```<locale_1033>``` tag, which denotes the text used by Rhino when configured for English (United States).
 
-Its possible to add additional locale tags for each supported language.
+It is possible to add additional locale tags for supported language.
 
 ```
 <macro_item guid="some_unique_guid" bitmap_id="some_unique_guid">
