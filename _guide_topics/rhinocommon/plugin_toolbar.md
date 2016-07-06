@@ -29,17 +29,17 @@ If you give your custom RUI file the exact same name as the plug-in RHP file and
 
 The first time a plug-in is loaded, Rhino looks for an RUI file with the same name as the plug-in. If it is found, it is copied to the following location and opened:
 ```
-"%APPDATA%\McNeel\Rhinoceros\<version>\Plug-ins\[plug-in name] ([plug-in UUID)\settings" 
+%APPDATA%\McNeel\Rhinoceros\<version>\Plug-ins\[plug-in name] ([plug-in UUID)\settings
 ```
 It is copied, or staged, to ensure that the file is writable and to provide a way to revert to the original, or default, RUI file if needed.
 
-You can revert to the original, or default, RUI file by deleting the RUI file in %APPDATA% folder and then and restarting Rhino, which will cause the file to be staged again, as the file no longer exists.
+You can revert to the original, or default, RUI file by deleting the RUI file in the **%APPDATA%** folder and then and restarting Rhino, which will cause the file to be staged again, as the file no longer exists.
 
 Note, there is additional code in Rhino that saves the name of RUI files closed by the user. If a user closes an RUI and the RUI file is associated with a plug-in, the file name goes on a list so that Rhino does not automatically open the RUI file in the future. The logic is if the user closed the file, we don't want to keep loading it every time Rhino starts.
 
-If you uninstall the plugin and manually close the RUI file you are telling Rhino you no longer want to auto-load the RUI file which is why it does not open when you re-install. If you were to uninstall and delete the %APPDATA% RUI file then re-install the RUI file would open.
+Also note, if you uninstall upir plugin and manually close the RUI file, within Rhino, you are telling Rhino you no longer want to auto-load the RUI file. Thus, the RUI file will not load if you re-install your plugin. If you were to uninstall your plug-in and delete the RUI file from the **%APPDATA%** folder, then the RUI file will load if you re-install your plugin.
 
-Also note, if you update your plug-in, Rhino will not re-stage the RUI file because it already exists. You can get Rhino to re-stage the RUI file by deleting it in %APPDATA% and restarting which will cause Rhino to copy the file again since it no longer exists. This can be done prograqmatically by adding the following code to your plugin object's **OnLoad** override.
+Finally, if you update your plug-in, Rhino will not re-stage the RUI file because it already exists. You can get Rhino to re-stage the RUI file by deleting it in %APPDATA% and restarting which will cause Rhino to copy the file again since it no longer exists. This can be done prograqmatically by adding the following code to your plugin object's **OnLoad** override.
 
 ## Example
 
