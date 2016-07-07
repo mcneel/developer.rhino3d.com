@@ -91,3 +91,4 @@ using (var icon = Rhino.UI.DrawingUtilities.LoadIconWithScaleDown("page_logo.ico
   m_page_logo = icon.ToBitmap();
 ```
 
+If the icon is not a standard size, ```DrawingUtilities::LoadIconWithScaleDown``` scales down a larger image.
