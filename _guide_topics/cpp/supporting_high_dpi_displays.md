@@ -101,9 +101,9 @@ HCURSOR hCursor = (HCURSOR)::LoadImage(
 
 By not specifying a size and by using the ```LR_DEFAULTSIZE``` flag, Windows will automatically load the cursor size that is appropriate for the current DPI setting.
 
-### List Controls with Image Lists
+### List Controls
 
-The problem with list controls is that the bitmaps, used by their image lists, do not scale very well. The solution is to convert the bitmap strip into individual icon files and then use ```CRhinoDpi::CreateImageList``` to create the image list.
+If you use a list control that displays item bitmaps, using an image lists, then you will find that the images do not scale properly. The solution is to convert the bitmap strip into individual icon files and then use ```CRhinoDpi::CreateImageList``` to create the image list.
 
 For list controls that use an image list that has a single bitmap, you can do this:
 
