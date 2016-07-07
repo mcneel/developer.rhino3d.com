@@ -36,7 +36,7 @@ Plug-in developers should run Rhino on high-DPI displays so they can find and fi
 
 ### Windows 7
 
-1. Right-click on your desktop and click *Screen resolution**.
+1. Right-click on your desktop and click **Screen resolution**.
 1. Click **Make text and other items larger or smaller**.
 1. Select the text scaling and click **Apply**.
 1. Logout of Windows and log back in.
