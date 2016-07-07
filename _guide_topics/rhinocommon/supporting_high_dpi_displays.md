@@ -78,9 +78,9 @@ public MainWindow()
   // This call is required by the Windows Form Designer. 
   InitializeComponent();
 
-  var new_width = RhinoWindows.Forms.Dpi.ScaleInt(m_standard_toolbar.ImageScalingSize.Width);
-  var new_height = RhinoWindows.Forms.Dpi.ScaleInt(m_standard_toolbar.ImageScalingSize.Height);
-  m_standard_toolbar.ImageScalingSize = new Size(new_width, new_height);
+  var width = RhinoWindows.Forms.Dpi.ScaleInt(m_standard_toolbar.ImageScalingSize.Width);
+  var height = RhinoWindows.Forms.Dpi.ScaleInt(m_standard_toolbar.ImageScalingSize.Height);
+  m_standard_toolbar.ImageScalingSize = new Size(width, height);
   
   // ...
 ```
@@ -93,8 +93,8 @@ using Rhino.UI;
 //...
 
 var size = RhinoWindows.Forms.Dpi.ScaleInt(32);
-using (var icon = DrawingUtilities.LoadIconWithScaleDown("page_logo.ico", (int)size, GetType().Assembly))
-  m_page_logo = icon.ToBitmap();
+using (var icon = DrawingUtilities.LoadIconWithScaleDown("logo.ico", (int)size, GetType().Assembly))
+  m_image = icon.ToBitmap();
   
 // ...
 ```
