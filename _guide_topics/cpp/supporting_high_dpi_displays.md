@@ -41,7 +41,7 @@ Plug-in developers should run Rhino on high-DPI displays so they can find and fi
 1. Select the text scaling and click **Apply**.
 1. Logout of Windows and log back in.
 
-## Common Issues
+## Common C++ Issues
 
 Most high DPI issues that plug-ins will encounter are due to owner-drawn control. Here, developers have hard-coded sizes or locations, assuming the standard DPI setting. In these cases, custom drawn elements don’t appear correctly, or custom controls don’t work properly.
 
