@@ -81,9 +81,13 @@ public MainWindow()
   var new_width = RhinoWindows.Forms.Dpi.ScaleInt(m_standard_toolbar.ImageScalingSize.Width);
   var new_height = RhinoWindows.Forms.Dpi.ScaleInt(m_standard_toolbar.ImageScalingSize.Height);
   m_standard_toolbar.ImageScalingSize = new Size(new_width, new_height);
-  
-  // ...
-  ```
+```
 
-Use the ```DrawingUtilities::LoadBitmapWithScaleDown``` and ```DrawingUtilities::LoadIconWithScaleDown``` static functions, found in the ```Rhino.UI``` assembly, to assist with loading bitmaps and icons from icon resources.
+Use the ```DrawingUtilities::LoadBitmapWithScaleDown``` and ```DrawingUtilities::LoadIconWithScaleDown``` static functions, found in the ```Rhino.UI``` assembly, to assist with loading bitmaps and icons from icon resources. For example:
+
+```cs
+var size = RhinoWindows.Forms.Dpi.ScaleInt(32);
+using (var icon = Rhino.UI.DrawingUtilities.LoadIconWithScaleDown("page_logo.ico", (int)size, GetType().Assembly))
+  m_page_logo = icon.ToBitmap();
+```
 
