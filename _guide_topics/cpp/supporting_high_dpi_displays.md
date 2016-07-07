@@ -90,7 +90,13 @@ All of the cursors files (CUR) used by Rhino have been updated to support all of
 When loading cursor resources, you should so in this manner:
 
 ```cpp
-HCURSOR hCursor = (HCURSOR)::LoadImage(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDC_CURSOR), IMAGE_CURSOR, 0, 0, LR_DEFAULTSIZE | LR_SHARED);
+HCURSOR hCursor = (HCURSOR)::LoadImage(
+    AfxGetInstanceHandle(), 
+    MAKEINTRESOURCE(IDC_CURSOR), 
+    IMAGE_CURSOR, 
+    0, 0, 
+    LR_DEFAULTSIZE | LR_SHARED
+    );
 ```
 
 By not specifying a size and by using the ```LR_DEFAULTSIZE``` flag, Windows will automatically load the cursor size that is appropriate for the current DPI setting.
