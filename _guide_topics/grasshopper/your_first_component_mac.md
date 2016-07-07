@@ -6,39 +6,30 @@ apis: ['Grasshopper']
 languages: ['C#']
 platforms: ['Mac']
 categories: ['Getting Started']
-origin: unset
 order: 3
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
-TODO: 'Needs review and image work.  Reported bug with missing step for copy components to library.'
 ---
 
-# Your First Component (Mac)
+# {{ page.title }}
 
 {{ page.description }}
 
 ## Prerequisites
 
-Grasshopper for Mac only exists in the RhinoWIP until the next major version of Rhino for Mac is released. Due to this, there are a few additional steps that need to be taken to install all of the tools needed to develop components. You will need to do the following:
+Grasshopper for Mac only exists in the RhinoWIP until the next major version of Rhino for Mac is released.  
 
-1. Install the [latest RhinoWIP](http://www.rhino3d.com/go/download/rhino-for-mac/wip/latest). The WIP can be safely installed along side the stable release of Rhino for Mac.
-1. Install Xamarin Studio. Instructions on downloading and installing Xamarin Studio can be found on [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac) page.
+<div class="bs-callout bs-callout-danger">
+  <h4>WARNING</h4>
+  <p><b>Early-adopters</b>: the following steps will <b>NOT</b> work with the currently released Rhinoceros (5.x.x).  You will need to use WIP version of Rhinoceros.</p>
+</div>
 
-## Install the Rhino Add-in (pre-release)
+Due to this, there are a few additional steps that need to be taken to install all of the tools needed to develop components.  You will need to do the following:
 
-The Rhino Xamarin Studio Add-in is required to debug your component code in an active session of Rhino for Mac.  Additionally, it contains project templates to get you started creating components quickly.  This is a special "pre-release" add-in so you will need to get the add-in from the McNeel github site.
+1. Install the [latest RhinoWIP](http://www.rhino3d.com/go/download/rhino-for-mac/wip/latest). The WIP can be safely installed along side the stable release of Rhino for Mac (but they cannot be run simultaneously).
+1. Install Xamarin Studio.  Instructions can be found in the [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac) guide.
+1. Install the Rhino Xamarin Add-in.  Instructions can be found in the [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac) guide in the [Install the Rhino Add-in]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac/#install-the-rhino-add-in) section.
 
-#### Step-by-Step
-
-1. Download the pre-release [RhinoXamarinStudioAddin from github](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases).  Make sure to get the pre-release add-in since this is the one that includes support for Grasshopper component development.
- ![Pre-release add-in]({{ site.baseurl }}/images/your_first_component_mac_01.png)
-**NOTE: That this page states the add-in is a pre-release**: We will likely be making improvements to this add-in over time.
-1. Launch **Xamarin Studio**.
-1. Navigate to **Xamarin Studio** > **Add-in Manager...**
-1. Click the **Install from file...** button
-1. Select the RhinoXamarinStudioAddin mpack file that you just downloaded from github.  The add-in should install.
-1. **IMPORTANT**: You must **Quit** and **Restart** Xamarin Studio.
-1. Navigate to **Xamarin Studio** > **Add-in Manager..** > **Install** tab.  Verify that **RhinoCommon Plugin Support** exists under the **Debugging** category.  If it's there, you have successfully installed the add-in and you are **DONE**.
 
 ## HelloGrasshopper
 
@@ -53,10 +44,10 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 1. If you have not done so already, **launch Xamarin Studio**.
 1. Navigate to **File** > **New** > **Solution**...
 ![File New Solution]({{ site.baseurl }}/images/your_first_plugin_mac_01.png)
-1. A **New Project** wizard should appear.  In the left column, find the **Other** > **Miscellaneous** section.  Under General, select the Grasshopper Plug-In template...
+1. A **New Project** wizard should appear.  In the left column, find the **Other** > **Miscellaneous** section.  Under General, select the **Grasshopper Component** template...
 ![New Project]({{ site.baseurl }}/images/your_first_component_mac_02.png)
 1. Click the **Next** button.
-1. You will now **Configure your new project**.  For the purposes of this Guide, we will name our demo component *HelloGrasshopper*.  Fill in the **Project Name** field.  **Browse** and select a location for this plugin on your Mac...
+1. You will now **Configure your new project**.  For the purposes of this Guide, we will name our demo component *HelloGrasshopper*.  Fill in the **Project Name** field.  **Browse** and select a location for this component on your Mac...
 ![Project Configuration]({{ site.baseurl }}/images/your_first_component_mac_03.png)
 1. Click the **Create** button.
 1. A **new solution** called **HelloGrasshopper** should open...
@@ -70,7 +61,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 ![New Model Button]({{ site.baseurl }}/images/your_first_plugin_mac_06.png)
 1. Enter the **ExplicitHistory** command.  Notice that your new component is listed a loaded by Grasshopper...
 ![HelloGrasshopper Loaded]({{ site.baseurl }}/images/your_first_component_mac_05.png)
-1. Go to the Curve tab in grasshopper and you should see a new blank icon for your new component...
+1. Go to the **Curve** tab in Grasshopper and you should see a new blank icon for your new component...
 ![Curve Tab]({{ site.baseurl }}/images/your_first_component_mac_06.png)
 1. Drag this component on to the Grasshopper canvas to verify that it is working...
 ![Command Starts]({{ site.baseurl }}/images/your_first_component_mac_07.png)
@@ -81,8 +72,8 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 
 1. Use the **Solution Explorer** to expand the **Solution** (*.sln*) so that it looks like this...
 ![Solution Anatomy]({{ site.baseurl }}/images/your_first_component_mac_08.png)
-1. The **HelloGrasshopper** project (*.csproj*) has the same name as its parent solution...this is the project that was created for us by the **Grasshopper Plugin** template wizard earlier.
-1. **References**: Just as with most projects, you will be referencing other libraries.  The **Grasshopper Plugin** template added the necessary references to create a basic Grasshopper component.
+1. The **HelloGrasshopper** project (*.csproj*) has the same name as its parent solution...this is the project that was created for us by the **Grasshopper Component** template wizard earlier.
+1. **References**: Just as with most projects, you will be referencing other libraries.  The **Grasshopper Component** template added the necessary references to create a basic Grasshopper component.
 1. **Eto** is the cross-platform User Interface (UI) library Rhino uses.  If you examine its properties, you will notice it comes bundled as part of Rhino for Mac.
 1. **GH_IO** is used for reading and writing Grasshopper definitions.
 1. **Grasshopper** is the Rhino for Mac main grasshopper DLL. Classes in this DLL are subclassed and used by your custom component.
@@ -96,7 +87,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
 
 ### Debugging
 
-1. Set a breakpoint on line[^1] 100 of *HelloGrasshopperComponent.cs*.  You set breakpoints in Xamarin Studio by clicking in the gutter...
+1. Set a breakpoint on line[^1] 103 of *HelloGrasshopperComponent.cs*.  You set breakpoints in Xamarin Studio by clicking in the gutter...
 ![Set a breakpoint]({{ site.baseurl }}/images/your_first_component_mac_09.png)
 1. **Build** and **Run**.  Drag one of your new components on to the Grasshopper canvas...as soon as you do, you should hit your breakpoint and pause...
 ![Hit a breakpoint]({{ site.baseurl }}/images/your_first_component_mac_10.png)
