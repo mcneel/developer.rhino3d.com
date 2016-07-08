@@ -55,9 +55,9 @@ WinForms has its own scaling mechanism which calculates the scaling difference b
 
 All container controls must be set to the same ```AutoScaleMode = Font```. This will handle both DPI changes and changes to the system font size setting; DPI will only handle DPI changes, not changes to the system font size setting.
 
-Make sure you **use the default font size*** on all your containers (forms, panels, tab page, user controls etc). 8.25 px. Preferably this should not be set in the *<container>.Designer.cs* file at all for all containers so that it uses the default font from the container class.
+Make sure you **use the default font size*** on all your containers (forms, panels, tab page, user controls etc). 8.25 px. Preferably this should not be set in the *\<container\>.Designer.cs* file at all for all containers so that it uses the default font from the container class.
 
-All container controls must also be set with ```AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F)```, assuming 96 DPI, in the *<container>.Designer.cs* file.
+All container controls must also be set with ```AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F)```, assuming 96 DPI, in the *\<container\>.Designer.cs* file.
 
 If you need to set different font sizes on labels, textboxes, etc. set them per control instead of setting the font on the container class because WinForms uses the containers font setting to scale it's contents.
 
