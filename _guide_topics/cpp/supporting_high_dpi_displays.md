@@ -159,11 +159,11 @@ void CMyListBox::MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct)
 }
 ```
 
-There is also a new ```CRhinoUiListBox``` control that you can use in place of ```CListBox```, that will perform the above calculations for you. See ```RhinoSdkUiCheckListbox.h``` for details.
+There is also a new ```CRhinoUiListBox``` control that you can use in place of ```CListBox```, that will perform the above calculations for you. See *RhinoSdkUiCheckListbox.h* for details.
 
 ### Check List Boxes
 
-The standard MFC ```CCheckListBox``` class does correctly handle mouse events at high DPI settings. If you are using this class, then modify your code to use ```CRhinoUiCheckListBox```.  See ```RhinoSdkUiCheckListbox.h``` for details.
+The standard MFC ```CCheckListBox``` class does correctly handle mouse events at high DPI settings. If you are using this class, then modify your code to use ```CRhinoUiCheckListBox```.  See *RhinoSdkUiCheckListbox.h* for details.
 
 ### Combo Boxes
 
