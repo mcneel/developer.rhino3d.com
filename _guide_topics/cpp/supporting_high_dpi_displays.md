@@ -17,9 +17,9 @@ layout: toc-guide-page
 
 ## Overview
 
-Super high resolution displays are now common on Windows-based systems, and those using Rhino expect it and 3rd party plug-ins to display correctly on them. Plug-in developers need to make sure their applications are DPI–aware. DPI-aware plug-ins adjust UI elements to scale appropriately to the system DPI. Plug-ins that are not DPI–aware, but are running on a high-DPI display setting, can suffer from many visual artifacts, including incorrect scaling of UI elements, clipped text, and blurry images.
+Super high resolution displays are now common on Windows-based systems, and those using Rhino expect it and 3rd party plugins to display correctly on them. Plugin developers need to make sure their applications are DPI–aware. DPI-aware plugins adjust UI elements to scale appropriately to the system DPI. Plugins that are not DPI–aware, but are running on a high-DPI display setting, can suffer from many visual artifacts, including incorrect scaling of UI elements, clipped text, and blurry images.
 
-Plug-in developers should run Rhino on high-DPI displays so they can find and fix display issues. Here is how you can configure Windows for high-DPI display:
+Plugin developers should run Rhino on high-DPI displays so they can find and fix display issues. Here is how you can configure Windows for high-DPI display:
 
 ### Windows 10
 
@@ -43,7 +43,7 @@ Plug-in developers should run Rhino on high-DPI displays so they can find and fi
 
 ## Common C++ Issues
 
-Most high DPI issues that plug-ins will encounter are due to owner-drawn control. Here, developers have hard-coded sizes or locations, assuming the standard DPI setting. In these cases, custom drawn elements don’t appear correctly, or custom controls don’t work properly.
+Most high DPI issues that plugins will encounter are due to owner-drawn control. Here, developers have hard-coded sizes or locations, assuming the standard DPI setting. In these cases, custom drawn elements don’t appear correctly, or custom controls don’t work properly.
 
 Other issues have to do with the use of bitmaps or icons that are too small at higher DPI settings or that don’t scale well.
 
