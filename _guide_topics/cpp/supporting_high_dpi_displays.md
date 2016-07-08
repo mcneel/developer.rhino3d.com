@@ -47,7 +47,7 @@ Most high DPI issues that plug-ins will encounter are due to owner-drawn control
 
 Other issues have to do with the use of bitmaps or icons that are too small at higher DPI settings or that don’t scale well.
 
-The Rhino SDK has some new tools that developers can use to help make UI elements DPI-aware. See the ```CRhinoDpi``` class declaration in ```RhinoSdkDpi.h``` for more information.
+The Rhino SDK has some new tools that developers can use to help make UI elements DPI-aware. See the ```CRhinoDpi``` class declaration in *RhinoSdkDpi.h* for more information.
 
 ### General
 
