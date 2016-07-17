@@ -6,7 +6,11 @@ layout: bootstrap
     <!--Nav Bar -->
     <nav class="col-xs-0 col-md-2 bs-docs-sidebar">
       <ul id="sidebar" class="nav nav-stacked fixed">
-        <li class="active">modules
+        <li class="active">
+            <div>modules
+              <span onclick="$('.panel-collapse').collapse('show')" class="glyphicon glyphicon-collapse-down" aria-hidden="true" style="cursor:pointer" data-toggle="tooltip" data-placement="right" title="expand all" ></span>
+              <span onclick="$('.panel-collapse').collapse('hide')" class="glyphicon glyphicon-collapse-up" aria-hidden="true" style="cursor:pointer" data-toggle="tooltip" data-placement="right" title="collapse all" ></span>
+            </div>
           <ul class="nav nav-stacked">
             {% for module in site.data.rhinoscriptsyntax-structured-docstring-rwip %}
               <li><a href="#{{ module.ModuleName }}">{{ module.ModuleName }}</a></li>
@@ -34,7 +38,7 @@ layout: bootstrap
                   <span class="label label-default {% if site.rss_show_missing_examples_links == true and moduleFunction.ExampleString == '' %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">ex</span>
                   <span class="label label-default {% if site.rss_show_missing_examples_links == true and moduleFunction.SeeAlso.size == 0 %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">lnk</span>
                 </div>
-                <div id="collapse-{{ moduleFunction.Name }}" class="panel-collapse collapse {% if mainloopfirst and forloop.first %}{{ 'in' }}{% endif %}" role="tabpanel" aria-labelledby="heading-{{ moduleFunction.Name }}">
+                <div id="collapse-{{ moduleFunction.Name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ moduleFunction.Name }}">
                   <div class="panel-body docstring-panel">
                     <pre><code class="python">{{ moduleFunction.Signature }}</code></pre>
 
