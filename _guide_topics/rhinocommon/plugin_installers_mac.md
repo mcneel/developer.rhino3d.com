@@ -10,6 +10,7 @@ origin: unset
 order: 6
 keywords: ['first', 'RhinoCommon', 'Plugin', 'installing']
 layout: toc-guide-page
+TODO: 'Addin now creates rhp in release.  Recap screenshots and instructions.'
 ---
 
 # {{ page.title }}
