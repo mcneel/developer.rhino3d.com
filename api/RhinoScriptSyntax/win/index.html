@@ -7,9 +7,9 @@ layout: bootstrap
     <nav class="col-xs-0 col-md-2 bs-docs-sidebar">
       <ul id="sidebar" class="nav nav-stacked fixed">
         <li class="active">
-            <div>modules
-              <span onclick="$('.panel-collapse').collapse('show')" class="glyphicon glyphicon-collapse-down" aria-hidden="true" style="cursor:pointer" data-toggle="tooltip" data-placement="right" title="expand all" ></span>
-              <span onclick="$('.panel-collapse').collapse('hide')" class="glyphicon glyphicon-collapse-up" aria-hidden="true" style="cursor:pointer" data-toggle="tooltip" data-placement="right" title="collapse all" ></span>
+            <div>modules&nbsp;&nbsp;
+              <span onclick="$('.panel-collapse').collapse('show')" aria-hidden="true" style="cursor:pointer" data-toggle="tooltip" data-placement="right" title="expand all" >+</span>
+              <span onclick="$('.panel-collapse').collapse('hide')" aria-hidden="true" style="cursor:pointer" data-toggle="tooltip" data-placement="right" title="collapse all" >-</span>
             </div>
           <ul class="nav nav-stacked">
             {% for module in site.data.rhinoscriptsyntax-structured-docstring-rwip %}
