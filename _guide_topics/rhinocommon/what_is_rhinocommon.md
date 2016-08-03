@@ -49,6 +49,10 @@ In 2011, Grasshopper was rewritten using RhinoCommon.  This was a big project an
 
 The [Python]({{ site.baseurl }}/guides#rhinopython) script engine is entirely based on RhinoCommon.  All python scripts use RhinoCommon to work with Rhino. Typically, if it is difficult to write a Python script using a RhinoCommon API, then the RhinoCommon SDK needs to be fixed.
 
+## RhinoCommon versions
+
+RhinoCommon plug-ins will only load in the same service release or greater of Rhino that the plug-in was built against. For example, if your RhinoCommon plug-in project references RhinoCommon.dll from Rhino 5 SR9, then your plug-in will load in Rhino 5 SR9, SR10, etc. But, it will not load in Rhino 5 SR8. Thus, if you want to support older service releases of Rhino, you will need to revert to an older service release.  It is encouraged that you always target the latest service release of Rhino.
+
 ---
 
 ## Related topics
