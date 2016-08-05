@@ -36,12 +36,15 @@ This is possible.  You need to...
 
         Marmoset/
         ├── Rhino 4.0/
-        │   └── Marmoset.rhp
+        │   ├── Marmoset.rhp
+        │   └── required_v4.dll
         ├── Rhino 5.0/
         │   ├── x86/
-        │   │   └── Marmoset.rhp
+        │   │   ├── Marmoset.rhp
+        │   │   └── required_v5_x86.dll
         │   └── x64/
-        │       └── Marmoset.rhp
+        │       ├── Marmoset.rhp
+        │       └── required_v5_x64.dll
         ├── Marmoset.rui
         └── Marmoset.chm
 
