@@ -4,3 +4,4 @@
 [submodule "api/RhinoCommonWin"]
 	path = api/RhinoCommonWin
 	url = https://github.com/mcneel/rhinocommon-api-docs-win.git
+	branch = wip
