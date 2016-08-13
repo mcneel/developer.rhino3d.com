@@ -1,8 +1,8 @@
 [submodule "api/RhinoCommon"]
 	path = api/RhinoCommon
 	url = https://github.com/mcneel/rhinocommon-api-docs.git
-	branch = wip
+	branch = wip-mac5
 [submodule "api/RhinoCommonWin"]
 	path = api/RhinoCommonWin
-	url = https://github.com/mcneel/rhinocommon-api-docs-win.git
-	branch = wip
+	url = https://github.com/mcneel/rhinocommon-api-docs.git
+	branch = wip-win
