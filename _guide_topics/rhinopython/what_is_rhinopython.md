@@ -34,6 +34,10 @@ Rhino already has a scripting language called RhinoScript!  Why should you use P
 
 But more importantly: Python is very popular outside of Rhino!  Much of what you learn about Python can be applied in many other domains.
 
+## What version of Python does Rhino use?
+
+Rhino uses Python version 2.7.
+
 ## Where can you use Python in Rhino?
 
 Python can be used all over Rhino in many different ways...
