@@ -1,13 +1,13 @@
 ---
-title: Component Installers (Windows)
+title: Components with a variable number of parameters
 description: This guide has yet to be authored or ported.
 author: david@mcneel.com
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
-platforms: ['Windows']
-categories: ['Getting Started']
-origin: http://www.grasshopper3d.com/forum/topics/how-do-i-install-a-custom-ghx
-order: 4
+platforms: ['Windows', 'Mac']
+categories: ['Fundamentals']
+origin: http://www.grasshopper3d.com/forum/topics/gha-developers-implementing-variable-parameters
+order: 5
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 TODO: 'needs porting'

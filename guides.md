@@ -328,11 +328,23 @@ order: 2
 
 *Create custom Grasshopper components and plugins.*
 
+### Overview
+
+- [What is a Grasshopper Component?]({{ site.baseurl }}/guides/grasshopper/what_is_a_grasshopper_component/)
+
+### Getting Started
+
+- [Installing Tools]({{ site.baseurl }}/guides/grasshopper/installing_tools_windows/)
+- [Your First Component]({{ site.baseurl }}/guides/grasshopper/your_first_component_windows/)
+- [Component Installers]({{ site.baseurl }}/guides/grasshopper/component_installers_windows/)
+
+### Fundamentals
+
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'Grasshopper' %}
+    {% if guide.apis contains 'Grasshopper' and guide.categories contains 'Fundamentals' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -340,7 +352,6 @@ order: 2
   {% endfor %}
   </ul>
 </div>
-
 
 ---
 
