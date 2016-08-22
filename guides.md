@@ -323,7 +323,7 @@ order: 2
 
 ---
 
-## [Grasshopper]({{ site.baseurl }}/guides/grasshopper) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## [Grasshopper]({{ site.baseurl }}/guides/grasshopper) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
 {: #grasshopper }
 
 *Create custom Grasshopper components and plugins.*
