@@ -55,7 +55,7 @@ For developing RhinoCommon plugins, *only* Xamarin Studio is required.
 
 ### Xamarin Studio
 
-This is Xamarin's C# developer environment that runs on both Windows and Mac.  Xamarin Studio has many of the features of Microsoft's Visual Studio and uses *exactly the same formats* as Visual Studio: solutions (*.sln*) and C# projects (*.csproj*).  At McNeel, we use Xamarin Studio to develop [Rhino for Mac](http://www.rhino3d.com/mac) and [iRhino 3D](https://www.rhino3d.com/ios).  We highly recommend you use Xamarin Studio when developing RhinoCommon plugins for the Mac (or for Windows as well).
+This is Xamarin's C# developer environment that runs on Mac.  Xamarin Studio has many of the features of Microsoft's Visual Studio and uses *exactly the same formats* as Visual Studio: solutions (*.sln*) and C# projects (*.csproj*).  At McNeel, we use Xamarin Studio to develop [Rhino for Mac](http://www.rhino3d.com/mac) and [iRhino 3D](https://www.rhino3d.com/ios).  We highly recommend you use Xamarin Studio when developing RhinoCommon plugins for the Mac.
 
 ### Xamarin.Mac?
 
@@ -69,11 +69,11 @@ Xamarin offers a [Visual Studio extension](http://xamarin.com/visual-studio), ho
 
 ### Licensing Xamarin
 
-The Xamarin Platform requires a [paid license](https://store.xamarin.com/) to use.  
+The Xamarin Platform requires a [paid license](https://store.xamarin.com/) to use for commercial and enterprise development.  The Xamarin Platform - which includes Xamarin Studio - is [a benefit of MSDN Subscription](https://www.visualstudio.com/products/subscriber-benefits-vs).
+
+[Xamarin Studio Community Edition](https://store.xamarin.com/) is [free for students](https://xamarin.com/student) and [Open Source Software development](https://store.xamarin.com/).
 
 Xamarin's Platform can be [downloaded](https://xamarin.com/download) and tested before licensing.
-
-Xamarin is [free for students](https://xamarin.com/student).
 
 ---
 
@@ -90,7 +90,7 @@ It is important to stress: these *are* Visual Studio solutions and projects.  Yo
 
 ## Porting .NET code
 
-All of .NET is not yet implemented in Mono (although an awful lot is).  We recommend launching your plugin project in Xamarin Studio and attempting to compile. That is the best way to find any potential problems with getting your plugin to run on Mac Rhino. Please let McNeel know if you find something is missing from the SDK that you need, we may be able to provide this functionality in a Rhino for Mac service release.
+All of .NET is not yet implemented in Mono (although an awful lot is).  We recommend launching your plugin project in Xamarin Studio and attempting to compile. That is the best way to find any potential problems with getting your plugin to run on Rhino for Mac. Please let McNeel know if you find something is missing from the SDK that you need, we may be able to provide this functionality in a Rhino for Mac service release.
 
 ### P/Invoke
 
