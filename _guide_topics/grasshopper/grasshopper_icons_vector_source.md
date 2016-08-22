@@ -1,13 +1,13 @@
 ---
-title: Component Installers (Windows)
+title: Grasshopper Icons Vector Source
 description: This guide has yet to be authored or ported.
 author: david@mcneel.com
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
-platforms: ['Windows']
-categories: ['Getting Started']
-origin: http://www.grasshopper3d.com/forum/topics/how-do-i-install-a-custom-ghx
-order: 4
+platforms: ['Windows', 'Mac']
+categories: ['Fundamentals']
+origin: http://www.grasshopper3d.com/forum/topics/grasshopper-icons-vector-sourc
+order: 6
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 TODO: 'needs porting'

@@ -5,7 +5,7 @@ author: dan@mcneel.com
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows']
-categories: ['Overview']
+categories: ['Getting Started']
 origin: unset
 order: 3
 keywords: ['developer', 'grasshopper', 'components']
