@@ -6,11 +6,10 @@ apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Overview']
-origin: Grasshopper CHM Assembly Heirarchy Section
+origin: Grasshopper CHM Assembly Heirarchy section
 order: 1
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
-TODO: 'needs to be written.  Draw upon sources from origin, but most things are out-of-date'
 ---
 
 # {{ page.title }}
@@ -53,19 +52,19 @@ As a Class Library, Grasshopper references namespaces in addition to *RhinoCommo
   <tr>
     <td><i>GH_IO.dll</i></td>
     <td><a href="http://www.mcneel.com">McNeel</a></td>
-    <td>Input/Output library required to read and write Grasshopper files.</td>
+    <td>Grasshopper Input/Output library required to read and write Grasshopper files.</td>
     <td>Yes</td>
   </tr>
   <tr>
     <td><i>GH_Util.dll</i></td>
     <td><a href="http://www.mcneel.com">McNeel</a></td>
-    <td>Utility library containing some peripheral algorithms.</td>
+    <td>Grasshopper utility library containing some peripheral algorithms.</td>
     <td>Optional</td>
   </tr>
   <tr>
     <td><i>QWhale.*.dll</i></td>
     <td><a href="http://www.qwhale.net/">Quantum Whale</a></td>
-    <td>Syntax highlighter functionality.</td>
+    <td>Syntax highlighter functionality.  Contains a total of 5 dlls.</td>
     <td>Optional</td>
   </tr>
   <tr>
