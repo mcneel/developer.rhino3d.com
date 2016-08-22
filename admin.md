@@ -12,18 +12,18 @@ The goal of this site is to consolidate all the (now) scattered developer docume
 
 The sources of content-to-be-consolidated are:
 
-- <strike>Rhino Developer wiki</strike>
-- [RhinoCommon API references](http://4.rhino3d.com/5/rhinocommon/)...underway
-- [C++ SDK API references](http://4.rhino3d.com/5/rhinocppsdk/idx.html)
-- <strike>RhinoCommon samples on GitHub</strike>
-- [DaleF's CsCommands](https://github.com/dalefugier/SampleCsCommands/)
-- [Doxygen Docs (on McNeel intranet)](http://phab.mcneel.com/docs/rhino/6/rhinocommon/)
-- Dale Lear's Developer Meeting Notes
-- RhinoScript and Rhino.Python Primers
-- Mitch's MicMac tools: http://wiki.mcneel.com/people/mitchheynick
 - [Grasshopper SDK Help file (chm)](http://s3.amazonaws.com/files.na.mcneel.com/grasshopper/1.0/docs/en/GrasshopperSDK.chm).
 - Grasshopper posts ([How and Why of Datatrees](http://www.grasshopper3d.com/forum/topics/the-why-and-how-of-data-trees)), etc.
+- RhinoScript and Rhino.Python Primers
+- [C++ SDK API references](http://4.rhino3d.com/5/rhinocppsdk/idx.html)
+- [DaleF's CsCommands](https://github.com/dalefugier/SampleCsCommands/)
+- Dale Lear's Developer Meeting Notes
+- Mitch's MicMac tools: http://wiki.mcneel.com/people/mitchheynick
 - Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
+- <strike>Rhino Developer wiki</strike>
+- <strike>RhinoCommon API references</strike>
+- <strike>RhinoCommon samples on GitHub</strike>
+- <strike>Doxygen Docs (on McNeel intranet)</strike>
 
 **DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
 
