@@ -23,7 +23,7 @@ By the end of this guide, you should have all the tools installed necessary for 
 This guide presumes you have an:
 
 - A PC running Microsoft Windows 7 or later.
-- [RhinoWIP for Windows](https://discourse.mcneel.com/t/welcome-to-serengeti/9612) (current in development)
+- [RhinoWIP for Windows](https://discourse.mcneel.com/t/welcome-to-serengeti/9612) (currently in development)
 
 ---
 
