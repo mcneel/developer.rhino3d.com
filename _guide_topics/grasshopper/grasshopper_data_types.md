@@ -5,7 +5,7 @@ author: david@mcneel.com
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
-categories: ['Fundamentals']
+categories: ['In Depth']
 origin: http://www.grasshopper3d.com/forum/topics/grasshopper-data-types
 order: 1
 keywords: ['developer', 'grasshopper', 'components']

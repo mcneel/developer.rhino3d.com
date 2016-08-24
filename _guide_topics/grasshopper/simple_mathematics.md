@@ -1,13 +1,13 @@
 ---
-title: Components with a variable number of parameters
+title: Simple Mathematics
 description: This guide has yet to be authored or ported.
 author: david@mcneel.com
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
-categories: ['Advanced']
-origin: http://www.grasshopper3d.com/forum/topics/gha-developers-implementing-variable-parameters
-order: 4
+categories: ['Fundamentals']
+origin: http://s3.amazonaws.com/files.na.mcneel.com/grasshopper/1.0/docs/en/GrasshopperSDK.chm
+order: 2
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 TODO: 'needs porting'

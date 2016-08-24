@@ -353,6 +353,36 @@ order: 2
   </ul>
 </div>
 
+### Advanced
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.apis contains 'Grasshopper' and guide.categories contains 'Advanced' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### In Depth
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.apis contains 'Grasshopper' and guide.categories contains 'In Depth' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
 ---
 
 ## [RhinoScript]({{ site.baseurl }}/guides/rhinoscript) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
