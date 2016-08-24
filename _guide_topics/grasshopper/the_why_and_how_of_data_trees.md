@@ -5,7 +5,7 @@ author: david@mcneel.com
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
-categories: ['Fundamentals']
+categories: ['In Depth']
 origin: http://www.grasshopper3d.com/forum/topics/the-why-and-how-of-data-trees
 order: 2
 keywords: ['developer', 'grasshopper', 'components']

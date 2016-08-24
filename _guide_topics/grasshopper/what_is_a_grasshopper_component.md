@@ -6,10 +6,11 @@ apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Overview']
-origin: Grasshopper CHM Assembly Heirarchy section
+origin: http://s3.amazonaws.com/files.na.mcneel.com/grasshopper/1.0/docs/en/GrasshopperSDK.chm
 order: 1
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
+TODO: 'needs to be reviewed for accuracy.  Also, needs a little more high-level info'
 ---
 
 # {{ page.title }}
