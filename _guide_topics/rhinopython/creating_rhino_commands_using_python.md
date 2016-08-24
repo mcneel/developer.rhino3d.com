@@ -55,9 +55,23 @@ In the above *plugin.py*, the lines mean the following:
 - Line 2 has the version - it would be up to you to keep that current.
 - Line 3 has the command name.
 
-With this file in place in the *dev* sub-folder, then you can zip the containing plugin folder (*MyNewPlugIn{146e099d etc etc}*) and then rename it from *.zip* to the *.rhi* extension.  Double-clicking this *rhi* file on another system (Rhino closed) should install all the files in the correct location for that user.  Rhino should then see the command as a regular command.
+With this file in place, you can zip the contents of the _dev_ sub-folder and rename it to _MyNewPlugIn.rhi_.
 
-*NOTE*: sometimes, using this system, Rhino requires that Python be loaded before it can see the command the first time in a session - running `EditPythonScript`, or any other script should allow the command to work.
+The contents of _MyNewPlugin.rhi_ should be like this:
+
+```text
+MyNewPlugin.rhi
+├── __plugin__.py
+└── MyNewCommand_cmd.py
+```
+
+Double-clicking this *rhi* file on another system (with Rhino closed) should install all the files in the correct location for that user.  Rhino should then see the command as a regular command.
+
+<div class="alert alert-info">
+
+<strong>Note</strong>: sometimes, using this system, Rhino requires that Python be loaded before it can see the new command for the first time in a session - running <code>EditPythonScript</code>, or any other python script should allow the command to work.
+
+</div>
 
 ## Mac
 
