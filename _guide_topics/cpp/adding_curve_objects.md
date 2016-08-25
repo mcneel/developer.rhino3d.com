@@ -55,7 +55,7 @@ context.m_doc.Redraw();
 In this example, we first define a circle.  Then we create an `ON_ArcCurve` object from the circle definition. `ON_ArcCurve` is one of the many curve classes this is derived from `ON_Curve`. We then pass the `ON_ArcCurve` object off to `CRhinoDoc::AddCurveObject`.
 
 ```cpp
-ON_3dPoint center(0.0, 0.0, 0.0);
+ON_3dPoint center(0, 0, 0);
 double radius = 10.0;
 
 ON_Circle circle( center, radius );
