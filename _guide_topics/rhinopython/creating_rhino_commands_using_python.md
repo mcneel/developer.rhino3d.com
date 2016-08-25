@@ -41,7 +41,7 @@ First, we will cover [Rhino for Windows](#windows), then turn our attention to [
 
 ### Creating an RHI Installer
 
-In the *dev* sub-folder that is created in the plugin folder, create a *py* file named *plugin.py* that has only these lines:
+In the **`dev` sub-folder** that is created in the plugin folder, create a *py* file named `__plugin__.py` that has only these lines:
 
 ```py
 id="{146e099d-760d-4a6c-8662-96119f3fd62f}"
@@ -49,15 +49,15 @@ version="1.0.0.1"
 title="MyNewCommand"
 ```
 
-In the above *plugin.py*, the lines mean the following:
+In the above `__plugin__.py`, the lines mean the following:
 
 - Line 1 has the UUID from the plugin, found in the folder name.
 - Line 2 has the version - it would be up to you to keep that current.
 - Line 3 has the command name.
 
-With this file in place, you can zip the contents of the _dev_ sub-folder and rename it to _MyNewPlugIn.rhi_.
+With this file in place, you can zip the **contents of the `dev` sub-folder** and rename it to `MyNewPlugIn.rhi`.
 
-The contents of _MyNewPlugin.rhi_ should be like this:
+The contents of `MyNewPlugin.rhi` should look like this:
 
 ```text
 MyNewPlugin.rhi
@@ -65,11 +65,17 @@ MyNewPlugin.rhi
 └── MyNewCommand_cmd.py
 ```
 
-Double-clicking this *rhi* file on another system (with Rhino closed) should install all the files in the correct location for that user.  Rhino should then see the command as a regular command.
+<div class="alert alert-info">
+
+<strong>Note</strong>: It's important that the <code>__plugin__.py</code> file and any <code>*_cmd.py</code> files are in the root of the RHI package. The Rhino Installer Engine will unpack the contents of the RHI into a sub-folder named according to the version found in <code>__plugin__.py</code>, replacing the <code>dev</code> sub-folder used during development.
+
+</div>
+
+Double-clicking this `*.rhi` file on another system (with Rhino closed) should install all the files in the correct location for that user.  Rhino should then see the command as a regular command.
 
 <div class="alert alert-info">
 
-<strong>Note</strong>: sometimes, using this system, Rhino requires that Python be loaded before it can see the new command for the first time in a session - running <code>EditPythonScript</code>, or any other python script should allow the command to work.
+<strong>Note</strong>: Sometimes, using this system, Rhino requires that Python be loaded before it can see the new command for the first time in a session - running <code>EditPythonScript</code>, or any other python script should allow the command to work.
 
 </div>
 
