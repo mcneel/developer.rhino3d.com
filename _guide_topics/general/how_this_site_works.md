@@ -49,7 +49,7 @@ So, if you want to author a guide that applies to the current (_stable_) version
 
 What if you want to write a guide that applies to both the current stable version of Rhino *and* the RhinoWIP?  
 
-The easiest way is to work in the stable `master` branch and then copy and paste your guide into the `wip` branch.  Alternatively, you can [cherry-pick](https://git-scm.com/docs/git-cherry-pick) your commit from the `master` branch into the `wip` branch as well.
+The easiest way is to work in the stable `master` branch and then you can [cherry-pick](https://git-scm.com/docs/git-cherry-pick) your commit from the `master` branch into the `wip` branch as well.
 
 #### Typos
 
