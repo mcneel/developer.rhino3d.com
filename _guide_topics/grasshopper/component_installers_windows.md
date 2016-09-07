@@ -5,7 +5,7 @@ author: david@mcneel.com
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows']
-categories: ['Getting Started']
+categories: ['In Depth']
 origin: http://www.grasshopper3d.com/forum/topics/how-do-i-install-a-custom-ghx
 order: 4
 keywords: ['developer', 'grasshopper', 'components']

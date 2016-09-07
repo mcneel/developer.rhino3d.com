@@ -126,13 +126,20 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 
 **DONE!**
 
-**Congratulations!**  You have just built your first Grasshopper component for Rhino for Windows.
+**Congratulations!**  You have just built your first Grasshopper component for Rhino for Windows.  **Now what?**
+
+---
+
+## Next Steps
+
+You've built a component library from boilerplate code, but what about putting together a new simple component "from scratch" and adding it to your project?  (Component libraries are made up of multiple, components after all).  Next, check out the [Simple Component]({{ site.baseurl }}/guides/grasshopper/simple_component) guide.
 
 ---
 
 ## Related topics
 
 - [Installing Tools (Windows)]({{ site.baseurl }}/guides/grasshopper/installing_tools_windows)
+- [Simple Component]({{ site.baseurl }}/guides/grasshopper/simple_component)
 
 ---
 
