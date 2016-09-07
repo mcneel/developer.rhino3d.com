@@ -490,6 +490,16 @@ Build, run, and ...
 
 ![That was easy]({{ site.basurl }}/images/simple_component_03.png)
 
+**DONE!**
+
+You have just built your first Grasshopper component from the ground up.  **Now what?**
+
+---
+
+## Next Steps
+
+Now that you have built a component from scratch, let's discuss parameter order, default values for inputs, and go a little further in depth.  Next, check out the [Simple Mathematics Component]({{ site.baseurl }}/guides/grasshopper/simple_mathematics_component) guide.
+
 ---
 
 ## Related Topics
@@ -497,3 +507,4 @@ Build, run, and ...
 - [What is a Grasshopper Component?]({{ site.baseurl }}/guides/grasshopper/what_is_a_grasshopper_component)
 - [Installing Tools (Windows)]({{ site.baseurl }}/guides/grasshopper/installing_tools_windows/)
 - [Your First Component (Windows)]({{ site.baseurl }}/guides/grasshopper/your_first_component_windows)
+- [Simple Mathematics Component]({{ site.baseurl }}/guides/grasshopper/simple_mathematics_component)
