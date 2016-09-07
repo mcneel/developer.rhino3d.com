@@ -7,7 +7,7 @@ languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Advanced']
 origin: http://s3.amazonaws.com/files.na.mcneel.com/grasshopper/1.0/docs/en/GrasshopperSDK.chm
-order: 1
+order: 2
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 TODO: 'needs porting'

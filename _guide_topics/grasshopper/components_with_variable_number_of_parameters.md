@@ -7,7 +7,7 @@ languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Advanced']
 origin: http://www.grasshopper3d.com/forum/topics/gha-developers-implementing-variable-parameters
-order: 4
+order: 5
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 TODO: 'needs porting'
