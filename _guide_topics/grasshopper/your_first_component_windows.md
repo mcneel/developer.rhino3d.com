@@ -131,7 +131,7 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 
 ## Next Steps
 
-You've built a component library from boilerplate code, but what about putting together a new simple component "from scratch" and adding it to your project?  (Component libraries are made up of multiple, components after all).  Next, check out the [Simple Component]({{ site.baseurl }}/guides/grasshopper/simple_component) guide.
+You've built a component library from boilerplate code, but what about putting together a new simple component "from scratch" and adding it to your project?  (Component libraries are made up of multiple components after all).  Next, check out the [Simple Component]({{ site.baseurl }}/guides/grasshopper/simple_component) guide.
 
 ---
 
