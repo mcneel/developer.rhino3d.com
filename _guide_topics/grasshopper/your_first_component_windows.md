@@ -98,7 +98,6 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 1. As you can see, this is where the action happens.  This boilerplate component creates a spiral on a plane.  Just to make sure everything is working, let's change the default plane on which the spiral is constructed.  On line[^1] 67, in `SolveInstance`, notice that an XY plane is constructed...
 
         Plane plane = Plane.WorldXY;
-    1. Name: the name of the component as displayed in the ribbon bar and search menus  
 1. Further down in the `SolveInstance` method, you will notice that the input data is being fed into this plane...
 
         if (!DA.GetData(0, ref plane)) return;
@@ -144,16 +143,5 @@ You've built a component library from boilerplate code, but what about putting t
 ---
 
 ## Footnotes
-1. Set your project as the start-up project in Visual Studio.
-2. From the *Debug* menu in Visual Studio, click *Start Debugging*
-3. After Rhino starts, run the *GrasshopperDeveloperSettings* command
-4. Clear the *Memory load .GHA assemblies using COFF byte arrays* checkbox
-5. Click *Add Folder* and add the bin\Debug output folder of your project to Grasshopper's search path
-6. (Optional) Automatically start Grasshopper every time Rhino starts
-    1. From the *Tools* menu, click *Options*, then click *General*
-    2. In the *Run these commands every time Rhino starts* text area, type *_Grasshopper* then click *OK*
-7. Close Rhino
 
-## Debugging your Component
-1. Set breakpoints as needed
 [^1]: **Line numbers** in Visual Studio can be enabled and disabled in **Tools** > **Options...** > **Text Editor** section > **All Languages** entry > **General** sub-entry > **Settings** subsection > check **Line numbers**.  Click **OK** to close the **Options** dialog.
