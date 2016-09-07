@@ -336,7 +336,6 @@ order: 2
 
 - [Installing Tools]({{ site.baseurl }}/guides/grasshopper/installing_tools_windows/)
 - [Your First Component]({{ site.baseurl }}/guides/grasshopper/your_first_component_windows/)
-- [Component Installers]({{ site.baseurl }}/guides/grasshopper/component_installers_windows/)
 
 ### Fundamentals
 
