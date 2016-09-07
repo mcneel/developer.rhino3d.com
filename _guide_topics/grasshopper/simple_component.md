@@ -508,3 +508,4 @@ Now that you have built a component from scratch, let's discuss parameter order,
 - [Installing Tools (Windows)]({{ site.baseurl }}/guides/grasshopper/installing_tools_windows/)
 - [Your First Component (Windows)]({{ site.baseurl }}/guides/grasshopper/your_first_component_windows)
 - [Simple Mathematics Component]({{ site.baseurl }}/guides/grasshopper/simple_mathematics_component)
+- [Simple Geometry Component]({{ site.baseurl }}/guides/grasshopper/simple_geometry_component)

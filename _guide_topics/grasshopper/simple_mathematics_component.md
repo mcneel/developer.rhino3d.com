@@ -18,15 +18,15 @@ layout: toc-guide-page
 
 We'll discuss parameter order, legacy support for changing component layouts and default values for input parameters.
 
+For this component we'll bundle the Sine(), Cosine() and Tangent() trigonometry functions while allowing inputs to be specified in either Radians or Degrees.  We'll need to define two input parameter (one of which will have a default value) and three output parameters.
+
 ## Prerequisites
 
 We will not be dealing with any of the basics of component development.  Please start with the [Your First Component]({{ site.baseurl }}/guides/grasshopper/your_first_component_windows) guide and the [Simple Component]({{ site.baseurl }}/guides/grasshopper/simple_component) guide before starting this one.
 
-## Input parameters
-
-For this component we'll bundle the Sine(), Cosine() and Tangent() trigonometry functions while allowing inputs to be specified in either Radians or Degrees.  We'll need to define two input parameter (one of which will have a default value) and three output parameters.
-
 Before you start, create a new class that derives from `Grasshopper.Kernel.GH_Component`, as outlined in the [Simple Component]({{ site.baseurl }}/guides/grasshopper/simple_component) guide.
+
+## Input parameters
 
 This component will require two input parameters, one of which has a default value.  We'll need to register these parameters inside the `RegisterInputParams()` method:
 
@@ -215,6 +215,16 @@ End Sub
 
 </div>
 
+**DONE!**
+
+We've discussed parameter order, legacy support for changing component layouts, and default values for input parameters.  **Now what?**
+
+---
+
+## Next Steps
+
+Next, check out the [Simple Geometry Component]({{ site.baseurl }}/guides/grasshopper/simple_geometry_component) guide to see how to use some of the simpler geometry types and classes in RhinoCommon and Grasshopper.
+
 ---
 
 ## Related Topics
@@ -223,3 +233,4 @@ End Sub
 - [Installing Tools (Windows)]({{ site.baseurl }}/guides/grasshopper/installing_tools_windows/)
 - [Your First Component]({{ site.baseurl }}/guides/grasshopper/your_first_component_windows)
 - [Simple Component]({{ site.baseurl }}/guides/grasshopper/simple_component)
+- [Simple Geometry Component]({{ site.baseurl }}/guides/grasshopper/simple_geometry_component)
