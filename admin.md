@@ -12,13 +12,12 @@ The goal of this site is to consolidate all the (now) scattered developer docume
 
 The sources of content-to-be-consolidated are:
 
-- [Grasshopper SDK Help file (chm)](http://s3.amazonaws.com/files.na.mcneel.com/grasshopper/1.0/docs/en/GrasshopperSDK.chm).
 - RhinoScript and Rhino.Python Primers
 - [C++ SDK API references](http://4.rhino3d.com/5/rhinocppsdk/idx.html)
+- [Grasshopper SDK API references (in Help chm)](http://s3.amazonaws.com/files.na.mcneel.com/grasshopper/1.0/docs/en/GrasshopperSDK.chm)
 - [DaleF's CsCommands](https://github.com/dalefugier/SampleCsCommands/)
-- Dale Lear's Developer Meeting Notes
-- Mitch's MicMac tools: http://wiki.mcneel.com/people/mitchheynick
 - Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
+- <strike>Grasshopper SDK Help file (chm) topics</strike>
 - <strike>Grasshopper Forum posts</strike>
 - <strike>Rhino Developer wiki</strike>
 - <strike>RhinoCommon API references</strike>
