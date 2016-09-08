@@ -511,3 +511,4 @@ Now that you have built a component from scratch, let's discuss parameter order,
 - [Simple Geometry Component]({{ site.baseurl }}/guides/grasshopper/simple_geometry_component)
 - [Simple Data Types]({{ site.baseurl }}/guides/grasshopper/simple_data_types)
 - [Simple Parameters]({{ site.baseurl }}/guides/grasshopper/simple_parameters)
+- [Custom Component Options]({{ site.baseurl }}/guides/grasshopper/custom_component_options)
