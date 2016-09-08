@@ -509,3 +509,5 @@ Now that you have built a component from scratch, let's discuss parameter order,
 - [Your First Component (Windows)]({{ site.baseurl }}/guides/grasshopper/your_first_component_windows)
 - [Simple Mathematics Component]({{ site.baseurl }}/guides/grasshopper/simple_mathematics_component)
 - [Simple Geometry Component]({{ site.baseurl }}/guides/grasshopper/simple_geometry_component)
+- [Simple Data Types]({{ site.baseurl }}/guides/grasshopper/simple_data_types)
+- [Simple Parameters]({{ site.baseurl }}/guides/grasshopper/simple_parameters)

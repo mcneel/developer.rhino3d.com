@@ -712,3 +712,5 @@ End Function
 ## Related Topics
 
 - [Grasshopper Data Types]({{ site.baseurl }}/guides/grasshopper/grasshopper_data_types)
+- [Simple Component]({{ site.baseurl }}/guides/grasshopper/simple_component)
+- [Simple Parameters]({{ site.baseurl }}/guides/grasshopper/simple_parameters)
