@@ -18,6 +18,8 @@ layout: toc-guide-page
 
 We'll discuss how to deal with different access levels of input data and invalid Structs vs. invalid and null Classes.
 
+## Overview
+
 This component will perform a simple Circle-Line Split operation.  We'll retrieve a single Circle and a single Line input, make sure the data is valid, project the line onto the circle plane, determine whether or not the Split operation is valid and then output the two arcs on either side of the slicing line.
 
 ## Prerequisites
