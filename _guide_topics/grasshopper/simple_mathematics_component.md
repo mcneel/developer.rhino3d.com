@@ -16,6 +16,8 @@ layout: toc-guide-page
 
 {{ page.description }}
 
+## Overview
+
 We'll discuss parameter order, legacy support for changing component layouts and default values for input parameters.
 
 For this component we'll bundle the Sine(), Cosine() and Tangent() trigonometry functions while allowing inputs to be specified in either Radians or Degrees.  We'll need to define two input parameter (one of which will have a default value) and three output parameters.

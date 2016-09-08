@@ -18,7 +18,7 @@ layout: toc-guide-page
 
 ## Overview
 
-Grasshopper is an application that deals with a lot of different types of data. These data types can come from 6 different sources and some of them will not be known when Grasshopper is written and compiled. The six potential sources are:
+Grasshopper is an application that deals with a lot of different types of data.  These data types can come from 6 different sources and some of them will not be known when Grasshopper is written and compiled.  The six potential sources are:
 
 1. Primitive types such as `Booleans`, `Integers`, `Colors`, `Strings`, etc. Grasshopper uses these types itself a lot.
 1. Other .NET Framework types such as `System.Drawing.PointF` or `System.Collections.Generic.HashSet<T>`. Grasshopper does not use these types to during component-to-component communication, but someone else might.
@@ -100,3 +100,9 @@ G:
 More succinctly, Grasshopper calls the `CastTo<B>` method on the instance of A, asking it if it knows how to convert itself into a B type.  If that fails, it'll construct a new empty B instance and ask it using the `CastFrom<A>` method whether it knows how to interpret the A data and mimic it.  If both these methods fail then Grasshopper will put up an error and leave that slot blank.
 
 The `ScriptVariable` method allows data to protect itself from potentially ill-informed programmers.  Using this method, Grasshopper tells some data that it's about to be handed over to a script (ie. a VB/C#/Python component) and whether it would like to maybe provide a different kind of data instead.  For example a `GH_Boolean` might assume that the scripter does't really care for all that `IGH_Goo` malarkey and instead of pumping a `GH_Boolean` instance into a script just the value on the inside is provided.
+
+---
+
+## Related Topics
+
+- [Simple Data Types]({{ site.baseurl }}/guides/grasshopper/simple_data_types)
