@@ -3,4 +3,4 @@
 	url = https://github.com/mcneel/rhinocommon-api-docs.git
 [submodule "api/RhinoCommonWin"]
 	path = api/RhinoCommonWin
-	url = https://github.com/mcneel/rhinocommon-api-docs-win.git
+	url = https://github.com/mcneel/rhinocommon-api-docs.git
