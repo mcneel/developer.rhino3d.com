@@ -68,6 +68,7 @@ order: 2
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
+  <li><a href="{{ site.baseurl }}/api/RhinoCommon">API Reference</a></li>
   {% for guide in guides %}
     {% if guide.apis contains 'RhinoCommon' and guide.categories contains 'Advanced' %}
       {% if guide.title and guide.order %}
