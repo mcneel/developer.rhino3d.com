@@ -44,11 +44,13 @@ Visual Studio 2015 comes in [three editions](https://www.visualstudio.com/downlo
 ![Visual Studio Install]({{ site.baseurl }}/images/installing_tools_windows_cpp_01.png)
 1. Depending on your internet connection, this can take minutes or hours.  When successfully installed, click the **Launch** button.
 
-## Downloads
+## Install the Rhino C/C++ SDK
+The [Rhino C/C++ SDK](https://discourse.mcneel.com/t/rhino-wip-developers/30197) is a set of tools for creating plug-in using the C++ language. The SDK includes headers, libraries and Visual Studio project wizards to get you started creating plugins quickly.
 
-- [Rhino 5 for Windows C++ SDK](http://download.rhino3d.com/rhino/5.0/sdk)
-- [Rhino 5 for Windows (Evaluation)](http://download.rhino3d.com/rhino/5.0/evaluation/download)
-- [Rhino 5 for Windows Service Release](http://www.rhino3d.com/download/rhino/5.0/sr)
+1. Exit **Visual Studio**.
+1. **Download** the [Rhino C/C++ SDK](https://discourse.mcneel.com/t/rhino-wip-developers/30197).
+1. **Run** the Rhino C/C++ SDK installer you downloaded, in this case ***rh60sdk_[version].msi***
+1. If the installation is successful, run Visual Studio.
 
 ## Next Steps
 
