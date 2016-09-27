@@ -49,7 +49,7 @@ The [Rhino C/C++ SDK](https://discourse.mcneel.com/t/rhino-wip-developers/30197)
 
 1. Exit **Visual Studio**.
 1. Download the **[Rhino C/C++ SDK](https://discourse.mcneel.com/t/rhino-wip-developers/30197)**.
-1. Run the **SDK installer** you downloaded, in this case ***rh60sdk_[version].msi***
+1. Run the **SDK installer** you downloaded, in this case ***rh60sdk_[version].msi***.
 1. If the installation is successful, run Visual Studio.
 
 ---
