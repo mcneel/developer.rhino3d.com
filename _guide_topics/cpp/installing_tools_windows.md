@@ -28,12 +28,13 @@ This guide presumes you have:
 
 ---
 
-## Necessary Tools
+## Install Visual Studio
 
-Microsoft Visual C++ 2010 for Rhino 5 for Windows 64-bit.
-Microsoft Visual C++ 2005 for Rhino 5 for Windows 32-bit and Rhino 4 for Windows.
+In order to author, build, and debug C/C++ plug-ins for Rhino, you will need Microsoft [Visual Studio 2015](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx).
 
-*Visual C++ 2008, 2012, 2013, and the Express Editions of Visual C++ will **not** work.*
+Visual Studio 2015 comes in [three editions](https://www.visualstudio.com/downloads): Community, Professional, and Enterprise. Any of these editions will work.
+
+Note, the Community edition free for individual developers, open source projects, academic research, education, and small professional teams. See the [Visual Studio Community Licensing terms](https://www.visualstudio.com/license-terms/mt171547) for details.
 
 ## Downloads
 
