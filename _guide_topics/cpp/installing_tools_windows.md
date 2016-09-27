@@ -48,8 +48,8 @@ Visual Studio 2015 comes in [three editions](https://www.visualstudio.com/downlo
 The [Rhino C/C++ SDK](https://discourse.mcneel.com/t/rhino-wip-developers/30197) is a set of tools for creating plug-in using the C++ language. The SDK includes headers, libraries and Visual Studio project wizards to get you started creating plugins quickly.
 
 1. Exit **Visual Studio**.
-1. **Download** the [Rhino C/C++ SDK](https://discourse.mcneel.com/t/rhino-wip-developers/30197).
-1. **Run** the Rhino C/C++ SDK installer you downloaded, in this case ***rh60sdk_[version].msi***
+1. Download the **[Rhino C/C++ SDK](https://discourse.mcneel.com/t/rhino-wip-developers/30197)**.
+1. Run the **SDK installer** you downloaded, in this case ***rh60sdk_[version].msi***
 1. If the installation is successful, run Visual Studio.
 
 ---
