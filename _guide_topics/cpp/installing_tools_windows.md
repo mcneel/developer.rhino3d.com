@@ -17,13 +17,16 @@ TODO: 'needs to be written.'
 
 {{ page.description }}
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C/C++ plugins using the Rhino C/C++ SDK on Windows.
 
+## Prerequisites
+
+This guide presumes you have an:
+
+- A PC running Microsoft Windows 7 or later.
+- [The Rhino WIP](https://discourse.mcneel.com/t/welcome-to-serengeti/9612).
+
+---
 
 ## Necessary Tools
 
