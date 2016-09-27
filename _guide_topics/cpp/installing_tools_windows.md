@@ -21,7 +21,7 @@ By the end of this guide, you should have all the tools installed necessary for 
 
 ## Prerequisites
 
-This guide presumes you have an:
+This guide presumes you have:
 
 - A PC running Microsoft Windows 7 or later.
 - [The Rhino Work-In-Progress (WIP)](https://discourse.mcneel.com/t/welcome-to-serengeti/9612).
