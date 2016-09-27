@@ -34,9 +34,15 @@ In order to author, build, and debug C/C++ plugins for Rhino, you will need Micr
 
 Visual Studio 2015 comes in [three editions](https://www.visualstudio.com/downloads): Community, Professional, and Enterprise. All of these editions will work with the Rhino C/C++ SDK.
 
-Note, the Community edition free for individual developers, open source projects, academic research, education, and small professional teams. See the [Visual Studio Community Licensing terms](https://www.visualstudio.com/license-terms/mt171547) for details.
+*Note*: Rhino C/C++ SDK plugins **cannot** be authored in version of Visual Studio older than 2015. Rhino is built with Visual Studio 2015, and your plugin must link with the same versions of C-Runtime and MFC and Rhino. 
 
-*Note*: Rhino C/C++ SDK plugins **cannot** be authored in version of Visual Studio older than 2015. Rhino is build with Visual Studio 2015, and your plugin must link with the same versions of C-Runtime and MFC and Rhino. 
+#### Step-by-Step
+
+1. **[Visual Studio 2015 Community Edition](https://www.visualstudio.com/vs-2015-product-editions)** is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/en-us/support/legal/mt171547).  Click the **Community** button to download the installer.
+1. Run the **Visual Studio installer** you downloaded from Microsoft, in this case ***vs_community.exe***.
+1. Follow the onscreen prompts to install Visual Studio. Make sure to select all of the **Visual C++** features. 
+![Visual Studio Install]({{ site.baseurl }}/images/installing_tools_windows_cpp_01.png)
+1. Depending on your internet connection, this can take minutes or hours.  When successfully installed, click the **Launch** button.
 
 ## Downloads
 
