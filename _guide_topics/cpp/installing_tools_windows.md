@@ -52,8 +52,10 @@ The [Rhino C/C++ SDK](https://discourse.mcneel.com/t/rhino-wip-developers/30197)
 1. **Run** the Rhino C/C++ SDK installer you downloaded, in this case ***rh60sdk_[version].msi***
 1. If the installation is successful, run Visual Studio.
 
-## Next Steps
-
 ---
 
-## Related Topics
+## Next Steps
+
+**Congratulations!** You have the tools to build a C/C++ plugin for Rhino for Windows. **Now what?**
+
+Check out the [Creating your first C/C++ plugin for Rhino]({{ site.baseurl }}/guides/cpp/your_first_plugin_windows/) guide for instructions building - your guessed it - your first plugin.
