@@ -7,7 +7,7 @@ languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/authoring
-order: 3
+order: 5
 keywords: ['c', 'C/C++', 'plugin', 'installer']
 layout: toc-guide-page
 TODO: 'needs porting - see additional TODO'
