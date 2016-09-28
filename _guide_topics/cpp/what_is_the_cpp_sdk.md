@@ -28,7 +28,7 @@ Rhino supports five different types of plugins:
 1. **File Import**: Imports data from other file formats into Rhino; can support more that one format.
 1. **File Export**: Exports data from Rhino to other file formats; can support more than one format.
 1. **Custom Rendering**: Applies materials, textures, and lights to a scene to produce rendered images.
-1. **3D Digitizing**: Interfaces with 3D digitizing devices, such as those made by Revware, Faro, & Romer.
+1. **3D Digitizing**: Interfaces with 3D digitizing devices.
 
 ***Note***: File Import, File Export, Custom Rendering and 3D Digitizing plugins are all specialized enhancements to the General Utility plugin.  Thus, all plugin types can contain one or more commands.
 
