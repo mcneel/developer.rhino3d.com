@@ -38,7 +38,7 @@ To use this tool in Visual Studio 2015:
 1. Use the *Add* button to add the *RhinoCommandGenerator.exe* file to the list.  The file can be found in the following location: *C:\\Program Files\\Rhino 6.0 SDK\\Wizards\\Command*
 ![Rhino Command Generator]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_07.png)
 
-Once the tool is installed, you can create a new command by selecting *Tools* > *Rhino Command*. If you add the command declaration to a new .cpp file, be sure to `#include "stdafx.h"` at the top.
+Once the tool is installed, you can create a new command by selecting *Tools* > *Rhino Command*. If you add the command declaration to a new *.cpp* file, be sure to `#include "stdafx.h"` at the top.
 
 ## Sample
 
