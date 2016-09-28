@@ -38,23 +38,9 @@ In order to take advantage of the inclusion of debug Rhino, the build configurat
 - The *Release* configuration of your program contains no symbolic debug information and is fully optimized.  *Debug* information can be generated in PDB Files (C/C++) depending on the compiler options used.  Creating PDB files can be very useful if you later need to debug your release version.  The *Release* configuration also links with release runtime libraries.  Plugins built with the *Release* configuration will only load in release Rhino.
 - The *DebugRhino* configuration of your program is compiled with full symbolic debug information and no optimization.  Optimization complicates debugging, because the relationship between source code and generated instructions is more complex.  The *DebugRhino* configuration also links with debug runtime libraries. Plugins built with the *DebugRhino* configuration will only load in debug Rhino.
 
-These plugin build configurations link with the following SDK libraries and target the following executables:
-
-| Configuration     | | | | Rhino Lib     | | | | 	opennurbs Lib     | | | | Target Executable     |
-| :------------- | | | | :------------- | | | | :------------- | | | | :------------- |
-| *Debug*       | | | | *Rhino_d.lib*      | | | | *opennurbs_d.lib*       | | | | *Rhino_d.exe*       |
-| *PseudoDebug*	       | | | | *Rhino.lib*       | | | | *opennurbs.lib*       | | | | *Rhino.exe*       |
-| *Release*       | | | | *Rhino.lib*       | | | | *opennurbs.lib*      | | | | *Rhino.exe*       |
-
-Again, you can switch between *Debug*, *Release*, and *DebugRhino* build configurations by using Visual Studio's *Standard toolbar* or the *Configuration Manager* dialog.
+You can switch between *Debug*, *Release*, and *DebugRhino* build configurations by using Visual Studio's *Standard toolbar* or the *Configuration Manager* dialog.
 
 ## Debugging Plugins
-
-<div class="bs-callout bs-callout-danger">
-  <h4>CRITICAL</h4>
-  <p>In order to run the debug version of Rhino (<i>Rhino_d.exe</i>), you will need a non-evaluation version of Rhino installed on your system.  Also, the non-evaluation version of Rhino that you are using must match your Rhino C/C++ SDK version.  For example, if you are using Rhino 5.0 SR7, you must also have the Rhino 5.0 SR7 SDK order to run debug Rhino.  By the same token, in order to run the debug version of Rhino (<i>Rhino_d.exe</i>), your system must have the correct Debug libraries. To ensure this, make sure your development system is "up-to-date" with all of the available Visual Studio service packs and security updates.  Using Windows Updates will ensure this.  Or, just select <i>Help</i> > <i>Check for Updates</i> inside of Visual Studio.</p>
-</div>
-
 You can debug your plugin in the following build configurations:
 
 - *Debug* configuration.  The advantage of debugging your plugin using the *Debug* configuration is that all other plugins will be loaded during the debugging session.  This is because release Rhino will load all release plugins.  The disadvantage of debugging your plugin using the *Debug* configuration is that you cannot debug into MFC, as this configuration links with release MFC libraries.
