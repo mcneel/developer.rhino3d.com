@@ -74,6 +74,7 @@ Reviewing the above settings, you can see that, unlike Rhino 5 plugin projects, 
 Visual Studio projects have hundreds of compiler switches and options to choose from. Using custom [Project Property Sheets](https://msdn.microsoft.com/en-us/library/669zx6zc.aspx) is a convenient way to synchronize or share these common settings among other projects. 
 
 The Plugin Wizard, used to generate the plugin project, adds Rhino plugin-specific property sheets to the project.  To view these propety sheets, click *View* > *Property Manager*.
+
 ![Test Property Manager]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_06.png)
 
 ### Boilerplate Build
