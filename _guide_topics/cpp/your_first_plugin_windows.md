@@ -68,7 +68,7 @@ With *Visual Studio 2015*, you can view a project's setting by clicking *Project
 
 ![Test Property Pages]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_04.png)
 
-Reviewing the above settings, you can see that, unlike Rhino 5 plugin projects, there is no 32-bit platform.  This is because the is no 32-bit version of Rhino 6.
+Reviewing the above settings, you can see that, unlike Rhino 5 plugin projects, there is no 32-bit platform.  This is because Rhino 6 is only available as a 64-bit application.
 
 ### Property Sheets
 Visual Studio projects have hundreds of compiler switches and options to choose from. Using custom [Project Property Sheets](https://msdn.microsoft.com/en-us/library/669zx6zc.aspx) is a convenient way to synchronize or share these common settings among other projects. 
