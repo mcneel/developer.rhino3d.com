@@ -27,12 +27,16 @@ Rhino will load plugins in two ways:
 1. When Needed (Default). Plugin will not be loaded when Rhino starts.  Plugin will be loaded when a plugin defined command is run, when a user selects a plugin defined file import/export type, or if a 3DM file has user data that was created by your plugin.
 1. At Startup. Plugin is loaded when Rhino is loaded and initialized.
 
-To set your plugin to load on startup, you need to override your plugin object's `PlugInLoadTime` virtual function and return the `load_plugin_at_startup` enumerated value.
+To set your plugin to load on startup, you need to override your plugin object's `CRhinoPlugIn::PlugInLoadTime()` virtual function and return the `CRhinoPlugIn::load_plugin_at_startup` enumerated value.  See *rhinoSdkPlugIn.h* for details.
 
 ## Sample
 
 ```cpp
-CRhinoPlugIn::plugin_load_time PlugInLoadTime()
+// Description:
+//    Called by Rhino when writing plug-in information to the registry.  This
+//    information will be read the next time Rhino starts to identify properly
+//    installed plug-ins.
+CRhinoPlugIn::plugin_load_time CTestPlugIn::PlugInLoadTime()
 {
   return CRhinoPlugIn::load_plugin_at_startup;
 }
