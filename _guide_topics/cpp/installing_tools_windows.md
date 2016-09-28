@@ -29,13 +29,11 @@ This guide presumes you have:
 ---
 
 ## Install Visual Studio
-The native classes and libraries that are made available via the Rhino C/C++ SDK are also used internally by Rhino. As a result of this tight linkage with Rhino itself, the libraries are very compiler specific, and work only with the same compiler that was used to build Rhino.
-
 In order to author, build, and debug C/C++ plugins for Rhino, you will need Microsoft [Visual Studio 2015](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx).
 
 Visual Studio 2015 comes in [three editions](https://www.visualstudio.com/downloads): Community, Professional, and Enterprise. All of these editions will work with the Rhino C/C++ SDK.
 
-*Note*: Rhino C/C++ SDK plugins **cannot** be authored in versions of Visual Studio older than 2015. Rhino is built with Visual Studio 2015, and your plugin must link with the same versions of C-Runtime and MFC and Rhino. 
+*Note*: Rhino C/C++ SDK plugins **cannot** be authored in versions of Visual Studio older than 2015. The native classes and libraries that are made available via the Rhino C/C++ SDK are also used internally by Rhino. As a result of this tight linkage with Rhino itself, the libraries are very compiler specific, and work only with the same compiler that was used to build Rhino.
 
 #### Step-by-Step
 
