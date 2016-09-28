@@ -7,7 +7,7 @@ languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/buildconfigurations
-order: 6
+order: 4
 keywords: ['rhino']
 layout: toc-guide-page
 TODO: 'needs to be reviewed for accuracy and considered for consolidation with other plugin topics'
