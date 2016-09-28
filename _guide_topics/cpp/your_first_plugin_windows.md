@@ -64,7 +64,7 @@ The following files are of interest:
 
 ### Project Settings
 
-With *Visual Studio 2015*, you can view a project's setting by clicking *Project* > *[Project] Properties...*.
+With *Visual Studio 2015*, you can view a project's setting by clicking *Project* > *[ProjectName] Properties...*.
 
 ![Test Property Pages]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_04.png)
 
