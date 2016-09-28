@@ -109,7 +109,7 @@ Before we can build our project, we need to fill in the Rhino plugin developer d
 ![Rhino Options]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_05.png)
 1. Once your plugin is loaded, close the options dialog and run your `Test` command.  You have finished creating your first plugin!
 
-## Adding a Command
+## Adding Additional Commands
 
 Rhino plugins can contain any number of commands.  Commands are created by deriving a new class from `CRhinoCommand`.  See *rhinoSdkCommand.h* for details on the `CRhinoCommand` class.
 
