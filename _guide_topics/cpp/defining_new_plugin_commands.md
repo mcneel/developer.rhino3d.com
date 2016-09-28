@@ -112,8 +112,7 @@ CRhinoCommand::result CCommandTest::RunCommand(const CRhinoCommandContext& conte
   // TODO: Return one of the following values:
   //   CRhinoCommand::success:  The command worked.
   //   CRhinoCommand::failure:  The command failed because of invalid input, inability
-  //                            to compute the desired result, or some other reason
-  //                            computation reason.
+  //                            to compute the desired result, or some other reason.
   //   CRhinoCommand::cancel:   The user interactively canceled the command 
   //                            (by pressing ESCAPE, clicking a CANCEL button, etc.)
   //                            in a Get operation, dialog, time consuming computation, etc.
