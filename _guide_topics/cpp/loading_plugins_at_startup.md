@@ -5,9 +5,9 @@ author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
-categories: ['Getting Started']
+categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/sdksamples/pluginloadtime
-order: 4
+order: 1
 keywords: ['rhino']
 layout: toc-guide-page
 ---
