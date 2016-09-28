@@ -25,16 +25,14 @@ The Rhino SDK includes a Visual Studio Project Wizard.  The wizard program gener
 
 ### Plugin Wizard
 
-1. Launch *Visual Studio 2010* and navigate to *File* > *New* > *Project...*.
-1. From the *New Project* dialog, select the *Rhino 5.0 Plug-in* template from the list of installed templates...
+1. Launch *Visual Studio 2015* and navigate to *File* > *New* > *Project...*.
+1. From the *New Project* dialog, select the *Rhinoceros 6 Plug-in* template from the list of installed templates...
 ![New Project Template]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_01.png)
 1. Type the project name as shown above.  You can enter a different name if you want.  The wizard uses the project name when it creates files and classes.  If you enter a different name, your files and classes will have a name different from that of the files and classes mentioned in this tutorial.  Don’t forget to choose a location to store the project.  When finished, click the *OK* button.
-1. Upon clicking *OK*, the *Overview* page of the *Rhino 5.0 Plug-In Wizard* dialog will appear.  This page gives you an overview of the type of project that the wizard is going to create.  
+1. Upon clicking *OK*, the *Overview* page of the *Rhinoceros 6 Plug-In Wizard* dialog will appear.  This page gives you an overview of the type of project that the wizard is going to create.  
 ![New Project Overview]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_02.png)
 1. Not that, by default, the wizard will do the following:
      1. Create a general utility plugin.
-     1. Include source file comments.
-     1. Include support for online help.
 1. If you are satisfied with the default settings, just click the *Finish* button.  If you want to change any of these settings, click the *Next* button...
 ![Plugin Settings]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_03.png)
 1. The *Plug-in Settings* page allows you to modify a number of settings used by the wizard when generating the plugin source code:
@@ -44,6 +42,7 @@ The Rhino SDK includes a Visual Studio Project Wizard.  The wizard program gener
      1. *Online help*: Select this option if you want your plugin to support online help.  If selected, a menu item will be displayed on Rhino's *Help* menu.
      1. *Automation*: Select this option to allow your program to manipulate objects implemented in another program.  Selecting this option also exposes your program to other Automation client plugins.
      1. *Windows sockets*: Select this option to indicate that your program supports Windows sockets.  Windows sockets allow you to write programs that communicate over TCP/IP networks.
+     1. *Security Development Lifecycle (SDL) checks*: Select this option to add recommended Security Development Lifecycle (SDL) checks to the project. These checks include extra security-relevant warnings as errors, and additional secure code-generation features.  For more information see [Enable Additional Security Checks](https://msdn.microsoft.com/en-us/library/jj161081.aspx).
 1. For this tutorial, just accept the default settings. Click the *Finish* button, and the wizard begins to generate your plugin project’s folders, files, and classes.  When the wizard is finished, look through the plugin project using *Visual Studio’s Solution Explorer*...
 
 ### Plugin Anatomy
@@ -61,6 +60,7 @@ The following files are of interest:
 1. *Resource.h* is the `#define` constant definitions for resources.
 1. *Test.rc* is the resource script.
 1. *Test.def* is the module definition.
+1. *targetver.h* is used to define the support Windows platform.
 
 ### Project Settings
 
