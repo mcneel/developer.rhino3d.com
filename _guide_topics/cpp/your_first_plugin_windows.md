@@ -64,7 +64,7 @@ The following files are of interest:
 
 ### Project Settings
 
-With *Visual Studio 2010*, a project can target a different version of the Visual C++ libraries and compiler.  This is done by configuring the project use a different *Platform* toolset...
+With *Visual Studio 2015*, you can view a project's setting by clicking *Project* > *[Project] Properties...* or by pressing <Alt><F7>.
 
 ![Test Property Pages]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_04.png)
 
