@@ -7,7 +7,7 @@ languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/sdksamples/addcommand
-order: 5
+order: 3
 keywords: ['rhino', 'commands']
 layout: toc-guide-page
 TODO: 'needs to be reviewed for accuracy and considered for consolidation with other plugin topics'
