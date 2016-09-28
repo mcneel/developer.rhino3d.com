@@ -42,7 +42,7 @@ The Rhino SDK includes a Visual Studio Project Wizard.  The wizard program gener
      1. *Online help*: Select this option if you want your plugin to support online help.  If selected, a menu item will be displayed on Rhino's *Help* menu.
      1. *Automation*: Select this option to allow your program to manipulate objects implemented in another program.  Selecting this option also exposes your program to other Automation client plugins.
      1. *Windows sockets*: Select this option to indicate that your program supports Windows sockets.  Windows sockets allow you to write programs that communicate over TCP/IP networks.
-     1. *Security Development Lifecycle (SDL) checks*: Select this option to add recommended Security Development Lifecycle (SDL) checks to the project. These checks include extra security-relevant warnings as errors, and additional secure code-generation features.  For more information see [Enable Additional Security Checks](https://msdn.microsoft.com/en-us/library/jj161081.aspx).
+     1. *Security Development Lifecycle (SDL) checks*: Select this option to add recommended Security Development Lifecycle (SDL) checks to the project. These checks include extra security-relevant warnings as errors, and additional secure code-generation features.  For more information, see [Enable Additional Security Checks](https://msdn.microsoft.com/en-us/library/jj161081.aspx).
 1. For this tutorial, just accept the default settings. Click the *Finish* button, and the wizard begins to generate your plugin project’s folders, files, and classes.  When the wizard is finished, look through the plugin project using *Visual Studio’s Solution Explorer*...
 
 ### Plugin Anatomy
@@ -64,49 +64,52 @@ The following files are of interest:
 
 ### Project Settings
 
-With *Visual Studio 2015*, you can view a project's setting by clicking *Project* > *[Project] Properties...* or by pressing <Alt><F7>.
+With *Visual Studio 2015*, you can view a project's setting by clicking *Project* > *[ProjectName] Properties...*.
 
 ![Test Property Pages]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_04.png)
 
-Reviewing the above settings, you can see that the Rhino 5 plugin project wizard configures 32-bit builds to use the *v80rhinos* platform toolset, which equates to using Visual Studio 2005's libraries and compiler.  This platform toolset configuration is installed on your system by the Rhino C++ SDK Installer.
+Reviewing the above settings, you can see that, unlike Rhino 5 plugin projects, there is no 32-bit platform.  This is because Rhino 6 is only available as a 64-bit application.
 
-If you change the active platform from Win32 to x64, you will see that 64-bit builds will use v100, or Visual Studio 2010.
+### Property Sheets
+Visual Studio projects have hundreds of compiler switches and options to choose from. Using custom [Project Property Sheets](https://msdn.microsoft.com/en-us/library/669zx6zc.aspx) is a convenient way to synchronize or share these common settings among other projects. 
 
-The advantage that platform toolsets provide is that they enable you to take advantage of the IDE enhancements in Visual Studio 2010 while you continue to use an older version of the Visual C++ libraries and compiler.
+The Plugin Wizard, used to generate the plugin project, adds Rhino plugin-specific property sheets to the project.  To view these propety sheets, click *View* > *Property Manager*.
+
+![Test Property Manager]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_06.png)
 
 ### Boilerplate Build
 
-The *Rhino plugin wizard*, in addition to generating code, creates a custom project file for your plugin.  This file, *Test.vcxproj*, specifies all of the file dependencies together with the compile and link option flags.
+The *Rhino Plugin Wizard*, in addition to generating code, creates a custom project file for your plugin.  This file, *Test.vcxproj*, specifies all of the file dependencies together with the compile and link option flags.
 
 Before we can build our project, we need to fill in the Rhino plugin developer declarations.  These declarations will let the user of our plugin know who produced the plugin and where they can support information if needed.  
 
 1. Open *TestPlugIn.cpp* and modify the following lines of code, providing your company name and other support information:
 
-        RHINO_PLUG_IN_DEVELOPER_ORGANIZATION( L"My Company Name" );
-        RHINO_PLUG_IN_DEVELOPER_ADDRESS( L"123 Developer Street\r\nCity State 12345-6789" );
-        RHINO_PLUG_IN_DEVELOPER_COUNTRY( L"My Country" );
-        RHINO_PLUG_IN_DEVELOPER_PHONE( L"123.456.7890" );
-        RHINO_PLUG_IN_DEVELOPER_FAX( L"123.456.7891" );
-        RHINO_PLUG_IN_DEVELOPER_EMAIL( L"support@mycompany.com" );
-        RHINO_PLUG_IN_DEVELOPER_WEBSITE( L"http://www.mycompany.com" );
-        RHINO_PLUG_IN_UPDATE_URL( L"http://www.mycompany.com/support" );
+        RHINO_PLUG_IN_DEVELOPER_ORGANIZATION(L"My Company Name");
+        RHINO_PLUG_IN_DEVELOPER_ADDRESS(L"123 Developer Street\r\nCity State 12345-6789");
+        RHINO_PLUG_IN_DEVELOPER_COUNTRY(L"My Country");
+        RHINO_PLUG_IN_DEVELOPER_PHONE(L"123.456.7890");
+        RHINO_PLUG_IN_DEVELOPER_FAX(L"123.456.7891");
+        RHINO_PLUG_IN_DEVELOPER_EMAIL(L"support@mycompany.com");
+        RHINO_PLUG_IN_DEVELOPER_WEBSITE(L"http://www.mycompany.com");
+        RHINO_PLUG_IN_UPDATE_URL(L"http://www.mycompany.com/support");
 1. When finished, delete the following line of source code as the `#error` directive will prevent the project from building:
 
         #error Developer declarations block is incomplete!
-1. *NOTE*: If you do not delete this line, the plugin will build.  You are now ready to build the project by picking *Build Test* from the *Build* menu. If the build was successful, a plugin file named *Test_d.rhp* is created in the project’s *Debug* folder.
+1. *NOTE*: If you do not delete this line, the plugin will build.  You are now ready to build the project by picking *Build Test* from the *Build* menu. If the build was successful, a plugin file named *Test.rhp* is created in the project’s *Debug* folder.
 
 ### Testing
 
 1. From *Visual Studio*, navigate to *Debug* > *Start Debugging*.  This will load Rhino.  The version of Rhino that is launched depends on the configuration that you build.  The wizard adds the following configurations to your project:
-     - *Debug*: The Debug configuration of your program is compiled with full symbolic debug information and no optimization.  Optimization complicates debugging, because the relationship between source code and generated instructions is more complex.  The *Debug* configuration also links with debug runtime libraries.  Plugins built with the *Debug* configuration will only load in the debug version of Rhino included with the Rhino C/C++ SDK.
-     - *PseudoDebug*: The *PseudoDebug* project is a *Release* project that disables optimizations and generates debugging information using the compiler’s *Program Database* (`/Zi`) option and the linker’s *Generate Debug Information* (`/DEBUG`) option.  These option settings let you use the debugger while you are developing your custom plugin. The *PseudoDebug* configuration also links with release runtime libraries.  Plugins built with the *PseudoDebug* configuration will only load in the release version of Rhino that was installed with Rhino.
+     - *Debug*: The *Debug* project is a *Release* project that disables optimizations and generates debugging information using the compiler’s *Program Database* (`/Zi`) option and the linker’s *Generate Debug Information* (`/DEBUG`) option.  These option settings let you use the debugger while you are developing your custom plugin. The *PseudoDebug* configuration also links with release runtime libraries.  Plugins built with the *PseudoDebug* configuration will only load in the release version of Rhino that was installed with Rhino.
      - *Release*: The *Release* configuration of your program contains no symbolic debug information and is fully optimized.  *Debug* information can be generated in PDB Files (C++) depending on the compiler options used.  Creating PDB files can be very useful if you later need to debug your release version.  The *Release* configuration also links with release runtime libraries.  Plugins built with the *Release* configuration will only load in the release version of Rhino that was installed with Rhino.
+     - *DebugRhino*: The DebugRhino configuration of your program is compiled with full symbolic debug information and no optimization.  Optimization complicates debugging, because the relationship between source code and generated instructions is more complex.  The *DebugRhino* configuration also links with debug runtime libraries.  Plugins built with the *DebugRhino* configuration will only load in the debug version of Rhino included with the Rhino C/C++ SDK.
 1. For this guide, build the *Debug* configuration.
-1. From within Rhino, navigate to *Tools* > *Options*.  Navigate to the *Plugins* page under *Rhino Options* and install your plugin.  *NOTE*: since the debug version of Rhino will only load debug plugins, no other plugins will show up in the list...
+1. From within Rhino, navigate to *Tools* > *Options*.  Navigate to the *Plugins* page under *Rhino Options* and install your plugin. 
 ![Rhino Options]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_05.png)
 1. Once your plugin is loaded, close the options dialog and run your `Test` command.  You have finished creating your first plugin!
 
-## Adding a Command
+## Adding Additional Commands
 
 Rhino plugins can contain any number of commands.  Commands are created by deriving a new class from `CRhinoCommand`.  See *rhinoSdkCommand.h* for details on the `CRhinoCommand` class.
 
@@ -116,7 +119,7 @@ The following example code demonstrates a simple command class that essentially 
 
 ```cpp
 // Do NOT put the definition of class CCommandTest in a header
-// file.  There is only ONE instance of a CCommandTest class
+// file. There is only ONE instance of a CCommandTest class
 // and that instance is the static theTestCommand that appears
 // immediately below the class definition.
 
@@ -124,71 +127,69 @@ class CCommandTest : public CRhinoCommand
 {
 public:
   // The one and only instance of CCommandTest is created below.
-  // No copy constructor or operator= is required.  Values of
-  // member variables persist for the duration of the application.
+  // No copy constructor or operator= is required.
+  // Values of member variables persist for the duration of the application.
 
   // CCommandTest::CCommandTest()
   // is called exactly once when static theTestCommand is created.
-  CCommandTest() {}
+  CCommandTest() = default;
 
   // CCommandTest::~CCommandTest()
-  // is called exactly once when static theTestCommand is
-  // destroyed.  The destructor should not make any calls to
-  // the Rhino SDK.  If your command has persistent settings,
-  // then override CRhinoCommand::SaveProfile and CRhinoCommand::LoadProfile.
-  ~CCommandTest() {}
+  // is called exactly once when static theTestCommand is destroyed.
+  // The destructor should not make any calls to the Rhino SDK. 
+  // If your command has persistent settings, then override 
+  // CRhinoCommand::SaveProfile and CRhinoCommand::LoadProfile.
+  ~CCommandTest() = default;
 
   // Returns a unique UUID for this command.
   // If you try to use an id that is already being used, then
-  // your command will not work.  Use GUIDGEN.EXE to make unique UUID.
-  UUID CommandUUID()
+  // your command will not work. Use GUIDGEN.EXE to make unique UUID.
+  UUID CommandUUID() override
   {
-    // {5333C9DE-5F01-45B8-9154-28B765E453E0}
+    // {F502C783-C0CE-4118-8869-EFB0CB34CCCB}
     static const GUID TestCommand_UUID =
-    { 0x5333C9DE, 0x5F01, 0x45B8, { 0x91, 0x54, 0x28, 0xB7, 0x65, 0xE4, 0x53, 0xE0 } };
+    { 0xF502C783, 0xC0CE, 0x4118, { 0x88, 0x69, 0xEF, 0xB0, 0xCB, 0x34, 0xCC, 0xCB } };
     return TestCommand_UUID;
   }
 
   // Returns the English command name.
-  const wchar_t* EnglishCommandName() { return L"Test"; }
-
-  // Returns the localized command name.
-  const wchar_t* LocalCommandName() { return L"Test"; }
+  // If you want to provide a localized command name, then override 
+  // CRhinoCommand::LocalCommandName.
+  const wchar_t* EnglishCommandName() override { return L"Test"; }
 
   // Rhino calls RunCommand to run the command.
-  CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
+  CRhinoCommand::result RunCommand(const CRhinoCommandContext& context) override;
 };
 
-// The one and only CCommandTest object.  
+// The one and only CCommandTest object
 // Do NOT create any other instance of a CCommandTest class.
 static class CCommandTest theTestCommand;
 
-CRhinoCommand::result CCommandTest::RunCommand( const CRhinoCommandContext& context )
+CRhinoCommand::result CCommandTest::RunCommand(const CRhinoCommandContext& context)
 {
-  // CCommandTest::RunCommand() is called when the user runs the "Test"
-  // command or the "Test" command is run by a history operation.
+  // CCommandTest::RunCommand() is called when the user
+  // runs the "Test".
 
   // TODO: Add command code here.
 
   // Rhino command that display a dialog box interface should also support
   // a command-line, or scriptable interface.
 
-  ON_wString wStr;
-  wStr.Format( L"The \"%s\" command is under construction.\n", EnglishCommandName() );
-  if( context.IsInteractive() )
-    RhinoMessageBox( wStr, PlugIn()->PlugInName(), MB_OK );
+  ON_wString str;
+  str.Format(L"The \"%s\" command is under construction.\n", EnglishCommandName());
+  if (context.IsInteractive())
+    RhinoMessageBox(str, TestPlugIn().PlugInName(), MB_OK);
   else
-    RhinoApp().Print( wStr );
+    RhinoApp().Print(str);
 
   // TODO: Return one of the following values:
   //   CRhinoCommand::success:  The command worked.
   //   CRhinoCommand::failure:  The command failed because of invalid input, inability
   //                            to compute the desired result, or some other reason
   //                            computation reason.
-  //   CRhinoCommand::cancel:   The user interactively canceled the command
+  //   CRhinoCommand::cancel:   The user interactively canceled the command 
   //                            (by pressing ESCAPE, clicking a CANCEL button, etc.)
   //                            in a Get operation, dialog, time consuming computation, etc.
-  //   CRhinoCommand::nothing:  The command did nothing but CANCEL was not pressed.
 
   return CRhinoCommand::success;
 }
@@ -206,12 +207,12 @@ A couple things to consider:
 
 The *Rhino Command Generator* wizard is a standalone application that will generate new skeleton `CRhinoCommand`-derived class.  The generated source code is copied to the Windows clipboard so you can easily paste it into your source files.
 
-To use this tool in Visual Studio 2010:
+To use this tool in Visual Studio 2015:
 
-1. Launch Visual Studio 2010.
+1. Launch Visual Studio 2015.
 1. Navigate to *Tools* > *External Tools...*.
-1. Use the *Add* button to add the *RhinoCommandGenerator.exe* file to the list.  The file can be found in the following location: *C:\\Program Files\\Rhino 5.0 x64 SDK\\Wizards\\Command*
-
+1. Use the *Add* button to add the *RhinoCommandGenerator.exe* file to the list.  The file can be found in the following location: *C:\\Program Files\\Rhino 6.0 SDK\\Wizards\\Command*
+![Rhino Command Generator]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_07.png)
 ---
 
 ## Related Topics
