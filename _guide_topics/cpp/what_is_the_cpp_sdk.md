@@ -1,6 +1,6 @@
 ---
 title: What is the C/C++ SDK?
-description: This guide has yet to be authored or ported.
+description: This guide gives an overview of C/C++ SDK.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -10,7 +10,6 @@ origin: https://wiki.mcneel.com/developer/cplusplusplugins
 order: 1
 keywords: ['c', 'C/C++', 'plugin']
 layout: toc-guide-page
-TODO: 'needs to be written'
 ---
 
 # {{ page.title }}
