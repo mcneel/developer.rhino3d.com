@@ -105,7 +105,7 @@ Before we can build our project, we need to fill in the Rhino plugin developer d
      - *Release*: The *Release* configuration of your program contains no symbolic debug information and is fully optimized.  *Debug* information can be generated in PDB Files (C++) depending on the compiler options used.  Creating PDB files can be very useful if you later need to debug your release version.  The *Release* configuration also links with release runtime libraries.  Plugins built with the *Release* configuration will only load in the release version of Rhino that was installed with Rhino.
      - *DebugRhino*: The DebugRhino configuration of your program is compiled with full symbolic debug information and no optimization.  Optimization complicates debugging, because the relationship between source code and generated instructions is more complex.  The *DebugRhino* configuration also links with debug runtime libraries.  Plugins built with the *DebugRhino* configuration will only load in the debug version of Rhino included with the Rhino C/C++ SDK.
 1. For this guide, build the *Debug* configuration.
-1. From within Rhino, navigate to *Tools* > *Options*.  Navigate to the *Plugins* page under *Rhino Options* and install your plugin.  *NOTE*: since the debug version of Rhino will only load debug plugins, no other plugins will show up in the list...
+1. From within Rhino, navigate to *Tools* > *Options*.  Navigate to the *Plugins* page under *Rhino Options* and install your plugin. 
 ![Rhino Options]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_05.png)
 1. Once your plugin is loaded, close the options dialog and run your `Test` command.  You have finished creating your first plugin!
 
