@@ -30,13 +30,13 @@ By default, standalone C/C++ projects created with Visual Studio include *Debug*
 
 ## Build Configurations
 
-The Rhino C/C++ SDK provides all of the tools (C/C++ header and library files) necessary to build plugins that can be used by Rhino.  In addition to this, the Rhino SDK includes a debug build of Rhino (*Rhino_d.exe*).  The debug version of Rhino is installed in the same location as the production, or release, version of Rhino (*Rhino.exe*).
+The Rhino C/C++ SDK provides all of the tools (C/C++ header and library files) necessary to build plugins that can be used by Rhino.  In addition to this, the Rhino SDK includes a true debug build of Rhino (*Rhino.exe*).  The debug version of Rhino is installed in the SDK installation folder.
 
-In order to take advantage of the inclusion of debug Rhino, the build configurations created by the *Rhino Plugin AppWizard* are somewhat different than what is described above.  Projects created with the *Rhino Plugin AppWizard* include *Debug*, *PseudoDebug*, and *Release* configurations.  *Debug* and *PseudoDebug* configurations are automatically configured for debugging an application, and *Release* configurations are configured for the final release of an application.
+In order to take advantage of the inclusion of debug Rhino, the build configurations created by the *Rhino Plugin Wizard* are somewhat different than what is described above.  Projects created with the *Rhino Plugin AppWizard* include *Debug*, *DebugRhino*, and *Release* configurations.  *Debug* and *DebugRhino* configurations are automatically configured for debugging an application, and *Release* configurations are configured for the final release of an application.
 
-- The *Debug* configuration of your program is compiled with full symbolic debug information and no optimization.  Optimization complicates debugging, because the relationship between source code and generated instructions is more complex.  The *Debug* configuration also links with debug runtime libraries. Plugins built with the *Debug* configuration will only load in debug Rhino (*Rhino_d.exe*).
-- The *PseudoDebug* project is a *Release* project that disables optimizations and generates debugging information using the compiler’s *Program Database (/Zi)* option and the linker’s *Generate Debug Information (/DEBUG)* option.  These option settings allow you to use the debugger while you are developing your custom plugin.  The *PseudoDebug* configuration also links with release runtime libraries.  Plugins built with the *PseudoDebug* configuration will only load in release Rhino (*Rhino.exe*).
-- The *Release* configuration of your program contains no symbolic debug information and is fully optimized.  *Debug* information can be generated in PDB Files (C/C++) depending on the compiler options used.  Creating PDB files can be very useful if you later need to debug your release version.  The *Release* configuration also links with release runtime libraries.  Plugins built with the *Release* configuration will only load in release Rhino (*Rhino.exe*).
+- The *Debug* project is a *Release* project that disables optimizations and generates debugging information using the compiler’s *Program Database (/Zi)* option and the linker’s *Generate Debug Information (/DEBUG)* option.  These option settings allow you to use the debugger while you are developing your custom plugin.  The *Debug* configuration also links with release runtime libraries.  Plugins built with the *Debug* configuration will only load in release Rhino.
+- The *Release* configuration of your program contains no symbolic debug information and is fully optimized.  *Debug* information can be generated in PDB Files (C/C++) depending on the compiler options used.  Creating PDB files can be very useful if you later need to debug your release version.  The *Release* configuration also links with release runtime libraries.  Plugins built with the *Release* configuration will only load in release Rhino.
+- The *DebugRhino* configuration of your program is compiled with full symbolic debug information and no optimization.  Optimization complicates debugging, because the relationship between source code and generated instructions is more complex.  The *DebugRhino* configuration also links with debug runtime libraries. Plugins built with the *DebugRhino* configuration will only load in debug Rhino.
 
 These plugin build configurations link with the following SDK libraries and target the following executables:
 
@@ -46,7 +46,7 @@ These plugin build configurations link with the following SDK libraries and targ
 | *PseudoDebug*	       | | | | *Rhino.lib*       | | | | *opennurbs.lib*       | | | | *Rhino.exe*       |
 | *Release*       | | | | *Rhino.lib*       | | | | *opennurbs.lib*      | | | | *Rhino.exe*       |
 
-Again, you can switch between *Release*, *PseudoDebug*, and *Debug* build configurations by using Visual Studio's *Standard toolbar* or the *Configuration Manager* dialog.
+Again, you can switch between *Debug*, *Release*, and *DebugRhino* build configurations by using Visual Studio's *Standard toolbar* or the *Configuration Manager* dialog.
 
 ## Debugging Plugins
 
@@ -57,5 +57,5 @@ Again, you can switch between *Release*, *PseudoDebug*, and *Debug* build config
 
 You can debug your plugin in the following build configurations:
 
-- *Debug* configuration.  The advantage of debugging your plugin using the *Debug* configuration is that you can debug into MFC, as this configuration links with debug MFC libraries.  The disadvantage of debugging your plugin using the Debug configuration is that no other plugins will be loaded during the debugging session.  This is because debug Rhino (*Rhino_d.exe*) can only load debug plugins.
-- *PseudoDebug* configuration.  The advantage of debugging your plugin using the *PseudoDebug* configuration is that all other plugins will be loaded during the debugging session.  This is because release Rhino (*Rhino.exe*) will load all release plugins.  The disadvantage of debugging your plugin using the *PseudoDebug* configuration is that you cannot debug into MFC, as this configuration links with release MFC libraries.
+- *Debug* configuration.  The advantage of debugging your plugin using the *Debug* configuration is that all other plugins will be loaded during the debugging session.  This is because release Rhino will load all release plugins.  The disadvantage of debugging your plugin using the *Debug* configuration is that you cannot debug into MFC, as this configuration links with release MFC libraries.
+- *DebugRhino* configuration.  The advantage of debugging your plugin using the *DebugRhino* configuration is that you can debug into MFC, as this configuration links with debug MFC libraries.  The disadvantage of debugging your plugin using the *DebugRhino* configuration is that no other plugins will be loaded during the debugging session.  This is because debug Rhino can only load debug plugins.
