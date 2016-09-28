@@ -17,31 +17,13 @@ layout: toc-guide-page
 
 It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing_tools_windows).
 
-## Barebones Plugin
+## Migrate the project
 
-The Rhino SDK includes a Visual Studio Project Wizard.  The wizard program generates the code for a functioning plugin.  Follow these steps to build the plugin...
-
-### Plugin Wizard
-
-1. Launch *Visual Studio 2015* and navigate to *File* > *New* > *Project...*.
-1. From the *New Project* dialog, select the *Rhinoceros 6 Plug-in* template from the list of installed templates...
-![New Project Template]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_01.png)
-1. Type the project name as shown above.  You can enter a different name if you want.  The wizard uses the project name when it creates files and classes.  If you enter a different name, your files and classes will have a name different from that of the files and classes mentioned in this tutorial.  Don’t forget to choose a location to store the project.  When finished, click the *OK* button.
-1. Upon clicking *OK*, the *Overview* page of the *Rhinoceros 6 Plug-In Wizard* dialog will appear.  This page gives you an overview of the type of project that the wizard is going to create.  
-![New Project Overview]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_02.png)
-1. Not that, by default, the wizard will do the following:
-     1. Create a general utility plugin.
-1. If you are satisfied with the default settings, just click the *Finish* button.  If you want to change any of these settings, click the *Next* button...
-![Plugin Settings]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_03.png)
-1. The *Plug-in Settings* page allows you to modify a number of settings used by the wizard when generating the plugin source code:
-     1. *Plug-in name*: Modify this field if you want to change the name of the plugin.  *NOTE*: modifying this field does not modify the project name but rather the name of the plugin as listed in Rhino’s *PlugInManager* dialog box.
-     1. *Plug-in type*: Select the type of plugin that you want the wizard to create.
-     1. *Source file comments*: Select this option if you want the wizard to add verbose comments to the generated source files.
-     1. *Online help*: Select this option if you want your plugin to support online help.  If selected, a menu item will be displayed on Rhino's *Help* menu.
-     1. *Automation*: Select this option to allow your program to manipulate objects implemented in another program.  Selecting this option also exposes your program to other Automation client plugins.
-     1. *Windows sockets*: Select this option to indicate that your program supports Windows sockets.  Windows sockets allow you to write programs that communicate over TCP/IP networks.
-     1. *Security Development Lifecycle (SDL) checks*: Select this option to add recommended Security Development Lifecycle (SDL) checks to the project. These checks include extra security-relevant warnings as errors, and additional secure code-generation features.  For more information, see [Enable Additional Security Checks](https://msdn.microsoft.com/en-us/library/jj161081.aspx).
-1. For this tutorial, just accept the default settings. Click the *Finish* button, and the wizard begins to generate your plugin project’s folders, files, and classes.  When the wizard is finished, look through the plugin project using *Visual Studio’s Solution Explorer*...
+1. Launch *Visual Studio 2015* and navigate to *File* > *Open* > *Project/Solution...*.
+1. Navigate to your project's folder and open either your plugin project *(.vcxproj)* or solution *(.sln)*
+1. When your plugin project opens, navigate to the project's setting by clicking *Project* > *[ProjectName] Properties...*.
+1. In the project's settings, select *All Configurations* and set the platform to *x64*. Then, set the *Platform Toolset* to *Visual Studio 2015 (v140)* and the click *Apply*.
+![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp.png)
 
 ### Plugin Anatomy
 
