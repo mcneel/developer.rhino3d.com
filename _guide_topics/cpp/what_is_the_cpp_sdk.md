@@ -17,18 +17,9 @@ TODO: 'needs to be written'
 
 {{ page.description }}
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+The Rhino C/C++ Software Development Kit (SDK) is an API for customizing and extending Rhino for Windows. The SDK consists primarily of C++ headers and libraries that can be used to build Rhino extensions called *Plugins*. Plugins are Windows DLLs that can be loaded into the Rhino process and interact directly with the Rhino application. Rhino plugin modules use the file extension *.rhp* instead of the more common *.dll*.
 
-The Rhino C/C++ Software Development Kit (SDK) provides the tools to customize and extend Rhino for Windows with direct access to its database structures, geometry, graphics system, and command definitions, and much more.
+The C/C++SDK provides a robust set of tools with which a developer can use to take full advanatage of Rhino. These tools provide direct access to its database structures, geometry, graphics system, and command definitions, and much more.
 
-All of our development tools are free, royalty free, and include free support!
+As with all of our development tools, the Rhino C/C++ SDK is free, royalty free, and includes free developer support.
 
-Also port from [https://wiki.mcneel.com/developer/sdksamples/faq](https://wiki.mcneel.com/developer/sdksamples/faq)
-
-Also port from:
-[http://wiki.mcneel.com/developer/sdksamples/rhino5](http://wiki.mcneel.com/developer/sdksamples/rhino5)
