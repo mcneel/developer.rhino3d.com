@@ -10,7 +10,6 @@ origin: unset
 order: 6
 keywords: ['first', 'RhinoCommon', 'Plugin', 'installing']
 layout: toc-guide-page
-TODO: 'Addin now creates rhp in release.  Recap screenshots and instructions.'
 ---
 
 # {{ page.title }}
@@ -27,7 +26,7 @@ Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins
 
 1. **Locate** your plugin folder in **Finder**.  Let's imagine our plugin is called **HelloRhinoCommon** and we have built it for **Release**...
 ![Find Plugin In Finder]({{ site.baseurl }}/images/plugin_installer_mac_01.png)
-1. **Single-click the name** your plugin's **Release** (or **Debug**) folder to **Rename** it.  The new name should be your plugin assembly with a *.rhp* suffix.  For example, if your plugin is called *HelloRhinoCommon.dll*, rename the folder that contains this file *HelloRhinoCommon.rhp*...
+1. **Single-click the name** your plugin's **Release** (or **Debug**) folder to **Rename** it.  The new name should be your plugin assembly with a *.rhp* suffix.  For example, if your plugin is called *HelloRhinoCommon*, rename the folder that contains this file *HelloRhinoCommon.rhp*...
 1. You will be prompted to confirm this change.  Click the "**Add**" button:
 ![Click Add]({{ site.baseurl }}/images/plugin_installer_mac_02.png)
 1. The icon of the folder[^1] should now look like this...
