@@ -28,7 +28,7 @@ By default, standalone C/C++ projects created with Visual Studio include *Debug*
 
 **NOTE**: You can switch between *Release* and *Debug* build configurations by using Visual Studio's *Standard toolbar* or the *Configuration Manager* dialog.
 
-## Build Configurations
+## Plugin Build Configurations
 
 The Rhino C/C++ SDK provides all of the tools (C/C++ header and library files) necessary to build plugins that can be used by Rhino.  In addition to this, the Rhino SDK includes a true debug build of Rhino (*Rhino.exe*).  The debug version of Rhino is installed in the SDK installation folder.
 
