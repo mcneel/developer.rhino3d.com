@@ -25,26 +25,64 @@ It is presumed you already have the necessary tools installed and are ready to g
 1. In the project's settings, select *All Configurations* and set the platform to *x64*. Then, set the *Platform Toolset* to *Visual Studio 2015 (v140)* and the click *Apply*.
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp.png)
 
-### Plugin Anatomy
+## Plugin Anatomy
 
 The following files are of interest:
 
-1. *Test.vcxproj* is the project file that allows Visual C++ to build your plugin.
-1. *stdafx.h* is the main project header.
-1. *stdafx.cpp* is used to generate precompiled header.
-1. *TestApp.h* is the application class header that contains the `CTestApp` class declaration.
-1. *TestApp.cpp* is the application class implementation that contains the `CTestApp` member functions.
-1. *TestPlugIn.h* is the plugin class header that contains the `CTestPlugIn` class declaration.
-1. *TestPlugIn.cpp* is the plugin class implementation that contains the `CTestPlugIn` member functions.
-1. *cmdTest.cpp* is the sample `Test` Rhino command.
-1. *Resource.h* is the `#define` constant definitions for resources.
-1. *Test.rc* is the resource script.
-1. *Test.def* is the module definition.
-1. *targetver.h* is used to define the support Windows platform.
+1. Using *Visual Studio’s Solution Explorer*, open *stdafx.h* and add the following preprocessor definitons:
 
-### Project Settings
+        /////////////////////////////////////////////////////////////////////////////
+        // stdafx.h : include file for standard system include files,
+        // or project specific include files that are used frequently, but
+        // are changed infrequently
 
-With *Visual Studio 2015*, you can view a project's setting by clicking *Project* > *[ProjectName] Properties...*.
+        #pragma once
+
+        #ifndef VC_EXTRALEAN
+        #define VC_EXTRALEAN        // Exclude rarely-used stuff from Windows headers
+        #endif
+
+        // Added for Rhino 6 Migration
+        #define RHINO_V6_READY
+        #if defined(DEBUG)
+        #define RHINO_LIB_DIR "C:/Program Files/Rhino 6.0 SDK/lib/Debug"
+        #else
+        #define RHINO_LIB_DIR "C:/Program Files/Rhino 6.0 SDK/lib/Release"
+        #endif
+        
+        ...
+        
+1. Also, modify the path to SDK headers, found in *stdafx.h* to reflect the path to the Rhino 6 C/C++ SDK:
+
+        // Rhino SDK Preamble
+        //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhinoSdkStdafxPreamble.h"
+        #include "C:/Program Files/Rhino 6.0 SDK/Inc/RhinoSdkStdafxPreamble.h"
+        
+        ...
+
+        // Rhino Plug-in
+        //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhinoSdk.h"
+        #include "C:/Program Files/Rhino 6.0 SDK/Inc/RhinoSdk.h"
+
+        // Render Development Kit
+        //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhRdkHeaders.h"
+        #include "C:/Program Files/Rhino 6.0 SDK/Inc/RhRdkHeaders.h"
+        
+        ...
+        
+        // Rhino Plug-in Linking Pragmas
+        //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\rhinoSdkPlugInLinkingPragmas.h"
+        #include "C:/Program Files/Rhino 6.0 SDK/Inc/rhinoSdkPlugInLinkingPragmas.h"
+
+1. Again using *Visual Studio’s Solution Explorer*, open *[PlugInName]PlugIn.cpp* and add the following SDK include statement:
+
+        #include "StdAfx.h"
+        #include "SamplePlugIn.h"
+        // Added for Rhino 6 Migration
+        #include "C:/Program Files/Rhino 6.0 SDK/Inc/rhinoSdkPlugInDeclare.h"
+        
+        ...
+        
 
 ![Test Property Pages]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_04.png)
 
