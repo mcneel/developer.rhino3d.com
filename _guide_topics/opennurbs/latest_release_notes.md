@@ -28,7 +28,7 @@ Earlier versions of Rhino simply calculated extrusion object render meshes as ne
 
 - Fixes and enhancements for parsing and converting strings in UTF-8, UTF-16, and UTF-32 formats.
 - All openNURBS code treats char strings as UTF-8 encoded unicode strings.
-- All openNURBS code treats wchar_t strings as UTF-X encoded in native CPU byte order, where `X = 8*sizeof(wchar_t)`. (UTF-16 on Microsoft Windows 2000 or later, UTF-32 on Apple OS X).
+- All openNURBS code treats wchar_t strings as UTF-X encoded in native CPU byte order, where `X = 8*sizeof(wchar_t)`. (UTF-16 on Microsoft Windows 2000 or later, UTF-32 on Apple macOS).
 - If you encounter [mojibake](https://en.wikipedia.org/wiki/Mojibake) when working with strings in openNURBS, make sure you are using them as UTF-X encoded unicode strings.
 
 ### More sample files

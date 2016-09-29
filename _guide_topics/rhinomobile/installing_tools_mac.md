@@ -90,7 +90,7 @@ The [Intel HAXM is the Intel Hardware Acceleration Execution Manager](http://sof
 #### Step-by-Step
 
 1. Visit the [Intel Hardware Acceleration Execution website](http://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager/).
-1. Find the **Mac OS X** section of the page.
+1. Find the **macOS** section of the page.
 1. Download the **haxm-macosx_rxx.zip**.  You may be asked to accept an license agreement before downloading can begin.
 1. Unzip **haxm-macosx_rxx.zip**.
 1. Mount the **IntelHAXM_x.x.x.dmg** by double-clicking it.
@@ -149,4 +149,4 @@ Check out the [Your First App (Mac)]({{ site.baseurl }}/guides/rhinomobile/your_
 
 [^2]: Xamarin.iOS is used to build C# .NET applications for Apple iOS devices.
 
-[^3]: Xamarin.Mac is Xamarin's proprietary closed-source toolkit build on the open-source MonoMac (aka Mono for Mac OS X).  Xamarin.Mac provides a commercial license of Mono, bindings to additional frameworks, and the ability to create self-contained application bundles that do not require mono.  RhinoMobile does not currently use Xamarin.Mac.
+[^3]: Xamarin.Mac is Xamarin's proprietary closed-source toolkit build on the open-source MonoMac (aka Mono for macOS).  Xamarin.Mac provides a commercial license of Mono, bindings to additional frameworks, and the ability to create self-contained application bundles that do not require mono.  RhinoMobile does not currently use Xamarin.Mac.

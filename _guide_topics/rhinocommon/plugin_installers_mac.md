@@ -76,6 +76,6 @@ To make your Library visible in the Finder:
 
 ## Footnotes
 
-[^1]: OS X (and Unix) has a special kind of folder that masquerades as a file.  These are called "packages."  (Most apps found in */Applications/* are actually packages called "bundles").  You can access the contents in Finder by **right-clicking** on the package and selecting **Show Package Contents**.
+[^1]: macOS (and Unix) has a special kind of folder that masquerades as a file.  These are called "packages."  (Most apps found in */Applications/* are actually packages called "bundles").  You can access the contents in Finder by **right-clicking** on the package and selecting **Show Package Contents**.
 
 [^2]: Do not confuse this path with */Library/Application Support/McNeel/Rhinoceros/*, which is the system-wide Library location.

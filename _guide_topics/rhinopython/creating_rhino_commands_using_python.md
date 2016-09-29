@@ -86,16 +86,16 @@ Double-clicking this `*.rhi` file on another system (with Rhino closed) should i
 
 ## Mac
 
-Setting this up on Mac OS X is a bit more labour intensive, but once you see how it works, it should be fairly straightforward. (It is helpful to read the [Windows](#windows) section above to get the general idea).  
+Setting this up on macOS is a bit more labour intensive, but once you see how it works, it should be fairly straightforward. (It is helpful to read the [Windows](#windows) section above to get the general idea).  
 
-There are four things you need to pay attention to on OS X:
+There are four things you need to pay attention to on macOS:
 
 1. The py script file
 1. The plugin name
 1. The command name
 1. The plugin GUID
 
-On OS X, the location of the plugin folders must be in:
+On macOS, the location of the plugin folders must be in:
 
 */Users/~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/PythonPlugIns/*
 
@@ -111,9 +111,9 @@ and within the individual plugin's folder there is yet another folder called *de
 
 There can be multiple command files in the folder - one for each command in the plugin.
 
-The long messy number thing in braces is the GUID - that GUID, and in fact the folder itself, is automatically generated on Rhino for Windows when you tell the editor you want to create a command - but on OS X you need to create the GUID and the folder and *dev* sub-folder yourself.  [Generate a GUID](https://www.guidgenerator.com/online-guid-generator.aspx) and then use it in the folder name as indicated above: *PlugInName{GUID}*
+The long messy number thing in braces is the GUID - that GUID, and in fact the folder itself, is automatically generated on Rhino for Windows when you tell the editor you want to create a command - but on macOS you need to create the GUID and the folder and *dev* sub-folder yourself.  [Generate a GUID](https://www.guidgenerator.com/online-guid-generator.aspx) and then use it in the folder name as indicated above: *PlugInName{GUID}*
 
-The Python script itself has to be set up and named correctly as well - this is done from a template on Rhino for Windows, but you will need to do it by hand, so to speak, on OS X.  The *py* file should be set up like this:
+The Python script itself has to be set up and named correctly as well - this is done from a template on Rhino for Windows, but you will need to do it by hand, so to speak, on macOS.  The *py* file should be set up like this:
 
 ```py
 #import statements as needed:

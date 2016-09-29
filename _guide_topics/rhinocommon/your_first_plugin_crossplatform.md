@@ -26,7 +26,7 @@ We will build on what we learned in the HelloRhinoCommon sample projects seen in
 
 ## HelloRhino.CrossPlatform
 
-Let's begin by creating a new solution to contain both platforms' projects.  For the sake of illustration, we'll begin on OS X in Xamarin Studio, but the reverse - on Windows in Visual Studio - should work.  It is useful to work in a folder that is visible to both OS X and Windows and/or use a version control system like git that can be used on both platforms.
+Let's begin by creating a new solution to contain both platforms' projects.  For the sake of illustration, we'll begin on macOS in Xamarin Studio, but the reverse - on Windows in Visual Studio - should work.  It is useful to work in a folder that is visible to both macOS and Windows and/or use a version control system like git that can be used on both platforms.
 
 ### File New
 
@@ -36,7 +36,7 @@ Let's begin by creating a new solution to contain both platforms' projects.  For
 1. A **New Project** wizard should appear.  In the left column, find the **Other** > **Miscellaneous** section.  Under Generic, select the **Blank Solution** template...
 ![New Solution]({{ site.baseurl }}/images/your_first_plugin_crossplatform_01.png)
 1. Click the **Next** button.
-1. You will now **Configure your new solution**.  For the purposes of this guide, we will name our solution *HelloRhino.CrossPlatform*.  Fill in the **Solution Name** field.  **Browse** and select a location for this plugin that is visible to both OS X and Windows.
+1. You will now **Configure your new solution**.  For the purposes of this guide, we will name our solution *HelloRhino.CrossPlatform*.  Fill in the **Solution Name** field.  **Browse** and select a location for this plugin that is visible to both macOS and Windows.
 ![Solution Configuration]({{ site.baseurl }}/images/your_first_plugin_crossplatform_02.png)
 1. Click the **Create** button.  *NOTE*: It is recommended that you create a .git repository for this demo.
 1. A new **blank solution** called **HelloRhino.CrossPlatform** should open.
@@ -120,7 +120,7 @@ Though we are sharing cross-platform code, there will be inevitably be situation
 
 #### Mac
 
-1. In **Xamarin Studio** on **OS X**, open the **HelloRhino.CrossPlatform** solution (if it is not already open).
+1. In **Xamarin Studio** on **macOS**, open the **HelloRhino.CrossPlatform** solution (if it is not already open).
 1. Notice that **HelloRhino.Common.Windows** is now present in your solution (as expected).  In the **Solution** panel, **right-click** the **HelloRhino.Common.Windows** project and select **Unload**...
 ![Unload Windows Project]({{ site.baseurl }}/images/your_first_plugin_crossplatform_14.png)
 1. In the **Solution** panel, **double-click** the **HelloRhino.Common.Mac** project to bring up its **Project Options** (Properties).
