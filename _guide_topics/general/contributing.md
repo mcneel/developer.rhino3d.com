@@ -10,7 +10,6 @@ origin: unset
 order: 6
 keywords: ['developer', 'rhino']
 layout: toc-guide-page
-TODO: 'needs review'
 ---
 
 # {{ page.title }}
@@ -48,6 +47,7 @@ To get started authoring content for this site, please read the following guides
 - [How This Site Works]({{ site.baseurl }}/guides/general/how_this_site_works)
 - [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer_docs_style_guide)
 
+You may also want to take a look at the [Admin]({{ site.baseurl }}/admin/) page.
 
 ## Contacts
 
