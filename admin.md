@@ -8,28 +8,11 @@ order: 1
 
 # Administration
 
-The goal of this site is to consolidate all the (now) scattered developer documentation into a single canonical site that is clear, easy-to-navigate, with consistent formatting and nomenclature.
+This site is the canonical source for developer documentation relating to Rhino, Grasshopper, and other companion products.  The goal of this site is to provide a clear, easy-to-navigate, reference, with consistent formatting and nomenclature.
 
-The sources of content-to-be-consolidated are:
+For contributors or administrators, the following guides are necessary reading:
 
-- RhinoScript and Rhino.Python Primers
-- [C++ SDK API references](http://4.rhino3d.com/5/rhinocppsdk/idx.html)
-- [DaleF's CsCommands](https://github.com/dalefugier/SampleCsCommands/)
-- Macros documentation sources: [Macros in Helpfile](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm), [Macros in Wiki](http://wiki.mcneel.com/rhino/basicmacros), [Using the MacroEditor](http://wiki.mcneel.com/developer/macroscriptsetup)
-- <strike>Grasshopper SDK API references (chm)</strike>
-- <strike>Grasshopper SDK Help file (chm) topics</strike>
-- <strike>Grasshopper Forum posts</strike>
-- <strike>Rhino Developer wiki</strike>
-- <strike>RhinoCommon API references</strike>
-- <strike>RhinoCommon samples on GitHub</strike>
-- <strike>Doxygen Docs (on McNeel intranet)</strike>
-
-**DO NOT** port any content that relates to pre-Rhino 5: this is old information.  Visual Studio 2010 for the C/C++ SDK was used for Rhino 5.
-
----
-
-## Dev Docs Guides
-
+- [Contributing (This Website)]({{ site.baseurl }}/guides/general/contributing/#this-website)
 - [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/master/README.md)
 - [How This Site Works]({{ site.baseurl }}/guides/general/how_this_site_works)
 - [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer_docs_style_guide)
@@ -38,9 +21,11 @@ The sources of content-to-be-consolidated are:
 
 ## TODO List
 
+Individual guides and samples may have [TODO]({{ site.baseurl }}/guides/general/how_this_site_works/#todo--origin-fields) items listed in their yaml.  Find out how these [TODO]({{ site.baseurl }}/guides/general/how_this_site_works/#todo--origin-fields) fields work in the [How This Site Works]({{ site.baseurl }}/guides/general/how_this_site_works/#todo--origin-fields) guide.
+
 ### Guides
 
-The following guides have TODO items:
+The following guides have [TODO]({{ site.baseurl }}/guides/general/how_this_site_works/#todo--origin-fields) items:
 
 {% assign guides = site.guide_topics | sort:"title" | sort:"apis" %}
 <div class="trigger">
@@ -57,7 +42,7 @@ The following guides have TODO items:
 
 ### Samples
 
-The following samples have TODO items:
+The following samples have [TODO]({{ site.baseurl }}/guides/general/how_this_site_works/#todo--origin-fields) items:
 
 {% assign samples = site.samples | sort:"title" | sort:"apis" %}
 <div class="trigger">
@@ -72,6 +57,6 @@ The following samples have TODO items:
   </ol>
 </div>
 
-### Misc
+### YouTrack
 
-See [YouTrack: project: WWW subsystem: developer.rhino3d.com #unresolved](http://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved)
+Many items relating to the (dis?)functioning of this site are logged in [YouTrack: project: WWW subsystem: developer.rhino3d.com #unresolved](http://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved)
