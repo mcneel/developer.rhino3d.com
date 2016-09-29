@@ -9,7 +9,6 @@ categories: ['Advanced']
 order: 1
 keywords: ['RhinoCommon', 'C/C++', 'Rhino', 'Toolbar', 'Plugin']
 layout: toc-guide-page
-TODO: 'xml code block formatting needs attention'
 ---
 
 # {{ page.title }}
