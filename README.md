@@ -7,7 +7,7 @@ The site is hosted on [GitHub Pages](https://pages.github.com/) which uses a sta
 
 ## Getting Started
 
-These instructions cover running this project locally on both Mac OS X and Windows so that you can preview changes before pushing them to GitHub Pages.
+These instructions cover running this project locally on both macOS and Windows so that you can preview changes before pushing them to GitHub Pages.
 
 First, navigate somewhere safe and clone the repository.
 
@@ -22,9 +22,9 @@ If you are not comfortable using git on the command-line, then try [GitHub for M
 The `master` branch represents the current (_stable_) version of the site.  Changes to the `master` branch will be built by Travis and deployed to http://developer.rhino3d.com.  Other branches can be defined in `_config.yml` (under `version_branches`) and will be built and deployed into a subpath with the same name.  For example, if you push to the `wip` branch (representing RhinoWIP) then this site will be deployed to http://developer.rhino3d.com/wip.
 
 
-### Mac OS X
+### macOS
 
-Mac OS X Yosemite ships with Ruby and RubyGems, however it's [not wise](https://github.com/mcneel/developer-rhino3d-com/pull/2#issuecomment-112601698) to mess around with this installation. Instead, install your own Ruby using [Homebrew](http://brew.sh).
+macOS Sierra ships with Ruby and RubyGems, however it's [not wise](https://github.com/mcneel/developer-rhino3d-com/pull/2#issuecomment-112601698) to mess around with this installation. Instead, install your own Ruby using [Homebrew](http://brew.sh).
 
 #### Install Homebrew and Ruby
 
@@ -86,7 +86,7 @@ ruby dk.rb install
 
 #### Install Jekyll and serve
 
-As with OS X, install the GitHub Pages Ruby Gem, navigate to the clone directory and run jekyll.
+As with macOS, install the GitHub Pages Ruby Gem, navigate to the clone directory and run jekyll.
 
 ```
 gem install github-pages

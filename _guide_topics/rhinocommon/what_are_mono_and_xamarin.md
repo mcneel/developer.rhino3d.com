@@ -26,7 +26,7 @@ The Mono project has been in active development for [over a decade](https://en.w
 
 ### Mono & Rhino for Mac
 
-Mono allows C# developers to write cross platform code targeting Windows, Mac OS X, Linux, Android, and iOS.  What this means for Rhino plugin developers is that they can - if written properly - run the same RhinoCommon plugin in *both* Rhino for Windows *and* Rhino for Mac...
+Mono allows C# developers to write cross platform code targeting Windows, macOS, Linux, Android, and iOS.  What this means for Rhino plugin developers is that they can - if written properly - run the same RhinoCommon plugin in *both* Rhino for Windows *and* Rhino for Mac...
 
 <div align="center">
   <img src="{{ site.baseurl }}/images/rhino_mono_one_binary_two_platforms.png">
@@ -61,7 +61,7 @@ This is Xamarin's C# developer environment that runs on Mac.  Xamarin Studio has
 
 Rhino for Mac does not currently use Xamarin.Mac.
 
-Xamarin.Mac is Xamarin's proprietary closed-source toolkit used to provide .NET access to native features of the Mac Operating System and to allow for compiling .NET projects into self-contained application bundles.  Rhino uses the open source MonoMac framework instead of Xamarin.Mac for accessing native OS X features (primarily native user interface features).
+Xamarin.Mac is Xamarin's proprietary closed-source toolkit used to provide .NET access to native features of the Mac Operating System and to allow for compiling .NET projects into self-contained application bundles.  Rhino uses the open source MonoMac framework instead of Xamarin.Mac for accessing native macOS features (primarily native user interface features).
 
 ### Visual Studio support
 
@@ -94,11 +94,11 @@ All of .NET is not yet implemented in Mono (although an awful lot is).  We recom
 
 ### P/Invoke
 
-One of the areas that developers need to be aware of is any .NET code that uses P/invoke may experience problems when running on Mac. P/invoke is a technique to call unmanaged native functions from .NET code.  The feature is available on OS X/mono, but developers need to make sure that the P/invoke calls are calling native code written for OS X and not for Windows.  Many commercial .NET components use P/invoke so this is something we highly recommend you investigate.
+One of the areas that developers need to be aware of is any .NET code that uses P/invoke may experience problems when running on Mac. P/invoke is a technique to call unmanaged native functions from .NET code.  The feature is available on macOS/mono, but developers need to make sure that the P/invoke calls are calling native code written for macOS and not for Windows.  Many commercial .NET components use P/invoke so this is something we highly recommend you investigate.
 
 ### UI and Eto
 
-User interface is where developers typically run into trouble with platform specific dependencies and features.  We use and support development of [Eto](https://github.com/picoe/Eto).  Using Eto can make your plugin look and work as a native application on all platforms, using a single UI codebase.  Eto ships with Rhino for Mac (and will ship with Rhino 6 for Windows).  Eto has an easy to use API and uses native toolkits, abstracting the platform-specific implementations for [WinForms](https://en.wikipedia.org/wiki/Windows_Forms) (GDI and Direct2D), [WPF](https://en.wikipedia.org/wiki/Windows_Presentation_Foundation), and [Cocoa](https://en.wikipedia.org/wiki/Cocoa_(API)) (on OS X).  Though Eto is powerful, it has a shallow learning curve and we're confident you will be hooked as quickly as we were.
+User interface is where developers typically run into trouble with platform specific dependencies and features.  We use and support development of [Eto](https://github.com/picoe/Eto).  Using Eto can make your plugin look and work as a native application on all platforms, using a single UI codebase.  Eto ships with Rhino for Mac (and will ship with Rhino 6 for Windows).  Eto has an easy to use API and uses native toolkits, abstracting the platform-specific implementations for [WinForms](https://en.wikipedia.org/wiki/Windows_Forms) (GDI and Direct2D), [WPF](https://en.wikipedia.org/wiki/Windows_Presentation_Foundation), and [Cocoa](https://en.wikipedia.org/wiki/Cocoa_(API)) (on macOS).  Though Eto is powerful, it has a shallow learning curve and we're confident you will be hooked as quickly as we were.
 
 ---
 

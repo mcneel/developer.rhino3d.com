@@ -46,7 +46,7 @@ For the purposes of this guide, we will presume you are using Visual Studio 2015
 
 ## Install Xcode (Optional)
 
-[Xcode](https://developer.apple.com/xcode/) is Apple's development platform and IDE. This step is optional and only required if you want to build for iOS. You will need to preform this step on your Mac build box running OS X.
+[Xcode](https://developer.apple.com/xcode/) is Apple's development platform and IDE. This step is optional and only required if you want to build for iOS. You will need to preform this step on your Mac build box running macOS.
 
 #### Step-by-Step
 
@@ -161,7 +161,7 @@ Check out the [Your First App (Windows)]({{ site.baseurl }}/guides/rhinomobile/y
 
 ## Footnotes
 
-[^1]: Visual Studio Code is Microsoft's cross-platform source code editor for Windows, Linux, and OS X.  At the time of this writing, Visual Studio code does not yet support the features required to author RhinoMobile apps.
+[^1]: Visual Studio Code is Microsoft's cross-platform source code editor for Windows, Linux, and macOS.  At the time of this writing, Visual Studio code does not yet support the features required to author RhinoMobile apps.
 
 [^2]: Visual Studio Online is Microsoft's online counterpart to the desktop edition of Visual Studio (referred to as Visual Studio "proper" above).  We have not tested using Visual Studio Online to debug RhinoMobile apps.
 

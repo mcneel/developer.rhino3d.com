@@ -47,19 +47,19 @@ layout: fullwidth-page
   <tbody class="table-striped index_table">
   <tr>
     <td><a href="{{ site.baseurl }}/guides/#rhinocommon" title="RhinoCommon: The cross-platform toolkit for Rhino and Grasshopper"> RhinoCommon</a></td>
-	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon" title="Mac OS X"></td>
+	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="macOS" class="index_table_icon" title="Apple macOS"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon" title="C#"><img src="{{ site.baseurl }}/images/vb_logo_small.png" alt="Visual Basic" class="index_table_icon" title="Visual Basic"><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
     <td class="index_table_primary_use">Write Rhino plugins & Grasshopper components</td>  
   </tr>
   <tr>
     <td><a href="{{ site.baseurl }}/guides/#rhinopython" title="Rhino.Python: Pythonic in three dimensions!"> Rhino.Python</a></td>
-	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon" title="Mac OS X"></td>
+	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="macOS" class="index_table_icon" title="Apple macOS"></td>
 	<td><img src="{{ site.baseurl }}/images/python_logo_small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
     <td class="index_table_primary_use">Cross-platform scripting</td>  
   </tr>
   <tr>
     <td><a href="{{ site.baseurl }}/guides/#opennurbs" title="openNURBS is free and open source"> openNURBS</a></td>
-	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="index_table_icon" title="Mac OS X"></td>
+	<td><img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="macOS" class="index_table_icon" title="Apple macOS"></td>
 	<td><img src="{{ site.baseurl }}/images/cs_logo_small.png" alt="C#" class="index_table_icon" title="C#"><img src="{{ site.baseurl }}/images/cpp_logo_small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
     <td class="index_table_primary_use">3dm file reading and writing</td>  
   </tr>

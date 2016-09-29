@@ -28,7 +28,7 @@ Android Emulators are a decent approximation of actual devices themselves, thoug
 
 The following key combinations can be used to rotate emulators:
 
-- **fn** + **control** + **F12** = Rotate Emulator (OS X)
+- **fn** + **control** + **F12** = Rotate Emulator (macOS)
 - **(left)control** + **F12** = Rotate Emulator (Windows)
 
 **NOTE**: You cannot simulate multiple touches on the Android Emulator
@@ -37,7 +37,7 @@ The following key combinations can be used to rotate emulators:
 
 The best way to access the internals of an Android device or an Emulator is to use the [Android Debug Bridge](http://developer.android.com/tools/help/adb.html) (ADB) which comes bundled with the Android SDK as part of the Xamarin Toolkit. The ADB comes with a shell utility that allows you to browse the Android file system as if you were a standard Linux file system - which it is. Running adb shell on a Mac is slightly different from running it on Windows, but here are the basics.
 
-**Mac OS X**
+**macOS**
 
 Before launching into the adb tools, let's make sure that the Android SDK and NDK are part of our bash terminal environment. Open your *.bash_profile* (in your *~* or home folder) with a trusty text editor (we recommend [TextWrangler](http://www.barebones.com/products/textwrangler/) or [BBEdit](http://www.barebones.com/products/bbedit/)). Add the following lines to your profile if they are not already there:
 
@@ -99,7 +99,7 @@ The following key combinations can be used to rotate simulate and simulate multi
 
 ### Simulator File System
 
-The best way to access the contents of the Simulator filesystem is to use a Terminal. In OS X, open a terminal window and navigate to:
+The best way to access the contents of the Simulator filesystem is to use a Terminal. In macOS, open a terminal window and navigate to:
 
 *~/Developer/CoreSimulator/Devices/<code>/data/Containers/Data/Application/<app UDID number>/*
 

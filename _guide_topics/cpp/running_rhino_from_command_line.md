@@ -10,7 +10,7 @@ origin: http://wiki.mcneel.com/developer/commandline
 order: 1
 keywords: ['rhino']
 layout: toc-guide-page
-TODO: 'needs to be reclassified as a General guide if we can add OS X specifics'
+TODO: 'needs to be reclassified as a General guide if we can add macOS specifics'
 ---
 
 # {{ page.title }}

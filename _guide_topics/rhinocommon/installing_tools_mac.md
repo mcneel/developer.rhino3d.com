@@ -29,7 +29,7 @@ This guide presumes you have an:
 
 ## Install Xcode
 
-[Xcode](https://developer.apple.com/xcode/) is Apple's development platform and IDE.  Though it is not *absolutely* required that you install Xcode in order to build, debug, and run C# plugins using RhinoCommon, it is *recommended* that you do.  In short: the Xamarin on OS X works best with Xcode installed.  
+[Xcode](https://developer.apple.com/xcode/) is Apple's development platform and IDE.  Though it is not *absolutely* required that you install Xcode in order to build, debug, and run C# plugins using RhinoCommon, it is *recommended* that you do.  In short: the Xamarin on macOS works best with Xcode installed.  
 
 #### Step-by-Step
 
@@ -44,7 +44,7 @@ This guide presumes you have an:
 
 ## Install Xamarin
 
-Xamarin's platform is currently required to build RhinoCommon plugins on OS X.  The core components of the Xamarin platform that are required are the Mono Framework and Xamarin Studio.  Please check out the [What are Mono and Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/) guide for more information.
+Xamarin's platform is currently required to build RhinoCommon plugins on macOS.  The core components of the Xamarin platform that are required are the Mono Framework and Xamarin Studio.  Please check out the [What are Mono and Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/) guide for more information.
 
 #### Step-by-Step
 
@@ -98,4 +98,4 @@ Check out the [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/yo
 
 [^2]: Xamarin.iOS is used to build C# .NET applications for Apple iOS devices.  This is useful to have installed if you wish to use the RhinoMobile toolkit, but not required for RhinoCommon in Rhino for Mac.
 
-[^3]: Xamarin.Mac is Xamarin's proprietary closed-source toolkit build on the open-source MonoMac (aka Mono for Mac OS X).  Xamarin.Mac provides a commercial license of Mono, bindings to additional frameworks, and the ability to create self-contained application bundles that do not require mono.  Rhino for Mac does not currently use Xamarin.Mac.
+[^3]: Xamarin.Mac is Xamarin's proprietary closed-source toolkit build on the open-source MonoMac (aka Mono for macOS).  Xamarin.Mac provides a commercial license of Mono, bindings to additional frameworks, and the ability to create self-contained application bundles that do not require mono.  Rhino for Mac does not currently use Xamarin.Mac.

@@ -26,7 +26,7 @@ There are a number of prerequisites required to do Rhino development.  Broadly s
 
 If you are reading this guide, you likely already have a computer that can run Rhino. (If not, Rhino has some minimum [System Requirements](http://www.rhino3d.com/system_requirements/) that you should review before acquiring any hardware).  Generally speaking, any computer that can run Rhino *ought* to be able to run the developer tools outlined in the [Software](#software) section.
 
-If you are a Windows user and wish to develop plugins for Rhino for Mac, you will need an Apple Mac computer.  Conversely, if you are an OS X user and you wish to develop for Rhino for Windows, you will need a computer that can run Rhino for Windows (however, virtual machines running Windows under OS X can potentially work just fine).
+If you are a Windows user and wish to develop plugins for Rhino for Mac, you will need an Apple Mac computer.  Conversely, if you are an macOS user and you wish to develop for Rhino for Windows, you will need a computer that can run Rhino for Windows (however, virtual machines running Windows under macOS can potentially work just fine).
 
 
 ## Software
@@ -47,7 +47,7 @@ Acquiring programming knowledge is the most labor intensive prerequisite.  Howev
 
 ### Learning C# .NET
 
-If you wish to write plugins with RhinoCommon, you will need to understand a .NET compatible programming language like C# (or VB).  We recommend [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) (C Sharp) because it is modern, safe, and easy to learn - and you can develop in C# on both Windows and OS X.
+If you wish to write plugins with RhinoCommon, you will need to understand a .NET compatible programming language like C# (or VB).  We recommend [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) (C Sharp) because it is modern, safe, and easy to learn - and you can develop in C# on both Windows and macOS.
 
 *Watch*...
 

@@ -26,7 +26,7 @@ Yes...even using [the same code]({{ site.baseurl }}/guides/rhinocommon/what_is_r
 
 **What is Mono/Xamarin?**
 
-Mono is an open-source version of Microsoft's .NET runtime that runs on Linux, Mac OS X, iOS, and Android.  Check out the [What are Mono and Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/) guide for more information.
+Mono is an open-source version of Microsoft's .NET runtime that runs on Linux, macOS, iOS, and Android.  Check out the [What are Mono and Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/) guide for more information.
 
 **What are Macros?**
 Macros are string of Rhino commands and command options that allow you to create an automated sequence of operations.  This macro (sequence) can then be repeated at the push of a toolbar button or by typing an alias.

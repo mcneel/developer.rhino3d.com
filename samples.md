@@ -10,7 +10,7 @@ order: 4
 
 ---
 
-## RhinoCommon <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+## RhinoCommon <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="macOS" class="guide_icon">
 {: #rhinocommon }
 
 ### Adding Objects
@@ -153,7 +153,7 @@ order: 4
 ---
 
 
-## Rhino.Python <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+## Rhino.Python <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="macOS" class="guide_icon">
 {: #rhinopython }
 
 <div class="bs-callout bs-callout-danger">
@@ -167,7 +167,7 @@ order: 4
 
 ---
 
-## openNURBS <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="OS X" class="guide_icon">
+## openNURBS <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="macOS" class="guide_icon">
 {: #opennurbs }
 
 <div class="bs-callout bs-callout-danger">
