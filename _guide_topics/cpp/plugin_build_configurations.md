@@ -23,9 +23,6 @@ Visual Studio's Build Configurations provide a way to store multiple versions of
 
 By default, standalone C/C++ projects created with Visual Studio include *Debug* and *Release* configurations.  *Debug* configurations are automatically configured for debugging an application, and Release configurations are configured for the final release of an application.
 
-- The *Debug* configuration of your program is compiled with full symbolic debug information and no optimization. Optimization complicates debugging, because the relationship between source code and generated instructions is more complex. The *Debug* configuration also links with debug runtime libraries.
-- The *Release* configuration of your program contains no symbolic debug information and is fully optimized. *Debug* information can be generated in PDB Files (C/C++) depending on the compiler options used.  Creating PDB files can be very useful if you later need to debug your release version.  The *Release* configuration also links with release runtime libraries.
-
 **NOTE**: You can switch between *Release* and *Debug* build configurations by using Visual Studio's *Standard toolbar* or the *Configuration Manager* dialog.
 
 ## Plugin Build Configurations
