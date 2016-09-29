@@ -72,7 +72,7 @@ It is presumed you already have the necessary tools installed and are ready to g
         //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\rhinoSdkPlugInLinkingPragmas.h"
         #include "C:/Program Files/Rhino 6.0 SDK/Inc/rhinoSdkPlugInLinkingPragmas.h"
 
-1. Using *Visual Studio’s Solution Explorer*, open *[PlugInName]PlugIn.cpp* and add the following SDK include statement:
+1. Using *Visual Studio’s Solution Explorer*, open the project's *PlugIn.cpp* file and add the following SDK include statement:
 
         #include "StdAfx.h"
         #include "SamplePlugIn.h"
