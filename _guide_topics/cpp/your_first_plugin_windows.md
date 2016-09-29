@@ -37,7 +37,7 @@ The Rhino SDK includes a Visual Studio Project Wizard.  The wizard program gener
 ![Plugin Settings]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_03.png)
 1. The *Plug-in Settings* page allows you to modify a number of settings used by the wizard when generating the plugin source code:
      1. *Plug-in name*: Modify this field if you want to change the name of the plugin.  *NOTE*: modifying this field does not modify the project name but rather the name of the plugin as listed in Rhino’s *PlugInManager* dialog box.
-     1. *Plug-in type*: Select the type of plugin that you want the wizard to create.
+     1. *Plug-in type*: Select the [type of plugin]({{ site.baseurl }}/guides/general/what_is_a_rhino_plugin) that you want the wizard to create.
      1. *Source file comments*: Select this option if you want the wizard to add verbose comments to the generated source files.
      1. *Online help*: Select this option if you want your plugin to support online help.  If selected, a menu item will be displayed on Rhino's *Help* menu.
      1. *Automation*: Select this option to allow your program to manipulate objects implemented in another program.  Selecting this option also exposes your program to other Automation client plugins.
