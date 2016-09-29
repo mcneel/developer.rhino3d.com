@@ -24,6 +24,7 @@ It is presumed you already have the necessary tools installed and are ready to g
 1. When your plugin project opens, navigate to the project's setting by clicking *Project* > *[ProjectName] Properties...*.
 1. In the project's settings, select *All Configurations* and set the platform to *x64*. Then, set the *Platform Toolset* to *Visual Studio 2015 (v140)* and the click *Apply*.
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp.png)
+1. *(Optional)* Rhino 6 plugin are 64-bit only. If your project has *Win32* platform support, it is safe to remove it. You can do this using *Visual Studio’s Configuation Manager* by clicking *Build* > *Configuation Manager...*.
 
 ## Modify the project
 
