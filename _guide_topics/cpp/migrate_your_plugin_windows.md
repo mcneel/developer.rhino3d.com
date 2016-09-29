@@ -27,8 +27,6 @@ It is presumed you already have the necessary tools installed and are ready to g
 
 ## Modify the project
 
-The following files are of interest:
-
 1. Using *Visual Studio’s Solution Explorer*, open *stdafx.h* and add the following preprocessor definitons:
 
         /////////////////////////////////////////////////////////////////////////////
