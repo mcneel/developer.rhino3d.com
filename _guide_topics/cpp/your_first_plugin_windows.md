@@ -60,7 +60,7 @@ The following files are of interest:
 1. *Resource.h* is the `#define` constant definitions for resources.
 1. *Test.rc* is the resource script.
 1. *Test.def* is the module definition.
-1. *targetver.h* is used to define the support Windows platform.
+1. *targetver.h* is used to define the supported Windows platform.
 
 ### Project Settings
 
