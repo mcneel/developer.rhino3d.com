@@ -1,6 +1,6 @@
 ---
 title: What's New?
-description: This brief guide outlines the new object types and features in the Rhino C/C++ SDK.
+description: This brief guide outlines the new and changed features in the Rhino C/C++ SDK.
 author: dale@mcneel.com, steve@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -19,7 +19,33 @@ TODO: 'needs review and the original contained links to empty wiki entries.'
 
 ## Overview
 
-The Rhino 6.0 C++ SDK is similar to the 5.0 SDK, but also has "breaking" changes. The following document attempts to describe what has been added, what has changed, and how to deal with these changes.
+The Rhino C/C++ SDK is not an abstract SDK. That is, the native classes and functions that are made available in the SDK are also used internally by Rhino. Thus, when the signatures of classes or functions change, all developers, both internal and external, are required to modify their source code to accommodate for the change. For this reason, the Rhino C/C++ SDK was not broken between Rhino 4 and 5. In doing this, plug-ins that worked in Rhino 4 also worked in Rhino 5.
+
+A lot of time has passed since the Rhino 4 C/C++ SDK was made available. And although there was quite a bit of new functionality added to Rhino 5, some of it required some “creative” programming in order not to break backwards compatibility with Rhino 4.
+
+In order to continue to move Rhino forward, breaking changes needed to be made to the SDK. The following document attempts to describe what has been added, what has changed, and how to deal with these changes.
+
+## Breaking Changes
+
+Although the breaking changes seem numerous, most fall within the following categories.
+
+## Multi-Document Support
+
+One of the primary goals for Rhino 6 was to consolidate the Rhino for Windows and Rhino for Mac source code into a single branch. In order to do this, the source code had to become more multiple-document aware, as Rhino for Mac handle multiple documents. Note, Rhino 6 for Windows is still a single document application.
+
+Thus, many SDK functions now require the developer to pass either a pointer or a reference to the active document or the active document’s runtime serial number.
+
+An example of this is *CRhinoDisplayConduit* class. In Rhino 5, you could enable a display conduit in a plug-in command like this:
+
+        CMyDisplayConduit conduit;
+        conduit.Enable();
+        context.m_doc.Redraw();
+
+In Rhino 6, you will need to do the following:
+
+        CMyDisplayConduit conduit;
+        conduit.Enable(context.m_doc.RuntimeSerialNumber());
+        context.m_doc.Redraw();
 
 ## Deprecation
 
