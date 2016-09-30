@@ -10,7 +10,6 @@ origin: http://wiki.mcneel.com/developer/sdksamples/planeangle
 order: 1
 keywords: ['rhino', 'angle', 'vector', 'points']
 layout: toc-guide-page
-TODO: 'image needs updating.'
 ---
 
 # {{ page.title }}
