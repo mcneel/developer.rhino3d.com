@@ -29,7 +29,7 @@ In order to continue to move Rhino forward, breaking changes needed to be made t
 
 Although the breaking changes seem numerous, most fall within the following categories.
 
-## Multi-Document Support
+### Multi-Document Support
 
 One of the primary goals for Rhino 6 was to consolidate the Rhino for Windows and Rhino for Mac source code into a single branch. In order to do this, the source code had to become more multiple-document aware, as Rhino for Mac handle multiple documents. Note, Rhino 6 for Windows is still a single document application.
 
