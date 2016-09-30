@@ -10,7 +10,6 @@ origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/overview
 order: 6
 keywords: ['developer', 'rhino', 'installer']
 layout: toc-guide-page
-TODO: 'needs review for technical accuracy, mac info needed.'
 ---
 
 # {{ page.title }}
@@ -47,14 +46,9 @@ On Windows, each plugin is compared to each installed version of Rhino.  The new
 
 ## Limitations
 
-### Windows
 - The Rhino Installer Engine will copy files from the *rhi* archive, and will register the plug ins it finds. No other execution is done.
 - Currently, it is not possible to digitally sign *rhi* files in order to verify the source of *rhi* files.
 - The Rhino Installer Engine is currently available with Rhino 5 and later.
-
-### Mac
-
-- **TODO**
 
 ---
 
