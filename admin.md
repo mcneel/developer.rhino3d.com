@@ -21,17 +21,17 @@ For contributors or administrators, the following guides are necessary reading:
 
 ## TODO List
 
-Individual guides and samples may have [TODO]({{ site.baseurl }}/guides/general/how_this_site_works/#todo--origin-fields) items listed in their yaml.  Find out how these [TODO]({{ site.baseurl }}/guides/general/how_this_site_works/#todo--origin-fields) fields work in the [How This Site Works]({{ site.baseurl }}/guides/general/how_this_site_works/#todo--origin-fields) guide.
+The following guides and samples have [TODO items listed in their yaml]({{ site.baseurl }}/guides/general/how_this_site_works/#todo--origin-fields)...
 
 ### Guides
-
-The following guides have [TODO]({{ site.baseurl }}/guides/general/how_this_site_works/#todo--origin-fields) items:
 
 {% assign guides = site.guide_topics | sort:"title" | sort:"apis" %}
 <div class="trigger">
   <ol>
+  {% assign guides_have_todo_items = false %}
   {% for topic in guides %}
     {% if topic.TODO %}
+      {% assign guides_have_todo_items = true %}
       <li>
         ({{ topic.apis }}) <a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a> {{ topic.TODO }} {% if topic.origin != 'unset' and topic.TODO == 'needs porting' %} from: <a href="{{ topic.origin }}">{{ topic.origin }}</a>{% endif %}
       </li>
@@ -40,15 +40,19 @@ The following guides have [TODO]({{ site.baseurl }}/guides/general/how_this_site
   </ol>
 </div>
 
-### Samples
+{% if guides_have_todo_items == false %}
+*NONE!  Good job!  Check [YouTrack](http://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved).*
+{% endif %}
 
-The following samples have [TODO]({{ site.baseurl }}/guides/general/how_this_site_works/#todo--origin-fields) items:
+### Samples
 
 {% assign samples = site.samples | sort:"title" | sort:"apis" %}
 <div class="trigger">
   <ol>
+  {% assign samples_have_todo_items = false %}
   {% for sample in samples %}
     {% if sample.TODO %}
+      {% assign samples_have_todo_items = true %}
       <li>
         ({{ sample.apis }}) <a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a>  {{ sample.TODO }} {% if sample.origin != 'unset'  and sample.TODO == 'needs porting' %} from: <a href="{{ sample.origin }}">{{ sample.origin }}</a>{% endif %}
     </li>
@@ -56,6 +60,10 @@ The following samples have [TODO]({{ site.baseurl }}/guides/general/how_this_sit
   {% endfor %}
   </ol>
 </div>
+
+{% if samples_have_todo_items == false %}
+*NONE!  Good job!  Check [YouTrack](http://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved).*
+{% endif %}
 
 ### YouTrack
 
