@@ -19,9 +19,9 @@ TODO: 'needs review and the original contained links to empty wiki entries.'
 
 ## Overview
 
-The Rhino C/C++ SDK is not an abstract SDK. That is, the native classes and functions that are made available in the SDK are also used internally by Rhino. Thus, when the signatures of classes or functions change, all developers, both internal and external, are required to modify their source code to accommodate for the change. For this reason, the Rhino C/C++ SDK was not broken between Rhino 4 and 5. In doing this, plug-ins that worked in Rhino 4 also worked in Rhino 5.
+The Rhino C/C++ SDK is *not* an abstract SDK. That is, the native classes and functions that are made available in the SDK are also used internally by Rhino. Thus, when the signatures of classes or functions change, all developers, both internal and external, are required to modify their source code to accommodate for the change. For this reason, the Rhino C/C++ SDK was not broken between Rhino 4 and 5. In doing this, plug-ins that worked in Rhino 4 also worked in Rhino 5.
 
-A lot of time has passed since the Rhino 4 C/C++ SDK was made available. And although there was quite a bit of new functionality added to Rhino 5, some of it required some “creative” programming in order not to break backwards compatibility with Rhino 4.
+A lot of time has passed since the Rhino 4 C/C++ SDK was made available. And although there was quite a bit of new functionality added to Rhino 5, some of it required some *creative* programming in order not to break backwards compatibility with Rhino 4.
 
 In order to continue to move Rhino forward, breaking changes needed to be made to the SDK. The following document attempts to describe what has been added, what has changed, and how to deal with these changes.
 
