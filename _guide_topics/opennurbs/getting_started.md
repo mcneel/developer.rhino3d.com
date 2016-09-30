@@ -10,7 +10,6 @@ origin: http://wiki.mcneel.com/developer/opennurbs/faq
 order: 2
 keywords: ['openNURBS', 'C#', '.NET', 'Rhino3dmIO']
 layout: toc-guide-page
-TODO: 'needs an image for ON_Mesh vertices.'
 ---
 
 # {{ page.title }}
@@ -79,11 +78,7 @@ This is an overview of the examples included with the openNURBS toolkit:
 
 All faces in a `ON_Mesh` are stored with vertices listed in counter-clockwise order.  In particular, for quads the vertices are ordered as:
 
-```
-v3-----v2
-|       |
-v0-----v1
-```
+![Vertex Ordering]({{ site.baseurl }}/images/opennurbs_getting_started_01.png)
 
 The quads may be non-planar.
 
