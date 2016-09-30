@@ -49,7 +49,7 @@ In Rhino 6, you need to do the following:
 
 A number of SDK functions have been modified to require some data from the active document. This is because SDK functions can no longer assume there is a single document.
 
-An example of this is the RhinoPointInPlanarClosedCurve() function, which now requires the absolute tolerance from the active document. In Rhino 5, you could use this function in a command as follows:
+An example of this is the *RhinoPointInPlanarClosedCurve()* function, which now requires the absolute tolerance from the active document. In Rhino 5, you could use this function in a command as follows:
 
         int rc = RhinoPointInPlanarClosedCurve(point, closed_curve, plane);
 
