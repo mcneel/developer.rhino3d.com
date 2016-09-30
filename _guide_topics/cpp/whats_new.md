@@ -27,7 +27,7 @@ In order to continue to move Rhino forward, breaking changes needed to be made t
 
 ## Breaking Changes
 
-Although the breaking changes seem numerous, most fall within the following categories.
+Although the breaking changes may seem numerous, most fall within the following categories.
 
 ### Multi-Document Support
 
