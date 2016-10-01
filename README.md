@@ -24,7 +24,9 @@ The `master` branch represents the current (_stable_) version of the site.  Chan
 
 ### macOS
 
-macOS Sierra ships with Ruby and RubyGems, however it's [not wise](https://github.com/mcneel/developer-rhino3d-com/pull/2#issuecomment-112601698) to mess around with this installation. Instead, install your own Ruby using [Homebrew](http://brew.sh).
+macOS ships with Ruby and RubyGems, however it's [not wise](https://github.com/mcneel/developer-rhino3d-com/pull/2#issuecomment-112601698) to mess around with this installation. Instead, install your own Ruby using [Homebrew](http://brew.sh).
+
+**Note**: Since OS X 10.11 (El Capitan) we've seen failures during the `gem install` step (`ERROR: While executing gem ... (Errno::EINVAL)`). We are investigating...
 
 #### Install Homebrew and Ruby
 
