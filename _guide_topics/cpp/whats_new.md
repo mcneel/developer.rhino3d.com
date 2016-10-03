@@ -35,7 +35,7 @@ One of the primary goals for Rhino 6 was to consolidate the Rhino for Windows an
 
 Thus, many SDK functions now require the developer to pass either a pointer or a reference to the active document or the active document’s runtime serial number.
 
-An example of this is the *CRhinoDisplayConduit* class, which now requires the document serial number in which it will operate. In Rhino 5, you could enable a display conduit in a plug-in command as follows:
+An example of this is the ```CRhinoDisplayConduit``` class, which now requires the document serial number in which it will operate. In Rhino 5, you could enable a display conduit in a plug-in command as follows:
 
         CMyDisplayConduit conduit;
         conduit.Enable();
