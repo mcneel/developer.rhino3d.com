@@ -49,7 +49,7 @@ In Rhino 6, you need to do the following:
 
 A number of SDK functions have been modified to require some data from the active document. This is because SDK functions can no longer assume there is a single document.
 
-An example of this is the *RhinoPointInPlanarClosedCurve()* function, which now requires the absolute tolerance from the active document. In Rhino 5, you could use this function in a command as follows:
+An example of this is the ```RhinoPointInPlanarClosedCurve``` function, which now requires the absolute tolerance from the active document. In Rhino 5, you could use this function in a command as follows:
 
         int rc = RhinoPointInPlanarClosedCurve(point, closed_curve, plane);
 
@@ -61,11 +61,11 @@ In Rhino 6, you will need to do the following:
 ## Model Components
 Rhino has a number of model components, such as layers, group, render materials, dimensions style, and more. Over the years, common properties, such as name, index, and id, have been added to these components, but done so in an inconsistent manner. For example, the method for obtaining the id of a layer was different that of a render material.
 
-The Rhino 6 C/C++ SDK contains a new *ON_ModelComponent* class that remedies this. Model component classes now inherit from this class.
+The Rhino 6 C/C++ SDK contains a new ```ON_ModelComponent``` class that remedies this. Model component classes now inherit from this class.
 
 Providing a consistent interface to common properties, however, means that the names of functions used to access these properties have change.
 
-For example, in Rhino 5, you could access the name of the current layer as follows:
+For example, in Rhino 5, you could access the name of the current Layer as follows:
 
         const CRhinoLayer& current_layer = context.m_doc.m_layer_table.CurrentLayer();
         ON_wString current_name = current_layer.LayerName();
@@ -75,7 +75,7 @@ In Rhino 6, you will need to do the following:
         const CRhinoLayer& current_layer = context.m_doc.m_layer_table.CurrentLayer();
         ON_wString current_name = current_layer.Name();
 
-As another example, in Rhino 5, you could access the id of a Rhino group as follows:
+As another example, in Rhino 5, you could access the id of a Group as follows:
 
         const CRhinoGroup* group = context.m_doc.m_group_table[0];
         if (group)
@@ -94,7 +94,7 @@ C++11 provides some great new features for C++ programmers. One such feature is 
 - Old-style enums convert to integral types, which can lead to strange behavior
 - You cannot specify the underlying integral type of an old-style enums
 
-There are a number of places in the Rhino 6 C/C++ SDK were old-style enums have been converted to scoped and strongly typed enums by convert *enum* declarations to *enum class*. Enumerators of these types of enums require a qualified name such as *enumname::enumerator* when you refer to them. 
+There are a number of places in the Rhino 6 C/C++ SDK were old-style enums have been converted to scoped and strongly typed enums by convert ```enum``` declarations to ```enum class```. Enumerators of these types of enums require a qualified name such as *enumname::enumerator* when you refer to them. 
 
 For example, in Rhino 5, you could specify a unit system in millimeters as follows:
         
