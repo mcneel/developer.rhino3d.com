@@ -94,7 +94,15 @@ C++11 provides some great new features for C++ programmers. One such feature is 
 - You cannot specify the underlying integral type of an old-style enums
 - Old-style enums do not have their own scope
 
-There are a number of places in the Rhino 6 C/C++ SDK were old-style enums have been converted to scoped and strongly typed enums. 
+There are a number of places in the Rhino 6 C/C++ SDK were old-style enums have been converted to scoped and strongly typed enums by convert *enum* declarations to *enum class*. Enumerators of these types of enums require a qualified name such as *enumname::enumerator* when you refer to them. 
+
+For example, in Rhino 5, you could specify a unit system in millimeters as follows:
+        
+        ON_UnitSystem units(ON::millimeters);
+        
+In Rhino 6, you will need to do the following:        
+        
+        ON_UnitSystem units(ON::LengthUnitSystem::Millimeters);
 
 ## Deprecation
 
