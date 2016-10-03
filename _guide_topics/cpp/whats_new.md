@@ -87,6 +87,14 @@ In Rhino 6, you will need to do the following:
         if (group)
           ON_UUID group_id = group->Id();
 
+## Strongly Typed Enums
+C++11 provides some great new features for C++ programmers. One such feature is strongly typed enumerations, which ensures some measure of compatibility across compilers. They also make up for some shortcomings of old-style enums:
+
+- Old-style enums do not have their own scope
+- Old-style enums convert to integral types, which can lead to strange behavior
+- You cannot specify the underlying integral type of an old-style enums
+
+There are a number of places in the Rhino 6 C/C++ SDK were old-style enums have been converted to strongly typed enums. 
 
 ## Deprecation
 
