@@ -58,6 +58,36 @@ In Rhino 6, you will need to do the following:
         double tolerance = context.m_doc.AbsoluteTolerance();
         int rc = RhinoPointInPlanarClosedCurve(point, closed_curve, plane, tolerance);
 
+## Model Components
+Rhino has a number of model components, such as layers, group, render materials, dimensions style, and more. Over the years, common properties, such as name, index, and id, have been added to these components, but done so in an inconsistent manner. For example, the method for obtaining the id of a layer was different that of a render material.
+
+The Rhino 6 C/C++ SDK contains a new *ON_ModelComponent* class that remedies this. Model component classes now inherit from this class.
+
+Providing a consistent interface to common properties, however, means that the names of functions used to access these properties have change.
+
+For example, in Rhino 5, you could access the name of the current layer as follows:
+
+        const CRhinoLayer& current_layer = context.m_doc.m_layer_table.CurrentLayer();
+        ON_wString current_name = current_layer.LayerName();
+
+In Rhino 6, you will need to do the following:
+
+        const CRhinoLayer& current_layer = context.m_doc.m_layer_table.CurrentLayer();
+        ON_wString current_name = current_layer.Name();
+
+As another example, in Rhino 5, you could access the id of a Rhino group as follows:
+
+        const CRhinoGroup* group = context.m_doc.m_group_table[0];
+        if (group)
+          ON_UUID group_id = group->m_group_id;
+
+In Rhino 6, you will need to do the following:
+
+        const CRhinoGroup* group = context.m_doc.m_group_table[0];
+        if (group)
+          ON_UUID group_id = group->Id();
+
+
 ## Deprecation
 
 Obsolete functions from Rhino 5 are marked as deprecated with a message to help accomplish the same goal through alternate functions in the Rhino 6 SDK. These deprecations will generate compiler warnings when plug-in code attempts to call these functions.
