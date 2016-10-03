@@ -108,7 +108,9 @@ In Rhino 6, you will need to do the following:
 
 Obsolete functions from Rhino 5 are marked as deprecated with a message to help accomplish the same goal through alternate functions in the Rhino 6 SDK. These deprecations will generate compiler warnings when plug-in code attempts to call these functions.
 
-Functions marked as deprecated continue to work in Rhino 6. In Rhino 7, the functions marked as deprecated in Rhino 6 will be removed.
+Functions marked as deprecated may or may not continue to work in Rhino 6. Thus, you should replace all calls to deprecated functions with calls to their replacements before distributing any plug-in.
+
+In Rhino 7, all functions marked as deprecated in Rhino 6 will be removed.
 
 ## Additions
 
