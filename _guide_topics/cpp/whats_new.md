@@ -58,7 +58,7 @@ In Rhino 6, you will need to do the following:
         double tolerance = context.m_doc.AbsoluteTolerance();
         int rc = RhinoPointInPlanarClosedCurve(point, closed_curve, plane, tolerance);
 
-## Model Components
+### Model Components
 Rhino has a number of model components, such as layers, group, render materials, dimensions style, and more. Over the years, common properties, such as name, index, and id, have been added to these components, but done so in an inconsistent manner. For example, the method for obtaining the id of a layer was different that of a render material.
 
 The Rhino 6 C/C++ SDK contains a new ```ON_ModelComponent``` class that remedies this. Model component classes now inherit from this class.
@@ -87,7 +87,7 @@ In Rhino 6, you will need to do the following:
         if (group)
           ON_UUID group_id = group->Id();
 
-## Scoped and Strongly Typed Enums
+### Scoped and Strongly Typed Enums
 C++11 provides some great new features for C++ programmers. One such feature is scoped and strongly typed enumerations, which ensures some measure of compatibility across compilers. They also make up for some shortcomings of old-style enums:
 
 - Old-style enums do not have their own scope
@@ -104,17 +104,13 @@ In Rhino 6, you will need to do the following:
         
         ON_UnitSystem units(ON::LengthUnitSystem::Millimeters);
 
-## Deprecation
+### Deprecation
 
 Obsolete functions from Rhino 5 are marked as deprecated with a message to help accomplish the same goal through alternate functions in the Rhino 6 SDK. These deprecations will generate compiler warnings when plug-in code attempts to call these functions.
 
 Functions marked as deprecated may or may not continue to work in Rhino 6. Thus, you should replace all calls to deprecated functions with calls to their replacements before distributing any plug-in.
 
 In Rhino 7, all functions marked as deprecated in Rhino 6 will be removed.
-
-## Additions
-
-TODO: what has been added?
 
 ## Changes
 
