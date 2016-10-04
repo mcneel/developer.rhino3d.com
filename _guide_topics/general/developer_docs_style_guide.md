@@ -131,7 +131,7 @@ To get a Sub Header to show up in the TOC, you would type this:
 ### Sweet Sub Header
 ```
 
-**NOTE**: TOCs are only generated from **H1**, **H2**, and **H3** headers...**H4** (and smaller) headers are ignored by the TOC-enabled templates.
+**Note**: TOCs are only generated from *H1*, *H2*, and *H3* headers...*H4* (and smaller) headers are ignored by the TOC-enabled templates.
 
 ---
 
@@ -507,7 +507,7 @@ yields:
 
 ![pluginlogo]({{ site.baseurl }}/images/rhinocommonlogo256x256.png)
 
-**NOTE**: Use the `site.baseurl` macro.  See the source of this page for this section for an example.
+**Note**: Use the `site.baseurl` macro.  See the source of this page for this section for an example.
 
 ---
 

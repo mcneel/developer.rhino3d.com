@@ -113,9 +113,9 @@ permalink: /guides/
 
 The YAML fields for Pages determine:
 
-* **layout**: The layout html file used by Liquid (found in `/_layouts/`) on the page.
-* **title**: This is the title of the page.  This is the html page title.
-* **order**: The relative sort-order of this page in any collection of pages.
+* *layout*: The layout html file used by Liquid (found in `/_layouts/`) on the page.
+* *title*: This is the title of the page.  This is the html page title.
+* *order*: The relative sort-order of this page in any collection of pages.
 
 
 ### Guides
@@ -144,17 +144,17 @@ layout: toc-guide-page
 
 The YAML fields for Guides determine:
 
-* **title**: This is the title of the guide.  This is the html page title.
-* **description**: This is a brief description of the guide.
-* **author**: The original - or responsible - author.
-* **apis**: The Rhino APIs that this guide pertains to.
-* **languages**: The programming languages this guide references.
-* **platforms**: The operating systems this guide is relevant to.
-* **categories**: The category of the guide (General, Overview, Advanced).
-* **origin**: If this guide was ported from another location, the URL backline to the origin(al) page.
-* **order**: The relative sort-order of this guide in any list.
-* **keywords**: Keywords related to this guide (un-used, as of yet).
-* **layout**: The layout html file used by Liquid (found in `/_layouts/`) on the guide.
+* *title*: This is the title of the guide.  This is the html page title.
+* *description*: This is a brief description of the guide.
+* *author*: The original - or responsible - author.
+* *apis*: The Rhino APIs that this guide pertains to.
+* *languages*: The programming languages this guide references.
+* *platforms*: The operating systems this guide is relevant to.
+* *categories*: The category of the guide (General, Overview, Advanced).
+* *origin*: If this guide was ported from another location, the URL backline to the origin(al) page.
+* *order*: The relative sort-order of this guide in any list.
+* *keywords*: Keywords related to this guide (un-used, as of yet).
+* *layout*: The layout html file used by Liquid (found in `/_layouts/`) on the guide.
 
 
 ### APIs
@@ -185,17 +185,17 @@ layout: code-sample-cpp
 
 The YAML fields for Samples determine:
 
-* **title**: This is the title of the sample.  This is the html page title.
-* **description**: A brief description of what the sample does.
-* **author**: The original - or responsible - author.
-* **apis**: The Rhino APIs or SDKs that this sample pertains to.
-* **languages**: The programming languages this sample references.
-* **platforms**: The operating systems this sample is relevant to.
-* **categories**: The category of the sample (Recipes, Snippet, Boilerplate, etc.).
-* **origin**: If this sample was ported from another location, the URL backline to the origin(al) page.
-* **order**: The relative sort-order of this sample in any list.
-* **keywords**: Keywords related to this sample (un-used, as of yet).
-* **layout**: The layout html file used by Liquid (found in `/_layouts/`) on the sample.
+* *title*: This is the title of the sample.  This is the html page title.
+* *description*: A brief description of what the sample does.
+* *author*: The original - or responsible - author.
+* *apis*: The Rhino APIs or SDKs that this sample pertains to.
+* *languages*: The programming languages this sample references.
+* *platforms*: The operating systems this sample is relevant to.
+* *categories*: The category of the sample (Recipes, Snippet, Boilerplate, etc.).
+* *origin*: If this sample was ported from another location, the URL backline to the origin(al) page.
+* *order*: The relative sort-order of this sample in any list.
+* *keywords*: Keywords related to this sample (un-used, as of yet).
+* *layout*: The layout html file used by Liquid (found in `/_layouts/`) on the sample.
 
 
 ## TODO & origin fields
