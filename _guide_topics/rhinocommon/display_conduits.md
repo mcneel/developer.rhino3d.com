@@ -30,14 +30,14 @@ At one end is the Rhino model, a collection of 3D geometry and data.  At the oth
 
 Note that the pipeline itself is not bound to the channels.  It just executes its code and raises events during specific phases of drawing.  During the drawing of a single frame the events are raised in the following order.  You hook into the pipeline by extending DisplayConduit and overriding the event handlers that have the same name as the pipeline events:
 
-1. **ObjectCulling**: Create a list of all the objects to draw.
-1. **CalculateBoundingBox**: Determine the extent of the entire scene.  Override this function to increase the bounding box of scene so it includes the geometry that you plan to draw.
-1. **CalculateBoundingBoxZoomExtents**: If you want to participate in the Zoom Extents command with your display conduit, then you need to override ZoomExtentsBoundingBox.  Typically you could just call your CalculateBoundingBox override, but you may also want to spend a little more time here and compute a tighter bounding box for your conduit geometry.
-1. **PreDrawObjects**: Called before objects are drawn.  Depth writing and testing are on. Here you could set up the object's display attributes.
-1. **PreDrawObject**: Called before every object in the scene is drawn.
-1. **PostDrawObjects**: Called after all non-highlighted objects are drawn.  Depth writing and testing are still turned on. If you want to draw without depth writing and testing, see DrawForeground.  Here you draw stuff on top of all the objects, like selection wireframes.
-1. **DrawForeground**: Called after all non-highlighted objects are drawn and PostDrawObjects called. Depth writing and testing are turned **off**.  If you want to draw with depth writing and testing, see PostDrawObjects.  For example, here you could draw objects like the little axis-system in the lower left corner of viewports.
-1. **DrawOverlay**: If Rhino is in a feedback mode, the draw overlay call lets temporary geometry be drawn on top of everything in the scene.  This is similar to the dynamic draw routine that occurs with custom get point.
+1. *ObjectCulling*: Create a list of all the objects to draw.
+1. *CalculateBoundingBox*: Determine the extent of the entire scene.  Override this function to increase the bounding box of scene so it includes the geometry that you plan to draw.
+1. *CalculateBoundingBoxZoomExtents*: If you want to participate in the Zoom Extents command with your display conduit, then you need to override ZoomExtentsBoundingBox.  Typically you could just call your CalculateBoundingBox override, but you may also want to spend a little more time here and compute a tighter bounding box for your conduit geometry.
+1. *PreDrawObjects*: Called before objects are drawn.  Depth writing and testing are on. Here you could set up the object's display attributes.
+1. *PreDrawObject*: Called before every object in the scene is drawn.
+1. *PostDrawObjects*: Called after all non-highlighted objects are drawn.  Depth writing and testing are still turned on. If you want to draw without depth writing and testing, see DrawForeground.  Here you draw stuff on top of all the objects, like selection wireframes.
+1. *DrawForeground*: Called after all non-highlighted objects are drawn and PostDrawObjects called. Depth writing and testing are turned *off*.  If you want to draw with depth writing and testing, see PostDrawObjects.  For example, here you could draw objects like the little axis-system in the lower left corner of viewports.
+1. *DrawOverlay*: If Rhino is in a feedback mode, the draw overlay call lets temporary geometry be drawn on top of everything in the scene.  This is similar to the dynamic draw routine that occurs with custom get point.
 
 You hook into the pipeline by extending DisplayConduit and overriding the key event handlers which have the same name as the pipeline events.
 

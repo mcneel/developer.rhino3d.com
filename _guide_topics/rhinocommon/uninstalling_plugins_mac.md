@@ -24,17 +24,17 @@ Rhino for Mac does not (yet) have a Plugin Manager.  However, uninstalling plugi
 
 ## Step-by-Step
 
-1. **Quit Rhino**, if it is current running.
-1. In **Finder**, navigate to the *~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/* folder.  If you [can't find this folder](#user-library), you can do the following...
-   1. In the **Finder** toolbar, in the **Go** menu, select **Go to Folder...**
+1. *Quit Rhino*, if it is current running.
+1. In *Finder*, navigate to the *~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/* folder.  If you [can't find this folder](#user-library), you can do the following...
+   1. In the *Finder* toolbar, in the *Go* menu, select *Go to Folder...*
 ![finder_go]({{ site.baseurl }}/images/uninstalling_plugins_mac_01.png)
-   1. In the **Go to Folder** dialog, paste the following path:
+   1. In the *Go to Folder* dialog, paste the following path:
    *~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/*
 ![paste_path]({{ site.baseurl }}/images/uninstalling_plugins_mac_02.png)
-   1. Click **Go**.  A Finder window should open showing the contents of the folder.
-1. **Remove** (move or delete) the plugin's folder from the *MacPlugIns* folder...
+   1. Click *Go*.  A Finder window should open showing the contents of the folder.
+1. *Remove* (move or delete) the plugin's folder from the *MacPlugIns* folder...
 ![drag_to_trash]({{ site.baseurl }}/images/uninstalling_plugins_mac_03.png)
-1. **Restart** Rhino.
+1. *Restart* Rhino.
 
 
 ## Behind the Scenes
@@ -52,10 +52,10 @@ By default, the User Library folder is hidden from view.
 
 To make your Library visible in the Finder:
 
-1. In **Finder**, navigate to your **Home** (*~*) folder.  You must be in your Home folder for this to work.
-1. Press **Command-J** to bring up the **Finder View** options dialog...
+1. In *Finder*, navigate to your *Home* (*~*) folder.  You must be in your Home folder for this to work.
+1. Press <kbd>Command</kbd>+<kbd>J</kbd> to bring up the *Finder View* options dialog...
 ![finder_view_options]({{ site.baseurl }}/images/finder_view_options.png)
-1. Check the **Show Library Folder** check box.  Now your Library should show up in the view.  You may want to drag this folder to your Favorites area of the Finder sidebar for easy access later.
+1. Check the *Show Library Folder* check box.  Now your Library should show up in the view.  You may want to drag this folder to your Favorites area of the Finder sidebar for easy access later.
 
 ---
 

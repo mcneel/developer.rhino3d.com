@@ -44,12 +44,12 @@ Xamarin - a subsidiary of Microsoft - is a company founded by the engineers who 
 
 ### The Xamarin platform
 
-The **[Xamarin Platform](http://xamarin.com/platform)** is comprised of the following pieces:
+The [Xamarin Platform](http://xamarin.com/platform) is comprised of the following pieces:
 
-- **[Xamarin Studio](http://xamarin.com/studio)**: C# IDE that runs on both Windows and Mac.
-- **Xamarin.Android**: Used to build C# .NET applications for Android devices.  This is useful to have installed if you wish to use the [RhinoMobile]({{ site.baseurl }}/guides/#rhinomobile) toolkit, but not required for RhinoCommon in Rhino for Mac.
-- **Xamarin.iOS**: Used to build C# .NET applications for Apple iOS devices.  This is useful to have installed if you wish to use the [RhinoMobile]({{ site.baseurl }}/guides/#rhinomobile) toolkit, but not required for RhinoCommon in Rhino for Mac.
-- **Xamarin.Mac**: Xamarin's closed-source version of MonoMac.
+- *[Xamarin Studio](http://xamarin.com/studio)*: C# IDE that runs on both Windows and Mac.
+- *Xamarin.Android*: Used to build C# .NET applications for Android devices.  This is useful to have installed if you wish to use the [RhinoMobile]({{ site.baseurl }}/guides/#rhinomobile) toolkit, but not required for RhinoCommon in Rhino for Mac.
+- *Xamarin.iOS*: Used to build C# .NET applications for Apple iOS devices.  This is useful to have installed if you wish to use the [RhinoMobile]({{ site.baseurl }}/guides/#rhinomobile) toolkit, but not required for RhinoCommon in Rhino for Mac.
+- *Xamarin.Mac*: Xamarin's closed-source version of MonoMac.
 
 For developing RhinoCommon plugins, *only* Xamarin Studio is required.
 
@@ -65,7 +65,7 @@ Xamarin.Mac is Xamarin's proprietary closed-source toolkit used to provide .NET 
 
 ### Visual Studio support
 
-Xamarin offers a [Visual Studio extension](http://xamarin.com/visual-studio), however this extension is only useful for Xamarin.iOS and Xamarin.Android development, **not** for RhinoCommon.  If you are writing RhinoCommon plugins you are free to use Visual Studio - when targeting either Rhino for Mac or Rhino for Windows - just as you normally would.  When you want to debug and test your plugin in Rhino for Mac, you will have to use Xamarin Studio, but you can use the *exactly same solution* and *project files* to do this.
+Xamarin offers a [Visual Studio extension](http://xamarin.com/visual-studio), however this extension is only useful for Xamarin.iOS and Xamarin.Android development, *not* for RhinoCommon.  If you are writing RhinoCommon plugins you are free to use Visual Studio - when targeting either Rhino for Mac or Rhino for Windows - just as you normally would.  When you want to debug and test your plugin in Rhino for Mac, you will have to use Xamarin Studio, but you can use the *exactly same solution* and *project files* to do this.
 
 ### Licensing Xamarin
 
@@ -81,8 +81,8 @@ Xamarin's Platform can be [downloaded](https://xamarin.com/download) and tested 
 
 Xamarin Studio uses the same formats as Visual Studio:
 
-- **.sln**
-- **.csproj**
+- *.sln*
+- *.csproj*
 
 It is important to stress: these *are* Visual Studio solutions and projects.  You can open solutions and projects created in Xamarin Studio in Visual Studio and vice-versa.
 

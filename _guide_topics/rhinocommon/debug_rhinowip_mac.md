@@ -28,7 +28,7 @@ It also presumes you have downloaded and installed [the latest RhinoWIP](http://
 
 ## Edit References
 
-Your plugin requires references to RhinoCommon dlls that are contained within the Rhino application bundle.  The default RhinoCommon Plugin template that comes with the Rhino Xamarin Studio AddIn references **Eto**, **Rhino.UI**, and **RhinoCommon**:
+Your plugin requires references to RhinoCommon dlls that are contained within the Rhino application bundle.  The default RhinoCommon Plugin template that comes with the Rhino Xamarin Studio AddIn references *Eto*, *Rhino.UI*, and *RhinoCommon*:
 
 ![Bundle References]({{ site.baseurl }}/images/debug_rhinowip_mac_01.png)
 
@@ -38,9 +38,9 @@ We want to target those found in the *RhinoWIP.app* bundle.  Unfortunately, Xama
 
 #### Step-by-Step
 
-1. In Xamarin Studio, **right/option-click** on the project name and select **Tools** > **Edit File**...  
+1. In Xamarin Studio, *right/option-click* on the project name and select *Tools* > *Edit File*...  
 ![Xamarin Studio Edit File]({{ site.baseurl }}/images/debug_rhinowip_mac_02.png)
-1. Use Xamarin Studio's **Search** > **Replace** function to find *\Applications\Rhinoceros.app* and replace it with *\Applications\RhinoWIP.app*...
+1. Use Xamarin Studio's *Search* > *Replace* function to find *\Applications\Rhinoceros.app* and replace it with *\Applications\RhinoWIP.app*...
 ![Search and Replace]({{ site.baseurl }}/images/debug_rhinowip_mac_03.png)
 1. Verify that these changes are only happening with the `<ItemGroup>` that contains `<Reference>` entries.  Accept your *\Applications\RhinoWIP.app* replacements to make the change...
 
@@ -61,6 +61,6 @@ We want to target those found in the *RhinoWIP.app* bundle.  Unfortunately, Xama
             <Private>False</Private>
           </Reference>
         </ItemGroup>
-1. **Save** and **Close** your project's *.csproj*.
-1. The project will reload automatically.  In the **Solution Explorer**, select any of the three references you just changed above.  If you examine their properties (**right/option-click** > **Properties**), you will notice they are now referencing the *RhinoWIP.app* versions.
-1. **Build** and **Run**.  Your plugin's **debugging session** should now **launch with RhinoWIP**.
+1. *Save* and *Close* your project's *.csproj*.
+1. The project will reload automatically.  In the *Solution Explorer*, select any of the three references you just changed above.  If you examine their properties (*right/option-click* > *Properties*), you will notice they are now referencing the *RhinoWIP.app* versions.
+1. *Build* and *Run*.  Your plugin's *debugging session* should now *launch with RhinoWIP*.

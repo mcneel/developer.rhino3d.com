@@ -21,7 +21,7 @@ What is the best way to prepare a Rhino toolbar for multi-language support?
 
 ## Answer
 
-If you want to create Rhino-style toolbars, then use Rhino's **Toolbar** command. You can save your custom toolbars in your own Rhino User Interface (RUI) file. For details on creating toolbars, see the Rhino help file.
+If you want to create Rhino-style toolbars, then use Rhino's `Toolbar` command. You can save your custom toolbars in your own Rhino User Interface (RUI) file. For details on creating toolbars, see the Rhino help file.
 
 An RUI file is an XML file that can be viewed and edited in an ordinary text editor.
 

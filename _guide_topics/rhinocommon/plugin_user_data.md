@@ -49,7 +49,7 @@ There are three forms of object user data:
 1. UserDictionary
 1. Custom UserData
 
-It is **recommended to typically use the User Strings or the UserDictionary on an object** since the data is automatically serialized for you and it is easily shared between plugins and scripts.
+It is *recommended to typically use the User Strings or the UserDictionary on an object* since the data is automatically serialized for you and it is easily shared between plugins and scripts.
 
 In the case that you want to write your own private custom user data, you would derive a class from `Rhino.DocObjects.Custom.UserData`. Here's a sample:
 

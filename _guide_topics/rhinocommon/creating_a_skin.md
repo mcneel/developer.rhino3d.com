@@ -28,8 +28,8 @@ Creating a custom Skin for Rhino involves creating a custom skin assembly:
 
 To create the Skin DLL:
 
-1. Launch **Visual Studio** and add a new Class Library project to your solution.
-1. In the new Class Library project, add a reference to *RhinoCommon.dll*, which is found in Rhino's *System* folder. Note: make sure, after adding the reference, to set the properties of the reference to **Copy Local = False**.
+1. Launch *Visual Studio* and add a new Class Library project to your solution.
+1. In the new Class Library project, add a reference to *RhinoCommon.dll*, which is found in Rhino's *System* folder. Note: make sure, after adding the reference, to set the properties of the reference to *Copy Local = False*.
 1. Create a new class that inherits from `Rhino.Runtime.Skin`.
 1. Add a post build event to the project to rename the assembly from *.dll* to *.rhs*:
 `(TargetPath)" "$(TargetDir)$(ProjectName).rhs" Erase "$(TargetPath)"`
@@ -87,7 +87,7 @@ End Namespace
   <p>Modifying the registry incorrectly can have negative consequences on your system's stability and even damage the system.</p>
 </div>
 
-To install your custom Skin, use **REGEDIT.EXE** to add a scheme key to your registry with a path to your Skin DLL. For example:
+To install your custom Skin, use *REGEDIT.EXE* to add a scheme key to your registry with a path to your Skin DLL. For example:
 
 #### Rhino 64-bit
 
@@ -102,7 +102,7 @@ To install your custom Skin, use **REGEDIT.EXE** to add a scheme key to your reg
 
 You can now test your custom Skin by creating shortcut to your Rhino executable with `/scheme="<scheme name from the previous step>"` as command line argument.  For example:
 
-`"C:\Program Files\Rhinoceros 5 (64-bit)\System\Rhino.exe" /scheme=MySkin`
+*C:\Program Files\Rhinoceros 5 (64-bit)\System\Rhino.exe" /scheme=MySkin*
 
 #### Rhino 32-bit
 
@@ -117,4 +117,4 @@ You can now test your custom Skin by creating shortcut to your Rhino executable 
 
 You can now test your custom Skin by creating shortcut to your Rhino executable with `/scheme="<scheme name from the previous step>"` as command line argument. For example:
 
-`"C:\Program Files (x86)\Rhinoceros 5\System\Rhino4.exe" /scheme=MySkin`
+*C:\Program Files (x86)\Rhinoceros 5\System\Rhino4.exe" /scheme=MySkin*

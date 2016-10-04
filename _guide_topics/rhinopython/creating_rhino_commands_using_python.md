@@ -68,7 +68,7 @@ In the above `__plugin__.py`, the lines mean the following:
 - Line 2 has the version - it would be up to you to keep that current.
 - Line 3 has the command name.
 
-With this file in place, you can zip the **contents of the `dev` sub-folder** and rename it to `MyNewPlugIn.rhi`.
+With this file in place, you can zip the *contents of the `dev` sub-folder* and rename it to `MyNewPlugIn.rhi`.
 
 <div class="alert alert-info">
 
