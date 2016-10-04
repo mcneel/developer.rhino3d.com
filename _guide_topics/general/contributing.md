@@ -53,12 +53,12 @@ You may also want to take a look at the [Admin]({{ site.baseurl }}/admin/) page.
 
 Who to talk to for what:
 
-- **Steve Baer** (RhinoCommon) - **@stevebaer** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- **Alain Cormier** (Rhino.Python) - **@alain** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- **Dale Fugier** (C/C++ SDK, Zoo, RAP) - **@dale** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- **Dale Lear** (openNURBS) - **@dalelear** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- **David Rutten** (Grasshopper) - **[David Rutten](http://www.grasshopper3d.com/profile/DavidRutten)** on the [Grasshopper 3D forum](http://www.grasshopper3d.com)
-- **Giulio Piacentino** (GhPython) - **@piac** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- **Andy le Bihan** (RDK) - **@andy** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- **Curtis Wensley** (Eto) - **@curtisw** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- **Dan Belcher** (RhinoMobile) - **@dan** on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- Steve Baer (RhinoCommon) - @stevebaer on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- Alain Cormier (Rhino.Python) - @alain on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- Dale Fugier (C/C++ SDK, Zoo, RAP) - @dale on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- Dale Lear (openNURBS) - @dalelear on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- David Rutten (Grasshopper) - [David Rutten](http://www.grasshopper3d.com/profile/DavidRutten) on the [Grasshopper 3D forum](http://www.grasshopper3d.com)
+- Giulio Piacentino (GhPython) - @piac on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- Andy le Bihan (RDK) - @andy on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- Curtis Wensley (Eto) - @curtisw on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- Dan Belcher (RhinoMobile) - @dan on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
