@@ -52,11 +52,9 @@ On Windows, this site attempts to use Segoe UI (font size: 16 px, font weight: 4
 
 Navigate to *C:\Program Files\Rhinoceros 5 (64-bit)\Plug-ins*.
 
-### Bold in Instructions
+### Bold
 
-`**Bold**` (strong emphasis) is used in instructions to highlight keywords for the individual instruction.  It is frequently used to hightlight the **verb** and/or the **object** of a sentence.  For example:
-
-1. Click the **OK** button to accept your changes.
+`**Bold**` (strong emphasis) is used in instructions to highlight critical instructions that are very important.  Bold should be **used sparingly** as it is often present in headers as natural division of content.
 
 ### Spelling & Case
 
