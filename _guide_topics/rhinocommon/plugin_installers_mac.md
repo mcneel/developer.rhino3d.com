@@ -24,24 +24,24 @@ Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins
 
 ## Step-by-Step
 
-1. **Locate** your plugin folder in **Finder**.  Let's imagine our plugin is called **HelloRhinoCommon** and we have built it for **Release**...
+1. *Locate* your plugin folder in *Finder*.  Let's imagine our plugin is called *HelloRhinoCommon* and we have built it for *Release*...
 ![Find Plugin In Finder]({{ site.baseurl }}/images/plugin_installer_mac_01.png)
-1. **Single-click the name** your plugin's **Release** (or **Debug**) folder to **Rename** it.  The new name should be your plugin assembly with a *.rhp* suffix.  For example, if your plugin is called *HelloRhinoCommon*, rename the folder that contains this file *HelloRhinoCommon.rhp*...
+1. *Single-click the name* your plugin's *Release* (or *Debug*) folder to *Rename* it.  The new name should be your plugin assembly with a *.rhp* suffix.  For example, if your plugin is called *HelloRhinoCommon*, rename the folder that contains this file *HelloRhinoCommon.rhp*...
 1. You will be prompted to confirm this change.  Click the "**Add**" button:
 ![Click Add]({{ site.baseurl }}/images/plugin_installer_mac_02.png)
 1. The icon of the folder[^1] should now look like this...
 ![New Icon]({{ site.baseurl }}/images/plugin_installer_mac_03.png)
-1. **Archive** the plugin **folder**.  **Right-click** (option-click) the plugin *.rhp* **folder** you created in the previous step and select "**Compress** (your plugin name)."  This creates a zip archive of the contents of the folder.
-1. **Single-click the name** of the new archive you created in step 5.  This allows you **to rename** the archive.
-1. Change the **extension** from *.zip* to *.macrhi*.  
-1. You will be prompted to confirm this change.  Select the "**Use .macrhi**" button:
+1. *Archive* the plugin *folder*.  *Right-click* (option-click) the plugin *.rhp* *folder* you created in the previous step and select "*Compress* (your plugin name)."  This creates a zip archive of the contents of the folder.
+1. *Single-click the name* of the new archive you created in step 5.  This allows you *to rename* the archive.
+1. Change the *extension* from *.zip* to *.macrhi*.  
+1. You will be prompted to confirm this change.  Select the "*Use .macrhi*" button:
 ![Use rhi Extension]({{ site.baseurl }}/images/plugin_installer_mac_04.png)
-1. Notice that **the icon changes** from a zip archive to a Rhino RHI:
+1. Notice that *the icon changes* from a zip archive to a Rhino RHI:
 ![use_macrhi_confirm]({{ site.baseurl }}/images/plugin_installer_mac_05.png)
-1. If Rhino for Mac is open, **drag the** ***.macrhi*** archive onto Rhino for Mac's icon in the **dock**; OR:
-1. If Rhino for Mac is *not* currently open, **double-click the** ***.macrhi*** **archive** to launch and install the plugin...
+1. If Rhino for Mac is open, *drag the* *.macrhi* archive onto Rhino for Mac's icon in the *dock*; OR:
+1. If Rhino for Mac is *not* currently open, *double-click the .macrhi archive* to launch and install the plugin...
    ![plugin_loaded]({{ site.baseurl }}/images/plugin_installer_mac_06.png)
-1. Click **OK** then **Quit** and **Restart** Rhino.  Your plugin should load.
+1. Click *OK* then *Quit* and *Restart* Rhino.  Your plugin should load.
 
 ## Behind the Scenes
 
@@ -61,10 +61,10 @@ By default, the User Library folder is hidden from view.
 
 To make your Library visible in the Finder:
 
-1. In **Finder**, navigate to your **Home** (*~*) folder.  You must be in your Home folder for this to work.
-1. Press **Command-J** to bring up the **Finder View** options dialog...
+1. In *Finder*, navigate to your *Home* (*~*) folder.  You must be in your Home folder for this to work.
+1. Press <kbd>Command</kbd>+<kbd>J</kbd> to bring up the *Finder View* options dialog...
 ![finder_view_options]({{ site.baseurl }}/images/finder_view_options.png)
-1. Check the **Show Library Folder** check box.  Now your Library should show up in the view.  You may want to drag this folder to your Favorites area of the Finder sidebar for easy access later.
+1. Check the *Show Library Folder* check box.  Now your Library should show up in the view.  You may want to drag this folder to your Favorites area of the Finder sidebar for easy access later.
 
 ## Related topics
 
@@ -76,6 +76,6 @@ To make your Library visible in the Finder:
 
 ## Footnotes
 
-[^1]: macOS (and Unix) has a special kind of folder that masquerades as a file.  These are called "packages."  (Most apps found in */Applications/* are actually packages called "bundles").  You can access the contents in Finder by **right-clicking** on the package and selecting **Show Package Contents**.
+[^1]: macOS (and Unix) has a special kind of folder that masquerades as a file.  These are called "packages."  (Most apps found in */Applications/* are actually packages called "bundles").  You can access the contents in Finder by *right-clicking* on the package and selecting *Show Package Contents*.
 
 [^2]: Do not confuse this path with */Library/Application Support/McNeel/Rhinoceros/*, which is the system-wide Library location.

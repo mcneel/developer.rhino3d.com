@@ -33,13 +33,13 @@ This guide presumes you have an:
 
 At the time of this writing, Visual Studio 2015 "proper" comes in [three editions](https://www.visualstudio.com/vs-2015-product-editions): Community, Professional, and Enterprise.  Any of these editions will work. Additionally, [Visual Studio Express 2015 for Windows Desktop](https://www.visualstudio.com/products/visual-studio-express-vs.aspx) will work with more limited debugging support[^4]. Other Express versions, such as Express for Windows, Express for Web or Team Foundation Server 2015 Express, will not work.
 
-*NOTE*: RhinoCommon plugins can be authored in Visual Studio 2010, 2012, 2013, and 2015 both in C# and VB, and included in Ultimate, Professional, Premium, C# Express, Vb Express and Windows Desktop Express (where available).  For the purposes of this guide, we will presume you are using Visual Studio 2015 Community Edition.
+**Note**: RhinoCommon plugins can be authored in Visual Studio 2010, 2012, 2013, and 2015 both in C# and VB, and included in Ultimate, Professional, Premium, C# Express, Vb Express and Windows Desktop Express (where available).  For the purposes of this guide, we will presume you are using Visual Studio 2015 Community Edition.
 
 #### Step-by-Step
 
-1. **[Visual Studio 2015 Community Edition](https://www.visualstudio.com/vs-2015-product-editions)** is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/en-us/support/legal/mt171547).  Click the **Community** button to download the installer.
-1. Run the **Visual Studio installer** you downloaded from Microsoft, in this case ***vs_community.exe***.
-1. Follow the onscreen prompts to install Visual Studio.  It is recommended that you install the **Typical** installation.  Depending on your internet connection, this can take minutes or hours.  When successfully installed, click the **Launch** button.
+1. *[Visual Studio 2015 Community Edition](https://www.visualstudio.com/vs-2015-product-editions)* is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/en-us/support/legal/mt171547).  Click the *Community* button to download the installer.
+1. Run the *Visual Studio installer* you downloaded from Microsoft, in this case *vs_community.exe*.
+1. Follow the onscreen prompts to install Visual Studio.  It is recommended that you install the *Typical* installation.  Depending on your internet connection, this can take minutes or hours.  When successfully installed, click the *Launch* button.
 
 ---
 
@@ -49,21 +49,21 @@ The [RhinoCommon templates](https://visualstudiogallery.msdn.microsoft.com/16053
 
 #### Step-by-Step
 
-1. Launch **Visual Studio**.
-1. Navigate to **Tools** > **Extensions and Updates...**
-1. In the left-hand sidebar, expand the **Online** section, then select the **Visual Studio Gallery** entry...
+1. Launch *Visual Studio*.
+1. Navigate to *Tools* > *Extensions and Updates...*
+1. In the left-hand sidebar, expand the *Online* section, then select the *Visual Studio Gallery* entry...
 ![Extensions and Updates]({{ site.baseurl }}/images/installing_tools_windows_01.png)
-1. In the **Search** field, search for *rhino*.  This filters the gallery list below.
-1. Find **RhinoCommon templates for v5** and select it.
-1. Click the **Download** button.  The extension installation should begin.
-1. You must **Accept** the license agreement by clicking on the **Install** button.
-1. If the installation is successful, you will be redirected to the RhinoCommon website and the extension should appear in your list of **Installed** extensions.
+1. In the *Search* field, search for *rhino*.  This filters the gallery list below.
+1. Find *RhinoCommon templates for v5* and select it.
+1. Click the *Download* button.  The extension installation should begin.
+1. You must *Accept* the license agreement by clicking on the *Install* button.
+1. If the installation is successful, you will be redirected to the RhinoCommon website and the extension should appear in your list of *Installed* extensions.
 
 ---
 
 ## Next Steps
 
-**Congratulations!**  You have the tools to build a RhinoCommon plugin for Rhino for Windows.  **Now what?**
+*Congratulations!*  You have the tools to build a RhinoCommon plugin for Rhino for Windows.  *Now what?*
 
 Check out the [Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_windows) guide for instructions building - your guessed it - your first plugin.
 
@@ -77,4 +77,4 @@ Check out the [Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommo
 
 [^3]: Visual Studio "proper" is the desktop version of Visual Studio...we are only attaching the "proper" epithet to distinguish it from the Visual Studio Code and Visual Studio Online.  In subsequent guides this will be referred to as simply "Visual Studio."
 
-[^4]: Visual Studio Express 2015 for Windows **Desktop** (also named "Express for Desktop" on some pages) offers a development platform that has a less strict licensing agreement policy than the Community edition. Please refer to the EULA for complete details, available during installation. In this edition, debugging of Rhino can be started, but the location of the Rhino executable (rhino.exe), usually available in the Project property page, in the Debug tab, cannot be changed in the UI. After Wizard completion, the location of the Rhino executable can only be edited in the XML of the resulting **.csproj** file, in the main folder of the solution.
+[^4]: Visual Studio Express 2015 for Windows *Desktop* (also named "Express for Desktop" on some pages) offers a development platform that has a less strict licensing agreement policy than the Community edition. Please refer to the EULA for complete details, available during installation. In this edition, debugging of Rhino can be started, but the location of the Rhino executable (rhino.exe), usually available in the Project property page, in the Debug tab, cannot be changed in the UI. After Wizard completion, the location of the Rhino executable can only be edited in the XML of the resulting *.csproj* file, in the main folder of the solution.

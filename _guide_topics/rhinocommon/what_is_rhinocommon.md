@@ -35,9 +35,9 @@ The term _common_ is meant to be just that: an SDK that can be used across Rhino
 
 RhinoCommon is composed of the following pieces.  These files are included with Rhino 5 for Windows and Mac:
 
-1. ***RhinoCommon.dll*** - This is a pure .NET DLL that plugins can reference and use to work with Rhino.
-1. ***RhinoCommon.xml*** - This is an XML file that contains SDK documentation comments specific to RhinoCommon.dll. Programming development environments like Visual Studio and MonoDevelop use this XML file to display tooltips and other helpful information while the developer writes code.
-1. ***rhcommon_c.dll*** and ***monomanager.rhp*** - These are C++ shared libraries compiled for specific target platforms (Win32, Win64, and macOS). These libraries are used by RhinoCommon, but should never be directly accessed by plugin developers.
+1. *RhinoCommon.dll* - This is a pure .NET DLL that plugins can reference and use to work with Rhino.
+1. *RhinoCommon.xml* - This is an XML file that contains SDK documentation comments specific to RhinoCommon.dll. Programming development environments like Visual Studio and MonoDevelop use this XML file to display tooltips and other helpful information while the developer writes code.
+1. *rhcommon_c.dll* and *monomanager.rhp* - These are C++ shared libraries compiled for specific target platforms (Win32, Win64, and macOS). These libraries are used by RhinoCommon, but should never be directly accessed by plugin developers.
 
 RhinoCommon on macOS is executed through an embedded [Mono framework](http://www.mono-project.com/).
 
