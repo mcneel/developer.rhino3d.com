@@ -24,7 +24,7 @@ The `master` branch represents the current (_stable_) version of the site.  Chan
 
 ### macOS
 
-macOS ships with Ruby and RubyGems, however it's [not wise](https://github.com/mcneel/developer-rhino3d-com/pull/2#issuecomment-112601698) to mess around with this installation. Instead, install your own Ruby using [Homebrew](http://brew.sh) (and optionally [rbenv](#install-ruby--the-rbenv-way-)).
+macOS ships with Ruby and RubyGems, however it's [not wise](https://github.com/mcneel/developer-rhino3d-com/pull/2#issuecomment-112601698) to mess around with this installation. Instead, install your own Ruby using [Homebrew](http://brew.sh) (and optionally [rbenv](#install-ruby-the-rbenv-way)).
 
 #### Install Homebrew
 
