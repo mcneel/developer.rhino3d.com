@@ -28,7 +28,7 @@ It is presumed you already have the necessary tools installed and are ready to g
 
 ## Modify the project
 
-1. Using *Visual Studio’s Solution Explorer*, open *stdafx.h* and add the following preprocessor definitons:
+1. Using *Visual Studio’s Solution Explorer*, open *stdafx.h* and add the following preprocessor directive:
 
         /////////////////////////////////////////////////////////////////////////////
         // stdafx.h : include file for standard system include files,
@@ -43,42 +43,38 @@ It is presumed you already have the necessary tools installed and are ready to g
 
         // Added for Rhino 6 Migration
         #define RHINO_V6_READY
-        #if defined(DEBUG)
-        #define RHINO_LIB_DIR "C:/Program Files/Rhino 6.0 SDK/lib/Debug"
-        #else
-        #define RHINO_LIB_DIR "C:/Program Files/Rhino 6.0 SDK/lib/Release"
-        #endif
         
         ...
         
-1. Also, modify the path to SDK headers, found in *stdafx.h* to reflect the path to the Rhino 6 C/C++ SDK:
+1. Also, remove the path specifiers to Rhino SDK headers, found in *stdafx.h*:
 
         // Rhino SDK Preamble
         //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhinoSdkStdafxPreamble.h"
-        #include "C:/Program Files/Rhino 6.0 SDK/Inc/RhinoSdkStdafxPreamble.h"
+        #include "RhinoSdkStdafxPreamble.h"
         
         ...
 
         // Rhino Plug-in
         //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhinoSdk.h"
-        #include "C:/Program Files/Rhino 6.0 SDK/Inc/RhinoSdk.h"
+        #include "RhinoSdk.h"
 
         // Render Development Kit
         //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhRdkHeaders.h"
-        #include "C:/Program Files/Rhino 6.0 SDK/Inc/RhRdkHeaders.h"
+        #include "RhRdkHeaders.h"
         
         ...
         
         // Rhino Plug-in Linking Pragmas
         //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\rhinoSdkPlugInLinkingPragmas.h"
-        #include "C:/Program Files/Rhino 6.0 SDK/Inc/rhinoSdkPlugInLinkingPragmas.h"
+        #include "rhinoSdkPlugInLinkingPragmas.h"
 
 1. Using *Visual Studio’s Solution Explorer*, open the project's *PlugIn.cpp* file and add the following SDK include statement:
 
         #include "StdAfx.h"
         #include "SamplePlugIn.h"
+        
         // Added for Rhino 6 Migration
-        #include "C:/Program Files/Rhino 6.0 SDK/Inc/rhinoSdkPlugInDeclare.h"
+        #include "rhinoSdkPlugInDeclare.h"
         
         ...
         
