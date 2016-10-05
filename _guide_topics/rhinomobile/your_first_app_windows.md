@@ -24,30 +24,30 @@ These guide presumes you are using Visual Studio 2015 Professional, though this 
 
 ### Android Boilerplate Build
 
-1. **Launch Visual Studio** and open the **HelloRhinoMobile** solution.
-1. **Right-click** the **HelloRhino.Droid** project and select **Set As StartUp Project** from the drop-down menu. This makes **HelloRhino.Droid** the active project for the build. (HelloRhino.Droid is the Android target project. The .Droid suffix is a naming convention from Mono that avoids namespace collisions with the main Android libraries).
+1. *Launch Visual Studio* and open the *HelloRhinoMobile* solution.
+1. *Right-click* the *HelloRhino.Droid* project and select *Set As StartUp Project* from the drop-down menu. This makes *HelloRhino.Droid* the active project for the build. (HelloRhino.Droid is the Android target project. The .Droid suffix is a naming convention from Mono that avoids namespace collisions with the main Android libraries).
 ![hellorhinomobile solution]({{ site.baseurl }}/images/your_first_app_windows_01.png)
-1. Open the **Android Emulator Manager**: Navigate to **Tools** > **Open Android Emulator Manager**. A window called the **Android Virtual Device (AVD) Manager** should appear. This is part of the Android SDK and will be familiar to you if you have done any Android development before. This is where you define your Android Virtual Devices (AVDs) that run in the Emulator.
+1. Open the *Android Emulator Manager*: Navigate to *Tools* > *Open Android Emulator Manager*. A window called the *Android Virtual Device (AVD) Manager* should appear. This is part of the Android SDK and will be familiar to you if you have done any Android development before. This is where you define your Android Virtual Devices (AVDs) that run in the Emulator.
 ![avd manager]({{ site.baseurl }}/images/your_first_app_windows_02.png)
-1. The default AVDs are much too slow for development; **Highlight each of the existing AVDs** and click the **Delete** button.
-1. To create a new AVD: Click the **New** button. The Create new Android Virtual Device (AVD) window appears. Create a new AVD with the following parameters. **AVD Name**: Nexus7-API17; **Device**: Nexus 7 (7.02“, 1200 x 1920:xhdpi); **Target**: Android 4.3 - API Level 18; **CPU/ABI**: Intel Atom (x86); **Skin**: Skin with dynamic hardware controls; **Front Camera**: Webcam0; **VM Heap**: 64 **Emulation Options**: Use Host GPU enabled ...
+1. The default AVDs are much too slow for development; *Highlight each of the existing AVDs* and click the *Delete* button.
+1. To create a new AVD: Click the *New* button. The Create new Android Virtual Device (AVD) window appears. Create a new AVD with the following parameters. *AVD Name*: Nexus7-API17; *Device*: Nexus 7 (7.02“, 1200 x 1920:xhdpi); *Target*: Android 4.3 - API Level 18; *CPU/ABI*: Intel Atom (x86); *Skin*: Skin with dynamic hardware controls; *Front Camera*: Webcam0; *VM Heap*: 64 *Emulation Options*: Use Host GPU enabled ...
 ![create new avd]({{ site.baseurl }}/images/your_first_app_windows_03.png)
 1. You should see your new AVD in the list. You have just created your first AVD. More information on creating Emulators can be found in the [Android documentation on Managing Devices](http://developer.android.com/tools/devices/index.html). You can create as many as you need. Tips on using the Emulator can be found in the [Using Simulators]({{ site.baseurl }}/guides/rhinomobile/using_simulators/] guide.
-1. **Close** the **AVD Manager**. Switch back to **Visual Studio**.
-1. Click the **Info** button in the Xamarin.Android Toolbar.
+1. *Close* the *AVD Manager*. Switch back to *Visual Studio*.
+1. Click the *Info* button in the Xamarin.Android Toolbar.
 ![info button]({{ site.baseurl }}/images/your_first_app_windows_04.png)
-1. This brings up the **Android Device Logging** window. Click the **Change Device** button ...
+1. This brings up the *Android Device Logging* window. Click the *Change Device* button ...
 ![select device window]({{ site.baseurl }}/images/your_first_app_windows_05.png)
-1. This brings up the **Select Device** window, listing all running devices (emulators and physical devices). Click the **Start emulator image** button.
+1. This brings up the *Select Device* window, listing all running devices (emulators and physical devices). Click the *Start emulator image* button.
 ![start emulator]({{ site.baseurl }}/images/your_first_app_windows_06.png)
-1. This brings up the same list of Available AVD images that you saw in the Android Virtual Device (AVD) Manager window. Select the *Nexus7-API18 AVD* that you just created above. Click **OK**.
+1. This brings up the same list of Available AVD images that you saw in the Android Virtual Device (AVD) Manager window. Select the *Nexus7-API18 AVD* that you just created above. Click *OK*.
 ![select device]({{ site.baseurl }}/images/your_first_app_windows_07.png)
 1. If all went well, after a brief startup period (take our word for it, it's much quicker than the standard emulators) you should see Android boot. It may take extra time to launch the first time and it is highly recommended that you leave this window open during your development session. Once Android boots, you are ready to go…you just need to unlock the device by sliding the lock to the right. We are now ready to send the app to the emulator.
-1. In the **Solution Explorer**, **right-click** the **HelloRhino.Droid** project, and select **Deploy**. HelloRhino.Droid will build, along with its dependency, RhinoMobile.Droid. (NOTE: The first time you build RhinoMobile.Droid, the libopennurbs library must be compiled…this can take up to 20 minutes. Subsequent builds will be much, much faster).
-1. Once the app has been deployed to the running emulator, you can now run the app. In **Visual Studio**, click the **Start** button. If all goes well, you should see something like this...
+1. In the *Solution Explorer*, *right-click* the *HelloRhino.Droid* project, and select *Deploy*. HelloRhino.Droid will build, along with its dependency, RhinoMobile.Droid. (NOTE: The first time you build RhinoMobile.Droid, the libopennurbs library must be compiled…this can take up to 20 minutes. Subsequent builds will be much, much faster).
+1. Once the app has been deployed to the running emulator, you can now run the app. In *Visual Studio*, click the *Start* button. If all goes well, you should see something like this...
 ![hellorhinomobile android]({{ site.baseurl }}/images/your_first_app_windows_08.png)
 
-**Congratulations!**  You've built a RhinoMobile app for Android.
+*Congratulations!*  You've built a RhinoMobile app for Android.
 
 ### iOS Boilerplate Build
 

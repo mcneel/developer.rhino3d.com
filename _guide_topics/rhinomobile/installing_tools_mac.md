@@ -35,12 +35,12 @@ This guide presumes you have an:
 
 #### Step-by-Step
 
-1. **[Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)** is free in the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).  Click the **View in Mac App Store** button.
-1. Click the **Get** > **Install App** button underneath the Xcode icon.
+1. *[Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)* is free in the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).  Click the *View in Mac App Store* button.
+1. Click the *Get* > *Install App* button underneath the Xcode icon.
 1. You will be prompted for your [Apple ID](https://appleid.apple.com/) (required to download apps on the App Store).
 1. Xcode is large download - nearly 2.6 GB in size.  You can monitor the progress of the download in Launchpad.  When Xcode is finished downloading an installing, it will be your */Applications* folder.
-1. **Launch** Xcode.  On initial launch, Xcode will install some additional components.
-1. **Quit** Xcode.
+1. *Launch* Xcode.  On initial launch, Xcode will install some additional components.
+1. *Quit* Xcode.
 
 ---
 
@@ -50,21 +50,21 @@ Xamarin's platform is currently required to build RhinoMobile apps.  Please chec
 
 #### Step-by-Step
 
-1. **[Download the Xamarin Platform](http://xamarin.com/download)**.
-1. Xamarin uses an Installer app, which downloads and installs the components that you select.  Once you have downloaded the **XamarinInstaller.dmg**, double-click it to mount the disk image.  Double-click the big **Install Xamarin** icon to launch the installer.
+1. *[Download the Xamarin Platform](http://xamarin.com/download)*.
+1. Xamarin uses an Installer app, which downloads and installs the components that you select.  Once you have downloaded the *XamarinInstaller.dmg*, double-click it to mount the disk image.  Double-click the big *Install Xamarin* icon to launch the installer.
 1. You must accept the Xamarin Software License Agreement to use the Xamarin platform.
-1. The **Xamarin Platform** is comprised of these pieces:
+1. The *Xamarin Platform* is comprised of these pieces:
    - Xamarin Studio
    - Xamarin.Android[^1]
    - Xamarin.iOS[^2]
    - Xamarin.Mac[^3]
-...verify that **Xamarin.Android** and **Xamarin.iOS** are checked and click **Continue**.
+...verify that *Xamarin.Android* and *Xamarin.iOS* are checked and click *Continue*.
 1. If you do not have Xcode installed, Xamarin will prompt you.  See [Install Xcode](#install-xcode) above.
-1. Xamarin installs: **Mono Framework**, **Xamarin Studio**, **Xamarin.Android**, and **Xamarin.iOS**.  Click **Continue**.
+1. Xamarin installs: *Mono Framework*, *Xamarin Studio*, *Xamarin.Android*, and *Xamarin.iOS*.  Click *Continue*.
 1. Xamarin is will now download and install.  Depending on which products you selected in step 4 above, this can take a while.
-1. When the installer is finished, click the **Launch Xamarin Studio** button.
-1. **Xamarin Studio** - along with the Mono Framework, Xamarin.Android, and Xamarin.iOS - are now installed.
-1. Xamarin Studio is installed in your */Applications* folder. You will want to **drag its icon to your Dock** for future use or - if it's running - right/option-click the icon in the Dock and select **Keep in Dock**.
+1. When the installer is finished, click the *Launch Xamarin Studio* button.
+1. *Xamarin Studio* - along with the Mono Framework, Xamarin.Android, and Xamarin.iOS - are now installed.
+1. Xamarin Studio is installed in your */Applications* folder. You will want to *drag its icon to your Dock* for future use or - if it's running - right/option-click the icon in the Dock and select *Keep in Dock*.
 
 ---
 
@@ -74,12 +74,12 @@ Once Xamarin Studio itself has been updated, you need to fetch the updates for t
 
 #### Step-by-Step
 
-1. In **Xamarin Studio**, navigate to **Tools** > **Open Android SDK Manager…**.
-1. In the **Android SDK Manager** window, wait until manager has finished fetching the update manifest.
-1. Depending on when you downloaded the Xamarin tools, you will want to install the most recent API (21 at the time of writing) as well as the last couple (20 and 19) for backward compatibility. Select the small check boxes next the names and then click **Install N packages…** button.
-1. This brings up a (very buggy) window in which you must accept all the licenses of each item before continuing. If you can't get the **Install** button to work, exit out of the window, open it again, and individually click the Accept radio button on the left until it works.
+1. In *Xamarin Studio*, navigate to *Tools* > *Open Android SDK Manager...*.
+1. In the *Android SDK Manager* window, wait until manager has finished fetching the update manifest.
+1. Depending on when you downloaded the Xamarin tools, you will want to install the most recent API (21 at the time of writing) as well as the last couple (20 and 19) for backward compatibility. Select the small check boxes next the names and then click *Install N packages...* button.
+1. This brings up a (very buggy) window in which you must accept all the licenses of each item before continuing. If you can't get the *Install* button to work, exit out of the window, open it again, and individually click the Accept radio button on the left until it works.
 ![android sdk]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_01.png)
-1. **NOTE:** Downloads can take awhile depending on your internet connection.
+1. *Note:* Downloads can take awhile depending on your internet connection.
 
 ---
 
@@ -90,11 +90,11 @@ The [Intel HAXM is the Intel Hardware Acceleration Execution Manager](http://sof
 #### Step-by-Step
 
 1. Visit the [Intel Hardware Acceleration Execution website](http://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager/).
-1. Find the **macOS** section of the page.
-1. Download the **haxm-macosx_rxx.zip**.  You may be asked to accept an license agreement before downloading can begin.
-1. Unzip **haxm-macosx_rxx.zip**.
-1. Mount the **IntelHAXM_x.x.x.dmg** by double-clicking it.
-1. Install the HAXM by double-clicking the **IntelHAXM_x.x.x.mpkg** file.
+1. Find the *macOS* section of the page.
+1. Download the *haxm-macosx_rxx.zip*.  You may be asked to accept an license agreement before downloading can begin.
+1. Unzip *haxm-macosx_rxx.zip*.
+1. Mount the *IntelHAXM_x.x.x.dmg* by double-clicking it.
+1. Install the HAXM by double-clicking the *IntelHAXM_x.x.x.mpkg* file.
 
 ---
 
@@ -104,9 +104,9 @@ RhinoMobile is built around [RhinoCommon's rhino3dmio branch](https://github.com
 
 #### Step-by-Step
 
-1. Unzip or clone **[rhinocommon (rhino3dmio branch)](https://github.com/mcneel/rhinocommon/tree/rhino3dmio)** in a convenient folder, such as the */Users/you/Development/Repositories/rhinocommon* folder:
+1. Unzip or clone *[rhinocommon (rhino3dmio branch)](https://github.com/mcneel/rhinocommon/tree/rhino3dmio)* in a convenient folder, such as the */Users/you/Development/Repositories/rhinocommon* folder:
 ![clone rhinocommon]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_02.png)
-1. **[Download openNURBS](http://www.rhino3d.com/download/opennurbs/5.0/commercial)**. RhinoMobile requires the C++ openNURBS SDK.
+1. *[Download openNURBS](http://www.rhino3d.com/download/opennurbs/5.0/commercial)*. RhinoMobile requires the C++ openNURBS SDK.
 1. Unzip openNURBS and place the contents in the *rhinocommon/c/opennurbs/* folder (the folder containing only the *readme.md* file):
 ![opennurbs]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_03.png)
 
@@ -118,16 +118,16 @@ You will need to download or clone [RhinoMobile](http://github.com/mcneel/RhinoM
 
 #### Step-by-Step
 
-1. Unzip or clone **[RhinoMobile](http://github.com/mcneel/RhinoMobile)** into a folder **parallel to rhinocommon** (cloned above). For example, if *rhinocommon* is in the     */Users/you/Development/Repositories/rhinocommon* folder, then RhinoMobile should be in the */Users/you/Development/Repositories/RhinoMobile* folder:
+1. Unzip or clone *[RhinoMobile](http://github.com/mcneel/RhinoMobile)* into a folder *parallel to rhinocommon* (cloned above). For example, if *rhinocommon* is in the     */Users/you/Development/Repositories/rhinocommon* folder, then RhinoMobile should be in the */Users/you/Development/Repositories/RhinoMobile* folder:
 ![rhinomobile]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_04.png)
-1. Unzip or clone **[RhinoMobileSamples](http://github.com/mcneel/RhinoMobileSamples)** into a folder **parallel to rhinocommon** and **RhinoMobile**:
+1. Unzip or clone *[RhinoMobileSamples](http://github.com/mcneel/RhinoMobileSamples)* into a folder *parallel to rhinocommon* and *RhinoMobile*:
 ![rhinomobilesamples]({{ site.baseurl }}/images/rhinomobile_installing_tools_mac_05.png)
 
 ---
 
 ## Next Steps
 
-**Congratulations!**  You have all the tools necessary to build a mobile app that uses RhinoMobile.  **Now what?**
+*Congratulations!*  You have all the tools necessary to build a mobile app that uses RhinoMobile.  *Now what?*
 
 Check out the [Your First App (Mac)]({{ site.baseurl }}/guides/rhinomobile/your_first_app_mac) guide for instructions building - your guessed it - your first app.
 
