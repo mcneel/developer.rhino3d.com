@@ -24,29 +24,53 @@ The `master` branch represents the current (_stable_) version of the site.  Chan
 
 ### macOS
 
-macOS ships with Ruby and RubyGems, however it's [not wise](https://github.com/mcneel/developer-rhino3d-com/pull/2#issuecomment-112601698) to mess around with this installation. Instead, install your own Ruby using [Homebrew](http://brew.sh).
+macOS ships with Ruby and RubyGems, however it's [not wise](https://github.com/mcneel/developer-rhino3d-com/pull/2#issuecomment-112601698) to mess around with this installation. Instead, install your own Ruby using [Homebrew](http://brew.sh) (and optionally [rbenv](#install-ruby--the-rbenv-way-)).
 
-**Note**: Since OS X 10.11 (El Capitan) we've seen failures during the `gem install` step (`ERROR: While executing gem ... (Errno::EINVAL)`). We are investigating...
+#### Install Homebrew
 
-#### Install Homebrew and Ruby
-
-As per the Homebrew website, install via the following one-liner (which will prompt you to install the Xcode Command Line Tools, if you don't already have them).
+As per the Homebrew [website](http://brew.sh), install via the following one-liner (which will prompt you to install the Xcode Command Line Tools, if you don't already have them).
 
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Then we can brew Ruby.
+#### Install Ruby (the easy way)
+
+**Note**: Since OS X 10.11 (El Capitan) we've seen failures during the `gem install` step (`ERROR: While executing gem ... (Errno::EINVAL)`) on machines that didn't previously have homebrew installed. Using [rbenv](#install-ruby-the-rbenv-way) seems to solve this.
+
+Simply _brew_ Ruby.
 
 ```
 brew install ruby
 ```
 
-Now close and reopen the Terminal window to make sure the system knows about the new version of Ruby.
+Now close and reopen the Terminal window to make sure the system knows about the new version of Ruby and skip to [installing Jekyll](#install-jekyll).
+
+#### Install Ruby (the rbenv way)
+
+This is a slightly more advanced method for installing ruby which allows you to easily switch between ruby versions.
+
+Install [rbenv](https://github.com/rbenv/rbenv) and [ruby-build](https://github.com/rbenv/ruby-build) using homebrew:
+```
+brew install rbenv ruby-build
+```
+
+Run `rbenv init` which will prompt you to add `eval "$(rbenv init -)"` to `~/.bash_profile`. Do this.
+
+Install ruby (2.3.0 will do, for now):
+
+```
+rbenv install 2.3.0
+```
+
+Check that everything worked as expected:
+
+1. `ruby -v` – should return something like `ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin15]`
+2. `which ruby` – should return something like `/Users/will/.rbenv/shims/ruby` (**not `/usr/bin/ruby` or `/usr/local/bin/ruby`**)
 
 #### Install Jekyll
 
-The [GitHub Pages Ruby Gem](https://github.com/github/pages-gem) provides the same version of Jekyll as exists on the GitHub Pages servers. This ensures we aren't accidentally using features that have either been deprecated or simply don't exist yet!
+The [GitHub Pages Ruby Gem](https://github.com/github/pages-gem) provides the same version of Jekyll as exists on the GitHub Pages servers. This ensures we aren't accidentally using features that have either been deprecated or simply don't exist on GitHub's servers yet!
 
 ```
 gem install github-pages
@@ -56,17 +80,17 @@ You can now serve your local copy of this site by running the following commands
 
 ```
 cd CLONE_DIRECTORY
-./script/server
+script/server
 ```
 
 Navigate to http://localhost:4000 in your browser to view the site.
 
-(NOTE: The */api* folder generation is excluded locally to speed things up.)
+**Note**: The `api` directory is excluded when previewing the site locally which speeds things up a bit!
 
 
 ### Windows
 
-While **[Jekyll](http://jekyllrb.com/docs/windows/)** is not officially supported in Windows, it does work.  These instructions are based on the official _unofficial_ guide to [installing Jekyll on Windows](http://jekyll-windows.juthilo.com/).
+While [Jekyll](http://jekyllrb.com/docs/windows/) is not officially supported in Windows, it does work.  These instructions are based on the official _unofficial_ guide to [installing Jekyll on Windows](http://jekyll-windows.juthilo.com/).
 
 #### Install Ruby and Ruby DevKit
 
