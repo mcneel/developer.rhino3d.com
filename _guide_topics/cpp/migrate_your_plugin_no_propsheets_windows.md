@@ -1,6 +1,6 @@
 ---
-title: Migrate your plugin project to Rhino 6
-description: This guide walks you through migrating your plugin project to Rhino 6 without Property Sheets.
+title: Migrate your plugin project without Property Sheets
+description: This guide walks you through migrating your Rhino 5 plugin project to Rhino 6 without using Property Sheets.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
