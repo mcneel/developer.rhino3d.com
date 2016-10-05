@@ -46,7 +46,7 @@ It is presumed you already have the necessary tools installed and are ready to g
         
         ...
         
-1. Also, remove the path specifiers to Rhino SDK headers, found in *stdafx.h*:
+1. Also, remove the path specifiers to Rhino SDK header files found in *stdafx.h*:
 
         // Rhino SDK Preamble
         //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhinoSdkStdafxPreamble.h"
