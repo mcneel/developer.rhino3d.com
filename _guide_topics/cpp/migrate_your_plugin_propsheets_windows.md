@@ -21,14 +21,14 @@ It is presumed you already have the necessary tools installed and are ready to g
 
 1. Launch *Visual Studio 2015* and click *File* > *Open* > *Project/Solution...*.
 2. Navigate to your project's folder and open either your plugin project *(.vcxproj)* or solution *(.sln)*
-3. When your plugin project opens, navigate to the project's setting by clicking *Project* > *[ProjectName] Properties...*.
+3. When your plugin project opens, navigate to the project's setting by clicking *Project* > *Properties...*.
 4. In the project's settings, set the *Configuration* to *All Configurations*, and set the platform to *x64*.
 5. Then, set the *Platform Toolset* to *Visual Studio 2015 (v140)* and the click *Apply*.
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp.png)
 
 ## Remove 32-bit support
 
-Rhino 6 plugins are 64-bit only. If your plugin project has *Win32* platform support, then it is safe to remove using *Visual Studio’s Configuation Manager*.
+Rhino 6 plugins are 64-bit only. If your plugin project has *Win32* platform support, then it is safe to remove it using *Visual Studio’s Configuation Manager*.
 
 1. From *Visual Studio 2015*, click *Build* > *Configuation Manager...*.
  ![Configuation Manager]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_02.png)
@@ -45,14 +45,15 @@ Rhino 6 plugin projects have different project build configuration names. See [U
 
 1. In *Project Contexts*, click *Configuration > Edit...*.
  ![Select Project Configurations]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_05.png)
-2. In *Edit Project Configurations*, rename the *Debug* configuration to *DebugRhino*, and then rename the *PseudoDebug* configuration to *Debug*. 
+2. In *Edit Project Configurations*, rename the *Debug* configuration to *DebugRhino*.
+3. And then, rename the *PseudoDebug* configuration to *Debug*. 
  ![Edit Project Configurations]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_06.png)
-3. When finished, click *Close*.
+4. When you have finished renaming the configurations, click *Close*.
  ![Rename Project Configurations]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_07.png)
-4. Repeat the above step for the solution by click *Active solution Configuration > Edit...*.
-5. In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhino*, and then rename the *PseudoDebug* configuration to *Debug*. 
-6. When finished, click *Close*.
-7. Close *Configuation Manager*.
+5. Repeat the above step for the solution by click *Active solution Configuration > Edit...*.
+6. In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhino*, and then rename the *PseudoDebug* configuration to *Debug*. 
+7. When finished, click *Close*.
+8. Close *Configuation Manager*.
 
 ## Add property sheet
 
@@ -68,7 +69,7 @@ The Rhino C/C++ SDK includes Visual Studio Property Sheets that provide a conven
 
 ## Modify the project
 
-The project's pre-compiled header file, *stdafx.h*, needs to be modified so SDK header file inclusions point to the correct SDK. Also, the plugin .cpp file needs to include an additional SDK header. Finally, Visual Studio's resource editor and compiler requires the project contain a *targerver.h* file that identifies the target platform.
+The project's pre-compiled header file, *stdafx.h*, needs to be modified so SDK header file inclusions point to the correct location. Also, the plugin .cpp file needs to include an additional SDK header. Finally, Visual Studio's resource editor and compiler requires the project contain a *targerver.h* file that identifies the target platform.
 
 1. Using *Visual Studio’s Solution Explorer*, open *stdafx.h* and add the following preprocessor directive:
 
@@ -88,7 +89,7 @@ The project's pre-compiled header file, *stdafx.h*, needs to be modified so SDK 
         
         ...
         
-1. Also, remove the path specifiers to Rhino SDK header files found in *stdafx.h*:
+1. Also, remove the path specifiers to Rhino SDK header files found in *stdafx.h*, as the path to the SDK is provided by the SDK Property Sheet added above.
 
         // Rhino SDK Preamble
         //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhinoSdkStdafxPreamble.h"
