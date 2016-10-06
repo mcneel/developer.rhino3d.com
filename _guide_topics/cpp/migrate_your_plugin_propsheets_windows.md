@@ -50,7 +50,7 @@ Rhino 6 plugin projects have different project build configuration names. See [U
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_07.png)
 1. Repeat the above step for the solution by click *Active solution Configuration > Edit...*.
 In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhino*, and rename the *PseudoDebug* configuration to *Debug*. 
-1. When finished, click *Close.
+1. When finished, click *Close*.
 1. Close *Configuation Manager*.
 
 ## Add property sheet
