@@ -49,9 +49,11 @@ Rhino 6 plugin project have different project build configuration names. See [Un
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_05.png)
 
 1. In *Edit Project Configurations*, rename the *Debug* configuration to *DebugRhino*, and rename the *PseudoDebug* configuration to *Debug*. 
+
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_06.png)
 
 1. When finished, click *Close*>.
+
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_07.png)
 
 1. Repeat the above step for the solution by click *Active solution Configuration > Edit...*.
