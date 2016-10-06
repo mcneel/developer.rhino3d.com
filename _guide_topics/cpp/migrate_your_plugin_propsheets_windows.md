@@ -25,7 +25,7 @@ It is presumed you already have the necessary tools installed and are ready to g
 1. In the project's settings, select *All Configurations* and set the platform to *x64*. Then, set the *Platform Toolset* to *Visual Studio 2015 (v140)* and the click *Apply*.
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp.png)
 
-## Modify the configuration
+## Remove 32-bit support
 
 Rhino 6 plugin are 64-bit only. If your project has *Win32* platform support, it is safe to remove it. You can do this using *Visual Studio’s Configuation Manager*.
 
@@ -40,6 +40,8 @@ Rhino 6 plugin are 64-bit only. If your project has *Win32* platform support, it
 
 1. Repeat the above step for the solution by click *Active solution platform > Edit...*.
 1. In *Edit Solution Platforms*, select the *Win32* platform, click *Remove* and then click *Close*.
+
+# Rename build configurations
 
 Rhino 6 plugin project have different project build configuration names. See [Understanding Build Configurations]({{ site.baseurl }}/guides/cpp/plugin_build_configurations) for details. Thus, you will need to rename our project's build configurations.
 
@@ -57,6 +59,7 @@ In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhi
 1. When finished, click *Close*>.
 1. Close *Configuation Manager*.
 
+## Add property sheets
 
 ## Modify the project
 
