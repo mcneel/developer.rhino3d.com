@@ -120,7 +120,9 @@ The project's pre-compiled header file, *stdafx.h*, needs to be modified so SDK 
         
         ...
         
-1. Using *Visual Studio’s Solution Explorer*, right-click on the *Header Files* folder and click *Add* > *New Item...*. Add a new *Header File (.h)* named *targetver.h* and add the following content to it:
+1. Using *Visual Studio’s Solution Explorer*, right-click on the *Header Files* folder and click *Add* > *New Item...*. 
+1. Add a new *Header File (.h)* named *targetver.h*.
+1. Add the following content to it:
 
         #pragma once
         
