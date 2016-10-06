@@ -57,7 +57,7 @@ In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhi
 
 The Rhino C/C++ SDK includes Visual Studio Property Sheets that provide a convenient way to synchronize or share these common settings among other plugin projects.
 
-1. From *Visual Studio 2015* and navigate to *View* > *Configuation Manager*.
+1. From *Visual Studio 2015*, navigate to *View* > *Configuation Manager*.
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_08.png)
 1. Right-click on the *Debug|x64* configuration and click *Add Existing Property Sheet*.
 1. Navigate to the following location: *C:\Program Files\Rhino 6.0 SDK\Wizards\Command*
