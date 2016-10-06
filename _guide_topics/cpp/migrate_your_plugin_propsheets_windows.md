@@ -41,7 +41,7 @@ Rhino 6 plugin are 64-bit only. If your project has *Win32* platform support, it
 1. Repeat the above step for the solution by click *Active solution platform > Edit...*.
 1. In *Edit Solution Platforms*, select the *Win32* platform, click *Remove* and then click *Close*.
 
-# Rename build configurations
+## Rename build configurations
 
 Rhino 6 plugin project have different project build configuration names. See [Understanding Build Configurations]({{ site.baseurl }}/guides/cpp/plugin_build_configurations) for details. Thus, you will need to rename our project's build configurations.
 
