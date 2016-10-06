@@ -41,6 +41,23 @@ Rhino 6 plugin are 64-bit only. If your project has *Win32* platform support, it
 1. Repeat the above step for the solution by click *Active solution platform > Edit...*.
 1. In *Edit Solution Platforms*, select the *Win32* platform and then click *Remove* and then click *Close*.
 
+The names of project build configurations for Rhino 6 have changed. See [Understanding Build Configurations]({{ site.baseurl }}/guides/cpp/plugin_build_configurations) for details. Thus, we will need to rename our project's build configurations.
+
+1. In *Project Contexts*, click *Configuration > Edit...*.
+![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_05.png)
+
+1. In *Edit Project Configurations*, rename the *Debug* configuration to *DebugRhino*, and rename the *PseudoDebug* configuration to *Debug*. 
+![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_06.png)
+
+1. When finished, click *Close*>.
+![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_07.png)
+
+1. Repeat the above step for the solution by click *Active solution Configuration > Edit...*.
+In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhino*, and rename the *PseudoDebug* configuration to *Debug*. 
+1. When finished, click *Close*>.
+1. Close *Configuation Manager*.
+
+
 ## Modify the project
 
 1. Using *Visual Studio’s Solution Explorer*, open *stdafx.h* and add the following preprocessor directive:
