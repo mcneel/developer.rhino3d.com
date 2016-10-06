@@ -35,11 +35,11 @@ Rhino 6 plugin are 64-bit only. If your project has *Win32* platform support, it
 1. In *Project Contexts*, click *Platform > Edit...*.
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_03.png)
 
-1. In *Edit Project Platforms*, select the *Win32* platform and then click *Remove* and then click *Close*.
+1. In *Edit Project Platforms*, select the *Win32* platform, click *Remove* and then click *Close*.
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_04.png)
 
 1. Repeat the above step for the solution by click *Active solution platform > Edit...*.
-1. In *Edit Solution Platforms*, select the *Win32* platform and then click *Remove* and then click *Close*.
+1. In *Edit Solution Platforms*, select the *Win32* platform, click *Remove* and then click *Close*.
 
 The names of project build configurations for Rhino 6 have changed. See [Understanding Build Configurations]({{ site.baseurl }}/guides/cpp/plugin_build_configurations) for details. Thus, we will need to rename our project's build configurations.
 
