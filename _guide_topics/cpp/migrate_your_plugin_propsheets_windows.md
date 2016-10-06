@@ -29,7 +29,7 @@ It is presumed you already have the necessary tools installed and are ready to g
 
 Rhino 6 plugin are 64-bit only. If your project has *Win32* platform support, it is safe to remove it. You can do this using *Visual Studio’s Configuation Manager*.
 
-1. Launch *Visual Studio 2015* and navigate to *Build* > *Configuation Manager...*.
+1. From *Visual Studio 2015* and navigate to *Build* > *Configuation Manager...*.
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_02.png)
 
 1. In *Project Contexts*, click *Platform > Edit...*.
