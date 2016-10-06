@@ -31,12 +31,12 @@ Rhino 6 plugins are 64-bit only. If your project has *Win32* platform support, i
 
 1. From *Visual Studio 2015*, navigate to *Build* > *Configuation Manager...*.
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_02.png)
-1. In *Project Contexts*, click *Platform > Edit...*.
+2. In *Project Contexts*, click *Platform > Edit...*.
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_03.png)
-1. In *Edit Project Platforms*, select the *Win32* platform, click *Remove* and then click *Close*.
+3. In *Edit Project Platforms*, select the *Win32* platform, click *Remove* and then click *Close*.
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_04.png)
-1. Repeat the above step for the solution by click *Active solution platform > Edit...*.
-1. In *Edit Solution Platforms*, select the *Win32* platform, click *Remove* and then click *Close*.
+4. Repeat the above step for the solution by click *Active solution platform > Edit...*.
+5. In *Edit Solution Platforms*, select the *Win32* platform, click *Remove* and then click *Close*.
 
 ## Rename build configurations
 
