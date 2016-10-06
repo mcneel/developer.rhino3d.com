@@ -1,6 +1,6 @@
 ---
 title: Migrate your plugin project using Property Sheets
-description: This guide walks you through migrating your Rhino 5 plugin project to Rhino 6 using Property Sheets.
+description: This guide walks you through migrating a Rhino 5 plugin project to Rhino 6 using Property Sheets.
 author: dale@mcneel.com
 apis: ['C/C++']
 languages: ['C/C++']
@@ -19,17 +19,18 @@ It is presumed you already have the necessary tools installed and are ready to g
 
 ## Migrate the project
 
-1. Launch *Visual Studio 2015* and navigate to *File* > *Open* > *Project/Solution...*.
+1. Launch *Visual Studio 2015* and click *File* > *Open* > *Project/Solution...*.
 2. Navigate to your project's folder and open either your plugin project *(.vcxproj)* or solution *(.sln)*
 3. When your plugin project opens, navigate to the project's setting by clicking *Project* > *[ProjectName] Properties...*.
-4. In the project's settings, select *All Configurations* and set the platform to *x64*. Then, set the *Platform Toolset* to *Visual Studio 2015 (v140)* and the click *Apply*.
+4. In the project's settings, set the *Configuration* to *All Configurations*, and set the platform to *x64*.
+5. Then, set the *Platform Toolset* to *Visual Studio 2015 (v140)* and the click *Apply*.
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp.png)
 
 ## Remove 32-bit support
 
-Rhino 6 plugins are 64-bit only. If your project has *Win32* platform support, it is safe to remove it. You can do this using *Visual Studio’s Configuation Manager*.
+Rhino 6 plugins are 64-bit only. If your plugin project has *Win32* platform support, then it is safe to remove using *Visual Studio’s Configuation Manager*.
 
-1. From *Visual Studio 2015*, navigate to *Build* > *Configuation Manager...*.
+1. From *Visual Studio 2015*, click *Build* > *Configuation Manager...*.
  ![Configuation Manager]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_02.png)
 2. In *Project Contexts*, click *Platform > Edit...*.
  ![Select Project Platforms]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_03.png)
@@ -40,24 +41,24 @@ Rhino 6 plugins are 64-bit only. If your project has *Win32* platform support, i
 
 ## Rename build configurations
 
-Rhino 6 plugin projects have different project build configuration names. See [Understanding Build Configurations]({{ site.baseurl }}/guides/cpp/plugin_build_configurations) for details. Thus, you will need to rename our project's build configurations.
+Rhino 6 plugin projects have different project build configuration names. See [Understanding Build Configurations]({{ site.baseurl }}/guides/cpp/plugin_build_configurations) for details. In order to use the SDK Property Sheets, you will need to rename the plugin project's build configurations so they match the new build configuration names.
 
 1. In *Project Contexts*, click *Configuration > Edit...*.
  ![Select Project Configurations]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_05.png)
-2. In *Edit Project Configurations*, rename the *Debug* configuration to *DebugRhino*, and rename the *PseudoDebug* configuration to *Debug*. 
+2. In *Edit Project Configurations*, rename the *Debug* configuration to *DebugRhino*, and then rename the *PseudoDebug* configuration to *Debug*. 
  ![Edit Project Configurations]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_06.png)
 3. When finished, click *Close*.
  ![Rename Project Configurations]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_07.png)
 4. Repeat the above step for the solution by click *Active solution Configuration > Edit...*.
-5. In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhino*, and rename the *PseudoDebug* configuration to *Debug*. 
+5. In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhino*, and then rename the *PseudoDebug* configuration to *Debug*. 
 6. When finished, click *Close*.
 7. Close *Configuation Manager*.
 
 ## Add property sheet
 
-The Rhino C/C++ SDK includes Visual Studio Property Sheets that provide a convenient way to synchronize or share these common settings among other plugin projects.
+The Rhino C/C++ SDK includes Visual Studio Property Sheets that provide a convenient way to synchronize or share common settings among other plugin projects.
 
-1. From *Visual Studio 2015*, navigate to *View* > *Property Manager*.
+1. From *Visual Studio 2015*, click *View* > *Property Manager*.
  ![Property Manager]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_08.png)
 2. Right-click on the *Debug &#124; x64* configuration and click *Add Existing Property Sheet*.
 3. Navigate to the following location: *C:\Program Files\Rhino 6.0 SDK\Wizards\Command*
@@ -66,6 +67,8 @@ The Rhino C/C++ SDK includes Visual Studio Property Sheets that provide a conven
  ![Add Existing Property Sheet]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_09.png)
 
 ## Modify the project
+
+The project's pre-compiled header file, *stdafx.h*, needs to be modified so SDK header file inclusions point to the correct SDK. Also, the plugin .cpp file needs to include an additional SDK header. Finally, Visual Studio's resource editor and compiler requires the project contain a *targerver.h* file that identifies the target platform.
 
 1. Using *Visual Studio’s Solution Explorer*, open *stdafx.h* and add the following preprocessor directive:
 
