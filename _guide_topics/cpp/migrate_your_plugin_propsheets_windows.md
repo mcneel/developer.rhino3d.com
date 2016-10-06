@@ -43,13 +43,19 @@ Rhino 6 plugins are 64-bit only. If your project has *Win32* platform support, i
 Rhino 6 plugin projects have different project build configuration names. See [Understanding Build Configurations]({{ site.baseurl }}/guides/cpp/plugin_build_configurations) for details. Thus, you will need to rename our project's build configurations.
 
 1. In *Project Contexts*, click *Configuration > Edit...*.
- ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_05.png)
+
+![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_05.png)
+
 1. In *Edit Project Configurations*, rename the *Debug* configuration to *DebugRhino*, and rename the *PseudoDebug* configuration to *Debug*. 
- ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_06.png)
+
+![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_06.png)
+
 1. When finished, click *Close*.
- ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_07.png)
+
+![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_07.png)
+
 1. Repeat the above step for the solution by click *Active solution Configuration > Edit...*.
-In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhino*, and rename the *PseudoDebug* configuration to *Debug*. 
+1. In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhino*, and rename the *PseudoDebug* configuration to *Debug*. 
 1. When finished, click *Close*.
 1. Close *Configuation Manager*.
 
@@ -58,11 +64,14 @@ In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhi
 The Rhino C/C++ SDK includes Visual Studio Property Sheets that provide a convenient way to synchronize or share these common settings among other plugin projects.
 
 1. From *Visual Studio 2015*, navigate to *View* > *Configuation Manager*.
+
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_08.png)
+
 1. Right-click on the *Debug|x64* configuration and click *Add Existing Property Sheet*.
 1. Navigate to the following location: *C:\Program Files\Rhino 6.0 SDK\Wizards\Command*
 1. Select *Rhino.Cpp.PlugIn.props* and click *OK*.
 1. Repeat the above steps for the the *DebugRhino|x64* and *DebugRhino|x64* configurations.
+
 ![Plugin Settings]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_09.png)
 
 ## Modify the project
