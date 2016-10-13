@@ -59,7 +59,7 @@ Rhino 6 plugin projects have different project build configuration names. See [U
 
 The Rhino C/C++ SDK includes Visual Studio Property Sheets that provide a convenient way to synchronize or share common settings among other plugin projects.
 
-1. From *Visual Studio 2015*, click *View* > *Property Manager*.
+1. From *Visual Studio 2015*, click *View* > *Other Windows* > *Property Manager*.
  ![Property Manager]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_08.png)
 2. Right-click on the *Debug &#124; x64* configuration and click *Add Existing Property Sheet*.
 3. Navigate to the following location: *C:\Program Files\Rhino 6.0 SDK\Wizards\Command*
