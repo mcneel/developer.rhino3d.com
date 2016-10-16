@@ -137,6 +137,13 @@ The project's pre-compiled header file, *stdafx.h*, needs to be modified so SDK 
         
 Your plugin project should now be ready to build with the Rhino 6 C/C++ SDK.
 
+## Run the Migration Application
+
+1. Download [cpp-migrator.zip](https://github.com/mcneel/cpp-migrator/releases)
+1. Unpack the plugin
+1. From the Windows command prompt, run `migrator.exe [plugin_directory]`
+where [plugin_directory] is the full path to the folder where your plug-in source lives.
+
 ## Related Topics
 
 - [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what_is_a_rhino_plugin)
