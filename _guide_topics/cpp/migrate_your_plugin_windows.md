@@ -19,7 +19,7 @@ It is presumed you already have the necessary tools installed and are ready to g
 
 ## Run the Migration Application
 
-1. Download [cpp-migrator.zip](https://github.com/mcneel/cpp-migrator/releases)
+1. Download [cpp-migrator.zip](http://www.rhino3d.com/download/rhino/6.0/v6-cpp-migrator)
 1. Unpack the plugin
 1. Make a backup of your plug-in project and all source code. This tool modifies your source in place.
 1. From the Windows command prompt, run `migrator.exe [plugin_directory]`
