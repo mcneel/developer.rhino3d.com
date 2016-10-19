@@ -57,7 +57,7 @@ Now the code works as expected.  But, what if the code looked like this?
 ```vbnet
 Sub Main()
   Dim arr()
-   If IsArray(arr) And UBound(arr) >= 0 Then
+  If IsArray(arr) And UBound(arr) >= 0 Then
     Rhino.Print("This should not print")
   End If    
 End Sub
