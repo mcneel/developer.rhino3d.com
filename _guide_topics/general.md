@@ -7,8 +7,8 @@ layout: guide-homepage
 
 ### Overview
 
-- [Rhino Technology Overview]({{ site.baseurl }}/guides/general/rhino_technology_overview)
 - [Developing Software In Public]({{ site.baseurl }}/guides/general/developing_software_in_public)
+- [Rhino Technology Overview]({{ site.baseurl }}/guides/general/rhino_technology_overview)
 - [Frequently Asked Questions (FAQ)]({{ site.baseurl }}/guides/general/frequently_asked_questions)
 
 <!--column-->

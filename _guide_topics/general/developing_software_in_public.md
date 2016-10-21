@@ -54,7 +54,7 @@ With every new build, we test...
 
 ### Test
 
-When developers fix bugs and close issues, our internal testing staff makes sure the public build works correctly.  We also rely on our customers to test WIP and Release Candidate builds
+When developers fix bugs and close issues, our internal testing staff makes sure the public build works correctly.  We also rely on our customers to test WIP and Release Candidate builds.
 
 Testing happens before and after the next step: Publishing...
 
@@ -103,7 +103,7 @@ Here are some of the things we automate:
 
 - Build every commit from every developer before it goes into our master development branch.
 - Closing issues in [YouTrack](https://mcneel.myjetbrains.com) when fixes get merged into our master development branch by the [TeamCity](https://www.jetbrains.com/teamcity/) servers.
-- Build internal and public releases on our [TeamCity](https://www.jetbrains.com/teamcity/) servers
+- Build internal and public releases on our [TeamCity](https://www.jetbrains.com/teamcity/) servers.
 - Publishing new WIP releases by typing a command into [Slack](https://slack.com/).
 - Upload public releases to our download servers.
 
@@ -120,9 +120,9 @@ And in the last couple of years, we made our issue tracker public by switching t
 Something we'd like to do soon is to make even more of this public:
 
 - Sharing some of our code as public repos on GitHub so you’ve got some real, production-hardened code examples to work from
-- Letting you share fixes and improvements to our code - I bet you’ll find a couple problems with what we’ve written
-- Making it easier to build plug-in projects by publishing RhinoCommon as a NuGet package,
-- and by helping with build automation where necessary.
+- Letting you share fixes and improvements to our code.
+- Making it easier to build plug-in projects by publishing RhinoCommon as a NuGet package.
+- Helping with build automation where necessary.
 
 ---
 
