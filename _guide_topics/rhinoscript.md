@@ -5,6 +5,8 @@ platforms: ['Windows']
 layout: guide-homepage
 ---
 
+<!-- ![RhinoScript Overview]({{ site.baseurl }}/images/rhinoscript_01.png)-->
+
 ### Overview
 
 - [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what_are_vbscript_rhinoscript)
