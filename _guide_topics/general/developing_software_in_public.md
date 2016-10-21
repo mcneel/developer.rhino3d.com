@@ -18,7 +18,7 @@ layout: toc-guide-page
 
 ## Overview
 
-Over the last 20 years we've put together a process that helps us build customer delight.  There are seven pieces to this process, and they are all equally important.  For years, we built our own proprietary tools to support most of the parts of this process.  But now, there are great commercially available tools - tools we encourage you to use, too.
+Over the last 20 years we've put together a process that helps us build customer delight.  There are eight pieces to this process, and they are all equally important.  For years, we built our own proprietary tools to support most of the parts of this process.  But now, there are great commercially available tools - tools we encourage you to use, too.
 
 Our Software Development process, just like the other processes, is a cycle.  So we can start anywhere.
 
@@ -44,7 +44,7 @@ As developers, we use a modified version of [GitHub Flow](https://guides.github.
 
 After we commit our code, we build it...
 
-### Build
+### Compile
 
 In addition to compiling at our desks, we have dedicated [TeamCity](https://www.jetbrains.com/teamcity/) servers that constantly build our code, and verify that it works with our master branch on [GitHub](https://github.com/).  This makes sure that we don’t break each other’s ability to get the latest code and compile.
 
@@ -87,6 +87,13 @@ We log issues in [YouTrack](https://mcneel.myjetbrains.com).
 
 [YouTrack](https://mcneel.myjetbrains.com) works well for us because it helps us ensure that each issue gets properly tested and documented.
 
+### Prioritize
+
+Figuring out what is the next most important thing is HARD.  We talk with our customers.  We talk with each other.  We use Gmail, Google Drive, and Google Docs to communicate.  We chat 24 hours a day on [Slack](https://slack.com/).
+
+We meet every week on Tuesday.  Before we meet, we share what we’ve done in a Google Doc. In that document, we share our goals for each of the products we’re releasing next each of the feature groups we’re working on including graphs of how we’re progressing over time there are links back to our [YouTrack](https://mcneel.myjetbrains.com) issues and we get verbal reports from each of the people working on the features.
+
+Also, each developer writes down what they’ve been working on, what they plan to do next, and what is getting in their way of completing their work.
 
 ### Automation
 
