@@ -1,6 +1,6 @@
 ---
 title: Rhino Technology Overview
-description: 'An overview of the Rhino technology or architecture.'
+description: A summary of the Rhino technology architecture.
 author: brian@mcneel.com
 apis: ['General']
 languages: ['All']
