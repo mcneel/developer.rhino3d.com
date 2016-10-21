@@ -21,16 +21,6 @@ by Brian Gillespie.  Recorded October 20th, 2016.
 
 ---
 
-## What's New in the Rhino 6 SDK
-
-Presented by Steve Baer at the McNeel Global Developer Meeting, Barcelona, October 11-14th, 2016.
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HBKaeOfVhDo"></iframe>
-</div>
-
----
-
 ## Cross Platform Plugins for Rhino
 
 Presented by Curtis Wensley at the McNeel Global Developer Meeting, Barcelona, October 11-14th, 2016.
