@@ -42,6 +42,7 @@ collections:
   - glossary
   - cheat_sheet_items
   - samples
+  - videos
 
 collections:
   guide_topics:
@@ -53,6 +54,9 @@ collections:
   samples:
     output: true
     permalink: /samples/:path/
+  videos:
+    output: true
+    permalink: /videos/
 
 exclude: [/script, /test, README.md, CONTRIBUTING.md, Gemfile]
 
