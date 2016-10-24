@@ -5,6 +5,9 @@ platforms: ['Windows', 'Mac']
 layout: guide-homepage
 ---
 
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/general_guides_col1.png">]({{ site.baseurl }}/guides/general/developing_software_in_public)
+
 ### Overview
 
 - [Developing Software In Public]({{ site.baseurl }}/guides/general/developing_software_in_public)
@@ -12,6 +15,9 @@ layout: guide-homepage
 - [Frequently Asked Questions (FAQ)]({{ site.baseurl }}/guides/general/frequently_asked_questions)
 
 <!--column-->
+
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/general_guides_col2.png">]({{ site.baseurl }}/guides/general/what_is_a_rhino_plugin)
 
 ### Getting Started
 
@@ -25,6 +31,9 @@ layout: guide-homepage
 - [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino_installer_engine)
 
 <!--column-->
+
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/general_guides_col3.png">]({{ site.baseurl }}/guides/general/how_this_site_works)
 
 ### This Site
 

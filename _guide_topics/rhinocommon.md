@@ -5,6 +5,8 @@ platforms: ['Windows', 'Mac']
 layout: guide-homepage
 ---
 
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/rhinocommon_guides_col1.png">]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon/)
 
 ### Overview
 
@@ -18,6 +20,9 @@ layout: guide-homepage
 - Plugin Installers ([Windows]({{ site.baseurl }}/guides/rhinocommon/plugin_installers_windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/plugin_installers_mac/))
 
 <!--column-->
+
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/rhinocommon_guides_col2.png">]({{ site.baseurl }}/guides/rhinocommon/display_conduits/)
 
 ### Fundamentals
 
@@ -50,6 +55,9 @@ layout: guide-homepage
 </div>
 
 <!--column-->
+
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/rhinocommon_guides_col3.png">]({{ site.baseurl }}/guides/rhinocommon/creating_zoo_plugins/)
 
 ### Zoo
 

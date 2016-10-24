@@ -5,6 +5,9 @@ platforms: ['Windows', 'Mac']
 layout: guide-homepage
 ---
 
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/rhinopython_guides_col1.png">]({{ site.baseurl }}/guides/rhinopython/what_is_rhinopython/)
+
 ### Overview
 
 <div class="trigger">
@@ -37,6 +40,9 @@ layout: guide-homepage
 
 <!--column-->
 
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/rhinopython_guides_col2.png">](https://docs.python.org/2/tutorial/index.html)
+
 ### Learning Python
 
 - <a href="https://docs.python.org/2/tutorial/index.html" target="_blank">The Python Tutorial</a>
@@ -44,6 +50,9 @@ layout: guide-homepage
 - <a href="https://automatetheboringstuff.com/" target="_blank">Automate The Boring Stuff With Python</a>
 
 <!--column-->
+
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/rhinopython_guides_col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
 
 ### Learning Rhino.Python
 

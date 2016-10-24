@@ -16,7 +16,7 @@ A growing collection of recorded events, internal presentations, and tutorials c
 by Brian Gillespie.  Recorded October 20th, 2016.
 
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ybw9Fmjk9RI"></iframe>
+  <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/188730450"></iframe>
 </div>
 
 ---

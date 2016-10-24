@@ -5,7 +5,8 @@ platforms: ['Windows']
 layout: guide-homepage
 ---
 
-<!-- ![RhinoScript Overview]({{ site.baseurl }}/images/rhinoscript_01.png)-->
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/rhinoscript_guides_col1.png">](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 
 ### Overview
 
@@ -54,6 +55,9 @@ layout: guide-homepage
 
 <!--column-->
 
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/rhinoscript_guides_col2.png">]({{ site.baseurl }}/guides/rhinoscript/comparing_arrays/)
+
 ### Intermediate
 
 <div class="trigger">
@@ -70,6 +74,9 @@ layout: guide-homepage
 </div>
 
 <!--column-->
+
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/rhinoscript_guides_col3.png">]({{ site.baseurl }}/guides/rhinoscript/array_utilities/)
 
 ### Advanced
 
