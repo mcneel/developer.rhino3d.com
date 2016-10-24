@@ -5,6 +5,9 @@ platforms: ['Windows', 'Mac']
 layout: guide-homepage
 ---
 
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/opennurbs_guides_col1.png">]({{ site.baseurl }}/guides/opennurbs/what_is_opennurbs/)
+
 ### Overview
 
 <div class="trigger">
@@ -37,6 +40,9 @@ layout: guide-homepage
 
 <!--column-->
 
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/opennurbs_guides_col2.png">]({{ site.baseurl }}/guides/opennurbs/data_from_ellipses/)
+
 ### Fundamentals
 
 <div class="trigger">
@@ -53,6 +59,9 @@ layout: guide-homepage
 </div>
 
 <!--column-->
+
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/opennurbs_guides_col3.png">]({{ site.baseurl }}/guides/opennurbs/superfluous_knots/)
 
 ### Advanced
 

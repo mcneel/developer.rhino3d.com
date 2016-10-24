@@ -5,6 +5,9 @@ platforms: ['Windows', 'Mac']
 layout: guide-homepage
 ---
 
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/grasshopper_guides_col1.png">]({{ site.baseurl }}/guides/grasshopper/what_is_a_grasshopper_component/)
+
 ### Overview
 
 - [What is a Grasshopper Component?]({{ site.baseurl }}/guides/grasshopper/what_is_a_grasshopper_component/)
@@ -15,6 +18,9 @@ layout: guide-homepage
 - Your First Component ([Windows]({{ site.baseurl }}/guides/grasshopper/your_first_component_windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/your_first_component_mac/))
 
 <!--column-->
+
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/grasshopper_guides_col2.png">]({{ site.baseurl }}/guides/grasshopper/simple_component/)
 
 ### Fundamentals
 
@@ -47,6 +53,9 @@ layout: guide-homepage
 </div>
 
 <!--column-->
+
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/grasshopper_guides_col3.png">]({{ site.baseurl }}/guides/grasshopper/grasshopper_data_types/)
 
 ### In Depth
 

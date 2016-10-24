@@ -5,6 +5,9 @@ platforms: ['Windows']
 layout: guide-homepage
 ---
 
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/cpp_guides_col1.png">]({{ site.baseurl }}/guides/cpp/what_is_the_cpp_sdk/)
+
 ### Overview
 
 <div class="trigger">
@@ -52,6 +55,9 @@ layout: guide-homepage
 
 <!--column-->
 
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/cpp_guides_col2.png">]({{ site.baseurl }}/guides/cpp/adding_command_line_options/)
+
 ### Fundamentals
 
 <div class="trigger">
@@ -68,6 +74,9 @@ layout: guide-homepage
 </div>
 
 <!--column-->
+
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="{{ site.baseurl }}/images/cpp_guides_col3.png">]({{ site.baseurl }}/guides/cpp/drawing_arrowheads_in_display_conduits/)
 
 ### Advanced
 
