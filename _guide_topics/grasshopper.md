@@ -1,7 +1,7 @@
 ---
 title: Grasshopper Guides
 description: Guides to creating custom Grasshopper components and plugins.
-platforms: ['Windows']
+platforms: ['Windows', 'Mac']
 layout: guide-homepage
 ---
 
