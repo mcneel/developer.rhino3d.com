@@ -52,7 +52,7 @@ If you wish to write plugins with RhinoCommon, you will need to understand a .NE
 *Watch*...
 
 - [Beginning C# Programming](http://shop.oreilly.com/product/0636920036036.do) By Eric Lippert - Published by O'Reilly Media
-- [C# Fundamentals for Absolute Beginners](https://www.microsoftvirtualacademy.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-8295) on Microsoft's Virtual Academy
+- [C# Fundamentals for Absolute Beginners](https://www.microsoftvirtualacademy.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169) on Microsoft's Virtual Academy
 - [C# Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/188207-2.html) with David Gassner on Lynda.com
 
 *Read*...
