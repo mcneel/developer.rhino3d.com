@@ -20,7 +20,7 @@ layout: toc-guide-page
 
 Rhinoceros is composed of many layers - written in many languages - all stacked on top of each other.  The most foundational are on the bottom, but the top layers should by no means be considered superficial...
 
-![The Rhino Stack]({{ site.baseurl}}/images/rhino_technology_overview_01.png)
+![The Rhino Stack]({{ site.baseurl }}/images/rhino_technology_overview_01.png)
 
 Let's discuss each of the layers in turn, starting on the bottom with the...
 
@@ -77,6 +77,7 @@ The .NET SDK is represented here in three layers:
 - C API
 - .NET Framework
 - RhinoCommon
+- Eto
 
 ### C API
 
@@ -98,11 +99,23 @@ RhinoCommon is our .NET SDK for Rhino, built atop the portions of the .NET frame
 
 For more information about RhinoCommon, see the [RhinoCommon guides]({{ site.baseurl }}/guides/rhinocommon/), or more specifically, the [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon) guide.
 
+### Eto
+
+Using RhinoCommon, you can write .NET plugins that work on Windows and Mac...except for the User Interface.  The Mono team did not clone WinForms or WPF, so neither of those technologies work on the Mac.  To address this problem, Rhino now ships with Eto.Forms.  Eto lets you write user interface once in C#, XAML, or JSON and use it on Windows and macOS.  Actually, your UI written in Eto, can run on iOS, Android, and Linux, too.
+
+For more information about Eto, check out [Eto.Forms on GitHub](https://github.com/picoe/Eto).
+
 ### .NET Plugins
 
 Built on top of RhinoCommon are numerous plugins, both internal and third-party developed plugins.  [Grasshopper](http://www.grasshopper3d.com/), for example, is a RhinoCommon plugin.  Some commands, renderers, and file IO plugins in Rhino are actually written as RhinoCommon plugins.  As time goes on, we are moving more and more convenient functionality into RhinoCommon/.NET plugins so as to share more code between platforms.  Many successful third-party plugins are also written using RhinoCommon and .NET, such as [RhinoGold](http://www.tdmsolutions.com/) and [Matrix by GEMVision](http://www.stuller.com/matrix), and [Orca3D](http://orca3d.com/).
 
 For more information about RhinoCommon, see the [RhinoCommon guides]({{ site.baseurl }}/guides/rhinocommon/).
+
+### Grasshopper Components
+
+Rhino now ships with Grasshopper, our visual programming language for algorithmic and parametric design.  Grasshopper is a development platform unto itself, with [hundreds of third-party authored Grasshopper components](http://www.food4rhino.com/grasshopper-addons), for doing all sorts of things from [physics simulation](http://www.food4rhino.com/project/kangaroo), to [creating custom user-interfaces](http://www.food4rhino.com/project/human-ui), to [industrial robotic programming and control](http://www.food4rhino.com/project/hal).
+
+For more information about Grasshopper, more specifically developing Grasshopper components, check out the [Grasshopper guides]({{ site.baseurl }}/guides/grasshopper/).
 
 ### Python Scripts
 
@@ -122,4 +135,6 @@ For more information about RhinoPython, see the [RhinoPython guides]({{ site.bas
 - [RhinoCommon guides]({{ site.baseurl }}/guides/rhinocommon/)
 - [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/)
 - [Mono Project](https://www.mono-project.com)
+- [Eto.Forms on GitHub](https://github.com/picoe/Eto)
+- [Grasshopper guides]({{ site.baseurl }}/guides/grasshopper/)
 - [RhinoPython guides]({{ site.baseurl }}/guides/rhinopython/)
