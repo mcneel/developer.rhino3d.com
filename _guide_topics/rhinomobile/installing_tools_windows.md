@@ -70,9 +70,9 @@ Xamarin's platform is currently required to build RhinoMobile apps.  Please chec
 1. You must accept the Xamarin Software License Agreement to use the Xamarin platform.
 1. The *Xamarin Platform* is comprised of these pieces:
    - Xamarin Studio
-   - Xamarin.Android[^1]
-   - Xamarin.iOS[^2]
-   - Xamarin.Mac[^3]
+   - Xamarin.Android
+   - Xamarin.iOS
+   - Xamarin.Mac
 ...verify that *Xamarin.Android* and *Xamarin.iOS* are checked and click *Continue*.
 1. Xamarin installs: *Xamarin Studio*, *Xamarin.Android*, and *Xamarin.iOS*.  Click *Continue*.
 1. Xamarin is will now download and install.  Depending on which products you selected in step 4 above, this can take a while.
