@@ -77,13 +77,13 @@ class MyConduit : Rhino.Display.DisplayConduit
   protected override void CalculateBoundingBox(CalculateBoundingBoxEventArgs e)
   {
     base.CalculateBoundingBox(e);
-    e.BoundingBox.Union(new Point3d(0,0,0);
+    e.IncludeBoundingBox(new Point3d(0,0,0));
   }
 
   protected override void PostDrawObjects(DrawEventArgs e)
   {
     base.PostDrawObjects(e);
-    e.Display.DrawPoint(new Point3d(0,0,0);
+    e.Display.DrawPoint(new Point3d(0,0,0));
   }
 }
 ```
@@ -96,7 +96,7 @@ Let's take a look at a more complex drawing routine:
 protected override void CalculateBoundingBox(CalculateBoundingBoxEventArgs e)
 {
    base.CalculateBoundingBox(e);
-   e.BoundingBox.Union(e.Display.Viewport.ConstructionPlane().Origin);
+   e.IncludeBoundingBox(e.Display.Viewport.ConstructionPlane().Origin);
 }
 
 protected override void PostDrawObjects(DrawEventArgs e)
