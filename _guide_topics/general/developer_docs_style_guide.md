@@ -493,6 +493,14 @@ To create new anchors within the site, you can use html inline.  For example:
 
 was added to the [top of this page](#top).
 
+**Internal Links**
+
+If you're linking to another part of the Devloper Docs then make sure you use the `{% raw %}{{ site.baseurl }}{% endraw %}` tag. For example:
+
+```kramdown
+[Guides]({% raw %}{{ site.baseurl }}{% endraw %}/guides/)
+```
+
 ---
 
 ### Images
