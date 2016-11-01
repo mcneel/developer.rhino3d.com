@@ -6,7 +6,7 @@ apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Getting Started']
-order: 6
+order: 7
 keywords: ['c', 'C/C++', 'plugin']
 layout: toc-guide-page
 ---
