@@ -87,6 +87,12 @@ In Rhino 6, you will need to do the following:
         if (group)
           ON_UUID group_id = group->Id();
 
+### Annotations
+
+For Rhino 6, there will be new implementations for all annotation objects, such as Text, Leaders, and Dimensions. The new implementations are much better organized the the prior versions, plus provide new features such as [Rich Text](https://en.wikipedia.org/wiki/Rich_Text_Format).
+
+As of this writing, the new annotations were still in development. More information on the changes and how to migrate to the new annotation classes will be available as we get closer to freezing the SDK.
+
 ### Scoped and Strongly Typed Enums
 C++11 provides some great new features for C++ programmers. One such feature is scoped and strongly typed enumerations, which ensures some measure of compatibility across compilers. They also make up for some shortcomings of old-style enums:
 
@@ -112,11 +118,10 @@ Functions marked as deprecated may or may not continue to work in Rhino 6. Thus,
 
 In Rhino 7, all functions marked as deprecated in Rhino 6 will be removed.
 
-## Annotations
+### Other
+Not all changes in the Rhino 6 C/C++ SDK could be tagged as deprecated. For example, if a member variable from a class were removed, or a feature was dramatically changed, then deprecation could not be used. These types of breakages will require more time to fix.
 
-For Rhino 6, there will be new implementations for all annotation objects, such as Text, Leaders, and Dimensions. The new implementations are much better organized the the prior versions, plus provide new features such as [Rich Text](https://en.wikipedia.org/wiki/Rich_Text_Format).
-
-As of this writing, the new annotations were still in development. More information on the changes and how to migrate to the new annotation classes will be available as we get closer to freezing the SDK.
+To help with this, we are working on updating all of the [C++ SDK samples](https://github.com/mcneel/Rhino6Samples_CPP).
 
 ## Related Topics
 
