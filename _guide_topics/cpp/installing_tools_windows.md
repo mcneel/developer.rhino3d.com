@@ -44,6 +44,12 @@ Visual Studio 2015 comes in [three editions](https://www.visualstudio.com/downlo
 1. Depending on your internet connection, this can take minutes or hours.  When successfully installed, click the **Launch** button.
 
 ## Install the Rhino C/C++ SDK
+
+<div class="bs-callout bs-callout-danger">
+  <h4>NOTE</h4>
+  <p>Rhino 6 is will in WIP, or Work-in-Progress) form. The Rhino WIP C/C++ SDK Version number changes with every Rhino WIP release, which tends to be weekly. Plug-ins built with this SDK will only load in a Rhino with exactly the same version number. Thus, it will be almost impossible for you to release plug-ins for customers to use. When Rhino 6 enters the Beta testing phase, we will lock the SDK, thus preventing changes, which will allow you to distribute your plug-ins for testing.</p>
+</div>
+
 The [Rhino C/C++ SDK](https://discourse.mcneel.com/t/rhino-wip-developers/30197) is a set of tools for creating plug-in using the C++ language. The SDK includes headers, libraries and Visual Studio project wizards to get you started creating plugins quickly.
 
 1. Exit **Visual Studio**.
