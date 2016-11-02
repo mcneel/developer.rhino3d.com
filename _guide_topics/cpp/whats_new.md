@@ -133,4 +133,4 @@ To help with this, we are working on updating all of the [C++ SDK samples](https
 
 - [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing_tools_windows)
 - [Migrate your plugin project to Rhino 6]({{ site.baseurl }}/guides/cpp/migrate_your_plugin_windows)
-- [Migrate your plugin project to Rhino 6 manually]({{ site.baseurl }}/guides/general/migrate_your_plugin_manual_windows)
+- [Migrate your plugin project to Rhino 6 manually]({{ site.baseurl }}/guides/cpp/migrate_your_plugin_manual_windows)
