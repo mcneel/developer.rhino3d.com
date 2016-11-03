@@ -67,4 +67,4 @@ The following guides and samples have [TODO items listed in their yaml]({{ site.
 
 ### YouTrack
 
-Many items relating to the (dis?)functioning of this site are logged in [YouTrack: project: WWW subsystem: developer.rhino3d.com #unresolved](http://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved)
+Many items relating to this site are logged in [YouTrack: project: WWW subsystem: developer.rhino3d.com #unresolved](http://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved)
