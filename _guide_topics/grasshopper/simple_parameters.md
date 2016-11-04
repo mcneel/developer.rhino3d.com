@@ -20,7 +20,7 @@ layout: toc-guide-page
 
 Parameters are a vital part of Grasshopper (the other being components).  However, unlike components, it is far less likely that you'll need to make your own parameters.  Most components require only the native data types available inside Grasshopper.  In those odd cases where you need to work with custom data, you'll also need to create custom parameters that store that data.  In this topic, we'll create a parameter which can handle the TriStateType we discussed in the [Simple Data Types]({{ site.baseurl }}/guides/grasshopper/simple_data_types) guide.
 
-Parameters are responsible for storing and distributing data.  Components use them to collect existing data and output new data.  Parameters can also be used to convert data from one type into another, even though on the atomic level the conversion is actually performed by the `CastTo(T)` and `CastFrom` methods on `IGH_Goo`.  Most objects in the Special subcategory on the Grasshopper toolbar are basically parameters with extended GUIs.  Parameters can also be used by themselves to store constant data or to redirect data into multiple streams.
+Parameters are responsible for storing and distributing data.  Components use them to collect existing data and output new data.  Parameters can also be used to convert data from one type into another, even though on the atomic level the conversion is actually performed by the [CastTo(T)]({{site.baseurl}}/api/grasshopper/html/M_Grasshopper_Kernel_Types_IGH_Goo_CastTo__1.htm) and [CastFrom]({{ site.baseurl }}/api/grasshopper/html/M_Grasshopper_Kernel_Types_IGH_Goo_CastFrom.htm) methods on [IGH_Goo]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_Types_IGH_Goo.htm).  Most objects in the Special subcategory on the Grasshopper toolbar are basically parameters with extended GUIs.  Parameters can also be used by themselves to store constant data or to redirect data into multiple streams.
 
 ## Prerequisites
 
@@ -30,9 +30,9 @@ Before you start, create a new class that derives from `Grasshopper.Kernel.GH_Co
 
 ## Grasshopper.Kernel.IGH_Param
 
-All parameters in Grasshopper must implement the `IGH_Param` interface.  `IGH_Param` defines the bare minimum of what a parameter must be able to do.  There are some interfaces that extend on `IGH_Param`, and also some abstract classes that partially implement the interface.  Note that `IGH_Param` already inherits from `IGH_ActiveObject`, so it comes with a lot of baggage.
+All parameters in Grasshopper must implement the [IGH_Param]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_IGH_Param.htm) interface.  `IGH_Param` defines the bare minimum of what a parameter must be able to do.  There are some interfaces that extend on `IGH_Param`, and also some abstract classes that partially implement the interface.  Note that `IGH_Param` already inherits from `IGH_ActiveObject`, so it comes with a lot of baggage.
 
-`IGH_Param` is quite an extensive interface, it defines nearly thirty properties and methods, some of which are quite tricky to implement.  It is highly recommended that you do not directly implement IGH_Param, but derive from the abstract `GH_Param(T)` class instead.  `GH_Param(Of T)` provides a basic implementation of `IGH_Param` and takes care of quite a lot of the nasty bits.
+`IGH_Param` is quite an extensive interface, it defines nearly thirty properties and methods, some of which are quite tricky to implement.  It is highly recommended that you do not directly implement IGH_Param, but derive from the abstract [GH_Param(T)]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_GH_Param_1.htm) class instead.  `GH_Param(Of T)` provides a basic implementation of `IGH_Param` and takes care of quite a lot of the nasty bits.
 
 Here's a list of things `GH_Param<T>` will happily do for you that you would otherwise have to do yourself:
 
@@ -56,7 +56,7 @@ In other words, *do not implement* `IGH_Param` *but derive from* `GH_Param<T>`*!
 
 ## Types of Parameters
 
-As mentioned before, parameters can be encountered as component inputs or outputs, but also as free-floating objects.  These are not different classes, but rather the same class behaving in different ways.  Every instance of `IGH_Param` has a Kind readonly property which describes the context of that instance:
+As mentioned before, parameters can be encountered as component inputs or outputs, but also as free-floating objects.  These are not different classes, but rather the same class behaving in different ways.  Every instance of `IGH_Param` has a [Kind]({{ site.baseurl }}/api/grasshopper/html/P_Grasshopper_Kernel_IGH_Param_Kind.htm) readonly property which describes the context of that instance:
 
 ![Types of Parameters]({{ site.baseurl }}/images/simple_parameters_01.png)
 
@@ -68,7 +68,7 @@ From this image we can see how versatile parameters can be.  Parameters can have
 
 ## Data Inside Parameters
 
-All parameters have the capacity to store data, this is, after all, their primary function.  When you derive from `GH_Param(T)` there will be a protected member available within the class called `m_data` of type `GH_Structure(T)`.  Since `GH_Structure<T>` only accepts types of `T` that implement `IGH_Goo`, `GH_Param<T>` also only accepts types for `T` that implement `IGH_Goo`.  This is why you cannot have a `GH_Param<int>` but must instead have `GH_Param<GH_Integer>`.
+All parameters have the capacity to store data, this is, after all, their primary function.  When you derive from [GH_Param(T)]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_GH_Param_1.htm) there will be a protected member available within the class called `m_data` of type [GH_Structure(T)]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_Data_GH_Structure_1.htm).  Since `GH_Structure<T>` only accepts types of `T` that implement `IGH_Goo`, `GH_Param<T>` also only accepts types for `T` that implement `IGH_Goo`.  This is why you cannot have a `GH_Param<int>` but must instead have `GH_Param<GH_Integer>`.
 
 Data stored inside the `m_data` field is destroyed whenever the parameter expires.  Parameters can be expired via several different mechanisms, but the most common ones are:
 
@@ -80,7 +80,7 @@ Because the data gets destroyed so readily, we call it *Volatile Data*.  A lot o
 
 When a parameter is not connected to any source parameters, the persistent data will be copied into the volatile data.  If there is no persistent data, the parameter will remain empty and a runtime warning will be included to this effect.
 
-`GH_Param<T>` however does not support persistent data.  You can add your own mechanism for this (like Text Panel does) or you can choose to derive from more advanced classes like `GH_PersistentParam(T)`.  In this example, we'll derive from `GH_PersistentParam<T>` as we want to give users the ability to specify local data.  `GH_PersistentParam<T>` requires we implement two additional methods that allow users to specify persistent data.  These methods are called from the default popup menu when the "Set One XXXX" and "Set Multiple XXXX" items are clicked.
+`GH_Param<T>` however does not support persistent data.  You can add your own mechanism for this (like Text Panel does) or you can choose to derive from more advanced classes like `GH_PersistentParam(T)`.  In this example, we'll derive from [GH_PersistentParam<T>]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_GH_PersistentParam_1.htm) as we want to give users the ability to specify local data.  `GH_PersistentParam<T>` requires we implement two additional methods that allow users to specify persistent data.  These methods are called from the default popup menu when the "Set One XXXX" and "Set Multiple XXXX" items are clicked.
 
 So let's start with deriving from `GH_PersistentParam<T>` and see where that takes us:
 
@@ -147,7 +147,7 @@ End Class
 
 </div>
 
-That is essentially all there's to it.  Though you should also provide an Icon and an Exposure for this object.  The `Prompt_Singular` and `Prompt_Plural` methods need to be implemented.  In this case we'll use standard Rhino Command Line interface to prompt for persistent values:
+That is essentially all there's to it.  Though you should also provide an [Icon]({{ site.baseurl }}/api/grasshopper/html/P_Grasshopper_Kernel_GH_DocumentObject_Icon.htm) and an [Exposure]({{ site.baseurl }}/api/grasshopper/html/P_Grasshopper_Kernel_IGH_DocumentObject_Exposure.htm) for this object.  The `Prompt_Singular` and `Prompt_Plural` methods need to be implemented.  In this case we'll use standard Rhino Command Line interface to prompt for persistent values:
 
 <ul class="nav nav-pills">
   <li class="active"><a href="#cs1" data-toggle="pill">C#</a></li>

@@ -32,7 +32,7 @@ Before you start, create a new class that derives from `Grasshopper.Kernel.GH_Co
 
 In this section I'll briefly discuss all the methods and properties that are defined in IGH_Goo.  What they're for, who uses them at what time, etc, etc.
 
-All data used in Grasshopper must implement the `IGH_Goo` interface.  `IGH_Goo` defines the bare minimum of methods and properties for any kind of data before it is allowed to play ball.
+All data used in Grasshopper must implement the [IGH_Goo]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_Types_IGH_Goo.htm) interface.  `IGH_Goo` defines the bare minimum of methods and properties for any kind of data before it is allowed to play ball.
 
 ### IsValid
 

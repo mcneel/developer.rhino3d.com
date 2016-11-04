@@ -128,7 +128,7 @@ End Class
 
 </div>
 
-Now, we need to derive our `MyFirstComponent` class from the `GH_Component` base class defined inside Grasshopper.  `GH_Component` takes care of almost all the complicated actions and mannerisms that constitute a component.  It will handle data conversion, GUI, menus, file Input/Output, Error trapping and much, much more.  This allows us to focus only on the unique aspects of our component. In order to derive from `GH_Component`, add this to the class...
+Now, we need to derive our `MyFirstComponent` class from the [GH_Component]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_GH_Component.htm) base class defined inside Grasshopper.  `GH_Component` takes care of almost all the complicated actions and mannerisms that constitute a component.  It will handle data conversion, GUI, menus, file Input/Output, Error trapping and much, much more.  This allows us to focus only on the unique aspects of our component. In order to derive from `GH_Component`, add this to the class...
 
 <ul class="nav nav-pills">
   <li class="active"><a href="#cs3" data-toggle="pill">C#</a></li>
@@ -289,7 +289,7 @@ Every type of object inside a Grasshopper document must have a `ComponentGuid` a
 
 So, long story short, we need to invent a Guid (Globally Unique IDentifier) that will positively and unerringly indicate *this* component.  You can generate new Guids using an [Online Guid Generator](https://www.guidgenerator.com/) or Microsoft's popular *guidgen.exe*.  **Never** re-use a Guid and **never** edit one by hand.  Always generate a proper one using an official tool.
 
-Once you have a new Guid standing by, modify the `ComponentGuid` property to return it:
+Once you have a new Guid standing by, modify the [ComponentGuid]({{ site.baseurl }}/api/grasshopper/html/P_Grasshopper_Kernel_IGH_DocumentObject_ComponentGuid.htm) property to return it:
 
 <ul class="nav nav-pills">
   <li class="active"><a href="#cs6" data-toggle="pill">C#</a></li>
@@ -410,7 +410,7 @@ End Sub
 
 When we compile this project (assuming it has been setup correctly), the component will already be available on the Grasshopper tabs and it can be placed onto the canvas:
 
-![Sanity Check]({{ site.basurl }}/images/simple_component_02.png)
+![Sanity Check]({{ site.baseurl }}/images/simple_component_02.png)
 
 ## The Solver Routine
 
@@ -488,7 +488,7 @@ End Sub
 
 Build, run, and ...
 
-![That was easy]({{ site.basurl }}/images/simple_component_03.png)
+![That was easy]({{ site.baseurl }}/images/simple_component_03.png)
 
 **DONE!**
 
