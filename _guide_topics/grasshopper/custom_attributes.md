@@ -18,7 +18,7 @@ layout: toc-guide-page
 
 ## Overview
 
-Objects on the Grasshopper canvas consist of two parts.  The most important piece is the class that implements the `IGH_DocumentObject` interface.  This interface provides the basic plumbing needed to make objects work within a Grasshopper node network.  The interface part of objects however is handled separately.  Every `IGH_DocumentObject` carries around an instance of a class that implements the `IGH_Attributes` interface (indeed, every `IGH_DocumentObject` knows how to create its own stand-alone attributes) and it is this class that takes care of display, mouse interactions, popup menus, tooltips and so forth.
+Objects on the Grasshopper canvas consist of two parts.  The most important piece is the class that implements the [IGH_DocumentObject]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_IGH_DocumentObject.htm) interface.  This interface provides the basic plumbing needed to make objects work within a Grasshopper node network.  The interface part of objects however is handled separately.  Every `IGH_DocumentObject` carries around an instance of a class that implements the [IGH_Attributes]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_IGH_Attributes.htm) interface (indeed, every `IGH_DocumentObject` knows how to create its own stand-alone attributes) and it is this class that takes care of display, mouse interactions, popup menus, tooltips and so forth.
 
 In this guide we'll see how you can create your own attributes object.  Since it's not possible to have an `IGH_Attributes` instance work on its own, we need an `IGH_DocumentObject` to tie it to.  For this guide we'll assume we have a custom simple parameter (i.e. without persistent data) that holds integers.
 
@@ -94,11 +94,11 @@ End Sub
 
 </div>
 
-That's it, no more code is required inside the `MySimpleIntegerParameter` class.  This part at least is simple.  If you don't override the `CreateAttributes()` method, then an instance of `GH_FloatingParamAttributes` will be created instead.  If your parameter is to be attached to a component as an input or output, then the component will assign an instance of `GH_LinkedParamAttributes` to the parameter and `CreateAttributes()` will never be called.
+That's it, no more code is required inside the `MySimpleIntegerParameter` class.  This part at least is simple.  If you don't override the `CreateAttributes()` method, then an instance of [GH_FloatingParamAttributes]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_Attributes_GH_FloatingParamAttributes.htm) will be created instead.  If your parameter is to be attached to a component as an input or output, then the component will assign an instance of [GH_LinkedParamAttributes]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_Attributes_GH_LinkedParamAttributes.htm) to the parameter and `CreateAttributes()` will never be called.
 
 ## Grasshopper.Kernel.GH_Attributes
 
-Although the `IGH_Attributes` interface is required for custom attributes, it is usually a good idea to derive from one of the abstract attribute classes already available.  `GH_Attributes(T)` is the most basic and obvious choice and it implements a large amount of methods with default behaviour, saving you a lot of time and effort:
+Although the [IGH_Attributes]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_IGH_Attributes.htm) interface is required for custom attributes, it is usually a good idea to derive from one of the abstract attribute classes already available.  [GH_Attributes(T)]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_GH_Attributes_1.htm) is the most basic and obvious choice and it implements a large amount of methods with default behaviour, saving you a lot of time and effort:
 
 <ul class="nav nav-pills">
   <li class="active"><a href="#cs2" data-toggle="pill">C#</a></li>
@@ -133,15 +133,15 @@ This is enough so far to make it work, even though all the logic is still standa
 
 `GH_Attributes<T>` assumes that the object that owns it is rectangular.  This is true for most objects in Grasshopper, but there are some notable exceptions such as Pie-Graphs, Sketches and Scribbles.  But this assumption (which holds true in our case) allows `GH_Attributes<T>` to supply basic functionality for a wide variety of methods.
 
-All attributes have a property that defines the size of the object called `Bounds`.  Basically everything that happens outside of the `Bounds` goes by unnoticed.  Also, if the Bounds rectangle is not visible within the canvas area, Grasshopper might decide to not even bother calling any painting methods.
+All attributes have a property that defines the size of the object called [Bounds]({{ site.baseurl }}/api/grasshopper/html/P_Grasshopper_Kernel_IGH_Attributes_Bounds.htm).  Basically everything that happens outside of the `Bounds` goes by unnoticed.  Also, if the Bounds rectangle is not visible within the canvas area, Grasshopper might decide to not even bother calling any painting methods.
 
-Because our parameter will be rectangular, we don't have to override any of the picking logic, as the default implementation of `IsPickRegion`, `IsMenuRegion` and `IsTooltipRegion` will already work.
+Because our parameter will be rectangular, we don't have to override any of the picking logic, as the default implementation of [IsPickRegion]({{ site.baseurl }}/api/grasshopper/html/Overload_Grasshopper_Kernel_GH_Attributes_1_IsPickRegion.htm), [IsMenuRegion]({{ site.baseurl }}/api/grasshopper/html/M_Grasshopper_Kernel_GH_Attributes_1_IsMenuRegion.htm) and [IsTooltipRegion]({{ site.baseurl }}/api/grasshopper/html/M_Grasshopper_Kernel_GH_Attributes_1_IsTooltipRegion.htm) will already work.
 
 ## Layout
 
 We do however need to supply custom Layout logic.  The width of our attributes depends on both the length of the `NickName` of the `MySimpleIntegerParameter` that owns these attributes *and* on the length of the statistics information we want to include.  The height of the parameter however is fixed, though larger than the standard height for parameters in Grasshopper.
 
-In order to supply custom layout logic, we need to override the `Layout` method.  In this case I measure the width of the `NickName` of the Owner object, and make sure the parameter is never narrower than 80 pixels:
+In order to supply custom layout logic, we need to override the [Layout]({{ site.baseurl }}/api/grasshopper/html/M_Grasshopper_Kernel_GH_Attributes_1_Layout.htm) method.  In this case I measure the width of the `NickName` of the Owner object, and make sure the parameter is never narrower than 80 pixels:
 
 <ul class="nav nav-pills">
   <li class="active"><a href="#cs3" data-toggle="pill">C#</a></li>
@@ -190,7 +190,7 @@ End Sub
 
 The `Pivot` is a `PointF` structure that is changed when the object is dragged.  It is therefore important that you always "anchor" the layout of some attributes to the `Pivot`.  If you fail to do so, your attributes will become undraggable.
 
-There is a method you can override that will be called prior to the call to `Layout` which can be used to destroy any cached data you might have that's to do with display.  But note that if you override `ExpireLayout` you *must* place a call to the base class method as well:
+There is a method you can override that will be called prior to the call to `Layout` which can be used to destroy any cached data you might have that's to do with display.  But note that if you override [ExpireLayout]({{ site.baseurl }}/api/grasshopper/html/M_Grasshopper_Kernel_GH_Attributes_1_ExpireLayout.htm) you *must* place a call to the base class method as well:
 
 <ul class="nav nav-pills">
   <li class="active"><a href="#cs4" data-toggle="pill">C#</a></li>
@@ -225,24 +225,24 @@ End Sub
 
 ## Render
 
-Now that we have handled the Layout, we need to override the display of the parameter.  There's two parts to doing so.  You always have to override the `Render` method, as this is where the drawing takes place.  Render is called a number of times as there are several "layers" or "channels" to a single Grasshopper canvas.  At first, the background of the canvas is drawn.  During this process attributes are not yet involved.  Then there will be four channels where `IGH_Attributes` will be allowed to draw various shapes.
+Now that we have handled the Layout, we need to override the display of the parameter.  There's two parts to doing so.  You always have to override the [Render]({{ site.baseurl }}/api/grasshopper/html/M_Grasshopper_Kernel_GH_Attributes_1_Render.htm) method, as this is where the drawing takes place.  Render is called a number of times as there are several "layers" or "channels" to a single Grasshopper canvas.  At first, the background of the canvas is drawn.  During this process attributes are not yet involved.  Then there will be four channels where `IGH_Attributes` will be allowed to draw various shapes.
 
-First the groups are drawn (as they are behind all other objects), but every `GH_Attributes.Render()` method will be called once for the Groups channel.  Typically you should not draw anything in the Groups channel.
+First the groups are drawn (as they are behind all other objects), but every `GH_Attributes.Render()` method will be called once for the [Groups]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_GUI_Canvas_GH_CanvasChannel.htm) channel.  Typically you should not draw anything in the Groups channel.
 
-Next up is the Wires channel where all parameter connector wires are drawn.  If your object has input parameters or is a parameter, it is your responsibility to draw all wires coming into your object.  Wires going out the right side will be drawn by the recipient objects.
+Next up is the [Wires]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_GUI_Canvas_GH_CanvasChannel.htm) channel where all parameter connector wires are drawn.  If your object has input parameters or is a parameter, it is your responsibility to draw all wires coming into your object.  Wires going out the right side will be drawn by the recipient objects.
 
-Next the actual Components and Parameters themselves are drawn inside the Objects channel.  This is typically the most work, though there are lots of classes that take care of common tasks.  The default visual style of Components and parameter objects is the shiny, rounded rectangle.  You can use the `GH_Capsule` type to draw these shapes with a minimum of fuss.
+Next the actual Components and Parameters themselves are drawn inside the [Objects]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_GUI_Canvas_GH_CanvasChannel.htm) channel.  This is typically the most work, though there are lots of classes that take care of common tasks.  The default visual style of Components and parameter objects is the shiny, rounded rectangle.  You can use the [GH_Capsule]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_GUI_Canvas_GH_Capsule.htm) type to draw these shapes with a minimum of fuss.
 
-Ultimately there's an Overlay channel which is rarely used but it allows you to draw shapes that need to be on top of all other components and parameters.  After this, there are still more channels to do with canvas widgets, but `IGH_Attributes` are not involved here.
+Ultimately there's an [Overlay]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_GUI_Canvas_GH_CanvasChannel.htm) channel which is rarely used but it allows you to draw shapes that need to be on top of all other components and parameters.  After this, there are still more channels to do with canvas widgets, but `IGH_Attributes` are not involved here.
 
 Inside our implementation of the `Render()` method, we need to draw the wires coming into the `MySimpleIntegerParameter`, then the parameter capsule, while taking care to assign the correct colours (grey for normal, green for selected, dark for disabled, orange for warnings and red for errors).  Finally we have to draw three lines of text on top of the capsule; the name of the owner, the median integer and the mean integer.  The important types involved here are:
 
-- `GH_Canvas`
-- `GH_Painter`
-- `GH_Palette`
-- `GH_RuntimeMessageLevel`
-- `GH_Capsule`
-- `GH_FontServer`
+- [GH_Canvas]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_GUI_Canvas_GH_Canvas.htm)
+- [GH_Painter]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_GUI_Canvas_GH_Painter.htm)
+- [GH_Palette]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_GUI_Canvas_GH_Palette.htm)
+- [GH_RuntimeMessageLevel]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_GH_RuntimeMessageLevel.htm)
+- [GH_Capsule]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_GUI_Canvas_GH_Capsule.htm)
+- [GH_FontServer]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_GH_FontServer.htm)
 
 <ul class="nav nav-pills">
   <li class="active"><a href="#cs5" data-toggle="pill">C#</a></li>
@@ -405,4 +405,4 @@ End Sub
 
 Note that in this case I assume that `MySimpleIntegerParameter` has two ReadOnly properties called `MedianValue` and `MeanValue`.  I haven't written those, as they are not within the scope of this guide.
 
-If you have cached display objects (for whatever reason I don't want to hear), a good place to ensure they are `PrepareForRender` method.  It is called once (and only once) just before any calls to `Render()`.  You do not need to call the overridden method as it is empty by default.
+If you have cached display objects (for whatever reason I don't want to hear), a good place to ensure they are [PrepareForRender]({{ site.baseurl }}/api/grasshopper/html/M_Grasshopper_Kernel_GH_Attributes_1_PrepareForRender.htm) method.  It is called once (and only once) just before any calls to `Render()`.  You do not need to call the overridden method as it is empty by default.

@@ -18,13 +18,13 @@ layout: toc-guide-page
 
 ## Overview
 
-So far the example components have all operated on individual data items.  This is known as One-In-One-Out.  But what if you want to operate on more than one item at a time; One-In-Many-Out, Many-In-One-Out or Many-In-Many-Out?  This requires that input or output parameters have a non-standard `Grasshopper.Kernel.GH_ParamAccess` flag.
+So far the example components have all operated on individual data items.  This is known as One-In-One-Out.  But what if you want to operate on more than one item at a time; One-In-Many-Out, Many-In-One-Out or Many-In-Many-Out?  This requires that input or output parameters have a non-standard [Grasshopper.Kernel.GH_ParamAccess]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_GH_ParamAccess.htm) flag.
 
 ## List Parameters
 
 Input and Output parameters that are part of Grasshopper components have an access flag that affects how the component treats data stored in these parameters.  Take for example the Polyline component.  It creates a single polyline object from a *collection* of corner-points.  This is a Many-In-One-Out kind of logic.  The Divide component creates a whole bunch of division points from a single curve. This is an example of One-In-Many-Out.  The Cull components remove certain items from lists, this is an example of Many-In-Many-Out.
 
-Most components treat their inputs and outputs as parameters that provide individual instances of data, rather than related collections of data.  This is indicated by all parameters having an `GH_ParamAccess.item` access flag.  You can however assign different access flags to parameters.  Preferably this flag should be assigned only once, namely in the `RegisterInputParams` or `RegisterOutputParams` method overrides.  It is legal to modify an access flag as long as a solution is not currently in progress, but it is not recommended.
+Most components treat their inputs and outputs as parameters that provide individual instances of data, rather than related collections of data.  This is indicated by all parameters having an [GH_ParamAccess.item]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_GH_ParamAccess.htm) access flag.  You can however assign different access flags to parameters.  Preferably this flag should be assigned only once, namely in the [RegisterInputParams]({{ site.baseurl }}/api/grasshopper/html/M_Grasshopper_Kernel_GH_Component_RegisterInputParams.htm) or [RegisterOutputParams]({{ site.baseurl }}/api/grasshopper/html/M_Grasshopper_Kernel_GH_Component_RegisterOutputParams.htm) method overrides.  It is legal to modify an access flag as long as a solution is not currently in progress, but it is not recommended.
 
 In this guide, we'll be writing a component that removes (culls) the bottom-most N objects in a collection of geometric shapes.  As inputs we'll need a collection of geometry and an integer indicating how many objects the user wants to remove, and as output we'll provide the same collection of geometry, but with the bottom-most objects missing.  This is therefore a Many-In-Many-Out case.
 
@@ -129,7 +129,7 @@ End Sub
 
 </div>
 
-Input parameters rigorously enforce their access.  You are only allowed to retrieve individual items from inputs that have the `GH_ParamAccess.item` flag set.  Lists can only be retrieved when the access is set to `GH_ParamAccess.list` and data trees can only be gotten from a `GH_ParamAccess.tree` parameter.  Failure to do so will result in an error message at runtime.  Output parameter are more flexible, but this is only because output access was added only in Grasshopper 0.9.0001 and strict enforcement would result in SDK breakage with previous versions.
+Input parameters rigorously enforce their access.  You are only allowed to retrieve individual items from inputs that have the [GH_ParamAccess.item]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_GH_ParamAccess.htm) flag set.  Lists can only be retrieved when the access is set to `GH_ParamAccess.list` and data trees can only be gotten from a `GH_ParamAccess.tree` parameter.  Failure to do so will result in an error message at runtime.  Output parameter are more flexible, but this is only because output access was added only in Grasshopper 0.9.0001 and strict enforcement would result in SDK breakage with previous versions.
 
 ## Solving Routine
 

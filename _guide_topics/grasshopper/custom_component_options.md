@@ -29,7 +29,7 @@ The component we'll create in this article will sort a list of numbers and have 
 
 ## Example Component
 
-Before you start with this guide, create a new class that derives from `GH_Component`, as outlined in the [Simple Component]({{ site.baseurl }}/guides/grasshopper/simple_component) guide.
+Before you start with this guide, create a new class that derives from [GH_Component]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_GH_Component.htm), as outlined in the [Simple Component]({{ site.baseurl }}/guides/grasshopper/simple_component) guide.
 
 This component will require one input parameter and one output parameter, both of type Number with list access:
 
@@ -181,7 +181,7 @@ End Property
 ```
 {: #vb2 .tab-pane .fade .in}
 
-The `m_absolute` field is a private field (only accessible from within this component) and it is exposed publicly via the `Absolute()` method, which allows both getting and setting.  Furthermore, whenever the `m_absolute` field is set, the `Absolute()` method ensures that the correct message is assigned.  The Message field on `GH_Component` allows you to set a string which will be displayed underneath the component on the canvas.  This is to signal to users that there's an option they can change which is not directly accessible via the input parameters.  Note that the message is not set *until* the `Absolute()` property is accessed, so you should specifically place a call to `Absolute = False` (or `True`) in the constructor.
+The `m_absolute` field is a private field (only accessible from within this component) and it is exposed publicly via the `Absolute()` method, which allows both getting and setting.  Furthermore, whenever the `m_absolute` field is set, the `Absolute()` method ensures that the correct message is assigned.  The [Message]({{ site.baseurl }}/api/grasshopper/html/P_Grasshopper_Kernel_GH_Component_Message.htm) field on `GH_Component` allows you to set a string which will be displayed underneath the component on the canvas.  This is to signal to users that there's an option they can change which is not directly accessible via the input parameters.  Note that the message is not set *until* the `Absolute()` property is accessed, so you should specifically place a call to `Absolute = False` (or `True`) in the constructor.
 
 It is of course possible to add any number of custom fields to a component, but you can only attach a single message, if you have more than one field you want to make the user aware of, you'll need to get creative.
 
@@ -189,7 +189,7 @@ It is of course possible to add any number of custom fields to a component, but 
 
 When you add options or states to your component which need to be "sticky," you'll also need to (de)serialize them correctly.  (De)serialization is used when saving and opening files, when copying and pasting objects and during undo/redo actions.  In this particular case, we only need to add a single boolean to the standard file archive.  Serialization in Grasshopper happens using the *GH_IO.dll* methods and types, not via standard framework mechanisms such as the `SerializableAttribute`.
 
-Override the `Write` and `Read` methods on `GH_Component` and be sure to always call the base implementation.
+Override the [Write]({{ site.baseurl }}/api/grasshopper/html/M_Grasshopper_Kernel_GH_Component_Write.htm) and [Read]({{ site.baseurl }}/api/grasshopper/html/M_Grasshopper_Kernel_GH_Component_Read.htm) methods on `GH_Component` and be sure to always call the base implementation.
 
 <ul class="nav nav-pills">
   <li class="active"><a href="#cs3" data-toggle="pill">C#</a></li>
@@ -239,7 +239,7 @@ End Function
 
 ## Context Menu Changes
 
-We'll also need to add an additional menu item to the component context menu, then handle the click event for that item.  Adding items to a context menu is best done via the `AppendAdditionalComponentMenuItems` method.  It allows you to insert any number of item in between the Bake and the Help items.  The easiest way to add menu items is to use the Shared methods on `GH_DocumentObject` such as `Menu_AppendItem` or one of the overloads.  In this case we also want to assign a tooltip text to the item which cannot be done from inside `Menu_AppendItem()`.
+We'll also need to add an additional menu item to the component context menu, then handle the click event for that item.  Adding items to a context menu is best done via the [AppendAdditionalComponentMenuItems]({{ site.baseurl }}/api/grasshopper/html/M_Grasshopper_Kernel_GH_Component_AppendAdditionalComponentMenuItems.htm) method.  It allows you to insert any number of item in between the Bake and the Help items.  The easiest way to add menu items is to use the Shared methods on [GH_DocumentObject]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_GH_DocumentObject.htm) such as [Menu_AppendItem]({{ site.baseurl }}/api/grasshopper/html/Overload_Grasshopper_Kernel_GH_DocumentObject_Menu_AppendItem.htm) or one of the overloads.  In this case we also want to assign a tooltip text to the item which cannot be done from inside `Menu_AppendItem()`.
 
 <ul class="nav nav-pills">
   <li class="active"><a href="#cs4" data-toggle="pill">C#</a></li>
@@ -306,7 +306,7 @@ End Sub
 ```
 {: #vb5 .tab-pane .fade .in}
 
-Since our `Write()` and `Read()` methods handle the (de)serialization of the `Absolute` field, we can use the default `RecordUndoEvent` method. It is possible to define your own undo records, but that is a topic for another guide.
+Since our `Write()` and `Read()` methods handle the (de)serialization of the `Absolute` field, we can use the default [RecordUndoEvent]({{ site.baseurl }}/api/grasshopper/html/Overload_Grasshopper_Kernel_GH_DocumentObject_RecordUndoEvent.htm) method. It is possible to define your own undo records, but that is a topic for another guide.
 
 ---
 
