@@ -36,6 +36,11 @@ body {
     border-left-color: #ce4844;
 }
 
+.guide_byline {
+    font-style: italic;
+    font-size: 14px;
+}
+
 /* Search input form and search results styling */
 
 #sitesearch {
