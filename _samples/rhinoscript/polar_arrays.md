@@ -1,7 +1,7 @@
 ---
 title: Polar Arrays
 description: Demonstrates how to create polar arrays of objects using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

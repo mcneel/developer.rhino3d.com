@@ -1,7 +1,7 @@
 ---
 title: Read & Write UTF-8 Files
 description: This brief guide demonstrates how to read and write UTF-8 encoded text files using VBScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

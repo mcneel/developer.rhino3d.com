@@ -1,7 +1,7 @@
 ---
 title: Material, Environment, and Texture Editors
 description: This guide has yet to be authored or ported.
-author: andy@mcneel.com
+author: ['Andrew le Bihan', '@andy']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

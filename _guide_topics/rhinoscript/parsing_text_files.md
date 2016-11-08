@@ -1,7 +1,7 @@
 ---
 title: Parsing Text Files
 description: This guide discusses how to convert data read from a text file into its proper data type in RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

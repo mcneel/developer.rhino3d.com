@@ -1,7 +1,7 @@
 ---
 title: Optional Arguments
 description: This guide demonstrates how to implement optional arguments in VBScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

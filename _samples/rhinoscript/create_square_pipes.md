@@ -1,7 +1,7 @@
 ---
 title: Create Square Pipes
 description: Demonstrates how to create square pipes using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

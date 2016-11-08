@@ -1,7 +1,7 @@
 ---
 title: Line Between Curves
 description: Demonstrates how to draw a line between two user-specified curves.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

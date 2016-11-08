@@ -1,7 +1,7 @@
 ---
 title: Get and Set the Active View
 description: Demonstrates how to determine and set the active view in Rhino.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

@@ -1,7 +1,7 @@
 ---
 title: Developer Training
 description: This guide describes our Rhino Developer Training.
-author: dan@mcneel.com
+author: ['Dan Belcher', '@dan']
 apis: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']

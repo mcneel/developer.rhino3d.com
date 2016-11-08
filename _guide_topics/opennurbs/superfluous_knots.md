@@ -1,7 +1,7 @@
 ---
 title: Superfluous Knots
 description: This guide discusses superfluous knots and the openNURBS toolkit.
-author: dalelear@mcneel.com
+author: ['Dale Lear', '@dalelear']
 apis: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']

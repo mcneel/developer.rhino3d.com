@@ -1,7 +1,7 @@
 ---
 title: Set Camera Angle
 description: Demonstrates how to set the camera angle using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

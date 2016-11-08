@@ -1,7 +1,7 @@
 ---
 title: Uncommon Numeric Conversions
 description: This brief guide demonstrates some useful (or not so useful) numeric conversions in RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

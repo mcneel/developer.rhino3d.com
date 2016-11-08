@@ -1,7 +1,7 @@
 ---
 title: Split Brep
 description: Demonstrates how to split a brep with another brep using the RhinoSplitBrep function.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Print Surface Control Points
 description: Demonstrates how to print the location of a surface's control points using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

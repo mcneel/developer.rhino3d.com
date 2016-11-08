@@ -1,7 +1,7 @@
 ---
 title: VBScript Variables
 description: This guide provides an overview of VBScript variables.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

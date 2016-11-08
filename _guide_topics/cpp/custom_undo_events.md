@@ -1,7 +1,7 @@
 ---
 title: Custom Undo Events
 description: This guide discusses custom undo events.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

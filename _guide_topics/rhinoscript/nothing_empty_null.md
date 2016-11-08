@@ -1,7 +1,7 @@
 ---
 title: Nothing vs Empty vs Null
 description: This guide discusses what nothing means in VBScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

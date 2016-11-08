@@ -1,7 +1,7 @@
 ---
 title: Archiving Curves to a File
 description: This guide demonstrates how to write and read curves to a file using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

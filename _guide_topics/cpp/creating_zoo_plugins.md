@@ -1,7 +1,7 @@
 ---
 title: Creating Zoo Plugins
 description: This guide discusses how to create plugins for Zoo using C/C++
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

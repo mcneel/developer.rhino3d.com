@@ -1,7 +1,7 @@
 ---
 title: Get Mapping Information From Object
 description: Demonstrates how to get Flamingo nXt mapping information from an object using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Dynamically Drawing Geometry when Picking Points
 description: This guide demonstrates how to derive a new class to dynamically draw geometry during a point picking operation using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

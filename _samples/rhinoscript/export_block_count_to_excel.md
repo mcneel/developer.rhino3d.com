@@ -1,7 +1,7 @@
 ---
 title: Export Block Count to Excel
 description: Demonstrates how to count blocks and then export the results to Microsoft Excel.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

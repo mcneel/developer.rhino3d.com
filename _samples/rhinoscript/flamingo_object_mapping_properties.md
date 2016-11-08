@@ -1,7 +1,7 @@
 ---
 title: Flamingo Object Mapping Properties
 description: Demonstrates how to set Flamingo nXt mapping properties for an object using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Extract Interpolated Curve Construction Points
 description: Demonstrates how to reverse engineer an interpolated curve using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

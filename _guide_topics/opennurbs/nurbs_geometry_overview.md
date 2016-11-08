@@ -1,7 +1,7 @@
 ---
 title: NURBS Geometry Overview
 description: This guide is brief overview of NURBS geometry from a mathematical and technical perspective.
-author: dalelear@mcneel.com
+author: ['Dale Lear', '@dalelear']
 apis: ['openNURBS']
 languages: ['All']
 platforms: ['Windows', 'Mac']

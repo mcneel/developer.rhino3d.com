@@ -1,7 +1,7 @@
 ---
 title: Add Layout
 description: Demonstrates how to generate a layout with a single detail view that zooms to a list of objects.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

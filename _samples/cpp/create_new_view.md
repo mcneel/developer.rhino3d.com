@@ -1,7 +1,7 @@
 ---
 title: Create New View
 description: Demonstrates how to create a new view that has the properties of an existing view.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

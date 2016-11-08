@@ -1,7 +1,7 @@
 ---
 title: Dynamically Drawing Polylines
 description: This guide demonstrates how to derive a new class from CRhinoGetPoint to dynamically draw a polyline.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

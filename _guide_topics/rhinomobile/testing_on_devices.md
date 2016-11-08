@@ -1,7 +1,7 @@
 ---
 title: Testing On Devices
 description: This guide walks you through setting up devices for testing mobile applications.
-author: dan@mcneel.com
+author: ['Dan Belcher', '@dan']
 apis: ['RhinoMobile']
 languages: ['C#']
 platforms: ['iOS', 'Android']

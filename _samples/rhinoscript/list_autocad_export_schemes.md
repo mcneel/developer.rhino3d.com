@@ -1,7 +1,7 @@
 ---
 title: List AutoCAD Export Schemes
 description: Demonstrates how to build a list of AutoCAD export schemes using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

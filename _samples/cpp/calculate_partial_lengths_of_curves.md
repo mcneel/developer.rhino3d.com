@@ -1,7 +1,7 @@
 ---
 title: Calculating Partial Lengths of Curves
 description: Demonstrates how to calculate the length of a curve from the start point to some point on the curve.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

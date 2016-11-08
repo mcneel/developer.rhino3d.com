@@ -1,7 +1,7 @@
 ---
 title: Create CutPlane
 description: Demonstrates how to script the CutPlane command using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

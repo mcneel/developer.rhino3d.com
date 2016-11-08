@@ -1,7 +1,7 @@
 ---
 title: Intersect Curves with Meshes
 description: Demonstrates how to intersect a curve with a mesh.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Modify Object Color
 description: Demonstrates how to modify the color of a user-specified object.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

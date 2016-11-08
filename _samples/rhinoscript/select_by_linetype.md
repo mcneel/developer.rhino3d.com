@@ -1,7 +1,7 @@
 ---
 title: Select by Linetype
 description: Demonstrates how to select objects by linetype using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

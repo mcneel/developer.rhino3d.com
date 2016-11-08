@@ -1,7 +1,7 @@
 ---
 title: Logging Debug Info
 description: This brief guide discusses the use of the ON_TextLog class for debugging C/C++ plugins.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

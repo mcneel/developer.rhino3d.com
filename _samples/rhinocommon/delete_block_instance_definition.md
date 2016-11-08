@@ -1,7 +1,7 @@
 ---
 title: Delete Block Instance Definition
 description: Demonstrates how to delete a block instance definition given the name of the block.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

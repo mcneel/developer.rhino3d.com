@@ -1,7 +1,7 @@
 ---
 title: Convert Block to Group
 description: Demonstrates how to explode a block and group its components using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

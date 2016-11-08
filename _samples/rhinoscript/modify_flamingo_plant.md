@@ -1,7 +1,7 @@
 ---
 title: Modify Flamingo Plant
 description: Demonstrates how to modify an existing Flamingo nXt plant using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

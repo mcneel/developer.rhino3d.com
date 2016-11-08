@@ -1,7 +1,7 @@
 ---
 title: Maximize View
 description: Demonstrates how to maximize a view.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Basepoint of Block Instance
 description: Demonstrates how to find the basepoint coordinates of a block instance.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

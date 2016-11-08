@@ -1,7 +1,7 @@
 ---
 title: Creating your first C/C++ plugin for Rhino
 description: This guide walks you through your first plugin for Rhino for Windows using C/C++ and Visual Studio.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

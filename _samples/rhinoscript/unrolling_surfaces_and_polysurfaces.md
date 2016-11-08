@@ -1,7 +1,7 @@
 ---
 title: Unrolling Surfaces and Polysurfaces
 description: Demonstrates how to unroll surfaces and polysurfaces using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

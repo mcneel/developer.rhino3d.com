@@ -1,7 +1,7 @@
 ---
 title: Add a New Layer
 description: Demonstrates how to add a new layer to Rhino.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

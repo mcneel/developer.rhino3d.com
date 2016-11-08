@@ -1,7 +1,7 @@
 ---
 title: Split BReps with Planes
 description: Split a Set of BReps with a Plane
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

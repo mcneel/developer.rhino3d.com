@@ -1,7 +1,7 @@
 ---
 title: Type Casting Rhino Objects
 description: This guide discusses type casting Rhino C/C++ SDK objects.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

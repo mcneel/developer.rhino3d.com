@@ -1,7 +1,7 @@
 ---
 title: Scripting Methods for RDK (Windows)
 description: This guide enumerates the RhinoScript methods for accessing the RDK.
-author: andy@mcneel.com
+author: ['Andrew le Bihan', '@andy']
 apis: ['C/C++', 'RhinoScript']
 languages: ['C/C++', 'RhinoScript']
 platforms: ['Windows']

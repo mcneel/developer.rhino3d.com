@@ -1,7 +1,7 @@
 ---
 title: Fibonacci Numbers
 description: This guide is a survey of Fibonacci number algorithms in RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

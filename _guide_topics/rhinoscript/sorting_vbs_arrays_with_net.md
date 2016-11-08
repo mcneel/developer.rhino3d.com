@@ -1,7 +1,7 @@
 ---
 title: Sorting VBS Arrays with .NET
 description: This guide demonstrates how to use the .NET Framework to sort arrays in RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

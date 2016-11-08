@@ -1,7 +1,7 @@
 ---
 title: Single Color Back Faces
 description: Demonstrates how to determine the curve and object colors of back faces.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

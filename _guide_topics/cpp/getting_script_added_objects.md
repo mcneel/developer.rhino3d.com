@@ -1,7 +1,7 @@
 ---
 title: Getting Script-Added Objects
 description: This guide demonstrates how to locate objects that were added to Rhino by a script using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

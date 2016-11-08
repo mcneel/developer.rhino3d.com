@@ -1,7 +1,7 @@
 ---
 title: VBScript Passing Parameters
 description: This guide discusses parameter passing in VBScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Linking with openNURBS
 description: This guide discusses openNURBS linking.
-author: dalelear@mcneel.com
+author: ['Dale Lear', '@dalelear']
 apis: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']

@@ -1,7 +1,7 @@
 ---
 title: Textures and Mappings
 description: This guide discusses materials, textures, and texture mapping using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

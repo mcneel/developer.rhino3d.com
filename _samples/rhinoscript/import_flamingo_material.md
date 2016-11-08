@@ -1,7 +1,7 @@
 ---
 title: Import Flamingo Material
 description: Demonstrates how import a ArMaterial file using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

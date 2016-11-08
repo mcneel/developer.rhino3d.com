@@ -1,7 +1,7 @@
 ---
 title: Convert Dots to Text
 description: Illustrates RhinoScript code that converts annotation dots to text object.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

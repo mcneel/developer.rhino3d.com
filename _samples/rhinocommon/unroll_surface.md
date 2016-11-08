@@ -1,7 +1,7 @@
 ---
 title: Unroll Surface
 description: Unrolling a developable surface
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

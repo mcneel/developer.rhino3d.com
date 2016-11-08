@@ -1,7 +1,7 @@
 ---
 title: Frequently Asked Questions
 description: This guide is a list of Frequently Asked Questions (FAQ).
-author: dan@mcneel.com
+author: ['Dan Belcher', '@dan']
 apis: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']

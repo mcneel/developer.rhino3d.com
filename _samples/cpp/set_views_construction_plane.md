@@ -1,7 +1,7 @@
 ---
 title: Set a View's Construction Plane
 description: Demonstrates how to set a view's construction plane.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

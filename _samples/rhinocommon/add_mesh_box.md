@@ -1,7 +1,7 @@
 ---
 title: Add Mesh Box
 description: Demonstrates how to construct a mesh box from a Brep box.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

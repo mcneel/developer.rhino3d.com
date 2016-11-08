@@ -1,7 +1,7 @@
 ---
 title: Object Types
 description: This guide is an overview of the Rhino geometric object types.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

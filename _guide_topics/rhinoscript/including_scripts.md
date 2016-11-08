@@ -1,7 +1,7 @@
 ---
 title: Including Scripts
 description: This guide discusses how to include or use functions from another source file in RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

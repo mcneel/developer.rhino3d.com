@@ -1,7 +1,7 @@
 ---
 title: Adding Command Line Options
 description: This guide discusses how to add a different type of command line options to a custom command.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Extracting Isoparametric Curves from Surfaces
 description: Demonstrates how to extract isoparametric curves from surfaces.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Creating GUIDs
 description: This guide demonstrates how to create a Globally Unique Identifier (GUID) in RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

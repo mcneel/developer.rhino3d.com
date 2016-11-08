@@ -1,7 +1,7 @@
 ---
 title: Printing a Layer's Full Path
 description: This brief guide demonstrates now to obtain a layer's full path using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Distance on a Curve from a Point
 description: This guide demonstrates how to determine a point on a curve that is a specified distance from another point using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: ByRef vs ByVal
 description: This guide discusses VBScript argument passing.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

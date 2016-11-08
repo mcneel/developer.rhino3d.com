@@ -1,7 +1,7 @@
 ---
 title: Duplicate Object
 description: Demonstrates how to clone (or copy, or duplicate) a Rhino object.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

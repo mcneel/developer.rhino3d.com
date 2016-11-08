@@ -1,7 +1,7 @@
 ---
 title: Circle Center
 description: Demonstrates how to find the center of a circle.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

@@ -1,7 +1,7 @@
 ---
 title: Padding Digits
 description: This short guide demonstrate how to pad numbers with leading zeros in RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

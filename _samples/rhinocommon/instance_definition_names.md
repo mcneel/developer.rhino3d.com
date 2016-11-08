@@ -1,7 +1,7 @@
 ---
 title: Instance Definition Names
 description: Demonstrates how to print the instance definition names.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

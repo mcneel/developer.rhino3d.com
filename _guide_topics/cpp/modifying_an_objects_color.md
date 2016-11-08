@@ -1,7 +1,7 @@
 ---
 title: Modify an Object's Color
 description: This brief guide discuss how to modify an object's color using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Set RhinoPageView Width and Height
 description: Demonstrates how to set the RhinoPageView width and height dimensions.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

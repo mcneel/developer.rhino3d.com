@@ -1,7 +1,7 @@
 ---
 title: Divide Curve With Equidistant Points
 description: Demonstrates equidistance curve division using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

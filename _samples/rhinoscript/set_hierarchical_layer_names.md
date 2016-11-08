@@ -1,7 +1,7 @@
 ---
 title: Set Hierarchical Layer Names
 description: Demonstrates how to rename layers in a hierarchical manner using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

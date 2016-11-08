@@ -1,7 +1,7 @@
 ---
 title: Split Brep Edges
 description: Demonstrates how to split the edges of breps.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

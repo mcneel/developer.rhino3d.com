@@ -1,7 +1,7 @@
 ---
 title: Orthogonal Mode
 description: Demonstrates how to enable or disable orthogonal mode and its effects.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
