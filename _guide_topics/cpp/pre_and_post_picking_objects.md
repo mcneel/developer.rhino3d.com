@@ -1,7 +1,7 @@
 ---
 title: Pre- and Post-Picking Objects
 description: This brief guide demonstrates how to both pre-pick and post-pick objects using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

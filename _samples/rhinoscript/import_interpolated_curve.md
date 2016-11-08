@@ -1,7 +1,7 @@
 ---
 title: Import Interpolated Curve
 description: Demonstrates how to read a point file and create an interpolated curve using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

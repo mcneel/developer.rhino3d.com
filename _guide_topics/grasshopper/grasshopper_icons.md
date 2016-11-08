@@ -1,7 +1,7 @@
 ---
 title: Grasshopper Icons
 description: This guide contains the original vector graphics used for Grasshopper icons.
-author: david@mcneel.com
+author: ['David Rutten', '@DavidRutten']
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

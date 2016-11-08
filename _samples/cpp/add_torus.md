@@ -1,7 +1,7 @@
 ---
 title: Add Torus
 description: Demonstrates how to create a torus using ON_BrepTorus and add it to Rhino.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

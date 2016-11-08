@@ -1,7 +1,7 @@
 ---
 title: Plugin User Data
 description: This guide gives an overview of user data and how to use it with RhinoCommon.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']

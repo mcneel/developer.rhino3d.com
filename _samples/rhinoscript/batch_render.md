@@ -1,7 +1,7 @@
 ---
 title: Batch Render
 description: Demonstrates how to recurse through a folder and render every Rhino file using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

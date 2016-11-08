@@ -1,7 +1,7 @@
 ---
 title: Block Definition Geometry
 description: Demonstrates how to obtain a block instance's definition geometry.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

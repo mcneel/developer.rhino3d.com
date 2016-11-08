@@ -1,7 +1,7 @@
 ---
 title: Failed to locate CL.exe error
 description: This guide discusses the Failed to locate CL error using Visual Studio 2010.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

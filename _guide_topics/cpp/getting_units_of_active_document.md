@@ -1,7 +1,7 @@
 ---
 title: Getting the Units of the Active Document
 description: This brief guide demonstrates how to determine the unit system of the active document.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

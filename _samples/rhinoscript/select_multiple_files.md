@@ -1,7 +1,7 @@
 ---
 title: Select Multiple Files
 description: Demonstrates how to use RhinoScript's MultiListBox function to select multiple files.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

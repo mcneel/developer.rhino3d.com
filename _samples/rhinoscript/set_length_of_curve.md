@@ -1,7 +1,7 @@
 ---
 title: Set Length of Curve
 description: Demonstrates how to set the length of a curve object using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

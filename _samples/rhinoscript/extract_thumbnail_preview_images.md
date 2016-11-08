@@ -1,7 +1,7 @@
 ---
 title: Extract Thumbnail Preview Images
 description: Demonstrates how to extract the thumbnail preview image from .3DM files using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

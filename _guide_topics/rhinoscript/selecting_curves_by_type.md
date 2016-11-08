@@ -1,7 +1,7 @@
 ---
 title: Selecting Curves by Type
 description: This brief guide demonstrates how to select linear and non-linear curves using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

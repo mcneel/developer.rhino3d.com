@@ -1,7 +1,7 @@
 ---
 title: Split File Path String
 description: Demonstrates how to break a file path string in to its components using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

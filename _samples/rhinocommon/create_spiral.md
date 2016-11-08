@@ -1,7 +1,7 @@
 ---
 title: Create Spiral
 description: Demonstrates how to create a spiral object from an axis and a radius point.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

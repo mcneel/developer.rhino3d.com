@@ -1,7 +1,7 @@
 ---
 title: Picking Text Dots
 description: This brief guide demonstrates how to interactively select Text Dot objects with C/C++ CRhinoGetObject.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

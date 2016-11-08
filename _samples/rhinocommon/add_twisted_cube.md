@@ -1,7 +1,7 @@
 ---
 title: Add Twisted Cube
 description: Demonstrates how to construct a twisted cube object from an array of points and a list of curves.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']

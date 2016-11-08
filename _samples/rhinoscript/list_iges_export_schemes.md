@@ -1,7 +1,7 @@
 ---
 title: List IGES Export Schemes
 description: Demonstrates how to build a list of IGES export schemes using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

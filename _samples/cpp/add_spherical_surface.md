@@ -1,7 +1,7 @@
 ---
 title: Add Spherical Surface
 description: Demonstrates how to create a sphere using ON_RevSurface and add it to Rhino.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

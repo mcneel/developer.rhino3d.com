@@ -1,7 +1,7 @@
 ---
 title: User Data
 description: RhinoCommon object plugin user data
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

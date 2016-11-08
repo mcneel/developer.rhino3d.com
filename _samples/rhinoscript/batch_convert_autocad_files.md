@@ -1,7 +1,7 @@
 ---
 title: Batch Convert AutoCAD Files
 description: Demonstrates how to convert a folder of AutoCAD files to Rhino 3dm files using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

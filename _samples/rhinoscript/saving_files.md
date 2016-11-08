@@ -1,7 +1,7 @@
 ---
 title: Saving Files
 description: Demonstrates how to save a file using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

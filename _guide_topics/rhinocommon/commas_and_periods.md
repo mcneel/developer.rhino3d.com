@@ -1,7 +1,7 @@
 ---
 title: Commas & Periods
 description: This guide demonstrates how to consistently read/write numbers to strings.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']

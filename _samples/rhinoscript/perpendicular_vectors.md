@@ -1,7 +1,7 @@
 ---
 title: Perpendicular Vectors
 description: Demonstrates how to calculate a vector that is perpendicular to another vector using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

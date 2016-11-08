@@ -1,7 +1,7 @@
 ---
 title: Simple Data Types
 description: This guide discusses how Grasshopper deals with data items and types.
-author: david@mcneel.com
+author: ['David Rutten', '@DavidRutten']
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

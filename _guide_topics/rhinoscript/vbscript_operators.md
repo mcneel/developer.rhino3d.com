@@ -1,7 +1,7 @@
 ---
 title: VBScript Operators
 description: This guide is an overview of VBScript operators.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: What's New?
 description: This brief guide outlines the new and changed features in the Rhino C/C++ SDK.
-author: dale@mcneel.com, steve@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

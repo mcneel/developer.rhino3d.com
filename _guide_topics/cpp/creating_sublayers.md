@@ -1,7 +1,7 @@
 ---
 title: Creating Sublayers
 description: This brief guide demonstrates how to create sublayers of a parent layer using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

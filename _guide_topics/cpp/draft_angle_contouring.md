@@ -1,7 +1,7 @@
 ---
 title: Draft Angle Contouring
 description: This guide demonstrates how to create contour curves based on draft angle using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

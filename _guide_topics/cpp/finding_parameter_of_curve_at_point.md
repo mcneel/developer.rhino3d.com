@@ -1,7 +1,7 @@
 ---
 title: Finding the Parameter of a Curve at a Point
 description: This brief guide demonstrates how to find the parameter of a curve at a given 3D point using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

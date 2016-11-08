@@ -1,7 +1,7 @@
 ---
 title: Un-tag an Object as a Flamingo Plant
 description: Demonstrates how to un-tag an object as a Flamingo nXt plant using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

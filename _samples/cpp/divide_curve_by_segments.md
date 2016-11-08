@@ -1,7 +1,7 @@
 ---
 title: Divide a Curve by Segments
 description: Demonstrates how to divide a selected curve object by a specified number of segments.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

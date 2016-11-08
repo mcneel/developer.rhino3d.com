@@ -1,7 +1,7 @@
 ---
 title: Custom Python
 description: Demonstrates how to run a custom python script from within a command.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

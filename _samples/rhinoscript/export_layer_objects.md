@@ -1,7 +1,7 @@
 ---
 title: Export Layer Objects
 description: Demonstrates how to export all objects by layer, with each layer exported to a new file using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

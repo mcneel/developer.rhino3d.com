@@ -1,7 +1,7 @@
 ---
 title: Isometric Views
 description: This guide demonstrates how to create isometric views using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

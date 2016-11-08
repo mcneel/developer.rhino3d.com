@@ -1,7 +1,7 @@
 ---
 title: Contributing
 description: 'Hey, make yourself useful!'
-author: dan@mcneel.com
+author: ['Dan Belcher', '@dan']
 apis: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
@@ -12,9 +12,6 @@ keywords: ['developer', 'rhino']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{{ page.description }}
 
 ## GitHub
 

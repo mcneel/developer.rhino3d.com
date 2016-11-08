@@ -1,7 +1,7 @@
 ---
 title: Intersecting Meshes
 description: Demonstrates how to intersect two meshes.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

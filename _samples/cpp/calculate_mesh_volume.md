@@ -1,7 +1,7 @@
 ---
 title: Calculate Mesh Volume
 description: Demonstrates how to calculate the volumes of mesh objects.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

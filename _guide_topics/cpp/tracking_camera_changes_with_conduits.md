@@ -1,7 +1,7 @@
 ---
 title: Tracking Camera Changes with Conduits
 description: This guide demonstrates how to use a conduit that uses notifiers to track camera information using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

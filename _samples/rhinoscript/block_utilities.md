@@ -1,7 +1,7 @@
 ---
 title: Block Utilities
 description: A couple of useful block utilities written in RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

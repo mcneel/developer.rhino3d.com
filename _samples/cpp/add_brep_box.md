@@ -1,7 +1,7 @@
 ---
 title: Add a Brep Box
 description: Demonstrates how to add a Brep Box from a Rhino C++ plugin.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

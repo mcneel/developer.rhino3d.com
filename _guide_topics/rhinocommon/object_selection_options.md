@@ -1,7 +1,7 @@
 ---
 title: Object Selection with Options
 description: This guide covers how to pick some objects, select command options, return to picking more objects, all while keeping your current selection set.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']

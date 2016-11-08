@@ -1,7 +1,7 @@
 ---
 title: Intersect Lines
 description: Demonstrates how to find the intersection point of two (non-parallel) lines.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

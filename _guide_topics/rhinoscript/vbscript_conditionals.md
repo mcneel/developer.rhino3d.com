@@ -1,7 +1,7 @@
 ---
 title: VBScript Conditionals
 description: This guide is an survey of VBScript conditional statements.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Mesh Boolean Intersection
 description: Demonstrates how to intersect meshes.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Highlighting Objects in Conduits
 description: This guide demonstrates how to highlight objects in a conduit using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

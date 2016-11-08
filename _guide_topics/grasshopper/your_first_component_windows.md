@@ -1,7 +1,7 @@
 ---
 title: Your First Component (Windows)
 description: This guide walks you through your first custom Grasshopper component library using Visual Studio.
-author: dan@mcneel.com
+author: ['Dan Belcher', '@dan']
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows']

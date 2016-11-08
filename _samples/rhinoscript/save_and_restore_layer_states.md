@@ -1,7 +1,7 @@
 ---
 title: Save and Restore Layer States
 description: Demonstrates how to save and restore the states of layers using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

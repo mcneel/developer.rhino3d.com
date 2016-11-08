@@ -1,7 +1,7 @@
 ---
 title: Grasshopper Data Types
 description: This guide covers the basic data types that Grasshopper deals with.
-author: david@mcneel.com
+author: ['David Rutten', '@DavidRutten']
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

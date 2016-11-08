@@ -1,7 +1,7 @@
 ---
 title: Create an Ellipsoid Parametrically
 description: Demonstrates one way of creating a Ellipsoid using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

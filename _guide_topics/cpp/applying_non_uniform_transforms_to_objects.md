@@ -1,7 +1,7 @@
 ---
 title: Applying Non-Uniform Transformations to Objects
 description: This brief guide discusses similarity transformations and how to use them on objects.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Picking Surface Point
 description: This brief guide discusses how to pick points on a surface using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

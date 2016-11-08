@@ -1,7 +1,7 @@
 ---
 title: Create Principal Curvature Curves
 description: This guide demonstrates how to use the ON_EvPrincipalCurvatures function in C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

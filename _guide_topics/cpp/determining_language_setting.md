@@ -1,7 +1,7 @@
 ---
 title: Determining Language Setting
 description: This guide demonstrates how to determine the language setting when developing localized C/C++ plugins.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,7 +1,7 @@
 ---
 title: Efficient Script Loading
 description: This guide discusses different techniques of loading and running script and their efficiencies.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

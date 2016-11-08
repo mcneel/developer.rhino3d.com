@@ -1,7 +1,7 @@
 ---
 title: Select Curves by Degree
 description: Demonstrates how to use RhinoScript to select all curves that are of a specified degree.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

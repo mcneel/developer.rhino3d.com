@@ -1,7 +1,7 @@
 ---
 title: Rotate Plane Parallel to World
 description: Demonstrates how to rotate a plane so its x-axis is parallel to the world using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

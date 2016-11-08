@@ -1,7 +1,7 @@
 ---
 title: Assign Flamingo Material
 description: Demonstrates how to assign a Flamingo nXt material to an object using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

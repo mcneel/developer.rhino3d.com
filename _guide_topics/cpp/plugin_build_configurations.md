@@ -1,7 +1,7 @@
 ---
 title: Understanding Build Configurations
 description: This guide discusses Rhino C/C++ plugin build configurations and how to use them.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

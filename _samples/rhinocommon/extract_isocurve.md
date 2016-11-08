@@ -1,7 +1,7 @@
 ---
 title: Extract Isocurve
 description: Demonstrates how to extract the isoparametric curves from selected surfaces.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

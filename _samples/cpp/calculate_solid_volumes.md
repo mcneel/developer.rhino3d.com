@@ -1,7 +1,7 @@
 ---
 title: Calculate Solid Volumes
 description: Demonstrates how to calculating the volumes of closed surface, polysurface, and mesh objects.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

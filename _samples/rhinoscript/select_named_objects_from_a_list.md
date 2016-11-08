@@ -1,7 +1,7 @@
 ---
 title: Select Named Objects from a List
 description: Demonstrates how to use a dialog box to select named objects using RhinoScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

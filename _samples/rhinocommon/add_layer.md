@@ -1,7 +1,7 @@
 ---
 title: Add Layer
 description: Demonstrates how to add a layer to a Rhino model and validate that it does not already exist.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

@@ -1,7 +1,7 @@
 ---
 title: Object Color
 description: Demonstrates how to set the color of user-specified objects.
-author: steve@mcneel.com
+author: ['Steve Baer', '@stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

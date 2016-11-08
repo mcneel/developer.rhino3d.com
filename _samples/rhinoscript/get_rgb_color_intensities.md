@@ -1,7 +1,7 @@
 ---
 title: Get RGB Color Intensities
 description: Demonstrates retrieve red, green, and blue color intensities using VBScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

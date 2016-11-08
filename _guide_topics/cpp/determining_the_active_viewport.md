@@ -1,7 +1,7 @@
 ---
 title: Determining the Active Viewport
 description: This guide demonstrates how to determine the active viewport using C/C++.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

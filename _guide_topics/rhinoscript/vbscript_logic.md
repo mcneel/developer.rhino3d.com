@@ -1,7 +1,7 @@
 ---
 title: VBScript Logic
 description: This guide discusses the logic, or lack of, in VBScript.
-author: dale@mcneel.com
+author: ['Dale Fugier', '@dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
