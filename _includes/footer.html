@@ -7,25 +7,10 @@
       {% if page.author and page.author != 'unset' %}
         <div class="row">
           <div class="col-md-4">
-            <p class="text">
-              {% assign page_author_name = page.author[0] %}
-              {% assign page_author_contact = page.author[1] %}
-              {% assign first_char = page_author_contact | slice: 0 %}
-              {% if page_author_name != '' %}
-                {% if page_author_contact != '' %}
-                  {% if first_char == "@" %}
-                    Author: <a href="https://discourse.mcneel.com/new-message?username={{ page_author_contact | slice: 1, page_author_contact.size }}&title=Dev%20Docs%20{{ page.title | url_encode | url_escape }}%20Guide&body=About%20http://{{ site.baseurl }}{{ page.url }}...">{{ page_author_name }}</a>
-                  {% else %}
-                    {% assign address_to_check = page_author_contact %}
-                    {% if address_to_check contains "@" %}
-                      Author: <a href="mailto:{{ page_author_contact }}?Subject=Dev%20Docs%20{{ page.title | url_encode | url_escape }}%20Guide&body=About%20http://{{ site.baseurl }}{{ page.url }}...">{{ page_author_name }}</a>
-                    {% endif %}
-                  {% endif %}
-                {% else %}
-                  Author: {{ page_author_name }}
-                {% endif %}
-              {% endif %}
-            </p>
+            {% assign page_author_name = page.author[0] %}
+            {% assign page_author_contact = page.author[1] %}
+            {% assign first_char = page_author_contact | slice: 0 %}
+            <p class="text">Author: <a href="https://discourse.mcneel.com/users/{{ page.author[1] | slice: 1, page_author_contact.size }}/activity">{{ page.author[0] }}</a></p>
           </div>
           <div class="col-md-4 text-center">
             <span class="icon  icon--github">
