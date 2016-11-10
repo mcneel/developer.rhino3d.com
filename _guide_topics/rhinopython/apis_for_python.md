@@ -16,6 +16,8 @@ TODO: 'needs reorganization with regard to other guides'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## RhinoScriptSyntax

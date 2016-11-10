@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 This guide presumes you have gone through the [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinomobile/installing_tools_mac) guide and have successfully installed Xamarin Studio, Xcode, and all the requisite libraries.

@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 A Zoo plugin is a software module, developed by a 3rd party, that extends the functionality of Zoo 5.0 by allowing it to validate product licenses.

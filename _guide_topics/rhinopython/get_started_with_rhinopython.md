@@ -16,6 +16,8 @@ TODO: 'needs update, adding more resource links, etc.'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 To get acquainted with how Python scripts can help you model in Rhino first run some of the sample scripts that are provided.

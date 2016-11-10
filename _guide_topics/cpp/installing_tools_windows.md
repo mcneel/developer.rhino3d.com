@@ -16,6 +16,8 @@ TODO: 'needs to be written.'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 <div class="bs-callout bs-callout-danger">

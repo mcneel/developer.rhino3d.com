@@ -16,6 +16,8 @@ TODO: 'needs explanation, diagram style update'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## Conceptual diagram

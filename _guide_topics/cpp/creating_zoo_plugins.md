@@ -16,6 +16,8 @@ TODO: 'needs to be compared to RhinoCommon version'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## Overview

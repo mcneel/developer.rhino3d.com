@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 The Rhino C/C++ Software Development Kit (SDK) is an API for customizing and extending Rhino for Windows. The SDK provides tools that provide direct access to its database structures, geometry, graphics system, file I/O, command definitions, and much more.

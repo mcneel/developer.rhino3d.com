@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 Android provides Emulators and iOS provides simulators, each with their benefits and weaknesses.
