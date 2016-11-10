@@ -16,4 +16,6 @@ TODO: 'needs to be written'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
