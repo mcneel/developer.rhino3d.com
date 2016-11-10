@@ -1,7 +1,8 @@
 ---
 title: Converting to Grayscale
 description: This guide demonstrates how to convert an RGB color value to grayscale.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

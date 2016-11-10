@@ -1,7 +1,8 @@
 ---
 title: Select Points by Z Coordinate
 description: Demonstrates how to select point objects with a user-specified z coordinate using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

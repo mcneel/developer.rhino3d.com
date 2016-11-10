@@ -1,7 +1,8 @@
 ---
 title: Add Annotation Text
 description: Demonstrates how to add annotation text to a Rhino model at a specific location.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

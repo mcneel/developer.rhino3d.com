@@ -1,7 +1,8 @@
 ---
 title: Create New View
 description: Demonstrates how to create a new view that has the properties of an existing view.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

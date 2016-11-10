@@ -1,7 +1,8 @@
 ---
 title: Plugin Installers (Windows)
 description: This guide provides an overview of how plugin installers are created on Windows.
-author: ['Brian Gillespie', '@brian']
+authors: ['Brian Gillespie']
+author_contacts: ['brian']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

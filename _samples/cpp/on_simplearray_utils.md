@@ -1,7 +1,8 @@
 ---
 title: ON_SimpleArray Utilities
 description: Demonstrates how to sort and cull simple arrays.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

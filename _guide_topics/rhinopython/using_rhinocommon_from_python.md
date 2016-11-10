@@ -1,7 +1,8 @@
 ---
 title: Using RhinoCommon from Python
 description: This brief guide cover using RhinoCommon from Python.
-author: ['Dan Belcher', '@dan']
+authors: ['Dan Belcher']
+author_contacts: ['dan']
 apis: ['RhinoPython', 'RhinoCommon']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

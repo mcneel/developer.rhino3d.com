@@ -1,7 +1,8 @@
 ---
 title: What is Rhino3dmIO?
 description: This guide covers the RhinoCommon (.NET) build of openNURBS.
-author: ['Dan Belcher', '@dan']
+authors: ['Dan Belcher']
+author_contacts: ['dan']
 apis: ['openNURBS']
 languages: ['C/C++', 'C#']
 platforms: ['Windows', 'Mac']

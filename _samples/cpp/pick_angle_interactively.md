@@ -1,7 +1,8 @@
 ---
 title: Pick Angle Interactively
 description: Demonstrates how to use the CRhinoGetAngle class to pick an angle.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

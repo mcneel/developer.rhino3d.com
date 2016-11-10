@@ -1,7 +1,8 @@
 ---
 title: Split Curve Into Multiple Segments
 description: Demonstrates how to split a curve into multiple curve segments.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

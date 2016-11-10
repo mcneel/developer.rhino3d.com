@@ -1,7 +1,8 @@
 ---
 title: Parentheses
 description: This guide discusses the Cannot use parentheses when calling a Sub error that occurs in RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

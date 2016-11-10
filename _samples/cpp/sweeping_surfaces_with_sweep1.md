@@ -1,7 +1,8 @@
 ---
 title: Sweeping Surfaces with Sweep1
 description: Demonstrates how to use the CArgsRhinoSweep1 class and the RhinoSweep1 function. The definitions of these can be found in rhinoSdkSweep.h.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

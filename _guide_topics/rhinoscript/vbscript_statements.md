@@ -1,7 +1,8 @@
 ---
 title: VBScript Statements
 description: This guide presents an overview of VBScript statements.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

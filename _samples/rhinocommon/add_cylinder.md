@@ -1,7 +1,8 @@
 ---
 title: Add Cylinder
 description: Demonstrates how to construct a cylinder using a center-point, height and axis.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

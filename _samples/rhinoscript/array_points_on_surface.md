@@ -1,7 +1,8 @@
 ---
 title: Array Points on Surface
 description: Demonstrates how to array points on a surface with a RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

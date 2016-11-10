@@ -1,7 +1,8 @@
 ---
 title: Custom Undo
 description: Demonstrates how to set up a custom set of actions when the Undo command is called.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

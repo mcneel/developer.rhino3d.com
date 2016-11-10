@@ -1,7 +1,8 @@
 ---
 title: Open a 3DM file
 description: This brief guide demonstrates how to open a Rhino 3DM file from a plugin command using C/C++.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

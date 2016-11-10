@@ -1,7 +1,8 @@
 ---
 title: Contributing
 description: 'Hey, make yourself useful!'
-author: ['Dan Belcher', '@dan']
+authors: ['Dan Belcher']
+author_contacts: ['dan']
 apis: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']

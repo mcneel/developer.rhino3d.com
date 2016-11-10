@@ -1,7 +1,8 @@
 ---
 title: Pre and Post-Pick Objects
 description: Demonstrates how to customize Rhino's pre and post picking of objects behavior.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

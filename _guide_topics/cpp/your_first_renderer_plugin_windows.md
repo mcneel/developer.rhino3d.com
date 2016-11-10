@@ -1,7 +1,8 @@
 ---
 title: Your First Renderer Plugin (Windows)
 description: This guide has yet to be authored or ported.
-author: ['Andrew le Bihan', '@andy']
+authors: ['Andrew le Bihan', '@andy']
+author_contacts: ['']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

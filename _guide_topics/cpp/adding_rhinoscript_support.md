@@ -1,7 +1,8 @@
 ---
 title: Adding RhinoScript Support
 description: This guide demonstrates how to add RhinoScript support to C++ plugins.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++', 'VBScript']
 platforms: ['Windows']

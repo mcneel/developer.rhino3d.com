@@ -1,7 +1,8 @@
 ---
 title: Airfoil Shapes
 description: How to read point files that describe airfoils and create interpolated curves using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

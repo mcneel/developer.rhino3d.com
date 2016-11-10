@@ -1,7 +1,8 @@
 ---
 title: Extrude Brep Face
 description: Demonstrates how to extrude the Brep face from a user-specified surface.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

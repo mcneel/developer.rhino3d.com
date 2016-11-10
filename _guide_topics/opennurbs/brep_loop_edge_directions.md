@@ -1,7 +1,8 @@
 ---
 title: Brep Loop & Edge Directions
 description: This guide discusses Brep loop end edge directions in the openNURBS toolkit.
-author: ['Dale Lear', '@dalelear']
+authors: ['Dale Lear']
+author_contacts: ['dalelear']
 apis: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']

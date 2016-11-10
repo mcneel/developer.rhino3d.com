@@ -1,7 +1,8 @@
 ---
 title: Mesh Volume Centroid
 description: Demonstrates how to calculate the volume centroid of a mesh.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

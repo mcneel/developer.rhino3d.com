@@ -1,7 +1,8 @@
 ---
 title: Canceling Long Processes with ESC
 description: This guide demonstrates two methods for checking the Escape key.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

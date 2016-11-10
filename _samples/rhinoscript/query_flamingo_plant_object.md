@@ -1,7 +1,8 @@
 ---
 title: Query Flamingo Plant Objects
 description: Demonstrates how query a plant object using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

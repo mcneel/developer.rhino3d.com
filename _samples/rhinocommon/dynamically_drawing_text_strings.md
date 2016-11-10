@@ -1,7 +1,8 @@
 ---
 title: Dynamically Drawing Text Strings
 description: Demonstrates how to dynamically draw text strings relative to a given screen to world transform.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

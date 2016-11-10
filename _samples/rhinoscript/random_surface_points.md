@@ -1,7 +1,8 @@
 ---
 title: Random Surface Points
 description: Generate random points on a surface using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

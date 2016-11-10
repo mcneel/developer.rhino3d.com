@@ -1,7 +1,8 @@
 ---
 title: Select Objects by Layer
 description: Demonstrates how to select all of the objects on a specified layer.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

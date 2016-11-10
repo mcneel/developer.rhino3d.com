@@ -4,13 +4,23 @@
 
     <div class="footer-col-wrapper">
 
-      {% if page.author and page.author != 'unset' %}
+      {% if page.authors and page.authors != 'unset' %}
         <div class="row">
           <div class="col-md-4">
-            {% assign page_author_name = page.author[0] %}
-            {% assign page_author_contact = page.author[1] %}
-            {% assign first_char = page_author_contact | slice: 0 %}
-            <p class="text">Author: <a href="https://discourse.mcneel.com/users/{{ page.author[1] | slice: 1, page_author_contact.size }}/activity">{{ page.author[0] }}</a></p>
+
+            <p class="text">
+              {% if page.authors.size > 1 %}
+                Authors:
+                <ul>
+                  {% assign iterator_count = page.authors.size | minus: 1 %}
+                  {% for i in (0..iterator_count) %}
+                    <li> <a href="https://discourse.mcneel.com/users/{{ page.author_contacts[i] }}/activity">{{ page.authors[i] }}</a></li>
+                  {% endfor %}
+                </ul>
+              {% else %}
+                Author: <a href="https://discourse.mcneel.com/users/{{ page.author_contacts }}/activity">{{ page.authors }}</a>
+              {% endif %}
+            </p>
           </div>
           <div class="col-md-4 text-center">
             <span class="icon  icon--github">

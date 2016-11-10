@@ -1,7 +1,8 @@
 ---
 title: Comparing Arrays
 description: This guide discusses efficient VBScript array comparison.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

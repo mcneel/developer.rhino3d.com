@@ -1,7 +1,8 @@
 ---
 title: What is a Grasshopper Component?
 description: This guide gives an overview of custom Grasshopper components.
-author: ['David Rutten', '@DavidRutten']
+authors: ['David Rutten']
+author_contacts: ['DavidRutten']
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

@@ -1,7 +1,8 @@
 ---
 title: Array Utilities
 description: This guide presents an array of VBScript Array utilities.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

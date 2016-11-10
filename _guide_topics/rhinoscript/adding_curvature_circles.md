@@ -1,7 +1,8 @@
 ---
 title: Adding Curvature Circles
 description: This guide demonstrates how to add curvature circles using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

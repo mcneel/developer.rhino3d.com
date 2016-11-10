@@ -1,7 +1,8 @@
 ---
 title: Array Dimensions & Upper Bounds
 description: This guide discusses how to determine the dimension and the upper bounds of arrays in RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

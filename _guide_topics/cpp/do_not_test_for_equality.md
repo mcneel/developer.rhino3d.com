@@ -1,7 +1,8 @@
 ---
 title: Do NOT Test for Equality
 description: This brief guide contains a technical tip for floating point programming.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

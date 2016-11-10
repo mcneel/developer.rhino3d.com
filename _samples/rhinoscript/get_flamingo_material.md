@@ -1,7 +1,8 @@
 ---
 title: Get Flamingo Material
 description: Demonstrates how get an objects Flamingo nXt material assignment using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

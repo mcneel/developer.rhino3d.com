@@ -1,7 +1,8 @@
 ---
 title: VBScript Variable Hoisting
 description: This guides discusses variable scoping and hoisting in VBScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

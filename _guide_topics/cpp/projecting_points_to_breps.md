@@ -1,7 +1,8 @@
 ---
 title: Projecting Points to Breps
 description: This brief guide demonstrates how to project points onto Brep objects using C/C++.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

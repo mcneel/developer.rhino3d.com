@@ -1,7 +1,8 @@
 ---
 title: Offset Curve
 description: Demonstrates how to offset a curve inside or outside using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

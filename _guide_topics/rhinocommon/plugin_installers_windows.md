@@ -1,7 +1,8 @@
 ---
 title: Plugin Installers (Windows)
 description: This guide explains how to create a plugin installer for Rhino for Windows.
-author: ['Brian Gillespie', '@brian']
+authors: ['Brian Gillespie']
+author_contacts: ['brian']
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']

@@ -1,7 +1,8 @@
 ---
 title: Calculating the Angle Between Two Points
 description: This guide demonstrates how to calculate the angle between two points using C/C++.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

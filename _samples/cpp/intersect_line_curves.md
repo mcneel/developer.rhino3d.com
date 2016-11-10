@@ -1,7 +1,8 @@
 ---
 title: Intersect Line Curves
 description: Demonstrates how to intersect line curves.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

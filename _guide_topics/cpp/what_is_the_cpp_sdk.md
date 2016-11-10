@@ -1,7 +1,8 @@
 ---
 title: What is the C/C++ SDK?
 description: This guide gives an overview of C/C++ SDK.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

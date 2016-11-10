@@ -1,7 +1,8 @@
 ---
 title: Registering Plugins (Windows)
 description: This guide provides instructions for registering plugins for Windows.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoCommon', 'C/C++']
 languages: ['C#', 'C/C++']
 platforms: ['Windows']

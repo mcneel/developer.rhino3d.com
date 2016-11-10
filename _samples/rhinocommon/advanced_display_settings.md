@@ -1,7 +1,8 @@
 ---
 title: Advanced Display Settings
 description: Demonstrates how to change advanced display settings in Rhino where the mesh wireframe thickness (in pixels) is modified.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

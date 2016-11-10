@@ -1,7 +1,8 @@
 ---
 title: Read Dimension Text
 description: Demonstrates how to read dimension text from an annotation object.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

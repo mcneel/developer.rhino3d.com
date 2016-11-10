@@ -1,7 +1,8 @@
 ---
 title: Custom Picking Grip Objects
 description: This guide discusses how to write a custom grip object picker in C/C++.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

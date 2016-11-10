@@ -1,7 +1,8 @@
 ---
 title: Sweep Surfaces with Sweep1
 description: Demonstrates how to sweep along a single rail curve.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

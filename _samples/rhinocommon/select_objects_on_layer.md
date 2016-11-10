@@ -1,7 +1,8 @@
 ---
 title: Select Objects on Layer
 description: Demonstrates how to select all the objects on a user-specified layer.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

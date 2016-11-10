@@ -1,7 +1,8 @@
 ---
 title: Mesh Types
 description: This brief guide discusses the types of meshes found in Rhino.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

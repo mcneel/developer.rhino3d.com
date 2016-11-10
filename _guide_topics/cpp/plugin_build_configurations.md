@@ -1,7 +1,8 @@
 ---
 title: Plugin Build Configurations
 description: This guide discusses Rhino C/C++ plugin build configurations and how to use them.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

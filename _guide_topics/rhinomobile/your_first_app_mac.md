@@ -1,7 +1,8 @@
 ---
 title: Your First App (Mac)
 description: This guide walks you through your first mobile app using RhinoMobile and Xamarin Studio on Mac.
-author: ['Dan Belcher', '@dan']
+authors: ['Dan Belcher']
+author_contacts: ['dan']
 apis: ['RhinoMobile']
 languages: ['C#']
 platforms: ['iOS', 'Android']

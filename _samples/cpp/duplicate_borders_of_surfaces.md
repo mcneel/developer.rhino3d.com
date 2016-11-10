@@ -1,7 +1,8 @@
 ---
 title: Duplicate the Borders of Surfaces
 description: Demonstrates how to duplicate the borders of surfaces and polysurfaces.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
