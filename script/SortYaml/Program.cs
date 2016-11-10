@@ -1,4 +1,4 @@
-﻿//
+//
 // Program.cs
 // SortYaml
 //
@@ -15,24 +15,24 @@ namespace SortYaml
   {
     public static void Main (string[] args)
     {
-      foreach(string path in args) 
+      foreach(string path in args)
       {
-        if(File.Exists(path)) 
+        if(File.Exists(path))
         {
           ProcessFile(path);
-        }               
-        else if(Directory.Exists(path)) 
+        }
+        else if(Directory.Exists(path))
         {
           ProcessDirectory(path);
         }
-        else 
+        else
         {
           Console.WriteLine("{0} is not a valid file or directory.", path);
-        }        
-      } 
+        }
+      }
     }
 
-    public static void ProcessDirectory(string targetDirectory) 
+    public static void ProcessDirectory(string targetDirectory)
     {
       // Process the list of files found in the directory.
       string [] fileEntries = Directory.GetFiles(targetDirectory, "*.md");
@@ -45,7 +45,7 @@ namespace SortYaml
         ProcessDirectory(subdirectory);
     }
 
-    public static void ProcessFile(string path) 
+    public static void ProcessFile(string path)
     {
       string[] lines = System.IO.File.ReadAllLines (path);
 
@@ -70,7 +70,8 @@ namespace SortYaml
       // each field has an index, which we need to find below...
       int titleIndex = 0;
       int descriptionIndex = 0;
-      int authorIndex = 0;
+      int authorsIndex = 0;
+      int authorContactsIndex = 0;
       int apisIndex = 0;
       int languagesIndex = 0;
       int platformsIndex = 0;
@@ -87,8 +88,10 @@ namespace SortYaml
           titleIndex = k;
         if (lines [k].StartsWith ("description:", StringComparison.Ordinal))
           descriptionIndex = k;
-        if (lines [k].StartsWith ("author:", StringComparison.Ordinal))
-          authorIndex = k;
+        if (lines [k].StartsWith ("authors:", StringComparison.Ordinal))
+          authorsIndex = k;
+        if (lines [k].StartsWith ("author_contacts:", StringComparison.Ordinal))
+          authorsIndex = k;
         if (lines [k].StartsWith ("apis:", StringComparison.Ordinal))
           apisIndex = k;
         if (lines [k].StartsWith ("languages:", StringComparison.Ordinal))
@@ -112,7 +115,8 @@ namespace SortYaml
       // These are the default values that get set ("stubbed") if the field is NOT present...
       const string stubbedTitleField = "title: Title";
       const string stubbedDescriptionField = "description: unset";
-      const string stubbedAuthorField = "author: unset";
+      const string stubbedAuthorsField = "authors: unset";
+      const string stubbedAuthorContactsField = "author_contacts: unset";
       const string stubbedApisField = "apis: unset";
       const string stubbedLanguagesField = "languages: unset";
       const string stubbedPlatformsField = "platforms: unset";
@@ -128,22 +132,28 @@ namespace SortYaml
       newLines.Add("---");
 
       // check to see if the file contains a title: field
-      if (titleIndex != 0) 
+      if (titleIndex != 0)
         newLines.Add (lines [titleIndex]);
       else
         newLines.Add (stubbedTitleField);
 
       // check to see if the file contains a description: field
-      if (descriptionIndex != 0) 
+      if (descriptionIndex != 0)
         newLines.Add (lines [descriptionIndex]);
       else
         newLines.Add (stubbedDescriptionField);
 
-      // check to see if the file contains a author: field
-      if (authorIndex != 0)
-        newLines.Add (lines [authorIndex]);
-      else 
-        newLines.Add (stubbedAuthorField);
+      // check to see if the file contains a authors: field
+      if (authorsIndex != 0)
+        newLines.Add (lines [authorsIndex]);
+      else
+        newLines.Add (stubbedAuthorsField);
+
+      // check to see if the file contains a author_contacts: field
+      if (authorContactsIndex != 0)
+        newLines.Add (lines [authorContactsIndex]);
+      else
+        newLines.Add (stubbedAuthorContactsField);
 
       // check to see if the file contains a apis: field
       if (apisIndex != 0)
@@ -153,7 +163,7 @@ namespace SortYaml
 
       // check to see if the file contains a languages: field
       if (languagesIndex != 0)
-        newLines.Add (lines [languagesIndex]);  
+        newLines.Add (lines [languagesIndex]);
       else
         newLines.Add (stubbedLanguagesField);
 
@@ -194,7 +204,7 @@ namespace SortYaml
         newLines.Add (stubbedLayoutField);
 
       // Don't add a TODO field if there isn't one already
-      if (TODOIndex != 0) 
+      if (TODOIndex != 0)
         newLines.Add (lines [TODOIndex]);
 
       newLines.Add("---");
@@ -204,7 +214,7 @@ namespace SortYaml
         newLines.Add (lines [i]);
 
       // Write it to disk...
-      File.WriteAllLines (path, newLines);   
+      File.WriteAllLines (path, newLines);
     }
   }
 }
