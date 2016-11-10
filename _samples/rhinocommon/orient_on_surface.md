@@ -1,7 +1,8 @@
 ---
 title: Orient On Surface
 description: Demonstrates how to orient objects on a surface.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

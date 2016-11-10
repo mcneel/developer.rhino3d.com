@@ -1,7 +1,8 @@
 ---
 title: Trim Curve with Circle
 description: Demonstrates how to trim a closed curve with a circle using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

@@ -1,7 +1,8 @@
 ---
 title: Is Dynamic Array Dimensioned
 description: Demonstrates how to determine of a dynamic array has been dimensioned.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

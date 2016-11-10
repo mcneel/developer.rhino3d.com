@@ -1,7 +1,8 @@
 ---
 title: Creating a Custom CRhinoGetObject Class
 description: This guide demonstrates how to derive a class from CRhinoGetObject to handle special case object picking.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

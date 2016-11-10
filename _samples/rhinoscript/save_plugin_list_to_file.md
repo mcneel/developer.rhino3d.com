@@ -1,7 +1,8 @@
 ---
 title: Save Plugin List to File
 description: Demonstrates how to save the names of loaded and unloaded plugins to a text file using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

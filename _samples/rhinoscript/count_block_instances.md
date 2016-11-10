@@ -1,7 +1,8 @@
 ---
 title: Count Block Instances
 description: Demonstrates how to count block instances using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

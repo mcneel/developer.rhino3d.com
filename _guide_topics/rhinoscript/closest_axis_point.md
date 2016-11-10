@@ -1,7 +1,8 @@
 ---
 title: Closest Axis Point
 description: This guide demonstrates how to find the closest point on a planar curve to an axis.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

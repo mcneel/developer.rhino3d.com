@@ -1,7 +1,8 @@
 ---
 title: List Components
 description: This guide demonstrates how to operate on more than one item at a time.
-author: ['David Rutten', '@DavidRutten']
+authors: ['David Rutten']
+author_contacts: ['DavidRutten']
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

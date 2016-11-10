@@ -1,7 +1,8 @@
 ---
 title: Add a Cylinder
 description: Demonstrates how to create a cylinder using ON_BrepCylinder and add it to Rhino.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

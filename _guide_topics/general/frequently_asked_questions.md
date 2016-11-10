@@ -1,7 +1,8 @@
 ---
 title: Frequently Asked Questions
 description: This guide is a list of Frequently Asked Questions (FAQ).
-author: ['Dan Belcher', '@dan']
+authors: ['Dan Belcher']
+author_contacts: ['dan']
 apis: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']

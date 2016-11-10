@@ -1,7 +1,8 @@
 ---
 title: Zoom Extents of Points
 description: Demonstrates how to zoom to the extends of an array of 3D points.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

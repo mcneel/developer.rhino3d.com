@@ -1,7 +1,8 @@
 ---
 title: Developer Prerequisites
 description: This guide describes the main requirements to develop for Rhino.
-author: ['Dan Belcher', '@dan']
+authors: ['Dan Belcher']
+author_contacts: ['dan']
 apis: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']

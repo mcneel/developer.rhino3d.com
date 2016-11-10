@@ -1,7 +1,8 @@
 ---
 title: Modify an Object's Name
 description: Demonstrates how to modify an object's user-defined name.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

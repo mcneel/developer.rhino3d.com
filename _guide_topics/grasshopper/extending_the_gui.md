@@ -1,7 +1,8 @@
 ---
 title: Extending the GUI
 description: This guide describes how to extend the default behaviour, functionality, and graphical user interface (GUI) of Grasshopper document objects.
-author: ['David Rutten', '@DavidRutten']
+authors: ['David Rutten']
+author_contacts: ['DavidRutten']
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

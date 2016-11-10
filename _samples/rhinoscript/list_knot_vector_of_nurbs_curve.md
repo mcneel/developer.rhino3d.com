@@ -1,7 +1,8 @@
 ---
 title: List Knot Vector of NURBS Curve
 description: Demonstrates how to print the knot vector of NURBS curve using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

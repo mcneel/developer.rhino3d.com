@@ -1,7 +1,8 @@
 ---
 title: Mesh Boolean Difference
 description: Demonstrates how to use the RhinoMeshBooleanDifference function.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

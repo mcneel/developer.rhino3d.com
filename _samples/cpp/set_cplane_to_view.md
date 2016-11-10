@@ -1,7 +1,8 @@
 ---
 title: Set a CPlane to a View
 description: Demonstrates how to set the construction plane in the active viewport parallel to the view.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

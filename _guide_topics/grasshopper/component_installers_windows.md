@@ -1,7 +1,8 @@
 ---
 title: Component Installers (Windows)
 description: This guide has yet to be authored or ported.
-author: ['David Rutten', '@DavidRutten']
+authors: ['David Rutten']
+author_contacts: ['DavidRutten']
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows']

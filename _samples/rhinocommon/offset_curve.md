@@ -1,7 +1,8 @@
 ---
 title: Offset Curve
 description: Demonstrates how to offset curves to one side or another by a distance.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

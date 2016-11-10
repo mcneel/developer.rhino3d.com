@@ -1,7 +1,8 @@
 ---
 title: VBScript Procedures
 description: This guide discusses VBScript procedures.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

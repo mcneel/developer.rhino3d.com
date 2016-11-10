@@ -1,7 +1,8 @@
 ---
 title: Your First Plugin (Windows)
 description: This guide walks you through your first plugin for Rhino for Windows using RhinoCommon and Visual Studio.
-author: ['Dan Belcher', '@dan']
+authors: ['Dan Belcher']
+author_contacts: ['dan']
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']

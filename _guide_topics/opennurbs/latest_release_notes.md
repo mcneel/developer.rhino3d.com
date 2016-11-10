@@ -1,7 +1,8 @@
 ---
 title: openNURBS Latest Release Notes
 description: This brief guide covers what is new in the latest update to openNURBS 11-July-2013.
-author: ['Dale Lear', '@dalelear']
+authors: ['Dale Lear']
+author_contacts: ['dalelear']
 apis: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']

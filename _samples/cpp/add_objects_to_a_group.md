@@ -1,7 +1,8 @@
 ---
 title: Add Objects to a Group
 description: Demonstrates how to add selected objects to an object group.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

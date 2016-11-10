@@ -1,7 +1,8 @@
 ---
 title: RhinoCommon Zoo Plugins
 description: This guide discusses how to create RhinoCommon plugins that can obtain licenses the Zoo.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']

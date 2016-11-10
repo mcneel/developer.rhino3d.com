@@ -1,7 +1,8 @@
 ---
 title: Opening 3DM Files
 description: Demonstrates how to open 3DM files using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

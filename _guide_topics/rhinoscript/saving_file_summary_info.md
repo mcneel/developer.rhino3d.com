@@ -1,7 +1,8 @@
 ---
 title: Saving File Summary Info
 description: This brief guide demonstrates how to display the File Properties dialog when saving Rhino files using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

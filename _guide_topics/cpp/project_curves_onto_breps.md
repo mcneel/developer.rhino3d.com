@@ -1,7 +1,8 @@
 ---
 title: Project Curves onto Breps
 description: This guide demonstrates how to project a curve onto a brep using C/C++.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

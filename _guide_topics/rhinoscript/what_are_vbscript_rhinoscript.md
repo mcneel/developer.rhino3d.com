@@ -1,7 +1,8 @@
 ---
 title: What are VBScript and RhinoScript?
 description: This guide explains what VBScript and RhinoScript are.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

@@ -1,7 +1,8 @@
 ---
 title: Writing to Text Files
 description: This brief guide discuss writing text files using C/C++.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

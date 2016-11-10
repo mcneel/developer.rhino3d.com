@@ -1,7 +1,8 @@
 ---
 title: Data from Ellipses
 description: This guide discusses ellipses and their representation in openNURBS.
-author: ['Dale Lear', '@dalelear']
+authors: ['Dale Lear']
+author_contacts: ['dalelear']
 apis: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']

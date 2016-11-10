@@ -1,7 +1,8 @@
 ---
 title: Adding Commands to Projects
 description: This brief guide demonstrates how to add additional commands to a RhinoCommon plugin project.
-author: ['Dan Belcher', '@dan']
+authors: ['Dan Belcher']
+author_contacts: ['dan']
 apis: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

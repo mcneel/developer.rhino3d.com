@@ -1,7 +1,8 @@
 ---
 title: Print Instance Definition Tree
 description: Demonstrates how to print the names of all instance definitions, including objects and sub-instances, in a tree-style format.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

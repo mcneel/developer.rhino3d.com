@@ -1,7 +1,8 @@
 ---
 title: Add Command Line Options
 description: Demonstrates how to add command-line options as inputs to your command.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

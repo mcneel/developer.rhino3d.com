@@ -1,7 +1,8 @@
 ---
 title: Add a Cone Surface
 description: Demonstrates how to create a cone using ON_BrepCone.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

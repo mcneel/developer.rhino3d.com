@@ -1,7 +1,8 @@
 ---
 title: Divide a Curve by Length
 description: Demonstrates how to divide a curve object by a specified length.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

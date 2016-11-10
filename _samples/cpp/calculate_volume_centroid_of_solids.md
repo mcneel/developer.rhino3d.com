@@ -1,7 +1,8 @@
 ---
 title: Calculate Volume Centroid of Solids
 description: http://wiki.mcneel.com/developer/sdksamples/volumecentroid
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,7 +1,8 @@
 ---
 title: Reading Notes from a 3dm
 description: Demonstrates how to read the user-added notes field from a 3DM file using either C/C++ or the openNURBS toolkit.
-author: ['Dale Lear', '@dalelear']
+authors: ['Dale Lear']
+author_contacts: ['dalelear']
 apis: ['openNURBS', 'C/C++']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']

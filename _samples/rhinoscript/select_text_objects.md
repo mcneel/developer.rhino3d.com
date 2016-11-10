@@ -1,7 +1,8 @@
 ---
 title: Select Text Objects
 description: Demonstrates how to use RhinoScript to select all text objects.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

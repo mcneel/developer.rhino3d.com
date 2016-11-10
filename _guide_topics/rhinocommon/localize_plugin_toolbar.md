@@ -1,7 +1,8 @@
 ---
 title: Localizing Plugin Toolbars
 description: This guide covers the localization of plugin toolbars.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoCommon', 'C/C++']
 languages: ['C#', 'C/C++']
 platforms: ['Windows']

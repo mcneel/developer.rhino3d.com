@@ -1,7 +1,8 @@
 ---
 title: Surface from Corner Points
 description: Demonstrates how to create a surface from a set of corner points.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

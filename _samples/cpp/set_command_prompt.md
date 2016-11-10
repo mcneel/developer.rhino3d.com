@@ -1,7 +1,8 @@
 ---
 title: Set Command Prompt
 description: Demonstrates how to set Rhino's command prompt text to show the progress of long processes.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

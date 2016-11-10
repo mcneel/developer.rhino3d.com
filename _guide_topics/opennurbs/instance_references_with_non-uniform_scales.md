@@ -1,7 +1,8 @@
 ---
 title: Instance References with Non-Uniform Scales
 description: This guide discusses non-uniform scaling issues when using the openNURBS toolkit
-author: ['Dale Lear', '@dalelear']
+authors: ['Dale Lear']
+author_contacts: ['dalelear']
 apis: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']

@@ -1,7 +1,8 @@
 ---
 title: VBScript Operators
 description: This guide is an overview of VBScript operators.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

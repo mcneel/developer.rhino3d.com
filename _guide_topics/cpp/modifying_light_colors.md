@@ -1,7 +1,8 @@
 ---
 title: Modifying a Light's Color
 description: This brief guide describes how to modify the diffuse color of an existing light using C/C++.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

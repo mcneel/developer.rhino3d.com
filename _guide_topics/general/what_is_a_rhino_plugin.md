@@ -1,7 +1,8 @@
 ---
 title: What is a Rhino Plugin?
 description: This guide outlines what a Rhino plugin is and what forms it comes in.
-author: ['Dan Belcher', '@dan']
+authors: ['Dan Belcher']
+author_contacts: ['dan']
 apis: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']

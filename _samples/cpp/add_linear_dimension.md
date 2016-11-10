@@ -1,7 +1,8 @@
 ---
 title: Add a Linear Dimension
 description: Demonstrates how to add a linear dimension object.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

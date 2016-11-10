@@ -1,7 +1,8 @@
 ---
 title: Add Child Layer
 description: Demonstrates how to add a child (or sub) layer to a parent layer in a Rhino model.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

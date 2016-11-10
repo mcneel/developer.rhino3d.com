@@ -1,7 +1,8 @@
 ---
 title: Custom Geometry Filter
 description: Demonstrates how to create a specialized GetObject with a custom geometry filter.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

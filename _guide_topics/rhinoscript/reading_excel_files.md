@@ -1,7 +1,8 @@
 ---
 title: Reading Excel Files
 description: This brief guide demonstrates how to read a Microsoft Excel file from RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

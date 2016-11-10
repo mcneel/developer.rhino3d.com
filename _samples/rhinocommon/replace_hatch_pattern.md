@@ -1,7 +1,8 @@
 ---
 title: Replace Hatch Pattern
 description: Demonstrates how to replace an object's hatch pattern.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

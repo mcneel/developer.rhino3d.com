@@ -1,7 +1,8 @@
 ---
 title: Installing Tools (Windows)
 description: This guide covers all the necessary tools required to author Rhino plugins on Windows.
-author: ['Steve Baer', '@stevebaer']
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']

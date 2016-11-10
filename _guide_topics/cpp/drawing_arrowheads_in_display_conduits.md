@@ -1,7 +1,8 @@
 ---
 title: Drawing Arrowheads in Display Conduits
 description: This guide discusses and demonstrates how to draw arrowheads in Rhino Display Conduit.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

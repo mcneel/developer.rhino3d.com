@@ -1,7 +1,8 @@
 ---
 title: Revolve Profile Curves
 description: Demonstrates how to create a surface by revolving one or more profile curves using RhinoScript.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

@@ -1,7 +1,8 @@
 ---
 title: Curve Osculating Planes
 description: This guide demonstrates how to calculate osculating planes.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

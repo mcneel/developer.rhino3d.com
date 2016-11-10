@@ -1,7 +1,8 @@
 ---
 title: Creating a Skin (Windows)
 description: This guide outlines the tools for RhinoCommon developers to wrap their application around Rhino by creating custom Skin.  Custom skins are supported on Windows only.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']

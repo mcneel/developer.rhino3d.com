@@ -1,7 +1,8 @@
 ---
 title: How This Site Works
 description: A guide to how this very developer document site works.
-author: ['Dan Belcher', '@dan']
+authors: ['Dan Belcher']
+author_contacts: ['dan']
 apis: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Windows', 'Mac']
@@ -130,7 +131,8 @@ Here is an example of the YAML for this guide:
 ---
 title: How This Site Works
 description: A guide to how this very developer document site works.
-author: ['Dan Belcher', '@dan']
+authors: ['Dan Belcher']
+author_contacts: ['dan']
 apis: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Mac', 'Windows']
@@ -146,7 +148,8 @@ The YAML fields for Guides determine:
 
 * *title*: This is the title of the guide.  This is the html page title.
 * *description*: This is a brief description of the guide.
-* *author*: The original - or responsible - author.
+* *authors*: The original - or responsible - author(s).
+* *author_contacts*: The matching discourse handle(s) for the author(s), must match order of authors yaml
 * *apis*: The Rhino APIs that this guide pertains to.
 * *languages*: The programming languages this guide references.
 * *platforms*: The operating systems this guide is relevant to.
@@ -171,7 +174,8 @@ Here is an example of the YAML for [this sample]({{ site.baseurl }}/samples/cpp/
 ---
 title: Add a Cone Surface
 description: Demonstrates how to create a cone using ON_BrepCone.
-author: ['Dale Fugier', '@dale']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
@@ -187,7 +191,8 @@ The YAML fields for Samples determine:
 
 * *title*: This is the title of the sample.  This is the html page title.
 * *description*: A brief description of what the sample does.
-* *author*: The original - or responsible - author.
+* *authors*: The original - or responsible - author(s).
+* *author_contacts*: The matching discourse handle(s) for the author(s), must match order of authors yaml
 * *apis*: The Rhino APIs or SDKs that this sample pertains to.
 * *languages*: The programming languages this sample references.
 * *platforms*: The operating systems this sample is relevant to.
