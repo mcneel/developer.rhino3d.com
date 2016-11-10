@@ -1,7 +1,8 @@
 ---
 title: What's New?
 description: This brief guide outlines the changes in the RhinoCommon SDK.
-author: steve@mcneel.com
+authors: ['Steve Baer']
+author_contacts: ['stevebaer']
 apis: ['C#']
 languages: ['C#']
 platforms: ['Windows', 'Mac']

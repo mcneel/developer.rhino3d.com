@@ -1,7 +1,8 @@
 ---
 title: Installing Tools (Mac)
 description: This guide has yet to be authored or ported.
-author: dan@mcneel.com
+authors: ['Dan Belcher']
+author_contacts: ['dan']
 apis: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Mac']

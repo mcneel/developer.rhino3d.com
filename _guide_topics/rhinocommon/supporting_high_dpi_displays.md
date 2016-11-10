@@ -1,7 +1,8 @@
 ---
 title: Supporting High DPI Displays
 description: This guide discusses the support of high resolution monitors.
-author: dale@mcneel.com
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
@@ -75,13 +76,13 @@ The ```RhinoWindows``` assembly has a new ```RhinoWindows.Forms.Dpi``` class tha
 /// </summary>
 public MainWindow()
 {
-  // This call is required by the Windows Form Designer. 
+  // This call is required by the Windows Form Designer.
   InitializeComponent();
 
   var width = RhinoWindows.Forms.Dpi.ScaleInt(m_toolbar.ImageScalingSize.Width);
   var height = RhinoWindows.Forms.Dpi.ScaleInt(m_toolbar.ImageScalingSize.Height);
   m_toolbar.ImageScalingSize = new Size(width, height);
-  
+
   // ...
 ```
 
@@ -95,7 +96,7 @@ using Rhino.UI;
 var size = RhinoWindows.Forms.Dpi.ScaleInt(32);
 using (var icon = DrawingUtilities.LoadIconWithScaleDown("logo.ico", (int)size, GetType().Assembly))
   m_image = icon.ToBitmap();
-  
+
 // ...
 ```
 

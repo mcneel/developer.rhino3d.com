@@ -1,7 +1,8 @@
 ---
 title: Supporting High DPI Displays
 description: This guide discusses the support of high resolution monitors.
-author: dale@mcneel.com
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
@@ -65,7 +66,7 @@ When loading icons, use ```CRhinoDpi::LoadIcon```. For example:
 
 ```cpp
 virtual HICON Icon()
-{ 
+{
   const int const_icon_size = 24;
   int icon_size = CRhinoDpi::Scale(const_icon_size);
   return CRhinoDpi::LoadIcon(AfxGetInstanceHandle(), IDI_ICON, icon_size);
@@ -76,7 +77,7 @@ and:
 
 ```cpp
 virtual HICON Icon(const CSize& size) const
-{ 
+{
   return CRhinoDpi::LoadIcon(AfxGetInstanceHandle(), IDI_ICON, size.cx, size.cy);
 }
 ```
@@ -91,10 +92,10 @@ When loading cursor resources, you should so in this manner:
 
 ```cpp
 HCURSOR hCursor = (HCURSOR)::LoadImage(
-    AfxGetInstanceHandle(), 
-    MAKEINTRESOURCE(IDC_CURSOR), 
-    IMAGE_CURSOR, 
-    0, 0, 
+    AfxGetInstanceHandle(),
+    MAKEINTRESOURCE(IDC_CURSOR),
+    IMAGE_CURSOR,
+    0, 0,
     LR_DEFAULTSIZE | LR_SHARED
     );
 ```
@@ -108,7 +109,7 @@ If you use a list control that displays item bitmaps, using an image lists, then
 For list controls that use an image list that has a single bitmap, you can do this:
 
 ```cpp
-BOOL CMyDialog::OnInitDialog() 
+BOOL CMyDialog::OnInitDialog()
 {
   // ...
   const int size = CRhinoDpi::IconSize(CRhinoDpi::IconType::SmallIcon);
@@ -121,7 +122,7 @@ BOOL CMyDialog::OnInitDialog()
 For an image list that contains multiple bitmaps, you can do this:
 
 ```cpp
-BOOL CMyDialog::OnInitDialog() 
+BOOL CMyDialog::OnInitDialog()
 {
   // ...
   const int size = CRhinoDpi::IconSize(CRhinoDpi::IconType::SmallIcon);

@@ -1,7 +1,8 @@
 ---
 title: Migrate your plugin project to Rhino 6 manually
 description: This guide walks you through manually migrating your Rhino 5 plugin project to Rhino 6.
-author: dale@mcneel.com
+authors: ['Dale Fugier']
+author_contacts: ['dale']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
@@ -46,12 +47,12 @@ Rhino 6 plugin projects have different project build configuration names. See [U
 1. In *Project Contexts*, click *Configuration > Edit...*.
  ![Select Project Configurations]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_05.png)
 2. In *Edit Project Configurations*, rename the *Debug* configuration to *DebugRhino*.
-3. And then, rename the *PseudoDebug* configuration to *Debug*. 
+3. And then, rename the *PseudoDebug* configuration to *Debug*.
  ![Edit Project Configurations]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_06.png)
 4. When you have finished renaming the configurations, click *Close*.
  ![Rename Project Configurations]({{ site.baseurl }}/images/migrate_plugin_windows_cpp_07.png)
 5. Repeat the above step for the solution by click *Active solution Configuration > Edit...*.
-6. In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhino*, and then rename the *PseudoDebug* configuration to *Debug*. 
+6. In *Edit Solution Configurations*, rename the *Debug* configuration to *DebugRhino*, and then rename the *PseudoDebug* configuration to *Debug*.
 7. When finished, click *Close*.
 8. Close *Configuation Manager*.
 
@@ -86,15 +87,15 @@ The project's pre-compiled header file, *stdafx.h*, needs to be modified so SDK 
 
         // Added for Rhino 6 Migration
         #define RHINO_V6_READY
-        
+
         ...
-        
+
 1. Also, remove the path specifiers to Rhino SDK header files found in *stdafx.h*, as the path to the SDK is provided by the SDK Property Sheet added above.
 
         // Rhino SDK Preamble
         //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhinoSdkStdafxPreamble.h"
         #include "RhinoSdkStdafxPreamble.h"
-        
+
         ...
 
         // Rhino Plug-in
@@ -104,9 +105,9 @@ The project's pre-compiled header file, *stdafx.h*, needs to be modified so SDK 
         // Render Development Kit
         //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\RhRdkHeaders.h"
         #include "RhRdkHeaders.h"
-        
+
         ...
-        
+
         // Rhino Plug-in Linking Pragmas
         //#include "C:\Program Files (x86)\Rhino 5.0 x64 SDK\Inc\rhinoSdkPlugInLinkingPragmas.h"
         #include "rhinoSdkPlugInLinkingPragmas.h"
@@ -115,26 +116,26 @@ The project's pre-compiled header file, *stdafx.h*, needs to be modified so SDK 
 
         #include "StdAfx.h"
         #include "SamplePlugIn.h"
-        
+
         // Added for Rhino 6 Migration
         #include "rhinoSdkPlugInDeclare.h"
-        
+
         ...
-        
-1. Using *Visual Studio’s Solution Explorer*, right-click on the *Header Files* folder and click *Add* > *New Item...*. 
+
+1. Using *Visual Studio’s Solution Explorer*, right-click on the *Header Files* folder and click *Add* > *New Item...*.
 1. Add a new *Header File (.h)* named *targetver.h*.
 1. Add the following content to it:
 
         #pragma once
-        
+
         // Including SDKDDKVer.h defines the highest available Windows platform.
-        // If you wish to build your application for a previous Windows platform, 
+        // If you wish to build your application for a previous Windows platform,
         // include WinSDKVer.h and set the _WIN32_WINNT macro to the platform you
         // wish to support before including SDKDDKVer.h.
         #include "rhinoSdkWindowsVersion.h"
-        
+
         #include <SDKDDKVer.h>
-        
+
 Your plugin project should now be ready to build with the Rhino 6 C/C++ SDK.
 
 ## Related Topics
