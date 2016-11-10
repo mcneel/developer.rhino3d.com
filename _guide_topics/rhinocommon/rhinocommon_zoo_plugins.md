@@ -16,6 +16,8 @@ TODO: 'needs to be compared with creating_zoo_plugins'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## Overview

@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 RhinoCommon is the cross-platform .NET plugin SDK available for:

@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 It builds on top of concepts from the [Wrapping Native Libraries]({{ site.baseurl }}/guides/rhinocommon/wrapping_native_libraries) guide.

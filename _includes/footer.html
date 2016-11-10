@@ -14,7 +14,7 @@
                 <ul>
                   {% assign iterator_count = page.authors.size | minus: 1 %}
                   {% for i in (0..iterator_count) %}
-                    <li> <a href="https://discourse.mcneel.com/users/{{ page.author_contacts[i] }}/activity">{{ page.authors[i] }}</a></li>
+                    <li><a href="https://discourse.mcneel.com/users/{{ page.author_contacts[i] }}/activity">{{ page.authors[i] }}</a></li>
                   {% endfor %}
                 </ul>
               {% else %}

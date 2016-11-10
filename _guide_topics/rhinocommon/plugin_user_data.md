@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 There are two basic ways plugins can store information in Rhino .3dm files:

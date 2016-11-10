@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ![{{ site.baseurl }}/images/rhinomobile_overview_01.png]({{ site.baseurl }}/images/rhinomobile_overview_01.png){: .float-img-right width="325"}

@@ -16,6 +16,8 @@ TODO: 'downloadable samples should be moved to GitHub and linked'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## Overview

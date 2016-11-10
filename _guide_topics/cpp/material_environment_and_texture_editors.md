@@ -16,6 +16,8 @@ TODO: 'needs porting'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 <div class="bs-callout bs-callout-danger">

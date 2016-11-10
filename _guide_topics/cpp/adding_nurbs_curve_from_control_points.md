@@ -16,6 +16,8 @@ TODO: 'needs more explanation in order to be a guide'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## Overview

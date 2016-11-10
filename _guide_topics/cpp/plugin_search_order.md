@@ -16,6 +16,8 @@ TODO: 'needs to be reviewed and consolidated with other plugin guides'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## Overview

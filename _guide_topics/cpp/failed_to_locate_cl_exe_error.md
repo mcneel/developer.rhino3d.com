@@ -16,6 +16,8 @@ TODO: 'needs updated screen captures'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## Problem

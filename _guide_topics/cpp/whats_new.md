@@ -16,6 +16,8 @@ TODO: 'needs review and the original contained links to empty wiki entries.'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## Overview

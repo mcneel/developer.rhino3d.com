@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 We'll discuss how to deal with different access levels of input data and invalid Structs vs. invalid and null Classes.

@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 It skips over some portions of Component design which have already been handled in previous guides, so do not read this guide before familiarizing yourself with the [Simple Component]({{ site.baseurl }}/guides/grasshopper/simple_component) guide.

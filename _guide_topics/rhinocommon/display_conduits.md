@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 Rhino lets you define your own display conduits, which provide access to many levels of the display pipeline.  They are a bit tricky.  This guide cover the concepts and basics of using display conduits.

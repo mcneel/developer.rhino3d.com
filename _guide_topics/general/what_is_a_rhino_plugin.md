@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 A Rhino plugin is a software module that extends the functionality of Rhino or Grasshopper by adding commands, features, or capabilities.  A Rhino plugin is a Dynamic Link Library, or DLL.

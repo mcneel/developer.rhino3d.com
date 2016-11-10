@@ -16,6 +16,8 @@ TODO: 'needs more explanatory content.'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## Samples

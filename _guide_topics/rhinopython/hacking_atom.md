@@ -15,6 +15,8 @@ layout: bootstrap
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ### Specifically, running from the "settings" branch of the source to test the search paths configuration.

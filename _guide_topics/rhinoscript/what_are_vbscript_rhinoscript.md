@@ -16,6 +16,8 @@ TODO: 'needs a bit more information to guide users through how to learn VBS.'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## Overview

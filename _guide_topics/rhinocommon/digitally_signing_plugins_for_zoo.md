@@ -16,6 +16,8 @@ TODO: 'move out of Zoo because it applies to both Zoo and Rhino plugins'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## Overview

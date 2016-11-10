@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 There are a number of prerequisites required to do Rhino development.  Broadly speaking, these can be divided into three categories, ranked in ascending order of difficulty:

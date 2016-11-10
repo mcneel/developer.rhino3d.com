@@ -16,6 +16,8 @@ TODO: 'needs review and updated screencaptures'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ## How To

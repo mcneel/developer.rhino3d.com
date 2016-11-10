@@ -16,6 +16,8 @@ TODO: 'needs cleanup, standardization, editing, new images, etc.'
 
 # {{ page.title }}
 
+{% include byline.html %}
+
 {{ page.description }}
 
 ![RDK Logo]({{ site.baseurl }}/images/what_is_the_rdk_01.png)
