@@ -18,7 +18,7 @@ layout: toc-guide-page
 
 {{ page.description }}
 
-It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing_tools_windows).
+It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing-tools-windows).
 
 ## Run the Migration Application
 
@@ -32,6 +32,6 @@ Your plugin project should now be ready to build with the Rhino 6 C/C++ SDK.
 
 ## Related Topics
 
-- [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what_is_a_rhino_plugin)
-- [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing_tools_windows)
-- [Migrate your plugin project to Rhino 6 manually]({{ site.baseurl }}/guides/cpp/migrate_your_plugin_manual_windows)
+- [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what-is-a-rhino-plugin)
+- [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing-tools-windows)
+- [Migrate your plugin project to Rhino 6 manually]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows)

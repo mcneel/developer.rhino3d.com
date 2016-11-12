@@ -55,7 +55,7 @@ The [Grasshopper Assembly templates](https://visualstudiogallery.msdn.microsoft.
 1. Launch **Visual Studio**.
 1. Navigate to **Tools** > **Extensions and Updates...**
 1. In the left-hand sidebar, expand the **Online** section, then select the **Visual Studio Gallery** entry...
-![Extensions and Updates]({{ site.baseurl }}/images/installing-tools-windows_grasshopper-01.png)
+![Extensions and Updates]({{ site.baseurl }}/images/installing-tools-windows-grasshopper-01.png)
 1. In the **Search** field, search for *Grasshopper*.  This filters the gallery list below.
 1. Find **Grasshopper Assembly for v6** and select it.
 1. Click the **Download** button.  The extension installation should begin.

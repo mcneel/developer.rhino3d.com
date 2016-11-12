@@ -49,10 +49,7 @@ order: 2
 
 - [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what-is-rhinocommon/)
 - [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what-are-mono-and-xamarin/)
-
-- [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon/)
-- [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/)
-- [What's New/Changes?]({{ site.baseurl }}/guides/rhinocommon/whats_new/)
+- [What's New/Changes?]({{ site.baseurl }}/guides/rhinocommon/whats-new/)
 
 ### Getting Started
 
@@ -348,8 +345,8 @@ order: 2
 
 ### Getting Started
 
-- Installing Tools ([Windows]({{ site.baseurl }}/guides/grasshopper/installing_tools_windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/installing_tools_mac/))
-- Your First Component ([Windows]({{ site.baseurl }}/guides/grasshopper/your_first_component_windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/your_first_component_mac/))
+- Installing Tools ([Windows]({{ site.baseurl }}/guides/grasshopper/installing-tools-windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/installing-tools-mac/))
+- Your First Component ([Windows]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/your-first-component-mac/))
 
 ### Fundamentals
 

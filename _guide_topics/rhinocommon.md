@@ -12,7 +12,7 @@ layout: guide-homepage
 
 - [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what-is-rhinocommon/)
 - [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what-are-mono-and-xamarin/)
-- [What's New/Changes?]({{ site.baseurl }}/guides/rhinocommon/whats_new/)
+- [What's New/Changes?]({{ site.baseurl }}/guides/rhinocommon/whats-new/)
 
 ### Getting Started
 

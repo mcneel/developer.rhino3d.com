@@ -14,8 +14,8 @@ layout: guide-homepage
 
 ### Getting Started
 
-- Installing Tools ([Windows]({{ site.baseurl }}/guides/grasshopper/installing_tools_windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/installing_tools_mac/))
-- Your First Component ([Windows]({{ site.baseurl }}/guides/grasshopper/your_first_component_windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/your_first_component_mac/))
+- Installing Tools ([Windows]({{ site.baseurl }}/guides/grasshopper/installing-tools-windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/installing-tools-mac/))
+- Your First Component ([Windows]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/your-first-component-mac/))
 
 <!--column-->
 
