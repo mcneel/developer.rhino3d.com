@@ -6,37 +6,37 @@ layout: guide-homepage
 ---
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/general_guides_col1.png">]({{ site.baseurl }}/guides/general/developing_software_in_public)
+[<img src="{{ site.baseurl }}/images/general-guides-col1.png">]({{ site.baseurl }}/guides/general/developing-software-in-public)
 
 ### Overview
 
-- [Developing Software In Public]({{ site.baseurl }}/guides/general/developing_software_in_public)
-- [Rhino Technology Overview]({{ site.baseurl }}/guides/general/rhino_technology_overview)
-- [Frequently Asked Questions (FAQ)]({{ site.baseurl }}/guides/general/frequently_asked_questions)
+- [Developing Software In Public]({{ site.baseurl }}/guides/general/developing-software-in-public)
+- [Rhino Technology Overview]({{ site.baseurl }}/guides/general/rhino-technology-overview)
+- [Frequently Asked Questions (FAQ)]({{ site.baseurl }}/guides/general/frequently-asked-questions)
 
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/general_guides_col2.png">]({{ site.baseurl }}/guides/general/what_is_a_rhino_plugin)
+[<img src="{{ site.baseurl }}/images/general-guides-col2.png">]({{ site.baseurl }}/guides/general/what-is-a-rhino-plugin)
 
 ### Getting Started
 
-- [Developer Prerequisites]({{ site.baseurl }}/guides/general/rhino_developer_prerequisites)
-- [Developer Training]({{ site.baseurl }}/guides/general/rhino_developer_prerequisites)
+- [Developer Prerequisites]({{ site.baseurl }}/guides/general/rhino-developer-prerequisites)
+- [Developer Training]({{ site.baseurl }}/guides/general/developer-training)
 - [Contributing]({{ site.baseurl }}/guides/general/contributing)
 
 ### Fundamentals
 
-- [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what_is_a_rhino_plugin)
-- [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino_installer_engine)
+- [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what-is-a-rhino-plugin)
+- [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine)
 
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/general_guides_col3.png">]({{ site.baseurl }}/guides/general/how_this_site_works)
+[<img src="{{ site.baseurl }}/images/general-guides-col3.png">]({{ site.baseurl }}/guides/general/how-this-site-works)
 
 ### This Site
 
-- [How This Site Works]({{ site.baseurl }}/guides/general/how_this_site_works)
+- [How This Site Works]({{ site.baseurl }}/guides/general/how-this-site-works)
 - [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/master/README.md)
-- [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer_docs_style_guide)
+- [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer-docs-style-guide)

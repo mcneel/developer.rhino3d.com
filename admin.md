@@ -21,7 +21,7 @@ For contributors or administrators, the following guides are necessary reading:
 
 ## TODO List
 
-The following guides and samples have [TODO items listed in their yaml]({{ site.baseurl }}/guides/general/how_this_site_works/#todo--origin-fields)...
+The following guides and samples have [TODO items listed in their yaml]({{ site.baseurl }}/guides/general/how-this-site-works/#todo--origin-fields)...
 
 ### Guides
 

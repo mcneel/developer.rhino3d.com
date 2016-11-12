@@ -6,28 +6,28 @@ layout: guide-homepage
 ---
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinomobile_guides_col1.png">]({{ site.baseurl }}/guides/rhinomobile/what_is_rhinomobile/)
+[<img src="{{ site.baseurl }}/images/rhinomobile-guides-col1.png">]({{ site.baseurl }}/guides/rhinomobile/what-is-rhinomobile/)
 
 ### Overview
 
-- [What is RhinoMobile?]({{ site.baseurl }}/guides/rhinomobile/what_is_rhinomobile/)
+- [What is RhinoMobile?]({{ site.baseurl }}/guides/rhinomobile/what-is-rhinomobile/)
 
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinomobile_guides_col2.png">]({{ site.baseurl }}/guides/rhinomobile/installing_tools_windows/)
+[<img src="{{ site.baseurl }}/images/rhinomobile-guides-col2.png">]({{ site.baseurl }}/guides/rhinomobile/installing-tools-windows/)
 
 ### Getting Started
 
-- Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinomobile/installing_tools_windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/installing_tools_mac/))
-- Your First App ([Windows]({{ site.baseurl }}/guides/rhinomobile/your_first_app_windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/your_first_app_mac/))
+- Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinomobile/installing-tools-windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/installing-tools-mac/))
+- Your First App ([Windows]({{ site.baseurl }}/guides/rhinomobile/your-first-app-windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/your-first-app-mac/))
 
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinomobile_guides_col3.png">]({{ site.baseurl }}/guides/rhinomobile/using_simulators/)
+[<img src="{{ site.baseurl }}/images/rhinomobile-guides-col3.png">]({{ site.baseurl }}/guides/rhinomobile/using-simulators/)
 
 ### Fundamentals
 
-- [Using Simulators]({{ site.baseurl }}/guides/rhinomobile/using_simulators/)
-- [Testing On Devices]({{ site.baseurl }}/guides/rhinomobile/testing_on_devices/)
+- [Using Simulators]({{ site.baseurl }}/guides/rhinomobile/using-simulators/)
+- [Testing On Devices]({{ site.baseurl }}/guides/rhinomobile/testing-on-devices/)

@@ -6,24 +6,24 @@ layout: guide-homepage
 ---
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinocommon_guides_col1.png">]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon/)
+[<img src="{{ site.baseurl }}/images/rhinocommon-guides-col1.png">]({{ site.baseurl }}/guides/rhinocommon/what-is-rhinocommon/)
 
 ### Overview
 
-- [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon/)
-- [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/)
+- [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what-is-rhinocommon/)
+- [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what-are-mono-and-xamarin/)
 - [What's New/Changes?]({{ site.baseurl }}/guides/rhinocommon/whats_new/)
 
 ### Getting Started
 
-- Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac/))
-- Your First Plugin ([Windows]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac/), [Cross-Platform]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform/))
-- Plugin Installers ([Windows]({{ site.baseurl }}/guides/rhinocommon/plugin_installers_windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/plugin_installers_mac/))
+- Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinocommon/installing-tools-windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/installing-tools-mac/))
+- Your First Plugin ([Windows]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-mac/), [Cross-Platform]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-crossplatform/))
+- Plugin Installers ([Windows]({{ site.baseurl }}/guides/rhinocommon/plugin-installers-windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/plugin-installers-mac/))
 
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinocommon_guides_col2.png">]({{ site.baseurl }}/guides/rhinocommon/display_conduits/)
+[<img src="{{ site.baseurl }}/images/rhinocommon-guides-col2.png">]({{ site.baseurl }}/guides/rhinocommon/display-conduits/)
 
 ### Fundamentals
 
@@ -58,7 +58,7 @@ layout: guide-homepage
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinocommon_guides_col3.png">]({{ site.baseurl }}/guides/rhinocommon/creating_zoo_plugins/)
+[<img src="{{ site.baseurl }}/images/rhinocommon-guides-col3.png">]({{ site.baseurl }}/guides/rhinocommon/creating-zoo-plugins/)
 
 ### Zoo
 

@@ -6,7 +6,7 @@ layout: guide-homepage
 ---
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinopython_guides_col1.png">]({{ site.baseurl }}/guides/rhinopython/what_is_rhinopython/)
+[<img src="{{ site.baseurl }}/images/rhinopython-guides-col1.png">]({{ site.baseurl }}/guides/rhinopython/what-is-rhinopython/)
 
 ### Overview
 
@@ -41,7 +41,7 @@ layout: guide-homepage
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinopython_guides_col2.png">](https://docs.python.org/2/tutorial/index.html)
+[<img src="{{ site.baseurl }}/images/rhinopython-guides-col2.png">](https://docs.python.org/2/tutorial/index.html)
 
 ### Learning Python
 
@@ -52,7 +52,7 @@ layout: guide-homepage
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinopython_guides_col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
+[<img src="{{ site.baseurl }}/images/rhinopython-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
 
 ### Learning Rhino.Python
 
