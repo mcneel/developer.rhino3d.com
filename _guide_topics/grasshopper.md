@@ -6,21 +6,21 @@ layout: guide-homepage
 ---
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/grasshopper_guides_col1.png">]({{ site.baseurl }}/guides/grasshopper/what_is_a_grasshopper_component/)
+[<img src="{{ site.baseurl }}/images/grasshopper-guides-col1.png">]({{ site.baseurl }}/guides/grasshopper/what-is-a-grasshopper-component/)
 
 ### Overview
 
-- [What is a Grasshopper Component?]({{ site.baseurl }}/guides/grasshopper/what_is_a_grasshopper_component/)
+- [What is a Grasshopper Component?]({{ site.baseurl }}/guides/grasshopper/what-is-a-grasshopper-component/)
 
 ### Getting Started
 
-- [Installing Tools]({{ site.baseurl }}/guides/grasshopper/installing_tools_windows/)
-- [Your First Component]({{ site.baseurl }}/guides/grasshopper/your_first_component_windows/)
+- [Installing Tools]({{ site.baseurl }}/guides/grasshopper/installing-tools-windows/)
+- [Your First Component]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows/)
 
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/grasshopper_guides_col2.png">]({{ site.baseurl }}/guides/grasshopper/simple_component/)
+[<img src="{{ site.baseurl }}/images/grasshopper-guides-col2.png">]({{ site.baseurl }}/guides/grasshopper/simple-component/)
 
 ### Fundamentals
 
@@ -55,7 +55,7 @@ layout: guide-homepage
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/grasshopper_guides_col3.png">]({{ site.baseurl }}/guides/grasshopper/grasshopper_data_types/)
+[<img src="{{ site.baseurl }}/images/grasshopper-guides-col3.png">]({{ site.baseurl }}/guides/grasshopper/grasshopper-data-types/)
 
 ### In Depth
 

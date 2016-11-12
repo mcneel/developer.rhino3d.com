@@ -17,45 +17,45 @@ order: 2
 
 ### Overview
 
-- [Developing Software In Public]({{ site.baseurl }}/guides/general/developing_software_in_public)
-- [Rhino Technology Overview]({{ site.baseurl }}/guides/general/rhino_technology_overview)
-- [Frequently Asked Questions (FAQ)]({{ site.baseurl }}/guides/general/frequently_asked_questions)
+- [Developing Software In Public]({{ site.baseurl }}/guides/general/developing-software-in-public)
+- [Rhino Technology Overview]({{ site.baseurl }}/guides/general/rhino-technology-overview)
+- [Frequently Asked Questions (FAQ)]({{ site.baseurl }}/guides/general/frequently-asked-questions)
 
 ### Getting Started
 
-- [Developer Prerequisites]({{ site.baseurl }}/guides/general/rhino_developer_prerequisites)
-- [Developer Training]({{ site.baseurl }}/guides/general/rhino_developer_prerequisites)
+- [Developer Prerequisites]({{ site.baseurl }}/guides/general/rhino-developer-prerequisites)
+- [Developer Training]({{ site.baseurl }}/guides/general/developer-training)
 - [Contributing]({{ site.baseurl }}/guides/general/contributing)
 
 ### Fundamentals
 
-- [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what_is_a_rhino_plugin)
-- [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino_installer_engine)
+- [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what-is-a-rhino-plugin)
+- [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine)
 
 ### This Site
 
-- [How This Site Works]({{ site.baseurl }}/guides/general/how_this_site_works)
+- [How This Site Works]({{ site.baseurl }}/guides/general/how-this-site-works)
 - [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/master/README.md)
-- [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer_docs_style_guide)
+- [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer-docs-style-guide)
 
 ---
 
-## [RhinoCommon]({{ site.baseurl }}/guides/rhinocommon) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="macOS" class="guide_icon">
+## [RhinoCommon]({{ site.baseurl }}/guides/rhinocommon) <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac-logo-small.png" alt="macOS" class="guide_icon">
 {: #rhinocommon }
 
 *The cross-platform .NET plugin SDK for Rhino.*
 
 ### Overview
 
-- [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon/)
-- [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/)
+- [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what-is-rhinocommon/)
+- [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what-are-mono-and-xamarin/)
 
 
 ### Getting Started
 
-- Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinocommon/installing_tools_windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/installing_tools_mac/))
-- Your First Plugin ([Windows]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_mac/), [Cross-Platform]({{ site.baseurl }}/guides/rhinocommon/your_first_plugin_crossplatform/))
-- Plugin Installers ([Windows]({{ site.baseurl }}/guides/rhinocommon/plugin_installers_windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/plugin_installers_mac/))
+- Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinocommon/installing-tools-windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/installing-tools-mac/))
+- Your First Plugin ([Windows]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-mac/), [Cross-Platform]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-crossplatform/))
+- Plugin Installers ([Windows]({{ site.baseurl }}/guides/rhinocommon/plugin-installers-windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/plugin-installers-mac/))
 
 
 ### Fundamentals
@@ -106,7 +106,7 @@ order: 2
 
 ---
 
-## [Rhino.Python]({{ site.baseurl }}/guides/rhinopython) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="macOS" class="guide_icon">
+## [Rhino.Python]({{ site.baseurl }}/guides/rhinopython) <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac-logo-small.png" alt="macOS" class="guide_icon">
 {: #rhinopython }
 
 *Quickly add functionality to Rhino or automate repetitive tasks.*
@@ -155,7 +155,7 @@ order: 2
 
 ---
 
-## [openNURBS]({{ site.baseurl }}/guides/opennurbs) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac_logo_small.png" alt="macOS" class="guide_icon">
+## [openNURBS]({{ site.baseurl }}/guides/opennurbs) <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac-logo-small.png" alt="macOS" class="guide_icon">
 {: #opennurbs }
 
 *Read/Write Rhino 3dm files in your application.*
@@ -222,7 +222,7 @@ order: 2
 
 ---
 
-## [C/C++]({{ site.baseurl }}/guides/cpp) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## [C/C++]({{ site.baseurl }}/guides/cpp) <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon">
 {: #cpp }
 
 *Native SDK for Rhino for Windows plugins.*
@@ -334,19 +334,19 @@ order: 2
 
 ---
 
-## [Grasshopper]({{ site.baseurl }}/guides/grasshopper) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## [Grasshopper]({{ site.baseurl }}/guides/grasshopper) <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon">
 {: #grasshopper }
 
 *Create custom Grasshopper components and plugins.*
 
 ### Overview
 
-- [What is a Grasshopper Component?]({{ site.baseurl }}/guides/grasshopper/what_is_a_grasshopper_component/)
+- [What is a Grasshopper Component?]({{ site.baseurl }}/guides/grasshopper/what-is-a-grasshopper-component/)
 
 ### Getting Started
 
-- [Installing Tools]({{ site.baseurl }}/guides/grasshopper/installing_tools_windows/)
-- [Your First Component]({{ site.baseurl }}/guides/grasshopper/your_first_component_windows/)
+- [Installing Tools]({{ site.baseurl }}/guides/grasshopper/installing-tools-windows/)
+- [Your First Component]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows/)
 
 ### Fundamentals
 
@@ -395,14 +395,14 @@ order: 2
 
 ---
 
-## [RhinoScript]({{ site.baseurl }}/guides/rhinoscript) <img src="{{ site.baseurl }}/images/win_logo_small.png" alt="Windows" class="guide_icon">
+## [RhinoScript]({{ site.baseurl }}/guides/rhinoscript) <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon">
 {: #rhinoscript }
 
 *RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino for Windows, or automate repetitive tasks.*
 
 ### Overview
 
-- [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what_are_vbscript_rhinoscript)
+- [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what-are-vbscript-rhinoscript)
 
 ### Getting Started
 
@@ -484,14 +484,14 @@ order: 2
 
 ### Overview
 
-- [What is RhinoMobile?]({{ site.baseurl }}/guides/rhinomobile/what_is_rhinomobile/)
+- [What is RhinoMobile?]({{ site.baseurl }}/guides/rhinomobile/what-is-rhinomobile/)
 
 ### Getting Started
 
-- Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinomobile/installing_tools_windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/installing_tools_mac/))
-- Your First App ([Windows]({{ site.baseurl }}/guides/rhinomobile/your_first_app_windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/your_first_app_mac/))
+- Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinomobile/installing-tools-windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/installing-tools-mac/))
+- Your First App ([Windows]({{ site.baseurl }}/guides/rhinomobile/your-first-app-windows/), [Mac]({{ site.baseurl }}/guides/rhinomobile/your-first-app-mac/))
 
 ### Fundamentals
 
-- [Using Simulators]({{ site.baseurl }}/guides/rhinomobile/using_simulators/)
-- [Testing On Devices]({{ site.baseurl }}/guides/rhinomobile/testing_on_devices/)
+- [Using Simulators]({{ site.baseurl }}/guides/rhinomobile/using-simulators/)
+- [Testing On Devices]({{ site.baseurl }}/guides/rhinomobile/testing-on-devices/)

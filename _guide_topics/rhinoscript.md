@@ -6,11 +6,11 @@ layout: guide-homepage
 ---
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinoscript_guides_col1.png">](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
+[<img src="{{ site.baseurl }}/images/rhinoscript-guides-col1.png">](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 
 ### Overview
 
-- [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what_are_vbscript_rhinoscript)
+- [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what-are-vbscript-rhinoscript)
 
 ### Getting Started
 
@@ -56,7 +56,7 @@ layout: guide-homepage
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinoscript_guides_col2.png">]({{ site.baseurl }}/guides/rhinoscript/comparing_arrays/)
+[<img src="{{ site.baseurl }}/images/rhinoscript-guides-col2.png">]({{ site.baseurl }}/guides/rhinoscript/comparing-arrays/)
 
 ### Intermediate
 
@@ -76,7 +76,7 @@ layout: guide-homepage
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinoscript_guides_col3.png">]({{ site.baseurl }}/guides/rhinoscript/array_utilities/)
+[<img src="{{ site.baseurl }}/images/rhinoscript-guides-col3.png">]({{ site.baseurl }}/guides/rhinoscript/array-utilities/)
 
 ### Advanced
 

@@ -6,7 +6,7 @@ layout: guide-homepage
 ---
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/cpp_guides_col1.png">]({{ site.baseurl }}/guides/cpp/what_is_the_cpp_sdk/)
+[<img src="{{ site.baseurl }}/images/cpp-guides-col1.png">]({{ site.baseurl }}/guides/cpp/what-is-the-cpp-sdk/)
 
 ### Overview
 
@@ -56,7 +56,7 @@ layout: guide-homepage
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/cpp_guides_col2.png">]({{ site.baseurl }}/guides/cpp/adding_command_line_options/)
+[<img src="{{ site.baseurl }}/images/cpp-guides-col2.png">]({{ site.baseurl }}/guides/cpp/adding-command-line-options/)
 
 ### Fundamentals
 
@@ -76,7 +76,7 @@ layout: guide-homepage
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/cpp_guides_col3.png">]({{ site.baseurl }}/guides/cpp/drawing_arrowheads_in_display_conduits/)
+[<img src="{{ site.baseurl }}/images/cpp-guides-col3.png">]({{ site.baseurl }}/guides/cpp/drawing-arrowheads-in-display-conduits/)
 
 ### Advanced
 

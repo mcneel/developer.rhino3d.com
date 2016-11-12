@@ -6,7 +6,7 @@ layout: guide-homepage
 ---
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/opennurbs_guides_col1.png">]({{ site.baseurl }}/guides/opennurbs/what_is_opennurbs/)
+[<img src="{{ site.baseurl }}/images/opennurbs-guides-col1.png">]({{ site.baseurl }}/guides/opennurbs/what-is-opennurbs/)
 
 ### Overview
 
@@ -41,7 +41,7 @@ layout: guide-homepage
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/opennurbs_guides_col2.png">]({{ site.baseurl }}/guides/opennurbs/data_from_ellipses/)
+[<img src="{{ site.baseurl }}/images/opennurbs-guides-col2.png">]({{ site.baseurl }}/guides/opennurbs/data-from-ellipses/)
 
 ### Fundamentals
 
@@ -61,7 +61,7 @@ layout: guide-homepage
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/opennurbs_guides_col3.png">]({{ site.baseurl }}/guides/opennurbs/superfluous_knots/)
+[<img src="{{ site.baseurl }}/images/opennurbs-guides-col3.png">]({{ site.baseurl }}/guides/opennurbs/superfluous-knots/)
 
 ### Advanced
 
