@@ -62,4 +62,3 @@ exclude: [/script, /test, README.md, CONTRIBUTING.md, Gemfile]
 
 version_branches:
   - wip
-exclude: [/api]
