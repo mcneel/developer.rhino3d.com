@@ -156,17 +156,17 @@ if branch == "master"
   # stage and commit
   puts `git add -A .`
 
-  # puts `git status -s` # debug
+  puts `git status -s` # debug
 
   puts `git commit -m "Deploy #{sha}#{"+" if dirty}"`
 else
   # stage and commit
   puts `git add -A #{branch}`
 
-  # puts `git status -s #{branch}` # debug
+  puts `git status -s #{branch}` # debug
 
   puts `git commit -m "Deploy #{sha}#{"+" if dirty} (#{branch})"`
 end
 
 # deploy (via ssh using bozo's deploy key)
-puts `git push production HEAD:#{deploy_branch}`
+puts `git push -q production HEAD:#{deploy_branch}`
