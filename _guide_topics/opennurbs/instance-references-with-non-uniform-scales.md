@@ -56,7 +56,7 @@ int main( int argc, const char *argv[] )
 {
   ON::Begin();
 
-	FILE* archive_fp = ON::OpenFile( L"c:\\Sphere Non-uniform Scale.3dm", L"rb" );
+  FILE* archive_fp = ON::OpenFile( L"c:\\Sphere Non-uniform Scale.3dm", L"rb" );
   if( 0 == archive_fp )
     return 0;
 
@@ -76,7 +76,7 @@ int main( int argc, const char *argv[] )
     const ONX_Model_Object& object = model.m_object_table[i];
 
     // Only look for instance reference objects
-		const ON_InstanceRef* iref = ON_InstanceRef::Cast( object.m_object );
+    const ON_InstanceRef* iref = ON_InstanceRef::Cast( object.m_object );
     if( 0 == iref )
       continue;
 
