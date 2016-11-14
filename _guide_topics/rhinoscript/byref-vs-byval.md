@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 There has always been confusion about what exactly `ByRef` and `ByVal` mean in VBScript.  The confusion arises because VBScript uses “by reference” to mean two similar, but different things.  VBScript supports:

@@ -13,12 +13,7 @@ keywords: ['rhino']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Visual Studio's Build Configurations provide a way to store multiple versions of solution and project properties.  The active configuration can be quickly accessed and changed, allowing you to easily build multiple configurations of the same project.

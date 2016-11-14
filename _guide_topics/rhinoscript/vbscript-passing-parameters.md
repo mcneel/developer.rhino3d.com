@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 In VBScript, there are two ways values can be passed: `ByVal` and `ByRef`.  Using `ByVal`, we can pass arguments as values whereas with the use of `ByRef`, we can pass arguments are references.  This is the obvious bit, but, how do these two differ in practice?

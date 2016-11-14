@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 A frequent workflow is using a text file - generated outside Rhino - to change a Rhino model.  You may know how to read in a text file and parse it with VBScript, but what about parsing the text file and assigning the values as a variable?

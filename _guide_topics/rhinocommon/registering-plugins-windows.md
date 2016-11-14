@@ -13,12 +13,7 @@ keywords: ['RhinoCommon', 'Registering', 'Plugin']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 While a Rhino plugin can simply be distributed as an *rhp* file, and loaded using Rhino's *PlugInManager* command, it is often necessary to install the plugin as part of a product installation process.  To install plugin from an installer, your installer will be required to access a number of entries in the Windows Registry.

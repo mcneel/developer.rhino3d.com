@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs screen-capture update and overall review.'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 If Rhino crashes, two files are created on the user's desktop: *RhinoCrashDump.dmp* and *RhinoCrashDump.3dm*. The *.3DM* file is Rhino's last ditch effort to save the model.  The *.DMP* file can be used in Visual Studio to find the place in the source code where a Rhino plugin crashed.

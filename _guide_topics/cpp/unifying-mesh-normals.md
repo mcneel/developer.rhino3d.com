@@ -13,12 +13,7 @@ keywords: ['rhino', 'mesh', 'normals']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You have found that `RhinoUnifyMeshNormals` C/C++ functions seems to behave differently than the *UnifyMeshNormals* command.  How can one achieve the same functionality in a plugin?

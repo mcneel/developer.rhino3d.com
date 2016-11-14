@@ -13,12 +13,7 @@ keywords: ['rhino', 'viewport']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to change the name, or title, or a viewport using the the Rhino C/C++ SDK.  For example, you would like to rename the "Front" viewport to say "Facade."

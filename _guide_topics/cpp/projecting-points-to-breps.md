@@ -13,12 +13,7 @@ keywords: ['rhino', 'projecting', 'points', 'breps']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to project a 2D point (x,y) onto a brep object in order to acquire the z-coordinate.

@@ -13,12 +13,7 @@ keywords: ['rhino', 'commands']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 One of the most common questions asked by new plugin developers is how to run, or script, existing Rhino commands from a plugin command.  Rhino doesn't allow plugin commands to run other commands except under very special circumstances.

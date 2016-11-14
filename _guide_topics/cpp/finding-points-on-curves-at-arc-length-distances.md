@@ -13,12 +13,7 @@ keywords: ['rhino']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 For a given length from the beginning of a curve, you would like to get the curve's parameter at this  point.

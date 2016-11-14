@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Every now and then, you may get the error message "Cannot use parentheses when calling a Sub" when calling a function or method.  This does not happen all the time.  For example, the following code appears to work:

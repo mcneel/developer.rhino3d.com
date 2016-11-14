@@ -13,12 +13,7 @@ keywords: ['openNURBS', 'Extrusions', 'Importing']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Question
 
 I was try to add some code for handling the `ON::extrusion_object` type object. But, I don't now know which API I could use to get data from extrusion object. I know there was a new class `ON_Extrusion` in *opennurbs_beam.cpp*. But I did not know how to use it.  Can you give me some suggestion or some sample code?  I would like know how should I import extrusion object?

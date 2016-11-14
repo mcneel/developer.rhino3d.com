@@ -13,12 +13,7 @@ keywords: ['rhino', 'compilers']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## strlen
 
 The return type of string length functions like `strlen` and `wcslen` is a `size_t`.  Since we will never have null terminated strings with more than 2,147,483,647 characters, simply use a cast like so:

@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 It is not uncommon to want to make an argument of a VBScript function or subroutine optional.  In VBScript, the `Optional` keyword, which allows some arguments to be left out in Visual Basic, is not implemented.  This means that you must declare every argument that you want to use.

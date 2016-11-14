@@ -13,12 +13,7 @@ keywords: ['Zoo', 'Plugin']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Zoo lets third party plugin developers add licensing support for their products to the Zoo.

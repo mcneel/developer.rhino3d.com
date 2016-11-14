@@ -13,12 +13,7 @@ keywords: ['rhino', 'esc', 'commands']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 When writing commands that contain long, time-consuming tasks, you might want to allow the user to cancel the process or command.  Here are a couple examples of ways this can be achieved...

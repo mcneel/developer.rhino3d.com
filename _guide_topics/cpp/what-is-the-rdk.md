@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs cleanup, standardization, editing, new images, etc.'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ![RDK Logo]({{ site.baseurl }}/images/what-is-the-rdk-01.png)
 
 ## Overview

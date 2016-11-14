@@ -13,12 +13,7 @@ keywords: ['rhino', 'curves']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You are looking for a way to create Principal Curvature lines starting with points on a surface.  There is an ON

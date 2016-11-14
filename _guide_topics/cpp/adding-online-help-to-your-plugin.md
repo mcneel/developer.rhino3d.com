@@ -13,12 +13,7 @@ keywords: ['rhino', 'help']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Once you have your Rhino plugin completed, you may want to add online help support to help your customers use your plugin efficiently and properly.  Most Windows applications provide online help in the form of an HTML help file.

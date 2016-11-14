@@ -13,12 +13,7 @@ keywords: ['rhino', 'display', 'settings']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The advanced display features in Rhino give the user almost unlimited control over how objects appear on the screen.  All of these features are also exposed to the C/C++ developer.

@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 If you have written a RhinoScript function which calls a method on a COM object that return an array of bytes with a GUID, you will likely want to convert this GUID into a string.  Converting GUIDs to strings is possible, but it takes a little work.

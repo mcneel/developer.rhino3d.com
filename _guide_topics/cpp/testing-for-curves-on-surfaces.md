@@ -13,12 +13,7 @@ keywords: ['rhino', 'curves', 'surfaces']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 In your plugin, you are using a surface and an interpolated curve on that surface.  You know the curve is interpolated on the surface because that is how you created it (using the *InterpCrfOnSrf* command).  Now, what if you import some other 3dm file with curve and surface already in it?  How can one check that curve lies completely on surface using C/C++?

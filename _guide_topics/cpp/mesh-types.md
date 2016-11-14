@@ -13,12 +13,7 @@ keywords: ['rhino', 'mesh']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Which Mesh?
 
 There is an `ON_Brep::GetMeshes()` routine of the C/C++ SDK.  You might find that very adequate meshes can be pulled from this routine when specifying `ON::render_mesh`.  You may have also noticed that you can also run this routine with an enumeration for an "analysis mesh," a "default mesh," a "preview mesh," or "any mesh."

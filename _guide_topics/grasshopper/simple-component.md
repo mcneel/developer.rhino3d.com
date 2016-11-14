@@ -13,12 +13,7 @@ keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Prerequisites
 
 This guide presumes you have all the necessary tools installed and have managed to debug a simple boilerplate component.  If you are not there yet, please read [Installing Tools (Windows)]({{ site.baseurl }}/guides/grasshopper/installing-tools-windows/) and [Your First Component (Windows)]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows)

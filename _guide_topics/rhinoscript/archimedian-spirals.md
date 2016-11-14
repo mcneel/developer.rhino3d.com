@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 It is possible to define an Archimedean Spiral with polar coordinates.  In polar coordinates $$(r, θ)$$, an Archimedean Spiral can be described by the following equation:

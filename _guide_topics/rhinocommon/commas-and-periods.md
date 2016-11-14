@@ -13,12 +13,7 @@ keywords: ['RhinoCommon', 'Locale', 'Threads', 'Culture', 'Internationalization'
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## English Culture
 
 Depending on the user's culture settings, their computer may be set up to use commas instead of periods for decimal separators. This can cause problems when writing numbers into xml files and reading these xml files on a different culture setting.

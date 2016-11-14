@@ -13,12 +13,7 @@ keywords: [openNURBS', 'migrating', 'versions']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The openNURBS 5.0 toolkit builds upon openNURBS 4.0 by adding the ability to read and write Rhino version 5 3DM files.

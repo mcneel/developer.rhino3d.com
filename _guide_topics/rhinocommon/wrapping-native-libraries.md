@@ -13,12 +13,7 @@ keywords: ['Native', 'RhinoCommon', 'Plugin', 'Library', 'PInvoke']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 We present a sample solution that uses Platform Invoke (PInvoke), which allows .NET code to call functions that are implemented in a C/C++ DLL (Windows) or dylib (macOS).  It is important to understand that the main utility of this advanced approach is in the ability to call the same C/C++ code on both platforms from .NET.  

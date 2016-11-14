@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs explanation, diagram style update'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Conceptual diagram
 
 ![BRep Data Structure]({{ site.baseurl }}/images/brep-data-structure-01.png)

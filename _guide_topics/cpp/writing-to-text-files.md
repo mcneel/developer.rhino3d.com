@@ -13,12 +13,7 @@ keywords: ['rhino', 'text', 'file']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You need to write to a text file from my general utility plugin.

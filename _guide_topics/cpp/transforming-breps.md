@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs more explanatory content.'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Samples
 
 ### The Short Way

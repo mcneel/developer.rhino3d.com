@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs updated screen captures'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You recently downloaded the Rhino C/C++ SDK and installed it on my system, along with Visual Studio 2010 Professional, per the instructions on this site.  However, when you went to build a test plugin, it failed to compile with this error:

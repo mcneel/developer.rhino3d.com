@@ -13,12 +13,7 @@ keywords: ['rhino', 'language']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Rhino provides support for multiple languages.  Rhino's language setting is independent of the operating system's language setting.  Thus, as a plugin developer, knowing Rhino's current language setting is important if you plan on supporting multiple languages.

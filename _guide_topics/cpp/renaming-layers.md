@@ -13,12 +13,7 @@ keywords: ['rhino']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Rhino layers (`CRhinoLayer`) are stored on a layer table (`CRhinoLayerTable`) which is located on the active document.  The process for modifying an existing layer, such as changing its name, is:

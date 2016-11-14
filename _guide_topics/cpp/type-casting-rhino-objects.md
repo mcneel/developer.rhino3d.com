@@ -13,12 +13,7 @@ keywords: ['rhino', 'casting']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Given a Rhino object, how can one convert it to another Rhino object?  For example, if you have a `CRhinoObject` pointer, how can I convert it to a `CRhinoCurveObject` pointer?  Or, how can one get the curve geometry?

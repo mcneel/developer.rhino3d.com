@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 One of the nice features of other scripting languages, such as Perl, LISP, and Python is what is called an associative array. A n associative array differs from a "normal" array in one major way: rather than being indexed numerically (i.e. 0, 1, 2, 3, ...), it is indexed by a key, or an English-like word.  VBScript has something very similar to an associative array.  This object is called the Dictionary object.  The VBScript Dictionary object provides an item indexing facility.  Dictionaries are part of Microsoft's Script Runtime Library.

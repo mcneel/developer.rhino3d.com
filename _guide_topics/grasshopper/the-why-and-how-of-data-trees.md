@@ -13,12 +13,7 @@ keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Data storage in general programming
 
 One of the key aspects of programming is deciding how and where to store your data.  If you're writing textual code using any one of a huge number of programming languages there are a lot of different options, each with its own benefits and drawbacks.  Sometimes you just need to store a single data point.  At other times you may need a list of exactly one hundred data points.  At other times still circumstances may demand a list of a *variable* number of data points.

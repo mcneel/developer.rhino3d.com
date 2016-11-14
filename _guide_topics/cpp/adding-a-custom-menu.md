@@ -13,12 +13,7 @@ keywords: ['rhino', 'menu']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Imagine you would like to add a submenu to Rhino's File menu.  You might start fiddling around with the `Insert­Plug­In­Menu­To­Rhino­Menu()` and ­`Insert­Plug­In­Item­To­Rhino­Menu()` functions but not seem to be getting anywhere.  `Insert­Plug­In­Menu­To­Rhino­Menu()` adds a menu into the Rhino's main menu bar. `Insert­Plug­In­Item­To­RhinoMenu()` adds a menu item anywhere in the Rhino menu.  To solve this problem, you want a little of both...

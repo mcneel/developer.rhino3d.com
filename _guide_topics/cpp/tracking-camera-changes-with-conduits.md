@@ -13,12 +13,7 @@ keywords: ['rhino', 'camera', 'conduit']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 How can you get a windows message from Rhino viewport, specifically when rotating some object in viewport with right click?  The goal is to get the parameters from the camera viewport when there is an event, like mouse move or right click.  You need those camera settings parameters so that you can set them in another view.

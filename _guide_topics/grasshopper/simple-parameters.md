@@ -13,12 +13,7 @@ keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Parameters are a vital part of Grasshopper (the other being components).  However, unlike components, it is far less likely that you'll need to make your own parameters.  Most components require only the native data types available inside Grasshopper.  In those odd cases where you need to work with custom data, you'll also need to create custom parameters that store that data.  In this topic, we'll create a parameter which can handle the TriStateType we discussed in the [Simple Data Types]({{ site.baseurl }}/guides/grasshopper/simple-data-types) guide.

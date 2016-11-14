@@ -13,12 +13,7 @@ keywords: ['rhino', 'clipboard']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Like most Windows applications, Rhino can cut, copy, and paste information to and from the Windows Clipboard.  When Rhino either cuts or copies geometry to the clipboard, it creates a temporary 3DM file that contains the selected geometry.  Rhino then stores the temporary filename in the Clipboard.  When a paste operation is invoked, Rhino determines if the Clipboard contains the name of a temporary Rhino file.  If found, Rhino simply imports the temporary file.

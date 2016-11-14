@@ -13,12 +13,7 @@ keywords: ['rhino', 'offset', 'curve', 'surface']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You are using the `RhinoOffsetCurveOnSrf` function to offset a curve which was interpolated on a cylindrical surface.  The problem is that the results do not seem to match those of Rhino's `OffsetCrvOnSrf` command.  That is, the offset curve does not extend to the edges of the surfaces.  Why is this?

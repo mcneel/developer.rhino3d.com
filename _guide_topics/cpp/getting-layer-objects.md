@@ -13,12 +13,7 @@ keywords: ['rhino', 'layers']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to get all the objects on a specific layer.

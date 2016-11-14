@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Imagine you have an array of strings which contains duplicates.  RhinoScript has a method to cull the duplicate strings.  But rather than cull them, one would like to find them with a routine that will return the indices of the duplicate items.

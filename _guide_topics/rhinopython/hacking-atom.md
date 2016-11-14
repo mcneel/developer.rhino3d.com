@@ -13,12 +13,7 @@ keywords: ['hacking', 'atom', 'rhino-python']
 layout: bootstrap
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ### Specifically, running from the "settings" branch of the source to test the search paths configuration.
 
 I updated the rhino-python Atom package to support configuring the Python search path which I plan to deploy when we release MR5.1.  The document describes how to install and run it from source so some of you can test and give feedback.  

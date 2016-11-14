@@ -13,12 +13,7 @@ keywords: ['rhino', 'picking', 'brep']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to pick a brep component (e.g. face or edge) and then take action depending on what was picked.  If you write an object picker as such:

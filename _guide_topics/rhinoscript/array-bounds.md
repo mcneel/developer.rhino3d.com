@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 In a two-dimensional array, how do you determine the upper bounds of the array for each dimension?  Also, how do you handle jagged arrays?  That is, an array whose elements themselves are arrays?  How do I find the upper bounds of two, three, or n-dimensional array when the array is rectangular or jagged?

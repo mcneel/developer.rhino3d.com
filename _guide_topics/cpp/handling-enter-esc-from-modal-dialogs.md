@@ -13,12 +13,7 @@ keywords: ['rhino', 'escape', 'enter']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 The problem is simple: how to stop my MFC modal dialog box from closing when the user presses the <kbd>Enter</kbd> or <kbd>Escape</kbd> keys?

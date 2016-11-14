@@ -13,12 +13,7 @@ keywords: ['rhino', 'cage', 'edit']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Imagine you have two objects: a surface and a line curve and you would like to setup cage editing, with the surface as the captive object and the line curve as the control object.

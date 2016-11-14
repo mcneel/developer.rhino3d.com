@@ -13,12 +13,7 @@ keywords: ['rhino', 'errors', 'floating-point']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 When your plugin tries to perform a certain calculation, you get the following text in Visual Studio's output window:

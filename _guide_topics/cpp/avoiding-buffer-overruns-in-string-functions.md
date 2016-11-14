@@ -13,12 +13,7 @@ keywords: ['rhino', 'overruns', 'strings']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Buffer overruns can be caused by passing buffers to functions without also passing the buffer's size.

@@ -13,12 +13,7 @@ keywords: ['rhino', 'selecting']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The Rhino C/C++ SDK provides the class `CRhinoGetObject` that will let you interactively select objects on the screen.  This is a large class with many options.  We recommend that you read through the header file, *rhinoSdkGetObject.h*, before using.

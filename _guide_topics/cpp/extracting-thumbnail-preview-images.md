@@ -13,12 +13,7 @@ keywords: ['rhino', 'thumbnail']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to be able to display a 3dm file's thumbnail preview image in a dialog box.

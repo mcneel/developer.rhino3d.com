@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs new screenshots, review, and cleanup.  Consider breaking out Adding Commands.'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing-tools-windows).
 
 ## Barebones Plugin

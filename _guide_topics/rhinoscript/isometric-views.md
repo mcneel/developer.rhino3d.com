@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 AutoCAD has a VPOINT command that allows you to create isometric views of the model.  The VPOINT command uses the point entered by the user to create a vector that defines the direction from which the drawing is viewed.  You can do this in Rhino using the ViewportProperties command.  In the ViewportProperties dialog, first set the view to parallel projection.  Then, set the target location to 0,0,0 and the camera location to where you want to be viewing from.

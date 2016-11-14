@@ -13,12 +13,7 @@ keywords: ['rhino', 'document', 'iteration']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The `CRhinoGetObject` class is useful when you need the user to interactively pick one or more objects.  But, it is not too useful if you need to walk through the entire document looking for objects.  This is where the `CRhinoObjectIterator` class comes in.

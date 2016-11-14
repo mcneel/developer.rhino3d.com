@@ -13,12 +13,7 @@ keywords: ['rhino', 'block']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 To dynamically insert and draw blocks, you can take advantage of the new display pipeline technology, which is capable of drawing block instance definitions.  For example, the following code demonstrates how to draw a block instance definition from a `CRhinoGetPoint`-derived object's DynamicDraw member...

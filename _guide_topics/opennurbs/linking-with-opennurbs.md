@@ -13,12 +13,7 @@ keywords: ['openNURBS', 'linking', 'toolkit', 'pragma', 'pragmas']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You are trying to write a simple console application like the *example_write* sample included with the openNURBS toolkit.  However, you are having problems linking.  You are using the *opennurbs_staticlib_linking_pragmas.h* header included with openNURBS, but it does not seem to work.

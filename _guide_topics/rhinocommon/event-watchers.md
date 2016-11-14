@@ -13,12 +13,7 @@ keywords: ['RhinoCommon', 'Event', 'Watchers', 'UI']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## UI Thread
 
 Applications can not update any user interface controls from any thread other than the main UI thread. Changing a property on a windows control typically causes the control to immediately update its display. But if the call is made from another thread then the UI thread windows will crash the application.

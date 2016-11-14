@@ -13,12 +13,7 @@ keywords: ['rhino', 'uuid', 'guid']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Rhino can create and manipulate many geometric objects, including points, point clouds, curves, surfaces, b-reps, meshes, lights, annotations, and references.  A globally unique identifier, or UUID, is assigned to each object in the Rhino document when the objects are created.  Because identifiers are saved in the 3DM file, an object's identifier will be the same between editing sessions.

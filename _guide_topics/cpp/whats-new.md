@@ -13,12 +13,7 @@ keywords: ['c', 'C/C++', 'plugin']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Rhino 5.0 has several new object types and C/C++ SDK features.  Be sure your plugin supports them appropriately.

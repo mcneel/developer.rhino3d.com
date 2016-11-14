@@ -13,12 +13,7 @@ keywords: ['rhino', 'display', 'conduit']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You need to highlight a curve object on display conduit.

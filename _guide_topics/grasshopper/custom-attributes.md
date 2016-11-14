@@ -13,12 +13,7 @@ keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Objects on the Grasshopper canvas consist of two parts.  The most important piece is the class that implements the [IGH_DocumentObject]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_IGH_DocumentObject.htm) interface.  This interface provides the basic plumbing needed to make objects work within a Grasshopper node network.  The interface part of objects however is handled separately.  Every `IGH_DocumentObject` carries around an instance of a class that implements the [IGH_Attributes]({{ site.baseurl }}/api/grasshopper/html/T_Grasshopper_Kernel_IGH_Attributes.htm) interface (indeed, every `IGH_DocumentObject` knows how to create its own stand-alone attributes) and it is this class that takes care of display, mouse interactions, popup menus, tooltips and so forth.

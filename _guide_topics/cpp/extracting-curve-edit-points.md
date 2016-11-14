@@ -13,12 +13,7 @@ keywords: ['rhino', 'curve', 'points']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to extract a curve's edit points - the points you see when you run the *EditPtOn* command, but you do not see any methods on `ON_Curve` or `ON_NurbsCurve` to do this.

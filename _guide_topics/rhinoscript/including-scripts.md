@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 In programming languages like C/C++ and C#, there are statements like `#include` and `using` where you can reference functions from other source files.  This is often used when you want to build a library of common functions that can be used from within other scripts,

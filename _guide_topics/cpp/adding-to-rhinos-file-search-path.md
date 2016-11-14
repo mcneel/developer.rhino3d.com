@@ -13,12 +13,7 @@ keywords: ['rhino', 'search', 'path']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to add a file path to Rhino's file search path without having to script the Options command.

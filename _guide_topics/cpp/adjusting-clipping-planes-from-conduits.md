@@ -13,12 +13,7 @@ keywords: ['rhino', 'display', 'conduit']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 You may reason that it is necessary to change Rhino's Z-Buffer range because when you draw using the `CRhinoDisplayConduit` class, as objects that are far from Rhino's objects are being clipped.  However, the Z-Buffer range has nothing to do with whether or not objects get culled, or clipped, from the viewing frustum.  This behavior has to do with Rhino's near and far clipping planes.  Rhino's clipping planes are adjusted dynamically in order to maximize the precision within the Z-Buffer.  Additionally, Rhino does this by placing the near plane as close to the closest visible object in the frustum, and the far plane as far as the furthest visible object in the frustum.

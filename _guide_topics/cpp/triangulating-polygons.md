@@ -13,12 +13,7 @@ keywords: ['rhino', 'polygons']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Rhino's mesh representation, `ON_Mesh`, only support three and four sided faces.  This can pose a problem when trying to write an import plugin for a mesh file format that supports n-sided polygons.  If you search the Internet, you can probably find a number of algorithms that will triangulate n-sided polygons so they can be used with `ON_Mesh`.  The Rhino C/C++ SDK also includes a tool for doing this.

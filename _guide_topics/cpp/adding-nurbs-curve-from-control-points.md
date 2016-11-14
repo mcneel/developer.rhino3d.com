@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs more explanation in order to be a guide'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Imagine you would like to create a NURBS curve from a set of control points, such that it looks like this:

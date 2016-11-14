@@ -13,12 +13,7 @@ keywords: ['openNURBS', 'release', 'notes', 'whats new']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## What's New
 
 ### Extrusion object render mesh support

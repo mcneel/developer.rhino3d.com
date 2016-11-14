@@ -13,12 +13,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin', 'RhinoWIP']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 By the end of this guide, you should understand how to modify your plugin's C# project file in order to target and debug using RhinoWIP.
 
 ## Prerequisites

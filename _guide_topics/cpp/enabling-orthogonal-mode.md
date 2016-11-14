@@ -13,12 +13,7 @@ keywords: ['rhino', 'orthogonal']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You are trying to draw a line and you need ortho enabled.

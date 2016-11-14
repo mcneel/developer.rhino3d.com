@@ -13,12 +13,7 @@ keywords: ['rhino', 'curve', 'point']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 In general, to find the parameter of a point on a curve that is closest to a test point, use `ON_Curve::GetClosestPoint()`.  See *opennurbs_curve.h* for more information.

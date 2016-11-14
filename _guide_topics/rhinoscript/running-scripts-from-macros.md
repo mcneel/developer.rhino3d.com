@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs review and updated screencaptures'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## How To
 
 ### Creating button or alias for your macro or script

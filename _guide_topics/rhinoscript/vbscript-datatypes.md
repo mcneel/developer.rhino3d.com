@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 VBScript has only one data type called a Variant.  A Variant is a special kind of data type that can contain different kinds of information, depending on how it is used.  Because Variant is the only data type in VBScript, it is also the data type returned by all functions in VBScript.

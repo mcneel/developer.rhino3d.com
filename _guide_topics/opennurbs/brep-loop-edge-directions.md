@@ -13,12 +13,7 @@ keywords: ['openNURBS', 'Brep', 'Loop', 'Edge', 'Directions']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Question
 
 Is there a function to query if a loop `ON_BrepLoop` is reversed on the face `ON_BrepFace`?  In other words, whether the boundary of the face agrees with or opposes that of the corresponding loop?

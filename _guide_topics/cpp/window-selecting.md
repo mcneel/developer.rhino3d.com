@@ -13,12 +13,7 @@ keywords: ['rhino', 'window', 'selecting']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The `CRhinoGetObject` class is used for selecting Rhino objects.  When active, `CRhinoGetObject` object will allow the user to select objects either by picking them or by dragging a crossing window.  But, using C/C++, it is possible to write your own object picking class or function.  The heart of such a tool is the `CRhinoPickContext` which defines the rules for the picking.  Once the rules have been defined, you can use `CRhinoDoc::PickObjects` to do the work.

@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 A variable is a convenient placeholder that refers to a computer memory location where you can store program information that may change during the time your script is running.  For example, you might create a variable called ClickCount to store the number of times a user performs a certain operation.  Where the variable is stored in computer memory is unimportant.  What is important is that you only have to refer to a variable by name to see or change its value.  In VBScript, variables are always of one fundamental data type: [Variant]({{ site.baseurl }}/guides/rhinoscript/vbscript-datatypes/).

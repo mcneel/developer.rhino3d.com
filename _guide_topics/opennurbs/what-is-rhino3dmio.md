@@ -13,12 +13,7 @@ keywords: ['openNURBS', 'C#', '.NET', 'Rhino3dmIO']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 RhinoCommon supports a build "flavor" that allows it to be a .NET SDK for the openNURBS library.  This allows you to write .NET applications that can read/write the *.3dm* file format and since you have access to the full source debug down to every little piece of code.

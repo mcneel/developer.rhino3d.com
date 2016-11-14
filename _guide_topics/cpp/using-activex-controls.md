@@ -13,12 +13,7 @@ keywords: ['rhino', 'activex']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 ActiveX controls placed in a simple dialog box will crash Rhino.

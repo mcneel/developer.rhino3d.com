@@ -13,12 +13,7 @@ keywords: ['developer', 'rhino', 'faq']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 **Which SDK is right for me?**
 
 It all depends on what you want to do.  If you are looking to automate repetitive tasks in Rhino, writing a [Python]({{ site.baseurl }}/guides/#rhinopython) script is the way to go.  If you are looking to write a full-fledged plugin or Grasshopper component, we strongly suggest the [RhinoCommon SDK]({{ site.baseurl }}/guides/rhinocommon/what-is-rhinocommon/).  If you are very proficient with C/C++, you should consider the native C/C++ SDK (only supported on Rhino for Windows).

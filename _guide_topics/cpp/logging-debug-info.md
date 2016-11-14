@@ -13,12 +13,7 @@ keywords: ['rhino', 'log', 'debug']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The openNURBS C/C++ SDK, which is also included with the Rhino C/C++ SDK, contains a `ON_TextLog` class that makes it very simple to write, or dump, information to a text file.  The class can be very handy when trying to debug geometric objects, for most objects have the ability to dump their contents to a log file.

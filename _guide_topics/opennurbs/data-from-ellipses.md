@@ -13,12 +13,7 @@ keywords: ['openNURBS', 'Ellipses']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You have drawn an ellipse in Rhino, using the *Ellipse* command.  While reading the *.3dm* file, using openNURBS, the ellipse is classified as as `ON::curve_object`.  How does one get the ellipse's construction data, such as center point, major and minor axes, etc?

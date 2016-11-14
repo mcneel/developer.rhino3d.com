@@ -12,12 +12,7 @@ keywords: ['RhinoCommon', 'C/C++', 'Rhino', 'Toolbar', 'Plugin']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Question
 
 What is the best way to prepare a Rhino toolbar for multi-language support?

@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'move out of Zoo because it applies to both Zoo and Rhino plugins'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 To add plugins to Zoo, and to call the license functions from within your Rhino plugin, you must digitally sign your plugins using a certificate signed by the *Robert McNeel & Associates Code Signing Authority*.

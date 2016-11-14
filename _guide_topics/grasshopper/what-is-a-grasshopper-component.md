@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs to be reviewed for accuracy.  Also, needs a little more high-level info'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 This guide also explains the hierarchy of all assemblies involved with the Grasshopper plugin.  This is important for component developers so they know which Assembly References they need to have in order to compile a Grasshopper Component Library.  It also provides some background information which is useful when communicating with other developers.
 
 ## Rhino Plugin Architecture

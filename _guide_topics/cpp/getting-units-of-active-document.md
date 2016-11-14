@@ -13,12 +13,7 @@ keywords: ['rhino', 'units', 'document']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 There are two unit systems associated with a document, model and page units.  The `ON_UnitSystem` class makes it easy to work with custom units.  The Rhino document class contains two functions:

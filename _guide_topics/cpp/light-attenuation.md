@@ -13,12 +13,7 @@ keywords: ['rhino', 'light']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 So you are interested in taking advantage `ON_Light::Attenuation` in your render plugin, and you need to clarify how you can use it.  Is the input vector supposed to represent the distance over which you want the light to attenuate to zero?

@@ -13,12 +13,7 @@ keywords: ['openNURBS', 'Block', 'Instance', 'Reference', 'Scale']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 In Rhino, you can insert an instance of a block and give it a non-uniform scale (transformation).  But, when you read the model, using the openNURBS toolkit, and try to explode the block into its geometric form, the geometry is no longer non-uniformly scaled.

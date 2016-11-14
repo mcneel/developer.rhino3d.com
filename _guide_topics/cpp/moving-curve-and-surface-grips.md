@@ -13,12 +13,7 @@ keywords: ['rhino', 'moving', 'grips']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to move the control points of a curve or surface object using the Rhino C/C++ SDK.

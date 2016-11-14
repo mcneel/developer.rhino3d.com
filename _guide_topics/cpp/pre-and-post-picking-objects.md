@@ -13,12 +13,7 @@ keywords: ['rhino', 'picking']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The normal operation for commands that manipulate geometric objects is to allow the user to either pre-pick or post-pick the objects.  Occasionally, though, it might be necessary for commands to want to allow for both pre-picked and post-picked objects.  That is, after it has been determined that objects were pre-picked, allow the user to continue to pos-pick more objects.

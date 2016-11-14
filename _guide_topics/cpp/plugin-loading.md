@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs to be reviewed or consolidated with other plugin guides'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Loading
 
 Rhino plugins are loaded twice.  The first time as follows:

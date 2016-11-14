@@ -13,12 +13,7 @@ keywords: ['Zoo', 'Plugin']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 A Zoo plugin is a software module, developed by a 3rd party, that extends the functionality of Zoo 5.0 by allowing it to validate product licenses.
 
 The Zoo lets you share licenses, or CD-Keys, among users. Prior to Zoo 5.0, the only licenses that could be shared by the Zoo were from McNeel-based products (i.e. Rhino, Flamingo, Penguin, Brazil, and Bongo). With Zoo 5.0, 3rd party Rhino plugin developers can now add support for their products to the Zoo.

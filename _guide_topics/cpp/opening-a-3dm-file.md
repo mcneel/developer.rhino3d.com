@@ -13,12 +13,7 @@ keywords: ['rhino', 'open', '3dm']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to open a 3DM file, or an STL file, or any other file type that Rhino supports, from your C/C++ plugin.

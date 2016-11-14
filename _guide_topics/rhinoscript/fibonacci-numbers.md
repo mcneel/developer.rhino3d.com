@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 By definition, [Fibonacci numbers](http://en.wikipedia.org/wiki/Fibonacci_number) are a series of numbers where the first two Fibonacci numbers are 0 and 1, and each remaining number is the sum of the previous two.

@@ -13,12 +13,7 @@ keywords: ['RhinoCommon', 'Object', 'Plugin', 'User', 'Data']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 There are two basic ways plugins can store information in Rhino .3dm files:
 
 1. [Document User Data](#document-user-data)

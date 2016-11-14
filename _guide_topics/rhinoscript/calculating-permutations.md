@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The permutation of a set is the number of ways that the items in the set can be uniquely ordered.  For example, the permutations of the set $$\{1, 2, 3\}$$ are: $$\{1, 2, 3\}$$, $$\{1, 3, 2\}$$, $$\{2, 1, 3\}$$, $$\{2, 3, 1\}$$, $$\{3, 1, 2\}$$, and $$\{3, 2, 1\}$$.

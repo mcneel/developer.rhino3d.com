@@ -13,12 +13,7 @@ keywords: ['rhino', 'script']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You have a command, derived from `CRhinoScriptCommand`, that scripts several Rhino command that add objects.  After running the scripts, with `CRhinoApp::RunScript`, you would like to get the addresses, or pointers, of the added objects.  But the commands that create the new objects do not select then.  Is there a way to get the added objects' addresses in this case?

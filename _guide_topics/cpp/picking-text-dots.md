@@ -13,12 +13,7 @@ keywords: ['rhino', 'selecting', 'text', 'dots']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Imagine you would like to allow the user to interactively select text dot objects from my plugin command.  The first place you might look is the `CRhinoGetObject` class, for a text dot geometry filter.  This does not exist.  So, how to go about this?
