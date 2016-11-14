@@ -13,8 +13,8 @@ keywords: ['authoring', 'writing', 'editing', 'overview']
 layout: toc-guide-page
 ---
 
- 
-[This site](http://developer.rhino3d.com) is hosted on [GitHub Pages](https://pages.github.com/).  Every time a commit is made to [this git repository](https://github.com/mcneel/developer-rhino3d-com), a static site-generator called [Jekyll](http://jekyllrb.com/) churns through all the markdown content to generate html for the site.  Behind the scenes, Jekyll uses a templating language called [Liquid](https://github.com/Shopify/liquid/wiki), which allows for automatic generation of some content based upon yaml fields or page contents.
+
+[This site](http://developer.rhino3d.com) is hosted on [GitHub Pages](https://pages.github.com/).  Every time a commit is made to [this git repository](https://github.com/mcneel/developer-rhino3d-com), a static site-generator called [Jekyll](http://jekyllrb.com/) churns through all the markdown content to generate html for the site.  Behind the scenes, Jekyll uses a templating language called [Liquid](https://shopify.github.io/liquid/), which allows for automatic generation of some content based upon yaml fields or page contents.
 
 
 ## Workflow
@@ -224,5 +224,4 @@ Much of this site is (or was) ported from a previous location.  The `origin` yam
 
 - [Rhino Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer-docs-style-guide/)
 - [Jekyll Documentation](http://jekyllrb.com/docs/home/)
-- [Liquid Docs](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)
-- [Shopify Liquid Cheatsheet](http://cheat.markdunkley.com/)
+- [Liquid Docs](https://shopify.github.io/liquid/)
