@@ -23,6 +23,12 @@ layout: bootstrap
               {% endif %}
           </ol>
 
+          <h1>{{ page.title }}</h1>
+
+          <p>{% include byline.html %}</p>
+
+          <p>{{ page.description }}</p>
+
           {{ content }}
         </article>
 
