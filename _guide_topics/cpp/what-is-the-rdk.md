@@ -1,8 +1,8 @@
 ---
 title: What is the RDK?
 description: This guide describes the Rhino Renderer Development Kit and its features.
-authors: ['Andrew le Bihan', '@andy']
-author_contacts: ['']
+authors: ['Andrew le Bihan']
+author_contacts: ['andy']
 apis: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
