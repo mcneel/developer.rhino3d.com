@@ -170,7 +170,7 @@ The [API documentation]({{ site.baseurl }}/api/) is automatically generated from
 
 Samples are contained in the `/_samples/` directory.
 
-Here is an example of the YAML for [this sample]({{ site.baseurl }}/samples/cpp/add_a_cone_surface/):
+Here is an example of the YAML for [this sample]({{ site.baseurl }}/samples/cpp/add-a-cone-surface/):
 
 ```yaml
 ---

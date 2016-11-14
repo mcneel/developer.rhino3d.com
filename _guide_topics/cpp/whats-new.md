@@ -34,7 +34,7 @@ Although the breaking changes may seem numerous, most fall within the following 
 
 ### Visual Studio 2015
 
-To write C++ plug-ins for Rhino 6, you will need [Visual Studio 2015]({{ site.baseurl }}/guides/cpp/installing_tools_windows).
+To write C++ plug-ins for Rhino 6, you will need [Visual Studio 2015]({{ site.baseurl }}/guides/cpp/installing-tools-windows).
 
 What’s really exciting is that the free Community edition of Visual Studio will work to build plug-ins for Rhino 6. Of course, you can also use either the Professional or Enterprise edition.
 
@@ -109,14 +109,14 @@ C++11 provides some great new features for C++ programmers. One such feature is 
 - Old-style enums convert to integral types, which can lead to strange behavior
 - You cannot specify the underlying integral type of an old-style enums
 
-There are a number of places in the Rhino 6 C/C++ SDK were old-style enums have been converted to scoped and strongly typed enums by convert ```enum``` declarations to ```enum class```. Enumerators of these types of enums require a qualified name such as *enumname::enumerator* when you refer to them. 
+There are a number of places in the Rhino 6 C/C++ SDK were old-style enums have been converted to scoped and strongly typed enums by convert ```enum``` declarations to ```enum class```. Enumerators of these types of enums require a qualified name such as *enumname::enumerator* when you refer to them.
 
 For example, in Rhino 5, you could specify a unit system in millimeters as follows:
-        
+
         ON_UnitSystem units(ON::millimeters);
-        
+
 In Rhino 6, you will need to do the following:        
-        
+
         ON_UnitSystem units(ON::LengthUnitSystem::Millimeters);
 
 ### Deprecation
@@ -134,6 +134,6 @@ To help with this, we are working on updating all of the [C++ SDK samples](https
 
 ## Related Topics
 
-- [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing_tools_windows)
-- [Migrate your plugin project to Rhino 6]({{ site.baseurl }}/guides/cpp/migrate_your_plugin_windows)
-- [Migrate your plugin project to Rhino 6 manually]({{ site.baseurl }}/guides/cpp/migrate_your_plugin_manual_windows)
+- [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing-tools-windows)
+- [Migrate your plugin project to Rhino 6]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-windows)
+- [Migrate your plugin project to Rhino 6 manually]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows)

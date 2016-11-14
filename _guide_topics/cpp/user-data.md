@@ -484,4 +484,4 @@ To load the sample, just download and extract into some folder, and then open *T
 
 ## Related Topics
 
-- [Attaching User Data to Brep Components]({{ site.baseurl }}/samples/cpp/attaching_user-data_to_brep_components)
+- [Attaching User Data to Brep Components]({{ site.baseurl }}/samples/cpp/attaching-user-data-to-brep-components)

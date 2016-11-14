@@ -23,7 +23,7 @@ layout: toc-guide-page
 
 Rhinoceros is composed of many layers - written in many languages - all stacked on top of each other.  The most foundational are on the bottom, but the top layers should by no means be considered superficial...
 
-![The Rhino Stack]({{ site.baseurl }}/images/rhino_technology_overview_01.png)
+![The Rhino Stack]({{ site.baseurl }}/images/rhino-technology-overview-01.png)
 
 Let's discuss each of the layers in turn, starting on the bottom with the...
 
@@ -69,9 +69,9 @@ For more information about the C++ SDK, check out the [C/C++ guides]({{ site.bas
 
 ### RhinoScript
 
-One of the C++ plugins we ship with Rhino is [RhinoScript]({{ site.baseurl }}/guides/rhinoscript/what_are_vbscript_rhinoscript/).  RhinoScript exposes a useful subset of Rhino’s SDK via VBScript - a widely used and popular scripting language.  RhinoScript gives you access not only to Rhino, but to any other COM object on Windows.
+One of the C++ plugins we ship with Rhino is [RhinoScript]({{ site.baseurl }}/guides/rhinoscript/what-are-vbscript-rhinoscript/).  RhinoScript exposes a useful subset of Rhino’s SDK via VBScript - a widely used and popular scripting language.  RhinoScript gives you access not only to Rhino, but to any other COM object on Windows.
 
-For more information, see the [RhinoScript guides]({{ site.baseurl }}/guides/rhinoscript/), and more specifically the [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what_are_vbscript_rhinoscript/) guide.
+For more information, see the [RhinoScript guides]({{ site.baseurl }}/guides/rhinoscript/), and more specifically the [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what-are-vbscript-rhinoscript/) guide.
 
 ## .NET Stack
 
@@ -94,13 +94,13 @@ The Microsoft .NET framework ships with Windows.
 
 In Rhino for Mac product, we embed the [Mono Runtime](https://www.mono-project.com), a partial cross-platform implementation of the .NET Runtime.
 
-For more information about .NET and how it relates to Rhino development, see the [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/).
+For more information about .NET and how it relates to Rhino development, see the [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what-are-mono-and-xamarin/).
 
 ### RhinoCommon
 
 RhinoCommon is our .NET SDK for Rhino, built atop the portions of the .NET framework that are *common* on both Windows and macOS (via Mono).  RhinoCommon allows developers to run .NET code on both Rhino for Windows and Rhino for Mac.
 
-For more information about RhinoCommon, see the [RhinoCommon guides]({{ site.baseurl }}/guides/rhinocommon/), or more specifically, the [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon) guide.
+For more information about RhinoCommon, see the [RhinoCommon guides]({{ site.baseurl }}/guides/rhinocommon/), or more specifically, the [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what-is-rhinocommon) guide.
 
 ### Eto
 
@@ -134,9 +134,9 @@ For more information about RhinoPython, see the [RhinoPython guides]({{ site.bas
 - [openNURBS guides]({{ site.baseurl }}/guides/opennurbs/)
 - [RhinoScript guides]({{ site.baseurl }}/guides/rhinoscript/)
 - [Microsoft .NET Framework (on microsoft.com)](https://www.microsoft.com/net/framework)
-- [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what_is_rhinocommon)
+- [What is RhinoCommon?]({{ site.baseurl }}/guides/rhinocommon/what-is-rhinocommon)
 - [RhinoCommon guides]({{ site.baseurl }}/guides/rhinocommon/)
-- [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what_are_mono_and_xamarin/)
+- [What are Mono & Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what-are-mono-and-xamarin/)
 - [Mono Project](https://www.mono-project.com)
 - [Eto.Forms on GitHub](https://github.com/picoe/Eto)
 - [Grasshopper guides]({{ site.baseurl }}/guides/grasshopper/)
