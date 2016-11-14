@@ -13,12 +13,7 @@ keywords: ['rhino', 'display', 'conduit', 'arrowheads']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You are trying to get your head around drawing arrowheads through conduits in the Rhino C/C++ SDK.  You create an instance of the `CRhinoArrowhead` class and set 2D information (point and direction) and then need to set a parent (any type of `CRhinoAnnotationObject`).  As `CRhinoAnnotationObject` is a virtual class, for your purposes the best version seems to be the leader class.  But (not surprisingly) the arrowhead behaves like a leader, sitting in world space, and is not aligned or scaled to the viewport's construction as desired.  Is there any other way to draw an arrowhead that does not involve using the `CRhinoArrowhead` class?

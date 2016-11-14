@@ -13,12 +13,7 @@ keywords: ['rhino', 'curves', 'serializing']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Writing curves to a file has some special considerations.  Curves come in many variations: the curve could be a circle, simple curve, or a polycurve.  You cannot know in advance what the user will be selecting.  As such, the class containing my data declares it as an `ON_Curve`.

@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 You need to round when you want to convert a number of greater precision into a number of lesser precision.  The most common case is when you need to convert a floating-point number into an integer.  There are many different types of rounding: rounding up, rounding down, banker's rounding.  This guide covers many of the common rounding methods and demonstrates those that can be done in VBScript.

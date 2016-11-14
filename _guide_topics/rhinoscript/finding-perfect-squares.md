@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 In mathematics, a perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself.  For example, 9 is a perfect square, since it can be written as 3 × 3. How can one determine whether or not an integer is a perfect square in RhinoScript?

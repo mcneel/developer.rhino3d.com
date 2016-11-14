@@ -13,12 +13,7 @@ keywords: ['rhino', 'color', 'picker']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## How To
 
 To replace Rhino's color picking dialog, derive a new class from `CRhinoReplaceColorDialog` and override the `ColorDialog()` virtual function.  Note, if more that one `CRhinoReplaceColorDialog`-derived classes exist, then the last `CRhinoReplaceColorDialog`-derived object created will be displayed.

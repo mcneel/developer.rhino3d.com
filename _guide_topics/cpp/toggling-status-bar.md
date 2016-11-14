@@ -13,12 +13,7 @@ keywords: ['rhino', 'status', 'toggle']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 When you run the Options command, all Rhino's options or application settings that you see are maintained by a `CRhinoAppSettings` class stored on the Rhino application object.  This class is a container class as it holds several other `CRhinoApp_xxx_Settings` classes that help to organize all the options.

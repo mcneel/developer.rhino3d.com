@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'For David R: finish interaction section'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 We'll focus on components as you should be familiar with those from earlier topics, but the same logic also applies to Parameters and custom objects.
 
 ## Default Functionality and GUI

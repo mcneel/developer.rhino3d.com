@@ -13,12 +13,7 @@ keywords: ['rhino', 'viewport']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You are trying to determine if the current active view is a detail or a standard view.  You are having some trouble differentiating between an active page layout and an active detail in a page layout.

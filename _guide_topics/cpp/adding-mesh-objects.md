@@ -13,12 +13,7 @@ keywords: ['rhino', 'mesh']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 To create an `ON_Mesh`:

@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'downloadable samples should be moved to GitHub and linked'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 There are two basic ways plugins can store information in Rhino *.3dm* files:

@@ -13,12 +13,7 @@ keywords: ['rhino', 'color']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The color used to display an object is specified in one of four ways...

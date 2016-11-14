@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Unlike other programming languages, VBScript lacks support of complex data structures.  Sometimes this makes life a bit difficult.  We need to code our own algorithms to achieve simple tasks like sorting or reversing an array.  .NET has support for complex data structures which come with built-in functions for these simple tasks.  So if we can use .NET data structure then we can eliminate the reinvention of the wheel for some of these tasks.  Well, the good news is that some .NET libraries are exposed to COM and can be used in VBScript.  Let's take a look at the most useful of these...

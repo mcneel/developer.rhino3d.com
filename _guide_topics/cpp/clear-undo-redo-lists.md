@@ -13,12 +13,7 @@ keywords: ['rhino', 'clear', 'undo', 'redo']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## How To
 
 Rhino allows users to undo the most recent or several create, edit, or transform commands. If you are performing editing operations on large memory consuming objects, Rhino's undo list can quickly grow very large. When this happens, most Rhino users run the ClearUndo command to clear the undo list. It is also possible to clear the undo list from within a plugin.

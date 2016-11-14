@@ -13,12 +13,7 @@ keywords: ['rhino', 'polylines']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 What is the best way to draw dynamically a geometry based on a polyline?  How is it possible to compute an object geometry based on a polyline picked by the user?

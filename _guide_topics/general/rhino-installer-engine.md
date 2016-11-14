@@ -13,12 +13,7 @@ keywords: ['developer', 'rhino', 'installer']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The Rhino Installer Engine simplifies distribution, installation, and updating of plugins for Rhino for Windows (on both 32- and 64- bit) and Rhino for Mac.

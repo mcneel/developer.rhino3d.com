@@ -13,12 +13,7 @@ keywords: ['RhinoCommon', 'Tool', 'Palette', 'Collection', 'RUI']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Prerequisites
 
 This guide presumes that you have a RhinoCommon plugin that has commands that can be run from a tool palette.  In Rhino for Windows, this UI is normally stored in an *rui* file that includes the buttons, the icons, and their associated commands.  If you do not yet have a plugin, please begin with the [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-mac) guide.

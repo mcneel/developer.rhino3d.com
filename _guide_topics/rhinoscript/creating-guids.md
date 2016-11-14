@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 [Globally Unique Identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier) - or GUIDs - are unique identification numbers that are used to track items.  Rhino uses GUIDs just for this purpose.  GUIDs come in different formats, but are usually stored as 128-bit values, and are commonly displayed as 32 hexadecimal digits with groups separated by hyphens:

@@ -13,12 +13,7 @@ keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 It's a rather complicated topic as data is an integral part of the Grasshopper process and GUI.  Grasshopper needs to be able to (de)serialize data, display data in tooltips, convert data to other types of data, prompt the user for persistent data, draw geometry preview data in viewports and bake geometric data.  In this topic I'll only talk about non-geometric data, we'll get to previews and baking in a later topic.

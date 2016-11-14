@@ -13,12 +13,7 @@ keywords: ['rhino', 'drawing', 'picking']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 When using Rhino, you have probably noticed that many of the object creation commands, such as *Line* and *Circle*, and transformation commands, such as *Move* and *Copy*, dynamically draw objects as they are being created or transformed.  This operation is performed by deriving a new class from Rhino's point pick class, `CRhinoGetPoint`, and overriding two member functions: `OnMouseMove()` and `DynamicDraw()`.

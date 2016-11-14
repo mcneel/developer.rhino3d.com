@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 One common task performed by Rhino users is the importing of point coordinates from some kind of delimited file.  This task is easy if you use the Points File file type when opening or importing files.  But what if the file you are importing does not conform to the traditional delimited file notation.  Or, what if the file contains other information?

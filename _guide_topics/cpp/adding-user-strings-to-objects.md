@@ -13,12 +13,7 @@ keywords: ['rhino', 'user', 'data']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 User Data is a powerful set of APIs that allow plugin developers to attach custom data of any kind to any object derived from `ON_Object`.  In order to take advantage of User Data, you are required to implement your own user data object by deriving a class from `ON_UserData` and overriding the required virtual functions.

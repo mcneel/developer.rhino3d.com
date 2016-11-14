@@ -13,12 +13,7 @@ keywords: ['rhino', 'sizeof', 'UNICODE', 'TCHAR', 'wchar_t']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Discussion
 
 The `sizeof` keyword gives the amount of storage, in bytes, associated with a variable or a type.  It does not return number of elements in an array, such as an array of characters.

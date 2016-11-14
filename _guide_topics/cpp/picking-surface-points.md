@@ -13,12 +13,7 @@ keywords: ['rhino', 'picking', 'points']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You want to pick a point on the surface of an object.

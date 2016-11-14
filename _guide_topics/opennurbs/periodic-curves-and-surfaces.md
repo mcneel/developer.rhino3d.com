@@ -13,12 +13,7 @@ keywords: ['openNURBS', 'Periodic', 'Curves', 'Surfaces']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 A periodic knot vector can be either uniform or non-uniform.
 
 A periodic degree d NURBS curve has (d-1) continuous derivatives at the start/end point.

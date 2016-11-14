@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs a bit more information to guide users through how to learn VBS.'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 VBScript (short for Visual Basic Scripting Edition) is an easy-to-use scripting language developed by Microsoft that enables authors to create powerful tools using a subset of the Visual Basic language. VBScript is implemented as a fast, portable interpreter for web browsers and applications that use ActiveX controls and OLE Automation servers.

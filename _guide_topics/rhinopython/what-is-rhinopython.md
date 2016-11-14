@@ -14,11 +14,8 @@ layout: toc-guide-page
 TODO: 'needs more GHPython info. Resources should be moved.'
 ---
 
-# {{ page.title }}
 
-{% include byline.html %}
-
-{{ page.description }}  ...but a better question is...
+...but a better question is...
 
 ## What is Python?
 

@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs cleanup and formatting work and to be added to rhinoscript guides'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 To get a scripting object for the Rhino RDK, use the following code:

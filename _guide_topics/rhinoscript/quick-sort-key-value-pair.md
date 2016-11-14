@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The .NET Framework's `SortedList` class provides a hash table with automatically sorted key-value pairs.  The available methods and properties for `SortedList` are very similar to the ones available in [ArrayList]({{ site.baseurl }}/guides/rhinoscript/sorting-vbs-arrays-with-net).

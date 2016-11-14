@@ -13,12 +13,7 @@ keywords: ['adding', 'RhinoCommon', 'commands', 'projects']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 The RhinoCommon Project Wizard ([Windows]({{ site.baseurl }}/guides/rhinocommon/installing-tools-windows/#rhinocommon-templates) or [Mac]({{ site.baseurl }}/guides/rhinocommon/installing-tools-mac/#install-the-rhino-add-in)) creates a skeleton plugin project with a single command.  However, plugins can contain more than one command.  How does one add additional commands to plugin projects?

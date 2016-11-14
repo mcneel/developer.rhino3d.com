@@ -13,12 +13,7 @@ keywords: ['rhino', 'loft', 'tangent']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 When trying to loft a surface with starting or ending tangency, it is not enough just to set `CArgsRhinoLoft` object's `m_start_condition` and `m_end_condition` members to `CArgsRhinoLoft::leTangent`.  You also need to tell Rhino's lofter what it is that this lofted surface need to be tangent to.  You do this by setting the `m_trim` parameter of the starting and ending `CRhinoLoftCurve` objects.  This is a constant `ON_BrepTrim` pointer.  If you are lofting curves that you have picked using a `CRhinoGetObject` object, you can retrieve this pointer by simply calling `CRhinoObjRef::Trim()`.

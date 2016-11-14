@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Imagine you have a number of point objects in your model and you would like to replace them with a block so they appear as markers.  How can this be done without running the Insert command a bunch of times?

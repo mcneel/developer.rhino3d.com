@@ -13,12 +13,7 @@ keywords: ['rhino', 'layer', 'printing']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You could like to print a layer's full path.  That is, if a layer "MyLayer"”" is nested, I would like to print out the nesting like this:

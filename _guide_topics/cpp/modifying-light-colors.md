@@ -13,12 +13,7 @@ keywords: ['rhino', 'light', 'color']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The process for modifying a light object is slightly different than the process for modifying other geometric objects, such as points, curves, and surfaces.  This is because light objects are stored in a different location in the Rhino document.

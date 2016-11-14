@@ -13,12 +13,7 @@ keywords: ['rhino']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The Rhino C/C++ SDK has a number of CRhinoGet derived classes that you can use to interactively get information from the user.  Some of these classes include:

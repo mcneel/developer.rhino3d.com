@@ -12,12 +12,7 @@ keywords: ['RhinoCommon', 'C/C++', 'Rhino', 'Toolbar', 'Plugin']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Question
 
 How can I create one or more toolbars for my plugin, and how can I deploy these toolbars with my plugin?

@@ -12,12 +12,7 @@ keywords: ['C/C++', 'Rhino', 'Plugin']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Super high resolution displays are now common on Windows-based systems, and those using Rhino expect it and 3rd party plugins to display correctly on them. Plugin developers need to make sure their applications are DPI–aware. DPI-aware plugins adjust UI elements to scale appropriately to the system DPI. Plugins that are not DPI–aware, but are running on a high-DPI display setting, can suffer from many visual artifacts, including incorrect scaling of UI elements, clipped text, and blurry images.

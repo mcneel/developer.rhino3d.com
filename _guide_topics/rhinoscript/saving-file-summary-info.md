@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 When you right-click on a file, using Windows Explorer, and pick “Properties...”, to bring up the File Properties dialog, you can add summary information to a file by clicking on the Summary tab and entering the appropriate information.  Imagine you would like to do this when saving Rhino files. Rhino does not have this capability, but RhinoScript can help.

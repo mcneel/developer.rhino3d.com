@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Imagine you wish to list of lengths for a selected series of curves.  The Length command gives a composite length and the list command does not give the curve lengths.  You can work around these limitations with a RhinoScript.

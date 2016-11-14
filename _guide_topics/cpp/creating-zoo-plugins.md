@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs to be compared to RhinoCommon version'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Zoo lets third party plugin developers add licensing support for their products to the Zoo.

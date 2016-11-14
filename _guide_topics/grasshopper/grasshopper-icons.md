@@ -13,12 +13,7 @@ keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Vector Source
 
 <a href="{{ site.baseurl }}/files/Grasshopper_Icon_Set.zip"><span class="glyphicon glyphicon-download"></span></a> [Grasshopper_Icon_Set.zip]({{ site.baseurl }}/files/Grasshopper_Icon_Set.zip)

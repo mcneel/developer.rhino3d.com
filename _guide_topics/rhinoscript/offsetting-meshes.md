@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 RhinoScript can generate a closed mesh as a result of a base mesh and an offset.  Rhino's *OffsetMesh* command does this task very well if you use the solidify option, but RhinoScript's `MeshOffset` function does not have this option.  Let's take a look at creating a solid mesh with RhinoScript...

@@ -13,12 +13,7 @@ keywords: ['rhino', 'orient']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Rhino orients objects onto a surface by defining a rotation transformation.  With the Rhino C/C++ SDK, you define transformations with the `ON_Xform` class.  See *opennurbs_xform.h* for details.  The transformation that is defined rotates objects from one plane to another.  The source plane is defined from the active view's construction plane and a user-selected base point.  The target plane is defined by the location the user picks on the surface.

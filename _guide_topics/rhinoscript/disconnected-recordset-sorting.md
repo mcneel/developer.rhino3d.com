@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 If you are dealing with data which requires more than just key-value pairs and fits best in 2-D array, and you wanted to perform sorting and filtering on it, then Disconnected Recordsets will be an excellent option.

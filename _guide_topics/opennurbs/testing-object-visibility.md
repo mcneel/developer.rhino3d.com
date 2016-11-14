@@ -13,12 +13,7 @@ keywords: ['openNURBS', 'object', 'visibility']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Question
 
 I have created a sample model this has a parent layer and a sublayer.  If I add objects to each of these two layer and then turn off the parent layer in Rhino, the objects on both layers do not appear.  But, when I read the .3DM file using openNURBS, the objects on the sublayer report as being visible.  How can I correctly detect the visibility of an object?

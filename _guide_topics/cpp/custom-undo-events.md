@@ -13,12 +13,7 @@ keywords: ['rhino', 'undo']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The Rhino C/C++ SDK supports adding custom undo events.  This way plugins can take advantage of Rhino's built in *Undo*, *Redo*, *UndoSelected*, *UndoMultiple*, *RedoMultiple* and *ClearUndo* commands, and any future Rhino commands that deal with undo/redo operations.

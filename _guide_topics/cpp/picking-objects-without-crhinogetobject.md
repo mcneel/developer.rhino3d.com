@@ -13,12 +13,7 @@ keywords: ['rhino', 'picking']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Imagine you  have a 3D point, now you want to pick all the objects that are underneath it.

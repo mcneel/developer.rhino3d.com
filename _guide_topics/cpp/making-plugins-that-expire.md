@@ -13,12 +13,7 @@ keywords: ['rhino']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to release a work-in-progress, or WIP, version of your plugin so you can get some customer feedback before shipping.  You would like the plugin to expire after a number of days.  Is there something in Rhino that could help with this?

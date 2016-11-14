@@ -13,12 +13,7 @@ keywords: ['openNURBS', 'reading', 'render', 'mesh']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 If you are developing software to read .3dm files, you might find that the software only *seems* to read NURBS data; but render meshes are ignored.  We do provide methods for third-party developers to read render meshes from .3dm files.
 
 An object's render meshes are stored on that object. For example, the render meshes for an `ON_Brep` object are stored on that brep. The developer can obtain an object's render meshes from a brep by calling `ON_Brep:GetMesh`.

@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Slow Comparison
 
 Imagine you have two collections of items and you want to determine how many of those items have the same name.  In short, you want to compare the contents of two arrays.  Consider this straightforward method of comparison:

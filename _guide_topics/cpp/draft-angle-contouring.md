@@ -13,12 +13,7 @@ keywords: ['rhino', 'contour']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Rhino's draft angle analysis is very useful.  However, it would be great it it could create contour curves at specific angles.  For example:

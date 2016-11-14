@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs to be reviewed and consolidated with other plugin guides'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Rhino plugins are Windows Dynamic Link Libraries, or DLLs.  As such, Rhino uses Windows to load your plugin.  Rhino attempts to load your plugin, and any dependent DLLs, in the following manner:

@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Linear regression is a method to best fit a linear equation, or a straight line, of the form $$y(x) = a + bx$$ to a collection of n points $$(x, y)$$, where $$b$$ is the slope and $$a$$ the intercept on the y-axis.

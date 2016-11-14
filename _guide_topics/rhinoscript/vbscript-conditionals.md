@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 You can control the flow of your script with conditional statements and looping statements.  Using conditional statements, you can write VBScript code that makes decisions and repeats actions.  The following conditional statements are available in VBScript:

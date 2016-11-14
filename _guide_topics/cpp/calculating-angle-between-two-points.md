@@ -13,12 +13,7 @@ keywords: ['rhino', 'angle', 'vector', 'points']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 For two sets of 3D vectors, you can use the method demonstrated in [Calculate the Angle Between Two Vectors ]({{ site.baseurl }}/samples/cpp/calculate-the-angle-between-two-vectors/) to calculate the angle between them.  The results for both are always the same - 45 degree in this case.  For example:

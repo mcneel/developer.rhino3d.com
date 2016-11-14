@@ -13,12 +13,7 @@ keywords: ['rhino', 'blocks']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Rhino blocks, known in the SDK as instances, are single objects that combine one or more objects.  Using blocks lets you:

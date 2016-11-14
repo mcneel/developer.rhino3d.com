@@ -13,12 +13,7 @@ keywords: ['rhino', 'group', 'copy']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 When you duplicate a Rhino object which happens to be a member of a group, the duplicate object is (also) a member of that same group.  Is there a quick way to duplicate a Rhino object and have the duplicated object be a member of a new group?

@@ -13,12 +13,7 @@ keywords: ['rhino', 'curve']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Curve objects can be added to Rhino by using the following functions found on `CRhinoDoc`:

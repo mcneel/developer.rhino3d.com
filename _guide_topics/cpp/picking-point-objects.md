@@ -13,12 +13,7 @@ keywords: ['rhino', 'point', 'picking']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## How To
 
 If you need the user to define a 3D point location, you can use a `CRhinoGetPoint` object.  But, if the points already exist as objects in Rhino, you will need to use a `CRhinoGetObject` object to pick them.  Then, you can determine the 3D coordinates of that point object, for example:

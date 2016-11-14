@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 If you have a text file saved as UTF-8, sometimes - when you read the file - it reads in weird characters and not the correct characters.  This happens often when the files contain Chinese characters.  How can you make it read the correct characters?

@@ -13,12 +13,7 @@ keywords: ['rhino', 'layers']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to create a "sublayer" (or a "child layer") of a parent layer.

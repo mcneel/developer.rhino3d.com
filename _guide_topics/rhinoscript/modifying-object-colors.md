@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Changing object colors using Rhino's properties command can be slow when assigning colors to lots of objects.  Imagine you would like to assign randomized colors across multiple objects or pick two colors and have Rhino generate all the blend colors.  All of this is possible with RhinoScript.

@@ -13,12 +13,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin', 'installing']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 It is presumed you have a plugin that successfully builds and runs already.  If you are not there yet, see [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-mac).
 
 ## Overview

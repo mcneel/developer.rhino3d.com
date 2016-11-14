@@ -13,12 +13,7 @@ keywords: ['rhino', 'curve']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Given an `ON_Curve`, how can one determine which kind of `ON_Curve`-derived object it really is?  (e.g. `ON_LineCurve`, `ON_ArcCurve`, `ON_PolylineCurve`, `ON_PolyCurve`, `ON_NurbsCurve`, etc.)?

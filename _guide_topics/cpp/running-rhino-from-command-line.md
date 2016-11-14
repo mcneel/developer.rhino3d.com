@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs to be reclassified as a General guide if we can add macOS specifics'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Under some circumstances, it is useful to run Rhino from the command prompt.  Perhaps you are batch processing many files, or maybe you need to run Rhino from a render farm management system.  Rhino provides command line options (arguments) to allow you to do exactly this.

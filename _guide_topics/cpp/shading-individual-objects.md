@@ -13,12 +13,7 @@ keywords: ['rhino', 'shading']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The drawing display pipeline technology provides both users and developers great flexibility and control over how objects are drawn on the screen.  One of the features available is the ability to have objects draw using different display modes in the same viewport.  For example, it is possible for a viewport to display both wireframe and shaded objects at the same time.

@@ -13,12 +13,7 @@ keywords: ['rhino', 'properties', 'icon']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 In Rhino, the object properties dialog shows a list of icons that allows you to select between the available properties pages.  You would like to add a custom icon to the object properties dialog when your plugin adds a custom page.

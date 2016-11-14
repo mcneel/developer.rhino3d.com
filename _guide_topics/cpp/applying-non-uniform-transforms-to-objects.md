@@ -13,12 +13,7 @@ keywords: ['rhino', 'transformations', 'non-uniform']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Discussion
 
 Imagine you are trying to apply a non-uniform scale to a cylinder.  If the same scale operation is applied to another object type, it works as expected; but not a cylinder.  Why?

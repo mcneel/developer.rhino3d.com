@@ -13,12 +13,7 @@ keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Grasshopper is an application that deals with a lot of different types of data.  These data types can come from 6 different sources and some of them will not be known when Grasshopper is written and compiled.  The six potential sources are:

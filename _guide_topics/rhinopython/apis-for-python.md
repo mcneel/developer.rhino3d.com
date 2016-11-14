@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs reorganization with regard to other guides'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## RhinoScriptSyntax
 
 RhinoScriptSyntax is divided into [modules](/api/RhinoScriptSyntax/win) and each module contains functions that are meant to duplicate the functionality provided by the RhinoScript language that's supported in Rhino for Windows.[^1].  In other words this is a Python equivalent of those RhinoScript functions so if you are familiar with RhinoScript in Rhino for Windows the transition to Python in Rhino for the Mac should be natural.  Not all of the RhinoScript functions have been added yet but this document will be updated as more functions are added.

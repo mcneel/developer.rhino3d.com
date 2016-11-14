@@ -13,9 +13,6 @@ layout: toc-guide-page
 TODO: 'needs review'
 ---
 
-# What's New?
-
-{{ page.description }}
 
 ## Overview
 

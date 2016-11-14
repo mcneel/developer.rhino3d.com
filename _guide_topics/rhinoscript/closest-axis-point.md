@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You have a bunch of 2-D curves that are planar to the world x-y plane, and you need to find a point in each curve that is closest to the world y-axis.  For example:

@@ -13,12 +13,7 @@ keywords: ['rhino', 'leaders']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## How To
 
 Leaders in Rhino are defined by the `ON_Leader2` class.  To construct a leader, you must provide:

@@ -13,12 +13,7 @@ keywords: ['rhino', 'brep']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to determine whether or not a polysurface is a (brep) box.

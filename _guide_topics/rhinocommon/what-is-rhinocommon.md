@@ -13,12 +13,7 @@ keywords: ['RhinoCommon', 'What']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 RhinoCommon is the cross-platform .NET plugin SDK available for:
 
 - Rhino 5 for Windows (both 32 and 64-bit versions)

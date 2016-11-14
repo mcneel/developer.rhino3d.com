@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs to be reviewed to check to see if steps are up to date.  New screencaptures as well.'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 With the Rhino C/C++ SDK, it is possible to write plugins that extend the RhinoScript scripting tool.  In order to do this, a plugin must do the following:

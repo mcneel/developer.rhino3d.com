@@ -13,12 +13,7 @@ keywords: ['rhino', 'registry', 'settings']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Your plugin maintains a number of settings that need to be retained between sessions.  Is there an easy way to do this?  Do these setting migrate from one Rhino service release to another?

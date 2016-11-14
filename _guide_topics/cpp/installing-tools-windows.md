@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs to be written.'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C/C++ plugins using the Rhino C/C++ SDK on Windows.
 
 ## Prerequisites

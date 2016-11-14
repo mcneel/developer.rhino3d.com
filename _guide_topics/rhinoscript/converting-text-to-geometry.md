@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You have many text elements that you would like to convert to text objects (geometry) for engraving.  You can explode a text element and get curves that outline the text.  The problem is, when you change a text element to a single stroke font, it automatically closes each letter/number and is unreadable.  The only way you have been able to make a single stroke font work is by creating geometry using Rhino's TextObject command.  However, because you have so many text elements it would take forever to remake geometry for each of them.  It is possible to write a script to automate this.

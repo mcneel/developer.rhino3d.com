@@ -15,12 +15,7 @@ TODO: 'needs porting - see additional TODO'
 ---
 
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Creating a plugin installer is easy.  The basic steps to "authoring" a plugin installer are as follows...

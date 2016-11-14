@@ -14,12 +14,7 @@ layout: toc-guide-page
 TODO: 'needs review and more explanatory content.'
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Broadly speaking, there are five concepts that are important to understand when dealing with materials, textures, and mappings:

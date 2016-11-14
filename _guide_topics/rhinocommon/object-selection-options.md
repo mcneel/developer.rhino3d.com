@@ -13,12 +13,7 @@ keywords: ['RhinoCommon', 'Object', 'Selection', 'Options']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## GetObject
 
 RhinoCommon's [GetObject class]({{ site.baseurl }}/api/RhinoCommon/html/T_Rhino_Input_Custom_GetObject.htm) has a few properties and methods that you need to use, including:

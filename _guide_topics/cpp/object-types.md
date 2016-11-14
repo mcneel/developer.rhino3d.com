@@ -13,12 +13,7 @@ keywords: ['rhino', 'objects']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 `CRhinoObject` is the base class for all runtime Rhino geometric objects.  `ON_Geometry` is the base class for all geometry class.  All `CRhinoObject` derived object maintain a `ON_Geometry` derived class as a data member.

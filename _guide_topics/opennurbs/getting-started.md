@@ -13,12 +13,7 @@ keywords: ['openNURBS', 'C#', '.NET', 'Rhino3dmIO']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Prerequisites
 
 openNURBS is intended for *skilled* C++ and .NET developers. Please read [What is openNURBS?]({{ site.baseurl }}/guides/opennurbs/what-is-opennurbs) if you have not already.  It is also presumed that you have an application that wishes to access *3dm* files outside of Rhinoceros.

@@ -13,12 +13,7 @@ keywords: ['rhino', 'NURBS', 'curve', 'length']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You may run into problems determining the length of an `ON_NurbsCurve` created by calling `ON_Curve::GetNurbForm`.  The following block of code only gets the length of the `ON_Curve` object, not the ON_NurbsCurve object.

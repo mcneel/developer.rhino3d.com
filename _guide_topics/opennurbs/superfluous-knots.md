@@ -13,12 +13,7 @@ keywords: ['openNURBS', 'knots']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Question
 
 How is the representation of knot vector in openNURBS different from that in OpenGL's NURBS renderer?  In openNURBS, the formula is:

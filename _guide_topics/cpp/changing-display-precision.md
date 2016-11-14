@@ -13,12 +13,7 @@ keywords: ['rhino', 'display', 'precision']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Rhino has a document display precision - the "display precision" option found in the *Units* page in the *Options* dialog.  Imagine you want to modify this using C/C++ from your plugin.

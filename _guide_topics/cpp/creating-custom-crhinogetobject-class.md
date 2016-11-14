@@ -13,12 +13,7 @@ keywords: ['rhino', 'picking']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The `CRhinoGetObject` class that is used for interactively picking one or more objects is a large, full-featured class (see *rhinoSdkGetObject.h* for details). But, on occasion, the class does not offer enough options.  For example, `CRhinoGetObject` is capable of picking curve objects.  But, it is not capable of picking polyline curve objects that are closed.  When the required object filtering exceeds the capabilities of the base class, it's time to derive your own.

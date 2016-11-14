@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 It is often useful to show the curvature of a curve with a color index. For example, if you divide a curve into 500 points and measure the curvature at each point, you can assign a “curvature radius” color to each of the points using RhinoScript.  Let's take a look at house this is done.

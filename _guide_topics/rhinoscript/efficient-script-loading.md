@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## LoadScript and RunScript
 
 When running a script from a toolbar button, is it better to use the *LoadScript* command or *RunScript* command?  Which is better for Rhino, resource wise?

@@ -13,12 +13,7 @@ keywords: ['rhino', 'custom', 'grip']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Imagine you are trying to wrote code to pick grip objects, and you want that only grips at the boundary of a mesh to be selectable.  You might have just spent a considerable amount of time trying to get the following to work:

@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 When running a RhinoScript, it often occurs that a user wants to interrupt a running RhinoScript by pressing <kbd>ESC</kbd>.  This most frequently happens when running a script with a tight loop or a recursive function.  In order to cancel the script, we want to allow the user to press <kbd>ESC</kbd>, rather than having to stop Rhino using Task Manager and restart everything.  There are two topics to cover: Sleep and OnCancelScript.

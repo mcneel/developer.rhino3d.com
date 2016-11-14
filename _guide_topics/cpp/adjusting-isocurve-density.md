@@ -13,12 +13,7 @@ keywords: ['rhino', 'isocurve']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 When creating a new surface from a selected curve, it is always a single isocurve crossing the surface.  One has  to adjust isocurve density after the fact from Rhino's Properties window.   It is possible to do this automatically from a plugin?

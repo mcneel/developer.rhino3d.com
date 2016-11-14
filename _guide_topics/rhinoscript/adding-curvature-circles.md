@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 Rhino's Curvature command is very useful for analyzing the curvature at a point on a curve.  This script shows how to add the circle to the document when the curve is picked (instead of just drawing it dynamically).

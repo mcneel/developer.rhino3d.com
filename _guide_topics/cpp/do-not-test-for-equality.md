@@ -13,12 +13,7 @@ keywords: ['rhino', 'floating point']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## A Warning
 
 You almost never want to write code like the following:

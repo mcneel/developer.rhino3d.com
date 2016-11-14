@@ -13,12 +13,7 @@ keywords: ['developer', 'rhino', 'NURBS', 'geometry']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## What is NURBS Geometry?
 
 NURBS curves and surfaces behave in similar ways and share terminology. Since curves are easiest to describe, we will cover them in detail. A NURBS curve is defined by four things: degree, control points, knots, and an evaluation rule.

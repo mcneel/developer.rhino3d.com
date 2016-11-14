@@ -13,12 +13,7 @@ keywords: ['RhinoMobile', 'iRhino 3D']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Android Devices
 
 In order to debug your code on an Android device, you must enable USB debugging on the device. This mode makes your device somewhat more vulnerable to damage - from you and from others - so it should be used with caution. You can enable and disable it between development sessions if you like.

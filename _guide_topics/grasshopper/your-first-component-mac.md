@@ -12,12 +12,7 @@ keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Prerequisites
 
 Grasshopper for Mac only exists in the RhinoWIP until the next major version of Rhino for Mac is released.  

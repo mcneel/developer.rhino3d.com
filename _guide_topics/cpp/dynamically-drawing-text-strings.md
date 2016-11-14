@@ -13,12 +13,7 @@ keywords: ['rhino', 'text']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 On occasion, it is useful to dynamically display some text while in the middle of a point picking operation.  Rhino's `VariableFilletSrf` command is a good example of a command that does this.

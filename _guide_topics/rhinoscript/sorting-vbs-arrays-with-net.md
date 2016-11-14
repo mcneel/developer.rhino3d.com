@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 One of the big limitations in VBScript is that there is no easy way to sort a list of items.  To put a list in alphabetical order requires you to either use the pre-canned RhinoScript methods, such as `SortNumbers`, `SortPoints` or `SortStrings`, or write a sorting function of your own, like the following bubble sort code:

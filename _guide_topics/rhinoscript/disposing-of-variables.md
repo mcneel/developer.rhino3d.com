@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 VBScript’s garbage collector runs at the end of every statement and procedure, and does not do a search of all memory. Rather, it keeps track of everything allocated in the statement or procedure; if anything has gone out of scope, it frees it immediately.

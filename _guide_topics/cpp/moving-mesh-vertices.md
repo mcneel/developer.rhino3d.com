@@ -13,12 +13,7 @@ keywords: ['rhino', 'mesh', 'vertices']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You would like to modify a particular point, or vertex, of `CRhinoMeshObject` object.

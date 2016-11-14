@@ -13,12 +13,7 @@ keywords: ['rhino', 'transform']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 The `CRhinoViewport` class has two member functions, `GetModelXform()` and `SetModelXform()`, that either retrieve or modify the model transformation matrix that is applied to objects before they are drawn.  The model transformation matrix is intended to be used for dynamic drawing of objects.  Note, the default model transformation matrix is the identity.

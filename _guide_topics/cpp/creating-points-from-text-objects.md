@@ -13,12 +13,7 @@ keywords: ['rhino', 'points', 'text', 'objects']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 Imagine you have many text elements that display numeric values that identify elevation and you would like to convert these elements to points objects using the C/C++.  The text elements denote the elevations of the locations and you would like create the 2D point by the location of the text and then use the number of the text as the z-coordinate.

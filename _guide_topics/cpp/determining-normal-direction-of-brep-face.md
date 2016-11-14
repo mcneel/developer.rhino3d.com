@@ -13,12 +13,7 @@ keywords: ['rhino', 'normal', 'brep']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 To determine the normal direction of a surface, you can use one of the following functions:

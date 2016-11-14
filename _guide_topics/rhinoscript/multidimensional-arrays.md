@@ -13,12 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Overview
 
 VBScript supports two kinds of multidimensional arrays, called rectangular and ragged.  Why are there two types of multidimensional arrays? What is the difference between the (x)(y) and (x,y) notation?  We will cover these questions as well as talk about resizing multidimensional arrays.

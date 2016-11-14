@@ -13,12 +13,7 @@ keywords: ['rhino', 'project', 'curve', 'brep']
 layout: toc-guide-page
 ---
 
-# {{ page.title }}
-
-{% include byline.html %}
-
-{{ page.description }}
-
+ 
 ## Problem
 
 You want to project curves onto a brep, but you do not function any C/C++ function to do this.  Is there a solution for this?
