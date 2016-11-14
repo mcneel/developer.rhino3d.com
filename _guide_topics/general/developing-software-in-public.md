@@ -68,7 +68,7 @@ Whenever we’ve got a build that is ready to go out to customers, we deploy (or
 This includes releasing ...
 
 - [Downloadable installers](http://www.rhino3d.com/download)
-- [SDKs](http://developer.mcneel.com)
+- SDKs
 - Documentation (this here site)
 
 ...and making public announcements by email, blogs, and social media.
