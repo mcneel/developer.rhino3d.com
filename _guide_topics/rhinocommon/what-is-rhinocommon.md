@@ -13,7 +13,7 @@ keywords: ['RhinoCommon', 'What']
 layout: toc-guide-page
 ---
 
- 
+
 RhinoCommon is the cross-platform .NET plugin SDK available for:
 
 - Rhino 5 for Windows (both 32 and 64-bit versions)
@@ -24,7 +24,7 @@ RhinoCommon is the cross-platform .NET plugin SDK available for:
 The term _common_ is meant to be just that: an SDK that can be used across Rhino platforms. A plugin built with RhinoCommon could potentially run on both Windows and Mac platforms with no changes...
 
 <div align="center">
-  <img src="{{ site.baseurl }}/images/rhinocommon_one_binary_two_platforms.png">
+  <img src="{{ site.baseurl }}/images/rhinocommon-one-binary-two-platforms.png">
 </div>
 
 {::options parse_block_html="true" /}

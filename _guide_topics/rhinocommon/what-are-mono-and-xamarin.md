@@ -13,7 +13,7 @@ keywords: ['Mono', 'Xamarin', '.NET', 'Microsoft']
 layout: toc-guide-page
 ---
 
- 
+
 ---
 
 ## Mono
@@ -27,7 +27,7 @@ The Mono project has been in active development for [over a decade](https://en.w
 Mono allows C# developers to write cross platform code targeting Windows, macOS, Linux, Android, and iOS.  What this means for Rhino plugin developers is that they can - if written properly - run the same RhinoCommon plugin in *both* Rhino for Windows *and* Rhino for Mac...
 
 <div align="center">
-  <img src="{{ site.baseurl }}/images/rhino_mono_one_binary_two_platforms.png">
+  <img src="{{ site.baseurl }}/images/rhino-mono-one-binary-two-platforms.png">
 </div>
 
 {::options parse_block_html="true" /}
