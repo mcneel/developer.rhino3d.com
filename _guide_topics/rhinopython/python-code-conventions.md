@@ -1,13 +1,13 @@
 ---
-title: VBScript Code Conventions
-description: This guide provides an overview of VBScript coding conventions.
+title: Python Code Conventions
+description: This guide provides an overview of Python coding conventions.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
-languages: ['VBScript']
-platforms: ['Windows']
+apis: ['RhinoPython']
+languages: ['Python']
+platforms: ['Mac', 'Windows']
 categories: ['Fundamentals']
-origin: http://wiki.mcneel.com/developer/vbsconventions
+origin:
 order: 100
 keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
@@ -24,20 +24,7 @@ Coding conventions are suggestions designed to help you write VBScript and Rhino
 
 The main reason for using a consistent set of coding conventions is to standardize the structure and coding style of a script or set of scripts so that you and others can easily read and understand the code.  Using good coding conventions results in clear, precise, and readable source code that is consistent with other language conventions and is intuitive.
 
-## Constant Naming
-
-Earlier versions of VBScript had no mechanism for creating user-defined constants.  Constants, if used, were implemented as variables and distinguished from other variables using all uppercase characters.  Multiple words were separated using the underscore `_` character.  For example:
-
-```vbnet
-USER_LIST_MAX
-NEW_LINE
-```
-
-While this is still an acceptable way to identify your constants, you may want to use an alternative naming scheme now that you can create true constants using the `Const` statement.  This convention uses a mixed-case format in which constant names have a "con" prefix.  For example:
-
-```vbnet
-conYourOwnConstant
-```
+For the official very detailed documentation on Python Syntax, see the [Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
 
 ## Variable Naming
 
@@ -60,18 +47,6 @@ To enhance readability and consistency, use the following prefixes with descript
 |
 {: rules="groups"}
 
-## Variable Scope
-
-Variables should always be defined with the smallest scope possible.  VBScript variables can have the following scope:
-
-| Scope | | | |  Where Variable Is Declared | | | | Visibility |
-|:--------|:-:|:-:|:-:|:--------|:-:|:-:|:-:|:--------|
-| Procedure-level   | | | | Event, Function, or Sub procedure.   | | | | Visible in the procedure in which it is declared.   |
-| Script-level   | | | | Outside any procedure.   | | | | Visible in every procedure in the script.   |
-|=====
-|
-{: rules="groups"}
-
 ### Variable Scope Prefixes
 
 As script size grows, so does the value of being able to quickly differentiate the scope of variables.  A one-letter scope prefix preceding the type prefix provides this, without unduly increasing the size of variable names.
@@ -84,30 +59,37 @@ As script size grows, so does the value of being able to quickly differentiate t
 |
 {: rules="groups"}
 
-## Descriptive Names
+
+## Names and Capitailzation
+
+In Python names are used as identifiers of functions, classes, variables, etc....  Idetifiers must start with a Letter (A-Z) or an underscore ("_"), followed by more letters or numbers.
+
+Python does not allow characters such as @, $, and % within identifier names.
+
+Python is case sensative.  So "selection" and " Selection" are two different identifiers. Normally class names will capaital letters and other identifiers will be all lower case.  It is also common practice to start private identifiers with an underscore.
 
 The body of a variable or procedure name should use mixed case and should be as descriptive as necessary.  Also, procedure names should begin with a verb, such as `InitNameArray` or `ValidateLayer`.
 
 For frequently used or long terms, standard abbreviations are recommended to help keep name length reasonable.  In general, variable names greater than 32 characters can be difficult to read.  When using abbreviations, make sure they are consistent throughout the entire script.  For example, randomly switching between `Cnt` and `Count` within a script or set of scripts may lead to confusion.
 
-## Code Commenting
+Best practices for all Python naming can be found in the (Style Guide for Python Naming Conventions)[https://www.python.org/dev/peps/pep-0008/#naming-conventions] 
 
-All procedures should begin with a brief comment describing what they do.  This description should not describe the implementation details (how it does it) because these often change over time, resulting in unnecessary comment maintenance work, or worse, erroneous comments.  The code itself and any necessary inline comments describe the implementation.
+## Comments in Python
 
-Arguments passed to a procedure should be described when their purpose is not obvious and when the procedure expects the arguments to be in a specific range.  Return values for functions and variables that are changed by a procedure, especially through reference arguments, should also be described at the beginning of each procedure.
+Commments in Pythons are used to leave notes in the code to better explain what is happeing in the code.  Comments are ignored by the interpreter during compile.
 
-Procedure header comments should include the following section headings:
+Python commanets are started with a hash (#) sign.  The hash sign can be used at the start of a line, followed by a single line comment.  This is considered a blank line by the interpreter.
 
-| Heading | | | |  Comment Contents |
-|:--------|:-:|:-:|:-:|:--------|
-| Purpose   | | | | What the procedure does (not how).   |
-| Assumptions   | | | | List of any external variable, control, or other element whose state affects this procedure.   |
-| Effects   | | | | List of the procedure's effect on each external variable, control, or other element.   |
-| Inputs   | | | | Explanation of each argument that is not obvious. Each argument should be on a separate line with inline comments.   |
-| Return Values   | | | | Explanation of the value returned.   |
-|=====
-|
-{: rules="groups"}
+```python
+# My first comment
+# this is a second line to this comment
+# use multiple hash characters to make multipline comments
+```
+A hash sign can also be added at the end of a line of code.  After the hash sign add the comment.  To Python this is considered an end of statement character also.
+
+```python
+print "Hello, World!" # the second comment that I make
+```
 
 Remember the following points:
 
@@ -115,44 +97,72 @@ Remember the following points:
 - Variables, controls, and procedures should be named clearly to ensure that inline comments are only needed for complex implementation details.
 - At the beginning of your script, you should include an overview that describes the script, enumerating objects, procedures, algorithms, dialog boxes, and other system dependencies.  Sometimes a piece of pseudocode describing the algorithm can be helpful.
 
+## Block Statements
+
+Python does not use braces to denote block statement.  Block statements are created using whitespace to the left of the lines within the block.  Each following line within the block must have the same amount of white space.
+
+A good example is an if block. For example −
+
+```python
+if True:
+    print "Your answer is True."
+else:
+  print "Your answer is False."
+```
+
+However, the following block generates an error −
+
+```python
+if True:
+    print "You are "
+    print "correct"
+else:
+    print "You are not"
+  print "correct"
+```  
+
+You may also see the use of the colon (:) in the statments above. The colon is used for compound code statements (suites in Python) such as if, while loops.
+
+## Whitepace
+
+While Python can interpret both tabs and spaces as whitespace to the left of a statment, it is reccomended that spaces are used.  Common practice is to use 4 spaces to denote an indentation. 
+
+
 ## Code Formatting
 
 Screen space should be conserved as much as possible, while still allowing code formatting to reflect logic structure and nesting.  Here are a few suggestions:
 
-- Indent standard nested blocks two spaces.
+- Indent standard nested blocks four spaces.
 - Indent the overview comments of a procedure one space.
 - Indent the highest level statements that follow the overview comments two spaces, with each nested block indented an additional two spaces.
 
 ## In Sum
 
-The following code adheres to VBScript coding conventions:
+The following code adheres to Python coding conventions:
 
-```vbnet
-'****************************************************
-' Purpose: Locates the first occurrence of a specified
-'          layer in the LayerList array.
-' Inputs:  arrLayerList: the list of layers to be searched.
-'          strTargetLayer: the name of the layer to search for.
-' Returns: The index of the first occurrence of the
-'          strTargetLayer in the strLayerList array.
-'          If the target layer is not found, return -1.
-'****************************************************
+```python
+#****************************************************
+# Purpose: Locates the first occurrence of a specified
+#          layer in the LayerList array.
+# Inputs:  arrLayerList: the list of layers to be searched.
+#          strTargetLayer: the name of the layer to search for.
+# Returns: The index of the first occurrence of the
+#          strTargetLayer in the strLayerList array.
+#          If the target layer is not found, return -1.
+#****************************************************
+include rhinoscript as rs
 
-Option Explicit
-
-Function FindLayer(arrLayerList, strTargetLayer)
-  Dim i          ' Loop counter.
-  Dim blnFound   ' Target found flag
+def FindLayer(arrLayerList, strTargetLayer)
+  
   FindLayer = -1 ' Default return value
   i = 0          ' Initialize loop counter
-  Do While i <= UBound(arrLayerList) And Not blnFound
+  
+  While i <= UBound(arrLayerList) And Not blnFound
     If arrLayerList(i) = strTargetLayer Then
       blnFound = True ' Set flag to True
       FindLayer = i   ' Set return value to loop count
     End If
     i = i + 1         ' Increment loop counter
-  Loop
-End Function
 ```
 
 ---

@@ -5,7 +5,7 @@ authors: ['Dale Fugier']
 author_contacts: ['dale']
 apis: ['RhinoPython']
 languages: ['Python']
-platforms: ['Mac' 'Windows']
+platforms: ['Mac', 'Windows']
 categories: ['Fundamentals']
 origin:
 order: 3
@@ -21,13 +21,13 @@ When a variable is stored in memory, the interpreter will allocate a certain amo
 
 In Python, variables are always one of the five fundamental data types: 
 
-* Numbers
-* String
-* List
-* Tuple
-* Dictionary
+* [Numbers]({{ site.baseurl }}/guides/rhinopython/python-datatypes/#numbers)
+* [String]({{ site.baseurl }}/guides/rhinopython/python-datatypes/#string)
+* [List]({{ site.baseurl }}/guides/rhinopython/python-datatypes/#list)
+* [Tuple]({{ site.baseurl }}/guides/rhinopython/python-datatypes/#tuple)
+* [Dictionary]({{ site.baseurl }}/guides/rhinopython/python-datatypes/#dictionary)
 
-For a detailed look at each variable type see (Python Variable Types)({{ site.baseurl }}/guides/rhinopython/python-datatypes/) in this guide.
+For a detailed look at each variable type see [Python Variable Types]({{ site.baseurl }}/guides/rhinopython/python-datatypes/) in this guide.
 
 While each variable has its own properties and methods, there are common methods we use to deal with all varaiable in Python.
 
@@ -152,33 +152,7 @@ B = [1, 23, 45, 67] # this list creates an initial list of 4 numbers.
 C = [2, 4, 'john'] # lists can contain different variable types.
 ```
 
-All lists in Python are zero-based indexed. When referencing a member or the legnth of a list the number of list elements is always the number shown plus one.
-
-```python
-mylist = ['Rhino', 'Grasshopper', 'Flamingo', 'Bongo']
-B = Len(Mylist) # This will return 3. The index is 0 - 3.
-print = Mylist[1] # This will return the value at index 1, which is 'Grasshopper'
-print = mylist[0:2] # This will return the first 3 elements in the list.
-```
-
-You can assign data to a sepcific element of the list using an index into the list. The list index starts at zero. Data can be assigned to the elements of an array as follows:
-
-```python
-mylist[0] = 'Rhino'
-mylist[1] = 'Grasshopper'
-mylist[2] = 'Flamingo'
-mylist[3] = 'Bongo'
-```
-
-Lists aren't limited to a single dimension. Although most people can't comprehend more than three or four dimensions. You can declare multiple dimensions by separating an with commas.  In the following example, the MyTable variable is a two-dimensional array :
-
-```python
-MyTable = [[], []]
-```
-
-In a two-dimensional array, the first number is always the number of rows; the second number is the number of columns.
-
-For a detailed look at managing lists, take a look at the article (TutorialPoint Python Lists)[https://www.tutorialspoint.com/python/python_lists.htm]
+For a detailed look at managing lists, take a look at the the [Python List Datatype Article]({{ site.baseurl }}/guides/rhinopython/python-datatypes/#list)
 
 ---
 
