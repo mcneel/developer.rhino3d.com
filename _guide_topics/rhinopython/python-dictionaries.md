@@ -1,5 +1,5 @@
 ---
-title: VBScript Dictionaries
+title: Python Dictionaries
 description: This guide discusses using VBScript's Dictionary object in RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
