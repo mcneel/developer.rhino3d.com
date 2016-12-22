@@ -12,7 +12,7 @@ order: 100
 keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
-
+<!-- TODO: This page is not a fundamental page, but it would be good to update for python. Currently this page is for VB. Use Python tri-catch to handle errors. -->
  
 ## Overview
 

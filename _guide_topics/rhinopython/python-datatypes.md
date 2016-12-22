@@ -128,23 +128,24 @@ For more information on Tuples, see the [TutorialPoint Python Tutorial on Tuples
 
 Dictionaries in Python are lists of `Key`:`Value` pairs. This is a very powerful datatype to hold a lot of related information that can be associated through `keys`. The main operation od a dictionary is to extract a value based on the `key` name. Unlike lists, where index numbers are used, dictionaries allow the use of a `key` to access its members.  Dictionaries can also be used to sort, iterate and compare data.
 
-Dictionaries are created by using braces ({}) with pairs seperated by a comma (,) and the key values associated with a colon(:). In Dictionaries the `Key` must be unique.
+Dictionaries are created by using braces ({}) with pairs seperated by a comma (,) and the key values associated with a colon(:). In Dictionaries the `Key` must be unique.  Here is a quick example on how ditionaires might be used:
 
 
 ```python
 room_num = {'john': 425, 'tom': 212}
 room_num['john'] = 645  # set the value associated with the 'john' key to 645
 print (room_num['tom']) # print the value of the 'tom' key.
-room_num['isaac'] = 345 # Add a new key 'isaac' witht he associated value
+room_num['isaac'] = 345 # Add a new key 'isaac' with the associated value
 print (room_num.keys()) # print out a list of keys in the dictionary
 print ('isaac' in room_num) # test to see if 'issac' is in the dictionary.  This returns true.
 ```
 
-Dictionaries can be more complex to understand, but they are great to store data that is easy to access.  To find out more about using dictionaries see the [Python Documenation on Dictionaries](https://docs.python.org/2/tutorial/datastructures.html#dictionaries)
+Dictionaries can be more complex to understand, but they are great to store data that is easy to access.  To find out more about using dictionaries see the [Python Fundamentals - Dictionaries]({{ site.baseurl }}/guides/rhinopython/python-dictionaries/)
 
 ---
 
 ## Related topics
 
 - [What are Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
-- [VBScript Variables]({{ site.baseurl }}/guides/rhinoscript/vbscript-variables/)
+- [Python Variables]({{ site.baseurl }}/guides/rhinopython/python-variables/)
+- [Python Dictionaries]({{ site.baseurl }}/guides/rhinopython/python-dictionaries/)

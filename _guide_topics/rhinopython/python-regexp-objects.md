@@ -13,6 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
+<!-- TODO: This page is not a fundamental page, but it would be good to update for python. Currently this page is for VB. Use Python "re" module for regular expression handling. -->
  
 ## Overview
 

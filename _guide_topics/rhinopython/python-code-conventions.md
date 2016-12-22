@@ -12,53 +12,19 @@ order: 100
 keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
-
  
 ## Overview
 
-Coding conventions are suggestions designed to help you write VBScript and RhinoScript code.  Coding conventions can include the following:
+Coding conventions are suggestions designed to help you write Python and RhinoScript code.  Coding conventions can include the following:
 
 - Naming conventions for objects, variables, and procedures
 - Commenting conventions
-- Text formatting and indenting guidelines
+- Code Block syntax
+- Whitespace (spaces vs tabs)
 
 The main reason for using a consistent set of coding conventions is to standardize the structure and coding style of a script or set of scripts so that you and others can easily read and understand the code.  Using good coding conventions results in clear, precise, and readable source code that is consistent with other language conventions and is intuitive.
 
 For the official very detailed documentation on Python Syntax, see the [Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
-
-## Variable Naming
-
-To enhance readability and consistency, use the following prefixes with descriptive names for variables in your VBScript code:
-
-| Subtype | | | |  Prefix | | | | Example |
-|:--------|:-:|:-:|:-:|:--------|:-:|:-:|:-:|:--------|
-| Array   | | | | arr   | | | | `arrLayers`   |
-| Boolean   | | | | bln   | | | | `blnFound`   |
-| Byte   | | | | byt   | | | | `bytRasterData`   |
-| Date (Time)   | | | | dtm   | | | | `dtmStart`   |
-| Double   | | | | dbl   | | | | `dblTolerance`   |
-| Error   | | | | err   | | | | `errOrderNum`   |
-| Integer   | | | | int   | | | | `intQuantity`   |
-| Long   | | | | lng   | | | | `lngDistance`   |
-| Object   | | | | obj   | | | | `objCurrent`   |
-| Single   | | | | sng   | | | | `sngAverage`   |
-| String   | | | | str   | | | | `strFirstName`   |
-|=====
-|
-{: rules="groups"}
-
-### Variable Scope Prefixes
-
-As script size grows, so does the value of being able to quickly differentiate the scope of variables.  A one-letter scope prefix preceding the type prefix provides this, without unduly increasing the size of variable names.
-
-| Scope | | | |  Prefix | | | | Example |
-|:--------|:-:|:-:|:-:|:--------|:-:|:-:|:-:|:--------|
-| Procedure-level   | | | | None   | | | | `dblVelocity`   |
-| Script-level   | | | | s   | | | | `sblnCalcInProgress`   |
-|=====
-|
-{: rules="groups"}
-
 
 ## Names and Capitailzation
 
@@ -126,7 +92,6 @@ You may also see the use of the colon (:) in the statments above. The colon is u
 ## Whitepace
 
 While Python can interpret both tabs and spaces as whitespace to the left of a statment, it is reccomended that spaces are used.  Common practice is to use 4 spaces to denote an indentation. 
-
 
 ## Code Formatting
 
