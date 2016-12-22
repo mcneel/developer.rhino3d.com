@@ -14,7 +14,7 @@ layout: toc-guide-page
 ---
 
  
-## RhinoScript Syntax Fundamentals
+## Overview
 
 The RhinoScriptSyntax methods library contains hundreds of easy-to-use functions that perform a variety of operations on Rhino.  The library allows Python to be aware of the Rhino application, its documents and objects.
 
@@ -33,6 +33,7 @@ The `import` above not only imports the library, but also renames the namespace 
 ```python
 rs.AddPoint(1,4,5)
 ```
+
 ## Geometry
 
 Although not required, having some understanding of the computational methods used in 3-D modeling and computer graphics can be helpful when using RhinoScriptSyntax. A good introductory resource is the [Essential Mathematics for Computational Design](http://www.rhino3d.com/download/Rhino/4.0/EssentialMathematicsSecondEdition). This material is directed towards designers who have little or no background in mathematics beyond high school. And although all concepts are explained visually using Grasshopper®, they are directly applicable to RhinoScriptSyntax.
@@ -59,7 +60,7 @@ One of easiest ways to change the shape of a NURBS curve is to move its control 
 
 The control points have an associated number called a weight. With a few exceptions, weights are positive numbers. When a curve’s control points all have the same weight (usually 1), the curve is called non-rational, otherwise the curve is called rational. The R in NURBS stands for rational and indicates that a NURBS curve has the possibility of being rational. In practice, most NURBS curves are non-rational. A few NURBS curves, circles and ellipses being notable examples, are always rational. 
 
-Knots
+#### Knots
 
 The knots are a list of degree+N-1 numbers, where N is the number of control points. Sometimes this list of numbers is called the knot vector. In this term, the word vector does not mean 3-D direction. 
 
@@ -71,37 +72,28 @@ If a list of knots starts with a full multiplicity knot, is followed by simple k
 
 Duplicate knot values in the middle of the knot list make a NURBS curve less smooth. At the extreme, a full multiplicity knot in the middle of the knot list means there is a place on the NURBS curve that can be bent into a sharp kink. For this reason, some designers like to add and remove knots and then adjust control points to make curves have smoother or kinkier shapes. Since the number of knots is equal to (N+degree-1), where N is the number of control points, adding knots also adds control points and removing knots removes control points. Knots can be added without changing the shape of a NURBS curve. In general, removing knots will change the shape of a curve. 
 
-Knots and Control Points
+#### Knots and Control Points
 
 A common misconception is that each knot is paired with a control point. This is true only for degree 1 NURBS (polylines). For higher degree NURBS, there are groups of 2 x degree knots that correspond to groups of degree+1 control points. For example, suppose we have a degree 3 NURBS with 7 control points and knots 0,0,0,1,2,5,8,8,8. The first four control points are grouped with the first six knots. The second through fifth control points are grouped with the knots 0,0,1,2,5,8. The third through sixth control points are grouped with the knots 0,1,2,5,8,8. The last four control points are grouped with the last six knots. 
 
 Some modelers that use older algorithms for NURBS evaluation require two extra knot values for a total of degree+N+1 knots. When Rhino is exporting and importing NURBS geometry, it automatically adds and removes these two superfluous knots as the situation requires. 
 
-Evaluation Rule
+#### Evaluation Rule
 
 A curve evaluation rule is a mathematical formula that takes a number and assigns a point. 
 
 The NURBS evaluation rule is a formula that involves the degree, control points, and knots. In the formula there are some things called B-spline basis functions. The B and S in NURBS stand for “basis spline.” The number the evaluation rule starts with is called a parameter. You can think of the evaluation rule as a black box that eats a parameter and produces a point location. The degree, knots, and control points determine how the black box works. 
 
-Scripting Fundamentals
+## Scripting Fundamentals
 
-The following is designed to provide some fundamentals of RhinoScript.
+The following is designed to provide some fundamentals of RhinoScript:
 
-Points
-
-Arrays of Points
-
-Vectors
-
-Lines
-
-Planes
-
-Objects
+* Points
+* Arrays of Points
+* Vectors
+* Lines
+* Planes
+* Objects
 
 ---
 
-## Related topics
-
-- [VBScript Data Types]({{ site.baseurl }}/guides/rhinoscript/vbscript-datatypes/)
-- [VBScript Procedures]({{ site.baseurl }}/guides/rhinoscript/vbscript-procedures/)
