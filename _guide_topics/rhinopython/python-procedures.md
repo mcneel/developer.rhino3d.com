@@ -5,7 +5,7 @@ authors: ['Dale Fugier']
 author_contacts: ['dale']
 apis: ['RhinoPython']
 languages: ['Python']
-platforms: ['Mac' 'Windows']
+platforms: ['Mac', 'Windows']
 categories: ['Fundamentals']
 origin: 
 order: 2
@@ -16,7 +16,63 @@ layout: toc-guide-page
  
 ## Overview
 
-In Python a function is a named block of code that can perform a reusable action.  This allows Ptyhon code to be brocken down into functional, resuable blocks of code.
+In Python a function is a named block of code that can perform a reusable action.  This allows Python code to be broken down into functional, resuable blocks of code.
+
+There are many module available for Python.  These modules contain a great number of pre-defined proceedures that can be very useful.  There are libraries that help with Date, Time, Math, etc.
+
+## Import Modules
+
+You can use any Python file as a module by using the import statement.  Once imported all the proceedures in the import are available.  The standard syntax for importing is:
+
+```python
+import rhinoscriptsyntax
+```
+
+To import more the one module, use commas to separate module names:
+
+```python
+import rhinoscriptsyntax, time, math
+```
+To access proceedures in imported modeles, prefix the function with the imported model name, seperated by a period (.):
+
+```python
+import time
+
+print (time.strftime("%H:%M:%S")) #strftime is a proccedure in the time module.
+```
+
+The `import` statement can also be used to change the renference mname of the incoming module.  Use thsi function to make module names shorter to use and easier to read in the code.  A very common example of this is how we normally will shorted the `rhinoscriptsyntax` module to `rs` for convenience:
+
+```python
+import rhinoscriptsyntax as rs
+
+rs.AddPoint (1, 2, 3) # The Rhinoscriptsyntax module is accessed throught 'rs' abreviation.
+```
+
+## Common Modules
+
+There are many modules availabel for Python.  Some of the most useful to Rhino Python are:
+
+* Rhinoceros modules
+  * rhinoscriptsyntax
+  * rhino
+* String Services
+  * string — Common string operations
+  * StringIO — Read and write strings as files
+  * fpformat — Floating point conversions
+* Data Types
+  * datetime — Basic date and time types
+  * time — Time access and conversions
+* Numeric and Mathematical Modules
+  * math — Mathematical functions
+  * fractions — Rational numbers
+  * random — Generate pseudo-random numbers
+* File and Directory Access
+  * os.path — Common pathname manipulations
+  * tempfile — Generate temporary files and directories
+  * csv — CSV File Reading and Writing
+
+A complete list of predefined models in Python, see the [Python Standard Library modules](https://docs.python.org/2/library/)
 
 ## User-Defined Procedures
 

@@ -5,7 +5,7 @@ authors: ['Dale Fugier']
 author_contacts: ['dale']
 apis: ['RhinoPython']
 languages: ['Python']
-platforms: ['Mac' Windows']
+platforms: ['Mac', 'Windows']
 categories: ['Fundamentals']
 origin:
 order: 10

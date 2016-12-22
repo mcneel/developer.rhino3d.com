@@ -1,55 +1,150 @@
 ---
-title: VBScript Data Types
-description: This guide is an overview of VBScript Data Types.
+title: Python Data Types
+description: This guide is an overview of Python Data Types.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
-languages: ['VBScript']
-platforms: ['Windows']
+apis: ['RhinoPython']
+languages: ['Python']
+platforms: ['Mac', 'Windows']
 categories: ['Fundamentals']
-origin: http://wiki.mcneel.com/developer/vbsdatatype
-order: 4
-keywords: ['script', 'Rhino', 'vbscript']
+origin:
+order: 3
+keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
 
  
 ## Overview
 
-VBScript has only one data type called a Variant.  A Variant is a special kind of data type that can contain different kinds of information, depending on how it is used.  Because Variant is the only data type in VBScript, it is also the data type returned by all functions in VBScript.
+Python has five standard Data Types:
 
-At its simplest, a Variant can contain either numeric or string information.  A Variant behaves as a number when you use it in a numeric context and as a string when you use it in a string context.  That is, if you are working with data that looks like numbers, VBScript assumes that it is numbers and does what is most appropriate for numbers.  Similarly, if you're working with data that can only be string data, VBScript treats it as string data. You can always make numbers behave as strings by enclosing them in quotation marks (`" "`).
+* [Numbers](#numbers)
+* [String](#string)
+* [List](#list)
+* [Tuple](#tuple)
+* [Dictionary](#dictionary)
 
-## Variant Subtypes
+Python sets the variable type based on the value that is assigned to it.  Unlike more riggeros lenguages, Python will change the variable type if the variable value is set to another value. For example:
 
-Beyond the simple numeric or string classifications, a Variant can make further distinctions about the specific nature of numeric information.  For example, you can have numeric information that represents a date or a time. When used with other date or time data, the result is always expressed as a date or a time.  You can also have a rich variety of numeric information ranging in size from Boolean values to huge floating-point numbers.  These different categories of information that can be contained in a Variant are called subtypes.  Most of the time, you can just put the kind of data you want in a Variant, and the Variant behaves in a way that is most appropriate for the data it contains.
+```python
+var1 = 123 # This will create a number integer assignment
+var1 = 'john' # the `var1` varaible is now a string type.
+```
 
-The following table shows subtypes of data that a Variant can contain:
+## Numbers
 
-| Subtype | | | |  Description |
-|:--------|:-:|:-:|:-:|:--------|
-| Empty   | | | | Variant is uninitialized.  Value is 0 for numeric variables or a zero-length string () for string variables.   |
-| Null   | | | | Variant intentionally contains no valid data.   |
-| Boolean   | | | | Contains either True or False.   |
-| Byte   | | | | Contains integer in the range 0 to 255.   |
-| Integer   | | | | Contains integer in the range -32,768 to 32,767.   |
-| Currency   | | | | -922,337,203,685,477.5808 to 922,337,203,685,477.5807.   |
-| Long   | | | | Contains integer in the range -2,147,483,648 to 2,147,483,647.   |
-| Single   | | | | Contains a single-precision, floating-point number in the range -3.402823E38 to -1.401298E-45 for negative values; 1.401298E-45 to 3.402823E38 for positive values.   |
-| Double   | | | | Contains a double-precision, floating-point number in the range -1.79769313486232E308 to -4.94065645841247E-324 for negative values; 4.94065645841247E-324 to 1.79769313486232E308 for positive values.   |
-| Date (Time)   | | | | Contains a number that represents a date between January 1, 100 to December 31, 9999.   |
-| String   | | | | Contains a variable-length string that can be up to approximately 2 billion characters in length.   |
-| Object   | | | | Contains an object.   |
-| Error   | | | | Contains an error number.   |
+Python numbers variables are created by the standard Python method:
+
+```python
+var1 = 382
+```
+
+Most of the time using the standard Python number type is fine. Python will automatically convert a number from one type to another if it needs. But, under certain circumstances that a specific number type is needed (ie. complex, hexidecimal), the format can be forced into a format by using additional syntax in the table below:
+
+| Type | | |Format | | |  Description |
+|:--------|:-:|:-:|:-|:-:|:-:|:--------|
+| int  | | | a = 10 | | | Signed Integer   |
+| long   | | | a = 345L | | | (L) Long integers, they can also be represented in octal and hexadecimal   |
+| float   | | | a = 45.67 | | | (.) Floating point real values   |
+| complex   | | | a = 3.14J | | | (J) Contains integer in the range 0 to 255.   |
 |=====
 |
 {: rules="groups"}
 
-You can use VBScript conversion functions to convert data from one subtype to another. In addition, the `VarType` function returns information about how your data is stored within a Variant.
+Most of the time Python will do varibale convertion automatically. You can also use Python conversion functions [(int(), long(), float(), complex())](https://docs.python.org/2/library/stdtypes.html#id2) to convert data from one type to another. In addition, the `type` function returns information about how your data is stored within a variable.
+
+## String
+
+Create string variables by enclosing characters in quotes. Python uses single quotes (') double quotes (") and triple quotes (""") to denote literal strings.  Only the triple quoted strings (""") also will automatically continue across the end of line statement.
+
+```python
+var1 = 'john'
+var2 = "smith"
+var3 = """This is a string that will span across multiple lines. \nUsing newline characters
+and no spaces for the next lines. The end of lines within this string also count as a newline when printed"""
+```
+
+Strings can be accessed as a whole string, or a substring of the complete variable using brackets ([]). Here are a couple examples:
+
+```python
+var1 = 'Hello World!'
+var2 = 'RhinoPython'
+
+print var1[0] # this will print the first character in the string an `H`
+print var2[1:5] # this will print the substring 'hinoP`
+```
+
+For a more detailed look at sting variables in Python, see the [Tutorialspoint Python Tutorial on stings.](https://www.tutorialspoint.com/python/python_strings.htm)
+
+## List
+
+Lists are a very useful variable type in Python. A list can contain a series of values. List variables are declared by using brackets `[ ]` following the variable name.
+
+```python
+A = [ ] # This is a blank list variable
+B = [1, 23, 45, 67] # this list creates an initial list of 4 numbers.
+C = [2, 4, 'john'] # lists can contain different variable types.
+```
+
+All lists in Python are zero-based indexed. When referencing a member or the legnth of a list the number of list elements is always the number shown plus one.
+
+```python
+mylist = ['Rhino', 'Grasshopper', 'Flamingo', 'Bongo']
+B = Len(Mylist) # This will return 3. The index is 0 - 3.
+print = Mylist[1] # This will return the value at index 1, which is 'Grasshopper'
+print = mylist[0:2] # This will return the first 3 elements in the list.
+```
+
+You can assign data to a sepcific element of the list using an index into the list. The list index starts at zero. Data can be assigned to the elements of an array as follows:
+
+```python
+mylist[0] = 'Rhino'
+mylist[1] = 'Grasshopper'
+mylist[2] = 'Flamingo'
+mylist[3] = 'Bongo'
+```
+
+Lists aren't limited to a single dimension. Although most people can't comprehend more than three or four dimensions. You can declare multiple dimensions by separating an with commas.  In the following example, the MyTable variable is a two-dimensional array :
+
+```python
+MyTable = [[], []]
+```
+
+In a two-dimensional array, the first number is always the number of rows; the second number is the number of columns.
+
+For a detailed look at managing lists, take a look at the article (TutorialPoint Python Lists)[https://www.tutorialspoint.com/python/python_lists.htm]
+
+## Tuple
+
+Tuples are a group of values like a list.  But tuples cannot be changed once they are assigned.  Tuples us paranthesis ().
+
+```python
+var1 = ('Rhino', "Grasshopper, 'Flamingo', 'Bongo')
+```
+
+For more information on Tuples, see the [TutorialPoint Python Tutorial on Tuples](https://www.tutorialspoint.com/python/python_tuples.htm)
+
+## Dictionary
+
+Dictionaries in Python are lists of `Key`:`Value` pairs. This is a very powerful datatype to hold a lot of related information that can be associated through `keys`. The main operation od a dictionary is to extract a value based on the `key` name. Unlike lists, where index numbers are used, dictionaries allow the use of a `key` to access its members.  Dictionaries can also be used to sort, iterate and compare data.
+
+Dictionaries are created by using braces ({}) with pairs seperated by a comma (,) and the key values associated with a colon(:). In Dictionaries the `Key` must be unique.
+
+
+```python
+room_num = {'john': 425, 'tom': 212}
+room_num['john'] = 645  # set the value associated with the 'john' key to 645
+print (room_num['tom']) # print the value of the 'tom' key.
+room_num['isaac'] = 345 # Add a new key 'isaac' witht he associated value
+print (room_num.keys()) # print out a list of keys in the dictionary
+print ('isaac' in room_num) # test to see if 'issac' is in the dictionary.  This returns true.
+```
+
+Dictionaries can be more complex to understand, but they are great to store data that is easy to access.  To find out more about using dictionaries see the [Python Documenation on Dictionaries](https://docs.python.org/2/tutorial/datastructures.html#dictionaries)
 
 ---
 
 ## Related topics
 
-- [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what-are-vbscript-rhinoscript)
+- [What are Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
 - [VBScript Variables]({{ site.baseurl }}/guides/rhinoscript/vbscript-variables/)
