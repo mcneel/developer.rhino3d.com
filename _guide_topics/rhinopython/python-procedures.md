@@ -18,11 +18,11 @@ layout: toc-guide-page
 
 In Python a function is a named block of code that can perform a reusable action.  This allows Python code to be broken down into functional, resuable blocks of code.
 
-There are many module available for Python.  These modules contain a great number of pre-defined proceedures that can be very useful.  There are libraries that help with Date, Time, Math, etc.
+There are many module available for Python.  These modules contain a great number of pre-defined procedures that can be very useful.  There are libraries that help with Date, Time, Math, etc.
 
 ## Import Modules
 
-You can use any Python file as a module by using the import statement.  Once imported all the proceedures in the import are available.  The standard syntax for importing is:
+You can use any Python file as a module by using the import statement.  Once imported all the procedures in the import are available.  The standard syntax for importing is:
 
 ```python
 import rhinoscriptsyntax
@@ -33,7 +33,7 @@ To import more the one module, use commas to separate module names:
 ```python
 import rhinoscriptsyntax, time, math
 ```
-To access proceedures in imported modeles, prefix the function with the imported model name, seperated by a period (.):
+To access procedures in imported modeles, prefix the function with the imported model name, seperated by a period (.):
 
 ```python
 import time
@@ -51,16 +51,16 @@ rs.AddPoint (1, 2, 3) # The Rhinoscriptsyntax module is accessed throught 'rs' a
 
 ## Common Modules
 
-There are many modules availabel for Python.  Some of the most useful to Rhino Python are:
+There are many modules available for Python.  Some of the most useful to Rhino Python are:
 
 * Rhinoceros modules
-  * rhinoscriptsyntax
-  * rhino
+  * rhinoscriptsyntax - The basic rhino library of prodedures
+  * rhino - 
 * String Services
   * string — Common string operations
   * StringIO — Read and write strings as files
   * fpformat — Floating point conversions
-* Data Types
+* Date and Time
   * datetime — Basic date and time types
   * time — Time access and conversions
 * Numeric and Mathematical Modules
@@ -72,7 +72,7 @@ There are many modules availabel for Python.  Some of the most useful to Rhino P
   * tempfile — Generate temporary files and directories
   * csv — CSV File Reading and Writing
 
-A complete list of predefined models in Python, see the [Python Standard Library modules](https://docs.python.org/2/library/)
+A complete list of predefined modules in Python, see the [Python Standard Library modules](https://docs.python.org/2/library/)
 
 ## User-Defined Procedures
 
@@ -105,7 +105,7 @@ Function Celsius(fDegrees)
 
 To call a `Sub` procedure from another procedure, type the name of the procedure along with values for any required arguments, each separated by a space. 
 
-The function will returns a single value based on its final `return` statement. A return statement with a variable name, followed by a semicolon (;) returns the reference to that variable. A return statement with simply a semicolon (;) returns nothing. The return statement is not required to end a proceedure.
+The function will returns a single value based on its final `return` statement. A return statement with a variable name, followed by a semicolon (;) returns the reference to that variable. A return statement with simply a semicolon (;) returns nothing. The return statement is not required to end a procedure.
 
 ---
 
