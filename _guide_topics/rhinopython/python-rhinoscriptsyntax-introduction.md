@@ -13,26 +13,22 @@ keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
 
+ 
 ## Overview
 
-The RhinoScriptSyntax methods library contains hundreds of easy-to-use functions that perform a variety of operations on Rhino.  The library allows Python to be aware of the Rhino's:
+The RhinoScriptSyntax methods library contains hundreds of easy-to-use functions that perform a variety of operations on Rhino.  The library allows Python to be aware of the Rhino application, its documents and objects.
 
-* Geometry
-* Commands
-* Document objects
-* Application methods
-
-To make these methods easy-to-use, all RhinoScriptSyntax methods return simple Python variables or Python List-based data structures. Thus, once you are familiar with Python, you will be able to use any and all functions in the RhinoScriptSyntax methods library.
+To make these methods easy-to-use, all RhinoScriptSyntax methods require and return simple Python variables or Python List-based data structures. Thus, once you are familiar with Python, you will be able to use any and all functions in the RhinoScriptSyntax methods library.
 
 ## Importing RhinoScriptSyntax
 
-Before using RhinoScriptSyntax a line must be added to the top of each Python file to allow access to the RhinoScriptSyntax:
+Before using RhinoScriptSyntax a line must be added to the top of each Python file to allow the RhinoScriptSyntax:
 
 ```pyhon
 import rhinoscriptsyntax as rs
 ```
 
-The `import` above not only imports the library, but also renames the namespace to `rs.`.  This is done to just make it easier to type when accessing the methods in RhinoScriptSyntax.  Access the methods can now be made by starting methods with 'rs.'.  For example, accessing the `Addpoint()` method in the RhinoScriptSyntax namespace can  be entered:
+The `import` above not only imports the library, but also renames the namespace to `rs.`.  This is done to just make it easier to type when accessing the methods in RhinoScriptSyntax.  Access the methods can now be made by starting methods with 'rs.':
 
 ```python
 rs.AddPoint(1,4,5)
@@ -40,26 +36,11 @@ rs.AddPoint(1,4,5)
 
 ## Geometry
 
-Creating, accessing and maniputlating Geometry is one of the first places RhinoScriptSytnax is used.  SImple gemetory scuh as points, lines, planes can be described with simple lists in Python.  More complicated geomtry objects such as NURBS curves, Surfaces and Poly-surfaces can be created by Rhino and referenced by an object ID by RhinoScriptSyntax.
-
 Although not required, having some understanding of the computational methods used in 3-D modeling and computer graphics can be helpful when using RhinoScriptSyntax. A good introductory resource is the [Essential Mathematics for Computational Design](http://www.rhino3d.com/download/Rhino/4.0/EssentialMathematicsSecondEdition). This material is directed towards designers who have little or no background in mathematics beyond high school. And although all concepts are explained visually using Grasshopper®, they are directly applicable to RhinoScriptSyntax.
-
-#### Basic Geometry
-
-Herea re the basic geometry types of RhinoScript:
-
-- [Python Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points)
-- [List of Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-list-points)
-- [Python Vectors]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Python Lines]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-lines)
-- [Python Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-planes)
-- [Python Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects)
-
-Basic Gemotry such and points and lines can be describe directly through points and lists. More complicated NURBS gemetory requires a more sophisticated description. 
 
 #### NURBS Geometry
 
-All NURBS curves and surfaces behave in similar ways and share terminology. Since curves are easiest to describe, we will cover them in detail. A NURBS curve is defined by four things: degree, control points, knots, and an evaluation rule. 
+NURBS curves and surfaces behave in similar ways and share terminology. Since curves are easiest to describe, we will cover them in detail. A NURBS curve is defined by four things: degree, control points, knots, and an evaluation rule. 
 
 #### Degree
 
@@ -107,12 +88,12 @@ The NURBS evaluation rule is a formula that involves the degree, control points,
 
 The following is designed to provide some fundamentals of RhinoScript:
 
-- [Python Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points)
-- [List of Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-list-points)
-- [Python Vectors]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Python Lines]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-lines)
-- [Python Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-planes)
-- [Python Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects)
+* Points
+* Arrays of Points
+* Vectors
+* Lines
+* Planes
+* Objects
 
 ---
 
