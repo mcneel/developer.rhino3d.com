@@ -95,9 +95,10 @@ print = Mylist[1] # This will return the value at index 1, which is 'Grasshopper
 print = mylist[0:2] # This will return the first 3 elements in the list.
 ```
 
-You can assign data to a sepcific element of the list using an index into the list. The list index starts at zero. Data can be assigned to the elements of an array as follows:
+You can assign data to a specific element of the list using an index into the list. The list index starts at zero. Data can be assigned to the elements of an array as follows:
 
 ```python
+myList = [0, 0, 0, 0]
 mylist[0] = 'Rhino'
 mylist[1] = 'Grasshopper'
 mylist[2] = 'Flamingo'
