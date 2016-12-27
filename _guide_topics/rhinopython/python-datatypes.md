@@ -113,7 +113,7 @@ MyTable = [[], []]
 
 In a two-dimensional array, the first number is always the number of rows; the second number is the number of columns.
 
-For a detailed look at managing lists, take a look at the article (TutorialPoint Python Lists)[https://www.tutorialspoint.com/python/python_lists.htm]
+For a detailed look at managing lists, take a look at the article [TutorialPoint Python Lists](https://www.tutorialspoint.com/python/python_lists.htm)
 
 ## Tuple
 
