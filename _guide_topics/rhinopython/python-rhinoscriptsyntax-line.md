@@ -39,7 +39,7 @@ When adding geometry to Rhino, Rhinoscript will return and Object ID from the dr
 
 Of course you can also send the `startPoint` and the `endPoint` directly into the `rs.AddLine()` method to create the line in Rhino.
 
-RhinoScript contains a number of methods to manipulate lines.  See Lines and Planes for details.
+RhinoScript contains a number of methods to manipulate lines.  See [Lines and Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods) for details.
 
 ---
 
