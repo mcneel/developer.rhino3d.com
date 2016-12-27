@@ -48,12 +48,12 @@ Although not required, having some understanding of the computational methods us
 
 Herea re the basic geometry types of RhinoScript:
 
-* Points
-* Arrays of Points
-* Vectors
-* Lines
-* Planes
-* Objects
+- [Python Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points)
+- [List of Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-list-points)
+- [Python Vectors]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)
+- [Python Lines]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-lines)
+- [Python Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-planes)
+- [Python Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects)
 
 Basic Gemotry such and points and lines can be describe directly through points and lists. More complicated NURBS gemetory requires a more sophisticated description. 
 
@@ -107,12 +107,12 @@ The NURBS evaluation rule is a formula that involves the degree, control points,
 
 The following is designed to provide some fundamentals of RhinoScript:
 
-* Points
-* Arrays of Points
-* Vectors
-* Lines
-* Planes
-* Objects
+- [Python Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points)
+- [List of Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-list-points)
+- [Python Vectors]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)
+- [Python Lines]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-lines)
+- [Python Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-planes)
+- [Python Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects)
 
 ---
 
