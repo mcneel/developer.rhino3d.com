@@ -31,7 +31,7 @@ The RhinoPythonScript Editor can be used to edit, run, and debug scripts. It con
 
 The most important item on the RhinoPythonScript Editor is the code editor. It is here that you make your scripts. As you can see, the editor is much more than a simple text editor. It performs automatic syntax parsing meaning you get properly colored keywords, collapsible code groups which encapsulate `def` function blocks, automatic indenting, auto-completion and error highlighting.
 
-
+<img src="{{ site.baseurl }}/images/pythoneditor-code-editor.png" alt="Windows">
 
 Auto-completion and parameter tips are grouped under the catch-phrase Intellisense. Since Python is not a strongly typed language. Thus, Intellisense in the RhinoPythonScript Editor is limited to RhinoPythonScriptSyntax methods and script scope procedures.
 
@@ -49,7 +49,7 @@ Above the code editor you will find the document tab. The RhinoPythonScript Edit
 
 The method browser displays a categorized view of all RhinoPythonScript methods. Use the plus and minus tree icons to expand and collapse each category. You can search for methods by typing the method name in the search field and then pressing [Enter]. If you double-click on a method, in the method browser, help on the method will appear. To use the method in your script, just drag the method into the code editor.
 
-
+<img src="{{ site.baseurl }}/images/pythoneditor-module-browser.png" alt="Windows">
 
 ## The Status Bar
 
@@ -57,36 +57,34 @@ The status bar provides feedback on the location of the insertion caret in the c
 
 The status bar exposes another quick navigation tool. If you click on the procedure scope field (the last field on the status bar) you will pop up a menu listing all defined Sub and Function procedures. Click on one of the names to jump to that procedure. If the caret is not inside any procedure body, the status bar will read "Global scope". 
 
-
+<img src="{{ site.baseurl }}/images/pythoneditor-output-window.png" alt="Windows">
 
 ## The Toolbar
 
 The toolbar exposes standard functionality, which can also be found in the menus.
 
+<img src="{{ site.baseurl }}/images/pythoneditor-toolbar.png" alt="Windows">
+
 | Button | | |Shortcut | | |  Description |
 |:--------|:-:|:-:|:-|:-:|:-:|:--------|
-| New | | | Ctrl + N | | | Create a new script file with a custom header.   |
-| Open  | | | Ctrl + O | | | Open an existing script file.   |
+| New Script| | | Ctrl + N | | | Create a new script file with a custom header.   |
+| Open Script  | | | Ctrl + O | | | Open an existing script. Dropdown arrow to access recent scripts |
 | Save   | | | Ctrl + S | | | Save the currently active script.   |
 | Save All   | | |   | | | Save all changes to all loaded scripts.   |
 | Save As   | | | Ctrl + Shift + S | | | Save the active script under another file name.   |
+| Find   | | | Ctrl + F| | | Search the active script for a specific string.   |
 | Run Script  | | | F5 | | | Run the active script.   |
 | Debug Script   | | | Ctrl + F5 | | | Run the active script with breakpoints enabled.  |
 | Toggle Breakpoint   | | | F9 | | | Toggle breakpoint flag on the active line in the active script.   |
-| Find   | | | Ctrl + F| | | Search the active script for a specific string.   |
-| Replace   | | | Ctrl + R | | | Replace one string with another in the active script.   |
-| Go To Line  | | | Ctrl + G | | | Display the "Go To Line" dialog for the active script.   |
-| Save   | | | Ctrl + S | | | Save the currently active script.   |
-| Save   | | | Ctrl + S | | | Save the currently active script.   |
 |=====
 |
 {: rules="groups"}
 
-
-
 The Menu
 
 The menu provides access to all the RhinoPythonScript Editor features.
+
+<img src="{{ site.baseurl }}/images/pythoneditor-menubar.png" alt="Windows">
 
 ---
 
