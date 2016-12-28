@@ -20,114 +20,86 @@ This tutorial shows you how to display a message box in Rhino that says "Hello W
 #### The Complete Script
 
 ```python
-MsgBox "Hello World"
+import rhinoscriptsyntax as rs
+
+rs.MessageBox ("Hello World")
 ```
-Test the Script
+To test the Script:
 
-•Start Rhino
+- Start Rhino
+- At the command prompt, type EditScript and press Enter.
+- The Edit Script dialog box appears.
+- In the script Code window, type the code sample above.
+- Click the "Run the script" button.
+- The Edit Script dialog box disappears, and the message below appears:
 
-
-•At the command prompt, type EditScript and press Enter.
-
-
-•The Edit Script dialog box appears.
-
-
-•In the script Code window, type
-
-
-MsgBox "Hello World"
-
-•Click the "Run the script" button.
-
-
-•The Edit Script dialog box disappears, and the message below appears:
-
-
-
-
-The HelloWorld Subroutine
+## The HelloWorld Function
 
 If you were writing a more complex script, and wanted to display "Hello World" at strategic points throughout the script, you could write this code every time you wanted the message to appear.
 
 But if you changed your mind and wanted it to say "Howdy World" instead, you'd have to search for all the places "Hello World" was used, and replace them.
 
-An easier way to solve this problem is to write a Subroutine (Sub for short).  At several places throughout your script, you call the Sub.  The Sub handles displaying the message, so you only have to change the message in one place.
+An easier way to solve this problem is to write a Function (`def` is used to define the function).  At several places throughout your script, you call the function.  The function handles displaying the message, so you only have to change the message in one place.
 
-Here's what the subroutine looks like:
+Here's what the function definition looks like:
 
-Sub HelloWorld()
+```python
+import rhinoscriptsyntax as rs
 
-MsgBox "Hello World"
+def HelloWorld()
+    rs.MessageBox ("Hello World")
+```
 
-End Sub
+If you click the run button at this time nothing will happen. Nothing happened? That's because the RhinoScript defined the Subroutine but did not actually call it. To call the subroutine, either add this line of code and click Run.
 
-To call this subroutine, simply type:
+To call this function, simply add this to the bottom of the script:
 
-HelloWorld
+```python
+HelloWorld()
+```
 
-Testing HelloWorld
+In Python the functions definitions need to come before being called in the code.
 
-•At the command prompt, type EditScript and press Enter.
+#### Testing HelloWorld
 
+- At the command prompt, type EditScript and press Enter.
+- The Edit Script dialog box appears.
+- In the script Code window, type
 
-•The Edit Script dialog box appears.
+```python
+import rhinoscriptsyntax as rs
 
-
-•In the script Code window, type
-
-
-Sub HelloWorld()
-
-MsgBox "Hello World"
-
-End Sub
-
-•Click the Run button.
-
-
-Nothing happened? That's because the RhinoScript defined the Subroutine but did not actually call it.
-
-•To call the subroutine, either add this line of code and click Run.
-
-
-Sub HelloWorld()
-
-MsgBox "Hello World"
-
-End Sub
-
-HelloWorld
-
-Saving HelloWorld
+def HelloWorld()
+    rs.MessageBox ("Hello World")
+    
+HelloWorld()
+```
+- Click the Run button.
 
 When you do more than write a couple lines of script, it becomes necessary to save the script to a file so that you can run the script without typing it every time.
 
-To save your script:
+#### To save your script:
 
-•In the Edit Script dialog box, Click the Save button.
+In the Edit Script dialog box, Click the Save button. Save the file as "Hello World.rvb".
 
+#### Running HelloWorld.rvb
 
-•Save the file as "Hello World.rvb".
-
-
-Running HelloWorld.rvb
-
-•At the Command prompt, type LoadScript and press Enter.
-
-
-•In the Load Scrip Filet dialog box, click Add...
-
-
-•Select "Hello World.rvb" and click Open.
-
-
-•In the Select Script File list, select "Hello World.rvb".
-
-
-•Click Load.
-
+- At the Command prompt, type LoadScript and press Enter.
+- In the Load Scrip Filet dialog box, click Add...
+- Select "Hello World.rvb" and click Open.
+- In the Select Script File list, select "Hello World.rvb".
+- Click Load.
 
 Your script will run, and display the familiar "Hello World" dialog box.
 
 ---
+
+## Related Topics
+
+- [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [Loading Scripts]({{ site.baseurl }}/guides/rhinopython/python-loading-scripts)
+- [Running Scripts]({{ site.baseurl }}/guides/rhinopython/python-running-scripts)
+- [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
+- [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)
+- [Scripting Options]({{ site.baseurl }}/guides/rhinopython/python-scripting-options)
+- [Reinitializing Python]({{ site.baseurl }}/guides/rhinopython/python-scripting-reinitialize)

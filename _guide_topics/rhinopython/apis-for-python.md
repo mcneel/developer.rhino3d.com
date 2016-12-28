@@ -8,7 +8,7 @@ languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/python
-order: 3
+order: 99
 keywords: ['Rhino.Python', 'Python']
 layout: toc-guide-page
 TODO: 'needs reorganization with regard to other guides'
