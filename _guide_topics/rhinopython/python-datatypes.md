@@ -13,7 +13,7 @@ keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
 
- 
+
 ## Overview
 
 Python has five standard Data Types:
@@ -24,11 +24,11 @@ Python has five standard Data Types:
 * [Tuple](#tuple)
 * [Dictionary](#dictionary)
 
-Python sets the variable type based on the value that is assigned to it.  Unlike more riggeros lenguages, Python will change the variable type if the variable value is set to another value. For example:
+Python sets the variable type based on the value that is assigned to it.  Unlike more riggers languages, Python will change the variable type if the variable value is set to another value. For example:
 
 ```python
-var1 = 123 # This will create a number integer assignment
-var1 = 'john' # the `var1` varaible is now a string type.
+var = 123 # This will create a number integer assignment
+var = 'john' # the `var` variable is now a string type.
 ```
 
 ## Numbers
@@ -36,7 +36,7 @@ var1 = 'john' # the `var1` varaible is now a string type.
 Python numbers variables are created by the standard Python method:
 
 ```python
-var1 = 382
+var = 382
 ```
 
 Most of the time using the standard Python number type is fine. Python will automatically convert a number from one type to another if it needs. But, under certain circumstances that a specific number type is needed (ie. complex, hexidecimal), the format can be forced into a format by using additional syntax in the table below:
@@ -53,14 +53,24 @@ Most of the time using the standard Python number type is fine. Python will auto
 
 Most of the time Python will do varibale convertion automatically. You can also use Python conversion functions [(int(), long(), float(), complex())](https://docs.python.org/2/library/stdtypes.html#id2) to convert data from one type to another. In addition, the `type` function returns information about how your data is stored within a variable.
 
+```python
+message = "Good morning"
+num = 85
+pi = 3.14159
+
+print(type(message))  # This will return a string
+print(type(n))  # This will return an integer
+print(type(pi))  # This will return a float
+```
+
 ## String
 
 Create string variables by enclosing characters in quotes. Python uses single quotes (') double quotes (") and triple quotes (""") to denote literal strings.  Only the triple quoted strings (""") also will automatically continue across the end of line statement.
 
 ```python
-var1 = 'john'
-var2 = "smith"
-var3 = """This is a string that will span across multiple lines. \nUsing newline characters
+firstName = 'john'
+lastName = "smith"
+message = """This is a string that will span across multiple lines. Using newline characters
 and no spaces for the next lines. The end of lines within this string also count as a newline when printed"""
 ```
 
@@ -90,19 +100,20 @@ All lists in Python are zero-based indexed. When referencing a member or the leg
 
 ```python
 mylist = ['Rhino', 'Grasshopper', 'Flamingo', 'Bongo']
-B = Len(Mylist) # This will return 3. The index is 0 - 3.
-print = Mylist[1] # This will return the value at index 1, which is 'Grasshopper'
-print = mylist[0:2] # This will return the first 3 elements in the list.
+B = len(mylist) # This will return the length of the list which is 3. The index is 0, 1, 2, 3.
+print mylist[1] # This will return the value at index 1, which is 'Grasshopper'
+print mylist[0:2] # This will return the first 3 elements in the list.
 ```
 
 You can assign data to a specific element of the list using an index into the list. The list index starts at zero. Data can be assigned to the elements of an array as follows:
 
 ```python
-myList = [0, 0, 0, 0]
+mylist = [0, 1, 2, 3]
 mylist[0] = 'Rhino'
 mylist[1] = 'Grasshopper'
 mylist[2] = 'Flamingo'
 mylist[3] = 'Bongo'
+print mylist[1]
 ```
 
 Lists aren't limited to a single dimension. Although most people can't comprehend more than three or four dimensions. You can declare multiple dimensions by separating an with commas.  In the following example, the MyTable variable is a two-dimensional array :
@@ -117,19 +128,19 @@ For a detailed look at managing lists, take a look at the article [TutorialPoint
 
 ## Tuple
 
-Tuples are a group of values like a list.  But tuples cannot be changed once they are assigned.  Tuples us paranthesis ().
+Tuples are a group of values like a list.  But tuples cannot be changed once they are assigned.  Tuples use parenthesis ().
 
 ```python
-var1 = ('Rhino', "Grasshopper, 'Flamingo', 'Bongo')
+myGroup = ('Rhino', 'Grasshopper', 'Flamingo', 'Bongo')
 ```
 
 For more information on Tuples, see the [TutorialPoint Python Tutorial on Tuples](https://www.tutorialspoint.com/python/python_tuples.htm)
 
 ## Dictionary
 
-Dictionaries in Python are lists of `Key`:`Value` pairs. This is a very powerful datatype to hold a lot of related information that can be associated through `keys`. The main operation od a dictionary is to extract a value based on the `key` name. Unlike lists, where index numbers are used, dictionaries allow the use of a `key` to access its members.  Dictionaries can also be used to sort, iterate and compare data.
+Dictionaries in Python are lists of `Key`:`Value` pairs. This is a very powerful datatype to hold a lot of related information that can be associated through `keys`. The main operation of a dictionary is to extract a value based on the `key` name. Unlike lists, where index numbers are used, dictionaries allow the use of a `key` to access its members.  Dictionaries can also be used to sort, iterate and compare data.
 
-Dictionaries are created by using braces ({}) with pairs seperated by a comma (,) and the key values associated with a colon(:). In Dictionaries the `Key` must be unique.  Here is a quick example on how ditionaires might be used:
+Dictionaries are created by using braces ({}) with pairs separated by a comma (,) and the key values associated with a colon(:). In Dictionaries the `Key` must be unique.  Here is a quick example on how dictionaries might be used:
 
 
 ```python
