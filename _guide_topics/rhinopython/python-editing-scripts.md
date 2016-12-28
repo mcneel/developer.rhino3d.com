@@ -25,6 +25,8 @@ Note, there is no scriptable version of the EditPythonScript command.
 
 The RhinoPythonScript Editor can be used to edit, run, and debug scripts. It contains standard source code editing feature, such as find and replace (with regular expressions), multiple-document interface, method browser, and an integrated help file.
 
+<img src="{{ site.baseurl }}/images/pythoneditor.png" alt="Windows">
+
 ## The Code Editor
 
 The most important item on the RhinoPythonScript Editor is the code editor. It is here that you make your scripts. As you can see, the editor is much more than a simple text editor. It performs automatic syntax parsing meaning you get properly colored keywords, collapsible code groups which encapsulate `def` function blocks, automatic indenting, auto-completion and error highlighting.
@@ -61,114 +63,30 @@ The status bar exposes another quick navigation tool. If you click on the proced
 
 The toolbar exposes standard functionality, which can also be found in the menus.
 
+| Button | | |Shortcut | | |  Description |
+|:--------|:-:|:-:|:-|:-:|:-:|:--------|
+| New | | | Ctrl + N | | | Create a new script file with a custom header.   |
+| Open  | | | Ctrl + O | | | Open an existing script file.   |
+| Save   | | | Ctrl + S | | | Save the currently active script.   |
+| Save All   | | |   | | | Save all changes to all loaded scripts.   |
+| Save As   | | | Ctrl + Shift + S | | | Save the active script under another file name.   |
+| Run Script  | | | F5 | | | Run the active script.   |
+| Debug Script   | | | Ctrl + F5 | | | Run the active script with breakpoints enabled.  |
+| Toggle Breakpoint   | | | F9 | | | Toggle breakpoint flag on the active line in the active script.   |
+| Find   | | | Ctrl + F| | | Search the active script for a specific string.   |
+| Replace   | | | Ctrl + R | | | Replace one string with another in the active script.   |
+| Go To Line  | | | Ctrl + G | | | Display the "Go To Line" dialog for the active script.   |
+| Save   | | | Ctrl + S | | | Save the currently active script.   |
+| Save   | | | Ctrl + S | | | Save the currently active script.   |
+|=====
+|
+{: rules="groups"}
 
 
- 
-
-
-
-
-
-
-Button
- 
-Shortcut
- 
-Description
- 
-
-New
- 
-Ctrl + N
- 
-Create a new script file with a custom header. 
- 
-
-Open
- 
-Ctrl + O
- 
-Open an existing script file.
- 
-
-Save
- 
-Ctrl + S
- 
-Save the currently active script.
- 
-
-Save All
- 
- 
- 
-Save all changes to all loaded scripts.
- 
-
-Save As
- 
-Ctrl + Shift + S
- 
-Save the active script under another file name.
- 
-
-Run Script
- 
-F5
- 
-Run the active script.
- 
-
-Debug Script
- 
-Ctrl + F5
- 
-Run the active script with breakpoints enabled.
- 
-
-Toggle Breakpoint
- 
-F9
- 
-Toggle breakpoint flag on the active line in the active script.
- 
-
-Find 
- 
-Ctrl + F
- 
-Search the active script for a specific string.
- 
-
-Replace  
- 
-Ctrl + R
- 
-Replace one string with another in the active script.
- 
-
-Go To Line
- 
-Ctrl + G
- 
-Display the "Go To Line" dialog for the active script.
- 
-
-Google Groups
- 
- 
- 
-Perform a Google search for the specified keywords.
- 
 
 The Menu
 
 The menu provides access to all the RhinoPythonScript Editor features.
-
-
-
- 
-
 
 ---
 
