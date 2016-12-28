@@ -141,11 +141,42 @@ order: 2
   </ul>
 </div>
 
+### Python Fundamentals
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Fundamentals' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+
 ### Learning Python
 
 - <a href="https://docs.python.org/2/tutorial/index.html" target="_blank">The Python Tutorial</a>
 - <a href="http://learnpythonthehardway.org/book/" target="_blank">Learn Python the Hard Way</a> (despite the title this is a beginner's book)
 - <a href="https://automatetheboringstuff.com/" target="_blank">Automate The Boring Stuff With Python</a>
+
+### Python in Rhino
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'rhinoscriptsyntax-fundamentals' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 ### Learning Rhino.Python
 
