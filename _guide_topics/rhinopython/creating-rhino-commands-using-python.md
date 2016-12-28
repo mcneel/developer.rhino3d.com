@@ -8,7 +8,7 @@ languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/python/commands
-order: 1
+order: 380
 keywords: ['python', 'commands']
 layout: toc-guide-page
 ---
