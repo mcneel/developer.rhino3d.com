@@ -1,5 +1,5 @@
 ---
-title: Annotate Curve Endpoints - Python
+title: Annotate Curve Endpoints
 description: Demonstrates how to add a NURBS curve to Rhino using Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
@@ -13,32 +13,33 @@ keywords: ['script', 'Rhino', 'python']
 layout: code-sample-python
 ---
 
-```vbnet
-Sub TestNurbsCurve
+```python
+# Annotate the endpoints of curve objects
+import rhinoscriptsyntax as rs
 
-  Dim degree : degree = 3
-  Dim cv_count : cv_count = 6
-  Dim knot_count : knot_count = cv_count + degree - 1
+def AnnotateCurveEndPoints():
+    """Annotates the endpoints of curve objects. If the curve is closed
+    then only the starting point is annotated.
+    """
+    # get the curve object
+    objectId = rs.GetObject("Select curve", rs.filter.curve)
+    if objectId is None: return
 
-  Dim cvs() : ReDim cvs(cv_count - 1)
-  cvs(0) = Array(0.0, 0.0, 0.0)
-  cvs(1) = Array(5.0, 10.0, 0.0)
-  cvs(2) = Array(10.0, 0.0, 0.0)
-  cvs(3) = Array(15.0, 10.0, 0.0)
-  cvs(4) = Array(20.0, 0.0, 0.0)
-  cvs(5) = Array(25.0, 10.0, 0.0)
+    # Add the first annotation
+    point = rs.CurveStartPoint(objectId)
+    rs.AddPoint(point)
+    rs.AddTextDot(point, point)
 
-  Dim knots() : ReDim knots(knot_count - 1)
-  knots(0) = 0.0
-  knots(1) = 0.0
-  knots(2) = 0.0
-  knots(3) = 1.0
-  knots(4) = 2.0
-  knots(5) = 3.0
-  knots(6) = 3.0
-  knots(7) = 3.0
+    # Add the second annotation
+    if not rs.IsCurveClosed(objectId):
+        point = rs.CurveEndPoint(objectId)
+        rs.AddPoint(point)
+        rs.AddTextDot(point, point)
 
-  Call Rhino.AddNurbsCurve(cvs, knots, degree)
 
-End Sub
+# Check to see if this file is being executed as the "main" python
+# script instead of being used as a module by some other python script
+# This allows us to use the module which ever way we want.
+if __name__ == "__main__":
+    AnnotateCurveEndPoints() # Call the function defined above
 ```
