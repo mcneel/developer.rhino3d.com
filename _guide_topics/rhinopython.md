@@ -80,6 +80,12 @@ layout: guide-homepage
 [<img src="{{ site.baseurl }}/images/rhinopython-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
 
 
+### Learning Rhino.Python
+
+- <a href="http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101" target="_blank">RhinoPython101 Primer</a>
+- <a href="http://4.rhino3d.com/5/ironpython/index.html" target="_blank">Rhino.Python Programmer's Reference</a>
+- <a href="http://discourse.mcneel.com/c/scripting" target="_blank">Rhino Scripting Forum</a>
+
 ### Python Samples
 
 <div class="trigger">
@@ -95,12 +101,6 @@ layout: guide-homepage
   </ul>
 </div>
 
-
-### Learning Rhino.Python
-
-- <a href="http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101" target="_blank">RhinoPython101 Primer</a>
-- <a href="http://4.rhino3d.com/5/ironpython/index.html" target="_blank">Rhino.Python Programmer's Reference</a>
-- <a href="http://discourse.mcneel.com/c/scripting" target="_blank">Rhino Scripting Forum</a>
 
 ### Learning Python
 - <a href="https://docs.python.org/2/tutorial/index.html" target="_blank">The Python Tutorial</a>
