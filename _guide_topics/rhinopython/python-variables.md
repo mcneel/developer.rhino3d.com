@@ -13,13 +13,13 @@ keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
 
- 
+
 ## Overview
 
 A variable is a convenient placeholder that refers to a computer memory location where you can store program information that may change during the time your script is running.  For example, you might create a variable called ClickCount to store the number of times a user performs a certain operation.  
-When a variable is stored in memory, the interpreter will allocate a certain amount of space for each variable type.  Where the variable is stored in computer memory is unimportant.  What is important is that you know that a vairaible has a type, and you refer to a variable by name to see or change its value.  
+When a variable is stored in memory, the interpreter will allocate a certain amount of space for each variable type.  Where the variable is stored in computer memory is unimportant.  What is important is that you know that a variable has a type, and you refer to a variable by name to see or change its value.  
 
-In Python, variables are always one of the five fundamental data types: 
+In Python, variables are always one of the five fundamental data types:
 
 * [Numbers]({{ site.baseurl }}/guides/rhinopython/python-datatypes/#numbers)
 * [String]({{ site.baseurl }}/guides/rhinopython/python-datatypes/#string)
@@ -36,8 +36,8 @@ While each variable has its own properties and methods, there are common methods
 In Python, variables are created the first time a value is assigned to them.  For example:
 
 ```python
-number1 = 10
-string1 = "This is a string"
+number = 10
+string = "This is a string"
 ```
 
 You declare multiple variables by separating each variable name with a comma.  For example:
@@ -57,12 +57,12 @@ b = False
 
 Variable names follow the standard rules for naming anything in Python.  A variable name:
 
-- Must begin with an alphabetic character (A -Z) or an underscore (_).
-- Cannot contain a perios(.), @, $, or %.
+- Must begin with an alphabetic character (A -Z) or an underscore (\_).
+- Cannot contain a period(.), @, $, or %.
 - Must be unique in the scope in which it is declared.
-- Python is case sensative.  So "selection" and " Selection" are two different variables.
+- Python is case sensitive.  So "selection" and " Selection" are two different variables.
 
-Best practices for all Python naming can be found in the (Style Guide for Python Naming Conventions)[https://www.python.org/dev/peps/pep-0008/#naming-conventions] 
+Best practices for all Python naming can be found in the (Style Guide for Python Naming Conventions)[https://www.python.org/dev/peps/pep-0008/#naming-conventions]
 
 ## Scope & Lifetime
 
@@ -81,16 +81,16 @@ def function1():
     print local_var
 
 function1() # this runs the function
-print global_var # this works because global_var is accessable
+print global_var # this works because global_var is accessible
 print local_var  # this gives an error because we are outside function1
 ```
 
-It is important to be careful when declaring variables.  It is easy to create duplicate variable names that do not reference the correct values.  For instance do not declare a global varible this way:
+It is important to be careful when declaring variables.  It is easy to create duplicate variable names that do not reference the correct values.  For instance do not declare a global variable this way:
 
 ```python
-g_var = 'foo'
+global_var = 'True'
 def function2():
-    g_var = 'bar'
+    global_var = 'False'
     print 'inside the function var is ', var
 
 ex2()
@@ -99,14 +99,14 @@ print 'outside the function var is ', var
 The example above will create a `Global` variable named `g_var`.  When dropping in the `function2` function, there will be a second `local` variable created named `g_var` with a different value. The proper way to work with a global variable is to be very explicate with the `global` statement in the `local` scope:
 
 ```python
-g_var = 'foo'
+g_var = "Global"
 def function2():
-    global g_var
-    g_var = 'bar'
-    print 'inside the function var is ', var
+    g_var = "Local"
+    print 'inside the function var is ', g_var
+    return;
 
-ex2()
-print 'outside the function var is ', var
+function2()
+print 'outside the function var is ', g_var
 
 ```
 
