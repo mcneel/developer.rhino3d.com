@@ -11,7 +11,6 @@ origin: http://wiki.mcneel.com/developer/python
 order: 99
 keywords: ['Rhino.Python', 'Python']
 layout: toc-guide-page
-TODO: 'needs reorganization with regard to other guides'
 ---
 
 ## Overview
@@ -62,7 +61,7 @@ There are many modules other modules for Python. Here are a list of the most use
   * fractions — Rational numbers
   * random — Generate pseudo-random numbers
 * File and Directory Access
-  * os.path — Common pathname manipulations
+  * System.IO — Common pathname manipulations
   * tempfile — Generate temporary files and directories
   * csv — CSV File Reading and Writing
 * String Services
@@ -71,3 +70,14 @@ There are many modules other modules for Python. Here are a list of the most use
   * fpformat — Floating point conversions
 
 A complete list of predefined modules in Python, see the [Python Standard Library modules](https://docs.python.org/2/library/)
+
+---
+
+## Related Topics
+
+- [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [Python Basic Syntax]({{ site.baseurl }}/guides/rhinopython/python-statements/)
+- [Python Procedures]({{ site.baseurl }}/guides/rhinopython/python-procedures/)
+- [Rhinoscript Syntax in Python]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-introduction/)
+- [Rhino.Python Home Page]({{ site.baseurl }}/guides/rhinopython/)
+- [Python (homepage)](https://www.python.org/)

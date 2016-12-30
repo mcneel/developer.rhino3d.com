@@ -11,7 +11,7 @@ origin: http://wiki.mcneel.com/developer/python
 order: 1
 keywords: ['python', 'overview']
 layout: toc-guide-page
-TODO: 'needs more GHPython info. Resources should be moved.'
+TODO: 'needs more GHPython info.'
 ---
 
 
@@ -34,7 +34,7 @@ Rhino already has a scripting language called RhinoScript!  Why should you use P
 
 But more importantly: Python is very popular outside of Rhino!  Much of what you learn about Python can be applied in many other domains.
 
-## What version of Python does Rhino use?
+### What version of Python does Rhino use?
 
 Rhino uses Python version 2.7.
 
@@ -42,7 +42,7 @@ Rhino uses Python version 2.7.
 
 Python can be used all over Rhino in many different ways...
 
-### RhinoScript Style Functions (Windows)
+#### RhinoScript Style Functions (Windows)
 
 One of the key features of RhinoScript that make it easy to write powerful scripts is a large library of Rhino specific functions that can be called from scripts.  Our python implementation includes a set of similar functions that can be imported and used in any python script for Rhino.  This set of functions is known as the `rhinoscript` package.
 
@@ -74,28 +74,21 @@ if start:
 
 Yes, different...but similar enough that you should be able to figure out what is happening in python if you've written RhinoScript.
 
-### RhinoCommon
+#### RhinoCommon
 
 Using RhinoCommon - Python scripts also have full access to the .NET framework including access to Rhino's RhinoCommon SDK.  A guide of accessing RhinoCommon from Python scripts is at [Using RhinoCommon from Python]({{ site.baseurl}}/guides/rhinopython/using-rhinocommon-from-python).
 
-### Grasshopper
+#### Grasshopper
 
 Via GHPython.  **TODO** More info needed.
 
-
-## Resources for Python
-
-- [Rhino.Python 101](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)
-- [Designalyze Python Tutorials](http://designalyze.com/)
-- [Plethora Project](http://www.plethora-project.com/2011/09/12/rhino-python-tutorials/)
-- [Steve Baer's Blog](http://stevebaer.wordpress.com/category/python/)
-- [Python Beginner's Guide](http://wiki.python.org/moin/BeginnersGuide/Programmers)
-- [Tutorials Point Python Series](http://www.tutorialspoint.com/python/index.htm)
-- [Rhino.Python Dash Docset](http://discourse.mcneel.com/t/rhino-python-dash-docset/6399)
-- [Nature of Code Video Tutorials](http://www.youtube.com/watch?v=Kyi_K85Gsm4&list=PL5Up_u-XkWgP7nB7XIevMTyBCZ7pvLBGP)
 
 ---
 
 ## Related Topics
 
+- [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [Python Basic Syntax]({{ site.baseurl }}/guides/rhinopython/python-statements/)
+- [Rhinoscript Syntax in Python]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-introduction/)
+- [Rhino.Python Home Page]({{ site.baseurl }}/guides/rhinopython/)
 - [Python (homepage)](https://www.python.org/)

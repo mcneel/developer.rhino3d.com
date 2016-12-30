@@ -83,5 +83,5 @@ You can add as many `elif` clauses as you need to provide alternative choices. T
 
 ## Related Topics
 
-- [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
-- [VBScript Operators]({{ site.baseurl }}/guides/rhinopython/python-operators)
+- [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [Python Operators]({{ site.baseurl }}/guides/rhinopython/python-operators)

@@ -90,18 +90,17 @@ layout: guide-homepage
   </ul>
 </div>
 
+### Learning Rhino.Python
+
+- <a href="http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101" target="_blank">RhinoPython101 Primer</a>
+- <a href="http://4.rhino3d.com/5/ironpython/index.html" target="_blank">Rhino.Python Programmer's Reference</a>
+- <a href="http://discourse.mcneel.com/c/scripting" target="_blank">Rhino Scripting Forum</a>
 
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="{{ site.baseurl }}/images/rhinopython-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
 
-
-### Learning Rhino.Python
-
-- <a href="http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101" target="_blank">RhinoPython101 Primer</a>
-- <a href="http://4.rhino3d.com/5/ironpython/index.html" target="_blank">Rhino.Python Programmer's Reference</a>
-- <a href="http://discourse.mcneel.com/c/scripting" target="_blank">Rhino Scripting Forum</a>
 
 ### Python Samples
 
@@ -124,16 +123,23 @@ layout: guide-homepage
 - <a href="http://learnpythonthehardway.org/book/" target="_blank">Learn Python the Hard Way</a> (despite the title this is a beginner's book)
 - <a href="https://automatetheboringstuff.com/" target="_blank">Automate The Boring Stuff With Python</a>
 
+
+### Resources for Python
+
+- [Rhino.Python 101](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)
+- [Designalyze Python Tutorials](http://designalyze.com/)
+- [Plethora Project](http://www.plethora-project.com/2011/09/12/rhino-python-tutorials/)
+- [Steve Baer's Blog](http://stevebaer.wordpress.com/category/python/)
+- [Python Beginner's Guide](http://wiki.python.org/moin/BeginnersGuide/Programmers)
+- [Tutorials Point Python Series](http://www.tutorialspoint.com/python/index.htm)
+- [Rhino.Python Dash Docset](http://discourse.mcneel.com/t/rhino-python-dash-docset/6399)
+- [Nature of Code Video Tutorials](http://www.youtube.com/watch?v=Kyi_K85Gsm4&list=PL5Up_u-XkWgP7nB7XIevMTyBCZ7pvLBGP)
+
+
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="{{ site.baseurl }}/images/rhinopython-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
 
-
-### Learning Rhino.Python
-
-- <a href="http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101" target="_blank">RhinoPython101 Primer</a>
-- <a href="http://4.rhino3d.com/5/ironpython/index.html" target="_blank">Rhino.Python Programmer's Reference</a>
-- <a href="http://discourse.mcneel.com/c/scripting" target="_blank">Rhino Scripting Forum</a>
 
 

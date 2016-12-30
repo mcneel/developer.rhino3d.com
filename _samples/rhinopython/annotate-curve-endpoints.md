@@ -8,7 +8,7 @@ languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']
 origin:
-order: 1
+order: 11
 keywords: ['script', 'Rhino', 'python']
 layout: code-sample-python
 ---
