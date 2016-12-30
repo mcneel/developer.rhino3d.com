@@ -107,6 +107,10 @@ To call a `Sub` procedure from another procedure, type the name of the procedure
 
 The function will returns a single value based on its final `return` statement. A return statement with a variable name, followed by a semicolon (;) returns the reference to that variable. A return statement with simply a semicolon (;) returns nothing. The return statement is not required to end a procedure.
 
+## Assigning a Function to a Variable
+
+Python allows a variable to contain a function.  
+
 ---
 
 ## Related Topics
