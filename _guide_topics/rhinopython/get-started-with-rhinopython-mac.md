@@ -11,7 +11,6 @@ origin: http://wiki.mcneel.com/developer/python
 order: 2
 keywords: ['Rhino.Python', 'Python']
 layout: toc-guide-page
-TODO: 'needs update, adding more resource links, etc.'
 ---
 
 ## Running a Python script
@@ -46,3 +45,13 @@ Right-click on any of the scripts and from the context menu that pops up select 
 When you're ready start writing more complex scripts you can install the [Atom text editor](https://atom.io/packages/rhino-python) that's been specifically enhanced for <a href="https://atom.io/packages/rhino-python" target="_blank">rhino-python</a> package to help with scripts that will be run by Rhino.
 
 After you've followed the above links and setup Atom the next step is to get familiar with the different [application programming interfaces (API)](../apis-for-python/) you'll need to write scripts that interact with Rhino.
+
+---
+
+## Related Topics
+
+- [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [Using the Atom.io editor with Rhino.Python](https://atom.io/packages/rhino-python)
+- [Python Basic Syntax]({{ site.baseurl }}/guides/rhinopython/python-statements/)
+- [Rhinoscript Syntax in Python]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-introduction/)
+- [Rhino.Python Home Page]({{ site.baseurl }}/guides/rhinopython/)

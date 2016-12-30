@@ -11,7 +11,7 @@ origin: http://wiki.mcneel.com/developer/python
 order: 1
 keywords: ['python', 'overview']
 layout: toc-guide-page
-TODO: 'needs more GHPython info. Resources should be moved.'
+TODO: 'needs more GHPython info.'
 ---
 
 
@@ -82,8 +82,6 @@ Using RhinoCommon - Python scripts also have full access to the .NET framework i
 
 Via GHPython.  **TODO** More info needed.
 
-## Resources for Python
-
 - [Rhino.Python 101](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)
 - [Designalyze Python Tutorials](http://designalyze.com/)
 - [Plethora Project](http://www.plethora-project.com/2011/09/12/rhino-python-tutorials/)
@@ -97,4 +95,8 @@ Via GHPython.  **TODO** More info needed.
 
 ## Related Topics
 
+- [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [Python Basic Syntax]({{ site.baseurl }}/guides/rhinopython/python-statements/)
+- [Rhinoscript Syntax in Python]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-introduction/)
+- [Rhino.Python Home Page]({{ site.baseurl }}/guides/rhinopython/)
 - [Python (homepage)](https://www.python.org/)

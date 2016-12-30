@@ -41,13 +41,21 @@ import time
 print (time.strftime("%H:%M:%S")) #strftime is a proccedure in the time module.
 ```
 
-The `import` statement can also be used to change the renference mname of the incoming module.  Use thsi function to make module names shorter to use and easier to read in the code.  A very common example of this is how we normally will shorted the `rhinoscriptsyntax` module to `rs` for convenience:
+The `import` statement can also be used to change the renference mname of the incoming module.  Use this function to make module names shorter to use and easier to read in the code.  A very common example of this is how we normally will shorted the `rhinoscriptsyntax` module to `rs` for convenience:
 
 ```python
 import rhinoscriptsyntax as rs
 
 rs.AddPoint (1, 2, 3) # The Rhinoscriptsyntax module is accessed throught 'rs' abreviation.
 ```
+
+It is also possible to import only a portion of a module. In the following case, only certain namespaces are imported from the larger `Syste.IO` module:
+
+```python
+from System.IO import Path, File, FileInfo, FileAttributes
+```
+
+The imported modules above are referenced by using `Path`, `File`, `FileInfo`, `FileAttributes` as namespaces.
 
 ## Common Modules
 
@@ -68,7 +76,7 @@ There are many modules available for Python.  Some of the most useful to Rhino P
   * fractions — Rational numbers
   * random — Generate pseudo-random numbers
 * File and Directory Access
-  * os.path — Common pathname manipulations
+  * System.IO — Common pathname manipulations
   * tempfile — Generate temporary files and directories
   * csv — CSV File Reading and Writing
 
@@ -116,4 +124,4 @@ Python allows a variable to contain a function.
 ## Related Topics
 
 - [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-is-rhinopython)
-- [Additional information onf Functions in Python](https://www.tutorialspoint.com/python/python_functions.htm)
+- [Additional information on Functions in Python](https://www.tutorialspoint.com/python/python_functions.htm)
