@@ -28,7 +28,7 @@ We have added additional libraries to Python in the form of RhinoScriptSyntax an
 
 Rhinoscript syntax is the easiest to use and learn library. To make these methods easy-to-use, all RhinoScriptSyntax methods return simple Python variables or Python List-based data structures. Thus, once you are familiar with Python, you will be able to use any and all functions in the RhinoScriptSyntax methods library.
 
-RhinoCommon is an extensive, low level .NET library of the Rhino SDK. It is meanst for mroe experienced programmers that would like to most extensive access to Rhino and its classes.
+RhinoCommon is an extensive, low level .NET library of the Rhino SDK. It is meanst for more experienced programmers that would like to most extensive access to Rhino and its classes.
 
 This document introduces the built-in Script editor in Rhino and using Python with RhinoSciptSyntax to automate Rhino.
 

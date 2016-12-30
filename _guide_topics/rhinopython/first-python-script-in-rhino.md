@@ -1,12 +1,12 @@
 ---
-title: Your first Script in Rhino
+title: Your first Script in Windows
 description: This guide demonstrates how to create Python scripts in Rhino.
 authors: ['Scott Davidson']
 author_contacts: ['scott']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
-categories: ['Getting Started']
+categories: ['Python Windows']
 origin:
 order: 1
 keywords: ['python', 'commands']
