@@ -32,7 +32,7 @@ Before using RhinoScriptSyntax a line must be added to the top of each Python fi
 import rhinoscriptsyntax as rs
 ```
 
-The `import` above not only imports the library, but also renames the namespace to `rs.`.  This is done to just make it easier to type when accessing the methods in RhinoScriptSyntax.  Access the methods can now be made by starting methods with 'rs.'.  For example, accessing the `AddCircle()` method in the RhinoScriptSyntax namespace can be used to create a circle:
+The `import` above not only imports the library, but also renames the namespace to `rs.`.  This is done to just make it easier to type when accessing the methods in RhinoScriptSyntax.  Access the methods by starting methods with 'rs.'.  For example, the `Addpoint()` method in the RhinoScriptSyntax namespace can  be entered:
 
 ```python
 import rhinoscriptsyntax as rs
@@ -43,7 +43,13 @@ rs.AddCircle( centerpoint, 5.0 )
 
 ## Geometry
 
-Rhino is a 3D modeler, therefore creating and modifing geometry is key to developing in Rhino.  Here are the primitive geometry types of Rhino:
+Creating, accessing and maniputlating Geometry is one of the primary uses for RhinoScriptSytnax in Rhino's implementation of Python.  Simple geometry such as points, lines, planes can be described with simple lists in Python.  More complicated geomtry objects such as NURBS curves, Surfaces and Polysurfaces can be created by Rhino and referenced by an object ID by RhinoScriptSyntax.
+
+*Note:* Although not required, having some understanding of the computational methods used in 3-D modeling and computer graphics can be helpful when using RhinoScriptSyntax. A good introductory resource is the [Essential Mathematics for Computational Design](http://www.rhino3d.com/download/Rhino/4.0/EssentialMathematicsSecondEdition). This material is directed towards designers who have little or no background in mathematics beyond high school. And although all concepts are explained visually using Grasshopper®, they are directly applicable to RhinoScriptSyntax.
+
+#### Basic Geometry
+
+Here are the basic geometry types of RhinoScript:
 
 - [Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points)
 - [List of Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-list-points)

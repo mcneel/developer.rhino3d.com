@@ -66,7 +66,7 @@ Best practices for all Python naming can be found in the (Style Guide for Python
 
 ## Scope & Lifetime
 
-Scope of a variable defines where that variable can be accessed in your code.  For instance a `global` variable can be accessed from anywhere in you code.  A `local` variable can only be accessed within the function it was declared in.  Generally a variable's scope is determined by where you declare it.  
+Scope of a variable defines where that variable can be accessed in your code.  For instance a `global` variable can be accessed from anywhere in your code.  A `local` variable can only be accessed within the function it was declared in.  Generally a variable's scope is determined by where you declare it.  
 
 When you declare a variable within a procedure, only code within that procedure can access or change the value of that variable.  It has local scope and is a procedure-level variable.  If you declare a variable outside a procedure, you make it recognizable to all the procedures in your script.  This is a global variable, and it has global scope.
 
@@ -88,15 +88,15 @@ print local_var  # this gives an error because we are outside function1
 It is important to be careful when declaring variables.  It is easy to create duplicate variable names that do not reference the correct values.  For instance do not declare a global variable this way:
 
 ```python
-global_var = 'True'
+g_var = 'True'
 def function2():
-    global_var = 'False'
-    print 'inside the function var is ', var
+    g_var = 'False'
+    print 'inside the function var is ', g_var
 
 ex2()
-print 'outside the function var is ', var
+print 'outside the function var is ', g_var
 ```
-The example above will create a `Global` variable named `g_var`.  When dropping in the `function2` function, there will be a second `local` variable created named `g_var` with a different value. The proper way to work with a global variable is to be very explicate with the `global` statement in the `local` scope:
+The example above will create a `Global` variable named `g_var`.  When dropping in the `function2` function, there will be a second `local` variable created named `g_var` with a different value. The proper way to work with a global variable is to be very explicit with the `global` statement in the `local` scope:
 
 ```python
 g_var = "Global"
