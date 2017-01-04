@@ -1,12 +1,12 @@
 ---
-title: Python Dictionaries
-description: This guide discusses using Pythons's Dictionary object in RhinoScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+title: Using Python Dictionary as a database
+description: This guide discusses using Python's Dictionary object to access nested data.
+authors: ['Scott Davidson']
+author_contacts: ['scott']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
-categories: ['Fundamentals']
+categories: ['intermediate']
 origin:
 order: 100
 keywords: ['script', 'Rhino', 'python']
@@ -16,28 +16,82 @@ layout: toc-guide-page
 
 ## Overview
 
-One of the nice features of other scripting languages, such as Perl, LISP, and Python is what is called an associative array. An associative array differs from a "normal" array in one major way: rather than being indexed numerically (i.e. 0, 1, 2, 3, ...), it is indexed by a key, or an English-like word. Python has something very similar to an associative array. This object is called the Dictionary object. The Python Dictionary object provides an item indexing facility.
+There are many modern data structures that use a structured key:value pairs to describe objects and the data that is stored within them.  A few popular ones are XML, JSON and Amazon S3(Dynamo).
 
-The Dictionary object is used to hold a set of data values in the form of (key, item) pairs.  A dictionary is sometimes called an associative array because it associates a key with an item.  The keys behave in a way similar to indices in an array, except that array indices are numeric and keys are arbitrary strings.  Each key in a single Dictionary object must be unique.
+The Dictionary object is used to hold a set of data values in the form of (key, value) pairs.  The values can be any standard datatype including lists. This article may serve help understand how Python can be used to create and access nested information.
 
-Dictionaries are frequently used when some items need to be stored and recovered by name.  For example, a dictionary can hold all the environment variables defined by the system or all the values associated with a registry key.  However, a dictionary can only store one item for each key value.  That is, dictionary keys must all be unique.
+## Creating a Key:Value datastore
 
-## Creating Dictionaries
+Here is an example of a nested dictionary that stores many different items. Look closely at the bracket and paraens that are used.  The curly braces `{}` denote the a dictionary.  The square brackets `[]` represent a list as a value in the `bookshelf` key. The list in bookshelf actually contains a series of dictionaries for each book.
 
-To create an empty dictionay, use a pair of braces `{}`
-
-```python
-room_empty = {}
-```
-
-To construct an instance of a dictionary object with data, just use one of the the following methods:
+Using Dictionaries, list and a key:values can be used together to create this datastore.
 
 ```python
-room_num = {'john': 425, 'tom': 212}
-room_num1 = dict([('john', 425), ('tom', 212), ('jack', 325)]) # an alternative way to create a dictionary is to use the dcit() constructor to create a dictionary.
+datastore = { "store": {
+    "bookshelf": [
+      { "category": "classic",
+        "author": "Charles Dickens",
+        "title": "Great Expectations",
+        "price": 7.47
+      },
+      { "category": "classic",
+        "author": "John Steinbeck",
+        "title": "The Grapes of Wrath",
+        "price": 11.18
+      },
+      { "category": "philosophy",
+        "author": "Seneca",
+        "title": "Letters from a Stoic",
+        "isbn": "0-140-44210-3",
+        "price": 12.84
+      },
+      { "category": "fiction",
+        "author": "George Orwell",
+        "title": "1984",
+        "isbn": "0-451-52493-4",
+        "price": 8.49
+      }
+    ],
+    "bicycle": {
+      "color": "blue",
+      "style": "trail",
+      "price": 49.95
+    }
+  }
+}
 ```
-The `key` value is a string or number, followed be a colon `:` as a serprater from the associated value which can be any datatype. Then use a comma `,` to sperate different key:pairs in the dictionary.
 
+## Accessing Values
+
+There are many ways to access the data in this datastore:
+
+  # print database["store"]["book"][0:2]
+  # print database["store"]["book"][1]["author"]
+  # print database["store"]["bicycle"]
+
+  # Use this method to create a reference to a portion of the database.  In this case the list of books.
+  # A list object is mutable in Python, therfore it is easy to walk though it with a for statement
+  # becase this is dereived from database, any changing the books list will change in database.
+  books = database['store']['bookshelf']
+
+  # for item in books:
+  #     if "author" in item:
+  #         print item.get("author")
+
+  # List all the authors of the books.  Use item.get because it is safe if there is no title or price in the object.
+  #for item in books:
+  #    if "author" in item:
+  #        print 'The book %s by %s costs $%s.' % (item.get('title'), item.get("author"), format(item.get("price"), '.2f'))
+
+
+  # Here is a method to find and change a value in the database.
+  for item in books:
+       if item.get('author') == "Nigel Rees" :
+           item['price'] = 10.00
+
+  for item in database['store']['bookshelf']: # This loop shows the change is not only in books, but is also in database
+       if item.get('author') == "Nigel Rees" :
+           print 'The book %s now costs %s' % (item.get("title"), item.get('price'))
 ## Adding Values
 
 To add a value to a Dictionary, use the `.Add` method.  For example:
