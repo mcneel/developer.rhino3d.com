@@ -61,12 +61,12 @@ datastore = { "store": {
 }
 ```
 
-## Accessing Values
+## Accessing the Datastore
 
 There are many ways to access the data in this datastore:
 
 ```python
-print database["store"]["bicycle"]
+print datastore["store"]["bicycle"]
 ```
 
 This returns the bicycle dictionary object`{ "color":"blue, "style":"trail", "price":49.95 }`
@@ -74,7 +74,7 @@ This returns the bicycle dictionary object`{ "color":"blue, "style":"trail", "pr
 Knowing that the `value` for `bookshelf` is a list.  Use and index number to access any single book:
 
 ```python
- print database["store"]["bookshelf"][1]
+ print datastore["store"]["bookshelf"][1]
 ```
 
 This returns the dictionary object for The Grapes of Wrath.
@@ -83,129 +83,24 @@ This returns the dictionary object for The Grapes of Wrath.
 The objects and values in the datastore can also be accessed with the `.get` method.  The direct method shown above will return an error if a key does not exist. The `.get` method is a little safer.  It will return a value or `None`.  This is much safer if you are not sure the key is always present.  The `isbn` key is a goot example of this.
 
 ```python
-print database["store"]["toy"] # this produces an error.
-print database["store"].get("toy")  #This will produce the value of None.
+print datastore["store"]["toy"] # this produces an error.
+print datastore["store"].get("toy")  #This will produce the value of None.
 ```
-A convenient way to efficiently address a portion of the datastore is to assign the portion to a variable. In this case the list of books.
+A convenient way to efficiently address a portion of the datastore is to assign the portion to a variable. In this case we can assign the list of books to a `books` variable:
 
 ```python
-books = database['store']['bookshelf']
+books = datastore['store']['bookshelf']
 ```
-The variable is a reference to the object. so any changes made with books will also be reflected in the original datastore.
+The variable is a reference to the object. Any changes made with books will also be reflected in the original datastore. Also, because books containsonly the list of books in the datastore, it is quite easy to step through the books with a `for` statement.  In the example below, the for loop is looking for a specifc book then updates the price:
 
-  # for item in books:
-  #     if "author" in item:
-  #         print item.get("author")
-
-  # List all the authors of the books.  Use item.get because it is safe if there is no title or price in the object.
-  #for item in books:
-  #    if "author" in item:
-  #        print 'The book %s by %s costs $%s.' % (item.get('title'), item.get("author"), format(item.get("price"), '.2f'))
-
-
-  # Here is a method to find and change a value in the database.
+```python
+# Here is a method to find and change a value in the database.
   for item in books:
-       if item.get('author') == "Nigel Rees" :
+       if item.get('author') == "Seneca" :
            item['price'] = 10.00
 
-  for item in database['store']['bookshelf']: # This loop shows the change is not only in books, but is also in database
-       if item.get('author') == "Nigel Rees" :
-           print 'The book %s now costs %s' % (item.get("title"), item.get('price'))
-## Adding Values
-
-To add a value to a Dictionary, use the `.Add` method.  For example:
-
-```python
-room_num = {'john': 425, 'tom': 212}
-room_num['isaac'] = 345 # Add a new key 'isaac' with the associated value
-print room_num
+  for item in datastore['store']['bookshelf']: # This loop shows the change is not only in books, but is also in database
+       if item.get('author') == "Seneca" :
+           print 'The book %s now costs %s' % (item.get("title"), format(item.get("price"), '.2f'))
 ```
 
-Use the variable name with the new key value in brackets `[]` and after the equals is the item value.  The key is similar to the index in a numerically-based, indexed array, and the item is the value at that index.  There is no limit to the number of values that can be added to a dictionary (within the bounds of physical memory).
-
-Changing a value for any of the keys follows the same syntax.  If the key allready exists in the dictionary, the value is simply updated.
-
-## Removing Values
-
-To remove a value from a dictionary, use the `del` method and specify the key to remove.  For example:
-
-```python
-room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-del room_num['isaac']
-print room_num
-```
-
-## Counting Values
-
-Use the `len()` property to obtain a count of values in the dictionary.
-
-```python
-room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-print len(room_num)
-```
-
-## Get Values for Key
-
-The `in` syntax returns True if the specified key exists within the dictionary.  For example:
-
-```python
-room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-var1 = 'tom' in room_num # Looking wether a specific key exists.
-print "Is tom in the dictionary" + str(var1)
-var1 = 'isaac' not in room_num # using not also works for the opposite
-print "Is isaac not in room_num " + str(var1)
-```
-
-Use the variable name and the key value in brackets `[]` to get the value assoted with the key.
-
-```python
-room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-var1 = room_num['isaac']
-print room_num # will print the isaac value of 345
-```
-
-The `.keys()` and `.values()` methods return an array containing all the keys or values from the dictionary. For example:
-
-```python
-room_num = {'john': 425, 'tom': 212}
-print (room_num.keys()) # print out a list of keys in the dictionary
-print (room_num.values()) # print out a list of values in the dictionary
-```
-
-## Looping through Dictionaries
-
-Dictionaires can be used to control loops.  In addition both the keys and values can be extracted at the same time using the `.items()` method:
-
-```python
-room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-for k, v in room_num.items():
-    print k + ' is in room ' + str(v)
-```
-
-You can also go through the dictionary backwards by using the `reversed()` method:
-
-```python
-room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-for k, v in reversed(room_num.items()):
-    print k + ' is in room ' + str(v)
-```
-
-## Sorting Dictionaries
-
-On occasion, it may be important to sort your dictionary. Dictionaries and be sorted by `key` name or by `values`
-
-To sort a dictionary by key using the following `sorted()` function:
-
-```python
-room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-print sorted(room_num) # sort the dictionary by keys
-```
-
-To sort by `values` use the `sorted()` method along with the `.values()` function:
-
-```python
-room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-print sorted(room_num.values()) # sort the dictionary by keys
-```
-
-The Dictionary object is not there to replace the array, but there are certainly times when it makes more sense to index your array using English-like terms as opposed to numerical values.

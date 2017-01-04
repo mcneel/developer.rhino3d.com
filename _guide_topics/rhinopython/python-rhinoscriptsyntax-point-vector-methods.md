@@ -8,7 +8,7 @@ languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['rhinoscriptsyntax-fundamentals']
 origin:
-order: 99
+order: 97
 keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
