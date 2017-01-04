@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="413.422px" height="109.507px" viewBox="0 0 413.422 109.507" enable-background="new 0 0 413.422 109.507"
+	 xml:space="preserve">
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="7.949" width="115.514" height="98.678"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_2_)" fill="#D0D2D3" d="M10.296,9.699c0,0-8,0-8,8v79.178c0,0,0,8,8,8h89.941c0,0,8,0,8-8V17.699
+		c0,0,0-8-8-8H10.296z"/>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M2,81.333h106.534v14.128H2V81.333z M2,67.206h106.534v14.128H2V67.206z
+		 M2,53.078h106.534v14.128H2V53.078z M2,38.95h106.534v14.128H2V38.95z M2,24.822h106.534V38.95H2V24.822z"/>
+	
+		<line clip-path="url(#SVGID_2_)" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="2" y1="24.822" x2="108.534" y2="24.822"/>
+	
+		<line clip-path="url(#SVGID_2_)" fill="none" stroke="#231F20" stroke-width="0.25" stroke-miterlimit="10" x1="2" y1="38.95" x2="108.534" y2="38.95"/>
+	
+		<line clip-path="url(#SVGID_2_)" fill="none" stroke="#231F20" stroke-width="0.25" stroke-miterlimit="10" x1="2" y1="53.078" x2="108.534" y2="53.078"/>
+	
+		<line clip-path="url(#SVGID_2_)" fill="none" stroke="#231F20" stroke-width="0.25" stroke-miterlimit="10" x1="2" y1="67.206" x2="108.534" y2="67.206"/>
+	
+		<line clip-path="url(#SVGID_2_)" fill="none" stroke="#231F20" stroke-width="0.25" stroke-miterlimit="10" x1="2" y1="81.333" x2="108.534" y2="81.333"/>
+	
+		<line clip-path="url(#SVGID_2_)" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="2" y1="95.461" x2="108.534" y2="95.461"/>
+</g>
+<text transform="matrix(1 0 0 1 37.0566 20.8218)" fill="#231F20" font-family="'TrebuchetMS-Italic'" font-size="10">Integers</text>
+<text transform="matrix(1 0 0 1.1111 6 34.9497)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">0</text>
+<text transform="matrix(1 0 0 1.1111 6 49.0796)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">1</text>
+<text transform="matrix(1 0 0 1.1111 6 63.2095)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">-1</text>
+<text transform="matrix(1 0 0 1.1111 6 77.3394)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">3785</text>
+<text transform="matrix(1 0 0 1.1111 6 91.4692)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">-2000000000</text>
+<g>
+	<defs>
+		<rect id="SVGID_3_" y="7.949" width="115.514" height="98.678"/>
+	</defs>
+	<clipPath id="SVGID_4_">
+		<use xlink:href="#SVGID_3_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_4_)" fill="none" stroke="#231F20" stroke-width="1.5" d="M10.296,9.699c0,0-8,0-8,8v79.178
+		c0,0,0,8,8,8h89.941c0,0,8,0,8-8V17.699c0,0,0-8-8-8H10.296z"/>
+</g>
+<g>
+	<defs>
+		<rect id="SVGID_5_" x="119.028" y="8.199" width="133.855" height="98.178"/>
+	</defs>
+	<clipPath id="SVGID_6_">
+		<use xlink:href="#SVGID_5_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_6_)" fill="#D0D2D3" d="M129.091,9.949c0,0-8,0-8,8v78.678c0,0,0,8,8,8h108.75c0,0,8,0,8-8V17.949
+		c0,0,0-8-8-8H129.091z"/>
+	<path clip-path="url(#SVGID_6_)" fill="#FFFFFF" d="M121.028,81.583h124.875v14.128H121.028V81.583z M121.028,67.456h124.875
+		v14.128H121.028V67.456z M121.028,53.328h124.875v14.128H121.028V53.328z M121.028,39.2h124.875v14.128H121.028V39.2z
+		 M121.028,25.072h124.875V39.2H121.028V25.072z"/>
+	
+		<line clip-path="url(#SVGID_6_)" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="121.028" y1="25.072" x2="245.903" y2="25.072"/>
+	
+		<line clip-path="url(#SVGID_6_)" fill="none" stroke="#231F20" stroke-width="0.25" stroke-miterlimit="10" x1="121.028" y1="39.2" x2="245.903" y2="39.2"/>
+	
+		<line clip-path="url(#SVGID_6_)" fill="none" stroke="#231F20" stroke-width="0.25" stroke-miterlimit="10" x1="121.028" y1="53.328" x2="245.903" y2="53.328"/>
+	
+		<line clip-path="url(#SVGID_6_)" fill="none" stroke="#231F20" stroke-width="0.25" stroke-miterlimit="10" x1="121.028" y1="67.456" x2="245.903" y2="67.456"/>
+	
+		<line clip-path="url(#SVGID_6_)" fill="none" stroke="#231F20" stroke-width="0.25" stroke-miterlimit="10" x1="121.028" y1="81.583" x2="245.903" y2="81.583"/>
+	
+		<line clip-path="url(#SVGID_6_)" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="121.028" y1="95.711" x2="245.903" y2="95.711"/>
+</g>
+<text transform="matrix(1 0 0 1 165.8364 21.0718)" fill="#231F20" font-family="'TrebuchetMS-Italic'" font-size="10">Doubles</text>
+<text transform="matrix(1 0 0 1.1111 125.0283 35.1997)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">0.00</text>
+<text transform="matrix(1 0 0 1.1111 125.0283 49.3296)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">1.5</text>
+<text transform="matrix(1 0 0 1.1111 125.0283 63.4595)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">-34.9372</text>
+<text transform="matrix(1 0 0 1.1111 125.0283 77.5894)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">2.7e40     (2.7</text>
+<text transform="matrix(1 0 0 1.1111 206.0371 77.5894)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">×</text>
+<text transform="matrix(1 0 0 1.1111 211.4375 77.5894)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">10</text>
+<text transform="matrix(1 0 0 1.1111 222.2441 74.2534)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="5.247">40</text>
+<text transform="matrix(1 0 0 1.1111 228.5415 77.5835)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">)</text>
+<text transform="matrix(1 0 0 1.1111 125.0327 91.7134)"><tspan x="0" y="0" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">-6.2e-12</tspan><tspan x="43.207" y="0" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9"> </tspan><tspan x="48.419" y="0" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">  </tspan><tspan x="58.825" y="0" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">(-6.2</tspan></text>
+<text transform="matrix(1 0 0 1.1111 210.8486 91.7134)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">×</text>
+<text transform="matrix(1 0 0 1.1111 216.2485 91.7134)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">10</text>
+<text transform="matrix(1 0 0 1.1111 227.0566 88.3813)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="5.247">-12</text>
+<text transform="matrix(1 0 0 1.1111 236.5029 91.7114)" fill="#231F20" font-family="'CourierNewPS-ItalicMT'" font-size="9">)</text>
+<g>
+	<defs>
+		<rect id="SVGID_7_" x="119.028" y="8.199" width="133.855" height="98.178"/>
+	</defs>
+	<clipPath id="SVGID_8_">
+		<use xlink:href="#SVGID_7_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_8_)" fill="none" stroke="#231F20" stroke-width="1.5" d="M129.091,9.949c0,0-8,0-8,8v78.678
+		c0,0,0,8,8,8h108.75c0,0,8,0,8-8V17.949c0,0,0-8-8-8H129.091z"/>
+</g>
+<text transform="matrix(1 0 0 1 252.8843 78.0527)" font-family="'MyriadPro-Regular'" font-size="12">« A very big positive number</text>
+<text transform="matrix(1 0 0 1 252.4946 92.0044)" font-family="'MyriadPro-Regular'" font-size="12">« A very small negative number</text>
+</svg>

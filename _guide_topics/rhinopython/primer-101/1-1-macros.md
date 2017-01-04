@@ -6,7 +6,7 @@ author_contacts: ['scott']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
-categories: ['Python Windows']
+categories: ['Python Primer']
 origin:
 order: 1
 keywords: ['python', 'commands']
@@ -23,21 +23,21 @@ command-line entirely. Emotions run high on the subject; some users are command-
 
 The lowest form of programming in Rhino is using macros. I do not wish to offend those of you who write macros for a living, but it cannot be denied that it is a very primitive way to automate processes. I shall only briefly pause at the subject of macros, partly so we know which is which and partly because we might at some point simulate macros using RhinoScript.
 
-A macro is a prerecorded list of orders for Rhino to execute. The _Line command at the top of this page is an example of a very simple macro. If your job is to open Rhino files, add a line from 0,0,0 to 10,0,0 to each one and save the file again, you would probably get very tired very quickly from typing "_Line w0,0,0 w10,0,0" six times a minute. Enter macros. Macros allow you to automate tasks you would normally do by hand but not by brain. Macros cannot be made smart, nor do they react to the things they help create. They’re a bit like traffic wardens in that respect. An example of a more sophisticated macro would be:
+A macro is a prerecorded list of orders for Rhino to execute. The *_Line* command at the top of this page is an example of a very simple macro. If your job is to open Rhino files, add a line from 0,0,0 to 10,0,0 to each one and save the file again, you would probably get very tired very quickly from typing `_Line w0,0,0 w10,0,0` six times a minute. Enter macros. Macros allow you to automate tasks you would normally do by hand but not by brain. Macros cannot be made smart, nor do they react to the things they help create. They’re a bit like traffic wardens in that respect. An example of a more sophisticated macro would be:
 
 
 ```
 _SelNone
 _Polygon _NumSides=6 w0,0,0 w10,0,0
 _SelLast
-\-_Properties _Object _Name RailPolygon _Enter _Enter
+-_Properties _Object _Name RailPolygon _Enter _Enter
 _SelNone
 _Polygon _NumSides=6 w10,0,0 w12,0,0
 _SelLast
 _Rotate3D w0,0,0 w10,0,0 90
-\-_Properties _Object _Name ProfilePolygon _Enter _Enter
+-_Properties _Object _Name ProfilePolygon _Enter _Enter
 _SelNone
-\-_Sweep1 _SelName RailPolygon _SelName ProfilePolygon _Enter _Enter _Closed=Yes Enter
+-_Sweep1 _SelName RailPolygon _SelName ProfilePolygon _Enter _Enter _Closed=Yes Enter
 ```
 
 <table>
@@ -51,7 +51,7 @@ Incidentally, the underscores before all the command names are due to Rhino loca
 </tr>
 </table>
 
-The hyphen in front of the _Properties and _Sweep1 command is used to suppress dialog boxes. If you take the hyphens out you will no longer be able to change the way a command works through the command -line.
+The hyphen in front of the *_Properties* and *_Sweep1* command is used to suppress dialog boxes. If you take the hyphens out you will no longer be able to change the way a command works through the command -line.
 
 There’s no limit to how complex a macro can become, you can keep adding commands without restrictions, but you’ll never be able to get around the limitations that lie at the heart of macros.
 
