@@ -65,14 +65,33 @@ datastore = { "store": {
 
 There are many ways to access the data in this datastore:
 
-  # print database["store"]["book"][0:2]
-  # print database["store"]["book"][1]["author"]
-  # print database["store"]["bicycle"]
+```python
+print database["store"]["bicycle"]
+```
 
-  # Use this method to create a reference to a portion of the database.  In this case the list of books.
-  # A list object is mutable in Python, therfore it is easy to walk though it with a for statement
-  # becase this is dereived from database, any changing the books list will change in database.
-  books = database['store']['bookshelf']
+This returns the bicycle dictionary object`{ "color":"blue, "style":"trail", "price":49.95 }`
+
+Knowing that the `value` for `bookshelf` is a list.  Use and index number to access any single book:
+
+```python
+ print database["store"]["bookshelf"][1]
+```
+
+This returns the dictionary object for The Grapes of Wrath.
+
+
+The objects and values in the datastore can also be accessed with the `.get` method.  The direct method shown above will return an error if a key does not exist. The `.get` method is a little safer.  It will return a value or `None`.  This is much safer if you are not sure the key is always present.  The `isbn` key is a goot example of this.
+
+```python
+print database["store"]["toy"] # this produces an error.
+print database["store"].get("toy")  #This will produce the value of None.
+```
+A convenient way to efficiently address a portion of the datastore is to assign the portion to a variable. In this case the list of books.
+
+```python
+books = database['store']['bookshelf']
+```
+The variable is a reference to the object. so any changes made with books will also be reflected in the original datastore.
 
   # for item in books:
   #     if "author" in item:
