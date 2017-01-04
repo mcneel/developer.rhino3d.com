@@ -41,7 +41,7 @@ vector = rs.VectorCreate(point2, point1)
 print vector
 ```
 
-RhinoScript contains a number of methods to manipulate vectors.  See Points and Vectors for details.
+Rhinoscriptsyntax contains a number of methods to manipulate vectors.  See Points and Vectors for details.
 
 ---
 

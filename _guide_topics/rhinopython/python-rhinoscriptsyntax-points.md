@@ -15,7 +15,7 @@ layout: toc-guide-page
  
 ## Points
 
-In RhinoScript, 3-D points are represented as zero-based, one-dimensional arrays that contain three numbers.  These three number represent to the X, Y and Z coordinate values of the point.
+In Python, 3-D points are represented as zero-based lists that contain three numbers.  These three number represent to the X, Y and Z coordinate values of the point.
 
 A 3-D point can be constructed in a number of different ways.  For example:
 
@@ -30,9 +30,9 @@ point2.append(1.0)
 point2.append(2.0)
 point2.append(5.0)
 ```
-Like 3-D points, RhinoScript represents a single 2-D point as zero-based, one-dimensional array.  The difference being that 2-D points contain only X and Y coordinate values.
+Like 3-D points, Python represents a single 2-D point as a zero-based list of numbers.  The difference being that 2-D points contain only X and Y coordinate values.
 
-RhinoScript contains a number of methods to manipulate points.  See Points and Vectors for details.
+Rhinoscriptsyntax contains a number of methods to manipulate points.  See Points and Vectors for details.
 
 ---
 

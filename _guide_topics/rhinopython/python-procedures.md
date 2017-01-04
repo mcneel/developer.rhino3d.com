@@ -1,6 +1,6 @@
 ---
 title: Python Procedures
-description: This guide discusses VBScript procedures.
+description: This guide discusses Python procedures.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
 apis: ['RhinoPython']
@@ -41,7 +41,7 @@ import time
 print (time.strftime("%H:%M:%S")) #strftime is a proccedure in the time module.
 ```
 
-The `import` statement can also be used to change the renference mname of the incoming module.  Use this function to make module names shorter to use and easier to read in the code.  A very common example of this is how we normally will shorted the `rhinoscriptsyntax` module to `rs` for convenience:
+The `import` statement can also be used to change the renference name of the incoming module.  Use this function to make module names shorter to use and easier to read in the code.  A very common example of this is how we normally will shorted the `rhinoscriptsyntax` module to `rs` for convenience:
 
 ```python
 import rhinoscriptsyntax as rs
@@ -84,11 +84,11 @@ A complete list of predefined modules in Python, see the [Python Standard Librar
 
 ## User-Defined Procedures
 
-A `Function` is a series of Python statements begins by a `def`, followed by the function name and enclosed in parenthesis. A Function may or may not return a value.  A `Function` procedure can take arguments (constants, variables, or expressions that are passed by a calling procedure).  If a `Function` procedure has no arguments, its `def` statement should include an empty set of parentheses `()`.  Parameters can also be defined within the paranthesis.  The parenthesis are followed by a colon (:) to end the first line.
+A `Function` is a series of Python statements begins by a `def`, followed by the function name and enclosed in parenthesis. A Function may or may not return a value.  A Function procedure can take arguments (constants, variables, or expressions that are passed by a calling procedure).  If a Function procedure has no arguments, its `def` statement should include an empty set of parentheses `()`.  Parameters can also be defined within the paranthesis.  The parenthesis are followed by a colon (:) to end the first line.
 
 The end of the function is marked by the loss of whitespace in the next line of the code (ending the code block). It is common practice to use a `return` statement followed by the arguement to return a value. You amay also finish a funtion with a return stanement and a simple colon (;).
 
-In the following example, the Celsius `def` calculates degrees Celsius from degrees Fahrenheit. When the `def` is called from the `ConvertTemp` `def` procedure, a variable containing the argument value is passed to the `def`.  The result of the calculation is returned to the calling procedure and displayed in a message box.
+In the following example, the Celsius `def` calculates degrees Celsius from degrees Fahrenheit. When the def is called from the `ConvertTemp` def procedure, a variable containing the argument value is passed to the def.  The result of the calculation is returned to the calling procedure and displayed in a message box.
 
 ```python
 def Celsius(fDegrees):
@@ -111,7 +111,7 @@ Function Celsius(fDegrees)
     return _Celsius;
 ```
 
-To call a `Sub` procedure from another procedure, type the name of the procedure along with values for any required arguments, each separated by a space.
+To call a procedure from another procedure, type the name of the procedure along with values for any required arguments, each separated by a space.
 
 The function will returns a single value based on its final `return` statement. A return statement with a variable name, followed by a semicolon (;) returns the reference to that variable. A return statement with simply a semicolon (;) returns nothing. The return statement is not required to end a procedure.
 

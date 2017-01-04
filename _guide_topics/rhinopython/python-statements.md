@@ -85,11 +85,11 @@ print\
 message
 ```
 
-Line continuation is automatic is automatic when the split comes while a statement is inside parenthesis ((), brackets ([) or braces ({).  This is convenient, but can also lead to errors if there is no closing Parenthesis, bracket or brace.  Python would interpret the rest of the script as one statement in that case.
+Line continuation is automatic when the split comes while a statement is inside parenthesis ( ( ), brackets ( [ ) or braces ( { ).  This is convenient, but can also lead to errors if there is no closing Parenthesis, bracket or brace.  Python would interpret the rest of the script as one statement in that case.
 
 Python uses single quotes (') double quotes (") and triple quotes (""") to denote literal strings.  Only the triple quoted strings (""") also will automatically continue across the end of line statement.
 
-Sometime, more than one statement may be put on a single line.  In Python a semicolon (;) can be used to separate multiple statements on the same line.  For instance three statements can be written:
+Sometimes, more than one statement may be put on a single line.  In Python a semicolon (;) can be used to separate multiple statements on the same line.  For instance three statements can be written:
 
 ```python
 y = 3; x = 5; print(x+y)
