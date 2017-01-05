@@ -1,0 +1,87 @@
+---
+title: Python Conditionals
+description: This guide is an survey of Python conditional statements.
+authors: ['Dale Fugier']
+author_contacts: ['dale']
+apis: ['RhinoPython']
+languages: ['Python']
+platforms: ['Mac', 'Windows']
+categories: ['Fundamentals']
+origin:
+order: 5
+keywords: ['script', 'Rhino', 'python']
+layout: toc-guide-page
+---
+
+ 
+## Overview
+
+You can control the flow of your script with conditional statements and looping statements.  Using conditional statements, you can write Python code that makes decisions and repeats actions.  The following conditional statements are available in Python:
+
+* `if` statement
+* `if`...`else` statement
+* `if`...`elif`...`elif`...`else` nested statement
+
+The `If`... statement is used to evaluate whether a condition is True or False and, depending on the result, to specify one or more statements to run.  Usually the condition is an expression that uses a comparison operator to compare one value or variable with another.  For information about comparison operators, see the [Python Operators]({{ site.baseurl }}/guides/rhinopython/python-operators) guide. `If`...`Then`...`Else` statements can be nested to as many levels as you need. 
+
+Python programming language assumes any non-zero and non-null values as TRUE, and if it is either zero or null, then it is assumed as FALSE value.
+
+### if
+
+To run only one statement when a condition is True, use the single-line syntax for the `If`... statement.  The following example shows the single-line syntax.
+
+```python
+var1 = 350
+if var1 == 350 : print "The value of the variable is 350"
+```
+
+To run more than one line of code, you must use the multiple-line (or block) syntax. The first line ends in a colo (:). As with all Python block syntax, the whitespaces to the left of the lines must be the same throughout the block. As an example:
+
+```python
+var1 = 350
+if var1 == 350 : 
+    print "The value of the variable is 350"
+    var2 = 450
+    print "The value of variable 2 is 450"
+```
+
+### if..else
+
+You can use an `if`...`else` statement to define two blocks of executable statements: one block to run if the condition is True, the other block to run if the condition is False...
+
+```python
+var1 = 350
+if var1 == 0 :
+    MyLayerColor = 'vbRed'
+    MyObjectColor = 'vbBlue'
+else :
+    MyLayerColor = 'vbGreen'
+    MyObjectColor = 'vbBlack'
+print MyLayerColor
+```
+
+### if..elif..elif..else
+
+A variation on the `if`...`else` statement allows you to choose from several alternatives.  Adding `elif` clauses expands the functionality of the `if`...`else` statement so you can control program flow based on multiple different possibilities. For example:
+
+```python
+var1 = 0
+if var1 == 0 :
+    print "This is the first " + str(var1)
+elif var1 == 1 :
+    print "This is the second " + str(var1)
+elif var1 == 2 :
+    print "This is the third " + str(var1)
+else :
+    print "Value out of range!"
+```
+
+You can add as many `elif` clauses as you need to provide alternative choices. Thie `elif` statement takes the place of the `Select Case` statement in other languages.
+
+
+---
+
+## Related Topics
+
+- [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [Python Operators]({{ site.baseurl }}/guides/rhinopython/python-operators)

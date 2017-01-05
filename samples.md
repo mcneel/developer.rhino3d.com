@@ -156,11 +156,17 @@ order: 4
 ## Rhino.Python <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac-logo-small.png" alt="macOS" class="guide_icon">
 {: #rhinopython }
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>Rhino.Python samples have yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="http://wiki.mcneel.com/developer/python">http://wiki.mcneel.com/developer/python</a> or see the RhinoCommon samples above.</p>
+<div class="trigger">
+  {% assign samples = site.samples | sort:"order" %}
+  <ul>
+  {% for sample in samples %}
+    {% if sample.apis contains 'RhinoPython'%}
+      {% if sample.title and sample.order %}
+        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
 </div>
 
 

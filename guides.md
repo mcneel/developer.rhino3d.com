@@ -128,11 +128,15 @@ order: 2
 
 ### Getting Started
 
+- Your First Python Script in Rhino ([Windows]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-mac))
+
+### Python Editor for Windows
+
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Getting Started' %}
+    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Python Windows' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -141,17 +145,49 @@ order: 2
   </ul>
 </div>
 
-### Learning Python
 
-- <a href="https://docs.python.org/2/tutorial/index.html" target="_blank">The Python Tutorial</a>
-- <a href="http://learnpythonthehardway.org/book/" target="_blank">Learn Python the Hard Way</a> (despite the title this is a beginner's book)
-- <a href="https://automatetheboringstuff.com/" target="_blank">Automate The Boring Stuff With Python</a>
+### Fundamentals
 
-### Learning Rhino.Python
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Fundamentals' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
-- <a href="http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101" target="_blank">RhinoPython101 Primer</a>
-- <a href="http://4.rhino3d.com/5/ironpython/index.html" target="_blank">Rhino.Python Programmer's Reference</a>
-- <a href="http://discourse.mcneel.com/c/scripting" target="_blank">Rhino Scripting Forum</a>
+### Python in Rhino
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Python in Rhino' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Other Resources
+
+- [Rhino.Python 101](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)
+- [Rhino Scripting Forum (Discourse)](http://discourse.mcneel.com/c/scripting)
+- [Rhino.Python Samples]({{ site.baseurl }}/samples/#rhinopython)
+- [Designalyze Python Tutorials](http://designalyze.com/)
+- [Plethora Project](http://www.plethora-project.com/2011/09/12/rhino-python-tutorials/)
+- [Steve Baer's Blog](http://stevebaer.wordpress.com/category/python/)
+- [Python Beginner's Guide](http://wiki.python.org/moin/BeginnersGuide/Programmers)
+- [Tutorials Point Python Series](http://www.tutorialspoint.com/python/index.htm)
+- [Rhino.Python Dash Docset](http://discourse.mcneel.com/t/rhino-python-dash-docset/6399)
+- [Nature of Code Video Tutorials](http://www.youtube.com/watch?v=Kyi_K85Gsm4&list=PL5Up_u-XkWgP7nB7XIevMTyBCZ7pvLBGP)
 
 ---
 

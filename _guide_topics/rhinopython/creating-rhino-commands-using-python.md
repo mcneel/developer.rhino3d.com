@@ -6,14 +6,14 @@ author_contacts: ['pascal']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
-categories: ['Getting Started']
+categories: ['Python in Rhino']
 origin: http://wiki.mcneel.com/developer/python/commands
-order: 1
+order: 380
 keywords: ['python', 'commands']
 layout: toc-guide-page
 ---
 
- 
+
 ## Overview
 
 It is possible, if a little convoluted, to create "real" Rhino commands from Python scripts.  Below is outlined the procedure on Rhino for Windows, with a couple of comments about where the files need to go for this all to work with Rhino for Mac.  The initial template for the commands, along with a new GUID and the appropriate folders are created automatically by the Python script editor on Windows.  So far it is possible but not obvious or automatic to create all this on Rhino for Mac.  It is possible to install the folders and scripts for an existing Python command on the Mac and have it all work.
