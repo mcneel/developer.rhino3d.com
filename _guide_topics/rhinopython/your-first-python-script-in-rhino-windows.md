@@ -1,6 +1,6 @@
 ---
-title: Your first Script in Windows
-description: This guide demonstrates how to create Python scripts in Rhino.
+title: Your First Python Script in Rhino (Windows)
+description: This guide demonstrates how to create Python scripts in Rhino for Windows.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
 apis: ['RhinoPython']
@@ -13,11 +13,10 @@ keywords: ['python', 'commands']
 layout: toc-guide-page
 ---
 
-## Your first Script
 
-This tutorial shows you how to display a message box in Rhino that says "Hello World". It covers the most basic concepts for editing,  loading and running scripts.
+You will learn how to display a message box in Rhino that says "Hello World."  It covers the most basic concepts for editing, loading, and running scripts.
 
-#### The Complete Script
+## The Complete Script
 
 ```python
 import rhinoscriptsyntax as rs
@@ -71,7 +70,7 @@ import rhinoscriptsyntax as rs
 
 def HelloWorld()
     rs.MessageBox ("Hello World")
-    
+
 HelloWorld()
 ```
 - Click the Run button.

@@ -41,7 +41,7 @@ In the RhinoPythonScript Ediotr, type:
 import rhinoscriptsyntax as rs
 ```
 
-Any line that follows the auto-completion list pops up as soon as `rs.`. is typed. The list updates when you keep typing to reflect the best possible match with your current text. Once the desired method is highlighted in the pop up list, press [Enter] and the complete method name will be inserted into the script. Once the method name is in place, we have to supply the arguments. Intellisense displays a tooltip showing us the required arguments and which one we are currently setting. 
+Any line that follows the auto-completion list pops up as soon as `rs.`. is typed. The list updates when you keep typing to reflect the best possible match with your current text. Once the desired method is highlighted in the pop up list, press [Enter] and the complete method name will be inserted into the script. Once the method name is in place, we have to supply the arguments. Intellisense displays a tooltip showing us the required arguments and which one we are currently setting.
 
 Above the code editor you will find the document tab. The RhinoPythonScript Editor is multiple-document capable and you can switch between documents by clicking on the appropriate tab. You can also add existing files quickly by dragging them onto the file tab.
 
@@ -53,9 +53,9 @@ The method browser displays a categorized view of all RhinoPythonScript methods.
 
 ## The Status Bar
 
-The status bar provides feedback on the location of the insertion caret in the currently active script. It provides both line and column coordinates, as well as procedure scope coordinate. You can jump to a specific line in your script by using the Go To Line dialog box. But you can also scroll the line index field in the status bar. Just click + drag up and down and the currently selected line will be scrolled. 
+The status bar provides feedback on the location of the insertion caret in the currently active script. It provides both line and column coordinates, as well as procedure scope coordinate. You can jump to a specific line in your script by using the Go To Line dialog box. But you can also scroll the line index field in the status bar. Just click + drag up and down and the currently selected line will be scrolled.
 
-The status bar exposes another quick navigation tool. If you click on the procedure scope field (the last field on the status bar) you will pop up a menu listing all defined Sub and Function procedures. Click on one of the names to jump to that procedure. If the caret is not inside any procedure body, the status bar will read "Global scope". 
+The status bar exposes another quick navigation tool. If you click on the procedure scope field (the last field on the status bar) you will pop up a menu listing all defined Sub and Function procedures. Click on one of the names to jump to that procedure. If the caret is not inside any procedure body, the status bar will read "Global scope".
 
 <img src="{{ site.baseurl }}/images/pythoneditor-output-window.png" alt="Windows">
 
@@ -91,7 +91,7 @@ The menu provides access to all the RhinoPythonScript Editor features.
 ## Related Topics
 
 - [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
-- [My First Script]({{ site.baseurl }}/guides/rhinopython/first-python-script-in-rhino)
+- [Your First Python Script in Rhino (Windows)]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-windows)
 - [Running Scripts]({{ site.baseurl }}/guides/rhinopython/python-running-scripts)
 - [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
 - [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)
