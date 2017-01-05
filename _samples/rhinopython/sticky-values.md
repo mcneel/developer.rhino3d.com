@@ -13,7 +13,6 @@ keywords: ['script', 'Rhino', 'python']
 layout: code-sample-python
 ---
 
-The scriptcontext module contains a standard python dictionary called sticky which "sticks" around during the running of Rhino. This dictionary can be used to save settings between execution of your scripts and then get at those saved settings the next time you run your script -OR- from a completely different script.
 
 ```python
 import rhinoscriptsyntax as rs
@@ -37,3 +36,5 @@ if val:
 # save the value for use in the future
 scriptcontext.sticky["my_key"] = stickyval
 ```
+
+The `scriptcontext` module contains a standard python dictionary called sticky which "sticks" around during the running of Rhino.  This dictionary can be used to save settings between execution of your scripts and then get at those saved settings the next time you run your script or from a completely different script.
