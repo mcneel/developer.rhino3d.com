@@ -6,7 +6,7 @@ author_contacts: ['scottd']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
-categories: ['Python Windows']
+categories: ['Getting Started']
 origin:
 order: 1
 keywords: ['python', 'commands']
