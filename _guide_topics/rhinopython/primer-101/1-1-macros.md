@@ -2,7 +2,7 @@
 title: 1.1 Macros
 description:
 authors: ['Scott Davidson']
-author_contacts: ['scott']
+author_contacts: ['scottd']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

@@ -2,7 +2,7 @@
 title: 1.2 Scripts
 description:
 authors: ['Scott Davidson']
-author_contacts: ['scott']
+author_contacts: ['scottd']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

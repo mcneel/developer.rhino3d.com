@@ -2,7 +2,7 @@
 title: 2.3.1 Integers and Doubles
 description:
 authors: ['Scott Davidson']
-author_contacts: ['scott']
+author_contacts: ['scottd']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

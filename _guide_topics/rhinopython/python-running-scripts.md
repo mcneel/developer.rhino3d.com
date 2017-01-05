@@ -2,7 +2,7 @@
 title: Running a Python script in Rhino
 description: This guide demonstrates how to run a Python script in Rhino.
 authors: ['Scott Davidson']
-author_contacts: ['scott']
+author_contacts: ['scottd']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
@@ -31,7 +31,7 @@ After entering the command, you will be prompted to enter the name of the script
 
 ## Assigning the RunPythonScript command to a button.
 
-The RunPythonScript command can also be assigned to command aliases or to a toolbar button. 
+The RunPythonScript command can also be assigned to command aliases or to a toolbar button.
 
 <img src="{{ site.baseurl }}/images/runpythonscript.png" alt="RunPythonScript">
 
