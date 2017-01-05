@@ -1,6 +1,6 @@
 ---
 title: Custom Getpoint
-description:  A Rhino GetPoint that performs some custom dynamic drawing
+description:  A Rhino GetPoint that performs some custom dynamic drawing.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
 apis: ['RhinoPython']
@@ -13,7 +13,6 @@ keywords: ['script', 'Rhino', 'python']
 layout: code-sample-python
 ---
 
-A Rhino GetPoint that performs some custom dynamic drawing
 
 ```python
 # A Rhino GetPoint that performs some custom dynamic drawing

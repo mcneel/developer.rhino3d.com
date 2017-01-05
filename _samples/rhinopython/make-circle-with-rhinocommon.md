@@ -1,5 +1,5 @@
 ---
-title: Make a Circle with Rhinocommon
+title: Make a Circle with RhinoCommon
 description:  This sample creates a circle without using functions in the rhinoscript package.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
@@ -11,13 +11,9 @@ origin:
 order: 16
 keywords: ['script', 'Rhino', 'python']
 layout: code-sample-python
+TODO: 'Why is this not a RhinoCommon sample?'
 ---
 
-The rhinoscript package is provided as a scripting "convenience" Python can use all of the classes and functions defined in RhinoCommon and the rest of the .NET Framework!!!
-
-This sample creates a circle without using functions in the rhinoscript package
-
-Rhino is the base namespace of the RhinoCommon SDK
 
 ```python
 import math

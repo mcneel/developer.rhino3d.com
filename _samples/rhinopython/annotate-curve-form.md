@@ -1,11 +1,11 @@
 ---
 title: Annotate Curve Form
-description:  The following sample shows how to creates a custom windows form
+description:  The following sample shows how to create a custom Windows form.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
 apis: ['RhinoPython']
 languages: ['Python']
-platforms: ['Windows', 'Mac']
+platforms: ['Windows']
 categories: ['Adding Objects']
 origin:
 order: 13
@@ -13,7 +13,6 @@ keywords: ['script', 'Rhino', 'python']
 layout: code-sample-python
 ---
 
-**Note:** This only works on the Windows version of Rhino.
 
 ```python
 # with a textbox that can be used to define the text in a new text dot
@@ -57,7 +56,7 @@ class AnnotateForm(Form):
     self.ClientSize = Size(width, buttonCancel.Bottom)
     self.AcceptButton = buttonApply
     self.CancelButton = buttonCancel
-  
+
   def TextAtStart(self):
     return self.m_inputstart.Text
 
@@ -78,3 +77,5 @@ else:
         rhinoscript.geometry.AddTextDot(text, location)
 
 ```
+
+**Note:** This only works on the Windows version of Rhino.
