@@ -115,19 +115,19 @@ The following code adheres to Python coding conventions:
 #          strTargetLayer in the strLayerList array.
 #          If the target layer is not found, return -1.
 #****************************************************
-include rhinoscript as rs
+import rhinoscriptsyntax as rs
 
-def FindLayer(arrLayerList, strTargetLayer)
+def FindLayer(LayerList, TargetLayer):
   
-  FindLayer = -1 ' Default return value
-  i = 0          ' Initialize loop counter
-  
-  While i <= UBound(arrLayerList) And Not blnFound
-    If arrLayerList(i) = strTargetLayer Then
-      blnFound = True ' Set flag to True
-      FindLayer = i   ' Set return value to loop count
-    End If
-    i = i + 1         ' Increment loop counter
+  FindLayer = -1 # Default return value
+  i = 0          # Initialize loop counter
+  blnFound = False
+  while i < len(LayerList) and not blnFound:
+    if LayerList[i] == TargetLayer:
+      blnFound = True # Set flag to True
+      FindLayer = i   # Set return value to loop count
+    
+    i = i + 1         # Increment loop counter
 ```
 
 ---

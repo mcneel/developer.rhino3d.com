@@ -1,6 +1,6 @@
 ---
 title: List of Points in Python
-description: This guide provides an overview of a RhinoScriptSytntax list of Point Geometry in Python.
+description: This guide provides an overview of a rhinoscriptsyntax list of Point Geometry in Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
 apis: ['RhinoPython']
@@ -15,7 +15,7 @@ layout: toc-guide-page
  
 ## Lists of Points
 
-Many RhinoScriptSyntax methods either require as an argument or return as a result an list of 3-D points. Lists of 3-D points are zero-based, one-dimensional lists of 3-D points (which in turn are zero-based, one-dimensional lists of X, Y, and Z coordinate values).  Lists of 3-D points can be constructed in a number of ways.  For example,
+Many rhinoscriptsyntax methods either require as an argument or return as a result an list of 3-D points. Lists of 3-D points are zero-based, one-dimensional lists of 3-D points (which in turn are zero-based, one-dimensional lists of X, Y, and Z coordinate values).  Lists of 3-D points can be constructed in a number of ways.  For example,
 
 ```python
 pointcloud = []
