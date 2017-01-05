@@ -59,6 +59,3 @@ Here are the basic geometry types of RhinoScript:
 - [Rhino Geometry Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects)
 
 Creating, accessing and maniputlating geometry is one of the first places RhinoScriptSytnax is used.  SImple geometry such as points, lines, planes can be described with simple lists in Python.  More complicated geometry objects such as NURBS curves, Surfaces and Poly-surfaces can be created by Rhino and referenced by an object ID by RhinoScriptSyntax.
-
----
-

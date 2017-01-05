@@ -90,43 +90,17 @@ layout: guide-homepage
   </ul>
 </div>
 
-### Learning Rhino.Python
-
-- <a href="http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101" target="_blank">RhinoPython101 Primer</a>
-- <a href="http://4.rhino3d.com/5/ironpython/index.html" target="_blank">Rhino.Python Programmer's Reference</a>
-- <a href="http://discourse.mcneel.com/c/scripting" target="_blank">Rhino Scripting Forum</a>
 
 <!--column-->
 
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="{{ site.baseurl }}/images/rhinopython-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
 
-
-### Python Samples
-
-<div class="trigger">
-  {% assign samples = site.samples | sort:"order" %}
-  <ul>
-  {% for sample in samples %}
-    {% if sample.apis contains 'RhinoPython'%}
-      {% if sample.title and sample.order %}
-        <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
-
-
-### Learning Python
-- <a href="https://docs.python.org/2/tutorial/index.html" target="_blank">The Python Tutorial</a>
-- <a href="http://learnpythonthehardway.org/book/" target="_blank">Learn Python the Hard Way</a> (despite the title this is a beginner's book)
-- <a href="https://automatetheboringstuff.com/" target="_blank">Automate The Boring Stuff With Python</a>
-
-
-### Resources for Python
+### Other Resources
 
 - [Rhino.Python 101](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)
+- [Rhino Scripting Forum (Discourse)](http://discourse.mcneel.com/c/scripting)
+- [Rhino.Python Samples]({{ site.baseurl }}/samples/#rhinopython)
 - [Designalyze Python Tutorials](http://designalyze.com/)
 - [Plethora Project](http://www.plethora-project.com/2011/09/12/rhino-python-tutorials/)
 - [Steve Baer's Blog](http://stevebaer.wordpress.com/category/python/)
@@ -140,6 +114,3 @@ layout: guide-homepage
 
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="{{ site.baseurl }}/images/rhinopython-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
-
-
-

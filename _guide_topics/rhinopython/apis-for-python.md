@@ -6,9 +6,9 @@ author_contacts: ['Alain']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
-categories: ['Getting Started']
+categories: ['Overview']
 origin: http://wiki.mcneel.com/developer/python
-order: 99
+order: 2
 keywords: ['Rhino.Python', 'Python']
 layout: toc-guide-page
 ---
@@ -47,7 +47,7 @@ The rhinoscriptsyntax package is implemented on top of RhinoCommon so reading th
 ```
 /Users/<YOUR_HOME_DIRECTORY>/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/ironpython/settings/lib/rhinoscript
 ```
- 
+
 
 ## Common Python Modules
 

@@ -11,6 +11,7 @@ origin:
 order: 5
 keywords: ['python', 'commands']
 layout: toc-guide-page
+TODO: 'has some RhinoScript mid-way down...why?'
 ---
 
 <!-- TODO: This page is nto right yet.  The Sleep function does not seem to help.  I need to check with soemone ont he Rhinocommon calls -->
@@ -26,7 +27,7 @@ If you have a tight loop that does not call back into Rhino, then it is possible
 ```python
 def TightLoopEscapeTest():
   for i in range(10000):
-  
+
 TightLoopEscapeTest()
 ```
 To work around this situation, you will want to call back into Rhino inside of your tight loop. Using RhinoScriptSyntax's `sleep` function is a good way to do this without slowing down your code. For example:
@@ -42,7 +43,7 @@ def TightLoopEscapeTest():
 TightLoopEscapeTest()
 ```
 
-If your loop is relatively fast, you may want to postpone the Sleep call or else it will slow down your script significantly. For example: 
+If your loop is relatively fast, you may want to postpone the Sleep call or else it will slow down your script significantly. For example:
 
 Sub TightLoopEscapeTest
 
@@ -62,9 +63,9 @@ Using OnCancelScript to handle script cancelling
 
 The default behavior when cancelling a script is to halt the script's execution and print a "Script cancelled" message to Rhino's command line. But, there are often times when you might want to know when your script is cancelled. For example, lets say you have a script that: (a) modifies some Rhino parameters, (b) performs an operation and, (c) resets the modified parameters. If your script is cancelled in operation (b), then Rhino can be left in a state unfamiliar to the user.
 
-It is possible for your script to be notified when it has been cancelled. This is done through a special, user-defined subroutine named OnCancelScript. 
+It is possible for your script to be notified when it has been cancelled. This is done through a special, user-defined subroutine named OnCancelScript.
 
-When a script is running and the ESC key is pressed, RhinoScript searches for loaded, user-defined subroutine named OnCancelScript. If this subroutine is detected, RhinoScript will automatically run this procedure instead of just printing the "Script cancelled" message. 
+When a script is running and the ESC key is pressed, RhinoScript searches for loaded, user-defined subroutine named OnCancelScript. If this subroutine is detected, RhinoScript will automatically run this procedure instead of just printing the "Script cancelled" message.
 
 In the above script scenario, the user-defined OnCancelScript subroutine could reset the parameters (c) that were modified when the script started (a).
 

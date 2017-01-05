@@ -13,7 +13,7 @@ keywords: ['developer', 'rhino']
 layout: toc-guide-page
 ---
 
- 
+
 There are a number of prerequisites required to do Rhino development.  Broadly speaking, these can be divided into three categories, ranked in ascending order of difficulty:
 
 1. [Hardware prerequisites](#hardware)
@@ -95,11 +95,11 @@ To write plugins for Rhino using the C/C++ SDK, you first need to learn the [C++
 
 *Read*...
 
+- [The Python Tutorial](https://docs.python.org/2/tutorial/index.html)
 - [RhinoPython Primer](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101) by Skylar Tibbits, Arthur van der Harten, Steve Baer, and David Rutten
 - [The Python Tutorial](https://docs.python.org/2/tutorial/index.html) by the Python Software Foundation
 - [Learn Python the Hard Way](http://learnpythonthehardway.org/book/) by Zed A. Shaw - despite the title, this is a beginner's book
 - [Automate The Boring Stuff With Python](https://automatetheboringstuff.com/) by Al Sweigart
-
 
 *Do*...
 
