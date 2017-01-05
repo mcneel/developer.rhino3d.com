@@ -60,7 +60,7 @@ layout: guide-homepage
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="{{ site.baseurl }}/images/rhinopython-guides-col2.png">](https://docs.python.org/2/tutorial/index.html)
 
-### Python Fundamentals
+### Fundamentals
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
@@ -81,7 +81,7 @@ layout: guide-homepage
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'rhinoscriptsyntax-fundamentals' %}
+    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Python in Rhino' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}

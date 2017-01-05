@@ -6,7 +6,7 @@ author_contacts: ['dale']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
-categories: ['rhinoscriptsyntax-fundamentals']
+categories: ['Python in Rhino']
 origin:
 order: 6
 keywords: ['script', 'Rhino', 'python']

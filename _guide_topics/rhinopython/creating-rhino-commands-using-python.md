@@ -6,7 +6,7 @@ author_contacts: ['pascal']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
-categories: ['rhinoscriptsyntax-fundamentals']
+categories: ['Python in Rhino']
 origin: http://wiki.mcneel.com/developer/python/commands
 order: 380
 keywords: ['python', 'commands']
