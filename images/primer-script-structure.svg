@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="204.012px" height="61.917px" viewBox="0 0 204.012 61.917" enable-background="new 0 0 204.012 61.917"
+	 xml:space="preserve">
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="7.217" y="3.325" width="200.02" height="60.94"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<g clip-path="url(#SVGID_2_)">
+		<text transform="matrix(1 0 0 1 80.7144 14.4429)" fill="#231F20" font-family="'TrebuchetMS'" font-size="8">Import Statements</text>
+	</g>
+	<g clip-path="url(#SVGID_2_)">
+		<text transform="matrix(1 0 0 1 80.7383 26.939)"><tspan x="0" y="0" fill="#231F20" font-family="'TrebuchetMS'" font-size="8">Global </tspan><tspan x="25.492" y="0" fill="#231F20" font-family="'TrebuchetMS'" font-size="8">V</tspan><tspan x="29.567" y="0" fill="#231F20" font-family="'TrebuchetMS'" font-size="8">ariables</tspan></text>
+	</g>
+	<g clip-path="url(#SVGID_2_)">
+		<text transform="matrix(1 0 0 1 80.7383 41.4351)" fill="#231F20" font-family="'TrebuchetMS'" font-size="8">Functions &amp; Classes</text>
+	</g>
+	<g clip-path="url(#SVGID_2_)">
+		<text transform="matrix(1 0 0 1 80.7383 50.9312)" fill="#231F20" font-family="'TrebuchetMS'" font-size="8">Function Calls &amp; Class Instances</text>
+	</g>
+	<g clip-path="url(#SVGID_2_)">
+		<defs>
+			<rect id="SVGID_3_" x="54.217" y="40.265" width="20.935" height="9"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_4_)">
+			<text transform="matrix(1 0 0 1 78.0376 21.3081)"><tspan x="0" y="0" font-family="'Helvetica'" font-size="6.594">Option Explicit a</tspan><tspan x="45.102" y="0" font-family="'Helvetica'" font-size="6.594">r</tspan><tspan x="47.192" y="0" font-family="'Helvetica'" font-size="6.594">ea*</tspan></text>
+		</g>
+		
+			<rect x="75.965" y="41.361" clip-path="url(#SVGID_4_)" fill="none" stroke="#000000" stroke-width="0.412" width="70.098" height="11.681"/>
+		<g clip-path="url(#SVGID_4_)">
+			<text transform="matrix(1 0 0 1 78.0376 49.3442)"><tspan x="0" y="0" font-family="'Helvetica'" font-size="6.594">M</tspan><tspan x="5.341" y="0" font-family="'Helvetica'" font-size="6.594">ain fun</tspan><tspan x="24.338" y="0" font-family="'Helvetica'" font-size="6.594">c</tspan><tspan x="27.371" y="0" font-family="'Helvetica'" font-size="6.594">tion call</tspan></text>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<text transform="matrix(1 0 0 1 78.0376 63.3638)"><tspan x="0" y="0" font-family="'Helvetica'" font-size="6.594">M</tspan><tspan x="5.341" y="0" font-family="'Helvetica'" font-size="6.594">ain fun</tspan><tspan x="24.338" y="0" font-family="'Helvetica'" font-size="6.594">c</tspan><tspan x="27.371" y="0" font-family="'Helvetica'" font-size="6.594">tion</tspan></text>
+		</g>
+		<g clip-path="url(#SVGID_4_)">
+			<text transform="matrix(1 0 0 1 78.0376 89.2319)"><tspan x="0" y="0" font-family="'Helvetica'" font-size="6.594">A</tspan><tspan x="3.963" y="0" font-family="'Helvetica'" font-size="6.594">dditional fun</tspan><tspan x="39.299" y="0" font-family="'Helvetica'" font-size="6.594">c</tspan><tspan x="42.339" y="0" font-family="'Helvetica'" font-size="6.594">tions*</tspan></text>
+		</g>
+		
+			<rect x="75.965" y="27.341" clip-path="url(#SVGID_4_)" fill="none" stroke="#000000" stroke-width="0.412" width="70.098" height="11.684"/>
+		<g clip-path="url(#SVGID_4_)">
+			<text transform="matrix(1 0 0 1 78.0376 35.3237)"><tspan x="0" y="0" font-family="'Helvetica'" font-size="6.594">Global </tspan><tspan x="19.32" y="0" font-family="'Helvetica'" font-size="6.594">v</tspan><tspan x="22.472" y="0" font-family="'Helvetica'" font-size="6.594">a</tspan><tspan x="25.65" y="0" font-family="'Helvetica'" font-size="6.594">r</tspan><tspan x="27.826" y="0" font-family="'Helvetica'" font-size="6.594">iables*</tspan></text>
+		</g>
+		<polyline clip-path="url(#SVGID_4_)" fill="none" stroke="#000000" stroke-width="0.618" stroke-linejoin="bevel" points="
+			75.969,33.259 68.958,33.259 58.446,38.794 54.938,38.794 		"/>
+		<polygon clip-path="url(#SVGID_4_)" points="55.566,37.538 55.94,37.912 55.059,38.794 55.94,39.676 55.566,40.05 54.311,38.794 
+					"/>
+		<polyline clip-path="url(#SVGID_4_)" fill="none" stroke="#000000" stroke-width="0.618" stroke-linejoin="bevel" points="
+			75.969,47.172 68.958,47.172 58.446,44.956 54.938,44.956 		"/>
+	</g>
+	<polygon clip-path="url(#SVGID_2_)" points="55.566,43.7 55.94,44.073 55.059,44.956 55.94,45.837 55.566,46.211 54.311,44.956 	
+		"/>
+	<g clip-path="url(#SVGID_2_)">
+		<defs>
+			<rect id="SVGID_5_" x="7.217" y="3.324" width="200.02" height="60.941"/>
+		</defs>
+		<clipPath id="SVGID_6_">
+			<use xlink:href="#SVGID_5_"  overflow="visible"/>
+		</clipPath>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="3.877" y="7.984" width="48" height="50.4">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="3.877" y="7.984" width="48" height="50.4" id="SVGID_7_">
+			<g filter="url(#Adobe_OpacityMaskFilter)">
+				<g>
+					<defs>
+						<rect id="SVGID_8_" x="1.477" y="5.584" width="53.28" height="66.24"/>
+					</defs>
+					<clipPath id="SVGID_9_" clip-path="url(#SVGID_6_)">
+						<use xlink:href="#SVGID_8_"  overflow="visible"/>
+					</clipPath>
+					<g transform="matrix(1 0 0 1 -8.143717e-008 -2.634609e-007)" clip-path="url(#SVGID_9_)">
+						
+							<image overflow="visible" width="111" height="138" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEAlgCWAAD/7AARRHVja3kAAQAEAAAAHgAA/+4AIUFkb2JlAGTAAAAAAQMA
+EAMCAwYAAAJaAAADxAAABTz/2wCEABALCwsMCxAMDBAXDw0PFxsUEBAUGx8XFxcXFx8eFxoaGhoX
+Hh4jJSclIx4vLzMzLy9AQEBAQEBAQEBAQEBAQEABEQ8PERMRFRISFRQRFBEUGhQWFhQaJhoaHBoa
+JjAjHh4eHiMwKy4nJycuKzU1MDA1NUBAP0BAQEBAQEBAQEBAQP/CABEIAIwAcQMBIgACEQEDEQH/
+xACNAAEAAwEBAQEBAAAAAAAAAAAABQYHAgMBBAgBAQAAAAAAAAAAAAAAAAAAAAAQAAADBgcBAQEA
+AAAAAAAAAAADBgEyMwQFFjAxAhMVNSYQYBIRAAECAQwCAgMBAAAAAAAAAAABAgMQMBIyk6OzBHQF
+NUURMdETISIUYRIBAAAAAAAAAAAAAAAAAAAAYP/aAAwDAQACEQMRAAAAgPxefoE59IJOiCTogk6I
+JO/CDfYo/oAGH2OuWQ0Xv72eb0Hm9B5vQefHvwZvS7tSTfwYfZK3ZDSe+OwAABx3wZzSbtSTfwYf
+ZK3ZDSe+OwAABx3wZzSbtSTfwYfZK3ZDSe+OwAABx3wZzSbtSTfwYfZK3ZDSe+OwAABx3wZzSbtS
+TfwYfPwHkbL3kw1lkw1lkw1lkw1njKRMU79X5D+gAYfHyEeAAAAAAf0ADD4+y/iIdMCHTAh0wIdM
+CHTAh0wNoB//2gAIAQIAAQUA/Ef/2gAIAQMAAQUA/Ef/2gAIAQEAAQUArairpNaudRC5lELmUQuZ
+RC5lELmUQuZRC5lELmUQuZRC5lELnUQudQ/FB31NpmqbbpSRjdNomC0TBaJgtEwWiYLRMFomC0TB
+qSRjGVKl6pRvyv8AfpLRp1GFEF7ewWNgsbBY2CxsFjYLGwWNgsGkF/wrtGnTrbmK/wB+kIhMPANc
+V77cxX+/SEQmHgGuK99uYr/fpCITDwDXFe+3MV/v0hEJh4BrivfbmK/36QiEw8A1xXvtzFf79IRC
+YeAa4r325iv9+kIhMPANcV77cxX+/SEQmHgGuK99uYr/AH6QiEw8A1xXvtzFf79KzGgvWVU5dhfJ
+y45OXHJy45OXHJy45OXHJy45OXBlTl/4VcxoM1NzCg76Vntcu1ihmGMuGYFwzAuGYFwzAuGYFwzA
+uGYFwzAaoZhrJqeMmG/FB32MoO+xlB32NWrX5nyQ8kPJDyQ8kPJDyQ8kPJDyQ8kPJDyXz//aAAgB
+AgIGPwAR/9oACAEDAgY/ABH/2gAIAQEBBj8A3CDCz8dkKHmYzGMbEciNa2I5ERE/xDksxaO+Tkcz
+aOORzNo45HM2jjkczaOORzNo45HM2jjkczaOORzNo45HM2jjkczaO+TksxaO+TksxaO+ZNz1cfEc
+IiIItEqlUqlUqlUqlUVaIqKku5auPiuE8oJ+D0ej0ej0ej0ehfwL4SXctXHxXCCTKjpdy1cfEcIJ
+MqOl3LVx8Rwgkyo6XctXHxHCCTKjpdy1cfEcIJMqOl3LVx8Rwgkyo6XctXHxHCCTKjpdy1cfEcIJ
+MqOl3LVx8Rwgkyo6XctXHxXCUlE/ZCshWQrIVkKyFZCshWQX9kForLuerj4jjy1fB4pKVlKylZSs
+pWUrKVlKynikp+y+Zdz1cfEdP7nq4+I6f3PVx8R0/n/v/v8Au/pjfbQ+mhT+x1KjS/Pjz6OxuDsb
+g7G4OxuDsbg7G4OxuDsbg7G4OxuDsbg7G4OxuJP/2Q==" transform="matrix(0.48 0 0 0.48 1.4766 5.5845)">
+						</image>
+					</g>
+				</g>
+			</g>
+		</mask>
+		<g clip-path="url(#SVGID_6_)" mask="url(#SVGID_7_)">
+			<g>
+				<defs>
+					<rect id="SVGID_10_" x="3.877" y="7.985" width="48" height="50.399"/>
+				</defs>
+				<clipPath id="SVGID_11_">
+					<use xlink:href="#SVGID_10_"  overflow="visible"/>
+				</clipPath>
+				<rect x="3.877" y="7.984" opacity="0.75" clip-path="url(#SVGID_11_)" fill="#231F20" width="48" height="50.4"/>
+			</g>
+		</g>
+	</g>
+	<g clip-path="url(#SVGID_2_)">
+		<defs>
+			<rect id="SVGID_12_" x="7.217" y="8.325" width="41.438" height="43.924"/>
+		</defs>
+		<clipPath id="SVGID_13_">
+			<use xlink:href="#SVGID_12_"  overflow="visible"/>
+		</clipPath>
+		<g transform="matrix(1 0 0 1 1.108069e-007 1.969072e-007)" clip-path="url(#SVGID_13_)">
+			
+				<image overflow="visible" width="250" height="265" xlink:href="data:image/jpeg;base64,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" transform="matrix(0.1658 0 0 0.1658 7.2168 8.3247)">
+			</image>
+		</g>
+	</g>
+	<g clip-path="url(#SVGID_2_)">
+		<defs>
+			<rect id="SVGID_14_" x="53.75" y="3.324" width="20.935" height="36.679"/>
+		</defs>
+		<clipPath id="SVGID_15_">
+			<use xlink:href="#SVGID_14_"  overflow="visible"/>
+		</clipPath>
+		
+			<rect x="75.497" y="4.56" clip-path="url(#SVGID_15_)" fill="none" stroke="#000000" stroke-width="0.412" width="70.098" height="11.68"/>
+		<g clip-path="url(#SVGID_15_)">
+			<text transform="matrix(1 0 0 1 77.5698 12.5435)"><tspan x="0" y="0" font-family="'Helvetica'" font-size="6.594">Option Explicit a</tspan><tspan x="45.102" y="0" font-family="'Helvetica'" font-size="6.594">r</tspan><tspan x="47.192" y="0" font-family="'Helvetica'" font-size="6.594">ea*</tspan></text>
+		</g>
+		
+			<rect x="75.497" y="32.597" clip-path="url(#SVGID_15_)" fill="none" stroke="#000000" stroke-width="0.412" width="70.098" height="11.68"/>
+		<g clip-path="url(#SVGID_15_)">
+			<text transform="matrix(1 0 0 1 77.5698 40.5806)"><tspan x="0" y="0" font-family="'Helvetica'" font-size="6.594">M</tspan><tspan x="5.341" y="0" font-family="'Helvetica'" font-size="6.594">ain fun</tspan><tspan x="24.338" y="0" font-family="'Helvetica'" font-size="6.594">c</tspan><tspan x="27.371" y="0" font-family="'Helvetica'" font-size="6.594">tion call</tspan></text>
+		</g>
+		<g clip-path="url(#SVGID_15_)">
+			<text transform="matrix(1 0 0 1 77.5698 54.5991)"><tspan x="0" y="0" font-family="'Helvetica'" font-size="6.594">M</tspan><tspan x="5.341" y="0" font-family="'Helvetica'" font-size="6.594">ain fun</tspan><tspan x="24.338" y="0" font-family="'Helvetica'" font-size="6.594">c</tspan><tspan x="27.371" y="0" font-family="'Helvetica'" font-size="6.594">tion</tspan></text>
+		</g>
+		<g clip-path="url(#SVGID_15_)">
+			<text transform="matrix(1 0 0 1 77.5698 80.4673)"><tspan x="0" y="0" font-family="'Helvetica'" font-size="6.594">A</tspan><tspan x="3.963" y="0" font-family="'Helvetica'" font-size="6.594">dditional fun</tspan><tspan x="39.299" y="0" font-family="'Helvetica'" font-size="6.594">c</tspan><tspan x="42.339" y="0" font-family="'Helvetica'" font-size="6.594">tions*</tspan></text>
+		</g>
+		
+			<rect x="75.497" y="18.577" clip-path="url(#SVGID_15_)" fill="none" stroke="#000000" stroke-width="0.412" width="70.098" height="11.685"/>
+		<g clip-path="url(#SVGID_15_)">
+			<text transform="matrix(1 0 0 1 77.5698 26.5601)"><tspan x="0" y="0" font-family="'Helvetica'" font-size="6.594">Global </tspan><tspan x="19.32" y="0" font-family="'Helvetica'" font-size="6.594">v</tspan><tspan x="22.472" y="0" font-family="'Helvetica'" font-size="6.594">a</tspan><tspan x="25.65" y="0" font-family="'Helvetica'" font-size="6.594">r</tspan><tspan x="27.826" y="0" font-family="'Helvetica'" font-size="6.594">iables*</tspan></text>
+		</g>
+		<polyline clip-path="url(#SVGID_15_)" fill="none" stroke="#000000" stroke-width="0.618" stroke-linejoin="bevel" points="
+			75.501,10.583 68.491,10.583 57.979,23.873 54.47,23.873 		"/>
+	</g>
+	<polygon clip-path="url(#SVGID_2_)" points="55.099,22.617 55.473,22.991 54.591,23.873 55.473,24.754 55.099,25.128 
+		53.843,23.873 	"/>
+	<g clip-path="url(#SVGID_2_)">
+		<defs>
+			<rect id="SVGID_16_" x="53.75" y="3.324" width="20.935" height="36.679"/>
+		</defs>
+		<clipPath id="SVGID_17_">
+			<use xlink:href="#SVGID_16_"  overflow="visible"/>
+		</clipPath>
+		<polyline clip-path="url(#SVGID_17_)" fill="none" stroke="#000000" stroke-width="0.618" stroke-linejoin="bevel" points="
+			75.501,24.496 68.491,24.496 57.979,30.031 54.47,30.031 		"/>
+	</g>
+	<polygon clip-path="url(#SVGID_2_)" points="55.099,28.774 55.473,29.148 54.591,30.03 55.473,30.912 55.099,31.286 53.843,30.03 	
+		"/>
+	<g clip-path="url(#SVGID_2_)">
+		<defs>
+			<rect id="SVGID_18_" x="53.75" y="3.324" width="20.935" height="36.679"/>
+		</defs>
+		<clipPath id="SVGID_19_">
+			<use xlink:href="#SVGID_18_"  overflow="visible"/>
+		</clipPath>
+		<polyline clip-path="url(#SVGID_19_)" fill="none" stroke="#000000" stroke-width="0.618" stroke-linejoin="bevel" points="
+			75.501,38.409 68.491,38.409 57.979,36.192 54.47,36.192 		"/>
+	</g>
+	<polygon clip-path="url(#SVGID_2_)" points="55.099,34.935 55.473,35.309 54.591,36.191 55.473,37.073 55.099,37.447 
+		53.843,36.191 	"/>
+</g>
+</svg>

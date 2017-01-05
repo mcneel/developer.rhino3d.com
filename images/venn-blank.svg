@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="471.804px" height="112.66px" viewBox="0 0 471.804 112.66" enable-background="new 0 0 471.804 112.66"
+	 xml:space="preserve">
+<rect x="7.446" y="0" fill="#FFFFFF" width="90.65" height="90.489"/>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="7.445" y="0" width="90.653" height="90.49"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	
+		<ellipse clip-path="url(#SVGID_2_)" fill="none" stroke="#000000" stroke-width="1.6251" cx="52.132" cy="30.376" rx="28.054" ry="28.004"/>
+	
+		<ellipse clip-path="url(#SVGID_2_)" fill="none" stroke="#000000" stroke-width="1.6251" cx="40.155" cy="58.466" rx="28.054" ry="28.004"/>
+	
+		<ellipse clip-path="url(#SVGID_2_)" fill="none" stroke="#000000" stroke-width="1.6251" cx="66.836" cy="58.466" rx="28.054" ry="28.004"/>
+</g>
+<rect x="132.015" y="0" fill="#FFFFFF" width="90.65" height="90.489"/>
+<g>
+	<defs>
+		<rect id="SVGID_3_" x="132.014" y="0" width="90.653" height="90.49"/>
+	</defs>
+	<clipPath id="SVGID_4_">
+		<use xlink:href="#SVGID_3_"  overflow="visible"/>
+	</clipPath>
+	
+		<ellipse clip-path="url(#SVGID_4_)" fill="none" stroke="#000000" stroke-width="1.6251" cx="176.7" cy="30.376" rx="28.054" ry="28.004"/>
+	
+		<ellipse clip-path="url(#SVGID_4_)" fill="none" stroke="#000000" stroke-width="1.6251" cx="164.724" cy="58.466" rx="28.054" ry="28.004"/>
+	
+		<ellipse clip-path="url(#SVGID_4_)" fill="none" stroke="#000000" stroke-width="1.6251" cx="191.405" cy="58.466" rx="28.054" ry="28.004"/>
+</g>
+<rect x="256.584" y="0" fill="#FFFFFF" width="90.65" height="90.489"/>
+<g>
+	<defs>
+		<rect id="SVGID_5_" x="256.583" y="0" width="90.653" height="90.49"/>
+	</defs>
+	<clipPath id="SVGID_6_">
+		<use xlink:href="#SVGID_5_"  overflow="visible"/>
+	</clipPath>
+	
+		<ellipse clip-path="url(#SVGID_6_)" fill="none" stroke="#000000" stroke-width="1.6251" cx="301.269" cy="30.376" rx="28.054" ry="28.004"/>
+	
+		<ellipse clip-path="url(#SVGID_6_)" fill="none" stroke="#000000" stroke-width="1.6251" cx="289.292" cy="58.466" rx="28.054" ry="28.004"/>
+	
+		<ellipse clip-path="url(#SVGID_6_)" fill="none" stroke="#000000" stroke-width="1.6251" cx="315.974" cy="58.466" rx="28.054" ry="28.004"/>
+</g>
+<rect x="381.153" y="0" fill="#FFFFFF" width="90.649" height="90.489"/>
+<g>
+	<defs>
+		<rect id="SVGID_7_" x="381.152" y="0" width="90.652" height="90.49"/>
+	</defs>
+	<clipPath id="SVGID_8_">
+		<use xlink:href="#SVGID_7_"  overflow="visible"/>
+	</clipPath>
+	
+		<ellipse clip-path="url(#SVGID_8_)" fill="none" stroke="#000000" stroke-width="1.6251" cx="425.838" cy="30.376" rx="28.054" ry="28.004"/>
+	
+		<ellipse clip-path="url(#SVGID_8_)" fill="none" stroke="#000000" stroke-width="1.6251" cx="413.861" cy="58.466" rx="28.054" ry="28.004"/>
+	
+		<ellipse clip-path="url(#SVGID_8_)" fill="none" stroke="#000000" stroke-width="1.6251" cx="440.542" cy="58.466" rx="28.054" ry="28.004"/>
+</g>
+<text transform="matrix(1 0 0 1 24 97.6216)" fill="#231F20" font-family="'CourierNewPSMT'" font-size="8">(A And B) Or </text>
+<text transform="matrix(1 0 0 1 0 107.2222)" fill="#231F20" font-family="'CourierNewPSMT'" font-size="8">(B And C) Or (A And C)</text>
+<text transform="matrix(1 0 0 1 119.7681 97.6216)" fill="#231F20" font-family="'CourierNewPSMT'" font-size="8">((B And C) And Not A) Or </text>
+<text transform="matrix(1 0 0 1 122.168 107.2222)" fill="#231F20" font-family="'CourierNewPSMT'" font-size="8">(A And Not B And Not C)</text>
+<text transform="matrix(1 0 0 1 263.5356 97.6216)" fill="#231F20" font-family="'CourierNewPSMT'" font-size="8">(B And Not C) Or </text>
+<text transform="matrix(1 0 0 1 270.7358 107.2222)" fill="#231F20" font-family="'CourierNewPSMT'" font-size="8">(C And Not B)</text>
+<text transform="matrix(1 0 0 1 395.3042 102.4224)" fill="#231F20" font-family="'CourierNewPSMT'" font-size="8">A And B And C</text>
+</svg>
