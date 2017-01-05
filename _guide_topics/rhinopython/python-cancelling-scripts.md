@@ -101,7 +101,7 @@ Note, your user-defined OnCancelScript subroutine must not have any arguments. I
 ## Related Topics
 
 - [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
-- [My First Script]({{ site.baseurl }}/guides/rhinopython/first-python-script-in-rhino)
+- [Your First Python Script in Rhino (Windows)]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-windows)
 - [Running Scripts]({{ site.baseurl }}/guides/rhinopython/python-running-scripts)
 - [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
 - [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)

@@ -25,19 +25,7 @@ layout: guide-homepage
 
 ### Getting Started
 
-<div class="trigger">
-  {% assign guides = site.guide_topics | sort:"order" %}
-  <ul>
-  <li>Start Rhino.Python (<a class="page-link" href="{{ site.baseurl }}/guides/rhinopython/get-started-with-rhinopython-mac" title="Mac Getting Started">Mac</a>, <a class="page-link" href="{{ site.baseurl }}/guides/rhinopython/first-python-script-in-rhino" title="Windows Getting Started">Windows</a>)</li>
-  {% for guide in guides %}
-    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Getting Started' %}
-      {% if guide.title and guide.order %}
-        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
+- Your First Python Script in Rhino ([Windows]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-mac))
 
 ### Python Editor for Windows
 
