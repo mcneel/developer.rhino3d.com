@@ -2,7 +2,7 @@
 title: Generating Random Numbers in Python
 description: This guide discusses using Python to generate random numbers in a certain range.
 authors: ['Scott Davidson']
-author_contacts: ['scott']
+author_contacts: ['scottd']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
