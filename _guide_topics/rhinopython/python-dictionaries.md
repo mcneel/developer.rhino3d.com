@@ -132,7 +132,7 @@ To sort by `values` use the `sorted()` method along with the `.values()` functio
 
 ```python
 room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-print sorted(room_num.values()) # sort the dictionary by keys
+print sorted(room_num.values()) # sort the dictionary by values
 ```
 
 The Dictionary object is not there to replace the array, but there are certainly times when it makes more sense to index your array using English-like terms as opposed to numerical values.

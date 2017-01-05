@@ -26,9 +26,9 @@ The following looping statements are available in Python:
 
 ## For Loop
 
-You can use `for` statements to run a block of statements a specific number of times. For loops, use a counter variable whose value increases or decreases with each repetition of the loop.
+You can use *for* statements to run a block of statements a specific number of times. For loops, use a counter variable whose value increases or decreases with each repetition of the loop.
 
-The following example causes a procedure to execute 4 times. The `for` statement specifies the counter variable `x` and its start and end values. Python will automatically increments the counter (x) variable by 1 after coming to end of the exectution block.
+The following example causes a procedure to execute 4 times. The *for* statement specifies the counter variable `x` and its start and end values. Python will automatically increments the counter (x) variable by 1 after coming to end of the exectution block.
 
 ```python
 for x in range(0, 3):
@@ -51,11 +51,11 @@ To decrease the counter variable, use a negative `range` value. You must specify
     print "We're on loop " + str(j)
 ```
 
- You can exit any `for` statement before the counter reaches its end value by using the `break` statement. Because you usually want to exit only in certain situations, such as when an error occurs, you could also use the `if` statement in the *True* statement block. If the condition is *False*, the loop runs as usual.
+ You can exit any *for* statement before the counter reaches its end value by using the `break` statement. Because you usually want to exit only in certain situations, such as when an error occurs, you could also use the `if` statement in the *True* statement block. If the condition is *False*, the loop runs as usual.
 
 ## While Loop
 
-Use the `While` loop to check a condition before each execution of the loop.
+Use the `while` loop to check a condition before each execution of the loop.
 
 ```while
 var1 = 2
@@ -65,7 +65,7 @@ while var1 < 32:
 print "Exited while loop."
 ```
 
-`while` loops are not used as much as `for` loops.  But `while` loops are used often in in cases the following way, polling for specific input or a loop that will execute forever until a condition is met:
+*while* loops are not used as much as *for* loops.  But *while* loops are used often in in cases the following way, polling for specific input or a loop that will execute forever until a condition is met:
 
 ```python
 while True:

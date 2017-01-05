@@ -15,7 +15,7 @@ layout: toc-guide-page
  
 ## Planes
 
-Several RhinoscriptSyntax methods either require as an argument or return as a result a plane.  Planes are represented as zero-based,  one-dimensional array containing four elements: the plane's origin (3-D point), the plane's X axis direction (3-D vector), the plane's Y axis direction (3-D vector), and the plane's Z axis direction (3-D vector).
+Several RhinoscriptSyntax methods either require as an argument or return as a result a plane.  Planes are represented as zero-based,  one-dimensional list containing four elements: the plane's origin (3-D point), the plane's X axis direction (3-D vector), the plane's Y axis direction (3-D vector), and the plane's Z axis direction (3-D vector).
 
 Planes can be constructed in a number of ways.  For example,
 
@@ -30,6 +30,7 @@ plane1.append([0.0, 0.0, 1.0]) # z-axis vector
 Planes can also be created using the [PlaneFromFrame]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#collapse-PlaneFromFrame), [PlaneFromNormal]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#collapse-PlaneFromNormal), and [PlaneFromPoints]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#collapse-PlaneFromPoints) methods.
 
 RhinoScriptSyntax contains a number of methods to manipulate planes.  See [Lines and Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods) for details.
+
 ---
 
 ## Related Topics
