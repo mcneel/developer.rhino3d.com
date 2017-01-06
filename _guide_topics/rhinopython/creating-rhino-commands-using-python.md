@@ -68,7 +68,7 @@ In the above `__plugin__.py`, the lines mean the following:
 
 With this file in place, you can zip the *contents of the `dev` sub-folder* and rename it to `MyNewPlugIn.rhi`.
 
-<div class="alert alert-info">
+<div class="bs-callout bs-callout-danger">
 
 <strong>Note</strong>: It's important that the <code>__plugin__.py</code> file and any <code>*_cmd.py</code> files are in the root of the RHI package. The Rhino Installer Engine will unpack the contents of the RHI into a sub-folder named according to the version found in <code>__plugin__.py</code>, replacing the <code>dev</code> sub-folder used during development.
 
@@ -76,7 +76,7 @@ With this file in place, you can zip the *contents of the `dev` sub-folder* and 
 
 Double-clicking this `*.rhi` file on another system (with Rhino closed) should install all the files in the correct location for that user.  Rhino should then see the command as a regular command.
 
-<div class="alert alert-info">
+<div class="bs-callout bs-callout-danger">
 
 <strong>Note</strong>: Sometimes, using this system, Rhino requires that Python be loaded before it can see the new command for the first time in a session - running <code>EditPythonScript</code>, or any other python script should allow the command to work.
 
@@ -132,7 +132,7 @@ This command script must be saved to:
 
 `~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/PythonPlugIns/PlugInName{GUID}/dev`
 
-<div class="alert alert-info">
+<div class="bs-callout bs-callout-danger">
 
 <strong>Note</strong>: The command name must match the script file file name, so in this example the file name would be: <code>MyNewCommand_cmd.py</code>
 
