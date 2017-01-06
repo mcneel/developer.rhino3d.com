@@ -13,7 +13,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin', 'removing', 'uninstalling']
 layout: toc-guide-page
 ---
 
- 
+
 This guide presumes you have plugins installed that you would like to remove.
 
 ## Overview
@@ -52,7 +52,7 @@ To make your Library visible in the Finder:
 
 1. In *Finder*, navigate to your *Home* (*~*) folder.  You must be in your Home folder for this to work.
 1. Press <kbd>Command</kbd>+<kbd>J</kbd> to bring up the *Finder View* options dialog...
-![finder_view_options]({{ site.baseurl }}/images/finder_view_options.png)
+![finder_view_options]({{ site.baseurl }}/images/finder-view-options.png)
 1. Check the *Show Library Folder* check box.  Now your Library should show up in the view.  You may want to drag this folder to your Favorites area of the Finder sidebar for easy access later.
 
 ---

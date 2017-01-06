@@ -13,7 +13,7 @@ keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
 
- 
+
 ## Overview
 
 It is possible to define an Archimedean Spiral with polar coordinates.  In polar coordinates $$(r, θ)$$, an Archimedean Spiral can be described by the following equation:
@@ -22,7 +22,7 @@ $$r = a+bθ$$
 
 with real numbers $$a$$ and $$b$$.  Changing the parameter a will turn the spiral, while $$b$$ controls the distance between successive turnings...
 
-![Archimedean Spiral]({{ site.baseurl }}/images/archimedean_spirals-01.png)
+![Archimedean Spiral]({{ site.baseurl }}/images/archimedean-spirals-01.png)
 
 ## Sample
 

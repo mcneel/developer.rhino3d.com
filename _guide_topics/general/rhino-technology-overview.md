@@ -13,12 +13,12 @@ keywords: ['developer', 'rhino']
 layout: toc-guide-page
 ---
 
- 
+
 ## Overview
 
 Rhinoceros is composed of many layers - written in many languages - all stacked on top of each other.  The most foundational are on the bottom, but the top layers should by no means be considered superficial...
 
-![The Rhino Stack]({{ site.baseurl}}/images/rhino-technology-overview-01.png)
+![The Rhino Stack]({{ site.baseurl }}/images/rhino-technology-overview-01.png)
 
 Let's discuss each of the layers in turn, starting on the bottom with the...
 

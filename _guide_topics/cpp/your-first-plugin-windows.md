@@ -14,7 +14,7 @@ layout: toc-guide-page
 TODO: 'needs new screenshots, review, and cleanup.  Consider breaking out Adding Commands.'
 ---
 
- 
+
 It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing-tools-windows).
 
 ## Barebones Plugin
@@ -25,16 +25,16 @@ The Rhino SDK includes a Visual Studio Project Wizard.  The wizard program gener
 
 1. Launch *Visual Studio 2010* and navigate to *File* > *New* > *Project...*.
 1. From the *New Project* dialog, select the *Rhino 5.0 Plug-in* template from the list of installed templates...
-![New Project Template]({{ site.baseurl }}/images/your-first-plugin-windows_cpp-01.png)
+![New Project Template]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-01.png)
 1. Type the project name as shown above.  You can enter a different name if you want.  The wizard uses the project name when it creates files and classes.  If you enter a different name, your files and classes will have a name different from that of the files and classes mentioned in this tutorial.  Don’t forget to choose a location to store the project.  When finished, click the *OK* button.
 1. Upon clicking *OK*, the *Overview* page of the *Rhino 5.0 Plug-In Wizard* dialog will appear.  This page gives you an overview of the type of project that the wizard is going to create.  
-![New Project Overview]({{ site.baseurl }}/images/your-first-plugin-windows_cpp-02.png)
+![New Project Overview]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-02.png)
 1. Not that, by default, the wizard will do the following:
      1. Create a general utility plugin.
      1. Include source file comments.
      1. Include support for online help.
 1. If you are satisfied with the default settings, just click the *Finish* button.  If you want to change any of these settings, click the *Next* button...
-![Plugin Settings]({{ site.baseurl }}/images/your-first-plugin-windows_cpp-03.png)
+![Plugin Settings]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-03.png)
 1. The *Plug-in Settings* page allows you to modify a number of settings used by the wizard when generating the plugin source code:
      1. *Plug-in name*: Modify this field if you want to change the name of the plugin.  *NOTE*: modifying this field does not modify the project name but rather the name of the plugin as listed in Rhino’s *PlugInManager* dialog box.
      1. *Plug-in type*: Select the type of plugin that you want the wizard to create.
@@ -64,7 +64,7 @@ The following files are of interest:
 
 With *Visual Studio 2010*, a project can target a different version of the Visual C++ libraries and compiler.  This is done by configuring the project use a different *Platform* toolset...
 
-![Test Property Pages]({{ site.baseurl }}/images/your-first-plugin-windows_cpp-04.png)
+![Test Property Pages]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-04.png)
 
 Reviewing the above settings, you can see that the Rhino 5 plugin project wizard configures 32-bit builds to use the *v80rhinos* platform toolset, which equates to using Visual Studio 2005's libraries and compiler.  This platform toolset configuration is installed on your system by the Rhino C++ SDK Installer.
 
@@ -101,7 +101,7 @@ Before we can build our project, we need to fill in the Rhino plugin developer d
      - *Release*: The *Release* configuration of your program contains no symbolic debug information and is fully optimized.  *Debug* information can be generated in PDB Files (C++) depending on the compiler options used.  Creating PDB files can be very useful if you later need to debug your release version.  The *Release* configuration also links with release runtime libraries.  Plugins built with the *Release* configuration will only load in the release version of Rhino that was installed with Rhino.
 1. For this guide, build the *Debug* configuration.
 1. From within Rhino, navigate to *Tools* > *Options*.  Navigate to the *Plugins* page under *Rhino Options* and install your plugin.  *NOTE*: since the debug version of Rhino will only load debug plugins, no other plugins will show up in the list...
-![Rhino Options]({{ site.baseurl }}/images/your-first-plugin-windows_cpp-05.png)
+![Rhino Options]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-05.png)
 1. Once your plugin is loaded, close the options dialog and run your `Test` command.  You have finished creating your first plugin!
 
 ## Adding a Command

@@ -14,12 +14,12 @@ layout: toc-guide-page
 TODO: 'needs more explanation in order to be a guide'
 ---
 
- 
+
 ## Overview
 
 Imagine you would like to create a NURBS curve from a set of control points, such that it looks like this:
 
-![NURBS Curve Control Points]({{ site.baseurl }}/images/adding_a_nurbs_curve_from_control_points-01.png)
+![NURBS Curve Control Points]({{ site.baseurl }}/images/adding-a-nurbs-curve-from-control-points-01.png)
 
 There are two methods to achieve this...
 
