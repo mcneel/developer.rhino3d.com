@@ -14,7 +14,7 @@ layout: toc-guide-page
 TODO: 'needs new screenshots, review, and cleanup.  Consider breaking out Adding Commands.'
 ---
 
- 
+
 It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing-tools-windows).
 
 ## Barebones Plugin
@@ -32,7 +32,7 @@ The Rhino SDK includes a Visual Studio Project Wizard.  The wizard program gener
 1. Not that, by default, the wizard will do the following:
      1. Create a general utility plugin.
 1. If you are satisfied with the default settings, just click the *Finish* button.  If you want to change any of these settings, click the *Next* button...
-![Plugin Settings]({{ site.baseurl }}/images/your-first-plugin-windows_cpp-03.png)
+![Plugin Settings]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-03.png)
 1. The *Plug-in Settings* page allows you to modify a number of settings used by the wizard when generating the plugin source code:
      1. *Plug-in name*: Modify this field if you want to change the name of the plugin.  *NOTE*: modifying this field does not modify the project name but rather the name of the plugin as listed in Rhino’s *PlugInManager* dialog box.
      1. *Plug-in type*: Select the [type of plugin]({{ site.baseurl }}/guides/general/what-is-a-rhino-plugin) that you want the wizard to create.
@@ -152,6 +152,7 @@ public:
 
   // Returns the English command name.
   // If you want to provide a localized command name, then override
+
   // CRhinoCommand::LocalCommandName.
   const wchar_t* EnglishCommandName() override { return L"Test"; }
 

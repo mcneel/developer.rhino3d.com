@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 <a id="top"></a> <!-- this is just a sample anchor -->
 
- 
+
 Below are examples of nearly all the available syntax using Markdown, Kramdown (a superset of Markdown), the table-of-contents UI widget, etc.
 
 Some portions of this page were adapted from the [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html).
@@ -506,12 +506,12 @@ If you're linking to another part of the Devloper Docs then make sure you use th
 Images can be created in a similar way to links: just use an exclamation mark before the square brackets. The link text will become the alternative text of the image and the link URL specifies the image source:
 
 ```kramdown
-![pluginlogo]({{ site.baseurl }}/images/rhinocommonlogo256x256.png)
+![pluginlogo]({{ site.baseurl }}/images/rhinodevlogo148x128.png)
 ```
 
 yields:
 
-![pluginlogo]({{ site.baseurl }}/images/rhinocommonlogo256x256.png)
+![pluginlogo]({{ site.baseurl }}/images/rhinodevlogo148x128.png)
 
 **Note**: Use the `site.baseurl` macro.  See the source of this page for this section for an example.
 

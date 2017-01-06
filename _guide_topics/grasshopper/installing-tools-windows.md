@@ -13,7 +13,7 @@ keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
 
- 
+
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging custom Grasshopper components in Rhino for Windows.
 
 ## Prerequisites

@@ -513,7 +513,7 @@ order: 2
 
 ---
 
-## [RhinoMobile]({{ site.baseurl }}/guides/rhinomobile) <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
+## [RhinoMobile]({{ site.baseurl }}/guides/rhinomobile) <img src="{{ site.baseurl }}/images/android-logo-small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios-logo-small.png" alt="iOS" class="guide_icon">
 {: #rhinomobile }
 
 *3D mobile application development.*

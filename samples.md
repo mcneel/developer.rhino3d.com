@@ -464,7 +464,7 @@ order: 4
 
 ---
 
-## RhinoMobile <img src="{{ site.baseurl }}/images/android_logo_small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios_logo_small.png" alt="iOS" class="guide_icon">
+## RhinoMobile <img src="{{ site.baseurl }}/images/android-logo-small.png" alt="Android" class="guide_icon"> <img src="{{ site.baseurl }}/images/ios-logo-small.png" alt="iOS" class="guide_icon">
 {: #rhinomobile }
 
 <div class="bs-callout bs-callout-danger">

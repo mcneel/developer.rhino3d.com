@@ -13,7 +13,7 @@ keywords: ['openNURBS', 'C#', '.NET', 'Rhino3dmIO']
 layout: toc-guide-page
 ---
 
- 
+
 ## Prerequisites
 
 openNURBS is intended for *skilled* C++ and .NET developers. Please read [What is openNURBS?]({{ site.baseurl }}/guides/opennurbs/what-is-opennurbs) if you have not already.  It is also presumed that you have an application that wishes to access *3dm* files outside of Rhinoceros.
@@ -76,7 +76,7 @@ This is an overview of the examples included with the openNURBS toolkit:
 
 All faces in a `ON_Mesh` are stored with vertices listed in counter-clockwise order.  In particular, for quads the vertices are ordered as:
 
-![Vertex Ordering]({{ site.baseurl }}/images/opennurbs_getting-started-01.png)
+![Vertex Ordering]({{ site.baseurl }}/images/opennurbs-getting-started-01.png)
 
 The quads may be non-planar.
 
