@@ -22,13 +22,13 @@ You can control the flow of your script with conditional statements and looping 
 * `if`...`else` statement
 * `if`...`elif`...`elif`...`else` nested statement
 
-The `If`... statement is used to evaluate whether a condition is True or False and, depending on the result, to specify one or more statements to run.  Usually the condition is an expression that uses a comparison operator to compare one value or variable with another.  For information about comparison operators, see the [Python Operators]({{ site.baseurl }}/guides/rhinopython/python-operators) guide. `If`...`Then`...`Else` statements can be nested to as many levels as you need. 
+The `if`... statement is used to evaluate whether a condition is True or False and, depending on the result, to specify one or more statements to run.  Usually the condition is an expression that uses a comparison operator to compare one value or variable with another.  For information about comparison operators, see the [Python Operators]({{ site.baseurl }}/guides/rhinopython/python-operators) guide. `if`...`then`...`else` statements can be nested to as many levels as you need. 
 
 Python programming language assumes any non-zero and non-null values as TRUE, and if it is either zero or null, then it is assumed as FALSE value.
 
 ### if
 
-To run only one statement when a condition is True, use the single-line syntax for the `If`... statement.  The following example shows the single-line syntax.
+To run only one statement when a condition is True, use the single-line syntax for the `if`... statement.  The following example shows the single-line syntax.
 
 ```python
 var1 = 350
