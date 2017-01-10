@@ -15,19 +15,19 @@ layout: toc-guide-page
 
 ## Overview
 
-Prompting the user of a script fo the input of a value, point in space, a Rhino object is important to many interactive scripts.
+Prompting the user of a script fo the input of a value, selecting a layer, picking a point or selecting a Rhino object is important to many interactive scripts.
 
-The RhinoscriptSyntax module contains many ways to interactively prompt for several different types of input.
+The RhinoscriptSyntax module contains many ways to interactively prompt for several different types of input. There are three main styles of input that are contained in Rhinosciptsyntax:
 
-- Values (strings or numbers)
-- Pick Point(s)
-- Select object(s)
+- Get methods. These are methods that work with the command line, wait for mouse input or prompt for specifc input.
+- Dialog methods.  There are some simple specfic dialogs to prompt for input
+- File sytem dialogs. Browsing, saving and opening files on the system with Python.
 
-Like many input methods, not only are the values captured, but they also can be validated so that only the proper input is accepted.
-
+Many input methods will also validate the user input to make sure only the proper input is accepted.
 
 ## The GET methods
 
+<<<<<<< HEAD
 GetPoint():
 
  Use rs.GetPoint() to ask the user for a single point location, say for the center of a circle. LIke most if not all of the Get methods, rs.GetPoint() allows you to specify some parameters- in this case they are all optional, the function will run without any of them specified in the code you type. For example, the default prompt is "Pick point", but you can specify a different prompt, for example, "Set center point" depending on what you wish to convey to the user. 
@@ -69,56 +69,100 @@ pts = rs.GetPoints( None, None, "Set the first point", "Set the next point")
 ```python
 
 
+=======
+The most popular input methods are the Get methods.  These methods prompt for very specific information and return a simple object or list of objects.  
 
-## A complete script example
-
-Here is a complete Python sample that shows how the the `if __name__ == '__main__':` statement can be added to a Python script:
+An common starting example is 'GetPoint()'.  Use GetPoint() to prompt and get a 3dPoint from Rhino.  Here is how to draw a simple line:
 
 ```python
-# Create a circle from a center point and a circumference.
 import rhinoscriptsyntax as rs
-import math
 
-def CreateCircle(circumference=None):
-    center = rs.GetPoint("Center point of circle")
-    if center:
-        plane = rs.MovePlane(rs.ViewCPlane(), center)
-        length = circumference
-        if length is None: length = rs.GetReal("Circle circumference")
-        if length and length>0:
-            radius = length/(2*math.pi)
-            objectId = rs.AddCircle(plane, radius)
-            rs.SelectObject(objectId)
-            return length
-    return None
-
-# Check to see if this file is being executed as the "Main" python
-# script instead of being used as a module by some other python script
-# This allows us to use the module which ever way we want.
-if __name__ == '__main__':
-    CreateCircle()
-
+point1 = rs.GetPoint("Pick first point")  # Prompt for the first point.
+if point1: # considered valid only if a point is entered
+    rs.AddPoint(point1)
+    point2 = rs.GetPoint("Pick second point", point1) #Prompt for the second point while drawing a rubber band line to the first point.
+    if point2:
+        rs.AddLine(point1, point2)
 ```
 
-The CreateCricle file above will run as a script to create a circle.  But it can be used in the *UseModule.py* scipt as an imported module, as follows:
+A common practice when working with user input is to use `if` statements to amke sure a value was actually entered or selected.  In Python the `if` statement considers a non null values valid to contiue on.
+
+Another common Get method is prompting for a number on the commandline with `GetReal()`:
 
 ```python
-# This script uses a function defined in the CircleFromLength.py
-# script file
-import CircleFromLength
-
-# call the function a few times just for fun using the
-# optional parameter
-length = CircleFromLength.CreateCircle()
-if length is not None and length>0.0:
-    for i in range(4):
-        CircleFromLength.CreateCircle(length)
+import rhinoscriptsyntax as rs
+# GetReal prompts on the command line with optional defaults and a minimum allowable value
+radius = rs.GetReal("Radius of new circle", 3.14, 1.0)
+if radius: rs.AddCircle( (0,0,0), radius )
 ```
+There are 22 different Get methods. For details on all the Get functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)
 
-## How it works
+## Dialog Methods
+>>>>>>> ab96ca6bfdd27924a53d3ee55b00bdfdcd909fc5
 
-When the Python interpreter reads a source file, it executes all of the code found in it.
+The Dialog methods in RhinoScript syntax are used to prompt of with generic custom information. Dialogs can be used to draw more attention to a required interaction with the user.  
 
-Before executing the code, it will define a few special variables. If Python is running the file as the main program then Ptyhon will create a `__name__` variable with the value of *__main__*. If python is importing the file as an import into an allready running *__main__* the `__name__` variable will be set to the module's name in the modules scope.
+The simplest dialog box is the `MessageBox()` function.  The `MessageBox()` comes with many options to customize the buttons based on your needs:
 
-One of the reasons for doing this is that sometimes you write a module (a .py file) where it can be executed directly. Alternatively, it can also be imported and used in another module. By doing the main check, you can have that code only execute when you want to run the module as a program and not have it execute when someone just wants to import your module and call your functions themselves.
+```python
+import rhinoscriptsyntax as rs
+
+rs.MessageBox("Hello Rhino!") # Simple message dialog
+rs.MessageBox("Hello Rhino!", 4 | 32) # A Yes, No dialog
+rs.MessageBox("Hello Rhino!", 2 | 48) # An Abort, Retry dialog
+```
+<img src="{{ site.baseurl }}/images/yes_no-dialog.png" alt="RunPythonScript" width="35%">
+
+Some of the more advanced dialogs can be polulated with custom selections:
+
+```python
+import rhinoscriptsyntax as rs
+
+options = ('First Pick', 'Second Pick', 'Third Pick')
+if options:
+    result = rs.ListBox(options, "Pick an option")
+    if result: rs.MessageBox( result + " was selected" )
+```
+Here are a list of dialog box methods:
+
+| Method | | | Description |
+|:-------|-|-|:------------|
+| CheckListBox | | | Displays a list of strings in a checkable list. |
+| ComboListBox | | | Displays a list of strings in a combo list. |
+| EditBox | | | Displays a dialog box with a multi-line edit control. |
+| ListBox | | | Displays a list of strings in a simple list box. |
+| MessageBox | | | Displays a Windows message box. |
+| PopupMenu | | | Displays a context-like popup menu. |
+| PropertyListBox | | | Displays a list of items and values in a property list. |
+| RealBox | | | Displays a dialog box prompting the user to enter a number. |
+| StringBox | | | Displays a dialog box prompting the user to enter a string. |
+|=====
+|
+{: rules="groups"}
+
+For details on all the dialog box functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)
+
+## File System dialogs
+
+Working with files and folders on the computer take a special class of dialogs. 
+
+```python
+import rhinoscriptsyntax as rs
+
+filename = rs.OpenFileName()
+if filename: rs.MessageBox(filename)
+```
+<img src="{{ site.baseurl }}/images/openfile_dialog.png" alt="RunPythonScript" width="55%">
+
+| Method | | | Description |
+|:-------|-|-|:------------|
+| BrowseForFolder | | | Displays a Windows browse-for-folder dialog box. |
+| OpenFileName | | | Displays a Windows file open dialog box. |
+| OpenFileNames | | | Displays a Windows file open dialog box. |
+| SaveFileName | | | Displays a Windows file save dialog box. |
+|=====
+|
+{: rules="groups"}
+
+For details on all the dialog box functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)
+
