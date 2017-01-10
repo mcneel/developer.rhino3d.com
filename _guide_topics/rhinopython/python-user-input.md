@@ -28,6 +28,47 @@ Like many input methods, not only are the values captured, but they also can be 
 
 ## The GET methods
 
+GetPoint():
+
+ Use rs.GetPoint() to ask the user for a single point location, say for the center of a circle. LIke most if not all of the Get methods, rs.GetPoint() allows you to specify some parameters- in this case they are all optional, the function will run without any of them specified in the code you type. For example, the default prompt is "Pick point", but you can specify a different prompt, for example, "Set center point" depending on what you wish to convey to the user. 
+```python
+pt = rs.GetPoint("Set center point")
+```python
+
+If the function succeeds, a Rhino point is returned, which can be treated as a list of three numbers representing the world x, y and z coordinates of the point. 
+
+```python
+import rhinoscriptsyntax as rs
+pt = rs.GetPoint("Click to get information about a point location")
+if pt is not None:# note it is a good idea to check if there is a result you can use
+    print "That point has an x coordinate of " + str(pt[0])
+```python
+
+
+GetPoints()
+Use rs.GetPoints() to ask the user for multiple point locations. As in rs.GetPoint(), all parameters are optional. Note that there is a separate prompt for the first point, and a second one for subsequent points. 
+
+You need to set the parameters in order, separated by commas. If you do not want to specify a paramter at all, and accept the default, you can leave it out but you must then specify any following parameters explicitly using the parameter name. For example, this will not work to set a custom first prompt:
+```python
+import rhinoscriptsyntax as rs
+
+pts = rs.GetPoints(  "Set the first point", "Set the next point")
+```python
+
+Why? because the function has two paramters that come before the first prompt, 'draw_lines' and 'in_plane'. If you leave these out, you must specify what paramters you are setting explicitly in order for it to be recognized:
+
+```python
+import rhinoscriptsyntax as rs
+pts = rs.GetPoints(  message1= "Set the first point", message2= "Set the next point")
+```python
+
+You could also make sure to set the other parameters even if you don't care what they are i.e. defaults are OK:
+```python
+import rhinoscriptsyntax as rs
+pts = rs.GetPoints( None, None, "Set the first point", "Set the next point")
+```python
+
+
 
 ## A complete script example
 
