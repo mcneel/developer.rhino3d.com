@@ -51,6 +51,7 @@ For a list of common errors, exceptions and pitfalls that you are likely to run 
 - The " # " sign is used for comments, the computer will skip over them.
 - Print and Return are NOT the same thing - print writes something to the screen, return actually passes a value!
 - Remember Variable Scope - where you define a variable is important!  Variables defined within functions & classes can only be used within those functions/classes unless passed as input or through the return statement!
+- "return" only works inside a function.
 - Develop code incrementally, testing, debugging and printing as you finish smaller sections. Writing hundreds of lines and hitting run will most likely not work and will make it far more difficult to spot errors!
 
 
