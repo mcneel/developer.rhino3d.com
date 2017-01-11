@@ -26,6 +26,7 @@ layout: guide-homepage
 ### Getting Started
 
 - Your First Python Script in Rhino ([Windows]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-mac))
+- [Where to get help...]({{ site.baseurl }}/guides/rhinopython/python-where-to-find-help)
 
 ### Python Editor for Windows
 
