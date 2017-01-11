@@ -174,5 +174,12 @@ if filename: rs.MessageBox(filename)
 |
 {: rules="groups"}
 
-For details on all the dialog box functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)
+---
+
+## Related Topics
+
+- [Reading and Writing files with Python]({{ site.baseurl }}/guides/rhinopython/python-reading-writing)
+- [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)
+
+
 
