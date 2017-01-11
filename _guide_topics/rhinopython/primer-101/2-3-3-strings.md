@@ -45,6 +45,8 @@ Internally, a String is stored as a series of characters. Every character (or 'c
 
 <img src="{{ site.baseurl }}/images/primer-strings.svg" width="75%" align="middle">
 
+<!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
+
 Further down the road we'll be dealing with some advanced String functions which will require a basic 
 understanding of how Strings work, but while we are still just using the simple stuff, it's good enough to know it just works the way you expect it to. 
 

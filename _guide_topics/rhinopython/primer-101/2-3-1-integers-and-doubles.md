@@ -21,6 +21,8 @@ numbers as large as 1.8×10308 and as small as 5.0×10-324, though in practise t
 		
 <img src="{{ site.baseurl }}/images/primer-integers.svg" width="75%" float="right">
 
+<!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
+
 The set of all possible Double and Integer numbers is not continuous; it has gaps. There exists no Integer between zero and one and there exists no Double between zero and 5.0×10-324. The fact that the size of the gap is so much smaller with Doubles is only because we’ve picked a number close to zero. As we move towards bigger and 
 bigger numbers, the gaps between two adjacent Double values will become bigger as well and as we approach the limits of the range, the gaps are big enough to fit the Milky Way. 2×10300 minus one billion is still 2×10300, so beware when using extremely large numbers. Normally, we never stray into the regions where 32-bit computing starts to break down, we tend to restrict ourselves to numbers we can actually cope with.
 

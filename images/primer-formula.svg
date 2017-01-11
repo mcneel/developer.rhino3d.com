@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="127.758px" height="35.317px" viewBox="0 0 127.758 35.317" enable-background="new 0 0 127.758 35.317"
+	 xml:space="preserve">
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="127.758" height="34.127"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<g clip-path="url(#SVGID_2_)">
+		<text transform="matrix(1 0 0 1 62.8638 32.1045)" font-family="'MMTimesBold'" font-size="10.6355">3</text>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 78.3193 20.6377)" font-family="'MMTimesBold'" font-size="10.6355">1</text>
+<text transform="matrix(1 0 0 1 108.9814 21.6377)" font-family="'MMTimesBold'" font-size="10.6355">2</text>
+<text transform="matrix(1 0 0 1 3.4028 26.5088)" font-family="'MMTimesBoldItalic'" font-size="10.6355">y</text>
+<g>
+	<defs>
+		<rect id="SVGID_3_" width="127.758" height="34.127"/>
+	</defs>
+	<clipPath id="SVGID_4_">
+		<use xlink:href="#SVGID_3_"  overflow="visible"/>
+	</clipPath>
+	<g clip-path="url(#SVGID_4_)">
+		<text transform="matrix(1 0 0 1 43.5322 32.1045)" font-family="'MMTimesBoldItalic'" font-size="10.6355">x</text>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 31.9819 20.6377)"><tspan x="0" y="0" font-family="'MMTimesBoldItalic'" font-size="10.6355" letter-spacing="21">x</tspan><tspan x="26.376" y="0" font-family="'MMTimesBoldItalic'" font-size="10.6355">x</tspan></text>
+<text transform="matrix(1 0 0 1 106.5684 31.9648)" font-family="'MMTimesBoldItalic'" font-size="10.6355">x</text>
+<text transform="matrix(1 0 0 1 114.6514 21.6377)" font-family="'MMTimesBoldItalic'" font-size="10.6355">x</text>
+<text transform="matrix(1 0 0 1 38.9897 17.8682)" font-family="'MMTimesBold'" font-size="5.3178">2</text>
+<text transform="matrix(1 0 0 1 113.5771 29.1953)"><tspan x="0" y="0" font-family="'MMTimesBold'" font-size="5.3178">0</tspan><tspan x="2.744" y="0" font-family="'MMTimesBold'" font-size="5.3178">.</tspan></text>
+<text transform="matrix(1 0 0 1 117.5923 29.1953)" font-family="'MMTimesBold'" font-size="5.3178">5</text>
+<text transform="matrix(1 0 0 1 120.4424 29.1953)" font-family="'MMTimesBoldItalic'" font-size="5.3178">x</text>
+<text transform="matrix(1 0 0 1 11.2373 27.0635)" font-family="'MMTimesBold'" font-size="10.6355">=</text>
+<g>
+	<defs>
+		<rect id="SVGID_5_" width="127.758" height="34.127"/>
+	</defs>
+	<clipPath id="SVGID_6_">
+		<use xlink:href="#SVGID_5_"  overflow="visible"/>
+	</clipPath>
+	<g clip-path="url(#SVGID_6_)">
+		<text transform="matrix(1 0 0 1 52.0342 32.6582)" font-family="'MMTimesBold'" font-size="10.6355">-</text>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 44.6948 21.1924)"><tspan x="0" y="0" font-family="'MMTimesBold'" font-size="10.6355" letter-spacing="15">+</tspan><tspan x="21.909" y="0" font-family="'MMTimesBold'" font-size="10.6355">-</tspan></text>
+<text transform="matrix(1 0 0 1 91.5869 27.0625)" font-family="'MMTimesBold'" font-size="10.6355">+</text>
+<g>
+	<defs>
+		<polygon id="SVGID_7_" points="25.296,10.03 25.296,17.664 23.701,19.94 23.701,22.826 25.296,22.826 30.083,10.403 87.57,10.403 
+			87.57,10.03 		"/>
+	</defs>
+	<clipPath id="SVGID_8_">
+		<use xlink:href="#SVGID_7_"  overflow="visible"/>
+	</clipPath>
+	<polyline clip-path="url(#SVGID_8_)" fill="none" stroke="#231F20" stroke-width="0.498" stroke-miterlimit="10" points="
+		23.701,19.939 24.233,19.036 25.296,22.826 30.082,10.403 87.57,10.403 	"/>
+</g>
+<text transform="matrix(1.0867 0 0 1 53.9839 19.4287)"><tspan x="0" y="0" font-family="'MMVariableA'" font-size="9.6878" letter-spacing="22.084">^</tspan><tspan x="28.501" y="0" font-family="'MMVariableA'" font-size="9.6878">h</tspan></text>
+<rect x="101.777" y="12.578" fill="#231F20" width="0.25" height="20.522"/>
+<rect x="127.508" y="12.578" fill="#231F20" width="0.249" height="20.522"/>
+<rect x="22.676" y="23.713" fill="#231F20" width="65.947" height="0.249"/>
+<rect x="105.212" y="23.713" fill="#231F20" width="19.111" height="0.249"/>
+</svg>
