@@ -11,6 +11,7 @@ origin:
 order: 11
 keywords: ['python', 'commands']
 layout: toc-guide-page
+TODO: This page is not finished. We need to add line numbers in codeblocks
 ---
 
 Conventionally, whenever we intend to use variables in a script, we would have to declare them first.  However, with Python, we are relieved of this duty and we can simply create and use variables without initially declaring them. Python also does not require that we declare the type of variable we are using, as in other programming languages.  Both of these qualities emphasize why Python is such a quick and easy to learn language. So, to declare a variable we simply write: 
@@ -37,13 +38,12 @@ An important note to reiterate is Python's case sensitivity.  Unlike other langu
 
 Now, high time for an example. We'll be using the macro from page 2, but we'll replace some of the hard coded numbers with variables for added flexibility. This script looks rather intimidating, but keep in mind that the messy looking bits (line 10 and beyond) are caused by the script trying to mimic a macro, which is a bit like trying to drive an Aston-Martin down the sidewalk. Usually, we talk to Rhino directly without using the command-line and the code looks much friendlier:
 
+```python
+import rhinoscriptsyntax as rs
 
-|--:|:---------------|
-|  1|import rhinoscriptsyntax as rs |
-|  2|
-|  3|dblMajorRadius = rs.GetReal("Major radius", 10.0, 1.0, 1000.0) |
-|  4|dblMinorRadius = rs.GetReal("Minor radius", 2.0, 0.1, 100.0) |
-|  5|intSides = rs.GetInteger("Number of sides", 6, 3, 20) |
+dblMajorRadius = rs.GetReal("Major radius", 10.0, 1.0, 1000.0)
+dblMinorRadius = rs.GetReal("Minor radius", 2.0, 0.1, 100.0)
+intSides = rs.GetInteger("Number of sides", 6, 3, 20)
 
 strPoint1 = " w" + str(dblMajorRadius) + ",0,0"
 strPoint2 = " w" + str(dblMajorRadius + dblMinorRadius) + ",0,0"
@@ -62,8 +62,34 @@ rs.Command ("-_Sweep1 _SelName Rail _SelName Profile _Enter _Enter _Closed=Yes _
 rs.Command ("_SelName Rail")
 rs.Command ("_SelName Profile")
 rs.Command ("_Delete")
+```
 
-<!--TODO: This page is not finished.  Needs a lot of formatting tricks-->
+<table rules="rows">
+<tr>
+<th>
+Line
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+2.5
+</td>
+<td>
+This is where we ask the user to enter a number value ("Real" is another word for "Double"). We supply the rs.GetReal() method with four fixed values, one string and three doubles. The string will be displayed in the command-line and the first double (10.0) will be available as the default option:
+</td>
+</tr>
+<tr>
+<td>7...8</td>
+<td>On these lines we're creating the strings, based on the values of dblMajorRadius and dblMinorRadius. If we assume the user has chosen the default values in all cases, dblMajorRadius will be 10.0 and dblMinorRadius will be 2.0, which means that strPoint2 will look like " w12,0,0".</td>
+</tr>
+<tr>
+<td>10...23</td>
+<td>This is the same as the macro on page 3, except that we've replaced some bits with variables and there are three extra lines at the bottom which get rid of the construction geometry (so we can run the script more than once without it breaking down).</td>
+</tr></table>
+
 
 ---
 
