@@ -94,7 +94,7 @@ There are 22 different Get methods. For details on all the Get functions in Rhin
 ## Dialog Methods
 
 
-The Dialog methods in RhinoScript syntax are used to prompt of with generic custom information. Dialogs can be used to draw more attention to a required interaction with the user.  
+The Dialog methods in RhinoScript syntax are used to prompt of with generic custom information. Dialogs can be used to draw more attention to a required interaction with the user.  Dialogs generally interrupt the workflow - the script cannot continue until the dialog is dealt with by the user.
 
 #### MessageBox()
 
@@ -112,7 +112,7 @@ rs.MessageBox("Hello Rhino!", 2 | 48) # An Abort, Retry dialog
 <img src="{{ site.baseurl }}/images/yes_no-dialog.png" alt="RunPythonScript" width="35%">
 
 
-Note that rs.MessageBox() returns a value - you can set a variable to records the result from a message box so that you can tell which button the user has clicked.
+Note that rs.MessageBox() returns a value - you can set a variable to record the result from a message box so that you can tell which button the user has clicked.
 
 ```python
 import rhinoscriptsyntax as rs
@@ -137,10 +137,10 @@ Here is a list of dialog box methods:
 
 | Method | | | Description |
 |:-------|-|-|:------------|
-| CheckListBox | | | Displays a list of strings in a checkable list. |
+| CheckListBox | | | Displays a list of strings in a checkable list. The user can pick multiple items.|
 | ComboListBox | | | Displays a list of strings in a combo list. |
 | EditBox | | | Displays a dialog box with a multi-line edit control. |
-| ListBox | | | Displays a list of strings in a simple list box. |
+| ListBox | | | Displays a list of strings in a simple list box. The user can pick one item.|
 | MessageBox | | | Displays a Windows message box. |
 | PopupMenu | | | Displays a context-like popup menu. |
 | PropertyListBox | | | Displays a list of items and values in a property list. |
@@ -162,6 +162,7 @@ import rhinoscriptsyntax as rs
 filename = rs.OpenFileName()
 if filename: rs.MessageBox(filename)
 ```
+
 <img src="{{ site.baseurl }}/images/openfile_dialog.png" alt="RunPythonScript" width="55%">
 
 | Method | | | Description |

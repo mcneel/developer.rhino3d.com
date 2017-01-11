@@ -12,46 +12,58 @@ order: 75
 keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
-
+We'll use a couple of simple scripts from the Python Samples folder as examples - we'll dissect these to see how they work.
 ## Reading a file
 
-Here is an example script that reads a text files of points:
+Here is the import-points.py script
 
 ```python
+# Import points from a text file
 import rhinoscriptsyntax as rs
 
-#prompt the user for a file to import
-filter = "Text file (*.txt)|*.txt|All Files (*.*)|*.*||"
-filename = rs.OpenFileName("Open Point File", filter)
-if not filename: return
+def ImportPoints():
+    #prompt the user for a file to import
+    filter = "Text file (*.txt)|*.txt|All Files (*.*)|*.*||"
+    filename = rs.OpenFileName("Open Point File", filter)
+    if not filename: return
     
-#read each line from the file
-file = open(filename, "r")
-contents = file.readlines()
-file.close()
+    #read each line from the file
+    file = open(filename, "r")
+    contents = file.readlines()
+    file.close()
 
-# local helper function    
-def __point_from_string(text):
-    items = text.strip("()\n").split(",")
-    x = float(items[0])
-    y = float(items[1])
-    z = float(items[2])
-    return x, y, z
+    # local helper function    
+    def __point_from_string(text):
+        items = text.strip("()\n").split(",")
+        x = float(items[0])
+        y = float(items[1])
+        z = float(items[2])
+        return x, y, z
 
-contents = [__point_from_string(line) for line in contents]
-rs.AddPoints(contents)
+    contents = [__point_from_string(line) for line in contents]
+    rs.AddPoints(contents)
+
+
+##########################################################################
+# Check to see if this file is being executed as the "main" python
+# script instead of being used as a module by some other python script
+# This allows us to use the module which ever way we want.
+if( __name__ == "__main__" ):
+    ImportPoints()
 ```
 
-The first section prompts for a filename using the OpenFileName() method to prompt the user to select an existing file.  The file name is set to the `filename` variable.
+We've put the action inside a function in this script, the `def InportPoints()` section. This allows the code to be re-used and simplifies errpr checking. Note the code will not actually run unless the function is called - this is done from the very last line of the script.
+
+The first section of the function prompts for a filename using the OpenFileName() method to prompt the user to select an existing file.  The file name is set to the `filename` variable.
 
 ```python
 #prompt the user for a file to import
 filter = "Text file (*.txt)|*.txt|All Files (*.*)|*.*||"
 filename = rs.OpenFileName("Open Point File", filter)
-if not filename: return
+if not filename: return 
 ```
 
-The `if not' statment will exit the script if no file is selected.
+The `return` statment will exit the function if no file is selected.
 
 The next part of this script is pure Python.  The file is opened into a variable *file*.  Then t file is read line by line into a list of strings in the contents variable.
 
