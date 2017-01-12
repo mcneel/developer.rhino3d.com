@@ -1,5 +1,5 @@
 ---
-title: 4 Operators and functions
+title: 5 Conditional Statements
 description:
 authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
 author_contacts: ['steve']
@@ -240,7 +240,7 @@ The default height of text objects is 1.0 units, but we want our clock to look b
 A simple example of a non-endless loop which will terminate itself would be an iterative scaling script. Imagine we need a tool which makes sure a curve does not exceed a certain length {L}. Whenever a curve does exceed this predefined value it must be  scaled down by a factor {F} until it no longer exceeds {L}. 
 This approach means that curves that turn out to be longer than {L} will probably end up being shorter than {L}, since we always scale with a fixed amount. There is no mechanism to prevent undershooting. Curves that start out by being shorter than {L} should remain untouched.
 </td>
-<td width="40%"><img src="{{ site.baseurl }}/images/primer-iterativecurvescaler.svg" width="100%" height="300" float="right"></td>
+<td width="40%" padding="20px 20px"><img src="{{ site.baseurl }}/images/primer-iterativecurvescaler.svg" width="100%" height="300" padding="20px 20px" float="right"></td>
 </tr>
 </table>
 
@@ -375,7 +375,7 @@ The above example draws a sine wave graph in a certain numeric domain with a cer
 
 The For…loop will increment the value of x automatically with the specified stepsize, so we don't have to worry about it when we use x on line 10. We should be careful not to change x inside the loop since that will play havoc with the logic of the iterations.
 </td>
-<td width="40%"><img src="{{ site.baseurl }}/images/primer-sinewave.svg" width="100%" height="300" float="right"></td>
+<td width="40%" padding="20px 20px"><img src="{{ site.baseurl }}/images/primer-sinewave.svg" width="100%" height="300" float="right"></td>
 </tr>
 </table>
 
@@ -407,7 +407,7 @@ The master loop increments the z variable from 0.0 to 5.0 with a default step si
 
 The master loop will run a total of ten times and the nested loop is designed to run 30 times. But because the nested loop is started every time the master loop performs another iteration, the code between lines 11 and 14 will be executed 10×30 = 300 times. Whenever you start nesting loops, the total number of operations your script performs will grow exponentially.
 </td>
-<td width="40%"><img src="{{ site.baseurl }}/images/primer-twistandshout.svg" width="100%" height="300" float="right"></td>
+<td width="40%" padding="20px 20px"><img src="{{ site.baseurl }}/images/primer-twistandshout.svg" width="100%" height="300" float="right"></td>
 </tr>
 </table>
 
