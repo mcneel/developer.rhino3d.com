@@ -66,7 +66,7 @@ rs.Command ("_Delete")
 
 <table rules="rows">
 <tr>
-<th>
+<th style="vertical-align:top;text-align:right;padding:0px 10px;">
 Line
 </th>
 <th>
@@ -74,19 +74,26 @@ Description
 </th>
 </tr>
 <tr>
-<td>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">
 2.5
 </td>
 <td>
-This is where we ask the user to enter a number value ("Real" is another word for "Double"). We supply the rs.GetReal() method with four fixed values, one string and three doubles. The string will be displayed in the command-line and the first double (10.0) will be available as the default option:
+This is where we ask the user to enter a number value ("Real" is another word for "Double"). We supply the *rs.GetReal()* method with four fixed values, one string and three doubles. The string will be displayed in the command-line and the first double (10.0) will be available as the default option:
+
+<img src="{{ site.baseurl }}/images/primer-getrealexample.png" width="75%" margin="10px"><br>
+
+We're also limiting the numeric domain to a value between one and a thousand. If the user attempts to enter a larger number, Rhino will claim it's too big:
+
+<br><img src="{{ site.baseurl }}/images/primer-getrealexamplemaximumlimit.png" width="75%">
+
 </td>
 </tr>
 <tr>
-<td>7...8</td>
-<td>On these lines we're creating the strings, based on the values of dblMajorRadius and dblMinorRadius. If we assume the user has chosen the default values in all cases, dblMajorRadius will be 10.0 and dblMinorRadius will be 2.0, which means that strPoint2 will look like " w12,0,0".</td>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">7...8</td>
+<td>On these lines we're creating the strings, based on the values of `dblMajorRadius` and `dblMinorRadius`. If we assume the user has chosen the default values in all cases, `dblMajorRadius` will be 10.0 and `dblMinorRadius` will be 2.0, which means that `strPoint2` will look like " w12,0,0".</td>
 </tr>
 <tr>
-<td>10...23</td>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">10...23</td>
 <td>This is the same as the macro on page 3, except that we've replaced some bits with variables and there are three extra lines at the bottom which get rid of the construction geometry (so we can run the script more than once without it breaking down).</td>
 </tr></table>
 

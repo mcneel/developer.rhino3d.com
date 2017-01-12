@@ -331,7 +331,7 @@ Let's assume this function determines whether *intNumber1* plus 100 is larger th
 The function could look like this:
 
 ```python
-	def MyBogusFunction(intNumber1, intNumber2):
+def MyBogusFunction(intNumber1, intNumber2):
     intNumber1 = intNumber1 + 100
     intNumber2 = intNumber2 * 2
     return (intNumber1 > intNumber2)
