@@ -11,7 +11,6 @@ origin:
 order: 11
 keywords: ['python', 'commands']
 layout: toc-guide-page
-TODO: This page is not finished. We need to add line numbers in codeblocks
 ---
 
 Conventionally, whenever we intend to use variables in a script, we would have to declare them first.  However, with Python, we are relieved of this duty and we can simply create and use variables without initially declaring them. Python also does not require that we declare the type of variable we are using, as in other programming languages.  Both of these qualities emphasize why Python is such a quick and easy to learn language. So, to declare a variable we simply write: 
@@ -63,6 +62,8 @@ rs.Command ("-_Sweep1 _SelName Rail _SelName Profile _Enter _Enter _Closed=Yes _
 rs.Command ("_SelName Rail")
 rs.Command ("_SelName Profile")
 rs.Command ("_Delete")
+<<<<<<< HEAD
+=======
 ```
 
 <table rules="rows">
@@ -98,6 +99,7 @@ We're also limiting the numeric domain to a value between one and a thousand. If
 <td>This is the same as the macro on page 3, except that we've replaced some bits with variables and there are three extra lines at the bottom which get rid of the construction geometry (so we can run the script more than once without it breaking down).</td>
 </tr></table>
 
+>>>>>>> be37edf... Added chapter 5 of the primer.  Updated the table formats.
 
 ---
 
