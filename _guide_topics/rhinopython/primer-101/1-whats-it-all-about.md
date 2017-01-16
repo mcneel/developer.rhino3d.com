@@ -1,5 +1,5 @@
 ---
-title: 1.1 Macros
+title: 1 What's it all about? 
 description:
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
@@ -12,6 +12,8 @@ order: 1
 keywords: ['python', 'commands']
 layout: toc-guide-page
 ---
+
+## 1.1 Macros
 
 Rhinoceros is based on a command-line interface. This means you can control it by using only the keyboard. You type in the commands and the program will execute them. Ever since the advent of the mouse, a user interface which is purely command-line based is considered to be primitive, and rightly so. Instead of typing:
 
@@ -54,6 +56,37 @@ Incidentally, the underscores before all the command names are due to Rhino loca
 The hyphen in front of the *_Properties* and *_Sweep1* command is used to suppress dialog boxes. If you take the hyphens out you will no longer be able to change the way a command works through the command -line.
 
 There’s no limit to how complex a macro can become, you can keep adding commands without restrictions, but you’ll never be able to get around the limitations that lie at the heart of macros.
+
+## 1.2 Scripts
+
+The limitations of macros have led to the development of scripting languages. Scripts are something halfway between macros and true (compiled) programs and plug-ins. Unlike macros they can perform 
+mathematical operations, evaluate variable conditions, respond to their environment and communicate with the user. Unlike programs they do not need to be compiled prior to running. Rhinoceros implements the standard 
+‘Microsoft® Visual Basic® Scripting Edition’ language, as well as the Python Programming language.  This primer will introduce the Python Programming Language and how to utilize its functionality within Rhinoceros.
+
+Scripts, then, are text files which are interpreted one line at a time. But here’s the interesting part; unlike macros, scripts have control over which line is executed next. This flow control enables the script to skip certain instructions or to repeat others. Flow control is achieved by what is called "conditional evaluation" and we must familiarize ourselves with the language rules of Python before we can take advantage of flow control.
+
+The language rules are usually referred to as the syntax and they indicate what is and isn’t valid:
+
+1. "There is no apple cake here."		» valid
+1. "There is here no apple cake"		» invalid
+1. "Here, there is no apple cake."		» valid
+1. "There is no Apfelstrudel here."		» invalid
+
+The above list is a validity check for English syntax rules. The first and third lines are proper English and the others are not. However, there are certain degrees of wrong. Nobody will misunderstand the second line just because the word order is wrong. The forth line is already a bit harder since it features a word from a different language.
+
+Although most of us are smart enough to understand all four lines, a computer is not. 
+
+Python is a wonderful language for beginners or advanced programmers.  It offers a simple and efficient syntax as well as powerful programming functions, object-oriented capabilities and a large fan-base with user-built libraries.  Also, since Rhino Python is available on both Windows and Mac, the exact same python scripts will run on both versions of Rhino!  Don't get too excited yet - will get more of the details in the following sections!
+
+## 1.3 Scripts
+
+There are several ways to run scripts in Rhino, each has its own (dis)advantages. You could store scripts as external text files and have Rhino load them for you whenever you want to run them. You could also use Rhino's in-build script editor which means you can run the Scripts directly from the editor. The last option is to embed scripts in toolbar buttons, which makes it very hard to edit them, but much easier to distribute them.
+
+Throughout this book, I will use the in-build editor method. I find this to be the best way to work on simple scripts. In order to run a script via the in-build editor,  Use the *_EditPythonScript* command to activate it, then type in your script and press the Run button:
+
+<img src="{{ site.baseurl }}/images/primer-editscriptdialog-python.png" width="70%" align="center">
+
+All the example code in this primer can be copy-pasted directly into the *_EditPythonScript* dialog.
 
 ---
 
