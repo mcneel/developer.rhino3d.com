@@ -184,6 +184,7 @@ tbody.index_table tr td{
 }
 
 
+
 /*
 ##############################################################################
 ##  bootstrap docs sidebar - table of contents (toc)
@@ -332,12 +333,14 @@ tbody.index_table tr td{
 
 .multiline {
 	rule:rows;
-	vertical-align:top; !important;
+	vertical-align:top;
 }
 
 .multiline-cell td {
 	padding:10px 5px;
-	vertical-align:top; !important;
+	vertical-align:top;
+    text-align:right;
+	padding:0px 10px;
 }
 
 

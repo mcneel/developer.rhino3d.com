@@ -34,7 +34,6 @@ Numbers and variables are well behind us now. Arithmetic operators should be fam
 
 <img src="{{ site.baseurl }}/images/primer-operators.svg" width="95%" float="right">
 
-<!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
 ## 4.2 Careful…
 
@@ -49,9 +48,7 @@ x = 4 + (5 * 2)		# correct precedence
 
 x doesn't equal 18, even though many cheap calculators seem to disagree. The precedence of the multiplication is higher which means you first have to multiply 5 by 2, and then add the result to 4. Thus, x equals 14. Python is not a cheap calculator and it has no problems whatsoever with operator precedence. It is us, human beings, who are the confused ones. The example above is fairly straightforward, but how would you code the following?
 
-<img src="{{ site.baseurl }}/images/primer-formula.svg" width="35%" float="right">
-
-<!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
+$$y =\frac{\sqrt{x^2+(x+1)}}{x-3} + \left|{\frac{2x}{x^{0.5x}}}\right|$$
 
 Without extensive use of parenthesis, this would be very nasty indeed. By using parenthesis in equations we can force precedence, and we can easily group different bits of mathematics. All the individual bits in the mathematical notation have been grouped inside parenthesis and extra spaces have been inserted to accentuate transitions from one top level group to the next:
 
@@ -146,7 +143,7 @@ At the level of Python there are so many wrappers around those bits that we can'
 
 A good example is the *math.sin()* function, which takes a single numeric value and returns the sine of that value. If we want to know the sine of -say- 4.7, all we need to do is type in *x = math.sin(4.7)*. Internally the computer might calculate the sine by using a digital implementation of the Taylor series:
 
-<img src="{{ site.baseurl }}/images/taylorseries2.png" width="30%" float="right">
+$$f(x) = \sum_{n=0}^\infty \frac{f^n(a)}{n!} {(x-a)^n}$$
 
 In other words: you don't want to know. The good people who develop programming languages predicted you don't want to know, which is why they implemented a *math.sin()* function. Python comes with a long list of predefined functions all of which are available to RhinoScripters. Some deal with mathematical 
 computations such as *math.sin()*, others perform String operations such as *abs()* which returns the absolute value. Python lists 75 native procedures plus many more in any of the modules that can be imported (i.e. the *math* module). I won't discuss them here, except when they are to be used in examples.
@@ -173,22 +170,7 @@ rs.AddLayer (name=None, color=0, visible=True, locked=False, parent=None)
 
 This concludes the boring portion of the primer. We now have enough information to actually start making useful scripts. I still haven't told you about loops or conditionals, so the really awesome stuff will have to wait until Chapter 5, though. We're going to write a script which uses some Python functions and a few RhinoScript methods. Our objective for today is to write a script that applies a custom name to selected objects. First, I'll show you the script, then we'll analyze it line by line:
 
-<table>
-<tr>
-<td width="10%">
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11	
-</td>
-<td>	
+```python	
 import rhinoscriptsyntax as rs
 import time
 #This script will rename an object using the current system time
@@ -200,25 +182,7 @@ if strObjectID:
    strNewName = "Time: " + str(time.localtime())
     
    rs.ObjectName(strObjectID, strNewName)</td>
-</tr>
-</table>
-
-
-|--:|:-------------------------------|
-| 1 | ```import rhinoscriptsyntax as rs``` |
-| 2 | ```import time``` |
-
-#This script will rename an object using the current system time
-
-strObjectID = rs.GetObject("Select an object to rename",0,False,True)
-
-if strObjectID:
-
-   strNewName = "Time: " + str(time.localtime())
-    
-   rs.ObjectName(strObjectID, strNewName)
-	
-<!-- TODO: The table code block with line number goes here. -->
+```
 
 This is a complete script file which can be run directly from the disk. It adheres to the basic script structure according to page 13.
 
