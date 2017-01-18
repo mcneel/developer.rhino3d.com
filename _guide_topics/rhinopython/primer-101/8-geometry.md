@@ -880,7 +880,7 @@ You'll notice I'm violating a lot of naming conventions from paragraph [2.3.5 Us
 </tr>
 <tr>
 <td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
-<td>We'll be walking along the curve with equal parameter steps. This is arguably not the best way, since we might be dealing with a polycurve which has wildly different parameterizations among its subcurves. This is only an example script though so I wanted to keep the code to a minimum. We're using the same trick as before in the header of the loop to ensure that the final value in the domain is included in the calculation. By extending the range of the loop by one billionth of a parameter we circumvent the 'double noise problem' which might result from multiple additions of doubles.<td>
+<td>We'll be walking along the curve with equal parameter steps. This is arguably not the best way, since we might be dealing with a polycurve which has wildly different parameterizations among its subcurves. This is only an example script though so I wanted to keep the code to a minimum. We're using the same trick as before in the header of the loop to ensure that the final value in the domain is included in the calculation. By extending the range of the loop by one billionth of a parameter we circumvent the 'double noise problem' which might result from multiple additions of doubles.</td>
 </tr>
 <tr>
 <td style="vertical-align:top;text-align:right;padding:0px 10px;">20</td>
@@ -935,7 +935,7 @@ We start with two points {A} & {B} and a vector definition {D}. The arc we're af
 We're going to find the coordinates of the point in the middle of the desired arc {M}, so we can use the 3Point approach with {A}, {B} and {M}. As the illustration on the left indicates, the point in the middle of the arc is also on the line perpendicular from the middle {C} of the baseline.
 <br><br>
 The halfway point on the arc also happens to lie on the bisector between {D} and the baseline vector. We can easily construct the bisector of two vectors in 3D space by process of unitizing and adding both vectors. In the illustration on the left the bisector is already pointing in the right direction, but it still hasn't got the correct length.
-<br><br>
+<br><br> 
 We can compute the correct length using the standard "Sin-Cos-Tan right triangle rules": 
 
 The triangle we have to solve has a 90º angle in the lower right corner, a is the angle between the baseline and the bisector, the length of the bottom edge of the triangle is half the distance between {A} and {B} and we need to compute the length of the slant edge (between {A} and {M}).
@@ -973,6 +973,345 @@ def AddArcDir(ptStart, ptEnd, vecDir):
     vecBisector = rs.VectorScale(vecBisector, midLength)
     return rs.AddArc3Pt(ptStart, rs.PointAdd(ptStart, vecBisector), ptEnd)
 ```
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>The <i>ptStart</i> argument indicates the start of the arc, <i>ptEnd</i> the end and <i>vecDir</i> the direction at <i>ptStart</i>. This function will behave just like the <i>rs.AddArc3Pt()</i> method. It takes a set of arguments and returns the identifier of the created curve object if successful. If no curve was added the function does not return anything - that is, the resulting assignment will be <i>None</i>.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>Create the baseline vector (from {A} to {B}), by subtracting {A} from {B}.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>If {A} and {B} are coincident, then the subtraction from line 2 will result in a vector with a length of 0 and no solution is possible. Actually, there is an infinite number of solutions so we wouldn't know which one to pick.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>If vecDir is parallel (or anti-parallel) to the baseline vector, then no solution is possible at all.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">7...8</td>
+<td>Make sure all vector definitions so far are unitized - that is, they all have a vector length value of one</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">10...11</td>
+<td>Create the bisector vector and unitize it.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">13</td>
+<td>Compute the dotproduct between the bisector and the direction vector. Since the bisector is exactly halfway between the direction vector and baseline vector (indeed, that is the point to its existence), we could just as well have calculated the dotproduct between it and the baseline vector.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">14</td>
+<td>Compute the distance between ptStart and the center point of the desired arc.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">16</td>
+<td>Resize the (unitized) bisector vector to match this length.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">17</td>
+<td>Create an arc using the start, end and midpoint arguments, return the ID.</td>
+</tr>
+</table>
+
+
+<table>
+<tr>
+<td>
+We need this function in order to build a recursive tree-generator which outputs trees made of arcs. Our trees will be governed by a set of five variables but -due to the 
+flexible nature of the recursive paradigm- it will be very easy to add more behavioral patterns. The growing algorithm as implemented in this example is very simple and doesn't allow a great deal of variation.
+<br><br>
+The five base parameters are:
+<br><br>
+Propagation factor
+<ol>
+<li>Twig length</li>
+<li>Twig length mutation</li>
+<li>Twig angle</li>
+<li>Twig angle mutation</li>
+</ol>
+</td>
+<td width="50%"><img src="{{ site.baseurl }}/images/primer-arctree.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+The propagation-factor is a numeric range which indicates the minimum and maximum number of twigs that grow at the end of every branch. This is a totally random affair, which is why it is called a "factor" rather than a "number". More on random numbers in a minute. The twig-length and twig-length-mutation variables control the -as you probably guessed- length of the twigs and how the length changes with every twig generation. The twig-angle and twig-angle-mutation work in a similar fashion.
+
+The actual recursive bit of this algorithm will not concern itself with the addition and shape of the twig-arcs. This is done by a supporting function which we have to write before we can start growing trees. The problem we have when adding new twigs, is that we want them to connect smoothly to their parent branch. We've already got the plumbing in place to make tangency continuous arcs, but we have no mechanism yet for picking the end-point. In our current plant-scheme, twig growth is controlled by two factors; length and angle. However, since more than one twig might be growing at the end of a branch there needs to be a certain amount of random variation to keep all the twigs from looking the same.
+
+<table>
+<tr>
+<td>
+The adjacent illustration shows the algorithm we'll be using for twig propagation. The red curve is the branch-arc and we need to populate the end with any number of twig-arcs. Point {A} and Vector {D} are dictated by the shape of the branch but we are free to pick point {B} at random provided we remain within the limits set by the length and angle constraints. The complete set of possible end-points is drawn as the yellow cone. We're going to use a sequence of Vector methods to get a random point {B} in this shape:
+
+<ol>
+<li>Create a new vector {T} parallel to {D}</li>
+<li>Resize {T} to have a length between {Lmin} and {Lmax}</li>
+<li>Mutate {T} to deviate a bit from {D}</li>
+<li>Rotate {T} around {D} to randomize the orientation</li>
+</ol>
+</td>
+<td width="30%"><img src="{{ site.baseurl }}/images/primer-branchpropagation2.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+```python
+def RandomPointInCone( origin, direction, minDistance, maxDistance, maxAngle):
+    vecTwig = rs.VectorUnitize(direction)
+    vecTwig = rs.VectorScale(vecTwig, minDistance + random.random()*(maxDistance-minDistance))
+    MutationPlane = rs.PlaneFromNormal((0,0,0), vecTwig)
+    vecTwig = rs.VectorRotate(vecTwig, random.random()*maxAngle, MutationPlane[1])
+    vecTwig = rs.VectorRotate(vecTwig, random.random()*360, direction)
+    return rs.PointAdd(origin, vecTwig)
+```
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td><i>origin</i> is synonymous with point {A}.
+<i>direction</i> is synonymous with vector {D}.
+<i>minDistance</i> and MaxDistance indicate the length-wise domain of the cone.
+<i>maxAngle</i> is a value which specifies the angle of the cone (in degrees, not radians).</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...3</td>
+<td>Create a new vector parallel to <i>Direction</i> and resize it to be somewhere between <i>MinDistance</i> and <i>MaxDistance</i>. I'm using the <i>random()</i> function here which is a Python pseudo-random-number frontend. It always returns a random value between zero and one.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>In order to mutate <i>vecTwig</i>, we need to find a parallel vector. since we only have one vector here we cannot directly use the <i>Rhino.VectorCrossProduct()</i> method, so we'll construct a plane and use its x-axis. This vector could be pointing anywhere, but always perpendicular to <i>vecTwig</i>.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>Mutate <i>vecTwig</i> by rotating a random amount of degrees around the plane x-axis.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>Mutate <i>vecTwig</i> again by rotating it around the <i>Direction</i> vector. This time the random angle is between 0 and 360 degrees.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>Create the new point as inferred by <i>Origin</i> and <i>vecTwig</i>.</td>
+</tr>
+</table>
+
+One of the definitions Wikipedia has to offer on the subject of recursion is: "In order to understand recursion, one must first understand recursion." Although this is obviously just meant to be funny, there is an unmistakable truth as well. The upcoming script is recursive in every definition of the word, it is also quite short, it produces visually interesting effects and it is quite clearly a very poor realistic plant generator. The perfect characteristics for exploration by trial-and-error. Probably more than any other example script in this primer this one is a lot of fun to play around with. Modify, alter, change, mangle and bend it as you see fit.
+
+There is a set of rules to which any working recursive function must adhere. It must place at least one call to itself somewhere before the end and must have a way of exiting without placing any calls to itself. If the first condition is not met the function cannot be called recursive and if the second condition is not met it will call itself until time stops (or rather until the call-stack memory in your computer runs dry).
+
+Lo and behold! 
+A mere 21 lines of code to describe the growth of an entire tree.
+
+```python
+def RecursiveGrowth( ptStart, vecDir, props, generation):
+    minTwigCount, maxTwigCount, maxGenerations, maxTwigLength, lengthMutation, maxTwigAngle,...      
+        angleMutation = props
+    if generation>maxGenerations: return
+
+    #Copy and mutate the growth-properties
+    newProps = props
+    maxTwigLength *= lengthMutation
+    maxTwigAngle *= angleMutation
+    if maxTwigAngle>90: maxTwigAngle=90
+
+    #Determine the number of twigs (could be less than zero)
+    newprops = minTwigCount, maxTwigCount, maxGenerations, maxTwigLength, lengthMutation,...
+        maxTwigAngle, angleMutation
+    maxN = int( minTwigCount+random.random()*(maxTwigCount-minTwigCount) )
+    for n in range(1,maxN):
+        ptGrow = RandomPointInCone(ptStart, vecDir, 0.25*maxTwigLength, maxTwigLength,... 
+            maxTwigAngle)
+        newTwig = AddArcDir(ptStart, ptGrow, vecDir)
+        if newTwig:
+            vecGrow = rs.CurveTangent(newTwig, rs.CurveDomain(newTwig)[1])
+            RecursiveGrowth(ptGrow, vecGrow, newProps, generation+1)
+```            
+
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>A word on the function signature. Apart from the obvious arguments <i>ptStart</i> and <i>vecDir</i>, this function takes an tuple and a generation counter. The tuple contains all our growth variables. Since there are seven of them in total I didn't want to add them all as individual arguments. Also, this way it is easier to add parameters without changing function calls. The generation argument is an integer telling the function which twig generation it is in. Normally a recursive function does not need to know its depth in the grand scheme of things, but in our case we're making an exception since the number of generations is an exit threshold.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>For readability, we will break our tuple into individual variables. On the assignment side, the variables are listed in the order that they appear in the tuple. The properties tuple consists of the following items:
+
+<img src="{{ site.baseurl }}/images/primer-data-table.svg" width="100%" float="right">
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>If the current generation exceeds the generation limit (which is stored at the third element in the properties tuple, and broken out to the variable maxGenerations) this function will abort without calling itself. Hence, it will take a step back on the recursive hierarchy.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>This is where we make a copy of the properties. You see, when we are going to grow new twigs, those twigs will be called with mutated properties, however we require the unmutated properties inside this function instance.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">7...9</td>
+<td>Mutate the copied properties. I.e. multiply the maximum-twig-length by the twig-length-mutation factor and do the same for the angle. We must take additional steps to ensure the angle doesn't go berserk so we're limiting the mutation to within the 90 degree realm.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">13</td>
+<td><i>maxN</i> is an integer which indicated the number of twigs we are about to grow. <i>maxN</i> is randomly picked between the two allowed extremes (<i>Props(0)</i> and <i>Props(1)</i>). The <i>random()</i> function generates a number between zero and one which means that maxN can become any value between and including the limits.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">15</td>
+<td>This is where we pick a point at random using the unmutated properties. The length constraints we're using is hard coded to be between the maximum allowed length and a quarter of the maximum allowed length. There is nothing in the universe which suggests a factor of 0.25, it is purely arbitrary. It does however have a strong effect on the shape of the trees we're growing. It means it is impossible to accurately specify a twig length. There is a lot of room for experimentation and change here.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">16</td>
+<td>We create the arc that belongs to this twig.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">17</td>
+<td>If the distance between <i>ptStart</i> and <i>ptGrow</i> was 0.0 or if <i>vecDir</i> was parallel to <i>ptStart</i> » <i>ptGrow</i> then the arc could not be added. We need to catch this problem in time.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">18</td>
+<td>We need to know the tangent at the end of the newly created arc curve.  The domain of a curve consists of two values (a lower and an upper bound). <i>Rhino.CurveDomain(newTwig)(1)</i> will return the upper bound of the domain. This is the same as calling:
+
+<code lang="python">
+crvDomain = rs.CurveDomain(newTwig)
+vecGrow = rs.CurveTangent(newTwig, crvDomain[1])
+</code>
+
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
+<td>Awooga! Awooga! A function calling itself! This is it! We made it!
+The thing to realize is that the call is now different. We're putting in different arguments which means this new function instance behaves differently than the current function instance.</td>
+</tr>
+</table>
+
+It would have been possible to code this tree-generator in an iterative (For loops) fashion. The tree would look the same even though the code would be very different (probably a lot more lines). The order in which the branches are added would very probably also have differed. The trees below are archetypal, digital trees, the one on the left generated using iteration, the one on the right generated using recursion. Note the difference in branch order. If you look carefully at the recursive function on the previous page you'll probably be able to work out where this difference comes from...
+
+<img src="{{ site.baseurl }}/images/primer_iterativetree_vs_recursivetree.svg" width="80%" float="right">
+
+A small comparison table for different setting combinations. Please note that the trees have a very high random component.
+
+<img src="{{ site.baseurl }}/images/primer-treechart.svg" width="100%" float="right">
+
+## 8.7 Nurbs-curves
+
+Circles and arcs are all fine and dandy, but they cannot be used to draw freeform shapes. For that you need splines. The worlds most famous spline is probably the Bézier curve, which was developed in 1962 by the French engineer *Pierre Bézier* while he was working for Renault. Most splines used in computer graphics these days are variations on the Bézier spline, and they are thus a surprisingly recent arrival on the mathematical scene. Other ground-breaking work on splines was done by *Paul de Casteljau* at Citroën and *Carl de Boor* at General Motors. The thing that jumps out here is the fact that all these people worked for car manufacturers. With the increase in engine power and road quality, the automobile industry started to face new problems halfway through the twentieth century, one of which was aerodynamics. New methods were needed to design mass-production cars that had smooth, fluent curves as opposed to the tangency and curvature fractured shapes of old. They needed mathematically accurate, freely adjustable geometry. Enter splines.
+
+Before we start with NURBS curves (the mathematics of which are a bit too complex for a scripting primer) I'd like to give you a sense of how splines work in general and Béziers work in particular. I'll explain the de Casteljau algorithm which is a very straightforward way of evaluating properties of simple splines. In practice, this algorithm will rarely be used since its performance is worse than alternate approaches, but due to its visual appeal it is easier to 'get a feel' for it.
+
+<img src="{{ site.baseurl }}/images/primer-nurbsalgorithm.svg" width="100%" float="right">
+
+Splines limited to four control points were not the end of the revolution of course. Soon, more advanced spline definitions were formulated one of which is the NURBS curve. (Just to set the record straight; NURBS stands for Non-Uniform Rational [Basic/Basis] Spline and not Bézier-Spline as some people think. In fact, the Rhino help file gets it right, but I doubt many of you have read the glossary section, I only found out just now.) Bézier splines are a subset of NURBS curves, meaning that every Bézier spline can be represented by a NURBS curve, but not the other way around. Other curve types still in use today (but not available in Rhino) are Hermite, Cardinal, Catmull-Rom, Beta and Akima splines, but this is not a complete list. Hermite curves for example are used by the Bongo animation plug-in to smoothly transform objects through a number of keyframes.
+
+In addition to control point locations, NURBS curves have additional properties such as the degree, knot-vectors and weights. I'm going to assume that you already know how weight factors work (if you don't, it's in the Rhino help file under [NURBS About]) so I won't discuss them here. Instead, we'll continue with the correlation between degrees and knot-vectors. 
+
+Every NURBS curve has a number associated with it which represents the degree. The degree of a curve is always a positive integer between and including 1 and 11. The degree of a curve is written as DN. Thus D1 is a degree one curve and D3 is a degree three curve. The table on the next page shows a number of curves with the exact same control-polygon but with different degrees. In short, the degree of a curve determines the range of influence of control points. The higher the degree, the larger the range.
+
+As you will recall from the beginning of this section, a quadratic Bézier curve is defined by four control points. A quadratic NURBS curve however can be defined by any number of control points (any number larger than three that is), which in turn means that the entire curve consists of a number of connected pieces. The illustration below shows a D3 curve with 10 control points. All the individual pieces have been given a different color. As you can see each piece has a rather simple shape; a shape you could approximate with a traditional, four-point Bézier curve. Now you know why NURBS curves and other splines are often described as "piece-wise curves".
+
+<img src="{{ site.baseurl }}/images/primer-piecewisecurve.svg" width="100%" float="right">
+
+The shape of the red piece is entirely dictated by the first four control points. In fact, since this is a D3 curve, every piece is defined by four control points. So the second (orange) piece is defined by points {A; B; C; D}. The big difference between these pieces and a traditional Bézier curve is that the pieces stop short of the local control polygon. Instead of going all the way to {D}, the orange piece terminates somewhere in the vicinity of {C} and gives way to the green piece. Due to the mathematical magic of spline curves, the orange and green pieces fit perfectly, they have an identical position, tangency and curvature at point 4.
+
+As you may or may not have guessed at this point, the little circles between pieces represent the knot-vector of this curve. This D3 curve has ten control points and twelve knots (0~11). This is not a coincidence, the number of knots follows directly from the number of points and the degree:
+
+$$K_N = P_N + (D-1)$$
+
+Where $${K_N}$$ is the knot count, $${P_N}$$ is the point count and $${D}$$ is the degree.
+
+In the image on the previous page, the red and purple pieces do in fact touch the control polygon at the beginning and end, but we have to make some effort to stretch them this far. This effort is called "clamping", and it is achieved by stacking a lot of knots together. You can see that the number of knots we need to collapse in order to get the curve to touch a control-point is the same as the degree of the curve:
+
+<img src="{{ site.baseurl }}/images/primer-curveknot.svg" width="100%" float="right">
+
+A clamped curve always has a bunch of knots at the beginning and end (periodic curves do not, but we'll get to that later). If a curve has knot clusters on the interior as well, then it will touch one of the interior control points and we have a kinked curve. There is a lot more to know about knots, but I suggest we continue with some simple nurbs curves and let Rhino worry about the knot vector for the time being.
+
+### 8.7.1 Control-point curves
+
+
+<table>
+<tr>
+<td>
+The _FilletCorners command in Rhino puts filleting arcs across all sharp kinks in a polycurve. Since fillet curves are tangent arcs, the corners have to be planar. All flat curves though can always be filleted as the image to the right shows.
+<br><br>
+The input curve {A} has nine G0 corners (filled circles) which qualify for a filleting operation and three G1 corners (empty circles) which do not. Since each segment of the polycurve has a length larger than twice the fillet radius, none of the fillets overlap and the result is a predictable curve {B}.
+<br><br>
+Since blend curves are freeform they are allowed to twist and curl as much as they please. They have no problem with non-planar segments. Our assignment for today is to make a script which inserts blend corners into polylines. We're not going to handle polycurves (with freeform curved segments) since that would involve quite a lot of math and logic which goes beyond this simple curve introduction. This unfortunately means we won't actually be making non-planar blend corners. 
+</td>
+<td width="30%"><img src="{{ site.baseurl }}/images/primer-filletcorners.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+The logic of our BlendCorners script is simple:
+
+- Iterate though all segments of the polyline.
+- From the beginning of the segment $${A}$$, place an extra control point $${W_1}$$ at distance $${R}$$.
+- From the end of the segment $${B}$$, place an extra control point $${W_2}$$ at distance $${R}$$.
+- Put extra control-points halfway between $${A; W_1; W_2; B}$$.
+- Insert a $$D^5$$ nurbs curve using those new control points.
+
+Or, in graphic form:
+
+<img src="{{ site.baseurl }}/images/primer-blendcurved5.svg" width="100%" float="right">
+
+The first image shows our input curve positioned on a unit grid. The shortest segment has a length of 1.0, the longest segment a length of 6.0. If we're going to blend all corners with a radius of 0.75 (the circles in the second image) we can see that one of the edges has a conflict of overlapping blend radii.
+
+The third image shows the original control points (the filled circles) and all blend radius control points (the empty circles), positioned along every segment with a distance of {R} from its nearest neighbor The two red control points have been positioned 0.5 units away (half the segment length) from their respective neighbours.
+
+Finally, the last image shows all the control points that will be added in between the existing control points. Once we have an ordered array of all control points (ordered as they appear along the original polyline) we can create a $$D^5$$ curve using *rs.AddCurve()*.
+
+```python
+def blendcorners():
+    polyline_id = rs.GetObject("Polyline to blend", 4, True, True)
+    if not polyline_id: return
+    vertices = rs.PolylineVertices(polyline_id)
+    if not vertices: return
+    radius = rs.GetReal("Blend radius", 1.0, 0.0)
+    if radius is None: return
+
+    between = lambda a,b: (a+b)/2.0
+    newverts = []
+    for i in range(len(vertices)-1):
+        a = vertices[i]
+        b = vertices[i+1]
+        segmentlength = rs.Distance(a, b)
+        vec_segment = rs.PointSubtract(b, a)
+        vec_segment = rs.VectorUnitize(vec_segment)
+
+        if radius<(0.5*segmentlength):
+            vec_segment = rs.VectorScale(vec_segment, radius)
+        else:
+            vec_segment = rs.VectorScale(vec_segment, 0.5*segment_length)
+
+        w1 = rs.VectorAdd(a, vec_segment)
+        w2 = rs.VectorSubtract(b, vec_segment)
+        newverts.append(a)
+        newverts.append(between(a,w1))
+        newverts.append(w1)
+        newverts.append(between(w1,w2))
+        newverts.append(w2)
+        newverts.append(between(w2,b))
+    newverts.append(vertices[len(vertices)-1])
+    rs.AddCurve(newverts, 5)
+    rs.DeleteObject(polyline_id)
+```
+
+
 
 ---
 
