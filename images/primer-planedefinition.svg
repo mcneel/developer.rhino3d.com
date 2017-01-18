@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="487.984px" height="355.636px" viewBox="0 0 487.984 355.636" enable-background="new 0 0 487.984 355.636"
+	 xml:space="preserve">
+<g id="Grid">
+</g>
+<g id="Layer_2">
+	<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#D9D9D9" points="158.854,263.105 228.375,39.846 455.484,82.826 
+		389.854,326.116 	"/>
+	<g>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4" x1="383.104" y1="351.136" x2="462.234" y2="57.806"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4" x1="486.984" y1="88.786" x2="196.875" y2="33.886"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4" x1="137.925" y1="208.076" x2="438.685" y2="284.836"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4" x1="158.944" y1="164.996" x2="445.104" y2="233.136"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4" x1="163.935" y1="118.855" x2="467.145" y2="185.996"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4" x1="180.385" y1="76.065" x2="477.284" y2="136.976"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4" x1="237.944" y1="317.605" x2="324.135" y2="25.795"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4" x1="191.725" y1="309.535" x2="281.615" y2="13.335"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4" x1="287.074" y1="320.616" x2="366.495" y2="43.945"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4" x1="333.185" y1="339.636" x2="414.754" y2="46.775"/>
+	</g>
+	<g>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#0D9900" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" x1="158.854" y1="263.105" x2="232.125" y2="27.806"/>
+		<polygon fill="#0D9900" points="239.071,32.415 235.563,16.85 223.837,27.671 		"/>
+	</g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#002494" d="M159.265,264.226c-0.28,0.11-0.61,0.11-0.91-0.03l-31.27-13.92
+		l-31.55-13.31l-31.77-12.841l-31.88-12.59c-3.01-1.379-4.33-4.939-2.95-7.949s4.94-4.33,7.95-2.961l30.35,15.931l30.47,15.67
+		l30.68,15.2l30.97,14.59c0.6,0.28,0.86,0.99,0.59,1.59C159.805,263.906,159.555,264.125,159.265,264.226z"/>
+	<g>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#BA0000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" x1="158.854" y1="263.105" x2="401.104" y2="329.186"/>
+		<polygon fill="#BA0000" points="396.745,336.292 412.176,332.231 400.944,320.899 		"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 401.5947 351.1357)" font-family="'TrebuchetMS-BoldItalic'" font-size="18">X</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 221.5947 17.1357)" font-family="'TrebuchetMS-BoldItalic'" font-size="18">Y</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 47.1226 204.3428)" font-family="'TrebuchetMS-BoldItalic'" font-size="18">Z</text>
+	</g>
+	<path fill-rule="evenodd" clip-rule="evenodd" stroke="#000000" stroke-width="0.5" d="M153.305,262.556
+		c0.08-3.14,2.7-5.63,5.85-5.55c3.14,0.09,5.63,2.71,5.55,5.85c-0.09,3.15-2.71,5.641-5.85,5.551
+		C155.705,268.325,153.214,265.705,153.305,262.556z"/>
+	<g>
+		<text transform="matrix(1 0 0 1 165.0244 261.1357)" font-family="'TrebuchetMS-BoldItalic'" font-size="18">O</text>
+	</g>
+	
+		<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4" x1="158.854" y1="263.105" x2="145.555" y2="305.806"/>
+	
+		<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4" x1="158.854" y1="263.105" x2="118.805" y2="252.186"/>
+	
+		<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#002494" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" x1="33.194" y1="205.455" x2="32.475" y2="205.125"/>
+	<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#002494" points="42.256,186.173 27.062,226.194 0,193.024 	"/>
+</g>
+</svg>
