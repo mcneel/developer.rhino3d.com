@@ -1243,7 +1243,6 @@ A clamped curve always has a bunch of knots at the beginning and end (periodic c
 
 ### 8.7.1 Control-point curves
 
-
 <table>
 <tr>
 <td>
@@ -1311,7 +1310,223 @@ def blendcorners():
     rs.DeleteObject(polyline_id)
 ```
 
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...7</td>
+<td>These calls prompt the user for a polyline, get the polyline's vertices, and then promps the user for the radius of blending. Since David Rutten is the only one allowed to be so careless as to not check for None values (and we are not David Rutten) each of these operations is followed by a failure check.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">9...10</td>
+<td>Sometimes, an operation that is needed within a loop results in the same values in each loop iteration. In cases like this, programs can be made much more efficient, by performing these operations before entering the loop. The variables between and <i>newverts</i> will not be used until line 25, but obtaining them here at lines 9 and 10 will make the script much more efficient.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">11</td>
+<td>Begin a loop for each segment in the polyline. </td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">12...13</td>
+<td>Store <i>A</i> and <i>B</i> coordinates for easy reference.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">15...21</td>
+<td><i>vec_segment</i> is a scaled vector that points from <i>A</i> to <i>B</i> with a length of <i>radius</i>.
+Calculate the <i>vec_segment</i> vector. Typically this vector has length <i>radius</i>, but if the current polyline segment is too short to contain two complete radii, then adjust the <i>vec_segment</i> accordingly.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">23...24</td>
+<td>Calculate <i>W1</i> and <i>W2</i>.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">25...30</td>
+<td>Store all points (except <i>B</i>) in the <i>newverts</i> list.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">31</td>
+<td>Append the last point of the polyline to the <i>newverts</i> list. We've omitted <i>B</i> everywhere because the <i>A</i> of the next segment has the same location and we do not want coincident control-points. The last segment has no next segment, so we need to make sure <i>B</i> is included this time.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">32...33</td>
+<td>Create a new D5 nurbs curve and delete the original.</td>
+</tr>
+</table>
 
+### 8.7.2 Interpolated curves
+
+When creating control-point curves it is very difficult to make them go through specific coordinates. Even when tweaking control-points this would be an arduous task. This is why commands like *_HBar* are so important. However, if you need a curve to go through many points, you're better off creating it using an interpolated method rather than a control-point method. The *_InterpCrv* and *_InterpCrvOnSrf* commands allow you to create a curve that intersects any number of 3D points and both of these methods have an equivalent in RhinoScript.
+
+To demonstrate, we're going to create a script that creates iso-distance-curves on surfaces rather than the standard iso-parameter-curves, or "isocurves" as they are usually called.  Isocurves, thus connect all the points in surface space that share a similar u or v value. Because the progression of the domain of a surface is not linear (it might be compressed in some places and stretched in others, especially near the edges where the surface has to be clamped), the distance between isocurves is not guaranteed to be identical either.
+
+The description of our algorithm is very straightforward, but I promise you that the actual script itself will be the hardest thing you've ever done.
+
+<img src="{{ site.baseurl }}/images/primer-isocurves.svg" width="100%" float="right">
+
+Our script will take any base surface (image A) and extract a number of isocurves (image B). Then, every isocurve is trimmed to a specific length (image C) and the end-points are connected to give the iso-distance-curve (the red curve in image D). Note that we are using isocurves in the v-direction to calculate the iso-distance-curve in the u-direction. This way, it doesn't matter much that the spacing of isocurves isn't distributed equally. Also note that this method is only useful for offsetting surface edges as opposed to *_OffsetCrvOnSrf* which can offset any curve.
+
+We can use the RhinoScript methods *rs.ExtractIsoCurve()* and *rs.AddInterpCrvOnSrf()* for steps B and D, but step C is going to take some further thought. It is possible to divide the extracted isocurve using a fixed length, which will give us a whole list of points, the second of which marks the proper solution:
+
+<img src="{{ site.baseurl }}/images/python-dividecurvesearching.svg" width="100%" float="right">
+
+In the example above, the curve has been divided into equal length segments of 5.0 units each. The red point (the second item in the collection) is the answer we're looking for. All the other points are of no use to us, and you can imagine that the shorter the distance we're looking for, the more redundant points we get. Under normal circumstances I would not think twice and simply use the *rs.DivideCurveLength()* method. However, I'll take this opportunity to introduce you to one of the most ubiquitous, popular and prevalent algorithms in the field of programming today: binary searching.
+
+Imagine you have a list of integers which is -say- ten thousand items long and you want to find the number closest to sixteen. If this list is unordered (as opposed to sorted) , like so:
+
+> {-2, -10, 12, -400, 80, 2048, 1, 10, 11, -369, 4, -500, 1548, 8, … , 13, -344}
+
+you have pretty much no option but to compare every item in turn and keep a record of which one is closest so far. If the number sixteen doesn't occur in the list at all, you'll have to perform ten thousand comparisons before you know for sure which number was closest to sixteen. This is known as a worst-case performance, the best-case performance would be a single comparison since sixteen might just happen to be the first item in the list... if you're lucky.
+
+The method described above is known as a list-search and it is a pretty inefficient way of searching a large dataset and since searching large datasets is something that we tend to do a lot in computer science, plenty research has gone into speeding things up. Today there are so many different search algorithms that we've had to put them into categories in order to keep a clear overview. However, pretty much all efficient searching algorithms rely on the input list being sorted, like so:
+
+> {-500, -400, -369, -344, -10, -2, 1, 4, 8, 10, 11, 12, 13, 80, … , 1548, 2048}
+
+Once we have a sorted list it is possible to improve our worst case performance by orders of magnitude. For example, consider a slightly more advanced list-search algorithm which aborts the search once results start to become worse. Like the original list-search it will start at the first item {-500}, then continue to the second item {-400}. Since {-400} is closer to sixteen than {-500}, there is every reason to believe that the next item in the list is going to be closer still. This will go on until the algorithm has hit the number thirteen. Thirteen is already pretty close to sixteen but there is still some wiggle room so we cannot be absolutely sure ({14; 15; 16; 17; 18} are all closer and {19} is equally close). However, the next number in the list is {80} which is a much, worse result than thirteen. Now, since this list is sorted we can be sure that every number after {80} is going to be worse still so we can safely abort our search knowing that thirteen is the closest number. Now, if the number we're searching for is near the beginning of the list, we'll have a vast performance increase, if it's near the end, we'll have a small performance increase. On average though, the sorted-list-search is twice as fast as the old-fashioned-list-search.
+
+Binary-searching does far better. Let us return to our actual problem to see how binary-searching works; find the point on a curve that marks a specific length along the curve. In the image below, the point we are looking for has been indicated with a small yellow tag, but of course we don't know where it is when we begin our search. Instead of starting at the beginning of the curve, we start halfway between {tmin} and {tmax} (halfway the domain of the curve). Since we can ask Rhino what the length is of a certain curve subdomain we can calculate the length from {tmin} to {1}. This happens to be way too much, we're looking for something less than half this length. Thus we divide the bit between {tmin} and {1} in half yet again, giving us {2}. We again measure the distance between {tmin} and {2}, and see that again we're too high, but this time only just. We keep on dividing the remainder of the domain in half until we find a value {6} which is close enough for our purposes:
+
+
+<img src="{{ site.baseurl }}/images/primerbinarycurvesearching.svg" width="100%" float="right">
+
+This is an example of the simplest implementation of a binary-search algorithm and the performance of binary searching is O(log n) which is a fancy way of saying that it's fast. Really, really fast. And what's more, when we enlarge the size of the collection we're searching, the time taken to find an answer doesn't increase in a similar fashion (as it does with list-searching). Instead, it becomes relatively faster and faster as the size of the collection grows. For example, if we double the size of the array we're searching to 20,000 items, a list-search algorithm will take twice as long to find the answer, whereas a binary-searcher only takes ~1.075 times as long.
+
+The theory of binary searching might be easy to grasp (maybe not right away, but you'll see the beauty eventually), any practical implementation has to deal with some annoying, code-bloating aspects. For example, before we start a binary search operation, we must make sure that the answer we're looking for is actually contained within the set. In our case, if we're looking for a point {P} on the curve {C} which is 100.0 units away from the start of {C}, there exists no answer if {C} is shorter than 100.0 itself. Also, since we're dealing with a parameter domain as opposed to a list of integers, we do not have an actual list showing all the possible values. This array would be too big to fit in the memory of your computer. Instead, all we have is the knowledge that any number between and including {tmin} and {tmax} is theoretically possible. Finally, there might not exist an exact answer. All we can really hope for is that we can find an answer within tolerance of the exact length. Many operations in computational geometry are tolerance bound, sometimes because of speed issues (calculating an exact answer would take far too long), sometimes because an exact answer cannot be found (there is simply no math available, all we can do is make a set of guesses each one progressively better than the last).
+
+At any rate, here's the binary-search script I came up with, I'll deal with the inner workings afterwards:
+
+```python
+def BSearchCurve(idCrv, Length, Tolerance):
+    Lcrv = rs.CurveLength(idCrv)
+    if Lcrv<Length: return
+
+    tmin = rs.CurveDomain(idCrv)[0]
+    tmax = rs.CurveDomain(idCrv)[1]
+    t0 = tmin
+    t1 = tmax
+    while True:
+        t = 0.5*(t1+t0)
+        Ltmp = rs.CurveLength(idCrv, 0, [tmin, t])
+        if abs(Ltmp-Length)<Tolerance: break
+        if Ltmp<Length: t0=t
+        else: t1 = t
+    return t
+```
+
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>Note that this is not a complete script, it is only the search function. The complete script is supplied in the article archive. This function takes a curve ID, a desired length and a tolerance. The return value is <i>None</i> if no solution exists (i.e. if the curve is shorter than <i>Length</i>) or otherwise the parameter that marks the desired length.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>Ask Rhino for the total curve length.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>Make sure the curve is longer than <i>Length</i>. If it isn't, abort.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">5...6</td>
+<td>Store the minimum and maximum parameters of this curve domain. If you're confused about me calling the <i>Rhino.CurveDomain()</i> function twice instead of just once and store the resulting array, you may congratulate yourself. It would indeed be faster to not call the same method twice in a row. However, since lines 7 and 8 are not inside a loop, they will only execute once which reduces the cost of the penalty. 99% of the time spend by this function is because of lines 16~25, if we're going to be zealous about speed, we should focus on this part of the code.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">7...8</td>
+<td><i>t0</i>, <i>t1</i> and <i>t</i> will be the variables used to define our current subdomain. <i>t0</i> will mark the lower bound and <i>t1</i> the upper bound. <i>t</i> will be halfway between <i>t0</i> and <i>t1</i>. We need to start with the whole curve in mind, so <i>t0</i> and <i>t1</i> will be similar to <i>tmin</i> and <i>tmax</i>.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">9</td>
+<td>Since we do not know in advance how many steps our binary searcher is going to take, we have to use an infinite loop.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">10</td>
+<td>Calculate <i>t</i> always exactly in the middle of {<i>t0</i>, <i>t1</i>}.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">11</td>
+<td>Calculate the length of the subcurve from the start of the curve (<i>tmin</i>) to our current parameter (<i>t</i>).</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">12</td>
+<td>If this length is close enough to the desired length, then we are done and we can abort the infinite loop. <i>abs()</i> -in case you were wondering- is a Python function that returns the absolute (non-negative) value of a number. This means that the <i>tolerance</i> argument works equally strong in both directions, which is what you'd usually want.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">13...14</td>
+<td>This is the magic bit. Looks harmless enough doesn't it? 
+What we do here is adjust the subdomain based on the result of the length comparison. If the length of the subcurve {<i>tmin</i>, <i>t</i>} is shorter than <i>Length</i>, then we want to restrict ourself to the lower half of the old subdomain. If, on the other hand, the subcurve length is shorter than <i>Length</i>, then we want the upper half of the old domain. 
+Notice how much more compact programming code is compared to English?</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">15</td>
+<td>Return the solved <i>t</i>-parameter.</td>
+</tr>
+</table>
+
+I have unleashed this function on a smooth curve with a fairly well distributed parameter space (i.e. no sudden jumps in parameter "density") and the results are listed below. The length of the total curve was 200.0 mm and I wanted to find the parameter for a subcurve length of 125.0 mm. My tolerance was set to 0.0001 mm. As you can see it took 18 refinement steps in the *BSearchCurve()* function to find an acceptable solution. Note how fast this algorithm homes in on the correct value, after just 6 steps the remaining error is less than 1%. Ideally, with every step the accuracy of the guess is doubled, in practise however you're unlikely to see such a neat progression. In fact, if you closely examine the table, you'll see that sometimes the new guess overshoots the solution so much it actually becomes worse than before (like between steps #9 and #10). 
+
+I've greyed out the subdomain bound parameters that remained identical between two adjacent steps. You can see that sometimes multiple steps in the same direction are required.
+
+<img src="{{ site.baseurl }}/images/primer-subdivisionchart.svg" width="100%" float="right">
+
+Now for the rest of the script as outlines on page 78:
+
+```python
+def equidistanceoffset():
+    srf_id = rs.GetObject("Pick surface to offset", 8, True, True)
+    if not srf_id: return
+
+    offset = rs.GetReal("Offset distance", 1.0, 0.0)
+    if not offset: return
+
+    udomain = rs.SurfaceDomain(srf_id, 0)
+    ustep = (udomain[1]-udomain[0])/200
+    rs.EnableRedraw(False)
+
+    offsetvertices = []
+    u = udomain[0]
+    while u<=(udomain[1]+0.5*ustep):
+        isocurves = rs.ExtractIsoCurve(srf_id, (u,0), 1)
+        if isocurves:
+            t = BSearchCurve(isocurves[0], offset, 0.001)
+            if t is not None:
+                offsetvertices.append(rs.EvaluateCurve(isocurves[0], t))
+            rs.DeleteObjects(isocurves)
+        u+=ustep
+        
+    if offsetvertices: rs.AddInterpCrvOnSrf(srf_id, offsetvertices)
+    rs.EnableRedraw(True)
+```
+
+
+<table>
+<tr>
+<td>
+If I've done my job so far, the above shouldn't require any explanation. All of it is straight forward scripting code.
+<br><br>
+The image on the right shows the result of the script, where offset values are all multiples of 10. The dark green lines across the green strip (between offsets 80.0 and 90.0)  are all exactly 10.0 units long. 
+</td>
+<td width="40%"><img src="{{ site.baseurl }}/images/primer-equidistantoffset-result.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+### 8.7.3 Geometric curve properties
+
+Since curves are geometric objects, they possess a number of properties or characteristics which can be used to describe or analyze them. For example, every curve has a starting coordinate and every curve has an ending coordinate. When the distance between these two coordinates is zero, the curve is closed. Also, every curve has a number of control-points, if all these points are located in the same plane, the curve as a whole is planar. Some properties apply to the curve as a whole, others only apply to specific points on the curve. For example, planarity is a global property while tangent vectors are a local property. Also, some properties only apply to some curve types. So far we've dealt with lines, polylines, circles, ellipses, arcs and nurbs curves:
+
+<img src="{{ site.baseurl }}/images/primer-curvetypes.svg" width="100%" float="right">
+
+The last available curve type in Rhino is the polycurve, which is nothing more than an amalgamation of other types. A polycurve can be a series of line curves for example, in which case it behaves similarly to a polyline. But it can also be a combination of lines, arcs and nurbs curves with different degrees. Since all the individual segments have to touch each other (G0 continuity is a requirement for polycurve segments), polycurves cannot contain closed segments. However, no matter how complex the polycurve, it can always be represented by a nurbs curve. All of the above types can be represented by a nurbs curve.
+
+The difference between an actual circle and a nurbs-curve-that-looks-like-a-circle is the way it is stored. A nurbs curve doesn't have a Radius property for example, nor a Plane in which it is defined. It is possible to reconstruct these properties by evaluating derivatives and tangent vector and frames and so on and so forth, but the data isn't readily available. In short, nurbs curves lack some global properties that other curve types do have. This is not a big issue, it's easy to remember what properties a nurbs curve does and doesn't have. It is much harder to deal with local properties that are not continuous. For example, imagine a polycurve which has a zero-length line segment embedded somewhere inside. The t-parameter at the line beginning is a different value from the t-parameter at the end, meaning we have a curve subdomain which has zero length. It is impossible to calculate a normal vector inside this domain:
+
+<img src="{{ site.baseurl }}/images/primer-polycurvecompound.svg" width="100%" float="right">
 
 ---
 
