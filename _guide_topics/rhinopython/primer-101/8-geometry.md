@@ -1528,6 +1528,240 @@ The difference between an actual circle and a nurbs-curve-that-looks-like-a-circ
 
 <img src="{{ site.baseurl }}/images/primer-polycurvecompound.svg" width="100%" float="right">
 
+This polycurve consists of five curve segments (a nurbs-curve, a zero-length line-segment, a proper line-segment, a 90° arc and another nurbs-curve respectively) all of which touch each other at the indicated t-parameters. None of them are tangency continuous, meaning that if you ask for the tangent at parameter {t<sub>3</sub>}, you might either get the tangent at the end of the purple segment or the tangent at the beginning of the green segment. However, if you ask for the tangent vector halfway between {t<sub>1</sub>} and {t<sub>2</sub>}, you get nothing. The curvature data domain has an even bigger hole in it, since both line-segments lack any curvature:
+
+<img src="{{ site.baseurl }}/images/primer-polycurvelocalevaluation.svg" width="100%" float="right">
+
+When using curve properties such as tangents, curvature or perp-frames, we must always be careful to not blindly march on without checking for property discontinuities. An example of an algorithm that has to deal with this would be the *_CurvatureGraph* in Rhino. It works on all curve types, which means it must be able to detect and ignore linear and zero-length segments that lack curvature.
+
+One thing the *_CurvatureGraph* command does not do is insert the curvature graph objects, it only draws them on the screen. We're going to make a script that inserts the curvature graph as a collection of lines and interpolated curves. We'll run into several issues already outlined in this paragraph.
+
+In order to avoid some *G* continuity problems we're going to tackle the problem span by span. In case you haven't suffered left-hemisphere meltdown yet; the shape of every knot-span is determined by a certain mathematical function known as a polynomial and is (in most cases) completely smooth. A span-by-span approach means breaking up the curve into its elementary pieces, as shown on the left:
+
+<img src="{{ site.baseurl }}/images/primer-polycurvecurvaturegraph.svg" width="100%" float="right">
+
+This is a polycurve object consisting of seven pieces; lines {A; C; E}, arcs {B; D} and nurbs curves {F; G}. When we convert the polycurve to a nurbs representation we get a degree 5 nurbs curve with 62 pieces (knot-spans). Since this curve was made by joining a bunch of other curves together, there are kinks between all individual segments. A kink is defined as a grouping of identical knots on the interior of a curve, meaning that the curve actually intersects one of its interior control-points. A kink therefore has the potential to become a sharp crease in an otherwise smooth curve, but in our case all kinks connect segments that are G1 continuous. The kinks have been marked by white circles in the image on the right. As you can see there are also kinks in the middle of the arc segments {B; D}, which were there before we joined the curves together. In total this curve has ten kinks, and every kink is a grouping of five similar knot parameters (this is a D<sup>5</sup> curve). Thus we have a sum-total of 40 zero-length knot-spans. Never mind about the math though, the important thing is that we should prepare for a bunch of zero-length spans so we can ignore them upon confrontation.
+
+The other problem we'll get is the property evaluation issue I talked about on the previous page. On the transition between knots the curvature data may jump from one value to another. Whenever we're evaluating curvature data near knot parameters, we need to know if we're coming from the left or the right.
+
+I'm sure all of this sounds terribly complicated. In fact, I'm sure it is terribly complicated, but these things should start to make sense. It is no longer enough to understand how scripts work under ideal circumstances, by now, you should understand why there are no ideal circumstances and how that affects programming code.
+
+Since we know exactly what we need to do in order to mimic the *_CurvatureGraph* command, we might as well start at the bottom. The first thing we need is a function that creates a curvature graph on a subcurve, then we can call this function with the knot parameters as sub-domains in order to generate a graph for the whole curve:
+
+<img src="{{ site.baseurl }}/images/primer-spancurvaturegraph.svg" width="100%" float="right">
+
+Our function will need to know the ID of the curve in question, the subdomain {t<sub>0</sub>; t<sub>1</sub>}, the number of samples it is allowed to take in this domain and the scale of the curvature graph. The return value should be a collection of object IDs which were inserted to make the graph. This means all the perpendicular red segments and the  dashed black curve connecting them.
+
+```python
+def addcurvaturegraphsection(idCrv, t0, t1, samples, scale):
+    if (t1-t0)<=0.0: return
+    tstep = (t1-t0)/samples
+    points = []
+    objects = []
+    for t in rs.frange(t0,t1+(0.5*tstep),tstep):
+        if t>=t1:t = t1-1e-10
+        cData = rs.CurveCurvature(idCrv, t)
+        if not cData:
+            points.append(rs.EvaluateCurve(idCrv, t))
+        else:
+            c = rs.VectorScale(cData[4], scale)
+            a = cData[0]
+            b = rs.VectorSubtract(a, c)
+            objects.append(rs.AddLine(a,b))
+            points.append(b)
+
+    objects.append(rs.AddInterpCurve(points))
+    return objects
+```
+
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>Check for a null span, this happens inside kinks.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>Determine a step size for our loop (Subdomain length / Sample count).
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td><i>objects()</i> will hold the IDs of the perpendicular lines, and the connecting curve.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>Define the loop and make sure we always process the final parameter by increasing the threshold with half the step size.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>Make sure <i>t</i> does not go beyond <i>t1</i>, since that might give us the curvature data of the next segment.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">10</td>
+<td>In case of a curvature data discontinuity, do not add a line segment but append the point on the curve at the current curve coordinate <i>t</i>.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">12...16</td>
+<td>Compute the A and B coordinates, append them to the appropriate array and add the line segment.</td>
+</tr>
+</table>
+
+Now, we need to write a utility function that applies the previous function to an entire curve. There's no rocket science here, just an iteration over the knot-vector of a curve object:
+
+```primer
+def addcurvaturegraph( idCrv, spansamples, scale):
+    allGeometry = []
+    knots = rs.CurveKnots(idCrv)
+    p=5
+    for i in range(len(knots)-1):
+        tmpGeometry = addcurvaturegraphsection(idCrv, knots[i], knots[i+1], spansamples, scale)
+        if tmpGeometry: allGeometry.append(tmpGeometry)
+    rs.AddObjectsToGroup(allGeometry, rs.AddGroup())
+    return allGeometry
+```
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td><i>allGeometry</i> will be a list of all IDs generated by repetitive calls to <i>AddCurvatureGraphSection()</i></td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td><i>knots</i> is the knot vector of the nurbs representation of <i>idCrv</i>.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>We want to iterate over all knot spans, meaning we have to iterate over all (except the last) knot in the knot vector. Hence the minus one at the end.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>Place a call to <i>addcurvaturegraphsection()</i> and store all resulting IDs in <i>tmpGeometry</i>.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>If the result of <i>AddCurvatureGraphSection()</i> is not <i>Null</i>, then append all items in <i>tmpGeometry</i> to <i>allGeometry</i>.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>Put all created objects into a new group.</td>
+</tr>
+</table>
+
+The last bit of code we need to write is a bit more extensive than we've done so far. Until now we've always prompted for a number of values before we performed any action. It is actually far more user-friendly to present the different values as options in the command line while drawing a preview of the result.
+
+UI code tends to be very beefy, but it rarely is complex. It's just irksome to write because it always looks exactly the same. In order to make a solid command-line interface for your script you have to do the following:
+
+- Reserve a place where you store all your preview geometry
+- Initialize all settings with sensible values
+- Create all preview geometry using the default settings
+- Display the command line options
+- Parse the result (be it escape, enter or an option or value string)
+- Select case through all your options
+- If the selected option is a setting (as opposed to options like "Cancel" or "Accept") then display a prompt for that setting
+- Delete all preview geometry
+- Generate new preview geometry using the changed settings.
+
+```python
+def createcurvaturegraph():
+    curve_ids = rs.GetObjects("Curves for curvature graph", 4, False, True, True)
+    if not curve_ids: return
+
+    samples = 10
+    scale = 1.0
+
+    preview = []
+    while True:
+        rs.EnableRedraw(False)
+        for p in preview: rs.DeleteObjects(p)
+        preview = []
+        for id in curve_ids:
+            cg = addcurvaturegraph(id, samples, scale)
+            preview.append(cg)
+        rs.EnableRedraw(True)
+
+        result = rs.GetString("Curvature settings", "Accept", ("Samples", "Scale", "Accept"))
+        if not result:
+            for p in preview: rs.DeleteObjects(p)
+            break
+        result = result.upper()
+        if result=="ACCEPT": break
+        elif result=="SAMPLES":
+            numsamples = rs.GetInteger("Number of samples per knot-span", samples, 3, 100)
+            if numsamples: samples = numsamples
+        elif result=="SCALE":
+            sc = rs.GetReal("Scale of the graph", scale, 0.01, 1000.0)
+            if sc: scale = sc
+```
+
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>Prompt for any number of curves, we do not want to limit our script to just one curve.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">5...6</td>
+<td>Our default values are a scale factor of 1.0 and a span sampling count of 10.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td><i>preview()</i> is a list that contains arrays of IDs. One for each curve in <i>idCurves</i>.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">9</td>
+<td>Since users are allowed to change the settings an infinite number of times, we need an infinite loop around our UI code.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">10...11</td>
+<td>First of all, delete all the preview geometry, if present.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">13...15</td>
+<td>Then, insert all the new preview geometry.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">28</td>
+<td>Once the new geometry is in place, display the command options. The array at the end of the <i>rs.GetString()</i> method is a list of command options that will be visible.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">19...21</td>
+<td>If the user aborts (pressed Escape), we have to delete all preview geometry and exit the sub.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">23...29</td>
+<td>If the user clicks on an option, <i>result</i> will be the option name. The best method IronPython implements to treat the choice is the <i>If...Then</i> statement shown.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">23</td>
+<td>In the case of "Accept", all we have to do is exit the sub without deleting the preview geometry.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">24...26</td>
+<td>If the picked option was "Samples", then we have to ask the user for a new sample count. If the user pressed Escape during this nested prompt, we do not abort the whole script (typical Rhino behaviour would dictate this), but instead return to the base prompt.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">27...29</td>
+<td>If the picked option was "Scale", then we have to ask the user for a new scale factor, and . If the user pressed Escape during this nested prompt, we do not abort the whole script (typical Rhino behaviour would dictate this), but instead return to the base prompt.</td>
+</tr>
+</table>
+
+
+
 ---
 
 #### Related Topics
