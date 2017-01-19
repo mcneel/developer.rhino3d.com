@@ -1504,7 +1504,6 @@ def equidistanceoffset():
     rs.EnableRedraw(True)
 ```
 
-
 <table>
 <tr>
 <td>
@@ -1760,7 +1759,538 @@ def createcurvaturegraph():
 </tr>
 </table>
 
+## 8.8 Meshes
 
+Instead of Nurbs surfaces (which would be the next logical step after nurbs curves), this chapter is about meshes. I'm going to take this opportunity to introduce you to a completely different class of geometry -officially called "polygon meshes"- which represents a radically different approach to shape.
+
+Instead of treating a surface as a deformation of a rectangular nurbs patch, meshes are defined locally, which means that a single mesh surface can have any topology it wants. A mesh surface can even be a disjoint (not connected) compound of floating surfaces, something which is absolutely impossible with Rhino nurbs surfaces. Because meshes are defined locally, they can also store more information directly inside the mesh format, such as colors, texture-coordinates and normals. The tantalizing image below indicates the local properties that we can access via RhinoScript. Most of these properties are optional or have default values. The only essential ones are the vertices and the faces.
+
+<img src="{{ site.baseurl }}/images/primer-meshtopology.svg" width="80%" float="right">
+
+It is important to understand the pros and cons of meshes over alternative surface paradigms, so you can make an informed decision about which one to use for a certain task. Most differences between meshes and nurbs are self-evident and flow from the way in which they are defined. For example, you can delete any number of polygons from the mesh and still have a valid object, whereas you cannot delete knot spans without breaking apart the nurbs geometry. There's a number of things to consider which are not implied directly by the theory though. 
+
+- Coordinates of mesh vertices are stored as single precision numbers in Rhino in order to save memory consumption. Meshes are therefore less accurate entities than nurbs objects. This is especially notable with objects that are very small, extremely large or very far away from the world origin. Mesh objects go hay-wire sooner than nurbs objects because single precision numbers have larger gaps between them than double precision numbers (see page 6). 
+- Nurbs cannot be shaded, only the isocurves and edges of nurbs geometry can be drawn directly in the viewport. If a nurbs surface has to be shaded, then it has to fall back on meshes. This means that inserting nurbs surfaces into a shaded viewport will result in a significant (sometimes very significant) time lag while a mesh representation is calculated.
+- Meshes in Rhino can be non-manifold, meaning that more than two faces share a single edge. Although it is not technically impossible for nurbs to behave in this way, Rhino does not allow it. Non-manifold shapes are topologically much harder to deal with. If an edge belongs to only a single face it is an exterior edge (naked), if it belongs to two faces it is considered interior.
+
+### 8.8.1 Geometry vs. Topology
+
+As mentioned before, only the vertices and faces are essential components of the mesh definition. The vertices represent the geometric part of the mesh definition, the faces represent the topological part. Chances are you have no idea what I'm talking about... allow me to explain.
+
+According to MathWorld.com topology is "*the mathematical study of the properties that are preserved through deformations, twistings, and stretching of objects.*" In other words, topology doesn't care about size, shape or smell, it only deals with the platonic properties of objects, such as "how many holes does it have?", "how many naked edges are there?" and "how do I get from Paris to Lyon without passing any tollbooths?". The field of topology is partly common-sense (everybody intuitively understands the basics) and partly abstract-beyond-comprehension. Luckily we're only confronted with the intuitive part here.
+
+<img src="{{ site.baseurl }}/images/primer-topology.svg" width="80%" float="right">
+
+If you look at the images above, you'll see a number of surfaces that are topologically identical (except {E}) but geometrically different. You can bend shape {A} and end up with shape {B}; all you have to do is reposition some of the vertices. Then if you bend it even further you get {C} and eventually {D} where the right edge has been bend so far it touches the edge on the opposite side of the surface. It is not until you merge the edges 
+(shape {E}) that this shape suddenly changes its platonic essence, i.e. it goes from a shape with four edges to a shape with only two edges (and these two remaining edges are now closed loops as well). Do note that shapes {D} and {E} are geometrically identical, which is perhaps a little surprising.
+
+The vertices of a mesh object are a list of 3D point coordinates. They can be located anywhere in space and they control the size and form of the mesh. The faces on the other hand do not contain any coordinate data, they merely indicate how the vertices are to be connected:
+
+<img src="{{ site.baseurl }}/images/primer-connected.svg" width="100%" float="right">
+
+Here you see a very simple mesh with sixteen vertices and nine faces. Commands like *_Scale*, *_Move* and *_Bend* only affect the vertex-list, commands like *_TriangulateMesh* and *_SwapMeshEdge* only affect the face-list, commands like *_ReduceMesh* and *_MeshTrim* affect both lists. Note that the last face {*I*} has its corners defined in a clockwise fashion, whereas all the other faces are defined counter-clockwise. Although this makes no geometric difference, it does affect how the mesh normals are calculated and one should generally avoid creating meshes that are cw/ccw inconsistent.
+
+Now that we know what meshes essentially consist of, we can start making mesh shapes from scratch. All we need to do is come up with a set of matching vertex/face arrays. We'll start with the simplest possible shape, a mesh plane consisting of a grid of vertices connected with quads. Just to keep matters marginally interesting, we'll mutate the z-coordinates of the grid points using a user-specified mathematical function in the form of:
+
+$$f(x, y, \Theta, \Delta) = ...$$
+
+<table>
+<tr>
+<td>
+Where the user is allowed to specify any valid mathematical function using the variables *x*, *y*, *Θ* and *Δ*. Every vertex in the mesh plane has a unique combination of *x* and *y* values which can be used to determine the *z* value of that vertex by evaluating the custom function (*Θ* and *Δ* are the polar coordinates of *x* and *y*). This means every vertex {A} in the plane has a coordinate {B} associated with it which shares the *x* and *y* components, but not the *z* component.
+<br><br>
+We'll run into four problems while writing this script which we have not encountered before, but only two of these have to do with mesh geometry/topology:
+</td>
+<td width="40%"><img src="{{ site.baseurl }}/images/primer-meshgraph_xy.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+It's easy enough to generate a grid of points, we've done similar looping before where a nested loop was used to generate a grid wrapped around a cylinder. The problem this time is that it's not enough to generate the points. We also have to generate the face-list, which is highly dependent on the row and column dimensions of the vertex list. It's going to take a lot of logic insight to get this right (probably easiest to make a schematic first). Let us turn to the problem of generating the vertex coordinates, which is a straightforward one:
+
+```python
+def createmeshvertices(function, fdomain, resolution):
+    xstep = (fdomain[1]-fdomain[0])/resolution
+    ystep = (fdomain[3]-fdomain[2])/resolution
+    v = []
+    for x in rs.frange(fdomain[0],fdomain[1]+(0.5*xstep), xstep):
+        for y in rs.frange(fdomain[2],fdomain[3]+(0.5*ystep),ystep):
+            z = solveequation(function, x, y)
+            v.append( (x,y,z) ) 
+    return v
+```
+
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>This function is to be part of the finished script. It is a very specific function which merely combines the logic of nested loops with other functions inside the same script (functions which we haven't written yet, but since we know how they are supposed to work we can pretend as though they are available already). This function takes three arguments:
+<ol>
+<li>A String variable which contains the format of the function {f(x,y,Θ,Δ) = …}</li>
+<li>An array of four doubles, indicating the domain of the function in x and y directions</li>
+<li>An integer which tells us how many samples to take in each direction</li>
+</ol>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...3</td>
+<td>The <i>fDomain()</i> argument has four doubles, arranged like this:
+(0)   Minimum x-value
+(1)   Maximum x-value
+(2)   Minimum y-value
+(3)   Maximum y-value
+We can access those easily enough, but since the step size in x and y direction involves so much math, it's better to cache those values, so we don't repeat the same calculation over and over again.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>Begin at the lower end of the x-domain and step through the entire domain until the maximum value has been reached. We can refer to this loop as the row-loop.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>Begin at the lower end of the y-domain and step through the entire domain until the maximum value has been reached. We can refer to this loop as the column-loop.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>This is where we're calling an -as of yet- non-existent function. However, I think the signature is straightforward enough to not require further explanation now.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">11...13</td>
+<td>Append the new vertex to the <i>V</i> list. Note that vertices are stored as a one-dimensional list, which makes accessing items at a specific (<i>row, column</i>) coordinate slightly cumbersome.</td>
+</tr>
+</table>
+
+
+<table>
+<tr>
+<td>
+Once we have our vertices, we can create the face list that connects them. Since the face-list is topology, it doesn't matter where our vertices are in space, all that matters is how they are organized. The image on the right is the mesh schematic that I always draw whenever confronted with mesh face  logic. The image shows a mesh with twelve vertices and six quad faces, which has the same vertex sequence logic as the vertex list created by the function on the previous page. The vertex counts in x and y direction are four and three respectively (N<sub>x</sub>=4, N<sub>y</sub>=3). 
+</td>
+<td width="30%"><img src="{{ site.baseurl }}/images/primer-meshfacelogic.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+Now, every quad face has to link the four vertices in a counter-clockwise fashion. You may have noticed already that the absolute differences between the vertex indices on the corners of every quad are identical. In the case of the lower left quad *{A=0; B=3; C=4; D=1}*. In the case of the upper right quad *{A=7; B=10; C=11; D=8}*. We can define these numbers in a simpler way, which reduces the number of variables to just one instead of four: 
+*{A=?; B=(A+N<sub>y</sub>); C=(B+1); D=(A+1)}*, where *N<sub>y</sub>* is the number of vertices in the y-direction. Now that we know the logic of the face corner numbers, all that is left is to iterate through all the faces we need to define and calculate proper values for the *A* corner:
+
+```python
+def createmeshfaces(resolution):
+    nX = resolution
+    nY = resolution
+    f = []
+    for i in range(nX-1):
+        for j in range(nY-1):
+            baseindex = i*(nY+1)+j
+            f.append( (baseindex, baseindex+1, baseindex+nY+2, baseindex+nY+1) )
+    return f
+```
+
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...3</td>
+<td>Cache the {N<sub>x</sub>} and {N<sub>y</sub>} values, they are the same in our case because we do not allow different resolutions in {x} and {y} direction.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>Declare a list to store the faces we will create.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">5...6</td>
+<td>These two nested loops are used to iterate over the grid and define a face for each row/column combo. I.e. the two values <i>i</i> and <i>j</i> are used to define the value of the A corner for each face.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>Instead of the nondescript "A", we're using the variable name baseIndex. This value depends on the values of both <i>i</i> and <i>j</i>. The <i>i</i> value determines the index of the current column and the <i>j</i> value indicates the current offset (the row index).</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>Define the new quad face corners using the logic stated above.</td>
+</tr>
+</table>
+
+Writing a tool which works usually isn't enough when you write it for other people. Apart from just working, a script should also be straightforward to use. It shouldn't allow you to enter values that will cause it to crash (come to think of it, it shouldn't crash at all), it should not take an eternity to complete and it should provide sensible defaults. In the case of this script, the user will have to enter a function which is potentially very complex, and also four values to define the numeric domain in {x} and {y} directions. This is quite a lot of input and chances are that only minor adjustments will be made during successive runs of the script. It therefore makes a lot of sense to remember the last used settings, so they become the defaults the next time around. There's a number of ways of storing persistent data when using scripts, each with its own advantages:
+
+<img src="{{ site.baseurl }}/images/primer-settings.svg" width="100%" float="right">
+
+We'll be using a \*.txt file to store our data since it involves very little code and it survives a Rhino restart. An \*.txt file is a textfile which stores a number of Strings in a one-level hierarchical format. 
+
+```python
+def SaveFunctionData(strFunction, fDomain, Resolution):
+    file = open("MeshSettings_XY.txt", "w")
+    file.write(strFunction)
+    file.write("\n")
+    for d in fDomain:
+        file.write(str(d))
+        file.write("\n")
+    file.write(str(Resolution))
+    file.close()
+```
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>This is a specialized function written specifically for this script. The signature consists only of the data it has to store. The open keyword creates a stream to the file we will be modifying. Specifying a file name without a path saves the file to the directory where the script resides. The second parameter indicates what the stream will be doing - writing in this instance.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">3...8</td>
+<td>Write all settings successively to the file. We will be writing them in a specific order <i>- strFunction, fDomain</i> values 0 through 3, and the <i>Resolution</i>. The same order will be used to recover them later.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">9</td>
+<td>This call finalizes modifications to the file, and closes it for other operations.</td>
+</tr>
+</table>
+
+The contents of the \*.txt file should look something like this:
+
+<img src="{{ site.baseurl }}/images/primer-inifile.svg" width="90%" float="right">
+
+Reading data from an \*.txt file is slightly more involved, because there is no guarantee the file exists yet. Indeed, the first time you run this script there won't be a settings file yet and we need to make sure we supply sensible defaults:
+
+```python
+def loadfunctiondata():
+    try:
+        file = open("MeshSettings_XY.txt", "r")
+        items = file.readlines()
+        file.close()
+        function = str(items[0])
+        domain = (float(items[1]), float(items[2]), 
+            float(items[3]), float(items[4]))
+        resolution = int(items[5])
+    except:
+        function = "math.cos(math.sqrt(x**2+y**2))"
+        domain = (-10.0, 10.0, -10.0, 10.0)
+        resolution = 50
+    return function, domain, resolution
+```
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2 10</td>
+<td>This function needs to handle two possible conditions, the first being the first time it is called, and the second being all successive calls. The first time, there will be no <i>"MeshSettings_XY.txt"</i> file, so we will need to return default values, and create one later. This statement attempts to access the <i>"MeshSettings_XY.txt"</i> file in lines 3 to 5, and upon failure, moves to lines 11 to 13, in order to
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>Obviously we need the exact same file name. If the file does not exist, the script will throw an exception. Not to worry, though. The <i>try...except</i> statement we implemented earlier will handle it, and return our default values.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>This is where we read the data strings from the \*.txt file.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">6...9</td>
+<td>The items recovered from the \*.txt file are distributed to their respective variables in the order that they were written to the file.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">11...13</td>
+<td>If an exception was thrown, we will need to return a set of default values. These are defined here.</td>
+</tr>
+</table>
+
+
+<table>
+<tr>
+<td>
+We've now dealt with two out of four problems (mesh topology, saving and loading persistent settings) and it's time for the big ones. In our CreateMeshVertices() procedure we've placed a call to a function called SolveEquation() eventhough it didn't exist yet. SolveEquation() has to evaluate a user-defined function for a specific {x,y} coordinate which is something we haven't done before yet. It is very easy to find the answer to the question: 
+<br><br>
+"What is the value of <i>{Sin(x) + Sin(y)}</i> for <i>{x=0.5}</i> and <i>{y=2.7}</i> ?"
+</td>
+<td width="30%"><img src="{{ site.baseurl }}/images/primer-xyphidelta.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+However, this involves manually writing the equation inside the script and then running it. Our script has to evaluate custom equations which are not known until after the script starts. This means in turn that the equation is stored as a String variable. 
+
+The *eval* statement runs a script inside a script. The *eval* statement takes a single String and attempts to run it as a bit of code, but nested inside the current scope. That means that you can refer to local variables inside an *eval*. This bit of magic is exactly what we need in order to evaluate expressions stored in Strings. We only need to make sure we set up our *x, y, Θ* and *Δ* variables prior to using *eval*.
+
+The fourth big problem we need to solve has to do with nonsensical users (a certain school of thought popular among programmers claims that *all* users should be assumed to be nonsensical). It is possible that the custom function is not valid Python syntax, in which case the *eval* statement will not be able to parse it. This could be because of incomplete brackets, or because of typos in functions or a million other problems. But even if the function is syntactically correct it might still crash because of incorrect mathematics.
+
+For example, if you try to calculate the value of *Sqr(-4.0)*, the script crashes with the "Invalid procedure call or argument" error message. The same applies to *Log(-4.0)*. These functions crash because there exists no answer for the requested value. Other types of mathematical problems arise with large numbers. *Exp(1000)* for example results in an "Overflow" error because the result falls outside the double range. Another favorite is the "Division by zero" error. The following table lists the most common errors that occur in the Python engine:
+
+<img src="{{ site.baseurl }}/images/primer-errorchart.svg" width="100%" float="right">
+
+See [Python's list of Built-In Exceptions](http://docs.python.org/release/3.1.3/library/exceptions.html#bltin-exceptions) for the complete list and descriptions of each.
+
+As you can see there's quite a lot that can go wrong. We should be able to prevent this script from crashing, even though we do not control the entire process. We could of course try to make sure that the user input is valid and will not cause any computational problems, but it is much easier to just let the script fail and recover from a crash after it happened. We've used the error catching mechanism previously, but back then we were just lazy, now there is no other solution.
+
+The try/except statement can be used in Python as a great technique for error handling. First, the user implements a statement to "Try," if this works then the statement is executed and we are finished. Otherwise, if an exception occurs we go straight to the "except" portion. If the error matches the exception named, the portion of code within the "except" segment is executed and we continue on. If an error happens that does not match the named "exception" then an "unhandled exception" message is thrown. Note - a try statement may have many except clauses and any given except clause may have multiple exceptions it is testing for!
+
+```python
+def solveequation( function, x, y ):
+    d = 10
+    angledata = rs.Angle( (0,0,0), (x,y,0))
+    a = 0.0
+    if angledata: a = angledata[0] * math.pi/180
+    try:
+        z = eval(function)
+    except:
+        z = 0
+    return z
+```
+The amount of stuff the above bit of magic does is really quite impressive. It converts the {x; y} coordinates into polar coordinates {A; D} (for Angle and Distance), makes sure the angle is an actual value, in case both {x} and {y} turn out to be zero. It solves the equation to find the z-coordinate, and sets {z} to zero in case a the equation was unsolvable. Now that all the hard work is done, all that is left is to write the over arching function that provides the interface for this script, which I don't think needs further explanation:
+
+```python
+def meshfunction_xy():
+    zfunc, domain, resolution = loadfunctiondata()
+    zfunc = rs.StringBox( zfunc, "Specify a function f(x,y[,D,A])", "Mesh function")
+    if not zfunc: return
+
+    while True:
+        prompt = "Function domain x{domain[0],domain[1]} y{domain[2],domain[3]} @resolution"
+        result = rs.GetString(prompt, "Insert", ("xMin","xMax","yMin","yMax", "Resolution","Insert"))
+        if not result: return
+        result = result.upper()
+        if result=="XMIN":
+            f = rs.GetReal("X-Domain start", domain[0])
+            if f is not None: domain[0]=f
+        elif result=="XMAX":
+            f = rs.GetReal("X-Domain end", domain[1])
+            if f is not None: domain[1]=f
+        elif result=="YMIN":
+            f = rs.GetReal("Y-Domain start", domain[2])
+            if f is not None: domain[2]=f
+        elif result=="YMAX":
+            f = rs.GetReal("Y-Domain end", domain[3])
+            if f is not None: domain[3]=f
+        elif result=="RESOLUTION":
+            f = rs.GetInteger("Resolution of the graph", resolution)
+            if f is not None: resolution=f
+        elif result=="INSERT": break
+
+    verts = createmeshvertices(zfunc, domain, resolution)
+    faces = createmeshfaces(resolution)
+    rs.AddMesh(verts, faces)
+    SaveFunctionData(zfunc, domain, resolution)
+```
+
+
+The default function Cos(Sqr(x^2 + y^2)) is already quite pretty, but here are some other functions to play with as well:
+
+
+
+<table rules="rows" width="100%">
+<tr>
+<th>Notation</th>
+<th width="30%">Syntax</th>
+<th>result</th>
+</tr>
+<tr>
+<td>$$\cos\left(\sqrt{x^2 + y^2}\right)$$</td>
+<td>math.cos(math.sqrt(x*x + y*y))</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-b.svg" width="100%"></td>
+</tr>
+<tr>
+<td>$$\sin(x) + \sin(y)$$</td>
+<td>math.sin(x) + math.sin(y)</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-a.svg" width="100%"></td>
+</tr>
+<tr>
+<td>$$\sin(D + A)$$</td>
+<td>math.sin(D+A)</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-l.svg" width="100%"></td>
+</tr>
+<tr>
+<td>$$Atn\left(\sqrt{x^2 + y^2}\right)$$</td>
+<td>math.atan(x*x + y*y)<br>-or-<br>math.atan(D)</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-d.svg" width="100%"></td>
+</tr>
+<tr>
+<td>$$\sqrt{|x|} + \sin(y)^{16}$$</td>
+<td>math.sqrt(math.fabs(x))+math.pow(math.sin(y),16)</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-e.svg" width="100%"></td>
+</tr>
+<tr>
+<td>$$\sin\left(\sqrt{\min(x^2, y^2)}\right)$$</td>
+<td>math.sin(min(math.pow([x*x, y*y]),0.5))</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-f.svg" width="100%"></td>
+</tr>
+<tr>
+<td>$$\left[\sin(x) + \sin(y) + x + y\right]$$</td>
+<td>int(math.sin(x) + math.sin(y) + x + y)</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-g.svg" width="100%"></td>
+</tr>
+<tr>
+<td>$$\log\left(\sin(x) + \sin(y) + 2.01\right)$$</td>
+<td>math.log(math.sin(x)+math.sin(y)+2.01)</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-h.svg" width="100%"></td>
+</tr>
+</table>
+
+## 8.8.2 Shape vs. Image
+
+The vertex and face lists of a mesh object define its form (geometry and topology) but meshes can also have local display attributes. Colors and Texture-coordinates are two of these that we can control via RhinoScript.  The color list (usually referred to as 'False-Colors') is an optional mesh property which defines individual colors for every vertex in the mesh. The only Rhino commands that I know of that generate meshes with false-color data are the analysis commands *(_DraftAngleAnalysis, _ThicknessAnalysis, _CurvatureAnalysis and so on and so forth)* but unfortunately they do not allow you to export the analysis meshes. Before we do something useful with False-Color meshes, let's do something simple, like assigning random colours to a mesh object:
+
+<img src="{{ site.baseurl }}/images/primer-meshfalsecolours.svg" width="80%" float="right">
+
+```python
+def randommeshcolors():
+    mesh_id = rs.GetObject("Mesh to randomize", 32, True, True)
+    if not mesh_id: return
+
+    verts = rs.MeshVertices(mesh_id)
+    faces = rs.MeshFaceVertices(mesh_id)
+    colors = []
+    for vert in verts:
+        rgb = random()*255, random()*255, random()*255
+        colors.append(rgb)
+    rs.AddMesh(verts, faces, vertex_colors=colors)
+    rs.DeleteObject(mesh_id)
+```
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">7...11</td>
+<td>The False-Color array is optional, but there are rules to using it. If we decide to specify a False-Color array, we have to make sure that it has the exact same number of elements as the vertex array. After all, every vertex needs its own colour. We must also make sure that every element in the False-Color array represents a valid colour. Colours in Rhino are defined as integers which store the red, green and blue channels. The channels are defined as numbers in the range {0; 255}, and they are mashed together into a bigger number where each channel is assigned its own niche. The advantage of this is that all colours are just numbers instead of more complex data-types, but the downside is that these numbers are usually meaningless for mere mortals:<br><br>
+
+
+<img src="{{ site.baseurl }}/images/primer-colortable.svg" width="60%" float="right"><br>
+
+<sup>1</sup> Lowest possible value<br>
+<sup>2</sup> Highest possible value
+</td>
+</tr>
+</table>
+
+Random colors may be pretty, but they are not useful. All the Rhino analysis commands evaluate a certain geometrical local property (curvature, verticality, intersection distance, etc), but none of them take surroundings into account. Let's assume we need a tool that checks a mesh and a (poly)surface for proximity. There is nothing in Rhino that can do that out of the box. So this is actually going to be a useful script, plus we'll make sure that the script is completely modular so we can easily adjust it to analyze other properties.
+
+We'll need a function who's purpose it is to generate an array of numbers (one for each vertex in a mesh) that define some kind of property. These numbers are then in turn translated into a gradient (red for the lowest number, white for the highest number in the set) and applied as the False-Color data to a new mesh object. In our case the property is the distance from a certain vertex to the point on a (poly)surface which is closest to that vertex:
+
+<img src="{{ site.baseurl }}/images/primer-boxcp.svg" width="80%" float="right">
+
+
+<table>
+<tr>
+<td>
+Vertex {A} on the mesh has a point associated with it {Acp} on the box and the distance between these two {DA} is a measure for proximity. This measure is linear, which means that a vertex which is twice as far away gets a proximity value which is twice as high. A linear distribution is indicated by the red line in the adjacent graph. It actually makes more intuitive sense to use a logarithmic scale (the green line), since it is far better at dealing with huge value ranges. Imagine we have a mesh whose sorted proximity value set is something like:
+<br><br>
+{0.0; 0.0; 0.0; 0.1; 0.2; 0.5; 1.1; 1.8; 2.6; … ; 9.4; 1000.0}
+<br><br>
+As you can see pretty much all the variation is within the {0.0; 10.0} range, with just a single value radically larger. Now, if we used a linear approach, all the proximity values would resolve to completely red, except for the last one which would resolve to completely white. This is not a useful gradient. When you run all the proximity values through a logarithm you end up with a much more natural distribution:
+</td>
+<td width="30%"><img src="{{ site.baseurl }}/images/primer-loggraph.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+<img src="{{ site.baseurl }}/images/primer-gradienttable.svg" width="100%" float="right">
+
+There is just one snag, the logarithm function returns negative numbers for input between zero and one. In fact, the logarithm of zero is minus-infinity, which plays havoc with all mathematics down the road since infinity is way beyond the range of numbers we can represent using doubles. And since the smallest possible distance between two points in space is zero, we cannot just apply a logarithm and expect our script to work. The solution is a simple one, add 1.0 to all distance values prior to calculating the logarithm, and all our results are nice, positive numbers.
+
+```python
+def VertexValueArray(points, id):
+    return [DistanceTo(point, id) for point in points]
+
+def DistanceTo(pt, id):
+    ptCP = rs.BrepClosestPoint(id,pt)
+    if ptCP:
+        d = rs.Distance(pt, ptCP[0])
+        return math.log10(d+1)
+```
+
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">1...2</td>
+<td>The <i>VertexValueArray()</i> function is the one that creates a list of numbers for each vertex. We're giving it the mesh vertices (an array of 3D points) and the object ID of the (poly)surface for the proximity analysis. This function doesn't do much, it simply iterates through the list of points using the <i>DistanceTo()</i> function, and returns a list of the results.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">4...8</td>
+<td><i>DistanceTo()</i> calculates the distance from pt to the projection of pt onto id. Where pt is a single 3D coordinate and id if the identifier of a (poly)surface object. It also performs the logarithmic conversion, so the return value is not the actual distance. 
+</td>
+</tr>
+</table>
+
+And the master Sub containing all the front end and color magic:
+
+```python
+import rhinoscriptsyntax as rs
+import sys
+import math
+
+def ProximityAnalysis():
+    mesh_id = rs.GetObject("Mesh for proximity analysis", 32, True, True)
+    if not mesh_id: return
+
+    brep_id = rs.GetObject("Surface for proximity test", 8+16, False, True)
+    if not brep_id: return
+
+    vertices = rs.MeshVertices(mesh_id)
+    faces = rs.MeshFaceVertices(mesh_id)
+    listD = VertexValueArray(vertices, brep_id)
+    
+    minD = sys.float_info.min
+    maxD = sys.float_info.max
+    for ct in range(len(listD)):
+        if minD>listD[ct]: minD = listD[ct]
+        if maxD<listD[ct]: maxD = listD[ct]
+    
+    colors = []
+    for i in range(len(vertices)):
+        proxFactor = (listD[i]-minD)/(maxD-minD)
+        colors.append((255, 255*proxFactor, 255*proxFactor))
+    rs.AddMesh(vertices, faces, vertex_colors=colors)
+    rs.DeleteObject(mesh_id)
+```
+
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">1...3</td>
+<td>There are a couple of import statements that may look unfamiliar here. In some scripts, the use of outside resources can come in handy. Importing the System namespace allows us to use objects from the .Net framework, such as the maximum and minimum values of all floating point variables.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">16...20</td>
+<td>Since there is not a function in the math namespace, .net, or the rhinoscriptsyntax methods to get the max and min values of an array of numbers, we will have to write some code to get the maximum and minimum values of <i>listD</i>. The .Net framework is a wonderful place, and for the first time, IronPython allows its use in scripts within Rhinoceros. We call the System namespace, and get the max and min values of all double-precision numbers, as a starting point. We then iterate through the items in <i>listD</i>, comparing each value to the current value of <i>maxD</i> and <i>minD</i>, replacing them if we happen to find a more suitable member of the list for either. Once we have iterated through the entire list, we are certain we have the max and min values.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">22</td>
+<td>Create the False-Color array..</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">24</td>
+<td>Calculate the position on the {Red~White} gradient for the current value.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">25</td>
+<td>Cook up a colour based on the <i>proxFactor</i>.</td>
+</tr>
+</table>
 
 ---
 
