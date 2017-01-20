@@ -52,49 +52,69 @@ def ImportPoints():
 if( __name__ == "__main__" ):
     ImportPoints()
 ```
+---
 
 We've put the action inside a function in this script, the 
 
-`def ImportPoints()`
-
+```python
+def ImportPoints()
+```
 section. This allows the code to be re-used and simplifies error checking. 
 The first part uses the rs function 
 
-`rs.OpenFileName()`
+```python
+rs.OpenFileName()
+```
 
 to allow the user to specify a file to open, and sets a variable 'filename' to hold this information:
 
-`filename = rs.OpenFileName("Open Point File", filter)`
+```python
+filename = rs.OpenFileName("Open Point File", filter)
+```
 
 with a filter for text files.
 
 If for some reason the user does not specify a file, say with a Cancel, then the line 
 
-`if not filename: return`
+```python
+if not filename: return
+```
 
 ensures that the rest of the code inside this particular function will not be run, since there is nothing that can be done without a file name, and re next lines in the script will result in error messages without it. Since there is only the one function in this script, a cancel emans the script will stop.
 
-Next a varible is set to the open file for reading (see python documentation for other ways to read files (https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files):
+Next a varible is set to the open file for reading:
 
-`file = open(filename, "r")`
+```python
+file = open(filename, "r")
+```
 
 and a variable is set to the contents of the file  which is then held in memory as a list with one item per line:
 
-`contents = file.readlines()`
+```python 
+contents = file.readlines()
+```
 
 The file is then closed:
 
-`file.close()`
+```
+python file.close()
+```
 
-At this point in the script, a new function is added, called `__point_from_string(text)` ,  inside the main function, that parses text in the expected format and converts the text into three numbers and returns those as the xy,z coordinates of a point.
+See python documentation for other ways to read files (<https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files>).
+
+At this point in the script, a new function is added, called *__point_from_string(text)* ,  inside the main function, that parses text in the expected format and converts the text into three numbers and returns those as the xy,z coordinates of a point.
 
 The list of lines from the orignal text file is fed into this function, line by line to create a list of points, by calling that function:
 
-`contents = [__point_from_string(line) for line in contents]`
+```python
+contents = [__point_from_string(line) for line in contents]
+```
 
 Lastly, the points in the list are added to the Rhino document as point objects:
 
-`rs.AddPoints(contents)`
+```python
+rs.AddPoints(contents)
+```
 
 Note all if this code will not actually run unless the function is called - this is done from the very last line of the script:
 
@@ -132,19 +152,25 @@ with open(filename, "w") as file:
 	    elif( rs.IsPoint(id) ):
 		point = rs.PointCoordinates(id)
 		file.write(str(point) + "\n")
-
+		
 ```
-There are a couple of things to notice, compared to the previous example. We need some points to export, so we'll let the user select some point objects and point clouds. There is a filter applied to the selection, the `1+2`. 1 filters for point objects and 2 filters for point clouds - we can add the filters together to make combinations such as we have here - 1+2 or, we could have written just 3, that would work as well, it is just harder to parse when reviewing or modifying the code:
+----	
+
+There are a couple of things to notice, compared to the previous example. We need some points to export, so we'll let the user select some point objects and point clouds. There is a filter applied to the selection, the _1+2_. 1 filters for point objects and 2 filters for point clouds - we can add the filters together to make combinations such as we have here - 1+2 or, we could have written just 3, that would work as well, it is just harder to parse when reviewing or modifying the code:
 
 
-`objectIds = rs.GetObjects("Select Points", 1+2, True, True)`
+```python
+objectIds = rs.GetObjects("Select Points", 1+2, True, True)
+```
 
 As before we check to make sure that the user has in fact selcted the things we're looking for.
 
-`if( objectIds==None ): return`
-
+```python
+if( objectIds==None ): return
+```
 
 Next we'll get a file name as in the first example:
+
 ```python
 #Get the filename to create
 filter = "Text File (*.txt)|*.txt|All Files (*.*)|*.*||"
@@ -153,7 +179,7 @@ if( filename==None ): return
 ```
 
 
-When writing to a file it must first be *opened*.  While it is open, the information can be written to the file.  After wrting all the information, the file must be closed. In the first example we explicitly opened, read and then closed the file. This time we've used the `with` statement to open the file - 'with' is convenient becuse it takes care of closing the file and cleaning up when the script leaves the indented 'with' section.
+When writing to a file it must first be *opened*.  While it is open, the information can be written to the file.  After wrting all the information, the file must be closed. In the first example we explicitly opened, read and then closed the file. This time we've used the **with** statement to open the file - *with* is convenient becuse it takes care of closing the file and cleaning up when the script leaves the indented **with** section.
 
 ```python
 with open(filename, "w") as file:
