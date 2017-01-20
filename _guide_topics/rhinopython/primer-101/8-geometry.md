@@ -2138,7 +2138,7 @@ The default function Cos(Sqr(x^2 + y^2)) is already quite pretty, but here are s
 </tr>
 </table>
 
-## 8.8.2 Shape vs. Image
+### 8.8.2 Shape vs. Image
 
 The vertex and face lists of a mesh object define its form (geometry and topology) but meshes can also have local display attributes. Colors and Texture-coordinates are two of these that we can control via RhinoScript.  The color list (usually referred to as 'False-Colors') is an optional mesh property which defines individual colors for every vertex in the mesh. The only Rhino commands that I know of that generate meshes with false-color data are the analysis commands *(_DraftAngleAnalysis, _ThicknessAnalysis, _CurvatureAnalysis and so on and so forth)* but unfortunately they do not allow you to export the analysis meshes. Before we do something useful with False-Color meshes, let's do something simple, like assigning random colours to a mesh object:
 
@@ -2292,6 +2292,343 @@ def ProximityAnalysis():
 </tr>
 </table>
 
+## 8.9 Surfaces
+
+At this point you should have a fair idea about the strengths and flexibility of mesh based surfaces. It is no surprise that many industries have made meshes their primary means of surfacing. However, meshes also have their disadvantages and this is where other surfacing paradigms come into play.
+
+In fact, meshes (like nurbs) are a fairly recent discovery whose rise to power depended heavily on demand from the computer industry. Mathematicians have been dealing with different kinds of surface definitions for centuries and they have come up with a lot of them; surfaces defined by explicit functions, surfaces defined by implicit equations, minimal area surfaces, surfaces of revolutions, fractal surfaces and many more. Most of these types are far too abstract for your every-day modeling job, which is why most CAD packages do not implement them.
+
+<figure>
+    <img src="{{ site.baseurl }}/images/primer-schwarz-d-surface.jpg" width="60%" float="right">
+    <figcaption width="60%">Schwarz D surface, a triply periodic minimal surface which divides all of space between here and the edge of creation into two equal chunks. Easy to define mathematically, hard to model manually.</figcaption>
+</figure>
+<br><br>
+Apart from a few primitive surface types such as spheres, cones, planes and cylinders, Rhino supports three kinds of freeform surface types, the most useful of which is the Nurbs surface. Similar to curves, all possible surface shapes can be represented by a Nurbs surface, and this is the default fall-back in Rhino. It is also by far the most useful surface definition and the one we will be focusing on.
+
+<img src="{{ site.baseurl }}/images/primer-primitives.svg" width="100%" float="right">
+
+### 8.9.1
+
+<table>
+<tr>
+<td>
+Nurbs surfaces are very similar to Nurbs curves. The same algorithms are used to calculate shape, normals, tangents, curvatures and other properties, but there are some distinct differences. For example, curves have tangent vectors and normal planes, whereas surfaces have normal vectors and tangent planes. This means that curves lack orientation while surfaces lack direction. This is of course true for all curve and surface types and it is something you'll have to learn to live with. Often when writing code that involves curves or surfaces you'll have to make assumptions about direction and orientation and these assumptions will sometimes be wrong. 
+<br><br>
+In the case of NURBS surfaces there are in fact two directions implied by the geometry, because NURBS surfaces are rectangular grids of {u} and {v} curves. And even though these directions are often arbitrary, we end up using them anyway because they make life so much easier for us.
+</td>
+<td width="30%"><img src="{{ site.baseurl }}/images/primer-normals.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+But lets start with something simple which doesn't actually involve NURBS surface mathematics on our end. The problem we're about to be confronted with is called Surface Fitting and the solution is called Error Diffusion. You have almost certainly come across this term in the past, but probably not in the context of surface geometry. Typically the words "error diffusion" are only used in close proximity to the words "color", "pixel" and "dither", but the wide application in image processing doesn't limit error diffusion algorithms to the 2D realm.
+
+The problem we're facing is a mismatch between a given surface and a number of points that are supposed to be on it. We're going to have to change the surface so that the distance between it and the points is minimized. Since we should be able to supply a large amount of points (and since the number of surface control-points is limited and fixed) we'll have to figure out a way of deforming the surface in a non-linear fashion (i.e. translations and rotations alone will not get us there). Take a look at the images below which are a schematic representation of the problem:
+
+
+<img src="{{ site.baseurl }}/images/primer-pointonplane.svg" width="100%" float="right">
+
+For purposes of clarity I have unfolded a very twisted nurbs patch so that it is reduced to a rectangular grid of control-points. The diagram you're looking at is drawn in {uvw} space rather than world {xyz} space. The actual surface might be contorted in any number of ways, but we're only interested in the simplified {uvw} space. 
+
+The surface has to pass through point {S}, but currently the two entities are not intersecting. The projection of {S} onto the surface {S'} is a certain distance away from {S} and this distance is the error we're going to diffuse. As you can see, {S'} is closer to some control points than others. Especially {F} and {G} are close, but 
+{B; C; J; K} can also be considered adjacent control points. Rather than picking a fixed number of nearby control points and moving those in order to reduce the distance between {S} and {S'}, we're going to move all the points, but not in equal amounts. The images on the right show the amount of motion we assign to each control point based on its distance to {S'}.
+You may have noticed a problem with the algorithm description so far. If a nurbs surface is flat, the control-points lie on the surface itself, but when the surface starts to buckle and bend, the control points have a tendency to move away from the surface. This means that the distance between the control points {uvw} coordinate and {S'} is less meaningful. So instead of control points, we'll be using Greville points. Both nurbs curves and nurbs surfaces have a set of Greville points (or "edit points" as they are known in Rhino), but only curves expose this in the Rhino interface. As scripters we also get access to surface Greville points, which is useful because there is a 1:1 mapping between control and Greville points and the latter are guaranteed to lie on the surface. Greville points can therefore be expressed in {uv} coordinates only, which means we can also evaluate surface properties (such as tangency, normals and curvature) at these exact locations.
+
+The only thing left undecided at this point is the equation we're going to use to determine the amount of motion we're going to assign to a certain control point based on its distance from {S'}. It seems obvious that all the control points that are "close" should be affected much more than those which are farther away. The minimum distance between two points in space is zero (negative distance only makes sense in certain contexts, which we'll get to shortly) and the maximum distance is infinity. This means we need a graph that goes from zero to infinity on the x-axis and which yields a lower value for {y} for every higher value of {x}. If the graph ever goes below zero it means we're deforming the surface with a negative error. This is not a bad thing per se, but let's keep it simple for the time being.
+
+Our choices are already pretty limited by these constraints, but there are still some worthy contestants. If this were a primer about mathematics I'd probably have gone for a Gaussian distribution, but instead we'll use an extremely simple equation known as a hyperbola. If we define the diffusion factor of a Greville point as the inverse of its distance to {S'}, we get this hyperbolic function:
+
+$$f(y)=\frac{1}{x}$$
+
+<img src="{{ site.baseurl }}/images/primer-distanceweightfactor.svg" width="80%" float="right">
+
+As you can see, the domain of the graph goes from zero to infinity, and for every higher value of {x} we get a lower value of {y}, without {y} ever becoming zero. There's just one problem, a problem which only manifests itself in programming. For very small values of {x}, when the Greville point is very close to {S'}, the resulting {y} is very big indeed. When this distance becomes zero the weight factor becomes infinite, but we'll never get even this far. Even though the processor in your computer is in theory capable of representing numbers as large as 
+1.8 × 10308 (which isn't anywhere near infinity by any stretch of the imagination), when you start doing calculations with numbers approaching the extremes chances are you are going to cross over into binary no man's land and crash your pc. And that's not even to mention the deplorable mathematical accuracy at these levels of scale. Clearly, you might want to steer clear of very big and very small numbers altogether.
+
+It's an easy fix in our case, we can simply limit the {x} value to the domain {+0.01; +∞}, meaning that {y} can never get bigger than 100. We could make this threshold much, much smaller without running into problems. Even if we limit {x} to a billionth of a unit (0.00000001) we're still comfortably in the clear.
+
+
+<table>
+<tr>
+<td>
+The first thing we need to do is write a function that takes a surface and a point in {xyz} coordinates and translates it into {uvw} coordinates. We can use the <i>rs.SurfaceClosestPoint()</i> method to get the {u} and {v} components, but the {w} is going to take some thinking.
+
+First of all, a surface is a 2D entity meaning it has no thickness and thus no "real" {z} or {w} component. But a surface does have normal vectors that point away from it and which can be used to emulate a "depth" dimension. In the adjacent illustration you can see a point in {uvw} coordinates, where the value of {w} is simply the distance between the point and the start of the line. It is in this respect that negative distance has meaning, because negative distance denotes a {w} coordinate on the other side of the surface.
+</td>
+<td width="30%"><img src="{{ site.baseurl }}/images/primer-surface-uvw- to-xyz.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+Although this is a useful way of describing coordinates in surface space, you should at all times remember that the {u} and {v} components are expressed in surface parameter space while the {w} component is expressed in world units. We are using mixed coordinate systems which means that we cannot blindly use distances or angles between these points because those properties are meaningless now.
+
+In order to find the coordinates in surface {S} space of a point {P}, we need to find the projection {P'} of {P} onto {S}. Then we need to find the distance between {P} and {P'} so we know the magnitude of the {w} component and then we need to figure out on which side of the surface {P} is in order to figure out the sign of {w} (positive or negative). Since our script will be capable of fitting a surface to multiple points, we might as well make our function list-capable:
+
+```python
+def ConvertToUVW(idSrf, pXYZ):
+    pUVW = []
+    for point in pXYZ:
+        u, v = rs.SurfaceClosestPoint(idSrf, point)	
+        surface_xyz = rs.EvaluateSurface(idSrf, u, v)
+        surface_normal = rs.SurfaceNormal(idSrf, (u,v))
+
+        dirPos = rs.PointAdd(surface_xyz, surface_normal)
+        dirNeg = rs.PointSubtract(surface_xyz, surface_normal)
+        dist = rs.Distance(surface_xyz, point)
+
+        if (rs.Distance(point, dirPos) > rs.Distance(point, dirNeg)): dist *= -1
+        pUVW.append((u, v, dist)) 	
+    return pUVW
+```
+
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td><i>pXYZ()</i> is an array of points expressed in world coordinates.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">4...6</td>
+<td>Find the {uv} coordinate of {P'}, the {xyz} coordinates of {P'} and the surface normal vector at {P'}.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">8...10</td>
+<td>Add and subtract the normal to the {xyz} coordinates of {P'} to get two points on either side of {P'}.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">12...13</td>
+<td>If {P} is closer to the dirNeg point, we know that {P} is on the "downside" of the surface and we need to make {w} negative.</td>
+</tr>
+</table>
+
+We need some other utility functions as well (it will become clear how they fit into the grand scheme of things later) so let's get it over with quickly:
+
+```python
+def GrevilleNormals(idSrf):
+  uvGreville = rs.SurfaceEditPoints(idSrf, True, True)
+  srfNormals = [rs.SurfaceNormal(idSrf, grev) for grev in uvGreville]
+
+  return srfNormals
+```
+This function takes a surface and returns a list of normal vectors for every Greville point. There's nothing special going on here, you should be able to read this function without even consulting help files at this stage. The same goes for the next function, which takes a list of vectors and a list of numbers and divides each vector with the matching number. This function assumes that *Vectors* and *Factors* are lists of equal size.
+
+```python
+def DivideVectorList(Vectors, Factors):
+    for i in range(0,len(Vectors)):
+        Vectors[i] = rs.VectorDivide(Vectors[i], Factors[i])
+        return Vectors
+```
+
+Our eventual algorithm will keep track of both motion vectors and weight factors for each control point on the surface (for reasons I haven't explained yet), and we need to instantiate these lists with default values. Even though that is pretty simple stuff, I decided to move the code into a separate procedure anyway in order to keep all the individual procedures small. The return value for this function are two lists: Forces and Factors.
+
+```python
+def InstantiateForceLists(Bound):
+    Forces = []
+    Factors = []
+    
+    for i in range(Bound):
+        Forces.append((0,0,0))
+        Factors.append(0)
+        
+    return Forces, Factors
+```
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...3</td>
+<td>Create lists to hold both <i>Forces</i> and <i>Factors</i>.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">5...7</td>
+<td>Iterate through both lists and assign default values (a zero-length vector in the case of <i>Forces</i> and zero in the case of <i>Factors</i>)
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">9</td>
+<td>Note that we are returning two separate items. The assignment in the line calling this function will contain both of these. Ways of handling this assignment will be handled later in the text.</td>
+</tr>
+</table>
+
+We've now dealt with all the utility functions. I know it's a bit annoying to deal with code which has no obvious meaning yet, and at the risk of badgering you even more I'm going to take a step back and talk some more about the error diffusion algorithm we've come up with. For one, I'd like you to truly understand the logic behind it and I also need to deal with one last problem...
+
+If we were to truly move each control point based directly on the inverse of its distance to {P'}, the hyperbolic diffusion decay of the sample points would be very noticeable in the final surface. Let's take a look at a simple case, a planar surface {Base} which has to be fitted to four points {A; B; C; D}. Three of these points are above the surface (positive distance), one is below the surface (negative distance):
+
+<img src="{{ site.baseurl }}/images/primer-hyperbolas.svg" width="100%" float="right">
+
+On the left you see the four individual hyperbolas (one for each of the sample points) and on the right you see the result of a fitting operation which uses the hyperbola values directly to control control-point motion. Actually, the hyperbolas aren't drawn to scale, in reality they are much *(much)* thinner, but drawing them to scale would make them almost invisible since they would closely hug the horizontal and vertical lines. 
+
+We see that the control points that are close to the projections of {A; B; C; D} on {Base} will be moved a great deal (such as {S}), whereas points in between (such as {T}) will hardly be moved at all. Sometimes this is useful behaviour, especially if we assume our original surface is already very close to the sample points. If this is not the case (like in the diagram above) then we end up with a flat surface with some very sharp tentacles poking out. 
+
+Lets assume our input surface is not already 'almost' good. This means that our algorithm cannot depend on the initial shape of the surface which in turn means that moving control points small amounts is not an option. We need to move all control points as far as necessary. This sounds very difficult, but the mathematical trick is a simple one. I won't provide you with a proof of why it works, but what we need to do is divide the length of the motion vector by the value of the sum of all the hyperbolas. 
+
+Have a close look at control points {S} and {T} in the illustration above. {S} has a very high diffusion factor (lots of yellow above it) whereas {T} has a low diffusion factor (thin slivers of all colors on both sides). But if we want to move both {S} and {T} substantial amounts, we need to somehow boost the length of the motion vector for {T}. If you divide the motion vector by the value of the added hyperbolas, you sort of 'unitize' all the motion vectors, resulting in the following section:
+
+<img src="{{ site.baseurl }}/images/primer-multisamplefitter-algorithm2.svg" width="60%" float="right">
+
+which is a much smoother fit. The sag between {B} and {C} is not due to the shape of the original surface, but because between {B} and {C}, the other samples start to gain more relative influence and dragging the surface down towards them. Let's have a look at the code:
+
+```python
+def FitSurface(idSrf, Samples, dTranslation, dProximity):
+    P = rs.SurfacePoints(idSrf)
+    G = rs.SurfaceEditPoints(idSrf, True, True)
+    N = GrevilleNormals(idSrf)
+    S = ConvertToUVW(idSrf, Samples)
+    [Forces, Factors] = InstantiateForceLists(len(P))
+    
+    dProximity = 0.0
+    dTranslation = 0.0
+
+    for i in range(len(S)):
+        dProximity = dProximity + abs(S[i][2])
+        for j in range(len(P)):
+            LocalDist = math.pow((S[i][0] - G[j][0]),2) +  math.pow((S[i][1] - G[j][1]),2)
+            if (LocalDist < 0.01): LocalDist = 0.01
+            LocalFactor = 1 / LocalDist
+            LocalForce = rs.VectorScale(N[j], LocalFactor * S[i][2])
+            Forces[j] = rs.VectorAdd(Forces[j], LocalForce)
+            Factors[j] = Factors[j] + LocalFactor
+    Forces = DivideVectorList(Forces, Factors)
+	
+    for i in range(len(P)):
+        P[i] = rs.PointAdd(P[i], Forces[i])
+        dTranslation = dTranslation + rs.VectorLength(Forces[i])
+    
+    srf_N = rs.SurfacePointCount(idSrf)
+    srf_K = rs.SurfaceKnots(idSrf)
+    srf_W = rs.SurfaceWeights(idSrf)
+    srf_D = []
+    srf_D.append(rs.SurfaceDegree(idSrf, 0))
+    srf_D.append(rs.SurfaceDegree(idSrf, 1))
+    
+    FS = rs.AddNurbsSurface(srf_N, P, srf_K[0], srf_K[1], srf_D, srf_W)
+    return (FS, Samples, dTranslation, dProximity)
+```
+
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>This is another example of a function which returns more than one value. When this function completes, <i>dTranslation</i> will contain a number that represents the total motion of all control points and <i>dProximity</i> will contain the total error (the sum of all distances between the surface and the samples). Since it is unlikely our algorithm will generate a perfect fit right away, we somehow need to keep track of how effective a certain iteration is. If it turns out that the function only moved the control points a tiny bit, we can abort in the knowledge we have achieved a high level of accuracy.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...57</td>
+<td><i>P, G, N</i> and <i>S</i> are lists that contain the surface control points (in {xyz} space), Greville points (in {uv} space), normal vectors at every greville point and all the sample coordinates (in {uvw} space). The names chosen can be difficult to remember, but they are short.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>The function we're calling here has been dealt with on page 104.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">11</td>
+<td>First, we iterate over all Sample points.</td>
+</tr><tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">13</td>
+<td>Then, we iterate over all Control points.</td>
+</tr><tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">14</td>
+<td><i>LocalDist</i> is the distance in {uv} space between the projection of the current sample point and the current Greville point.</td>
+</tr><tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">15</td>
+<td>This is where we limit the distance to some non-zero value in order to prevent extremely small numbers from entering the algorithmic meat-grinder.</td>
+</tr><tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">16</td>
+<td>Run the <i>LocalDist</i> through the hyperbola equation in order to get the diffusion factor for the current Control point and the current sample point.</td>
+</tr><tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">17</td>
+<td><i>LocalForce</i> is a vector which temporarily caches the motion caused by the current Sample point. This vector points in the same direction as the normal, but the magnitude (length) of the vector is the size of the error times the diffusion factor we've calculated on line 22.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">18</td>
+<td>Every Control point is affected by all Sample points, meaning that every Control point is tugged in a number of different directions. We need to combine all these forces so we end up with a final, resulting force. Because we're only interested in the final vector, we can simply add the vectors together as we calculate them.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
+<td>We also need to keep a record of all the Diffusion factors along with all vectors, so we can divide them later and unitize the motion (as discussed on page 105).</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">20</td>
+<td>Divide all vectors with all factors (function explained on page 104)</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">22...24</td>
+<td>Apply the motion we've calculated to the {xyz} coordinates of the surface control points.</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">26...33</td>
+<td>Instead of changing the existing surface, we're going to add a brand new one. In order to do this, we need to collect all the NURBS data of the original such as knot vectors, degrees, weights and so on and so forth.</td>
+</tr>
+</table>
+
+The procedure on the previous page has no interface code, thus it is not a top-level procedure. We need something that asks the user for a surface, some points and then runs the FitSurface() function a number of times until the fitting is good enough:
+
+```python
+def DistributedSurfaceFitter():
+    idSrf = rs.GetObject("Surface to fit", 8, True, True)
+    if idSrf is None: return
+    
+    pts = rs.GetPointCoordinates("Points to fit to", False)
+    if pts is None: return
+    
+    dTrans = 0
+    dProx = 0
+    
+    for N in range(1, 1000):
+        rs.EnableRedraw(False)
+        nSrf, pts, dTrans, dProx = FitSurface(idSrf, pts, dTrans, dProx)
+        rs.DeleteObject(idSrf)
+        rs.EnableRedraw(True)
+        rs.Prompt("Translation =" + str(round(dTrans, 2)) + "Deviation =" + str(round(dProx, 2)))
+        if dTrans < 0.1 or dProx < 0.01: break
+        idSrf = nSrf
+    
+    print("Final deviation = " + str(round(dProx, 4)))
+```
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">11</td>
+<td>Rather than using an infinite loop (<i>while</i>) we limit the total amount of fitting iterations to one thousand. That should be more than enough, and if we still haven't found a good solution by then it is unlikely we ever will. The variable N is known as a "chicken int" in coding slang. "Int" is short for "Integer" and "chicken" is because you're scared the loop might go on forever.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">12...15</td>
+<td>Disable the viewport, create a new surface, delete the old one and switch the redraw back on
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">16</td>
+<td>Inform the user about the efficiency of the current iteration</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">17</td>
+<td>If the total translation is negligible, we might as well abort since nothing we can do will make it any better. If the total error is minimal, we have a good fit and we should abort.</td>
+</tr>
+</table>
+
+The diagrams and graphs I've used so far to illustrate the workings of this algorithm are all two-dimensional and display only simplified cases. The images on this page show the progression of a single solution in 3D space. I've started with a planar, rectangular nurbs patch of 30 × 30 control points and 36 points both below and above the initial surface. I allowed the algorithm to continue refining until the total deviation was less than 0.01 units.
+
+<img src="{{ site.baseurl }}/images/primer-iterations.svg" width="60%" float="right">
+
+### 8.9.2 Surface Curvature
 ---
 
 #### Related Topics
