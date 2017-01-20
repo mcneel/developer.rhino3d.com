@@ -2307,7 +2307,7 @@ Apart from a few primitive surface types such as spheres, cones, planes and cyli
 
 <img src="{{ site.baseurl }}/images/primer-primitives.svg" width="100%" float="right">
 
-### 8.9.1
+### 8.9.1 NURBS Surfaces
 
 <table>
 <tr>
@@ -2354,7 +2354,7 @@ The first thing we need to do is write a function that takes a surface and a poi
 
 First of all, a surface is a 2D entity meaning it has no thickness and thus no "real" {z} or {w} component. But a surface does have normal vectors that point away from it and which can be used to emulate a "depth" dimension. In the adjacent illustration you can see a point in {uvw} coordinates, where the value of {w} is simply the distance between the point and the start of the line. It is in this respect that negative distance has meaning, because negative distance denotes a {w} coordinate on the other side of the surface.
 </td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-surface-uvw- to-xyz.svg" width="100%" height="300" float="right"></td>
+<td width="30%"><img src="{{ site.baseurl }}/images/primer-surface-uvw-to-xyz.svg" width="100%" height="300" float="right"></td>
 </tr>
 </table>
 
@@ -2626,9 +2626,221 @@ def DistributedSurfaceFitter():
 
 The diagrams and graphs I've used so far to illustrate the workings of this algorithm are all two-dimensional and display only simplified cases. The images on this page show the progression of a single solution in 3D space. I've started with a planar, rectangular nurbs patch of 30 × 30 control points and 36 points both below and above the initial surface. I allowed the algorithm to continue refining until the total deviation was less than 0.01 units.
 
-<img src="{{ site.baseurl }}/images/primer-iterations.svg" width="60%" float="right">
+<img src="{{ site.baseurl }}/images/primer-iterations.svg" width="100%" float="right">
 
 ### 8.9.2 Surface Curvature
+
+
+<table>
+<tr>
+<td>
+Curve curvature is easy to grasp intuitively. You simply fit a circle to a short piece of curve as best you can (this is called an osculating circle) and the radius and center of this circle tell you all you need to know about the local curvature. We've dealt with this already before.
+<br> <br>
+Points {A; B; C; D; E} have a certain curvature associated with them. The radius of the respective circles is a measure for the curvature (in fact, the curvature is the inverse of the radius), and the direction of the vectors is an indication of the curve plane.
+</td>
+<td width="30%"><img src="{{ site.baseurl }}/images/primer-curvecurvaturelogic2.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+If we were to scale the curve to 50% of its original size the curvature circles also become half as big, effectively doubling the curvature values. Point {C} is special in that it has zero-curvature (i.e. the radius of the osculating circle is infinite). Points where the curvature value changes from negative to positive are known as inflection points. If we have multiple inflection points adjacent to each other, we are dealing with a linear segment in the curve.
+
+Surface curvature is not so straightforward. For one, there are multiple definitions of curvature in the case of surfaces and volumes which one suits us best depends on our particular algorithm. Curvature is quite an important concept in many manufacturing and design projects, which is why I'll deal with it in some depth. I won't be dealing with any script code until the next section, so if you are already familiar with curvature theory feel free to skip ahead to page 111.
+
+The most obvious way of evaluating surface curvature would be to slice it with a straight section through the point {P} we are interested in and then simply revert to curve curvature algorithms. But, as mentioned before, surfaces lack direction and it is thus not at all clear at which angle we should dissect the surface (we could use {u} and {v} directions, but those will not necessarily give you meaningful answers). Still, this approach is useful every now and again and it goes under the name of normal curvature. As you can see in the illustration below, there are an infinite number of sections through point {P} and thus an infinite number of answers to the question "what is the normal curvature at {P}?"
+
+<img src="{{ site.baseurl }}/images/primer-curvatures.svg" width="100%" float="right">
+
+However, under typical circumstances there is only one answer to the question: "what is the highest normal curvature at {P}?". When you look at the complete set of all possible normal curvatures, you'll find that the surface is mostly flat in one direction and mostly bent in another. These two directions are therefore special and they constitute the principal curvatures of a surface. The two principal curvature directions are always perpendicular to each other and thus they are completely independent of {u} and {v} directions ({u} and {v} are not necessarily perpendicular).
+
+Actually, things are more complicated since there might be multiple directions which yield lowest or highest normal curvature so there's a bit of additional magic required to get a result at all in some cases. Spheres for example have the same curvature in all directions so we cannot define principal curvature directions at all.
+
+This is not the end of the story. Starting with the set of all normal curvatures, we extracted definitions of the principal curvatures. Principal curvatures always come in pairs (minimum and maximum) and they are both values and directions. We are more often than not only interested in how much a surface bends, not particularly in which direction. One of the reasons for this is that the progression of principal curvature directions across the surface is not very smooth:
+
+<img src="{{ site.baseurl }}/images/primer-surfacek-tensor-field.svg" width="80%" float="right">
+
+The illustration on the left shows the directions of the maximum principal curvatures. As you can see there are threshold lines on the surface at which the principal direction suddenly makes 90º turns. The overall picture is chaotic and overly complex. We can use a standard tensor-smoothing algorithm to average each direction with its neighbours, resulting in the image on the right, which provides us with an already much more useful distribution (e.g. for texturing or patterning purposes), but now the vectors have lost their meaning. This is why the principal curvature directions are not a very useful surface property in every day life.
+
+Instead of dealing with the directions, the other aforementioned surface curvature definitions deal only with the scalar values of the curvature; the osculating circle radius. The most famous among surface curvature definitions are the Gaussian and Mean curvatures. Both of these are available in the _CurvatureAnalysis command and through RhinoScript.
+
+The great German mathematician Carl Friedrich Gauss figured out that by multiplying the principal curvature radii you get another, for some purposes much more useful indicator of curvature:
+
+$$K_{Gauss}=K_{min} \cdot K_{max}$$
+
+Where J<sub>Gauss</sub> is the Gaussian curvature and l<sub>min</sub> and l<sub>max</sub> are the principal curvatures. Assuming you are completely comfortable with the behaviour of multiplications, we can identify a number of specific cases:
+
+<img src="{{ site.baseurl }}/images/primer-curvature-directions.svg" width="100%" float="right">
+
+From this we can conclude that any surface which has zero Gaussian curvature everywhere can be unrolled into a flat sheet and any surface with negative Gaussian curvature everywhere can be made by stretching elastic cloth.
+
+The other important curvature definition is Mean curvature ("average"), which is essentially the sum of the principal curvatures:
+
+$$K_{Mean}=\frac{K_{min} + K_{max}}{2}$$
+
+As you know, summation behaves very different from multiplication, and Mean curvature can be used to analyze different properties of a surface because it has different special cases. If the minimum and maximum principal curvatures are equal in amplitude but have opposing signs, the average of both is zero. A surface with zero Mean curvature is not merely anticlastic, it is a very special surface known as a *minimal* or *zero-energy* surface. It is the natural shape of a soap film with equal atmospheric pressure on both sides. These surfaces are extremely important in the field of tensile architecture since they spread stress equally across the surface resulting in structurally strong geometry.
+
+### 8.9.3 Vector and Tensor spaces
+
+On the previous page I mentioned the words "tensor", "smoothing" and "algorithm" in one breath. Even though you most likely know the latter two, the combination probably makes little sense. Tensor smoothing is a useful tool to have in your repertoire so I'll deal with this specific case in detail. Just remember that most of the script which is to follow is generic and can be easily adjusted for different classes of tensors. But first some background information...
+
+Imagine a surface with no singularities and no stacked control points, such as a torus or a plane. Every point on this surface has a normal vector associated with it. The collection of all these vectors is an example of a vector space. A vector space is a continuous set of vectors over some interval. The set of all surface normals is a two-dimensional vector space (sometimes referred to as a vector field), just as the set of all curve tangents is a one-dimensional vector space, the set of all air-pressure components in a turbulent volume over time is a four-dimensional vector space and so on and so forth. 
+
+When we say "vector", we usually mean little arrows; a list of numbers that indicate a direction and a magnitude in some sort of spatial context. When things get more complicated, we start using "tensor" instead. Tensor is a more general term which has fewer connotations and is thus preferred in many scientific texts.
+
+<table>
+<tr>
+<td>
+For example, the surface of your body is a two-dimensional tensor space (embedded in four dimensional space-time) which has many properties that vary smoothly from place to place; hairiness, pigmentation, wetness, sensitivity, freckliness and smelliness to name just a few. If we measure all of these properties in a number of places, we can make educated guesses about all the other spots on your body using interpolation and extrapolation algorithms. We could even make a graphical representation of such a tensor space by using some arbitrary set of symbols. 
+<br><br>
+We could visualize the wetness of any piece of skin by linking it to the amount of blue in the colour of a box, and we could link freckliness to green, or to the width of the box, or to the rotational angle.
+</td>
+<td width="40%"><img src="{{ site.baseurl }}/images/primer-tensorspace2.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+All of these properties together make up the tensor class. Since we can pick and choose whatever we include and ignore, a tensor is essentially whatever you want it to be. Let's have a more detailed look at the tensor class mentioned on the previous page, which is a rather simple one...
+
+I created a vector field of maximum-principal curvature directions over the surface (sampled at a certain custom resolution), and then I smoothed them out in order to get rid of the sudden jumps in direction. Averaging two vectors is easy, but averaging them while keeping the result tangent to a surface is a bit harder.
+
+In this particular case we end up with a two-dimensional tensor space, where the tensor class T consist of a vector and a tangent plane:
+
+<img src="{{ site.baseurl }}/images/primer-tensormatrixes.svg" width="75%" float="right">
+
+Since we're sampling the surface at regular parameter intervals in {u} and {v} directions, we end up with a matrix of tensors (a table of rows and columns). We can represent this easily with a two-dimensional list. We'll need two of these in our script since we need to store two separate data-entities; vectors and planes.
+
+<img src="{{ site.baseurl }}/images/primer-smoothing.svg" width="100%" float="right">
+
+This progression of smoothing iterations clearly demonstrates the usefulness of a tensor-smoothing algorithm; it helps you to get rid of singularities and creases in any continuous tensor space.
+
+I'm not going to spell the entire script out here, I'll only highlight the key functions. You can find the complete script (including comments) in the Script folder.
+
+```python
+def SurfaceTensorField(Nu, Nv):
+    idSrf = rs.GetSurfaceObject()[0]
+    uDomain = rs.SurfaceDomain(idSrf, 0)
+    vDomain = rs.SurfaceDomain(idSrf, 1)
+    
+    T = []
+    K = []
+    for i in range(Nu):
+        T.append([])
+        K.append([])
+        u = uDomain[0] + (i/Nu)*(uDomain[1] - uDomain[0])
+        for j in  range(Nv):
+            v = vDomain[0] + (j/Nv)*(vDomain[1] - vDomain[0])
+            T[i].append(rs.SurfaceFrame(idSrf,(u,v)))
+            localCurvature = rs.SurfaceCurvature(idSrf,(u,v))
+            if localCurvature is None:
+                K[i].append(T[i][j][1])
+            else:
+                K[i].append(rs.SurfaceCurvature(idSrf,(u,v))[3])
+    return SmoothTensorField(T,K)
+```
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>This procedure has to create all the lists that define our tensor class. In this case one list with vectors and a list with planes.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">9...10</td>
+<td>At the beginning of each iteration down the range <i>N<sub>u</sub></i>, we nest a new list in both T and K, which will hold all values of iterations of the range <i>N<sub>v</sub></i>.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">11</td>
+<td>This looks imposing, but it is a very standard piece of logic. The problem here is a common one: how to remap a number from one scale to another. We know how many samples the user wants (some whole number) and we know the limits of the surface domain (two doubles of some arbitrary value). We need to figure out which parameter on the surface domain matches with the Nth sample number. Observe the diagram below for a schematic representation of the problem:
+<br>
+<img src="{{ site.baseurl }}/images/primer-remapnumberscales.svg" width="80%" float="right">
+<br>
+Our sample count (the topmost bar) goes from {A} to {B}, and the surface domain includes all values between {C} and {D}. We need to figure out how to map numbers in the range {A~B} to the range {C~D}. In our case we need a linear mapping function meaning that the value halfway between {A} and {B} gets remapped to another value halfway between {C} and {D}.
+<br><br>
+Line 11 (and line 13) contain an implementation of such a mapping algorithm. I'm not going to spell out exactly how it works, if you want to fully understand this script you'll have to look into that by yourself.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">14</td>
+<td>Retrieve the surface Frame at {u,v}. This is part of our Tensor class.
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">15</td>
+<td>Retrieve all surface curvature information at {u,v}. This includes principal, mean and Gaussian curvature values and vectors.</td>
+</tr><tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">17</td>
+<td>In case the surface has no curvature at {u,v}, use the x-axis vector of the Frame instead.</td>
+</tr><tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
+<td>If the surface has a valid curvature at {u,v}, we can use the principal curvature direction which is stored in the 4th element of the curvature data array.</td>
+</tr></table>
+
+This function takes two lists and it modifies the originals. The return value (the two lists) is merely cosmetic. This function is a typical box-blur algorithm. It averages the values in every tensor with all neighboring tensors using a 3×3 blur matrix. 
+
+```python
+def SmoothTensorField(T, K):
+    SmoothTensorField = False
+    Ub1 = len(T[1])
+    Ub2 = len(T[2])
+    for i in range(Ub1):
+        for j in range(Ub2):
+            k_tot = (0,0,0)
+            for x in range(i-1,i+1):
+                xm = (x+Ub1) % Ub1
+                for y in range(j-1, j+1):
+                    ym = (y+Ub2) % Ub2
+                    k_tot = rs.VectorAdd(k_tot, K[xm][ym])
+            k_dir = rs.PlaneClosestPoint(T[i][j], rs.VectorAdd(T[i][j][0], k_tot))
+            k_tot = rs.VectorSubtract(k_dir, T[i][j][0])
+            k_tot = rs.VectorUnitize(k_tot)
+            K[i].append(k_tot)
+            rs.AddLine(T[i][j][0],T[i][j][0]+K[i][j])
+    return T, K
+```
+
+
+<table rules="rows">
+<tr>
+<th>Line</th>	
+<th>Description</th>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">5...6</td>
+<td>Since our tensor-space is two-dimensional, we need 2 nested loops to iterate over the entire set.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">8...11</td>
+<td>
+<table>
+<tr>
+<td>
+Now that we're dealing with each tensor individually (the first two loops) we need to deal with each tensors neighbours as well (the second set of nested loops). We can visualize the problem at hand with a simple table graph. 
+<br><br>
+The green area is a corner of the entire two-dimensional tensor space, the dark green lines delineating each individual tensor. The dark grey square is the tensor we're currently working on. It is located at {u,v}. The eight white squares around it are the adjacent tensors which will be used to blur the tensor at {u,v}.
+<br><br>
+We need to make 2 more nested loops which iterate over the 9 coordinates in this 3×3 matrix. We also need to make sure that all these 9 coordinates are in fact on the 2D tensor space and not teetering over the edge. We can use the Mod operator to make sure a number is "remapped" to belong to a certain numeric domain.
+</td>
+<td width="40%"><img src="{{ site.baseurl }}/images/primer-boxblurmatrix3x3.svg" width="100%" height="300" float="right"></td>
+</tr>
+</table>
+
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">12</td>
+<td>Once we have the <i>mx</i> and <i>my</i> coordinates of the tensor, we can add it to the <i>k_tot</i> summation vector.
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;text-align:right;padding:0px 10px;">13...16</td>
+<td>Make sure the vector is projected back onto the tangent plane and unitized.
+</tr>
+</table>
+
+
 ---
 
 #### Related Topics

@@ -15,21 +15,21 @@ layout: guide-homepage
 
 ### 1. What's it all about?
 
-   1.1 [Macros]({{ site.baseurl }}/guides/rhinopython/primer-101/1-1-macros/)  
-   1.2 [Scripts]({{ site.baseurl }}/guides/rhinopython/primer-101/1-2-scripts/)  
-   1.3 [Running Scripts]({{ site.baseurl }}/guides/rhinopython/primer-101/1-3-running-scripts/)  
+   1.1 [Macros]({{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/#macros)  
+   1.2 [Scripts]({{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/#scripts)  
+   1.3 [Running Scripts]({{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/#scripts-1)  
 
 ### 2. Python Essentials
 
-   2.1	[Language origin]({{ site.baseurl }}/guides/rhinopython/primer-101/2-1-language-origin/)  
-   2.2	[Flow control]({{ site.baseurl }}/guides/rhinopython/primer-101/2-2-flow-control/)  
-   2.3	[Variable data](({{ site.baseurl }}/guides/rhinopython/primer-101/2-3-variable-data/))  
+   2.1	[Language origin]({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/#language-origin)  
+   2.2	[Flow control]({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/#flow-control)  
+   2.3	[Variable data]({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/#variable-data)  
    
-   > 2.3.1	[Integers and Doubles]({{ site.baseurl }}/guides/rhinopython/primer-101/2-3-1-integers-and-doubles/)  
-   > 2.3.2	[Booleans](({{ site.baseurl }}/guides/rhinopython/primer-101/2-3-1-booleans/))  
-   > 2.3.3	[Strings](({{ site.baseurl }}/guides/rhinopython/primer-101/2-3-3-strings/))  
-   > 2.3.4	[None variable]({{ site.baseurl }}/guides/rhinopython/primer-101/2-3-4-none-variable/)  
-   > 2.3.5	[Using variables](({{ site.baseurl }}/guides/rhinopython/primer-101/2-3-5-using-variables/))  
+   > 2.3.1	[Integers and Doubles]({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/#integers-and-doubles/)  
+   > 2.3.2	[Booleans](({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/#booleans/))  
+   > 2.3.3	[Strings](({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/#strings/))  
+   > 2.3.4	[None variable]({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/#none-variable/)  
+   > 2.3.5	[Using variables](({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/#using-variables/))  
 
 ### 3. [Script anatomy]({{ site.baseurl }}/guides/rhinopython/primer-101/3-script-anatomy/)
 
@@ -55,23 +55,23 @@ layout: guide-homepage
    4.4.2 [Advanced function syntax]({{ site.baseurl }}/guides/rhinopython/primer-101/4-operators-and-functions/#advanced-function-syntax)     
    4.5	[Mutability]({{ site.baseurl }}/guides/rhinopython/primer-101/4-operators-and-functions/#mutability)      
 
-### 5. Conditional execution
+### 5. [Conditional execution]({{ site.baseurl }}/guides/rhinopython/primer-101/5-conditional-execution/)
 
-   5.1	What if?  
-   5.2	Looping  
-   5.3	Conditional loops  
-   5.4	Incremental loops  
+   5.1	[What if?]({{ site.baseurl }}/guides/rhinopython/primer-101/5-conditional-execution/#what-if)
+   5.2	[Looping]({{ site.baseurl }}/guides/rhinopython/primer-101/5-conditional-execution/#looping)  
+   5.3	[Conditional loops]({{ site.baseurl }}/guides/rhinopython/primer-101/5-conditional-execution/#conditional-loops)  
+   5.4	[Incremental loops]({{ site.baseurl }}/guides/rhinopython/primer-101/5-conditional-execution/#incremental-loops)  
 
 
-### 6. Tuples, Lists and Dictionaries
+### 6. [Tuples, Lists and Dictionaries]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/)
 
-   6.1	Tuples  
-   6.2	Lists  
-   6.2.1	List Comprehensions  
-   6.3	Dictionaries  
-   6.4	Points and Vectors  
-   6.5	An AddVector() example  
-   6.6	Nested Lists  
+   6.1	[Tuples]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#tuples)  
+   6.2	[Lists]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#lists)  
+   6.2.1	[List Comprehensions]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#list-comprehension)  
+   6.3	[Dictionaries]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#dictionaries)  
+   6.4	[Points and Vectors]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#points-and-vectors)  
+   6.5	[An AddVector() example]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#an-addvector-example)  
+   6.6	[Nested Lists]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#nested-lists)  
 
 
 <!--column-->
@@ -80,30 +80,33 @@ layout: guide-homepage
 [<img src="{{ site.baseurl }}/images/rhinopython-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
 
 
-### 7. Classes
+### 7. [Classes]({{ site.baseurl }}/guides/rhinopython/primer-101/7-classes/)
 
-7.1	Class Syntax
+7.1	[Class Syntax]({{ site.baseurl }}/guides/rhinopython/primer-101/7-classes/#class-syntax)
 
 
-### 8. Geometry
+### 8. [Geometry]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/)
  
-   8.1	The openNURBS™ kernel  
-   8.2	Objects in Rhino  
-   8.3	Points and Pointclouds  
-   8.4	Lines and Polylines  
-   8.5	Planes  
-   8.6	Circles, Ellipses and Arcs  
-   8.7	Nurbs Curves  
-   8.7.1 Control-point curves  
-   8.7.2 Interpolated curves  
-   8.7.3 Geometric curve properties    
-   8.8	Meshes  
-   8.8.1 Geometry vs. Topology  
-   8.8.1 Shape vs. Image  
-   8.9	Surfaces  
-   8.9.1 Nurbs surfaces  
-   8.9.2 Surface Curvature  
-   8.9.3 Vector And Tensor Spaces   
+   8.1	[The openNURBS™ kernel]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/
+#the-opennurbs-kernel)  
+   8.2	[Objects in Rhino]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#obects-in-rhino)  
+   8.3	[Points and Pointclouds]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#points-andpointclouds)  
+   8.4	[Lines and Polylines]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#lines-and-polylines)  
+   8.5	[Planes]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#planes)  
+   8.6	[Circles, Ellipses and Arcs]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#circles-ellipses-and-arcs)
+   8.6.1 [Ellipses]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#ellipses)
+   8.6.2 [Arcs]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#arcs)
+   8.7	[Nurbs Curves]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#nurbs-curves)  
+   8.7.1 [Control-point curves]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#control-point-curves)  
+   8.7.2 [Interpolated curves]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#interpolate-curves)  
+   8.7.3 [Geometric curve properties]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#geometric-curve-properties)    
+   8.8	[Meshes]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#meshes)  
+   8.8.1 [Geometry vs. Topology]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#geometry-vs-topology)  
+   8.8.1 [Shape vs. Image]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#shape-vs-image)  
+   8.9	[Surfaces]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#surfaces)  
+   8.9.1 [Nurbs surfaces]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#nurbs-surfaces)  
+   8.9.2 [Surface Curvature]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#surface-curvature)  
+   8.9.3 [Vector And Tensor Spaces]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#vector-and-tensor-spaces)   
 
 
 <!--column-->
