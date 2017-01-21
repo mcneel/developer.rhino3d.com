@@ -80,7 +80,7 @@ If for some reason the user does not specify a file, say with a Cancel, then the
 if not filename: return
 ```
 
-ensures that the rest of the code inside this particular function will not be run, since there is nothing that can be done without a file name, and re next lines in the script will result in error messages without it. Since there is only the one function in this script, a cancel emans the script will stop.
+ensures that the rest of the code inside this particular function will not be run, since there is nothing that can be done without a file name, and executing the next lines in the script will result in error messages without it. Since there is only the one function in this script, a cancel emans the script will stop.
 
 Next a varible is set to the open file for reading:
 
