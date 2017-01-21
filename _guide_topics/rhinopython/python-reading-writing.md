@@ -179,7 +179,7 @@ if( filename==None ): return
 ```
 
 
-When writing to a file it must first be *opened*.  While it is open, the information can be written to the file.  After wrting all the information, the file must be closed. In the first example we explicitly opened, read and then closed the file. This time we've used the **with** statement to open the file - *with* is convenient becuse it takes care of closing the file and cleaning up when the script leaves the indented **with** section.
+When writing to a file it must first be *opened*.  While it is open, the information can be written to the file.  After wrting all the information, the file must be closed. In the first example we explicitly opened, read and then closed the file. This time we've used the *with* statement to open the file - *with* is convenient becuse it takes care of closing the file and cleaning up when the script leaves the indented *with* section.
 
 ```python
 with open(filename, "w") as file:
@@ -195,6 +195,6 @@ with open(filename, "w") as file:
 		point = rs.PointCoordinates(id)
 		file.write(str(point) + "\n")
 ````
-Keep in mind that 'points' in the script are not the same as 'point objects' in the Rhino file. As you can see in the above, the script looks at the selected objects and extracts the x,y,z points to write to the file.
+Keep in mind that 'points' in the script are not the same as 'point objects' in the Rhino file. Points are a list of x,y,z coordinates and point objects are objects in the Rhino file that have, among other properties like display color or layer, a location - the point coordinates.  As you can see in the above, the script iterates a list of IDs -those of the selected point objects or point clouds, and extracts the x,y,z coordinates to write to the file. The exported points are only the x,y,z coordinates of the point objects.
 
 For more information on reading and writing from Python, see the [Python Methods in File Objects documentation](https://docs.python.org/2/tutorial/inputoutput.html#methods-of-file-objects)
