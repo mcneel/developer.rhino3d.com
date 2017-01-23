@@ -76,10 +76,9 @@ Note: McNeel has made all of the classes in the .NET Framework available to Pyth
 (Don't stress about this until you become a master of the basics...for now, just know its available!)
 
 ## 3.4 The skin
+ 
+![{{ site.baseurl }}/images/buttonscript.jpg]({{ site.baseurl }}/images/buttonscript.jpg){: .float-img-right width="325"}
 
-<table>
-<tr>
-<td>
 After a script has been written and tested, you might want to put it in a place which has easy 
 access such as a Rhino toolbar button. If you want to run scripts from within buttons, there are two things you can do:
 
@@ -87,10 +86,6 @@ access such as a Rhino toolbar button. If you want to run scripts from within bu
 2. Implement the script
 
 If you want to implement the script, you'll have to wrap it up into a *_RunPythonScript* command. Imagine the script on the previous page has been saved on the hard disk as an \*.py file. The following button editor screenshot shows how to use the two options:	
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/buttonscript.jpg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 ## 3.5 The Debugger
 

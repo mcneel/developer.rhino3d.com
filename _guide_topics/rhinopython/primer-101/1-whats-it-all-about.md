@@ -42,16 +42,11 @@ _SelNone
 -_Sweep1 _SelName RailPolygon _SelName ProfilePolygon _Enter _Enter _Closed=Yes Enter
 ```
 
-<table>
-<tr>
-<td>
+![{{ site.baseurl }}/images/hexagonaltorus.svg]({{ site.baseurl }}/images/hexagonaltorus.svg){: .float-img-right width="325"}
+
 The above code will create the same hexagonal torus over and over again. It might be useful, but it's not flexible. You can type the above text into the command-line by hand, or you can put it into a button. You can even copy-paste the text directly into Rhino.
 
 Incidentally, the underscores before all the command names are due to Rhino localization. Using underscores will force Rhino to use English command names instead of -say- Italian or Japanese or whatever the custom setting is. You should always force English command names since that is the only guarantee that your code will work on all copies of Rhino worldwide.
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/hexagonaltorus.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 The hyphen in front of the *_Properties* and *_Sweep1* command is used to suppress dialog boxes. If you take the hyphens out you will no longer be able to change the way a command works through the command -line.
 

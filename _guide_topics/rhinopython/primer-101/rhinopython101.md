@@ -13,13 +13,13 @@ layout: guide-homepage
    [Introduction]({{ site.baseurl }}/guides/rhinopython/primer-101/introduction/)  
    [Where to find help]({{ site.baseurl }}/guides/rhinopython/primer-101/where-to-find-help/)  
 
-### 1. What's it all about?
+### 1. [What's it all about?]({{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/) 
 
    1.1 [Macros]({{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/#macros)  
    1.2 [Scripts]({{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/#scripts)  
    1.3 [Running Scripts]({{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/#scripts-1)  
 
-### 2. Python Essentials
+### 2. [Python Essentials]({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/)  
 
    2.1	[Language origin]({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/#language-origin)  
    2.2	[Flow control]({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/#flow-control)  

@@ -198,29 +198,18 @@ for t in rs.frange(-50,50,1.25):
 #Call rs.EnableRedraw(True)
 ```
 
-<table>
-<tr>
-<td>
+![{{ site.baseurl }}/images/primer-pointspiral.svg]({{ site.baseurl }}/images/primer-pointspiral.svg){: .float-img-right width="375"}
+
 The variable arrPoint is declared as an empty list, the elements are assigned different values on lines 7 to 9 inside the body of the loop. On line 10 the list is printed and on line 11 it is used as the point coordinates to create a 3D point in space.
-<br>
-<br>
+
 Vectors are a slightly new concept. Those of you who are familiar with the essentials of geometrical mathematics will have no problems with this concept... in fact you probably all are familiar with the essentials of geometrical mathematics or you wouldn't be learning how to program a 3D CAD platform.
 
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-pointspiral.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 Vectors are indistinguishable from points. That is, they are both lists of three numbers so there's absolutely no way of telling whether a certain list represents a point or a vector. There is a practical difference though; points are absolute, vectors are relative. When we treat a list of three doubles as a point it represents a certain coordinate in space, when we treat it as a vector it represents a certain direction. You see, a vector is an arrow in space which always starts at the world origin (0.0, 0.0, 0.0) and ends at the specified coordinate.
 
-<table>
-<tr>
-<td>
+![{{ site.baseurl }}/images/primer-vectordefinition.svg]({{ site.baseurl }}/images/primer-vectordefinition.svg){: .float-img-right width="375"}
+
 The picture on the right shows two vector definitions; a purple and a blue one. The blue one happens to have all positive components while the purple one has only negative components. Both vectors have a different direction and a different length. When I say vectors are relative, I mean that they only indicate the difference between the start and end points of the arrow, i.e. vectors are not actual geometrical entities, they are only information! The blue vector could represent the tangent direction of the black curve at parameter {t}. If we also know the point value of the curve at parameter {t}, we know what the tangent of the curve looks like; we know where in space the tangent belongs. The vector itself does not contain this information; the orange and the blue vector are identical in every respect.
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-vectordefinition.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 The addition of vector definitions in IronPython is accompanied by a whole group of point/vector related methods which perform the basic operations of 'vector mathematics'. Addition, subtraction, multiplication, dot and cross products, so on and so forth. The table on the following page is meant as a reference table, do not waste your time memorizing it.
 
@@ -351,10 +340,10 @@ factor. This is the equivalent of *PointDivide()*.</td>
 </tr>
 </table>
 
+![{{ site.baseurl }}/images/primer-addvector.svg]({{ site.baseurl }}/images/primer-addvector.svg){: .float-img-right width="325"}
 
 IronPython has no method for displaying vectors, which is a pity since this would be very useful for visual feedback. I shall define a function here called *AddVector()* which we will use in examples to come. The function must be able to take two arguments; one vector definition and a point definition. If the point array is not defined the vector will be drawn starting at the world origin. 
 
-<img src="{{ site.baseurl }}/images/primer-addvector.svg" width="45%" height="300" float="right">
 
 ```python
 def AddVector(vecdir, base_point=[0,0,0]):
@@ -399,7 +388,7 @@ In case of scenario #2, the line variable will be set to None. The last option m
 
 ## 6.5 An AddVector() example
 
-<img src="{{ site.baseurl }}/images/primeraddvectorexample.svg" width="45%" float="right">
+![{{ site.baseurl }}/images/primeraddvectorexample.svg]({{ site.baseurl }}/images/primeraddvectorexample.svg){: .float-img-right width="325"}
 
 ```python
 import rhinoscriptsyntax as rs
@@ -463,18 +452,13 @@ def vectorfield():
   
 > -Richard P. Feynman-  
 
-<table>
-<tr>
-<td>
+
+![{{ site.baseurl }}/images/primer-nestedarrays.svg]({{ site.baseurl }}/images/primer-nestedarrays.svg){: .float-img-right width="300"}
+
+
 There's nothing to it. A list (or tuple or dictionary for that matter) becomes nested when it is stored inside another list The VectorField example on the previous page deals with a list of points (a list of lists, each with three doubles). The image on the right is a visualization of such a structure. The left most column represents the base list, the one containing all coordinates. It can be any size you like, there's no limit to the amount of points you can store in a single list. Every element of this base list is a standard Rhino point. In the case of point-lists all the nested lists are three elements long, but this is not a requisite, you can store anything you want in a list.
 
-<br>
-<br>
 Nesting can be done with tuples, lists or dictionaries. It simply means that you can put lists in lists, or tuples in tuples, dictionaries in dictionaries or even lists inside of dictionaries and so on.  Nesting can be done infinitely, you can have a list that contains a list with a list inside of it, another list inside of that list and so on. Nesting can easily be done by utilizing a Loop that allows you to iterate and either extract or place other items inside of the lists.
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-nestedarrays.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 Accessing nested lists follows the same rules as accessing regular lists. Using the VectorField example:
 

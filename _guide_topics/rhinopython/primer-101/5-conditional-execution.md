@@ -234,15 +234,13 @@ The default height of text objects is 1.0 units, but we want our clock to look b
 </tr>
 </table>
 
-<table>
-<tr>
-<td>
+ 
+![{{ site.baseurl }}/images/primer-iterativecurvescaler.svg]({{ site.baseurl }}/images/primer-iterativecurvescaler.svg){: .float-img-right width="325"}
+
 A simple example of a non-endless loop which will terminate itself would be an iterative scaling script. Imagine we need a tool which makes sure a curve does not exceed a certain length {L}. Whenever a curve does exceed this predefined value it must be  scaled down by a factor {F} until it no longer exceeds {L}. 
+
 This approach means that curves that turn out to be longer than {L} will probably end up being shorter than {L}, since we always scale with a fixed amount. There is no mechanism to prevent undershooting. Curves that start out by being shorter than {L} should remain untouched.
-</td>
-<td width="40%" padding="20px 20px"><img src="{{ site.baseurl }}/images/primer-iterativecurvescaler.svg" width="100%" height="300" padding="20px 20px" float="right"></td>
-</tr>
-</table>
+
 
 A possible solution to this problem might look like this:
 
@@ -368,16 +366,11 @@ for x in rs.frange(dblA, dblB, dblStep):
     rs.AddPoint([x, y, 0])	
 ```
 
-<table>
-<tr>
-<td>
+![{{ site.baseurl }}/images/primer-sinewave.svg]({{ site.baseurl }}/images/primer-sinewave.svg){: .float-img-right width="375"}
+
 The above example draws a sine wave graph in a certain numeric domain with a certain accuracy. There is no user input since that is not the focus of this paragraph, but you can change the values in the script. The numeric domain we're interested in ranges from -8.0 to +8.0 and with the current stepsize of 0.25 that means we'll be running this loop 64 times. 64 = dblStep-1 × (dblB - dblA)) 
 
 The For…loop will increment the value of x automatically with the specified stepsize, so we don't have to worry about it when we use x on line 10. We should be careful not to change x inside the loop since that will play havoc with the logic of the iterations.
-</td>
-<td width="40%" padding="20px 20px"><img src="{{ site.baseurl }}/images/primer-sinewave.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 Loop structures can be nested at will, there are no limitations, but you'll rarely encounter more than three. The following example shows how nested For…Loops can be used to compute distributions:
 
@@ -399,17 +392,12 @@ for z in rs.frange(0.0, 5.0, 0.5):
 
 rs.EnableRedraw(True)
 ```	
+![{{ site.baseurl }}/images/primer-twistandshout.svg]({{ site.baseurl }}/images/primer-twistandshout.svg){: .float-img-right width="375"}
 
-<table>
-<tr>
-<td>
 The master loop increments the z variable from 0.0 to 5.0 with a default step size of 0.5. The z variable is used directly as the z-coordinate for all the sphere centers. For every iteration of the master loop, we also want to increment the twist angle with a fixed amount. We can only use the For…Loop to automatically increment a single variable, so we have to do this one ourselves on line 8.
 
 The master loop will run a total of ten times and the nested loop is designed to run 30 times. But because the nested loop is started every time the master loop performs another iteration, the code between lines 11 and 14 will be executed 10×30 = 300 times. Whenever you start nesting loops, the total number of operations your script performs will grow exponentially.
-</td>
-<td width="40%" padding="20px 20px"><img src="{{ site.baseurl }}/images/primer-twistandshout.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
+
 
 The *rs.EnableRedraw()* calls before and after the master loop are there to prevent the viewport from updating 
 while the spheres are inserted. The script completes much faster if it doesn't have to redraw 330 times. If you comment out the *rs.EnableRedraw()* call you can see the order in which spheres are added, it may help you understand how the nested loops work together.

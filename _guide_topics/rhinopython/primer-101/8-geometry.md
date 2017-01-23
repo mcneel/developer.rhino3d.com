@@ -223,19 +223,14 @@ if __name__=="__main__":
     main()
 ```
 
-<table>
-<tr>
-<td>
+![{{ site.baseurl }}/images/primer-surfaceparameterspace.svg]({{ site.baseurl }}/images/primer-surfaceparameterspace.svg){: .float-img-right width="325"}
+
 This script will compare a bunch of points on a curve to their projection on a surface. If the distance exceeds one unit, a line and a point will be added.
-<br><br>
+
 First, the R1 points are translated into R3 coordinates so we can 
 project them onto the surface, getting the R2 coordinate [u,v] in return. This R2 point has to be translated into R3 space as well, since we need to know the distance between the R1 point on the curve and the R2 point on the surface. Distances can only be measured if both points reside in the same number of dimensions, so we need to translate them into R3 as well.
-<br>
+
 Told you it was a piece of cake...
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-surfaceparameterspace.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 <table rules="rows">
 <tr>
@@ -305,18 +300,13 @@ def SubDividePolyline(arrV)
 
 <img src="{{ site.baseurl }}/images/primer-polylinetonurbsdragchange.png" width="90%" float="right">
 
-<table>
-<tr>
-<td>
 No rocket science yet, but brace yourself for the next bit...
-<br><br>
+
+![{{ site.baseurl }}/images/primer-r2shortpath.svg]({{ site.baseurl }}/images/primer-r2shortpath.svg){: .float-img-right width="325"}
+
 As you know, the shortest path between two points is a straight line. This is true for all our space definitions, from R1 to RN. However, the shortest path in R2 space is not necessarily the same shortest path in R3 space. If we want to connect two points on a surface with a straight line in R2, all we need to do is plot a linear course through the surface [u,v] space. (Since we can only add curves to Rhino which use 3D world coordinates, we'll need a fair amount of samples to give the impression of smoothness.) The thick red curve in the 
 adjacent illustration is the shortest path in R2 parameter 
 space connecting [A] and [B]. We can clearly see that this is definitely not the shortest path in R3 space.
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-r2shortpath.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 We can clearly see this because we're used to things happening in R3 space, which is why this whole R2/R3 thing is so thoroughly counter intuitive to begin with. The green, dotted curve is the actual shortest path in R3 space which still respects the limitation of the surface (I.e. it can be projected onto the surface without any loss of information). The following function was used to create the red curve; it creates a polyline which represents the shortest path from [A] to [B] in surface parameter space:
 
@@ -637,16 +627,11 @@ rs.AddPlaneSurface(arrPlane, 1.0, 1.0)
 rs.AddPlaneSurface(arrPlane, dX, dY)
 ```
 
-<table>
-<tr>
-<td>
+![{{ site.baseurl }}/images/primer-planecreation.svg]({{ site.baseurl }}/images/primer-planecreation.svg){: .float-img-right width="325"}
+
 You will notice that all RhinoScript methods that require plane definitions make sure these demands are met, no matter how poorly you defined the input. 
-<br><br>
+
 The adjacent illustration shows how the rs.AddPlaneSurface() call on line 11 results in the red plane, while the rs.AddPlaneSurface() call on line 12 creates the yellow surface which has dimensions equal to the distance between the picked origin and axis points.
-</td>
-<td width="40%"><img src="{{ site.baseurl }}/images/primer-planecreation.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 We'll only pause briefly at plane definitions since planes, like vectors, are usually only constructive elements. In examples to come they will be used extensively so don't worry about getting the hours in. A more interesting script which uses the *rs.AddPlaneSurface()* method is the one below which populates a surface with so-called surface frames:
 
@@ -672,18 +657,13 @@ rs.EnableRedraw(True)
 ```
 Frames are planes which are used to indicate geometrical directions. Both curves, surfaces and textured meshes have frames which identify tangency and curvature in the case of curves and [u] and [v] directions in the case of surfaces and meshes. The script above simply iterates over the [u] and [v] directions of any given surface and adds surface frame objects at all uv coordinates it passes.
 
-<table>
-<tr>
-<td>
+![{{ site.baseurl }}/images/primersurfaceframes.svg]({{ site.baseurl }}/images/primersurfaceframes.svg){: .float-img-right width="325"}
+
 On lines 5 and 6 we determine the domain of the surface in u and v directions and we derive the required stepsize from those limits.
-<br><br>
+
 Line 11 and 12 form the main structure of the two-dimensional iteration. You can read such nested For loops as "Iterate through all columns and inside every column iterate through all rows".
-<br><br>
+
 Line 14 does something interesting which is not apparent in the adjacent illustration. When we are dealing with trimmed surfaces, those two lines prevent the script from adding planes in cut-away areas. By comparing the point on the (untrimmed) surface to it's projection onto the trimmed surface, we know whether or not the [uv] coordinate in question represents an actual point on the trimmed surface.
-</td>
-<td width="40%"><img src="{{ site.baseurl }}/images/primersurfaceframes.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 The *rs.SurfaceFrame()* method returns a unitized frame whose axes point in the [u] and [v] directions of the surface. Note that the [u] and [v] directions are not necessarily perpendicular to each other, but we only add valid planes whose x and y axis are always at 90º, thus we ignore the direction of the v-component.
 
@@ -709,23 +689,19 @@ No wait, back up. The first thing to realize is how a sphere actually works. Onl
 
 The north pole (the black dot in the left most image) and the south pole (the white dot in the same image) are both on the main axis of the sphere and the seam (the thick edge) connects the two. In essence, a sphere is a rectangular plane bent in two directions, where the left and right side meet up to form the seam and the top and bottom edge are compressed into a single point each (a singularity). This coordinate system should be familiar since we use the same one for our own planet. However, our planet is divided into latitude and longitude degrees, whereas spheres are defined by latitude and longitude radians. The numeric domain of the latitude of the sphere starts in the south pole with -½π, reaches 0.0 at the equator and finally terminates with ½π at the north pole. The longitudinal domain starts and stops at the seam and travels around the sphere from 0.0 to 2π. Now you also know why it is called a 'seam' in the first place; it's where the domain suddenly jumps from one value to another, distant one.
 
+
+![{{ site.baseurl }}/images/primer-sphereuv.svg]({{ site.baseurl }}/images/primer-sphereuv.svg){: .float-img-left width="275"}
+
 We cannot pack circles in the same way as we pack squares in the image above since that would deform them heavily near the poles, as indeed the squares are deformed. We want our circles to remain perfectly circular which means we have to fight the converging nature of the sphere
 
-<table>
-<tr>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-sphereuv.svg" width="100%" float="right"></td>
-<td>
 Assuming the radius of the circles we are about to stack is sufficiently smaller than the radius of the sphere, we can at least place two circles without thinking; one on the north- and one on the south pole. The additional benefit is that these two circles now handsomely cover up the singularities so we are only left with the annoying seam. The next order of business then, is to determine how many circles we need in order to cover up the seam in a straightforward fashion. The length of the seam is half of the circumference of the sphere (see yellow arrow in adjacent illustration).  
-<br><br>
+
 Home stretch time, we've collected all the information we need in order to populate this sphere. The last step of the algorithm is to stack circles around the sphere, starting at every seam-circle. We need to calculate the circumference of the sphere at that particular latitude, divide that number by the diameter of the circles and once again find the largest integer value which is smaller than or equal to that result. The equivalent mathematical notation for this is:
-<br><br>
 
 $$N_{count} = \left[\frac{2 \cdot R_{sphere} \cdot \cos{\phi}}{2 \cdot R_{circle}} \right]$$  
 
 in case you need to impress anyone…
-</td>
-</tr>
-</table>
+
 
 ```python
 def DistributeCirclesOnSphere():
@@ -926,22 +902,18 @@ The problem: adding an arc using the start point, end point and start direction.
 
 The first way is very similar to adding circles using plane and radius values, with the added argument for sweep angle. The second way is also similar to adding circles using a 3-point system, with the difference that the arc terminates at the first and second point. There is no direct way to add arcs from point A to point B while constrained to a start tangent vector. We're going to have to write a function which translates the desired Start-End-Direction approach into a 3-Point approach. Before we tackle the math, let's review how it works:
 
-<table>
-<tr>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-arcs.svg" width="100%" float="right"></td>
-<td>
+![{{ site.baseurl }}/images/primer-arcs.svg]({{ site.baseurl }}/images/primer-arcs.svg){: .float-img-left width="275"}
+
+
 We start with two points {A} & {B} and a vector definition {D}. The arc we're after is the red curve, but at this point we don't know how to get there yet. Note that this problem might not have a solution if {D} is parallel or anti-parallel to the line from {A} to {B}. If you try to draw an arc like that in Rhino it will not work. Thus, we need to add some code to our function that aborts when we're confronted with unsolvable input.  
-<br><br>
+
 We're going to find the coordinates of the point in the middle of the desired arc {M}, so we can use the 3Point approach with {A}, {B} and {M}. As the illustration on the left indicates, the point in the middle of the arc is also on the line perpendicular from the middle {C} of the baseline.
-<br><br>
+
 The halfway point on the arc also happens to lie on the bisector between {D} and the baseline vector. We can easily construct the bisector of two vectors in 3D space by process of unitizing and adding both vectors. In the illustration on the left the bisector is already pointing in the right direction, but it still hasn't got the correct length.
-<br><br> 
+
 We can compute the correct length using the standard "Sin-Cos-Tan right triangle rules": 
 
 The triangle we have to solve has a 90º angle in the lower right corner, a is the angle between the baseline and the bisector, the length of the bottom edge of the triangle is half the distance between {A} and {B} and we need to compute the length of the slant edge (between {A} and {M}).
-</td>
-</tr>
-</table>
 
 The relationship between a and the lengths of the sides of the triangle is: 
 
@@ -1021,46 +993,34 @@ def AddArcDir(ptStart, ptEnd, vecDir):
 </tr>
 </table>
 
+![{{ site.baseurl }}/images/primer-arctree.svg]({{ site.baseurl }}/images/primer-arctree.svg){: .float-img-right width="375"}
 
-<table>
-<tr>
-<td>
+
 We need this function in order to build a recursive tree-generator which outputs trees made of arcs. Our trees will be governed by a set of five variables but -due to the 
 flexible nature of the recursive paradigm- it will be very easy to add more behavioral patterns. The growing algorithm as implemented in this example is very simple and doesn't allow a great deal of variation.
-<br><br>
+
 The five base parameters are:
-<br><br>
+
 Propagation factor
-<ol>
-<li>Twig length</li>
-<li>Twig length mutation</li>
-<li>Twig angle</li>
-<li>Twig angle mutation</li>
-</ol>
-</td>
-<td width="50%"><img src="{{ site.baseurl }}/images/primer-arctree.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
+
+# Twig length
+# Twig length mutation
+# Twig angle
+# Twig angle mutation
 
 The propagation-factor is a numeric range which indicates the minimum and maximum number of twigs that grow at the end of every branch. This is a totally random affair, which is why it is called a "factor" rather than a "number". More on random numbers in a minute. The twig-length and twig-length-mutation variables control the -as you probably guessed- length of the twigs and how the length changes with every twig generation. The twig-angle and twig-angle-mutation work in a similar fashion.
 
 The actual recursive bit of this algorithm will not concern itself with the addition and shape of the twig-arcs. This is done by a supporting function which we have to write before we can start growing trees. The problem we have when adding new twigs, is that we want them to connect smoothly to their parent branch. We've already got the plumbing in place to make tangency continuous arcs, but we have no mechanism yet for picking the end-point. In our current plant-scheme, twig growth is controlled by two factors; length and angle. However, since more than one twig might be growing at the end of a branch there needs to be a certain amount of random variation to keep all the twigs from looking the same.
 
-<table>
-<tr>
-<td>
+
+![{{ site.baseurl }}/images/primer-branchpropagation2.svg]({{ site.baseurl }}/images/primer-branchpropagation2.svg){: .float-img-right width="325"}
+
 The adjacent illustration shows the algorithm we'll be using for twig propagation. The red curve is the branch-arc and we need to populate the end with any number of twig-arcs. Point {A} and Vector {D} are dictated by the shape of the branch but we are free to pick point {B} at random provided we remain within the limits set by the length and angle constraints. The complete set of possible end-points is drawn as the yellow cone. We're going to use a sequence of Vector methods to get a random point {B} in this shape:
 
-<ol>
-<li>Create a new vector {T} parallel to {D}</li>
-<li>Resize {T} to have a length between {Lmin} and {Lmax}</li>
-<li>Mutate {T} to deviate a bit from {D}</li>
-<li>Rotate {T} around {D} to randomize the orientation</li>
-</ol>
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-branchpropagation2.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
+# Create a new vector {T} parallel to {D}
+# Resize {T} to have a length between {Lmin} and {Lmax}
+# Mutate {T} to deviate a bit from {D}
+# Rotate {T} around {D} to randomize the orientation
 
 ```python
 def RandomPointInCone( origin, direction, minDistance, maxDistance, maxAngle):
@@ -1243,18 +1203,13 @@ A clamped curve always has a bunch of knots at the beginning and end (periodic c
 
 ### 8.7.1 Control-point curves
 
-<table>
-<tr>
-<td>
+![{{ site.baseurl }}/images/primer-filletcorners.svg]({{ site.baseurl }}/images/primer-filletcorners.svg){: .float-img-right width="275"}
+
 The _FilletCorners command in Rhino puts filleting arcs across all sharp kinks in a polycurve. Since fillet curves are tangent arcs, the corners have to be planar. All flat curves though can always be filleted as the image to the right shows.
-<br><br>
+
 The input curve {A} has nine G0 corners (filled circles) which qualify for a filleting operation and three G1 corners (empty circles) which do not. Since each segment of the polycurve has a length larger than twice the fillet radius, none of the fillets overlap and the result is a predictable curve {B}.
-<br><br>
+
 Since blend curves are freeform they are allowed to twist and curl as much as they please. They have no problem with non-planar segments. Our assignment for today is to make a script which inserts blend corners into polylines. We're not going to handle polycurves (with freeform curved segments) since that would involve quite a lot of math and logic which goes beyond this simple curve introduction. This unfortunately means we won't actually be making non-planar blend corners. 
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-filletcorners.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 The logic of our BlendCorners script is simple:
 
@@ -1503,17 +1458,11 @@ def equidistanceoffset():
     if offsetvertices: rs.AddInterpCrvOnSrf(srf_id, offsetvertices)
     rs.EnableRedraw(True)
 ```
+![{{ site.baseurl }}/images/primer-equidistantoffset-result.svg]({{ site.baseurl }}/images/primer-equidistantoffset-result.svg){: .float-img-right width="375"}
 
-<table>
-<tr>
-<td>
 If I've done my job so far, the above shouldn't require any explanation. All of it is straight forward scripting code.
-<br><br>
+
 The image on the right shows the result of the script, where offset values are all multiples of 10. The dark green lines across the green strip (between offsets 80.0 and 90.0)  are all exactly 10.0 units long. 
-</td>
-<td width="40%"><img src="{{ site.baseurl }}/images/primer-equidistantoffset-result.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 ### 8.7.3 Geometric curve properties
 
@@ -1794,16 +1743,12 @@ Now that we know what meshes essentially consist of, we can start making mesh sh
 
 $$f(x, y, \Theta, \Delta) = ...$$
 
-<table>
-<tr>
-<td>
+![{{ site.baseurl }}/imagesprimer-meshgraph_xy.svg]({{ site.baseurl }}/images/primer-meshgraph_xy.svg){: .float-img-right width="375"}
+
+
 Where the user is allowed to specify any valid mathematical function using the variables *x*, *y*, *Θ* and *Δ*. Every vertex in the mesh plane has a unique combination of *x* and *y* values which can be used to determine the *z* value of that vertex by evaluating the custom function (*Θ* and *Δ* are the polar coordinates of *x* and *y*). This means every vertex {A} in the plane has a coordinate {B} associated with it which shares the *x* and *y* components, but not the *z* component.
-<br><br>
+
 We'll run into four problems while writing this script which we have not encountered before, but only two of these have to do with mesh geometry/topology:
-</td>
-<td width="40%"><img src="{{ site.baseurl }}/images/primer-meshgraph_xy.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 It's easy enough to generate a grid of points, we've done similar looping before where a nested loop was used to generate a grid wrapped around a cylinder. The problem this time is that it's not enough to generate the points. We also have to generate the face-list, which is highly dependent on the row and column dimensions of the vertex list. It's going to take a lot of logic insight to get this right (probably easiest to make a schematic first). Let us turn to the problem of generating the vertex coordinates, which is a straightforward one:
 
@@ -1863,15 +1808,9 @@ We can access those easily enough, but since the step size in x and y direction 
 </tr>
 </table>
 
+![{{ site.baseurl }}/images/primer-meshfacelogic.svg]({{ site.baseurl }}/images/primer-meshfacelogic.svg){: .float-img-right width="325"}
 
-<table>
-<tr>
-<td>
 Once we have our vertices, we can create the face list that connects them. Since the face-list is topology, it doesn't matter where our vertices are in space, all that matters is how they are organized. The image on the right is the mesh schematic that I always draw whenever confronted with mesh face  logic. The image shows a mesh with twelve vertices and six quad faces, which has the same vertex sequence logic as the vertex list created by the function on the previous page. The vertex counts in x and y direction are four and three respectively (N<sub>x</sub>=4, N<sub>y</sub>=3). 
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-meshfacelogic.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 Now, every quad face has to link the four vertices in a counter-clockwise fashion. You may have noticed already that the absolute differences between the vertex indices on the corners of every quad are identical. In the case of the lower left quad *{A=0; B=3; C=4; D=1}*. In the case of the upper right quad *{A=7; B=10; C=11; D=8}*. We can define these numbers in a simpler way, which reduces the number of variables to just one instead of four: 
 *{A=?; B=(A+N<sub>y</sub>); C=(B+1); D=(A+1)}*, where *N<sub>y</sub>* is the number of vertices in the y-direction. Now that we know the logic of the face corner numbers, all that is left is to iterate through all the faces we need to define and calculate proper values for the *A* corner:
@@ -2009,17 +1948,11 @@ def loadfunctiondata():
 </tr>
 </table>
 
+![{{ site.baseurl }}/images/primer-xyphidelta.svg]({{ site.baseurl }}/images/primer-xyphidelta.svg){: .float-img-right width="325"}
 
-<table>
-<tr>
-<td>
 We've now dealt with two out of four problems (mesh topology, saving and loading persistent settings) and it's time for the big ones. In our CreateMeshVertices() procedure we've placed a call to a function called SolveEquation() eventhough it didn't exist yet. SolveEquation() has to evaluate a user-defined function for a specific {x,y} coordinate which is something we haven't done before yet. It is very easy to find the answer to the question: 
-<br><br>
+
 "What is the value of <i>{Sin(x) + Sin(y)}</i> for <i>{x=0.5}</i> and <i>{y=2.7}</i> ?"
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-xyphidelta.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 However, this involves manually writing the equation inside the script and then running it. Our script has to evaluate custom equations which are not known until after the script starts. This means in turn that the equation is stored as a String variable. 
 
@@ -2183,19 +2116,13 @@ We'll need a function who's purpose it is to generate an array of numbers (one f
 
 <img src="{{ site.baseurl }}/images/primer-boxcp.svg" width="80%" float="right">
 
+![{{ site.baseurl }}/images/primer-loggraph.svg]({{ site.baseurl }}/images/primer-loggraph.svg){: .float-img-right width="300"}
 
-<table>
-<tr>
-<td>
 Vertex {A} on the mesh has a point associated with it {Acp} on the box and the distance between these two {DA} is a measure for proximity. This measure is linear, which means that a vertex which is twice as far away gets a proximity value which is twice as high. A linear distribution is indicated by the red line in the adjacent graph. It actually makes more intuitive sense to use a logarithmic scale (the green line), since it is far better at dealing with huge value ranges. Imagine we have a mesh whose sorted proximity value set is something like:
-<br><br>
+
 {0.0; 0.0; 0.0; 0.1; 0.2; 0.5; 1.1; 1.8; 2.6; … ; 9.4; 1000.0}
-<br><br>
+
 As you can see pretty much all the variation is within the {0.0; 10.0} range, with just a single value radically larger. Now, if we used a linear approach, all the proximity values would resolve to completely red, except for the last one which would resolve to completely white. This is not a useful gradient. When you run all the proximity values through a logarithm you end up with a much more natural distribution:
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-loggraph.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 <img src="{{ site.baseurl }}/images/primer-gradienttable.svg" width="100%" float="right">
 
@@ -2309,21 +2236,15 @@ Apart from a few primitive surface types such as spheres, cones, planes and cyli
 
 ### 8.9.1 NURBS Surfaces
 
-<table>
-<tr>
-<td>
+![{{ site.baseurl }}/images/primer-normals.svg]({{ site.baseurl }}/images/primer-normals.svg){: .float-img-right width="325"}
+
 Nurbs surfaces are very similar to Nurbs curves. The same algorithms are used to calculate shape, normals, tangents, curvatures and other properties, but there are some distinct differences. For example, curves have tangent vectors and normal planes, whereas surfaces have normal vectors and tangent planes. This means that curves lack orientation while surfaces lack direction. This is of course true for all curve and surface types and it is something you'll have to learn to live with. Often when writing code that involves curves or surfaces you'll have to make assumptions about direction and orientation and these assumptions will sometimes be wrong. 
-<br><br>
+
 In the case of NURBS surfaces there are in fact two directions implied by the geometry, because NURBS surfaces are rectangular grids of {u} and {v} curves. And even though these directions are often arbitrary, we end up using them anyway because they make life so much easier for us.
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-normals.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 But lets start with something simple which doesn't actually involve NURBS surface mathematics on our end. The problem we're about to be confronted with is called Surface Fitting and the solution is called Error Diffusion. You have almost certainly come across this term in the past, but probably not in the context of surface geometry. Typically the words "error diffusion" are only used in close proximity to the words "color", "pixel" and "dither", but the wide application in image processing doesn't limit error diffusion algorithms to the 2D realm.
 
 The problem we're facing is a mismatch between a given surface and a number of points that are supposed to be on it. We're going to have to change the surface so that the distance between it and the points is minimized. Since we should be able to supply a large amount of points (and since the number of surface control-points is limited and fixed) we'll have to figure out a way of deforming the surface in a non-linear fashion (i.e. translations and rotations alone will not get us there). Take a look at the images below which are a schematic representation of the problem:
-
 
 <img src="{{ site.baseurl }}/images/primer-pointonplane.svg" width="100%" float="right">
 
@@ -2346,17 +2267,11 @@ As you can see, the domain of the graph goes from zero to infinity, and for ever
 
 It's an easy fix in our case, we can simply limit the {x} value to the domain {+0.01; +∞}, meaning that {y} can never get bigger than 100. We could make this threshold much, much smaller without running into problems. Even if we limit {x} to a billionth of a unit (0.00000001) we're still comfortably in the clear.
 
+![{{ site.baseurl }}/images/primer-surface-uvw-to-xyz.svg]({{ site.baseurl }}/images/primer-surface-uvw-to-xyz.svg){: .float-img-right width="325"}
 
-<table>
-<tr>
-<td>
 The first thing we need to do is write a function that takes a surface and a point in {xyz} coordinates and translates it into {uvw} coordinates. We can use the <i>rs.SurfaceClosestPoint()</i> method to get the {u} and {v} components, but the {w} is going to take some thinking.
 
 First of all, a surface is a 2D entity meaning it has no thickness and thus no "real" {z} or {w} component. But a surface does have normal vectors that point away from it and which can be used to emulate a "depth" dimension. In the adjacent illustration you can see a point in {uvw} coordinates, where the value of {w} is simply the distance between the point and the start of the line. It is in this respect that negative distance has meaning, because negative distance denotes a {w} coordinate on the other side of the surface.
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-surface-uvw-to-xyz.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 Although this is a useful way of describing coordinates in surface space, you should at all times remember that the {u} and {v} components are expressed in surface parameter space while the {w} component is expressed in world units. We are using mixed coordinate systems which means that we cannot blindly use distances or angles between these points because those properties are meaningless now.
 
@@ -2630,17 +2545,13 @@ The diagrams and graphs I've used so far to illustrate the workings of this algo
 
 ### 8.9.2 Surface Curvature
 
+![{{ site.baseurl }}/images/primer-curvecurvaturelogic2.svg]({{ site.baseurl }}/images/primer-curvecurvaturelogic2.svg){: .float-img-right width="325"}
 
-<table>
-<tr>
-<td>
+
 Curve curvature is easy to grasp intuitively. You simply fit a circle to a short piece of curve as best you can (this is called an osculating circle) and the radius and center of this circle tell you all you need to know about the local curvature. We've dealt with this already before.
-<br> <br>
+
 Points {A; B; C; D; E} have a certain curvature associated with them. The radius of the respective circles is a measure for the curvature (in fact, the curvature is the inverse of the radius), and the direction of the vectors is an indication of the curve plane.
-</td>
-<td width="30%"><img src="{{ site.baseurl }}/images/primer-curvecurvaturelogic2.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
+
 
 If we were to scale the curve to 50% of its original size the curvature circles also become half as big, effectively doubling the curvature values. Point {C} is special in that it has zero-curvature (i.e. the radius of the osculating circle is infinite). Points where the curvature value changes from negative to positive are known as inflection points. If we have multiple inflection points adjacent to each other, we are dealing with a linear segment in the curve.
 
@@ -2686,16 +2597,12 @@ Imagine a surface with no singularities and no stacked control points, such as a
 
 When we say "vector", we usually mean little arrows; a list of numbers that indicate a direction and a magnitude in some sort of spatial context. When things get more complicated, we start using "tensor" instead. Tensor is a more general term which has fewer connotations and is thus preferred in many scientific texts.
 
-<table>
-<tr>
-<td>
+![{{ site.baseurl }}/images/primer-tensorspace2.svg]({{ site.baseurl }}/images/primer-tensorspace2.svg){: .float-img-right width="375"}
+
+
 For example, the surface of your body is a two-dimensional tensor space (embedded in four dimensional space-time) which has many properties that vary smoothly from place to place; hairiness, pigmentation, wetness, sensitivity, freckliness and smelliness to name just a few. If we measure all of these properties in a number of places, we can make educated guesses about all the other spots on your body using interpolation and extrapolation algorithms. We could even make a graphical representation of such a tensor space by using some arbitrary set of symbols. 
-<br><br>
+
 We could visualize the wetness of any piece of skin by linking it to the amount of blue in the colour of a box, and we could link freckliness to green, or to the width of the box, or to the rotational angle.
-</td>
-<td width="40%"><img src="{{ site.baseurl }}/images/primer-tensorspace2.svg" width="100%" height="300" float="right"></td>
-</tr>
-</table>
 
 All of these properties together make up the tensor class. Since we can pick and choose whatever we include and ignore, a tensor is essentially whatever you want it to be. Let's have a more detailed look at the tensor class mentioned on the previous page, which is a rather simple one...
 
