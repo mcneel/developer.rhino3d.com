@@ -65,6 +65,7 @@ C = 2*x
 D = x**(0.5* x)
 y = (math.sqrt(A) / B) + abs(C / D)
 ```
+
 ## 4.3 Logical operators
 
 I realize the last thing you want right now is an in-depth tutorial on logical operators, but it is an absolute must if we want to start making smart code. I'll try to keep it as painless as possible. 
