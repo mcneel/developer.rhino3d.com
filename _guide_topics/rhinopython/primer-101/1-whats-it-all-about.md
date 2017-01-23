@@ -79,7 +79,7 @@ There are several ways to run scripts in Rhino, each has its own (dis)advantages
 
 Throughout this book, I will use the in-build editor method. I find this to be the best way to work on simple scripts. In order to run a script via the in-build editor,  Use the *_EditPythonScript* command to activate it, then type in your script and press the Run button:
 
-<img src="{{ site.baseurl }}/images/primer-editscriptdialog-python.png" width="70%" align="center">
+<img src="{{ site.baseurl }}/images/primer-editscriptdialog-python.png">{: .img-center  width="75%"}
 
 All the example code in this primer can be copy-pasted directly into the *_EditPythonScript* dialog.
 

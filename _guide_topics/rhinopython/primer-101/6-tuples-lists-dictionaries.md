@@ -21,7 +21,7 @@ We've already been using tuples and lists in examples and I've always told you n
 
 That's really all there is to it. Sometimes -in fact quite often- you want to store a large or unknown amount of things. You could of course declare 15,000 different variables by hand but that is generally considered to be bad practice. Remember, Tuples, Lists and Dictionaries always start counting at zero, while us humans are normally used to start counting at one. Try it by counting the number of fingers on your right hand. Chances are you are someone who has just counted to five. Code would disagree with you, it would only have counted to four:
 
-<img src="{{ site.baseurl }}/images/primer-arraycountingfingers.png" width="25%" float="right">
+<img src="{{ site.baseurl }}/images/primer-arraycountingfingers.png">{: .img-center  width="25%"}
 
 It helps to refer to numbers as 'indices' when you use the zero-based counting system just to avoid confusion. So when we talk about the 'first element' of a tuple we actually mean 'the element with index 0'. I know this all sounds strange, but zero-based counting systems habitually confuse even the most die-hard programmer.
 
@@ -484,12 +484,12 @@ for i in range(0,len(arrPoints)):
         print("Coordinate(" + i + ", " + j + ") = " + arrPoints[i][j]) 
 ```
 
-<img src="{{ site.baseurl }}/images/primer-nestedarrayparsehistory.png" width="45%" float="right">
+<img src="{{ site.baseurl }}/images/primer-nestedarrayparsehistory.png">{: .img-center  width="45%"}
 
 Remember the scaling script from before? We're now going to take curve-length adjustment to the next level 
 using nested lists. The logic of this script will be the same, but the algorithm for shortening a curve will be replaced with the following one (the illustration shows the first eight iterations of the algorithm):
 
-<img src="{{ site.baseurl }}/images/primer-curvesmoothing.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-curvesmoothing.svg">{: .img-center  width="100%"}
 
 Every control-point or 'vertex' of the original curve (except the ones at the end) will be averaged with its neighbors in order to smooth the curve. With every iteration the curve will become shorter and we will abort as soon a certain threshold length has been reached. The curve can never become shorter than the distance between the first and last control-point, so we need to make sure our goals are actually feasible before we start a potentially endless loop. Note that the algorithm is approximating, it may not be endless but it could still take a long time to complete. We will not support closed or periodic curves. 
 

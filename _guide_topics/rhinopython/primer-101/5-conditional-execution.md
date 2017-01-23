@@ -154,7 +154,7 @@ if __name__=="__main__":
     viewportclock()
 ```	
 
-<img src="{{ site.baseurl }}/images/primer-viewportclock.svg" width="50%" float="right">
+<img src="{{ site.baseurl }}/images/primer-viewportclock.svg">{: .img-center  width="40%"}
 
 
 Here's how it works:

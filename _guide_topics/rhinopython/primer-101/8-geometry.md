@@ -24,7 +24,7 @@ openNURBS™ code since RhinoScript wraps it all up into an easy-to-swallow pack
 
 All objects in Rhino are composed of a geometry part and an attribute part. There are quite a few different geometry types but the attributes always follow the same format. The attributes store information such as object name, color, layer, isocurve density, linetype and so on. Not all attributes make sense for all geometry types, points for example do not use linetypes or materials but they are capable of storing this information nevertheless. Most attributes and properties are fairly straightforward and can be read and assigned to objects at will. 
 
-<img src="{{ site.baseurl }}/images/primer-rhinoobjects.svg" width="90%" float="right">
+<img src="{{ site.baseurl }}/images/primer-rhinoobjects.svg">{: .img-center  width="90%"}
 
 This table lists most of the attributes and properties which are available to plugin developers. Most of these have been wrapped in the RhinoScript plugin, others are missing at this point in time and the custom user data element is special. We'll get to user data after we're done with the basic geometry chapters.
 
@@ -64,7 +64,7 @@ if __name__=="__main__":
     displayobjectattributes(id)
 ```
 
-<img src="{{ site.baseurl }}/images/primer-objectattributedialog.png" width="45%" float="right">
+<img src="{{ site.baseurl }}/images/primer-objectattributedialog.png">{: .img-center  width="45%"}
 
 ## 8.3 Points and Pointclouds
 
@@ -72,7 +72,7 @@ Everything begins with points. A point is nothing more than a list of values cal
 
 Points in 3D space, or R3 thus have three coordinates, usually referred to as [x,y,z]. Points in R2 have only two coordinates which are either called [x,y] or [u,v] depending on what kind of two dimensional space we're talking about. Points in R1 are denoted with a single value. Although we tend not to think of one-dimensional points as 'points', there is no mathematical difference; the same rules apply. One-dimensional points are often referred to as 'parameters' and we denote them with [t] or [p].
 
-<img src="{{ site.baseurl }}/images/primer-rhinospaces.svg" width="90%" float="right">
+<img src="{{ site.baseurl }}/images/primer-rhinospaces.svg">{: .img-center  width="90%"}
 
 The image on the left shows the R3 world space, it is continuous and infinite. The x-coordinate of a point in this space is the projection (the red dotted line) of that point onto the x-axis (the red solid line). Points are always specified in world coordinates in Rhino.
 
@@ -120,7 +120,7 @@ if __name__=="__main__":
     main()
 ```
 
-<img src="{{ site.baseurl }}/images/primer-curveparameterspace.svg" width="45%" float="right">
+<img src="{{ site.baseurl }}/images/primer-curveparameterspace.svg">{: .img-center  width="45%"}
 
 For no good reason whatsoever, we'll start with the bottom most function:
 
@@ -187,7 +187,7 @@ Since we're calling this function a lot (once for every point we want to add), i
 
 The distribution of R1 points on a spiral is not very enticing since it approximates a division by equal length segments in R3 space. When we run the same script on less regular curves it becomes easier to grasp what parameter space is all about:
 
-<img src="{{ site.baseurl }}/images/primer-curvestructure.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-curvestructure.svg">{: .img-center  width="100%"}
 
 Let's take a look at an example which uses all parameter spaces we've discussed so far:
 
@@ -258,7 +258,7 @@ Told you it was a piece of cake...
 One more time just for kicks. We project the R1 parameter coordinate on the curve into 3D space (Step A), then we project that R3 coordinate onto the surface getting the R2 coordinate of the closest point (Step B). We evaluate the surface at R2, getting the R3 coordinate in 3D world space (Step C), and we finally measure the distance between the two R3 points to determine the deviation:
 
 
-<img src="{{ site.baseurl }}/images/primer-surfaceparameterspacediagram.svg" width="60%" float="right">
+<img src="{{ site.baseurl }}/images/primer-surfaceparameterspacediagram.svg">{: .img-center  width="60%"}
 
 ## 8.4 Lines and Polylines
 
@@ -298,7 +298,7 @@ def SubDividePolyline(arrV)
     return arrSubD
 ```
 
-<img src="{{ site.baseurl }}/images/primer-polylinetonurbsdragchange.png" width="90%" float="right">
+<img src="{{ site.baseurl }}/images/primer-polylinetonurbsdragchange.png">{: .img-center  width="90%"}
 
 No rocket science yet, but brace yourself for the next bit...
 
@@ -400,7 +400,7 @@ The underlying theory of this algorithm is synonymous with the simulation of a c
 In order to simulate a rubber band we require two steps; smoothing and projecting. First we allow the rubber band to contract (it always wants to contract into a straight line between [A] and [B]). This contraction happens in R3 space which means the vertices of the polyline will probably end up away from the surface. We must then re-impose these surface constraints. These two operations have been hoisted into functions #2 and #3.
 
 
-<img src="{{ site.baseurl }}/images/primer-geodesiccurvediagram.svg" width="65%" float="right">
+<img src="{{ site.baseurl }}/images/primer-geodesiccurvediagram.svg">{: .img-center  width="65%"}
 
 The illustration depicts the two steps which compose a single iteration of the geodesic routine. The black polyline is projected onto the surface giving the red polyline. The red curve in turn is smoothed into the green  curve. Note that the actual algorithm performs these two steps in the reverse order; smoothing first, projection second.
 
@@ -602,7 +602,7 @@ def geodesiccurve():
 
 Planes are not genuine objects in Rhino, they are used to define a coordinate system in 3D world space. In fact, it's best to think of planes as vectors, they are merely mathematical constructs. Although planes are internally defined by a parametric equation, I find it easiest to think of them as a set of axes:
 
-<img src="{{ site.baseurl }}/images/primer-planedefinition.svg" width="45%" float="right">  
+<img src="{{ site.baseurl }}/images/primer-planedefinition.svg">{: .img-center  width="45%"}
 
 A plane definition is an array of one point and three vectors, the point marks the origin of the plane and the vectors represent the three axes. There are some rules to plane definitions, I.e. not every combination of points and vectors is a valid plane. If you create a plane using one of the RhinoScript plane methods you don't have to worry about this, since all the bookkeeping will be done for you. The rules are as follows:
 
@@ -671,7 +671,7 @@ The *rs.SurfaceFrame()* method returns a unitized frame whose axes point in the 
 
 Although the user is never confronted with parametric objects in Rhino, the openNURBS™ kernel has a certain set of mathematical primitives which are stored parametrically. Examples of these are cylinders, spheres, circles, revolutions and sum-surfaces. To highlight the difference between explicit (parametric) and implicit circles:
 
-<img src="{{ site.baseurl }}/images/primer-circleschart.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-circleschart.svg">{: .img-center  width="100%"}
 
 When adding circles to Rhino through scripting, we can either use the Plane+Radius approach or we can use a 3-Point approach (which is internally translated into Plane+Radius). You may remember that circles are tightly linked with sines and cosines; those lovable, undulating waves. We're going to create a script which packs circles with a predefined radius onto a sphere with another predefined radius. Now, before we start and I give away the answer, I'd like you to take a minute and think about this problem.
 
@@ -685,7 +685,7 @@ Rusin's algorithm works as follows:
 
 No wait, back up. The first thing to realize is how a sphere actually works. Only once we master spheres can we start packing them with circles. In Rhino, a sphere is a surface of revolution, which has two singularities and a single seam:
 
-<img src="{{ site.baseurl }}/images/primer-uv-map.svg" width="80%" float="right">
+<img src="{{ site.baseurl }}/images/primer-uv-map.svg">{: .img-center  width="80%"}
 
 The north pole (the black dot in the left most image) and the south pole (the white dot in the same image) are both on the main axis of the sphere and the seam (the thick edge) connects the two. In essence, a sphere is a rectangular plane bent in two directions, where the left and right side meet up to form the seam and the top and bottom edge are compressed into a single point each (a singularity). This coordinate system should be familiar since we use the same one for our own planet. However, our planet is divided into latitude and longitude degrees, whereas spheres are defined by latitude and longitude radians. The numeric domain of the latitude of the sphere starts in the south pole with -½π, reaches 0.0 at the equator and finally terminates with ½π at the north pole. The longitudinal domain starts and stops at the seam and travels around the sphere from 0.0 to 2π. Now you also know why it is called a 'seam' in the first place; it's where the domain suddenly jumps from one value to another, distant one.
 
@@ -731,7 +731,7 @@ def DistributeCirclesOnSphere():
         phi += phi_step
     rs.EnableRedraw(True)
 ```
-<img src="{{ site.baseurl }}/images/primer-spherepack.svg" width="45%" float="right">
+<img src="{{ site.baseurl }}/images/primer-spherepack.svg">{: .img-center  width="45%"}
 
 <table rules="rows">
 <tr>
@@ -794,7 +794,7 @@ Ellipses essentially work the same as circles, with the difference that you have
 
 The following example script demonstrates very clearly how the orientation of the base plane and the ellipse correspond. Consider the standard curvature analysis graph as shown on the left:
 
-<img src="{{ site.baseurl }}/images/primer-curvaturespline.svg" width="80%" float="right">
+<img src="{{ site.baseurl }}/images/primer-curvaturespline.svg">{: .img-center  width="80%"}
 
 It gives a clear impression of the range of different curvatures in the spline, but it doesn't communicate the helical twisting of the curvature very well. Parts of the spline that are near-linear tend to have a garbled curvature since they are the transition from one well defined bend to another. The arrows in the left image indicate these areas of twisting but it is hard to deduce this from the curvature graph alone. The upcoming script will use the curvature information to loft a surface through a set of ellipses which have been oriented into the curvature plane of the local spline geometry. The ellipses have a small radius in the bending plane of the curve and a large one perpendicular to the bending plane. Since we will not be using the strength of the curvature but only its orientation, small details will become very apparent. 
 
@@ -890,7 +890,7 @@ Since the topic of Arcs isn't much different from the topic of Circles, I though
 
 Imagine a box in 3D space which contains a number of points within its volume. This box exhibits a single behavioral pattern which is recursive. The recursive function evaluates a single conditional statement: {when the number of contained points exceeds a certain threshold value then subdivide into 8 smaller boxes, otherwise add yourself to the document}. It would be hard to come up with an easier If…Else statement. Yet, because this behavior is also exhibited by all newly created boxes, it bursts into a chain of recursion, resulting in the voxel spaces in the images below:
 
-<img src="{{ site.baseurl }}/images/primer-threshold.svg" width="80%" float="right">
+<img src="{{ site.baseurl }}/images/primer-threshold.svg">{: .img-center  width="80%"}
 
 The input in these cases was a large pointcloud shaped like the upper half of a sphere. There was also a dense spot with a higher than average concentration of points. Because of the approximating pattern of the subdivision, the recursive cascade results in these beautiful stacks. Trying to achieve this result without the use of recursion would entail a humongous amount of bookkeeping and many, many lines of code.
 Before we can get to the cool bit we have to write some of the supporting functions, which -I hate to say it- once again involve goniometry (the mathematics of angles).
@@ -995,18 +995,16 @@ def AddArcDir(ptStart, ptEnd, vecDir):
 
 ![{{ site.baseurl }}/images/primer-arctree.svg]({{ site.baseurl }}/images/primer-arctree.svg){: .float-img-right width="375"}
 
-
 We need this function in order to build a recursive tree-generator which outputs trees made of arcs. Our trees will be governed by a set of five variables but -due to the 
 flexible nature of the recursive paradigm- it will be very easy to add more behavioral patterns. The growing algorithm as implemented in this example is very simple and doesn't allow a great deal of variation.
 
 The five base parameters are:
 
-Propagation factor
-
-# Twig length
-# Twig length mutation
-# Twig angle
-# Twig angle mutation
+1. Propagation factor  
+2. Twig length  
+3. Twig length mutation  
+4. Twig angle  
+5. Twig angle mutation  
 
 The propagation-factor is a numeric range which indicates the minimum and maximum number of twigs that grow at the end of every branch. This is a totally random affair, which is why it is called a "factor" rather than a "number". More on random numbers in a minute. The twig-length and twig-length-mutation variables control the -as you probably guessed- length of the twigs and how the length changes with every twig generation. The twig-angle and twig-angle-mutation work in a similar fashion.
 
@@ -1017,10 +1015,12 @@ The actual recursive bit of this algorithm will not concern itself with the addi
 
 The adjacent illustration shows the algorithm we'll be using for twig propagation. The red curve is the branch-arc and we need to populate the end with any number of twig-arcs. Point {A} and Vector {D} are dictated by the shape of the branch but we are free to pick point {B} at random provided we remain within the limits set by the length and angle constraints. The complete set of possible end-points is drawn as the yellow cone. We're going to use a sequence of Vector methods to get a random point {B} in this shape:
 
-# Create a new vector {T} parallel to {D}
-# Resize {T} to have a length between {Lmin} and {Lmax}
-# Mutate {T} to deviate a bit from {D}
-# Rotate {T} around {D} to randomize the orientation
+1. Create a new vector {T} parallel to {D}
+2. Resize {T} to have a length between {Lmin} and {Lmax}
+3. Mutate {T} to deviate a bit from {D}
+4. Rotate {T} around {D} to randomize the orientation
+
+&nbsp;{: .clear-img}  
 
 ```python
 def RandomPointInCone( origin, direction, minDistance, maxDistance, maxAngle):
@@ -1163,11 +1163,11 @@ The thing to realize is that the call is now different. We're putting in differe
 
 It would have been possible to code this tree-generator in an iterative (For loops) fashion. The tree would look the same even though the code would be very different (probably a lot more lines). The order in which the branches are added would very probably also have differed. The trees below are archetypal, digital trees, the one on the left generated using iteration, the one on the right generated using recursion. Note the difference in branch order. If you look carefully at the recursive function on the previous page you'll probably be able to work out where this difference comes from...
 
-<img src="{{ site.baseurl }}/images/primer_iterativetree_vs_recursivetree.svg" width="80%" float="right">
+<img src="{{ site.baseurl }}/images/primer_iterativetree_vs_recursivetree.svg">{: .img-center  width="80%"}
 
 A small comparison table for different setting combinations. Please note that the trees have a very high random component.
 
-<img src="{{ site.baseurl }}/images/primer-treechart.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-treechart.svg">{: .img-center  width="100%"}
 
 ## 8.7 Nurbs-curves
 
@@ -1175,7 +1175,7 @@ Circles and arcs are all fine and dandy, but they cannot be used to draw freefor
 
 Before we start with NURBS curves (the mathematics of which are a bit too complex for a scripting primer) I'd like to give you a sense of how splines work in general and Béziers work in particular. I'll explain the de Casteljau algorithm which is a very straightforward way of evaluating properties of simple splines. In practice, this algorithm will rarely be used since its performance is worse than alternate approaches, but due to its visual appeal it is easier to 'get a feel' for it.
 
-<img src="{{ site.baseurl }}/images/primer-nurbsalgorithm.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-nurbsalgorithm.svg">{: .img-center  width="100%"}
 
 Splines limited to four control points were not the end of the revolution of course. Soon, more advanced spline definitions were formulated one of which is the NURBS curve. (Just to set the record straight; NURBS stands for Non-Uniform Rational [Basic/Basis] Spline and not Bézier-Spline as some people think. In fact, the Rhino help file gets it right, but I doubt many of you have read the glossary section, I only found out just now.) Bézier splines are a subset of NURBS curves, meaning that every Bézier spline can be represented by a NURBS curve, but not the other way around. Other curve types still in use today (but not available in Rhino) are Hermite, Cardinal, Catmull-Rom, Beta and Akima splines, but this is not a complete list. Hermite curves for example are used by the Bongo animation plug-in to smoothly transform objects through a number of keyframes.
 
@@ -1185,7 +1185,7 @@ Every NURBS curve has a number associated with it which represents the degree. T
 
 As you will recall from the beginning of this section, a quadratic Bézier curve is defined by four control points. A quadratic NURBS curve however can be defined by any number of control points (any number larger than three that is), which in turn means that the entire curve consists of a number of connected pieces. The illustration below shows a D3 curve with 10 control points. All the individual pieces have been given a different color. As you can see each piece has a rather simple shape; a shape you could approximate with a traditional, four-point Bézier curve. Now you know why NURBS curves and other splines are often described as "piece-wise curves".
 
-<img src="{{ site.baseurl }}/images/primer-piecewisecurve.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-piecewisecurve.svg">{: .img-center  width="100%"}
 
 The shape of the red piece is entirely dictated by the first four control points. In fact, since this is a D3 curve, every piece is defined by four control points. So the second (orange) piece is defined by points {A; B; C; D}. The big difference between these pieces and a traditional Bézier curve is that the pieces stop short of the local control polygon. Instead of going all the way to {D}, the orange piece terminates somewhere in the vicinity of {C} and gives way to the green piece. Due to the mathematical magic of spline curves, the orange and green pieces fit perfectly, they have an identical position, tangency and curvature at point 4.
 
@@ -1197,7 +1197,7 @@ Where $${K_N}$$ is the knot count, $${P_N}$$ is the point count and $${D}$$ is t
 
 In the image on the previous page, the red and purple pieces do in fact touch the control polygon at the beginning and end, but we have to make some effort to stretch them this far. This effort is called "clamping", and it is achieved by stacking a lot of knots together. You can see that the number of knots we need to collapse in order to get the curve to touch a control-point is the same as the degree of the curve:
 
-<img src="{{ site.baseurl }}/images/primer-curveknot.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-curveknot.svg">{: .img-center  width="100%"}
 
 A clamped curve always has a bunch of knots at the beginning and end (periodic curves do not, but we'll get to that later). If a curve has knot clusters on the interior as well, then it will touch one of the interior control points and we have a kinked curve. There is a lot more to know about knots, but I suggest we continue with some simple nurbs curves and let Rhino worry about the knot vector for the time being.
 
@@ -1221,7 +1221,7 @@ The logic of our BlendCorners script is simple:
 
 Or, in graphic form:
 
-<img src="{{ site.baseurl }}/images/primer-blendcurved5.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-blendcurved5.svg">{: .img-center  width="100%"}
 
 The first image shows our input curve positioned on a unit grid. The shortest segment has a length of 1.0, the longest segment a length of 6.0. If we're going to blend all corners with a radius of 0.75 (the circles in the second image) we can see that one of the edges has a conflict of overlapping blend radii.
 
@@ -1318,13 +1318,13 @@ To demonstrate, we're going to create a script that creates iso-distance-curves 
 
 The description of our algorithm is very straightforward, but I promise you that the actual script itself will be the hardest thing you've ever done.
 
-<img src="{{ site.baseurl }}/images/primer-isocurves.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-isocurves.svg">{: .img-center  width="100%"}
 
 Our script will take any base surface (image A) and extract a number of isocurves (image B). Then, every isocurve is trimmed to a specific length (image C) and the end-points are connected to give the iso-distance-curve (the red curve in image D). Note that we are using isocurves in the v-direction to calculate the iso-distance-curve in the u-direction. This way, it doesn't matter much that the spacing of isocurves isn't distributed equally. Also note that this method is only useful for offsetting surface edges as opposed to *_OffsetCrvOnSrf* which can offset any curve.
 
 We can use the RhinoScript methods *rs.ExtractIsoCurve()* and *rs.AddInterpCrvOnSrf()* for steps B and D, but step C is going to take some further thought. It is possible to divide the extracted isocurve using a fixed length, which will give us a whole list of points, the second of which marks the proper solution:
 
-<img src="{{ site.baseurl }}/images/python-dividecurvesearching.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/python-dividecurvesearching.svg">{: .img-center  width="100%"}
 
 In the example above, the curve has been divided into equal length segments of 5.0 units each. The red point (the second item in the collection) is the answer we're looking for. All the other points are of no use to us, and you can imagine that the shorter the distance we're looking for, the more redundant points we get. Under normal circumstances I would not think twice and simply use the *rs.DivideCurveLength()* method. However, I'll take this opportunity to introduce you to one of the most ubiquitous, popular and prevalent algorithms in the field of programming today: binary searching.
 
@@ -1343,7 +1343,7 @@ Once we have a sorted list it is possible to improve our worst case performance 
 Binary-searching does far better. Let us return to our actual problem to see how binary-searching works; find the point on a curve that marks a specific length along the curve. In the image below, the point we are looking for has been indicated with a small yellow tag, but of course we don't know where it is when we begin our search. Instead of starting at the beginning of the curve, we start halfway between {tmin} and {tmax} (halfway the domain of the curve). Since we can ask Rhino what the length is of a certain curve subdomain we can calculate the length from {tmin} to {1}. This happens to be way too much, we're looking for something less than half this length. Thus we divide the bit between {tmin} and {1} in half yet again, giving us {2}. We again measure the distance between {tmin} and {2}, and see that again we're too high, but this time only just. We keep on dividing the remainder of the domain in half until we find a value {6} which is close enough for our purposes:
 
 
-<img src="{{ site.baseurl }}/images/primerbinarycurvesearching.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primerbinarycurvesearching.svg">{: .img-center  width="100%"}
 
 This is an example of the simplest implementation of a binary-search algorithm and the performance of binary searching is O(log n) which is a fancy way of saying that it's fast. Really, really fast. And what's more, when we enlarge the size of the collection we're searching, the time taken to find an answer doesn't increase in a similar fashion (as it does with list-searching). Instead, it becomes relatively faster and faster as the size of the collection grows. For example, if we double the size of the array we're searching to 20,000 items, a list-search algorithm will take twice as long to find the answer, whereas a binary-searcher only takes ~1.075 times as long.
 
@@ -1428,7 +1428,7 @@ I have unleashed this function on a smooth curve with a fairly well distributed 
 
 I've greyed out the subdomain bound parameters that remained identical between two adjacent steps. You can see that sometimes multiple steps in the same direction are required.
 
-<img src="{{ site.baseurl }}/images/primer-subdivisionchart.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-subdivisionchart.svg">{: .img-center  width="100%"}
 
 Now for the rest of the script as outlines on page 78:
 
@@ -1464,21 +1464,24 @@ If I've done my job so far, the above shouldn't require any explanation. All of 
 
 The image on the right shows the result of the script, where offset values are all multiples of 10. The dark green lines across the green strip (between offsets 80.0 and 90.0)  are all exactly 10.0 units long. 
 
+&nbsp;{: .clear-img}  
+
+  
 ### 8.7.3 Geometric curve properties
 
 Since curves are geometric objects, they possess a number of properties or characteristics which can be used to describe or analyze them. For example, every curve has a starting coordinate and every curve has an ending coordinate. When the distance between these two coordinates is zero, the curve is closed. Also, every curve has a number of control-points, if all these points are located in the same plane, the curve as a whole is planar. Some properties apply to the curve as a whole, others only apply to specific points on the curve. For example, planarity is a global property while tangent vectors are a local property. Also, some properties only apply to some curve types. So far we've dealt with lines, polylines, circles, ellipses, arcs and nurbs curves:
 
-<img src="{{ site.baseurl }}/images/primer-curvetypes.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-curvetypes.svg">{: .img-center  width="100%"}
 
 The last available curve type in Rhino is the polycurve, which is nothing more than an amalgamation of other types. A polycurve can be a series of line curves for example, in which case it behaves similarly to a polyline. But it can also be a combination of lines, arcs and nurbs curves with different degrees. Since all the individual segments have to touch each other (G0 continuity is a requirement for polycurve segments), polycurves cannot contain closed segments. However, no matter how complex the polycurve, it can always be represented by a nurbs curve. All of the above types can be represented by a nurbs curve.
 
 The difference between an actual circle and a nurbs-curve-that-looks-like-a-circle is the way it is stored. A nurbs curve doesn't have a Radius property for example, nor a Plane in which it is defined. It is possible to reconstruct these properties by evaluating derivatives and tangent vector and frames and so on and so forth, but the data isn't readily available. In short, nurbs curves lack some global properties that other curve types do have. This is not a big issue, it's easy to remember what properties a nurbs curve does and doesn't have. It is much harder to deal with local properties that are not continuous. For example, imagine a polycurve which has a zero-length line segment embedded somewhere inside. The t-parameter at the line beginning is a different value from the t-parameter at the end, meaning we have a curve subdomain which has zero length. It is impossible to calculate a normal vector inside this domain:
 
-<img src="{{ site.baseurl }}/images/primer-polycurvecompound.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-polycurvecompound.svg">{: .img-center  width="100%"}
 
 This polycurve consists of five curve segments (a nurbs-curve, a zero-length line-segment, a proper line-segment, a 90° arc and another nurbs-curve respectively) all of which touch each other at the indicated t-parameters. None of them are tangency continuous, meaning that if you ask for the tangent at parameter {t<sub>3</sub>}, you might either get the tangent at the end of the purple segment or the tangent at the beginning of the green segment. However, if you ask for the tangent vector halfway between {t<sub>1</sub>} and {t<sub>2</sub>}, you get nothing. The curvature data domain has an even bigger hole in it, since both line-segments lack any curvature:
 
-<img src="{{ site.baseurl }}/images/primer-polycurvelocalevaluation.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-polycurvelocalevaluation.svg">{: .img-center  width="100%"}
 
 When using curve properties such as tangents, curvature or perp-frames, we must always be careful to not blindly march on without checking for property discontinuities. An example of an algorithm that has to deal with this would be the *_CurvatureGraph* in Rhino. It works on all curve types, which means it must be able to detect and ignore linear and zero-length segments that lack curvature.
 
@@ -1486,7 +1489,7 @@ One thing the *_CurvatureGraph* command does not do is insert the curvature grap
 
 In order to avoid some *G* continuity problems we're going to tackle the problem span by span. In case you haven't suffered left-hemisphere meltdown yet; the shape of every knot-span is determined by a certain mathematical function known as a polynomial and is (in most cases) completely smooth. A span-by-span approach means breaking up the curve into its elementary pieces, as shown on the left:
 
-<img src="{{ site.baseurl }}/images/primer-polycurvecurvaturegraph.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-polycurvecurvaturegraph.svg">{: .img-center  width="100%"}
 
 This is a polycurve object consisting of seven pieces; lines {A; C; E}, arcs {B; D} and nurbs curves {F; G}. When we convert the polycurve to a nurbs representation we get a degree 5 nurbs curve with 62 pieces (knot-spans). Since this curve was made by joining a bunch of other curves together, there are kinks between all individual segments. A kink is defined as a grouping of identical knots on the interior of a curve, meaning that the curve actually intersects one of its interior control-points. A kink therefore has the potential to become a sharp crease in an otherwise smooth curve, but in our case all kinks connect segments that are G1 continuous. The kinks have been marked by white circles in the image on the right. As you can see there are also kinks in the middle of the arc segments {B; D}, which were there before we joined the curves together. In total this curve has ten kinks, and every kink is a grouping of five similar knot parameters (this is a D<sup>5</sup> curve). Thus we have a sum-total of 40 zero-length knot-spans. Never mind about the math though, the important thing is that we should prepare for a bunch of zero-length spans so we can ignore them upon confrontation.
 
@@ -1496,7 +1499,7 @@ I'm sure all of this sounds terribly complicated. In fact, I'm sure it is terrib
 
 Since we know exactly what we need to do in order to mimic the *_CurvatureGraph* command, we might as well start at the bottom. The first thing we need is a function that creates a curvature graph on a subcurve, then we can call this function with the knot parameters as sub-domains in order to generate a graph for the whole curve:
 
-<img src="{{ site.baseurl }}/images/primer-spancurvaturegraph.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-spancurvaturegraph.svg">{: .img-center  width="100%"}
 
 Our function will need to know the ID of the curve in question, the subdomain {t<sub>0</sub>; t<sub>1</sub>}, the number of samples it is allowed to take in this domain and the scale of the curvature graph. The return value should be a collection of object IDs which were inserted to make the graph. This means all the perpendicular red segments and the  dashed black curve connecting them.
 
@@ -1714,7 +1717,7 @@ Instead of Nurbs surfaces (which would be the next logical step after nurbs curv
 
 Instead of treating a surface as a deformation of a rectangular nurbs patch, meshes are defined locally, which means that a single mesh surface can have any topology it wants. A mesh surface can even be a disjoint (not connected) compound of floating surfaces, something which is absolutely impossible with Rhino nurbs surfaces. Because meshes are defined locally, they can also store more information directly inside the mesh format, such as colors, texture-coordinates and normals. The tantalizing image below indicates the local properties that we can access via RhinoScript. Most of these properties are optional or have default values. The only essential ones are the vertices and the faces.
 
-<img src="{{ site.baseurl }}/images/primer-meshtopology.svg" width="80%" float="right">
+<img src="{{ site.baseurl }}/images/primer-meshtopology.svg">{: .img-center  width="80%"}
 
 It is important to understand the pros and cons of meshes over alternative surface paradigms, so you can make an informed decision about which one to use for a certain task. Most differences between meshes and nurbs are self-evident and flow from the way in which they are defined. For example, you can delete any number of polygons from the mesh and still have a valid object, whereas you cannot delete knot spans without breaking apart the nurbs geometry. There's a number of things to consider which are not implied directly by the theory though. 
 
@@ -1728,14 +1731,14 @@ As mentioned before, only the vertices and faces are essential components of the
 
 According to MathWorld.com topology is "*the mathematical study of the properties that are preserved through deformations, twistings, and stretching of objects.*" In other words, topology doesn't care about size, shape or smell, it only deals with the platonic properties of objects, such as "how many holes does it have?", "how many naked edges are there?" and "how do I get from Paris to Lyon without passing any tollbooths?". The field of topology is partly common-sense (everybody intuitively understands the basics) and partly abstract-beyond-comprehension. Luckily we're only confronted with the intuitive part here.
 
-<img src="{{ site.baseurl }}/images/primer-topology.svg" width="80%" float="right">
+<img src="{{ site.baseurl }}/images/primer-topology.svg">{: .img-center  width="80%"}
 
 If you look at the images above, you'll see a number of surfaces that are topologically identical (except {E}) but geometrically different. You can bend shape {A} and end up with shape {B}; all you have to do is reposition some of the vertices. Then if you bend it even further you get {C} and eventually {D} where the right edge has been bend so far it touches the edge on the opposite side of the surface. It is not until you merge the edges 
 (shape {E}) that this shape suddenly changes its platonic essence, i.e. it goes from a shape with four edges to a shape with only two edges (and these two remaining edges are now closed loops as well). Do note that shapes {D} and {E} are geometrically identical, which is perhaps a little surprising.
 
 The vertices of a mesh object are a list of 3D point coordinates. They can be located anywhere in space and they control the size and form of the mesh. The faces on the other hand do not contain any coordinate data, they merely indicate how the vertices are to be connected:
 
-<img src="{{ site.baseurl }}/images/primer-connected.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-connected.svg">{: .img-center  width="100%"}
 
 Here you see a very simple mesh with sixteen vertices and nine faces. Commands like *_Scale*, *_Move* and *_Bend* only affect the vertex-list, commands like *_TriangulateMesh* and *_SwapMeshEdge* only affect the face-list, commands like *_ReduceMesh* and *_MeshTrim* affect both lists. Note that the last face {*I*} has its corners defined in a clockwise fashion, whereas all the other faces are defined counter-clockwise. Although this makes no geometric difference, it does affect how the mesh normals are calculated and one should generally avoid creating meshes that are cw/ccw inconsistent.
 
@@ -1859,7 +1862,7 @@ def createmeshfaces(resolution):
 
 Writing a tool which works usually isn't enough when you write it for other people. Apart from just working, a script should also be straightforward to use. It shouldn't allow you to enter values that will cause it to crash (come to think of it, it shouldn't crash at all), it should not take an eternity to complete and it should provide sensible defaults. In the case of this script, the user will have to enter a function which is potentially very complex, and also four values to define the numeric domain in {x} and {y} directions. This is quite a lot of input and chances are that only minor adjustments will be made during successive runs of the script. It therefore makes a lot of sense to remember the last used settings, so they become the defaults the next time around. There's a number of ways of storing persistent data when using scripts, each with its own advantages:
 
-<img src="{{ site.baseurl }}/images/primer-settings.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-settings.svg">{: .img-center  width="100%"}
 
 We'll be using a \*.txt file to store our data since it involves very little code and it survives a Rhino restart. An \*.txt file is a textfile which stores a number of Strings in a one-level hierarchical format. 
 
@@ -1898,7 +1901,7 @@ def SaveFunctionData(strFunction, fDomain, Resolution):
 
 The contents of the \*.txt file should look something like this:
 
-<img src="{{ site.baseurl }}/images/primer-inifile.svg" width="90%" float="right">
+<img src="{{ site.baseurl }}/images/primer-inifile.svg">{: .img-center  width="90%"}
 
 Reading data from an \*.txt file is slightly more involved, because there is no guarantee the file exists yet. Indeed, the first time you run this script there won't be a settings file yet and we need to make sure we supply sensible defaults:
 
@@ -1962,7 +1965,7 @@ The fourth big problem we need to solve has to do with nonsensical users (a cert
 
 For example, if you try to calculate the value of *Sqr(-4.0)*, the script crashes with the "Invalid procedure call or argument" error message. The same applies to *Log(-4.0)*. These functions crash because there exists no answer for the requested value. Other types of mathematical problems arise with large numbers. *Exp(1000)* for example results in an "Overflow" error because the result falls outside the double range. Another favorite is the "Division by zero" error. The following table lists the most common errors that occur in the Python engine:
 
-<img src="{{ site.baseurl }}/images/primer-errorchart.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-errorchart.svg">{: .img-center  width="100%"}
 
 See [Python's list of Built-In Exceptions](http://docs.python.org/release/3.1.3/library/exceptions.html#bltin-exceptions) for the complete list and descriptions of each.
 
@@ -2075,7 +2078,7 @@ The default function Cos(Sqr(x^2 + y^2)) is already quite pretty, but here are s
 
 The vertex and face lists of a mesh object define its form (geometry and topology) but meshes can also have local display attributes. Colors and Texture-coordinates are two of these that we can control via RhinoScript.  The color list (usually referred to as 'False-Colors') is an optional mesh property which defines individual colors for every vertex in the mesh. The only Rhino commands that I know of that generate meshes with false-color data are the analysis commands *(_DraftAngleAnalysis, _ThicknessAnalysis, _CurvatureAnalysis and so on and so forth)* but unfortunately they do not allow you to export the analysis meshes. Before we do something useful with False-Color meshes, let's do something simple, like assigning random colours to a mesh object:
 
-<img src="{{ site.baseurl }}/images/primer-meshfalsecolours.svg" width="80%" float="right">
+<img src="{{ site.baseurl }}/images/primer-meshfalsecolours.svg">{: .img-center  width="80%"}
 
 ```python
 def randommeshcolors():
@@ -2114,7 +2117,7 @@ Random colors may be pretty, but they are not useful. All the Rhino analysis com
 
 We'll need a function who's purpose it is to generate an array of numbers (one for each vertex in a mesh) that define some kind of property. These numbers are then in turn translated into a gradient (red for the lowest number, white for the highest number in the set) and applied as the False-Color data to a new mesh object. In our case the property is the distance from a certain vertex to the point on a (poly)surface which is closest to that vertex:
 
-<img src="{{ site.baseurl }}/images/primer-boxcp.svg" width="80%" float="right">
+<img src="{{ site.baseurl }}/images/primer-boxcp.svg">{: .img-center  width="80%"}
 
 ![{{ site.baseurl }}/images/primer-loggraph.svg]({{ site.baseurl }}/images/primer-loggraph.svg){: .float-img-right width="300"}
 
@@ -2124,7 +2127,7 @@ Vertex {A} on the mesh has a point associated with it {Acp} on the box and the d
 
 As you can see pretty much all the variation is within the {0.0; 10.0} range, with just a single value radically larger. Now, if we used a linear approach, all the proximity values would resolve to completely red, except for the last one which would resolve to completely white. This is not a useful gradient. When you run all the proximity values through a logarithm you end up with a much more natural distribution:
 
-<img src="{{ site.baseurl }}/images/primer-gradienttable.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-gradienttable.svg">{: .img-center  width="100%"}
 
 There is just one snag, the logarithm function returns negative numbers for input between zero and one. In fact, the logarithm of zero is minus-infinity, which plays havoc with all mathematics down the road since infinity is way beyond the range of numbers we can represent using doubles. And since the smallest possible distance between two points in space is zero, we cannot just apply a logarithm and expect our script to work. The solution is a simple one, add 1.0 to all distance values prior to calculating the logarithm, and all our results are nice, positive numbers.
 
@@ -2232,7 +2235,7 @@ In fact, meshes (like nurbs) are a fairly recent discovery whose rise to power d
 <br><br>
 Apart from a few primitive surface types such as spheres, cones, planes and cylinders, Rhino supports three kinds of freeform surface types, the most useful of which is the Nurbs surface. Similar to curves, all possible surface shapes can be represented by a Nurbs surface, and this is the default fall-back in Rhino. It is also by far the most useful surface definition and the one we will be focusing on.
 
-<img src="{{ site.baseurl }}/images/primer-primitives.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-primitives.svg">{: .img-center  width="100%"}
 
 ### 8.9.1 NURBS Surfaces
 
@@ -2246,7 +2249,7 @@ But lets start with something simple which doesn't actually involve NURBS surfac
 
 The problem we're facing is a mismatch between a given surface and a number of points that are supposed to be on it. We're going to have to change the surface so that the distance between it and the points is minimized. Since we should be able to supply a large amount of points (and since the number of surface control-points is limited and fixed) we'll have to figure out a way of deforming the surface in a non-linear fashion (i.e. translations and rotations alone will not get us there). Take a look at the images below which are a schematic representation of the problem:
 
-<img src="{{ site.baseurl }}/images/primer-pointonplane.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-pointonplane.svg">{: .img-center  width="100%"}
 
 For purposes of clarity I have unfolded a very twisted nurbs patch so that it is reduced to a rectangular grid of control-points. The diagram you're looking at is drawn in {uvw} space rather than world {xyz} space. The actual surface might be contorted in any number of ways, but we're only interested in the simplified {uvw} space. 
 
@@ -2260,7 +2263,7 @@ Our choices are already pretty limited by these constraints, but there are still
 
 $$f(y)=\frac{1}{x}$$
 
-<img src="{{ site.baseurl }}/images/primer-distanceweightfactor.svg" width="80%" float="right">
+<img src="{{ site.baseurl }}/images/primer-distanceweightfactor.svg">{: .img-center  width="80%"}
 
 As you can see, the domain of the graph goes from zero to infinity, and for every higher value of {x} we get a lower value of {y}, without {y} ever becoming zero. There's just one problem, a problem which only manifests itself in programming. For very small values of {x}, when the Greville point is very close to {S'}, the resulting {y} is very big indeed. When this distance becomes zero the weight factor becomes infinite, but we'll never get even this far. Even though the processor in your computer is in theory capable of representing numbers as large as 
 1.8 × 10308 (which isn't anywhere near infinity by any stretch of the imagination), when you start doing calculations with numbers approaching the extremes chances are you are going to cross over into binary no man's land and crash your pc. And that's not even to mention the deplorable mathematical accuracy at these levels of scale. Clearly, you might want to steer clear of very big and very small numbers altogether.
@@ -2377,7 +2380,7 @@ We've now dealt with all the utility functions. I know it's a bit annoying to de
 
 If we were to truly move each control point based directly on the inverse of its distance to {P'}, the hyperbolic diffusion decay of the sample points would be very noticeable in the final surface. Let's take a look at a simple case, a planar surface {Base} which has to be fitted to four points {A; B; C; D}. Three of these points are above the surface (positive distance), one is below the surface (negative distance):
 
-<img src="{{ site.baseurl }}/images/primer-hyperbolas.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-hyperbolas.svg">{: .img-center  width="100%"}
 
 On the left you see the four individual hyperbolas (one for each of the sample points) and on the right you see the result of a fitting operation which uses the hyperbola values directly to control control-point motion. Actually, the hyperbolas aren't drawn to scale, in reality they are much *(much)* thinner, but drawing them to scale would make them almost invisible since they would closely hug the horizontal and vertical lines. 
 
@@ -2387,7 +2390,7 @@ Lets assume our input surface is not already 'almost' good. This means that our 
 
 Have a close look at control points {S} and {T} in the illustration above. {S} has a very high diffusion factor (lots of yellow above it) whereas {T} has a low diffusion factor (thin slivers of all colors on both sides). But if we want to move both {S} and {T} substantial amounts, we need to somehow boost the length of the motion vector for {T}. If you divide the motion vector by the value of the added hyperbolas, you sort of 'unitize' all the motion vectors, resulting in the following section:
 
-<img src="{{ site.baseurl }}/images/primer-multisamplefitter-algorithm2.svg" width="60%" float="right">
+<img src="{{ site.baseurl }}/images/primer-multisamplefitter-algorithm2.svg">{: .img-center  width="60%"}
 
 which is a much smoother fit. The sag between {B} and {C} is not due to the shape of the original surface, but because between {B} and {C}, the other samples start to gain more relative influence and dragging the surface down towards them. Let's have a look at the code:
 
@@ -2541,7 +2544,7 @@ def DistributedSurfaceFitter():
 
 The diagrams and graphs I've used so far to illustrate the workings of this algorithm are all two-dimensional and display only simplified cases. The images on this page show the progression of a single solution in 3D space. I've started with a planar, rectangular nurbs patch of 30 × 30 control points and 36 points both below and above the initial surface. I allowed the algorithm to continue refining until the total deviation was less than 0.01 units.
 
-<img src="{{ site.baseurl }}/images/primer-iterations.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-iterations.svg">{: .img-center  width="100%"}
 
 ### 8.9.2 Surface Curvature
 
@@ -2559,7 +2562,7 @@ Surface curvature is not so straightforward. For one, there are multiple definit
 
 The most obvious way of evaluating surface curvature would be to slice it with a straight section through the point {P} we are interested in and then simply revert to curve curvature algorithms. But, as mentioned before, surfaces lack direction and it is thus not at all clear at which angle we should dissect the surface (we could use {u} and {v} directions, but those will not necessarily give you meaningful answers). Still, this approach is useful every now and again and it goes under the name of normal curvature. As you can see in the illustration below, there are an infinite number of sections through point {P} and thus an infinite number of answers to the question "what is the normal curvature at {P}?"
 
-<img src="{{ site.baseurl }}/images/primer-curvatures.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-curvatures.svg">{: .img-center  width="100%"}
 
 However, under typical circumstances there is only one answer to the question: "what is the highest normal curvature at {P}?". When you look at the complete set of all possible normal curvatures, you'll find that the surface is mostly flat in one direction and mostly bent in another. These two directions are therefore special and they constitute the principal curvatures of a surface. The two principal curvature directions are always perpendicular to each other and thus they are completely independent of {u} and {v} directions ({u} and {v} are not necessarily perpendicular).
 
@@ -2567,7 +2570,7 @@ Actually, things are more complicated since there might be multiple directions w
 
 This is not the end of the story. Starting with the set of all normal curvatures, we extracted definitions of the principal curvatures. Principal curvatures always come in pairs (minimum and maximum) and they are both values and directions. We are more often than not only interested in how much a surface bends, not particularly in which direction. One of the reasons for this is that the progression of principal curvature directions across the surface is not very smooth:
 
-<img src="{{ site.baseurl }}/images/primer-surfacek-tensor-field.svg" width="80%" float="right">
+<img src="{{ site.baseurl }}/images/primer-surfacek-tensor-field.svg">{: .img-center  width="80%"}
 
 The illustration on the left shows the directions of the maximum principal curvatures. As you can see there are threshold lines on the surface at which the principal direction suddenly makes 90º turns. The overall picture is chaotic and overly complex. We can use a standard tensor-smoothing algorithm to average each direction with its neighbours, resulting in the image on the right, which provides us with an already much more useful distribution (e.g. for texturing or patterning purposes), but now the vectors have lost their meaning. This is why the principal curvature directions are not a very useful surface property in every day life.
 
@@ -2579,7 +2582,7 @@ $$K_{Gauss}=K_{min} \cdot K_{max}$$
 
 Where J<sub>Gauss</sub> is the Gaussian curvature and l<sub>min</sub> and l<sub>max</sub> are the principal curvatures. Assuming you are completely comfortable with the behaviour of multiplications, we can identify a number of specific cases:
 
-<img src="{{ site.baseurl }}/images/primer-curvature-directions.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-curvature-directions.svg">{: .img-center  width="100%"}
 
 From this we can conclude that any surface which has zero Gaussian curvature everywhere can be unrolled into a flat sheet and any surface with negative Gaussian curvature everywhere can be made by stretching elastic cloth.
 
@@ -2610,11 +2613,11 @@ I created a vector field of maximum-principal curvature directions over the surf
 
 In this particular case we end up with a two-dimensional tensor space, where the tensor class T consist of a vector and a tangent plane:
 
-<img src="{{ site.baseurl }}/images/primer-tensormatrixes.svg" width="75%" float="right">
+<img src="{{ site.baseurl }}/images/primer-tensormatrixes.svg">{: .img-center  width="75%"}
 
 Since we're sampling the surface at regular parameter intervals in {u} and {v} directions, we end up with a matrix of tensors (a table of rows and columns). We can represent this easily with a two-dimensional list. We'll need two of these in our script since we need to store two separate data-entities; vectors and planes.
 
-<img src="{{ site.baseurl }}/images/primer-smoothing.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-smoothing.svg">{: .img-center  width="100%"}
 
 This progression of smoothing iterations clearly demonstrates the usefulness of a tensor-smoothing algorithm; it helps you to get rid of singularities and creases in any continuous tensor space.
 

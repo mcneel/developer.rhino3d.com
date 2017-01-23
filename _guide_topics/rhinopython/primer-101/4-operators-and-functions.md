@@ -32,7 +32,7 @@ The four lines of code above contain four kinds of code:
 
 Numbers and variables are well behind us now. Arithmetic operators should be familiar from everyday life, Python uses them in the same way as you used to during math classes. Python comes with a limited amount of arithmetic operators and they are always positioned between two variables or constants (a constant is a fixed number).  The function first signifies that we have imported math at the top of our code, using "import math", and then call a function that is within the math module called "sin()". Thus we write: math.sin(value). 
 
-<img src="{{ site.baseurl }}/images/primer-operators.svg" width="95%" float="right">
+<img src="{{ site.baseurl }}/images/primer-operators.svg">{: .img-center  width="95%"}
 
 
 ## 4.2 Careful…
@@ -114,25 +114,25 @@ As you can see the problem with Logical operators is not the theory, it's what h
 
 A good way to exercise your own boolean logic is to use Venn-diagrams. A Venn diagram is a graphical representation of boolean sets, where every region contains a (sub)set of values that share a common property. The most famous one is the three-circle diagram:
 
-<img src="{{ site.baseurl }}/images/primer-venn-1.svg" width="50%" float="right">
+<img src="{{ site.baseurl }}/images/primer-venn-1.svg">{: .img-center  width="50%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
 Every circular region contains all values that belong to a set; the top circle for example marks off set {A}. Every value inside that circle evaluates True for {A} and every value not in that circle evaluates False for {A}. If you're uncomfortable with "A, B and C", you can substitute them with *"Employed"*, *"Single"* and *"HomeOwner"*. By coloring the regions we can mimic boolean evaluation in programming code:
 
-<img src="{{ site.baseurl }}/images/primer-venn-2.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-venn-2.svg">{: .img-center  width="100%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
 Try to color the four diagrams below so they match the boolean logic:
 
-<img src="{{ site.baseurl }}/images/venn-blank.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/venn-blank.svg">{: .img-center  width="100%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
 Venn diagrams are useful for simple problems, but once you start dealing with more than three regions it becomes a bit opaque. The following image is an example of a 6-regional Venn diagram. Pretty, but not very practical:
 
-<img src="{{ site.baseurl }}/images/venn-complex.svg" width="35%" float="right">
+<img src="{{ site.baseurl }}/images/venn-complex.svg">{: .img-center  width="35%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
@@ -216,7 +216,7 @@ Time: (2011, 3, 10, 22, 17, 53, 3, 69, 0)
 
 Finally, at line 11, we reach the end of our quest. We tell Rhino to assign the new name to the old object:
 
-<img src="{{ site.baseurl }}/images/primer-objectname.jpg" width="40%" float="right">
+<img src="{{ site.baseurl }}/images/primer-objectname.jpg">{: .img-center  width="35%"}
 
 Instead of using *strNewName* to store the name String, we could have gotten away with the following:
 

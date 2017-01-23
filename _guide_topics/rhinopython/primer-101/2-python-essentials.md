@@ -104,7 +104,7 @@ billion to roughly plus two-billion. Every whole number between these extremes c
 Doubles are numeric variables which can store numbers with decimals. Doubles can be used to represent 
 numbers as large as 1.8×10308 and as small as 5.0×10-324, though in practise the range of numbers which can be accurately represented is much smaller. Those of you who are unfamiliar with scientific notation need not to worry, I shall not make a habit out of this. It is enough to know that the numeric range of doubles is truly enormous.
 		
-<img src="{{ site.baseurl }}/images/primer-integers.svg" width="75%" float="right">
+<img src="{{ site.baseurl }}/images/primer-integers.svg">{: .img-center  width="75%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
@@ -200,7 +200,7 @@ a = "The sqrt of 2.0 = " + str(math.sqrt(2.0))	# The sqrt of 2.0 = 1.41421356237
 
 Internally, a String is stored as a series of characters. Every character (or 'char') is taken from the Unicode table, which stores a grand total of ~100.000 different characters. The index into the unicode table for the question mark for example is 63, lowercase e is 101 and the blank space is 32:
 
-<img src="{{ site.baseurl }}/images/primer-strings.svg" width="75%" align="middle">
+<img src="{{ site.baseurl }}/images/primer-strings.svg">{: .img-center  width="75%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
@@ -237,7 +237,7 @@ a = "Apfelstrudel"
 
 When using a variable, you choose the name and then set it equal to a value (Number, String, Boolean etc).The name you get to pick yourself. In the example above we have used a, which is not the best of all possible choices. For one, it doesn't tell us anything about what the variable is used for or what kind of data it contains. A better name would be `strFood`. The str prefix indicates that we are dealing with a String variable here and the Food bit is hopefully fairly obvious. A widely used system for variable prefixes is as follows:
 
-<img src="{{ site.baseurl }}/images/primer-variable-type.svg" width="60%" height="300px">
+<img src="{{ site.baseurl }}/images/primer-variable-type.svg">{: .img-center  width="60%"}
 
 Don't worry about all those weird variable types, some we will get to in later chapters, others you will probably never use. The scope (sometimes called "lifetime") of a variable refers to the region of the script where it is accessible. Whenever you declare a variable inside a function, only that one function can read and write to it. Variables go 'out of scope' whenever their containing function terminates. 'Lifetime' is not a very good description in my opinion, since some variables may be very much alive, yet unreachable due to being in another scope. But we'll worry about scopes once we get to function declarations. For now, let's just look at an example with proper variable usage:
 

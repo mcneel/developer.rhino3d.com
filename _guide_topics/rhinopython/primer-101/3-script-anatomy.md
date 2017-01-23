@@ -17,7 +17,7 @@ layout: toc-guide-page
 
 Rhinoceros offers various ways of programmatic access. We've already met macros and scripts, but the plot thickens. Please invest a few moments of your life into looking at the diagram below, which you will never be asked to reproduce:
 
-<img src="{{ site.baseurl }}/images/primer-script-anatomy.svg" width="75%" float="right">
+<img src="{{ site.baseurl }}/images/primer-script-anatomy.svg">{: .img-center  width="75%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
@@ -36,11 +36,11 @@ Right, enough fore-play, time to get back to hard core programming.
 
 Once you run a script through the in-build editor (remember you can access the editor by typing "EditPythonScript" in Rhino's command line) the Python interpreter will thumb through your script and superficially parse the syntax. It will not actually execute any of the code at this point, before it starts doing that it first wants to get a feel for the script. The interpreter is capable of finding certain syntax errors during this prepass. If you see a dialog box like this:
 
-<img src="{{ site.baseurl }}/images/syntaxerror.jpg" width="75%" float="right">
+<img src="{{ site.baseurl }}/images/syntaxerror.jpg">{: .img-center  width="75%"}
 
 before anything has actually taken place, it means the compiler ran into a problem with the syntax and decided it wasn't worth trying to run the script. If the script crashes while it is running, the Source of the error message will not be the Python Compiler. However, even scripts without syntax errors might not function as expected. In order for a script to run successfully, it must adhere to a few rules. Apart from syntax errors -which must be avoided- every script must implement a certain structure which tells the interpreter what's what:
 
-<img src="{{ site.baseurl }}/images/primer-script-structure.svg" width="75%" float="right">
+<img src="{{ site.baseurl }}/images/primer-script-structure.svg">{: .img-center  width="75%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 	
@@ -93,13 +93,13 @@ The Debugger is an essential tool for any programmer.  Luckily, the script-edito
 
 The debugger allows the user to put a breakpoint in the code which suspends the execution of the code and allows the user to see the status of the variables.  Without a breakpoint the debugger would run entirely through to completion and would not allow us to see the guts!  To add a breakpoint simply click to the left of the line number and a red circle will appear (You can also add multiple breakpoints). This indicates the code will pause at this line.  Press the Green arrrow at the top of the editor to start the debugger.  
 
-<img src="{{ site.baseurl }}/images/primer-debugger-1.svg" width="75%" float="right">
+<img src="{{ site.baseurl }}/images/primer-debugger-1.svg">{: .img-center  width="75%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
 Use the "Step Into", "Step Over", "Step Out" buttons to walk line-by-line through the code.  When you come to a loop or conditional statement you can decide to enter or step over it completely.  After each line is executed, the debugger will show the variable, object or expressions' name, its value and type.  As the lines are run, the variables and values will be updated directly.  This will allow you to check if your variables are taking the correct values, if your code passes the correct conditional statement or if it loops for a given number of times.  Many unforeseen errors can quickly be spotted and adjusted by using the Debugger!
 
-<img src="{{ site.baseurl }}/images/primer-debugger-2.svg" width="75%" float="right">
+<img src="{{ site.baseurl }}/images/primer-debugger-2.svg">{: .img-center  width="75%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
