@@ -207,7 +207,7 @@ Internally, a String is stored as a series of characters. Every character (or 'c
 Further down the road we'll be dealing with some advanced String functions which will require a basic 
 understanding of how Strings work, but while we are still just using the simple stuff, it's good enough to know it just works the way you expect it to. 
 
-Strings are used heavily in RhinoScript since object IDs are always written as strings. Object IDs are those weird codes that show up in the Object Property Details: *D7EFCF0A-DB47-427D-9B6B-44EC0670C573*. IDs are designed to be absolutely unique for every object which will ever exist in this universe, which is why we can use them to safely and unambiguously identify objects in the document.
+Strings are used heavily in Python since object IDs are always written as strings. Object IDs are those weird codes that show up in the Object Property Details: *D7EFCF0A-DB47-427D-9B6B-44EC0670C573*. IDs are designed to be absolutely unique for every object which will ever exist in this universe, which is why we can use them to safely and unambiguously identify objects in the document.
 
 ### 2.3.4 None variable
 

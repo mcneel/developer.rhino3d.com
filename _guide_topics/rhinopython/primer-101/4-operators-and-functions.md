@@ -149,7 +149,7 @@ $$f(x) = \sum_{n=0}^\infty \frac{f^n(a)}{n!} {(x-a)^n}$$
 In other words: you don't want to know. The good people who develop programming languages predicted you don't want to know, which is why they implemented a *math.sin()* function. Python comes with a long list of predefined functions all of which are available to RhinoScripters. Some deal with mathematical 
 computations such as *math.sin()*, others perform String operations such as *abs()* which returns the absolute value. Python lists 75 native procedures plus many more in any of the modules that can be imported (i.e. the *math* module). I won't discuss them here, except when they are to be used in examples.
 
-Apart from implementing the native Python functions, Rhino adds a number of extra ones for us to use. The current RhinoScript helpfile for Rhino5 claims a total number of about 800 additional functions, and new ones are added frequently. Rhino's built in functions are referred to as "methods". They behave exactly the same as Python procedures although you do need to look in a different helpfile to see what they do. [http://www.rhino3d.com/5/ironpython/index.html](http://www.rhino3d.com/5/ironpython/index.html)
+Apart from implementing the native Python functions, Rhino adds a number of extra ones for us to use. The current RhinoScriptSyntax helpfile for Rhino5 claims a total number of about 800 additional functions, and new ones are added frequently. Rhino's built in functions are referred to as "methods". They behave exactly the same as Python procedures although you do need to look in a different helpfile to see what they do. [http://www.rhino3d.com/5/ironpython/index.html](http://www.rhino3d.com/5/ironpython/index.html)
 
 So how do functions/procedures/methods behave? Since the point of having procedures is to encapsulate code for frequent use, we should expect them to blend seamlessly into written code. In order to do this they must be able to both receive and return variables. *math.sin()* is an example of a function which both requires and returns a single numeric variable. The *datetime.now()* function on the other hand only returns a single value which contains the current date and time. It does not need any additional information from you, it is more than capable of finding out what time it is all by itself. An even more extreme example is the *rs.Exit()* method which does not accept any argument and does not return any value. There are two scenarios for calling procedures. We either use them to assign a value or we call them out of the blue:
 
@@ -159,7 +159,7 @@ rs.AddPoint([0.0, 0.0, 1.0])			    # Correct
 rs.AddPoint [0.0, 0.0, 1.0]			        # Wrong
 ```
 
-If you look in the RhinoScript helpfile and search for the *AddLayer()* method, you'll see the following text:
+If you look in the RhinoScriptSyntax helpfile and search for the *AddLayer()* method, you'll see the following text:
 
 ```python
 rs.AddLayer (name=None, color=0, visible=True, locked=False, parent=None)
@@ -169,7 +169,7 @@ rs.AddLayer (name=None, color=0, visible=True, locked=False, parent=None)
 
 ### 4.4.1 A simple function example
 
-This concludes the boring portion of the primer. We now have enough information to actually start making useful scripts. I still haven't told you about loops or conditionals, so the really awesome stuff will have to wait until Chapter 5, though. We're going to write a script which uses some Python functions and a few RhinoScript methods. Our objective for today is to write a script that applies a custom name to selected objects. First, I'll show you the script, then we'll analyze it line by line:
+This concludes the boring portion of the primer. We now have enough information to actually start making useful scripts. I still haven't told you about loops or conditionals, so the really awesome stuff will have to wait until Chapter 5, though. We're going to write a script which uses some Python functions and a few RhinoScriptSyntax methods. Our objective for today is to write a script that applies a custom name to selected objects. First, I'll show you the script, then we'll analyze it line by line:
 
 ```python	
 import rhinoscriptsyntax as rs
@@ -189,7 +189,7 @@ This is a complete script file which can be run directly from the disk. It adher
 
 We'll be using two variables in this script, one to hold the ID of the object we're going to rename and one containing the new name. On line 5 we declare a new variable. Although the "str" prefix indicates that we'll be storing Strings in this variable, that is by no means a guarantee. You can still put numbers into something that starts with str.  It is simply the convention to name a variable with strSomething if it is storing a string, similarly you can use intSomething for integers etc.
 
-On line 5, we're assigning a value to *strObjectID* by using the RhinoScript method *GetObject()* to ask the user to select an object. The help topic on *GetObject()* tells us the following:
+On line 5, we're assigning a value to *strObjectID* by using the RhinoScriptSyntax method *GetObject()* to ask the user to select an object. The help topic on *GetObject()* tells us the following:
 
 ```python
 Rhino.GetObject (message=None,filter=0,preselect=False,Select=False,custom_filter=None,subobjects=False)

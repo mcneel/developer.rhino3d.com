@@ -85,6 +85,19 @@ layout: guide-homepage
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="{{ site.baseurl }}/images/rhinopython-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
 
+### Python 101 Primer Course
+
+&nbsp;&nbsp; x. [Introduction]({{ site.baseurl }}/guides/rhinopython/primer-101/introduction/)  
+&nbsp;&nbsp; xx.[Where to find help]({{ site.baseurl }}/guides/rhinopython/primer-101/where-to-find-help/)  
+&nbsp;&nbsp; 1. [What's it all about?]({{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/)  
+&nbsp;&nbsp; 2. [Python Essentials]({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/)  
+&nbsp;&nbsp; 3. [Script anatomy]({{ site.baseurl }}/guides/rhinopython/primer-101/3-script-anatomy/)  
+&nbsp;&nbsp; 4. [Operators and functions]({{ site.baseurl }}/guides/rhinopython/primer-101/4-operators-and-functions/)  
+&nbsp;&nbsp; 5. [Conditional execution]({{ site.baseurl }}/guides/rhinopython/primer-101/5-conditional-execution/)  
+&nbsp;&nbsp; 6. [Tuples, Lists and Dictionaries]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/)  
+&nbsp;&nbsp; 7. [Classes]({{ site.baseurl }}/guides/rhinopython/primer-101/7-classes/)  
+&nbsp;&nbsp; 8. [Geometry]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/)  
+
 ### Other Resources
 
 - [Rhino.Python 101](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)

@@ -15,10 +15,10 @@ layout: toc-guide-page
 
 ## 8.1 The openNURBS™ kernel
 
-Now that you are familiar with the basics of scripting, it is time to start with the actual geometry part of RhinoScript. To keep things interesting we've used plenty of Rhino methods in examples before now, but that was all peanuts. Now you will embark upon that great journey which, if you survive, will turn you into a real 3D geek.
+Now that you are familiar with the basics of scripting, it is time to start with the actual geometry part of Rhino. To keep things interesting we've used plenty of Rhino methods in examples before now, but that was all peanuts. Now you will embark upon that great journey which, if you survive, will turn you into a real 3D geek.
 
-As already mentioned in Chapter 3, Rhinoceros is built upon the openNURBS™ kernel which supplies the bulk of the geometry and file I/O functions. All plugins that deal with geometry tap into this rich resource and the RhinoScript plugin is no exception. Although Rhino is marketed as a "NURBS modeler", it does have a basic understanding of other types of geometry as well. Some of these are available to the general Rhino user, others are only available to programmers. When writting in Python you will not be dealing directly with any 
-openNURBS™ code since RhinoScript wraps it all up into an easy-to-swallow package. However, programmers need to have a much higher level of comprehension than users which is why we'll dig fairly deep.
+As already mentioned in Chapter 3, Rhinoceros is built upon the openNURBS™ kernel which supplies the bulk of the geometry and file I/O functions. All plugins that deal with geometry tap into this rich resource and the RhinoScriptSytnax plugin is no exception. Although Rhino is marketed as a "NURBS modeler", it does have a basic understanding of other types of geometry as well. Some of these are available to the general Rhino user, others are only available to programmers. When writting in Python you will not be dealing directly with any 
+openNURBS™ code since RhinoScriptSyntax wraps it all up into an easy-to-swallow package. However, programmers need to have a much higher level of comprehension than users which is why we'll dig fairly deep.
 
 ## 8.2 Objects in Rhino
 
@@ -26,7 +26,7 @@ All objects in Rhino are composed of a geometry part and an attribute part. Ther
 
 <img src="{{ site.baseurl }}/images/primer-rhinoobjects.svg">{: .img-center  width="90%"}
 
-This table lists most of the attributes and properties which are available to plugin developers. Most of these have been wrapped in the RhinoScript plugin, others are missing at this point in time and the custom user data element is special. We'll get to user data after we're done with the basic geometry chapters.
+This table lists most of the attributes and properties which are available to plugin developers. Most of these have been wrapped in the RhinoScriptSyntax module, others are missing at this point in time and the custom user data element is special. We'll get to user data after we're done with the basic geometry chapters.
 
 The following procedure displays some attributes of a single object in a dialog box. There is nothing exciting going on here so I'll refrain from providing a step-by-step explanation.
 
@@ -612,7 +612,7 @@ Planes are not genuine objects in Rhino, they are used to define a coordinate sy
 
 <img src="{{ site.baseurl }}/images/primer-planedefinition.svg">{: .img-center  width="45%"}
 
-A plane definition is an array of one point and three vectors, the point marks the origin of the plane and the vectors represent the three axes. There are some rules to plane definitions, I.e. not every combination of points and vectors is a valid plane. If you create a plane using one of the RhinoScript plane methods you don't have to worry about this, since all the bookkeeping will be done for you. The rules are as follows:
+A plane definition is an array of one point and three vectors, the point marks the origin of the plane and the vectors represent the three axes. There are some rules to plane definitions, I.e. not every combination of points and vectors is a valid plane. If you create a plane using one of the RhinoScriptSyntax plane methods you don't have to worry about this, since all the bookkeeping will be done for you. The rules are as follows:
 
 - The axis vectors must be unitized (have a length of 1.0).
 - All axis vectors must be perpendicular to each other.
@@ -637,7 +637,7 @@ rs.AddPlaneSurface(arrPlane, dX, dY)
 
 ![{{ site.baseurl }}/images/primer-planecreation.svg]({{ site.baseurl }}/images/primer-planecreation.svg){: .float-img-right width="325"}
 
-You will notice that all RhinoScript methods that require plane definitions make sure these demands are met, no matter how poorly you defined the input. 
+You will notice that all RhinoScriptSyntax methods that require plane definitions make sure these demands are met, no matter how poorly you defined the input. 
 
 The adjacent illustration shows how the rs.AddPlaneSurface() call on line 11 results in the red plane, while the rs.AddPlaneSurface() call on line 12 creates the yellow surface which has dimensions equal to the distance between the picked origin and axis points.
 
@@ -1326,7 +1326,7 @@ Calculate the <i>vec_segment</i> vector. Typically this vector has length <i>rad
 
 ### 8.7.2 Interpolated curves
 
-When creating control-point curves it is very difficult to make them go through specific coordinates. Even when tweaking control-points this would be an arduous task. This is why commands like *_HBar* are so important. However, if you need a curve to go through many points, you're better off creating it using an interpolated method rather than a control-point method. The *_InterpCrv* and *_InterpCrvOnSrf* commands allow you to create a curve that intersects any number of 3D points and both of these methods have an equivalent in RhinoScript.
+When creating control-point curves it is very difficult to make them go through specific coordinates. Even when tweaking control-points this would be an arduous task. This is why commands like *_HBar* are so important. However, if you need a curve to go through many points, you're better off creating it using an interpolated method rather than a control-point method. The *_InterpCrv* and *_InterpCrvOnSrf* commands allow you to create a curve that intersects any number of 3D points and both of these methods have an equivalent in RhinoScriptSyntax.
 
 To demonstrate, we're going to create a script that creates iso-distance-curves on surfaces rather than the standard iso-parameter-curves, or "isocurves" as they are usually called.  Isocurves, thus connect all the points in surface space that share a similar u or v value. Because the progression of the domain of a surface is not linear (it might be compressed in some places and stretched in others, especially near the edges where the surface has to be clamped), the distance between isocurves is not guaranteed to be identical either.
 
@@ -1336,7 +1336,7 @@ The description of our algorithm is very straightforward, but I promise you that
 
 Our script will take any base surface (image A) and extract a number of isocurves (image B). Then, every isocurve is trimmed to a specific length (image C) and the end-points are connected to give the iso-distance-curve (the red curve in image D). Note that we are using isocurves in the v-direction to calculate the iso-distance-curve in the u-direction. This way, it doesn't matter much that the spacing of isocurves isn't distributed equally. Also note that this method is only useful for offsetting surface edges as opposed to *_OffsetCrvOnSrf* which can offset any curve.
 
-We can use the RhinoScript methods *rs.ExtractIsoCurve()* and *rs.AddInterpCrvOnSrf()* for steps B and D, but step C is going to take some further thought. It is possible to divide the extracted isocurve using a fixed length, which will give us a whole list of points, the second of which marks the proper solution:
+We can use the RhinoScriptSytnax methods *rs.ExtractIsoCurve()* and *rs.AddInterpCrvOnSrf()* for steps B and D, but step C is going to take some further thought. It is possible to divide the extracted isocurve using a fixed length, which will give us a whole list of points, the second of which marks the proper solution:
 
 <img src="{{ site.baseurl }}/images/python-dividecurvesearching.svg">{: .img-center  width="100%"}
 
@@ -1733,7 +1733,7 @@ def createcurvaturegraph():
 
 Instead of Nurbs surfaces (which would be the next logical step after nurbs curves), this chapter is about meshes. I'm going to take this opportunity to introduce you to a completely different class of geometry -officially called "polygon meshes"- which represents a radically different approach to shape.
 
-Instead of treating a surface as a deformation of a rectangular nurbs patch, meshes are defined locally, which means that a single mesh surface can have any topology it wants. A mesh surface can even be a disjoint (not connected) compound of floating surfaces, something which is absolutely impossible with Rhino nurbs surfaces. Because meshes are defined locally, they can also store more information directly inside the mesh format, such as colors, texture-coordinates and normals. The tantalizing image below indicates the local properties that we can access via RhinoScript. Most of these properties are optional or have default values. The only essential ones are the vertices and the faces.
+Instead of treating a surface as a deformation of a rectangular nurbs patch, meshes are defined locally, which means that a single mesh surface can have any topology it wants. A mesh surface can even be a disjoint (not connected) compound of floating surfaces, something which is absolutely impossible with Rhino nurbs surfaces. Because meshes are defined locally, they can also store more information directly inside the mesh format, such as colors, texture-coordinates and normals. The tantalizing image below indicates the local properties that we can access via RhinoScriptSyntax. Most of these properties are optional or have default values. The only essential ones are the vertices and the faces.
 
 <img src="{{ site.baseurl }}/images/primer-meshtopology.svg">{: .img-center  width="80%"}
 
@@ -2099,7 +2099,7 @@ The default function Cos(Sqr(x^2 + y^2)) is already quite pretty, but here are s
 
 ### 8.8.2 Shape vs. Image
 
-The vertex and face lists of a mesh object define its form (geometry and topology) but meshes can also have local display attributes. Colors and Texture-coordinates are two of these that we can control via RhinoScript.  The color list (usually referred to as 'False-Colors') is an optional mesh property which defines individual colors for every vertex in the mesh. The only Rhino commands that I know of that generate meshes with false-color data are the analysis commands *(_DraftAngleAnalysis, _ThicknessAnalysis, _CurvatureAnalysis and so on and so forth)* but unfortunately they do not allow you to export the analysis meshes. Before we do something useful with False-Color meshes, let's do something simple, like assigning random colours to a mesh object:
+The vertex and face lists of a mesh object define its form (geometry and topology) but meshes can also have local display attributes. Colors and Texture-coordinates are two of these that we can control via RhinoScriptSyntax.  The color list (usually referred to as 'False-Colors') is an optional mesh property which defines individual colors for every vertex in the mesh. The only Rhino commands that I know of that generate meshes with false-color data are the analysis commands *(_DraftAngleAnalysis, _ThicknessAnalysis, _CurvatureAnalysis and so on and so forth)* but unfortunately they do not allow you to export the analysis meshes. Before we do something useful with False-Color meshes, let's do something simple, like assigning random colours to a mesh object:
 
 <img src="{{ site.baseurl }}/images/primer-meshfalsecolours.svg">{: .img-center  width="80%"}
 
@@ -2605,7 +2605,7 @@ This is not the end of the story. Starting with the set of all normal curvatures
 
 The illustration on the left shows the directions of the maximum principal curvatures. As you can see there are threshold lines on the surface at which the principal direction suddenly makes 90º turns. The overall picture is chaotic and overly complex. We can use a standard tensor-smoothing algorithm to average each direction with its neighbours, resulting in the image on the right, which provides us with an already much more useful distribution (e.g. for texturing or patterning purposes), but now the vectors have lost their meaning. This is why the principal curvature directions are not a very useful surface property in every day life.
 
-Instead of dealing with the directions, the other aforementioned surface curvature definitions deal only with the scalar values of the curvature; the osculating circle radius. The most famous among surface curvature definitions are the Gaussian and Mean curvatures. Both of these are available in the _CurvatureAnalysis command and through RhinoScript.
+Instead of dealing with the directions, the other aforementioned surface curvature definitions deal only with the scalar values of the curvature; the osculating circle radius. The most famous among surface curvature definitions are the Gaussian and Mean curvatures. Both of these are available in the _CurvatureAnalysis command and through RhinoScriptSyntax.
 
 The great German mathematician Carl Friedrich Gauss figured out that by multiplying the principal curvature radii you get another, for some purposes much more useful indicator of curvature:
 

@@ -35,7 +35,7 @@ print(t)
 # This returns (12345, 54321, 'hello!') - all of the values within the Tuple
 ```
 
-Tuples can be used for coordinates (x,y) or any other time you need to store various elements.  Tuples may contain multiple variables, nested Tuples, Lists or other objects. If you remember from section 4.5, Tuples are immutable, meaning that they cannot be changed! (Refer to section 4.5 on Mutability) That means that we cannot create a Tuple then remove an element, instead we need to create an entirely new Tuple that contains the desired change.  A number of Rhinoscript methods return tuples rather than lists for their simplicity.  When utilizing the Rhinoscript methods make sure to be particularly careful with the input and return types (numbers, strings, tuples, lists etc) and understand how to pass or use each of them. This is a common source of errors in people's code, so pay special attention to read the methods found in the Rhinoscript help file!
+Tuples can be used for coordinates (x,y) or any other time you need to store various elements.  Tuples may contain multiple variables, nested Tuples, Lists or other objects. If you remember from section 4.5, Tuples are immutable, meaning that they cannot be changed! (Refer to section 4.5 on Mutability) That means that we cannot create a Tuple then remove an element, instead we need to create an entirely new Tuple that contains the desired change.  A number of RhinoscriptSyntax methods return tuples rather than lists for their simplicity.  When utilizing the RhinoscriptSyntax methods make sure to be particularly careful with the input and return types (numbers, strings, tuples, lists etc) and understand how to pass or use each of them. This is a common source of errors in people's code, so pay special attention to read the methods found in the RhinoscriptSyntax help file!
 
 ## 6.2 Lists
 
@@ -369,7 +369,7 @@ def AddVector(vecdir, base_point=[0,0,0]):
 </tr>
 <tr>
 <td>3</td>
-<td>Here we are calling the RhinoScript method rs.AddLine() and we're storing the return value 
+<td>Here we are calling the RhinoScriptSyntax method rs.AddLine() and we're storing the return value 
 directly into the line variable. There are three possible scenarios at this point:
 
 <ol>
