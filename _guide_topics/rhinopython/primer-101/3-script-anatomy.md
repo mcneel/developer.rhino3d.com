@@ -106,12 +106,7 @@ Use the "Step Into", "Step Over", "Step Out" buttons to walk line-by-line throug
 
 ---
 
-#### Related Topics
 
-- [Where to find help - Next Topic >>]({{ site.baseurl }}/guides/rhinopython/primer-101/1-2-where-to-find-help/)
-- [Rhino.Python Primer 101]({{ site.baseurl }}/guides/rhinopython/primer-101/rhinopython101)
-- [Running Scripts]({{ site.baseurl }}/guides/rhinopython/python-running-scripts)
-- [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
-- [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)
-- [Scripting Options]({{ site.baseurl }}/guides/rhinopython/python-scripting-options)
-- [Reinitializing Python]({{ site.baseurl }}/guides/rhinopython/python-scripting-reinitialize)
+## Next Steps
+
+That was a basic overview of Python running in Rhino.  Now learn to use [operators and functions]({{ site.baseurl }}/guides/rhinopython/primer-101/4-operators-and-functions/) to get something done.

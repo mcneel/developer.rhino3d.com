@@ -407,12 +407,6 @@ while the spheres are inserted. The script completes much faster if it doesn't h
 
 ---
 
-#### Related Topics
+## Next Steps
 
-- [Where to find help - Next Topic >>]({{ site.baseurl }}/guides/rhinopython/primer-101/1-2-where-to-find-help/)
-- [Rhino.Python Primer 101]({{ site.baseurl }}/guides/rhinopython/primer-101/rhinopython101)
-- [Running Scripts]({{ site.baseurl }}/guides/rhinopython/python-running-scripts)
-- [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
-- [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)
-- [Scripting Options]({{ site.baseurl }}/guides/rhinopython/python-scripting-options)
-- [Reinitializing Python]({{ site.baseurl }}/guides/rhinopython/python-scripting-reinitialize)
+Now it should be coming together on how Python works.  Just a few more details. Leanr more about Python's advanced variables in [Tuples, Lists and Dictionaries]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/).

@@ -195,12 +195,6 @@ Classes can be nested, they can have multiple functions, create powerful systems
 
 ---
 
-#### Related Topics
+## Next Steps
 
-- [Where to find help - Next Topic >>]({{ site.baseurl }}/guides/rhinopython/primer-101/1-2-where-to-find-help/)
-- [Rhino.Python Primer 101]({{ site.baseurl }}/guides/rhinopython/primer-101/rhinopython101)
-- [Running Scripts]({{ site.baseurl }}/guides/rhinopython/python-running-scripts)
-- [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
-- [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)
-- [Scripting Options]({{ site.baseurl }}/guides/rhinopython/python-scripting-options)
-- [Reinitializing Python]({{ site.baseurl }}/guides/rhinopython/python-scripting-reinitialize)
+Classes are the last of the pure Python units. The last chapter is all about [geometry]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/) in Rhino and Python.
