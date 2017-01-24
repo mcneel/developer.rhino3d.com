@@ -124,29 +124,30 @@ if __name__=="__main__":
 
 For no good reason whatsoever, we'll start with the bottom most function:
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">24</td>
+<td>24</td>
 <td>Standard out-of-the-box function declaration which takes a single double value. This function is 
 supposed to return a colour which changes gradually from blue to red as parameter changes from zero to one. Values outside of the range {0.0~1.0} will be clipped.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">25</td>
+<td>25</td>
 <td>The red component of the colour we're going to return is declared here and assigned the naive value of 255 times the parameter. Colour components must have a value between and including 0 and 255. If we attempt to construct a colour with lower or higher values a run-time error will spoil the party.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">26...27</td>
+<td>26...27</td>
 <td>Here's where we make sure the party can continue unimpeded.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">28</td>
+<td>28</td>
 <td>Compute the colour gradient value. If parameter equals zero we want blue (0,0,255) and if it equals one we want red (255,0,0). So the green component is always zero while blue and red see-saw between 0 and 255.</td>
 </tr>
 </table>
+{: .multiline}
 
 Now, on to function *AddPointAtR1Parameter()*. As the name implies, this function will add a single point in 3D world space based on the parameter coordinate of a curve object. In order to work correctly this function must know what curve we're talking about and what parameter we want to sample. Instead of passing the actual parameter which is bound to the curve domain (and could be anything) we're passing a unitized one. 
 I.e. we pretend the curve domain is between zero and one. This function will have to wrap the required math for translating unitized parameters into actual parameters.
@@ -154,36 +155,37 @@ I.e. we pretend the curve domain is between zero and one. This function will hav
 Since we're calling this function a lot (once for every point we want to add), it is actually a bit odd to put all the heavy-duty stuff inside it. We only really need to perform the overhead costs of 'unitized parameter + actual parameter' calculation once, so it makes more sense to put it in a higher level function. Still, it will be very quick so there's no need to optimize it yet.
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">14</td>
+<td>14</td>
 <td>Function declaration.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">15...16</td>
+<td>15...16</td>
 <td>Get the curve domain and check for <i>Null</i>. It will be <i>Null</i> if the ID does not represent a proper curve object. The <i>Rhino.CurveDomain()</i> method will return an array of two doubles which indicate the minimum and maximum t-parameters which lie on the curve.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">18</td>
+<td>18</td>
 <td>Translate the unitized R1 coordinate into actual domain coordinates.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
+<td>19</td>
 <td>Evaluate the curve at the specified parameter. Rhino.EvaluateCurve() takes an R1 coordinate and returns an R3 coordinate.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">21</td>
+<td>21</td>
 <td>Add the point, it will have default attributes.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">22</td>
+<td>22</td>
 <td>Set the custom colour. This will automatically change the color-source attribute to By Object.</td>
 </tr>
 </table>
+{: .multiline}
 
 The distribution of R1 points on a spiral is not very enticing since it approximates a division by equal length segments in R3 space. When we run the same script on less regular curves it becomes easier to grasp what parameter space is all about:
 
@@ -232,28 +234,29 @@ project them onto the surface, getting the R2 coordinate [u,v] in return. This R
 
 Told you it was a piece of cake...
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">10</td>
+<td>10</td>
 <td>We're using the <i>Rhino.DivideCurve()</i> method to get all the R3 coordinates on the curve in one go. This saves us a lot of looping and evaluating.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">24</td>
+<td>24</td>
 <td><i>Rhino.SurfaceClosestPoint()</i> returns an array of two doubles representing the R2 point on the surface (in {u,v} coordinates) which is closest to the sample point.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">27</td>
+<td>27</td>
 <td>Rhino.EvaluateSurface() in turn translates the R2 parameter coordinate into R3 world coordinates</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">30...38</td>
+<td>30...38</td>
 <td>Compute the distance between the two points and add geometry if necessary. This function returns True if the deviation is less than one unit, False if it is more than one unit and Null if something went wrong.</td>
 </tr>
 </table>
+{: .multiline}
 
 One more time just for kicks. We project the R1 parameter coordinate on the curve into 3D space (Step A), then we project that R3 coordinate onto the surface getting the R2 coordinate of the closest point (Step B). We evaluate the surface at R2, getting the R3 coordinate in 3D world space (Step C), and we finally measure the distance between the two R3 points to determine the deviation:
 
@@ -333,48 +336,49 @@ def getr2pathonsurface(surface_id, segments, prompt1, prompt2):
     return path
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>1</td>
 <td>This function takes four arguments; the ID of the surface onto which to plot the shortest route, the number of segments for the path polyline and the prompts to use for picking the A and B point.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1...3</td>
+<td>1...3</td>
 <td>Prompt the user for the {A} point on the surface. Return if the user does not enter a point.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5...6</td>
+<td>5...6</td>
 <td>Prompt the user for the {B} point on the surface. Return if the user does not enter a point.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">10...11</td>
+<td>10...11</td>
 <td>Project {A} and {B} onto the surface to get the respective R2 coordinates <i>uva</i> and <i>uvb</i>.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">13</td>
+<td>13</td>
 <td>Declare the list which is going to store all the polyline vertices.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">14</td>
+<td>14</td>
 <td>Since this algorithm is segment-based, we know in advance how many vertices the polyline will have and thus how often we will have to sample the surface.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">15</td>
+<td>15</td>
 <td><i>t</i> is a value which ranges from 0.0 to 1.0 over the course of our loop</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">16...17</td>
+<td>16...17</td>
 <td>Use the current value of <i>t</i> to sample the surface somewhere in between <i>uvA</i> and <i>uvB</i>.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">18</td>
+<td>18</td>
 <td><i>rs.EvaluateSurface()</i> takes a {u} and a {v} value and spits out a 3D-world coordinate. This is just a friendly way of saying that it converts from R2 to R3.</td>
 </tr>
 </table>
+{: .multiline}
 
 We're going to combine the previous examples in order to make a real geodesic path routine in Rhino. This is a fairly complex algorithm and I'll do my best to explain to you how it works before we get into any actual code.
 
@@ -415,28 +419,29 @@ def projectpolyline(vertices, surface_id):
     return polyline
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1...3</td>
+<td>1...3</td>
 <td>Since this is a specialized def which we will only be using inside this script, we can skip projecting the first and last point. We can safely assume the polyline is open and that both endpoints will already be on the curve.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>4</td>
 <td>We ask Rhino for the closest point on the surface object given our polyline vertex coordinate. The reason why we do not use <i>rs.SurfaceClosestPoint()</i> is because <i>BRepClosestPoint()</i> takes trims into account. This is a nice bonus we can get for free. The native <i>_ShortPath</i> command does not deal with trims at all. We are of course not interested in aping something which already exists, we want to make something better.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>5</td>
 <td>If <i>BRepClosestPoint()</i> returned Null something went wrong after all. We cannot project the vertex in this case so we'll simply ignore it. We could of course short-circuit the whole operation after a failure like this, but I prefer to press on and see what comes out the other end. </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>The <i>BRepClosestPoint()</i> method returns a lot of information, not just the R2 coordinate. In fact it returns a tuple of data, the first element of which is the R3 closest point. This means we do not have to translate the uv coordinate into xyz ourselves. Huzzah! Assign it to the vertex and move on.</td>
 </tr>
 </table>
+{: .multiline}
 
 ```python
 def smoothpolyline(vertices):
@@ -454,23 +459,24 @@ def smoothpolyline(vertices):
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1...3 6...8</td>
+<td>1...3 6...8</td>
 <td>Since we need the original coordinates throughout the smoothing operation we cannot deform it 
 directly. That is why we need to make a copy of each vertex point before we start messing about with coordinates.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">9</td>
+<td>9</td>
 <td>What we do here is average the x, y and z coordinates of the current vertex ('current' as defined by i) using both itself and its neighbours.
 <br><br>
 We iterate through all the internal vertices and add the Point3d objects together, rather than explicitly adding their x, y and z components together. Writing smaller functions will not make the code go faster, but it does mean we just get to write less junk. Also, it means adjustments are easier to make afterwards since less code-rewriting is required.</td>
 </tr>
-</table>  
+</table>
+{: .multiline}
 
 Time for the bit that sounded so difficult on the previous page, the actual geodesic curve fitter routine:
 
@@ -485,42 +491,43 @@ def geodesicfit(vertices, surface_id, tolerance):
         length = newlength
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>1</td>
 <td>Hah... that doesn't look so bad after all, does it? You'll notice that it's often the stuff which is easy to explain that ends up taking a lot of lines of code. Rigid mathematical and logical structures can typically be coded very efficiently.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>We'll be monitoring the progress of each iteration and once the curve no longer becomes noticeably shorter (where 'noticeable' is defined by the <i>tolerance</i> argument), we'll call the 'intermediate result' the 'final result' and return execution to the caller. In order to monitor this progress, we need to remember how long the curve was before we started; <i>length</i> is created for this purpose.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>3</td>
 <td>Whenever you see a while True: without any standard escape clause you should be on your toes. This is potentially an infinite loop. I have tested it rather thoroughly and have been unable to make it run more than 120 times. Experimental data is never watertight proof, the routine could theoretically fall into a stable state where it jumps between two solutions. If this happens, the loop will run forever.
 <br><br>
 You are of course welcome to add additional escape clauses if you deem that necessary.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4...5</td>
+<td>4...5</td>
 <td>Place the calls to the functions on page 56. These are the bones of the algorithm.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>Compute the new length of the polyline.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>7</td>
 <td>Check to see whether or not it is worth carrying on.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>8</td>
 <td>Apparently it was, we need now to remember this new length as our frame of reference.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 The main subroutine takes some explaining. It performs a lot of different tasks which always makes a block of code harder to read. It would have been better to split it up into more discrete chunks, but we're already using seven different functions for this script and I feel we are nearing the ceiling. Remember that splitting problems into smaller parts is a good way to organize your thoughts, but it doesn't actually solve anything. You'll need to find a good balance between splitting and lumping.
 
@@ -551,52 +558,53 @@ def geodesiccurve():
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...3</td>
+<td>2...3</td>
 <td>Get the surface to be used in the geodesic routine.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5...6</td>
+<td>5...6</td>
 <td>Declare a variable which will store the polyline vertices. Since the return value of <i>getr2pathonsurface()</i> is already a list, we do not need to declare it with empty brackets - '[ ]' - as we have done elsewhere.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>8</td>
 <td>The tolerance used in our script will be 10% of the absolute tolerance of the document.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">9...12</td>
+<td>9...12</td>
 <td>This loop also uses a length comparison in order to determine whether or not to continue. But instead of evaluating the length of a polyline before and after a smooth/project iteration, it measures the difference before and after a subdivide/geodesicfit iteration. The goal of this evaluation is to decide whether or not further elaboration will pay off. The variables <i>length</i> and <i>newlength</i> are used in the same context as on the previous page.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">13</td>
+<td>13</td>
 <td>Display a message in the command-line informing the user about the progress we're making. This script may run for quite some time so it's important not to let the user think the damn thing has crashed.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">14</td>
+<td>14</td>
 <td>Place a call to the <i>GeodesicFit()</i> subroutine.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">16...17</td>
+<td>16...17</td>
 <td>Compare the improvement in length, exit the loop when there's no progress of any value.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">18</td>
+<td>18</td>
 <td>A safety-switch. We don't want our curve to become too dense.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
+<td>19</td>
 <td>A call to <i>subdividepolyline()</i> will double the amount of vertices in the polyline. The newly added vertices will not be on the surface, so we must make sure to call <i>geodesicfit()</i> at least once before we add this new polyline to the document.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">22...23</td>
+<td>22...23</td>
 <td>Add the curve and print a message about the length.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 ## 8.5 Planes
 
@@ -733,60 +741,61 @@ def DistributeCirclesOnSphere():
 ```
 <img src="{{ site.baseurl }}/images/primer-spherepack.svg">{: .img-center  width="45%"}
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1...6</td>
+<td>1...6</td>
 <td>Collect all custom variables and make sure they make sense. We don't want spheres smaller than 0.01 units and we don't want circle radii larger than half the sphere radius.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>8</td>
 <td>Compute the number of circles from pole to pole. The <i>int()</i> function in VBScript takes a double and returns only the integer part of that number. Hence it always rounds downwards.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">11...12<br>16...17</td>
+<td>11...12<br>16...17</td>
 <td>phi and theta (Φ and Θ) are typically used to denote angles in spherical space and it's not hard to see why. I could have called them latitude and longitude respectively as well.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">13</td>
+<td>13</td>
 <td>The phi loop runs from -½π to ½π and we need to run it <i>VerticalCount</i> times.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">14</td>
+<td>14</td>
 <td>This is where we calculate how many circles we can fit around the sphere on the current latitude. The math is the same as before, except we also need to calculate the length of the path around the sphere: 2π·R·Cos(Φ)</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">15</td>
+<td>15</td>
 <td>If it turns out that we can fit no circles at all at a certain latitude, we're going to get into trouble since we use the HorizontalCount variable as a denominator in the stepsize calculation on line 24. And even my mother knows you cannot divide by zero. However, we know we can always fit at least one circle.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">18</td>
+<td>18</td>
 <td>This loop is essentially the same as the one on line 20, except it uses a different stepsize and a different numeric range ({0.0 <= theta < 2π} instead of {-½π <= phi <= +½π}). The more observant among you will have noticed that the domain of theta reaches from nought up to but not including two pi. If <i>theta</i> would go all the way up to 2π then there would be a duplicate circle on the seam. The best way of preventing a loop to reach a certain value is to subtract a fraction of the stepsize from that value, in this case I have simply subtracted a ludicrously small number (1e-8 = 0.00000001).</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">19...21</td>
+<td>19...21</td>
 <td><i>circle_center</i> will be used to store the center point of the circles we're going to add.  
 <i>circle_normal</i> will be used to store the normal of the plane in which these circles reside.  
 <i>circle_plane</i> will be used to store the resulting plane definition.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
+<td>19</td>
 <td>This is mathematically the most demanding line, and I'm not going to provide a full proof of why and how it works. This is the standard way of translating the spherical coordinates Φ and Θ into Cartesian coordinates x, y and z. 
 <br><br>
 Further information can be found on [MathWorld.com](http://mathworld.wolfram.com/)</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">20</td>
+<td>20</td>
 <td>Once we found the point on the sphere which corresponds to the current values of phi and theta, it's a piece of proverbial cake to find the normal of the sphere at that location. The normal of a sphere at any point on its surface is the inverted vector from that point to the center of the sphere. And that's what we do on line 29, we subtract the sphere origin (always (0,0,0) in this script) from the newly found {x,y,z} coordinate.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">21...22</td>
+<td>21...22</td>
 <td>We can construct a plane definition from a single point on that plane and a normal vector and we can construct a circle from a plane definition and a radius value. Voila.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 ### 8.6.1 Ellipses
 
@@ -844,45 +853,46 @@ def FlatWorm():
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">16</td>
+<td>16</td>
 <td><i>crosssections</i> is a list where we will store all our ellipse IDs. We need to remember all the ellipses we add since they have to be fed to the <i>rs.AddLoftSrf()</i> method. <i>crosssectionplane</i> will contain the base plane data for every individual ellipse, we do not need to remember these planes so we can afford to overwrite the old value with any new one.
 You'll notice I'm violating a lot of naming conventions from paragraph [2.3.5 Using Variables]. If you want to make something of it we can take it outside. </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
+<td>19</td>
 <td>We'll be walking along the curve with equal parameter steps. This is arguably not the best way, since we might be dealing with a polycurve which has wildly different parameterizations among its subcurves. This is only an example script though so I wanted to keep the code to a minimum. We're using the same trick as before in the header of the loop to ensure that the final value in the domain is included in the calculation. By extending the range of the loop by one billionth of a parameter we circumvent the 'double noise problem' which might result from multiple additions of doubles.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">20</td>
+<td>20</td>
 <td>The <i>rs.CurveCurvature()</i> method returns a whole set of data to do with curvature analysis. However, it will fail on any linear segment (the radius of curvature is infinite on linear segments).</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">22...27</td>
+<td>22...27</td>
 <td>Hence, if it fails we have to collect the standard information in the old fashioned way. We also have to pick a <i>crvPerp</i> vector since none is available. We could perhaps use the last known one, or look at the local plane of the curve beyond the current -unsolvable- segment, but I've chosen to simply use a z-axis vector by default.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">28...32</td>
+<td>28...32</td>
 <td>If the curve does have curvature at t, then we extract the required information directly from the curvature data.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">33</td>
+<td>33</td>
 <td>Construct the plane for the ellipse.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">35...37</td>
+<td>35...37</td>
 <td>Add the ellipse to the file and append the new ellipse curve ID csec to the list <i>crosssections</i>.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">40...42</td>
+<td>40...42</td>
 <td>Create a lofted surface through all ellipses and delete the curves afterwards.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 ### 8.6.2 Arcs
 
@@ -946,52 +956,53 @@ def AddArcDir(ptStart, ptEnd, vecDir):
     return rs.AddArc3Pt(ptStart, rs.PointAdd(ptStart, vecBisector), ptEnd)
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>1</td>
 <td>The <i>ptStart</i> argument indicates the start of the arc, <i>ptEnd</i> the end and <i>vecDir</i> the direction at <i>ptStart</i>. This function will behave just like the <i>rs.AddArc3Pt()</i> method. It takes a set of arguments and returns the identifier of the created curve object if successful. If no curve was added the function does not return anything - that is, the resulting assignment will be <i>None</i>.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>Create the baseline vector (from {A} to {B}), by subtracting {A} from {B}.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>3</td>
 <td>If {A} and {B} are coincident, then the subtraction from line 2 will result in a vector with a length of 0 and no solution is possible. Actually, there is an infinite number of solutions so we wouldn't know which one to pick.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>5</td>
 <td>If vecDir is parallel (or anti-parallel) to the baseline vector, then no solution is possible at all.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7...8</td>
+<td>7...8</td>
 <td>Make sure all vector definitions so far are unitized - that is, they all have a vector length value of one</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">10...11</td>
+<td>10...11</td>
 <td>Create the bisector vector and unitize it.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">13</td>
+<td>13</td>
 <td>Compute the dotproduct between the bisector and the direction vector. Since the bisector is exactly halfway between the direction vector and baseline vector (indeed, that is the point to its existence), we could just as well have calculated the dotproduct between it and the baseline vector.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">14</td>
+<td>14</td>
 <td>Compute the distance between ptStart and the center point of the desired arc.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">16</td>
+<td>16</td>
 <td>Resize the (unitized) bisector vector to match this length.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">17</td>
+<td>17</td>
 <td>Create an arc using the start, end and midpoint arguments, return the ID.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 ![{{ site.baseurl }}/images/primer-arctree.svg]({{ site.baseurl }}/images/primer-arctree.svg){: .float-img-right width="375"}
 
@@ -1032,39 +1043,40 @@ def RandomPointInCone( origin, direction, minDistance, maxDistance, maxAngle):
     return rs.PointAdd(origin, vecTwig)
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>1</td>
 <td><i>origin</i> is synonymous with point {A}.
 <i>direction</i> is synonymous with vector {D}.
 <i>minDistance</i> and MaxDistance indicate the length-wise domain of the cone.
 <i>maxAngle</i> is a value which specifies the angle of the cone (in degrees, not radians).</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...3</td>
+<td>2...3</td>
 <td>Create a new vector parallel to <i>Direction</i> and resize it to be somewhere between <i>MinDistance</i> and <i>MaxDistance</i>. I'm using the <i>random()</i> function here which is a Python pseudo-random-number frontend. It always returns a random value between zero and one.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>4</td>
 <td>In order to mutate <i>vecTwig</i>, we need to find a parallel vector. since we only have one vector here we cannot directly use the <i>Rhino.VectorCrossProduct()</i> method, so we'll construct a plane and use its x-axis. This vector could be pointing anywhere, but always perpendicular to <i>vecTwig</i>.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>5</td>
 <td>Mutate <i>vecTwig</i> by rotating a random amount of degrees around the plane x-axis.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>Mutate <i>vecTwig</i> again by rotating it around the <i>Direction</i> vector. This time the random angle is between 0 and 360 degrees.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>7</td>
 <td>Create the new point as inferred by <i>Origin</i> and <i>vecTwig</i>.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 One of the definitions Wikipedia has to offer on the subject of recursion is: "In order to understand recursion, one must first understand recursion." Although this is obviously just meant to be funny, there is an unmistakable truth as well. The upcoming script is recursive in every definition of the word, it is also quite short, it produces visually interesting effects and it is quite clearly a very poor realistic plant generator. The perfect characteristics for exploration by trial-and-error. Probably more than any other example script in this primer this one is a lot of fun to play around with. Modify, alter, change, mangle and bend it as you see fit.
 
@@ -1099,52 +1111,52 @@ def RecursiveGrowth( ptStart, vecDir, props, generation):
 ```            
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>1</td>
 <td>A word on the function signature. Apart from the obvious arguments <i>ptStart</i> and <i>vecDir</i>, this function takes an tuple and a generation counter. The tuple contains all our growth variables. Since there are seven of them in total I didn't want to add them all as individual arguments. Also, this way it is easier to add parameters without changing function calls. The generation argument is an integer telling the function which twig generation it is in. Normally a recursive function does not need to know its depth in the grand scheme of things, but in our case we're making an exception since the number of generations is an exit threshold.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>For readability, we will break our tuple into individual variables. On the assignment side, the variables are listed in the order that they appear in the tuple. The properties tuple consists of the following items:
 
 <img src="{{ site.baseurl }}/images/primer-data-table.svg" width="100%" float="right">
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>3</td>
 <td>If the current generation exceeds the generation limit (which is stored at the third element in the properties tuple, and broken out to the variable maxGenerations) this function will abort without calling itself. Hence, it will take a step back on the recursive hierarchy.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>This is where we make a copy of the properties. You see, when we are going to grow new twigs, those twigs will be called with mutated properties, however we require the unmutated properties inside this function instance.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7...9</td>
+<td>7...9</td>
 <td>Mutate the copied properties. I.e. multiply the maximum-twig-length by the twig-length-mutation factor and do the same for the angle. We must take additional steps to ensure the angle doesn't go berserk so we're limiting the mutation to within the 90 degree realm.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">13</td>
+<td>13</td>
 <td><i>maxN</i> is an integer which indicated the number of twigs we are about to grow. <i>maxN</i> is randomly picked between the two allowed extremes (<i>Props(0)</i> and <i>Props(1)</i>). The <i>random()</i> function generates a number between zero and one which means that maxN can become any value between and including the limits.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">15</td>
+<td>15</td>
 <td>This is where we pick a point at random using the unmutated properties. The length constraints we're using is hard coded to be between the maximum allowed length and a quarter of the maximum allowed length. There is nothing in the universe which suggests a factor of 0.25, it is purely arbitrary. It does however have a strong effect on the shape of the trees we're growing. It means it is impossible to accurately specify a twig length. There is a lot of room for experimentation and change here.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">16</td>
+<td>16</td>
 <td>We create the arc that belongs to this twig.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">17</td>
+<td>17</td>
 <td>If the distance between <i>ptStart</i> and <i>ptGrow</i> was 0.0 or if <i>vecDir</i> was parallel to <i>ptStart</i> » <i>ptGrow</i> then the arc could not be added. We need to catch this problem in time.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">18</td>
+<td>18</td>
 <td>We need to know the tangent at the end of the newly created arc curve.  The domain of a curve consists of two values (a lower and an upper bound). <i>Rhino.CurveDomain(newTwig)(1)</i> will return the upper bound of the domain. This is the same as calling:
 
 <code lang="python">
@@ -1155,11 +1167,12 @@ vecGrow = rs.CurveTangent(newTwig, crvDomain[1])
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
+<td>19</td>
 <td>Awooga! Awooga! A function calling itself! This is it! We made it!
 The thing to realize is that the call is now different. We're putting in different arguments which means this new function instance behaves differently than the current function instance.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 It would have been possible to code this tree-generator in an iterative (For loops) fashion. The tree would look the same even though the code would be very different (probably a lot more lines). The order in which the branches are added would very probably also have differed. The trees below are archetypal, digital trees, the one on the left generated using iteration, the one on the right generated using recursion. Note the difference in branch order. If you look carefully at the recursive function on the previous page you'll probably be able to work out where this difference comes from...
 
@@ -1265,50 +1278,51 @@ def blendcorners():
     rs.DeleteObject(polyline_id)
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...7</td>
+<td>2...7</td>
 <td>These calls prompt the user for a polyline, get the polyline's vertices, and then promps the user for the radius of blending. Since David Rutten is the only one allowed to be so careless as to not check for None values (and we are not David Rutten) each of these operations is followed by a failure check.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">9...10</td>
+<td>9...10</td>
 <td>Sometimes, an operation that is needed within a loop results in the same values in each loop iteration. In cases like this, programs can be made much more efficient, by performing these operations before entering the loop. The variables between and <i>newverts</i> will not be used until line 25, but obtaining them here at lines 9 and 10 will make the script much more efficient.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">11</td>
+<td>11</td>
 <td>Begin a loop for each segment in the polyline. </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">12...13</td>
+<td>12...13</td>
 <td>Store <i>A</i> and <i>B</i> coordinates for easy reference.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">15...21</td>
+<td>15...21</td>
 <td><i>vec_segment</i> is a scaled vector that points from <i>A</i> to <i>B</i> with a length of <i>radius</i>.
 Calculate the <i>vec_segment</i> vector. Typically this vector has length <i>radius</i>, but if the current polyline segment is too short to contain two complete radii, then adjust the <i>vec_segment</i> accordingly.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">23...24</td>
+<td>23...24</td>
 <td>Calculate <i>W1</i> and <i>W2</i>.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">25...30</td>
+<td>25...30</td>
 <td>Store all points (except <i>B</i>) in the <i>newverts</i> list.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">31</td>
+<td>31</td>
 <td>Append the last point of the polyline to the <i>newverts</i> list. We've omitted <i>B</i> everywhere because the <i>A</i> of the next segment has the same location and we do not want coincident control-points. The last segment has no next segment, so we need to make sure <i>B</i> is included this time.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">32...33</td>
+<td>32...33</td>
 <td>Create a new D5 nurbs curve and delete the original.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 ### 8.7.2 Interpolated curves
 
@@ -1370,59 +1384,60 @@ def BSearchCurve(idCrv, Length, Tolerance):
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>1</td>
 <td>Note that this is not a complete script, it is only the search function. The complete script is supplied in the article archive. This function takes a curve ID, a desired length and a tolerance. The return value is <i>None</i> if no solution exists (i.e. if the curve is shorter than <i>Length</i>) or otherwise the parameter that marks the desired length.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>Ask Rhino for the total curve length.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>3</td>
 <td>Make sure the curve is longer than <i>Length</i>. If it isn't, abort.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5...6</td>
+<td>5...6</td>
 <td>Store the minimum and maximum parameters of this curve domain. If you're confused about me calling the <i>Rhino.CurveDomain()</i> function twice instead of just once and store the resulting array, you may congratulate yourself. It would indeed be faster to not call the same method twice in a row. However, since lines 7 and 8 are not inside a loop, they will only execute once which reduces the cost of the penalty. 99% of the time spend by this function is because of lines 16~25, if we're going to be zealous about speed, we should focus on this part of the code.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7...8</td>
+<td>7...8</td>
 <td><i>t0</i>, <i>t1</i> and <i>t</i> will be the variables used to define our current subdomain. <i>t0</i> will mark the lower bound and <i>t1</i> the upper bound. <i>t</i> will be halfway between <i>t0</i> and <i>t1</i>. We need to start with the whole curve in mind, so <i>t0</i> and <i>t1</i> will be similar to <i>tmin</i> and <i>tmax</i>.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">9</td>
+<td>9</td>
 <td>Since we do not know in advance how many steps our binary searcher is going to take, we have to use an infinite loop.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">10</td>
+<td>10</td>
 <td>Calculate <i>t</i> always exactly in the middle of {<i>t0</i>, <i>t1</i>}.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">11</td>
+<td>11</td>
 <td>Calculate the length of the subcurve from the start of the curve (<i>tmin</i>) to our current parameter (<i>t</i>).</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">12</td>
+<td>12</td>
 <td>If this length is close enough to the desired length, then we are done and we can abort the infinite loop. <i>abs()</i> -in case you were wondering- is a Python function that returns the absolute (non-negative) value of a number. This means that the <i>tolerance</i> argument works equally strong in both directions, which is what you'd usually want.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">13...14</td>
+<td>13...14</td>
 <td>This is the magic bit. Looks harmless enough doesn't it? 
 What we do here is adjust the subdomain based on the result of the length comparison. If the length of the subcurve {<i>tmin</i>, <i>t</i>} is shorter than <i>Length</i>, then we want to restrict ourself to the lower half of the old subdomain. If, on the other hand, the subcurve length is shorter than <i>Length</i>, then we want the upper half of the old domain. 
 Notice how much more compact programming code is compared to English?</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">15</td>
+<td>15</td>
 <td>Return the solved <i>t</i>-parameter.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 I have unleashed this function on a smooth curve with a fairly well distributed parameter space (i.e. no sudden jumps in parameter "density") and the results are listed below. The length of the total curve was 200.0 mm and I wanted to find the parameter for a subcurve length of 125.0 mm. My tolerance was set to 0.0001 mm. As you can see it took 18 refinement steps in the *BSearchCurve()* function to find an acceptable solution. Note how fast this algorithm homes in on the correct value, after just 6 steps the remaining error is less than 1%. Ideally, with every step the accuracy of the guess is doubled, in practise however you're unlikely to see such a neat progression. In fact, if you closely examine the table, you'll see that sometimes the new guess overshoots the solution so much it actually becomes worse than before (like between steps #9 and #10). 
 
@@ -1526,41 +1541,42 @@ def addcurvaturegraphsection(idCrv, t0, t1, samples, scale):
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>Check for a null span, this happens inside kinks.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>3</td>
 <td>Determine a step size for our loop (Subdomain length / Sample count).
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>5</td>
 <td><i>objects()</i> will hold the IDs of the perpendicular lines, and the connecting curve.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>Define the loop and make sure we always process the final parameter by increasing the threshold with half the step size.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>7</td>
 <td>Make sure <i>t</i> does not go beyond <i>t1</i>, since that might give us the curvature data of the next segment.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">10</td>
+<td>10</td>
 <td>In case of a curvature data discontinuity, do not add a line segment but append the point on the curve at the current curve coordinate <i>t</i>.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">12...16</td>
+<td>12...16</td>
 <td>Compute the A and B coordinates, append them to the appropriate array and add the line segment.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 Now, we need to write a utility function that applies the previous function to an entire curve. There's no rocket science here, just an iteration over the knot-vector of a curve object:
 
@@ -1576,37 +1592,38 @@ def addcurvaturegraph( idCrv, spansamples, scale):
     return allGeometry
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td><i>allGeometry</i> will be a list of all IDs generated by repetitive calls to <i>AddCurvatureGraphSection()</i></td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>3</td>
 <td><i>knots</i> is the knot vector of the nurbs representation of <i>idCrv</i>.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>5</td>
 <td>We want to iterate over all knot spans, meaning we have to iterate over all (except the last) knot in the knot vector. Hence the minus one at the end.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>Place a call to <i>addcurvaturegraphsection()</i> and store all resulting IDs in <i>tmpGeometry</i>.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>7</td>
 <td>If the result of <i>AddCurvatureGraphSection()</i> is not <i>Null</i>, then append all items in <i>tmpGeometry</i> to <i>allGeometry</i>.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>8</td>
 <td>Put all created objects into a new group.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 The last bit of code we need to write is a bit more extensive than we've done so far. Until now we've always prompted for a number of values before we performed any action. It is actually far more user-friendly to present the different values as options in the command line while drawing a preview of the result.
 
@@ -1655,61 +1672,62 @@ def createcurvaturegraph():
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>Prompt for any number of curves, we do not want to limit our script to just one curve.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5...6</td>
+<td>5...6</td>
 <td>Our default values are a scale factor of 1.0 and a span sampling count of 10.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>8</td>
 <td><i>preview()</i> is a list that contains arrays of IDs. One for each curve in <i>idCurves</i>.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">9</td>
+<td>9</td>
 <td>Since users are allowed to change the settings an infinite number of times, we need an infinite loop around our UI code.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">10...11</td>
+<td>10...11</td>
 <td>First of all, delete all the preview geometry, if present.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">13...15</td>
+<td>13...15</td>
 <td>Then, insert all the new preview geometry.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">28</td>
+<td>28</td>
 <td>Once the new geometry is in place, display the command options. The array at the end of the <i>rs.GetString()</i> method is a list of command options that will be visible.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">19...21</td>
+<td>19...21</td>
 <td>If the user aborts (pressed Escape), we have to delete all preview geometry and exit the sub.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">23...29</td>
+<td>23...29</td>
 <td>If the user clicks on an option, <i>result</i> will be the option name. The best method IronPython implements to treat the choice is the <i>If...Then</i> statement shown.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">23</td>
+<td>23</td>
 <td>In the case of "Accept", all we have to do is exit the sub without deleting the preview geometry.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">24...26</td>
+<td>24...26</td>
 <td>If the picked option was "Samples", then we have to ask the user for a new sample count. If the user pressed Escape during this nested prompt, we do not abort the whole script (typical Rhino behaviour would dictate this), but instead return to the base prompt.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">27...29</td>
+<td>27...29</td>
 <td>If the picked option was "Scale", then we have to ask the user for a new scale factor, and . If the user pressed Escape during this nested prompt, we do not abort the whole script (typical Rhino behaviour would dictate this), but instead return to the base prompt.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 ## 8.8 Meshes
 
@@ -1768,13 +1786,13 @@ def createmeshvertices(function, fdomain, resolution):
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>1</td>
 <td>This function is to be part of the finished script. It is a very specific function which merely combines the logic of nested loops with other functions inside the same script (functions which we haven't written yet, but since we know how they are supposed to work we can pretend as though they are available already). This function takes three arguments:
 <ol>
 <li>A String variable which contains the format of the function {f(x,y,Θ,Δ) = …}</li>
@@ -1784,7 +1802,7 @@ def createmeshvertices(function, fdomain, resolution):
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...3</td>
+<td>2...3</td>
 <td>The <i>fDomain()</i> argument has four doubles, arranged like this:
 (0)   Minimum x-value
 (1)   Maximum x-value
@@ -1794,22 +1812,23 @@ We can access those easily enough, but since the step size in x and y direction 
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>5</td>
 <td>Begin at the lower end of the x-domain and step through the entire domain until the maximum value has been reached. We can refer to this loop as the row-loop.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>Begin at the lower end of the y-domain and step through the entire domain until the maximum value has been reached. We can refer to this loop as the column-loop.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>8</td>
 <td>This is where we're calling an -as of yet- non-existent function. However, I think the signature is straightforward enough to not require further explanation now.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">11...13</td>
+<td>11...13</td>
 <td>Append the new vertex to the <i>V</i> list. Note that vertices are stored as a one-dimensional list, which makes accessing items at a specific (<i>row, column</i>) coordinate slightly cumbersome.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 ![{{ site.baseurl }}/images/primer-meshfacelogic.svg]({{ site.baseurl }}/images/primer-meshfacelogic.svg){: .float-img-right width="325"}
 
@@ -1831,34 +1850,35 @@ def createmeshfaces(resolution):
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...3</td>
+<td>2...3</td>
 <td>Cache the {N<sub>x</sub>} and {N<sub>y</sub>} values, they are the same in our case because we do not allow different resolutions in {x} and {y} direction.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>4</td>
 <td>Declare a list to store the faces we will create.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5...6</td>
+<td>5...6</td>
 <td>These two nested loops are used to iterate over the grid and define a face for each row/column combo. I.e. the two values <i>i</i> and <i>j</i> are used to define the value of the A corner for each face.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>7</td>
 <td>Instead of the nondescript "A", we're using the variable name baseIndex. This value depends on the values of both <i>i</i> and <i>j</i>. The <i>i</i> value determines the index of the current column and the <i>j</i> value indicates the current offset (the row index).</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>8</td>
 <td>Define the new quad face corners using the logic stated above.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 Writing a tool which works usually isn't enough when you write it for other people. Apart from just working, a script should also be straightforward to use. It shouldn't allow you to enter values that will cause it to crash (come to think of it, it shouldn't crash at all), it should not take an eternity to complete and it should provide sensible defaults. In the case of this script, the user will have to enter a function which is potentially very complex, and also four values to define the numeric domain in {x} and {y} directions. This is quite a lot of input and chances are that only minor adjustments will be made during successive runs of the script. It therefore makes a lot of sense to remember the last used settings, so they become the defaults the next time around. There's a number of ways of storing persistent data when using scripts, each with its own advantages:
 
@@ -1878,26 +1898,27 @@ def SaveFunctionData(strFunction, fDomain, Resolution):
     file.close()
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>This is a specialized function written specifically for this script. The signature consists only of the data it has to store. The open keyword creates a stream to the file we will be modifying. Specifying a file name without a path saves the file to the directory where the script resides. The second parameter indicates what the stream will be doing - writing in this instance.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3...8</td>
+<td>3...8</td>
 <td>Write all settings successively to the file. We will be writing them in a specific order <i>- strFunction, fDomain</i> values 0 through 3, and the <i>Resolution</i>. The same order will be used to recover them later.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">9</td>
+<td>9</td>
 <td>This call finalizes modifications to the file, and closes it for other operations.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 The contents of the \*.txt file should look something like this:
 
@@ -1922,34 +1943,35 @@ def loadfunctiondata():
     return function, domain, resolution
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2 10</td>
+<td>2 10</td>
 <td>This function needs to handle two possible conditions, the first being the first time it is called, and the second being all successive calls. The first time, there will be no <i>"MeshSettings_XY.txt"</i> file, so we will need to return default values, and create one later. This statement attempts to access the <i>"MeshSettings_XY.txt"</i> file in lines 3 to 5, and upon failure, moves to lines 11 to 13, in order to
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>3</td>
 <td>Obviously we need the exact same file name. If the file does not exist, the script will throw an exception. Not to worry, though. The <i>try...except</i> statement we implemented earlier will handle it, and return our default values.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>4</td>
 <td>This is where we read the data strings from the \*.txt file.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6...9</td>
+<td>6...9</td>
 <td>The items recovered from the \*.txt file are distributed to their respective variables in the order that they were written to the file.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">11...13</td>
+<td>11...13</td>
 <td>If an exception was thrown, we will need to return a set of default values. These are defined here.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 ![{{ site.baseurl }}/images/primer-xyphidelta.svg]({{ site.baseurl }}/images/primer-xyphidelta.svg){: .float-img-right width="325"}
 
@@ -2026,7 +2048,7 @@ The default function Cos(Sqr(x^2 + y^2)) is already quite pretty, but here are s
 
 
 
-<table rules="rows" width="100%">
+<table width="100%">
 <tr>
 <th>Notation</th>
 <th width="30%">Syntax</th>
@@ -2072,7 +2094,8 @@ The default function Cos(Sqr(x^2 + y^2)) is already quite pretty, but here are s
 <td>math.log(math.sin(x)+math.sin(y)+2.01)</td>
 <td><img src="{{ site.baseurl }}/images/primer-meshxy-h.svg" width="100%"></td>
 </tr>
-</table>
+</table> 
+{: .multiline-middle}
 
 ### 8.8.2 Shape vs. Image
 
@@ -2095,13 +2118,13 @@ def randommeshcolors():
     rs.DeleteObject(mesh_id)
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7...11</td>
+<td>7...11</td>
 <td>The False-Color array is optional, but there are rules to using it. If we decide to specify a False-Color array, we have to make sure that it has the exact same number of elements as the vertex array. After all, every vertex needs its own colour. We must also make sure that every element in the False-Color array represents a valid colour. Colours in Rhino are defined as integers which store the red, green and blue channels. The channels are defined as numbers in the range {0; 255}, and they are mashed together into a bigger number where each channel is assigned its own niche. The advantage of this is that all colours are just numbers instead of more complex data-types, but the downside is that these numbers are usually meaningless for mere mortals:<br><br>
 
 
@@ -2111,7 +2134,8 @@ def randommeshcolors():
 <sup>2</sup> Highest possible value
 </td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 Random colors may be pretty, but they are not useful. All the Rhino analysis commands evaluate a certain geometrical local property (curvature, verticality, intersection distance, etc), but none of them take surroundings into account. Let's assume we need a tool that checks a mesh and a (poly)surface for proximity. There is nothing in Rhino that can do that out of the box. So this is actually going to be a useful script, plus we'll make sure that the script is completely modular so we can easily adjust it to analyze other properties.
 
@@ -2143,22 +2167,23 @@ def DistanceTo(pt, id):
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1...2</td>
+<td>1...2</td>
 <td>The <i>VertexValueArray()</i> function is the one that creates a list of numbers for each vertex. We're giving it the mesh vertices (an array of 3D points) and the object ID of the (poly)surface for the proximity analysis. This function doesn't do much, it simply iterates through the list of points using the <i>DistanceTo()</i> function, and returns a list of the results.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4...8</td>
+<td>4...8</td>
 <td><i>DistanceTo()</i> calculates the distance from pt to the projection of pt onto id. Where pt is a single 3D coordinate and id if the identifier of a (poly)surface object. It also performs the logarithmic conversion, so the return value is not the actual distance. 
 </td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 And the master Sub containing all the front end and color magic:
 
@@ -2193,34 +2218,35 @@ def ProximityAnalysis():
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1...3</td>
+<td>1...3</td>
 <td>There are a couple of import statements that may look unfamiliar here. In some scripts, the use of outside resources can come in handy. Importing the System namespace allows us to use objects from the .Net framework, such as the maximum and minimum values of all floating point variables.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">16...20</td>
+<td>16...20</td>
 <td>Since there is not a function in the math namespace, .net, or the rhinoscriptsyntax methods to get the max and min values of an array of numbers, we will have to write some code to get the maximum and minimum values of <i>listD</i>. The .Net framework is a wonderful place, and for the first time, IronPython allows its use in scripts within Rhinoceros. We call the System namespace, and get the max and min values of all double-precision numbers, as a starting point. We then iterate through the items in <i>listD</i>, comparing each value to the current value of <i>maxD</i> and <i>minD</i>, replacing them if we happen to find a more suitable member of the list for either. Once we have iterated through the entire list, we are certain we have the max and min values.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">22</td>
+<td>22</td>
 <td>Create the False-Color array..</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">24</td>
+<td>24</td>
 <td>Calculate the position on the {Red~White} gradient for the current value.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">25</td>
+<td>25</td>
 <td>Cook up a colour based on the <i>proxFactor</i>.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 ## 8.9 Surfaces
 
@@ -2298,30 +2324,31 @@ def ConvertToUVW(idSrf, pXYZ):
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>1</td>
 <td><i>pXYZ()</i> is an array of points expressed in world coordinates.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4...6</td>
+<td>4...6</td>
 <td>Find the {uv} coordinate of {P'}, the {xyz} coordinates of {P'} and the surface normal vector at {P'}.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">8...10</td>
+<td>8...10</td>
 <td>Add and subtract the normal to the {xyz} coordinates of {P'} to get two points on either side of {P'}.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">12...13</td>
+<td>12...13</td>
 <td>If {P} is closer to the dirNeg point, we know that {P} is on the "downside" of the surface and we need to make {w} negative.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 We need some other utility functions as well (it will become clear how they fit into the grand scheme of things later) so let's get it over with quickly:
 
@@ -2355,26 +2382,27 @@ def InstantiateForceLists(Bound):
     return Forces, Factors
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...3</td>
+<td>2...3</td>
 <td>Create lists to hold both <i>Forces</i> and <i>Factors</i>.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5...7</td>
+<td>5...7</td>
 <td>Iterate through both lists and assign default values (a zero-length vector in the case of <i>Forces</i> and zero in the case of <i>Factors</i>)
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">9</td>
+<td>9</td>
 <td>Note that we are returning two separate items. The assignment in the line calling this function will contain both of these. Ways of handling this assignment will be handled later in the text.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 We've now dealt with all the utility functions. I know it's a bit annoying to deal with code which has no obvious meaning yet, and at the risk of badgering you even more I'm going to take a step back and talk some more about the error diffusion algorithm we've come up with. For one, I'd like you to truly understand the logic behind it and I also need to deal with one last problem...
 
@@ -2432,65 +2460,66 @@ def FitSurface(idSrf, Samples, dTranslation, dProximity):
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>1</td>
 <td>This is another example of a function which returns more than one value. When this function completes, <i>dTranslation</i> will contain a number that represents the total motion of all control points and <i>dProximity</i> will contain the total error (the sum of all distances between the surface and the samples). Since it is unlikely our algorithm will generate a perfect fit right away, we somehow need to keep track of how effective a certain iteration is. If it turns out that the function only moved the control points a tiny bit, we can abort in the knowledge we have achieved a high level of accuracy.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2...57</td>
+<td>2...57</td>
 <td><i>P, G, N</i> and <i>S</i> are lists that contain the surface control points (in {xyz} space), Greville points (in {uv} space), normal vectors at every greville point and all the sample coordinates (in {uvw} space). The names chosen can be difficult to remember, but they are short.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>The function we're calling here has been dealt with on page 104.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">11</td>
+<td>11</td>
 <td>First, we iterate over all Sample points.</td>
 </tr><tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">13</td>
+<td>13</td>
 <td>Then, we iterate over all Control points.</td>
 </tr><tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">14</td>
+<td>14</td>
 <td><i>LocalDist</i> is the distance in {uv} space between the projection of the current sample point and the current Greville point.</td>
 </tr><tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">15</td>
+<td>15</td>
 <td>This is where we limit the distance to some non-zero value in order to prevent extremely small numbers from entering the algorithmic meat-grinder.</td>
 </tr><tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">16</td>
+<td>16</td>
 <td>Run the <i>LocalDist</i> through the hyperbola equation in order to get the diffusion factor for the current Control point and the current sample point.</td>
 </tr><tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">17</td>
+<td>17</td>
 <td><i>LocalForce</i> is a vector which temporarily caches the motion caused by the current Sample point. This vector points in the same direction as the normal, but the magnitude (length) of the vector is the size of the error times the diffusion factor we've calculated on line 22.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">18</td>
+<td>18</td>
 <td>Every Control point is affected by all Sample points, meaning that every Control point is tugged in a number of different directions. We need to combine all these forces so we end up with a final, resulting force. Because we're only interested in the final vector, we can simply add the vectors together as we calculate them.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
+<td>19</td>
 <td>We also need to keep a record of all the Diffusion factors along with all vectors, so we can divide them later and unitize the motion (as discussed on page 105).</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">20</td>
+<td>20</td>
 <td>Divide all vectors with all factors (function explained on page 104)</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">22...24</td>
+<td>22...24</td>
 <td>Apply the motion we've calculated to the {xyz} coordinates of the surface control points.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">26...33</td>
+<td>26...33</td>
 <td>Instead of changing the existing surface, we're going to add a brand new one. In order to do this, we need to collect all the NURBS data of the original such as knot vectors, degrees, weights and so on and so forth.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 The procedure on the previous page has no interface code, thus it is not a top-level procedure. We need something that asks the user for a surface, some points and then runs the FitSurface() function a number of times until the fitting is good enough:
 
@@ -2517,30 +2546,32 @@ def DistributedSurfaceFitter():
     print("Final deviation = " + str(round(dProx, 4)))
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">11</td>
+<td>11</td>
 <td>Rather than using an infinite loop (<i>while</i>) we limit the total amount of fitting iterations to one thousand. That should be more than enough, and if we still haven't found a good solution by then it is unlikely we ever will. The variable N is known as a "chicken int" in coding slang. "Int" is short for "Integer" and "chicken" is because you're scared the loop might go on forever.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">12...15</td>
+<td>12...15</td>
 <td>Disable the viewport, create a new surface, delete the old one and switch the redraw back on
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">16</td>
+<td>16</td>
 <td>Inform the user about the efficiency of the current iteration</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">17</td>
+<td>17</td>
 <td>If the total translation is negligible, we might as well abort since nothing we can do will make it any better. If the total error is minimal, we have a good fit and we should abort.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
+
 
 The diagrams and graphs I've used so far to illustrate the workings of this algorithm are all two-dimensional and display only simplified cases. The images on this page show the progression of a single solution in 3D space. I've started with a planar, rectangular nurbs patch of 30 × 30 control points and 36 points both below and above the initial surface. I allowed the algorithm to continue refining until the total deviation was less than 0.01 units.
 
@@ -2646,23 +2677,23 @@ def SurfaceTensorField(Nu, Nv):
     return SmoothTensorField(T,K)
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>1</td>
 <td>This procedure has to create all the lists that define our tensor class. In this case one list with vectors and a list with planes.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">9...10</td>
+<td>9...10</td>
 <td>At the beginning of each iteration down the range <i>N<sub>u</sub></i>, we nest a new list in both T and K, which will hold all values of iterations of the range <i>N<sub>v</sub></i>.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">11</td>
+<td>11</td>
 <td>This looks imposing, but it is a very standard piece of logic. The problem here is a common one: how to remap a number from one scale to another. We know how many samples the user wants (some whole number) and we know the limits of the surface domain (two doubles of some arbitrary value). We need to figure out which parameter on the surface domain matches with the Nth sample number. Observe the diagram below for a schematic representation of the problem:
 <br>
 <img src="{{ site.baseurl }}/images/primer-remapnumberscales.svg" width="80%" float="right">
@@ -2673,19 +2704,20 @@ Line 11 (and line 13) contain an implementation of such a mapping algorithm. I'm
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">14</td>
-<td>Retrieve the surface Frame at {u,v}. This is part of our Tensor class.
+<td>14</td>
+<td>Retrieve the surface Frame at {u,v}. This is part of our Tensor class.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">15</td>
+<td>15</td>
 <td>Retrieve all surface curvature information at {u,v}. This includes principal, mean and Gaussian curvature values and vectors.</td>
 </tr><tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">17</td>
+<td>17</td>
 <td>In case the surface has no curvature at {u,v}, use the x-axis vector of the Frame instead.</td>
 </tr><tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
+<td>19</td>
 <td>If the surface has a valid curvature at {u,v}, we can use the principal curvature direction which is stored in the 4th element of the curvature data array.</td>
-</tr></table>
+</tr></table> 
+{: .multiline}
 
 This function takes two lists and it modifies the originals. The return value (the two lists) is merely cosmetic. This function is a typical box-blur algorithm. It averages the values in every tensor with all neighboring tensors using a 3×3 blur matrix. 
 
@@ -2711,18 +2743,18 @@ def SmoothTensorField(T, K):
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5...6</td>
+<td>5...6</td>
 <td>Since our tensor-space is two-dimensional, we need 2 nested loops to iterate over the entire set.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">8...11</td>
+<td>8...11</td>
 <td>
 <table>
 <tr>
@@ -2740,15 +2772,16 @@ We need to make 2 more nested loops which iterate over the 9 coordinates in this
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">12</td>
+<td>12</td>
 <td>Once we have the <i>mx</i> and <i>my</i> coordinates of the tensor, we can add it to the <i>k_tot</i> summation vector.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">13...16</td>
-<td>Make sure the vector is projected back onto the tangent plane and unitized.
+<td>13...16</td>
+<td>Make sure the vector is projected back onto the tangent plane and unitized.</td>
 </tr>
-</table>
+</table> 
+{: .multiline}
 
 
 ---

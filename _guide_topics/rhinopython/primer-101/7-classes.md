@@ -36,9 +36,9 @@ print obj.test()
 ```	
 
 
-<table rules="rows">
+<table>
 <tr>
-<th style="vertical-align:top;text-align:right;padding:0px 10px;">
+<th>
 Line
 </th>
 <th>
@@ -46,7 +46,7 @@ Description
 </th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">
+<td>
 1
 </td>
 <td>
@@ -54,29 +54,30 @@ Standard class declaration, this class is called "MyClass"
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>Standard class declaration, this class is called "MyClass"</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>3</td>
 <td>Declare a variable x = 10.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>4</td>
 <td>Create a function within the class that returns 'hello'</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>7</td>
 <td>Create an instance of MyClass() called obj</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>8</td>
 <td>This print statement will return >> 10</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">9</td>
+<td>9</td>
 <td>This print statement will return >> 'hello'</td>
 </tr></table>
+{: .multiline}
 
 
 Now, if we change the value of x and print the result:
@@ -103,9 +104,9 @@ print newObj.i
 print newObj.j
 ```	
 
-<table rules="rows">
+<table>
 <tr>
-<th style="vertical-align:top;text-align:right;padding:0px 10px;">
+<th>
 Line
 </th>
 <th>
@@ -113,7 +114,7 @@ Description
 </th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">
+<td>
 1
 </td>
 <td>
@@ -121,26 +122,27 @@ Standard class declaration, this class is called "Harder"
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>This line initializes a number of variables that must be described when creating an instance of the class</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3-4</td>
+<td>3-4</td>
 <td>Sets internal variables i & j to the input variables m & n</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>5</td>
 <td>Creates an instance of the class Harder() called newObj</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>The print call returns the value of i (which was initially m) = 10</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>7</td>
 <td>The print call returns the value of j (which was initially n) = 20</td>
 </tr>
 </table>
+{: .multiline}
 
 
 Now for an example of inheritance, or the ability for a class to take on the qualities of another class, yet have its own differences (Polymorphism!):
@@ -156,7 +158,7 @@ print newerObj.test()
 
 <table rules="rows">
 <tr>
-<th style="vertical-align:top;text-align:right;padding:0px 10px;">
+<th>
 Line
 </th>
 <th>
@@ -164,7 +166,7 @@ Description
 </th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">
+<td>
 1
 </td>
 <td>
@@ -172,18 +174,19 @@ Standard class declaration, this class is called "Weird." However, this time we 
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>Standard variable k = 17</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>4</td>
 <td>Creates an instance of the class Weird() called newerObj</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>5</td>
 <td>The print call returns 'hello'! (Weird...right!?) This means that it referenced the previous class and returned 'hello', because Weird is an child of MyClass()</td>
 </tr>
 </table>
+{: .multiline}
 
 You can use isinstance(newerObj,MyClass) to check if one object is an instance of another object. 
 

@@ -279,9 +279,9 @@ rs.Command ("_SelName Profile")
 rs.Command ("_Delete")
 ```
 
-<table rules="rows">
+<table>
 <tr>
-<th style="vertical-align:top;text-align:right;padding:0px 10px;">
+<th>
 Line
 </th>
 <th>
@@ -289,7 +289,7 @@ Description
 </th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">
+<td>
 2.5
 </td>
 <td>
@@ -304,13 +304,14 @@ We're also limiting the numeric domain to a value between one and a thousand. If
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7...8</td>
+<td>7...8</td>
 <td>On these lines we're creating the strings, based on the values of `dblMajorRadius` and `dblMinorRadius`. If we assume the user has chosen the default values in all cases, `dblMajorRadius` will be 10.0 and `dblMinorRadius` will be 2.0, which means that `strPoint2` will look like " w12,0,0".</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">10...23</td>
+<td>10...23</td>
 <td>This is the same as the macro on page 3, except that we've replaced some bits with variables and there are three extra lines at the bottom which get rid of the construction geometry (so we can run the script more than once without it breaking down).</td>
 </tr></table>
+{: .multiline}
 
 ---
 

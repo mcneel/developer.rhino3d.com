@@ -160,9 +160,9 @@ if __name__=="__main__":
 Here's how it works:
 
 
-<table rules="rows">
+<table>
 <tr>
-<th style="vertical-align:top;text-align:right;padding:0px 10px;">
+<th>
 Line
 </th>
 <th>
@@ -170,7 +170,7 @@ Description
 </th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">
+<td>
 1 & 2
 </td>
 <td>
@@ -179,15 +179,15 @@ We assign each of them an alias using the 'as' keyword in order simplify functio
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>4</td>
 <td>Main Function declaration</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>5</td>
 <td>We create a time object which contains a record the date and time of the function call datetime.now().</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>
 We create a new Rhino Text object to display the date and time from step 5.
 
@@ -209,30 +209,32 @@ The default height of text objects is 1.0 units, but we want our clock to look b
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>7</td>
 <td>I don't think there's anything here that could possibly go wrong, but it never hurts to be sure. Just in case the text object hasn't been created we need to abort the subroutine in order to prevent an error later on.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">9</td>
+<td>9</td>
 <td>We start an infinite While... loop, lines 10, 11 and 12 will be repeated for all eternity.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">10</td>
+<td>10</td>
 <td>There's no need to update our clock if the text remains the same, so we really only need to change the text once every second. The *Rhino.Sleep()* method will pause Rhino for the specified amount of milliseconds. We're forcing the loop to take it easy, by telling it to take some time off on every iteration. We could remove this line and the script will simply update the clock many times per second. This kind of reckless behaviour will quickly flood the undo buffer.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">11</td>
+<td>11</td>
 <td>Here we update our now object. This will give us an updated datetime object.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">12</td>
+<td>12</td>
 <td>This is the cool bit. Here we replace the text in the object with a new String representing the current system time.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">14 & 15</td>
+<td>14 & 15</td>
 <td>This is where the viewport clock function is called. In IronPython, the main function call must be executed after the definition of the function. The if __name__ == "__main__": ... trick exists in Python so that our Python files can act as either reusable modules, or as standalone programs. </td>
 </tr>
 </table>
+{: .multiline}
+
 
  
 ![{{ site.baseurl }}/images/primer-iterativecurvescaler.svg]({{ site.baseurl }}/images/primer-iterativecurvescaler.svg){: .float-img-right width="325"}
@@ -271,9 +273,9 @@ if __name__=="__main__":
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
-<th style="vertical-align:top;text-align:right;padding:0px 10px;">
+<th>
 Line
 </th>
 <th>
@@ -281,7 +283,7 @@ Description
 </th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">
+<td>
 1...4
 </td>
 <td>
@@ -289,43 +291,44 @@ This should be familiar by now
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>5</td>
 <td>Prompt the user to pick a single curve object, we're allowing preselection.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>Check that the user picked an object, and that its id was written to our curve_id variable. Exit if not.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>8</td>
 <td>Retrieve the current curve length. This function should not fail, no need to check for Null.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">10</td>
+<td>10</td>
 <td>Prompt the user for a length limit value. The value must be chosen between the current curve length and 1% of the current curve length. We're setting the default to half the current curve length.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">13</td>
+<td>13</td>
 <td>Start a While... loop</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">14</td>
+<td>14</td>
 <td>This is the break-away conditional. If the curve length no longer exceeds the preset limit, the break statement will take us directly to line 20.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">15</td>
+<td>15</td>
 <td>If the length of the curve did exceed the preset limit, this line will be executed. The <i>rs.ScaleObject()</i> 
 method takes four arguments, the last one of which is optional. We do not override it. We do need to specify which object we want rescaled <i>(curve_id)</i>, what the center of the scaling operation will be (<i>(0,0,0)</i>; the world origin) and the scaling factors along x, y and z (95% in all directions).</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
+<td>19</td>
 <td>This line ends all indented code, which instructs the interpreter to go back to line 13</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>Eventually all curves will become shorter than the limit length and the While... loop will abort. We print out a message to the command line informing the user of the new curve length.</td>
 </tr>
 </table>
+{: .multiline}
 
 ## 5.4 Incremental loops
 

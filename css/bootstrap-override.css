@@ -350,21 +350,73 @@ tbody.index_table tr td{
 
 /*
 ##############################################################################
-##  Multiline text tables 
+##  Multiline text tables for code explanation.  Look in Primer
 ##############################################################################
 */
 
-.multiline {
-	rule:rows;
+table.multiline {
+	rules:rows;
 	vertical-align:top;
+	margin:20px 0px;
+	border-bottom: 1px solid #ddd;
 }
 
-.multiline-cell td {
-	padding:10px 5px;
+table.multiline th{
+     padding:0px 5px 0px 15px;
+	 margin: 0px 15px 0px 15px;
+	 border-bottom: 1px solid #ddd;
+}
+
+
+table.multiline tr {
 	vertical-align:top;
     text-align:right;
-	padding:0px 10px;
+    border-bottom: 1px solid #ddd;
 }
+
+table.multiline td {
+	 vertical-align:top;
+	 padding:0px 5px 0px 15px;
+	 margin: 0px 15px 0px 15px;
+	 text-align: left;
+}
+
+table.multiline td:first-child{
+	 text-align:right;
+	 padding:0px 5px 0px 0px;
+	 margin: 0px 15px 0px 0px;
+}
+
+/*
+##############################################################################
+##  Formula text tables for code explanation.  Look in Primer
+##############################################################################
+*/
+
+table.multiline-middle {
+	rules:rows;
+	vertical-align:middle;
+	margin:20px 0px;
+	border-bottom: 1px solid #ddd;
+}
+
+table.multiline-middle th{
+     padding:0px 5px 0px 15px;
+	 margin: 0px 15px 0px 15px;
+	 border-bottom: 1px solid #ddd;
+}
+
+
+table.multiline-middle tr {
+	vertical-align:middle;
+    text-align:center;
+    border-bottom: 1px solid #ddd;
+}
+
+table.multiline-middle img{
+	margin:10px;
+}
+
 
 
 /*

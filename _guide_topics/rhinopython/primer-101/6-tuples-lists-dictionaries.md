@@ -125,41 +125,42 @@ def myfavoritethings():
     for i,thing in enumerate(things): print i+1, ".", thing
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>4</td>
 <td>We do not know how many favourite things the user has, so there's no way we can set the list to a certain size in advance. Luckily, we do not have to. Items can be appended to a list on an as needed basis!</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>7</td>
 <td>The function len() returns the length of a list object. The very first time this line is run, count will be 0.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">17</td>
+<td>17</td>
 <td>If the user does not enter an answer to our question regarding his/her Nth favorite thing, we will exit the loop and move into the last task of the script on lines 21 and 22.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">18</td>
+<td>18</td>
 <td>We've just asked the user what his/her Nth favourite thing was, and he/she answered truthfully. This means that it is time to store the answer in a safe place. A list is a convenient place to store an arbitrarily long collection of data. The append function shown will add the entry to the end of the list.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">19</td>
+<td>19</td>
 <td>It is possible the user has not entered any String. If this is the case then the result of len(things) will still have a its initial value of zero. There is nothing for us to do in this case and we should abort the subroutine.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">21</td>
+<td>21</td>
 <td>After the loop has completed and we've made certain the array contains some actual data, we print all the gathered information to the command history. First we will tell the user how many favourite things he/she entered.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">22</td>
+<td>22</td>
 <td>Using a For...loop, we can iterate through the items in the list. Note that this For...loop has two iteration variables - one to keep track of the index of the list item, and one to get the actual list item. This is convenient, as it is not necessary to explicitly retrieve the item in the list using the index.
 We then print the index of the user's nth favority thing, and the favorite thing.</td>
 </tr>
 </table>
+{: .multiline}
 
 ## 6.3 Dictionaries
 
@@ -222,7 +223,7 @@ I will be using standard mathematical notation:
 
 
 
-<table rules="rows" width="100%">
+<table width="100%">
 <tr>
 <th>Notation</th>
 <th width="25%">Implementation</th>
@@ -339,6 +340,7 @@ factor. This is the equivalent of *PointDivide()*.</td>
 <td><img src="{{ site.baseurl }}/images/primer-vectorrotate.svg" width="100%"></td>
 </tr>
 </table>
+{: .multiline-middle}
 
 ![{{ site.baseurl }}/images/primer-addvector.svg]({{ site.baseurl }}/images/primer-addvector.svg){: .float-img-right width="325"}
 
@@ -352,21 +354,21 @@ def AddVector(vecdir, base_point=[0,0,0]):
        if line: return rs.CurveArrows(line, 2)
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">1</td>
+<td>1</td>
 <td>Standard function declaration. The function takes two arguments, if the first one does not represent a proper vector array the function will not do anything, if the second one does not represent a proper point array the function will draw the vector from the world origin.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>Declare and compute the coordinate of the arrow tip. This will potentially fail if ptBase or vecDir are not proper arrays. However, the script will continue instead of crash due to the exception handling.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>3</td>
 <td>Here we are calling the RhinoScript method rs.AddLine() and we're storing the return value 
 directly into the line variable. There are three possible scenarios at this point:
 
@@ -380,10 +382,11 @@ In the case of scenario 1, the line variable now contains the object ID for a ne
 In case of scenario #2, the line variable will be set to None. The last option means that there was no return value for AddLine() and hence line will also be None. </td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>4</td>
 <td>Check for scenario 2 and 3, and if they did not occur, go ahead and and add an arrow head using the CurveArrows method. If they did, this method will not be exectuted, and the script simply does not returns *None*.</td>
 </tr>
 </table>
+{: .multiline}
 
 
 ## 6.5 An AddVector() example
@@ -412,36 +415,37 @@ def vectorfield():
 ```
 
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">8</td>
+<td>8</td>
 <td>The <i>listpoints</i> variable is a list which contains all the coordinates of a pointcloud object. This is an example of a nested list (see paragraph 6.6).</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">12</td>
+<td>12</td>
 <td>The variable <i>point</i>, which is taken from the <i>listpoints</i> variable, contains an array of three doubles; a standard Rhino point definition. We use that point to construct a new vector definition which points from the Base point to <i>arrPoints(i)</i>.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">14</td>
+<td>14</td>
 <td>The *rs.VectorCrossProduct()* method will return a vector which is perpendicular to vecBase and the world z-axis. If you feel like doing some homework, you can try to replace the hard-coded direction ([0,0,1]) with a second variable point a la *base_point*.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">15</td>
+<td>15</td>
 <td><i>rs.VectorCrossProduct()</i> will fail if one of the input vectors is zero-length or if both input vectors are parallel. In those cases we will not add a vector to the document.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">16 & 17</td>
+<td>16 & 17</td>
 <td>Here we make sure the <i>vecdir</i> vector is two units long. First we unitize the vector, making it one unit long, then we double the length.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">25</td>
+<td>25</td>
 <td>Finally, place a call to the <i>AddVector()</i> function we defined on page 40. If you intend to run this script, you must also include the <i>AddVector()</i> function in the same script.</td>
 </tr>
 </table>
+{: .multiline}
 
 ## 6.6 Nested lists
 
@@ -503,29 +507,30 @@ def smoothingvector(point, prev_point, next_point, s):
     return vm
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>The smoothingvector function definition takes input of Rhino.Point3d. This object type allows for explicit point addition. The act of adding two Point3d objects together results in vector addition of the two points. The act of dividing the resulting point by 2.0 simply divides the three components (x,y and z) by 2.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>3</td>
 <td>The VectorCreate() function is called in order to obtain a Rhino.Vector3d with information about the directional components of a vector between points Pm, and point, P  being the origin. The math is effectively the same as Pm - Point = Va, but this operation would not have yielded a Rhion.Vector3d object. The VectorCreate() function creates this object efficiently.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">4</td>
+<td>4</td>
 <td>Finally, we call the <i>Rhino.VectorScale()</i> function, which takes a Rhino.Vector3d object, and scales it according to a predetermined scaling factor 's'.
 When we use this algorithm, we must make sure to set 's' to be something sensible, or the loop might become endless: 0.0 1 {s} # 1.0</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>5</td>
 <td>We return the vector vm.</td>
 </tr>
 </table>
+{: .multiline}
 
 We'll also put the entire curve-smoothing algorithm in a separate function. Since it's fairly hard to adjust existing objects in Rhino, we'll be adding a new curve and deleting the existing one:
 
@@ -546,44 +551,45 @@ def smoothcurve(curve_id, s):
     return newcurve_id
 ```
 
-<table rules="rows">
+<table>
 <tr>
 <th>Line</th>	
 <th>Description</th>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">2</td>
+<td>2</td>
 <td>Retrieve the nested list of curve control points, and store it in curve_points.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">3</td>
+<td>3</td>
 <td>We need a second list to contain the new points, while leaving the initial curve_points list intact.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">5</td>
+<td>5</td>
 <td>This loop will start at one and stop one short of the length of the curve_points list. In other words, we're skipping the first and last items in the array.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">6</td>
+<td>6</td>
 <td>Compute the smoothing vector using the current control point, the previous one (<i>i-1</i>) and the next one (<i>i+1</i>). Since we're omitting the first and last point in the array, every point we're dealing with has two neighbors.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">7</td>
+<td>7</td>
 <td>Set the new control point position. The new coordinate equals the old coordinate plus the smoothing vector.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">9-11</td>
+<td>9...11</td>
 <td>We'll be adding a new curve to the document which is identical to the existing one, but with different control point positions. A nurbs curve is defined by four different blocks of data: control points, knots, weights and degree (see paragraph 7.7 Nurbs Curves). We just need to copy the other bits from the old curve.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">12</td>
+<td>12</td>
 <td>Create a new nurbs curve and store the object ID in the variable newcurve_id.</td>
 </tr>
 <tr>
-<td style="vertical-align:top;text-align:right;padding:0px 10px;">13</td>
+<td>13</td>
 <td>Delete the original curve.</td>
 </tr>
 </table>
+{: .multiline}
 
 The top-level subroutine doesn't contain anything you're not already familiar with:
 
