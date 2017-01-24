@@ -13,7 +13,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin']
 layout: toc-guide-page
 ---
 
- 
+
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C# .NET plugins using RhinoCommon in Rhino for Mac.
 
 ## Prerequisites
@@ -71,14 +71,28 @@ The Rhino Xamarin Studio AddIn is required to debug your plugin code in an activ
 #### Step-by-Step
 
 1. Launch *Xamarin Studio*.
-1. Navigate to *Xamarin Studio* > *Add-in Manager...*...
+1. Navigate to *Xamarin Studio* > *Add-ins...*...
 1. Navigate to the *Gallery* tab...
 ![AddIn Manager]({{ site.baseurl }}/images/installing-tools-mac-01.png)
 1. In the *Search* field, search for *rhino*.  This filters the gallery list below.
 1. Find *RhinoCommon Plugin Support* and select it.
 1. Click *Install*.  The plugin should install.
 1. *IMPORTANT*: You must *Quit* and *Restart* Xamarin Studio.
-1. Navigate to *Xamarin Studio* > *Add-in Manager..* > *Install* tab.  Verify that *RhinoCommon Plugin Support* exists under the *Debugging* category.  If it's there, you have successfully installed the AddIn and you are *DONE*.
+1. Navigate to *Xamarin Studio* > *Add-ins..* > *Installed* tab.  Verify that *RhinoCommon Plugin Support* exists under the *Debugging* category.  If it's there, you have successfully installed the AddIn and you are *DONE*.
+
+#### Add-in Not in the Gallery?
+
+If, for some reason, the RhinoCommon Plugin Support add-in does not appear in the Xamarin Studio gallery, you can install the [Latest release from the RhinoCommonXamarinStudioAddin project on GitHub](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases)...
+
+1. Find the *Latest release* in the [list of releases](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases).
+1. Download the *.mpack* file in the list of Downloads on that release.  For example, at the time of this writing, the *Latest release* download is entitled *RhinoXamarinStudioAddIn_6.1.4.0.mpack*.
+1. Launch *Xamarin Studio* if it not already open.
+1. Navigate to *Xamarin Studio* > *Add-ins...*...
+1. Click the *Install from file...* button in the lower left-hand corner.
+1. Navigate to the *.mpack* file you downloaded in step 2 above.
+1. Click *Install*.  The plugin should install.
+1. *IMPORTANT*: You must *Quit* and *Restart* Xamarin Studio.
+1. Navigate to *Xamarin Studio* > *Add-ins..* > *Installed* tab.  Verify that *RhinoCommon Plugin Support* exists under the *Debugging* category.  If it's there, you have successfully installed the AddIn and you are *DONE*.
 
 ---
 
