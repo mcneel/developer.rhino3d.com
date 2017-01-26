@@ -103,8 +103,8 @@ The `.keys()` and `.values()` methods return an array containing all the keys or
 
 ```python
 room_num = {'john': 425, 'tom': 212}
-print (room_num.keys()) # print out a list of keys in the dictionary
-print (room_num.values()) # print out a list of values in the dictionary
+print (room_num.keys()) 
+print (room_num.values())
 ```
 
 ## Looping through Dictionaries
@@ -133,14 +133,14 @@ To sort a dictionary by key using the following `sorted()` function:
 
 ```python
 room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-print sorted(room_num) # sort the dictionary by keys
+print sorted(room_num) 
 ```
 
 To sort by `values` use the `sorted()` method along with the `.values()` function:
 
 ```python
 room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-print sorted(room_num.values()) # sort the dictionary by values
+print sorted(room_num.values()) 
 ```
 
-The Dictionary object is not there to replace the array, but there are certainly times when it makes more sense to index your array using English-like terms as opposed to numerical values.
+The Dictionary object is not there to replace list iteration, but there are certainly times when it makes more sense to index your array using English-like terms as opposed to numerical values. It can be much faster to locate an object in a dictionary then in a list. 
