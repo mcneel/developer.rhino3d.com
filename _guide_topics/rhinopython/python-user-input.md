@@ -6,7 +6,7 @@ author_contacts: ['scottd']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
-categories: ['intermediate']
+categories: ['Intermediate']
 origin:
 order: 75
 keywords: ['script', 'Rhino', 'python']
