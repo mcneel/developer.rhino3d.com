@@ -57,7 +57,21 @@ You can also right-click on a parameter to change its name. The name is also the
 
 Please note that the names of the parameters must follow [Python identifier naming](https://docs.python.org/2/reference/lexical_analysis.html#identifiers) . Just make sure that these names are reflective of what the parameter is and also it should not contain white spaces or special characters.
 
-The inputs will show up in the GhPython editor as global variables.
+The inputs will show up in the GhPython editor as global variables.  For instance here is a simple definition:
+
+![{{ site.baseurl }}/images/ghpython-input.png]({{ site.baseurl }}/images/ghpython-input.png){: .img-center width="80%"}
+
+The code to process the `x` input is as follows:
+
+```python
+if x:
+    print "x is true."
+else:
+    print "x is false."
+```
+
+As the boolen toggle is changed, the `x` value changes.  The `print` method will out put a string to the out of the component.
+
 
 ## Output parameters
 
@@ -103,23 +117,18 @@ The next section is the general attributes or functions common to most GH compon
 
 Then is a section to input data directly to the component and to manage that data.  
 
-The third section is most powerful to use the *Type hint*. Input parameters are set by default to the.NET type “object”.  It is best to specify a type to make the code more readable and efficient. Types can be primitive, such as integer or double, or geometry specific RhinoCommon types that are used only in Rhino such as “Point3d” or a “Curve”. You need to select the appropriate type for each input.
-
-Just like any other GH components, you can hook data to the input parameters of the script components. Your script component can be made to process numbers, curves or any other data type. You can specify the data type of your input using the Type hint as in the following image.
+The third section is most powerful to use the *Type hint*. Input parameters are set by default to the.NET type “object”. Sometimes is best to specify a datatype on input to make the code more readable and efficient. Types can be primitive such as integers or doubles, or geometry specific RhinoCommon types that are used only in Rhino such as “Point3d” or a “Curve”. You need to select the appropriate type for each input.
 
 
+## Next Steps
 
-
-
+That lays out the bascis of the GhPtyon component.  Next is a look into the component Python editor for Grasshopper.
 
 ---
 
 ## Related Topics
 
+- [Your first script with Python in Grasshopper]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
 - [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
-- [Loading Scripts]({{ site.baseurl }}/guides/rhinopython/python-loading-scripts)
-- [Running Scripts]({{ site.baseurl }}/guides/rhinopython/python-running-scripts)
-- [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
-- [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)
-- [Scripting Options]({{ site.baseurl }}/guides/rhinopython/python-scripting-options)
-- [Reinitializing Python]({{ site.baseurl }}/guides/rhinopython/python-scripting-reinitialize)
+- [Editing Python in Grasshopper]({{ site.baseurl }}/guides/rhinopython/python-loading-scripts)
+- [Python Guide for Rhino]({{ site.baseurl }}/guides/rhinopython/)
