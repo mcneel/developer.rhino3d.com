@@ -147,6 +147,7 @@ kbd
     user-select: none;
 }
 
+<<<<<<< HEAD
 .hljs-line-numbers {
 	display:none;
 }
@@ -166,6 +167,8 @@ pre code {
     white-space: pre;
 }
 
+=======
+>>>>>>> 6f0b4fd... Add https://github.com/wcoder/highlightjs-line-numbers.js/ extension to Highlight.js.  This commit is too broad as it applies line-numbers to all code blocks.  We need a default without line-numbers and a new style (optional) that includes line numbers.
 /*
 ##############################################################################
 ## inline code overrides.
