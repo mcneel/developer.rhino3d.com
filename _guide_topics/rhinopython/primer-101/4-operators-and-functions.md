@@ -32,9 +32,8 @@ The four lines of code above contain four kinds of code:
 
 Numbers and variables are well behind us now. Arithmetic operators should be familiar from everyday life, Python uses them in the same way as you used to during math classes. Python comes with a limited amount of arithmetic operators and they are always positioned between two variables or constants (a constant is a fixed number).  The function first signifies that we have imported math at the top of our code, using "import math", and then call a function that is within the math module called "sin()". Thus we write: math.sin(value). 
 
-<img src="{{ site.baseurl }}/images/primer-operators.svg" width="95%" float="right">
+<img src="{{ site.baseurl }}/images/primer-operators.svg">{: .img-center  width="95%"}
 
-<!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
 ## 4.2 Careful…
 
@@ -49,9 +48,7 @@ x = 4 + (5 * 2)		# correct precedence
 
 x doesn't equal 18, even though many cheap calculators seem to disagree. The precedence of the multiplication is higher which means you first have to multiply 5 by 2, and then add the result to 4. Thus, x equals 14. Python is not a cheap calculator and it has no problems whatsoever with operator precedence. It is us, human beings, who are the confused ones. The example above is fairly straightforward, but how would you code the following?
 
-<img src="{{ site.baseurl }}/images/primer-formula.svg" width="35%" float="right">
-
-<!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
+$$y =\frac{\sqrt{x^2+(x+1)}}{x-3} + \left|{\frac{2x}{x^{0.5x}}}\right|$$
 
 Without extensive use of parenthesis, this would be very nasty indeed. By using parenthesis in equations we can force precedence, and we can easily group different bits of mathematics. All the individual bits in the mathematical notation have been grouped inside parenthesis and extra spaces have been inserted to accentuate transitions from one top level group to the next:
 
@@ -68,6 +65,7 @@ C = 2*x
 D = x**(0.5* x)
 y = (math.sqrt(A) / B) + abs(C / D)
 ```
+
 ## 4.3 Logical operators
 
 I realize the last thing you want right now is an in-depth tutorial on logical operators, but it is an absolute must if we want to start making smart code. I'll try to keep it as painless as possible. 
@@ -117,25 +115,25 @@ As you can see the problem with Logical operators is not the theory, it's what h
 
 A good way to exercise your own boolean logic is to use Venn-diagrams. A Venn diagram is a graphical representation of boolean sets, where every region contains a (sub)set of values that share a common property. The most famous one is the three-circle diagram:
 
-<img src="{{ site.baseurl }}/images/primer-venn-1.svg" width="50%" float="right">
+<img src="{{ site.baseurl }}/images/primer-venn-1.svg">{: .img-center  width="50%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
 Every circular region contains all values that belong to a set; the top circle for example marks off set {A}. Every value inside that circle evaluates True for {A} and every value not in that circle evaluates False for {A}. If you're uncomfortable with "A, B and C", you can substitute them with *"Employed"*, *"Single"* and *"HomeOwner"*. By coloring the regions we can mimic boolean evaluation in programming code:
 
-<img src="{{ site.baseurl }}/images/primer-venn-2.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-venn-2.svg">{: .img-center  width="100%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
 Try to color the four diagrams below so they match the boolean logic:
 
-<img src="{{ site.baseurl }}/images/venn-blank.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/venn-blank.svg">{: .img-center  width="100%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
 Venn diagrams are useful for simple problems, but once you start dealing with more than three regions it becomes a bit opaque. The following image is an example of a 6-regional Venn diagram. Pretty, but not very practical:
 
-<img src="{{ site.baseurl }}/images/venn-complex.svg" width="35%" float="right">
+<img src="{{ site.baseurl }}/images/venn-complex.svg">{: .img-center  width="35%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
@@ -146,12 +144,12 @@ At the level of Python there are so many wrappers around those bits that we can'
 
 A good example is the *math.sin()* function, which takes a single numeric value and returns the sine of that value. If we want to know the sine of -say- 4.7, all we need to do is type in *x = math.sin(4.7)*. Internally the computer might calculate the sine by using a digital implementation of the Taylor series:
 
-<img src="{{ site.baseurl }}/images/taylorseries2.png" width="30%" float="right">
+$$f(x) = \sum_{n=0}^\infty \frac{f^n(a)}{n!} {(x-a)^n}$$
 
 In other words: you don't want to know. The good people who develop programming languages predicted you don't want to know, which is why they implemented a *math.sin()* function. Python comes with a long list of predefined functions all of which are available to RhinoScripters. Some deal with mathematical 
 computations such as *math.sin()*, others perform String operations such as *abs()* which returns the absolute value. Python lists 75 native procedures plus many more in any of the modules that can be imported (i.e. the *math* module). I won't discuss them here, except when they are to be used in examples.
 
-Apart from implementing the native Python functions, Rhino adds a number of extra ones for us to use. The current RhinoScript helpfile for Rhino5 claims a total number of about 800 additional functions, and new ones are added frequently. Rhino's built in functions are referred to as "methods". They behave exactly the same as Python procedures although you do need to look in a different helpfile to see what they do. [http://www.rhino3d.com/5/ironpython/index.html](http://www.rhino3d.com/5/ironpython/index.html)
+Apart from implementing the native Python functions, Rhino adds a number of extra ones for us to use. The current RhinoScriptSyntax helpfile for Rhino5 claims a total number of about 800 additional functions, and new ones are added frequently. Rhino's built in functions are referred to as "methods". They behave exactly the same as Python procedures although you do need to look in a different helpfile to see what they do. [http://www.rhino3d.com/5/ironpython/index.html](http://www.rhino3d.com/5/ironpython/index.html)
 
 So how do functions/procedures/methods behave? Since the point of having procedures is to encapsulate code for frequent use, we should expect them to blend seamlessly into written code. In order to do this they must be able to both receive and return variables. *math.sin()* is an example of a function which both requires and returns a single numeric variable. The *datetime.now()* function on the other hand only returns a single value which contains the current date and time. It does not need any additional information from you, it is more than capable of finding out what time it is all by itself. An even more extreme example is the *rs.Exit()* method which does not accept any argument and does not return any value. There are two scenarios for calling procedures. We either use them to assign a value or we call them out of the blue:
 
@@ -161,7 +159,7 @@ rs.AddPoint([0.0, 0.0, 1.0])			    # Correct
 rs.AddPoint [0.0, 0.0, 1.0]			        # Wrong
 ```
 
-If you look in the RhinoScript helpfile and search for the *AddLayer()* method, you'll see the following text:
+If you look in the RhinoScriptSyntax helpfile and search for the *AddLayer()* method, you'll see the following text:
 
 ```python
 rs.AddLayer (name=None, color=0, visible=True, locked=False, parent=None)
@@ -171,24 +169,9 @@ rs.AddLayer (name=None, color=0, visible=True, locked=False, parent=None)
 
 ### 4.4.1 A simple function example
 
-This concludes the boring portion of the primer. We now have enough information to actually start making useful scripts. I still haven't told you about loops or conditionals, so the really awesome stuff will have to wait until Chapter 5, though. We're going to write a script which uses some Python functions and a few RhinoScript methods. Our objective for today is to write a script that applies a custom name to selected objects. First, I'll show you the script, then we'll analyze it line by line:
+This concludes the boring portion of the primer. We now have enough information to actually start making useful scripts. I still haven't told you about loops or conditionals, so the really awesome stuff will have to wait until Chapter 5, though. We're going to write a script which uses some Python functions and a few RhinoScriptSyntax methods. Our objective for today is to write a script that applies a custom name to selected objects. First, I'll show you the script, then we'll analyze it line by line:
 
-<table>
-<tr>
-<td width="10%">
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11	
-</td>
-<td>	
+```python	
 import rhinoscriptsyntax as rs
 import time
 #This script will rename an object using the current system time
@@ -200,31 +183,13 @@ if strObjectID:
    strNewName = "Time: " + str(time.localtime())
     
    rs.ObjectName(strObjectID, strNewName)</td>
-</tr>
-</table>
-
-
-|--:|:-------------------------------|
-| 1 | ```import rhinoscriptsyntax as rs``` |
-| 2 | ```import time``` |
-
-#This script will rename an object using the current system time
-
-strObjectID = rs.GetObject("Select an object to rename",0,False,True)
-
-if strObjectID:
-
-   strNewName = "Time: " + str(time.localtime())
-    
-   rs.ObjectName(strObjectID, strNewName)
-	
-<!-- TODO: The table code block with line number goes here. -->
+```
 
 This is a complete script file which can be run directly from the disk. It adheres to the basic script structure according to page 13.
 
 We'll be using two variables in this script, one to hold the ID of the object we're going to rename and one containing the new name. On line 5 we declare a new variable. Although the "str" prefix indicates that we'll be storing Strings in this variable, that is by no means a guarantee. You can still put numbers into something that starts with str.  It is simply the convention to name a variable with strSomething if it is storing a string, similarly you can use intSomething for integers etc.
 
-On line 5, we're assigning a value to *strObjectID* by using the RhinoScript method *GetObject()* to ask the user to select an object. The help topic on *GetObject()* tells us the following:
+On line 5, we're assigning a value to *strObjectID* by using the RhinoScriptSyntax method *GetObject()* to ask the user to select an object. The help topic on *GetObject()* tells us the following:
 
 ```python
 Rhino.GetObject (message=None,filter=0,preselect=False,Select=False,custom_filter=None,subobjects=False)
@@ -252,7 +217,7 @@ Time: (2011, 3, 10, 22, 17, 53, 3, 69, 0)
 
 Finally, at line 11, we reach the end of our quest. We tell Rhino to assign the new name to the old object:
 
-<img src="{{ site.baseurl }}/images/primer-objectname.jpg" width="40%" float="right">
+<img src="{{ site.baseurl }}/images/primer-objectname.jpg">{: .img-center  width="35%"}
 
 Instead of using *strNewName* to store the name String, we could have gotten away with the following:
 
@@ -430,12 +395,6 @@ This gets into the topic of mutability.  An element is considered mutable if it 
 
 ---
 
-#### Related Topics
+## Next Steps
 
-- [Where to find help - Next Topic >>]({{ site.baseurl }}/guides/rhinopython/primer-101/1-2-where-to-find-help/)
-- [Rhino.Python Primer 101]({{ site.baseurl }}/guides/rhinopython/primer-101/rhinopython101)
-- [Running Scripts]({{ site.baseurl }}/guides/rhinopython/python-running-scripts)
-- [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
-- [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)
-- [Scripting Options]({{ site.baseurl }}/guides/rhinopython/python-scripting-options)
-- [Reinitializing Python]({{ site.baseurl }}/guides/rhinopython/python-scripting-reinitialize)
+Ok, so now that you can get some functions to work. Next is [conditional execution]({{ site.baseurl }}/guides/rhinopython/primer-101/5-conditional-execution/) to control how the script reacts to input.

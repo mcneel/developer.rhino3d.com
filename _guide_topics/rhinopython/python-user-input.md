@@ -6,7 +6,7 @@ author_contacts: ['scottd']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
-categories: ['intermediate']
+categories: ['Intermediate']
 origin:
 order: 75
 keywords: ['script', 'Rhino', 'python']
@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## Overview
 
-Prompting the user of a script for the input of a value, selecting a layer, picking a point or selecting a Rhino object is important to many interactive scripts.
+Prompting the user of a script fo the input of a value, selecting a layer, picking a point or selecting a Rhino object is important to many interactive scripts.
 
 The RhinoscriptSyntax module contains many ways to interactively prompt for several different types of input. There are three main styles of input that are contained in Rhinosciptsyntax:
 

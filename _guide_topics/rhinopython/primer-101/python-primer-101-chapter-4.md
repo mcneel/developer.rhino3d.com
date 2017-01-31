@@ -727,7 +727,7 @@ I won't discuss them here, except when they are to be used in
 examples.]{.content}
 
 [Apart from implementing the native Python functions, Rhino adds a
-number of extra ones for us to use. The current RhinoScript helpfile for
+number of extra ones for us to use. The current RhinoScriptSyntax helpfile for
 Rhino5 claims a total number of about 800 additional functions, and new
 ones are added frequently. Rhino's built in functions are referred to as
 "methods". They behave exactly the same as Python procedures although
@@ -762,7 +762,7 @@ out of the blue:]{.content}
 [2.]{.code}[ rs.AddPoint]{.code-keyword}[
 ]{.code}[\[]{.code-keyword}[0.0, 0.0, 1.0\] » Wrong]{.code}
 
-[If you look in the RhinoScript helpfile and search for the
+[If you look in the RhinoScriptSyntax helpfile and search for the
 ]{.content}[AddLayer() ]{.code-10pt}[method, you'll see the following
 text:]{.content}
 
@@ -785,7 +785,7 @@ will become black.]{.content}
 information to actually start making useful scripts. I still haven't
 told you about loops or conditionals, so the really awesome stuff will
 have to wait until Chapter 5, though. We're going to write a script
-which uses some Python functions and a few RhinoScript methods. Our
+which uses some Python functions and a few RhinoScriptSyntax methods. Our
 objective for today is to write a script that applies a custom name to
 selected objects. First, I'll show you the script, then we'll analyze it
 line by line:]{.content}
@@ -838,7 +838,7 @@ it is storing a string, similarly you can use intSomething for integers
 etc.]{.content}
 
 [On line 5, we're assigning a value to
-]{.content}[strObjectID]{.code-10pt}[ by using the RhinoScript method
+]{.content}[strObjectID]{.code-10pt}[ by using the RhinoScriptSyntax method
 ]{.content}[GetObject()]{.code-10pt}[ to ask the user to select an
 object. The help topic on ]{.content}[GetObject()]{.code-10pt}[ tells us
 the following:]{.content}
