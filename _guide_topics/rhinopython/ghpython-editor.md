@@ -24,7 +24,7 @@ The Python editor runs IronPython 2.7, the GhPython component can also access th
 The code editor consists of 4 parts: 
 
 - Menu - Use this to import and save Python files, also to access Help resources. 
-- Code view - Write the Python code here.
+- Code Window - Write the Python code here.
 - Output window - Use this to see code status and error messages.
 - Test Button - Runs the code without exting the editor
 - OK Button - Tests the code, saves it and closes the editor.
@@ -68,13 +68,71 @@ The Menu contains a File pulldown and a help pulldown.
 </table>
 {: .multiline}
  
+## Code Window
+
+This is where all the typing goes on and the grand dieas you have come to life.
+
+This is very similiar to the Rhino.Ptyhon script editor.  Simply type in the statements.
+
+### Importing modules
+
+Normally a script will start with `import` statments.  The editor will autocomplete the modules which are available.
+
+
+![{{ site.baseurl }}/images/ghpython-editor-import.png]({{ site.baseurl }}/images/ghpython-editor-import.png){: .img-center width="60%"}
+
+Some common module that may be imported are:
+
+```python
+import rhinoscriptsyntax as rs
+import math #Various math functions including Degree, Radian and Hypot
+import statistics #Mean and median are here
+```
+
+There are hundeds of modules available, for a complete list, go to [Python Standard Libaries](https://docs.python.org/2/library/).  Here is a very short list of other modules that can be used:
+
+```python
+import rhino #imports the rhinocommon namespace
+import datetime #Basic date and time types
+import string #Common string operations
+import random #Generate pseudo-random numbers
+import pickle #Python object to string for serialization
+import system #System-specific parameters and functions
+import os.path #Common pathname manipulations
+import csv #CSV File Reading and Writing
+import htmllib #A parser for HTML documents
+import JSON #JSON encoder and decoder
+```
+Once a module is imported, typing the module name and a dot will show an autocomplete of all the methods within that module.
+
+### Input Variables
+
+Each time Grasshopper recalculates the definition, the Python component will imput the inputs of the GHPython component as global variables in the Python script.  The name of those variables will correspond to the name of each input.  As a simple example this example:
+
+![{{ site.baseurl }}/images/ghpython-input.png]({{ site.baseurl }}/images/ghpython-input.png){: .img-center width="80%"}
+
+The code to process the `x` input is as follows:
+
+```python
+if x:
+    print "x is true."
+else:
+    print "x is false."
+```
+
+Understanding the type of deta is being input and how that maps to standard Python components is important. Some examples:
+
+| Grasshopper Input | | | Python Datatype |
+|:------------------|-|-|:----------------|
+| String            | | | String          |
+
 
 
 
 
 ## Next Steps
 
-That lays out the bascis of the GhPtyon component.  Next is a look into the component Python editor for Grasshopper.
+That lays out the basics of the GhPython component.  Next is a look into the component Python editor for Grasshopper.
 
 ---
 
