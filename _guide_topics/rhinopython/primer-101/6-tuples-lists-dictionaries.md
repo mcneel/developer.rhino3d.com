@@ -124,6 +124,7 @@ def myfavoritethings():
     print "Your", len(things)+1, "favorite things are:"
     for i,thing in enumerate(things): print i+1, ".", thing
 ```
+{: .line-numbers}
 
 <table>
 <tr>
