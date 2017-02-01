@@ -34,6 +34,7 @@ obj = MyClass()
 print obj.x
 print obj.test()
 ```	
+{: .line-numbers}
 
 
 <table>
@@ -103,6 +104,7 @@ newObj = Harder(10,20)
 print newObj.i
 print newObj.j
 ```	
+{: .line-numbers}
 
 <table>
 <tr>

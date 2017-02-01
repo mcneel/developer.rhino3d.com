@@ -101,7 +101,11 @@ body {
 #cse-search-results iframe {
 	height : 1150px;
 }
-
+ 
+/* Coordinating the codeblock background with pre container baockground */
+pre {
+	background-color: #f8f8f8;
+}
 
 
 /* kbd overrides */
@@ -127,14 +131,39 @@ kbd
 
 /*
 ##############################################################################
-## inline code overrides. 
+## code block (highlight.js) overrides.
+##############################################################################
+*/
+
+.hljs-line-numbers {
+    text-align: right;
+    border-right: 1px solid #ccc;
+    color: #999;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.hljs-line-numbers {
+	display:none;
+}
+
+.line-numbers code{
+	display:block;
+}
+/*
+##############################################################################
+## inline code overrides.
 ##############################################################################
 */
 
 code {
 	color: #000000;
 	background-color: transparent;
-	
+
 }
 
 /*

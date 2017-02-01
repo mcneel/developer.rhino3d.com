@@ -119,6 +119,7 @@ def parametercolor(parameter):
 if __name__=="__main__":
     main()
 ```
+{: .line-numbers}
 
 <img src="{{ site.baseurl }}/images/primer-curveparameterspace.svg">{: .img-center  width="45%"}
 
@@ -224,6 +225,7 @@ def evaluatedeviation( surface_id, threshold, sample ):
 if __name__=="__main__":
     main()
 ```
+{: .line-numbers}
 
 ![{{ site.baseurl }}/images/primer-surfaceparameterspace.svg]({{ site.baseurl }}/images/primer-surfaceparameterspace.svg){: .float-img-right width="325"}
 
@@ -335,6 +337,7 @@ def getr2pathonsurface(surface_id, segments, prompt1, prompt2):
         path.append(pt)
     return path
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -418,6 +421,7 @@ def projectpolyline(vertices, surface_id):
         if pt: polyline.append(pt[0])
     return polyline
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -457,6 +461,7 @@ def smoothpolyline(vertices):
     smooth.append(vertices[len(vertices)-1])
     return smooth
 ```
+{: .line-numbers}
 
 
 <table>
@@ -490,6 +495,7 @@ def geodesicfit(vertices, surface_id, tolerance):
         if abs(newlength-length)<tolerance: return vertices
         length = newlength
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -556,7 +562,7 @@ def geodesiccurve():
     rs.AddPolyline(vertices)
     print "Geodesic curve added with length: ", newlength
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -634,6 +640,7 @@ arrPlane = rs.PlaneFromPoints(ptOrigin, ptX, ptY)
 rs.AddPlaneSurface(arrPlane, 1.0, 1.0)
 rs.AddPlaneSurface(arrPlane, dX, dY)
 ```
+{: .line-numbers}
 
 ![{{ site.baseurl }}/images/primer-planecreation.svg]({{ site.baseurl }}/images/primer-planecreation.svg){: .float-img-right width="325"}
 
@@ -663,6 +670,8 @@ for u in range(uDomain[0],uDomain[1], uStep):
 
 rs.EnableRedraw(True)
 ```
+{: .line-numbers}
+
 Frames are planes which are used to indicate geometrical directions. Both curves, surfaces and textured meshes have frames which identify tangency and curvature in the case of curves and [u] and [v] directions in the case of surfaces and meshes. The script above simply iterates over the [u] and [v] directions of any given surface and adds surface frame objects at all uv coordinates it passes.
 
 ![{{ site.baseurl }}/images/primersurfaceframes.svg]({{ site.baseurl }}/images/primersurfaceframes.svg){: .float-img-right width="325"}
@@ -739,6 +748,8 @@ def DistributeCirclesOnSphere():
         phi += phi_step
     rs.EnableRedraw(True)
 ```
+{: .line-numbers}
+
 <img src="{{ site.baseurl }}/images/primer-spherepack.svg">{: .img-center  width="45%"}
 
 <table>
@@ -851,7 +862,7 @@ def FlatWorm():
     rs.AddLoftSrf(crosssections)
     rs.DeleteObjects(crosssections)
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -955,6 +966,7 @@ def AddArcDir(ptStart, ptEnd, vecDir):
     vecBisector = rs.VectorScale(vecBisector, midLength)
     return rs.AddArc3Pt(ptStart, rs.PointAdd(ptStart, vecBisector), ptEnd)
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -1042,6 +1054,7 @@ def RandomPointInCone( origin, direction, minDistance, maxDistance, maxAngle):
     vecTwig = rs.VectorRotate(vecTwig, random.random()*360, direction)
     return rs.PointAdd(origin, vecTwig)
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -1109,7 +1122,7 @@ def RecursiveGrowth( ptStart, vecDir, props, generation):
             vecGrow = rs.CurveTangent(newTwig, rs.CurveDomain(newTwig)[1])
             RecursiveGrowth(ptGrow, vecGrow, newProps, generation+1)
 ```            
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -1277,6 +1290,7 @@ def blendcorners():
     rs.AddCurve(newverts, 5)
     rs.DeleteObject(polyline_id)
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -1382,7 +1396,7 @@ def BSearchCurve(idCrv, Length, Tolerance):
         else: t1 = t
     return t
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -1539,7 +1553,7 @@ def addcurvaturegraphsection(idCrv, t0, t1, samples, scale):
     objects.append(rs.AddInterpCurve(points))
     return objects
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -1580,7 +1594,7 @@ def addcurvaturegraphsection(idCrv, t0, t1, samples, scale):
 
 Now, we need to write a utility function that applies the previous function to an entire curve. There's no rocket science here, just an iteration over the knot-vector of a curve object:
 
-```primer
+```python
 def addcurvaturegraph( idCrv, spansamples, scale):
     allGeometry = []
     knots = rs.CurveKnots(idCrv)
@@ -1591,6 +1605,7 @@ def addcurvaturegraph( idCrv, spansamples, scale):
     rs.AddObjectsToGroup(allGeometry, rs.AddGroup())
     return allGeometry
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -1670,7 +1685,7 @@ def createcurvaturegraph():
             sc = rs.GetReal("Scale of the graph", scale, 0.01, 1000.0)
             if sc: scale = sc
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -1784,7 +1799,7 @@ def createmeshvertices(function, fdomain, resolution):
             v.append( (x,y,z) ) 
     return v
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -1848,7 +1863,7 @@ def createmeshfaces(resolution):
             f.append( (baseindex, baseindex+1, baseindex+nY+2, baseindex+nY+1) )
     return f
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -1897,6 +1912,7 @@ def SaveFunctionData(strFunction, fDomain, Resolution):
     file.write(str(Resolution))
     file.close()
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -1942,6 +1958,7 @@ def loadfunctiondata():
         resolution = 50
     return function, domain, resolution
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -2117,6 +2134,7 @@ def randommeshcolors():
     rs.AddMesh(verts, faces, vertex_colors=colors)
     rs.DeleteObject(mesh_id)
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -2165,7 +2183,7 @@ def DistanceTo(pt, id):
         d = rs.Distance(pt, ptCP[0])
         return math.log10(d+1)
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -2216,7 +2234,7 @@ def ProximityAnalysis():
     rs.AddMesh(vertices, faces, vertex_colors=colors)
     rs.DeleteObject(mesh_id)
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -2322,7 +2340,7 @@ def ConvertToUVW(idSrf, pXYZ):
         pUVW.append((u, v, dist)) 	
     return pUVW
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -2381,6 +2399,7 @@ def InstantiateForceLists(Bound):
         
     return Forces, Factors
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -2458,7 +2477,7 @@ def FitSurface(idSrf, Samples, dTranslation, dProximity):
     FS = rs.AddNurbsSurface(srf_N, P, srf_K[0], srf_K[1], srf_D, srf_W)
     return (FS, Samples, dTranslation, dProximity)
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -2545,6 +2564,7 @@ def DistributedSurfaceFitter():
     
     print("Final deviation = " + str(round(dProx, 4)))
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -2676,6 +2696,7 @@ def SurfaceTensorField(Nu, Nv):
                 K[i].append(rs.SurfaceCurvature(idSrf,(u,v))[3])
     return SmoothTensorField(T,K)
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -2741,7 +2762,7 @@ def SmoothTensorField(T, K):
             rs.AddLine(T[i][j][0],T[i][j][0]+K[i][j])
     return T, K
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
