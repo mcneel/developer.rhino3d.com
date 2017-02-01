@@ -153,6 +153,8 @@ def viewportclock():
 if __name__=="__main__":
     viewportclock()
 ```	
+{: .line-numbers}
+
 
 <img src="{{ site.baseurl }}/images/primer-viewportclock.svg">{: .img-center  width="40%"}
 
@@ -271,7 +273,7 @@ def fitcurvetolength():
 if __name__=="__main__":
     fitcurvetolength()
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
