@@ -154,6 +154,18 @@ kbd
 .line-numbers code{
 	display:block;
 }
+
+/* prevent code blocks from wrapping so line numbers line up
+   see https://github.com/wcoder/highlightjs-line-numbers.js/issues/4 */
+pre {
+    overflow: auto;
+    word-break: normal;
+    word-wrap: normal;
+}
+pre code {
+    white-space: pre;
+}
+
 /*
 ##############################################################################
 ## inline code overrides.
