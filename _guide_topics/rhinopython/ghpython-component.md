@@ -68,14 +68,14 @@ else:
     print("x is false.")
 ```
 
-As the boolen toggle is changed, the `x` value changes.  The `print` method will out put a string to the out of the component.
+As the Boolean toggle is changed, the `x` value changes.  The `print` method will out put a string to the out of the component.
 
 
 ## Output parameters
 
-Like the inputs, you can define as many outputs or returns as you need when you “zoom in” and push the “+” sign.  Unlike input parameters, there are no default datatypes associated with output.  The output datatype can assign inside your script.
+Like the inputs, you can define as many outputs or returns as you need when you “zoom in” and push the “+” sign.  Unlike input parameters, there are no default datatypes associated with output.  The output datatype will be assigned inside your script.
 
-To actually send information to the output from the script, simply assign the value(s) to the output variable name.  For intance in this case the output is *a*:
+To actually send information to the output from the script, simply assign the value(s) to the output variable name.  For instance, in this case the output is *a*:
 
 ![{{ site.baseurl }}/images/ghpython-component.png]({{ site.baseurl }}/images/ghpython-component.png){: .img-center width="30%"}
 
@@ -92,7 +92,7 @@ Each time Grasshopper recalculates the definition, the Python component will run
 
 ## Out parameter
 
-Out paramter is there by default to provide some useful information about your code. I often find myself connecting the out parameter to a panel component to be able to read the information directly without having to hover over the out parameter.
+Out parameter is there by default to provide some useful information about your code. I often find myself connecting the out parameter to a panel component to be able to read the information directly without having to hover over the out parameter.
 
 ![{{ site.baseurl }}/images/ghpython-outerror.png]({{ site.baseurl }}/images/ghpython-outerror.png){: .img-center width="80%"}
 
@@ -115,7 +115,7 @@ The next section is the general attributes or functions common to most GH compon
 
 Then is a section to input data directly to the component and to manage that data.  
 
-The third section is most powerful to use the *Type hint*. Input parameters are set by default to the.NET type “object”. Sometimes is best to specify a datatype on input to make the code more readable and efficient. Types can be primitive such as integers or doubles, or geometry specific RhinoCommon types that are used only in Rhino such as “Point3d” or a “Curve”. You need to select the appropriate type for each input.
+The third section is most powerful to use the *Type hint*. Input parameters are set by default to the .NET type “object”. Sometimes is best to specify a datatype on input to make the code more readable and efficient. Types can be primitive such as integers or doubles, or geometry specific RhinoCommon types that are used only in Rhino such as “Point3d” or a “Curve”. You need to select the appropriate type for each input.
 
 The rhinoscriptsyntax Type Hint is special: when it is selected, any geometry will be added to the Grasshopper document, and then its ID (Guid) inside it will be passed in the variable. With the rest of the hints, GhPython will call into Grasshopper and perform the same type of operations that Grasshopper does when it requires a special data type. This conversion is costly. If you want to make things as quick as possible, choose 'No Type Hint'. However, users of your component will benefit greatly from using a meaningfully-set and appropriate type hint.
 

@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## Introduction
 
-Scripting components works as an integrated part of GH. They can get input and produce output from and to other standard GH components. They can be used to create specialized functionality that opens up tremendous potential beyond the standard compoonents. 
+Scripting components works as an integrated part of GH. They can get input and produce output from and to other standard GH components. They can be used to create specialized functionality that opens up tremendous potential beyond the standard components. 
 
 But there is a cool twist… the GhPython component supports rhinoscriptsyntax functions. The rhinoscriptsyntax functions can be set to generate geometry inside of Grasshopper that does not live in the Rhino document. We are using a concept called “duck typing” to swap the document that the rhinoscriptsyntax functions target: from the Rhino document to a Grasshopper document. This means that the following script:
 

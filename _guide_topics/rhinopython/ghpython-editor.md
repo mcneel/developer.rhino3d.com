@@ -26,7 +26,7 @@ The code editor consists of 4 parts:
 - Menu - Use this to import and save Python files, also to access Help resources. 
 - Code Window - Write the Python code here.
 - Output window - Use this to see code status and error messages.
-- Test Button - Runs the code without exting the editor
+- Test Button - Runs the code without exiting the editor
 - OK Button - Tests the code, saves it and closes the editor.
 - Close Button - Saves the code and closes the editor.
 
@@ -70,13 +70,13 @@ The Menu contains a File pulldown and a help pulldown.
  
 ### Code Window
 
-This is where all the typing goes on and the grand dieas you have come to life.
+This is where all the typing goes on and the grand ideas you have come to life.
 
-This is very similiar to the Rhino.Ptyhon script editor.  Simply type in the statements.
+This is very similar to the Rhino.Ptyhon script editor.  Simply type in the statements.
 
 #### Importing modules
 
-Normally a script will start with `import` statments.  The editor will autocomplete the modules which are available.
+Normally a script will start with `import` statements.  The editor will autocomplete the modules which are available.
 Note: some modules may not autocomplete but still be available.
 
 
@@ -90,7 +90,7 @@ import math #Various math functions including Degree, Radian and Hypot
 import statistics #Mean and median are here
 ```
 
-There are hundeds of modules available, for a complete list, go to [Python Standard Libaries](https://docs.python.org/2/library/).  Here is a very short list of other modules that can be used:
+There are hundreds of modules available, for a complete list, go to [Python Standard Libaries](https://docs.python.org/2/library/).  Here is a very short list of other modules that can be used:
 
 ```python
 import rhino #imports the rhinocommon namespace
@@ -109,7 +109,7 @@ Once a module is imported, typing the module name and a dot will show an autocom
 
 #### Input Variables
 
-Each time Grasshopper recalculates the definition, the Python component will imput the inputs of the GHPython component as global variables in the Python script.  The name of those variables will correspond to the name of each input.  As a simple example this example:
+Each time Grasshopper recalculates the definition, the Python component will imput the inputs of the GhPython component as global variables in the Python script.  The name of those variables will correspond to the name of each input.  As a simple example this example:
 
 ![{{ site.baseurl }}/images/ghpython-input.png]({{ site.baseurl }}/images/ghpython-input.png){: .img-center width="80%"}
 
@@ -122,7 +122,7 @@ else:
     print("x is false.")
 ```
 
-Understanding the type of deta is being input and how that maps to standard Python components is important. If the datatype is not what is needed in the Python script by default, then use the `Type hint` option on the component. This assures the correct datatype on input.
+Understanding the type of date is being input and how that maps to standard Python components is important. If the datatype is not what is needed in the Python script by default, then use the `Type hint` option on the component. This assures the correct datatype on input.
 
 
 #### Output variables
@@ -133,13 +133,13 @@ To output to the component set the value of the output name to a variable. For i
 a = "Hello World!"
 ```
 
-The last assignment to the variable in the script will the the value that is output.  If there are multiple assigments to the output variable, only the last one is sent out.
+The last assignment to the variable in the script will the the value that is output.  If there are multiple assignments to the output variable, only the last one is sent out.
 
 
 #### Print function
 
 The `print()` function used in the GhPtyhon script will print information out to the Output Window.  This is a good way to debug script in the window also.
-Because we are using a flavor of Python 2, print is really a statement, that works also without paretheses. However, we prefer to look at is a function, that way it will work the same also in Python 3 flavors.
+Because we are using a flavor of Python 2, print is really a statement, that works also without parentheses. However, we prefer to look at is a function, that way it will work the same also in Python 3 flavors.
 
 ### Output Window
 
@@ -224,7 +224,7 @@ A multiline comment that explains the inputs and outputs of the script.
 </tr>
 <tr>
 <td>10...11</td>
-<td>Importing a couple moduels that are needed later in the script.</td>
+<td>Importing a couple modules that are needed later in the script.</td>
 </tr>
 <tr>
 <td>13...16</td>
@@ -236,7 +236,7 @@ A multiline comment that explains the inputs and outputs of the script.
 </tr>
 <tr>
 <td>24</td>
-<td>Each time throught he loop, circles are added to the <i>circles</i> variable.</td>
+<td>Each time through the loop, circles are added to the <i>circles</i> variable.</td>
 </tr>
 <tr>
 <td>29</td>
