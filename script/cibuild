@@ -153,6 +153,11 @@ if branch == "master"
     puts `git checkout -- #{branch}`
   end
 
+  # ensure .nojekyll file persists between deploys
+  # this tells github just to serve the site as-is and prevents any funny
+  # behaviour when directories have underscores
+  File.write(".nojekyll", "")
+
   # stage and commit
   puts `git add -A .`
 
