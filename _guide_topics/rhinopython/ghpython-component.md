@@ -119,10 +119,12 @@ Then is a section to input data directly to the component and to manage that dat
 
 The third section is most powerful to use the *Type hint*. Input parameters are set by default to the.NET type “object”. Sometimes is best to specify a datatype on input to make the code more readable and efficient. Types can be primitive such as integers or doubles, or geometry specific RhinoCommon types that are used only in Rhino such as “Point3d” or a “Curve”. You need to select the appropriate type for each input.
 
+The rhinoscriptsyntax Type Hint is special: when it is selected, any geometry will be added to the Grasshopper document, and then its ID (Guid) inside it will be passed in the variable. With the rest of the hints, GhPython will call into Grasshopper and perform the same type of operations that Grasshopper does when it requires a special data type. This conversion is costly. If you want to make things as quick as possible, choose 'No Type Hint'. However, users of your component will benefit greatly from using a meaningfully-set and appropriate type hint.
+
 
 ## Next Steps
 
-That lays out the bascis of the GhPtyon component.  Next is a look into the component Python editor for Grasshopper.
+That lays out the bascis of the GhPython component.  Next is a look into the component Python editor for Grasshopper.
 
 ---
 

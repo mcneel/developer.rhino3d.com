@@ -68,13 +68,13 @@ The Menu contains a File pulldown and a help pulldown.
 </table>
 {: .multiline}
  
-## Code Window
+### Code Window
 
 This is where all the typing goes on and the grand dieas you have come to life.
 
 This is very similiar to the Rhino.Ptyhon script editor.  Simply type in the statements.
 
-### Importing modules
+#### Importing modules
 
 Normally a script will start with `import` statments.  The editor will autocomplete the modules which are available.
 
@@ -93,6 +93,7 @@ There are hundeds of modules available, for a complete list, go to [Python Stand
 
 ```python
 import rhino #imports the rhinocommon namespace
+import cmath #Mathematical functions for complex numbers
 import datetime #Basic date and time types
 import string #Common string operations
 import random #Generate pseudo-random numbers
@@ -105,7 +106,7 @@ import JSON #JSON encoder and decoder
 ```
 Once a module is imported, typing the module name and a dot will show an autocomplete of all the methods within that module.
 
-### Input Variables
+#### Input Variables
 
 Each time Grasshopper recalculates the definition, the Python component will imput the inputs of the GHPython component as global variables in the Python script.  The name of those variables will correspond to the name of each input.  As a simple example this example:
 
@@ -120,19 +121,131 @@ else:
     print "x is false."
 ```
 
-Understanding the type of deta is being input and how that maps to standard Python components is important. Some examples:
-
-| Grasshopper Input | | | Python Datatype |
-|:------------------|-|-|:----------------|
-| String            | | | String          |
+Understanding the type of deta is being input and how that maps to standard Python components is important. If the datatype is not what is needed in the Python script by default, then use the `Type hint` option on the component. This assurese the corect datatype on input.
 
 
+#### Output variables
+
+To output to the component set the value of the output name to a variable. For instance if the output is named `a`, then the code to send "Hello World!" to the output would be:
+
+```python
+a = "Hello World!"
+```
+
+The last assignment to the variable in the script will the the value that is output.  If there are multiple assigments to the output variable, only the last one is sent out.
 
 
+#### Print Method
+
+The `print()` method used in the GhPtyhon script will print information out to the Output Window.  This is a good way to debug script in the window also.
+
+### Output Window
+
+The Output Window contains help and messages about the staus of the editor.  
+
+1. If the script is run while the editor is open, the success or failure of the script will be displayed here.
+2. If there is an error whle testing the script, the error information will display in the Output Window.
+
+```
+Runtime error (SyntaxErrorException): EOL while scanning single-quoted string
+
+File "", line 10
+    import 'rhinoscriptsyntax as rs
+
+           ^
+SyntaxError: EOL while scanning single-quoted string
+```
+
+3. The `print()` method will output to this window.
+4. While editing a script, information about the current method will be displayed here. The comments about a method are limited to arguement requirements.  For a fuller explaination of any method, go to the python help file.
+
+
+### Test Button
+
+Use the *Test* button to run the script while keeping the Ghpython editor is up on the screen.  The Grasshopper definition will also be updated at the same time.
+
+### OK and Close Button
+
+The *OK* button will save the scrip tto the GhPython component and will close the editor, retuning to Grasshopper.
+
+The *Close* button will revert any changes to the script and return to grasshopper, using the previously saved script.
+
+## Example Script
+
+Here is an example script:
+
+```python
+# sample script to show how to use this component and the rhinoscriptsyntax
+"""Constructs a sinusoidal series of circles.
+  Inputs:
+    x: The number of circles. (integer)
+    y: The radius of each circle. (float)
+  Outputs:
+    a: The list of circles. (list of circle)
+    b: The list of radii. (list of float)
+"""
+import math
+import rhinoscriptsyntax as rs
+
+if x is None:
+    x = 24    # if nothing is connected to x, set x to something (24).
+if y is None:
+    y = 0.3    # if nothing is connected to y, set y to 0.3.
+
+circles = []            # create a list. We will add IDs to it later on.
+radii = []              # ...and create another one.
+
+for i in range(int(x)):
+    pt = (i, math.cos(i), 0)             # a tuple (here for a point).
+    id1 = rs.AddCircle(pt, y)
+    circles.append(id1)
+    endPt = rs.PointAdd(pt, (0, 0.3, 0)) # move the point by the vector.
+    id2 = rs.AddLine(pt, endPt)
+    radii.append(id2)
+
+a = circles
+b = radii
+```
+{: .line-numbers}
+
+
+<table>
+<tr>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>2...9</td>
+<td>
+A multiline comment that explains the inputs and outputs of the script.
+</td>
+</tr>
+<tr>
+<td>10...11</td>
+<td>Importing a couple moduels that are needed later in the script.</td>
+</tr>
+<tr>
+<td>13...16</td>
+<td>Here we check the the values of the two inputs `x` and `y` have a value.  If not the values are set to default values.</td>
+</tr>
+<tr>
+<td>21...27</td>
+<td>Use a <i>For</i> loop to walk through each circle based on the value of <i>x</i>.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Each time throught he loop, circles are added to the <i>circles</i> variable.</td>
+</tr>
+<tr>
+<td>29</td>
+<td>The circles are output to the <i>a</i> output</td>
+</tr>
+</table>
+{: .multiline}
 
 ## Next Steps
 
-That lays out the basics of the GhPython component.  Next is a look into the component Python editor for Grasshopper.
+That quick look at the GhPython editor.  Next is a try a Python script for yourself.
 
 ---
 
