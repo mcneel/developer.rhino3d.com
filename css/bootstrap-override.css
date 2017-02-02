@@ -127,6 +127,55 @@ kbd
 
 /*
 ##############################################################################
+## code block (highlight.js) overrides.
+##############################################################################
+*/
+
+.hljs-line-numbers {
+    text-align: right;
+    border-right: 1px solid #ccc;
+    color: #999;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.hljs-line-numbers {
+	display:none;
+}
+
+.line-numbers code{
+	display:block;
+}
+
+/* prevent code blocks from wrapping so line numbers line up
+   see https://github.com/wcoder/highlightjs-line-numbers.js/issues/4 */
+pre {
+    overflow: auto;
+    word-break: normal;
+    word-wrap: normal;
+}
+pre code {
+    white-space: pre;
+}
+
+/*
+##############################################################################
+## inline code overrides.
+##############################################################################
+*/
+
+code {
+	color: #000000;
+	background-color: transparent;
+
+}
+
+/*
+##############################################################################
 ## Image float overrides. Allows to wrap text around images.
 ## {: .float-img-right}
 ## To finish the wrapping, insert this text under next block object:
@@ -326,7 +375,7 @@ tbody.index_table tr td{
 
 /*
 ##############################################################################
-##  Multiline text tables 
+##  Multiline text tables
 ##############################################################################
 */
 
