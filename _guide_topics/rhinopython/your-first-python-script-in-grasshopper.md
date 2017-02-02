@@ -18,7 +18,17 @@ This manual is meant for Grasshopper users who would like to take their skills t
 
 ## Introduction
 
-Scripting components works as an integrated part of GH. They can read input and feed output from and to other standard GH components. They can be used to create specialized functionality that opens up tremendous potential beyond the standard compoonents.
+Scripting components works as an integrated part of GH. They can read input and feed output from and to other standard GH components. They can be used to create specialized functionality that opens up tremendous potential beyond the standard compoonents. 
+
+But there is a cool twist… this component supports the rhinoscriptsyntax functions. The rhinoscriptsyntax functions can be set to generate geometry inside of Grasshopper that does not live in the Rhino document. We are using a concept called “duck typing” to swap the document that the rhinoscriptsyntax functions use from the rhino document to a grasshopper document. This means that the following script
+
+```python
+import rhinoscriptsyntax as rs
+for x in range(10):
+    rs.AddPoint((x,0,0)
+```
+
+will add 10 points to the Rhino document when run from Rhino’s “RunPythonScript” or “EditPythonScript” functions. The same script will add 10 points to a grasshopper document that can be passed on to other grasshopper components when run inside the syntax of grasshopper.
 
 Grasshopper supports multiple .NET scripting languages such as VB and C# to help develop custom code. There is also the Python component. Python is a modern programming language developed for remarkable power with very clear syntax. Python supports multiple programming paradigms, often used as a scripting language, but is also used in a wide range of advanced programming contexts. The [Rhino.Python](http://developer.rhino3d.com/guides/rhinopython/) website is a great place to get more information about Python in Rhino and Grasshopper.
 
