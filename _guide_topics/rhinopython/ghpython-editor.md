@@ -1,6 +1,6 @@
 ---
-title: An Overview of the GhPython Component
-description: This guide looks at the details of the GhPython component.
+title: An Overview of the GhPython Editor
+description: This guide looks at the details of the GhPython Editor.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
 apis: ['RhinoPython']
@@ -15,9 +15,9 @@ layout: toc-guide-page
 
 ## Inside the script component
 
-To show the code editor window for this script component, double click on the middle of the component or select “Edit Source…” from the component menu. 
+To show the code editor window for this script component, double click on the middle of the component, or select “Edit Source…” from the component center-icon context menu.
 
-The Python editor runs IronPython 2.7, the GhPython component can also access the easy to use RhinoScritSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon, which also can be imported into the GhPython component. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon). 
+The Python editor runs IronPython 2.7, the GhPython component can also access the easy-to-use RhinoScritSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon, which also can be imported into the GhPython component. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon). 
 
 ## Editor Interface
 
@@ -44,16 +44,16 @@ The Menu contains a File pulldown and a help pulldown.
 </tr>
 <tr>
 <td>Close</td>
-<td>This will save the definition and close the edito, returing back to the Grasshopper definition</td><td>Alt+F4</td>
+<td>This will save the definition and close the editor, returning back to the Grasshopper definition</td><td>Alt+F4</td>
 </tr>
 <tr>
 <td>Test</td>
-<td>The script will run within the Grasshopper definition.  The Output window will be update with the results and editor will stay open.  This is a great window for quick debuggin of the script.</td>
+<td>The script will run within the Grasshopper definition.  The Output window will be update with the results and editor will stay open.  This is a great window for quick debugging of the script.</td>
 <td>F5</td>
 </tr>
 <tr>
 <td>OK</td>
-<td>This will run the code, like the Test button.  Then will save the code and close the editor, returing you back to the Grasshopper definition.</td><td>Ctrl + F5</td>
+<td>This will run the code, like the Test button.  Then will save the code and close the editor, returning you back to the Grasshopper definition.</td><td>Ctrl + F5</td>
 </tr>
 <tr>
 <td>Import From...</td>
@@ -77,6 +77,7 @@ This is very similiar to the Rhino.Ptyhon script editor.  Simply type in the sta
 #### Importing modules
 
 Normally a script will start with `import` statments.  The editor will autocomplete the modules which are available.
+Note: some modules may not autocomplete but still be available.
 
 
 ![{{ site.baseurl }}/images/ghpython-editor-import.png]({{ site.baseurl }}/images/ghpython-editor-import.png){: .img-center width="60%"}
@@ -102,7 +103,7 @@ import system #System-specific parameters and functions
 import os.path #Common pathname manipulations
 import csv #CSV File Reading and Writing
 import htmllib #A parser for HTML documents
-import JSON #JSON encoder and decoder
+import json #JSON encoder and decoder
 ```
 Once a module is imported, typing the module name and a dot will show an autocomplete of all the methods within that module.
 
@@ -116,12 +117,12 @@ The code to process the `x` input is as follows:
 
 ```python
 if x:
-    print "x is true."
+    print("x is true.")
 else:
-    print "x is false."
+    print("x is false.")
 ```
 
-Understanding the type of deta is being input and how that maps to standard Python components is important. If the datatype is not what is needed in the Python script by default, then use the `Type hint` option on the component. This assurese the corect datatype on input.
+Understanding the type of deta is being input and how that maps to standard Python components is important. If the datatype is not what is needed in the Python script by default, then use the `Type hint` option on the component. This assures the correct datatype on input.
 
 
 #### Output variables
@@ -135,9 +136,10 @@ a = "Hello World!"
 The last assignment to the variable in the script will the the value that is output.  If there are multiple assigments to the output variable, only the last one is sent out.
 
 
-#### Print Method
+#### Print function
 
-The `print()` method used in the GhPtyhon script will print information out to the Output Window.  This is a good way to debug script in the window also.
+The `print()` function used in the GhPtyhon script will print information out to the Output Window.  This is a good way to debug script in the window also.
+Because we are using a flavor of Python 2, print is really a statement, that works also without paretheses. However, we prefer to look at is a function, that way it will work the same also in Python 3 flavors.
 
 ### Output Window
 
@@ -156,7 +158,7 @@ File "", line 10
 SyntaxError: EOL while scanning single-quoted string
 ```
 
-3. The `print()` method will output to this window.
+3. The `print()` function will output to this window.
 4. While editing a script, information about the current method will be displayed here. The comments about a method are limited to arguement requirements.  For a fuller explaination of any method, go to the python help file.
 
 

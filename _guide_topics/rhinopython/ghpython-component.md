@@ -1,6 +1,6 @@
 ---
 title: An Overview of the GhPython Component
-description: This guide looks at the details of the GhPython component.
+description: The GhPython component is the key to working with Python in Grasshopper.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
 apis: ['RhinoPython']
@@ -13,9 +13,7 @@ keywords: ['python', 'commands', 'grasshopper']
 layout: toc-guide-page
 ---
 
-The GHPython component is the key to working with Python in Grasshopper. 
-
-The GhPython component acts as a Python interpreter in Grasshopper.  Along with its access to IronPython 2.7, the GhPython component can also access the easy to use RhinoScritSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon, which also can be imported into the GhPython component. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon). 
+The GhPython component acts as a Python interpreter in Grasshopper.  Along with its access to IronPython 2.7, the GhPython component can also access the-easy-to-use RhinoScritSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon, which also can be imported into the GhPython component. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon). 
 
 ## Component Details
 
@@ -55,9 +53,9 @@ You can also right-click on a parameter to change its name. The name is also the
 
 ![{{ site.baseurl }}/images/ghpython-rename-input.png]({{ site.baseurl }}/images/ghpython-rename-input.png){: .img-center width="35%"}
 
-Please note that the names of the parameters must follow [Python identifier naming](https://docs.python.org/2/reference/lexical_analysis.html#identifiers) . Just make sure that these names are reflective of what the parameter is and also it should not contain white spaces or special characters.
+Please note that the names of the parameters must follow [Python identifier naming](https://docs.python.org/2/reference/lexical_analysis.html#identifiers) . Just make sure that these names are reflective of what the parameter is, and that they also do not contain white spaces or special characters.
 
-The inputs will show up in the GhPython editor as global variables.  For instance here is a simple definition:
+The inputs will show up in the GhPython editor as global variables.  For instance, here is a simple definition:
 
 ![{{ site.baseurl }}/images/ghpython-input.png]({{ site.baseurl }}/images/ghpython-input.png){: .img-center width="80%"}
 
@@ -65,9 +63,9 @@ The code to process the `x` input is as follows:
 
 ```python
 if x:
-    print "x is true."
+    print("x is true.")
 else:
-    print "x is false."
+    print("x is false.")
 ```
 
 As the boolen toggle is changed, the `x` value changes.  The `print` method will out put a string to the out of the component.
