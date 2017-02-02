@@ -156,7 +156,7 @@ class Weird(MyClass):
 newerObj = Weird()
 print newerObj.test()
 ```	
-
+{: .line-numbers}
 
 <table rules="rows">
 <tr>
