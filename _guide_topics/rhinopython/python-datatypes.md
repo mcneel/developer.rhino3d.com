@@ -128,13 +128,23 @@ For a detailed look at managing lists, take a look at the article [TutorialPoint
 
 ## Tuple
 
-Tuples are a group of values like a list.  But tuples cannot be changed once they are assigned.  Tuples use parenthesis ().
+Tuples are a group of values like a list and are maniputed in similiar ways.  But, tuples are fixed in size once they are assigned. In Python the fixed size is considered immutable as compared to a list that is dynamic and mutable. Tuples are defined by parenthesis ().
 
 ```python
 myGroup = ('Rhino', 'Grasshopper', 'Flamingo', 'Bongo')
 ```
 
-For more information on Tuples, see the [TutorialPoint Python Tutorial on Tuples](https://www.tutorialspoint.com/python/python_tuples.htm)
+Here are some advantages of tuples over lists:
+1. Elements to a tuple. Tuples have no append or extend method.
+2. Elements cannot be removed from a tuple.
+3. You can find elements in a tuple, since this doesn’t change the tuple.
+4. You can also use the in operator to check if an element exists in the tuple.
+5. Tuples are faster than lists. If you're defining a constant set of values and all you're ever going to do with it is iterate through it, use a tuple instead of a list.
+6. It makes your code safer if you “write-protect” data that does not need to be changed. 
+
+It seems tuples are very restrictive, so why are they useful? There are many datastructures in Rhino that require a fixed set of numbers.  For instance a point in Rhino is a list of 3 numbers `[34.5, 45.7, 0]`. If this is set as tuple, then you can be assured the the original 3 number structure stays as a point `(34.5, 45.7, 0)`.  There are other datastructures such as lines, vectors, domains and other data in Rhino that also require a certain set of values that do not change.  Tuples are great for this.
+
+For more information on Tuples, see the [TutorialPoint Python Tutorial on Tuples](https://www.tutorialspoint.com/python/python_tuples.htm) and the [Dive in Python section on tuples](http://getpython3.com/diveintopython3/native-datatypes.html#tuples).
 
 ## Dictionary
 
