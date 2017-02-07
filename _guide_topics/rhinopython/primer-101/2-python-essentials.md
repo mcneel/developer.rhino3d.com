@@ -42,9 +42,9 @@ Translating Python code to and from regular English should not be very difficult
 
 As mentioned before, there are three things the syntax has to support, and the above script uses them all:
 
-1. Flow control		» Depending on the outcome of the second line, some lines are not run
-2. Variable data		» somenumber is used to store a variable number
-3. Communication		» The user is asked to supply information and is informed about the result
+1. Flow control        » Depending on the outcome of the second line, some lines are not run
+2. Variable data        » somenumber is used to store a variable number
+3. Communication        » The user is asked to supply information and is informed about the result
 
 ## 2.2 Flow control
 
@@ -103,7 +103,7 @@ billion to roughly plus two-billion. Every whole number between these extremes c
 
 Doubles are numeric variables which can store numbers with decimals. Doubles can be used to represent 
 numbers as large as 1.8×10308 and as small as 5.0×10-324, though in practise the range of numbers which can be accurately represented is much smaller. Those of you who are unfamiliar with scientific notation need not to worry, I shall not make a habit out of this. It is enough to know that the numeric range of doubles is truly enormous.
-		
+        
 <img src="{{ site.baseurl }}/images/primer-integers.svg">{: .img-center  width="75%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
@@ -114,9 +114,9 @@ bigger numbers, the gaps between two adjacent Double values will become bigger a
 The Python syntax for working with numeric variables should be very familiar:
 
 ```python
-x = 15 + 26				# x equals 41
-x = 15 + 26 * 2.33	    #  x equals 75.58
-x = math.sin(15 + 26) + math.sqrt(2.33)	# x equals 1.368
+x = 15 + 26                # x equals 41
+x = 15 + 26 * 2.33        #  x equals 75.58
+x = math.sin(15 + 26) + math.sqrt(2.33)    # x equals 1.368
 ```
 You can use the `print()` method to display the result of these computations. The `print()` method will display the value in the command-line:
 
@@ -163,7 +163,7 @@ In Python we never write "0" or "1" or "Yes" or "No", for boolean values we alwa
 
 ```python
 if curve is None:
-	print "Something went terribly wrong!"
+    print "Something went terribly wrong!"
 ```
 
 This will return either True or False, only if the result is True (the curve is None) will the code pass into the conditional statement and print "Something went terribly wrong!."
@@ -180,22 +180,22 @@ variable2 = "5"
 You could print these variables to the command line and they would both look like 5, but the String variable behaves differently once we start using it in calculations:
 
 ```python
-print (variable1 + variable2)		# Results in an "Unsupported Operand Type" Error
+print (variable1 + variable2)        # Results in an "Unsupported Operand Type" Error
 ```
 
 Python throws an error when we try to add a String variable to an Integer Variable.  We must first convert the string to an integer, then we can add them together.
 
 ```python
-print (variable1 + int(variable2))		# Results in 10
+print (variable1 + int(variable2))        # Results in 10
 ```
 
 When you need to store text, you have no choice but to use Strings. The syntax for Strings is quite simple, but working with Strings can involve some very tricky code. For the time being we’ll only focus on simple operations such as assignment and concatenation:
 
 ```python
-a = "Apfelstrudel"				# Apfelstrudel
-a = "Apfel" + "strudel"				# Apfelstrudel
-a = "4" + " " + "Apfelstrudel"			# 4 Apfelstrudel
-a = "The sqrt of 2.0 = " + str(math.sqrt(2.0))	# The sqrt of 2.0 = 1.4142135623731 
+a = "Apfelstrudel"                # Apfelstrudel
+a = "Apfel" + "strudel"                # Apfelstrudel
+a = "4" + " " + "Apfelstrudel"            # 4 Apfelstrudel
+a = "The sqrt of 2.0 = " + str(math.sqrt(2.0))    # The sqrt of 2.0 = 1.4142135623731 
 ```
 
 Internally, a String is stored as a series of characters. Every character (or 'char') is taken from the Unicode table, which stores a grand total of ~100.000 different characters. The index into the unicode table for the question mark for example is 63, lowercase e is 101 and the blank space is 32:

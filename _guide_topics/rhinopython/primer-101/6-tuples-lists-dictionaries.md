@@ -470,8 +470,8 @@ Nesting can be done with tuples, lists or dictionaries. It simply means that you
 Accessing nested lists follows the same rules as accessing regular lists. Using the VectorField example:
 
 ```python
-	arrSeventhPoint = arrPoints[6] #arrSeventhPoint now equals the 7th (starting from 0th) element
-	arrLastPoint = arrPoints[len(arrPoints)] #arrLastPoint now equals the last point in the list
+    arrSeventhPoint = arrPoints[6] #arrSeventhPoint now equals the 7th (starting from 0th) element
+    arrLastPoint = arrPoints[len(arrPoints)] #arrLastPoint now equals the last point in the list
 ```
 
 Len() can be used to get the length of a list. In this case we are saying that arrLastPoint equals the last element in the list called arrPoints because we have given it the numeric value that is the length of the list. This shows how to extract entire nested lists. Assuming the illustration on this page represents <i>arrPoints</i>, <i>arrSeventhPoint</i> will be identical to <i>[0.3, -1.5, 4.9]</i>. If we want to access individual coordinates directly we can use another bracket to explode out the z value:
