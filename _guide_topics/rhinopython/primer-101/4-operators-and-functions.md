@@ -25,9 +25,9 @@ x = math.tan(15 + 26) / math.log(55)
 
 The four lines of code above contain four kinds of code:
 
-1. Numbers		`15, 26, 2.33 and 55`
-2. Variables	`x` 
-3. Operators	`=, +, * and /`
+1. Numbers        `15, 26, 2.33 and 55`
+2. Variables    `x` 
+3. Operators    `=, +, * and /`
 4. Functions    `math.sin(), math.sqrt(), math.tan() and math.log()`
 
 Numbers and variables are well behind us now. Arithmetic operators should be familiar from everyday life, Python uses them in the same way as you used to during math classes. Python comes with a limited amount of arithmetic operators and they are always positioned between two variables or constants (a constant is a fixed number).  The function first signifies that we have imported math at the top of our code, using "import math", and then call a function that is within the math module called "sin()". Thus we write: math.sin(value). 
@@ -42,8 +42,8 @@ One thing to watch out for is operator precedence. As you will remember from mat
 ```python
 x = 4 + 5 * 2
 
-x = (4 + 5) * 2		# wrong precedence
-x = 4 + (5 * 2)		# correct precedence
+x = (4 + 5) * 2        # wrong precedence
+x = 4 + (5 * 2)        # correct precedence
 ```
 
 x doesn't equal 18, even though many cheap calculators seem to disagree. The precedence of the multiplication is higher which means you first have to multiply 5 by 2, and then add the result to 4. Thus, x equals 14. Python is not a cheap calculator and it has no problems whatsoever with operator precedence. It is us, human beings, who are the confused ones. The example above is fairly straightforward, but how would you code the following?
@@ -95,7 +95,7 @@ When we translate this into Python code we get the following:
 
 ```python
 if (not rs.IsBlock("SomeBlockName")):
-	print ("Missing block definition: SomeBlockName")
+    print ("Missing block definition: SomeBlockName")
 ```
 
 And and Or at least behave like proper operators; they take two arguments on either side. The And operator requires both of them to be True in order for it to evaluate to True. The Or operator is more than happy with a single True value. Let's take a look at a typical 'one-beer-too-many' algorithm:
@@ -154,9 +154,9 @@ Apart from implementing the native Python functions, Rhino adds a number of extr
 So how do functions/procedures/methods behave? Since the point of having procedures is to encapsulate code for frequent use, we should expect them to blend seamlessly into written code. In order to do this they must be able to both receive and return variables. *math.sin()* is an example of a function which both requires and returns a single numeric variable. The *datetime.now()* function on the other hand only returns a single value which contains the current date and time. It does not need any additional information from you, it is more than capable of finding out what time it is all by itself. An even more extreme example is the *rs.Exit()* method which does not accept any argument and does not return any value. There are two scenarios for calling procedures. We either use them to assign a value or we call them out of the blue:
 
 ```python
-strPointID = rs.AddPoint([0.0, 0.0, 1.0])	# Correct
-rs.AddPoint([0.0, 0.0, 1.0])			    # Correct
-rs.AddPoint [0.0, 0.0, 1.0]			        # Wrong
+strPointID = rs.AddPoint([0.0, 0.0, 1.0])    # Correct
+rs.AddPoint([0.0, 0.0, 1.0])                # Correct
+rs.AddPoint [0.0, 0.0, 1.0]                    # Wrong
 ```
 
 If you look in the RhinoScriptSyntax helpfile and search for the *AddLayer()* method, you'll see the following text:
@@ -171,7 +171,7 @@ rs.AddLayer (name=None, color=0, visible=True, locked=False, parent=None)
 
 This concludes the boring portion of the primer. We now have enough information to actually start making useful scripts. I still haven't told you about loops or conditionals, so the really awesome stuff will have to wait until Chapter 5, though. We're going to write a script which uses some Python functions and a few RhinoScriptSyntax methods. Our objective for today is to write a script that applies a custom name to selected objects. First, I'll show you the script, then we'll analyze it line by line:
 
-```python	
+```python    
 import rhinoscriptsyntax as rs
 import time
 #This script will rename an object using the current system time
@@ -197,8 +197,8 @@ Rhino.GetObject (message=None,filter=0,preselect=False,Select=False,custom_filte
 
 ```
 Returns:
-String		» The identifier of the picked object if successful.
-None		» If not successful, or on error.
+String        » The identifier of the picked object if successful.
+None        » If not successful, or on error.
 ```
 
 This method accepts six arguments, all of which happen to be optional. In our script we're only specifying the first and fourth argument. The *strMessage* refers to the String which will be visible in the command-line during the picking operation. We're overriding the default, which is "Select object", with something a bit more specific. The second argument is an integer which allows us to set the selection filter. The default behavior is to apply no filter; all objects can be selected whether they are points, textdots, polysurfaces, lights or whatever. We want the default behavior. The same applies to the third argument which allows us to override the default behavior of accepting preselected objects. The fourth argument is False by default, meaning that the object we pick will not be actually selected. This is not desired behavior in our case. The fifth argument takes a bit more explaining so we'll leave it for now.
@@ -247,7 +247,7 @@ def Alphabet():
     return strSeries
 
 print Alphabet()
-```	
+```    
 
 The "return value" identifies what will be returned once the method is called and the code within its scope is executed.  When this code is run, it will call the function *Alphabet()*, the code within the function's scope will be run and the function will return the value of strSeries.  This returned value will then be printed to the command line.  It should be noted that at first glance, the return and print functions appear to be very similar.  However, they are not! *print()* will print anything to the command line and console.  return(), on the other hand, will only return a value from a function - basically assigning a value to a variable whenever the function was called. Return is used for the output of a function (in this case the function "Alphabet"), print is used for debugging code or whenever the user wants to see a value printed to the screen.
 

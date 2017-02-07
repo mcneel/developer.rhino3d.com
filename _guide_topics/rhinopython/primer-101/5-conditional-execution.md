@@ -31,25 +31,25 @@ Problem 1:
 
 ```python
 if (rs.IsCurve(strObjectID)):
-	rs.DeleteObject(strObjectID)
+    rs.DeleteObject(strObjectID)
 ```
 
 Problem 2:
 
 ```python
 if (rs.IsCurve(strObjectID)):
-	if (rs.CurveLength(strObjectID) < 0.01):
-	    rs.DeleteObject(strObjectID)
+    if (rs.CurveLength(strObjectID) < 0.01):
+        rs.DeleteObject(strObjectID)
 ```
 
 Problem 3:
 
 ```python
 if (rs.IsCurve(strObjectID)):
-	if (rs.CurveLength(strObjectID) < 0.01):
-	    rs.DeleteObject(strObjectID)
-	else:
-	    rs.ObjectLayer(strObjectID, "Curves")
+    if (rs.CurveLength(strObjectID) < 0.01):
+        rs.DeleteObject(strObjectID)
+    else:
+        rs.ObjectLayer(strObjectID, "Curves")
 ```
 
 The most common conditional evaluation is the If…Then statement. If…Then allows you to bifurcate the flow of a program. The simplest If…Then structure can be used to shield certain lines of code. It always follows the same format:
@@ -71,7 +71,7 @@ if (SomethingOrOther): DoSomething()
 Whenever you need an If…Then…Else structure, you can use the following syntax:
 
 ```python
-	if (SomethingOrOther):
+    if (SomethingOrOther):
     DoSomething()
 else:
     DoSomethingElse()
@@ -83,7 +83,7 @@ You can nest If…Then structures as deep as you like, though code readability w
 The following example uses four nested If…Then structures to delete short, closed curves.
 
 ```python
-	if (rs.IsCurve(strObjectID)):
+    if (rs.IsCurve(strObjectID)):
     if (rs.CurveLength(strObjectID) < 1.0):
         if (rs.IsCurveClosed(strObjectID)):
             rs.DeleteObject(strObjectID)
@@ -130,7 +130,7 @@ while (something is true):
     DoSomething()
     if (condition is met):
         break
-```	
+```    
 
 All the lines indented after the while keyword will be repeated until we abort the loop ourselves. If we do not abort the loop, I.e. if we omit the break statement or if our condition just never happens to be met, the loop will continue forever. This sounds like an easy problem to avoid but it is in fact a very common bug.
 
@@ -152,7 +152,7 @@ def viewportclock():
 
 if __name__=="__main__":
     viewportclock()
-```	
+```    
 
 <img src="{{ site.baseurl }}/images/primer-viewportclock.svg">{: .img-center  width="40%"}
 
@@ -366,7 +366,7 @@ dblStep = 0.25
 
 for x in rs.frange(dblA, dblB, dblStep):
     y = 2*math.sin(x)
-    rs.AddPoint([x, y, 0])	
+    rs.AddPoint([x, y, 0])    
 ```
 
 ![{{ site.baseurl }}/images/primer-sinewave.svg]({{ site.baseurl }}/images/primer-sinewave.svg){: .float-img-right width="375"}
@@ -394,7 +394,7 @@ for z in rs.frange(0.0, 5.0, 0.5):
        rs.AddSphere([x,y,z], 0.5)
 
 rs.EnableRedraw(True)
-```	
+```    
 ![{{ site.baseurl }}/images/primer-twistandshout.svg]({{ site.baseurl }}/images/primer-twistandshout.svg){: .float-img-right width="375"}
 
 The master loop increments the z variable from 0.0 to 5.0 with a default step size of 0.5. The z variable is used directly as the z-coordinate for all the sphere centers. For every iteration of the master loop, we also want to increment the twist angle with a fixed amount. We can only use the For…Loop to automatically increment a single variable, so we have to do this one ourselves on line 8.

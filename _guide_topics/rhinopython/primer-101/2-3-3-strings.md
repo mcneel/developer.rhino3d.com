@@ -23,22 +23,22 @@ variable2 = "5"
 You could print these variables to the command line and they would both look like 5, but the String variable behaves differently once we start using it in calculations:
 
 ```python
-print (variable1 + variable2)		# Results in an "Unsupported Operand Type" Error
+print (variable1 + variable2)        # Results in an "Unsupported Operand Type" Error
 ```
 
 Python throws an error when we try to add a String variable to an Integer Variable.  We must first convert the string to an integer, then we can add them together.
 
 ```python
-print (variable1 + int(variable2))		# Results in 10
+print (variable1 + int(variable2))        # Results in 10
 ```
 
 When you need to store text, you have no choice but to use Strings. The syntax for Strings is quite simple, but working with Strings can involve some very tricky code. For the time being we’ll only focus on simple operations such as assignment and concatenation:
 
 ```python
-a = "Apfelstrudel"				# Apfelstrudel
-a = "Apfel" + "strudel"				# Apfelstrudel
-a = "4" + " " + "Apfelstrudel"			# 4 Apfelstrudel
-a = "The sqrt of 2.0 = " + str(math.sqrt(2.0))	# The sqrt of 2.0 = 1.4142135623731 
+a = "Apfelstrudel"                # Apfelstrudel
+a = "Apfel" + "strudel"                # Apfelstrudel
+a = "4" + " " + "Apfelstrudel"            # 4 Apfelstrudel
+a = "The sqrt of 2.0 = " + str(math.sqrt(2.0))    # The sqrt of 2.0 = 1.4142135623731 
 ```
 
 Internally, a String is stored as a series of characters. Every character (or 'char') is taken from the Unicode table, which stores a grand total of ~100.000 different characters. The index into the unicode table for the question mark for example is 63, lowercase e is 101 and the blank space is 32:

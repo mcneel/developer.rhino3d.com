@@ -43,7 +43,7 @@ before anything has actually taken place, it means the compiler ran into a probl
 <img src="{{ site.baseurl }}/images/primer-script-structure.svg">{: .img-center  width="75%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
-	
+    
 Note that the example script on page 11 did not adhere to these rules. It ran just the same, but it was a bad example in this respect.
 
 The Import Statement allows the user to import different modules that are either built into Python when its downloaded, or from external developments.  Importing modules allows a user to access methods outside of the current file and reference objects, functions or other information.  There are various types of Import Statements: *import X, from X import, from X import a, b, c, X = __import__(‘X’)*, each with advantages and disadvantages.  For simplicity we can stick with import X for the time being.  This technique imports module X and allows us to use any methods within that module. 
@@ -59,15 +59,15 @@ Functions are blocks of code that compact certain functionality into a small pac
 The following example shows the essential structure that was just described, including: the Import Statement (always needed!), Global Variables, a Function and a Call to the Function.  The importance of syntax should also be stated - Please take note of the capitalization and indentation within this example.  Python is both case sensitive and indent sensitive.  If you spell a variable name once with a capital letter and another time with a lowercase letter, it will not recognize it as the same variable! The indent is used to indicate if certain lines should be included within a Function, Class, Loop or Conditional statement.  In this example, the line "print (text)" is indented to be contained within the function "simpleFunction" because it should only be executed once that function is called (Don't worry yet about how and why functions work, we will explain them soon).   Indentation and Case Sensitivity should be highly emphasized since they are a couple of the most common mistakes that you will run into!
 
 ```python
-import rhinoscriptsyntax as rs				        # Import Statement
-#Script written by Skylar Tibbits on 03-09-2011		# Default comments
+import rhinoscriptsyntax as rs                        # Import Statement
+#Script written by Skylar Tibbits on 03-09-2011        # Default comments
 
-strInfo = "This is just a test"				        # Global Variable
+strInfo = "This is just a test"                        # Global Variable
 
-def simpleFunction(text):				# Function Declaration
-	print(text)						    # Code to Execute Within the Function
-									    # (Note the Indentation)
-simpleFunction(strInfo)					# Calling the Function (After it's created)
+def simpleFunction(text):                # Function Declaration
+    print(text)                            # Code to Execute Within the Function
+                                        # (Note the Indentation)
+simpleFunction(strInfo)                    # Calling the Function (After it's created)
 ```
 
 One of the key features of VBScript that made it easy to write powerful scripts was the large library of Rhino specific functions.  The Python implementation includes a set of very similar functions that can be imported and used in any python script for Rhino. This set of functions is known as the rhinoscriptsyntax package. To import the rhinoscriptsyntax package you must include the `import rhinoscriptsyntax` statement, `as rs` indicates that we will be using the name "rs" whenever we refer to this package. In the Editor, go to Help>Python Help for a list of all the rhinoscriptsyntax methods. Documentation can also be found at [http://www.rhino3d.com/5/ironpython/index.html](http://www.rhino3d.com/5/ironpython/index.html)
@@ -85,7 +85,7 @@ access such as a Rhino toolbar button. If you want to run scripts from within bu
 1. Link the script
 2. Implement the script
 
-If you want to implement the script, you'll have to wrap it up into a *_RunPythonScript* command. Imagine the script on the previous page has been saved on the hard disk as an \*.py file. The following button editor screenshot shows how to use the two options:	
+If you want to implement the script, you'll have to wrap it up into a *_RunPythonScript* command. Imagine the script on the previous page has been saved on the hard disk as an \*.py file. The following button editor screenshot shows how to use the two options:    
 
 ## 3.5 The Debugger
 

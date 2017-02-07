@@ -18,7 +18,7 @@ billion to roughly plus two-billion. Every whole number between these extremes c
 
 Doubles are numeric variables which can store numbers with decimals. Doubles can be used to represent 
 numbers as large as 1.8×10308 and as small as 5.0×10-324, though in practise the range of numbers which can be accurately represented is much smaller. Those of you who are unfamiliar with scientific notation need not to worry, I shall not make a habit out of this. It is enough to know that the numeric range of doubles is truly enormous.
-		
+        
 <img src="{{ site.baseurl }}/images/primer-integers.svg" width="75%" float="right">
 
 The set of all possible Double and Integer numbers is not continuous; it has gaps. There exists no Integer between zero and one and there exists no Double between zero and 5.0×10-324. The fact that the size of the gap is so much smaller with Doubles is only because we’ve picked a number close to zero. As we move towards bigger and 
@@ -27,9 +27,9 @@ bigger numbers, the gaps between two adjacent Double values will become bigger a
 The Python syntax for working with numeric variables should be very familiar:
 
 ```python
-x = 15 + 26				# x equals 41
-x = 15 + 26 * 2.33	    #  x equals 75.58
-x = math.sin(15 + 26) + math.sqrt(2.33)	# x equals 1.368
+x = 15 + 26                # x equals 41
+x = 15 + 26 * 2.33        #  x equals 75.58
+x = math.sin(15 + 26) + math.sqrt(2.33)    # x equals 1.368
 ```
 You can use the `print()` method to display the result of these computations. The `print()` method will display the value in the command-line:
 

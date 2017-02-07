@@ -92,7 +92,7 @@ In the following example, the Celsius `def` calculates degrees Celsius from degr
 
 ```python
 def Celsius(fDegrees):
-	_Celsius = (fDegrees - 32) * 5 / 9
+    _Celsius = (fDegrees - 32) * 5 / 9
     return _Celsius;
 
 # Use this code to call the Celsius function
@@ -107,7 +107,7 @@ Each piece of data is passed into your procedures using an argument.  Arguments 
 
 ```python
 Function Celsius(fDegrees)
-	_Celsius = (fDegrees - 32) * 5 / 9
+    _Celsius = (fDegrees - 32) * 5 / 9
     return _Celsius;
 ```
 
