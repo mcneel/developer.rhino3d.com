@@ -6,7 +6,7 @@ author_contacts: ['steve']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
-categories: ['Getting Started']
+categories: ['getting Started']
 origin:
 order: 3
 keywords: ['python', 'commands']
