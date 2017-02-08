@@ -1,0 +1,259 @@
+---
+title: An Overview of the GhPython Editor
+description: This guide looks at the details of the GhPython Editor.
+authors: ['Scott Davidson']
+author_contacts: ['scottd']
+apis: ['RhinoPython']
+languages: ['Python']
+platforms: ['Windows', 'Mac', 'Grasshopper']
+categories: ['GhPython']
+origin:
+order: 3
+keywords: ['python', 'commands', 'grasshopper']
+layout: toc-guide-page
+---
+
+## Inside the script component
+
+To show the code editor window for this script component, double click on the middle of the component, or select “Edit Source…” from the component center-icon context menu.
+
+The Python editor runs IronPython 2.7, the GhPython component can also access the easy-to-use RhinoScritSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon, which also can be imported into the GhPython component. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon). 
+
+## Editor Interface
+
+The code editor consists of 4 parts: 
+
+- Menu - Use this to import and save Python files, also to access Help resources. 
+- Code Window - Write the Python code here.
+- Output window - Use this to see code status and error messages.
+- Test Button - Runs the code without exiting the editor
+- OK Button - Tests the code, saves it and closes the editor.
+- Close Button - Saves the code and closes the editor.
+
+![{{ site.baseurl }}/images/ghpython-blankeditor.png]({{ site.baseurl }}/images/ghpython-blankeditor.png){: .img-center width="75%"}
+
+### Menu
+
+The Menu contains a File pulldown and a help pulldown.
+
+<table>
+<tr>
+<th width="15%">File Menu</th>
+<th>Descritption</th>
+<th>Shortcut</th>
+</tr>
+<tr>
+<td>Close</td>
+<td>This will save the definition and close the editor, returning back to the Grasshopper definition</td><td>Alt+F4</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>The script will run within the Grasshopper definition.  The Output window will be update with the results and editor will stay open.  This is a great window for quick debugging of the script.</td>
+<td>F5</td>
+</tr>
+<tr>
+<td>OK</td>
+<td>This will run the code, like the Test button.  Then will save the code and close the editor, returning you back to the Grasshopper definition.</td><td>Ctrl + F5</td>
+</tr>
+<tr>
+<td>Import From...</td>
+<td>Browse for and import a <i>.py</i> file into the editor. </td>
+<td>Ctrl + I</td>
+</tr>
+<tr>
+<td>Export As...</td>
+<td>Save the code in the editor to a <i>.py</i> file on the disk.</td>
+<td>Ctrl + E</td>
+</tr>
+</table>
+{: .multiline}
+ 
+### Code Window
+
+This is where all the typing goes on and the grand ideas you have come to life.
+
+This is very similar to the Rhino.Ptyhon script editor.  Simply type in the statements.
+
+#### Importing modules
+
+Normally a script will start with `import` statements.  The editor will autocomplete the modules which are available.
+Note: some modules may not autocomplete but still be available.
+
+
+![{{ site.baseurl }}/images/ghpython-editor-import.png]({{ site.baseurl }}/images/ghpython-editor-import.png){: .img-center width="60%"}
+
+Some common module that may be imported are:
+
+```python
+import rhinoscriptsyntax as rs
+import math #Various math functions including Degree, Radian and Hypot
+import statistics #Mean and median are here
+```
+
+There are hundreds of modules available, for a complete list, go to [Python Standard Libaries](https://docs.python.org/2/library/).  Here is a very short list of other modules that can be used:
+
+```python
+import rhino #imports the rhinocommon namespace
+import cmath #Mathematical functions for complex numbers
+import datetime #Basic date and time types
+import string #Common string operations
+import random #Generate pseudo-random numbers
+import pickle #Python object to string for serialization
+import system #System-specific parameters and functions
+import os.path #Common pathname manipulations
+import csv #CSV File Reading and Writing
+import htmllib #A parser for HTML documents
+import json #JSON encoder and decoder
+```
+Once a module is imported, typing the module name and a dot will show an autocomplete of all the methods within that module.
+
+#### Input Variables
+
+Each time Grasshopper recalculates the definition, the Python component will imput the inputs of the GhPython component as global variables in the Python script.  The name of those variables will correspond to the name of each input.  As a simple example this example:
+
+![{{ site.baseurl }}/images/ghpython-input.png]({{ site.baseurl }}/images/ghpython-input.png){: .img-center width="80%"}
+
+The code to process the `x` input is as follows:
+
+```python
+if x:
+    print("x is true.")
+else:
+    print("x is false.")
+```
+
+Understanding the type of date is being input and how that maps to standard Python components is important. If the datatype is not what is needed in the Python script by default, then use the `Type hint` option on the component. This assures the correct datatype on input.
+
+
+#### Output variables
+
+To output to the component set the value of the output name to a variable. For instance if the output is named `a`, then the code to send "Hello World!" to the output would be:
+
+```python
+a = "Hello World!"
+```
+
+The last assignment to the variable in the script will the the value that is output.  If there are multiple assignments to the output variable, only the last one is sent out.
+
+
+#### Print function
+
+The `print()` function used in the GhPtyhon script will print information out to the Output Window.  This is a good way to debug script in the window also.
+Because we are using a flavor of Python 2, print is really a statement, that works also without parentheses. However, we prefer to look at is a function, that way it will work the same also in Python 3 flavors.
+
+### Output Window
+
+The Output Window contains help and messages about the staus of the editor.  
+
+1. If the script is run while the editor is open, the success or failure of the script will be displayed here.
+2. If there is an error whle testing the script, the error information will display in the Output Window.
+
+```
+Runtime error (SyntaxErrorException): EOL while scanning single-quoted string
+
+File "", line 10
+    import 'rhinoscriptsyntax as rs
+
+           ^
+SyntaxError: EOL while scanning single-quoted string
+```
+
+3. The `print()` function will output to this window.
+4. While editing a script, information about the current method will be displayed here. The comments about a method are limited to arguement requirements.  For a fuller explaination of any method, go to the python help file.
+
+
+### Test Button
+
+Use the *Test* button to run the script while keeping the Ghpython editor is up on the screen.  The Grasshopper definition will also be updated at the same time.
+
+### OK and Close Button
+
+The *OK* button will save the scrip tto the GhPython component and will close the editor, retuning to Grasshopper.
+
+The *Close* button will revert any changes to the script and return to grasshopper, using the previously saved script.
+
+## Example Script
+
+Here is an example script:
+
+```python
+# sample script to show how to use this component and the rhinoscriptsyntax
+"""Constructs a sinusoidal series of circles.
+  Inputs:
+    x: The number of circles. (integer)
+    y: The radius of each circle. (float)
+  Outputs:
+    a: The list of circles. (list of circle)
+    b: The list of radii. (list of float)
+"""
+import math
+import rhinoscriptsyntax as rs
+
+if x is None:
+    x = 24    # if nothing is connected to x, set x to something (24).
+if y is None:
+    y = 0.3    # if nothing is connected to y, set y to 0.3.
+
+circles = []            # create a list. We will add IDs to it later on.
+radii = []              # ...and create another one.
+
+for i in range(int(x)):
+    pt = (i, math.cos(i), 0)             # a tuple (here for a point).
+    id1 = rs.AddCircle(pt, y)
+    circles.append(id1)
+    endPt = rs.PointAdd(pt, (0, 0.3, 0)) # move the point by the vector.
+    id2 = rs.AddLine(pt, endPt)
+    radii.append(id2)
+
+a = circles
+b = radii
+```
+{: .line-numbers}
+
+
+<table>
+<tr>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>2...9</td>
+<td>
+A multiline comment that explains the inputs and outputs of the script.
+</td>
+</tr>
+<tr>
+<td>10...11</td>
+<td>Importing a couple modules that are needed later in the script.</td>
+</tr>
+<tr>
+<td>13...16</td>
+<td>Here we check the the values of the two inputs `x` and `y` have a value.  If not the values are set to default values.</td>
+</tr>
+<tr>
+<td>21...27</td>
+<td>Use a <i>For</i> loop to walk through each circle based on the value of <i>x</i>.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Each time through the loop, circles are added to the <i>circles</i> variable.</td>
+</tr>
+<tr>
+<td>29</td>
+<td>The circles are output to the <i>a</i> output</td>
+</tr>
+</table>
+{: .multiline}
+
+## Next Steps
+
+That quick look at the GhPython editor.  Next is a try a Python script for yourself.
+
+---
+
+## Related Topics
+
+- [Your first script with Python in Grasshopper]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [Editing Python in Grasshopper]({{ site.baseurl }}/guides/rhinopython/python-loading-scripts)
+- [Python Guide for Rhino]({{ site.baseurl }}/guides/rhinopython/)

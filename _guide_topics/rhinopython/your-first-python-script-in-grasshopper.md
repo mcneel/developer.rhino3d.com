@@ -1,49 +1,56 @@
 ---
 title: Your First Python Script in Grasshopper
-description: This guide demonstrates how to use a Python script Grasshopper.
+description: This manual is for Grasshopper users who would like to create their own custom scripts using Grasshopper for Rhino 5.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac', 'Grasshopper']
-categories: ['Getting Started']
+categories: ['GhPython']
 origin:
 order: 1
 keywords: ['python', 'commands', 'grasshopper']
 layout: toc-guide-page
 ---
 
-
-This manual is meant for Grasshopper users who would like to take their skills to the next level and create their own custom Python component using Grasshopper for Rhino 5.
-
 ## Introduction
 
-Scripting components works as an integrated part of GH. They can read input and feed output from and to other standard GH components. They can be used to create specialized functionality that opens up tremendous potential beyond the standard compoonents.
+Scripting components works as an integrated part of GH. They can get input and produce output from and to other standard GH components. They can be used to create specialized functionality that opens up tremendous potential beyond the standard components. 
 
-Grasshopper supports multiple .NET scripting languages such as VB and C# to help develop custom code. There is also the Python component. Python is a modern programming language developed for remarkable power with very clear syntax. Python supports multiple programming paradigms, often used as a scripting language, but is also used in a wide range of advanced programming contexts. The [Rhino.Python](http://developer.rhino3d.com/guides/rhinopython/) website is a great place to get more information about Python in Rhino and Grasshopper.
+But there is a cool twist… the GhPython component supports rhinoscriptsyntax functions. The rhinoscriptsyntax functions can be set to generate geometry inside of Grasshopper that does not live in the Rhino document. We are using a concept called “duck typing” to swap the document that the rhinoscriptsyntax functions target: from the Rhino document to a Grasshopper document. This means that the following script:
+
+```python
+import rhinoscriptsyntax as rs
+for x in range(10):
+    rs.AddPoint((x,0,0)
+```
+
+will add 10 points to the Rhino document when run from Rhino’s “_RunPythonScript” or “_EditPythonScript” commands. The same script will add 10 points to a Grasshopper document that can be passed on to other components when run inside a GhPython component.
+
+Grasshopper supports multiple .NET scripting languages such as VB and C# to help develop custom code. There is also the Python component. Python supports multiple programming paradigms, often used as a scripting language, but is also used in a wide range of advanced programming contexts. The [Rhino.Python](http://developer.rhino3d.com/guides/rhinopython/) website directory is a great place to get more information about Python in Rhino in general.
 
 ![{{ site.baseurl }}/images/ghpython-component.png]({{ site.baseurl }}/images/ghpython-component.png){: .float-img-right width="275"}
 
 The GhPython component brings:
 
 - Rhinoscript syntax to Grasshopper
-- The GhPython component is similar to the ones of C# and Vb.Net components in Grasshopper
-- Control the number of inputs and outputs to the component
-- Include libraries to the .NET SDK and huge number of Python add-on functions
-- Integrates with the new Python editor included in Rhino 5
+- a Python parallel to the C# and Vb.Net scripting components
+- a dynamic UI with control over the number of inputs and outputs
+- ability to reference .NET libraries and a huge number of Python packages
+- integration with the Python editor included in Rhino 5
 
 
 
-Rhino allows access to its algorithms through the Rhino SDK (software development kit). Rhino is written in C++ but it also provides a couple SDKs for .NET languages.  The most basic SDK for Python is RhinoScriptSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon SDK. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon). 
+Rhino allows access to its algorithms through the Rhino SDK (software development kit). Rhino is written in C++ but it also provides a couple SDKs for scripting and programming languages.  The most basic SDK for Python is RhinoScriptSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon SDK. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon). 
 
-## Installing GHPython into Rhino 5
+## Installing GhPython into Rhino 5
 
-The Python component needs to the installed into Grasshopper on Rhino 5 for Windows. 
+Only in Rhino 5 for Windows, the Python component needs to the installed into Grasshopper.
 
-1. Download [GhPthon for Grasshopper from Food4Rhino](http://www.food4rhino.com/app/ghpython)
+1. Download [GhPython for Grasshopper from Food4Rhino](http://www.food4rhino.com/app/ghpython).
 2. In Grasshopper, choose File > Special Folders > Components folder. Save the gha file there.
-2. Right-click the file > Properties > make sure there is no "blocked" text
-3. Restart Rhino and Grasshopper
+2. Right-click the file > Properties > make sure to "unblock" it.
+3. Restart Rhino and Grasshopper.
 
 A successful install will result in a Python component in the Math > Script toolbar:
 
@@ -63,15 +70,15 @@ The default script component has two inputs and two outputs. The user can change
 
 - x: first input of a .NET type (object).
 - y: second input of a .NET type (object).
-- Out: output string with compiling messages.
+- out: output string with compiling messages and prints.
 - A: Returned output of type object.
 
 
 ## The HelloWorld Script
 
-Let's start witht the classic ["Hello World!" example](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) for our first script.
+Let's start with the classic ["Hello World!" example](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) for our first script.
 
-1. Drag a Python component onto the Grasshoppper canvas. 
+1. Drag a Python component onto the Grasshopper canvas. 
 2. Add a Boolean component (Params toolbar) and connect it to the *x* input.
 3. Add a Panel component and connect it to the *a* output.
 
@@ -79,7 +86,7 @@ Let's start witht the classic ["Hello World!" example](https://en.wikipedia.org/
 
 The "Hello World!" script will check for a *TRUE* in `x` to display the Hello World message through the 'a' output.
 
-Double-click on the component to bring up the python editor:
+Double-click on the component to bring up the Python editor:
 
 ![{{ site.baseurl }}/images/ghpython-blankeditor.png]({{ site.baseurl }}/images/ghpython-blankeditor.png){: .img-center width="75%"}
 
@@ -90,9 +97,9 @@ if x:
     a = "Hello World!"
 ```
 
-Click on the editor OK button to get back to the Grasshopper Canvas.
+Click on the OK button of the editor to get back to the Grasshopper Canvas.
 
-If you toggle the Boolean switch from true to fals, the Panel should display `Hello World!`.
+If you toggle the Boolean switch from true to false, the Panel should display `Hello World!`.
 
 ![{{ site.baseurl }}/images/ghpython-helloworld.png]({{ site.baseurl }}/images/ghpython-helloworld.png){: .img-center width="75%"}
 

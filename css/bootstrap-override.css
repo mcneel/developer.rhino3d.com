@@ -101,7 +101,11 @@ body {
 #cse-search-results iframe {
 	height : 1150px;
 }
-
+ 
+/* Coordinating the codeblock background with pre container baockground */
+pre {
+	background-color: #f8f8f8;
+}
 
 
 /* kbd overrides */
@@ -115,6 +119,7 @@ kbd
     border:1px solid #ccc;
     border-radius:3px;
     box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+	text-shadow:0 1px 0 #fff;
     color:#333;
     display:inline-block;
     font-family:Arial,Helvetica,sans-serif;
@@ -122,7 +127,6 @@ kbd
     line-height:1.4;
     margin:0 .1em;
     padding:.1em .6em;
-    text-shadow:0 1px 0 #fff;
 }
 
 /*
@@ -196,6 +200,17 @@ code {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+.img-center {
+  text-align:center;
+  display:block;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto
+}
+
 .clear-img {
   clear:both;
 }
@@ -231,6 +246,7 @@ tbody.index_table tr td{
 	width:36px;
 	height:36px;
 }
+
 
 
 /*
@@ -375,19 +391,73 @@ tbody.index_table tr td{
 
 /*
 ##############################################################################
-##  Multiline text tables
+##  Multiline text tables for code explanation.  Look in Primer
 ##############################################################################
 */
 
-.multiline {
-	rule:rows;
-	vertical-align:top; !important;
+table.multiline {
+	rules:rows;
+	vertical-align:top;
+	margin:20px 0px;
+	border-bottom: 1px solid #ddd;
 }
 
-.multiline-cell td {
-	padding:10px 5px;
-	vertical-align:top; !important;
+table.multiline th{
+     padding:0px 5px 0px 15px;
+	 margin: 0px 15px 0px 15px;
+	 border-bottom: 1px solid #ddd;
 }
+
+
+table.multiline tr {
+	vertical-align:top;
+    text-align:right;
+    border-bottom: 1px solid #ddd;
+}
+
+table.multiline td {
+	 vertical-align:top;
+	 padding:0px 5px 0px 15px;
+	 margin: 0px 15px 0px 15px;
+	 text-align: left;
+}
+
+table.multiline td:first-child{
+	 text-align:right;
+	 padding:0px 5px 0px 0px;
+	 margin: 0px 15px 0px 0px;
+}
+
+/*
+##############################################################################
+##  Formula text tables for code explanation.  Look in Primer
+##############################################################################
+*/
+
+table.multiline-middle {
+	rules:rows;
+	vertical-align:middle;
+	margin:20px 0px;
+	border-bottom: 1px solid #ddd;
+}
+
+table.multiline-middle th{
+     padding:0px 5px 0px 15px;
+	 margin: 0px 15px 0px 15px;
+	 border-bottom: 1px solid #ddd;
+}
+
+
+table.multiline-middle tr {
+	vertical-align:middle;
+    text-align:center;
+    border-bottom: 1px solid #ddd;
+}
+
+table.multiline-middle img{
+	margin:10px;
+}
+
 
 
 /*

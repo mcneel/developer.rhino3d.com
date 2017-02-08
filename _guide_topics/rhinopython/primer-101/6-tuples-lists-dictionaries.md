@@ -124,6 +124,7 @@ def myfavoritethings():
     print "Your", len(things)+1, "favorite things are:"
     for i,thing in enumerate(things): print i+1, ".", thing
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -198,6 +199,7 @@ for t in rs.frange(-50,50,1.25):
    rs.AddPoint(arrPoint)
 #Call rs.EnableRedraw(True)
 ```
+{: .line-numbers}
 
 ![{{ site.baseurl }}/images/primer-pointspiral.svg]({{ site.baseurl }}/images/primer-pointspiral.svg){: .float-img-right width="375"}
 
@@ -353,6 +355,7 @@ def AddVector(vecdir, base_point=[0,0,0]):
        line = rs.AddLine(base_point, tip_point)
        if line: return rs.CurveArrows(line, 2)
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -413,7 +416,7 @@ def vectorfield():
             vecdir = rs.VectorScale(vecdir, 2.0)
             AddVector(vecdir, point)
 ```
-
+{: .line-numbers}
 
 <table>
 <tr>
@@ -506,6 +509,7 @@ def smoothingvector(point, prev_point, next_point, s):
     vm = rs.VectorScale(va, s)
     return vm
 ```
+{: .line-numbers}
 
 <table>
 <tr>
@@ -550,6 +554,7 @@ def smoothcurve(curve_id, s):
     if newcurve_id: rs.DeleteObject(curve_id)
     return newcurve_id
 ```
+{: .line-numbers}
 
 <table>
 <tr>
