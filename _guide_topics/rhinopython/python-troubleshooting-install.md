@@ -6,9 +6,9 @@ author_contacts: ['piac']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
-categories: ['getting Started']
+categories: ['Getting Started']
 origin:
-order: 3
+order: 4
 keywords: ['python', 'commands']
 layout: toc-guide-page
 ---
