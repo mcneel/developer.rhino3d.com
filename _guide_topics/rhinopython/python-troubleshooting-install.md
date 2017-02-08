@@ -8,7 +8,7 @@ languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 origin:
-order: 4
+order: 5
 keywords: ['python', 'commands']
 layout: toc-guide-page
 ---
