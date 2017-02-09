@@ -37,7 +37,7 @@ Rhino already has a scripting language called RhinoScript why do we need another
 
 ### What version of Python does Rhino use?
 
-Rhino uses Python version 2.7. To be more specific Rhino uses [IronPython](http://ironpython.net/) which brings together the Python lanugage and [Microsoft's .NET framework](https://en.wikipedia.org/wiki/.NET_Framework).
+Rhino uses Python version 2.7. To be more specific Rhino uses [IronPython](http://ironpython.net/) which brings together the Python language and [Microsoft's .NET framework](https://en.wikipedia.org/wiki/.NET_Framework).
 
 ## Where can you use Python in Rhino?
 
