@@ -13,7 +13,22 @@ keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
 
+Here are some threads that show what people are asking about:
+
+https://discourse.mcneel.com/t/python-scripts-for-adding-pictureframes-and-writing-a-json-file/41103/2
+
+https://discourse.mcneel.com/t/python-methodology-for-saving-data-between-sessions/5013/3
+
+
+https://discourse.mcneel.com/t/storing-of-the-data-files-processed-by-plugin/20375
+
+
+
 ## Overview
+
+https://www.safaribooksonline.com/library/view/python-cookbook-3rd/9781449357337/ch06s02.html
+
+http://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file-in-python
 
 https://docs.python.org/2/tutorial/inputoutput.html#saving-structured-data-with-json
 
