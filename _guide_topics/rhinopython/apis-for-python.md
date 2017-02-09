@@ -75,7 +75,7 @@ A complete list of predefined modules in Python, see the [Python Standard Librar
 
 ## Related Topics
 
-- [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-is-rhinopython)
 - [Python Basic Syntax]({{ site.baseurl }}/guides/rhinopython/python-statements/)
 - [Python Procedures]({{ site.baseurl }}/guides/rhinopython/python-procedures/)
 - [Rhinoscript Syntax in Python]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-introduction/)

@@ -50,7 +50,7 @@ After you've followed the above links and setup Atom the next step is to get fam
 
 ## Related Topics
 
-- [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-is-rhinopython)
 - [Using the Atom.io editor with Rhino.Python](https://atom.io/packages/rhino-python)
 - [Python Basic Syntax]({{ site.baseurl }}/guides/rhinopython/python-statements/)
 - [Rhinoscript Syntax in Python]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-introduction/)
