@@ -85,5 +85,5 @@ For more information on nesting if..elif..else statements see [Python nested if 
 
 ## Related Topics
 
-- [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [What are Python and RhinoScriptSyntax?]({{ site.baseurl }}/guides/rhinopython/what-is-rhinopython)
 - [Python Operators]({{ site.baseurl }}/guides/rhinopython/python-operators)

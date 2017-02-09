@@ -43,14 +43,14 @@ Rhino uses Python version 2.7. To be more specific Rhino uses [IronPython](http:
 
 Python can be used all over Rhino in many different ways. Python can be used to create 
 
-1. Interactive scripts.
-2. New custom commands.
-3. Create new plug-ins.
-4. Read and Write customized file formats.
-5. Interact with cloud applications.
-6. Create realtime links to other applications
-7. Create customer Grasshopper components
-8. Store and display project specfici information beyond what basic Rhino can store.
+- Interactive scripts.
+- New custom commands.
+- Create new plug-ins.
+- Read and Write customized file formats.
+- Interact with cloud applications.
+- Create realtime links to other applications
+- Create customer Grasshopper components
+- Store and display project specfici information beyond what basic Rhino can store.
 
 #### RhinoScript Style Functions
 
