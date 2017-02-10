@@ -133,7 +133,7 @@ To output to the component set the value of the output name to a variable. For i
 a = "Hello World!"
 ```
 
-The last assignment to the variable in the script will the the value that is output.  If there are multiple assignments, as in a list of vlues assigned in a loop to the output variable, only the last one is sent out.  This can be a bit confusing.  The key is to assign the series of outputs to a list variable, then output that variable through the `a` output.
+The last assignment to the variable in the script will the the value that is output.  If there are multiple assignments, as in a list of values assigned in a loop to the output variable, only the last one is sent out.  This can be a bit confusing.  The key is to assign the series of outputs to a list variable, then output that variable through the `a` output.
 
 As an example, this does not work:
 
