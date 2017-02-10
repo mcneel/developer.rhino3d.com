@@ -65,7 +65,7 @@ print(type(pi))  # This will return a float
 
 ## String
 
-Create string variables by enclosing characters in quotes. Python uses single quotes (') double quotes (") and triple quotes (""") to denote literal strings.  Only the triple quoted strings (""") also will automatically continue across the end of line statement.
+Create string variables by enclosing characters in quotes. Python uses single quotes `'` double quotes `"` and triple quotes `"""` to denote literal strings.  Only the triple quoted strings `"""` also will automatically continue across the end of line statement.
 
 ```python
 firstName = 'john'
@@ -74,7 +74,7 @@ message = """This is a string that will span across multiple lines. Using newlin
 and no spaces for the next lines. The end of lines within this string also count as a newline when printed"""
 ```
 
-Strings can be accessed as a whole string, or a substring of the complete variable using brackets ([]). Here are a couple examples:
+Strings can be accessed as a whole string, or a substring of the complete variable using brackets '[]'. Here are a couple examples:
 
 ```python
 var1 = 'Hello World!'
@@ -84,7 +84,24 @@ print var1[0] # this will print the first character in the string an `H`
 print var2[1:5] # this will print the substring 'hinoP`
 ```
 
-For a more detailed look at sting variables in Python, see the [Tutorialspoint Python Tutorial on stings.](https://www.tutorialspoint.com/python/python_strings.htm)
+Python can use a special sytntax to format multiple strings and numbers. The string formatter is quickly covered here because it is seen often and it is important to recognize the syntax.  
+
+```python
+print "The item {} is repeated {} times".format(element,count))
+```
+
+The `{}` are placeholders that are substituted by the variables `element` and `count` in the final string. This compact syntax is meant to keep the code more readable and compact. 
+
+Python is currently transitioning to the format syntax above, but python can use an older sytnax, which is being phased out, but is still seen in some example code:
+
+```python
+print "The item %i is repeated %i times"% (element,count)
+```
+
+For more information on the string formatter in Python see the article: [PyFormat Website](https://pyformat.info/)
+
+
+For a more detailed look at string variables in Python, see the [Tutorialspoint Python Tutorial on stings.](https://www.tutorialspoint.com/python/python_strings.htm) Note: this article does use the older formatting syntax, but has a lot useful information.
 
 ## List
 
@@ -124,7 +141,10 @@ MyTable = [[], []]
 
 In a two-dimensional array, the first number is always the number of rows; the second number is the number of columns.
 
-For a detailed look at managing lists, take a look at the article [TutorialPoint Python Lists](https://www.tutorialspoint.com/python/python_lists.htm)
+For a detailed look at managing lists, take a look at the article 
+
+- [Python Lists - Google developer](https://developers.google.com/edu/python/lists)
+- [TutorialPoint Python Lists](https://www.tutorialspoint.com/python/python_lists.htm)
 
 ## Tuple
 
