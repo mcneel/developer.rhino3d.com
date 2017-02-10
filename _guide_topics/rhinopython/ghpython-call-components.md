@@ -1,21 +1,25 @@
 ---
-title: An Overview of the GhPython Component
-description: The GhPython component is the key to working with Python in Grasshopper.
-authors: ['Scott Davidson']
+title: Calling Grasshopper components from Python.
+description: Is it possible to call the functions of a Grasshopper component from inside a Python script?
+authors: ['Heumann']
 author_contacts: ['scottd']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac', 'Grasshopper']
-categories: ['GhPython']
+categories: ['ghPython']
 origin:
-order: 2
+order: 5
 keywords: ['python', 'commands', 'grasshopper']
 layout: toc-guide-page
 ---
 
-The GhPython component acts as a Python interpreter in Grasshopper.  Along with its access to IronPython 2.7, the GhPython component can also access the-easy-to-use RhinoScritSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon, which also can be imported into the GhPython component. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon). 
+http://www.grasshopper3d.com/forum/topics/is-it-possible-to-call-the-functions-of-a-grasshopper-component
 
-## Component Details
+https://stevebaer.wordpress.com/2013/12/11/ghpython-node-in-code/
+
+https://stevebaer.wordpress.com/2013/12/12/ghpython-outside-the-canvas/
+
+## Converting DataTrees to Python Lists.
 
 The GhPython conponent can be found on the Math > Script toolbar:
 
@@ -37,7 +41,7 @@ To edit the Python script in the component, simply double-click the component:
 
 ![{{ site.baseurl }}/images/ghpython-blankeditor.png]({{ site.baseurl }}/images/ghpython-blankeditor.png){: .img-center width="75%"}
 
-Simple type int he Python code, clicking on OK will save the code in the component.
+Simple type in the Python code, clicking on OK will save the code in the component.
 
 ## Input parameters
 
@@ -113,48 +117,7 @@ The top entry is the Parameter or variable name: you can click on it and type a 
 
 The next section is the general attributes or functions common to most GH components.  
 
-Then is a section to input data directly to the component and to manage that data.
-
-The three access options 'Item Access', 'List Access' and 'Tree Access' change the way lists and datatrees are imported into the GhPython component. This controls how lists of objects are imported.  For instance a string of characters can be input as each character indiviuudally:
-
-```python
-"This string"
-[1,3,5,6]
-```
-
-If the input is set to 'Item Access', then each character is sent in seperately:
-
-```python
-T
-h
-i
-s
-
-s
-t
-r
-i
-n
-g
-
-[
-1
-3
-5
-6
-]
-```
-{: .line-numbers}
-
-Whil this is a good way to maniputlate each character in order, by switching the input to `List Input`, then the complete string is sent in each Grasshopper iteration:
-
-```python
-This string
-[1,3,5,6]
-```
-{: .line-numbers}
-
-
+Then is a section to input data directly to the component and to manage that data.  
 
 The third section is most powerful to use the *Type hint*. Input parameters are set by default to the .NET type “object”. Sometimes is best to specify a datatype on input to make the code more readable and efficient. Types can be primitive such as integers or doubles, or geometry specific RhinoCommon types that are used only in Rhino such as “Point3d” or a “Curve”. You need to select the appropriate type for each input.
 

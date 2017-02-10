@@ -15,6 +15,9 @@ layout: toc-guide-page
 
 The Grasshopper Datatree structure is not a native Python datatype.  So how can this data be accessed or created from a GhPython script.  The first step is to convert the datatrees into native Python nested lists.
 
+http://www.grasshopper3d.com/forum/topics/datatree-in-python
+http://www.grasshopper3d.com/forum/topics/retrieve-a-item-from-a-datatree-in-python
+
 ## Converting DataTrees to Python Lists.
 
 The GhPython conponent can be found on the Math > Script toolbar:
@@ -37,7 +40,7 @@ To edit the Python script in the component, simply double-click the component:
 
 ![{{ site.baseurl }}/images/ghpython-blankeditor.png]({{ site.baseurl }}/images/ghpython-blankeditor.png){: .img-center width="75%"}
 
-Simple type int he Python code, clicking on OK will save the code in the component.
+Simple type in the Python code, clicking on OK will save the code in the component.
 
 ## Input parameters
 
