@@ -133,8 +133,33 @@ To output to the component set the value of the output name to a variable. For i
 a = "Hello World!"
 ```
 
-The last assignment to the variable in the script will the the value that is output.  If there are multiple assignments to the output variable, only the last one is sent out.
+The last assignment to the variable in the script will the the value that is output.  If there are multiple assignments, as in a list of vlues assigned in a loop to the output variable, only the last one is sent out.  This can be a bit confusing.  The key is to assign the series of outputs to a list variable, then output that variable through the `a` output.
 
+As an example, this does not work:
+
+```python
+l = [2,3,4,4,5,4,5,6,7,8,9]
+
+a = []
+
+for item in l:
+    a = item + 5
+```
+
+There are two problems with the script above. An output variable in GhPython is created by the GhPython component.  It cannot be set to a specific variable type as in the line `a=[]`.  Also, the `for` will loop throught he items in `l`, only to output the last assigned value to `a` at the completion of the Grasshopper cycle.
+
+The proper way to output a series of values is to create a list variable to populate, then output that variable to `a` at the end of the script.
+
+```python
+l = [2,3,4,4,5,4,5,6,7,8,9]
+
+li=[]
+
+for item in l:
+    li.append(item + 5)
+
+a = li
+```
 
 #### Print function
 
