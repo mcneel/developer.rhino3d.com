@@ -50,7 +50,7 @@ Python can be used all over Rhino in many different ways. Python can be used to 
 - Interact with cloud applications.
 - Create realtime links to other applications
 - Create customer Grasshopper components
-- Store and display project specfici information beyond what basic Rhino can store.
+- Store and display project specific information beyond what basic Rhino can store.
 
 #### RhinoScript Style Functions
 
