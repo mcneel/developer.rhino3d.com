@@ -22,40 +22,42 @@ The Dictionary object is used to hold a set of data values in the form of (key, 
 
 ## Creating a Key:Value datastore
 
-Here is an example of a nested dictionary that stores many different items. Look closely at the bracket and paraens that are used.  The curly braces `{}` denote the a dictionary.  The square brackets `[]` represent a list as a value in the `bookshelf` key. The list in bookshelf actually contains a series of dictionaries for each book.
+Using Dictionaries, list and a key:values can be used together to create this datastore. Here is an example of a nested dictionary that stores many different items. In this case, we have a series of polylines represtning various rooms for a medical office.  Look closely at the bracket and paraens that are used.  The curly braces `{}` denote the a dictionary.  The square brackets `[]` represent a list as a value in the `medical` key. The list in 'medical' actually contains a series of dictionaries for each individual office.
 
-Using Dictionaries, list and a key:values can be used together to create this datastore.
 
 ```python
-datastore = { "store": {
-    "bookshelf": [
-      { "category": "classic",
-        "author": "Charles Dickens",
-        "title": "Great Expectations",
-        "price": 7.47
+datastore = { "office": {
+    "medical": [
+      { "room-number": 100,
+        "use": "reception",
+        "sq-ft": 50,
+        "price": 75
       },
-      { "category": "classic",
-        "author": "John Steinbeck",
-        "title": "The Grapes of Wrath",
-        "price": 11.18
+      { "room-number": 101,
+        "use": "waiting",
+        "sq-ft": 250,
+        "price": 75
       },
-      { "category": "philosophy",
-        "author": "Seneca",
-        "title": "Letters from a Stoic",
-        "isbn": "0-140-44210-3",
-        "price": 12.84
+      { "room-number": 102,
+        "use": "examination",
+        "sq-ft": 125,
+        "price": 150
       },
-      { "category": "fiction",
-        "author": "George Orwell",
-        "title": "1984",
-        "isbn": "0-451-52493-4",
-        "price": 8.49
+      { "room-number": 103,
+        "use": "examination",
+        "sq-ft": 125,
+        "price": 150
+      },
+      { "room-number": 104,
+        "use": "office",
+        "sq-ft": 150,
+        "price": 100
       }
     ],
-    "bicycle": {
-      "color": "blue",
-      "style": "trail",
-      "price": 49.95
+    "parking": {
+      "location": "premium",
+      "style": "covered",
+      "price": 750
     }
   }
 }
@@ -66,41 +68,41 @@ datastore = { "store": {
 There are many ways to access the data in this datastore:
 
 ```python
-print datastore["store"]["bicycle"]
+print datastore["office"]["parking"]
 ```
 
-This returns the bicycle dictionary object`{ "color":"blue, "style":"trail", "price":49.95 }`
+This returns the `parking` dictionary object`{ "location": "premium", "style": "covered", "price": 750 }`
 
-Knowing that the `value` for `bookshelf` is a list.  Use and index number to access any single book:
+Knowing that the `value` for `medical` is a list.  Use and index number to access any single book:
 
 ```python
- print datastore["store"]["bookshelf"][1]
+ print datastore["office"]["medical"][1]
 ```
 
-This returns the dictionary object for The Grapes of Wrath.
+This returns the dictionary object for room 100, reception.
 
 
 The objects and values in the datastore can also be accessed with the `.get` method.  The direct method shown above will return an error if a key does not exist. The `.get` method is a little safer.  It will return a value or `None`.  This is much safer if you are not sure the key is always present.  The `isbn` key is a goot example of this.
 
 ```python
-print datastore["store"]["toy"] # this produces an error.
-print datastore["store"].get("toy")  #This will produce the value of None.
+print datastore["office"]["law"] # this produces an error.
+print datastore["office"].get("law")  #This will produce the value of None.
 ```
-A convenient way to efficiently address a portion of the datastore is to assign the portion to a variable. In this case we can assign the list of books to a `books` variable:
+A convenient way to efficiently address a portion of the datastore is to assign the portion to a variable. In this case we can assign the list of books to a `spaces` variable:
 
 ```python
-books = datastore['store']['bookshelf']
+spaces = datastore['office']['medical']
 ```
-The variable is a reference to the object. Any changes made with books will also be reflected in the original datastore. Also, because books containsonly the list of books in the datastore, it is quite easy to step through the books with a `for` statement.  In the example below, the for loop is looking for a specifc book then updates the price:
+The variable is a reference to the object. Any changes made with `spaces` will also be reflected in the original datastore. Also, because `spaces` containsonly the list of spaces in the datastore, it is quite easy to step through the spaces with a `for` statement.  In the example below, the for loop is looking for a specifc space then updates the price:
 
 ```python
 # Here is a method to find and change a value in the database.
-  for item in books:
-       if item.get('author') == "Seneca" :
-           item['price'] = 10.00
+for item in spaces:
+    if item.get('use') == "examination" :
+       item['price'] = 175
 
-  for item in datastore['store']['bookshelf']: # This loop shows the change is not only in books, but is also in database
-       if item.get('author') == "Seneca" :
-           print 'The book %s now costs %s' % (item.get("title"), format(item.get("price"), '.2f'))
+for item in datastore['office']['medical']: # This loop shows the change is not only in books, but is also in database
+    if item.get('use') == "examination" :
+        print 'The {} rooms now cost {}'.format(item.get("use"), item.get("price"))
 ```
 
