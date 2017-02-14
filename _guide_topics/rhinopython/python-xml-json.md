@@ -6,173 +6,125 @@ author_contacts: ['scottd']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
-categories: ['intermediate']
+categories: ['Intermediate']
 origin:
 order: 75
 keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
 
-Here are some threads that show what people are asking about:
+[JSON (JavaScript Object Notation)](http://www.json.org/) is a easy to read, flexible text based format that can be used to store and communicate information to other products. It is mainly based on key:value pairs and is web and .NET friendly.  There are many libraries and prodcuts that support JSON. 
 
-https://discourse.mcneel.com/t/python-scripts-for-adding-pictureframes-and-writing-a-json-file/41103/2
+Some of the reasons JSON might be used is to collect data from the Rhino model to be used in other places.  Using JSON to store information for a door schedule, or a parts list.  A report can be created on the name, size and location of all the bitmaps in an model.  A JSON files can have the endpoints of all the lines in a model representing column or beam connection points. JSON files are used in many other places and products.  JSON is also easy to display on dynamic webpages.
 
-https://discourse.mcneel.com/t/python-methodology-for-saving-data-between-sessions/5013/3
+Here is an exmple of a JSON structure describing a medical office space:
 
+```json
+{ "office": {
+    "medical": [
+      { "room-number": 100,
+        "use": "reception",
+        "sq-ft": 50,
+        "price": 75
+      },
+      { "room-number": 101,
+        "use": "waiting",
+        "sq-ft": 250,
+        "price": 75
+      },
+      { "room-number": 102,
+        "use": "examination",
+        "sq-ft": 125,
+        "price": 150
+      },
+      { "room-number": 103,
+        "use": "examination",
+        "sq-ft": 125,
+        "price": 150
+      },
+      { "room-number": 104,
+        "use": "office",
+        "sq-ft": 150,
+        "price": 100
+      }
+    ],
+    "parking": {
+      "location": "premium",
+      "style": "covered",
+      "price": 750
+    }
+}
+```
 
-https://discourse.mcneel.com/t/storing-of-the-data-files-processed-by-plugin/20375
-
-
-
-## Overview
-
-https://www.safaribooksonline.com/library/view/python-cookbook-3rd/9781449357337/ch06s02.html
-
-http://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file-in-python
-
-https://docs.python.org/2/tutorial/inputoutput.html#saving-structured-data-with-json
-
-
-<!--
-
-A few things, I typically use this to generate json from classes
-
-[10:43]  
-http://www.newtonsoft.com/json
-newtonsoft.com
-Json.NET - Newtonsoft
-Json.NET is a popular high-performance JSON framework for .NET
+In the case above the office is a medical office.  Including witht he office is a parking place.  The medical office has 5 rooms number from 100 - 104.  Each room a has a use, square footage and price for each space.
  
 
-scottdavidson [10:43 AM] 
-Or just sudo code is fine
+For more information on creating and manipulating this type of information in Python see the [Dictionary as a Database Guide]({{ site.baseurl}}/guides/rhinopython/python-dictionary-database/)
 
-[10:43]  
-with explaination.
+## JSON in Python
 
-luisfraguada [10:43 AM] 
-so does everyone else
 
-[10:43]  
-using .net
+JSON can store Lists, bools, numbers, tuples and dictionaries. But to be saved into a file, all these structures must be reduced to strings. It is the string version that can be read or written to a file. Python has a JSON module that will help converting the datastructures to JSON strings. Use the `import` function to import the JSON module.
 
-[10:44]  
-not sure if it works in IronPythin
+```python
+import json
+```
+The JSON module is mainly used to convert the python dictionary above into a JSON string that can be written into a file. 
 
-[10:44]  
-but let me show you an example
+```python
+json_string = json.dumps(datastore)
+```
 
-scottdavidson [10:45 AM] 
-It is interesting, because there is a JSON endcoder and decoder in Python
+The JSON mudule also can take JSON string nad convert it back to a dictionary structure:
 
-luisfraguada [10:45 AM] 
-great
+```python
+datastore = json.loads(json_string)
+```
 
-[10:45]  
-https://github.com/mcneel/Iris/blob/master/Iris/Objects/IrisObjectPointLight.cs
+While the JSON module will convert strings to Python datatypes, normally the JSON functions are used to read and write directly from JSON files.
 
-[10:45]  
-here is the Iris Point Light class
+## Writing a JSON file
 
-[10:45]  
-takes a Rhino Point Light
+Not only can the `json.dumps()` function convert a Python datastructure to a JSON string, but it can also dump a JSON string directly into a file.  Here is an example of writing a structure above to a JSON file:
 
-[10:46]  
-Notice how there are things like:
-`[JsonProperty("name")]
-public string Name { get; private set; }`` (edited)
+```python
+#Get the file name for the new file to write
+filter = "JSON File (*.json)|*.json|All Files (*.*)|*.*||"
+filename = rs.SaveFileName("Save JSON file as", filter)
 
-scottdavidson [10:46 AM] 
-Yes
+# If the file name exists, write a JSON string into the file.
+if not( filename==None ):
+    # Writing JSON data
+    with open(filename, 'w') as f:
+        json.dump(datastore, f)
+```
 
-luisfraguada [10:46 AM] 
-each of those c# class properties are 'decorated'
+Remember only a JSON formatted string can be written to the file. For more information about using Rhino.Python to read and write files see the [How to read and write a simple file]({{ site.baseurl}}/guides/rhinopython/python-reading-writing/)
 
-[10:47]  
-`JsonProperty("name")`` (edited)
+## Reading JSON
 
-scottdavidson [10:47 AM] 
-That is interesting.
+Reading in a JSON file uses `json.load()` function.
 
-[10:47]  
-Without this library, in Python you are stuck using the Dictionary object.
+```python
+import rhinoscriptsyntax as rs
+import json
 
-luisfraguada [10:48 AM] 
-https://github.com/mcneel/Iris/blob/master/Iris/Objects/IrisObjectCurve.cs
+#prompt the user for a file to import
+filter = "JSON file (*.json)|*.json|All Files (*.*)|*.*||"
+filename = rs.OpenFileName("Open JSON File", filter)
 
-[10:48]  
-this is a bit more complex...the curve class
+#Read JSON data into the datastore variable
+if filename:
+    with open(filename, 'r') as f:
+        datastore = json.load(f)
 
-[10:48]  
-but it should take any user strings on the curve if they have them
+#Use the new datastore datastructure
+print datastore["office"]["parking"]["style"]
+```
 
-scottdavidson [10:49 AM] 
-Ok, here is a structural question.
+The result of the code above will result in the same data structure at the top of this guide.
 
-luisfraguada [10:49 AM] 
-added this C# snippet
-public IrisObjectCurve(Guid geometry, Guid material, string layer) : this()
-        {
-            Geometry = geometry;
-            Material = material;
-​
-Add Comment Click to expand inline 13 lines
+For more information about using Rhino.Python to read and write files see the [How to read and write a simple file]({{ site.baseurl}}/guides/rhinopython/python-reading-writing/)
 
-scottdavidson [10:49 AM] 
-Do you use this only to encode the string to get it out to somewhere else.
+For more details on accessing the information in the dictionary datastructure see,  [Dictionary as a Database Guide]({{ site.baseurl}}/guides/rhinopython/python-dictionary-database/)
 
-luisfraguada [10:50 AM] 
-notice how in that snippet I create user data to bring layer info along
-
-[10:50]  
-anyways
-
-[10:50]  
-then
-
-scottdavidson [10:50 AM] 
-Yes
-
-[10:50]  
-So you are using JSON as a string format to write out.
-
-luisfraguada [10:50 AM] 
-https://github.com/mcneel/Iris/blob/master/Iris/IrisMain.cs#L311
-
-scottdavidson [10:50 AM] 
-Iris has there own format.
-
-luisfraguada [10:51 AM] 
-yes
-
-scottdavidson [10:51 AM] 
-OK
-
-luisfraguada [10:51 AM] 
-I go through all of the objects, convert them to all of these objects
-
-luisfraguada [10:51 AM] 
-added this C# snippet
-var scene = new IrisSceneFile
-            {
-                Metadata = metadata,
-                Geometries = m_geometry,
-                Materials = m_materials,
-Add Comment Click to expand inline 9 lines
-
-luisfraguada [10:51 AM] 
-pack it all in there
-
-scottdavidson [10:52 AM] 
-You grab certain properties off the objects and then use these tools to write out.
-
-luisfraguada [10:52 AM] 
-https://github.com/mcneel/Iris/blob/master/Iris/IrisMain.cs#L435
-
-scottdavidson [10:52 AM] 
-Perfect.
-
-luisfraguada [10:52 AM] 
-yes
-
--->
