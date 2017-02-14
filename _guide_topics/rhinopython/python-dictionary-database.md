@@ -22,7 +22,7 @@ The Dictionary object is used to hold a set of data values in the form of (key, 
 
 ## Creating a Key:Value datastore
 
-Using Dictionaries, list and a key:values can be used together to create this datastore. Here is an example of a nested dictionary that stores many different items. In this case, we have a series of polylines represtning various rooms for a medical office.  Look closely at the bracket and paraens that are used.  The curly braces `{}` denote the a dictionary.  The square brackets `[]` represent a list as a value in the `medical` key. The list in 'medical' actually contains a series of dictionaries for each individual office.
+Using Dictionaries, list and a key:values can be used together to create this datastore. Here is an example of a nested dictionary that stores many different items. In this case, we have a series of polylines representing various rooms for a medical office.  Look closely at the bracket and paraens that are used.  The curly braces `{}` denote the a dictionary.  The square brackets `[]` represent a list as a value in the `medical` key. The list in 'medical' actually contains a series of dictionaries for each individual office.
 
 
 ```python
