@@ -13,11 +13,11 @@ keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
 
-[JSON (JavaScript Object Notation)](http://www.json.org/) is a easy to read, flexible text based format that can be used to store and communicate information to other products. It is mainly based on key:value pairs and is web and .NET friendly.  There are many libraries and prodcuts that support JSON. 
+[JSON (JavaScript Object Notation)](http://www.json.org/) is an easy to read, flexible text based format that can be used to store and communicate information to other products. It is mainly based on key:value pairs and is web and .NET friendly.  There are many libraries and products that support JSON. 
 
-Some of the reasons JSON might be used is to collect data from the Rhino model to be used in other places.  Using JSON to store information for a door schedule, or a parts list.  A report can be created on the name, size and location of all the bitmaps in an model.  A JSON files can have the endpoints of all the lines in a model representing column or beam connection points. JSON files are used in many other places and products.  JSON is also easy to display on dynamic webpages.
+One of the reasons JSON might be used is to collect data from the Rhino model to be used in other places.  Use JSON to store information for a door schedule, or a parts list.  A report can be created on the name, size and location of all the bitmaps in a model.  A JSON file can have the endpoints of all the lines in a model representing column or beam connection points. JSON files are used in serveral other places and products.  JSON is also easy to display on dynamic webpages.
 
-Here is an exmple of a JSON structure describing a medical office space:
+Here is an exmple of a JSON structure describing a medical office st of spaces, taken from a set of polylines off a Rhino floorplan. As you will see in the example, the medical space includes 5 rooms and parking, with square footage and pricing for each dedicated space.
 
 ```json
 { "office": {
@@ -75,7 +75,7 @@ The JSON module is mainly used to convert the python dictionary above into a JSO
 json_string = json.dumps(datastore)
 ```
 
-The JSON mudule also can take JSON string nad convert it back to a dictionary structure:
+The JSON module can also take a JSON string and convert it back to a dictionary structure:
 
 ```python
 datastore = json.loads(json_string)
@@ -103,7 +103,7 @@ Remember only a JSON formatted string can be written to the file. For more infor
 
 ## Reading JSON
 
-Reading in a JSON file uses `json.load()` function.
+Reading in a JSON file uses the `json.load()` function.
 
 ```python
 import rhinoscriptsyntax as rs
