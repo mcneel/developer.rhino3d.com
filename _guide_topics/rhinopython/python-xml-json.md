@@ -17,7 +17,7 @@ layout: toc-guide-page
 
 One of the reasons JSON might be used is to collect data from the Rhino model to be used in other places.  Use JSON to store information for a door schedule, or a parts list.  A report can be created on the name, size and location of all the bitmaps in a model.  A JSON file can have the endpoints of all the lines in a model representing column or beam connection points. JSON files are used in serveral other places and products.  JSON is also easy to display on dynamic webpages.
 
-Here is an exmple of a JSON structure describing a medical office st of spaces, taken from a set of polylines off a Rhino floorplan. As you will see in the example, the medical space includes 5 rooms and parking, with square footage and pricing for each dedicated space.
+Here is an exmple of a JSON structure describing a medical office, taken from a set of polylines off a Rhino floorplan. As you will see in the example, the medical space includes 5 rooms and parking, with square footage and pricing for each dedicated space.
 
 ```json
 { "office": {
@@ -55,14 +55,11 @@ Here is an exmple of a JSON structure describing a medical office st of spaces, 
     }
 }
 ```
-
-In the case above the office is a medical office.  Including witht he office is a parking place.  The medical office has 5 rooms number from 100 - 104.  Each room a has a use, square footage and price for each space.
- 
+It is this dictionary setup that works best for Json.
 
 For more information on creating and manipulating this type of information in Python see the [Dictionary as a Database Guide]({{ site.baseurl}}/guides/rhinopython/python-dictionary-database/)
 
 ## JSON in Python
-
 
 JSON can store Lists, bools, numbers, tuples and dictionaries. But to be saved into a file, all these structures must be reduced to strings. It is the string version that can be read or written to a file. Python has a JSON module that will help converting the datastructures to JSON strings. Use the `import` function to import the JSON module.
 
