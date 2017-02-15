@@ -6,9 +6,9 @@ author_contacts: ['Alain']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
-categories: ['Overview']
+categories: ['Intermediate']
 origin: http://wiki.mcneel.com/developer/python
-order: 2
+order: 99
 keywords: ['Rhino.Python', 'Python']
 layout: toc-guide-page
 ---
