@@ -18,7 +18,9 @@ TODO: 'needs more GHPython info.'
 
 ## What is Python?
 
-[Python](https://www.python.org/) is a *modern programming language*.  It is easier to learn and use than other non-scripting style languages like C#, VB, or C/C++.  Yet it is quite powerful.
+[Python](https://www.python.org/) is a *modern programming language*. Python is sometimes called a scripting language or a glue language.  This means python is used often to run a series of commands as a script or used to create links between two other technologies as a glue. It is easier to learn and use than other non-scripting style, compiled languages like C#, VB, or C/C++.  Yet it is quite powerful.
+
+Python is [interpreted](https://en.wikipedia.org/wiki/Programming_language_implementation), meaning it is executed one line at a time.  This makes the program flow easy to understand.  Also it is [symantically dynamic](https://en.wikipedia.org/wiki/Programming_language#Static_versus_dynamic_typing) which allows the sytax to be less restrictive and less formal when using declarations and variables types.  These characteristics add to Python's ease-of-use for basic programming tasks.
 
 You may need Python if you want to:
 
@@ -86,15 +88,16 @@ Yes, different...but similar enough that you should be able to figure out what i
 
 For more information on how to use Rhinoscriptsyntax and Python, see the [Rhino.Python Guide]({{ site.baseurl }}/guides/rhinopython/)
 
-#### RhinoCommon
-
-[Rhinocommon]({{ site.baseurl}}/guides/rhinopython/what-is-rhinocommon/) is a low-level powerful SDK for all Rhino platforms used mainly by more experienced developers.  Python scripts can use Rhinocommon, to have full access to the .NET framework including access to Rhino's RhinoCommon SDK.  A guide of accessing RhinoCommon from Python scripts is at [Using RhinoCommon from Python]({{ site.baseurl}}/guides/rhinopython/using-rhinocommon-from-python).
 
 #### Grasshopper
 
 Python can also be used in Grasshopper to create custom components within a larger grasshooper definition. The GhPython component contains a Python script editor and direct access to Python, Rhino and Grasshopper functions.  Use GhPython to create and manipulate customer data within Grasshopper.
 
 For an introduction to GhPython in Grasshopper, see the [Your First Python Script in Grasshopper Guide]({{ site.baseurl}}/guides/rhinopython/your-first-python-script-in-grasshopper)
+
+#### RhinoCommon
+
+[Rhinocommon]({{ site.baseurl}}/guides/rhinopython/what-is-rhinocommon/) is a low-level powerful SDK for all Rhino platforms used mainly by more experienced developers.  Python scripts can use Rhinocommon, to have full access to the .NET framework including access to Rhino's RhinoCommon SDK.  A guide of accessing RhinoCommon from Python scripts is at [Using RhinoCommon from Python]({{ site.baseurl}}/guides/rhinopython/using-rhinocommon-from-python).
 
 ---
 
