@@ -11,6 +11,6 @@ order: 3
 <a href="{{ site.baseurl }}/api/RhinoCommonWin" target="_blank">RhinoCommon (Rhino for Windows)(opens in separate tab)</a>  
 <a href="{{ site.baseurl }}/api/RhinoScriptSyntax/mac">RhinoScriptSyntax (Rhino for Mac)</a>  
 <a href="{{ site.baseurl }}/api/RhinoScriptSyntax/win">RhinoScriptSyntax (Rhino for Windows)</a>  
-<a href="{{ site.baseurl }}/api/grasshopper">Grasshopper (Rhino for Windows)</a>
+<a href="{{ site.baseurl }}/api/grasshopper">Grasshopper (Rhino for Windows)</a>  
 <a href="http://www.rhino3d.com/5/rhinoscript/index.html">RhinoScript (Rhino for Windows)</a>
 
