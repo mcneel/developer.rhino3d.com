@@ -128,7 +128,9 @@ order: 2
 
 ### Getting Started
 
-- Your First Python Script in Rhino ([Windows]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-mac))
+- Your First Python Script in Rhino ([Windows]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-mac), [Grasshopper]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-grasshopper))
+- [Where to get help...]({{ site.baseurl }}/guides/rhinopython/python-where-to-find-help)
+- [Troubleshooting Installation]({{ site.baseurl }}/guides/rhinopython/python-troubleshooting-install)
 
 ### Python Editor for Windows
 
@@ -137,6 +139,21 @@ order: 2
   <ul>
   {% for guide in guides %}
     {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Python Windows' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+### Python in Grasshopper
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'GhPython' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
