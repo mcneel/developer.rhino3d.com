@@ -229,7 +229,6 @@ order: 2
 - [Rhino.Python 101](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)
 - [Rhino Scripting Forum (Discourse)](http://discourse.mcneel.com/c/scripting)
 - [Rhino.Python Samples]({{ site.baseurl }}/samples/#rhinopython)
-- [Pascal Golay's Python Samples - GitHub](https://github.com/pgolay/PG_Scripts/tree/master/Python)
 - [Designalyze Python Tutorials](http://designalyze.com/)
 - [Plethora Project](http://www.plethora-project.com/2011/09/12/rhino-python-tutorials/)
 - [Steve Baer's Blog](http://stevebaer.wordpress.com/category/python/)
