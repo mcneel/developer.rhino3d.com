@@ -8,7 +8,7 @@ languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['Overview']
 origin:
-order: 1
+order: 2
 keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
