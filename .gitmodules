@@ -6,4 +6,4 @@
 	url = https://github.com/mcneel/rhinocommon-api-docs.git
 [submodule "api/grasshopper"]
 	path = api/grasshopper
-	url = https://github.com/mcneel/grasshopper-sdk-docs.git
+	url = https://github.com/mcneel/grasshopper-api-docs.git
