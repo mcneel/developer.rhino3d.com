@@ -41,6 +41,14 @@ Also note, if you uninstall your plugin and manually close the RUI file, within 
 
 Finally, if you update your plugin, Rhino will not re-stage the RUI file because it already exists. You can get Rhino to re-stage the RUI file by deleting it in *%APPDATA%* and restarting which will cause Rhino to copy the file again since it no longer exists. This can be done programmatically by adding the following code to your plugin object's `OnLoad` override.
 
+<ul class="nav nav-pills">
+  <li class="active"><a href="#cs" data-toggle="pill">C#</a></li>
+  <li><a href="#cpp" data-toggle="pill">C++</a></li>
+</ul>
+
+{::options parse_block_html="true" /}
+<div class="tab-content">
+
 ```cs
 /// <summary>
 /// Called when the plugin is being loaded.
@@ -91,3 +99,54 @@ protected override LoadReturnCode OnLoad(ref string errorMessage)
   return LoadReturnCode.Success;
 }
 ```
+{: #cs .tab-pane .fade .in .active}
+
+```cpp
+void CTestlugIn::LoadProfile(LPCTSTR lpszSection, CRhinoProfileContext& pc)
+{
+  // Get the version number of our plugin that was last used
+  pc.LoadProfileString(lpszSection, L"PlugInVersion", m_last_version);
+}
+
+void CTestPlugIn::SaveProfile(LPCTSTR lpszSection, CRhinoProfileContext& pc)
+{
+  // Get the version number of our plugin
+  pc.SaveProfileString(lpszSection, L"PlugInVersion", m_plugin_version);
+}
+
+BOOL CTestPlugIn::OnLoadPlugIn()
+{
+  // If the version number of the plugin that was last used does not match the
+  // version number of this plugin, proceed.
+  if (!m_last_version.IsEmpty() && 0 != m_last_version.CompareNoCase(m_plugin_version))
+  {
+    // Build a path to the user's staged RUI file.
+
+    ON_wString path;
+    CRhinoFileUtilities::GetRhinoRoamingProfileDataFolder(path);
+
+    ON_wString key;
+    key.Format(L"Plug-ins\\%s (%s)\\settings\\", RhinoPlugInName(), RhinoPlugInId());
+
+    ON_wString plugin;
+    GetPlugInFileName(plugin);
+
+    ON_wString fname;
+    ON_wString::SplitPath(plugin, 0, 0, &fname, 0);
+    fname += L".rui";
+
+    path += key;
+    path += fname;
+
+    // Verify the RUI file exists.
+    if (CRhinoFileUtilities::FileExists(path))
+      // Delete the RUI file.
+      CRhinoFileUtilities::DeleteFile(path);
+  }
+
+  return TRUE;
+}
+```
+{: #cpp .tab-pane .fade .in}
+
+</div>
