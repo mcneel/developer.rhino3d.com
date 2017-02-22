@@ -91,7 +91,7 @@ For more information on how to use Rhinoscriptsyntax and Python, see the [Rhino.
 
 #### Grasshopper
 
-Python can also be used in Grasshopper to create custom components within a larger grasshooper definition. The GhPython component contains a Python script editor and direct access to Python, Rhino and Grasshopper functions.  Use GhPython to create and manipulate customer data within Grasshopper.
+Python can also be used in Grasshopper to create custom components within a larger grasshoper definition. The GhPython component contains a Python script editor and direct access to Python, Rhino and Grasshopper functions.  Use GhPython to create and manipulate customer data within Grasshopper.
 
 For an introduction to GhPython in Grasshopper, see the [Your First Python Script in Grasshopper Guide]({{ site.baseurl}}/guides/rhinopython/your-first-python-script-in-grasshopper)
 
