@@ -21,7 +21,7 @@ Lines are represented as zero-based, one-dimensional arrays containing two eleme
 
 Planes are represented as zero-based, one-dimensional arrays containing four elements: the plane's origin (3-D point), the plane's x-axis direction (3-D vector), the plane's y-axis direction (3-D vector), and the plane's z-axis direction (3-D vector).
 
-For more information in [RhinoScript Fundamentals](({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-introduction)).
+For more information in [RhinoScript Fundamentals]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-introduction).
 
 | Method | | |  Description |
 |:--------|:-:|:-:|:--------|

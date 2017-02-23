@@ -15,7 +15,7 @@ layout: toc-guide-page
  
 ## Point  & Vector Methods
 
-The following methods are available for creating and manipulating 3-D points and 3-D vectors.  3-D points and 3-D vectors are represented as  zero-based, one-dimensional arrays that contain three numbers. For more information, see the [Points](({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-point)) and [Vectors](({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)) discussion in [RhinoScript Fundamentals](({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-introduction)).
+The following methods are available for creating and manipulating 3-D points and 3-D vectors.  3-D points and 3-D vectors are represented as  zero-based, one-dimensional arrays that contain three numbers. For more information, see the [Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points) and [Vectors]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors) discussion in [RhinoScript Fundamentals]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-introduction).
 
 | Method | | |  Description |
 |:--------|:-:|:-:|:--------|
