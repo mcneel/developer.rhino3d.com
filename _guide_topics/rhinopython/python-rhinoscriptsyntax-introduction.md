@@ -1,6 +1,6 @@
 ---
 title: Rhinoscript Syntax in Python
-description: This guide provides an overview of the RhinoScriptSytntax in Python.
+description: This guide provides an overview of the RhinoScriptSyntax in Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
 apis: ['RhinoPython']
@@ -32,7 +32,7 @@ Before using RhinoScriptSyntax a line must be added to the top of each Python fi
 import rhinoscriptsyntax as rs
 ```
 
-The `import` above not only imports the library, but also renames the namespace to `rs.`.  This is done to just make it easier to type when accessing the methods in RhinoScriptSyntax.  Access the methods can now be made by starting methods with 'rs.'.  For example, accessing the `AddCircle()` method in the RhinoScriptSyntax namespace can be used to create a circle:
+The `import` above not only imports the library, but also renames the namespace to `rs.`.  This is done to just make it easier to type when accessing the methods in RhinoScriptSyntax. These methods can be called using the 'rs.' prefix. For example, accessing the `AddCircle()` method in the RhinoScriptSyntax namespace can be used to create a circle:
 
 ```python
 import rhinoscriptsyntax as rs
@@ -43,7 +43,7 @@ rs.AddCircle( centerpoint, 5.0 )
 
 ## Geometry
 
-Rhino is a 3D modeler, therefore creating and modifing geometry is key to developing in Rhino.  Here are the primitive geometry types of Rhino:
+Rhino is a 3D modeler, therefore creating and modifying geometry is key to developing in Rhino.  Here are the primitive geometry types of Rhino:
 
 - [Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points)
 - [List of Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-list-points)
@@ -52,4 +52,4 @@ Rhino is a 3D modeler, therefore creating and modifing geometry is key to develo
 - [Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-planes)
 - [Rhino Geometry Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects)
 
-Creating, accessing and maniputlating geometry is one of the first places RhinoScriptSyntax is used.  SImple geometry such as points, lines, planes can be described with simple lists in Python.  More complicated geometry objects such as NURBS curves, Surfaces and Poly-surfaces can be created by Rhino and referenced by an object ID by RhinoScriptSyntax.
+Creating, accessing and manipulating geometry is one of the first places RhinoScriptSyntax is used.  Simple geometry such as points, lines, planes can be described with simple lists in Python.  More complicated geometry objects such as NURBS curves, Surfaces and Poly-surfaces can be created by Rhino and referenced by an object ID by RhinoScriptSyntax.
