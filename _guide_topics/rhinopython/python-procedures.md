@@ -41,7 +41,7 @@ import time
 print (time.strftime("%H:%M:%S")) #strftime is a proccedure in the time module.
 ```
 
-The `import` statement can also be used to change the renference name of the incoming module.  Use this function to make module names shorter to use and easier to read in the code.  A very common example of this is how we normally will shorted the `rhinoscriptsyntax` module to `rs` for convenience:
+The `import` statement can also be used to change the reference name of the incoming module.  Use this function to make module names shorter to use and easier to read in the code.  A very common example of this is how we normally will shorted the `rhinoscriptsyntax` module to `rs` for convenience:
 
 ```python
 import rhinoscriptsyntax as rs
@@ -62,7 +62,7 @@ The imported modules above are referenced by using `Path`, `File`, `FileInfo`, `
 There are many modules available for Python.  Some of the most useful to Rhino Python are:
 
 * Rhinoceros modules
-  * rhinoscriptsyntax - The basic rhino library of prodedures
+  * rhinoscriptsyntax - The basic rhino library of procedures
   * rhino -
 * String Services
   * string — Common string operations
@@ -84,9 +84,9 @@ A complete list of predefined modules in Python, see the [Python Standard Librar
 
 ## User-Defined Procedures
 
-A `Function` is a series of Python statements begins by a `def`, followed by the function name and enclosed in parenthesis. A Function may or may not return a value.  A Function procedure can take arguments (constants, variables, or expressions that are passed by a calling procedure).  If a Function procedure has no arguments, its `def` statement should include an empty set of parentheses `()`.  Parameters can also be defined within the paranthesis.  The parenthesis are followed by a colon (:) to end the first line.
+A `Function` is a series of Python statements begins by a `def`, followed by the function name and enclosed in parenthesis. A Function may or may not return a value.  A Function procedure can take arguments (constants, variables, or expressions that are passed by a calling procedure).  If a Function procedure has no arguments, its `def` statement should include an empty set of parentheses `()`.  Parameters can also be defined within the parenthesis.  The parenthesis are followed by a colon (:) to end the first line.
 
-The end of the function is marked by the loss of whitespace in the next line of the code (ending the code block). It is common practice to use a `return` statement followed by the arguement to return a value. You amay also finish a funtion with a return stanement and a simple colon (;).
+The end of the function is marked by the loss of whitespace in the next line of the code (ending the code block). It is common practice to use a `return` statement followed by the argument to return a value. You may also finish a function with a return statement and a simple colon (;).
 
 In the following example, the Celsius `def` calculates degrees Celsius from degrees Fahrenheit. When the def is called from the `ConvertTemp` def procedure, a variable containing the argument value is passed to the def.  The result of the calculation is returned to the calling procedure and displayed in a message box.
 

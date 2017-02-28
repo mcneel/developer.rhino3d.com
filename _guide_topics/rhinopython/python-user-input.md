@@ -1,5 +1,5 @@
 ---
-title: How to get user input in a script 
+title: How to get user input in a script
 description: How to prompt the user for input into a script.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
@@ -15,13 +15,13 @@ layout: toc-guide-page
 
 ## Overview
 
-Prompting the user of a script fo the input of a value, selecting a layer, picking a point or selecting a Rhino object is important to many interactive scripts.
+Prompting the user of a script for the input of a value, selecting a layer, picking a point or selecting a Rhino object is important to many interactive scripts.
 
 The RhinoscriptSyntax module contains many ways to interactively prompt for several different types of input. There are three main styles of input that are contained in Rhinosciptsyntax:
 
-- Get methods. These are methods that work with the command line, wait for mouse input or prompt for specifc input.
-- Dialog methods.  There are some simple specfic dialogs to prompt for input
-- File sytem dialogs. Browsing, saving and opening files on the system with Python.
+- Get methods. These are methods that work with the command line, wait for mouse input or prompt for specific input.
+- Dialog methods.  There are some simple specific dialogs to prompt for input
+- File system dialogs. Browsing, saving and opening files on the system with Python.
 
 Many input methods will also validate the user input to make sure only the proper input is accepted.
 
@@ -32,12 +32,12 @@ Many input methods will also validate the user input to make sure only the prope
 
 
  Use `rs.GetPoint()` to ask the user for a single point location, say for the center of a circle. Like most if not all of the Get methods, rs.GetPoint() allows you to specify some parameters- in this case they are all optional, the function will run without any of them specified in the code you type. For example, the default prompt is "Pick point", but you can specify a different prompt, for example, "Set center point" depending on what you wish to convey to the user.
- 
+
 ```python
 pt = rs.GetPoint("Set center point")
 ```
 
-If the function succeeds, a Rhino point is returned, which can be treated as a list of three numbers representing the world x, y and z coordinates of the point. 
+If the function succeeds, a Rhino point is returned, which can be treated as a list of three numbers representing the world x, y and z coordinates of the point.
 
 ```python
 import rhinoscriptsyntax as rs
@@ -49,9 +49,9 @@ if pt is not None:# note it is a good idea to check if there is a result you can
 
 #### GetPoints()
 
-Use `rs.GetPoints()` to ask the user for multiple point locations. As in rs.GetPoint(), all parameters are optional. Note that there is a separate prompt for the first point, and a second one for subsequent points. 
+Use `rs.GetPoints()` to ask the user for multiple point locations. As in rs.GetPoint(), all parameters are optional. Note that there is a separate prompt for the first point, and a second one for subsequent points.
 
-You need to set the parameters in order, separated by commas. If you do not want to specify a paramter at all, and accept the default, you can leave it out but you must then specify any following parameters explicitly using the parameter name. For example, this will not work to set a custom first prompt:
+You need to set the parameters in order, separated by commas. If you do not want to specify a parameter at all, and accept the default, you can leave it out but you must then specify any following parameters explicitly using the parameter name. For example, this will not work to set a custom first prompt:
 
 ```python
 
@@ -60,7 +60,7 @@ import rhinoscriptsyntax as rs
 pts = rs.GetPoints(  "Set the first point", "Set the next point")
 ```
 
-Why? because the function has two paramters that come before the first prompt, 'draw_lines' and 'in_plane'. If you leave these out, you must specify what paramters you are setting explicitly in order for it to be recognized:
+Why? because the function has two parameters that come before the first prompt, 'draw_lines' and 'in_plane'. If you leave these out, you must specify what parameters you are setting explicitly in order for it to be recognized:
 
 ```python
 import rhinoscriptsyntax as rs
@@ -123,7 +123,7 @@ The value of 'button' in the code above will tell the script which button was cl
 
 #### ListBox()
 
-Some of the more advanced dialogs can be polulated with custom selections:
+Some of the more advanced dialogs can be populated with custom selections:
 
 ```python
 import rhinoscriptsyntax as rs
@@ -154,7 +154,7 @@ For details on all the dialog box functions in RhinoScriptSyntax for Python go t
 
 ## File System dialogs
 
-Working with files and folders on the computer take a special class of dialogs. 
+Working with files and folders on the computer take a special class of dialogs.
 
 ```python
 import rhinoscriptsyntax as rs
@@ -181,6 +181,3 @@ if filename: rs.MessageBox(filename)
 
 - [Reading and Writing files with Python]({{ site.baseurl }}/guides/rhinopython/python-reading-writing)
 - [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)
-
-
-

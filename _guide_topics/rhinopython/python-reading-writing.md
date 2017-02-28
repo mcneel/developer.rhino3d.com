@@ -1,5 +1,5 @@
 ---
-title: How to read and write a simple file 
+title: How to read and write a simple file
 description: Use Python to read and write files.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
@@ -27,7 +27,7 @@ def ImportPoints():
     filter = "Text file (*.txt)|*.txt|All Files (*.*)|*.*||"
     filename = rs.OpenFileName("Open Point File", filter)
     if not filename: return
-    
+
     #read each line from the file
     file = open(filename, "r")
     contents = file.readlines()
@@ -54,13 +54,13 @@ if( __name__ == "__main__" ):
 ```
 ---
 
-We've put the action inside a function in this script, the 
+We've put the action inside a function in this script, the
 
 ```python
 def ImportPoints()
 ```
-section. This allows the code to be re-used and simplifies error checking. 
-The first part uses the rs function 
+section. This allows the code to be re-used and simplifies error checking.
+The first part uses the rs function
 
 ```python
 rs.OpenFileName()
@@ -74,15 +74,15 @@ filename = rs.OpenFileName("Open Point File", filter)
 
 with a filter for text files.
 
-If for some reason the user does not specify a file, say with a Cancel, then the line 
+If for some reason the user does not specify a file, say with a Cancel, then the line
 
 ```python
 if not filename: return
 ```
 
-ensures that the rest of the code inside this particular function will not be run, since there is nothing that can be done without a file name, and executing the next lines in the script will result in error messages without it. Since there is only the one function in this script, a cancel emans the script will stop.
+ensures that the rest of the code inside this particular function will not be run, since there is nothing that can be done without a file name, and executing the next lines in the script will result in error messages without it. Since there is only the one function in this script, a cancel means the script will stop.
 
-Next a varible is set to the open file for reading:
+Next a variable is set to the open file for reading:
 
 ```python
 file = open(filename, "r")
@@ -90,7 +90,7 @@ file = open(filename, "r")
 
 and a variable is set to the contents of the file  which is then held in memory as a list with one item per line:
 
-```python 
+```python
 contents = file.readlines()
 ```
 
@@ -126,7 +126,7 @@ if( __name__ == "__main__" ):
 
 ## Writing a file
 
-Writing a file is similiar to reading, but the order in which things are done is different. This time we'll look at the ExportPoints.py sample file.
+Writing a file is similar to reading, but the order in which things are done is different. This time we'll look at the ExportPoints.py sample file.
 
 ```python
 import rhinoscriptsyntax as rs
@@ -152,7 +152,7 @@ with open(filename, "w") as file:
         elif( rs.IsPoint(id) ):
         point = rs.PointCoordinates(id)
         file.write(str(point) + "\n")
-        
+
 ```
 ----    
 
@@ -163,7 +163,7 @@ There are a couple of things to notice, compared to the previous example. We nee
 objectIds = rs.GetObjects("Select Points", 1+2, True, True)
 ```
 
-As before we check to make sure that the user has in fact selcted the things we're looking for.
+As before we check to make sure that the user has in fact selected the things we're looking for.
 
 ```python
 if( objectIds==None ): return
@@ -179,7 +179,7 @@ if( filename==None ): return
 ```
 
 
-When writing to a file it must first be *opened*.  While it is open, the information can be written to the file.  After wrting all the information, the file must be closed. In the first example we explicitly opened, read and then closed the file. This time we've used the *with* statement to open the file - *with* is convenient becuse it takes care of closing the file and cleaning up when the script leaves the indented *with* section.
+When writing to a file it must first be *opened*.  While it is open, the information can be written to the file.  After writing all the information, the file must be closed. In the first example we explicitly opened, read and then closed the file. This time we've used the *with* statement to open the file - *with* is convenient because it takes care of closing the file and cleaning up when the script leaves the indented *with* section.
 
 ```python
 with open(filename, "w") as file:

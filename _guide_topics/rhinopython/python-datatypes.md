@@ -51,7 +51,7 @@ Most of the time using the standard Python number type is fine. Python will auto
 |
 {: rules="groups"}
 
-Most of the time Python will do varibale convertion automatically. You can also use Python conversion functions [(int(), long(), float(), complex())](https://docs.python.org/2/library/stdtypes.html#id2) to convert data from one type to another. In addition, the `type` function returns information about how your data is stored within a variable.
+Most of the time Python will do variable conversion automatically. You can also use Python conversion functions [(int(), long(), float(), complex())](https://docs.python.org/2/library/stdtypes.html#id2) to convert data from one type to another. In addition, the `type` function returns information about how your data is stored within a variable.
 
 ```python
 message = "Good morning"
@@ -84,15 +84,15 @@ print var1[0] # this will print the first character in the string an `H`
 print var2[1:5] # this will print the substring 'hinoP`
 ```
 
-Python can use a special sytntax to format multiple strings and numbers. The string formatter is quickly covered here because it is seen often and it is important to recognize the syntax.  
+Python can use a special syntax to format multiple strings and numbers. The string formatter is quickly covered here because it is seen often and it is important to recognize the syntax.  
 
 ```python
 print "The item {} is repeated {} times".format(element,count))
 ```
 
-The `{}` are placeholders that are substituted by the variables `element` and `count` in the final string. This compact syntax is meant to keep the code more readable and compact. 
+The `{}` are placeholders that are substituted by the variables `element` and `count` in the final string. This compact syntax is meant to keep the code more readable and compact.
 
-Python is currently transitioning to the format syntax above, but python can use an older sytnax, which is being phased out, but is still seen in some example code:
+Python is currently transitioning to the format syntax above, but python can use an older syntax, which is being phased out, but is still seen in some example code:
 
 ```python
 print "The item %i is repeated %i times"% (element,count)
@@ -113,7 +113,7 @@ B = [1, 23, 45, 67] # this list creates an initial list of 4 numbers.
 C = [2, 4, 'john'] # lists can contain different variable types.
 ```
 
-All lists in Python are zero-based indexed. When referencing a member or the legnth of a list the number of list elements is always the number shown plus one.
+All lists in Python are zero-based indexed. When referencing a member or the length of a list the number of list elements is always the number shown plus one.
 
 ```python
 mylist = ['Rhino', 'Grasshopper', 'Flamingo', 'Bongo']
@@ -141,14 +141,14 @@ MyTable = [[], []]
 
 In a two-dimensional array, the first number is always the number of rows; the second number is the number of columns.
 
-For a detailed look at managing lists, take a look at the article 
+For a detailed look at managing lists, take a look at the article
 
 - [Python Lists - Google developer](https://developers.google.com/edu/python/lists)
 - [TutorialPoint Python Lists](https://www.tutorialspoint.com/python/python_lists.htm)
 
 ## Tuple
 
-Tuples are a group of values like a list and are maniputed in similiar ways.  But, tuples are fixed in size once they are assigned. In Python the fixed size is considered immutable as compared to a list that is dynamic and mutable. Tuples are defined by parenthesis ().
+Tuples are a group of values like a list and are manipulated in similar ways.  But, tuples are fixed in size once they are assigned. In Python the fixed size is considered immutable as compared to a list that is dynamic and mutable. Tuples are defined by parenthesis ().
 
 ```python
 myGroup = ('Rhino', 'Grasshopper', 'Flamingo', 'Bongo')
@@ -160,9 +160,9 @@ Here are some advantages of tuples over lists:
 3. You can find elements in a tuple, since this doesn’t change the tuple.
 4. You can also use the in operator to check if an element exists in the tuple.
 5. Tuples are faster than lists. If you're defining a constant set of values and all you're ever going to do with it is iterate through it, use a tuple instead of a list.
-6. It makes your code safer if you “write-protect” data that does not need to be changed. 
+6. It makes your code safer if you “write-protect” data that does not need to be changed.
 
-It seems tuples are very restrictive, so why are they useful? There are many datastructures in Rhino that require a fixed set of values.  For instance a Rhino point is a list of 3 numbers `[34.5, 45.7, 0]`. If this is set as tuple, then you can be assured the the original 3 number structure stays as a point `(34.5, 45.7, 0)`.  There are other datastructures such as lines, vectors, domains and other data in Rhino that also require a certain set of values that do not change.  Tuples are great for this.
+It seems tuples are very restrictive, so why are they useful? There are many datastructures in Rhino that require a fixed set of values.  For instance a Rhino point is a list of 3 numbers `[34.5, 45.7, 0]`. If this is set as tuple, then you can be assured the original 3 number structure stays as a point `(34.5, 45.7, 0)`.  There are other datastructures such as lines, vectors, domains and other data in Rhino that also require a certain set of values that do not change.  Tuples are great for this.
 
 For more information on Tuples, see the [TutorialPoint Python Tutorial on Tuples](https://www.tutorialspoint.com/python/python_tuples.htm) and the [Dive in Python section on tuples](http://getpython3.com/diveintopython3/native-datatypes.html#tuples).
 

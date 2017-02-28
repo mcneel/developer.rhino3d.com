@@ -13,7 +13,7 @@ keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
 
- 
+
 ## Overview
 
 You can control the flow of your script with conditional statements and looping statements.  Using conditional statements, you can write Python code that makes decisions and repeats actions.  The following conditional statements are available in Python:
@@ -22,7 +22,7 @@ You can control the flow of your script with conditional statements and looping 
 * `if`...`else` statement
 * `if`...`elif`...`elif`...`else` nested statement
 
-The `if`... statement is used to evaluate whether a condition is True or False and, depending on the result, to specify one or more statements to run.  Usually the condition is an expression that uses a comparison operator to compare one value or variable with another.  For information about comparison operators, see the [Python Operators]({{ site.baseurl }}/guides/rhinopython/python-operators) guide. `if`... and `if...elif` statements can be nested to as many levels as you need. 
+The `if`... statement is used to evaluate whether a condition is True or False and, depending on the result, to specify one or more statements to run.  Usually the condition is an expression that uses a comparison operator to compare one value or variable with another.  For information about comparison operators, see the [Python Operators]({{ site.baseurl }}/guides/rhinopython/python-operators) guide. `if`... and `if...elif` statements can be nested to as many levels as you need.
 
 Python programming language assumes any non-zero and non-null values as TRUE, and if it is either zero or null, then it is assumed as FALSE value.
 
@@ -39,7 +39,7 @@ To run more than one line of code, you must use the multiple-line (or block) syn
 
 ```python
 var1 = 350
-if var1 == 350 : 
+if var1 == 350 :
     print "The value of the variable is 350"
     var2 = 450
     print "The value of variable 2 is 450"
@@ -78,7 +78,7 @@ else :
 
 You can add as many `elif` clauses as you need to provide alternative choices. Thie `elif` statement takes the place of the `Select Case` statement in other languages.
 
-For more information on nesting if..elif..else statements see [Python nested if statments on TutorialsPoint](https://www.tutorialspoint.com/python/nested_if_statements_in_python.htm)
+For more information on nesting if..elif..else statements see [Python nested if statements on TutorialsPoint](https://www.tutorialspoint.com/python/nested_if_statements_in_python.htm)
 
 
 ---

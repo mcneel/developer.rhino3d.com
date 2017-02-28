@@ -29,7 +29,7 @@ In Python, variables are always one of the five fundamental data types:
 
 For a detailed look at each variable type see [Python Variable Types]({{ site.baseurl }}/guides/rhinopython/python-datatypes/) in this guide.
 
-While each variable has its own properties and methods, there are common methods we use to deal with all varaiable in Python.
+While each variable has its own properties and methods, there are common methods we use to deal with all variables in Python.
 
 ## Declaration
 
@@ -46,7 +46,7 @@ You declare multiple variables by separating each variable name with a comma.  F
 a, b = True, False
 ```
 
-This is the same the multilple line declaration of:
+This is the same the multiple line declaration of:
 
 ```python
 a = True

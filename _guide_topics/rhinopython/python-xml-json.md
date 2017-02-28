@@ -1,5 +1,5 @@
 ---
-title: How to use JSON with Python 
+title: How to use JSON with Python
 description: How to format in JSON or XML.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
@@ -13,11 +13,11 @@ keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
 
-[JSON (JavaScript Object Notation)](http://www.json.org/) is an easy to read, flexible text based format that can be used to store and communicate information to other products. It is mainly based on key:value pairs and is web and .NET friendly.  There are many libraries and products that support JSON. 
+[JSON (JavaScript Object Notation)](http://www.json.org/) is an easy to read, flexible text based format that can be used to store and communicate information to other products. It is mainly based on key:value pairs and is web and .NET friendly.  There are many libraries and products that support JSON.
 
-One of the reasons JSON might be used is to collect data from the Rhino model to be used in other places.  Use JSON to store information for a door schedule, or a parts list.  A report can be created on the name, size and location of all the bitmaps in a model.  A JSON file can have the endpoints of all the lines in a model representing column or beam connection points. JSON files are used in serveral other places and products.  JSON is also easy to display on dynamic webpages.
+One of the reasons JSON might be used is to collect data from the Rhino model to be used in other places.  Use JSON to store information for a door schedule, or a parts list.  A report can be created on the name, size and location of all the bitmaps in a model.  A JSON file can have the endpoints of all the lines in a model representing column or beam connection points. JSON files are used in several other places and products.  JSON is also easy to display on dynamic webpages.
 
-Here is an exmple of a JSON structure describing a medical office, taken from a set of polylines off a Rhino floorplan. As you will see in the example, the medical space includes 5 rooms and parking, with square footage and pricing for each dedicated space.
+Here is an example of a JSON structure describing a medical office, taken from a set of polylines off a Rhino floorplan. As you will see in the example, the medical space includes 5 rooms and parking, with square footage and pricing for each dedicated space.
 
 ```json
 { "office": {
@@ -66,7 +66,7 @@ JSON can store Lists, bools, numbers, tuples and dictionaries. But to be saved i
 ```python
 import json
 ```
-The JSON module is mainly used to convert the python dictionary above into a JSON string that can be written into a file. 
+The JSON module is mainly used to convert the python dictionary above into a JSON string that can be written into a file.
 
 ```python
 json_string = json.dumps(datastore)
@@ -124,4 +124,3 @@ The result of the code above will result in the same data structure at the top o
 For more information about using Rhino.Python to read and write files see the [How to read and write a simple file]({{ site.baseurl}}/guides/rhinopython/python-reading-writing/)
 
 For more details on accessing the information in the dictionary datastructure see,  [Dictionary as a Database Guide]({{ site.baseurl}}/guides/rhinopython/python-dictionary-database/)
-

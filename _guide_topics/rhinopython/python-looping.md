@@ -13,7 +13,7 @@ keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
 
- 
+
 ## Overview
 
 Looping allows you to run a group of statements repeatedly.  Some loops repeat statements until a condition is *False*; others repeat statements until a condition is *True*.  There are also loops that repeat statements a specific number of times.
@@ -28,7 +28,7 @@ The following looping statements are available in Python:
 
 You can use *for* statements to run a block of statements a specific number of times. For loops, use a counter variable whose value increases or decreases with each repetition of the loop.
 
-The following example causes a procedure to execute 4 times. The *for* statement specifies the counter variable `x` and its start and end values. Python will automatically increments the counter (x) variable by 1 after coming to end of the exectution block.
+The following example causes a procedure to execute 4 times. The *for* statement specifies the counter variable `x` and its start and end values. Python will automatically increments the counter (x) variable by 1 after coming to end of the execution block.
 
 ```python
 for x in range(0, 3):
@@ -74,7 +74,7 @@ while True:
         break
 ```
 
-As you can see, this compacts the whole thing into a piece of code managed entirely by the while loop. Having True as a condition ensures that the code runs until it's broken by n.strip() equalling 'hello'. 
+As you can see, this compacts the whole thing into a piece of code managed entirely by the while loop. Having True as a condition ensures that the code runs until it's broken by n.strip() equaling 'hello'. 
 
 ## Nested Loops
 
