@@ -15,23 +15,53 @@ layout: toc-guide-page
  
 ## Lists of Points
 
-Many rhinoscriptsyntax methods either require as an argument or return as a result an list of 3-D points. Lists of 3-D points are zero-based, one-dimensional lists of 3-D points (which in turn are zero-based, one-dimensional lists of X, Y, and Z coordinate values).  Lists of 3-D points can be constructed in a number of ways.  For example,
+Many rhinoscriptsyntax functions require a list of points as an argument or return a list of [Point3d]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points) structures. For example the 'DivideCurve()' function will return a list of points:
 
 ```python
-pointcloud = []
-pointcloud.append([0,0,0])
-pointcloud.append([1.0, 2.0, 3.0])
-pointcloud.append([5.0, 8.0, 9.0])
-pointcloud.append([4.0, 7.0, 2.0])
-pointcloud.append([8.0, 5.0, 6.0])
+import rhinoscriptsyntax as rs
 
-print pointcloud
+obj = rs.GetObject("Select a curve")
+
+if obj:
+    points = rs.DivideCurve(obj, 4)
+    
+print(points[0])
 ```
 
-Also, representing list of 3-D points as a one-dimensional array instead of a multi-dimensional list, makes it easy to repeat a group of statements for each element in the array .  For example along with the example above, use the `for` loop to walk through each point in the list,
+There are a number of ways to access the information in these lists.
+
+Use an index to access any one of the points as in the line:
 
 ```python
-for i in pointcloud:
+print(points[0]) # Returns a Point3d structure
+```
+
+With Python, it is easy to use the `for` loop to walk through the list and print out the coordinates for each point,
+
+```python
+for i in points:
+    print i
+```
+
+It is also possible to use nested indexes to access a specific coordinate of a point in the list.  This example will access the Y coordinate of the second point in the list:
+
+
+```python
+print(points[1][1])
+```
+
+Using the .Y property on the [Point3d]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points) also would work:
+
+```python
+print(points[1].Y)
+```
+
+To add a point to this list, first create the point3d with `CreatePoint()`, then [append](https://docs.python.org/2/tutorial/datastructures.html) it:
+
+```python
+points.append(rs.CreatePoint(1.0, 2.0, 3.0))
+
+for i in points:
     print i
 ```
 
