@@ -21,7 +21,7 @@ In Python, Rhino point objects are are represented as Point3D structure. The Poi
 point3D contains [1.0, 2.0, 3.0]
 ```
 
-A Point3D structure can be constructed in a number of different ways.  For example:
+A Point3D structure can be constructed in a number of different ways.  Two common ways are:
 
 ```
 import rhinoscriptsyntax as rs
@@ -30,7 +30,7 @@ pnt = rs.CreatePoint(1.0, 2.0, 3.0)
 pnt = rs.CreatePoint(1.0, 2.0) # This creates a point with the Z coordinate set to 0
 ```
 
-A point3D list can also be accessed like a simple python list, one element at a time:
+A point3D list can be accessed like a simple python list, one element at a time:
 
 ```python
 import rhinoscriptsyntax as rs
