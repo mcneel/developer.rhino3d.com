@@ -61,6 +61,16 @@ The following spelling and case conventions are adopted on this site:
 - "Plugins" is not hyphenated unless it refers to a place in the Rhino UI where it is hyphenated.
 - "openNURBS" (not OpenNURBS, nor opennurbs, nor oPeNnURBs) unless it refers to a namespace in code where it is capitalized, or a path where it is not.
 
+### Images & Screenshots
+
+When feasible, it is best to use the *.svg* vector format for images, especially for diagrams.
+
+When using bitmap images, the preferred format is *.png*, but any browser-friendly bitmap format will work.
+
+When capturing screenshots, consider that many people have high-DPI (aka: "Retina") displays.  Please capture all screenshots on a high-DPI display.
+
+See the [Text Modifiers > Images section](#images) of this guide for more information on inserting images.
+
 ---
 
 ## Headers
