@@ -20,7 +20,7 @@ TODO: 'needs more GHPython info.'
 
 [Python](https://www.python.org/) is a *modern programming language*. Python is sometimes called a scripting language or a glue language.  This means python is used often to run a series of commands as a script or used to create links between two other technologies as a glue. It is easier to learn and use than other non-scripting style, compiled languages like C#, VB, or C/C++.  Yet it is quite powerful.
 
-Python is [interpreted](https://en.wikipedia.org/wiki/Programming_language_implementation), meaning it is executed one line at a time.  This makes the program flow easy to understand.  Also it is [symantically dynamic](https://en.wikipedia.org/wiki/Programming_language#Static_versus_dynamic_typing) which allows the sytax to be less restrictive and less formal when using declarations and variables types.  These characteristics add to Python's ease-of-use for basic programming tasks.
+Python is [interpreted](https://en.wikipedia.org/wiki/Programming_language_implementation), meaning it is executed one line at a time.  This makes the program flow easy to understand.  Also it is [semantically dynamic](https://en.wikipedia.org/wiki/Programming_language#Static_versus_dynamic_typing) which allows the syntax to be less restrictive and less formal when using declarations and variables types.  These characteristics add to Python's ease-of-use for basic programming tasks.
 
 You may need Python if you want to:
 
@@ -35,7 +35,7 @@ Why should you use Python?  Well, Python is meant to be a simple language to rea
 
 But more importantly: Python is very popular outside of Rhino! Much of what you learn about Python can be applied in many other domains.
 
-Rhino already has a scripting language called RhinoScript why do we need another?  RhinoScript is a very easy to use scripting language on Windows. We will continue to support Rhinoscript.  But, RhinoScript is based on an little older technology making it less flexible then the more modern Python language. RhinoScript cannot be supported on the Mac platform.  It also unfortunately is not supported by the commnuityto the same level as Python.
+Rhino already has a scripting language called RhinoScript why do we need another?  RhinoScript is a very easy to use scripting language on Windows. We will continue to support Rhinoscript.  But, RhinoScript is based on an little older technology making it less flexible then the more modern Python language. RhinoScript cannot be supported on the Mac platform.  It also unfortunately is not supported by the community to the same level as Python.
 
 ### What version of Python does Rhino use?
 
@@ -43,14 +43,14 @@ Rhino uses Python version 2.7. To be more specific Rhino uses [IronPython](http:
 
 ## Where can you use Python in Rhino?
 
-Python can be used all over Rhino in many different ways. Python can be used to create 
+Python can be used all over Rhino in many different ways. Python can be used to create
 
 - Interactive scripts.
 - New custom commands.
 - Create new plug-ins.
 - Read and Write customized file formats.
 - Interact with cloud applications.
-- Create realtime links to other applications
+- Create real-time links to other applications
 - Create customer Grasshopper components
 - Store and display project specific information beyond what basic Rhino can store.
 
@@ -91,7 +91,7 @@ For more information on how to use Rhinoscriptsyntax and Python, see the [Rhino.
 
 #### Grasshopper
 
-Python can also be used in Grasshopper to create custom components within a larger grasshoper definition. The GhPython component contains a Python script editor and direct access to Python, Rhino and Grasshopper functions.  Use GhPython to create and manipulate customer data within Grasshopper.
+Python can also be used in Grasshopper to create custom components within a larger grasshopper definition. The GhPython component contains a Python script editor and direct access to Python, Rhino and Grasshopper functions.  Use GhPython to create and manipulate customer data within Grasshopper.
 
 For an introduction to GhPython in Grasshopper, see the [Your First Python Script in Grasshopper Guide]({{ site.baseurl}}/guides/rhinopython/your-first-python-script-in-grasshopper)
 
