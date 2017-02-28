@@ -14,7 +14,7 @@ layout: toc-guide-page
 TODO: 'needs review and the original contained links to empty wiki entries.'
 ---
 
- 
+
 ## Overview
 
 The Rhino C/C++ SDK is *not* an abstract SDK. That is, the native classes and functions that are made available in the SDK are also used internally by Rhino. Thus, when the signatures of classes or functions change, all developers, both internal and external, are required to modify their source code to accommodate for the change. For this reason, the Rhino C/C++ SDK was not broken between Rhino 4 and 5. In doing this, plug-ins that worked in Rhino 4 also worked in Rhino 5.
@@ -95,7 +95,7 @@ In Rhino 6, you will need to do the following:
 
 For Rhino 6, there will be new implementations for all annotation objects, such as Text, Leaders, and Dimensions. The new implementations are much better organized the the prior versions, plus provide new features such as [Rich Text](https://en.wikipedia.org/wiki/Rich_Text_Format).
 
-As of this writing, the new annotations were still in development. More information on the changes and how to migrate to the new annotation classes will be available as we get closer to freezing the SDK.
+For more details, see [Annotation Objects]({{ site.baseurl }}/guides/cpp/({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows)).
 
 ### Scoped and Strongly Typed Enums
 C++11 provides some great new features for C++ programmers. One such feature is scoped and strongly typed enumerations, which ensures some measure of compatibility across compilers. They also make up for some shortcomings of old-style enums:
@@ -132,3 +132,5 @@ To help with this, we are working on updating all of the [C++ SDK samples](https
 - [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing-tools-windows)
 - [Migrate your plugin project to Rhino 6]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-windows)
 - [Migrate your plugin project to Rhino 6 manually]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows)
+- [Annotation Objects]({{ site.baseurl }}/guides/cpp/({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows))
+
