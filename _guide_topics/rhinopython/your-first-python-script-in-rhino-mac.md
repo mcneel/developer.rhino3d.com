@@ -22,7 +22,7 @@ To get acquainted with how Python scripts can help you model first run some of t
   ```
   ~/Library/Application/Support/McNeel/Rhinoceros/Scripts/samples
   ```
-  (the begining tilde (~) character is normally in the far upper left of the keyboard).
+  (the beginning tilde (~) character is normally in the far upper left of the keyboard).
   3. Experiment by running HelloPython.py
 
 ## Editing a Python Script

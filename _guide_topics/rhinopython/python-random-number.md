@@ -16,7 +16,7 @@ layout: toc-guide-page
 
 ## Overview
 
-Python comes with a random number generator which can be used to generate various distributions of numbers.  These random number generators are suitable for generating numbers for spacial and graphical distributions.  To access the random numebr generators, the `random` module must be imported.
+Python comes with a random number generator which can be used to generate various distributions of numbers.  These random number generators are suitable for generating numbers for spacial and graphical distributions.  To access the random number generators, the `random` module must be imported.
 
 IMPORTANT NOTE: The pseudo-random generators of this module should not be used for security purposes. Use `os.urandom()` or `SystemRandom` if you require a cryptographically secure pseudo-random number generator.
 
@@ -30,8 +30,8 @@ import random
 ran_number = random.random()
 print ran_number
 ```
-The output from the above code is a random number between 0 and 1, say 0.280268102083  The number can be used directly or to arrive at some other number: 
- 
+The output from the above code is a random number between 0 and 1, say 0.280268102083  The number can be used directly or to arrive at some other number:
+
 ```python
 import random
 import rhinoscriptsyntax as  rs
@@ -53,7 +53,7 @@ low = 4; high = 8
 ran_number = random.uniform(low, high)
 print ran_number
 ```
-The above would generate a random mumber between 4 and 8. Note for random.uniform low and high numbers must be specified.
+The above would generate a random number between 4 and 8. Note for random.uniform low and high numbers must be specified.
 
 ## Advanced Random numbers
 
@@ -63,11 +63,11 @@ For more detailed information on these advanced number generators go to the [Gen
 
 The random module contains functions for finding random integers, selection of a random element from a list, a function to generate a random permutation of a list in-place, for random sampling with and  without replacement, etc.
 
-The Random number generator may also be started with a seed number. `random.seed(seed_number)`  When a seed is used, the generator can create a reapeatable set of pseudo-random numbers. If reapeatbaility is important, this may be worth using.  Normally the current system time is used which leads to a different solution each time.
+The Random number generator may also be started with a seed number. `random.seed(seed_number)`  When a seed is used, the generator can create a repeatable set of pseudo-random numbers. If repeatability is important, this may be worth using.  Normally the current system time is used which leads to a different solution each time.
 
 ## Choosing Randomly
 
-The random functions also have the ability to choose a random element from a list. The following code will print a random selection from the string containing the alphabet. Note that processing a string of characters is equivalnet to processing a list of the characters in the string.
+The random functions also have the ability to choose a random element from a list. The following code will print a random selection from the string containing the alphabet. Note that processing a string of characters is equivalent to processing a list of the characters in the string.
 
 ```python
 import random
@@ -81,14 +81,14 @@ print random.choice('abcdefghijklmnopqrstuvmxyz')
 import random
 my_list = [1, 2, 3, 4, 5]
 my_samp = 3
-print random.sample(my_list,  my_samp) 
+print random.sample(my_list,  my_samp)
 ```
 
 For more detailed information on these advanced methods go to the [Generate pseudo-random numbers documentation](https://docs.python.org/2/library/random.html)
 
 ## Os and System Random
 
-For a random number generator that does not rely on the software state and for which the sequences are not reproducable, use the SystemRandom method. This function returns random bytes from an OS-specific randomness source.
+For a random number generator that does not rely on the software state and for which the sequences are not reproducible, use the SystemRandom method. This function returns random bytes from an OS-specific randomness source.
 
 ```python
 import sys

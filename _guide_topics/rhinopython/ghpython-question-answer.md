@@ -70,13 +70,13 @@ Yes, sure, Grasshopper handles only a portion of all available types.
 
 Basically, unhandled types are all the types that do not exists in the 'Params' tab.
 
-For example, there is no textdot and no leader. When/if Grasshopper one day will support these types, these calls will be implemented.
+For example, there is no text dot and no leader. When/if Grasshopper one day will support these types, these calls will be implemented.
 
 ### How do I use DataTree's?
 
 [Here](http://www.grasshopper3d.com/forum/topics/datatreelistitem-access-from) is a small sample.
 
-However, 80% of the times it is not necessary to program for DataTrees, as the logic itself can be applied per-list and Grasshopper handles list-iteration. 
+However, 80% of the times it is not necessary to program for DataTrees, as the logic itself can be applied per-list and Grasshopper handles list-iteration.
 
 **If you have more questions, please go to the [Rhino Developers Forum](https://discourse.mcneel.com/c/rhino-developer)**
 

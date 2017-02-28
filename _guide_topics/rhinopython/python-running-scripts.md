@@ -35,7 +35,7 @@ The RunPythonScript command can also be assigned to command aliases or to a tool
 
 <img src="{{ site.baseurl }}/images/runpythonscript.png" alt="RunPythonScript">
 
-<!-- TODO: Does RunPython actually run this ay: When assigned to a toolbar button, the RunPythonScript can execute raw Python code.  To embed raw Python code on a button, make sure to surround the code with an opening and closing parenthesis.-->
+<!-- TODO: Does RunPython actually run this way: When assigned to a toolbar button, the RunPythonScript can execute raw Python code.  To embed raw Python code on a button, make sure to surround the code with an opening and closing parenthesis.-->
 
 ---
 

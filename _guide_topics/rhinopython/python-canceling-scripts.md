@@ -14,7 +14,7 @@ layout: toc-guide-page
 TODO: 'has some RhinoScript mid-way down...why?'
 ---
 
-<!-- TODO: This page is nto right yet.  The Sleep function does not seem to help.  I need to check with soemone ont he Rhinocommon calls -->
+<!-- TODO: This page is not right yet.  The Sleep function does not seem to help.  I need to check with someone on the Rhinocommon calls -->
 
 ## Cancelling Scripts
 

@@ -43,7 +43,7 @@ rs.AddCircle( centerpoint, 5.0 )
 
 ## Geometry
 
-Rhino is a 3D modeler, therefore creating and modifing geometry is key to developing in Rhino.  Here are the primitive geometry types of Rhino:
+Rhino is a 3D modeler, therefore creating and modifying geometry is key to developing in Rhino.  Here are the primitive geometry types of Rhino:
 
 - [Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points)
 - [List of Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-list-points)
@@ -52,4 +52,4 @@ Rhino is a 3D modeler, therefore creating and modifing geometry is key to develo
 - [Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-planes)
 - [Rhino Geometry Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects)
 
-Creating, accessing and maniputlating geometry is one of the first places RhinoScriptSytnax is used.  SImple geometry such as points, lines, planes can be described with simple lists in Python.  More complicated geometry objects such as NURBS curves, Surfaces and Poly-surfaces can be created by Rhino and referenced by an object ID by RhinoScriptSyntax.
+Creating, accessing and manipulating geometry is one of the first places RhinoScriptSytnax is used.  Simple geometry such as points, lines, planes can be described with simple lists in Python.  More complicated geometry objects such as NURBS curves, Surfaces and Poly-surfaces can be created by Rhino and referenced by an object ID by RhinoScriptSyntax.

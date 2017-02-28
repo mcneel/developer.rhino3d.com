@@ -17,13 +17,13 @@ layout: toc-guide-page
 
 To show the code editor window for this script component, double click on the middle of the component, or select “Edit Source…” from the component center-icon context menu.
 
-The Python editor runs IronPython 2.7, the GhPython component can also access the easy-to-use RhinoScritSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon, which also can be imported into the GhPython component. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon). 
+The Python editor runs IronPython 2.7, the GhPython component can also access the easy-to-use RhinoScritSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon, which also can be imported into the GhPython component. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon).
 
 ## Editor Interface
 
-The code editor consists of 4 parts: 
+The code editor consists of 4 parts:
 
-- Menu - Use this to import and save Python files, also to access Help resources. 
+- Menu - Use this to import and save Python files, also to access Help resources.
 - Code Window - Write the Python code here.
 - Output window - Use this to see code status and error messages.
 - Test Button - Runs the code without exiting the editor
@@ -67,12 +67,12 @@ The Menu contains a File pulldown and a help pulldown.
 </tr>
 </table>
 {: .multiline}
- 
+
 ### Code Window
 
 This is where all the typing goes on and the grand ideas you have come to life.
 
-This is very similar to the Rhino.Ptyhon script editor.  Simply type in the statements.
+This is very similar to the Rhino.Python script editor.  Simply type in the statements.
 
 #### Importing modules
 
@@ -109,7 +109,7 @@ Once a module is imported, typing the module name and a dot will show an autocom
 
 #### Input Variables
 
-Each time Grasshopper recalculates the definition, the Python component will imput the inputs of the GhPython component as global variables in the Python script.  The name of those variables will correspond to the name of each input.  As a simple example this example:
+Each time Grasshopper recalculates the definition, the Python component will direct the inputs of the GhPython component as global variables in the Python script.  The name of those variables will correspond to the name of each input.  As a simple example this example:
 
 ![{{ site.baseurl }}/images/ghpython-input.png]({{ site.baseurl }}/images/ghpython-input.png){: .img-center width="80%"}
 
@@ -133,7 +133,7 @@ To output to the component set the value of the output name to a variable. For i
 a = "Hello World!"
 ```
 
-The last assignment to the variable in the script will the the value that is output.  If there are multiple assignments, as in a list of vlues assigned in a loop to the output variable, only the last one is sent out.  This can be a bit confusing.  The key is to assign the series of outputs to a list variable, then output that variable through the `a` output.
+The last assignment to the variable in the script will the value that is output.  If there are multiple assignments, as in a list of values assigned in a loop to the output variable, only the last one is sent out.  This can be a bit confusing.  The key is to assign the series of outputs to a list variable, then output that variable through the `a` output.
 
 As an example, this does not work:
 
@@ -146,7 +146,7 @@ for item in l:
     a = item + 5
 ```
 
-There are two problems with the script above. An output variable in GhPython is created by the GhPython component.  It cannot be set to a specific variable type as in the line `a=[]`.  Also, the `for` will loop throught he items in `l`, only to output the last assigned value to `a` at the completion of the Grasshopper cycle.
+There are two problems with the script above. An output variable in GhPython is created by the GhPython component.  It cannot be set to a specific variable type as in the line `a=[]`.  Also, the `for` will loop through he items in `l`, only to output the last assigned value to `a` at the completion of the Grasshopper cycle.
 
 The proper way to output a series of values is to create a list variable to populate, then output that variable to `a` at the end of the script.
 
@@ -168,10 +168,10 @@ Because we are using a flavor of Python 2, print is really a statement, that wor
 
 ### Output Window
 
-The Output Window contains help and messages about the staus of the editor.  
+The Output Window contains help and messages about the status of the editor.  
 
 1. If the script is run while the editor is open, the success or failure of the script will be displayed here.
-2. If there is an error whle testing the script, the error information will display in the Output Window.
+2. If there is an error while testing the script, the error information will display in the Output Window.
 
 ```
 Runtime error (SyntaxErrorException): EOL while scanning single-quoted string
@@ -193,7 +193,7 @@ Use the *Test* button to run the script while keeping the Ghpython editor is up 
 
 ### OK and Close Button
 
-The *OK* button will save the scrip tto the GhPython component and will close the editor, retuning to Grasshopper.
+The *OK* button will save the script to the GhPython component and will close the editor, retuning to Grasshopper.
 
 The *Close* button will revert any changes to the script and return to grasshopper, using the previously saved script.
 
@@ -253,7 +253,7 @@ A multiline comment that explains the inputs and outputs of the script.
 </tr>
 <tr>
 <td>13...16</td>
-<td>Here we check the the values of the two inputs `x` and `y` have a value.  If not the values are set to default values.</td>
+<td>Here we check the values of the two inputs `x` and `y` have a value.  If not the values are set to default values.</td>
 </tr>
 <tr>
 <td>21...27</td>

@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## Overview
 
-Python is an extensable programming language with hundreds of additional modules.  This allows Python to be used in many situations both inside Rhinoa and outside Rhino.  There are some specific additional models that are specifically of interest related to Rhino and Grasshopper.
+Python is an extensible programming language with hundreds of additional modules.  This allows Python to be used in many situations both inside Rhinoa and outside Rhino.  There are some specific additional models that are specifically of interest related to Rhino and Grasshopper.
 
 These new modules can be accessed in a Python script by including the `import` method at the top of each Python script:
 
@@ -39,7 +39,7 @@ For those that are familiar with the RhinoScript language in Rhino for Windows. 
 
 ## RhinoCommon
 
-RhinoCommon is an extensive, low level .NET library of the Rhino SDK. It is meanst for more experienced programmers that would like to most extensive access to Rhino and its classes.
+RhinoCommon is an extensive, low level .NET library of the Rhino SDK. It is meant for more experienced programmers that would like to most extensive access to Rhino and its classes.
 
 An important detail that will become important as you are learning to script Rhino with Python is that the implementation of Python that is embedded in Rhino is called IronPython: a Python implementation in C# that runs on the .Net/mono platform which means that in addition to the Python language features and the [rhinoscriptsyntax package](/api/RhinoScriptSyntax/win), you also have access to all the libraries in .Net/mono and [RhinoCommon](../../rhinocommon/what-is-rhinocommon/).
 

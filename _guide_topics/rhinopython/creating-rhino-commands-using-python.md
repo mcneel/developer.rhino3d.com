@@ -44,7 +44,7 @@ First, we will cover [Rhino for Windows](#windows), then turn our attention to [
 
 1. _Optional_: To distribute the script as a plugin, simply share the entire folder. You can zip it up, if you like, and other users can easily extract the `MyNewPlugIn {146e099d-760d-4a6c-8662-96119f3fd62f}` folder and place it in `%APPDATA%\McNeel\Rhinoceros\5.0\Plug-ins\PythonPlugIns\` on their own computers.
 
-   Rhino should be closed when "installing" new plugins, otherwise it will need to be restarted before it recognises any new commands.
+   Rhino should be closed when "installing" new plugins, otherwise it will need to be restarted before it recognizes any new commands.
 
    Another option for distributing Python plugins is to [create an RHI installer](#creating-an-rhi-installer).
 
@@ -84,7 +84,7 @@ Double-clicking this `*.rhi` file on another system (with Rhino closed) should i
 
 ## Mac
 
-Setting this up on macOS is a bit more labour intensive, but once you see how it works, it should be fairly straightforward. (It is helpful to read the [Windows](#windows) section above to get the general idea).  
+Setting this up on macOS is a bit more labor intensive, but once you see how it works, it should be fairly straightforward. (It is helpful to read the [Windows](#windows) section above to get the general idea).  
 
 There are four things you need to pay attention to on macOS:
 
@@ -134,6 +134,6 @@ This command script must be saved to:
 
 <div class="bs-callout bs-callout-danger">
 
-<strong>Note</strong>: The command name must match the script file file name, so in this example the file name would be: <code>MyNewCommand_cmd.py</code>
+<strong>Note</strong>: The command name must match the script filename, so in this example the file name would be: <code>MyNewCommand_cmd.py</code>
 
 </div>

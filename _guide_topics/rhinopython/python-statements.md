@@ -18,9 +18,9 @@ layout: toc-guide-page
 
 Many scripting and programming languages, such as JScript, C#, and C++, make no attempt to match the code that is run with the actual physical lines typed into the text editor.  This is because they not recognize the end of a line of code until it sees the termination character (in these cases, the semicolon).  Thus, the actual physical lines of type taken up by the code are irrelevant.
 
-Unlike other languages, Python does not use an end of line character. Most of the time a simple <kbd>Enter</kbd> will do. Yet, Python is very peticular about indentation, spaces and lines in certain cases.  This document is to help understand Python formatting.
+Unlike other languages, Python does not use an end of line character. Most of the time a simple <kbd>Enter</kbd> will do. Yet, Python is very particular about indentation, spaces and lines in certain cases.  This document is to help understand Python formatting.
 
-It is important to understand how Python interperates:
+It is important to understand how Python interprets:
 
 2. End of Statement
 1. Names and Capitalization

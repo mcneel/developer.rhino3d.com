@@ -12,7 +12,7 @@ order: 100
 keywords: ['script', 'Rhino', 'vbscript']
 layout: toc-guide-page
 ---
- 
+
 ## Overview
 
 Coding conventions are suggestions designed to help you write Python and RhinoScript code.  Coding conventions can include the following:
@@ -28,28 +28,28 @@ For the official very detailed documentation on Python Syntax, see the [Style Gu
 
 ## Names and Capitailzation
 
-In Python names are used as identifiers of functions, classes, variables, etc....  Idetifiers must start with a Letter (A-Z) or an underscore ("_"), followed by more letters or numbers.
+In Python names are used as identifiers of functions, classes, variables, etc....  Identifiers must start with a Letter (A-Z) or an underscore ("_"), followed by more letters or numbers.
 
 Python does not allow characters such as @, $, and % within identifier names.
 
-Python is case sensative.  So "selection" and " Selection" are two different identifiers. Normally class names will capaital letters and other identifiers will be all lower case.  It is also common practice to start private identifiers with an underscore.
+Python is case sensitive.  So "selection" and " Selection" are two different identifiers. Normally class names will capital letters and other identifiers will be all lower case.  It is also common practice to start private identifiers with an underscore.
 
 The body of a variable or procedure name should use mixed case and should be as descriptive as necessary.  Also, procedure names should begin with a verb, such as `InitNameArray` or `ValidateLayer`.
 
 For frequently used or long terms, standard abbreviations are recommended to help keep name length reasonable.  In general, variable names greater than 32 characters can be difficult to read.  When using abbreviations, make sure they are consistent throughout the entire script.  For example, randomly switching between `Cnt` and `Count` within a script or set of scripts may lead to confusion.
 
-Best practices for all Python naming can be found in the (Style Guide for Python Naming Conventions)[https://www.python.org/dev/peps/pep-0008/#naming-conventions] 
+Best practices for all Python naming can be found in the (Style Guide for Python Naming Conventions)[https://www.python.org/dev/peps/pep-0008/#naming-conventions]
 
 ## Comments in Python
 
-Commments in Pythons are used to leave notes in the code to better explain what is happeing in the code.  Comments are ignored by the interpreter during compile.
+Comments in Pythons are used to leave notes in the code to better explain what is happening in the code.  Comments are ignored by the interpreter during compile.
 
-Python commanets are started with a hash (#) sign.  The hash sign can be used at the start of a line, followed by a single line comment.  This is considered a blank line by the interpreter.
+Python comments are started with a hash (#) sign.  The hash sign can be used at the start of a line, followed by a single line comment.  This is considered a blank line by the interpreter.
 
 ```python
 # My first comment
 # this is a second line to this comment
-# use multiple hash characters to make multipline comments
+# use multiple hash characters to make multiline comments
 ```
 A hash sign can also be added at the end of a line of code.  After the hash sign add the comment.  To Python this is considered an end of statement character also.
 
@@ -87,11 +87,11 @@ else:
   print "correct"
 ```  
 
-You may also see the use of the colon (:) in the statments above. The colon is used for compound code statements (suites in Python) such as if, while loops.
+You may also see the use of the colon (:) in the statements above. The colon is used for compound code statements (suites in Python) such as if, while loops.
 
 ## Whitepace
 
-While Python can interpret both tabs and spaces as whitespace to the left of a statment, it is reccomended that spaces are used.  Common practice is to use 4 spaces to denote an indentation. 
+While Python can interpret both tabs and spaces as whitespace to the left of a statement, it is recommended that spaces are used.  Common practice is to use 4 spaces to denote an indentation. 
 
 ## Code Formatting
 
@@ -118,7 +118,7 @@ The following code adheres to Python coding conventions:
 import rhinoscriptsyntax as rs
 
 def FindLayer(LayerList, TargetLayer):
-  
+
   FindLayer = -1 # Default return value
   i = 0          # Initialize loop counter
   blnFound = False
@@ -126,7 +126,7 @@ def FindLayer(LayerList, TargetLayer):
     if LayerList[i] == TargetLayer:
       blnFound = True # Set flag to True
       FindLayer = i   # Set return value to loop count
-    
+
     i = i + 1         # Increment loop counter
 ```
 

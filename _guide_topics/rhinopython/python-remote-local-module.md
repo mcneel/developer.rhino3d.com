@@ -1,5 +1,5 @@
 ---
-title: Creating a script and module 
+title: Creating a script and module
 description: How to create a Python definition that is both a importable module and a script.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
@@ -19,7 +19,7 @@ A Python script normally can be full of functions that can be imported as a libr
 
 There is a way to have Python definitions be both a library of functions and a direct command.
 
-The key is to add these statments to the end of the file:
+The key is to add these statements to the end of the file:
 
 ```python
 if __name__ == '__main__':
@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
 ## A complete script example
 
-Here is a complete Python sample that shows how the the `if __name__ == '__main__':` statement can be added to a Python script:
+Here is a complete Python sample that shows how the `if __name__ == '__main__':` statement can be added to a Python script:
 
 ```python
 # Create a circle from a center point and a circumference.
@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
 ```
 
-The CreateCricle file above will run as a script to create a circle.  But it can be used in the *UseModule.py* scipt as an imported module, as follows:
+The CreateCricle file above will run as a script to create a circle.  But it can be used in the *UseModule.py* script as an imported module, as follows:
 
 ```python
 # This script uses a function defined in the CircleFromLength.py
@@ -75,6 +75,6 @@ if length is not None and length>0.0:
 
 When the Python interpreter reads a source file, it executes all of the code found in it.
 
-Before executing the code, it will define a few special variables. If Python is running the file as the main program then Ptyhon will create a `__name__` variable with the value of *__main__*. If python is importing the file as an import into an allready running *__main__* the `__name__` variable will be set to the module's name in the modules scope.
+Before executing the code, it will define a few special variables. If Python is running the file as the main program then Python will create a `__name__` variable with the value of *__main__*. If python is importing the file as an import into an already running *__main__* the `__name__` variable will be set to the module's name in the modules scope.
 
 One of the reasons for doing this is that sometimes you write a module (a .py file) where it can be executed directly. Alternatively, it can also be imported and used in another module. By doing the main check, you can have that code only execute when you want to run the module as a program and not have it execute when someone just wants to import your module and call your functions themselves.
