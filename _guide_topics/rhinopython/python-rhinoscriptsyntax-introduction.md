@@ -1,6 +1,6 @@
 ---
-title: Rhinoscript Syntax in Python
-description: This guide provides an overview of the RhinoScriptSytntax in Python.
+title: RhinoScriptSyntax in Python
+description: This guide provides an overview of the RhinoScriptSyntax in Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
 apis: ['RhinoPython']
@@ -52,4 +52,4 @@ Rhino is a 3D modeler, therefore creating and modifying geometry is key to devel
 - [Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-planes)
 - [Rhino Geometry Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects)
 
-Creating, accessing and manipulating geometry is one of the first places RhinoScriptSytnax is used.  Simple geometry such as points, lines, planes can be described with simple lists in Python.  More complicated geometry objects such as NURBS curves, Surfaces and Poly-surfaces can be created by Rhino and referenced by an object ID by RhinoScriptSyntax.
+Creating, accessing and manipulating geometry is one of the first places RhinoScriptSyntax is used.  Simple geometry such as points, lines, planes can be described with simple lists in Python.  More complicated geometry objects such as NURBS curves, Surfaces and Poly-surfaces can be created by Rhino and referenced by an object ID by RhinoScriptSyntax.
