@@ -2,7 +2,7 @@
 title: Operators and Functions in Python
 description: This guide provides an overview of a RhinoScriptSytntax in Python.
 authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['skylar']
+author_contacts: ['sjet@sjet.us', 'aharten', ‘stevebaer']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
@@ -12,7 +12,7 @@ order: 4
 keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
- 
+
 +-----------------------------------+-----------------------------------+
 | [4]{.chapter-white}               | [Operators and                    |
 |                                   | functions]{.chapter}              |

@@ -2,7 +2,7 @@
 title: 4 Operators and functions
 description:
 authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['steve']
+author_contacts: ['sjet@sjet.us', 'aharten', ‘stevebaer']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
@@ -26,16 +26,16 @@ x = math.tan(15 + 26) / math.log(55)
 The four lines of code above contain four kinds of code:
 
 1. Numbers        `15, 26, 2.33 and 55`
-2. Variables    `x` 
+2. Variables    `x`
 3. Operators    `=, +, * and /`
 4. Functions    `math.sin(), math.sqrt(), math.tan() and math.log()`
 
-Numbers and variables are well behind us now. Arithmetic operators should be familiar from everyday life, Python uses them in the same way as you used to during math classes. Python comes with a limited amount of arithmetic operators and they are always positioned between two variables or constants (a constant is a fixed number).  The function first signifies that we have imported math at the top of our code, using "import math", and then call a function that is within the math module called "sin()". Thus we write: math.sin(value). 
+Numbers and variables are well behind us now. Arithmetic operators should be familiar from everyday life, Python uses them in the same way as you used to during math classes. Python comes with a limited amount of arithmetic operators and they are always positioned between two variables or constants (a constant is a fixed number).  The function first signifies that we have imported math at the top of our code, using "import math", and then call a function that is within the math module called "sin()". Thus we write: math.sin(value).
 
 <img src="{{ site.baseurl }}/images/primer-operators.svg">{: .img-center  width="95%"}
 
 
-## 4.2 Careful…
+## 4.2 Careful...
 
 One thing to watch out for is operator precedence. As you will remember from math classes, the addition and the multiplication operator have a different precedence. If you see an equation like this:
 
@@ -68,7 +68,7 @@ y = (math.sqrt(A) / B) + abs(C / D)
 
 ## 4.3 Logical operators
 
-I realize the last thing you want right now is an in-depth tutorial on logical operators, but it is an absolute must if we want to start making smart code. I'll try to keep it as painless as possible. 
+I realize the last thing you want right now is an in-depth tutorial on logical operators, but it is an absolute must if we want to start making smart code. I'll try to keep it as painless as possible.
 
 Logical operators mostly work on booleans and they are indeed very logical. As you will remember, booleans can only have two values. Boolean mathematics were developed by George Boole (1815-1864) and today they are at the very core of the entire digital industry. Boolean algebra provides us with tools to analyze, compare and describe sets of data. Although George originally defined six boolean operators we will only discuss three of them:
 
@@ -111,7 +111,7 @@ if((IsGirl(person)) and (colHair == Blond or colHair == Brunette) and (Age(perso
     else:
         RotateAngleOfVision 5.0
 ```
-As you can see the problem with Logical operators is not the theory, it's what happens when you need a lot of them to evaluate something. Stringing them together, quickly results in convoluted code not to mention operator precedence problems. 
+As you can see the problem with Logical operators is not the theory, it's what happens when you need a lot of them to evaluate something. Stringing them together, quickly results in convoluted code not to mention operator precedence problems.
 
 A good way to exercise your own boolean logic is to use Venn-diagrams. A Venn diagram is a graphical representation of boolean sets, where every region contains a (sub)set of values that share a common property. The most famous one is the three-circle diagram:
 
@@ -139,14 +139,14 @@ Venn diagrams are useful for simple problems, but once you start dealing with mo
 
 ## 4.4 Functions and Procedures
 
-In the end, all that a computer is good at is shifting little bits of memory back and forth. When you are drawing a cube in Rhino, you are not really drawing a cube, you are just setting some bits to zero and others to one. 
+In the end, all that a computer is good at is shifting little bits of memory back and forth. When you are drawing a cube in Rhino, you are not really drawing a cube, you are just setting some bits to zero and others to one.
 At the level of Python there are so many wrappers around those bits that we can't even access them anymore. A group of 32 bits over there happens to behave as a number, even though it isn't really. When we multiply two numbers in Python, a very complicated operation is taking place in the memory of your PC and we may be very thankful that we are never confronted with the inner workings. As you can imagine, a lot of multiplications are taking place during any given second your computer is turned on and they are probably all calling the same low-level function that takes care of the nasty bits. That is what functions are about, they wrap up nasty bits of code so we don't have to bother with it. This is called encapsulation.
 
 A good example is the *math.sin()* function, which takes a single numeric value and returns the sine of that value. If we want to know the sine of -say- 4.7, all we need to do is type in *x = math.sin(4.7)*. Internally the computer might calculate the sine by using a digital implementation of the Taylor series:
 
 $$f(x) = \sum_{n=0}^\infty \frac{f^n(a)}{n!} {(x-a)^n}$$
 
-In other words: you don't want to know. The good people who develop programming languages predicted you don't want to know, which is why they implemented a *math.sin()* function. Python comes with a long list of predefined functions all of which are available to RhinoScripters. Some deal with mathematical 
+In other words: you don't want to know. The good people who develop programming languages predicted you don't want to know, which is why they implemented a *math.sin()* function. Python comes with a long list of predefined functions all of which are available to RhinoScripters. Some deal with mathematical
 computations such as *math.sin()*, others perform String operations such as *abs()* which returns the absolute value. Python lists 75 native procedures plus many more in any of the modules that can be imported (i.e. the *math* module). I won't discuss them here, except when they are to be used in examples.
 
 Apart from implementing the native Python functions, Rhino adds a number of extra ones for us to use. The current RhinoScriptSyntax helpfile for Rhino5 claims a total number of about 800 additional functions, and new ones are added frequently. Rhino's built in functions are referred to as "methods". They behave exactly the same as Python procedures although you do need to look in a different helpfile to see what they do. [http://www.rhino3d.com/5/ironpython/index.html](http://www.rhino3d.com/5/ironpython/index.html)
@@ -181,7 +181,7 @@ strObjectID = rs.GetObject("Select an object to rename",0,False,True)
 if strObjectID:
 
    strNewName = "Time: " + str(time.localtime())
-    
+
    rs.ObjectName(strObjectID, strNewName)</td>
 ```
 
@@ -205,7 +205,7 @@ This method accepts six arguments, all of which happen to be optional. In our sc
 
 Note that we can simply omit optional arguments and put a closing bracket after the last argument that we do specify.
 
-When the user is asked to pick an object -any object- on line 5, there exists a possibility they changed their mind and pressed the escape button instead. If this was the case then *strObjectID* will not contain a valid Object ID, it will be None instead. If we do not check for variable validity (line 7) but simply press on, we will get an error on line 11 where we are trying to pass that None value as an argument into the *rs.ObjectName()* method. We must always check our return values and act accordingly. In the case of this script the proper reaction to an Escape is to abort the whole thing. The If: structure on Line 7 will abort the current script if *strObjectID* turns out to be None. 
+When the user is asked to pick an object -any object- on line 5, there exists a possibility they changed their mind and pressed the escape button instead. If this was the case then *strObjectID* will not contain a valid Object ID, it will be None instead. If we do not check for variable validity (line 7) but simply press on, we will get an error on line 11 where we are trying to pass that None value as an argument into the *rs.ObjectName()* method. We must always check our return values and act accordingly. In the case of this script the proper reaction to an Escape is to abort the whole thing. The If: structure on Line 7 will abort the current script if *strObjectID* turns out to be None.
 
 If *strObjectID* turns out to be an actual valid object identifier, our next job is to fabricate a new name and to assign it to the selected object. The first thing we need is a variable which contains this new name. We declare it and assign it a value on line 9.
 
@@ -238,7 +238,7 @@ def Alphabet():
 
 The word "def" signifies the start of a function.  "Alphabet" is a name we have made-up for our function.  Again, the indentation indicates that line 2 is within the function and should only be run after the function is called.  
 
-Although the function actually assigns the alphabet to the variable called strSeries, this variable will go out of scope once the function ends on line #2 and its data will be lost. You have to assign the return value to the function 
+Although the function actually assigns the alphabet to the variable called strSeries, this variable will go out of scope once the function ends on line #2 and its data will be lost. You have to assign the return value to the function
 name, like so:
 
 ```python
@@ -292,7 +292,7 @@ This function declaration already provides three variables to be used inside the
 2. intNumber1 - (the first argument)
 3. intNumber2 - (the second argument)
 
-Let's assume this function determines whether *intNumber1* plus 100 is larger than twice the value of *intNumber2*. 
+Let's assume this function determines whether *intNumber1* plus 100 is larger than twice the value of *intNumber2*.
 The function could look like this:
 
 ```python
