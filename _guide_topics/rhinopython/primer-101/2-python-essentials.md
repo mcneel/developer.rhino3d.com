@@ -1,8 +1,8 @@
 ---
 title: 2 Python Essentials
 description:
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
+authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
+author_contacts: ['sjet@sjet.us', 'aharten', ‘stevebaer']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
@@ -101,14 +101,14 @@ All the other coordinates that define the line object are hard-coded into the sc
 Integers and Doubles are both numeric variable types, meaning they can be used to store numbers. They cannot store the same kind of numbers, which is why we ended up with more than one type. Integers can only be used to store whole numbers. Their range extends from roughly minus two-
 billion to roughly plus two-billion. Every whole number between these extremes can be represented using an integer. Integers are used almost exclusively for counting purposes (as opposed to calculations).
 
-Doubles are numeric variables which can store numbers with decimals. Doubles can be used to represent 
+Doubles are numeric variables which can store numbers with decimals. Doubles can be used to represent
 numbers as large as 1.8×10308 and as small as 5.0×10-324, though in practise the range of numbers which can be accurately represented is much smaller. Those of you who are unfamiliar with scientific notation need not to worry, I shall not make a habit out of this. It is enough to know that the numeric range of doubles is truly enormous.
-        
+
 <img src="{{ site.baseurl }}/images/primer-integers.svg">{: .img-center  width="75%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
-The set of all possible Double and Integer numbers is not continuous; it has gaps. There exists no Integer between zero and one and there exists no Double between zero and 5.0×10-324. The fact that the size of the gap is so much smaller with Doubles is only because we’ve picked a number close to zero. As we move towards bigger and 
+The set of all possible Double and Integer numbers is not continuous; it has gaps. There exists no Integer between zero and one and there exists no Double between zero and 5.0×10-324. The fact that the size of the gap is so much smaller with Doubles is only because we’ve picked a number close to zero. As we move towards bigger and
 bigger numbers, the gaps between two adjacent Double values will become bigger as well and as we approach the limits of the range, the gaps are big enough to fit the Milky Way. 2×10300 minus one billion is still 2×10300, so beware when using extremely large numbers. Normally, we never stray into the regions where 32-bit computing starts to break down, we tend to restrict ourselves to numbers we can actually cope with.
 
 The Python syntax for working with numeric variables should be very familiar:
@@ -159,7 +159,7 @@ Keep adding milk until the dough is kneadable.
 
 The condition here is that the dough has to be kneadable. Let’s assume for the moment that we added something (an algorithm) to our script that could evaluate the current consistency of the dough. Then our first step would be to use this algorithm so we would know whether or not to add milk. If our algorithm returns False (I.e. "the dough isn’t kneadable") then we will have to add some milk. After we added the milk we will have to ask again and repeat these steps until the algorithm returns True (the dough is kneadable). Then we will know there is no more milk needed and that we can move on to the next step in making our Apfelstrudel.
 
-In Python we never write "0" or "1" or "Yes" or "No", for boolean values we always use "True" or "False". 
+In Python we never write "0" or "1" or "Yes" or "No", for boolean values we always use "True" or "False".
 
 ```python
 if curve is None:
@@ -195,7 +195,7 @@ When you need to store text, you have no choice but to use Strings. The syntax f
 a = "Apfelstrudel"                # Apfelstrudel
 a = "Apfel" + "strudel"                # Apfelstrudel
 a = "4" + " " + "Apfelstrudel"            # 4 Apfelstrudel
-a = "The sqrt of 2.0 = " + str(math.sqrt(2.0))    # The sqrt of 2.0 = 1.4142135623731 
+a = "The sqrt of 2.0 = " + str(math.sqrt(2.0))    # The sqrt of 2.0 = 1.4142135623731
 ```
 
 Internally, a String is stored as a series of characters. Every character (or 'char') is taken from the Unicode table, which stores a grand total of ~100.000 different characters. The index into the unicode table for the question mark for example is 63, lowercase e is 101 and the blank space is 32:
@@ -204,8 +204,8 @@ Internally, a String is stored as a series of characters. Every character (or 'c
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
-Further down the road we'll be dealing with some advanced String functions which will require a basic 
-understanding of how Strings work, but while we are still just using the simple stuff, it's good enough to know it just works the way you expect it to. 
+Further down the road we'll be dealing with some advanced String functions which will require a basic
+understanding of how Strings work, but while we are still just using the simple stuff, it's good enough to know it just works the way you expect it to.
 
 Strings are used heavily in Python since object IDs are always written as strings. Object IDs are those weird codes that show up in the Object Property Details: *D7EFCF0A-DB47-427D-9B6B-44EC0670C573*. IDs are designed to be absolutely unique for every object which will ever exist in this universe, which is why we can use them to safely and unambiguously identify objects in the document.
 
@@ -217,7 +217,7 @@ Whenever we ask Rhino a question which might not have an answer, we need a way f
 curve = rs.AddLine([0,0,0], [somenumber,0,0])
 ```
 
-It is not a certainty that a curve was created. If the user enters zero when he is asked to supply the value for somenumber, then the startpoint of the line would be coincident with the endpoint. Rhino does not like zero-length lines and will not add the object to the document. This means that the return value of `rs.AddLine()` is not a valid object ID. Almost all methods in Rhino will return a None variable if they fail, this way we can add error-checks to our script and take evasive action when something goes wrong: 
+It is not a certainty that a curve was created. If the user enters zero when he is asked to supply the value for somenumber, then the startpoint of the line would be coincident with the endpoint. Rhino does not like zero-length lines and will not add the object to the document. This means that the return value of `rs.AddLine()` is not a valid object ID. Almost all methods in Rhino will return a None variable if they fail, this way we can add error-checks to our script and take evasive action when something goes wrong:
 
 ```python
 curve = rs.AddLine([0,0,0], [somenumber,0,0])
@@ -229,7 +229,7 @@ The statement, `if not x` in Python will return a value True if the variable "cu
 
 ### 2.3.5 Using variables
 
-Conventionally, whenever we intend to use variables in a script, we would have to declare them first.  However, with Python, we are relieved of this duty and we can simply create and use variables without initially declaring them. Python also does not require that we declare the type of variable we are using, as in other programming languages.  Both of these qualities emphasize why Python is such a quick and easy to learn language. So, to declare a variable we simply write: 
+Conventionally, whenever we intend to use variables in a script, we would have to declare them first.  However, with Python, we are relieved of this duty and we can simply create and use variables without initially declaring them. Python also does not require that we declare the type of variable we are using, as in other programming languages.  Both of these qualities emphasize why Python is such a quick and easy to learn language. So, to declare a variable we simply write:
 
 ```python
 a = "Apfelstrudel"
@@ -319,4 +319,3 @@ We're also limiting the numeric domain to a value between one and a thousand. If
 ## Next Steps
 
 There are the basics of the Python datastructures, next learn the Python's [script anatomy]({{ site.baseurl }}/guides/rhinopython/primer-101/3-script-anatomy/).
-

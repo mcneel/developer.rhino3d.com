@@ -1,8 +1,8 @@
 ---
-title: 1 What's it all about? 
+title: 1 What's it all about?
 description:
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
+authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
+author_contacts: ['sjet@sjet.us', 'aharten', ‘stevebaer']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
@@ -20,7 +20,7 @@ Rhinoceros is based on a command-line interface. This means you can control it b
 ```
 Line 0,0,0 10,0,0
 ```
-you can also click on the Line button and then twice in the viewport to define the starting and ending points of a line-curve. Because of this second (graphical) interface some people have done away with the 
+you can also click on the Line button and then twice in the viewport to define the starting and ending points of a line-curve. Because of this second (graphical) interface some people have done away with the
 command-line entirely. Emotions run high on the subject; some users are command-line fanatics, others use only toolbars and menus. Programmers have no emotions in this respect, they are all wedded to the command-line. It’s no use programming the mouse to go to a certain coordinate and then simulate a mouse click, that is just plain silly. Programmers pump text into Rhino and they expect to get text in return.
 
 The lowest form of programming in Rhino is using macros. I do not wish to offend those of you who write macros for a living, but it cannot be denied that it is a very primitive way to automate processes. I shall only briefly pause at the subject of macros, partly so we know which is which and partly because we might at some point simulate macros using RhinoScriptSyntax in Python.
@@ -54,8 +54,8 @@ There’s no limit to how complex a macro can become, you can keep adding comman
 
 ## 1.2 Scripts
 
-The limitations of macros have led to the development of scripting languages. Scripts are something halfway between macros and true (compiled) programs and plug-ins. Unlike macros they can perform 
-mathematical operations, evaluate variable conditions, respond to their environment and communicate with the user. Unlike programs they do not need to be compiled prior to running. Rhinoceros implements the standard 
+The limitations of macros have led to the development of scripting languages. Scripts are something halfway between macros and true (compiled) programs and plug-ins. Unlike macros they can perform
+mathematical operations, evaluate variable conditions, respond to their environment and communicate with the user. Unlike programs they do not need to be compiled prior to running. Rhinoceros implements the standard
 ‘Microsoft® Visual Basic® Scripting Edition’ language, as well as the Python Programming language.  This primer will introduce the Python Programming Language and how to utilize its functionality within Rhinoceros.
 
 Scripts, then, are text files which are interpreted one line at a time. But here’s the interesting part; unlike macros, scripts have control over which line is executed next. This flow control enables the script to skip certain instructions or to repeat others. Flow control is achieved by what is called "conditional evaluation" and we must familiarize ourselves with the language rules of Python before we can take advantage of flow control.
@@ -69,7 +69,7 @@ The language rules are usually referred to as the syntax and they indicate what 
 
 The above list is a validity check for English syntax rules. The first and third lines are proper English and the others are not. However, there are certain degrees of wrong. Nobody will misunderstand the second line just because the word order is wrong. The forth line is already a bit harder since it features a word from a different language.
 
-Although most of us are smart enough to understand all four lines, a computer is not. 
+Although most of us are smart enough to understand all four lines, a computer is not.
 
 Python is a wonderful language for beginners or advanced programmers.  It offers a simple and efficient syntax as well as powerful programming functions, object-oriented capabilities and a large fan-base with user-built libraries.  Also, since Rhino Python is available on both Windows and Mac, the exact same python scripts will run on both versions of Rhino!  Don't get too excited yet - will get more of the details in the following sections!
 
