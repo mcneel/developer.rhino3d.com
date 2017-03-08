@@ -2,7 +2,7 @@
 title: 5 Conditional Statements
 description:
 authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['steve']
+author_contacts: ['sjet@sjet.us', 'aharten', ‘stevebaer']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
