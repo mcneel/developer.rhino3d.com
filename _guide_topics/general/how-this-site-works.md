@@ -146,7 +146,7 @@ The YAML fields for Guides determine:
 * *title*: This is the title of the guide.  This is the html page title.
 * *description*: This is a brief description of the guide.
 * *authors*: The original - or responsible - author(s).
-* *author_contacts*: The matching discourse handle(s) for the author(s), must match order of authors yaml
+* *author_contacts*: The matching Discourse handle(s) for the author(s), must match order of authors yaml.  If an email address is set, a mailto: link is generated rather than a Discourse handle.
 * *apis*: The Rhino APIs that this guide pertains to.
 * *languages*: The programming languages this guide references.
 * *platforms*: The operating systems this guide is relevant to.
@@ -189,7 +189,7 @@ The YAML fields for Samples determine:
 * *title*: This is the title of the sample.  This is the html page title.
 * *description*: A brief description of what the sample does.
 * *authors*: The original - or responsible - author(s).
-* *author_contacts*: The matching discourse handle(s) for the author(s), must match order of authors yaml
+* *author_contacts*: The matching Discourse handle(s) for the author(s), must match order of authors yaml.  If an email address is set, a mailto: link is generated rather than a Discourse handle.
 * *apis*: The Rhino APIs or SDKs that this sample pertains to.
 * *languages*: The programming languages this sample references.
 * *platforms*: The operating systems this sample is relevant to.
