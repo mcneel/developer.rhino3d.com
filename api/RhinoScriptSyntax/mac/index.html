@@ -28,7 +28,7 @@ title: rhinoscriptsyntax
             {% for moduleFunction in module.functions %}
               <div class="panel panel-simple panel-moduleFunction">
                 <div class="panel-heading" role="tab" id="heading-{{ moduleFunction.Name }}">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ module.ModuleName }}-{{ moduleFunction.Name }}" aria-expanded="true" aria-controls="{{ module.ModuleName }}-{{ moduleFunction.Name }}">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" onclick="window.location.hash = $(this).attr('href');" href="#{{ module.ModuleName }}-{{ moduleFunction.Name }}" aria-expanded="true" aria-controls="{{ module.ModuleName }}-{{ moduleFunction.Name }}">
                     {{ moduleFunction.Name }}
                   </a>
                   <span class="label label-warning {% if site.rss_show_bad_docstring == true and moduleFunction.IsDocStringWellFormed == false %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">!</span>
