@@ -32,14 +32,14 @@ title: rhinoscriptsyntax
             {% for moduleFunction in module.functions %}
               <div class="panel panel-simple panel-moduleFunction">
                 <div class="panel-heading" role="tab" id="heading-{{ moduleFunction.Name }}">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ moduleFunction.Name }}" aria-expanded="true" aria-controls="collapse-{{ moduleFunction.Name }}">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" onclick="window.location.hash = $(this).attr('href');" href="#{{ module.ModuleName }}-{{ moduleFunction.Name }}" aria-expanded="true" aria-controls="{{ module.ModuleName }}-{{ moduleFunction.Name }}">
                     {{ moduleFunction.Name }}
                   </a>
                   <span class="label label-warning {% if site.rss_show_bad_docstring == true and moduleFunction.IsDocStringWellFormed == false %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">!</span>
                   <span class="label label-default {% if site.rss_show_missing_examples_links == true and moduleFunction.ExampleString == '' %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">ex</span>
                   <span class="label label-default {% if site.rss_show_missing_examples_links == true and moduleFunction.SeeAlso.size == 0 %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">lnk</span>
                 </div>
-                <div id="collapse-{{ moduleFunction.Name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ moduleFunction.Name }}">
+                <div id="{{ module.ModuleName }}-{{ moduleFunction.Name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ moduleFunction.Name }}">
                   <div class="panel-body docstring-panel">
                     <pre><code class="python">{{ moduleFunction.Signature }}</code></pre>
 
