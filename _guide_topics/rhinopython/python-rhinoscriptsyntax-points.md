@@ -21,14 +21,28 @@ In Python, a Rhino 3D point is represented as a [Point3d](http://developer.rhino
 point3D contains [1.0, 2.0, 3.0]  
 ```
 
+### Creating Points
+
 A Point3D structure can be constructed in a number of different ways.  Two common ways are:
 
-```
+```python
 import rhinoscriptsyntax as rs
 
 pnt = rs.CreatePoint(1.0, 2.0, 3.0)
 pnt = rs.CreatePoint(1.0, 2.0) # This creates a point with the Z coordinate set to 0
 ```
+
+The 'CreatePoint()' function is very flexible.  It can take a list or tuple of tow or 3 numbers and return a Point3d.  The function can also extract the coordinates of a Rhino GUID to return a Point3D.
+
+It is not always necessary to construct a point before passing it to a function that requires a point. It is possible to construct points directly as an argument to a function.  A Point is a list like structure. Wrap coordinates in brackets`[]` when passing them directly to a function. For instance the `rs.addline(point, point)` function requires two points.  Use the following syntax to construct the points on the fly:
+
+```python
+rs.AddLine([45,56,32],[56,47,89])
+```
+
+Passing coordinates in `[]`  to a function is very common with RhinoScriptSyntax.
+
+### Accessing Point Coordinates
 
 A point3D list can be accessed like a simple python list, one element at a time:
 
@@ -54,6 +68,18 @@ print(pnt.Y) # Print the Y coordinate of the Point3D
 print(pnt.Z) # Print the Z coordinate of the Point3D
 ```
 
+Using the Python' ability to assign values to multiple variables at one, here are is a way to create x, y, and z variables all at once:
+
+```python
+x, y, z = rs.CreatePoint(1.0, 2.0, 3.0)
+
+# or #
+
+x, y, z = rs.PointCoodinate(point)
+```
+
+### Editing Points
+
 To change an individual coordinate of a Point3d simply assign a new value to the correct coordinate through the index location or coordinate property:
 
 ```python
@@ -74,13 +100,13 @@ for c in pnt:
     print c # This will loop through each coordinate in the point3d
 ```
 
-The 'CreatePoint()' function is very flexible.  It can take a list or tuple of tow or 3 numbers and return a Point3d.  The function can also extract the coordinates of a Rhino GUID to return a Point3D.
-
 Rhinoscriptsyntax contains a number of methods to manipulate points.  See [RhinoScript Points and Vectors Methods]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods) for details.
 
-For those familiar with RhinoScript which represents points as a pure list, the Python representation is a little different and offers a few more options.
+For those familiar with RhinoScript, which represents points as a pure list, the Python representation is a little different and offers a few more options.
 
-It is important to understand the difference between a Point3d and a Guid of a point in Rhino.  A Guid is an identifier of an object in the Rhino document. The Guid's object is something that can be drawn, belongs to a layer and is counted as a Rhino object.  A Point3d is simply a structure of 3 numbers that exists in memory.  It can be manipulated in memory, but will not be seen or saved in Rhino unless it is added to the Rhino document through the `rs.AddPoint()` command.
+### Adding a point to display in Rhino
+
+It is important to understand the difference between a Point3d and a point object added to Rhino's document.  Any geometry object that exists in Rhino's database is assigned an object identifier.  This is represented as a [Guid]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects). The [Guid's object]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects) is something that can be drawn, belongs to a layer, is saved to a Rhino file and is counted as a Rhino object.  A Point3d is simply a structure of 3 numbers that exists in memory.  It can be manipulated in memory, but will not be seen or saved.  A Point3d is added to the Rhino document through the `rs.AddPoint()` command.  To create a Point3d from a Guid, use the `rs.PointCoordinates(guid)` or the `rs.CreatePoint(Guid)` function. 
 
 ---
 
