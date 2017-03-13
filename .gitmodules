@@ -9,3 +9,6 @@
 [submodule "api/grasshopper"]
 	path = api/grasshopper
 	url = https://github.com/mcneel/grasshopper-api-docs.git
+[submodule "api/rhinoscript"]
+	path = api/rhinoscript
+	url = https://github.com/mcneel/rhinoscript-api-docs.git
