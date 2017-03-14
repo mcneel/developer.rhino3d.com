@@ -2,7 +2,7 @@
 title: Where to find help...
 description:
 authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['sjet@sjet.us', 'aharten', ‘stevebaer']
+author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

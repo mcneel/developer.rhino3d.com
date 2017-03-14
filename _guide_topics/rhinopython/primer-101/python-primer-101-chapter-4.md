@@ -2,7 +2,7 @@
 title: Operators and Functions in Python
 description: This guide provides an overview of a RhinoScriptSytntax in Python.
 authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['sjet@sjet.us', 'aharten', ‘stevebaer']
+author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

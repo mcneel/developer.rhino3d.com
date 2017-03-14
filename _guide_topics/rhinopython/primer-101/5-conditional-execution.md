@@ -2,7 +2,7 @@
 title: 5 Conditional Statements
 description:
 authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['sjet@sjet.us', 'aharten', ‘stevebaer']
+author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## 5.1 What if?
 
-What if I were to fling this rock at that bear? What if I were to alleviate that moose from its skin and wear it myself instead? It's questions like these that signify abstract thought, perhaps the most stunning of all human traits. As a programmer, you need to take abstract thought to the next level; the very-very-conscious level. 
+What if I were to fling this rock at that bear? What if I were to alleviate that moose from its skin and wear it myself instead? It's questions like these that signify abstract thought, perhaps the most stunning of all human traits. As a programmer, you need to take abstract thought to the next level; the very-very-conscious level.
 
 A major part of programming is recovering from screw-ups. A piece of code does not always behave in a straightforward manner and we need to catch these aberrations before they propagate too far. Other times we design our code to deal with more than one situation. In any case, there's always a lot of conditional evaluation going on, a lot of 'what if' questions. Let's take a look at three conditionals of varying complexity:
 
@@ -91,7 +91,7 @@ The following example uses four nested If…Then structures to delete short, clo
 
 When you feel you need to split up the code stream into more than two flows and you don't want to use nested structures, you can instead switch to something which goes by the name of the If…Elif…Else statement.
 
-As you may or may not know, the Make2D command in Rhino has a habit of creating some very tiny curve segments. We could write a script which deletes these segments automatically, but where would we draw the line between 'short' and 'long'? We could be reasonably sure that anything which is shorter than the document absolute tolerance value can be removed safely, but what about curves which are slightly longer? Rule #1 in programming: When in doubt, make the user decide. That way you can blame them when things go wrong. 
+As you may or may not know, the Make2D command in Rhino has a habit of creating some very tiny curve segments. We could write a script which deletes these segments automatically, but where would we draw the line between 'short' and 'long'? We could be reasonably sure that anything which is shorter than the document absolute tolerance value can be removed safely, but what about curves which are slightly longer? Rule #1 in programming: When in doubt, make the user decide. That way you can blame them when things go wrong.
 
 A good way of solving this would be to iterate through a predefined set of curves, delete those which are definitely short, and select those which are ambiguous. The user can then decide for himself whether those segments deserve to be deleted or retained. We won't discuss the iteration part here. The conditional bit of the algorithm looks like this:
 
@@ -153,8 +153,8 @@ def viewportclock():
 if __name__=="__main__":
     viewportclock()
 
-	
-```	
+
+```
 {: .line-numbers}
 
 
@@ -207,7 +207,7 @@ textobject_id = rs.AddText(str(now), (0,0,0), 20)
 
 The Text argument must contain a String description of the current system time. We will simply nest casting function to get it. Since a cast operation for a datetime object is a well known and solid operation, we do not have to check for a Null variable and we can put it 'inline'. This will give us the date and the time. we could have pared this down to just the time by calling the *dt.datetime.time(now)* function. Neither of these return a String type variable, so before we pass it into Rhino we have to cast it to a proper String using the *str()* function. This is analogous with our code on page 20.
 
-The *point_or_plane* argument requires a list of doubles. We haven't done lists yet, but it essentially means we have to supply the x, y and z coordinates of the text insertion point. *(0,0,0)* means the same as the world origin. 
+The *point_or_plane* argument requires a list of doubles. We haven't done lists yet, but it essentially means we have to supply the x, y and z coordinates of the text insertion point. *(0,0,0)* means the same as the world origin.
 
 The default height of text objects is 1.0 units, but we want our clock to look big since big things look expensive. Therefore we're overriding it to be 20 units instead.
 </td>
@@ -240,10 +240,10 @@ The default height of text objects is 1.0 units, but we want our clock to look b
 {: .multiline}
 
 
- 
+
 ![{{ site.baseurl }}/images/primer-iterativecurvescaler.svg]({{ site.baseurl }}/images/primer-iterativecurvescaler.svg){: .float-img-right width="325"}
 
-A simple example of a non-endless loop which will terminate itself would be an iterative scaling script. Imagine we need a tool which makes sure a curve does not exceed a certain length {L}. Whenever a curve does exceed this predefined value it must be  scaled down by a factor {F} until it no longer exceeds {L}. 
+A simple example of a non-endless loop which will terminate itself would be an iterative scaling script. Imagine we need a tool which makes sure a curve does not exceed a certain length {L}. Whenever a curve does exceed this predefined value it must be  scaled down by a factor {F} until it no longer exceeds {L}.
 
 This approach means that curves that turn out to be longer than {L} will probably end up being shorter than {L}, since we always scale with a fixed amount. There is no mechanism to prevent undershooting. Curves that start out by being shorter than {L} should remain untouched.
 
@@ -257,7 +257,7 @@ import rhinoscriptsyntax as rs
 def fitcurvetolength():
     curve_id = rs.GetObject("Select a curve to fit to length", rs.filter.curve, True, True)
     if curve_id is None: return
-    
+
     length = rs.CurveLength(curve_id)
 
     length_limit = rs.GetReal("Length limit", 0.5 * length, 0.01 * length, length)
@@ -320,7 +320,7 @@ This should be familiar by now
 </tr>
 <tr>
 <td>15</td>
-<td>If the length of the curve did exceed the preset limit, this line will be executed. The <i>rs.ScaleObject()</i> 
+<td>If the length of the curve did exceed the preset limit, this line will be executed. The <i>rs.ScaleObject()</i>
 method takes four arguments, the last one of which is optional. We do not override it. We do need to specify which object we want rescaled <i>(curve_id)</i>, what the center of the scaling operation will be (<i>(0,0,0)</i>; the world origin) and the scaling factors along x, y and z (95% in all directions).</td>
 </tr>
 <tr>
@@ -336,7 +336,7 @@ method takes four arguments, the last one of which is optional. We do not overri
 
 ## 5.4 Incremental loops
 
-When the number of iterations is known in advance, we could still use a While…Loop statement, but we'll have to do the bookkeeping ourselves. This is rather cumbersome since it involves us declaring, incrementing and evaluating variables. The For...statement is a loop which takes care of all this hassle. The underlying idea behind For... loops is to have a value incremented by a fixed amount every iteration until it exceeds a preset threshold: 
+When the number of iterations is known in advance, we could still use a While…Loop statement, but we'll have to do the bookkeeping ourselves. This is rather cumbersome since it involves us declaring, incrementing and evaluating variables. The For...statement is a loop which takes care of all this hassle. The underlying idea behind For... loops is to have a value incremented by a fixed amount every iteration until it exceeds a preset threshold:
 
 ```python
 group = 10
@@ -375,7 +375,7 @@ for x in rs.frange(dblA, dblB, dblStep):
 
 ![{{ site.baseurl }}/images/primer-sinewave.svg]({{ site.baseurl }}/images/primer-sinewave.svg){: .float-img-right width="375"}
 
-The above example draws a sine wave graph in a certain numeric domain with a certain accuracy. There is no user input since that is not the focus of this paragraph, but you can change the values in the script. The numeric domain we're interested in ranges from -8.0 to +8.0 and with the current stepsize of 0.25 that means we'll be running this loop 64 times. 64 = dblStep-1 × (dblB - dblA)) 
+The above example draws a sine wave graph in a certain numeric domain with a certain accuracy. There is no user input since that is not the focus of this paragraph, but you can change the values in the script. The numeric domain we're interested in ranges from -8.0 to +8.0 and with the current stepsize of 0.25 that means we'll be running this loop 64 times. 64 = dblStep-1 × (dblB - dblA))
 
 The For…loop will increment the value of x automatically with the specified stepsize, so we don't have to worry about it when we use x on line 10. We should be careful not to change x inside the loop since that will play havoc with the logic of the iterations.
 
@@ -391,7 +391,7 @@ dblTwistAngle = 0.0
 rs.EnableRedraw(False)
 for z in rs.frange(0.0, 5.0, 0.5):
    dblTwistAngle = dblTwistAngle + (pi/30)
-      
+
    for a in rs.frange(0.0, 2*pi, (pi/15)):
        x = 5 * math.sin(a + dblTwistAngle)
        y = 5 * math.cos(a + dblTwistAngle)
@@ -406,7 +406,7 @@ The master loop increments the z variable from 0.0 to 5.0 with a default step si
 The master loop will run a total of ten times and the nested loop is designed to run 30 times. But because the nested loop is started every time the master loop performs another iteration, the code between lines 11 and 14 will be executed 10×30 = 300 times. Whenever you start nesting loops, the total number of operations your script performs will grow exponentially.
 
 
-The *rs.EnableRedraw()* calls before and after the master loop are there to prevent the viewport from updating 
+The *rs.EnableRedraw()* calls before and after the master loop are there to prevent the viewport from updating
 while the spheres are inserted. The script completes much faster if it doesn't have to redraw 330 times. If you comment out the *rs.EnableRedraw()* call you can see the order in which spheres are added, it may help you understand how the nested loops work together.
 
 ---

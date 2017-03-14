@@ -2,7 +2,7 @@
 title: 8 Geometry
 description:
 authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['sjet@sjet.us', 'aharten', ‘stevebaer']
+author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
@@ -17,12 +17,12 @@ layout: toc-guide-page
 
 Now that you are familiar with the basics of scripting, it is time to start with the actual geometry part of Rhino. To keep things interesting we've used plenty of Rhino methods in examples before now, but that was all peanuts. Now you will embark upon that great journey which, if you survive, will turn you into a real 3D geek.
 
-As already mentioned in Chapter 3, Rhinoceros is built upon the openNURBS™ kernel which supplies the bulk of the geometry and file I/O functions. All plugins that deal with geometry tap into this rich resource and the RhinoScriptSytnax plugin is no exception. Although Rhino is marketed as a "NURBS modeler", it does have a basic understanding of other types of geometry as well. Some of these are available to the general Rhino user, others are only available to programmers. When writting in Python you will not be dealing directly with any 
+As already mentioned in Chapter 3, Rhinoceros is built upon the openNURBS™ kernel which supplies the bulk of the geometry and file I/O functions. All plugins that deal with geometry tap into this rich resource and the RhinoScriptSytnax plugin is no exception. Although Rhino is marketed as a "NURBS modeler", it does have a basic understanding of other types of geometry as well. Some of these are available to the general Rhino user, others are only available to programmers. When writting in Python you will not be dealing directly with any
 openNURBS™ code since RhinoScriptSyntax wraps it all up into an easy-to-swallow package. However, programmers need to have a much higher level of comprehension than users which is why we'll dig fairly deep.
 
 ## 8.2 Objects in Rhino
 
-All objects in Rhino are composed of a geometry part and an attribute part. There are quite a few different geometry types but the attributes always follow the same format. The attributes store information such as object name, color, layer, isocurve density, linetype and so on. Not all attributes make sense for all geometry types, points for example do not use linetypes or materials but they are capable of storing this information nevertheless. Most attributes and properties are fairly straightforward and can be read and assigned to objects at will. 
+All objects in Rhino are composed of a geometry part and an attribute part. There are quite a few different geometry types but the attributes always follow the same format. The attributes store information such as object name, color, layer, isocurve density, linetype and so on. Not all attributes make sense for all geometry types, points for example do not use linetypes or materials but they are capable of storing this information nevertheless. Most attributes and properties are fairly straightforward and can be read and assigned to objects at will.
 
 <img src="{{ site.baseurl }}/images/primer-rhinoobjects.svg">{: .img-center  width="90%"}
 
@@ -42,11 +42,11 @@ def displayobjectattributes(object_id):
     #data.append( "LineType: " + rs.ObjectLineType(object_id))
     #data.append( "LineTypeSource: " + rs.ObjectLineTypeSource(object_id))
     data.append( "MaterialSource: " + str(rs.ObjectMaterialSource(object_id)))
-    
+
     name = rs.ObjectName(object_id)
     if not name: data.append("<Unnamed object>")
     else: data.append("Name: " + name)
-    
+
     groups = rs.ObjectGroups(object_id)
     if groups:
         for i,group in enumerate(groups):
@@ -68,7 +68,7 @@ if __name__=="__main__":
 
 ## 8.3 Points and Pointclouds
 
-Everything begins with points. A point is nothing more than a list of values called a coordinate. The number of values in the list corresponds with the number of dimensions of the space it resides in. Space is usually denoted with an R and a superscript value indicating the number of dimensions. (The 'R' stems from the world 'real' which means the space is continuous. We should keep in mind that a digital representation always has gaps, even though we are rarely confronted with them.) 
+Everything begins with points. A point is nothing more than a list of values called a coordinate. The number of values in the list corresponds with the number of dimensions of the space it resides in. Space is usually denoted with an R and a superscript value indicating the number of dimensions. (The 'R' stems from the world 'real' which means the space is continuous. We should keep in mind that a digital representation always has gaps, even though we are rarely confronted with them.)
 
 Points in 3D space, or R3 thus have three coordinates, usually referred to as [x,y,z]. Points in R2 have only two coordinates which are either called [x,y] or [u,v] depending on what kind of two dimensional space we're talking about. Points in R1 are denoted with a single value. Although we tend not to think of one-dimensional points as 'points', there is no mathematical difference; the same rules apply. One-dimensional points are often referred to as 'parameters' and we denote them with [t] or [p].
 
@@ -83,7 +83,7 @@ Since the surface which defines this particular parameter space resides in regul
 
 If the above is a hard concept to swallow, it might help you to think of yourself and your position in space. We usually tend to use local coordinate systems to describe our whereabouts; "I'm sitting in the third seat on the seventh row in the movie theatre", "I live in apartment 24 on the fifth floor", "I'm in the back seat". Some of these are variations to the global coordinate system (latitude, longitude, elevation), while others use a different anchor point. If the car you're in is on the road, your position in global coordinates is changing all the time, even though you remain in the same back seat 'coordinate'.
 
-Let's start with conversion from R1 to R3 space. The following script will add 500 colored points to the 
+Let's start with conversion from R1 to R3 space. The following script will add 500 colored points to the
 document, all of which are sampled at regular intervals across the R1 parameter space of a curve object:
 
 ```python
@@ -92,7 +92,7 @@ import rhinoscriptsyntax as rs
 def main():
     curve_id = rs.GetObject("Select a curve to sample", 4, True, True)
     if not curve_id: return
-    
+
     rs.EnableRedraw(False)
     t = 0
     while t<=1.0:
@@ -102,8 +102,8 @@ def main():
 
 def addpointat_r1_parameter(curve_id, parameter):
     domain = rs.CurveDomain(curve_id)
-    
-    
+
+
     r1_param = domain[0] + parameter*(domain[1]-domain[0])
     r3point = rs.EvaluateCurve(curve_id, r1_param)
     if r3point:
@@ -127,12 +127,12 @@ For no good reason whatsoever, we'll start with the bottom most function:
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
 <td>24</td>
-<td>Standard out-of-the-box function declaration which takes a single double value. This function is 
+<td>Standard out-of-the-box function declaration which takes a single double value. This function is
 supposed to return a colour which changes gradually from blue to red as parameter changes from zero to one. Values outside of the range {0.0~1.0} will be clipped.</td>
 </tr>
 <tr>
@@ -150,7 +150,7 @@ supposed to return a colour which changes gradually from blue to red as paramete
 </table>
 {: .multiline}
 
-Now, on to function *AddPointAtR1Parameter()*. As the name implies, this function will add a single point in 3D world space based on the parameter coordinate of a curve object. In order to work correctly this function must know what curve we're talking about and what parameter we want to sample. Instead of passing the actual parameter which is bound to the curve domain (and could be anything) we're passing a unitized one. 
+Now, on to function *AddPointAtR1Parameter()*. As the name implies, this function will add a single point in 3D world space based on the parameter coordinate of a curve object. In order to work correctly this function must know what curve we're talking about and what parameter we want to sample. Instead of passing the actual parameter which is bound to the curve domain (and could be anything) we're passing a unitized one.
 I.e. we pretend the curve domain is between zero and one. This function will have to wrap the required math for translating unitized parameters into actual parameters.
 
 Since we're calling this function a lot (once for every point we want to add), it is actually a bit odd to put all the heavy-duty stuff inside it. We only really need to perform the overhead costs of 'unitized parameter + actual parameter' calculation once, so it makes more sense to put it in a higher level function. Still, it will be very quick so there's no need to optimize it yet.
@@ -158,7 +158,7 @@ Since we're calling this function a lot (once for every point we want to add), i
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -231,14 +231,14 @@ if __name__=="__main__":
 
 This script will compare a bunch of points on a curve to their projection on a surface. If the distance exceeds one unit, a line and a point will be added.
 
-First, the R1 points are translated into R3 coordinates so we can 
+First, the R1 points are translated into R3 coordinates so we can
 project them onto the surface, getting the R2 coordinate [u,v] in return. This R2 point has to be translated into R3 space as well, since we need to know the distance between the R1 point on the curve and the R2 point on the surface. Distances can only be measured if both points reside in the same number of dimensions, so we need to translate them into R3 as well.
 
 Told you it was a piece of cake...
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -269,10 +269,10 @@ One more time just for kicks. We project the R1 parameter coordinate on the curv
 
 You'll be glad to learn that (poly)lines are essentially the same as point-lists. The only difference is that we treat the points as a series rather than an anonymous collection, which enables us to draw lines between them. There is some nasty stuff going on which might cause problems down the road so perhaps it's best to get it over with quick.
 
-There are several ways in which polylines can be manifested in openNURBS™ and thus in Rhino. There is a special polyline class which is simply a list of ordered points. It has no overhead data so this is the simplest case. It's also possible for regular nurbs curves to behave as polylines when they have their degree set to 1. In 
+There are several ways in which polylines can be manifested in openNURBS™ and thus in Rhino. There is a special polyline class which is simply a list of ordered points. It has no overhead data so this is the simplest case. It's also possible for regular nurbs curves to behave as polylines when they have their degree set to 1. In
 addition, a polyline could also be a polycurve made up of line segments, polyline segments, degree=1 nurbs curves or a combination of the above. If you create a polyline using the _Polyline command, you will get a proper polyline object as the Object Properties Details dialog on the left shows:
 
-The dialog claims an "Open polyline with 8 points". However, when we drag a control-point Rhino will 
+The dialog claims an "Open polyline with 8 points". However, when we drag a control-point Rhino will
 automatically convert any curve to a Nurbs curve, as the image on the right shows. It is now an open nurbs curve of degree=1. From a geometric point of view, these two curves are identical. From a programmatic point of view, they are anything but. For the time being we will only deal with 'proper' polylines though; lists of sequential coordinates. For purposes of clarification I've added two example functions which perform basic operations on polyline point-lists.
 
 Compute the length of a polyline point-array:
@@ -309,8 +309,8 @@ No rocket science yet, but brace yourself for the next bit...
 
 ![{{ site.baseurl }}/images/primer-r2shortpath.svg]({{ site.baseurl }}/images/primer-r2shortpath.svg){: .float-img-right width="325"}
 
-As you know, the shortest path between two points is a straight line. This is true for all our space definitions, from R1 to RN. However, the shortest path in R2 space is not necessarily the same shortest path in R3 space. If we want to connect two points on a surface with a straight line in R2, all we need to do is plot a linear course through the surface [u,v] space. (Since we can only add curves to Rhino which use 3D world coordinates, we'll need a fair amount of samples to give the impression of smoothness.) The thick red curve in the 
-adjacent illustration is the shortest path in R2 parameter 
+As you know, the shortest path between two points is a straight line. This is true for all our space definitions, from R1 to RN. However, the shortest path in R2 space is not necessarily the same shortest path in R3 space. If we want to connect two points on a surface with a straight line in R2, all we need to do is plot a linear course through the surface [u,v] space. (Since we can only add curves to Rhino which use 3D world coordinates, we'll need a fair amount of samples to give the impression of smoothness.) The thick red curve in the
+adjacent illustration is the shortest path in R2 parameter
 space connecting [A] and [B]. We can clearly see that this is definitely not the shortest path in R3 space.
 
 We can clearly see this because we're used to things happening in R3 space, which is why this whole R2/R3 thing is so thoroughly counter intuitive to begin with. The green, dotted curve is the actual shortest path in R3 space which still respects the limitation of the surface (I.e. it can be projected onto the surface without any loss of information). The following function was used to create the red curve; it creates a polyline which represents the shortest path from [A] to [B] in surface parameter space:
@@ -341,7 +341,7 @@ def getr2pathonsurface(surface_id, segments, prompt1, prompt2):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -425,7 +425,7 @@ def projectpolyline(vertices, surface_id):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -466,12 +466,12 @@ def smoothpolyline(vertices):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
 <td>1...3 6...8</td>
-<td>Since we need the original coordinates throughout the smoothing operation we cannot deform it 
+<td>Since we need the original coordinates throughout the smoothing operation we cannot deform it
 directly. That is why we need to make a copy of each vertex point before we start messing about with coordinates.</td>
 </tr>
 <tr>
@@ -499,7 +499,7 @@ def geodesicfit(vertices, surface_id, tolerance):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -532,7 +532,7 @@ You are of course welcome to add additional escape clauses if you deem that nece
 <td>8</td>
 <td>Apparently it was, we need now to remember this new length as our frame of reference.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 The main subroutine takes some explaining. It performs a lot of different tasks which always makes a block of code harder to read. It would have been better to split it up into more discrete chunks, but we're already using seven different functions for this script and I feel we are nearing the ceiling. Remember that splitting problems into smaller parts is a good way to organize your thoughts, but it doesn't actually solve anything. You'll need to find a good balance between splitting and lumping.
@@ -566,7 +566,7 @@ def geodesiccurve():
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -609,7 +609,7 @@ def geodesiccurve():
 <td>22...23</td>
 <td>Add the curve and print a message about the length.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 ## 8.5 Planes
@@ -644,7 +644,7 @@ rs.AddPlaneSurface(arrPlane, dX, dY)
 
 ![{{ site.baseurl }}/images/primer-planecreation.svg]({{ site.baseurl }}/images/primer-planecreation.svg){: .float-img-right width="325"}
 
-You will notice that all RhinoScriptSyntax methods that require plane definitions make sure these demands are met, no matter how poorly you defined the input. 
+You will notice that all RhinoScriptSyntax methods that require plane definitions make sure these demands are met, no matter how poorly you defined the input.
 
 The adjacent illustration shows how the rs.AddPlaneSurface() call on line 11 results in the red plane, while the rs.AddPlaneSurface() call on line 12 creates the yellow surface which has dimensions equal to the distance between the picked origin and axis points.
 
@@ -652,21 +652,21 @@ We'll only pause briefly at plane definitions since planes, like vectors, are us
 
 ```primer
 idSurface = rs.GetObject("Surface to frame", 8, True, True)
-	
+
 intCount = rs.GetInteger("Number of iterations per direction", 20, 2)
 
 uDomain = rs.SurfaceDomain(idSurface, 0)
 vDomain = rs.SurfaceDomain(idSurface, 1)
 uStep = (uDomain[1] - uDomain[0]) / intCount
 vStep = (vDomain[1] - vDomain[0]) / intCount
-	
+
 rs.EnableRedraw(False)
 for u in range(uDomain[0],uDomain[1], uStep):
     For v in range(vdomain[0],vDomain[1],vStep):
-        pt = rs.EvaluateSurface(idSurface, [u, v]) 
+        pt = rs.EvaluateSurface(idSurface, [u, v])
         if rs.Distance(pt, rs.BrepClosestPoint(idSurface, pt)[0]) < 0.1:
             srfFrame = rs.SurfaceFrame(idSurface, [u, v])
-            rs.AddPlaneSurface(srfFrame, 1.0, 1.0) 
+            rs.AddPlaneSurface(srfFrame, 1.0, 1.0)
 
 rs.EnableRedraw(True)
 ```
@@ -739,7 +739,7 @@ def DistributeCirclesOnSphere():
         theta = 0
         theta_step = 2*math.pi/horizontal_count
         while theta<2*math.pi-1e-8:
-            circle_center = (sphere_radius*math.cos(theta)*math.cos(phi), 
+            circle_center = (sphere_radius*math.cos(theta)*math.cos(phi),
                 sphere_radius*math.sin(theta)*math.cos(phi), sphere_radius*math.sin(phi))
             circle_normal = rs.PointSubtract(circle_center, (0,0,0))
             circle_plane = rs.PlaneFromNormal(circle_center, circle_normal)
@@ -754,7 +754,7 @@ def DistributeCirclesOnSphere():
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -793,7 +793,7 @@ def DistributeCirclesOnSphere():
 </tr>
 <tr>
 <td>19</td>
-<td>This is mathematically the most demanding line, and I'm not going to provide a full proof of why and how it works. This is the standard way of translating the spherical coordinates Φ and Θ into Cartesian coordinates x, y and z. 
+<td>This is mathematically the most demanding line, and I'm not going to provide a full proof of why and how it works. This is the standard way of translating the spherical coordinates Φ and Θ into Cartesian coordinates x, y and z.
 <br><br>
 Further information can be found on [MathWorld.com](http://mathworld.wolfram.com/)</td>
 </tr>
@@ -805,7 +805,7 @@ Further information can be found on [MathWorld.com](http://mathworld.wolfram.com
 <td>21...22</td>
 <td>We can construct a plane definition from a single point on that plane and a normal vector and we can construct a circle from a plane definition and a radius value. Voila.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 ### 8.6.1 Ellipses
@@ -816,7 +816,7 @@ The following example script demonstrates very clearly how the orientation of th
 
 <img src="{{ site.baseurl }}/images/primer-curvaturespline.svg">{: .img-center  width="80%"}
 
-It gives a clear impression of the range of different curvatures in the spline, but it doesn't communicate the helical twisting of the curvature very well. Parts of the spline that are near-linear tend to have a garbled curvature since they are the transition from one well defined bend to another. The arrows in the left image indicate these areas of twisting but it is hard to deduce this from the curvature graph alone. The upcoming script will use the curvature information to loft a surface through a set of ellipses which have been oriented into the curvature plane of the local spline geometry. The ellipses have a small radius in the bending plane of the curve and a large one perpendicular to the bending plane. Since we will not be using the strength of the curvature but only its orientation, small details will become very apparent. 
+It gives a clear impression of the range of different curvatures in the spline, but it doesn't communicate the helical twisting of the curvature very well. Parts of the spline that are near-linear tend to have a garbled curvature since they are the transition from one well defined bend to another. The arrows in the left image indicate these areas of twisting but it is hard to deduce this from the curvature graph alone. The upcoming script will use the curvature information to loft a surface through a set of ellipses which have been oriented into the curvature plane of the local spline geometry. The ellipses have a small radius in the bending plane of the curve and a large one perpendicular to the bending plane. Since we will not be using the strength of the curvature but only its orientation, small details will become very apparent.
 
 ```python
 def FlatWorm():
@@ -866,7 +866,7 @@ def FlatWorm():
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -902,12 +902,12 @@ You'll notice I'm violating a lot of naming conventions from paragraph [2.3.5 Us
 <td>40...42</td>
 <td>Create a lofted surface through all ellipses and delete the curves afterwards.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 ### 8.6.2 Arcs
 
-Since the topic of Arcs isn't much different from the topic of Circles, I thought it would be a nice idea to drag in something extra. This something extra is what we programmers call "recursion" and it is without doubt the most exciting thing in our lives (we don't get out much). Recursion is the process of self-repetition. Like loops which are iterative and execute the same code over and over again, recursive functions call themselves and thus also execute the same code over and over again, but this process is hierarchical. It actually sounds harder than it is. One of the success stories of recursive functions is their implementation in binary trees which are the foundation for many search and classification algorithms in the world today. I'll allow myself a small detour on the subject of recursion because I would very much like you to appreciate the power that flows from the simplicity of the technique. Recursion is unfortunately one of those things which only become horribly obvious once you understand how it works. 
+Since the topic of Arcs isn't much different from the topic of Circles, I thought it would be a nice idea to drag in something extra. This something extra is what we programmers call "recursion" and it is without doubt the most exciting thing in our lives (we don't get out much). Recursion is the process of self-repetition. Like loops which are iterative and execute the same code over and over again, recursive functions call themselves and thus also execute the same code over and over again, but this process is hierarchical. It actually sounds harder than it is. One of the success stories of recursive functions is their implementation in binary trees which are the foundation for many search and classification algorithms in the world today. I'll allow myself a small detour on the subject of recursion because I would very much like you to appreciate the power that flows from the simplicity of the technique. Recursion is unfortunately one of those things which only become horribly obvious once you understand how it works.
 
 Imagine a box in 3D space which contains a number of points within its volume. This box exhibits a single behavioral pattern which is recursive. The recursive function evaluates a single conditional statement: {when the number of contained points exceeds a certain threshold value then subdivide into 8 smaller boxes, otherwise add yourself to the document}. It would be hard to come up with an easier If…Else statement. Yet, because this behavior is also exhibited by all newly created boxes, it bursts into a chain of recursion, resulting in the voxel spaces in the images below:
 
@@ -932,11 +932,11 @@ We're going to find the coordinates of the point in the middle of the desired ar
 
 The halfway point on the arc also happens to lie on the bisector between {D} and the baseline vector. We can easily construct the bisector of two vectors in 3D space by process of unitizing and adding both vectors. In the illustration on the left the bisector is already pointing in the right direction, but it still hasn't got the correct length.
 
-We can compute the correct length using the standard "Sin-Cos-Tan right triangle rules": 
+We can compute the correct length using the standard "Sin-Cos-Tan right triangle rules":
 
 The triangle we have to solve has a 90º angle in the lower right corner, a is the angle between the baseline and the bisector, the length of the bottom edge of the triangle is half the distance between {A} and {B} and we need to compute the length of the slant edge (between {A} and {M}).
 
-The relationship between a and the lengths of the sides of the triangle is: 
+The relationship between a and the lengths of the sides of the triangle is:
 
 $$\cos({\alpha})=\frac{0.5D}{?} \gg \frac{1}{\cos({\alpha})}=\frac{?}{0.5D} \gg \frac{0.5D}{\cos({\alpha})} = ?$$  
 
@@ -951,7 +951,7 @@ We now have the equation we need in order to solve the length of the slant edge.
 def AddArcDir(ptStart, ptEnd, vecDir):
     vecBase = rs.PointSubtract(ptEnd, ptStart)
     if rs.VectorLength(vecBase)==0.0: return
-    
+
     if rs.IsVectorParallelTo(vecBase, vecDir): return
 
     vecBase = rs.VectorUnitize(vecBase)
@@ -959,10 +959,10 @@ def AddArcDir(ptStart, ptEnd, vecDir):
 
     vecBisector = rs.VectorAdd(vecDir, vecBase)
     vecBisector = rs.VectorUnitize(vecBisector)
-    
+
     dotProd = rs.VectorDotProduct(vecBisector, vecDir)
     midLength = (0.5*rs.Distance(ptStart, ptEnd))/dotProd
-    
+
     vecBisector = rs.VectorScale(vecBisector, midLength)
     return rs.AddArc3Pt(ptStart, rs.PointAdd(ptStart, vecBisector), ptEnd)
 ```
@@ -970,7 +970,7 @@ def AddArcDir(ptStart, ptEnd, vecDir):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -1013,12 +1013,12 @@ def AddArcDir(ptStart, ptEnd, vecDir):
 <td>17</td>
 <td>Create an arc using the start, end and midpoint arguments, return the ID.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 ![{{ site.baseurl }}/images/primer-arctree.svg]({{ site.baseurl }}/images/primer-arctree.svg){: .float-img-right width="375"}
 
-We need this function in order to build a recursive tree-generator which outputs trees made of arcs. Our trees will be governed by a set of five variables but -due to the 
+We need this function in order to build a recursive tree-generator which outputs trees made of arcs. Our trees will be governed by a set of five variables but -due to the
 flexible nature of the recursive paradigm- it will be very easy to add more behavioral patterns. The growing algorithm as implemented in this example is very simple and doesn't allow a great deal of variation.
 
 The five base parameters are:
@@ -1058,7 +1058,7 @@ def RandomPointInCone( origin, direction, minDistance, maxDistance, maxAngle):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -1088,14 +1088,14 @@ def RandomPointInCone( origin, direction, minDistance, maxDistance, maxAngle):
 <td>7</td>
 <td>Create the new point as inferred by <i>Origin</i> and <i>vecTwig</i>.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 One of the definitions Wikipedia has to offer on the subject of recursion is: "In order to understand recursion, one must first understand recursion." Although this is obviously just meant to be funny, there is an unmistakable truth as well. The upcoming script is recursive in every definition of the word, it is also quite short, it produces visually interesting effects and it is quite clearly a very poor realistic plant generator. The perfect characteristics for exploration by trial-and-error. Probably more than any other example script in this primer this one is a lot of fun to play around with. Modify, alter, change, mangle and bend it as you see fit.
 
 There is a set of rules to which any working recursive function must adhere. It must place at least one call to itself somewhere before the end and must have a way of exiting without placing any calls to itself. If the first condition is not met the function cannot be called recursive and if the second condition is not met it will call itself until time stops (or rather until the call-stack memory in your computer runs dry).
 
-Lo and behold! 
+Lo and behold!
 A mere 21 lines of code to describe the growth of an entire tree.
 
 ```python
@@ -1115,7 +1115,7 @@ def RecursiveGrowth( ptStart, vecDir, props, generation):
         maxTwigAngle, angleMutation
     maxN = int( minTwigCount+random.random()*(maxTwigCount-minTwigCount) )
     for n in range(1,maxN):
-        ptGrow = RandomPointInCone(ptStart, vecDir, 0.25*maxTwigLength, maxTwigLength,... 
+        ptGrow = RandomPointInCone(ptStart, vecDir, 0.25*maxTwigLength, maxTwigLength,...
             maxTwigAngle)
         newTwig = AddArcDir(ptStart, ptGrow, vecDir)
         if newTwig:
@@ -1126,7 +1126,7 @@ def RecursiveGrowth( ptStart, vecDir, props, generation):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -1184,7 +1184,7 @@ vecGrow = rs.CurveTangent(newTwig, crvDomain[1])
 <td>Awooga! Awooga! A function calling itself! This is it! We made it!
 The thing to realize is that the call is now different. We're putting in different arguments which means this new function instance behaves differently than the current function instance.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 It would have been possible to code this tree-generator in an iterative (For loops) fashion. The tree would look the same even though the code would be very different (probably a lot more lines). The order in which the branches are added would very probably also have differed. The trees below are archetypal, digital trees, the one on the left generated using iteration, the one on the right generated using recursion. Note the difference in branch order. If you look carefully at the recursive function on the previous page you'll probably be able to work out where this difference comes from...
@@ -1205,7 +1205,7 @@ Before we start with NURBS curves (the mathematics of which are a bit too comple
 
 Splines limited to four control points were not the end of the revolution of course. Soon, more advanced spline definitions were formulated one of which is the NURBS curve. (Just to set the record straight; NURBS stands for Non-Uniform Rational [Basic/Basis] Spline and not Bézier-Spline as some people think. In fact, the Rhino help file gets it right, but I doubt many of you have read the glossary section, I only found out just now.) Bézier splines are a subset of NURBS curves, meaning that every Bézier spline can be represented by a NURBS curve, but not the other way around. Other curve types still in use today (but not available in Rhino) are Hermite, Cardinal, Catmull-Rom, Beta and Akima splines, but this is not a complete list. Hermite curves for example are used by the Bongo animation plug-in to smoothly transform objects through a number of keyframes.
 
-In addition to control point locations, NURBS curves have additional properties such as the degree, knot-vectors and weights. I'm going to assume that you already know how weight factors work (if you don't, it's in the Rhino help file under [NURBS About]) so I won't discuss them here. Instead, we'll continue with the correlation between degrees and knot-vectors. 
+In addition to control point locations, NURBS curves have additional properties such as the degree, knot-vectors and weights. I'm going to assume that you already know how weight factors work (if you don't, it's in the Rhino help file under [NURBS About]) so I won't discuss them here. Instead, we'll continue with the correlation between degrees and knot-vectors.
 
 Every NURBS curve has a number associated with it which represents the degree. The degree of a curve is always a positive integer between and including 1 and 11. The degree of a curve is written as DN. Thus D1 is a degree one curve and D3 is a degree three curve. The table on the next page shows a number of curves with the exact same control-polygon but with different degrees. In short, the degree of a curve determines the range of influence of control points. The higher the degree, the larger the range.
 
@@ -1235,7 +1235,7 @@ The _FilletCorners command in Rhino puts filleting arcs across all sharp kinks i
 
 The input curve {A} has nine G0 corners (filled circles) which qualify for a filleting operation and three G1 corners (empty circles) which do not. Since each segment of the polycurve has a length larger than twice the fillet radius, none of the fillets overlap and the result is a predictable curve {B}.
 
-Since blend curves are freeform they are allowed to twist and curl as much as they please. They have no problem with non-planar segments. Our assignment for today is to make a script which inserts blend corners into polylines. We're not going to handle polycurves (with freeform curved segments) since that would involve quite a lot of math and logic which goes beyond this simple curve introduction. This unfortunately means we won't actually be making non-planar blend corners. 
+Since blend curves are freeform they are allowed to twist and curl as much as they please. They have no problem with non-planar segments. Our assignment for today is to make a script which inserts blend corners into polylines. We're not going to handle polycurves (with freeform curved segments) since that would involve quite a lot of math and logic which goes beyond this simple curve introduction. This unfortunately means we won't actually be making non-planar blend corners.
 
 The logic of our BlendCorners script is simple:
 
@@ -1294,7 +1294,7 @@ def blendcorners():
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -1335,7 +1335,7 @@ Calculate the <i>vec_segment</i> vector. Typically this vector has length <i>rad
 <td>32...33</td>
 <td>Create a new D5 nurbs curve and delete the original.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 ### 8.7.2 Interpolated curves
@@ -1400,7 +1400,7 @@ def BSearchCurve(idCrv, Length, Tolerance):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -1442,18 +1442,18 @@ def BSearchCurve(idCrv, Length, Tolerance):
 </tr>
 <tr>
 <td>13...14</td>
-<td>This is the magic bit. Looks harmless enough doesn't it? 
-What we do here is adjust the subdomain based on the result of the length comparison. If the length of the subcurve {<i>tmin</i>, <i>t</i>} is shorter than <i>Length</i>, then we want to restrict ourself to the lower half of the old subdomain. If, on the other hand, the subcurve length is shorter than <i>Length</i>, then we want the upper half of the old domain. 
+<td>This is the magic bit. Looks harmless enough doesn't it?
+What we do here is adjust the subdomain based on the result of the length comparison. If the length of the subcurve {<i>tmin</i>, <i>t</i>} is shorter than <i>Length</i>, then we want to restrict ourself to the lower half of the old subdomain. If, on the other hand, the subcurve length is shorter than <i>Length</i>, then we want the upper half of the old domain.
 Notice how much more compact programming code is compared to English?</td>
 </tr>
 <tr>
 <td>15</td>
 <td>Return the solved <i>t</i>-parameter.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
-I have unleashed this function on a smooth curve with a fairly well distributed parameter space (i.e. no sudden jumps in parameter "density") and the results are listed below. The length of the total curve was 200.0 mm and I wanted to find the parameter for a subcurve length of 125.0 mm. My tolerance was set to 0.0001 mm. As you can see it took 18 refinement steps in the *BSearchCurve()* function to find an acceptable solution. Note how fast this algorithm homes in on the correct value, after just 6 steps the remaining error is less than 1%. Ideally, with every step the accuracy of the guess is doubled, in practise however you're unlikely to see such a neat progression. In fact, if you closely examine the table, you'll see that sometimes the new guess overshoots the solution so much it actually becomes worse than before (like between steps #9 and #10). 
+I have unleashed this function on a smooth curve with a fairly well distributed parameter space (i.e. no sudden jumps in parameter "density") and the results are listed below. The length of the total curve was 200.0 mm and I wanted to find the parameter for a subcurve length of 125.0 mm. My tolerance was set to 0.0001 mm. As you can see it took 18 refinement steps in the *BSearchCurve()* function to find an acceptable solution. Note how fast this algorithm homes in on the correct value, after just 6 steps the remaining error is less than 1%. Ideally, with every step the accuracy of the guess is doubled, in practise however you're unlikely to see such a neat progression. In fact, if you closely examine the table, you'll see that sometimes the new guess overshoots the solution so much it actually becomes worse than before (like between steps #9 and #10).
 
 I've greyed out the subdomain bound parameters that remained identical between two adjacent steps. You can see that sometimes multiple steps in the same direction are required.
 
@@ -1483,7 +1483,7 @@ def equidistanceoffset():
                 offsetvertices.append(rs.EvaluateCurve(isocurves[0], t))
             rs.DeleteObjects(isocurves)
         u+=ustep
-        
+
     if offsetvertices: rs.AddInterpCrvOnSrf(srf_id, offsetvertices)
     rs.EnableRedraw(True)
 ```
@@ -1491,11 +1491,11 @@ def equidistanceoffset():
 
 If I've done my job so far, the above shouldn't require any explanation. All of it is straight forward scripting code.
 
-The image on the right shows the result of the script, where offset values are all multiples of 10. The dark green lines across the green strip (between offsets 80.0 and 90.0)  are all exactly 10.0 units long. 
+The image on the right shows the result of the script, where offset values are all multiples of 10. The dark green lines across the green strip (between offsets 80.0 and 90.0)  are all exactly 10.0 units long.
 
 &nbsp;{: .clear-img}  
 
-  
+
 ### 8.7.3 Geometric curve properties
 
 Since curves are geometric objects, they possess a number of properties or characteristics which can be used to describe or analyze them. For example, every curve has a starting coordinate and every curve has an ending coordinate. When the distance between these two coordinates is zero, the curve is closed. Also, every curve has a number of control-points, if all these points are located in the same plane, the curve as a whole is planar. Some properties apply to the curve as a whole, others only apply to specific points on the curve. For example, planarity is a global property while tangent vectors are a local property. Also, some properties only apply to some curve types. So far we've dealt with lines, polylines, circles, ellipses, arcs and nurbs curves:
@@ -1557,7 +1557,7 @@ def addcurvaturegraphsection(idCrv, t0, t1, samples, scale):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -1589,7 +1589,7 @@ def addcurvaturegraphsection(idCrv, t0, t1, samples, scale):
 <td>12...16</td>
 <td>Compute the A and B coordinates, append them to the appropriate array and add the line segment.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 Now, we need to write a utility function that applies the previous function to an entire curve. There's no rocket science here, just an iteration over the knot-vector of a curve object:
@@ -1609,7 +1609,7 @@ def addcurvaturegraph( idCrv, spansamples, scale):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -1637,7 +1637,7 @@ def addcurvaturegraph( idCrv, spansamples, scale):
 <td>8</td>
 <td>Put all created objects into a new group.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 The last bit of code we need to write is a bit more extensive than we've done so far. Until now we've always prompted for a number of values before we performed any action. It is actually far more user-friendly to present the different values as options in the command line while drawing a preview of the result.
@@ -1689,7 +1689,7 @@ def createcurvaturegraph():
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -1741,7 +1741,7 @@ def createcurvaturegraph():
 <td>27...29</td>
 <td>If the picked option was "Scale", then we have to ask the user for a new scale factor, and . If the user pressed Escape during this nested prompt, we do not abort the whole script (typical Rhino behaviour would dictate this), but instead return to the base prompt.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 ## 8.8 Meshes
@@ -1752,9 +1752,9 @@ Instead of treating a surface as a deformation of a rectangular nurbs patch, mes
 
 <img src="{{ site.baseurl }}/images/primer-meshtopology.svg">{: .img-center  width="80%"}
 
-It is important to understand the pros and cons of meshes over alternative surface paradigms, so you can make an informed decision about which one to use for a certain task. Most differences between meshes and nurbs are self-evident and flow from the way in which they are defined. For example, you can delete any number of polygons from the mesh and still have a valid object, whereas you cannot delete knot spans without breaking apart the nurbs geometry. There's a number of things to consider which are not implied directly by the theory though. 
+It is important to understand the pros and cons of meshes over alternative surface paradigms, so you can make an informed decision about which one to use for a certain task. Most differences between meshes and nurbs are self-evident and flow from the way in which they are defined. For example, you can delete any number of polygons from the mesh and still have a valid object, whereas you cannot delete knot spans without breaking apart the nurbs geometry. There's a number of things to consider which are not implied directly by the theory though.
 
-- Coordinates of mesh vertices are stored as single precision numbers in Rhino in order to save memory consumption. Meshes are therefore less accurate entities than nurbs objects. This is especially notable with objects that are very small, extremely large or very far away from the world origin. Mesh objects go hay-wire sooner than nurbs objects because single precision numbers have larger gaps between them than double precision numbers (see page 6). 
+- Coordinates of mesh vertices are stored as single precision numbers in Rhino in order to save memory consumption. Meshes are therefore less accurate entities than nurbs objects. This is especially notable with objects that are very small, extremely large or very far away from the world origin. Mesh objects go hay-wire sooner than nurbs objects because single precision numbers have larger gaps between them than double precision numbers (see page 6).
 - Nurbs cannot be shaded, only the isocurves and edges of nurbs geometry can be drawn directly in the viewport. If a nurbs surface has to be shaded, then it has to fall back on meshes. This means that inserting nurbs surfaces into a shaded viewport will result in a significant (sometimes very significant) time lag while a mesh representation is calculated.
 - Meshes in Rhino can be non-manifold, meaning that more than two faces share a single edge. Although it is not technically impossible for nurbs to behave in this way, Rhino does not allow it. Non-manifold shapes are topologically much harder to deal with. If an edge belongs to only a single face it is an exterior edge (naked), if it belongs to two faces it is considered interior.
 
@@ -1766,7 +1766,7 @@ According to MathWorld.com topology is "*the mathematical study of the propertie
 
 <img src="{{ site.baseurl }}/images/primer-topology.svg">{: .img-center  width="80%"}
 
-If you look at the images above, you'll see a number of surfaces that are topologically identical (except {E}) but geometrically different. You can bend shape {A} and end up with shape {B}; all you have to do is reposition some of the vertices. Then if you bend it even further you get {C} and eventually {D} where the right edge has been bend so far it touches the edge on the opposite side of the surface. It is not until you merge the edges 
+If you look at the images above, you'll see a number of surfaces that are topologically identical (except {E}) but geometrically different. You can bend shape {A} and end up with shape {B}; all you have to do is reposition some of the vertices. Then if you bend it even further you get {C} and eventually {D} where the right edge has been bend so far it touches the edge on the opposite side of the surface. It is not until you merge the edges
 (shape {E}) that this shape suddenly changes its platonic essence, i.e. it goes from a shape with four edges to a shape with only two edges (and these two remaining edges are now closed loops as well). Do note that shapes {D} and {E} are geometrically identical, which is perhaps a little surprising.
 
 The vertices of a mesh object are a list of 3D point coordinates. They can be located anywhere in space and they control the size and form of the mesh. The faces on the other hand do not contain any coordinate data, they merely indicate how the vertices are to be connected:
@@ -1796,14 +1796,14 @@ def createmeshvertices(function, fdomain, resolution):
     for x in rs.frange(fdomain[0],fdomain[1]+(0.5*xstep), xstep):
         for y in rs.frange(fdomain[2],fdomain[3]+(0.5*ystep),ystep):
             z = solveequation(function, x, y)
-            v.append( (x,y,z) ) 
+            v.append( (x,y,z) )
     return v
 ```
 {: .line-numbers}
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -1842,14 +1842,14 @@ We can access those easily enough, but since the step size in x and y direction 
 <td>11...13</td>
 <td>Append the new vertex to the <i>V</i> list. Note that vertices are stored as a one-dimensional list, which makes accessing items at a specific (<i>row, column</i>) coordinate slightly cumbersome.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 ![{{ site.baseurl }}/images/primer-meshfacelogic.svg]({{ site.baseurl }}/images/primer-meshfacelogic.svg){: .float-img-right width="325"}
 
-Once we have our vertices, we can create the face list that connects them. Since the face-list is topology, it doesn't matter where our vertices are in space, all that matters is how they are organized. The image on the right is the mesh schematic that I always draw whenever confronted with mesh face  logic. The image shows a mesh with twelve vertices and six quad faces, which has the same vertex sequence logic as the vertex list created by the function on the previous page. The vertex counts in x and y direction are four and three respectively (N<sub>x</sub>=4, N<sub>y</sub>=3). 
+Once we have our vertices, we can create the face list that connects them. Since the face-list is topology, it doesn't matter where our vertices are in space, all that matters is how they are organized. The image on the right is the mesh schematic that I always draw whenever confronted with mesh face  logic. The image shows a mesh with twelve vertices and six quad faces, which has the same vertex sequence logic as the vertex list created by the function on the previous page. The vertex counts in x and y direction are four and three respectively (N<sub>x</sub>=4, N<sub>y</sub>=3).
 
-Now, every quad face has to link the four vertices in a counter-clockwise fashion. You may have noticed already that the absolute differences between the vertex indices on the corners of every quad are identical. In the case of the lower left quad *{A=0; B=3; C=4; D=1}*. In the case of the upper right quad *{A=7; B=10; C=11; D=8}*. We can define these numbers in a simpler way, which reduces the number of variables to just one instead of four: 
+Now, every quad face has to link the four vertices in a counter-clockwise fashion. You may have noticed already that the absolute differences between the vertex indices on the corners of every quad are identical. In the case of the lower left quad *{A=0; B=3; C=4; D=1}*. In the case of the upper right quad *{A=7; B=10; C=11; D=8}*. We can define these numbers in a simpler way, which reduces the number of variables to just one instead of four:
 *{A=?; B=(A+N<sub>y</sub>); C=(B+1); D=(A+1)}*, where *N<sub>y</sub>* is the number of vertices in the y-direction. Now that we know the logic of the face corner numbers, all that is left is to iterate through all the faces we need to define and calculate proper values for the *A* corner:
 
 ```python
@@ -1867,7 +1867,7 @@ def createmeshfaces(resolution):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -1892,14 +1892,14 @@ def createmeshfaces(resolution):
 <td>8</td>
 <td>Define the new quad face corners using the logic stated above.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 Writing a tool which works usually isn't enough when you write it for other people. Apart from just working, a script should also be straightforward to use. It shouldn't allow you to enter values that will cause it to crash (come to think of it, it shouldn't crash at all), it should not take an eternity to complete and it should provide sensible defaults. In the case of this script, the user will have to enter a function which is potentially very complex, and also four values to define the numeric domain in {x} and {y} directions. This is quite a lot of input and chances are that only minor adjustments will be made during successive runs of the script. It therefore makes a lot of sense to remember the last used settings, so they become the defaults the next time around. There's a number of ways of storing persistent data when using scripts, each with its own advantages:
 
 <img src="{{ site.baseurl }}/images/primer-settings.svg">{: .img-center  width="100%"}
 
-We'll be using a \*.txt file to store our data since it involves very little code and it survives a Rhino restart. An \*.txt file is a textfile which stores a number of Strings in a one-level hierarchical format. 
+We'll be using a \*.txt file to store our data since it involves very little code and it survives a Rhino restart. An \*.txt file is a textfile which stores a number of Strings in a one-level hierarchical format.
 
 ```python
 def SaveFunctionData(strFunction, fDomain, Resolution):
@@ -1916,7 +1916,7 @@ def SaveFunctionData(strFunction, fDomain, Resolution):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -1933,7 +1933,7 @@ def SaveFunctionData(strFunction, fDomain, Resolution):
 <td>9</td>
 <td>This call finalizes modifications to the file, and closes it for other operations.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 The contents of the \*.txt file should look something like this:
@@ -1949,7 +1949,7 @@ def loadfunctiondata():
         items = file.readlines()
         file.close()
         function = str(items[0])
-        domain = (float(items[1]), float(items[2]), 
+        domain = (float(items[1]), float(items[2]),
             float(items[3]), float(items[4]))
         resolution = int(items[5])
     except:
@@ -1962,7 +1962,7 @@ def loadfunctiondata():
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -1987,16 +1987,16 @@ def loadfunctiondata():
 <td>11...13</td>
 <td>If an exception was thrown, we will need to return a set of default values. These are defined here.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 ![{{ site.baseurl }}/images/primer-xyphidelta.svg]({{ site.baseurl }}/images/primer-xyphidelta.svg){: .float-img-right width="325"}
 
-We've now dealt with two out of four problems (mesh topology, saving and loading persistent settings) and it's time for the big ones. In our CreateMeshVertices() procedure we've placed a call to a function called SolveEquation() eventhough it didn't exist yet. SolveEquation() has to evaluate a user-defined function for a specific {x,y} coordinate which is something we haven't done before yet. It is very easy to find the answer to the question: 
+We've now dealt with two out of four problems (mesh topology, saving and loading persistent settings) and it's time for the big ones. In our CreateMeshVertices() procedure we've placed a call to a function called SolveEquation() eventhough it didn't exist yet. SolveEquation() has to evaluate a user-defined function for a specific {x,y} coordinate which is something we haven't done before yet. It is very easy to find the answer to the question:
 
 "What is the value of <i>{Sin(x) + Sin(y)}</i> for <i>{x=0.5}</i> and <i>{y=2.7}</i> ?"
 
-However, this involves manually writing the equation inside the script and then running it. Our script has to evaluate custom equations which are not known until after the script starts. This means in turn that the equation is stored as a String variable. 
+However, this involves manually writing the equation inside the script and then running it. Our script has to evaluate custom equations which are not known until after the script starts. This means in turn that the equation is stored as a String variable.
 
 The *eval* statement runs a script inside a script. The *eval* statement takes a single String and attempts to run it as a bit of code, but nested inside the current scope. That means that you can refer to local variables inside an *eval*. This bit of magic is exactly what we need in order to evaluate expressions stored in Strings. We only need to make sure we set up our *x, y, Θ* and *Δ* variables prior to using *eval*.
 
@@ -2111,7 +2111,7 @@ The default function Cos(Sqr(x^2 + y^2)) is already quite pretty, but here are s
 <td>math.log(math.sin(x)+math.sin(y)+2.01)</td>
 <td><img src="{{ site.baseurl }}/images/primer-meshxy-h.svg" width="100%"></td>
 </tr>
-</table> 
+</table>
 {: .multiline-middle}
 
 ### 8.8.2 Shape vs. Image
@@ -2138,7 +2138,7 @@ def randommeshcolors():
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -2152,7 +2152,7 @@ def randommeshcolors():
 <sup>2</sup> Highest possible value
 </td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 Random colors may be pretty, but they are not useful. All the Rhino analysis commands evaluate a certain geometrical local property (curvature, verticality, intersection distance, etc), but none of them take surroundings into account. Let's assume we need a tool that checks a mesh and a (poly)surface for proximity. There is nothing in Rhino that can do that out of the box. So this is actually going to be a useful script, plus we'll make sure that the script is completely modular so we can easily adjust it to analyze other properties.
@@ -2187,7 +2187,7 @@ def DistanceTo(pt, id):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -2197,10 +2197,10 @@ def DistanceTo(pt, id):
 </tr>
 <tr>
 <td>4...8</td>
-<td><i>DistanceTo()</i> calculates the distance from pt to the projection of pt onto id. Where pt is a single 3D coordinate and id if the identifier of a (poly)surface object. It also performs the logarithmic conversion, so the return value is not the actual distance. 
+<td><i>DistanceTo()</i> calculates the distance from pt to the projection of pt onto id. Where pt is a single 3D coordinate and id if the identifier of a (poly)surface object. It also performs the logarithmic conversion, so the return value is not the actual distance.
 </td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 And the master Sub containing all the front end and color magic:
@@ -2220,13 +2220,13 @@ def ProximityAnalysis():
     vertices = rs.MeshVertices(mesh_id)
     faces = rs.MeshFaceVertices(mesh_id)
     listD = VertexValueArray(vertices, brep_id)
-    
+
     minD = sys.float_info.min
     maxD = sys.float_info.max
     for ct in range(len(listD)):
         if minD>listD[ct]: minD = listD[ct]
         if maxD<listD[ct]: maxD = listD[ct]
-    
+
     colors = []
     for i in range(len(vertices)):
         proxFactor = (listD[i]-minD)/(maxD-minD)
@@ -2238,7 +2238,7 @@ def ProximityAnalysis():
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -2263,7 +2263,7 @@ def ProximityAnalysis():
 <td>25</td>
 <td>Cook up a colour based on the <i>proxFactor</i>.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 ## 8.9 Surfaces
@@ -2285,7 +2285,7 @@ Apart from a few primitive surface types such as spheres, cones, planes and cyli
 
 ![{{ site.baseurl }}/images/primer-normals.svg]({{ site.baseurl }}/images/primer-normals.svg){: .float-img-right width="325"}
 
-Nurbs surfaces are very similar to Nurbs curves. The same algorithms are used to calculate shape, normals, tangents, curvatures and other properties, but there are some distinct differences. For example, curves have tangent vectors and normal planes, whereas surfaces have normal vectors and tangent planes. This means that curves lack orientation while surfaces lack direction. This is of course true for all curve and surface types and it is something you'll have to learn to live with. Often when writing code that involves curves or surfaces you'll have to make assumptions about direction and orientation and these assumptions will sometimes be wrong. 
+Nurbs surfaces are very similar to Nurbs curves. The same algorithms are used to calculate shape, normals, tangents, curvatures and other properties, but there are some distinct differences. For example, curves have tangent vectors and normal planes, whereas surfaces have normal vectors and tangent planes. This means that curves lack orientation while surfaces lack direction. This is of course true for all curve and surface types and it is something you'll have to learn to live with. Often when writing code that involves curves or surfaces you'll have to make assumptions about direction and orientation and these assumptions will sometimes be wrong.
 
 In the case of NURBS surfaces there are in fact two directions implied by the geometry, because NURBS surfaces are rectangular grids of {u} and {v} curves. And even though these directions are often arbitrary, we end up using them anyway because they make life so much easier for us.
 
@@ -2295,9 +2295,9 @@ The problem we're facing is a mismatch between a given surface and a number of p
 
 <img src="{{ site.baseurl }}/images/primer-pointonplane.svg">{: .img-center  width="100%"}
 
-For purposes of clarity I have unfolded a very twisted nurbs patch so that it is reduced to a rectangular grid of control-points. The diagram you're looking at is drawn in {uvw} space rather than world {xyz} space. The actual surface might be contorted in any number of ways, but we're only interested in the simplified {uvw} space. 
+For purposes of clarity I have unfolded a very twisted nurbs patch so that it is reduced to a rectangular grid of control-points. The diagram you're looking at is drawn in {uvw} space rather than world {xyz} space. The actual surface might be contorted in any number of ways, but we're only interested in the simplified {uvw} space.
 
-The surface has to pass through point {S}, but currently the two entities are not intersecting. The projection of {S} onto the surface {S'} is a certain distance away from {S} and this distance is the error we're going to diffuse. As you can see, {S'} is closer to some control points than others. Especially {F} and {G} are close, but 
+The surface has to pass through point {S}, but currently the two entities are not intersecting. The projection of {S} onto the surface {S'} is a certain distance away from {S} and this distance is the error we're going to diffuse. As you can see, {S'} is closer to some control points than others. Especially {F} and {G} are close, but
 {B; C; J; K} can also be considered adjacent control points. Rather than picking a fixed number of nearby control points and moving those in order to reduce the distance between {S} and {S'}, we're going to move all the points, but not in equal amounts. The images on the right show the amount of motion we assign to each control point based on its distance to {S'}.
 You may have noticed a problem with the algorithm description so far. If a nurbs surface is flat, the control-points lie on the surface itself, but when the surface starts to buckle and bend, the control points have a tendency to move away from the surface. This means that the distance between the control points {uvw} coordinate and {S'} is less meaningful. So instead of control points, we'll be using Greville points. Both nurbs curves and nurbs surfaces have a set of Greville points (or "edit points" as they are known in Rhino), but only curves expose this in the Rhino interface. As scripters we also get access to surface Greville points, which is useful because there is a 1:1 mapping between control and Greville points and the latter are guaranteed to lie on the surface. Greville points can therefore be expressed in {uv} coordinates only, which means we can also evaluate surface properties (such as tangency, normals and curvature) at these exact locations.
 
@@ -2309,7 +2309,7 @@ $$f(y)=\frac{1}{x}$$
 
 <img src="{{ site.baseurl }}/images/primer-distanceweightfactor.svg">{: .img-center  width="80%"}
 
-As you can see, the domain of the graph goes from zero to infinity, and for every higher value of {x} we get a lower value of {y}, without {y} ever becoming zero. There's just one problem, a problem which only manifests itself in programming. For very small values of {x}, when the Greville point is very close to {S'}, the resulting {y} is very big indeed. When this distance becomes zero the weight factor becomes infinite, but we'll never get even this far. Even though the processor in your computer is in theory capable of representing numbers as large as 
+As you can see, the domain of the graph goes from zero to infinity, and for every higher value of {x} we get a lower value of {y}, without {y} ever becoming zero. There's just one problem, a problem which only manifests itself in programming. For very small values of {x}, when the Greville point is very close to {S'}, the resulting {y} is very big indeed. When this distance becomes zero the weight factor becomes infinite, but we'll never get even this far. Even though the processor in your computer is in theory capable of representing numbers as large as
 1.8 × 10308 (which isn't anywhere near infinity by any stretch of the imagination), when you start doing calculations with numbers approaching the extremes chances are you are going to cross over into binary no man's land and crash your pc. And that's not even to mention the deplorable mathematical accuracy at these levels of scale. Clearly, you might want to steer clear of very big and very small numbers altogether.
 
 It's an easy fix in our case, we can simply limit the {x} value to the domain {+0.01; +∞}, meaning that {y} can never get bigger than 100. We could make this threshold much, much smaller without running into problems. Even if we limit {x} to a billionth of a unit (0.00000001) we're still comfortably in the clear.
@@ -2328,7 +2328,7 @@ In order to find the coordinates in surface {S} space of a point {P}, we need to
 def ConvertToUVW(idSrf, pXYZ):
     pUVW = []
     for point in pXYZ:
-        u, v = rs.SurfaceClosestPoint(idSrf, point)	
+        u, v = rs.SurfaceClosestPoint(idSrf, point)
         surface_xyz = rs.EvaluateSurface(idSrf, u, v)
         surface_normal = rs.SurfaceNormal(idSrf, (u,v))
 
@@ -2344,7 +2344,7 @@ def ConvertToUVW(idSrf, pXYZ):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -2365,7 +2365,7 @@ def ConvertToUVW(idSrf, pXYZ):
 <td>12...13</td>
 <td>If {P} is closer to the dirNeg point, we know that {P} is on the "downside" of the surface and we need to make {w} negative.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 We need some other utility functions as well (it will become clear how they fit into the grand scheme of things later) so let's get it over with quickly:
@@ -2392,18 +2392,18 @@ Our eventual algorithm will keep track of both motion vectors and weight factors
 def InstantiateForceLists(Bound):
     Forces = []
     Factors = []
-    
+
     for i in range(Bound):
         Forces.append((0,0,0))
         Factors.append(0)
-        
+
     return Forces, Factors
 ```
 {: .line-numbers}
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -2420,7 +2420,7 @@ def InstantiateForceLists(Bound):
 <td>9</td>
 <td>Note that we are returning two separate items. The assignment in the line calling this function will contain both of these. Ways of handling this assignment will be handled later in the text.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 We've now dealt with all the utility functions. I know it's a bit annoying to deal with code which has no obvious meaning yet, and at the risk of badgering you even more I'm going to take a step back and talk some more about the error diffusion algorithm we've come up with. For one, I'd like you to truly understand the logic behind it and I also need to deal with one last problem...
@@ -2429,11 +2429,11 @@ If we were to truly move each control point based directly on the inverse of its
 
 <img src="{{ site.baseurl }}/images/primer-hyperbolas.svg">{: .img-center  width="100%"}
 
-On the left you see the four individual hyperbolas (one for each of the sample points) and on the right you see the result of a fitting operation which uses the hyperbola values directly to control control-point motion. Actually, the hyperbolas aren't drawn to scale, in reality they are much *(much)* thinner, but drawing them to scale would make them almost invisible since they would closely hug the horizontal and vertical lines. 
+On the left you see the four individual hyperbolas (one for each of the sample points) and on the right you see the result of a fitting operation which uses the hyperbola values directly to control control-point motion. Actually, the hyperbolas aren't drawn to scale, in reality they are much *(much)* thinner, but drawing them to scale would make them almost invisible since they would closely hug the horizontal and vertical lines.
 
-We see that the control points that are close to the projections of {A; B; C; D} on {Base} will be moved a great deal (such as {S}), whereas points in between (such as {T}) will hardly be moved at all. Sometimes this is useful behaviour, especially if we assume our original surface is already very close to the sample points. If this is not the case (like in the diagram above) then we end up with a flat surface with some very sharp tentacles poking out. 
+We see that the control points that are close to the projections of {A; B; C; D} on {Base} will be moved a great deal (such as {S}), whereas points in between (such as {T}) will hardly be moved at all. Sometimes this is useful behaviour, especially if we assume our original surface is already very close to the sample points. If this is not the case (like in the diagram above) then we end up with a flat surface with some very sharp tentacles poking out.
 
-Lets assume our input surface is not already 'almost' good. This means that our algorithm cannot depend on the initial shape of the surface which in turn means that moving control points small amounts is not an option. We need to move all control points as far as necessary. This sounds very difficult, but the mathematical trick is a simple one. I won't provide you with a proof of why it works, but what we need to do is divide the length of the motion vector by the value of the sum of all the hyperbolas. 
+Lets assume our input surface is not already 'almost' good. This means that our algorithm cannot depend on the initial shape of the surface which in turn means that moving control points small amounts is not an option. We need to move all control points as far as necessary. This sounds very difficult, but the mathematical trick is a simple one. I won't provide you with a proof of why it works, but what we need to do is divide the length of the motion vector by the value of the sum of all the hyperbolas.
 
 Have a close look at control points {S} and {T} in the illustration above. {S} has a very high diffusion factor (lots of yellow above it) whereas {T} has a low diffusion factor (thin slivers of all colors on both sides). But if we want to move both {S} and {T} substantial amounts, we need to somehow boost the length of the motion vector for {T}. If you divide the motion vector by the value of the added hyperbolas, you sort of 'unitize' all the motion vectors, resulting in the following section:
 
@@ -2448,7 +2448,7 @@ def FitSurface(idSrf, Samples, dTranslation, dProximity):
     N = GrevilleNormals(idSrf)
     S = ConvertToUVW(idSrf, Samples)
     [Forces, Factors] = InstantiateForceLists(len(P))
-    
+
     dProximity = 0.0
     dTranslation = 0.0
 
@@ -2462,18 +2462,18 @@ def FitSurface(idSrf, Samples, dTranslation, dProximity):
             Forces[j] = rs.VectorAdd(Forces[j], LocalForce)
             Factors[j] = Factors[j] + LocalFactor
     Forces = DivideVectorList(Forces, Factors)
-	
+
     for i in range(len(P)):
         P[i] = rs.PointAdd(P[i], Forces[i])
         dTranslation = dTranslation + rs.VectorLength(Forces[i])
-    
+
     srf_N = rs.SurfacePointCount(idSrf)
     srf_K = rs.SurfaceKnots(idSrf)
     srf_W = rs.SurfaceWeights(idSrf)
     srf_D = []
     srf_D.append(rs.SurfaceDegree(idSrf, 0))
     srf_D.append(rs.SurfaceDegree(idSrf, 1))
-    
+
     FS = rs.AddNurbsSurface(srf_N, P, srf_K[0], srf_K[1], srf_D, srf_W)
     return (FS, Samples, dTranslation, dProximity)
 ```
@@ -2481,7 +2481,7 @@ def FitSurface(idSrf, Samples, dTranslation, dProximity):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -2537,7 +2537,7 @@ def FitSurface(idSrf, Samples, dTranslation, dProximity):
 <td>26...33</td>
 <td>Instead of changing the existing surface, we're going to add a brand new one. In order to do this, we need to collect all the NURBS data of the original such as knot vectors, degrees, weights and so on and so forth.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 The procedure on the previous page has no interface code, thus it is not a top-level procedure. We need something that asks the user for a surface, some points and then runs the FitSurface() function a number of times until the fitting is good enough:
@@ -2546,13 +2546,13 @@ The procedure on the previous page has no interface code, thus it is not a top-l
 def DistributedSurfaceFitter():
     idSrf = rs.GetObject("Surface to fit", 8, True, True)
     if idSrf is None: return
-    
+
     pts = rs.GetPointCoordinates("Points to fit to", False)
     if pts is None: return
-    
+
     dTrans = 0
     dProx = 0
-    
+
     for N in range(1, 1000):
         rs.EnableRedraw(False)
         nSrf, pts, dTrans, dProx = FitSurface(idSrf, pts, dTrans, dProx)
@@ -2561,14 +2561,14 @@ def DistributedSurfaceFitter():
         rs.Prompt("Translation =" + str(round(dTrans, 2)) + "Deviation =" + str(round(dProx, 2)))
         if dTrans < 0.1 or dProx < 0.01: break
         idSrf = nSrf
-    
+
     print("Final deviation = " + str(round(dProx, 4)))
 ```
 {: .line-numbers}
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -2589,7 +2589,7 @@ def DistributedSurfaceFitter():
 <td>17</td>
 <td>If the total translation is negligible, we might as well abort since nothing we can do will make it any better. If the total error is minimal, we have a good fit and we should abort.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 
@@ -2647,14 +2647,14 @@ As you know, summation behaves very different from multiplication, and Mean curv
 
 On the previous page I mentioned the words "tensor", "smoothing" and "algorithm" in one breath. Even though you most likely know the latter two, the combination probably makes little sense. Tensor smoothing is a useful tool to have in your repertoire so I'll deal with this specific case in detail. Just remember that most of the script which is to follow is generic and can be easily adjusted for different classes of tensors. But first some background information...
 
-Imagine a surface with no singularities and no stacked control points, such as a torus or a plane. Every point on this surface has a normal vector associated with it. The collection of all these vectors is an example of a vector space. A vector space is a continuous set of vectors over some interval. The set of all surface normals is a two-dimensional vector space (sometimes referred to as a vector field), just as the set of all curve tangents is a one-dimensional vector space, the set of all air-pressure components in a turbulent volume over time is a four-dimensional vector space and so on and so forth. 
+Imagine a surface with no singularities and no stacked control points, such as a torus or a plane. Every point on this surface has a normal vector associated with it. The collection of all these vectors is an example of a vector space. A vector space is a continuous set of vectors over some interval. The set of all surface normals is a two-dimensional vector space (sometimes referred to as a vector field), just as the set of all curve tangents is a one-dimensional vector space, the set of all air-pressure components in a turbulent volume over time is a four-dimensional vector space and so on and so forth.
 
 When we say "vector", we usually mean little arrows; a list of numbers that indicate a direction and a magnitude in some sort of spatial context. When things get more complicated, we start using "tensor" instead. Tensor is a more general term which has fewer connotations and is thus preferred in many scientific texts.
 
 ![{{ site.baseurl }}/images/primer-tensorspace2.svg]({{ site.baseurl }}/images/primer-tensorspace2.svg){: .float-img-right width="375"}
 
 
-For example, the surface of your body is a two-dimensional tensor space (embedded in four dimensional space-time) which has many properties that vary smoothly from place to place; hairiness, pigmentation, wetness, sensitivity, freckliness and smelliness to name just a few. If we measure all of these properties in a number of places, we can make educated guesses about all the other spots on your body using interpolation and extrapolation algorithms. We could even make a graphical representation of such a tensor space by using some arbitrary set of symbols. 
+For example, the surface of your body is a two-dimensional tensor space (embedded in four dimensional space-time) which has many properties that vary smoothly from place to place; hairiness, pigmentation, wetness, sensitivity, freckliness and smelliness to name just a few. If we measure all of these properties in a number of places, we can make educated guesses about all the other spots on your body using interpolation and extrapolation algorithms. We could even make a graphical representation of such a tensor space by using some arbitrary set of symbols.
 
 We could visualize the wetness of any piece of skin by linking it to the amount of blue in the colour of a box, and we could link freckliness to green, or to the width of the box, or to the rotational angle.
 
@@ -2679,7 +2679,7 @@ def SurfaceTensorField(Nu, Nv):
     idSrf = rs.GetSurfaceObject()[0]
     uDomain = rs.SurfaceDomain(idSrf, 0)
     vDomain = rs.SurfaceDomain(idSrf, 1)
-    
+
     T = []
     K = []
     for i in range(Nu):
@@ -2700,7 +2700,7 @@ def SurfaceTensorField(Nu, Nv):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -2737,10 +2737,10 @@ Line 11 (and line 13) contain an implementation of such a mapping algorithm. I'm
 </tr><tr>
 <td>19</td>
 <td>If the surface has a valid curvature at {u,v}, we can use the principal curvature direction which is stored in the 4th element of the curvature data array.</td>
-</tr></table> 
+</tr></table>
 {: .multiline}
 
-This function takes two lists and it modifies the originals. The return value (the two lists) is merely cosmetic. This function is a typical box-blur algorithm. It averages the values in every tensor with all neighboring tensors using a 3×3 blur matrix. 
+This function takes two lists and it modifies the originals. The return value (the two lists) is merely cosmetic. This function is a typical box-blur algorithm. It averages the values in every tensor with all neighboring tensors using a 3×3 blur matrix.
 
 ```python
 def SmoothTensorField(T, K):
@@ -2766,7 +2766,7 @@ def SmoothTensorField(T, K):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -2780,7 +2780,7 @@ def SmoothTensorField(T, K):
 <table>
 <tr>
 <td>
-Now that we're dealing with each tensor individually (the first two loops) we need to deal with each tensors neighbours as well (the second set of nested loops). We can visualize the problem at hand with a simple table graph. 
+Now that we're dealing with each tensor individually (the first two loops) we need to deal with each tensors neighbours as well (the second set of nested loops). We can visualize the problem at hand with a simple table graph.
 <br><br>
 The green area is a corner of the entire two-dimensional tensor space, the dark green lines delineating each individual tensor. The dark grey square is the tensor we're currently working on. It is located at {u,v}. The eight white squares around it are the adjacent tensors which will be used to blur the tensor at {u,v}.
 <br><br>
@@ -2801,7 +2801,7 @@ We need to make 2 more nested loops which iterate over the 9 coordinates in this
 <td>13...16</td>
 <td>Make sure the vector is projected back onto the tangent plane and unitized.</td>
 </tr>
-</table> 
+</table>
 {: .multiline}
 
 
