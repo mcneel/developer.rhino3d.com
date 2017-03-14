@@ -2,7 +2,7 @@
 title: Introduction
 description:
 authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['sjet@sjet.us', 'aharten', ‘stevebaer']
+author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
@@ -22,7 +22,7 @@ Programming offers users the powerful ability to automate tasks, make decisions,
 I hope we have convinced you of the powerful and exciting potential for this new opportunity of Python in Rhino.  Without further ado, lets dive in!
 
 Good luck!
-	
+
 **Skylar Tibbits**  
 SJET  
 www.sjet.us    

@@ -2,7 +2,7 @@
 title: 7 Classes
 description:
 authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['sjet@sjet.us', 'aharten', ‘stevebaer']
+author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## 7.1 Class Syntax
 
-Classes are useful mechanism for organization above what we have already mentioned: variables, flow control and functions.  Classes give us another level of functionality and actually define a specific type of programming called Object-Oriented Programming.  This means that we can create objects, rather than simply procedures or variables.  Object-Oriented Programming gives us the ability to create a class with internal attributes, functions and any number of other characteristics and then create multiple instances.  Classes offer you a possibility to organize your code based on objects, these objects can relate to one another with inheritance, add or remove information/characteristics through functions and actually exhibit "polymorphism"! (Sounds fancy!) 
+Classes are useful mechanism for organization above what we have already mentioned: variables, flow control and functions.  Classes give us another level of functionality and actually define a specific type of programming called Object-Oriented Programming.  This means that we can create objects, rather than simply procedures or variables.  Object-Oriented Programming gives us the ability to create a class with internal attributes, functions and any number of other characteristics and then create multiple instances.  Classes offer you a possibility to organize your code based on objects, these objects can relate to one another with inheritance, add or remove information/characteristics through functions and actually exhibit "polymorphism"! (Sounds fancy!)
 
 Polymorphism, another exciting feature of Object-Orient Programming, is the ability to create one object or class that can exhibit multiple characteristics and commonly respond to similar functions. For example, if we have a function that asks for a "Person's" age and returns their birth year, we could pass in a "Professor" or we could pass in a "Person" although they are actually different objects they can respond to the same question (this is like acting as different people at different times, depending on the question)!  
 
@@ -25,7 +25,7 @@ Ok, enough talking - lets see some code (because that's much easier to understan
 
 ```python
 class MyClass:
-    """A simple example""" 
+    """A simple example"""
     x = 10
     def test(self):
         return 'hello'
@@ -33,7 +33,7 @@ class MyClass:
 obj = MyClass()
 print obj.x
 print obj.test()
-```	
+```
 {: .line-numbers}
 
 
@@ -88,7 +88,7 @@ obj.x = 5
 print obj.x
 ```
 ```
->> 5 
+>> 5
 ```
 
 The result is 5, showing that we can change the attributes of an object and call functions outside of the class! Regarding the strange use of "self", the Python documentation explains, *" Often, the first argument of a method is called self. This is nothing more than a convention: the name self has absolutely no special meaning to Python. Note, however, that by not following the convention your code may be less readable to other Python programmers, and it is also conceivable that a class browser program might be written that relies upon such a convention."*
@@ -103,7 +103,7 @@ class Harder:
 newObj = Harder(10,20)
 print newObj.i
 print newObj.j
-```	
+```
 {: .line-numbers}
 
 <table>
@@ -155,7 +155,7 @@ class Weird(MyClass):
 
 newerObj = Weird()
 print newerObj.test()
-```	
+```
 {: .line-numbers}
 
 <table rules="rows">
@@ -190,9 +190,9 @@ Standard class declaration, this class is called "Weird." However, this time we 
 </table>
 {: .multiline}
 
-You can use isinstance(newerObj,MyClass) to check if one object is an instance of another object. 
+You can use isinstance(newerObj,MyClass) to check if one object is an instance of another object.
 
-Classes can be nested, they can have multiple functions, create powerful systems with polymorphism, privacy and modularity of your code! Like I said, classes are very powerful and sometimes difficult to wrap your head around at first (don't get hung up on them....work your way into it)! We are certainly not doing them justice here by explaining them in just 2 short pages! However, their complete depths are certainly out of the scope of this primer and you can find more information on Python classes from the resources at the beginning of this primer or at: [http://docs.python.org/tutorial/classes.html](http://docs.python.org/tutorial/classes.html) 
+Classes can be nested, they can have multiple functions, create powerful systems with polymorphism, privacy and modularity of your code! Like I said, classes are very powerful and sometimes difficult to wrap your head around at first (don't get hung up on them....work your way into it)! We are certainly not doing them justice here by explaining them in just 2 short pages! However, their complete depths are certainly out of the scope of this primer and you can find more information on Python classes from the resources at the beginning of this primer or at: [http://docs.python.org/tutorial/classes.html](http://docs.python.org/tutorial/classes.html)
 
 
 ---

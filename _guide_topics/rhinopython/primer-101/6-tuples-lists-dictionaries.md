@@ -2,7 +2,7 @@
 title: 6 Tuples, Lists and Dictionaries
 description:
 authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['sjet@sjet.us', 'aharten', ‘stevebaer']
+author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
 apis: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
@@ -43,7 +43,7 @@ Lists are just like Tuples, however they can be changed (mutable), they use brac
 
 ```python
 myList = [] #This creates an empty list with the variable name myList
-myList.append(5) 
+myList.append(5)
 myList.append(6)
 print myList[0]
 # This returns 5 - the first element (0th item) in the list
@@ -128,7 +128,7 @@ def myfavoritethings():
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -190,11 +190,11 @@ As was just explained, points are represented by lists containing three values -
 ```python
 import rhinoscriptsyntax as rs
 import math
-    
+
 #Call rs.EnableRedraw(False)
 for t in rs.frange(-50,50,1.25):
     arrPoint = [t * math.sin(5*t), t * math.cos(5*t),t]
-   
+
    print(arrPoint)
    rs.AddPoint(arrPoint)
 #Call rs.EnableRedraw(True)
@@ -289,7 +289,7 @@ I will be using standard mathematical notation:
 <tr>
 <td>$$\overrightarrow{w} =\frac{\overrightarrow{v}}{a}$$</td>
 <td>VectorDivide(Vec1, dblA)</td>
-<td>Divide the components of the vector by the specified 
+<td>Divide the components of the vector by the specified
 factor. This is the equivalent of *PointDivide()*.</td>
 <td><img src="{{ site.baseurl }}/images/primer-vectordivide.svg" width="100%"></td>
 </tr>
@@ -346,7 +346,7 @@ factor. This is the equivalent of *PointDivide()*.</td>
 
 ![{{ site.baseurl }}/images/primer-addvector.svg]({{ site.baseurl }}/images/primer-addvector.svg){: .float-img-right width="325"}
 
-IronPython has no method for displaying vectors, which is a pity since this would be very useful for visual feedback. I shall define a function here called *AddVector()* which we will use in examples to come. The function must be able to take two arguments; one vector definition and a point definition. If the point array is not defined the vector will be drawn starting at the world origin. 
+IronPython has no method for displaying vectors, which is a pity since this would be very useful for visual feedback. I shall define a function here called *AddVector()* which we will use in examples to come. The function must be able to take two arguments; one vector definition and a point definition. If the point array is not defined the vector will be drawn starting at the world origin.
 
 
 ```python
@@ -359,7 +359,7 @@ def AddVector(vecdir, base_point=[0,0,0]):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -372,7 +372,7 @@ def AddVector(vecdir, base_point=[0,0,0]):
 </tr>
 <tr>
 <td>3</td>
-<td>Here we are calling the RhinoScriptSyntax method rs.AddLine() and we're storing the return value 
+<td>Here we are calling the RhinoScriptSyntax method rs.AddLine() and we're storing the return value
 directly into the line variable. There are three possible scenarios at this point:
 
 <ol>
@@ -420,7 +420,7 @@ def vectorfield():
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -456,7 +456,7 @@ def vectorfield():
 > I wonder why I wonder.  
 > I wonder why I wonder why.  
 > I wonder why I wonder.  
-  
+
 > -Richard P. Feynman-  
 
 
@@ -477,7 +477,7 @@ Accessing nested lists follows the same rules as accessing regular lists. Using 
 Len() can be used to get the length of a list. In this case we are saying that arrLastPoint equals the last element in the list called arrPoints because we have given it the numeric value that is the length of the list. This shows how to extract entire nested lists. Assuming the illustration on this page represents <i>arrPoints</i>, <i>arrSeventhPoint</i> will be identical to <i>[0.3, -1.5, 4.9]</i>. If we want to access individual coordinates directly we can use another bracket to explode out the z value:
 
 ```pyton
-dblSeventhPointHeight = arrPoints[6][2] 
+dblSeventhPointHeight = arrPoints[6][2]
 #2 corresponds to the 3rd element (the Z coordinate) within that nested list.
 ```
 
@@ -488,17 +488,17 @@ Nested lists can be parsed using nested loops like so:
 ```python
 for i in range(0,len(arrPoints)):
     for j in range(0,2):
-        print("Coordinate(" + i + ", " + j + ") = " + arrPoints[i][j]) 
+        print("Coordinate(" + i + ", " + j + ") = " + arrPoints[i][j])
 ```
 
 <img src="{{ site.baseurl }}/images/primer-nestedarrayparsehistory.png">{: .img-center  width="45%"}
 
-Remember the scaling script from before? We're now going to take curve-length adjustment to the next level 
+Remember the scaling script from before? We're now going to take curve-length adjustment to the next level
 using nested lists. The logic of this script will be the same, but the algorithm for shortening a curve will be replaced with the following one (the illustration shows the first eight iterations of the algorithm):
 
 <img src="{{ site.baseurl }}/images/primer-curvesmoothing.svg">{: .img-center  width="100%"}
 
-Every control-point or 'vertex' of the original curve (except the ones at the end) will be averaged with its neighbors in order to smooth the curve. With every iteration the curve will become shorter and we will abort as soon a certain threshold length has been reached. The curve can never become shorter than the distance between the first and last control-point, so we need to make sure our goals are actually feasible before we start a potentially endless loop. Note that the algorithm is approximating, it may not be endless but it could still take a long time to complete. We will not support closed or periodic curves. 
+Every control-point or 'vertex' of the original curve (except the ones at the end) will be averaged with its neighbors in order to smooth the curve. With every iteration the curve will become shorter and we will abort as soon a certain threshold length has been reached. The curve can never become shorter than the distance between the first and last control-point, so we need to make sure our goals are actually feasible before we start a potentially endless loop. Note that the algorithm is approximating, it may not be endless but it could still take a long time to complete. We will not support closed or periodic curves.
 
 We're going to put the vector math bit in a separate function. This function will compute the {vM} vector given the control points {pN-1; p; pN+1} and a smoothing factor {s}. Since this function is not designed to fail, we will not be adding any error checking, if the thing crashes we'll have to fix the bug. Instead of using variable naming conventions, I'll use the same codes as in the diagram:
 
@@ -513,7 +513,7 @@ def smoothingvector(point, prev_point, next_point, s):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -558,7 +558,7 @@ def smoothcurve(curve_id, s):
 
 <table>
 <tr>
-<th>Line</th>	
+<th>Line</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -602,7 +602,7 @@ The top-level subroutine doesn't contain anything you're not already familiar wi
 def iterativeshortencurve():
     curve_id = rs.GetObject("Open curve to smooth", 4, True)
     if curve_id is None or rs.IsCurveClosed(curve_id): return
-    
+
     min = rs.Distance(rs.CurveStartPoint(curve_id), rs.CurveEndPoint(curve_id))
     max = rs.CurveLength(curve_id)
     goal = rs.GetReal("Goal length", 0.5*(min+max) , min, max)
