@@ -63,9 +63,9 @@ Scripts, then, are text files which are interpreted one line at a time. But here
 The language rules are usually referred to as the syntax and they indicate what is and isn’t valid:
 
 1. "There is no apple cake here."		» valid
-1. "There is here no apple cake"		» invalid
-1. "Here, there is no apple cake."		» valid
-1. "There is no Apfelstrudel here."		» invalid
+ 1. "There is here no apple cake"	» invalid
+  1. "Here, there is no apple cake."» valid
+  2. "There is no Apfelstrudel here."» invalid
 
 The above list is a validity check for English syntax rules. The first and third lines are proper English and the others are not. However, there are certain degrees of wrong. Nobody will misunderstand the second line just because the word order is wrong. The forth line is already a bit harder since it features a word from a different language.
 
