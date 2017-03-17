@@ -3,7 +3,7 @@ title: Screen Capture All Viewports
 description: Demonstrates how to screen capture all the visible viewports to a file.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Viewports and Views']

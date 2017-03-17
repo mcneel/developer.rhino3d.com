@@ -3,7 +3,7 @@ title: Screen Capture Viewport
 description: Demonstrates how to screen capture a viewport to a file.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Viewports and Views']

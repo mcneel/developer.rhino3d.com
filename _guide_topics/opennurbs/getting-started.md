@@ -3,7 +3,7 @@ title: Getting Started
 description: This guide aims to get you started using openNURBS in your project.
 authors: ['Dale Lear']
 author_contacts: ['dalelear']
-apis: ['openNURBS']
+sdk: ['openNURBS']
 languages: ['C/C++', 'C#']
 platforms: ['Windows', 'Mac']
 categories: ['Getting Started']

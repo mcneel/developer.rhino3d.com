@@ -3,7 +3,7 @@ title: Python Looping
 description: This guide is an overview of looping through Python code.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['Fundamentals']

@@ -3,7 +3,7 @@ title: VBScript Looping
 description: This guide is an overview of looping through VBScript code.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Fundamentals']

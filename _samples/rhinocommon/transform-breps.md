@@ -3,7 +3,7 @@ title: Transform Breps
 description: Demonstrates how to move (or transform) a user-specified Brep object.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']

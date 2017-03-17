@@ -3,7 +3,7 @@ title: User Data
 description: RhinoCommon object plugin user data
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']

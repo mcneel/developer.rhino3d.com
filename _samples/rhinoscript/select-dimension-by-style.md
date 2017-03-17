@@ -3,7 +3,7 @@ title: Select Dimensions by Style
 description: Demonstrates how to select an objects (dimensions) by their dimension style using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Picking and Selection']

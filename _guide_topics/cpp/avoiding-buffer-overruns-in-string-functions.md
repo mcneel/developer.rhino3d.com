@@ -3,7 +3,7 @@ title: Avoiding Buffer Overruns in String Functions
 description: This guide discusses how to write safe string function using C/C++.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Fundamentals']

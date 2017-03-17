@@ -3,7 +3,7 @@ title: Custom Component Options
 description: This guide discusses how to add custom options to a component and have them included in *.gh/.ghx* (de)serialization.
 authors: ['David Rutten']
 author_contacts: ['DavidRutten']
-apis: ['Grasshopper']
+sdk: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Advanced']

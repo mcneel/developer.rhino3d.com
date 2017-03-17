@@ -3,7 +3,7 @@ title: Display Conduits
 description: This guide gives an overview of Display Conduits and how to use them to access Rhino's display pipeline.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
 categories: ['Advanced']

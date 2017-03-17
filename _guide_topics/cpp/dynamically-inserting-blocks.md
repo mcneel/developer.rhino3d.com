@@ -3,7 +3,7 @@ title: Dynamically Inserting Blocks
 description: This guide demonstrates how to insert a block instance at a user specified location using C/C++.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Advanced']

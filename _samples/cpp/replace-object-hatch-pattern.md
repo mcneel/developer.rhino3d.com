@@ -3,7 +3,7 @@ title: Replace Object Hatch Pattern
 description: Demonstrates how to replace a Hatch Object's pattern.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Other']

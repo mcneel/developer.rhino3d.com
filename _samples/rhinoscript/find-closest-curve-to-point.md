@@ -3,7 +3,7 @@ title: Find Closest Curve to Point
 description: Demonstrates how to find the closest curve to test point using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Curves']

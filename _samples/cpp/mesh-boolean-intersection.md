@@ -3,7 +3,7 @@ title: Mesh Boolean Intersection
 description: Demonstrates how to intersect meshes.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Other']

@@ -3,7 +3,7 @@ title: Plugin Installers (Mac)
 description: This guide explains how to create a plugin installer for Rhino for Mac.
 authors: ['Dan Belcher']
 author_contacts: ['dan']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Mac']
 categories: ['Getting Started']

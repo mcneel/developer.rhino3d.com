@@ -3,7 +3,7 @@ title: Hello Python
 description: Demonstrates Basic syntax for writing python scripts.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']

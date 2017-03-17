@@ -3,7 +3,7 @@ title: Block Insertion Point
 description: Demonstrates how to set (or reset) the block insertion point of a block instance.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Blocks']

@@ -3,7 +3,7 @@ title: How This Site Works
 description: A guide to how this very developer document site works.
 authors: ['Dan Belcher']
 author_contacts: ['dan']
-apis: ['General']
+sdk: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Windows', 'Mac']
 categories: ['General']
@@ -130,7 +130,7 @@ title: How This Site Works
 description: A guide to how this very developer document site works.
 authors: ['Dan Belcher']
 author_contacts: ['dan']
-apis: ['General']
+sdk: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Mac', 'Windows']
 categories: ['General']
@@ -147,7 +147,7 @@ The YAML fields for Guides determine:
 * *description*: This is a brief description of the guide.
 * *authors*: The original - or responsible - author(s).
 * *author_contacts*: The matching Discourse handle(s) for the author(s), must match order of authors yaml.  If an email address is set, a mailto: link is generated rather than a Discourse handle.
-* *apis*: The Rhino APIs that this guide pertains to.
+* *sdk*: The Rhino SDK(s) that this guide pertains to.
 * *languages*: The programming languages this guide references.
 * *platforms*: The operating systems this guide is relevant to.
 * *categories*: The category of the guide (General, Overview, Advanced).
@@ -173,7 +173,7 @@ title: Add a Cone Surface
 description: Demonstrates how to create a cone using ON_BrepCone.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Unsorted']
@@ -190,7 +190,7 @@ The YAML fields for Samples determine:
 * *description*: A brief description of what the sample does.
 * *authors*: The original - or responsible - author(s).
 * *author_contacts*: The matching Discourse handle(s) for the author(s), must match order of authors yaml.  If an email address is set, a mailto: link is generated rather than a Discourse handle.
-* *apis*: The Rhino APIs or SDKs that this sample pertains to.
+* *sdk*: The Rhino SDK(s) that this sample pertains to.
 * *languages*: The programming languages this sample references.
 * *platforms*: The operating systems this sample is relevant to.
 * *categories*: The category of the sample (Recipes, Snippet, Boilerplate, etc.).

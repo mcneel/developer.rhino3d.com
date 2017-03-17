@@ -3,7 +3,7 @@ title: Loft Surfaces
 description: Demonstrates how to use the CArgsRhinoLoft class and the RhinoSdkLoftSurface function.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Surfaces']

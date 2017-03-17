@@ -3,7 +3,7 @@ title: Edit Text
 description: Demonstrates how to edit selected text, replacing it with new text.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']

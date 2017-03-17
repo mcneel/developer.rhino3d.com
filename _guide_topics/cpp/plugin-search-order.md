@@ -3,7 +3,7 @@ title: Plugin Search Order
 description: This guide discusses the order in which Rhino searches and loads plugins.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Getting Started']

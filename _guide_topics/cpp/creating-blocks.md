@@ -3,7 +3,7 @@ title: Creating Blocks
 description: This guide demonstrates how to create an instance definition using C/C++.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Fundamentals']

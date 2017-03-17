@@ -3,7 +3,7 @@ title: Importing Lightweight Extrusions
 description: This guide demonstrates how to convert openNURBS Lightweight Extrusion objects into Breps for importing.
 authors: ['Dale Lear']
 author_contacts: ['dalelear']
-apis: ['openNURBS']
+sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']

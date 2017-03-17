@@ -3,7 +3,7 @@ title: Moving Curve and Surface Grips
 description: This guide demonstrates how to move curve and surface object grips using C/C++.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Advanced']

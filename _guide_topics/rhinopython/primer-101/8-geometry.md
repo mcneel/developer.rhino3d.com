@@ -3,7 +3,7 @@ title: 8 Geometry
 description:
 authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
 author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Python Primer']

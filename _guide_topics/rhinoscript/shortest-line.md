@@ -3,7 +3,7 @@ title: Shortest Line between two Lines
 description: This brief guide demonstrates how to calculate the shortest line between two lines.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Miscellaneous', 'Advanced']

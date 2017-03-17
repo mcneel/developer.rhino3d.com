@@ -3,7 +3,7 @@ title: Display Order
 description: Demonstrates the order of how objects are drawn in the Rhino viewport and how to change it. 
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']

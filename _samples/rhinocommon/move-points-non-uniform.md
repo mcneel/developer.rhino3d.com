@@ -3,7 +3,7 @@ title: Move Points Non Uniform
 description: Demonstrates how to move points in a non-uniform manner.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']

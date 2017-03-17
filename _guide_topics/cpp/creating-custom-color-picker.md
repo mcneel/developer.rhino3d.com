@@ -3,7 +3,7 @@ title: Creating a Custom Color Picker
 description: This guide demonstrates how to replace Rhino's color picker using C/C++.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Advanced']

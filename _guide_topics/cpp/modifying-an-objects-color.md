@@ -3,7 +3,7 @@ title: Modify an Object's Color
 description: This brief guide discuss how to modify an object's color using C/C++.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Fundamentals']

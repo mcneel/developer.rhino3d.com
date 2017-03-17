@@ -3,7 +3,7 @@ title: Commas & Periods
 description: This guide demonstrates how to consistently read/write numbers to strings.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']

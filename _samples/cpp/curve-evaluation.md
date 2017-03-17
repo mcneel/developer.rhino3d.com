@@ -3,7 +3,7 @@ title: Curve Evaluation
 description: Demonstrates how to evaluate a curve.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Curves']

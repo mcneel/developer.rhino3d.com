@@ -3,7 +3,7 @@ title: Set a View's Construction Plane
 description: Demonstrates how to set a view's construction plane.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Viewports and Views']

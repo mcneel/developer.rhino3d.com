@@ -3,7 +3,7 @@ title: The Why and How of Data Trees
 description: This guide explains why data trees are used in Grasshopper.
 authors: ['David Rutten']
 author_contacts: ['DavidRutten']
-apis: ['Grasshopper']
+sdk: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['In Depth']

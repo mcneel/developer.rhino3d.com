@@ -3,7 +3,7 @@ title: Add NURBS Curve
 description: Demonstrates how to add a NURBS curve to Rhino using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Adding Objects']

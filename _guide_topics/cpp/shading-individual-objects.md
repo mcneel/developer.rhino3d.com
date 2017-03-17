@@ -3,7 +3,7 @@ title: Shading Individual Objects
 description: This guide demonstrates how to shade individual objects using C/C++.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Advanced']

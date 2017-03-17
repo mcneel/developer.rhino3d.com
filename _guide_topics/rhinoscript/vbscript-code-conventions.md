@@ -3,7 +3,7 @@ title: VBScript Code Conventions
 description: This guide provides an overview of VBScript coding conventions.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Fundamentals']

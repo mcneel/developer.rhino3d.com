@@ -3,7 +3,7 @@ title: Select Objects in Object Groups
 description: Demonstrates how to select objects that are an object group.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Picking and Selection', 'Adding Objects']

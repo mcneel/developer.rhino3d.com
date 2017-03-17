@@ -3,7 +3,7 @@ title: Circle From Length
 description: Demonstrates how to add a circle based on its circumference using Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']

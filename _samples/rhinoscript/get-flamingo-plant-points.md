@@ -3,7 +3,7 @@ title: Get Plant Points
 description: Demonstrates how get a list of points that represent a Flamingo nXt plant in RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Flamingo']

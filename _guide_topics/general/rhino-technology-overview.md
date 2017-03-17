@@ -3,7 +3,7 @@ title: Rhino Technology Overview
 description: A summary of the Rhino technology architecture.
 authors: ['Brian Gillespie']
 author_contacts: ['brian']
-apis: ['General']
+sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
 categories: ['General']

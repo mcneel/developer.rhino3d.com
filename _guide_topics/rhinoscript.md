@@ -22,7 +22,7 @@ layout: guide-homepage
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoScript' and guide.categories contains 'Fundamentals' %}
+    {% if guide.sdk contains 'RhinoScript' and guide.categories contains 'Fundamentals' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -37,7 +37,7 @@ layout: guide-homepage
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoScript' and guide.categories contains 'Troubleshooting' %}
+    {% if guide.sdk contains 'RhinoScript' and guide.categories contains 'Troubleshooting' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -64,7 +64,7 @@ layout: guide-homepage
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoScript' and guide.categories contains 'Intermediate' %}
+    {% if guide.sdk contains 'RhinoScript' and guide.categories contains 'Intermediate' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -84,7 +84,7 @@ layout: guide-homepage
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoScript' and guide.categories contains 'Advanced' %}
+    {% if guide.sdk contains 'RhinoScript' and guide.categories contains 'Advanced' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}

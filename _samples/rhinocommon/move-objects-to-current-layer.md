@@ -3,7 +3,7 @@ title: Move Objects to Current Layer
 description: Demonstrates how to move object to the currently active layer.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects', 'Layers']

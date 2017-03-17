@@ -3,7 +3,7 @@ title: Dynamically Drawing Text Strings
 description: This guide demonstrates how to dynamically draw text strings using C/C++.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Advanced']

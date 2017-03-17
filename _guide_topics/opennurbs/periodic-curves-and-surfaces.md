@@ -3,7 +3,7 @@ title: Periodic Curves & Surfaces
 description: This guide discusses periodic curves and surfaces and openNURBS toolkit.
 authors: ['Dale Lear']
 author_contacts: ['dalelear']
-apis: ['openNURBS']
+sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']

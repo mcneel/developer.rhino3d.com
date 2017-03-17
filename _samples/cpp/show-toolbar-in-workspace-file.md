@@ -3,7 +3,7 @@ title: Show Toolbar in Workspace File
 description: Demonstrates how to display a toolbar in a toolbar collection, or workspace, file.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Other']

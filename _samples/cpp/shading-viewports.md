@@ -3,7 +3,7 @@ title: Shading Viewports
 description: Demonstrates how to set a viewport to shaded display.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Viewports and Views']

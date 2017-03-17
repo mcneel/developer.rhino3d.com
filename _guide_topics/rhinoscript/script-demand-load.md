@@ -3,7 +3,7 @@ title: Script Demand Loading
 description: This guide demonstrates how to demand load and run RhinoScript routines.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Miscellaneous', 'Advanced']

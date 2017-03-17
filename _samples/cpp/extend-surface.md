@@ -3,7 +3,7 @@ title: Extend Surface
 description: Demonstrates how to use RhinoExtendSurface() to extend a surface object.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Surfaces']

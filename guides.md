@@ -64,7 +64,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoCommon' and guide.categories contains 'Fundamentals' %}
+    {% if guide.sdk contains 'RhinoCommon' and guide.categories contains 'Fundamentals' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -80,7 +80,7 @@ order: 2
   <ul>
   <li><a href="{{ site.baseurl }}/api/RhinoCommon">API Reference</a></li>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoCommon' and guide.categories contains 'Advanced' %}
+    {% if guide.sdk contains 'RhinoCommon' and guide.categories contains 'Advanced' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -95,7 +95,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoCommon' and guide.categories contains 'Zoo' %}
+    {% if guide.sdk contains 'RhinoCommon' and guide.categories contains 'Zoo' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -117,7 +117,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Overview' %}
+    {% if guide.sdk contains 'RhinoPython' and guide.categories contains 'Overview' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -138,7 +138,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Python Windows' %}
+    {% if guide.sdk contains 'RhinoPython' and guide.categories contains 'Python Windows' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -153,7 +153,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'GhPython' %}
+    {% if guide.sdk contains 'RhinoPython' and guide.categories contains 'GhPython' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -169,7 +169,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Fundamentals' %}
+    {% if guide.sdk contains 'RhinoPython' and guide.categories contains 'Fundamentals' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -184,7 +184,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Python in Rhino' %}
+    {% if guide.sdk contains 'RhinoPython' and guide.categories contains 'Python in Rhino' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -213,7 +213,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoPython' and guide.categories contains 'Intermediate' %}
+    {% if guide.sdk contains 'RhinoPython' and guide.categories contains 'Intermediate' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -250,7 +250,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'openNURBS' and guide.categories contains 'Overview' %}
+    {% if guide.sdk contains 'openNURBS' and guide.categories contains 'Overview' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -265,7 +265,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'openNURBS' and guide.categories contains 'Getting Started' %}
+    {% if guide.sdk contains 'openNURBS' and guide.categories contains 'Getting Started' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -280,7 +280,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'openNURBS' and guide.categories contains 'Fundamentals' %}
+    {% if guide.sdk contains 'openNURBS' and guide.categories contains 'Fundamentals' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -295,7 +295,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'openNURBS' and guide.categories contains 'Advanced' %}
+    {% if guide.sdk contains 'openNURBS' and guide.categories contains 'Advanced' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -317,7 +317,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'C/C++' and guide.categories contains 'Overview' %}
+    {% if guide.sdk contains 'C/C++' and guide.categories contains 'Overview' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -332,7 +332,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'C/C++' and guide.categories contains 'Getting Started' %}
+    {% if guide.sdk contains 'C/C++' and guide.categories contains 'Getting Started' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -347,7 +347,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'C/C++' and guide.categories contains 'Fundamentals' %}
+    {% if guide.sdk contains 'C/C++' and guide.categories contains 'Fundamentals' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -362,7 +362,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'C/C++' and guide.categories contains 'Advanced' %}
+    {% if guide.sdk contains 'C/C++' and guide.categories contains 'Advanced' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -377,7 +377,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'C/C++' and guide.categories contains 'RDK' %}
+    {% if guide.sdk contains 'C/C++' and guide.categories contains 'RDK' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -392,7 +392,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'C/C++' and guide.categories contains 'Zoo' %}
+    {% if guide.sdk contains 'C/C++' and guide.categories contains 'Zoo' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -407,7 +407,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'C/C++' and guide.categories contains 'Troubleshooting' %}
+    {% if guide.sdk contains 'C/C++' and guide.categories contains 'Troubleshooting' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -438,7 +438,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'Grasshopper' and guide.categories contains 'Fundamentals' %}
+    {% if guide.sdk contains 'Grasshopper' and guide.categories contains 'Fundamentals' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -453,7 +453,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'Grasshopper' and guide.categories contains 'Advanced' %}
+    {% if guide.sdk contains 'Grasshopper' and guide.categories contains 'Advanced' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -468,7 +468,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'Grasshopper' and guide.categories contains 'In Depth' %}
+    {% if guide.sdk contains 'Grasshopper' and guide.categories contains 'In Depth' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -498,7 +498,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoScript' and guide.categories contains 'Fundamentals' %}
+    {% if guide.sdk contains 'RhinoScript' and guide.categories contains 'Fundamentals' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -513,7 +513,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoScript' and guide.categories contains 'Intermediate' %}
+    {% if guide.sdk contains 'RhinoScript' and guide.categories contains 'Intermediate' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -528,7 +528,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoScript' and guide.categories contains 'Advanced' %}
+    {% if guide.sdk contains 'RhinoScript' and guide.categories contains 'Advanced' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
@@ -543,7 +543,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"title" %}
   <ul>
   {% for guide in guides %}
-    {% if guide.apis contains 'RhinoScript' and guide.categories contains 'Troubleshooting' %}
+    {% if guide.sdk contains 'RhinoScript' and guide.categories contains 'Troubleshooting' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}

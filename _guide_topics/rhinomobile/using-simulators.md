@@ -3,7 +3,7 @@ title: Using Simulators
 description: This guide covers the basics of using Emulators or Simulators to debug your mobile application.
 authors: ['Dan Belcher']
 author_contacts: ['dan']
-apis: ['RhinoMobile']
+sdk: ['RhinoMobile']
 languages: ['C#']
 platforms: ['iOS', 'Android']
 categories: ['Fundamentals']

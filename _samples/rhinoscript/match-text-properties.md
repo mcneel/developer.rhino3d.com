@@ -3,7 +3,7 @@ title: Match Text Properties
 description: Demonstrates how to match text object properties in RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Other']

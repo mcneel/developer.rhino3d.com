@@ -3,7 +3,7 @@ title: Linking with openNURBS
 description: This guide discusses openNURBS linking.
 authors: ['Dale Lear']
 author_contacts: ['dalelear']
-apis: ['openNURBS']
+sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
 categories: ['Getting Started']

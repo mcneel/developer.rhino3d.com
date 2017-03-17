@@ -3,7 +3,7 @@ title: Fillet Curve
 description: Demonstrates how to create a fillet between two curves.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Adding Objects']

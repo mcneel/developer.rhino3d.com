@@ -3,7 +3,7 @@ title: Move a Construction Plane
 description: Demonstrates how to move the origin of a construction plane.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Other']

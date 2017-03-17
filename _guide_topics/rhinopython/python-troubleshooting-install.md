@@ -3,7 +3,7 @@ title: Troubleshooting Python Install
 description:
 authors: ['Piac']
 author_contacts: ['piac']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Getting Started']

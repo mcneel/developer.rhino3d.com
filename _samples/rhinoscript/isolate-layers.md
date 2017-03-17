@@ -3,7 +3,7 @@ title: Isolate Layers
 description: Demonstrates how to isolate the layers of selected objects using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Layers']

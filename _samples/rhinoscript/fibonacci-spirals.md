@@ -3,7 +3,7 @@ title: Fibonacci Spirals
 description: Demonstrates how to create a Fibonacci Spiral with RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Adding Objects']

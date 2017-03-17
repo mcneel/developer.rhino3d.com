@@ -3,7 +3,7 @@ title: Rotate Object Around Point
 description: Demonstrates how to rotate an object around the centroid of its bounding box using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Other']

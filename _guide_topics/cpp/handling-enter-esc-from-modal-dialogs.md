@@ -3,7 +3,7 @@ title: Handling Enter and Escape from Modal Dialogs
 description: This guide discusses preventing modal dialogs from closing when the Enter or Escape key is pressed.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Advanced']

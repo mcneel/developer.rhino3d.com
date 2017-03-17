@@ -3,7 +3,7 @@ title: Adding User Strings to Objects
 description: This guide discusses attaching custom user data to any object using the Rhino C/C++ SDK.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Fundamentals']

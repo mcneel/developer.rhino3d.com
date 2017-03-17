@@ -3,7 +3,7 @@ title: Modify Grip Weight
 description: Demonstrates how to modify the weight of a grip object.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Other']
