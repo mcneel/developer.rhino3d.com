@@ -16,7 +16,7 @@ layout: toc-guide-page
 
 ## GitHub
 
-Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub](http://github.com/).  [RhinoCommon](https://github.com/mcneel/rhinocommon) - our cross-platform .NET API - is a great example. Even [this very website](https://github.com/mcneel/developer-rhino3d-com) you are reading now. Browse source, fork a repo, correct a typo: we welcome participation and pull-requests.
+Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub](http://github.com/).  [RhinoCommon](https://github.com/mcneel/rhinocommon) - our cross-platform .NET SDK - is a great example. Even [this very website](https://github.com/mcneel/developer-rhino3d-com) you are reading now. Browse source, fork a repo, correct a typo: we welcome participation and pull-requests.
 
 ## Discourse
 

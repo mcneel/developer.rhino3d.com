@@ -17,7 +17,7 @@ layout: fullwidth-page
           </a>
         </td>
         <td style="padding: 20px; text-align: center;">
-          <a href="{{ site.baseurl }}/guides/#rhinocommon" title="RhinoCommon: The cross-platform .NET API for Rhino and Grasshopper">
+          <a href="{{ site.baseurl }}/guides/#rhinocommon" title="RhinoCommon: The cross-platform .NET SDK for Rhino and Grasshopper">
             <img src="{{ site.baseurl }}/images/rhinocommon-logo-intro.png" class="index_use_images">
           </a>
         </td>
