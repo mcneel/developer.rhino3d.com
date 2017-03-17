@@ -3,7 +3,7 @@ title: Two View Layout
 description: Demonstrates how to create a two-view viewport layout.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Viewports and Views']

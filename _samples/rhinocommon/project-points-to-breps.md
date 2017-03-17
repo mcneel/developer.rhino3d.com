@@ -3,7 +3,7 @@ title: Project Points to Breps
 description: Demonstrates how to project points to Brep objects.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']

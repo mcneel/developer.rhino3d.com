@@ -3,7 +3,7 @@ title: Loading Plugins at Startup
 description: This guide discusses how to configure plugins to load at startup using C/C++.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Advanced']

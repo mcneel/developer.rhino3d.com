@@ -3,7 +3,7 @@ title: An Overview of the GhPython Editor
 description: This guide looks at the details of the GhPython Editor.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac', 'Grasshopper']
 categories: ['GhPython']

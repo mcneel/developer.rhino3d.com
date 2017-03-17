@@ -3,7 +3,7 @@ title: Object Iterator
 description: Demonstrates how to iterate (or enumerate) through Rhino's geometry table.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']

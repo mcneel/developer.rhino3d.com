@@ -3,7 +3,7 @@ title: Array Points on Surface
 description: Demonstrates how to array points on a surface using Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']

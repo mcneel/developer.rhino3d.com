@@ -3,7 +3,7 @@ title: Get Brep Face Vertices
 description: Demonstrates how to get the vertices of a Brep face.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Other']

@@ -3,7 +3,7 @@ title: VBScript Procedures
 description: This guide discusses VBScript procedures.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Fundamentals']

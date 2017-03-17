@@ -3,7 +3,7 @@ title: Auto Label Objects
 description: Demonstrates how to automatically label objects using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Adding Objects']

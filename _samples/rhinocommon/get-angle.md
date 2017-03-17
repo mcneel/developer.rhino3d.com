@@ -3,7 +3,7 @@ title: Get Angle
 description: Demonstrates how to interactively pick an angle given a base point and two reference points.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Picking and Selection']

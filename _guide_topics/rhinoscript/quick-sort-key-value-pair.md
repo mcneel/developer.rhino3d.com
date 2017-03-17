@@ -3,7 +3,7 @@ title: Quick Sort Key Value Pairs
 description: This guide demonstrates how to sort an array of key-value pairs in RhinoScript.
 authors: ['David Rutten']
 author_contacts: ['DavidRutten']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Miscellaneous', 'Advanced']

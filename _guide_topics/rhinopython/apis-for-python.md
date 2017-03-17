@@ -3,7 +3,7 @@ title: APIs Available to Python
 description: This guide covers the APIs available to Python in Rhino.
 authors: ['Alain Cormier']
 author_contacts: ['Alain']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Intermediate']

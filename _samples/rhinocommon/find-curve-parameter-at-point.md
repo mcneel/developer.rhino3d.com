@@ -3,7 +3,7 @@ title: Find Curve Parameter At Point
 description: Demonstrates how to find the curve parameter given a specific point on the curve.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Curves']

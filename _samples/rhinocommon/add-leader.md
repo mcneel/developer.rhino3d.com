@@ -3,7 +3,7 @@ title: Add Leader
 description: Demonstrates how to add a leaders to your Rhino model from an array of points.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']

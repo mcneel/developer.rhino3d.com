@@ -3,7 +3,7 @@ title: Extract Isocurve Intersection Points
 description: Demonstrates how to get the intersection points of a surface's isocurves using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Curves']

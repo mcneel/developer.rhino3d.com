@@ -3,7 +3,7 @@ title: Cancelling Scripts
 description: This guide demonstrates how to allow scripts to be cancelled by the user.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Miscellaneous', 'Advanced']

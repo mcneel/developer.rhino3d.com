@@ -3,7 +3,7 @@ title: Add Linear Dimension2
 description: Demonstrates how to add a linear dimension from two points given an offset point.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']

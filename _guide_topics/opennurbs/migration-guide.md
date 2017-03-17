@@ -3,7 +3,7 @@ title: openNURBS 5.0 Migration Guide
 description: This guide contains information to help you migrate your application to openNURBS 5.0.
 authors: ['Dale Lear']
 author_contacts: ['dalelear']
-apis: ['openNURBS']
+sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
 categories: ['Getting Started']

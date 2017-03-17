@@ -3,7 +3,7 @@ title: Maximize View
 description: Demonstrates how to maximize a view.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Viewports and Views']

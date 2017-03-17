@@ -3,7 +3,7 @@ title: Grasshopper data trees and Python
 description: This guide describes how to use data trees in Python.
 authors: ['Giulio Piacentino']
 author_contacts: ['Piac']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['Getting Started']

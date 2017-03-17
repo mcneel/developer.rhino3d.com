@@ -3,7 +3,7 @@ title: Tween Curve
 description: Demonstrates how to tween two curves.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Curves']

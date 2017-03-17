@@ -3,7 +3,7 @@ title: Add Truncated Cone
 description: Demonstrates how to construct a truncated cone (TCone) from two circles.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']

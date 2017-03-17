@@ -3,7 +3,7 @@ title: Boolean Difference
 description: Demonstrates how to perform a boolean difference operation on two selected polysurfaces.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']

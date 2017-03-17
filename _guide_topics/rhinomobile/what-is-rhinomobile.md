@@ -3,7 +3,7 @@ title: What is RhinoMobile?
 description: This guide gives and overview of RhinoMobile.
 authors: ['Dan Belcher']
 author_contacts: ['dan']
-apis: ['RhinoMobile']
+sdk: ['RhinoMobile']
 languages: ['C#']
 platforms: ['iOS', 'Android']
 categories: ['Overview']

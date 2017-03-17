@@ -3,7 +3,7 @@ title: Calculate the Angle Between Two Vectors
 description: Demonstrates how to calculate the angle between two vectors.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Other']

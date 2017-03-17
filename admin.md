@@ -54,7 +54,7 @@ The following guides and samples have [TODO items listed in their yaml]({{ site.
     {% if sample.TODO %}
       {% assign samples_have_todo_items = true %}
       <li>
-        ({{ sample.apis }}) <a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a>  {{ sample.TODO }} {% if sample.origin != 'unset'  and sample.TODO == 'needs porting' %} from: <a href="{{ sample.origin }}">{{ sample.origin }}</a>{% endif %}
+        ({{ sample.sdk }}) <a class="page-link" href="{{ sample.url | prepend: site.baseurl }}">{{ sample.title }}</a>  {{ sample.TODO }} {% if sample.origin != 'unset'  and sample.TODO == 'needs porting' %} from: <a href="{{ sample.origin }}">{{ sample.origin }}</a>{% endif %}
     </li>
     {% endif %}
   {% endfor %}

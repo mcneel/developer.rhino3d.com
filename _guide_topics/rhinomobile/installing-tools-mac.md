@@ -3,7 +3,7 @@ title: Installing Tools (Mac)
 description: This guide covers all the necessary tools required for RhinoMobile on Mac.
 authors: ['Dan Belcher']
 author_contacts: ['dan']
-apis: ['RhinoMobile']
+sdk: ['RhinoMobile']
 languages: ['C#']
 platforms: ['iOS', 'Android']
 categories: ['Getting Started']

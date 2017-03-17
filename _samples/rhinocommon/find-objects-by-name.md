@@ -3,7 +3,7 @@ title: Find Objects by Name
 description: Demonstrates how to find objects by their name or label.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']

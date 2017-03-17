@@ -3,7 +3,7 @@ title: Join the Dots
 description: Demonstrates joining points into polylines in RhinoScript.
 authors: ['Steven Janssen']
 author_contacts: ['Steven']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Other']

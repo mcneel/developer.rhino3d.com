@@ -3,7 +3,7 @@ title: List of Points in Python
 description: This guide provides an overview of a rhinoscriptsyntax list of Point Geometry in Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['Python in Rhino']

@@ -3,7 +3,7 @@ title: GhPython Common Questions and Answers
 description: Here are the most common questions and answers about GhPython.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac', 'Grasshopper']
 categories: ['GhPython']

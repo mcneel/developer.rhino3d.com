@@ -3,7 +3,7 @@ title: Running a Python script in Rhino
 description: This guide demonstrates how to run a Python script in Rhino.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Python Windows']

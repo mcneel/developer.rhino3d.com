@@ -3,7 +3,7 @@ title: Add Text
 description: Demonstrates how to use ON_TextEntity2 to add text to Rhino.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Adding Objects', 'Text']

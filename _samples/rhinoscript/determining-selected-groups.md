@@ -3,7 +3,7 @@ title: Determining Selected Groups
 description: Demonstrates how to determine what object groups are selected using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Picking and Selection']

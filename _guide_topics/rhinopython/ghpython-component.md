@@ -3,7 +3,7 @@ title: An Overview of the GhPython Component
 description: The GhPython component is the key to working with Python in Grasshopper.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac', 'Grasshopper']
 categories: ['GhPython']

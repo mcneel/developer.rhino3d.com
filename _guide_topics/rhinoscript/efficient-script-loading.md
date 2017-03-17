@@ -3,7 +3,7 @@ title: Efficient Script Loading
 description: This guide discusses different techniques of loading and running script and their efficiencies.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Miscellaneous', 'Advanced']

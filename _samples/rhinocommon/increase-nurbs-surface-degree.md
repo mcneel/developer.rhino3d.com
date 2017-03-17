@@ -3,7 +3,7 @@ title: Increase NURBS Surface Degree
 description: Demonstrates how to increase the degree of a NURBS surface.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']

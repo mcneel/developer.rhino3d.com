@@ -3,7 +3,7 @@ title: Digitally Signing Zoo Plugins
 description: This guide discusses how to digitally sign Zoo and Rhino plugins.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoCommon', 'C/C++']
+sdk: ['RhinoCommon', 'C/C++']
 languages: ['BAT']
 platforms: ['Windows']
 categories: ['Zoo']

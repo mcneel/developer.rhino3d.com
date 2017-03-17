@@ -3,7 +3,7 @@ title: RhinoScriptSyntax in Python
 description: This guide provides an overview of the RhinoScriptSyntax in Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['Python in Rhino']

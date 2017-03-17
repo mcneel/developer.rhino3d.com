@@ -3,7 +3,7 @@ title: Pick Points
 description: Demonstrates how to pick and select point objects.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Picking and Selection']

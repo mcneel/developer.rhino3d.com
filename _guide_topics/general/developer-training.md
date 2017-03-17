@@ -3,7 +3,7 @@ title: Developer Training
 description: This guide describes our Rhino Developer Training.
 authors: ['Dan Belcher']
 author_contacts: ['dan']
-apis: ['General']
+sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
 categories: ['General']

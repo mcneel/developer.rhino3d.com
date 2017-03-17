@@ -3,7 +3,7 @@ title: Extend Surface
 description: Demonstrates how to extend a user-specified edge of a surface.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']

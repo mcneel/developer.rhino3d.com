@@ -3,7 +3,7 @@ title: Lock Layer
 description: Demonstrates how to lock a user-specified layer.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Blocks', 'Layers']

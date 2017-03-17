@@ -3,7 +3,7 @@ title: Developing Software In Public
 description: 'An overview of the McNeel Development Process.'
 authors: ['Brian Gillespie']
 author_contacts: ['brian']
-apis: ['General']
+sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
 categories: ['General']

@@ -3,7 +3,7 @@ title: Box Shell
 description: Demonstrates how to give thickness to (or shell) a Brep box.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']

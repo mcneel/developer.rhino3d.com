@@ -3,7 +3,7 @@ title: Add Background Bitmap
 description: Demonstrates how to add a background bitmap to a Rhino model at a user-specified location.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']

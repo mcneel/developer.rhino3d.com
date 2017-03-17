@@ -3,7 +3,7 @@ title: Instance Archive File Status
 description: Demonstrates how to find the status of a file that contains an instance (block) definition.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Other']

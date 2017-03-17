@@ -1,9 +1,9 @@
 ---
 title: Vectors in Python
 description: This guide provides an overview of a RhinoScriptSytntax Vector Geometry in Python.
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
-apis: ['RhinoPython']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['Python in Rhino']
@@ -58,6 +58,8 @@ To change an individual coordinate of a Vector3d simply assign a new value to th
 ```python
 import rhinoscriptsyntax as rs
 
+point1 = [1,2,3]
+point2 = [4,6,7]
 vec = rs.CreateVector(1.0, 2.0, 3.0)
 
 vec[0] = 5.0 # Sets the X coordinate to 5.0

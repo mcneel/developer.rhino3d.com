@@ -3,7 +3,7 @@ title: Finding Duplicate Strings
 description: This guide demonstrates finding duplicate string using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Miscellaneous', 'Intermediate']

@@ -3,7 +3,7 @@ title: Crash Dump Analysis
 description: This guide discusses how to analyze crash dump files in Visual Studio.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Advanced']

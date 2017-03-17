@@ -3,7 +3,7 @@ title: Hot & Cold Colors
 description: This guide demonstrates how calculate colors for analysis using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Miscellaneous', 'Advanced']

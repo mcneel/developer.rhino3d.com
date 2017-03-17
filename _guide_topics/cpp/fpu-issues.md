@@ -3,7 +3,7 @@ title: FPU Issues
 description: This guide discusses math errors and floating point unit issues.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Troubleshooting']

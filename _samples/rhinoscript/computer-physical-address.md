@@ -3,7 +3,7 @@ title: Computer Physical Address
 description: Illustrates RhinoScript code that determines the physical, or MAC, address of a computer.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Other']

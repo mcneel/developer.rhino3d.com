@@ -3,7 +3,7 @@ title: Rhino NURBS Geometry Overview
 description: This guide provides an basic introduction to Rhino's NURBS Geometry.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['Python in Rhino']

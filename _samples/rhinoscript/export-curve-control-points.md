@@ -3,7 +3,7 @@ title: Export Curve Control Points
 description: Demonstrates how to export the 3D coordinates of a curve's control points to a text file using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Curves']

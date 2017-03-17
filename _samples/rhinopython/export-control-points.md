@@ -3,7 +3,7 @@ title: Export Control Points
 description: Demonstrates how to export control points with Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']

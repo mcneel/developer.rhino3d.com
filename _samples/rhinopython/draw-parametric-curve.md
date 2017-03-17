@@ -3,7 +3,7 @@ title: Draw a Parametric Curve
 description: Demonstrates how to draw a parametric curve Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']

@@ -3,7 +3,7 @@ title: Generating Random Numbers
 description: This guide demonstrates how to generate random numbers that fall within a specified range using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Miscellaneous', 'Intermediate']

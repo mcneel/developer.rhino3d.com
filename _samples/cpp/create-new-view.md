@@ -3,7 +3,7 @@ title: Create New View
 description: Demonstrates how to create a new view that has the properties of an existing view.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Adding Objects', 'Viewports and Views']

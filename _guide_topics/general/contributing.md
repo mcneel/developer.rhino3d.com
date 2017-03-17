@@ -3,7 +3,7 @@ title: Contributing
 description: 'Hey, make yourself useful!'
 authors: ['Dan Belcher']
 author_contacts: ['dan']
-apis: ['General']
+sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
 categories: ['General']

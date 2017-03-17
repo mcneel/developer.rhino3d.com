@@ -1,9 +1,9 @@
 ---
 title: Points in Python
-description: This guide provides an overview of the RhinoScriptSytntax point geometry in Python.
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
-apis: ['RhinoPython']
+description: This guide provides an overview of the RhinoScriptSytntax Point Geometry in Python.
+authors: ['Dale Fugier']
+author_contacts: ['dale']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['Python in Rhino']
@@ -31,14 +31,19 @@ import rhinoscriptsyntax as rs
 pnt = rs.CreatePoint(1.0, 2.0, 3.0)
 pnt = rs.CreatePoint(1.0, 2.0) # This creates a point with the Z coordinate set to 0
 ```
+A point list can also be constructed one element at a time:
 
 The 'CreatePoint()' function is very flexible.  It can take a list or tuple of two or 3 numbers and return a Point3d.  The function can also extract the coordinates of a Rhino GUID to return a Point3D.
 
 It is not always necessary to construct a point before passing it to a function that requires a point. It is possible to construct points directly as an argument to a function.  A Point is a list like structure. Wrap coordinates in brackets`[]` when passing them directly to a function. For instance the `rs.addline(point, point)` function requires two points.  Use the following syntax to construct the points on the fly:
 
 ```python
+point2 = []
+point2.append(1.0)
+point2.append(2.0)
 rs.AddLine([45,56,32],[56,47,89])
 ```
+Like 3-D points, Python represents a single 2-D point as a zero-based list of numbers.  The difference being that 2-D points contain only X and Y coordinate values.
 
 Passing coordinates in `[]`  to a function is very common with RhinoScriptSyntax.
 

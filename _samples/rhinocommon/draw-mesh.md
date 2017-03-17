@@ -3,7 +3,7 @@ title: Draw Mesh
 description: Demonstrates how to create a mesh from an existing surface and draw it in a display conduit.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Draw']

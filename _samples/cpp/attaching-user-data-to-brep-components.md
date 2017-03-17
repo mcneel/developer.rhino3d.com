@@ -3,7 +3,7 @@ title: Attaching User Data to Brep Components
 description: Demonstrates how to attach object user data to components of a Brep.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Other']

@@ -3,7 +3,7 @@ title: Sticky Values
 description:  This module contains a standard python dictionary called sticky which sticks around.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoPython']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Adding Objects']

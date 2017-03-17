@@ -3,7 +3,7 @@ title: Calculate the Angle Between Two Vectors
 description: Demonstrates how to calculate the angle between two vectors using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Other']

@@ -1,9 +1,9 @@
 ---
 title: Planes in Python
 description: This guide provides an overview of a RhinoScriptSytntax Plane Geometry in Python.
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
-apis: ['RhinoPython']
+authors: ['Dale Fugier']
+author_contacts: ['dale']
+sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['Python in Rhino']
@@ -32,6 +32,7 @@ corners = rs.GetRectangle()
 
 if corners:
     plane = rs.PlaneFromPoints(corners[0], corners[1], corners[3])
+plane1.append([0.0, 1.0, 0.0]) # y-axis vector
 
 print plane[2]
 ```

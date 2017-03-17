@@ -3,7 +3,7 @@ title: Save Video Card Info
 description: Demonstrates how to save information about your system's video card to a text file using RhinoScript.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Other']

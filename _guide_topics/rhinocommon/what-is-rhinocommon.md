@@ -3,7 +3,7 @@ title: What is RhinoCommon?
 description: This guide gives an overview of RhinoCommon.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Overview']

@@ -3,7 +3,7 @@ title: Your First Renderer Plugin (Windows)
 description: This guide has yet to be authored or ported.
 authors: ['Andrew le Bihan', '@andy']
 author_contacts: ['']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['RDK']

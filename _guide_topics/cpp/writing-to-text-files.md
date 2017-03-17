@@ -3,7 +3,7 @@ title: Writing to Text Files
 description: This brief guide discuss writing text files using C/C++.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Fundamentals']
