@@ -272,4 +272,5 @@ This is a work in progress...
 - [Python Basic Syntax]({{ site.baseurl }}/guides/rhinopython/)
 - [Rhinoscript]({{ site.baseurl }}/guides/rhinoscript/)
 - [Macro Syntax Help Topic](http://docs.mcneel.com/rhino/5/help/en-us/information/rhinoscripting.htm)
+- [Rhinoscript]({{ site.baseurl }}/guides/rhinoscript/running-scripts-from-macros/)
 
