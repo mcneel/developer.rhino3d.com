@@ -21,7 +21,7 @@ The two things are actually very different. Writing functions in RhinoScript or 
 
 I use the term “Macro” here exclusively to describe the putting together of strings of ordinary Rhino commands and their options to create an automated function.  This is scripting on its simplest of levels, and is easily accessible to any ordinary Rhino user, even if they have no knowledge of programming.  All You need is a reasonable understanding of Rhino commands and their structure, as well as a logical mind and a taste for a little experimentation and debugging.
 
-####The tools you need
+#### The tools you need
 1. Your brain.
 
 2. The Rhino Help file -  lists all Rhino commands and their sub-options. This is your most important reference.
@@ -29,7 +29,7 @@ I use the term “Macro” here exclusively to describe the putting together of 
 3. The Rhino **MacroEditor**, to easily run and debug your macros.
 
 
-##You've already used a macro or two...
+## You've already used a macro or two...
 First, if you are a user of Rhino, you are already a macro user even though you may not know it.  Many of the commands in Rhino are already “macroed” for you. When you click a toolbar button or call a command from the menu, it is often a preset macro.  To see, Shift+right-click on the button **Extrude Straight**:
 
 {{:legacy:en:ExtrudeCrvButtonEditor.gif}}
@@ -42,7 +42,7 @@ This scripting of options for a single command can also be combined with data en
 
 **Note:** Why the _Underscores ?  These tell Rhino that the command which follows is in English (no matter what the language you are running Rhino in), which will make your macro universal.  If you are running in English and don’t care, you can eliminate the underscores in your macros if you wish. It will not affect anything else.  Also, why the exclamation point (!)?  This cancels any previous command that might be running, for safety's sake.
 
-##Getting started
+## Getting started
 
 Say you have to place a series of 10x10x10 boxes with the center of the bottom face landing at the desired point, with that point to be specified by either by a mouse click at the desired location or by entering the coordinates by the keyboard.
 
@@ -85,11 +85,11 @@ Since there is no further input necessary nor options possible, the macro comple
 
 Now that the macro is running, [[rhino:macroscriptsetup|make a new toolbar button]] and paste the macro in. Give it a recognizable name, like “10x10x10 bottom centered box”.  Note, once the macro is executed, right-clicking repeats the whole sequence of this macro, so you can use it many times in a row without clicking the button every time.
 
-##OK, let’s get a bit more complicated…
+## OK, let’s get a bit more complicated…
 
 Some commands invoke dialog boxes with many options.  Normally, this stops your macro and waits for you to click the desired options, then continue.  Since you want to automate, you can bypass the dialog by putting a –hyphen (also known as a dash) before the command.  Then you can script in all your options and the macro will run to completion without needing your intervention.  Some commands have several levels of sub-options.  If you want to see what’s available, type the command at the command line with the hyphen and look at what’s proposed for options.  Click on the options and see if they have sub-options.
 
-####Loft two open curves
+#### Loft two open curves
 
 Let’s say you would like to repetitively `Loft` two *OPEN* curves together to form a surface.  If you use the standard `Loft` command, you always have to go through the dialog.  If you use the `–Loft` version, you can avoid this and things go much faster.  Look at the following:
 
@@ -150,7 +150,7 @@ _Enter
 Unfortunately, the same macro will not work correctly for both open and closed curves because of the extra seam option required.  This is one of the limitations of the macro system and the way some Rhino commands have been written.
 
 
-##Using macros to set your interface options quickly
+## Using macros to set your interface options quickly
 
 Macros can also be used to set various GUI and Document Properties options automatically without having to go wading into the Options dialog.  I use the following to set the render mesh the way I want it. (Note the dash before -_DocumentProperties.)
 
@@ -200,7 +200,7 @@ Note the use of the`!` here. Also, note you can assign directly the values optio
 
 (Thanks, Jeff)
 
-##Other useful macro writing tools and commands
+## Other useful macro writing tools and commands
 
 There are some handy tricks for doing more complex macros.  One is the discriminating use of various selection filters, particularly `SelLast`, which selects the last object created/transformed, `SelPrev`,  which selects the previous input object, and `SelNone`, which deselects everything.  There are also possibilities to name objects, group them (and name the group) and then recall them later by that object name or group name.
 
@@ -231,7 +231,7 @@ To cancel a single object name (without deleting the object)
   “ “ _Enter _Enter (quote space quote for the name)
 ```
 
-##Examples using the above tools
+## Examples using the above tools
 
 Look at the following macro:
 
