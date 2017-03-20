@@ -33,7 +33,7 @@ The following guides and samples have [TODO items listed in their yaml]({{ site.
     {% if topic.TODO %}
       {% assign guides_have_todo_items = true %}
       <li>
-        ({{ topic.apis }}) <a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a> {{ topic.TODO }} {% if topic.origin != 'unset' and topic.TODO == 'needs porting' %} from: <a href="{{ topic.origin }}">{{ topic.origin }}</a>{% endif %}
+        ({{ topic.sdk }}) <a class="page-link" href="{{ topic.url | prepend: site.baseurl }}">{{ topic.title }}</a> {{ topic.TODO }} {% if topic.origin != 'unset' and topic.TODO == 'needs porting' %} from: <a href="{{ topic.origin }}">{{ topic.origin }}</a>{% endif %}
       </li>
     {% endif %}
   {% endfor %}
