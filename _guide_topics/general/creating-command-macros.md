@@ -51,7 +51,7 @@ You could use the standard Box (**Corner to Corner + Height**) command, but by d
 Open the **MacroEditor** and  type this in:
 
 ```
-! _Box _Center
+ ! _Box _Center
 ```
 
 (This is actually the macro under the Box, Center button if you check.) 
@@ -60,13 +60,13 @@ All entries (command words and numerical inputs) need to be separated by a singl
 Now, we need to specify the center point.  To do this, you need to tell Rhino to stop processing the command temporarily and wait for an input in the form of a click or a keyboard entry.  Do this by inserting the command Pause.
 
 ```
-! _Box _Center _Pause
+ ! _Box _Center _Pause
 ```
 
 Once the data has been entered, you can specify the box size directly in the command.  Since the Center option in Box wants a corner of the box as a second input, you can specify its X,Y coordinates:
 
 ```
-! _Box _Center _Pause r5,5
+ ! _Box _Center _Pause r5,5
 ```
 
 (Why the `r`?  We want this coordinate to be relative to the last picked point, that is to say, the box bottom center.  Otherwise the corner will always land at X5, Y5.)
@@ -74,13 +74,13 @@ Once the data has been entered, you can specify the box size directly in the com
 At this point you can put in the height, which in this case is relative to the original starting point.
 
 ```
-! _Box _Center _Pause r5,5 10
+ ! _Box _Center _Pause r5,5 10
 ```
 
 Since there is no further input necessary nor options possible, the macro completes and our box is there.  Note that since we wanted a height equal to the width, another possibility  would just to have been to use Enter instead of 10 for the last entry.
 
 ```
-! _Box _Center _Pause r5,5 _Enter
+ ! _Box _Center _Pause r5,5 _Enter
 ```
 
 Now that the macro is running, [[rhino:macroscriptsetup|make a new toolbar button]] and paste the macro in. Give it a recognizable name, like “10x10x10 bottom centered box”.  Note, once the macro is executed, right-clicking repeats the whole sequence of this macro, so you can use it many times in a row without clicking the button every time.
