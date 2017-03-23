@@ -9,7 +9,7 @@ title: rhinoscriptsyntax
       <ul id="sidebar" class="nav nav-stacked fixed">
         <li class="active">modules
           <ul class="nav nav-stacked">
-            {% for module in site.data.rhinoscriptsyntax-structured-docstring-rwip %}
+            {% for module in site.data.rhinoscriptsyntax-structured-docstring %}
               <li><a href="#{{ module.ModuleName }}">{{ module.ModuleName }}</a></li>
             {% endfor %}
           </ul>
@@ -20,7 +20,7 @@ title: rhinoscriptsyntax
     <!-- main content -->
     <div class="col-xs-12 col-md-10">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        {% for module in site.data.rhinoscriptsyntax-structured-docstring-rwip %}
+        {% for module in site.data.rhinoscriptsyntax-structured-docstring %}
               {% assign mainloopfirst = forloop.first %}
               <div class="panel panel-simple">
                 <p class="p-ModuleName" id = "{{ module.ModuleName }}">{{ module.ModuleName }}</p>
@@ -41,10 +41,12 @@ title: rhinoscriptsyntax
 
                     <pre class="functionDescription">{{ moduleFunction.Description }}</pre>
 
+                    {% if moduleFunction.HasArguments %}
                     <h5>Parameters:</h5>
                     <div>
                       <pre class="functionDescription">{{ moduleFunction.ArgumentDesc }}</pre>
                     </div>
+                    {% endif %}
 
                     <h5>Returns:</h5>
                     <div>

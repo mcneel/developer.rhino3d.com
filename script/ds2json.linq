@@ -29,18 +29,25 @@ void Main()
   var p4 = @"Example:(?<example>.*)";
   var p5 = @"See Also:(?<links>.*)";
   Func<string, string, string, string, bool, DocStringStruct> parseDocString = (moduleName, name, signature, docString, isWellFormed) => {
+    var prms = p2;
+    var hasArguments = true;
+    if (!Regex.Match(docString, q + p1 + prms + q, RegexOptions.Singleline).Success) {
+	  prms = "";
+	  hasArguments = false;
+	}
     var success_level = 6;
-    var m = Regex.Match(docString, q + p1 + p2 + p3 + p4 + p5 + q, RegexOptions.Singleline);
-    if (!m.Success) {m = Regex.Match(docString, q + p1 + p2 + p3 + p4 + q, RegexOptions.Singleline); success_level = 5;}
-    if (!m.Success) {m = Regex.Match(docString, q + p1 + p2 + p3 + p5 + q, RegexOptions.Singleline); success_level = 4;}
-    if (!m.Success) {m = Regex.Match(docString, q + p1 + p2 + p3 + q, RegexOptions.Singleline); success_level = 3;}
-    if (!m.Success) {m = Regex.Match(docString, q + p1 + p2 + q, RegexOptions.Singleline); success_level = 2;}
+    var m = Regex.Match(docString, q + p1 + prms + p3 + p4 + p5 + q, RegexOptions.Singleline);
+    if (!m.Success) {m = Regex.Match(docString, q + p1 + prms + p3 + p4 + q, RegexOptions.Singleline); success_level = 5;}
+    if (!m.Success) {m = Regex.Match(docString, q + p1 + prms + p3 + p5 + q, RegexOptions.Singleline); success_level = 4;}
+    if (!m.Success) {m = Regex.Match(docString, q + p1 + prms + p3 + q, RegexOptions.Singleline); success_level = 3;}
+    if (!m.Success) {m = Regex.Match(docString, q + p1 + prms + q, RegexOptions.Singleline); success_level = 2;}
     if (!m.Success) {m = Regex.Match(docString, q + p1 + q, RegexOptions.Singleline); success_level = 1;}
     var ds = new DocStringStruct() {ModuleName = moduleName, Name = name, Signature = signature, DocString = docString};
     if (m.Success) {
       ds.Arguments = Enumerable.Empty<string>();
       ds.Description = indentLeft(m.Groups["desc"].Value);
-      ds.ArgumentDesc = indentLeft(m.Groups["argsDesc"].Value);
+	  ds.HasArguments = hasArguments;
+      ds.ArgumentDesc = hasArguments ? indentLeft(m.Groups["argsDesc"].Value) : "";
       ds.Returns = indentLeft(m.Groups["return"].Value);
       ds.Example = indentLeft(m.Groups["example"].Value).Split(new [] {Environment.NewLine}, StringSplitOptions.None).SkipWhile (a => string.IsNullOrWhiteSpace(a));
       ds.ExampleString = indentLeft(m.Groups["example"].Value);
@@ -79,8 +86,8 @@ void Main()
                   g.SkipUntil(ln => !ln.Contains("\"\"\"")).TakeUntil(ln => ln.Trim().Equals("\"\"\"")).Aggregate ((c,n) => c + Environment.NewLine + n),
                   g.Where (x => x.Contains("\"\"\"")).Count() == 2 && g.Any(ln => ln.Trim().Equals("Parameters:")) && g.Any(ln => ln.Trim().Equals("Returns:"))
                  )
-    );
-    
+    );    
+	
   var json = Newtonsoft.Json.JsonConvert.SerializeObject(
     new_funcs
       .GroupBy (ds => ds.ModuleName, ds => ds)
@@ -89,6 +96,7 @@ void Main()
   );
   
   File.WriteAllText(Path.Combine(data, filename), json);
+  
 }
 
 // Define other methods and classes here
@@ -98,6 +106,7 @@ struct DocStringStruct {
   public IEnumerable<string> Arguments;
   public string Signature;
   public string Description;
+  public bool HasArguments;
   public string ArgumentDesc;
   public string Returns;
   public IEnumerable<string> Example;
