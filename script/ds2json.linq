@@ -86,17 +86,22 @@ void Main()
                   g.SkipUntil(ln => !ln.Contains("\"\"\"")).TakeUntil(ln => ln.Trim().Equals("\"\"\"")).Aggregate ((c,n) => c + Environment.NewLine + n),
                   g.Where (x => x.Contains("\"\"\"")).Count() == 2 && g.Any(ln => ln.Trim().Equals("Parameters:")) && g.Any(ln => ln.Trim().Equals("Returns:"))
                  )
-    );    
+    );
 	
-  var json = Newtonsoft.Json.JsonConvert.SerializeObject(
-    new_funcs
+	List<ModuleFunctions> mf = new_funcs
       .GroupBy (ds => ds.ModuleName, ds => ds)
       .OrderBy (g => g.Key)
-      .Select (x => new {ModuleName = x.Key, functions = x.Select (z => z)})
-  );
-  
+      .Select (x => new ModuleFunctions {ModuleName = x.Key, functions = x.Select (z => z).ToList()})
+	  .ToList();
+	  
+  var json = Newtonsoft.Json.JsonConvert.SerializeObject(mf, Newtonsoft.Json.Formatting.Indented);
   File.WriteAllText(Path.Combine(data, filename), json);
   
+}
+
+struct ModuleFunctions {
+  public string ModuleName;
+  public List<DocStringStruct> functions;
 }
 
 // Define other methods and classes here
