@@ -31,24 +31,26 @@ title: rhinoscriptsyntax
               </div>
             {% for moduleFunction in module.functions %}
               <div class="panel panel-simple panel-moduleFunction">
-                <div class="panel-heading" role="tab" id="heading-{{ moduleFunction.Name }}">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" onclick="window.location.hash = $(this).attr('href');" href="#{{ module.ModuleName }}-{{ moduleFunction.Name }}" aria-expanded="true" aria-controls="collapse-{{ moduleFunction.Name }}">
+                <div class="panel-heading" role="tab" id="{{module.ModuleName}}-{{ moduleFunction.Name }}">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" onclick="window.location.hash = '#{{module.ModuleName}}-{{moduleFunction.Name}}';" href="#collapse-{{ moduleFunction.Name }}" aria-expanded="true" aria-controls="{{ module.ModuleName }}-{{ moduleFunction.Name }}">
                     {{ moduleFunction.Name }}
                   </a>
                   <span class="label label-warning {% if site.rss_show_bad_docstring == true and moduleFunction.IsDocStringWellFormed == false %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">!</span>
                   <span class="label label-default {% if site.rss_show_missing_examples_links == true and moduleFunction.ExampleString == '' %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">ex</span>
                   <span class="label label-default {% if site.rss_show_missing_examples_links == true and moduleFunction.SeeAlso.size == 0 %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">lnk</span>
                 </div>
-                <div id="{{ module.ModuleName }}-{{ moduleFunction.Name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ moduleFunction.Name }}">
+                <div id="collapse-{{ moduleFunction.Name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{module.ModuleName}}-{{ moduleFunction.Name }}">
                   <div class="panel-body docstring-panel">
                     <pre><code class="python">{{ moduleFunction.Signature }}</code></pre>
 
                     <pre class="functionDescription">{{ moduleFunction.Description }}</pre>
 
+                    {% if moduleFunction.HasArguments %}
                     <h5>Parameters:</h5>
                     <div>
                       <pre class="functionDescription">{{ moduleFunction.ArgumentDesc }}</pre>
                     </div>
+                    {% endif %}
 
                     <h5>Returns:</h5>
                     <div>
@@ -65,8 +67,8 @@ title: rhinoscriptsyntax
                     <div class="seealso docstring-field {% if moduleFunction.SeeAlso.size > 0 %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">
                       <h5>See Also:</h5>
                       <ul>
-                        {% for lnk in moduleFunction.SeeAlso %}
-                          <li><a href="#heading-{{ lnk }}">{{ lnk }}</a></li>
+                        {% for sa in moduleFunction.SeeAlso %}
+                          <li><a role="button" onclick="$('.collapse').removeClass('in'); $('#collapse-{{ sa.FunctionName }}' + '.collapse').collapse('show'); location.hash = '#{{ sa.ModuleName }}-{{ sa.FunctionName }}';">{{ sa.FunctionName }}</a></li>
                         {% endfor %}
                       </ul>
                     </div>
