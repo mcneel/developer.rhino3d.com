@@ -39,7 +39,7 @@
         offset: 150 /* fixed header is about 40px high */
     });
     </script>
-    <!-- 
+    <!--
     Next block expands Bootstrap Collapse component when linked to it.  Used in rhinoscriptsyntax api docs
     ex: http://developer.rhino3d.com/api/RhinoScriptSyntax/win/#collapse-PointCompare
     -->
@@ -47,7 +47,7 @@
     $(document).ready(function () {
         if(document.title == 'rhinoscriptsyntax' && location.hash != null && location.hash != ""){
             $('.collapse').removeClass('in');
-            $(location.hash + '.collapse').collapse('show');
+            $('#collapse-' + location.hash.split("-")[1] + '.collapse').collapse('show');
         }
     });
     </script>
