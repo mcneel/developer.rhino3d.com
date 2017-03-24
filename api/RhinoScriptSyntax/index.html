@@ -63,8 +63,8 @@ title: rhinoscriptsyntax
                     <div class="seealso docstring-field {% if moduleFunction.SeeAlso.size > 0 %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">
                       <h5>See Also:</h5>
                       <ul>
-                        {% for lnk in moduleFunction.SeeAlso %}
-                          <li><a href="#heading-{{ lnk }}">{{ lnk }}</a></li>
+                        {% for sa in moduleFunction.SeeAlso %}
+                          <li><a role="button" onclick="$('.collapse').removeClass('in'); $('#{{ sa.ModuleName }}-{{ sa.FunctionName }}' + '.collapse').collapse('show'); location.hash = '#heading-{{ sa.FunctionName }}';">{{ sa.FunctionName }}</a></li>
                         {% endfor %}
                       </ul>
                     </div>

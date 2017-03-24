@@ -51,7 +51,11 @@ void Main()
       ds.Returns = indentLeft(m.Groups["return"].Value);
       ds.Example = indentLeft(m.Groups["example"].Value).Split(new [] {Environment.NewLine}, StringSplitOptions.None).SkipWhile (a => string.IsNullOrWhiteSpace(a));
       ds.ExampleString = indentLeft(m.Groups["example"].Value);
-      ds.SeeAlso = m.Groups["links"].Value.Split(new [] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries).Select (a => a.Trim()).Where(a => !string.IsNullOrWhiteSpace(a));
+      ds.SeeAlso = m.Groups["links"].Value
+	    .Split(new [] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries)
+		.Select (a => a.Trim())
+		.Where(a => !string.IsNullOrWhiteSpace(a))
+		.Select(a => new SeeAlso{ModuleName="", FunctionName=a});
       ds.SuccessLevel = success_level;
       ds.IsDocStringWellFormed = success_level >= 3;
     }
@@ -88,20 +92,50 @@ void Main()
                  )
     );
 	
-	List<ModuleFunctions> mf = new_funcs
+    // map SeeAlso function to it's module name
+	var modFuncDict = new_funcs.ToDictionary (dss => dss.Name, dss => dss.ModuleName);
+	new_funcs = new_funcs
+	  .Select (dss => new DocStringStruct {
+	    ModuleName = dss.ModuleName,
+		Name = dss.Name,
+		Arguments = dss.Arguments,
+		Signature = dss.Signature,
+		Description = dss.Description,
+		HasArguments = dss.HasArguments,
+		ArgumentDesc = dss.ArgumentDesc,
+		Returns = dss.Returns,
+		Example = dss.Example,
+		ExampleString = dss.ExampleString,
+		SeeAlso = dss.SeeAlso.Select(seeAlso => 
+		  new SeeAlso{
+		    ModuleName = modFuncDict.SingleOrDefault (kvp => kvp.Key == seeAlso.FunctionName).Value, 
+			FunctionName = seeAlso.FunctionName}
+		),
+		DocString = dss.DocString,
+		SuccessLevel = dss.SuccessLevel,
+		IsDocStringWellFormed = dss.SeeAlso.All (sa => modFuncDict.ContainsKey(sa.FunctionName))
+		  ? dss.IsDocStringWellFormed
+		  : false
+		}
+	  );
+		
+	IEnumerable<ModuleFunctions> mfs = new_funcs
       .GroupBy (ds => ds.ModuleName, ds => ds)
       .OrderBy (g => g.Key)
-      .Select (x => new ModuleFunctions {ModuleName = x.Key, functions = x.Select (z => z).ToList()})
-	  .ToList();
-	  
-  var json = Newtonsoft.Json.JsonConvert.SerializeObject(mf, Newtonsoft.Json.Formatting.Indented);
+      .Select (x => new ModuleFunctions {ModuleName = x.Key, functions = x.Select (z => z)});
+	 
+  var json = Newtonsoft.Json.JsonConvert.SerializeObject(mfs, Newtonsoft.Json.Formatting.Indented);
   File.WriteAllText(Path.Combine(data, filename), json);
-  
+}
+
+struct SeeAlso {
+  public string ModuleName;
+  public string FunctionName;
 }
 
 struct ModuleFunctions {
   public string ModuleName;
-  public List<DocStringStruct> functions;
+  public IEnumerable<DocStringStruct> functions;
 }
 
 // Define other methods and classes here
@@ -116,7 +150,7 @@ struct DocStringStruct {
   public string Returns;
   public IEnumerable<string> Example;
   public string ExampleString;
-  public IEnumerable<string> SeeAlso;
+  public IEnumerable<SeeAlso> SeeAlso;
   public string DocString;
   public int SuccessLevel;
   public bool IsDocStringWellFormed;
