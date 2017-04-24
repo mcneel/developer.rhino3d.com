@@ -124,5 +124,5 @@ jekyll serve
 
 Once you have cloned or forked this repository and are able to build it locally, please read the following guides:
 
-- [How This Site Works](http://developer.rhino3d.com/guides/general/how_this_site_works/)
-- [Developer Docs Style Guide](http://developer.rhino3d.com/guides/general/developer_docs_style_guide/)
+- [How This Site Works](http://developer.rhino3d.com/guides/general/how-this-site-works/)
+- [Developer Docs Style Guide](http://developer.rhino3d.com/guides/general/developer-docs-style-guide/)
