@@ -32,7 +32,7 @@ I use the term “Macro” here exclusively to describe the putting together of 
 ##You've already used a macro or two...
 First, if you are a user of Rhino, you are already a macro user even though you may not know it.  Many of the commands in Rhino are already “macroed” for you. When you click a toolbar button or call a command from the menu, it is often a preset macro.  To see, Shift+right-click on the button **Extrude Straight**:
 
-{{:legacy:en:ExtrudeCrvButtonEditor.gif}}
+![Extrude]({{ site.baseurl }}/images/extrudecrvbuttoneditor.gif)
 
 This is an example of the simplest macro, which sets a series of options within a single command so that you don’t have to specify each one every time you use it.  **ExtrudeCrv** has several buttons with preset options, **Tapered, AlongCurve, ToPoint, Cap=Yes** (solid) etc.  Check out the macros under all the **ExtrudeCrv** buttons to see how they are laid out.
 
