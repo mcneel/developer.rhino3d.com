@@ -29,6 +29,7 @@ layout: guide-homepage
 
 - [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what-is-a-rhino-plugin)
 - [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine)
+- [Creating Basic Macros]({{ site.baseurl }}/guides/general/creating-command-macros/)
 
 <!--column-->
 
