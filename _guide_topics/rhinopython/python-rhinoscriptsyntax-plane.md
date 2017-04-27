@@ -23,21 +23,50 @@ Several RhinoscriptSyntax methods either require as an argument or return as a r
 plane contains [pointOrigin, vectorX, vectorY, vectorZ]
 ```
 
+Note in a Plane, the Y axis is automatically thought as it would be 90-degrees with the original X axis. In fact, the only axis that can really stays easy to defined 100% of the times is the X axis. The Y axis is made orthogonal to the X vector, and the direction of the Z axis is just computed from the cross product of the other two vectors. It is easy to forget that there is a specific geometric relationship between the 3 axis.
+
 Planes can be constructed in a number of ways. One common function is `PlaneFromPoints`:
 
 ```python
 import rhinoscriptsyntax as rs
 
 corners = rs.GetRectangle()
-
 if corners:
     plane = rs.PlaneFromPoints(corners[0], corners[1], corners[3])
-plane1.append([0.0, 1.0, 0.0]) # y-axis vector
 
-print plane[2]
+print plane[0] # origin point
+print plane[1] # x-axis vector
+print plane[2] # y-axis vector
 ```
 
 Planes can also be created using the CreatePlane(), [PlaneFromFrame]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#collapse-PlaneFromFrame),  [PlaneFromNormal]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#collapse-PlaneFromNormal), and [PlaneFromPoints]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#collapse-PlaneFromPoints) functions.
+
+Plane also have a number of properties that can be used to get or set the individual values in the Point object.  In the example below the .Origin, .XAxis, .Yaxis, .Zaxis is used.
+
+```
+import rhinoscriptsyntax as rs
+
+plane = rs.PlaneFromPoints([-2,-5,0],[1,2,0],[-3,3,0])
+
+print plane.Origin # origin point
+print plane.XAxis # x-axis vector
+print plane.YAxis # y-axis vector
+
+plane.Origin = rs.CreatePoint(3,4,5) # Changes the origin of the plane.
+
+print plane.Origin
+print plane.XAxis # x-axis vector
+print plane.YAxis # y-axis vector
+```
+
+To change origin of a Plane simply assign a new value to the .Origin property.
+
+Using the Python `for` function it is quite easy to walk through each point coordinate in succession:
+
+```
+for p in plane:
+    print p
+```
 
 RhinoScriptSyntax contains a number of functions to manipulate planes.  See [Lines and Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods) for details.
 
