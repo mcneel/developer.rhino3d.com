@@ -20,13 +20,31 @@ Looping allows you to run a group of statements repeatedly.  Some loops repeat s
 
 The following looping statements are available in Python:
 
-* `for` - Uses a counter to run statements a specified number of times.
+* `for` - Uses a counter or loops through a each item in a list a specified number of times.
 * `while` - Loops while a condition is True.
 * Nested loops - Repeats a group of statements for each item in a collection or each element of an array.
 
+Loop statements use a very specific syntax.  Unlike other languages, Python does not use an end statement for its loop syntax.  The initial Loop statement is followed by a colon `:` symbol.  Then the next line will be indented by 4 spaces.  It is these spaces to the left of the line that is key.
+
+```
+for c in range(0, 3):
+   This is the the loop
+   This is a second line and the last line of the for loop
+This line is not part of the loop. It is the first line in the rest of the script.
+.....
+```
+
+Each subsequent lone in the loop also needs to be indented by 4 or more spaces.  If a line is not indented it is considered outside the loop and will also terminate any additional lines considered in the loop.  A common mistake is remove the spaces and therefore prematurely end the loop.
+
 ## For Loop
 
-You can use *for* statements to run a block of statements a specific number of times. For loops, use a counter variable whose value increases or decreases with each repetition of the loop.
+You can use *for* statements to run a block of statements a specific number of times. 
+
+Using Python to loop through each item in any type of list based structure is very easy. 
+
+ 
+
+For loops, use a counter variable whose value increases or decreases with each repetition of the loop.
 
 The following example causes a procedure to execute 4 times. The *for* statement specifies the counter variable `x` and its start and end values. Python will automatically increments the counter (x) variable by 1 after coming to end of the execution block.
 
@@ -53,6 +71,8 @@ To decrease the counter variable, use a negative `range` value. You must specify
 
  You can exit any *for* statement before the counter reaches its end value by using the `break` statement. Because you usually want to exit only in certain situations, such as when an error occurs, you could also use the `if` statement in the *True* statement block. If the condition is *False*, the loop runs as usual.
 
+More information on the `for` loop can be found at the [Python.org For Loops article](https://wiki.python.org/moin/ForLoop).
+
 ## While Loop
 
 Use the `while` loop to check a condition before each execution of the loop.
@@ -75,6 +95,8 @@ while True:
 ```
 
 As you can see, this compacts the whole thing into a piece of code managed entirely by the while loop. Having True as a condition ensures that the code runs until it's broken by n.strip() equaling 'hello'. 
+
+More information on the `while` loop can be found at the [Python.org While Loop article](https://wiki.python.org/moin/WhileLoop).
 
 ## Nested Loops
 
