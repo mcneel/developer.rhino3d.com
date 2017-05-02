@@ -1265,7 +1265,6 @@ Dictionary. This is an exciting and powerful tool, that was previously
 not available with VBscript Arrays! More on this later when we get into
 Tuples, Lists and Dictionaries...]{.content}
 
-
 ---
 
 ## Related Topics

@@ -1121,7 +1121,7 @@ def RecursiveGrowth( ptStart, vecDir, props, generation):
         if newTwig:
             vecGrow = rs.CurveTangent(newTwig, rs.CurveDomain(newTwig)[1])
             RecursiveGrowth(ptGrow, vecGrow, newProps, generation+1)
-```            
+```
 {: .line-numbers}
 
 <table>
@@ -2803,7 +2803,6 @@ We need to make 2 more nested loops which iterate over the 9 coordinates in this
 </tr>
 </table>
 {: .multiline}
-
 
 ---
 

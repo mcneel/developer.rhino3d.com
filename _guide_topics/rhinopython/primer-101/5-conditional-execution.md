@@ -130,7 +130,7 @@ while (something is true):
     DoSomething()
     if (condition is met):
         break
-```    
+```
 
 All the lines indented after the while keyword will be repeated until we abort the loop ourselves. If we do not abort the loop, I.e. if we omit the break statement or if our condition just never happens to be met, the loop will continue forever. This sounds like an easy problem to avoid but it is in fact a very common bug.
 
@@ -398,7 +398,7 @@ for z in rs.frange(0.0, 5.0, 0.5):
        rs.AddSphere([x,y,z], 0.5)
 
 rs.EnableRedraw(True)
-```    
+```
 ![{{ site.baseurl }}/images/primer-twistandshout.svg]({{ site.baseurl }}/images/primer-twistandshout.svg){: .float-img-right width="375"}
 
 The master loop increments the z variable from 0.0 to 5.0 with a default step size of 0.5. The z variable is used directly as the z-coordinate for all the sphere centers. For every iteration of the master loop, we also want to increment the twist angle with a fixed amount. We can only use the For…Loop to automatically increment a single variable, so we have to do this one ourselves on line 8.

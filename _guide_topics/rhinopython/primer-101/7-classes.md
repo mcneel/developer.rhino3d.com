@@ -194,7 +194,6 @@ You can use isinstance(newerObj,MyClass) to check if one object is an instance o
 
 Classes can be nested, they can have multiple functions, create powerful systems with polymorphism, privacy and modularity of your code! Like I said, classes are very powerful and sometimes difficult to wrap your head around at first (don't get hung up on them....work your way into it)! We are certainly not doing them justice here by explaining them in just 2 short pages! However, their complete depths are certainly out of the scope of this primer and you can find more information on Python classes from the resources at the beginning of this primer or at: [http://docs.python.org/tutorial/classes.html](http://docs.python.org/tutorial/classes.html)
 
-
 ---
 
 ## Next Steps
