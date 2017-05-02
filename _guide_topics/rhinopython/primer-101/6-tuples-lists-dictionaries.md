@@ -67,15 +67,15 @@ dupList = myList[:]
 ```
 Some useful methods for lists:
 
-| Method | | | Description |
-|:--------|:-:|:-:|:--------|
-| list.append(x) | | | Adds an item to the end of  a list. |
-| list.insert(i,x) | | | Inserts item i at location x.</td> |
-| list.remove(x) | | | Removes the first item from the list who's value is x. |
-| list.count(s) | | | Counts how many times an item x is found within the list. |
-| list.append(x) | | | Adds an item to the end of  a list. |
-| list.sort() | | | Sorts the elements of the list. |
-| list.reverse() | | | Reverses the elements of the list. |
+| Method           |      |      | Description                              |
+| :--------------- | :--: | :--: | :--------------------------------------- |
+| list.append(x)   |      |      | Adds an item to the end of  a list.      |
+| list.insert(i,x) |      |      | Inserts item i at location x.</td>       |
+| list.remove(x)   |      |      | Removes the first item from the list who's value is x. |
+| list.count(s)    |      |      | Counts how many times an item x is found within the list. |
+| list.append(x)   |      |      | Adds an item to the end of  a list.      |
+| list.sort()      |      |      | Sorts the elements of the list.          |
+| list.reverse()   |      |      | Reverses the elements of the list.       |
 |=====
 |
 {: rules="groups"}

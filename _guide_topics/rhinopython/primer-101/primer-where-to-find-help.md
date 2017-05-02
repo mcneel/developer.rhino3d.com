@@ -46,7 +46,7 @@ For a list of common errors, exceptions and pitfalls that you are likely to run 
 
 - Python is Case Sensitive ("A" and "a" are NOT the same thing!)
 - Python is Indent Sensitive (Use indentation to delineate the scope of loops, conditionals, functions and classes)
-	Remember an extra space or the absence of a space can make a world of a difference!
+  Remember an extra space or the absence of a space can make a world of a difference!
 - You do NOT need to declare variables or variables types! Just simply use them (x=3)!
 - The " # " sign is used for comments, the computer will skip over them.
 - Print and Return are NOT the same thing - print writes something to the screen, return actually passes a value!
@@ -60,10 +60,8 @@ For a list of common errors, exceptions and pitfalls that you are likely to run 
 
 #### Related Topics
 
-- [Where to find help - Next Topic >>]({{ site.baseurl }}/guides/rhinopython/primer-101/1-2-where-to-find-help/)
+- [Where to find help - Next Topic >>]({{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/)
 - [Rhino.Python Primer 101]({{ site.baseurl }}/guides/rhinopython/primer-101/rhinopython101)
 - [Running Scripts]({{ site.baseurl }}/guides/rhinopython/python-running-scripts)
 - [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
 - [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)
-- [Scripting Options]({{ site.baseurl }}/guides/rhinopython/python-scripting-options)
-- [Reinitializing Python]({{ site.baseurl }}/guides/rhinopython/python-scripting-reinitialize)

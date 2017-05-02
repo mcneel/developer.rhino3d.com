@@ -247,7 +247,7 @@ def Alphabet():
     return strSeries
 
 print Alphabet()
-```    
+```
 
 The "return value" identifies what will be returned once the method is called and the code within its scope is executed.  When this code is run, it will call the function *Alphabet()*, the code within the function's scope will be run and the function will return the value of strSeries.  This returned value will then be printed to the command line.  It should be noted that at first glance, the return and print functions appear to be very similar.  However, they are not! *print()* will print anything to the command line and console.  return(), on the other hand, will only return a value from a function - basically assigning a value to a variable whenever the function was called. Return is used for the output of a function (in this case the function "Alphabet"), print is used for debugging code or whenever the user wants to see a value printed to the screen.
 
