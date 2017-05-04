@@ -88,4 +88,4 @@ All the example code in this primer can be copy-pasted directly into the EditScr
 
 ## Next Steps
 
-Now that you know what a scripting language is, check out the [Scripting Essentials]({{ site.baseurl }}/guides/rhinoscript/primer-101/2-python-essentials/) guide to learn more about the RhinoScript language.
+Now that you know what a scripting language is, check out the [Scripting Essentials]({{ site.baseurl }}/guides/rhinoscript/primer-101/2-vbscript-essentials/) guide to learn more about the RhinoScript language.
