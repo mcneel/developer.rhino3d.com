@@ -381,7 +381,7 @@ The For…loop will increment the value of x automatically with the specified st
 
 Loop structures can be nested at will, there are no limitations, but you'll rarely encounter more than three. The following example shows how nested For…Loops can be used to compute distributions:
 
-```primer
+```python
 import math
 import rhinoscriptsyntax as rs
 
@@ -399,6 +399,7 @@ for z in rs.frange(0.0, 5.0, 0.5):
 
 rs.EnableRedraw(True)
 ```
+
 ![{{ site.baseurl }}/images/primer-twistandshout.svg]({{ site.baseurl }}/images/primer-twistandshout.svg){: .float-img-right width="375"}
 
 The master loop increments the z variable from 0.0 to 5.0 with a default step size of 0.5. The z variable is used directly as the z-coordinate for all the sphere centers. For every iteration of the master loop, we also want to increment the twist angle with a fixed amount. We can only use the For…Loop to automatically increment a single variable, so we have to do this one ourselves on line 8.
