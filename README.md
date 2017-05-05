@@ -92,7 +92,7 @@ Navigate to http://localhost:4000 in your browser to view the site.
 
 While [Jekyll](http://jekyllrb.com/docs/windows/) is not officially supported in Windows, it does work.  These instructions are based on the official _unofficial_ guide to [installing Jekyll on Windows](http://jekyll-windows.juthilo.com/).
 
-Optionally, you can follow the directions found on [Setting up your GitHub Pages site locally with Jekyll - Windows](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/#platform-windows) to use Bundler to install the jekyll.
+Optionally, you can follow the directions found on [Setting up your GitHub Pages site locally with Jekyll - Windows](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/#platform-windows) to use Bundler to install Jekyll.
 
 #### Install Ruby and Ruby DevKit
 
