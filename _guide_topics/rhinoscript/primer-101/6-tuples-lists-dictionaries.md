@@ -1,229 +1,240 @@
 ---
 title: 6 Tuples, Lists and Dictionaries
 description:
-authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
-sdk: ['RhinoPython']
-languages: ['Python']
-platforms: ['Windows', 'Mac']
-categories: ['Python Primer']
+authors: ['David Rutten']
+author_contacts: ['DavidRutten']
+sdk: ['RhinoScript']
+languages: ['VBScript']
+platforms: ['Windows']
+categories: ['RhinoScript Primer']
 origin:
-order: 15
-keywords: ['python', 'commands']
+order: 17
+keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
 ---
 
 ## 6.1 Tuples
 
-We've already been using tuples and lists in examples and I've always told you not to worry about it. Those days are officially over. Now is the time to panic. Perhaps it's best if we just get the obvious stuff out of the way first:
+We've already been using arrays in examples and I've always told you not to worry about it. Those days are officially over. Now is the time to panic. Perhaps it's best if we just get the obvious stuff out of the way first:
 
-**Tuples, Lists and Dictionaries are just a collection of things!**
+**An array is a list of variables**
 
-That's really all there is to it. Sometimes -in fact quite often- you want to store a large or unknown amount of things. You could of course declare 15,000 different variables by hand but that is generally considered to be bad practice. Remember, Tuples, Lists and Dictionaries always start counting at zero, while us humans are normally used to start counting at one. Try it by counting the number of fingers on your right hand. Chances are you are someone who has just counted to five. Code would disagree with you, it would only have counted to four:
+That's really all there is to it. Sometimes -in fact quite often- you want to store large or unknown amounts of variables. You could of course declare 15,000 different variables by hand but that is generally considered to be bad practise. The only thing about arrays which will seem odd at first is the way they count. Arrays start counting at zero, while we are used to start counting at one. Try it by counting the number of fingers on your right hand. Chances are you are someone who has just counted to five. Arrays would disagree with you, they would only have counted to four:
 
 <img src="{{ site.baseurl }}/images/primer-arraycountingfingers.png">{: .img-center  width="25%"}
 
-It helps to refer to numbers as 'indices' when you use the zero-based counting system just to avoid confusion. So when we talk about the 'first element' of a tuple we actually mean 'the element with index 0'. I know this all sounds strange, but zero-based counting systems habitually confuse even the most die-hard programmer.
+It helps to refer to numbers as 'indices' when you use the zero-based counting system just to avoid confusion. So when we talk about the 'first element' of an array, we actually mean 'the element with index 0'. I know this all sounds like Teaching Granny To Suck Eggs, but zero-based counting systems habitually confuse even the most die-hard programmer.
 
-A tuple consists of a number of values separated by commas, for instance:
+Arrays are just like other variables in VBScript with the exception that we have to use parenthesis to set and retrieve values:
 
-```python
-t = 12345, 5421, 'hello!' # Creating a Tuple with a variable name t
-print(t[0]) # print the first value of the Tuple t
-# This returns 12345 - the first value inside the Tuple
-print(t)
-# This returns (12345, 54321, 'hello!') - all of the values within the Tuple
+```vb
+'Normal variable declaration, assignment and retrieval
+Dim intNumber
+intNumber = 8
+Call Rhino.Print(intNumber)
+
+'Array declaration, assignment and retrieval
+Dim arrNumbers(2)
+arrNumbers(0) = 8
+arrNumbers(1) = -5
+arrNumbers(2) = 47
+Call Rhino.Print(arrNumbers(0) & ", " & arrNumber(1) & ", " & arrNumbers(2))
 ```
 
-Tuples can be used for coordinates (x,y) or any other time you need to store various elements.  Tuples may contain multiple variables, nested Tuples, Lists or other objects. If you remember from section 4.5, Tuples are immutable, meaning that they cannot be changed! (Refer to section 4.5 on Mutability) That means that we cannot create a Tuple then remove an element, instead we need to create an entirely new Tuple that contains the desired change.  A number of RhinoscriptSyntax methods return tuples rather than lists for their simplicity.  When utilizing the RhinoscriptSyntax methods make sure to be particularly careful with the input and return types (numbers, strings, tuples, lists etc) and understand how to pass or use each of them. This is a common source of errors in people's code, so pay special attention to read the methods found in the RhinoscriptSyntax help file!
+The example above shows how to declare an array which is capable of storing 3 numbers (indices 0, 1 and 2). In cases like this (when you know in advance how many and which numbers you want to assign) you can also use a shorthand notation in which case you have to omit the parenthesis in the variable declaration:
 
-## 6.2 Lists
-
-Lists are just like Tuples, however they can be changed (mutable), they use brackets rather than parenthesis and  have far more powerful built-in functionality!  Lists can be added to, items can be removed, they can be sorted, sliced apart, nested with multiple levels of inner lists and packed with other objects.  Lists are very powerful!
-
-```python
-myList = [] #This creates an empty list with the variable name myList
-myList.append(5)
-myList.append(6)
-print myList[0]
-# This returns 5 - the first element (0th item) in the list
-print(myList)
-# This returns [5,6] - the entire contents of the list myList
+```vb
+Dim arrNumbers
+arrNumbers = Array(8, -5, 47)
 ```
 
-Lists also can be sliced by using the following syntax:
+The *Array()* function in VBScript takes any number of variables and turns them into an array. It is a bit of an odd function since it has no fixed signature, you can add as many arguments as you like. Note that in the above example there is nothing special about the array declaration, it could be any other variable type as well.
 
-```python
-myList = [1,2,3,4] #This creates a list with elements 1,2,3,4
-print (myList[1:3])
-#This returns [2,3] - the 1st and 2nd elements of the list
-```
+This paragraph is called "My favourite things" not because arrays are my favourite things, but because of the example below which will teach you pretty much all there is to know about arrays except nesting:
 
-Similar to the range() function, the syntax for slicing list[start:end] - begins with the index of "start" (from the 0th element) and finishes at 1 less than the index "end." To create a copy of a list we can also use a similar syntax:
+```vb
+Sub MyFavouriteThings()
+    Dim strPrompt, strAnswer
+    Dim arrThings()
+    Dim intCount
+    intCount = 0
+    
+    Do
+        Select Case intCount
+            Case 0
+                strPrompt = "What is your most favourite thing?"
+            Case 1
+                strPrompt = "What is your second most favourite thing?"
+            Case 2
+                strPrompt = "What is your third most favourite thing?"
+            Case Else
+                strPrompt = "What is your " & (intCount+1) & "th most favourite thing?"
+        End Select
 
-```python
-myList = [1,2,3,4] #This creates a list with elements 1,2,3,4
-dupList = myList[:]
-```
-Some useful methods for lists:
+        strAnswer = Rhino.GetString(strPrompt)
+        If IsNull(strAnswer) Then Exit Do
 
-| Method           |      |      | Description                              |
-| :--------------- | :--: | :--: | :--------------------------------------- |
-| list.append(x)   |      |      | Adds an item to the end of  a list.      |
-| list.insert(i,x) |      |      | Inserts item i at location x.</td>       |
-| list.remove(x)   |      |      | Removes the first item from the list who's value is x. |
-| list.count(s)    |      |      | Counts how many times an item x is found within the list. |
-| list.append(x)   |      |      | Adds an item to the end of  a list.      |
-| list.sort()      |      |      | Sorts the elements of the list.          |
-| list.reverse()   |      |      | Reverses the elements of the list.       |
-|=====
-|
-{: rules="groups"}
+        ReDim Preserve arrThings(intCount)
+        arrThings(intCount) = strAnswer
+        intCount = intCount+1
+    Loop
 
-### 6.2.1 List Comprehension
+    If intCount = 0 Then Exit Sub
 
-List comprehensions are a way of utilizing the functionality of Lists and For...Loops with very concise syntax. The list comprehension begins with an expression then has a For...Loop - effectively executing the expression for the number of times specified in the For...Loop. This will create a List with the resultant values from the expression. For example:
-
-```python
-myList = [2,4,6] #This creates a list with elements 2,4,6
-print ([3*x for x in myList]
-# This returns [6,12,18] as the resultant calculation from the List Comprehension
-```
-
-List comprehensions can become far more complex and include more complicated expressions, loops and conditional statements.  One last example:
-
-```python
-myList = [2,4,6] #This creates a list with elements 2,4,6
-print ([3*x for x in myList if x>3]
-# This returns [12,18] as the resultant calculation from the expression, loop and conditional
-```
-
-The following example should teach you almost all there is to know about lists, except nesting:
-
-```python
-import rhinoscriptsyntax as rs
-
-def myfavoritethings():
-    things = []
-
-    while True:
-        count = len(things)
-        prompt = "What is your {0}th most favorite thing?".format(count+1)
-        if len(things)==0:
-            prompt = "What is your most favorite thing?"
-        elif count==1:
-            prompt = "What is your second most favorite thing?"
-        elif count==2:
-            prompt = "What is your third most favourite thing?"
-
-        answer = rs.GetString(prompt)
-        if answer is None: break
-        things.append(answer)
-    if len(things)==0: return
-
-    print "Your", len(things)+1, "favorite things are:"
-    for i,thing in enumerate(things): print i+1, ".", thing
+    Call Rhino.Print("Your " & UBound(arrThings)+1 & " favourite things are:")
+    For i = 0 To UBound(arrThings)
+        Call Rhino.Print((i+1) & ". " & arrThings(i))
+    Next
+End Sub
 ```
 {: .line-numbers}
 
+
 <table>
 <tr>
-<th>Line</th>
-<th>Description</th>
+<th>
+Line
+</th>
+<th>
+Description
+</th>
 </tr>
 <tr>
-<td>4</td>
-<td>We do not know how many favourite things the user has, so there's no way we can set the list to a certain size in advance. Luckily, we do not have to. Items can be appended to a list on an as needed basis!</td>
+<td>
+3
+</td>
+<td>
+We do not know how many favourite things the user has, so there's no way we can set the array to a certain size in advance. Whenever an array is declared with parenthesis but without any number, it will be made dynamic. This means we can resize it during runtime.
+</td>
 </tr>
 <tr>
-<td>7</td>
-<td>The function len() returns the length of a list object. The very first time this line is run, count will be 0.</td>
-</tr>
-<tr>
-<td>17</td>
-<td>If the user does not enter an answer to our question regarding his/her Nth favorite thing, we will exit the loop and move into the last task of the script on lines 21 and 22.</td>
-</tr>
-<tr>
-<td>18</td>
-<td>We've just asked the user what his/her Nth favourite thing was, and he/she answered truthfully. This means that it is time to store the answer in a safe place. A list is a convenient place to store an arbitrarily long collection of data. The append function shown will add the entry to the end of the list.</td>
-</tr>
-<tr>
-<td>19</td>
-<td>It is possible the user has not entered any String. If this is the case then the result of len(things) will still have a its initial value of zero. There is nothing for us to do in this case and we should abort the subroutine.</td>
-</tr>
-<tr>
-<td>21</td>
-<td>After the loop has completed and we've made certain the array contains some actual data, we print all the gathered information to the command history. First we will tell the user how many favourite things he/she entered.</td>
+<td>4...5</td>
+<td>We'll be using this variable for bookkeeping purposes. Although we could technically extract all information from the array itself, it's easier to keep an integer around so we can always quickly find the number of elements in the array.
+</td>
 </tr>
 <tr>
 <td>22</td>
-<td>Using a For...loop, we can iterate through the items in the list. Note that this For...loop has two iteration variables - one to keep track of the index of the list item, and one to get the actual list item. This is convenient, as it is not necessary to explicitly retrieve the item in the list using the index.
-We then print the index of the user's nth favority thing, and the favorite thing.</td>
+<td>
+We've just asked the user what his/her Nth favourite thing was, and he/she answered truthfully. This means we're going to have to store the last answer in our array, but it is not big enough yet to store additional data so the first thing we must do is increase the size of *arrThings*. We can change the size (the number of possible items it can store) of an array in four different ways:
+
+<code  class="language-vb hljs vbnet">
+ReDim arrThings(5)
+ReDim Preserve arrThings(5)
+arrThings = Array(0.0, 5.8, 4.2, -0.1)
+Erase arrThings
+</code>
+
+The first option will set the array to the indicated size while destroying its contents. To flog a horse which, if not at this point dead, is in mortal danger of expiring; an array with a size of five is actually capable of storing six elements (0,1,2,3,4,5). If you wish to retain the stored information -as we do in our example-, then you must add the keyword <i>Preserve</i> between <i>ReDim</i> and the array variable name.
+
+By simply assigning another array to the variable, you will also change the contents and size. This only works though if the array in question was declared without parenthesis.
+
+And finally, if you want to reset an array, you can use the <i>Erase</i> keyword. This will destroy all the stored data and dynamic array size will be set to zero. The array cannot contain any elements after an erase, you must first <i>ReDim</i> it again. If you erase a fixed size array, only the data will be destroyed.
+</td>
+</tr>
+<tr>
+<td>23</td>
+<td>
+Straightforward array assignment using an index between parenthesis. If you were to try to assign a value to an array at a non-existing index you will get a fatal error:
+
+<img src="{{ site.baseurl }}/images/ArrayOutOfBoundsError.png" alt="Mountain View" class="img-center" style="width:50%;">
+
+Unfortunately the message doesn't tell us anything about which array was queried and what its size is. We do know what index generated the error ( number: 6 ).
+</td>
+</tr>
+<tr>
+<td>24</td>
+<td>We increase the bookkeeping integer since the array is now one larger than before.</td>
+</tr>
+<tr>
+<td>27</td>
+<td>It is possible the user has not entered any String. If this is the case the <i>intCount</i> variable will still have a value of zero which we assigned on line 5. There is nothing for us to do in this case and we should abort the subroutine.</td>
+</tr>
+<tr>
+<td>29</td>
+<td>After the loop has completed and we've made certain the array contains some actual data, we print all the gathered information to the command history. First we will tell the user how many favourite things he/she entered. We could again use the intCount variable to retrieve this information, but it is also possible to extract that data directly from the array itself using the <i>UBound()</i> function. <i>UBound</i> is short for "Upper bound", which is the terminology used to indicate the highest possible index of an array. If the array is empty the upper bound is technically -1. However, if we attempt to use the <i>UBound()</i> function on an array which cannot contain any elements, there will be a fatal error:
+
+<code class="language-vb hljs vbnet">
+Dim arrList()
+Call Rhino.Print(UBound(arrList))
+</code>
+
+The above will fail..</td>
+</tr>
+<tr>
+<td>30</td>
+<td>This is a typical usage of the <i>For…Next</i> loop. Whenever we want to iterate through an array using index values, we use something like the following:
+
+<code class="language-vb hljs vbnet">
+For i = 0 To UBound(arrData)
+    …
+Next
+</code>
+
+It is customary to use a short variable name for iteration variables. This clashes with the prefix rules as defined on page 9 and is to be treated as a special case. Typically, for simple iteration variables i, j and k are used:
+
+<code class="language-vb hljs vbnet">
+For i = 1 To UBound(arrData)
+    For j = 0 To i-1
+        For k = 0 To UBound(arrDifferentData)
+            …
+        Next
+    Next
+Next
+</code>
+
+</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Standard array value retrieval.</td>
 </tr>
 </table>
 {: .multiline}
 
-## 6.3 Dictionaries
+## 6.2 Points and Vectors
 
-Dictionaries go one step further than lists because they store a "key" and an associated value.  Every dictionary contains a series of key : value associations.  This is very similar to actual word-based dictionaries that contain words and their associated definition.  Python Dictionaries can use any immutable type for the "key", such as; strings, numbers, Tuples (they can only contain strings, numbers or tuples and NOT lists). The value can be any mutable or immutable item that will become associated to the key (this includes, lists or other dictionaries). Lets see an example:
-
-```python
-emptyDict = {} #This creates an empty Dictionary
-myDict = {'a':1,'b':2,'c':3} #This creates a Dictionary with its associated Key:Value pairs
-myDict['d'] = 4 #This Adds a key:value to the Dictionary
-myDict['a'] = 2 #This Changes the key "a"'s value to 2 rather than 1
-print (myDict['a'])
-#This returns 2 - the associated value to the key "a"
-print (myDict)
-#This returns {'a': 2, 'c': 3, 'b': 2, 'd': 4} - the entire Dictionary
-print (myDict.keys())
-#This returns ['a', 'c', 'b', 'd'] - a list containing all of the Keys
-del myDict['b'] # This deletes the Key "b" and its associated value of 2
-```
-
-Because of the associated Key:Value relationship, Dictionaries are great for representing points and giving them an associated name based on the points relationship to their neighbors.  Let's say we have a surface and we want to extract points across the surface with rows and columns.  Each point has a 3D point coordinate [x,y,z] which is represented as a list who's first element 0 corresponds to x, element 1 corresponds to y and element 2 corresponds to z. If we wanted to store these points we have 2 options. We could create a list with internal lists that contain the point coordinates (one long linear organization of points) or we could use a Dictionary to add point coordinates as values and have a Key that is a name in relation to its Row/Column position.  The second option then allows us to take any point on the surface and know its 4, 8 or however many neighbors because they are named accordingly.  The first option would only allow us to know the neighbor direction in front or behind it in line.  We will get into this more later, but this should wet your appetite for the exciting potential of lists and dictionaries for geometric information!
-
-## 6.4 Points and Vectors
-
-As was just explained, points are represented by lists containing three values - [x,y,z]. This notation is used for both points and vectors. First, a point example:
-
-```python
-import rhinoscriptsyntax as rs
-import math
-
-#Call rs.EnableRedraw(False)
-for t in rs.frange(-50,50,1.25):
-    arrPoint = [t * math.sin(5*t), t * math.cos(5*t),t]
-
-   print(arrPoint)
-   rs.AddPoint(arrPoint)
-#Call rs.EnableRedraw(True)
-```
-{: .line-numbers}
+In RhinoScript, coordinates are defined as arrays of three numbers. Element 0 corresponds with x, element 1 with y and element 2 with z. This notation is used for both points and vectors.
 
 ![{{ site.baseurl }}/images/primer-pointspiral.svg]({{ site.baseurl }}/images/primer-pointspiral.svg){: .float-img-right width="375"}
 
-The variable arrPoint is declared as an empty list, the elements are assigned different values on lines 7 to 9 inside the body of the loop. On line 10 the list is printed and on line 11 it is used as the point coordinates to create a 3D point in space.
+```vb
+Sub PointSpiral()
+    Dim arrPoint(2)
+    Dim t, pi
+    pi = Rhino.Pi()
+    
+    'Call Rhino.EnableRedraw(False)
+    For t = -5 To 5 Step 0.025
+    
+      arrPoint(0) = t * Sin(5*t)
+      arrPoint(1) = t * Cos(5*t)
+      arrPoint(2) = t
+      
+      Call Rhino.Print(Rhino.Pt2Str(arrPoint, 3))
+      Call Rhino.AddPoint(arrPoint)
+    Next
+    'Call Rhino.EnableRedraw(True)
+End Sub
+```
+{: .line-numbers}
 
-Vectors are a slightly new concept. Those of you who are familiar with the essentials of geometrical mathematics will have no problems with this concept... in fact you probably all are familiar with the essentials of geometrical mathematics or you wouldn't be learning how to program a 3D CAD platform.
-
-
-Vectors are indistinguishable from points. That is, they are both lists of three numbers so there's absolutely no way of telling whether a certain list represents a point or a vector. There is a practical difference though; points are absolute, vectors are relative. When we treat a list of three doubles as a point it represents a certain coordinate in space, when we treat it as a vector it represents a certain direction. You see, a vector is an arrow in space which always starts at the world origin (0.0, 0.0, 0.0) and ends at the specified coordinate.
+The variable arrPoint is declared as a fixed size array on line 2 and the elements are assigned different values on lines 9 to 11 inside the body of the loop. On line 13 the array is converted to a String using the RhinoScript method Rhino.Pt2Str(). Pt2Str and Str2Pt (abbreviations for PointToString and StringToPoint respectively) can be used to convert points into Strings and vice versa. The regular VBScript function CStr() for casting variables into Strings will not work on arrays and cannot be used. The additional benefit of Pt2Str is that it takes optional formatting arguments.
 
 ![{{ site.baseurl }}/images/primer-vectordefinition.svg]({{ site.baseurl }}/images/primer-vectordefinition.svg){: .float-img-right width="375"}
 
-The picture on the right shows two vector definitions; a purple and a blue one. The blue one happens to have all positive components while the purple one has only negative components. Both vectors have a different direction and a different length. When I say vectors are relative, I mean that they only indicate the difference between the start and end points of the arrow, i.e. vectors are not actual geometrical entities, they are only information! The blue vector could represent the tangent direction of the black curve at parameter {t}. If we also know the point value of the curve at parameter {t}, we know what the tangent of the curve looks like; we know where in space the tangent belongs. The vector itself does not contain this information; the orange and the blue vector are identical in every respect.
+Vectors are a new concept in RhinoScript for Rhino4. Those of you who are familiar with the essentials of geometrical mathematics will have no problems with this concept... in fact you probably all are familiar with the essentials of geometrical mathematics or you wouldn't be learning how to program a 3D CAD platform.
 
-The addition of vector definitions in IronPython is accompanied by a whole group of point/vector related methods which perform the basic operations of 'vector mathematics'. Addition, subtraction, multiplication, dot and cross products, so on and so forth. The table on the following page is meant as a reference table, do not waste your time memorizing it.
+Vectors are indistinguishable from points. That is, they are both arrays of three doubles so there's absolutely no way of telling whether a certain array represents a point or a vector. There is a practical difference though; points are absolute, vectors are relative. When we treat an array of three doubles as a point it represents a certain coordinate in space, when we treat it as a vector it represents a certain direction. You see, a vector is an arrow in space which always starts at the world origin (0.0, 0.0, 0.0) and ends at the specified coordinate.	
+
+The picture on the right shows two vector definitions; a purple and a blue one. The blue one happens to have all positive components while the purple one has only negative components. Both vectors have a different direction and a different length. When I say vectors are relative, I mean that they only indicate the difference between the start and end points of the arrow, i.e. vectors are not actual geometrical entities, they are only information. The blue vector could represent the tangent direction of the black curve at parameter {t}. If we also know the point value of the curve at parameter {t}, we know what the tangent of the curve looks like; we know where in space the tangent belongs. The vector itself does not contain this information; the orange and the blue vector are identical in every respect.
+
+The addition of vector definitions in RhinoScript is accompanied by a whole group of point/vector related methods which perform the basic operations of 'vector mathematics'. Addition, subtraction, multiplication, dot and cross products and so on and so forth. The table on the following page is meant as a reference table, do not waste your time memorizing it.
 
 I will be using standard mathematical notation:
-
 - A lowercase letter represents a number
 - A lowercase letter with a dot above it represents a point
 - A lowercase letter with an arrow above it represents a vector
 - Vertical bars are used to denote vector length
-
-
 
 <table width="100%">
 <tr>
@@ -344,16 +355,32 @@ factor. This is the equivalent of *PointDivide()*.</td>
 </table>
 {: .multiline-middle}
 
+You probably feel like you deserved a break by now. It's not a bad idea to take a breather before we dive into the next example of vector mathematics. Not that the math is difficult, it's actually a lot easier than the above table would lead you to believe. In fact, it is so laughingly easy I thought it a good idea to add something extra...
+
+RhinoScript has no method for displaying vectors which is a pity since this would be very useful for visual feedback. I shall define a function here called AddVector() which we will use in examples to come. The function must be able to take two arguments; one vector definition and a point definition. If the point array is not defined the vector will be drawn starting at the world origin. Since this is a function which we will be using extensively we must make sure it is absolutely fool-proof. This is not an easy task since it could potentially choke on eleven different culprits. I'm not going to spell them all out since we'll be using a naughty trick to prevent this function from crashing.
+
+
 ![{{ site.baseurl }}/images/primer-addvector.svg]({{ site.baseurl }}/images/primer-addvector.svg){: .float-img-right width="325"}
 
-IronPython has no method for displaying vectors, which is a pity since this would be very useful for visual feedback. I shall define a function here called *AddVector()* which we will use in examples to come. The function must be able to take two arguments; one vector definition and a point definition. If the point array is not defined the vector will be drawn starting at the world origin.
+```vb
+Function AddVector(ByVal vecDir, ByVal ptBase)
+    On Error Resume Next
+    AddVector = Null
 
+    If IsNull(ptBase) Or Not IsArray(ptBase) Then
+        ptBase = Array(0,0,0)
+    End If
+    
+    Dim ptTip
+    ptTip = Rhino.PointAdd(ptBase, vecDir)
+    If Not (Err.Number = 0) Then Exit Function
 
-```python
-def AddVector(vecdir, base_point=[0,0,0]):
-       tip_point = rs.PointAdd(base_point, vecdir)
-       line = rs.AddLine(base_point, tip_point)
-       if line: return rs.CurveArrows(line, 2)
+    AddVector = Rhino.AddLine(ptBase, ptTip)
+    If Not (Err.Number = 0) Then Exit Function
+    If IsNull(AddVector) Then Exit Function
+
+    Call Rhino.CurveArrows(AddVector, 2)
+End Function
 ```
 {: .line-numbers}
 
@@ -364,16 +391,35 @@ def AddVector(vecdir, base_point=[0,0,0]):
 </tr>
 <tr>
 <td>1</td>
-<td>Standard function declaration. The function takes two arguments, if the first one does not represent a proper vector array the function will not do anything, if the second one does not represent a proper point array the function will draw the vector from the world origin.</td>
+<td>Standard function declaration. The function takes two arguments, if the first one does not represent a proper vector array the function will not do anything, if the second one does not represent a proper point array the function will draw the vector from the world origin.
+</td>
 </tr>
 <tr>
 <td>2</td>
-<td>Declare and compute the coordinate of the arrow tip. This will potentially fail if ptBase or vecDir are not proper arrays. However, the script will continue instead of crash due to the exception handling.</td>
+<td>This is the naughty bit. Instead of checking all the variables for validity we'll be using the VBScript error object. The <i>On Error Resume Next</i> statement will prevent the function from generating a run-time error when things start to go pear-shaped. Instead of aborting (crashing) the entire script it will simply march on, trying to make the best of a bad situation. We can still detect whether or not an error was generated and suppressed by reading the Number property of the Err object.
+
+Using the On Error Resume Next statement will reset the error object to default values.</td>
 </tr>
 <tr>
 <td>3</td>
-<td>Here we are calling the RhinoScriptSyntax method rs.AddLine() and we're storing the return value
-directly into the line variable. There are three possible scenarios at this point:
+<td>Right now we're assigning the Null value to the function in case we need to abort prematurely. We want our function to either return a valid object ID on success or Null on failure. If we simply call the Exit Function statement before we assign anything to the AddVector variable, we will return a vbEmpty value which is the default for all variables.</td>
+</tr>
+<tr>
+<td>5..7</td>
+<td>In case the ptBase argument does not represent an array, we want to use the world origin instead.</td>
+</tr>
+<tr>
+<td>9...10</td>
+<td>Declare and compute the coordinate of the arrow tip. This will potentially fail if ptBase or vecDir are not proper arrays. However, the script will continue instead of crash due to the error trapping.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Since we just passed a dangerous bump in the code, we have to check the value of the error number. If it is still zero, no error has occurred and we're save to continue. Otherwise, we should abort.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Here we are calling the RhinoScript method Rhino.AddLine() and we're storing the return value 
+directly into the AddVector variable. There are three possible scenarios at this point:
 
 <ol>
 <li>The method completed successfully</li>
@@ -381,40 +427,59 @@ directly into the line variable. There are three possible scenarios at this poin
 <li>The method crashed</li>
 </ol>
 
-In the case of scenario 1, the line variable now contains the object ID for a newly added line object. This is exactly what we want the function to return on success.
-In case of scenario #2, the line variable will be set to None. The last option means that there was no return value for AddLine() and hence line will also be None. </td>
+In the case of scenario 1, the AddVector variable now contains the object ID for a newly added line object. This is exactly what we want the function to return on success.
+In case of scenario #2, the AddVector will be set to Null. Of course it already was Null, so nothing actually changed. The last option means that there was no return value for AddLine() and hence AddVector will also be Null. But the error-number will contain a non-zero value now.</td>
 </tr>
 <tr>
-<td>4</td>
-<td>Check for scenario 2 and 3, and if they did not occur, go ahead and and add an arrow head using the CurveArrows method. If they did, this method will not be exectuted, and the script simply does not returns *None*.</td>
+<td>14...15</td>
+<td>Check for scenario 2 and 3, abort if we find either one of them occurred.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Add an arrow-head to the line object.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Complete the function declaration. Once this line is executed the value of AddVector will be returned, whatever it is.</td>
 </tr>
 </table>
 {: .multiline}
 
 
-## 6.5 An AddVector() example
+## 6.3 An AddVector() example
 
-![{{ site.baseurl }}/images/primeraddvectorexample.svg]({{ site.baseurl }}/images/primeraddvectorexample.svg){: .float-img-right width="325"}
+![{{ site.baseurl }}/images/primeraddvectorexample.svg]({{ site.baseurl }}/images/primeraddvectorexample.svg){: .float-img-right width="275"}
 
-```python
-import rhinoscriptsyntax as rs
-# This script will compute a bunch of cross-product vector based on a pointcloud
+```vb
+Option Explicit
+'This script will compute a bunch of cross-product 
+vector based on a pointcloud
 
-def vectorfield():
-    cloud_id = rs.GetObject("Input pointcloud", 2, True, True)
-    if cloud_id is None: return
+VectorField()
+Sub VectorField()
+    Dim strCloudID
+    strCloudID = Rhino.GetObject("Input pointcloud", 2, True, True)   
+    If IsNull(strCloudID) Then Exit Sub
 
-    listpoints = rs.PointCloudPoints(cloud_id)
-    base_point = rs.GetPoint("Vector field base point")
-    if base_point is None: return
+    Dim arrPoints : arrPoints = Rhino.PointCloudPoints(strCloudID)
+    Dim ptBase    : ptBase = Rhino.GetPoint("Vector field base point")
+    If IsNull(ptBase) Then Exit Sub
 
-    for point in listpoints:
-        vecbase = rs.VectorCreate(point, base_point)
-        vecdir = rs.VectorCrossProduct(vecbase, (0,0,1))
-        if vecdir:
-            vecdir = rs.VectorUnitize(vecdir)
-            vecdir = rs.VectorScale(vecdir, 2.0)
-            AddVector(vecdir, point)
+    Dim i
+    For i = 0 To UBound(arrPoints)
+        Dim vecBase
+        vecBase = Rhino.VectorCreate(arrPoints(i), ptBase)
+        
+        Dim vecDir : vecDir = Rhino.VectorCrossProduct(vecBase, Array(0,0,1))
+
+        If Not IsNull(vecDir) Then
+            vecDir = Rhino.VectorUnitize(vecDir)
+            vecDir = Rhino.VectorScale(vecDir, 2.0)
+
+            Call AddVector(vecDir, arrPoints(i))
+        End If
+    Next 
+End Sub
 ```
 {: .line-numbers}
 
@@ -424,24 +489,28 @@ def vectorfield():
 <th>Description</th>
 </tr>
 <tr>
-<td>8</td>
-<td>The <i>listpoints</i> variable is a list which contains all the coordinates of a pointcloud object. This is an example of a nested list (see paragraph 6.6).</td>
+<td>10a</td>
+<td>We can use the colon to make the interpreter think that one line of code is actually two. Stacking lines of code like this can severely damage the readability of a file, so don't be overzealous. Personally, I only use colons to combine variable declaration/assignment on one line.</td>
 </tr>
 <tr>
-<td>12</td>
-<td>The variable <i>point</i>, which is taken from the <i>listpoints</i> variable, contains an array of three doubles; a standard Rhino point definition. We use that point to construct a new vector definition which points from the Base point to <i>arrPoints(i)</i>.</td>
+<td>10b</td>
+<td>The arrPoints variable is an array which contains all the coordinates of a pointcloud object. This is an example of a nested array (see paragraph 6.4).</td>
 </tr>
 <tr>
-<td>14</td>
-<td>The *rs.VectorCrossProduct()* method will return a vector which is perpendicular to vecBase and the world z-axis. If you feel like doing some homework, you can try to replace the hard-coded direction ([0,0,1]) with a second variable point a la *base_point*.</td>
+<td>17</td>
+<td><i>arrPoints(i)</i> contains an array of three doubles; a standard Rhino point definition. We use that point to construct a new vector definition which points from the Base point to <i>arrPoints(i)</i>.</td>
 </tr>
 <tr>
-<td>15</td>
-<td><i>rs.VectorCrossProduct()</i> will fail if one of the input vectors is zero-length or if both input vectors are parallel. In those cases we will not add a vector to the document.</td>
+<td>19</td>
+<td>The <i>Rhino.VectorCrossProduct()</i> method will return a vector which is perpendicular to <i>vecBase</i> and the world z-axis. If you feel like doing some homework, you can try to replace the hard-coded direction <i>(Array(0,0,1))</i> with a second variable point a la <i>ptBase</i>.</td>
 </tr>
 <tr>
-<td>16 & 17</td>
-<td>Here we make sure the <i>vecdir</i> vector is two units long. First we unitize the vector, making it one unit long, then we double the length.</td>
+<td>21</td>
+<td><i>Rhino.VectorCrossProduct()</i> will fail if one of the input vectors is zero-length or if both input vectors are parallel. In those cases we will not add a vector to the document.</td>
+</tr>
+<tr>
+<td>22...23</td>
+<td>Here we make sure the <i>vecDir</i> vector is two units long. First we unitize the vector, making it one unit long, then we double the length..</td>
 </tr>
 <tr>
 <td>25</td>
@@ -450,7 +519,7 @@ def vectorfield():
 </table>
 {: .multiline}
 
-## 6.6 Nested lists
+## 6.4 Nested lists
 
 > I wonder why, I wonder why.  
 > I wonder why I wonder.  
@@ -460,54 +529,67 @@ def vectorfield():
 > -Richard P. Feynman-  
 
 
-![{{ site.baseurl }}/images/primer-nestedarrays.svg]({{ site.baseurl }}/images/primer-nestedarrays.svg){: .float-img-right width="300"}
+![{{ site.baseurl }}/images/primer-nestedarrays.svg]({{ site.baseurl }}/images/primer-nestedarrays.svg){: .float-img-right width="225"}
 
+Before we begin with nested arrays we need to take care of some house-
+keeping first:
 
-There's nothing to it. A list (or tuple or dictionary for that matter) becomes nested when it is stored inside another list The VectorField example on the previous page deals with a list of points (a list of lists, each with three doubles). The image on the right is a visualization of such a structure. The left most column represents the base list, the one containing all coordinates. It can be any size you like, there's no limit to the amount of points you can store in a single list. Every element of this base list is a standard Rhino point. In the case of point-lists all the nested lists are three elements long, but this is not a requisite, you can store anything you want in a list.
+Nested arrays are not the same as two-dimensional arrays. Up to and including Rhino2, point lists in RhinoScript were stored in two-dimensional arrays. This system was changed to nested arrays in Rhino3. The only methods which still use two-dimensional arrays are the intersection and matrix methods.
 
-Nesting can be done with tuples, lists or dictionaries. It simply means that you can put lists in lists, or tuples in tuples, dictionaries in dictionaries or even lists inside of dictionaries and so on.  Nesting can be done infinitely, you can have a list that contains a list with a list inside of it, another list inside of that list and so on. Nesting can easily be done by utilizing a Loop that allows you to iterate and either extract or place other items inside of the lists.
+Now then, nested arrays. There's nothing to it. An array becomes nested when it is stored inside another array. The VectorField example on the previous page deals with an array of points (an array of arrays of three doubles). The image on the right is a visualization of such a structure. The left most column represents the base array, the one containing all coordinates. It can be any size you like, there's no limit to the amount of points you can store in a single array. Every element of this base array is a standard Rhino point array. In the case of point-arrays all the nested arrays are three elements long, but this is not a requisite, you can store anything you want into an array.
 
-Accessing nested lists follows the same rules as accessing regular lists. Using the VectorField example:
+Accessing nested arrays follows the same rules as accessing regular arrays. Using the VectorField example:
 
-```python
-    arrSeventhPoint = arrPoints[6] #arrSeventhPoint now equals the 7th (starting from 0th) element
-    arrLastPoint = arrPoints[len(arrPoints)] #arrLastPoint now equals the last point in the list
+```vb
+Dim arrSeventhPoint, arrLastPoint
+arrSeventhPoint = arrPoints(6)
+arrLastPoint = arrPoints(UBound(arrPoints))
 ```
 
-Len() can be used to get the length of a list. In this case we are saying that arrLastPoint equals the last element in the list called arrPoints because we have given it the numeric value that is the length of the list. This shows how to extract entire nested lists. Assuming the illustration on this page represents <i>arrPoints</i>, <i>arrSeventhPoint</i> will be identical to <i>[0.3, -1.5, 4.9]</i>. If we want to access individual coordinates directly we can use another bracket to explode out the z value:
+This shows how to extract entire nested arrays. Assuming the illustration on this page represents *arrPoints*, *arrSeventhPoint* will be identical to *Array(0.3, -1.5, 4.9)*. If we want to access individual coordinates directly we can stack the indices:
 
-```pyton
-dblSeventhPointHeight = arrPoints[6][2]
-#2 corresponds to the 3rd element (the Z coordinate) within that nested list.
+```vb
+Dim dblSeventhPointHeight
+dblSeventhPointHeight = arrPoints(6)(2)
 ```
 
-The above code will store the third element of the nested list stored in the seventh element of the base list in *dblSeventhPointHeight*. This corresponds with the orange block.
+The above code will store the third element of the nested array stored in the seventh element of the base array in *dblSeventhPointHeight*. This corresponds with the orange block.
 
-Nested lists can be parsed using nested loops like so:
+Nested arrays can be parsed using nested loops like so:
 
-```python
-for i in range(0,len(arrPoints)):
-    for j in range(0,2):
-        print("Coordinate(" + i + ", " + j + ") = " + arrPoints[i][j])
+```vb
+Dim i, j
+For i = 0 To UBound(arrPoints)
+    For j = 0 To 2
+        Call Rhino.Print("Coordinate(" & i & ", " & j & ") = " & arrPoints(i)(j)) 
+    Next
+Next
 ```
 
 <img src="{{ site.baseurl }}/images/primer-nestedarrayparsehistory.png">{: .img-center  width="45%"}
 
-Remember the scaling script from before? We're now going to take curve-length adjustment to the next level
-using nested lists. The logic of this script will be the same, but the algorithm for shortening a curve will be replaced with the following one (the illustration shows the first eight iterations of the algorithm):
+Remember the scaling script from page 31? We're now going to take curve-length adjustment to the next level using nested arrays. The logic of this script will be the same, but the algorithm for shortening a curve will be replaced with the following one (the illustration shows the first eight iterations of the algorithm):
 
 <img src="{{ site.baseurl }}/images/primer-curvesmoothing.svg">{: .img-center  width="100%"}
 
-Every control-point or 'vertex' of the original curve (except the ones at the end) will be averaged with its neighbors in order to smooth the curve. With every iteration the curve will become shorter and we will abort as soon a certain threshold length has been reached. The curve can never become shorter than the distance between the first and last control-point, so we need to make sure our goals are actually feasible before we start a potentially endless loop. Note that the algorithm is approximating, it may not be endless but it could still take a long time to complete. We will not support closed or periodic curves.
+Every control-point or 'vertex' of the original curve (except the ones at the end) will be averaged with its neighbours in order to smooth the curve. With every iteration the curve will become shorter and we will abort as soon a certain threshold length has been reached. The curve can never become shorter than the distance between the first and last control-point, so we need to make sure our goals are actually feasible before we start a potentially endless loop. Note that the algorithm is approximating, it may not be endless but it could still take a long time to complete. We will not support closed or periodic curves. 
 
-We're going to put the vector math bit in a separate function. This function will compute the {vM} vector given the control points {pN-1; p; pN+1} and a smoothing factor {s}. Since this function is not designed to fail, we will not be adding any error checking, if the thing crashes we'll have to fix the bug. Instead of using variable naming conventions, I'll use the same codes as in the diagram:
+We're going to put the vector math bit in a separate function. This function will compute the {vM} vector given the control points {pN-1; p; pN+1} and a smoothing factor {s}. Since this function is not designed to fail, we will not be adding any error checking, if the thing crashes we'll have to fix the bug. Instead of using VBScript variable naming conventions, I'll use the same codes as in the diagram:
 
-```python
-def smoothingvector(point, prev_point, next_point, s):
-    pm = (prev_point+next_point)/2.0
-    va = rs.VectorCreate(pm, point)
-    vm = rs.VectorScale(va, s)
-    return vm
+```vb
+Function SmoothingVector(ByVal P, ByVal Pprev, ByVal Pnext, ByVal s)
+    Dim Pm(2), i
+
+    For i = 0 To 2
+        Pm(i) = (Pprev(i) + Pnext(i)) / 2.0
+    Next
+
+    Dim Va, Vm
+    Va = Rhino.VectorCreate(Pm, P)
+    Vm = Rhino.VectorScale(Va, s)
+
+    SmoothingVector = Vm
+End Function
 ```
 {: .line-numbers}
 
@@ -517,42 +599,51 @@ def smoothingvector(point, prev_point, next_point, s):
 <th>Description</th>
 </tr>
 <tr>
-<td>2</td>
-<td>The smoothingvector function definition takes input of Rhino.Point3d. This object type allows for explicit point addition. The act of adding two Point3d objects together results in vector addition of the two points. The act of dividing the resulting point by 2.0 simply divides the three components (x,y and z) by 2.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>The VectorCreate() function is called in order to obtain a Rhino.Vector3d with information about the directional components of a vector between points Pm, and point, P  being the origin. The math is effectively the same as Pm - Point = Va, but this operation would not have yielded a Rhion.Vector3d object. The VectorCreate() function creates this object efficiently.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Finally, we call the <i>Rhino.VectorScale()</i> function, which takes a Rhino.Vector3d object, and scales it according to a predetermined scaling factor 's'.
-When we use this algorithm, we must make sure to set 's' to be something sensible, or the loop might become endless: 0.0 1 {s} # 1.0</td>
+<td>4..6</td>
+<td>We'll use this loop to iterate through all the coordinates in the point arrays.</td>
 </tr>
 <tr>
 <td>5</td>
-<td>We return the vector vm.</td>
+<td>Compute the average value of the two components. 
+{pm} is the halfway point between {pprev} and {pnext}.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Create the {va} vector.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Depending on the value of {s}, the smoothing will occur quickly or slowly. When {s} has a value of 1.0, it will have no effect on the algorithm since {vM} will be the same length as {vA}. Values higher than 1.0 are likely to make the smoothing operation overshoot. A value of 0.0 will stop the smoothing from taking place at all since {vM} will become a zero-length vector. Values lower than 0.0 will invert the smoothing.
+
+When we use this algorithm, we must make sure to set s to be something sensible, or the loop might become endless: 0.0 1 {s} # 1.0</td>
 </tr>
 </table>
 {: .multiline}
 
 We'll also put the entire curve-smoothing algorithm in a separate function. Since it's fairly hard to adjust existing objects in Rhino, we'll be adding a new curve and deleting the existing one:
 
-```python
-def smoothcurve(curve_id, s):
-    curve_points = rs.CurvePoints(curve_id)
-    new_curve_points = []
 
-    for i in range(1, len(curve_points)-1):
-        vm = smoothingvector(curve_points[i], curve_points[i-1], curve_points[i+1], s)
-        new_curve_points.append( rs.PointAdd(curve_points[i], vm) )
+```vb
+Function SmoothCurve(ByVal strCurveID, ByVal s)
+    Dim arrCP    : arrCP = Rhino.CurvePoints(strCurveID)
+    Dim arrNewCP : arrNewCP = arrCP
 
-    knots = rs.CurveKnots(curve_id)
-    degree = rs.CurveDegree(curve_id)
-    weights = rs.CurveWeights(curve_id,0)
-    newcurve_id = rs.AddNurbsCurve(new_curve_points, knots, degree, weights)
-    if newcurve_id: rs.DeleteObject(curve_id)
-    return newcurve_id
+    Dim i
+    For i = 1 To UBound(arrCP) - 1
+        Dim Vm
+        Vm = SmoothingVector(arrCP(i), arrCP(i-1), arrCP(i+1), s)
+        arrNewCP(i) = Rhino.PointAdd(arrCP(i), Vm)
+    Next
+
+    Dim arrKnots  : arrKnots = Rhino.CurveKnots(strCurveID)
+    Dim intDegree : intDegree = Rhino.CurveDegree(strCurveID)
+    Dim arrWeights: arrWeights = Rhino.CurveWeights(strCurveID)
+
+    SmoothCurve = Rhino.AddNurbsCurve(arrNewCP, arrKnots, intDegree, arrWeights)
+    If IsNull(SmoothCurve) Then Exit Function
+
+    Call Rhino.DeleteObject(strCurveID)
+End Function
 ```
 {: .line-numbers}
 
@@ -563,34 +654,34 @@ def smoothcurve(curve_id, s):
 </tr>
 <tr>
 <td>2</td>
-<td>Retrieve the nested list of curve control points, and store it in curve_points.</td>
+<td>Retrieve the nested array of curve control points. </td>
 </tr>
 <tr>
 <td>3</td>
-<td>We need a second list to contain the new points, while leaving the initial curve_points list intact.</td>
-</tr>
-<tr>
-<td>5</td>
-<td>This loop will start at one and stop one short of the length of the curve_points list. In other words, we're skipping the first and last items in the array.</td>
+<td>We'll need a copy of the <i>arrCP</i> array since we need to create a new array for all the smoothed points while keeping the old array intact.</td>
 </tr>
 <tr>
 <td>6</td>
-<td>Compute the smoothing vector using the current control point, the previous one (<i>i-1</i>) and the next one (<i>i+1</i>). Since we're omitting the first and last point in the array, every point we're dealing with has two neighbors.</td>
+<td>This loop will start at one and stop one short of the upper bound of the array. In other words, we're skipping the first and last items in the array.</td>
 </tr>
 <tr>
-<td>7</td>
+<td>8</td>
+<td>Compute the smoothing vector using the current control point, the previous one (i-1) and the next one (i+1). Since we're omitting the first and last point in the array, every point we're dealing with has two neighbours.</td>
+</tr>
+<tr>
+<td>9</td>
 <td>Set the new control point position. The new coordinate equals the old coordinate plus the smoothing vector.</td>
 </tr>
 <tr>
-<td>9...11</td>
+<td>12...14</td>
 <td>We'll be adding a new curve to the document which is identical to the existing one, but with different control point positions. A nurbs curve is defined by four different blocks of data: control points, knots, weights and degree (see paragraph 7.7 Nurbs Curves). We just need to copy the other bits from the old curve.</td>
 </tr>
 <tr>
-<td>12</td>
-<td>Create a new nurbs curve and store the object ID in the variable newcurve_id.</td>
+<td>16</td>
+<td>Create a new nurbs curve and store the object ID in the function variable.</td>
 </tr>
 <tr>
-<td>13</td>
+<td>19</td>
 <td>Delete the original curve.</td>
 </tr>
 </table>
@@ -598,25 +689,29 @@ def smoothcurve(curve_id, s):
 
 The top-level subroutine doesn't contain anything you're not already familiar with:
 
-```python
-def iterativeshortencurve():
-    curve_id = rs.GetObject("Open curve to smooth", 4, True)
-    if curve_id is None or rs.IsCurveClosed(curve_id): return
+```vb
+Sub IterativeShortenCurve()
+    Dim strCurveID : strCurveID = Rhino.GetObject("Open curve to smooth", 4, True)
+    If IsNull(strCurveID) Then Exit Sub
+    If Rhino.IsCurveClosed(strCurveID) Then Exit Sub
 
-    min = rs.Distance(rs.CurveStartPoint(curve_id), rs.CurveEndPoint(curve_id))
-    max = rs.CurveLength(curve_id)
-    goal = rs.GetReal("Goal length", 0.5*(min+max) , min, max)
-    if goal is None: return
+    Dim dblMin, dblMax, dblGoal
+    dblMin = Rhino.Distance(Rhino.CurveStartPoint(strCurveID), Rhino.CurveEndPoint(strCurveID))
+    dblMax = Rhino.CurveLength(strCurveID)
+    dblGoal = Rhino.GetReal("Goal length", 0.5*(dblMin + dblMax) , dblMin, dblMax)
+    If IsNull(dblGoal) Then Exit Sub
 
-    while rs.CurveLength(curve_id)>goal:
-        rs.EnableRedraw(False)
-        curve_id = smoothcurve(curve_id, 0.1)
-        rs.EnableRedraw(True)
-        if curve_id is None: break
+    Do Until Rhino.CurveLength(strCurveID) < dblGoal
+        Call Rhino.EnableRedraw(False)
+        strCurveID = SmoothCurve(strCurveID, 0.1)
+        If IsNull(strCurveID) Then Exit Do
+        Call Rhino.EnableRedraw(True)
+    Loop
+End Sub
 ```
 
 ---
 
 ## Next Steps
 
-Tuples, Lists and Dictionaries are very powerful in Python. Let's make a quick stop to learn about [class syntax]({{ site.baseurl }}/guides/rhinopython/primer-101/7-classes/#class-syntax).
+Tuples, Lists and Dictionaries are very powerful in Python. Let's make a quick stop to learn about [class syntax]({{ site.baseurl }}/guides/rhinoscript/primer-101/7-classes/#class-syntax).
