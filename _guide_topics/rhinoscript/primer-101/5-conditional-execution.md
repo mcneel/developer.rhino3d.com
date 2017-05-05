@@ -20,8 +20,8 @@ What if I were to fling this rock at that bear? What if I were to alleviate that
 A major part of programming is recovering from screw-ups. A piece of code does not always behave in a straightforward manner and we need to catch these aberrations before they propagate too far. At other times we design our code to deal with more than one situation. In any case, there's always a lot of conditional evaluation going on, a lot of 'what if' questions. Let's take a look at three conditionals of varying complexity:
 
 1. If the object is a curve, delete it.
-1. If the object is a short curve, delete it.
-1. If the object is a short curve, delete it, otherwise move it to the "curves" layer.
+2. If the object is a short curve, delete it.
+3. If the object is a short curve, delete it, otherwise move it to the "curves" layer.
 
 The first conditional statement evaluates a single boolean value; an object is either is a curve or it is not. There's no middle ground. The second conditional must also evaluate the constraint 'short'. Curves don't become short all of a sudden any more than people grow tall all of a sudden. We need to come up with a boolean way of talking about 'short' before we can evaluate it. The third conditional is identical to the second one, except it defines more behavioural patterns depending on the outcome of the evaluation.
 
@@ -180,7 +180,7 @@ End If
 
 Call Rhino.ObjectLayer(strObjectID, strLayerName)     'Assign the object to the layer
 ```
-  
+
 This snippet of code will check the type of the object which is referenced by the variable *strObjectID* and it will assign it to a specific layer. Some object type codes do not belong to 'real' objects (such as grips and edges) so we need the Case Else bit to make sure we don't try to assign them to a layer. I'm going to be very naughty right now and not discuss this in detail. The comments should be enough to help you on your way. 
 
 ##5.3 Looping
@@ -209,6 +209,8 @@ All the lines between the Do keyword and the Loop keyword will be repeated until
 
 In VBScript it does not signify the end of the world to have a truly infinite loop. Scripts are always run under the supervision of the RhinoScript plug-in. Jamming the Escape key several times in a row is pretty likely to gut any script which happens to be running. The following example script contains an endless *Do…Loop* which can only be cancelled by the user pressing (and holding) escape.
 
+![{{ site.baseurl }}/images/primer-viewportclock.svg]({{ site.baseurl }}/images/primer-viewportclock.svg){: .float-img-right width="275"}
+
 
 ```vb
 Option Explicit
@@ -227,9 +229,6 @@ Sub ViewportClock()
 End Sub
 ```
 {: .line-numbers}
-
-
-<img src="{{ site.baseurl }}/images/primer-viewportclock.svg">{: .img-center  width="40%"}
 
 
 Here's how it works:
@@ -270,11 +269,15 @@ We declare a variable which is capable of storing a Rhino object ID.
 <td>7</td>
 <td>We create a new Rhino Text object. The RhinoScript helpfile tells us how to approach this particular method:
 
-<code>Rhino.AddText (strText, arrPoint [, dblHeight [, strFont [, intStyle]]])</code>
+<code  class="language-vb hljs vbnet">
+Rhino.AddText (strText, arrPoint [, dblHeight [, strFont [, intStyle]]])
+</code>
 
 Five arguments, the last three of which are optional. When adding a text object to Rhino we must specify the text string and the location for the object. There are no defaults for this. The height of the text, font name and style do have default values. However, since we're not happy with the default height, we will override it to be much bigger:
 
-<code>strTextObjectID = Rhino.AddText(CStr(Time()), Array(0,0,0), 20)</code>
+<code  class="language-vb hljs vbnet">
+strTextObjectID = Rhino.AddText(CStr(Time()), Array(0,0,0), 20)
+</code>
 
 The <i>strText</i> argument must contain a String description of the current system time. We will simply nest two native VBScript functions to get it. Since these functions are not designed to fail we do not have to check for a Null variable and we can put them 'inline'. <i>Time()</i> returns a variable which contains only the system time, not the date. We could also have used the <i>Now()</i> function (as on page 20) in which case we would have gotten both the date and the time. <i>Time()</i> does not return a String type variable, so before we pass it into Rhino we have to convert it to a proper String using the <i>CStr()</i> function. This is analogous with our code on page 20.
 
@@ -454,13 +457,13 @@ For i = A To B [Step N]
 Next
 ```
 
-The variable i starts out by being equal to *A* and it is incremented by *N* until it becomes larger than *B*. Once* i > B* the loop will terminate. The Step keyword is optional and if we do not override it the default stepsize of 1.0 will be used. In the example above the variable *i* is not used in the loop itself, we're using it for counting purposes only.
+The variable i starts out by being equal to *A* and it is incremented by *N* until it becomes larger than *B*. Once *i > B* the loop will terminate. The Step keyword is optional and if we do not override it the default stepsize of 1.0 will be used. In the example above the variable *i* is not used in the loop itself, we're using it for counting purposes only.
 
 If we want to abort a *For…Next* loop ahead of time, we can place a call to *Exit For* in order to short-circuit the process.
 
 Creating mathematical graphs is a typical example of the usage of *For…Next*:
 
-![{{ site.baseurl }}/images/primer-sinewave.svg]({{ site.baseurl }}/images/primer-sinewave.svg){: .float-img-right width="275"}
+![{{ site.baseurl }}/images/primer-sinewave.svg]({{ site.baseurl }}/images/primer-sinewave.svg){: .float-img-right width="350"}
 
 ```vb
 Option Explicit
@@ -490,7 +493,7 @@ The *For…Next* loop will increment the value of x automatically with the speci
 
 Loop structures can be nested at will, there are no limitations, but you'll rarely encounter more than three. The following example shows how nested *For…Next* structures can be used to compute distributions:
 
-![{{ site.baseurl }}/images/primer-twistandshout.svg]({{ site.baseurl }}/images/primer-twistandshout.svg){: .float-img-right width="275"}
+![{{ site.baseurl }}/images/primer-twistandshout.svg]({{ site.baseurl }}/images/primer-twistandshout.svg){: .float-img-right width="350"}
 
 ```vb
 Sub TwistAndShout()
@@ -519,11 +522,10 @@ The master loop increments the z variable from 0.0 to 5.0 with a default step si
 The master loop will run a total of ten times and the nested loop is designed to run 30 times. But because the nested loop is started every time the master loop performs another iteration, the code between lines 11 and 14 will be executed 10×30 = 300 times. Whenever you start nesting loops, the total number of operations your script performs will grow exponentially.
 
 
-The *rs.EnableRedraw()* calls before and after the master loop are there to prevent the viewport from updating
-while the spheres are inserted. The script completes much faster if it doesn't have to redraw 330 times. If you comment out the *rs.EnableRedraw()* call you can see the order in which spheres are added, it may help you understand how the nested loops work together.
+The *rs.EnableRedraw()* calls before and after the master loop are there to prevent the viewport from updating while the spheres are inserted. The script completes much faster if it doesn't have to redraw 330 times. If you comment out the *rs.EnableRedraw()* call you can see the order in which spheres are added, it may help you understand how the nested loops work together.
 
 ---
 
 ## Next Steps
 
-Now it should be coming together on how Python works.  Just a few more details. Leanr more about Python's advanced variables in [Tuples, Lists and Dictionaries]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/).
+Now it should be coming together on how Python works.  Just a few more details. Leanr more about Python's advanced variables in [Tuples, Lists and Dictionaries]({{ site.baseurl }}/guides/rhinoscript/primer-101/6-tuples-lists-dictionaries/).
