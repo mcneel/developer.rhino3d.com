@@ -1,5 +1,5 @@
 ---
-title: 6 Tuples, Lists and Dictionaries
+title: 6 Arrays
 description:
 authors: ['David Rutten']
 author_contacts: ['DavidRutten']
@@ -13,7 +13,7 @@ keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
 ---
 
-## 6.1 Tuples
+## 6.1 My favorite things
 
 We've already been using arrays in examples and I've always told you not to worry about it. Those days are officially over. Now is the time to panic. Perhaps it's best if we just get the obvious stuff out of the way first:
 
