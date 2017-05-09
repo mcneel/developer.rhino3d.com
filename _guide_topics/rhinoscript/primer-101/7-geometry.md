@@ -335,7 +335,7 @@ No rocket science yet, but brace yourself for the next bit...
 ![{{ site.baseurl }}/images/primer-r2shortpath.svg]({{ site.baseurl }}/images/primer-r2shortpath.svg){: .float-img-right width="325"}
 
 No rocket science yet, but brace yourself for the next bit...
- 
+
 As you know, the shortest path between two points is a straight line. This is true for all our space definitions, from R1 to RN. However, the shortest path in R2 space is not necessarily the same shortest path in R3 space. If we want to connect two points on a surface with a straight line in R2, all we need to do is plot a linear course through the surface {u,v} space. (Since we can only add curves to Rhino which use 3D world coordinates, we'll need a fair amount of samples to give the impression of smoothness.) The thick red curve in the adjacent illustration is the shortest path in R2 parameter space connecting {A} and {B}. We can clearly see that this is definitely not the shortest path in R3 space.	
 
 We can clearly see this because we're used to things happening in R3 space, which is why this whole R2/R3 thing is so thoroughly counter intuitive to begin with. The green, dotted curve is the actual shortest path in R3 space which still respects the limitation of the surface (I.e. it can be projected onto the surface without any loss of information). The following function was used to create the red curve; it creates a polyline which represents the shortest path from {A} to {B} in surface parameter space:
@@ -421,9 +421,9 @@ First we'll create a polyline which describes the shortest path between {A} and 
 Once we've got our base shape we'll enter the iterative part. The iteration consists of two nested loops, which we will put in two different functions in order to avoid too much nesting and indenting. We're going to write four functions in addition to the ones already discussed in this paragraph:
 
 1. The main geodesic routine
-1. ProjectPolyline()
-1. SmoothPolyline()
-1. GeodesicFit()
+2. ProjectPolyline()
+3. SmoothPolyline()
+4. GeodesicFit()
 
 The purpose of the main routine is the same as always; to collect the initial data and make sure the script completes as successfully as possible. Since we're going to calculate the geodesic curve between two points on a surface, the initial data consists only of a surface ID and two points in surface parameter space. The algorithm for finding the geodesic curve is a relatively slow one and it is not very good at making major changes to dense polylines. That is why we will be feeding it the problem in bite-size chunks. It is because of this reason that our initial base curve (the first bite) will only have ten segments. We'll compute the geodesic path for these ten segments, then subdivide the curve into twenty segments and recompute the geodesic, then subdivide into 40 and so on and so forth until further subdivision no longer results in a shorter overall curve.
 
@@ -681,8 +681,8 @@ Planes are not genuine objects in Rhino, they are used to define a coordinate sy
 A plane definition is an array of one point and three vectors, the point marks the origin of the plane and the vectors represent the three axes. There are some rules to plane definitions, I.e. not every combination of points and vectors is a valid plane. If you create a plane using one of the RhinoScript plane methods you don't have to worry about this, since all the bookkeeping will be done for you. The rules are as follows:
 
 1. The axis vectors must be unitized (have a length of 1.0).
-1. All axis vectors must be perpendicular to each other.
-1. The x and y axis are ordered anti-clockwise.
+2. All axis vectors must be perpendicular to each other.
+3. The x and y axis are ordered anti-clockwise.
 
 The illustration shows how rules #2 and #3 work in practise.
 
@@ -777,8 +777,8 @@ The most obvious solution is to start stacking circles in horizontal bands and s
 Rusin's algorithm works as follows:
 
 1. Solve how many circles you can evenly stack from north pole to south pole on the sphere.
-1. For each of those bands, solve how many circles you can stack evenly around the sphere.
-1. Do it.
+2. For each of those bands, solve how many circles you can stack evenly around the sphere.
+3. Do it.
 
 No wait, back up. The first thing to realize is how a sphere actually works. Only once we master spheres can be start packing them with circles. In Rhino, a sphere is a surface of revolution, which has two singularities and a single seam:
 
@@ -1018,7 +1018,7 @@ Before we can get to the cool bit we have to write some of the supporting functi
 The problem: adding an arc using the start point, end point and start direction. As you will be aware there is a way to do this directly in Rhino using the mouse. In fact a brief inspection yields 14 different ways in which arcs can be drawn in Rhino manually and yet there are only two ways to add arcs through scripting:
 
 1. Rhino.AddArc(Plane, Radius, Angle)
-1. Rhino.AddArc3Pt(Point, Point, Point)
+2. Rhino.AddArc3Pt(Point, Point, Point)
 
 The first way is very similar to adding circles using plane and radius values, with the added argument for sweep angle. The second way is also similar to adding circles using a 3-point system, with the difference that the arc terminates at the first and second point. There is no direct way to add arcs from point A to point B while constrained to a start tangent vector. We're going to have to write a function which translates the desired Start-End-Direction approach into a 3-Point approach. Before we tackle the math, let's review how it works:
 
@@ -1129,10 +1129,10 @@ flexible nature of the recursive paradigm- it will be very easy to add more beha
 The five base parameters are:
 
 1. Propagation factor
-1. Twig length
-1. Twig length mutation
-1. Twig angle
-1. Twig angle mutation  
+2. Twig length
+3. Twig length mutation
+4. Twig angle
+5. Twig angle mutation  
 
 The propagation-factor is a numeric range which indicates the minimum and maximum number of twigs that grow at the end of every branch. This is a totally random affair, which is why it is called a "factor" rather than a "number". More on random numbers in a minute. The twig-length and twig-length-mutation variables control the -as you probably guessed- length of the twigs and how the length changes with every twig generation. The twig-angle and twig-angle-mutation work in a similar fashion.
 
@@ -1143,9 +1143,9 @@ The actual recursive bit of this algorithm will not concern itself with the addi
 The adjacent illustration shows the algorithm we'll be using for twig propagation. The red curve is the branch-arc and we need to populate the end with any number of twig-arcs. Point {A} and Vector {D} are dictated by the shape of the branch but we are free to pick point {B} at random provided we remain within the limits set by the length and angle constraints. The compete set of possible end-points is drawn as the yellow cone. We're going to use a sequence of Vector methods to get a random point {B} in this shape:
 
 1. Create a new vector {T} parallel to {D}
-1. Resize {T} to have a length between {Lmin} and {Lmax}
-1. Mutate {T} to deviate a bit from {D}
-1. Rotate {T} around {D} to randomize the orientation
+2. Resize {T} to have a length between {Lmin} and {Lmax}
+3. Mutate {T} to deviate a bit from {D}
+4. Rotate {T} around {D} to randomize the orientation
 
 &nbsp;{: .clear-img}  
 
@@ -1240,63 +1240,64 @@ End Sub
 </tr>
 <tr>
 <td>1</td>
-<td>A word on the function signature. Apart from the obvious arguments <i>ptStart</i> and <i>vecDir</i>, this function takes an tuple and a generation counter. The tuple contains all our growth variables. Since there are seven of them in total I didn't want to add them all as individual arguments. Also, this way it is easier to add parameters without changing function calls. The generation argument is an integer telling the function which twig generation it is in. Normally a recursive function does not need to know its depth in the grand scheme of things, but in our case we're making an exception since the number of generations is an exit threshold.</td>
+<td>A word on the function signature. Apart from the obvious arguments <i>ptStart</i> and <i>vecDir</i>, this function takes an array and a generation counter. The array contains all our growth variables. Since there are seven of them in total I didn't want to add them all as individual arguments. Also, this way it is easier to add parameters without changing function calls. The generation argument is an integer telling the function which twig generation it is in. Normally a recursive function does not need to know its depth in the grand scheme of things, but in our case we're making an exception since the number of generations is an exit threshold, which bring us to line #2.</td>
 </tr>
 <tr>
 <td>2</td>
-<td>For readability, we will break our tuple into individual variables. On the assignment side, the variables are listed in the order that they appear in the tuple. The properties tuple consists of the following items:
+<td>Indeed so. If the current generation exceeds the generation limit (which is stored at the third element in the properties array) this function will abort without calling itself. Hence, it will take a step back on the recursive hierarchy. The properties array consists of the following items:
 
-<img src="{{ site.baseurl }}/images/primer-data-table.svg" width="100%" float="right">
+<img src="{{ site.baseurl }}/images/primer-data-table.svg" width="100%">
+
 </td>
 </tr>
 <tr>
 <td>3</td>
-<td>If the current generation exceeds the generation limit (which is stored at the third element in the properties tuple, and broken out to the variable maxGenerations) this function will abort without calling itself. Hence, it will take a step back on the recursive hierarchy.</td>
+<td>Declare a bunch of variables we'll be needing. <i>ptGrow</i> will store the end point of a particular twig. <i>vecGrow</i> will store the tangent at <i>ptGrow</i> for that new twig-arc and <i>newTwig</i> will store the ID of the newly added arc curve.</td>
 </tr>
 <tr>
-<td>6</td>
-<td>This is where we make a copy of the properties. You see, when we are going to grow new twigs, those twigs will be called with mutated properties, however we require the unmutated properties inside this function instance.</td>
+<td>4</td>
+<td>This is where we make a copy of the properties. You see, when we are going to grow new twigs, those twigs will be called with mutated properties, however we require the unmutated properties inside this function instance. </td>
 </tr>
 <tr>
-<td>7...9</td>
+<td>6...8</td>
 <td>Mutate the copied properties. I.e. multiply the maximum-twig-length by the twig-length-mutation factor and do the same for the angle. We must take additional steps to ensure the angle doesn't go berserk so we're limiting the mutation to within the 90 degree realm.</td>
 </tr>
 <tr>
-<td>13</td>
-<td><i>maxN</i> is an integer which indicated the number of twigs we are about to grow. <i>maxN</i> is randomly picked between the two allowed extremes (<i>Props(0)</i> and <i>Props(1)</i>). The <i>random()</i> function generates a number between zero and one which means that maxN can become any value between and including the limits.</td>
+<td>11</td>
+<td><i>maxN</i> is an integer which indicated the number of twigs we are about to grow. <i>maxN</i> is randomly picked between the two allowed extremes (<i>Props(0)</i> and <i>Props(1)</i>). The <i>Rnd()</i> function generates a number between zero and one which means that <i>maxN</i> can become any value between and including the limits.</td>
 </tr>
 <tr>
-<td>15</td>
+<td>14</td>
 <td>This is where we pick a point at random using the unmutated properties. The length constraints we're using is hard coded to be between the maximum allowed length and a quarter of the maximum allowed length. There is nothing in the universe which suggests a factor of 0.25, it is purely arbitrary. It does however have a strong effect on the shape of the trees we're growing. It means it is impossible to accurately specify a twig length. There is a lot of room for experimentation and change here.</td>
 </tr>
 <tr>
-<td>16</td>
+<td>15</td>
 <td>We create the arc that belongs to this twig.</td>
 </tr>
 <tr>
-<td>17</td>
+<td>16</td>
 <td>If the distance between <i>ptStart</i> and <i>ptGrow</i> was 0.0 or if <i>vecDir</i> was parallel to <i>ptStart</i> » <i>ptGrow</i> then the arc could not be added. We need to catch this problem in time.</td>
 </tr>
 <tr>
-<td>18</td>
+<td>17</td>
 <td>We need to know the tangent at the end of the newly created arc curve.  The domain of a curve consists of two values (a lower and an upper bound). <i>Rhino.CurveDomain(newTwig)(1)</i> will return the upper bound of the domain. This is the same as calling:
 
-<code lang="python">
-crvDomain = rs.CurveDomain(newTwig)
-vecGrow = rs.CurveTangent(newTwig, crvDomain[1])
+<code lang="vb">
+Dim crvDomain : crvDomain = Rhino.CurveDomain(newTwig)
+vecGrow = Rhino.CurveTangent(newTwig, crvDomain(1))
 </code>
 
 </td>
 </tr>
 <tr>
-<td>19</td>
+<td>18</td>
 <td>Awooga! Awooga! A function calling itself! This is it! We made it!
 The thing to realize is that the call is now different. We're putting in different arguments which means this new function instance behaves differently than the current function instance.</td>
 </tr>
 </table>
 {: .multiline}
 
-It would have been possible to code this tree-generator in an iterative (For loops) fashion. The tree would look the same even though the code would be very different (probably a lot more lines). The order in which the branches are added would very probably also have differed. The trees below are archetypal, digital trees, the one on the left generated using iteration, the one on the right generated using recursion. Note the difference in branch order. If you look carefully at the recursive function on the previous page you'll probably be able to work out where this difference comes from...
+Well, that's it. The show is over. You don't have to go home but you can't stay here. Oh, one last thing. It would have been possible to code this tree-generator in an iterative (using only For…Next loops) fashion. The tree would look the same even though the code would be very different (probably a lot more lines). The order in which the branches are added would very probably also have differed. The trees below are archetypal, digital trees, the one on the left generated using iteration, the one on the right generated using recursion. Note the difference in branch order. If you look carefully at the recursive function on the previous page you'll probably be able to work out where this difference comes from...
 
 <img src="{{ site.baseurl }}/images/primer_iterativetree_vs_recursivetree.svg">{: .img-center  width="80%"}
 
@@ -1304,27 +1305,29 @@ A small comparison table for different setting combinations. Please note that th
 
 <img src="{{ site.baseurl }}/images/primer-treechart.svg">{: .img-center  width="100%"}
 
-## 8.7 Nurbs-curves
+## 7.7 Nurbs-curves
 
 Circles and arcs are all fine and dandy, but they cannot be used to draw freeform shapes. For that you need splines. The worlds most famous spline is probably the Bézier curve, which was developed in 1962 by the French engineer *Pierre Bézier* while he was working for Renault. Most splines used in computer graphics these days are variations on the Bézier spline, and they are thus a surprisingly recent arrival on the mathematical scene. Other ground-breaking work on splines was done by *Paul de Casteljau* at Citroën and *Carl de Boor* at General Motors. The thing that jumps out here is the fact that all these people worked for car manufacturers. With the increase in engine power and road quality, the automobile industry started to face new problems halfway through the twentieth century, one of which was aerodynamics. New methods were needed to design mass-production cars that had smooth, fluent curves as opposed to the tangency and curvature fractured shapes of old. They needed mathematically accurate, freely adjustable geometry. Enter splines.
 
-Before we start with NURBS curves (the mathematics of which are a bit too complex for a scripting primer) I'd like to give you a sense of how splines work in general and Béziers work in particular. I'll explain the de Casteljau algorithm which is a very straightforward way of evaluating properties of simple splines. In practice, this algorithm will rarely be used since its performance is worse than alternate approaches, but due to its visual appeal it is easier to 'get a feel' for it.
+Before we start with NURBS curves (the mathematics of which are a bit too complex for a scripting primer) I'd like to give you a sense of how splines work in general and how Béziers work in particular. I'll explain the *de Casteljau* algorithm which is a very straightforward way of evaluating properties of simple splines. In practice, this algorithm will rarely be used since its performance is worse than alternate approaches, but due to its visual appeal it is easier to 'get a feel' for it.
 
 <img src="{{ site.baseurl }}/images/primer-nurbsalgorithm.svg">{: .img-center  width="100%"}
 
 Splines limited to four control points were not the end of the revolution of course. Soon, more advanced spline definitions were formulated one of which is the NURBS curve. (Just to set the record straight; NURBS stands for Non-Uniform Rational [Basic/Basis] Spline and not Bézier-Spline as some people think. In fact, the Rhino help file gets it right, but I doubt many of you have read the glossary section, I only found out just now.) Bézier splines are a subset of NURBS curves, meaning that every Bézier spline can be represented by a NURBS curve, but not the other way around. Other curve types still in use today (but not available in Rhino) are Hermite, Cardinal, Catmull-Rom, Beta and Akima splines, but this is not a complete list. Hermite curves for example are used by the Bongo animation plug-in to smoothly transform objects through a number of keyframes.
 
-In addition to control point locations, NURBS curves have additional properties such as the degree, knot-vectors and weights. I'm going to assume that you already know how weight factors work (if you don't, it's in the Rhino help file under [NURBS About]) so I won't discuss them here. Instead, we'll continue with the correlation between degrees and knot-vectors.
+In addition to control point locations, NURBS curves have additional properties such as the degree, knot-vectors and weights. I'm going to assume that you already know how weight factors work (if you don't, it's in the Rhino help file under [NURBS About]) so I won't discuss them here. Instead, we'll continue with the correlation between degrees and knot-vectors. 
 
-Every NURBS curve has a number associated with it which represents the degree. The degree of a curve is always a positive integer between and including 1 and 11. The degree of a curve is written as DN. Thus D1 is a degree one curve and D3 is a degree three curve. The table on the next page shows a number of curves with the exact same control-polygon but with different degrees. In short, the degree of a curve determines the range of influence of control points. The higher the degree, the larger the range.
+Every NURBS curve has a number associated with it which represents the degree. The degree of a curve is always a positive integer between and including 1 and 11. The degree of a curve is written as *D<sup>N</sup>*. Thus *D<sup>1</sup>* is a degree one curve and *D<sup>3</sup>* is a degree three curve. The table on the next page shows a number of curves with the exact same control-polygon but with different degrees. In short, the degree of a curve determines the range of influence of control points. The higher the degree, the larger the range.
 
-As you will recall from the beginning of this section, a quadratic Bézier curve is defined by four control points. A quadratic NURBS curve however can be defined by any number of control points (any number larger than three that is), which in turn means that the entire curve consists of a number of connected pieces. The illustration below shows a D3 curve with 10 control points. All the individual pieces have been given a different color. As you can see each piece has a rather simple shape; a shape you could approximate with a traditional, four-point Bézier curve. Now you know why NURBS curves and other splines are often described as "piece-wise curves".
+Degrees may be easy to understand, but I vividly remember having a hard time with the knot-vector concept when I first started programming. The first clear moment was when I realized that the knot-vector isn't a vector at all, it's in fact an array of numbers. The terminology is confusing, especially to non-math-PhDs, so whenever you see "knot vector" don't think "twisted-arrows-in-space", but think "list-of-numbers". 
+
+As you will recall from the beginning of this section, a quadratic Bézier curve is defined by four control points. A quadratic NURBS curve however can be defined by any number of control points (any number larger than three that is), which in turn means that the entire curve consists of a number of connected pieces. The illustration below shows a *D<sup>3</sup>* curve with 10 control points. All the individual pieces have been given a different colour. As you can see each piece has a rather simple shape; a shape you could approximate with a traditional, four-point Bézier curve. Now you know why NURBS curves and other splines are often described as "piece-wise curves".
 
 <img src="{{ site.baseurl }}/images/primer-piecewisecurve.svg">{: .img-center  width="100%"}
 
-The shape of the red piece is entirely dictated by the first four control points. In fact, since this is a D3 curve, every piece is defined by four control points. So the second (orange) piece is defined by points {A; B; C; D}. The big difference between these pieces and a traditional Bézier curve is that the pieces stop short of the local control polygon. Instead of going all the way to {D}, the orange piece terminates somewhere in the vicinity of {C} and gives way to the green piece. Due to the mathematical magic of spline curves, the orange and green pieces fit perfectly, they have an identical position, tangency and curvature at point 4.
+The shape of the red piece is entirely dictated by the first four control points. In fact, since this is a *D<sup>3</sup>* curve, every piece is defined by four control points. So the second (orange) piece is defined by points {A; B; C; D}. The big difference between these pieces and a traditional Bézier curve is that the pieces stop short of the local control polygon. Instead of going all the way to {D}, the orange piece terminates somewhere in the vicinity of {C} and gives way to the green piece. Due to the mathematical magic of spline curves, the orange and green pieces fit perfectly, they have an identical position, tangency and curvature at point 4.
 
-As you may or may not have guessed at this point, the little circles between pieces represent the knot-vector of this curve. This D3 curve has ten control points and twelve knots (0~11). This is not a coincidence, the number of knots follows directly from the number of points and the degree:
+As you may or may not have guessed at this point, the little circles between pieces represent the knot-vector of this curve. This *D<sup>3</sup>* curve has ten control points and twelve knots (0~11). This is not a coincidence, the number of knots follows directly from the number of points and the degree:
 
 $$K_N = P_N + (D-1)$$
 

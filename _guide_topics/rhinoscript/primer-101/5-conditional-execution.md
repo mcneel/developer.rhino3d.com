@@ -1,5 +1,5 @@
 ---
-title: 5 Conditional Statements
+title: 5 Conditional execution
 description:
 authors: ['David Rutten']
 author_contacts: ['DavidRutten']
@@ -528,4 +528,4 @@ The *rs.EnableRedraw()* calls before and after the master loop are there to prev
 
 ## Next Steps
 
-Now it should be coming together on how Python works.  Just a few more details. Leanr more about Python's advanced variables in [Tuples, Lists and Dictionaries]({{ site.baseurl }}/guides/rhinoscript/primer-101/6-tuples-lists-dictionaries/).
+Now it should be coming together on how Python works.  Just a few more details. Leanr more about Python's advanced variables in [Arrays]({{ site.baseurl }}/guides/rhinoscript/primer-101/6-arrays/).
