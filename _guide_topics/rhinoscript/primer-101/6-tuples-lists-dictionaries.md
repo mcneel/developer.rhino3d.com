@@ -714,4 +714,4 @@ End Sub
 
 ## Next Steps
 
-Tuples, Lists and Dictionaries are very powerful in Python. Let's make a quick stop to learn about [class syntax]({{ site.baseurl }}/guides/rhinoscript/primer-101/7-classes/#class-syntax).
+Array are very powerful in RhinoScript. Let's make a quick stop to learn about [geometry objects]({{ site.baseurl }}/guides/rhinoscript/primer-101/7-geometry/).
