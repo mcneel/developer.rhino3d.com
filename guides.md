@@ -490,7 +490,16 @@ order: 2
 
 ### Getting Started
 
-- [RhinoScript 101 Primer](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
+&nbsp;&nbsp; [Introduction]({{ site.baseurl }}/guides/rhinoscript/primer-101/primer-introduction/)  
+&nbsp;&nbsp; [Where to find help]({{ site.baseurl }}/guides/rhinoscript/primer-101/primer-where-to-find-help/)  
+&nbsp;&nbsp; 1. [What's it all about?]({{ site.baseurl }}/guides/rhinoscript/primer-101/1-whats-it-all-about/)  
+&nbsp;&nbsp; 2. [RhinoScript Essentials]({{ site.baseurl }}/guides/rhinoscript/primer-101/2-vbscript-essentials/)  
+&nbsp;&nbsp; 3. [Script anatomy]({{ site.baseurl }}/guides/rhinoscript/primer-101/3-script-anatomy/)  
+&nbsp;&nbsp; 4. [Operators and functions]({{ site.baseurl }}/guides/rhinoscript/primer-101/4-operators-and-functions/)  
+&nbsp;&nbsp; 5. [Conditional execution]({{ site.baseurl }}/guides/rhinoscript/primer-101/5-conditional-execution/)  
+&nbsp;&nbsp; 6. [Arrays]({{ site.baseurl }}/guides/rhinoscript/primer-101/6-arrays/)  
+&nbsp;&nbsp; 7. [Geometry]({{ site.baseurl }}/guides/rhinoscript/primer-101/7-geometry/)  
+&nbsp;&nbsp; [Complete RhinoScript 101 Primer PDF](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 
 ### Fundamentals
 
@@ -506,6 +515,7 @@ order: 2
   {% endfor %}
   </ul>
 </div>
+
 
 ### Intermediate
 

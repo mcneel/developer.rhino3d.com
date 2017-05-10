@@ -1,0 +1,825 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.0.0.4-->
+<svg stroke-width="0.501" stroke-linejoin="bevel" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="98.929pt" height="282.331pt" viewBox="0 0 98.929 282.331">
+ <defs>
+  <radialGradient id="RadialGradient" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="43.44" gradientTransform="translate(31.235 253.154)">
+   <stop offset="0" stop-color="#ececec"/>
+   <stop offset="1" stop-color="#a2a2a2"/>
+  </radialGradient>
+  <linearGradient id="LinearGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="-12.742" y2="10.107" gradientTransform="translate(57.197 215.605)">
+   <stop offset="0" stop-color="#b75200"/>
+   <stop offset="1" stop-color="#ffd000"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="-12.743" y2="10.107" gradientTransform="translate(55.836 213.895)">
+   <stop offset="0" stop-color="#b75200"/>
+   <stop offset="1" stop-color="#ffd000"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="27.003" y2="-28.495" gradientTransform="translate(42.362 258.994)">
+   <stop offset="0" stop-color="#ffd000"/>
+   <stop offset="1" stop-color="#b75200"/>
+  </linearGradient>
+  <radialGradient id="RadialGradient_1" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="43.446" gradientTransform="translate(31.91 114.839)">
+   <stop offset="0" stop-color="#ececec"/>
+   <stop offset="1" stop-color="#a2a2a2"/>
+  </radialGradient>
+  <linearGradient id="LinearGradient_3" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="50.162" y2="-28.968" gradientTransform="translate(21.209 126.293)">
+   <stop offset="0" stop-color="#ffd000"/>
+   <stop offset="1" stop-color="#b75200"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_4" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="50.162" y2="-28.968" gradientTransform="translate(15.799 116.966)">
+   <stop offset="0" stop-color="#ffd000"/>
+   <stop offset="1" stop-color="#b75200"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="50.163" y2="-28.968" gradientTransform="translate(8.123 103.709)">
+   <stop offset="0" stop-color="#ffd000"/>
+   <stop offset="1" stop-color="#b75200"/>
+  </linearGradient>
+  <radialGradient id="RadialGradient_2" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="43.44" gradientTransform="translate(31.212 48.148) scale(1 0.999977)">
+   <stop offset="0" stop-color="#ececec"/>
+   <stop offset="1" stop-color="#a2a2a2"/>
+  </radialGradient>
+  <linearGradient id="LinearGradient_6" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="-33.125" y2="1.205" gradientTransform="translate(59.191 58.997)">
+   <stop offset="0" stop-color="#ffd000"/>
+   <stop offset="1" stop-color="#b75200"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_7" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="54.623" y2="2.41" gradientTransform="translate(16.482 38.471)">
+   <stop offset="0" stop-color="#ffd000"/>
+   <stop offset="1" stop-color="#b75200"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_8" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="54.622" y2="2.41" gradientTransform="translate(16.487 38.321)">
+   <stop offset="0" stop-color="#ffd000"/>
+   <stop offset="1" stop-color="#b75200"/>
+  </linearGradient>
+  <radialGradient id="RadialGradient_3" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="45.383" gradientTransform="translate(31.088 186.233) scale(1 0.999978)">
+   <stop offset="0" stop-color="#ededed"/>
+   <stop offset="1" stop-color="#a3a3a3"/>
+  </radialGradient>
+  <linearGradient id="LinearGradient_9" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="21.436" y2="0" gradientTransform="translate(42.221 154.059) rotate(-3.36709)">
+   <stop offset="0" stop-color="#ffc200"/>
+   <stop offset="1" stop-color="#ffe842"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_10" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="21.436" y2="0" gradientTransform="translate(42.342 156.113) rotate(-3.36709)">
+   <stop offset="0" stop-color="#ffc200"/>
+   <stop offset="1" stop-color="#ffe842"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_11" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="21.435" y2="0" gradientTransform="translate(42.162 153.059) rotate(-3.36442)">
+   <stop offset="0" stop-color="#ffc200"/>
+   <stop offset="1" stop-color="#ffe842"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_12" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="45.711" y2="0" gradientTransform="translate(36.557 197.127) rotate(-51.7096)">
+   <stop offset="0" stop-color="#ffc200"/>
+   <stop offset="1" stop-color="#e31700"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_13" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="45.707" y2="0" gradientTransform="translate(42.244 201.61) rotate(-51.7084)">
+   <stop offset="0" stop-color="#ffc200"/>
+   <stop offset="1" stop-color="#e31700"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_14" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="45.709" y2="0" gradientTransform="translate(45.742 204.375) rotate(-51.7108)">
+   <stop offset="0" stop-color="#ffc200"/>
+   <stop offset="1" stop-color="#e31700"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_15" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="45.709" y2="0" gradientTransform="translate(45.808 204.427) rotate(-51.709)">
+   <stop offset="0" stop-color="#ffc200"/>
+   <stop offset="1" stop-color="#e31700"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_16" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="45.709" y2="0" gradientTransform="translate(42.372 201.714) rotate(-51.7108)">
+   <stop offset="0" stop-color="#ffc200"/>
+   <stop offset="1" stop-color="#e31700"/>
+  </linearGradient>
+ </defs>
+ <g id="Document" fill="none" stroke="black" font-family="Times New Roman" font-size="16" transform="scale(1 -1)">
+  <g id="Spread" transform="translate(0 -282.331)">
+   <g id="Layer 1">
+    <g id="Group" stroke="none">
+     <g id="ClipView">
+      <path d="M 21.474,261.232 C 11.281,249.349 12.652,231.455 24.535,221.261 C 36.416,211.071 54.307,212.436 64.503,224.311 C 74.706,236.194 73.34,254.096 61.455,264.293 C 56.108,268.881 49.542,271.126 43.009,271.126 C 35.022,271.127 27.082,267.77 21.474,261.232"/>
+      <clipPath id="ClipPath">
+       <path d="M 24.535,221.261 C 12.652,231.455 11.281,249.349 21.474,261.232 C 27.082,267.77 35.022,271.127 43.009,271.126 C 49.542,271.126 56.108,268.881 61.455,264.293 C 73.34,254.096 74.706,236.194 64.503,224.311 C 54.307,212.436 36.416,211.071 24.535,221.261 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath)">
+       <path d="M 74.704,211.071 L 11.281,211.071 L 11.281,271.126 L 74.704,271.126 L 74.704,211.071 Z" stroke-width="0.75" fill-rule="evenodd" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#RadialGradient)"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_1">
+     <g id="ClipView_1">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_1">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_1)">
+       <path d="M 43.014,224.284 C 47.927,221.428 55.336,218.822 61.213,221.733 C 62.555,222.4 63.666,223.294 64.56,224.359" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_2">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_2">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_2)">
+       <path d="M 43.014,224.284 C 33.877,229.597 25.483,239.948 23.17,250.509 C 21.486,258.196 23.462,263.883 27.722,266.654" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_3">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_3">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_3)">
+       <path d="M 70.946,237.94 C 71.492,241.14 70.82,244.477 68.748,247.624 C 65.318,252.838 59.142,255.984 53.466,257.503 C 47.536,259.09 41.043,259.267 35.029,258.076 C 29.168,256.916 22.956,254.303 18.816,249.625 C 15.795,246.211 14.425,242.184 15.041,238.151" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_4">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_4">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_4)">
+       <path d="M 43.014,224.284 C 49.941,231.123 55.469,241.726 57.486,251.176 C 58.399,255.462 59.082,262.049 56.555,266.299 C 55.705,267.722 54.576,268.714 53.215,269.236" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_5">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_5">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_5)">
+       <path d="M 43.014,224.284 C 40.947,222.241 38.427,220.22 35.725,219.012 C 33.216,217.888 30.14,217.307 27.628,218.972" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_6">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_6">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_6)">
+       <path d="M 64.56,224.359 C 65.673,225.688 66.448,227.284 66.911,229.034 C 67.727,232.143 67.524,235.425 66.852,238.492 C 64.289,250.201 54.042,262.167 43.013,266.708" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_7">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_7">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_7)">
+       <path d="M 53.214,269.236 C 52.272,269.6 51.219,269.737 50.072,269.641 C 47.509,269.424 45.033,268.119 43.014,266.708" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_8">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_8">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_8)">
+       <path d="M 27.721,266.655 C 31.405,269.051 36.801,269.266 43.013,266.708" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_9">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_9">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_9)">
+       <path d="M 27.628,218.972 C 27.468,219.079 27.309,219.194 27.154,219.32 C 24.726,221.275 23.968,224.662 23.764,227.446 C 23.539,230.515 23.89,233.439 24.528,236.422 C 25.759,242.206 28.22,248.092 31.216,253.155 C 34.113,258.049 38.237,263.367 43.014,266.708" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_2" stroke="none">
+     <g id="ClipView_10">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_10">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_10)">
+       <g id="Group_3">
+        <g id="ClipView_11">
+         <path d="M 60.879,214.484 L 36.78,214.484 L 36.78,229.885 L 60.879,229.885 L 60.879,214.484 Z" marker-start="none" marker-end="none"/>
+         <clipPath id="ClipPath_11">
+          <path d="M 36.78,214.484 L 36.78,229.885 L 60.879,229.885 L 60.879,214.484 L 36.78,214.484 Z"/>
+         </clipPath>
+         <g clip-path="url(#ClipPath_11)">
+          <g id="Group_4">
+           <g id="ClipView_12">
+            <path d="M 36.78,217.981 C 37.854,217.312 39.045,216.646 40.311,216.037 L 44.215,214.485 L 45.15,214.511 C 49.669,214.857 54.109,216.281 58.045,218.747 L 60.101,220.185 L 60.154,220.306 C 60.794,222.244 60.984,224.423 60.826,226.613 C 56.635,226.504 52.41,227.934 48.834,229.885 C 44.815,225.918 40.796,221.95 36.78,217.981"/>
+            <clipPath id="ClipPath_12">
+             <path d="M 44.215,214.485 L 40.311,216.037 C 39.045,216.646 37.854,217.312 36.78,217.981 C 40.796,221.95 44.815,225.918 48.834,229.885 C 52.41,227.934 56.635,226.504 60.826,226.613 C 60.984,224.423 60.794,222.244 60.154,220.306 L 60.101,220.185 L 58.045,218.747 C 54.109,216.281 49.669,214.857 45.15,214.511 L 44.215,214.485 Z"/>
+            </clipPath>
+            <g clip-path="url(#ClipPath_12)">
+             <path d="M 51.637,202.7 L 29.281,220.433 L 46.128,241.671 L 68.484,223.939 Z" stroke-width="0.75" fill-rule="evenodd" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#LinearGradient)"/>
+            </g>
+           </g>
+          </g>
+         </g>
+        </g>
+       </g>
+      </g>
+     </g>
+    </g>
+    <g id="Group_5" stroke="none">
+     <g id="ClipView_13">
+      <path d="M 58.046,218.748 C 54.11,216.282 49.67,214.857 45.15,214.512 L 44.216,214.486 L 44.302,214.453 C 46.371,213.806 48.524,213.422 50.622,213.498 C 51.323,213.522 52.015,213.598 52.7,213.731 C 55.949,214.366 58.087,216.127 59.357,218.46 L 60.103,220.187 L 60.102,220.187 L 58.046,218.748 Z" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_13">
+       <path d="M 44.302,214.453 L 44.216,214.486 L 45.15,214.512 C 49.67,214.857 54.11,216.282 58.046,218.748 L 60.102,220.187 L 59.357,218.46 C 58.087,216.127 55.949,214.366 52.7,213.731 C 52.015,213.598 51.323,213.522 50.622,213.498 C 48.524,213.422 46.371,213.806 44.302,214.453 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_13)">
+       <path d="M 53.966,205.687 L 40.922,216.034 L 50.351,227.92 L 63.395,217.573 Z" stroke-width="0.75" fill-rule="evenodd" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#LinearGradient_1)"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_6">
+     <g id="ClipView_14">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_14">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_14)">
+       <path d="M 36.78,217.981 C 41.081,215.307 47.234,212.661 52.698,213.73 C 59.2,214.999 61.251,220.775 60.828,226.614 C 56.637,226.504 52.412,227.935 48.835,229.886 C 44.815,225.918 40.797,221.95 36.78,217.981 Z" fill="none" stroke="#000000" stroke-width="1.071" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_15">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_15">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_15)">
+       <path d="M 64.504,224.312 C 54.307,212.437 36.416,211.071 24.535,221.262 C 12.652,231.455 11.281,249.349 21.474,261.232 C 31.668,273.118 49.571,274.489 61.454,264.293 C 73.339,254.097 74.705,236.194 64.504,224.312 Z" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_16">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_16">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_16)">
+       <path d="M 15.041,238.152 C 15.333,236.245 16.069,234.337 17.285,232.489 C 20.747,227.233 26.852,224.143 32.574,222.614 C 38.505,221.029 44.992,220.855 51.003,222.046 C 54.452,222.729 57.648,223.798 60.755,225.484 C 63.213,226.82 65.35,228.389 67.218,230.502 C 69.219,232.767 70.497,235.305 70.946,237.94" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_7" stroke="none">
+     <g id="ClipView_17">
+      <path d="M 43.053,266.685 C 43.227,265.97 43.396,265.249 43.557,264.532 C 43.739,263.723 43.911,262.912 44.079,262.101 C 44.451,260.287 44.796,258.47 45.118,256.648 C 45.477,254.63 45.808,252.611 46.122,250.587 C 46.446,248.487 46.748,246.388 47.032,244.284 C 48.408,245.491 49.788,246.697 51.167,247.901 C 54.835,243.418 57.659,238.76 59.472,233.198 C 61.015,228.46 62.069,221.431 58.315,216.934 C 60.342,219.28 62.372,221.626 64.399,223.969 C 66.361,226.238 68.324,228.51 70.287,230.777 C 73.983,235.051 74.033,241.201 72.861,246.176 C 71.632,251.392 68.903,256.385 65.565,260.499 C 66.614,261.414 67.665,262.332 68.713,263.251 C 62.409,265.847 55.063,266.863 48.124,266.863 C 46.401,266.863 44.703,266.8 43.053,266.685"/>
+      <clipPath id="ClipPath_17">
+       <path d="M 59.472,233.198 C 57.659,238.76 54.835,243.418 51.167,247.901 C 49.788,246.697 48.408,245.491 47.032,244.284 C 46.748,246.388 46.446,248.487 46.122,250.587 C 45.808,252.611 45.477,254.63 45.118,256.648 C 44.796,258.47 44.451,260.287 44.079,262.101 C 43.911,262.912 43.739,263.723 43.557,264.532 C 43.396,265.249 43.227,265.97 43.053,266.685 C 44.703,266.8 46.401,266.863 48.124,266.863 C 55.063,266.863 62.409,265.847 68.713,263.251 C 67.665,262.332 66.614,261.414 65.565,260.499 C 68.903,256.385 71.632,251.392 72.861,246.176 C 74.033,241.201 73.983,235.051 70.287,230.777 C 68.324,228.51 66.361,226.238 64.399,223.969 C 62.372,221.626 60.342,219.28 58.315,216.934 C 62.069,221.431 61.015,228.46 59.472,233.198 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_17)">
+       <path d="M 59.376,282.331 L 98.961,240.559 L 57.711,201.468 L 18.125,243.24 Z" stroke-width="0.75" fill-rule="evenodd" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#LinearGradient_2)"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_8">
+     <g id="ClipView_18">
+      <path d="M 75.239,210.535 L 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_18">
+       <path d="M 10.746,210.535 L 10.746,275.024 L 75.239,275.024 L 75.239,210.535 L 10.746,210.535 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_18)">
+       <path d="M 51.167,247.901 C 54.835,243.419 57.66,238.76 59.472,233.199 C 61.015,228.459 62.069,221.431 58.315,216.934 C 60.342,219.28 62.373,221.626 64.398,223.968 C 66.361,226.239 68.324,228.51 70.287,230.777 C 73.983,235.051 74.033,241.201 72.861,246.176 C 71.631,251.392 68.903,256.386 65.564,260.498 C 66.614,261.414 67.663,262.333 68.713,263.251 C 60.844,266.491 51.352,267.27 43.055,266.683 C 43.229,265.969 43.397,265.249 43.558,264.531 C 43.74,263.722 43.911,262.911 44.08,262.099 C 44.452,260.287 44.798,258.469 45.119,256.648 C 45.478,254.629 45.809,252.61 46.123,250.586 C 46.447,248.487 46.749,246.387 47.033,244.283 C 48.408,245.491 49.787,246.695 51.167,247.901 Z" fill="none" stroke="#000000" stroke-width="1.071" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_9" stroke="none">
+     <g id="ClipView_19">
+      <path d="M 22.154,122.885 C 11.958,111 13.33,93.103 25.215,82.909 C 37.097,72.716 54.99,74.083 65.188,85.959 C 75.391,97.843 74.025,115.748 62.138,125.945 C 56.79,130.533 50.225,132.78 43.689,132.78 C 35.702,132.781 27.761,129.424 22.154,122.885"/>
+      <clipPath id="ClipPath_19">
+       <path d="M 25.215,82.909 C 13.33,93.103 11.958,111 22.154,122.885 C 27.761,129.424 35.702,132.781 43.689,132.78 C 50.225,132.78 56.79,130.533 62.138,125.945 C 74.025,115.748 75.391,97.843 65.188,85.959 C 54.99,74.083 37.097,72.716 25.215,82.909 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_19)">
+       <path d="M 75.389,72.716 L 11.958,72.716 L 11.958,132.781 L 75.389,132.781 L 75.389,72.716 Z" stroke-width="0.75" fill-rule="evenodd" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#RadialGradient_1)"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_10">
+     <g id="ClipView_20">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_20">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_20)">
+       <path d="M 43.695,85.933 C 48.612,83.074 56.019,80.47 61.897,83.38 C 63.239,84.048 64.353,84.942 65.247,86.008" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_21">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_21">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_21)">
+       <path d="M 43.695,85.933 C 34.558,91.246 26.163,101.599 23.849,112.16 C 22.165,119.848 24.141,125.536 28.401,128.308" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_22">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_22">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_22)">
+       <path d="M 71.631,99.59 C 72.177,102.79 71.505,106.127 69.433,109.276 C 66.003,114.49 59.826,117.636 54.153,119.155 C 48.218,120.743 41.724,120.92 35.712,119.728 C 29.847,118.569 23.634,115.956 19.494,111.276 C 16.476,107.862 15.103,103.834 15.719,99.801" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_23">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_23">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_23)">
+       <path d="M 43.695,85.933 C 50.623,92.772 56.153,103.377 58.17,112.826 C 59.083,117.115 59.765,123.701 57.237,127.952 C 56.389,129.376 55.259,130.368 53.899,130.89" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_24">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_24">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_24)">
+       <path d="M 43.695,85.933 C 41.628,83.89 39.108,81.868 36.406,80.66 C 33.897,79.535 30.82,78.955 28.308,80.62" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_25">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_25">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_25)">
+       <path d="M 15.718,99.802 C 16.01,97.895 16.746,95.986 17.962,94.137 C 21.425,88.88 27.531,85.79 33.253,84.261 C 39.185,82.676 45.674,82.501 51.686,83.693 C 55.134,84.376 58.335,85.444 61.439,87.132 C 63.897,88.468 66.034,90.037 67.903,92.15 C 69.906,94.416 71.18,96.954 71.631,99.589" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_26">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_26">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_26)">
+       <path d="M 53.898,130.89 C 52.955,131.254 51.903,131.391 50.753,131.293 C 48.191,131.077 45.714,129.773 43.695,128.362" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_27">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_27">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_27)">
+       <path d="M 28.401,128.308 C 32.089,130.705 37.482,130.918 43.695,128.362" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_11">
+     <g id="ClipView_28" stroke="none">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_28">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_28)">
+       <g id="Group_12">
+        <g id="ClipView_29">
+         <path d="M 72.819,100.034 L 14.212,100.034 L 14.212,126.703 L 72.819,126.703 L 72.819,100.034 Z" marker-start="none" marker-end="none"/>
+         <clipPath id="ClipPath_29">
+          <path d="M 14.212,100.034 L 14.212,126.703 L 72.819,126.703 L 72.819,100.034 L 14.212,100.034 Z"/>
+         </clipPath>
+         <g clip-path="url(#ClipPath_29)">
+          <g id="Group_13">
+           <g id="ClipView_30">
+            <path d="M 21.382,120.287 C 14.511,115.252 11.549,107.393 17.148,100.034 C 18.884,105.235 23.372,108.989 28.002,111.252 C 32.777,113.59 38.25,114.672 43.518,114.672 C 48.783,114.672 54.254,113.587 59.029,111.255 C 63.659,108.989 68.147,105.237 69.883,100.034 C 75.488,107.395 72.518,115.261 65.641,120.293 C 59.423,124.848 50.947,126.703 43.516,126.703 C 36.081,126.703 27.603,124.846 21.382,120.287"/>
+            <clipPath id="ClipPath_30">
+             <path d="M 21.382,120.287 C 27.603,124.846 36.081,126.703 43.516,126.703 C 50.947,126.703 59.423,124.848 65.641,120.293 C 72.518,115.261 75.488,107.395 69.883,100.034 C 68.147,105.237 63.659,108.989 59.029,111.255 C 54.254,113.587 48.783,114.672 43.518,114.672 C 38.25,114.672 32.777,113.59 28.002,111.252 C 23.372,108.989 18.884,105.235 17.148,100.034 C 11.549,107.393 14.511,115.252 21.382,120.287 Z"/>
+            </clipPath>
+            <g clip-path="url(#ClipPath_30)">
+             <path d="M 27.539,154.393 L 87.038,120.034 L 59.498,72.346 L 0,106.704 Z" stroke-width="0.75" fill-rule="evenodd" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#LinearGradient_3)"/>
+            </g>
+           </g>
+          </g>
+         </g>
+        </g>
+       </g>
+      </g>
+     </g>
+     <g id="ClipView_31">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_31">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_31)">
+       <path d="M 65.247,86.007 C 66.358,87.335 67.133,88.931 67.595,90.682 C 68.412,93.792 68.208,97.074 67.537,100.141 C 64.974,111.851 54.725,123.819 43.695,128.361" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_32">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_32">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_32)">
+       <path d="M 65.188,85.959 C 54.99,74.082 37.097,72.717 25.215,82.909 C 13.33,93.104 11.959,111.001 22.154,122.886 C 32.349,134.773 50.253,136.144 62.138,125.947 C 74.025,115.749 75.39,97.844 65.188,85.959 Z" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_14" stroke="none">
+     <g id="ClipView_33">
+      <path d="M 57.374,91.749 C 55.464,91.099 53.531,90.608 51.549,90.25 C 50.568,90.073 49.589,89.928 48.601,89.819 C 48.478,89.805 48.354,89.791 48.234,89.779 C 48.189,89.776 47.961,89.789 47.958,89.703 C 47.953,89.577 47.95,89.448 47.948,89.32 C 47.94,89.065 47.931,88.811 47.923,88.554 C 47.817,84.941 47.706,81.328 47.599,77.713 C 47.594,77.581 47.591,77.451 47.586,77.32 C 47.586,77.253 47.583,77.186 47.581,77.122 C 47.581,77.087 47.581,77.054 47.578,77.023 C 47.576,76.929 47.669,77.011 47.718,77.017 C 48.18,77.067 48.644,77.126 49.104,77.196 C 50.044,77.336 50.973,77.506 51.9,77.718 C 53.774,78.146 55.585,78.712 57.363,79.453 C 60.809,80.886 63.73,82.698 66.29,85.483 C 67.676,86.992 68.754,88.593 69.537,90.497 C 70.161,92.013 70.419,93.585 70.695,95.172 C 71.325,98.734 71.952,102.292 72.581,105.854 C 71.149,98.446 63.549,93.853 57.374,91.749"/>
+      <clipPath id="ClipPath_33">
+       <path d="M 47.578,77.023 C 47.581,77.054 47.581,77.087 47.581,77.122 C 47.583,77.186 47.586,77.253 47.586,77.32 C 47.591,77.451 47.594,77.581 47.599,77.713 C 47.706,81.328 47.817,84.941 47.923,88.554 C 47.931,88.811 47.94,89.065 47.948,89.32 C 47.95,89.448 47.953,89.577 47.958,89.703 C 47.961,89.789 48.189,89.776 48.234,89.779 C 48.354,89.791 48.478,89.805 48.601,89.819 C 49.589,89.928 50.568,90.073 51.549,90.25 C 53.531,90.608 55.464,91.099 57.374,91.749 C 63.549,93.853 71.149,98.446 72.581,105.854 C 71.952,102.292 71.325,98.734 70.695,95.172 C 70.419,93.585 70.161,92.013 69.537,90.497 C 68.754,88.593 67.676,86.992 66.29,85.483 C 63.73,82.698 60.809,80.886 57.363,79.453 C 55.585,78.712 53.774,78.146 51.9,77.718 C 50.973,77.506 50.044,77.336 49.104,77.196 C 48.644,77.126 48.18,77.067 47.718,77.017 C 47.669,77.011 47.576,76.929 47.578,77.023 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_33)">
+       <path d="M 53.829,116.685 L 85.109,98.622 L 66.328,66.1 L 35.049,84.163 Z" stroke-width="0.75" fill-rule="evenodd" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#LinearGradient_4)"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_15">
+     <g id="ClipView_34">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_34">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_34)">
+       <path d="M 72.582,105.856 C 71.952,102.295 71.325,98.736 70.696,95.174 C 70.418,93.586 70.161,92.014 69.537,90.499 C 68.754,88.594 67.676,86.993 66.291,85.486 C 63.731,82.7 60.809,80.887 57.363,79.455 C 55.584,78.713 53.775,78.148 51.9,77.719 C 50.973,77.508 50.044,77.336 49.104,77.197 C 48.644,77.128 48.18,77.068 47.717,77.018 C 47.669,77.013 47.575,76.93 47.577,77.024 C 47.58,77.056 47.58,77.088 47.58,77.123 C 47.583,77.187 47.586,77.254 47.586,77.321 C 47.591,77.453 47.594,77.584 47.599,77.715 C 47.706,81.33 47.816,84.943 47.923,88.555 C 47.931,88.812 47.939,89.066 47.947,89.32 C 47.95,89.449 47.952,89.578 47.958,89.704 C 47.961,89.789 48.189,89.776 48.234,89.779 C 48.354,89.792 48.477,89.806 48.6,89.819 C 49.589,89.929 50.569,90.073 51.549,90.25 C 53.531,90.61 55.464,91.099 57.375,91.75 C 63.549,93.853 71.15,98.446 72.582,105.856 Z" fill="none" stroke="#000000" stroke-width="1.071" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_35">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_35">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_35)">
+       <path d="M 28.308,80.62 C 28.147,80.727 27.989,80.842 27.834,80.968 C 25.404,82.923 24.647,86.31 24.444,89.095 C 24.219,92.164 24.572,95.089 25.206,98.071 C 26.439,103.856 28.899,109.743 31.896,114.806 C 34.794,119.701 38.918,125.02 43.695,128.362" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_16" stroke="none">
+     <g id="ClipView_36">
+      <path d="M 14.433,105.952 C 14.813,103.791 15.194,101.63 15.576,99.469 C 15.767,98.39 15.957,97.31 16.147,96.229 C 16.343,95.118 16.506,93.998 16.747,92.892 C 17.714,88.425 20.737,84.897 24.304,82.38 C 26.591,80.772 29.003,79.606 31.639,78.707 C 31.783,78.66 31.748,78.544 31.757,78.437 C 31.765,78.338 31.775,78.242 31.783,78.142 C 31.799,77.943 31.815,77.749 31.832,77.554 C 31.866,77.16 31.901,76.765 31.934,76.372 C 31.968,75.979 32.001,75.585 32.035,75.194 L 32.059,74.897 C 32.065,74.84 32.115,74.905 32.142,74.913 C 32.174,74.921 32.204,74.929 32.233,74.937 C 32.294,74.953 32.354,74.969 32.415,74.985 C 32.662,75.052 32.906,75.124 33.149,75.196 C 37.482,76.511 41.25,78.607 44.962,81.106 C 45.882,81.725 46.787,82.369 47.677,83.029 C 47.704,83.05 47.816,83.059 47.757,83.094 C 47.731,83.107 47.704,83.122 47.674,83.139 C 47.621,83.171 47.564,83.203 47.51,83.233 C 47.401,83.297 47.291,83.361 47.181,83.423 C 46.959,83.554 46.737,83.686 46.515,83.817 C 46.062,84.087 45.612,84.36 45.165,84.641 C 43.24,85.844 41.373,87.124 39.544,88.471 C 37.651,89.869 35.814,91.328 34.023,92.849 C 33.077,93.65 32.147,94.467 31.232,95.302 C 30.998,95.513 30.768,95.725 30.536,95.94 C 30.479,95.993 30.42,96.047 30.364,96.1 C 30.323,96.137 30.227,96.296 30.238,96.191 C 30.243,96.119 30.249,96.044 30.257,95.971 C 30.282,95.677 30.305,95.386 30.332,95.09 C 30.393,94.356 30.458,93.62 30.519,92.887 C 30.551,92.521 30.584,92.153 30.616,91.783 C 30.624,91.693 30.629,91.601 30.637,91.507 C 30.64,91.486 30.642,91.462 30.645,91.441 C 30.651,91.371 30.576,91.449 30.541,91.459 C 30.459,91.485 30.372,91.512 30.29,91.539 C 29.952,91.648 29.617,91.761 29.283,91.879 C 26.693,92.792 24.294,93.938 22.02,95.5 C 18.456,97.945 15.271,101.424 14.433,105.952 Z" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_36">
+       <path d="M 32.059,74.897 L 32.035,75.194 C 32.001,75.585 31.968,75.979 31.934,76.372 C 31.901,76.765 31.866,77.16 31.832,77.554 C 31.815,77.749 31.799,77.943 31.783,78.142 C 31.775,78.242 31.765,78.338 31.757,78.437 C 31.748,78.544 31.783,78.66 31.639,78.707 C 29.003,79.606 26.591,80.772 24.304,82.38 C 20.737,84.897 17.714,88.425 16.747,92.892 C 16.506,93.998 16.343,95.118 16.147,96.229 C 15.957,97.31 15.767,98.39 15.576,99.469 C 15.194,101.63 14.813,103.791 14.433,105.952 C 15.271,101.424 18.456,97.945 22.02,95.5 C 24.294,93.938 26.693,92.792 29.283,91.879 C 29.617,91.761 29.952,91.648 30.29,91.539 C 30.372,91.512 30.459,91.485 30.541,91.459 C 30.576,91.449 30.651,91.371 30.645,91.441 C 30.642,91.462 30.64,91.486 30.637,91.507 C 30.629,91.601 30.624,91.693 30.616,91.783 C 30.584,92.153 30.551,92.521 30.519,92.887 C 30.458,93.62 30.393,94.356 30.332,95.09 C 30.305,95.386 30.282,95.677 30.257,95.971 C 30.249,96.044 30.243,96.119 30.238,96.191 C 30.227,96.296 30.323,96.137 30.364,96.1 C 30.42,96.047 30.479,95.993 30.536,95.94 C 30.768,95.725 30.998,95.513 31.232,95.302 C 32.147,94.467 33.077,93.65 34.023,92.849 C 35.814,91.328 37.651,89.869 39.544,88.471 C 41.373,87.124 43.24,85.844 45.165,84.641 C 45.612,84.36 46.062,84.087 46.515,83.817 C 46.737,83.686 46.959,83.554 47.181,83.423 C 47.291,83.361 47.401,83.297 47.51,83.233 C 47.564,83.203 47.621,83.171 47.674,83.139 C 47.704,83.122 47.731,83.107 47.757,83.094 C 47.816,83.059 47.704,83.05 47.677,83.029 C 46.787,82.369 45.882,81.725 44.962,81.106 C 41.25,78.607 37.482,76.511 33.149,75.196 C 32.906,75.124 32.662,75.052 32.415,74.985 C 32.354,74.969 32.294,74.953 32.233,74.937 C 32.204,74.929 32.174,74.921 32.142,74.913 C 32.115,74.905 32.065,74.84 32.059,74.897 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_36)">
+       <path d="M 22.782,120.409 L 61.29,98.172 L 39.468,60.382 L 0.96,82.621 Z" stroke-width="0.75" fill-rule="evenodd" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#LinearGradient_5)"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_17">
+     <g id="ClipView_37">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_37">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_37)">
+       <path d="M 14.433,105.952 C 15.272,101.424 18.456,97.945 22.02,95.5 C 24.294,93.939 26.693,92.793 29.283,91.88 C 29.617,91.761 29.952,91.65 30.289,91.54 C 30.372,91.513 30.458,91.486 30.541,91.459 C 30.575,91.449 30.65,91.372 30.645,91.441 C 30.643,91.463 30.64,91.487 30.638,91.508 C 30.629,91.602 30.624,91.693 30.616,91.784 C 30.584,92.154 30.552,92.52 30.519,92.887 C 30.458,93.622 30.394,94.357 30.332,95.091 C 30.305,95.385 30.281,95.677 30.257,95.972 C 30.249,96.045 30.244,96.12 30.239,96.192 C 30.227,96.296 30.324,96.138 30.364,96.101 C 30.42,96.047 30.479,95.994 30.536,95.94 C 30.769,95.726 30.999,95.514 31.232,95.302 C 32.147,94.467 33.077,93.651 34.023,92.849 C 35.814,91.328 37.651,89.868 39.544,88.47 C 41.373,87.123 43.24,85.843 45.165,84.641 C 45.612,84.36 46.062,84.087 46.515,83.817 C 46.737,83.685 46.959,83.553 47.182,83.423 C 47.291,83.361 47.401,83.297 47.511,83.233 C 47.564,83.203 47.621,83.171 47.675,83.139 C 47.704,83.123 47.731,83.107 47.757,83.094 C 47.816,83.059 47.704,83.049 47.677,83.029 C 46.788,82.368 45.883,81.725 44.962,81.106 C 41.25,78.608 37.482,76.511 33.149,75.196 C 32.906,75.124 32.662,75.052 32.415,74.985 C 32.354,74.969 32.295,74.953 32.234,74.938 C 32.204,74.929 32.174,74.921 32.142,74.913 C 32.116,74.905 32.065,74.841 32.06,74.897 L 32.035,75.194 C 32,75.585 31.968,75.979 31.934,76.372 C 31.901,76.765 31.866,77.16 31.832,77.553 C 31.816,77.749 31.799,77.943 31.784,78.142 C 31.775,78.241 31.765,78.338 31.757,78.437 C 31.748,78.544 31.784,78.66 31.639,78.707 C 29.004,79.607 26.591,80.772 24.304,82.381 C 20.737,84.895 17.714,88.426 16.747,92.892 C 16.506,93.999 16.343,95.118 16.147,96.229 C 15.957,97.311 15.767,98.39 15.577,99.469 C 15.194,101.63 14.814,103.792 14.433,105.952 Z" fill="none" stroke="#000000" stroke-width="1.071" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_38">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_38">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_38)">
+       <path d="M 31.743,78.592 C 31.524,78.694 31.307,78.796 31.09,78.9" fill="none" stroke="#000000" stroke-width="1.071" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_39">
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.239,72.181 L 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_39">
+       <path d="M 10.746,72.181 L 10.746,136.68 L 75.239,136.68 L 75.239,72.181 L 10.746,72.181 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_39)">
+       <path d="M 69.883,100.034 C 68.148,105.238 63.659,108.988 59.028,111.255 C 54.255,113.587 48.783,114.672 43.518,114.672 C 38.25,114.672 32.777,113.59 28.002,111.252 C 23.372,108.988 18.884,105.235 17.148,100.034 C 11.549,107.393 14.511,115.253 21.382,120.287 C 27.603,124.845 36.081,126.703 43.515,126.703 C 50.946,126.703 59.422,124.848 65.64,120.292 C 72.517,115.261 75.487,107.396 69.883,100.034 Z" fill="none" stroke="#000000" stroke-width="1.071" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_18" stroke="none">
+     <g id="ClipView_40">
+      <path d="M 43.006,66.135 C 35.019,66.134 27.078,62.778 21.472,56.242 C 11.281,44.358 12.65,26.464 24.535,16.271 C 36.413,6.079 54.305,7.445 64.5,19.32 C 74.703,31.203 73.34,49.105 61.454,59.302 C 56.106,63.889 49.542,66.135 43.009,66.135 C 43.008,66.135 43.007,66.135 43.006,66.135"/>
+      <clipPath id="ClipPath_40">
+       <path d="M 24.535,16.271 C 12.65,26.464 11.281,44.358 21.472,56.242 C 27.078,62.778 35.019,66.134 43.008,66.135 C 49.542,66.135 56.106,63.889 61.454,59.302 C 73.34,49.105 74.703,31.203 64.5,19.32 C 54.305,7.445 36.413,6.079 24.535,16.271 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_40)">
+       <path d="M 74.702,6.079 L 11.281,6.079 L 11.281,66.134 L 74.702,66.134 L 74.702,6.079 Z" stroke-width="0.75" fill-rule="evenodd" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#RadialGradient_2)"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_19">
+     <g id="ClipView_41">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_41">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_41)">
+       <path d="M 64.501,19.32 C 54.304,7.445 36.414,6.08 24.536,16.271 C 12.65,26.464 11.282,44.358 21.472,56.242 C 31.666,68.128 49.569,69.499 61.454,59.302 C 73.34,49.105 74.703,31.203 64.501,19.32 Z" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_42">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_42">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_42)">
+       <path d="M 43.014,19.293 C 47.927,16.436 55.336,13.831 61.21,16.742 C 62.552,17.409 63.666,18.303 64.56,19.369" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_43">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_43">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_43)">
+       <path d="M 43.014,19.293 C 33.875,24.606 25.481,34.957 23.167,45.518 C 21.483,53.205 23.46,58.892 27.722,61.663" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_44">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_44">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_44)">
+       <path d="M 70.944,32.949 C 71.492,36.149 70.818,39.485 68.748,42.633 C 65.317,47.847 59.14,50.993 53.466,52.511 C 47.533,54.099 41.043,54.276 35.028,53.084 C 29.165,51.924 22.953,49.312 18.813,44.634 C 15.795,41.22 14.424,37.193 15.04,33.16" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_45">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_45">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_45)">
+       <path d="M 43.014,19.293 C 49.938,26.131 55.467,36.735 57.483,46.184 C 58.399,50.47 59.082,57.058 56.551,61.307 C 55.703,62.731 54.573,63.722 53.214,64.244" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_46">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_46">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_46)">
+       <path d="M 43.014,19.293 C 40.944,17.25 38.424,15.229 35.725,14.021 C 33.213,12.897 30.14,12.316 27.626,13.981" fill="none" stroke="#000000" stroke-width="0.268" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_47">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_47">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_47)">
+       <path d="M 15.041,33.16 C 15.33,31.254 16.066,29.345 17.285,27.497 C 20.744,22.241 26.852,19.151 32.574,17.623 C 38.502,16.037 44.992,15.862 51.001,17.055 C 54.452,17.737 57.648,18.806 60.753,20.493 C 63.21,21.828 65.346,23.398 67.215,25.51 C 69.219,27.775 70.494,30.313 70.944,32.948" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_20">
+     <g id="ClipView_48" stroke="none">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_48">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_48)">
+       <g id="Group_21">
+        <g id="ClipView_49">
+         <path d="M 66.379,53.147 L 19.702,53.147 L 19.702,66.02 L 66.379,66.02 L 66.379,53.147 Z" marker-start="none" marker-end="none"/>
+         <clipPath id="ClipPath_49">
+          <path d="M 19.702,53.147 L 19.702,66.02 L 66.379,66.02 L 66.379,53.147 L 19.702,53.147 Z"/>
+         </clipPath>
+         <g clip-path="url(#ClipPath_49)">
+          <g id="Group_22">
+           <g id="ClipView_50">
+            <path d="M 43.056,66.019 C 38.365,65.996 33.336,65.235 28.972,63.334 C 24.993,61.602 20.171,58.189 19.702,53.146 C 20.414,53.749 21.167,54.306 21.946,54.822 C 22.755,55.354 23.59,55.842 24.447,56.29 C 25.32,56.744 26.214,57.154 27.124,57.526 C 28.094,57.922 29.082,58.273 30.083,58.58 C 31.095,58.895 32.118,59.161 33.151,59.392 C 34.252,59.638 35.364,59.84 36.48,59.998 C 37.586,60.153 38.7,60.271 39.816,60.348 C 40.968,60.428 42.122,60.471 43.273,60.468 C 45.541,60.466 47.805,60.303 50.047,59.962 C 51.115,59.799 52.176,59.598 53.227,59.352 C 54.25,59.118 55.263,58.838 56.264,58.517 C 58.2,57.899 60.088,57.125 61.878,56.166 C 62.67,55.743 63.439,55.284 64.184,54.789 C 64.947,54.284 65.681,53.735 66.38,53.146 C 65.999,58.142 61.001,61.634 57.118,63.339 C 52.815,65.23 47.94,66.021 43.29,66.021 C 43.212,66.021 43.134,66.021 43.056,66.019"/>
+            <clipPath id="ClipPath_50">
+             <path d="M 28.972,63.334 C 33.336,65.235 38.365,65.996 43.056,66.019 C 43.134,66.021 43.212,66.021 43.29,66.021 C 47.94,66.021 52.815,65.23 57.118,63.339 C 61.001,61.634 65.999,58.142 66.38,53.146 C 65.681,53.735 64.947,54.284 64.184,54.789 C 63.439,55.284 62.67,55.743 61.878,56.166 C 60.088,57.125 58.2,57.899 56.264,58.517 C 55.263,58.838 54.25,59.118 53.227,59.352 C 52.176,59.598 51.115,59.799 50.047,59.962 C 47.805,60.303 45.541,60.466 43.273,60.468 C 42.122,60.471 40.968,60.428 39.816,60.348 C 38.7,60.271 37.586,60.153 36.48,59.998 C 35.364,59.84 34.252,59.638 33.151,59.392 C 32.118,59.161 31.095,58.895 30.083,58.58 C 29.082,58.273 28.094,57.922 27.124,57.526 C 26.214,57.154 25.32,56.744 24.447,56.29 C 23.59,55.842 22.755,55.354 21.946,54.822 C 21.167,54.306 20.414,53.749 19.702,53.146 C 20.171,58.189 24.993,61.602 28.972,63.334 Z"/>
+            </clipPath>
+            <g clip-path="url(#ClipPath_50)">
+             <path d="M 66.319,51.451 L 19.234,53.163 L 19.764,67.716 L 66.849,66.003 Z" stroke-width="0.75" fill-rule="evenodd" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#LinearGradient_6)"/>
+            </g>
+           </g>
+          </g>
+         </g>
+        </g>
+       </g>
+      </g>
+     </g>
+     <g id="ClipView_51">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_51">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_51)">
+       <path d="M 19.702,53.146 C 20.415,53.749 21.167,54.306 21.946,54.822 C 22.755,55.355 23.59,55.842 24.447,56.289 C 25.32,56.744 26.214,57.153 27.124,57.526 C 28.094,57.922 29.082,58.273 30.083,58.581 C 31.095,58.894 32.118,59.161 33.152,59.392 C 34.252,59.639 35.364,59.839 36.48,59.998 C 37.586,60.153 38.7,60.271 39.816,60.349 C 40.968,60.429 42.122,60.472 43.273,60.469 C 45.541,60.466 47.806,60.303 50.047,59.962 C 51.115,59.8 52.176,59.599 53.227,59.353 C 54.251,59.117 55.263,58.838 56.264,58.518 C 58.2,57.899 60.088,57.125 61.878,56.166 C 62.668,55.743 63.44,55.285 64.184,54.789 C 64.947,54.283 65.681,53.735 66.38,53.146 C 65.999,58.143 61.001,61.633 57.118,63.339 C 52.743,65.262 47.776,66.047 43.055,66.02 C 38.364,65.996 33.336,65.235 28.971,63.334 C 24.993,61.601 20.171,58.188 19.702,53.146 Z" fill="none" stroke="#000000" stroke-width="1.071" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_52">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_52">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_52)">
+       <path d="M 64.56,19.369 C 65.671,20.697 66.448,22.293 66.908,24.043 C 67.725,27.152 67.521,30.434 66.852,33.5 C 64.289,45.209 54.039,57.175 43.013,61.716" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_53">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_53">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_53)">
+       <path d="M 27.625,13.981 C 27.465,14.088 27.306,14.203 27.151,14.329 C 24.723,16.283 23.965,19.671 23.761,22.455 C 23.536,25.524 23.89,28.447 24.525,31.431 C 25.759,37.215 28.217,43.1 31.213,48.163 C 34.11,53.058 38.234,58.375 43.013,61.717" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_23" stroke="none">
+     <g id="ClipView_54">
+      <path d="M 63.417,46.032 C 60.645,43.172 56.672,41.376 52.976,40.329 C 51.788,39.992 50.586,39.719 49.367,39.504 C 48.722,39.389 48.074,39.293 47.423,39.21 C 47.257,39.188 47.091,39.166 46.925,39.147 C 46.842,39.137 46.759,39.129 46.673,39.119 C 46.667,39.118 46.658,39.118 46.647,39.118 C 46.591,39.118 46.486,39.118 46.489,39.063 C 46.503,38.863 46.515,38.666 46.529,38.468 C 46.631,36.883 46.735,35.297 46.836,33.715 C 46.955,31.902 47.076,30.093 47.193,28.279 C 47.252,27.375 47.311,26.47 47.37,25.562 C 47.399,25.109 47.428,24.657 47.461,24.204 C 47.466,24.089 47.475,23.976 47.482,23.865 C 47.487,23.769 47.694,23.835 47.742,23.84 C 47.862,23.854 47.985,23.87 48.109,23.884 C 48.591,23.942 49.075,24.009 49.557,24.081 C 56.706,25.177 65.775,28.524 70.105,35.233 C 72.372,38.745 72.966,42.748 71.322,46.693 C 70.72,48.139 69.114,50.574 68.292,51.877 C 67.227,53.575 66.158,55.273 65.092,56.97 C 67.457,53.036 66.442,49.154 63.417,46.032"/>
+      <clipPath id="ClipPath_54">
+       <path d="M 47.482,23.865 C 47.475,23.976 47.466,24.089 47.461,24.204 C 47.428,24.657 47.399,25.109 47.37,25.562 C 47.311,26.47 47.252,27.375 47.193,28.279 C 47.076,30.093 46.955,31.902 46.836,33.715 C 46.735,35.297 46.631,36.883 46.529,38.468 C 46.515,38.666 46.503,38.863 46.489,39.063 C 46.486,39.118 46.591,39.118 46.647,39.118 L 46.673,39.119 C 46.759,39.129 46.842,39.137 46.925,39.147 C 47.091,39.166 47.257,39.188 47.423,39.21 C 48.074,39.293 48.722,39.389 49.367,39.504 C 50.586,39.719 51.788,39.992 52.976,40.329 C 56.672,41.376 60.645,43.172 63.417,46.032 C 66.442,49.154 67.457,53.036 65.092,56.97 C 66.158,55.273 67.227,53.575 68.292,51.877 C 69.114,50.574 70.72,48.139 71.322,46.693 C 72.966,42.748 72.372,38.745 70.105,35.233 C 65.775,28.524 56.706,25.177 49.557,24.081 C 49.075,24.009 48.591,23.942 48.109,23.884 C 47.985,23.87 47.862,23.854 47.742,23.84 C 47.694,23.835 47.487,23.769 47.482,23.865 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_54)">
+       <path d="M 45.024,56.905 L 72.916,58.135 L 74.429,23.835 L 46.538,22.603 Z" stroke-width="0.75" fill-rule="evenodd" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#LinearGradient_7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_24">
+     <g id="ClipView_55">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_55">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_55)">
+       <path d="M 65.093,56.97 C 67.456,53.037 66.442,49.154 63.417,46.032 C 60.646,43.172 56.672,41.376 52.977,40.329 C 51.788,39.991 50.586,39.718 49.368,39.503 C 48.722,39.389 48.074,39.292 47.424,39.208 C 47.257,39.187 47.091,39.165 46.926,39.147 C 46.842,39.136 46.759,39.128 46.674,39.117 C 46.639,39.115 46.486,39.128 46.489,39.061 C 46.503,38.863 46.516,38.666 46.529,38.467 C 46.631,36.882 46.735,35.297 46.837,33.714 C 46.955,31.902 47.076,30.091 47.193,28.278 C 47.252,27.374 47.311,26.469 47.37,25.561 C 47.4,25.108 47.429,24.656 47.461,24.204 C 47.466,24.088 47.475,23.975 47.482,23.863 C 47.488,23.769 47.694,23.834 47.742,23.839 C 47.862,23.853 47.986,23.868 48.109,23.882 C 48.591,23.941 49.076,24.009 49.557,24.081 C 56.706,25.176 65.776,28.523 70.105,35.233 C 72.373,38.743 72.968,42.747 71.324,46.692 C 70.721,48.139 69.114,50.573 68.292,51.876 C 67.227,53.575 66.158,55.272 65.093,56.97 Z" fill="none" stroke="#000000" stroke-width="1.071" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_25" stroke="none">
+     <g id="ClipView_56">
+      <path d="M 17.204,50.923 C 15.806,48.704 14.67,47.175 14.087,44.505 C 12.971,39.42 15.389,34.981 18.944,31.73 C 20.744,30.087 22.712,28.818 24.881,27.73 C 25.952,27.195 27.047,26.721 28.169,26.298 C 28.728,26.086 29.293,25.89 29.866,25.714 C 29.938,25.693 30.011,25.671 30.08,25.65 C 30.149,25.629 30.08,25.483 30.074,25.446 C 30.051,25.299 30.027,25.152 30,25.005 C 29.952,24.711 29.904,24.413 29.855,24.119 C 29.741,23.417 29.625,22.713 29.51,22.008 C 29.451,21.657 29.395,21.307 29.337,20.956 C 29.323,20.881 29.406,20.99 29.438,21.009 C 29.475,21.031 29.515,21.057 29.553,21.08 C 29.633,21.128 29.711,21.173 29.789,21.222 C 29.946,21.315 30.101,21.409 30.26,21.502 C 30.575,21.693 30.891,21.88 31.208,22.068 C 33.778,23.588 36.378,25.066 38.957,26.571 C 40.992,27.76 43.013,28.968 45.003,30.231 C 45.492,30.542 45.983,30.855 46.467,31.174 C 46.588,31.254 46.708,31.335 46.829,31.412 C 46.858,31.434 46.887,31.452 46.919,31.474 C 46.943,31.49 46.987,31.506 46.952,31.541 C 46.898,31.597 46.844,31.656 46.788,31.713 C 46.571,31.94 46.355,32.166 46.135,32.391 C 45.273,33.286 44.405,34.179 43.538,35.067 C 41.771,36.877 39.998,38.684 38.266,40.531 C 37.438,41.412 36.621,42.304 35.824,43.209 C 35.435,43.651 35.053,44.093 34.675,44.542 C 34.487,44.761 34.303,44.981 34.121,45.206 C 34.094,45.239 34.04,45.346 34.027,45.271 C 34.019,45.235 34.014,45.198 34.006,45.163 C 33.992,45.091 33.979,45.018 33.962,44.946 C 33.738,43.771 33.51,42.593 33.286,41.417 C 33.229,41.125 33.173,40.831 33.117,40.536 C 33.104,40.472 33.117,40.378 33.018,40.405 C 32.946,40.427 32.873,40.445 32.801,40.467 C 32.658,40.507 32.514,40.548 32.369,40.593 C 31.796,40.765 31.229,40.953 30.667,41.16 C 28.382,41.993 26.291,43.026 24.342,44.512 C 20.24,47.649 18.077,52.12 21.025,57 C 19.75,54.975 18.478,52.95 17.204,50.923"/>
+      <clipPath id="ClipPath_56">
+       <path d="M 29.51,22.008 C 29.625,22.713 29.741,23.417 29.855,24.119 C 29.904,24.413 29.952,24.711 30,25.005 C 30.027,25.152 30.051,25.299 30.074,25.446 C 30.08,25.483 30.149,25.629 30.08,25.65 C 30.011,25.671 29.938,25.693 29.866,25.714 C 29.293,25.89 28.728,26.086 28.169,26.298 C 27.047,26.721 25.952,27.195 24.881,27.73 C 22.712,28.818 20.744,30.087 18.944,31.73 C 15.389,34.981 12.971,39.42 14.087,44.505 C 14.67,47.175 15.806,48.704 17.204,50.923 C 18.478,52.95 19.75,54.975 21.025,57 C 18.077,52.12 20.24,47.649 24.342,44.512 C 26.291,43.026 28.382,41.993 30.667,41.16 C 31.229,40.953 31.796,40.765 32.369,40.593 C 32.514,40.548 32.658,40.507 32.801,40.467 C 32.873,40.445 32.946,40.427 33.018,40.405 C 33.117,40.378 33.104,40.472 33.117,40.536 C 33.173,40.831 33.229,41.125 33.286,41.417 C 33.51,42.593 33.738,43.771 33.962,44.946 C 33.979,45.018 33.992,45.091 34.006,45.163 C 34.014,45.198 34.019,45.235 34.027,45.271 C 34.04,45.346 34.094,45.239 34.121,45.206 C 34.303,44.981 34.487,44.761 34.675,44.542 C 35.053,44.093 35.435,43.651 35.824,43.209 C 36.621,42.304 37.438,41.412 38.266,40.531 C 39.998,38.684 41.771,36.877 43.538,35.067 C 44.405,34.179 45.273,33.286 46.135,32.391 C 46.355,32.166 46.571,31.94 46.788,31.713 C 46.844,31.656 46.898,31.597 46.952,31.541 C 46.987,31.506 46.943,31.49 46.919,31.474 C 46.887,31.452 46.858,31.434 46.829,31.412 C 46.708,31.335 46.588,31.254 46.467,31.174 C 45.983,30.855 45.492,30.542 45.003,30.231 C 43.013,28.968 40.992,27.76 38.957,26.571 C 36.378,25.066 33.778,23.588 31.208,22.068 C 30.891,21.88 30.575,21.693 30.26,21.502 C 30.101,21.409 29.946,21.315 29.789,21.222 C 29.711,21.173 29.633,21.128 29.553,21.08 C 29.515,21.057 29.475,21.031 29.438,21.009 C 29.406,20.99 29.323,20.881 29.337,20.956 C 29.395,21.307 29.451,21.657 29.51,22.008 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_56)">
+       <path d="M 11.38,56.932 L 46.921,58.5 L 48.578,20.951 L 13.037,19.383 Z" stroke-width="0.75" fill-rule="evenodd" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#LinearGradient_8)"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_26">
+     <g id="ClipView_57">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_57">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_57)">
+       <path d="M 21.025,57.002 C 19.751,54.975 18.479,52.951 17.204,50.924 C 15.807,48.704 14.671,47.175 14.088,44.505 C 12.971,39.421 15.389,34.98 18.945,31.73 C 20.744,30.087 22.712,28.817 24.881,27.73 C 25.952,27.195 27.047,26.721 28.169,26.298 C 28.728,26.087 29.293,25.891 29.866,25.714 C 29.939,25.693 30.011,25.671 30.08,25.651 C 30.15,25.629 30.08,25.484 30.075,25.447 C 30.051,25.3 30.027,25.153 30,25.005 C 29.952,24.711 29.903,24.413 29.855,24.119 C 29.741,23.416 29.625,22.713 29.511,22.009 C 29.451,21.658 29.395,21.307 29.337,20.957 C 29.323,20.881 29.406,20.989 29.438,21.01 C 29.475,21.031 29.516,21.056 29.553,21.08 C 29.633,21.128 29.711,21.174 29.789,21.222 C 29.947,21.316 30.102,21.409 30.26,21.503 C 30.576,21.693 30.892,21.88 31.208,22.068 C 33.778,23.589 36.378,25.066 38.957,26.572 C 40.992,27.76 43.013,28.968 45.003,30.232 C 45.493,30.542 45.983,30.856 46.467,31.175 C 46.588,31.255 46.708,31.336 46.829,31.412 C 46.858,31.434 46.888,31.453 46.92,31.474 C 46.944,31.49 46.987,31.506 46.952,31.541 C 46.899,31.597 46.845,31.656 46.789,31.713 C 46.571,31.941 46.355,32.167 46.135,32.393 C 45.273,33.287 44.405,34.179 43.538,35.067 C 41.771,36.877 39.998,38.685 38.266,40.532 C 37.439,41.413 36.622,42.305 35.824,43.209 C 35.435,43.651 35.053,44.094 34.675,44.542 C 34.487,44.762 34.303,44.982 34.121,45.207 C 34.094,45.24 34.04,45.346 34.027,45.271 C 34.019,45.237 34.014,45.198 34.006,45.164 C 33.992,45.091 33.979,45.02 33.963,44.946 C 33.738,43.772 33.51,42.593 33.286,41.418 C 33.23,41.126 33.173,40.832 33.117,40.536 C 33.104,40.473 33.117,40.379 33.018,40.405 C 32.946,40.427 32.873,40.446 32.801,40.467 C 32.659,40.507 32.514,40.55 32.37,40.593 C 31.797,40.767 31.229,40.954 30.667,41.16 C 28.383,41.994 26.291,43.027 24.342,44.513 C 20.241,47.649 18.077,52.121 21.025,57.002 Z" fill="none" stroke="#000000" stroke-width="1.071" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_58">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_58">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_58)">
+       <path d="M 53.212,64.245 C 52.269,64.609 51.217,64.746 50.071,64.649 C 47.509,64.432 45.029,63.128 43.013,61.717" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+     <g id="ClipView_59">
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <path d="M 75.238,5.544 L 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 Z" stroke="none" marker-start="none" marker-end="none"/>
+      <clipPath id="ClipPath_59">
+       <path d="M 10.745,5.544 L 10.745,70.033 L 75.238,70.033 L 75.238,5.544 L 10.745,5.544 Z"/>
+      </clipPath>
+      <g clip-path="url(#ClipPath_59)">
+       <path d="M 27.721,61.663 C 31.405,64.06 36.798,64.273 43.013,61.716" fill="none" stroke="#000000" stroke-width="0.536" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="79.8403193612775"/>
+      </g>
+     </g>
+    </g>
+    <g id="Group_27" stroke-miterlimit="79.8403193612775">
+     <path d="M 65.864,156.103 C 55.212,143.698 36.52,142.272 24.108,152.917 C 11.694,163.564 10.263,182.257 20.912,194.676 C 31.56,207.093 50.264,208.525 62.678,197.872 C 75.096,187.218 76.521,168.515 65.864,156.103 Z" stroke="none" stroke-width="0.279" stroke-linejoin="miter" marker-start="none" marker-end="none" stroke-miterlimit="5.98802395209581" fill="url(#RadialGradient_3)"/>
+     <path d="M 72.594,170.339 C 73.165,173.682 72.463,177.167 70.297,180.457 C 66.714,185.903 60.26,189.189 54.334,190.779 C 48.137,192.438 41.355,192.619 35.071,191.377 C 28.948,190.163 22.459,187.436 18.134,182.546 C 14.978,178.983 13.545,174.776 14.189,170.563" fill="none" stroke="#000000" stroke-width="0.279" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="5.98802395209581"/>
+     <path d="M 65.923,156.153 C 67.087,157.541 67.895,159.206 68.377,161.034 C 69.233,164.281 69.02,167.713 68.318,170.917 C 65.64,183.15 54.933,195.652 43.413,200.393" fill="none" stroke="#000000" stroke-width="1.119" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="5.98802395209581"/>
+     <path d="M 54.068,203.036 C 53.085,203.414 51.984,203.559 50.787,203.459 C 48.11,203.232 45.522,201.867 43.413,200.393" fill="none" stroke="#000000" stroke-width="0.559" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="5.98802395209581"/>
+     <path d="M 27.437,200.34 C 31.287,202.843 36.923,203.068 43.413,200.393" fill="none" stroke="#000000" stroke-width="0.559" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="5.98802395209581"/>
+     <path d="M 27.339,150.525 C 27.172,150.638 27.007,150.758 26.841,150.889 C 24.307,152.929 23.516,156.467 23.303,159.376 C 23.068,162.582 23.435,165.64 24.1,168.756 C 25.386,174.795 27.957,180.943 31.088,186.233 C 34.114,191.35 38.423,196.902 43.413,200.393" fill="none" stroke="#000000" stroke-width="0.559" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="5.98802395209581"/>
+     <path d="M 65.864,156.103 C 55.212,143.698 36.52,142.272 24.108,152.917 C 11.694,163.564 10.263,182.257 20.912,194.676 C 31.56,207.093 50.264,208.525 62.678,197.872 C 75.096,187.218 76.521,168.515 65.864,156.103 Z" fill="none" stroke="#000000" stroke-width="0.559" stroke-linejoin="round" stroke-linecap="round" marker-start="none" marker-end="none" stroke-miterlimit="5.98802395209581"/>
+     <mask id="TranspMask">
+      <rect x="-10%" y="-10%" width="120%" height="120%" fill="#808080" stroke="none"/>
+     </mask>
+     <g id="Group_28" stroke-linejoin="miter" stroke="none" stroke-width="0.279" stroke-miterlimit="5.98802395209581" mask="url(#TranspMask)">
+      <g id="Group_29">
+       <path d="M 63.807,153.255 C 62.59,152.076 61.29,151.059 59.825,150.201 C 59.094,149.77 58.396,149.356 57.522,149.22 C 56.239,149.017 56.752,150.168 57.305,150.942 C 58.309,152.346 59.553,153.407 60.911,154.425 C 61.761,155.066 64.094,156.685 65.345,156.679 C 64.97,156.111 64.611,155.535 64.278,154.943 C 64.111,154.646 63.951,154.346 63.811,154.035 C 63.684,153.759 63.333,153.043 63.807,153.255 Z" marker-start="none" marker-end="none" fill="url(#LinearGradient_9)"/>
+       <path d="M 39.444,158.487 C 41.166,160.124 44.078,160.339 46.143,159.381 C 48.582,158.252 49.578,155.6 47.48,153.608 C 45.76,151.974 42.848,151.757 40.783,152.713 C 38.342,153.843 37.346,156.498 39.444,158.487 Z" marker-start="none" marker-end="none" fill="url(#LinearGradient_10)"/>
+       <path d="M 48.753,153.283 C 50.208,154.802 52.689,155.827 54.773,155.849 C 57.792,155.88 58.938,153.829 56.792,151.588 C 55.338,150.069 52.859,149.046 50.772,149.024 C 47.754,148.989 46.605,151.042 48.753,153.283 Z" marker-start="none" marker-end="none" fill="url(#LinearGradient_11)"/>
+      </g>
+     </g>
+     <g id="Group_30" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" stroke-width="0.559" stroke-miterlimit="5.98802395209581">
+      <path d="M 63.807,153.255 C 62.59,152.076 61.29,151.059 59.825,150.201 C 59.094,149.77 58.396,149.356 57.522,149.22 C 56.239,149.017 56.752,150.168 57.305,150.942 C 58.309,152.346 59.553,153.407 60.911,154.425 C 61.761,155.066 64.094,156.685 65.345,156.679 C 64.97,156.111 64.611,155.535 64.278,154.943 C 64.111,154.646 63.951,154.346 63.811,154.035 C 63.684,153.759 63.333,153.043 63.807,153.255 Z" fill="none" marker-start="none" marker-end="none"/>
+      <path d="M 39.444,158.487 C 41.166,160.124 44.078,160.339 46.143,159.381 C 48.582,158.252 49.578,155.6 47.48,153.608 C 45.76,151.974 42.848,151.757 40.783,152.713 C 38.342,153.843 37.346,156.498 39.444,158.487 Z" fill="none" marker-start="none" marker-end="none"/>
+      <path d="M 48.753,153.283 C 50.208,154.802 52.689,155.827 54.773,155.849 C 57.792,155.88 58.938,153.829 56.792,151.588 C 55.338,150.069 52.859,149.046 50.772,149.024 C 47.754,148.989 46.605,151.042 48.753,153.283 Z" fill="none" marker-start="none" marker-end="none"/>
+     </g>
+     <path d="M 14.189,170.563 C 14.494,168.568 15.263,166.574 16.533,164.647 C 20.15,159.155 26.529,155.927 32.506,154.329 C 38.7,152.674 45.48,152.492 51.76,153.734 C 55.363,154.45 58.703,155.564 61.948,157.328 C 64.516,158.725 66.748,160.362 68.7,162.572 C 70.79,164.937 72.125,167.588 72.594,170.339" fill="none" stroke="#000000" stroke-width="0.559" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="5.98802395209581"/>
+     <path d="M 43.413,156.076 C 50.649,163.22 56.426,174.297 58.533,184.169 C 59.486,188.647 60.199,195.528 57.556,199.968 C 56.672,201.456 55.491,202.489 54.068,203.036" fill="none" stroke="#000000" stroke-width="0.279" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="5.98802395209581"/>
+     <path d="M 43.413,156.076 C 33.868,161.625 25.099,172.44 22.682,183.472 C 20.922,191.503 22.987,197.446 27.437,200.34" fill="none" stroke="#000000" stroke-width="0.279" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="5.98802395209581"/>
+     <path d="M 43.413,156.076 C 41.254,153.941 38.618,151.828 35.799,150.567 C 33.177,149.39 29.963,148.783 27.339,150.525" fill="none" stroke="#000000" stroke-width="0.279" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="5.98802395209581"/>
+     <path d="M 43.413,156.076 C 48.546,153.091 56.286,150.369 62.426,153.41 C 63.827,154.104 64.989,155.037 65.923,156.155" fill="none" stroke="#000000" stroke-width="0.279" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="5.98802395209581"/>
+     <g id="Group_31" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" stroke-width="1.119" stroke-miterlimit="5.98802395209581">
+      <path d="M 69.145,161.762 C 69.529,162.199 70.108,162.954 70.681,163.222 C 71.143,163.435 70.818,162.736 70.698,162.462 C 70.264,161.497 69.696,160.624 69.12,159.746 C 67.967,157.989 66.74,156.305 65.355,154.718 C 64.972,154.279 64.396,153.544 63.83,153.267 C 63.377,153.043 63.679,153.745 63.802,154.018 C 64.236,154.987 64.803,155.858 65.38,156.736 C 66.532,158.492 67.761,160.176 69.145,161.762 Z" marker-start="none" marker-end="none" fill="url(#LinearGradient_12)"/>
+      <path d="M 68.234,173.404 C 66.569,171.667 65.573,168.63 65.367,166.339 C 65.262,165.192 65.271,163.639 65.934,162.568 C 66.826,161.13 68.22,161.792 69.171,162.789 C 70.835,164.529 71.831,167.564 72.037,169.855 C 72.139,170.994 72.128,172.566 71.467,173.632 C 70.577,175.063 69.184,174.4 68.234,173.404 Z" marker-start="none" marker-end="none" fill="url(#LinearGradient_13)"/>
+      <path d="M 61.42,186.518 C 59.129,184.467 59.467,180.427 60.505,178.006 C 61.079,176.667 62.023,175.318 63.319,174.54 C 64.689,173.715 66.267,173.667 67.521,174.79 C 69.811,176.843 69.473,180.885 68.435,183.307 C 67.862,184.641 66.913,185.99 65.62,186.771 C 64.251,187.595 62.67,187.641 61.42,186.518 Z" marker-start="none" marker-end="none" fill="url(#LinearGradient_14)"/>
+      <path d="M 60.252,188.013 C 61.523,189.126 61.693,190.779 61.246,192.284 C 60.77,193.889 59.891,194.997 58.636,196.041 C 57.39,197.078 56.107,197.73 54.498,198.024 C 53.024,198.295 51.332,198.164 50.112,197.095 C 48.843,195.982 48.669,194.329 49.117,192.824 C 49.595,191.218 50.473,190.11 51.729,189.064 C 52.977,188.027 54.26,187.375 55.869,187.081 C 57.343,186.812 59.034,186.944 60.252,188.013 Z" marker-start="none" marker-end="none" fill="url(#LinearGradient_15)"/>
+      <path d="M 48.851,198.231 C 50.068,199.131 50.615,200.469 49.562,201.763 C 48.711,202.813 47.209,203.372 45.989,203.644 C 43.631,204.161 40.165,203.985 38.073,202.432 C 36.858,201.532 36.311,200.2 37.359,198.905 C 38.213,197.85 39.709,197.291 40.935,197.022 C 43.293,196.502 46.756,196.679 48.851,198.231 Z" marker-start="none" marker-end="none" fill="url(#LinearGradient_16)"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

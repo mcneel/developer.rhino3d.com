@@ -269,8 +269,9 @@ One more time just for kicks. We project the R1 parameter coordinate on the curv
 
 You'll be glad to learn that (poly)lines are essentially the same as point-lists. The only difference is that we treat the points as a series rather than an anonymous collection, which enables us to draw lines between them. There is some nasty stuff going on which might cause problems down the road so perhaps it's best to get it over with quick.
 
-There are several ways in which polylines can be manifested in openNURBS™ and thus in Rhino. There is a special polyline class which is simply a list of ordered points. It has no overhead data so this is the simplest case. It's also possible for regular nurbs curves to behave as polylines when they have their degree set to 1. In
-addition, a polyline could also be a polycurve made up of line segments, polyline segments, degree=1 nurbs curves or a combination of the above. If you create a polyline using the _Polyline command, you will get a proper polyline object as the Object Properties Details dialog on the left shows:
+There are several ways in which polylines can be manifested in openNURBS™ and thus in Rhino. There is a special polyline class which is simply a list of ordered points. It has no overhead data so this is the simplest case. It's also possible for regular nurbs curves to behave as polylines when they have their degree set to 1. In addition, a polyline could also be a polycurve made up of line segments, polyline segments, degree=1 nurbs curves or a combination of the above. If you create a polyline using the _Polyline command, you will get a proper polyline object as the Object Properties Details dialog on the left shows:
+
+<img src="{{ site.baseurl }}/images/PolyLineToNurbsDragChange.png">{: .img-center  width="90%"}
 
 The dialog claims an "Open polyline with 8 points". However, when we drag a control-point Rhino will
 automatically convert any curve to a Nurbs curve, as the image on the right shows. It is now an open nurbs curve of degree=1. From a geometric point of view, these two curves are identical. From a programmatic point of view, they are anything but. For the time being we will only deal with 'proper' polylines though; lists of sequential coordinates. For purposes of clarification I've added two example functions which perform basic operations on polyline point-lists.
@@ -302,8 +303,6 @@ def SubDividePolyline(arrV)
     arrSubD.append(arrV[len(arrV)])
     return arrSubD
 ```
-
-<img src="{{ site.baseurl }}/images/primer-polylinetonurbsdragchange.png">{: .img-center  width="90%"}
 
 No rocket science yet, but brace yourself for the next bit...
 
@@ -650,7 +649,7 @@ The adjacent illustration shows how the rs.AddPlaneSurface() call on line 11 res
 
 We'll only pause briefly at plane definitions since planes, like vectors, are usually only constructive elements. In examples to come they will be used extensively so don't worry about getting the hours in. A more interesting script which uses the *rs.AddPlaneSurface()* method is the one below which populates a surface with so-called surface frames:
 
-```primer
+```python
 idSurface = rs.GetObject("Surface to frame", 8, True, True)
 
 intCount = rs.GetInteger("Number of iterations per direction", 20, 2)
