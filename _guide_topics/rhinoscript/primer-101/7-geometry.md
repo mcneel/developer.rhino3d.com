@@ -1339,15 +1339,15 @@ In the image on the previous page, the red and purple pieces do in fact touch th
 
 A clamped curve always has a bunch of knots at the beginning and end (periodic curves do not, but we'll get to that later). If a curve has knot clusters on the interior as well, then it will touch one of the interior control points and we have a kinked curve. There is a lot more to know about knots, but I suggest we continue with some simple nurbs curves and let Rhino worry about the knot vector for the time being.
 
-### 8.7.1 Control-point curves
+### 7.7.1 Control-point curves
 
 ![{{ site.baseurl }}/images/primer-filletcorners.svg]({{ site.baseurl }}/images/primer-filletcorners.svg){: .float-img-right width="275"}
 
 The _FilletCorners command in Rhino puts filleting arcs across all sharp kinks in a polycurve. Since fillet curves are tangent arcs, the corners have to be planar. All flat curves though can always be filleted as the image to the right shows.
 
-The input curve {A} has nine G0 corners (filled circles) which qualify for a filleting operation and three G1 corners (empty circles) which do not. Since each segment of the polycurve has a length larger than twice the fillet radius, none of the fillets overlap and the result is a predictable curve {B}.
+The input curve {A} has nine G<sub>0</sub> corners (filled circles) which qualify for a filleting operation and three G<sub>1</sub> corners (empty circles) which do not. Since each segment of the polycurve has a length larger than twice the fillet radius, none of the fillets overlap and the result is a predictable curve {B}.
 
-Since blend curves are freeform they are allowed to twist and curl as much as they please. They have no problem with non-planar segments. Our assignment for today is to make a script which inserts blend corners into polylines. We're not going to handle polycurves (with freeform curved segments) since that would involve quite a lot of math and logic which goes beyond this simple curve introduction. This unfortunately means we won't actually be making non-planar blend corners.
+Since blend curves are freeform they are allowed to twist and curl as much as they please. They have no problem with non-planar segments. Our assignment for today is to make a script which inserts blend corners into polylines. We're not going to handle polycurves (with freeform curved segments) since that would involve quite a lot of math and logic which goes beyond this simple curve introduction. This unfortunately means we won't actually be making non-planar blend corners, but such is life. Full of disappointments. Especially for programmers.
 
 The logic of our BlendCorners script is simple:
 
@@ -1363,44 +1363,55 @@ Or, in graphic form:
 
 The first image shows our input curve positioned on a unit grid. The shortest segment has a length of 1.0, the longest segment a length of 6.0. If we're going to blend all corners with a radius of 0.75 (the circles in the second image) we can see that one of the edges has a conflict of overlapping blend radii.
 
-The third image shows the original control points (the filled circles) and all blend radius control points (the empty circles), positioned along every segment with a distance of {R} from its nearest neighbor The two red control points have been positioned 0.5 units away (half the segment length) from their respective neighbours.
+The third image shows the original control points (the filled circles) and all blend radius control points (the empty circles), positioned along every segment with a distance of {R} from its nearest neighbour. The two red control points have been positioned 0.5 units away (half the segment length) from their respective neighbours.
 
-Finally, the last image shows all the control points that will be added in between the existing control points. Once we have an ordered array of all control points (ordered as they appear along the original polyline) we can create a $$D^5$$ curve using *rs.AddCurve()*.
+Finally, the last image shows all the control points that will be added in between the existing control points. Once we have an ordered array of all control points (ordered as they appear along the original polyline) we can create a $$D^5$$ curve using *Rhino.AddCurve()*. 
 
-```python
-def blendcorners():
-    polyline_id = rs.GetObject("Polyline to blend", 4, True, True)
-    if not polyline_id: return
-    vertices = rs.PolylineVertices(polyline_id)
-    if not vertices: return
-    radius = rs.GetReal("Blend radius", 1.0, 0.0)
-    if radius is None: return
+```vb
+Sub BlendCorners()
+    Dim idPolyline : idPolyline = Rhino.GetObject("Polyline to blend", 4, True, True)
+    Dim arrV, newV() : arrV = Rhino.PolylineVertices(idPolyline)
+    Dim dblRadius : dblRadius = Rhino.GetReal("Blend radius", 1.0, 0.0)
 
-    between = lambda a,b: (a+b)/2.0
-    newverts = []
-    for i in range(len(vertices)-1):
-        a = vertices[i]
-        b = vertices[i+1]
-        segmentlength = rs.Distance(a, b)
-        vec_segment = rs.PointSubtract(b, a)
-        vec_segment = rs.VectorUnitize(vec_segment)
+    Dim A, B, W1, W2, i, N : N = -1
+    Dim vecSegment
 
-        if radius<(0.5*segmentlength):
-            vec_segment = rs.VectorScale(vec_segment, radius)
-        else:
-            vec_segment = rs.VectorScale(vec_segment, 0.5*segment_length)
+    For i = 0 To UBound(arrV)-1
+        A = arrV(i)
+        B = arrV(i+1)
 
-        w1 = rs.VectorAdd(a, vec_segment)
-        w2 = rs.VectorSubtract(b, vec_segment)
-        newverts.append(a)
-        newverts.append(between(a,w1))
-        newverts.append(w1)
-        newverts.append(between(w1,w2))
-        newverts.append(w2)
-        newverts.append(between(w2,b))
-    newverts.append(vertices[len(vertices)-1])
-    rs.AddCurve(newverts, 5)
-    rs.DeleteObject(polyline_id)
+        vecSegment = Rhino.PointSubtract(B, A)
+        vecSegment = Rhino.VectorUnitize(vecSegment)
+
+        If dblRadius < (0.5*Rhino.Distance(A, B)) Then
+            vecSegment = Rhino.VectorScale(vecSegment, dblRadius)	
+        Else
+            vecSegment = Rhino.VectorScale(vecSegment, 0.5 * Rhino.Distance(A, B))
+        End If
+
+        W1 = Rhino.VectorAdd(A, vecSegment)
+        W2 = Rhino.VectorSubtract(B, vecSegment)
+
+        ReDim Preserve newV(N+6)
+        newV(N+1) = A
+        newV(N+2) = Between(A, W1)
+        newV(N+3) = W1
+        newV(N+4) = Between(W1, W2)
+        newV(N+5) = W2
+        newV(N+6) = Between(W2, B)
+        N = N+6
+    Next
+
+    ReDim Preserve newV(N+1)
+    newV(N+1) = arrV(UBound(arrV))
+
+    Call Rhino.AddCurve(newV, 5)
+    Call Rhino.DeleteObject(idPolyline)
+End Sub
+
+Function Between(ByVal A, ByVal B)
+    Between = Array((A(0)+B(0))/2, (A(1)+B(1))/2, (A(2)+B(2))/2)
+End Function
 ```
 {: .line-numbers}
 
@@ -1410,103 +1421,126 @@ def blendcorners():
 <th>Description</th>
 </tr>
 <tr>
-<td>2...7</td>
-<td>These calls prompt the user for a polyline, get the polyline's vertices, and then promps the user for the radius of blending. Since David Rutten is the only one allowed to be so careless as to not check for None values (and we are not David Rutten) each of these operations is followed by a failure check.</td>
+<td>2...4</td>
+<td>I've removed all <i>IsNull()</i> checks to reduce the number of coded lines. Only I (David Rutten) am allowed to be this careless..</td>
 </tr>
 <tr>
-<td>9...10</td>
-<td>Sometimes, an operation that is needed within a loop results in the same values in each loop iteration. In cases like this, programs can be made much more efficient, by performing these operations before entering the loop. The variables between and <i>newverts</i> will not be used until line 25, but obtaining them here at lines 9 and 10 will make the script much more efficient.
+<td>6</td>
+<td>Declare all variables that will be used to store control point locations and indices. Names are identical to the images on the previous page. <i>i</i> and <i>N</i> are iteration variables.
 </td>
 </tr>
 <tr>
-<td>11</td>
-<td>Begin a loop for each segment in the polyline. </td>
+<td>7</td>
+<td><i>vecSegment</i> is a scaled vector that points from <i>A</i> to <i>B</i> with a length of <i>dblRadius</i>.</td>
 </tr>
 <tr>
-<td>12...13</td>
+<td>9</td>
+<td>Begin a loop for each segment in the polyline.</td>
+</tr>
+<tr>
+<td>10...11</td>
 <td>Store <i>A</i> and <i>B</i> coordinates for easy reference.</td>
 </tr>
 <tr>
-<td>15...21</td>
-<td><i>vec_segment</i> is a scaled vector that points from <i>A</i> to <i>B</i> with a length of <i>radius</i>.
-Calculate the <i>vec_segment</i> vector. Typically this vector has length <i>radius</i>, but if the current polyline segment is too short to contain two complete radii, then adjust the <i>vec_segment</i> accordingly.</td>
+<td>13...20</td>
+<td>Calculate the <i>vecSegment</i> vector. Typically this vector has length <i>dblRadius</i>, but if the current polyline segment is too short to contain two complete radii, then adjust the <i>vecSegment</i> accordingly.</td>
 </tr>
 <tr>
-<td>23...24</td>
+<td>22...23</td>
 <td>Calculate <i>W1</i> and <i>W2</i>.</td>
 </tr>
 <tr>
-<td>25...30</td>
-<td>Store all points (except <i>B</i>) in the <i>newverts</i> list.</td>
+<td>25...32</td>
+<td>Resize the <i>newV()</i> array and store all points (except <i>B</i>).</td>
 </tr>
 <tr>
-<td>31</td>
-<td>Append the last point of the polyline to the <i>newverts</i> list. We've omitted <i>B</i> everywhere because the <i>A</i> of the next segment has the same location and we do not want coincident control-points. The last segment has no next segment, so we need to make sure <i>B</i> is included this time.</td>
+<td>35...36</td>
+<td>Append the last point of the polyline to the <i>newV()</i> array. We've omitted <i>B</i> everywhere because the <i>A</i> of the next segment has the same location and we do not want coincident control-points. The last segment has no next segment, so we need to make sure <i>B</i> is included this time.</td>
 </tr>
 <tr>
-<td>32...33</td>
-<td>Create a new D5 nurbs curve and delete the original.</td>
+<td>38</td>
+<td>Create a new D<sup>5</sup> nurbs curve.</td>
+</tr>
+<tr>
+<td>42...44</td>
+<td>A utility function which averages two 3D point coordinates.</td>
 </tr>
 </table>
 {: .multiline}
 
-### 8.7.2 Interpolated curves
+### 7.7.2 Interpolated curves
 
-When creating control-point curves it is very difficult to make them go through specific coordinates. Even when tweaking control-points this would be an arduous task. This is why commands like *_HBar* are so important. However, if you need a curve to go through many points, you're better off creating it using an interpolated method rather than a control-point method. The *_InterpCrv* and *_InterpCrvOnSrf* commands allow you to create a curve that intersects any number of 3D points and both of these methods have an equivalent in RhinoScriptSyntax.
+When creating control-point curves it is very difficult to make them go through specific coordinates. Even when tweaking control-points this would be an arduous task. This is why commands like* _HBar* are so important. However, if you need a curve to go through many points, you're better off creating it using an interpolated method rather than a control-point method. The *_InterpCrv* and * _InterpCrvOnSrf* commands allow you to create a curve that intersects any number of 3D points and both of these methods have an equivalent in RhinoScript.
 
-To demonstrate, we're going to create a script that creates iso-distance-curves on surfaces rather than the standard iso-parameter-curves, or "isocurves" as they are usually called.  Isocurves, thus connect all the points in surface space that share a similar u or v value. Because the progression of the domain of a surface is not linear (it might be compressed in some places and stretched in others, especially near the edges where the surface has to be clamped), the distance between isocurves is not guaranteed to be identical either.
+To demonstrate, we're going to create a script that creates iso-distance-curves on surfaces rather than the standard iso-parameter-curves, or "isocurves" as they are usually called. If you're an old-time Rhino user you might recall that before Rhino3 "isocurves" were referred to as "isoparms" which is short for "isoparameters" ("iso" originates from the Greek (Isos) and it means "equal", as in *isotherm*: equal temperature, isobar: equal pressure and isochromatic: equal colour). Isocurves thus connect all the points in surface space that share a similar u or v value. Because the progression of the domain of a surface is not linear (it might be compressed in some places and stretched in others, especially near the edges where the surface has to be clamped), the distance between isocurves is not guaranteed to be identical either.
 
-The description of our algorithm is very straightforward, but I promise you that the actual script itself will be the hardest thing you've ever done.
+The description of our algorithm is very straightforward, but I promise you that the actual script itself will be the hardest thing you've ever done. 
+
+Enough foreplay.
 
 <img src="{{ site.baseurl }}/images/primer-isocurves.svg">{: .img-center  width="100%"}
 
 Our script will take any base surface (image A) and extract a number of isocurves (image B). Then, every isocurve is trimmed to a specific length (image C) and the end-points are connected to give the iso-distance-curve (the red curve in image D). Note that we are using isocurves in the v-direction to calculate the iso-distance-curve in the u-direction. This way, it doesn't matter much that the spacing of isocurves isn't distributed equally. Also note that this method is only useful for offsetting surface edges as opposed to *_OffsetCrvOnSrf* which can offset any curve.
 
-We can use the RhinoScriptSytnax methods *rs.ExtractIsoCurve()* and *rs.AddInterpCrvOnSrf()* for steps B and D, but step C is going to take some further thought. It is possible to divide the extracted isocurve using a fixed length, which will give us a whole list of points, the second of which marks the proper solution:
+We can use the RhinoScript methods *Rhino.ExtractIsoCurve()* and *Rhino.AddInterpCrvOnSrf()* for steps B and D, but step C is going to take some further thought. It is possible to divide the extracted isocurve using a fixed length, which will give us a whole array of points, the second of which marks the proper solution:
 
 <img src="{{ site.baseurl }}/images/python-dividecurvesearching.svg">{: .img-center  width="100%"}
 
-In the example above, the curve has been divided into equal length segments of 5.0 units each. The red point (the second item in the collection) is the answer we're looking for. All the other points are of no use to us, and you can imagine that the shorter the distance we're looking for, the more redundant points we get. Under normal circumstances I would not think twice and simply use the *rs.DivideCurveLength()* method. However, I'll take this opportunity to introduce you to one of the most ubiquitous, popular and prevalent algorithms in the field of programming today: binary searching.
+In the example above, the curve has been divided into equal length segments of 5.0 units each. The red point (the second item in the collection) is the answer we're looking for. All the other points are of no use to us, and you can imagine that the shorter the distance we're looking for, the more redundant points we get. Under normal circumstances I would not think twice and simply use the *Rhino.DivideCurveLength()* method and damn the expense. However, these are not normal circumstances and I've got a reputation to consider. That is why I'll take this opportunity to introduce you to one of the most ubiquitous, popular and prevalent algorithms in the field of programming today: binary searching.
 
-Imagine you have a list of integers which is -say- ten thousand items long and you want to find the number closest to sixteen. If this list is unordered (as opposed to sorted) , like so:
+Imagine you have an array of integers which is -say- ten thousand items long and you want to find the number closest to sixteen. If this array is unordered (as opposed to sorted) , like so:
 
 > {-2, -10, 12, -400, 80, 2048, 1, 10, 11, -369, 4, -500, 1548, 8, … , 13, -344}
 
-you have pretty much no option but to compare every item in turn and keep a record of which one is closest so far. If the number sixteen doesn't occur in the list at all, you'll have to perform ten thousand comparisons before you know for sure which number was closest to sixteen. This is known as a worst-case performance, the best-case performance would be a single comparison since sixteen might just happen to be the first item in the list... if you're lucky.
+you have pretty much no option but to compare every item in turn and keep a record of which one is closest so far. If the number sixteen doesn't occur in the array at all, you'll have to perform ten thousand comparisons before you know for sure which number was closest to sixteen. This is known as a worst-case performance, the best-case performance would be a single comparison since sixteen might just happen to be the first item in the array... if you're lucky.
 
-The method described above is known as a list-search and it is a pretty inefficient way of searching a large dataset and since searching large datasets is something that we tend to do a lot in computer science, plenty research has gone into speeding things up. Today there are so many different search algorithms that we've had to put them into categories in order to keep a clear overview. However, pretty much all efficient searching algorithms rely on the input list being sorted, like so:
+The method described above is known as a list-search and it is a pretty inefficient way of searching a large dataset and since searching large datasets is something that we tend to do a lot in computational science, plenty research has gone into speeding things up. Today there are so many different search algorithms that we've had to put them into categories in order to keep a clear overview. However, pretty much all efficient searching algorithms rely on the input list being sorted, like so:
 
 > {-500, -400, -369, -344, -10, -2, 1, 4, 8, 10, 11, 12, 13, 80, … , 1548, 2048}
 
-Once we have a sorted list it is possible to improve our worst case performance by orders of magnitude. For example, consider a slightly more advanced list-search algorithm which aborts the search once results start to become worse. Like the original list-search it will start at the first item {-500}, then continue to the second item {-400}. Since {-400} is closer to sixteen than {-500}, there is every reason to believe that the next item in the list is going to be closer still. This will go on until the algorithm has hit the number thirteen. Thirteen is already pretty close to sixteen but there is still some wiggle room so we cannot be absolutely sure ({14; 15; 16; 17; 18} are all closer and {19} is equally close). However, the next number in the list is {80} which is a much, worse result than thirteen. Now, since this list is sorted we can be sure that every number after {80} is going to be worse still so we can safely abort our search knowing that thirteen is the closest number. Now, if the number we're searching for is near the beginning of the list, we'll have a vast performance increase, if it's near the end, we'll have a small performance increase. On average though, the sorted-list-search is twice as fast as the old-fashioned-list-search.
+Once we have a sorted list it is possible to improve our worst case performance by orders of magnitude. For example, consider a slightly more advanced list-search algorithm which aborts the search once results start to become worse. Like the original list-search it will start at the first item {-500}, then continue to the second item {-400}. Since {-400} is closer to sixteen than {-500}, there is every reason to believe that the next item in the list is going to be closer still. This will go on until the algorithm has hit the number thirteen. Thirteen is already pretty close to sixteen but there is still some wiggle room so we cannot be absolutely sure ({14; 15; 16; 17; 18} are all closer and {19} is equally close). However, the next number in the array is {80} which is patently  a much, much worse result than thirteen. Now, since this array is sorted we can be sure that every number after {80} is going to be worse still so we can safely abort our search knowing that thirteen is the closest number. Now, if the number we're searching for is near the beginning of the array, we'll have a vast performance increase, if it's near the end, we'll have a small performance increase. On average though, the sorted-list-search is twice as fast as the old-fashioned-list-search.
 
-Binary-searching does far better. Let us return to our actual problem to see how binary-searching works; find the point on a curve that marks a specific length along the curve. In the image below, the point we are looking for has been indicated with a small yellow tag, but of course we don't know where it is when we begin our search. Instead of starting at the beginning of the curve, we start halfway between {tmin} and {tmax} (halfway the domain of the curve). Since we can ask Rhino what the length is of a certain curve subdomain we can calculate the length from {tmin} to {1}. This happens to be way too much, we're looking for something less than half this length. Thus we divide the bit between {tmin} and {1} in half yet again, giving us {2}. We again measure the distance between {tmin} and {2}, and see that again we're too high, but this time only just. We keep on dividing the remainder of the domain in half until we find a value {6} which is close enough for our purposes:
+Binary-searching eats sorted-list-searching algorithms for breakfast. Let us return to our actual problem to see how binary-searching works; find the point on a curve that marks a specific length along the curve. In the image below, the point we are looking for has been indicated with a small yellow tag, but of course we don't know where it is when we begin our search. Instead of starting at the beginning of the curve, we start halfway between {t<sub>min</sub>} and {t<sub>max</sub>} (halfway the domain of the curve). Since we can ask Rhino what the length is of a certain curve subdomain we can calculate the length from {t<sub>min</sub>} to {1}. This happens to be way too much, we're looking for something less than half this length. Thus we divide the bit the between {t<sub>min</sub>} and {1} in half yet again, giving us {2}. We again measure the distance between {t<sub>min</sub>} and {2}, and see that again we're too high, but this time only just. We keep on dividing the remainder of the domain in half until we find a value {6} which is close enough for our purposes:
 
 
 <img src="{{ site.baseurl }}/images/primerbinarycurvesearching.svg">{: .img-center  width="100%"}
 
-This is an example of the simplest implementation of a binary-search algorithm and the performance of binary searching is O(log n) which is a fancy way of saying that it's fast. Really, really fast. And what's more, when we enlarge the size of the collection we're searching, the time taken to find an answer doesn't increase in a similar fashion (as it does with list-searching). Instead, it becomes relatively faster and faster as the size of the collection grows. For example, if we double the size of the array we're searching to 20,000 items, a list-search algorithm will take twice as long to find the answer, whereas a binary-searcher only takes ~1.075 times as long.
+This is an example of the simplest implementation of a binary-search algorithm and the performance of binary searching is *O*(log n) which is a fancy way of saying that it's fast. Really, really fast. And what's more, when we enlarge the size of the collection we're searching, the time taken to find an answer doesn't increase in a similar fashion (as it does with list-searching). Instead, it becomes relatively faster and faster as the size of the collection grows. For example, if we double the size of the array we're searching to 20.000 items, a list-search algorithm will take twice as long to find the answer, whereas a binary-searcher only takes ~1.075 times as long. More on algorithm performances in the chapter on optimization.
 
-The theory of binary searching might be easy to grasp (maybe not right away, but you'll see the beauty eventually), any practical implementation has to deal with some annoying, code-bloating aspects. For example, before we start a binary search operation, we must make sure that the answer we're looking for is actually contained within the set. In our case, if we're looking for a point {P} on the curve {C} which is 100.0 units away from the start of {C}, there exists no answer if {C} is shorter than 100.0 itself. Also, since we're dealing with a parameter domain as opposed to a list of integers, we do not have an actual list showing all the possible values. This array would be too big to fit in the memory of your computer. Instead, all we have is the knowledge that any number between and including {tmin} and {tmax} is theoretically possible. Finally, there might not exist an exact answer. All we can really hope for is that we can find an answer within tolerance of the exact length. Many operations in computational geometry are tolerance bound, sometimes because of speed issues (calculating an exact answer would take far too long), sometimes because an exact answer cannot be found (there is simply no math available, all we can do is make a set of guesses each one progressively better than the last).
+The theory of binary searching might be easy to grasp (maybe not right away, but you'll see the beauty eventually), any practical implementation has to deal with some annoying, code-bloating aspects. For example, before we start a binary search operation, we must make sure that the answer we're looking for is actually contained within the set. In our case, if we're looking for a point {P} on the curve {C} which is 100.0 units away from the start of {C}, there exists no answer if {C} is shorter than 100.0 itself. Also, since we're dealing with a parameter domain as opposed to a list of integers, we do not have an actual array listing all the possible values. This array would be too big to fit in the memory of your computer. Instead, all we have is the knowledge that any number between and including {t<sub>min</sub>} and {t<sub>max</sub>} is theoretically possible. Finally, there might not exist an exact answer. All we can really hope for is that we can find an answer within tolerance of the exact length. Many operations in computational geometry are tolerance bound, sometimes because of speed issues (calculating an exact answer would take far too long), sometimes because an exact answer cannot be found (there is simply no math available, all we can do is make a set of guesses each one progressively better than the last).
 
 At any rate, here's the binary-search script I came up with, I'll deal with the inner workings afterwards:
 
-```python
-def BSearchCurve(idCrv, Length, Tolerance):
-    Lcrv = rs.CurveLength(idCrv)
-    if Lcrv<Length: return
+```vb
+Function BSearchCurve(ByVal idCrv, ByVal Length, ByVal Tolerance)
+    BSearchCurve = Null
 
-    tmin = rs.CurveDomain(idCrv)[0]
-    tmax = rs.CurveDomain(idCrv)[1]
+    Dim crvLength : crvLength = Rhino.CurveLength(idCrv)
+    If crvLength < Length Then Exit Function
+
+    Dim tmin : tmin = Rhino.CurveDomain(idCrv)(0)
+    Dim tmax : tmax = Rhino.CurveDomain(idCrv)(1)
+	
+    Dim t0, t1, t
     t0 = tmin
     t1 = tmax
-    while True:
-        t = 0.5*(t1+t0)
-        Ltmp = rs.CurveLength(idCrv, 0, [tmin, t])
-        if abs(Ltmp-Length)<Tolerance: break
-        if Ltmp<Length: t0=t
-        else: t1 = t
-    return t
+
+    Dim dblLocalLength
+    Do
+        t = 0.5 * (t0+t1)
+
+        dblLocalLength = Rhino.CurveLength(idCrv, , Array(tmin, t))
+        If Abs(dblLocalLength - Length) < Tolerance Then Exit Do
+
+        If dblLocalLength < Length Then
+            t0 = t
+        Else
+            t1 = t
+        End If
+    Loop
+	
+    BSearchCurve = t
+End Function
 ```
 {: .line-numbers}
 
@@ -1517,106 +1551,136 @@ def BSearchCurve(idCrv, Length, Tolerance):
 </tr>
 <tr>
 <td>1</td>
-<td>Note that this is not a complete script, it is only the search function. The complete script is supplied in the article archive. This function takes a curve ID, a desired length and a tolerance. The return value is <i>None</i> if no solution exists (i.e. if the curve is shorter than <i>Length</i>) or otherwise the parameter that marks the desired length.</td>
+<td>Note that this is not a complete script, it is only the search function. The complete script is supplied in the article archive. This function takes a curve ID, a desired length and a tolerance. The return value is <i>Null</i> if no solution exists (i.e. if the curve is shorter than <i>Length</i>) or otherwise the parameter that marks the desired length.</td>
 </tr>
 <tr>
 <td>2</td>
-<td>Ask Rhino for the total curve length.
+<td>Set the default return value.
 </td>
 </tr>
 <tr>
-<td>3</td>
+<td>4</td>
+<td>Ask Rhino for the total curve length.</td>
+</tr>
+<tr>
+<td>5</td>
 <td>Make sure the curve is longer than <i>Length</i>. If it isn't, abort.</td>
 </tr>
 <tr>
-<td>5...6</td>
+<td>7...8</td>
 <td>Store the minimum and maximum parameters of this curve domain. If you're confused about me calling the <i>Rhino.CurveDomain()</i> function twice instead of just once and store the resulting array, you may congratulate yourself. It would indeed be faster to not call the same method twice in a row. However, since lines 7 and 8 are not inside a loop, they will only execute once which reduces the cost of the penalty. 99% of the time spend by this function is because of lines 16~25, if we're going to be zealous about speed, we should focus on this part of the code.</td>
 </tr>
 <tr>
-<td>7...8</td>
-<td><i>t0</i>, <i>t1</i> and <i>t</i> will be the variables used to define our current subdomain. <i>t0</i> will mark the lower bound and <i>t1</i> the upper bound. <i>t</i> will be halfway between <i>t0</i> and <i>t1</i>. We need to start with the whole curve in mind, so <i>t0</i> and <i>t1</i> will be similar to <i>tmin</i> and <i>tmax</i>.</td>
-</tr>
-<tr>
-<td>9</td>
-<td>Since we do not know in advance how many steps our binary searcher is going to take, we have to use an infinite loop.</td>
-</tr>
-<tr>
 <td>10</td>
-<td>Calculate <i>t</i> always exactly in the middle of {<i>t0</i>, <i>t1</i>}.</td>
+<td><i>t0</i>, <i>t1</i> and t will be the variables used to define our current subdomain. <i>t0</i> will mark the lower bound and <i>t1</i> the upper bound. t will be halfway between <i>t0</i> and <i>t1</i>.</td>
 </tr>
 <tr>
-<td>11</td>
-<td>Calculate the length of the subcurve from the start of the curve (<i>tmin</i>) to our current parameter (<i>t</i>).</td>
-</tr>
-<tr>
-<td>12</td>
-<td>If this length is close enough to the desired length, then we are done and we can abort the infinite loop. <i>abs()</i> -in case you were wondering- is a Python function that returns the absolute (non-negative) value of a number. This means that the <i>tolerance</i> argument works equally strong in both directions, which is what you'd usually want.</td>
-</tr>
-<tr>
-<td>13...14</td>
-<td>This is the magic bit. Looks harmless enough doesn't it?
-What we do here is adjust the subdomain based on the result of the length comparison. If the length of the subcurve {<i>tmin</i>, <i>t</i>} is shorter than <i>Length</i>, then we want to restrict ourself to the lower half of the old subdomain. If, on the other hand, the subcurve length is shorter than <i>Length</i>, then we want the upper half of the old domain.
-Notice how much more compact programming code is compared to English?</td>
+<td>11...12</td>
+<td>We need to start with the whole curve in mind, so <i>t0</i> and <i>t1</i> will be similar to <i>tmin</i> and <i>tmax</i>.</td>
 </tr>
 <tr>
 <td>15</td>
+<td>Since we do not know in advance how many steps our binary searcher is going to take, we have to use an infinite loop.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Calculate <i>t</i> (always exactly in the middle of {<i>t0</i>, <i>t1</i>}</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Calculate the length of the subcurve from the start of the curve (<i>tmin</i>) to our current parameter (<i>t</i>).</td>
+</tr>
+<tr>
+<td>19</td>
+<td>If this length is close enough to the desired length, then we are done and we can abort the infinite loop. <i>Abs()</i> -in case you were wondering- is a VBScript function that returns the absolute (non-negative) number. This means that the <i>Tolerance</i> argument works equally strong in both directions, which is what you'd usually want.</td>
+</tr>
+<tr>
+<td>21...25</td>
+<td>This is the magic bit. Looks harmless enough doesn't it? 
+What we do here is adjust the subdomain based on the result of the length comparison. If the length of the subcurve {<i>tmin</i>, <i>t</i>} is shorter than <i>Length</i>, then we want to restrict ourself to the lower half of the old subdomain. If, on the other hand, the subcurve length is shorter than <i>Length</i>, then we want the upper half of the old domain. 
+Notice how much more compact programming code is compared to English?</td>
+</tr>
+<tr>
+<td>28</td>
 <td>Return the solved <i>t</i>-parameter.</td>
 </tr>
 </table>
 {: .multiline}
 
-I have unleashed this function on a smooth curve with a fairly well distributed parameter space (i.e. no sudden jumps in parameter "density") and the results are listed below. The length of the total curve was 200.0 mm and I wanted to find the parameter for a subcurve length of 125.0 mm. My tolerance was set to 0.0001 mm. As you can see it took 18 refinement steps in the *BSearchCurve()* function to find an acceptable solution. Note how fast this algorithm homes in on the correct value, after just 6 steps the remaining error is less than 1%. Ideally, with every step the accuracy of the guess is doubled, in practise however you're unlikely to see such a neat progression. In fact, if you closely examine the table, you'll see that sometimes the new guess overshoots the solution so much it actually becomes worse than before (like between steps #9 and #10).
+I have unleashed this function on a smooth curve with a fairly well distributed parameter space (i.e. no sudden jumps in parameter "density") and the results are listed below. The length of the total curve was 200.0 mm and I wanted to find the parameter for a subcurve length of 125.0 mm. My tolerance was set to 0.0001 mm. As you can see it took 18 refinement steps in the *BSearchCurve()* function to find an acceptable solution. Note how fast this algorithm homes in on the correct value, after just 6 steps the remaining error is less than 1%. Ideally, with every step the accuracy of the guess is doubled, in practise however you're unlikely to see such a neat progression. In fact, if you closely examine the table, you'll see that sometimes the new guess overshoots the solution so much it actually becomes worse than before (like between steps #9 and #10). 
 
-I've greyed out the subdomain bound parameters that remained identical between two adjacent steps. You can see that sometimes multiple steps in the same direction are required.
+I've greyed out the subdomain bound parameters that remained identical between two adjacent steps. Just like the image on page 79 you can see that sometimes multiple steps in the same direction are required.
 
 <img src="{{ site.baseurl }}/images/primer-subdivisionchart.svg">{: .img-center  width="100%"}
 
 Now for the rest of the script as outlines on page 78:
 
-```python
-def equidistanceoffset():
-    srf_id = rs.GetObject("Pick surface to offset", 8, True, True)
-    if not srf_id: return
+```vb
+Sub EquiDistanceOffset()
+    Dim idSrf : idSrf = Rhino.GetObject("Pick surface to offset", 8, True, True)
+    If IsNull(idSrf) Then Exit Sub
+    
+    Dim dblOffset : dblOffset = Rhino.GetReal("Offset distance", 1.0, 0.0)
+    If IsNull(dblOffset) Then Exit Sub
+    
+    Dim uDomain 
+    uDomain = Rhino.SurfaceDomain(idSrf, 0)
 
-    offset = rs.GetReal("Offset distance", 1.0, 0.0)
-    if not offset: return
+    Dim uStep, u, t
+    uStep = (uDomain(1) - uDomain(0)) / 50 'This means we'll create 50 isocurves
+    
+    Dim arrOffsetVertices() 
+    Dim VertexCount
+    VertexCount = -1
 
-    udomain = rs.SurfaceDomain(srf_id, 0)
-    ustep = (udomain[1]-udomain[0])/200
-    rs.EnableRedraw(False)
+    Dim idIsoCurves, idIsoCurve
 
-    offsetvertices = []
-    u = udomain[0]
-    while u<=(udomain[1]+0.5*ustep):
-        isocurves = rs.ExtractIsoCurve(srf_id, (u,0), 1)
-        if isocurves:
-            t = BSearchCurve(isocurves[0], offset, 0.001)
-            if t is not None:
-                offsetvertices.append(rs.EvaluateCurve(isocurves[0], t))
-            rs.DeleteObjects(isocurves)
-        u+=ustep
-
-    if offsetvertices: rs.AddInterpCrvOnSrf(srf_id, offsetvertices)
-    rs.EnableRedraw(True)
+    Call Rhino.EnableRedraw(False)
+    
+    For u = uDomain(0) To uDomain(1) + (0.5*uStep) Step uStep
+        'Rhino.ExtractIsoCurves() returns an array, but in our case it is always just one item
+        idIsoCurves = Rhino.ExtractIsoCurve(idSrf, Array(u, 0), 1)
+        
+        If Not IsNull(idIsoCurves) Then
+            idIsoCurve = idIsoCurves(0) 'Use only the first curve in the set
+            t = BSearchCurve(idIsoCurve, dblOffset, 0.001) 'Call our binary searcher
+            
+            If Not IsNull(t) Then 'If we have a solution, append it to the vertex-array
+                VertexCount = VertexCount+1
+                ReDim Preserve arrOffsetVertices(VertexCount)
+                arrOffsetVertices(VertexCount) = Rhino.EvaluateCurve(idIsoCurve, t)     
+            End If
+            
+            'Clean up the isocurves
+            Call Rhino.DeleteObjects(idIsoCurves)    
+        End If
+    Next
+    
+    If VertexCount > 0 Then 'If we have more than one point, we can add a curve
+        Call Rhino.AddInterpCrvOnSrf(idSrf, arrOffsetVertices)    
+    End If
+    
+    Call Rhino.EnableRedraw(True)
+End Sub
 ```
 ![{{ site.baseurl }}/images/primer-equidistantoffset-result.svg]({{ site.baseurl }}/images/primer-equidistantoffset-result.svg){: .float-img-right width="375"}
 
-If I've done my job so far, the above shouldn't require any explanation. All of it is straight forward scripting code.
+If I've done my job so far, the above shouldn't require any explanation. All of it is out-of-the-box, run-of-the-mill, garden-variety, straight-laced scripting code.
 
 The image on the right shows the result of the script, where offset values are all multiples of 10. The dark green lines across the green strip (between offsets 80.0 and 90.0)  are all exactly 10.0 units long.
 
 &nbsp;{: .clear-img}  
 
 
-### 8.7.3 Geometric curve properties
+### 7.7.3 Geometric curve properties
 
 Since curves are geometric objects, they possess a number of properties or characteristics which can be used to describe or analyze them. For example, every curve has a starting coordinate and every curve has an ending coordinate. When the distance between these two coordinates is zero, the curve is closed. Also, every curve has a number of control-points, if all these points are located in the same plane, the curve as a whole is planar. Some properties apply to the curve as a whole, others only apply to specific points on the curve. For example, planarity is a global property while tangent vectors are a local property. Also, some properties only apply to some curve types. So far we've dealt with lines, polylines, circles, ellipses, arcs and nurbs curves:
 
 <img src="{{ site.baseurl }}/images/primer-curvetypes.svg">{: .img-center  width="100%"}
 
-The last available curve type in Rhino is the polycurve, which is nothing more than an amalgamation of other types. A polycurve can be a series of line curves for example, in which case it behaves similarly to a polyline. But it can also be a combination of lines, arcs and nurbs curves with different degrees. Since all the individual segments have to touch each other (G0 continuity is a requirement for polycurve segments), polycurves cannot contain closed segments. However, no matter how complex the polycurve, it can always be represented by a nurbs curve. All of the above types can be represented by a nurbs curve.
+The last available curve type in Rhino is the polycurve, which is nothing more than an amalgamation of other types. A polycurve can be a series of line curves for example, in which case it behaves similarly to a polyline. But it can also be a combination of lines, arcs and nurbs curves with different degrees. Since all the individual segments have to touch each other (G<sub>0</sub> continuity is a requirement for polycurve segments), polycurves cannot contain closed segments. However, no matter how complex the polycurve, it can always be represented by a nurbs curve. *All* of the above types can be represented by a nurbs curve.
 
-The difference between an actual circle and a nurbs-curve-that-looks-like-a-circle is the way it is stored. A nurbs curve doesn't have a Radius property for example, nor a Plane in which it is defined. It is possible to reconstruct these properties by evaluating derivatives and tangent vector and frames and so on and so forth, but the data isn't readily available. In short, nurbs curves lack some global properties that other curve types do have. This is not a big issue, it's easy to remember what properties a nurbs curve does and doesn't have. It is much harder to deal with local properties that are not continuous. For example, imagine a polycurve which has a zero-length line segment embedded somewhere inside. The t-parameter at the line beginning is a different value from the t-parameter at the end, meaning we have a curve subdomain which has zero length. It is impossible to calculate a normal vector inside this domain:
+ The difference between an actual circle and a nurbs-curve-that-looks-like-a-circle is the way it is stored. A nurbs curve doesn't have a *Radius* property for example, nor a *Plane* in which it is defined. It is possible to reconstruct these properties by evaluating derivatives and tangent vector and frames and so on and so forth, but the data isn't readily available. In short, nurbs curves lack some global properties that other curve types do have. This is not a big issue, it's easy to remember what properties a nurbs curve does and doesn't have. It is much harder to deal with local properties that are not continuous. For example, imagine a polycurve which has a zero-length line segment embedded somewhere inside. The *t*-parameter at the line beginning is a different value from the t-parameter at the end, meaning we have a curve subdomain which has zero length. It is impossible to calculate a normal vector inside this domain:
 
 <img src="{{ site.baseurl }}/images/primer-polycurvecompound.svg">{: .img-center  width="100%"}
 
@@ -1628,42 +1692,56 @@ When using curve properties such as tangents, curvature or perp-frames, we must 
 
 One thing the *_CurvatureGraph* command does not do is insert the curvature graph objects, it only draws them on the screen. We're going to make a script that inserts the curvature graph as a collection of lines and interpolated curves. We'll run into several issues already outlined in this paragraph.
 
-In order to avoid some *G* continuity problems we're going to tackle the problem span by span. In case you haven't suffered left-hemisphere meltdown yet; the shape of every knot-span is determined by a certain mathematical function known as a polynomial and is (in most cases) completely smooth. A span-by-span approach means breaking up the curve into its elementary pieces, as shown on the left:
+In order to avoid some G continuity problems we're going to tackle the problem span by span. In case you haven't suffered left-hemisphere meltdown yet; the shape of every knot-span is determined by a certain mathematical function known as a polynomial and is (in most cases) completely smooth. A span-by-span approach means breaking up the curve into its elementary pieces, as shown on the left:
 
 <img src="{{ site.baseurl }}/images/primer-polycurvecurvaturegraph.svg">{: .img-center  width="100%"}
 
-This is a polycurve object consisting of seven pieces; lines {A; C; E}, arcs {B; D} and nurbs curves {F; G}. When we convert the polycurve to a nurbs representation we get a degree 5 nurbs curve with 62 pieces (knot-spans). Since this curve was made by joining a bunch of other curves together, there are kinks between all individual segments. A kink is defined as a grouping of identical knots on the interior of a curve, meaning that the curve actually intersects one of its interior control-points. A kink therefore has the potential to become a sharp crease in an otherwise smooth curve, but in our case all kinks connect segments that are G1 continuous. The kinks have been marked by white circles in the image on the right. As you can see there are also kinks in the middle of the arc segments {B; D}, which were there before we joined the curves together. In total this curve has ten kinks, and every kink is a grouping of five similar knot parameters (this is a D<sup>5</sup> curve). Thus we have a sum-total of 40 zero-length knot-spans. Never mind about the math though, the important thing is that we should prepare for a bunch of zero-length spans so we can ignore them upon confrontation.
+This is a polycurve object consisting of seven pieces; lines {A; C; E}, arcs {B; D} and nurbs curves {F; G}. When we convert the polycurve to a nurbs representation we get a degree 5 nurbs curve with 62 pieces (knot-spans). Since this curve was made by joining a bunch of other curves together, there are kinks between all individual segments. A kink is defined as a grouping of identical knots on the interior of a curve, meaning that the curve actually intersects one of its interior control-points. A kink therefore has the potential to become a sharp crease in an otherwise smooth curve, but in our case all kinks connect segments that are G<sub>1</sub> continuous. The kinks have been marked by white circles in the image on the right. As you can see there are also kinks in the middle of the arc segments {B; D}, which were there before we joined the curves together. In total this curve has ten kinks, and every kink is a grouping of five similar knot parameters (this is a D<sub>5</sub> curve). Thus we have a sum-total of 40 zero-length knot-spans. Never mind about the math though, the important thing is that we should prepare for a bunch of zero-length spans so we can ignore them upon confrontation.
 
 The other problem we'll get is the property evaluation issue I talked about on the previous page. On the transition between knots the curvature data may jump from one value to another. Whenever we're evaluating curvature data near knot parameters, we need to know if we're coming from the left or the right.
 
-I'm sure all of this sounds terribly complicated. In fact, I'm sure it is terribly complicated, but these things should start to make sense. It is no longer enough to understand how scripts work under ideal circumstances, by now, you should understand why there are no ideal circumstances and how that affects programming code.
+I'm sure all of this sounds terribly complicated. In fact I'm sure it is terribly complicated, but these things should start to make sense. It is no longer enough to understand how scripts work under ideal circumstances, by now, you should understand why there are no ideal circumstances and how that affects programming code.
 
-Since we know exactly what we need to do in order to mimic the *_CurvatureGraph* command, we might as well start at the bottom. The first thing we need is a function that creates a curvature graph on a subcurve, then we can call this function with the knot parameters as sub-domains in order to generate a graph for the whole curve:
+Since we know exactly what we need to do in order to mimic the *_CurvatureGraph* command, we might as well bite the bullet and start at the bottom. The first thing we need is a function that creates a curvature graph on a subcurve, then we can call this function with the knot parameters as sub-domains in order to generate a graph for the whole curve:
 
 <img src="{{ site.baseurl }}/images/primer-spancurvaturegraph.svg">{: .img-center  width="100%"}
 
 Our function will need to know the ID of the curve in question, the subdomain {t<sub>0</sub>; t<sub>1</sub>}, the number of samples it is allowed to take in this domain and the scale of the curvature graph. The return value should be a collection of object IDs which were inserted to make the graph. This means all the perpendicular red segments and the  dashed black curve connecting them.
 
-```python
-def addcurvaturegraphsection(idCrv, t0, t1, samples, scale):
-    if (t1-t0)<=0.0: return
-    tstep = (t1-t0)/samples
-    points = []
-    objects = []
-    for t in rs.frange(t0,t1+(0.5*tstep),tstep):
-        if t>=t1:t = t1-1e-10
-        cData = rs.CurveCurvature(idCrv, t)
-        if not cData:
-            points.append(rs.EvaluateCurve(idCrv, t))
-        else:
-            c = rs.VectorScale(cData[4], scale)
-            a = cData[0]
-            b = rs.VectorSubtract(a, c)
-            objects.append(rs.AddLine(a,b))
-            points.append(b)
+```vb
+Function AddCurvatureGraphSection(ByVal idCrv, ByVal t0, ByVal t1, ByVal Samples, ByVal Scale)
+    AddCurvatureGraphSection = Null
+    If (t1 - t0) <= 0.0 Then Exit Function
 
-    objects.append(rs.AddInterpCurve(points))
-    return objects
+    Dim arrA() : ReDim arrA(Samples)
+    Dim arrB() : ReDim arrB(Samples)
+    Dim arrObjects : ReDim arrObjects(Samples+1)	
+
+    Dim cData, cVector
+    Dim t, tStep, N
+    N = -1
+
+    tStep = (t1-t0) / Samples
+    For t = t0 To (t1 + (0.5*tStep)) Step tStep
+        If (t >= t1) Then t = (t1 - 1e-10)
+        N = N+1
+
+        cData = Rhino.CurveCurvature(idCrv, t)
+        If IsNull(cData) Then
+            arrA(N) = Rhino.EvaluateCurve(idCrv, t)
+            arrB(N) = arrA(N)
+            arrObjects(N) = ""
+        Else
+            cData(4) = Rhino.VectorScale(cData(4), Scale)
+            arrA(N) = cData(0)
+            arrB(N) = Rhino.VectorSubtract(cData(0), cData(4)) 
+            arrObjects(N) = Rhino.AddLine(arrA(N), arrB(N))
+        End If
+    Next
+
+    arrObjects(Samples+1) = Rhino.AddInterpCurve(arrB)
+    AddCurvatureGraphSection = arrObjects
+End Function
 ```
 {: .line-numbers}
 
@@ -1673,32 +1751,34 @@ def addcurvaturegraphsection(idCrv, t0, t1, samples, scale):
 <th>Description</th>
 </tr>
 <tr>
-<td>2</td>
+<td>3</td>
 <td>Check for a null span, this happens inside kinks.</td>
 </tr>
 <tr>
-<td>3</td>
-<td>Determine a step size for our loop (Subdomain length / Sample count).
+<td>5...6</td>
+<td><i>arrA()</i> and <i>arrB()</i> will hold the start and end points of the perpendicular segments.
 </td>
 </tr>
 <tr>
-<td>5</td>
-<td><i>objects()</i> will hold the IDs of the perpendicular lines, and the connecting curve.</td>
+<td>7</td>
+<td><i>arrObjects()</i> will hold the IDs of the perpendicular lines, and the connecting curve.</td>
 </tr>
 <tr>
-<td>6</td>
+<td>13</td>
+<td>Determine a step size for our loop (Subdomain length / Sample count)</td>
+</tr>
+<tr>
+<td>14</td>
 <td>Define the loop and make sure we always process the final parameter by increasing the threshold with half the step size.</td>
 </tr>
 <tr>
-<td>7</td>
-<td>Make sure <i>t</i> does not go beyond <i>t1</i>, since that might give us the curvature data of the next segment.</td>
-</tr>
-<tr>
-<td>10</td>
-<td>In case of a curvature data discontinuity, do not add a line segment but append the point on the curve at the current curve coordinate <i>t</i>.</td>
-</tr>
-<tr>
-<td>12...16</td>
+<td>15</td>
+<td>Make sure t does not go beyond<i> t1</i>, since that might give us the curvature data of the next segment.</td>
+</tr><tr>
+<td>20...22</td>
+<td>In case of a curvature data discontinuity, do not add a line segment but append an empty ID instead.</td>
+</tr><tr>
+<td>24...27</td>
 <td>Compute the A and B coordinates, append them to the appropriate array and add the line segment.</td>
 </tr>
 </table>
@@ -1706,16 +1786,25 @@ def addcurvaturegraphsection(idCrv, t0, t1, samples, scale):
 
 Now, we need to write a utility function that applies the previous function to an entire curve. There's no rocket science here, just an iteration over the knot-vector of a curve object:
 
-```python
-def addcurvaturegraph( idCrv, spansamples, scale):
-    allGeometry = []
-    knots = rs.CurveKnots(idCrv)
-    p=5
-    for i in range(len(knots)-1):
-        tmpGeometry = addcurvaturegraphsection(idCrv, knots[i], knots[i+1], spansamples, scale)
-        if tmpGeometry: allGeometry.append(tmpGeometry)
-    rs.AddObjectsToGroup(allGeometry, rs.AddGroup())
-    return allGeometry
+```vb
+Function AddCurvatureGraph(ByVal idCrv, ByVal SpanSamples, ByVal Scale)
+    Dim allGeometry, tmpGeometry
+    Dim i, K
+
+    allGeometry = Array()
+
+    K = Rhino.CurveKnots(idCrv)	
+    For i = 0 To UBound(K)-1
+        tmpGeometry = AddCurvatureGraphSection(idCrv, K(i), K(i+1), SpanSamples, Scale)
+
+        If Not IsNull(tmpGeometry) Then
+            allGeometry = Rhino.JoinArrays(allGeometry, tmpGeometry)
+        End If
+    Next
+
+    Call Rhino.AddObjectsToGroup(allGeometry, Rhino.AddGroup())
+    AddCurvatureGraph = allGeometry
+End Function
 ```
 {: .line-numbers}
 
@@ -1735,67 +1824,85 @@ def addcurvaturegraph( idCrv, spansamples, scale):
 </tr>
 <tr>
 <td>5</td>
-<td>We want to iterate over all knot spans, meaning we have to iterate over all (except the last) knot in the knot vector. Hence the minus one at the end.</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Place a call to <i>addcurvaturegraphsection()</i> and store all resulting IDs in <i>tmpGeometry</i>.</td>
-</tr>
-<tr>
-<td>7</td>
-<td>If the result of <i>AddCurvatureGraphSection()</i> is not <i>Null</i>, then append all items in <i>tmpGeometry</i> to <i>allGeometry</i>.</td>
+<td>Since we're going to append a bunch of arrays to <i>allObjects</i>, we must make sure that it is an empty array before we start</td>
 </tr>
 <tr>
 <td>8</td>
+<td>We want to iterate over all knot spans, meaning we have to iterate over all (except the last) knot in the knot vector. Hence the minus one at the end.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Place a call to <i>AddCurvatureGraphSection()</i> and store all resulting IDs in <i>tmpGeometry</i>.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>If the result of <i>AddCurvatureGraphSection()</i> is not Null, then append all items in <i>tmpGeometry</i> to <i>allGeometry</i> using <i>Rhino.JoinArrays()</i>.</td>
+</tr>
+<tr>
+<td>16</td>
 <td>Put all created objects into a new group.</td>
 </tr>
 </table>
 {: .multiline}
 
-The last bit of code we need to write is a bit more extensive than we've done so far. Until now we've always prompted for a number of values before we performed any action. It is actually far more user-friendly to present the different values as options in the command line while drawing a preview of the result.
+The last bit of code we need to write is a bit more extensive then we've done so far. Until now we've always prompted for a number of values before we performed any action. It is actually far more user-friendly to present the different values as options in the command line while drawing a preview of the result.
 
 UI code tends to be very beefy, but it rarely is complex. It's just irksome to write because it always looks exactly the same. In order to make a solid command-line interface for your script you have to do the following:
 
-- Reserve a place where you store all your preview geometry
-- Initialize all settings with sensible values
-- Create all preview geometry using the default settings
-- Display the command line options
-- Parse the result (be it escape, enter or an option or value string)
-- Select case through all your options
-- If the selected option is a setting (as opposed to options like "Cancel" or "Accept") then display a prompt for that setting
-- Delete all preview geometry
-- Generate new preview geometry using the changed settings.
+1. Reserve a place where you store all your preview geometry
+1. Initialize all settings with sensible values
+1. Create all preview geometry using the default settings
+1. Display the command line options
+1. Parse the result (be it escape, enter or an option or value string)
+1. Select case through all your options
+1. If the selected option is a setting (as opposed to options like "Cancel" or "Accept") then display a prompt for that setting
+1. Delete all preview geometry
+1. Generate new preview geometry using the changed settings.
 
-```python
-def createcurvaturegraph():
-    curve_ids = rs.GetObjects("Curves for curvature graph", 4, False, True, True)
-    if not curve_ids: return
 
-    samples = 10
-    scale = 1.0
+```vb
+Sub CreateCurvatureGraph()
+    Dim idCurves : idCurves = Rhino.GetObjects("Curves for curvature graph", 4, False, True, True)
+    If IsNull(idCurves) Then Exit Sub
 
-    preview = []
-    while True:
-        rs.EnableRedraw(False)
-        for p in preview: rs.DeleteObjects(p)
-        preview = []
-        for id in curve_ids:
-            cg = addcurvaturegraph(id, samples, scale)
-            preview.append(cg)
-        rs.EnableRedraw(True)
+    Dim bResult, i
+    Dim intSamples : intSamples = 10
+    Dim dblScale : dblScale = 1.0
+ 
+    Dim arrPreview() : ReDim arrPreview(UBound(idCurves))
 
-        result = rs.GetString("Curvature settings", "Accept", ("Samples", "Scale", "Accept"))
-        if not result:
-            for p in preview: rs.DeleteObjects(p)
-            break
-        result = result.upper()
-        if result=="ACCEPT": break
-        elif result=="SAMPLES":
-            numsamples = rs.GetInteger("Number of samples per knot-span", samples, 3, 100)
-            if numsamples: samples = numsamples
-        elif result=="SCALE":
-            sc = rs.GetReal("Scale of the graph", scale, 0.01, 1000.0)
-            if sc: scale = sc
+    Do 	
+        Call Rhino.EnableRedraw(False)
+        For i = 0 To UBound(arrPreview)
+            If IsArray(arrPreview(i)) Then Rhino.DeleteObjects(arrPreview(i))
+        Next
+
+        For i = 0 To UBound(arrPreview)
+            arrPreview(i) = AddCurvatureGraph(idCurves(i), intSamples, dblScale)
+        Next
+        Call Rhino.EnableRedraw(True)
+
+        bResult = Rhino.GetString("Curvature settings", "Accept", _
+                                  Array("Samples", "Scale", "Accept"))
+        If IsNull(bResult) Then
+            For i = 0 To UBound(arrPreview)
+                If IsArray(arrPreview(i)) Then Rhino.DeleteObjects(arrPreview(i))
+            Next
+            Exit Sub
+        End If
+		
+        Select Case UCase(bResult)
+            Case "ACCEPT"
+                Exit Do
+            Case "SAMPLES"
+                bResult = Rhino.GetInteger("Number of samples per knot-span", intSamples, 3, 100)
+                If Not IsNull(bResult) Then intSamples = bResult
+            Case "SCALE"
+                bResult = Rhino.GetReal("Scale of the graph", dblScale, 0.01, 1000.0)
+                If Not IsNull(bResult) Then dblScale = bResult
+        End Select
+    Loop
+End Sub
 ```
 {: .line-numbers}
 
@@ -1806,110 +1913,114 @@ def createcurvaturegraph():
 </tr>
 <tr>
 <td>2</td>
-<td>Prompt for any number of curves, we do not want to limit our script to just one curve.</td>
+<td>Prompt for any number of curves, we do not want to limit our script to just one curve..</td>
 </tr>
 <tr>
-<td>5...6</td>
+<td>6...7</td>
 <td>Our default values are a scale factor of 1.0 and a span sampling count of 10.
 </td>
 </tr>
 <tr>
-<td>8</td>
-<td><i>preview()</i> is a list that contains arrays of IDs. One for each curve in <i>idCurves</i>.</td>
+<td>9</td>
+<td><i>arrPreview()</i> is an array that contains arrays of IDs. One for each curve in <i>idCurves</i>.</td>
 </tr>
 <tr>
-<td>9</td>
+<td>11</td>
 <td>Since users are allowed to change the settings an infinite number of times, we need an infinite loop around our UI code.</td>
 </tr>
 <tr>
-<td>10...11</td>
+<td>13...15</td>
 <td>First of all, delete all the preview geometry, if present.</td>
 </tr>
 <tr>
-<td>13...15</td>
+<td>17..19</td>
 <td>Then, insert all the new preview geometry.</td>
 </tr>
 <tr>
-<td>28</td>
-<td>Once the new geometry is in place, display the command options. The array at the end of the <i>rs.GetString()</i> method is a list of command options that will be visible.</td>
+<td>22</td>
+<td>Once the new geometry is in place, display the command options. The array at the end of the <i>Rhino.GetString()</i> method is a list of command options that will be visible..</td>
 </tr>
 <tr>
-<td>19...21</td>
+<td>24...29</td>
 <td>If the user aborts (pressed Escape), we have to delete all preview geometry and exit the sub.</td>
 </tr>
 <tr>
-<td>23...29</td>
-<td>If the user clicks on an option, <i>result</i> will be the option name. The best method IronPython implements to treat the choice is the <i>If...Then</i> statement shown.</td>
+<td>31...40</td>
+<td>If the user clicks on an option, <i>bResult</i> will be the option name. It's best to use a Select…Case statement to determine which option was clicked.</td>
 </tr>
 <tr>
-<td>23</td>
+<td>32</td>
 <td>In the case of "Accept", all we have to do is exit the sub without deleting the preview geometry.</td>
 </tr>
 <tr>
-<td>24...26</td>
-<td>If the picked option was "Samples", then we have to ask the user for a new sample count. If the user pressed Escape during this nested prompt, we do not abort the whole script (typical Rhino behaviour would dictate this), but instead return to the base prompt.</td>
-</tr>
-<tr>
-<td>27...29</td>
-<td>If the picked option was "Scale", then we have to ask the user for a new scale factor, and . If the user pressed Escape during this nested prompt, we do not abort the whole script (typical Rhino behaviour would dictate this), but instead return to the base prompt.</td>
+<td>34...36</td>
+<td>If the picked option was "Samples", then we have to ask the user for a new sample count. If the user pressed Escape during this nested prompt, we do not abort the whole script (typical Rhino behaviour would dictate this), but instead return to the base prompt..</td>
 </tr>
 </table>
 {: .multiline}
 
-## 8.8 Meshes
+## 7.8 Meshes
 
-Instead of Nurbs surfaces (which would be the next logical step after nurbs curves), this chapter is about meshes. I'm going to take this opportunity to introduce you to a completely different class of geometry -officially called "polygon meshes"- which represents a radically different approach to shape.
+Instead of Nurbs surfaces (which would be the next logical step after nurbs curves), this chapter is about meshes. I figured you could use a break from t-parameters, knots and degrees so I'm going to take this opportunity to introduce you to a completely different class of geometry -officially called "polygon meshes"- which represents a radically different approach to shape.
 
-Instead of treating a surface as a deformation of a rectangular nurbs patch, meshes are defined locally, which means that a single mesh surface can have any topology it wants. A mesh surface can even be a disjoint (not connected) compound of floating surfaces, something which is absolutely impossible with Rhino nurbs surfaces. Because meshes are defined locally, they can also store more information directly inside the mesh format, such as colors, texture-coordinates and normals. The tantalizing image below indicates the local properties that we can access via RhinoScriptSyntax. Most of these properties are optional or have default values. The only essential ones are the vertices and the faces.
+Instead of treating a surface as a deformation of a rectangular nurbs patch, meshes are defined locally, which means that a single mesh surface can have any topology it wants. A mesh surface can even be a disjoint (not connected) compound of floating surfaces, something which is absolutely impossible with Rhino nurbs surfaces. Because meshes are defined locally, they can also store more information directly inside the mesh format, such as colours, texture-coordinates and normals. The tantalizing image below indicates the local properties that we can access via RhinoScript. Most of these properties are optional or have default values. The only essential ones are the vertices and the faces.
 
 <img src="{{ site.baseurl }}/images/primer-meshtopology.svg">{: .img-center  width="80%"}
 
-It is important to understand the pros and cons of meshes over alternative surface paradigms, so you can make an informed decision about which one to use for a certain task. Most differences between meshes and nurbs are self-evident and flow from the way in which they are defined. For example, you can delete any number of polygons from the mesh and still have a valid object, whereas you cannot delete knot spans without breaking apart the nurbs geometry. There's a number of things to consider which are not implied directly by the theory though.
+It is important to understand the pros and cons of meshes over alternative surface paradigms, so you can make an informed decision about which one to use for a certain task. Most differences between meshes and nurbs are self-evident and flow from the way in which they are defined. For example, you can delete any number of polygons from the mesh and still have a valid object, whereas you cannot delete knot spans without breaking apart the nurbs geometry. There's a number of things to consider which are not implied directly by the theory though. 
 
-- Coordinates of mesh vertices are stored as single precision numbers in Rhino in order to save memory consumption. Meshes are therefore less accurate entities than nurbs objects. This is especially notable with objects that are very small, extremely large or very far away from the world origin. Mesh objects go hay-wire sooner than nurbs objects because single precision numbers have larger gaps between them than double precision numbers (see page 6).
-- Nurbs cannot be shaded, only the isocurves and edges of nurbs geometry can be drawn directly in the viewport. If a nurbs surface has to be shaded, then it has to fall back on meshes. This means that inserting nurbs surfaces into a shaded viewport will result in a significant (sometimes very significant) time lag while a mesh representation is calculated.
-- Meshes in Rhino can be non-manifold, meaning that more than two faces share a single edge. Although it is not technically impossible for nurbs to behave in this way, Rhino does not allow it. Non-manifold shapes are topologically much harder to deal with. If an edge belongs to only a single face it is an exterior edge (naked), if it belongs to two faces it is considered interior.
+1. Coordinates of mesh vertices are stored as single precision numbers in Rhino in order to save memory consumption. Meshes are therefore less accurate entities than nurbs objects. This is especially notable with objects that are very small, extremely large or very far away from the world origin. Mesh objects go hay-wire sooner than nurbs objects because single precision numbers have larger gaps between them than double precision numbers (see page 6). 
+1. Nurbs cannot be shaded, only the isocurves and edges of nurbs geometry can be drawn directly in the viewport. If a nurbs surface has to be shaded, then it has to fall back on meshes. This means that inserting nurbs surfaces into a shaded viewport will result in a significant (sometimes very significant) time lag while a mesh representation is calculated.
+1. Meshes in Rhino can be non-manifold, meaning that more than two faces share a single edge. Although it is not technically impossible for nurbs to behave in this way, Rhino does not allow it. Non-manifold shapes are topologically much harder to deal with. If an edge belongs to only a single face it is an exterior edge (naked), if it belongs to two faces it is considered interior.
 
-### 8.8.1 Geometry vs. Topology
+### 7.8.1 Geometry vs. Topology
 
 As mentioned before, only the vertices and faces are essential components of the mesh definition. The vertices represent the geometric part of the mesh definition, the faces represent the topological part. Chances are you have no idea what I'm talking about... allow me to explain.
 
-According to MathWorld.com topology is "*the mathematical study of the properties that are preserved through deformations, twistings, and stretching of objects.*" In other words, topology doesn't care about size, shape or smell, it only deals with the platonic properties of objects, such as "how many holes does it have?", "how many naked edges are there?" and "how do I get from Paris to Lyon without passing any tollbooths?". The field of topology is partly common-sense (everybody intuitively understands the basics) and partly abstract-beyond-comprehension. Luckily we're only confronted with the intuitive part here.
+According to MathWorld.com topology is "*the mathematical study of the properties that are preserved through deformations, twistings, and stretchings of objects.*" In order words, topology doesn't care about size, shape or smell, it only deals with the platonic properties of objects, such as "how many holes does it have?", "how many naked edges are there?" and "how do I get from Paris to Lyon without passing any tollbooths?". The field of topology is partly common-sense (everybody intuitively understands the basics) and partly abstract-beyond-comprehension. Luckily we're only confronted with the intuitive part here (more on topology in the chapter on B-Rep objects).
 
 <img src="{{ site.baseurl }}/images/primer-topology.svg">{: .img-center  width="80%"}
 
-If you look at the images above, you'll see a number of surfaces that are topologically identical (except {E}) but geometrically different. You can bend shape {A} and end up with shape {B}; all you have to do is reposition some of the vertices. Then if you bend it even further you get {C} and eventually {D} where the right edge has been bend so far it touches the edge on the opposite side of the surface. It is not until you merge the edges
+If you look at the images above, you'll see a number of surfaces that are topologically identical (except {E}) but geometrically different. You can bend shape {A} and end up with shape {B}; all you have to do is reposition some of the vertices. Then if you bend it even further you get {C} and eventually {D} where the right edge has been bend so far it touches the edge on the opposite side of the surface. It is not until you merge the edges 
 (shape {E}) that this shape suddenly changes its platonic essence, i.e. it goes from a shape with four edges to a shape with only two edges (and these two remaining edges are now closed loops as well). Do note that shapes {D} and {E} are geometrically identical, which is perhaps a little surprising.
 
-The vertices of a mesh object are a list of 3D point coordinates. They can be located anywhere in space and they control the size and form of the mesh. The faces on the other hand do not contain any coordinate data, they merely indicate how the vertices are to be connected:
+The vertices of a mesh object are an array of 3D point coordinates. They can be located anywhere in space and they control the size and form of the mesh. The faces on the other hand do not contain any coordinate data, they merely indicate how the vertices are to be connected:
 
 <img src="{{ site.baseurl }}/images/primer-connected.svg">{: .img-center  width="100%"}
 
-Here you see a very simple mesh with sixteen vertices and nine faces. Commands like *_Scale*, *_Move* and *_Bend* only affect the vertex-list, commands like *_TriangulateMesh* and *_SwapMeshEdge* only affect the face-list, commands like *_ReduceMesh* and *_MeshTrim* affect both lists. Note that the last face {*I*} has its corners defined in a clockwise fashion, whereas all the other faces are defined counter-clockwise. Although this makes no geometric difference, it does affect how the mesh normals are calculated and one should generally avoid creating meshes that are cw/ccw inconsistent.
+Here you see a very simple mesh with sixteen vertices and nine faces. Commands like *_Scale*, *_Move* and *_Bend* only affect the vertex-array, commands like *_TriangulateMesh* and *_SwapMeshEdge* only affect the face-array, commands like *_ReduceMesh* and *_MeshTrim* affect both arrays. Note that the last face {I} has its corners defined in a clockwise fashion, whereas all the other faces are defined counter-clockwise. Although this makes no geometric difference, it does affect how the mesh normals are calculated and one should generally avoid creating meshes that are cw/ccw inconsistent.
 
 Now that we know what meshes essentially consist of, we can start making mesh shapes from scratch. All we need to do is come up with a set of matching vertex/face arrays. We'll start with the simplest possible shape, a mesh plane consisting of a grid of vertices connected with quads. Just to keep matters marginally interesting, we'll mutate the z-coordinates of the grid points using a user-specified mathematical function in the form of:
 
-$$f(x, y, \Theta, \Delta) = ...$$
-
 ![{{ site.baseurl }}/imagesprimer-meshgraph_xy.svg]({{ site.baseurl }}/images/primer-meshgraph_xy.svg){: .float-img-right width="375"}
 
+$$f(x, y, \Theta, \Delta) = ...$$
 
 Where the user is allowed to specify any valid mathematical function using the variables *x*, *y*, *Θ* and *Δ*. Every vertex in the mesh plane has a unique combination of *x* and *y* values which can be used to determine the *z* value of that vertex by evaluating the custom function (*Θ* and *Δ* are the polar coordinates of *x* and *y*). This means every vertex {A} in the plane has a coordinate {B} associated with it which shares the *x* and *y* components, but not the *z* component.
 
-We'll run into four problems while writing this script which we have not encountered before, but only two of these have to do with mesh geometry/topology:
+We'll run into four problems while writing this script which we have not encountered before, but only two of these have to do with mesh geometry/topology:	
 
-It's easy enough to generate a grid of points, we've done similar looping before where a nested loop was used to generate a grid wrapped around a cylinder. The problem this time is that it's not enough to generate the points. We also have to generate the face-list, which is highly dependent on the row and column dimensions of the vertex list. It's going to take a lot of logic insight to get this right (probably easiest to make a schematic first). Let us turn to the problem of generating the vertex coordinates, which is a straightforward one:
+It's easy enough to generate a grid of points, we've done similar looping already on page 33 where a nested loop was used to generate a grid wrapped around a cylinder. The problem this time is that it's not enough to generate the points. We also have to generate the face-array, which is highly dependent on the row and column dimensions of the vertex array. It's going to take a lot of logic insight to get this right, and I don't mind telling you that I can never solve this particular problem without making a schematic of the mesh. First, let us turn to the problem of generating the vertex coordinates, which is a straightforward one:
 
-```python
-def createmeshvertices(function, fdomain, resolution):
-    xstep = (fdomain[1]-fdomain[0])/resolution
-    ystep = (fdomain[3]-fdomain[2])/resolution
-    v = []
-    for x in rs.frange(fdomain[0],fdomain[1]+(0.5*xstep), xstep):
-        for y in rs.frange(fdomain[2],fdomain[3]+(0.5*ystep),ystep):
-            z = solveequation(function, x, y)
-            v.append( (x,y,z) )
-    return v
+```vb
+Function CreateMeshVertices(ByVal strFunction, ByVal fDomain(), ByVal iResolution)
+    Dim xStep : xStep = (fDomain(1) - fDomain(0)) / iResolution
+    Dim yStep : yStep = (fDomain(3) - fDomain(2)) / iResolution
+    Dim V(), N
+    N = -1
+
+    Dim x, y, z
+    For x = fDomain(0) To fDomain(1) + (0.5*xStep) Step xStep
+        For y = fDomain(2) To fDomain(3) + (0.5*yStep) Step yStep
+            z = SolveEquation(strFunction, x, y)
+            N = N+1
+            ReDim Preserve V(N)
+            V(N) = Array(x, y, z)
+        Next
+    Next
+
+    CreateMeshVertices = V
+End Function
 ```
 {: .line-numbers}
 
@@ -1939,15 +2050,15 @@ We can access those easily enough, but since the step size in x and y direction 
 </td>
 </tr>
 <tr>
-<td>5</td>
+<td>8</td>
 <td>Begin at the lower end of the x-domain and step through the entire domain until the maximum value has been reached. We can refer to this loop as the row-loop.</td>
 </tr>
 <tr>
-<td>6</td>
+<td>9</td>
 <td>Begin at the lower end of the y-domain and step through the entire domain until the maximum value has been reached. We can refer to this loop as the column-loop.</td>
 </tr>
 <tr>
-<td>8</td>
+<td>10</td>
 <td>This is where we're calling an -as of yet- non-existent function. However, I think the signature is straightforward enough to not require further explanation now.</td>
 </tr>
 <tr>
@@ -1959,21 +2070,30 @@ We can access those easily enough, but since the step size in x and y direction 
 
 ![{{ site.baseurl }}/images/primer-meshfacelogic.svg]({{ site.baseurl }}/images/primer-meshfacelogic.svg){: .float-img-right width="325"}
 
-Once we have our vertices, we can create the face list that connects them. Since the face-list is topology, it doesn't matter where our vertices are in space, all that matters is how they are organized. The image on the right is the mesh schematic that I always draw whenever confronted with mesh face  logic. The image shows a mesh with twelve vertices and six quad faces, which has the same vertex sequence logic as the vertex list created by the function on the previous page. The vertex counts in x and y direction are four and three respectively (N<sub>x</sub>=4, N<sub>y</sub>=3).
+Once we have our vertices, we can create the face array that connects them. Since the face-array is topology, it doesn't matter where our vertices are in space, all that matters is how they are organized. The image on the right is the mesh schematic that I always draw whenever confronted with mesh face array logic. The image shows a mesh with twelve vertices and six quad faces, which has the same vertex sequence logic as the vertex array created by the function on the previous page. The vertex counts in x and y direction are four and three respectively (*Nx=4*, *Ny=3*). 	
 
-Now, every quad face has to link the four vertices in a counter-clockwise fashion. You may have noticed already that the absolute differences between the vertex indices on the corners of every quad are identical. In the case of the lower left quad *{A=0; B=3; C=4; D=1}*. In the case of the upper right quad *{A=7; B=10; C=11; D=8}*. We can define these numbers in a simpler way, which reduces the number of variables to just one instead of four:
-*{A=?; B=(A+N<sub>y</sub>); C=(B+1); D=(A+1)}*, where *N<sub>y</sub>* is the number of vertices in the y-direction. Now that we know the logic of the face corner numbers, all that is left is to iterate through all the faces we need to define and calculate proper values for the *A* corner:
+Now, every quad face has to link the four vertices in a counter-clockwise fashion. You may have noticed already that the absolute differences between the vertex indices on the corners of every quad are identical. In the case of the lower left quad {*A=0*; *B=3*; *C=4*; *D=1*}. In the case of the upper right quad {*A=7*; *B=10*; *C=11*; *D=8*}. We can define these numbers in a simpler way, which reduces the number of variables to just one instead of four: 
+{*A=?*; *B=(A+Ny*); *C=(B+1)*; *D=(A+1)*}, where N<sub>y</sub> is the number of vertices in the y-direction. Now that we know the logic of the face corner numbers, all that is left is to iterate through all the faces we need to define and calculate proper values for the A corner:
 
-```python
-def createmeshfaces(resolution):
-    nX = resolution
-    nY = resolution
-    f = []
-    for i in range(nX-1):
-        for j in range(nY-1):
-            baseindex = i*(nY+1)+j
-            f.append( (baseindex, baseindex+1, baseindex+nY+2, baseindex+nY+1) )
-    return f
+```vb
+Function CreateMeshFaces(ByVal iResolution)
+    Dim Nx : Nx = iResolution
+    Dim Ny : Ny = iResolution
+    Dim F() : ReDim F(Nx * Ny - 1)
+    Dim N : N = -1
+    Dim baseIndex
+    Dim i, j
+
+    For i = 0 To Nx-1
+        For j = 0 To Ny-1
+            N = N+1
+
+            baseIndex = i*(Ny+1) + j
+            F(N) = Array(baseIndex, baseIndex+1, baseindex+Ny+2, baseIndex+Ny+1)
+        Next
+    Next
+    CreateMeshFaces = F
+End Function
 ```
 {: .line-numbers}
 
@@ -1989,19 +2109,19 @@ def createmeshfaces(resolution):
 </tr>
 <tr>
 <td>4</td>
-<td>Declare a list to store the faces we will create.
+<td>We know exactly how many faces we're going to add when we start this function, so there's no need to ReDim the array whenever we're adding a new one. The <i>iResolution</i> indicates the number of faces along each axis (not the number of vertices), so the total number of faces in the mesh will be the resolution in the x-direction times the resolution in the y-direction and since these are the same that amounts to the resolution squared.
 </td>
 </tr>
 <tr>
-<td>5...6</td>
-<td>These two nested loops are used to iterate over the grid and define a face for each row/column combo. I.e. the two values <i>i</i> and <i>j</i> are used to define the value of the A corner for each face.</td>
+<td>9...10</td>
+<td>These two nested loops are used to iterate over the grid and define a face for each row/column combo. I.e. the two values i and j are used to define the value of the A corner for each face.</td>
 </tr>
 <tr>
-<td>7</td>
+<td>13</td>
 <td>Instead of the nondescript "A", we're using the variable name baseIndex. This value depends on the values of both <i>i</i> and <i>j</i>. The <i>i</i> value determines the index of the current column and the <i>j</i> value indicates the current offset (the row index).</td>
 </tr>
 <tr>
-<td>8</td>
+<td>14</td>
 <td>Define the new quad face corners using the logic stated above.</td>
 </tr>
 </table>
@@ -2011,18 +2131,19 @@ Writing a tool which works usually isn't enough when you write it for other peop
 
 <img src="{{ site.baseurl }}/images/primer-settings.svg">{: .img-center  width="100%"}
 
-We'll be using a \*.txt file to store our data since it involves very little code and it survives a Rhino restart. An \*.txt file is a textfile which stores a number of Strings in a one-level hierarchical format.
+We'll be using the *.ini file to store our data since it involves very little code and it survives a Rhino restart. An *.ini file is a textfile (with the extension "ini" (short for "initialization") instead of "txt") which stores a number of Strings in a one-level hierarchical format. This means that every setting in the *.ini file has a name, a category and a value. The registry works in much the same way, with the exception that you can nest categories and thus get a much more intricate settings structure. RhinoScript offers a number of methods that allow you to write and read *.ini settings without having to manage your own file objects. Writing data to an *.ini file works as follows:
 
-```python
-def SaveFunctionData(strFunction, fDomain, Resolution):
-    file = open("MeshSettings_XY.txt", "w")
-    file.write(strFunction)
-    file.write("\n")
-    for d in fDomain:
-        file.write(str(d))
-        file.write("\n")
-    file.write(str(Resolution))
-    file.close()
+```vb
+Sub SaveFunctionData(ByVal strFunction, ByVal fDomain(), ByVal Resolution)
+    Dim iSettingFile : iSettingFile = Rhino.InstallFolder() & "MeshFunction_XY.ini"
+
+    Call Rhino.SaveSettings(iSettingFile, "Function", "format", strFunction)
+    Call Rhino.SaveSettings(iSettingFile, "Domain", "xMin", fDomain(0))
+    Call Rhino.SaveSettings(iSettingFile, "Domain", "xMax", fDomain(1))
+    Call Rhino.SaveSettings(iSettingFile, "Domain", "yMin", fDomain(2))
+    Call Rhino.SaveSettings(iSettingFile, "Domain", "yMax", fDomain(3))	
+    Call Rhino.SaveSettings(iSettingFile, "Domain", "Resolution", Resolution)
+End Sub
 ```
 {: .line-numbers}
 
@@ -2032,18 +2153,18 @@ def SaveFunctionData(strFunction, fDomain, Resolution):
 <th>Description</th>
 </tr>
 <tr>
+<td>1</td>
+<td>This is a specialized function written specifically for this script. The signature consists only of the data it has to store. Internally this function is using the *.ini calls, but that is unknown to whatever function is calling this one. This is another example of encapsulation, we could change this function later on to use the registry for example, and the script would keep on running.
+</td>
+</tr>
+<tr>
 <td>2</td>
-<td>This is a specialized function written specifically for this script. The signature consists only of the data it has to store. The open keyword creates a stream to the file we will be modifying. Specifying a file name without a path saves the file to the directory where the script resides. The second parameter indicates what the stream will be doing - writing in this instance.
+<td>Since an *.ini file is an actual file on the harddisk, it needs a path. We need to know this path if we intent to append settings. In our case we're using the Rhino.InstallFolder() method to get a folder for the file. Generally it is better to pick a location which is available to non-administator users, but that would involve a lot more code.
 </td>
 </tr>
 <tr>
-<td>3...8</td>
-<td>Write all settings successively to the file. We will be writing them in a specific order <i>- strFunction, fDomain</i> values 0 through 3, and the <i>Resolution</i>. The same order will be used to recover them later.
-</td>
-</tr>
-<tr>
-<td>9</td>
-<td>This call finalizes modifications to the file, and closes it for other operations.</td>
+<td>4...9</td>
+<td>Write all settings successively to the file. As you can see each setting has a category and name property.</td>
 </tr>
 </table>
 {: .multiline}
@@ -2052,23 +2173,29 @@ The contents of the \*.txt file should look something like this:
 
 <img src="{{ site.baseurl }}/images/primer-inifile.svg">{: .img-center  width="90%"}
 
-Reading data from an \*.txt file is slightly more involved, because there is no guarantee the file exists yet. Indeed, the first time you run this script there won't be a settings file yet and we need to make sure we supply sensible defaults:
+Reading data from an *.ini file is slightly more involved, because there is no guarantee the file exists yet. Indeed, the first time you run this script there won't be a settings file yet and we need to make sure we supply sensible defaults:
 
-```python
-def loadfunctiondata():
-    try:
-        file = open("MeshSettings_XY.txt", "r")
-        items = file.readlines()
-        file.close()
-        function = str(items[0])
-        domain = (float(items[1]), float(items[2]),
-            float(items[3]), float(items[4]))
-        resolution = int(items[5])
-    except:
-        function = "math.cos(math.sqrt(x**2+y**2))"
-        domain = (-10.0, 10.0, -10.0, 10.0)
-        resolution = 50
-    return function, domain, resolution
+```vb
+Sub LoadFunctionData(ByRef strFunction, ByRef fDomain(), ByRef Resolution)
+    Dim iSettingFile : iSettingFile = Rhino.InstallFolder() & "MeshFunction_XY.ini"
+
+    strFunction = Rhino.GetSettings(iSettingFile, "Function", "format") 
+    If IsNull(strFunction) Then 
+        strFunction = "Cos( Sqr(x^2 + y^2) )"
+        fDomain(0) = -10.0
+        fDomain(1) = +10.0
+        fDomain(2) = -10.0
+        fDomain(3) = +10.0
+        Resolution = 50
+        Exit Sub
+    End If
+
+    fDomain(0) = CDbl(Rhino.GetSettings(iSettingFile, "Domain", "xMin"))
+    fDomain(1) = CDbl(Rhino.GetSettings(iSettingFile, "Domain", "xMax"))
+    fDomain(2) = CDbl(Rhino.GetSettings(iSettingFile, "Domain", "yMin"))
+    fDomain(3) = CDbl(Rhino.GetSettings(iSettingFile, "Domain", "yMax"))
+    Resolution = CInt(Rhino.GetSettings(iSettingFile, "Domain", "Resolution"))
+End Sub
 ```
 {: .line-numbers}
 
@@ -2078,104 +2205,125 @@ def loadfunctiondata():
 <th>Description</th>
 </tr>
 <tr>
-<td>2 10</td>
-<td>This function needs to handle two possible conditions, the first being the first time it is called, and the second being all successive calls. The first time, there will be no <i>"MeshSettings_XY.txt"</i> file, so we will need to return default values, and create one later. This statement attempts to access the <i>"MeshSettings_XY.txt"</i> file in lines 3 to 5, and upon failure, moves to lines 11 to 13, in order to
+<td>1</td>
+<td>Since this function has to set a whole bunch of values, using the single return value isn't going to be enough. Rather, we pass in all variables by reference and have them set directly.
 </td>
 </tr>
 <tr>
-<td>3</td>
-<td>Obviously we need the exact same file name. If the file does not exist, the script will throw an exception. Not to worry, though. The <i>try...except</i> statement we implemented earlier will handle it, and return our default values.
+<td>2</td>
+<td>Obviously we need the exact same path to the *.ini file.
 </td>
 </tr>
 <tr>
 <td>4</td>
-<td>This is where we read the data strings from the \*.txt file.</td>
+<td>This is where we read the function string from the *.ini file. If the file doesn't exist (or if the category/name isn't found) then <i>strFunction</i> will be Null.</td>
 </tr>
 <tr>
-<td>6...9</td>
-<td>The items recovered from the \*.txt file are distributed to their respective variables in the order that they were written to the file.</td>
+<td>6...11</td>
+<td>If <i>strFunction</i> is Null we can safely assume that the other settings won't be there either. So these will be our defaults.</td>
 </tr>
 <tr>
-<td>11...13</td>
-<td>If an exception was thrown, we will need to return a set of default values. These are defined here.</td>
+<td>15...19</td>
+<td>If <i>strFunction</i> was read correctly, we can read the other settings as well. Note that our approach here is not entirely safe. If the *.ini file has become corrupted this function might not work properly.</td>
 </tr>
 </table>
 {: .multiline}
 
 ![{{ site.baseurl }}/images/primer-xyphidelta.svg]({{ site.baseurl }}/images/primer-xyphidelta.svg){: .float-img-right width="325"}
 
-We've now dealt with two out of four problems (mesh topology, saving and loading persistent settings) and it's time for the big ones. In our CreateMeshVertices() procedure we've placed a call to a function called SolveEquation() eventhough it didn't exist yet. SolveEquation() has to evaluate a user-defined function for a specific {x,y} coordinate which is something we haven't done before yet. It is very easy to find the answer to the question:
+We've now dealt with two out of four problems (mesh topology, saving and loading persistent settings) and it's time for the big ones. In our *CreateMeshVertices()* procedure we've placed a call to a function called *SolveEquation()* eventhough it didn't exist yet. *SolveEquation()* has to evaluate a user-defined function for a specific {x,y} coordinate which is something we haven't done before yet. It is very easy to find the answer to the question:
 
 "What is the value of <i>{Sin(x) + Sin(y)}</i> for <i>{x=0.5}</i> and <i>{y=2.7}</i> ?"
 
-However, this involves manually writing the equation inside the script and then running it. Our script has to evaluate custom equations which are not known until after the script starts. This means in turn that the equation is stored as a String variable.
+However, this involves manually writing the equation inside the script and then running it. Our script has to evaluate custom equations which are not known until after the script starts. This means in turn that the equation is stored as a String variable. VBScript does not execute Strings, they are inert. If we want to treat a String variable as a bit of source code, we have to use a little-known feature which is so exotic it doesn't even appear in the VBScript helpfile (though you can find it online of course). 
 
-The *eval* statement runs a script inside a script. The *eval* statement takes a single String and attempts to run it as a bit of code, but nested inside the current scope. That means that you can refer to local variables inside an *eval*. This bit of magic is exactly what we need in order to evaluate expressions stored in Strings. We only need to make sure we set up our *x, y, Θ* and *Δ* variables prior to using *eval*.
+The *Execute* statement runs a script inside a script. It isn't even a proper function or subroutine, it is instead referred to as a Statement, much like the *Dim* statement or the *Erase* statement. The *Execute* statement takes a single String and attempts to run it as a bit of code, but nested inside the current scope. That means that you can refer to local variables inside an *Execute*. This bit of magic is exactly what we need in order to evaluate expressions stored in Strings. We only need to make sure we set up our *x*, *y*, *Θ* and *Δ* variables prior to using *Execute*.
 
-The fourth big problem we need to solve has to do with nonsensical users (a certain school of thought popular among programmers claims that *all* users should be assumed to be nonsensical). It is possible that the custom function is not valid Python syntax, in which case the *eval* statement will not be able to parse it. This could be because of incomplete brackets, or because of typos in functions or a million other problems. But even if the function is syntactically correct it might still crash because of incorrect mathematics.
+The fourth big problem we need to solve has to do with nonsensical users (a certain school of thought popular among programmers claims that all users should be assumed to be nonsensical). It is possible that the custom function is not valid VBScript syntax, in which case the Execute statement will not be able to parse it. This could be because of incomplete brackets, or because of typos in functions or a million other problems. But even if the function is syntactically correct it might still crash because of incorrect mathematics.
 
-For example, if you try to calculate the value of *Sqr(-4.0)*, the script crashes with the "Invalid procedure call or argument" error message. The same applies to *Log(-4.0)*. These functions crash because there exists no answer for the requested value. Other types of mathematical problems arise with large numbers. *Exp(1000)* for example results in an "Overflow" error because the result falls outside the double range. Another favorite is the "Division by zero" error. The following table lists the most common errors that occur in the Python engine:
+For example, if you try to calculate the value of *Sqr(-4.0)*, the script crashes with the "Invalid procedure call or argument" error message. The same applies to *Log(-4.0)*. These functions crash because there exists no answer for the requested value. Other types of mathematical problems arise with large numbers. *Exp(1000)* for example results in an "Overflow" error because the result falls outside the double range. Another favourite is the "Division by zero" error. The following table lists the most common errors that occur in the VBScript engine:
 
-<img src="{{ site.baseurl }}/images/primer-errorchart.svg">{: .img-center  width="100%"}
+<img src="{{ site.baseurl }}/images/primer-rhinoscript-errors.svg">{: .img-center  width="100%"}
 
-See [Python's list of Built-In Exceptions](http://docs.python.org/release/3.1.3/library/exceptions.html#bltin-exceptions) for the complete list and descriptions of each.
+As you can see there's quite a lot that can go wrong. We should be able to prevent this script from crashing, even though we do not control the entire process. We could of course try to make sure that the user input is valid and will not cause any computational problems, but it is much easier to just let the script fail and recover from a crash after it happened. We've used the error catching mechanism on page 40, but back then we were just lazy, now there is no other solution.
 
-As you can see there's quite a lot that can go wrong. We should be able to prevent this script from crashing, even though we do not control the entire process. We could of course try to make sure that the user input is valid and will not cause any computational problems, but it is much easier to just let the script fail and recover from a crash after it happened. We've used the error catching mechanism previously, but back then we were just lazy, now there is no other solution.
+As soon as we use the On Error Resume Next statement though, debugging becomes much harder because there are no more crashes. If the script fails to function in a manner expected, where do we start looking for the error? So it is always a good idea to write your scripts in such a way so as to make it easy to temporarily disable any error catching.
 
-The try/except statement can be used in Python as a great technique for error handling. First, the user implements a statement to "Try," if this works then the statement is executed and we are finished. Otherwise, if an exception occurs we go straight to the "except" portion. If the error matches the exception named, the portion of code within the "except" segment is executed and we continue on. If an error happens that does not match the named "exception" then an "unhandled exception" message is thrown. Note - a try statement may have many except clauses and any given except clause may have multiple exceptions it is testing for!
+Once the On Error Resume Next statement is executed by the script, the error data is wiped from the system (i.e. clean slate). Then, once an error occures that would otherwise have caused the script to crash, the error data will be filled out. We thus need to actively check whether or not an error has occured whenever something might have gone wrong. We can retieve the error data through the *Err* object, which is available at all times:
 
-```python
-def solveequation( function, x, y ):
-    d = 10
-    angledata = rs.Angle( (0,0,0), (x,y,0))
-    a = 0.0
-    if angledata: a = angledata[0] * math.pi/180
-    try:
-        z = eval(function)
-    except:
-        z = 0
-    return z
+```vb
+Function SolveEquation(ByVal strFunction, ByVal x, ByVal y)
+    Dim z
+    Dim D, A, AngleData
+    
+    D = Rhino.Hypot(x, y)
+    AngleData = Rhino.Angle(Array(0,0,0), Array(x,y,0))
+    If IsNull(AngleData) Then
+        A = 0.0
+    Else
+        A = Rhino.ToRadians(AngleData(0))
+    End If
+
+    On Error Resume Next
+    Execute("z = " & strFunction)
+
+    If err.Number = 0 Then
+        SolveEquation = z
+    Else
+        SolveEquation = 0.0
+    End If
+End Function
 ```
-The amount of stuff the above bit of magic does is really quite impressive. It converts the {x; y} coordinates into polar coordinates {A; D} (for Angle and Distance), makes sure the angle is an actual value, in case both {x} and {y} turn out to be zero. It solves the equation to find the z-coordinate, and sets {z} to zero in case a the equation was unsolvable. Now that all the hard work is done, all that is left is to write the over arching function that provides the interface for this script, which I don't think needs further explanation:
+The amount of stuff the above bit of magic does is really quite impressive. It converts the {x;vy} coordinates into polar coordinates {A; D} (for Angle and Distance), makes sure the angle is an actual value, in case both {x} and {y} turn out to be zero. It solves the equation to find the z-coordinate, and sets {z} to zero in case a the equation was unsolvable. Now that all the hard work is done, all that is left is to write the overarching function that provides the interface for this script, which I don't think needs further explanation:
 
-```python
-def meshfunction_xy():
-    zfunc, domain, resolution = loadfunctiondata()
-    zfunc = rs.StringBox( zfunc, "Specify a function f(x,y[,D,A])", "Mesh function")
-    if not zfunc: return
-
-    while True:
-        prompt = "Function domain x{domain[0],domain[1]} y{domain[2],domain[3]} @resolution"
-        result = rs.GetString(prompt, "Insert", ("xMin","xMax","yMin","yMax", "Resolution","Insert"))
-        if not result: return
-        result = result.upper()
-        if result=="XMIN":
-            f = rs.GetReal("X-Domain start", domain[0])
-            if f is not None: domain[0]=f
-        elif result=="XMAX":
-            f = rs.GetReal("X-Domain end", domain[1])
-            if f is not None: domain[1]=f
-        elif result=="YMIN":
-            f = rs.GetReal("Y-Domain start", domain[2])
-            if f is not None: domain[2]=f
-        elif result=="YMAX":
-            f = rs.GetReal("Y-Domain end", domain[3])
-            if f is not None: domain[3]=f
-        elif result=="RESOLUTION":
-            f = rs.GetInteger("Resolution of the graph", resolution)
-            if f is not None: resolution=f
-        elif result=="INSERT": break
-
-    verts = createmeshvertices(zfunc, domain, resolution)
-    faces = createmeshfaces(resolution)
-    rs.AddMesh(verts, faces)
-    SaveFunctionData(zfunc, domain, resolution)
+```vb
+Sub MeshFunction_XY()
+    Dim zFunc, fDomain(3), iResolution
+    Call LoadFunctionData(zFunc, fDomain, iResolution)
+    
+    zFunc = Rhino.StringBox("Specify a function f(x,y[,D,A])", zFunc, "Mesh function")
+    If IsNull(zFunc) Then Exit Sub
+    
+    Dim strPrompt, bResult   
+    Do
+        strPrompt = "Function domain   " & _
+                    "x{" & fDomain(0) & ", " & fDomain(1) & "}   " & _
+                    "y{" & fDomain(2) & ", " & fDomain(3) & "}   " & _
+                    "@ " & iResolution
+        
+        bResult = Rhino.GetString(strPrompt, "Insert", Split("xMin;xMax;yMin;yMax;Res;Insert", ";"))
+        If IsNull(bResult) Then Exit Sub
+        
+        Select Case UCase(bResult)
+            Case "XMIN"
+                bResult = Rhino.GetReal("X-Domain start", fDomain(0))
+                If Not IsNull(bResult) Then fDomain(0) = bResult
+            Case "XMAX"
+                bResult = Rhino.GetReal("X-Domain end", fDomain(1))
+                If Not IsNull(bResult) Then fDomain(1) = bResult
+            Case "YMIN"
+                bResult = Rhino.GetReal("Y-Domain start", fDomain(2))
+                If Not IsNull(bResult) Then fDomain(2) = bResult
+            Case "YMAX"
+                bResult = Rhino.GetReal("Y-Domain end", fDomain(3))
+                If Not IsNull(bResult) Then fDomain(3) = bResult
+            Case "RES"
+                bResult = Rhino.GetInteger("Resolution of the graph", iResolution)
+                If Not IsNull(bResult) Then iResolution = bResult
+            Case "INSERT"
+                Exit Do 
+        End Select
+    Loop
+    
+    Dim V : V = CreateMeshVertices(zFunc, fDomain, iResolution)
+    Dim F : F = CreateMeshFaces(iResolution)
+    
+    Call Rhino.AddMesh(V, F)
+    Call SaveFunctionData(zFunc, fDomain, iResolution)
+End Sub
 ```
 
-
-The default function Cos(Sqr(x^2 + y^2)) is already quite pretty, but here are some other functions to play with as well:
-
-
+The default function *Cos(Sqr(x^2 + y^2))* is already quite pretty, but here are some other functions to play with as well. Note that you can use all VBScript and RhinoScript functions and you don't even have to prepend Rhino. in front of the function call if you don't want to:
 
 <table width="100%">
 <tr>
@@ -2185,66 +2333,70 @@ The default function Cos(Sqr(x^2 + y^2)) is already quite pretty, but here are s
 </tr>
 <tr>
 <td>$$\cos\left(\sqrt{x^2 + y^2}\right)$$</td>
-<td>math.cos(math.sqrt(x*x + y*y))</td>
-<td><img src="{{ site.baseurl }}/images/primer-meshxy-b.svg" width="100%"></td>
+<td>Cos(Sqr(x^2 + y^2))</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-b.svg" width="80%"></td>
 </tr>
 <tr>
 <td>$$\sin(x) + \sin(y)$$</td>
-<td>math.sin(x) + math.sin(y)</td>
-<td><img src="{{ site.baseurl }}/images/primer-meshxy-a.svg" width="100%"></td>
+<td>Sin(x) + Sin(y)</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-a.svg" width="80%"></td>
 </tr>
 <tr>
 <td>$$\sin(D + A)$$</td>
-<td>math.sin(D+A)</td>
-<td><img src="{{ site.baseurl }}/images/primer-meshxy-l.svg" width="100%"></td>
+<td>Sin(D+A)</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-l.svg" width="80%"></td>
 </tr>
 <tr>
 <td>$$Atn\left(\sqrt{x^2 + y^2}\right)$$</td>
-<td>math.atan(x*x + y*y)<br>-or-<br>math.atan(D)</td>
-<td><img src="{{ site.baseurl }}/images/primer-meshxy-d.svg" width="100%"></td>
+<td>Atn(x^2 + y^2) <br>-or-<br>Atn(D)</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-d.svg" width="80%"></td>
 </tr>
 <tr>
 <td>$$\sqrt{|x|} + \sin(y)^{16}$$</td>
-<td>math.sqrt(math.fabs(x))+math.pow(math.sin(y),16)</td>
-<td><img src="{{ site.baseurl }}/images/primer-meshxy-e.svg" width="100%"></td>
+<td>Sqr(Abs(x))+Sin(y)^16</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-e.svg" width="80%"></td>
 </tr>
 <tr>
 <td>$$\sin\left(\sqrt{\min(x^2, y^2)}\right)$$</td>
-<td>math.sin(min(math.pow([x*x, y*y]),0.5))</td>
-<td><img src="{{ site.baseurl }}/images/primer-meshxy-f.svg" width="100%"></td>
+<td>Sin(Min(Array(x^2, y^2))^0.5)</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-f.svg" width="80%"></td>
 </tr>
 <tr>
 <td>$$\left[\sin(x) + \sin(y) + x + y\right]$$</td>
-<td>int(math.sin(x) + math.sin(y) + x + y)</td>
-<td><img src="{{ site.baseurl }}/images/primer-meshxy-g.svg" width="100%"></td>
+<td>CInt(Sin(x) + Sin(y) + x + y)</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-g.svg" width="80%"></td>
 </tr>
 <tr>
 <td>$$\log\left(\sin(x) + \sin(y) + 2.01\right)$$</td>
-<td>math.log(math.sin(x)+math.sin(y)+2.01)</td>
-<td><img src="{{ site.baseurl }}/images/primer-meshxy-h.svg" width="100%"></td>
+<td>Log(Sin(x) + Sin(y)+2.01)</td>
+<td><img src="{{ site.baseurl }}/images/primer-meshxy-h.svg" width="80%"></td>
 </tr>
 </table>
 {: .multiline-middle}
 
-### 8.8.2 Shape vs. Image
+### 7.8.2 Shape vs. Image
 
-The vertex and face lists of a mesh object define its form (geometry and topology) but meshes can also have local display attributes. Colors and Texture-coordinates are two of these that we can control via RhinoScriptSyntax.  The color list (usually referred to as 'False-Colors') is an optional mesh property which defines individual colors for every vertex in the mesh. The only Rhino commands that I know of that generate meshes with false-color data are the analysis commands *(_DraftAngleAnalysis, _ThicknessAnalysis, _CurvatureAnalysis and so on and so forth)* but unfortunately they do not allow you to export the analysis meshes. Before we do something useful with False-Color meshes, let's do something simple, like assigning random colours to a mesh object:
+The vertex and face arrays of a mesh object define its form (geometry and topology) but meshes can also have local display attributes. Colours and Texture-coordinates are two of these that we can control via RhinoScript.  The colour array (usually referred to as 'False-Colors') is an optional mesh property which defines individual colours for every vertex in the mesh. The only Rhino commands that I know of that generate meshes with false-color data are the analysis commands (*_DraftAngleAnalysis*, *_ThicknessAnalysis*, *_CurvatureAnalysis* and so on and so forth) but unfortunately they do not allow you to export the analysis meshes. Before we do something useful with False-Color meshes, let's do something simple, like assigning random colours to a mesh object:
 
 <img src="{{ site.baseurl }}/images/primer-meshfalsecolours.svg">{: .img-center  width="80%"}
 
 ```python
-def randommeshcolors():
-    mesh_id = rs.GetObject("Mesh to randomize", 32, True, True)
-    if not mesh_id: return
+Sub RandomMeshColours()
+    Dim idMesh : idMesh = Rhino.GetObject("Mesh to randomize", 32, True, True)
+    If IsNull(idMesh) Then Exit Sub
 
-    verts = rs.MeshVertices(mesh_id)
-    faces = rs.MeshFaceVertices(mesh_id)
-    colors = []
-    for vert in verts:
-        rgb = random()*255, random()*255, random()*255
-        colors.append(rgb)
-    rs.AddMesh(verts, faces, vertex_colors=colors)
-    rs.DeleteObject(mesh_id)
+    Dim V : V = Rhino.MeshVertices(idMesh)
+    Dim F : F = Rhino.MeshFaceVertices(idMesh)
+    Dim C() : ReDim C(UBound(V))
+
+    Dim i
+    For i = 0 To UBound(V)
+        C(i) = RGB(Rnd*255, Rnd*255, Rnd*255)
+    Next
+
+    Call Rhino.AddMesh(V, F, , , C)
+    Call Rhino.DeleteObject(idMesh)
+End Sub
 ```
 {: .line-numbers}
 
@@ -2254,8 +2406,8 @@ def randommeshcolors():
 <th>Description</th>
 </tr>
 <tr>
-<td>7...11</td>
-<td>The False-Color array is optional, but there are rules to using it. If we decide to specify a False-Color array, we have to make sure that it has the exact same number of elements as the vertex array. After all, every vertex needs its own colour. We must also make sure that every element in the False-Color array represents a valid colour. Colours in Rhino are defined as integers which store the red, green and blue channels. The channels are defined as numbers in the range {0; 255}, and they are mashed together into a bigger number where each channel is assigned its own niche. The advantage of this is that all colours are just numbers instead of more complex data-types, but the downside is that these numbers are usually meaningless for mere mortals:<br><br>
+<td>7</td>
+<td>The False-Color array is optional, but there are rules to using it. If we decide to specify a False-Color array, we have to make sure that it has the exact same number of elements as the vertex array, after all, every vertex needs its own colour. We must also make sure that every element in the False-Color array represents a valid colour. Colours in VBScript are defined as integers which store the red, green and blue channels. The channels are defined as numbers in the range {0; 255}, and they are mashed together into a bigger number where each channel is assigned its own niche. The advantage of this is that all colours are just numbers instead of more complex data-types, but the downside is that these numbers are usually meaningless for mere mortals:<br><br>
 
 
 <img src="{{ site.baseurl }}/images/primer-colortable.svg" width="60%" float="right"><br>
@@ -2267,7 +2419,7 @@ def randommeshcolors():
 </table>
 {: .multiline}
 
-Random colors may be pretty, but they are not useful. All the Rhino analysis commands evaluate a certain geometrical local property (curvature, verticality, intersection distance, etc), but none of them take surroundings into account. Let's assume we need a tool that checks a mesh and a (poly)surface for proximity. There is nothing in Rhino that can do that out of the box. So this is actually going to be a useful script, plus we'll make sure that the script is completely modular so we can easily adjust it to analyze other properties.
+Random colours may be pretty, but they are not useful. All the Rhino analysis commands evaluate a certain geometrical local property (curvature, verticality, intersection distance, etc), but none of them take surroundings into account. Let's assume we need a tool that checks a mesh and a (poly)surface for proximity. There is nothing in Rhino that can do that out of the box. So this is actually going to be a useful script, plus we'll make sure that the script is completely modular so we can easily adjust it to analyze other properties.
 
 We'll need a function who's purpose it is to generate an array of numbers (one for each vertex in a mesh) that define some kind of property. These numbers are then in turn translated into a gradient (red for the lowest number, white for the highest number in the set) and applied as the False-Color data to a new mesh object. In our case the property is the distance from a certain vertex to the point on a (poly)surface which is closest to that vertex:
 
@@ -2285,15 +2437,28 @@ As you can see pretty much all the variation is within the {0.0; 10.0} range, wi
 
 There is just one snag, the logarithm function returns negative numbers for input between zero and one. In fact, the logarithm of zero is minus-infinity, which plays havoc with all mathematics down the road since infinity is way beyond the range of numbers we can represent using doubles. And since the smallest possible distance between two points in space is zero, we cannot just apply a logarithm and expect our script to work. The solution is a simple one, add 1.0 to all distance values prior to calculating the logarithm, and all our results are nice, positive numbers.
 
-```python
-def VertexValueArray(points, id):
-    return [DistanceTo(point, id) for point in points]
+```vb
+Function VertexValueArray(ByVal pts, ByVal id)
+    Dim arrD() : ReDim arrD(UBound(pts))
+    Dim i
+        
+    For i = 0 To UBound(pts)
+        arrD(i) = DistanceTo(pts(i), id)
+    Next
 
-def DistanceTo(pt, id):
-    ptCP = rs.BrepClosestPoint(id,pt)
-    if ptCP:
-        d = rs.Distance(pt, ptCP[0])
-        return math.log10(d+1)
+    VertexDistanceArray = arrD
+End Function
+
+Function DistanceTo(ByVal pt, ByVal id)
+    DistanceTo = Null
+    Dim ptCP : ptCP = Rhino.BrepClosestPoint(id, pt)
+    
+    If IsNull(ptCP) Then Exit Function
+    Dim D : D = Rhino.Distance(pt, ptCP(0))
+    D = Log(D + 1.0)
+    
+    DistanceTo = D
+End Function
 ```
 {: .line-numbers}
 
@@ -2303,13 +2468,14 @@ def DistanceTo(pt, id):
 <th>Description</th>
 </tr>
 <tr>
-<td>1...2</td>
-<td>The <i>VertexValueArray()</i> function is the one that creates a list of numbers for each vertex. We're giving it the mesh vertices (an array of 3D points) and the object ID of the (poly)surface for the proximity analysis. This function doesn't do much, it simply iterates through the list of points using the <i>DistanceTo()</i> function, and returns a list of the results.
+<td>1...8</td>
+<td>The <i>VertexValueArray()</i> function is the one that creates a list of numbers for each vertex. We're giving it the mesh vertices (an array of 3D points) and the object ID of the (poly)surface for the proximity analysis. This function doesn't do much, it simply instantiates a new array and then fills it up using the 
+<i>DistanceTo()</i> function.
 </td>
 </tr>
 <tr>
 <td>4...8</td>
-<td><i>DistanceTo()</i> calculates the distance from pt to the projection of pt onto id. Where pt is a single 3D coordinate and id if the identifier of a (poly)surface object. It also performs the logarithmic conversion, so the return value is not the actual distance.
+<td><i>DistanceTo()</i> calculates the distance from <i>pt</i> to the projection of <i>pt</i> onto id. Where pt is a single 3D coordinate and id if the identifier of a (poly)surface object. It also perform the logarithmic conversion, so the return value is not the actual distance. 
 </td>
 </tr>
 </table>
@@ -2317,34 +2483,34 @@ def DistanceTo(pt, id):
 
 And the master Sub containing all the front end and color magic:
 
-```python
-import rhinoscriptsyntax as rs
-import sys
-import math
+```vb
+Sub ProximityAnalysis()
+    Dim idMesh, idBRep
 
-def ProximityAnalysis():
-    mesh_id = rs.GetObject("Mesh for proximity analysis", 32, True, True)
-    if not mesh_id: return
+    idMesh = Rhino.GetObject("Target mesh for proximity analysis", 32, True, True)
+    If IsNull(idMesh) Then Exit Sub
 
-    brep_id = rs.GetObject("Surface for proximity test", 8+16, False, True)
-    if not brep_id: return
+    idBRep = Rhino.GetObject("(Poly)surface for proximity analysis", 8+16, False, True)
+    If IsNull(idBRep) Then Exit Sub
 
-    vertices = rs.MeshVertices(mesh_id)
-    faces = rs.MeshFaceVertices(mesh_id)
-    listD = VertexValueArray(vertices, brep_id)
+    Dim arrV, arrF, arrD
+    arrV = Rhino.MeshVertices(idMesh)
+    arrF = Rhino.MeshFaceVertices(idMesh) 
+    arrD = VertexValueArray(arrV, idBRep)
 
-    minD = sys.float_info.min
-    maxD = sys.float_info.max
-    for ct in range(len(listD)):
-        if minD>listD[ct]: minD = listD[ct]
-        if maxD<listD[ct]: maxD = listD[ct]
+    Dim minD : minD = Rhino.Min(arrD)
+    Dim maxD : maxD = Rhino.Max(arrD)
+    Dim proxFactor, i
+    Dim arrC() : ReDim arrC(UBound(arrV))
 
-    colors = []
-    for i in range(len(vertices)):
-        proxFactor = (listD[i]-minD)/(maxD-minD)
-        colors.append((255, 255*proxFactor, 255*proxFactor))
-    rs.AddMesh(vertices, faces, vertex_colors=colors)
-    rs.DeleteObject(mesh_id)
+    For i = 0 To UBound(arrV)
+        proxFactor = (arrD(i) - minD) / (maxD - minD)
+        arrC(i) = RGB(255, 255 * proxFactor, 255 * proxFactor)
+    Next
+
+    Call Rhino.AddMesh(arrV, arrF, ,, arrC)
+    Call Rhino.DeleteObject(idMesh)
+End Sub
 ```
 {: .line-numbers}
 
@@ -2354,35 +2520,31 @@ def ProximityAnalysis():
 <th>Description</th>
 </tr>
 <tr>
-<td>1...3</td>
-<td>There are a couple of import statements that may look unfamiliar here. In some scripts, the use of outside resources can come in handy. Importing the System namespace allows us to use objects from the .Net framework, such as the maximum and minimum values of all floating point variables.
+<td>15...16</td>
+<td>Find the lowest and highest values in the arrD array.
 </td>
 </tr>
 <tr>
-<td>16...20</td>
-<td>Since there is not a function in the math namespace, .net, or the rhinoscriptsyntax methods to get the max and min values of an array of numbers, we will have to write some code to get the maximum and minimum values of <i>listD</i>. The .Net framework is a wonderful place, and for the first time, IronPython allows its use in scripts within Rhinoceros. We call the System namespace, and get the max and min values of all double-precision numbers, as a starting point. We then iterate through the items in <i>listD</i>, comparing each value to the current value of <i>maxD</i> and <i>minD</i>, replacing them if we happen to find a more suitable member of the list for either. Once we have iterated through the entire list, we are certain we have the max and min values.
+<td>18</td>
+<td>Create the False-Color array.
 </td>
 </tr>
 <tr>
-<td>22</td>
-<td>Create the False-Color array..</td>
-</tr>
-<tr>
-<td>24</td>
+<td>21</td>
 <td>Calculate the position on the {Red~White} gradient for the current value.</td>
 </tr>
 <tr>
-<td>25</td>
-<td>Cook up a colour based on the <i>proxFactor</i>.</td>
+<td>22</td>
+<td>Cook up a colour based on the proxFactor.</td>
 </tr>
 </table>
 {: .multiline}
 
-## 8.9 Surfaces
+## 7.9 Surfaces
 
 At this point you should have a fair idea about the strengths and flexibility of mesh based surfaces. It is no surprise that many industries have made meshes their primary means of surfacing. However, meshes also have their disadvantages and this is where other surfacing paradigms come into play.
 
-In fact, meshes (like nurbs) are a fairly recent discovery whose rise to power depended heavily on demand from the computer industry. Mathematicians have been dealing with different kinds of surface definitions for centuries and they have come up with a lot of them; surfaces defined by explicit functions, surfaces defined by implicit equations, minimal area surfaces, surfaces of revolutions, fractal surfaces and many more. Most of these types are far too abstract for your every-day modeling job, which is why most CAD packages do not implement them.
+In fact, meshes (like nurbs) are a fairly recent discovery whose rise to power depended heavily on demand from the computer industry. Mathematicians have been dealing with different kinds of surface definitions for centuries and they have come up with a lot of them; surfaces defined by explicit functions, surfaces defined by implicit equations, minimal area surfaces, surfaces of revolutions, fractal surfaces and many more. Most of these types are far too abstract for your every-day modeling job, which is why most CAD packages do not implement them. 
 
 <figure>
     <img src="{{ site.baseurl }}/images/primer-schwarz-d-surface.jpg" width="60%" float="right">
@@ -2393,64 +2555,75 @@ Apart from a few primitive surface types such as spheres, cones, planes and cyli
 
 <img src="{{ site.baseurl }}/images/primer-primitives.svg">{: .img-center  width="100%"}
 
-### 8.9.1 NURBS Surfaces
+### 7.9.1 NURBS Surfaces
 
 ![{{ site.baseurl }}/images/primer-normals.svg]({{ site.baseurl }}/images/primer-normals.svg){: .float-img-right width="325"}
 
-Nurbs surfaces are very similar to Nurbs curves. The same algorithms are used to calculate shape, normals, tangents, curvatures and other properties, but there are some distinct differences. For example, curves have tangent vectors and normal planes, whereas surfaces have normal vectors and tangent planes. This means that curves lack orientation while surfaces lack direction. This is of course true for all curve and surface types and it is something you'll have to learn to live with. Often when writing code that involves curves or surfaces you'll have to make assumptions about direction and orientation and these assumptions will sometimes be wrong.
+Nurbs surfaces are very similar to Nurbs curves. The same algorithms are used to calculate shape, normals, tangents, curvatures and other properties, but there are some distinct differences. For example, curves have tangent vectors and normal planes, whereas surfaces have normal vectors and tangent planes. This means that curves lack orientation while surfaces lack direction. This is of course true for all curve and surface types and it is something you'll have to learn to live with. Often when writing code that involves curves or surfaces you'll have to make assumptions about direction and orientation and these assumptions will sometimes be wrong. 
 
-In the case of NURBS surfaces there are in fact two directions implied by the geometry, because NURBS surfaces are rectangular grids of {u} and {v} curves. And even though these directions are often arbitrary, we end up using them anyway because they make life so much easier for us.
+In the case of NURBS surfaces there are in fact two directions implied by the geometry, because NURBS surfaces are rectangular grids of {u} and {v} curves. And even though these directions are often arbitrary, we end up using them anyway because they make life so much easier for us.	
 
-But lets start with something simple which doesn't actually involve NURBS surface mathematics on our end. The problem we're about to be confronted with is called Surface Fitting and the solution is called Error Diffusion. You have almost certainly come across this term in the past, but probably not in the context of surface geometry. Typically the words "error diffusion" are only used in close proximity to the words "color", "pixel" and "dither", but the wide application in image processing doesn't limit error diffusion algorithms to the 2D realm.
+But lets start with something simple which doesn't actually involve NURBS surface mathematics on our end. Luckily this something simple has a really difficult sounding name so you won't have to feel bad about yourself when people find out what it is you've been up to in your spare time. The problem we're about to be confronted with is called *Surface Fitting* and the solution is called *Error Diffusion*. You have almost certainly come across this term in the past, but probably not in the context of surface geometry. Typically the words "error diffusion" are only used in close proximity to the words "color", "pixel" and "dither", but the wide application in image processing doesn't limit error diffusion algorithms to the 2D realm.
 
 The problem we're facing is a mismatch between a given surface and a number of points that are supposed to be on it. We're going to have to change the surface so that the distance between it and the points is minimized. Since we should be able to supply a large amount of points (and since the number of surface control-points is limited and fixed) we'll have to figure out a way of deforming the surface in a non-linear fashion (i.e. translations and rotations alone will not get us there). Take a look at the images below which are a schematic representation of the problem:
 
 <img src="{{ site.baseurl }}/images/primer-pointonplane.svg">{: .img-center  width="100%"}
 
-For purposes of clarity I have unfolded a very twisted nurbs patch so that it is reduced to a rectangular grid of control-points. The diagram you're looking at is drawn in {uvw} space rather than world {xyz} space. The actual surface might be contorted in any number of ways, but we're only interested in the simplified {uvw} space.
+For purposes of clarity I have unfolded a very twisted nurbs patch so that it is reduced to a rectangular grid of control-points. Actually, I'm making this up as I go along, I haven't really unfolded anything but I need you to realize that the diagram you're looking at is drawn in {uvw} space rather than world {xyz} space. The actual surface might be contorted in any number of ways, but we're only interested in the simplified {uvw} space. 
 
-The surface has to pass through point {S}, but currently the two entities are not intersecting. The projection of {S} onto the surface {S'} is a certain distance away from {S} and this distance is the error we're going to diffuse. As you can see, {S'} is closer to some control points than others. Especially {F} and {G} are close, but
-{B; C; J; K} can also be considered adjacent control points. Rather than picking a fixed number of nearby control points and moving those in order to reduce the distance between {S} and {S'}, we're going to move all the points, but not in equal amounts. The images on the right show the amount of motion we assign to each control point based on its distance to {S'}.
+The surface has to pass through point {S}, but currently the two entities are not intersecting. The projection of {S} onto the surface {S'} is a certain distance away from {S} and this distance is the error we're going to diffuse. As you can see, {S'} is closer to some control points than others. Especially {F} and {G} are close, but {B; C; J; K} can also be considered adjacent control points. Rather than picking a fixed number of nearby control points and moving those in order to reduce the distance between {S} and {S'}, we're going to move all the points, but not in equal amounts. The images on the right show the amount of motion we assign to each control point based on its distance to {S'}.
+
 You may have noticed a problem with the algorithm description so far. If a nurbs surface is flat, the control-points lie on the surface itself, but when the surface starts to buckle and bend, the control points have a tendency to move away from the surface. This means that the distance between the control points {uvw} coordinate and {S'} is less meaningful. So instead of control points, we'll be using Greville points. Both nurbs curves and nurbs surfaces have a set of Greville points (or "edit points" as they are known in Rhino), but only curves expose this in the Rhino interface. As scripters we also get access to surface Greville points, which is useful because there is a 1:1 mapping between control and Greville points and the latter are guaranteed to lie on the surface. Greville points can therefore be expressed in {uv} coordinates only, which means we can also evaluate surface properties (such as tangency, normals and curvature) at these exact locations.
 
 The only thing left undecided at this point is the equation we're going to use to determine the amount of motion we're going to assign to a certain control point based on its distance from {S'}. It seems obvious that all the control points that are "close" should be affected much more than those which are farther away. The minimum distance between two points in space is zero (negative distance only makes sense in certain contexts, which we'll get to shortly) and the maximum distance is infinity. This means we need a graph that goes from zero to infinity on the x-axis and which yields a lower value for {y} for every higher value of {x}. If the graph ever goes below zero it means we're deforming the surface with a negative error. This is not a bad thing per se, but let's keep it simple for the time being.
 
-Our choices are already pretty limited by these constraints, but there are still some worthy contestants. If this were a primer about mathematics I'd probably have gone for a Gaussian distribution, but instead we'll use an extremely simple equation known as a hyperbola. If we define the diffusion factor of a Greville point as the inverse of its distance to {S'}, we get this hyperbolic function:
+Our choices are already pretty limited by these contraints, but there are still some worthy contestants. If this were a primer about mathematics I'd probably have gone for a gaussian distribution, but instead we'll use an extremely simple equation known as a hyperbola. If we define the diffusion factor of a Greville point as the inverse of its distance to {S'}, we get this hyperbolic function:
 
 $$f(y)=\frac{1}{x}$$
 
 <img src="{{ site.baseurl }}/images/primer-distanceweightfactor.svg">{: .img-center  width="80%"}
 
-As you can see, the domain of the graph goes from zero to infinity, and for every higher value of {x} we get a lower value of {y}, without {y} ever becoming zero. There's just one problem, a problem which only manifests itself in programming. For very small values of {x}, when the Greville point is very close to {S'}, the resulting {y} is very big indeed. When this distance becomes zero the weight factor becomes infinite, but we'll never get even this far. Even though the processor in your computer is in theory capable of representing numbers as large as
-1.8 × 10308 (which isn't anywhere near infinity by any stretch of the imagination), when you start doing calculations with numbers approaching the extremes chances are you are going to cross over into binary no man's land and crash your pc. And that's not even to mention the deplorable mathematical accuracy at these levels of scale. Clearly, you might want to steer clear of very big and very small numbers altogether.
+As you can see, the domain of the graph goes from zero to infinity, and for every higher value of {x} we get a lower value of {y}, without {y} ever becoming zero. There's just one problem, a problem which only manifests itself in programming. For very small values of {x}, when the Greville point is very close to {S'}, the resulting {y} is very big indeed. When this distance becomes zero the weight factor becomes infinite, but we'll never get even this far. Even though the processor in your computer is in theory capable of representing numbers as large as  1.8 × 10308 (which isn't anywhere near infinity by any stretch of the imagination), when you start doing calculations with numbers approaching the extremes chances are you are going to cross over into binary no man's land and crash your pc. And that's not even to mention the deplorable mathematical accuracy at these levels of scale. Clearly, I'd be giving you good advice if I told you to steer clear of very big and very small numbers altogether.
 
 It's an easy fix in our case, we can simply limit the {x} value to the domain {+0.01; +∞}, meaning that {y} can never get bigger than 100. We could make this threshold much, much smaller without running into problems. Even if we limit {x} to a billionth of a unit (0.00000001) we're still comfortably in the clear.
 
 ![{{ site.baseurl }}/images/primer-surface-uvw-to-xyz.svg]({{ site.baseurl }}/images/primer-surface-uvw-to-xyz.svg){: .float-img-right width="325"}
 
-The first thing we need to do is write a function that takes a surface and a point in {xyz} coordinates and translates it into {uvw} coordinates. We can use the <i>rs.SurfaceClosestPoint()</i> method to get the {u} and {v} components, but the {w} is going to take some thinking.
+I think that's about enough psychobabble for one chapter introduction, high time for some coding. The first thing we need to do is write a function that takes a surface and a point in {xyz} coordinates and translates it into {uvw} coordinates. We can use the *Rhino.SurfaceClosestPoint()* method to get the {u} and {v} components, but the {w} is going to take some thinking.
 
-First of all, a surface is a 2D entity meaning it has no thickness and thus no "real" {z} or {w} component. But a surface does have normal vectors that point away from it and which can be used to emulate a "depth" dimension. In the adjacent illustration you can see a point in {uvw} coordinates, where the value of {w} is simply the distance between the point and the start of the line. It is in this respect that negative distance has meaning, because negative distance denotes a {w} coordinate on the other side of the surface.
+First of all, a surface is a 2D entity meaning it has no thickness and thus no "real" {z} or {w} component. But a surface does have normal vectors that point away from it and which can be used to emulate a "depth" dimension. In the adjacent illustration you can see a point in {uvw} coordinates, where the value of {w} is simply the distance between the point and the start of the line. It is in this respect that negative distance has meaning, because negative distance denotes a {w} coordinate on the other side of the surface.	
 
-Although this is a useful way of describing coordinates in surface space, you should at all times remember that the {u} and {v} components are expressed in surface parameter space while the {w} component is expressed in world units. We are using mixed coordinate systems which means that we cannot blindly use distances or angles between these points because those properties are meaningless now.
+Although this is a useful way of describing coordinates in surface space, you should at all times remember that the {u} and {v} components of such a coordinate are expressed in surface parameter space while the {w} component is expressed in world units. We are using mixed coordinate systems which means that we cannot blindly use distances or angles between these points because those properties are meaningless now.
 
-In order to find the coordinates in surface {S} space of a point {P}, we need to find the projection {P'} of {P} onto {S}. Then we need to find the distance between {P} and {P'} so we know the magnitude of the {w} component and then we need to figure out on which side of the surface {P} is in order to figure out the sign of {w} (positive or negative). Since our script will be capable of fitting a surface to multiple points, we might as well make our function list-capable:
+In order to find the coordinates in surface {S} space of a point {P}, we need to find the projection {P'} of {P} onto {S}. Then we need to find the distance between {P} and {P'} so we know the magnitude of the {w} component and then we need to figure out on which side of the surface {P} is in order to figure out the sign of {w} (positive or negative). Since our script will be capable of fitting a surface to multiple points, we might as well make our function array-capable:
 
-```python
-def ConvertToUVW(idSrf, pXYZ):
-    pUVW = []
-    for point in pXYZ:
-        u, v = rs.SurfaceClosestPoint(idSrf, point)
-        surface_xyz = rs.EvaluateSurface(idSrf, u, v)
-        surface_normal = rs.SurfaceNormal(idSrf, (u,v))
+```vb
+Function ConvertToUVW(ByVal idSrf, ByRef pXYZ())
+  Dim pUVW() : ReDim pUVW(UBound(pXYZ))
 
-        dirPos = rs.PointAdd(surface_xyz, surface_normal)
-        dirNeg = rs.PointSubtract(surface_xyz, surface_normal)
-        dist = rs.Distance(surface_xyz, point)
+  Dim Suv, Sxyz, Snormal
+  Dim Sdist, dirPos, dirNeg
+  Dim i
 
-        if (rs.Distance(point, dirPos) > rs.Distance(point, dirNeg)): dist *= -1
-        pUVW.append((u, v, dist)) 	
-    return pUVW
+  For i = 0 To UBound(pXYZ)
+    Suv = Rhino.SurfaceClosestPoint(idSrf, pXYZ(i))	
+    Sxyz = Rhino.EvaluateSurface(idSrf, Suv)
+    Snormal = Rhino.SurfaceNormal(idSrf, Suv)
+
+    dirPos = Rhino.PointAdd(Sxyz, Snormal)
+    dirNeg = Rhino.PointSubtract(Sxyz, Snormal)
+
+    Sdist = Rhino.Distance(Sxyz, pXYZ(i))
+
+    If (Rhino.Distance(pXYZ(i), dirPos) > Rhino.Distance(pXYZ(i), dirNeg)) Then
+      Sdist = -Sdist
+    End If
+
+    pUVW(i) = Array(Suv(0), Suv(1), Sdist)
+  Next
+	
+  ConvertToUVW = pUVW
+End Function
 ```
 {: .line-numbers}
 
@@ -2461,20 +2634,20 @@ def ConvertToUVW(idSrf, pXYZ):
 </tr>
 <tr>
 <td>1</td>
-<td><i>pXYZ()</i> is an array of points expressed in world coordinates.
+<td><i>pXYZ()</i> is an array of points expressed in world coordinates. It is passed <i>ByRef</i> to avoid copying.
 </td>
 </tr>
 <tr>
-<td>4...6</td>
-<td>Find the {uv} coordinate of {P'}, the {xyz} coordinates of {P'} and the surface normal vector at {P'}.
+<td>9...11</td>
+<td>Find the {uv} coordinate of {P'}, the {xyz} coordinates of {P'} and the surface normal vector at {P'}
 </td>
 </tr>
 <tr>
-<td>8...10</td>
+<td>13...14</td>
 <td>Add and subtract the normal to the {xyz} coordinates of {P'} to get two points on either side of {P'}.</td>
 </tr>
 <tr>
-<td>12...13</td>
+<td>18...20</td>
 <td>If {P} is closer to the dirNeg point, we know that {P} is on the "downside" of the surface and we need to make {w} negative.</td>
 </tr>
 </table>
@@ -2482,34 +2655,43 @@ def ConvertToUVW(idSrf, pXYZ):
 
 We need some other utility functions as well (it will become clear how they fit into the grand scheme of things later) so let's get it over with quickly:
 
-```python
-def GrevilleNormals(idSrf):
-  uvGreville = rs.SurfaceEditPoints(idSrf, True, True)
-  srfNormals = [rs.SurfaceNormal(idSrf, grev) for grev in uvGreville]
+```vb
+Function GrevilleNormals(ByVal idSrf)
+  Dim uvGreville   : uvGreville = Rhino.SurfaceEditPoints(idSrf, True, True)
+  Dim srfNormals() : ReDim srfNormals(UBound(uvGreville))
 
-  return srfNormals
-```
-This function takes a surface and returns a list of normal vectors for every Greville point. There's nothing special going on here, you should be able to read this function without even consulting help files at this stage. The same goes for the next function, which takes a list of vectors and a list of numbers and divides each vector with the matching number. This function assumes that *Vectors* and *Factors* are lists of equal size.
+  Dim i
+  For i = 0 To UBound(uvGreville)	
+    srfNormals(i) = Rhino.SurfaceNormal(idSrf, uvGreville(i))
+  Next
 
-```python
-def DivideVectorList(Vectors, Factors):
-    for i in range(0,len(Vectors)):
-        Vectors[i] = rs.VectorDivide(Vectors[i], Factors[i])
-        return Vectors
+  GrevilleNormals = srfNormals
+End Function
 ```
 
-Our eventual algorithm will keep track of both motion vectors and weight factors for each control point on the surface (for reasons I haven't explained yet), and we need to instantiate these lists with default values. Even though that is pretty simple stuff, I decided to move the code into a separate procedure anyway in order to keep all the individual procedures small. The return value for this function are two lists: Forces and Factors.
+This function takes a surface and returns an array of normal vectors for every Greville point. There's nothing special going on here, you should be able to read this function without even consulting help files at this stage. The same goes for the next function, which takes an array of vector and an array of numbers and divides each vector with the matching number. This function assumes that *Vectors* and *Factors* are arrays of equal size.
 
-```python
-def InstantiateForceLists(Bound):
-    Forces = []
-    Factors = []
+```vb
+Sub DivideVectorArray(ByRef Vectors, ByRef Factors)
+  Dim i
+  For i = 0 To UBound(Vectors)
+    Vectors(i) = Rhino.VectorDivide(Vectors(i), Factors(i))
+  Next
+End Sub
+```
+The next subroutine isn't so straightforward, mostly because we are now using the ByRef keyword to accomplish something different. Our eventual algorithm will keep track of both motion vectors and weight factors for each control point on the surface (for reasons I haven't explained yet), and we need to instantiate these arrays with default values. Even though that is pretty simple stuff, I decided to move the code into a separate procedure anyway in order to keep all the individual procedures small. The problem is that we need to instantiate 2 arrays with default values and a function can only return a single blob of data. Instead of making 2 functions (one for each array), I made a single subroutine which does not return a value, but which takes to *ByRef* arguments instead. *ByRef* means this procedure gets to poke the variables in some other procedure directly. So instead of assigning the return value of a function to a variable, we now give a pre-existing variable to a function and allow it to change it. This way, we can mess around with as many variables as we like.
 
-    for i in range(Bound):
-        Forces.append((0,0,0))
-        Factors.append(0)
+```vb
+Sub InstantiateForceLists(ByRef Forces(), ByRef Factors(), ByVal Bound)
+  ReDim Forces(Bound)
+  ReDim Factors(Bound)
+  Dim i
 
-    return Forces, Factors
+  For i = 0 To Bound
+    Forces(i) = Array(0,0,0)
+    Factors(i) = 0.0
+  Next
+End Sub
 ```
 {: .line-numbers}
 
@@ -2519,18 +2701,18 @@ def InstantiateForceLists(Bound):
 <th>Description</th>
 </tr>
 <tr>
+<td>1</td>
+<td><i>Forces</i> and <i>Factors</i> are <i>ByRef</i> arguments and they have also been declared as arrays. Bound is just a single integer indicating the size of both arrays. We are not interested in changing the value of <i>Bound</i> which is why it is passed <i>ByVal</i>.
+</td>
+</tr>
+<tr>
 <td>2...3</td>
-<td>Create lists to hold both <i>Forces</i> and <i>Factors</i>.
+<td>Resize both referenced arrays. At this point, both arrays will have the proper length but they are both filled with *Empty* values.
 </td>
 </tr>
 <tr>
-<td>5...7</td>
-<td>Iterate through both lists and assign default values (a zero-length vector in the case of <i>Forces</i> and zero in the case of <i>Factors</i>)
-</td>
-</tr>
-<tr>
-<td>9</td>
-<td>Note that we are returning two separate items. The assignment in the line calling this function will contain both of these. Ways of handling this assignment will be handled later in the text.</td>
+<td>6...9</td>
+<td>Iterate through both arrays and assign default values (a zero-length vector in the case of <i>Forces</i> and zero in the case of <i>Factors</i>)</td>
 </tr>
 </table>
 {: .multiline}
@@ -2541,53 +2723,65 @@ If we were to truly move each control point based directly on the inverse of its
 
 <img src="{{ site.baseurl }}/images/primer-hyperbolas.svg">{: .img-center  width="100%"}
 
-On the left you see the four individual hyperbolas (one for each of the sample points) and on the right you see the result of a fitting operation which uses the hyperbola values directly to control control-point motion. Actually, the hyperbolas aren't drawn to scale, in reality they are much *(much)* thinner, but drawing them to scale would make them almost invisible since they would closely hug the horizontal and vertical lines.
+On the left you see the four individual hyperbolas (one for each of the sample points) and on the right you see the result of a fitting operation which uses the hyperbola values directly to control control-point motion. Actually, the hyperbolas aren't drawn to scale, in reality they are much (much) thinner, but drawing them to scale would make them almost invisible since they would closely hug the horizontal and vertical lines. 
 
-We see that the control points that are close to the projections of {A; B; C; D} on {Base} will be moved a great deal (such as {S}), whereas points in between (such as {T}) will hardly be moved at all. Sometimes this is useful behaviour, especially if we assume our original surface is already very close to the sample points. If this is not the case (like in the diagram above) then we end up with a flat surface with some very sharp tentacles poking out.
+We see that the control points that are close to the projections of {A; B; C; D} on {Base} will be moved a great deal (such as {S}), whereas points in between (such as {T}) will hardly be moved at all. Sometimes this is useful behaviour, especially if we assume our original surface is already very close to the sample points. If this is not the case (like in the diagram above) then we end up with a flat surface with some very sharp tentacles poking out. 
 
-Lets assume our input surface is not already 'almost' good. This means that our algorithm cannot depend on the initial shape of the surface which in turn means that moving control points small amounts is not an option. We need to move all control points as far as necessary. This sounds very difficult, but the mathematical trick is a simple one. I won't provide you with a proof of why it works, but what we need to do is divide the length of the motion vector by the value of the sum of all the hyperbolas.
+Lets assume our input surface is not already 'almost' good. This means that our algorithm cannot depend on the initial shape of the surface which in turn means that moving control points small amounts is not an option. We need to move all control points as far as necessary. This sounds very difficult, but the mathematical trick is a simple one. I won't provide you with a proof of why it works, but what we need to do is divide the length of the motion vector by the value of the sum of all the hyperbolas. 
 
-Have a close look at control points {S} and {T} in the illustration above. {S} has a very high diffusion factor (lots of yellow above it) whereas {T} has a low diffusion factor (thin slivers of all colors on both sides). But if we want to move both {S} and {T} substantial amounts, we need to somehow boost the length of the motion vector for {T}. If you divide the motion vector by the value of the added hyperbolas, you sort of 'unitize' all the motion vectors, resulting in the following section:
+Have a close look at control points {S} and {T} in the illustration above. {S} has a very high diffusion factor (lots of yellow above it) whereas {T} has a low diffusion factor (thin slivers of all colours on both sides). But if we want to move both {S} and {T} substantial amounts, we need to somehow boost the length of the motion vector for {T}. If you divide the motion vector by the value of the summated hyperbolas, you sort of 'unitize' all the motion vectors, resulting in the following section:
 
 <img src="{{ site.baseurl }}/images/primer-multisamplefitter-algorithm2.svg">{: .img-center  width="60%"}
 
 which is a much smoother fit. The sag between {B} and {C} is not due to the shape of the original surface, but because between {B} and {C}, the other samples start to gain more relative influence and dragging the surface down towards them. Let's have a look at the code:
 
-```python
-def FitSurface(idSrf, Samples, dTranslation, dProximity):
-    P = rs.SurfacePoints(idSrf)
-    G = rs.SurfaceEditPoints(idSrf, True, True)
-    N = GrevilleNormals(idSrf)
-    S = ConvertToUVW(idSrf, Samples)
-    [Forces, Factors] = InstantiateForceLists(len(P))
+```vb
+Function FitSurface(ByVal idSrf, ByRef Samples(), ByRef dTranslation, ByRef dProximity)
+  Dim P : P = Rhino.SurfacePoints(idSrf) 
+  Dim G : G = Rhino.SurfaceEditPoints(idSrf, True, True)
+  Dim N : N = GrevilleNormals(idSrf)
+  Dim S : S = ConvertToUVW(idSrf, Samples)
 
-    dProximity = 0.0
-    dTranslation = 0.0
+  Dim Forces(), Factors()
+  Call InstantiateForceLists(Forces, Factors, UBound(P))
 
-    for i in range(len(S)):
-        dProximity = dProximity + abs(S[i][2])
-        for j in range(len(P)):
-            LocalDist = math.pow((S[i][0] - G[j][0]),2) +  math.pow((S[i][1] - G[j][1]),2)
-            if (LocalDist < 0.01): LocalDist = 0.01
-            LocalFactor = 1 / LocalDist
-            LocalForce = rs.VectorScale(N[j], LocalFactor * S[i][2])
-            Forces[j] = rs.VectorAdd(Forces[j], LocalForce)
-            Factors[j] = Factors[j] + LocalFactor
-    Forces = DivideVectorList(Forces, Factors)
+  Dim i, j
+  Dim LocalDist, LocalFactor, LocalForce
 
-    for i in range(len(P)):
-        P[i] = rs.PointAdd(P[i], Forces[i])
-        dTranslation = dTranslation + rs.VectorLength(Forces[i])
+  dProximity = 0.0
+  dTranslation = 0.0
 
-    srf_N = rs.SurfacePointCount(idSrf)
-    srf_K = rs.SurfaceKnots(idSrf)
-    srf_W = rs.SurfaceWeights(idSrf)
-    srf_D = []
-    srf_D.append(rs.SurfaceDegree(idSrf, 0))
-    srf_D.append(rs.SurfaceDegree(idSrf, 1))
+  For i = 0 To UBound(S)
+    dProximity = dProximity + Abs(S(i)(2))
 
-    FS = rs.AddNurbsSurface(srf_N, P, srf_K[0], srf_K[1], srf_D, srf_W)
-    return (FS, Samples, dTranslation, dProximity)
+    For j = 0 To UBound(P)
+      LocalDist = (S(i)(0) - G(j)(0))^2 + (S(i)(1) - G(j)(1))^2
+      If (LocalDist < 0.01) Then LocalDist = 0.01
+      LocalFactor = 1 / LocalDist
+		
+      LocalForce = Rhino.VectorScale(N(j), LocalFactor * S(i)(2))
+
+      Forces(j) = Rhino.VectorAdd(Forces(j), LocalForce)
+      Factors(j) = Factors(j) + LocalFactor
+    Next
+  Next
+	
+  Call DivideVectorArray(Forces, Factors)
+	
+  For i = 0 To UBound(P)
+    P(i) = Rhino.PointAdd(P(i), Forces(i))
+    dTranslation = dTranslation + Rhino.VectorLength(Forces(i))
+  Next
+	
+  Dim srf_N : srf_N = Rhino.SurfacePointCount(idSrf)
+  Dim srf_K : srf_K = Rhino.SurfaceKnots(idSrf)
+  Dim srf_W : srf_W = Rhino.SurfaceWeights(idSrf)
+  Dim srf_D(1)
+  srf_D(0) = Rhino.SurfaceDegree(idSrf, 0)
+  srf_D(1) = Rhino.SurfaceDegree(idSrf, 1)
+	
+  FitSurface = Rhino.AddNurbsSurface(srf_N, P, srf_K(0), srf_K(1), srf_D, srf_W)
+End Function
 ```
 {: .line-numbers}
 
@@ -2598,83 +2792,87 @@ def FitSurface(idSrf, Samples, dTranslation, dProximity):
 </tr>
 <tr>
 <td>1</td>
-<td>This is another example of a function which returns more than one value. When this function completes, <i>dTranslation</i> will contain a number that represents the total motion of all control points and <i>dProximity</i> will contain the total error (the sum of all distances between the surface and the samples). Since it is unlikely our algorithm will generate a perfect fit right away, we somehow need to keep track of how effective a certain iteration is. If it turns out that the function only moved the control points a tiny bit, we can abort in the knowledge we have achieved a high level of accuracy.
+<td>This is another example of a function which returns more than one value. This function properly returns the identifier of the surface it creates, but the last two arguments <i>dTranslation</i> and <i>dProximity</i> are <i>ByRef</i> and will be changed. When this function completes, <i>dTranslation</i> will contain a number that represents the total motion of all control points and <i>dProximity</i> will contain the total error (the sum of all distances between the surface and the samples). Since it is unlikely our algorithm will generate a perfect fit right away, we somehow need to keep track of how effective a certain iteration is. If it turns out that the function only moved the control points a tiny bit, we can abort in the knowledge we have achieved a high level of accuracy.
 </td>
 </tr>
 <tr>
-<td>2...57</td>
-<td><i>P, G, N</i> and <i>S</i> are lists that contain the surface control points (in {xyz} space), Greville points (in {uv} space), normal vectors at every greville point and all the sample coordinates (in {uvw} space). The names chosen can be difficult to remember, but they are short.
+<td>2...5</td>
+<td><i>P, G, N</i> and <i>S</i> are arrays that contain the surface control points (in {xyz} space), Greville points (in {uv} space), normal vectors at every greville point and all the sample coordinates (in {uvw} space). You have every right to be outraged by the names of the variables I've chosen, they're ludicrous. But they're short.
 </td>
 </tr>
 <tr>
-<td>6</td>
+<td>8</td>
 <td>The function we're calling here has been dealt with on page 104.</td>
 </tr>
 <tr>
-<td>11</td>
+<td>16</td>
 <td>First, we iterate over all Sample points.</td>
 </tr><tr>
-<td>13</td>
+<td>19</td>
 <td>Then, we iterate over all Control points.</td>
 </tr><tr>
-<td>14</td>
+<td>20</td>
 <td><i>LocalDist</i> is the distance in {uv} space between the projection of the current sample point and the current Greville point.</td>
 </tr><tr>
-<td>15</td>
+<td>21</td>
 <td>This is where we limit the distance to some non-zero value in order to prevent extremely small numbers from entering the algorithmic meat-grinder.</td>
 </tr><tr>
-<td>16</td>
+<td>22</td>
 <td>Run the <i>LocalDist</i> through the hyperbola equation in order to get the diffusion factor for the current Control point and the current sample point.</td>
 </tr><tr>
-<td>17</td>
+<td>24</td>
 <td><i>LocalForce</i> is a vector which temporarily caches the motion caused by the current Sample point. This vector points in the same direction as the normal, but the magnitude (length) of the vector is the size of the error times the diffusion factor we've calculated on line 22.</td>
 </tr>
 <tr>
-<td>18</td>
+<td>26</td>
 <td>Every Control point is affected by all Sample points, meaning that every Control point is tugged in a number of different directions. We need to combine all these forces so we end up with a final, resulting force. Because we're only interested in the final vector, we can simply add the vectors together as we calculate them.</td>
 </tr>
 <tr>
-<td>19</td>
+<td>27</td>
 <td>We also need to keep a record of all the Diffusion factors along with all vectors, so we can divide them later and unitize the motion (as discussed on page 105).</td>
 </tr>
 <tr>
-<td>20</td>
+<td>31</td>
 <td>Divide all vectors with all factors (function explained on page 104)</td>
 </tr>
 <tr>
-<td>22...24</td>
+<td>33...36</td>
 <td>Apply the motion we've calculated to the {xyz} coordinates of the surface control points.</td>
 </tr>
 <tr>
-<td>26...33</td>
+<td>38...45</td>
 <td>Instead of changing the existing surface, we're going to add a brand new one. In order to do this, we need to collect all the NURBS data of the original such as knot vectors, degrees, weights and so on and so forth.</td>
 </tr>
 </table>
 {: .multiline}
 
-The procedure on the previous page has no interface code, thus it is not a top-level procedure. We need something that asks the user for a surface, some points and then runs the FitSurface() function a number of times until the fitting is good enough:
+The procedure on the previous page has no interface code, thus it is not a top-level procedure. We need something that asks the user for a surface, some points and then runs the *FitSurface()* function a number of times until the fitting is good enough:
 
-```python
-def DistributedSurfaceFitter():
-    idSrf = rs.GetObject("Surface to fit", 8, True, True)
-    if idSrf is None: return
+```vb
+Sub DistributedSurfaceFitter()
+  Dim idSrf : idSrf = Rhino.GetObject("Surface to fit", 8, True, True)
+  If IsNull(idSrf) Then Exit Sub
 
-    pts = rs.GetPointCoordinates("Points to fit to", False)
-    if pts is None: return
+  Dim pts : pts = Rhino.GetPointCoordinates("Points to fit to", False)
+  If IsNull(pts) Then Exit Sub
 
-    dTrans = 0
-    dProx = 0
+  Dim N, nSrf
+  Dim dProx, dTrans
 
-    for N in range(1, 1000):
-        rs.EnableRedraw(False)
-        nSrf, pts, dTrans, dProx = FitSurface(idSrf, pts, dTrans, dProx)
-        rs.DeleteObject(idSrf)
-        rs.EnableRedraw(True)
-        rs.Prompt("Translation =" + str(round(dTrans, 2)) + "Deviation =" + str(round(dProx, 2)))
-        if dTrans < 0.1 or dProx < 0.01: break
-        idSrf = nSrf
+  For N = 1 To 1000
+    Call Rhino.EnableRedraw(False)
+    nSrf = FitSurface(idSrf, pts, dTrans, dProx)
+    Call Rhino.DeleteObject(idSrf)
+    Call Rhino.EnableRedraw(True)
 
-    print("Final deviation = " + str(round(dProx, 4)))
+    Call Rhino.Prompt("Translation = " & Round(dTrans, 2) & "  Deviation = " & Round(dProx, 2))
+
+    If (dTrans < 0.1) Or (dProx < 0.01) Then Exit For
+    idSrf = nSrf
+Next
+
+Call Rhino.Print("Final deviation = " & Round(dProx, 4))
+End Sub
 ```
 {: .line-numbers}
 
@@ -2685,7 +2883,7 @@ def DistributedSurfaceFitter():
 </tr>
 <tr>
 <td>11</td>
-<td>Rather than using an infinite loop (<i>while</i>) we limit the total amount of fitting iterations to one thousand. That should be more than enough, and if we still haven't found a good solution by then it is unlikely we ever will. The variable N is known as a "chicken int" in coding slang. "Int" is short for "Integer" and "chicken" is because you're scared the loop might go on forever.
+<td>Rather than using an infinite loop (<i>Do…Loop</i>) we limit the total amount of fitting iterations to one thousand. That should be more than enough, and if we still haven't found a good solution by then it is unlikely we ever will. The variable <i>N</i> is known as a "chicken int" in coding slang. "Int" is short for "Integer" and "chicken" is because you're scared the loop might go on forever.
 </td>
 </tr>
 <tr>
@@ -2694,40 +2892,31 @@ def DistributedSurfaceFitter():
 </td>
 </tr>
 <tr>
-<td>16</td>
+<td>17</td>
 <td>Inform the user about the efficiency of the current iteration</td>
 </tr>
 <tr>
-<td>17</td>
+<td>19</td>
 <td>If the total translation is negligible, we might as well abort since nothing we can do will make it any better. If the total error is minimal, we have a good fit and we should abort.</td>
 </tr>
 </table>
 {: .multiline}
 
-
-The diagrams and graphs I've used so far to illustrate the workings of this algorithm are all two-dimensional and display only simplified cases. The images on this page show the progression of a single solution in 3D space. I've started with a planar, rectangular nurbs patch of 30 × 30 control points and 36 points both below and above the initial surface. I allowed the algorithm to continue refining until the total deviation was less than 0.01 units.
-
-<img src="{{ site.baseurl }}/images/primer-iterations.svg">{: .img-center  width="100%"}
-
-### 8.9.2 Surface Curvature
+### 7.9.2 Surface Curvature
 
 ![{{ site.baseurl }}/images/primer-curvecurvaturelogic2.svg]({{ site.baseurl }}/images/primer-curvecurvaturelogic2.svg){: .float-img-right width="325"}
 
+Curve curvature is easy to grasp intuitively. You simply fit a circle to a short piece of curve as best you can (this is called an "osculating circle") and the radius and center of this circle tell you all you need to know about the local curvature. We've dealt with this already on page 84.
 
-Curve curvature is easy to grasp intuitively. You simply fit a circle to a short piece of curve as best you can (this is called an osculating circle) and the radius and center of this circle tell you all you need to know about the local curvature. We've dealt with this already before.
+Points {A; B; C; D; E} have a certain curvature associated with them. The radius of the respective circles is a measure for the curvature (in fact, the curvature is the inverse of the radius), and the direction of the vectors is an indication of the curve plane. If we were to scale the curve to 50% of its original size the curvature circles also become half as big, effectively doubling the curvature values. Point {C} is special in that it has zero-curvature (i.e. the radius of the osculating circle is infinite). Points where the curvature value changes from negative to positive are known as inflection points. If we have multiple inflection points next to each other, we are dealing with a linear segment in the curve.
 
-Points {A; B; C; D; E} have a certain curvature associated with them. The radius of the respective circles is a measure for the curvature (in fact, the curvature is the inverse of the radius), and the direction of the vectors is an indication of the curve plane.
+Surface curvature is not so straightforward, for one, there are multiple definitions of curvature in the case of surfaces and volumes and it depends on our particular script which one suits us best.
 
-
-If we were to scale the curve to 50% of its original size the curvature circles also become half as big, effectively doubling the curvature values. Point {C} is special in that it has zero-curvature (i.e. the radius of the osculating circle is infinite). Points where the curvature value changes from negative to positive are known as inflection points. If we have multiple inflection points adjacent to each other, we are dealing with a linear segment in the curve.
-
-Surface curvature is not so straightforward. For one, there are multiple definitions of curvature in the case of surfaces and volumes which one suits us best depends on our particular algorithm. Curvature is quite an important concept in many manufacturing and design projects, which is why I'll deal with it in some depth. I won't be dealing with any script code until the next section, so if you are already familiar with curvature theory feel free to skip ahead to page 111.
-
-The most obvious way of evaluating surface curvature would be to slice it with a straight section through the point {P} we are interested in and then simply revert to curve curvature algorithms. But, as mentioned before, surfaces lack direction and it is thus not at all clear at which angle we should dissect the surface (we could use {u} and {v} directions, but those will not necessarily give you meaningful answers). Still, this approach is useful every now and again and it goes under the name of normal curvature. As you can see in the illustration below, there are an infinite number of sections through point {P} and thus an infinite number of answers to the question "what is the normal curvature at {P}?"
+The most obvious way of evaluating surface curvature would be to slice it with a straight section through the point {P} we are interested in and then simply revert to curve curvature algorithms. But, as mentioned before, surfaces lack direction and it is thus not at all clear at which angle we should dissect the surface (we could use {u} and {v} directions, but those will not necessarily give you meaningful answers). Still, this approach is useful every now and again and it goes under the name of "normal curvature". As you can see in the illustration below, there are an infinite number of sections through point {P} and thus an infinite number of answers to the question "what is the normal curvature at {P}?"
 
 <img src="{{ site.baseurl }}/images/primer-curvatures.svg">{: .img-center  width="100%"}
 
-However, under typical circumstances there is only one answer to the question: "what is the highest normal curvature at {P}?". When you look at the complete set of all possible normal curvatures, you'll find that the surface is mostly flat in one direction and mostly bent in another. These two directions are therefore special and they constitute the principal curvatures of a surface. The two principal curvature directions are always perpendicular to each other and thus they are completely independent of {u} and {v} directions ({u} and {v} are not necessarily perpendicular).
+When you look at the complete set of all possible normal curvatures, you'll find that the surface is most flat in one direction and most bend in another. These two directions are therefore special and they constitute the "principal curvatures" of a surface. The two principal curvature directions are always perpendicular to each other and thus they are completely independent of {u} and {v} directions ({u} and {v} are not necessarily perpendicular).
 
 Actually, things are more complicated since there might be multiple directions which yield lowest or highest normal curvature so there's a bit of additional magic required to get a result at all in some cases. Spheres for example have the same curvature in all directions so we cannot define principal curvature directions at all.
 
@@ -2735,9 +2924,9 @@ This is not the end of the story. Starting with the set of all normal curvatures
 
 <img src="{{ site.baseurl }}/images/primer-surfacek-tensor-field.svg">{: .img-center  width="80%"}
 
-The illustration on the left shows the directions of the maximum principal curvatures. As you can see there are threshold lines on the surface at which the principal direction suddenly makes 90º turns. The overall picture is chaotic and overly complex. We can use a standard tensor-smoothing algorithm to average each direction with its neighbours, resulting in the image on the right, which provides us with an already much more useful distribution (e.g. for texturing or patterning purposes), but now the vectors have lost their meaning. This is why the principal curvature directions are not a very useful surface property in every day life.
+The illustration on the left shows the directions of the maximum principal curvatures. As you can see there are threshold lines on the surface at which the principal direction suddenly makes 90º turns. The overall picture is chaotic and overly complex. We can use a standard tensor-smoothing algorithm to average each direction with its neighbours, resulting in the image on the right, which provides us with an already much more useful distribution (e.g. for patterning purposes), but now the vectors have lost their meaning. This is why the principal curvature directions are not a very useful surface property in every day life.
 
-Instead of dealing with the directions, the other aforementioned surface curvature definitions deal only with the scalar values of the curvature; the osculating circle radius. The most famous among surface curvature definitions are the Gaussian and Mean curvatures. Both of these are available in the _CurvatureAnalysis command and through RhinoScriptSyntax.
+Instead of dealing with the directions, the other aforementioned surface curvature definitions deal only with the scalar values of the curvature; the osculating circle radius. The most famous among surface curvature definitions are the Gaussian and Mean curvatures. Both of these are available in the *_CurvatureAnalysis* command and RhinoScript.
 
 The great German mathematician Carl Friedrich Gauss figured out that by multiplying the principal curvature radii you get another, for some purposes much more useful indicator of curvature:
 
@@ -2755,7 +2944,7 @@ $$K_{Mean}=\frac{K_{min} + K_{max}}{2}$$
 
 As you know, summation behaves very different from multiplication, and Mean curvature can be used to analyze different properties of a surface because it has different special cases. If the minimum and maximum principal curvatures are equal in amplitude but have opposing signs, the average of both is zero. A surface with zero Mean curvature is not merely anticlastic, it is a very special surface known as a *minimal* or *zero-energy* surface. It is the natural shape of a soap film with equal atmospheric pressure on both sides. These surfaces are extremely important in the field of tensile architecture since they spread stress equally across the surface resulting in structurally strong geometry.
 
-### 8.9.3 Vector and Tensor spaces
+### 7.9.3 Vector and Tensor spaces
 
 On the previous page I mentioned the words "tensor", "smoothing" and "algorithm" in one breath. Even though you most likely know the latter two, the combination probably makes little sense. Tensor smoothing is a useful tool to have in your repertoire so I'll deal with this specific case in detail. Just remember that most of the script which is to follow is generic and can be easily adjusted for different classes of tensors. But first some background information...
 
@@ -2764,7 +2953,6 @@ Imagine a surface with no singularities and no stacked control points, such as a
 When we say "vector", we usually mean little arrows; a list of numbers that indicate a direction and a magnitude in some sort of spatial context. When things get more complicated, we start using "tensor" instead. Tensor is a more general term which has fewer connotations and is thus preferred in many scientific texts.
 
 ![{{ site.baseurl }}/images/primer-tensorspace2.svg]({{ site.baseurl }}/images/primer-tensorspace2.svg){: .float-img-right width="375"}
-
 
 For example, the surface of your body is a two-dimensional tensor space (embedded in four dimensional space-time) which has many properties that vary smoothly from place to place; hairiness, pigmentation, wetness, sensitivity, freckliness and smelliness to name just a few. If we measure all of these properties in a number of places, we can make educated guesses about all the other spots on your body using interpolation and extrapolation algorithms. We could even make a graphical representation of such a tensor space by using some arbitrary set of symbols.
 
@@ -2778,7 +2966,7 @@ In this particular case we end up with a two-dimensional tensor space, where the
 
 <img src="{{ site.baseurl }}/images/primer-tensormatrixes.svg">{: .img-center  width="75%"}
 
-Since we're sampling the surface at regular parameter intervals in {u} and {v} directions, we end up with a matrix of tensors (a table of rows and columns). We can represent this easily with a two-dimensional list. We'll need two of these in our script since we need to store two separate data-entities; vectors and planes.
+Since we're sampling the surface at regular parameter intervals in {u} and {v} directions, we end up with a matrix of tensors (a table of rows and columns). We can represent this easily with a two-dimensional array. We'll need two of these in our script since we need to store two separate data-entities; vectors and planes.
 
 <img src="{{ site.baseurl }}/images/primer-smoothing.svg">{: .img-center  width="100%"}
 
@@ -2786,27 +2974,30 @@ This progression of smoothing iterations clearly demonstrates the usefulness of 
 
 I'm not going to spell the entire script out here, I'll only highlight the key functions. You can find the complete script (including comments) in the Script folder.
 
-```python
-def SurfaceTensorField(Nu, Nv):
-    idSrf = rs.GetSurfaceObject()[0]
-    uDomain = rs.SurfaceDomain(idSrf, 0)
-    vDomain = rs.SurfaceDomain(idSrf, 1)
-
-    T = []
-    K = []
-    for i in range(Nu):
-        T.append([])
-        K.append([])
-        u = uDomain[0] + (i/Nu)*(uDomain[1] - uDomain[0])
-        for j in  range(Nv):
-            v = vDomain[0] + (j/Nv)*(vDomain[1] - vDomain[0])
-            T[i].append(rs.SurfaceFrame(idSrf,(u,v)))
-            localCurvature = rs.SurfaceCurvature(idSrf,(u,v))
-            if localCurvature is None:
-                K[i].append(T[i][j][1])
-            else:
-                K[i].append(rs.SurfaceCurvature(idSrf,(u,v))[3])
-    return SmoothTensorField(T,K)
+```vb
+Sub SurfaceTensorField(ByVal idSrf, ByVal Nu, ByVal Nv, ByRef T, ByRef K)
+  Dim uDomain : uDomain = Rhino.SurfaceDomain(idSrf, 0)
+  Dim vDomain : vDomain = Rhino.SurfaceDomain(idSrf, 1)
+  ReDim T(Nu, Nv)
+  ReDim K(Nu, Nv)
+  Dim localCurvature
+  
+  Dim i, j, u, v
+  For i = 0 To Nu
+    u = uDomain(0) + (i/Nu)*(uDomain(1) - uDomain(0))
+    
+    For j = 0 To Nv
+      v = vDomain(0) + (j/Nv)*(vDomain(1) - vDomain(0))
+      T(i,j) = Rhino.SurfaceFrame(idSrf, Array(u,v))
+      localCurvature = Rhino.SurfaceCurvature(idSrf, Array(u,v))
+      If (IsNull(localCurvature)) Then
+        K(i,j) = T(i,j)(1)
+      Else
+        K(i,j) = Rhino.SurfaceCurvature(idSrf, Array(u,v))(3)
+      End If
+    Next
+  Next
+End Sub
 ```
 {: .line-numbers}
 
@@ -2817,62 +3008,71 @@ def SurfaceTensorField(Nu, Nv):
 </tr>
 <tr>
 <td>1</td>
-<td>This procedure has to create all the lists that define our tensor class. In this case one list with vectors and a list with planes.
+<td>This procedure has to create all the arrays that define our tensor class. In this case one array with vectors and an array with planes. Since we cannot return more than one value from a function, we need to use <i>ByRef</i> arguments again.
 </td>
 </tr>
 <tr>
-<td>9...10</td>
-<td>At the beginning of each iteration down the range <i>N<sub>u</sub></i>, we nest a new list in both T and K, which will hold all values of iterations of the range <i>N<sub>v</sub></i>.
+<td>5...6</td>
+<td>Since we know exactly how many tensors we need to make, we can resize the arrays directly. There's no need for a <i>ReDim</i> statement inside the loop.
 </td>
 </tr>
 <tr>
 <td>11</td>
-<td>This looks imposing, but it is a very standard piece of logic. The problem here is a common one: how to remap a number from one scale to another. We know how many samples the user wants (some whole number) and we know the limits of the surface domain (two doubles of some arbitrary value). We need to figure out which parameter on the surface domain matches with the Nth sample number. Observe the diagram below for a schematic representation of the problem:
+<td>This looks imposing, but it is a very standard piece of logic. The problem here is a common one: how to remap a number from one scale to another. We know how many samples the user wants (some whole number) and we know the limits of the surface domain (two doubles of some arbitrary value). We need to figure out which parameter on the surface domain matches with the Nth sample number. Observe the diagram below for a schematic representation of the problem
 <br>
 <img src="{{ site.baseurl }}/images/primer-remapnumberscales.svg" width="80%" float="right">
 <br>
 Our sample count (the topmost bar) goes from {A} to {B}, and the surface domain includes all values between {C} and {D}. We need to figure out how to map numbers in the range {A~B} to the range {C~D}. In our case we need a linear mapping function meaning that the value halfway between {A} and {B} gets remapped to another value halfway between {C} and {D}.
 <br><br>
-Line 11 (and line 13) contain an implementation of such a mapping algorithm. I'm not going to spell out exactly how it works, if you want to fully understand this script you'll have to look into that by yourself.
+Line 11 (and line 14) contain an implementation of such a mapping algorithm. I'm not going to spell out exactly how it works, if you want to fully understand this script you'll have to look into that by yourself.
 </td>
 </tr>
 <tr>
-<td>14</td>
+<td>16</td>
 <td>Retrieve the surface Frame at {u,v}. This is part of our Tensor class.</td>
 </tr>
 <tr>
-<td>15</td>
+<td>17</td>
 <td>Retrieve all surface curvature information at {u,v}. This includes principal, mean and Gaussian curvature values and vectors.</td>
 </tr><tr>
-<td>17</td>
+<td>20</td>
 <td>In case the surface has no curvature at {u,v}, use the x-axis vector of the Frame instead.</td>
 </tr><tr>
-<td>19</td>
-<td>If the surface has a valid curvature at {u,v}, we can use the principal curvature direction which is stored in the 4th element of the curvature data array.</td>
+<td>22</td>
+<td>If the surface has a valid curvature at {u,v}, we can use the principal curvature direction which is stored in the 4th element of the curvature data array</td>
 </tr></table>
 {: .multiline}
 
-This function takes two lists and it modifies the originals. The return value (the two lists) is merely cosmetic. This function is a typical box-blur algorithm. It averages the values in every tensor with all neighboring tensors using a 3×3 blur matrix.
+This function takes two *ByRef* arrays (both arrays together are a complete description of our Tensor class) and it modifies the originals. The return value (a boolean indicating success or failure) is merely cosmetic. This function is a typical box-blur algorithm. It averages the values in every tensor with all neighbouring tensors using a 3×3 blur matrix. 
 
-```python
-def SmoothTensorField(T, K):
-    SmoothTensorField = False
-    Ub1 = len(T[1])
-    Ub2 = len(T[2])
-    for i in range(Ub1):
-        for j in range(Ub2):
-            k_tot = (0,0,0)
-            for x in range(i-1,i+1):
-                xm = (x+Ub1) % Ub1
-                for y in range(j-1, j+1):
-                    ym = (y+Ub2) % Ub2
-                    k_tot = rs.VectorAdd(k_tot, K[xm][ym])
-            k_dir = rs.PlaneClosestPoint(T[i][j], rs.VectorAdd(T[i][j][0], k_tot))
-            k_tot = rs.VectorSubtract(k_dir, T[i][j][0])
-            k_tot = rs.VectorUnitize(k_tot)
-            K[i].append(k_tot)
-            rs.AddLine(T[i][j][0],T[i][j][0]+K[i][j])
-    return T, K
+```vb
+Function SmoothTensorField(ByRef T, ByRef K)
+  SmoothTensorField = False
+  Dim K_copy : K_copy = K
+  
+  Dim Ub1 : Ub1 = UBound(T, 1)
+  Dim Ub2 : Ub2 = UBound(T, 2)
+  Dim i, j, x, y, xm, ym
+  Dim k_dir, k_tot  For i = 0 To Ub1
+  For j = 0 To Ub2
+    k_tot = Array(0,0,0)
+    For x = i-1 To i+1
+        xm = (x+Ub1) Mod Ub1
+        
+        For y = j-1 To j+1
+          ym = (y+Ub2) Mod Ub2
+          k_tot = Rhino.VectorAdd(k_tot, K_copy(xm,ym))
+        Next
+      Next
+
+      k_dir = Rhino.PlaneClosestPoint(T(i,j), Rhino.VectorAdd(T(i,j)(0), k_tot))
+      k_tot = Rhino.VectorSubtract(k_dir, T(i,j)(0))
+      k_tot = Rhino.VectorUnitize(k_tot)
+      K(i,j) = k_tot
+    Next
+  Next  
+  SmoothTensorField = True
+End Functio
 ```
 {: .line-numbers}
 
@@ -2882,35 +3082,41 @@ def SmoothTensorField(T, K):
 <th>Description</th>
 </tr>
 <tr>
-<td>5...6</td>
-<td>Since our tensor-space is two-dimensional, we need 2 nested loops to iterate over the entire set.
+<td>3</td>
+<td>Since we'll be modifying the original, we need to make a copy first. We do this to prevent using already changed values in our averaging scheme. We're only changing the vectors in the K array, so we don't have to copy the planes in the T array as well.
 </td>
 </tr>
 <tr>
-<td>8...11</td>
+<td>10...11</td>
+<td>
+Since our tensor-space is two-dimensional, we need 2 nested loops to iterate over the entire set.
+</td>
+</tr>
+<tr>
+<td>14-18</td>
 <td>
 <table>
 <tr>
-<td>
+<td text-align="left">
 Now that we're dealing with each tensor individually (the first two loops) we need to deal with each tensors neighbours as well (the second set of nested loops). We can visualize the problem at hand with a simple table graph.
 <br><br>
 The green area is a corner of the entire two-dimensional tensor space, the dark green lines delineating each individual tensor. The dark grey square is the tensor we're currently working on. It is located at {u,v}. The eight white squares around it are the adjacent tensors which will be used to blur the tensor at {u,v}.
 <br><br>
 We need to make 2 more nested loops which iterate over the 9 coordinates in this 3×3 matrix. We also need to make sure that all these 9 coordinates are in fact on the 2D tensor space and not teetering over the edge. We can use the Mod operator to make sure a number is "remapped" to belong to a certain numeric domain.
 </td>
-<td width="40%"><img src="{{ site.baseurl }}/images/primer-boxblurmatrix3x3.svg" width="100%" height="300" float="right"></td>
+<td width="40%"> 
+<img src="{{ site.baseurl }}/images/primer-boxblurmatrix3x3.svg" width="100%" height="300" float="right"></td>
 </tr>
 </table>
 
 </td>
 </tr>
 <tr>
-<td>12</td>
-<td>Once we have the <i>mx</i> and <i>my</i> coordinates of the tensor, we can add it to the <i>k_tot</i> summation vector.
-</td>
+<td>19</td>
+<td>Once we have the <i>mx</i> and <i>my</i> coordinates of the tensor, we can add it to the <i>k_tot</i> summation vector.</td>
 </tr>
 <tr>
-<td>13...16</td>
+<td>23...26</td>
 <td>Make sure the vector is projected back onto the tangent plane and unitized.</td>
 </tr>
 </table>
@@ -2918,6 +3124,6 @@ We need to make 2 more nested loops which iterate over the 9 coordinates in this
 
 ---
 
-## Next Steps
+## Last Step
 
 Congratulations, you have made it through the Python 101 Primer.
