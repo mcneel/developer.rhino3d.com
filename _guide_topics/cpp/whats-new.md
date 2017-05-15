@@ -114,6 +114,10 @@ In Rhino 6, you will need to do the following:
 
         ON_UnitSystem units(ON::LengthUnitSystem::Millimeters);
 
+### ON_BOOL32 is obsolete
+
+```ON_BOOL32``` was a 32-bit Boolean ```typedef``` that no longer exists.  In general you should change occurrences of ```ON_BOOL32``` to ```bool```. However, in cases where you have used ```ON_BOOL32``` in place of ```int```, you must change ```ON_BOOL32``` to ```int```. Converting ```ON_BOOL32``` to ```bool``` will be common and is what you should try if you are unable to determine which type you should use..
+
 ### Deprecation
 
 Obsolete functions from Rhino 5 are marked as deprecated with a message to help accomplish the same goal through alternate functions in the Rhino 6 SDK. These deprecations will generate compiler warnings when plug-in code attempts to call these functions.
