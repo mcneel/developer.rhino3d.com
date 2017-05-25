@@ -27,9 +27,9 @@ In order to continue to move Rhino forward, breaking changes needed to be made t
 
 Although the breaking changes may seem numerous, most fall within the following categories.
 
-### Visual Studio 2015
+### Visual Studio 2017
 
-To write C++ plug-ins for Rhino 6, you will need [Visual Studio 2015]({{ site.baseurl }}/guides/cpp/installing-tools-windows).
+To write C++ plug-ins for Rhino 6, you will need [Visual Studio 2017]({{ site.baseurl }}/guides/cpp/installing-tools-windows).
 
 What’s really exciting is that the free Community edition of Visual Studio will work to build plug-ins for Rhino 6. Of course, you can also use either the Professional or Enterprise edition.
 
