@@ -50,12 +50,12 @@ Visual Studio for Mac (formerly Xamarin Studio, formerly MonoDevelop) is require
 1. Visual Studio for Mac uses an Installer app, which downloads and installs the components that you select.  Once you have downloaded the *VisualStudioInstaller.dmg*, double-click it to mount the disk image.  Double-click the big *Install Visual Studio.app* icon to launch the installer.
 1. You must accept the Visual Studio Software License Agreement.
 1. Visual Studio for Mac can install the following items:
-   - Visual Studio + Profiler
-   - Android + Xamarin.Forms[^1]
-   - iOS + Xamarin.Forms[^2]
-   - macOS - formerly Xamarin.Mac[^3]
-   - Workbooks and Inspector.
-...verify that *Visual Studio + Profiler* is checked and click *Continue*.
+   - Visual Studio + Profiler (required)
+   - Android + Xamarin.Forms[^1] (optional)
+   - iOS + Xamarin.Forms[^2] (optional)
+   - macOS - formerly Xamarin.Mac[^3] (optional)
+   - Workbooks and Inspector (optional)
+1. Verify that *Visual Studio + Profiler* is checked and click *Continue*.
 1. If you do not have Xcode installed, the installer may prompt you.  See [Install Xcode](#install-xcode) above.
 1. The installer downloads and installs: *Mono Framework* and *Visual Studio for Mac*
 1. When the installer is finished, click the *Launch Visual Studio* button.
