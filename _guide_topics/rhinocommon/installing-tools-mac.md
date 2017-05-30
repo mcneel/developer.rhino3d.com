@@ -20,14 +20,14 @@ By the end of this guide, you should have all the tools installed necessary for 
 
 This guide presumes you have an:
 
-- [Apple Mac](http://store.apple.com/) running [OS X Yosemite](https://www.apple.com/osx/) (10.10) or later.
+- [Apple Mac](http://store.apple.com/) running [macOS Sierra](https://www.apple.com/osx/) (10.12.5) or later.
 - [Rhino 5 for Mac](https://www.rhino3d.com/mac) (5.1) or later.
 
 ---
 
 ## Install Xcode
 
-[Xcode](https://developer.apple.com/xcode/) is Apple's development platform and IDE.  Though it is not *absolutely* required that you install Xcode in order to build, debug, and run C# plugins using RhinoCommon, it is *recommended* that you do.  In short: the Xamarin on macOS works best with Xcode installed.  
+[Xcode](https://developer.apple.com/xcode/) is Apple's development platform and IDE.  Though it is not *absolutely* required that you install Xcode in order to build, debug, and run C# plugins using RhinoCommon, it is *recommended* that you do.  In short: the Visual Studio for Mac works best with Xcode installed.  
 
 #### Step-by-Step
 
@@ -40,59 +40,59 @@ This guide presumes you have an:
 
 ---
 
-## Install Xamarin
+## Install Visual Studio for Mac
 
-Xamarin's platform is currently required to build RhinoCommon plugins on macOS.  The core components of the Xamarin platform that are required are the Mono Framework and Xamarin Studio.  Please check out the [What are Mono and Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what-are-mono-and-xamarin/) guide for more information.
+Visual Studio for Mac (formerly Xamarin Studio, formerly MonoDevelop) is required to build RhinoCommon plugins on macOS.  The core components of the Mono platform that are required are the Mono Framework and Visual Studio for Mac.  Please check out the [What are Mono and Xamarin?]({{ site.baseurl }}/guides/rhinocommon/what-are-mono-and-xamarin/) guide for more information.
 
 #### Step-by-Step
 
-1. *[Download the Xamarin Platform](http://xamarin.com/download)*.
-1. Xamarin uses an Installer app, which downloads and installs the components that you select.  Once you have downloaded the *XamarinInstaller.dmg*, double-click it to mount the disk image.  Double-click the big *Install Xamarin* icon to launch the installer.
-1. You must accept the Xamarin Software License Agreement to use the Xamarin platform.
-1. The *Xamarin Platform* is comprised of these pieces:
-   - Xamarin Studio
-   - Xamarin.Android[^1]
-   - Xamarin.iOS[^2]
-   - Xamarin.Mac[^3]
-...verify that *Xamarin.Mac* is checked and click *Continue*.
-1. If you do not have Xcode installed, Xamarin will prompt you.  See [Install Xcode](#install-xcode) above.
-1. Xamarin installs: *Mono Framework*, *Xamarin Studio*, & *Xamarin.Mac*.  Click *Continue*.
-1. Xamarin is will now download and install.  Depending on which products you selected in step 4 above, this can take a while.
-1. When the installer is finished, click the *Launch Xamarin Studio* button.
-1. *Xamarin Studio* - along with the Mono Framework and Xamarin.Mac - are now installed.
-1. Xamarin Studio is installed in your */Applications* folder. You will want to *drag its icon to your Dock* for future use or - if it's running - right/option-click the icon in the Dock and select *Keep in Dock*.
+1. *[Download Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)*.
+1. Visual Studio for Mac uses an Installer app, which downloads and installs the components that you select.  Once you have downloaded the *VisualStudioInstaller.dmg*, double-click it to mount the disk image.  Double-click the big *Install Visual Studio.app* icon to launch the installer.
+1. You must accept the Visual Studio Software License Agreement.
+1. Visual Studio for Mac can install the following items:
+   - Visual Studio + Profiler
+   - Android + Xamarin.Forms[^1]
+   - iOS + Xamarin.Forms[^2]
+   - macOS - formerly Xamarin.Mac[^3]
+   - Workbooks and Inspector.
+...verify that *Visual Studio + Profiler* is checked and click *Continue*.
+1. If you do not have Xcode installed, the installer may prompt you.  See [Install Xcode](#install-xcode) above.
+1. The installer downloads and installs: *Mono Framework* and *Visual Studio for Mac*
+1. When the installer is finished, click the *Launch Visual Studio* button.
+1. *Visual Studio* - along with the Mono Framework and Profiler are now installed.
+1. Visual Studio is installed in your */Applications* folder. You will want to *drag its icon to your Dock* for future use or - if it's running - right/option-click the icon in the Dock and select *Keep in Dock*.
 
 ---
 
 ## Install the Rhino Add-in
 
-The Rhino Xamarin Studio AddIn is required to debug your plugin code in an active session of Rhino for Mac.  Additionally, it contains project templates to get you started creating plugins quickly.
+The RhinoCommon AddIn/Extension is required to debug your plugin code in an active session of Rhino for Mac.  Additionally, it contains project templates to get you started creating plugins quickly.
 
 #### Step-by-Step
 
-1. Launch *Xamarin Studio*.
-1. Navigate to *Xamarin Studio* > *Add-ins...*...
+1. Launch *Visual Studio for Mac*.
+1. Navigate to *Visual Studio* > *Extensions...*...
 1. Navigate to the *Gallery* tab...
-![AddIn Manager]({{ site.baseurl }}/images/installing-tools-mac-01.png)
+![Extension Manager]({{ site.baseurl }}/images/installing-tools-mac-01.png)
 1. In the *Search* field, search for *rhino*.  This filters the gallery list below.
 1. Find *RhinoCommon Plugin Support* and select it.
 1. Click *Install*.  The plugin should install.
-1. *IMPORTANT*: You must *Quit* and *Restart* Xamarin Studio.
-1. Navigate to *Xamarin Studio* > *Add-ins..* > *Installed* tab.  Verify that *RhinoCommon Plugin Support* exists under the *Debugging* category.  If it's there, you have successfully installed the AddIn and you are *DONE*.
+1. *IMPORTANT*: You must *Quit* and *Restart* Visual Studio for Mac.
+1. Navigate to *Visual Studio* > *Extensions..* > *Installed* tab.  Verify that *RhinoCommon Plugin Support* exists under the *Debugging* category.  If it's there, you have successfully installed the AddIn and you are *DONE*.
 
-#### Add-in Not in the Gallery?
+#### Extension not in the Gallery?
 
-If, for some reason, the RhinoCommon Plugin Support add-in does not appear in the Xamarin Studio gallery, you can install the [Latest release from the RhinoCommonXamarinStudioAddin project on GitHub](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases)...
+If, for some reason, the RhinoCommon Plugin Support extension does not appear in the Visual Studio for Mac extension gallery, you can install the [Latest release from the RhinoCommonXamarinStudioAddin project on GitHub](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases)...
 
 1. Find the *Latest release* in the [list of releases](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases).
-1. Download the *.mpack* file in the list of Downloads on that release.  For example, at the time of this writing, the *Latest release* download is entitled *RhinoXamarinStudioAddIn_6.1.4.0.mpack*.
-1. Launch *Xamarin Studio* if it not already open.
-1. Navigate to *Xamarin Studio* > *Add-ins...*...
+1. Download the *.mpack* file in the list of Downloads on that release.  For example, at the time of this writing, the *Latest release* download is entitled *RhinoXamarinStudioAddIn_7.0.0.0.mpack*.
+1. Launch *Visual Studio for Mac* if it not already open.
+1. Navigate to *Visual Studio* > *Extensions...*...
 1. Click the *Install from file...* button in the lower left-hand corner.
 1. Navigate to the *.mpack* file you downloaded in step 2 above.
 1. Click *Install*.  The plugin should install.
-1. *IMPORTANT*: You must *Quit* and *Restart* Xamarin Studio.
-1. Navigate to *Xamarin Studio* > *Add-ins..* > *Installed* tab.  Verify that *RhinoCommon Plugin Support* exists under the *Debugging* category.  If it's there, you have successfully installed the AddIn and you are *DONE*.
+1. *IMPORTANT*: You must *Quit* and *Restart* Visual Studio for Mac.
+1. Navigate to *Extensions Studio* > *Add-ins..* > *Installed* tab.  Verify that *RhinoCommon Plugin Support* exists under the *Debugging* category.  If it's there, you have successfully installed the Extension and you are *DONE*.
 
 ---
 

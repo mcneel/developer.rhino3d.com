@@ -13,7 +13,7 @@ keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
 
- 
+
 ## Prerequisites
 
 This guide presumes you have all the necessary tools installed and have managed to debug a simple boilerplate component.  If you are not there yet, please read [Installing Tools (Windows)]({{ site.baseurl }}/guides/grasshopper/installing-tools-windows/) and [Your First Component (Windows)]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows)
@@ -22,7 +22,7 @@ This guide will skip over any complicated issues (such as mathematics, geometry 
 
 ## Kernel.GH_Component
 
-The Grasshopper component wizards (in both Visual Studio and Xamarin Studio) include an empty Grasshopper component template.  For the moment, let's ignore this and construct a simple component "from scratch."  This guide presumes that you already have a component library setup or are continuing from in the *HelloGrasshopper* solution from the [Your First Component (Windows)]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows) guide.
+The Grasshopper component wizards (in both Visual Studio for Windows and Visual Studio for Mac) include an empty Grasshopper component template.  For the moment, let's ignore this and construct a simple component "from scratch."  This guide presumes that you already have a component library setup or are continuing from in the *HelloGrasshopper* solution from the [Your First Component (Windows)]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows) guide.
 
 Add an empty class to your solution, call it *MyFirstComponent*.  At this point a new file should be created (*MyFirstComponent*).  At this point a new file should be created with (something close to) the following content:
 
@@ -160,7 +160,7 @@ End Class
 
 </div>
 
-Deriving (inheriting) from `GH_Component` requires you to implement a number of methods.  (Visual Studio can insert default implementations for all of these via the *Implement Abstract Class* menu option when right-clicking `GH_Component`.  In Xamarin Studio, you can right-click `GH_Component` and select *Refactoring* > *Implement abstract members*.)  At this point, you should have the following...
+Deriving (inheriting) from `GH_Component` requires you to implement a number of methods.  (Visual Studio can insert default implementations for all of these via the *Implement Abstract Class* menu option when right-clicking `GH_Component`.  In Visual Studio for Mac, you can right-click `GH_Component` and select *Refactoring* > *Implement abstract members*.)  At this point, you should have the following...
 
 <ul class="nav nav-pills">
   <li class="active"><a href="#cs4" data-toggle="pill">C#</a></li>
@@ -232,7 +232,7 @@ End Class
 
 ## The Component Constructor
 
-As we've seen in the previous section, Visual Studio (or Xamarin Studio) can populate the `MyFirstComponent` class with a collection of properties and methods that we need to implement.  There is however another method that requires our attention that is missing.  This is the constructor.  The constructor is a special method inside each class which gets called when the class is instantiated (or "constructed").  This can happen only once (we feeble humans can only be born once as well after all) and it necessarily happens before anything else is allowed to happen. The `GH_Component` base class has a constructor which is not empty, so we have to call that constructor from within our constructor and supply it with all the information it needs.  Add the following code near the top of the `MyFirstComponent` class...
+As we've seen in the previous section, Visual Studio can populate the `MyFirstComponent` class with a collection of properties and methods that we need to implement.  There is however another method that requires our attention that is missing.  This is the constructor.  The constructor is a special method inside each class which gets called when the class is instantiated (or "constructed").  This can happen only once (we feeble humans can only be born once as well after all) and it necessarily happens before anything else is allowed to happen. The `GH_Component` base class has a constructor which is not empty, so we have to call that constructor from within our constructor and supply it with all the information it needs.  Add the following code near the top of the `MyFirstComponent` class...
 
 <ul class="nav nav-pills">
   <li class="active"><a href="#cs5" data-toggle="pill">C#</a></li>

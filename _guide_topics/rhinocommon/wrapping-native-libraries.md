@@ -13,7 +13,7 @@ keywords: ['Native', 'RhinoCommon', 'Plugin', 'Library', 'PInvoke']
 layout: toc-guide-page
 ---
 
- 
+
 ## Overview
 
 We present a sample solution that uses Platform Invoke (PInvoke), which allows .NET code to call functions that are implemented in a C/C++ DLL (Windows) or dylib (macOS).  It is important to understand that the main utility of this advanced approach is in the ability to call the same C/C++ code on both platforms from .NET.  
@@ -70,7 +70,7 @@ Let's begin by taking a look at an absurdly simple C/C++ "library" - SampleLibra
 ![SampleLibrary on macOS]({{ site.baseurl }}/images/wrapping-native-libraries-03.png)
 1. Instead of building a .dll, on macOS we are building *libSampleLibrary.dylib* which - despite the extension - amounts to exactly the same thing as a dll.  For all intents and purposes, SampleLibrary does exactly the same thing on macOS that it does on Windows and the source is the same.
 1. *Build* SampleLibrary using Xcode to make sure that it builds successfully.  
-1. *Quit* Xcode.  On macOS, we are actually going to use command line `xcodebuild` from Xamarin Studio to build our native library, but we'll talk about that below.
+1. *Quit* Xcode.  On macOS, we are actually going to use command line `xcodebuild` from Visual Studio for Mac to build our native library, but we'll talk about that below.
 
 Now that we have examined the simple native SampleLibrary, let's turn our attention to the .NET portion of our wrapping code...
 
@@ -131,8 +131,8 @@ Let's take a look at SampleNativeLibrary on Windows using Visual Studio first...
 
 ### Mac
 
-1. If you have not done so already, open the *SampleNativeLibrary.sln* in *Xamarin Studio*.
-1. The native *SampleLibrary* project cannot be built from Xamarin Studio.  As mentioned above, Xamarin Studio is a .NET only IDE; it cannot build C/C++ projects like Visual Studio.  (We will work around this limitation in a moment).
+1. If you have not done so already, open the *SampleNativeLibrary.sln* in *Visual Studio for Mac*.
+1. The native *SampleLibrary* project cannot be built from Visual Studio for Mac.  As mentioned above, Visual Studio for Mac is a .NET only IDE; it cannot build C/C++ projects like Visual Studio.  (We will work around this limitation in a moment).
 1. First, let's turn our attention to the *SampleRhino.Mac* project.  Make sure that *SampleRhino.Mac* is set as the Startup Project and expand it so you can see the source files...
 ![SampleRhino on Mac]({{ site.baseurl }}/images/wrapping-native-libraries-06.png)
 1. Just as with *SampleLibrary*, *SampleRhino* is exactly the same source on both platform: the platform-specific *.csproj* files are referencing exactly the same *.cs* files.
@@ -145,7 +145,7 @@ Let's take a look at SampleNativeLibrary on Windows using Visual Studio first...
         }
 
     ...which declares a `lib` string member.  On Windows, it was necessary to explicitly state the name of the native dll being called.  On macOS, this works a little differently.  In order to understand what is different, let's look at how *SampleLibrary.dll* gets built on macOS...
-1. In the [SampleLibrary (Mac) section above](#mac), we built SampleLibrary using Xcode.  We mentioned in passing that we could build this using `xcodebuild` command line from Xamarin Studio.  Let's take a look.
+1. In the [SampleLibrary (Mac) section above](#mac), we built SampleLibrary using Xcode.  We mentioned in passing that we could build this using `xcodebuild` command line from Visual Studio for Mac.  Let's take a look.
 1. In the *Solution Explorer*, *double-click* the name of the *SampleRhino.Mac* project to bring up the *Project Options* dialog.  Navigate to the *Build* > *Custom Commands* section...
 ![SampleRhino.Mac Project Options]({{ site.baseurl }}/images/wrapping-native-libraries-07.png)
 1. There are 5 *Custom Commands*:
