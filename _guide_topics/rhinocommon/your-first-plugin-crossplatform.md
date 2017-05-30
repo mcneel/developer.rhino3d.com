@@ -13,7 +13,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin']
 layout: toc-guide-page
 ---
 
- 
+
 It is presumed you already have *all* the necessary tools installed and are ready to go.  If you are not there yet, see both [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinocommon/installing-tools-windows) and [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing-tools-mac).  It is also helpful to have read and understood [Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-windows) and [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-mac).
 
 ## Overview
@@ -24,11 +24,11 @@ We will build on what we learned in the HelloRhinoCommon sample projects seen in
 
 ## HelloRhino.CrossPlatform
 
-Let's begin by creating a new solution to contain both platforms' projects.  For the sake of illustration, we'll begin on macOS in Xamarin Studio, but the reverse - on Windows in Visual Studio - should work.  It is useful to work in a folder that is visible to both macOS and Windows and/or use a version control system like git that can be used on both platforms.
+Let's begin by creating a new solution to contain both platforms' projects.  For the sake of illustration, we'll begin on macOS in Visual Studio for Mac, but the reverse - on Windows in Visual Studio for Windows - should work.  It is useful to work in a folder that is visible to both macOS and Windows and/or use a version control system like git that can be used on both platforms.
 
 ### File New
 
-1. If you have not done so already, *launch Xamarin Studio*.
+1. If you have not done so already, *launch Visual Studio for Mac*.
 1. Navigate to *File* > *New* > *Solution*...
 ![File New Solution]({{ site.baseurl }}/images/your-first-plugin-mac-01.png)
 1. A *New Project* wizard should appear.  In the left column, find the *Other* > *Miscellaneous* section.  Under Generic, select the *Blank Solution* template...
@@ -72,16 +72,16 @@ public class HelloRhinoCommonPlugin : Rhino.PlugIns.PlugIn
 
 #### Windows
 
-1. In Visual Studio, open the *HelloRhino.CrossPlatform* solution you created above.
+1. In Visual Studio for Windows, open the *HelloRhino.CrossPlatform* solution you created above.
 1. You may get a warning about trusting this project.  Click *OK*.
-1. Expand the *References* section of the *HelloRhino.Common.Mac* project.  Notice that Visual Studio cannot resolve the references to *RhinoCommon*, *Rhino.UI* and *Eto*.  This is to be expected, as this is not the Windows plugin project file.
+1. Expand the *References* section of the *HelloRhino.Common.Mac* project.  Notice that Visual Studio for Windows cannot resolve the references to *RhinoCommon*, *Rhino.UI* and *Eto*.  This is to be expected, as this is not the Windows plugin project file.
 ![Bad References]({{ site.baseurl }}/images/your-first-plugin-crossplatform-05.png)
 1. In the *Solution Explorer*, *right-click* the *HelloRhino.Common.Mac* project and select *Unload Project* from the drop-down menu.
 ![Unload Project]({{ site.baseurl }}/images/your-first-plugin-crossplatform-06.png)
 1. In *Windows File Explorer*, navigate to the *HelloRhino.CrossPlatform/HelloRhino.Common* folder.  We are going to *"clone"* (copy) the *HelloRhino.Common.Mac.csproj* as our template for the Windows *.csproj*.
 1. *Copy* the *HelloRhino.Common.Mac.csproj* file and rename it *HelloRhino.Common.Windows.csproj*:
 ![Copy Project]({{ site.baseurl }}/images/your-first-plugin-crossplatform-07.png)
-1. In Visual Studio, right-click on the *HelloRhino.CrossPlatform* solution in the Solution Explorer and navigate to *Add* > *Existing Project...*
+1. In Visual Studio for Windows, right-click on the *HelloRhino.CrossPlatform* solution in the Solution Explorer and navigate to *Add* > *Existing Project...*
 ![Add Existing Project]({{ site.baseurl }}/images/your-first-plugin-crossplatform-08.png)
 1. Navigate to the *HelloRhino.Common.Windows.csproj* you just copied in Step 6 above.
 1. In the Solution Explorer, expand the *References* section of *HelloRhino.Common.Windows* project.  Because we copied ("cloned") the *.csproj* file, these Mac-specific references are still present.  Let's delete those...
@@ -114,15 +114,15 @@ Though we are sharing cross-platform code, there will be inevitably be situation
         using Eto.Drawing;
         using Eto.Forms;
         #endif
-1. *Build* and *Start Debugging*.  Your build errors should disappear and debugging should begin.  You can use the PluginManager to install your plugin and the HelloRhino command should work.  When you are done testing out the command, stop the debugging session, close Visual Studio and switch back to...
+1. *Build* and *Start Debugging*.  Your build errors should disappear and debugging should begin.  You can use the PluginManager to install your plugin and the HelloRhino command should work.  When you are done testing out the command, stop the debugging session, close Visual Studio for Windows and switch back to...
 
 #### Mac
 
-1. In *Xamarin Studio* on *macOS*, open the *HelloRhino.CrossPlatform* solution (if it is not already open).
+1. In *Visual Studio for Mac*, open the *HelloRhino.CrossPlatform* solution (if it is not already open).
 1. Notice that *HelloRhino.Common.Windows* is now present in your solution (as expected).  In the *Solution* panel, *right-click* the *HelloRhino.Common.Windows* project and select *Unload*...
 ![Unload Windows Project]({{ site.baseurl }}/images/your-first-plugin-crossplatform-14.png)
 1. In the *Solution* panel, *double-click* the *HelloRhino.Common.Mac* project to bring up its *Project Options* (Properties).
-1. Navigate to the *Build* > *Compiler* section in the *Project Options*.  Notice that the configuration is set to *Debug*.  In the *Define Symbols*: add a `ON_RUNTIME_APPLE` after `DEBUG`.  You must separate these with a semi-colon.  It should read: `DEBUG;ON_RUNTIME_APPLE`.  Switch the *Configuration* to *Release*.  Add the `ON_RUNTIME_APPLE` again (Xamarin Studio lacks an "All Configurations" like Visual Studio)...
+1. Navigate to the *Build* > *Compiler* section in the *Project Options*.  Notice that the configuration is set to *Debug*.  In the *Define Symbols*: add a `ON_RUNTIME_APPLE` after `DEBUG`.  You must separate these with a semi-colon.  It should read: `DEBUG;ON_RUNTIME_APPLE`.  Switch the *Configuration* to *Release*.  Add the `ON_RUNTIME_APPLE` again (Visual Studio for Mac lacks an "All Configurations" like Visual Studio for Windows)...
 ![Add Mac Defines]({{ site.baseurl }}/images/your-first-plugin-crossplatform-15.png)
 1. Click *OK* to close the *Project Options* dialog.
 1. *Build* and *Run*.  The *HelloRhino* command from the plugin should autocomplete and run.

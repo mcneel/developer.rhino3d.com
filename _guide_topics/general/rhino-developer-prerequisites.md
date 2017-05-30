@@ -33,8 +33,8 @@ Depending on what you want to do, the software prerequisites vary.  However, in 
 
 - [Rhinoceros](http://www.rhino3d.com/download)
 - A code editor.  There are many options...here are a few:
-   - [Visual Studio](https://www.visualstudio.com): Microsoft's flagship IDE.
-   - [Xamarin Studio](http://xamarin.com/studio): Xamarin's Cross-Platform C# IDE.
+   - [Visual Studio for Windows](https://www.visualstudio.com): Microsoft's flagship Integrated Development Environment (IDE) for Windows.
+   - [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/): Microsoft's flagship IDE for macOS.
    - [Atom](https://atom.io/): A Cross-Platform Extensible Text Editor.
 
 See the [SDK-specific guides]({{ site.baseurl }}/guides/) for the software prerequisites...normally found in the *"Installing Tools"* guides.

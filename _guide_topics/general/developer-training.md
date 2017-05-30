@@ -13,7 +13,7 @@ keywords: ['developer', 'rhino']
 layout: toc-guide-page
 ---
 
- 
+
 Developer training is a custom, one-on-one session designed to help you become more familiar with the Rhino C++ SDK or the RhinoCommon (.NET) SDK, and to get help in improving your Rhino plugin product.
 
 Rhino Developer Training is available at both the McNeel Headquarters in Seattle, and at our European Headquarters in Barcelona.
@@ -37,7 +37,7 @@ Your computer with:
 
 * RhinoCommon SDK:
   * Microsoft Visual Studio 2010, 2012 or 2013, with either C# or Visual Basic; or
-  * Xamarin Studio (for Mac plugin development).
+  * Visual Studio for Mac (for Mac plugin development).
   * The [RhinoCommon Templates](http://visualstudiogallery.msdn.microsoft.com/16053049-7db2-4c9f-961a-53274ac92ace).
   * _Note, the Express Editions of Visual Studio 2010, 2012, 2013 **will** work._
 

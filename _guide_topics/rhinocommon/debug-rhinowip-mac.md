@@ -13,7 +13,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin', 'RhinoWIP']
 layout: toc-guide-page
 ---
 
- 
+
 By the end of this guide, you should understand how to modify your plugin's C# project file in order to target and debug using RhinoWIP.
 
 ## Prerequisites
@@ -32,13 +32,13 @@ Your plugin requires references to RhinoCommon dlls that are contained within th
 
 ...which are all contained within the *Rhinoceros.app* bundle.
 
-We want to target those found in the *RhinoWIP.app* bundle.  Unfortunately, Xamarin Studio does not allow you to browse to references that are contained within an application bundle.  We will have to "manually" change these references so that they target the appropriate versions contained in RhinoWIP.
+We want to target those found in the *RhinoWIP.app* bundle.  Unfortunately, Visual Studio for Mac does not allow you to browse to references that are contained within an application bundle.  We will have to "manually" change these references so that they target the appropriate versions contained in RhinoWIP.
 
 #### Step-by-Step
 
-1. In Xamarin Studio, *right/option-click* on the project name and select *Tools* > *Edit File*...  
-![Xamarin Studio Edit File]({{ site.baseurl }}/images/debug-rhinowip-mac-02.png)
-1. Use Xamarin Studio's *Search* > *Replace* function to find *\Applications\Rhinoceros.app* and replace it with *\Applications\RhinoWIP.app*...
+1. In Visual Studio for Mac, *right/option-click* on the project name and select *Tools* > *Edit File*...  
+![Visual Studio for Mac Edit File]({{ site.baseurl }}/images/debug-rhinowip-mac-02.png)
+1. Use Visual Studio for Mac's *Search* > *Replace* function to find *\Applications\Rhinoceros.app* and replace it with *\Applications\RhinoWIP.app*...
 ![Search and Replace]({{ site.baseurl }}/images/debug-rhinowip-mac-03.png)
 1. Verify that these changes are only happening with the `<ItemGroup>` that contains `<Reference>` entries.  Accept your *\Applications\RhinoWIP.app* replacements to make the change...
 

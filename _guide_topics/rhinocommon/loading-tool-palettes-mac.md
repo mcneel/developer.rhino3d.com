@@ -13,7 +13,7 @@ keywords: ['RhinoCommon', 'Tool', 'Palette', 'Collection', 'RUI']
 layout: toc-guide-page
 ---
 
- 
+
 ## Prerequisites
 
 This guide presumes that you have a RhinoCommon plugin that has commands that can be run from a tool palette.  In Rhino for Windows, this UI is normally stored in an *rui* file that includes the buttons, the icons, and their associated commands.  If you do not yet have a plugin, please begin with the [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-mac) guide.
@@ -77,7 +77,7 @@ If you already have an existing *rui* file from Rhino for Windows, this job is e
 
 Now that you have Tool Palette Collection *plist*, you need to add it to your plugin as a resource.  The best practice is to create a folder within your project called *Resources* (or similar) and move your Tool Palette Collection *plist* into to that folder.  *NOTE*: You are free to place your *plist* anywhere you think appropriate.
 
-1. Open *Xamarin Studio* if you have not done so already and open your plugin project.
+1. Open *Visual Studio for Mac* if you have not done so already and open your plugin project.
 1. Right-click your plugin project in the *Solution Explorer* and select *Add* > *New Folder*...
 1. Name this folder *Resources* (or similar).
 1. Right-click the new *Resources* folder in the *Solution Explorer* and select *Add* > *Add Files...*.
@@ -87,7 +87,7 @@ Now that you have Tool Palette Collection *plist*, you need to add it to your pl
 
 ## Load the Tool Palette
 
-1. In order to load the tool palette, you must reference *RhinoMac.dll* and *Rhino.UI.dll*.  In *Xamarin Studio*, right-click on the project entry in the *Solution Explorer* and select *Tools* > *Edit File*.  This opens up the *csproj* file for your project as xml text in the code editor.
+1. In order to load the tool palette, you must reference *RhinoMac.dll* and *Rhino.UI.dll*.  In *Visual Studio for Mac*, right-click on the project entry in the *Solution Explorer* and select *Tools* > *Edit File*.  This opens up the *csproj* file for your project as xml text in the code editor.
 1. Find the area of the xml near where *RhinoCommon* is being referenced and add the following entries:
 
         <Reference Include="Rhino.UI">
@@ -98,7 +98,7 @@ Now that you have Tool Palette Collection *plist*, you need to add it to your pl
           <HintPath>\Applications\RhinoWIP.app\Contents\Resources\RhinoMac.dll</HintPath>
           <Private>False</Private>
         </Reference>
-1. Close the *csproj* that is open in the code editor.  Xamarin Studio reloads the project.  If you check in the *References* section of your project in the *Solution Explorer*, you should see references to *RhinoMac* and *Rhino.UI*.
+1. Close the *csproj* that is open in the code editor.  Visual Studio for Mac reloads the project.  If you check in the *References* section of your project in the *Solution Explorer*, you should see references to *RhinoMac* and *Rhino.UI*.
 1. In your `Plugin` class, if you have not done so already, override the `OnLoad` method.
 1. Load your tool palette plist from your desired location by calling the `RhinoMac.Runtime.MacPlatformService.LoadToolPaletteCollection` and passing in the full path to your *plist*.  For example, if your *plist* is in the *Resources* folder of your *rhp*, use the following example:
 

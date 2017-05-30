@@ -13,7 +13,7 @@ keywords: ['Native', 'RhinoCommon', 'Plugin', 'Library', 'PInvoke', 'methodgen',
 layout: toc-guide-page
 ---
 
- 
+
 It builds on top of concepts from the [Wrapping Native Libraries]({{ site.baseurl }}/guides/rhinocommon/wrapping-native-libraries) guide.
 
 
@@ -32,7 +32,7 @@ For each of these tasks, we wrote a tool, *methodgen.exe*, that automatically wr
 
 ## methodgen in your project
 
-To run the tool, place it in a folder that is a parent folder to both your C and your C# solutions.  Then, add a prebuild event to your project, either using the standard Visual Studio or Xamarin Studio interface, of by adding this code to the `.csproj` solution:
+To run the tool, place it in a folder that is a parent folder to both your C and your C# solutions.  Then, add a prebuild event to your project, either using the standard Visual Studio for Window or Visual Studio for Mac interface, of by adding this code to the `.csproj` solution:
 
 ```
 <PropertyGroup Condition=" '$(Configuration)' == 'Release' Or '$(Configuration)' == 'Debug' ">
