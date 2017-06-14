@@ -68,9 +68,41 @@ vec.Y = 45.0 # Sets the Y coordinate to 45.0
 print(vec) #Print the new coordinates
 ```
 
+A vector subtraction may also be used to create a vector between two points. This is a very cool method:
+
+![{{ site.baseurl }}/images/image180.png]({{ site.baseurl }}/images/image180.png){:  .float-img-right  }
+
+```python
+point1 = [1,2,3]
+point2 = [4,5,6]
+
+vec = point2 - point1
+
+print(vec) #prints the new coordinates.
+```
+
+The key to understanding the vector is that this vector goes from point1 to point 2.  It is common to get this reversed.  Make sure the starting point is second in the subtract function.
+
+
+Vectors can also be added to points to create new point locations.  Here is an example of moving a point location by a vector:
+
+![{{ site.baseurl }}/images/image172.png]({{ site.baseurl }}/images/image172.png){:  .float-img-right  }
+
+```python
+#  A base point
+point1 = [1,1,1]
+
+# A vectore with a direction of 2 units in the X direction
+vector1 = [2,0,0]
+
+# Setting the coordinate of point1 to to units more in the X direction.
+point1 = point1 + vector1
+# point1 + vector1 = [1+2, 1+0, 1+0] = [3,1,1]
+```
+
 Using the Python `for` function it is quite easy to walk through each coordinate in succession:
 
-```
+```python
 for c in vec:
     print c # This will loop through each coordinate in the vector3d
 ```
