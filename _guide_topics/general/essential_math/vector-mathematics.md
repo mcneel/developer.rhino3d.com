@@ -1,0 +1,683 @@
+---
+title: 1 Vector Mathematics
+description:
+authors: ['Rajaa Issa']
+author_contacts: ['rajaaissa']
+platforms: ['Windows']
+categories: ['Essential Mathematics']
+origin:
+order: 1
+keywords: ['mathematics', 'geometry', 'grasshopper3d']
+layout: toc-guide-page
+---
+
+A vector indicates a quantity, such as velocity or force, that has direction and length. Vectors in 3D coordinate systems are represented with an ordered set of three real numbers and look like: 
+
+\$$\vec v  = <a1, a2, a3>​$$
+
+## 1.1 Vector representation
+
+In this document, lower case bold letters will notate vectors. Vector components are also enclosed in angle brackets. Upper case letters will notate points. Point coordinates will always be enclosed by parentheses.
+
+Using a coordinate system and any set of anchor points in that system, we can represent or visualize these vectors using a line-segment representation. An arrowhead shows the vector direction.
+
+For example, if we have a vector that has a direction parallel to the x-axis of a given 3D coordinate system and a length of 5 units, we can write the vector as follows:  
+
+\$$\vec v = <5, 0, 0>$$  
+
+To represent that vector, we need an anchor point in the coordinate system. For example, all of the arrows in the following figure are equal representations of the same vector despite the fact that they are anchored at different locations.  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image169.png">
+   <figcaption>Figure (1): Vector representation in the 3-D coordinate system.</figcaption>
+</figure>  
+
+```
+Given a 3D vector v = <a1, a2, a3>, all vector components a1, a2, a3 are  
+real numbers. Also all line segments from a point A(x,y,z) to point B(x+a1, y+a2, z+a3) are equivalent representations of vector v.  
+```
+
+So, how do we define the end points of a line segment that represents a given vector?
+Let us define an anchor point (A) so that:
+
+\$$A = (1, 2, 3)$$
+
+And a vector:
+
+\$$\vec v = <5, 6, 7>$$
+
+The tip point $$(B)$$ of the vector is calculated by adding the corresponding components from anchor point and vector $$v$$:  
+
+$$B = A + \vec v$$  
+$$B = (1+5, 2+6, 3+7) $$  
+$$B = (6, 8, 10)$$  
+
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image172.png">
+   <figcaption>Figure (2): The relationship between a vector, the vector anchor point, and the point coinciding with the vector tip location.</figcaption>
+</figure>  
+
+### Position vector
+
+One special vector representation uses the $$origin point (0,0,0)$$ as the vector anchor point. 
+The position vector $$v = <a1,a2,a3>$$ is represented with a line segment between two points, the origin and B, so that:  
+
+$$Origin point = (0,0,0)$$  
+$$B = (a1,a2,a3)$$  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image169.png">
+   <figcaption>Figure (1): Vector representation in the 3-D coordinate system.</figcaption>
+</figure>  
+
+```
+A position vector for a given vector v= < a1,a2,a3 > is a special line
+segment representation from the origin point (0,0,0) to point (a1,a2,a3).
+```
+
+### Vectors vs. points  
+
+Do not confuse vectors and points. They are very different concepts. Vectors, as we mentioned, represent a quantity that has direction and length, while points indicate a location. For example, the North direction is a vector, while the North Pole is a location (point).
+If we have a vector and a point that have the same components, such as:  
+
+$$\vec v = <3,1,0>$$  
+$$P = (3,1,0)$$  
+
+We can draw the vector and the point as follows:  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image174.png">
+   <figcaption>Figure (4): A vector defines a direction and length. A point defines a location.</figcaption>
+</figure>  
+
+### Vector length  
+
+As mentioned before, vectors have length. We will use $$\vert a \vert$$ to notate the length of a given vector $$ a $$. For example:  
+
+$$\vec a = <4, 3, 0>$$  
+$$|a| = √(42 + 32 + 02)$$  
+$$|a| = 5$$  
+
+In general, the length of a vector $$\vec a <a1,a2,a3>$$ is calculated as follows:
+
+\$$|a| = √(a12 + a22 + a32) ​$$
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image173.png">
+   <figcaption>Figure (5): Vector length.</figcaption>
+</figure>  
+
+### Unit vector
+
+A unit vector is a vector with a length equal to one unit. Unit vectors are commonly used to compare the directions of vectors. 
+
+```
+A unit vector is a vector whose length is equal to one unit.
+```
+
+To calculate a unit vector, we need to find the length of the given vector, and then divide the vector components by the length. For example:
+
+\$$\vec a = <4, 3, 0>$$  
+&nbsp;&nbsp;     $$|a| = √(42 + 32 + 02)$$  
+&nbsp;&nbsp;     $$|a| = 5 unit length$$  
+
+If $$\vec b = unit vector$$ of $$a$$, then:  
+&nbsp;&nbsp;     $$\vec b = <4/5, 3/5, 0/5>$$  
+&nbsp;&nbsp;     $$\vec b = <0.8, 0.6, 0>$$  
+&nbsp;&nbsp;     $$|b| = √(0.82 + 0.62 + 02)$$  
+&nbsp;&nbsp;     $$|b| = √(0.64 + 0.36 + 0)$$  
+&nbsp;&nbsp;     $$|b| = √(1) = 1 unit length$$  
+
+In general:  
+
+\$$a = <a1, a2, a3>$$  
+
+The unit vector of $$\vec a = <a1/\vert a \vert , a2/\vert a\vert , a3/\vert a\vert >$$  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image176.png">
+   <figcaption>Figure (6): Unit vector equals one-unit length of the vector.</figcaption>
+</figure>  
+
+## 1.2 Vector operations
+
+### Vector scalar operation
+
+Vector scalar operation involves multiplying a vector by a number. For example:  
+
+$$\vec a = <4, 3, 0>$$  
+$$2*\vec a = <2*4, 2*3, 2*0> $$  
+$$2*\vec a = <8, 6, 0>$$  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image175.png">
+   <figcaption>Figure (7): Vector scalar operation</figcaption>
+</figure>  
+
+In general, given vector $$\vec a = <a1, a2, a3>$$, and a real number $$t$$   
+
+\$$t*\vec a = < t*\vec a1, t*\vec a2, t*\vec a3 >$$  
+
+### Vector addition
+
+Vector addition takes two vectors and produces a third vector. We add vectors by adding their components. 
+
+```
+Vectors are added by adding their components.
+```
+For example, if we have two vectors:  
+
+$$\vec a = <1, 2, 0> $$  
+$$\vec b = <4, 1, 3> $$   
+$$\vec a+\vec b = <1+4, 2+1, 0+3>$$  
+$$\vec a+\vec b = <5, 3, 3>$$  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image179.png">
+   <figcaption>Figure (8): Vector addition.</figcaption>
+</figure>  
+
+In general, vector addition of the two vectors a and b is calculated as follows:  
+
+$$\vec a = <a1, a2, a3>$$  
+$$\vec b = <b1, b2, b3>$$  
+$$\vec a+\vec b = <a1+b1, a2+b2, a3+b3>$$  
+
+Vector addition is useful for finding the average direction of two or more vectors. In this case, we usually use same-length vectors. Here is an example that shows the difference between using same-length vectors and different-length vectors on the resulting vector addition:  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image177.png">
+   <figcaption>Figure (9): Adding various length vectors (left). Adding same length vectors (right) to get the average direction.</figcaption>
+</figure>  
+
+Input vectors are not likely to be same length. In order to find the average direction, you need to use the unit vector of input vectors. As mentioned before, the unit vector is a vector of that has a length equal to 1.
+
+### Vector subtraction
+
+Vector subtraction takes two vectors and produces a third vector. We subtract two vectors by subtracting corresponding components. For example, if we have two vectors $$a$$ and $$b$$ and we subtract $$b$$ from $$a$$, then:  
+
+$$\vec a = <1, 2, 0> $$  
+$$\vec b = <4, 1, 4> $$  
+$$\vec a-\vec b = <1-4, 2-1, 0-4>$$  
+$$\vec a-\vec b = <-3, 1, -4> = \vec{ba}$$ 
+
+If we subtract $$b$$ from $$a$$, we get a different result:  
+
+$$\vec b - \vec a = <4-1, 1-2, 4-0>$$  
+$$\vec b - \vec a = <3, -1, 4> = \vec{ab}$$  
+
+Note that the vector $$\vec b - \vec a$$ has the same length as the vector $$\vec a - \vec b$$, but goes in the opposite direction.  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image178.png">
+   <figcaption>Figure (10): Vector subtraction.</figcaption>
+</figure>  
+
+In general, if we have two vectors, $$\vec a$$ and $$\vec b$$, then $$\vec a - \vec b$$ is a vector that is calculated as follows:  
+
+$$\vec a = <a1, a2, a3>$$  
+$$\vec b = <b1, b2, b3>$$  
+$$\vec a - \vec b = <a1 - b1, a2 - b2, a3 - b3> = \vec{ba}$$  
+
+Vector subtraction is commonly used to find vectors between points. So if we need to find a vector that goes from the tip point of the position vector $$\vec b$$ to the tip point of the position vector $$a$$, then we use vector subtraction $$(\vec a-\vec b)$$ as shown in Figure (11).  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image180.png">
+   <figcaption>Figure (11): Use vector subtraction to find a vector between two points. </figcaption>
+</figure>  
+
+### Vector properties
+
+There are eight properties of vectors. If a, b, and c are vectors, and s and t are numbers, then:  
+
+$$\vec a + \vec b = \vec b + \vec a$$  
+$$\vec a + 0 = a$$  
+$$s * (\vec a + \vec b) = s * a + s * \vec b$$  
+$$s * t * (\vec a) = s * (t * \vec a)$$  
+$$\vec a + (\vec b + \vec c) = (\vec a + \vec b) + \vec c$$  
+$$\vec a + (-\vec a) = 0$$  
+$$(s + t) * \vec a = s * \vec a + t * \vec a$$  
+$$1 * \vec a = \vec a$$  
+
+### Vector dot product
+
+The dot product takes two vectors and produces a number. 
+For example, if we have the two vectors a and b so that:
+
+$$\vec a = <1, 2, 3> $$  
+$$\vec b = <5, 6, 7>$$  
+
+Then the dot product is the sum of multiplying the components as follows:  
+
+$$\vec a · \vec b = 1 * 5 + 2 * 6 + 3 * 7$$  
+$$\vec a · \vec b = 38$$  
+
+In general, given the two vectors a and b:  
+
+$$\vec a = <a1, a2, a3>$$  
+$$\vec b = <b1, b2, b3>$$  
+$$\vec a · \vec b = a1 * b1 + a2 * b2 + a3 * b3$$  
+
+We always get a positive number for the dot product between two vectors when they go in the same general direction. A negative dot product between two vectors means that the two vectors go in the opposite general direction.
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image181.png">
+   <figcaption>Figure (12): When the two vectors go in the same direction (left), the result is a positive dot product. When the two vectors go in the opposite direction (right), the result is a negative dot product. </figcaption>
+</figure>  
+
+When calculating the dot product of two unit vectors, the result is always between 1 and +1. For example:  
+
+$$\vec a = <1, 0, 0>$$  
+$$\vec b = <0.6, 0.8, 0>$$  
+$$\vec a · \vec b = (1 * 0.6, 0 * 0.8, 0 * 0) = 0.6$$  
+
+In addition, the dot product of a vector with itself is equal to that vector’s length to the power of two. For example:  
+
+$$\vec a = <0, 3, 4>$$  
+$$\vec a · \vec a = 0 * 0 + 3 * 3 + 4 * 4 $$  
+$$\vec a · \vec a = 25$$  
+
+Calculating the square length of vector $$a$$ :  
+
+$$\vert a \vert = √(42 + 32 + 02)$$  
+$$\vert a \vert = 5$$  
+$$\vert a \vert 2 = 25$$  
+
+### Vector dot product, lengths, and angles
+
+There is a relationship between the dot product of two vectors and the angle between them.  
+
+```
+The dot product of two non-zero unit vectors equals the cosine of the angle between them.
+```
+
+In general:  
+
+$$\vec a · \vec b = \vert a \vert * \vert b \vert * cos(ө)$$ , or  
+$$\vec a · \vec b / (\vert a \vert * \vert b \vert ) = cos(ө)$$  
+
+Where:  
+
+$$ө$$ is the angle included between the vectors.  
+
+If vectors a and b are unit vectors, we can simply say:  
+
+\$$\vec a · \vec b = cos(ө)$$  
+
+And since the cosine of a 90-degree angle is equal to 0, we can say:  
+
+```
+Vectors a and b are orthogonal if, and only if, a · b = 0.
+```
+
+For example, if we calculate the dot product of the two orthogonal vectors, World xaxis and yaxis, the result will equal zero.  
+
+$$\vec x = <1, 0, 0>$$  
+$$\vec y = <0, 1, 0>$$  
+$$\vec x · \vec y = (1 * 0) + (0 * 1) + (0 * 0)$$  
+$$\vec x · \vec y = 0$$  
+
+There is also a relationship between the dot product and the projection length of one vector onto another. For example:  
+
+$$\vec a = <5, 2, 0>$$  
+$$\vec b = <9, 0, 0>$$  
+$$unit(\vec b) = <1, 0, 0>$$  
+$$\vec a · unit(\vec b) = (5 * 1) + (2 * 0) + (0 * 0) $$  
+$$\vec a · unit(\vec b) = 2 (\text{which is equal to the projection length of a onto b})$$  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image182.png">
+   <figcaption>Figure (13): The dot product equals the projection length of one vector onto a non-zero unit vector. </figcaption>
+</figure>  
+
+In general, given a vector a and a non-zero vector b, we can calculate the projection length pL of vector a onto vector b using the dot product.  
+
+$$pL = \vert \vec a \vert * cos(ө) $$  
+$$pL = \vec a · unit(b)$$  
+
+### Dot product properties
+
+If $$\vec a$$, $$\vec b$$, and $$\vec c$$ are vectors and s is a number, then:  
+
+$$\vec a · \vec a = \vert  a \vert ^2$$  
+$$\vec a · (\vec b + \vec c) = \vec a · \vec b + \vec a · \vec c$$  
+$$0 · \vec a = 0$$  
+$$\vec a · \vec b = \vec b · \vec a$$  
+$$(s * \vec a) · \vec b = s * (\vec a · \vec b) = \vec a · (s * \vec b)$$  
+
+### Vector cross product
+
+The cross product takes two vectors and produces a third vector that is orthogonal to both. 
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image183.png">
+   <figcaption>Figure (14): Calculating the cross product of two vectors. </figcaption>
+</figure>  
+
+For example, if you have two vectors lying on the World xy-plane, then their cross product is a vector perpendicular to the xy-plane going either in the positive or negative World z-axis direction. For example:  
+
+$$\vec a = <3, 1, 0>$$  
+$$\vec b = <1, 2, 0>$$  
+$$\vec a × \vec b = < (1 * 0 – 0 * 2), (0 * 1 - 3 * 0), (3 * 2 - 1 * 1) > $$  
+$$\vec a × \vec b = <0, 0, 5>$$  
+
+```
+The vector a x b is orthogonal to both a and b.
+```
+
+You will probably never need to calculate a cross product of two vectors by hand, but if you are curious about how it is done, continue reading; otherwise you can safely skip this section. The cross product $$a × b$$ is defined using determinants. Here is a simple illustration of how to calculate a determinant using the standard basis vectors:  
+
+$$ \color {red}{i} = <1, 0, 0>$$  
+$$ \color {blue}{j} = <0,1, 0>$$  
+$$ \color {green}{k} = <0, 0, 1>$$  
+
+<img src="{{ site.baseurl }}/images/math-image184.png">
+
+The cross product of the two vectors $$\vec a = <a1, a2, a3>$$ and $$\vec b = <b1, b2, b3>$$ is calculated as follows using the above diagram:  
+
+$$\vec a × \vec b = \color {red}{i (a2 * b3)} + \color {blue}{ j (a3 * b1)} + \color {green}{k(a1 * b2)} - \color {green}{k (a2 * b1)} - \color {red}{i (a3 * b2)} -\color {blue}{ j (a1 * b3)}$$  
+$$\vec a × \vec b = \color {red}{i (a2 * b3 - a3 * b2)} + \color {blue}{j (a3 * b1 - a1 * b3)} +\color {green}{k (a1 * b2 - a2 * b1)}$$  
+$$\vec a × \vec b = <\color {red}{a2 * b3 – a3 * b2},  \color {blue}{a3 * b1 - a1 * b3},  \color {green}{a1 * b2 - a2 * b1} >$$  
+
+### Cross product and angle between vectors
+
+There is a relationship between the angle between two vectors and the length of their cross product vector. The smaller the angle (smaller sine); the shorter the cross product vector will be. The order of operands is important in vectors cross product. For example:  
+
+$$\vec a = <1, 0, 0>$$  
+$$\vec b = <0, 1, 0>$$  
+$$\vec a × \vec b = <0, 0, 1>$$  
+$$\vec b × \vec a = <0, 0, -1>$$  
+
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image185.png">
+   <figcaption>Figure (15): The relationship between the sine of the angle between two vectors and the length of their cross product vector.</figcaption>
+</figure>  
+
+In Rhino's right-handed system, the direction of $$\vec a × \vec b$$ is given by the right-hand rule (where $$\vec a$$ = index finger, $$\vec b$$ = middle finger, and $$\vec a × \vec b$$ = thumb).  
+
+<img src="{{ site.baseurl }}/images/math-image186.png">  
+
+In general, for any pair of 3-D vectors $$\vec a$$ and $$\vec b$$:  
+
+\$$\vert \vec a × \vec b \vert  = \vert  \vec a \vert  \vert  \vec b \vert  sin(ө)$$  
+
+Where:   
+
+$$ө$$ is the angle included between the position vectors of $$\vec a$$ and $$\vec b$$  
+
+If a and b are unit vectors, then we can simply say that the length of their cross product equals the sine of the angle between them. In other words:  
+
+\$$\vert \vec a × \vec b \vert = sin(ө)$$  
+
+The cross product between two vectors helps us determine if two vectors are parallel. This is because the result is always a zero vector.  
+
+```
+Vectors a and b are parallel if, and only if, a x b = 0.
+```
+
+### Cross product properties
+
+If $$\vec a$$, $$\vec b$$, and $$\vec c$$ are vectors, and $$s$$ is a number, then:  
+$$\vec a × \vec b = -\vec b × \vec a$$   
+$$(s * \vec a) × \vec b = s * (\vec a × \vec b) = \vec a × (s * \vec b)$$  
+$$\vec a × (\vec b + \vec c) = \vec a × \vec b + \vec a × \vec c$$  
+$$(\vec a + \vec b) × \vec c = \vec a × \vec c + \vec b × \vec c$$  
+$$\vec a · (\vec b × \vec c) = (\vec a × \vec b) · \vec c$$  
+$$\vec a × (\vec b × \vec c) = (\vec a · \vec c) * \vec b – (\vec a · \vec b) * \vec c$$  
+
+## 1.3 Vector equation of line
+
+The vector line equation is used in 3D modeling applications and computer graphics. 
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image187.png">
+   <figcaption>Figure (16): Vector equation of a line.</figcaption>
+</figure>  
+
+For example, if we know the direction of a line and a point on that line, then we can find any other point on the line using vectors, as in the following:
+
+$$L = line$$  
+$$\vec v = <a, b, c>$$ line direction unit vector  
+$$Q = (x0, y0, z0)$$ line position point  
+$$P = (x, y, z)$$ any point on the line  
+
+We know that:  
+
+$$\vec a = t * v$$  --- (2)  
+$$\vec p = \vec q + \vec a$$ --- (1)  
+
+From 1 and 2:  
+
+$$\vec p = \vec q + t * \vec v$$ --- (3)   
+
+However, we can write (3) as follows:  
+
+$$<x, y, z> = <x0, y0, z0> + <t * a, t * b, t * c>$$  
+$$<x, y, z> = <x0 + t * a, y0 + t * b, z0 + t * c>$$  
+
+Therefore:  
+
+$$x = x0 + t * a$$  
+$$y = y0 + t * b$$  
+$$z = z0 + t * c$$  
+
+Which is the same as:  
+
+\$$P = Q + t * v$$  
+
+```
+Given a point Q and a direction v on a line, any point P on that line can be calculated using the vector equation of a line P = Q + t * v where t is a number.
+```
+
+Another common example is to find the midpoint between two points. The following shows how to find the midpoint using the vector equation of a line:  
+
+$$\vec q$$ is the position vector for point $$Q$$  
+$$\vec p$$ is the position vector for point $$P$$  
+$$\vec a$$ is the vector going from $$Q \rightarrow P$$  
+
+From vector subtraction, we know that:  
+
+\$$\vec a = \vec p - \vec q$$  
+
+From the line equation, we know that:  
+
+\$$M = Q + t * \vec a$$  
+
+And since we need to find midpoint, then:  
+
+\$$t = 0.5$$  
+
+Hence we can say:  
+
+\$$M = Q + 0.5 * \vec a$$  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image159.png">
+   <figcaption>Figure (17): Find the midpoint between two input points.</figcaption>
+</figure>  
+
+In general, you can find any point between $$Q$$ and $$P$$ by changing the $$t$$ value between 0 and 1 using the general equation:  
+
+\$$M = Q + t * (P - Q)$$  
+
+```
+Given two points Q and P, any point M between the two points is
+calculated using the equation M = Q + t * (P - Q) where 
+t is a number between 0 and 1.
+```
+## 1.4 Vector equation of a plane
+
+One way to define a plane is when you have a point and a vector that is perpendicular to the plane. That vector is usually referred to as normal to the plane. The normal points in the direction above the plane.  
+
+One example of how to calculate a plane normal is when we know three non-linear points on the plane.   
+
+In Figure (16), given:  
+
+$$A$$ = the first point on the plane  
+$$B$$ = the second point on the plane  
+$$C$$ = the third point on the plane  
+
+And:  
+
+$$\vec a $$ = a position vector of point $$A$$  
+$$\vec b$$ = a position vector of point $$B$$  
+$$\vec c$$ = a position vector of point $$C$$  
+
+We can find the normal vector $$\vec n$$ as follows:  
+
+\$$\vec n = (\vec b - \vec a) × (\vec c - \vec a)$$  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image160.png">
+   <figcaption>Figure (18): Vectors and planes</figcaption>
+</figure>  
+
+We can also derive the scalar equation of the plane using the vector dot product:  
+
+\$$\vec n · (\vec b - \vec a) = 0$$  
+
+If:  
+
+$$\vec n = <a, b, c>  
+$$b = <x, y, z>$$  
+$$ a = <x0, y0, z0>$$  
+
+Then we can expand the above:  
+
+\$$<a, b, c> · <x-x0, y-y0, z-z0 > = 0$$  
+
+Solving the dot product gives the general scalar equation of a plane:  
+
+\$$a * (x - x0) + b * (y - y0) + c * (z - z0) = 0$$  
+
+## 1.5 Tutorials
+
+All the concepts we reviewed in this chapter have a direct application to solving common geometry problems encountered when modeling. The following are stepbystep tutorials that use the concepts learned in this chapter using Rhinoceros and Grasshopper (GH).
+
+### Face direction
+Given a point and a surface, how can we determine whether the point is facing the front or back side of that surface?  
+
+**Input:**  
+
+1. a surface  
+2. a point  
+
+<img src="{{ site.baseurl }}/images/math-image161.png">  
+
+**Parameters:**  
+
+The face direction is defined by the surface normal direction. We will need the following information:  
+
+* The surface normal direction at a surface location closest to the input point.  
+* A vector direction from the closest point to the input point.  
+
+Compare the above two directions, if going the same direction, the point is facing the front side, otherwise it is facing the back.  
+
+**Solution:**  
+
+  1. Find the closest point location on the surface relative to the input point using the Pull component. This will give us the uv location of the closest point, which we can then use to evaluate the surface and find its normal direction.  
+
+<img src="{{ site.baseurl }}/images/math-image162.png">  
+
+  2. We can now use the closest point to draw a vector going towards the input point. We can also draw:  
+
+<img src="{{ site.baseurl }}/images/math-image163.png">  
+
+  3. We can compare the two vectors using the dot product. If the result is positive, the point is in front of the surface. If the result is negative, the point is behind the surface.  
+
+<img src="{{ site.baseurl }}/images/math-image164.png">  
+
+The above steps can also be solved using other scripting languages. Using the Grasshopper VB component:  
+
+<img src="{{ site.baseurl }}/images/math-image165.png">  
+
+```vb
+Private Sub RunScript(ByVal pt As Point3d, ByVal srf As Surface, ByRef A As Object) 
+
+  'Declare variables
+  Dim u, v As Double
+  Dim closest_pt As Point3d
+
+  'get closest point u, v
+  srf.ClosestPoint(pt, u, v)
+
+  'get closest point
+  closest_pt = srf.PointAt(u, v)
+
+  'calculate direction from closest point to test point
+  Dim dir As New Vector3d(pt - closest_pt)
+
+  'calculate surface normal
+  Dim normal = srf.NormalAt(u, v)
+
+  'compare the two directions using the dot product
+  A = dir * normal
+End Sub 
+```
+
+Using the Grasshopper C# component:  
+
+<img src="{{ site.baseurl }}/images/math-image165.png">  
+
+```c#
+private void RunScript(Point3d pt, Surface srf, ref object A)
+{
+  //Declare variables
+  double u, v;
+  Point3d closest_pt;
+
+  //get closest point u, v
+  srf.ClosestPoint(pt, out u, out v);
+
+  //get closest point
+  closest_pt = srf.PointAt(u, v);
+
+  //calculate direction from closest point to test point
+  Vector3d dir = pt - closest_pt;
+
+  //calculate surface normal
+  Vector3d normal = srf.NormalAt(u, v);
+
+  //compare the two directions using the dot product
+  A = dir * normal;
+}
+```
+
+### Exploded box  
+
+The following tutorial shows how to explode a polysurface. This is what the final exploded box looks like:   
+
+<img src="{{ site.baseurl }}/images/math-image15.png">  
+
+**Input:**  
+
+Identify the input, which is a box. We will use the Box parameter in GH:
+
+<img src="{{ site.baseurl }}/images/math-image17.png">  
+
+**Parameters:**  
+
+* Think of all the parameters we need to know in order to solve this tutorial.  
+* The center of explosion.  
+* The box faces we are exploding.  
+* The direction in which each face is moving.   
+
+
+<img src="{{ site.baseurl }}/images/math-image19.png">  
+
+Once we have identified the parameters, it is a matter of putting it together in a solution by piecing together the logical steps to reach an answer.
+
+**Solution:**
+
+1. Find the center of the box using the Box Properties component in GH:
+
+
+
+
+---
+
+## Next Steps
+
+Now that you know what a scripting language is, check out the [Python Essentials]({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/) guide to learn more about the Python language.

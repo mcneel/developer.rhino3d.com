@@ -215,6 +215,31 @@ code {
   clear:both;
 }
 
+figcaption {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+/*
+##############################################################################
+##  MathJax_Display for math formulas.  justifies al to the left.
+## This might be wrong in some cases, but cannot determine hoew to differentiate
+##############################################################################
+*/
+
+/*
+
+.MathJax_Display { 
+    text-align: left !important;
+    display: inline !important;
+}
+
+.MathJax { 
+    text-align: left !important;
+    display: inline !important;
+}
+*/
+
 /*
 ##############################################################################
 ##  Index.md Page
