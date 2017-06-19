@@ -95,7 +95,6 @@ End Sub
 
 Note, your user-defined OnCancelScript subroutine must not have any arguments. If you define your OnCancelScript subroutine as one that requires one or more arguments, then RhinoScript will not execute it when the ESC key is pressed.
 
-
 ---
 
 ## Related Topics
@@ -106,4 +105,3 @@ Note, your user-defined OnCancelScript subroutine must not have any arguments. I
 - [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
 - [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)
 - [Scripting Options]({{ site.baseurl }}/guides/rhinopython/python-scripting-options)
-- [Reinitializing Python]({{ site.baseurl }}/guides/rhinopython/python-scripting-reinitialize)
