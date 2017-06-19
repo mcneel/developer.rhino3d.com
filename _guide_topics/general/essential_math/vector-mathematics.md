@@ -438,7 +438,7 @@ The vector line equation is used in 3D modeling applications and computer graphi
 
 For example, if we know the direction of a line and a point on that line, then we can find any other point on the line using vectors, as in the following:
 
-$$L = line$$  
+$$\overline{L} = line$$  
 $$\vec v = <a, b, c>$$ line direction unit vector  
 $$Q = (x0, y0, z0)$$ line position point  
 $$P = (x, y, z)$$ any point on the line  
@@ -491,7 +491,7 @@ And since we need to find midpoint, then:
 
 Hence we can say:  
 
-\$$M = Q + 0.5 * \vec a$$  
+\$$\overline{M} = Q + 0.5 * \vec a$$  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image159.png">
@@ -500,7 +500,7 @@ Hence we can say:
 
 In general, you can find any point between $$Q$$ and $$P$$ by changing the $$t$$ value between 0 and 1 using the general equation:  
 
-\$$M = Q + t * (P - Q)$$  
+\$$\overline{M} = Q + t * (P - Q)$$  
 
 ```
 Given two points Q and P, any point M between the two points is
@@ -556,7 +556,7 @@ Solving the dot product gives the general scalar equation of a plane:
 
 All the concepts we reviewed in this chapter have a direct application to solving common geometry problems encountered when modeling. The following are stepbystep tutorials that use the concepts learned in this chapter using Rhinoceros and Grasshopper (GH).
 
-### Face direction
+### 1.5.1 Face direction
 Given a point and a surface, how can we determine whether the point is facing the front or back side of that surface?  
 
 **Input:**  
@@ -577,15 +577,15 @@ Compare the above two directions, if going the same direction, the point is faci
 
 **Solution:**  
 
-  1. Find the closest point location on the surface relative to the input point using the Pull component. This will give us the uv location of the closest point, which we can then use to evaluate the surface and find its normal direction.  
+    1. Find the closest point location on the surface relative to the input point using the Pull component. This will give us the uv location of the closest point, which we can then use to evaluate the surface and find its normal direction.  
 
 <img src="{{ site.baseurl }}/images/math-image162.png">  
 
-  2. We can now use the closest point to draw a vector going towards the input point. We can also draw:  
+    2. We can now use the closest point to draw a vector going towards the input point. We can also draw:  
 
 <img src="{{ site.baseurl }}/images/math-image163.png">  
 
-  3. We can compare the two vectors using the dot product. If the result is positive, the point is in front of the surface. If the result is negative, the point is behind the surface.  
+    3. We can compare the two vectors using the dot product. If the result is positive, the point is in front of the surface. If the result is negative, the point is behind the surface.  
 
 <img src="{{ site.baseurl }}/images/math-image164.png">  
 
@@ -617,6 +617,56 @@ Private Sub RunScript(ByVal pt As Point3d, ByVal srf As Surface, ByRef A As Obje
 End Sub 
 ```
 
+Using the Grasshopper Python component with RhinoScriptSyntax:
+
+<img src="{{ site.baseurl }}/images/math-image14.png">  
+
+```python
+import rhinoscriptsyntax as rs #import RhinoScript library
+
+#find the closest point
+u, v = rs.SurfaceClosestPoint(srf, pt)
+
+#get closest point
+closest_pt = rs.EvaluateSurface(srf, u, v)
+
+#calculate direction from closest point to test point
+dir = rs.PointCoordinates(pt) - closest_pt
+
+#calculate surface normal
+normal = rs.SurfaceNormal(srf, [u, v])
+
+#compare the two directions using the dot product
+A = dir * normal
+```
+
+
+
+Using the Grasshopper Python component with RhinoCommon only:
+
+<img src="{{ site.baseurl }}/images/math-image13.png">  
+
+```python
+#find the closest point
+found, u, v = srf.ClosestPoint(pt)
+
+if found:
+
+    #get closest point
+    closest_pt = srf.PointAt(u, v)
+    
+    #calculate direction from closest point to test point
+    dir = pt - closest_pt
+    
+    #calculate surface normal
+    normal = srf.NormalAt(u, v)
+    
+    #compare the two directions using the dot product
+    A = dir * normal
+```
+
+
+
 Using the Grasshopper C# component:  
 
 <img src="{{ site.baseurl }}/images/math-image165.png">  
@@ -645,17 +695,17 @@ private void RunScript(Point3d pt, Surface srf, ref object A)
 }
 ```
 
-### Exploded box  
+### 1.5.2 Exploded box  
 
 The following tutorial shows how to explode a polysurface. This is what the final exploded box looks like:   
 
-<img src="{{ site.baseurl }}/images/math-image15.png">  
+<img src="{{ site.baseurl }}/images/math-image15.jpg">  
 
 **Input:**  
 
 Identify the input, which is a box. We will use the Box parameter in GH:
 
-<img src="{{ site.baseurl }}/images/math-image17.png">  
+<img src="{{ site.baseurl }}/images/math-image17.jpg">  
 
 **Parameters:**  
 
@@ -665,19 +715,282 @@ Identify the input, which is a box. We will use the Box parameter in GH:
 * The direction in which each face is moving.   
 
 
-<img src="{{ site.baseurl }}/images/math-image19.png">  
+<img src="{{ site.baseurl }}/images/math-image19.jpg">  
 
 Once we have identified the parameters, it is a matter of putting it together in a solution by piecing together the logical steps to reach an answer.
 
 **Solution:**
 
-1. Find the center of the box using the Box Properties component in GH:
+    1. Find the center of the box using the **Box Properties** component in GH:
 
+<img src="{{ site.baseurl }}/images/math-image21.png">  
 
+    2. Extract the box faces with the **Deconstruct Brep** component:
 
+<img src="{{ site.baseurl }}/images/math-image23.png">
+
+    3. The direction we move the faces is the tricky part. We need to first find the center of each face, and then define the direction from the center of the box towards the center of each face as follows:
+
+<img src="{{ site.baseurl }}/images/math-image25.png">
+
+    4. Once we have all the parameters scripted, we can use the **Move** component to move the faces in the appropriate direction. Just make sure to set the vectors to the desired amplitude, and you will be good to go.
+
+<img src="{{ site.baseurl }}/images/math-image27.png">
+
+The above steps can also be solved using VB script, C# or Python. Following is the solution using these scripting languages.
+
+Using the Grasshopper VB component:
+
+<img src="{{ site.baseurl }}/images/math-image29.png">
+
+```vb
+Private Sub RunScript(ByVal box As Brep, ByVal dis As Double, ByRef A As Object) 
+
+    'get the brep center
+    Dim area As Rhino.Geometry.AreaMassProperties
+    area = Rhino.Geometry.AreaMassProperties.Compute(box)
+
+    Dim box_center As Point3d
+    box_center = area.Centroid
+
+    'get a list of faces
+    Dim faces As Rhino.Geometry.Collections.BrepFaceList = box.Faces
+
+    'decalre variables
+    Dim center As Point3d
+    Dim dir As Vector3d
+    Dim exploded_faces As New List( Of Rhino.Geometry.Brep )
+    Dim i As Int32
+    'loop through all faces
+
+    For i = 0 To faces.Count() - 1
+      'extract each of the face
+      Dim extracted_face As Rhino.Geometry.Brep = box.Faces.ExtractFace(i)
+
+      'get the center of each face
+      area = Rhino.Geometry.AreaMassProperties.Compute(extracted_face)
+      center = area.Centroid
+
+      'calculate move direction (from box centroid to face center)
+      dir = center - box_center
+      dir.Unitize()
+      dir *= dis
+
+      'move the extracted face
+      extracted_face.Transform(Transform.Translation(dir))
+
+      'add to exploded_faces list
+      exploded_faces.Add(extracted_face)
+    Next
+
+    'assign exploded list of faces to output
+    A = exploded_faces
+  End Sub 
+```
+Using the Grasshopper Python component with RhinoCommon: 
+
+<img src="{{ site.baseurl }}/images/math-image4.png">
+
+```python
+import Rhino #import RhinoCommon module
+
+#find a point between A and B
+D = A + t * (B - A)
+
+#find mid point between A and D
+C1 = A + 0.5 * (D - A)
+
+#find mid point between D and B
+C2 = D + 0.5 * (B - D)
+
+#find spheres radius
+r1 = A.DistanceTo(C1)
+r2 = B.DistanceTo(C2)
+
+#create spheres and assign to output
+S1 = Rhino.Geometry.Sphere(C1, r1)
+S2 = Rhino.Geometry.Sphere(C2, r2)
+```
+
+Using the Grasshopper C# component:
+
+<img src="{{ site.baseurl }}/images/math-image2.png">
+
+```c#
+private void RunScript(Brep box, double dis, ref object A)
+{
+
+    //get the brep center
+  Rhino.Geometry.AreaMassProperties area =        Rhino.Geometry.AreaMassProperties.Compute(box);
+  Point3d box_center = area.Centroid;
+
+  //get a list of faces
+  Rhino.Geometry.Collections.BrepFaceList faces = box.Faces;
+
+  //decalre variables
+  Point3d center;   Vector3d dir;
+  List<Rhino.Geometry.Brep> exploded_faces = new List<Rhino.Geometry.Brep>();
+
+  //loop through all faces   for( int i = 0; i < faces.Count(); i++ )
+  {
+    //extract each of the face
+    Rhino.Geometry.Brep extracted_face = box.Faces.ExtractFace(i);
+
+    //get the center of each face
+    area = Rhino.Geometry.AreaMassProperties.Compute(extracted_face);
+    center = area.Centroid;
+
+    //calculate move direction (from box centroid to face center)
+    dir = center - box_center;
+    dir.Unitize();
+    dir *= dis;
+
+    //move the extracted face
+    extracted_face.Transform(Transform.Translation(dir));
+
+    //add to exploded_faces list
+    exploded_faces.Add(extracted_face);
+  }
+
+  //assign exploded list of faces to output
+  A = exploded_faces;
+}
+```
+
+### 1.5.3 Tangent spheres
+
+This tutorial will show how to create two tangent spheres between two input points. 
+This is what the result looks like:
+
+<img src="{{ site.baseurl }}/images/math-image5.png">
+
+**Input:**  
+Two points ($$A$$ and $$B$$) in the 3-D coordinate system.
+
+<img src="{{ site.baseurl }}/images/math-image6.png">
+
+Parameters:
+The following is a diagram of the parameters that we will need in order to solve the problem:
+$$A$$ tangent point $$D$$ between the two spheres, at some $$t$$ parameter (0-1) between points $$A$$ and $$B$$.
+
+* The center of the first sphere or the midpoint $$C1$$ between $$A$$ and $$D$$.  
+* The center of the second sphere or the midpoint $$C2$$ between $$D$$ and $$B$$.  
+* The radius of the first sphere $$(r1)$$ or the distance between $$A$$ and $$C1$$.  
+* The radius of the second sphere $$(r2)$$ or the distance between $$D$$ and $$C2$$.  
+
+**Solution:**
+
+ 1. Use the **Expression** component to definepoint $$D$$ between $$A$$ and $$B$$ atsome parameter $$t$$. The expression we will use is based onthe vector equation of a line:  
+
+\$$D = A + t*(B-A)$$  
+
+\$$B-A$$ : is the vector that goes from $$B$$ to $$A  (\vec{BA}) using the vector subtraction   operation.  
+
+\$$t*(B-A)$$ : where $$t$$ is between 0 and 1 to get us a location on the vector.  
+
+\$$A+t*(B-A)$$ : gets apoint on the vector between A and B.  
+
+<img src="{{ site.baseurl }}/images/math-image8.png">
+
+ 2. Use the Expression component to also define the mid points $$C1$$ and $$C2$$.  
+
+<img src="{{ site.baseurl }}/images/math-image9.png">  
+
+ 3. The first sphere radius $$(r1)$$ and the second sphere radius $$(r2)$$ can be calculated using the **Distance** component.  
+
+<img src="{{ site.baseurl }}/images/math-image10.png">  
+
+ 4. The final step involves creating the sphere from a base plane and radius. We need to make sure the origins are hooked to $$C1$$ and $$C2$$ and the radius from $$r1$$ and $$r2$$.  
+
+<img src="{{ site.baseurl }}/images/math-image54.png">  
+
+**Using the Grasshopper VB component:**  
+
+<img src="{{ site.baseurl }}/images/math-image56.png">  
+
+```vb
+Private Sub RunScript(ByVal A As Point3d, ByVal B As Point3d, ByVal t As Double, ByRef S1 As Object, ByRef S2 As Object) 
+
+  'declare variables
+  Dim D, C1, C2 As Rhino.Geometry.Point3d
+  Dim r1, r2 As Double
+
+  'find a point between A and B
+  D = A + t * (B - A)
+
+  'find mid point between A and D
+  C1 = A + 0.5 * (D - A)
+
+  'find mid point between D and B
+  C2 = D + 0.5 * (B - D)
+  'find spheres radius
+  r1 = A.DistanceTo(C1)
+  r2 = B.DistanceTo(C2)
+
+  'create spheres and assign to output
+  S1 = New Rhino.Geometry.Sphere(C1, r1)
+  S2 = New Rhino.Geometry.Sphere(C2, r2)
+
+End Sub 
+```
+
+Using Python component:
+
+<img src="{{ site.baseurl }}/images/math-image62.png"> 
+
+```python
+import Rhino
+
+#find a point between A and B
+D = A + t * (B - A)
+
+#find mid point between A and D
+C1 = A + 0.5 * (D - A)
+
+#find mid point between D and B
+C2 = D + 0.5 * (B - D)
+
+#find spheres radius
+r1 = A.DistanceTo(C1)
+r2 = B.DistanceTo(C2)
+
+#create spheres and assign to output
+S1 = Rhino.Geometry.Sphere(C1, r1)
+S2 = Rhino.Geometry.Sphere(C2, r2)
+```
+
+Using the Grasshopper C# component:
+
+<img src="{{ site.baseurl }}/images/math-image58.png"> 
+
+```c#
+private void RunScript(Point3d A, Point3d B, double t, ref object S1, ref object S2)
+{
+  //declare variables
+  Rhino.Geometry.Point3d D, C1, C2;
+  double r1, r2;
+
+  //find a point between A and B
+  D = A + t * (B - A);
+
+  //find mid point between A and D
+  C1 = A + 0.5 * (D - A);
+
+  //find mid point between D and B
+  C2 = D + 0.5 * (B - D);
+
+  //find spheres radius
+  r1 = A.DistanceTo(C1);
+  r2 = B.DistanceTo(C2);
+
+  //create spheres and assign to output
+  S1 = new Rhino.Geometry.Sphere(C1, r1);
+  S2 = new Rhino.Geometry.Sphere(C2, r2);
+}
+```
 
 ---
 
 ## Next Steps
 
-Now that you know what a scripting language is, check out the [Python Essentials]({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/) guide to learn more about the Python language.
+Now that you know vector math, check out the [Matrices and Trransformations]({{ site.baseurl }}/guides/general/essential_math/matrices-transformations/) guide to learn more about the moving, rotating and scaling objects..
