@@ -62,7 +62,7 @@ The main property of the identity matrix is that if it is multiplied by any othe
 
 Most transformations preserve the parallel relationship among the parts of the geometry. For example collinear points remain collinear after the transformation. Also points on one plane stay coplanar after transformation. This type of transformation is called an *affine* transformation.  
 
-## Translation (move) transformation
+### Translation (move) transformation
 
 Moving a point from a starting position by certain a vector can be calculated as follows:
 
@@ -98,7 +98,6 @@ If we use the matrix form and multiply the translation matrix by the input point
 
 Similarly, any geometry is translated by multiplying its construction points by the translation matrix. For example, if we have a box that is defined by eight corner points, and we want to move it 4 units in the x-direction, 5 units in the y-direction and 3 units in the z- direction, we must multiply each of the eight box corner points by the following translation matrix to get the new box.  
 
-
 \$$\begin{bmatrix}1 & 0 & 0 & 4 0 & 1 & 0 & 5 \\0 & 0 & 1 & 3 \\0 & 0 & 0 & 1 \\\end{bmatrix}$$   
 
 <figure>
@@ -109,7 +108,6 @@ Similarly, any geometry is translated by multiplying its construction points by 
 ### Rotation transformation
 
 This section shows how to calculate rotation around the z-axis and the origin point using trigonometry, and then to deduce the general matrix format for the rotation. 
-
 
 ![{{ site.baseurl }}/images/math-image39.png]({{ site.baseurl }}/images/math-image39.png){: .float-img-right width="275"}   
 
@@ -128,20 +126,134 @@ Using Eq 1 and 2:
 
 The rotation matrix around the **z-axis** looks like:  
 
-\$$\begin{bmatrix}\color{red}{\cos{b}} & \color{red}{-\sin{b}} & 0 & 0 \\\color{red}{\sin{b}} & \color{red}{\cos{b}} & 0 & 0 \\0 & 0 & 1 & 0 \\0 & 0 & 0 & 1 \\\end{bmatrix}$$  
+\$$\begin{bmatrix}\color{red}{\cos{b}} & \color{red}{-\sin{b}} & 0 & 0 \\\color{red}{\sin{b}} & \color{red}{\cos{b}} & 0 & 0 \\0 & 0 & 1 & 0 \\0 & 0 & 0 & 1 \\\end{bmatrix}$$   
+
+The rotation matrix around the **x-axis** by angle $$b$$ looks like:  
+
+\$$\begin{bmatrix}1 & 0 & 0 & 0 \\0 & \color{red}{\cos{b}} & \color{red}{-\sin{b}} & 0 \\0 & \color{red}{\sin{b}} & \color{red}{\cos{b}} & 0 \\0 & 0 & 0 & 1 \\\end{bmatrix}$$   
+
+The rotation matrix around the **y-axis** by angle $$b$$ looks like:  
+
+\$$\begin{bmatrix}\color{red}{\cos{b}} &0 & \color{red}{\sin{b}} & 0 \\0 & 1 & 0 & 0 \\\color{red}{-\sin{b}} & 0 &\color{red}{\cos{b}} & 0 \\0 & 0 & 0 & 1 \\\end{bmatrix}$$   
+
+For example, if we have a box and would like to rotate it 30 degrees, we need the following:  
+
+  1. Construct the 30-degree rotation matrix. Using the generic form and the cos and sin values of 30-degree angle, the rotation matrix will look like the following:  
+
+\$$\begin{bmatrix}0.87 & -0.5 & 0 & 0 \\0.5 & 0.87 & 0 & 0 \\0 & 0 & 1 & 0 \\0 & 0 & 0 & 1 \\\end{bmatrix}$$   
+
+  2. Multiply the rotation matrix by the input geometry, or in the case of a box, multiply by each of the corner points to find the box's new location.  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image41.png">
+   <figcaption>Figure (20): Rotate geometry.</figcaption>
+</figure>  
+
+### Scale transformation
+
+In order to scale geometry, we need a scale factor and a center of scale. The scale factor can be uniform scaling equally in x-, y-, and z-directions, or can be unique for each dimension.   
+
+Scaling a point can use the following equation:  
+&nbsp; $$P' = ScaleFactor(S) * P  
+Or:  
+&nbsp; $$P'.x = Sx * P.x$$  
+&nbsp; $$P'.y = Sy * P.y$$  
+&nbsp; $$P'.z = Sz * P.z$$  
+
+This is the matrix format for scale transformation, assuming that the center of scale is the World origin point (0,0,0).  
+
+\$$\begin{bmatrix}\color{red}{Scale-x} & 0 & 0 & 0 \\0 & \color{red}{Scale-y} & 0 & 0 \\0 & 0 & \color{red}{Scale-z} & 0 \\0 & 0 & 0 & 1 \\\end{bmatrix}$$  
+
+For example, if we would like to scale a box by 0.25 relative to the World origin, the scale matrix will look like the following:
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image43.png">
+   <figcaption>Figure (21): Scale geometry</figcaption>
+</figure>  
+
+### Shear transformation  
+
+Shear in 3‑D is measured along a pair of axes relative to a third axis. For example, a shear along a z‑axis will not change geometry along that axis, but will alter it along x and y. Here are few examples of shear matrices:
+
+1. Shear in x and z, keeping the y-coordinate fixed:
 
 
+![{{ site.baseurl }}/images/math-image45.png]({{ site.baseurl }}/images/math-image45.png){: .float-img-left width="100"}   
+
+\$$\begin{bmatrix}1.0 &\color{red}{0.5} & 0.0 & 0.0 \\ 0.0 & 1.0 & 0.0 & 0.0 \\ 0.0 & 0.0 & 1.0 & 0.0 \\ 0.0 &  0.0 & 0.0 & 1.0 \\\end{bmatrix}$$   
+
+
+&nbsp;{: .clear-img}  
+
+![{{ site.baseurl }}/images/math-image47.png]({{ site.baseurl }}/images/math-image47.png){: .float-img-left width="100"}    
+
+\$$\begin{bmatrix}1.0 & 0.0 & 0.0 & 0.0 \\ 0.0 & 1.0 & 0.0 & 0.0 \\ 0.0 &\color{red}{0.5} & 1.0 & 0.0 \\ 0.0 &  0.0 & 0.0 & 1.0 \\\end{bmatrix}$$   
+
+&nbsp;{: .clear-img}  
+
+2. Shear in y and z, keeping the x-coordinate fixed:  
+
+
+![{{ site.baseurl }}/images/math-image49.png]({{ site.baseurl }}/images/math-image49.png){: .float-img-left width="100"}   
+
+\$$\begin{bmatrix}1.0 & \color{red}{0.5} & 0.0 & 0.0 \\ 0.0 & 1.0 & 0.0 & 0.0 \\ 0.0 & 0.0 & 1.0 & 0.0 \\ 0.0 &  0.0 & 0.0 & 1.0 \\\end{bmatrix}$$   
+
+
+&nbsp;{: .clear-img}  
+
+![{{ site.baseurl }}/images/math-image50.png]({{ site.baseurl }}/images/math-image50.png){: .float-img-left width="100"}    
+
+\$$\begin{bmatrix}1.0 & 0.0 & 0.0 & 0.0 \\ 0.0 & 1.0 & 0.0 & 0.0 \\ 0.0 & \color{red}{0.5} & 1.0 & 0.0 \\ 0.0 &  0.0 & 0.0 & 1.0 \\\end{bmatrix}$$   
+
+&nbsp;{: .clear-img}  
+
+3. Shear in x and y, keeping the z-coordinate fixed: 
+
+![{{ site.baseurl }}/images/math-image32.png]({{ site.baseurl }}/images/math-image32.png){: .float-img-left width="100"}   
+
+\$$\begin{bmatrix}1.0 & 0.0 & \color{red}{0.5} & 0.0 \\ 0.0 & 1.0 & 0.0 & 0.0 \\ 0.0 & 0.0 & 1.0 & 0.0 \\ 0.0 &  0.0 & 0.0 & 1.0 \\\end{bmatrix}$$   
+
+
+&nbsp;{: .clear-img}  
+
+![{{ site.baseurl }}/images/math-image33.png]({{ site.baseurl }}/images/math-image33.png){: .float-img-left width="100"}    
+
+\$$\begin{bmatrix}1.0 & 0.0 & 0.0 & 0.0 \\ 0.0 & 1.0 & \color{red}{0.5} & 0.0 \\ 0.0 & 0.0 & 1.0 & 0.0 \\ 0.0 &  0.0 & 0.0 & 1.0 \\\end{bmatrix}$$   
+
+&nbsp;{: .clear-img}  
+
+### Mirror or reflection transformation
+
+The mirror transformation creates a reflection of an object across a line or a plane. 2-D objects are mirrored across a line, while 3-D objects are mirrored across a plane. Keep in mind that the mirror transformation flips the normal direction of the geometry faces.  
+
+<figure>
+   <img src="{{ site.baseurl }}/images/math-image98.png">
+   <figcaption>Figure (23): Mirror matrix across World xy-plane. Face directions are flipped.</figcaption>
+</figure>  
+
+### Planar Projection transformation
+
+Intuitively, the projection point of a given 3-D point $$P(x,y,z)$$ on the world xy-plane equals $$Pxy(x,y,0)$$ setting the z value to zero. Similarly, a projection to xz-plane of point P is $$Pxz(x,0,z)$$. When projecting to yz-plane, $$Pxz = (0,y,z)$$. Those are called orthogonal projectionsi.   
+
+If we have a curve as an input, and we apply the planar projection transformation, we get a curve projected to that plane. The following shows an example of a curve projected to xy‑plane with the matrix format.  
+
+Note: NURBS curves (explained in the next chapter) use control points to define curves. Projecting a curve amounts to projecting its control points.  
+
+![{{ site.baseurl }}/images/math-image100.png]({{ site.baseurl }}/images/math-image100.png){: .float-img-left width="175"}    
+
+\$$\begin{bmatrix}1.0 & 0.0 & 0.0 & 0.0 \\ 0.0 & 1.0 & 0.0 & 0.0 \\ 0.0 & 0.0 & \color{red}{0.0} & 0.0 \\ 0.0 &  0.0 & 0.0 & 1.0 \\\end{bmatrix}$$   
+
+![{{ site.baseurl }}/images/math-image102.png]({{ site.baseurl }}/images/math-image102.png){: .float-img-left width="175"}    
+
+\$$\begin{bmatrix}1.0 & 0.0 & 0.0 & 0.0 \\ 0.0 & \color{red}{0.0} & 0.0 & 0.0 \\ 0.0 & 0.0 & 1.0 & 0.0 \\ 0.0 &  0.0 & 0.0 & 1.0 \\\end{bmatrix}$$   
+
+![{{ site.baseurl }}/images/math-image104.png]({{ site.baseurl }}/images/math-image104.png){: .float-img-left width="175"}    
+
+\$$\begin{bmatrix} \color{red}{0.0} & 0.0 & 0.0 & 0.0 \\ 0.0 & 1.0 & 0.0 & 0.0 \\ 0.0 & 0.0 & 1.0 & 0.0 \\ 0.0 &  0.0 & 0.0 & 1.0 \\\end{bmatrix}$$   
 
 
 ## Next Steps
 
-Now that you know vector math, check out the [Matrices and Trransformations]({{ site.baseurl }}/guides/general/essential_math/matrices-transformations/) guide to learn more about the moving, rotating and scaling objects..  
+Now that you know more about matrices and trasnformasion, check out the [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/) guide to learn more about the detailed structure of NURBS curves and surfaces.  
 
 --
-
-\$$\begin{bmatrix}+ & + & + & + \\+ & + & + & + \\+ & + & + & + \\+ & + & + & + \\\end{bmatrix}$$    
-
-$$\left[\begin{array}{cr} 1&a_{1,(1\cdot11)}&a_{1,(2\cdot11)}\\ 2&a_{1,(1\cdot11)}&?\end{array}\right]$$  
-
-
-\$$\begin{bmatrix}a & b & c & d \\e & f & g & h \\i & j & k & l \\0 & 0 & 0 & 1 \\\end{bmatrix}*\begin{bmatrix}x \\y\\z\\1 \\\end{bmatrix}= \begin{bmatrix}x' \\y'\\z'\\1 \\\end{bmatrix}$$     
