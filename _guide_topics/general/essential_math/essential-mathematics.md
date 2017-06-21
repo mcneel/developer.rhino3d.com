@@ -20,7 +20,7 @@ Robert McNeel & Associate
 <tbody>  
 <tr>  
 <td width="30%">  
-  1. <a href="{{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/">Vector Mathematics</a>  
+  1. <a href="{{ site.baseurl }}/guides/general/essential_math/vector-mathematics/">Vector Mathematics</a>  
     <ol><li>1.1 Vector representation</li>   
         <ul> <li>Position vector</li>  
         <li>Vectors vs. points</li>  
@@ -46,7 +46,7 @@ Robert McNeel & Associate
 	</ol>
 </td>
 <td width="30%">
-   2. <a href="{{ site.baseurl }}/guides/rhinopython/primer-101/4-operators-and-functions/">Matrices and Transformations</a>
+   2. <a href="{{ site.baseurl }}/guides/general/essential_math/matrices-transformations/">Matrices and Transformations</a>
     <ol><li>2.1 Matrix operations</li> 
         <ul><li>Matrix multiplication</li>  
             <li>Identity matrix</li></ul> 
@@ -60,7 +60,7 @@ Robert McNeel & Associate
     </ol>			
 </td>
 <td>
-   3. <a href="{{ site.baseurl }}/guides/rhinopython/primer-101/7-classes/">Parametric Curves and Surfaces</a>
+   3. <a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/">Parametric Curves and Surfaces</a>
     <ol><li>3.1 Parametric curves</li>    
         <ul><li>Curve parameter</li>    
             <li>Curve domain or interval</li>    
