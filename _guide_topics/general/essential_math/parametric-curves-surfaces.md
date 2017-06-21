@@ -666,6 +666,8 @@ Surfaces with zero mean curvature everywhere are minimal surfaces. Physical proc
 
 Surfaces with constant mean curvature everywhere are often referred to as constant mean curvature (CMC) surfaces. CMC surfaces include the formation of soap bubbles, both free and attached to objects. A soap bubble, unlike a simple soap film, encloses a volume and exists in equilibrium where slightly greater pressure inside the bubble is balanced by the area-minimizing forces of the bubble itself.  
 
+## 3.8 NURBS surfaces
+
 You can think of NURBS surfaces as a grid of NURBS curves that go in two directions. The shape of a NURBS surface is defined by a number of control points and the degree of that surface in each one of the two directions (u- and v-directions). NURBS surfaces are efficient for storing and representing free-form surfaces with a high degree of accuracy. The mathematical equations and details of NURBS surfaces are beyond the scope of this text. We will only focus on the characteristics that are most useful for designers.  
 
 <figure>
@@ -760,7 +762,7 @@ NURBS surfaces can be trimmed or untrimmed. Trimmed surfaces use an underlying N
    <figcaption>Figure (65): Trimmed surface in modeling space (left) and in parameter rectangle (right).</figcaption>
 </figure>  
 
-## 3.8 Polysurfaces
+## 3.9 Polysurfaces
 
 A polysurface consists of two or more(possibly trimmed) NURBS surfaces joined together. Each surface hasits own structure, parameterization, and isocurve directions that donot have to match. Polysurfaces are represented using the boundaryrepresentation (*BRep*). The BRep structure describes surfaces,edges, and vertices with trimming data and connectivity amongdifferent parts. Trimmed surface are also represented using BRep datastructure.
 
@@ -813,11 +815,11 @@ Another challenge is that there is typically less control over the outcome, espe
 
 Trimmed surfaces are described in parameter space using the untrimmed underlying surface combined with the 2-D trim curves that evaluate to the 3-D edges within the 3-D surface.  
 
-## 3.9 Tutorials
+## 3.10 Tutorials
 
 The following tutorials use the concepts learned in this chapter. They use Rhinoceros 5 and Grasshopper 0.9.  
 
-### 3.9.1 Continuity between curves
+### 3.10.1 Continuity between curves
 
 Examine the continuity between two input curves. Continuity assumes that the curves meet at the end of the first curve and the start of the second curve.  
 
@@ -1030,7 +1032,7 @@ Private Sub RunScript(ByVal c1 As Curve, ByVal c2 As Curve, ByRef A As Object)
 End Sub 
 ```
 
-### 3.8.2 Surfaces with singularity
+### 3.10.2 Surfaces with singularity
 
 Extract singular points in a sphere and a cone.  
 

@@ -20,13 +20,13 @@ Robert McNeel & Associate
 <tbody>  
 <tr>  
 <td width="30%">  
-  1. <a href="{{ site.baseurl }}/guides/general/essential_math/vector-mathematics/">Vector Mathematics</a>  
-    <ol><li>1.1 Vector representation</li>   
+  1.<a href="{{ site.baseurl }}/guides/general/essential_math/vector-mathematics/">Vector Mathematics</a>  
+    <ol><li><a href="{{ site.baseurl }}/guides/general/essential_math/vector-mathematics/#11-vector-representation">1.1 Vector representation</a></li>   
         <ul> <li>Position vector</li>  
         <li>Vectors vs. points</li>  
         <li>Vector length</li>  
         <li>Unit vector</li></ul>   
-    <li>1.2 Vector operations</li>   
+    <li><a href="{{ site.baseurl }}/guides/general/essential_math/vector-mathematics/#12-vector-operations">1.2 Vector operations</a></li>   
         <ul><li>Vector scalar operation</li>  
       	<li>Vector addition</li>   
         <li>Vector subtraction</li>  
@@ -36,10 +36,10 @@ Robert McNeel & Associate
         <li>Dot product properties</li>   
         <li>Vector cross product</li>  
         <li>Cross product and angle between vectors</li>   
-        <li>Cross product properties</li> 
-        <li>Vector equation of line</li></ul>   
-   <li>1.4 Vector equation of a plane</li>  
-   <li>1.5 Tutorials</li>  
+        <li>Cross product properties</li></ul>  
+   <li><a href="{{ site.baseurl }}/guides/general/essential_math/vector-mathematics/#13-vector-equation-of-line">1.3 Vector equation of line</a></li>
+   <li><a href="{{ site.baseurl }}/guides/general/essential_math/vector-mathematics/#14-vector-equation-of-a-plane">1.4 Vector equation of a plane</a></li>  
+   <li><a href="{{ site.baseurl }}/guides/general/essential_math/vector-mathematics/#15-tutorials">1.5 Tutorials</a></li>  
       <ul><li>Face direction</li>  
         <li>Exploded box</li>
         <li>Tangent spheres</li></ul>  
@@ -47,10 +47,10 @@ Robert McNeel & Associate
 </td>
 <td width="30%">
    2. <a href="{{ site.baseurl }}/guides/general/essential_math/matrices-transformations/">Matrices and Transformations</a>
-    <ol><li>2.1 Matrix operations</li> 
+    <ol><li><a href="{{ site.baseurl }}/guides/general/essential_math/matrices-transformations/#21-matrix-operations">2.1 Matrix operations</a></li> 
         <ul><li>Matrix multiplication</li>  
             <li>Identity matrix</li></ul> 
-    <li>2.2 Transformation operations</li> 
+    <li><a href="{{ site.baseurl }}/guides/general/essential_math/matrices-transformations/#22-transformation-operations">2.2 Transformation operations</a></li> 
         <ul><li>Translation (move) transformation </li>  
             <li>Rotation transformation</li>   
             <li>Scale transformation</li>   
@@ -61,14 +61,14 @@ Robert McNeel & Associate
 </td>
 <td>
    3. <a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/">Parametric Curves and Surfaces</a>
-    <ol><li>3.1 Parametric curves</li>    
+    <ol><li><a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/#31-parametric-curves">3.1 Parametric curves</a></li>    
         <ul><li>Curve parameter</li>    
             <li>Curve domain or interval</li>    
             <li>Curve evaluation</li>    
             <li>Tangent vector to a curve</li>    
             <li>Cubic polynomial curves</li>    
             <li>Evaluating cubic Bézier curves</li></ul>    
-    <li>3.2 NURBS curves</li> 
+    <li><a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/#32-nurbs-curves">3.2 NURBS curves</a></li> 
         <ul><li>Degree</li>  
             <li>Control points</li>  
             <li>Weights of control points</li>  
@@ -77,24 +77,24 @@ Robert McNeel & Associate
             <li>Evaluation rule</li>  
             <li>Characteristics of NURBS curves</li>  
             <li>Evaluating NURBS curves</li></ul>  
-    <li>3.3 Curve geometric continuity</li>   
-    <li>3.4Curve curvature</li>   
-    <li>3.5Parametric surfaces</li>   
+    <li><a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/#33-curve-geometric-continuity">3.3 Curve geometric continuity</a></li>   
+    <li><a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/#34-curve-curvature">3.4Curve curvature</a></li>   
+    <li><a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/#35-parametric-surfaces">3.5Parametric surfaces</a></li>   
         <ul><li>Surface parameters</li>   
             <li>Surface domain</li>   
             <li>Surface evaluation</li>   
             <li>Tangent plane of a surface</li></ul>  
-    <li>3.6 Surface geometric continuity</li>     
-    <li>3.7 Surface curvature</li>     
+    <li><a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/#36-surface-geometric-continuity">3.6 Surface geometric continuity</a></li>     
+    <li><a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/#37-surface-curvature">3.7 Surface curvature</a></li>     
         <ul><li>Principal curvatures</li>   
             <li>Gaussian curvature</li>   
             <li>Mean curvature</li></ul>   
-    <li>3.8 NURBS surfaces</li>     
+    <li><a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/#38-nurbs-surfaces">3.8 NURBS surfaces</a></li>     
         <ul><li>Characteristics of NURBS surfaces</li>   
             <li>Singularity in NURBS surfaces</li>   
             <li>Trimmed NURBS surfaces</li></ul>   
-    <li>3.9 Polysurfaces</li>     
-    <li>3.10 Tutorials</li>     
+    <li><a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/#39-polysurfaces">3.9 Polysurfaces</a></li>     
+    <li><a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/#310-tutorials">3.10 Tutorials</a></li>     
         <ul><li>Continuity between curves</li>   
             <li>Surfaces with singularity</li></ul>
     </ul>			
