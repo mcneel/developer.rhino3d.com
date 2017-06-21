@@ -97,7 +97,7 @@ Robert McNeel & Associate
     <li><a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/#310-tutorials">3.10 Tutorials</a></li>     
         <ul><li>Continuity between curves</li>   
             <li>Surfaces with singularity</li></ul>
-    </ul>			
+    </ol>			
 </td>
 </tr>
 </tbody>
