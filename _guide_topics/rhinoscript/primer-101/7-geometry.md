@@ -1850,14 +1850,14 @@ The last bit of code we need to write is a bit more extensive then we've done so
 UI code tends to be very beefy, but it rarely is complex. It's just irksome to write because it always looks exactly the same. In order to make a solid command-line interface for your script you have to do the following:
 
 1. Reserve a place where you store all your preview geometry
-1. Initialize all settings with sensible values
-1. Create all preview geometry using the default settings
-1. Display the command line options
-1. Parse the result (be it escape, enter or an option or value string)
-1. Select case through all your options
-1. If the selected option is a setting (as opposed to options like "Cancel" or "Accept") then display a prompt for that setting
-1. Delete all preview geometry
-1. Generate new preview geometry using the changed settings.
+2. Initialize all settings with sensible values
+3. Create all preview geometry using the default settings
+4. Display the command line options
+5. Parse the result (be it escape, enter or an option or value string)
+6. Select case through all your options
+7. If the selected option is a setting (as opposed to options like "Cancel" or "Accept") then display a prompt for that setting
+8. Delete all preview geometry
+9. Generate new preview geometry using the changed settings.
 
 
 ```vb
@@ -1970,8 +1970,8 @@ Instead of treating a surface as a deformation of a rectangular nurbs patch, mes
 It is important to understand the pros and cons of meshes over alternative surface paradigms, so you can make an informed decision about which one to use for a certain task. Most differences between meshes and nurbs are self-evident and flow from the way in which they are defined. For example, you can delete any number of polygons from the mesh and still have a valid object, whereas you cannot delete knot spans without breaking apart the nurbs geometry. There's a number of things to consider which are not implied directly by the theory though. 
 
 1. Coordinates of mesh vertices are stored as single precision numbers in Rhino in order to save memory consumption. Meshes are therefore less accurate entities than nurbs objects. This is especially notable with objects that are very small, extremely large or very far away from the world origin. Mesh objects go hay-wire sooner than nurbs objects because single precision numbers have larger gaps between them than double precision numbers (see page 6). 
-1. Nurbs cannot be shaded, only the isocurves and edges of nurbs geometry can be drawn directly in the viewport. If a nurbs surface has to be shaded, then it has to fall back on meshes. This means that inserting nurbs surfaces into a shaded viewport will result in a significant (sometimes very significant) time lag while a mesh representation is calculated.
-1. Meshes in Rhino can be non-manifold, meaning that more than two faces share a single edge. Although it is not technically impossible for nurbs to behave in this way, Rhino does not allow it. Non-manifold shapes are topologically much harder to deal with. If an edge belongs to only a single face it is an exterior edge (naked), if it belongs to two faces it is considered interior.
+2. Nurbs cannot be shaded, only the isocurves and edges of nurbs geometry can be drawn directly in the viewport. If a nurbs surface has to be shaded, then it has to fall back on meshes. This means that inserting nurbs surfaces into a shaded viewport will result in a significant (sometimes very significant) time lag while a mesh representation is calculated.
+3. Meshes in Rhino can be non-manifold, meaning that more than two faces share a single edge. Although it is not technically impossible for nurbs to behave in this way, Rhino does not allow it. Non-manifold shapes are topologically much harder to deal with. If an edge belongs to only a single face it is an exterior edge (naked), if it belongs to two faces it is considered interior.
 
 ### 7.8.1 Geometry vs. Topology
 

@@ -68,9 +68,9 @@ vec.Y = 45.0 # Sets the Y coordinate to 45.0
 print(vec) #Print the new coordinates
 ```
 
-A vector subtraction may also be used to create a vector between two points. This is a very cool method:
+A vector subtraction may also be used to find the vector between two points. This is a very cool method:
 
-![{{ site.baseurl }}/images/image180.png]({{ site.baseurl }}/images/image180.png){:  .float-img-right  }
+![{{ site.baseurl }}/images/image180.png]({{ site.baseurl }}/images/math-image180.png){:  .float-img-right  }
 
 ```python
 point1 = [1,2,3]
@@ -86,7 +86,7 @@ The key to understanding the vector is that this vector goes from point1 to poin
 
 Vectors can also be added to points to create new point locations.  Here is an example of moving a point location by a vector:
 
-![{{ site.baseurl }}/images/image172.png]({{ site.baseurl }}/images/image172.png){:  .float-img-right  }
+![{{ site.baseurl }}/images/image172.png]({{ site.baseurl }}/images/math-image172.png){:  .float-img-right  }
 
 ```python
 #  A base point
