@@ -16,79 +16,89 @@ Robert McNeel & Associate
 
 ### Table of Contents
 
-### 1. [Vector Mathematics ]({{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/) 
-
-   1.1 Vector representation  
-&nbsp;&nbsp;   Position vector  
-&nbsp;&nbsp;   Vectors vs. points  
-&nbsp;&nbsp;   Vector length  
-&nbsp;&nbsp;   Unit vector  
-   1.2 Vector operations  
-&nbsp;&nbsp;   Vector scalar operation  
-&nbsp;&nbsp;   Vector addition  
-&nbsp;&nbsp;   Vector subtraction  
-&nbsp;&nbsp;   Vector properties  
-&nbsp;&nbsp;   Vector dot product  
-&nbsp;&nbsp;   Vector dot product, lengths, and angles  
-&nbsp;&nbsp;   Dot product properties  
-&nbsp;&nbsp;   Vector cross product  
-&nbsp;&nbsp;   Cross product and angle between vectors  
-&nbsp;&nbsp;   Cross product properties  
-   1.3 Vector equation of line  
-   1.4 Vector equation of a plane  
-   1.5 Tutorials  
-&nbsp;&nbsp;   Face direction  
-&nbsp;&nbsp;   Exploded box  
-&nbsp;&nbsp;   Tangent spheres  
-
-### 2. [Matrices and Transformations]({{ site.baseurl }}/guides/rhinopython/primer-101/4-operators-and-functions/)
-
-   2.1 Matrix operations  
-&nbsp;&nbsp;   Matrix multiplication  
-&nbsp;&nbsp;   Identity matrix  
-   2.2 Transformation operations  
-&nbsp;&nbsp;   Translation (move) transformation  
-&nbsp;&nbsp;   Rotation transformation  
-&nbsp;&nbsp;   Scale transformation  
-&nbsp;&nbsp;   Shear transformation  
-&nbsp;&nbsp;   Mirror or reflection transformation  
-&nbsp;&nbsp;   Planar Projection transformation  
-
-### 3. [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/rhinopython/primer-101/7-classes/)
-
-   3.1 Parametric curves  
-&nbsp;&nbsp;   Curve parameter  
-&nbsp;&nbsp;   Curve domain or interval  
-&nbsp;&nbsp;   Curve evaluation  
-&nbsp;&nbsp;   Tangent vector to a curve  
-&nbsp;&nbsp;   Cubic polynomial curves  
-&nbsp;&nbsp;   Evaluating cubic Bézier curves  
-   3.2 NURBS curves  
-&nbsp;&nbsp;   Degree  
-&nbsp;&nbsp;   Control points  
-&nbsp;&nbsp;   Weights of control points  
-&nbsp;&nbsp;   Knots  
-&nbsp;&nbsp;   Knots are parameter values  
-&nbsp;&nbsp;   Evaluation rule  
-&nbsp;&nbsp;   Characteristics of NURBS curves  
-&nbsp;&nbsp;   Evaluating NURBS curves  
-   3.3 Curve geometric continuity  
-   3.4Curve curvature  
-   3.5Parametric surfaces  
-&nbsp;&nbsp;   Surface parameters  
-&nbsp;&nbsp;   Surface domain  
-&nbsp;&nbsp;   Surface evaluation  
-&nbsp;&nbsp;   Tangent plane of a surface  
-   3.6 Surface geometric continuity  
-   3.7 Surface curvature  
-&nbsp;&nbsp;   Principal curvatures  
-&nbsp;&nbsp;   Gaussian curvature  
-&nbsp;&nbsp;   Mean curvature  
-   3.8 NURBS surfaces  
-&nbsp;&nbsp;   Characteristics of NURBS surfaces  
-&nbsp;&nbsp;   Singularity in NURBS surfaces  
-&nbsp;&nbsp;   Trimmed NURBS surfaces  
-   3.9 Polysurfaces  
-   3.10 Tutorials  
-&nbsp;&nbsp;   Continuity between curves  
-&nbsp;&nbsp;   Surfaces with singularity  
+<table id="math_table">  
+<tbody>  
+<tr>  
+<td width="30%">  
+  1. <a href="{{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/">Vector Mathematics</a>  
+    <ol><li>1.1 Vector representation</li>   
+        <ul> <li>Position vector</li>  
+        <li>Vectors vs. points</li>  
+        <li>Vector length</li>  
+        <li>Unit vector</li></ul>   
+    <li>1.2 Vector operations</li>   
+        <ul><li>Vector scalar operation</li>  
+      	<li>Vector addition</li>   
+        <li>Vector subtraction</li>  
+        <li>Vector properties</li>
+        <li>Vector dot product</li>  
+        <li>Vector dot product, lengths, and angles</li>   
+        <li>Dot product properties</li>   
+        <li>Vector cross product</li>  
+        <li>Cross product and angle between vectors</li>   
+        <li>Cross product properties</li> 
+        <li>Vector equation of line</li></ul>   
+   <li>1.4 Vector equation of a plane</li>  
+   <li>1.5 Tutorials</li>  
+      <ul><li>Face direction</li>  
+        <li>Exploded box</li>
+        <li>Tangent spheres</li></ul>  
+	</ol>
+</td>
+<td width="30%">
+   2. <a href="{{ site.baseurl }}/guides/rhinopython/primer-101/4-operators-and-functions/">Matrices and Transformations</a>
+    <ol><li>2.1 Matrix operations</li> 
+        <ul><li>Matrix multiplication</li>  
+            <li>Identity matrix</li></ul> 
+    <li>2.2 Transformation operations</li> 
+        <ul><li>Translation (move) transformation </li>  
+            <li>Rotation transformation</li>   
+            <li>Scale transformation</li>   
+            <li>Shear transformation</li>   
+            <li>Mirror or reflection transformation</li>   
+            <li>Planar Projection transformation</li></ul>
+    </ol>			
+</td>
+<td>
+   3. <a href="{{ site.baseurl }}/guides/rhinopython/primer-101/7-classes/">Parametric Curves and Surfaces</a>
+    <ol><li>3.1 Parametric curves</li>    
+        <ul><li>Curve parameter</li>    
+            <li>Curve domain or interval</li>    
+            <li>Curve evaluation</li>    
+            <li>Tangent vector to a curve</li>    
+            <li>Cubic polynomial curves</li>    
+            <li>Evaluating cubic Bézier curves</li></ul>    
+    <li>3.2 NURBS curves</li> 
+        <ul><li>Degree</li>  
+            <li>Control points</li>  
+            <li>Weights of control points</li>  
+            <li>Knots</li>  
+            <li>Knots are parameter values</li>  
+            <li>Evaluation rule</li>  
+            <li>Characteristics of NURBS curves</li>  
+            <li>Evaluating NURBS curves</li></ul>  
+    <li>3.3 Curve geometric continuity</li>   
+    <li>3.4Curve curvature</li>   
+    <li>3.5Parametric surfaces</li>   
+        <ul><li>Surface parameters</li>   
+            <li>Surface domain</li>   
+            <li>Surface evaluation</li>   
+            <li>Tangent plane of a surface</li></ul>  
+    <li>3.6 Surface geometric continuity</li>     
+    <li>3.7 Surface curvature</li>     
+        <ul><li>Principal curvatures</li>   
+            <li>Gaussian curvature</li>   
+            <li>Mean curvature</li></ul>   
+    <li>3.8 NURBS surfaces</li>     
+        <ul><li>Characteristics of NURBS surfaces</li>   
+            <li>Singularity in NURBS surfaces</li>   
+            <li>Trimmed NURBS surfaces</li></ul>   
+    <li>3.9 Polysurfaces</li>     
+    <li>3.10 Tutorials</li>     
+        <ul><li>Continuity between curves</li>   
+            <li>Surfaces with singularity</li></ul>
+    </ul>			
+</td>
+</tr>
+</tbody>
+</table>

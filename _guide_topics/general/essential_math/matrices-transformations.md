@@ -138,11 +138,11 @@ The rotation matrix around the **y-axis** by angle $$b$$ looks like:
 
 For example, if we have a box and would like to rotate it 30 degrees, we need the following:  
 
-  1. Construct the 30-degree rotation matrix. Using the generic form and the cos and sin values of 30-degree angle, the rotation matrix will look like the following:  
+    1. Construct the 30-degree rotation matrix. Using the generic form and the cos and sin values of 30-degree angle, the rotation matrix will look like the following:  
 
 \$$\begin{bmatrix}0.87 & -0.5 & 0 & 0 \\0.5 & 0.87 & 0 & 0 \\0 & 0 & 1 & 0 \\0 & 0 & 0 & 1 \\\end{bmatrix}$$   
 
-  2. Multiply the rotation matrix by the input geometry, or in the case of a box, multiply by each of the corner points to find the box's new location.  
+    2. Multiply the rotation matrix by the input geometry, or in the case of a box, multiply by each of the corner points to find the box's new location.  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image41.png">
@@ -154,8 +154,11 @@ For example, if we have a box and would like to rotate it 30 degrees, we need th
 In order to scale geometry, we need a scale factor and a center of scale. The scale factor can be uniform scaling equally in x-, y-, and z-directions, or can be unique for each dimension.   
 
 Scaling a point can use the following equation:  
-&nbsp; $$P' = ScaleFactor(S) * P  
+
+&nbsp; $$P' = ScaleFactor(S) * P$$  
+
 Or:  
+
 &nbsp; $$P'.x = Sx * P.x$$  
 &nbsp; $$P'.y = Sy * P.y$$  
 &nbsp; $$P'.z = Sz * P.z$$  

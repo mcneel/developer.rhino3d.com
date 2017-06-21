@@ -216,8 +216,8 @@ code {
 }
 
 figcaption {
-	margin-bottom: 10px;
-	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 /*
@@ -260,6 +260,42 @@ tbody.index_table tr td{
 	margin:10px;
 	font-size:1.0em;
 }
+
+
+/*
+##############################################################################
+##  Essential Mathematics .md Page for Table of contents
+##############################################################################
+*/
+.index_use_images {
+/* Use only width to control an img-responsive img.  Bootstrap will float the height. */
+	width:290px;
+}
+#math_table table{
+	width="100%";
+}
+
+#math_table tr td{
+	vertical-align:top;
+}
+
+#math_table td{
+	width="30%";
+}
+
+#math_table_icon {
+	width:32px;
+	height:32px;
+}
+.math_table_primary_use {
+	margin:10px;
+	font-size:1.0em;
+}
+
+#math_table ol{
+	list-style-type: none;
+}
+
 
 /*
 ##############################################################################
