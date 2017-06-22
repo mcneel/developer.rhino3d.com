@@ -96,12 +96,12 @@ We can draw the vector and the point as follows:
 As mentioned before, vectors have length. We will use $$\vert a \vert$$ to notate the length of a given vector $$ a $$. For example:  
 
 $$\vec a = <4, 3, 0>$$  
-$$|a| = √(42 + 32 + 02)$$  
-$$|a| = 5$$  
+$$\vert a \vert = √(4_2 + 3_2 + 0_2)$$  
+$$\vert a \vert = 5$$  
 
-In general, the length of a vector $$\vec a <a1,a2,a3>$$ is calculated as follows:
+In general, the length of a vector $$\vec a <a_1,a_2,a_3>$$ is calculated as follows:
 
-\$$|a| = √(a12 + a22 + a32) ​$$
+\$$\vert a \vert = √((a_1)^2 + (a_2)^2 + (a_3)^2) $$
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image173.png">
@@ -119,21 +119,21 @@ A unit vector is a vector whose length is equal to one unit.
 To calculate a unit vector, we need to find the length of the given vector, and then divide the vector components by the length. For example:
 
 \$$\vec a = <4, 3, 0>$$  
-&nbsp;&nbsp;     $$|a| = √(42 + 32 + 02)$$  
-&nbsp;&nbsp;     $$|a| = 5 \text{unit length}$$  
+&nbsp;&nbsp;     $$\vert a \vert = √(4_2 + 3_2 + 0_2)$$  
+&nbsp;&nbsp;     $$\vert a \vert  = 5 \text{unit length}$$  
 
 If $$\vec b = unit vector$$ of $$a$$, then:  
 &nbsp;&nbsp;     $$\vec b = <4/5, 3/5, 0/5>$$  
 &nbsp;&nbsp;     $$\vec b = <0.8, 0.6, 0>$$  
-&nbsp;&nbsp;     $$|b| = √(0.82 + 0.62 + 02)$$  
-&nbsp;&nbsp;     $$|b| = √(0.64 + 0.36 + 0)$$  
-&nbsp;&nbsp;     $$|b| = √(1) = 1 \text{unit length)$$  
+&nbsp;&nbsp;     $$\vert b \vert  = √(0.8_2 + 0.6_2 + 0_2)$$  
+&nbsp;&nbsp;     $$\vert b \vert  = √(0.64 + 0.36 + 0)$$  
+&nbsp;&nbsp;     $$\vert b \vert  = √(1) = 1 \text{unit length)$$  
 
 In general:  
 
-\$$a = <a1, a2, a3>$$  
+\$$a = <a_1, a_2, a_3>$$  
 
-The unit vector of $$\vec a = <a1/\vert a \vert , a2/\vert a\vert , a3/\vert a\vert >$$  
+The unit vector of $$\vec a = <a_1/\vert a \vert , a_2/\vert a\vert , a_3/\vert a\vert >$$  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image176.png">
@@ -155,9 +155,9 @@ $$2*\vec a = <8, 6, 0>$$
    <figcaption>Figure (7): Vector scalar operation</figcaption>
 </figure>  
 
-In general, given vector $$\vec a = <a1, a2, a3>$$, and a real number $$t$$   
+In general, given vector $$\vec a = <a_1, a_2, a_3>$$, and a real number $$t$$   
 
-\$$t*\vec a = < t*\vec a1, t*\vec a2, t*\vec a3 >$$  
+\$$t*\vec a = < t*\vec a_1, t*\vec a_2, t*\vec a_3 >$$  
 
 ### Vector addition
 
@@ -180,9 +180,9 @@ $$\vec a+\vec b = <5, 3, 3>$$
 
 In general, vector addition of the two vectors a and b is calculated as follows:  
 
-$$\vec a = <a1, a2, a3>$$  
-$$\vec b = <b1, b2, b3>$$  
-$$\vec a+\vec b = <a1+b1, a2+b2, a3+b3>$$  
+$$\vec a = <a_1, a_2, a_3>$$  
+$$\vec b = <b_1, b_2, b_3>$$  
+$$\vec a+\vec b = <a_1+b_1, a_2+b_2, a_3+b_3>$$  
 
 Vector addition is useful for finding the average direction of two or more vectors. In this case, we usually use same-length vectors. Here is an example that shows the difference between using same-length vectors and different-length vectors on the resulting vector addition:  
 
@@ -216,9 +216,9 @@ Note that the vector $$\vec b - \vec a$$ has the same length as the vector $$\ve
 
 In general, if we have two vectors, $$\vec a$$ and $$\vec b$$, then $$\vec a - \vec b$$ is a vector that is calculated as follows:  
 
-$$\vec a = <a1, a2, a3>$$  
-$$\vec b = <b1, b2, b3>$$  
-$$\vec a - \vec b = <a1 - b1, a2 - b2, a3 - b3> = \vec{ba}$$  
+$$\vec a = <a_1, a_2, a_3>$$  
+$$\vec b = <b_1, b_2, b_3>$$  
+$$\vec a - \vec b = <a_1 - b_1, a_2 - b_2, a_3 - b_3> = \vec{ba}$$  
 
 Vector subtraction is commonly used to find vectors between points. So if we need to find a vector that goes from the tip point of the position vector $$\vec b$$ to the tip point of the position vector $$a$$, then we use vector subtraction $$(\vec a-\vec b)$$ as shown in Figure (11).  
 
@@ -255,9 +255,9 @@ $$\vec a · \vec b = 38$$
 
 In general, given the two vectors a and b:  
 
-$$\vec a = <a1, a2, a3>$$  
-$$\vec b = <b1, b2, b3>$$  
-$$\vec a · \vec b = a1 * b1 + a2 * b2 + a3 * b3$$  
+$$\vec a = <a_1, a_2, a_3>$$  
+$$\vec b = <b_1, b_2, b_3>$$  
+$$\vec a · \vec b = a_1 * b_1 + a_2 * b_2 + a_3 * b_3$$  
 
 We always get a positive number for the dot product between two vectors when they go in the same general direction. A negative dot product between two vectors means that the two vectors go in the opposite general direction.
 
@@ -376,9 +376,9 @@ $$ \color {green}{k} = <0, 0, 1>$$
 
 The cross product of the two vectors $$\vec a = <a1, a2, a3>$$ and $$\vec b = <b1, b2, b3>$$ is calculated as follows using the above diagram:  
 
-$$\vec a × \vec b = \color {red}{i (a2 * b3)} + \color {blue}{ j (a3 * b1)} + \color {green}{k(a1 * b2)} - \color {green}{k (a2 * b1)} - \color {red}{i (a3 * b2)} -\color {blue}{ j (a1 * b3)}$$  
-$$\vec a × \vec b = \color {red}{i (a2 * b3 - a3 * b2)} + \color {blue}{j (a3 * b1 - a1 * b3)} +\color {green}{k (a1 * b2 - a2 * b1)}$$  
-$$\vec a × \vec b = <\color {red}{a2 * b3 – a3 * b2},  \color {blue}{a3 * b1 - a1 * b3},  \color {green}{a1 * b2 - a2 * b1} >$$  
+$$\vec a × \vec b = \color {red}{i (a_2 * b_3)} + \color {blue}{ j (a_3 * b_1)} + \color {green}{k(a_1 * b_2)} - \color {green}{k (a_2 * b_1)} - \color {red}{i (a_3 * b_2)} -\color {blue}{ j (a_1 * b_3)}$$  
+$$\vec a × \vec b = \color {red}{i (a_2 * b_3 - a_3 * b_2)} + \color {blue}{j (a_3 * b_1 - a_1 * b_3)} +\color {green}{k (a_1 * b_2 - a_2 * b_1)}$$  
+$$\vec a × \vec b = <\color {red}{a_2 * b_3 – a_3 * b_2},  \color {blue}{a_3 * b_1 - a_1 * b_3},  \color {green}{a_1 * b_2 - a_2 * b_1} >$$  
 
 ### Cross product and angle between vectors
 
@@ -440,7 +440,7 @@ For example, if we know the direction of a line and a point on that line, then w
 
 $$\overline{L} = line$$  
 $$\vec v = <a, b, c>$$ line direction unit vector  
-$$Q = (x0, y0, z0)$$ line position point  
+$$Q = (x_0, y_0, z_0)$$ line position point  
 $$P = (x, y, z)$$ any point on the line  
 
 We know that:  
@@ -454,14 +454,14 @@ $$\vec p = \vec q + t * \vec v$$  (3)
 
 However, we can write (3) as follows:  
 
-$$<x, y, z> = <x0, y0, z0> + <t * a, t * b, t * c>$$  
-$$<x, y, z> = <x0 + t * a, y0 + t * b, z0 + t * c>$$  
+$$<x, y, z> = <x_0, y_0, z_0> + <t * a, t * b, t * c>$$  
+$$<x, y, z> = <x_0 + t * a, y_0 + t * b, z_0 + t * c>$$  
 
 Therefore:  
 
-$$x = x0 + t * a$$  
-$$y = y0 + t * b$$  
-$$z = z0 + t * c$$  
+$$x = x_0 + t * a$$  
+$$y = y_0 + t * b$$  
+$$z = z_0 + t * c$$  
 
 Which is the same as:  
 
@@ -544,15 +544,15 @@ If:
 
 $$\vec n = <a, b, c>  
 $$b = <x, y, z>$$  
-$$ a = <x0, y0, z0>$$  
+$$ a = <x_0, y_0, z_0>$$  
 
 Then we can expand the above:  
 
-\$$<a, b, c> · <x-x0, y-y0, z-z0 > = 0$$  
+\$$<a, b, c> · <x-x_0, y-y_0, z-z_0 > = 0$$  
 
 Solving the dot product gives the general scalar equation of a plane:  
 
-\$$a * (x - x0) + b * (y - y0) + c * (z - z0) = 0$$  
+\$$a * (x - x_0) + b * (y - y_0) + c * (z - z_0) = 0$$  
 
 ## 1.5 Tutorials
 
