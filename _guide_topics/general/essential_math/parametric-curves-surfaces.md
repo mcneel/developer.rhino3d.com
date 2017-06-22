@@ -26,9 +26,9 @@ Where:
 
 We saw earlier that the parametric equation of a line in terms of parameter $$t$$ is defined as:
 
-&nbsp; $$x = x’ + t * a$$
-&nbsp; $$y = y’ + t * b$$
-&nbsp; $$z = z’ + t * c$$
+&nbsp; $$x = x’ + t * a$$  
+&nbsp; $$y = y’ + t * b$$  
+&nbsp; $$z = z’ + t * c$$   
 
 Where:
 
@@ -465,7 +465,7 @@ Point on curve that is at $$u=0.4$$
 &nbsp; $$E = 0.7B + 0.3C$$   
 
 5\.	Calculate the last coefficient:  
-&nbsp; $$Fc = (u – u_3)/ (u_{3+3-2} – u_3) = 0.6$$  
+&nbsp; $$F_c = (u – u_3)/ (u_{3+3-2} – u_3) = 0.6$$  
 
 Find the point on curve at $$u=0.4$$ parameter:  
 
