@@ -21,7 +21,7 @@ In this document, lower case bold letters will notate vectors. Vector components
 
 Using a coordinate system and any set of anchor points in that system, we can represent or visualize these vectors using a line-segment representation. An arrowhead shows the vector direction.
 
-For example, if we have a vector that has a direction parallel to the x-axis of a given 3D coordinate system and a length of 5 units, we can write the vector as follows:  
+For example, if we have a vector that has a direction parallel to the x-axis of a given 3D coordinate system and a length of 5 units, we can write the vector as follows: 
 
 \$$\vec v = <5, 0, 0>$$  
 
@@ -458,7 +458,7 @@ $$<x, y, z> = <x_0 + t * a, y_0 + t * b, z_0 + t * c>$$
 Therefore:  
 
 $$x = x_0 + t * a$$  
-$$y = y_0 + t * b​$$  
+$$y = y_0 + t * b$$  
 $$z = z_0 + t * c$$  
 
 Which is the same as:  
