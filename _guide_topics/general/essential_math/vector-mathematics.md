@@ -46,7 +46,7 @@ And a vector:
 
 \$$\vec v = <5, 6, 7>$$
 
-The tip point $$(B)$$ of the vector is calculated by adding the corresponding components from anchor point and vector $$v$$:  
+The tip point $$(B)$$ of the vector is calculated by adding the corresponding components from anchor point and vector $$\vec v$$:  
 
 $$B = A + \vec v$$  
 $$B = (1+5, 2+6, 3+7) $$  
@@ -60,8 +60,8 @@ $$B = (6, 8, 10)$$
 
 ### Position vector
 
-One special vector representation uses the $$origin point (0,0,0)$$ as the vector anchor point. 
-The position vector $$v = <a1,a2,a3>$$ is represented with a line segment between two points, the origin and B, so that:  
+One special vector representation uses the $$\text{origin point} (0,0,0)$$ as the vector anchor point. 
+The position vector $$\vec v = <a1,a2,a3>$$ is represented with a line segment between two points, the origin and B, so that:  
 
 $$\text{Origin point} = (0,0,0)​$$  
 $$B = (a1,a2,a3)$$  
@@ -96,12 +96,12 @@ We can draw the vector and the point as follows:
 As mentioned before, vectors have length. We will use $$\vert a \vert$$ to notate the length of a given vector $$ a $$. For example:  
 
 $$\vec a = <4, 3, 0>$$  
-$$\vert a \vert = √(4_2 + 3_2 + 0_2)$$  
+$$\vert a \vert = \sqrt{4_2 + 3_2 + 0_2}$$  
 $$\vert a \vert = 5$$  
 
 In general, the length of a vector $$\vec a <a_1,a_2,a_3>$$ is calculated as follows:
 
-\$$\vert a \vert = √((a_1)^2 + (a_2)^2 + (a_3)^2) $$
+\$$\vert a \vert = \sqrt{(a_1)^2 + (a_2)^2 + (a_3)^2} $$
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image173.png">
@@ -119,15 +119,15 @@ A unit vector is a vector whose length is equal to one unit.
 To calculate a unit vector, we need to find the length of the given vector, and then divide the vector components by the length. For example:
 
 \$$\vec a = <4, 3, 0>$$  
-&nbsp;&nbsp;     $$\vert a \vert = √(4_2 + 3_2 + 0_2)$$  
+&nbsp;&nbsp;     $$\vert a \vert = \sqrt{4_2 + 3_2 + 0_2}$$  
 &nbsp;&nbsp;     $$\vert a \vert  = 5 \text{unit length}$$  
 
 If $$\vec b = unit vector$$ of $$a$$, then:  
 &nbsp;&nbsp;     $$\vec b = <4/5, 3/5, 0/5>$$  
-&nbsp;&nbsp;     $$\vec b = <0.8, 0.6, 0>$$  
-&nbsp;&nbsp;     $$\vert b \vert  = √(0.8_2 + 0.6_2 + 0_2)$$  
-&nbsp;&nbsp;     $$\vert b \vert  = √(0.64 + 0.36 + 0)$$  
-&nbsp;&nbsp;     $$\vert b \vert  = √(1) = 1 \text{unit length)$$  
+&nbsp;&nbsp;     $$\vec b = <0.8, 0.6, 0>​$$  
+&nbsp;&nbsp;     $$\vert b \vert  = \sqrt{0.8_2 + 0.6_2 + 0_2}$$  
+&nbsp;&nbsp;     $$\vert b \vert  = \sqrt{0.64 + 0.36 + 0}$$  
+&nbsp;&nbsp;     $$\vert b \vert  = \sqrt{(1) = 1 \text{unit length)}$$  
 
 In general:  
 
@@ -280,7 +280,7 @@ $$\vec a · \vec a = 25$$
 
 Calculating the square length of vector $$a$$ :  
 
-$$\vert a \vert = √(42 + 32 + 02)$$  
+$$\vert a \vert = \sqrt{4_2 + 3_2 + 0_2}$$  
 $$\vert a \vert = 5$$  
 $$\vert a \vert 2 = 25$$  
 
