@@ -13,7 +13,7 @@ layout: toc-guide-page
 
 A vector indicates a quantity, such as velocity or force, that has direction and length. Vectors in 3D coordinate systems are represented with an ordered set of three real numbers and look like: 
 
-\$$\vec v  = <a1, a2, a3>​$$
+\$$\vec v  = <a_1, a_2, a_3>$$
 
 ## 1.1 Vector representation
 
@@ -32,10 +32,8 @@ To represent that vector, we need an anchor point in the coordinate system. For 
    <figcaption>Figure (1): Vector representation in the 3-D coordinate system.</figcaption>
 </figure>  
 
-```
-Given a 3D vector v = <a1, a2, a3>, all vector components a1, a2, a3 are  
-real numbers. Also all line segments from a point A(x,y,z) to point B(x+a1, y+a2, z+a3)  
-are equivalent representations of vector v.  
+``` markdown
+Given a 3D vector v = <a1, a2, a3>, all vector components a1, a2, a3 are real numbers. Also all line segments from a point A(x,y,z) to point B(x+a1, y+a2, z+a3) are equivalent representations of vector v.  
 ```
 
 So, how do we define the end points of a line segment that represents a given vector?
@@ -72,9 +70,8 @@ $$B = (a1,a2,a3)$$
    <figcaption>Figure (1): Vector representation in the 3-D coordinate system.</figcaption>
 </figure>  
 
-```
-A position vector for a given vector v= < a1,a2,a3 > is a special line
-segment representation from the origin point (0,0,0) to point (a1,a2,a3).
+``` markdown
+A position vector for a given vector v= < a1,a2,a3 > is a special line segment representation from the origin point (0,0,0) to point (a1,a2,a3).
 ```
 
 ### Vectors vs. points  
@@ -113,7 +110,7 @@ In general, the length of a vector $$\vec a <a_1,a_2,a_3>$$ is calculated as fol
 
 A unit vector is a vector with a length equal to one unit. Unit vectors are commonly used to compare the directions of vectors. 
 
-```
+``` markdown
 A unit vector is a vector whose length is equal to one unit.
 ```
 
@@ -164,7 +161,7 @@ In general, given vector $$\vec a = <a_1, a_2, a_3>$$, and a real number $$t$$
 
 Vector addition takes two vectors and produces a third vector. We add vectors by adding their components. 
 
-```
+``` markdown
 Vectors are added by adding their components.
 ```
 For example, if we have two vectors:  
@@ -289,7 +286,7 @@ $$\vert a \vert 2 = 25$$
 
 There is a relationship between the dot product of two vectors and the angle between them.  
 
-```
+``` markdown
 The dot product of two non-zero unit vectors equals the cosine of the angle between them.
 ```
 
@@ -308,7 +305,7 @@ If vectors a and b are unit vectors, we can simply say:
 
 And since the cosine of a 90-degree angle is equal to 0, we can say:  
 
-```
+``` markdown
 Vectors a and b are orthogonal if, and only if, a · b = 0.
 ```
 
@@ -363,7 +360,7 @@ $$\vec b = <1, 2, 0>$$
 $$\vec a × \vec b = < (1 * 0 – 0 * 2), (0 * 1 - 3 * 0), (3 * 2 - 1 * 1) > $$  
 $$\vec a × \vec b = <0, 0, 5>$$  
 
-```
+``` markdown
 The vector a x b is orthogonal to both a and b.
 ```
 
@@ -414,7 +411,7 @@ If a and b are unit vectors, then we can simply say that the length of their cro
 
 The cross product between two vectors helps us determine if two vectors are parallel. This is because the result is always a zero vector.  
 
-```
+``` markdown
 Vectors a and b are parallel if, and only if, a x b = 0.
 ```
 
@@ -461,17 +458,15 @@ $$<x, y, z> = <x_0 + t * a, y_0 + t * b, z_0 + t * c>$$
 Therefore:  
 
 $$x = x_0 + t * a$$  
-$$y = y_0 + t * b$$  
+$$y = y_0 + t * b​$$  
 $$z = z_0 + t * c$$  
 
 Which is the same as:  
 
 \$$P = Q + t * v$$  
 
-```
-Given a point Q and a direction v on a line, any point P    
-on that line can  be calculated using the vector equation of a  
-line P = Q + t * v where t is a number.  
+``` markdown
+Given a point Q and a direction v on a line, any point P on that line can be calculated using the vector equation of a line P = Q + t * v where t is a number.  
 ```
 
 Another common example is to find the midpoint between two points. The following shows how to find the midpoint using the vector equation of a line:  
@@ -505,10 +500,8 @@ In general, you can find any point between $$Q$$ and $$P$$ by changing the $$t$$
 
 \$$\overline{M} = Q + t * (P - Q)$$  
 
-```
-Given two points Q and P, any point M between the two points is  
-calculated using the equation M = Q + t * (P - Q) where 
-t is a number between 0 and 1.
+``` markdown
+Given two points Q and P, any point M between the two points is calculated using the equation M = Q + t * (P - Q) where t is a number between 0 and 1.
 ```
 ## 1.4 Vector equation of a plane
 
