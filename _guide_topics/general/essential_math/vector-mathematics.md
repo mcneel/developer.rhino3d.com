@@ -34,7 +34,8 @@ To represent that vector, we need an anchor point in the coordinate system. For 
 
 ```
 Given a 3D vector v = <a1, a2, a3>, all vector components a1, a2, a3 are  
-real numbers. Also all line segments from a point A(x,y,z) to point B(x+a1, y+a2, z+a3) are equivalent representations of vector v.  
+real numbers. Also all line segments from a point A(x,y,z) to point B(x+a1, y+a2, z+a3)  
+are equivalent representations of vector v.  
 ```
 
 So, how do we define the end points of a line segment that represents a given vector?
@@ -96,7 +97,7 @@ We can draw the vector and the point as follows:
 As mentioned before, vectors have length. We will use $$\vert a \vert$$ to notate the length of a given vector $$ a $$. For example:  
 
 $$\vec a = <4, 3, 0>$$  
-$$\vert a \vert = \sqrt{4_2 + 3_2 + 0_2}$$  
+$$\vert a \vert = \sqrt{4^2 + 3^2 + 0^2}$$  
 $$\vert a \vert = 5$$  
 
 In general, the length of a vector $$\vec a <a_1,a_2,a_3>$$ is calculated as follows:
@@ -118,16 +119,16 @@ A unit vector is a vector whose length is equal to one unit.
 
 To calculate a unit vector, we need to find the length of the given vector, and then divide the vector components by the length. For example:
 
-\$$\vec a = <4, 3, 0>$$  
-&nbsp;&nbsp;     $$\vert a \vert = \sqrt{4_2 + 3_2 + 0_2}$$  
-&nbsp;&nbsp;     $$\vert a \vert  = 5 \text{unit length}$$  
+\$$\vec a = <4, 3, 0>​$$  
+&nbsp;&nbsp;     $$\vert a \vert = \sqrt{4^2 + 3^2 + 0^2}$$  
+&nbsp;&nbsp;     $$\vert a \vert  = 5 \text{ unit length}$$  
 
-If $$\vec b = unit vector$$ of $$a$$, then:  
+If $$\vec b = \text{unit vector}$$ of $$a$$, then:  
 &nbsp;&nbsp;     $$\vec b = <4/5, 3/5, 0/5>$$  
-&nbsp;&nbsp;     $$\vec b = <0.8, 0.6, 0>​$$  
-&nbsp;&nbsp;     $$\vert b \vert  = \sqrt{0.8_2 + 0.6_2 + 0_2}$$  
+&nbsp;&nbsp;     $$\vec b = <0.8, 0.6, 0>$$  
+&nbsp;&nbsp;     $$\vert b \vert  = \sqrt{0.8^2 + 0.6^2 + 0^2}$$  
 &nbsp;&nbsp;     $$\vert b \vert  = \sqrt{0.64 + 0.36 + 0}$$  
-&nbsp;&nbsp;     $$\vert b \vert  = \sqrt{(1) = 1 \text{unit length)}$$  
+&nbsp;&nbsp;     $$\vert b \vert  = \sqrt{(1)} = 1 \text{unit length)$$  
 
 In general:  
 
@@ -280,7 +281,7 @@ $$\vec a · \vec a = 25$$
 
 Calculating the square length of vector $$a$$ :  
 
-$$\vert a \vert = \sqrt{4_2 + 3_2 + 0_2}$$  
+$$\vert a \vert = \sqrt{4^2 + 3^2 + 0^2}$$  
 $$\vert a \vert = 5$$  
 $$\vert a \vert 2 = 25$$  
 
