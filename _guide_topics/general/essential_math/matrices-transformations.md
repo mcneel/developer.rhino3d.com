@@ -42,7 +42,7 @@ Number of operations = **2000**.
 
 Number of operations = **1001**.
 
-Notice that method 1 takes almost twice the number of operations to achieve the same result. While method 2 is very efficient, it is only possible if both the move and rotate matrices are $$[4 \times 4]$$. This is why in computer graphics a $$[4 \time 4]$$ matrix is used to represent all transformations, and a $$[4 \times 1]$$ matrix is used to represent points.
+Notice that method 1 takes almost twice the number of operations to achieve the same result. While method 2 is very efficient, it is only possible if both the move and rotate matrices are $$[4 \times 4]$$. This is why in computer graphics a $$[4 \times 4]$$ matrix is used to represent all transformations, and a $$[4 \times 1]$$ matrix is used to represent points.
 
 Three-dimensional modeling applications provide tools to apply transformations and multiply matrices, but if you are curious about how to mathematically multiply matrices, we will explain a simple example. In order to multiply two matrices, they have to have matching dimensions. That means the number of columns in the first matrix must equal the number of rows of the second matrix. The resulting matrix has a size equal to the number of rows from the first matrix and the number of columns from the second matrix. For example, if we have two matrices, $$M$$ and $$P$$, with dimensions equal to $$[4\times 4]$$ and $$[4 \times 1]$$ respectively, then there resulting multiplication matrix $$M · P$$ has a dimension equal to $$[4 \times 1]$$ as shown in the following illustration:
 
@@ -98,7 +98,7 @@ If we use the matrix form and multiply the translation matrix by the input point
 
 Similarly, any geometry is translated by multiplying its construction points by the translation matrix. For example, if we have a box that is defined by eight corner points, and we want to move it 4 units in the x-direction, 5 units in the y-direction and 3 units in the z- direction, we must multiply each of the eight box corner points by the following translation matrix to get the new box.  
 
-\$$\begin{bmatrix}1 & 0 & 0 & 4 0 & 1 & 0 & 5 \\0 & 0 & 1 & 3 \\0 & 0 & 0 & 1 \\\end{bmatrix}$$   
+\$$\begin{bmatrix}1 & 0 & 0 & 4\\ 0 & 1 & 0 & 5 \\0 & 0 & 1 & 3 \\0 & 0 & 0 & 1 \\\end{bmatrix}$$   
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image37.png">
@@ -113,13 +113,13 @@ This section shows how to calculate rotation around the z-axis and the origin po
 
 Take a point on $$x,y$$ plane $$P(x,y)$$ and rotate it by angle($$b$$).  From the figure, we can say the following:  
 
-&nbsp; $$x = d cos(a)$$  ---(1)  
-&nbsp; $$y = d sin(a)$$   ---(2)  
-&nbsp; $$x' = d cos(b+a)$$ ---(3)  
-&nbsp; $$y' = d sin(b+a)$$  --- (4)  
+&nbsp; $$x = d cos(a)$$   (1)  
+&nbsp; $$y = d sin(a)$$    (2)  
+&nbsp; $$x' = d cos(b+a)$$  (3)  
+&nbsp; $$y' = d sin(b+a)$$   (4)  
 Expanding $$x$$' and $$y'$$ using trigonometric identities for the sine and cosine of the sum of angles:  
-&nbsp; $$x' = d cos(a)cos(b) - d sin(a)sin(b)$$ ---(5)  
-&nbsp; $$y' = d cos(a)sin(b) + d sin(a)cos(b)$$ ---(6)  
+&nbsp; $$x' = d cos(a)cos(b) - d sin(a)sin(b)$$  (5)  
+&nbsp; $$y' = d cos(a)sin(b) + d sin(a)cos(b)$$  (6)  
 Using Eq 1 and 2:  
 &nbsp; $$x' = x cos(b) - y sin(b)$$  
 &nbsp; y' = x sin(b) + y cos(b)  
@@ -138,11 +138,11 @@ The rotation matrix around the **y-axis** by angle $$b$$ looks like:
 
 For example, if we have a box and would like to rotate it 30 degrees, we need the following:  
 
-    1. Construct the 30-degree rotation matrix. Using the generic form and the cos and sin values of 30-degree angle, the rotation matrix will look like the following:  
+1\. Construct the 30-degree rotation matrix. Using the generic form and the cos and sin values of 30-degree angle, the rotation matrix will look like the following:  
 
 \$$\begin{bmatrix}0.87 & -0.5 & 0 & 0 \\0.5 & 0.87 & 0 & 0 \\0 & 0 & 1 & 0 \\0 & 0 & 0 & 1 \\\end{bmatrix}$$   
 
-    2. Multiply the rotation matrix by the input geometry, or in the case of a box, multiply by each of the corner points to find the box's new location.  
+2\. Multiply the rotation matrix by the input geometry, or in the case of a box, multiply by each of the corner points to find the box's new location.  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image41.png">
@@ -178,7 +178,7 @@ For example, if we would like to scale a box by 0.25 relative to the World origi
 
 Shear in 3‑D is measured along a pair of axes relative to a third axis. For example, a shear along a z‑axis will not change geometry along that axis, but will alter it along x and y. Here are few examples of shear matrices:
 
-1. Shear in x and z, keeping the y-coordinate fixed:
+1\. Shear in x and z, keeping the y-coordinate fixed:
 
 
 ![{{ site.baseurl }}/images/math-image45.png]({{ site.baseurl }}/images/math-image45.png){: .float-img-left width="100"}   
@@ -194,7 +194,7 @@ Shear in 3‑D is measured along a pair of axes relative to a third axis. For ex
 
 &nbsp;{: .clear-img}  
 
-2. Shear in y and z, keeping the x-coordinate fixed:  
+2\. Shear in y and z, keeping the x-coordinate fixed:  
 
 
 ![{{ site.baseurl }}/images/math-image49.png]({{ site.baseurl }}/images/math-image49.png){: .float-img-left width="100"}   
@@ -210,7 +210,7 @@ Shear in 3‑D is measured along a pair of axes relative to a third axis. For ex
 
 &nbsp;{: .clear-img}  
 
-3. Shear in x and y, keeping the z-coordinate fixed: 
+3\. Shear in x and y, keeping the z-coordinate fixed: 
 
 ![{{ site.baseurl }}/images/math-image32.png]({{ site.baseurl }}/images/math-image32.png){: .float-img-left width="100"}   
 
@@ -236,7 +236,7 @@ The mirror transformation creates a reflection of an object across a line or a p
 
 ### Planar Projection transformation
 
-Intuitively, the projection point of a given 3-D point $$P(x,y,z)$$ on the world xy-plane equals $$Pxy(x,y,0)$$ setting the z value to zero. Similarly, a projection to xz-plane of point P is $$Pxz(x,0,z)$$. When projecting to yz-plane, $$Pxz = (0,y,z)$$. Those are called orthogonal projectionsi.   
+Intuitively, the projection point of a given 3-D point $$P(x,y,z)$$ on the world xy-plane equals $$P_{xy} (x,y,0)$$ setting the z value to zero. Similarly, a projection to xz-plane of point P is $$P_{xz}(x,0,z)$$. When projecting to yz-plane, $$P_{xz} = (0,y,z)$$. Those are called orthogonal projections.   
 
 If we have a curve as an input, and we apply the planar projection transformation, we get a curve projected to that plane. The following shows an example of a curve projected to xy‑plane with the matrix format.  
 
