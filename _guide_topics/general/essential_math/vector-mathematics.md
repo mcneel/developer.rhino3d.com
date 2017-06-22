@@ -295,8 +295,8 @@ The dot product of two non-zero unit vectors equals the cosine of the angle betw
 
 In general:  
 
-$$\vec a · \vec b = \vert a \vert * \vert b \vert * cos(ө)$$ , or  
-$$\vec a · \vec b / (\vert a \vert * \vert b \vert ) = cos(ө)$$  
+$$\hat a · \hat b = \vert a \vert * \vert b \vert * cos(ө)$$ , or  
+$$\hat a · \hat b / (\vert a \vert * \vert b \vert ) = cos(ө)$$  
 
 Where:  
 
@@ -323,9 +323,9 @@ There is also a relationship between the dot product and the projection length o
 
 $$\vec a = <5, 2, 0>$$  
 $$\vec b = <9, 0, 0>$$  
-$$unit(\vec b) = <1, 0, 0>$$  
-$$\vec a · unit(\vec b) = (5 * 1) + (2 * 0) + (0 * 0) $$  
-$$\vec a · unit(\vec b) = 2 (\text{which is equal to the projection length of a onto b})$$  
+$$unit \hat b = <1, 0, 0>$$  
+$$\vec a · unit \hat b = (5 * 1) + (2 * 0) + (0 * 0) $$  
+$$\vec a · unit \hat b = 2 (\text{which is equal to the projection length of a onto b})$$  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image182.png">
