@@ -63,7 +63,7 @@ $$B = (6, 8, 10)$$
 One special vector representation uses the $$origin point (0,0,0)$$ as the vector anchor point. 
 The position vector $$v = <a1,a2,a3>$$ is represented with a line segment between two points, the origin and B, so that:  
 
-$$Origin point = (0,0,0)$$  
+$$\text{Origin point} = (0,0,0)​$$  
 $$B = (a1,a2,a3)$$  
 
 <figure>
@@ -120,14 +120,14 @@ To calculate a unit vector, we need to find the length of the given vector, and 
 
 \$$\vec a = <4, 3, 0>$$  
 &nbsp;&nbsp;     $$|a| = √(42 + 32 + 02)$$  
-&nbsp;&nbsp;     $$|a| = 5 unit length$$  
+&nbsp;&nbsp;     $$|a| = 5 \text{unit length}$$  
 
 If $$\vec b = unit vector$$ of $$a$$, then:  
 &nbsp;&nbsp;     $$\vec b = <4/5, 3/5, 0/5>$$  
 &nbsp;&nbsp;     $$\vec b = <0.8, 0.6, 0>$$  
 &nbsp;&nbsp;     $$|b| = √(0.82 + 0.62 + 02)$$  
 &nbsp;&nbsp;     $$|b| = √(0.64 + 0.36 + 0)$$  
-&nbsp;&nbsp;     $$|b| = √(1) = 1 unit length$$  
+&nbsp;&nbsp;     $$|b| = √(1) = 1 \text{unit length)$$  
 
 In general:  
 
@@ -445,12 +445,12 @@ $$P = (x, y, z)$$ any point on the line
 
 We know that:  
 
-$$\vec a = t * v$$  --- (2)  
-$$\vec p = \vec q + \vec a$$ --- (1)  
+$$\vec a = t * \vec v$$   (2)  
+$$\vec p = \vec q + \vec a$$   (1)  
 
 From 1 and 2:  
 
-$$\vec p = \vec q + t * \vec v$$ --- (3)   
+$$\vec p = \vec q + t * \vec v$$  (3)   
 
 However, we can write (3) as follows:  
 
@@ -468,7 +468,9 @@ Which is the same as:
 \$$P = Q + t * v$$  
 
 ```
-Given a point Q and a direction v on a line, any point P on that line can be calculated using the vector equation of a line P = Q + t * v where t is a number.
+Given a point Q and a direction v on a line, any point P    
+on that line can  be calculated using the vector equation of a  
+line P = Q + t * v where t is a number.  
 ```
 
 Another common example is to find the midpoint between two points. The following shows how to find the midpoint using the vector equation of a line:  
@@ -503,7 +505,7 @@ In general, you can find any point between $$Q$$ and $$P$$ by changing the $$t$$
 \$$\overline{M} = Q + t * (P - Q)$$  
 
 ```
-Given two points Q and P, any point M between the two points is
+Given two points Q and P, any point M between the two points is  
 calculated using the equation M = Q + t * (P - Q) where 
 t is a number between 0 and 1.
 ```
@@ -577,15 +579,15 @@ Compare the above two directions, if going the same direction, the point is faci
 
 **Solution:**  
 
-    1. Find the closest point location on the surface relative to the input point using the Pull component. This will give us the uv location of the closest point, which we can then use to evaluate the surface and find its normal direction.  
+1\. Find the closest point location on the surface relative to the input point using the Pull component. This will give us the uv location of the closest point, which we can then use to evaluate the surface and find its normal direction.  
 
 <img src="{{ site.baseurl }}/images/math-image162.png">  
 
-    2. We can now use the closest point to draw a vector going towards the input point. We can also draw:  
+2\. We can now use the closest point to draw a vector going towards the input point. We can also draw:  
 
 <img src="{{ site.baseurl }}/images/math-image163.png">  
 
-    3. We can compare the two vectors using the dot product. If the result is positive, the point is in front of the surface. If the result is negative, the point is behind the surface.  
+3\. We can compare the two vectors using the dot product. If the result is positive, the point is in front of the surface. If the result is negative, the point is behind the surface.  
 
 <img src="{{ site.baseurl }}/images/math-image164.png">  
 
@@ -721,19 +723,19 @@ Once we have identified the parameters, it is a matter of putting it together in
 
 **Solution:**
 
-    1. Find the center of the box using the **Box Properties** component in GH:
+1\. Find the center of the box using the **Box Properties** component in GH:
 
 <img src="{{ site.baseurl }}/images/math-image21.png">  
 
-    2. Extract the box faces with the **Deconstruct Brep** component:
+2\. Extract the box faces with the **Deconstruct Brep** component:
 
 <img src="{{ site.baseurl }}/images/math-image23.png">
 
-    3. The direction we move the faces is the tricky part. We need to first find the center of each face, and then define the direction from the center of the box towards the center of each face as follows:
+3\. The direction we move the faces is the tricky part. We need to first find the center of each face, and then define the direction from the center of the box towards the center of each face as follows:
 
 <img src="{{ site.baseurl }}/images/math-image25.png">
 
-    4. Once we have all the parameters scripted, we can use the **Move** component to move the faces in the appropriate direction. Just make sure to set the vectors to the desired amplitude, and you will be good to go.
+4\. Once we have all the parameters scripted, we can use the **Move** component to move the faces in the appropriate direction. Just make sure to set the vectors to the desired amplitude, and you will be good to go.
 
 <img src="{{ site.baseurl }}/images/math-image27.png">
 
@@ -880,7 +882,7 @@ $$A$$ tangent point $$D$$ between the two spheres, at some $$t$$ parameter (0
 
 **Solution:**
 
- 1. Use the **Expression** component to definepoint $$D$$ between $$A$$ and $$B$$ atsome parameter $$t$$. The expression we will use is based onthe vector equation of a line:  
+1\. Use the **Expression** component to definepoint $$D$$ between $$A$$ and $$B$$ atsome parameter $$t$$. The expression we will use is based onthe vector equation of a line:  
 
 \$$D = A + t*(B-A)$$  
 
@@ -892,15 +894,15 @@ $$A$$ tangent point $$D$$ between the two spheres, at some $$t$$ parameter (0
 
 <img src="{{ site.baseurl }}/images/math-image8.png">
 
- 2. Use the Expression component to also define the mid points $$C1$$ and $$C2$$.  
+2\. Use the Expression component to also define the mid points $$C1$$ and $$C2$$.  
 
 <img src="{{ site.baseurl }}/images/math-image9.png">  
 
- 3. The first sphere radius $$(r1)$$ and the second sphere radius $$(r2)$$ can be calculated using the **Distance** component.  
+3\. The first sphere radius $$(r1)$$ and the second sphere radius $$(r2)$$ can be calculated using the **Distance** component.  
 
 <img src="{{ site.baseurl }}/images/math-image10.png">  
 
- 4. The final step involves creating the sphere from a base plane and radius. We need to make sure the origins are hooked to $$C1$$ and $$C2$$ and the radius from $$r1$$ and $$r2$$.  
+4\. The final step involves creating the sphere from a base plane and radius. We need to make sure the origins are hooked to $$C1$$ and $$C2$$ and the radius from $$r1$$ and $$r2$$.  
 
 <img src="{{ site.baseurl }}/images/math-image54.png">  
 
