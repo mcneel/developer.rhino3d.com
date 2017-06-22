@@ -128,7 +128,7 @@ If $$\vec b = \text{unit vector}$$ of $$a$$, then:
 &nbsp;&nbsp;     $$\vec b = <0.8, 0.6, 0>$$  
 &nbsp;&nbsp;     $$\vert b \vert  = \sqrt{0.8^2 + 0.6^2 + 0^2}$$  
 &nbsp;&nbsp;     $$\vert b \vert  = \sqrt{0.64 + 0.36 + 0}$$  
-&nbsp;&nbsp;     $$\vert b \vert  = \sqrt{(1)} = 1 \text{unit length)$$  
+&nbsp;&nbsp;     $$\vert b \vert  = \sqrt{(1)} = 1 \text{unit length}$$  
 
 In general:  
 
