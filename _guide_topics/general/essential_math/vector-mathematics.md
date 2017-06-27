@@ -32,9 +32,9 @@ To represent that vector, we need an anchor point in the coordinate system. For 
    <figcaption>Figure (1): Vector representation in the 3-D coordinate system.</figcaption>
 </figure>  
 
-``` markdown
-Given a 3D vector v = <a1, a2, a3>, all vector components a1, a2, a3 are real numbers. Also all line segments from a point A(x,y,z) to point B(x+a1, y+a2, z+a3) are equivalent representations of vector v.  
-```
+<div class="note" markdown="1">
+Given a 3D vector $$\vec v = <a_1, a_2, a_3>$$ , all vector components $$a_1$$, $$a_2$$, $$a_3$$ are real numbers. Also all line segments from a point $$A(x,y,z)$$ to point $$B(x+a_1, y+a_2, z+a_3)$$ are equivalent representations of vector $$\vec v$$. 
+</div>   
 
 So, how do we define the end points of a line segment that represents a given vector?
 Let us define an anchor point (A) so that:
@@ -70,9 +70,9 @@ $$B = (a_1,a_2,a_3)$$
    <figcaption>Figure (1): Vector representation in the 3-D coordinate system.</figcaption>
 </figure>  
 
-``` markdown
-A position vector for a given vector v= < a1,a2,a3 > is a special line segment representation from the origin point (0,0,0) to point (a1,a2,a3).
-```
+<div class="note" markdown="1">
+A *position vector* for a given vector $$\vec v= < a_1,a_2,a_3 >$$ is a special line segment representation from the origin point $$(0,0,0)$$ to point $$(a_1, a_2, a_3)$$.
+</div>
 
 ### Vectors vs. points  
 
@@ -110,9 +110,9 @@ In general, the length of a vector $$\mathbf{\vec a} <a_1,a_2,a_3>$$ is calculat
 
 A unit vector is a vector with a length equal to one unit. Unit vectors are commonly used to compare the directions of vectors. 
 
-``` markdown
+<div class="note" markdown="1">
 A unit vector is a vector whose length is equal to one unit.
-```
+</div>
 
 To calculate a unit vector, we need to find the length of the given vector, and then divide the vector components by the length. For example:
 
@@ -161,9 +161,10 @@ In general, given vector $$\mathbf{\vec a} = <a_1, a_2, a_3>$$, and a real numbe
 
 Vector addition takes two vectors and produces a third vector. We add vectors by adding their components. 
 
-``` markdown
+<div class="note" markdown="1">
 Vectors are added by adding their components.
-```
+</div>
+
 For example, if we have two vectors:  
 
 $$\mathbf{\vec a} = <1, 2, 0> $$  
@@ -286,9 +287,9 @@ $$\vert \mathbf{\vec a} \vert 2 = 25$$
 
 There is a relationship between the dot product of two vectors and the angle between them.  
 
-``` markdown
+<div class="note" markdown="1">
 The dot product of two non-zero unit vectors equals the cosine of the angle between them.
-```
+</div>
 
 In general:  
 
@@ -305,9 +306,9 @@ If vectors a and b are unit vectors, we can simply say:
 
 And since the cosine of a 90-degree angle is equal to 0, we can say:  
 
-``` markdown
-Vectors a and b are orthogonal if, and only if, a · b = 0.
-```
+<div class="note" markdown="1">
+Vectors $$\vec a$$ and $$\vec b$$ are orthogonal if, and only if, $$\vec{a} \cdot  \vec{b} = 0$$.
+</div>
 
 For example, if we calculate the dot product of the two orthogonal vectors, World xaxis and yaxis, the result will equal zero.  
 
@@ -322,7 +323,7 @@ $$\mathbf{\vec a} = <5, 2, 0>$$
 $$\mathbf{\vec b} = <9, 0, 0>$$  
 $$unit(\mathbf{\vec b}) = <1, 0, 0>$$  
 $$\mathbf{\vec a} · unit(\mathbf{\vec b}) = (5 * 1) + (2 * 0) + (0 * 0) $$  
-$$\mathbf{\vec a} · unit(\mathbf{\vec b}) = 2 (\text{which is equal to the projection length of mathbf{\vec a} onto mathbf{\vec b}})​$$
+$$\mathbf{\vec a} · unit(\mathbf{\vec b}) = 2 (\text{which is equal to the projection length of mathbf{\vec a} onto mathbf{\vec b}})$$
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image182.png">
@@ -360,9 +361,9 @@ $$\mathbf{\vec b} = <1, 2, 0>$$
 $$\mathbf{\vec a} × \mathbf{\vec b} = < (1 * 0 – 0 * 2), (0 * 1 - 3 * 0), (3 * 2 - 1 * 1) > $$  
 $$\mathbf{\vec a} × \mathbf{\vec b} = <0, 0, 5>$$  
 
-``` markdown
-The vector a x b is orthogonal to both a and b.
-```
+<div class="note" markdown="1">
+The vector $$\vec a x \vec b$$ is orthogonal to both $$\vec a$$ and $$\vec b$$.
+</div>
 
 You will probably never need to calculate a cross product of two vectors by hand, but if you are curious about how it is done, continue reading; otherwise you can safely skip this section. The cross product $$a × b$$ is defined using determinants. Here is a simple illustration of how to calculate a determinant using the standard basis vectors:  
 
@@ -395,7 +396,7 @@ $$\mathbf{\vec b} × \mathbf{\vec a} = <0, 0, -1>$$
 
 In Rhino's right-handed system, the direction of $$\mathbf{\vec a} × \mathbf{\vec b}$$ is given by the right-hand rule (where $$\mathbf{\vec a}$$ = index finger, $$\mathbf{\vec b}$$ = middle finger, and $$\mathbf{\vec a} × \mathbf{\vec b}$$ = thumb).  
 
-<img src="{{ site.baseurl }}/images/math-image186.png">  
+<img src="{{ site.baseurl }}/images/math-image186.png" width="375px">  
 
 In general, for any pair of 3-D vectors $$\mathbf{\vec a}$$ and $$\mathbf{\vec b}$$:  
 
@@ -411,9 +412,9 @@ If a and b are unit vectors, then we can simply say that the length of their cro
 
 The cross product between two vectors helps us determine if two vectors are parallel. This is because the result is always a zero vector.  
 
-``` markdown
-Vectors a and b are parallel if, and only if, a x b = 0.
-```
+<div class="note" markdown="1">
+Vectors $$\vec a$$ and $$\vec b$$ are parallel if, and only if, $$a \times b = 0$$.
+</div>
 
 ### Cross product properties
 
@@ -465,9 +466,9 @@ Which is the same as:
 
 \$$P = Q + t * \mathbf{\vec v}$$  
 
-``` markdown
-Given a point Q and a direction v on a line, any point P on that line can be calculated using the vector equation of a line P = Q + t * v where t is a number.  
-```
+<div class="note" markdown="1">
+Given a point $$Q$$ and a direction $$\vec v$$ on a line, any point $$P$$ on that line can be calculated using the vector equation of a line $$P = Q + t * \vec v$$ where $$t$$ is a number.  
+</div>
 
 Another common example is to find the midpoint between two points. The following shows how to find the midpoint using the vector equation of a line:  
 
@@ -500,9 +501,10 @@ In general, you can find any point between $$Q$$ and $$P$$ by changing the $$t$$
 
 \$$M = Q + t * (P - Q)$$  
 
-``` markdown
-Given two points Q and P, any point M between the two points is calculated using the equation M = Q + t * (P - Q) where t is a number between 0 and 1.
-```
+<div class="note" markdown="1">
+Given two points $$Q$$ and $$P$$, any point $$M$$ between the two points is calculated using the equation $$M = Q + t * (P - Q)$$ where t is a number between 0 and 1.
+</div>
+
 ## 1.4 Vector equation of a plane
 
 One way to define a plane is when you have a point and a vector that is perpendicular to the plane. That vector is usually referred to as normal to the plane. The normal points in the direction above the plane.  
