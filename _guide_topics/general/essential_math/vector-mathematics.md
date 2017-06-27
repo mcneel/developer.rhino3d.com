@@ -292,13 +292,12 @@ The dot product of two non-zero unit vectors equals the cosine of the angle betw
 
 In general:  
 
-$$\mathbf{\vec a} · \mathbf{\vec b} = \vert \mathbf{\vec a} \vert * \vert \mathbf{\vec b} \vert * cos(ө)$$ , or
-
+$$\mathbf{\vec a} · \mathbf{\vec b} = \vert \mathbf{\vec a} \vert * \vert \mathbf{\vec b} \vert * cos(ө)$$ , or  
 $$\mathbf{\vec a} · \mathbf{\vec b} / (\vert \mathbf{\vec a} \vert * \vert \mathbf{\vec b} \vert) = cos(ө)$$
 
 Where:  
 
-$$ө​$$ is the angle included between the vectors.  
+$$ө$$ is the angle included between the vectors.  
 
 If vectors a and b are unit vectors, we can simply say:  
 
@@ -323,8 +322,7 @@ $$\mathbf{\vec a} = <5, 2, 0>$$
 $$\mathbf{\vec b} = <9, 0, 0>$$  
 $$unit(\mathbf{\vec b}) = <1, 0, 0>$$  
 $$\mathbf{\vec a} · unit(\mathbf{\vec b}) = (5 * 1) + (2 * 0) + (0 * 0) $$  
-
-$$\mathbf{\vec a} · unit(\mathbf{\vec b}) = 2 (\text{which is equal to the projection length of mathbf{\vec a} onto mathbf{\vec b}})$$
+$$\mathbf{\vec a} · unit(\mathbf{\vec b}) = 2 (\text{which is equal to the projection length of mathbf{\vec a} onto mathbf{\vec b}})​$$
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image182.png">
