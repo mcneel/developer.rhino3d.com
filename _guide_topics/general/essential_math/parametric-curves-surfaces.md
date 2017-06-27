@@ -533,8 +533,8 @@ $$θ$$: the angle from the x-axis in the xy-plane
 $$ø$$: the angle from the z-axis and the point  
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image190.png" >
-   <figcaption>Figure (49): The parameter rectangle of a plane.</figcaption>
+   <img src="{{ site.baseurl }}/images/math-image127.png" >
+   <figcaption>Figure (50): Spherical coordinate system.</figcaption>
 </figure>  
 
 A conversion of points from spherical to Cartesian coordinate can be obtained as follows:  
@@ -578,7 +578,7 @@ Where:
 
 ### Surfacedomain 
 
-A surface domain is defined as therange of ($$u,v$$) parameters that evaluate into a 3 D point on thatsurface. The domain in each dimension ($$u or v$$) is usually describedas two real numbers ($$u_min to u_max$4) and ($$v_min to v_max$$)
+A surface domain is defined as therange of ($$u,v$$) parameters that evaluate into a 3 D point on thatsurface. The domain in each dimension ($$u$$ or $$v$$) is usually describedas two real numbers ($$u_{min}$$ to $$u_{max}$$) and ($$v_{min}$$ to $$v_{max}$$)
 
 Changing a surface domain is referredto as *reparameterizing* the surface. An increasingdomain means that the minimum value of the domain points to theminimum point of the surface. Domains are typically increasing, butnot always.
 
@@ -589,7 +589,7 @@ Changing a surface domain is referredto as *reparameterizing* the surface. An in
 
 ### Surface evaluation
 
-Evaluating a surface at a parameter that is within the surface domain results in a point that is on the surface. Keep in mind that the middle of the domain (mid‑u, mid‑v) might not necessarily evaluate to the middle point of the 3-D surface. Also, evaluating u- and v-values that are outside the surface domain will not give a useful result.  
+Evaluating a surface at a parameter that is within the surface domain results in a point that is on the surface. Keep in mind that the middle of the domain ($$u_{mid}$$, $$v_{mid}$$) might not necessarily evaluate to the middle point of the 3-D surface. Also, evaluating $$u-$$ and $$v-$$ values that are outside the surface domain will not give a useful result.  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image193.png" >
@@ -740,14 +740,14 @@ The surface control points do not coincide with the surface seam.</td>
 For example, if you have a linear edge of a simple plane, and you drag the two end control points of an edge so they overlap (collapse) at the middle, you will get a singular edge. You will notice that the surface isocurves converge at the singular point.  
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image109.png" width=500px">
+   <img src="{{ site.baseurl }}/images/math-image109.png" width="500px">
    <figcaption>Figure (63): Collapse two corner points of a rectangular NURBS surface to create a triangular surface with singularity. The parameter rectangle remains rectangular.</figcaption>
 </figure>  
 
 The above triangular shape can be created without singularity. You can trim a surface with a triangle polyline. When you examine the underlying NURBS structure, you see that it remains a rectangular shape.  
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image99.png" width=500px">
+   <img src="{{ site.baseurl }}/images/math-image99.png" width="500px">
    <figcaption>Figure (64): Trim a rectangular NURBS surface to create a trimmed triangular surface.</figcaption>
 </figure>  
 
@@ -758,7 +758,7 @@ Other common examples of surfaces that are hard to generate without singularity 
 NURBS surfaces can be trimmed or untrimmed. Trimmed surfaces use an underlying NURBS surface and closed curves to trim out part of that surface. Each surface has one closed curve that defines the outer border (*outer loop*) and can have non-intersecting closed inner curves to define holes (*inner loops*). A surface with an outer loop that is the same as that of its underlying NURBS surface and that has no holes is what we refer to as an *untrimmed* surface.
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image97.png" width=500px">
+   <img src="{{ site.baseurl }}/images/math-image97.png" width="500px">
    <figcaption>Figure (65): Trimmed surface in modeling space (left) and in parameter rectangle (right).</figcaption>
 </figure>  
 
@@ -767,7 +767,7 @@ NURBS surfaces can be trimmed or untrimmed. Trimmed surfaces use an underlying N
 A polysurface consists of two or more(possibly trimmed) NURBS surfaces joined together. Each surface hasits own structure, parameterization, and isocurve directions that donot have to match. Polysurfaces are represented using the boundaryrepresentation (*BRep*). The BRep structure describes surfaces,edges, and vertices with trimming data and connectivity amongdifferent parts. Trimmed surface are also represented using BRep datastructure.
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image103.png" width=500px">
+   <img src="{{ site.baseurl }}/images/math-image103.png" width="500px">
    <figcaption>Figure (66): Polysurfaces are made out of joined surfaces with common edges aligning perfectly within tolerance.</figcaption>
 </figure>  
 
@@ -776,40 +776,40 @@ The BRep is a data structure that describes each face in terms of its underlying
 An example polysurface is a simple box that is made out of six untrimmed surfaces joined together.
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image101.png" width=500px">
+   <img src="{{ site.baseurl }}/images/math-image101.png" width="500px">
    <figcaption>Figure (67): Box made out of six untrimmed surfaces joined in one polysurface.</figcaption>
 </figure>  
 
 The same box can be made using trimmed surfaces, such as the top one in the following example.
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image93.png" width=500px">
+   <img src="{{ site.baseurl }}/images/math-image93.png" width="500px">
    <figcaption>Figure (68): Box faces can be trimmed.</figcaption>
 </figure>  
 
 The top and bottom faces of the cylinder in the following example are trimmed from planar surfaces.  
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image92.png" width=500px">
+   <img src="{{ site.baseurl }}/images/math-image92.png" width="500px">
    <figcaption>Figure (69) shows the control points of the underlying surfaces.</figcaption>
 </figure>  
 
 We saw that editing NURBS curves and untrimmed surfaces is intuitive and can be done interactively by moving control points. However, editing trimmed surfaces and polysurfaces can be challenging. The main challenge is to be able to maintain joined edges of different faces within the desired tolerance. Neighboring faces that share common edges can be trimmed and do not usually have matching NURBS structure, and therefore modifying the object in a way that deforms that common edge might result in a gap.  
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image51.png" width=500px">
+   <img src="{{ site.baseurl }}/images/math-image51.png" width="500px">
    <figcaption>Figure (70): Two triangular faces joined in one polysurface but do not have matching joined edge. Moving one corner create a hole.</figcaption>
 </figure>  
 
 Another challenge is that there is typically less control over the outcome, especially when modifying trimmed geometry.   
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image44.png" width=500px">
+   <img src="{{ site.baseurl }}/images/math-image44.png" width="500px">
    <figcaption>Figure (71): Once a trimmed surface is created, there is limited control to edit the result.</figcaption>
 </figure>  
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image42.png" width=500px">
+   <img src="{{ site.baseurl }}/images/math-image42.png" width="500px">
    <figcaption>Figure (72): Use cage edit technique in Rhino to edit polysurfaces.</figcaption>
 </figure>  
 
