@@ -299,7 +299,9 @@ tbody.index_table tr td{
 
 /*
 ##############################################################################
-##  Essential Mathematics span element for word wrapped notes
+##  Essential Mathematics div element for word wrapped notes
+##  Start a markdown section with:
+##  <div class="note" markdown="1">
 ##############################################################################
 */
 
