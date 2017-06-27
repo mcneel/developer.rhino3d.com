@@ -13,17 +13,17 @@ layout: toc-guide-page
 
 A vector indicates a quantity, such as velocity or force, that has direction and length. Vectors in 3D coordinate systems are represented with an ordered set of three real numbers and look like: 
 
-\$$\vec v  = <a_1, a_2, a_3>$$
+\$$\mathbf{\vec v}  = <a_1, a_2, a_3>$$
 
 ## 1.1 Vector representation
 
-In this document, lower case bold letters will notate vectors. Vector components are also enclosed in angle brackets. Upper case letters will notate points. Point coordinates will always be enclosed by parentheses.
+In this document, lower case bold letters with arrow on top will notate vectors. Vector components are also enclosed in angle brackets. Upper case letters will notate points. Point coordinates will always be enclosed by parentheses.
 
 Using a coordinate system and any set of anchor points in that system, we can represent or visualize these vectors using a line-segment representation. An arrowhead shows the vector direction.
 
 For example, if we have a vector that has a direction parallel to the x-axis of a given 3D coordinate system and a length of 5 units, we can write the vector as follows: 
 
-\$$\vec v = <5, 0, 0>$$  
+\$$\mathbf{\vec v} = <5, 0, 0>$$  
 
 To represent that vector, we need an anchor point in the coordinate system. For example, all of the arrows in the following figure are equal representations of the same vector despite the fact that they are anchored at different locations.  
 
@@ -43,11 +43,11 @@ Let us define an anchor point (A) so that:
 
 And a vector:
 
-\$$\vec v = <5, 6, 7>$$
+\$$\mathbf{\vec v} = <5, 6, 7>$$
 
 The tip point $$(B)$$ of the vector is calculated by adding the corresponding components from anchor point and vector $$\vec v$$:  
 
-$$B = A + \vec v$$  
+$$B = A + \mathbf{\vec v}$$  
 $$B = (1+5, 2+6, 3+7) $$  
 $$B = (6, 8, 10)$$  
 
@@ -60,10 +60,10 @@ $$B = (6, 8, 10)$$
 ### Position vector
 
 One special vector representation uses the $$\text{origin point} (0,0,0)$$ as the vector anchor point. 
-The position vector $$\vec v = <a1,a2,a3>$$ is represented with a line segment between two points, the origin and B, so that:  
+The position vector $$\mathbf{\vec v} = <a_1,a_2,a_3>$$ is represented with a line segment between two points, the origin and the tip point B, so that:  
 
-$$\text{Origin point} = (0,0,0)​$$  
-$$B = (a1,a2,a3)$$  
+$$\text{Origin point} = (0,0,0)$$  
+$$B = (a_1,a_2,a_3)$$  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image169.png">
@@ -79,7 +79,7 @@ A position vector for a given vector v= < a1,a2,a3 > is a special line segment r
 Do not confuse vectors and points. They are very different concepts. Vectors, as we mentioned, represent a quantity that has direction and length, while points indicate a location. For example, the North direction is a vector, while the North Pole is a location (point).
 If we have a vector and a point that have the same components, such as:  
 
-$$\vec v = <3,1,0>$$  
+$$\mathbf{\vec v} = <3,1,0>$$  
 $$P = (3,1,0)$$  
 
 We can draw the vector and the point as follows:  
@@ -93,13 +93,13 @@ We can draw the vector and the point as follows:
 
 As mentioned before, vectors have length. We will use $$\vert a \vert$$ to notate the length of a given vector $$ a $$. For example:  
 
-$$\vec a = <4, 3, 0>$$  
-$$\vert a \vert = \sqrt{4^2 + 3^2 + 0^2}$$  
-$$\vert a \vert = 5$$  
+$$\mathbf{\vec a} = <4, 3, 0>$$  
+$$\vert \mathbf{\vec a} \vert = \sqrt{4^2 + 3^2 + 0^2}$$  
+$$\vert \mathbf{\vec a} \vert = 5$$  
 
-In general, the length of a vector $$\vec a <a_1,a_2,a_3>$$ is calculated as follows:
+In general, the length of a vector $$\mathbf{\vec a} <a_1,a_2,a_3>$$ is calculated as follows:
 
-\$$\vert a \vert = \sqrt{(a_1)^2 + (a_2)^2 + (a_3)^2} $$
+\$$\vert \mathbf{\vec a} \vert = \sqrt{(a_1)^2 + (a_2)^2 + (a_3)^2} $$
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image173.png">
@@ -116,22 +116,22 @@ A unit vector is a vector whose length is equal to one unit.
 
 To calculate a unit vector, we need to find the length of the given vector, and then divide the vector components by the length. For example:
 
-\$$\vec a = <4, 3, 0>​$$  
-&nbsp;&nbsp;     $$\vert a \vert = \sqrt{4^2 + 3^2 + 0^2}$$  
-&nbsp;&nbsp;     $$\vert a \vert  = 5 \text{ unit length}$$  
+\$$\mathbf{\vec a} = <4, 3, 0>$$  
+&nbsp;&nbsp;     $$\vert \mathbf{\vec a} \vert = \sqrt{4^2 + 3^2 + 0^2}$$  
+&nbsp;&nbsp;     $$\vert \mathbf{\vec a} \vert  = 5 \text{ unit length}$$  
 
-If $$\vec b = \text{unit vector}$$ of $$a$$, then:  
-&nbsp;&nbsp;     $$\vec b = <4/5, 3/5, 0/5>$$  
-&nbsp;&nbsp;     $$\vec b = <0.8, 0.6, 0>$$  
-&nbsp;&nbsp;     $$\vert b \vert  = \sqrt{0.8^2 + 0.6^2 + 0^2}$$  
-&nbsp;&nbsp;     $$\vert b \vert  = \sqrt{0.64 + 0.36 + 0}$$  
-&nbsp;&nbsp;     $$\vert b \vert  = \sqrt{(1)} = 1 \text{unit length}$$  
+If $$\mathbf{\vec b} = \text{unit vector}$$ of $$a$$, then:  
+&nbsp;&nbsp;     $$\mathbf{\vec b} = <4/5, 3/5, 0/5>$$  
+&nbsp;&nbsp;     $$\mathbf{\vec b} = <0.8, 0.6, 0>$$  
+&nbsp;&nbsp;     $$\vert \mathbf{\vec b} \vert  = \sqrt{0.8^2 + 0.6^2 + 0^2}$$  
+&nbsp;&nbsp;     $$\vert \mathbf{\vec b} \vert  = \sqrt{0.64 + 0.36 + 0}$$  
+&nbsp;&nbsp;     $$\vert \mathbf{\vec b} \vert  = \sqrt{(1)} = 1 \text{ unit length}$$  
 
 In general:  
 
-\$$a = <a_1, a_2, a_3>$$  
+\$$\mathbf{\vec a} = <a_1, a_2, a_3>$$  
 
-The unit vector of $$\vec a = <a_1/\vert a \vert , a_2/\vert a\vert , a_3/\vert a\vert >$$  
+The unit vector of $$\mathbf{\vec a} = <a_1/\vert \mathbf{\vec a} \vert , a_2/\vert \mathbf{\vec a} \vert , a_3/\vert \mathbf{\vec a} \vert >$$  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image176.png">
@@ -144,18 +144,18 @@ The unit vector of $$\vec a = <a_1/\vert a \vert , a_2/\vert a\vert , a_3/\vert 
 
 Vector scalar operation involves multiplying a vector by a number. For example:  
 
-$$\vec a = <4, 3, 0>$$  
-$$2*\vec a = <2*4, 2*3, 2*0> $$  
-$$2*\vec a = <8, 6, 0>$$  
+$$\mathbf{\vec a} = <4, 3, 0>$$  
+$$2* \mathbf{\vec a} = <2*4, 2*3, 2*0> $$  
+$$2*\mathbf{\vec a} = <8, 6, 0>$$  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image175.png">
    <figcaption>Figure (7): Vector scalar operation</figcaption>
 </figure>  
 
-In general, given vector $$\vec a = <a_1, a_2, a_3>$$, and a real number $$t$$   
+In general, given vector $$\mathbf{\vec a} = <a_1, a_2, a_3>$$, and a real number $$t$$   
 
-\$$t*\vec a = < t*\vec a_1, t*\vec a_2, t*\vec a_3 >$$  
+\$$t*\mathbf{\vec a} = < t* a_1, t* a_2, t* a_3 >$$  
 
 ### Vector addition
 
@@ -166,10 +166,10 @@ Vectors are added by adding their components.
 ```
 For example, if we have two vectors:  
 
-$$\vec a = <1, 2, 0> $$  
-$$\vec b = <4, 1, 3> $$   
-$$\vec a+\vec b = <1+4, 2+1, 0+3>$$  
-$$\vec a+\vec b = <5, 3, 3>$$  
+$$\mathbf{\vec a} = <1, 2, 0> $$  
+$$\mathbf{\vec b} = <4, 1, 3> $$   
+$$\mathbf{\vec a}+\mathbf{\vec b} = <1+4, 2+1, 0+3>$$  
+$$\mathbf{\vec a}+\mathbf{\vec b} = <5, 3, 3>$$  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image179.png">
@@ -178,9 +178,9 @@ $$\vec a+\vec b = <5, 3, 3>$$
 
 In general, vector addition of the two vectors a and b is calculated as follows:  
 
-$$\vec a = <a_1, a_2, a_3>$$  
-$$\vec b = <b_1, b_2, b_3>$$  
-$$\vec a+\vec b = <a_1+b_1, a_2+b_2, a_3+b_3>$$  
+$$\mathbf{\vec a} = <a_1, a_2, a_3>$$  
+$$\mathbf{\vec b} = <b_1, b_2, b_3>$$  
+$$\mathbf{\vec a}+\mathbf{\vec b} = <a_1+b_1, a_2+b_2, a_3+b_3>$$  
 
 Vector addition is useful for finding the average direction of two or more vectors. In this case, we usually use same-length vectors. Here is an example that shows the difference between using same-length vectors and different-length vectors on the resulting vector addition:  
 
@@ -193,32 +193,32 @@ Input vectors are not likely to be same length. In order to find the average dir
 
 ### Vector subtraction
 
-Vector subtraction takes two vectors and produces a third vector. We subtract two vectors by subtracting corresponding components. For example, if we have two vectors $$a$$ and $$b$$ and we subtract $$b$$ from $$a$$, then:  
+Vector subtraction takes two vectors and produces a third vector. We subtract two vectors by subtracting corresponding components. For example, if we have two vectors $$\mathbf{\vec a}$$ and $$\mathbf{\vec b}$$ and we subtract $$\mathbf{\vec b}$$ from $$\mathbf{\vec a}$$, then:  
 
-$$\vec a = <1, 2, 0> $$  
-$$\vec b = <4, 1, 4> $$  
-$$\vec a-\vec b = <1-4, 2-1, 0-4>$$  
-$$\vec a-\vec b = <-3, 1, -4> = \vec{ba}$$ 
+$$\mathbf{\vec a} = <1, 2, 0> $$  
+$$\mathbf{\vec b} = <4, 1, 4> $$  
+$$\mathbf{\vec a}-\mathbf{\vec b} = <1-4, 2-1, 0-4>$$  
+$$\mathbf{\vec a}-\mathbf{\vec b} = <-3, 1, -4> = \mathbf{\mathbf{\vec b}a}$$ 
 
-If we subtract $$b$$ from $$a$$, we get a different result:  
+If we subtract $$\mathbf{\vec b}​$$ from $$\mathbf{\vec a}​$$, we get a different result:  
 
-$$\vec b - \vec a = <4-1, 1-2, 4-0>$$  
-$$\vec b - \vec a = <3, -1, 4> = \vec{ab}$$  
+$$\mathbf{\vec b} - \mathbf{\vec a} = <4-1, 1-2, 4-0>$$  
+$$\mathbf{\vec b} - \mathbf{\vec a} = <3, -1, 4> = \mathbf{\mathbf{\vec a}b}$$  
 
-Note that the vector $$\vec b - \vec a$$ has the same length as the vector $$\vec a - \vec b$$, but goes in the opposite direction.  
+Note that the vector $$\mathbf{\vec b} - \mathbf{\vec a}$$ has the same length as the vector $$\mathbf{\vec a} - \mathbf{\vec b}$$, but goes in the opposite direction.  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image178.png">
    <figcaption>Figure (10): Vector subtraction.</figcaption>
 </figure>  
 
-In general, if we have two vectors, $$\vec a$$ and $$\vec b$$, then $$\vec a - \vec b$$ is a vector that is calculated as follows:  
+In general, if we have two vectors, $$\mathbf{\vec a}$$ and $$\mathbf{\vec b}$$, then $$\mathbf{\vec a} - \mathbf{\vec b}$$ is a vector that is calculated as follows:  
 
-$$\vec a = <a_1, a_2, a_3>$$  
-$$\vec b = <b_1, b_2, b_3>$$  
-$$\vec a - \vec b = <a_1 - b_1, a_2 - b_2, a_3 - b_3> = \vec{ba}$$  
+$$\mathbf{\vec a} = <a_1, a_2, a_3>$$  
+$$\mathbf{\vec b} = <b_1, b_2, b_3>$$  
+$$\mathbf{\vec a}-\mathbf{\vec b} = <a_1 - b_1, a_2 - b_2, a_3 - b_3> = \mathbf{\mathbf{\vec b}a}$$  
 
-Vector subtraction is commonly used to find vectors between points. So if we need to find a vector that goes from the tip point of the position vector $$\vec b$$ to the tip point of the position vector $$a$$, then we use vector subtraction $$(\vec a-\vec b)$$ as shown in Figure (11).  
+Vector subtraction is commonly used to find vectors between points. So if we need to find a vector that goes from the tip point of the position vector $$\mathbf{\vec b}$$ to the tip point of the position vector $$\mathbf{\vec a}$$, then we use vector subtraction $$(\mathbf{\vec a}-\mathbf{\vec b})$$ as shown in Figure (11).  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image180.png">
@@ -229,33 +229,33 @@ Vector subtraction is commonly used to find vectors between points. So if we nee
 
 There are eight properties of vectors. If a, b, and c are vectors, and s and t are numbers, then:  
 
-$$\vec a + \vec b = \vec b + \vec a$$  
-$$\vec a + 0 = a$$  
-$$s * (\vec a + \vec b) = s * a + s * \vec b$$  
-$$s * t * (\vec a) = s * (t * \vec a)$$  
-$$\vec a + (\vec b + \vec c) = (\vec a + \vec b) + \vec c$$  
-$$\vec a + (-\vec a) = 0$$  
-$$(s + t) * \vec a = s * \vec a + t * \vec a$$  
-$$1 * \vec a = \vec a$$  
+$$\mathbf{\vec a} + \mathbf{\vec b} = \mathbf{\vec b} + \mathbf{\vec a}$$  
+$$\mathbf{\vec a} + 0 = a$$  
+$$s * (\mathbf{\vec a} + \mathbf{\vec b}) = s * a + s * \mathbf{\vec b}$$  
+$$s * t * (\mathbf{\vec a}) = s * (t * \mathbf{\vec a})$$  
+$$\mathbf{\vec a} + (\mathbf{\vec b} + \mathbf{\vec c}) = (\mathbf{\vec a} + \mathbf{\vec b}) + \mathbf{\vec c}$$  
+$$\mathbf{\vec a} + (-\mathbf{\vec a}) = 0$$  
+$$(s + t) * \mathbf{\vec a} = s * \mathbf{\vec a} + t * \mathbf{\vec a}$$  
+$$1 * \mathbf{\vec a} = \mathbf{\vec a}$$  
 
 ### Vector dot product
 
 The dot product takes two vectors and produces a number. 
 For example, if we have the two vectors a and b so that:
 
-$$\vec a = <1, 2, 3> $$  
-$$\vec b = <5, 6, 7>$$  
+$$\mathbf{\vec a} = <1, 2, 3> $$  
+$$\mathbf{\vec b} = <5, 6, 7>$$  
 
 Then the dot product is the sum of multiplying the components as follows:  
 
-$$\vec a · \vec b = 1 * 5 + 2 * 6 + 3 * 7$$  
-$$\vec a · \vec b = 38$$  
+$$\mathbf{\vec a} · \mathbf{\vec b} = 1 * 5 + 2 * 6 + 3 * 7$$  
+$$\mathbf{\vec a} · \mathbf{\vec b} = 38$$  
 
 In general, given the two vectors a and b:  
 
-$$\vec a = <a_1, a_2, a_3>$$  
-$$\vec b = <b_1, b_2, b_3>$$  
-$$\vec a · \vec b = a_1 * b_1 + a_2 * b_2 + a_3 * b_3$$  
+$$\mathbf{\vec a} = <a_1, a_2, a_3>$$  
+$$\mathbf{\vec b} = <b_1, b_2, b_3>$$  
+$$\mathbf{\vec a} · \mathbf{\vec b} = a_1 * b_1 + a_2 * b_2 + a_3 * b_3$$  
 
 We always get a positive number for the dot product between two vectors when they go in the same general direction. A negative dot product between two vectors means that the two vectors go in the opposite general direction.
 
@@ -266,21 +266,21 @@ We always get a positive number for the dot product between two vectors when the
 
 When calculating the dot product of two unit vectors, the result is always between 1 and +1. For example:  
 
-$$\vec a = <1, 0, 0>$$  
-$$\vec b = <0.6, 0.8, 0>$$  
-$$\vec a · \vec b = (1 * 0.6, 0 * 0.8, 0 * 0) = 0.6$$  
+$$\mathbf{\vec a} = <1, 0, 0>$$  
+$$\mathbf{\vec b} = <0.6, 0.8, 0>$$  
+$$\mathbf{\vec a} · \mathbf{\vec b} = (1 * 0.6, 0 * 0.8, 0 * 0) = 0.6$$  
 
 In addition, the dot product of a vector with itself is equal to that vector’s length to the power of two. For example:  
 
-$$\vec a = <0, 3, 4>$$  
-$$\vec a · \vec a = 0 * 0 + 3 * 3 + 4 * 4 $$  
-$$\vec a · \vec a = 25$$  
+$$\mathbf{\vec a} = <0, 3, 4>$$  
+$$\mathbf{\vec a} · \mathbf{\vec a} = 0 * 0 + 3 * 3 + 4 * 4 $$  
+$$\mathbf{\vec a} · \mathbf{\vec a} = 25$$  
 
-Calculating the square length of vector $$a$$ :  
+Calculating the square length of vector $$\mathbf{\vec a}$$ :  
 
-$$\vert a \vert = \sqrt{4^2 + 3^2 + 0^2}$$  
-$$\vert a \vert = 5$$  
-$$\vert a \vert 2 = 25$$  
+$$\vert \mathbf{\vec a} \vert = \sqrt{4^2 + 3^2 + 0^2}$$  
+$$\vert \mathbf{\vec a} \vert = 5$$  
+$$\vert \mathbf{\vec a} \vert 2 = 25$$  
 
 ### Vector dot product, lengths, and angles
 
@@ -292,16 +292,16 @@ The dot product of two non-zero unit vectors equals the cosine of the angle betw
 
 In general:  
 
-$$\vec a · \vec b = \vert a \vert * \vert b \vert * cos(ө)$$ , or  
-$$\vec a · \vec b / (\vert a \vert * \vert b \vert ) = cos(ө)$$  
+$$\mathbf{\vec a} · \mathbf{\vec b} = \vert \mathbf{\vec a} \vert * \vert \mathbf{\vec b} \vert * cos(ө)$$ , or  
+$$\mathbf{\vec a} · \mathbf{\vec b} / (\vert \mathbf{\vec a} \vert * \vert \mathbf{\vec b} \vert ) = cos(ө)$$  
 
 Where:  
 
-$$ө$$ is the angle included between the vectors.  
+$$ө​$$ is the angle included between the vectors.  
 
 If vectors a and b are unit vectors, we can simply say:  
 
-\$$\vec a · \vec b = cos(ө)$$  
+\$$\mathbf{\vec a} · \mathbf{\vec b} = cos(ө)$$  
 
 And since the cosine of a 90-degree angle is equal to 0, we can say:  
 
@@ -311,18 +311,18 @@ Vectors a and b are orthogonal if, and only if, a · b = 0.
 
 For example, if we calculate the dot product of the two orthogonal vectors, World xaxis and yaxis, the result will equal zero.  
 
-$$\vec x = <1, 0, 0>$$  
-$$\vec y = <0, 1, 0>$$  
-$$\vec x · \vec y = (1 * 0) + (0 * 1) + (0 * 0)$$  
-$$\vec x · \vec y = 0$$  
+$$\mathbf{\vec x} = <1, 0, 0>$$  
+$$\mathbf{\vec y} = <0, 1, 0>$$  
+$$\mathbf{\vec x} · \mathbf{\vec y} = (1 * 0) + (0 * 1) + (0 * 0)$$  
+$$\mathbf{\vec x} · \mathbf{\vec y} = 0$$  
 
 There is also a relationship between the dot product and the projection length of one vector onto another. For example:  
 
-$$\vec a = <5, 2, 0>$$  
-$$\vec b = <9, 0, 0>$$  
-$$unit(\vec b) = <1, 0, 0>$$  
-$$\vec a · unit(\vec b) = (5 * 1) + (2 * 0) + (0 * 0) $$  
-$$\vec a · unit(\vec b) = 2 (\text{which is equal to the projection length of a onto b})$$  
+$$\mathbf{\vec a} = <5, 2, 0>$$  
+$$\mathbf{\vec b} = <9, 0, 0>$$  
+$$unit(\mathbf{\vec b}) = <1, 0, 0>$$  
+$$\mathbf{\vec a} · unit(\mathbf{\vec b}) = (5 * 1) + (2 * 0) + (0 * 0) $$  
+$$\mathbf{\vec a} · unit(\mathbf{\vec b}) = 2 (\text{which is equal to the projection length of a onto b})$$  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image182.png">
@@ -331,18 +331,18 @@ $$\vec a · unit(\vec b) = 2 (\text{which is equal to the projection length of a
 
 In general, given a vector a and a non-zero vector b, we can calculate the projection length pL of vector a onto vector b using the dot product.  
 
-$$pL = \vert \vec a \vert * cos(ө) $$  
-$$pL = \vec a · unit(b)$$  
+$$pL = \vert \mathbf{\vec a} \vert * cos(ө) $$  
+$$pL = \mathbf{\vec a} · unit(\mathbf{\vec b})$$  
 
 ### Dot product properties
 
-If $$\vec a$$, $$\vec b$$, and $$\vec c$$ are vectors and s is a number, then:  
+If $$\mathbf{\vec a}$$, $$\mathbf{\vec b}$$, and $$\mathbf{\vec c}$$ are vectors and s is a number, then:  
 
-$$\vec a · \vec a = \vert  a \vert ^2$$  
-$$\vec a · (\vec b + \vec c) = \vec a · \vec b + \vec a · \vec c$$  
-$$0 · \vec a = 0$$  
-$$\vec a · \vec b = \vec b · \vec a$$  
-$$(s * \vec a) · \vec b = s * (\vec a · \vec b) = \vec a · (s * \vec b)$$  
+$$\mathbf{\vec a} · \mathbf{\vec a} = \vert  \mathbf{\vec a} \vert ^2$$  
+$$\mathbf{\vec a} · (\mathbf{\vec b} + \mathbf{\vec c}) = \mathbf{\vec a} · \mathbf{\vec b} + \mathbf{\vec a} · \mathbf{\vec c}$$  
+$$0 · \mathbf{\vec a} = 0​$$  
+$$\mathbf{\vec a} · \mathbf{\vec b} = \mathbf{\vec b} · \mathbf{\vec a}$$  
+$$(s * \mathbf{\vec a}) · \mathbf{\vec b} = s * (\mathbf{\vec a} · \mathbf{\vec b}) = \mathbf{\vec a} · (s * \mathbf{\vec b})$$  
 
 ### Vector cross product
 
@@ -355,10 +355,10 @@ The cross product takes two vectors and produces a third vector that is orthogon
 
 For example, if you have two vectors lying on the World xy-plane, then their cross product is a vector perpendicular to the xy-plane going either in the positive or negative World z-axis direction. For example:  
 
-$$\vec a = <3, 1, 0>$$  
-$$\vec b = <1, 2, 0>$$  
-$$\vec a × \vec b = < (1 * 0 – 0 * 2), (0 * 1 - 3 * 0), (3 * 2 - 1 * 1) > $$  
-$$\vec a × \vec b = <0, 0, 5>$$  
+$$\mathbf{\vec a} = <3, 1, 0>$$  
+$$\mathbf{\vec b} = <1, 2, 0>$$  
+$$\mathbf{\vec a} × \mathbf{\vec b} = < (1 * 0 – 0 * 2), (0 * 1 - 3 * 0), (3 * 2 - 1 * 1) > $$  
+$$\mathbf{\vec a} × \mathbf{\vec b} = <0, 0, 5>$$  
 
 ``` markdown
 The vector a x b is orthogonal to both a and b.
@@ -372,20 +372,20 @@ $$ \color {green}{k} = <0, 0, 1>$$
 
 <img src="{{ site.baseurl }}/images/math-image184.png">
 
-The cross product of the two vectors $$\vec a = <a1, a2, a3>$$ and $$\vec b = <b1, b2, b3>$$ is calculated as follows using the above diagram:  
+The cross product of the two vectors $$\mathbf{\vec a} = <a1, a2, a3>$$ and $$\mathbf{\vec b} = <b1, b2, b3>$$ is calculated as follows using the above diagram:  
 
-$$\vec a × \vec b = \color {red}{i (a_2 * b_3)} + \color {blue}{ j (a_3 * b_1)} + \color {green}{k(a_1 * b_2)} - \color {green}{k (a_2 * b_1)} - \color {red}{i (a_3 * b_2)} -\color {blue}{ j (a_1 * b_3)}$$  
-$$\vec a × \vec b = \color {red}{i (a_2 * b_3 - a_3 * b_2)} + \color {blue}{j (a_3 * b_1 - a_1 * b_3)} +\color {green}{k (a_1 * b_2 - a_2 * b_1)}$$  
-$$\vec a × \vec b = <\color {red}{a_2 * b_3 – a_3 * b_2},  \color {blue}{a_3 * b_1 - a_1 * b_3},  \color {green}{a_1 * b_2 - a_2 * b_1} >$$  
+$$\mathbf{\vec a} × \mathbf{\vec b} = \color {red}{i (a_2 * b_3)} + \color {blue}{ j (a_3 * b_1)} + \color {green}{k(a_1 * b_2)} - \color {green}{k (a_2 * b_1)} - \color {red}{i (a_3 * b_2)} -\color {blue}{ j (a_1 * b_3)}$$  
+$$\mathbf{\vec a} × \mathbf{\vec b} = \color {red}{i (a_2 * b_3 - a_3 * b_2)} + \color {blue}{j (a_3 * b_1 - a_1 * b_3)} +\color {green}{k (a_1 * b_2 - a_2 * b_1)}$$  
+$$\mathbf{\vec a} × \mathbf{\vec b} = <\color {red}{a_2 * b_3 – a_3 * b_2},  \color {blue}{a_3 * b_1 - a_1 * b_3},  \color {green}{a_1 * b_2 - a_2 * b_1} >$$  
 
 ### Cross product and angle between vectors
 
 There is a relationship between the angle between two vectors and the length of their cross product vector. The smaller the angle (smaller sine); the shorter the cross product vector will be. The order of operands is important in vectors cross product. For example:  
 
-$$\vec a = <1, 0, 0>$$  
-$$\vec b = <0, 1, 0>$$  
-$$\vec a × \vec b = <0, 0, 1>$$  
-$$\vec b × \vec a = <0, 0, -1>$$  
+$$\mathbf{\vec a} = <1, 0, 0>$$  
+$$\mathbf{\vec b} = <0, 1, 0>$$  
+$$\mathbf{\vec a} × \mathbf{\vec b} = <0, 0, 1>$$  
+$$\mathbf{\vec b} × \mathbf{\vec a} = <0, 0, -1>$$  
 
 
 <figure>
@@ -393,21 +393,21 @@ $$\vec b × \vec a = <0, 0, -1>$$
    <figcaption>Figure (15): The relationship between the sine of the angle between two vectors and the length of their cross product vector.</figcaption>
 </figure>  
 
-In Rhino's right-handed system, the direction of $$\vec a × \vec b$$ is given by the right-hand rule (where $$\vec a$$ = index finger, $$\vec b$$ = middle finger, and $$\vec a × \vec b$$ = thumb).  
+In Rhino's right-handed system, the direction of $$\mathbf{\vec a} × \mathbf{\vec b}$$ is given by the right-hand rule (where $$\mathbf{\vec a}$$ = index finger, $$\mathbf{\vec b}$$ = middle finger, and $$\mathbf{\vec a} × \mathbf{\vec b}$$ = thumb).  
 
 <img src="{{ site.baseurl }}/images/math-image186.png">  
 
-In general, for any pair of 3-D vectors $$\vec a$$ and $$\vec b$$:  
+In general, for any pair of 3-D vectors $$\mathbf{\vec a}$$ and $$\mathbf{\vec b}$$:  
 
-\$$\vert \vec a × \vec b \vert  = \vert  \vec a \vert  \vert  \vec b \vert  sin(ө)$$  
+\$$\vert \mathbf{\vec a} × \mathbf{\vec b} \vert  = \vert  \mathbf{\vec a} \vert  \vert  \mathbf{\vec b} \vert  sin(ө)$$  
 
 Where:   
 
-$$ө$$ is the angle included between the position vectors of $$\vec a$$ and $$\vec b$$  
+$$ө$$ is the angle included between the position vectors of $$\mathbf{\vec a}$$ and $$\mathbf{\vec b}$$  
 
 If a and b are unit vectors, then we can simply say that the length of their cross product equals the sine of the angle between them. In other words:  
 
-\$$\vert \vec a × \vec b \vert = sin(ө)$$  
+\$$\vert \mathbf{\vec a} × \mathbf{\vec b} \vert = sin(ө)$$  
 
 The cross product between two vectors helps us determine if two vectors are parallel. This is because the result is always a zero vector.  
 
@@ -417,13 +417,13 @@ Vectors a and b are parallel if, and only if, a x b = 0.
 
 ### Cross product properties
 
-If $$\vec a$$, $$\vec b$$, and $$\vec c$$ are vectors, and $$s$$ is a number, then:  
-$$\vec a × \vec b = -\vec b × \vec a$$   
-$$(s * \vec a) × \vec b = s * (\vec a × \vec b) = \vec a × (s * \vec b)$$  
-$$\vec a × (\vec b + \vec c) = \vec a × \vec b + \vec a × \vec c$$  
-$$(\vec a + \vec b) × \vec c = \vec a × \vec c + \vec b × \vec c$$  
-$$\vec a · (\vec b × \vec c) = (\vec a × \vec b) · \vec c$$  
-$$\vec a × (\vec b × \vec c) = (\vec a · \vec c) * \vec b – (\vec a · \vec b) * \vec c$$  
+If $$\mathbf{\vec a}$$, $$\mathbf{\vec b}$$, and $$\mathbf{\vec c}$$ are vectors, and $$s$$ is a number, then:  
+$$\mathbf{\vec a} × \mathbf{\vec b} = -\mathbf{\vec b} × \mathbf{\vec a}$$   
+$$(s * \mathbf{\vec a}) × \mathbf{\vec b} = s * (\mathbf{\vec a} × \mathbf{\vec b}) = \mathbf{\vec a} × (s * \mathbf{\vec b})$$  
+$$\mathbf{\vec a} × (\mathbf{\vec b} + \mathbf{\vec c}) = \mathbf{\vec a} × \mathbf{\vec b} + \mathbf{\vec a} × \mathbf{\vec c}$$  
+$$(\mathbf{\vec a} + \mathbf{\vec b}) × \mathbf{\vec c} = \mathbf{\vec a} × \mathbf{\vec c} + \mathbf{\vec b} × \mathbf{\vec c}$$  
+$$\mathbf{\vec a} · (\mathbf{\vec b} × \mathbf{\vec c}) = (\mathbf{\vec a} × \mathbf{\vec b}) · \mathbf{\vec c}$$  
+$$\mathbf{\vec a} × (\mathbf{\vec b} × \mathbf{\vec c}) = (\mathbf{\vec a} · \mathbf{\vec c}) * \mathbf{\vec b} – (\mathbf{\vec a} · \mathbf{\vec b}) * \mathbf{\vec c}$$  
 
 ## 1.3 Vector equation of line
 
@@ -437,18 +437,18 @@ The vector line equation is used in 3D modeling applications and computer graphi
 For example, if we know the direction of a line and a point on that line, then we can find any other point on the line using vectors, as in the following:
 
 $$\overline{L} = line$$  
-$$\vec v = <a, b, c>$$ line direction unit vector  
+$$\mathbf{\vec v} = <a, b, c>$$ line direction unit vector  
 $$Q = (x_0, y_0, z_0)$$ line position point  
 $$P = (x, y, z)$$ any point on the line  
 
 We know that:  
 
-$$\vec a = t * \vec v$$   (2)  
-$$\vec p = \vec q + \vec a$$   (1)  
+$$\mathbf{\vec a} = t *\mathbf{\vec v}$$   (2)  
+$$\mathbf{\vec p} = \mathbf{\vec q} + \mathbf{\vec a}$$   (1)  
 
 From 1 and 2:  
 
-$$\vec p = \vec q + t * \vec v$$  (3)   
+$$\mathbf{\vec p} = \mathbf{\vec q} + t * \mathbf{\vec v}​$$  (3)   
 
 However, we can write (3) as follows:  
 
@@ -459,11 +459,11 @@ Therefore:
 
 $$x = x_0 + t * a$$  
 $$y = y_0 + t * b$$  
-$$z = z_0 + t * c$$  
+$$z = z_0 + t * c​$$  
 
 Which is the same as:  
 
-\$$P = Q + t * v$$  
+\$$P = Q + t * \mathbf{\vec v}$$  
 
 ``` markdown
 Given a point Q and a direction v on a line, any point P on that line can be calculated using the vector equation of a line P = Q + t * v where t is a number.  
@@ -471,17 +471,17 @@ Given a point Q and a direction v on a line, any point P on that line can be cal
 
 Another common example is to find the midpoint between two points. The following shows how to find the midpoint using the vector equation of a line:  
 
-$$\vec q$$ is the position vector for point $$Q$$  
-$$\vec p$$ is the position vector for point $$P$$  
-$$\vec a$$ is the vector going from $$Q \rightarrow P$$  
+$$\mathbf{\vec q}$$ is the position vector for point $$Q$$  
+$$\mathbf{\vec p}$$ is the position vector for point $$P$$  
+$$\mathbf{\vec a}$$ is the vector going from $$Q \rightarrow P$$  
 
 From vector subtraction, we know that:  
 
-\$$\vec a = \vec p - \vec q$$  
+\$$\mathbf{\vec a} = \mathbf{\vec p} - \mathbf{\vec q}$$  
 
 From the line equation, we know that:  
 
-\$$M = Q + t * \vec a$$  
+\$$M = Q + t * \mathbf{\vec a}$$  
 
 And since we need to find midpoint, then:  
 
@@ -489,7 +489,7 @@ And since we need to find midpoint, then:
 
 Hence we can say:  
 
-\$$\overline{M} = Q + 0.5 * \vec a$$  
+\$$M = Q + 0.5 * \mathbf{\vec a}$$  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image159.png">
@@ -498,7 +498,7 @@ Hence we can say:
 
 In general, you can find any point between $$Q$$ and $$P$$ by changing the $$t$$ value between 0 and 1 using the general equation:  
 
-\$$\overline{M} = Q + t * (P - Q)$$  
+\$$M = Q + t * (P - Q)$$  
 
 ``` markdown
 Given two points Q and P, any point M between the two points is calculated using the equation M = Q + t * (P - Q) where t is a number between 0 and 1.
@@ -517,13 +517,13 @@ $$C$$ = the third point on the plane
 
 And:  
 
-$$\vec a $$ = a position vector of point $$A$$  
-$$\vec b$$ = a position vector of point $$B$$  
-$$\vec c$$ = a position vector of point $$C$$  
+$$\mathbf{\vec a} $$ = a position vector of point $$A$$  
+$$\mathbf{\vec b}$$ = a position vector of point $$B$$  
+$$\mathbf{\vec c}$$ = a position vector of point $$C$$  
 
-We can find the normal vector $$\vec n$$ as follows:  
+We can find the normal vector $$\mathbf{\vec n}$$ as follows:  
 
-\$$\vec n = (\vec b - \vec a) × (\vec c - \vec a)$$  
+\$$\mathbf{\vec n} = (\mathbf{\vec b} - \mathbf{\vec a}) × (\mathbf{\vec c} - \mathbf{\vec a})$$  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image160.png">
@@ -532,13 +532,13 @@ We can find the normal vector $$\vec n$$ as follows:
 
 We can also derive the scalar equation of the plane using the vector dot product:  
 
-\$$\vec n · (\vec b - \vec a) = 0$$  
+\$$\mathbf{\vec n} · (\mathbf{\vec b} - \mathbf{\vec a}) = 0$$  
 
 If:  
 
-$$\vec n = <a, b, c>  
-$$b = <x, y, z>$$  
-$$ a = <x_0, y_0, z_0>$$  
+$$\mathbf{\vec n} = <a, b, c>$$  
+$$\mathbf{\vec b} = <x, y, z>$$  
+$$ \mathbf{\vec a} = <x_0, y_0, z_0>$$  
 
 Then we can expand the above:  
 
