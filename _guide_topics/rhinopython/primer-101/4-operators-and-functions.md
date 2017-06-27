@@ -11,6 +11,7 @@ origin:
 order: 15
 keywords: ['python', 'commands']
 layout: toc-guide-page
+guide_homepage: /guides/rhinopython/primer-101/rhinopython101/
 ---
 
 ## 4.1 What on earth are they and why should I care?

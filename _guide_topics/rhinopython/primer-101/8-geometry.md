@@ -11,6 +11,7 @@ origin:
 order: 15
 keywords: ['python', 'commands']
 layout: toc-guide-page
+guide_homepage: /guides/rhinopython/primer-101/rhinopython101/
 ---
 
 ## 8.1 The openNURBS™ kernel

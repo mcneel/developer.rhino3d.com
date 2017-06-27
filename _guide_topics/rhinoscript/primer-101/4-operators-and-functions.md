@@ -11,6 +11,7 @@ origin:
 order: 15
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
+guide_homepage: /guides/rhinoscript/primer-101/rhinoscript101/
 ---
 
 ## 4.1 What on earth are they and why should I care?
@@ -372,9 +373,9 @@ End Sub
 So what if we want our function to manipulate several variables? How do we get around the 'one return value only' limitation? There are essentially four solutions to this, two of which are far too difficult for you at this moment and one of which is just stupid... try to guess which is which:
 
 1. Use global variables
-1. Declare arguments by reference
-1. Return an array
-1. Return a class instance
+2. Declare arguments by reference
+3. Return an array
+4. Return a class instance
 
 We'll focus on number two for the time being. (#1 was the stupid option in case you were wondering.)
 
