@@ -292,8 +292,9 @@ The dot product of two non-zero unit vectors equals the cosine of the angle betw
 
 In general:  
 
-$$\mathbf{\vec a} · \mathbf{\vec b} = \vert \mathbf{\vec a} \vert * \vert \mathbf{\vec b} \vert * cos(ө)$$ , or  
-$$\mathbf{\vec a} · \mathbf{\vec b} / (\vert \mathbf{\vec a} \vert * \vert \mathbf{\vec b} \vert ) = cos(ө)$$  
+$$\mathbf{\vec a} · \mathbf{\vec b} = \vert \mathbf{\vec a} \vert * \vert \mathbf{\vec b} \vert * cos(ө)$$ , or
+
+$$\mathbf{\vec a} · \mathbf{\vec b} / (\vert \mathbf{\vec a} \vert * \vert \mathbf{\vec b} \vert) = cos(ө)$$
 
 Where:  
 
@@ -322,7 +323,8 @@ $$\mathbf{\vec a} = <5, 2, 0>$$
 $$\mathbf{\vec b} = <9, 0, 0>$$  
 $$unit(\mathbf{\vec b}) = <1, 0, 0>$$  
 $$\mathbf{\vec a} · unit(\mathbf{\vec b}) = (5 * 1) + (2 * 0) + (0 * 0) $$  
-$$\mathbf{\vec a} · unit(\mathbf{\vec b}) = 2 (\text{which is equal to the projection length of a onto b})$$  
+
+$$\mathbf{\vec a} · unit(\mathbf{\vec b}) = 2 (\text{which is equal to the projection length of mathbf{\vec a} onto mathbf{\vec b}})$$
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image182.png">
@@ -332,7 +334,7 @@ $$\mathbf{\vec a} · unit(\mathbf{\vec b}) = 2 (\text{which is equal to the proj
 In general, given a vector a and a non-zero vector b, we can calculate the projection length pL of vector a onto vector b using the dot product.  
 
 $$pL = \vert \mathbf{\vec a} \vert * cos(ө) $$  
-$$pL = \mathbf{\vec a} · unit(\mathbf{\vec b})$$  
+$$pL = \mathbf{\vec a} · unit(\mathbf{\vec b})​$$  
 
 ### Dot product properties
 
