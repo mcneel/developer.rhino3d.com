@@ -19,8 +19,12 @@ layout: bootstrap
               {% if api_url == 'c/c++' %}{% assign api_url = 'cpp' %}{% endif %}
               <li><a href="{{ site.baseurl }}/guides/{{ api_url }}">{{ api }}</a></li>
               {% if page.categories != page.apis %}
-              <li class="active">{{ page.categories }}</li>
-              {% endif %}
+			    {% if page.guide_homepage %}
+			      <li class="active"><a href="{{site.baseurl}}{{page.guide_homepage}}">{{ page.categories }}</a></li>
+			    {% else %}
+                  <li class="active">{{ page.categories }} page cat = {{page.guide_homepage}}</li>
+                {% endif %}
+              {% endif %}			  
           </ol>
 
           <h1>{{ page.title }}</h1>

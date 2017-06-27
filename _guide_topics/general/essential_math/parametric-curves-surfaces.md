@@ -9,6 +9,7 @@ origin:
 order: 1
 keywords: ['mathematics', 'geometry', 'grasshopper3d']
 layout: toc-guide-page
+guide_homepage: /guides/general/essential_math/essential-mathematics/
 ---
 
 Suppose you travel every weekday from your house to your work. You leave at 8:00 in the morning and arrive at 9:00. At each point in time between 8:00 and 9:00, you would be at some location along the way. If you plot your location every minute during your trip, you can define the path between home and work by connecting the 60 points you plotted. Assuming you travel the exact same speed every day, at 8:00 you would be at home (start location), at 9:00 you would be at work (end location) and at 8:40 you would at the exact same location on the path as the 40th plot point. Congratulations, you have just defined your first parametric curve! You have used *time* as a *parameter* to define your path, and hence you can call your path curve a *parametric curve*. The time interval you spend from start to end (8 to 9) is called the curve *domain* or *interval*. 
