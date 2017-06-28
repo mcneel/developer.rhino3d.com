@@ -47,7 +47,7 @@ Notice that method 1 takes almost twice the number of operations to achieve the 
 
 Three-dimensional modeling applications provide tools to apply transformations and multiply matrices, but if you are curious about how to mathematically multiply matrices, we will explain a simple example. In order to multiply two matrices, they have to have matching dimensions. That means the number of columns in the first matrix must equal the number of rows of the second matrix. The resulting matrix has a size equal to the number of rows from the first matrix and the number of columns from the second matrix. For example, if we have two matrices, $$M$$ and $$P$$, with dimensions equal to $$[4\times 4]$$ and $$[4 \times 1]$$ respectively, then there resulting multiplication matrix $$M · P$$ has a dimension equal to $$[4 \times 1]$$ as shown in the following illustration:
 
-\$$\begin{array}{ccc} M & P  & P' \\\begin{bmatrix}\color{red}{a} & \color{red}{b}  & \color{red}{c} & \color{red}{d}  \\e & f & g & h \\i & j & k & l \\0 & 0 & 0 & 1 \\\end{bmatrix}& \cdot\begin{bmatrix}\color{red}{x} \\\color{red}{y} \\\color{red}{z} \\\color{red}{1}  \\\end{bmatrix}&= \begin{bmatrix}x'=a*x+b*y+c*z+d*1\\y'=e*x+f*y+g*z+h*1\\z'=i*x+j*y+k*z+l*1 \\1=0*x+0*y+0*z+1*1\\\end{bmatrix}\end{array}$$    
+\$$\begin{array}{ccc} M & P  & P' \\\begin{bmatrix}\color{red}{a} & \color{red}{b}  & \color{red}{c} & \color{red}{d}  \\e & f & g & h \\i & j & k & l \\0 & 0 & 0 & 1 \\\end{bmatrix}& \cdot\begin{bmatrix}\color{red}{x} \\\color{red}{y} \\\color{red}{z} \\\color{red}{1}  \\\end{bmatrix}&= \begin{bmatrix}\color{red}{x'=a*x+b*y+c*z+d*1}\\y'=e*x+f*y+g*z+h*1\\z'=i*x+j*y+k*z+l*1 \\1=0*x+0*y+0*z+1*1\\\end{bmatrix}\end{array}$$    
 
 ### Identity matrix
 
@@ -67,16 +67,16 @@ Most transformations preserve the parallel relationship among the parts of the g
 
 Moving a point from a starting position by certain a vector can be calculated as follows:
 
-\$$P' = P + \vec V$$  
+\$$P' = P + \mathbf{\vec v}$$  
 
 ![{{ site.baseurl }}/images/math-image35.png]({{ site.baseurl }}/images/math-image35.png){: .float-img-right width="275"}   
 
 Suppose:  
 &nbsp; $$P(x,y,z)$$ is a given point  
-&nbsp; $$\bf{\vec v}=<a,b,c>$$ is a translation vector  
+&nbsp; $$\mathbf{\vec v}=<a,b,c>$$ is a translation vector  
 Then:  
-&nbsp; $$\bf{P'(x) = x + a}$$  
-&nbsp; $$\bf{P'(y) = y + b}$$  
+&nbsp; $$P'(x) = x + a$$  
+&nbsp; $$P'(y) = y + b$$  
 &nbsp; $$P'(z) = z + c$$  
 
 &nbsp;{: .clear-img}  
@@ -91,7 +91,7 @@ Using a $$[4 \times 4]$$ matrix for transformations (what is called a homogenous
 
 For example, to move point $$P(2,3,1)$$ by vector $$\vec v <2,2,2>$$, the new point location is:
 
-\$$P’ = P + \vec v = (2+2, 3+2, 1+2) = (4, 5, 3)$$  
+\$$P’ = P + \mathbf{\vec v} = (2+2, 3+2, 1+2) = (4, 5, 3)$$  
 
 If we use the matrix form and multiply the translation matrix by the input point, we get the new point location as in the following:
 
