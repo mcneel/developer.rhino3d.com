@@ -44,9 +44,10 @@ We can therefore write the parametric equation of a line segment using a $$t$$ p
 \$$P = P’ + t * \mathbf{\vec v}$$
 
 &nbsp;{: .clear-img} 
-![{{ site.baseurl }}/images/math-image110.png]({{ site.baseurl }}/images/math-image110.png){: .float-img-right width="241"}  
 
 Another example is a circle. The parametric equation of the circle on the xy-plane with a center at the origin (0,0) and an angle parameter $$t$$ ranging between $$0$$ and $$2π$$ radians is:  
+
+![{{ site.baseurl }}/images/math-image110.png]({{ site.baseurl }}/images/math-image110.png){: .float-img-right width="241"}  
 
 &nbsp; $$x = r \dot cos(t)$$  
 &nbsp; $$y = r \dot sin(t)$$  
