@@ -35,15 +35,16 @@ Where:
 
 &nbsp; $$x$$, $$y$$, and $$z$$ are functions of t where t represents a range of real numbers.
 &nbsp; $$x’$$, $$y’$$, and $$z’$$ are the coordinates of a point on the line segment.
-&nbsp; $$a$$, $$b$$, and $$c$$ define the slope of the line, such that the vector $$\vec v <a, b, c>$$ is parallel to the line.
+&nbsp; $$a$$, $$b$$, and $$c$$ define the slope of the line, such that the vector $$\mathbf{\vec v} <a, b, c>$$ is parallel to the line.
 
 ![{{ site.baseurl }}/images/math-image108.png]({{ site.baseurl }}/images/math-image108.png){: .float-img-right width="275"}   
 
 We can therefore write the parametric equation of a line segment using a $$t$$ parameter that ranges between two real number values $$t0$$, $$t1$$ and a unit vector $$\vec v$$ that is in the direction of the line as follows:
 
-\$$P = P’ + t * \vec v$$
+\$$P = P’ + t * \mathbf{\vec v}$$
 
-&nbsp;{: .clear-img}  
+&nbsp;{: .clear-img} 
+![{{ site.baseurl }}/images/math-image110.png]({{ site.baseurl }}/images/math-image110.png){: .float-img-right width="241"}  
 
 Another example is a circle. The parametric equation of the circle on the xy-plane with a center at the origin (0,0) and an angle parameter $$t$$ ranging between $$0$$ and $$2π$$ radians is:  
 
