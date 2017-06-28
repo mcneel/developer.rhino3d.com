@@ -145,7 +145,7 @@ A tangent to a curve at any parameter (or point on a curve) is the vector that t
 
 ### Cubic polynomial curves
 
-Hermitei and Bézierii curves are two examples of cubic polynomial curves that are determined by four parameters. A Hermite curve is determined by two end points and two tangent vectors at these points, while a Bézier curve is defined by four points. While they differ mathematically, they share similar characteristics and limitations.  
+Hermite and Bézier curves are two examples of cubic polynomial curves that are determined by four parameters. A Hermite curve is determined by two end points and two tangent vectors at these points, while a Bézier curve is defined by four points. While they differ mathematically, they share similar characteristics and limitations.  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image85.png" width="500px">
