@@ -273,12 +273,9 @@ For example, the knots of an open degree-3 NURBS curve with seven control points
 
 Knots= <0, 0, 0, 1, 2, 3, 4, 5, 6, 6, 6>  
 
-
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image81.png" width="500px">
-   <figcaption>Figure (38): Knots are calculated within the curve domain. 
-If the curve domain is between 0 and 6, the list of knots will have values between 0 and 6. 
-If the domain is normalized to 0 to 1, the list of knots will range between 0 and 1 as well. .</figcaption>
+   <img src="{{ site.baseurl }}/images/math-image136.png" width="500px">
+   <figcaption>Figure (39): Clamped curves have fully-multiple knots at their start and end. The rest of the knots are simple.</figcaption>
 </figure>  
 
 ### Knot multiplicity 
@@ -296,7 +293,7 @@ For example, clamped or open curves have knots with full multiplicity at the end
 A simple knot is one with value appearing only once. Interior knots are typically simple.
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image136.png" width="500px">
+   <img src="{{ site.baseurl }}/images/math-image152.png" width="500px">
    <figcaption>Figure (39): Clamped curves have fully-multiple knots at their start and end. The rest of the knots are simple.</figcaption>
 </figure>  
 
