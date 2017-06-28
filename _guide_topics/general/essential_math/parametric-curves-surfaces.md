@@ -339,9 +339,9 @@ Using this formula, specialized curve functions can take a curve parameter and p
 In order tocreate a NURBS curve, you will need to provide the followinginformation:
 
 - Dimension, typically 3
-  - Degree, (sometimes use the *order*,which is equal to degree+1)
+- Degree, (sometimes use the *order*,which is equal to degree+1)
 - Control points (list of points)
-  - Weight of the control point (listof numbers)
+- Weight of the control point (listof numbers)
 - Knots (list of numbers)
 
 When you create a curve, you need to at least define the degree and locations of the control points. The rest of the information necessary to construct NURBS curves can be generated automatically. Selecting an end point to coincide with the start point would typically create a periodic smooth closed curve. The following table shows examples of open and closed curves:  
