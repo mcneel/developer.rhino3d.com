@@ -509,13 +509,13 @@ The best approximating circle can lie either to the left or to the right of the 
 
 A parametric surface is a function of two independent parameters (usually denoted $$u$$, $$v$$) over some two-dimensional domain. Take for example a plane. If we have a point $$P$$ on the plane and two nonparallel vectors on the plane, $$\vec a$$ and $$\vec b$$, then we can define a parametric equation of the plane in terms of the two parameters $$u$$ and $$v$$ as follows:  
 
-\$$P = P’ + u * \vec a + v * \vec b$$  
+\$$P = P’ + u * \mathbf{\vec a} + v * \mathbf{\vec b}$$  
 
 Where:  
 
 &nbsp; $$P’$$: is a known point on the plane  
-&nbsp; $$\vec a$$: is the first vector on the plane  
-&nbsp; $$\vec b$$: is the first vector on the plane  
+&nbsp; $$\mathbf{\vec a}$$: is the first vector on the plane  
+&nbsp; $$\mathbf{\vec b}$$: is the first vector on the plane  
 &nbsp; $$u$$: is the first parameter  
 &nbsp; $$v$$: is the first parameter  
 
