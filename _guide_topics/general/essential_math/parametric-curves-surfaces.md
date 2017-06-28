@@ -39,9 +39,9 @@ Where:
 
 ![{{ site.baseurl }}/images/math-image108.png]({{ site.baseurl }}/images/math-image108.png){: .float-img-right width="275"}   
 
-We can therefore write the parametric equation of a line segment using a $$t$$ parameter that ranges between two real number values $$t0$$, $$t1$$ and a unit vector $$\vec v$$ that is in the direction of the line as follows:
+We can therefore write the parametric equation of a line segment using a $$t$$ parameter that ranges between two real number values $$t0$$, $$t1$$ and a unit vector $$\mathbf{\vec v}$$ that is in the direction of the line as follows:
 
-\$$P = P’ + t * \mathbf{\vec v}$$
+\$$P = P’ + t * \mathbf{\vec v}​$$
 
 &nbsp;{: .clear-img} 
 
@@ -69,9 +69,11 @@ Then:
 
 ## 3.1 Parametric curves
 
+### Curve parameter
+
 A parameter on a curve represents the address of a point on that curve. As mentioned before, you can think of a parametric curve as a path traveled between two points in a certain amount of time, traveling at a fixed or variable speed. If traveling takes $$T$$ amount of time, then the parameter t represents a time within $$T$$ that translates to a location (point) on the curve.  
 
-If you have a straight path (line segment) between the two points $$A$$ and $$B$$, and $$\vec v$$ were a vector from $$A$$ to $$B$$ ($$\vec v = B - A$$), then you can use the parametric line equation to find all points $$M$$ between $$A$$ and $$B$$ as follows:  
+If you have a straight path (line segment) between the two points $$A$$ and $$B$$, and $$\mathbf{\vec v}$$ were a vector from $$A$$ to $$B$$ ($$\mathbf{\vec v} = B - A$$), then you can use the parametric line equation to find all points $$M$$ between $$A$$ and $$B$$ as follows:  
 
 &nbsp; $$M = A + t*(B-A)$$  
 
