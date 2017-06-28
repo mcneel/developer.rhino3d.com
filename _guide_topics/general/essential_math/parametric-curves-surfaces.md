@@ -27,9 +27,9 @@ Where:
 
 We saw earlier that the parametric equation of a line in terms of parameter $$t$$ is defined as:
 
-&nbsp; $$x = x’ + t * a$$
-&nbsp; $$y = y’ + t * b$$
-&nbsp; $$z = z’ + t * c$$
+&nbsp; $$x = x’ + t * a$$  
+&nbsp; $$y = y’ + t * b$$  
+&nbsp; $$z = z’ + t * c$$  
 
 Where:
 
