@@ -116,7 +116,7 @@ An increasing domain means that the minimum value of the domain points to the s
 
 ### Curve evaluation
 
-We learned that a curve interval is the range of all parameter values that evaluate to points within the 3-D curve. There is, however, no guarantee that evaluating at the middle of the domain, for example, will give a point that is in the middle of the curve, as shown in Figure (25).  
+We learned that a curve interval is the range of all parameter values that evaluate to points within the 3-D curve. There is, however, no guarantee that evaluating at the middle of the domain, for example, will give a point that is in the middle of the curve, as shown in Figure (29).  
 
 We can think of uniform parameterization of a curve as traveling a path with constant speed. A degree-1 line between two points is one example where equal intervals or parameters translate into equal intervals of arc length on the line. This is a special case where equal intervals of parameters evaluate to equal intervals on the 3-D curve.  
 
@@ -125,7 +125,7 @@ We can think of uniform parameterization of a curve as traveling a path with con
    <figcaption>Figure (29): Equal parameter intervals in a degree-1 line evaluate to equal curve lengths.</figcaption>
 </figure>  
 
-It is, however, more likely that the speed decreases or increases along the path. For example, if it takes 30 minutes to travel a road, it is unlikely that you will be exactly half way through at minute 15. Figure (27) shows a typical case where equal parameter intervals evaluate to variable length on the 3-D curve.  
+It is, however, more likely that the speed decreases or increases along the path. For example, if it takes 30 minutes to travel a road, it is unlikely that you will be exactly half way through at minute 15. Figure (30) shows a typical case where equal parameter intervals evaluate to variable length on the 3-D curve.  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image81.png" width="500px">
