@@ -996,4 +996,4 @@ Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"
 
 ## Next Steps
 
-Now that you know vector math, check out the [Matrices and Trransformations]({{ site.baseurl }}/guides/general/essential_math/matrices-transformations/) guide to learn more about the moving, rotating and scaling objects..
+Now that you know vector math, check out the [Matrices and Transformations]({{ site.baseurl }}/guides/general/essential_math/matrices-transformations/) guide to learn more about the moving, rotating and scaling objects..
