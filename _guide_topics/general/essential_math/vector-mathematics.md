@@ -2,7 +2,7 @@
 title: 1 Vector Mathematics
 description:
 authors: ['Rajaa Issa']
-author_contacts: ['rajaaissa']
+author_contacts: ['rajaa']
 platforms: ['Windows']
 categories: ['Essential Mathematics']
 origin:
@@ -989,6 +989,10 @@ private void RunScript(Point3d A, Point3d B, double t, ref object S1, ref object
 ```
 
 ---
+
+## Download Sample Files
+
+Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [math-samplesandtutorials.zip]({{ site.baseurl }}/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
 
 ## Next Steps
 

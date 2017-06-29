@@ -14,6 +14,8 @@ TODO: THis needs to be shimmed for Mac Platform.
 
 Robert McNeel & Associate
 
+Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [math-samplesandtutorials.zip]({{ site.baseurl }}/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
+
 ### Table of Contents
 
 <table id="math_table">  
@@ -43,10 +45,10 @@ Robert McNeel & Associate
       <ul><li>Face direction</li>  
         <li>Exploded box</li>
         <li>Tangent spheres</li></ul>  
-	</ol>
+    </ol>
 </td>
 <td width="30%">
-   2. <a href="{{ site.baseurl }}/guides/general/essential_math/matrices-transformations/">Matrices and Transformations</a>
+      2. <a href="{{ site.baseurl }}/guides/general/essential_math/matrices-transformations/">Matrices and Transformations</a>
     <ol><li><a href="{{ site.baseurl }}/guides/general/essential_math/matrices-transformations/#21-matrix-operations">2.1 Matrix operations</a></li> 
         <ul><li>Matrix multiplication</li>  
             <li>Identity matrix</li></ul> 
@@ -60,7 +62,7 @@ Robert McNeel & Associate
     </ol>			
 </td>
 <td>
-   3. <a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/">Parametric Curves and Surfaces</a>
+      3. <a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/">Parametric Curves and Surfaces</a>
     <ol><li><a href="{{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/#31-parametric-curves">3.1 Parametric curves</a></li>    
         <ul><li>Curve parameter</li>    
             <li>Curve domain or interval</li>    

@@ -2,7 +2,7 @@
 title: 3 Parametric Curves and Surfaces
 description:
 authors: ['Rajaa Issa']
-author_contacts: ['rajaaissa']
+author_contacts: ['rajaa']
 platforms: ['Windows']
 categories: ['Essential Mathematics']
 origin:
@@ -1146,6 +1146,11 @@ private void RunScript(Brep srf, ref object A)
   A = singular_points
 }
 ```
+---
+
+## Download Sample Files
+
+Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [math-samplesandtutorials.zip]({{ site.baseurl }}/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
 
 ## Next Steps
 

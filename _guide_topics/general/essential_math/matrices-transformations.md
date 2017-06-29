@@ -2,7 +2,7 @@
 title: 2 Matrices and Transformations
 description:
 authors: ['Rajaa Issa']
-author_contacts: ['rajaaissa']
+author_contacts: ['rajaa']
 platforms: ['Windows']
 categories: ['Essential Mathematics']
 origin:
@@ -255,9 +255,13 @@ Note: NURBS curves (explained in the next chapter) use control points to define 
 
 \$$\begin{bmatrix} \color{red}{0.0} & 0.0 & 0.0 & 0.0 \\ 0.0 & 1.0 & 0.0 & 0.0 \\ 0.0 & 0.0 & 1.0 & 0.0 \\ 0.0 &  0.0 & 0.0 & 1.0 \\\end{bmatrix}$$   
 
+---
+
+## Download Sample Files
+
+Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [math-samplesandtutorials.zip]({{ site.baseurl }}/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
 
 ## Next Steps
 
 Now that you know more about matrices and trasnformasion, check out the [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/) guide to learn more about the detailed structure of NURBS curves and surfaces.  
 
---

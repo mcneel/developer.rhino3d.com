@@ -2,7 +2,7 @@
 title: 4 References
 description:
 authors: ['Rajaa Issa']
-author_contacts: ['rajaaissa']
+author_contacts: ['rajaa']
 platforms: ['Windows']
 categories: ['Essential Mathematics']
 origin:
