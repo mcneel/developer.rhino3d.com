@@ -1,9 +1,9 @@
 ---
 title: 2 Matrices and Transformations
-description:
+description: This guide reviews matrix operations and transformations.
 authors: ['Rajaa Issa']
 author_contacts: ['rajaa']
-platforms: ['Windows']
+platforms: ['Windows', 'Mac']
 categories: ['Essential Mathematics']
 origin:
 order: 1
@@ -12,7 +12,7 @@ layout: toc-guide-page
 guide_homepage: /guides/general/essential_math/essential-mathematics/
 ---
 
-*Transformations* refer to operations such as moving (also called *translating*), rotating, and scaling objects. They are stored in 3 D programming using matrices, which are nothing but rectangular arrays of numbers. Multiple transformations can be performed very quickly using matrices. It turns out that a [4x4] matrix can represent all transformations. Having a unified matrix dimension for all transformations saves calculation time. 
+*Transformations* refer to operations such as moving (also called *translating*), rotating, and scaling objects. They are stored in 3 D programming using matrices, which are nothing but rectangular arrays of numbers. Multiple transformations can be performed very quickly using matrices. It turns out that a [4x4] matrix can represent all transformations. Having a unified matrix dimension for all transformations saves calculation time.
 
 \$$\begin{array}{rcc} \mbox{matrix}&\begin{array}{cccc} c1& c2&c3&c4\end{array}\\\begin{array}{c}row(1)\\row(2)\\row(3)\\row(4)\end{array}& \left[\begin{array}{cr} +&+&+&+\\  +&+&+&+\\ +&+&+&+\\ +&+&+&+\end{array}\right] \end{array}$$
 
@@ -53,7 +53,7 @@ Three-dimensional modeling applications provide tools to apply transformations a
 
 The identity matrix is a special matrix where all diagonal components equal 1 and the rest equal 0.
 
-<img src="{{ site.baseurl }}/images/math-image68.png"> 
+<img src="{{ site.baseurl }}/images/math-image68.png">
 
 The main property of the identity matrix is that if it is multiplied by any other matrix, the values multiplied by zero do not change.
 
@@ -108,7 +108,7 @@ Similarly, any geometry is translated by multiplying its construction points by 
 
 ### Rotation transformation
 
-This section shows how to calculate rotation around the z-axis and the origin point using trigonometry, and then to deduce the general matrix format for the rotation. 
+This section shows how to calculate rotation around the z-axis and the origin point using trigonometry, and then to deduce the general matrix format for the rotation.
 
 ![{{ site.baseurl }}/images/math-image39.png]({{ site.baseurl }}/images/math-image39.png){: .float-img-right width="275"}   
 
@@ -211,7 +211,7 @@ Shear in 3‑D is measured along a pair of axes relative to a third axis. For ex
 
 &nbsp;{: .clear-img}  
 
-3\. Shear in x and y, keeping the z-coordinate fixed: 
+3\. Shear in x and y, keeping the z-coordinate fixed:
 
 ![{{ site.baseurl }}/images/math-image32.png]({{ site.baseurl }}/images/math-image32.png){: .float-img-left width="100"}   
 
@@ -261,7 +261,8 @@ Note: NURBS curves (explained in the next chapter) use control points to define 
 
 Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [math-samplesandtutorials.zip]({{ site.baseurl }}/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
 
+---
+
 ## Next Steps
 
 Now that you know more about matrices and trasnformasion, check out the [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/) guide to learn more about the detailed structure of NURBS curves and surfaces.  
-

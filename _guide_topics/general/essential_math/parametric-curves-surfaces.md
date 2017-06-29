@@ -1,9 +1,9 @@
 ---
 title: 3 Parametric Curves and Surfaces
-description:
+description: This guide is an in-depth review of parametric curves with special focus on NURBS curves and the concepts of continuity and curvature.
 authors: ['Rajaa Issa']
 author_contacts: ['rajaa']
-platforms: ['Windows']
+platforms: ['Windows', 'Mac']
 categories: ['Essential Mathematics']
 origin:
 order: 1
@@ -12,7 +12,7 @@ layout: toc-guide-page
 guide_homepage: /guides/general/essential_math/essential-mathematics/
 ---
 
-Suppose you travel every weekday from your house to your work. You leave at 8:00 in the morning and arrive at 9:00. At each point in time between 8:00 and 9:00, you would be at some location along the way. If you plot your location every minute during your trip, you can define the path between home and work by connecting the 60 points you plotted. Assuming you travel the exact same speed every day, at 8:00 you would be at home (start location), at 9:00 you would be at work (end location) and at 8:40 you would at the exact same location on the path as the 40th plot point. Congratulations, you have just defined your first parametric curve! You have used *time* as a *parameter* to define your path, and hence you can call your path curve a *parametric curve*. The time interval you spend from start to end (8 to 9) is called the curve *domain* or *interval*. 
+Suppose you travel every weekday from your house to your work. You leave at 8:00 in the morning and arrive at 9:00. At each point in time between 8:00 and 9:00, you would be at some location along the way. If you plot your location every minute during your trip, you can define the path between home and work by connecting the 60 points you plotted. Assuming you travel the exact same speed every day, at 8:00 you would be at home (start location), at 9:00 you would be at work (end location) and at 8:40 you would at the exact same location on the path as the 40th plot point. Congratulations, you have just defined your first parametric curve! You have used *time* as a *parameter* to define your path, and hence you can call your path curve a *parametric curve*. The time interval you spend from start to end (8 to 9) is called the curve *domain* or *interval*.
 
 ![{{ site.baseurl }}/images/math-image106.png]({{ site.baseurl }}/images/math-image106.png){: .float-img-right width="275"}   
 
@@ -43,7 +43,7 @@ We can therefore write the parametric equation of a line segment using a $$t$$ p
 
 \$$P = P’ + t * \mathbf{\vec v}​$$
 
-&nbsp;{: .clear-img} 
+&nbsp;{: .clear-img}
 
 Another example is a circle. The parametric equation of the circle on the xy-plane with a center at the origin (0,0) and an angle parameter $$t$$ ranging between $$0$$ and $$2π$$ radians is:  
 
@@ -256,8 +256,8 @@ It is worth noting that it is best to avoid changing curve weights. Changing wei
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image135.png" width="500px">
-   <figcaption>Figure (37): The effect of varying weights of control points on the result curve. 
-The left curve is non-rational with uniform control point weights. 
+   <figcaption>Figure (37): The effect of varying weights of control points on the result curve.
+The left curve is non-rational with uniform control point weights.
 The circle on the right is a rational curve with corner control points having weights less than 1.</figcaption>
 </figure>  
 
@@ -278,11 +278,11 @@ Knots= <0, 0, 0, 1, 2, 3, 4, 5, 6, 6, 6>
    <figcaption>Figure (39): Clamped curves have fully-multiple knots at their start and end. The rest of the knots are simple.</figcaption>
 </figure>  
 
-### Knot multiplicity 
+### Knot multiplicity
 
 The multiplicity of a knot is the number of times it is listed in the list of knots. The multiplicity of a knot cannot be more than the degree of the curve.  Knot multiplicity is used to control continuity at the corresponding curve point.  
 
-### Fully-multiple knots 
+### Fully-multiple knots
 
 A fully multiple knot has multiplicity equal to the curve degree. At a fully multiple knot there is a corresponding control point, and the curve goes through this point.  
 
@@ -578,7 +578,7 @@ Where:
 
 &nbsp; $$u$$ and $$v$$ are the two parameters within the surface domain or region.  
 
-### Surfacedomain 
+### Surfacedomain
 
 A surface domain is defined as therange of ($$u,v$$) parameters that evaluate into a 3 D point on thatsurface. The domain in each dimension ($$u$$ or $$v$$) is usually describedas two real numbers ($$u_{min}$$ to $$u_{max}$$) and ($$v_{min}$$ to $$v_{max}$$)
 
@@ -708,7 +708,7 @@ As with the NURBS curves, you will probably not need to know the details of how 
 
 <table width="100%">  
 <tr style="border-bottom: 1px solid #ccc;border-top: 1px solid #ccc;">  
-<td>Degree-1 surface in both u- and v-directions. 
+<td>Degree-1 surface in both u- and v-directions.
 All control points lie on the surface.</td>  
 <td width="50%"><img src="{{ site.baseurl }}/images/math-image73.png"></td>  
 </tr>  
@@ -868,7 +868,7 @@ Using the Grasshopper  VBScript component:
 ![{{ site.baseurl }}/images/math-image31.png]({{ site.baseurl }}/images/math-image31.png)  
 
 ```vb
-Private Sub RunScript(ByVal c1 As Curve, ByVal c2 As Curve, ByRef A As Object) 
+Private Sub RunScript(ByVal c1 As Curve, ByVal c2 As Curve, ByRef A As Object)
 
   'declare variables
   Dim continuity As New String("")
@@ -918,7 +918,7 @@ Private Sub RunScript(ByVal c1 As Curve, ByVal c2 As Curve, ByRef A As Object)
   'Assign output
   A = continuity
 
-End Sub 
+End Sub
 ```
 Using the Grasshopper Python component:
 
@@ -951,10 +951,10 @@ if continuity == "G0":
     else:
         print("Failed G1")
         print(dot)
-        
+
 #check G2 continuity
 if continuity == "G1":
-    
+
     #extract the parameter at start and end of the curves domain
     t1 = c1.Domain.Max
     t2 = c2.Domain.Min
@@ -971,7 +971,7 @@ if continuity == "G1":
     else:
         print("Failed G2")
         print(dot)
-        
+
 #assign output
 A = continuity
 ```
@@ -981,8 +981,8 @@ Using the Grasshopper C# component:
 
 ![{{ site.baseurl }}/images/math-image70.png]({{ site.baseurl }}/images/math-image70.png)  
 
-```c#
-Private Sub RunScript(ByVal c1 As Curve, ByVal c2 As Curve, ByRef A As Object) 
+```cs
+Private Sub RunScript(ByVal c1 As Curve, ByVal c2 As Curve, ByRef A As Object)
 
   'declare variables
   Dim continuity As New String("")
@@ -1031,7 +1031,7 @@ Private Sub RunScript(ByVal c1 As Curve, ByVal c2 As Curve, ByRef A As Object)
   'Assign output
   A = continuity
 
-End Sub 
+End Sub
 ```
 
 ### 3.10.2 Surfaces with singularity
@@ -1059,7 +1059,7 @@ Using the Grasshopper VB component:
 ![{{ site.baseurl }}/images/math-image59.png]({{ site.baseurl }}/images/math-image59.png)  
 
 ```vb
-Private Sub RunScript(ByVal srf As Brep, ByRef A As Object) 
+Private Sub RunScript(ByVal srf As Brep, ByRef A As Object)
 
   'Decalre a new list of points
   Dim singular_points As New List( Of Point3d)
@@ -1085,7 +1085,7 @@ Private Sub RunScript(ByVal srf As Brep, ByRef A As Object)
   'Asign output
   A = singular_points
 
-End Sub 
+End Sub
 ```
 
 Using the Grasshopper Python component:
@@ -1103,13 +1103,13 @@ for trim in srf.Trims:
 	if trim.Edge == None:
 		#Find the 2D parameter space point at trim start or end
 		pt2d = trim.PointAtStart
-		
+
 		#Evaluate trim end point on the object surface
 		pt3d = trim.Face.PointAt(pt2d.X, pt2d.Y)
-		
+
 		#Add 3D point to the list of singular points
 		singular_points.append(pt3d)
-		
+
 #Asign output
 A = singular_points
 ```
@@ -1119,7 +1119,7 @@ Using the Grasshopper C# component:
 
 ![{{ site.baseurl }}/images/math-image63.png]({{ site.baseurl }}/images/math-image63.png)  
 
-```c#
+```cs
 private void RunScript(Brep srf, ref object A)
 {
   //Decalre a new list of points
@@ -1146,14 +1146,15 @@ private void RunScript(Brep srf, ref object A)
   A = singular_points
 }
 ```
+
 ---
 
 ## Download Sample Files
 
 Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [math-samplesandtutorials.zip]({{ site.baseurl }}/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
 
+---
+
 ## Next Steps
 
 If you would like to research more, check out the [References]({{ site.baseurl }}/guides/general/essential_math/references/) guide to learn more about the detailed structure of NURBS curves and surfaces.  
-
---

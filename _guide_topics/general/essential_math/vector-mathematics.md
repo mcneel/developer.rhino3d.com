@@ -1,9 +1,9 @@
 ---
 title: 1 Vector Mathematics
-description:
+description: This guide discusses vector math including vector representation, vector operation, and line and plane equations.
 authors: ['Rajaa Issa']
 author_contacts: ['rajaa']
-platforms: ['Windows']
+platforms: ['Windows', 'Mac']
 categories: ['Essential Mathematics']
 origin:
 order: 1
@@ -12,7 +12,7 @@ layout: toc-guide-page
 guide_homepage: /guides/general/essential_math/essential-mathematics/
 ---
 
-A vector indicates a quantity, such as velocity or force, that has direction and length. Vectors in 3D coordinate systems are represented with an ordered set of three real numbers and look like: 
+A vector indicates a quantity, such as velocity or force, that has direction and length. Vectors in 3D coordinate systems are represented with an ordered set of three real numbers and look like:
 
 \$$\mathbf{\vec v}  = <a_1, a_2, a_3>$$
 
@@ -22,7 +22,7 @@ In this document, lower case bold letters with arrow on top will notate vectors.
 
 Using a coordinate system and any set of anchor points in that system, we can represent or visualize these vectors using a line-segment representation. An arrowhead shows the vector direction.
 
-For example, if we have a vector that has a direction parallel to the x-axis of a given 3D coordinate system and a length of 5 units, we can write the vector as follows: 
+For example, if we have a vector that has a direction parallel to the x-axis of a given 3D coordinate system and a length of 5 units, we can write the vector as follows:
 
 \$$\mathbf{\vec v} = <5, 0, 0>$$  
 
@@ -34,7 +34,7 @@ To represent that vector, we need an anchor point in the coordinate system. For 
 </figure>  
 
 <div class="note" markdown="1">
-Given a 3D vector $$\vec v = <a_1, a_2, a_3>$$ , all vector components $$a_1$$, $$a_2$$, $$a_3$$ are real numbers. Also all line segments from a point $$A(x,y,z)$$ to point $$B(x+a_1, y+a_2, z+a_3)$$ are equivalent representations of vector $$\vec v$$. 
+Given a 3D vector $$\vec v = <a_1, a_2, a_3>$$ , all vector components $$a_1$$, $$a_2$$, $$a_3$$ are real numbers. Also all line segments from a point $$A(x,y,z)$$ to point $$B(x+a_1, y+a_2, z+a_3)$$ are equivalent representations of vector $$\vec v$$.
 </div>   
 
 So, how do we define the end points of a line segment that represents a given vector?
@@ -60,7 +60,7 @@ $$B = (6, 8, 10)$$
 
 ### Position vector
 
-One special vector representation uses the $$\text{origin point} (0,0,0)$$ as the vector anchor point. 
+One special vector representation uses the $$\text{origin point} (0,0,0)$$ as the vector anchor point.
 The position vector $$\mathbf{\vec v} = <a_1,a_2,a_3>$$ is represented with a line segment between two points, the origin and the tip point B, so that:  
 
 $$\text{Origin point} = (0,0,0)$$  
@@ -109,7 +109,7 @@ In general, the length of a vector $$\mathbf{\vec a} <a_1,a_2,a_3>$$ is calculat
 
 ### Unit vector
 
-A unit vector is a vector with a length equal to one unit. Unit vectors are commonly used to compare the directions of vectors. 
+A unit vector is a vector with a length equal to one unit. Unit vectors are commonly used to compare the directions of vectors.
 
 <div class="note" markdown="1">
 A unit vector is a vector whose length is equal to one unit.
@@ -160,7 +160,7 @@ In general, given vector $$\mathbf{\vec a} = <a_1, a_2, a_3>$$, and a real numbe
 
 ### Vector addition
 
-Vector addition takes two vectors and produces a third vector. We add vectors by adding their components. 
+Vector addition takes two vectors and produces a third vector. We add vectors by adding their components.
 
 <div class="note" markdown="1">
 Vectors are added by adding their components.
@@ -200,7 +200,7 @@ Vector subtraction takes two vectors and produces a third vector. We subtract tw
 $$\mathbf{\vec a} = <1, 2, 0> $$  
 $$\mathbf{\vec b} = <4, 1, 4> $$  
 $$\mathbf{\vec a}-\mathbf{\vec b} = <1-4, 2-1, 0-4>$$  
-$$\mathbf{\vec a}-\mathbf{\vec b} = <-3, 1, -4> = \mathbf{\mathbf{\vec b}a}$$ 
+$$\mathbf{\vec a}-\mathbf{\vec b} = <-3, 1, -4> = \mathbf{\mathbf{\vec b}a}$$
 
 If we subtract $$\mathbf{\vec b}​$$ from $$\mathbf{\vec a}​$$, we get a different result:  
 
@@ -242,7 +242,7 @@ $$1 * \mathbf{\vec a} = \mathbf{\vec a}$$
 
 ### Vector dot product
 
-The dot product takes two vectors and produces a number. 
+The dot product takes two vectors and produces a number.
 For example, if we have the two vectors a and b so that:
 
 $$\mathbf{\vec a} = <1, 2, 3> $$  
@@ -348,7 +348,7 @@ $$(s * \mathbf{\vec a}) · \mathbf{\vec b} = s * (\mathbf{\vec a} · \mathbf{\ve
 
 ### Vector cross product
 
-The cross product takes two vectors and produces a third vector that is orthogonal to both. 
+The cross product takes two vectors and produces a third vector that is orthogonal to both.
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image183.png">
@@ -429,7 +429,7 @@ $$\mathbf{\vec a} × (\mathbf{\vec b} × \mathbf{\vec c}) = (\mathbf{\vec a} · 
 
 ## 1.3 Vector equation of line
 
-The vector line equation is used in 3D modeling applications and computer graphics. 
+The vector line equation is used in 3D modeling applications and computer graphics.
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image187.png">
@@ -593,7 +593,7 @@ The above steps can also be solved using other scripting languages. Using the Gr
 <img src="{{ site.baseurl }}/images/math-image165.png">  
 
 ```vb
-Private Sub RunScript(ByVal pt As Point3d, ByVal srf As Surface, ByRef A As Object) 
+Private Sub RunScript(ByVal pt As Point3d, ByVal srf As Surface, ByRef A As Object)
 
   'Declare variables
   Dim u, v As Double
@@ -613,7 +613,7 @@ Private Sub RunScript(ByVal pt As Point3d, ByVal srf As Surface, ByRef A As Obje
 
   'compare the two directions using the dot product
   A = dir * normal
-End Sub 
+End Sub
 ```
 
 Using the Grasshopper Python component with RhinoScriptSyntax:
@@ -653,13 +653,13 @@ if found:
 
     #get closest point
     closest_pt = srf.PointAt(u, v)
-    
+
     #calculate direction from closest point to test point
     dir = pt - closest_pt
-    
+
     #calculate surface normal
     normal = srf.NormalAt(u, v)
-    
+
     #compare the two directions using the dot product
     A = dir * normal
 ```
@@ -670,7 +670,7 @@ Using the Grasshopper C# component:
 
 <img src="{{ site.baseurl }}/images/math-image165.png">  
 
-```c#
+```cs
 private void RunScript(Point3d pt, Surface srf, ref object A)
 {
   //Declare variables
@@ -743,7 +743,7 @@ Using the Grasshopper VB component:
 <img src="{{ site.baseurl }}/images/math-image29.png">
 
 ```vb
-Private Sub RunScript(ByVal box As Brep, ByVal dis As Double, ByRef A As Object) 
+Private Sub RunScript(ByVal box As Brep, ByVal dis As Double, ByRef A As Object)
 
     'get the brep center
     Dim area As Rhino.Geometry.AreaMassProperties
@@ -784,9 +784,9 @@ Private Sub RunScript(ByVal box As Brep, ByVal dis As Double, ByRef A As Object)
 
     'assign exploded list of faces to output
     A = exploded_faces
-  End Sub 
+  End Sub
 ```
-Using the Grasshopper Python component with RhinoCommon: 
+Using the Grasshopper Python component with RhinoCommon:
 
 <img src="{{ site.baseurl }}/images/math-image4.png">
 
@@ -815,7 +815,7 @@ Using the Grasshopper C# component:
 
 <img src="{{ site.baseurl }}/images/math-image2.png">
 
-```c#
+```cs
 private void RunScript(Brep box, double dis, ref object A)
 {
 
@@ -858,7 +858,7 @@ private void RunScript(Brep box, double dis, ref object A)
 
 ### 1.5.3 Tangent spheres
 
-This tutorial will show how to create two tangent spheres between two input points. 
+This tutorial will show how to create two tangent spheres between two input points.
 This is what the result looks like:
 
 <img src="{{ site.baseurl }}/images/math-image5.png">
@@ -908,7 +908,7 @@ $$A$$ tangent point $$D$$ between the two spheres, at some $$t$$ parameter (0
 <img src="{{ site.baseurl }}/images/math-image56.png">  
 
 ```vb
-Private Sub RunScript(ByVal A As Point3d, ByVal B As Point3d, ByVal t As Double, ByRef S1 As Object, ByRef S2 As Object) 
+Private Sub RunScript(ByVal A As Point3d, ByVal B As Point3d, ByVal t As Double, ByRef S1 As Object, ByRef S2 As Object)
 
   'declare variables
   Dim D, C1, C2 As Rhino.Geometry.Point3d
@@ -930,12 +930,12 @@ Private Sub RunScript(ByVal A As Point3d, ByVal B As Point3d, ByVal t As Double,
   S1 = New Rhino.Geometry.Sphere(C1, r1)
   S2 = New Rhino.Geometry.Sphere(C2, r2)
 
-End Sub 
+End Sub
 ```
 
 Using Python component:
 
-<img src="{{ site.baseurl }}/images/math-image62.png"> 
+<img src="{{ site.baseurl }}/images/math-image62.png">
 
 ```python
 import Rhino
@@ -960,9 +960,9 @@ S2 = Rhino.Geometry.Sphere(C2, r2)
 
 Using the Grasshopper C# component:
 
-<img src="{{ site.baseurl }}/images/math-image58.png"> 
+<img src="{{ site.baseurl }}/images/math-image58.png">
 
-```c#
+```cs
 private void RunScript(Point3d A, Point3d B, double t, ref object S1, ref object S2)
 {
   //declare variables
@@ -993,6 +993,8 @@ private void RunScript(Point3d A, Point3d B, double t, ref object S1, ref object
 ## Download Sample Files
 
 Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [math-samplesandtutorials.zip]({{ site.baseurl }}/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
+
+---
 
 ## Next Steps
 
