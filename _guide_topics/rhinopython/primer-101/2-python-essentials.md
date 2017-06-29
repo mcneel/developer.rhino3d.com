@@ -11,7 +11,7 @@ origin:
 order: 4
 keywords: ['python', 'commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinopython/primer-101/rhinopython101/
+guide_homepage: /guides/rhinopython/primer-101/
 ---
 
 ## 2.1 Language origin

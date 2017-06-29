@@ -11,7 +11,7 @@ origin:
 order: 2
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinoscript/primer-101/rhinoscript101/
+guide_homepage: /guides/rhinoscript/primer-101/
 ---
 
 ## Forums:

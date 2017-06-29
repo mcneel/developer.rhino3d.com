@@ -11,7 +11,7 @@ origin:
 order: 0
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinoscript/primer-101/rhinoscript101/
+guide_homepage: /guides/rhinoscript/primer-101/
 ---
 
 You’ve just opened the third edition of the RhinoScript primer. This booklet was originally written as a workshop handout for the students at the Architecture faculty of the Universität für Angewandte Kunst in Vienna. The aim of the workshop was to teach them how to program Rhino in no more than four days and, counter all my expectations, they did. Most of them had never programmed before so I had to make sure the text was suitable for absolute beginners. I did not expect at the time that this proved to be the most successful aspect of the primer. After the workshop, a slightly reworked version was made available to the public and it has helped many non-programmers getting rid of the "non" since. Incidentally, if you do not succeed in learning RhinoScript within a time-span of four days, do not feel bad about yourself. Remember that those students received additional lectures and intensive support from someone who took two months to reach the same level.

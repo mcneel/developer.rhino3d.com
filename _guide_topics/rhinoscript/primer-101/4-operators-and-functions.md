@@ -11,7 +11,7 @@ origin:
 order: 15
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinoscript/primer-101/rhinoscript101/
+guide_homepage: /guides/rhinoscript/primer-101/
 ---
 
 ## 4.1 What on earth are they and why should I care?
