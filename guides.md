@@ -29,10 +29,10 @@ order: 2
 
 ### Fundamentals
 
+- [Essential Mathematics for Computational Design]({{ site.baseurl }}/guides/general/essential_math/essential-mathematics/)
 - [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what-is-a-rhino-plugin)
 - [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine)
 - [Simple Command Macros]({{ site.baseurl }}/guides/general/creating-command-macros/)
-- [Essential Mathematics]({{ site.baseurl }}/guides/general/essential_math/essential-mathematics/)
 
 ### This Site
 
