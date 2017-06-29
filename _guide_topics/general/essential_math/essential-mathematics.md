@@ -12,7 +12,7 @@ TODO: THis needs to be shimmed for Mac Platform.
 
 **Rajaa Issa** 
 
-Robert McNeel & Associate
+Robert McNeel & Associates
 
 Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [math-samplesandtutorials.zip]({{ site.baseurl }}/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
 
