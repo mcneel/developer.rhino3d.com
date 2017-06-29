@@ -9,7 +9,7 @@ origin:
 order: 1
 keywords: ['mathematics', 'geometry', 'grasshopper3d']
 layout: toc-guide-page
-guide_homepage: /guides/general/essential_math/essential-mathematics/
+guide_homepage: /guides/general/essential-mathematics/essential-mathematics/
 ---
 
 *Transformations* refer to operations such as moving (also called *translating*), rotating, and scaling objects. They are stored in 3 D programming using matrices, which are nothing but rectangular arrays of numbers. Multiple transformations can be performed very quickly using matrices. It turns out that a [4x4] matrix can represent all transformations. Having a unified matrix dimension for all transformations saves calculation time.
@@ -265,4 +265,4 @@ Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"
 
 ## Next Steps
 
-Now that you know more about matrices and trasnformasion, check out the [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential_math/parametric-curves-surfaces/) guide to learn more about the detailed structure of NURBS curves and surfaces.  
+Now that you know more about matrices and trasnformasion, check out the [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/) guide to learn more about the detailed structure of NURBS curves and surfaces.  
