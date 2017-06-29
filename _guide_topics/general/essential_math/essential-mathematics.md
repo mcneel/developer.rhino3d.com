@@ -28,8 +28,6 @@ Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"
 
 ### Table of Contents
 
-### Table of Contents
-
 <table id="math_table">  
 <tbody>  
 <tr>  
