@@ -9,7 +9,7 @@ origin:
 order: 1
 keywords: ['mathematics', 'geometry', 'grasshopper3d']
 layout: toc-guide-page
-guide_homepage: /guides/general/essential-mathematics/essential-mathematics/
+guide_homepage: /guides/general/essential-mathematics/
 ---
 
 A vector indicates a quantity, such as velocity or force, that has direction and length. Vectors in 3D coordinate systems are represented with an ordered set of three real numbers and look like:

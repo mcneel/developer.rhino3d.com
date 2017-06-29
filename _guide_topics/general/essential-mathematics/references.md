@@ -9,7 +9,7 @@ origin:
 order: 1
 keywords: ['mathematics', 'geometry', 'grasshopper3d']
 layout: toc-guide-page
-guide_homepage: /guides/general/essential-mathematics/essential-mathematics/
+guide_homepage: /guides/general/essential-mathematics/
 ---
 
 ## References
