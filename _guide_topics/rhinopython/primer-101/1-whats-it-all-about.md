@@ -11,6 +11,7 @@ origin:
 order: 1
 keywords: ['python', 'commands']
 layout: toc-guide-page
+guide_homepage: /guides/rhinopython/primer-101/
 ---
 
 ## 1.1 Macros

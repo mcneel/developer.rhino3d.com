@@ -11,6 +11,7 @@ origin:
 order: 16
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
+guide_homepage: /guides/rhinoscript/primer-101/
 ---
 
 ## 5.1 What if?
