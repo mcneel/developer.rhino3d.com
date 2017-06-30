@@ -3,13 +3,14 @@ title: 4 References
 description: This guide includes the references for Essential Mathematics for Computational Design.
 authors: ['Rajaa Issa']
 author_contacts: ['rajaa']
+sdk: ['General']
 platforms: ['Windows', 'Mac']
 categories: ['Essential Mathematics']
 origin:
 order: 1
 keywords: ['mathematics', 'geometry', 'grasshopper3d']
 layout: toc-guide-page
-guide_homepage: /guides/general/essential-mathematics/
+category_page: guides/general/essential-mathematics/
 ---
 
 ## References

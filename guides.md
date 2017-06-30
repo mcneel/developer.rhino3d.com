@@ -29,10 +29,16 @@ order: 2
 
 ### Fundamentals
 
-- [Essential Mathematics for Computational Design]({{ site.baseurl }}/guides/general/essential-mathematics)
 - [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what-is-a-rhino-plugin)
 - [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine)
 - [Simple Command Macros]({{ site.baseurl }}/guides/general/creating-command-macros/)
+
+### [Essential Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics)
+
+- [Vector Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics)
+- [Matrices and Transformations]({{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations)
+- [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces)
+
 
 ### This Site
 

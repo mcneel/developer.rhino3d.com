@@ -3,13 +3,14 @@ title: 1 Vector Mathematics
 description: This guide discusses vector math including vector representation, vector operation, and line and plane equations.
 authors: ['Rajaa Issa']
 author_contacts: ['rajaa']
+sdk: ['General']
 platforms: ['Windows', 'Mac']
 categories: ['Essential Mathematics']
 origin:
 order: 1
 keywords: ['mathematics', 'geometry', 'grasshopper3d']
 layout: toc-guide-page
-guide_homepage: /guides/general/essential-mathematics/
+category_page: guides/general/essential-mathematics/
 ---
 
 A vector indicates a quantity, such as velocity or force, that has direction and length. Vectors in 3D coordinate systems are represented with an ordered set of three real numbers and look like:
