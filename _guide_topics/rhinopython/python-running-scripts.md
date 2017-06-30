@@ -41,10 +41,8 @@ The RunPythonScript command can also be assigned to command aliases or to a tool
 
 ## Related Topics
 
-- [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
+- [What is RhinoPython?]({{ site.baseurl }}/guides/rhinopython/what-is-rhinopython)
 - [Your First Python Script in Rhino (Windows)]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-windows)
 - [Running Scripts]({{ site.baseurl }}/guides/rhinopython/python-running-scripts)
 - [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
 - [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)
-- [Scripting Options]({{ site.baseurl }}/guides/rhinopython/python-scripting-options)
-- [Reinitializing Python]({{ site.baseurl }}/guides/rhinopython/python-scripting-reinitialize)

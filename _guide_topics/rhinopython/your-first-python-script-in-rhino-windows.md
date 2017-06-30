@@ -95,10 +95,7 @@ Your script will run, and display the familiar "Hello World" dialog box.
 
 ## Related Topics
 
-- [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
-- [Loading Scripts]({{ site.baseurl }}/guides/rhinopython/python-loading-scripts)
+- [What is RhinoPython?]({{ site.baseurl }}/guides/rhinopython/what-is-rhinopython)
 - [Running Scripts]({{ site.baseurl }}/guides/rhinopython/python-running-scripts)
 - [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
 - [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)
-- [Scripting Options]({{ site.baseurl }}/guides/rhinopython/python-scripting-options)
-- [Reinitializing Python]({{ site.baseurl }}/guides/rhinopython/python-scripting-reinitialize)
