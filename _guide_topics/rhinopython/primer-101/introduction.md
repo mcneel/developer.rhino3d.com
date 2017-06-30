@@ -45,7 +45,7 @@ www.python.rhino3d.com
 
 #### Related Topics
 
-- [Where to find help - Next Topic >>]({{ site.baseurl }}/guides/rhinopython/primer-101/primer-where-to-find-help/)
+- [Where to find help - Next Topic >>]({{ site.baseurl }}/guides/rhinopython/primer-101/where-to-find-help/)
 - [Rhino.Python Primer 101]({{ site.baseurl }}/guides/rhinopython/primer-101/rhinopython101)
 - [Running Scripts]({{ site.baseurl }}/guides/rhinopython/python-running-scripts)
 - [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
