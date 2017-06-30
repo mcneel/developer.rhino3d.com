@@ -115,6 +115,8 @@ layout: guide-homepage
 &nbsp;&nbsp; 7. [Classes]({{ site.baseurl }}/guides/rhinopython/primer-101/7-classes/)  
 &nbsp;&nbsp; 8. [Geometry]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/)  
 
+&nbsp;&nbsp; <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [download the Rhino.Python 101 as a single PDF ](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)  
+
 
 ### Intermediate
 
@@ -134,9 +136,9 @@ layout: guide-homepage
 
 ### Other Resources
 
-- [Rhino.Python 101](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)
-- [Rhino Scripting Forum (Discourse)](http://discourse.mcneel.com/c/scripting)
-- [Rhino.Python Samples]({{ site.baseurl }}/samples/#rhinopython)
+- [Rhino Scripting Forum (Discourse)](http://discourse.mcneel.com/c/scripting)  
+- [Rhino.Python Samples]({{ site.baseurl }}/samples/#rhinopython)  
+- [Rhino.Python Developer Samples GitHub](https://github.com/mcneel/rhino-developer-samples/tree/wip/rhinopython)  
 - [Designalyze Python Tutorials](http://designalyze.com/)
 - [Plethora Project](http://www.plethora-project.com/2011/09/12/rhino-python-tutorials/)
 - [Steve Baer's Blog](http://stevebaer.wordpress.com/category/python/)
