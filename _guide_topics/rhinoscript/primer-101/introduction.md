@@ -36,5 +36,5 @@ Robert McNeel & Associates
 
 #### Related Topics
 
-- [Where to find help - Next Topic >>]({{ site.baseurl }}/guides/rhinoscript/primer-101/primer-where-to-find-help/)
+- [Where to find help - Next Topic >>]({{ site.baseurl }}/guides/rhinoscript/primer-101/where-to-find-help/)
 - [Rhino.Python Primer 101]({{ site.baseurl }}/guides/rhinoscript/primer-101/rhinopython101)

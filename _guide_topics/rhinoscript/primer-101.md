@@ -10,10 +10,10 @@ layout: guide-homepage
 
 ### RhinoScript 101
 
-   [Introduction]({{ site.baseurl }}/guides/rhinoscript/primer-101/primer-introduction/)  
+   [Introduction]({{ site.baseurl }}/guides/rhinoscript/primer-101/introduction/)  
    [Where to find help]({{ site.baseurl }}/guides/rhinoscript/primer-101/where-to-find-help/)  
 
-### 1. [What's it all about?]({{ site.baseurl }}/guides/rhinoscript/primer-101/1-whats-it-all-about/) 
+### 1. [What's it all about?]({{ site.baseurl }}/guides/rhinoscript/primer-101/1-whats-it-all-about/)
 
    1.1 [Macros]({{ site.baseurl }}/guides/rhinoscript/primer-101/1-whats-it-all-about/#macros)  
    1.2 [Scripts]({{ site.baseurl }}/guides/rhinoscript/primer-101/1-whats-it-all-about/#scripts)  
@@ -85,7 +85,7 @@ layout: guide-homepage
 
 
 ### 8. [Geometry]({{ site.baseurl }}/guides/rhinoscript/primer-101/8-geometry/)
- 
+
    8.1	[The openNURBS™ kernel]({{ site.baseurl }}/guides/rhinoscript/primer-101/8-geometry/
 #the-opennurbs-kernel)  
    8.2	[Objects in Rhino]({{ site.baseurl }}/guides/rhinoscript/primer-101/8-geometry/#obects-in-rhino)  
@@ -112,6 +112,3 @@ layout: guide-homepage
 
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="{{ site.baseurl }}/images/rhinoscript-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
-
-
-
