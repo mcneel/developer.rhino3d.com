@@ -38,7 +38,7 @@ Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"
 ### Table of Contents
 
 <table id="math_table">  
-<tbody>  
+<tbody markdown="1">  
 <tr>  
 <td width="30%">  
   1. <a href="{{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics/">Vector Mathematics</a>  
@@ -67,30 +67,30 @@ Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"
     </ol>
     </td>
     <td width="30%">
-      2. <a href="{{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations/">Matrices and Transformations</a>
-      <ol><li>2.1 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations/#21-matrix-operations">Matrix operations</a></li>
-      <ul><li>Matrix multiplication</li>  
+        2. <a href="{{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations/">Matrices and Transformations</a>
+          <ol><li>2.1 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations/#21-matrix-operations">Matrix operations</a></li>
+            <ul><li>Matrix multiplication</li>  
           <li>Identity matrix</li></ul>
-      <li>2.2 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations/#22-transformation-operations">Transformation operations</a></li>
-      <ul><li>Translation (move) transformation </li>  
+            <li>2.2 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations/#22-transformation-operations">Transformation operations</a></li>
+            <ul><li>Translation (move) transformation </li>  
           <li>Rotation transformation</li>   
           <li>Scale transformation</li>   
           <li>Shear transformation</li>   
           <li>Mirror or reflection transformation</li>   
           <li>Planar Projection transformation</li></ul>
-      </ol>		
-      </td>
-      <td>
-      3. <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/">Parametric Curves and Surfaces</a>
-      <ol><li>3.1 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#31-parametric-curves">Parametric curves</a></li>    
-      <ul><li>Curve parameter</li>    
+          </ol>		
+            </td>
+            <td>
+        3. <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/">Parametric Curves and Surfaces</a>
+          <ol><li>3.1 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#31-parametric-curves">Parametric curves</a></li>    
+            <ul><li>Curve parameter</li>    
           <li>Curve domain or interval</li>    
           <li>Curve evaluation</li>    
           <li>Tangent vector to a curve</li>    
           <li>Cubic polynomial curves</li>    
           <li>Evaluating cubic Bézier curves</li></ul>    
-      <li>3.2 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#32-nurbs-curves">NURBS curves</a></li>
-      <ul><li>Degree</li>  
+            <li>3.2 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#32-nurbs-curves">NURBS curves</a></li>
+            <ul><li>Degree</li>  
           <li>Control points</li>  
           <li>Weights of control points</li>  
           <li>Knots</li>  
@@ -98,28 +98,28 @@ Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"
           <li>Evaluation rule</li>  
           <li>Characteristics of NURBS curves</li>  
           <li>Evaluating NURBS curves</li></ul>  
-      <li>3.3 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#33-curve-geometric-continuity">Curve geometric continuity</a></li>   
-      <li>3.4 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#34-curve-curvature">Curve curvature</a></li>   
-      <li>3.5 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#35-parametric-surfaces">Parametric surfaces</a></li>   
-      <ul><li>Surface parameters</li>   
+            <li>3.3 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#33-curve-geometric-continuity">Curve geometric continuity</a></li>   
+            <li>3.4 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#34-curve-curvature">Curve curvature</a></li>   
+            <li>3.5 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#35-parametric-surfaces">Parametric surfaces</a></li>   
+            <ul><li>Surface parameters</li>   
           <li>Surface domain</li>   
           <li>Surface evaluation</li>   
           <li>Tangent plane of a surface</li></ul>  
-      <li>3.6 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#36-surface-geometric-continuity">Surface geometric continuity</a></li>     
-      <li>3.7 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#37-surface-curvature">Surface curvature</a></li>     
-      <ul><li>Principal curvatures</li>   
+            <li>3.6 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#36-surface-geometric-continuity">Surface geometric continuity</a></li>     
+            <li>3.7 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#37-surface-curvature">Surface curvature</a></li>     
+            <ul><li>Principal curvatures</li>   
           <li>Gaussian curvature</li>   
           <li>Mean curvature</li></ul>   
-      <li>3.8 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#38-nurbs-surfaces">NURBS surfaces</a></li>     
-      <ul><li>Characteristics of NURBS surfaces</li>   
+            <li>3.8 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#38-nurbs-surfaces">NURBS surfaces</a></li>     
+            <ul><li>Characteristics of NURBS surfaces</li>   
           <li>Singularity in NURBS surfaces</li>   
           <li>Trimmed NURBS surfaces</li></ul>   
-      <li>3.9 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#39-polysurfaces">Polysurfaces</a></li>     
-      <li>3.10 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#310-tutorials">Tutorials</a></li>     
-      <ul><li>Continuity between curves</li>   
+            <li>3.9 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#39-polysurfaces">Polysurfaces</a></li>     
+            <li>3.10 <a href="{{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/#310-tutorials">Tutorials</a></li>     
+            <ul><li>Continuity between curves</li>   
           <li>Surfaces with singularity</li></ul>
-      </ol>		
-      </td>
-      </tr>
-      </tbody>
-      </table>
+          </ol>		
+            </td>
+            </tr>
+            </tbody>
+            </table>

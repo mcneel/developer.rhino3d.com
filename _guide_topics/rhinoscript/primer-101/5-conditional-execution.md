@@ -184,7 +184,7 @@ Call Rhino.ObjectLayer(strObjectID, strLayerName)     'Assign the object to the 
 
 This snippet of code will check the type of the object which is referenced by the variable *strObjectID* and it will assign it to a specific layer. Some object type codes do not belong to 'real' objects (such as grips and edges) so we need the Case Else bit to make sure we don't try to assign them to a layer. I'm going to be very naughty right now and not discuss this in detail. The comments should be enough to help you on your way.
 
-##5.3 Looping
+## 5.3 Looping
 
 Executing certain lines of code more than once is called looping in programming slang. On page 5 I mentioned that there are two types of loops; conditional and incremental which can be described respectively as:
 
