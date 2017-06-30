@@ -6,11 +6,12 @@ author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
-categories: ['python-primer']
+categories: ['RhinoScript 101']
 origin:
 order: 4
 keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
+guide_homepage: guides/rhinoscript/primer-101/
 ---
 
 +-----------------------------------+-----------------------------------+

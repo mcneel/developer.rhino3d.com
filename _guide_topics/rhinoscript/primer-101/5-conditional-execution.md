@@ -6,17 +6,17 @@ author_contacts: ['DavidRutten']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['RhinoScript Primer']
+categories: ['RhinoScript 101']
 origin:
 order: 16
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinoscript/primer-101/
+guide_homepage: guides/rhinoscript/primer-101/
 ---
 
 ## 5.1 What if?
 
-What if I were to fling this rock at that bear? What if I were to alleviate that moose from its skin and wear it myself instead? It's questions like these that signify abstract thought, perhaps the most stunning of all human traits. It's no good actually throwing rocks at bears by the way, you're only going to upset it and severely diminish your chances of getting back to your cave by nightfall in one piece. As a programmer, you need to take abstract though to the next level; the very-very-conscious level. 
+What if I were to fling this rock at that bear? What if I were to alleviate that moose from its skin and wear it myself instead? It's questions like these that signify abstract thought, perhaps the most stunning of all human traits. It's no good actually throwing rocks at bears by the way, you're only going to upset it and severely diminish your chances of getting back to your cave by nightfall in one piece. As a programmer, you need to take abstract though to the next level; the very-very-conscious level.
 
 A major part of programming is recovering from screw-ups. A piece of code does not always behave in a straightforward manner and we need to catch these aberrations before they propagate too far. At other times we design our code to deal with more than one situation. In any case, there's always a lot of conditional evaluation going on, a lot of 'what if' questions. Let's take a look at three conditionals of varying complexity:
 
@@ -84,7 +84,7 @@ End If
 ```
 {: .line-numbers}
 
-If SomethingOrOther turns out to be True, then the bit of code between lines 1 and 3 are executed. This block can be as long as you like of course. However, if SomethingOrOther is False, then the code between *Else* and 
+If SomethingOrOther turns out to be True, then the bit of code between lines 1 and 3 are executed. This block can be as long as you like of course. However, if SomethingOrOther is False, then the code between *Else* and
 End If is executed. So in the case of *If…Then…Else*, one -and only one- of the two blocks of code is put to work.
 
 You can nest *If…Then* structures as deep as you like, though code readability will suffer from too much indenting.
@@ -104,7 +104,7 @@ End If
 
 When you feel you need to split up the code stream into more than two flows and you don't want to use nested structures, you can instead switch to something which goes by the name of the *If…Then…ElseIf…Else* statement.
 
-As you may or may not know, the * _Make2D* command in Rhino has a habit of creating some very tiny curve segments. We could write a script which deletes these segments automatically, but where would we draw the line between 'short' and 'long'? We could be reasonably sure that anything which is shorter than the document absolute tolerance value can be removed safely, but what about curves which are slightly longer? Rule #1 in programming: When in doubt, make the user decide. That way you can blame them when things go wrong. 
+As you may or may not know, the * _Make2D* command in Rhino has a habit of creating some very tiny curve segments. We could write a script which deletes these segments automatically, but where would we draw the line between 'short' and 'long'? We could be reasonably sure that anything which is shorter than the document absolute tolerance value can be removed safely, but what about curves which are slightly longer? Rule #1 in programming: When in doubt, make the user decide. That way you can blame them when things go wrong.
 
 A good way of solving this would be to iterate through a predefined set of curves, delete those which are definitely short, and select those which are ambiguous. The user can then decide for himself whether those segments deserve to be deleted or retained. We won't discuss the iteration part here, for you need to know more about arrays than you do now. The conditional bit of the algorithm looks like this:
 
@@ -127,7 +127,7 @@ Saying "that red dress makes your bottom look big" and "that yellow dress really
 
 ## 5.2 Select Case
 
-Even though the If…Then…ElseIf…Else statement allows us to split up the code stream into any number of substreams, it is not a very elegant piece of syntax. Even very simple conditional evaluation will look rather complex because of the repeated comparisons. The Select…Case structure was designed to simplify conditional evaluation which potentially results in many different code streams. (For those among you who are/were Java or C programmers, Select…Case in VBScript is the same as switch…case in Java/C). There are a few drawbacks compared to 
+Even though the If…Then…ElseIf…Else statement allows us to split up the code stream into any number of substreams, it is not a very elegant piece of syntax. Even very simple conditional evaluation will look rather complex because of the repeated comparisons. The Select…Case structure was designed to simplify conditional evaluation which potentially results in many different code streams. (For those among you who are/were Java or C programmers, Select…Case in VBScript is the same as switch…case in Java/C). There are a few drawbacks compared to
 If…Then…ElseIf…Else statements. For one, a Select…Case can only evaluate equality, meaning you can only check to see if some variable is equal to 2, not if it is smaller than 2. The syntax for Select…Case looks like this:
 
 ```vb
@@ -182,7 +182,7 @@ End If
 Call Rhino.ObjectLayer(strObjectID, strLayerName)     'Assign the object to the layer
 ```
 
-This snippet of code will check the type of the object which is referenced by the variable *strObjectID* and it will assign it to a specific layer. Some object type codes do not belong to 'real' objects (such as grips and edges) so we need the Case Else bit to make sure we don't try to assign them to a layer. I'm going to be very naughty right now and not discuss this in detail. The comments should be enough to help you on your way. 
+This snippet of code will check the type of the object which is referenced by the variable *strObjectID* and it will assign it to a specific layer. Some object type codes do not belong to 'real' objects (such as grips and edges) so we need the Case Else bit to make sure we don't try to assign them to a layer. I'm going to be very naughty right now and not discuss this in detail. The comments should be enough to help you on your way.
 
 ##5.3 Looping
 
@@ -282,7 +282,7 @@ strTextObjectID = Rhino.AddText(CStr(Time()), Array(0,0,0), 20)
 
 The <i>strText</i> argument must contain a String description of the current system time. We will simply nest two native VBScript functions to get it. Since these functions are not designed to fail we do not have to check for a Null variable and we can put them 'inline'. <i>Time()</i> returns a variable which contains only the system time, not the date. We could also have used the <i>Now()</i> function (as on page 20) in which case we would have gotten both the date and the time. <i>Time()</i> does not return a String type variable, so before we pass it into Rhino we have to convert it to a proper String using the <i>CStr()</i> function. This is analogous with our code on page 20.
 
-The *arrPoint* argument requires an array of doubles. We haven't done arrays yet, but it essentially means we have to supply the x, y and z coordinates of the text insertion point. `Array(0,0,0` means the same as the world origin. 
+The *arrPoint* argument requires an array of doubles. We haven't done arrays yet, but it essentially means we have to supply the x, y and z coordinates of the text insertion point. `Array(0,0,0` means the same as the world origin.
 
 The default height of text objects is 1.0 units, but we want our clock to look big since big things look expensive. Therefore we're overriding it to be 20 units instead.</td>
 </tr>
@@ -315,7 +315,7 @@ The default height of text objects is 1.0 units, but we want our clock to look b
 
 ![{{ site.baseurl }}/images/primer-iterativecurvescaler.svg]({{ site.baseurl }}/images/primer-iterativecurvescaler.svg){: .float-img-right width="325"}
 
-A simple example of a non-endless loop which will terminate itself would be an iterative scaling script. Imagine we need a tool which makes sure a curve does not exceed a certain length {L}. Whenever a curve does exceed this predefined value it must be  scaled down by a factor {F} until it no longer exceeds {L}. 
+A simple example of a non-endless loop which will terminate itself would be an iterative scaling script. Imagine we need a tool which makes sure a curve does not exceed a certain length {L}. Whenever a curve does exceed this predefined value it must be  scaled down by a factor {F} until it no longer exceeds {L}.
 
 This approach means that curves that turn out to be longer than {L} will probably end up being shorter than {L}, since we always scale with a fixed amount. There is no mechanism to prevent undershooting. Curves that start out by being shorter than {L} should remain unmolested.
 
@@ -340,7 +340,7 @@ Sub FitCurveToLength()
 
     Do
         If Rhino.CurveLength(strCurveID) <= dblLengthLimit Then Exit Do
-        
+
         strCurveID = Rhino.ScaleObject(strCurveID, Array(0,0,0), Array(0.95, 0.95, 0.95))
         If IsNull(strCurveID) Then
             Call Rhino.Print("Something went wrong...")
@@ -506,7 +506,7 @@ Sub TwistAndShout()
     Call Rhino.EnableRedraw(False)
     For z = 0.0 To 5.0 Step 0.5
         dblTwistAngle = dblTwistAngle + (pi/30)
-      
+
         For a = 0.0 To 2*pi Step (pi/15)
             Dim x, y
             x = 5 * Sin(a + dblTwistAngle)

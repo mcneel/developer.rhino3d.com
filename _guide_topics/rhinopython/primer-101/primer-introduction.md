@@ -6,12 +6,12 @@ author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
-categories: ['Python Primer']
+categories: ['Rhino.Python 101']
 origin:
 order: 0
 keywords: ['python', 'commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinopython/primer-101/
+guide_homepage: guides/rhinopython/primer-101/
 ---
 
 You’ve just opened the first edition of the Rhino Python primer. This booklet was originally written by David Rutten of Robert McNeel & Associates for Rhino 4 and VBscript and has now been translated to encompass Python for Rhino 5.  As always, this primer is intended to teach programming to absolute beginners, people who have tinkered with programming a bit or expert programmers looking for a quick introduction to the methods in Rhino.  Rhinoscript (VBscript) has been supported for many years, with a large user group and extensive support material. As well as giving a basic introduction, this primer looks to easily transition those familiar with VBscript into the world of Rhino Python.  For this reason, David Rutten's original primer has been used extensively as the underlying framework for this Python Primer.  Python offers exciting new potentials for programming in Rhino with Object-Oriented functionality, simple syntax, access to the .NET framework and a vast number of user-built libraries to extend Rhino's functionality.  The same powerful methods that were previously in VBscript are still available, as well as a ton of other exciting methods and features available natively with Python.  

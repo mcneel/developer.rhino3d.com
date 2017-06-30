@@ -6,7 +6,7 @@ author_contacts: ['dan']
 sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
-categories: ['General']
+categories: ['Getting Started']
 origin: unset
 order: 6
 keywords: ['developer', 'rhino']

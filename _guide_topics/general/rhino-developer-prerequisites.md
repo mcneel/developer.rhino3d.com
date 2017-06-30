@@ -6,7 +6,7 @@ author_contacts: ['dan']
 sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
-categories: ['General']
+categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/learningresources
 order: 1
 keywords: ['developer', 'rhino']

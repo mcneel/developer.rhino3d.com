@@ -6,12 +6,12 @@ author_contacts: ['DavidRutten']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['RhinoScript Primer']
+categories: ['RhinoScript 101']
 origin:
 order: 15
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinoscript/primer-101/
+guide_homepage: guides/rhinoscript/primer-101/
 ---
 
 ## 4.1 What on earth are they and why should I care?
@@ -31,7 +31,7 @@ The four lines of code above contain four kinds of code:
 3. Operators    `=, +, * and /`
 4. Functions    `math.sin(), math.sqrt(), math.tan() and math.log()`
 
-Numbers and variables are well behind us now. Arithmetic operators should be familiar from everyday life, VBScript uses them in the same way as you used to during math classes. VBScript comes with a limited amount of arithmetic operators and they are always positioned between two variables or constants (a constant is a fixed number). 
+Numbers and variables are well behind us now. Arithmetic operators should be familiar from everyday life, VBScript uses them in the same way as you used to during math classes. VBScript comes with a limited amount of arithmetic operators and they are always positioned between two variables or constants (a constant is a fixed number).
 
 <img src="{{ site.baseurl }}/images/primer-operators.svg">{: .img-center  width="95%"}
 
@@ -86,7 +86,7 @@ y = (Sqr(A) / B) + Abs(C / D)
 
 ## 4.3 Logical operators
 
-I realize the last thing you want right now is an in-depth tutorial on logical operators, but it is an absolute must if we want to start making smart code. I'll try to keep it as painless as possible. 
+I realize the last thing you want right now is an in-depth tutorial on logical operators, but it is an absolute must if we want to start making smart code. I'll try to keep it as painless as possible.
 
 Logical operators mostly work on booleans and they are indeed very logical. As you will remember booleans can only have two values, so whatever logic deals with them cannot be too complicated. It isn't. The problem is, we are not used to booleans in every day life. This makes them a bit alien to our own logic systems and therefore perhaps somewhat hard to grasp.
 
@@ -144,7 +144,7 @@ A good way to exercise your own boolean logic is to use Venn-diagrams. A Venn di
 
 <img src="{{ site.baseurl }}/images/primer-venn-1.svg">{: .img-center  width="50%"}
 
-Every circular region contains all values that belong to a set; the top circle for example marks off set {A}. Every value inside that circle evaluates True for {A} and every value not in that circle evaluates False for {A}. If you're uncomfortable with "A, B and C", you can substitute them with "Employed", "Single" and "HomeOwner". By 
+Every circular region contains all values that belong to a set; the top circle for example marks off set {A}. Every value inside that circle evaluates True for {A} and every value not in that circle evaluates False for {A}. If you're uncomfortable with "A, B and C", you can substitute them with "Employed", "Single" and "HomeOwner". By
 colouring the regions we can mimic boolean evaluation in programming code:
 
 <img src="{{ site.baseurl }}/images/primer-venn-2.svg">{: .img-center  width="100%"}
@@ -165,10 +165,10 @@ A good example is the `Sin()` function, which takes a single numeric value and r
 
 $$f(x) = \sum_{n=0}^\infty \frac{f^n(a)}{n!} {(x-a)^n}$$
 
-In other words: you don't want to know. The good people who develop programming languages 
-predicted you don't want to know, which is why they implemented a *Sin()* function. VBScript comes with a long list of predefined functions all of which are available to RhinoScripters. Some deal with mathematical 
-computations such as *Sin()*, others perform String operations such as *Trim()* which removes all leading 
-and trailing spaces from a block of text. When a function does not return a value we call it a 'subroutine' instead for no good reason whatsoever. Both functions and subroutines can be referred to as procedures. 
+In other words: you don't want to know. The good people who develop programming languages
+predicted you don't want to know, which is why they implemented a *Sin()* function. VBScript comes with a long list of predefined functions all of which are available to RhinoScripters. Some deal with mathematical
+computations such as *Sin()*, others perform String operations such as *Trim()* which removes all leading
+and trailing spaces from a block of text. When a function does not return a value we call it a 'subroutine' instead for no good reason whatsoever. Both functions and subroutines can be referred to as procedures.
 This is all just coding slang, in the end it all boils down to the same thing. My copy of the VBScript helpfile lists 89 native procedures. I won't discuss them here, unless when they are to be used in examples.
 
 Apart from implementing the native VBScript functions, Rhino adds a few extra ones for us to use. The current RhinoScript helpfile for Rhino4 claims a total number of about 800 additional functions, and new ones are added frequently. For a special reason which I will not be going into anytime soon, the procedures you get to use through Rhino are referred to as "methods". They behave exactly the same as VBScript procedures although you do need to look in a different helpfile to see what they do.
@@ -205,10 +205,10 @@ Sub RenameObject()
     Dim strObjectID
     strObjectID = Rhino.GetObject("Select an object to rename", , , True)
     If IsNull(strObjectID) Then Exit Sub
-    
+
     Dim strNewName
     strNewName = "Date tag: " & CStr(Now())
-    
+
     Call Rhino.ObjectName(strObjectID, strNewName)
 End Sub
 
@@ -263,8 +263,8 @@ On line 14 we tell the script interpreter that our subroutine has ended.
 
 ### 4.4.2 Advanced function syntax
 
-The previous example showed a very simple subroutine which did not take any arguments and did not 
-return a value. In many cases you will need something a bit more advanced. For one, a complex function will 
+The previous example showed a very simple subroutine which did not take any arguments and did not
+return a value. In many cases you will need something a bit more advanced. For one, a complex function will
 usually require some information and it will often have a return value, if only to indicate whether the function completed successfully.
 
 Whenever you call a function it always returns a value, even if you do not specifically set it. By default, every function returns a vbEmpty value, since this is the default value for all variables and functions in VBScript. So if you want to write a function which returns you a String containing the alphabet, doing this is not enough:
@@ -277,7 +277,7 @@ End Function
 ```
 {: .line-numbers}
 
-Although the function actually assigns the alphabet to the variable called strSeries, this variable will go out of scope once the function ends on line #4 and its data will be lost. You have to assign the return value to the function 
+Although the function actually assigns the alphabet to the variable called strSeries, this variable will go out of scope once the function ends on line #4 and its data will be lost. You have to assign the return value to the function
 name, like so:
 
 ```vb
@@ -287,7 +287,7 @@ End Function
 ```
 {: .line-numbers}
 
-Every function has a specific variable which shares its name with the function. You can treat this variable like any other but the value of this variable is passed back to the caller when the function ends. This is usually called the "return value". If your function is designed-to-fail (this doesn't mean it is poorly designed), it will crash when confronted with invalid input. If your function however is designed-not-to-fail, it should return a value which tells the caller whether or not it was able to perform its duty. 
+Every function has a specific variable which shares its name with the function. You can treat this variable like any other but the value of this variable is passed back to the caller when the function ends. This is usually called the "return value". If your function is designed-to-fail (this doesn't mean it is poorly designed), it will crash when confronted with invalid input. If your function however is designed-not-to-fail, it should return a value which tells the caller whether or not it was able to perform its duty.
 
 Imagine you want to lock all curve objects in the document. Doing this by hand requires three steps and it will ruin your current selection set, so it pays to make a script for it. A function which performs this task might fail if there are no curve objects to be found. If the function is designed-not-to-fail you can always call it without thinking and it will sort itself out. If the function is designed-to-fail it will crash if you try to run it without making sure everything is set up correctly. The respective functions are:
 
@@ -305,14 +305,14 @@ Function LockCurves_NoFail()
     Dim arrCurves
     arrCurves = Rhino.ObjectsByType(4)      'Get all curve object IDs
     If IsNull(arrCurves) Then Exit Function 'At this point the return value is False
-    
+
     Call Rhino.LockObjects(arrCurves)       'Lock the curves
     LockCurves_NoFail = True                'Set a new return value indicating success
 End Function
 ```
 {: .line-numbers}
 
-If you call the first subroutine when there are no curve objects in the document, the Rhino.ObjectsByType() method will return a Null variable. It returns null because it was designed-not-to-fail and the null 
+If you call the first subroutine when there are no curve objects in the document, the Rhino.ObjectsByType() method will return a Null variable. It returns null because it was designed-not-to-fail and the null
 variable is just its way of telling you; "tough luck". However, if you pass a null variable as an argument to the  Rhino.LockObjects() method it will keel over and die, generating a fatal error:
 
 <img src="{{ site.baseurl }}/images/NoFailFunctionCrash.png">{: .img-center  width="60%"}
@@ -329,7 +329,7 @@ A custom defined function can take any amount of arguments between nill and a ga
 End Function
 ```
 
-To put it in regular English... 
+To put it in regular English...
 Functions can be declared with either Public or Private scope. If you use the Private keyword you will limit the function to your script only, meaning no one else can call it. If you use the Public keyword all the scripts which run in Rhino can access your function. This keyword is optional, meaning that when you omit it, Public is assumed. You also have to provide a unique name which adheres to VBScript naming conventions, this is not optional. Finally you can declare a set of arguments. Anyone who calls this function must provide a matching signature or an error will occur. More on the argument list in a bit.
 
 The first line which contains the scope, name and the arguments is called the function declaration. The last line of a function is always, always an End Function statement, no two ways about it. Everything in between  is called the function body. The function body could technically be empty, though that won't do anybody any good. In the function body you can declare variables, assign values, call other functions or place a call to Exit Function, which will terminate the function prematurely and return execution to the line of code which was responsible for calling this function.
@@ -348,7 +348,7 @@ intNumber1			(the first argument)
 intNumber2			(the second argument)
 ```
 
-Let's assume this function determines whether intNumber1 plus 100 is larger than twice the value of intNumber2. 
+Let's assume this function determines whether intNumber1 plus 100 is larger than twice the value of intNumber2.
 The function could look like this:
 
 ```vb
@@ -410,7 +410,7 @@ Function AnotherBogusFunction(ByRef intNumber1, ByRef intNumber2)
     intNumber1 = intNumber1 + 1
     intNumber2 = intNumber2 + 2
     AnotherBogusFunction = intNumber1 * intNumber2
-End Function	
+End Function
 ```
 {: .line-numbers}
 
@@ -418,7 +418,7 @@ End Function
 
 Passing arguments by reference is quite a tricky thing to wrap your head around, so don't feel bad if you don't get it at first. You can rest assured that in almost all cases we'll be using the `ByVal` approach which means our data is simply copied out of harms way.
 
-There is one other reason to use `ByRef` arguments which has to do with optimization. Whenever you pass an argument to a function it will be copied in the computer memory. With small stuff like integers, vectors and shorts strings this doesn't matter, but when you start copying huge arrays back and forth you're wasting memory and processor cycles. If it turns out your script is running slowly you could consider passing arguments by 
+There is one other reason to use `ByRef` arguments which has to do with optimization. Whenever you pass an argument to a function it will be copied in the computer memory. With small stuff like integers, vectors and shorts strings this doesn't matter, but when you start copying huge arrays back and forth you're wasting memory and processor cycles. If it turns out your script is running slowly you could consider passing arguments by
 reference in order to avoid casual copying. You have to be careful not to change them, or very unpredictable things will start happening.
 
 It's a bit too early for optimizations though, more on this in Chapter 9.

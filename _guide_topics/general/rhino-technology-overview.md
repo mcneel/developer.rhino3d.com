@@ -6,7 +6,7 @@ author_contacts: ['brian']
 sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
-categories: ['General']
+categories: ['Overview']
 origin: unset
 order: 0
 keywords: ['developer', 'rhino']
