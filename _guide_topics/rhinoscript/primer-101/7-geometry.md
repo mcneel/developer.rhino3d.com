@@ -6,24 +6,24 @@ author_contacts: ['DavidRutten']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['RhinoScript Primer']
+categories: ['RhinoScript 101']
 origin:
 order: 18
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinoscript/primer-101/
+guide_homepage: guides/rhinoscript/primer-101/
 ---
 
 ## 7.1 The openNURBS™ kernel
 
 Now that you are familiar with the basics of scripting, it is time to start with the actual geometry part of RhinoScript. To keep things interesting we've used plenty of Rhino methods in examples before now, but that was all peanuts. Now you will embark upon that great journey which, if you survive, will turn you into a real 3D geek.
 
-As already mentioned in Chapter 3, Rhinoceros is build upon the openNURBS™ kernel which supplies the bulk of the geometry and file I/O functions. All plugins that deal with geometry tap into this rich resource and the RhinoScript plugin is no exception. Although Rhino is marketed as a "NURBS modeler for Windows", it does have a basic understanding of other types of geometry as well. Some of these are available to the general Rhino user, others are only available to programmers. As a RhinoScripter you will not be dealing directly with any 
+As already mentioned in Chapter 3, Rhinoceros is build upon the openNURBS™ kernel which supplies the bulk of the geometry and file I/O functions. All plugins that deal with geometry tap into this rich resource and the RhinoScript plugin is no exception. Although Rhino is marketed as a "NURBS modeler for Windows", it does have a basic understanding of other types of geometry as well. Some of these are available to the general Rhino user, others are only available to programmers. As a RhinoScripter you will not be dealing directly with any
 openNURBS™ code since RhinoScript wraps it all up into an easy-to-swallow package. However, programmers need to have a much higher level of comprehension than users which is why we'll dig fairly deep.
 
 ## 7.2 Objects in Rhino
 
-All objects in Rhino are composed of a geometry part and an attribute part. There are quite a few different geometry types but the attributes always follow the same format. The attributes store information such as object name, colour, layer, isocurve density, linetype and so on and so forth. Not all attributes make sense for all geometry types, points for example do not use linetypes or materials but they are capable of storing this information nevertheless. Most attributes and properties are fairly straightforward and can be read and assigned to objects at will. 
+All objects in Rhino are composed of a geometry part and an attribute part. There are quite a few different geometry types but the attributes always follow the same format. The attributes store information such as object name, colour, layer, isocurve density, linetype and so on and so forth. Not all attributes make sense for all geometry types, points for example do not use linetypes or materials but they are capable of storing this information nevertheless. Most attributes and properties are fairly straightforward and can be read and assigned to objects at will.
 
 <img src="{{ site.baseurl }}/images/primer-rhinoobjects.svg">{: .img-center  width="90%"}
 
@@ -36,14 +36,14 @@ Sub DisplayObjectAttributes(ByVal strObjectID)
     Dim arrSource : arrSource = Array("By Layer", "By Object", "By Parent")
 
     Dim strData : strData = "Object attributes for :" & strObjectID & vbCrLf
-    
+
     strData = strData & "Description: " & Rhino.ObjectDescription(strObjectID) & vbCrLf
     strData = strData & "Layer: " & Rhino.ObjectLayer(strObjectID) & vbCrLf
     strData = strData & "LineType: " & Rhino.ObjectLineType(strObjectID) & vbCrLf
-    
+
     strData = strData & "LineTypeSource: " & _
         arrSource(Rhino.ObjectLineTypeSource(strObjectID)) & vbCrLf
-    
+
     strData = strData & "MaterialSource: " & _
         arrSource(Rhino.ObjectMaterialSource(strObjectID)) & vbCrLf
 
@@ -74,7 +74,7 @@ End Sub
 
 ## 7.3 Points and Pointclouds
 
-Everything begins with points. A point is nothing more than a list of values called a coordinate. The number of values in the list corresponds with the number of dimensions of the space it resides in. Space is usually denoted with an R and a superscript value indicating the number of dimensions. (The 'R' stems from the world 'real' which means the space is continuous. We should keep in mind that a digital representation always has gaps (see paragraph 2.3.1), even though we are rarely confronted with them.) 
+Everything begins with points. A point is nothing more than a list of values called a coordinate. The number of values in the list corresponds with the number of dimensions of the space it resides in. Space is usually denoted with an R and a superscript value indicating the number of dimensions. (The 'R' stems from the world 'real' which means the space is continuous. We should keep in mind that a digital representation always has gaps (see paragraph 2.3.1), even though we are rarely confronted with them.)
 
 Points in 3D space, or R3 thus have three coordinates, usually referred to as {x,y,z}. Points in R2 have only two coordinates which are either called {x,y} or {u,v} depending on what kind of two dimensional space we're talking about. Points in R1 are denoted with a single value. Although we tend not to think of one-dimensional points as 'points', there is no mathematical difference; the same rules apply. One-dimensional points are often referred to as 'parameters' and we denote them with {t} or {p}.
 
@@ -97,7 +97,7 @@ Sub Main()
     Dim strCurveID
     strCurveID = Rhino.GetObject("Select a curve to sample", 4, True, True)
     If IsNull(strCurveID) Then Exit Sub
-    
+
     Dim t
     Call Rhino.EnableRedraw(False)
     For t = 0.0 To 1.0 Step 0.002
@@ -108,15 +108,15 @@ End Sub
 
 Function AddPointAtR1Parameter(strCurveID, dblUnitParameter)
     AddPointAtR1Parameter = Null
-    
+
     Dim crvDomain : crvDomain = Rhino.CurveDomain(strCurveID)
     If IsNull(crvDomain) Then Exit Function
-    
-    Dim dblR1Param 
+
+    Dim dblR1Param
     dblR1Param = crvDomain(0) + dblUnitParameter * (crvDomain(1) - crvDomain(0))
     Dim arrR3Point : arrR3Point = Rhino.EvaluateCurve(strCurveID, dblR1Param)
     If Not IsArray(arrR3Point) Then Exit Function
-    
+
     Dim strPointID : strPointID = Rhino.AddPoint(arrR3Point)
     Call Rhino.ObjectColor(strPointID, ParameterColour(dblUnitParameter))
     AddPointAtR1Parameter = strPointID
@@ -211,10 +211,10 @@ Sub Main()
     Dim strCurveID
     strCurveID = Rhino.GetObject("Select a curve to measure", 4, True, True)
     If IsNull(strCurveID) Then Exit Sub
-    
+
     Dim arrPts : arrPts = Rhino.DivideCurve(strCurveID, 500)
-    Dim i 
-    
+    Dim i
+
     Call Rhino.EnableRedraw(False)
     For i = 0 To UBound(arrPts)
         Call EvaluateDeviation(strSurfaceID, 1.0, arrPts(i))
@@ -231,13 +231,13 @@ Function EvaluateDeviation(strSurfaceID, dblThreshold, arrSample)
 
     Dim arrR3Point : arrR3Point = Rhino.EvaluateSurface(strSurfaceID, arrR2Point)
     If IsNull(arrR3Point) Then Exit Function
-    
+
     Dim dblDeviation : dblDeviation = Rhino.Distance(arrR3Point, arrSample)
     If dblDeviation <= dblThreshold Then
         EvaluateDeviation = True
         Exit Function
     End If
-    
+
     Call Rhino.AddPoint(arrSample)
     Call Rhino.AddLine(arrSample, arrR3Point)
     EvaluateDeviation = False
@@ -249,7 +249,7 @@ End Function
 
 This script will compare a bunch of points on a curve to their projection on a surface. If the distance exceeds one unit, a line and a point will be added.
 
-First, the R1 points are translated into R3 coordinates so we can 
+First, the R1 points are translated into R3 coordinates so we can
 project them onto the surface, getting the R2 coordinate {u,v} in return. This R2 point has to be translated into R3 space as well, since we need to know the distance between the R1 point on the curve and the R2 point on the surface. Distances can only be measured if both points reside in the same number of dimensions, so we need to translate them into R3 as well.
 
 Told you it was a piece of cake...
@@ -288,7 +288,7 @@ Ok, that's it for now, time to go out and have a stiff drink.
 
 You'll be glad to learn that (poly)lines are essentially the same as point-arrays. The only difference is that we treat the points as a series rather than an anonymous collection, which enables us to draw lines between them. There is some nasty stuff going on which might cause problems down the road so perhaps it's best to get it over with quick.
 
-There are several ways in which polylines can be manifested in openNURBS™ and thus in Rhino. There is a special polyline class which simply lists an array of ordered points. It has no overhead data so this is the simplest case. It's also possible for regular nurbs curves to behave as polylines when they have their degree set to 1. In 
+There are several ways in which polylines can be manifested in openNURBS™ and thus in Rhino. There is a special polyline class which simply lists an array of ordered points. It has no overhead data so this is the simplest case. It's also possible for regular nurbs curves to behave as polylines when they have their degree set to 1. In
 addition, a polyline could also be a polycurve made up of line segments, polyline segments, degree=1 nurbs curves or a combination of the above. If you create a polyline using the _Polyline command, you will get a proper polyline objects as the Object Properties Details dialog on the left shows:
 
 <img src="{{ site.baseurl }}/images/PolyLineToNurbsDragChange.png">{: .img-center  width="80%"}
@@ -329,7 +329,7 @@ Function SubDividePolyline(ByRef arrV)
 End Function
 ```
 
-I'm using the *ByRef* statement not because I want to tinker with the original point-arrays, but to avoid copying them whenever these functions are called. 
+I'm using the *ByRef* statement not because I want to tinker with the original point-arrays, but to avoid copying them whenever these functions are called.
 
 No rocket science yet, but brace yourself for the next bit...
 
@@ -337,14 +337,14 @@ No rocket science yet, but brace yourself for the next bit...
 
 No rocket science yet, but brace yourself for the next bit...
 
-As you know, the shortest path between two points is a straight line. This is true for all our space definitions, from R1 to RN. However, the shortest path in R2 space is not necessarily the same shortest path in R3 space. If we want to connect two points on a surface with a straight line in R2, all we need to do is plot a linear course through the surface {u,v} space. (Since we can only add curves to Rhino which use 3D world coordinates, we'll need a fair amount of samples to give the impression of smoothness.) The thick red curve in the adjacent illustration is the shortest path in R2 parameter space connecting {A} and {B}. We can clearly see that this is definitely not the shortest path in R3 space.	
+As you know, the shortest path between two points is a straight line. This is true for all our space definitions, from R1 to RN. However, the shortest path in R2 space is not necessarily the same shortest path in R3 space. If we want to connect two points on a surface with a straight line in R2, all we need to do is plot a linear course through the surface {u,v} space. (Since we can only add curves to Rhino which use 3D world coordinates, we'll need a fair amount of samples to give the impression of smoothness.) The thick red curve in the adjacent illustration is the shortest path in R2 parameter space connecting {A} and {B}. We can clearly see that this is definitely not the shortest path in R3 space.
 
 We can clearly see this because we're used to things happening in R3 space, which is why this whole R2/R3 thing is so thoroughly counter intuitive to begin with. The green, dotted curve is the actual shortest path in R3 space which still respects the limitation of the surface (I.e. it can be projected onto the surface without any loss of information). The following function was used to create the red curve; it creates a polyline which represents the shortest path from {A} to {B} in surface parameter space:
 
 ```vb
 Function GetR2PathOnSurface(strSurfaceID, intSegments, strPrompt1, strPrompt2)
     GetR2PathOnSurface = Null
-	
+
     Dim ptStart, ptEnd
     ptStart = Rhino.GetPointOnSurface(strSurfaceID, strPrompt1)
     If IsNull(ptStart) Then Exit Function
@@ -355,17 +355,17 @@ Function GetR2PathOnSurface(strSurfaceID, intSegments, strPrompt1, strPrompt2)
 
     Dim uvA : uvA = Rhino.SurfaceClosestPoint(strSurfaceID, ptStart)
     Dim uvB : uvB = Rhino.SurfaceClosestPoint(strSurfaceID, ptEnd)
-	
+
     Dim arrV() : ReDim arrV(intSegments)
     Dim i, t, u, v
     For i = 0 To intSegments
         t = i / intSegments
         u = uvA(0) + t*(uvB(0) - uvA(0))
         v = uvA(1) + t*(uvB(1) - uvA(1))
-		
+
         arrV(i) = Rhino.EvaluateSurface(strSurfaceID, Array(u, v))
     Next
-	
+
     GetR2PathOnSurface = arrV
 End Function
 ```
@@ -489,7 +489,7 @@ End Sub
 ```vb
 Sub SmoothPolyline(ByRef arrVertices)
     Dim arrCopy : arrCopy = arrVertices    
-    
+
     Dim i, j
     For i = 1 To UBound(arrVertices)-1
         For j = 0 To 2
@@ -529,10 +529,10 @@ Sub GeodesicFit(ByRef arrVertices, strSurfaceID, dblTolerance)
     Do
         Call SmoothPolyline(arrVertices)
         Call ProjectPolyline(arrVertices, strSurfaceID)
-	
+
         dblNewLength = PolylineLength(arrVertices)
         If (Abs(dblNewLength - dblLength) < dblTolerance) Then Exit Do
-	
+
         dblLength = dblNewLength
     Loop
 End Sub
@@ -548,7 +548,7 @@ End Sub
 <td>1</td>
 <td>Hah... that doesn't look so bad after all, does it? You'll notice that it's often the stuff which is easy to explain that ends up taking a lot of lines of code. Rigid mathematical and logical structures can typically be coded very efficiently.
 <br><br>
-Again, ByRef for the actual coordinate array since we're mucking about with the thing directly. No use copying lists of points all over the place and back again. 
+Again, ByRef for the actual coordinate array since we're mucking about with the thing directly. No use copying lists of points all over the place and back again.
 <br><br>
 You'll notice this is a subroutine and thus lacks a return value which is perhaps a little odd. It certainly looks complex enough to deserve a return value. Still, since we're writing this script in one go we know that the function which uses this particular sub does not rely on return values. It simply evaluates the length of the polyline prior to and after calling this sub and decides where to go from there. If this subroutine completely and utterly fails, the polyline will not be changed which results in zero-
 difference lengths. That is the cue for the caller to abort anyway.
@@ -596,11 +596,11 @@ Sub GeodesicCurve()
     Dim strSurfaceID
     strSurfaceID = Rhino.GetObject("Select surface for geodesic curve solution", 8, True, True)
     If IsNull(strSurfaceID) Then Exit Sub
-   
-    Dim arrV 
+
+    Dim arrV
     arrV = GetPolylineOnSurface(strSurfaceID, 10, _
            "Start of geodesic curve", "End of geodesic curve")
-    
+
     If IsNull(arrV) Then Exit Sub
 
     Dim dblTolerance : dblTolerance = Rhino.UnitAbsoluteTolerance() / 10
@@ -609,7 +609,7 @@ Sub GeodesicCurve()
 
     Do
         Call Rhino.Prompt("Solving geodesic fit for " & UBound(arrV) & " samples")
-	
+
         Call GeodesicFit(arrV, strSurfaceID, dblTolerance)
         dblNewLength = PolylineLength(arrV)
         If (Abs(dblNewLength - dblLength) < dblTolerance) Then Exit Do
@@ -712,7 +712,7 @@ End Sub
 
 ![{{ site.baseurl }}/images/primer-planecreation.svg]({{ site.baseurl }}/images/primer-planecreation.svg){: .float-img-right width="325"}
 
-You will notice that all RhinoScript methods that require plane definitions make sure these demands are met, no matter how poorly you defined the input. 
+You will notice that all RhinoScript methods that require plane definitions make sure these demands are met, no matter how poorly you defined the input.
 
 The adjacent illustration shows how the *Rhino.AddPlaneSurface()* call on line 16 results in the red plane, while the *Rhino.AddPlaneSurface()* call on line 17 creates the yellow surface which has dimensions equal to the distance between the picked origin and axis points.
 
@@ -723,7 +723,7 @@ Call WhoFramedTheSurface()
 Sub WhoFramedTheSurface()
     Dim idSurface : idSurface = Rhino.GetObject("Surface to frame", 8, True, True)
     If IsNull(idSurface) Then Exit Sub
-	
+
     Dim intCount : intCount = Rhino.GetInteger("Number of iterations per direction", 20, 2)
     If IsNull(intCount) Then Exit Sub
 
@@ -731,18 +731,18 @@ Sub WhoFramedTheSurface()
     Dim vDomain : vDomain = Rhino.SurfaceDomain(idSurface, 1)
     Dim uStep : uStep = (uDomain(1) - uDomain(0)) / intCount
     Dim vStep : vStep = (vDomain(1) - vDomain(0)) / intCount
-	
+
     Dim u, v
     Dim pt
     Dim srfFrame
-	
+
     Call Rhino.EnableRedraw(False)
     For u = uDomain(0) To uDomain(1) Step uStep
         For v = vdomain(0) To vDomain(1) Step vStep
-            pt = Rhino.EvaluateSurface(idSurface, Array(u, v)) 
+            pt = Rhino.EvaluateSurface(idSurface, Array(u, v))
             If Rhino.Distance(pt, Rhino.BrepClosestPoint(idSurface, pt)(0)) < 0.1 Then
                 srfFrame = Rhino.SurfaceFrame(idSurface, Array(u, v))
-                Call Rhino.AddPlaneSurface(srfFrame, 1.0, 1.0) 
+                Call Rhino.AddPlaneSurface(srfFrame, 1.0, 1.0)
             End If
         Next
     Next
@@ -759,7 +759,7 @@ On lines 9 to 12 we determine the domain of the surface in u and v directions an
 
 Line 19 and 20 form the main structure of the two-dimensional iteration. You can read such nested *For…Next* loops as "Iterate through all columns and inside every column iterate through all rows".
 
-Line 21 and 22 do something interesting which is not apparent in the adjacent illustration. When we are dealing with trimmed surfaces, those two lines prevent the script from adding planes in cut-away areas. By comparing the point on the (untrimmed) surface to it's projection onto the trimmed surface, we know whether or not the {uv} coordinate in question representsan actual point on the trimmed surface.	
+Line 21 and 22 do something interesting which is not apparent in the adjacent illustration. When we are dealing with trimmed surfaces, those two lines prevent the script from adding planes in cut-away areas. By comparing the point on the (untrimmed) surface to it's projection onto the trimmed surface, we know whether or not the {uv} coordinate in question representsan actual point on the trimmed surface.
 
 The *Rhino.SurfaceFrame()* method returns a unitized frame whose axes point in the {u} and {v} directions of the surface. Note that the {u} and {v} directions are not necessarily perpendicular to each other, but we only add valid planes whose x and y axis are always at 90º, thus we ignore the direction of the v-component.
 
@@ -789,7 +789,7 @@ The north pole (the black dot in the left most image) and the south pole (the wh
 
 ![{{ site.baseurl }}/images/primer-sphereuv-script.svg]({{ site.baseurl }}/images/primer-sphereuv-script.svg){: .float-img-left width="275"}
 
-We cannot pack circles in the same way as we pack squares in the image above since that would deform them heavily near the poles, as indeed the squares are deformed. We want our circles to remain perfectly circular which means we have to fight the converging nature of the sphere. 
+We cannot pack circles in the same way as we pack squares in the image above since that would deform them heavily near the poles, as indeed the squares are deformed. We want our circles to remain perfectly circular which means we have to fight the converging nature of the sphere.
 
 Assuming the radius of the circles we are about to stack is sufficiently smaller than the radius of the sphere, we can at least place two circles without thinking; one on the north- and one on the south pole. The additional benefit is that these two circles now handsomely cover up the singularities so we are only left with the annoying seam. The next order of business then, is to determine how many circles we need in order to cover up the seam in a straightforward fashion. The length of the seam is half of the circumference of the sphere (see yellow arrow in adjacent illustration).  
 
@@ -874,7 +874,7 @@ def DistributeCirclesOnSphere():
 </tr>
 <tr>
 <td>25</td>
-<td>This is mathematically the most demanding line, and I'm not going to provide a full proof of why and how it works. This is the standard way of translating the spherical coordinates Φ and Θ into Cartesian coordinates x, y and z. 
+<td>This is mathematically the most demanding line, and I'm not going to provide a full proof of why and how it works. This is the standard way of translating the spherical coordinates Φ and Θ into Cartesian coordinates x, y and z.
 <br><br>
 Further information can be found on [MathWorld.com](http://mathworld.wolfram.com/)</td>
 </tr>
@@ -897,7 +897,7 @@ The following example script demonstrates very clearly how the orientation of th
 
 <img src="{{ site.baseurl }}/images/primer-curvaturespline.svg">{: .img-center  width="80%"}
 
-It gives a clear impression of the range of different curvatures in the spline, but it doesn't communicate the helical twisting of the curvature very well. Parts of the spline that are near-linear tend to have a garbled curvature since they are the transition from one well defined bend to another. The arrows in the left image indicate these areas of twisting but it is hard to deduce this from the curvature graph alone. The upcoming script will use the curvature information to loft a surface through a set of ellipses which have been oriented into the curvature plane of the local spline geometry. The ellipses have a small radius in the bending plane of the curve and a large one perpendicular to the bending plane. Since we will not be using the strength of the curvature but only its orientation, small details will become very apparent. 
+It gives a clear impression of the range of different curvatures in the spline, but it doesn't communicate the helical twisting of the curvature very well. Parts of the spline that are near-linear tend to have a garbled curvature since they are the transition from one well defined bend to another. The arrows in the left image indicate these areas of twisting but it is hard to deduce this from the curvature graph alone. The upcoming script will use the curvature information to loft a surface through a set of ellipses which have been oriented into the curvature plane of the local spline geometry. The ellipses have a small radius in the bending plane of the curve and a large one perpendicular to the bending plane. Since we will not be using the strength of the curvature but only its orientation, small details will become very apparent.
 
 ```vb
 Call FlatWorm()
@@ -1006,7 +1006,7 @@ You'll notice I'm violating a lot of naming conventions from paragraph [2.3.5 Us
 
 This section is called 'Circles, Ellipses and Arcs', which means we're still only two thirds of the way there. Medieval biblical triptychs typically depicted Paradise on the left, Earth in the middle and Hell on the right and the parallel is so overwhelming I cannot refrain from pointing it out. The bit about circles was about perfect (Paradise) stacking, the bit on ellipses was about finding imperfections (Earth) in curvature and the bit about arcs is going to be very hot indeed. We've reached that point in the process where words like "dotproduct" and "arccosine" can be found sharing the same sentence.
 
-Since the topic Arcs isn't much different from the topic Circles, I thought it would be a nice idea to drag in something extra. This something extra is what we programmers call "recursion" and it is without doubt the most exciting thing in our lives (we don't get out much). Recursion is the process of self-repetition. Like loops which are iterative and execute the same code over and over again, recursive functions call themselves and thus also execute the same code over and over again, but this process is hierarchical. It actually sounds harder than it is. One of the success stories of recursive functions is their implementation in binary trees which are the foundation for many search and classification algorithms in the world today. I'll allow myself a small detour on the subject of recursion because I would very much like you to appreciate the power that flows from the simplicity of the technique. Recursion is unfortunately one of those things which only become horribly obvious once you understand how it works. 
+Since the topic Arcs isn't much different from the topic Circles, I thought it would be a nice idea to drag in something extra. This something extra is what we programmers call "recursion" and it is without doubt the most exciting thing in our lives (we don't get out much). Recursion is the process of self-repetition. Like loops which are iterative and execute the same code over and over again, recursive functions call themselves and thus also execute the same code over and over again, but this process is hierarchical. It actually sounds harder than it is. One of the success stories of recursive functions is their implementation in binary trees which are the foundation for many search and classification algorithms in the world today. I'll allow myself a small detour on the subject of recursion because I would very much like you to appreciate the power that flows from the simplicity of the technique. Recursion is unfortunately one of those things which only become horribly obvious once you understand how it works.
 
 Imagine a box in 3D space which contains a number of points within its volume. This box exhibits a single behavioural pattern which is recursive. The recursive function evaluates a single conditional statement: {when the number of contained points exceeds a certain threshold value then subdivide into 8 smaller boxes, otherwise add yourself to the document}. It would be hard to come up with an easier If…Then…Else statement. Yet, because this behaviour is also exhibited by all newly created boxes, it bursts into a chain of recursion, resulting in the voxel spaces in the images below:
 
@@ -1026,13 +1026,13 @@ The first way is very similar to adding circles using plane and radius values, w
 ![{{ site.baseurl }}/images/primer-arcs.svg]({{ site.baseurl }}/images/primer-arcs.svg){: .float-img-left width="275"}
 
 
-We start with two points {A} & {B} and a vector definition {D}. The arc we're after is the red curve, but at this point we don't know how to get there yet. Note that this problem might not have a solution if {D} is parallel or anti-parallel to the line from {A} to {B}. If you try to draw an arc like that in Rhino it will not work. Thus, we need to add some code to our function that aborts when we're confronted with unsolvable input. 
+We start with two points {A} & {B} and a vector definition {D}. The arc we're after is the red curve, but at this point we don't know how to get there yet. Note that this problem might not have a solution if {D} is parallel or anti-parallel to the line from {A} to {B}. If you try to draw an arc like that in Rhino it will not work. Thus, we need to add some code to our function that aborts when we're confronted with unsolvable input.
 
 We're going to find the coordinates of the point in the middle of the desired arc {M}, so we can use the 3Point approach with {A}, {B} and {M}. As the illustration on the left indicates, the point in the middle of the arc is also on the line perpendicular from the middle {C} of the baseline.
 
 The halfway point on the arc also happens to lie on the bisector between {D} and the baseline vector. We can easily construct the bisector of two vectors in 3D space by process of unitizing and adding both vectors. In the illustration on the left the bisector is already pointing in the right direction, but it still hasn't got the correct length.
 
-We can compute the correct length using the standard "Sin-Cos-Tan right triangle rules": 
+We can compute the correct length using the standard "Sin-Cos-Tan right triangle rules":
 
 The triangle we have to solve has a 90º angle in the lower right corner, a is the angle between the baseline and the bisector, the length of the bottom edge of the triangle is half the distance between {A} and {B} and we need to compute the length of the slant edge (between {A} and {M}).
 
@@ -1045,7 +1045,7 @@ We now have the equation we need in order to solve the length of the slant edge.
 ```vb
 (0.5 * Rhino.Distance(A, B)) / Rhino.VectorDotProduct(D, Bisector)
 ```
-If you're really serious about this primer, it might be a good idea to try and write this function yourself before you sneak a peek at my version…  just a thought. 
+If you're really serious about this primer, it might be a good idea to try and write this function yourself before you sneak a peek at my version…  just a thought.
 
 ```vb
 Function AddArcDir(ByVal ptStart, ByVal ptEnd, ByVal vecDir)
@@ -1061,8 +1061,8 @@ Function AddArcDir(ByVal ptStart, ByVal ptEnd, ByVal vecDir)
     Dim vecBisector : vecBisector = Rhino.VectorAdd(vecDir, vecBase)
     vecBisector = Rhino.VectorUnitize(vecBisector)
 
-    Dim dotProd : dotProd = Rhino.VectorDotProduct(vecBisector, vecDir) 
-    Dim midLength : midLength = (0.5 * Rhino.Distance(ptStart, ptEnd)) / dotProd 
+    Dim dotProd : dotProd = Rhino.VectorDotProduct(vecBisector, vecDir)
+    Dim midLength : midLength = (0.5 * Rhino.Distance(ptStart, ptEnd)) / dotProd
     vecBisector = Rhino.VectorScale(vecBisector, midLength)
 
     AddArcDir = Rhino.AddArc3Pt(ptStart, ptEnd, Rhino.PointAdd(ptStart, vecBisector))
@@ -1124,7 +1124,7 @@ End Function
 
 ![{{ site.baseurl }}/images/primer-arctree.svg]({{ site.baseurl }}/images/primer-arctree.svg){: .float-img-right width="375"}
 
-We need this function in order to build a recursive tree-generator which outputs trees made of arcs. Our trees will be governed by a set of five variables but -due to the 
+We need this function in order to build a recursive tree-generator which outputs trees made of arcs. Our trees will be governed by a set of five variables but -due to the
 flexible nature of the recursive paradigm- it will be very easy to add more behavioural patterns. The growing algorithm as implemented in this example is very simple and doesn't allow a great deal of variation.
 
 The five base parameters are:
@@ -1162,7 +1162,7 @@ Function RandomPointInCone(ByVal Origin, ByVal Direction, _
 
     vecTwig = Rhino.VectorRotate(vecTwig, Rnd() * maxAngle, MutationPlane(1))
     vecTwig = Rhino.VectorRotate(vecTwig, Rnd() * 360, Direction)
-    RandomPointInCone = Rhino.PointAdd(Origin, vecTwig)	
+    RandomPointInCone = Rhino.PointAdd(Origin, vecTwig)
 End Function
 ```
 {: .line-numbers}
@@ -1206,7 +1206,7 @@ One of the definitions Wikipedia has to offer on the subject of recursion is: "I
 
 There is a set of rules to which any working recursive function must adhere. It must place at least one call to itself somewhere before the end and must have a way of exiting without placing any calls to itself. If the first condition is not met the function cannot be called recursive and if the second condition is not met it will call itself until time stops (or rather until the call-stack memory in your computer runs dry).
 
-Lo and behold! 
+Lo and behold!
 A mere 21 lines of code to describe the growth of an entire tree.
 
 ```vb
@@ -1227,7 +1227,7 @@ Sub RecursiveGrowth(ByVal ptStart, ByVal vecDir, ByVal Props(), ByVal Generation
         newTwig = AddArcDir(ptStart, ptGrow, vecDir)
         If Not IsNull(newTwig) Then
             vecGrow = Rhino.CurveTangent(newTwig, Rhino.CurveDomain(newTwig)(1))
-            Call RecursiveGrowth(ptGrow, vecGrow, newProps, Generation+1)	
+            Call RecursiveGrowth(ptGrow, vecGrow, newProps, Generation+1)
         End If
     Next
 End Sub
@@ -1316,11 +1316,11 @@ Before we start with NURBS curves (the mathematics of which are a bit too comple
 
 Splines limited to four control points were not the end of the revolution of course. Soon, more advanced spline definitions were formulated one of which is the NURBS curve. (Just to set the record straight; NURBS stands for Non-Uniform Rational [Basic/Basis] Spline and not Bézier-Spline as some people think. In fact, the Rhino help file gets it right, but I doubt many of you have read the glossary section, I only found out just now.) Bézier splines are a subset of NURBS curves, meaning that every Bézier spline can be represented by a NURBS curve, but not the other way around. Other curve types still in use today (but not available in Rhino) are Hermite, Cardinal, Catmull-Rom, Beta and Akima splines, but this is not a complete list. Hermite curves for example are used by the Bongo animation plug-in to smoothly transform objects through a number of keyframes.
 
-In addition to control point locations, NURBS curves have additional properties such as the degree, knot-vectors and weights. I'm going to assume that you already know how weight factors work (if you don't, it's in the Rhino help file under [NURBS About]) so I won't discuss them here. Instead, we'll continue with the correlation between degrees and knot-vectors. 
+In addition to control point locations, NURBS curves have additional properties such as the degree, knot-vectors and weights. I'm going to assume that you already know how weight factors work (if you don't, it's in the Rhino help file under [NURBS About]) so I won't discuss them here. Instead, we'll continue with the correlation between degrees and knot-vectors.
 
 Every NURBS curve has a number associated with it which represents the degree. The degree of a curve is always a positive integer between and including 1 and 11. The degree of a curve is written as *D<sup>N</sup>*. Thus *D<sup>1</sup>* is a degree one curve and *D<sup>3</sup>* is a degree three curve. The table on the next page shows a number of curves with the exact same control-polygon but with different degrees. In short, the degree of a curve determines the range of influence of control points. The higher the degree, the larger the range.
 
-Degrees may be easy to understand, but I vividly remember having a hard time with the knot-vector concept when I first started programming. The first clear moment was when I realized that the knot-vector isn't a vector at all, it's in fact an array of numbers. The terminology is confusing, especially to non-math-PhDs, so whenever you see "knot vector" don't think "twisted-arrows-in-space", but think "list-of-numbers". 
+Degrees may be easy to understand, but I vividly remember having a hard time with the knot-vector concept when I first started programming. The first clear moment was when I realized that the knot-vector isn't a vector at all, it's in fact an array of numbers. The terminology is confusing, especially to non-math-PhDs, so whenever you see "knot vector" don't think "twisted-arrows-in-space", but think "list-of-numbers".
 
 As you will recall from the beginning of this section, a quadratic Bézier curve is defined by four control points. A quadratic NURBS curve however can be defined by any number of control points (any number larger than three that is), which in turn means that the entire curve consists of a number of connected pieces. The illustration below shows a *D<sup>3</sup>* curve with 10 control points. All the individual pieces have been given a different colour. As you can see each piece has a rather simple shape; a shape you could approximate with a traditional, four-point Bézier curve. Now you know why NURBS curves and other splines are often described as "piece-wise curves".
 
@@ -1366,7 +1366,7 @@ The first image shows our input curve positioned on a unit grid. The shortest se
 
 The third image shows the original control points (the filled circles) and all blend radius control points (the empty circles), positioned along every segment with a distance of {R} from its nearest neighbour. The two red control points have been positioned 0.5 units away (half the segment length) from their respective neighbours.
 
-Finally, the last image shows all the control points that will be added in between the existing control points. Once we have an ordered array of all control points (ordered as they appear along the original polyline) we can create a $$D^5$$ curve using *Rhino.AddCurve()*. 
+Finally, the last image shows all the control points that will be added in between the existing control points. Once we have an ordered array of all control points (ordered as they appear along the original polyline) we can create a $$D^5$$ curve using *Rhino.AddCurve()*.
 
 ```vb
 Sub BlendCorners()
@@ -1385,7 +1385,7 @@ Sub BlendCorners()
         vecSegment = Rhino.VectorUnitize(vecSegment)
 
         If dblRadius < (0.5*Rhino.Distance(A, B)) Then
-            vecSegment = Rhino.VectorScale(vecSegment, dblRadius)	
+            vecSegment = Rhino.VectorScale(vecSegment, dblRadius)
         Else
             vecSegment = Rhino.VectorScale(vecSegment, 0.5 * Rhino.Distance(A, B))
         End If
@@ -1475,7 +1475,7 @@ When creating control-point curves it is very difficult to make them go through 
 
 To demonstrate, we're going to create a script that creates iso-distance-curves on surfaces rather than the standard iso-parameter-curves, or "isocurves" as they are usually called. If you're an old-time Rhino user you might recall that before Rhino3 "isocurves" were referred to as "isoparms" which is short for "isoparameters" ("iso" originates from the Greek (Isos) and it means "equal", as in *isotherm*: equal temperature, isobar: equal pressure and isochromatic: equal colour). Isocurves thus connect all the points in surface space that share a similar u or v value. Because the progression of the domain of a surface is not linear (it might be compressed in some places and stretched in others, especially near the edges where the surface has to be clamped), the distance between isocurves is not guaranteed to be identical either.
 
-The description of our algorithm is very straightforward, but I promise you that the actual script itself will be the hardest thing you've ever done. 
+The description of our algorithm is very straightforward, but I promise you that the actual script itself will be the hardest thing you've ever done.
 
 Enough foreplay.
 
@@ -1521,7 +1521,7 @@ Function BSearchCurve(ByVal idCrv, ByVal Length, ByVal Tolerance)
 
     Dim tmin : tmin = Rhino.CurveDomain(idCrv)(0)
     Dim tmax : tmax = Rhino.CurveDomain(idCrv)(1)
-	
+
     Dim t0, t1, t
     t0 = tmin
     t1 = tmax
@@ -1539,7 +1539,7 @@ Function BSearchCurve(ByVal idCrv, ByVal Length, ByVal Tolerance)
             t1 = t
         End If
     Loop
-	
+
     BSearchCurve = t
 End Function
 ```
@@ -1597,8 +1597,8 @@ End Function
 </tr>
 <tr>
 <td>21...25</td>
-<td>This is the magic bit. Looks harmless enough doesn't it? 
-What we do here is adjust the subdomain based on the result of the length comparison. If the length of the subcurve {<i>tmin</i>, <i>t</i>} is shorter than <i>Length</i>, then we want to restrict ourself to the lower half of the old subdomain. If, on the other hand, the subcurve length is shorter than <i>Length</i>, then we want the upper half of the old domain. 
+<td>This is the magic bit. Looks harmless enough doesn't it?
+What we do here is adjust the subdomain based on the result of the length comparison. If the length of the subcurve {<i>tmin</i>, <i>t</i>} is shorter than <i>Length</i>, then we want to restrict ourself to the lower half of the old subdomain. If, on the other hand, the subcurve length is shorter than <i>Length</i>, then we want the upper half of the old domain.
 Notice how much more compact programming code is compared to English?</td>
 </tr>
 <tr>
@@ -1608,7 +1608,7 @@ Notice how much more compact programming code is compared to English?</td>
 </table>
 {: .multiline}
 
-I have unleashed this function on a smooth curve with a fairly well distributed parameter space (i.e. no sudden jumps in parameter "density") and the results are listed below. The length of the total curve was 200.0 mm and I wanted to find the parameter for a subcurve length of 125.0 mm. My tolerance was set to 0.0001 mm. As you can see it took 18 refinement steps in the *BSearchCurve()* function to find an acceptable solution. Note how fast this algorithm homes in on the correct value, after just 6 steps the remaining error is less than 1%. Ideally, with every step the accuracy of the guess is doubled, in practise however you're unlikely to see such a neat progression. In fact, if you closely examine the table, you'll see that sometimes the new guess overshoots the solution so much it actually becomes worse than before (like between steps #9 and #10). 
+I have unleashed this function on a smooth curve with a fairly well distributed parameter space (i.e. no sudden jumps in parameter "density") and the results are listed below. The length of the total curve was 200.0 mm and I wanted to find the parameter for a subcurve length of 125.0 mm. My tolerance was set to 0.0001 mm. As you can see it took 18 refinement steps in the *BSearchCurve()* function to find an acceptable solution. Note how fast this algorithm homes in on the correct value, after just 6 steps the remaining error is less than 1%. Ideally, with every step the accuracy of the guess is doubled, in practise however you're unlikely to see such a neat progression. In fact, if you closely examine the table, you'll see that sometimes the new guess overshoots the solution so much it actually becomes worse than before (like between steps #9 and #10).
 
 I've greyed out the subdomain bound parameters that remained identical between two adjacent steps. Just like the image on page 79 you can see that sometimes multiple steps in the same direction are required.
 
@@ -1620,47 +1620,47 @@ Now for the rest of the script as outlines on page 78:
 Sub EquiDistanceOffset()
     Dim idSrf : idSrf = Rhino.GetObject("Pick surface to offset", 8, True, True)
     If IsNull(idSrf) Then Exit Sub
-    
+
     Dim dblOffset : dblOffset = Rhino.GetReal("Offset distance", 1.0, 0.0)
     If IsNull(dblOffset) Then Exit Sub
-    
-    Dim uDomain 
+
+    Dim uDomain
     uDomain = Rhino.SurfaceDomain(idSrf, 0)
 
     Dim uStep, u, t
     uStep = (uDomain(1) - uDomain(0)) / 50 'This means we'll create 50 isocurves
-    
-    Dim arrOffsetVertices() 
+
+    Dim arrOffsetVertices()
     Dim VertexCount
     VertexCount = -1
 
     Dim idIsoCurves, idIsoCurve
 
     Call Rhino.EnableRedraw(False)
-    
+
     For u = uDomain(0) To uDomain(1) + (0.5*uStep) Step uStep
         'Rhino.ExtractIsoCurves() returns an array, but in our case it is always just one item
         idIsoCurves = Rhino.ExtractIsoCurve(idSrf, Array(u, 0), 1)
-        
+
         If Not IsNull(idIsoCurves) Then
             idIsoCurve = idIsoCurves(0) 'Use only the first curve in the set
             t = BSearchCurve(idIsoCurve, dblOffset, 0.001) 'Call our binary searcher
-            
+
             If Not IsNull(t) Then 'If we have a solution, append it to the vertex-array
                 VertexCount = VertexCount+1
                 ReDim Preserve arrOffsetVertices(VertexCount)
                 arrOffsetVertices(VertexCount) = Rhino.EvaluateCurve(idIsoCurve, t)     
             End If
-            
+
             'Clean up the isocurves
             Call Rhino.DeleteObjects(idIsoCurves)    
         End If
     Next
-    
+
     If VertexCount > 0 Then 'If we have more than one point, we can add a curve
         Call Rhino.AddInterpCrvOnSrf(idSrf, arrOffsetVertices)    
     End If
-    
+
     Call Rhino.EnableRedraw(True)
 End Sub
 ```
@@ -1716,7 +1716,7 @@ Function AddCurvatureGraphSection(ByVal idCrv, ByVal t0, ByVal t1, ByVal Samples
 
     Dim arrA() : ReDim arrA(Samples)
     Dim arrB() : ReDim arrB(Samples)
-    Dim arrObjects : ReDim arrObjects(Samples+1)	
+    Dim arrObjects : ReDim arrObjects(Samples+1)
 
     Dim cData, cVector
     Dim t, tStep, N
@@ -1735,7 +1735,7 @@ Function AddCurvatureGraphSection(ByVal idCrv, ByVal t0, ByVal t1, ByVal Samples
         Else
             cData(4) = Rhino.VectorScale(cData(4), Scale)
             arrA(N) = cData(0)
-            arrB(N) = Rhino.VectorSubtract(cData(0), cData(4)) 
+            arrB(N) = Rhino.VectorSubtract(cData(0), cData(4))
             arrObjects(N) = Rhino.AddLine(arrA(N), arrB(N))
         End If
     Next
@@ -1794,7 +1794,7 @@ Function AddCurvatureGraph(ByVal idCrv, ByVal SpanSamples, ByVal Scale)
 
     allGeometry = Array()
 
-    K = Rhino.CurveKnots(idCrv)	
+    K = Rhino.CurveKnots(idCrv)
     For i = 0 To UBound(K)-1
         tmpGeometry = AddCurvatureGraphSection(idCrv, K(i), K(i+1), SpanSamples, Scale)
 
@@ -1869,7 +1869,7 @@ Sub CreateCurvatureGraph()
     Dim bResult, i
     Dim intSamples : intSamples = 10
     Dim dblScale : dblScale = 1.0
- 
+
     Dim arrPreview() : ReDim arrPreview(UBound(idCurves))
 
     Do 	
@@ -1891,7 +1891,7 @@ Sub CreateCurvatureGraph()
             Next
             Exit Sub
         End If
-		
+
         Select Case UCase(bResult)
             Case "ACCEPT"
                 Exit Do
@@ -1968,9 +1968,9 @@ Instead of treating a surface as a deformation of a rectangular nurbs patch, mes
 
 <img src="{{ site.baseurl }}/images/primer-meshtopology.svg">{: .img-center  width="80%"}
 
-It is important to understand the pros and cons of meshes over alternative surface paradigms, so you can make an informed decision about which one to use for a certain task. Most differences between meshes and nurbs are self-evident and flow from the way in which they are defined. For example, you can delete any number of polygons from the mesh and still have a valid object, whereas you cannot delete knot spans without breaking apart the nurbs geometry. There's a number of things to consider which are not implied directly by the theory though. 
+It is important to understand the pros and cons of meshes over alternative surface paradigms, so you can make an informed decision about which one to use for a certain task. Most differences between meshes and nurbs are self-evident and flow from the way in which they are defined. For example, you can delete any number of polygons from the mesh and still have a valid object, whereas you cannot delete knot spans without breaking apart the nurbs geometry. There's a number of things to consider which are not implied directly by the theory though.
 
-1. Coordinates of mesh vertices are stored as single precision numbers in Rhino in order to save memory consumption. Meshes are therefore less accurate entities than nurbs objects. This is especially notable with objects that are very small, extremely large or very far away from the world origin. Mesh objects go hay-wire sooner than nurbs objects because single precision numbers have larger gaps between them than double precision numbers (see page 6). 
+1. Coordinates of mesh vertices are stored as single precision numbers in Rhino in order to save memory consumption. Meshes are therefore less accurate entities than nurbs objects. This is especially notable with objects that are very small, extremely large or very far away from the world origin. Mesh objects go hay-wire sooner than nurbs objects because single precision numbers have larger gaps between them than double precision numbers (see page 6).
 2. Nurbs cannot be shaded, only the isocurves and edges of nurbs geometry can be drawn directly in the viewport. If a nurbs surface has to be shaded, then it has to fall back on meshes. This means that inserting nurbs surfaces into a shaded viewport will result in a significant (sometimes very significant) time lag while a mesh representation is calculated.
 3. Meshes in Rhino can be non-manifold, meaning that more than two faces share a single edge. Although it is not technically impossible for nurbs to behave in this way, Rhino does not allow it. Non-manifold shapes are topologically much harder to deal with. If an edge belongs to only a single face it is an exterior edge (naked), if it belongs to two faces it is considered interior.
 
@@ -1982,7 +1982,7 @@ According to MathWorld.com topology is "*the mathematical study of the propertie
 
 <img src="{{ site.baseurl }}/images/primer-topology.svg">{: .img-center  width="80%"}
 
-If you look at the images above, you'll see a number of surfaces that are topologically identical (except {E}) but geometrically different. You can bend shape {A} and end up with shape {B}; all you have to do is reposition some of the vertices. Then if you bend it even further you get {C} and eventually {D} where the right edge has been bend so far it touches the edge on the opposite side of the surface. It is not until you merge the edges 
+If you look at the images above, you'll see a number of surfaces that are topologically identical (except {E}) but geometrically different. You can bend shape {A} and end up with shape {B}; all you have to do is reposition some of the vertices. Then if you bend it even further you get {C} and eventually {D} where the right edge has been bend so far it touches the edge on the opposite side of the surface. It is not until you merge the edges
 (shape {E}) that this shape suddenly changes its platonic essence, i.e. it goes from a shape with four edges to a shape with only two edges (and these two remaining edges are now closed loops as well). Do note that shapes {D} and {E} are geometrically identical, which is perhaps a little surprising.
 
 The vertices of a mesh object are an array of 3D point coordinates. They can be located anywhere in space and they control the size and form of the mesh. The faces on the other hand do not contain any coordinate data, they merely indicate how the vertices are to be connected:
@@ -1999,7 +1999,7 @@ $$f(x, y, \Theta, \Delta) = ...$$
 
 Where the user is allowed to specify any valid mathematical function using the variables *x*, *y*, *Θ* and *Δ*. Every vertex in the mesh plane has a unique combination of *x* and *y* values which can be used to determine the *z* value of that vertex by evaluating the custom function (*Θ* and *Δ* are the polar coordinates of *x* and *y*). This means every vertex {A} in the plane has a coordinate {B} associated with it which shares the *x* and *y* components, but not the *z* component.
 
-We'll run into four problems while writing this script which we have not encountered before, but only two of these have to do with mesh geometry/topology:	
+We'll run into four problems while writing this script which we have not encountered before, but only two of these have to do with mesh geometry/topology:
 
 It's easy enough to generate a grid of points, we've done similar looping already on page 33 where a nested loop was used to generate a grid wrapped around a cylinder. The problem this time is that it's not enough to generate the points. We also have to generate the face-array, which is highly dependent on the row and column dimensions of the vertex array. It's going to take a lot of logic insight to get this right, and I don't mind telling you that I can never solve this particular problem without making a schematic of the mesh. First, let us turn to the problem of generating the vertex coordinates, which is a straightforward one:
 
@@ -2073,7 +2073,7 @@ We can access those easily enough, but since the step size in x and y direction 
 
 Once we have our vertices, we can create the face array that connects them. Since the face-array is topology, it doesn't matter where our vertices are in space, all that matters is how they are organized. The image on the right is the mesh schematic that I always draw whenever confronted with mesh face array logic. The image shows a mesh with twelve vertices and six quad faces, which has the same vertex sequence logic as the vertex array created by the function on the previous page. The vertex counts in x and y direction are four and three respectively (*Nx=4*, *Ny=3*). 	
 
-Now, every quad face has to link the four vertices in a counter-clockwise fashion. You may have noticed already that the absolute differences between the vertex indices on the corners of every quad are identical. In the case of the lower left quad {*A=0*; *B=3*; *C=4*; *D=1*}. In the case of the upper right quad {*A=7*; *B=10*; *C=11*; *D=8*}. We can define these numbers in a simpler way, which reduces the number of variables to just one instead of four: 
+Now, every quad face has to link the four vertices in a counter-clockwise fashion. You may have noticed already that the absolute differences between the vertex indices on the corners of every quad are identical. In the case of the lower left quad {*A=0*; *B=3*; *C=4*; *D=1*}. In the case of the upper right quad {*A=7*; *B=10*; *C=11*; *D=8*}. We can define these numbers in a simpler way, which reduces the number of variables to just one instead of four:
 {*A=?*; *B=(A+Ny*); *C=(B+1)*; *D=(A+1)*}, where N<sub>y</sub> is the number of vertices in the y-direction. Now that we know the logic of the face corner numbers, all that is left is to iterate through all the faces we need to define and calculate proper values for the A corner:
 
 ```vb
@@ -2142,7 +2142,7 @@ Sub SaveFunctionData(ByVal strFunction, ByVal fDomain(), ByVal Resolution)
     Call Rhino.SaveSettings(iSettingFile, "Domain", "xMin", fDomain(0))
     Call Rhino.SaveSettings(iSettingFile, "Domain", "xMax", fDomain(1))
     Call Rhino.SaveSettings(iSettingFile, "Domain", "yMin", fDomain(2))
-    Call Rhino.SaveSettings(iSettingFile, "Domain", "yMax", fDomain(3))	
+    Call Rhino.SaveSettings(iSettingFile, "Domain", "yMax", fDomain(3))
     Call Rhino.SaveSettings(iSettingFile, "Domain", "Resolution", Resolution)
 End Sub
 ```
@@ -2180,8 +2180,8 @@ Reading data from an *.ini file is slightly more involved, because there is no g
 Sub LoadFunctionData(ByRef strFunction, ByRef fDomain(), ByRef Resolution)
     Dim iSettingFile : iSettingFile = Rhino.InstallFolder() & "MeshFunction_XY.ini"
 
-    strFunction = Rhino.GetSettings(iSettingFile, "Function", "format") 
-    If IsNull(strFunction) Then 
+    strFunction = Rhino.GetSettings(iSettingFile, "Function", "format")
+    If IsNull(strFunction) Then
         strFunction = "Cos( Sqr(x^2 + y^2) )"
         fDomain(0) = -10.0
         fDomain(1) = +10.0
@@ -2236,7 +2236,7 @@ We've now dealt with two out of four problems (mesh topology, saving and loading
 
 "What is the value of <i>{Sin(x) + Sin(y)}</i> for <i>{x=0.5}</i> and <i>{y=2.7}</i> ?"
 
-However, this involves manually writing the equation inside the script and then running it. Our script has to evaluate custom equations which are not known until after the script starts. This means in turn that the equation is stored as a String variable. VBScript does not execute Strings, they are inert. If we want to treat a String variable as a bit of source code, we have to use a little-known feature which is so exotic it doesn't even appear in the VBScript helpfile (though you can find it online of course). 
+However, this involves manually writing the equation inside the script and then running it. Our script has to evaluate custom equations which are not known until after the script starts. This means in turn that the equation is stored as a String variable. VBScript does not execute Strings, they are inert. If we want to treat a String variable as a bit of source code, we have to use a little-known feature which is so exotic it doesn't even appear in the VBScript helpfile (though you can find it online of course).
 
 The *Execute* statement runs a script inside a script. It isn't even a proper function or subroutine, it is instead referred to as a Statement, much like the *Dim* statement or the *Erase* statement. The *Execute* statement takes a single String and attempts to run it as a bit of code, but nested inside the current scope. That means that you can refer to local variables inside an *Execute*. This bit of magic is exactly what we need in order to evaluate expressions stored in Strings. We only need to make sure we set up our *x*, *y*, *Θ* and *Δ* variables prior to using *Execute*.
 
@@ -2256,7 +2256,7 @@ Once the On Error Resume Next statement is executed by the script, the error dat
 Function SolveEquation(ByVal strFunction, ByVal x, ByVal y)
     Dim z
     Dim D, A, AngleData
-    
+
     D = Rhino.Hypot(x, y)
     AngleData = Rhino.Angle(Array(0,0,0), Array(x,y,0))
     If IsNull(AngleData) Then
@@ -2281,20 +2281,20 @@ The amount of stuff the above bit of magic does is really quite impressive. It c
 Sub MeshFunction_XY()
     Dim zFunc, fDomain(3), iResolution
     Call LoadFunctionData(zFunc, fDomain, iResolution)
-    
+
     zFunc = Rhino.StringBox("Specify a function f(x,y[,D,A])", zFunc, "Mesh function")
     If IsNull(zFunc) Then Exit Sub
-    
+
     Dim strPrompt, bResult   
     Do
         strPrompt = "Function domain   " & _
                     "x{" & fDomain(0) & ", " & fDomain(1) & "}   " & _
                     "y{" & fDomain(2) & ", " & fDomain(3) & "}   " & _
                     "@ " & iResolution
-        
+
         bResult = Rhino.GetString(strPrompt, "Insert", Split("xMin;xMax;yMin;yMax;Res;Insert", ";"))
         If IsNull(bResult) Then Exit Sub
-        
+
         Select Case UCase(bResult)
             Case "XMIN"
                 bResult = Rhino.GetReal("X-Domain start", fDomain(0))
@@ -2312,13 +2312,13 @@ Sub MeshFunction_XY()
                 bResult = Rhino.GetInteger("Resolution of the graph", iResolution)
                 If Not IsNull(bResult) Then iResolution = bResult
             Case "INSERT"
-                Exit Do 
+                Exit Do
         End Select
     Loop
-    
+
     Dim V : V = CreateMeshVertices(zFunc, fDomain, iResolution)
     Dim F : F = CreateMeshFaces(iResolution)
-    
+
     Call Rhino.AddMesh(V, F)
     Call SaveFunctionData(zFunc, fDomain, iResolution)
 End Sub
@@ -2442,7 +2442,7 @@ There is just one snag, the logarithm function returns negative numbers for inpu
 Function VertexValueArray(ByVal pts, ByVal id)
     Dim arrD() : ReDim arrD(UBound(pts))
     Dim i
-        
+
     For i = 0 To UBound(pts)
         arrD(i) = DistanceTo(pts(i), id)
     Next
@@ -2453,11 +2453,11 @@ End Function
 Function DistanceTo(ByVal pt, ByVal id)
     DistanceTo = Null
     Dim ptCP : ptCP = Rhino.BrepClosestPoint(id, pt)
-    
+
     If IsNull(ptCP) Then Exit Function
     Dim D : D = Rhino.Distance(pt, ptCP(0))
     D = Log(D + 1.0)
-    
+
     DistanceTo = D
 End Function
 ```
@@ -2470,13 +2470,13 @@ End Function
 </tr>
 <tr>
 <td>1...8</td>
-<td>The <i>VertexValueArray()</i> function is the one that creates a list of numbers for each vertex. We're giving it the mesh vertices (an array of 3D points) and the object ID of the (poly)surface for the proximity analysis. This function doesn't do much, it simply instantiates a new array and then fills it up using the 
+<td>The <i>VertexValueArray()</i> function is the one that creates a list of numbers for each vertex. We're giving it the mesh vertices (an array of 3D points) and the object ID of the (poly)surface for the proximity analysis. This function doesn't do much, it simply instantiates a new array and then fills it up using the
 <i>DistanceTo()</i> function.
 </td>
 </tr>
 <tr>
 <td>4...8</td>
-<td><i>DistanceTo()</i> calculates the distance from <i>pt</i> to the projection of <i>pt</i> onto id. Where pt is a single 3D coordinate and id if the identifier of a (poly)surface object. It also perform the logarithmic conversion, so the return value is not the actual distance. 
+<td><i>DistanceTo()</i> calculates the distance from <i>pt</i> to the projection of <i>pt</i> onto id. Where pt is a single 3D coordinate and id if the identifier of a (poly)surface object. It also perform the logarithmic conversion, so the return value is not the actual distance.
 </td>
 </tr>
 </table>
@@ -2496,7 +2496,7 @@ Sub ProximityAnalysis()
 
     Dim arrV, arrF, arrD
     arrV = Rhino.MeshVertices(idMesh)
-    arrF = Rhino.MeshFaceVertices(idMesh) 
+    arrF = Rhino.MeshFaceVertices(idMesh)
     arrD = VertexValueArray(arrV, idBRep)
 
     Dim minD : minD = Rhino.Min(arrD)
@@ -2545,7 +2545,7 @@ End Sub
 
 At this point you should have a fair idea about the strengths and flexibility of mesh based surfaces. It is no surprise that many industries have made meshes their primary means of surfacing. However, meshes also have their disadvantages and this is where other surfacing paradigms come into play.
 
-In fact, meshes (like nurbs) are a fairly recent discovery whose rise to power depended heavily on demand from the computer industry. Mathematicians have been dealing with different kinds of surface definitions for centuries and they have come up with a lot of them; surfaces defined by explicit functions, surfaces defined by implicit equations, minimal area surfaces, surfaces of revolutions, fractal surfaces and many more. Most of these types are far too abstract for your every-day modeling job, which is why most CAD packages do not implement them. 
+In fact, meshes (like nurbs) are a fairly recent discovery whose rise to power depended heavily on demand from the computer industry. Mathematicians have been dealing with different kinds of surface definitions for centuries and they have come up with a lot of them; surfaces defined by explicit functions, surfaces defined by implicit equations, minimal area surfaces, surfaces of revolutions, fractal surfaces and many more. Most of these types are far too abstract for your every-day modeling job, which is why most CAD packages do not implement them.
 
 <figure>
     <img src="{{ site.baseurl }}/images/primer-schwarz-d-surface.jpg" width="60%" float="right">
@@ -2560,9 +2560,9 @@ Apart from a few primitive surface types such as spheres, cones, planes and cyli
 
 ![{{ site.baseurl }}/images/primer-normals.svg]({{ site.baseurl }}/images/primer-normals.svg){: .float-img-right width="325"}
 
-Nurbs surfaces are very similar to Nurbs curves. The same algorithms are used to calculate shape, normals, tangents, curvatures and other properties, but there are some distinct differences. For example, curves have tangent vectors and normal planes, whereas surfaces have normal vectors and tangent planes. This means that curves lack orientation while surfaces lack direction. This is of course true for all curve and surface types and it is something you'll have to learn to live with. Often when writing code that involves curves or surfaces you'll have to make assumptions about direction and orientation and these assumptions will sometimes be wrong. 
+Nurbs surfaces are very similar to Nurbs curves. The same algorithms are used to calculate shape, normals, tangents, curvatures and other properties, but there are some distinct differences. For example, curves have tangent vectors and normal planes, whereas surfaces have normal vectors and tangent planes. This means that curves lack orientation while surfaces lack direction. This is of course true for all curve and surface types and it is something you'll have to learn to live with. Often when writing code that involves curves or surfaces you'll have to make assumptions about direction and orientation and these assumptions will sometimes be wrong.
 
-In the case of NURBS surfaces there are in fact two directions implied by the geometry, because NURBS surfaces are rectangular grids of {u} and {v} curves. And even though these directions are often arbitrary, we end up using them anyway because they make life so much easier for us.	
+In the case of NURBS surfaces there are in fact two directions implied by the geometry, because NURBS surfaces are rectangular grids of {u} and {v} curves. And even though these directions are often arbitrary, we end up using them anyway because they make life so much easier for us.
 
 But lets start with something simple which doesn't actually involve NURBS surface mathematics on our end. Luckily this something simple has a really difficult sounding name so you won't have to feel bad about yourself when people find out what it is you've been up to in your spare time. The problem we're about to be confronted with is called *Surface Fitting* and the solution is called *Error Diffusion*. You have almost certainly come across this term in the past, but probably not in the context of surface geometry. Typically the words "error diffusion" are only used in close proximity to the words "color", "pixel" and "dither", but the wide application in image processing doesn't limit error diffusion algorithms to the 2D realm.
 
@@ -2570,7 +2570,7 @@ The problem we're facing is a mismatch between a given surface and a number of p
 
 <img src="{{ site.baseurl }}/images/primer-pointonplane.svg">{: .img-center  width="100%"}
 
-For purposes of clarity I have unfolded a very twisted nurbs patch so that it is reduced to a rectangular grid of control-points. Actually, I'm making this up as I go along, I haven't really unfolded anything but I need you to realize that the diagram you're looking at is drawn in {uvw} space rather than world {xyz} space. The actual surface might be contorted in any number of ways, but we're only interested in the simplified {uvw} space. 
+For purposes of clarity I have unfolded a very twisted nurbs patch so that it is reduced to a rectangular grid of control-points. Actually, I'm making this up as I go along, I haven't really unfolded anything but I need you to realize that the diagram you're looking at is drawn in {uvw} space rather than world {xyz} space. The actual surface might be contorted in any number of ways, but we're only interested in the simplified {uvw} space.
 
 The surface has to pass through point {S}, but currently the two entities are not intersecting. The projection of {S} onto the surface {S'} is a certain distance away from {S} and this distance is the error we're going to diffuse. As you can see, {S'} is closer to some control points than others. Especially {F} and {G} are close, but {B; C; J; K} can also be considered adjacent control points. Rather than picking a fixed number of nearby control points and moving those in order to reduce the distance between {S} and {S'}, we're going to move all the points, but not in equal amounts. The images on the right show the amount of motion we assign to each control point based on its distance to {S'}.
 
@@ -2592,7 +2592,7 @@ It's an easy fix in our case, we can simply limit the {x} value to the domain {+
 
 I think that's about enough psychobabble for one chapter introduction, high time for some coding. The first thing we need to do is write a function that takes a surface and a point in {xyz} coordinates and translates it into {uvw} coordinates. We can use the *Rhino.SurfaceClosestPoint()* method to get the {u} and {v} components, but the {w} is going to take some thinking.
 
-First of all, a surface is a 2D entity meaning it has no thickness and thus no "real" {z} or {w} component. But a surface does have normal vectors that point away from it and which can be used to emulate a "depth" dimension. In the adjacent illustration you can see a point in {uvw} coordinates, where the value of {w} is simply the distance between the point and the start of the line. It is in this respect that negative distance has meaning, because negative distance denotes a {w} coordinate on the other side of the surface.	
+First of all, a surface is a 2D entity meaning it has no thickness and thus no "real" {z} or {w} component. But a surface does have normal vectors that point away from it and which can be used to emulate a "depth" dimension. In the adjacent illustration you can see a point in {uvw} coordinates, where the value of {w} is simply the distance between the point and the start of the line. It is in this respect that negative distance has meaning, because negative distance denotes a {w} coordinate on the other side of the surface.
 
 Although this is a useful way of describing coordinates in surface space, you should at all times remember that the {u} and {v} components of such a coordinate are expressed in surface parameter space while the {w} component is expressed in world units. We are using mixed coordinate systems which means that we cannot blindly use distances or angles between these points because those properties are meaningless now.
 
@@ -2607,7 +2607,7 @@ Function ConvertToUVW(ByVal idSrf, ByRef pXYZ())
   Dim i
 
   For i = 0 To UBound(pXYZ)
-    Suv = Rhino.SurfaceClosestPoint(idSrf, pXYZ(i))	
+    Suv = Rhino.SurfaceClosestPoint(idSrf, pXYZ(i))
     Sxyz = Rhino.EvaluateSurface(idSrf, Suv)
     Snormal = Rhino.SurfaceNormal(idSrf, Suv)
 
@@ -2622,7 +2622,7 @@ Function ConvertToUVW(ByVal idSrf, ByRef pXYZ())
 
     pUVW(i) = Array(Suv(0), Suv(1), Sdist)
   Next
-	
+
   ConvertToUVW = pUVW
 End Function
 ```
@@ -2662,7 +2662,7 @@ Function GrevilleNormals(ByVal idSrf)
   Dim srfNormals() : ReDim srfNormals(UBound(uvGreville))
 
   Dim i
-  For i = 0 To UBound(uvGreville)	
+  For i = 0 To UBound(uvGreville)
     srfNormals(i) = Rhino.SurfaceNormal(idSrf, uvGreville(i))
   Next
 
@@ -2724,11 +2724,11 @@ If we were to truly move each control point based directly on the inverse of its
 
 <img src="{{ site.baseurl }}/images/primer-hyperbolas.svg">{: .img-center  width="100%"}
 
-On the left you see the four individual hyperbolas (one for each of the sample points) and on the right you see the result of a fitting operation which uses the hyperbola values directly to control control-point motion. Actually, the hyperbolas aren't drawn to scale, in reality they are much (much) thinner, but drawing them to scale would make them almost invisible since they would closely hug the horizontal and vertical lines. 
+On the left you see the four individual hyperbolas (one for each of the sample points) and on the right you see the result of a fitting operation which uses the hyperbola values directly to control control-point motion. Actually, the hyperbolas aren't drawn to scale, in reality they are much (much) thinner, but drawing them to scale would make them almost invisible since they would closely hug the horizontal and vertical lines.
 
-We see that the control points that are close to the projections of {A; B; C; D} on {Base} will be moved a great deal (such as {S}), whereas points in between (such as {T}) will hardly be moved at all. Sometimes this is useful behaviour, especially if we assume our original surface is already very close to the sample points. If this is not the case (like in the diagram above) then we end up with a flat surface with some very sharp tentacles poking out. 
+We see that the control points that are close to the projections of {A; B; C; D} on {Base} will be moved a great deal (such as {S}), whereas points in between (such as {T}) will hardly be moved at all. Sometimes this is useful behaviour, especially if we assume our original surface is already very close to the sample points. If this is not the case (like in the diagram above) then we end up with a flat surface with some very sharp tentacles poking out.
 
-Lets assume our input surface is not already 'almost' good. This means that our algorithm cannot depend on the initial shape of the surface which in turn means that moving control points small amounts is not an option. We need to move all control points as far as necessary. This sounds very difficult, but the mathematical trick is a simple one. I won't provide you with a proof of why it works, but what we need to do is divide the length of the motion vector by the value of the sum of all the hyperbolas. 
+Lets assume our input surface is not already 'almost' good. This means that our algorithm cannot depend on the initial shape of the surface which in turn means that moving control points small amounts is not an option. We need to move all control points as far as necessary. This sounds very difficult, but the mathematical trick is a simple one. I won't provide you with a proof of why it works, but what we need to do is divide the length of the motion vector by the value of the sum of all the hyperbolas.
 
 Have a close look at control points {S} and {T} in the illustration above. {S} has a very high diffusion factor (lots of yellow above it) whereas {T} has a low diffusion factor (thin slivers of all colours on both sides). But if we want to move both {S} and {T} substantial amounts, we need to somehow boost the length of the motion vector for {T}. If you divide the motion vector by the value of the summated hyperbolas, you sort of 'unitize' all the motion vectors, resulting in the following section:
 
@@ -2738,7 +2738,7 @@ which is a much smoother fit. The sag between {B} and {C} is not due to the shap
 
 ```vb
 Function FitSurface(ByVal idSrf, ByRef Samples(), ByRef dTranslation, ByRef dProximity)
-  Dim P : P = Rhino.SurfacePoints(idSrf) 
+  Dim P : P = Rhino.SurfacePoints(idSrf)
   Dim G : G = Rhino.SurfaceEditPoints(idSrf, True, True)
   Dim N : N = GrevilleNormals(idSrf)
   Dim S : S = ConvertToUVW(idSrf, Samples)
@@ -2759,28 +2759,28 @@ Function FitSurface(ByVal idSrf, ByRef Samples(), ByRef dTranslation, ByRef dPro
       LocalDist = (S(i)(0) - G(j)(0))^2 + (S(i)(1) - G(j)(1))^2
       If (LocalDist < 0.01) Then LocalDist = 0.01
       LocalFactor = 1 / LocalDist
-		
+
       LocalForce = Rhino.VectorScale(N(j), LocalFactor * S(i)(2))
 
       Forces(j) = Rhino.VectorAdd(Forces(j), LocalForce)
       Factors(j) = Factors(j) + LocalFactor
     Next
   Next
-	
+
   Call DivideVectorArray(Forces, Factors)
-	
+
   For i = 0 To UBound(P)
     P(i) = Rhino.PointAdd(P(i), Forces(i))
     dTranslation = dTranslation + Rhino.VectorLength(Forces(i))
   Next
-	
+
   Dim srf_N : srf_N = Rhino.SurfacePointCount(idSrf)
   Dim srf_K : srf_K = Rhino.SurfaceKnots(idSrf)
   Dim srf_W : srf_W = Rhino.SurfaceWeights(idSrf)
   Dim srf_D(1)
   srf_D(0) = Rhino.SurfaceDegree(idSrf, 0)
   srf_D(1) = Rhino.SurfaceDegree(idSrf, 1)
-	
+
   FitSurface = Rhino.AddNurbsSurface(srf_N, P, srf_K(0), srf_K(1), srf_D, srf_W)
 End Function
 ```
@@ -2982,11 +2982,11 @@ Sub SurfaceTensorField(ByVal idSrf, ByVal Nu, ByVal Nv, ByRef T, ByRef K)
   ReDim T(Nu, Nv)
   ReDim K(Nu, Nv)
   Dim localCurvature
-  
+
   Dim i, j, u, v
   For i = 0 To Nu
     u = uDomain(0) + (i/Nu)*(uDomain(1) - uDomain(0))
-    
+
     For j = 0 To Nv
       v = vDomain(0) + (j/Nv)*(vDomain(1) - vDomain(0))
       T(i,j) = Rhino.SurfaceFrame(idSrf, Array(u,v))
@@ -3044,13 +3044,13 @@ Line 11 (and line 14) contain an implementation of such a mapping algorithm. I'm
 </tr></table>
 {: .multiline}
 
-This function takes two *ByRef* arrays (both arrays together are a complete description of our Tensor class) and it modifies the originals. The return value (a boolean indicating success or failure) is merely cosmetic. This function is a typical box-blur algorithm. It averages the values in every tensor with all neighbouring tensors using a 3×3 blur matrix. 
+This function takes two *ByRef* arrays (both arrays together are a complete description of our Tensor class) and it modifies the originals. The return value (a boolean indicating success or failure) is merely cosmetic. This function is a typical box-blur algorithm. It averages the values in every tensor with all neighbouring tensors using a 3×3 blur matrix.
 
 ```vb
 Function SmoothTensorField(ByRef T, ByRef K)
   SmoothTensorField = False
   Dim K_copy : K_copy = K
-  
+
   Dim Ub1 : Ub1 = UBound(T, 1)
   Dim Ub2 : Ub2 = UBound(T, 2)
   Dim i, j, x, y, xm, ym
@@ -3059,7 +3059,7 @@ Function SmoothTensorField(ByRef T, ByRef K)
     k_tot = Array(0,0,0)
     For x = i-1 To i+1
         xm = (x+Ub1) Mod Ub1
-        
+
         For y = j-1 To j+1
           ym = (y+Ub2) Mod Ub2
           k_tot = Rhino.VectorAdd(k_tot, K_copy(xm,ym))
@@ -3105,7 +3105,7 @@ The green area is a corner of the entire two-dimensional tensor space, the dark 
 <br><br>
 We need to make 2 more nested loops which iterate over the 9 coordinates in this 3×3 matrix. We also need to make sure that all these 9 coordinates are in fact on the 2D tensor space and not teetering over the edge. We can use the Mod operator to make sure a number is "remapped" to belong to a certain numeric domain.
 </td>
-<td width="40%"> 
+<td width="40%">
 <img src="{{ site.baseurl }}/images/primer-boxblurmatrix3x3.svg" width="100%" height="300" float="right"></td>
 </tr>
 </table>

@@ -6,14 +6,14 @@ author_contacts: ['brian']
 sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
-categories: ['General']
+categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/overview
 order: 6
 keywords: ['developer', 'rhino', 'installer']
 layout: toc-guide-page
 ---
 
- 
+
 ## Overview
 
 The Rhino Installer Engine simplifies distribution, installation, and updating of plugins for Rhino for Windows (on both 32- and 64- bit) and Rhino for Mac.

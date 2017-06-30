@@ -12,7 +12,7 @@ layout: guide-homepage
 
 - [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what-are-vbscript-rhinoscript)
 
-### Getting Started
+### [RhinoScript 101]({{ site.baseurl }}/guides/rhinoscript/primer-101)
 
 &nbsp;&nbsp; [Introduction]({{ site.baseurl }}/guides/rhinoscript/primer-101/primer-introduction/)  
 &nbsp;&nbsp; [Where to find help]({{ site.baseurl }}/guides/rhinoscript/primer-101/primer-where-to-find-help/)  

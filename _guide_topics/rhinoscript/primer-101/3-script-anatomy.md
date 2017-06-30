@@ -6,12 +6,12 @@ author_contacts: ['DavidRutten']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['RhinoScript Primer']
+categories: ['RhinoScript 101']
 origin:
 order: 14
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinoscript/primer-101/
+guide_homepage: guides/rhinoscript/primer-101/
 ---
 
 ## 3.1 Programming in Rhino
@@ -26,7 +26,7 @@ At the very core of Rhino are the code libraries. These are essentially collecti
 
 Rhino itself (the red blob) is tightly wrapped around these core libraries, it both implements and extends them. Apart from this obvious behaviour, Rhino also adds the possibility of plugins. Whereas most companies provide plugin support for 3rd party developers, McNeel has taken a rather exotic approach which elimates several big problems. The technical term for this approach is "eating your own dogfood" and it essentially boils down to McNeel programmers using the same tools as 3rd party programmers. Rather than adding code to Rhino itself, McNeel programmers prefer writing a plugin instead. For one, if they screw up the collateral damage is usually fairly minor. It also means that the SDK (Software Development Kit, that which is used to build plugins) is rigorously tested internally and there is no need to maintain and support a separate product. Unfortunately the result of this policy has made plugins so powerful that it is very easy for ill-informed programmers to crash Rhino. This is slightly less true for those developers that use the dotNET SDK to write plugins and it doesn't apply at all to us, scripters. A common proverb in the software industry states that you can easily shoot yourself in the foot with programming, but you can take your whole leg off with C++. Scripters rarely have to deal with anymore more severe than a paper-cut.
 
-The orange pimples on Rhino's smooth surface are plugins. These days plugins can be written in C++ and all languages that support the DotNET framework (VB.NET, CSharp, Delphi, J#, IronPython etc. etc.). One of these plugins is the RhinoScript plugin and it implements and extends the basic Microsoft Visual Basic Scripting 
+The orange pimples on Rhino's smooth surface are plugins. These days plugins can be written in C++ and all languages that support the DotNET framework (VB.NET, CSharp, Delphi, J#, IronPython etc. etc.). One of these plugins is the RhinoScript plugin and it implements and extends the basic Microsoft Visual Basic Scripting
 language at the front end, while tapping into all the core Rhino resources at the back end. Scripts thus gain access to Rhino, the core libraries and even other plugins through the RhinoScript plugin.
 
 Right, enough fore-play, time to get back to hard core programming.
@@ -45,7 +45,7 @@ Note that the example script on page 11 did not adhere to these rules. It ran ju
 
 The Option Explicit area is named after the Option Explicit statement which it contains. The Option Explicit statement is optional, but I highly recommend adding it to every single script you ever write. If you are running a script in Option Explicit mode, you have to define all your variables before you can use them (see paragraph 2.3.5). If you omit Option Explicit, your variables will be declared for you by the compiler. Although this may sound as a good thing at first, it is much harder to find problems which are caused by typos in variable names. Option Explicit will save you from yourself.
 
-In addition to the Option Explicit statement, the Option Explicit area may also contains a set of comments. Comments are blocks of text in the script which are ignored by the compiler and the interpreter. You can use comments to add explanations or information to a file, or to temporarily disable certain lines of code. It is considered good practise to always include information about the current script at the top of the file such as author, version and date. Comments are always preceded by an apostrophe. Global variables are also optional. Typically you do not need global variables and you're usually better off without them. 
+In addition to the Option Explicit statement, the Option Explicit area may also contains a set of comments. Comments are blocks of text in the script which are ignored by the compiler and the interpreter. You can use comments to add explanations or information to a file, or to temporarily disable certain lines of code. It is considered good practise to always include information about the current script at the top of the file such as author, version and date. Comments are always preceded by an apostrophe. Global variables are also optional. Typically you do not need global variables and you're usually better off without them.
 
 The area of the script which is outside the function declarations is referred to as 'script level'. All script level code will be executed by the interpreter whenever it feels like it so you're usually better off by putting all the code into functions and having them execute at your command.
 
@@ -78,7 +78,7 @@ End Sub							             < Main function end
 
 ![{{ site.baseurl }}/images/buttonscript.jpg]({{ site.baseurl }}/images/buttonscript.jpg){: .float-img-right width="325"}
 
-After a script has been written and tested, you might want to put it in a place which has easy 
+After a script has been written and tested, you might want to put it in a place which has easy
 access such as a Rhino toolbar button. If you want to run scripts from within buttons, there's two things you can do:
 
 1. Link the script

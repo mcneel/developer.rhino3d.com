@@ -6,12 +6,12 @@ author_contacts: ['DavidRutten']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['RhinoScript Primer']
+categories: ['RhinoScript 101']
 origin:
 order: 4
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinoscript/primer-101/
+guide_homepage: guides/rhinoscript/primer-101/
 ---
 
 ## 2.1 Language origin
@@ -22,12 +22,12 @@ Like conversational languages, programming languages group together in clusters.
 | add | | |	ebx, 4 |
 | loop | | | init_loop |
 | push	| | | dword FirstMsg |
-| call | | | _puts | 
-| pop | | | ecx | 
-| push | | | dword 10 | 
+| call | | | _puts |
+| pop | | | ecx |
+| push | | | dword 10 |
 | push | | | dword array |
 | call | | | _print_array |
-| add | | | esp, 8 | 
+| add | | | esp, 8 |
 
 Lucky us.
 
@@ -115,14 +115,14 @@ All the other coordinates that define the line object are hard-coded into the sc
 Integers and Doubles are both numeric variable types, meaning they can be used to store numbers. They cannot store the same kind of numbers, which is why we ended up with more than one type. Integers can only be used to store whole numbers. Their range extends from roughly minus two-
 billion to roughly plus two-billion. Every whole number between these extremes can be represented using an integer. Integers are used almost exclusively for counting purposes (as opposed to calculations).
 
-Doubles are numeric variables which can store numbers with decimals. Doubles can be used to represent 
+Doubles are numeric variables which can store numbers with decimals. Doubles can be used to represent
 numbers as large as 1.8×10308 and as small as 5.0×10-324, though in practise the range of numbers which can be accurately represented is much smaller. Those of you who are unfamiliar with scientific notation need not to worry, I shall not make a habit out of this. It is enough to know that the numeric range of doubles is truly enormous.
 
 <img src="{{ site.baseurl }}/images/primer-integers.svg">{: .img-center  width="75%"}
 
 <!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
 
-he set of all possible Double and Integer numbers is not continuous; it has gaps. There exists no Integer between zero and one and there exists no Double between zero and 5.0×10-324. The fact that the size of the gap is so much smaller with Doubles is only because we’ve picked a number close to zero. As we move towards bigger and 
+he set of all possible Double and Integer numbers is not continuous; it has gaps. There exists no Integer between zero and one and there exists no Double between zero and 5.0×10-324. The fact that the size of the gap is so much smaller with Doubles is only because we’ve picked a number close to zero. As we move towards bigger and
 bigger numbers, the gaps between two adjacent Double values will become bigger as well and as we approach the limits of the range, the gaps are big enough to fit the Milky Way. 2×10300 minus one billion is still 2×10300, so beware when using extremely large numbers. Normally, we never stray into the regions where 32-bit computing starts to break down, we tend to restrict ourselves to numbers we can actually cope with.
 
 The VBScript syntax for working with numeric variables should be very familiar:
@@ -207,15 +207,15 @@ When you need to store text, you have no choice but to use Strings. Strings are 
 a = "Apfelstrudel"				»  Apfelstrudel
 a = "Apfel" & "strudel"				»  Apfelstrudel
 a = "4" & " " & "Apfelstrudel"			»  4 Apfelstrudel
-a = "The square root of 2.0 = " & Sqr(2.0)	»  The square root of 2.0 = 1.4142135623731 
+a = "The square root of 2.0 = " & Sqr(2.0)	»  The square root of 2.0 = 1.4142135623731
 ```
 
 Internally, a String is stored as a series of characters. Every character (or 'char') is taken from the Unicode table, which stores a grand total of ~100.000 different characters. The index into the unicode table for the question mark for example is 63, lowercase e is 101 and the blank space is 32:
 
 <img src="{{ site.baseurl }}/images/primer-strings.svg">{: .img-center  width="75%"}
 
-Further down the road we'll be dealing with some advanced String functions which will require a basic 
-understanding of how Strings work, but while we are still just using the simple stuff, it's good enough to know it just works the way you expect it to. 
+Further down the road we'll be dealing with some advanced String functions which will require a basic
+understanding of how Strings work, but while we are still just using the simple stuff, it's good enough to know it just works the way you expect it to.
 
 Note that in VBScript we can append numeric values to Strings, but not the other way around. The ampersand sign (&) is used to join several variables into a single String. You could also use the plus sign to do this, but I prefer to restrict the usage of + to numeric operations only. When using & you can treat numeric variables as Strings:
 
@@ -270,7 +270,7 @@ strNag = "Can I go now?"
 Call Rhino.Print(strComplaint & strFood & strNag)
 ```
 
-As you will have noticed, we can declare multiple variables using a single Dim keyword if we comma-separate them. Though technically you could jam all your variable declarations onto a single line, it is probably a good idea to only group comparable variables together. Incidentally, the default value of all variables is always a specially reserved value called vbEmpty. It means the variable contains no data and it cannot be used in 
+As you will have noticed, we can declare multiple variables using a single Dim keyword if we comma-separate them. Though technically you could jam all your variable declarations onto a single line, it is probably a good idea to only group comparable variables together. Incidentally, the default value of all variables is always a specially reserved value called vbEmpty. It means the variable contains no data and it cannot be used in
 operations. Before you can use any of your variables, you must first assign them a value.
 Now, high time for an example. We'll be using the macro from page 2, but we'll replace some of the hard coded numbers with variables for added flexibility. This script looks rather intimidating, but keep in mind that the messy looking bits (line 10 and beyond) are caused by the script trying to mimic a macro, which is a bit like trying to drive an Aston-Martin down the sidewalk. Usually, we talk to Rhino directly without using the command-line and the code looks much friendlier:
 

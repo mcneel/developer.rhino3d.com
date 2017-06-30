@@ -6,7 +6,7 @@ author_contacts: ['dan']
 sdk: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Windows', 'Mac']
-categories: ['General']
+categories: ['This Site']
 origin: unset
 order: 7
 keywords: ['authoring', 'writing', 'editing', 'overview']

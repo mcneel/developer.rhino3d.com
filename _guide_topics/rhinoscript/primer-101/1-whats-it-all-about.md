@@ -6,12 +6,12 @@ author_contacts: ['DavidRutten']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['RhinoScript Primer']
+categories: ['RhinoScript 101']
 origin:
 order: 1
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinoscript/primer-101/
+guide_homepage: guides/rhinoscript/primer-101/
 ---
 
 ## 1.1 Macros
@@ -22,7 +22,7 @@ Rhinoceros is based on a command-line interface. This means you can control it b
 Line 0,0,0 10,0,0
 ```
 
-you can equally well click on the Line button and then twice in the viewport to define the starting and ending points of a line-curve. Because of this second (graphical) interface some people have done away with the 
+you can equally well click on the Line button and then twice in the viewport to define the starting and ending points of a line-curve. Because of this second (graphical) interface some people have done away with the
 command-line entirely. Emotions run high on the subject; some users are command-line fanatics, others use only toolbars and menus. Programmers have no emotions in this respect, they are all wedded to the command-line. It’s no use programming the mouse to go to a certain coordinate and then simulate a mouse click, that is just plain silly. Programmers pump text into Rhino and they expect to get text in return.
 
 The lowest form of programming in Rhino is using macros. I do not wish to offend those of you who write macros for a living, but it cannot be denied that it is a very primitive way to automate processes. I shall only briefly pause at the subject of macros, partly so we know which is which and partly because we might at some point simulate macros using RhinoScript.
@@ -47,7 +47,7 @@ A macro is a prerecorded list of orders for Rhino to execute. The _Line command 
 
 The above code will create the same hexagonal torus over and over again. It might be useful, but it's not flexible. You can type the above text into the command-line by hand, or you can put it into a button. You can even copy-paste the text directly into Rhino.
 
-Incidentally, the underscores before all the command names are due to Rhino localization. Using underscores will force Rhino to use English command names instead of -say- Italian or Japanese or whatever the custom setting is. You should always force English command names since that is the only guarantee that your code will work on all copies of Rhino worldwide.	
+Incidentally, the underscores before all the command names are due to Rhino localization. Using underscores will force Rhino to use English command names instead of -say- Italian or Japanese or whatever the custom setting is. You should always force English command names since that is the only guarantee that your code will work on all copies of Rhino worldwide.
 
 The hyphen in front of the _Properties and _Sweep1 command is used to suppress dialog boxes. If you take the hyphens out you will no longer be able to change the way a command works through the command-line.
 
@@ -55,8 +55,8 @@ There’s no limit to how complex a macro can become, you can keep adding comman
 
 ## 1.2 Scripts
 
-The limitations of macros have led to the development of scripting languages. Scripts are something halfway between macros and true (compiled) programs and plug-ins. Unlike macros they can perform 
-mathematical operations, evaluate variable conditions, respond to their environment and communicate with the user. Unlike programs they do not need to be compiled prior to running. Rhinoceros implements the standard 
+The limitations of macros have led to the development of scripting languages. Scripts are something halfway between macros and true (compiled) programs and plug-ins. Unlike macros they can perform
+mathematical operations, evaluate variable conditions, respond to their environment and communicate with the user. Unlike programs they do not need to be compiled prior to running. Rhinoceros implements the standard
 ‘Microsoft® Visual Basic® Scripting Edition’ language (more commonly known as VBScript) which means that everything that is true of VBScript is also true of RhinoScript.
 
 Scripts, then, are text files which are interpreted one line at a time. But here’s the interesting part; unlike macros, scripts have control over which line is executed next. This flow control enables the script to skip certain instructions or to repeat others. Flow control is achieved by what is called "conditional evaluation" and we must familiarize ourselves with the language rules of VBScript before we can take advantage of flow control.
@@ -83,7 +83,7 @@ Throughout this book, I will use the in-build editor method. I find this to be t
 
 <img src="{{ site.baseurl }}/images/EditScriptDialog.png">{: .img-center  width="75%"}
 
-All the example code in this primer can be copy-pasted directly into the EditScript dialog. 
+All the example code in this primer can be copy-pasted directly into the EditScript dialog.
 
 ---
 

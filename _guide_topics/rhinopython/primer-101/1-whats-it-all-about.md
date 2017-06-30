@@ -6,12 +6,12 @@ author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
-categories: ['Python Primer']
+categories: ['Rhino.Python 101']
 origin:
 order: 1
 keywords: ['python', 'commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinopython/primer-101/
+guide_homepage: guides/rhinopython/primer-101/
 ---
 
 ## 1.1 Macros

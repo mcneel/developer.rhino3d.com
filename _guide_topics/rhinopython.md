@@ -102,7 +102,7 @@ layout: guide-homepage
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="{{ site.baseurl }}/images/rhinopython-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
 
-### Python 101 Primer Course
+### [Rhino.Python 101]({{ site.baseurl }}/guides/rhinopython/primer-101)
 
 &nbsp;&nbsp; [Introduction]({{ site.baseurl }}/guides/rhinopython/primer-101/primer-introduction/)  
 &nbsp;&nbsp; [Where to find help]({{ site.baseurl }}/guides/rhinopython/primer-101/primer-where-to-find-help/)  

@@ -6,12 +6,12 @@ author_contacts: ['DavidRutten']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['RhinoScript Primer']
+categories: ['RhinoScript 101']
 origin:
 order: 17
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: /guides/rhinoscript/primer-101/
+guide_homepage: guides/rhinoscript/primer-101/
 ---
 
 ## 6.1 My favorite things
@@ -59,7 +59,7 @@ Sub MyFavouriteThings()
     Dim arrThings()
     Dim intCount
     intCount = 0
-    
+
     Do
         Select Case intCount
             Case 0
@@ -203,14 +203,14 @@ Sub PointSpiral()
     Dim arrPoint(2)
     Dim t, pi
     pi = Rhino.Pi()
-    
+
     'Call Rhino.EnableRedraw(False)
     For t = -5 To 5 Step 0.025
-    
+
       arrPoint(0) = t * Sin(5*t)
       arrPoint(1) = t * Cos(5*t)
       arrPoint(2) = t
-      
+
       Call Rhino.Print(Rhino.Pt2Str(arrPoint, 3))
       Call Rhino.AddPoint(arrPoint)
     Next
@@ -225,7 +225,7 @@ The variable arrPoint is declared as a fixed size array on line 2 and the elemen
 
 Vectors are a new concept in RhinoScript for Rhino4. Those of you who are familiar with the essentials of geometrical mathematics will have no problems with this concept... in fact you probably all are familiar with the essentials of geometrical mathematics or you wouldn't be learning how to program a 3D CAD platform.
 
-Vectors are indistinguishable from points. That is, they are both arrays of three doubles so there's absolutely no way of telling whether a certain array represents a point or a vector. There is a practical difference though; points are absolute, vectors are relative. When we treat an array of three doubles as a point it represents a certain coordinate in space, when we treat it as a vector it represents a certain direction. You see, a vector is an arrow in space which always starts at the world origin (0.0, 0.0, 0.0) and ends at the specified coordinate.	
+Vectors are indistinguishable from points. That is, they are both arrays of three doubles so there's absolutely no way of telling whether a certain array represents a point or a vector. There is a practical difference though; points are absolute, vectors are relative. When we treat an array of three doubles as a point it represents a certain coordinate in space, when we treat it as a vector it represents a certain direction. You see, a vector is an arrow in space which always starts at the world origin (0.0, 0.0, 0.0) and ends at the specified coordinate.
 
 The picture on the right shows two vector definitions; a purple and a blue one. The blue one happens to have all positive components while the purple one has only negative components. Both vectors have a different direction and a different length. When I say vectors are relative, I mean that they only indicate the difference between the start and end points of the arrow, i.e. vectors are not actual geometrical entities, they are only information. The blue vector could represent the tangent direction of the black curve at parameter {t}. If we also know the point value of the curve at parameter {t}, we know what the tangent of the curve looks like; we know where in space the tangent belongs. The vector itself does not contain this information; the orange and the blue vector are identical in every respect.
 
@@ -371,7 +371,7 @@ Function AddVector(ByVal vecDir, ByVal ptBase)
     If IsNull(ptBase) Or Not IsArray(ptBase) Then
         ptBase = Array(0,0,0)
     End If
-    
+
     Dim ptTip
     ptTip = Rhino.PointAdd(ptBase, vecDir)
     If Not (Err.Number = 0) Then Exit Function
@@ -419,7 +419,7 @@ Using the On Error Resume Next statement will reset the error object to default 
 </tr>
 <tr>
 <td>13</td>
-<td>Here we are calling the RhinoScript method Rhino.AddLine() and we're storing the return value 
+<td>Here we are calling the RhinoScript method Rhino.AddLine() and we're storing the return value
 directly into the AddVector variable. There are three possible scenarios at this point:
 
 <ol>
@@ -453,7 +453,7 @@ In case of scenario #2, the AddVector will be set to Null. Of course it already 
 
 ```vb
 Option Explicit
-'This script will compute a bunch of cross-product 
+'This script will compute a bunch of cross-product
 vector based on a pointcloud
 
 VectorField()
@@ -470,7 +470,7 @@ Sub VectorField()
     For i = 0 To UBound(arrPoints)
         Dim vecBase
         vecBase = Rhino.VectorCreate(arrPoints(i), ptBase)
-        
+
         Dim vecDir : vecDir = Rhino.VectorCrossProduct(vecBase, Array(0,0,1))
 
         If Not IsNull(vecDir) Then
@@ -479,7 +479,7 @@ Sub VectorField()
 
             Call AddVector(vecDir, arrPoints(i))
         End If
-    Next 
+    Next
 End Sub
 ```
 {: .line-numbers}
@@ -562,7 +562,7 @@ Nested arrays can be parsed using nested loops like so:
 Dim i, j
 For i = 0 To UBound(arrPoints)
     For j = 0 To 2
-        Call Rhino.Print("Coordinate(" & i & ", " & j & ") = " & arrPoints(i)(j)) 
+        Call Rhino.Print("Coordinate(" & i & ", " & j & ") = " & arrPoints(i)(j))
     Next
 Next
 ```
@@ -573,7 +573,7 @@ Remember the scaling script from page 31? We're now going to take curve-length a
 
 <img src="{{ site.baseurl }}/images/primer-curvesmoothing.svg">{: .img-center  width="100%"}
 
-Every control-point or 'vertex' of the original curve (except the ones at the end) will be averaged with its neighbours in order to smooth the curve. With every iteration the curve will become shorter and we will abort as soon a certain threshold length has been reached. The curve can never become shorter than the distance between the first and last control-point, so we need to make sure our goals are actually feasible before we start a potentially endless loop. Note that the algorithm is approximating, it may not be endless but it could still take a long time to complete. We will not support closed or periodic curves. 
+Every control-point or 'vertex' of the original curve (except the ones at the end) will be averaged with its neighbours in order to smooth the curve. With every iteration the curve will become shorter and we will abort as soon a certain threshold length has been reached. The curve can never become shorter than the distance between the first and last control-point, so we need to make sure our goals are actually feasible before we start a potentially endless loop. Note that the algorithm is approximating, it may not be endless but it could still take a long time to complete. We will not support closed or periodic curves.
 
 We're going to put the vector math bit in a separate function. This function will compute the {vM} vector given the control points {pN-1; p; pN+1} and a smoothing factor {s}. Since this function is not designed to fail, we will not be adding any error checking, if the thing crashes we'll have to fix the bug. Instead of using VBScript variable naming conventions, I'll use the same codes as in the diagram:
 
@@ -605,7 +605,7 @@ End Function
 </tr>
 <tr>
 <td>5</td>
-<td>Compute the average value of the two components. 
+<td>Compute the average value of the two components.
 {pm} is the halfway point between {pprev} and {pnext}.</td>
 </tr>
 <tr>

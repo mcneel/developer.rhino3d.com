@@ -6,7 +6,7 @@ author_contacts: ['dan']
 sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
-categories: ['General']
+categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/training
 order: 5
 keywords: ['developer', 'rhino']

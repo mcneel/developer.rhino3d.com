@@ -22,12 +22,12 @@ layout: bootstrap
               {% endif %}
               <li><a href="{{ site.baseurl }}/guides/{{ sdk_url }}">{{ sdk }}</a></li>
 
-              {% if page.categories != page.sdk %}
-                <li class="active">{{ page.categories }}</li>
-              {% endif %}
-
               {% if page.guide_homepage %}
-                <li class="active"><a href="{{site.baseurl}}/{{page.guide_homepage}}">{{ page.categories }}</a></li>
+                <li class="active"><a href="{{ site.baseurl }}/{{ page.guide_homepage }}">{{ page.categories }}</a></li>
+              {% else %}
+                {% if page.categories[0] != page.sdk[0] %}
+                  <li class="active">{{ page.categories }}</li>
+                {% endif %}
               {% endif %}
           </ol>
 
