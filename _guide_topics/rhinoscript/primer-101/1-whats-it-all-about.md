@@ -11,7 +11,7 @@ origin:
 order: 1
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: guides/rhinoscript/primer-101/
+category_index: guides/rhinoscript/primer-101/
 ---
 
 ## 1.1 Macros

@@ -11,7 +11,7 @@ origin:
 order: 4
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: guides/rhinoscript/primer-101/
+category_index: guides/rhinoscript/primer-101/
 ---
 
 ## 2.1 Language origin

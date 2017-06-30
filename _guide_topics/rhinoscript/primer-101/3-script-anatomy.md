@@ -11,7 +11,7 @@ origin:
 order: 14
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: guides/rhinoscript/primer-101/
+category_page: guides/rhinoscript/primer-101/
 ---
 
 ## 3.1 Programming in Rhino

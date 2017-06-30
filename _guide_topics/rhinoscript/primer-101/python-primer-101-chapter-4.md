@@ -11,7 +11,7 @@ origin:
 order: 4
 keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
-guide_homepage: guides/rhinoscript/primer-101/
+category_page: guides/rhinoscript/primer-101/
 ---
 
 +-----------------------------------+-----------------------------------+
