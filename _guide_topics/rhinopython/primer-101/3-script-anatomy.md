@@ -11,7 +11,7 @@ origin:
 order: 14
 keywords: ['python', 'commands']
 layout: toc-guide-page
-guide_homepage: guides/rhinopython/primer-101/
+category_page: guides/rhinopython/primer-101/
 ---
 
 ## 3.1 Programming in Rhino

@@ -11,7 +11,7 @@ origin:
 order: 18
 keywords: ['rhinoscript', 'vbscript', commands']
 layout: toc-guide-page
-guide_homepage: guides/rhinoscript/primer-101/
+category_page: guides/rhinoscript/primer-101/
 ---
 
 ## 7.1 The openNURBS™ kernel
