@@ -33,6 +33,7 @@ layout: guide-homepage
 
 ### [Essential Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics)
 
+- [Introduction]({{ site.baseurl }}/guides/general/essential-mathematics)
 - [Vector Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics)
 - [Matrices and Transformations]({{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations)
 - [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces)

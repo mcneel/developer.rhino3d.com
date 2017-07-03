@@ -35,9 +35,10 @@ order: 2
 
 ### [Essential Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics)
 
-- [Vector Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics)
-- [Matrices and Transformations]({{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations)
-- [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces)
+- [Introduction]({{ site.baseurl }}/guides/general/essential-mathematics)  
+- [Vector Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics)  
+- [Matrices and Transformations]({{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations)  
+- [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces)  
 
 
 ### This Site
@@ -203,7 +204,7 @@ order: 2
 
 ### [Rhino.Python 101]({{ site.baseurl }}/guides/rhinopython/primer-101)
 
-&nbsp;&nbsp; [Introduction]({{ site.baseurl }}/guides/rhinopython/primer-101/introduction/)  
+&nbsp;&nbsp; [Introduction]({{ site.baseurl }}/guides/rhinopython/primer-101)  
 &nbsp;&nbsp; [Where to find help]({{ site.baseurl }}/guides/rhinopython/primer-101/where-to-find-help/)  
 &nbsp;&nbsp; 1. [What's it all about?]({{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/)  
 &nbsp;&nbsp; 2. [Python Essentials]({{ site.baseurl }}/guides/rhinopython/primer-101/2-python-essentials/)  
@@ -500,7 +501,7 @@ order: 2
 
 ### [RhinoScript 101]({{ site.baseurl }}/guides/rhinoscript/primer-101)
 
-&nbsp;&nbsp; [Introduction]({{ site.baseurl }}/guides/rhinoscript/primer-101/introduction/)  
+&nbsp;&nbsp; [Introduction]({{ site.baseurl }}/guides/rhinoscript/primer-101)  
 &nbsp;&nbsp; [Where to find help]({{ site.baseurl }}/guides/rhinoscript/primer-101/where-to-find-help/)  
 &nbsp;&nbsp; 1. [What's it all about?]({{ site.baseurl }}/guides/rhinoscript/primer-101/1-whats-it-all-about/)  
 &nbsp;&nbsp; 2. [RhinoScript Essentials]({{ site.baseurl }}/guides/rhinoscript/primer-101/2-vbscript-essentials/)  
