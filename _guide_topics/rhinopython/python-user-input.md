@@ -95,7 +95,6 @@ There are 22 different Get methods. For details on all the Get functions in Rhin
 
 ## Special Dialogs
 
-
 The Dialog methods in RhinoScript syntax are used to prompt of with generic custom information. Dialogs can be used to draw more attention to a required interaction with the user.  Dialogs generally interrupt the workflow - the script cannot continue until the dialog is dealt with by the user.  
 
 ### MessageBox()  
