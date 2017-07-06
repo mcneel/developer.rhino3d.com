@@ -2,16 +2,70 @@
 title: Rhino.Python 101
 description: A full course on Rhino.Python
 platforms: ['Windows', 'Mac']
-layout: guide-homepage
+layout: fullwidth-page
 ---
 
-<!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinopython-guides-col1.png">]({{ site.baseurl }}/guides/rhinopython/what-is-rhinopython/)
+<div class="row">
+<div class="col-md-12" markdown="1">  
+# Rhino.Python Primer 101  
+</div>
+<div class="col-md-8 col-sm-12 col-sm-12" markdown="1">  
+You’ve just opened the first edition of the Rhino Python primer. This booklet was originally written by David Rutten of Robert McNeel & Associates for Rhino 4 and VBscript and has now been translated to encompass Python for Rhino 5.  As always, this primer is intended to teach programming to absolute beginners, people who have tinkered with programming a bit or expert programmers looking for a quick introduction to the methods in Rhino.  Rhinoscript (VBscript) has been supported for many years, with a large user group and extensive support material. As well as giving a basic introduction, this primer looks to easily transition those familiar with VBscript into the world of Rhino Python.  For this reason, David Rutten's original primer has been used extensively as the underlying framework for this Python Primer.  Python offers exciting new potentials for programming in Rhino with Object-Oriented functionality, simple syntax, access to the .NET framework and a vast number of user-built libraries to extend Rhino's functionality.  The same powerful methods that were previously in VBscript are still available, as well as a ton of other exciting methods and features available natively with Python.  
 
-### Rhino.Python 101
+Similar to the previous primers, we have the advantage of using geometric and visual examples to help teach programming.  In many traditional scenarios, programming is taught with non-visual examples and difficult to understand engineering problems.  For this reason, as well as Python's easy-to-read syntax, we should hopefully be able to bring everyone to understand and write simple programs to help automate and design within Rhino.
 
-   [Introduction]({{ site.baseurl }}/guides/rhinopython/primer-101/introduction/)  
-   [Where to find help]({{ site.baseurl }}/guides/rhinopython/primer-101/where-to-find-help/)  
+Programming offers users the powerful ability to automate tasks, make decisions, perform powerful calculations and geometric manipulations, thus, essentially acting as a designer's side kick.  This can allow thousands of computations to occur based on dynamic conditions, something that would take a human far too long to process.  As a tool for iteration, generation, analysis and design evolution, programming is limitless! Programming also offers a new language to communicate with the world because almost every discipline, from the Sciences, Engineering to Art, utilize code as a progressive new medium - and this primer should hopefully give you an easy introduction into this powerful language for communicating with the world.  (With that example, it should be noted that programming may be looked at as any other human language in the sense that it truly takes many hours of practice to become fluent.  So don't get discouraged if you aren't an expert in one day!)
+
+I hope we have convinced you of the powerful and exciting potential for this new opportunity of Python in Rhino.  Without further ado, lets dive in!  
+
+Good luck!   
+
+</div>  
+
+<div class="col-md-4 hidden-sm hidden-xs" markdown="1">  
+
+![{{ site.baseurl }}/images/primer-normals.svg]({{ site.baseurl }}/images/primer-normals.svg){: width="75%"}  
+
+![{{ site.baseurl }}/images/primer-branchpropagation2.svg]({{ site.baseurl }}/images/primer-branchpropagation2.svg){: width="75%"}    
+</div>  
+</div>  
+
+<div class="row">  
+<div class="col-md-4" markdown="1">  
+
+**Skylar Tibbits**  
+SJET  
+www.sjet.us    
+www.scriptedbypurpose.net  
+
+</div>
+<div class="col-md-4" markdown="1">  
+
+**Arthur van der Harten**  
+Kirkegaard Associates  
+www.perspectivesketch.com  
+www.kirkegaard.com  
+
+</div>
+<div class="col-md-4" markdown="1">
+
+**Steve Baer**  
+Robert McNeel & Associates  
+www.rhino3d.com  
+www.python.rhino3d.com  
+</div>  
+</div>  
+
+<div class="row">  
+<div class="col-md-12" markdown="1">  
+*A special thanks to David Rutten for the inspiration and invaluable work, pioneering the original Rhinoscript101 Primer. Also many thanks to Bob McNeel and everyone at Robert McNeel & Associates for their generous support!*
+
+### Table of Contents  
+</div>  
+</div>  
+
+<div class="row-fluid">  
+<div class="col-md-4" markdown="1">  
 
 ### 1. [What's it all about?]({{ site.baseurl }}/guides/rhinopython/primer-101/1-whats-it-all-about/)
 
@@ -38,11 +92,8 @@ layout: guide-homepage
    3.4 [The skin]({{ site.baseurl }}/guides/rhinopython/primer-101/3-programming-in-rhino/#the-skin)  
    3.5 [The Debugger]({{ site.baseurl }}/guides/rhinopython/primer-101/3-programming-in-rhino/#the-debugger)   
 
-
-<!--column-->
-
-<!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinopython-guides-col2.png">](https://docs.python.org/2/tutorial/index.html)
+</div>
+<div class="col-md-4" markdown="1">
 
 ### 4. [Operators and functions]({{ site.baseurl }}/guides/rhinopython/primer-101/4-operators-and-functions/)
 
@@ -72,11 +123,8 @@ layout: guide-homepage
    6.5	[An AddVector() example]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#an-addvector-example)  
    6.6	[Nested Lists]({{ site.baseurl }}/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#nested-lists)  
 
-
-<!--column-->
-
-<!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinopython-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
+</div>  
+<div class="col-md-4" markdown="1">  
 
 
 ### 7. [Classes]({{ site.baseurl }}/guides/rhinopython/primer-101/7-classes/)
@@ -86,8 +134,7 @@ layout: guide-homepage
 
 ### 8. [Geometry]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/)
 
-   8.1	[The openNURBS™ kernel]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/
-#the-opennurbs-kernel)  
+   8.1	[The openNURBS™ kernel]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#the-opennurbs-kernel)  
    8.2	[Objects in Rhino]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#obects-in-rhino)  
    8.3	[Points and Pointclouds]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#points-andpointclouds)  
    8.4	[Lines and Polylines]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#lines-and-polylines)  
@@ -107,8 +154,8 @@ layout: guide-homepage
 &nbsp;&nbsp; 8.9.2 [Surface Curvature]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#surface-curvature)  
 &nbsp;&nbsp; 8.9.3 [Vector And Tensor Spaces]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/#vector-and-tensor-spaces)   
 
+</div>
+</div>
 
-<!--column-->
 
-<!--the .snagit project for this image can be found next to the image -->
-[<img src="{{ site.baseurl }}/images/rhinopython-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
+

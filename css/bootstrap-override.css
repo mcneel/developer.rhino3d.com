@@ -101,7 +101,7 @@ body {
 #cse-search-results iframe {
 	height : 1150px;
 }
- 
+
 /* Coordinating the codeblock background with pre container baockground */
 pre {
 	background-color: #f8f8f8;
@@ -215,6 +215,31 @@ code {
   clear:both;
 }
 
+figcaption {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+/*
+##############################################################################
+##  MathJax_Display for math formulas.  justifies al to the left.
+## This might be wrong in some cases, but cannot determine hoew to differentiate
+##############################################################################
+*/
+
+/*
+
+.MathJax_Display { 
+    text-align: left !important;
+    display: inline !important;
+}
+
+.MathJax { 
+    text-align: left !important;
+    display: inline !important;
+}
+*/
+
 /*
 ##############################################################################
 ##  Index.md Page
@@ -235,6 +260,62 @@ tbody.index_table tr td{
 	margin:10px;
 	font-size:1.0em;
 }
+
+
+/*
+##############################################################################
+##  Essential Mathematics .md Page for Table of contents
+##############################################################################
+*/
+.index_use_images {
+/* Use only width to control an img-responsive img.  Bootstrap will float the height. */
+	width:290px;
+}
+#math_table table{
+	width="100%";
+}
+
+#math_table tr td{
+	vertical-align:top;
+}
+
+#math_table td{
+	width="30%";
+}
+
+#math_table_icon {
+	width:32px;
+	height:32px;
+}
+.math_table_primary_use {
+	margin:10px;
+	font-size:1.0em;
+}
+
+#math_table ol{
+	list-style-type: none;
+}
+
+
+/*
+##############################################################################
+##  Essential Mathematics div element for word wrapped notes
+##  Start a markdown section with:
+##  <div class="note" markdown="1">
+##############################################################################
+*/
+
+.note p{
+	width: 80%;
+	margin: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: DarkRed;
+	padding: 5px;
+}
+
 
 /*
 ##############################################################################

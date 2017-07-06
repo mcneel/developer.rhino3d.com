@@ -32,6 +32,13 @@ order: 2
 - [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what-is-a-rhino-plugin)
 - [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine)
 
+### [Essential Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics)
+
+- [Introduction]({{ site.baseurl }}/guides/general/essential-mathematics)
+- [Vector Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics)
+- [Matrices and Transformations]({{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations)
+- [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces)
+
 ### This Site
 
 - [How This Site Works]({{ site.baseurl }}/guides/general/how-this-site-works)
