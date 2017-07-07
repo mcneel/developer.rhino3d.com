@@ -4,6 +4,6 @@
 #					  _guide_topics
 #                     _samples
 
-xbuild SortYaml/SortYaml.sln
+msbuild SortYaml/SortYaml.sln
 mono SortYaml/bin/Debug/SortYaml.exe ../_guide_topics/
 mono SortYaml/bin/Debug/SortYaml.exe ../_samples/
