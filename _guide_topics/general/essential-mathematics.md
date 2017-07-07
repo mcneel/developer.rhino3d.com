@@ -45,6 +45,8 @@ Robert McNeel & Associates
 
 Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [math-samplesandtutorials.zip]({{ site.baseurl }}/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
 
+<a href="http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/"><span class="glyphicon glyphicon-download"></span></a> [Download Essential Mathematics for Computational Design as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/)
+
 ### Table of Contents  
 
 </div>  
@@ -53,7 +55,7 @@ Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"
 <div class="row-fluid">  
 <div class="col-md-4" markdown="1">  
 
-### 1. [Vector Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics/) 
+### 1. [Vector Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics/)
 
    1.1 [Vector representation]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics/#11-vector-representation)  
 &nbsp;&nbsp; Position vector   
