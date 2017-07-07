@@ -80,6 +80,7 @@ namespace SortYaml
       int orderIndex = 0;
       int keywordsIndex = 0;
       int layoutIndex = 0;
+      int categoryPageIndex = 0;
       int TODOIndex = 0;
 
       // find and set the indices, if the fields are present...
@@ -108,6 +109,8 @@ namespace SortYaml
           keywordsIndex = k;
         if (lines [k].StartsWith ("layout:", StringComparison.Ordinal))
           layoutIndex = k;
+        if (lines [k].StartsWith ("category_page:", StringComparison.Ordinal))
+          categoryPageIndex = k;
         if (lines [k].StartsWith ("TODO:", StringComparison.Ordinal))
           TODOIndex = k;
       }
@@ -202,6 +205,10 @@ namespace SortYaml
         newLines.Add (lines [layoutIndex]);
       else
         newLines.Add (stubbedLayoutField);
+
+      // Don't add a category_page field if there isn't one already
+      if (categoryPageIndex != 0)
+        newLines.Add(lines[categoryPageIndex]);
 
       // Don't add a TODO field if there isn't one already
       if (TODOIndex != 0)
