@@ -1,7 +1,15 @@
 ---
 title: General Guides
 description: Guides that apply across platforms and SDKs.
+authors: unset
+author_contacts: unset
+sdk: unset
+languages: unset
 platforms: ['Windows', 'Mac']
+categories: ['Unsorted']
+origin: unset
+order: 1
+keywords: ['rhino', 'developer']
 layout: guide-homepage
 ---
 

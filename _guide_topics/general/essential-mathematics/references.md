@@ -4,6 +4,7 @@ description: This guide includes the references for Essential Mathematics for Co
 authors: ['Rajaa Issa']
 author_contacts: ['rajaa']
 sdk: ['General']
+languages: unset
 platforms: ['Windows', 'Mac']
 categories: ['Essential Mathematics']
 origin:

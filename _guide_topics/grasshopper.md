@@ -1,7 +1,15 @@
 ---
 title: Grasshopper Guides
 description: Guides to creating custom Grasshopper components and plugins.
+authors: unset
+author_contacts: unset
+sdk: unset
+languages: unset
 platforms: ['Windows']
+categories: ['Unsorted']
+origin: unset
+order: 1
+keywords: ['rhino', 'developer']
 layout: guide-homepage
 ---
 

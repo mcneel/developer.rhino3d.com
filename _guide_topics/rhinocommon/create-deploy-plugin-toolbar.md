@@ -7,6 +7,7 @@ sdk: ['RhinoCommon', 'C/C++']
 languages: ['C#', 'C/C++']
 platforms: ['Windows']
 categories: ['Advanced']
+origin: unset
 order: 1
 keywords: ['RhinoCommon', 'C/C++', 'Rhino', 'Toolbar', 'Plugin']
 layout: toc-guide-page
