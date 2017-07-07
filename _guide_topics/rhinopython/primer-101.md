@@ -10,7 +10,7 @@ layout: fullwidth-page
 # Rhino.Python Primer 101  
 </div>
 <div class="col-md-8 col-sm-12 col-sm-12" markdown="1">  
-You’ve just opened the first edition of the Rhino Python primer. This booklet was originally written by David Rutten of Robert McNeel & Associates for Rhino 4 and VBscript and has now been translated to encompass Python for Rhino 5.  As always, this primer is intended to teach programming to absolute beginners, people who have tinkered with programming a bit or expert programmers looking for a quick introduction to the methods in Rhino.  Rhinoscript (VBscript) has been supported for many years, with a large user group and extensive support material. As well as giving a basic introduction, this primer looks to easily transition those familiar with VBscript into the world of Rhino Python.  For this reason, David Rutten's original primer has been used extensively as the underlying framework for this Python Primer.  Python offers exciting new potentials for programming in Rhino with Object-Oriented functionality, simple syntax, access to the .NET framework and a vast number of user-built libraries to extend Rhino's functionality.  The same powerful methods that were previously in VBscript are still available, as well as a ton of other exciting methods and features available natively with Python.  
+You’ve just opened the first edition of the Rhino Python primer. This guide [was originally written]({{ site.baseurl }}/guides/rhinoscript/primer-101) by <a href="https://discourse.mcneel.com/u/davidrutten/summary">David Rutten</a> for Rhino 4 and VBscript and has now been translated to encompass [Python for Rhino 5]({{ site.baseurl }}/guides/rhinopython).  As always, this primer is intended to teach programming to absolute beginners, people who have tinkered with programming a bit or expert programmers looking for a quick introduction to the methods in Rhino.  [Rhinoscript]({{ site.baseurl }}/guides/rhinoscript) (VBscript) has been supported for many years, with a large user group and extensive support material. As well as giving a basic introduction, this primer looks to easily transition those familiar with VBscript into the world of Rhino Python.  For this reason, David Rutten's original primer has been used extensively as the underlying framework for this Python Primer.  Python offers exciting new potentials for programming in Rhino with Object-Oriented functionality, simple syntax, access to the .NET framework and a vast number of user-built libraries to extend Rhino's functionality.  The same powerful methods that were previously in VBscript are still available, as well as a ton of other exciting methods and features available natively with Python.  
 
 Similar to the previous primers, we have the advantage of using geometric and visual examples to help teach programming.  In many traditional scenarios, programming is taught with non-visual examples and difficult to understand engineering problems.  For this reason, as well as Python's easy-to-read syntax, we should hopefully be able to bring everyone to understand and write simple programs to help automate and design within Rhino.
 
@@ -33,31 +33,28 @@ Good luck!
 <div class="row">  
 <div class="col-md-4" markdown="1">  
 
-**Skylar Tibbits**  
-SJET  
-[www.sjet.us](www.sjet.us)
-[www.scriptedbypurpose.net](www.scriptedbypurpose.net)
+**Skylar Tibbits**<br/>
+<a href="http://www.sjet.us">SJET</a><br/>
+<a href="http://www.scriptedbypurpose.net">www.scriptedbypurpose.net</a>
 
 </div>
 <div class="col-md-4" markdown="1">  
 
-**Arthur van der Harten**  
-Kirkegaard Associates  
-[www.perspectivesketch.com](www.perspectivesketch.com) 
-[www.kirkegaard.com](www.kirkegaard.com)
+**Arthur van der Harten**<br/>
+<a href="http://www.kirkegaard.com">Kirkegaard Associates</a><br/>
+<a href="http://www.perspectivesketch.com">www.perspectivesketch.com</a>
 
 </div>
 <div class="col-md-4" markdown="1">
 
-**Steve Baer**  
-Robert McNeel & Associates  
-[www.rhino3d.com](www.rhino3d.com)  
+**Steve Baer**<br/>
+<a href="http://www.rhino3d.com">Robert McNeel & Associates</a>
 </div>  
 </div>  
 
 <div class="row">  
 <div class="col-md-12" markdown="1">  
-*A special thanks to David Rutten for the inspiration and invaluable work, pioneering the original Rhinoscript101 Primer. Also many thanks to Bob McNeel and everyone at Robert McNeel & Associates for their generous support!*
+*A special thanks to David Rutten for the inspiration and invaluable work, pioneering the original [Rhinoscript101 Primer]({{ site.baseurl }}/guides/rhinoscript/primer-101). Also many thanks to Bob McNeel and everyone at Robert McNeel & Associates for their generous support!*
 
 ### Table of Contents  
 </div>  
@@ -155,6 +152,3 @@ Robert McNeel & Associates
 
 </div>
 </div>
-
-
-
