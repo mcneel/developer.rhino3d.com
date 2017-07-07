@@ -1,7 +1,15 @@
 ---
 title: Rhino.Python 101
 description: A full course on Rhino.Python
+authors: unset
+author_contacts: unset
+sdk: unset
+languages: unset
 platforms: ['Windows', 'Mac']
+categories: ['Unsorted']
+origin: unset
+order: 1
+keywords: ['rhino', 'developer']
 layout: fullwidth-page
 ---
 

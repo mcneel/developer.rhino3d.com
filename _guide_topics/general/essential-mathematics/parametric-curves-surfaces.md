@@ -4,6 +4,7 @@ description: This guide is an in-depth review of parametric curves with special 
 authors: ['Rajaa Issa']
 author_contacts: ['rajaa']
 sdk: ['General']
+languages: unset
 platforms: ['Windows', 'Mac']
 categories: ['Essential Mathematics']
 origin:

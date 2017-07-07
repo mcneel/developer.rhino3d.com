@@ -4,6 +4,7 @@ description: This guide discusses vector math including vector representation, v
 authors: ['Rajaa Issa']
 author_contacts: ['rajaa']
 sdk: ['General']
+languages: unset
 platforms: ['Windows', 'Mac']
 categories: ['Essential Mathematics']
 origin:

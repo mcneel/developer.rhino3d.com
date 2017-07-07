@@ -1,7 +1,15 @@
 ---
 title: openNURBS Guides
 description: Read/Write Rhino 3dm files in your application.
+authors: unset
+author_contacts: unset
+sdk: unset
+languages: unset
 platforms: ['Windows', 'Mac']
+categories: ['Unsorted']
+origin: unset
+order: 1
+keywords: ['rhino', 'developer']
 layout: guide-homepage
 ---
 

@@ -3,10 +3,11 @@ title: Annotation Objects
 description: This guide discusses the annotation objects provided by the Rhino SDK.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['C/C++']
+sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Fundamentals']
+origin: unset
 order: 1
 keywords: ['rhino']
 layout: toc-guide-page

@@ -7,8 +7,10 @@ sdk: ['General']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['General']
-layout: fullwidth-page
+origin: unset
 order: 1
+keywords: ['rhino', 'developer']
+layout: fullwidth-page
 TODO: This needs to be shimmed for Mac Platform.
 ---
 

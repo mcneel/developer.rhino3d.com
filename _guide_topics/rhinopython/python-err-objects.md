@@ -3,7 +3,7 @@ title: VBScript Err Objects
 description: This guide discusses the VBScript Err object.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Fundamentals']

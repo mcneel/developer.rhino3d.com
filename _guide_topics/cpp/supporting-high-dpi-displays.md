@@ -7,6 +7,7 @@ sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Advanced']
+origin: unset
 order: 1
 keywords: ['C/C++', 'Rhino', 'Plugin']
 layout: toc-guide-page

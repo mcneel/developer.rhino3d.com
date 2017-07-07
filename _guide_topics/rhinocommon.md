@@ -1,7 +1,15 @@
 ---
 title: RhinoCommon Guides
 description: RhinoCommon is the cross-platform .NET plugin SDK for Rhino.
+authors: unset
+author_contacts: unset
+sdk: unset
+languages: unset
 platforms: ['Windows', 'Mac']
+categories: ['Unsorted']
+origin: unset
+order: 1
+keywords: ['rhino', 'developer']
 layout: guide-homepage
 ---
 

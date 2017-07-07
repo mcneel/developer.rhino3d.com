@@ -3,7 +3,7 @@ title: VBScript RegExp Objects
 description: This guide discusses the VBScript RegExp object.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
-apis: ['RhinoScript']
+sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Advanced']
