@@ -35,24 +35,23 @@ Good luck!
 
 **Skylar Tibbits**  
 SJET  
-www.sjet.us    
-www.scriptedbypurpose.net  
+[www.sjet.us](www.sjet.us)
+[www.scriptedbypurpose.net](www.scriptedbypurpose.net)
 
 </div>
 <div class="col-md-4" markdown="1">  
 
 **Arthur van der Harten**  
 Kirkegaard Associates  
-www.perspectivesketch.com  
-www.kirkegaard.com  
+[www.perspectivesketch.com](www.perspectivesketch.com) 
+[www.kirkegaard.com](www.kirkegaard.com)
 
 </div>
 <div class="col-md-4" markdown="1">
 
 **Steve Baer**  
 Robert McNeel & Associates  
-www.rhino3d.com  
-www.python.rhino3d.com  
+[www.rhino3d.com](www.rhino3d.com)  
 </div>  
 </div>  
 
