@@ -18,11 +18,6 @@ layout: toc-guide-page
 
 This guide presumes that you have a RhinoCommon plugin that has commands that can be run from a tool palette.  In Rhino for Windows, this UI is normally stored in an *rui* file that includes the buttons, the icons, and their associated commands.  If you do not yet have a plugin, please begin with the [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-mac) guide.
 
-<div class="bs-callout bs-callout-danger">
-  <h4>WARNING</h4>
-  <p><b>Early-adopters</b>: The following instructions will <b>NOT</b> work with the currently released Rhinoceros (5.1).  You will need to use RhinoWIP version (5C133w) or later.</p>
-</div>
-
 ## Overview
 
 There are three steps in creating and loading a tool palette collection for your plugin in Rhino for Mac:  
