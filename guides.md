@@ -38,6 +38,7 @@ order: 2
 - [Vector Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics)
 - [Matrices and Transformations]({{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations)
 - [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces)
+- <a href="http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/"><span class="glyphicon glyphicon-download"></span></a> [Download Essential Mathematics for Computational Design as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/)
 
 ### This Site
 
@@ -506,7 +507,7 @@ order: 2
 &nbsp;&nbsp; 5. [Conditional execution]({{ site.baseurl }}/guides/rhinoscript/primer-101/5-conditional-execution/)  
 &nbsp;&nbsp; 6. [Arrays]({{ site.baseurl }}/guides/rhinoscript/primer-101/6-arrays/)  
 &nbsp;&nbsp; 7. [Geometry]({{ site.baseurl }}/guides/rhinoscript/primer-101/7-geometry/)  
-&nbsp;&nbsp; [Complete RhinoScript 101 Primer PDF](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
+&nbsp;&nbsp; <a href="http://www.rhino3d.com/download/rhino/5.0/rhinoscript101"><span class="glyphicon glyphicon-download"></span></a> [Download the RhinoScript 101 Primer as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 
 ### Fundamentals
 

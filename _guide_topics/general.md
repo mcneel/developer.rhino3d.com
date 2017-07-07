@@ -45,6 +45,7 @@ layout: guide-homepage
 - [Vector Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics)
 - [Matrices and Transformations]({{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations)
 - [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces)
+- <a href="http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/"><span class="glyphicon glyphicon-download"></span></a> [Download Essential Mathematics for Computational Design as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/)
 
 <!--column-->
 
