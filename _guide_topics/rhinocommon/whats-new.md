@@ -3,10 +3,11 @@ title: What's New?
 description: This brief guide outlines the changes in the RhinoCommon SDK.
 authors: ['Steve Baer']
 author_contacts: ['stevebaer']
-apis: ['RhinoCommon']
+sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']
 categories: ['Overview']
+origin: unset
 order: 2
 keywords: ['C#', 'plugin']
 layout: toc-guide-page

@@ -3,7 +3,7 @@ title: Installing Tools (Mac)
 description: This guide has yet to be authored or ported.
 authors: ['Dan Belcher']
 author_contacts: ['dan']
-apis: ['Grasshopper']
+sdk: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Mac']
 categories: ['Getting Started']

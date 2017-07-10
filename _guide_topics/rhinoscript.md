@@ -1,7 +1,15 @@
 ---
 title: RhinoScript Guides
 description: RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino for Windows, or automate repetitive tasks.
+authors: unset
+author_contacts: unset
+sdk: unset
+languages: unset
 platforms: ['Windows']
+categories: ['Unsorted']
+origin: unset
+order: 1
+keywords: ['rhino', 'developer']
 layout: guide-homepage
 ---
 
@@ -23,7 +31,7 @@ layout: guide-homepage
 &nbsp;&nbsp; 5. [Conditional execution]({{ site.baseurl }}/guides/rhinoscript/primer-101/5-conditional-execution/)  
 &nbsp;&nbsp; 6. [Arrays]({{ site.baseurl }}/guides/rhinoscript/primer-101/6-arrays/)  
 &nbsp;&nbsp; 7. [Geometry]({{ site.baseurl }}/guides/rhinoscript/primer-101/7-geometry/)  
-&nbsp;&nbsp; [Complete RhinoScript 101 Primer PDF](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
+&nbsp;&nbsp; <a href="http://www.rhino3d.com/download/rhino/5.0/rhinoscript101"><span class="glyphicon glyphicon-download"></span></a> [Download the RhinoScript 101 Primer as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 
 ### Fundamentals
 

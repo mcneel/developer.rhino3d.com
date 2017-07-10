@@ -7,8 +7,10 @@ sdk: ['General']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['General']
-layout: fullwidth-page
+origin: unset
 order: 1
+keywords: ['rhino', 'developer']
+layout: fullwidth-page
 TODO: This needs to be shimmed for Mac Platform.
 ---
 
@@ -23,7 +25,7 @@ TODO: This needs to be shimmed for Mac Platform.
 
 The content is divided into three chapters. [Chapter 1]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics/) discusses vector math including vector representation, vector operation, and line and plane equations. [Chapter 2]({{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations/) reviews matrix operations and transformations. [Chapter 3]({{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/) includes an in-depth review of parametric curves with special focus on NURBS curves and the concepts of continuity and curvature.  It also reviews NURBS surfaces and polysurfaces.
 
-I would like to acknowledge the excellent and thorough technical review by [Dr. Dale Lear](https://discourse.mcneel.com/u/dalelear/activity) of Robert McNeel & Associates. His valuable comments were instrumental in producing this edition. I would also like to acknowledge Ms. [Margaret Becker](https://discourse.mcneel.com/u/margaret/activity) of Robert McNeel & Associates for reviewing the technical writing and formatting.
+*I would like to acknowledge the excellent and thorough technical review by [Dr. Dale Lear](https://discourse.mcneel.com/u/dalelear/activity) of Robert McNeel & Associates. His valuable comments were instrumental in producing this edition. I would also like to acknowledge Ms. [Margaret Becker](https://discourse.mcneel.com/u/margaret/activity) of Robert McNeel & Associates for reviewing the technical writing and formatting*.
 
 </div>  
 
@@ -43,6 +45,8 @@ Robert McNeel & Associates
 
 Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [math-samplesandtutorials.zip]({{ site.baseurl }}/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
 
+<a href="http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/"><span class="glyphicon glyphicon-download"></span></a> [Download Essential Mathematics for Computational Design as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/)
+
 ### Table of Contents  
 
 </div>  
@@ -51,7 +55,7 @@ Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"
 <div class="row-fluid">  
 <div class="col-md-4" markdown="1">  
 
-### 1. [Vector Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics/) 
+### 1. [Vector Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics/)
 
    1.1 [Vector representation]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics/#11-vector-representation)  
 &nbsp;&nbsp; Position vector   

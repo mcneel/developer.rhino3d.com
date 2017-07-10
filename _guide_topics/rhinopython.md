@@ -1,7 +1,15 @@
 ---
 title: Rhino.Python Guides
 description: Quickly add functionality to Rhino or automate repetitive tasks.
+authors: unset
+author_contacts: unset
+sdk: unset
+languages: unset
 platforms: ['Windows', 'Mac']
+categories: ['Unsorted']
+origin: unset
+order: 1
+keywords: ['rhino', 'developer']
 layout: guide-homepage
 ---
 
@@ -115,7 +123,7 @@ layout: guide-homepage
 &nbsp;&nbsp; 7. [Classes]({{ site.baseurl }}/guides/rhinopython/primer-101/7-classes/)  
 &nbsp;&nbsp; 8. [Geometry]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/)  
 
-&nbsp;&nbsp; <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [download the Rhino.Python 101 as a single PDF ](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)  
+&nbsp;&nbsp; <a href="http://download.rhino3d.com/IronPython/5.0/RhinoPython101/"><span class="glyphicon glyphicon-download"></span></a> [Download the Rhino.Python 101 Primer as a single PDF ](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)
 
 
 ### Intermediate

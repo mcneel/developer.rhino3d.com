@@ -6,7 +6,7 @@ author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac', 'Grasshopper']
-categories: ['ghPython']
+categories: ['GhPython']
 origin:
 order: 5
 keywords: ['python', 'commands', 'grasshopper']

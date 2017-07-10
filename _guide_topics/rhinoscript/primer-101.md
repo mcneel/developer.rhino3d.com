@@ -1,7 +1,15 @@
 ---
 title: RhinoScript 101
 description: A full course on RhinoScript
+authors: unset
+author_contacts: unset
+sdk: unset
+languages: unset
 platforms: ['Windows']
+categories: ['Unsorted']
+origin: unset
+order: 1
+keywords: ['rhino', 'developer']
 layout: fullwidth-page
 ---
 
@@ -41,6 +49,8 @@ Good luck!
 
 David Rutten
 Robert McNeel & Associates
+
+<a href="http://www.rhino3d.com/download/rhino/5.0/rhinoscript101"><span class="glyphicon glyphicon-download"></span></a> [Download the RhinoScript 101 Primer as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 
 ### Table of Contents  
 </div>  
@@ -94,7 +104,7 @@ Robert McNeel & Associates
    5.3	[Looping]({{ site.baseurl }}/guides/rhinoscript/primer-101/5-conditional-execution/#53-looping)  
    5.4	[Conditional loops]({{ site.baseurl }}/guides/rhinoscript/primer-101/5-conditional-execution/#54-conditional-loops)  
    5.5	[Alternate syntax]({{ site.baseurl }}/guides/rhinoscript/primer-101/5-conditional-execution/#55-alternate-syntax)   
-   5.6	[Incremental loops]({{ site.baseurl }}/guides/rhinoscript/primer-101/5-conditional-execution/#56-incremental-loops) 
+   5.6	[Incremental loops]({{ site.baseurl }}/guides/rhinoscript/primer-101/5-conditional-execution/#56-incremental-loops)
 
 
 ### 6. [Arrays]({{ site.baseurl }}/guides/rhinoscript/primer-101/6-arrays/)

@@ -80,6 +80,7 @@ namespace SortYaml
       int orderIndex = 0;
       int keywordsIndex = 0;
       int layoutIndex = 0;
+      int categoryPageIndex = 0;
       int TODOIndex = 0;
 
       // find and set the indices, if the fields are present...
@@ -91,8 +92,8 @@ namespace SortYaml
         if (lines [k].StartsWith ("authors:", StringComparison.Ordinal))
           authorsIndex = k;
         if (lines [k].StartsWith ("author_contacts:", StringComparison.Ordinal))
-          authorsIndex = k;
-        if (lines [k].StartsWith ("apis:", StringComparison.Ordinal))
+          authorContactsIndex = k;
+        if (lines [k].StartsWith ("sdk:", StringComparison.Ordinal))
           sdkIndex = k;
         if (lines [k].StartsWith ("languages:", StringComparison.Ordinal))
           languagesIndex = k;
@@ -108,6 +109,8 @@ namespace SortYaml
           keywordsIndex = k;
         if (lines [k].StartsWith ("layout:", StringComparison.Ordinal))
           layoutIndex = k;
+        if (lines [k].StartsWith ("category_page:", StringComparison.Ordinal))
+          categoryPageIndex = k;
         if (lines [k].StartsWith ("TODO:", StringComparison.Ordinal))
           TODOIndex = k;
       }
@@ -117,7 +120,7 @@ namespace SortYaml
       const string stubbedDescriptionField = "description: unset";
       const string stubbedAuthorsField = "authors: unset";
       const string stubbedAuthorContactsField = "author_contacts: unset";
-      const string stubbedSDKField = "apis: unset";
+      const string stubbedSDKField = "sdk: unset";
       const string stubbedLanguagesField = "languages: unset";
       const string stubbedPlatformsField = "platforms: unset";
       const string stubbedCategoriesField = "categories: ['Unsorted']";
@@ -155,7 +158,7 @@ namespace SortYaml
       else
         newLines.Add (stubbedAuthorContactsField);
 
-      // check to see if the file contains a apis: field
+      // check to see if the file contains a sdk: field
       if (sdkIndex != 0)
         newLines.Add (lines [sdkIndex]);
       else
@@ -202,6 +205,10 @@ namespace SortYaml
         newLines.Add (lines [layoutIndex]);
       else
         newLines.Add (stubbedLayoutField);
+
+      // Don't add a category_page field if there isn't one already
+      if (categoryPageIndex != 0)
+        newLines.Add(lines[categoryPageIndex]);
 
       // Don't add a TODO field if there isn't one already
       if (TODOIndex != 0)
