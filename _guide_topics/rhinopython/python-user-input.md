@@ -32,11 +32,11 @@ Get are basic ways to prompt for specifc user feedback on the commandline and mo
 2. **Interactive Gets** - [GetPoint]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetPoint)([s]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetPoints)), [GetPointCoordinates]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetPointCoordinates), [GetLine]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetLine), [GetDistance]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetDistance), [GetAngle]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetAngle), [GetPolyline]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetPolyline), [GetRectangle]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetRectangle), [GetBox]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetBox), [GetCursorPos]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetCursorPos).
 3. **Geometry Gets** - [GetObject]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetObject), [GetCurveObject]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetCurveObject),  [GetSurfaceObject]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetSurfaceObject), [GetEdgeCurves]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetEdgeCurves), [GetMeshFaces]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetMeshFaces), [GetMeshVertices]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetMeshVertices), [GetPointOnCurve]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetPointOnCurve), [GetPointOnMesh]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetPointOnMesh), [GetPointOnSurface]({{ site.baseurl }}/api/RhinoScriptSyntax/#collapse-GetPointOnSurface).
 
-###Command Line gets
+### Command Line gets
 
 The simplest Get function is to ask for a specific value on the command line.   For instance a Get method may prompting for a *number* on the command line with `rs.GetReal()`.
 
-####Getreal()
+#### Getreal()
 
 ```python
 import rhinoscriptsyntax as rs
@@ -45,6 +45,7 @@ import rhinoscriptsyntax as rs
 radius = rs.GetReal("Radius of new circle", 3.14, 1.0)
 if radius: rs.AddCircle( (0,0,0), radius )
 ```
+![{{ site.baseurl }}/images/getreal.png]({{ site.baseurl }}/images/getreal.png){: .img-center }  
 
 rs.GetReal() accepts any number, including decimals. In some cases your code may need only whole numbers- in this case use `rs.GetInteger()`
 
@@ -147,8 +148,7 @@ rs.MessageBox("Hello Rhino!", 4 | 32) # A Yes, No dialog
 rs.MessageBox("Hello Rhino!", 2 | 48) # An Abort, Retry dialog
 ```
 
-
-<img src="{{ site.baseurl }}/images/yes_no-dialog.png" alt="RunPythonScript" width="35%">  
+![{{ site.baseurl }}/images/yes_no-dialog.png]({{ site.baseurl }}/images/yes_no-dialog.png){: .img-center  width="35%"}  
 
 
 Note that rs.MessageBox() returns a value - you can set a variable to record the result from a message box so that you can tell which button the user has clicked.  
@@ -176,70 +176,45 @@ if options:
 
 Will result in: 
 
-<img src="{{ site.baseurl }}/images/yes_no-dialog.png" alt="RunPythonScript" width="35%">  
+![{{ site.baseurl }}/images/dialog-listbox.png]({{ site.baseurl }}/images/dialog-listbox.png){: .img-center  width="35%"}  
+
+#### Pre-defined dialog box methods:  
 
 
-Here is a list of dialog box methods:  
+**CheckListBox** - Displays a list of strings in a checkable list. The user can pick multiple items.   
+![{{ site.baseurl }}/images/dialog-checklistbox.png]({{ site.baseurl }}/images/dialog-checklistbox.png){: .img-center  width="35%"}  
+
+**ComboListBox** -  Displays a list of strings in a combo list.  
+
+![{{ site.baseurl }}/images/dialog-combolistbox.png]({{ site.baseurl }}/images/dialog-combolistbox.png){: .img-center  width="35%"}  
+
+**EditBox**  - Displays a dialog box with a multi-line edit control.   
+
+![{{ site.baseurl }}/images/dialog-editbox.png]({{ site.baseurl }}/images/dialog-editbox.png){: .img-center  width="35%"}  
+
+**PopupMenu**  - Displays a context-like popup menu.  
+
+![{{ site.baseurl }}/images/dialog-popupbox.png]({{ site.baseurl }}/images/dialog-popupbox.png){: .img-center  width="35%"}  
 
 
-<table>
-<tr>
-<th>Type</th>
-<th width="50%">Description</th>
-<th>Dialog</th>
-</tr>
-<tr>
-<td> **CheckListBox** </td>
-<td> Displays a list of strings in a checkable list. The user can pick multiple items. </td>
-<td> <img src="{{ site.baseurl }}/images/dialog-checklistbox.png" alt="RunPythonScript" width="90%"> </td>
-</tr>
-<tr>
-<td> **ComboListBox** </td>
-<td> Displays a list of strings in a combo list. </td>
-<td> <img src="{{ site.baseurl }}/images/yes_no-dialog.png" alt="RunPythonScript" width="90%"> </td>
-</tr>
-<tr>
-<td> **EditBox** </td>
-<td>  Displays a dialog box with a multi-line edit control.  </td>
-<td> <img src="{{ site.baseurl }}/images/yes_no-dialog.png" alt="RunPythonScript" width="90%"> </td>
-</tr>
-<tr>
-<td> **ListBox** </td>
-<td> Displays a list of strings in a simple list box. The user can pick one item. </td>
-<td> <img src="{{ site.baseurl }}/images/dialog-listbox.png" alt="RunPythonScript" width="90%"> </td>
-</tr>
-<tr>
-<td> **MessageBox** </td>
-<td> Displays a Windows message box. </td>
-<td> <img src="{{ site.baseurl }}/images/yes_no-dialog.png" alt="RunPythonScript" width="90%"> </td>
-</tr>
-<tr>
-<td> **PopupMenu**  </td>
-<td> Displays a context-like popup menu. </td>
-<td> <img src="{{ site.baseurl }}/images/yes_no-dialog.png" alt="RunPythonScript" width="90%"> </td>
-</tr>
-<tr>
-<td> **PropertyListBox** </td>
-<td> Displays a list of items and values in a property list. </td>
-<td> <img src="{{ site.baseurl }}/images/yes_no-dialog.png" alt="RunPythonScript" width="90%"> </td>
-</tr>
-<tr>
-<td> **RealBox** </td>
-<td> Displays a dialog box prompting the user to enter a number. </td>
-<td> <img src="{{ site.baseurl }}/images/yes_no-dialog.png" alt="RunPythonScript" width="90%"> </td>
-</tr>
-<tr>
-<td> **StringBox** </td>
-<td> Displays a dialog box prompting the user to enter a string. </td>
-<td> <img src="{{ site.baseurl }}/images/yes_no-dialog.png" alt="RunPythonScript" width="90%"> </td>
-</tr>
-<tr>
-<td> **GetLayer** </td>
-<td> Displays dialog box prompting the user to select a layer</td>
-<td> <img src="{{ site.baseurl }}/images/yes_no-dialog.png" alt="RunPythonScript" width="90%"> </td>
-</tr>
-</table>
-{: .multiline-middle  width="100%" text-align="left" vertical-align="top" }
+**PropertyListBox** - Displays a list of items and values in a property list.  
+
+![{{ site.baseurl }}/images/dialog-propertybox.png]({{ site.baseurl }}/images/dialog-propertybox.png){: .img-center  width="35%"}  
+
+
+**RealBox**  -  Displays a dialog box prompting the user to enter a number. </td>
+
+![{{ site.baseurl }}/images/dialog-realbox.png]({{ site.baseurl }}/images/dialog-realbox.png){: .img-center  width="35%"}  
+
+
+**StringBox** - Displays a dialog box prompting the user to enter a string.   
+
+![{{ site.baseurl }}/images/dialog-stringbox.png]({{ site.baseurl }}/images/dialog-stringbox.png){: .img-center  width="35%"}  
+
+
+**GetLayer** - Displays dialog box prompting the user to select a layer  
+
+![{{ site.baseurl }}/images/getlayer.png]({{ site.baseurl }}/images/getlayer.png){: .img-center  width="35%"}  
 
 
 
@@ -268,6 +243,8 @@ if filename: rs.MessageBox(filename)
 |=====
 |
 {: rules="groups"}  
+
+For a complete detailed sample see the [How to read and write a simple file guide]({{ site.baseurl }}/guides/rhinopython/python-reading-writing/).
 
 ## Eto Custom Dialog Framework
 
