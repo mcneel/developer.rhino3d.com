@@ -3281,7 +3281,7 @@
           "import rhinoscriptsyntax as rs",
           "getresult = rs.GetCurveObject()",
           "if getresult:",
-          "curve_id = retresult[0]",
+          "curve_id = getresult[0]",
           "point0 = rs.GetPointOnCurve( curve_id )",
           "if point0:",
           "point1 = rs.GetPointOnCurve( curve_id )",
@@ -3290,7 +3290,7 @@
           "t1 = rs.CurveClosestPoint( curve_id, point1)",
           "rs.AddSubCrv( curve_id, t0, t1 )"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\ngetresult = rs.GetCurveObject()\r\nif getresult:\r\ncurve_id = retresult[0]\r\npoint0 = rs.GetPointOnCurve( curve_id )\r\nif point0:\r\npoint1 = rs.GetPointOnCurve( curve_id )\r\nif point1:\r\nt0 = rs.CurveClosestPoint( curve_id, point0)\r\nt1 = rs.CurveClosestPoint( curve_id, point1)\r\nrs.AddSubCrv( curve_id, t0, t1 )",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\ngetresult = rs.GetCurveObject()\r\nif getresult:\r\ncurve_id = getresult[0]\r\npoint0 = rs.GetPointOnCurve( curve_id )\r\nif point0:\r\npoint1 = rs.GetPointOnCurve( curve_id )\r\nif point1:\r\nt0 = rs.CurveClosestPoint( curve_id, point0)\r\nt1 = rs.CurveClosestPoint( curve_id, point1)\r\nrs.AddSubCrv( curve_id, t0, t1 )",
         "SeeAlso": [
           {
             "ModuleName": "curve",
@@ -3305,7 +3305,7 @@
             "FunctionName": "GetPointOnCurve"
           }
         ],
-        "DocString": "    \"\"\"Add a curve object based on a portion, or interval of an existing curve\r\n    object. Similar in operation to Rhino's SubCrv command\r\n    Parameters:\r\n      curve_id (guid): identifier of a closed planar curve object\r\n      param0, param1 (number): first and second parameters on the source curve\r\n    Returns:\r\n      guid: id of the new curve object if successful\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      getresult = rs.GetCurveObject()\r\n      if getresult:\r\n      curve_id = retresult[0]\r\n      point0 = rs.GetPointOnCurve( curve_id )\r\n      if point0:\r\n      point1 = rs.GetPointOnCurve( curve_id )\r\n      if point1:\r\n      t0 = rs.CurveClosestPoint( curve_id, point0)\r\n      t1 = rs.CurveClosestPoint( curve_id, point1)\r\n      rs.AddSubCrv( curve_id, t0, t1 )\r\n    See Also:\r\n      CurveClosestPoint\r\n      GetCurveObject\r\n      GetPointOnCurve\r\n    \"\"\"",
+        "DocString": "    \"\"\"Add a curve object based on a portion, or interval of an existing curve\r\n    object. Similar in operation to Rhino's SubCrv command\r\n    Parameters:\r\n      curve_id (guid): identifier of a closed planar curve object\r\n      param0, param1 (number): first and second parameters on the source curve\r\n    Returns:\r\n      guid: id of the new curve object if successful\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      getresult = rs.GetCurveObject()\r\n      if getresult:\r\n      curve_id = getresult[0]\r\n      point0 = rs.GetPointOnCurve( curve_id )\r\n      if point0:\r\n      point1 = rs.GetPointOnCurve( curve_id )\r\n      if point1:\r\n      t0 = rs.CurveClosestPoint( curve_id, point0)\r\n      t1 = rs.CurveClosestPoint( curve_id, point1)\r\n      rs.AddSubCrv( curve_id, t0, t1 )\r\n    See Also:\r\n      CurveClosestPoint\r\n      GetCurveObject\r\n      GetPointOnCurve\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
