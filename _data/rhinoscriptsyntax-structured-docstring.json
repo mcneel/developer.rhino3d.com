@@ -3281,7 +3281,7 @@
           "import rhinoscriptsyntax as rs",
           "getresult = rs.GetCurveObject()",
           "if getresult:",
-          "curve_id = retresult[0]",
+          "curve_id = getresult[0]",
           "point0 = rs.GetPointOnCurve( curve_id )",
           "if point0:",
           "point1 = rs.GetPointOnCurve( curve_id )",
