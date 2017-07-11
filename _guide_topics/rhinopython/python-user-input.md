@@ -8,7 +8,7 @@ languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['Intermediate']
 origin:
-order: 75
+order: 1
 keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
@@ -216,9 +216,6 @@ Will result in:
 
 ![{{ site.baseurl }}/images/getlayer.png]({{ site.baseurl }}/images/getlayer.png){: .img-center  width="35%"}  
 
-
-
-
 For details on all the dialog box functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)  
 
 ## File System dialogs  
@@ -234,6 +231,8 @@ if filename: rs.MessageBox(filename)
 
 <img src="{{ site.baseurl }}/images/openfile_dialog.png" alt="RunPythonScript" width="80%">  
 
+#### Additional File System Dialogs
+
 | Method          |      |      | Description                              |
 | :-------------- | ---- | ---- | :--------------------------------------- |
 | BrowseForFolder |      |      | Displays a Windows browse-for-folder dialog box. |
@@ -246,9 +245,17 @@ if filename: rs.MessageBox(filename)
 
 For a complete detailed sample see the [How to read and write a simple file guide]({{ site.baseurl }}/guides/rhinopython/python-reading-writing/).
 
-## Eto Custom Dialog Framework
+## [Eto Custom Dialog Framework]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/)
 
-This is a new section
+Eto is an open source cross-platform dialog box framework available in Rhino 6.  Eto can be used to create advanced dialog boxes from within C#, C++ and Rhino.Python.
+
+If the pre-defined dialogs above are not enough for your purposes, a Eto dialog might be the right solution.
+
+As an example, here is a custom collapsing dialog that uses many controls: 
+
+![{{ site.baseurl }}/images/dialog-collapse.png]({{ site.baseurl }}/images/dialog-collapse.png){: .img-center  width="50%"}
+
+Eto is very powerful, but that power comes with more sophisticated Python syntax. Understanding how best to write, organize and use Eto dialogs will take some work.  To start learning about the Eto framework in Python, go to the [Eto Forms in Python]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/) guide. 
 
 ---
 
@@ -256,3 +263,4 @@ This is a new section
 
 - [Reading and Writing files with Python]({{ site.baseurl }}/guides/rhinopython/python-reading-writing)
 - [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)
+- [Eto Forms in Python]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/) guide
