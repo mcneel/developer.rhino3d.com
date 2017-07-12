@@ -99,7 +99,7 @@ class SampleRoomNumberDialog(Dialog[bool]):
         self.m_textbox.Text = ""
         self.Close(False)
 
-    # Close button click handler
+    # OK button click handler
     def OnOKButtonClick(self, sender, e):
         if self.m_textbox.Text == "":
             self.Close(False)
@@ -199,7 +199,26 @@ By default the dialog will automatically adjust its size to the contents it cont
         self.ClientSize = Size(300, 400) #sets the (Width, Height)
 ```
 
-Once the dialog foundation is formatted then a contents can be placed within the dialog using the `self.Content` property.  This is done on line 39. To create the contents for the dialog we will start to create some Controls.
+Once the dialog foundation is formatted then a layout object can be placed within the dialog using the `self.Content` class.  This is done on line 39. 
+
+```python
+        self.Content = layout
+```
+
+A dialog class is will show up on the screen as modal.  To close the dialog a button will be pressed.  To close a dialog, use the `self.Close` method.  It is common to do little data checking before closing the dialog:
+
+```
+    # Close button click handler
+    def OnCloseButtonClick(self, sender, e):
+        self.m_textbox.Text = ""
+        self.Close(False)
+```
+
+The `self.Close` method is also returning a `False` because the Cancel button was pressed to cause this event.  The script will continue on based on the return value of the dialog. 
+
+Also, while the dialog will be closed after this, the dialog is still in memory.  So the methods and values within the dialog will continue to be available within the scope of the script.
+
+To create the contents for the dialog we will start to create some Controls.
 
 
 ## Eto Controls  
@@ -220,13 +239,13 @@ The simplest control is the Label control.  It is simply a piece of text that no
 
 As with many controls, the line above create a name for the control `m_label`.  Then the main property of a Label is the text it shows by setting the Text Property of the label.
 
-Normally this is as complex as a label needs to be, but a label also has many more properties in addition to `Text`.  Properties include `VerticalAlignment`, `Horizontal Alignment`, `TextAlignment`, `Wrap`, `TextColor`, and `Font`. Additional properties can be added to the Text Property by useing a `,` for instance:
+Normally this is as complex as a label needs to be, but a label also has many more properties in addition to `Text`.  Additonal properties include `VerticalAlignment`, `Horizontal Alignment`, `TextAlignment`, `Wrap`, `TextColor`, and `Font`. Properties can be added to the Text Property by using a comma(`,`):
 
 ```python
         self.m_label = Label(Text = 'Enter the Room Number:', VerticalAlignment = VerticalAlignment.Center)
 ```
 
-For a complete list of properties and events of Label, see the [Eto Label Class](http://api.etoforms.picoe.ca/html/T_Eto_Forms_Label.htm)
+For a complete list of properties and events of the Label class, see the [Eto Label Class](http://api.etoforms.picoe.ca/html/T_Eto_Forms_Label.htm) documentation.
 
 ### TextBox Control
 
@@ -360,17 +379,62 @@ The `None` cell will expand and contract to justify the buttons to the right.
 There are many many options when using Layout, Rows and Cells with Eto to place controls.  For more information on the details of using Layouts see the Eto Layout advanced Options with Python
 
 
-## Control delegate  
+## Control delegates and events  
+
+The last section of the Dialog class in the example is a series of class methods used to access the class members and actions for binding to control events.  
+
+A common practice is to create a function that returns the value of a control you might want to read or write to: 
+
+```python
+    # Get the value of the textbox
+    def GetText(self):
+        return self.m_textbox.Text
+```
+
+There is an unusual syntax here in the method declaration with the inclusion of `(self)` as an argument of the function. This is done in functions that are a member of a class.  As we learned before the *self* variable is like a placeholder for the class name that this method is a member.
+
+To use this method in a script the following syntax is used:
+
+```python
+    dialog = SampleEtoRoomNumberDialog();
+    rc = dialog.ShowModal(RhinoEtoApp.MainWindow)
+    if (rc):
+        print dialog.GetText() #Print the Room Number from the dialog control
+```
+
+In this case a new dialog is created with the name `dialog`. The dialog is shown and the return value is passed in the `rc` variable.  Then based on the result of `rc` the `GetText` method is used to get the value of the Textbox in the dialog using the `dialog.GetText()` method, even though the dialog has already been closed.
+
+Class methods also need to be created to handle events that may happen with controls in the dialog.  Here is a function that will be used for the `OK` button:
+
+ ```python
+    # OK button click handler
+    def OnOKButtonClick(self, sender, e):
+        if self.m_textbox.Text == "":
+            self.Close(False)
+        else:
+            self.Close(True)
+ ```
+
+Again here is an unusual syntax for the method declaration: `(self, sender, e)`. This is the standard argument declaration for any function that will be bound to a control action. This `OnOKButtonClick()` method will be bound to the OK button click with this code:
+
+```python
+        self.DefaultButton.Click += self.OnOKButtonClick
+```
+
+So now on every click the method will be called.
+
+There are many more events that methods may be bound to on controls such as [`TextChanged`](http://api.etoforms.picoe.ca/html/E_Eto_Forms_TextControl_TextChanged.htm), [`CheckedChanged`](http://api.etoforms.picoe.ca/html/E_Eto_Forms_CheckBox_CheckedChanged.htm), [`AddValue`](http://api.etoforms.picoe.ca/html/E_Eto_Forms_EnumDropDown_1_AddValue.htm), etc.... Look at the [Eto APi documentation](http://api.etoforms.picoe.ca/html/N_Eto_Forms.htm) for specific events supported by each control.
+
+
 
 ## Sample dialogs  
 
-Now with some understanding of Eto Dialogs in Python, take a look at some of the Sample dialogs in the Python Developer Samples Repo:
+Now with some understanding of Eto Dialogs in Python, take a look at some of the Sample dialogs in the [Python Developer Samples Repo](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython):
 
-1.  
-
-
-2.  
-3. ​
+1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoDialog.py)
+2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoRebuildCurve.py)
+3.  [Capture a view dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoViewCaptureDialog.py)
+4.  [Collapsable controls on a Dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoCollapsibleDialog.py)
 
 ---
 
