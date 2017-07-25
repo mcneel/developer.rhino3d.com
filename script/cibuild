@@ -59,16 +59,16 @@ dirty = `git status --porcelain` != ""
 puts `git status --porcelain`
 
 # load secondary (dev) config file, if possible
-config_dev_path = '_config_dev.yml'
-config_dev = File.exists?(config_dev_path) ? YAML.load_file(config_dev_path) : {}
+config_ci_path = '_config_ci.yml'
+config_ci = File.exists?(config_ci_path) ? YAML.load_file(config_ci_path) : {}
 
 # add some extra keys to secondary config
-config_dev['git_branch'] = branch
-baseurl = config_dev['baseurl_orig'] || config_dev['baseurl'] || ""
-config_dev['baseurl'] = baseurl.chomp "/"
-if not is_stable then config_dev['baseurl'] += "/#{branch}" end
-config_dev['baseurl_orig'] = baseurl
-File.open(config_dev_path, 'w') {|f| f.write config_dev.to_yaml }
+config_ci['git_branch'] = branch
+baseurl = config_ci['baseurl_orig'] || config_ci['baseurl'] || ""
+config_ci['baseurl'] = baseurl.chomp "/"
+if not is_stable then config_ci['baseurl'] += "/#{branch}" end
+config_ci['baseurl_orig'] = baseurl
+File.open(config_ci_path, 'w') {|f| f.write config_ci.to_yaml }
 
 # build directory: "path" is the branch build dir, whereas "base_path" is the
 # root build dir (if branch == master then path == base_path)
@@ -94,7 +94,7 @@ puts "Building #{sha}#{"+" if dirty} (#{branch.underline}) in #{path.magenta}!"
 `mkdir -p #{path}`
 
 # build the site
-puts `jekyll build -d #{path} --config _config.yml,_config_dev.yml`.cyan # _config_dev.yml contains custom baseurl
+puts `jekyll build -d #{path} --config _config.yml,_config_ci.yml`.cyan # _config_ci.yml contains custom baseurl
 
 if $?.exitstatus > 0
   puts "Error building site... :(".red
