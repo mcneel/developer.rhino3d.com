@@ -4,7 +4,7 @@ description: What is a 'package manifest' and what should it include?
 authors: ['Will Pearson']
 author_contacts: ['will']
 sdk: ['Yak']
-languages:
+languages: # empty
 platforms: ['Windows', 'Mac']
 categories: ['Overview']
 order: 1

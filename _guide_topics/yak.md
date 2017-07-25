@@ -4,7 +4,7 @@ description: Guides to using the Yak package manager.
 authors: unset
 author_contacts: unset
 sdk: unset
-languages:
+languages: # empty
 platforms: ['Windows', 'Mac']
 categories: ['Unsorted']
 origin: unset

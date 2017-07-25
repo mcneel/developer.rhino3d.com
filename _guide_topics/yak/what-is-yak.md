@@ -4,7 +4,7 @@ description: This guide gives an overview of the Yak package manager.
 authors: ['Will Pearson']
 author_contacts: ['will']
 sdk: ['Yak']
-languages:
+languages: # empty
 platforms: ['Windows']
 categories: ['Overview']
 order: 1

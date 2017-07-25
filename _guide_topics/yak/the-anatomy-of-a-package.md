@@ -4,7 +4,7 @@ description: This guide explains the structure of a Yak package.
 authors: ['Will Pearson']
 author_contacts: ['will']
 sdk: ['Yak']
-languages:
+languages: # empty
 platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 order: 1
