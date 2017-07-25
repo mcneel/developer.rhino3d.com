@@ -21,6 +21,7 @@ layout: guide-homepage
 
 - [The Anatomy of a Package]({{ site.baseurl }}/guides/yak/the-anatomy-of-a-package)
 - [The Package Manifest]({{ site.baseurl }}/guides/yak/the-package-manifest)
+- [Yak CLI Reference]({{ site.baseurl }}/guides/yak/yak-cli-reference)
 
 ### Features
 
