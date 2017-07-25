@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-# the api generation takes a long time to generate locally.
-# during local editing, as long as you don't want to edit the api
-# contents, use this script to temporarily exclude the api during
-# site generation.
+# use bundler to run jeykll, if available
+if hash bundle 2>/dev/null; then
+  JEKYLL_CMD="bundle exec jekyll"
+else
+  JEKYLL_CMD="jekyll"
+fi
 
-printf 'exclude: ['/api']' >> _config.yml
-jekyll serve --incremental --host 0.0.0.0
-cp _config.yml _config.yml.tmp
-sed '$ d' _config.yml.tmp > _config.yml
-rm -f _config.yml.tmp
+# run jeykll
+$JEKYLL_CMD serve --incremental --host 0.0.0.0 --config _config.yml,_config_dev.yml
+
+# note: _config_dev includes a rule to exclude the api/ dir to speed things up
