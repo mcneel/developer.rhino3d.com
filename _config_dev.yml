@@ -1,0 +1,5 @@
+# site settings for local development
+
+# ignore api dir because it's slow
+exclude:
+  - api/
