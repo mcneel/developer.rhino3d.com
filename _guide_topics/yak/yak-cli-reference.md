@@ -6,7 +6,7 @@ author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows']
-categories: ['Overview']
+categories: ['Fundamentals']
 order: 1
 keywords: ['developer', 'yak']
 layout: toc-guide-page

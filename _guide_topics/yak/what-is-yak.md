@@ -14,3 +14,15 @@ layout: toc-guide-page
 
 
 Yak is a package manager for the Rhino ecosystem.
+
+## The Server
+
+
+
+## The Command Line Tool
+
+
+
+## Grasshopper Integration
+
+Thus far Yak has been integrated into Grasshopper's "Unrecognized Objects" dialog.

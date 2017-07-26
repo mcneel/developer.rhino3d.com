@@ -17,11 +17,23 @@ layout: guide-homepage
 
 - [What is Yak?]({{ site.baseurl }}/guides/yak/what-is-yak)
 
-### Getting Started
+### Fundamentals
 
-- [The Anatomy of a Package]({{ site.baseurl }}/guides/yak/the-anatomy-of-a-package)
-- [The Package Manifest]({{ site.baseurl }}/guides/yak/the-package-manifest)
-- [Yak CLI Reference]({{ site.baseurl }}/guides/yak/yak-cli-reference)
+{% assign guides = site.guide_topics | where:"sdk","Yak" | where:"categories","Fundamentals" | sort %}
+<ul>
+{% for guide in guides %}
+  <li><a href="{{ guide.url | prepend: site.baseurl }}">{{ guide.title }}</a></li>
+{% endfor %}
+</ul>
+
+### Step By Step
+
+{% assign guides = site.guide_topics | where:"sdk","Yak" | where:"categories","Step By Step" | sort %}
+<ul>
+{% for guide in guides %}
+  <li><a href="{{ guide.url | prepend: site.baseurl }}">{{ guide.title }}</a></li>
+{% endfor %}
+</ul>
 
 ### Features
 
