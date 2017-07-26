@@ -85,8 +85,7 @@ Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"
 &nbsp;&nbsp; Tangent spheres  
 
 </div>
-<div class="col-md-4" markdown="1">
-
+<div class="col-md-4" markdown="1"> 
 
 ### 2. [Matrices and Transformations]({{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations/)
    2.1 [Matrix operations]({{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations/#21-matrix-operations)  
@@ -101,8 +100,8 @@ Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"
 &nbsp;&nbsp; Mirror or reflection transformation  
 &nbsp;&nbsp; Planar Projection transformation  
 
-</div>  
-<div class="col-md-4" markdown="1">  
+</div>
+<div class="col-md-4" markdown="1"> 
 
 
 ### 3. [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces/)
