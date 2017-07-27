@@ -25,7 +25,7 @@ the process of satisfying those dependencies.
 Yak hooks into the "Unrecognized Objects" dialog and presents the user with a
 new "Install" option.
 
-![Grasshopper package restore]({{ site.base_url }}/images/yak-gh-restore.gif)
+![Grasshopper package restore]({{ site.baseurl }}/images/yak-gh-restore.gif)
 
 Yak uses the name and version of the "libraries" (plug-ins) to which the missing
 components belong to search the server. If any packages match the search query
@@ -36,11 +36,11 @@ then they will be installed and made available the next time Grasshopper loads.
 In case the package name doesn't match[^1] the plug-in name (as defined in the
 `GH_AssemblyInfo` derived class), Yak will fall back to searching by plug-in ID.
 
-![Package restore can still operate when the plug-in name doesn't match the package]({{ site.base_url }}/images/yak-gh-restore-guid2.gif)
+![Package restore can still operate when the plug-in name doesn't match the package]({{ site.baseurl }}/images/yak-gh-restore-guid2.gif)
 
 Here's a closer look.
 
-![Package restore can still operate when the plug-in name doesn't match the package]({{ site.base_url }}/images/yak-gh-restore-guid.png)
+![Package restore can still operate when the plug-in name doesn't match the package]({{ site.baseurl }}/images/yak-gh-restore-guid.png)
 
 The plug-in ID (GUID) is extracted from the `.gha` assembly when you run
 `yak build` and added to `manifest.yml`. When the package is pushed, the server

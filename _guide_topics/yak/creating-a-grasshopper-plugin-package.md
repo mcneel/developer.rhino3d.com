@@ -23,13 +23,13 @@ yet, however. So, for now, this guide is aimed at <strong>Windows users only</st
 <!-- The Yak CLI tool is located at `C:\Program Files\Rhino WIP\System\Yak.exe`. -->
 
 First, let's assume you have a folder on your computer which contains all the
-files that you would like to distribute in your package. Some like this...
+files that you would like to distribute in your package. Something like this...
 
 ```commandline
 C:\Users\Bozo\dist
 ├── Marmoset.gha
 ├── Marmoset.dll
-└── misc/
+└── misc\
     ├── README.md
     └── LICENSE.txt
 ```
@@ -58,7 +58,7 @@ authors:
 description: <description>
 url: <url>
 secret:
-  id: 8dd38fd1-c572-dc53-ab35-c82d14e1ed08
+  id: c9beedb9-07ec-4974-a0a2-44670ddb17e4
 
 
 Saved to C:\Users\Bozo\dist\manifest.yml
@@ -80,3 +80,61 @@ the <a href="../package-restore-in-grasshopper">"Package Restore in Grasshopper"
 
 Open the manifest file with your [favourite editor](http://atom.io) and fill in
 the gaps.
+
+Afterwards, you should have something that looks a little like this...
+
+```yaml
+---
+name: marmoset
+version: 1.0.0
+authors:
+- Will Pearson
+description: >
+  This plug-in does something. I'm not really sure exactly what it's supposed to
+  do, but it does it better than any other plug-in.
+url: example.com
+secret:
+  id: c9beedb9-07ec-4974-a0a2-44670ddb17e4
+```
+
+Now that we have a manifest file, we can build the package!
+
+```commandline
+> "C:\Program Files\Rhino WIP\System\Yak.exe" build
+
+Building package from contents of C:\Users\Bozo\dist
+
+Found manifest.yml for package: marmoset (1.0.0)
+Found a Grasshopper plug-in: Marmoset.gha
+Creating marmoset-1.0.0.yak
+
+---
+name: marmoset
+version: 1.0.0
+authors:
+- Will Pearson
+description: >
+  This plug-in does something. I'm not really sure exactly what it's supposed to
+  do, but it does it better than any other plug-in.
+url: example.com
+secret:
+  id: c9beedb9-07ec-4974-a0a2-44670ddb17e4
+
+C:\Users\Bozo\dist\marmoset-1.0.0.yak
+├── Marmoset.dll
+├── Marmoset.gha
+├── manifest.yml
+├── misc\LICENSE.txt
+└── misc\README.md
+```
+
+Congratulations! 🙌 You've just created a Yak package for your Grasshopper
+plug-in
+
+---
+
+## Next Steps
+
+Now that you've created a package, why not
+[push it to the Yak server](../pushing-a-package-to-the-server) to make it
+available to everyone else!
