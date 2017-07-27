@@ -36,7 +36,7 @@ then they will be installed and made available the next time Grasshopper loads.
 In case the package name doesn't match[^1] the plug-in name (as defined in the
 `GH_AssemblyInfo` derived class), Yak will fall back to searching by plug-in ID.
 
-![Package restore can still operate when the plug-in name doesn't match the package]({{ site.baseurl }}/images/yak-gh-restore-guid2.gif)
+![Package restore can still operate when the plug-in name doesn't match the package]({{ site.baseurl }}/images/yak-gh-restore-guid.gif)
 
 Here's a closer look.
 
