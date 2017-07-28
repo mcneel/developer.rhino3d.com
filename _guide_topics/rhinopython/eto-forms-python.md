@@ -1,6 +1,6 @@
 ---
-title: Writing Customer Eto forms in Python
-description: Using the Eto dialog framework to create customer dialogs.
+title: Writing Custom Eto forms in Python
+description: Using the Eto dialog framework to create custom dialogs.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
 sdk: ['RhinoPython']
