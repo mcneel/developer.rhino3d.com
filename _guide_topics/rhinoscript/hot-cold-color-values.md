@@ -16,7 +16,7 @@ layout: toc-guide-page
  
 ## Problem
 
-It is often useful to show the curvature of a curve with a color index. For example, if you divide a curve into 500 points and measure the curvature at each point, you can assign a “curvature radius” color to each of the points using RhinoScript.  Let's take a look at house this is done.
+It is often useful to show curvature with a color index. For example, if you divide a curve into 500 points and measure the curvature at each point, you can assign a “curvature radius” color to each of the points using RhinoScript.  Let's take a look at how this is done.
 
 ## Solution
 
