@@ -28,7 +28,7 @@ layout: guide-homepage
 
 ### Step By Step
 
-{% assign guides = site.guide_topics | where:"sdk","Yak" | where:"categories","Step By Step" | sort %}
+{% assign guides = site.guide_topics | where:"sdk","Yak" | where:"categories","Step By Step" | sort:"order" %}
 <ul>
 {% for guide in guides %}
   <li><a href="{{ guide.url | prepend: site.baseurl }}">{{ guide.title }}</a></li>

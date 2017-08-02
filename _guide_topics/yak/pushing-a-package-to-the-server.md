@@ -8,7 +8,7 @@ sdk: ['Yak']
 languages: # empty
 platforms: ['Windows']
 categories: ['Step By Step']
-order: 1
+order: 2
 keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---

@@ -12,7 +12,7 @@ keywords: ['yak', 'grasshopper']
 layout: toc-guide-page
 ---
 
-# Overview
+## Overview
 
 For starters, this is less of a developer guide and more of a description of how
 this feature works, so that you, the developer, can better understand how your
@@ -31,7 +31,9 @@ Yak uses the name and version of the "libraries" (plug-ins) to which the missing
 components belong to search the server. If any packages match the search query
 then they will be installed and made available the next time Grasshopper loads.
 
-## Naming constraints (and GUID fallback)
+## Constraints
+
+### Naming (and GUID fallback)
 
 In case the package name doesn't match[^1] the plug-in name (as defined in the
 `GH_AssemblyInfo` derived class), Yak will fall back to searching by plug-in ID.
@@ -49,7 +51,7 @@ This is to say, if you don't want to change the name of your Grasshopper plug-in
 to conform with the constraints[^1], _please_ make sure you build the package
 using `yak build` so this can all work happily!
 
-## Version number constraints
+### Version numbers
 
 Similar to the naming, the Yak server is strict in its use of Semantic
 Versioning[^2] for packages. The server will however attempt to coerce version
