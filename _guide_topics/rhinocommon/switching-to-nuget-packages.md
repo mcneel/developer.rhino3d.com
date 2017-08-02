@@ -30,17 +30,18 @@ To switch to NuGet packages, follow these steps:
 
 1. In Visual Studio, find the *Solution Explorer* and right-click on the *References* section of your project. Select *Manage NuGet Packages…* Alternatively, the same can be done through the Visual Studio Project menu, and choosing *Manage NuGet Packages…*
 
-![Manage NuGet Packages]({{ site.baseurl }}/images/switching-to-nuget-packages-01.png)
+    ![Manage NuGet Packages]({{ site.baseurl }}/images/switching-to-nuget-packages-01.png)
 
 2. In the NuGet tab which appears, click on *Browse*. In the search box, type in *RhinoCommon*. You should see an entry for RhinoCommon and one for Grasshopper. If you are writing a Plugin for Rhino WIP, ensure you check *Include prerelease*.
-  * If your project is a RhinoCommon Plugin, select the RhinoCommon entry, choose the Version, and click *Install*. For Rhino 5 plugins the Version should be *Latest stable 5.12*. For Rhino WIP, chose the *Latest prerelease*.
-  * If your project is a Grasshopper Add-on, select the Grasshopper entry, choose the Version, and click *Install*. For Grasshopper Add-ons on Rhino 5 the Version should be *Latest stable 0.9.76*. For Grasshopper Add-ons in Rhino WIP, chose the *Latest prerelease*.
 
-![Choose NuGet Packages]({{ site.baseurl }}/images/switching-to-nuget-packages-02.png)
+    * If your project is a RhinoCommon Plugin, select the RhinoCommon entry, choose the Version, and click *Install*. For Rhino 5 plugins the Version should be *Latest stable 5.12*. For Rhino WIP, chose the *Latest prerelease*.
+    * If your project is a Grasshopper Add-on, select the Grasshopper entry, choose the Version, and click *Install*. For Grasshopper Add-ons on Rhino 5 the Version should be *Latest stable 0.9.76*. For Grasshopper Add-ons in Rhino WIP, chose the *Latest prerelease*.
+
+    ![Choose NuGet Packages]({{ site.baseurl }}/images/switching-to-nuget-packages-02.png)
 
 3. After the install is complete, ensure that the new references are not copied to the output directory. Select any of the following references if they exist in your project: RhinoCommon, Eto, Rhino.UI, Grasshopper, GH_IO. In the *Properties* window, set *Copy Local* to *False*.
 
-![Copy Local]({{ site.baseurl }}/images/switching-to-nuget-packages-03.png)
+    ![Copy Local]({{ site.baseurl }}/images/switching-to-nuget-packages-03.png)
 
 ---
 
