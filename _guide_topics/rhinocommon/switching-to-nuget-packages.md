@@ -15,13 +15,12 @@ layout: toc-guide-page
 
 ## Overview
 
-In [previous guides](http://developer.rhino3d.com/guides/rhinocommon/your-first-plugin-windows/) you’ve seen how to set up a project to develop a RhinoCommon Plugin or Grasshopper Add-On. These guides relied on the Visual Studio Project Wizards that we publish to quickly get you going on plugin development. The wizards automatically reference the necessary assemblies to make RhinoCommon and Grasshopper SDKs available in your Visual Studio project. While this project setup should be fine for a number of cases, there might be some reasons to switch the RhinoCommon and Grasshopper assembly references to those which are published on NuGet:
+In [previous guides](http://developer.rhino3d.com/guides/rhinocommon/your-first-plugin-windows/) you’ve seen how to set up a project to develop a RhinoCommon Plugin or Grasshopper Add-On. These guides relied on the Visual Studio Project Wizards that we publish to quickly get you going on plugin development. The wizards automatically reference the necessary assemblies to make RhinoCommon and Grasshopper SDKs available in your Visual Studio project. While this project setup should be fine for a number of cases, there might be some reasons to switch the RhinoCommon and Grasshopper assembly references to those which are published by [McNeel on NuGet](https://www.nuget.org/profiles/McNeel):
 * Cases where development includes continuous integration deployed on a remote server
 * Projects where several developers are collaborating and may have Rhino installed in varying locations (see also this question), or not installed at all[^1].
 
 Some negative consequences of using these NuGet packages for development:
 * Using NuGet packages creates a disparity between what is used for building Rhino and what is used for debugging your plugin. For example, this disparity will lead to problems where a method that is available at compile time is not (yet) available at runtime (user did not update Rhino).
-
 * After switching to NuGet packages, especially when targeting Rhino WIP versions or when there is a Rhino service release published, you should keep the package up-to-date with the current Rhino release. This adds additional burden when developing and debugging.
 
 ## Making the Switch
