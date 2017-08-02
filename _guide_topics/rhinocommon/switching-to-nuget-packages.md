@@ -54,4 +54,4 @@ To switch to NuGet packages, follow these steps:
 ---
 
 ## Footnotes
-[^1]: We do not recommend developing plug-ins without Rhino, as debugging is essential.
+[^1]: We do not recommend developing plugins without Rhino, as debugging is essential.
