@@ -15,8 +15,9 @@ layout: toc-guide-page
 
 <div class="bs-callout">
 
-<strong>Note</strong>: Yak is cross-platform. Not everything is hooked up on the Mac side
-yet, however. So, for now, this guide is aimed at <strong>Windows users only</strong>.
+<strong>Note</strong>: Yak is cross-platform. Not everything is hooked up on the
+Mac side yet, however. So, for now, this guide is aimed at <strong>Windows users
+only</strong>.
 
 </div>
 
@@ -39,4 +40,59 @@ your account.
 - **Verify your identity**: Used for authentication when querying package
   ownership.
 
+Once you've accepted, the browser window will close itself. Yak has retrieved an
+OAuth token from Rhino Accounts and has stored this on your computer.
+
+- Mac - `~/.mcneel/yak.yml`
+- Windows - `%APPDATA%\McNeel\yak.yml`
+
+<div class="bs-callout">
+<strong>Note</strong>: For security, the OAuth token is valid for a limited time
+only. Don't be surprised if the Yak CLI tool requires you to log in again after
+30 days or so.
+</div>
+
 ## Push!
+
+Now that you're logged in, it's possible to push a package to the server. I'll
+use the package created in the
+[previous guide](../creating-a-grasshopper-plugin-package) as an example.
+
+```commandline
+> "C:\Program Files\Rhino WIP\System\Yak.exe" push marmoset-1.0.0.yak
+```
+
+Currently (v0.2), this command doesn't produce any output on success.
+
+You can check that your package has been successfully pushed by searching for
+it. You should see the name and version number of the package that you just
+pushed. 🤞
+
+```commandline
+> "C:\Program Files\Rhino WIP\System\Yak.exe" search marmoset
+
+marmoset (1.0.0)
+```
+
+## Troubleshooting
+
+There are a few reasons why pushing a package might not work.
+
+- Invalid `manifest.yml`
+
+  _The error message should be self explanatory. Fix it up and try again! You
+  can also try validating the YAML syntax itself with a
+  [linter](http://www.yamllint.com)._
+
+- The package name already exists, but you're not an **owner**.
+
+  _Only package **owners** are permitted to push new versions of their packages.
+  When a user pushes the first version of a package, they become its **owner**.
+  In the future it will be possible to grant **ownership** to other users.
+  Package names are case-insensitive._
+
+- The package version already exists.
+
+  _In order to prevent disruption to others who are using one of your packages,
+  it's not possible to delete or overwrite versions. Roll the version number and
+  let your users know that there's something new for them to try!_

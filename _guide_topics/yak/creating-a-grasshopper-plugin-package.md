@@ -129,7 +129,7 @@ C:\Users\Bozo\dist\marmoset-1.0.0.yak
 ```
 
 Congratulations! 🙌 You've just created a Yak package for your Grasshopper
-plug-in
+plug-in.
 
 ---
 
