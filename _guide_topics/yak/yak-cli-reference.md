@@ -12,18 +12,7 @@ keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
-## Commands
-
-* [`build`](#build)
-* [`install`](#install)
-* [`list`](#list)
-* [`login`](#login)
-* [`push`](#push)
-* [`search`](#search)
-* [`spec`](#spec)
-* [`uninstall`](#uninstall)
-
-## `build`
+## Build
 
 _Since 0.2_
 
@@ -33,10 +22,12 @@ When run in a directory containing a valid `manifest.yaml` file, creates a packa
 yak build
 ```
 
-**Note**: Currently this only works if there is exactly **one** `.gha` file in the directory.
+<div class="bs-callout">
+  <strong>Note</strong>: Currently this only works if there is exactly <strong>one</strong> <code>.gha</code> file in the directory.
+</div>
 <!-- During the build, the component GUID is extracted to help with searching for the package later. -->
 
-## `install`
+## Install
 
 _Since 0.1_
 
@@ -46,7 +37,7 @@ Installs a package (optionally with a specific version).
 yak install [--source=URL] <package> [<version>]
 ```
 
-## `list`
+## List
 
 _Since 0.2_
 
@@ -56,7 +47,7 @@ Lists the packages installed on the machine.
 yak list
 ```
 
-## `login`
+## Login
 
 _Since 0.2_
 
@@ -68,7 +59,7 @@ yak login
 
 On macOS, credentials are stored in `~/.mcneel/yak.yml`. On Windows, they are stored in `%appdata%\McNeel\yak.yml`.
 
-## `push`
+## Push
 
 _Since 0.1_
 
@@ -78,9 +69,11 @@ Pushes a package to the server.
 yak push [--source=URL] <filename>
 ```
 
-**Note**: Requires [authentication](#login).
+<div class="bs-callout">
+  <strong>Note</strong>: Requires <a href="#login">authentication</a>.
+</div>
 
-## `search`
+## Search
 
 _Since 0.1_
 
@@ -90,7 +83,7 @@ Searches the server for packages which match `query`.
 yak search [--source=URL] <query>
 ```
 
-## `spec`
+## Spec
 
 _Since 0.2_
 
@@ -100,18 +93,23 @@ When run in a directory containing a `*.gha` file, creates a `manifest.yml` file
 yak spec
 ```
 
-**Note**: Currently this only works if there is exactly **one** `.gha` file in the directory.
+<div class="bs-callout">
+  <strong>Note</strong>: Currently this only works if there is exactly <strong>one</strong> <code>.gha</code> file in the directory.
+</div>
 
-**Note 2**: This command is only useful if you've implemented `GH_AssemblyInfo` in the Grasshopper plug-in.
+<div class="bs-callout">
+  <strong>Note</strong>: This command is only useful if you've implemented <code>GH_AssemblyInfo</code> in the Grasshopper plug-in.
+</div>
 
-## `uninstall`
+## Uninstall
 
 _Since 0.1_
 
 Uninstalls a package.
 
-**Note**: This doesn't actually remove the package from the machine, it just removes the `manifest.txt` file that tells Rhino which version to load.
-
 ```commandline
 yak uninstall <package>
 ```
+<div class="bs-callout">
+  <strong>Note</strong>: This doesn't actually remove the package from the machine, it just removes the <code>manifest.txt</code> file that tells Rhino which version to load.
+</div>
