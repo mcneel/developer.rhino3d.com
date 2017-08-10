@@ -28,6 +28,6 @@ Your plugin project should now be ready to build with the Rhino 6 C/C++ SDK.
 
 ## Related Topics
 
-- [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what-is-a-rhino-plugin)
+- [What's New?]({{ site.baseurl }}/guides/general/whats-new)
 - [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing-tools-windows)
 - [Migrate your plugin project to Rhino 6 manually]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows)
