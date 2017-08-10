@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## Prerequisites
 
-[These Windows development tools installed.]({{ site.baseurl }}/guides/cpp/installing-tools-windows).
+[These Windows development tools installed]({{ site.baseurl }}/guides/cpp/installing-tools-windows).
 
 ## Run the Migration Application
 
