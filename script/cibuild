@@ -33,17 +33,27 @@ puts "You're on the #{branch.underline} branch"
 
 # get branches that count as "versions" from _config.yml
 config = YAML.load_file('_config.yml')
-version_branches = config['version_branches']
 
-# is this the stable branch? Should I build it?
-is_stable = branch == "master"
-# puts "\nstable? #{is_stable}"
-is_version = version_branches.include? branch
-# puts "build?  #{is_stable or is_version}\n\n"
+# check for "versions" key
+if not config.include? "versions"
+  puts "ERROR: No 'versions' key in _config.yml".red
+  exit 1
+end
+
+version_branches = config['versions']['branches']
+
+# is this the stable branch?
+stable_branch = config['versions']['stable']&.to_s || "master"
+is_stable = branch == stable_branch
+puts "The #{branch.underline} branch is the #{"stable branch".green}" if is_stable
+
+# is this a version branch? (stable can't also be a version branch!)
+is_version = version_branches.collect { |x| x.to_s }.include? branch && (not is_stable)
+puts "The #{branch.underline} branch is a #{"version branch".green}" if is_version
 
 # abort if we're not on a recognised branch
 if not (is_stable or is_version)
-  puts "Uh oh, #{branch.underline} is not a recognised branch!".red
+  puts "WARNING: Uh oh, #{branch.underline} is not a recognised branch!".red
   if ENV['CI'] == "true"
     puts "Checking for errors in the site (but not deploying)..."
     puts `jekyll build`.cyan
@@ -78,7 +88,7 @@ path = base_path = "_site"
 `rm -rf "#{base_path}"`
 
 # set path
-if version_branches.include? branch
+if is_version
   path += "/#{branch}"
 end
 
@@ -98,7 +108,7 @@ puts `jekyll build -d #{path} --config _config.yml,_config_ci.yml`.cyan
 # NOTE: _config_ci.yml contains custom baseurl
 
 if $?.exitstatus > 0
-  puts "Error building site... :(".red
+  puts "ERROR: Jekyll failed to build the site... :(".red
   exit 3
 end
 
@@ -112,7 +122,7 @@ Dir.chdir(base_path)
 
 # check if the builder is CI
 if ENV['CI'] != "true"
-  puts "You're not a robot! (Expected $CI == true, got #{ENV['CI']}.)".red.underline
+  puts "WARNING: You're not a robot! (Expected $CI == true, got #{ENV['CI']}.)".red.underline
   exit 128
 end
 
@@ -152,7 +162,7 @@ deploy_branch = ENV['GITHUB_PAGES_BRANCH'] || "gh-pages"
 puts "Checking out branch: #{deploy_branch.yellow}"
 puts `git reset -q #{production}/#{deploy_branch}`.cyan
 
-if branch == "master"
+if is_stable
   # revert version branch directories so they don't get staged
   puts "Reverting version branch directories: #{version_branches.join(", ").magenta}"
   version_branches.each do |branch|
