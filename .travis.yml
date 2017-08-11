@@ -1,6 +1,5 @@
 language: ruby
-rvm:
-- 2.3.3
+# see .ruby-version
 script: script/cibuild
 before_script:
 - openssl aes-256-cbc -K $encrypted_5727dd035aee_key -iv $encrypted_5727dd035aee_iv -in script/.ssh/bozo.enc -out script/.ssh/bozo -d
