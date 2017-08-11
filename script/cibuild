@@ -27,7 +27,7 @@ end
 # # # # # # #
 
 # what's your name, branch?
-branch = ENV['TRAVIS_BRANCH'] || `git rev-parse --abbrev-ref HEAD`.strip()
+branch = ENV['TRAVIS_BRANCH'] || `git rev-parse --abbrev-ref HEAD`.strip
 
 puts "You're on the #{branch.underline} branch"
 
@@ -54,7 +54,7 @@ if not (is_stable or is_version)
 end
 
 # get sha and check if working dir is dirty (shouldn't be the case if using CI)
-sha = `git rev-parse --verify --short HEAD`.rstrip
+sha = `git rev-parse --verify --short HEAD`.strip
 dirty = `git status --porcelain` != ""
 puts `git status --porcelain`
 
@@ -94,7 +94,8 @@ puts "Building #{sha}#{"+" if dirty} (#{branch.underline}) in #{path.magenta}!"
 `mkdir -p #{path}`
 
 # build the site
-puts `jekyll build -d #{path} --config _config.yml,_config_ci.yml`.cyan # _config_ci.yml contains custom baseurl
+puts `jekyll build -d #{path} --config _config.yml,_config_ci.yml`.cyan
+# NOTE: _config_ci.yml contains custom baseurl
 
 if $?.exitstatus > 0
   puts "Error building site... :(".red
@@ -115,9 +116,9 @@ if ENV['CI'] != "true"
   exit 128
 end
 
-remote = `git config remote.origin.url`
+remote = `git config remote.origin.url`.strip
 remote.sub! "https://github.com/", "git@github.com:"
-puts "Deploying to #{remote.yellow}"
+puts "Deploying to #{remote.yellow} (production)"
 
 # intialise git repo
 puts `git init`.cyan
@@ -129,28 +130,34 @@ user = {
 }
 
 # inside this git repo we'll pretend to be a new user
-puts "Configuring user: #{user}"
+puts "Configuring user: #{user.to_s.yellow}"
 `git config user.name "#{user[:name]}"`
 `git config user.email "#{user[:email]}"`
 
+production = "production" # remote name
+
 # add remote git repo
-`git remote add production #{remote}`
+`git remote add #{production} #{remote} 2>&1` # suppress
 
 # fetch and reset
-puts `git fetch --depth=1 production`
+puts "Fetching remote: #{production.yellow}"
+puts `git fetch --depth=1 #{production} 2>&1`.cyan
 
 if $?.exitstatus > 0
-  puts "Failed to contact github... :(".red
+  puts "ERROR: Failed to contact github... :(".red
   exit 5
 end
 
 deploy_branch = ENV['GITHUB_PAGES_BRANCH'] || "gh-pages"
-`git reset production/#{deploy_branch}`
+puts "Checking out branch: #{deploy_branch.yellow}"
+puts `git reset -q #{production}/#{deploy_branch}`.cyan
 
 if branch == "master"
   # revert version branch directories so they don't get staged
+  puts "Reverting version branch directories: #{version_branches.join(", ").magenta}"
   version_branches.each do |branch|
-    puts `git checkout -- #{branch}`
+    co = `git checkout -q -- #{branch} 2>&1`.strip
+    puts co.cyan if not co.empty?
   end
 
   # ensure .nojekyll file persists between deploys
@@ -159,19 +166,22 @@ if branch == "master"
   File.write(".nojekyll", "")
 
   # stage and commit
-  puts `git add -A .`
-
-  puts `git status -s` # debug
-
-  puts `git commit -m "Deploy #{sha}#{"+" if dirty}"`
+  `git add -A .`
+  # puts `git status -s` # debug
+  puts "Committing staged changes"
+  puts `git commit -m "Deploy #{sha}#{"+" if dirty}"`.cyan
 else
-  # stage and commit
-  puts `git add -A #{branch}`
-
-  puts `git status -s #{branch}` # debug
-
-  puts `git commit -m "Deploy #{sha}#{"+" if dirty} (#{branch})"`
+  # stage and commit (branch directory only)
+  `git add -A #{branch}`
+  # puts `git status -s #{branch}` # debug
+  puts "Committing staged changes"
+  puts `git commit -m "Deploy #{sha}#{"+" if dirty} (#{branch})"`.cyan
 end
 
+# exit if commit failed
+(puts "WARNING: Commit failed. Probably empty!".red; exit) if $?.exitstatus > 0
+
+puts "Pushing commit: #{`git rev-parse --verify --short HEAD`.rstrip.yellow}"
+
 # deploy (via ssh using bozo's deploy key)
-puts `git push -q production HEAD:#{deploy_branch}`
+puts `git push #{production} HEAD:#{deploy_branch}`.cyan # stderr, whatever
