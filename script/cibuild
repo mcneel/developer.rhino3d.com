@@ -48,7 +48,7 @@ is_stable = branch == stable_branch
 puts "The #{branch.underline} branch is the #{"stable branch".green}" if is_stable
 
 # is this a version branch? (stable can't also be a version branch!)
-is_version = version_branches.collect { |x| x.to_s }.include? branch && (not is_stable)
+is_version = version_branches.collect { |x| x.to_s }.include?(branch) && (not is_stable)
 puts "The #{branch.underline} branch is a #{"version branch".green}" if is_version
 
 # abort if we're not on a recognised branch
