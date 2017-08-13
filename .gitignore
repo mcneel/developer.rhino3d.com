@@ -11,3 +11,5 @@ Gemfile.lock
 script/.ssh
 .bundle
 .jekyll-metadata
+
+_config_ci.yml

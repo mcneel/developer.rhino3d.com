@@ -47,10 +47,13 @@ $on-laptop:        800px;
    .page-content {
      padding-top: 5px;
      padding-bottom: 5px;
-   }  
+   }
 }
 
-$branch: "{{ site.git_branch }}"; // used to pad body if version banner exists
+// Assign variables used to pad body if version banner exists
+// {% assign stable_branch = site.versions.stable | default: "master" %}
+$branch: "{{ site.git_branch }}";
+$is_version_branch: $branch != "" and $branch != "{{ stable_branch }}";
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import

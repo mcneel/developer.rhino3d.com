@@ -1,4 +1,5 @@
-{% if site.git_branch and site.git_branch != "" and site.git_branch != "master" %}
+{% assign stable_branch = site.versions.stable | default: "master" %}
+{% if site.git_branch and site.git_branch != "" and site.git_branch != stable_branch %}
 <div class="version-banner">
     Hey, you're viewing the Rhino <strong>{{ site.git_branch | upcase }}</strong> version of this page!
     <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
