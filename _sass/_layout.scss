@@ -320,7 +320,7 @@
 }
 
 // offset anchor location for headings so they're not obscured by the banner
-@if $branch != "" and $branch != "master" {
+@if $is_version_branch {
   h1[id]:before,
   h2[id]:before,
   h3[id]:before,

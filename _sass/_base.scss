@@ -23,7 +23,7 @@ body {
     -webkit-text-size-adjust: 100%;
 
     // make some space so that the version banner doesn't obscure the header nav
-    @if $branch != "" and $branch != "master" {
+    @if $is_version_branch {
       padding-top: 36px;
 
       @include media-query($on-palm) {

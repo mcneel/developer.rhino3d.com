@@ -77,11 +77,12 @@ config_ci['git_branch'] = branch
 baseurl = config_ci['baseurl_orig'] || config_ci['baseurl'] || ""
 config_ci['baseurl'] = baseurl.chomp "/"
 if not is_stable then config_ci['baseurl'] += "/#{branch}" end
+# TODO: master => wip
 config_ci['baseurl_orig'] = baseurl
 File.open(config_ci_path, 'w') {|f| f.write config_ci.to_yaml }
 
 # build directory: "path" is the branch build dir, whereas "base_path" is the
-# root build dir (if branch == master then path == base_path)
+# root build dir (if branch is current/stable then path == base_path)
 path = base_path = "_site"
 
 # remove root build directory before we begin
