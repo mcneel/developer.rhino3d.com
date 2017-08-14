@@ -62,7 +62,7 @@ exclude: [/script, /test, README.md, CONTRIBUTING.md, Gemfile]
 
 # version branches
 versions:
-  stable: master
+  stable: "6"
   branches:
     - wip
     - "5"
