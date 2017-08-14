@@ -121,7 +121,7 @@ layout: fullwidth-page
 {: rules="groups"}
 
 <div align="center">
-<p>These docs are for Rhino 5, the latest stable release.  <i>Looking for Rhino 6?</i>  Check out the <a href="{{ site.baseurl }}/wip/">Work-In-Progress (WIP) version of this site</a>.</p>
+<p><i>WARNING</i>: This is the Rhino 5 version of this site. Check out the <a href="{{ site.baseurl }}/">Rhino 6 version instead</a>.</p>
 
 <p>Still unclear?  Browse the <a href="{{ site.baseurl }}/guides/">Guides</a>.  Ask a question in <a href="{{ site.baseurl }}/guides/general/contributing/#discourse">the Forum</a>.  Check out the <a href="{{ site.baseurl }}/guides/general/frequently-asked-questions/">FAQ</a>. Ask <a href="{{ site.baseurl }}/guides/general/contributing/#contacts">a developer</a>.</p>
 
