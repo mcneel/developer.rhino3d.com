@@ -1,25 +1,58 @@
 {% assign stable_branch = site.versions.stable | default: "master" %}
-{% if site.git_branch and site.git_branch != "" and site.git_branch != stable_branch %}
-<div class="version-banner">
-    Hey, you're viewing the Rhino <strong>{{ site.git_branch | upcase }}</strong> version of this page!
-    <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
-</div>
 
-<!-- Check the version banner for broken links and remove the link if found -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>
-$(document).ready(function()
-{
-  var splitPath = window.location.pathname.split("/");
-  var nonWipURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
+{% if site.git_branch and site.git_branch != "" %}
 
-  $.get(nonWipURL).fail(function ()
-  {
-    var $aTag = $("div.version-banner > a");
-    $aTag.text("View the current site instead.");
-    $aTag.attr("href", "/");
-  });
-});
-</script>
+  <!-- The following are "casts" from the string to number using math filters... -->
+  {% assign stable = stable_branch | plus: 0 %}
+  {% assign current = site.git_branch | plus: 0 %}
+
+  <!-- ...but we need to check to see if the original branches were numbers or not... -->
+  {% capture test_var1 %}{{ stable_branch | json }}{% endcapture %}
+  {% capture test_var2 %}{{ site.git_branch | json }}{% endcapture %}
+
+  {% assign stable_is_number = true %}
+  {% assign current_is_number = true %}
+  {% if test_var1 contains '"' %}
+    {% assign stable_is_number = false %}
+  {% endif %}
+  {% if test_var2 contains '"' %}
+    {% assign current_is_number = false %}
+  {% endif %}
+
+  <!-- {% if site.git_branch != stable_branch %} -->
+    <div class="version-banner">
+        Hey, you're viewing the Rhino <strong>{{ site.git_branch | upcase }}</strong> version of this page!
+        {% if current_is_number and stable_is_number %}
+          {% if current < stable %}
+            <a href="{{site.baseurl_orig}}{{ page.url }}">View the Rhino <strong>{{ site.versions.stable | upcase }}</string> version instead.</a>
+          {% endif %}
+          {% if current == stable %}
+            <a href="{{site.baseurl_orig}}/{{ current | minus: 1 }}/{{ page.url }}">Looking for the Rhino {{ current | minus: 1 }} version?</a>
+          {% endif %}
+          {% if current > stable %}
+            <a href="{{site.baseurl_orig}}{{ page.url }}">View the Rhino <strong>{{ site.versions.stable | upcase }}</string> version instead.</a>
+          {% endif %}
+        {% else %}
+          <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
+        {% endif %}
+    </div>
+
+    <!-- Check the version banner for broken links and remove the link if found -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+    $(document).ready(function()
+    {
+      var splitPath = window.location.pathname.split("/");
+      var nonWipURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
+
+      $.get(nonWipURL).fail(function ()
+      {
+        var $aTag = $("div.version-banner > a");
+        $aTag.text("View the current site instead.");
+        $aTag.attr("href", "/");
+      });
+    });
+    </script>
+  <!-- {% endif %} -->
 
 {% endif %}
