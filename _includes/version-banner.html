@@ -1,6 +1,6 @@
 {% assign stable_branch = site.versions.stable | default: "master" %}
 
-{% if site.git_branch and site.git_branch != "" %}
+<!-- {% if site.git_branch and site.git_branch != "" %} -->
 
   <!-- The following are "casts" from the string to number using math filters... -->
   {% assign stable = stable_branch | plus: 0 %}
@@ -21,6 +21,7 @@
 
   <!-- {% if site.git_branch != stable_branch %} -->
     <div class="version-banner">
+        {% if site.git_branch == "" %}.{% endif %} <!--caveman debugging, will remove -->
         Hey, you're viewing the <strong>Rhino {{ site.git_branch | upcase }}</strong> version of this page!
         {% if current_is_number and stable_is_number %}
           {% if current < stable %}
@@ -55,4 +56,4 @@
     </script>
   <!-- {% endif %} -->
 
-{% endif %}
+<!-- {% endif %} -->
