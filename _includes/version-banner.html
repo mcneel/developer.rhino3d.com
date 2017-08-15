@@ -21,16 +21,16 @@
 
   <!-- {% if site.git_branch != stable_branch %} -->
     <div class="version-banner">
-        Hey, you're viewing the Rhino <strong>{{ site.git_branch | upcase }}</strong> version of this page!
+        Hey, you're viewing the <strong>Rhino {{ site.git_branch | upcase }}</strong> version of this page!
         {% if current_is_number and stable_is_number %}
           {% if current < stable %}
-            <a href="{{site.baseurl_orig}}{{ page.url }}">View the Rhino <strong>{{ site.versions.stable | upcase }}</strong> version instead.</a>
+            <a href="{{site.baseurl_orig}}{{ page.url }}">View the <strong>Rhino {{ site.versions.stable | upcase }}</strong> version instead.</a>
           {% endif %}
           {% if current == stable %}
             <a href="{{site.baseurl_orig}}/{{ current | minus: 1 }}/{{ page.url }}">Looking for the Rhino {{ current | minus: 1 }} version?</a>
           {% endif %}
           {% if current > stable %}
-            <a href="{{site.baseurl_orig}}{{ page.url }}">View the Rhino <strong>{{ site.versions.stable | upcase }}</strong> version instead.</a>
+            <a href="{{site.baseurl_orig}}{{ page.url }}">View the <strong>Rhino {{ site.versions.stable | upcase }}</strong> version instead.</a>
           {% endif %}
         {% else %}
           <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
