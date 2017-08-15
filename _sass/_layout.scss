@@ -320,7 +320,7 @@
 }
 
 // offset anchor location for headings so they're not obscured by the banner
-@if $is_version_branch {
+// @if $is_version_branch {
   h1[id]:before,
   h2[id]:before,
   h3[id]:before,
@@ -338,7 +338,7 @@
       height: 61px;
     }
   }
-}
+//}
 
 /* Breadcrumbs */
 
