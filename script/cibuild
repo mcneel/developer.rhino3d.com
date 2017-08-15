@@ -72,13 +72,21 @@ puts `git status --porcelain`
 config_ci_path = '_config_ci.yml'
 config_ci = File.exists?(config_ci_path) ? YAML.load_file(config_ci_path) : {}
 
+# determine baseurl
+baseurl = baseurl_orig = config['baseurl'] || '' # original baseurl
+baseurl.chomp! '/'
+if not is_stable
+  if branch == 'master'
+    baseurl += "/wip" # master => wip
+  else
+    baseurl += "/#{branch}"
+  end
+end
+
 # add some extra keys to secondary config
 config_ci['git_branch'] = branch
-baseurl = config_ci['baseurl_orig'] || config_ci['baseurl'] || ""
-config_ci['baseurl'] = baseurl.chomp "/"
-if not is_stable then config_ci['baseurl'] += "/#{branch}" end
-# TODO: master => wip
-config_ci['baseurl_orig'] = baseurl
+config_ci['baseurl'] = baseurl
+config_ci['baseurl_orig'] = baseurl_orig
 File.open(config_ci_path, 'w') {|f| f.write config_ci.to_yaml }
 
 # build directory: "path" is the branch build dir, whereas "base_path" is the
