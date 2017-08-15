@@ -68,6 +68,9 @@ sha = `git rev-parse --verify --short HEAD`.strip
 dirty = `git status --porcelain` != ""
 puts `git status --porcelain`
 
+# set branch dir (branch name, unless 'master', in which case 'wip')
+branch_dir = branch == 'master' ? 'wip' : branch
+
 # load secondary (dev) config file, if possible
 config_ci_path = '_config_ci.yml'
 config_ci = File.exists?(config_ci_path) ? YAML.load_file(config_ci_path) : {}
@@ -75,14 +78,7 @@ config_ci = File.exists?(config_ci_path) ? YAML.load_file(config_ci_path) : {}
 # determine baseurl
 baseurl = baseurl_orig = config['baseurl'] || '' # original baseurl
 baseurl.chomp! '/'
-# TODO: merge with path code below
-if is_version
-  if branch == 'master'
-    baseurl += "/wip" # master => wip
-  else
-    baseurl += "/#{branch}"
-  end
-end
+baseurl += "/#{branch_dir}" if is_version
 
 # add some extra keys to secondary config
 config_ci['git_branch'] = branch
@@ -98,16 +94,10 @@ path = base_path = "_site"
 `rm -rf "#{base_path}"`
 
 # set path
-if is_version
-  if branch == 'master'
-    path += "/wip" # master => wip
-  else
-    path += "/#{branch}"
-  end
-end
+path += "/#{branch_dir}" if is_version
 
 # replace 'master' with 'wip' in version_branches list (for later)
-version_branches.map! { |x| x == 'master' ? 'wip' : x}
+version_branch_dirs = version_branches.map { |x| x == 'master' ? 'wip' : x}
 
 # # # # #
 # BUILD #
@@ -183,9 +173,9 @@ if is_stable
   # revert version branch directories so they don't get staged
   # NOTE: Watch out! This also has the effect of removing any versions that are
   # no longer listed in versions.branches
-  puts "Reverting version branch directories: #{version_branches.join(", ").magenta}"
-  version_branches.each do |branch|
-    co = `git checkout -q -- #{branch} 2>&1`.strip
+  puts "Reverting version branch directories: #{version_branch_dirs.join(", ").magenta}"
+  version_branch_dirs.each do |b|
+    co = `git checkout -q -- #{b} 2>&1`.strip
     puts co.cyan if not co.empty?
   end
 
@@ -201,8 +191,8 @@ if is_stable
   puts `git commit -m "Deploy #{sha}#{"+" if dirty}"`.cyan
 else
   # stage and commit (branch directory only)
-  `git add -A #{branch}`
-  # puts `git status -s #{branch}` # debug
+  `git add -A #{branch_dir}`
+  # puts `git status -s #{branch_dir}` # debug
   puts "Committing staged changes"
   puts `git commit -m "Deploy #{sha}#{"+" if dirty} (#{branch})"`.cyan
 end
