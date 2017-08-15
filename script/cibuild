@@ -48,7 +48,7 @@ is_stable = branch == stable_branch
 puts "The #{branch.underline} branch is the #{"stable branch".green}" if is_stable
 
 # is this a version branch? (stable can't also be a version branch!)
-is_version = version_branches.collect { |x| x.to_s }.include?(branch) && (not is_stable)
+is_version = version_branches.map { |x| x.to_s }.include?(branch) && (not is_stable)
 puts "The #{branch.underline} branch is a #{"version branch".green}" if is_version
 
 # abort if we're not on a recognised branch
@@ -75,7 +75,8 @@ config_ci = File.exists?(config_ci_path) ? YAML.load_file(config_ci_path) : {}
 # determine baseurl
 baseurl = baseurl_orig = config['baseurl'] || '' # original baseurl
 baseurl.chomp! '/'
-if not is_stable
+# TODO: merge with path code below
+if is_version
   if branch == 'master'
     baseurl += "/wip" # master => wip
   else
@@ -98,8 +99,15 @@ path = base_path = "_site"
 
 # set path
 if is_version
-  path += "/#{branch}"
+  if branch == 'master'
+    path += "/wip" # master => wip
+  else
+    path += "/#{branch}"
+  end
 end
+
+# replace 'master' with 'wip' in version_branches list (for later)
+version_branches.map! { |x| x == 'master' ? 'wip' : x}
 
 # # # # #
 # BUILD #
@@ -173,6 +181,8 @@ puts `git reset -q #{production}/#{deploy_branch}`.cyan
 
 if is_stable
   # revert version branch directories so they don't get staged
+  # NOTE: Watch out! This also has the effect of removing any versions that are
+  # no longer listed in versions.branches
   puts "Reverting version branch directories: #{version_branches.join(", ").magenta}"
   version_branches.each do |branch|
     co = `git checkout -q -- #{branch} 2>&1`.strip
