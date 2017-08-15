@@ -18,20 +18,22 @@
 {% endif %}
 
 <div class="version-banner">
-    {% if site.git_branch == "" %}.{% endif %} <!--caveman debugging, will remove -->
-    Hey, you're viewing the <strong>Rhino {{ site.git_branch | upcase }}</strong> version of this page!
-    {% if current_is_number and stable_is_number %}
-      {% if current < stable %}
-        <a href="{{site.baseurl_orig}}{{ page.url }}">View the <strong>Rhino {{ site.versions.stable | upcase }}</strong> version instead.</a>
-      {% endif %}
-      {% if current == stable %}
-        <a href="{{site.baseurl_orig}}/{{ current | minus: 1 }}/{{ page.url }}">Looking for the Rhino {{ current | minus: 1 }} version?</a>
-      {% endif %}
-      {% if current > stable %}
-        <a href="{{site.baseurl_orig}}{{ page.url }}">View the <strong>Rhino {{ site.versions.stable | upcase }}</strong> version instead.</a>
-      {% endif %}
+    {% if site.git_branch == "master" %}
+      Hey, you're viewing the <strong>Rhino WIP</strong> version of this page! <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
     {% else %}
-      <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
+      {% if current_is_number and stable_is_number %}
+        {% if current < stable %}
+          Hey, you're viewing the older <strong>Rhino {{ site.git_branch | upcase }}</strong> version of this page! <a href="{{site.baseurl_orig}}{{ page.url }}">View the <strong>Rhino {{ site.versions.stable | upcase }}</strong> version instead.</a>
+        {% endif %}
+        {% if current == stable %}
+          <strong>NEW:</strong> Welcome to the new <strong>Rhino {{ site.git_branch | upcase }}</strong> version of this page! <a href="{{site.baseurl_orig}}/{{ current | minus: 1 }}/{{ page.url }}">Looking for the older Rhino {{ current | minus: 1 }} version?</a>
+        {% endif %}
+        {% if current > stable %}
+          Hey, you're viewing the <strong>Rhino {{ site.git_branch | upcase }}</strong> version of this page! <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
+        {% endif %}
+      {% else %}
+        Hey, you're viewing the <strong>Rhino {{ site.git_branch | upcase }}</strong> version of this page! <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
+      {% endif %}
     {% endif %}
 </div>
 
@@ -50,4 +52,4 @@ $(document).ready(function()
     $aTag.attr("href", "/");
   });
 });
-</script>    
+</script>
