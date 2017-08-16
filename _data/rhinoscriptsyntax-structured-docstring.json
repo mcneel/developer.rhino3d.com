@@ -3281,16 +3281,16 @@
           "import rhinoscriptsyntax as rs",
           "getresult = rs.GetCurveObject()",
           "if getresult:",
-          "curve_id = getresult[0]",
-          "point0 = rs.GetPointOnCurve( curve_id )",
-          "if point0:",
-          "point1 = rs.GetPointOnCurve( curve_id )",
-          "if point1:",
-          "t0 = rs.CurveClosestPoint( curve_id, point0)",
-          "t1 = rs.CurveClosestPoint( curve_id, point1)",
-          "rs.AddSubCrv( curve_id, t0, t1 )"
+          "    curve_id = getresult[0]",
+          "    point0 = rs.GetPointOnCurve( curve_id )",
+          "    if point0:",
+          "        point1 = rs.GetPointOnCurve( curve_id )",
+          "        if point1:",
+          "            t0 = rs.CurveClosestPoint( curve_id, point0)",
+          "            t1 = rs.CurveClosestPoint( curve_id, point1)",
+          "            rs.AddSubCrv( curve_id, t0, t1 )"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\ngetresult = rs.GetCurveObject()\r\nif getresult:\r\ncurve_id = getresult[0]\r\npoint0 = rs.GetPointOnCurve( curve_id )\r\nif point0:\r\npoint1 = rs.GetPointOnCurve( curve_id )\r\nif point1:\r\nt0 = rs.CurveClosestPoint( curve_id, point0)\r\nt1 = rs.CurveClosestPoint( curve_id, point1)\r\nrs.AddSubCrv( curve_id, t0, t1 )",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\ngetresult = rs.GetCurveObject()\r\nif getresult:\r\n    curve_id = getresult[0]\r\n    point0 = rs.GetPointOnCurve( curve_id )\r\n    if point0:\r\n        point1 = rs.GetPointOnCurve( curve_id )\r\n        if point1:\r\n            t0 = rs.CurveClosestPoint( curve_id, point0)\r\n            t1 = rs.CurveClosestPoint( curve_id, point1)\r\n            rs.AddSubCrv( curve_id, t0, t1 )",
         "SeeAlso": [
           {
             "ModuleName": "curve",
@@ -3305,7 +3305,7 @@
             "FunctionName": "GetPointOnCurve"
           }
         ],
-        "DocString": "    \"\"\"Add a curve object based on a portion, or interval of an existing curve\r\n    object. Similar in operation to Rhino's SubCrv command\r\n    Parameters:\r\n      curve_id (guid): identifier of a closed planar curve object\r\n      param0, param1 (number): first and second parameters on the source curve\r\n    Returns:\r\n      guid: id of the new curve object if successful\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      getresult = rs.GetCurveObject()\r\n      if getresult:\r\n      curve_id = getresult[0]\r\n      point0 = rs.GetPointOnCurve( curve_id )\r\n      if point0:\r\n      point1 = rs.GetPointOnCurve( curve_id )\r\n      if point1:\r\n      t0 = rs.CurveClosestPoint( curve_id, point0)\r\n      t1 = rs.CurveClosestPoint( curve_id, point1)\r\n      rs.AddSubCrv( curve_id, t0, t1 )\r\n    See Also:\r\n      CurveClosestPoint\r\n      GetCurveObject\r\n      GetPointOnCurve\r\n    \"\"\"",
+        "DocString": "    \"\"\"Add a curve object based on a portion, or interval of an existing curve\r\n    object. Similar in operation to Rhino's SubCrv command\r\n    Parameters:\r\n      curve_id (guid): identifier of a closed planar curve object\r\n      param0, param1 (number): first and second parameters on the source curve\r\n    Returns:\r\n      guid: id of the new curve object if successful\r\n    Example:\r\n\r\nimport rhinoscriptsyntax as rs\r\ngetresult = rs.GetCurveObject()\r\nif getresult:\r\n    curve_id = getresult[0]\r\n    point0 = rs.GetPointOnCurve( curve_id )\r\n    if point0:\r\n        point1 = rs.GetPointOnCurve( curve_id )\r\n        if point1:\r\n            t0 = rs.CurveClosestPoint( curve_id, point0)\r\n            t1 = rs.CurveClosestPoint( curve_id, point1)\r\n            rs.AddSubCrv( curve_id, t0, t1 )\r\n\r\n    See Also:\r\n      CurveClosestPoint\r\n      GetCurveObject\r\n      GetPointOnCurve\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -3817,10 +3817,10 @@
         "ModuleName": "curve",
         "Name": "CurveBooleanDifference",
         "Arguments": [],
-        "Signature": "CurveBooleanDifference(curve_id_0, curve_id_1)",
+        "Signature": "CurveBooleanDifference(curve_id_0, curve_id_1, tolerance=None)",
         "Description": "Calculates the difference between two closed, planar curves and\r\n    adds the results to the document. Note, curves must be coplanar.",
         "HasArguments": true,
-        "ArgumentDesc": "curve_id_0 (guid): identifier of the first curve object.\r\ncurve_id_1 (guid): identifier of the second curve object.",
+        "ArgumentDesc": "curve_id_0 (guid): identifier of the first curve object.\r\ncurve_id_1 (guid): identifier of the second curve object.\r\ntolerance (float, optional): a positive tolerance value, or None for the doc default.",
         "Returns": "list(guid, ...): The identifiers of the new objects if successful, None on error.",
         "Example": [
           "import rhinoscriptsyntax as rs",
@@ -3842,7 +3842,7 @@
             "FunctionName": "CurveBooleanUnion"
           }
         ],
-        "DocString": "    \"\"\"Calculates the difference between two closed, planar curves and\r\n    adds the results to the document. Note, curves must be coplanar.\r\n    Parameters:\r\n      curve_id_0 (guid): identifier of the first curve object.\r\n      curve_id_1 (guid): identifier of the second curve object.\r\n    Returns:\r\n      list(guid, ...): The identifiers of the new objects if successful, None on error.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      curveA = rs.GetObject(\"Select first curve\", rs.filter.curve)\r\n      curveB = rs.GetObject(\"Select second curve\", rs.filter.curve)\r\n      arrResult = rs.CurveBooleanDifference(curveA, curveB)\r\n      if arrResult:\r\n      rs.DeleteObject( curveA )\r\n      rs.DeleteObject( curveB )\r\n    See Also:\r\n      CurveBooleanIntersection\r\n      CurveBooleanUnion\r\n    \"\"\"",
+        "DocString": "    \"\"\"Calculates the difference between two closed, planar curves and\r\n    adds the results to the document. Note, curves must be coplanar.\r\n    Parameters:\r\n      curve_id_0 (guid): identifier of the first curve object.\r\n      curve_id_1 (guid): identifier of the second curve object.\r\n      tolerance (float, optional): a positive tolerance value, or None for the doc default.\r\n    Returns:\r\n      list(guid, ...): The identifiers of the new objects if successful, None on error.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      curveA = rs.GetObject(\"Select first curve\", rs.filter.curve)\r\n      curveB = rs.GetObject(\"Select second curve\", rs.filter.curve)\r\n      arrResult = rs.CurveBooleanDifference(curveA, curveB)\r\n      if arrResult:\r\n      rs.DeleteObject( curveA )\r\n      rs.DeleteObject( curveB )\r\n    See Also:\r\n      CurveBooleanIntersection\r\n      CurveBooleanUnion\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -3850,10 +3850,10 @@
         "ModuleName": "curve",
         "Name": "CurveBooleanIntersection",
         "Arguments": [],
-        "Signature": "CurveBooleanIntersection(curve_id_0, curve_id_1)",
+        "Signature": "CurveBooleanIntersection(curve_id_0, curve_id_1, tolerance=None)",
         "Description": "Calculates the intersection of two closed, planar curves and adds\r\n    the results to the document. Note, curves must be coplanar.",
         "HasArguments": true,
-        "ArgumentDesc": "curve_id_0 (guid): identifier of the first curve object.\r\ncurve_id_1 (guid): identifier of the second curve object.",
+        "ArgumentDesc": "curve_id_0 (guid): identifier of the first curve object.\r\ncurve_id_1 (guid): identifier of the second curve object.\r\ntolerance (float, optional): a positive tolerance value, or None for the doc default.",
         "Returns": "list(guid, ...): The identifiers of the new objects.",
         "Example": [
           "import rhinoscriptsyntax as rs",
@@ -3875,7 +3875,7 @@
             "FunctionName": "CurveBooleanUnion"
           }
         ],
-        "DocString": "    \"\"\"Calculates the intersection of two closed, planar curves and adds\r\n    the results to the document. Note, curves must be coplanar.\r\n    Parameters:\r\n      curve_id_0 (guid): identifier of the first curve object.\r\n      curve_id_1 (guid): identifier of the second curve object.\r\n    Returns:\r\n      list(guid, ...): The identifiers of the new objects.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      curveA = rs.GetObject(\"Select first curve\", rs.filter.curve)\r\n      curveB = rs.GetObject(\"Select second curve\", rs.filter.curve)\r\n      result = rs.CurveBooleanIntersection(curveA, curveB)\r\n      if result:\r\n      rs.DeleteObject( curveA )\r\n      rs.DeleteObject( curveB )\r\n    See Also:\r\n      CurveBooleanDifference\r\n      CurveBooleanUnion\r\n    \"\"\"",
+        "DocString": "    \"\"\"Calculates the intersection of two closed, planar curves and adds\r\n    the results to the document. Note, curves must be coplanar.\r\n    Parameters:\r\n      curve_id_0 (guid): identifier of the first curve object.\r\n      curve_id_1 (guid): identifier of the second curve object.\r\n      tolerance (float, optional): a positive tolerance value, or None for the doc default.\r\n    Returns:\r\n      list(guid, ...): The identifiers of the new objects.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      curveA = rs.GetObject(\"Select first curve\", rs.filter.curve)\r\n      curveB = rs.GetObject(\"Select second curve\", rs.filter.curve)\r\n      result = rs.CurveBooleanIntersection(curveA, curveB)\r\n      if result:\r\n      rs.DeleteObject( curveA )\r\n      rs.DeleteObject( curveB )\r\n    See Also:\r\n      CurveBooleanDifference\r\n      CurveBooleanUnion\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -3883,10 +3883,10 @@
         "ModuleName": "curve",
         "Name": "CurveBooleanUnion",
         "Arguments": [],
-        "Signature": "CurveBooleanUnion(curve_id)",
+        "Signature": "CurveBooleanUnion(curve_id, tolerance=None)",
         "Description": "Calculate the union of two or more closed, planar curves and\r\n    add the results to the document. Note, curves must be coplanar.",
         "HasArguments": true,
-        "ArgumentDesc": "curve_id ([guid, guid, ...])list of two or more close planar curves identifiers",
+        "ArgumentDesc": "curve_id ([guid, guid, ...])list of two or more close planar curves identifiers\r\ntolerance (float, optional): a positive tolerance value, or None for the doc default.",
         "Returns": "list(guid, ...): The identifiers of the new objects.",
         "Example": [
           "import rhinoscriptsyntax as rs",
@@ -3906,7 +3906,7 @@
             "FunctionName": "CurveBooleanIntersection"
           }
         ],
-        "DocString": "    \"\"\"Calculate the union of two or more closed, planar curves and\r\n    add the results to the document. Note, curves must be coplanar.\r\n    Parameters:\r\n      curve_id ([guid, guid, ...])list of two or more close planar curves identifiers\r\n    Returns:\r\n      list(guid, ...): The identifiers of the new objects.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      curve_ids = rs.GetObjects(\"Select curves to union\", rs.filter.curve)\r\n      if curve_ids and len(curve_ids)>1:\r\n      result = rs.CurveBooleanUnion(curve_ids)\r\n      if result: rs.DeleteObjects(curve_ids)\r\n    See Also:\r\n      CurveBooleanDifference\r\n      CurveBooleanIntersection\r\n    \"\"\"",
+        "DocString": "    \"\"\"Calculate the union of two or more closed, planar curves and\r\n    add the results to the document. Note, curves must be coplanar.\r\n    Parameters:\r\n      curve_id ([guid, guid, ...])list of two or more close planar curves identifiers\r\n      tolerance (float, optional): a positive tolerance value, or None for the doc default.\r\n    Returns:\r\n      list(guid, ...): The identifiers of the new objects.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      curve_ids = rs.GetObjects(\"Select curves to union\", rs.filter.curve)\r\n      if curve_ids and len(curve_ids)>1:\r\n      result = rs.CurveBooleanUnion(curve_ids)\r\n      if result: rs.DeleteObjects(curve_ids)\r\n    See Also:\r\n      CurveBooleanDifference\r\n      CurveBooleanIntersection\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -6412,6 +6412,35 @@
       },
       {
         "ModuleName": "curve",
+        "Name": "RemoveCurveKnot",
+        "Arguments": [],
+        "Signature": "RemoveCurveKnot(curve, parameter)",
+        "Description": "Deletes a knot from a curve object.",
+        "HasArguments": true,
+        "ArgumentDesc": "curve (guid): The reference of the source object\r\nparameter (number): The parameter on the curve. Note, if the parameter is not equal to one\r\n                of the existing knots, then the knot closest to the specified parameter\r\n                will be removed.",
+        "Returns": "bool: True of False indicating success or failure",
+        "Example": [
+          "import rhinoscriptsyntax as rs",
+          "",
+          "crv_info = rs.GetCurveObject(\"Select curve near knot to be removed\")",
+          "if crv_info:",
+          "    crv_id = crv_info[0]",
+          "    crv_param = crv_info[4]",
+          "    rs.RemoveCurveKnot(crv_id, crv_param)"
+        ],
+        "ExampleString": "import rhinoscriptsyntax as rs\r\n\r\ncrv_info = rs.GetCurveObject(\"Select curve near knot to be removed\")\r\nif crv_info:\r\n    crv_id = crv_info[0]\r\n    crv_param = crv_info[4]\r\n    rs.RemoveCurveKnot(crv_id, crv_param)",
+        "SeeAlso": [
+          {
+            "ModuleName": "surface",
+            "FunctionName": "RemoveSurfaceKnot"
+          }
+        ],
+        "DocString": "    \"\"\"Deletes a knot from a curve object.\r\n    Parameters:\r\n      curve (guid): The reference of the source object\r\n      parameter (number): The parameter on the curve. Note, if the parameter is not equal to one\r\n                      of the existing knots, then the knot closest to the specified parameter\r\n                      will be removed.\r\n    Returns:\r\n      bool: True of False indicating success or failure\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n\r\n      crv_info = rs.GetCurveObject(\"Select curve near knot to be removed\")\r\n      if crv_info:\r\n          crv_id = crv_info[0]\r\n          crv_param = crv_info[4]\r\n          rs.RemoveCurveKnot(crv_id, crv_param)\r\n    See Also:\r\n      RemoveSurfaceKnot\r\n    \"\"\"",
+        "SuccessLevel": 6,
+        "IsDocStringWellFormed": true
+      },
+      {
+        "ModuleName": "curve",
         "Name": "ReverseCurve",
         "Arguments": [],
         "Signature": "ReverseCurve(curve_id)",
@@ -6540,7 +6569,7 @@
             "FunctionName": "CurveDegree"
           }
         ],
-        "DocString": "  \"\"\"Changes the degree of a curve object. For more information see the Rhino help file for the ChangeDegree command.\r\n  Parameters:\r\n    object_id (guid): the object's identifier.\r\n    degree (number): the new degree.\r\n  Returns:\r\n    bool: True of False indicating success or failure.\r\n    None: on failure\r\n  Example:\r\n    \r\n  See Also:\r\n    IsCurve\r\n    CurveDegree\r\n  \"\"\" ",
+        "DocString": "    \"\"\"Changes the degree of a curve object. For more information see the Rhino help file for the ChangeDegree command.\r\n      Parameters:\r\n        object_id (guid): the object's identifier.\r\n        degree (number): the new degree.\r\n      Returns:\r\n        bool: True of False indicating success or failure.\r\n        None: on failure\r\n      Example:\r\n    \r\n      See Also:\r\n        IsCurve\r\n        CurveDegree\r\n    \"\"\" ",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -6551,7 +6580,7 @@
         "Signature": "AddTweenCurves(from_curve_id, to_curve_id, number_of_curves = 1, method = 0, sample_number = 10)",
         "Description": "Creates curves between two open or closed input curves.",
         "HasArguments": true,
-        "ArgumentDesc": "from_curve_id (guid): identifier of the first curve object.\r\nto_curve_id (guid): identifier of the second curve object.\r\nnumber_of_curves (number): The number of curves to create. The default is 1.\r\nmethod (number): The method for refining the output curves, where:\r\n  0: (Default) Uses the control points of the curves for matching. So the first control point of first curve is matched to first control point of the second curve.\r\n  1: Refits the output curves like using the FitCurve method.  Both the input curve and the output curve will have the same structure. The resulting curves are usually more complex than input unless input curves are compatible.\r\n  2: Input curves are divided to the specified number of points on the curve, corresponding points define new points that output curves go through. If you are making one tween curve, the method essentially does the following: divides the two curves into an equal number of points, finds the midpoint between the corresponding points on the curves. and interpolates the tween curve through those points.\r\nsample_number (number): The number of samples points to is intMethod = 2. The default is 10.",
+        "ArgumentDesc": "from_curve_id (guid): identifier of the first curve object.\r\nto_curve_id (guid): identifier of the second curve object.\r\nnumber_of_curves (number): The number of curves to create. The default is 1.\r\nmethod (number): The method for refining the output curves, where:\r\n  0: (Default) Uses the control points of the curves for matching. So the first control point of first curve is matched to first control point of the second curve.\r\n  1: Refits the output curves like using the FitCurve method.  Both the input curve and the output curve will have the same structure. The resulting curves are usually more complex than input unless input curves are compatible.\r\n  2: Input curves are divided to the specified number of points on the curve, corresponding points define new points that output curves go through. If you are making one tween curve, the method essentially does the following: divides the two curves into an equal number of points, finds the midpoint between the corresponding points on the curves, and interpolates the tween curve through those points.\r\nsample_number (number): The number of samples points to use if method is 2. The default is 10.",
         "Returns": "list(guid, ...): The identifiers of the new tween objects if successful, None on error.",
         "Example": [
           "import rhinoscriptsyntax as rs",
@@ -6561,7 +6590,7 @@
         ],
         "ExampleString": "import rhinoscriptsyntax as rs\r\ncurveA = rs.GetObject(\"Select first curve\", rs.filter.curve)\r\ncurveB = rs.GetObject(\"Select second curve\", rs.filter.curve)\r\narrResult = rs.AddTweenCurves(curveA, curveB, 6, 2, 30)",
         "SeeAlso": [],
-        "DocString": "  \"\"\"Creates curves between two open or closed input curves.\r\n  Parameters:\r\n    from_curve_id (guid): identifier of the first curve object.\r\n    to_curve_id (guid): identifier of the second curve object.\r\n    number_of_curves (number): The number of curves to create. The default is 1.\r\n    method (number): The method for refining the output curves, where:\r\n      0: (Default) Uses the control points of the curves for matching. So the first control point of first curve is matched to first control point of the second curve.\r\n      1: Refits the output curves like using the FitCurve method.  Both the input curve and the output curve will have the same structure. The resulting curves are usually more complex than input unless input curves are compatible.\r\n      2: Input curves are divided to the specified number of points on the curve, corresponding points define new points that output curves go through. If you are making one tween curve, the method essentially does the following: divides the two curves into an equal number of points, finds the midpoint between the corresponding points on the curves. and interpolates the tween curve through those points.\r\n    sample_number (number): The number of samples points to is intMethod = 2. The default is 10.\r\n  Returns:\r\n    list(guid, ...): The identifiers of the new tween objects if successful, None on error.\r\n  Example:\r\n    import rhinoscriptsyntax as rs\r\n    curveA = rs.GetObject(\"Select first curve\", rs.filter.curve)\r\n    curveB = rs.GetObject(\"Select second curve\", rs.filter.curve)\r\n    arrResult = rs.AddTweenCurves(curveA, curveB, 6, 2, 30)\r\n  \"\"\"",
+        "DocString": "    \"\"\"Creates curves between two open or closed input curves.\r\n    Parameters:\r\n      from_curve_id (guid): identifier of the first curve object.\r\n      to_curve_id (guid): identifier of the second curve object.\r\n      number_of_curves (number): The number of curves to create. The default is 1.\r\n      method (number): The method for refining the output curves, where:\r\n        0: (Default) Uses the control points of the curves for matching. So the first control point of first curve is matched to first control point of the second curve.\r\n        1: Refits the output curves like using the FitCurve method.  Both the input curve and the output curve will have the same structure. The resulting curves are usually more complex than input unless input curves are compatible.\r\n        2: Input curves are divided to the specified number of points on the curve, corresponding points define new points that output curves go through. If you are making one tween curve, the method essentially does the following: divides the two curves into an equal number of points, finds the midpoint between the corresponding points on the curves, and interpolates the tween curve through those points.\r\n      sample_number (number): The number of samples points to use if method is 2. The default is 10.\r\n    Returns:\r\n      list(guid, ...): The identifiers of the new tween objects if successful, None on error.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      curveA = rs.GetObject(\"Select first curve\", rs.filter.curve)\r\n      curveB = rs.GetObject(\"Select second curve\", rs.filter.curve)\r\n      arrResult = rs.AddTweenCurves(curveA, curveB, 6, 2, 30)\r\n    \"\"\"",
         "SuccessLevel": 5,
         "IsDocStringWellFormed": true
       }
@@ -11104,10 +11133,10 @@
         "ModuleName": "hatch",
         "Name": "AddHatches",
         "Arguments": [],
-        "Signature": "AddHatches(curve_ids, hatch_pattern=None, scale=1.0, rotation=0.0)",
+        "Signature": "AddHatches(curve_ids, hatch_pattern=None, scale=1.0, rotation=0.0, tolerance=None)",
         "Description": "Creates one or more new hatch objects a list of closed planar curves",
         "HasArguments": true,
-        "ArgumentDesc": "curve_ids ([guid, ...]): identifiers of the closed planar curves that defines the\r\n    boundary of the hatch objects\r\nhatch_pattern (str, optional):  name of the hatch pattern to be used by the hatch\r\n    object. If omitted, the current hatch pattern will be used\r\nscale (number, optional): hatch pattern scale factor\r\nrotation (number, optional): hatch pattern rotation angle in degrees.",
+        "ArgumentDesc": "curve_ids ([guid, ...]): identifiers of the closed planar curves that defines the\r\n    boundary of the hatch objects\r\nhatch_pattern (str, optional):  name of the hatch pattern to be used by the hatch\r\n    object. If omitted, the current hatch pattern will be used\r\nscale (number, optional): hatch pattern scale factor\r\nrotation (number, optional): hatch pattern rotation angle in degrees.\r\ntolerance (number, optional): tolerance for hatch fills.",
         "Returns": "list(guid, ...): identifiers of the newly created hatch on success\r\nNone: on error",
         "Example": [
           "import rhinoscriptsyntax as rs",
@@ -11133,7 +11162,7 @@
             "FunctionName": "HatchPatternNames"
           }
         ],
-        "DocString": "    \"\"\"Creates one or more new hatch objects a list of closed planar curves\r\n    Parameters:\r\n      curve_ids ([guid, ...]): identifiers of the closed planar curves that defines the\r\n          boundary of the hatch objects\r\n      hatch_pattern (str, optional):  name of the hatch pattern to be used by the hatch\r\n          object. If omitted, the current hatch pattern will be used\r\n      scale (number, optional): hatch pattern scale factor\r\n      rotation (number, optional): hatch pattern rotation angle in degrees.\r\n    Returns:\r\n      list(guid, ...): identifiers of the newly created hatch on success\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      curves = rs.GetObjects(\"Select closed planar curves\", rs.filter.curve)\r\n      if curves:\r\n      if rs.IsHatchPattern(\"Grid\"):\r\n      rs.AddHatches( curves, \"Grid\" )\r\n      else:\r\n      rs.AddHatches( curves, rs.CurrentHatchPattern() )\r\n    See Also:\r\n      AddHatch\r\n      CurrentHatchPattern\r\n      HatchPatternNames\r\n    \"\"\"",
+        "DocString": "    \"\"\"Creates one or more new hatch objects a list of closed planar curves\r\n    Parameters:\r\n      curve_ids ([guid, ...]): identifiers of the closed planar curves that defines the\r\n          boundary of the hatch objects\r\n      hatch_pattern (str, optional):  name of the hatch pattern to be used by the hatch\r\n          object. If omitted, the current hatch pattern will be used\r\n      scale (number, optional): hatch pattern scale factor\r\n      rotation (number, optional): hatch pattern rotation angle in degrees.\r\n      tolerance (number, optional): tolerance for hatch fills.\r\n    Returns:\r\n      list(guid, ...): identifiers of the newly created hatch on success\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      curves = rs.GetObjects(\"Select closed planar curves\", rs.filter.curve)\r\n      if curves:\r\n      if rs.IsHatchPattern(\"Grid\"):\r\n      rs.AddHatches( curves, \"Grid\" )\r\n      else:\r\n      rs.AddHatches( curves, rs.CurrentHatchPattern() )\r\n    See Also:\r\n      AddHatch\r\n      CurrentHatchPattern\r\n      HatchPatternNames\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -12523,7 +12552,7 @@
         "Description": "Returns the identifier of a layer given the layer's name.",
         "HasArguments": true,
         "ArgumentDesc": "layer (str): name of existing layer",
-        "Returns": "guid: The layer's identifier if successful.\r\nNone: If not successful, or on error.",
+        "Returns": "guid (str): The layer's identifier if successful.\r\nNone: If not successful, or on error.",
         "Example": [
           "import rhinoscriptsyntax as  rs",
           "id = rs.LayerId('Layer 01')"
@@ -12535,7 +12564,7 @@
             "FunctionName": "LayerName"
           }
         ],
-        "DocString": "    \"\"\"Returns the identifier of a layer given the layer's name.\r\n    Parameters:\r\n      layer (str): name of existing layer\r\n    Returns:\r\n      guid: The layer's identifier if successful.\r\n      None: If not successful, or on error.\r\n    Example:\r\n      import rhinoscriptsyntax as  rs\r\n      id = rs.LayerId('Layer 01')\r\n    See Also:\r\n      LayerName\r\n    \"\"\"",
+        "DocString": "    \"\"\"Returns the identifier of a layer given the layer's name.\r\n    Parameters:\r\n      layer (str): name of existing layer\r\n    Returns:\r\n      guid (str): The layer's identifier if successful.\r\n      None: If not successful, or on error.\r\n    Example:\r\n      import rhinoscriptsyntax as  rs\r\n      id = rs.LayerId('Layer 01')\r\n    See Also:\r\n      LayerName\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -15244,10 +15273,10 @@
         "ModuleName": "mesh",
         "Name": "MeshBooleanDifference",
         "Arguments": [],
-        "Signature": "MeshBooleanDifference(input0, input1, delete_input=True)",
+        "Signature": "MeshBooleanDifference(input0, input1, delete_input=True, tolerance=None)",
         "Description": "Performs boolean difference operation on two sets of input meshes",
         "HasArguments": true,
-        "ArgumentDesc": "input0, input1 (guid): identifiers of meshes\r\ndelete_input (bool, optional): delete the input meshes",
+        "ArgumentDesc": "input0, input1 (guid): identifiers of meshes\r\ndelete_input (bool, optional): delete the input meshes\r\ntolerance (float, optional): a positive tolerance value, or None to use the default of the document.",
         "Returns": "list(guid, ...): identifiers of newly created meshes",
         "Example": [
           "import rhinoscriptsyntax as rs",
@@ -15271,7 +15300,7 @@
             "FunctionName": "MeshBooleanUnion"
           }
         ],
-        "DocString": "    \"\"\"Performs boolean difference operation on two sets of input meshes\r\n    Parameters:\r\n      input0, input1 (guid): identifiers of meshes\r\n      delete_input (bool, optional): delete the input meshes\r\n    Returns:\r\n      list(guid, ...): identifiers of newly created meshes\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      input0 = rs.GetObjects(\"Select first set of meshes\", rs.filter.mesh)\r\n      if input0:\r\n      input1 = rs.GetObjects(\"Select second set of meshes\", rs.filter.mesh)\r\n      if input1: rs.MeshBooleanDifference(input0, input1)\r\n    See Also:\r\n      MeshBooleanIntersection\r\n      MeshBooleanSplit\r\n      MeshBooleanUnion\r\n    \"\"\"",
+        "DocString": "    \"\"\"Performs boolean difference operation on two sets of input meshes\r\n    Parameters:\r\n      input0, input1 (guid): identifiers of meshes\r\n      delete_input (bool, optional): delete the input meshes\r\n      tolerance (float, optional): a positive tolerance value, or None to use the default of the document.\r\n    Returns:\r\n      list(guid, ...): identifiers of newly created meshes\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      input0 = rs.GetObjects(\"Select first set of meshes\", rs.filter.mesh)\r\n      if input0:\r\n      input1 = rs.GetObjects(\"Select second set of meshes\", rs.filter.mesh)\r\n      if input1: rs.MeshBooleanDifference(input0, input1)\r\n    See Also:\r\n      MeshBooleanIntersection\r\n      MeshBooleanSplit\r\n      MeshBooleanUnion\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -16977,19 +17006,19 @@
         "Name": "IsObjectSelected",
         "Arguments": [],
         "Signature": "IsObjectSelected(object_id)",
-        "Description": "Verifies that an object is currently selected",
+        "Description": "Verifies that an object is currently selected.",
         "HasArguments": true,
         "ArgumentDesc": "object_id (guid): The identifier of an object to test",
-        "Returns": "bool: True if the object is selected\r\nbool: False if the object is not selected",
+        "Returns": "int: 0, the object is not selected\r\nint: 1, the object is selected\r\nint: 2, the object is entirely persistently selected\r\nint: 3, one or more proper sub-objects are selected",
         "Example": [
           "import rhinocsriptsyntax as rs",
-          "# Do something here...",
+          "object = rs.GetObject()",
           "if rs.IsObjectSelected(object):",
-          "print \"The object is selected.\"",
+          "  print \"The object is selected.\"",
           "else:",
-          "print \"The object is not selected.\""
+          "  print \"The object is not selected.\""
         ],
-        "ExampleString": "import rhinocsriptsyntax as rs\r\n# Do something here...\r\nif rs.IsObjectSelected(object):\r\nprint \"The object is selected.\"\r\nelse:\r\nprint \"The object is not selected.\"",
+        "ExampleString": "import rhinocsriptsyntax as rs\r\nobject = rs.GetObject()\r\nif rs.IsObjectSelected(object):\r\n  print \"The object is selected.\"\r\nelse:\r\n  print \"The object is not selected.\"",
         "SeeAlso": [
           {
             "ModuleName": "object",
@@ -17024,7 +17053,7 @@
             "FunctionName": "IsObjectSolid"
           }
         ],
-        "DocString": "    \"\"\"Verifies that an object is currently selected\r\n    Parameters:\r\n      object_id (guid): The identifier of an object to test\r\n    Returns:\r\n      bool: True if the object is selected\r\n      bool: False if the object is not selected\r\n    Example:\r\n      import rhinocsriptsyntax as rs\r\n      # Do something here...\r\n      if rs.IsObjectSelected(object):\r\n      print \"The object is selected.\"\r\n      else:\r\n      print \"The object is not selected.\"\r\n    See Also:\r\n      IsObject\r\n      IsObjectHidden\r\n      IsObjectInGroup\r\n      IsObjectLocked\r\n      IsObjectNormal\r\n      IsObjectReference\r\n      IsObjectSelectable\r\n      IsObjectSolid\r\n    \"\"\"",
+        "DocString": "    \"\"\"Verifies that an object is currently selected.\r\n    Parameters:\r\n      object_id (guid): The identifier of an object to test\r\n    Returns:\r\n      int: 0, the object is not selected\r\n      int: 1, the object is selected\r\n      int: 2, the object is entirely persistently selected\r\n      int: 3, one or more proper sub-objects are selected\r\n    Example:\r\n      import rhinocsriptsyntax as rs\r\n      object = rs.GetObject()\r\n      if rs.IsObjectSelected(object):\r\n        print \"The object is selected.\"\r\n      else:\r\n        print \"The object is not selected.\"\r\n    See Also:\r\n      IsObject\r\n      IsObjectHidden\r\n      IsObjectInGroup\r\n      IsObjectLocked\r\n      IsObjectNormal\r\n      IsObjectReference\r\n      IsObjectSelectable\r\n      IsObjectSolid\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -20460,7 +20489,7 @@
         "ModuleName": "selection",
         "Name": "GetPointCoordinates",
         "Arguments": [],
-        "Signature": "GetPointCoordinates(message=\"select points\", preselect=False)",
+        "Signature": "GetPointCoordinates(message=\"Select points\", preselect=False)",
         "Description": "Prompts the user to select one or more point objects.",
         "HasArguments": true,
         "ArgumentDesc": "message (str, optional): a prompt message.\r\npreselect (bool, optional): Allow for the selection of pre-selected objects.  If omitted (False), pre-selected objects are not accepted.",
@@ -20501,7 +20530,7 @@
         "ModuleName": "selection",
         "Name": "GetSurfaceObject",
         "Arguments": [],
-        "Signature": "GetSurfaceObject(message=\"select surface\", preselect=False, select=False)",
+        "Signature": "GetSurfaceObject(message=\"Select surface\", preselect=False, select=False)",
         "Description": "Prompts the user to select a single surface",
         "HasArguments": true,
         "ArgumentDesc": "message(str, optional): prompt displayed\r\npreselect (bool, optional): allow for preselected objects\r\nselect (bool, optional):  select the picked object",
@@ -21596,6 +21625,42 @@
           }
         ],
         "DocString": "    \"\"\"Adds a surface created through profile curves that define the surface\r\n    shape and two curves that defines a surface edge.\r\n    Parameters:\r\n      rails ([guid, guid]): identifiers of the two rail curve\r\n      shapes ([guid, ...]): one or more cross section shape curves\r\n      closed (bool, optional): If True, then create a closed surface\r\n    Returns:\r\n      list(guid, ...): of new surface objects if successful\r\n      None: if not successful, or on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      rails = rs.GetObjects(\"Select two rail curve\", rs.filter.curve)\r\n      if rails and len(rails)==2:\r\n      shapes = rs.GetObjects(\"Select cross-section curves\", rs.filter.curve)\r\n    See Also:\r\n      AddSweep1\r\n      CurveDirectionsMatch\r\n      ReverseCurve\r\n    \"\"\"",
+        "SuccessLevel": 6,
+        "IsDocStringWellFormed": true
+      },
+      {
+        "ModuleName": "surface",
+        "Name": "AddRailRevSrf",
+        "Arguments": [],
+        "Signature": "AddRailRevSrf(profile, rail, axis, scale_height=False)",
+        "Description": "Adds a surface created through profile curves that define the surface\r\n    shape and two curves that defines a surface edge.",
+        "HasArguments": true,
+        "ArgumentDesc": "profile (guid): identifier of the profile curve\r\nrail (guid): identifier of the rail curve\r\naxis ([point, point]): A list of two 3-D points identifying the start point and end point of the rail revolve axis, or a Line\r\nscale_height (bool, optional): If True, surface will be locally scaled. Defaults to False",
+        "Returns": "guid: identifier of the new object if successful\r\nNone: if not successful, or on error",
+        "Example": [
+          "import rhinoscriptsyntax as rs",
+          "profile = rs.GetObject(\"Select a profile\", rs.filter.curve)",
+          "if profile:",
+          "  rail = rs.GetObject(\"Select a rail\", rs.filter.curve)",
+          "  if rail:",
+          "    rs.AddRailRevSrf(profile, rail, ((0,0,0),(0,0,1)))"
+        ],
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nprofile = rs.GetObject(\"Select a profile\", rs.filter.curve)\r\nif profile:\r\n  rail = rs.GetObject(\"Select a rail\", rs.filter.curve)\r\n  if rail:\r\n    rs.AddRailRevSrf(profile, rail, ((0,0,0),(0,0,1)))",
+        "SeeAlso": [
+          {
+            "ModuleName": "surface",
+            "FunctionName": "AddSweep1"
+          },
+          {
+            "ModuleName": "curve",
+            "FunctionName": "CurveDirectionsMatch"
+          },
+          {
+            "ModuleName": "curve",
+            "FunctionName": "ReverseCurve"
+          }
+        ],
+        "DocString": "    \"\"\"Adds a surface created through profile curves that define the surface\r\n    shape and two curves that defines a surface edge.\r\n    Parameters:\r\n      profile (guid): identifier of the profile curve\r\n      rail (guid): identifier of the rail curve\r\n      axis ([point, point]): A list of two 3-D points identifying the start point and end point of the rail revolve axis, or a Line\r\n      scale_height (bool, optional): If True, surface will be locally scaled. Defaults to False\r\n    Returns:\r\n      guid: identifier of the new object if successful\r\n      None: if not successful, or on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      profile = rs.GetObject(\"Select a profile\", rs.filter.curve)\r\n      if profile:\r\n        rail = rs.GetObject(\"Select a rail\", rs.filter.curve)\r\n        if rail:\r\n          rs.AddRailRevSrf(profile, rail, ((0,0,0),(0,0,1)))\r\n    See Also:\r\n      AddSweep1\r\n      CurveDirectionsMatch\r\n      ReverseCurve\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -22914,6 +22979,34 @@
       },
       {
         "ModuleName": "surface",
+        "Name": "SurfaceSphere",
+        "Arguments": [],
+        "Signature": "SurfaceSphere(surface_id)",
+        "Description": "Gets the sphere definition from a surface, if possible.",
+        "HasArguments": true,
+        "ArgumentDesc": "surface_id (guid): the identifier of the surface object",
+        "Returns": "(plane, number): The equatorial plane of the sphere, and its radius.\r\nNone: on error",
+        "Example": [
+          "import rhinoscriptsyntax as rs",
+          "surface = rs.GetObject(\"Select a surface\", rs.filter.surface)",
+          "if surface:",
+          "  result = rs.SurfaceSphere(surface)",
+          "  if result:",
+          "    print(\"The sphere radius is: \" + str(result[1]))"
+        ],
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nsurface = rs.GetObject(\"Select a surface\", rs.filter.surface)\r\nif surface:\r\n  result = rs.SurfaceSphere(surface)\r\n  if result:\r\n    print(\"The sphere radius is: \" + str(result[1]))",
+        "SeeAlso": [
+          {
+            "ModuleName": "surface",
+            "FunctionName": "SurfaceCylinder"
+          }
+        ],
+        "DocString": "    \"\"\"Gets the sphere definition from a surface, if possible.\r\n    Parameters:\r\n      surface_id (guid): the identifier of the surface object\r\n    Returns:\r\n      (plane, number): The equatorial plane of the sphere, and its radius.\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      surface = rs.GetObject(\"Select a surface\", rs.filter.surface)\r\n      if surface:\r\n        result = rs.SurfaceSphere(surface)\r\n        if result:\r\n          print(\"The sphere radius is: \" + str(result[1]))\r\n    See Also:\r\n      SurfaceCylinder\r\n    \"\"\"",
+        "SuccessLevel": 6,
+        "IsDocStringWellFormed": true
+      },
+      {
+        "ModuleName": "surface",
         "Name": "JoinSurfaces",
         "Arguments": [],
         "Signature": "JoinSurfaces(object_ids, delete_input=False)",
@@ -23044,6 +23137,35 @@
         "ExampleString": "",
         "SeeAlso": [],
         "DocString": "    \"\"\"Rebuilds a surface to a given degree and control point count. For more\r\n    information see the Rhino help file for the Rebuild command\r\n    Parameters:\r\n      object_id (guid): the surface's identifier\r\n      degree ([number, number], optional): two numbers that identify surface degree in both U and V directions\r\n      pointcount ([number, number], optional): two numbers that identify the surface point count in both the U and V directions\r\n    Returns:\r\n      bool: True of False indicating success or failure\r\n    Example:\r\n    See Also:\r\n    \"\"\"",
+        "SuccessLevel": 6,
+        "IsDocStringWellFormed": true
+      },
+      {
+        "ModuleName": "surface",
+        "Name": "RemoveSurfaceKnot",
+        "Arguments": [],
+        "Signature": "RemoveSurfaceKnot(surface, uv_parameter, v_direction)",
+        "Description": "Deletes a knot from a surface object.",
+        "HasArguments": true,
+        "ArgumentDesc": "surface (guid): The reference of the surface object\r\nuv_parameter (list(number, number)): An indexable item containing a U,V parameter on the surface. List, tuples and UVIntervals will work.\r\n  Note, if the parameter is not equal to one of the existing knots, then the knot closest to the specified parameter will be removed.\r\nv_direction (bool): if True, or 1, the V direction will be addressed. If False, or 0, the U direction.",
+        "Returns": "bool: True of False indicating success or failure",
+        "Example": [
+          "import rhinoscriptsyntax as rs",
+          "",
+          "srf_info = rs.GetSurfaceObject()",
+          "if srf_info:",
+          "    srf_id = srf_info[0]",
+          "    srf_param = srf_info[4]",
+          "    rs.RemoveSurfaceKnot(srf_id, srf_param, 1)"
+        ],
+        "ExampleString": "import rhinoscriptsyntax as rs\r\n\r\nsrf_info = rs.GetSurfaceObject()\r\nif srf_info:\r\n    srf_id = srf_info[0]\r\n    srf_param = srf_info[4]\r\n    rs.RemoveSurfaceKnot(srf_id, srf_param, 1)",
+        "SeeAlso": [
+          {
+            "ModuleName": "surface",
+            "FunctionName": "RemoveSurfaceKnot"
+          }
+        ],
+        "DocString": "    \"\"\"Deletes a knot from a surface object.\r\n    Parameters:\r\n      surface (guid): The reference of the surface object\r\n      uv_parameter (list(number, number)): An indexable item containing a U,V parameter on the surface. List, tuples and UVIntervals will work.\r\n        Note, if the parameter is not equal to one of the existing knots, then the knot closest to the specified parameter will be removed.\r\n      v_direction (bool): if True, or 1, the V direction will be addressed. If False, or 0, the U direction.\r\n    Returns:\r\n      bool: True of False indicating success or failure\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n\r\n      srf_info = rs.GetSurfaceObject()\r\n      if srf_info:\r\n          srf_id = srf_info[0]\r\n          srf_param = srf_info[4]\r\n          rs.RemoveSurfaceKnot(srf_id, srf_param, 1)\r\n    See Also:\r\n      RemoveSurfaceKnot\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -23416,8 +23538,13 @@
           "rs.AddCylinder(plane, height, radius, False)"
         ],
         "ExampleString": "import rhinoscriptsyntax as rs\r\ncylinder = rs.AddCylinder(rs.WorldXYPlane(), 6, 2, False)\r\nif rs.IsCylinder(cylinder):\r\nplane, height, radius = rs.SurfaceCylinder(cylinder)\r\nrs.AddCylinder(plane, height, radius, False)",
-        "SeeAlso": [],
-        "DocString": "    \"\"\"Returns the definition of a cylinder surface\r\n    Parameters:\r\n      surface_id (guid): the surface's identifier\r\n    Returns:\r\n      tuple(plane, number, number): of the cylinder plane, height, radius on success\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      cylinder = rs.AddCylinder(rs.WorldXYPlane(), 6, 2, False)\r\n      if rs.IsCylinder(cylinder):\r\n      plane, height, radius = rs.SurfaceCylinder(cylinder)\r\n      rs.AddCylinder(plane, height, radius, False)\r\n    See Also:\r\n      \r\n    \"\"\"",
+        "SeeAlso": [
+          {
+            "ModuleName": "surface",
+            "FunctionName": "SurfaceSphere"
+          }
+        ],
+        "DocString": "    \"\"\"Returns the definition of a cylinder surface\r\n    Parameters:\r\n      surface_id (guid): the surface's identifier\r\n    Returns:\r\n      tuple(plane, number, number): of the cylinder plane, height, radius on success\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      cylinder = rs.AddCylinder(rs.WorldXYPlane(), 6, 2, False)\r\n      if rs.IsCylinder(cylinder):\r\n      plane, height, radius = rs.SurfaceCylinder(cylinder)\r\n      rs.AddCylinder(plane, height, radius, False)\r\n    See Also:\r\n      SurfaceSphere\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -26386,6 +26513,31 @@
       },
       {
         "ModuleName": "userinterface",
+        "Name": "GetLinetype",
+        "Arguments": [],
+        "Signature": "GetLinetype(default_linetype=None, show_by_layer=False)",
+        "Description": "Displays a dialog box prompting the user to select one linetype",
+        "HasArguments": true,
+        "ArgumentDesc": "default_linetype (str, optional):  Optional. The name of the linetype to select. If omitted, the current linetype will be selected.\r\nshow_by_layer (bool, optional): If True, the \"by Layer\" linetype will show. Defaults to False.",
+        "Returns": "str: The names of selected linetype if successful",
+        "Example": [
+          "import rhinoscriptsyntax as rs",
+          "linetype = rs.GetLinetype()",
+          "if linetype: print(linetype)"
+        ],
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nlinetype = rs.GetLinetype()\r\nif linetype: print(linetype)",
+        "SeeAlso": [
+          {
+            "ModuleName": "userinterface",
+            "FunctionName": "GetLayer"
+          }
+        ],
+        "DocString": "    \"\"\"Displays a dialog box prompting the user to select one linetype\r\n    Parameters:\r\n      default_linetype (str, optional):  Optional. The name of the linetype to select. If omitted, the current linetype will be selected.\r\n      show_by_layer (bool, optional): If True, the \"by Layer\" linetype will show. Defaults to False.\r\n    Returns:\r\n      str: The names of selected linetype if successful\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      linetype = rs.GetLinetype()\r\n      if linetype: print(linetype)\r\n    See Also:\r\n      GetLayer\r\n    \"\"\"",
+        "SuccessLevel": 6,
+        "IsDocStringWellFormed": true
+      },
+      {
+        "ModuleName": "userinterface",
         "Name": "GetMeshFaces",
         "Arguments": [],
         "Signature": "GetMeshFaces(object_id, message=\"\", min_count=1, max_count=0)",
@@ -27742,15 +27894,15 @@
         "ModuleName": "utility",
         "Name": "CreatePlane",
         "Arguments": [],
-        "Signature": "CreatePlane(plane)",
-        "Description": "Converts input into a Rhino.Geometry.Plane object if possible.\r\n    If the provided object is already a plane, its value is copied.\r\n    The returned data is accessible by indexing[row, column], and that is the suggested method to interact with the type.\r\n    If the conversion fails, an error is raised.",
+        "Signature": "CreatePlane(plane_or_origin, x_axis=None, y_axis=None, ignored=None)",
+        "Description": "Converts input into a Rhino.Geometry.Plane object if possible.\r\n    If the provided object is already a plane, its value is copied.\r\n    The returned data is accessible by indexing[origin, X axis, Y axis, Z axis], and that is the suggested method to interact with the type.\r\n    The Z axis is in any case computed from the X and Y axes, so providing it is possible but not required.\r\n    If the conversion fails, an error is raised.",
         "HasArguments": true,
-        "ArgumentDesc": "plane (plane|[point, point, point, point])",
+        "ArgumentDesc": "plane (plane|point|point, vector, vector|[point, vector, vector])",
         "Returns": "plane: A Rhino.Geometry.plane.",
         "Example": [],
         "ExampleString": "",
         "SeeAlso": [],
-        "DocString": "    \"\"\"Converts input into a Rhino.Geometry.Plane object if possible.\r\n    If the provided object is already a plane, its value is copied.\r\n    The returned data is accessible by indexing[row, column], and that is the suggested method to interact with the type.\r\n    If the conversion fails, an error is raised.\r\n    Parameters:\r\n      plane (plane|[point, point, point, point])\r\n    Returns:\r\n      plane: A Rhino.Geometry.plane.\r\n    Example:\r\n    See Also:\r\n    \"\"\"",
+        "DocString": "    \"\"\"Converts input into a Rhino.Geometry.Plane object if possible.\r\n    If the provided object is already a plane, its value is copied.\r\n    The returned data is accessible by indexing[origin, X axis, Y axis, Z axis], and that is the suggested method to interact with the type.\r\n    The Z axis is in any case computed from the X and Y axes, so providing it is possible but not required.\r\n    If the conversion fails, an error is raised.\r\n    Parameters:\r\n      plane (plane|point|point, vector, vector|[point, vector, vector])\r\n    Returns:\r\n      plane: A Rhino.Geometry.plane.\r\n    Example:\r\n    See Also:\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
