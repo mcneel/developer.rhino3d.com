@@ -19,8 +19,11 @@ If you are not comfortable using git on the command-line, then try [GitHub for M
 
 **IMPORTANT:** The site is branch-aware and automatically deployed by [Travis CI](https://travis-ci.org/mcneel/developer-rhino3d-com). **DO NOT PUSH TO THE `gh-pages` BRANCH!**
 
-The `master` branch represents the current (_stable_) version of the site.  Changes to the `master` branch will be built by Travis and deployed to http://developer.rhino3d.com.  Other branches can be defined in `_config.yml` (under `version_branches`) and will be built and deployed into a subpath with the same name.  For example, if you push to the `wip` branch (representing RhinoWIP) then this site will be deployed to http://developer.rhino3d.com/wip.
+The current (_stable_) version Rhino is defined in the `stable:` field in the `_config.yml` file.  The `n` branch that corresponds to the stable release is built and deployed to http://developer.rhino3d.com.  
 
+The `master` branch represents the WIP version of the site.  Changes to the `master` branch will be built by Travis and deployed to http://developer.rhino3d.com/wip.  
+
+Branches are defined in `_config.yml` (under `version_branches`) and will be built and deployed into a subpath with the same name; for example: the `5` branch is built and deployed to http://developer.rhino3d.com/5.
 
 ### macOS
 
