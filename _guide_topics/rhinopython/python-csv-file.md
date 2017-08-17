@@ -16,7 +16,7 @@ CSV (comma separated values ) files are commonly used to store and retrieve many
 
 As an example, a CSV file might be used to store point locations in their X, Y, Z coordinate values:
 
-```
+```none
 0.58,-3.7,0
 0.58,-3.1,0
 -0.23,0.91,0
@@ -30,7 +30,7 @@ As an example, a CSV file might be used to store point locations in their X, Y, 
 
 Or a CSV might contain building data, for instance room and usage information in a database type format.  Note that this CSV has a header titles on the first row: 
 
-```
+```none
 RoomID,Floor,Use,Square Footage,Capacity,Price
 100,1,Retail,6598,55,6500
 101,1,Retail,1900,25,3000
@@ -98,7 +98,7 @@ Then the key line in the script, that reads each row into a list of values into 
 
 The `csv.reader` method does all the parsing of each line into a list.  Then each value on each line into a list:
 
-```
+```none
 ['0.58', '-3.7', '0']
 ['0.58', '-3.1', '0']
 ['-0.23', '0.91', '0']
@@ -162,7 +162,7 @@ But this script uses the dictionary reader in the csv module on line 12::
 ```
 The [dictionary object]({{ site.baseurl }}/guides/rhinopython/python-dictionaries) contains *key:value* pairs where the name (key) of the values can be used to search through the data.  The complete dictionary object looks like this:
 
-```
+```none
 {'Floor':'1', 'Use':'Retail', 'Square Footage':'6598', 'Price':'6500', 'RoomID':'100', 'Capacity':'55'}
 {'Floor':'1', 'Use':'Retail', 'Square Footage':'1900', 'Price':'3000', 'RoomID':'101', 'Capacity':'25'}
 {'Floor':'1', 'Use':'Retail', 'Square Footage':'1850', 'Price':'3000', 'RoomID':'102', 'Capacity':'25'}
@@ -268,7 +268,7 @@ The `.writerow` method is great for writing out various values that in the simpl
 Like the read methods, there is also a way to write out a dictionary object to a CSV file. 
 This is a great way to format any dictionary data into a spreadsheet or table format.
 
-```
+```python
 import csv
 import rhinoscriptsyntax as rs
 
