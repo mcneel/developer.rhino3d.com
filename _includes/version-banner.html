@@ -20,7 +20,7 @@
 {% if current == stable %}
   <div class="version-banner">
 {% else %}
-  <div class="version-banner-warning">
+  <div class="version-banner version-banner-warning">
 {% endif %}
     {% if site.git_branch == "master" %}
       <strong>WARNING:</strong> You're viewing the <strong>Rhino WIP</strong> version of this page! <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>

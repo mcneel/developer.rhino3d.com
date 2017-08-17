@@ -301,7 +301,8 @@
  * Version banner
  */
 
-.version-banner {
+.version-banner,
+.version-banner-warning {
   position: fixed;
   top: 0px;
   width: 100%;
@@ -314,16 +315,6 @@
 }
 
 .version-banner-warning {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  z-index: 1000000;
-  text-align: center;
-  background-color: #424242;
-  padding: 5px;
-  color: white;
-  font-style: italic;
-
   background: repeating-linear-gradient(
     -55deg,
     #222,
@@ -339,14 +330,24 @@
   color: lighten($brand-color, 25%);
 }
 
-.version-banner-warning a,
-.version-banner-warning a:hover,
-.version-banner-warning a:visited {
-  color: lighten($brand-color, 25%);
-}
+// version banner text will wrap onto 2/3 lines on smaller screens
+// assume worst-case (3 lines) when padding content and anchor links
+
+$banner-wraps: 730px; // screen width below which version banner text will wrap
+
+// make some space so that the version banner doesn't obscure the header nav
+// @if $is_version_branch {
+  body {
+    padding-top: 36px;
+
+    @include media-query($banner-wraps) {
+        padding-top: 86px;
+    }
+  }
+// }
 
 // offset anchor location for headings so they're not obscured by the banner
-// @if $is_version_branch {
+//@if $is_version_branch {
   h1[id]:before,
   h2[id]:before,
   h3[id]:before,
@@ -359,9 +360,9 @@
     height: 36px;
     visibility: hidden;
 
-    @include media-query($on-palm) {
-      margin-top: -61px;
-      height: 61px;
+    @include media-query($banner-wraps) {
+      margin-top: -86px;
+      height: 86px;
     }
   }
 //}
