@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 ## Overview
 
-Yak is a package manager for the Rhino ecosystem. Not wanting to reinvent the
+Yak is a package manager for the Rhino ecosystem.Yak assists in the discovery, installation, and management of Rhino and Grasshopper packages. Examples of packages are plug-ins, components, scripts, and material definitions. Not wanting to reinvent the
 wheel we've taken inspiration from Linux and the software development world in
 general. The package manager has several goals.
 
