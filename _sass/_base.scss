@@ -22,14 +22,7 @@ body {
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
 
-    // make some space so that the version banner doesn't obscure the header nav
-    // @if $is_version_branch {
-      padding-top: 36px;
-
-      @include media-query($on-palm) {
-          padding-top: 61px;
-      }
-    //}
+    // padding for fixed version banner moved to _layout.css
 }
 
 
