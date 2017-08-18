@@ -1,6 +1,6 @@
 ---
 title: How to read and write a CSV files
-description: Use Python to read and write comma delimited files.
+description: Use Python to read and write comma-delimited files.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
 sdk: ['RhinoPython']
@@ -12,7 +12,8 @@ order: 75
 keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
-CSV (comma separated values ) files are commonly used to store and retrieve many different types of data. The CSV format is one of the most flexible and easiest format to read.
+CSV (comma separated values ) files are commonly used to store and retrieve many different types of data. 
+The CSV format is one of the most flexible and easiest format to read.
 
 As an example, a CSV file might be used to store point locations in their X, Y, Z coordinate values:
 
@@ -90,7 +91,7 @@ At line 10 the file is opened for reading.
 with open(filename) as csvfile:
 ```
 
-Then the key line in the script, that reads each row into a list of values into the variable `reader`:
+Then the key function in the script `.reader` reads each row into a list of values into the variable `reader`:
 
 ```python
         reader = csv.reader(csvfile)
@@ -110,7 +111,7 @@ The `csv.reader` method does all the parsing of each line into a list.  Then eac
 ['6', '1', '0']
 ```
 
-Manipulsting each line of the list becomes easy:
+Manipulating each line of the list becomes easy:
 
 ```python
         for row in reader:
@@ -123,7 +124,8 @@ Manipulsting each line of the list becomes easy:
 
 In this case the values are split into 3 variables (x, y, z) and then printed to the console and additionally used to add a new point object to Rhino.
 
-Reading a CSV file into list is great for data that has the same number of values in each line and the postion of the values are the same.  But sometimes it is easier to read csv values into a dictionary where the values have names.
+Reading a CSV file into a list is great for data that has the same number of values in each line and the position of the values are the same.  
+However sometimes it is easier to read csv values into a dictionary where the values have names.
 
 ## Reading into a dictionary
 
@@ -155,7 +157,7 @@ if( __name__ == "__main__" ):
 ```
 {: .line-numbers}
 
-But this script uses the dictionary reader in the csv module on line 12::
+This script uses the dictionary reader in the csv module on line 12:
 
 ```
         reader = csv.DictReader(csvfile)
@@ -182,7 +184,7 @@ The [dictionary object]({{ site.baseurl }}/guides/rhinopython/python-dictionarie
 {'Floor':'2', 'Use':'Quad', 'Square Footage':'1205', 'Price':'1650', 'RoomID':'211', 'Capacity':'8'}
 ```
 
-Now since each value is proceded by a key, values may be found by searching for the key names.  For instance in this case the script prints the `Use` and `Square Footage` from each line:
+Now since each value is preceeded by a key, values may be found by searching for the key names.  For instance in this case the script prints the `Use` and `Square Footage` from each line:
 
 ```
         for row in reader:
@@ -201,7 +203,7 @@ There are many ways to use dictionary data.  Just to add to this example, here i
         print "Retail space = {} sq. ft".format(total)
 ```
 
-Here the loop loops for each row that contains 'Retail'  and then will add the square footage for each into the `total` variable.  In the end it prints the total in the console.
+Here the `For` statement loops through each row that contains 'Retail'  and then will add the square footage for each into the `total` variable.  In the end it prints the total in the console.
 
 By using the `csv.DictReader()` method, the simple CSV data can become a more sophisticated dictionary of information.  This is a very powerful tool.
 
@@ -241,7 +243,7 @@ if( __name__ == "__main__" ):
 
 Lines 1 thru 8 are standard lines from the Rhino.Python [How to read and write a simple file]({{ site.baseurl }}/guides/rhinopython/python-reading-writing) guide.
 
-There are a couple of things to notice, compared to the previous example. We need some points to export, 
+There are a couple of things to notice compared to the previous example. We need some points to export, 
 so we'll let the user select some point objects.  Then check that some points were picked:
 
 
@@ -250,7 +252,7 @@ so we'll let the user select some point objects.  Then check that some points we
     if( points==None): return
 ```
 
-Lines 14 thru 18 opens the file for write. Then the script runs through all the points in the list using the `.writerow` method.
+Lines 14 thru 18 open the file for write. The script then runs through all the points in the list using the `.writerow` method.
 The write row method takes a list of values and adds the list as a line in the CSV file. 
 
 ```python
@@ -261,7 +263,7 @@ The write row method takes a list of values and adds the list as a line in the C
         print "Points written sucessfully to file"
 ```
 
-The `.writerow` method is great for writing out various values that in the simplest CSV form. 
+The `.writerow` method is great for writing out various values in the simplest CSV form. 
 
 ## Writing out a dictionary object
 
@@ -305,8 +307,8 @@ if( __name__ == "__main__" ):
 ```
 {: .line-numbers}
 
-In lines 10-16 we set a list of dictionaries.  The header names corespond with the key names in the dictionary.
-The `.DictWriter` class can write a header in the CSV and will use the values in the keys to write the CSV.
+In lines 10-16 we set a list of dictionaries.  The header names correspond with the key names in the dictionary.
+The `.DictWriter` class can write a header in the CSV using the same values in the keys to write the CSV.
 
 The resulting CSV file will be formatted as follows:
 
@@ -319,7 +321,7 @@ Floor,Use,Square Footage,RoomID
 1,Maintenance,150,104
 ```
 
-For more information on CSV maniputlation, see the [Python.org csv module](https://docs.python.org/2/library/csv.html).
+For more information on CSV manipulation, see the [Python.org csv module](https://docs.python.org/2/library/csv.html).
 
 ---
 
