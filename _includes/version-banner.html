@@ -47,7 +47,7 @@
 $(document).ready(function()
 {
   var splitPath = window.location.pathname.split("/");
-  var linkURL = "/5/" + splitPath.splice(2,splitPath.length-2).join("/");
+  var linkURL = "/5" + splitPath.splice(2,splitPath.length-2).join("/");
 
   $.get(linkURL).fail(function ()
   {
