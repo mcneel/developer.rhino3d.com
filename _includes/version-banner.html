@@ -42,19 +42,22 @@
 </div>
 
 <!-- Check the version banner for broken links and remove the link if found -->
-<!-- this is not currently working as intended, so I'm disabling it until I can figure it out
+<!-- this is not currently working as intended, so I'm disabling it until I can figure it out -->
+<!-- stable = Looking for the Rhino 5 Version? -->
+<!-- older = Check out the Rhino 6 version instead -->
+<!-- wip = Check out the stable version instead -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
 $(document).ready(function()
 {
   var splitPath = window.location.pathname.split("/");
-  var nonWipURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
+  var linkURL = "/5/" + splitPath.splice(2,splitPath.length-2).join("/");
 
-  $.get(nonWipURL).fail(function ()
+  $.get(linkURL).fail(function ()
   {
     var $aTag = $("div.version-banner > a");
-    $aTag.text("View the current site instead.");
-    $aTag.attr("href", "/");
+    $aTag.text("Looking for the older Rhino 5 site?");
+    $aTag.attr("href", "/5/");
   });
 });
-</script>-->
+</script>
