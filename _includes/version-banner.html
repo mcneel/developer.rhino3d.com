@@ -42,19 +42,18 @@
 </div>
 
 <!-- Check the version banner for broken links and remove the link if found -->
-<!-- this is not currently working as intended, so I'm disabling it until I can figure it out
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
 $(document).ready(function()
 {
   var splitPath = window.location.pathname.split("/");
-  var nonWipURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
+  var linkURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
 
-  $.get(nonWipURL).fail(function ()
+  $.get(linkURL).fail(function ()
   {
     var $aTag = $("div.version-banner > a");
-    $aTag.text("View the current site instead.");
+    $aTag.text("View the Rhino 6 site instead.");
     $aTag.attr("href", "/");
   });
 });
-</script>-->
+</script>
