@@ -77,7 +77,7 @@ To switch to NuGet packages, follow these steps:
 
     ![Choose NuGet Packages]({{ site.baseurl }}/images/using-nuget-02.png)
 
-3. After the install is complete, ensure that the new references are not copied to the output directory. Select any of the following references if they exist in your project: RhinoCommon, Eto, Rhino.UI, Grasshopper, GH_IO. In the *Properties* window, set *Copy Local* to *False*[^3].
+3. *(Optional)* The references created by these packages have `CopyLocal` set to `true`.  Normally, it is a best practice to make sure that the references are not copied to the output directory, which you can do by selecting any of the following references if they exist in your project - *RhinoCommon*, *Eto*, *Rhino.UI*, *Grasshopper*, *GH_IO* - and, in the *Properties* window, set `CopyLocal` to `false`.  The reason this step is *optional* is that we've included some MSBuild witchcraft that will ensure that `CopyLocal` is set to `false` when compiling your project, regardless of what it says in the *Properties* window.
 
     ![Copy Local]({{ site.baseurl }}/images/using-nuget-03.png)
 
@@ -93,7 +93,6 @@ To switch to NuGet packages, follow these steps:
 ## Footnotes
 [^1]: This means that if you install the Grasshopper NuGet package, the matching RhinoCommon package will be installed automatically.
 [^2]: If your project already references one of the above assemblies, don't worry! NuGet will handle it.
-[^3]: You might have noticed that the references created by these packages have `CopyLocal` set to `true`. Again, don't worry. We've included some MSBuild witchcraft that will ensure that `CopyLocal` is set to `false` when compiling your project, regardless of what it says in the Properties pane.
 
 [RhinoCommon]: https://www.nuget.org/packages/rhinocommon
 [Grasshopper]: https://www.nuget.org/packages/grasshopper
