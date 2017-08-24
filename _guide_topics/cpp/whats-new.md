@@ -62,7 +62,46 @@ In Rhino 6, you will need to do the following:
         double tolerance = context.m_doc.AbsoluteTolerance();
         int rc = RhinoPointInPlanarClosedCurve(point, closed_curve, plane, tolerance);
 
+###MFC Free
+The Rhino 6 C/C++ SDK is now MFC free. That is, there are no longer any MFC classes or types used by Rhino class. By removing MFC from the Rhino SDK, plug-in that use MFC are no longer required to use the same version of MFC and Rhino.
+
+Note, the core of Rhino continues to use MFC as before, including using the Doc/View framework. However, this implementation is no longer exposed to the SDK.
+
+In general, there are three types of changes that you will need to know about:
+
+#### Replacement of MFC classes with openNURBS equivalents
+
+- ```ON_4iRect``` replaces ```CRect```.
+- ```ON_2iSize``` replaces ```CSize```.
+- ```ON_2iPoint``` replaces ```CPoint```.
+- Etc.
+
+#### Replacement of MFC classes with Win32 equivalents
+
+- ```HWND``` replaces ```CWnd```.
+- ```HDC``` replaces ```CDC```.
+- ```HFONT``` replaces ```CFont```.
+- Etc.
+
+#### Classes no longer derived from MFC base classes
+
+```CRhinoDoc``` is no longer derived from ```CDocument```.
+
+```CRhinoView``` is no longer derived from ```CView```.
+
+```CRhinoApp``` is no longer derived from ```CWinApp```.
+
+Note, the Rhino Rhino 6 C/C++ SDK does include MFC user interface classes, such as ```CRhinoDialog```, ```CRhinoDockBar```, and more. To use these classes, define ```RHINO_SDK_MFC``` in your project's *stdafx.h* file.
+
+        // If you want to use Rhino's MFC UI classes, then
+        // uncomment the #define RHINO_SDK_MFC statement below. 
+        // Note, doing so will requires that your plug-in is
+        // built with the same version of Visual Studio as was
+        // used to build Rhino.
+        #define RHINO_SDK_MFC
+
 ### Model Components
+
 Rhino has a number of model components, such as layers, group, render materials, dimensions style, and more. Over the years, common properties, such as name, index, and id, have been added to these components, but done so in an inconsistent manner. For example, the method for obtaining the id of a layer was different that of a render material.
 
 The Rhino 6 C/C++ SDK contains a new ```ON_ModelComponent``` class that remedies this. Model component classes now inherit from this class.
@@ -95,7 +134,7 @@ In Rhino 6, you will need to do the following:
 
 For Rhino 6, there will be new implementations for all annotation objects, such as Text, Leaders, and Dimensions. The new implementations are much better organized the the prior versions, plus provide new features such as [Rich Text](https://en.wikipedia.org/wiki/Rich_Text_Format).
 
-For more details, see [Annotation Objects]({{ site.baseurl }}/guides/cpp/({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows)).
+For more details, see [Annotation Objects]({{ site.baseurl }}/guides/cpp/annotation-objects).
 
 ### Scoped and Strongly Typed Enums
 C++11 provides some great new features for C++ programmers. One such feature is scoped and strongly typed enumerations, which ensures some measure of compatibility across compilers. They also make up for some shortcomings of old-style enums:
@@ -129,12 +168,12 @@ In Rhino 7, all functions marked as deprecated in Rhino 6 will be removed.
 ### Other
 Not all changes in the Rhino 6 C/C++ SDK could be tagged as deprecated. For example, if a member variable from a class were removed, or a feature was dramatically changed, then deprecation could not be used. These types of breakages will require more time to fix.
 
-To help with this, we are working on updating all of the [C++ SDK samples](https://github.com/mcneel/Rhino6Samples_CPP).
-
 ## Related Topics
 
 - [Installing Tools (Windows)]({{ site.baseurl }}/guides/cpp/installing-tools-windows)
 - [Migrate your plugin project to Rhino 6]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-windows)
 - [Migrate your plugin project to Rhino 6 manually]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows)
-- [Annotation Objects]({{ site.baseurl }}/guides/cpp/({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows))
+- [Annotation Objects]({{ site.baseurl }}/guides/cpp/annotation-objects)
+- [C++ SDK samples on GitHub](https://github.com/mcneel/rhino-developer-samples/tree/master/cpp)
+
 
