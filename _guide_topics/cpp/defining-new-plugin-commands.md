@@ -14,7 +14,7 @@ layout: toc-guide-page
 TODO: 'needs to be reviewed for accuracy and considered for consolidation with other plugin topics'
 ---
 
- 
+
 ## Overview
 
 Rhino plugins can contain any number of commands.  Commands are created by deriving a new class from `CRhinoCommand`.  See *rhinoSdkCommand.h* for details on the `CRhinoCommand` class.
@@ -29,11 +29,11 @@ Only ONE instance of a command class can be created.  This is why you should put
 
 The *Rhino Command Generator* wizard is a standalone application that will generate new skeleton `CRhinoCommand`-derived class.  The generated source code is copied to the Windows clipboard so you can easily paste it into your source files.
 
-To use this tool in Visual Studio 2015:
+To use this tool in Visual Studio 2017:
 
-1. Launch Visual Studio 2015.
-1. Navigate to *Tools* > *External Tools...*.
-1. Use the *Add* button to add the *RhinoCommandGenerator.exe* file to the list.  The file can be found in the following location: *C:\\Program Files\\Rhino 6.0 SDK\\Wizards\\Command*
+1. Launch Visual Studio 2017.
+2. Navigate to *Tools* > *External Tools...*.
+3. Use the *Add* button to add the *RhinoCommandGenerator.exe* file to the list.  The file can be found in the following location: *C:\\Program Files\\Rhino 6.0 SDK\\Wizards\\Command*
 
 ![Rhino Command Generator]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_07.png)
 
