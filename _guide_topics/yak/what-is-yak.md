@@ -14,15 +14,15 @@ layout: toc-guide-page
 
 ## Overview
 
-Yak is a package manager for the Rhino ecosystem. Not wanting to reinvent the
-wheel we've taken inspiration from Linux and the software development world in
-general. The package manager has several goals.
+Yak is a package manager for the Rhino ecosystem. Yak assists in the discovery, installation, and management of Rhino and Grasshopper resources. Examples include plug-ins, components, scripts, and material definitions.  
+
+Yak has several goals.
 
 - Make it easier for users to discover and manage plug-ins and more
 - Help developers to share their work
-- Provide simple tools that can be used for system administration
+- Provide simple system administration tools
 
-The package management system can be broken down into three main areas.
+Not wanting to reinvent the wheel, we've taken inspiration from Linux and the software development world. The package management system can be broken down into three main areas.
 
 1. [Server](#server)
 2. [Command line tool](#command-line-tool)
