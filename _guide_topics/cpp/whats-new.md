@@ -62,7 +62,7 @@ In Rhino 6, you will need to do the following:
         double tolerance = context.m_doc.AbsoluteTolerance();
         int rc = RhinoPointInPlanarClosedCurve(point, closed_curve, plane, tolerance);
 
-###MFC Free
+### MFC Free
 
 The Rhino 6 C/C++ SDK is now MFC free. That is, there are no longer any MFC classes or types used by Rhino class. By removing MFC from the Rhino SDK, plug-in that use MFC are no longer required to use the same version of MFC and Rhino.
 
