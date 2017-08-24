@@ -1,5 +1,5 @@
 ---
-title: Switching to NuGet Packages (Windows)
+title: Using NuGet (Windows)
 description: This guide describes how developers can use the NuGet packages available for RhinoCommon and Grasshopper.
 authors: ['Luis Fraguada', 'Will Pearson']
 author_contacts: ['luis', 'will']
@@ -22,7 +22,7 @@ redirect_from: /guides/rhinocommon/switching-to-nuget-packages/
 
 ## Why NuGet?
 
-In [previous guides](http://developer.rhino3d.com/guides/rhinocommon/your-first-plugin-windows/) you’ve seen how to set up a project to develop a RhinoCommon Plugin or Grasshopper Add-On. These guides relied on the Visual Studio Project Wizards that we publish to quickly get you going on plugin development. The wizards automatically reference the necessary assemblies to make RhinoCommon and Grasshopper SDKs available in your Visual Studio project. While this project setup should be fine for a number of cases, there might be some reasons to switch the RhinoCommon and Grasshopper assembly references to those which are published by [McNeel on NuGet](https://www.nuget.org/profiles/McNeel)...
+In [previous guides](http://developer.rhino3d.com/5/guides/rhinocommon/your-first-plugin-windows/) you’ve seen how to set up a project to develop a RhinoCommon Plugin or Grasshopper component. These guides relied on the Visual Studio Project Wizards that we publish to quickly get you going on plugin development. The wizards automatically reference the necessary assemblies to make RhinoCommon and Grasshopper SDKs available in your Visual Studio project. While this project setup should be fine for a number of cases, there might be some reasons to switch the RhinoCommon and Grasshopper assembly references to those which are published by [McNeel on NuGet](https://www.nuget.org/profiles/McNeel)...
 
 ### Advantages
 
