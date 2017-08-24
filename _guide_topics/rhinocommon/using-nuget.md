@@ -37,7 +37,7 @@ There are several potential advantages to using NuGet packages for RhinoCommon S
 NuGet makes it easy to compile plug-ins against versions of Rhino other than those installed on your computer. This is handy for backwards-compatible and/or cross-platform development. However, the fact that your Rhino installation and your RhinoCommon/Grasshopper references are "out of sync" can cause problems.
 
 * NuGet packages will need to be updated separately to Rhino
-* You will have trouble debugging your plug-in if it was built against a version of RhinoCommon that is newer than the one included with Rhino
+* You _may_ have trouble debugging your plug-in if it was built against a version of RhinoCommon that is newer than the one included with Rhino[^a]
 
 ## Getting Started
 
@@ -70,9 +70,9 @@ To switch to NuGet packages, follow these steps:
 
 2. In the NuGet tab which appears, click on *Browse*. In the search box, type in *RhinoCommon*. You should see an entry for RhinoCommon and one for Grasshopper. If you are writing a Rhino Plugin or Grasshopper Add-on for Rhino WIP, ensure you check *Include prerelease*.
 
-    If your project is a **RhinoCommon Plug-in**, select the [RhinoCommon] package, choose the Version, and click *Install*. Chose the *Latest prerelease*. NuGet will install[^2] *RhinoCommon.dll*, *Rhino.UI*, and *Eto.dll*.
+    If your project is a **RhinoCommon Plug-in**, select the [RhinoCommon] package. For Rhino WIP choose the *Latest prerelease* and click *Install*. NuGet will install[^2] *RhinoCommon.dll*, *Rhino.UI* and *Eto.dll*.
 
-    If your project is a **Grasshopper Add-on**, select the [Grasshopper] package, choose the Version, and click *Install*. For Grasshopper Add-ons in Rhino WIP, chose the *Latest prerelease*. NuGet will install[^2] *Grasshopper.dll* and *GH_IO.dll* as well as the corresponding version of the RhinoCommon assemblies.
+    If your project is a **Grasshopper Add-on**, select the [Grasshopper] package. For Grasshopper Add-ons in Rhino WIP choose the *Latest prerelease* and click *Install*. NuGet will install[^2] *Grasshopper.dll* and *GH_IO.dll* as well as the corresponding version of the RhinoCommon assemblies.
 
     ![Choose NuGet Packages]({{ site.baseurl }}/images/using-nuget-02.png)
 
@@ -94,6 +94,7 @@ To switch to NuGet packages, follow these steps:
 ## Footnotes
 [^1]: This means that if you install the Grasshopper NuGet package, the matching RhinoCommon package will be installed automatically.
 [^2]: If your project already references one of the above assemblies, don't worry! NuGet will handle it.
+[^a]: Your plug-in will not load if it uses parts of the API which don't exist in the running version of Rhino.
 
 [RhinoCommon]: https://www.nuget.org/packages/rhinocommon
 [Grasshopper]: https://www.nuget.org/packages/grasshopper
