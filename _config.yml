@@ -27,8 +27,9 @@ kramdown:
   input: GFM
   syntax_highlighter_opts:
       disable: true
-gems:
+plugins:
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 #port: 4444
 
