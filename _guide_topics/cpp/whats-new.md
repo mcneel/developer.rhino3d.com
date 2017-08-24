@@ -63,6 +63,7 @@ In Rhino 6, you will need to do the following:
         int rc = RhinoPointInPlanarClosedCurve(point, closed_curve, plane, tolerance);
 
 ###MFC Free
+
 The Rhino 6 C/C++ SDK is now MFC free. That is, there are no longer any MFC classes or types used by Rhino class. By removing MFC from the Rhino SDK, plug-in that use MFC are no longer required to use the same version of MFC and Rhino.
 
 Note, the core of Rhino continues to use MFC as before, including using the Doc/View framework. However, this implementation is no longer exposed to the SDK.
@@ -74,14 +75,12 @@ In general, there are three types of changes that you will need to know about:
 - ```ON_4iRect``` replaces ```CRect```.
 - ```ON_2iSize``` replaces ```CSize```.
 - ```ON_2iPoint``` replaces ```CPoint```.
-- Etc.
 
 #### Replacement of MFC classes with Win32 equivalents
 
 - ```HWND``` replaces ```CWnd```.
 - ```HDC``` replaces ```CDC```.
 - ```HFONT``` replaces ```CFont```.
-- Etc.
 
 #### Classes no longer derived from MFC base classes
 
