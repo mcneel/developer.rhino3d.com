@@ -43,7 +43,7 @@ order: 2
 ### This Site
 
 - [How This Site Works]({{ site.baseurl }}/guides/general/how-this-site-works)
-- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/master/README.md)
+- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/{{ site.git_branch | default: "master" }}/README.md)
 - [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer-docs-style-guide)
 
 ---
