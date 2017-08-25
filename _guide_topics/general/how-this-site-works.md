@@ -21,7 +21,7 @@ layout: toc-guide-page
 
 The best way to understand how this site works is to make a change to it.  Follow these steps:
 
-1. If you have not already, read the [Getting Started with Dev Docs](https://github.com/mcneel/developer-rhino3d-com/blob/wip/README.md) guide.  This guide will get you setup building the entire site locally on your computer so you can preview changes before making them live (by committing).
+1. If you have not already, read the [Getting Started with Dev Docs](https://github.com/mcneel/developer-rhino3d-com/blob/{{ site.git_branch | default: "master" }}/README.md) guide.  This guide will get you setup building the entire site locally on your computer so you can preview changes before making them live (by committing).
 1. With the site up and running on your localhost, make a change to one of the pages (find a typo...there are many).  A good editor for Markdown is the [Atom editor](https://atom.io/).  Once you save your changes to the .md file, wait a moment, then refresh the localhost site in your browser to preview your change.
 1. If you are satisfied with your change, use git to commit your change to the GitHub repository (or submit a pull-request for review).
 1. Wait a couple minutes - this site is large and it may take a minute or two for Jekyll to process all the markdown and render the html contents.  (If you issued a pull-request, your change won't be live until a git administrator accepts it).
@@ -41,9 +41,9 @@ Notice the banner along the top of the "WIP" version of the site.  This tells th
 
 How does this work for the author, developer, or contributor?  The current (_stable_) version Rhino is defined in the `stable:` field in the `_config.yml` file.  The `n` branch that corresponds to the stable release is built and deployed to http://developer.rhino3d.com.  
 
-The `master` branch represents the WIP version of the site.  Changes to the `master` branch will be built by Travis and deployed to http://developer.rhino3d.com/wip.  
+The `master` branch represents the WIP version of the site.  Changes to the `master` branch will be built by Travis and deployed to [http://developer.rhino3d.com/wip](http://developer.rhino3d.com/wip).  
 
-Branches are defined in `_config.yml` (under `version_branches`) and will be built and deployed into a subpath with the same name; for example: the `5` branch is built and deployed to http://developer.rhino3d.com/5.
+Branches are defined in `_config.yml` (under `version_branches`) and will be built and deployed into a subpath with the same name; for example: the `5` branch is built and deployed to [http://developer.rhino3d.com/5](http://developer.rhino3d.com/5).
 
 So, if you want to author a guide that applies to the current (_stable_) version of Rhino, you should work on the branch marked `stable` branch in the `_config.yml` file.  If you would like to author a guide that applies to the RhinoWIP, then you should work in the `master` branch.
 

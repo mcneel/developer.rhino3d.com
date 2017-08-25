@@ -93,7 +93,7 @@ In general, there are three types of changes that you will need to know about:
 Note, the Rhino Rhino 6 C/C++ SDK does include MFC user interface classes, such as ```CRhinoDialog```, ```CRhinoDockBar```, and more. To use these classes, define ```RHINO_SDK_MFC``` in your project's *stdafx.h* file.
 
         // If you want to use Rhino's MFC UI classes, then
-        // uncomment the #define RHINO_SDK_MFC statement below. 
+        // uncomment the #define RHINO_SDK_MFC statement below.
         // Note, doing so will requires that your plug-in is
         // built with the same version of Visual Studio as was
         // used to build Rhino.
@@ -173,6 +173,4 @@ Not all changes in the Rhino 6 C/C++ SDK could be tagged as deprecated. For exam
 - [Migrate your plugin project to Rhino 6]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-windows)
 - [Migrate your plugin project to Rhino 6 manually]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows)
 - [Annotation Objects]({{ site.baseurl }}/guides/cpp/annotation-objects)
-- [C++ SDK samples on GitHub](https://github.com/mcneel/rhino-developer-samples/tree/master/cpp)
-
-
+- [C++ SDK samples on GitHub](https://github.com/mcneel/rhino-developer-samples/tree/{{ site.git_branch | default: "master" }}/cpp)

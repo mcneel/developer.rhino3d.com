@@ -8,14 +8,14 @@ order: 1
 
 # Administration
 
-[![Build Status](https://travis-ci.org/mcneel/developer-rhino3d-com.svg?branch={{ site.git_branch }})](https://travis-ci.org/mcneel/developer-rhino3d-com)
+[![Build Status](https://travis-ci.org/mcneel/developer-rhino3d-com.svg?branch={{ site.git_branch | default: "master" }})](https://travis-ci.org/mcneel/developer-rhino3d-com)
 
 This site is the canonical source for developer documentation relating to Rhino, Grasshopper, and other companion products.  The goal of this site is to provide a clear, easy-to-navigate, reference, with consistent formatting and nomenclature.
 
 For contributors or administrators, the following guides are necessary reading:
 
 - [Contributing (This Website)]({{ site.baseurl }}/guides/general/contributing/#this-website)
-- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/wip/README.md)
+- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/{{ site.git_branch | default: "master" }}/README.md)
 - [How This Site Works]({{ site.baseurl }}/guides/general/how-this-site-works)
 - [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer-docs-style-guide)
 

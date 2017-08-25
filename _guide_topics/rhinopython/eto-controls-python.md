@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## The Eto Controls  
 
-[Eto is an open source cross-platform dialog box framework](https://github.com/picoe/Eto/wiki) available in Rhino 6.  This guide shows the syntax required to create the most common Eto controls in Rhino.Python.  Controls include Labels, Buttons, Edit boxes and Sliders. In Eto there are [more then 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created. 
+[Eto is an open source cross-platform dialog box framework](https://github.com/picoe/Eto/wiki) available in Rhino 6.  This guide shows the syntax required to create the most common Eto controls in Rhino.Python.  Controls include Labels, Buttons, Edit boxes and Sliders. In Eto there are [more then 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created.
 
 For details on creating the rest of an Eto Dialog in Rhino.Python go to the [Getting Started with Eto article]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/)
 
@@ -70,7 +70,7 @@ Calendar control to pick a date or range of dates
     self.m_calender = forms.Calendar()
 ```
 
-There are a number of properties of a calender control that can be used to modify how the ccontrol works. 
+There are a number of properties of a calender control that can be used to modify how the ccontrol works.
 
 ```python
     #Create a Calendar
@@ -129,7 +129,7 @@ Owner-drawn control using Graphics object
 
 ## DropDown
 
-Drop down with a list of items. 
+Drop down with a list of items.
 
 ```python
         #Create Dropdown List
@@ -262,7 +262,7 @@ A TextBox is used to enter a string into the dialog.
 To check the contents of the textbox in the script, the textbox control must have a name to reference it.
 
 ```python
-        self.m_textbox = forms.TextBox() 
+        self.m_textbox = forms.TextBox()
 ```
 
 In this case the name `m_textbox` can be used to reference the control later in the class method starting on line 44:
@@ -284,12 +284,12 @@ WebView - Control to present a web page through a url or static HTML
 
 ## Sample dialogs  
 
-Now with some understanding of Eto Dialogs in Python, take a look at some of the Sample dialogs in the [Python Developer Samples Repo](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython):
+Now with some understanding of Eto Dialogs in Python, take a look at some of the Sample dialogs in the [Python Developer Samples Repo](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython):
 
-1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoDialog.py)
-2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoRebuildCurve.py)
-3.  [Capture a view dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoViewCaptureDialog.py)
-4.  [Collapsable controls on a Dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoCollapsibleDialog.py)
+1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoDialog.py)
+2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoRebuildCurve.py)
+3.  [Capture a view dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoViewCaptureDialog.py)
+4.  [Collapsable controls on a Dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoCollapsibleDialog.py)
 
 ---
 
