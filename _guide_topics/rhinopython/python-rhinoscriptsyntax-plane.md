@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## Planes
 
-Several RhinoscriptSyntax methods either require as an argument or return as a result a plane.  Planes are represented by a [Plane](http://developer.rhino3d.com/wip/api/RhinoCommonWin/html/T_Rhino_Geometry_Plane.htm) structure. Plane structures and be thought of as a zero-based,  one-dimensional list containing four elements: the plane's origin ([point3D]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points)), the plane's X axis direction ([vector3d]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)), the plane's Y axis direction ([vector3d]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)), and the plane's Z axis direction ([vector3d]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)).
+Several RhinoscriptSyntax methods either require as an argument or return as a result a plane.  Planes are represented by a [Plane]({{ site.baseurl }}/api/RhinoCommonWin/html/T_Rhino_Geometry_Plane.htm) structure. Plane structures and be thought of as a zero-based,  one-dimensional list containing four elements: the plane's origin ([point3D]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points)), the plane's X axis direction ([vector3d]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)), the plane's Y axis direction ([vector3d]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)), and the plane's Z axis direction ([vector3d]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)).
 
 <img src="{{ site.baseurl }}/images/primer-planedefinition.svg">{: .img-center  width="45%"}
 

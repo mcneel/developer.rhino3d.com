@@ -19,15 +19,15 @@ layout: toc-guide-page
 
 Rhino.Python comes with a series of [pre-defined user interface dialogs](/guides/rhinopython/python-user-input/) which can be used for the times a simple dialog box is needed.  But, if the pre-defined dialogs above do not provide enough functionality, then creating a custom dialog box using Eto may be the right solution.
 
-For example, here is a custom, collapsing dialog that uses many controls: 
+For example, here is a custom, collapsing dialog that uses many controls:
 
 ![{{ site.baseurl }}/images/dialog-collapse.png]({{ site.baseurl }}/images/dialog-collapse.png){: .img-center  width="50%"}
 
 The Eto framework allows creation of the dialog box, the controls, and the actions and events required to make the form functional.
 
-Eto is powerful, full-features user-interface toolkit. Understanding how best to write, organize and use Eto dialogs will take some work. 
+Eto is powerful, full-features user-interface toolkit. Understanding how best to write, organize and use Eto dialogs will take some work.
 
-This guide will cover the basics and best practices of creating Eto dialogs in Rhino.Python.  Some of the syntax may seem a little onerous, but in practice the following methods allow Eto code to efficiently be managed in Rhino.Python scripts. 
+This guide will cover the basics and best practices of creating Eto dialogs in Rhino.Python.  Some of the syntax may seem a little onerous, but in practice the following methods allow Eto code to efficiently be managed in Rhino.Python scripts.
 
 ## The Eto framework
 
@@ -60,18 +60,18 @@ import Eto.Forms as forms
 
 # SampleEtoRoomNumber dialog class
 class SampleRoomNumberDialog(forms.Dialog[bool]):
-    
+
     # Dialog box Class initializer
     def __init__(self):
         # Initialize dialog box
         self.Title = 'Sample Eto: Room Number'
         self.Padding = drawing.Padding(10)
         self.Resizable = False
-        
+
         # Create controls for the dialog
         self.m_label = forms.Label(Text = 'Enter the Room Number:')
-        self.m_textbox = forms.TextBox(Text = None) 
-        
+        self.m_textbox = forms.TextBox(Text = None)
+
         # Create the default button
         self.DefaultButton = forms.Button(Text = 'OK')
         self.DefaultButton.Click += self.OnOKButtonClick
@@ -107,7 +107,7 @@ class SampleRoomNumberDialog(forms.Dialog[bool]):
             self.Close(False)
         else:
             self.Close(True)
-            
+
     ## End of Dialog Class ##
 
 # The script that will be using the dialog.
@@ -126,11 +126,11 @@ if __name__ == "__main__":
 ```
 {: .line-numbers}
 
-This script is split into 3 main sections. 
+This script is split into 3 main sections.
 
 1. The `import` section to include all the assemblies needed for the script.
 2. The dialog class definition `SampleRoomNumberDialog()`
-3. The script itself `RequestRoomNumber()` 
+3. The script itself `RequestRoomNumber()`
 
 ## Imports for Eto
 
@@ -165,11 +165,11 @@ Note, this guide will only cover the creation of model dialogs, which require th
 
 ## The Dialog Form  
 
-Once the new class is declared, then the *init* instantiation operation to assign the defaults to the new dialog object when created.  Python uses the *self* variable in class declarations to reference the class members in the *init*. This of *self* as a placeholder for the class name once the class is actually created in the script. 
+Once the new class is declared, then the *init* instantiation operation to assign the defaults to the new dialog object when created.  Python uses the *self* variable in class declarations to reference the class members in the *init*. This of *self* as a placeholder for the class name once the class is actually created in the script.
 
 ```python
 class SampleEtoViewRoomNumber(forms.Dialog[bool]):
-    
+
     def __init__(self):
         # Initialize dialog box
         self.Title = 'Sample Eto: Room Number'
@@ -199,7 +199,7 @@ By default the dialog will automatically adjust its size to the contents it cont
 
 The ClientSize property takes a `Eto.Drawing.Size` structure.  
 
-After we create the controls and a layout the contents can be placed within the dialog using the `self.Content` class, as is done on line 39: 
+After we create the controls and a layout the contents can be placed within the dialog using the `self.Content` class, as is done on line 39:
 
 ```python
         self.Content = layout
@@ -214,7 +214,7 @@ A dialog class is will show up on the screen as [*modal*](https://en.wikipedia.o
         self.Close(False)
 ```
 
-The `self.Close` method is also returning a `False` because the Cancel button was pressed to cause this event.  The script will continue on based on the return value of the dialog. 
+The `self.Close` method is also returning a `False` because the Cancel button was pressed to cause this event.  The script will continue on based on the return value of the dialog.
 
 Also, because we are using a new class object to create the dialog, even after the dialog is closed the dialog will still be in memory. This means the methods and values within the dialog will continue to be available within the scope of the script as the script may need to reference those values.
 
@@ -223,7 +223,7 @@ After creating the dialog framework, we will start to create some controls for t
 
 ## The Controls  
 
-The business end of a dialog is the user-interface controls it displays.  Controls may include Labels, Buttons, Edit boxes and Sliders. In Eto, there are [more then 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created. 
+The business end of a dialog is the user-interface controls it displays.  Controls may include Labels, Buttons, Edit boxes and Sliders. In Eto, there are [more then 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created.
 
 Controls normally need to be setup properly in a layout before they are added to a dialog.  
 
@@ -256,7 +256,7 @@ A TextBox is used to enter a string into the dialog.
 To check the contents of the textbox in the script, the textbox control must have a name to reference it.
 
 ```python
-        self.m_textbox = forms.TextBox() 
+        self.m_textbox = forms.TextBox()
 ```
 
 In this case the name `m_textbox` can be used to reference the control later in the class method starting on line 44:
@@ -271,7 +271,7 @@ Just creating a new `Eto.Forms.TextBox()` is common.  There are a number of addi
 
 ### Button Controls
 
-Buttons are placed on almost every dialog.  Buttons are created, then bound through their `.Click` event to run a method when the button is clicked. 
+Buttons are placed on almost every dialog.  Buttons are created, then bound through their `.Click` event to run a method when the button is clicked.
 
 ![{{ site.baseurl }}/images/eto-buttons.svg]({{ site.baseurl }}/images/eto-buttons.svg){: .img-center width="65%"}
 
@@ -324,7 +324,7 @@ Layouts are used to size and place controls in a logical way in a dialog.  They 
         self.Content = layout
 ```
 
-The code for the layout comes further down in the class definition, because it seems to make sense to create the controls first before placing them in a layout. 
+The code for the layout comes further down in the class definition, because it seems to make sense to create the controls first before placing them in a layout.
 
 In this a case a new dynamic layout object is created at:
 
@@ -380,12 +380,12 @@ There are many options when using Layout, Rows and Cells with Eto to place contr
 
 ## Control Delegates and Events
 
-The last section of the Dialog class, in the example, is a series of class methods: 
+The last section of the Dialog class, in the example, is a series of class methods:
 
 1. Methods used to access the class members
 2. Method actions for binding to control events.  
 
-A common practice is to create a function that returns the value of a control you might want to get or set: 
+A common practice is to create a function that returns the value of a control you might want to get or set:
 
 ```python
     # Get the value of the textbox
@@ -458,12 +458,12 @@ The script continues along, checking the return `rc` value and also referencing 
 
 ## Sample Dialogs  
 
-Now with some understanding of Eto Dialogs in Python, take a look at some of the Sample dialogs in the [Python Developer Samples Repo](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython):
+Now with some understanding of Eto Dialogs in Python, take a look at some of the Sample dialogs in the [Python Developer Samples Repo](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython):
 
-1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoDialog.py)
-2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoRebuildCurve.py)
-3.  [Capture a view dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoViewCaptureDialog.py)
-4.  [Collapsable controls on a Dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoCollapsibleDialog.py)
+1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoDialog.py)
+2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoRebuildCurve.py)
+3.  [Capture a view dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoViewCaptureDialog.py)
+4.  [Collapsable controls on a Dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoCollapsibleDialog.py)
 
 ---
 

@@ -15,7 +15,7 @@ This site is the canonical source for developer documentation relating to Rhino,
 For contributors or administrators, the following guides are necessary reading:
 
 - [Contributing (This Website)]({{ site.baseurl }}/guides/general/contributing/#this-website)
-- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/wip/README.md)
+- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/{{ site.git_branch | default: "master" }}/README.md)
 - [How This Site Works]({{ site.baseurl }}/guides/general/how-this-site-works)
 - [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer-docs-style-guide)
 

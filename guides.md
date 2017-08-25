@@ -44,7 +44,7 @@ order: 2
 ### This Site
 
 - [How This Site Works]({{ site.baseurl }}/guides/general/how-this-site-works)
-- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/master/README.md)
+- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/{{ site.git_branch | default: "master" }}/README.md)
 - [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer-docs-style-guide)
 
 ---
@@ -239,7 +239,7 @@ order: 2
 
 - [Rhino Scripting Forum (Discourse)](http://discourse.mcneel.com/c/scripting)
 - [Rhino.Python Samples]({{ site.baseurl }}/samples/#rhinopython)
-- [Rhino.Python Developer Samples GitHub](https://github.com/mcneel/rhino-developer-samples/tree/wip/rhinopython)
+- [Rhino.Python Developer Samples GitHub](https://github.com/mcneel/rhino-developer-samples/tree/{{ site.git_branch | default: "master" }}/rhinopython)
 - [Designalyze Python Tutorials](http://designalyze.com/)
 - [Plethora Project](http://www.plethora-project.com/2011/09/12/rhino-python-tutorials/)
 - [Steve Baer's Blog](http://stevebaer.wordpress.com/category/python/)
