@@ -8,6 +8,8 @@ order: 1
 
 # Administration
 
+[![Build Status](https://travis-ci.org/mcneel/developer-rhino3d-com.svg?branch={{ site.git_branch }})](https://travis-ci.org/mcneel/developer-rhino3d-com)
+
 This site is the canonical source for developer documentation relating to Rhino, Grasshopper, and other companion products.  The goal of this site is to provide a clear, easy-to-navigate, reference, with consistent formatting and nomenclature.
 
 For contributors or administrators, the following guides are necessary reading:
