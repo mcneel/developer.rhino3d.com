@@ -170,7 +170,7 @@ Control to enter a date and/or time
 
 Drop down with a list of items. 
 
-![{{ site.baseurl }}/images/eto-controls-dropdown.png]({{ site.baseurl }}/images/eto-controls-dropdown.png){: .img-center width="45%"}
+![{{ site.baseurl }}/images/eto-controls-combobox.png]({{ site.baseurl }}/images/eto-controls-combobox.png){: .img-center width="45%"}
 
 ```python
         #Create Dropdown List
