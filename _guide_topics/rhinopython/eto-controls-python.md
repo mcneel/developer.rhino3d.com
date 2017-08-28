@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## The Eto Controls  
 
-[Eto is an open source cross-platform dialog box framework](https://github.com/picoe/Eto/wiki) available in Rhino 6.  This guide shows the syntax required to create the most common Eto controls in Rhino.Python.  Controls include Labels, Buttons, Edit boxes and Sliders. In Eto there are [more then 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created.
+[Eto is an open source cross-platform dialog box framework](https://github.com/picoe/Eto/wiki) available in Rhino 6.  This guide shows the syntax required to create the most common Eto controls in Rhino.Python.  Controls include Labels, Buttons, Edit boxes and Sliders. In Eto there are [more then 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created. 
 
 For details on creating the rest of an Eto Dialog in Rhino.Python go to the [Getting Started with Eto article]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/)
 
@@ -70,7 +70,7 @@ Calendar control to pick a date or range of dates
     self.m_calender = forms.Calendar()
 ```
 
-There are a number of properties of a calender control that can be used to modify how the ccontrol works.
+There are a number of properties of a calender control that can be used to modify how the control works. 
 
 ```python
     #Create a Calendar
@@ -78,7 +78,13 @@ There are a number of properties of a calender control that can be used to modif
     self.m_calendar.Mode = forms.CalendarMode.Single
     self.m_calendar.MaxDate = System.DateTime(2017,7,31)
     self.m_calendar.MinDate = System.DateTime(2017,7,1)
+    self.m_calendar.SelectedDate = System.DateTime(2017,7,15)
 ```
+The `.Mode` property sets if only a single date can be setting `forms.CalendarMode.Single` or date range can be selected by setting `.mode` to `forms.CalendarMode.Range`.
+
+The `MaxDate` and `.MinDate` property limits the range of dates that can be selected from. 
+
+The `.SelectedDate` will result in that date being initially selected.
 
 ## CheckBox
 
@@ -115,13 +121,40 @@ This will create a color picker with a blank default color.  A default color may
 
 ## ComboBox
 
-Text entry with a drop down list of items
+A Combo box is a drop down list of items that also allows input of text directly:
 
+```python
+        #Create Combobox
+        self.m_combobox = forms.ComboBox()
+        self.m_combobox.DataStore = ['first pick', 'second pick', 'third pick']
+```
 
+The default value can be set to display by adding the index postition to the DataStore property:
+
+```python
+        self.m_combobox.SelectedIndex = 1
+```
 
 ## DateTimePicker
 
 Control to enter a date and/or time
+
+```python
+        #Create DateTime Picker in Date mode
+        self.m_datetimedate = forms.DateTimePicker()
+        self.m_datetimedate.Mode = forms.DateTimePickerMode.Date
+        self.m_datetimedate.MaxDate = System.DateTime(2017,7,30)
+        self.m_datetimedate.MinDate = System.DateTime(2017,7,1)
+        self.m_datetimedate.Value = System.DateTime(2017,7,15)
+```
+
+```python
+        #Create DateTime Picker in Date mode
+        self.m_datetimetime = forms.DateTimePicker()
+        self.m_datetimetime.Mode = forms.DateTimePickerMode.Time
+        self.m_datetimetime.Value = System.DateTime.Now
+        self.m_datetimetime.Value = System.DateTime(2017, 1, 1, 23, 43, 49, 500)
+```
 
 ## Drawable
 
@@ -129,7 +162,7 @@ Owner-drawn control using Graphics object
 
 ## DropDown
 
-Drop down with a list of items.
+Drop down with a list of items. 
 
 ```python
         #Create Dropdown List
@@ -145,15 +178,67 @@ The default selection can be set in the list by using the DataStore property:
 
 ## GridView
 
-A virtualized grid of data with editable cells
+A virtualized grid of data with editable cells:
+
+```python
+        #Create Gridview sometimes called a ListView
+        self.m_gridview = forms.GridView()
+#        self.m_gridview.Size = drawing.Size(400, 400)
+        self.m_gridview.ShowHeader = True
+        self.m_gridview.DataStore = (['first pick', 'second pick', 'third pick', True],['second','fourth','last', False])
+
+        column1 = forms.GridColumn()
+        column1.HeaderText = 'Column 1'
+        column1.Editable = True
+        column1.DataCell = forms.TextBoxCell(0)
+        self.m_gridview.Columns.Add(column1)
+
+        column2 = forms.GridColumn()
+        column2.HeaderText = 'Column 2'
+        column2.Editable = True
+        column2.DataCell = forms.TextBoxCell(1)
+        self.m_gridview.Columns.Add(column2)
+
+        column3 = forms.GridColumn()
+        column3.HeaderText = 'Column 3'
+        column3.Editable = True
+        column3.DataCell = forms.TextBoxCell(2)
+        self.m_gridview.Columns.Add(column3)
+        
+        column4 = forms.GridColumn()
+        column4.HeaderText = 'Column 4'
+        column4.Editable = True
+        column4.DataCell = forms.CheckBoxCell(3)
+        self.m_gridview.Columns.Add(column4)
+```
 
 ## GroupBox
 
-A panel with a border and optional title
+A panel with a border and optional title.  TBD http://api.etoforms.picoe.ca/html/T_Eto_Forms_GroupBox.htm
 
 ## ImageView
 
-A view to display a single image
+A view to display a single image:
+
+```python
+# Create an image view
+        self.m_image_view = forms.ImageView()
+        self.m_image_view.Size = drawing.Size(300, 200)
+        self.m_image_view.Image = None
+        
+        # Capture the active view to a System.Drawing.Bitmap
+        view = scriptcontext.doc.Views.ActiveView
+        bitmap = view.CaptureToBitmap()
+        
+        # Convert the System.Drawing.Bitmap to an Eto.Drawing.Bitmap
+        # which is required for an Eto image view control
+        stream = System.IO.MemoryStream()
+        format = System.Drawing.Imaging.ImageFormat.Png
+        System.Drawing.Bitmap.Save(bitmap, stream, format)
+        if stream.Length != 0:
+          self.m_image_view.Image = drawing.Bitmap(stream)
+        stream.Dispose()
+```
 
 ## Label Control
 
@@ -177,81 +262,150 @@ For a complete list of properties and events of the Label class, see the [Eto La
 
 ## LinkButton
 
-A simple label that acts like a button, similar to a hyperlink
+A simple label that acts like a button, similar to a hyperlink.
+
+```python
+# Create LinkButton
+        self.m_linkbutton = forms.LinkButton(Text = 'For more details...')
+        self.m_linkbutton.Click += self.OnLinkButtonClick
+        
+    # Linkbutton click handler
+    def OnLinkButtonClick(self, sender, e):
+        webbrowser.open("http://rhino3d.com")
+```
+
 
 ## ListBox
 
-A scrollable list of items
+A scrollable list of items:
 
-## ListControl
-
-Base for ListBox, DropDown, ComboBox, and other list-type controls
-
-## MaskedTextBox
-
-TextBox for variable or fixed length masks
+```python
+        #Create ListBox
+        self.m_listbox = forms.ListBox()
+        self.m_listbox.DataStore = ['first pick', 'second pick', 'third pick']
+        self.m_listbox.SelectedIndex = 1
+```
 
 ## NumericUpDown
 
 Numeric control that allows the user to adjust the value with the mouse
 
-## Panel
-
-A blank panel container to add other controls
+```python
+# Create Numeric Up Down
+        self.m_numeric_updown = forms.NumericUpDown()
+        self.m_numeric_updown.DecimalPlaces = 2
+        self.m_numeric_updown.Increment = 0.01
+        self.m_numeric_updown.MaxValue = 10.0
+        self.m_numeric_updown.MinValue = 1.0
+        self.m_numeric_updown.Value = 5.0
+```
 
 ## PasswordBox
 
-Enter passwords or sensitive data
+Enter passwords or sensitive data:
+
+```python
+# Create Password Box
+        self.m_password = forms.PasswordBox()
+        self.m_password.MaxLength = 7
+```
 
 ## ProgressBar
 
-Show progress of long running tasks
+Show progress of long running tasks:
 
-## RadioButton
+![{{ site.baseurl }}/images/dialog-sample-eto-buttons.png]({{ site.baseurl }}/images/python-eto-progressbar.png){: .img-center}
 
-Used in a group of radio buttons to allow user to select from values
+```python
+# Create Progress Bar
+        self.m_progressbar = forms.ProgressBar()
+        self.m_progressbar.MinValue = 0
+        self.m_progressbar.MaxValue = 10
+```
+
+```python
+self.m_progress = 1
+
+    # GoButton button click handler
+    def OnGoButtonClick(self, sender, e):
+        self.m_progress = self.m_progress + 1
+        if self.m_progress > 10:
+            self.m_progress = 10
+        self.m_progressbar.Value = self.m_progress
+```
+
 
 ## RadioButtonList
 
-Manages a list of radio buttons
+Manages a list of radio buttons:
+
+```python
+# Create Radio Button List Control
+        self.m_radiobuttonlist = forms.RadioButtonList()
+        self.m_radiobuttonlist.DataStore = ['first pick', 'second pick', 'third pick']
+        self.m_radiobuttonlist.Orientation = forms.Orientation.Vertical
+        self.m_radiobuttonlist.SelectedIndex = 1
+```
 
 ## RichTextArea
 
-## Multi-line
+Multi-line text area with rich text formatting. This differs from the TextBox in that it is used for multi-line text entry and can accept Tab and Enter input.
 
-text area with rich text formatting
+```python
+# Create Rich Text Edit Box
+        self.m_richtextarea = forms.RichTextArea()
+        self.m_richtextarea.Size = drawing.Size(400, 400)
+```
 
-## Scrollable
+The text also can be formatted by using 
 
-A scrollable container
+1. `ctrl B` for Bold text. 
+2. `crtl I` for Italic.
+3. `ctrl U` for Underline.
+4. .......
+
 
 ## SearchBox
 
-A text box with search-box functionality
+A text box with search-box functionality. The search box control is similar to a plain text box, but provides platform-specific styling.
+
+```python
+# Create Search Box
+        self.m_searchbox = forms.SearchBox()
+```
+
 
 ## Slider
 
-A horizontal or vertical slider to select a value from a range
+A horizontal or vertical slider to select a value from a range:
+
+```python
+# Create a slider
+        self.m_slider = forms.Slider()
+        self.m_slider.MaxValue = 10
+        self.m_slider.MinValue = 0
+        self.m_slider.Value = 3
+```
 
 ## Spinner
 
-A spinner to show indeterminate progress in compact space
+A spinner to show indeterminate progress in compact space:
 
-## Splitter
-
-Splits two panes horizontally or vertically
-
-## TabControl
-
-Presents multiple TabPage containers which the user can select
-
-## TabPage
-
-A single page of a TabControl
+```python
+# Create Spinner
+        self.m_spinner = forms.Spinner()
+        self.m_spinner.Enabled = True
+```
 
 ## TextArea
 
-Multi-line text control with scrollbars
+Multi-line text control with scrollbars:
+
+```
+# Create Text Area Box
+        self.m_textarea = forms.TextArea()
+        self.m_textarea.Size = drawing.Size(400, 400)
+```
 
 ## TextBox Control
 
@@ -262,7 +416,7 @@ A TextBox is used to enter a string into the dialog.
 To check the contents of the textbox in the script, the textbox control must have a name to reference it.
 
 ```python
-        self.m_textbox = forms.TextBox()
+        self.m_textbox = forms.TextBox() 
 ```
 
 In this case the name `m_textbox` can be used to reference the control later in the class method starting on line 44:
@@ -284,12 +438,12 @@ WebView - Control to present a web page through a url or static HTML
 
 ## Sample dialogs  
 
-Now with some understanding of Eto Dialogs in Python, take a look at some of the Sample dialogs in the [Python Developer Samples Repo](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython):
+Now with some understanding of Eto Dialogs in Python, take a look at some of the Sample dialogs in the [Python Developer Samples Repo](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython):
 
-1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoDialog.py)
-2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoRebuildCurve.py)
-3.  [Capture a view dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoViewCaptureDialog.py)
-4.  [Collapsable controls on a Dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoCollapsibleDialog.py)
+1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoDialog.py)
+2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoRebuildCurve.py)
+3.  [Capture a view dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoViewCaptureDialog.py)
+4.  [Collapsable controls on a Dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoCollapsibleDialog.py)
 
 ---
 
