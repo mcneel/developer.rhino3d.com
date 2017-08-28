@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## The Eto Controls  
 
-[Eto is an open source cross-platform dialog box framework](https://github.com/picoe/Eto/wiki) available in Rhino 6.  This guide shows the syntax required to create the most common Eto controls in Rhino.Python.  Controls include Labels, Buttons, Edit boxes and Sliders. In Eto there are [more then 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created. 
+[Eto is an open source cross-platform dialog box framework](https://github.com/picoe/Eto/wiki) available in Rhino 6.  This guide shows the syntax required to create the most common Eto controls in Rhino.Python.  Controls include Labels, Buttons, Edit boxes and Sliders. In Eto there are [more than 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created. 
 
 For details on creating the rest of an Eto Dialog in Rhino.Python go to the [Getting Started with Eto article]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/)
 
@@ -23,7 +23,7 @@ For details on creating the rest of an Eto Dialog in Rhino.Python go to the [Get
 
 Buttons are placed on almost every dialog.  
 
-![{{ site.baseurl }}/images/dialog-sample-eto-buttons.png]({{ site.baseurl }}/images/dialog-sample-eto-buttons.png){: .img-center}
+![{{ site.baseurl }}/images/eto-buttons.svg]({{ site.baseurl }}/images/eto-buttons.svg){: .img-center width="65%"}
 
 Creating a new button is simple completed by specifying the `Text` shown on the button face. In addition to creating the new button, commonly the `.Click` event is bound to a method usein the `+=` syntax as shown below.
 
@@ -63,7 +63,7 @@ self.AbortButton = forms.Button(Text = 'Cancel')
 
 Calendar control to pick a date or range of dates
 
-![{{ site.baseurl }}/images/dialog-sample-eto-buttons.png]({{ site.baseurl }}/images/eto-controls-calendar.png){: .img-center}
+![{{ site.baseurl }}/images/eto-controls-calendar.png]({{ site.baseurl }}/images/eto-controls-calendar.png){: .img-center width="45%"}
 
 ```python
     #Create a Calender
@@ -90,6 +90,10 @@ The `.SelectedDate` will result in that date being initially selected.
 
 Check box with text label.
 
+![{{ site.baseurl }}/images/eto-dialog-checkbox.png]({{ site.baseurl }}/images/eto-dialog-checkbox.png){: .img-center width="45%"}
+
+The simpliest syntax for a CheckBox is:
+
 ```python
     #Create a Checkbox
     self.m_checkbox = forms.CheckBox(Text = 'My Checkbox')
@@ -105,7 +109,9 @@ The intial state of the checkbox can be set.  The checkbox will be checked by de
 
 ## ColorPicker
 
-Pick a single color drop down color picker. Also supports a right-click on the dropdown arrow to support eye dropper and the stanrd system color picker dialog.
+Pick a single color drop down color picker. Also supports a right-click on the dropdown arrow to support eye dropper and the standard system color picker dialog.
+
+![{{ site.baseurl }}/images/eto-dialog-colorpicker.png]({{ site.baseurl }}/images/eto-dialog-colorpicker.png){: .img-center width="45%"}
 
 ```python
         #Create a ColorPicker Control
@@ -123,6 +129,8 @@ This will create a color picker with a blank default color.  A default color may
 
 A Combo box is a drop down list of items that also allows input of text directly:
 
+![{{ site.baseurl }}/images/eto-controls-combobox.png]({{ site.baseurl }}/images/eto-controls-combobox.png){: .img-center width="45%"}
+
 ```python
         #Create Combobox
         self.m_combobox = forms.ComboBox()
@@ -138,6 +146,8 @@ The default value can be set to display by adding the index postition to the Dat
 ## DateTimePicker
 
 Control to enter a date and/or time
+
+![{{ site.baseurl }}/images/eto-controls-datetimepicker.png]({{ site.baseurl }}/images/eto-controls-datetimepicker.png){: .img-center width="45%"}
 
 ```python
         #Create DateTime Picker in Date mode
@@ -156,13 +166,11 @@ Control to enter a date and/or time
         self.m_datetimetime.Value = System.DateTime(2017, 1, 1, 23, 43, 49, 500)
 ```
 
-## Drawable
-
-Owner-drawn control using Graphics object
-
 ## DropDown
 
 Drop down with a list of items. 
+
+![{{ site.baseurl }}/images/eto-controls-dropdown.png]({{ site.baseurl }}/images/eto-controls-dropdown.png){: .img-center width="45%"}
 
 ```python
         #Create Dropdown List
@@ -179,6 +187,8 @@ The default selection can be set in the list by using the DataStore property:
 ## GridView
 
 A virtualized grid of data with editable cells:
+
+![{{ site.baseurl }}/images/eto-controls-gridview.png]({{ site.baseurl }}/images/eto-controls-gridview.png){: .img-center width="65%"}
 
 ```python
         #Create Gridview sometimes called a ListView
@@ -214,11 +224,21 @@ A virtualized grid of data with editable cells:
 
 ## GroupBox
 
-A panel with a border and optional title.  TBD http://api.etoforms.picoe.ca/html/T_Eto_Forms_GroupBox.htm
+A panel with a border and optional title.  
+
+![{{ site.baseurl }}/images/eto-controls-groupbox.png]({{ site.baseurl }}/images/eto-controls-groupbox.png){: .img-center width="45%"}
+
+Like the larger dialog, the GroupBox requires a Layout to hep postiion controls.  Within the layout, controls are placed:
+
+
+
+TBD http://api.etoforms.picoe.ca/html/T_Eto_Forms_GroupBox.htm
 
 ## ImageView
 
 A view to display a single image:
+
+![{{ site.baseurl }}/images/eto-controls-imageview.png]({{ site.baseurl }}/images/eto-controls-imageview.png){: .img-center width="45%"}
 
 ```python
 # Create an image view
@@ -264,6 +284,8 @@ For a complete list of properties and events of the Label class, see the [Eto La
 
 A simple label that acts like a button, similar to a hyperlink.
 
+![{{ site.baseurl }}/images/eto-controls-linkbutton.png]({{ site.baseurl }}/images/eto-controls-linkbutton.png){: .img-center width="45%"}
+
 ```python
 # Create LinkButton
         self.m_linkbutton = forms.LinkButton(Text = 'For more details...')
@@ -279,6 +301,8 @@ A simple label that acts like a button, similar to a hyperlink.
 
 A scrollable list of items:
 
+![{{ site.baseurl }}/images/eto-controls-listbox.png]({{ site.baseurl }}/images/eto-controls-listbox.png){: .img-center width="45%"}
+
 ```python
         #Create ListBox
         self.m_listbox = forms.ListBox()
@@ -288,7 +312,9 @@ A scrollable list of items:
 
 ## NumericUpDown
 
-Numeric control that allows the user to adjust the value with the mouse
+Numeric control that allows the user to adjust the value with the mouse:
+
+![{{ site.baseurl }}/images/eto-controls-numericupdown.png]({{ site.baseurl }}/images/eto-controls-numericupdown.png){: .img-center width="45%"}
 
 ```python
 # Create Numeric Up Down
@@ -304,6 +330,8 @@ Numeric control that allows the user to adjust the value with the mouse
 
 Enter passwords or sensitive data:
 
+![{{ site.baseurl }}/images/eto-controls-password.png]({{ site.baseurl }}/images/eto-controls-password.png){: .img-center width="45%"}
+
 ```python
 # Create Password Box
         self.m_password = forms.PasswordBox()
@@ -314,7 +342,7 @@ Enter passwords or sensitive data:
 
 Show progress of long running tasks:
 
-![{{ site.baseurl }}/images/dialog-sample-eto-buttons.png]({{ site.baseurl }}/images/python-eto-progressbar.png){: .img-center}
+![{{ site.baseurl }}/images/eto-controls-progressbar.png]({{ site.baseurl }}/images/eto-controls-progressbar.png){: .img-center width="45%"}
 
 ```python
 # Create Progress Bar
@@ -339,6 +367,8 @@ self.m_progress = 1
 
 Manages a list of radio buttons:
 
+![{{ site.baseurl }}/images/eto-controls-radiobuttonlist.png]({{ site.baseurl }}/images/eto-controls-radiobuttonlist.png){: .img-center width="45%"}
+
 ```python
 # Create Radio Button List Control
         self.m_radiobuttonlist = forms.RadioButtonList()
@@ -349,7 +379,11 @@ Manages a list of radio buttons:
 
 ## RichTextArea
 
-Multi-line text area with rich text formatting. This differs from the TextBox in that it is used for multi-line text entry and can accept Tab and Enter input.
+Multi-line text area with rich text formatting:
+
+![{{ site.baseurl }}/images/eto-controls-richtextarea.png]({{ site.baseurl }}/images/eto-controls-richtextarea.png){: .img-center width="45%"}
+
+ This differs from the TextBox in that it is used for multi-line text entry and can accept Tab and Enter input.
 
 ```python
 # Create Rich Text Edit Box
@@ -365,19 +399,12 @@ The text also can be formatted by using
 4. .......
 
 
-## SearchBox
-
-A text box with search-box functionality. The search box control is similar to a plain text box, but provides platform-specific styling.
-
-```python
-# Create Search Box
-        self.m_searchbox = forms.SearchBox()
-```
-
 
 ## Slider
 
 A horizontal or vertical slider to select a value from a range:
+
+![{{ site.baseurl }}/images/eto-controls-slider.png]({{ site.baseurl }}/images/eto-controls-slider.png){: .img-center width="45%"}
 
 ```python
 # Create a slider
@@ -391,6 +418,8 @@ A horizontal or vertical slider to select a value from a range:
 
 A spinner to show indeterminate progress in compact space:
 
+![{{ site.baseurl }}/images/eto-controls-spinner.png]({{ site.baseurl }}/images/eto-controls-spinner.png){: .img-center width="45%"}
+
 ```python
 # Create Spinner
         self.m_spinner = forms.Spinner()
@@ -400,6 +429,8 @@ A spinner to show indeterminate progress in compact space:
 ## TextArea
 
 Multi-line text control with scrollbars:
+
+![{{ site.baseurl }}/images/eto-controls-richtextarea.png]({{ site.baseurl }}/images/eto-controls-richtextarea.png){: .img-center width="45%"}
 
 ```
 # Create Text Area Box
