@@ -101,7 +101,7 @@ Note, the Rhino Rhino 6 C/C++ SDK does include MFC user interface classes, such 
 
 ### Model Components
 
-Rhino has a number of model components, such as layers, group, render materials, dimensions style, and more. Over the years, common properties, such as name, index, and id, have been added to these components, but done so in an inconsistent manner. For example, the method for obtaining the id of a layer was different that of a render material.
+Rhino has a number of model components, such as layers, groups, render materials, dimensions styles, and more. Over the years, common properties, such as name, index, and id, have been added to these components, but done so in an inconsistent manner. For example, the method for obtaining the id of a layer was different than that of a render material.
 
 The Rhino 6 C/C++ SDK contains a new ```ON_ModelComponent``` class that remedies this. Model component classes now inherit from this class.
 
