@@ -62,4 +62,4 @@ The [Rhino C/C++ SDK](https://discourse.mcneel.com/t/rhino-wip-developers/30197)
 
 **Congratulations!** You have the tools to build a C/C++ plugin for Rhino for Windows. **Now what?**
 
-Check out the [Creating your first C/C++ plugin for Rhino]({{ site.baseurl }}/guides/cpp/your-first-plugin-windows/) guide for instructions building - your guessed it - your first plugin.
+Check out the [Creating your first C/C++ plugin for Rhino]({{ site.baseurl }}/guides/cpp/your-first-plugin-windows/) guide for instructions building - you guessed it - your first plugin.
