@@ -105,7 +105,7 @@ Rhino has a number of model components, such as layers, groups, render materials
 
 The Rhino 6 C/C++ SDK contains a new ```ON_ModelComponent``` class that remedies this. Model component classes now inherit from this class.
 
-Providing a consistent interface to common properties, however, means that the names of functions used to access these properties have change.
+Providing a consistent interface to common properties, however, means that the names of functions used to access these properties have changed.
 
 For example, in Rhino 5, you could access the name of the current Layer as follows:
 
