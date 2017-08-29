@@ -8,7 +8,7 @@ languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['Intermediate']
 origin:
-order: 75
+order: 3
 keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
@@ -154,7 +154,7 @@ with open(filename, "w") as file:
         file.write(str(point) + "\n")
 
 ```
-----    
+----
 
 There are a couple of things to notice, compared to the previous example. We need some points to export, so we'll let the user select some point objects and point clouds. There is a filter applied to the selection, the _1+2_. 1 filters for point objects and 2 filters for point clouds - we can add the filters together to make combinations such as we have here - 1+2 or, we could have written just 3, that would work as well, it is just harder to parse when reviewing or modifying the code:
 
@@ -194,7 +194,8 @@ with open(filename, "w") as file:
         elif( rs.IsPoint(id) ):
         point = rs.PointCoordinates(id)
         file.write(str(point) + "\n")
-````
+​````
 Keep in mind that 'points' in the script are not the same as 'point objects' in the Rhino file. Points are a list of x,y,z coordinates and point objects are objects in the Rhino file that have, among other properties like display color or layer, a location - the point coordinates.  As you can see in the above, the script iterates a list of IDs -those of the selected point objects or point clouds, and extracts the x,y,z coordinates to write to the file. The exported points are only the x,y,z coordinates of the point objects.
 
 For more information on reading and writing from Python, see the [Python Methods in File Objects documentation](https://docs.python.org/2/tutorial/inputoutput.html#methods-of-file-objects)
+```

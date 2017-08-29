@@ -8,7 +8,7 @@ languages: ['Python']
 platforms: ['Mac', 'Windows']
 categories: ['Intermediate']
 origin:
-order: 100
+order: 30
 keywords: ['script', 'Rhino', 'python']
 layout: toc-guide-page
 ---
@@ -73,11 +73,11 @@ The random functions also have the ability to choose a random element from a lis
 import random
 
 print random.choice('abcdefghijklmnopqrstuvmxyz')  
-````
+​````
 
 `random` can also generate a set of samples from a larger list of values. The following code will return 3 randomly chosen samples from the list of numbers.
 
-```python
+​```python
 import random
 my_list = [1, 2, 3, 4, 5]
 my_samp = 3

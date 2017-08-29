@@ -8,7 +8,7 @@ languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Intermediate']
 origin: http://wiki.mcneel.com/developer/python
-order: 99
+order: 27
 keywords: ['Rhino.Python', 'Python']
 layout: toc-guide-page
 ---
