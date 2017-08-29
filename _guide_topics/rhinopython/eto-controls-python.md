@@ -555,6 +555,27 @@ Just creating a new `Eto.Forms.TextBox()` is common.  There are a number of addi
 
 A control to present nodes in a tree
 
+![{{ site.baseurl }}/images/eto-controls-treeview.png]({{ site.baseurl }}/images/eto-controls-treeview.png){: .img-center width="65%"}
+
+```python
+# Create TreeView
+        self.m_treeview = forms.TreeView()
+        self.m_treeview.Size = drawing.Size(200, 200)
+        self.m_treeview.LabelEdit = True
+        
+        treecollection = forms.TreeItemCollection()
+        self.m_treeview.DataStore = treecollection
+
+        item1 = forms.TreeItem(Text = 'node A1', Expanded = True)
+        item1.Children.Add(forms.TreeItem(Text = 'node B1'))
+        item1.Children.Add(forms.TreeItem(Text = 'node B2'))
+        item2 = forms.TreeItem(Text = 'node A2', Expanded = True)
+        treecollection.Add(item1)
+        treecollection.Add(item2)
+```
+
+
+
 ## TreeGridView
 
 A TreeView with columns
@@ -562,6 +583,17 @@ A TreeView with columns
 ## WebView
 
 Control to present a web page through a url or static HTML
+
+![{{ site.baseurl }}/images/eto-controls-webview.png]({{ site.baseurl }}/images/eto-controls-webview.png){: .img-center width="65%"}
+
+```python
+# Create a WebView
+        self.m_webview = forms.WebView()
+        self.m_webview.Size = drawing.Size(300, 400)
+        self.m_webview.Url = System.Uri('http://developer.rhino3d.com/guides/rhinopython/')
+```
+
+
 
 
 ## Sample dialogs  
