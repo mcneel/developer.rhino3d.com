@@ -16,7 +16,7 @@ layout: toc-guide-page
 
 A Rhino plugin is a software module that extends the functionality of Rhino or Grasshopper by adding commands, features, or capabilities.  A Rhino plugin is a Dynamic Link Library, or DLL.
 
-On Windows, a Rhino plugin built with the [C/C++ SDK]({{ site.baseurl }}/guides/cpp/what-is-the-cpp-sdk/) is regular DLL using shared MFC DLL.
+On Windows, a Rhino plugin built with the [C/C++ SDK]({{ site.baseurl }}/guides/cpp/what-is-the-cpp-sdk/) is a regular DLL using shared MFC DLL.
 
 On Windows and Mac, a Rhino plugin built with the [RhinoCommon SDK]({{ site.baseurl }}/guides/rhinocommon/what-is-rhinocommon/) is a .NET assembly.
 
