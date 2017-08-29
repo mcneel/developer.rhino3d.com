@@ -230,7 +230,23 @@ A panel with a border and optional title.
 
 Like the larger dialog, the GroupBox requires a Layout to hep postiion controls.  Within the layout, controls are placed:
 
+```python
+# Create a group box
+        self.m_groupbox = forms.GroupBox(Text = 'Groupbox')
+        
+        grouplayout = forms.DynamicLayout()
+        
+        label1 = forms.Label(Text = 'Enter Text:')
+        textbox1 = forms.TextBox()
 
+        checkbox1 = forms.CheckBox(Text = 'Start a new row')
+
+        grouplayout.AddRow(label1, textbox1)
+        grouplayout.AddRow(checkbox1)
+        
+        self.m_groupbox.Content = grouplayout
+        
+```
 
 TBD http://api.etoforms.picoe.ca/html/T_Eto_Forms_GroupBox.htm
 
