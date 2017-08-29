@@ -41,11 +41,13 @@ Rhino supports five different types of plugins:
 For Rhino to successfully load and run your plugin, several conditions must be met:
 
 1. The "RhinoSdkVersion" number of your plugin must match the "RhinoSdkVersion" of Rhino.
-1. The "RhinoSdkServiceRelease" number of your plugin must be less than or equal to the "RhinoSdkServiceRelease" of Rhino.
+1. The "RhinoSdkServiceRelease" number of Rhino must be greater than or equal to the "RhinoSdkServiceRelease" of your plugin.
 
-We occasionally make changes to our SDKs.  When we do this, we change the "RhinoSdkVersion" number.  This will cause any existing 64-bit plugins on customer computers to not load.  Your customer will get an error message.
+We occasionally make changes to our SDKs.  When we do, we change the "RhinoSdkServiceRelease" number.  
 
-If your customer gets this message, you need to get the latest Rhino SDK, recompile your plugin, and release it to your customers.
+As a plugin developer you are unlikely to encounter a problem with the first condition.  This would occur, for instance, if a user tried to load a plugin built for Rhino 6 in Rhino 4.
+
+You may however, occassionally encounter problems with the second condition.  If you compiled your plugin using the 6.2 (RhinoSdkVersion.RhinoSdkServiceRelease) SDK and a user running a 6.1 Rhino tries to run it, they will get an error message and the plugin will refuse to load.  If your customer gets this message, they need to get the latest Rhino (could be 6.2 or greater in this example) and that should resolve the problem.
 
 ---
 
