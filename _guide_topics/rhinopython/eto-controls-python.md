@@ -555,7 +555,7 @@ Just creating a new `Eto.Forms.TextBox()` is common.  There are a number of addi
 
 A control to present nodes in a tree
 
-![{{ site.baseurl }}/images/eto-controls-treeview.png]({{ site.baseurl }}/images/eto-controls-treeview.png){: .img-center width="65%"}
+![{{ site.baseurl }}/images/eto-controls-treeview.png]({{ site.baseurl }}/images/eto-controls-treeview.png){: .img-center width="45%"}
 
 ```python
 # Create TreeView
@@ -584,7 +584,7 @@ A TreeView with columns
 
 Control to present a web page through a url or static HTML
 
-![{{ site.baseurl }}/images/eto-controls-webview.png]({{ site.baseurl }}/images/eto-controls-webview.png){: .img-center width="65%"}
+![{{ site.baseurl }}/images/eto-controls-webview.png]({{ site.baseurl }}/images/eto-controls-webview.png){: .img-center width="55%"}
 
 ```python
 # Create a WebView
