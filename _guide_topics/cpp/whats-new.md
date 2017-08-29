@@ -131,7 +131,7 @@ In Rhino 6, you will need to do the following:
 
 ### Annotations
 
-For Rhino 6, there will be new implementations for all annotation objects, such as Text, Leaders, and Dimensions. The new implementations are much better organized the the prior versions, plus provide new features such as [Rich Text](https://en.wikipedia.org/wiki/Rich_Text_Format).
+For Rhino 6, there will be new implementations for all annotation objects, such as Text, Leaders, and Dimensions. The new implementations are much better organized than prior versions, plus provide new features such as [Rich Text](https://en.wikipedia.org/wiki/Rich_Text_Format).
 
 For more details, see [Annotation Objects]({{ site.baseurl }}/guides/cpp/annotation-objects).
 
