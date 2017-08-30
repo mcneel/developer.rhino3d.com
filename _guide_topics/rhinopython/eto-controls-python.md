@@ -291,19 +291,10 @@ Creating a space for a ImageView is easy. The first 3 lines below create the `fo
         
         # Capture the active view to a System.Drawing.Bitmap
         view = scriptcontext.doc.Views.ActiveView
-        bitmap = view.CaptureToBitmap()
-        
-        # Convert the System.Drawing.Bitmap to an Eto.Drawing.Bitmap
-        # which is required for an Eto image view control
-        stream = System.IO.MemoryStream()
-        format = System.Drawing.Imaging.ImageFormat.Png
-        System.Drawing.Bitmap.Save(bitmap, stream, format)
-        if stream.Length != 0:
-          self.m_image_view.Image = drawing.Bitmap(stream)
-        stream.Dispose()
+        self.m_image_view.Image = Rhino.UI.EtoExtensions.ToEto(view.CaptureToBitmap())
 ```
 
-Bitmaps may be formatted from a number of different forms using the [`drawing.Bitmap()` constructor](http://api.etoforms.picoe.ca/html/T_Eto_Drawing_Bitmap.htm).
+Bitmaps may be formatted from a number of different forms. In this case the `view.CaptureToBitmap()` image is translated to an Eto bitmap using the `Rhino.UI.EtoExtensions.ToEto()` method.
 
 More details can be found in the [Eto ImageView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_ImageView.htm). 
 
