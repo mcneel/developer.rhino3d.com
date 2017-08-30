@@ -556,7 +556,7 @@ Just creating a new `Eto.Forms.TextBox()` is common.  There are a number of addi
 
 A TreeView with additional property columns:
 
-![{{ site.baseurl }}/images/eto-controls-treegridview.png]({{ site.baseurl }}/images/eto-controls-treegridview.png){: .img-center width="45%"}
+![{{ site.baseurl }}/images/eto-dialog-treegridview.png]({{ site.baseurl }}/images/eto-dialog-treegridview.png){: .img-center width="45%"}
 
 The TreeGridView takes the two most sophisticated controls in Eto, TreeView and GridView to combine them into one control. This make the control powerful, but also requires very specific syntax to work.  The first two lines are standard, create the `forms.TreeGridView()` and set its size:
 
