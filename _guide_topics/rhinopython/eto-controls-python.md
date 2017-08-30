@@ -551,36 +551,59 @@ In this case the name `m_textbox` can be used to reference the control later in 
 
 Just creating a new `Eto.Forms.TextBox()` is common.  There are a number of additional properties of a TextBox which can be used to control the input. These properties include `MaxLength`, `PlaceholderText`, `InsertMode` and many more that can be seen in the [Eto TextBox Class](http://api.etoforms.picoe.ca/html/T_Eto_Forms_TextBox.htm).
 
-## TreeView
 
-A control to present nodes in a tree
+## TreeGridView
 
-![{{ site.baseurl }}/images/eto-controls-treeview.png]({{ site.baseurl }}/images/eto-controls-treeview.png){: .img-center width="45%"}
+A TreeView with additional property columns:
+
+![{{ site.baseurl }}/images/eto-controls-treegridview.png]({{ site.baseurl }}/images/eto-controls-treegridview.png){: .img-center width="45%"}
+
+The TreeGridView takes the two most sophisticated controls in Eto, TreeView and GridView to combine them into one control. This make the control powerful, but also requires very specific syntax to work.  The first two lines are standard, create the `forms.TreeGridView()` and set its size:
 
 The `forms.TreeView()` control requires some very specific syntax.  The general `TreeView` container is easy enough.  Set the object up and then its size.  If editing of the items in the tree, then the `.LabelEdit` property can be set to `True`. 
 
 ```python
-# Create TreeView
-        self.m_treeview = forms.TreeView()
-        self.m_treeview.Size = drawing.Size(200, 200)
-        self.m_treeview.LabelEdit = True
-        
-        treecollection = forms.TreeItemCollection()
-        self.m_treeview.DataStore = treecollection
+# Create TreeGridView
+        self.m_treegridview = forms.TreeGridView()
+        self.m_treegridview.Size = drawing.Size(200, 200)
 
-        item1 = forms.TreeItem(Text = 'node A1', Expanded = True)
-        item1.Children.Add(forms.TreeItem(Text = 'node B1'))
-        item1.Children.Add(forms.TreeItem(Text = 'node B2'))
-        item2 = forms.TreeItem(Text = 'node A2', Expanded = True)
+        column1 = forms.GridColumn()
+        column1.HeaderText = 'Tree'
+        column1.Editable = True
+        column1.DataCell = forms.TextBoxCell(0)
+        self.m_treegridview.Columns.Add(column1)
+        
+        column2 = forms.GridColumn()
+        column2.HeaderText = 'Prop 2'
+        column2.Editable = True
+        column2.DataCell = forms.TextBoxCell(1)
+        self.m_treegridview.Columns.Add(column2)
+
+        column3 = forms.GridColumn()
+        column3.HeaderText = 'Prop 3'
+        column3.Editable = True
+        column3.DataCell = forms.TextBoxCell(2)
+        self.m_treegridview.Columns.Add(column3)
+        
+        treecollection = forms.TreeGridItemCollection()
+        item1 = forms.TreeGridItem(Values=('node1', 'node1b', 'node1c'))
+        item1.Expanded = True
+        item1.Children.Add(forms.TreeGridItem(Values=('node2', 'node2b', 'node2c')))
+        item1.Children.Add(forms.TreeGridItem(Values=('node3', 'node3b', 'node3c')))
         treecollection.Add(item1)
+        item2 = forms.TreeGridItem(Values=('node11', 'node11b', 'node11c'))
         treecollection.Add(item2)
+        self.m_treegridview.DataStore = treecollection
+
 ```
 
+After setting up the `forms.TreeGridView()` the columns to display in the control need to be created as `form.GridColumn()`.  The `.DataCell` property points to the `forms.TextBoxCell(index)` that exists in the `.DataStore`  assigned at the last line of this script.
 
+The information for for a tree is stored into a `forms.TreeGridCollection()`.  Items within the tree are a `forms.TreeGridItems` that have `.Values` of tuples.  Each tuple will populate a row in the `forms.TreeGridView()`.
 
-## TreeGridView
+The `forms.TreeGridView` does not automatically update it contents.  After all the control is setup, the `DataStore` is set to the `treecollection`.  Doing this is a different order may end up in a control that does not display the data.
 
-A TreeView with columns
+More details can be found in the [Eto TreeGridView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_TreeGridView.htm). 
 
 ## WebView
 
@@ -613,6 +636,5 @@ Now with some understanding of Eto Dialogs in Python, take a look at some of the
 
 ## Related Topics
 
-- [Reading and Writing files with Python]({{ site.baseurl }}/guides/rhinopython/python-reading-writing)
 - [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)
-- [Eto Forms in Python]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/) guide
+- [Custom Eto Forms in Python guide]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/)
