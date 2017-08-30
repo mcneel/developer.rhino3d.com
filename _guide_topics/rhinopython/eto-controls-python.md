@@ -557,6 +557,8 @@ A control to present nodes in a tree
 
 ![{{ site.baseurl }}/images/eto-controls-treeview.png]({{ site.baseurl }}/images/eto-controls-treeview.png){: .img-center width="45%"}
 
+The `forms.TreeView()` control requires some very specific syntax.  The general `TreeView` container is easy enough.  Set the object up and then its size.  If editing of the items in the tree, then the `.LabelEdit` property can be set to `True`. 
+
 ```python
 # Create TreeView
         self.m_treeview = forms.TreeView()
@@ -582,9 +584,11 @@ A TreeView with columns
 
 ## WebView
 
-Control to present a web page through a url or static HTML
+Display a live web page in a panel:
 
 ![{{ site.baseurl }}/images/eto-controls-webview.png]({{ site.baseurl }}/images/eto-controls-webview.png){: .img-center width="55%"}
+
+Creating the `forms.WebView()` is simple by creating the webview, then to set its size.  The starting web URL can be set through the use of a `System.Uri` set to the `.Url` property:
 
 ```python
 # Create a WebView
@@ -593,7 +597,7 @@ Control to present a web page through a url or static HTML
         self.m_webview.Url = System.Uri('http://developer.rhino3d.com/guides/rhinopython/')
 ```
 
-
+More details can be found in the [Eto WebView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_WebView.htm). 
 
 
 ## Sample dialogs  
