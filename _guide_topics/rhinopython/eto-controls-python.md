@@ -243,6 +243,14 @@ Creating a `.GridView()` is more involved then othe ETo controls.  Start by crea
         self.m_gridview.Columns.Add(column4)
 ```
 
+Accessing the values in each cell of the `forms.GridView` can be done by using the index position of the value in the `.DataStore` property.
+
+```python
+dialog.m_gridview.DataStore[1][2] 
+```
+
+This will result in a value of  'third pick' in the above example.
+
 More details can be found in the [Eto GridView API Documentation](https://github.com/picoe/Eto/wiki/GridView).
 
 ## GroupBox
