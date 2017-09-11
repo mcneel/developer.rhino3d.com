@@ -29,47 +29,78 @@ This guide will focus on using the [DynamicLayout](https://github.com/picoe/Eto/
 
 # Dynamic Layout
 
-A layout in Eto is a virtual grid in which controls are placed. The layout arranges its child controls in a table structure of rows and columns. It is similar to the HTML table layout. 
+A layout in Eto is a virtual grid in which controls are placed. The layout arranges its child controls in a table structure of rows and columns. It is similar to the HTML table layout. Undwerstanding how layout rows and columns interact with eachother is the key to using layouts effectively. 
 
-In it simplest form a layout is built row by row using the `.AddRow` method.  Each `Addrow may contain one or more controls.  For each control in the list a column cell is made on the new row.
+## AddRow Method
 
-![{{ site.baseurl }}/images/eto-buttons.svg]({{ site.baseurl }}/images/eto-buttons.svg){: .img-center width="65%"}
+In it simplest form a layout is built row by row using the `.AddRow` method.  Each `.AddRow` may contain one or more controls. If one control is added for each row a simple stack of rows are created and the controls will stretch to the width of the layout:  
 
-Creating a new button is simple. Use the `forms.Button` and specify the `Text` that is shown on the button face. In addition to creating the new button, an action is commonly attached through the `.Click` event.  Use the  `+=` syntax as shown below to bind the action to button.
-
-```python
-        self.m_button = forms.Button(Text = 'OK')
-        self.m_button.Click += self.OnButtonClick
-```
-
-The bound method, listed later in the calss definition is run if the button is clicked. 
+![{{ site.baseurl }}/images/eto-layouts-simple-stack.png]({{ site.baseurl }}/images/eto-layouts-simple-stack.png){: .img-center width="90%"}
 
 ```python
-    # Close button click handler
-    def OnOKButtonClick(self, sender, e):
-        if self.m_textbox.Text == "":
-            self.Close(False)
-        else:
-            self.Close(True)
+layout = forms.DynamicLayout()
+layout.Spacing = drawing.Size(5, 5)
+
+layout.AddRow(label)
+layout.AddRow(image)
+layout.AddRow(button-capture)
+layout.AddRow(button-cancel)
 ```
 
-In this specific case the button is clicked and the bound method `OnOKButtonClick` checks the Text of the `m_textbox` to to determine if anything has been entered. Then the method closes the dialog, returning either `True` or `False`.
+Each succesive `.AddRow` will add a new row to the table.
 
-The *Eto.Dialog class* has two special reserved names for buttons, the `DefaultButton` and the `AbortButton`.  The `DefaultButton` name will create a button that is a standard button and also will receive a click event if the `Enter Key` is used. The `AbortButton` is a button that recieves a `.Click` event if the `ESC` key is used.  These buttons are simple assigned through the name of the control, using `self`  syntax.
+Of course dialogs are not often made up of only one control per row.  `.AddRow` will create a new column cell for each control added with a single `.AddRow` statement:
 
-The syntax for the `DefaultButton` is:
+![{{ site.baseurl }}/images/eto-layouts-twocell-stack.png]({{ site.baseurl }}/images/eto-layouts-twocell-stack.png){: .img-center width="90%"}
 
 ```python
-self.DefaultButton = forms.Button(Text = 'OK')
+layout = forms.DynamicLayout()
+layout.Spacing = drawing.Size(5, 5)
+
+layout.AddRow(label, textbox)
+layout.AddRow(button-OK, button-Cancel)
 ```
 
-And for the `AbortButton` is:
+Because there are two controls added to each row, the layout creates a table with two cells per row. Not only the cells created, but the controls are lined up vertically based on the number of cells in each row. In this case the first column is sized to fit the larger text label.  The *OK* button then must stretch to fill that column.  Then textbox and *Cancel* button will also be sized the same. 
+
+>  Understanding that successive `.AddRow` statements will create cells that are vertically aligned is an important concept. The row with the most controls dictates the number of colums in the table.
+
+A single strong vertical alignment throughout the dialog may not work, especially is there is a different number of controls controls on each row.  There is a need to be able to control how controls are aligned and sized.  Use breaks and spacers to create more sophisticated layouts.
+
+## Vertical Break
+
+Tables in a `.DynamicLayout()` can be seperated using the `.BeginVertical()` and `.EndVertical`. The dynamic layout intrinsically starts with a vertical section. Additional breaks between tables can be created by placing a vertical break.  The next `.AddRow()` will start a new table and the strong vertical alignment with previous rows is broken.
+
+The example below shows how rows the justification of the rows does not have to lie within a single grid:
+
+![{{ site.baseurl }}/images/eto-layouts-vertical-break.png]({{ site.baseurl }}/images/eto-layouts-vertical-break.png){: .img-center width="90%"}
 
 ```python
-self.AbortButton = forms.Button(Text = 'Cancel')
+layout = forms.DynamicLayout()
+layout.Spacing = drawing.Size(5, 5)
+
+layout.AddRow('Camera:')
+
+layout.BeginVertical()
+layout.AddRow(label-name, textbox1)
+layout.AddRow(label-lens, textbox2)
+layout.AddRow(label-projection, textbox3)
+layout.EndVertical()
+
+layout.BeginVertical()
+layout.AddRow(None, button-OK, button-cancel, None)
+layout.EndVertical()
 ```
 
-The `DefaultButton` and `AbortButton` normally close the dialog by using the `self.close()` method of the dialog.  Please note that even though the dialog is closed, that values of the controls are still accesable to the rest of the script.
+In addition to the  `.BeginVertical()` there is also `.BeginHorizontal()` and`.BeginCentered()` to start new sections. For detail on these, look in the comments in the [Eto DynamicLayout.cs file](https://github.com/picoe/Eto/blob/cf4c31951a28de8d0bf17270719526a96fc689fe/Source/Eto/Forms/Layout/DynamicLayout.cs)   
+
+## None spacer
+
+Spacers can be added in cells or as rows.  Spacers will dynically resize  
+
+## Add Separate Row
+
+
 
 More details can be found in the [Eto Button API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_Button.htm).
 
