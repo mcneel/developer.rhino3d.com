@@ -1,5 +1,5 @@
 ---
-title: Eto Layouts with Python
+title: Eto Layouts in Rhino.Python
 description: Using the Eto DynamicLayout to organize controls.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
@@ -13,15 +13,25 @@ keywords: ['script', 'Rhino', 'python', 'Eto']
 layout: toc-guide-page
 ---
 
-[Eto is an open source cross-platform dialog box framework](https://github.com/picoe/Eto/wiki) available in Rhino 6.  This guide demonstrates the syntax required to create Lyouts in that can be used to place controls in a dialog.  In Eto there are [more than 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created.
+[Eto is an open source cross-platform dialog box framework](https://github.com/picoe/Eto/wiki) available in Rhino 6.  This guide demonstrates the syntax required to create Layouts.  Layouts are containers in which controls are placed.  The layout will position the controls in a dialog or another Layout. It is possible to nest Layouts within eachother to handle more complex layouts.
 
 For details on creating a complete Eto Dialog in Rhino.Python go to the [Getting Started with Eto Guide]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/). The samples in this guide can be added to the controls section of the Basic dialog framework covered in the [Getting Started Guide]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/).
 
-For the code for Dynamic layout: https://github.com/picoe/Eto/blob/develop/Source/Eto/Forms/Layout/DynamicLayout.cs
+There are [5 different layout style in Eto](https://github.com/picoe/Eto/wiki/Containers).  
+
+- [Panel](https://github.com/picoe/Eto/blob/develop/Source/Eto/Forms/Controls/Panel.cs) - Controls that subclass `Panel`, such as `Window`, `GroupBox`, `Scrollable`, etc allow you to specify a single child Content control
+- [TableLayout](https://github.com/picoe/Eto/wiki/TableLayout) - Similar to how an HTML table works, with a single control per cell
+- [PixelLayout](https://github.com/picoe/Eto/wiki/PixelLayout) - Specify X,Y co-ordinates for the position of each control (from Upper-Left)
+- [DynamicLayout](https://github.com/picoe/Eto/wiki/DynamicLayout) - Dynamic hierarchical horizontal and vertical layout
+- [StackLayout](https://github.com/picoe/Eto/wiki/StackLayout) - Horizontal or Vertical list of controls
+
+This guide will focus on using the [DynamicLayout](https://github.com/picoe/Eto/blob/develop/Source/Eto/Forms/Layout/DynamicLayout.cs. ) style only.  The `forms.DynamicLayout()` has a clear simple syntax in Python and is quite flexible. 
 
 # Dynamic Layout
 
-Buttons are placed on almost every dialog.  
+A layout in Eto is a virtual grid in which controls are placed. The layout arranges its child controls in a table structure of rows and columns. It is similar to the HTML table layout. 
+
+In it simplest form a layout is built row by row using the `.AddRow` method.  Each `Addrow may contain one or more controls.  For each control in the list a column cell is made on the new row.
 
 ![{{ site.baseurl }}/images/eto-buttons.svg]({{ site.baseurl }}/images/eto-buttons.svg){: .img-center width="65%"}
 
