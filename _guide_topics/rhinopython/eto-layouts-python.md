@@ -96,13 +96,68 @@ In addition to the  `.BeginVertical()` there is also `.BeginHorizontal()` and`.B
 
 ## None spacer
 
-Spacers can be added in cells or as rows.  Spacers will dynically resize  
+Using the *None* value in Python, spacers can be added in cells or as rows. *None* spacers will dynamically resize  to fit the space needed.  For instance use*None* to fill cells on rows to correctly layout a dialog:
+
+![{{ site.baseurl }}/images/eto-layouts-vertical-None.png]({{ site.baseurl }}/images/eto-layouts-vertical-None.png){: .img-center width="60%"}
+
+```python
+layout = forms.DynamicLayout()
+layout.Spacing = drawing.Size(5, 5)
+
+layout.BeginVertical()
+layout.AddRow(label-resolution, None)
+layout.AddRow(label-height, textbox2)
+layout.AddRow(label-width, textbox3)
+layout.AddRow(None, checkbox)
+layout.EndVertical()
+
+layout.BeginVertical()
+layout.AddRow(None, button-OK, button-cancel, None)
+layout.EndVertical()
+```
 
 ## Add Separate Row
 
+The `AddSeparateRow()` method creates a single row of controls seperated both horizontally and vertically from ajacent tables all in one single statement.  The code below creates the same dialog as above, but uses the `.AddSeparateRow()` method:
 
+![{{ site.baseurl }}/images/eto-layouts-separaterow.png]({{ site.baseurl }}/images/eto-layouts-separaterow.png){: .img-center width="60%"}
 
-More details can be found in the [Eto Button API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_Button.htm).
+```python
+layout = forms.DynamicLayout()
+layout.Spacing = drawing.Size(5, 5)
+
+layout.AddRow('Camera:')
+
+layout.BeginVertical()
+layout.AddRow(label-name, textbox1)
+layout.AddRow(label-lens, textbox2)
+layout.AddRow(label-projection, textbox3)
+layout.EndVertical()
+
+layout.AddSeparateRow(None, button-OK, button-cancel, None)
+
+```
+
+The `layout.AddSeparateRow(None, button-OK, button-cancel, None)` row is functionally equvilent to:
+
+```python
+layout.BeginVertical()
+layout.BeginHorizontal()
+layout.AddRow(None, button-OK, button-cancel, None)
+layout.EndHorizontal()
+layout.EndVertical()
+```
+
+This makes `AddSeparateRow()` very convenient to create a set of OK and Cancel button row at the bottom of a dialog box.
+
+## Additional Samples  
+
+Now with some understanding of Eto Layouts, take a look at some of the Sample dialogs in the [Python Developer Samples Repo](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython):
+
+1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoDialog.py)
+2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoRebuildCurve.py)
+3.  [Capture a view dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoViewCaptureDialog.py)
+4.  [Collapsable controls on a Dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoCollapsibleDialog.py)
 
 ---
 
