@@ -233,6 +233,20 @@ order: 2
   </ul>
 </div>
 
+### Custom Dialogs in Eto
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.sdk contains 'RhinoPython' and guide.categories contains 'Eto' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 
 ### Other Resources

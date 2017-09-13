@@ -1,14 +1,14 @@
 ---
-title: Eto control syntax in Python
+title: Eto Controls in Python
 description: Using the Eto dialog framework to create interface controls.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
-categories: ['Intermediate']
+categories: ['Eto']
 origin:
-order: 21
+order: 19
 keywords: ['script', 'Rhino', 'python', 'Eto']
 layout: toc-guide-page
 ---
@@ -650,3 +650,5 @@ Now with some understanding of Eto Dialogs in Python, take a look at some of the
 
 - [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)
 - [Custom Eto Forms in Python guide]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/)
+- [Eto Layouts in Python]({{ site.baseurl }}/guides/rhinopython/eto-layouts-python/) guide
+- [Eto Controls in Python]({{ site.baseurl }}/guides/rhinopython/eto-controls-python/) guide

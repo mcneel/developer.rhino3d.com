@@ -104,6 +104,19 @@ layout: guide-homepage
   </ul>
 </div>
 
+### Other Resources
+
+- [Rhino Scripting Forum (Discourse)](http://discourse.mcneel.com/c/scripting)  
+- [Rhino.Python Samples]({{ site.baseurl }}/samples/#rhinopython)  
+- [Rhino.Python Developer Samples GitHub](https://github.com/mcneel/rhino-developer-samples/tree/{{ site.git_branch | default: "master" }}/rhinopython)  
+- [Designalyze Python Tutorials](http://designalyze.com/)
+- [Plethora Project](http://www.plethora-project.com/2011/09/12/rhino-python-tutorials/)
+- [Steve Baer's Blog](http://stevebaer.wordpress.com/category/python/)
+- [Python Beginner's Guide](http://wiki.python.org/moin/BeginnersGuide/Programmers)
+- [Tutorials Point Python Series](http://www.tutorialspoint.com/python/index.htm)
+- [Rhino.Python Dash Docset](http://discourse.mcneel.com/t/rhino-python-dash-docset/6399)
+- [Nature of Code Video Tutorials](http://www.youtube.com/watch?v=Kyi_K85Gsm4&list=PL5Up_u-XkWgP7nB7XIevMTyBCZ7pvLBGP)
+
 
 <!--column-->
 
@@ -142,18 +155,20 @@ layout: guide-homepage
 </div>
 
 
-### Other Resources
+### Custom Dialogs in Eto
 
-- [Rhino Scripting Forum (Discourse)](http://discourse.mcneel.com/c/scripting)  
-- [Rhino.Python Samples]({{ site.baseurl }}/samples/#rhinopython)  
-- [Rhino.Python Developer Samples GitHub](https://github.com/mcneel/rhino-developer-samples/tree/{{ site.git_branch | default: "master" }}/rhinopython)  
-- [Designalyze Python Tutorials](http://designalyze.com/)
-- [Plethora Project](http://www.plethora-project.com/2011/09/12/rhino-python-tutorials/)
-- [Steve Baer's Blog](http://stevebaer.wordpress.com/category/python/)
-- [Python Beginner's Guide](http://wiki.python.org/moin/BeginnersGuide/Programmers)
-- [Tutorials Point Python Series](http://www.tutorialspoint.com/python/index.htm)
-- [Rhino.Python Dash Docset](http://discourse.mcneel.com/t/rhino-python-dash-docset/6399)
-- [Nature of Code Video Tutorials](http://www.youtube.com/watch?v=Kyi_K85Gsm4&list=PL5Up_u-XkWgP7nB7XIevMTyBCZ7pvLBGP)
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.sdk contains 'RhinoPython' and guide.categories contains 'Eto' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 
 <!--column-->

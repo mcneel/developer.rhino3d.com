@@ -6,9 +6,9 @@ author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
-categories: ['Intermediate']
+categories: ['Eto']
 origin:
-order: 22
+order: 24
 keywords: ['script', 'Rhino', 'python', 'Eto']
 layout: toc-guide-page
 ---
@@ -165,3 +165,5 @@ Now with some understanding of Eto Layouts, take a look at some of the Sample di
 
 - [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)
 - [Custom Eto Forms in Python guide]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/)
+- [Eto Layouts in Python]({{ site.baseurl }}/guides/rhinopython/eto-layouts-python/) guide
+- [Eto Controls in Python]({{ site.baseurl }}/guides/rhinopython/eto-controls-python/) guide
