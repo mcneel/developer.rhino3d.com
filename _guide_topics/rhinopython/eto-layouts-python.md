@@ -98,7 +98,7 @@ In addition to the  `.BeginVertical()` there is also `.BeginHorizontal()` and`.B
 
 Using the *None* value in Python, spacers can be added in cells or as rows. *None* spacers will dynamically resize  to fit the space needed.  For instance use*None* to fill cells on rows to correctly layout a dialog:
 
-![{{ site.baseurl }}/images/eto-layouts-vertical-None.png]({{ site.baseurl }}/images/eto-layouts-vertical-None.png){: .img-center width="60%"}
+![{{ site.baseurl }}/images/eto-layouts-vertical-None.png]({{ site.baseurl }}/images/eto-layouts-vertical-None.png){: .img-center width="50%"}
 
 ```python
 layout = forms.DynamicLayout()
@@ -120,7 +120,7 @@ layout.EndVertical()
 
 The `AddSeparateRow()` method creates a single row of controls seperated both horizontally and vertically from ajacent tables all in one single statement.  The code below creates the same dialog as above, but uses the `.AddSeparateRow()` method:
 
-![{{ site.baseurl }}/images/eto-layouts-separaterow.png]({{ site.baseurl }}/images/eto-layouts-separaterow.png){: .img-center width="60%"}
+![{{ site.baseurl }}/images/eto-layouts-separaterow.png]({{ site.baseurl }}/images/eto-layouts-separaterow.png){: .img-center width="50%"}
 
 ```python
 layout = forms.DynamicLayout()
