@@ -251,11 +251,11 @@ order: 2
 
 ### Other Resources
 
-- [Rhino Scripting Forum (Discourse)](http://discourse.mcneel.com/c/scripting)
-- [Rhino.Python Samples]({{ site.baseurl }}/samples/#rhinopython)
-- [Rhino.Python Developer Samples GitHub](https://github.com/mcneel/rhino-developer-samples/tree/{{ site.git_branch | default: "master" }}/rhinopython)
+- [Rhino Scripting Forum (Discourse)](http://discourse.mcneel.com/c/scripting)  
+- [Rhino.Python Samples]({{ site.baseurl }}/samples/#rhinopython)  
+- [Rhino.Python Developer Samples GitHub](https://github.com/mcneel/rhino-developer-samples/tree/{{ site.git_branch | default: "master" }}/rhinopython)  
 - [Designalyze Python Tutorials](http://designalyze.com/)
-- [Plethora Project](http://www.plethora-project.com/2011/09/12/rhino-python-tutorials/)
+- [Plethora Project](https://www.plethora-project.com/education/2017/5/31/rhino-python-programming)
 - [Steve Baer's Blog](http://stevebaer.wordpress.com/category/python/)
 - [Python Beginner's Guide](http://wiki.python.org/moin/BeginnersGuide/Programmers)
 - [Tutorials Point Python Series](http://www.tutorialspoint.com/python/index.htm)
