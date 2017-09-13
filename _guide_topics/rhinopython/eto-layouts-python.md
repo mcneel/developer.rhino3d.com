@@ -29,7 +29,7 @@ This guide will focus on using the [DynamicLayout](https://github.com/picoe/Eto/
 
 # Dynamic Layout
 
-A layout in Eto is a virtual grid in which controls are placed. The layout arranges its child controls in a table structure of rows and columns. It is similar to the HTML table layout. Undwerstanding how layout rows and columns interact with eachother is the key to using layouts effectively. 
+A layout in Eto is a virtual grid in which controls are placed. The layout arranges its child controls in a table structure of rows and columns. It is similar to the HTML table layout. Understanding how rows and columns interact with each other is the key to using layouts effectively. 
 
 ## AddRow Method
 
