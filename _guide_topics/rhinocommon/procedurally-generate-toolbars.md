@@ -32,6 +32,9 @@ Toolbar bitmaps are stored in a grid with 250 columns and enough rows to accommo
 Here is some sample code for writing:
 
 ```c#
+const string NODE_BITMAPITEM = "bitmap_item";
+const string NODE_BITMAP = "bitmap";
+...
 public void Write(System.Xml.XmlWriter writer, string elementName)
 {
   writer.WriteStartElement(elementName);
