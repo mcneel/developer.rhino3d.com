@@ -29,6 +29,7 @@ kramdown:
       disable: true
 plugins:
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 #port: 4444
 

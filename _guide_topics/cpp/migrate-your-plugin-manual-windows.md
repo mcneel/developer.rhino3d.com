@@ -61,7 +61,7 @@ The Rhino C/C++ SDK includes Visual Studio Property Sheets that provide a conven
 1. From *Visual Studio 2017*, click *View* > *Property Manager*.
    ![Property Manager]({{ site.baseurl }}/images/migrate-plugin-windows-cpp-08.png)
 2. Right-click on the *Debug &#124; x64* configuration and click *Add Existing Property Sheet*.
-3. Navigate to the following location: *C:\Program Files\Rhino 6.0 SDK\Wizards\Command*
+3. Navigate to the following location: *C:\Program Files\Rhino 6.0 SDK\PropertySheets*
 4. Select *Rhino.Cpp.PlugIn.props* and click *OK*.
 5. Repeat the above steps for the the *Release &#124; x64* configuration.
    ![Add Existing Property Sheet]({{ site.baseurl }}/images/migrate-plugin-windows-cpp-09.png)

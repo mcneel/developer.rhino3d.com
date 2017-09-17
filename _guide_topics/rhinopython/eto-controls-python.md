@@ -1,14 +1,14 @@
 ---
-title: Eto control syntax in Python
+title: Eto Controls in Python
 description: Using the Eto dialog framework to create interface controls.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
-categories: ['Intermediate']
+categories: ['Eto']
 origin:
-order: 21
+order: 19
 keywords: ['script', 'Rhino', 'python', 'Eto']
 layout: toc-guide-page
 ---
@@ -243,6 +243,14 @@ Creating a `.GridView()` is more involved then othe ETo controls.  Start by crea
         self.m_gridview.Columns.Add(column4)
 ```
 
+Accessing the values in each cell of the `forms.GridView` can be done by using the index position of the value in the `.DataStore` property.
+
+```python
+dialog.m_gridview.DataStore[1][2]
+```
+
+This will result in a value of  'third pick' in the above example.
+
 More details can be found in the [Eto GridView API Documentation](https://github.com/picoe/Eto/wiki/GridView).
 
 ## GroupBox
@@ -291,19 +299,10 @@ Creating a space for a ImageView is easy. The first 3 lines below create the `fo
 
         # Capture the active view to a System.Drawing.Bitmap
         view = scriptcontext.doc.Views.ActiveView
-        bitmap = view.CaptureToBitmap()
-
-        # Convert the System.Drawing.Bitmap to an Eto.Drawing.Bitmap
-        # which is required for an Eto image view control
-        stream = System.IO.MemoryStream()
-        format = System.Drawing.Imaging.ImageFormat.Png
-        System.Drawing.Bitmap.Save(bitmap, stream, format)
-        if stream.Length != 0:
-          self.m_image_view.Image = drawing.Bitmap(stream)
-        stream.Dispose()
+        self.m_image_view.Image = Rhino.UI.EtoExtensions.ToEto(view.CaptureToBitmap())
 ```
 
-Bitmaps may be formatted from a number of different forms using the [`drawing.Bitmap()` constructor](http://api.etoforms.picoe.ca/html/T_Eto_Drawing_Bitmap.htm).
+Bitmaps may be formatted from a number of different forms. In this case the `view.CaptureToBitmap()` image is translated to an Eto bitmap using the `Rhino.UI.EtoExtensions.ToEto()` method.
 
 More details can be found in the [Eto ImageView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_ImageView.htm).
 
@@ -324,6 +323,19 @@ Normally this is as complex as a label needs to get, but a label also has many m
 ```python
 self.m_label = forms.Label(Text = 'Enter the Room Number:', VerticalAlignment = VerticalAlignment.Center)
 ```
+
+Labels also can be created directly in layouts directly.  There is a shorthand syntax when adding controls to a layout that will automatically create a `forms.Label`
+
+```python
+  #Adds a new Label diplaying "Camera:"      
+  layout.AddRow('Camera:', None)
+
+  #Adds a new label displaying "Name :" inline with the Textbox control.
+  layout.AddRow('Name:', forms.TextBox(Text = 'Persp1'))
+
+```
+
+When adding Rows or Columns, a simple string can be inserted.  Eto will automatically create a Label out of the string.  This is a very fast way yo make `forms.Label`.
 
 For a complete list of properties and events of the Label class, see the [Eto Label Class](http://api.etoforms.picoe.ca/html/T_Eto_Forms_Label.htm) documentation.
 
@@ -551,40 +563,67 @@ In this case the name `m_textbox` can be used to reference the control later in 
 
 Just creating a new `Eto.Forms.TextBox()` is common.  There are a number of additional properties of a TextBox which can be used to control the input. These properties include `MaxLength`, `PlaceholderText`, `InsertMode` and many more that can be seen in the [Eto TextBox Class](http://api.etoforms.picoe.ca/html/T_Eto_Forms_TextBox.htm).
 
-## TreeView
-
-A control to present nodes in a tree
-
-![{{ site.baseurl }}/images/eto-controls-treeview.png]({{ site.baseurl }}/images/eto-controls-treeview.png){: .img-center width="45%"}
-
-```python
-# Create TreeView
-        self.m_treeview = forms.TreeView()
-        self.m_treeview.Size = drawing.Size(200, 200)
-        self.m_treeview.LabelEdit = True
-
-        treecollection = forms.TreeItemCollection()
-        self.m_treeview.DataStore = treecollection
-
-        item1 = forms.TreeItem(Text = 'node A1', Expanded = True)
-        item1.Children.Add(forms.TreeItem(Text = 'node B1'))
-        item1.Children.Add(forms.TreeItem(Text = 'node B2'))
-        item2 = forms.TreeItem(Text = 'node A2', Expanded = True)
-        treecollection.Add(item1)
-        treecollection.Add(item2)
-```
-
-
 
 ## TreeGridView
 
-A TreeView with columns
+A TreeView with additional property columns:
+
+![{{ site.baseurl }}/images/eto-dialog-treegridview.png]({{ site.baseurl }}/images/eto-dialog-treegridview.png){: .img-center width="45%"}
+
+The TreeGridView takes the two most sophisticated controls in Eto, TreeView and GridView to combine them into one control. This make the control powerful, but also requires very specific syntax to work.  The first two lines are standard, create the `forms.TreeGridView()` and set its size:
+
+The `forms.TreeView()` control requires some very specific syntax.  The general `TreeView` container is easy enough.  Set the object up and then its size.  If editing of the items in the tree, then the `.LabelEdit` property can be set to `True`.
+
+```python
+# Create TreeGridView
+        self.m_treegridview = forms.TreeGridView()
+        self.m_treegridview.Size = drawing.Size(200, 200)
+
+        column1 = forms.GridColumn()
+        column1.HeaderText = 'Tree'
+        column1.Editable = True
+        column1.DataCell = forms.TextBoxCell(0)
+        self.m_treegridview.Columns.Add(column1)
+
+        column2 = forms.GridColumn()
+        column2.HeaderText = 'Prop 2'
+        column2.Editable = True
+        column2.DataCell = forms.TextBoxCell(1)
+        self.m_treegridview.Columns.Add(column2)
+
+        column3 = forms.GridColumn()
+        column3.HeaderText = 'Prop 3'
+        column3.Editable = True
+        column3.DataCell = forms.TextBoxCell(2)
+        self.m_treegridview.Columns.Add(column3)
+
+        treecollection = forms.TreeGridItemCollection()
+        item1 = forms.TreeGridItem(Values=('node1', 'node1b', 'node1c'))
+        item1.Expanded = True
+        item1.Children.Add(forms.TreeGridItem(Values=('node2', 'node2b', 'node2c')))
+        item1.Children.Add(forms.TreeGridItem(Values=('node3', 'node3b', 'node3c')))
+        treecollection.Add(item1)
+        item2 = forms.TreeGridItem(Values=('node11', 'node11b', 'node11c'))
+        treecollection.Add(item2)
+        self.m_treegridview.DataStore = treecollection
+
+```
+
+After setting up the `forms.TreeGridView()` the columns to display in the control need to be created as `form.GridColumn()`.  The `.DataCell` property points to the `forms.TextBoxCell(index)` that exists in the `.DataStore`  assigned at the last line of this script.
+
+The information for for a tree is stored into a `forms.TreeGridCollection()`.  Items within the tree are a `forms.TreeGridItems` that have `.Values` of tuples.  Each tuple will populate a row in the `forms.TreeGridView()`.
+
+The `forms.TreeGridView` does not automatically update it contents.  After all the control is setup, the `DataStore` is set to the `treecollection`.  Doing this is a different order may end up in a control that does not display the data.
+
+More details can be found in the [Eto TreeGridView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_TreeGridView.htm).
 
 ## WebView
 
-Control to present a web page through a url or static HTML
+Display a live web page in a panel:
 
 ![{{ site.baseurl }}/images/eto-controls-webview.png]({{ site.baseurl }}/images/eto-controls-webview.png){: .img-center width="55%"}
+
+Creating the `forms.WebView()` is simple by creating the webview, then to set its size.  The starting web URL can be set through the use of a `System.Uri` set to the `.Url` property:
 
 ```python
 # Create a WebView
@@ -593,7 +632,7 @@ Control to present a web page through a url or static HTML
         self.m_webview.Url = System.Uri('http://developer.rhino3d.com/guides/rhinopython/')
 ```
 
-
+More details can be found in the [Eto WebView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_WebView.htm).
 
 
 ## Sample dialogs  
@@ -609,6 +648,7 @@ Now with some understanding of Eto Dialogs in Python, take a look at some of the
 
 ## Related Topics
 
-- [Reading and Writing files with Python]({{ site.baseurl }}/guides/rhinopython/python-reading-writing)
 - [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)
-- [Eto Forms in Python]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/) guide
+- [Custom Eto Forms in Python guide]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/)
+- [Eto Layouts in Python]({{ site.baseurl }}/guides/rhinopython/eto-layouts-python/) guide
+- [Eto Controls in Python]({{ site.baseurl }}/guides/rhinopython/eto-controls-python/) guide

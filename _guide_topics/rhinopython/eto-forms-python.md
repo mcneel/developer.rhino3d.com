@@ -6,7 +6,7 @@ author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
-categories: ['Intermediate']
+categories: ['Eto']
 origin:
 order: 18
 keywords: ['script', 'Rhino', 'python', 'Eto']
@@ -223,7 +223,7 @@ After creating the dialog framework, we will start to create some controls for t
 
 ## The Controls  
 
-The business end of a dialog is the user-interface controls it displays.  Controls may include Labels, Buttons, Edit boxes and Sliders. In Eto, there are [more then 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created.
+The business end of a dialog is the user-interface controls it displays.  Controls may include Labels, Buttons, Edit boxes and Sliders. In Eto, there are [more then 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created. For details information on these controls, go to the [Eto Controls in Python]({{ site.baseurl }}/guides/rhinopython/eto-controls-python/) guide.
 
 Controls normally need to be setup properly in a layout before they are added to a dialog.  
 
@@ -332,7 +332,7 @@ In this a case a new dynamic layout object is created at:
         layout = forms.DynamicLayout()
 ```
 
-The [DynamicLayout](https://github.com/picoe/Eto/wiki/DynamicLayout) is one of [5 layout types](https://github.com/picoe/Eto/wiki/Containers) supported by Eto.  The Dynamic layout is a virtual grid that can organized controls both vertically and horizontally.
+The [DynamicLayout](https://github.com/picoe/Eto/wiki/DynamicLayout) is one of [5 layout types](https://github.com/picoe/Eto/wiki/Containers) supported by Eto.  The Dynamic layout is a virtual grid that can organized controls both vertically and horizontally. For a detailed look at layouts, go to the [Eto Layouts in Python]({{ site.baseurl }}/guides/rhinopython/eto-layouts-python/) guide.
 
 The spacing between controls in the layout is set by `layout.Spacing` on the line:
 
@@ -471,4 +471,5 @@ Now with some understanding of Eto Dialogs in Python, take a look at some of the
 
 - [Reading and Writing files with Python]({{ site.baseurl }}/guides/rhinopython/python-reading-writing)
 - [RhinoScriptSyntax User interface methods]({{ site.baseurl }}/api/RhinoScriptSyntax/win/#userinterface)
-- [Eto Forms in Python]({{ site.baseurl }}/guides/rhinopython/eto-forms-python/) guide
+- [Eto Layouts in Python]({{ site.baseurl }}/guides/rhinopython/eto-layouts-python/) guide
+- [Eto Controls in Python]({{ site.baseurl }}/guides/rhinopython/eto-controls-python/) guide

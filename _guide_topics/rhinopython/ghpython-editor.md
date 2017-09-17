@@ -278,7 +278,7 @@ That quick look at the GhPython editor.  Next is a try a Python script for yours
 
 ## Related Topics
 
-- [Your first script with Python in Grasshopper]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
-- [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
-- [Editing Python in Grasshopper]({{ site.baseurl }}/guides/rhinopython/python-loading-scripts)
+- [Your first script with Python in Grasshopper]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-grasshopper/)
+- [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-is-rhinopython/)
+- [Editing Python in Grasshopper]({{ site.baseurl }}/guides/rhinopython/ghpython-component/)
 - [Python Guide for Rhino]({{ site.baseurl }}/guides/rhinopython/)

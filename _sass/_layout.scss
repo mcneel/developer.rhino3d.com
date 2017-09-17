@@ -353,7 +353,8 @@ $banner-wraps: 730px; // screen width below which version banner text will wrap
   h3[id]:before,
   h4[id]:before,
   h5[id]:before,
-  h6[id]:before {
+  h6[id]:before,
+  div[id]:before {
     display: block;
     content: "";
     margin-top: -36px;
