@@ -15,31 +15,33 @@ layout: toc-guide-page
 
 # Migrate your Options, Document Properties and Object Properties Pages
 
-This guide walks you through migrating existing Rhino 5, plug-in provided, Rhino Options, Document Properties and Object Properties pages to Rhino 6.
+This guide walks you through migrating existing Rhino 5 plug-in provided, Rhino Options, Document Properties and Object Properties pages to Rhino 6.
 
 You can find instructions regarding migrating your Rhino 5 plugin project to Rhino 6  [here]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows).
 
+The code used in this document is available on GitHub [here](https://github.com/mcneel/rhino-developer-samples/tree/6/cpp/SampleMigration).
+
 ## Migrating `CRhinoPlugIn` derived class
 
-The Rhino 5 `CRhinoPlugIn` class includes `AddPagesToObjectPropertiesDialog`, `AddPagesToOptionsDialog` and `AddPagesToDocumentPropertiesDialog` virtual methods which may be optionally overridden when adding custom pages to the Options, Document Properties and Object Properties dialogs.  These methods have been modified in Rhino 6 and will require changes to your derived plug-in classes.
+The Rhino 5 `CRhinoPlugIn` class includes `AddPagesToObjectPropertiesDialog`, `AddPagesToOptionsDialog` and `AddPagesToDocumentPropertiesDialog` virtual methods which may be overridden when adding custom pages to the Options, Document Properties and Object Properties dialogs.  These methods have been modified in Rhino 6 and will require changes to your derived plug-in classes.
 
 #### Rhino 5 Code
 
 ```
-void CV5PageTestPlugIn::AddPagesToObjectPropertiesDialog(
+void CSamplePropertiesPagesPlugIn::AddPagesToObjectPropertiesDialog(
   ON_SimpleArray<class CRhinoObjectPropertiesDialogPage*>& pages)
 {
   pages.Append(&m_properties_page);
 }
 
-void CV5PageTestPlugIn::AddPagesToOptionsDialog(
+void CSamplePropertiesPagesPlugIn::AddPagesToOptionsDialog(
   HWND hwndParent,
   ON_SimpleArray<CRhinoOptionsDialogPage*>& pages)
 {
   pages.Append(new COptionsPage());
 }
 
-void CV5PageTestPlugIn::AddPagesToDocumentPropertiesDialog(
+void CSamplePropertiesPagesPlugIn::AddPagesToDocumentPropertiesDialog(
   CRhinoDoc& doc,
   HWND hwndParent,
   ON_SimpleArray<CRhinoOptionsDialogPage*>& pages)
@@ -51,19 +53,19 @@ void CV5PageTestPlugIn::AddPagesToDocumentPropertiesDialog(
 #### Rhino 6 code
 
 ```
-void CV5PageTestPlugIn::AddPagesToObjectPropertiesDialog(
+void CSamplePropertiesPagesPlugIn::AddPagesToObjectPropertiesDialog(
   CRhinoPropertiesPanelPageCollection& collection)
 {
   collection.Add(&m_properties_page);
 }
 
-void CV5PageTestPlugIn::AddPagesToOptionsDialog(
+void CSamplePropertiesPagesPlugIn::AddPagesToOptionsDialog(
   CRhinoOptionsPageCollection& collection)
 {
   collection.AddPage(new COptionsPage());
 }
 
-void CV5PageTestPlugIn::AddPagesToDocumentPropertiesDialog(
+void CSamplePropertiesPagesPlugIn::AddPagesToDocumentPropertiesDialog(
   CRhinoOptionsPageCollection& collection)
 {
   collection.AddPage(new CDocumentPropertiesPage());
@@ -164,7 +166,7 @@ virtual void OnRestoreDefaultsClick(CRhinoOptionsPageEventArgs& e);
      const wchar_t* EnglishPageTitle() override;
      const wchar_t* LocalPageTitle() override;
      CRhinoCommand::result RunScript( CRhinoDoc& rhino_doc) override;
-   //... the rest of your class
+     //... the rest of your class
    };
    ```
 
@@ -188,7 +190,7 @@ virtual void OnRestoreDefaultsClick(CRhinoOptionsPageEventArgs& e);
    };
    ```
 
-5. See the "*Virtual method changes*" section above for a list of virtual methods that will need to be modified for Rhino 6.
+  5. See the [Virtual method changes](#migrating-crhinooptionsdialogpage-derived-pages) section above for a list of virtual methods that will need to be modified for Rhino 6.
 
 ### CPP Implementation file changes
 
@@ -320,8 +322,7 @@ virtual void OnRestoreDefaultsClick(CRhinoOptionsPageEventArgs& e);
   ```
   ​
 
-7. Change your `OnApply` method to `Apply` and add the new `CRhinoOptionsPageEventArgs` parameter.  Rhino 5 only called `OnApply` when the dialog was closed, Rhino 6 calls `Apply`  when the page is hidden.
-  This is an example of a simple Rhino 5 `OnApply` method.
+7. Change your `OnApply` method to `Apply` and add the new `CRhinoOptionsPageEventArgs` parameter.  Rhino 5 only called the  `OnApply`  when the dialog was closed, Rhino 6 calls `Apply`  whenever the page is hidden.
 
   #### Rhino 5 code
 
@@ -329,7 +330,7 @@ virtual void OnRestoreDefaultsClick(CRhinoOptionsPageEventArgs& e);
   int CDocumentPropertiesPage::OnApply()
   {
     // Set the document specific object color
-    CApp::App().SetObjectColor(Document(), m_color_button.Color());
+    CApp::App().SetObjectColor(m_doc, m_color_button.Color());
     return true;
   }
   ```
@@ -341,9 +342,6 @@ virtual void OnRestoreDefaultsClick(CRhinoOptionsPageEventArgs& e);
   ```
   bool CDocumentPropertiesPage::Apply(CRhinoOptionsPageEventArgs& e)
   {
-    // The CRhinoOptionsPageEventArgs provides access the the CRhinoDoc
-    // associated with this page
-    // CRhinoDoc* doc = e.Document();
     // Set the document specific object color
     CApp::App().SetObjectColor(e.Document(), m_color_button.Color());
     return true;
@@ -370,7 +368,7 @@ virtual void OnRestoreDefaultsClick(CRhinoOptionsPageEventArgs& e);
 
   ####  Rhino 6 code
 
-  Rhino 6 supports optionally adding "Restore Defaults" and "Apply" buttons by overriding the `ButtonsToDisplay`  method and returning the buttons to display or `RhinoOptionPageButtons::None` to hide all optional buttons.  The base class implementation returns `RhinoOptionPageButtons::None` by default.
+  Rhino 6 supports optionally adding "Restore Defaults" and "Apply" buttons by overriding the `ButtonsToDisplay`  method and returning the buttons to include or  `RhinoOptionPageButtons::None` to hide all optional buttons.  The base class implementation returns `RhinoOptionPageButtons::None` by default.
 
   ```
   RhinoOptionPageButtons ButtonsToDisplay() const override
@@ -382,7 +380,7 @@ virtual void OnRestoreDefaultsClick(CRhinoOptionsPageEventArgs& e);
   }
   ```
 
-  The `OnDefaults` method was replace by the `OnRestoreDefaultsClick` method and the Apply button simply calls the `Apply` method.
+  The `OnDefaults` method was replace by the `OnRestoreDefaultsClick` method and the Apply button calls the `Apply` method.
 
   ```
   void CDocumentPropertiesPage::OnRestoreDefaultsClick(CRhinoOptionsPageEventArgs& e)
@@ -436,7 +434,12 @@ virtual RhinoPropertiesPanelPageType PageType() const;
 
 // V5 Method
 virtual int SelectedObjectCount() const;
-// V6 equivalent (no longer supported)
+const CRhinoObject* GetSelectedObject( int index) const;
+// V6 equivalen
+// You can call the following to get the IRhinoPropertiesPanelPageEventArgs associated
+// with a specific page.  IRhinoPropertiesPanelPageEventArgs contains  ObjectCount and
+// ObjectAt methods which provide access to the selected object list.
+//IRhinoPropertiesPanelPageEventArgs* args = IRhinoPropertiesPanelPageEventArgs::FromPage(this);
 
 // V5 Event watcher methods
 virtual void OnCloseDocument(CRhinoDoc& doc );
@@ -560,16 +563,16 @@ void InstanceDefinitionTableEvent(
 
      /////////////////////////////////////////////////////////////////////////////
      // CRhinoObjectPropertiesDialogPage required overrides
-     void InitControls( const CRhinoObject* new_obj = NULL) override;
-     BOOL AddPageToControlBar( const CRhinoObject* obj = NULL) const override;
-     CRhinoCommand::result RunScript( ON_SimpleArray<const CRhinoObject*>& objects) override;
+     void InitControls( const CRhinoObject* new_obj = NULL);
+     BOOL AddPageToControlBar( const CRhinoObject* obj = NULL) const;
+     CRhinoCommand::result RunScript( ON_SimpleArray<const CRhinoObject*>& objects);
      /////////////////////////////////////////////////////////////////////////////
      // CRhinoObjectPropertiesDialogPageEx required overrides
-     HICON Icon(void) const override;
+     HICON Icon(void) const;
      /////////////////////////////////////////////////////////////////////////////
      // CRhinoStackedDialogPag required overrides
-     const wchar_t* EnglishPageTitle() override;
-     const wchar_t* LocalPageTitle() override;
+     const wchar_t* EnglishPageTitle();
+     const wchar_t* LocalPageTitle();
    //... the rest of your class
    };
    ```
@@ -592,8 +595,8 @@ void InstanceDefinitionTableEvent(
      CRhinoCommand::result RunScript(IRhinoPropertiesPanelPageEventArgs& e) override;
      /////////////////////////////////////////////////////////////////////////////
      // CRhinoObjectPropertiesDialogPageEx required overrides
-     // Handled by TRhinoPropertiesPanelPage
-     //HICON Icon(void) const override;
+     // Handled by TRhinoPropertiesPanelPage, you can delete the Icon override
+     //HICON Icon(void) const;
      /////////////////////////////////////////////////////////////////////////////
      // CRhinoStackedDialogPag required overrides
      const wchar_t* EnglishTitle() const override;
@@ -602,7 +605,7 @@ void InstanceDefinitionTableEvent(
    };
    ```
 
-5. See the "*Virtual method changes*" section above for a list of virtual methods that will need to be modified for Rhino 6.
+5. See the [Virtual method changes](#migrating-crhinoobjectpropertiesdialogpage-or-crhinoobjectpropertiesdialogpageex-derived-pages) section above for a list of virtual methods that will need to be modified for Rhino 6.
 
 ### CPP Implementation file changes
 
@@ -673,7 +676,9 @@ void InstanceDefinitionTableEvent(
 
 5. Remove the `CRhinoObjectPropertiesDialogPageEx::Icon` override, the icon resource Id is now passed to the base class constructor.
 
-6. Change the  `RunScript` override.Rhino 5 code
+6. Change the  `RunScript` override.
+
+   #### Rhino 5 code
 
    ```
    CRhinoCommand::result CPropertiesPage::RunScript(ON_SimpleArray<const CRhinoObject*>& objects)
@@ -817,9 +822,9 @@ void InstanceDefinitionTableEvent(
    	UUID CommandUUID()
    	{
    		// {E547CD29-920F-4EF9-92EC-3F4AE9D9E619}
-       static const GUID V5PageTestCommand_UUID =
+       static const GUID command_id =
        { 0xe547cd29, 0x920f, 0x4ef9, { 0x92, 0xec, 0x3f, 0x4a, 0xe9, 0xd9, 0xe6, 0x19 } };
-       return V5PageTestCommand_UUID;
+       return command_id;
    	}
 
      // Returns the English command name.
@@ -839,8 +844,8 @@ void InstanceDefinitionTableEvent(
      CRhinoCommand::result MakeObjectColor(ON_SimpleArray<const CRhinoObject*>& objectList);
    };
 
-   // The one and only CCommandV5PageTest object.  
-   // Do NOT create any other instance of a CCommandV5PageTest class.
+   // The one and only CPropertiesPageCommand object.  
+   // Do NOT create any other instance of a CPropertiesPageCommand class.
    static class CPropertiesPageCommand thePropertiesPageCommand;
 
    CRhinoCommand::result CPropertiesPageCommand::RunCommand( const CRhinoCommandContext& context )
@@ -960,9 +965,9 @@ void InstanceDefinitionTableEvent(
    	UUID CommandUUID()
    	{
    		// {E547CD29-920F-4EF9-92EC-3F4AE9D9E619}
-       static const GUID V5PageTestCommand_UUID =
+       static const GUID command_id =
        { 0xe547cd29, 0x920f, 0x4ef9, { 0x92, 0xec, 0x3f, 0x4a, 0xe9, 0xd9, 0xe6, 0x19 } };
-       return V5PageTestCommand_UUID;
+       return command_id;
    	}
 
      // Returns the English command name.
@@ -982,8 +987,8 @@ void InstanceDefinitionTableEvent(
      CRhinoCommand::result MakeObjectColor(ON_SimpleArray<const CRhinoObject*>& objectList);
    };
 
-   // The one and only CCommandV5PageTest object.  
-   // Do NOT create any other instance of a CCommandV5PageTest class.
+   // The one and only CPropertiesPageCommand object.  
+   // Do NOT create any other instance of a CPropertiesPageCommand class.
    static class CPropertiesPageCommand thePropertiesPageCommand;
 
    CRhinoCommand::result CPropertiesPageCommand::RunCommand( const CRhinoCommandContext& context )
@@ -1091,7 +1096,7 @@ void InstanceDefinitionTableEvent(
   ```
   CRhinoObjectPropertiesDialogPageEx::page_type CPropertiesPage::PageType() const
   {
-  	return CRhinoObjectPropertiesDialogPageEx::custom_page;
+    return CRhinoObjectPropertiesDialogPageEx::custom_page;
   }
   ```
 
