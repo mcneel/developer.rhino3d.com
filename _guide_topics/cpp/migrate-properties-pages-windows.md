@@ -1,15 +1,15 @@
 ---
-title: Migrate your plugin project to Rhino 6 manually
-description: This guide walks you through manually migrating your Rhino 5 plugin project to Rhino 6.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+title: Migrate your Options, Document Properties and Object Properties Pages
+description: This guide walks you through migrating existing Rhino 5, plug-in provided, Rhino Options, Document Properties and Object Properties pages to Rhino 6.
+authors: ['John Morse']
+author_contacts: ['johnm']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Getting Started']
 origin: unset
 order: 7
-keywords: ['c', 'C/C++', 'plugin']
+keywords: ['c', 'C/C++', 'plugin', 'options', 'properties']
 layout: toc-guide-page
 ---
 
@@ -18,6 +18,57 @@ layout: toc-guide-page
 This guide walks you through migrating existing Rhino 5, plug-in provided, Rhino Options, Document Properties and Object Properties pages to Rhino 6.
 
 You can find instructions regarding migrating your Rhino 5 plugin project to Rhino 6  [here]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows).
+
+## Migrating `CRhinoPlugIn` derived class
+
+The Rhino 5 `CRhinoPlugIn` class includes `AddPagesToObjectPropertiesDialog`, `AddPagesToOptionsDialog` and `AddPagesToDocumentPropertiesDialog` virtual methods which may be optionally overridden when adding custom pages to the Options, Document Properties and Object Properties dialogs.  These methods have been modified in Rhino 6 and will require changes to your derived plug-in classes.
+
+#### Rhino 5 Code
+
+```
+void CV5PageTestPlugIn::AddPagesToObjectPropertiesDialog(
+  ON_SimpleArray<class CRhinoObjectPropertiesDialogPage*>& pages)
+{
+  pages.Append(&m_properties_page);
+}
+
+void CV5PageTestPlugIn::AddPagesToOptionsDialog(
+  HWND hwndParent,
+  ON_SimpleArray<CRhinoOptionsDialogPage*>& pages)
+{
+  pages.Append(new COptionsPage());
+}
+
+void CV5PageTestPlugIn::AddPagesToDocumentPropertiesDialog(
+  CRhinoDoc& doc,
+  HWND hwndParent,
+  ON_SimpleArray<CRhinoOptionsDialogPage*>& pages)
+{
+  pages.Append(new CDocumentPropertiesPage(doc));
+}
+```
+
+#### Rhino 6 code
+
+```
+void CV5PageTestPlugIn::AddPagesToObjectPropertiesDialog(
+  CRhinoPropertiesPanelPageCollection& collection)
+{
+  collection.Add(&m_properties_page);
+}
+
+void CV5PageTestPlugIn::AddPagesToOptionsDialog(
+  CRhinoOptionsPageCollection& collection)
+{
+  collection.AddPage(new COptionsPage());
+}
+
+void CV5PageTestPlugIn::AddPagesToDocumentPropertiesDialog(
+  CRhinoOptionsPageCollection& collection)
+{
+  collection.AddPage(new CDocumentPropertiesPage());
+}
+```
 
 ## Migrating `CRhinoOptionsDialogPage` derived pages
 
@@ -78,7 +129,7 @@ virtual void OnRestoreDefaultsClick(CRhinoOptionsPageEventArgs& e);
 3. Find your class declaration, for this example we will use the following:
 
    ```
-   class CPropertiesPage : public CRhinoObjectPropertiesDialogPageEx
+   class CDocumentPropertiesPage : public CRhinoOptionsDialogPage
    {
    ....
    };
@@ -87,42 +138,32 @@ virtual void OnRestoreDefaultsClick(CRhinoOptionsPageEventArgs& e);
    Replace it with this:
 
    ```
-   class CPropertiesPage : public TRhinoPropertiesPanelPage<CDialog>
+   class CDocumentPropertiesPage : public TRhinoOptionsPage<CDialog>
    {
    ...
    };
    ```
 
-   Your class will now use a Rhino provided template class which implements the `IRhinoPropertiesPanelPage` and `IRhinoWindow` interfaces.  The `IRhinoWindow` interface will wrap the `CDialog` class and provide direct access to window methods for creating, sizing, painting and destruction.  You can use any class that is derived from `CDialog` as long as the class constructor takes a resource Id and parent window.  The `TRhinoDialogWindow` template always passes a  `nullptr` as the parent window.
+   Your class will now use a Rhino provided template class which implements the `IRhinoOptionsPage` and `IRhinoWindow` interfaces.  The `IRhinoWindow` interface will wrap the `CDialog` class and provide direct access to window methods for creating, sizing, painting and destruction.  You can use any class that is derived from `CDialog` as long as the class constructor takes a resource Id and parent window.  The `TRhinoDialogWindow` template always passes a  `nullptr` as the parent window.
 
 4. Modify the `CRhinoObjectPropertiesDialogPage` required virtual methods as follows:
 
    #### Rhino 5 class
 
    ```
-   class CPropertiesPage : public CRhinoObjectPropertiesDialogPageEx
+   class CDocumentPropertiesPage : public CRhinoOptionsDialogPage
    {
-     DECLARE_DYNAMIC(CPropertiesPage)
+     DECLARE_DYNAMIC(CDocumentPropertiesPage)
 
    public:
-     CPropertiesPage();   // standard constructor
-     virtual ~CPropertiesPage();
+     CDocumentPropertiesPage(CRhinoDoc& doc);   // standard constructor
+     virtual ~CDocumentPropertiesPage();
 
      /////////////////////////////////////////////////////////////////////////////
-     // CRhinoObjectPropertiesDialogPage required overrides
-     void InitControls( const CRhinoObject* new_obj = NULL);
-     BOOL AddPageToControlBar( const CRhinoObject* obj = NULL) const;
-     CRhinoCommand::result RunScript( ON_SimpleArray<const CRhinoObject*>& objects);
-     // Optional overrides
-     page_type PageType() const override;
-     /////////////////////////////////////////////////////////////////////////////
-     // CRhinoObjectPropertiesDialogPageEx required overrides
-   	HICON Icon(void) const;
-     /////////////////////////////////////////////////////////////////////////////
-     // CRhinoStackedDialogPag required
-     const wchar_t* EnglishPageTitle();
-     const wchar_t* LocalPageTitle();
-     /////////////////////////////////////////////////////////////////////////////
+     // CRhinoOptionsDialogPage required overrides
+     const wchar_t* EnglishPageTitle() override;
+     const wchar_t* LocalPageTitle() override;
+     CRhinoCommand::result RunScript( CRhinoDoc& rhino_doc) override;
    //... the rest of your class
    };
    ```
@@ -825,11 +866,25 @@ void InstanceDefinitionTableEvent(
 
    void CPropertiesPage::RunModifyCommand(bool byLayer)
    {
+     thePropertiesPageCommand.m_object_ids.Empty();
+     for (int i = 0, count = SelectedObjectCount(); i < count; i++)
+     {
+       const CRhinoObject* object = GetSelectedObject(i);
+       if (!IncludeObject(object))
+         continue;
+       if (byLayer && object->Attributes().ColorSource() == ON::color_from_layer)
+         continue;
+       if (!byLayer && IsOurColor(object))
+         continue;
+       thePropertiesPageCommand.m_object_ids.Append(object->Attributes().m_uuid);
+     }
+
      if (thePropertiesPageCommand.m_object_ids.Count() < 1)
      {
-       ::RhinoMessageBox(GetSafeHwnd(), L"Nothing modified!", EnglishPageTitle(), MB_OK);
+       ::RhinoMessageBox(RhinoApp().MainWnd(), L"Nothing modified!", LocalPageTitle(), MB_OK);
        return;
      }
+
      thePropertiesPageCommand.m_page = this;
      thePropertiesPageCommand.m_by_layer = byLayer;
      ON_wString macro;
@@ -839,25 +894,11 @@ void InstanceDefinitionTableEvent(
 
    void CPropertiesPage::OnBnClickedButton1()
    {
-     thePropertiesPageCommand.m_object_ids.Empty();
-     for (int i = 0, count = SelectedObjectCount(); i < count; i++)
-     {
-       const CRhinoObject* object = GetSelectedObject(i);
-       if (IncludeObject(object) && !IsOurColor(object))
-         thePropertiesPageCommand.m_object_ids.Append(object->Attributes().m_uuid);
-     }
      RunModifyCommand(false);
    }
 
    void CPropertiesPage::OnBnClickedButton2()
    {
-     thePropertiesPageCommand.m_object_ids.Empty();
-     for (int i = 0, count = SelectedObjectCount(); i < count; i++)
-     {
-       const CRhinoObject* object = GetSelectedObject(i);
-       if (IncludeObject(object) && object->Attributes().ColorSource() != ON::color_from_layer)
-         thePropertiesPageCommand.m_object_ids.Append(object->Attributes().m_uuid);
-     }
      RunModifyCommand(true);
    }
 
@@ -900,23 +941,103 @@ void InstanceDefinitionTableEvent(
    In Rhino 6 you call `ModifyPage` on your page host and override `OnModifyPage` to modify the selected objects.  `ModifyPage` Will call `OnModifyPage`  when it is safe to modify objects.
 
    ```
+   class CPropertiesPageCommand : public CRhinoTestCommand
+   {
+   public:
+     CPropertiesPageCommand()
+     : m_by_layer(false)
+     , m_page(nullptr)
+     {
+     }
+
+     ~CPropertiesPageCommand()
+     {
+     }
+
+     // Returns a unique UUID for this command.
+     // If you try to use an id that is already being used, then
+     // your command will not work.  Use GUIDGEN.EXE to make unique UUID.
+   	UUID CommandUUID()
+   	{
+   		// {E547CD29-920F-4EF9-92EC-3F4AE9D9E619}
+       static const GUID V5PageTestCommand_UUID =
+       { 0xe547cd29, 0x920f, 0x4ef9, { 0x92, 0xec, 0x3f, 0x4a, 0xe9, 0xd9, 0xe6, 0x19 } };
+       return V5PageTestCommand_UUID;
+   	}
+
+     // Returns the English command name.
+   	const wchar_t* EnglishCommandName() { return L"TestPropertiesPageModifyObjects"; }
+
+     // Returns the localized command name.
+   	const wchar_t* LocalCommandName() const { return L"TestPropertiesPageModifyObjects"; }
+
+     // Rhino calls RunCommand to run the command.
+   	CRhinoCommand::result RunCommand( const CRhinoCommandContext& );
+
+     bool m_by_layer;
+     ON_SimpleArray<ON_UUID>m_object_ids;
+     CPropertiesPage* m_page;
+
+     CRhinoCommand::result MakeByLayer(ON_SimpleArray<const CRhinoObject*>& objectList);
+     CRhinoCommand::result MakeObjectColor(ON_SimpleArray<const CRhinoObject*>& objectList);
+   };
+
+   // The one and only CCommandV5PageTest object.  
+   // Do NOT create any other instance of a CCommandV5PageTest class.
+   static class CPropertiesPageCommand thePropertiesPageCommand;
+
+   CRhinoCommand::result CPropertiesPageCommand::RunCommand( const CRhinoCommandContext& context )
+   {
+     if (m_page == nullptr)
+       return CRhinoCommand::failure;
+     int modified = 0;
+     for (int i = 0, count = m_object_ids.Count(); i < count; i++)
+     {
+       const CRhinoObject* object = context.m_doc.LookupObject(m_object_ids[i]);
+       if (object && !object->IsDeleted())
+       {
+           modified += m_by_layer
+           ? m_page->ToByLayer(object) 
+           : m_page->ToObjectColor(object);
+       }
+     }
+     m_object_ids.Empty();
+     m_page->ModifiedMessage(m_by_layer, modified);
+     m_page = nullptr;
+     return modified > 0 ? CRhinoCommand::success : CRhinoCommand::nothing;
+   }
+
    void CPropertiesPage::RunModifyCommand(bool byLayer)
    {
-     m_by_layer = byLayer;
+     thePropertiesPageCommand.m_by_layer = byLayer;
      PropertiesPanelPageHost()->ModifyPage();
    }
 
    void CPropertiesPage::OnModifyPage(IRhinoPropertiesPanelPageEventArgs& args)
    {
-     int modified = 0;
+     thePropertiesPageCommand.m_object_ids.Empty();
      for (int i = 0, count = args.ObjectCount(); i < count; i++)
      {
        const CRhinoObject* object = args.ObjectAt(i);
-       modified += m_by_layer
-         ? ToByLayer(object)
-         : ToObjectColor(object);
+       if (!IncludeObject(object))
+         continue;
+       if (thePropertiesPageCommand.m_by_layer && object->Attributes().ColorSource() == ON::color_from_layer)
+         continue;
+       if (!thePropertiesPageCommand.m_by_layer && IsOurColor(object))
+         continue;
+       thePropertiesPageCommand.m_object_ids.Append(object->Attributes().m_uuid);
      }
-     ModifiedMessage(m_by_layer, modified);
+
+     if (thePropertiesPageCommand.m_object_ids.Count() < 1)
+     {
+       ::RhinoMessageBox(RhinoApp().MainWnd(), L"Nothing modified!", LocalTitle(), MB_OK);
+       return;
+     }
+
+     thePropertiesPageCommand.m_page = this;
+     ON_wString macro;
+     macro.Format(L"_noecho !_-%s", thePropertiesPageCommand.EnglishCommandName());
+     RhinoApp().RunScript(args.DocumentRuntimeSerialNumber(), macro);
    }
 
    void CPropertiesPage::OnBnClickedButton1()
@@ -965,20 +1086,20 @@ void InstanceDefinitionTableEvent(
 
 10. Replace your `PageType` override with the new version that returns a `RhinoPropertiesPanelPageType` instead of a `page_type`.  This is an optional override and typically is only overridden to replace system pages such as the light page with a plug-in provided page.
 
-   #### Rhino 5 code
+  #### Rhino 5 code
 
-   ```
-   CRhinoObjectPropertiesDialogPageEx::page_type CPropertiesPage::PageType() const
-   {
-   	return CRhinoObjectPropertiesDialogPageEx::custom_page;
-   }
-   ```
+  ```
+  CRhinoObjectPropertiesDialogPageEx::page_type CPropertiesPage::PageType() const
+  {
+  	return CRhinoObjectPropertiesDialogPageEx::custom_page;
+  }
+  ```
 
-   #### Rhino 6 code
+  #### Rhino 6 code
 
-   ```
-   RhinoPropertiesPanelPageType CPropertiesPage::PageType() const
-   {
-     return RhinoPropertiesPanelPageType::Custom;
-   }
-   ```
+  ```
+  RhinoPropertiesPanelPageType CPropertiesPage::PageType() const
+  {
+    return RhinoPropertiesPanelPageType::Custom;
+  }
+  ```
