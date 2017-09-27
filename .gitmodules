@@ -12,3 +12,6 @@
 [submodule "api/rhinoscript"]
 	path = api/rhinoscript
 	url = https://github.com/mcneel/rhinoscript-api-docs.git
+[submodule "api/cpp"]
+	path = api/cpp
+	url = https://github.com/mcneel/rhino-cpp-api-docs.git
