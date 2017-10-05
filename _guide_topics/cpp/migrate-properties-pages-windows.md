@@ -8,7 +8,7 @@ languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Getting Started']
 origin: unset
-order: 7
+order: 8
 keywords: ['c', 'C/C++', 'plugin', 'options', 'properties']
 layout: toc-guide-page
 ---
