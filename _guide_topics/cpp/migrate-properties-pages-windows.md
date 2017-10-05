@@ -13,10 +13,6 @@ keywords: ['c', 'C/C++', 'plugin', 'options', 'properties']
 layout: toc-guide-page
 ---
 
-# Migrate your Options, Document Properties and Object Properties Pages
-
-This guide walks you through migrating existing Rhino 5 plug-in provided, Rhino Options, Document Properties and Object Properties pages to Rhino 6.
-
 You can find instructions regarding migrating your Rhino 5 plugin project to Rhino 6  [here]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows).
 
 The code used in this document is available on GitHub [here](https://github.com/mcneel/rhino-developer-samples/tree/6/cpp/SampleMigration).
