@@ -13,3 +13,4 @@ script/.ssh
 .jekyll-metadata
 
 _config_ci.yml
+.DS_Store
