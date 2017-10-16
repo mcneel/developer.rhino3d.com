@@ -88,6 +88,7 @@ order: 2
   {% assign guides = site.guide_topics | sort:"order" %}
   <ul>
   <li><a href="{{ site.baseurl }}/api/RhinoCommon">API Reference</a></li>
+  <li><a href="https://github.com/picoe/Eto/wiki">Eto.Forms guides</a></li>
   {% for guide in guides %}
     {% if guide.sdk contains 'RhinoCommon' and guide.categories contains 'Advanced' %}
       {% if guide.title and guide.order %}

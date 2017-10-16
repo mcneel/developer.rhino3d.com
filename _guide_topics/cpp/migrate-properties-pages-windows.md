@@ -1,6 +1,6 @@
 ---
 title: Migrate your Options, Document Properties and Object Properties Pages
-description: This guide walks you through migrating existing Rhino 5, plug-in provided, Rhino Options, Document Properties and Object Properties pages to Rhino 6.
+description: This guide walks you through migrating existing Rhino 5, plug-in provided, Options, Document Properties and Object Properties pages to Rhino 6.
 authors: ['John Morse']
 author_contacts: ['johnm']
 sdk: ['C/C++']
@@ -8,14 +8,10 @@ languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Getting Started']
 origin: unset
-order: 7
+order: 8
 keywords: ['c', 'C/C++', 'plugin', 'options', 'properties']
 layout: toc-guide-page
 ---
-
-# Migrate your Options, Document Properties and Object Properties Pages
-
-This guide walks you through migrating existing Rhino 5 plug-in provided, Rhino Options, Document Properties and Object Properties pages to Rhino 6.
 
 You can find instructions regarding migrating your Rhino 5 plugin project to Rhino 6  [here]({{ site.baseurl }}/guides/cpp/migrate-your-plugin-manual-windows).
 
@@ -25,7 +21,7 @@ The code used in this document is available on GitHub [here](https://github.com/
 
 The Rhino 5 `CRhinoPlugIn` class includes `AddPagesToObjectPropertiesDialog`, `AddPagesToOptionsDialog` and `AddPagesToDocumentPropertiesDialog` virtual methods which may be overridden when adding custom pages to the Options, Document Properties and Object Properties dialogs.  These methods have been modified in Rhino 6 and will require changes to your derived plug-in classes.
 
-#### Rhino 5 Code
+#### Rhino 5 code
 
 ```
 void CSamplePropertiesPagesPlugIn::AddPagesToObjectPropertiesDialog(
@@ -196,7 +192,7 @@ virtual void OnRestoreDefaultsClick(CRhinoOptionsPageEventArgs& e);
 
 1. Open the CPP file containing your derived class implementation.
 
-2. Replace all references to `CRhinoOptionsDialogPage` with `__base_clas`  which dereferences to `CDialog` in our case because we are deriving from `TRhinoOptionsPage<CDialog>.`
+2. Replace all references to `CRhinoOptionsDialogPage` with `__base_class`  which dereferences to `CDialog` in our case because we are deriving from `TRhinoOptionsPage<CDialog>.`
 
    #### Rhino 5 class
 
@@ -611,7 +607,7 @@ void InstanceDefinitionTableEvent(
 
 1. Open the CPP file containing your derived class implementation.
 
-2. Replace all references to `CRhinoObjectPropertiesDialogPageEx` or `CRhinoObjectPropertiesDialogPage` with `__base_clas`  which dereferences to `CDialog` in our case because we are deriving from `TRhinoOptionsPage<CDialog>.`
+2. Replace all references to `CRhinoObjectPropertiesDialogPageEx` or `CRhinoObjectPropertiesDialogPage` with `__base_class`  which dereferences to `CDialog` in our case because we are deriving from `TRhinoOptionsPage<CDialog>.`
 
    #### Rhino 5 class
 
@@ -700,7 +696,7 @@ void InstanceDefinitionTableEvent(
 
 7. Rename your `InitControls` method to `UpdatePage` and change the parameters accordingly.
 
-   #### Rhino 5 Code
+   #### Rhino 5 code
 
    The selected object list is accessed via the `CRhinoObjectPropertiesDialogPage::SelectedObjectCount` and `CRhinoObjectPropertiesDialogPage::GetSelectedObject` methods in Rhino 5.
 
@@ -727,7 +723,7 @@ void InstanceDefinitionTableEvent(
    }
    ```
 
-   #### Rhino 6Code
+   #### Rhino 6 code
 
    The  selected object list is accessed via the provided `IRhinoPropertiesPanelPageEventArgs` parameter in Rhino 6.
 
@@ -756,7 +752,7 @@ void InstanceDefinitionTableEvent(
 
 8. Rename your `AddPageToControlBar` method to `IncludeInNavigationControl` , change the return type to `bool` and change the parameters accordingly.
 
-   #### Rhino 5 Code
+   #### Rhino 5 code
 
    The selected object list is accessed via the `CRhinoObjectPropertiesDialogPage::SelectedObjectCount` and `CRhinoObjectPropertiesDialogPage::GetSelectedObject` methods in Rhino 5.
 
@@ -775,7 +771,7 @@ void InstanceDefinitionTableEvent(
    }
    ```
 
-   #### Rhino 6 Code
+   #### Rhino 6 code
 
    The  selected object list is accessed via the provided `IRhinoPropertiesPanelPageEventArgs` parameter in Rhino 6.
 
@@ -798,7 +794,7 @@ void InstanceDefinitionTableEvent(
 
 9. Replace your object modification code with a call to `ModifyPage` and override `OnModifyPage` to preform the actual object modification.
 
-   #### Rhino 5 Code
+   #### Rhino 5 code
 
    In Rhino 5 you would typically create a hidden test command and call it to modify the selected object list.  This is done to provide undo support and trigger the correct update events in the properties panel.
 

@@ -1,8 +1,8 @@
 ---
 title: Rhino Installer Engine
 description: This guide is a brief introduction to the Rhino Installer Engine.
-authors: ['Brian Gillespie']
-author_contacts: ['brian']
+authors: ['Brian Gillespie', 'Will Pearson']
+author_contacts: ['brian', 'will']
 sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
@@ -16,7 +16,7 @@ layout: toc-guide-page
 
 ## Overview
 
-The Rhino Installer Engine simplifies distribution, installation, and updating of plugins for Rhino for Windows (on both 32- and 64- bit) and Rhino for Mac.
+The Rhino Installer Engine simplifies distribution, installation, and updating of plugins for Rhino for Windows (on both 32- and 64-bit) and Rhino for Mac.
 
 ## How It Works
 
@@ -24,17 +24,23 @@ A Rhino Installer Package is a zip file with an *.rhi* extension (or a *.macrhi*
 
 There are no file structure or naming requirements.
 
-For example:
+For example...
 
-- *myPlugIn\4.0\myPlugIn.rhp*
-- *myPlugIn\5.0\x86\myPlugIn.rhp*
-- *myPlugIn\5.0\x64\myPlugIn.rhp*
+    Marmoset.rhi/
+    ├── Rhino WIP/
+    │   └── Marmoset.rhp
+    └── Rhino 5.0/
+        ├── x86/
+        │   └── Marmoset.rhp
+        └── x64/
+            └── Marmoset.rhp
 
-works just as well as...
+...works just as well as...
 
-- *myPlugIn_rhino4.rhp*
-- *myPlugIn_rhino5_x86.rhp*
-- *myPlugIn_rhino5_x64.rhp*
+    Marmoset.rhi/
+    ├── Marmoset_rhinowip.rhp
+    ├── Marmoset_rhino5_x86.rhp
+    └── Marmoset_rhino5_x64.rhp
 
 On Windows, the Rhino Installer Engine examines each plugin and extracts the plugin GUID, Title, Version, and appropriate SDK version numbers.  It also examines each Rhino installed on the computer.
 
@@ -46,7 +52,7 @@ On Windows, each plugin is compared to each installed version of Rhino.  The new
 
 - The Rhino Installer Engine will copy files from the *rhi* archive, and will register the plug ins it finds. No other execution is done.
 - Currently, it is not possible to digitally sign *rhi* files in order to verify the source of *rhi* files.
-- The Rhino Installer Engine is currently available with Rhino 5 and later.
+- The Rhino Installer Engine is available with Rhino 5 and later.
 
 ---
 
