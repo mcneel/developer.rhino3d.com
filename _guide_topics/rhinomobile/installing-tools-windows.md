@@ -13,7 +13,7 @@ keywords: ['RhinoMobile', 'iRhino 3D']
 layout: toc-guide-page
 ---
 
- 
+
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C# mobile applications using RhinoMobile.
 
 ## Prerequisites
@@ -30,13 +30,13 @@ This guide presumes you have an:
 
 [Visual Studio](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx) is Microsoft's flagship development platform and Integrated Development Environment (IDE).  Visual Studio now comes in three "flavors": Visual Studio Code[^1], Visual Studio Online[^2], and Visual Studio "proper"[^3].  In order to author RhinoMobile apps, you will need Visual Studio "proper" (Visual Studio Code and Visual Studio Online are not supported).
 
-At the time of this writing, Visual Studio 2015 "proper" comes in [three editions](https://www.visualstudio.com/vs-2015-product-editions): Community, Professional, and Enterprise.  Any of these editions will work.
+At the time of this writing, Visual Studio "proper" comes in [three editions](https://www.visualstudio.com/vs-2015-product-editions): Community, Professional, and Enterprise.  Any of these editions will work.
 
-For the purposes of this guide, we will presume you are using Visual Studio 2015 Community Edition.
+For the purposes of this guide, we will presume you are using Visual Studio 2017 Community Edition.
 
 #### Step-by-Step
 
-1. *[Visual Studio 2015 Community Edition](https://www.visualstudio.com/vs-2015-product-editions)* is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/en-us/support/legal/mt171547).  Click the *Community* button to download the installer.
+1. *[Visual Studio 2017 Community Edition](https://www.visualstudio.com/vs-2015-product-editions)* is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/en-us/support/legal/mt171547).  Click the *Community* button to download the installer.
 1. Run the *Visual Studio installer* you downloaded from Microsoft, in this case *vs_community.exe*.
 1. Follow the onscreen prompts to install Visual Studio.  It is recommended that you install the *Typical* installation.  Depending on your internet connection, this can take minutes or hours.  When successfully installed, click the *Launch* button to verify it is installed properly.
 

@@ -13,7 +13,7 @@ keywords: ['rhino', 'sizeof', 'UNICODE', 'TCHAR', 'wchar_t']
 layout: toc-guide-page
 ---
 
- 
+
 ## Discussion
 
 The `sizeof` keyword gives the amount of storage, in bytes, associated with a variable or a type.  It does not return number of elements in an array, such as an array of characters.
@@ -46,7 +46,7 @@ wchar_t wszBuffer[24];
 GetWindowText( hWnd, wszBuffer, _countof(wszBuffer) );
 ```
 
-The `TCHAR` data type definition is based on whether or not your plugins compile as MBCS or as UNICODE.  Rhino 5  plugins are compiled as UNICODE.  Thus, a TCHAR in Rhino 5 will be a `wchar_t`.
+The `TCHAR` data type definition is based on whether or not your plugins compile as MBCS or as UNICODE.  Rhino 6 plugins are compiled as UNICODE.  Thus, a TCHAR in Rhino 6 will be a `wchar_t`.
 
 To be safe in all cases, you should use the following convention when dealing with TCHARs:
 

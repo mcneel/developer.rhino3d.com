@@ -14,17 +14,17 @@ layout: toc-guide-page
 TODO: 'needs to be compared with creating-zoo-plugins'
 ---
 
- 
+
 ## Overview
 
 Zoo 5.0 allows 3rd party plugin developers to add licensing support for their products to the Zoo.  RhinoCommon allows developers to write plugins for Rhino that use the Rhino license manager and obtain licenses from Zoo servers.
 
 ## Prerequisites
 
-RhinoCommon plugins are .NET Framework 4.0 assemblies. Thus, to create a RhinoCommon plugin for Rhino 5, you will need one of the following development tools:
+RhinoCommon plugins are .NET Framework 4.0 assemblies. Thus, to create a RhinoCommon plugin for Rhino 6, you will need one of the following development tools:
 
-- Microsoft Visual C# 2010
-- Microsoft Visual Basic .NET 2010
+- Microsoft Visual C# 2017
+- Microsoft Visual Basic .NET 2017
 - RhinoCommon
 
 Also, all Rhino plugins that use the Rhino license manager to access the Zoo must be signed with an Authenticode certificate issued by McNeel Plugin Security.  These certificates are free, but must be requested by each developer.  Developers must agree to the Terms of Use before a certificate is issued. For more information on plugin signing, see the [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo) guide.

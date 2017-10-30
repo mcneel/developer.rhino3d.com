@@ -27,9 +27,8 @@ When a customer attempts to add a product license to the Zoo, the product's plug
 
 Rhino C/C++ plugins are MFC dynamic link libraries.  Thus, to create a plugin for Rhino, you will need one of the following development tools:
 
-1. Microsoft Visual C++ 2005 (required for Rhino 5.0 32-bit)
-1. Microsoft Visual C++ 2010 (required for Rhino 5.0 64-bit)
-1. Rhino 5.0 C/C++ SDK
+1. Microsoft Visual C++ 2017 (required for Rhino 6.0 64-bit)
+1. Rhino 6.0 C/C++ SDK
 
 **NOTE**: Express Editions of Microsoft Visual Studio will not work, as they do not include MFC.
 
@@ -42,8 +41,8 @@ The general steps required to create a Rhino plugin are:
 1. Make sure you have Zoo installed.
 1. Make sure you have the Rhino installed.
 1. Make sure you have the Rhino C/C++ SDK installed.
-1. Launch Microsoft Visual Studio 2010.
-1. Create a new project, in C/C++, based on the Rhino 5.0 Plugin project template.
+1. Launch Microsoft Visual Studio 2017.
+1. Create a new project, in C/C++, based on the Rhino 6.0 Plugin project template.
 1. Build your plugin.
 1. Launch Rhino and use the *PlugInManager* command to install your plugin (to verify that it was built properly).
 

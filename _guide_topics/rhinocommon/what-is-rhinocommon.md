@@ -16,8 +16,8 @@ layout: toc-guide-page
 
 RhinoCommon is the cross-platform .NET plugin SDK available for:
 
-- Rhino 5 for Windows (both 32 and 64-bit versions)
-- Rhino 5 for Mac
+- Rhino for Windows
+- Rhino for Mac
 - Rhino.Python scripting
 - Grasshopper
 
@@ -31,17 +31,17 @@ The term _common_ is meant to be just that: an SDK that can be used across Rhino
 
 ## Inside RhinoCommon
 
-RhinoCommon is composed of the following pieces.  These files are included with Rhino 5 for Windows and Mac:
+RhinoCommon is composed of the following pieces.  These files are included with Rhino for Windows and Mac:
 
 1. *RhinoCommon.dll* - This is a pure .NET DLL that plugins can reference and use to work with Rhino.
 1. *RhinoCommon.xml* - This is an XML file that contains SDK documentation comments specific to RhinoCommon.dll. Programming development environments like Visual Studio and MonoDevelop use this XML file to display tooltips and other helpful information while the developer writes code.
-1. *rhcommon_c.dll* and *monomanager.rhp* - These are C++ shared libraries compiled for specific target platforms (Win32, Win64, and macOS). These libraries are used by RhinoCommon, but should never be directly accessed by plugin developers.
+1. *rhcommon_c.dll* and *monomanager.rhp* - These are C++ shared libraries compiled for specific target platforms (Win64 and macOS). These libraries are used by RhinoCommon, but should never be directly accessed by plugin developers.
 
 RhinoCommon on macOS is executed through an embedded [Mono framework](http://www.mono-project.com/).
 
 ## Rhino uses RhinoCommon
 
-All .NET plugins that ship with Rhino 5 for Windows and Rhino 5 for Mac, including the Python interpreter, reference RhinoCommon.
+All .NET plugins that ship with Rhino for Windows and Rhino for Mac, including the Python interpreter, reference RhinoCommon.
 
 In 2011, Grasshopper was rewritten using RhinoCommon.  This was a big project and took some time to complete, but once done it provided performance improvements and better memory management.  This is also a step toward Grasshopper running on Rhino for Mac.
 
