@@ -13,12 +13,12 @@ keywords: ['RhinoMobile', 'iRhino 3D']
 layout: toc-guide-page
 ---
 
- 
-This guide presumes you have gone through the [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinomobile/installing-tools-windows) guide and have successfully installed Xamarin  and all the requisite libraries.  These instructions presume you are using Visual Studio 2015 Professional.
+
+This guide presumes you have gone through the [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinomobile/installing-tools-windows) guide and have successfully installed Xamarin  and all the requisite libraries.  These instructions presume you are using Visual Studio 2017 Professional.
 
 ## HelloRhinoMobile
 
-These guide presumes you are using Visual Studio 2015 Professional, though this process should work with Visual Studio 2013 as well.
+These guide presumes you are using Visual Studio 2017 Professional, though this process should work with Visual Studio 2013 as well.
 
 ### Android Boilerplate Build
 

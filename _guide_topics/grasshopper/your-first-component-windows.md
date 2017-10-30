@@ -13,7 +13,7 @@ keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
 
- 
+
 It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/grasshopper/installing-tools-windows).
 
 ## HelloGrasshopper
@@ -26,7 +26,7 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 
 ### File New
 
-1. If you have not done so already, **launch Visual Studio** (for the purposes of this guide, we are using Visual Studio 2015 Community Edition and C#).
+1. If you have not done so already, **launch Visual Studio** (for the purposes of this guide, we are using Visual Studio 2017 Community Edition and C#).
 1. Navigate to **File** > **New** > **Project**...
 ![File New Project]({{ site.baseurl }}/images/your-first-plugin-windows-01.png)
 1. A **New Project** wizard should appear.  In the left column, find the **Installed** > **Templates** > **Visual C#** > **Rhinoceros** section.  In the central list, select the Grasshopper Add-On template...

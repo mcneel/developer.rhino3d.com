@@ -24,7 +24,7 @@ First, we will build a simple C/C++ library that adds two numbers together.  Aft
 
 This guide does not presume you are a C/C++ or .NET expert, but assumes you have a functional working knowledge of both.  This is an advanced guide; that said, the intent of this guide is to illustrate basic considerations of wrapping a C/C++ library and the logistical issues calling it from a RhinoCommon plugin on both Windows and Mac.
 
-We will be analyzing a sample solution called *[SampleNativeLibrary](https://github.com/dalefugier/SampleNativeLibrary)*.  Please clone or download this repository.  *SampleNativeLibrary* builds against the RhinoWIP (on Windows) and Rhino 5 for Mac (on macOS).  (On Windows, it is possible to use Rhino 5, but you will have to change the RhinoCommon references).
+We will be analyzing a sample solution called *[SampleNativeLibrary](https://github.com/dalefugier/SampleNativeLibrary)*.  Please clone or download this repository.  *SampleNativeLibrary* builds against the RhinoWIP (on Windows) and Rhino 5 for Mac (on macOS).  (On Windows, it is possible to use Rhino 6, but you will have to change the RhinoCommon references).
 
 It is presumed you already have *all* the necessary tools installed and are ready to go.  If you are not there yet, see both [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinocommon/installing-tools-windows) and [Installing Tools (Mac)]({{ site.baseurl }}/guides/rhinocommon/installing-tools-mac).  It is also helpful to have read and understood [Your First Plugin (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-crossplatform).
 
