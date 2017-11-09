@@ -1,5 +1,5 @@
 ---
-title: Rhino C/C++ SDK License Agreement
+title: License Agreement
 description: This guide provides the license agreement of C/C++ SDK.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
