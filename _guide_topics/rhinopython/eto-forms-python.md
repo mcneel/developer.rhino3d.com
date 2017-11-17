@@ -59,7 +59,7 @@ import Eto.Drawing as drawing
 import Eto.Forms as forms
 
 # SampleEtoRoomNumber dialog class
-class SampleRoomNumberDialog(forms.Dialog[bool]):
+class SampleEtoRoomNumberDialog(forms.Dialog[bool]):
 
     # Dialog box Class initializer
     def __init__(self):
