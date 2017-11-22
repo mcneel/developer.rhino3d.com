@@ -7,7 +7,7 @@ order: 3
 ---
 # API References  
 
-<a href="{{ site.baseurl }}/api/RhinoCommon" target="_blank">RhinoCommon (Windows and Mac) (opens in separate tab)</a>  
+<a href="{{ site.baseurl }}/api/RhinoCommon" target="_blank">RhinoCommon (opens in separate tab)</a>  
 <a href="{{ site.baseurl }}/api/RhinoScriptSyntax">Rhino.Python RhinoScriptSyntax</a>  
 <a href="{{ site.baseurl }}/api/grasshopper">Grasshopper (Rhino for Windows)</a>  
 <a href="{{ site.baseurl }}/api/rhinoscript">RhinoScript (Rhino for Windows)</a>  
