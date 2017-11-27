@@ -11,6 +11,7 @@ origin: unset
 order: 1
 keywords: ['nuget']
 layout: toc-guide-page
+redirect_from: /guides/rhinocommon/switching-to-nuget-packages/
 ---
 
 <div class="bs-callout bs-callout-danger">
