@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mcneel/developer-rhino3d-com.svg?branch=master)](https://travis-ci.org/mcneel/developer-rhino3d-com)
 
-This repo contains the contents of http://developer.rhino3d.com
+This repo contains the contents of http://developer.rhino3d.com.
 
 The site is hosted on [GitHub Pages](https://pages.github.com/) which uses a static site generator called [Jekyll](http://jekyllrb.com/).
 
