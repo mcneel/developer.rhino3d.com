@@ -22,10 +22,10 @@ When a customer attempts to add a product license to the Zoo, the product's plug
 
 ## Prerequisites
 
-Zoo plugins are .NET Framework 4.0 assemblies.  To create a plugins for Zoo, you need one of the following development tools:
+Zoo plugins are .NET Framework 4.5 assemblies.  To create a plugins for Zoo, you need one of the following development tools:
 
-1. Microsoft Visual C# 2010.
-1. Microsoft Visual Basic .NET 2010.
+1. Microsoft Visual C# 2017.
+1. Microsoft Visual Basic .NET 2017.
 
 Also, all plugins that use the Zoo license system must be signed with an *Authenticode* certificate issued by *McNeel Plugin Security*.  These certificates are free, but must be requested by each developer.  Developers must agree to the *Terms of Use* before a certificate is issued.  For more information on plugin signing, see [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo).
 
@@ -34,10 +34,10 @@ Also, all plugins that use the Zoo license system must be signed with an *Authen
 The general steps required to create a Zoo plugin are:
 
 1. Make sure you have Zoo installed.
-1. Launch Microsoft Visual Studio 2010.
+1. Launch Microsoft Visual Studio.
 1. Create a new *Class Library* project using either Visual C# or Visual Basic .NET.
 1. Add a reference to *ZooPlugin.dll*, which is found in the Zoo installation folder.  Make sure to set the reference's *Copy Local* property to `False`.
-1. Create a new public class that inherits from the `IZooPlugin` interface.
+1. Create a new public class that inherits from the `IZooPlugin3` interface.
 1. Implement the interface members.  (For detailed information about the interface members, see the sample Zoo plugin listed below.)
 1. Build your plugin.
 1. [Digitally sign your plugin]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo).
@@ -47,7 +47,7 @@ The general steps required to create a Zoo plugin are:
 Once you have built your Zoo plugin, you can install it and test it:
 
 1. Run *ZooAdmin.exe* and make sure the Zoo licensing service has stopped.
-1. Copy your plugin assembly (*.dll*) and any dependent support libraries to the Zoo's plugin folder (i.e. *C:\Program Files\Zoo 5.0\Plugins*).
+1. Copy your plugin assembly (*.dll*) and any dependent support libraries to the Zoo's plugin folder (i.e. *C:\Program Files\Zoo 6\Plugins*).
 1. Restart the Zoo license service.
 1. When the service has restarted, click the *Add License* button. Y our product should be one of the available products for which to add a license.
 
