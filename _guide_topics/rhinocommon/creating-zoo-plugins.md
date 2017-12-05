@@ -54,4 +54,4 @@ Once you have built your Zoo plugin, you can install it and test it:
 ## Related Topics
 
 - [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo)
-- [Sample Zoo Plugin Projects (on GitHub)](https://github.com/mcneel/Zoo5)
+- [Sample Zoo Plugin Projects (on GitHub)](https://github.com/mcneel/rhino-developer-samples/tree/6/zoo)
