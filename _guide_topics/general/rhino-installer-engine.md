@@ -16,7 +16,7 @@ layout: toc-guide-page
 
 ## Overview
 
-The Rhino Installer Engine simplifies distribution, installation, and updating of plugins for Rhino for Windows (on both 32- and 64- bit) and Rhino for Mac.
+The Rhino Installer Engine simplifies distribution, installation, and updating of plugins for Rhino for Windows and Rhino for Mac.
 
 ## How It Works
 
@@ -27,20 +27,14 @@ There are no file structure or naming requirements.
 For example:
 
 - *myPlugIn\4.0\myPlugIn.rhp*
-- *myPlugIn\5.0\x86\myPlugIn.rhp*
-- *myPlugIn\5.0\x64\myPlugIn.rhp*
+- *myPlugIn\5.0\myPlugIn.rhp*
 
 works just as well as...
 
 - *myPlugIn_rhino4.rhp*
-- *myPlugIn_rhino5_x86.rhp*
-- *myPlugIn_rhino5_x64.rhp*
+- *myPlugIn_rhino5.rhp*
 
-On Windows, the Rhino Installer Engine examines each plugin and extracts the plugin GUID, Title, Version, and appropriate SDK version numbers.  It also examines each Rhino installed on the computer.
-
-On Windows, the Rhino Installer Engine supports installing AnyCPU plugins written in .NET and will register them with both 32- and 64-bit Rhino 5.  On Mac, the Rhino Installer Engine - and Rhino itself - only support 64-bit installation.
-
-On Windows, each plugin is compared to each installed version of Rhino.  The newest compatible plugin is registered with the corresponding version of Rhino.
+On Windows, the Rhino Installer Engine examines each plugin and extracts the plugin GUID, Title, Version, and appropriate SDK version numbers.  It also examines each Rhino installed on the computer.  Each plugin is compared to each installed version of Rhino.  The newest compatible plugin is registered with the corresponding version of Rhino.
 
 ## Limitations
 

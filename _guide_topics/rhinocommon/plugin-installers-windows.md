@@ -14,18 +14,17 @@ layout: toc-guide-page
 TODO: 'needs updating and/or review.'
 ---
 
- 
+
 ## Overview
 
 Creating a plugin installer is very easy.  You simply add your compiled plugin to a zip archive and change the extension from *.zip* to *.rhi*.  Once this is done, you can double-click the archive and the [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine) will begin to install your plugin.  That's all there is to it!
 
-## A Complex Example
+## An Example
 
 Imagine you have a more complex plugin and want to support multiple versions of Rhino.  For example, you want to:
 
-- Install an older version of the plugin for Rhino 4.0
-- Install a new version of the plugin for 32-bit Rhino 5
-- Install another version of the plugin for 64-bit Rhino 5
+- Install an older version of the plugin for Rhino 4
+- Install a new version of the plugin for Rhino 5
 - Include a custom toolbar file (e.g. *MyToolbar.rui*)
 
 This is possible.  You need to...
@@ -37,17 +36,13 @@ This is possible.  You need to...
         │   ├── Marmoset.rhp
         │   └── required_v4.dll
         ├── Rhino 5.0/
-        │   ├── x86/
-        │   │   ├── Marmoset.rhp
-        │   │   └── required_v5_x86.dll
-        │   └── x64/
-        │       ├── Marmoset.rhp
-        │       └── required_v5_x64.dll
+        │   ├── Marmoset.rhp
+        │   └── required_v5.dll
         ├── Marmoset.rui
         └── Marmoset.chm
 
 
-1. Copy the appropriate files into the folders.  Note that all three versions of the plugin can have the same name, so long as they are in different folders.
+1. Copy the appropriate files into the folders.  Note that both versions of the plugin can have the same name, so long as they are in different folders.  The folder structure itself is not important (see "[Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine)" for more).
 1. Compress the three plugin versions and any additional files you wish to distribute using zip[^1] compression.
 1. Change the extension from *.zip* to *.rhi*
 
@@ -63,4 +58,4 @@ Because the Rhino Plugin Installer Engine unzips your *.rhi* file into a directo
 
 
 
-[^1]: Currently other compression algorithms are not supported.
+[^1]: Other compression algorithms are not supported.
