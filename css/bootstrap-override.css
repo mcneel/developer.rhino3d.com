@@ -86,7 +86,7 @@ body {
 }
 
 
-#cref {
+#search-box {
 	margin-top:12px;
     line-height:24px;
 }
@@ -100,6 +100,28 @@ body {
 
 #cse-search-results iframe {
 	height : 1150px;
+}
+
+#bcs-results-div h1 a, h2 a {
+color: #337ab7 !important;
+margin-bottom: 2px;
+}
+
+#bcs-results-div h1 a:visited, h2 a:visited {
+color: #1756a9 !important;
+margin-bottom: 2px;
+}
+
+
+.bcs-result h2 {
+margin: 0px !important;
+padding-bottom:0px !important;
+}
+
+.bcs-result {
+margin-top: 0px !important;
+padding-top: 0px !important;
+margin-left: 25px !important;
 }
 
 /* Coordinating the codeblock background with pre container baockground */

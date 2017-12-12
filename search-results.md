@@ -4,22 +4,22 @@ layout: fullwidth-page
 ---
 <div id="page_content">
  <!-- #BeginEditable "content" -->
-
-<gcse:search as_sitesearch="developer.rhino3d.com" defaultToRefinement="Developer Tools"></gcse:search>
-
+<h1>Search Results:</h1>
+<div id="searchresults">
+	<script type="text/javascript">
+		var customConfigId = '1026831005';
+		var javasriptResourceUrl = 'https://ui.customsearch.ai/api/ux/render?customConfig=1026831005&market=&safeSearch=0';
+		var s = document.createElement('script');
+		s.setAttribute('type', 'text/javascript');
+		s.id = 'bcs_js_snippet';
+		s.src = javasriptResourceUrl;
+		var scripts = document.getElementsByTagName("script"),
+		currentScript = scripts[scripts.length-1];
+		currentScript.parentElement.appendChild(s);
+	</script>
+</div>
   <!-- #EndEditable -->
 </div>
 
 
-<script>
-(function() {
-  var cx = '007988927381198593803:mcq6pshqsn8';
-  var gcse = document.createElement('script');
-  gcse.type = 'text/javascript';
-  gcse.async = true;
-  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-      '//cse.google.com/cse.js?cx=' + cx;
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(gcse, s);
-})();
-</script>
+
