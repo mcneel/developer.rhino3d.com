@@ -27,7 +27,8 @@ if [ -f "Gemfile" ]; then
   bundle check --path vendor/gems >/dev/null 2>&1  || {
     bundle install --path vendor/gems
   }
+  echo "==> Updating github-pages gem…"
+  bundle-outdated github-pages >/dev/null 2>&1  || {
+    bundle update
+  }
 fi
-
-# delete Gemfile.lock - we always want the latest and greatest
-rm -f Gemfile.lock
