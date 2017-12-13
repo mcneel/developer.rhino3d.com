@@ -13,14 +13,14 @@ xcode-select -p >/dev/null 2>&1 || {
   exit 1
 }
 
-if [ -f ".ruby-version" ] && [ -z "$(rbenv version-name 2>/dev/null)" ]; then
-  echo "==> Installing Ruby…"
-  rbenv install --skip-existing
-  which bundle >/dev/null 2>&1  || {
-    gem install bundler
-    rbenv rehash
-  }
-fi
+# if [ -f ".ruby-version" ] && [ -z "$(rbenv version-name 2>/dev/null)" ]; then
+#   echo "==> Installing Ruby…"
+#   rbenv install --skip-existing
+#   which bundle >/dev/null 2>&1  || {
+#     gem install bundler
+#     rbenv rehash
+#   }
+# fi
 
 if [ -f "Gemfile" ]; then
   echo "==> Installing gem dependencies…"
