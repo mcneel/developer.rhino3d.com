@@ -170,7 +170,7 @@ protected override void SolveInstance(IGH_DataAccess DA)
 
   // 8. Create slicing arcs.
   double ct;
-  circle.ClosestParameterTo(p1, out ct);
+  circle.ClosestParameter(p1, out ct);
 
   Rhino.Geometry.Vector3d tan = circle.TangentAt(ct);
 
@@ -224,7 +224,7 @@ Protected Overrides Sub SolveInstance(ByVal DA As Grasshopper.Kernel.IGH_DataAcc
 
   '8. Create slicing arcs.
   Dim ct As Double
-  circle.ClosestParameterTo(p1, ct)
+  circle.ClosestParameter(p1, ct)
 
   Dim tan As Rhino.Geometry.Vector3d = circle.TangentAt(ct)
 
