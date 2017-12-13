@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+# script/cibuild: Build and deploy the current version branch. This is primarily
+#                 designed to run on the continuous integration server.
+
 require 'yaml'
 
 # define some handy string formatting
@@ -188,7 +191,7 @@ if is_stable
   `git add -A .`
   # puts `git status -s` # debug
   puts "Committing staged changes"
-  puts `git commit -m "Deploy #{sha}#{"+" if dirty}"`.cyan
+  puts `git commit -m "Deploy #{sha}#{"+" if dirty} (default: #{branch})"`.cyan
 else
   # stage and commit (branch directory only)
   `git add -A #{branch_dir}`
