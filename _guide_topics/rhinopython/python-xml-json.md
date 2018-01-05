@@ -20,8 +20,8 @@ One of the reasons JSON might be used is to collect data from the Rhino model to
 Here is an example of a JSON structure describing a medical office, taken from a set of polylines off a Rhino floorplan. As you will see in the example, the medical space includes 5 rooms and parking, with square footage and pricing for each dedicated space.
 
 ```json
-{ "office": {
-    "medical": [
+{ "office": 
+    {"medical": [
       { "room-number": 100,
         "use": "reception",
         "sq-ft": 50,
@@ -47,13 +47,13 @@ Here is an example of a JSON structure describing a medical office, taken from a
         "sq-ft": 150,
         "price": 100
       }
-    ],
+    ]},
     "parking": {
       "location": "premium",
       "style": "covered",
       "price": 750
     }
-}
+} 
 ```
 It is this dictionary setup that works best for Json.
 

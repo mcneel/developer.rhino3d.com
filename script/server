@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# script/server: Launch the application and any extra required processes
+#                locally.
+
+cd "$(dirname "$0")/.."
+
 # use bundler to run jeykll, if available
 if hash bundle 2>/dev/null; then
   JEKYLL_CMD="bundle exec jekyll"
@@ -8,6 +13,6 @@ else
 fi
 
 # run jeykll
-$JEKYLL_CMD serve --incremental --host 0.0.0.0 --config _config.yml,_config_dev.yml
+$JEKYLL_CMD serve --incremental --host 0.0.0.0 --config _config.yml,_config_dev.yml --open-url
 
 # note: _config_dev includes a rule to exclude the api/ dir to speed things up

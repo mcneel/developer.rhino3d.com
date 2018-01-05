@@ -46,7 +46,7 @@ Most high DPI issues that plugins will encounter are due to owner-drawn control.
 
 Other issues have to do with the use of bitmaps or icons that are too small at higher DPI settings or that don’t scale well.
 
-But WinForms has other challenges too. One observation is that if you spend too much time using the Forms designer, hard-coding font sizes and other values, will will have DPI display issues.
+But WinForms has other challenges too. One observation is that if you spend too much time using the Forms designer, hard-coding font sizes and other values, will have DPI display issues.
 
 ### General
 

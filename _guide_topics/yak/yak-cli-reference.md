@@ -22,8 +22,8 @@ When run in a directory containing a valid `manifest.yaml` file, creates a packa
 yak build
 ```
 
-<div class="bs-callout">
-  <strong>Note</strong>: Currently this only works if there is exactly <strong>one</strong> <code>.gha</code> file in the directory.
+<div class="alert alert-info" role="alert">
+  <strong>Note:</strong> Currently this only works if there is exactly <strong>one</strong> <code>.gha</code> file in the directory.
 </div>
 <!-- During the build, the component GUID is extracted to help with searching for the package later. -->
 
@@ -69,8 +69,8 @@ Pushes a package to the server.
 yak push [--source=URL] <filename>
 ```
 
-<div class="bs-callout">
-  <strong>Note</strong>: Requires <a href="#login">authentication</a>.
+<div class="alert alert-info" role="alert">
+  <strong>Note:</strong> Requires <a href="#login">authentication</a>.
 </div>
 
 ## Search
@@ -93,12 +93,12 @@ When run in a directory containing a `*.gha` file, creates a `manifest.yml` file
 yak spec
 ```
 
-<div class="bs-callout">
-  <strong>Note</strong>: Currently this only works if there is exactly <strong>one</strong> <code>.gha</code> file in the directory.
+<div class="alert alert-info" role="alert">
+  <strong>Note:</strong> Currently this only works if there is exactly <strong>one</strong> <code>.gha</code> file in the directory.
 </div>
 
-<div class="bs-callout">
-  <strong>Note</strong>: This command is only useful if you've implemented <code>GH_AssemblyInfo</code> in the Grasshopper plug-in.
+<div class="alert alert-info" role="alert">
+  <strong>Note:</strong> This command is only useful if you've implemented <code>GH_AssemblyInfo</code> in the Grasshopper plug-in.
 </div>
 
 ## Uninstall
@@ -110,6 +110,6 @@ Uninstalls a package.
 ```commandline
 yak uninstall <package>
 ```
-<div class="bs-callout">
-  <strong>Note</strong>: This doesn't actually remove the package from the machine, it just removes the <code>manifest.txt</code> file that tells Rhino which version to load.
+<div class="alert alert-info" role="alert">
+  <strong>Note:</strong> Since 0.3, Yak will attempt to remove the package from the machine. If this isn't possible -- likely because Rhino is running -- then the package will be <em>deactivated</em> instead.
 </div>

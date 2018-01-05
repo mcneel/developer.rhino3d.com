@@ -2,4 +2,5 @@
 
 # ignore api dir because it's slow
 exclude:
-  - api/
+  - api/*
+  - vendor/gems
