@@ -111,5 +111,5 @@ Uninstalls a package.
 yak uninstall <package>
 ```
 <div class="alert alert-info" role="alert">
-  <strong>Note:</strong> This doesn't actually remove the package from the machine, it just removes the <code>manifest.txt</code> file that tells Rhino which version to load.
+  <strong>Note:</strong> Since 0.3, Yak will attempt to remove the package from the machine. If this isn't possible -- likely because Rhino is running -- then the package will be <em>deactivated</em> instead.
 </div>
