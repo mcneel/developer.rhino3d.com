@@ -63,7 +63,7 @@ Before diving into the deep it probably is a good idea to change the assembly in
 [assembly: PlugInDescription(DescriptionType.UpdateUrl, "-")]
 [assembly: PlugInDescription(DescriptionType.WebSite, "http:/www.letworyinteractive.com")]
 
-[assembly: AssemblyTitle("MockingBird")] / Plug-In title is extracted from this
+[assembly: AssemblyTitle("MockingBird")] // Plug-In title is extracted from this
 [assembly: AssemblyDescription("A sample render plug-in for Rhinoceros 6")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Letwory Interactive")]
@@ -72,8 +72,8 @@ Before diving into the deep it probably is a good idea to change the assembly in
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-/ The following GUID is for the ID of the typelib if this project is exposed to COM
-/ This will also be the Guid of the Rhino plug-in
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+// This will also be the Guid of the Rhino plug-in
 [assembly: Guid("ccb6ab63-fdef-44ac-9c1f-7eca810d5b75")]
 ```
 

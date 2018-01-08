@@ -55,11 +55,11 @@ The plug-in code is very lean, only `LoadRetunCode OnLoad()`{:.language-cs}  nee
 ```cs
 public class MockingRealtimeDisplayModeInfo : RealtimeDisplayModeClassInfo
 {
-	public override string Name =&gt; "MockingRealtimeMode";
+	public override string Name => "MockingRealtimeMode";
 
-	public override Guid GUID =&gt; new Guid("F14A3A24-C2FB-4216-9D2A-9636EF3869FA");
+	public override Guid GUID => new Guid("F14A3A24-C2FB-4216-9D2A-9636EF3869FA");
 
-	public override Type RealtimeDisplayModeType =&gt; typeof (MockingRealtimeDisplayMode);
+	public override Type RealtimeDisplayModeType => typeof (MockingRealtimeDisplayMode);
 }
 
 ```
@@ -139,7 +139,7 @@ public void ColorPixels()
 
 	while (true)
 	{
-		while (Passes &lt; MaxPasses)
+		while (Passes < MaxPasses)
 		{
 
 			ColorPass(Passes);
@@ -147,7 +147,7 @@ public void ColorPixels()
 			if (_shutdown) break;
 			Passes += 1;
 		}
-		if (!_completionTriggered &amp;&amp; Passes &gt;= MaxPasses)
+		if (!_completionTriggered &amp;&amp; Passes >= MaxPasses)
 		{
 			_completionTriggered = true;
 			MaxPassesCompleted?.Invoke(this, EventArgs.Empty);
@@ -159,7 +159,7 @@ public void ColorPixels()
 }
 ```
 
-It essentially goes into an eternal loop that runs until the `_shutdown`{:.language-cs}  flag is set. The render process goes through each pass (and simulates some extra workload by sleeping a whopping 10 milliseconds), then essentially waits for `Passes`{:.language-cs}  to get reset or `MaxPasses`{:.language-cs}  change such that `Passes &lt; MaxPasses`{:.language-cs} . `ColorPass()`{:.language-cs}  then fills the pixel buffer, presented to the render engine by means of the `RenderWindow`{:.language-cs} . Increasing `Passes`{:.language-cs}  will also fire the `PassRendered`{:.language-cs}  event.
+It essentially goes into an eternal loop that runs until the `_shutdown`{:.language-cs}  flag is set. The render process goes through each pass (and simulates some extra workload by sleeping a whopping 10 milliseconds), then essentially waits for `Passes`{:.language-cs}  to get reset or `MaxPasses`{:.language-cs}  change such that `Passes < MaxPasses`{:.language-cs} . `ColorPass()`{:.language-cs}  then fills the pixel buffer, presented to the render engine by means of the `RenderWindow`{:.language-cs} . Increasing `Passes`{:.language-cs}  will also fire the `PassRendered`{:.language-cs}  event.
 
 ```cs
 private void ColorPass(int pass)
@@ -169,9 +169,9 @@ private void ColorPass(int pass)
 	using (var channel = rw.OpenChannel(RenderWindow.StandardChannels.RGBA))
 	{
 		var size = rw.Size();
-		for (var x = 0; x &lt; size.Width; x++)
+		for (var x = 0; x < size.Width; x++)
 		{
-			for (var y = 0; y &lt; size.Height; y++)
+			for (var y = 0; y < size.Height; y++)
 			{
 				channel.SetValue(x, y, c);
 			}

@@ -122,29 +122,29 @@ public class MockingRenderPipeline : RenderPipeline
 On our implementation of AsyncRenderContext we need to override one function, `StopRendering()`{:.language-cs} . Obviously we have one extra function, which is the main entry to our rendering code, `Renderer()`{:.language-cs} .
 
 ```cs
-/// &lt;summary&gt;
+/// <summary>
 /// The render context essentially hosts our render engine. It'll contain the
 /// main render entry function that gets called by the RenderPipeline
 /// mechanism.
-/// &lt;/summary&gt;
+/// </summary>
 public class MockingRenderContext : AsyncRenderContext
 {
-	/// &lt;summary&gt;
+	/// <summary>
 	/// Hold on to the thread
-	/// &lt;/summary&gt;
+	/// </summary>
 	public Thread Thread { get; set; }
-	/// &lt;summary&gt;
+	/// <summary>
 	/// Hold on to the render window (note, may be moved to base class
 	/// AsyncRenderContext
-	/// &lt;/summary&gt;
+	/// </summary>
 	public RenderWindow RenderWindow { get; set; }
 	public bool Done { get; private set; }
 	private bool Cancel { get; set; }
 
-	/// &lt;summary&gt;
+	/// <summary>
 	/// Called when through UI interaction the render process is to be
 	/// stopped.
-	/// &lt;/summary&gt;
+	/// </summary>
 	public override void StopRendering()
 	{
 		Cancel = true;
@@ -161,9 +161,9 @@ public class MockingRenderContext : AsyncRenderContext
 			var size = RenderWindow.Size();
 			var max = (float)size.Width*size.Height;
 			var rendered = 0;
-			for (var x = 0; x &lt; size.Width; x++)
+			for (var x = 0; x < size.Width; x++)
 			{
-				for (var y = 0; y &lt; size.Height; y++)
+				for (var y = 0; y < size.Height; y++)
 				{
 					channel.SetValue(x, y, Color4f.FromArgb(1.0f, 1.0f, 0.75f, 0.5f));
 					rendered++;
