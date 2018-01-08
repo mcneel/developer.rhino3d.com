@@ -1,5 +1,5 @@
 ---
-title: Integrating a Render Engine
+title: Render Engine Integration - Introduction (1/5) 
 description: A guide to integrating a render engine using RhinoCommon SDK
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
@@ -8,7 +8,7 @@ languages: ['C#']
 platforms: ['Windows']
 categories: ['Advanced']
 origin: http:/www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-in-rhinoceros-3d-using-rhinocommon-introduction/
-order: 2
+order: 3
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
 ---
@@ -27,7 +27,8 @@ The subject will be broken up into several parts:
 * [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/mockingbird-interactive/)
 * Preview render
 
-For each part we'll take a look at relevant parts of the integration plug-in for the Cycles render engine while doing several simple example plug-ins at the same time. The code for the example plug-ins will be stripped of (most) of the comments that are added by the template, so we can focus on the parts that matter. Source code for the sample project, dubbed <a href="https:/github.com/jesterKing/MockingBird">MockingBird, is available on GitHub</a>.
+For each part we'll take a look at relevant parts of the integration plug-in for the Cycles render engine while doing several simple example plug-ins at the same time. The code for the example plug-ins will be stripped of (most) of the comments that are added by the template, so we can focus on the parts that matter. Source code for the sample project, dubbed <a href="https:/github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird">MockingBird, is available on GitHub</a>.
+
 ## Creating Render Plug-in project
 ### Install the RhinoCommon v6 template package
 To make developing a new plug-in for Rhinoceros 3D easy McNeel has published a template packages for v6. Search for the string rhino and install the relevant package.

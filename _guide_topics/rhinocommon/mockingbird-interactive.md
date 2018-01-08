@@ -1,5 +1,5 @@
 ---
-title: Rendering Integration - Interactive Viewport
+title: Render Engine Integration - Interactive Viewport (4/5) 
 description: A guide to integrating a render engine using RhinoCommon SDK - Interactive Viewport
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
@@ -7,8 +7,8 @@ sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
 categories: ['Advanced']
-origin: http://www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-in-rhinoceros-3d-using-rhinocommon-mockingbird-modal-rendering-25/
-order: 2
+origin: http://www.letworyinteractive.com/b/2016/10/integrating-a-render-engine-in-rhinoceros-3d-using-rhinocommon-mockingbird-interactive-rendering/
+order: 3
 keywords: ['renderer', 'integration', 'RhinoCommon', 'interactive', 'viewport']
 layout: toc-guide-page
 ---
@@ -77,7 +77,7 @@ After the plug-in is loaded the viewport mode can be found from the mode drop-do
 
 ### The viewport implementation
 
-The actual viewport integration is done with a class deriving from `RealtimeDisplayMode`{:.language-cs} . When deriving from that class, which we do with `MockingRealtimeDisplayMode`{:.language-cs} , Visual Studio will tell that several abstract methods need to be implemented. These methods are the minimum required functions to ensure proper functioning of the integration. The entire class can be found in the <a href="https://github.com/jesterKing/MockingBird/blob/master/MockingBirdViewport/MockingRealtimeDisplayMode.cs">Git repository here</a>. Lets step through the process what happens when the user selects the display mode for the viewport.
+The actual viewport integration is done with a class deriving from `RealtimeDisplayMode`{:.language-cs} . When deriving from that class, which we do with `MockingRealtimeDisplayMode`{:.language-cs} , Visual Studio will tell that several abstract methods need to be implemented. These methods are the minimum required functions to ensure proper functioning of the integration. The entire class can be found in the <a href="https://github.com/mcneel/rhino-developer-samples/blob/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/MockingBirdViewport/MockingRealtimeDisplayMode.cs">Git repository here</a>. Lets step through the process what happens when the user selects the display mode for the viewport.
 
 First of all an instance of our class will be created. If there is the need for initialisation a public default constructor can be implemented where such initialisation can be done. For `MockingRealtimeDisplayMode`{:.language-cs}  we don't need that. During the start up phase of the mode switch the underlying system will be querying whether our engine is started, and whether there are results available. Because this can happen already before we've actually managed to start our engine and get some results we'll be using a boolean flag `_started`{:.language-cs}  to communicate our state through the functions `IsRendererStarted()`{:.language-cs}  and `IsFrameBufferAvailable()`{:.language-cs} . Our real entry into the rendering process happens with `StartRenderer()`{:.language-cs} .
 
@@ -126,7 +126,7 @@ private void Reng_PassRendered(object sender, PassRenderedEventArgs e)
 
 The actual rendering
 
-The <a href="https://github.com/jesterKing/MockingBird/blob/master/MockingBirdViewport/MockingRender.cs">`MockingRender`{:.language-cs}  class</a> is responsible for generating the pixel data for the viewport. Its entry function is ColorPixels().
+The <a href="https://github.com/mcneel/rhino-developer-samples/blob/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/MockingBirdViewport/MockingRender.cs">`MockingRender`{:.language-cs}  class</a> is responsible for generating the pixel data for the viewport. Its entry function is ColorPixels().
 
 ```cs
 public void ColorPixels()

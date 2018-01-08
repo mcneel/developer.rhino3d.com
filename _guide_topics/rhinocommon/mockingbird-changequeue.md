@@ -1,5 +1,5 @@
 ---
-title: Rendering Integration - ChangeQueue
+title: Render Engine Integration - ChangeQueue (3/5) 
 description: A guide to integrating a render engine using RhinoCommon SDK - ChangeQueue
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
@@ -7,8 +7,8 @@ sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
 categories: ['Advanced']
-origin: http://www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-in-rhinoceros-3d-using-rhinocommon-mockingbird-modal-rendering-25/
-order: 2
+origin: http://www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-in-hinoceros-3d-using-rhinocommon-mockingbird-changequeue/
+order: 3
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
 ---
@@ -29,7 +29,7 @@ The hard way would be to just take the `RhinoDoc`{:.language-cs}  given in the `
 
 Since I don't like complex I'll just go with the easy way.
 
-The <a href="https://github.com/jesterKing/MockingBird/tree/master/MockingBirdChangeQueue">code for this plug-in version</a> can be found at <a href="https://github.com/jesterKing/MockingBird/tree/master">the MockingBird Git repository</a>.
+The <a href="https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/MockingBirdChangeQueue">code for this plug-in version</a> can be found at <a href="https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird">the MockingBird Git repository</a>.
 
 ### ChangeQueue
 
@@ -232,7 +232,7 @@ protected override Result Render(RhinoDoc doc, RunMode mode, bool fastPreview)
 
 ```
 
-Loading the <a href="https://github.com/jesterKing/MockingBird/blob/master/TestFiles/MockingBirdTest.3dm">3dm test file</a> and running the `_Render`{:.language-cs}  command will yield output something like:
+Loading the <a href="https://github.com/mcneel/rhino-developer-samples/blob/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/TestFiles/MockingBirdTest.3dm">3dm test file</a> and running the `_Render`{:.language-cs}  command will yield output something like:
 
 ```sh
 Command: _Render

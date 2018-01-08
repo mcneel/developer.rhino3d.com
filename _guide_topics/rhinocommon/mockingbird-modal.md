@@ -1,5 +1,5 @@
 ---
-title: Modal Rendering Integration
+title: Render Engine Integration - Modal Rendering (2/5) 
 description: A guide to integrating a render engine using RhinoCommon SDK - Modal
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
@@ -8,7 +8,7 @@ languages: ['C#']
 platforms: ['Windows']
 categories: ['Advanced']
 origin: http://www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-in-rhinoceros-3d-using-rhinocommon-mockingbird-modal-rendering-25/
-order: 2
+order: 3
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
 ---
@@ -24,7 +24,7 @@ This is part 2 in the series on render engine integration in Rhinoceros 3D using
 
 To implement a modal rendering solution for Rhinoceros 3D there are two particular pieces you'll need to create, which will allow you to render into a separate render window: a custom implementation of a `Rhino.Render.AsyncRenderContext`{:.language-cs} , and a `Rhino.Render.RenderPipeline`{:.language-cs}.
 
-The full source code of this plug-in can be found <a href="https://github.com/jesterKing/MockingBird/tree/master/MockingBirdModal">here</a>.
+The full source code of this plug-in can be found <a href="https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/MockingBirdModal">here</a>.
 
 The rendering will start when giving the Rhino command `Render`{:.language-cs}. This will result in a call into the `Render()`{:.language-cs}  of your Render plug-in implementation.
 
