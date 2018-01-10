@@ -26,18 +26,18 @@ The openNURBS Toolkit is intended for C++ and .NET programmers.  The toolkit inc
 
 The tools provided by openNURBS include:
 
-- C++ source code libraries to read and write the 3DM file format.  The current Microsoft, Apple and Gnu compilers for Windows, Windows x64, Mac, and Linux are supported..
+- C++ source code libraries to read and write the 3DM file format. The C++ compilers that are part of from Microsoft's Visual Studio and Apple's XCode are supported.
 - .NET source code to read and write the 3DM file format.
 - Quality assurance and revision control.
 - Technical support.
 
 Technically, the openNURBS toolkit is made up of:
 
-- [openNURBS 5 C++ source SDK](http://download.rhino3d.com/openNURBS/5.0/release/download/) for Windows, Mac, iOS, Android and Linux.
-- [openNURBS 5 .NET SDK](https://github.com/mcneel/rhinocommon/wiki/Rhino3dmIO-Toolkit-(OpenNURBS-build)) also known as "Rhino3dmIO"
+- [openNURBS C++ source SDK](http://download.rhino3d.com/openNURBS/6/release/download/) for Windows, Mac, iOS, Android and Linux.
+- [openNURBS .NET SDK](https://github.com/mcneel/rhinocommon/wiki/Rhino3dmIO-Toolkit-(OpenNURBS-build)) also known as "Rhino3dmIO"
 - [Sample 3D files](http://download.rhino3d.com/openNURBS/5.0/opennurbs5samples)
 
-Currently, the openNURBS Toolkit reads and writes all information in Rhino version 2, 3, 4 and 5 files and reads Rhino version 1 files.
+The openNURBS Toolkit reads and writes all Rhino 3DM files.
 
 Additionally, the openNURBS Toolkit provides NURBS evaluation tools and elementary geometric and 3D view manipulation tools.
 
@@ -70,5 +70,5 @@ Robert McNeel & Associates.  They feel that the 3D market is stifled because of 
 
 ## Related Topics
 
-- [openNURBS 5.0 Migration Guide]({{ site.baseurl }}/guides/opennurbs/migration-guide)
+- [openNURBS Migration Guide]({{ site.baseurl }}/guides/opennurbs/migration-guide)
 - [openNURBS Latest Release Notes]({{ site.baseurl }}/guides/opennurbs/latest-release-notes)
