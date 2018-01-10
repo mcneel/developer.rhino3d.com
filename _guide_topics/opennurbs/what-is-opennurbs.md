@@ -33,9 +33,9 @@ The tools provided by openNURBS include:
 
 Technically, the openNURBS toolkit is made up of:
 
-- [openNURBS C++ source SDK](http://download.rhino3d.com/openNURBS/6/release/download/) for Windows, Mac, iOS, Android and Linux.
+- [openNURBS C++ source SDK](http://download.rhino3d.com/openNURBS/6/release/download/)
 - [openNURBS .NET SDK](https://github.com/mcneel/rhinocommon/wiki/Rhino3dmIO-Toolkit-(OpenNURBS-build)) also known as "Rhino3dmIO"
-- [Sample 3D files](http://download.rhino3d.com/openNURBS/5.0/opennurbs5samples)
+- [Sample 3D files](http://download.rhino3d.com/openNURBS/6/opennurbs6samples)
 
 The openNURBS Toolkit reads and writes all Rhino 3DM files.
 
