@@ -1,6 +1,6 @@
 ---
 title: openNURBS 6 Migration Guide
-description: This guide contains information to help you migrate your application to openNURBS 5.
+description: This guide contains information to help you use openNURBS 6.
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
