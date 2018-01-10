@@ -13,7 +13,7 @@ layout: toc-guide-page
  
 ## Overview
 
-The openNURBS 6 toolkit reads Rhino version 1, 2, 3, 4, 5, and 6 3DM files. It writes Rhino Version 2, 3, 4, 5, and 6 3DM files.
+The openNURBS 6 toolkit reads all Rhino 3DM files. It writes Rhino 2, 3, 4, 5, and 6 3DM files.
 
 For most developers, migrating from openNURBS 5 to opennurbs 6 will involve recompiling and using new iterators to go throught the contents of an ONX_Model.
 
