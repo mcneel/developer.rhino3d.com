@@ -15,7 +15,10 @@ layout: toc-guide-page
 
 The openNURBS 6 toolkit reads all Rhino 3DM files. It writes Rhino 2, 3, 4, 5, and 6 3DM files.
 
-For most developers, migrating from openNURBS 5 to opennurbs 6 will involve recompiling and using new iterators to go throught the contents of an ONX_Model.
+For most developers, migrating from openNURBS 5 to openNURBS 6 will involve recompiling and using new iterators to go throught the contents of an ONX_Model. 
+
+## New Requirements
+You must use a C++ compiler that supports C++11. Microsoft's Visual Studio 2015 or Apple's XCode 9 support C++11.
 
 ## New Features
 
