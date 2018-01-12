@@ -33,7 +33,7 @@ The tools provided by openNURBS include:
 
 Technically, the openNURBS toolkit is made up of:
 
-- [openNURBS C++ source SDK](http://download.rhino3d.com/openNURBS/6/release/download/)
+- [openNURBS C++ source SDK](https://www.rhino3d.com/download/openNURBS/6/release)
 - [openNURBS .NET SDK](https://github.com/mcneel/rhinocommon/wiki/Rhino3dmIO-Toolkit-(OpenNURBS-build)) also known as "Rhino3dmIO"
 - [Sample 3D files](http://download.rhino3d.com/openNURBS/6/opennurbs6samples)
 
