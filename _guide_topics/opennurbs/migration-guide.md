@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 The openNURBS toolkit reads and writes Rhino 3DM files.
 
-For most developers, updating from the a previous verson of openNURBS will involve recompiling.
+For most developers, updating from the previous verson of openNURBS will involve recompiling and minor changes.
 
 ## New Requirements - January 2018
 You must use a C++ compiler that supports C++11. Microsoft's Visual Studio 2015 or Apple's XCode 9 support C++11.
