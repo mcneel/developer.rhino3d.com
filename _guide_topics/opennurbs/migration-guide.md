@@ -19,6 +19,7 @@ For most developers, updating from the previous verson of openNURBS will involve
 
 ## New Requirements - January 2018
 You must use a C++ compiler that supports C++11. Microsoft's Visual Studio 2015 or Apple's XCode 9 support C++11.
+
 Use iterators to go throught the contents of an ONX_Model. 
 
 ## New Features - January 2018
