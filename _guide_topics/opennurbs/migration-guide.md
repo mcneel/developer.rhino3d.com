@@ -15,17 +15,19 @@ layout: toc-guide-page
 
 The openNURBS toolkit reads and writes Rhino 3DM files.
 
-For most developers, updating from the previous verson of openNURBS will involve recompiling and minor changes.
+To get the current openNURBS toolkit or technical support, visit [openNURBS](https://www.rhino3d.com/opennurbs).
+
+## Updating
+
+For most developers, updating from the previous verson of openNURBS will involve recompiling and minor changes. As before, the easiest way to read a 3DM file is to use one of the ONX_Model::Read() functions. The easiest way to write a 3DM file is to use one of the ONX_Model::Write() functions.
 
 ## New Requirements - January 2018
-You must use a C++ compiler that supports C++11. Microsoft's Visual Studio 2015 or Apple's XCode 9 support C++11.
 
-Use iterators to go throught the contents of an ONX_Model. 
+You must use a C++ compiler that supports C++11. Microsoft's Visual Studio 2015 or Apple's XCode 9 support C++11.
 
 ## New Features - January 2018
 
-## Changed Features - January 2018
 
-## Related topics
+Use iterators to go through the contents of an ONX_Model. For an example, look at the source code for ONX_Model::DumpComponentList() in opennurbs_extensions.cpp.
 
-- [openNURBS initiative site](http://www.rhino3d.com/opennurbs)
+ON_ComponentManifest is a manifest of every component in a model or 3DM file. It provides simple ways fo find components by id or name. The function ONX_Model.Manifest() returns the manifest of the ONX_Model. When merging models, ON_ManifestMap can be used to efficiently manage name and id collisions.
