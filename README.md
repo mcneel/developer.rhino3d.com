@@ -62,15 +62,15 @@ brew install rbenv ruby-build
 
 Run `rbenv init` which will prompt you to add `eval "$(rbenv init -)"` to `~/.bash_profile`. Do this.
 
-Install ruby (2.3.0 will do, for now):
+Install ruby (see [.ruby-version](https://github.com/mcneel/developer-rhino3d-com/blob/6/.ruby-version) for the current version):
 
 ```
-rbenv install 2.3.0
+rbenv install 2.3.3
 ```
 
 Check that everything worked as expected:
 
-1. `ruby -v` – should return something like `ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin15]`
+1. `ruby --version` – should return something like `ruby 2.3.3p222 (2016-11-21 revision 56859) [universal.x86_64-darwin17]`
 2. `which ruby` – should return something like `/Users/will/.rbenv/shims/ruby` (**not `/usr/bin/ruby` or `/usr/local/bin/ruby`**)
 
 #### Install Jekyll
@@ -101,7 +101,7 @@ Optionally, you can follow the directions found on [Setting up your GitHub Pages
 
 #### Install Ruby and Ruby DevKit
 
-Go to http://rubyinstaller.org/downloads/ and download the installer for Ruby 2.1.X that matches your system architecture (x86/x64).
+Go to http://rubyinstaller.org/downloads/ and download the installer for Ruby that matches your system architecture (x86/x64). Check [.ruby-version](https://github.com/mcneel/developer-rhino3d-com/blob/6/.ruby-version) for the current recommended version.
 
 At the "Installation Destination and Optional Tasks" dialog, make sure to check the **"Add Ruby executable to your PATH"** box.
 
