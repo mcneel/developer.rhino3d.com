@@ -18,6 +18,10 @@ layout: toc-guide-page
 
 openNURBS is intended for *skilled* C++ developers. Please read [What is openNURBS?]({{ site.baseurl }}/guides/opennurbs/what-is-opennurbs) if you have not already.  It is also presumed that you have an application that wishes to access *3dm* files outside of Rhinoceros.
 
+## openNURBS public SDK
+
+To download the public C++ SDK, .NET SDK, or example 3DM files, visit https://www.rhino3d.com/opennurbs
+
 ## Supported C++ Compilers
 
 The openNURBS C++ toolkit has been successfully used with the following compilers:
