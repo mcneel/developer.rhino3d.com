@@ -6,9 +6,9 @@ author_contacts: ['dalelear']
 sdk: ['openNURBS']
 languages: ['All']
 platforms: ['Windows', 'Mac']
-categories: ['Overview']
+categories: ['NURBS']
 origin: http://wiki.mcneel.com/developer/ongeometry
-order: 3
+order: 1
 keywords: ['developer', 'rhino', 'NURBS', 'geometry']
 layout: toc-guide-page
 ---
