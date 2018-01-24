@@ -6,9 +6,9 @@ author_contacts: ['dalelear']
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
-categories: ['Advanced']
+categories: ['NURBS']
 origin: http://wiki.mcneel.com/developer/onsuperfluousknot
-order: 1
+order: 2
 keywords: ['openNURBS', 'knots']
 layout: toc-guide-page
 ---
