@@ -20,7 +20,7 @@ In Rhino, you can insert an instance of a block and give it a non-uniform scale 
 
 ## Solution
 
-Not all `ON_Geometry`-derived classes can be accurately modified with squishy transformations like projections, shears, and non-uniform scaling.  For example, if you were to apply a non-uniform scale to a circle, which is represented by an `ON_ArcCurve` curve, the resulting geometry is no longer a circle.
+Not all `ON_Geometry`-derived classes can be accurately modified with transformations like projections, shears, and non-uniform scaling. For example, if you were to apply a non-uniform scale to a circle, which is represented by an `ON_ArcCurve` curve, the resulting geometry is no longer a circle.
 
 When exploding an instance reference into its geometric form, first test to see if the instance reference's transformation is a similarity transformation.  This can be done by using `ON_XForm::IsSimilarity()`.  See *opennurbs_xform.h* for more information.
 
