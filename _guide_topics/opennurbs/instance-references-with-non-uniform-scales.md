@@ -8,7 +8,7 @@ languages: ['C/C++']
 platforms: ['Windows', 'Mac']
 categories: ['NURBS']
 origin: http://wiki.mcneel.com/developer/onblockscalenonuniform
-order: 1
+order: 2
 keywords: ['openNURBS', 'Block', 'Instance', 'Reference', 'Scale']
 layout: toc-guide-page
 ---
