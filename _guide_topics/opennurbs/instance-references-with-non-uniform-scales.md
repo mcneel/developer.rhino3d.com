@@ -6,7 +6,7 @@ author_contacts: ['dalelear']
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
-categories: ['Advanced']
+categories: ['NURBS']
 origin: http://wiki.mcneel.com/developer/onblockscalenonuniform
 order: 1
 keywords: ['openNURBS', 'Block', 'Instance', 'Reference', 'Scale']
