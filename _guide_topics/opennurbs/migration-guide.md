@@ -1,5 +1,5 @@
 ---
-title: openNURBS Migration Guide
+title: What's New and Update Guide
 description: This guide contains information to help you use the current version of openNURBS.
 sdk: ['openNURBS']
 languages: ['C/C++']
@@ -23,7 +23,7 @@ For most developers, updating from the previous verson of openNURBS will involve
 
 ## New Requirements - January 2018
 
-You must use a C++ compiler that supports C++11. Microsoft's Visual Studio 2015 or Apple's XCode 9 support C++11.
+You must use a C++ compiler that supports C++11. Microsoft's Visual Studio 2017 or Apple's XCode 9 support C++11.
 
 ## New Features - January 2018
 
