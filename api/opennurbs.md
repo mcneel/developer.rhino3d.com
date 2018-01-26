@@ -1,6 +1,6 @@
 ---
 title: openNURBS API
 redirect_to:
-  - https://mcneel.github.io/opennurbs-api-docs
+  - https://mcneel.github.io/opennurbs-api-docs/6/
 ---
 
