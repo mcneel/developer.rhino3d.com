@@ -68,7 +68,7 @@ protected override LoadReturnCode OnLoad(ref string errorMessage)
       // Build a path to the user's staged RUI file.
       var sb = new StringBuilder();
       sb.Append(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
-      sb.Append("\\McNeel\\Rhinoceros\\5.0\\Plug-ins\\");
+      sb.Append("\\McNeel\\Rhinoceros\\6.0\\Plug-ins\\");
       sb.AppendFormat("{0} ({1})", Name, Id);
       sb.Append("\\settings\\");
       sb.AppendFormat("{0}.rui", Assembly.GetName().Name);
