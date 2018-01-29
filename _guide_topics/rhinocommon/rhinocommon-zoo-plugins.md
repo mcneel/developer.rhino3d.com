@@ -36,13 +36,15 @@ After you have built and tested your basic plugin, you can add licensing support
 #### Step-by-Step
 1. In your plugin's `Rhino.PlugIns.PlugIn` inherited class, create a new method with the same signature as the `Rhino.PlugIns.ValidateProductKeyDelegate` delegate.  Rhino will call into this function whenever it needs your plugin to validate a license that is entered by a user, returned by the Rhino license manager (standalone node), or returned from a Zoo server (network node).
 2. In your plugin's `Rhino.PlugIns.PlugIn` inherited class, create a new method with the same signature as the `Rhino.PlugIns.OnLeaseChangedDelegate` delegate.  Rhino will call into this function if your product supports Rhino Accounts. When Rhino Accounts gets a new lease, this function is called. 
-2. In your plugin's `OnLoad` method, call `Rhino.PlugIns.GetLicense` and pass it your licenses's capabilities (enum), a text mask to assist the user in entering a license, and your two delegate functions.
-3. Build your plugin.
-4. [Digitally sign your plugin]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo).
-5. Launch Rhino and test your plugin.  When your plugin is loaded for the first time, you will be prompted to enter a license...
+3. In your plugin's `Rhino.PlugIns.PlugIn.OnLoad` override, call `Rhino.PlugIns.GetLicense` and pass it your licenses's capabilities (enum), a text mask to assist the user in entering a license, and your two delegate functions.
+4. Build your plugin.
+5. [Digitally sign your plugin]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo).
+6. Launch Rhino and test your plugin.  When your plugin is loaded for the first time, you will be prompted to enter a license...
 
 ## Related Topics
 
 - [Creating Zoo Plugins]({{ site.baseurl }}/guides/rhinocommon/creating-zoo-plugins)
 - [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo)
-- [Sample RhinoCommon Plugin Project on GitHub](https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsWithLicense)
+- [Sample RhinoCommon plugin project (GitHub)](https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsWithLicense)
+
+

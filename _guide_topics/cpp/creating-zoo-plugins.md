@@ -27,7 +27,7 @@ It is presumed you already have the necessary tools installed and are ready to g
 
 Also, all plugins that use the Zoo license system must be signed with an Authenticode certificate issued by McNeel Plugin Security.  These certificates are free, but must be requested by each developer.  Developers must agree to the Terms of Use before a certificate is issued.  For more information on plugin signing, see [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo).
 
-It is presumed you have a C/C++plugin you wish to add license support to. See the [Your First Plugin (Windows)](http://developer.rhino3d.com/guides/cpp/your-first-plugin-windows/) guide for instructions.
+It is also presumed you have a C/C++plugin you wish to add license support to. See the [Your First Plugin (Windows)](http://developer.rhino3d.com/guides/cpp/your-first-plugin-windows/) guide for instructions.
 
 ## Adding Licensing Support
 
@@ -50,5 +50,6 @@ After you have built and tested your basic plugin, you can add licensing support
 
 ## Related Topics
 
+- [Creating Zoo Plugins]({{ site.baseurl }}/guides/rhinocommon/creating-zoo-plugins)
 - [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo)
-- [Sample C/C++ Plugin Project (on GitHub)](https://github.com/mcneel/rhino-developer-samples/tree/6/cpp/SampleWithLicensing)
+- [Sample C/C++ plugin project (on GitHub)](https://github.com/mcneel/rhino-developer-samples/tree/6/cpp/SampleWithLicensing)
