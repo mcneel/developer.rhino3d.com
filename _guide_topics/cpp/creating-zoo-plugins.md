@@ -1,5 +1,5 @@
 ---
-title: Creating Zoo Plugins
+title: Creating Plugins that use the Zoo
 description: This guide discusses how to create C/C++ plugins that can obtain licenses from the Zoo.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
@@ -53,3 +53,4 @@ After you have built and tested your basic plugin, you can add licensing support
 - [Creating Zoo Plugins]({{ site.baseurl }}/guides/rhinocommon/creating-zoo-plugins)
 - [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo)
 - [Sample C/C++ plugin project (on GitHub)](https://github.com/mcneel/rhino-developer-samples/tree/6/cpp/SampleWithLicensing)
+
