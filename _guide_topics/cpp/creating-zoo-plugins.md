@@ -17,9 +17,7 @@ TODO: 'needs to be compared to RhinoCommon version'
 
 ## Overview
 
-Zoo lets third party plugin developers add licensing support for their products to the Zoo.
-
-The Rhino C/C++ SDK allows developers to write plugins for Rhino that use the Rhino license manager and obtain licenses from Zoo servers.
+The Zoo supports 3rd party plugins. The Rhino C/C++ SDK allows developers to write plugins for Rhino that use the Rhino license manager and obtain licenses from Zoo servers.
 
 When a customer attempts to add a product license to the Zoo, the product's plugin is called to validate the user's request.  Upon validation, the plugin will return the product's licensing information back to the Zoo.  In turn, the Zoo will serialize, maintain, and distribute this license.
 
