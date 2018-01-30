@@ -20,7 +20,8 @@ void Main()
   var rss = @"d:\\src\mcneel\rhino\src4\rhino4\Plug-ins\ironpython\plugin\rhinoscriptsyntax\Scripts\rhinoscript";
   var data = @"Z:\mcneel.com\developer-rhino3d-com\_data";
   //var winhelpfuncsdir = @"d:\\src\mcneel\developer-rhino3d-com\api\RhinoScriptSyntaxWindowsHelp\Functions";
-  var winhelpfuncsdir = @"D:\src\rss-help-original\Functions";
+  //var winhelpfuncsdir = @"D:\src\rss-help-original\Functions";
+  var winhelpdir = @"D:\src\rss-help-original";
   var filename = "rhinoscriptsyntax-structured-docstring.json";
 
   Func<string, string> indentLeft = txtToIndent => {
@@ -31,6 +32,22 @@ void Main()
   };
 
   Func<string, string> signatureFromDeclaration = dec => Regex.Match(dec, "(?<=def ).*(?=:)").Success ? Regex.Match(dec, "(?<=def ).*(?=:)").Value : "";
+  
+  Func<string, IEnumerable<Argument>> parseArg = s =>
+    Regex.Matches(s, @"(?<name>\S*) *(?<info>\([^)]*\)) *:", RegexOptions.Singleline).Cast<Match>()
+      .Select(m => (name:m.Groups["name"].Value, info:m.Groups["info"].Value))
+      .Zip(
+        Regex.Replace(s, @"(?<name>\S*) *(?<info>\([^)]*\)) *:", "xxxxxx").Split(new string[] { "xxxxxx" }, StringSplitOptions.None).Skip(1),
+        (a, b) => new Argument{Name = a.name, TypeInfo = a.info, Desc = b}
+    );
+    
+  Func<string, IEnumerable<(string, string)>> parseRtn = s =>
+    Regex.Matches(s, @"^(?<r>[^:]*):", RegexOptions.Singleline).Cast<Match>()
+      .Select(m => m.Groups["r"].Value)
+      .Zip(
+        Regex.Replace(s, @"^(?<r>[^:]*):", "xxxxxx").Split(new string[] { "xxxxxx"}, StringSplitOptions.None).Skip(1),
+        (a, b) => (r:a, rdesc:b)
+      );
 
   var q = "\"\"\"";
   var p1 = @"(?<desc>.*)";
@@ -54,11 +71,13 @@ void Main()
     if (!m.Success) {m = Regex.Match(docString, q + p1 + q, RegexOptions.Singleline); success_level = 1;}
     var ds = new DocStringStruct() {ModuleName = moduleName, Name = name, Signature = signature, DocString = docString};
     if (m.Success) {
-      ds.Arguments = Enumerable.Empty<string>();
+      //ds.Arguments = Enumerable.Empty<string>();
+      ds.Arguments = hasArguments ? parseArg(m.Groups["argsDesc"].Value) : Enumerable.Empty<Argument>();
       ds.Description = indentLeft(m.Groups["desc"].Value);
       ds.HasArguments = hasArguments;
       ds.ArgumentDesc = hasArguments ? indentLeft(m.Groups["argsDesc"].Value) : "";
-      ds.Returns = indentLeft(m.Groups["return"].Value);
+      ds.Returns = parseRtn(m.Groups["return"].Value);
+      ds.ReturnStr = indentLeft(m.Groups["return"].Value);
       ds.Example = indentLeft(m.Groups["example"].Value).Split(new [] {Environment.NewLine}, StringSplitOptions.None).SkipWhile (a => string.IsNullOrWhiteSpace(a));
       ds.ExampleString = indentLeft(m.Groups["example"].Value);
       ds.SeeAlso = m.Groups["links"].Value
@@ -115,6 +134,7 @@ void Main()
       HasArguments = dss.HasArguments,
       ArgumentDesc = dss.ArgumentDesc,
       Returns = dss.Returns,
+      ReturnStr = dss.ReturnStr,
       Example = dss.Example,
       ExampleString = dss.ExampleString,
       SeeAlso = dss.SeeAlso.Select(seeAlso =>
@@ -137,37 +157,78 @@ void Main()
       .OrderBy(g => g.Key)
       .Select(x => new ModuleFunctions { ModuleName = x.Key, functions = x.Select(z => z) });
   
+  //mfs.Take(2).Dump(); //debug
   var json = Newtonsoft.Json.JsonConvert.SerializeObject(mfs, Newtonsoft.Json.Formatting.Indented);
-  File.WriteAllText(Path.Combine(data, filename), json);
+  //File.WriteAllText(Path.Combine(data, filename), json);
 
   // Windows help
-  foreach (var fn in Directory.GetFiles(winhelpfuncsdir).Where(f => !Path.GetFileName(f).StartsWith("_template")))
+  // functions
+  foreach (var fn in Directory.GetFiles(Path.Combine(winhelpdir, "Functions")).Where(f => !Path.GetFileName(f).StartsWith("_template")))
     File.Delete(fn);
-
-  //Template.RegisterSafeType(typeof(DocStringStruct), new[] { "Name", "Signature", "Description", "ArgumentDesc", "Returns", "ExampleString" });
-  //Template.RegisterSafeType(typeof(DocStringStruct), new[] { "Name" });
-  //Template.RegisterSafeType(typeof(SeeAlso), new[] { "FunctionName"});
-  var template = Template.Parse(File.ReadAllText(Path.Combine(winhelpfuncsdir, "_template.htm")));
+  var template = Template.Parse(File.ReadAllText(Path.Combine(winhelpdir, "Functions", "_template.htm")));
   foreach (var dss in mfs.SelectMany(m => m.functions)/*.Select(f => f.Name)*/)
   {
-    var h = Hash.FromAnonymousObject(new { 
+    var h = Hash.FromAnonymousObject(new
+    {
       module_name = dss.ModuleName,
-      name = dss.Name, signature = dss.Signature, description = dss.Description, argument_desc = dss.ArgumentDesc, returns = dss.Returns, 
+      name = dss.Name,
+      signature = dss.Signature,
+      description = dss.Description,
+      argument_desc = dss.ArgumentDesc,
+      arguments = dss.Arguments.Select(a => new string[] { a.Name, a.TypeInfo, a.Desc }),
+      returns = dss.Returns.Select(r => new string[] { r.Item1, r.Item2 }),
       //example_string = Regex.Replace(dss.ExampleString.Replace("\r\n", "<br/>").Replace("\n", "<br/>"), "(?<=<br/>) *", m => m.Value.Replace(" ", "&nbsp;") + m.Value.TrimStart()),
       example_string = Regex.Replace(dss.ExampleString, "\r\n *", m => m.Value.Replace("\r\n", "<br/>").Replace(" ", "&nbsp")),
       //example_string = dss.ExampleString.Replace("\r\n", "<br/>").Replace("\n", "<br/>"),
-      see_also = dss.SeeAlso.Select(s => s.FunctionName), examples = dss.Example
+      see_also = dss.SeeAlso.Select(s => s.FunctionName),
+      examples = dss.Example
     });
-    if (dss.Name == "ClosedCurveOrientation") //"AddLinearLight")
-    {
-      dss.ExampleString.Dump();
-      //dss.Dump(); //debug 
-      h.Dump();
-    }
+    //if (dss.ReturnStr.Split(new char[] { ':' }).Count() < dss.ReturnStr.Split(new string[] { Environment.NewLine}, StringSplitOptions.None).Count())
+    //  dss.Dump();
     var renderedTemplate = template.Render(h);
-    File.WriteAllText(Path.Combine(winhelpfuncsdir, $"{dss.Name}.htm"), renderedTemplate);
-    //File.Copy(Path.Combine(winhelpfuncsdir, "_template.htm"), Path.Combine(winhelpfuncsdir, $"{fn}.htm"));
+    File.WriteAllText(Path.Combine(winhelpdir, "Functions", $"{dss.Name}.htm"), renderedTemplate);
   }
+    // modules
+  foreach (var fn in Directory.GetFiles(Path.Combine(winhelpdir, "Modules")).Where(f => !Path.GetFileName(f).StartsWith("_template")))
+    File.Delete(fn);
+  template = Template.Parse(File.ReadAllText(Path.Combine(winhelpdir, "Modules", "_template.htm")));
+  foreach (var mf in mfs)
+  {
+    var h = Hash.FromAnonymousObject(new
+    {
+      module_name = mf.ModuleName,
+      functions = mf.functions.Select(f => new string[]{f.Name, f.Description})
+    });
+    var renderedTemplate = template.Render(h);
+    File.WriteAllText(Path.Combine(winhelpdir, "Modules", $"{mf.ModuleName}_Module.htm"), renderedTemplate);
+  }
+  
+  // toc
+  template = Template.Parse(File.ReadAllText(Path.Combine(winhelpdir, "_RhinoIronPythonTemplate.hhc")));
+  var toch = Hash.FromAnonymousObject(new
+  {
+    modules = mfs.Select(
+      mf => new { module_name = mf.ModuleName, functions = mf.functions.Select(f => f.Name)}
+    )
+  });
+  var rt = template.Render(toch);
+  File.WriteAllText(Path.Combine(winhelpdir, "RhinoIronPython.hhc"), rt);
+
+  // index
+  template = Template.Parse(File.ReadAllText(Path.Combine(winhelpdir, "_RhinoIronPythonTemplate.hhk")));
+  var idxh = Hash.FromAnonymousObject(new
+  {
+    functionNames = mfs.SelectMany(mf => mf.functions.Select(f => f.Name))
+  });
+  var ridxt = template.Render(idxh);
+  File.WriteAllText(Path.Combine(winhelpdir, "RhinoIronPython.hhk"), ridxt);
+}
+
+struct Argument
+{
+  public string Name;
+   public string TypeInfo;
+   public string Desc;
 }
 
 struct SeeAlso {
@@ -184,12 +245,13 @@ struct ModuleFunctions {
 struct DocStringStruct {
   public string ModuleName;
   public string Name;
-  public IEnumerable<string> Arguments;
+  public IEnumerable<Argument> Arguments;
   public string Signature;
   public string Description;
   public bool HasArguments;
   public string ArgumentDesc;
-  public string Returns;
+  public IEnumerable<(string, string)> Returns;
+  public string ReturnStr;
   public IEnumerable<string> Example;
   public string ExampleString;
   public IEnumerable<SeeAlso> SeeAlso;
