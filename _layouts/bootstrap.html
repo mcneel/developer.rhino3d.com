@@ -50,6 +50,14 @@
             $('#collapse-' + location.hash.split("-")[1] + '.collapse').collapse('show');
         }
     });
+    $('#accordion').on('shown.bs.collapse', function (e) {
+       var t = e.target
+       if (t == null) return;
+       var id = t.getAttribute('aria-labelledby');
+       $('html, body').animate({
+           scrollTop: $("#" + id).offset().top
+       }, 0);
+    })
     </script>
   </body>
 
