@@ -16,8 +16,8 @@ category_page: guides/rhinopython/primer-101/
 
 ## Forums:
 
-The RhinoPython community is very active and offers a wonderful resource for posting questions/answers and finding help on just about anything!:
-[http://python.rhino3d.com/forums/](http://python.rhino3d.com/forums/)
+The RhinoPython community in Discourse is very active and offers a wonderful resource for posting questions/answers and finding help on just about anything!:
+[http://python.rhino3d.com/forums/](https://discourse.mcneel.com/c/scripting)
 
 
 ## General References for Python:
