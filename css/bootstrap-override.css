@@ -251,12 +251,12 @@ figcaption {
 
 /*
 
-.MathJax_Display {
+.MathJax_Display { 
     text-align: left !important;
     display: inline !important;
 }
 
-.MathJax {
+.MathJax { 
     text-align: left !important;
     display: inline !important;
 }
@@ -632,8 +632,4 @@ table.multiline-middle img{
 #rhinoscriptsyntax-api-docs pre.functionDescription {
   background-color: inherit;
   border: none;
-}
-
-#rsssearch_list {
-  margin-left: 0;
 }
