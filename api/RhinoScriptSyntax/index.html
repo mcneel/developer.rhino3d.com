@@ -8,7 +8,7 @@ redirect_from:
 <div class="container-fluid" id="rhinoscriptsyntax-api-docs">
   <div class="row-fluid">
     <!--Nav Bar -->
-    <nav class="col-xs-0 col-md-2 bs-docs-sidebar">
+    <nav class="col-xs-0 col-md-2 bs-docs-sidebar" style="z-index: 2">
       <ul id="sidebar" class="nav nav-stacked fixed">
         <li class="active">
             <div>modules&nbsp;&nbsp;
@@ -32,7 +32,7 @@ redirect_from:
     </nav>
 
     <!-- main content -->
-    <div class="col-xs-12 col-md-10" style="z-index: -1">
+    <div class="col-xs-12 col-md-10" style="z-index: 1">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         {% for module in site.data.rhinoscriptsyntax-structured-docstring %}
               {% assign mainloopfirst = forloop.first %}
