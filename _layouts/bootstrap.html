@@ -45,6 +45,7 @@
     -->
     <script type="text/javascript">
     $(document).ready(function () {
+        window.rssdata = {{ site.data.rhinoscriptsyntax-structured-docstring | jsonify }}
         if(document.title == 'rhinoscriptsyntax' && location.hash != null && location.hash != ""){
             $('.collapse').removeClass('in');
             $('#collapse-' + location.hash.split("-")[1] + '.collapse').collapse('show');
@@ -58,6 +59,62 @@
            scrollTop: $("#" + id).offset().top
        }, 0);
     })
+
+    // position and hide popover
+    $prev = $("#rsssearch_popover").prev();
+    $("#rsssearch_popover")
+      .css("top", $prev[0].offsetTop + $prev.outerHeight(true) + 1)
+      .hide();
+    $("body").on("click", function (e) {
+
+      if (e.target.id !== "rsssearch") {
+          $("#rsssearch_popover").slideUp(100);
+      }
+    });
+
+    function searchResultClick(mn, fn) {
+      $("#rsssearch_popover").slideUp(100);
+      $('#collapse-' + fn + '.collapse').collapse('show');
+      location.hash = "#" + mn + "-" + fn;
+      $('.moduleLI').removeClass('active');
+      $('#moduleLI-' + mn).addClass('active'); // this doesn't work for some reason
+    }
+    $("#rsssearch").on("keyup change input", function (e) {
+
+      var currentVal = $(this).val().toLowerCase();
+      var $searchList = $("#rsssearch_list");
+      $searchList.empty();
+
+      if (currentVal.length < 2) {
+        $("#rsssearch_popover").slideUp(100);
+        return;
+      }
+
+      let searchResults = rssdata
+        .map(m => m.functions.filter(f => f.Name.toLowerCase().includes(currentVal)))
+        .reduce((x,y) => x.concat(y))
+        .slice(0,30)
+        .map(f => ({mn: f.ModuleName, fn: f.Name, idx: f.Name.toLowerCase().indexOf(currentVal)}));
+
+      if (searchResults.length == 0) {
+        $searchList.append($("<li class='edsAppGrayColor'>nothing found</li>"));
+      }
+      else {
+        searchResults.forEach(o => {
+          let text = o.fn.substring(0, o.idx) + "<span class='searchMatchSubstring'>" +
+            o.fn.substring(o.idx, o.idx + currentVal.length) + "</span>" +
+            o.fn.substring(o.idx + currentVal.length);
+          let $a = $("<a></a>")
+            .attr("role", "button")
+            .attr("onclick", "searchResultClick('" + o.mn + "', '" + o.fn + "');")
+            .attr("href", "#collapse-" + o.fn)
+            .html(text);
+          $searchList.append($("<li></li>").append($a));
+        });
+      }
+      $("#rsssearch_popover").slideDown(100);
+    });
+
     </script>
   </body>
 

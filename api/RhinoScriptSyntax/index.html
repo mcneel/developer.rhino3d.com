@@ -15,9 +15,16 @@ redirect_from:
               <span onclick="$('.panel-collapse').collapse('show')" aria-hidden="true" style="cursor:pointer" data-toggle="tooltip" data-placement="right" title="expand all" >+</span>
               <span onclick="$('.panel-collapse').collapse('hide')" aria-hidden="true" style="cursor:pointer" data-toggle="tooltip" data-placement="right" title="collapse all" >-</span>
             </div>
+            <input type="text" class="form-control" id="rsssearch" placeholder="Search" aria-labelledby="Search">
+            <div class="popover" id="rsssearch_popover">
+                <div class="popover-content">
+                    <ul class="list-unstyled" id="rsssearch_list">
+                    </ul>
+                </div>
+            </div>
           <ul class="nav nav-stacked">
             {% for module in site.data.rhinoscriptsyntax-structured-docstring %}
-              <li><a href="#{{ module.ModuleName }}">{{ module.ModuleName }}</a></li>
+              <li id="#moduleLI-{{ module.ModuleName }}" class="moduleLI"><a href="#{{ module.ModuleName }}">{{ module.ModuleName }}</a></li>
             {% endfor %}
           </ul>
         </li>
