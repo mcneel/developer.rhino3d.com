@@ -130,7 +130,7 @@ $(document).ready(function () {
      $('.moduleLI').removeClass('active');
      $('#moduleLI-' + mn).addClass('active'); // this doesn't work for some reason
    }
-   $("#rsssearch").on("keyup change input", function (e) {
+   $("#rsssearch").on("keyup input", function (e) {
 
      var currentVal = $(this).val().toLowerCase();
      var $searchList = $("#rsssearch_list");
