@@ -2,10 +2,6 @@
 	path = api/RhinoCommon
 	url = https://github.com/mcneel/rhinocommon-api-docs.git
 	branch = wip-mac5
-[submodule "api/RhinoCommonWin"]
-	path = api/RhinoCommonWin
-	url = https://github.com/mcneel/rhinocommon-api-docs.git
-	branch = wip-win
 [submodule "api/grasshopper"]
 	path = api/grasshopper
 	url = https://github.com/mcneel/grasshopper-api-docs.git
