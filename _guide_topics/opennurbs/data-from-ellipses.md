@@ -27,38 +27,44 @@ To test to see if a curve is an ellipse or an elliptical arc, first try to cast 
 ## Sample
 
 ```cpp
-ONX_Model model;
+ONX_Model model = ...
 
-//...
-
-const ON_Curve* curve = //...;
-
-//...
-
-const ON_NurbsCurve* nurb = ON_NurbsCurve::Cast( curve );
-if( nurb )
+ONX_ModelComponentIterator it(model, ON_ModelComponent::Type::ModelGeometry);
+const ON_ModelComponent* model_component = nullptr;
+for (model_component = it.FirstComponent(); nullptr != model_component; model_component = it.NextComponent())
 {
-  ON_Ellipse ellipse;
-  double tolerance = model.m_settings.m_ModelUnitsAndTolerances.m_absolute_tolerance;
-  bool rc = nurb->IsEllipse( 0, &ellipse, tolerance );
-  if( rc )
+  const ON_ModelGeometryComponent* model_geometry = ON_ModelGeometryComponent::Cast(model_component);
+  if (nullptr != model_geometry)
   {
-    // Center
-    ON_3dPoint origin = ellipse.plane.origin;
+    // Test for curve object
+    const ON_NurbsCurve* nurb = ON_NurbsCurve::Cast(model_geometry->Geometry(nullptr));
+    if (nullptr != nurb)
+    {
+      ON_Ellipse ellipse;
+      double tolerance = model.m_settings.m_ModelUnitsAndTolerances.m_absolute_tolerance;
+      bool rc = nurb->IsEllipse(nullptr, &ellipse, tolerance);
+      if (rc)
+      {
+        // Center
+        ON_3dPoint origin = ellipse.plane.origin;
 
-    // Major and minor axes
-    ON_3dVector xaxis = ellipse.radius[0] * ellipse.plane.xaxis;
-    ON_3dVector yaxis = ellipse.radius[1] * ellipse.plane.yaxis;
+        // Major and minor axes
+        ON_3dVector xaxis = ellipse.radius[0] * ellipse.plane.xaxis;
+        ON_3dVector yaxis = ellipse.radius[1] * ellipse.plane.yaxis;
 
-    // Quad points
-    ON_3dPoint p0( origin - xaxis );
-    ON_3dPoint p1( origin + xaxis );
-    ON_3dPoint p2( origin - yaxis );
-    ON_3dPoint p3( origin + yaxis );
+        // Quad points
+        ON_3dPoint p0(origin - xaxis);
+        ON_3dPoint p1(origin + xaxis);
+        ON_3dPoint p2(origin - yaxis);
+        ON_3dPoint p3(origin + yaxis);
 
-    // Foci
-    ON_3dPoint f1, f2;
-    ellipse.GetFoci( f1, f2 );
+        // Foci
+        ON_3dPoint f1, f2;
+        ellipse.GetFoci(f1, f2);
+
+        // TODO: do something with ellipse
+      }
+    }
   }
 }
 ```
