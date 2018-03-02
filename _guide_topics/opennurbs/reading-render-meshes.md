@@ -59,8 +59,8 @@ for (model_component = it.FirstComponent(); nullptr != model_component; model_co
       if (nullptr != mesh)
       {
         // TODO: do something with ON_Mesh object...
-        continue;
       }
+      continue;
     }
   }
 }
