@@ -44,7 +44,7 @@ for (model_component = it.FirstComponent(); nullptr != model_component; model_co
     {
       ON_SimpleArray<const ON_Mesh*> meshes;
       const int mesh_count = brep->GetMesh(ON::render_mesh, meshes);
-      if (mesh_count)
+      if (mesh_count > 0)
       {
         // TODO: do something with the array of ON_Mesh objects...
       }
