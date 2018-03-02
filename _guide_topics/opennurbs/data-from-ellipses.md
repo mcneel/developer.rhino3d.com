@@ -36,7 +36,7 @@ for (model_component = it.FirstComponent(); nullptr != model_component; model_co
   const ON_ModelGeometryComponent* model_geometry = ON_ModelGeometryComponent::Cast(model_component);
   if (nullptr != model_geometry)
   {
-    // Test for curve object
+    // Test for NURBS curve object
     const ON_NurbsCurve* nurb = ON_NurbsCurve::Cast(model_geometry->Geometry(nullptr));
     if (nullptr != nurb)
     {
