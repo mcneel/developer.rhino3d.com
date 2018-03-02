@@ -16,7 +16,7 @@ layout: toc-guide-page
  
 If you are developing software to read .3dm files, you might find that the software only *seems* to read NURBS data; but render meshes are ignored.  We do provide methods for third-party developers to read render meshes from .3dm files.
 
-An object's render meshes are stored on that object. For example, the render meshes for `ON_Brep` and `ON_Extrusion` objects are stored on that object. The developer can obtain an object's render meshes from a Brep by calling `ON_Brep::GetMesh` and `ON_MeshCache::Mesh` for an Extrusion.
+An object's render meshes are stored on that object. For example, the render meshes for `ON_Brep` and `ON_Extrusion` objects are stored on that object. The developer can obtain an object's render meshes from a Brep by calling `ON_Brep::GetMesh` and from an Extrusion by calling `ON_MeshCache::Mesh`.
 
 If you are referencing the `Example_read` sample included with the openNURBS toolkit, then after the 3DM file has been read, you can obtain the render meshes from the `ONX_Model` object as follows:
 
