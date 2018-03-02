@@ -42,7 +42,7 @@ for (model_component = it.FirstComponent(); nullptr != model_component; model_co
     const ON_Brep* brep = ON_Brep::Cast(model_geometry->Geometry(nullptr));
     if (nullptr != brep)
     {
-      ON_SimpleArray<const ON_Mesh*> meshes;
+      ON_SimpleArray<const ON_Mesh*> meshes(brep->m_F.Count());
       const int mesh_count = brep->GetMesh(ON::render_mesh, meshes);
       if (mesh_count > 0)
       {
