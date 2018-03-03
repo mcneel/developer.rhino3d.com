@@ -6,7 +6,7 @@ author_contacts: ['dalelear']
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
-categories: ['Fundamentals']
+categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/onisobjectvisible
 order: 1
 keywords: ['openNURBS', 'object', 'visibility']
