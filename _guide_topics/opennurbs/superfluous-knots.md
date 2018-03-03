@@ -8,7 +8,7 @@ languages: ['C/C++']
 platforms: ['Windows', 'Mac']
 categories: ['Advanced']
 origin: http://wiki.mcneel.com/developer/onsuperfluousknot
-order: 2
+order: 1
 keywords: ['openNURBS', 'knots']
 layout: toc-guide-page
 ---
