@@ -16,7 +16,7 @@ layout: toc-guide-page
  
 ## Question
 
-I have created a sample model this has a parent layer and a sublayer.  If I add objects to each of these two layer and then turn off the parent layer in Rhino, the objects on both layers do not appear.  But, when I read the .3DM file using openNURBS, the objects on the sublayer report as being visible.  How can I correctly detect the visibility of an object?
+I have created a sample model this has a parent layer and a sublayer.  If I add objects to each of these two layer and then turn off the parent layer in Rhino, the objects on both layers do not appear.  But, when I read the .3dm file using openNURBS, the objects on the sublayer report as being visible.  How can I correctly detect the visibility of an object?
 
 ## Answer
 
@@ -31,47 +31,57 @@ A Rhino object is considered visible if:
 The following example code can be used to detect an object's true visibility when using the openNURBS toolkit:
 
 ```cpp
-static bool IsLayerVisible( const ON_ObjectArray<ON_Layer>& layer_table, int layer_index )
+static bool IsLayerVisible(const ONX_Model& model, ON_UUID layer_id)
 {
   bool rc = false;
-  // Validate the layer index
-  if( layer_index >= 0 && layer_index < layer_table.Count() )
+  const ON_ModelComponentReference& model_component_ref = model.ComponentFromId(ON_ModelComponent::Type::Layer, layer_id);
+  if (!model_component_ref.IsEmpty())
   {
-    // Get the layer
-    const ON_Layer& layer = layer_table[layer_index];
-    // Get the layer's visibility
-    rc = layer.IsVisible();
-    // If the layer is visible, see if the layer has a parent. If so,
-    // check to see if the layer's parent is visible. If not, then
-    // the layer is also not visible.
-    if( rc && ON_UuidIsNotNil(layer.m_parent_layer_id) )
+    const ON_Layer* layer = ON_Layer::Cast(model_component_ref.ModelComponent());
+    if (nullptr != layer)
     {
-      int i, layer_count = layer_table.Count();
-      for( i = 0; i < layer_count; i++ )
-      {
-        if( 0 == ON_UuidCompare(layer.m_parent_layer_id, layer_table[i].m_layer_id) )
-          return IsLayerVisible( layer_table, i ); // recursive
-      }
+      rc = layer->IsVisible();
+      if (rc && layer->ParentIdIsNotNil())
+        return IsLayerVisible(model, layer->ParentId());
     }
   }
   return rc;
 }
 
-static bool IsModelObjectVisible( const ONX_Model& model, const ONX_Model_Object& model_object )
+static bool IsLayerVisible(const ONX_Model& model, int layer_index)
 {
   bool rc = false;
-  switch( model_object.m_attributes.Mode() )
+  const ON_ModelComponentReference& model_component_ref = model.ComponentFromIndex(ON_ModelComponent::Type::Layer, layer_index);
+  if (!model_component_ref.IsEmpty())
   {
-  case ON::normal_object:
-  case ON::idef_object:
-  case ON::locked_object:
+    const ON_Layer* layer = ON_Layer::Cast(model_component_ref.ModelComponent());
+    if (nullptr != layer)
     {
-      // Get the object's layer
-      int layer_index = model_object.m_attributes.m_layer_index;
-      // See if the layer is visible
-      rc = IsLayerVisible( model.m_layer_table, layer_index );
+      rc = layer->IsVisible();
+      if (rc && layer->ParentIdIsNotNil())
+        return IsLayerVisible(model, layer->ParentId());
     }
-    break;
+  }
+  return rc;
+}
+
+static bool IsModelGeometryVisible(const ONX_Model& model, const ON_ModelGeometryComponent* model_geometry)
+{
+  bool rc = false;
+  if (nullptr != model_geometry)
+  {
+    const ON_3dmObjectAttributes* attributes = model_geometry->Attributes(nullptr);
+    if (nullptr != attributes)
+    {
+      switch (attributes->Mode())
+      {
+      case ON::normal_object:
+      case ON::idef_object:
+      case ON::locked_object:
+        rc = IsLayerVisible(model, attributes->m_layer_index);
+        break;
+      }
+    }
   }
   return rc;
 }
@@ -80,24 +90,19 @@ static bool IsModelObjectVisible( const ONX_Model& model, const ONX_Model_Object
 You can test the above static functions by adding the following sample code to the *Example_Read* project included with the openNURBS toolkit:
 
 ```cpp
-// create a text dump of the model
-if ( bVerboseTextDump )
-{
-  //dump->PushIndent();
-  //model.Dump(*dump);
-  //dump->PopIndent();
+ONX_Model model = ...;
 
-  int i, object_count = model.m_object_table.Count();
-  for( i = 0; i < object_count; i++ )
+ONX_ModelComponentIterator it(model, ON_ModelComponent::Type::ModelGeometry);
+const ON_ModelComponent* model_component = nullptr;
+for (model_component = it.FirstComponent(); nullptr != model_component; model_component = it.NextComponent())
+{
+  const ON_ModelGeometryComponent* model_geometry = ON_ModelGeometryComponent::Cast(model_component);
+  if (nullptr != model_geometry)
   {
-    const ONX_Model_Object& model_object = model.m_object_table[i];
-    if( model_object.m_object )
+    bool bVisible = IsModelGeometryVisible(model, model_geometry);
+    if (bVisible)
     {
-      bool bVisible = IsModelObjectVisible( model, model_object );
-      dump->Print("Object uuid: ");
-      dump->Print( model_object.m_attributes.m_uuid );
-      dump->Print(", visible: %s", bVisible ? "true" : "false" );
-      dump->Print("\n");
+      // TODO...
     }
   }
 }
