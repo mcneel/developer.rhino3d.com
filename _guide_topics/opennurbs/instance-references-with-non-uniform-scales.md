@@ -27,7 +27,7 @@ When exploding an instance reference into its geometric form, first test to see 
 If the transformation is not a similarity, then convert the geometry into a form that can be accurately modified.  This can be done by using the `ON_Geometry::MakeDeformable()` override on the geometric object...
 
 ```cpp
-if(bNeedXform)
+if (bNeedXform)
 {
  // If not a similarity transformation, make sure geometry
  // can be deformed. Generally, this involves convert non-NURBS
