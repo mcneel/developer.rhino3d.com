@@ -8,7 +8,7 @@ languages: ['C/C++']
 platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 origin: http://wiki.mcneel.com/developer/opennurbs/linkingpragma
-order: 1
+order: 2
 keywords: ['openNURBS', 'linking', 'toolkit', 'pragma', 'pragmas']
 layout: toc-guide-page
 ---

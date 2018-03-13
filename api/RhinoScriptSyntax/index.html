@@ -8,16 +8,23 @@ redirect_from:
 <div class="container-fluid" id="rhinoscriptsyntax-api-docs">
   <div class="row-fluid">
     <!--Nav Bar -->
-    <nav class="col-xs-0 col-md-2 bs-docs-sidebar">
+    <nav class="col-xs-0 col-md-2 bs-docs-sidebar" style="z-index: 2">
       <ul id="sidebar" class="nav nav-stacked fixed">
         <li class="active">
             <div>modules&nbsp;&nbsp;
               <span onclick="$('.panel-collapse').collapse('show')" aria-hidden="true" style="cursor:pointer" data-toggle="tooltip" data-placement="right" title="expand all" >+</span>
               <span onclick="$('.panel-collapse').collapse('hide')" aria-hidden="true" style="cursor:pointer" data-toggle="tooltip" data-placement="right" title="collapse all" >-</span>
             </div>
+            <input type="text" class="form-control" id="rsssearch" placeholder="Search" aria-labelledby="Search">
+            <div class="popover" id="rsssearch_popover">
+                <div class="popover-content">
+                    <ul class="list-unstyled" id="rsssearch_list">
+                    </ul>
+                </div>
+            </div>
           <ul class="nav nav-stacked">
             {% for module in site.data.rhinoscriptsyntax-structured-docstring %}
-              <li><a href="#{{ module.ModuleName }}">{{ module.ModuleName }}</a></li>
+              <li id="#moduleLI-{{ module.ModuleName }}" class="moduleLI"><a href="#{{ module.ModuleName }}">{{ module.ModuleName }}</a></li>
             {% endfor %}
           </ul>
         </li>
@@ -25,7 +32,7 @@ redirect_from:
     </nav>
 
     <!-- main content -->
-    <div class="col-xs-12 col-md-10">
+    <div class="col-xs-12 col-md-10" style="z-index: 1">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         {% for module in site.data.rhinoscriptsyntax-structured-docstring %}
               {% assign mainloopfirst = forloop.first %}
@@ -57,7 +64,7 @@ redirect_from:
 
                     <h5>Returns:</h5>
                     <div>
-                      <pre class="functionDescription">{{ moduleFunction.Returns }}</pre>
+                      <pre class="functionDescription">{{ moduleFunction.ReturnStr }}</pre>
                     </div>
 
                     <div class="example docstring-field {% if moduleFunction.ExampleString != '' %}{{ 'rss-show' }}{% else %}{{ 'hide' }}{% endif %}">
@@ -85,3 +92,78 @@ redirect_from:
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+var searchResultClick;
+$(document).ready(function () {
+    window.rssdata = {{ site.data.rhinoscriptsyntax-structured-docstring | jsonify }}
+    if(document.title == 'rhinoscriptsyntax' && location.hash != null && location.hash != ""){
+        $('.collapse').removeClass('in');
+        $('#collapse-' + location.hash.split("-")[1] + '.collapse').collapse('show');
+    }
+
+   $('#accordion').on('shown.bs.collapse', function (e) {
+      var t = e.target
+      if (t == null) return;
+      var id = t.getAttribute('aria-labelledby');
+      $('html, body').animate({
+          scrollTop: $("#" + id).offset().top
+      }, 0);
+   })
+
+   // position and hide popover
+   $prev = $("#rsssearch_popover").prev();
+   $("#rsssearch_popover")
+     .css("top", $prev[0].offsetTop + $prev.outerHeight(true) + 1)
+     .hide();
+   $("body").on("click", function (e) {
+
+     if (e.target.id !== "rsssearch") {
+         $("#rsssearch_popover").slideUp(100);
+     }
+   });
+
+   searchResultClick = function (mn, fn) {
+     $("#rsssearch_popover").slideUp(100);
+     $('#collapse-' + fn + '.collapse').collapse('show');
+     location.hash = "#" + mn + "-" + fn;
+     $('.moduleLI').removeClass('active');
+     $('#moduleLI-' + mn).addClass('active'); // this doesn't work for some reason
+   }
+   $("#rsssearch").on("keyup input", function (e) {
+
+     var currentVal = $(this).val().toLowerCase();
+     var $searchList = $("#rsssearch_list");
+     $searchList.empty();
+
+     if (currentVal.length < 2) {
+       $("#rsssearch_popover").slideUp(100);
+       return;
+     }
+
+     let searchResults = rssdata
+       .map(m => m.functions.filter(f => f.Name.toLowerCase().includes(currentVal)))
+       .reduce((x,y) => x.concat(y))
+       .slice(0,30)
+       .map(f => ({mn: f.ModuleName, fn: f.Name, idx: f.Name.toLowerCase().indexOf(currentVal)}));
+
+     if (searchResults.length == 0) {
+       $searchList.append($("<li class='edsAppGrayColor'>nothing found</li>"));
+     }
+     else {
+       searchResults.forEach(o => {
+         let text = o.fn.substring(0, o.idx) + "<span class='searchMatchSubstring'>" +
+           o.fn.substring(o.idx, o.idx + currentVal.length) + "</span>" +
+           o.fn.substring(o.idx + currentVal.length);
+         let $a = $("<a></a>")
+           .attr("role", "button")
+           .attr("onclick", "searchResultClick('" + o.mn + "', '" + o.fn + "');")
+           .attr("href", "#collapse-" + o.fn)
+           .html(text);
+         $searchList.append($("<li></li>").append($a));
+       });
+     }
+     $("#rsssearch_popover").slideDown(100);
+   });
+});
+</script>

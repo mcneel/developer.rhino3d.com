@@ -23,32 +23,30 @@ I was try to add some code for handling the `ON::extrusion_object` type object. 
 In most cases, you will want to convert the extrusion object to a Brep and then just pass the Brep to the Brep handling code that you've already written, for example:
 
 ```cpp
-int i = 0;
-for( i = 0; i < model.m_object_table.Count(); i++ )
+ONX_Model model = ...
+
+ONX_ModelComponentIterator it(model, ON_ModelComponent::Type::ModelGeometry);
+const ON_ModelComponent* model_component = nullptr;
+for (model_component = it.FirstComponent(); nullptr != model_component; model_component = it.NextComponent())
 {
-  const ONX_Model_Object& model_object = model.m_object_table[i];
-  if( 0 == model_object.m_object )
-    continue;
-
-  if( ON::extrusion_object != model_object.m_object->ObjectType() )
-    continue;
-
-  const ON_Extrusion* extrusion = ON_Extrusion::Cast( model_object.m_object );
-  if( 0 == extrusion )
-    continue;
-
-  ON_Brep* brep = ON_Brep::New();
-  if( 0 == brep )
-    continue;
-
-  if( brep != extrusion->BrepForm(brep, true) )
+  const ON_ModelGeometryComponent* model_geometry = ON_ModelGeometryComponent::Cast(model_component);
+  if (nullptr != model_geometry)
   {
-    delete brep; // don't leak...
-    continue;
+    // Test for extrusion object
+    const ON_Extrusion* extrusion = ON_Extrusion::Cast(model_geometry->Geometry(nullptr));
+    if (nullptr != extrusion)
+    {
+      ON_Brep* brep = ON_Brep::New();
+      if (brep != extrusion->BrepForm(brep, true))
+      {
+        delete brep; // don't leak...
+        continue;
+      }
+
+      // TODO: do something with Brep here...
+
+      delete brep; // don't leak...
+    }
   }
-
-  // TODO: do something with brep here...
-
-  delete brep; // don't leak...
 }
 ```

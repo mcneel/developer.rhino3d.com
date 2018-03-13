@@ -22,7 +22,7 @@ By the end of this guide, you should have all the tools installed necessary for 
 This guide presumes you have:
 
 - A PC running Microsoft Windows 7 or later.
-- [The Rhino Work-In-Progress (WIP)](https://www.rhino3d.com/download/rhino/wip).
+- [Rhino 6 for Windows](https://www.rhino3d.com/download).
 
 ---
 
@@ -47,7 +47,7 @@ Visual Studio 2017 comes in [three editions](https://www.visualstudio.com/downlo
 The **Rhino C/C++ SDK** is a set of tools for creating plug-in using the C++ language. The SDK includes headers, libraries and Visual Studio project wizards to get you started creating plugins quickly.
 
 1. Exit **Visual Studio**.
-2. Download the **[Rhino C/C++ SDK](https://www.rhino3d.com/download/rhino-sdk/beta)**.
+2. Download the **[Rhino C/C++ SDK](https://www.rhino3d.com/download/Rhino-SDK/6.0/release)**.
 3. Run the **SDK installer** you downloaded, in this case ***rh60sdk_[build_number].msi***.
 4. If the installation is successful, run Visual Studio.
 
