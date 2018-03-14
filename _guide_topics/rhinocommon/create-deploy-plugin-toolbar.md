@@ -29,7 +29,7 @@ If you give your custom RUI file the exact same name as the plugin RHP file and 
 The first time a plugin is loaded, Rhino looks for an RUI file with the same name as the plugin. If it is found, it is copied to the following location and opened:
 
 ```
-%APPDATA%\McNeel\Rhinoceros\<version>\Plug-ins\<plugin_name (plugin_uuid)>\settings
+%APPDATA%\McNeel\Rhinoceros\<version>\UI\Plug-ins\
 ```
 
 It is copied, or staged, to ensure that the file is writable and to provide a way to revert to the original, or default, RUI file if needed.
