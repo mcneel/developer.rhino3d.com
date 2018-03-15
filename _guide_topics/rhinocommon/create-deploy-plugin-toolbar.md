@@ -122,18 +122,15 @@ BOOL CTestPlugIn::OnLoadPlugIn()
 
     ON_wString path;
     CRhinoFileUtilities::GetRhinoRoamingProfileDataFolder(path);
-
-    ON_wString key;
-    key.Format(L"Plug-ins\\%s (%s)\\settings\\", RhinoPlugInName(), RhinoPlugInId());
+    path += L"UI\\Plug-ins\\";
 
     ON_wString plugin;
     GetPlugInFileName(plugin);
 
     ON_wString fname;
-    ON_wString::SplitPath(plugin, 0, 0, &fname, 0);
+    ON_wString::SplitPath(plugin, nullptr, nullptr, &fname, nullptr);
     fname += L".rui";
 
-    path += key;
     path += fname;
 
     // Verify the RUI file exists.
