@@ -1,12 +1,12 @@
 ---
-title: Render Engine Integration - ChangeQueue (3/5) 
+title: Render Engine Integration - ChangeQueue (3/5)
 description: A guide to integrating a render engine using RhinoCommon SDK - ChangeQueue
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
-categories: ['Advanced']
+categories: ['Rendering']
 origin: http://www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-in-hinoceros-3d-using-rhinocommon-mockingbird-changequeue/
 order: 3
 keywords: ['renderer', 'integration', 'RhinoCommon']
@@ -49,7 +49,7 @@ public class MockingChangeQueue : ChangeQueue
 		: base(pluginId, docRuntimeSerialNumber, viewinfo)
 	{
 	}
-	
+
 	/// <summary>
 	/// The camera information.
 	/// </summary>
@@ -146,7 +146,7 @@ public class MockingChangeQueue : ChangeQueue
 	private void HandleRenderMaterial(RenderMaterial material)
 	{
 		RhinoApp.WriteLine($"\t\tMaterial {material.Name} is a {material.TypeName} ({material.TypeDescription})");
-		
+
 		var diffchan = material.TextureChildSlotName(RenderMaterial.StandardChildSlots.Diffuse);
 		var difftex = material.FindChild(diffchan) as RenderTexture;
 		if (difftex != null)
@@ -281,5 +281,3 @@ Received 7 mesh instances to be either added or changed
 	Add or change object 3956531048 uses mesh <0c35babb-ca2a-4b09-9ab6-72610f38717f, 3>, and material 2304042105, named Gem 001)
 		Material Gem 001 is a Gem (Gem material.)
 ```
-
-

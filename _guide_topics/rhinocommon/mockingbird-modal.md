@@ -1,14 +1,14 @@
 ---
-title: Render Engine Integration - Modal Rendering (2/5) 
+title: Render Engine Integration - Modal Rendering (2/5)
 description: A guide to integrating a render engine using RhinoCommon SDK - Modal
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
-categories: ['Advanced']
+categories: ['Rendering']
 origin: http://www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-in-rhinoceros-3d-using-rhinocommon-mockingbird-modal-rendering-25/
-order: 3
+order: 2
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
 ---

@@ -1,14 +1,14 @@
 ---
-title: Render Engine Integration - Interactive Viewport (4/5) 
+title: Render Engine Integration - Interactive Viewport (4/5)
 description: A guide to integrating a render engine using RhinoCommon SDK - Interactive Viewport
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
-categories: ['Advanced']
+categories: ['Rendering']
 origin: http://www.letworyinteractive.com/b/2016/10/integrating-a-render-engine-in-rhinoceros-3d-using-rhinocommon-mockingbird-interactive-rendering/
-order: 3
+order: 4
 keywords: ['renderer', 'integration', 'RhinoCommon', 'interactive', 'viewport']
 layout: toc-guide-page
 ---
@@ -98,14 +98,14 @@ public override bool StartRenderer(int w, int h, RhinoDoc doc, ViewInfo view, Vi
 	reng.RenderReset += Reng_RenderReset;
 	reng.RenderStarted += Reng_RenderStarted;
 	MaxPassesChanged += MockingRealtimeDisplayMode_MaxPassesChanged;
-	
+
 	// start rendering
 	_startTime = DateTime.Now;
 
 	_isCompleted = false;
 	_theThread = new Thread(reng.ColorPixels) {Name = "MockingBirdViewport thread"};
 	_theThread.Start();
-	
+
 	return true;
 }
 ```

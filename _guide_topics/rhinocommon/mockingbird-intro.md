@@ -1,14 +1,14 @@
 ---
-title: Render Engine Integration - Introduction (1/5) 
+title: Render Engine Integration - Introduction (1/5)
 description: A guide to integrating a render engine using RhinoCommon SDK
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
-categories: ['Advanced']
+categories: ['Rendering']
 origin: http:/www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-in-rhinoceros-3d-using-rhinocommon-introduction/
-order: 3
+order: 1
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
 ---
