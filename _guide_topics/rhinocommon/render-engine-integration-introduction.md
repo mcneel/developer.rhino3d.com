@@ -17,9 +17,9 @@ redirect_from: "/guides/rhinocommon/mockingbird-intro/"
 
 ## Overview
 
-If you're a render engine developer and you're thinking of writing an integration plug-in for the upcoming Rhino 6 (still lovingly called Rhino WIP) then you definitely should keep reading on.
+If you're a render engine developer and you're thinking of writing an integration plug-in for Rhino, then you definitely should keep reading on.
 
-For this series I'll be looking into how one would go about integrating a render engine using the RhinoCommon SDK.
+For this series I'll be looking into how one would go about integrating a render engine using RhinoCommon.
 
 The subject will be broken up into several guides:
 
@@ -33,21 +33,21 @@ For each guide we'll take a look at relevant parts of the integration plug-in fo
 
 ## Creating Render Plug-in project
 
-### Install the RhinoCommon v6 template package
+### Install the RhinoCommon template package
 
-To make developing a new plug-in for Rhinoceros 3D easy McNeel has published a template packages for v6. Search for the string rhino and install the relevant package.
+To make developing a new plug-in for Rhinoceros 3D easy McNeel has published a template packages. Search for the string rhino and install the relevant package.
 
 ![template image]({{ site.baseurl }}/images/mockingbird/001_rhinocommon_templates.png)
 
-Once the template package is installed we're ready to write amazing plug-ins for Rhino 3D.
+Once the template package is installed we're ready to write amazing plug-ins for Rhino.
 
 ### Create a new RhinoCommon v6 project
 
 ![template image]({{ site.baseurl }}/images/mockingbird/002_new_plugin_project.png)
 
-Lets create a new plug-in now that the wizard is installed. Simply create a new project in Visual Studio, and from the Visual C# section under Templates select Rhinoceros. Pick RhinoCommon Plug-In for Rhinoceros 6 and give a name.
+Lets create a new plug-in now that the wizard is installed. Simply create a new project in Visual Studio, and from the Visual C# section under Templates select Rhinoceros. Pick RhinoCommon Plug-In for Rhinoceros and give a name.
 
-After you click on OK you'll be presented with a wizard dialog where settings can be changed. For our case we select Render plug-in. If the wizard fails to recognize a Rhino 6 (Rhino WIP) installation path one can set the necessary paths before accepting the settings. Click on the Finish button when happy with the settings.
+After you click on OK you'll be presented with a wizard dialog where settings can be changed. For our case we select Render plug-in. If the wizard fails to recognize a Rhino installation path one can set the necessary paths before accepting the settings.  Click on the Finish button when happy with the settings.
 
 ![template image]({{ site.baseurl }}/images/mockingbird/003_plugin_settings.png)
 

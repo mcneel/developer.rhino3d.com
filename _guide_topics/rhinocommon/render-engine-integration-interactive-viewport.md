@@ -17,7 +17,7 @@ redirect_from: "/guides/rhinocommon/mockingbird-interactive/"
 
 ## Overview
 
-This is part 4 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
+This is part 4 in the series on render engine integration in Rhinoceros 3D using RhinoCommon.
 
 1. [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
 1. [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
@@ -55,7 +55,7 @@ public class MockingViewportPlugIn : Rhino.PlugIns.PlugIn
 
 ```
 
-The plug-in code is very lean, only `LoadRetunCode OnLoad()`{:.language-cs}  needs to be overridden. (<del>In this function a call on line 9 to `RealtimeDisplayMode.RegisterDisplayModes()`{:.language-cs}  with the plug-in itself as parameter ensures the Rhino plug-in loading mechanism checks for display mode implementations</del>. With latest Rhino WIP (and what will go into v6)  it is no longer necessary to explicitly call `RegisterDisplayModes()`{:.language-cs} , since that is done automatically. ) With a proper RealtimeDisplayModeClassInfo and RealtimeDisplayMode implementation the new viewport mode will be registered with Rhino. It'll show up in the viewport mode dropdown list.
+The plug-in code is very lean, only `LoadRetunCode OnLoad()`{:.language-cs}  needs to be overridden.  With a proper RealtimeDisplayModeClassInfo and RealtimeDisplayMode implementation the new viewport mode will be registered with Rhino. It'll show up in the viewport mode dropdown list.
 
 ### Registering with Rhino
 
@@ -187,9 +187,10 @@ private void ColorPass(int pass)
 	}
 }
 ```
+{: .line-numbers}
 
 In `ColorPass()`{:.language-cs}  above the most important part to look at is line 5. With the `using`{:.language-cs}  idiom the necessary channel from the `RenderWindow`{:.language-cs}  is opened (`RGBA`{:.language-cs}  in general, there are other channels too, though, but not in the scope of this article series), then filled with color data per pixel. The using idiom ensures the opened channel is properly disposed of.
 
 Note that the simplest possible pixel buffer filling code would be to have the channel `SetValue`{:.language-cs}  loop directly in `StartRenderer()`{:.language-cs}  and leave out the entire `MockingRender`{:.language-cs}  and `Thread`{:.language-cs}  construct.
 
-These are the steps necessary to integrate a new render engine into Rhinoceros 3D (v6) viewport for interactive, real-time rendering using the RhinoCommon SDK.
+These are the steps necessary to integrate a new render engine into Rhinoceros 3D viewport for interactive, real-time rendering using the RhinoCommon SDK.
