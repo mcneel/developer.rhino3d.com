@@ -1,5 +1,5 @@
 ---
-title: Render Engine Integration - Modal Rendering (2/5)
+title: Render Engine Integration - Modal
 description: A guide to integrating a render engine using RhinoCommon SDK - Modal
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
@@ -11,16 +11,17 @@ origin: http://www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-
 order: 2
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
+redirect_from: "/guides/rhinocommon/mockingbird-modal/"
 ---
 
 
 This is part 2 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
 
-* [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/mockingbird-intro/)
-* [Modal Rendering (this)]({{ site.baseurl }}/guides/rhinocommon/mockingbird-modal/)
-* [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/mockingbird-changequeue/)
-* [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/mockingbird-interactive/)
-* Preview render
+* [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+* [Modal Rendering (this guide)]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+* [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+* [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
+* Preview render (forthcoming)
 
 To implement a modal rendering solution for Rhinoceros 3D there are two particular pieces you'll need to create, which will allow you to render into a separate render window: a custom implementation of a `Rhino.Render.AsyncRenderContext`{:.language-cs} , and a `Rhino.Render.RenderPipeline`{:.language-cs}.
 

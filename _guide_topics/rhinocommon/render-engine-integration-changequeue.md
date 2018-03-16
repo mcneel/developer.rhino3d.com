@@ -1,5 +1,5 @@
 ---
-title: Render Engine Integration - ChangeQueue (3/5)
+title: Render Engine Integration - ChangeQueue
 description: A guide to integrating a render engine using RhinoCommon SDK - ChangeQueue
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
@@ -11,16 +11,17 @@ origin: http://www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-
 order: 3
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
+redirect_from: "/guides/rhinocommon/mockingbird-changequeue/"
 ---
 
 
 This is part 3 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
 
-* [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/mockingbird-intro/)
-* [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/mockingbird-modal/)
-* [ChangeQueue (this)]({{ site.baseurl }}/guides/rhinocommon/mockingbird-changequeue/)
-* [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/mockingbird-interactive/)
-* Preview render
+* [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+* [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+* [ChangeQueue (this guide)]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+* [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
+* Preview render (forthcoming)
 
 
 When it comes to converting a 3dm document to a form our render engine understands there are two options: the hard way, or the easy way.

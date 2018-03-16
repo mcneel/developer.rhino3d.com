@@ -1,5 +1,5 @@
 ---
-title: Render Engine Integration - Introduction (1/5)
+title: Render Engine Integration - Introduction
 description: A guide to integrating a render engine using RhinoCommon SDK
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
@@ -11,6 +11,7 @@ origin: http:/www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-i
 order: 1
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
+redirect_from: "/guides/rhinocommon/mockingbird-intro/"
 ---
 
 
@@ -21,11 +22,11 @@ For this series I'll be looking into how one would go about integrating a render
 
 The subject will be broken up into several parts:
 
-* [Setting up the plug-in (this article)]({{ site.baseurl }}/guides/rhinocommon/mockingbird-intro/)
-* [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/mockingbird-modal/)
-* [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/mockingbird-changequeue/)
-* [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/mockingbird-interactive/)
-* Preview render
+* [Setting up the plug-in (this guide)]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+* [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+* [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+* [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
+* Preview render (forthcoming)
 
 For each part we'll take a look at relevant parts of the integration plug-in for the Cycles render engine while doing several simple example plug-ins at the same time. The code for the example plug-ins will be stripped of (most) of the comments that are added by the template, so we can focus on the parts that matter. Source code for the sample project, dubbed <a href="https:/github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird">MockingBird, is available on GitHub</a>.
 

@@ -1,5 +1,5 @@
 ---
-title: Render Engine Integration - Interactive Viewport (4/5)
+title: Render Engine Integration - Interactive Viewport
 description: A guide to integrating a render engine using RhinoCommon SDK - Interactive Viewport
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
@@ -11,16 +11,17 @@ origin: http://www.letworyinteractive.com/b/2016/10/integrating-a-render-engine-
 order: 4
 keywords: ['renderer', 'integration', 'RhinoCommon', 'interactive', 'viewport']
 layout: toc-guide-page
+redirect_from: "/guides/rhinocommon/mockingbird-interactive/"
 ---
 
 
 This is part 4 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
 
-* [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/mockingbird-intro/)
-* [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/mockingbird-modal/)
-* [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/mockingbird-changequeue/)
-* [Interactive render - viewport integration (this)]({{ site.baseurl }}/guides/rhinocommon/mockingbird-interactive/)
-* Preview render
+* [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+* [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+* [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+* [Interactive render - viewport integration (this guide)]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
+* Preview render (forthcoming)
 
 For this plug-in we are going to do things in a slightly different way. Not because it is a must, but because it gives an interesting possibility for plug-in developers who want to integrate their own render engines, but without exposing it to the `_Render`{:.language-cs}  command. We do that with a generic utility plug-in. There won't be an API to implement for the `_Render`{:.language-cs}  command, instead we'll implement two new classes. One derived from `Rhino.Render.RealtimeDisplayMode`{:.language-cs}  and one derived from `Rhino.Render.RealtimeDisplayModeClassInfo`{:.language-cs} .
 
