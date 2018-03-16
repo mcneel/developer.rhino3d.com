@@ -159,6 +159,19 @@ Start a Debug session with Visual Studio, and drag-and-drop the .rhp file on the
 
 ![template image]({{ site.baseurl }}/images/mockingbird/005_plugin_loaded.png)
 
-The render engine can be selected, but it won't do anything useful yet :)
+*Congratulations!*  The render engine can be selected, but it won't do anything useful yet :)  *Now what?*
 
-With these steps completed the basics of the plug-in are done. It is time to have a proper look at integrating the render engine.
+---
+
+## Next Steps
+
+With these steps completed the basics of the plug-in are done.  It is time to have [a proper look at integrating the render engine]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/).
+
+---
+
+## Related Topics
+
+- [Render Engine Integration - Modal]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+- [Render Engine Integration - ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+- [Render Engine Integration - Interactive Viewport]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
+- Preview render *(forthcoming)*

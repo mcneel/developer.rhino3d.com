@@ -1,6 +1,6 @@
 ---
 title: Render Engine Integration - ChangeQueue
-description: This guide, the 3rd of a series, discusses using the ChangeQueue to digest file content for a render engine.
+description: This guide, the third of a series, discusses using the ChangeQueue to digest file content for a render engine.
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
@@ -17,13 +17,15 @@ redirect_from: "/guides/rhinocommon/mockingbird-changequeue/"
 
 ## Overview
 
-This is part 3 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
+This is part three in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
 
 1. [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
 1. [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
 1. ChangeQueue (this guide)
 1. [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
 1. Preview render *(forthcoming)*
+
+If you have not already read parts [one](({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)) and [two](({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)), please do so before proceeding.
 
 ## Converting the Document
 
@@ -285,3 +287,18 @@ Received 7 mesh instances to be either added or changed
 	Add or change object 3956531048 uses mesh <0c35babb-ca2a-4b09-9ab6-72610f38717f, 3>, and material 2304042105, named Gem 001)
 		Material Gem 001 is a Gem (Gem material.)
 ```
+
+---
+
+## Next Steps
+
+This is part three in the series on render engine integration in Rhinoceros using RhinoCommon.  The next guide is [Render Engine Integration - Interactive Viewport]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/).
+
+---
+
+## Related Topics
+
+- [Render Engine Integration - Introduction]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+- [Render Engine Integration - Modal]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+- [Render Engine Integration - Interactive Viewport]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/).
+- Preview render *(forthcoming)*

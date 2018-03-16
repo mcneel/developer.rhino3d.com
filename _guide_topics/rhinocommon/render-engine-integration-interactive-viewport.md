@@ -1,6 +1,6 @@
 ---
 title: Render Engine Integration - Interactive Viewport
-description: This guide, the 4th of a series, covers integrating render engines in Rhino's viewport.
+description: This guide, the fourth of a series, covers integrating render engines in Rhino's viewport.
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
@@ -17,13 +17,15 @@ redirect_from: "/guides/rhinocommon/mockingbird-interactive/"
 
 ## Overview
 
-This is part 4 in the series on render engine integration in Rhinoceros 3D using RhinoCommon.
+This is part four in the series on render engine integration in Rhinoceros 3D using RhinoCommon.
 
 1. [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
 1. [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
 1. [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
 1. Interactive render - viewport integration (this guide)
 1. Preview render *(forthcoming)*
+
+If you have not already read the first three parts, please do so before proceeding.
 
 ## Realtime Display
 
@@ -193,4 +195,19 @@ In `ColorPass()`{:.language-cs}  above the most important part to look at is lin
 
 Note that the simplest possible pixel buffer filling code would be to have the channel `SetValue`{:.language-cs}  loop directly in `StartRenderer()`{:.language-cs}  and leave out the entire `MockingRender`{:.language-cs}  and `Thread`{:.language-cs}  construct.
 
-These are the steps necessary to integrate a new render engine into Rhinoceros 3D viewport for interactive, real-time rendering using the RhinoCommon SDK.
+---
+
+## Next Steps
+
+*Congratulations!*  These are the steps necessary to integrate a new render engine into Rhino viewport for interactive, real-time rendering using the RhinoCommon SDK.  *Now what?*
+
+This is part four in the series on render engine integration in Rhinoceros using RhinoCommon.  The next guide (forthcoming) will demonstrate implementing a preview render.
+
+---
+
+## Related Topics
+
+- [Render Engine Integration - Introduction]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+- [Render Engine Integration - Modal]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+- [Render Engine Integration - ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+- Preview render *(forthcoming)*
