@@ -1,6 +1,6 @@
 ---
 title: Render Engine Integration - Introduction
-description: A guide to integrating a render engine using RhinoCommon SDK
+description: This guide introduces integrating a render engine in Rhino using RhinoCommon.
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']

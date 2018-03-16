@@ -1,6 +1,6 @@
 ---
 title: Render Engine Integration - ChangeQueue
-description: A guide to integrating a render engine using RhinoCommon SDK - ChangeQueue
+description: This guide, the 3rd of a series, discusses using the ChangeQueue to digest file content for a render engine.
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']

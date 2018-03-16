@@ -1,6 +1,6 @@
 ---
 title: Render Engine Integration - Modal
-description: A guide to integrating a render engine using RhinoCommon SDK - Modal
+description: This guide, the 2nd of a series, demonstrates integrating a modal rendering engine using RhinoCommon.
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
