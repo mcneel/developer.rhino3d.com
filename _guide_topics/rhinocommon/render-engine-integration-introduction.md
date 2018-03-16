@@ -1,6 +1,6 @@
 ---
-title: Render Engine Integration - Introduction (1/5)
-description: A guide to integrating a render engine using RhinoCommon SDK
+title: Render Engine Integration - Introduction
+description: This guide introduces integrating a render engine in Rhino using RhinoCommon.
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
@@ -11,46 +11,50 @@ origin: http:/www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-i
 order: 1
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
+redirect_from: "/guides/rhinocommon/mockingbird-intro/"
 ---
 
 
-## Integrating a render engine in Rhinoceros 3D (Rhino WIP)
-If you're a render engine developer and you're thinking of writing an integration plug-in for the upcoming Rhino 6 (still lovingly called Rhino WIP) then you definitely should keep reading on.
+## Overview
 
-For this series I'll be looking into how one would go about integrating a render engine using the RhinoCommon SDK.
+If you're a render engine developer and you're thinking of writing an integration plug-in for Rhino, then you definitely should keep reading on.
 
-The subject will be broken up into several parts:
+For this series I'll be looking into how one would go about integrating a render engine using RhinoCommon.
 
-* [Setting up the plug-in (this article)]({{ site.baseurl }}/guides/rhinocommon/mockingbird-intro/)
-* [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/mockingbird-modal/)
-* [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/mockingbird-changequeue/)
-* [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/mockingbird-interactive/)
-* Preview render
+The subject will be broken up into several guides:
 
-For each part we'll take a look at relevant parts of the integration plug-in for the Cycles render engine while doing several simple example plug-ins at the same time. The code for the example plug-ins will be stripped of (most) of the comments that are added by the template, so we can focus on the parts that matter. Source code for the sample project, dubbed <a href="https:/github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird">MockingBird, is available on GitHub</a>.
+1. Setting up the plug-in (this guide)
+1. [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+1. [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+1. [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
+1. Preview render *(forthcoming)*
+
+For each guide we'll take a look at relevant parts of the integration plug-in for the Cycles render engine while doing several simple example plug-ins at the same time. The code for the example plug-ins will be stripped of (most) of the comments that are added by the template, so we can focus on the parts that matter. Source code for the sample project, dubbed [MockingBird, is available on GitHub](https:/github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird).
 
 ## Creating Render Plug-in project
-### Install the RhinoCommon v6 template package
-To make developing a new plug-in for Rhinoceros 3D easy McNeel has published a template packages for v6. Search for the string rhino and install the relevant package.
+
+### Install the RhinoCommon template package
+
+To make developing a new plug-in for Rhinoceros 3D easy McNeel has published a template packages. Search for the string rhino and install the relevant package.
 
 ![template image]({{ site.baseurl }}/images/mockingbird/001_rhinocommon_templates.png)
 
+Once the template package is installed we're ready to write amazing plug-ins for Rhino.
 
-
-Once the template package is installed we're ready to write amazing plug-ins for Rhino 3D.
 ### Create a new RhinoCommon v6 project
+
 ![template image]({{ site.baseurl }}/images/mockingbird/002_new_plugin_project.png)
 
-Lets create a new plug-in now that the wizard is installed. Simply create a new project in Visual Studio, and from the Visual C# section under Templates select Rhinoceros. Pick RhinoCommon Plug-In for Rhinoceros 6 and give a name.
+Lets create a new plug-in now that the wizard is installed. Simply create a new project in Visual Studio, and from the Visual C# section under Templates select Rhinoceros. Pick RhinoCommon Plug-In for Rhinoceros and give a name.
 
-After you click on OK you'll be presented with a wizard dialog where settings can be changed. For our case we select Render plug-in. If the wizard fails to recognize a Rhino 6 (Rhino WIP) installation path one can set the necessary paths before accepting the settings. Click on the Finish button when happy with the settings.
+After you click on OK you'll be presented with a wizard dialog where settings can be changed. For our case we select Render plug-in. If the wizard fails to recognize a Rhino installation path one can set the necessary paths before accepting the settings.  Click on the Finish button when happy with the settings.
 
 ![template image]({{ site.baseurl }}/images/mockingbird/003_plugin_settings.png)
 
-
-
 The plug-in wizard will generate a set of files for the developer.
-##### Adjust assembly configuration
+
+### Adjust assembly configuration
+
 Before diving into the deep it probably is a good idea to change the assembly information and plug-in description strings. I'd suggest at least some minimal contact information and a short description of what the plug-in is supposed to do.
 
 ```cs
@@ -77,7 +81,8 @@ Before diving into the deep it probably is a good idea to change the assembly in
 [assembly: Guid("ccb6ab63-fdef-44ac-9c1f-7eca810d5b75")]
 ```
 
-##### The main part of the plug-in
+### The main part of the plug-in
+
 We'll ignore the the command class that the wizard also has added. For the purpose of this example plug-in it is not needed, so it could just be removed as well. This leaves the major entry point for the plug-in as our starting point.
 
 ```cs
@@ -111,7 +116,7 @@ namespace MockingBird
 }
 ```
 
-Currently the wizard gives a public constructor that always assigns itself to the static Instance property. I think it is better to assign <strong>only</strong> when Instance is not set.
+Currently the wizard gives a public constructor that always assigns itself to the static Instance property. I think it is better to assign **only** when Instance is not set.
 
 There are two mandatory functions to override. They have been added with default implementations that throw a NotImplementedException when called. For this example plug-in we are not going to bother with RenderWindow, so we'll just return with a success code. For now we'll do the same for Render(), but we'll using that to hook up our render engine.
 
@@ -150,12 +155,23 @@ With these changes in the very first version of the plug-in can be compiled. Thi
 
 ![template image]({{ site.baseurl }}/images/mockingbird/004_first_compiled_rhp.png)
 
-
-
 Start a Debug session with Visual Studio, and drag-and-drop the .rhp file on the Rhino instance that opens. The Rhino command-line should tell that the plug-in has been loaded. The Current Renderer menu should show the newly-loaded plug-in as an entry as well.
 
 ![template image]({{ site.baseurl }}/images/mockingbird/005_plugin_loaded.png)
 
-The render engine can be selected, but it won't do anything useful yet :)
+*Congratulations!*  The render engine can be selected, but it won't do anything useful yet :)  *Now what?*
 
-With these steps completed the basics of the plug-in are done. It is time to have a proper look at integrating the render engine.
+---
+
+## Next Steps
+
+With these steps completed the basics of the plug-in are done.  It is time to have [a proper look at integrating the render engine]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/).
+
+---
+
+## Related Topics
+
+- [Render Engine Integration - Modal]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+- [Render Engine Integration - ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+- [Render Engine Integration - Interactive Viewport]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
+- Preview render *(forthcoming)*

@@ -1,6 +1,6 @@
 ---
-title: Render Engine Integration - Interactive Viewport (4/5)
-description: A guide to integrating a render engine using RhinoCommon SDK - Interactive Viewport
+title: Render Engine Integration - Interactive Viewport
+description: This guide, the fourth of a series, covers integrating render engines in Rhino's viewport.
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
@@ -11,22 +11,30 @@ origin: http://www.letworyinteractive.com/b/2016/10/integrating-a-render-engine-
 order: 4
 keywords: ['renderer', 'integration', 'RhinoCommon', 'interactive', 'viewport']
 layout: toc-guide-page
+redirect_from: "/guides/rhinocommon/mockingbird-interactive/"
 ---
 
 
-This is part 4 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
+## Overview
 
-* [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/mockingbird-intro/)
-* [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/mockingbird-modal/)
-* [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/mockingbird-changequeue/)
-* [Interactive render - viewport integration (this)]({{ site.baseurl }}/guides/rhinocommon/mockingbird-interactive/)
-* Preview render
+This is part four in the series on render engine integration in Rhinoceros 3D using RhinoCommon.
+
+1. [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+1. [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+1. [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+1. Interactive render - viewport integration (this guide)
+1. Preview render *(forthcoming)*
+
+If you have not already read the first three parts, please do so before proceeding.
+
+## Realtime Display
 
 For this plug-in we are going to do things in a slightly different way. Not because it is a must, but because it gives an interesting possibility for plug-in developers who want to integrate their own render engines, but without exposing it to the `_Render`{:.language-cs}  command. We do that with a generic utility plug-in. There won't be an API to implement for the `_Render`{:.language-cs}  command, instead we'll implement two new classes. One derived from `Rhino.Render.RealtimeDisplayMode`{:.language-cs}  and one derived from `Rhino.Render.RealtimeDisplayModeClassInfo`{:.language-cs} .
 
 Together these will effectively create and register a conduit that is used during the drawing process of a viewport to display the result of the render engine.
 
 For this example a `ChangeQueue`{:.language-cs}  implementation is used, but as said in earlier articles it is possible to do your data conversion directly from the `RhinoDoc`{:.language-cs} . If the render engine to be integrated is one using mesh data for geometry I advise strongly to use the `ChangeQueue`{:.language-cs} .
+
 ### Utility plug-in
 
 ```cs
@@ -49,7 +57,8 @@ public class MockingViewportPlugIn : Rhino.PlugIns.PlugIn
 
 ```
 
-The plug-in code is very lean, only `LoadRetunCode OnLoad()`{:.language-cs}  needs to be overridden. (<del>In this function a call on line 9 to `RealtimeDisplayMode.RegisterDisplayModes()`{:.language-cs}  with the plug-in itself as parameter ensures the Rhino plug-in loading mechanism checks for display mode implementations</del>. With latest Rhino WIP (and what will go into v6)  it is no longer necessary to explicitly call `RegisterDisplayModes()`{:.language-cs} , since that is done automatically. ) With a proper RealtimeDisplayModeClassInfo and RealtimeDisplayMode implementation the new viewport mode will be registered with Rhino. It'll show up in the viewport mode dropdown list.
+The plug-in code is very lean, only `LoadRetunCode OnLoad()`{:.language-cs}  needs to be overridden.  With a proper RealtimeDisplayModeClassInfo and RealtimeDisplayMode implementation the new viewport mode will be registered with Rhino. It'll show up in the viewport mode dropdown list.
+
 ### Registering with Rhino
 
 ```cs
@@ -180,9 +189,25 @@ private void ColorPass(int pass)
 	}
 }
 ```
+{: .line-numbers}
 
 In `ColorPass()`{:.language-cs}  above the most important part to look at is line 5. With the `using`{:.language-cs}  idiom the necessary channel from the `RenderWindow`{:.language-cs}  is opened (`RGBA`{:.language-cs}  in general, there are other channels too, though, but not in the scope of this article series), then filled with color data per pixel. The using idiom ensures the opened channel is properly disposed of.
 
 Note that the simplest possible pixel buffer filling code would be to have the channel `SetValue`{:.language-cs}  loop directly in `StartRenderer()`{:.language-cs}  and leave out the entire `MockingRender`{:.language-cs}  and `Thread`{:.language-cs}  construct.
 
-These are the steps necessary to integrate a new render engine into Rhinoceros 3D (v6) viewport for interactive, real-time rendering using the RhinoCommon SDK.
+---
+
+## Next Steps
+
+*Congratulations!*  These are the steps necessary to integrate a new render engine into Rhino viewport for interactive, real-time rendering using the RhinoCommon SDK.  *Now what?*
+
+This is part four in the series on render engine integration in Rhinoceros using RhinoCommon.  The next guide (forthcoming) will demonstrate implementing a preview render.
+
+---
+
+## Related Topics
+
+- [Render Engine Integration - Introduction]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+- [Render Engine Integration - Modal]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+- [Render Engine Integration - ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+- Preview render *(forthcoming)*

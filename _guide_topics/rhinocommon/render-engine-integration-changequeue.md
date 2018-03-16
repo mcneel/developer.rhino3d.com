@@ -1,6 +1,6 @@
 ---
-title: Render Engine Integration - ChangeQueue (3/5)
-description: A guide to integrating a render engine using RhinoCommon SDK - ChangeQueue
+title: Render Engine Integration - ChangeQueue
+description: This guide, the third of a series, discusses using the ChangeQueue to digest file content for a render engine.
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
@@ -11,17 +11,23 @@ origin: http://www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-
 order: 3
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
+redirect_from: "/guides/rhinocommon/mockingbird-changequeue/"
 ---
 
 
-This is part 3 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
+## Overview
 
-* [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/mockingbird-intro/)
-* [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/mockingbird-modal/)
-* [ChangeQueue (this)]({{ site.baseurl }}/guides/rhinocommon/mockingbird-changequeue/)
-* [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/mockingbird-interactive/)
-* Preview render
+This is part three in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
 
+1. [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+1. [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+1. ChangeQueue (this guide)
+1. [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
+1. Preview render *(forthcoming)*
+
+If you have not already read parts [one](({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)) and [two](({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)), please do so before proceeding.
+
+## Converting the Document
 
 When it comes to converting a 3dm document to a form our render engine understands there are two options: the hard way, or the easy way.
 
@@ -29,9 +35,9 @@ The hard way would be to just take the `RhinoDoc`{:.language-cs}  given in the `
 
 Since I don't like complex I'll just go with the easy way.
 
-The <a href="https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/MockingBirdChangeQueue">code for this plug-in version</a> can be found at <a href="https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird">the MockingBird Git repository</a>.
+The [code for this plug-in version](https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/MockingBirdChangeQueue) can be found at [the MockingBird Git repository](https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird).
 
-### ChangeQueue
+## ChangeQueue
 
 The `ChangeQueue`{:.language-cs}  is a central way of getting the 3dm in an already pre-digested format. Among things it will handle Blocks and their instances all for you. The `ChangeQueue`{:.language-cs}  is also usable for both production (modal) rendering and interactive real-time rendering in the viewport. Even preview scene rendering can be done through the `ChangeQueue`{:.language-cs}  mechanism, meaning that preview rendering can be easily added without too much hassle. We'll come to that later though.
 
@@ -281,3 +287,18 @@ Received 7 mesh instances to be either added or changed
 	Add or change object 3956531048 uses mesh <0c35babb-ca2a-4b09-9ab6-72610f38717f, 3>, and material 2304042105, named Gem 001)
 		Material Gem 001 is a Gem (Gem material.)
 ```
+
+---
+
+## Next Steps
+
+This is part three in the series on render engine integration in Rhinoceros using RhinoCommon.  The next guide is [Render Engine Integration - Interactive Viewport]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/).
+
+---
+
+## Related Topics
+
+- [Render Engine Integration - Introduction]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+- [Render Engine Integration - Modal]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+- [Render Engine Integration - Interactive Viewport]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/).
+- Preview render *(forthcoming)*

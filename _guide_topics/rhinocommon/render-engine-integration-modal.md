@@ -1,6 +1,6 @@
 ---
-title: Render Engine Integration - Modal Rendering (2/5)
-description: A guide to integrating a render engine using RhinoCommon SDK - Modal
+title: Render Engine Integration - Modal
+description: This guide, the second of a series, demonstrates integrating a modal rendering engine using RhinoCommon.
 authors: ['Nathan Letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
@@ -11,20 +11,27 @@ origin: http://www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-
 order: 2
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
+redirect_from: "/guides/rhinocommon/mockingbird-modal/"
 ---
 
 
-This is part 2 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
+## Overview
 
-* [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/mockingbird-intro/)
-* [Modal Rendering (this)]({{ site.baseurl }}/guides/rhinocommon/mockingbird-modal/)
-* [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/mockingbird-changequeue/)
-* [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/mockingbird-interactive/)
-* Preview render
+This is part two in the series on render engine integration in Rhinoceros 3D using RhinoCommon.  
 
-To implement a modal rendering solution for Rhinoceros 3D there are two particular pieces you'll need to create, which will allow you to render into a separate render window: a custom implementation of a `Rhino.Render.AsyncRenderContext`{:.language-cs} , and a `Rhino.Render.RenderPipeline`{:.language-cs}.
+1. [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+1. Modal Rendering (this guide)
+1. [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+1. [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
+1. Preview render *(forthcoming)*
 
-The full source code of this plug-in can be found <a href="https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/MockingBirdModal">here</a>.
+If you have not already read [part one](({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)), please do so before proceeding.
+
+## Render
+
+To implement a modal rendering solution for Rhinoceros there are two particular pieces you'll need to create, which will allow you to render into a separate render window: a custom implementation of a `Rhino.Render.AsyncRenderContext`{:.language-cs} , and a `Rhino.Render.RenderPipeline`{:.language-cs}.
+
+The full source code of this plug-in can be found [here](https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/MockingBirdModal).
 
 The rendering will start when giving the Rhino command `Render`{:.language-cs}. This will result in a call into the `Render()`{:.language-cs}  of your Render plug-in implementation.
 
@@ -66,6 +73,7 @@ protected override Result Render(RhinoDoc doc, RunMode mode, bool fastPreview)
 }
 
 ```
+{: .line-numbers}
 
 In our `Render()`{:.language-cs}  function we start by initialising our render context (line 4) and render pipeline (line 7). The render context will be essentially where our actual rendering code will be hosted. The render pipeline starts and stops our engine (context) as necessary.
 
@@ -185,7 +193,19 @@ public class MockingRenderContext : AsyncRenderContext
 		RhinoApp.WriteLine("... done");
 	}
 }
-
 ```
 
-&nbsp;
+---
+
+## Next Steps
+
+This is part two in the series on render engine integration in Rhinoceros using RhinoCommon.  The next guide is [Render Engine Integration - ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/).
+
+---
+
+## Related Topics
+
+- [Render Engine Integration - Introduction]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+- [Render Engine Integration - ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+- [Render Engine Integration - Interactive Viewport]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
+- Preview render *(forthcoming)*
