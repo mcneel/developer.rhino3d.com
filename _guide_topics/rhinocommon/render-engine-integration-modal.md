@@ -14,6 +14,7 @@ layout: toc-guide-page
 redirect_from: "/guides/rhinocommon/mockingbird-modal/"
 ---
 
+## Overview
 
 This is part 2 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
 
@@ -26,6 +27,8 @@ This is part 2 in the series on render engine integration in Rhinoceros 3D using
 To implement a modal rendering solution for Rhinoceros 3D there are two particular pieces you'll need to create, which will allow you to render into a separate render window: a custom implementation of a `Rhino.Render.AsyncRenderContext`{:.language-cs} , and a `Rhino.Render.RenderPipeline`{:.language-cs}.
 
 The full source code of this plug-in can be found <a href="https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/MockingBirdModal">here</a>.
+
+## Render
 
 The rendering will start when giving the Rhino command `Render`{:.language-cs}. This will result in a call into the `Render()`{:.language-cs}  of your Render plug-in implementation.
 
@@ -188,5 +191,3 @@ public class MockingRenderContext : AsyncRenderContext
 }
 
 ```
-
-&nbsp;

@@ -15,6 +15,8 @@ redirect_from: "/guides/rhinocommon/mockingbird-interactive/"
 ---
 
 
+## Overview
+
 This is part 4 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
 
 * [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
@@ -23,11 +25,14 @@ This is part 4 in the series on render engine integration in Rhinoceros 3D using
 * [Interactive render - viewport integration (this guide)]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
 * Preview render (forthcoming)
 
+## Realtime Display
+
 For this plug-in we are going to do things in a slightly different way. Not because it is a must, but because it gives an interesting possibility for plug-in developers who want to integrate their own render engines, but without exposing it to the `_Render`{:.language-cs}  command. We do that with a generic utility plug-in. There won't be an API to implement for the `_Render`{:.language-cs}  command, instead we'll implement two new classes. One derived from `Rhino.Render.RealtimeDisplayMode`{:.language-cs}  and one derived from `Rhino.Render.RealtimeDisplayModeClassInfo`{:.language-cs} .
 
 Together these will effectively create and register a conduit that is used during the drawing process of a viewport to display the result of the render engine.
 
 For this example a `ChangeQueue`{:.language-cs}  implementation is used, but as said in earlier articles it is possible to do your data conversion directly from the `RhinoDoc`{:.language-cs} . If the render engine to be integrated is one using mesh data for geometry I advise strongly to use the `ChangeQueue`{:.language-cs} .
+
 ### Utility plug-in
 
 ```cs
@@ -51,6 +56,7 @@ public class MockingViewportPlugIn : Rhino.PlugIns.PlugIn
 ```
 
 The plug-in code is very lean, only `LoadRetunCode OnLoad()`{:.language-cs}  needs to be overridden. (<del>In this function a call on line 9 to `RealtimeDisplayMode.RegisterDisplayModes()`{:.language-cs}  with the plug-in itself as parameter ensures the Rhino plug-in loading mechanism checks for display mode implementations</del>. With latest Rhino WIP (and what will go into v6)  it is no longer necessary to explicitly call `RegisterDisplayModes()`{:.language-cs} , since that is done automatically. ) With a proper RealtimeDisplayModeClassInfo and RealtimeDisplayMode implementation the new viewport mode will be registered with Rhino. It'll show up in the viewport mode dropdown list.
+
 ### Registering with Rhino
 
 ```cs

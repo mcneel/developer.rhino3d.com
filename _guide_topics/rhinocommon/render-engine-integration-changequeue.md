@@ -15,6 +15,8 @@ redirect_from: "/guides/rhinocommon/mockingbird-changequeue/"
 ---
 
 
+## Overview
+
 This is part 3 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
 
 * [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
@@ -23,6 +25,7 @@ This is part 3 in the series on render engine integration in Rhinoceros 3D using
 * [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
 * Preview render (forthcoming)
 
+## Converting the Document
 
 When it comes to converting a 3dm document to a form our render engine understands there are two options: the hard way, or the easy way.
 
@@ -32,7 +35,7 @@ Since I don't like complex I'll just go with the easy way.
 
 The <a href="https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/MockingBirdChangeQueue">code for this plug-in version</a> can be found at <a href="https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird">the MockingBird Git repository</a>.
 
-### ChangeQueue
+## ChangeQueue
 
 The `ChangeQueue`{:.language-cs}  is a central way of getting the 3dm in an already pre-digested format. Among things it will handle Blocks and their instances all for you. The `ChangeQueue`{:.language-cs}  is also usable for both production (modal) rendering and interactive real-time rendering in the viewport. Even preview scene rendering can be done through the `ChangeQueue`{:.language-cs}  mechanism, meaning that preview rendering can be easily added without too much hassle. We'll come to that later though.
 
