@@ -13,11 +13,9 @@ keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
-<div class="bs-callout">
-
-<strong>Note</strong>: Yak is cross-platform. Not everything is hooked up on the Mac side
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> Yak is cross-platform. Not everything is hooked up on the Mac side
 yet, however. So, for now, this guide is aimed at <strong>Windows users only</strong>.
-
 </div>
 
 <!-- The Yak CLI tool is located at `C:\Program Files\Rhino WIP\System\Yak.exe`. -->
@@ -69,13 +67,11 @@ glean useful information from the `.gha` assembly and use it generate a
 `manifest.yml` with name, version, authors, etc. pre-populated. If you haven't
 added this information, then placeholders will be used.
 
-<div class="bs-callout">
-
-<strong>Note</strong>: You might notice your plug-in's GUID lurking in the
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> You might notice your plug-in's GUID lurking in the
 <code>secret/id</code> key. More information on how this is used can be found in
 the <a href="../package-restore-in-grasshopper">"Package Restore in Grasshopper"
 </a> guide.
-
 </div>
 
 Open the manifest file with your [favourite editor](http://atom.io) and fill in

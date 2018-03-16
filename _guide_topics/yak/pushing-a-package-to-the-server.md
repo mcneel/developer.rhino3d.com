@@ -13,12 +13,10 @@ keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
-<div class="bs-callout">
-
-<strong>Note</strong>: Yak is cross-platform. Not everything is hooked up on the
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> Yak is cross-platform. Not everything is hooked up on the
 Mac side yet, however. So, for now, this guide is aimed at <strong>Windows users
 only</strong>.
-
 </div>
 
 ## Authentication
@@ -46,8 +44,8 @@ OAuth token from Rhino Accounts and has stored this on your computer.
 - Mac - `~/.mcneel/yak.yml`
 - Windows - `%APPDATA%\McNeel\yak.yml`
 
-<div class="bs-callout">
-<strong>Note</strong>: For security, the OAuth token is valid for a limited time
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> For security, the OAuth token is valid for a limited time
 only. Don't be surprised if the Yak CLI tool requires you to log in again after
 30 days or so.
 </div>

@@ -13,11 +13,9 @@ keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
-<div class="bs-callout">
-
-<strong>Note</strong>: Yak is cross-platform. Not everything is hooked up on the Mac side
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> Yak is cross-platform. Not everything is hooked up on the Mac side
 yet, however. So, for now, this guide is aimed at <strong>Windows users only</strong>.
-
 </div>
 
 ## Install
@@ -33,10 +31,8 @@ Installing marmoset (1.0.0)...
 Successfully installed marmoset (1.0.0)
 ```
 
-<div class="bs-callout">
-
-<strong>Note</strong>: Rhino will load new packages the next time it starts.
-
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> Rhino will load new packages the next time it starts.
 </div>
 
 You can also ask Yak to install a specific version.
@@ -61,11 +57,9 @@ Packages can also be easily uninstalled using the Yak CLI tool.
 marmoset successfully uninstalled
 ```
 
-<div class="bs-callout">
-
-<strong>Note</strong>: Rhino will register that the package has been uninstalled
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> Rhino will register that the package has been uninstalled
 the next time it starts.
-
 </div>
 
 
