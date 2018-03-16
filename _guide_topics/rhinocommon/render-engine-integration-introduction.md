@@ -21,15 +21,15 @@ If you're a render engine developer and you're thinking of writing an integratio
 
 For this series I'll be looking into how one would go about integrating a render engine using the RhinoCommon SDK.
 
-The subject will be broken up into several parts:
+The subject will be broken up into several guides:
 
-* [Setting up the plug-in (this guide)]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
-* [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
-* [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
-* [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
-* Preview render (forthcoming)
+1. Setting up the plug-in (this guide)
+1. [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+1. [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+1. [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
+1. Preview render *(forthcoming)*
 
-For each part we'll take a look at relevant parts of the integration plug-in for the Cycles render engine while doing several simple example plug-ins at the same time. The code for the example plug-ins will be stripped of (most) of the comments that are added by the template, so we can focus on the parts that matter. Source code for the sample project, dubbed [MockingBird, is available on GitHub](https:/github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird).
+For each guide we'll take a look at relevant parts of the integration plug-in for the Cycles render engine while doing several simple example plug-ins at the same time. The code for the example plug-ins will be stripped of (most) of the comments that are added by the template, so we can focus on the parts that matter. Source code for the sample project, dubbed [MockingBird, is available on GitHub](https:/github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird).
 
 ## Creating Render Plug-in project
 

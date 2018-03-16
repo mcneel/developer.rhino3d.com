@@ -19,11 +19,11 @@ redirect_from: "/guides/rhinocommon/mockingbird-changequeue/"
 
 This is part 3 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
 
-* [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
-* [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
-* [ChangeQueue (this guide)]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
-* [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
-* Preview render (forthcoming)
+1. [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+1. [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+1. ChangeQueue (this guide)
+1. [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
+1. Preview render *(forthcoming)*
 
 ## Converting the Document
 

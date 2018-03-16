@@ -19,11 +19,11 @@ redirect_from: "/guides/rhinocommon/mockingbird-interactive/"
 
 This is part 4 in the series on render engine integration in Rhinoceros 3D using RhinoCommon (v6).
 
-* [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
-* [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
-* [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
-* [Interactive render - viewport integration (this guide)]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
-* Preview render (forthcoming)
+1. [Setting up the plug-in]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-introduction/)
+1. [Modal Rendering]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-modal/)
+1. [ChangeQueue]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-changequeue/)
+1. Interactive render - viewport integration (this guide)
+1. Preview render *(forthcoming)*
 
 ## Realtime Display
 
