@@ -16,3 +16,4 @@ _config_ci.yml
 .DS_Store
 
 vendor/gems
+vendor/bundle

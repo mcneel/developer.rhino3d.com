@@ -59,7 +59,7 @@ collections:
     output: true
     permalink: /videos/
 
-exclude: [/script, /test, README.md, CONTRIBUTING.md, Gemfile]
+exclude: [script, test, README.md, CONTRIBUTING.md, Gemfile, vendor]
 
 # version branches
 versions:
