@@ -29,7 +29,7 @@ The subject will be broken up into several parts:
 * [Interactive render - viewport integration]({{ site.baseurl }}/guides/rhinocommon/render-engine-integration-interactive-viewport/)
 * Preview render (forthcoming)
 
-For each part we'll take a look at relevant parts of the integration plug-in for the Cycles render engine while doing several simple example plug-ins at the same time. The code for the example plug-ins will be stripped of (most) of the comments that are added by the template, so we can focus on the parts that matter. Source code for the sample project, dubbed <a href="https:/github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird">MockingBird, is available on GitHub</a>.
+For each part we'll take a look at relevant parts of the integration plug-in for the Cycles render engine while doing several simple example plug-ins at the same time. The code for the example plug-ins will be stripped of (most) of the comments that are added by the template, so we can focus on the parts that matter. Source code for the sample project, dubbed [MockingBird, is available on GitHub](https:/github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird).
 
 ## Creating Render Plug-in project
 
@@ -116,7 +116,7 @@ namespace MockingBird
 }
 ```
 
-Currently the wizard gives a public constructor that always assigns itself to the static Instance property. I think it is better to assign <strong>only</strong> when Instance is not set.
+Currently the wizard gives a public constructor that always assigns itself to the static Instance property. I think it is better to assign **only** when Instance is not set.
 
 There are two mandatory functions to override. They have been added with default implementations that throw a NotImplementedException when called. For this example plug-in we are not going to bother with RenderWindow, so we'll just return with a success code. For now we'll do the same for Render(), but we'll using that to hook up our render engine.
 

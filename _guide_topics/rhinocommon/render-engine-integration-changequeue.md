@@ -33,7 +33,7 @@ The hard way would be to just take the `RhinoDoc`{:.language-cs}  given in the `
 
 Since I don't like complex I'll just go with the easy way.
 
-The <a href="https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/MockingBirdChangeQueue">code for this plug-in version</a> can be found at <a href="https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird">the MockingBird Git repository</a>.
+The [code for this plug-in version](https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird/MockingBirdChangeQueue) can be found at [the MockingBird Git repository](https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsRendererIntegration/MockingBird).
 
 ## ChangeQueue
 
