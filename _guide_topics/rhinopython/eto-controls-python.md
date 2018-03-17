@@ -635,14 +635,14 @@ Creating the `forms.WebView()` is simple by creating the webview, then to set it
 More details can be found in the [Eto WebView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_WebView.htm). 
 
 
-## Sample dialogs  
+## Sample Dialogs  
 
 Now with some understanding of Eto Dialogs in Python, take a look at some of the Sample dialogs in the [Python Developer Samples Repo](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython):
 
-1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoDialog.py)
-2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoRebuildCurve.py)
-3.  [Capture a view dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoViewCaptureDialog.py)
-4.  [Collapsable controls on a Dialog](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython/SampleEtoCollapsibleDialog.py)
+1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/6/rhinopython/SampleEtoDialog.py)
+2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/6/rhinopython/SampleEtoRebuildCurve.py)
+3.  [Capture a view dialog](https://github.com/mcneel/rhino-developer-samples/blob/6/rhinopython/SampleEtoViewCaptureDialog.py)
+4.  [Collapsable controls on a Dialog](https://github.com/mcneel/rhino-developer-samples/blob/6/rhinopython/SampleEtoCollapsibleDialog.py)
 
 ---
 
