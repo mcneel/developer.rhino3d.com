@@ -14,7 +14,8 @@ layout: toc-guide-page
 
 ## Build
 
-_Since 0.2_
+* _Since 0.2: Command added_
+* _Since 0.4: Supports multiple .gha files, .rhp files or anything else for that matter_
 
 When run in a directory containing a valid `manifest.yaml` file, creates a package containing all files in the directory.
 
@@ -22,9 +23,6 @@ When run in a directory containing a valid `manifest.yaml` file, creates a packa
 yak build
 ```
 
-<div class="alert alert-info" role="alert">
-  <strong>Note:</strong> Currently this only works if there is exactly <strong>one</strong> <code>.gha</code> file in the directory.
-</div>
 <!-- During the build, the component GUID is extracted to help with searching for the package later. -->
 
 ## Install
@@ -85,21 +83,17 @@ yak search [--source=URL] <query>
 
 ## Spec
 
-_Since 0.2_
+* _Since 0.2: Command added_
+* _Since 0.4: Adds support for inspecting .rhp files (RhinoCommon only)_
 
-When run in a directory containing a `*.gha` file, creates a `manifest.yml` file populated with metadata from the Grasshopper plug-in.
+Creates a skeleton `manifest.yml` file based on the contents of the current directory.
+When run in a directory containing a Grasshopper assembly (`.gha`) or a RhinoCommon
+plug-in (`.rhp`) the file will be inspected and used to pre-populate the `manifest.yml`
+file.
 
 ```commandline
 yak spec
 ```
-
-<div class="alert alert-info" role="alert">
-  <strong>Note:</strong> Currently this only works if there is exactly <strong>one</strong> <code>.gha</code> file in the directory.
-</div>
-
-<div class="alert alert-info" role="alert">
-  <strong>Note:</strong> This command is only useful if you've implemented <code>GH_AssemblyInfo</code> in the Grasshopper plug-in.
-</div>
 
 ## Uninstall
 
