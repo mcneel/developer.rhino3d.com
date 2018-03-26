@@ -3,4 +3,10 @@
 # ignore api dir because it's slow
 exclude:
   - api/*
-  - vendor/gems
+  # copy excludes from _config.yml
+  - script
+  - test
+  - README.md
+  - CONTRIBUTING.md
+  - Gemfile
+  - vendor
