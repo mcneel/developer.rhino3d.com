@@ -17,11 +17,11 @@ First, navigate somewhere safe and clone the repository.
 git clone https://github.com/mcneel/developer-rhino3d-com.git
 ```
 
-If you are not comfortable using git on the command-line, then try [GitHub for Mac](https://mac.github.com/) and [GitHub for Windows](https://windows.github.com/). There's also the [git cheat sheet](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf).
+If you are not comfortable using git on the command-line, then try [GitHub for Mac](https://mac.github.com/) and [GitHub for Windows](https://windows.github.com/). There's also the [git cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf).
 
 **IMPORTANT:** The site is branch-aware and automatically deployed by [Travis CI](https://travis-ci.org/mcneel/developer-rhino3d-com). **DO NOT PUSH TO THE `gh-pages` BRANCH!**
 
-The current (_stable_) version Rhino is defined in the `stable:` field in the `_config.yml` file.  The `n` branch that corresponds to the stable release is built and deployed to http://developer.rhino3d.com.  
+The current (_stable_) version of Rhino is defined in the `stable:` field in the `_config.yml` file.  The `n` branch that corresponds to the stable release is built and deployed to http://developer.rhino3d.com.  
 
 The `master` branch represents the WIP version of the site.  Changes to the `master` branch will be built by Travis and deployed to http://developer.rhino3d.com/wip.  
 
