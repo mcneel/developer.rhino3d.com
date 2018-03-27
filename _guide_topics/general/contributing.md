@@ -1,6 +1,6 @@
 ---
 title: Contributing
-description: 'Hey, make yourself useful!'
+description: 'Pull requests are welcome!'
 authors: ['Dan Belcher']
 author_contacts: ['dan']
 sdk: ['General']
@@ -41,6 +41,7 @@ This site uses [Markdown](http://daringfireball.net/projects/markdown/) - specif
 
 To get started authoring content for this site, please read the following guides:
 
+- [Contributing (to this website)](https://github.com/mcneel/developer-rhino3d-com/blob/{{ site.git_branch | default: "6" }}/CONTRIBUTING.md)
 - [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/{{ site.git_branch | default: "master" }}/README.md)
 - [How This Site Works]({{ site.baseurl }}/guides/general/how-this-site-works)
 - [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer-docs-style-guide)
