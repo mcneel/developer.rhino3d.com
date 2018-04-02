@@ -104,7 +104,7 @@ static int ON_GroupsFromAttributes(const ONX_Model& model, const ON_3dmObjectAtt
 }
 ```
 
-Here is an example of their usage"
+Here is an example of their usage:
 
 ```cpp
 const ON_3dmObjectAttributes* attributes = model_geometry->Attributes(nullptr);
