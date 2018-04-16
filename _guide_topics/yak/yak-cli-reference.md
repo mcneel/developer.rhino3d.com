@@ -73,12 +73,19 @@ yak push [--source=URL] <filename>
 
 ## Search
 
-_Since 0.1_
+* _Since 0.1: Command added_
+* _Since 0.5: Adds `--all` and `--prerelease` flags_
 
 Searches the server for packages which match `query`.
 
 ```commandline
-yak search [--source=URL] <query>
+Usage: yak search [options] <query>
+
+  Options:
+    --prerelease      Display prerelease package versions
+    -a, --all         Display all package versions
+    -s, --source URL  Package repository location
+    -h, --help        Get help (equivalent to `yak help search`)
 ```
 
 ## Spec
