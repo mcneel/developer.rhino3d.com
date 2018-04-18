@@ -51,11 +51,11 @@ The [RhinoCommon templates](https://visualstudiogallery.msdn.microsoft.com/16053
 1. Navigate to *Tools* > *Extensions and Updates...*
 1. In the left-hand sidebar, expand the *Online* section, then select the *Visual Studio Gallery* entry...
 ![Extensions and Updates]({{ site.baseurl }}/images/installing-tools-windows-01.png)
-1. In the *Search* field, search for *rhino*.  This filters the gallery list below.
+1. In the *Search* field, search for *rhinocommon*.  This filters the gallery list below.
 1. Find *RhinoCommon templates* and select it.
-1. Click the *Download* button.  The extension installation should begin.
+1. Click the *Download* button.  The extension installation should begin after you close Visual Studio.
 1. You must *Accept* the license agreement by clicking on the *Install* button.
-1. If the installation is successful, you will be redirected to the RhinoCommon website and the extension should appear in your list of *Installed* extensions.
+1. If the installation is successful, the extension should appear in your list of *Installed* extensions.
 
 ---
 

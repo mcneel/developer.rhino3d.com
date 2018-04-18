@@ -29,7 +29,7 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 1. If you have not done so already, *launch Visual Studio* (for the purposes of this guide, we are using Visual Studio 2017 Community Edition and C#).
 1. Navigate to *File* > *New* > *Project*...
 ![File New Project]({{ site.baseurl }}/images/your-first-plugin-windows-01.png)
-1. A *New Project* wizard should appear.  In the left column, find the *Installed* > *Templates* > *Visual C#* > *Rhinoceros* section.  In the central list, select the RhinoCommon Plug-In template...
+1. A *New Project* wizard should appear.  In the left column, find the *Installed* > *Visual C#* > *Rhinoceros* section.  In the central list, select the RhinoCommon Plug-In template...
 ![New Project]({{ site.baseurl }}/images/your-first-plugin-windows-02.png)
 1. For the purposes of this Guide, we will name our demo plugin *HelloRhinoCommon*.  At the bottom of the window, fill in the *Name* field.  *Browse* and select a location for this plugin on your disk...
 ![Project Configuration]({{ site.baseurl }}/images/your-first-plugin-windows-03.png)
@@ -61,12 +61,13 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 ### Plugin Anatomy
 
 1. Use the *Solution Explorer* to expand the *Solution* (*.sln*) so that it looks like this...
-![Solution Anatomy]({{ site.baseurl }}/images/your-first-plugin-windows-07.png)
-*Note*: Depending on your edition of Visual Studio, it may look slightly different.
-1. The *HelloRhinoCommon* project (*.csproj*) has the same name as its parent solution...this is the project that was created for us by the *RhinoCommon Plugin* template wizard earlier.
-1. *Properties* contains the *AssemblyInfo.cs* source file.  This file contains the meta-data (author, version, etc) about the plugin.
-1. *References*: Just as with most projects, you will be referencing other libraries.  The *RhinoCommon Plugin* template added the necessary references to create a basic RhinoCommon plugin.
+![Solution Anatomy]({{ site.baseurl }}/images/your-first-plugin-windows-07.png){: .float-img-left width="400"}
+1. The *HelloRhinoCommon* project (*.csproj*) has the same name as its parent solution. The project that was created for us by the *RhinoCommon Plugin* template wizard earlier.
+1. *Properties* contains the *AssemblyInfo.cs* source file.  This file contains the meta-data (author, version, etc).
+1. *References*: Just as with most projects, you will be referencing other libraries.  The *RhinoCommon Plugin* template added the necessary references to create a basic plugin.
+1. *Eto* is the cross-platform User Interface toolkit that comes with Rhino.
 1. *Microsoft.CSharp* contains classes required for C# code compilation.
+1. *Rhino.UI* contains the Windows-specific User Interface classes.
 1. *RhinoCommon* is *the* critical reference for our purposes here.
 1. *System*, *System.Core*, *System.Drawing*, *System.Windows.Forms* are .NET foundational libraries.
 1. *HelloRhinoCommonPlugin.cs* is where this template plugin derives from *Rhino.Plugins.Plugin* and returns a static Instance of itself.  
