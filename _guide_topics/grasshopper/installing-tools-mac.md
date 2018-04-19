@@ -4,7 +4,7 @@ description: This guide covers all the necessary tools required to author Grassh
 authors: ['Dan Belcher']
 author_contacts: ['dan']
 sdk: ['Grasshopper']
-languages: ['C#', 'VB']
+languages: ['C#']
 platforms: ['Mac']
 categories: ['Getting Started']
 origin: unset
