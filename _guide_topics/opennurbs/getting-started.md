@@ -26,7 +26,7 @@ To download the public C++ SDK, .NET SDK, or example 3DM files, visit https://ww
 
 The openNURBS C++ toolkit has been successfully used with the following compilers:
 
-- *Microsoft Visual Studio 2015* 15.5.3: to build openNURBS and the examples with *Visual Studio 2015*, use the solution *opennurbs_public.sln*.
+- *Microsoft Visual Studio 2017*: to build openNURBS and the examples with *Visual Studio 2017*, use the solution *opennurbs_public.sln*.
 - *Apple Xcode 9.2* (9C40b): To build openNURBS and the examples with *Xcode 9.2* (or later), use the workspace *opennurbs_public.xcworkspace*.
 - *Other C++ compilers* The compiler must support the C++11 standard. A *makefile* is provided as a starting point. The openNURBS C++ source code is clean and simple. If you are using a C++ compiler that supports the C++11 standard and run into some toolkit code that causes problems, please [let us know](http://discourse.mcneel.com/category/opennurbs).  We'll attempt to change the code to accommodate the compiler.
 
