@@ -23,7 +23,7 @@ To add plugins to Zoo, and to call the license functions from within your Rhino 
 
 Follow these steps to generate the necessary info to forward to *Robert McNeel & Associates Code Signing Authority*...
 
-1. Download and install the latest [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html/). Note, download and installing the "light" version (smaller download) is sufficient.
+1. Download and install the latest [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html). Note, download and installing the "light" version (smaller download) is sufficient.
 2. Save the contents of <a href="{{ site.baseurl }}/files/mcneelcodesigning.zip"><span class="glyphicon glyphicon-download"></span></a> [mcneelcodesigning.zip]({{ site.baseurl }}/files/mcneelcodesigning.zip) into a folder where you have write permissions. This is generally in your plugin project folder.
 3. Start a *Windows Command Prompt*.
 4. Add the OpenSSL installation folder to your Windows path: `set path=C:\OpenSSL-Win32\bin;%path%`
