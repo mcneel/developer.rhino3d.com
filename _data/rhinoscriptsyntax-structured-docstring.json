@@ -1605,13 +1605,13 @@
           {
             "Name": "mode",
             "TypeInfo": "(number, optional)",
-            "Desc": " The object snap mode or modes to set. Object snap modes\r\n                     can be added together to set multiple modes\r\n                     0     None\r\n                     1     Near\r\n                     2     Focus\r\n                     4     Center\r\n                     8     Knot\r\n                     16    Quadrant\r\n                     32    Midpoint\r\n                     64    Intersection\r\n                     128   End\r\n                     256   Perpendicular\r\n                     512   Tangent\r\n                     1024  Point\r\n                     2048  Vertex\r\n    "
+            "Desc": " The object snap mode or modes to set. Object snap modes\r\n                     can be added together to set multiple modes\r\n                     0          None\r\n                     2          Near\r\n                     8          Focus\r\n                     32         Center\r\n                     64         Vertex\r\n                     128        Knot\r\n                     512        Quadrant\r\n                     2048       Midpoint\r\n                     8192       Intersection\r\n                     131072     End\r\n                     524288     Perpendicular\r\n                     2097152    Tangent\r\n                     134217728  Point\r\n    "
           }
         ],
         "Signature": "OsnapMode(mode=None)",
         "Description": "Returns or sets the object snap mode. Object snaps are tools for\r\n    specifying points on existing objects",
         "HasArguments": true,
-        "ArgumentDesc": "mode (number, optional): The object snap mode or modes to set. Object snap modes\r\n               can be added together to set multiple modes\r\n               0     None\r\n               1     Near\r\n               2     Focus\r\n               4     Center\r\n               8     Knot\r\n               16    Quadrant\r\n               32    Midpoint\r\n               64    Intersection\r\n               128   End\r\n               256   Perpendicular\r\n               512   Tangent\r\n               1024  Point\r\n               2048  Vertex",
+        "ArgumentDesc": "mode (number, optional): The object snap mode or modes to set. Object snap modes\r\n               can be added together to set multiple modes\r\n               0          None\r\n               2          Near\r\n               8          Focus\r\n               32         Center\r\n               64         Vertex\r\n               128        Knot\r\n               512        Quadrant\r\n               2048       Midpoint\r\n               8192       Intersection\r\n               131072     End\r\n               524288     Perpendicular\r\n               2097152    Tangent\r\n               134217728  Point",
         "Returns": [
           {
             "Item1": "\r\n      number",
@@ -1621,13 +1621,14 @@
         "ReturnStr": "number: if mode is not specified, then the current object snap mode(s)\r\nnumber: if mode is specified, then the previous object snap mode(s)",
         "Example": [
           "import rhinoscriptsyntax as rs",
-          "rhOsnapModeEnd = 128",
+          "rhOsnapModeEnd = 131072",
+          "#add 'End' mode while keeping the ones that are already set",
           "mode = rs.OsnapMode()",
-          "if not (mode & rhOSnapModeEnd):",
-          "    mode = mode + rhOsnapModeEnd",
-          "    rs.OsnapMode(mode)"
+          "rs.OsnapMode(mode + rhOsnapModeEnd)",
+          "#add 'End' mode while clearing the others",
+          "rs.OsnapMode(rhOsnapModeEnd)"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nrhOsnapModeEnd = 128\r\nmode = rs.OsnapMode()\r\nif not (mode & rhOSnapModeEnd):\r\n    mode = mode + rhOsnapModeEnd\r\n    rs.OsnapMode(mode)",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nrhOsnapModeEnd = 131072\r\n#add 'End' mode while keeping the ones that are already set\r\nmode = rs.OsnapMode()\r\nrs.OsnapMode(mode + rhOsnapModeEnd)\r\n#add 'End' mode while clearing the others\r\nrs.OsnapMode(rhOsnapModeEnd)",
         "SeeAlso": [
           {
             "ModuleName": "application",
@@ -1642,7 +1643,7 @@
             "FunctionName": "ProjectOsnaps"
           }
         ],
-        "DocString": "    \"\"\"Returns or sets the object snap mode. Object snaps are tools for\r\n    specifying points on existing objects\r\n    Parameters:\r\n      mode (number, optional): The object snap mode or modes to set. Object snap modes\r\n                     can be added together to set multiple modes\r\n                     0     None\r\n                     1     Near\r\n                     2     Focus\r\n                     4     Center\r\n                     8     Knot\r\n                     16    Quadrant\r\n                     32    Midpoint\r\n                     64    Intersection\r\n                     128   End\r\n                     256   Perpendicular\r\n                     512   Tangent\r\n                     1024  Point\r\n                     2048  Vertex\r\n    Returns:\r\n      number: if mode is not specified, then the current object snap mode(s)\r\n      number: if mode is specified, then the previous object snap mode(s)\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      rhOsnapModeEnd = 128\r\n      mode = rs.OsnapMode()\r\n      if not (mode & rhOSnapModeEnd):\r\n          mode = mode + rhOsnapModeEnd\r\n          rs.OsnapMode(mode)\r\n    See Also:\r\n      Osnap\r\n      OsnapDialog\r\n      ProjectOsnaps\r\n    \"\"\"",
+        "DocString": "    \"\"\"Returns or sets the object snap mode. Object snaps are tools for\r\n    specifying points on existing objects\r\n    Parameters:\r\n      mode (number, optional): The object snap mode or modes to set. Object snap modes\r\n                     can be added together to set multiple modes\r\n                     0          None\r\n                     2          Near\r\n                     8          Focus\r\n                     32         Center\r\n                     64         Vertex\r\n                     128        Knot\r\n                     512        Quadrant\r\n                     2048       Midpoint\r\n                     8192       Intersection\r\n                     131072     End\r\n                     524288     Perpendicular\r\n                     2097152    Tangent\r\n                     134217728  Point\r\n    Returns:\r\n      number: if mode is not specified, then the current object snap mode(s)\r\n      number: if mode is specified, then the previous object snap mode(s)\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      rhOsnapModeEnd = 131072\r\n      #add 'End' mode while keeping the ones that are already set\r\n      mode = rs.OsnapMode()\r\n      rs.OsnapMode(mode + rhOsnapModeEnd)\r\n      #add 'End' mode while clearing the others\r\n      rs.OsnapMode(rhOsnapModeEnd)\r\n    See Also:\r\n      Osnap\r\n      OsnapDialog\r\n      ProjectOsnaps\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
