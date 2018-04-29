@@ -78,7 +78,7 @@ What we'll do is create a special attributes object for this parameter which als
 ```cs
 public override void CreateAttributes()
 {
-  m_attributes = new MySimpleIntegerParameterAttributes(Me);
+  m_attributes = new MySimpleIntegerParameterAttributes(this);
 }
 ```
 {: #cs1 .tab-pane .fade .in .active}
