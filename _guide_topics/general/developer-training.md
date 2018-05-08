@@ -47,7 +47,7 @@ Your computer with:
 
 Developer training is free. You are responsible for paying for travel, lodging, and any other expenses.
 
-For scheduling and travel arrangements in Seattle, contact [Janet Brock](mailto:janet@mcneel.com).
+For scheduling and travel arrangements in Seattle, contact [Jody Mills](mailto:jody@mcneel.com).
 
 For scheduling and travel arrangements in Barcelona, contact [Carlos Pérez](mailto:carlos@mcneel.com).
 
