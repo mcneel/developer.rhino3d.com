@@ -92,11 +92,11 @@ Good luck!
 
 ### 3. [Script anatomy]({{ site.baseurl }}/guides/rhinopython/primer-101/3-script-anatomy/)
 
-   3.1 [Programming in Rhino]({{ site.baseurl }}/guides/rhinopython/primer-101/3-programming-in-rhino/#programming-in-rhino)    
-   3.2 [The bones]({{ site.baseurl }}/guides/rhinopython/primer-101/3-programming-in-rhino/#the-bones)  
-   3.3 [The guts]({{ site.baseurl }}/guides/rhinopython/primer-101/3-programming-in-rhino/#the-guts)  
-   3.4 [The skin]({{ site.baseurl }}/guides/rhinopython/primer-101/3-programming-in-rhino/#the-skin)  
-   3.5 [The Debugger]({{ site.baseurl }}/guides/rhinopython/primer-101/3-programming-in-rhino/#the-debugger)   
+   3.1 [Programming in Rhino]({{ site.baseurl }}/guides/rhinopython/primer-101/3-script-anatomy/#31-programming-in-rhino)    
+   3.2 [The bones]({{ site.baseurl }}/guides/rhinopython/primer-101/3-script-anatomy/#32-the-bones)  
+   3.3 [The guts]({{ site.baseurl }}/guides/rhinopython/primer-101/3-script-anatomy/#33-the-guts)  
+   3.4 [The skin]({{ site.baseurl }}/guides/rhinopython/primer-101/3-script-anatomy/#34-the-skin)  
+   3.5 [The Debugger]({{ site.baseurl }}/guides/rhinopython/primer-101/3-script-anatomy/#35-the-debugger)   
 
 </div>
 <div class="col-md-4" markdown="1">
