@@ -54,22 +54,8 @@ The RhinoCommon AddIn/Extension is required to debug your RhinoCommon plugins an
 
 #### Step-by-Step
 
-1. Launch *Visual Studio for Mac*.
-1. Navigate to *Visual Studio* > *Extensions...*...
-1. Navigate to the *Gallery* tab...
-![Extension Manager]({{ site.baseurl }}/images/installing-tools-mac-01.png)
-1. In the *Search* field, search for *rhino*.  This filters the gallery list below.
-1. Find *RhinoCommon Plugin Support* and select it.  [_Not there?_](#extension-not-in-the-gallery)
-1. Click *Install*.  The plugin should install.
-1. *IMPORTANT*: You must *Quit* and *Restart* Visual Studio for Mac.
-1. Navigate to *Visual Studio* > *Extensions..* > *Installed* tab.  Verify that *RhinoCommon Plugin Support* exists under the *Debugging* category.  If it's there, you have successfully installed the AddIn and you are *DONE*.
-
-#### Extension not in the Gallery?
-
-If, for some reason, the RhinoCommon Plugin Support extension does not appear in the Visual Studio for Mac extension gallery, you can install the [Latest release from the RhinoCommonXamarinStudioAddin project on GitHub](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases)...
-
-1. Find the *Latest release* in the [list of releases](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases).
-1. Download the *.mpack* file in the list of Downloads on that release.  For example, at the time of this writing, the *Latest release* download is entitled *RhinoXamarinStudioAddIn_7.0.0.0.mpack*.
+1. Visit the [AddIn's GitHub releases page](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases) and find the *Latest release* in the [list of releases](https://github.com/mcneel/RhinoCommonXamarinStudioAddin/releases).
+1. Download the *.mpack* file in the list of Downloads on that release.  For example, at the time of this writing, the *Latest release* download is entitled *RhinoXamarinStudioAddIn_7.4.3.1.mpack*.
 1. Launch *Visual Studio for Mac* if it not already open.
 1. Navigate to *Visual Studio* > *Extensions...*...
 1. Click the *Install from file...* button in the lower left-hand corner.
