@@ -39,3 +39,11 @@ plankton-0.4.0.zip
    `manifest.yml` file, otherwise [package restore][1] may not work
 
 [1]: {{ site.baseurl }}/guides/yak/package-restore-in-grasshopper
+
+---
+
+## Related Topics
+
+- [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
+- [The Package Manifest]({{ site.baseurl }}/guides/yak/the-package-manifest/)
+- [Yak CLI Reference]({{ site.baseurl }}/guides/yak/yak-cli-reference)

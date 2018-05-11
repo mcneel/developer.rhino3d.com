@@ -94,3 +94,11 @@ There are a few reasons why pushing a package might not work.
   _In order to prevent disruption to others who are using one of your packages,
   it's not possible to delete or overwrite versions. Roll the version number and
   let your users know that there's something new for them to try!_
+
+  ---
+
+  ## Related Topics
+
+  - [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
+  - [Creating a Grasshopper Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-grasshopper-plugin-package/)
+  - [Creating a Rhino Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)

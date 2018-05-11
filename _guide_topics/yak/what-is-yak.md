@@ -50,3 +50,12 @@ Rhino.
 Thus far Yak has been integrated into Grasshopper's "Unrecognized Objects"
 dialog, providing [package restore](../package-restore-in-grasshopper)
 functionality.
+
+---
+
+## Related Topics
+
+- [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
+- [Anatomy of a Package]({{ site.baseurl }}/guides/yak/the-anatomy-of-a-package/)
+- [The Package Manifest]({{ site.baseurl }}/guides/yak/the-package-manifest/)
+- [Yak CLI Reference]({{ site.baseurl }}/guides/yak/yak-cli-reference)

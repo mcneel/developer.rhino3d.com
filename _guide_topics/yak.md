@@ -13,9 +13,11 @@ keywords: ['rhino', 'developer']
 layout: guide-homepage
 ---
 
+
 ### Overview
 
 - [What is Yak?]({{ site.baseurl }}/guides/yak/what-is-yak)
+- [Join the Yak Discussion](https://discourse.mcneel.com/c/serengeti/yak)
 
 ### Fundamentals
 
