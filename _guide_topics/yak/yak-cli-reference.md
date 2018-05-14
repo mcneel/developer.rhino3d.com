@@ -113,3 +113,11 @@ yak uninstall <package>
 <div class="alert alert-info" role="alert">
   <strong>Note:</strong> Since 0.3, Yak will attempt to remove the package from the machine. If this isn't possible -- likely because Rhino is running -- then the package will be <em>deactivated</em> instead.
 </div>
+
+---
+
+## Related Topics
+
+- [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
+- [Anatomy of a Package]({{ site.baseurl }}/guides/yak/the-anatomy-of-a-package/)
+- [The Package Manifest]({{ site.baseurl }}/guides/yak/the-package-manifest/)
