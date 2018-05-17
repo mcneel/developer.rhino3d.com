@@ -16,9 +16,9 @@ layout: toc-guide-page
 
 ## A guide to parallel computing in Grasshopper
 
-Grasshopper in Rhino 6 includes multi-threaded solving in specific components. Benchmarks have shown that Grasshopper can be up to 20% faster when using multi-threaded components.  Results may vary as there are only specific components that can compute in parallel.
+Grasshopper for Rhino 6 provides multi-threaded solving in specific components. Benchmarks have shown that Grasshopper can be up to 20% faster when using multi-threaded components.  Results may vary as there are only specific components that can compute in parallel.
 
-The following 27 components have been modified to perform calculations using multiple threads.
+The following components have been modified to perform calculations using multiple threads.
 
 | Curve Plane Intersection | Project Curve | Pull Curve |
 | Split with Brep | Shatter | Split with Breps |
