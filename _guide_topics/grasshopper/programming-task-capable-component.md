@@ -15,12 +15,12 @@ layout: toc-guide-page
 ### Overview
 Grasshopper for Rhino 6, allows you to develop multi-threaded components by way of the new ```IGH_TaskCapableComponent``` interface. Benchmarks have shown that Grasshopper can run significantly faster when using multi-threaded components.  Results may vary, as not all solutions can be computed in parallel.
 
-###More information
+### More information
 When a component implements the ```IGH_TaskCapableComponent``` interface, Grasshopper will notice and potentially call a full enumeration of ```SolveInstance``` for the component twice in consecutive passes:
 1. The first pass is for collecting data and starting tasks to compute results
 2. The second pass is for using the results from the tasks to set outputs.
 
-###Example
+### Example
 In this guide, we will convert a standard component into a task capable component.  In our example, the initial component code looks like this:
 
 ```C#
