@@ -41,6 +41,19 @@ body {
     font-size: 14px;
 }
 
+.guide_fullwidth table, th, td {
+    border: 0px solid black;
+    padding: 2px;
+    padding-right: 5px;
+}
+
+.guide_fullwidth {
+    border-spacing: 35px;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 25px;
+}
+
 /* Search input form and search results styling */
 
 #sitesearch {
@@ -185,7 +198,7 @@ pre {
     word-wrap: normal;
 }
 pre code {
-    white-space: pre;
+    white-space: pre-wrap;
 }
 
 /*
