@@ -4,7 +4,7 @@ description: Guides to the C/C++ SDK for Rhino for Windows plugins.
 authors: unset
 author_contacts: unset
 sdk: unset
-languages: unset
+languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Unsorted']
 origin: unset

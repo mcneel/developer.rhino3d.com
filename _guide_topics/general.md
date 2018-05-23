@@ -4,7 +4,7 @@ description: Guides that apply across platforms and SDKs.
 authors: unset
 author_contacts: unset
 sdk: unset
-languages: unset
+languages: ['C/C++', 'C#', 'VB', 'Python', 'VBScript']
 platforms: ['Windows', 'Mac']
 categories: ['Unsorted']
 origin: unset
