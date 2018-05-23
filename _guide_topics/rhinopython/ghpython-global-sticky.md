@@ -19,7 +19,9 @@ With a global sticky variable all the components in a definition can access the 
 
 As an example, here is a definition that creates a simple sticky variable and passes it to another component that is not connected:
 
-<<Image of Definition>>
+
+
+![{{ site.baseurl }}/images/sticky-ghpython.png]({{ site.baseurl }}/images/sticky-ghpython.png){: .img-center width="65%"}
 
 
 ```python
