@@ -1,29 +1,34 @@
 ---
-title: Task capable components
+title: Task Capable Components
 description: A guide to programming multi-threaded components in Grasshopper
 authors: ['Steve Baer', 'Scott Davidson']
 author_contacts: ['stevebaer','scottd']
 sdk: ['Grasshopper']
-languages: ['Grasshopper']
+languages: ['C#']
 platforms: ['Windows', 'Mac']
 categories: ['Advanced']
-origin: http://www.grasshopper3d.com/forum/topics/the-why-and-how-of-data-trees
+origin:
 order: 2
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
-### Overview
-Grasshopper for Rhino 6, allows you to develop multi-threaded components by way of the new ```IGH_TaskCapableComponent``` interface. Benchmarks have shown that Grasshopper can run significantly faster when using multi-threaded components.  Results may vary, as not all solutions can be computed in parallel.
 
-### More information
-When a component implements the ```IGH_TaskCapableComponent``` interface, Grasshopper will notice and potentially call a full enumeration of ```SolveInstance``` for the component twice in consecutive passes:
+## Overview
+
+Grasshopper for Rhino 6 allows you to develop multi-threaded components by way of the new `IGH_TaskCapableComponent` interface. Benchmarks have shown that Grasshopper can run significantly faster when using multi-threaded components.  Results may vary, as not all solutions can be computed in parallel.
+
+## The Interface
+
+When a component implements the `IGH_TaskCapableComponent` interface, Grasshopper will notice and potentially call a full enumeration of `SolveInstance` for the component twice in consecutive passes:
+
 1. The first pass is for collecting data and starting tasks to compute results
-2. The second pass is for using the results from the tasks to set outputs.
+1. The second pass is for using the results from the tasks to set outputs.
 
-### Example
+## Example
+
 In this guide, we will convert a standard component into a task capable component.  In our example, the initial component code looks like this:
 
-```C#
+```cs
 public class FibonacciComponent : GH_Component
 {
   ...
@@ -67,28 +72,28 @@ public class FibonacciComponent : GH_Component
 }
 ```
 
-### Separate calculations into separate methods
+## Separate Methods
 
-Independent tasks should not be directly accessing ```IGH_DataAccess```, as that interface is not thread safe. Thus, the we will want to break the current flow of a component’s ```SolveInstance``` method into three distinct steps:
+Now you need to separate calculations into separate methods.  Independent tasks should not be directly accessing `IGH_DataAccess`, as that interface is not thread safe. Thus, the we will want to break the current flow of a component’s `SolveInstance` method into three distinct steps:
 
 1. Collect input data
 1. Compute results on given data
 1. Set output data
 
-To implement **Step 2**, we will break out the computation code into its own method. 
+To implement *Step 2*, we will break out the computation code into its own method.
 
-To start, create a public ```SolveResults``` class to hold the data for each ```SolveInstance``` iteration. For this computation, our definition of ```SolveInstance``` is very simple:
+To start, create a public `SolveResults` class to hold the data for each `SolveInstance` iteration. For this computation, our definition of `SolveInstance` is very simple:
 
-```C#
+```cs
 public class SolveResults
 {
   public int Value { get; set; }
 }
 ```
 
-Create a *Compute* function that takes the input retrieved from ```IGH_DataAccess``` and returns an instance of ```SolveResults```. 
+Create a *Compute* function that takes the input retrieved from `IGH_DataAccess` and returns an instance of `SolveResults`.
 
-```c#
+```cs
 private static SolveResults ComputeFibonacci(int n)
 {
   SolveResults result = new SolveResults();
@@ -111,24 +116,21 @@ private static SolveResults ComputeFibonacci(int n)
 }
 ```
 
-### Implement IGH_TaskCapableComponent Interface
+## Implement the Interface
 
 Now, we are ready to launch multiple tasks in the component.
 
-Change the component's inheritance from ```GH_Component``` to ```GH_TaskCapableComponent<T>```. In this example, modify the component from this:
+Change the component's inheritance from `GH_Component` to `GH_TaskCapableComponent<T>`. In this example, modify the component from this:
 
+`public class FibonacciComponent : GH_Component`
 
-```c#
-public class FibonacciComponent : GH_Component
-```
 to this:
-```c#
-public class FibonacciComponent : GH_TaskCapableComponent<FibonacciComponent.SolveResults>
-```
 
-Finally, modify ```SolveInstance``` to use tasks:
+`public class FibonacciComponent : GH_TaskCapableComponent<FibonacciComponent.SolveResults>`
 
-```C#
+Finally, modify `SolveInstance` to use tasks:
+
+```cs
 protected override void SolveInstance(IGH_DataAccess data)
 {
   const int max_steps = 46;
@@ -145,7 +147,7 @@ protected override void SolveInstance(IGH_DataAccess data)
     }
     if (steps > max_steps) // Prevent overflow...
     {
-      AddRuntimeMessage(GH_RuntimeMessageLevel.Error, $"Steps must be <= {max_steps}."");
+      AddRuntimeMessage(GH_RuntimeMessageLevel.Error, $"Steps must be <= {max_steps}.");
       return;
     }
 

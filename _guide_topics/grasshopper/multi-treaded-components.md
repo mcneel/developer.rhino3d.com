@@ -4,7 +4,7 @@ description: A guide to parallel computing in Grasshopper
 authors: ['Steve Baer', 'Scott Davidson']
 author_contacts: ['stevebaer','scottd']
 sdk: ['Grasshopper']
-languages: ['Grasshopper']
+languages: ['C#']
 platforms: ['Windows', 'Mac']
 categories: ['In Depth']
 origin:
@@ -14,7 +14,7 @@ layout: toc-guide-page
 ---
 
 
-## A guide to parallel computing in Grasshopper
+## Overview
 
 Grasshopper for Rhino 6 provides multi-threaded solving in specific components. Benchmarks have shown that Grasshopper can be up to 20% faster when using multi-threaded components.  Results may vary as there are only specific components that can compute in parallel.
 
