@@ -4,7 +4,7 @@ description: Guides to creating custom Grasshopper components and plugins.
 authors: unset
 author_contacts: unset
 sdk: unset
-languages: unset
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Unsorted']
 origin: unset

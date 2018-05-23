@@ -4,7 +4,7 @@ description: RhinoScript is a scripting tool based on Microsoft's VBScript langu
 authors: unset
 author_contacts: unset
 sdk: unset
-languages: unset
+languages: ['VBScript']
 platforms: ['Windows']
 categories: ['Unsorted']
 origin: unset

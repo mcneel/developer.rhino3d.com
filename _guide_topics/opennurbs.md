@@ -4,7 +4,7 @@ description: Read/Write Rhino 3dm files in your application.
 authors: unset
 author_contacts: unset
 sdk: unset
-languages: unset
+languages: ['C/C++']
 platforms: ['Windows', 'Mac']
 categories: ['Unsorted']
 origin: unset

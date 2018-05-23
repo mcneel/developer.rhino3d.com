@@ -12,7 +12,7 @@ layout: fullwidth-page
     <tbody>
       <tr>
         <td style="padding: 20px; text-align: center;">
-          <a href="{{ site.baseurl }}/guides/#grasshopper" title="Grasshopper Components">
+          <a href="{{ site.baseurl }}/guides/grasshopper" title="Grasshopper Components">
             <img src="{{ site.baseurl }}/images/ghcomponent-logo-intro.png" class="index_use_images">
           </a>
         </td>
@@ -79,7 +79,7 @@ layout: fullwidth-page
     <td class="index_table_primary_use">Rhino for Windows plugins</td>  
   </tr>
    <tr>
-    <td><a href="{{ site.baseurl }}/guides/#grasshopper" title="Grasshopper Component Development"> Grasshopper</a></td>
+    <td><a href="{{ site.baseurl }}/guides/grasshopper" title="Grasshopper Component Development"> Grasshopper</a></td>
 	<td><img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="{{ site.baseurl }}/images/mac-logo-small.png" alt="OS X" class="index_table_icon" title="Mac OS X"></td>
 	<td><img src="{{ site.baseurl }}/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"><img src="{{ site.baseurl }}/images/vb-logo-small.png" alt="Visual Basic" class="index_table_icon" title="Visual Basic"><img src="{{ site.baseurl }}/images/python-logo-small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
     <td class="index_table_primary_use">Grasshopper components</td>  
