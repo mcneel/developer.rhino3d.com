@@ -29,9 +29,11 @@ plankton-0.4.0.zip
 ## Important Things to Note
 
 1. Packages **must** have a top-level [`manifest.yml`](manifest.md) file
-2. Any plug-ins (`.rhp` or `.gha` files) **must** be in the top-level directory
+2. Any plug-ins (`.rhp`, `.gha`, `.ghpy` files) **must** be in the top-level directory
    so that Rhino and Grasshopper can find and load them
-2. Each package **must** have only one plug-in (`.gha` or `.rhp`)
+2. Each package **should** have only one plug-in (`.gha`, `.rhp` or `.gphy`);
+   package restore will only work for the plug-in which matches the details in
+   the `manifest.yml` file
 4. If you're packaging a `.gha` plug-in, you **should** ensure that the package
    name and version number in the `GH_AssemblyInfo` sub-class match those in the
    `manifest.yml` file, otherwise [package restore][1] may not work

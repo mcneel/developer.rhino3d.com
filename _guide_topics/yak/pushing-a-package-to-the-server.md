@@ -1,6 +1,7 @@
 ---
 # title: Creating a Grasshopper Plug-In Package
-description: This is a step by step guide to pushing a package to the Yak server.
+description: >
+  This is a step by step guide to pushing a package to the Yak server.
 authors: ['Will Pearson']
 author_contacts: ['will']
 sdk: ['Yak']
@@ -12,12 +13,10 @@ keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
-<div class="bs-callout">
-
-<strong>Note</strong>: Yak is cross-platform. Not everything is hooked up on the
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> Yak is cross-platform. Not everything is hooked up on the
 Mac side yet, however. So, for now, this guide is aimed at <strong>Windows users
 only</strong>.
-
 </div>
 
 ## Authentication
@@ -45,8 +44,8 @@ OAuth token from Rhino Accounts and has stored this on your computer.
 - Mac - `~/.mcneel/yak.yml`
 - Windows - `%APPDATA%\McNeel\yak.yml`
 
-<div class="bs-callout">
-<strong>Note</strong>: For security, the OAuth token is valid for a limited time
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> For security, the OAuth token is valid for a limited time
 only. Don't be surprised if the Yak CLI tool requires you to log in again after
 30 days or so.
 </div>
@@ -98,8 +97,8 @@ There are a few reasons why pushing a package might not work.
 
   ---
 
-## Related Topics
+  ## Related Topics
 
-- [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
-- [Creating a Grasshopper Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-grasshopper-plugin-package/)
-- [Creating a Rhino Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)
+  - [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
+  - [Creating a Grasshopper Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-grasshopper-plugin-package/)
+  - [Creating a Rhino Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)

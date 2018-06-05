@@ -1,7 +1,7 @@
 ---
-title: Creating a Grasshopper Plug-In Package
+title: Creating a Rhino Plug-In Package
 description: >
-  This is a step by step guide to creating a package for a Grasshopper plug-in.
+  This is a step by step guide to creating a package for a Rhino plug-in.
 authors: ['Will Pearson']
 author_contacts: ['will']
 sdk: ['Yak']
@@ -25,8 +25,8 @@ files that you would like to distribute in your package. Something like this...
 
 ```commandline
 C:\Users\Bozo\dist
-├── Marmoset.gha
-├── Marmoset.dll
+├── Tamarin.rhp
+├── Tamarin.dll
 └── misc\
     ├── README.md
     └── LICENSE.txt
@@ -43,45 +43,53 @@ Now, we need a `manifest.yml` file! You can easily create your own by studying
 the [reference](../the-package-manifest). Alternatively, you can use the `spec`
 command to generate a skeleton file. We'll do the latter here.
 
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> Pre-population only works for RhinoCommon plug-ins right
+now...
+</div>
+
 ```commandline
 > "C:\Program Files\Rhino WIP\System\Yak.exe" spec
 
-Inspecting content: Plankton.gha
+Inspecting content: Tamarin.rhp
 
 ---
-name: marmoset
+name: tamarin
 version: 1.0.0
 authors:
 - <author>
-description: <description>
-url: <url>
+description: An example RhinoCommon plug-in
+url: http://example.com
 secret:
-  id: c9beedb9-07ec-4974-a0a2-44670ddb17e4
+  id: 78959099-8b36-4c5d-bc57-10a6415745f6
 
 
 Saved to C:\Users\Bozo\dist\manifest.yml
 ```
 
 The `spec` command takes a look at the current directory and, if present, will
-glean useful information from the `.gha` assembly and use it generate a
-`manifest.yml` with name, version, authors, etc. pre-populated. If you haven't
+glean useful information from the `.rhp` assembly and use it generate a
+`manifest.yml` with name, version, description etc. pre-populated. If you haven't
 added this information, then placeholders will be used.
 
-<div class="alert alert-info" role="alert">
-<strong>Note:</strong> You might notice your plug-in's GUID lurking in the
-<code>secret/id</code> key. More information on how this is used can be found in
-the <a href="../package-restore-in-grasshopper">"Package Restore in Grasshopper"
-</a> guide.
-</div>
+The RhinoCommon plug-in inspector extracts the assembly attributes that you set
+when creating your plug-in. The `AssemblyInformationalVersion` attribute is used
+to populate the version field, since this attribute isn't bound to the Microsoft
+four-digit version spec and can contain a SemVer-compatible version string.
 
-Open the manifest file with your [favourite editor](http://atom.io) and fill in
+You might notice your plug-in's GUID lurking in the
+`secret/id` key. The GUID is stored in case we need to identify a
+plug-in package whose package name/version doesn't match the plug-in
+name/version.
+
+Next, open the manifest file with your [favourite editor](http://atom.io) and fill in
 the gaps.
 
 Afterwards, you should have something that looks a little like this...
 
 ```yaml
 ---
-name: marmoset
+name: tamarin
 version: 1.0.0
 authors:
 - Will Pearson
@@ -100,12 +108,12 @@ Now that we have a manifest file, we can build the package!
 
 Building package from contents of C:\Users\Bozo\dist
 
-Found manifest.yml for package: marmoset (1.0.0)
-Inspecting content: Marmoset.gha
-Creating marmoset-1.0.0.yak
+Found manifest.yml for package: tamarin (1.0.0)
+Inspecting content: Tamarin.rhp
+Creating tamarin-1.0.0.yak
 
 ---
-name: marmoset
+name: tamarin
 version: 1.0.0
 authors:
 - Will Pearson
@@ -116,15 +124,16 @@ url: example.com
 secret:
   id: c9beedb9-07ec-4974-a0a2-44670ddb17e4
 
-C:\Users\Bozo\dist\marmoset-1.0.0.yak
-├── Marmoset.dll
-├── Marmoset.gha
+C:\Users\Bozo\dist\tamarin-1.0.0.yak
+├── Tamarin.dll
+├── Tamarin.rhp
 ├── manifest.yml
-├── misc\LICENSE.txt
-└── misc\README.md
+└── misc/
+    ├── LICENSE.txt
+    └── README.md
 ```
 
-Congratulations! 🙌 You've just created a Yak package for your Grasshopper
+Congratulations! 🙌 You've just created a Yak package for your Rhino
 plug-in.
 
 ---
@@ -134,10 +143,3 @@ plug-in.
 Now that you've created a package, why not
 [push it to the Yak server](../pushing-a-package-to-the-server) to make it
 available to everyone else!
-
-## Related Topics
-
-- [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
-- [Creating a Rhino Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)
-- [Installing and Managing Packages]({{ site.baseurl }}/guides/yak/installing-and-managing-packages/)
-- [Package Restore in Grasshopper]({{ site.baseurl }}/guides/yak/package-restore-in-grasshopper/)
