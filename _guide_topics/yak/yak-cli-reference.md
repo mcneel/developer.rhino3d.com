@@ -111,9 +111,23 @@ Uninstalls a package.
 ```commandline
 yak uninstall <package>
 ```
-<div class="alert alert-info" role="alert">
+<!-- deactivation fallback removed in v0.6-->
+<!-- <div class="alert alert-info" role="alert">
   <strong>Note:</strong> Since 0.3, Yak will attempt to remove the package from the machine. If this isn't possible -- likely because Rhino is running -- then the package will be <em>deactivated</em> instead.
-</div>
+</div> -->
+
+## Yank
+
+_Since 0.6_
+
+Removes a version from the package index.
+
+```commandline
+yak yank <package> <version>
+```
+
+Yanked versions do not appear in searches but can still be installed if the
+exact package version is known. To all intents and purposes they are hidden.
 
 ---
 
