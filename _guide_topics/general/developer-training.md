@@ -40,8 +40,8 @@ Your computer with:
   * The [RhinoCommon Templates](({{ site.baseurl }}/guides/rhinocommon/what-is-rhinocommon/).
   * _Note, the Express Editions of Visual Studio 2010, 2012, 2013, 2015, and 2017 **will** work._
 
-  * Your Rhino plugin project source code.
-  * Any software you will need to test your plugin, including copies of your own software.
+* Your Rhino plugin project source code.
+* Any software you will need to test your plugin, including copies of your own software.
 
 ## Pricing and scheduling
 
