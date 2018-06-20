@@ -37,7 +37,7 @@ Your computer with:
 * RhinoCommon SDK:
   * Microsoft Visual Studio 2017 for Rhino 6; or
   * Microsoft Visual Studio for Mac (for Mac plugin development).
-  * The [RhinoCommon Templates](({{ site.baseurl }}/guides/rhinocommon/installing-tools-windows/).
+  * The [RhinoCommon Templates]({{ site.baseurl }}/guides/rhinocommon/installing-tools-windows/).
   * _Note, the Express Editions of Visual Studio 2010, 2012, 2013, 2015, and 2017 **will** work._
 
 * Your Rhino plugin project source code.
