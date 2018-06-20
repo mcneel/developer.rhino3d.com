@@ -32,7 +32,7 @@ Your computer with:
 * Rhino C++ SDK:
   * Microsoft Visual Studio 2017 for Rhino 6
   * The [Rhino C++ SDK]({{ site.baseurl }}/guides/cpp/installing-tools-windows/).
-  * _Note, Visual Studio 2008, 2012, 2013, and 2015 **will not** work._
+  * _Note, Visual Studio 2010, 2012, 2013, and 2015 **will not** work._
 
 * RhinoCommon SDK:
   * Microsoft Visual Studio 2017 for Rhino 6; or
