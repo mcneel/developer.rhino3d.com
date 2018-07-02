@@ -26,7 +26,7 @@ rs.MessageBox ("Hello World")
 To test the Script:
 
 - Start Rhino
-- At the command prompt, type EditScript and press Enter.
+- At the command prompt, type EditPythonScript and press Enter.
 - The Edit Script dialog box appears.
 - In the script Code window, type the code sample above.
 - Click the "Run the script" button.
@@ -45,7 +45,7 @@ Here's what the function definition looks like:
 ```python
 import rhinoscriptsyntax as rs
 
-def HelloWorld()
+def HelloWorld():
     rs.MessageBox ("Hello World")
 ```
 
@@ -68,7 +68,7 @@ In Python the functions definitions need to come before being called in the code
 ```python
 import rhinoscriptsyntax as rs
 
-def HelloWorld()
+def HelloWorld():
     rs.MessageBox ("Hello World")
 
 HelloWorld()
@@ -79,15 +79,12 @@ When you do more than write a couple lines of script, it becomes necessary to sa
 
 #### To save your script:
 
-In the Edit Script dialog box, Click the Save button. Save the file as "Hello World.rvb".
+In the Edit Script dialog box, Click the Save button. Save the file as "Hello World.py".
 
-#### Running HelloWorld.rvb
+#### Running HelloWorld.py
 
-- At the Command prompt, type LoadScript and press Enter.
-- In the Load Scrip Filet dialog box, click Add...
-- Select "Hello World.rvb" and click Open.
-- In the Select Script File list, select "Hello World.rvb".
-- Click Load.
+- At the Command prompt, type RunPythonScript and press Enter.
+- In the Run python script dialog box, select "Hello World.py" and click Open.
 
 Your script will run, and display the familiar "Hello World" dialog box.
 
