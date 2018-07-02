@@ -62,7 +62,7 @@ static bool WriteCurveFile(FILE* fp, const ON_Curve* curve)
 ```cpp
 static bool ReadCurveFile(FILE* fp, ON_Curve*& curve)
 {
-  if (nullptr == fp || nullptr == curve)
+  if (nullptr == fp)
     return false;
 
   ON_BinaryFile archive(ON::archive_mode::read3dm, fp);
