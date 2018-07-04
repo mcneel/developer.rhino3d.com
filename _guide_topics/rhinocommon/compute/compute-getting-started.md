@@ -24,13 +24,24 @@ This guide presumes you have an:
 - [Rhino for Windows](http://www.rhino3d.com/download)
 - One of the IDEs from [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
   - [Visual Studio Code 2017](https://code.visualstudio.com/?wt.mc_id=DX_841432) - Free, Open Source.
-  - [Visual Studio 2017](https://visualstudio.microsoft.com/vs/whatsnew/)
+  - Or, [Visual Studio 2017](https://visualstudio.microsoft.com/vs/whatsnew/)
 - Internet Access
 
-**note:** It is recommended that you install the *Typical* installation.  Depending on your internet connection, this can take minutes or hours.  When successfully installed, click the *Launch* button.
+**note:** It is recommended that you install the *Typical* installation.
 
 ---
-### File New
+
+## Setting up a Compute Project in Visual Studio
+
+There are a few tools which are essential to communicate with the Compute server. These include:
+
+- [Rhino3dmIO.dll](https://www.nuget.org/packages/Rhino3dmIO.Desktop) -  The Dotnet wrapper for [OpenNurbs](https://developer.rhino3d.com/guides/opennurbs/) which contains the functions to read and write Rhino Geometry Objects. This is available as a Nuget package.
+- [NewtonSoft.JSON](https://www.nuget.org/packages/Newtonsoft.Json/) - The very popular JSON library.  Compute communicates using a JSON format in the body of a REST POST. This is available as a Nuget Package. This package is called directly by RHinoCompute.cs.
+- [RhinoCompute.cs](https://compute.rhino3d.com/sdk/csharp) - This is a work in progress package which is meant to add classes available in RhinoCommon, but not available through Rhino3dmIO. RhinoCompute makes calls into RhinoCompute for these functions.
+
+Here are step by step instructions to setting up a basic project to use Compute:
+
+#### File New
 
 1. If you have not done so already, *launch Visual Studio* (for the purposes of this guide, we are using Visual Studio 2017 Community Edition and C#).
 1. Navigate to *File* > *New* > *Project*...
@@ -43,7 +54,7 @@ This guide presumes you have an:
 1. For the purposes of this guide, we will *accept the defaults* and click *Finish*...
 1. A *new solution* called *HelloRhinoCommon* should open...
 
-### Steps to install the NuGet packages
+#### Steps to install the NuGet packages
 
 1. *Right-click* your project file in *Solution Explorer* and select *Manage NuGet Packages ...*.
 1. On the left side of the dialog expand the *Online* option and select *nuget.org*.
@@ -57,20 +68,87 @@ Changes that were made:
 - The project references the *Rhino3dmIO* and *Newtonsoft.JSON* assembly.
 - The project's *Post-build event* has been modified so the *rhino3dmio_native.dll* and newtonsoftljson.dll* gets copied to the same output directory as *TestCompute.exe* when the project is built.
 
-### Include RhinoCompute.cs in the project
+#### Include RhinoCompute.cs in the project
+
+RhinoCompute.cs is a the package which adds the methods to call into the compute server.  It is organized similar to RhinoCommon calls.
 
 1. Download the [RhinoCompute.cs source file](https://compute.rhino3d.com/sdk/csharp) from compute.rhino3d.com into the project folder.
 2. Using the *Project* pulldown > *Add Existing Item...*
-3. Select the [RhinoCompute.cs source file](https://compute.rhino3d.com/sdk/csharp) in the project folder.
+3. Select the [RhinoCompute.cs source file](https://compute.rhino3d.com/sdk/csharp) to add it to the project.
 
 Changes that were made:
 
 - The [RhinoCompute.cs source file](https://compute.rhino3d.com/sdk/csharp) are installed in your project.
-- The [RhinoCompute.cs source file](https://compute.rhino3d.com/sdk/csharp) helper functiosn are available to the project.
+- The [RhinoCompute.cs source file](https://compute.rhino3d.com/sdk/csharp) helper functions are available to the project.
 
-## The TestCompute
+## The first use of Compute
 
-The testcompute app will take to circles, send them to the compute server and receive back the intersection of those two circles.  Then the code will output an SVG of the result.
+As a place to start, a simple console app shows the standard workflow using Compute. This is the simplest example of using Rhino3DMio locally to read, write and create Rhino geometry.  Then use compute to handle a function that does not exist in Rhino3DMio.
+
+```C#
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Rhino.Compute;
+
+namespace TestCompute
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ComputeServer.ApiToken = "scottd@mcneel.com";
+
+            // Uses standard Rhino3dmIO methods locally to create a sphere.
+            var sphere = new Rhino.Geometry.Sphere(Rhino.Geometry.Point3d.Origin, 12);
+            var sphereAsBrep = sphere.ToBrep();
+
+            // the following function calls compute.rhino3d.com to get access to something not
+            // available in Rhino3dmIO. In this case send a Brep to Compute and get a Mesh back.
+            var meshes = MeshCompute.CreateFromBrep(sphereAsBrep);
+
+            // Use regular Rhino3dmIO local calls to count the vertices in the mesh.
+            Console.WriteLine($"Got {meshes.Length} meshes");
+            for (int i = 0; i < meshes.Length; i++)
+            {
+                Console.WriteLine($"  {i + 1} mesh has {meshes[i].Vertices.Count} vertices");
+            }
+
+            Console.WriteLine("press any key to exit");
+            Console.ReadKey();
+        }
+    }
+}
+```
+{: .line-numbers}
+
+This example above first creates a sphere using Rhino3DMio locally. Then request Compute to mesh that BREP to Compute, the BREP sphere is meshed. Compute then returns the mesh.  Finally using the local Rhino3DMio package to walk through the mesh, the vertices are counted.
+
+<table>
+<tr>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>5</td>
+<td>Include the Rhino.Compute Assembly from the RhinoCompute.cs Package.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>All calls to the Compute Server must be accompanied by a token. At this time your email is correct token to use.  This is sent with each RhinoCompute.cs Posts.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Here the OpenNurbs Brep sphere is sent to Compute to convert to a mesh.  The Mesh is returned as a OpenNurbs Mesh.</td>
+</tr>
+</table>
+{: .multiline}
+
+
+## Seeing the results of Compute
+
+Many times the intersection of objects may need to be calculated. Intersections are not in OpenNurbs, but are part of Compute. Here is a tutorial on creating two circles, finding their intersection, then converting the circles to an SVG image to display.
 
 ```C#
 using System.Collections.Generic;
@@ -205,15 +283,15 @@ namespace CircleIntersection
     }
 }
 ```
-{:.line-numbers}
 
 ---
 
 ## Next Steps
 
-*Congratulations!*  You have the tools to build a RhinoCommon plugin for Rhino for Windows.  *Now what?*
+*Congratulations!*  You have the tools to use [Rhino Compute server](https://www.rhino3d.com/compute).  *Now what?*
 
-Check out the [Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-windows) guide for instructions building - your guessed it - your first plugin.
+1. See a list of the [2400+ API calls](https://compute.rhino3d.com/sdk) available for compute.rhino3d.com.
+1. Download the [Compute Samples repo from GitHub](https://github.com/mcneel/compute.rhino3d.samples).
 
 ---
 

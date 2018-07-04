@@ -16,38 +16,22 @@ layout: toc-guide-page
 
 ## Overview
 
-RhinoCommon supports a build "flavor" that allows it to be a .NET SDK for the openNURBS library.  This allows you to write .NET applications that can read/write the *.3dm* file format and since you have access to the full source debug down to every little piece of code.
+Rhino3dmIO is a .NET interface into the [OpenNURBS library](({{ site.baseurl }}/guides/opennurbs/what-is-opennurbs)).  This allows you to write .NET applications that can create and manipulate OpenNURBS Geometry.  The library also includes a full set of tools to read/write the *.3dm* file format.  And being OpenSource, you have access to the full source debug down to every little piece of code.
+
+There are two ways to use the Rhino3dmIO library. Install the Rhino3dmIO NuGet package into your project for the easiest access.  Or, compile the libraries from the source code for maximum flexibility.
 
 <div class="bs-callout bs-callout-danger">
   <h4>WARNING</h4>
   <p>This is NOT meant for any Rhino plugin development.  You should only be using Rhino3dmIO if you are attempting to read/write 3dm files from an application other than Rhino!</p>
 </div>
 
-When built for openNURBS, RhinoCommon compiles will consist of two dynamic libraries:
-
-1. *Rhino3dmIO.DLL* (C# DLL which .NET applications would reference)
-1. *rhino3dmio_native.DLL* (Native C++ DLL which includes all of the opennurbs library; this file is called *libopennurbs.dylib* on macOS)
-
-*Rhino3dmIO.DLL* uses pInvoke to call C functions exported from *rhino3dmio_native.DLL* in order to do most of the "heavy lifting" in openNURBS.  On Windows, make sure that both of these DLLs are in the same directory when used as a reference in your .NET application.
-
 ---
 
-## Windows
+## Accessing the Nuget Package
 
-There are two ways to use the Rhino3dmIO library.  You can either compile from the source code for maximum flexibility or you can install the Rhino3dmIO NuGet package into your project for simplicity.
+This is the most common and recommended method to access Rhino3DMio.
 
-### Steps to compile from source
-
-<div class="bs-callout bs-callout-danger">
-  <h4>NOTE</h4>
-  <p>Currently, the only tested and supported compiled for the following process is Visual Studio 2010</p>
-</div>
-
-1. Clone or download all of the source code for the [RhinoCommon project](https://github.com/mcneel/rhinocommon).
-1. Download the [OpenNURBS C++ toolkit](http://www.rhino3d.com/opennurbs).  Unzip the source code and place it in the folder titled *opennurbs*.  This is located in the RhinoCommon project under *rhinocommon/c/opennurbs*.
-1. Open the *Rhino3dmIO.sln* in Visual Studio 2010.  This solution contains the C# and C++ projects needed along with sample C# console applications for testing.  You should now be able to compile and test the samples.
-
-### Steps to install the NuGet package
+#### Nuget package using Visual Studio 2017 for Windows
 
 1. Install the NuGet package manager, if you haven't already, by following [these instructions](http://docs.nuget.org/docs/start-here/installing-nuget).
 1. *Right-click* your project file in *Solution Explorer* and select *Manage NuGet Packages ...*.
@@ -61,16 +45,35 @@ Changes that were made:
 - The project references the *Rhino3dmIO* assembly.
 - The project's *Post-build event* has been modified so the *rhino3dmio_native.dll* gets copied to the same output directory as *Rhino3dmIO.dll* when the project is built.
 
----
 
-## Mac
+
+#### Nuget package using Xamarin Studio 4.2.5 for Mac
 
 <div class="bs-callout bs-callout-danger">
   <h4>NOTE</h4>
   <p>The following process has been tested with Xamarin Studio 4.2.5 and Xcode 5.1.1. You will need to have both Xamarin Studio and Xcode installed.</p>
 </div>
 
-### Steps to compile from source
+---
+
+## Compiling Rhino3DMio from the source
+
+For situations that the Nuget Package will not work, the sources is also available to download.
+
+#### Steps to compile in Visual Studio 2017 for Windows
+
+<div class="bs-callout bs-callout-danger">
+  <h4>NOTE</h4>
+  <p>Currently, the only tested and supported compiled for the following process is Visual Studio 2017</p>
+</div>
+
+1. Clone or download all of the source code for the [RhinoCommon project](https://github.com/mcneel/rhinocommon).
+1. Download the [OpenNURBS C++ toolkit](http://www.rhino3d.com/opennurbs).  Unzip the source code and place it in the folder titled *opennurbs*.  This is located in the RhinoCommon project under *rhinocommon/c/opennurbs*.
+1. Open the *Rhino3dmIO.sln* in Visual Studio 2010.  This solution contains the C# and C++ projects needed along with sample C# console applications for testing.  You should now be able to compile and test the samples.
+
+
+#### Steps to compile using Xamarin Studio 4.2.5 for Mac
+
 
 1. Clone or download all of the source code for the [RhinoCommon project](https://github.com/mcneel/rhinocommon).
 1. Download the [OpenNURBS C++ toolkit](http://www.rhino3d.com/opennurbs).  Unzip the source code and place it in the folder titled *opennurbs*.  This is located in the RhinoCommon project under *rhinocommon/c/opennurbs*.
