@@ -27,7 +27,7 @@ All layers have a layer id field, returned by `ON_Layer::Id()`, that uniquely id
 The following sample demonstrates how to add a parent layer then then add a child layer to that parent.
 
 ```cpp
-CRhinoCommand::result CCommandTest::RunCommand( const CRhinoCommandContext& context )
+CRhinoCommand::result CCommandTest::RunCommand(const CRhinoCommandContext& context)
 {
   CRhinoLayerTable& layer_table = context.m_doc.m_layer_table;
 
