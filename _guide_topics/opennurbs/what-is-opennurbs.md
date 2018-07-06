@@ -13,7 +13,6 @@ keywords: ['openNURBS', 'overview']
 layout: toc-guide-page
 ---
 
-
 ## Overview
 
 The openNURBS Initiative provides CAD, CAM, CAE, and computer graphics software developers the tools to accurately transfer 3-D geometry between applications.
@@ -35,8 +34,7 @@ The openNURBS Toolkit is intended for C++ and .NET programmers.  The toolkit inc
 
 The tools provided by openNURBS include:
 
-- [Rhino3dmIO .NET Tookit]({{ site.baseurl }}/guides/opennurbs/what-is-rhino3dmio) .NET Package distributed as a Nuget package.  This contains assemblies to create and interpret OpenNurbs geometry.  Also, use this to read/write the Rhino 3DM file format.
-- [Rhino3dmIO .NET SDK source](https://github.com/mcneel/rhinocommon/wiki/Rhino3dmIO-Toolkit-(OpenNURBS-build)) - a .NET wrapper around OpenNurbs.
+- [Rhino3dmIO .NET Tookit]({{ site.baseurl }}/guides/opennurbs/what-is-rhino3dmio) .NET Package distributed as a NuGet package.  This contains assemblies to create and interpret OpenNurbs geometry.  Also, use this to read/write the Rhino 3DM file format.
 - [openNURBS C++ source SDK](https://www.rhino3d.com/download/openNURBS/6/release) - the original cross platform SDK.
 - [Sample 3D files](http://download.rhino3d.com/openNURBS/6/opennurbs6samples)
 - Quality assurance and revision control.

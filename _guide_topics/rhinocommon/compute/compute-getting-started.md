@@ -16,8 +16,6 @@ layout: toc-guide-page
 
 By the end of this guide, you should have all the tools installed necessary for using the [Rhino Compute Service](https://www.rhino3d.com/compute).
 
-## Prerequisites
-
 This guide presumes you have an:
 
 - A PC running Microsoft Windows 7 or later.
@@ -25,7 +23,6 @@ This guide presumes you have an:
 - One of the IDEs from [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
   - [Visual Studio Code 2017](https://code.visualstudio.com/?wt.mc_id=DX_841432) - Free, Open Source.
   - Or, [Visual Studio 2017](https://visualstudio.microsoft.com/vs/whatsnew/)
-- Internet Access
 
 **note:** It is recommended that you install the *Typical* installation.
 
@@ -35,8 +32,8 @@ This guide presumes you have an:
 
 There are a few tools which are essential to communicate with the Compute server. These include:
 
-- [Rhino3dmIO.dll](https://www.nuget.org/packages/Rhino3dmIO.Desktop) -  The Dotnet wrapper for [OpenNurbs](https://developer.rhino3d.com/guides/opennurbs/) which contains the functions to read and write Rhino Geometry Objects. This is available as a Nuget package.
-- [NewtonSoft.JSON](https://www.nuget.org/packages/Newtonsoft.Json/) - The very popular JSON library.  Compute communicates using a JSON format in the body of a REST POST. This is available as a Nuget Package. This package is called directly by RHinoCompute.cs.
+- [Rhino3dmIO.Desktop](https://www.nuget.org/packages/Rhino3dmIO.Desktop) -  The Dotnet wrapper for [OpenNurbs](https://developer.rhino3d.com/guides/opennurbs/) which contains the functions to read and write Rhino Geometry Objects. This is available as a NuGet package.
+- [NewtonSoft.JSON](https://www.nuget.org/packages/Newtonsoft.Json/) - The very popular JSON library.  Compute communicates using a JSON format in the body of a REST POST. This is available as a NuGet Package. This package is called directly by RHinoCompute.cs.
 - [RhinoCompute.cs](https://compute.rhino3d.com/sdk/csharp) - This is a work in progress package which is meant to add classes available in RhinoCommon, but not available through Rhino3dmIO. RhinoCompute makes calls into RhinoCompute for these functions.
 
 Here are step by step instructions to setting up a basic project to use Compute:
@@ -58,15 +55,15 @@ Here are step by step instructions to setting up a basic project to use Compute:
 
 1. *Right-click* your project file in *Solution Explorer* and select *Manage NuGet Packages ...*.
 1. On the left side of the dialog expand the *Online* option and select *nuget.org*.
-1. In the top right search box type "Rhino3dmIO" and click on a *Rhino3dmIO.dll* option (there are 3: *x86*, *x64*, and *AnyCPU*) and click on the *Install* button.
+1. In the top right search box type "Rhino3dmIO" and click on a *Rhino3dmIO.Desktop* option (there are 3: Rhino3dmIO.Desktop (Windows/macOS), Rhino3dmIO.iOS and Rhino3dmIO.Android) and click on the *Install* button.
 1. Continue by typing in the search box type "Newtonsoft.JSON" and click on a *NewtonSoft.JSON* option and click on the *Install* button.
 1. Close the *Manage NuGet Packages* dialog.  The Nuget packages are installed and ready to use.
 
 Changes that were made:
 
-- The *Rhino3dmIO and NewtonSoft.JSON NuGet packages* are installed in your project.
-- The project references the *Rhino3dmIO* and *Newtonsoft.JSON* assembly.
-- The project's *Post-build event* has been modified so the *rhino3dmio_native.dll* and newtonsoftljson.dll* gets copied to the same output directory as *TestCompute.exe* when the project is built.
+- The *Rhino3dmIO.Desktop and NewtonSoft.JSON NuGet packages* are installed in your project.
+- The project references the *Rhino3dmIO.Desktop* and *Newtonsoft.JSON* assembly.
+
 
 #### Include RhinoCompute.cs in the project
 
