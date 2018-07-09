@@ -1,5 +1,5 @@
 ---
-title: What is Yak?
+title: What is Yak?(Work in Progress)
 description: This guide introduces the Yak package manager.
 authors: ['Will Pearson']
 author_contacts: ['will']
@@ -30,9 +30,24 @@ Not wanting to reinvent the wheel, we've taken inspiration from Linux and the so
 
 ## Server
 
-The package server is the heart of the system. It can be hosted almost anywhere
-and keeps the packages organised for its clients – the command line tool and
-Rhino (via integrations).
+The package server is the heart of the system. Once packages are created, they must be posted up to a package server.
+
+McNeel & Associates hosts a public package server which is available worldwide. This is the best option to post plugins to the public. The rest of the guides cover using the public server.
+
+In the future a private package server can be hosted almost anywhere and keeps the packages organized for its clients – the command line tool and Rhino (via integrations). We would like to hear of any requests for future Yak feature on the [Yak Forum](https://discourse.mcneel.com/c/serengeti/yak).
+
+## Integrations
+
+To see how the package manager provides direct access to the package ecosystem from inside of Rhino there are two current integrations.
+
+Thus far Yak has been integrated into Grasshopper's "Unrecognized Objects"
+dialog, providing [package restore](../package-restore-in-grasshopper) functionality when Grasshopper reads and unknown component from a file.  This will allow the proper plugin to be loaded to run any definition.
+
+![Package restore can still operate when the plug-in name doesn't match the package]({{ site.baseurl }}/images/yak-gh-restore-guid.gif)
+
+As a In Rhino 6 there is also a test command of a prototype interface:
+
+![TestPackageManager in Rhino 6 brings up the interface.]({{ site.baseurl }}/images/testpackagemanager-wip.jpg)![Test Package Manager]
 
 ## Command Line Tool
 
@@ -40,16 +55,6 @@ The command line tool provides a basic interface but with full functionality.
 It is modelled on well known domain-specific package managers such as Ruby's
 `gem` and Python's `pip`. It communicates with the server as well as hooking
 into Rhino Accounts for authentication.
-
-## Integrations
-
-Built on top of the same code that is used by the command line tool,
-integrations provide direct access to the package ecosystem from inside of
-Rhino.
-
-Thus far Yak has been integrated into Grasshopper's "Unrecognized Objects"
-dialog, providing [package restore](../package-restore-in-grasshopper)
-functionality.
 
 ---
 

@@ -73,10 +73,3 @@ At any point you can check which packages are currently installed.
 marmoset (1.0.0)
 ```
 
----
-
-## Related Topics
-
-- [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
-- [Creating a Grasshopper Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-grasshopper-plugin-package/)
-- [Creating a Rhino Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)

@@ -68,7 +68,7 @@ name: plankton
 
 ### Version
 
-The version string given to the package, adhering strictly to [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html). We've adopted SemVer to make ordering straightforward and also for easy identification of pre-release versions – handy when releasing beta plug-ins for limited testing!
+The version string given to the package, adhering strictly to [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html). We've adopted SemVer to make ordering straightforward and also for easy identification of pre-release versions – handy when releasing beta plug-ins for limited testing! 
 
 Partial version numbers are expanded to the full `major.minor.patch` by the server, e.g. `0.1 -> 0.1.0`.
 
@@ -76,15 +76,26 @@ Partial version numbers are expanded to the full `major.minor.patch` by the serv
 version: 0.3.4
 ```
 
+For specific questions about versioning, please direct those to the [Yak Forum](https://discourse.mcneel.com/c/serengeti/yak)
+
 ### Authors
 
-A list of authors of the package.
+A list of author(s) of the package.
 
 ```yaml
 authors:
   - Daniel Piker
   - Will Pearson
 ```
+
+Being a YAML format, a single author would look have this syntax:
+
+```yaml
+authors:
+  - Will Pearson
+```
+
+
 
 ### Description
 
@@ -122,7 +133,7 @@ You should specify a license for your package so that people know how they are p
 
 ### URL
 
-A webpage for the package.
+A webpage for the package. This can be any URL that may be used by customer for contact information, forums, tutorials or any other information about the plugin.
 
 <!-- NOTE: I'm thinking that, where this is a github repository, there is the possibility to build direct from HEAD. -->
 
@@ -144,12 +155,12 @@ dependencies:
   - name: plankton
     spec: "< 0.4.0, >= 0.3.0"
   - name: package_without_spec
-``` -->
+​``` -->
 
 
 <!--## Alternative (JSON)
 
-```json
+​```json
 {
   "name": "plankton",
   "version": "0.3.4",
@@ -165,7 +176,7 @@ dependencies:
   "url": "https://github.com/meshmash/Plankton",
   "type": "gh-plugin"
 }
-``` -->
+​``` -->
 
 ---
 
@@ -174,3 +185,5 @@ dependencies:
 - [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
 - [Anatomy of a Package]({{ site.baseurl }}/guides/yak/the-anatomy-of-a-package/)
 - [Yak CLI Reference]({{ site.baseurl }}/guides/yak/yak-cli-reference)
+
+```

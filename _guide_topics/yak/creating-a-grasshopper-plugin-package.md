@@ -40,7 +40,7 @@ Prompt and navigate to the directory above.
 ```
 
 Now, we need a `manifest.yml` file! You can easily create your own by studying
-the [reference](../the-package-manifest). Alternatively, you can use the `spec`
+the [Manifest Reference Guide](../the-package-manifest). Alternatively, you can use the `spec`
 command to generate a skeleton file. We'll do the latter here.
 
 ```commandline
@@ -134,10 +134,3 @@ plug-in.
 Now that you've created a package, why not
 [push it to the Yak server](../pushing-a-package-to-the-server) to make it
 available to everyone else!
-
-## Related Topics
-
-- [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
-- [Creating a Rhino Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)
-- [Installing and Managing Packages]({{ site.baseurl }}/guides/yak/installing-and-managing-packages/)
-- [Package Restore in Grasshopper]({{ site.baseurl }}/guides/yak/package-restore-in-grasshopper/)

@@ -40,7 +40,7 @@ Prompt and navigate to the directory above.
 ```
 
 Now, we need a `manifest.yml` file! You can easily create your own by studying
-the [reference](../the-package-manifest). Alternatively, you can use the `spec`
+the [Manifest Reference Guide](../the-package-manifest). Alternatively, you can use the `spec`
 command to generate a skeleton file. We'll do the latter here.
 
 <div class="alert alert-info" role="alert">
