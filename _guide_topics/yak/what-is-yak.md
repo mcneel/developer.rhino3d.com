@@ -25,8 +25,8 @@ Yak has several goals.
 Not wanting to reinvent the wheel, we've taken inspiration from Linux and the software development world. The package management system can be broken down into three main areas.
 
 1. [Server](#server)
-2. [Command line tool](#command-line-tool)
-3. [Integrations](#integrations)
+2. [Integrations](#integrations)
+3. [Command line tool](#command-line-tool)
 
 ## Server
 
@@ -47,7 +47,7 @@ dialog, providing [package restore](../package-restore-in-grasshopper) functiona
 
 As a In Rhino 6 there is also a test command of a prototype interface:
 
-![TestPackageManager in Rhino 6 brings up the interface.]({{ site.baseurl }}/images/testpackagemanager-wip.jpg)![Test Package Manager]
+![TestPackageManager in Rhino 6 brings up the interface.]({{ site.baseurl }}/images/testpackagemanager-wip.jpg)
 
 ## Command Line Tool
 
