@@ -12,7 +12,7 @@ keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
-The Yak console application is included in the Rhinoceros 6 System folder.  On Windows this is normally this is located in `C:\Program Files\Rhino 6\System` folder. 
+The Yak command line tool is included with Rhino 6. On Windows the tool is located at `C:\Program Files\Rhino 6\System\yak.exe`.
 
 ## Build
 
@@ -130,4 +130,3 @@ yak yank <package> <version>
 
 Yanked versions do not appear in searches but can still be installed if the
 exact package version is known. To all intents and purposes they are hidden.
-

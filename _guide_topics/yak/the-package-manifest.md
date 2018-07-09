@@ -68,7 +68,7 @@ name: plankton
 
 ### Version
 
-The version string given to the package, adhering strictly to [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html). We've adopted SemVer to make ordering straightforward and also for easy identification of pre-release versions – handy when releasing beta plug-ins for limited testing! 
+The version string given to the package, adhering strictly to [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html). We've adopted SemVer to make ordering straightforward and also for easy identification of pre-release versions – handy when releasing beta plug-ins for limited testing!
 
 Partial version numbers are expanded to the full `major.minor.patch` by the server, e.g. `0.1 -> 0.1.0`.
 
@@ -85,17 +85,9 @@ A list of author(s) of the package.
 ```yaml
 authors:
   - Daniel Piker
+  # list additional package authors below
   - Will Pearson
 ```
-
-Being a YAML format, a single author would look have this syntax:
-
-```yaml
-authors:
-  - Will Pearson
-```
-
-
 
 ### Description
 
@@ -133,7 +125,7 @@ You should specify a license for your package so that people know how they are p
 
 ### URL
 
-A webpage for the package. This can be any URL that may be used by customer for contact information, forums, tutorials or any other information about the plugin.
+A webpage for the package. This can be any URL i.e. author contact info, forums, tutorials or any other information about the plugin.
 
 <!-- NOTE: I'm thinking that, where this is a github repository, there is the possibility to build direct from HEAD. -->
 
