@@ -25,7 +25,7 @@ Before you can push a package to the server, you need to authorize the Yak CLI
 tool using your Rhino Account.
 
 ```commandline
-> "C:\Program Files\Rhino WIP\System\Yak.exe" login
+> "C:\Program Files\Rhino 6\System\Yak.exe" login
 ```
 
 A browser tab should open asking you to log in to Rhino Accounts (assuming you
@@ -57,7 +57,7 @@ use the package created in the
 [previous guide](../creating-a-grasshopper-plugin-package) as an example.
 
 ```commandline
-> "C:\Program Files\Rhino WIP\System\Yak.exe" push marmoset-1.0.0.yak
+> "C:\Program Files\Rhino 6\System\Yak.exe" push marmoset-1.0.0.yak
 ```
 
 Currently (v0.2), this command doesn't produce any output on success.
@@ -67,7 +67,7 @@ it. You should see the name and version number of the package that you just
 pushed. 🤞
 
 ```commandline
-> "C:\Program Files\Rhino WIP\System\Yak.exe" search marmoset
+> "C:\Program Files\Rhino 6\System\Yak.exe" search --all --prerelease marmoset
 
 marmoset (1.0.0)
 ```

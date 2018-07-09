@@ -49,7 +49,7 @@ now...
 </div>
 
 ```commandline
-> "C:\Program Files\Rhino WIP\System\Yak.exe" spec
+> "C:\Program Files\Rhino 6\System\Yak.exe" spec
 
 Inspecting content: Tamarin.rhp
 
@@ -104,7 +104,7 @@ secret:
 Now that we have a manifest file, we can build the package!
 
 ```commandline
-> "C:\Program Files\Rhino WIP\System\Yak.exe" build
+> "C:\Program Files\Rhino 6\System\Yak.exe" build
 
 Building package from contents of C:\Users\Bozo\dist
 
