@@ -24,7 +24,7 @@ You can find samples that demonstrate how to create options pages in the [Develo
 
 ## Details
 
-When writing options pages, it is important to remember that the page should initialize its content when activated, apply its changes when notified and optionally prvoide cancel support.
+When writing options pages, it is important to remember that the page should initialize its content when activated, apply its changes when notified and optionally provide cancel support.
 
 #### Content Initialization
 
