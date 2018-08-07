@@ -252,6 +252,7 @@ Inside our implementation of the `Render()` method, we need to draw the wires co
 
 ```cs
 protected override void Render(GH_Canvas canvas, Graphics graphics, GH_CanvasChannel channel)
+{
   // Render all the wires that connect the Owner to all its Sources.
   if (channel == GH_CanvasChannel.Wires)
   {
@@ -329,7 +330,6 @@ protected override void Render(GH_Canvas canvas, Graphics graphics, GH_CanvasCha
 
 ```vbnet
 Protected Overrides Sub Render(ByVal canvas As GH_Canvas, ByVal graphics As Graphics, ByVal channel As GH_CanvasChannel)
-{
   'Render all the wires that connect the Owner to all its Sources.
   If (channel = GH_CanvasChannel.Wires) Then
     RenderIncomingWires(canvas.Painter, Owner.Sources, Owner.WireDisplay)
