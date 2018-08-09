@@ -10,6 +10,7 @@ before_script:
 - chmod 600 script/.ssh/bozo
 - eval `ssh-agent -s`
 - ssh-add script/.ssh/bozo
+- git submodule foreach git lfs pull
 notifications:
   slack:
     rooms:
