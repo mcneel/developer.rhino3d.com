@@ -632,7 +632,7 @@ order: 2
 
 ---
 
-## [Localization Services](https://www.rhino3d.com/localization)
+## [Localization Services](https://www.rhino3d.com/localization) <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac-logo-small.png" alt="OS X" class="guide_icon">
 {: #translation }
 
 Our regional office in Europe provides a translation and localization service for third-party developers and anyone else interested in translating their products to French, German, Italian, Spanish, etc. [Details…](https://www.rhino3d.com/localization)
