@@ -635,7 +635,7 @@ order: 2
 ## Developer Services
 {: #services }
 
-###[Localization](https://www.rhino3d.com/localization)
+### [Localization](https://www.rhino3d.com/localization)
 
 Our regional office in Europe provides a translation and localization service for third-party developers and anyone else interested in translating their products to French, German, Italian, Spanish, etc. [Details…](https://www.rhino3d.com/localization)
 
