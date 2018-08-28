@@ -30,32 +30,35 @@ To determine whether a layout or one if it's details is active, get the UUID of 
 CRhinoCommand::result CCommandTest::RunCommand( const CRhinoCommandContext& context )
 {
   CRhinoView* view = RhinoApp().ActiveView();
-  if( 0 == view )
+  if (nullptr == view)
     return CRhinoCommand::failure;
 
-  if( view->IsKindOf(RUNTIME_CLASS(CRhinoPageView)) )
+  CRhinoPageView* page_view = static_cast<CRhinoPageView*>(view);
+  if (page_view)
   {
-    CRhinoPageView* page_view = static_cast<CRhinoPageView*>(view);
-    if( page_view )
+    ON_wString layout_name = page_view->MainViewport().Name();
+    ON_UUID active_detail_uuid = page_view->ActiveDetailObject();
+    if (ON_UuidIsNotNil(active_detail_uuid))
     {
-      ON_wString layout_name = page_view->MainViewport().Name();
-
-      ON_UUID active_detail_uuid = page_view->ActiveDetailObject();
-      if( ON_UuidIsNotNil(active_detail_uuid) )
-      {
-        ON_wString detail_name = page_view->ActiveViewport().Name();
-        RhinoApp().Print( L"The detail \"%s\" on layout \"%s\" is active.\n", detail_name, layout_name );
-      }
-      else
-      {
-        RhinoApp().Print( L"The layout \"%s\" is active.\n", layout_name );
-      }
+      ON_wString detail_name = page_view->ActiveViewport().Name();
+      RhinoApp().Print(L"The detail \"%s\" on layout \"%s\" is active.\n", 
+        static_cast<const wchar_t*>(detail_name), 
+        static_cast<const wchar_t*>(layout_name)
+      );
+    }
+    else
+    {
+      RhinoApp().Print(L"The layout \"%s\" is active.\n", 
+        static_cast<const wchar_t*>(layout_name)
+      );
     }
   }
   else
   {
     ON_wString viewport_name = view->ActiveViewport().Name();
-    RhinoApp().Print( L"The viewport \"%s\" is active.\n", viewport_name );
+    RhinoApp().Print(L"The viewport \"%s\" is active.\n", 
+      static_cast<const wchar_t*>(viewport_name)
+    );
   }
 
   return CRhinoCommand::success;
