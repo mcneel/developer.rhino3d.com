@@ -64,4 +64,3 @@ Robert McNeel & Associates.  They feel that the 3D market is stifled because of 
 ## Related Topics
 
 - [openNURBS Migration Guide]({{ site.baseurl }}/guides/opennurbs/migration-guide)
-- [openNURBS Latest Release Notes]({{ site.baseurl }}/guides/opennurbs/latest-release-notes)
