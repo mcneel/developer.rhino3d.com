@@ -1,6 +1,6 @@
 ---
 title: Rhino Compute Service (Windows)
-description: This guide covers all the necessary tools required to get started with the RHino Compute Service
+description: This guide covers all the necessary tools required to get started with the Rhino Compute Service
 authors: ['Steve Baer', 'Scott Davidson']
 author_contacts: ['stevebaer', 'scottd']
 sdk: ['RhinoCommon', 'Compute']
