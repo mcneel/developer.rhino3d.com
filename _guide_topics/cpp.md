@@ -45,7 +45,6 @@ layout: guide-homepage
   {% endfor %}
   </ul>
 </div>
-- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
 
 ### Troubleshooting
 
