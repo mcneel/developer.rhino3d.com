@@ -46,6 +46,9 @@ layout: guide-homepage
   </ul>
 </div>
 
+### Samples
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
+
 ### Troubleshooting
 
 <div class="trigger">
