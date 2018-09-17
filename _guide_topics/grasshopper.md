@@ -24,6 +24,7 @@ layout: guide-homepage
 
 - Installing Tools ([Windows]({{ site.baseurl }}/guides/grasshopper/installing-tools-windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/installing-tools-mac/))
 - Your First Component ([Windows]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/your-first-component-mac/))
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
 
 <!--column-->
 
