@@ -65,8 +65,8 @@ layout: guide-homepage
 
 ### Other Resources
 
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
 - [Pascal Golay's scripted utilities for Rhino](http://wiki.mcneel.com/people/pascalgolay)
-- [RhinoScript Samples on GitHub](https://github.com/mcneel/rhinoscript)
 - [RhinoScript Dash Docset](http://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
 - [RhinoScript Help File On-Line](http://www.rhino3d.com/5/rhinoscript/index.html)
 
