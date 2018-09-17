@@ -37,6 +37,7 @@ layout: guide-homepage
 - [Where to get help...]({{ site.baseurl }}/guides/rhinopython/python-where-to-find-help)
 - [Troubleshooting Installation]({{ site.baseurl }}/guides/rhinopython/python-troubleshooting-install)
 - [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
+- [Scripting discussions on Discourse](https://discourse.mcneel.com/c/scripting)
 
 ### Python Editor for Windows
 

@@ -69,6 +69,7 @@ layout: guide-homepage
 - [Pascal Golay's scripted utilities for Rhino](http://wiki.mcneel.com/people/pascalgolay)
 - [RhinoScript Dash Docset](http://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
 - [RhinoScript Help File On-Line](http://www.rhino3d.com/5/rhinoscript/index.html)
+- [Scripting discussions on Discourse](https://discourse.mcneel.com/c/scripting)
 
 <!--column-->
 
