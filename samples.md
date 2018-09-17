@@ -8,8 +8,8 @@ order: 4
 
 # Samples  
 
----
 For additional samples, visit the [Developer Samples Repository on GitHub.](https://github.com/mcneel/rhino-developer-samples)
+
 ---
 
 ## RhinoCommon <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac-logo-small.png" alt="macOS" class="guide_icon">
@@ -184,7 +184,6 @@ For additional samples, visit the [Developer Samples Repository on GitHub.](http
   In the meantime, you can view the original documentation here:
   <a href="http://wiki.mcneel.com/developer/opennurbs/home">http://wiki.mcneel.com/developer/opennurbs/home</a> or see the openNURBS samples bundled with the SDK.</p>
 </div>
-
 
 ---
 
