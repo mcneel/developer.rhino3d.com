@@ -36,6 +36,7 @@ layout: guide-homepage
 - Your First Python Script in Rhino ([Windows]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-mac), [Grasshopper]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-grasshopper))
 - [Where to get help...]({{ site.baseurl }}/guides/rhinopython/python-where-to-find-help)
 - [Troubleshooting Installation]({{ site.baseurl }}/guides/rhinopython/python-troubleshooting-install)
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
 
 ### Python Editor for Windows
 
