@@ -68,11 +68,6 @@ Install ruby (see [.ruby-version](https://github.com/mcneel/developer-rhino3d-co
 rbenv install 2.3.3
 ```
 
-Check that everything worked as expected:
-
-1. `ruby --version` – should return something like `ruby 2.3.3p222 (2016-11-21 revision 56859) [universal.x86_64-darwin17]`
-2. `which ruby` – should return something like `/Users/will/.rbenv/shims/ruby` (**not `/usr/bin/ruby` or `/usr/local/bin/ruby`**)
-
 #### Install Jekyll
 
 The [GitHub Pages Ruby Gem](https://github.com/github/pages-gem) provides the same version of Jekyll as exists on the GitHub Pages servers. This ensures we aren't accidentally using features that have either been deprecated or simply don't exist on GitHub's servers yet!
