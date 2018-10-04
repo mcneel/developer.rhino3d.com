@@ -18,7 +18,7 @@ It is presumed you have a plugin that successfully builds and runs already.  If 
 
 ## Overview
 
-Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins is very easy.  You simply rename your plugin's containing *folder* with an special extension (*.rhp*), compress the folder, and change the extension from *.zip* to *.macrhi*.  Once this is done, you can double-click the archive and Rhino will launch and install the plugin.  You can also drag the *.macrhi* onto the dock icon of a running instance of Rhino and it will install the plugin as well.  You will, in any case, need to Quit an Restart Rhino for the plugin to activate.
+Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins is very easy.  You simply rename your plugin's containing *folder* with an special extension (*.rhp*), compress the folder, and change the extension from *.rhp.zip* to *.macrhi*.  Once this is done, you can double-click the archive and Rhino will launch and install the plugin.  You can also drag the *.macrhi* onto the dock icon of a running instance of Rhino and it will install the plugin as well.  You will, in any case, need to Quit an Restart Rhino for the plugin to activate.
 
 ## Step-by-Step
 
@@ -31,7 +31,7 @@ Rhino for Mac does not (yet) have a Plugin Manager.  However, installing plugins
 ![New Icon]({{ site.baseurl }}/images/plugin-installer-mac-03.png)
 1. *Archive* the plugin *folder*.  *Right-click* (option-click) the plugin *.rhp* *folder* you created in the previous step and select "*Compress* (your plugin name)."  This creates a zip archive of the contents of the folder.
 1. *Single-click the name* of the new archive you created in step 5.  This allows you *to rename* the archive.
-1. Change the *extension* from *.zip* to *.macrhi*.  
+1. Change the *extension* from *.rhp.zip* to *.macrhi*.  
 1. You will be prompted to confirm this change.  Select the "*Use .macrhi*" button:
 ![Use rhi Extension]({{ site.baseurl }}/images/plugin-installer-mac-04.png)
 1. Notice that *the icon changes* from a zip archive to a Rhino RHI:
