@@ -1,10 +1,10 @@
 ---
 title: Rhino Compute Service (Windows)
-description: This guide covers all the necessary tools required to get started with the Rhino Compute Service in C#
+description: This guide covers all the necessary tools required to get started with the Rhino Compute Service in Csharp
 authors: ['Steve Baer', 'Scott Davidson']
 author_contacts: ['stevebaer', 'scottd']
 sdk: ['RhinoCommon', 'Compute']
-languages: ['C#']
+languages: ['Csharp']
 platforms: ['Windows']
 categories: ['Getting Started']
 origin:
