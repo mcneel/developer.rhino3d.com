@@ -36,7 +36,7 @@ There are a few client side tools which need to be installed in Python that are 
 
 - **compute-rhino3d.py** - This is a work in progress package which is meant to add classes available in [RhinoCommon](https://developer.rhino3d.com/guides/rhinocommon/what-is-rhinocommon/), but not available through rhino3dm.py. Compute-rhino3d makes calls into the McNeel Cloud Compute server for these functions. It handles all the transaction authorizations and JSON data conversion.
 
-  `pip install compute-rhino3dm`
+  `pip install compute-rhino3d`
 
 ## The first use of Compute
 
