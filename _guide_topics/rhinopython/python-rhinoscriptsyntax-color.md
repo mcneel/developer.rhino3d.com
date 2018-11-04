@@ -1,6 +1,6 @@
 ---
 title: Colors in Python
-description: This guide provides an overview of a RhinoScriptSytntax Color type in Python.
+description: This guide provides an overview of a RhinoScriptSyntax Color type in Python.
 authors: ['Scott Davidson']
 author_contacts: ['scottd']
 sdk: ['RhinoPython']
@@ -40,7 +40,7 @@ print col[0]
 print col[1]
 print col[2]
 ```
-Unlike many other Rhino types, colors is an immutable.  This means you cannot set one channel by itself, but must always create a new color when creating trying to make a color.  Setting one channel will not work, for instance `color1[1] = 56` will throw an error. 
+Unlike many other Rhino types, colors are immutable.  This means you cannot set one channel by itself, but must always create a new color when trying to make a color.  Setting one channel will not work, for instance `color1[1] = 56` will throw an error. 
 
 Here is a table of commonly used colors:
 
