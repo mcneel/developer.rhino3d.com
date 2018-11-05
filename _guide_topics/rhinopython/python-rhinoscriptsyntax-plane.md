@@ -1,6 +1,6 @@
 ---
 title: Planes in Python
-description: This guide provides an overview of a RhinoScriptSytntax Plane Geometry in Python.
+description: This guide provides an overview of a RhinoScriptSyntax Plane Geometry in Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
