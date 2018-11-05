@@ -1,6 +1,6 @@
 ---
 title: Vectors in Python
-description: This guide provides an overview of a RhinoScriptSytntax Vector Geometry in Python.
+description: This guide provides an overview of a RhinoScriptSyntax Vector Geometry in Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
