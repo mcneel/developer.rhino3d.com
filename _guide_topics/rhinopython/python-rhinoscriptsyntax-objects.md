@@ -1,6 +1,6 @@
 ---
 title: Rhino objects in Python
-description: This guide provides an overview of a RhinoScriptSytntax Object Geometry in Python.
+description: This guide provides an overview of a RhinoScriptSyntax Object Geometry in Python.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
