@@ -1,6 +1,6 @@
 ---
 title: Rhino NURBS Geometry Overview
-description: This guide provides an basic introduction to Rhino's NURBS Geometry.
+description: This guide provides an introduction to Rhino's NURBS Geometry.
 authors: ['Dale Fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## Overview
 
-Rhino uses various geometry types.  There are some vary basic types [Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points), [Vectors]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors), [Lines]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-lines) and [Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-planes). Simple geometry such as points, lines, planes can be described with simple lists in Python.
+Rhino uses various geometry types.  There are some basic types like [Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points), [Vectors]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors), [Lines]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-lines) and [Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-planes). Simple geometry such as points, lines, planes can be described with simple lists in Python.
 
 More complicated geometry objects such as NURBS curves, Surfaces and Poly-surfaces can be created by Rhino. [Rhino Geometry Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects) are referenced by an object ID by RhinoScriptSyntax. 
 
