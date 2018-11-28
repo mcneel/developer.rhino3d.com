@@ -13,13 +13,13 @@
         {% if i == iterator_count %}
           {% break %}
         {% endif %} and
-      {% endfor %}  (Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)
+      {% endfor %}  <!--(Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)-->
     {% else %}
       {% assign check_author_contact = page.author_contacts[0] %}
       {% if check_author_contact contains '@' %}
-        by <a href="mailto:{{ page.author_contacts }}">{{ page.authors }}</a> (Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)
+        by <a href="mailto:{{ page.author_contacts }}">{{ page.authors }}</a> <!--(Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)-->
       {% else %}
-        by <a href="https://discourse.mcneel.com/users/{{ page.author_contacts }}/activity">{{ page.authors }}</a> (Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)
+        by <a href="https://discourse.mcneel.com/users/{{ page.author_contacts }}/activity">{{ page.authors }}</a> <!--(Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)-->
       {% endif %}
     {% endif %}
   </span>
