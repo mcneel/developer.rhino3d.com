@@ -31,8 +31,10 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-last-modified-at
-  
+
 #port: 4444
+
+timezone: "America/Los_Angeles"
 
 safe: true
 
