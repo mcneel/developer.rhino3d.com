@@ -156,17 +156,36 @@ void Main()
       .GroupBy(ds => ds.ModuleName, ds => ds)
       .OrderBy(g => g.Key)
       .Select(x => new ModuleFunctions { ModuleName = x.Key, functions = x.Select(z => z) });
-  
-  //mfs.Take(2).Dump(); //debug
+/*
+  Func<string, bool> bad_indent = s =>
+  {
+    if (string.IsNullOrWhiteSpace(s)) return false;
+    var ss = s.Length - s.TrimStart().Length;
+    return  ss > 0 && ss < 4 
+      || ss > 4 && ss < 8 
+      || ss > 8 && ss < 12 
+      || ss > 12 && ss < 16 
+      || ss > 16 && ss < 20 
+      || ss > 20 && ss < 24
+      || ss > 24 && ss < 28;
+  };
+  mfs.SelectMany(m => m.functions)
+    //.Where(f  => f.Name == "GetObjects")
+    .Where(f => f.Example.Any(bad_indent))
+    .Take(50)
+    .Select(x => x.ModuleName + ":::" + x.Name)
+    .Dump(); //debug
+    */
   var json = Newtonsoft.Json.JsonConvert.SerializeObject(mfs, Newtonsoft.Json.Formatting.Indented);
   //File.WriteAllText(Path.Combine(data, filename), json);
+
 
   // Windows help
   // functions
   foreach (var fn in Directory.GetFiles(Path.Combine(winhelpdir, "Functions")).Where(f => !Path.GetFileName(f).StartsWith("_template")))
     File.Delete(fn);
   var template = Template.Parse(File.ReadAllText(Path.Combine(winhelpdir, "Functions", "_template.htm")));
-  foreach (var dss in mfs.SelectMany(m => m.functions)/*.Select(f => f.Name)*/)
+  foreach (var dss in mfs.SelectMany(m => m.functions))
   {
     var h = Hash.FromAnonymousObject(new
     {
@@ -221,7 +240,8 @@ void Main()
     functionNames = mfs.SelectMany(mf => mf.functions.Select(f => f.Name))
   });
   var ridxt = template.Render(idxh);
-  File.WriteAllText(Path.Combine(winhelpdir, "RhinoIronPython.hhk"), ridxt);
+  //File.WriteAllText(Path.Combine(winhelpdir, "RhinoIronPython.hhk"), ridxt);
+
 }
 
 struct Argument
