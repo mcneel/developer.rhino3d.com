@@ -27,4 +27,4 @@ TODO: what has been added?
 
 - InstanceDefinition and InstanceDefinitionGeometry are no longer derived from GeometryBase
   - https://mcneel.myjetbrains.com/youtrack/issue/RH-34036
-  - TODO: describe what this means really
+  - TODO: describe what this means
