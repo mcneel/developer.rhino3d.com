@@ -21,6 +21,11 @@
                 Author: <a href="https://discourse.mcneel.com/users/{{ page.author_contacts }}/activity">{{ page.authors }}</a>
               {% endif %}
             </p>
+            <p class="text">
+              {% if page.last_modified_at %}
+                Last modified: {{ page.last_modified_at | date_to_string }}
+              {% endif %}
+            </p>
           </div>
           <div class="col-md-4 text-center">
             <span class="icon  icon--github">
