@@ -23,7 +23,7 @@
             </p>
             <p class="text">
               {% if page.last_modified_at %}
-                Last modified: {{ page.last_modified_at | date_to_string }}
+                Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>
               {% endif %}
             </p>
           </div>
