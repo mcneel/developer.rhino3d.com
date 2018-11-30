@@ -57,7 +57,7 @@ The easiest way is to work in the `master` branch and then you can [cherry-pick]
 
 What if you want to just correct a typo in both the `master` and the stable `n` versions of the site?  
 
-In this case, the fastest and easiest way is to simply correct the typo in both branches on the GitHub site itself.  For example, if you wanted to correct a typo on <a href="https://github.com/{{ site.nwo }}/blob/{{ site.git_branch }}/{{ page.path }}" target="_blank">this very guide</a>, just click the "Edit this file" - the little pencil icon in the upper right-hand corner.  Make your correction, then switch to the `wip` branch and do the same thing.  For small fixes, this works just as well as a [cherry-picked](https://git-scm.com/docs/git-cherry-pick) commit.
+In this case, the fastest and easiest way is to simply correct the typo in both branches on the GitHub site itself.  For example, if you wanted to correct a typo on [this very guide](https://github.com/{{ site.nwo }}/blob/{{ site.git_branch }}/{{ page.path }}), just click the "Edit this file" - the little pencil icon in the upper right-hand corner.  Make your correction, then switch to the `wip` branch and do the same thing.  For small fixes, this works just as well as a [cherry-picked](https://git-scm.com/docs/git-cherry-pick) commit.
 
 ---
 
@@ -221,6 +221,17 @@ If the TODO field is not present, the content will not be on the list.
 #### origin
 
 Much of this site is (or was) ported from a previous location.  The `origin` yaml field is reserved for a backlink to the original content.  If the `origin` yaml field is set to a URL - and `TODO` is set to `some value` - the content will show up on the [TODO list]({{ site.baseurl }}/admin/index.html#todo-list) as needs porting from the `origin` URL.
+
+## Jekyll Plugins
+
+In general, we are attempting to stick to those [Jekyll dependencies that are ship with GitHub Pages](https://pages.github.com/versions/).  That said, since we are building this site with Travis CI, we can indeed use Jekyll plugins that are not part of the canonical GitHub pages dependencies.
+
+To add a plugin to the site:
+
+1. Verify that it is not in the [Dependency versions list](https://pages.github.com/versions/) already.
+1. Test the plugin locally on your machine to make sure it does what you want it to do.
+1. Add the plugin to the *Gemfile* on this site.
+1. Add the plugin to the the *_config.yml* list under the `plugins:` entry.
 
 ---
 
