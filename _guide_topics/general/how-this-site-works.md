@@ -132,7 +132,6 @@ Here is an example of the YAML for this guide:
 title: How This Site Works
 description: A guide to how this very developer document site works.
 authors: ['dan_belcher']
-author_contacts: ['dan']
 sdk: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Mac', 'Windows']
@@ -148,8 +147,7 @@ The YAML fields for Guides determine:
 
 * *title*: This is the title of the guide.  This is the html page title.
 * *description*: This is a brief description of the guide.
-* *authors*: The original - or responsible - author(s).
-* *author_contacts*: The matching Discourse handle(s) for the author(s), must match order of authors yaml.  If an email address is set, a mailto: link is generated rather than a Discourse handle.
+* *authors*: The original - or responsible - author(s).  These values are in the _authors.yml_ file in */_data*.
 * *sdk*: The Rhino SDK(s) that this guide pertains to.
 * *languages*: The programming languages this guide references.
 * *platforms*: The operating systems this guide is relevant to.
@@ -158,7 +156,6 @@ The YAML fields for Guides determine:
 * *order*: The relative sort-order of this guide in any list.
 * *keywords*: Keywords related to this guide (un-used, as of yet).
 * *layout*: The layout html file used by Liquid (found in `/_layouts/`) on the guide.
-
 
 ### APIs
 
@@ -175,7 +172,6 @@ Here is an example of the YAML for [this sample]({{ site.baseurl }}/samples/cpp/
 title: Add a Cone Surface
 description: Demonstrates how to create a cone using ON_BrepCone.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
@@ -191,8 +187,7 @@ The YAML fields for Samples determine:
 
 * *title*: This is the title of the sample.  This is the html page title.
 * *description*: A brief description of what the sample does.
-* *authors*: The original - or responsible - author(s).
-* *author_contacts*: The matching Discourse handle(s) for the author(s), must match order of authors yaml.  If an email address is set, a mailto: link is generated rather than a Discourse handle.
+* *authors*: The original - or responsible - author(s).  These values are in the _authors.yml_ file in */_data*.
 * *sdk*: The Rhino SDK(s) that this sample pertains to.
 * *languages*: The programming languages this sample references.
 * *platforms*: The operating systems this sample is relevant to.
@@ -202,6 +197,15 @@ The YAML fields for Samples determine:
 * *keywords*: Keywords related to this sample (un-used, as of yet).
 * *layout*: The layout html file used by Liquid (found in `/_layouts/`) on the sample.
 
+## Authors
+
+To add a new author to the site, you must do three things:
+
+1. Add an entry to the */_data/authors.yml* file with the appropriate fields filled in.
+1. Duplicate one of the markdown.md files in the */_authors* folder and use the `name:` value that you added to the */_data/authors.yml* file in step 1 above.
+1. Use the author's `name:` value as a string in the `authors: ['your_new_author_name']` yaml entries in guides or samples.
+
+That's it.  *NOTE*: If you are building the site locally, results may be cached so a new author might not show up in the list.  You can force a full rebuild of the site by deleting the */_site* folder.
 
 ## TODO & origin fields
 
