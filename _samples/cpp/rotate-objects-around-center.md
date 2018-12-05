@@ -2,7 +2,6 @@
 title: Rotate Objects Around Center
 description: Demonstrates how rotate objects around the center point of their bounding box.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

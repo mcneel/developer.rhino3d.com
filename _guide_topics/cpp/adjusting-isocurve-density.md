@@ -2,7 +2,6 @@
 title: Adjusting Isocurve Density
 description: This brief guide demonstrates how to modify the isocurve density of a surface.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

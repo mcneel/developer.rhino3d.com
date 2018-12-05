@@ -2,7 +2,6 @@
 title: Duplicate Surface Border
 description: Demonstrates how to duplicate the borders of a user-specified surface or polysurface.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

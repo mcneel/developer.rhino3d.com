@@ -2,7 +2,6 @@
 title: Add Clipping Planes
 description: Demonstrates how to add a viewport clipping plane object.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -2,11 +2,11 @@
 title: The Anatomy of a Package
 description: This guide explains the structure of a Yak package.
 authors: ['will_pearson']
-author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']
+origin: unset
 order: 1
 keywords: ['developer', 'yak']
 layout: toc-guide-page

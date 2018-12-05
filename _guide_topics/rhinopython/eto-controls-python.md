@@ -2,7 +2,6 @@
 title: Eto Controls in Python
 description: Using the Eto dialog framework to create interface controls.
 authors: ['scott_davidson']
-author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

@@ -2,7 +2,6 @@
 title: Add Points at Curve Endpoints
 description: Demonstrates how to add point at the starting and ending locations of curves.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

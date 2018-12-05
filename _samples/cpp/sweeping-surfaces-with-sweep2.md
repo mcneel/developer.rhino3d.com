@@ -2,7 +2,6 @@
 title: Sweeping Surfaces with Sweep2
 description: Demonstrates how to use the CArgsRhinoSweep2 class and the RhinoSweep2 function. The definitions of these can be found in rhinoSdkSweep.h.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

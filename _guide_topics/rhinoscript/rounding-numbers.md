@@ -2,7 +2,6 @@
 title: Rounding Numbers
 description: This guide discusses number rounding in RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

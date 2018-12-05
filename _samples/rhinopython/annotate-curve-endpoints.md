@@ -2,7 +2,6 @@
 title: Annotate Curve Endpoints
 description: Demonstrates how to add a NURBS curve to Rhino using Python.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

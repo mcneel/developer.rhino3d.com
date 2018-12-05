@@ -2,7 +2,6 @@
 title: Tag Object As Flamingo Plant
 description: Demonstrates how to tag an object as a Flamingo nXt plant in RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

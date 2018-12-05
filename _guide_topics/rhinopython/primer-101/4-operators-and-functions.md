@@ -2,7 +2,6 @@
 title: 4 Operators and functions
 description:
 authors: ['skylar_tibbits', 'arthur_van_der_harten', 'steve_baer']
-author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

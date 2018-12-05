@@ -2,7 +2,6 @@
 title: Creating Rhino Commands Using Python
 description: This guide demonstrates how to create Rhino commands from Python scripts.
 authors: ['pascal_golay', 'will_pearson']
-author_contacts: ['pascal', 'will']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

@@ -2,11 +2,11 @@
 title: Finding an Annotation object's font
 description: This guide demonstrates how to get an Annotation object's font using openNURBS.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
 categories: ['Advanced']
+origin: unset
 order: 1
 keywords: ['openNURBS', 'object', 'visibility']
 layout: toc-guide-page

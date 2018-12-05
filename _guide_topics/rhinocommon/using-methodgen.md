@@ -2,7 +2,6 @@
 title: Using methodgen
 description: This guide covers the automatic pInvoke call generator and enum synchronization utility called methodgen.
 authors: ['giulio_piacentino']
-author_contacts: ['piac']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']

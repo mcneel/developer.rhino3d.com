@@ -2,7 +2,6 @@
 title: Determine Object Layer
 description: Demonstrates how to determine which layer a user-specified object is on and print the name.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

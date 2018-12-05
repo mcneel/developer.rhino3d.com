@@ -2,7 +2,6 @@
 title: Adding Online Help to Your Plugin
 description: Discusses how to add online help support to your Rhino plugin using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

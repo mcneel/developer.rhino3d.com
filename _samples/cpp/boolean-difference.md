@@ -2,7 +2,6 @@
 title: Boolean Difference
 description: Demonstrates how to perform a Boolean Difference operation on two sets of polysurfaces.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

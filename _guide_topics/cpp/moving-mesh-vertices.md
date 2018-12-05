@@ -2,7 +2,6 @@
 title: Moving Mesh Vertices
 description: This brief guide demonstrates how to move mesh vertices using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

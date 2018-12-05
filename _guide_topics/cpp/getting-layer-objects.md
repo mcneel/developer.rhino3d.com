@@ -2,7 +2,6 @@
 title: Getting Layer Objects
 description: This brief guide demonstrates how to get all of the objects on a layer using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

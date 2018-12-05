@@ -2,11 +2,11 @@
 title: Getting Object Attributes
 description: This guide demonstrates how to obtain attributes from model geometry objects.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']
+origin: unset
 order: 1
 keywords: ['openNURBS', 'Attributes', 'Importing']
 layout: toc-guide-page

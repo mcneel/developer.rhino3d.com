@@ -2,7 +2,6 @@
 title: Saving Files
 description: Demonstrates how to save a file using RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

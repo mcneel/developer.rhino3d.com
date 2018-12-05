@@ -2,7 +2,6 @@
 title: Select Planar Meshes
 description: Demonstrates how to select mesh objects that are planar using RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

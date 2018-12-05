@@ -2,7 +2,6 @@
 title: Installing Tools (Windows)
 description: This guide covers all the necessary tools required to author custom Grasshopper components on Windows.
 authors: ['dan_belcher']
-author_contacts: ['dan']
 sdk: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows']

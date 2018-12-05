@@ -2,7 +2,6 @@
 title: Move Surface Grips
 description: Demonstrates how to move a surface's grip objects using RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

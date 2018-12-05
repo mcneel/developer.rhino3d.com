@@ -2,7 +2,6 @@
 title: Lofting Surfaces that Maintain Tangency
 description: This guide demonstrates how to loft surfaces that maintain tangency using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

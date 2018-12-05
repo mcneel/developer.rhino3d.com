@@ -2,7 +2,6 @@
 title: Import Text from File
 description: Demonstrates how to import text from a file using RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

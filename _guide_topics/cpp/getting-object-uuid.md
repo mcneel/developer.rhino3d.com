@@ -2,7 +2,6 @@
 title: Getting Object UUIDs
 description: This brief guide demonstrates how to get an object's UUID using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -2,7 +2,6 @@
 title: Toggling the Status Bar
 description: This brief guide demonstrates how to show or hide the Rhino status bar using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

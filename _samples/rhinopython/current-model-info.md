@@ -2,7 +2,6 @@
 title: Get Current Model Information
 description: Demonstrates how to get current model information through Python.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

@@ -1,12 +1,12 @@
 ---
-# title: Creating a Grasshopper Plug-In Package
+title: Title
 description: This is a step by step guide to pushing a package to the Yak server.
 authors: ['will_pearson']
-author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows']
 categories: ['Step By Step']
+origin: unset
 order: 2
 keywords: ['developer', 'yak']
 layout: toc-guide-page

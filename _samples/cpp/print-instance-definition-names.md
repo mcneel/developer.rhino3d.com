@@ -2,7 +2,6 @@
 title: Print Instance Definition Names
 description: Demonstrates how to print the names of all instance definitions in the document.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

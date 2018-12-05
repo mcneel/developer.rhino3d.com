@@ -2,7 +2,6 @@
 title: Add Objects to Group
 description: Demonstrates how to group objects from a user-specified selection set of objects.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

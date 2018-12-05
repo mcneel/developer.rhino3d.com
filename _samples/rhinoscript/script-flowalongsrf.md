@@ -2,7 +2,6 @@
 title: Script FlowAlongSrf
 description: Demonstrates how to script the FlowAlongSrf command using RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

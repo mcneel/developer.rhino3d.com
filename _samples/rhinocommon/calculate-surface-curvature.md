@@ -2,7 +2,6 @@
 title: Calculate Surface Curvature
 description: Demonstrates how to calculate the principle curvature at a user-specified point on a surface.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

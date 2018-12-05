@@ -2,7 +2,6 @@
 title: Create Bounding Polyline of a Mesh
 description: Demonstrates how to create a bounding polyline of a mesh object.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

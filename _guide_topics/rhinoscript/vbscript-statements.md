@@ -2,7 +2,6 @@
 title: VBScript Statements
 description: This guide presents an overview of VBScript statements.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

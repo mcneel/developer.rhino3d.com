@@ -2,7 +2,6 @@
 title: Creating Macros
 description: A basic tutorial on creating macros (scripting together Rhino commands)
 authors: ['scott_davidson']
-author_contacts: ['scottd']
 sdk: ['Macro']
 languages: ['Macro']
 platforms: ['Windows', 'Mac']

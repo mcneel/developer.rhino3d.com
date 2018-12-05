@@ -2,7 +2,6 @@
 title: Clear Undo and Redo Lists
 description: This brief guide demonstrates how to clear Rhino's Undo and Redo lists using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

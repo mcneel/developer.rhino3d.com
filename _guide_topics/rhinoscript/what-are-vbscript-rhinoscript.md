@@ -2,7 +2,6 @@
 title: What are VBScript and RhinoScript?
 description: This guide explains what VBScript and RhinoScript are.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

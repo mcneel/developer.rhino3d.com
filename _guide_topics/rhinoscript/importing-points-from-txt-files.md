@@ -2,7 +2,6 @@
 title: Importing Points from Text Files
 description: This guide demonstration of how to open a text file and import data from it into Rhino using RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

@@ -2,7 +2,6 @@
 title: Python Data Types
 description: This guide is an overview of Python Data Types.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

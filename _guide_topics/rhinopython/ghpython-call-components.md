@@ -2,7 +2,6 @@
 title: Calling Grasshopper components from Python.
 description: Is it possible to call the functions of a Grasshopper component from inside a Python script?
 authors: ['scott_davidson']
-author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac', 'Grasshopper']

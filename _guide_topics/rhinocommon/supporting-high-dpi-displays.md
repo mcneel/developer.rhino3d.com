@@ -2,7 +2,6 @@
 title: Supporting High DPI Displays
 description: This guide discusses the support of high resolution monitors.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']

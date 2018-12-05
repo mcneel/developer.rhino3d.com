@@ -2,7 +2,6 @@
 title: Render Engine Integration - Interactive Viewport
 description: This guide, the fourth of a series, covers integrating render engines in Rhino's viewport.
 authors: ['nathan_letwory']
-author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
@@ -11,7 +10,6 @@ origin: http://www.letworyinteractive.com/b/2016/10/integrating-a-render-engine-
 order: 4
 keywords: ['renderer', 'integration', 'RhinoCommon', 'interactive', 'viewport']
 layout: toc-guide-page
-redirect_from: "/guides/rhinocommon/mockingbird-interactive/"
 ---
 
 

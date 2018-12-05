@@ -2,7 +2,6 @@
 title: Multi-threaded components
 description: A guide to parallel computing in Grasshopper
 authors: ['steve_baer', 'scott_davidson']
-author_contacts: ['stevebaer','scottd']
 sdk: ['Grasshopper']
 languages: ['C#']
 platforms: ['Windows', 'Mac']

@@ -2,7 +2,6 @@
 title: Window Selecting
 description: This brief guide demonstrates how to drag a window to select objects.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

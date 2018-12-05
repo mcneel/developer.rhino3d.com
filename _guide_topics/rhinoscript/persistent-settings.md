@@ -2,7 +2,6 @@
 title: Persistent Settings
 description: This brief guide demonstrates how to use private variables for persistent settings in RhinoScript.
 authors: ['jess_maertterer']
-author_contacts: ['Jess']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

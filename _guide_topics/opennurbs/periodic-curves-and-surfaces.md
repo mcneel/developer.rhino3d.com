@@ -2,7 +2,6 @@
 title: Periodic Curves & Surfaces
 description: This guide discusses periodic curves and surfaces and openNURBS toolkit.
 authors: ['dale_lear']
-author_contacts: ['dalelear']
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']

@@ -2,7 +2,6 @@
 title: Options Pages Best Practices
 description: Discusses the best practices for writing options or document properties pages.
 authors: ['john_morse']
-author_contacts: ['JohnM']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']

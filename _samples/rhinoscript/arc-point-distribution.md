@@ -2,7 +2,6 @@
 title: Arc Point Distribution
 description: Demonstrates arc point distribution.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

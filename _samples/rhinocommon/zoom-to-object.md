@@ -2,7 +2,6 @@
 title: Zoom to Object
 description: Zoom to a Selected Object
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

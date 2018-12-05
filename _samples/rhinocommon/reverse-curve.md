@@ -2,7 +2,6 @@
 title: Reverse Curve
 description: Demonstrates how to reverse the direction of user-specified curves.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

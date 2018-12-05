@@ -2,7 +2,6 @@
 title: Scale Text by Dimension Scale
 description: Demonstrates how to properly scale text objects by the document's dimension scale in RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

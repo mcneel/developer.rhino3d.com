@@ -2,7 +2,6 @@
 title: What is Rhino.Python?
 description: This guide is an overview of Python in Rhino.
 authors: ['dan_belcher']
-author_contacts: ['dan']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

@@ -2,7 +2,6 @@
 title: Accessing Databases
 description: This guide demonstrates how to access databases from VBScript using RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

@@ -2,7 +2,6 @@
 title: Project Points to Mesh
 description: Demonstrates how to project points to a mesh.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

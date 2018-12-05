@@ -2,7 +2,6 @@
 title: Duplicate Object
 description: Demonstrates how to make a copy of a CRhinoObject-derived object.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -2,7 +2,6 @@
 title: Closest Point Calculation with RTree
 description: Demonstrates how to perform a closest point calculation using an RTree data structure.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

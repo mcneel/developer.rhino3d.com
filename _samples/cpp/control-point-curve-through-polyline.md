@@ -2,7 +2,6 @@
 title: Control Point Curve Through Polyline
 description: Demonstrates how to create a control points curve through a polyline.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

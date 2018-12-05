@@ -2,7 +2,6 @@
 title: VBScript RegExp Objects
 description: This guide discusses the VBScript RegExp object.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

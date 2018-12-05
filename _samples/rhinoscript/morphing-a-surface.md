@@ -2,7 +2,6 @@
 title: Morphing a Surface
 description: An example of how to morph a surface using RhinoScript.
 authors: ['stylianos_dritsas']
-author_contacts: ['']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

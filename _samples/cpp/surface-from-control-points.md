@@ -2,7 +2,6 @@
 title: Surface from Control Points
 description: Demonstrates how to create a surface from a grid of control points.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

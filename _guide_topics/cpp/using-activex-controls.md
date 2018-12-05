@@ -2,7 +2,6 @@
 title: Using ActiveX Controls
 description: This brief guide discusses how to use ActiveX controls in C/C++ plugins.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

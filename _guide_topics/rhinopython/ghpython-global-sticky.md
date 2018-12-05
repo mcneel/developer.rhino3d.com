@@ -2,7 +2,6 @@
 title: Creating Global Sticky Variables
 description: Create a variable that sticks around for other components.
 authors: ['scott_davidson']
-author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac', 'Grasshopper']

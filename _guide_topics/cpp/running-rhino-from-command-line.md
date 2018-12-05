@@ -2,7 +2,6 @@
 title: Running Rhino from the Command Line
 description: This guide explains how to run Rhino from the command line.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

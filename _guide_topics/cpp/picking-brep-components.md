@@ -2,7 +2,6 @@
 title: Picking Brep Components
 description: This brief guide discusses picking components of a Brep using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

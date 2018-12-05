@@ -2,7 +2,6 @@
 title: Rhino Installer Engine
 description: This guide is a brief introduction to the Rhino Installer Engine.
 authors: ['brian_gillespie', 'will_pearson']
-author_contacts: ['brian', 'will']
 sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']

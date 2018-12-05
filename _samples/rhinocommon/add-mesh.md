@@ -2,7 +2,6 @@
 title: Add Mesh
 description: Demonstrates how to construct a mesh from a list of vertices and faces.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

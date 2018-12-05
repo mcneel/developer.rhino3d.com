@@ -2,7 +2,6 @@
 title: How This Site Works
 description: A guide to how this very developer document site works.
 authors: ['dan_belcher']
-author_contacts: ['dan']
 sdk: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Windows', 'Mac']

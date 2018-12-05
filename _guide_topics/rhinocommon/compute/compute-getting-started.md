@@ -2,7 +2,6 @@
 title: Rhino Compute Service
 description: This guide covers the tools required to get started with the Rhino Compute Service.
 authors: ['steve_baer', 'scott_davidson']
-author_contacts: ['stevebaer', 'scottd']
 sdk: ['RhinoCommon', 'Compute']
 languages: ['C#', 'JavaScript', 'Python']
 platforms: ['Windows', 'Mac']

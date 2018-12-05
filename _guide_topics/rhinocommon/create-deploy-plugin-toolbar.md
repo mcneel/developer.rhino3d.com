@@ -2,7 +2,6 @@
 title: Creating and Deploying Plugin Toolbars
 description: This guide covers the creation and deployment of plugin toolbars.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoCommon', 'C/C++']
 languages: ['C#', 'C/C++']
 platforms: ['Windows']

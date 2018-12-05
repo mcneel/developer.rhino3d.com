@@ -2,7 +2,6 @@
 title: Simple Geometry Component
 description: This guide demonstrates how to use some of the simpler geometry types and classes in RhinoCommon & Grasshopper.
 authors: ['david_rutten']
-author_contacts: ['DavidRutten']
 sdk: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

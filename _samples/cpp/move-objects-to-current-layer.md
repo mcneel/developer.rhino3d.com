@@ -2,7 +2,6 @@
 title: Move Objects to the Current Layer
 description: Demonstrates how to iterate through the Rhino geometry table and modify the layer of selected objects.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -2,7 +2,6 @@
 title: Multidimensional Arrays
 description: This guide discusses rectangular and ragged multidimensional arrays.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

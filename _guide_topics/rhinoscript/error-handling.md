@@ -2,7 +2,6 @@
 title: Error Handling
 description: This guide describes the error handling semantics of VBScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

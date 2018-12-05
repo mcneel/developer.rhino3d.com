@@ -2,7 +2,6 @@
 title: Installing Tools (Mac)
 description: This guide covers all the necessary tools required to author Rhino plugins on Mac.
 authors: ['dan_belcher']
-author_contacts: ['dan']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Mac']

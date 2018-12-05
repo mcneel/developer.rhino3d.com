@@ -2,7 +2,6 @@
 title: What is a Zoo Plugin?
 description: This guide describes what a Zoo Plugin is and what is does.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoCommon', 'C/C++']
 languages: ['All']
 platforms: ['Windows']

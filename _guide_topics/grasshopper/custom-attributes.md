@@ -2,7 +2,6 @@
 title: Custom Attributes
 description: This guide contains a step-by-step walkthrough regarding custom object display.
 authors: ['david_rutten']
-author_contacts: ['DavidRutten']
 sdk: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

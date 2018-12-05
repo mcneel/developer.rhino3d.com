@@ -2,7 +2,6 @@
 title: Rhino.Python Guides
 description: Quickly add functionality to Rhino or automate repetitive tasks.
 authors: unset
-author_contacts: unset
 sdk: unset
 languages: ['Python']
 platforms: ['Windows', 'Mac']

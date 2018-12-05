@@ -2,7 +2,6 @@
 title: RhinoMobile Guides
 description: RhinoMobile is a 3D mobile application development SDK.
 authors: unset
-author_contacts: unset
 sdk: unset
 languages: ['C#']
 platforms: ['Android', 'iOS']

@@ -2,7 +2,6 @@
 title: Replacing Points with Blocks
 description: This guide demonstrates how to replace point objects with block objects using RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

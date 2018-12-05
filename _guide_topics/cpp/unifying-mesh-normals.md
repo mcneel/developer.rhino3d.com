@@ -2,7 +2,6 @@
 title: Unifying Mesh Normals
 description: This brief guide demonstrates how to unify the normal direction of mesh faces using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -20,7 +20,7 @@
           {% assign the_author = author %}
         {% endif %}
       {% endfor %}
-      <a href="{{ site.baseurl }}/authors/{{ the_author.name }}">{{ the_author.display_name }}</a> (Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)
+      by <a href="{{ site.baseurl }}/authors/{{ the_author.name }}">{{ the_author.display_name }}</a> (Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)
     {% endif %}
   </span>
 {% endif %}

@@ -2,7 +2,6 @@
 title: Finding Rhino's Installation Folder
 description: This guide discusses how to find Rhino's installation folder using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

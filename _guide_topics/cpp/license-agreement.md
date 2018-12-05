@@ -2,7 +2,6 @@
 title: License Agreement
 description: This guide provides the license agreement of C/C++ SDK.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

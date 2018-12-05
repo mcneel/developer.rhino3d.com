@@ -2,7 +2,6 @@
 title: Your First Python Script in Rhino (Windows)
 description: This guide demonstrates how to create Python scripts in Rhino for Windows.
 authors: ['scott_davidson']
-author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

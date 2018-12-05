@@ -2,7 +2,6 @@
 title: Renaming Layers
 description: This brief guide discusses how to rename a layer using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

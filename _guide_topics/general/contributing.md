@@ -2,7 +2,6 @@
 title: Contributing
 description: 'Pull requests are welcome!'
 authors: ['dan_belcher']
-author_contacts: ['dan']
 sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']

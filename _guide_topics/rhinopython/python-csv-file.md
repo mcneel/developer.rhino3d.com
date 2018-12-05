@@ -2,7 +2,6 @@
 title: How to read and write a CSV files
 description: Use Python to read and write comma-delimited files.
 authors: ['scott_davidson']
-author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

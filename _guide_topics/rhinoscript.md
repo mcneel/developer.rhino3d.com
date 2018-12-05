@@ -2,7 +2,6 @@
 title: RhinoScript Guides
 description: RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino for Windows, or automate repetitive tasks.
 authors: unset
-author_contacts: unset
 sdk: unset
 languages: ['VBScript']
 platforms: ['Windows']

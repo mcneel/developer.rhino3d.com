@@ -2,7 +2,6 @@
 title: Testing for Curves on Surfaces
 description: This guide discusses how to test to see if a curve lies on a surface using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

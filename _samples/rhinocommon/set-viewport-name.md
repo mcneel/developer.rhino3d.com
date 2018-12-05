@@ -2,7 +2,6 @@
 title: Set Viewport Name
 description: Demonstrates how to set a viewport's name or title.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

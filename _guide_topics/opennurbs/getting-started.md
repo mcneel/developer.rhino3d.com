@@ -2,7 +2,6 @@
 title: Getting Started
 description: This guide explains how to use the openNURBS C++ toolkit in your project.
 authors: ['dale_lear']
-author_contacts: ['dalelear']
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']

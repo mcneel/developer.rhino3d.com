@@ -2,7 +2,6 @@
 title: Triangulating Polygons
 description: This guide demonstrates how to triangulate polygons using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -2,7 +2,6 @@
 title: Move CPlane
 description: Demonstrates how to move a CPlane in the active viewport.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

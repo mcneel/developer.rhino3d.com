@@ -2,7 +2,6 @@
 title: Show Surface Direction
 description: Demonstrates how to show a surface's direction using a display conduit.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

@@ -2,7 +2,6 @@
 title: Knot Multiplicity
 description: Demonstrates how to determine curve and surface knot multiplicity using RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

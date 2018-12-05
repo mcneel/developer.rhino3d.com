@@ -2,7 +2,6 @@
 title: Positioning Objects on a Surface
 description: Demonstrates how to positioning objects on a surface using RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

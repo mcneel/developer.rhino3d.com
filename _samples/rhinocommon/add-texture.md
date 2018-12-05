@@ -2,7 +2,6 @@
 title: Add Texture
 description: Demonstrates how to add a texture to an object from a user-specified bitmap file.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

@@ -2,7 +2,6 @@
 title: Multiple Pipe
 description: Demonstrates how to Pipe on multiple curves at a time using RhinoScript.
 authors: ['rajaa_issa']
-author_contacts: ['rajaa']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

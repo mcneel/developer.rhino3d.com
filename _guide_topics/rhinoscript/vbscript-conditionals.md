@@ -2,7 +2,6 @@
 title: VBScript Conditionals
 description: This guide is an survey of VBScript conditional statements.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

@@ -2,11 +2,11 @@
 title: Creating a Rhino Plug-In Package
 description: This is a step by step guide to creating a package for a Rhino plug-in.
 authors: ['will_pearson']
-author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows']
 categories: ['Step By Step']
+origin: unset
 order: 1
 keywords: ['developer', 'yak']
 layout: toc-guide-page

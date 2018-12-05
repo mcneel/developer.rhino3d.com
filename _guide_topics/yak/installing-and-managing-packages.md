@@ -2,11 +2,11 @@
 title: Installing and Managing Packages
 description: This is a step by step guide to installing a Yak package.
 authors: ['will_pearson']
-author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows']
 categories: ['Step By Step']
+origin: unset
 order: 3
 keywords: ['developer', 'yak']
 layout: toc-guide-page

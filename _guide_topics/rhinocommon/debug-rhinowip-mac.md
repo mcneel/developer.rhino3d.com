@@ -2,7 +2,6 @@
 title: Debug in RhinoWIP (Mac)
 description: This guide explains how to debug using the RhinoWIP for Mac.
 authors: ['dan_belcher']
-author_contacts: ['dan']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Mac']

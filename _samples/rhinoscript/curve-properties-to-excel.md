@@ -2,7 +2,6 @@
 title: Curve Properties to Excel
 description: Illustrates RhinoScript code that extracts curve properties into Excel.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

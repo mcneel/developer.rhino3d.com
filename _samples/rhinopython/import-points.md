@@ -2,7 +2,6 @@
 title: Import Points
 description: Demonstrates importing points from a file into Rhino using Python.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

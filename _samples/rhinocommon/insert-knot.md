@@ -2,7 +2,6 @@
 title: Insert Knot
 description: Demonstrates how to insert a knot into a user-selected NURBS curve.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

@@ -2,7 +2,6 @@
 title: Copy Objects to Layer
 description: Demonstrates how to copy objects to layer based on Python.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

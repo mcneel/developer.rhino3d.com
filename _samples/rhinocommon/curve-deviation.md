@@ -2,7 +2,6 @@
 title: Curve Deviation
 description: Demonstrates how to determine the deviation between two curves.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

@@ -2,7 +2,6 @@
 title: Curve Surface Intersection
 description: Demonstrates how to calculate the intersection points of a user-specified Brep and a curve.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

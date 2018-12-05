@@ -2,7 +2,6 @@
 title: Display Precision
 description: Demonstrates how to change the display precision in a Rhino model.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

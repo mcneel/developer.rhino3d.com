@@ -2,7 +2,6 @@
 title: Calculate Curve Intersections
 description: Demonstrates how to calculate the intersection of two curves and obtain their intersection points.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -2,7 +2,6 @@
 title: Plugin Installers (Windows)
 description: This guide explains how to create a plugin installer for Rhino for Windows.
 authors: ['brian_gillespie', 'will_pearson']
-author_contacts: ['brian', 'will']
 sdk: ['RhinoCommon', 'C/C++']
 languages: ['C#', 'C/C++']
 platforms: ['Windows']
@@ -11,7 +10,6 @@ origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/authoring
 order: 6
 keywords: ['first', 'RhinoCommon', 'Plugin', 'installing', 'c', 'C/C++', 'plugin', 'installer']
 layout: toc-guide-page
-redirect_from: /guides/cpp/plugin-installers-windows/
 TODO: Also port from http://wiki.mcneel.com/developer/rhinoinstallerengine/cpp
 ---
 

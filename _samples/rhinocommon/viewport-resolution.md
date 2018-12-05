@@ -2,7 +2,6 @@
 title: Viewport Resolution
 description: Print Active Viewport Resolution
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

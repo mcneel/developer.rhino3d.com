@@ -2,7 +2,6 @@
 title: Create Mesh from Brep
 description: Demonstrates how to create a mesh from a selected surface or polysurface.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

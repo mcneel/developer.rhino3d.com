@@ -2,7 +2,6 @@
 title: Archimedean Spirals
 description: This guide demonstrates how to create Archimedean Spirals using RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

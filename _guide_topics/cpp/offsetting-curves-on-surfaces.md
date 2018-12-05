@@ -2,7 +2,6 @@
 title: Offsetting Curves on Surfaces
 description: This guide demonstrates how to offset a curve on a surface using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

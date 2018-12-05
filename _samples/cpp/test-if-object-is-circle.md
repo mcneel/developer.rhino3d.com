@@ -2,7 +2,6 @@
 title: Test if an Object is a Circle
 description: Demonstrates how to test if an object looks like a circle.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

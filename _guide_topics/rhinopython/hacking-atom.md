@@ -2,7 +2,6 @@
 title: Hacking and Testing latest Atom rhino-python package
 description: This guide describes how to run and test the latest Atom rhino-python package.
 authors: ['alain_cormier']
-author_contacts: ['Alain']
 sdk: ['RhinoPython']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Mac']

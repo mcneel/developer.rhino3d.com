@@ -2,7 +2,6 @@
 title: VBScript Dictionaries
 description: This guide discusses using VBScript's Dictionary object in RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

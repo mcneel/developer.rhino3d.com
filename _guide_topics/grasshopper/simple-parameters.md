@@ -2,7 +2,6 @@
 title: Simple Parameters
 description: This guide covers parameters; what they are, what they're for, what they can and cannot do.
 authors: ['david_rutten']
-author_contacts: ['DavidRutten']
 sdk: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

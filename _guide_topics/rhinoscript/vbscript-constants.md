@@ -2,7 +2,6 @@
 title: VBScript Constants
 description: This brief guide is an overview of VBScript constants.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

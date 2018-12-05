@@ -2,7 +2,6 @@
 title: Uninstalling Plugins (Mac)
 description: This guide explains how to uninstall or remove plugins in Rhino for Mac.
 authors: ['dan_belcher']
-author_contacts: ['dan']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Mac']

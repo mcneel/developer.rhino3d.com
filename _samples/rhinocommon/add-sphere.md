@@ -2,7 +2,6 @@
 title: Add Sphere
 description: Demonstrates how to create a sphere from a center point and radius.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

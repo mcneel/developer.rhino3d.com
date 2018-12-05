@@ -2,7 +2,6 @@
 title: Add Truncated Cone
 description: Demonstrates how to create a truncated cone ON_BrepRevSurface and add it to Rhino.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

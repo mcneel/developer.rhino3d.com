@@ -2,7 +2,6 @@
 title: Picking Point Objects
 description: This brief guide demonstrates how to use CRhinoGetObject to pick point objects using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

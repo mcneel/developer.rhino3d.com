@@ -2,7 +2,6 @@
 title: Is Planar Surface in Plane
 description: Demonstrates how to determine if a user-selected surface is in plane.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

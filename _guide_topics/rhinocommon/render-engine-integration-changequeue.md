@@ -2,7 +2,6 @@
 title: Render Engine Integration - ChangeQueue
 description: This guide, the third of a series, discusses using the ChangeQueue to digest file content for a render engine.
 authors: ['nathan_letwory']
-author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
@@ -11,7 +10,6 @@ origin: http://www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-
 order: 3
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
-redirect_from: "/guides/rhinocommon/mockingbird-changequeue/"
 ---
 
 

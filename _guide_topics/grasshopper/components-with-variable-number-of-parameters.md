@@ -2,7 +2,6 @@
 title: Components with a variable number of parameters
 description: This guide has yet to be authored or ported.
 authors: ['david_rutten']
-author_contacts: ['DavidRutten']
 sdk: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

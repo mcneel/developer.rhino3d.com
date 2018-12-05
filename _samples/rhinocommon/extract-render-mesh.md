@@ -2,7 +2,6 @@
 title: Extract Render Mesh
 description: Demonstrates how to extract the render mesh from a surface or polysurface.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

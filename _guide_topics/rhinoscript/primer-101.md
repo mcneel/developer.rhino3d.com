@@ -2,7 +2,6 @@
 title: RhinoScript 101
 description: A full course on RhinoScript
 authors: ['david_rutten']
-author_contacts: unset
 sdk: unset
 languages: unset
 platforms: ['Windows']

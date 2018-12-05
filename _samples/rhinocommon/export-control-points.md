@@ -2,7 +2,6 @@
 title: Export Control Points
 description: Demonstrates how to export the control points of a user-selected curve and write them to a file.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

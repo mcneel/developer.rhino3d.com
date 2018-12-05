@@ -2,7 +2,6 @@
 title: Adding a NURBS Curve from Control Points
 description: This guide demonstrates two ways to create a clamped NURBS curve from a set of control points using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

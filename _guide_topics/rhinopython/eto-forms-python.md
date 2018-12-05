@@ -2,7 +2,6 @@
 title: Writing Custom Eto forms in Python
 description: Using the Eto dialog framework to create custom dialogs.
 authors: ['scott_davidson']
-author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

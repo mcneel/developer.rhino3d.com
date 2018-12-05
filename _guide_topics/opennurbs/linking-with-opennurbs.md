@@ -2,7 +2,6 @@
 title: Linking with openNURBS
 description: This guide discusses openNURBS linking.
 authors: ['dale_lear']
-author_contacts: ['dalelear']
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']

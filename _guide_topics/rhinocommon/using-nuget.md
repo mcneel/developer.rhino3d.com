@@ -2,7 +2,6 @@
 title: Using NuGet
 description: This guide describes how developers can use the NuGet packages available for RhinoCommon and Grasshopper.
 authors: ['luis_fraguada', 'will_pearson']
-author_contacts: ['fraguada', 'will']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']
@@ -11,7 +10,6 @@ origin: unset
 order: 1
 keywords: ['nuget']
 layout: toc-guide-page
-redirect_from: /guides/rhinocommon/switching-to-nuget-packages/
 ---
 
 <div class="bs-callout bs-callout-danger">

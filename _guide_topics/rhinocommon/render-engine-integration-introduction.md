@@ -2,7 +2,6 @@
 title: Render Engine Integration - Introduction
 description: This guide introduces integrating a render engine in Rhino using RhinoCommon.
 authors: ['nathan_letwory']
-author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
@@ -11,7 +10,6 @@ origin: http:/www.letworyinteractive.com/b/2016/08/integrating-a-render-engine-i
 order: 1
 keywords: ['renderer', 'integration', 'RhinoCommon']
 layout: toc-guide-page
-redirect_from: "/guides/rhinocommon/mockingbird-intro/"
 ---
 
 

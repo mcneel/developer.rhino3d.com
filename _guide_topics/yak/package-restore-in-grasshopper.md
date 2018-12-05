@@ -2,11 +2,11 @@
 title: Package Restore in Grasshopper
 description: How can Grasshopper use Yak to make your life easier?
 authors: ['will_pearson']
-author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows']
 categories: ['Features']
+origin: unset
 order: 1
 keywords: ['yak', 'grasshopper']
 layout: toc-guide-page

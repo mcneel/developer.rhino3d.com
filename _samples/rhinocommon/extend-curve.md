@@ -2,7 +2,6 @@
 title: Extend Curve
 description: Demonstrates how to extend a curve object to user-selected boundary objects.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

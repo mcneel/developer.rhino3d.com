@@ -2,7 +2,6 @@
 title: Using .NET Classes
 description: This guide discusses several .NET classes that work with RhinoScript.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

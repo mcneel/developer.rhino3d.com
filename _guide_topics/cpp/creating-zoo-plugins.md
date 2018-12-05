@@ -2,7 +2,6 @@
 title: Creating Plugins that use the Zoo
 description: This guide discusses how to create C/C++ plugins that can obtain licenses from the Zoo.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

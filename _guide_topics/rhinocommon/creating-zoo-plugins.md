@@ -2,7 +2,6 @@
 title: Creating Zoo Plugins
 description: This guide discusses how to create plugins for Zoo.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']

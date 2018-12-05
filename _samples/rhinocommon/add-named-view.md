@@ -2,7 +2,6 @@
 title: Add Named View
 description: Demonstrates how to add a named view to a Rhino model from a user-specified view and camera location.
 authors: ['steve_baer']
-author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

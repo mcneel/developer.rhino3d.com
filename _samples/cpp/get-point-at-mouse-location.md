@@ -2,7 +2,6 @@
 title: Get Point at Mouse Location
 description: Discusses how to convert a 2D screen point into a 3D world point.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

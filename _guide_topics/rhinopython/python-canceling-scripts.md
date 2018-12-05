@@ -2,7 +2,6 @@
 title: Canceling a Python script in Rhino
 description: This guide demonstrates how to cancel a Python script in Rhino.
 authors: ['scott_davidson']
-author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

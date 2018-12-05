@@ -2,7 +2,6 @@
 title: Setting Up a Cage Edit
 description: This guide demonstrates how to setup a cage editing scenario using C/C++.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

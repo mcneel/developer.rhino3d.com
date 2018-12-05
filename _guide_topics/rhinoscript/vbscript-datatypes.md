@@ -2,7 +2,6 @@
 title: VBScript Data Types
 description: This guide is an overview of VBScript Data Types.
 authors: ['dale_fugier']
-author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

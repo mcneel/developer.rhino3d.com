@@ -2,7 +2,6 @@
 title: 2 RhinoScript Essentials
 description:
 authors: ['david_rutten']
-author_contacts: ['DavidRutten']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
