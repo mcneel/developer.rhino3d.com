@@ -1,7 +1,7 @@
 ---
 title: Add Brep Box
 description: Demonstrates how to add a Brep Box to a Rhino model by specifying two points.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

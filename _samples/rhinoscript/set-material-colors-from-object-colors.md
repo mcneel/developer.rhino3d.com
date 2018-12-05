@@ -1,7 +1,7 @@
 ---
 title: Set Material Colors from Object Colors
 description: Demonstrates how to modify an object's material color to match its display color using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

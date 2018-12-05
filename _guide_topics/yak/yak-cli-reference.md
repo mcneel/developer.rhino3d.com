@@ -1,7 +1,7 @@
 ---
 title: Yak CLI Reference
 description: A reference for the Yak command line tool.
-authors: ['Will Pearson']
+authors: ['will_pearson']
 author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty

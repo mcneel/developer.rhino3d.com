@@ -1,7 +1,7 @@
 ---
 title: Rename Object
 description: Demonstrates how to rename a user-specified object.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

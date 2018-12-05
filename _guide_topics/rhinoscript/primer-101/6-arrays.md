@@ -1,7 +1,7 @@
 ---
 title: 6 Arrays
 description:
-authors: ['David Rutten']
+authors: ['david_rutten']
 author_contacts: ['DavidRutten']
 sdk: ['RhinoScript']
 languages: ['VBScript']

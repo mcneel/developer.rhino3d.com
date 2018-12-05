@@ -1,7 +1,7 @@
 ---
 title: Explode Hatch
 description: Demonstrates how to explode a user-specified hatch object into its constituent parts (curves, points, etc.)
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

@@ -1,7 +1,7 @@
 ---
 title: Determine the Maximum Z Coordinate Value of a Surface
 description: Demonstrates how determine the maximum Z coordinate value of a surface or polysurface given some X,Y coordinate.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

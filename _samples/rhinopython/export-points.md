@@ -1,7 +1,7 @@
 ---
 title: Export Points
 description: Demonstrates how to export points with Python.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']

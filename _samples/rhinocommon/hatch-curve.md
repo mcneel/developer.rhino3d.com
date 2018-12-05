@@ -1,7 +1,7 @@
 ---
 title: Hatch Curve
 description: Demonstrates how to create a hatch from a curve.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

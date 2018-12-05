@@ -1,7 +1,7 @@
 ---
 title: Creating Points from Text Objects
 description: This brief guide demonstrates how to create point objects based on text entities using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

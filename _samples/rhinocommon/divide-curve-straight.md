@@ -1,7 +1,7 @@
 ---
 title: Divide Curve Straight
 description: Demonstrates how to divide a curve using equi-distance points.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

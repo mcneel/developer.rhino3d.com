@@ -1,7 +1,7 @@
 ---
 title: What is openNURBS?
 description: This guide gives an overview of the openNURBS toolkit.
-authors: ['Dale Lear']
+authors: ['dale_lear']
 author_contacts: ['dalelear']
 sdk: ['openNURBS']
 languages: ['C/C++']

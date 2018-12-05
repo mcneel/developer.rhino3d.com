@@ -1,7 +1,7 @@
 ---
 title: Mark Points on a Line
 description: Demonstrates how to mark points on a line using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

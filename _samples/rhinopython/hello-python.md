@@ -1,7 +1,7 @@
 ---
 title: Hello Python
 description: Demonstrates Basic syntax for writing python scripts.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']

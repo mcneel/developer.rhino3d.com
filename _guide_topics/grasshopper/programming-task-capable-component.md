@@ -1,7 +1,7 @@
 ---
 title: Task Capable Components
 description: A guide to programming multi-threaded components in Grasshopper
-authors: ['Steve Baer', 'Scott Davidson']
+authors: ['steve_baer', 'scott_davidson']
 author_contacts: ['stevebaer','scottd']
 sdk: ['Grasshopper']
 languages: ['C#']

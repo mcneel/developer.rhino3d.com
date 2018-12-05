@@ -1,7 +1,7 @@
 ---
 title: Finding Points on Curves at Arc Length Distances
 description: This guide demonstrates how to find points that are a specified distance from the start of curves using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

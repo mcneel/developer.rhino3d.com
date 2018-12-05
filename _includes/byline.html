@@ -4,23 +4,23 @@
     {% assign iterator_count = page.authors.size | minus: 1 %}
     by
       {% for i in (0..iterator_count) %}
-        {% assign check_authors_contact = page.author_contacts[i] %}
-        {% if check_authors_contact contains '@' %}
-          <a href="mailto:{{ page.author_contacts[i] }}">{{ page.authors[i] }}</a>
-        {% else %}
-          <a href="https://discourse.mcneel.com/users/{{ page.author_contacts[i] }}/activity">{{ page.authors[i] }}</a>
-        {% endif %}
+        {% for author in site.data.authors %}
+          {% if author.name == page.authors[i] %}
+            {% assign the_author = author %}
+          {% endif %}
+        {% endfor %}
+        <a href="{{ site.baseurl }}/authors/{{ the_author.name }}">{{ the_author.display_name }}</a>
         {% if i == iterator_count %}
           {% break %}
         {% endif %} and
-      {% endfor %}  (Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)
+      {% endfor %} (Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)
     {% else %}
-      {% assign check_author_contact = page.author_contacts[0] %}
-      {% if check_author_contact contains '@' %}
-        by <a href="mailto:{{ page.author_contacts }}">{{ page.authors }}</a> (Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)
-      {% else %}
-        by <a href="https://discourse.mcneel.com/users/{{ page.author_contacts }}/activity">{{ page.authors }}</a> (Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)
-      {% endif %}
+      {% for author in site.data.authors %}
+        {% if author.name == page.authors[0] %}
+          {% assign the_author = author %}
+        {% endif %}
+      {% endfor %}
+      <a href="{{ site.baseurl }}/authors/{{ the_author.name }}">{{ the_author.display_name }}</a> (Last modified: <a href="https://github.com/{{ site.nwo }}/commits/{{ site.git_branch | default: "master" }}/{{ page.path }}" target="_blank">{{ page.last_modified_at | date_to_string }}</a>)
     {% endif %}
   </span>
 {% endif %}

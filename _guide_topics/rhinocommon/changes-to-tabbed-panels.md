@@ -1,7 +1,7 @@
 ---
 title: Changes to Tabbed Panels
 description: Discusses the changes in tabbed panels for Rhino 6.
-authors: ['John Morse']
+authors: ['john_morse']
 author_contacts: ['JohnM']
 sdk: ['RhinoCommon']
 languages: ['C#']

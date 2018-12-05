@@ -1,7 +1,7 @@
 ---
 title: 3 Parametric Curves and Surfaces
 description: This guide is an in-depth review of parametric curves with special focus on NURBS curves and the concepts of continuity and curvature.
-authors: ['Rajaa Issa']
+authors: ['rajaa_issa']
 author_contacts: ['rajaa']
 sdk: ['General']
 languages: unset

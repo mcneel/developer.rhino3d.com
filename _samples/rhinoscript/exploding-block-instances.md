@@ -1,7 +1,7 @@
 ---
 title: Exploding Block Instances
 description: Demonstrates how to explode an instance of a block using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

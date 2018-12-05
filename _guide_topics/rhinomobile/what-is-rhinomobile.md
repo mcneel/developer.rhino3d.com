@@ -1,7 +1,7 @@
 ---
 title: What is RhinoMobile?
 description: This guide gives and overview of RhinoMobile.
-authors: ['Dan Belcher']
+authors: ['dan_belcher']
 author_contacts: ['dan']
 sdk: ['RhinoMobile']
 languages: ['C#']

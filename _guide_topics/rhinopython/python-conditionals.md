@@ -1,7 +1,7 @@
 ---
 title: Python Conditionals
 description: This guide is an survey of Python conditional statements.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']

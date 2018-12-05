@@ -1,7 +1,7 @@
 ---
 title: Quadratic Solver
 description: This brief guide demonstrates how to solve quadratic equations in RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

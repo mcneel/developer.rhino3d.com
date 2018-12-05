@@ -1,7 +1,7 @@
 ---
 title: Reversing Arrays
 description: This brief guide demonstrates how to reverse an array using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

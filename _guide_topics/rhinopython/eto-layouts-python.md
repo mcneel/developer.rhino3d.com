@@ -1,7 +1,7 @@
 ---
 title: Eto Layouts in Rhino.Python
 description: Using the Eto DynamicLayout to organize controls.
-authors: ['Scott Davidson']
+authors: ['scott_davidson']
 author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']

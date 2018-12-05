@@ -1,7 +1,7 @@
 ---
 title: Move Grip Objects
 description: Demonstrates how to move grip objects on a selected surface.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'VB']

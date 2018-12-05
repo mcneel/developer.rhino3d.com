@@ -1,7 +1,7 @@
 ---
 title: Simple Component
 description: This guide gives an exhaustive, step by step explanation of how to build a simple Grasshopper component.
-authors: ['David Rutten']
+authors: ['david_rutten']
 author_contacts: ['DavidRutten']
 sdk: ['Grasshopper']
 languages: ['C#', 'VB']

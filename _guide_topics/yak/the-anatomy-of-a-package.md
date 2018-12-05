@@ -1,7 +1,7 @@
 ---
 title: The Anatomy of a Package
 description: This guide explains the structure of a Yak package.
-authors: ['Will Pearson']
+authors: ['will_pearson']
 author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty

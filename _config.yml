@@ -39,6 +39,7 @@ timezone: "America/Los_Angeles"
 safe: true
 
 collections:
+  - authors
   - faqs
   - guide_topics
   - guide_advanced_topics
@@ -61,6 +62,9 @@ collections:
   videos:
     output: true
     permalink: /videos/
+  authors:
+    output: true
+    permalink: /authors/:path/
 
 exclude: [script, test, README.md, CONTRIBUTING.md, Gemfile, vendor]
 

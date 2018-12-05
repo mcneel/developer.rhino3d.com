@@ -1,7 +1,7 @@
 ---
 title: Developer Docs Style Guide
 description: This guide serves as an example and quick reference for the syntax and structure of this site.
-authors: ['Dan Belcher']
+authors: ['dan_belcher']
 author_contacts: ['dan']
 sdk: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']

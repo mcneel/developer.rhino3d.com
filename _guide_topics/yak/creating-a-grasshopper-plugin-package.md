@@ -1,8 +1,7 @@
 ---
 title: Creating a Grasshopper Plug-In Package
-description: >
-  This is a step by step guide to creating a package for a Grasshopper plug-in.
-authors: ['Will Pearson']
+description: This is a step by step guide to creating a package for a Grasshopper plug-in.
+authors: ['will_pearson']
 author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty

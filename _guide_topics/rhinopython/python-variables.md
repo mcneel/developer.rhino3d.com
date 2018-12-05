@@ -1,7 +1,7 @@
 ---
 title: Python Variables
 description: This guide provides an overview of Python variables.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']

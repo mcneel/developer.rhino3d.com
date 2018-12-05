@@ -1,7 +1,7 @@
 ---
 title: Curve Bounding Box
 description: Demonstrates how to create a curve bounding box (world and plane oriented).
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

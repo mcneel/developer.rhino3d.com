@@ -1,7 +1,7 @@
 ---
 title: Extracting Thumbnail Preview Images
 description: This guide demonstrates how to extract the thumbnail preview image from a 3dm file using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

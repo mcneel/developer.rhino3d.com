@@ -1,7 +1,7 @@
 ---
 title: Your First Python Script in Rhino (Mac)
 description: This guide covers the basics of getting started writing Python in Rhino for Mac.
-authors: ['Alain Cormier']
+authors: ['alain_cormier']
 author_contacts: ['Alain']
 sdk: ['RhinoPython']
 languages: ['Python']

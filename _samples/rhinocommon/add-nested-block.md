@@ -1,7 +1,7 @@
 ---
 title: Add Nested Block
 description: Demonstrates how to add a nested block to an instance definition.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'VB']

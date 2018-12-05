@@ -1,7 +1,7 @@
 ---
 title: Increase NURBS Curve Degree
 description: Demonstrates how to increase the degree of a NURBS curve.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

@@ -1,7 +1,7 @@
 ---
 title: What's New?
 description: This brief guide outlines the new and changed features in the Rhino C/C++ SDK.
-authors: ['Dale Fugier', 'Steve Baer']
+authors: ['dale_fugier', 'steve_baer']
 author_contacts: ['dale', 'stevebaer']
 sdk: ['C/C++']
 languages: ['C/C++']

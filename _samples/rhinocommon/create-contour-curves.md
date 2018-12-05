@@ -1,7 +1,7 @@
 ---
 title: Create Contour Curves
 description: Demonstrates how to create contour curves on user-specified objects.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

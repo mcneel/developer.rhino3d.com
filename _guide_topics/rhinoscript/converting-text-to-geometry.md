@@ -1,7 +1,7 @@
 ---
 title: Converting Text to Geometry
 description: This guide demonstrates how to convert text to curves using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

@@ -1,7 +1,7 @@
 ---
 title: Migrate your plugin project to Rhino 6 manually
 description: This guide walks you through manually migrating your Rhino 5 plugin project to Rhino 6.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

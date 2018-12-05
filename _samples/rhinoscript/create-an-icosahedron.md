@@ -1,7 +1,7 @@
 ---
 title: Create an Icosahedron
 description: Demonstrates one way of creating a Icosahedron in RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

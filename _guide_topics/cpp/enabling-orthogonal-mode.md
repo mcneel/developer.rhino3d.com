@@ -1,7 +1,7 @@
 ---
 title: Enabling Orthogonal Mode
 description: This brief guide demonstrates how to enable Rhino's orthogonal mode using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

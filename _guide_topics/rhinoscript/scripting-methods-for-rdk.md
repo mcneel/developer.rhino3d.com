@@ -1,7 +1,7 @@
 ---
 title: Scripting Methods for RDK (Windows)
 description: This guide enumerates the RhinoScript methods for accessing the RDK.
-authors: ['Andrew le Bihan', '@andy']
+authors: ['andrew_le_bihan']
 author_contacts: ['']
 sdk: ['C/C++', 'RhinoScript']
 languages: ['C/C++', 'RhinoScript']
@@ -14,7 +14,7 @@ layout: toc-guide-page
 TODO: 'needs cleanup and formatting work and to be added to rhinoscript guides'
 ---
 
- 
+
 ## Overview
 
 To get a scripting object for the Rhino RDK, use the following code:

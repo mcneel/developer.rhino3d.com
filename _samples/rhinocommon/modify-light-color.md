@@ -1,7 +1,7 @@
 ---
 title: Modify Light Color
 description: Demonstrates how to change the color of a user-specified light.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

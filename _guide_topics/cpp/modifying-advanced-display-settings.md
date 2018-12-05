@@ -1,7 +1,7 @@
 ---
 title: Modifying Advanced Display Settings
 description: This guide demonstrates how to modify advanced display settings using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

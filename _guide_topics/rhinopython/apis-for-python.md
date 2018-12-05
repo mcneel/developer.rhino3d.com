@@ -1,7 +1,7 @@
 ---
 title: APIs Available to Python
 description: This guide covers the APIs available to Python in Rhino.
-authors: ['Alain Cormier']
+authors: ['alain_cormier']
 author_contacts: ['Alain']
 sdk: ['RhinoPython']
 languages: ['Python']
@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## Overview
 
-Python is an extensible programming language with hundreds of additional modules.  This allows Python to be used in many situations both inside Rhinoa and outside Rhino.  There are some specific additional models that are specifically of interest related to Rhino and Grasshopper.
+Python is an extensible programming language with hundreds of additional modules.  This allows Python to be used in many situations both inside Rhino and outside Rhino.  There are some specific additional models that are specifically of interest related to Rhino and Grasshopper.
 
 These new modules can be accessed in a Python script by including the `import` method at the top of each Python script:
 

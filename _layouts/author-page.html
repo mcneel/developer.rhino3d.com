@@ -1,0 +1,54 @@
+---
+layout: bootstrap
+---
+<div class="container">
+    {% assign components = page.url | split: "/" %}
+    {% assign index = components.size | minus: 1 %}
+    {% assign last_path_component = components[index] | strip %}
+
+    {% for author in site.data.authors %}
+      {% if author.name == last_path_component %}
+        {% assign the_author = author %}
+      {% endif %}
+    {% endfor %}
+
+    <h1><a href="{{ site.baseurl }}/authors">Authors</a>: {{ the_author.display_name }}</h1>
+
+    {% if the_author.discourse and the_author.discourse != 'unset' %}
+      <img src="https://files.mcneel.com/rhino/mcneel_discourse_new.ico" alt="Discourse" height="16" width="16">&nbsp;<a href="https://discourse.mcneel.com/users/{{ the_author.discourse }}/activity">@{{ the_author.discourse }}</a> on <a href="http://discourse.mcneel.com/c/rhino-developer">Discourse</a><br/>
+    {% endif %}
+
+    {% if the_author.email and the_author.email != 'unset' %}
+      <span class="glyphicon glyphicon-envelope"></span>&nbsp;<a href="mailto:{{ the_author.email }}">{{ the_author.email }}</a><br/>
+    {% endif %}
+
+    <br/>
+
+    {{ the_author.display_name }} has contributed the following content:
+
+    <div class="trigger">
+      {% assign guides = site.guide_topics | sort:"order" %}
+      {% assign samples = site.samples | sort:"order" %}
+      <ul>
+      {% for guide in guides %}
+        {% if guide.authors and guide.authors != 'unset' %}
+          {% for author in guide.authors %}
+            {% if author contains the_author.name %}
+              <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+      {% for sample in samples %}
+        {% if sample.authors and sample.authors != 'unset' %}
+          {% for author in sample.authors %}
+            {% if author contains the_author.name %}
+              <li><a class="page-link" href="{{ sample.url | prepend: site.baseurl }}" title="{{ sample.description }}">{{ sample.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </div>
+
+</div>

@@ -1,7 +1,7 @@
 ---
 title: VBScript Procedures
 description: This guide discusses VBScript procedures.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

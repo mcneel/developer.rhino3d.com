@@ -1,7 +1,7 @@
 ---
 title: Add Torus
 description: Demonstrates how to construct a torus from a set of radii and a plane.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

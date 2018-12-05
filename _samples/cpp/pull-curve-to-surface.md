@@ -1,7 +1,7 @@
 ---
 title: Pull Curve to Surface
 description: Demonstrates how to use ON_Surface::Pullback() to pull a curve object to a surface object.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

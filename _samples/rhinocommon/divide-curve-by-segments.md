@@ -1,7 +1,7 @@
 ---
 title: Divide Curve by Segments
 description: Demonstrates how to divide a user-selected curve into length segments.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

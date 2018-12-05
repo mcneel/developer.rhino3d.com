@@ -1,7 +1,7 @@
 ---
 title: Add NURBS Curve
 description: Demonstrates how to create a NURBS curve from a list of points.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

@@ -1,7 +1,7 @@
 ---
 title: Testing for Object Visibility
 description: This guide demonstrates how to detect whether or not an object is visible using openNURBS.
-authors: ['Dale Lear']
+authors: ['dale_lear']
 author_contacts: ['dalelear']
 sdk: ['openNURBS']
 languages: ['C/C++']

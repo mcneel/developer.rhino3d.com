@@ -1,7 +1,7 @@
 ---
 title: Creating Leaders
 description: This brief guide demonstrates how to an annotation leader using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

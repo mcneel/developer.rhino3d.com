@@ -1,7 +1,7 @@
 ---
 title: Calculate Radius of Curvature
 description: Demonstrates how to compute the radius of curvature of a curve object at a selected location.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

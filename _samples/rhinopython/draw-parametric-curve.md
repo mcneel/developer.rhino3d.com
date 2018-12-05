@@ -1,7 +1,7 @@
 ---
 title: Draw a Parametric Curve
 description: Demonstrates how to draw a parametric curve Python.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']

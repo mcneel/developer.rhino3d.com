@@ -1,8 +1,7 @@
 ---
 title: Creating a Rhino Plug-In Package
-description: >
-  This is a step by step guide to creating a package for a Rhino plug-in.
-authors: ['Will Pearson']
+description: This is a step by step guide to creating a package for a Rhino plug-in.
+authors: ['will_pearson']
 author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty

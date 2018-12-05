@@ -1,7 +1,7 @@
 ---
 title: Adding Curve Objects
 description: This guide discusses how to add curve objects to Rhino using the Rhino C/C++ SDK.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

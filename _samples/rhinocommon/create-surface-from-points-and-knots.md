@@ -1,7 +1,7 @@
 ---
 title: Create Surface From Points and Knots
 description: Demonstrates how to create a surface from scratch from points and knots.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

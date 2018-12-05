@@ -1,7 +1,7 @@
 ---
 title: Event Watchers
 description: This guide covers how to synchronize a control's appearance with what is going on in Rhino using event watchers.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoCommon']
 languages: ['C#']

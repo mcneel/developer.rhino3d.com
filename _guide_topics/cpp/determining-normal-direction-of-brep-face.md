@@ -1,7 +1,7 @@
 ---
 title: Determining the Normal Direction of a Brep Face
 description: This guide demonstrates how to determine the normal direction of a Brep face using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

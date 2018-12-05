@@ -1,7 +1,7 @@
 ---
 title: Rhino Compute Service with Python
 description: This guide covers all the necessary tools required to get started with the Rhino Compute Service using Python.
-authors: ['Scott Davidson']
+authors: ['scott_davidson']
 author_contacts: ['scottd']
 sdk: ['RhinoCommon', 'Compute']
 languages: ['Python']

@@ -1,7 +1,7 @@
 ---
 title: Match Object Attributes
 description: Demonstrates a custom object attribute matching function in RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

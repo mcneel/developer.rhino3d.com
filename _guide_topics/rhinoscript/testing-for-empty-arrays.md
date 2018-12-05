@@ -1,7 +1,7 @@
 ---
 title: Testing for Empty Arrays
 description: This guide discusses how to determine a VBScript array is empty.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

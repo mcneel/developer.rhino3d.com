@@ -1,7 +1,7 @@
 ---
 title: Add NURBS Curve
 description: Demonstrates how to add a NURBS curve to Rhino.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

@@ -1,7 +1,7 @@
 ---
 title: Create Box Frames
 description: Demonstrates how to create a box frame with RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

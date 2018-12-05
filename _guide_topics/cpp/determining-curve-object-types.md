@@ -1,7 +1,7 @@
 ---
 title: Determining Curve Object Types
 description: This guide demonstrates how to determine the curve type using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

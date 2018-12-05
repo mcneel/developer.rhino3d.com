@@ -1,7 +1,7 @@
 ---
 title: Wrapping Native Libraries
 description: This guide demonstrates how to wrap a C/C++ library in order to call into it from .NET.  
-authors: ['Dan Belcher']
+authors: ['dan_belcher']
 author_contacts: ['dan']
 sdk: ['RhinoCommon']
 languages: ['C#']

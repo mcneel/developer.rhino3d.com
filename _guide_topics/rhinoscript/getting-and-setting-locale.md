@@ -1,7 +1,7 @@
 ---
 title: Getting & Setting Locale
 description: This guide demonstrates how to format locale-sensitive numbers using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

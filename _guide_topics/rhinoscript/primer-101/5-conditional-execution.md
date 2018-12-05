@@ -1,7 +1,7 @@
 ---
 title: 5 Conditional execution
 description:
-authors: ['David Rutten']
+authors: ['david_rutten']
 author_contacts: ['DavidRutten']
 sdk: ['RhinoScript']
 languages: ['VBScript']

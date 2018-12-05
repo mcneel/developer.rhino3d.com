@@ -1,7 +1,7 @@
 ---
 title: Isocurve Density
 description: Demonstrates how to adjust the the isocurve density of a user-specified surface.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

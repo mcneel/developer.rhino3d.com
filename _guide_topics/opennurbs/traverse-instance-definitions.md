@@ -1,7 +1,7 @@
 ---
 title: Traversing Instance Definitions
 description: This brief guide describes how to read instance definitions using the openNURBS toolkit.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['openNURBS']
 languages: ['C/C++']

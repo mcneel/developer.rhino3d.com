@@ -1,7 +1,7 @@
 ---
 title: Exploding Meshes
 description: Demonstrates how to explode a mesh into individual faces using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

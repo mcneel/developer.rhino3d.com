@@ -1,7 +1,7 @@
 ---
 title: Determining Language Setting
 description: This guide demonstrates how to determine the language setting when developing localized C/C++ plugins.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

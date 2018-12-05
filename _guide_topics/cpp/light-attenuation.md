@@ -1,7 +1,7 @@
 ---
 title: Light Attenuation
 description: This brief guide discusses light attenuation in Rhino.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

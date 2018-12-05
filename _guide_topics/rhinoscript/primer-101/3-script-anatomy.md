@@ -1,7 +1,7 @@
 ---
 title: 3 Script Anatomy
 description:
-authors: ['David Rutten']
+authors: ['david_rutten']
 author_contacts: ['DavidRutten']
 sdk: ['RhinoScript']
 languages: ['VBScript']

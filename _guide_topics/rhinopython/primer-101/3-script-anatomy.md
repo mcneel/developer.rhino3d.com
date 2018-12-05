@@ -1,7 +1,7 @@
 ---
 title: 3 Script Anatomy
 description:
-authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
+authors: ['skylar_tibbits', 'arthur_van_der_harten', 'steve_baer']
 author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
 sdk: ['RhinoPython']
 languages: ['Python']

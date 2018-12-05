@@ -1,7 +1,7 @@
 ---
 title: Modifying Object Colors
 description: This guide demonstrates how to modify the color of objects using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

@@ -1,7 +1,7 @@
 ---
 title: Intersecting Line and Circle
 description: Demonstrates how to find the intersection point(s) of a circle and a line.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'VB']

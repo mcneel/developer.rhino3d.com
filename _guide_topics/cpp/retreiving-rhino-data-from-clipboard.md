@@ -1,7 +1,7 @@
 ---
 title: Retrieving Rhino Data from the Clipboard
 description: This guide demonstrates how to access Rhino data from the Windows Clipboard using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

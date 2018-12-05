@@ -1,7 +1,7 @@
 ---
 title: Textures and Mappings
 description: This guide discusses materials, textures, and texture mapping using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

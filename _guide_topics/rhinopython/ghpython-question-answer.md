@@ -1,7 +1,7 @@
 ---
 title: GhPython Common Questions and Answers
 description: Here are the most common questions and answers about GhPython.
-authors: ['Scott Davidson']
+authors: ['scott_davidson']
 author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']

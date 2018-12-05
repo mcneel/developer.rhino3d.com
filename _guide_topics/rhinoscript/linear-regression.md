@@ -1,7 +1,7 @@
 ---
 title: Linear Regression
 description: This guide demonstrates how to calculate linear regression using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

@@ -1,7 +1,7 @@
 ---
 title: Determine an Object's Layer Name
 description: Demonstrates how to determine a selected object's layer name using C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

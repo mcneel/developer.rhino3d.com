@@ -1,7 +1,7 @@
 ---
 title: Adjusting Clipping Planes from Conduits
 description: This brief guide discusses adjusting clipping planes from display conduits using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

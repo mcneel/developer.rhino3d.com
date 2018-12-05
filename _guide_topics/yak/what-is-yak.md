@@ -1,7 +1,7 @@
 ---
 title: What is Yak?
 description: This guide introduces the Rhino Package Manager (a.k.a. Yak).
-authors: ['Will Pearson']
+authors: ['will_pearson']
 author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty

@@ -1,7 +1,7 @@
 ---
 title: Colors in Python
 description: This guide provides an overview of a RhinoScriptSyntax Color type in Python.
-authors: ['Scott Davidson']
+authors: ['scott_davidson']
 author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']

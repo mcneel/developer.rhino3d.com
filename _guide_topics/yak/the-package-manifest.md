@@ -1,7 +1,7 @@
 ---
 title: The Package Manifest
 description: What is a 'package manifest' and what should it include?
-authors: ['Will Pearson']
+authors: ['will_pearson']
 author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty

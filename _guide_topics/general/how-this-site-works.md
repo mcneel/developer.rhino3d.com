@@ -1,7 +1,7 @@
 ---
 title: How This Site Works
 description: A guide to how this very developer document site works.
-authors: ['Dan Belcher']
+authors: ['dan_belcher']
 author_contacts: ['dan']
 sdk: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
@@ -132,7 +132,7 @@ Here is an example of the YAML for this guide:
 ---
 title: How This Site Works
 description: A guide to how this very developer document site works.
-authors: ['Dan Belcher']
+authors: ['dan_belcher']
 author_contacts: ['dan']
 sdk: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
@@ -175,7 +175,7 @@ Here is an example of the YAML for [this sample]({{ site.baseurl }}/samples/cpp/
 ---
 title: Add a Cone Surface
 description: Demonstrates how to create a cone using ON_BrepCone.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

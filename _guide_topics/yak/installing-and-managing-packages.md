@@ -1,8 +1,7 @@
 ---
 title: Installing and Managing Packages
-description: >
-  This is a step by step guide to installing a Yak package.
-authors: ['Will Pearson']
+description: This is a step by step guide to installing a Yak package.
+authors: ['will_pearson']
 author_contacts: ['will']
 sdk: ['Yak']
 languages: # empty

@@ -1,7 +1,7 @@
 ---
 title: Picking Objects without CRhinoGetObject
 description: This guide demonstrates an alternate technique to picking objects without using CRhinoGetObject.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

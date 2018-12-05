@@ -1,7 +1,7 @@
 ---
 title: Using Python Dictionary as a database
 description: This guide discusses using Python's Dictionary object to access nested data.
-authors: ['Scott Davidson']
+authors: ['scott_davidson']
 author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']

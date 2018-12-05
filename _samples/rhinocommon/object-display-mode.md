@@ -1,7 +1,7 @@
 ---
 title: Object Display Mode
 description: Demonstrates how to set the object display mode of a user-specified mesh or surface.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

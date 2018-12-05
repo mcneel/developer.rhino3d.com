@@ -1,7 +1,7 @@
 ---
 title: Orienting Objects on Surfaces
 description: This guide demonstrates how to orient objects on a surface using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

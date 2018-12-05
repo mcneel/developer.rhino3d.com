@@ -1,7 +1,7 @@
 ---
 title: Determine Language Setting
 description: Demonstrates how to determine Rhino's language setting.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

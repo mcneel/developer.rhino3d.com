@@ -1,7 +1,7 @@
 ---
 title: How to use JSON with Python
 description: How to format in JSON or XML.
-authors: ['Scott Davidson']
+authors: ['scott_davidson']
 author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']

@@ -1,7 +1,7 @@
 ---
 title: Reading Per-Face Render Materials
 description: This brief guide describes how to read render materials from Brep faces using the openNURBS toolkit.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['openNURBS']
 languages: ['C/C++']

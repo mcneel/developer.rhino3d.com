@@ -1,7 +1,7 @@
 ---
 title: Determining if a Brep is a Box
 description: This brief guide discusses how to determine if a brep object is a box using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

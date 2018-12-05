@@ -1,7 +1,7 @@
 ---
 title: Render Engine Integration - Interactive Viewport
 description: This guide, the fourth of a series, covers integrating render engines in Rhino's viewport.
-authors: ['Nathan Letwory']
+authors: ['nathan_letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
 languages: ['C#']

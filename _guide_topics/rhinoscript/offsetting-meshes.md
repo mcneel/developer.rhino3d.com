@@ -1,7 +1,7 @@
 ---
 title: Offsetting Meshes
 description: This guide demonstrates how to offset and solidify a mesh using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

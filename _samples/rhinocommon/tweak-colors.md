@@ -1,7 +1,7 @@
 ---
 title: Tweak Colors
 description: Demonstrates how to set the default paint colors in Rhino.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'VB']

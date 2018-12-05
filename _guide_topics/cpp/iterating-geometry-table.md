@@ -1,7 +1,7 @@
 ---
 title: Iterating the Geometry Table
 description: This guide demonstrates how to use the C/C++ CRhinoObjectIterator class to iterate through the document.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

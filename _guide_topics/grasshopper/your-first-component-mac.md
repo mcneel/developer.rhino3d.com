@@ -1,7 +1,7 @@
 ---
 title: Your First Component (Mac)
 description: This guide walks you through your first Grasshopper component for Rhino for Mac using RhinoCommon and Xamarin Studio.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['Grasshopper']
 languages: ['C#']

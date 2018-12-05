@@ -1,7 +1,7 @@
 ---
 title: Get Object UUID
 description: Demonstrates how to get the UUID (sometimes called GUID) of a Rhino object.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

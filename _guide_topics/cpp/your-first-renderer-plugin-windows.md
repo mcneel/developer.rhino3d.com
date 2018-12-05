@@ -1,8 +1,7 @@
 ---
 title: Your First Renderer Plugin (Windows)
 description: This guide has yet to be authored or ported.
-authors: ['Andrew le Bihan', '@andy']
-author_contacts: ['']
+authors: ['andrew_le_bihan']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
@@ -14,7 +13,7 @@ layout: toc-guide-page
 TODO: 'needs porting'
 ---
 
- 
+
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>
   <p>This guide has yet to be ported to this site.  Please check back soon for updates.  

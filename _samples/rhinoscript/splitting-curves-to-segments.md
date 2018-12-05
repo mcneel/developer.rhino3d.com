@@ -1,7 +1,7 @@
 ---
 title: Splitting Curves into Segments
 description: Demonstrates how to split a curve into multiple segments using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

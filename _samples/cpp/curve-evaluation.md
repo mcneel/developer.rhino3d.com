@@ -1,7 +1,7 @@
 ---
 title: Curve Evaluation
 description: Demonstrates how to evaluate a curve.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

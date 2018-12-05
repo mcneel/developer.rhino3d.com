@@ -1,8 +1,7 @@
 ---
 title: Rhino.Python 101
 description: A full course on Rhino.Python
-authors: unset
-author_contacts: unset
+authors: ['skylar_tibbits', 'arthur_van_der_harten', 'steve_baer']
 sdk: unset
 languages: unset
 platforms: ['Windows', 'Mac']

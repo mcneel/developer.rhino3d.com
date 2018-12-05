@@ -1,7 +1,7 @@
 ---
 title: Rhino NURBS Geometry Overview
 description: This guide provides an introduction to Rhino's NURBS Geometry from a Python perspective.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']

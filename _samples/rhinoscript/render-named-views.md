@@ -1,7 +1,7 @@
 ---
 title: Render Named Views
 description: Demonstrates how to render named views using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

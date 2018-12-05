@@ -1,7 +1,7 @@
 ---
 title: 7 Geometry
 description:
-authors: ['David Rutten']
+authors: ['david_rutten']
 author_contacts: ['DavidRutten']
 sdk: ['RhinoScript']
 languages: ['VBScript']

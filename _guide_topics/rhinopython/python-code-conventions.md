@@ -1,7 +1,7 @@
 ---
 title: Python Code Conventions
 description: This guide provides an overview of Python coding conventions.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']

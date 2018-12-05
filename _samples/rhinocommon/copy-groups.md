@@ -1,7 +1,7 @@
 ---
 title: Copy Groups
 description: Demonstrates how to duplicate objects with grouping.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

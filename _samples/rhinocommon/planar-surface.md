@@ -1,7 +1,7 @@
 ---
 title: Planar Surface
 description: Demonstrates how to create a planar surface from a rectangle.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

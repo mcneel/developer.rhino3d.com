@@ -1,7 +1,7 @@
 ---
 title: Point and Vector Methods
 description: This guide provides an overview of the RhinoScriptSytntax Point and Vector methods.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']

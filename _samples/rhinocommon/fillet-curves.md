@@ -1,7 +1,7 @@
 ---
 title: Fillet Curves
 description: Demonstrates how to fillet two curves by a specified radius.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

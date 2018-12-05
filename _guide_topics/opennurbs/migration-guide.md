@@ -1,6 +1,7 @@
 ---
 title: What's New and Update Guide
 description: This guide contains information to help you use the current version of openNURBS.
+authors: ['dale_lear']
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
@@ -10,7 +11,7 @@ keywords: [openNURBS', 'migrating', 'versions']
 layout: toc-guide-page
 ---
 
- 
+
 ## Overview
 
 The openNURBS toolkit reads and writes Rhino 3DM files.

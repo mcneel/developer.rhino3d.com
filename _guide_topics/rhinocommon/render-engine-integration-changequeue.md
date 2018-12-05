@@ -1,7 +1,7 @@
 ---
 title: Render Engine Integration - ChangeQueue
 description: This guide, the third of a series, discusses using the ChangeQueue to digest file content for a render engine.
-authors: ['Nathan Letwory']
+authors: ['nathan_letwory']
 author_contacts: ['nathanletwory']
 sdk: ['RhinoCommon']
 languages: ['C#']

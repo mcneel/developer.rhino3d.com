@@ -1,7 +1,7 @@
 ---
 title: Rename Layer
 description: Demonstrates how to rename a layer.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

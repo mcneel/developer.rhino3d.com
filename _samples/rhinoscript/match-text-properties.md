@@ -1,7 +1,7 @@
 ---
 title: Match Text Properties
 description: Demonstrates how to match text object properties in RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

@@ -1,7 +1,7 @@
 ---
 title: Python Procedures
 description: This guide discusses Python procedures.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']

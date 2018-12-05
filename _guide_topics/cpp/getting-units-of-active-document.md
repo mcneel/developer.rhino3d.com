@@ -1,7 +1,7 @@
 ---
 title: Getting the Units of the Active Document
 description: This brief guide demonstrates how to determine the unit system of the active document.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

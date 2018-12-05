@@ -1,7 +1,7 @@
 ---
 title: Dynamically Draw Geometry when Picking Points
 description: Demonstrates how to dynamically draw geometry during point picking.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

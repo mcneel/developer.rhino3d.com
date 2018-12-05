@@ -1,7 +1,7 @@
 ---
 title: Get and Set Active Viewport
 description: Demonstrates how to get and set the active view.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

@@ -1,7 +1,7 @@
 ---
 title: Edit Text
 description: Demonstrates how to edit selected text, replacing it with new text.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

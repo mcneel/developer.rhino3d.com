@@ -1,7 +1,7 @@
 ---
 title: Meshing Objects
 description: Demonstrates how to mesh surface and polysurface objects using the RhinoMeshObjects function.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

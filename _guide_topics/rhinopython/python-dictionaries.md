@@ -1,7 +1,7 @@
 ---
 title: Python Dictionaries
 description: This guide discusses using Python's Dictionary object.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']

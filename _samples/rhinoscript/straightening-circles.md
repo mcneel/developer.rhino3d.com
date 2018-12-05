@@ -1,7 +1,7 @@
 ---
 title: Straightening Circles
 description: Demonstrates how to create lines based on circle geometry using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

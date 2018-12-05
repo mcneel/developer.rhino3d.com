@@ -1,7 +1,7 @@
 ---
 title: 2 Matrices and Transformations
 description: This guide reviews matrix operations and transformations.
-authors: ['Rajaa Issa']
+authors: ['rajaa_issa']
 author_contacts: ['rajaa']
 sdk: ['General']
 languages: unset

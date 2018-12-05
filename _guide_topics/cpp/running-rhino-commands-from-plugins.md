@@ -1,7 +1,7 @@
 ---
 title: Running Rhino Commands from Plugins
 description: This guide discusses the proper techniques to use when running a Rhino command from within the context of a C/C++ plugin command.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

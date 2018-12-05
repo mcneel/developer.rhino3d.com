@@ -1,7 +1,7 @@
 ---
 title: Determine Active Viewport
 description: Demonstrates how to determine the active viewport name, even in a layout or a detail view.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

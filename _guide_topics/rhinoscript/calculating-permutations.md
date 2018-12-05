@@ -1,7 +1,7 @@
 ---
 title: Calculating Permutations
 description: This guide discusses how to calculate permutations using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

@@ -1,7 +1,7 @@
 ---
 title: Your First Python Script in Grasshopper
 description: This manual is for Grasshopper users who would like to create their own custom scripts using Grasshopper for Rhino.
-authors: ['Scott Davidson']
+authors: ['scott_davidson']
 author_contacts: ['scottd']
 sdk: ['RhinoPython']
 languages: ['Python']

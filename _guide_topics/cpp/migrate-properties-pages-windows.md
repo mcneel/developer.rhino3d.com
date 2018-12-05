@@ -1,7 +1,7 @@
 ---
 title: Migrate your Options, Document Properties and Object Properties Pages
 description: This guide walks you through migrating existing Rhino 5, plug-in provided, Options, Document Properties and Object Properties pages to Rhino 6.
-authors: ['John Morse']
+authors: ['john_morse']
 author_contacts: ['johnm']
 sdk: ['C/C++']
 languages: ['C/C++']

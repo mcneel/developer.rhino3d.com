@@ -1,7 +1,7 @@
 ---
 title: Using NuGet
 description: This guide describes how developers can use the NuGet packages available for RhinoCommon and Grasshopper.
-authors: ['Luis Fraguada', 'Will Pearson']
+authors: ['luis_fraguada', 'will_pearson']
 author_contacts: ['fraguada', 'will']
 sdk: ['RhinoCommon']
 languages: ['C#']

@@ -1,7 +1,7 @@
 ---
 title: Reparameterize Curve
 description: Demonstrates how to Reparameterize a curve object.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

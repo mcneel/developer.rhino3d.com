@@ -1,7 +1,7 @@
 ---
 title: Flamingo Legacy Plant Browser
 description: Demonstrates how to display the Flamingo nXt legacy plant browser using RhinoScript.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

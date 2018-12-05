@@ -1,7 +1,7 @@
 ---
 title: Show Hidden Objects
 description: Demonstrates how to iterate through the geometry table and unhide hidden objects.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

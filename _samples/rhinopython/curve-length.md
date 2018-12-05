@@ -1,7 +1,7 @@
 ---
 title: Get Curve Length
 description: Demonstrates how to get curve length through Python.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']

@@ -1,7 +1,7 @@
 ---
 title: Create Plane Surface
 description: Demonstrates how to create a plane surface.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

@@ -1,7 +1,7 @@
 ---
 title: Duplicating Objects with Group
 description: This guide demonstrates how to duplicate objects that are members of one or more object groups using C/C++.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

@@ -1,7 +1,7 @@
 ---
 title: Lines in Python
 description: This guide provides an overview of a RhinoScriptSytntax Line Geometry in Python.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoPython']
 languages: ['Python']

@@ -1,7 +1,7 @@
 ---
 title: Add Line
 description: Demonstrates how to construct a line from two points.
-authors: ['Steve Baer']
+authors: ['steve_baer']
 author_contacts: ['stevebaer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']

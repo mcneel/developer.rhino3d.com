@@ -1,7 +1,7 @@
 ---
 title: Transform World to Screen Coordinates
 description: Demonstrates how to transform world coordinates to screen coordinates.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']

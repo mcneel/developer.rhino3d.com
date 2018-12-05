@@ -1,7 +1,7 @@
 ---
 title: Converting GUIDs to Strings
 description: This guide demonstrates how convert an array of bytes containing a GUID to a string.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['RhinoScript']
 languages: ['VBScript']

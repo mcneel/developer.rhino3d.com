@@ -1,7 +1,7 @@
 ---
 title: Create Surface from Edge Curves
 description: Demonstrates how to create a surface object from four edge curves.
-authors: ['Dale Fugier']
+authors: ['dale_fugier']
 author_contacts: ['dale']
 sdk: ['C/C++']
 languages: ['C/C++']
