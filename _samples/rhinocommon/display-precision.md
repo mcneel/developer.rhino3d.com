@@ -75,7 +75,7 @@ def RunCommand():
     doc.ModelDistanceDisplayPrecision, 0, 7)
   if distance_display-precision == None: return Result.Nothing
 
-  if distance_display-precision <> doc.ModelDistanceDisplayPrecision:
+  if distance_display-precision != doc.ModelDistanceDisplayPrecision:
     doc.ModelDistanceDisplayPrecision = distance_display-precision
 
   return Result.Success
