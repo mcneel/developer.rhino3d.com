@@ -39,7 +39,7 @@ order: 2
 - [Vector Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics/vector-mathematics)  
 - [Matrices and Transformations]({{ site.baseurl }}/guides/general/essential-mathematics/matrices-transformations)  
 - [Parametric Curves and Surfaces]({{ site.baseurl }}/guides/general/essential-mathematics/parametric-curves-surfaces)  
-- <a href="http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/"><span class="glyphicon glyphicon-download"></span></a> [Download Essential Mathematics for Computational Design as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/)
+- <a href="https://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/"><span class="glyphicon glyphicon-download"></span></a> [Download Essential Mathematics for Computational Design as a single PDF ](https://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/)
 
 ### This Site
 
@@ -230,7 +230,7 @@ order: 2
 &nbsp;&nbsp; 7. [Classes]({{ site.baseurl }}/guides/rhinopython/primer-101/7-classes/)  
 &nbsp;&nbsp; 8. [Geometry]({{ site.baseurl }}/guides/rhinopython/primer-101/8-geometry/)  
 
-&nbsp;&nbsp; <a href="http://download.rhino3d.com/IronPython/5.0/RhinoPython101/"><span class="glyphicon glyphicon-download"></span></a> [Download the Rhino.Python 101 Primer as a single PDF ](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)  
+&nbsp;&nbsp; <a href="https://download.rhino3d.com/IronPython/5.0/RhinoPython101/"><span class="glyphicon glyphicon-download"></span></a> [Download the Rhino.Python 101 Primer as a single PDF ](https://download.rhino3d.com/IronPython/5.0/RhinoPython101/)  
 
 
 ### Intermediate
@@ -266,16 +266,16 @@ order: 2
 
 ### Other Resources
 
-- [Rhino Scripting Forum (Discourse)](http://discourse.mcneel.com/c/scripting)  
+- [Rhino Scripting Forum (Discourse)](https://discourse.mcneel.com/c/scripting)  
 - [Rhino.Python Samples]({{ site.baseurl }}/samples/#rhinopython)  
 - [Rhino.Python Developer Samples GitHub](https://github.com/mcneel/rhino-developer-samples/tree/{{ site.git_branch | default: "master" }}/rhinopython)  
-- [Designalyze Python Tutorials](http://designalyze.com/)
+- [Designalyze Python Tutorials](https://designalyze.com/)
 - [Plethora Project](https://www.plethora-project.com/education/2017/5/31/rhino-python-programming)
-- [Steve Baer's Blog](http://stevebaer.wordpress.com/category/python/)
-- [Python Beginner's Guide](http://wiki.python.org/moin/BeginnersGuide/Programmers)
-- [Tutorials Point Python Series](http://www.tutorialspoint.com/python/index.htm)
-- [Rhino.Python Dash Docset](http://discourse.mcneel.com/t/rhino-python-dash-docset/6399)
-- [Nature of Code Video Tutorials](http://www.youtube.com/watch?v=Kyi_K85Gsm4&list=PL5Up_u-XkWgP7nB7XIevMTyBCZ7pvLBGP)
+- [Steve Baer's Blog](https://stevebaer.wordpress.com/category/python/)
+- [Python Beginner's Guide](https://wiki.python.org/moin/BeginnersGuide/Programmers)
+- [Tutorials Point Python Series](https://www.tutorialspoint.com/python/index.htm)
+- [Rhino.Python Dash Docset](https://discourse.mcneel.com/t/rhino-python-dash-docset/6399)
+- [Nature of Code Video Tutorials](https://www.youtube.com/watch?v=Kyi_K85Gsm4&list=PL5Up_u-XkWgP7nB7XIevMTyBCZ7pvLBGP)
 
 ---
 
@@ -539,7 +539,7 @@ order: 2
 &nbsp;&nbsp; 5. [Conditional execution]({{ site.baseurl }}/guides/rhinoscript/primer-101/5-conditional-execution/)  
 &nbsp;&nbsp; 6. [Arrays]({{ site.baseurl }}/guides/rhinoscript/primer-101/6-arrays/)  
 &nbsp;&nbsp; 7. [Geometry]({{ site.baseurl }}/guides/rhinoscript/primer-101/7-geometry/)  
-&nbsp;&nbsp; <a href="http://www.rhino3d.com/download/rhino/5.0/rhinoscript101"><span class="glyphicon glyphicon-download"></span></a> [Download the RhinoScript 101 Primer as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
+&nbsp;&nbsp; <a href="https://www.rhino3d.com/download/rhino/5.0/rhinoscript101"><span class="glyphicon glyphicon-download"></span></a> [Download the RhinoScript 101 Primer as a single PDF ](https://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 
 ### Fundamentals
 
@@ -604,10 +604,10 @@ order: 2
 
 ### Other Resources
 
-- [Pascal Golay's scripted utilities for Rhino](http://wiki.mcneel.com/people/pascalgolay)
+- [Pascal Golay's scripted utilities for Rhino](https://wiki.mcneel.com/people/pascalgolay)
 - [RhinoScript Samples on GitHub](https://github.com/mcneel/rhinoscript)
-- [RhinoScript Dash Docset](http://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
-- [RhinoScript Help File On-Line](http://www.rhino3d.com/5/rhinoscript/index.html)
+- [RhinoScript Dash Docset](https://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
+- [RhinoScript Help File On-Line](https://www.rhino3d.com/5/rhinoscript/index.html)
 
 ---
 
@@ -642,6 +642,3 @@ Our regional office in Europe provides a translation and localization service fo
 ### Marketing Support
 
 If you have developed a Rhino add-on that you would like to make available to other Rhino users, [food4Rhino](https://www.food4rhino.com/) is the place to post the details about your plug-ins for Rhino and Grasshopper. Food4Rhino is the Plug-in Community Service by McNeel.  Users can find the newest Rhino Plug-ins, Grasshopper Add-ons, Materials, Textures and Backgrounds, Scripts and much more. It is free. [See the frequently asked questions...](https://www.food4rhino.com/faq)
-
-
-

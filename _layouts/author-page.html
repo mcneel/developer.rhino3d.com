@@ -15,7 +15,7 @@ layout: bootstrap
     <h1><a href="{{ site.baseurl }}/authors">Authors</a>: {{ the_author.display_name }}</h1>
 
     {% if the_author.discourse and the_author.discourse != 'unset' %}
-      <img src="https://files.mcneel.com/rhino/mcneel_discourse_new.ico" alt="Discourse" height="16" width="16">&nbsp;<a href="https://discourse.mcneel.com/users/{{ the_author.discourse }}/activity">@{{ the_author.discourse }}</a> on <a href="http://discourse.mcneel.com/c/rhino-developer">Discourse</a><br/>
+      <img src="https://files.mcneel.com/rhino/mcneel_discourse_new.ico" alt="Discourse" height="16" width="16">&nbsp;<a href="https://discourse.mcneel.com/users/{{ the_author.discourse }}/activity">@{{ the_author.discourse }}</a> on <a href="https://discourse.mcneel.com/c/rhino-developer">Discourse</a><br/>
     {% endif %}
 
     {% if the_author.email and the_author.email != 'unset' %}

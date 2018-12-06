@@ -183,7 +183,7 @@ For additional samples, visit the [Developer Samples Repository on GitHub.](http
   <h4>UNDER CONSTRUCTION</h4>
   <p>openNURBS samples have yet to be ported to this site.  Please check back soon for updates.  
   In the meantime, you can view the original documentation here:
-  <a href="http://wiki.mcneel.com/developer/opennurbs/home">http://wiki.mcneel.com/developer/opennurbs/home</a> or see the openNURBS samples bundled with the SDK.</p>
+  <a href="https://wiki.mcneel.com/developer/opennurbs/home">https://wiki.mcneel.com/developer/opennurbs/home</a> or see the openNURBS samples bundled with the SDK.</p>
 </div>
 
 ---
@@ -320,7 +320,7 @@ For additional samples, visit the [Developer Samples Repository on GitHub.](http
   <h4>UNDER CONSTRUCTION</h4>
   <p>Grasshopper Component samples have yet to be ported to this site.  Please check back soon for updates.  
   In the meantime, you can view the original documentation here:
-  <a href="http://wiki.mcneel.com/developer/grasshopper/gha">http://wiki.mcneel.com/developer/grasshopper/gha</a></p>
+  <a href="https://wiki.mcneel.com/developer/grasshopper/gha">https://wiki.mcneel.com/developer/grasshopper/gha</a></p>
 </div>
 
 ---

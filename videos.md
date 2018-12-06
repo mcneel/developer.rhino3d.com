@@ -27,7 +27,7 @@ _A Gentle Introduction to Hardcore Programming for Computational Design_
 
 Presented by [Long Nguyen](https://discourse.mcneel.com/u/longnguyen).  Recorded March 20 - 23rd, 2017 at the [Institute for Computational Design (ICD)](http://icd.uni-stuttgart.de/) at the [University of Stuttgart](https://www.uni-stuttgart.de/).
 
-Download the <a href="http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/"><span class="glyphicon glyphicon-download"></span></a> [C# Workshop Handouts](http://files.na.mcneel.com.s3.amazonaws.com/misc/C%23_Workshop_Handouts.rar)
+Download the <a href="https://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/"><span class="glyphicon glyphicon-download"></span></a> [C# Workshop Handouts](https://files.na.mcneel.com.s3.amazonaws.com/misc/C%23_Workshop_Handouts.rar)
 
 ### Day 1: Part 1
 
