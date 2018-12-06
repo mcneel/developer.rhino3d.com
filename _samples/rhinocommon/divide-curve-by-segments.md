@@ -97,7 +97,7 @@ from scriptcontext import doc
 
 def RunCommand():
   rc, objref = RhinoGet.GetOneObject("Select curve to divide", False, ObjectType.Curve)
-  if rc <> Result.Success or objref == None:
+  if rc != Result.Success or objref == None:
     return rc
 
   curve = objref.Curve()
@@ -107,7 +107,7 @@ def RunCommand():
   segment_count = 2
   rc, segment_count = RhinoGet.GetInteger(
     "Divide curve into how many segments?", False, segment_count)
-  if rc <> Result.Success:
+  if rc != Result.Success:
     return rc
 
   curve_params = curve.DivideByCount(segment_count, True)

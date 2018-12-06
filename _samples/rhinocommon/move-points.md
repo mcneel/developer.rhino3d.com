@@ -103,13 +103,13 @@ from scriptcontext import doc
 
 def RunCommand():
   rc, obj_refs = RhinoGet.GetMultipleObjects("Select points to move", False, ObjectType.Point)
-  if rc <> Result.Success or obj_refs == None:
+  if rc != Result.Success or obj_refs == None:
     return rc
 
   gp = GetPoint()
   gp.SetCommandPrompt("Point to move from")
   gp.Get()
-  if gp.CommandResult() <> Result.Success:
+  if gp.CommandResult() != Result.Success:
     return gp.CommandResult()
   start_point = gp.Point()
 
@@ -117,7 +117,7 @@ def RunCommand():
   gp.SetBasePoint(start_point, False)
   gp.DrawLineFromPoint(start_point, True)
   gp.Get()
-  if gp.CommandResult() <> Result.Success:
+  if gp.CommandResult() != Result.Success:
     return gp.CommandResult()
   end_point = gp.Point()
 
