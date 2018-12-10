@@ -80,22 +80,22 @@ from Rhino.Geometry import *
 from scriptcontext import doc
 
 def RunCommand():
-  for annotation_object in doc.Objects.GetObjectList(ObjectType.Annotation):
-    if not isinstance (annotation_object, AnnotationObjectBase):
-      continue
+    for annotation_object in doc.Objects.GetObjectList(ObjectType.Annotation):
+        if not isinstance (annotation_object, AnnotationObjectBase):
+            continue
 
-    annotation = annotation_object.Geometry
+        annotation = annotation_object.Geometry
 
-    if annotation.Index == doc.DimStyles.CurrentDimensionStyleIndex:
-      continue
+        if annotation.Index == doc.DimStyles.CurrentDimensionStyleIndex:
+            continue
 
-    annotation.Index = doc.DimStyles.CurrentDimensionStyleIndex
-    annotation_object.CommitChanges()
+        annotation.Index = doc.DimStyles.CurrentDimensionStyleIndex
+        annotation_object.CommitChanges()
 
-  doc.Views.Redraw()
-  return Result.Success
+    doc.Views.Redraw()
+    return Result.Success
 
 if __name__ == "__main__":
-  RunCommand()
+    RunCommand()
 ```
 {: #py .tab-pane .fade .in}

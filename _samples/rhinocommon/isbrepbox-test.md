@@ -166,9 +166,9 @@ def IsBrepBox(brep):
             dot = abs(N[i] * N[j])
             if dot<=zero_tolerance: continue
             if abs(dot-1.0)<=zero_tolerance:
-              count += 1
+                count += 1
             else:
-              rc = False
+                rc = False
 
     if rc:
         if 2!=count: rc = False

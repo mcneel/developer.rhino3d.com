@@ -52,14 +52,14 @@ import rhinoscriptsyntax as rs
 from scriptcontext import doc
 
 def RunCommand():
-  view = doc.Views.ActiveView
-  if view == None:
-    return Result.Failure
+    view = doc.Views.ActiveView
+    if view == None:
+        return Result.Failure
 
-  view.MainViewport.Name = "Facade"
-  return Result.Success
+    view.MainViewport.Name = "Facade"
+    return Result.Success
 
 if __name__ == "__main__":
-  RunCommand()
+    RunCommand()
 ```
 {: #py .tab-pane .fade .in}
