@@ -68,6 +68,7 @@ To make your Library visible in the Finder:
 - [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-mac)
 - [Your First Plugin (Cross-Platform)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-crossplatform)
 - [Uninstalling Plugins (Mac)]({{ site.baseurl }}/guides/rhinocommon/uninstalling-plugins-mac)
+- [Plugin Installers (Windows)]({{ site.baseurl }}/guides/rhinocommon/plugin-installers-windows)
 
 ---
 
