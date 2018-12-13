@@ -23,7 +23,7 @@ TODO: Also port from http://wiki.mcneel.com/developer/rhinoinstallerengine/cpp
 Creating a plugin installer is very easy.  You simply add your compiled plugin to a zip archive and change the extension from *.zip* to *.rhi*.  Once this is done, you can double-click the archive and the [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine) will begin to install your plugin.  That's all there is to it!
 
 <div class="alert alert-info" role="alert">
-<strong>Note:</strong> This is intended to be a quickstart guide. For a more general overview please see the [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine) guide.
+<strong>Note:</strong> This is intended to be a quickstart guide. For a more general overview please see the <a href="{{ site.baseurl }}/guides/general/rhino-installer-engine">Rhino Installer Engine</a> guide.
 </div>
 
 ## An Example
@@ -68,6 +68,7 @@ Because the Rhino Plugin Installer Engine unzips your *.rhi* file into a directo
 ## Related topics
 
 - [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine)
+- [Plugin Installers (Mac)]({{ site.baseurl }}/guides/rhinocommon/plugin-installers-mac)
 
 ---
 

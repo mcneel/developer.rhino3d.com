@@ -4,7 +4,7 @@ description: This guide is a brief introduction to the Rhino Installer Engine.
 authors: ['brian_gillespie', 'will_pearson']
 sdk: ['General']
 languages: ['All']
-platforms: ['Windows', 'Mac']
+platforms: ['Windows']
 categories: ['Fundamentals']
 origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/overview
 order: 6
@@ -12,16 +12,19 @@ keywords: ['developer', 'rhino', 'installer']
 layout: toc-guide-page
 ---
 
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> This guide describes the Rhino Installer Engine that is installed with Rhino for <strong>Windows</strong>. Rhino for Mac also has a method of packaging plug-ins for easy installation, see the <a href="{{ site.baseurl }}/guides/rhinocommon/plugin-installers-mac">Plugin Installers (Mac)</a> guide.
+</div>
 
 ## Overview
 
-The Rhino Installer Engine simplifies distribution, installation and updating of plug-ins for Rhino (Windows and Mac).
+The Rhino Installer Engine simplifies distribution, installation and updating of plug-ins for Rhino for Windows.
 
 ## How It Works
 
 ### File and folder structure
 
-A Rhino Installer package is a zip file with an *.rhi* extension (or a *.macrhi* extension on Mac). On Windows, the package can include more than one version of a plug-in however all versions must share the same GUID (i.e. they're different versions of the _same_ plug-in). On Mac, there can only be one *.rhp* file per *.macrhi* package.
+A Rhino Installer package is a zip file with an *.rhi* extension. The package can include more than one version of a plug-in however all versions must share the same GUID (i.e. they're different versions of the _same_ plug-in).
 
 There are no file structure or naming requirements. For example the two packages below are functionally equivalent. Both contain versions of "Marmoset" – a fictitious C++ plug-in compiled for Rhino 5 (32-bit and 64-bit) and Rhino 6[^1].
 
@@ -54,13 +57,11 @@ You can include anything you want in the *.rhi* package – supporting DLLs, hel
 
 ### Installation and compatibility
 
-On Windows, the Rhino Installer Engine examines each *.rhp* file and extracts the plugin GUID, Title, Version, the SDK used (e.g. RhinoCommon, C++) and the SDK version. This information is used to determine which version of the plug-in will be installed for which installed version of Rhino for Windows; the newest compatible plugin is registered with the corresponding version of Rhino. RhinoCommon plug-ins compiled as `AnyCPU` will be installed for both 32- and 64-bit Rhino 5[^1].
+The Rhino Installer Engine examines each *.rhp* file and extracts the plugin GUID, Title, Version, the SDK used (e.g. RhinoCommon, C++) and the SDK version. This information is used to determine which version of the plug-in will be installed for which installed version of Rhino for Windows; the newest compatible plugin is registered with the corresponding version of Rhino. RhinoCommon plug-ins compiled as `AnyCPU` will be installed for both 32- and 64-bit Rhino 5[^1].
 
 <div class="alert alert-info" role="alert">
 <strong>Since Rhino 6:</strong> Where a RhinoCommon plug-in is found that has been compiled against an earlier _major_ version of Rhino than is installed, an in-depth compatibility check will be performed to determine whether the SDK of the installed Rhino still supports the functionality used by the plug-in. If the check is successful then the outdated plug-in will be installed.
 </div>
-
-On Mac, the Rhino Installer Engine (and Rhino itself) only support 64-bit installation.
 
 ## Limitations
 
