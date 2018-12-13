@@ -22,6 +22,10 @@ TODO: Also port from http://wiki.mcneel.com/developer/rhinoinstallerengine/cpp
 
 Creating a plugin installer is very easy.  You simply add your compiled plugin to a zip archive and change the extension from *.zip* to *.rhi*.  Once this is done, you can double-click the archive and the [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine) will begin to install your plugin.  That's all there is to it!
 
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> This is intended to be a quickstart guide. For a more general overview please see the [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine) guide.
+</div>
+
 ## An Example
 
 Imagine you have a plugin and want to support multiple versions of Rhino.  For example, you want to:
@@ -36,7 +40,7 @@ This is possible. You need to:
 1. Create an "installer image" folder. In this example, the folder is the name of the product – _Marmoset_. This folder will contain only the files you want to install on the user's system.
 
         Marmoset/
-        ├── Rhino WIP/
+        ├── Rhino 6/
         │   ├── Marmoset.rhp
         │   └── required_wip.dll
         ├── Rhino 5.0/
@@ -51,8 +55,8 @@ This is possible. You need to:
         └── README.txt
 
 
-1. Copy the appropriate files into the folders.  Note that all three versions of the plugin can have the same name, so long as they are in different folders.
-1. Add all the files inside the "installer image" folder to a new ZIP[^1] archive
+1. Copy the appropriate files into the folders[^1].  Note that all three versions of the plugin can have the same name, so long as they are in different folders.
+1. Add all the files inside the "installer image" folder to a new ZIP[^2] archive
 1. Change the extension from *.zip* to *.rhi*
 
 ## Everything but the kitchen sink
@@ -69,4 +73,5 @@ Because the Rhino Plugin Installer Engine unzips your *.rhi* file into a directo
 
 ## Footnotes
 
-[^1]: Other compression algorithms are not supported.
+[^1]: Folder names are not important; the *.rhp* files themselves are inspected to determine for which versions of Rhino they will be installed.
+[^2]: Other compression algorithms are not supported.
