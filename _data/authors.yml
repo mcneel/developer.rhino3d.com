@@ -53,6 +53,11 @@
   email: unset
   discourse: Jess
 
+- name: john_croudy
+  display_name: John Croudy
+  email: john.croudy@mcneel.com
+  discourse: JohnC
+
 - name: john_morse
   display_name: John Morse
   email: johnm@mcneel.com
