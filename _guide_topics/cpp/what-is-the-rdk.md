@@ -65,9 +65,7 @@ Each material, environment or texture can have child nodes (AKA _child slots_ or
 
 ![Render Window]({{ site.baseurl }}/images/what-is-the-rdk-04.png)
 
-From a user's point of view, the _Render Window_ is the window that appears on the screen when one renders a model (see the picture above). However, from a developer's point of view, it can be thought of as the actual _frame buffer_. It contains information about the channels and pixels that make up the renderer image. The standard render window provides a number of features to renderers, including built-in support for scripting, cloning, saving to High-Dynamic-Range formats, post effects, zooming and channel display.
-
-Many renderers call the render window the _frame buffer_.  The terms are nearly interchangeable.
+From a user's point of view, the Render Window is the window that appears on the screen when one renders a model (see the picture above). However, from a developer's point of view, it can be thought of as the actual _frame&nbsp;buffer_. It contains information about the channels and pixels that make up the rendered image. The standard render window provides a number of features to renderers, including built-in support for scripting, cloning, saving to high dynamic-range formats, post effects, zooming and channel display.
 
 ## HDR and EXR Support
 
@@ -87,7 +85,7 @@ Azimuth and Altitude values modify the way the image is rotated in space during 
 
 ## Decals
 
-![Decals]({{ site.baseurl }}/images/what-is-the-rdk-07.png){:style="float: right; margin-right: 7px; margin-top: 7px; margin-bottom: 200px; "}
+![Decals]({{ site.baseurl }}/images/what-is-the-rdk-07.png){:style="float: right; margin-right: 7px; margin-top: 7px; "}
 
 Decals are non-repeating textures that are applied to the surface of an object with a given projection. They are an easy-to-use way of attaching single images or similar textures to objects without going through the complexity of the texture mapping process.
 
@@ -95,6 +93,13 @@ Decals are textures that are placed directly on a specified area of one or more 
 
 Decals consist of a single instance of a texture, rather than being tiled as they are when used in a material.
 
+******
+******
+******
+******
+******
+******
+******
 ******
 
 ## Sunlight
