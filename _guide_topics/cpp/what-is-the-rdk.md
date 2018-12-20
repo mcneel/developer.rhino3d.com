@@ -43,7 +43,7 @@ The RDK is a collection of tools that extend the Rhino application platform with
 
 The Material Editor, Environment Editor, and Texture Palettes interact with the enhanced render content system. All are based on a similar interface with only small functional differences between them.
 
-![Material Environment and Texture Editors]({{ site.baseurl }}/images/what-is-the-rdk-03.png){:style=float: right; margin-right: 8px; margin-top: 8px; margin-left: 12px;}
+![Material Environment and Texture Editors]({{ site.baseurl }}/images/what-is-the-rdk-03.png){:style=float: right; margin-right: 8px; margin-top: 8px;}
 
 1. Navigation controls similar to those found on a web browser.
 2. Resizeable Floating Previews.
@@ -69,7 +69,7 @@ From a user's point of view, the Render Window is the window that appears on the
 
 ## HDR and EXR Support
 
-![HDR and EXR Support]({{ site.baseurl }}/images/what-is-the-rdk-05.png){:style=float: right; margin-right: 8px; margin-top: 8px; margin-left: 12px;}
+![HDR and EXR Support]({{ site.baseurl }}/images/what-is-the-rdk-05.png){:style=float: right; margin-right: 8px; margin-top: 8px;}
 
 An HDR image which provides automatic conversion to a bitmap for non-HDR capable renderers. This allows the Rhino renderer and viewport display to show HDR environments while providing HDR tools to third-party renderer engines.
 
@@ -85,7 +85,7 @@ Azimuth and Altitude values modify the way the image is rotated in space during 
 
 ## Decals
 
-![Decals]({{ site.baseurl }}/images/what-is-the-rdk-07.png){:style=float: right; margin-right: 8px; margin-top: 8px; margin-left: 12px;}
+![Decals]({{ site.baseurl }}/images/what-is-the-rdk-07.png){:style=float: right; margin-right: 8px; margin-top: 8px;}
 
 Decals are non-repeating textures that are applied to the surface of an object with a given projection. They are an easy-to-use way of attaching single images or similar textures to objects without going through the complexity of the texture mapping process.
 
