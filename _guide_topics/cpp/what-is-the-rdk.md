@@ -93,12 +93,12 @@ Decals are textures that are placed directly on a specified area of one or more 
 
 Decals consist of a single instance of a texture, rather than being tiled as they are when used in a material.
 
-<br>{:style="clear:both"}
+<br>{: style="clear:both;"}
 
 ## Sunlight
 
-![Sunlight]({{ site.baseurl }}/images/what-is-the-rdk-06.png){:style=.rdk_image_right}
+![Sunlight]({{ site.baseurl }}/images/what-is-the-rdk-06.png){: style=.rdk_image_right;}
 
 Sun tools, including a docking panel to control the document sun, a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools make sun angle calculations easier.
 
-<br>{:style="clear:both"}
+<br>{: style="clear:both;"}
