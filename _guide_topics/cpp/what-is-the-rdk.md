@@ -1,6 +1,6 @@
 ---
 title: What is the RDK?
-description: This guide describes the Rhino Renderer Development Kit (AKA _RDK_) and its features.
+description: This guide describes the Rhino Renderer Development Kit (AKA RDK) and its features.
 authors: ['andrew_le_bihan', 'john_croudy']
 sdk: ['C/C++']
 languages: ['C/C++']
@@ -65,7 +65,7 @@ Each material, environment or texture can have child nodes (AKA _child slots_ or
 
 ![Render Window]({{ site.baseurl }}/images/what-is-the-rdk-04.png)
 
-The standard render window provides a number of features to renderers, including built-in support for scripting, cloning, saving to High-Dynamic-Range formats, post effects, zooming and channel display.
+From a user's point of view, the _Render Window_ is the window that appears on the screen when one renders a model (see the picture above). However, from a developer's point of view, it can be thought of as the actual _frame buffer_. It contains information about the channels and pixels that make up the renderer image. The standard render window provides a number of features to renderers, including built-in support for scripting, cloning, saving to High-Dynamic-Range formats, post effects, zooming and channel display.
 
 Many renderers call the render window the _frame buffer_.  The terms are nearly interchangeable.
 
