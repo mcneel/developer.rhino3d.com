@@ -41,9 +41,9 @@ The RDK is a collection of tools that extend the Rhino application platform with
 
 ## Material, Environment and Texture Editors
 
-![Material Environment and Texture Editors]({{ site.baseurl }}/images/what-is-the-rdk-03.png){:style="float: right; margin-right: 7px; margin-top: 7px;"}
-
 The Material Editor, Environment Editor, and Texture Palettes interact with the enhanced render content system. All are based on a similar interface with only small functional differences between them.
+
+![Material Environment and Texture Editors]({{ site.baseurl }}/images/what-is-the-rdk-03.png){:style="float: right; margin-right: 7px; margin-top: 7px;"}
 
 1. Navigation controls similar to those found on a web browser.
 2. Resizeable Floating Previews.
@@ -93,6 +93,19 @@ Decals are textures that are placed directly on a specified area of one or more 
 
 Decals consist of a single instance of a texture, rather than being tiled as they are when used in a material.
 
+******
+******
+******
+******
+******
+******
+******
+******
+******
+******
+******
+******
+******
 ******
 ******
 ******
