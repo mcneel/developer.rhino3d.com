@@ -1,6 +1,6 @@
 ---
 title: What is the RDK?
-description: This guide describes the Rhino Renderer Development Kit and its features.
+description: This guide describes the Rhino Renderer Development Kit (AKA _RDK_) and its features.
 authors: ['andrew_le_bihan', 'john_croudy']
 sdk: ['C/C++']
 languages: ['C/C++']
@@ -17,9 +17,7 @@ TODO: 'needs cleanup, standardization, editing, new images, etc.'
 
 ## Overview
 
-The Rhino Renderer Development Kit (AKA _RDK_) is a collection of tools that extend the Rhino application platform with visualization-specific capabilities.
-
-The RDK underpins the [Brazil for Rhino](http://brazil.mcneel.com/) product, and all of the above features are supported in that product.  However, all of these features are available to third-party developers to integrate their products into Rhino.
+The RDK is a collection of tools that extend the Rhino application platform with visualization-specific capabilities. Third-party developers can use the RDK SDK to integrate their renderers into Rhino.
 
 ## Features
 
@@ -52,16 +50,16 @@ The Material Editor, Environment Editor, and Texture Palettes interact with the 
 3. Configurable thumbnails with multiple sizes and styles.
 4. Resizeable preview pane.
 5. User interface for editing render content parameters (AKA _fields_).
-6. Breadcrumb navigation control similar to those found on on file explorers.
+6. Breadcrumb navigation control similar to those found on file explorers.
 7. Task menu for performing actions on render contents.
 
-These editors are integrated with Rhino's tabbed pane system. Access them through the Rhino Render menu, the Rendering toolbar, or the editor commands.
+These editors are integrated with Rhino's tabbed pane system. Access them through the Rhino Render menu, the Rendering tool bar, or the editor commands.
 
 Lists of materials, environments, and textures are stored in the Rhino document. Each editor displays the relevant render content type as preview thumbnails.
 
-Contents display an interface below the preview thumbnails in an area reserved for collapsible UI panels. An addition to the basic UI panels, several additional collapsible panels are provided by Rhino within the same area as the content UI. These include the Texture Summary panel, the Notes panel, the Local Mapping panel, Graph panel and the Adjustment panel.  These are described later in the content UI section.
+Contents display an interface below the preview thumbnails in an area reserved for collapsible UI panels. An addition to the basic UI panels, several additional collapsible panels are provided by Rhino within the same area as the content UI. These include the Name, Notes, Texture Summary, Local Mapping, Graph and Adjustment panels. These are described later in the content UI section.
 
-Each material, environment or texture can have child nodes (AKA texture slots or sub-nodes). The children can be of any content type, but specific child slots will only support specific types. The most common child type is a texture. For example, the _Texture_ child for a Custom Material will only support textures, as will the _Background image_ slot on a Basic Environment.
+Each material, environment or texture can have child nodes (AKA _child slots_ or _sub-nodes_). The children can be of any content type, but specific child slots will only support specific types. The most common child type is a texture. For example, the _Color_ child slot for a Custom Material will only support textures, as will the _Background image_ child slot on a Basic Environment.
 
 ## Render Window
 
@@ -87,18 +85,18 @@ The Save As button can be used to convert the image to a bitmap file. The LDR ex
 
 Azimuth and Altitude values modify the way the image is rotated in space during the projection conversion.
 
+## Decals
+
+![Decals]({{ site.baseurl }}/images/what-is-the-rdk-07.png){:style="float: right; margin-right: 7px; margin-top: 7px;"}
+
+Decals are non-repeating textures that are applied to the surface of an object with a given projection. They are an easy-to-use way of attaching single images or similar textures to objects without going through the complexity of the texture mapping process.
+
+Decals are textures that are placed directly on a specified area of one or more objects. Use decals to modify a limited part of an object's color.
+
+Decals consist of a single instance of a texture, rather than being tiled as they are when used in a material.
+
 ## Sunlight
 
 ![Sunlight]({{ site.baseurl }}/images/what-is-the-rdk-06.png){:style="float: right; margin-right: 7px; margin-top: 7px;"}
 
 Sun tools, including a docking panel to control the document sun, a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools make sun angle calculations easier.
-
-## Decals
-
-![Decals]({{ site.baseurl }}/images/what-is-the-rdk-07.png){:style="float: right; margin-right: 7px; margin-top: 7px;"}
-
-Decals are non-repeating textures that are applied to the surface of an object with a given projection.  They are an easy-to-use way of attaching single images or similar textures to objects without going through the complexity of the texture mapping process.
-
-Decals are textures that are placed directly on a specified area of one or more objects.  Use decals to modify a limited part of an object's color.
-
-Decals consist of a single instance of a texture, rather than being tiled as they are when used in a material.
