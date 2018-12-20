@@ -13,12 +13,11 @@ layout: toc-guide-page
 TODO: 'needs cleanup, standardization, editing, new images, etc.'
 ---
 
-
 ![RDK Logo]({{ site.baseurl }}/images/what-is-the-rdk-01.png)
 
 ## Overview
 
-The Rhino RDK is a collection of tools that extend the Rhino application platform with visualization specific capabilities.
+The Rhino Renderer Development Kit (AKA _RDK_) is a collection of tools that extend the Rhino application platform with visualization-specific capabilities.
 
 The RDK underpins the [Brazil for Rhino](http://brazil.mcneel.com/) product, and all of the above features are supported in that product.  However, all of these features are available to third-party developers to integrate their products into Rhino.
 
@@ -42,9 +41,9 @@ The RDK underpins the [Brazil for Rhino](http://brazil.mcneel.com/) product, and
 - 360 degree environment preview in the viewport.
 - Extensive library of ready-to-use materials, environments and textures with Library browser.
 
-## Material, Environment, & Texture Editors
+## Material, Environment and Texture Editors
 
-![Material Environment and Texture Editors]({{ site.baseurl }}/images/what-is-the-rdk-03.png) {:style="float: right; margin-right: 7px; margin-top: 7px;"}
+![Material Environment and Texture Editors]({{ site.baseurl }}/images/what-is-the-rdk-03.png){:style="float: right; margin-right: 7px; margin-top: 7px;"}
 
 The Material Editor, Environment Editor, and Texture Palettes interact with the enhanced render content system. All are based on a similar interface with only small functional differences between them.
 
@@ -58,7 +57,7 @@ The Material Editor, Environment Editor, and Texture Palettes interact with the 
 
 These editors are integrated with Rhino's tabbed pane system. Access them through the Rhino Render menu, the Rendering toolbar, or the editor commands.
 
-Lists of materials, environments, and textures are stored in the Rhino document.  Each editor displays the relevant render content type as preview thumbnails.
+Lists of materials, environments, and textures are stored in the Rhino document. Each editor displays the relevant render content type as preview thumbnails.
 
 Contents display an interface below the preview thumbnails in an area reserved for collapsible UI panels. An addition to the basic UI panels, several additional collapsible panels are provided by Rhino within the same area as the content UI. These include the Texture Summary panel, the Notes panel, the Local Mapping panel, Graph panel and the Adjustment panel.  These are described later in the content UI section.
 
@@ -74,7 +73,7 @@ Many renderers call the render window the _frame buffer_.  The terms are nearly 
 
 ## HDR and EXR Support
 
-![HDR and EXR Support]({{ site.baseurl }}/images/what-is-the-rdk-05.png) {:style="float: right; margin-right: 7px; margin-top: 7px;"}
+![HDR and EXR Support]({{ site.baseurl }}/images/what-is-the-rdk-05.png){:style="float: right; margin-right: 7px; margin-top: 7px;"}
 
 An HDR image which provides automatic conversion to a bitmap for non-HDR capable renderers. This allows the Rhino renderer and viewport display to show HDR environments while providing HDR tools to third-party renderer engines.
 
@@ -90,13 +89,13 @@ Azimuth and Altitude values modify the way the image is rotated in space during 
 
 ## Sunlight
 
-![Sunlight]({{ site.baseurl }}/images/what-is-the-rdk-06.png) {:style="float: right; margin-right: 7px; margin-top: 7px;"}
+![Sunlight]({{ site.baseurl }}/images/what-is-the-rdk-06.png){:style="float: right; margin-right: 7px; margin-top: 7px;"}
 
 Sun tools, including a docking panel to control the document sun, a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools make sun angle calculations easier.
 
 ## Decals
 
-![Decals]({{ site.baseurl }}/images/what-is-the-rdk-07.png) {:style="float: right; margin-right: 7px; margin-top: 7px;"}
+![Decals]({{ site.baseurl }}/images/what-is-the-rdk-07.png){:style="float: right; margin-right: 7px; margin-top: 7px;"}
 
 Decals are non-repeating textures that are applied to the surface of an object with a given projection.  They are an easy-to-use way of attaching single images or similar textures to objects without going through the complexity of the texture mapping process.
 
