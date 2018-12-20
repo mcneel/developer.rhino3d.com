@@ -54,12 +54,6 @@ body {
     margin-top: 25px;
 }
 
-.rdk_image_right {
-    float: right;
-    margin-right: 8px;
-    margin-top: 8px;
-}
-
 /* Search input form and search results styling */
 
 #sitesearch {

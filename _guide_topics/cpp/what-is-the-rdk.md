@@ -43,7 +43,7 @@ The RDK is a collection of tools that extend the Rhino application platform with
 
 The Material Editor, Environment Editor, and Texture Palettes interact with the enhanced render content system. All are based on a similar interface with only small functional differences between them.
 
-![Material Environment and Texture Editors]({{ site.baseurl }}/images/what-is-the-rdk-03.png){:style=float: right; margin-right: 8px; margin-top: 8px;}
+![Material Environment and Texture Editors]({{ site.baseurl }}/images/what-is-the-rdk-03.png){:style="float: right; margin-left: 12px;"}
 
 1. Navigation controls similar to those found on a web browser.
 2. Resizeable Floating Previews.
@@ -61,6 +61,8 @@ Contents display an interface below the preview thumbnails in an area reserved f
 
 Each material, environment or texture can have child nodes (AKA _child slots_ or _sub-nodes_). The children can be of any content type, but specific child slots will only support specific types. The most common child type is a texture. For example, the _Color_ child slot for a Custom Material will only support textures, as will the _Background image_ child slot on a Basic Environment.
 
+{:style="clear:both;"}
+
 ## Render Window
 
 ![Render Window]({{ site.baseurl }}/images/what-is-the-rdk-04.png)
@@ -69,7 +71,7 @@ From a user's point of view, the Render Window is the window that appears on the
 
 ## HDR and EXR Support
 
-![HDR and EXR Support]({{ site.baseurl }}/images/what-is-the-rdk-05.png){:style=float: right; margin-right: 8px; margin-top: 8px;}
+![HDR and EXR Support]({{ site.baseurl }}/images/what-is-the-rdk-05.png){:style="float: right; margin-left: 12px;"}
 
 An HDR image which provides automatic conversion to a bitmap for non-HDR capable renderers. This allows the Rhino renderer and viewport display to show HDR environments while providing HDR tools to third-party renderer engines.
 
@@ -83,9 +85,11 @@ The Save As button can be used to convert the image to a bitmap file. The LDR ex
 
 Azimuth and Altitude values modify the way the image is rotated in space during the projection conversion.
 
+{:style="clear:both;"}
+
 ## Decals
 
-![Decals]({{ site.baseurl }}/images/what-is-the-rdk-07.png){:style=float: right; margin-right: 8px; margin-top: 8px;}
+![Decals]({{ site.baseurl }}/images/what-is-the-rdk-07.png){:style="float: right; margin-left: 12px;"}
 
 Decals are non-repeating textures that are applied to the surface of an object with a given projection. They are an easy-to-use way of attaching single images or similar textures to objects without going through the complexity of the texture mapping process.
 
@@ -93,12 +97,12 @@ Decals are textures that are placed directly on a specified area of one or more 
 
 Decals consist of a single instance of a texture, rather than being tiled as they are when used in a material.
 
-<br>{: style="clear:both;"}
+{:style="clear:both;"}
 
 ## Sunlight
 
-![Sunlight]({{ site.baseurl }}/images/what-is-the-rdk-06.png){: style=.rdk_image_right;}
+![Sunlight]({{ site.baseurl }}/images/what-is-the-rdk-06.png){:style="float: right; margin-left: 12px;"}
 
-Sun tools, including a docking panel to control the document sun, a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools make sun angle calculations easier.
+The RDK provides easy-to-use sun tools, including a docking panel to control the document sun, a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools make sun-angle calculations easier.
 
-<br>{: style="clear:both;"}
+{:style="clear:both;"}
