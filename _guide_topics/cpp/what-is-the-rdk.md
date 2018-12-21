@@ -66,7 +66,6 @@ Each material, environment or texture can have child nodes (AKA _child slots_ or
 ## Render Window
 
 ![Render Window]({{ site.baseurl }}/images/what-is-the-rdk-04.png)
-
 From a user's point of view, the Render Window is the window that appears on the screen when one renders a model (see the picture above). However, from a developer's point of view, it can be thought of as the actual _frame&nbsp;buffer_. It contains information about the channels and pixels that make up the rendered image. The standard render window provides a number of features to renderers, including built-in support for scripting, cloning, saving to high dynamic-range formats, post effects, zooming and channel display.
 
 ## HDR and EXR Support
@@ -99,10 +98,16 @@ Decals consist of a single instance of a texture, rather than being tiled as the
 
 {:style="clear:both;"}
 
-## Sunlight
+## Sun
 
-![Sunlight]({{ site.baseurl }}/images/what-is-the-rdk-06.png){:style="float: right; margin-left: 12px;"}
+![Sun]({{ site.baseurl }}/images/what-is-the-rdk-06.png){:style="float: right; margin-left: 12px;"}
 
-The RDK provides easy-to-use sun tools, including a docking panel to control the document sun, a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools make sun-angle calculations easier.
+The RDK provides easy-to-use sun tools, including a docking panel to control the [document sun](/guides/cpp/rdk-sun-classes/#DocumentSun), a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools make sun-angle calculations easy to do.
+
+The following classes can be used to access sun features:
+
+- [IRhRdkSun](/guides/cpp/rdk-sun-classes/#IRhRdkSun)
+- [CRhRdkSun](/guides/cpp/rdk-sun-classes/#CRhRdkSun)
+- [CRhRdkSunDialog](/guides/cpp/rdk-sun-classes/#CRhRdkSunDialog)
 
 {:style="clear:both;"}
