@@ -23,12 +23,12 @@ The RDK is a collection of tools that extend the Rhino application platform with
 
 ![RDK Features Banner]({{ site.baseurl }}/images/what-is-the-rdk-02.png)
 
-- Extensible Material, Environment and Texture editor.
+- Extensible Material, Environment and Texture editors which display and edit Materials, Environments and Textures (AKA _Render Content_).
+- Render content can have tags assigned.
 - Frame buffer implementation with post-processing and multiple channels.
 - Pre-process custom mesh provision interface for third party developers.
 - Built-in material types, including gem, glass, plastic, plaster, metal, paint, picture and custom.
 - Built-in procedural textures, including wood, marble, granite, noise generators, perturbs, and so on.
-- Render content can have tags assigned.
 - Built-in HDR and OpenEXR support.
 - Improved render pipeline that makes it much easier for developers to implement a renderer engine in Rhino.
 - Sun light and sun angle calculation tools.
@@ -41,7 +41,7 @@ The RDK is a collection of tools that extend the Rhino application platform with
 
 ## Material, Environment and Texture Editors
 
-The Material Editor, Environment Editor, and Texture Palettes interact with the enhanced render content system. All are based on a similar interface with only small functional differences between them.
+The Material Editor, Environment Editor, and Texture Palettes interact with the enhanced Render Content system. All are based on a similar interface with only small functional differences between them. Render Contents are the foundation of the RDK core and one of the most important. Please see [Render Contents - What they are and how to use them](/guides/cpp/rdk-render-content) for more information.
 
 ![Material Environment and Texture Editors]({{ site.baseurl }}/images/what-is-the-rdk-03.png){:style="float: right; margin-left: 12px;"}
 
@@ -67,7 +67,7 @@ Each material, environment or texture can have child nodes (AKA _child slots_ or
 
 ![Render Window]({{ site.baseurl }}/images/what-is-the-rdk-04.png)
 
-From a user's point of view, the Render Window is the window that appears on the screen when one renders a model (see the picture above). However, from a developer's point of view, it can be thought of as the actual _frame&nbsp;buffer_. It contains information about the channels and pixels that make up the rendered image. The standard render window provides a number of features to renderers, including built-in support for scripting, cloning, saving to high dynamic-range formats, post effects, zooming and channel display.
+A user thinks of the Render Window as the window that appears on the screen when one renders a model (see the picture above). However, the render window object used by developers corresponds more to the actual _frame&nbsp;buffer_. It contains information about the channels and pixels that make up the rendered image. The standard render window provides a number of features to renderers, including built-in support for scripting, cloning, saving to high dynamic-range formats, post effects, zooming and channel display.
 
 ## HDR and EXR Support
 
@@ -99,10 +99,16 @@ Decals consist of a single instance of a texture, rather than being tiled as the
 
 {:style="clear:both;"}
 
-## Sunlight
+## Sun
 
-![Sunlight]({{ site.baseurl }}/images/what-is-the-rdk-06.png){:style="float: right; margin-left: 12px;"}
+![Sun]({{ site.baseurl }}/images/what-is-the-rdk-06.png){:style="float: right; margin-left: 12px;"}
 
-The RDK provides easy-to-use sun tools, including a docking panel to control the document sun, a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools make sun-angle calculations easier.
+The RDK provides easy-to-use sun tools, including a docking panel to control the [document sun](/guides/cpp/rdk-sun-classes/#DocumentSun), a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools make sun-angle calculations easy.
+
+The following classes can be used to access sun features:
+
+- [IRhRdkSun](/guides/cpp/rdk-sun-classes/#IRhRdkSun)
+- [CRhRdkSun](/guides/cpp/rdk-sun-classes/#CRhRdkSun)
+- [CRhRdkSunDialog](/guides/cpp/rdk-sun-classes/#CRhRdkSunDialog)
 
 {:style="clear:both;"}
