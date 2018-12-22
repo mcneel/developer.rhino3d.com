@@ -41,7 +41,7 @@ The RDK is a collection of tools that extend the Rhino application platform with
 
 ## Material, Environment and Texture Editors
 
-The Material Editor, Environment Editor, and Texture Palettes interact with the enhanced Render Content system. All are based on a similar interface with only small functional differences between them. Render Contents are the foundation of the RDK core and one of the most important. Please see [Render Contents - What they are and how to use them](/guides/cpp/rdk-render-content) for more information.
+The Material Editor, Environment Editor, and Texture Palettes interact with the enhanced Render Content system. All are based on a similar interface with only small functional differences between them. Render Contents are the foundation of the RDK core and one of the most important. Please see [Render Content](/guides/cpp/rdk-render-content) for more information.
 
 ![Material Environment and Texture Editors]({{ site.baseurl }}/images/what-is-the-rdk-03.png){:style="float: right; margin-left: 12px;"}
 
