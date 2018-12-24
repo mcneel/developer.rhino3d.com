@@ -97,6 +97,8 @@ Decals are textures that are placed directly on a specified area of one or more 
 
 Decals consist of a single instance of a texture, rather than being tiled as they are when used in a material.
 
+![Decals2]({{ site.baseurl }}/images/what-is-the-rdk-08.jpg)
+
 {:style="clear:both;"}
 
 ## Sun
