@@ -41,7 +41,7 @@ The RDK is a collection of tools that extend the Rhino application platform with
 
 ## Material, Environment and Texture Editors
 
-The Material Editor, Environment Editor, and Texture Palettes interact with the enhanced Render Content system. All are based on a similar interface with only small functional differences between them. Render Contents are the foundation of the RDK core and one of the most important. Please see [Render Content](/guides/cpp/rdk-render-content) for more information.
+The Material, Environment, and Texture Editors display objects called _Render Contents_ and allow the user to edit them. These editors are all based on a similar interface with only small functional differences between them. Render Contents are the foundation of the RDK core and one of the most important objects it provides. Please see [Render Content](/guides/cpp/rdk-render-content) for more information. The Texture Editor is known to users as the Texture _Palette_ but programmatically it is an editor just like the other two.
 
 ![Material Environment and Texture Editors]({{ site.baseurl }}/images/what-is-the-rdk-03.png){:style="float: right; margin-left: 12px;"}
 
@@ -51,7 +51,7 @@ The Material Editor, Environment Editor, and Texture Palettes interact with the 
 4. Resizeable preview pane.
 5. User interface for editing render content parameters (AKA _fields_).
 6. Breadcrumb navigation control similar to those found on file explorers.
-7. Task menu for performing actions on render contents.
+7. Task menu for performing actions on render contents and setting editor options.
 
 These editors are integrated with Rhino's tabbed pane system. You can access them through the Rhino Render menu, the Rendering tool bar, or the editor commands.
 
@@ -93,9 +93,7 @@ Azimuth and Altitude values modify the way the image is rotated in space during 
 
 Decals are non-repeating textures that are applied to the surface of an object with a given projection. They are an easy-to-use way of attaching single images or similar textures to objects without going through the complexity of the texture mapping process.
 
-Decals are textures that are placed directly on a specified area of one or more objects. Use decals to modify a limited part of an object's color.
-
-Decals consist of a single instance of a texture, rather than being tiled as they are when used in a material.
+Decals are textures that are placed directly on a specified area of one or more objects. They consist of a single instance of a texture, rather than being tiled as they are when used in a material. Users use decals to modify a limited part of an object's color.
 
 ![Decals2]({{ site.baseurl }}/images/what-is-the-rdk-08.jpg)
 
@@ -105,7 +103,7 @@ Decals consist of a single instance of a texture, rather than being tiled as the
 
 ![Sun]({{ site.baseurl }}/images/what-is-the-rdk-06.png){:style="float: right; margin-left: 12px;"}
 
-The RDK provides easy-to-use sun tools, including a docking panel to control the [document sun](/guides/cpp/rdk-sun-classes/#DocumentSun), a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools make sun-angle calculations easy.
+The RDK provides easy-to-use sun tools, including a docking panel to control the [document sun](/guides/cpp/rdk-sun-classes/#DocumentSun), a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools to make sun-angle calculations easy.
 
 The following classes can be used to access sun features:
 
