@@ -201,7 +201,7 @@ class CCarPaintMaterial : public CRhRdkMaterial
 The content user interface displays and allows editing of content parameters (i.e., properties). Although your material could provide methods for getting and setting each parameter, it is not necessary to do this. As long as the UI knows the internal names of the material's fields, it need call only two methods: `GetParameter()` and `SetParameter()`. These methods work with the `CRhRdkVariant` class to get or set parameters by name. When using the field system, this name _is_ the field's internal name. The default implementations of these methods usually do everything you need, but it is possible to override and specialize them if necessary.
 
 #### The material simulation
-When the RDK displays a material in the Material Editor, it first shows a simple rendition of the material preview using OpenGL. After that it renders the material preview using the current render engine. The OpenGL rendition uses a _simulation_ of the material. This is essentially an `ON_Material` that has been set up to look as much like your material as possible. For complex materials, it can be difficult to produce a good simulation, but the most important properties to get right are the diffuse color and the glossiness. So we must implement an override of `CRhRdkMaterial::SimulateMaterial()` as follows:
+All render contents must provide a method for other renderers, including the standard Rhino display, to represent them visually. This method is called _simulation_. Without simulation, the rendered mode in Rhino would not update to reflect your custom definitions. In addition, simulation makes it possible for users to render objects with your content objects attached without having your plug-in installed. Furthermore, when the RDK displays a material in the Material Editor, it first shows a simple rendition of the material preview using OpenGL. After that it renders the material preview using the current render engine. The OpenGL rendition uses the simulation of the material. This is essentially an `ON_Material` that has been set up to look as much like your material as possible. For complex materials, it can be difficult to produce a good simulation, but the most important properties to get right are the diffuse color and the glossiness. So we must implement an override of `CRhRdkMaterial::SimulateMaterial()` as follows:
 ```cpp
 class CCarPaintMaterial : public CRhRdkMaterial
 {
@@ -226,14 +226,25 @@ void CCarPaintMaterial::SimulateMaterial(ON_Material& matOut, CRhRdkTexture::Tex
 In the above example, only the output material `matOut` is used. The other parameters are for more advanced use and will not be covered here.
 
 #### The material shader
-In order for your render engine to render using your material, the material must provide a _shader_. Typically, when rendering an object, a render engine will get the material being used by the object and call `GetShader()` to get the material's shader object. It will then use the shader for rendering. The reason that the return value is a `void*` is because the RDK does not know anything about the shader; it's an internal render-engine object, but the material interface must have a method for getting it. The render engine will cast the returned pointer to the correct type before use.
+Most render engines have custom binary definitions for their materials, environments and textures. Usually these will be instances of classes with filled in “parameter blocks” initialized from the data in a content object. Sometimes they will simply be strings pointing to files or locations in a library. These objects are termed _shaders_ in the RDK. When an object needs to be rendered by your render engine, you will need to access these objects. As part of your content object implementation you should override `CRhRdkContent::GetShader()` to return a pointer to this object. The reason the return value is `void*` is because the RDK does not know anything about the shader; it's an internal render-engine object, but the material interface must have a method for getting it. The render engine will cast the returned pointer to the correct type before use. Since you are both the provider and client of this function, how you implement it is up to you. The data is private and its type and allocation details are also completely up to you. However, you must check the incoming render engine id to ensure that you can render shaders of that type. Usually you will call `IsCompatible()` passing the id and only proceed if it returns `true`.
 ```cpp
 class CCarPaintMaterial : public CRhRdkMaterial
 {
 	...
-	virtual void* GetShader(const UUID& uuidRenderEngine, void* pvData) const override
-	                       { return _the_shader_; }
+	virtual void* GetShader(const UUID& uuidRenderEngine, void* pvData) const override;
 };
+
+void* CCarPaintMaterial::GetShader(const UUID& uuidRenderEngine, void* pvData) const
+{
+	if (!IsCompatible(uuidRenderEngine))
+		return nullptr;
+
+	void* pShader = nullptr;
+
+	// TODO: Get a pointer to the shader used to render this material.
+
+	return pShader;
+}
 ```
 #### The material factory
 The RDK uses the factory pattern to allow render plug-ins to provide custom render content. This means that in order to have our new car paint material show up in the Material Editor's list of available materials, we must create a factory object that knows how to create an instance of the material. Because the factory produces materials, it must be derived from `CRhRdkMaterialFactory`. It must also implement the `NewMaterial()` method to create the material instance:
@@ -253,6 +264,7 @@ void CCarDesignerPlugIn::RegisterExtensions(void) const
 	...
 }
 ```
+<a name="UI"></a>
 ### Creating the user interface
 ![CarPaint1]({{ site.baseurl }}/images/car-paint-example1.png){:style="float: right; margin-left: 12px;"}
 The above code is enough to get us a car paint material that the user can choose and create in the editor. But this is not very useful because we haven't provided a user interface, so the only things the user can edit are the material's name and notes. In order to edit the actual material properties, we need to supply a UI. This can be done (on Windows, at least) by creating an MFC dialog with an IDD and a resource in the usual way. This can be a lot of work. Sometimes it's enough to just be able to see and edit the parameters, for example when prototyping, and sometimes even for the final product. We will do this for our car paint material by using the RDK's Automatic UI system.

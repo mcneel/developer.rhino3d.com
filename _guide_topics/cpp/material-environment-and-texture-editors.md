@@ -1,7 +1,7 @@
 ---
 title: Material, Environment, and Texture Editors
-description: This guide has yet to be authored or ported.
-authors: ['andrew_le_bihan']
+description: This guide describes the RDK Material, Environment, and Texture Editors
+authors: [ 'john_croudy']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
@@ -10,13 +10,23 @@ origin: http://developer.rhino3d.com/files/rhino_rdk_documentation.pdf
 order: 5
 keywords: ['material', 'environment', 'texture', 'RDK']
 layout: toc-guide-page
-TODO: 'needs porting'
 ---
+The Material, Environment, and Texture Editors display objects called _Render Contents_ and allow the user to edit them. These editors are all based on a similar interface with only small functional differences between them. Render Contents are the foundation of the RDK core and one of the most important objects it provides. Please see [Render Content](/guides/cpp/rdk-render-content) for more information. The Texture Editor is known to users as the Texture _Palette_ but programmatically it is an editor just like the other two.
 
+![Material Environment and Texture Editors]({{ site.baseurl }}/images/rdk-met-editors.png){:style="float: right; margin-left: 12px;"}
 
-<div class="bs-callout bs-callout-danger">
-  <h4>UNDER CONSTRUCTION</h4>
-  <p>This guide has yet to be ported to this site.  Please check back soon for updates.  
-  In the meantime, you can view the original documentation here:
-  <a href="{{ page.origin }}">{{ page.origin }}</a></p>
-</div>
+1. Navigation controls similar to those found on a web browser.
+2. Resizeable Floating Previews.
+3. Configurable thumbnails with multiple sizes and styles.
+4. Resizeable preview pane.
+5. User interface for editing render content parameters (AKA _fields_).
+6. Breadcrumb navigation control similar to those found on file explorers.
+7. Task menu for performing actions on render contents and setting editor options.
+
+These editors are integrated with Rhino's tabbed pane system. You can access them through the Rhino Render menu, the Rendering tool bar, or the editor commands.
+
+Lists of materials, environments, and textures are stored in the Rhino document. Each editor displays the relevant render content type as preview thumbnails.
+
+Contents display an interface below the preview thumbnails in an area reserved for collapsible UI panels. An addition to the basic UI panels, several additional collapsible panels are provided by Rhino within the same area as the content UI. These include the Name, Notes, Texture Summary, Local Mapping, Graph and Adjustment panels.
+
+Each material, environment or texture can have child nodes (AKA _child slots_ or _sub-nodes_). The children can be of any content type, but specific child slots will only support specific types. The most common child type is a texture. For example, the _Color_ child slot for a Custom Material will only support textures, as will the _Background image_ child slot on a Basic Environment.
