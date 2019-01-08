@@ -81,6 +81,11 @@ Decals are textures that are placed directly on a specified area of one or more 
 
 {:style="clear:both;"}
 
+The following classes can be used to access decal features:
+
+- [IRhRdkDecal](/guides/cpp/rdk-decal-classes/#IRhRdkDecal)
+- [CRhRdkObjectDataAccess](/guides/cpp/rdk-decal-classes/#CRhRdkObjectDataAccess)
+
 ### Sun
 ![Sun]({{ site.baseurl }}/images/rdk-what-is-the-rdk-06.png){:style="float: right; margin-left: 12px;"}
 
