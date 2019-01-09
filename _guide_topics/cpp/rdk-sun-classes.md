@@ -15,7 +15,7 @@ layout: toc-guide-page
 The angle and color of sunlight at various times of the day changes drastically with the location on Earth, the time of day and the time of year. When rendering an outdoor scene, the angle and color of the sunlight can be a very important part of the result. Buildings and other objects might be designed and placed to look aesthetically pleasing or have certain highlights at certain times of the day or year. To facilitate this kind of visualization, the RDK provides a comprehensive set of sun tools which allow the plug-in developer to do sun calculations and display a sun user interface.
 
 ![Buildings]({{ site.baseurl }}/images/rdk-sun-buildings.jpg)
-<small><small>Costa Mesa, CA. Turku Castle, Finland, Downtown Austin, TX. Photos by John Croudy.</small></small>
+<small><small><small>Costa Mesa, CA., USA ~ Turku Castle, Finland ~ Downtown Austin, TX., USA ~ Photos by John Croudy.</small></small></small>
 
 ### IRhRdkSun
 <a name="IRhRdkSun"></a>
@@ -120,8 +120,8 @@ dlg.SetController(con);
 if (IDOK != dlg.DoModal())
 	return cancel; // User cancelled.
 
-// Copy edited sun back to the working sun.
+// Copy edited sun data back to the working sun.
 sun.CopyFrom(ds.Sun());
 
-... // Do something with the edited sun here.
+... // Do something with the updated working sun here.
 ```
