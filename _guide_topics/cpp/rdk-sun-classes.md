@@ -44,7 +44,7 @@ static class CTestSunEphemeris : public CRhinoTestCommand
 {
 protected:
 	virtual UUID CommandUUID() override { static const UUID uuid = { your_uuid_here } }; return uuid; }
-	virtual const wchar_t* EnglishCommandName() override { return RHSTR_LIT(L"TestSunEphemeris"); }
+	virtual const wchar_t* EnglishCommandName() override { return RHSTR_LIT(L"SunEphemeris"); }
 	virtual CRhinoCommand::result RunCommand(const CRhinoCommandContext& context) override;
 }
 theTestSunEphemerisCmd;

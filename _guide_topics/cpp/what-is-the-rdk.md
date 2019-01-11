@@ -30,11 +30,14 @@ The RDK is a collection of tools that extend the Rhino application platform with
 - Built-in HDR and OpenEXR support.
 - Improved render pipeline that makes it much easier for developers to implement a renderer engine in Rhino.
 - Sun light and sun angle calculation tools.
+- [Skylight](/guides/cpp/rdk-skylight-classes/) support.
+- [Safe Frame](/guides/cpp/rdk-safe-frame-classes/) support.
+- [Linear Workflow](/guides/cpp/rdk-linear-workflow-classes/) support.
 - Automatic shader UI support for third party Material/Environment/Texture providers.
 - Several utility classes to aid in the development of renderers and visualization related tools.
 - Decal support with planar, UV, cylindrical or spherical mapping.
-- Ground Plane support with automatic height, material and texture mapping options.
-- 360 degree environment preview in the viewport.
+- [Ground Plane](/guides/cpp/rdk-ground-plane-classes/) support with automatic height, material and texture mapping options.
+- 360 degree [environment](/guides/cpp/rdk-current-environment-classes/) preview in the viewport.
 - Extensive library of ready-to-use materials, environments and textures with Library browser.
 
 ### Material, Environment and Texture Editors
