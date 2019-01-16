@@ -17,7 +17,7 @@ A _Safe Frame_ is a guide to help ensure that the most important elements of a s
 ![Road]({{ site.baseurl }}/images/rdk-safeframe.jpg)
 
 ### The Document Safe Frame
-The _RDK Document Safe Frame_ is a document-resident safe frame  which can be displayed in viewports. If you have a Rhino document, you can read and write that document's safe frame through the document's [IRhRdkSafeFrame]({{ site.baseurl }}/api/cpp/class_i_rh_rdk_safeframe.html) interface. Any changes you make will appear in the Safe Frame UI and will also be stored in the 3dm file. Getting the safe frame from a document always returns a const reference. To write to the safe frame, you must begin a batch of write operations and afterwards end the batch. This is done using the RDK's standard BeginChange / EndChange system. The following is an example of how to access and change the document safe frame:
+The _RDK Document Safe Frame_ is a document-resident safe frame  which can be displayed in viewports. If you have a Rhino document, you can read and write that document's safe frame through the document's [IRhRdkSafeFrame]({{ site.baseurl }}/api/cpp/class_i_rh_rdk_safe_frame.html) interface. Any changes you make will appear in the Safe Frame UI and will also be stored in the 3dm file. Getting the safe frame from a document always returns a const reference. To write to the safe frame, you must begin a batch of write operations and afterwards end the batch. This is done using the RDK's standard BeginChange / EndChange system. The following is an example of how to access and change the document safe frame:
 ```cpp
 static class CSafeFrameExampleCommand : public CRhinoTestCommand
 {
