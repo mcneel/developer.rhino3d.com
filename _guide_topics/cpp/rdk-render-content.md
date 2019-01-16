@@ -28,7 +28,7 @@ There are two flavors of content in the RDK -- temporary and persistent. It is v
 
 Temporary contents get created and deleted very often during the normal operation of the RDK. In fact, just about anything the user clicks on might result in a temporary content being created and deleted again. They are created by the content browser, the preview rendering, and so on. They are 'free floating' and are owned by whomever created them. They do not appear in the modeless UI, they do not get saved in the 3dm file, and they can freely be deleted again after use.
 
-Contrast this with persistent contents which are attached to a document. They are always owned by the RDK, appear in the modeless UI and get saved in the 3dm file. You should never store pointers to persistent contents; you should only store their instance ids and look them up again using  CRhRdkDocument::FindContentInstance(). They can be deleted only after detaching them from the document.
+Contrast this with persistent contents which are attached to a document. They are always owned by the RDK, appear in the modeless UI and get saved in the 3dm file. You should never store pointers to persistent contents; you should only store their instance ids and look them up again using  CRhRdkDocument::FindContentInstance(). They can be deleted only after detaching them from the document. The preferred way to access document-resident contents is by using the [document contents interface](/guides/cpp/rdk-contents-classes).
 
 This is an example code sequence showing the main stages in the lifetime of a content.
 
@@ -41,11 +41,11 @@ This is an example code sequence showing the main stages in the lifetime of a co
 
   // Attach the content to a document. The content is now owned by
   // the document and it will appear in the various user interfaces.
-  rdkDoc.AttachContent(pContent);
+  doc.Contents().Attach(*pContent);
 
   // Detach the content from the document. The content will disappear
   // from any user interfaces and it is once again owned by you.
-  rdkDoc.DetachContent(pContent);
+  doc.Contents().Detach(*pContent);
 
   // Uninitialize the content to prepare it for deletion.
   pContent->Uninitialize();
