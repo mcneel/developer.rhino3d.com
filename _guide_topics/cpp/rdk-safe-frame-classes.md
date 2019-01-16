@@ -14,7 +14,7 @@ layout: toc-guide-page
 ### Introduction
 A _Safe Frame_ is a guide to help ensure that the most important elements of a scene will appear inside a certain region of the rendered image. The name comes from movie and TV production where a camera operator sees one or more rectangles in the camera's viewfinder which shows limits inside which an actor or prop is guaranteed to be visible on all viewer's screens.
 
-![Road]({{ site.baseurl }}/images/rdk-safeframe.jpg)
+![SafeFrame]({{ site.baseurl }}/images/rdk-safeframe.jpg)
 
 ### The Document Safe Frame
 The _RDK Document Safe Frame_ is a document-resident safe frame  which can be displayed in viewports. If you have a Rhino document, you can read and write that document's safe frame through the document's [IRhRdkSafeFrame]({{ site.baseurl }}/api/cpp/class_i_rh_rdk_safe_frame.html) interface. Any changes you make will appear in the Safe Frame UI and will also be stored in the 3dm file. Getting the safe frame from a document always returns a const reference. To write to the safe frame, you must begin a batch of write operations and afterwards end the batch. This is done using the RDK's standard BeginChange / EndChange system. The following is an example of how to access and change the document safe frame:
