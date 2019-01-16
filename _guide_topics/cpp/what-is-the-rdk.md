@@ -32,7 +32,7 @@ The RDK is a collection of tools that extend the Rhino application platform with
 - Sun light and sun angle calculation tools.
 - [Skylight](/guides/cpp/rdk-skylight-classes/) support.
 - [Safe Frame](/guides/cpp/rdk-safe-frame-classes/) support.
-- Gamma, Linear Workflow and [Dithering](/guides/cpp/rdk-dithering-classes/) support.
+- Gamma, [Linear Workflow](/guides/cpp/rdk-linear-workflow-classes/) and [Dithering](/guides/cpp/rdk-dithering-classes/) support.
 - Automatic shader UI support for third party Material/Environment/Texture providers.
 - Several utility classes to aid in the development of renderers and visualization related tools.
 - Decal support with planar, UV, cylindrical or spherical mapping.
