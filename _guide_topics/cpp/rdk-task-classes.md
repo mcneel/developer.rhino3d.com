@@ -77,8 +77,8 @@ CRhRdkTask::Result CExampleCustomTask::Execute(const IRhRdkTaskOrigin& origin) c
 	origin.GetSelection(aContent);
 	for (int i = 0; i < aContent.Count(); i++)
 	{
-		const wchar_t* wszName = aContent[i]->InstanceName();
-		RhinoApp().Print(L"Selected %s\n", wszName);
+		const auto sName = aContent[i]->InstanceName();
+		RhinoApp().Print(L"Selected: %s\n", static_cast<const wchar_t*>(sName));
 	}
 
 	return Result::Success;
