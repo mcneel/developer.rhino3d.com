@@ -21,7 +21,7 @@ The RDK is a collection of tools that extend the Rhino application platform with
 ### Features
 ![RDK Features Banner]({{ site.baseurl }}/images/rdk-what-is-the-rdk-02.png)
 
-- Extensible Material, Environment and Texture editors which display and edit Materials, Environments and Textures (AKA _Render Content_).
+- Extensible Material, Environment and Texture editors which display and edit Materials, Environments and Textures (AKA _Render Content_) and allow [operations](/guides/cpp/rdk-task-classes/) to be performed on them.
 - Render content can have tags assigned.
 - Frame buffer implementation with post-processing and multiple channels.
 - Pre-process custom mesh provision interface for third party developers.

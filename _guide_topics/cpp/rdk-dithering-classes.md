@@ -12,7 +12,7 @@ keywords: ['RDK', 'Rhino', 'Renderer', 'Development', 'Plugin', 'Dithering']
 layout: toc-guide-page
 ---
 ### Introduction
-Image _dithering_ is a process in which some form of noise is added to an image in order to reduce color banding and other artifacts. This is commonly used when a display device is unable to display the full range of colors. The image below shows an extreme example. A photo was converted to use only two colors. On the left, no dithering was used and a lot of detail has been lost. On the right, Floyd-Steinberg dithering was used and the amount of detail is much improved. Although modern displays don't usually require any dithering, there are cases where it can make a subtle difference to the final quality of an image. For this reason, the RDK provides two kind of dithering, _Simple Noise_ and _Floyd Steinberg_.
+Image _dithering_ is a process in which some form of noise is added to an image in order to reduce color banding and other artifacts. This is commonly used when a display device is unable to display the full range of colors. The image below shows an extreme example. A photo was converted to use only two colors. On the left, no dithering was used and a lot of detail has been lost. On the right, Floyd-Steinberg dithering was used and the amount of detail is much improved. Although modern displays don't usually require any dithering, there are cases where it can make a subtle difference to the final quality of an image. For this reason, the RDK provides two kinds of dithering, _Simple Noise_ and _Floyd Steinberg_.
 
 ![Dithering]({{ site.baseurl }}/images/rdk-dithering.png)
 <small><small><small>Photo by John Croudy.</small></small></small>
