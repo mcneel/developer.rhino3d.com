@@ -19,10 +19,10 @@ _IRhRdkDecal_ is an abstract decal interface. It provides access to all the prop
 <a name="CRhRdkObjectDataAccess"></a>
 _CRhRdkObjectDataAccess_ is a wrapper around an object or layer which makes it easy to get RDK-specific information from that object or layer. When the wrapped object is a Rhino object, it can be used for accessing the object's decals using the following methods:
 
-* `NewDecalIterator()` Obtains an iterator for accessing the object's decals.
-* `RemoveAllDecals()` Removes all decals from the object.
-* `RemoveDecal()` Remove a particular decal from the object.
 * `AddDecal()` Adds a new decal to the object.
+* `RemoveDecal()` Remove a particular decal from the object.
+* `RemoveAllDecals()` Removes all decals from the object.
+* `NewDecalIterator()` Obtains an iterator for accessing the object's decals.
 
 A particularly important property of decals is the _decal CRC_. This value identifies a decal by its state. Multiple decals which would be exactly the same would have the same CRC and are culled from the system. If you store this value with the intention of using it to find the decal again later, you must update your stored value whenever the decal state changes.
 
@@ -42,33 +42,37 @@ while (nullptr != pObject)
 	if (nullptr != pDI)
 	{
 		const auto* pDecal = pDI->NextDecal();
-
-		const auto m = pDecal->Mapping();
-
-		const wchar_t* wszMapping = L"";
-		switch (m)
+		while (nullptr != pDecal)
 		{
-		case IRhRdkDecal::mapUV:          wszMapping = L"UV";          break;
-		case IRhRdkDecal::mapPlanar:      wszMapping = L"Planar";      break;
-		case IRhRdkDecal::mapCylindrical: wszMapping = L"Cylindrical"; break;
-		case IRhRdkDecal::mapSpherical:   wszMapping = L"Spherical";   break;
-		}
+			const auto m = pDecal->Mapping();
 
-		const auto pt = pDecal->Origin();
-		RhinoApp().Print(L"Object %u: Decal %08X, mapping: %s, origin: (%.1f, %.1f, %.1f)",
-		                 objCount, pDecal->CRC(), wszMapping, pt.x, pt.y, pt.z);
-
-		if ((IRhRdkDecal::mapSpherical == m) || (IRhRdkDecal::mapCylindrical == m))
-		{
-			RhinoApp().Print(L", Radius: %.1f", pDecal->Radius());
-
-			if (IRhRdkDecal::mapCylindrical == m)
+			const wchar_t* wszMapping = L"";
+			switch (m)
 			{
-				RhinoApp().Print(L", Height: %.1f", pDecal->Height());
+			case IRhRdkDecal::mapUV:          wszMapping = L"UV";          break;
+			case IRhRdkDecal::mapPlanar:      wszMapping = L"Planar";      break;
+			case IRhRdkDecal::mapCylindrical: wszMapping = L"Cylindrical"; break;
+			case IRhRdkDecal::mapSpherical:   wszMapping = L"Spherical";   break;
 			}
-		}
 
-		RhinoApp().Print(L"\n");
+			const auto pt = pDecal->Origin();
+			RhinoApp().Print(L"Object %u: Decal %08X, mapping: %s, origin: (%.1f, %.1f, %.1f)",
+			                 objCount, pDecal->CRC(), wszMapping, pt.x, pt.y, pt.z);
+
+			if ((IRhRdkDecal::mapSpherical == m) || (IRhRdkDecal::mapCylindrical == m))
+			{
+				RhinoApp().Print(L", Radius: %.1f", pDecal->Radius());
+
+				if (IRhRdkDecal::mapCylindrical == m)
+				{
+					RhinoApp().Print(L", Height: %.1f", pDecal->Height());
+				}
+			}
+
+			RhinoApp().Print(L"\n");
+
+			pDecal = pDI->NextDecal();
+		}
 
 		delete pDI;
 	}
