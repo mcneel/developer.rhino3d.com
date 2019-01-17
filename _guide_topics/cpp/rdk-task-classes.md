@@ -43,12 +43,15 @@ int  CExampleCustomTask::MenuOrder(const IRhRdkTaskOrigin& origin) const
 	// before all the RDK's tasks, and above 10,000 to make it
 	// appear below all the RDK's tasks. After that, simply use
 	// numbers in the order you want the tasks to appear.
-
 	return 10;
 }
 
 bool CExampleCustomTask::IconIn(CRhRdkContent::Kinds kind, int width, int height, OUT CRhinoDib& dib) const
 {
+	// Depending on the 'kind' you might want to use different icons.
+	// Use the supplied 'width' and 'height' to load an icon by
+	// whatever means your platform allows, and set the icon into
+	// the supplied 'dib'. The following just uses a simple check mark.
 	return ::RhRdkGetMenuIcon(RhRdkMenuIcons::Check, ON_2iSize(width, height), dib);
 }
 
