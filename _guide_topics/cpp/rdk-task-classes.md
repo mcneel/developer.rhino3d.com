@@ -34,7 +34,7 @@ public:
 	virtual bool IconIn(CRhRdkContent::Kinds kind, int w, int h, OUT CRhinoDib& dib) const override;
 	virtual void Update(IRhRdkTaskUpdate& tu) const override;
 	virtual Result Execute(const IRhRdkTaskOrigin&) const override;
-	virtual int MenuOrder(const IRhRdkTaskOrigin& origin) const;
+	virtual int MenuOrder(const IRhRdkTaskOrigin& origin) const override;
 };
 
 int  CExampleCustomTask::MenuOrder(const IRhRdkTaskOrigin& origin) const
