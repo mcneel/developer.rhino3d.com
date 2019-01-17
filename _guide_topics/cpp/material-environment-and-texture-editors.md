@@ -21,7 +21,7 @@ The Material, Environment, and Texture Editors display objects called _Render Co
 4. Resizeable preview pane.
 5. User interface for editing render content parameters (AKA _fields_).
 6. Breadcrumb navigation control similar to those found on file explorers.
-7. Task menu for performing actions on render contents and setting editor options.
+7. [Task](/guides/cpp/rdk-task-classes/) menu for performing actions on render contents and setting editor options.
 
 These editors are integrated with Rhino's tabbed pane system. You can access them through the Rhino Render menu, the Rendering tool bar, or the editor commands.
 

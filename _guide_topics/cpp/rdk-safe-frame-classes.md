@@ -1,6 +1,6 @@
 ---
-title: RDK Safe Frame classes
-description: This document describes how to use the RDK safe frame classes in C/C++.
+title: RDK Safe Frame
+description: This document describes how to use the RDK safe frame class in C/C++.
 authors: ['john_croudy']
 sdk: ['C/C++']
 languages: ['C/C++']

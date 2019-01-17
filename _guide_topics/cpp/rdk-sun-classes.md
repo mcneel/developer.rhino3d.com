@@ -1,5 +1,5 @@
 ---
-title: RDK Sun classes
+title: RDK Sun
 description: This document describes how to use the RDK sun classes in C/C++.
 authors: ['john_croudy']
 sdk: ['C/C++']

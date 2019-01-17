@@ -1,5 +1,5 @@
 ---
-title: RDK Task classes
+title: RDK Tasks
 description: This document describes how to use the RDK task classes in C/C++.
 authors: ['john_croudy']
 sdk: ['C/C++']

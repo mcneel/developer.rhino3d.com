@@ -1,6 +1,6 @@
 ---
-title: RDK Current Environment classes
-description: This document describes how to use the RDK current environment classes in C/C++.
+title: RDK Current Environment
+description: This document describes how to use the RDK current environment class in C/C++.
 authors: ['john_croudy']
 sdk: ['C/C++']
 languages: ['C/C++']

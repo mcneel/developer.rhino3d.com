@@ -1,6 +1,6 @@
 ---
-title: RDK Linear Workflow classes
-description: This document describes how to use the RDK linear workflow classes in C/C++.
+title: RDK Linear Workflow
+description: This document describes how to use the RDK linear workflow class in C/C++.
 authors: ['john_croudy']
 sdk: ['C/C++']
 languages: ['C/C++']

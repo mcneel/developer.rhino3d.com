@@ -1,6 +1,6 @@
 ---
-title: RDK Ground Plane classes
-description: This document describes how to use the RDK ground plane classes in C/C++.
+title: RDK Ground Plane
+description: This document describes how to use the RDK ground plane class in C/C++.
 authors: ['john_croudy']
 sdk: ['C/C++']
 languages: ['C/C++']

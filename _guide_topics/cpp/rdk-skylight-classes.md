@@ -1,6 +1,6 @@
 ---
-title: RDK Skylight classes
-description: This document describes how to use the RDK skylight classes in C/C++.
+title: RDK Skylight
+description: This document describes how to use the RDK skylight class in C/C++.
 authors: ['john_croudy']
 sdk: ['C/C++']
 languages: ['C/C++']

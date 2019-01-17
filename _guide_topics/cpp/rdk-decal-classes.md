@@ -1,5 +1,5 @@
 ---
-title: RDK Decal classes
+title: RDK Decals
 description: This document describes how to use the RDK decal classes in C/C++.
 authors: ['john_croudy']
 sdk: ['C/C++']

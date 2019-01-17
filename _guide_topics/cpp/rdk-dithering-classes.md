@@ -1,6 +1,6 @@
 ---
 title: RDK Dithering
-description: This document describes how to use the RDK dithering classes in C/C++.
+description: This document describes how to use the RDK dithering class in C/C++.
 authors: ['john_croudy']
 sdk: ['C/C++']
 languages: ['C/C++']
