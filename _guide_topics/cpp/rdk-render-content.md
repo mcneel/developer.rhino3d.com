@@ -1,5 +1,5 @@
 ---
-title: Render Content
+title: RDK Render Content
 description: This document describes how to use the RDK render content class in C/C++.
 authors: ['john_croudy']
 sdk: ['C/C++']
