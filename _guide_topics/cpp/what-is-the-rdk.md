@@ -46,8 +46,8 @@ The Material, Environment, and Texture Editors display objects called _Render Co
 
 Main articles:
 
-- [Material, Environment, and Texture Editors](/guides/cpp/material-environment-and-texture-editors)
 - [Render Content](/guides/cpp/rdk-render-content)
+- [Render Content Editors](/guides/cpp/rdk-render-content-editors)
 
 {:style="clear:both;"}
 

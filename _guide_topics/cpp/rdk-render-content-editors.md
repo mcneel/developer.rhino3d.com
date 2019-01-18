@@ -1,5 +1,5 @@
 ---
-title: Material, Environment, and Texture Editors
+title: Render Content Editors
 description: This guide describes the RDK Material, Environment, and Texture Editors
 authors: [ 'john_croudy']
 sdk: ['C/C++']
@@ -8,10 +8,10 @@ platforms: ['Windows']
 categories: ['RDK']
 origin: http://developer.rhino3d.com/files/rhino_rdk_documentation.pdf
 order: 5
-keywords: ['material', 'environment', 'texture', 'RDK']
+keywords: ['material', 'environment', 'texture', 'RDK', 'Render Content', 'editor']
 layout: toc-guide-page
 ---
-The Material, Environment, and Texture Editors display objects called _Render Contents_ and allow the user to edit them. These editors are all based on a similar interface with only small functional differences between them. Render Contents are the foundation of the RDK core and one of the most important objects it provides. Please see [Render Content](/guides/cpp/rdk-render-content) for more information. The Texture Editor is known to users as the Texture _Palette_ but programmatically it is an editor just like the other two.
+The _RDK Render Content Editors_ display objects called _Render Contents_ and allow the user to edit them. These editors are all based on a similar interface with only small functional differences between them. Render Contents are the foundation of the RDK core and one of the most important objects it provides. Please see [Render Content](/guides/cpp/rdk-render-content) for more information. The Texture Editor is known to users as the Texture _Palette_ but programmatically it is an editor just like the other two.
 
 ![Material Environment and Texture Editors]({{ site.baseurl }}/images/rdk-met-editors.png){:style="float: right; margin-left: 12px;"}
 
