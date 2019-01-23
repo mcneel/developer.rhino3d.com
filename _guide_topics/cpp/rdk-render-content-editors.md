@@ -1,5 +1,5 @@
 ---
-title: Render Content Editors
+title: RDK Render Content Editors
 description: This guide describes the RDK Material, Environment, and Texture Editors
 authors: [ 'john_croudy']
 sdk: ['C/C++']

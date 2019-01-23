@@ -33,7 +33,7 @@ The term _render window_ can be a source of confusion, because there are several
 In order to avoid confusion, the physical render window will be called the _render frame_ in this article. Elsewhere, the phrase 'render window' will mean the `IRhRdkRenderWindow` interface. If the method is mentioned, it will be written in this form: `RenderWindow()` including the parentheses. The command will be referred to as the RenderWindow _command_.
 
 ### Getting started
-Let's start at the top and follow the _synchronous_ rendering process from the moment the user presses the Render button until the render frame is closed. You must first create a subclass of `CRhRdkSdkRender`:
+Let's start at the top and follow the rendering process from the moment the user presses the Render button until the render frame is closed. You must first create a subclass of `CRhRdkSdkRender`:
 ```cpp
 class CExampleSdkRender : public CRhRdkSdkRender
 {
@@ -75,7 +75,7 @@ CExampleSdkRender::CExampleSdkRender(const CRhinoCommandContext& context, CRhino
 	rw.AddChannel(IRhRdkRenderWindow::chanNormalZ, sizeof(float));
 }
 ```
-In the code example above, getting the render window for the first time will cause it to be created. This also causes the creation of a _render session_ which is an object that the RDK uses to keep track of rendering progress for each render window. As rendering proceeds, the render session goes through a set of states, defined by the `IRhRdkRenderSession::Status` enum. This includes states such as _Initializing_, _Rendering_ and _Completed_, among others. As long as the user sees a render frame on the screen, the render session and render window objects will exist and be associated with the render frame. When the user closes the render frame, the render session will become _disposed_. In this state, the session is waiting in a list to be deleted at the end of the command. This system prevents problems causes by deleting the session while the plug-in may still be using it, perhaps from a worker thread. At the end of the command, all disposed sessions will be deleted.
+In the code example above, getting the render window for the first time will cause it to be created. This also causes the creation of a _render session_ which is an object that the RDK uses to keep track of rendering progress for each render window. As rendering proceeds, the render session goes through a set of states, defined by the `IRhRdkRenderSession::Status` enum. This includes states such as _Initializing_, _Rendering_ and _Completed_, among others. As long as the user sees a render frame on the screen, the render session and render window objects will exist and be associated with the render frame. When the user closes the render frame, the render session will become _disposed_. In this state, the session is waiting in a list to be deleted at the end of the command. This system prevents problems caused by deleting the session while the plug-in may still be using it, perhaps from a worker thread. At the end of the command, all disposed sessions will be deleted.
 
 ### The rendering process
 Being a Rhino render engine, your plug-in must include a class derived from CRhinoRenderPlugIn. When the user runs the Render command, if yours is the current render engine, Rhino will call your plug-in's `Render()` method. Your implementation of this method must instantiate your CExampleSdkRender object on the stack as a local variable and call its `Render()` method, passing the desired image size. This size can be obtained by calling the base sdkRender's `RenderSize()` method. This will return the size according to the user's settings in the Rendering panel:
@@ -202,7 +202,7 @@ public: // Implement IRhRdkAsyncRenderContext.
 	virtual bool SupportsPause(void) const override { return true; }
 	virtual void PauseRendering(void) override { m_bPause = true; }
 	virtual void ResumeRendering(void) override { m_bPause = false; }
-	virtual void OnQuietRenderFinished(const IRhRdkRenderSession& session) override;
+	virtual void OnQuietRenderFinished(const IRhRdkRenderSession&) override { } // Not currently used.
 	virtual void DeleteThis(void) override { delete this; }
 	virtual void* EVF(const wchar_t*, void*) override { return nullptr; }
 

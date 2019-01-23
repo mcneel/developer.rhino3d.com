@@ -28,8 +28,8 @@ The RDK is a collection of tools that extend the Rhino application platform with
 - Built-in material types, including gem, glass, plastic, plaster, metal, paint, picture and custom.
 - Built-in procedural textures, including wood, marble, granite, noise generators, perturbs, and so on.
 - Built-in HDR and OpenEXR support.
-- Improved render pipeline that makes it much easier for developers to implement a renderer engine in Rhino.
-- Sun light and sun angle calculation tools.
+- Improved [render pipeline](/guides/cpp/rdk-rendering-classes/) that makes it much easier for developers to implement a renderer engine in Rhino.
+- [Sun light](/guides/cpp/rdk-sun-classes/) and sun angle calculation tools.
 - [Skylight](/guides/cpp/rdk-skylight-classes/) support.
 - [Safe Frame](/guides/cpp/rdk-safe-frame-classes/) support.
 - Gamma, [Linear Workflow](/guides/cpp/rdk-linear-workflow-classes/) and [Dithering](/guides/cpp/rdk-dithering-classes/) support.
