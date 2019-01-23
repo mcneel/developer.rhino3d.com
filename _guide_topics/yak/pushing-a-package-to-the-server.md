@@ -1,5 +1,5 @@
 ---
-title: Title
+title: Pushing a Package to the Server
 description: This is a step by step guide to pushing a package to the Yak server.
 authors: ['will_pearson']
 sdk: ['Yak']
