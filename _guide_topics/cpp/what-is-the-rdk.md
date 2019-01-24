@@ -54,7 +54,7 @@ Main articles:
 ### Render Window
 ![Render Window]({{ site.baseurl }}/images/rdk-what-is-the-rdk-04.png)
 
-A user thinks of the Render Window as the window that appears on the screen when one renders a model (see the picture above). However, the render window object used by developers corresponds more to the actual _frame&nbsp;buffer_. It contains information about the channels and pixels that make up the rendered image. The standard render window provides a number of features to renderers, including built-in support for scripting, cloning, saving to high dynamic-range formats, post effects, zooming and channel display.
+A user thinks of the [Render Window](/guides/cpp/rdk-rendering-classes/) as the window that appears on the screen when one renders a model (see the picture above). However, the render window object used by developers corresponds more to the actual _frame&nbsp;buffer_. It contains information about the channels and pixels that make up the rendered image. The standard render window provides a number of features to renderers, including built-in support for scripting, cloning, saving to high dynamic-range formats, post effects, zooming and channel display.
 
 ### HDR and EXR Support
 ![HDR and EXR Support]({{ site.baseurl }}/images/rdk-what-is-the-rdk-05.png){:style="float: right; margin-left: 12px;"}

@@ -238,3 +238,79 @@ When rendering ends, the render frame remains on the screen. The user can choose
 The user can also choose to clone the render frame. What this means under the hood is that the render session will be cloned and a new render frame will be opened for that session. This allows the user to compare the renderings while viewing different channels or using different exposures or post-effects.
 
 Eventually, the user will close the render frame (or close Rhino, which will, of course, close all render frames). When the render frame is closed, the render session goes into the 'Disposed' state, ready to be deleted at the end of the next command. If the user closes the render frame while rendering is underway, `StopRendering()` will be called before the render frame is closed.
+
+### Adding a custom tab to the render frame
+_This section only applies to the Windows OS._ Custom tabs can be added to the render frame by creating a subclass of `CRhRdkRenderFrameTabFactory` and registering it with the RDK in your override of `CRhRdkRenderPlugIn::RegisterExtensions()`. The tab factory implements NewTab() to create an instance of the tab. Once this is done, all render frames will include your custom tab if yours is the current render engine.
+
+```cpp
+class CExampleRenderFrameTabFactory : public CRhRdkRenderFrameTabFactory
+{
+public:
+	virtual CRhinoUiDockBarTab* NewTab(IRhRdkRenderWindow& rw) const override;
+	virtual UUID PlugInId(void) const override { return your_plug_in_id_here; }
+	virtual UUID RenderEngineId(void) const override { return your_render_engine_id_here; }
+	virtual UUID TabId(void) const override { return your_tab_id_here; };
+};
+```
+In `NewTab()`, your factory must create an object that is derived from `CRhinoUiDockBarTab`. This object is a wrapper around a window which it manages:
+```cpp
+class CExampleRenderWindowTab : public CRhinoUiDockBarTab, public ITabbedDockBarEventWatcher
+{
+public:
+	CExampleRenderWindowTab(IRhRdkRenderWindow& rw) : m_RW(rw) { }
+
+	// Return a caption for the tab.
+	virtual ON_wString Caption(void) const override { return L"Example"; }
+
+	// Create your window here.
+	virtual bool CreateWnd(void) override;
+
+	// Move your window to a position in client coords.
+	virtual void MoveWnd(const ON_4iRect& rect) override;
+
+	// Show or hide your window (uState is SH_SHOW or SW_HIDE).
+	virtual void ShowWnd(UINT uState) override;
+
+	// Destroy your window handle.
+	virtual void DestroyWnd(void) override;
+
+	// Return true if your window handle is valid, else false.
+	virtual bool IsCreated(void) const override;
+
+	// Return an icon for the tab.
+	virtual HICON Icon(const ON_2iSize& sizeInPixels) const override;
+
+	virtual void DeleteThis(void) override { delete this; }
+	virtual UUID TabId(void) const override { return your_tab_id_here; }
+
+	// Display help for your dialog.
+	virtual void DoHelp(void) const override { }
+
+	// Called when the current tab changes and when the user docks or undocks the dock bar.
+	virtual void SwitchDockBar() override { }
+
+	virtual ITabbedDockBarEventWatcher* TabbedDockBarEventWatcher(void) const override
+	{
+		// It's easiest to inherit this object from ITabbedDockBarEventWatcher
+		// instead of creating a separate object.
+		return const_cast<CExampleRenderWindowTab*>(this);
+ 	}
+
+protected: // Implement ITabbedDockBarEventWatcher.
+	virtual bool OnDockContextStartDrag(bool bStart) override { return false; } // TODO:
+	virtual void OnToggleDocking(bool bStart) override { } // TODO:
+	virtual void OnStartTracking(bool bDoneTracking) override { } // TODO:
+	virtual void OnDockBarPositionChanged(DWORD dwNewLocation) override { } // TODO:
+	virtual void OnShowDockBar(ShowEventArgs args) override { } // TODO:
+	virtual void OnShowTab(const class CRhinoUiPanel& panel, bool bShowTab,
+	                       const ON_UUID& uuidDockBar) override { } // TODO:
+
+private:
+	IRhRdkRenderWindow& m_RW;
+};
+
+CRhinoUiDockBarTab* CExampleRenderFrameTabFactory::NewTab(IRhRdkRenderWindow& rw) const
+{
+	return new CExampleRenderWindowTab(rw);
+}
+```
