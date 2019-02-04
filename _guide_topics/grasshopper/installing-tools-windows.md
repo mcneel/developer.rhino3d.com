@@ -20,7 +20,7 @@ By the end of this guide, you should have all the tools installed necessary for 
 This guide presumes you have an:
 
 - A PC running Microsoft Windows 7 or later.
-- [RhinoWIP for Windows](https://discourse.mcneel.com/t/welcome-to-serengeti/9612) (currently in development)
+- [Rhino 6 for Windows](https://www.rhino3d.com/)
 
 ---
 
@@ -34,7 +34,7 @@ At the time of this writing, Visual Studio "proper" comes in [three editions](ht
 
 #### Step-by-Step
 
-1. **[Visual Studio 2017 Community Edition](https://www.visualstudio.com/vs-2015-product-editions)** is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/en-us/support/legal/mt171547).  Click the **Community** button to download the installer.
+1. **[Visual Studio 2017 Community Edition](https://visualstudio.microsoft.com/vs/)** is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/en-us/support/legal/mt171547).  Click the **Community** button to download the installer.
 1. Run the **Visual Studio installer** you downloaded from Microsoft, in this case ***vs_community.exe***.
 1. Follow the onscreen prompts to install Visual Studio.  It is recommended that you install the **Typical** installation.  Depending on your internet connection, this can take minutes or hours.  When successfully installed, click the **Launch** button.
 
@@ -74,4 +74,4 @@ Check out the [Your First Component (Windows)]({{ site.baseurl }}/guides/grassho
 
 [^3]: Visual Studio "proper" is the desktop version of Visual Studio...we are only attaching the "proper" epithet to distinguish it from the Visual Studio Code and Visual Studio Online.  In subsequent guides this will be referred to as simply "Visual Studio."
 
-[^4]: Visual Studio Express 2015 for Windows **Desktop** (also named "Express for Desktop" on some pages) offers a development platform that has a less strict licensing agreement policy than the Community edition. Please refer to the EULA for complete details, available during installation. In this edition, debugging of Rhino and Grasshopper can be started, but the location of the Rhino executable (rhino.exe), usually available in the Project property page, in the Debug tab, cannot be changed in the UI. After Wizard completion, the location of the Rhino executable can only be edited in the XML of the resulting **.csproj** file, in the main folder of the solution.
+[^4]: Visual Studio 2017 Community Edition offers a development platform that has a less strict licensing agreement policy than the Community edition. Please refer to the EULA for complete details, available during installation. In this edition, debugging of Rhino and Grasshopper can be started, but the location of the Rhino executable (rhino.exe), usually available in the Project property page, in the Debug tab, cannot be changed in the UI. After Wizard completion, the location of the Rhino executable can only be edited in the XML of the resulting **.csproj** file, in the main folder of the solution.
