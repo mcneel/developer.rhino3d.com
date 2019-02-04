@@ -89,6 +89,6 @@ Finally, in your override of `CRhRdkPlugIn::RegisterExtensions()`, you need to r
 void CMyRdkPlugIn::RegisterExtensions(void) const
 {
 	...
-	rdk.AddExtension(new CExampleCustomTask);
+	AddExtension(new CExampleCustomTask);
 	...
 ```
