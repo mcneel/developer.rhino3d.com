@@ -16,6 +16,7 @@ layout: toc-guide-page
 An RDK _task_ encapsulates the functionality of any operation the user can perform by clicking a menu item or pressing a key in a Render Content Editor. For example, when the user right-clicks in the preview area of such an editor, a context menu is displayed with commands such as 'Assign to Objects' and 'Delete'. All of these menu items are implemented by tasks, derived from [CRhRdkTask]({{ site.baseurl }}/api/cpp/class_c_rh_rdk_task.html). To make it easy for plug-in developers to add their own tasks to these menus, the RDK provides the class [CRhRdkCustomTask]({{ site.baseurl }}/api/cpp/class_c_rh_rdk_custom_task.html). The developer only has to implement a subclass of this and then register the subclass with the RDK. An example of how to do this is shown below. Tasks use an interface called [IRhRdkTaskOrigin]({{ site.baseurl }}/api/cpp/class_i_rh_rdk_task_origin.html) which represents the place in the UI where the user clicked to invoke the menu. Among other things, this interface allows the task to get the contents that are currently selected in the UI. These are the contents that the user wants to perform an operation on.
 {:style="clear:both;"}
 
+
 ### Registering custom tasks
 
 To register a custom task, you first need to derive a class from CRhRdkCustomTask. You provide a menu _string_ that is displayed to the user, a menu _order_ which tells the RDK where on the menu to put the item, and one (or optionally two) _icons_. You also implement an Update() method and an Execute() method.
