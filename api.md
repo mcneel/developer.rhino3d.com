@@ -13,4 +13,6 @@ order: 3
 <a href="{{ site.baseurl }}/api/grasshopper" target="_blank">Grasshopper (Rhino for Windows)</a> <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>  
 <a href="{{ site.baseurl }}/api/rhinoscript" target="_blank">RhinoScript (Rhino for Windows)</a> <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>  
 <a href="{{ site.baseurl }}/api/cpp" target="_blank">C++ API Docs (Rhino for Windows)</a> <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>  
-<a href="http://api.etoforms.picoe.ca/html/R_Project_EtoForms.htm" target="_blank">Eto.Forms</a> <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>  
+<a href="http://api.etoforms.picoe.ca/html/R_Project_EtoForms.htm" target="_blank">Eto.Forms</a> <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> 
+<a href="https://compute-rhino3d.readthedocs.io/en/latest/" target="_blank">compute_rhino3d (python client library for compute.rhino3d)</a> <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> 
+<a href="https://computerhino3djs.readthedocs.io/en/latest/" target="_blank">compute.rhino3d.js (javascript client library for compute.rhino3d)</a> <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> 
