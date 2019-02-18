@@ -10,6 +10,7 @@ origin: unset
 order: 2
 keywords: ['first', 'RhinoCommon', 'Plugin']
 layout: toc-guide-page
+redirect_from: "/guides/rhinocommon/debug-rhinowip-mac"
 ---
 
 

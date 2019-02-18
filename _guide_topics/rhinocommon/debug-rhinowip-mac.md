@@ -5,13 +5,17 @@ authors: ['dan_belcher']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Mac']
-categories: ['Advanced']
+categories: ['Deprecated']
 origin: unset
 order: 1
 keywords: ['first', 'RhinoCommon', 'Plugin', 'RhinoWIP']
 layout: toc-guide-page
 ---
 
+<div class="bs-callout bs-callout-danger">
+  <h4>WARNING</h4>
+  <p>This guide is deprecated.  You can debug in the RhinoWIP using the RhinoCommon Visual Studio for Mac extension.  See the <a href="{{ site.baseurl }}/guides/rhinocommon/installing-tools-mac">Installing Tools (Mac)</a> guide for more information.</p>
+</div>
 
 By the end of this guide, you should understand how to modify your plugin's C# project file in order to target and debug using RhinoWIP.
 
