@@ -15,12 +15,12 @@ layout: toc-guide-page
  
 ## Overview
 
-There are two unit systems associated with a document, model and page units.  The `ON_UnitSystem` class makes it easy to work with custom units. The Rhino document class contains two functions:
+There are two unit systems associated with a document, model and page units. The `ON_UnitSystem` class makes it easy to work with custom units. The Rhino document class contains two functions to return these unit systems:
 
-1. `const ON_UnitSystem& CRhinoDoc::ModelUnits() const;` and...
+1. `const ON_UnitSystem& CRhinoDoc::ModelUnits() const;`
 1. `const ON_UnitSystem& CRhinoDoc::PageUnits() const;`
 
-## How To
+## More information
 
 The unit system of the active document is stored on an `ON_3dmUnitsAndTolerances` class that is located on the `CRhinoDoc` object.
 
