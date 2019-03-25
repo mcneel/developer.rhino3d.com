@@ -18,5 +18,5 @@ order: 3
 <a href="https://computerhino3djs.readthedocs.io/en/latest/" target="_blank">compute.rhino3d.js (javascript client library for compute.rhino3d)</a> <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>  
 
 <a href="{{ site.baseurl }}/api/rhino3dm" target="_blank">rhino3dm functionality in .NET</a> <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>  
-<a href="https://mcneel.github.io/rhino3dm/python/api/index.html" target="_blank">rhino3dm.py (python)</a> <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+<a href="https://mcneel.github.io/rhino3dm/python/api/index.html" target="_blank">rhino3dm.py (python)</a> <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>   
 <a href="https://mcneel.github.io/rhino3dm/javascript/api/index.html" target="_blank">rhino3dm.js (javascript)</a> <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
