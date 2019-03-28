@@ -362,7 +362,7 @@ Both curve ends coincide with end control points.</td>
 <tr style="border-bottom: 1px solid #ccc;">  
 <td>Degree-3 closed periodic curve.<br>
 The curve seam does not go through a control point.</td>  
-<td><img src="{{ site.baseurl }}/images/math-image146.png"></td>  
+<td><img src="{{ site.baseurl }}/images/math-image150.png"></td>  
 </tr>  
 <tr style="border-bottom: 1px solid #ccc;">  
 <td>Moving control points of a periodic curve does not affect curve smoothness.</td>  
@@ -370,7 +370,7 @@ The curve seam does not go through a control point.</td>
 </tr>  
 <tr style="border-bottom: 1px solid #ccc;">  
 <td>Kinks are created when the curve is forced through some control points.</td>  
-<td><img src="{{ site.baseurl }}/images/math-image150.png"></td>  
+<td><img src="{{ site.baseurl }}/images/math-image146.png"></td>  
 </tr>  
 <tr style="border-bottom: 1px solid #ccc;">  
 <td>Moving the control points of a non-periodic curve does not guarantee smooth continuity of the curve, but enables more control over the outcome.</td>  
