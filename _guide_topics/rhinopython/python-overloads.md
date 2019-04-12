@@ -50,7 +50,7 @@ public Brep[] Split(Brep splitter, double intersectionTolerance, out bool tolera
 public Brep[] Split(IEnumerable<GeometryBase> cutters, Vector3d normal, bool planView, double intersectionTolerance)
 ```
 
-If you run the following example code, which should split a Brep with one or more cutting Breps:
+If you run the following example code, which should split a `Brep` with one or more cutting `Breps`:
 
 ```
 import Rhino
