@@ -69,9 +69,8 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 1. *Rhino.UI* contains the Windows-specific User Interface classes.
 1. *RhinoCommon* is *the* critical reference for our purposes here.
 1. *System*, *System.Core*, *System.Drawing*, *System.Windows.Forms* are .NET foundational libraries.
-1. *HelloRhinoCommonPlugin.cs* is where this template plugin derives from *Rhino.Plugins.Plugin* and returns a static Instance of itself.  
 1. *HelloRhinoCommonCommand.cs* is where the action is.  Let's take a look at this file...
-
+1. *HelloRhinoCommonPlugin.cs* is where this template plugin derives from *Rhino.Plugins.Plugin* and returns a static Instance of itself.  
 
 ### Make Changes
 
