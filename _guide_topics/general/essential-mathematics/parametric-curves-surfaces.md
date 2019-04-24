@@ -99,7 +99,7 @@ The same principle applies for any parametric curve. Any point on the curve can 
 
 ### Curve domain or interval
 
-A curve *domain* or *interval* is defined as the range of parameters that evaluate into a pointwithin that curve. The domain is usually described with two realnumbers defining the domain limits expressed in the form (min to max)or (min, max). The domain limits can be any two values that may ormay not be related to the actual length of the curve. In anincreasing domain, the domain min parameter evaluates to the startpoint of the curve and the domain max evaluates to the end point ofthe curve.  
+A curve *domain* or *interval* is defined as the range of parameters that evaluate into a point within that curve. The domain is usually described with two real numbers defining the domain limits expressed in the form (min to max)or (min, max). The domain limits can be any two values that may or may not be related to the actual length of the curve. In an increasing domain, the domain min parameter evaluates to the start point of the curve and the domain max evaluates to the end point ofthe curve.  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image95.png" width="540px">
