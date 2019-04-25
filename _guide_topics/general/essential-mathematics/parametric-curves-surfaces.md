@@ -178,7 +178,7 @@ NURBS curves and surfaces are the main mathematical representation used by Rhino
 
 ### Evaluating cubic Bézier curves
 
-Named after its inventor, Paul de Casteljau, the de Casteljau algorithmi evaluates Bézier curves using a recursive method. The algorithm steps can be summarized as follows:  
+Named after its inventor, Paul de Casteljau, the de Casteljau algorithm evaluates Bézier curves using a recursive method. The algorithm steps can be summarized as follows:  
 
 **Input:**  
 
@@ -281,7 +281,7 @@ Knots= <0, 0, 0, 1, 2, 3, 4, 5, 6, 6, 6>
 
 ### Knot multiplicity
 
-The multiplicity of a knot is the number of times it is listed in the list of knots. The multiplicity of a knot cannot be more than the degree of the curve.  Knot multiplicity is used to control continuity at the corresponding curve point.  
+The multiplicity of a knot is the number of times it is listed in the list of knots. The multiplicity of a knot cannot be more than the degree of the curve. Knot multiplicity is used to control continuity at the corresponding curve point.  
 
 ### Fully-multiple knots
 
@@ -579,7 +579,7 @@ Where:
 
 &nbsp; $$u$$ and $$v$$ are the two parameters within the surface domain or region.  
 
-### Surfacedomain
+### Surface domain
 
 A surface domain is defined as therange of ($$u,v$$) parameters that evaluate into a 3 D point on thatsurface. The domain in each dimension ($$u$$ or $$v$$) is usually describedas two real numbers ($$u_{min}$$ to $$u_{max}$$) and ($$v_{min}$$ to $$v_{max}$$)
 
