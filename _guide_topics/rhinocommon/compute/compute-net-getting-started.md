@@ -15,6 +15,8 @@ layout: toc-guide-page
 
 By the end of this guide, you should have all the tools installed necessary for using the [Rhino Compute Service](https://www.rhino3d.com/compute) with C# in Windows.
 
+For a an extensive getting started tutorial from Junichiro Horikawa go to the [video showing using C# to access Compute from within Unity.](https://youtu.be/zUbm83ynn0Q)
+
 This guide presumes you have an:
 
 - A PC running Microsoft Windows 7 or later.
