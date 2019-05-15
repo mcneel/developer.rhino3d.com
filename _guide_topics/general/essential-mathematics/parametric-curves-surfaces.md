@@ -268,7 +268,7 @@ Each NURBS curve has a list of numbers associated with it called a *list of knot
 
 ### Knots are parameter values
 
-Knots are a non-decreasing list of parameter values. There is degree+1 more knots than control points. Usually, for non-periodic curves, the first degree many knots are the same and the last degree many are the same. The domain of the curve is between these two extreme knot values at start and end.  
+Knots are a non-decreasing list of parameter values. In Rhino, there is a degree-1 more knots than control points. Usually, for non-periodic curves, the first degree many knots are the same and the last degree many are the same. The domain of the curve is between these two extreme knot values at start and end.  
 
 For example, the knots of an open degree-3 NURBS curve with seven control points and a domain between 0 and 6 may look like the following:  
 
