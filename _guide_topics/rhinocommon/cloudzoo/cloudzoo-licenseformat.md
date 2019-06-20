@@ -8,7 +8,7 @@ platforms: ['Windows', 'Mac']
 categories: ['Zoo']
 origin: unset
 order: 1
-keywords: ['Zoo', 'Plugin', 'CloudZoo']
+keywords: ['Plugin', 'CloudZoo']
 layout: toc-guide-page
 ---
 
