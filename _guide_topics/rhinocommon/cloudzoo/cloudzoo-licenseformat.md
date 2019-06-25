@@ -5,10 +5,10 @@ authors: ['aj']
 sdk: ['RhinoCommon']
 languages: unset
 platforms: ['Windows', 'Mac']
-categories: ['Zoo']
+categories: ['CloudZooDoc']
 origin: unset
 order: 1
-keywords: ['Plugin', 'CloudZoo']
+keywords: ['Plugin', 'Cloud Zoo']
 layout: toc-guide-page
 ---
 

@@ -7,7 +7,7 @@ languages: unset
 platforms: ['Windows', 'Mac']
 categories: ['CloudZoo']
 origin: unset
-order: 1
+order: 4
 keywords: ['Plugin', 'Cloud Zoo']
 layout: toc-guide-page
 ---
