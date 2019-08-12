@@ -12,7 +12,7 @@ keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
-The Yak command line tool is included with Rhino 6. On Windows the tool is located at `C:\Program Files\Rhino 6\System\yak.exe`.
+The Yak command line tool is included with Rhino 6. On Windows the tool is located at `C:\Program Files\Rhino WIP\System\yak.exe`.
 
 ## Build
 

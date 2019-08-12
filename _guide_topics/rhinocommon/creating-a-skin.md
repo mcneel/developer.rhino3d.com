@@ -12,7 +12,7 @@ keywords: ['skin', 'RAP', 'rhino', 'RhinoCommon']
 layout: toc-guide-page
 ---
 
- 
+
 ## Overview
 
 Rhino allows developers to customize most of Rhino's interface so that the application appears to be their own.  We call this a custom *Skin*.  With a custom Skin, you can change the application icon, splash screen, the application name etc.
@@ -97,4 +97,4 @@ To install your custom Skin, use *REGEDIT.EXE* to add a scheme key to your regis
 
 You can now test your custom Skin by creating shortcut to your Rhino executable with `/scheme="<scheme name from the previous step>"` as command line argument.  For example:
 
-*C:\Program Files\Rhino 6\System\Rhino.exe" /scheme=MySkin*
+*C:\Program Files\Rhino WIP\System\Rhino.exe" /scheme=MySkin*
