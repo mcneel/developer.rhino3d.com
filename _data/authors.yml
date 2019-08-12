@@ -1,0 +1,114 @@
+- name: alain_cormier
+  display_name: Alain Cormier
+  email: alain@mcneel.com
+  discourse: Alain
+  
+- name: aj
+  display_name: Andrés Jacobo
+  email: aj@mcneel.com
+  discourse: aj1
+
+- name: andrew_le_bihan
+  display_name: Andrew le Bihan
+  email: andy@mcneel.com
+  discourse: andy
+
+- name: arthur_van_der_harten
+  display_name: Arthur van der Harten
+  email: unset
+  discourse: aharten
+
+- name: brian_gillespie
+  display_name: Brian Gillespie
+  email: brian@mcneel.com
+  discourse: brian
+
+- name: dale_fugier
+  display_name: Dale Fugier
+  email: dale@mcneel.com
+  discourse: dale
+
+- name: dale_lear
+  display_name: Dale Lear
+  email: dalelear@mcneel.com
+  discourse: dalelear
+
+- name: dan_belcher
+  display_name: Dan Belcher
+  email: dan@mcneel.com
+  discourse: dan
+
+- name: david_rutten
+  display_name: David Rutten
+  email: david@mcneel.com
+  discourse: DavidRutten
+
+- name: giulio_piacentino
+  display_name: Giulio Piacentino
+  email: giulio@mcneel.com
+  discourse: piac
+
+- name: luis_fraguada
+  display_name: Luis Fraguada
+  email: luis@mcneel.com
+  discourse: fraguada
+
+- name: jess_maertterer
+  display_name: Jess Maertterer
+  email: unset
+  discourse: Jess
+
+- name: john_croudy
+  display_name: John Croudy
+  email: john.croudy@mcneel.com
+  discourse: JohnC
+
+- name: john_morse
+  display_name: John Morse
+  email: johnm@mcneel.com
+  discourse: JohnM
+
+- name: nathan_letwory
+  display_name: Nathan Letwory
+  email: nathan@mcneel.com
+  discourse: nathanletwory
+
+- name: pascal_golay
+  display_name: Pascal Golay
+  email: pascal@mcneel.com
+  discourse: pascal
+
+- name: rajaa_issa
+  display_name: Rajaa Issa
+  email: rajaa@mcneel.com
+  discourse: rajaa
+
+- name: scott_davidson
+  display_name: Scott Davidson
+  email: scottd@mcneel.com
+  discourse: scottd
+
+- name: skylar_tibbits
+  display_name: Skylar Tibbits
+  email: sjet@sjet.us
+  discourse: unset
+
+- name: steve_baer
+  display_name: Steve Baer
+  email: steve@mcneel.com
+  discourse: stevebaer
+
+- name: steven_janssen
+  display_name: Steven Janssen
+  email: unset
+  discourse: Steven
+
+- name: stylianos_dritsas
+  display_name: Stylianos Dritsas
+  email: unset
+  discourse: unset
+
+- name: will_pearson
+  display_name: Will Pearson
+  email: will@mcneel.com
+  discourse: will

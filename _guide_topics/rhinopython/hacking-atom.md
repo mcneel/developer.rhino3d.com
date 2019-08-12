@@ -1,8 +1,7 @@
 ---
 title: Hacking and Testing latest Atom rhino-python package
 description: This guide describes how to run and test the latest Atom rhino-python package.
-authors: ['Alain Cormier']
-author_contacts: ['Alain']
+authors: ['alain_cormier']
 sdk: ['RhinoPython']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Mac']
@@ -13,7 +12,7 @@ keywords: ['hacking', 'atom', 'rhino-python']
 layout: bootstrap
 ---
 
- 
+
 ### Specifically, running from the "settings" branch of the source to test the search paths configuration.
 
 I updated the rhino-python Atom package to support configuring the Python search path which I plan to deploy when we release MR5.1.  The document describes how to install and run it from source so some of you can test and give feedback.  

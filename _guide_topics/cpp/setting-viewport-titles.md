@@ -1,8 +1,7 @@
 ---
 title: Setting Viewport Titles
 description: This brief guide demonstrates how to set the title of a viewport using C/C++.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

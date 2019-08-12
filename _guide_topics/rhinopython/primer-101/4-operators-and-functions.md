@@ -1,8 +1,7 @@
 ---
 title: 4 Operators and functions
 description:
-authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['sjet@sjet.us', 'aharten', 'stevebaer']
+authors: ['skylar_tibbits', 'arthur_van_der_harten', 'steve_baer']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

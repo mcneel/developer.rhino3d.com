@@ -1,8 +1,7 @@
 ---
 title: Create a NURBS Circle
 description: Demonstrates how to use ON_NurbsCurve to create a circle.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

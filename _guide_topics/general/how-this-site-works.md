@@ -1,8 +1,7 @@
 ---
 title: How This Site Works
 description: A guide to how this very developer document site works.
-authors: ['Dan Belcher']
-author_contacts: ['dan']
+authors: ['dan_belcher']
 sdk: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Windows', 'Mac']
@@ -57,7 +56,7 @@ The easiest way is to work in the `master` branch and then you can [cherry-pick]
 
 What if you want to just correct a typo in both the `master` and the stable `n` versions of the site?  
 
-In this case, the fastest and easiest way is to simply correct the typo in both branches on the GitHub site itself.  For example, if you wanted to correct a typo on <a href="https://github.com/{{ site.nwo }}/blob/{{ site.git_branch }}/{{ page.path }}" target="_blank">this very guide</a>, just click the "Edit this file" - the little pencil icon in the upper right-hand corner.  Make your correction, then switch to the `wip` branch and do the same thing.  For small fixes, this works just as well as a [cherry-picked](https://git-scm.com/docs/git-cherry-pick) commit.
+In this case, the fastest and easiest way is to simply correct the typo in both branches on the GitHub site itself.  For example, if you wanted to correct a typo on [this very guide](https://github.com/{{ site.nwo }}/blob/{{ site.git_branch }}/{{ page.path }}), just click the "Edit this file" - the little pencil icon in the upper right-hand corner.  Make your correction, then switch to the `wip` branch and do the same thing.  For small fixes, this works just as well as a [cherry-picked](https://git-scm.com/docs/git-cherry-pick) commit.
 
 ---
 
@@ -132,8 +131,7 @@ Here is an example of the YAML for this guide:
 ---
 title: How This Site Works
 description: A guide to how this very developer document site works.
-authors: ['Dan Belcher']
-author_contacts: ['dan']
+authors: ['dan_belcher']
 sdk: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Mac', 'Windows']
@@ -149,8 +147,7 @@ The YAML fields for Guides determine:
 
 * *title*: This is the title of the guide.  This is the html page title.
 * *description*: This is a brief description of the guide.
-* *authors*: The original - or responsible - author(s).
-* *author_contacts*: The matching Discourse handle(s) for the author(s), must match order of authors yaml.  If an email address is set, a mailto: link is generated rather than a Discourse handle.
+* *authors*: The original - or responsible - author(s).  These values are in the _authors.yml_ file in */_data*.
 * *sdk*: The Rhino SDK(s) that this guide pertains to.
 * *languages*: The programming languages this guide references.
 * *platforms*: The operating systems this guide is relevant to.
@@ -159,7 +156,6 @@ The YAML fields for Guides determine:
 * *order*: The relative sort-order of this guide in any list.
 * *keywords*: Keywords related to this guide (un-used, as of yet).
 * *layout*: The layout html file used by Liquid (found in `/_layouts/`) on the guide.
-
 
 ### APIs
 
@@ -175,8 +171,7 @@ Here is an example of the YAML for [this sample]({{ site.baseurl }}/samples/cpp/
 ---
 title: Add a Cone Surface
 description: Demonstrates how to create a cone using ON_BrepCone.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
@@ -192,8 +187,7 @@ The YAML fields for Samples determine:
 
 * *title*: This is the title of the sample.  This is the html page title.
 * *description*: A brief description of what the sample does.
-* *authors*: The original - or responsible - author(s).
-* *author_contacts*: The matching Discourse handle(s) for the author(s), must match order of authors yaml.  If an email address is set, a mailto: link is generated rather than a Discourse handle.
+* *authors*: The original - or responsible - author(s).  These values are in the _authors.yml_ file in */_data*.
 * *sdk*: The Rhino SDK(s) that this sample pertains to.
 * *languages*: The programming languages this sample references.
 * *platforms*: The operating systems this sample is relevant to.
@@ -203,6 +197,15 @@ The YAML fields for Samples determine:
 * *keywords*: Keywords related to this sample (un-used, as of yet).
 * *layout*: The layout html file used by Liquid (found in `/_layouts/`) on the sample.
 
+## Authors
+
+To add a new author to the site, you must do three things:
+
+1. Add an entry to the */_data/authors.yml* file with the appropriate fields filled in.
+1. Duplicate one of the markdown.md files in the */_authors* folder and use the `name:` value that you added to the */_data/authors.yml* file in step 1 above.
+1. Use the author's `name:` value as a string in the `authors: ['your_new_author_name']` yaml entries in guides or samples.
+
+That's it.  *NOTE*: If you are building the site locally, results may be cached so a new author might not show up in the list.  You can force a full rebuild of the site by deleting the */_site* folder.
 
 ## TODO & origin fields
 
@@ -221,6 +224,17 @@ If the TODO field is not present, the content will not be on the list.
 #### origin
 
 Much of this site is (or was) ported from a previous location.  The `origin` yaml field is reserved for a backlink to the original content.  If the `origin` yaml field is set to a URL - and `TODO` is set to `some value` - the content will show up on the [TODO list]({{ site.baseurl }}/admin/index.html#todo-list) as needs porting from the `origin` URL.
+
+## Jekyll Plugins
+
+In general, we are attempting to stick to those [Jekyll dependencies that are ship with GitHub Pages](https://pages.github.com/versions/).  That said, since we are building this site with Travis CI, we can indeed use Jekyll plugins that are not part of the canonical GitHub pages dependencies.
+
+To add a plugin to the site:
+
+1. Verify that it is not in the [Dependency versions list](https://pages.github.com/versions/) already.
+1. Test the plugin locally on your machine to make sure it does what you want it to do.
+1. Add the plugin to the *Gemfile* on this site.
+1. Add the plugin to the the *_config.yml* list under the `plugins:` entry.
 
 ---
 

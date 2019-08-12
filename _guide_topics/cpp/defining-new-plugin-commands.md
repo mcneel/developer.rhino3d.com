@@ -1,8 +1,7 @@
 ---
 title: Defining New Plugin Commands
 description: This guide discusses Rhino commands and how define new commands using C/C++.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

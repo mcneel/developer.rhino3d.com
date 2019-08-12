@@ -1,12 +1,12 @@
 ---
 title: Reading Per-Face Render Materials
 description: This brief guide describes how to read render materials from Brep faces using the openNURBS toolkit.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
 categories: ['Advanced']
+origin: unset
 order: 1
 keywords: ['openNURBS', 'reading', 'render', 'material']
 layout: toc-guide-page
@@ -21,7 +21,7 @@ If `ON_BrepFace:m_face_material_channel` is zero, which is the default value, th
 
 if `ON_BrepFace:m_face_material_channel` is greater than zero, then his value can use used to obtain the face's rendering material id from the parent Brep's rendering material's channel index array. 
 
-If you are referencing the `Example_read` sample included with the openNURBS toolkit, then after the 3DM file has been read, you can obtain the render meshes from the `ONX_Model` object as follows:
+If you are referencing the `Example_read` sample included with the openNURBS toolkit, then after the 3DM file has been read, you can query an object's render material as follows:
 
 ```cpp
 ONX_Model model = .....

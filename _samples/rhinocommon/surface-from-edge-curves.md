@@ -1,8 +1,7 @@
 ---
 title: Surface from Edge Curves
 description: Create a Surface from Edge Curves
-authors: ['Steve Baer']
-author_contacts: ['stevebaer']
+authors: ['steve_baer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

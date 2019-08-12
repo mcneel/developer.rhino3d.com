@@ -1,8 +1,7 @@
 ---
 title: Exporting Meshes to Geomview
 description: Demonstrates how to export a mesh object to Geomview's OFF file format using RhinoScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

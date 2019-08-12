@@ -1,8 +1,7 @@
 ---
 title: Extend Curve
 description: Demonstrates how to extend a curve by a line, arc or smooth extension until it intersects a collection of objects.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,8 +1,7 @@
 ---
 title: Adding to Rhino's File Search Path
 description: This brief guide demonstrates how to add a file path to Rhino's file search path using C/C++.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,8 +1,7 @@
 ---
 title: Python Looping
 description: This guide is an overview of looping through Python code.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

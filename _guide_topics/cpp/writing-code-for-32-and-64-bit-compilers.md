@@ -1,8 +1,7 @@
 ---
 title: Writing Code for 32- and 64-bit Compilers
 description: This guide outlines some considerations when writing C/C++ code for both 32- and 64-bit compilers.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

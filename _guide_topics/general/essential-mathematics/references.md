@@ -1,8 +1,7 @@
 ---
 title: 4 References
 description: This guide includes the references for Essential Mathematics for Computational Design.
-authors: ['Rajaa Issa']
-author_contacts: ['rajaa']
+authors: ['rajaa_issa']
 sdk: ['General']
 languages: unset
 platforms: ['Windows', 'Mac']

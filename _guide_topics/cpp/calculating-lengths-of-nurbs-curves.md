@@ -1,8 +1,7 @@
 ---
 title: Calculating the Lengths of NURBS Curves
 description: This guide discusses a problem when trying to calculate the length of a NURBS curve using C/C++.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

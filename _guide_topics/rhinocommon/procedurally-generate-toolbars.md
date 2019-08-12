@@ -1,8 +1,7 @@
 ---
 title: Procedurally Generate Toolbars
 description: This guide covers the generation of toolbar button images.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']

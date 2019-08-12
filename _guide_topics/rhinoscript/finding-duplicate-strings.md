@@ -1,8 +1,7 @@
 ---
 title: Finding Duplicate Strings
 description: This guide demonstrates finding duplicate string using RhinoScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

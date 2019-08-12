@@ -1,8 +1,7 @@
 ---
 title: Custom Getpoint
 description:  A Rhino GetPoint that performs some custom dynamic drawing.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

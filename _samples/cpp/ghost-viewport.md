@@ -1,8 +1,7 @@
 ---
 title: Ghost Viewport
 description: Demonstrates how to set a viewport to ghosted display.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

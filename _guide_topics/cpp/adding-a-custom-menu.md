@@ -1,8 +1,7 @@
 ---
 title: Adding a Custom Menu
 description: This short guide demonstrates how to add a custom menu to Rhino's menu using C/C++.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

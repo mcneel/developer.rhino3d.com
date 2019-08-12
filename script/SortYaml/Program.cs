@@ -71,7 +71,6 @@ namespace SortYaml
       int titleIndex = 0;
       int descriptionIndex = 0;
       int authorsIndex = 0;
-      int authorContactsIndex = 0;
       int sdkIndex = 0;
       int languagesIndex = 0;
       int platformsIndex = 0;
@@ -90,9 +89,7 @@ namespace SortYaml
         if (lines [k].StartsWith ("description:", StringComparison.Ordinal))
           descriptionIndex = k;
         if (lines [k].StartsWith ("authors:", StringComparison.Ordinal))
-          authorsIndex = k;
-        if (lines [k].StartsWith ("author_contacts:", StringComparison.Ordinal))
-          authorContactsIndex = k;
+          authorsIndex = k;       
         if (lines [k].StartsWith ("sdk:", StringComparison.Ordinal))
           sdkIndex = k;
         if (lines [k].StartsWith ("languages:", StringComparison.Ordinal))
@@ -119,7 +116,6 @@ namespace SortYaml
       const string stubbedTitleField = "title: Title";
       const string stubbedDescriptionField = "description: unset";
       const string stubbedAuthorsField = "authors: unset";
-      const string stubbedAuthorContactsField = "author_contacts: unset";
       const string stubbedSDKField = "sdk: unset";
       const string stubbedLanguagesField = "languages: unset";
       const string stubbedPlatformsField = "platforms: unset";
@@ -150,13 +146,7 @@ namespace SortYaml
       if (authorsIndex != 0)
         newLines.Add (lines [authorsIndex]);
       else
-        newLines.Add (stubbedAuthorsField);
-
-      // check to see if the file contains a author_contacts: field
-      if (authorContactsIndex != 0)
-        newLines.Add (lines [authorContactsIndex]);
-      else
-        newLines.Add (stubbedAuthorContactsField);
+        newLines.Add (stubbedAuthorsField);           
 
       // check to see if the file contains a sdk: field
       if (sdkIndex != 0)

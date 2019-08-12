@@ -1,8 +1,7 @@
 ---
 title: Developer Training
 description: This guide describes our Rhino Developer Training.
-authors: ['Dan Belcher']
-author_contacts: ['dan']
+authors: ['dan_belcher']
 sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
@@ -30,18 +29,18 @@ Rhino Developer Training is available at both the McNeel Headquarters in Seattle
 Your computer with:
 
 * Rhino C++ SDK:
-  * Microsoft Visual C++ 2010 for Rhino 6
-  * The [Rhino C++ SDK](http://www.rhino3d.com/download/rhino-sdk/5.0/release).
-  * _Note, Visual C++ 2008, 2012, 2013, and the Express Editions of Visual C++ **will not** work._
+  * Microsoft Visual Studio 2017 for Rhino 6
+  * The [Rhino C++ SDK]({{ site.baseurl }}/guides/cpp/installing-tools-windows/).
+  * _Note, Visual Studio 2010, 2012, 2013, and 2015 **will not** work._
 
 * RhinoCommon SDK:
-  * Microsoft Visual Studio 2010, 2012 or 2013, 2015, or 2017 with either C# or Visual Basic; or
-  * Visual Studio for Mac (for Mac plugin development).
-  * The [RhinoCommon Templates](http://visualstudiogallery.msdn.microsoft.com/16053049-7db2-4c9f-961a-53274ac92ace).
+  * Microsoft Visual Studio 2017 for Rhino 6; or
+  * Microsoft Visual Studio for Mac (for Mac plugin development).
+  * The [RhinoCommon Templates]({{ site.baseurl }}/guides/rhinocommon/installing-tools-windows/).
   * _Note, the Express Editions of Visual Studio 2010, 2012, 2013, 2015, and 2017 **will** work._
 
-  * Your Rhino plugin project source code.
-  * Any software you will need to test your plugin, including copies of your own software.
+* Your Rhino plugin project source code.
+* Any software you will need to test your plugin, including copies of your own software.
 
 ## Pricing and scheduling
 

@@ -1,8 +1,7 @@
 ---
 title: Disconnected Recordset Sorting
 description: This guide demonstrates using a disconnected recordset to sort data.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

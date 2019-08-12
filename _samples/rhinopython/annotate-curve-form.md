@@ -1,8 +1,7 @@
 ---
 title: Annotate Curve Form
 description:  The following sample shows how to create a custom Windows form.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows']

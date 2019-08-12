@@ -1,8 +1,7 @@
 ---
 title: Export Points to Excel
 description: Illustrates RhinoScript code that exports Rhino point coordinates to Microsoft Excel.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

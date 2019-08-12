@@ -1,133 +1,63 @@
-# developer-rhino3d-com
+# developer.rhino3d.com
 
 [![Build Status](https://travis-ci.org/mcneel/developer-rhino3d-com.svg?branch=master)](https://travis-ci.org/mcneel/developer-rhino3d-com)
 
-This repo contains the contents of http://developer.rhino3d.com.
+This repo contains the contents of https://developer.rhino3d.com.
+The site is built by [Travis CI](https://travis-ci.org/mcneel/developer-rhino3d-com) using [Jekyll](http://jekyllrb.com/) (a static site generator) and hosted on [GitHub Pages](https://pages.github.com/).
 
-The site is hosted on [GitHub Pages](https://pages.github.com/) which uses a static site generator called [Jekyll](http://jekyllrb.com/).
+Pull requests are welcome! :tada: Please read our guide on [Contributing](https://github.com/mcneel/developer-rhino3d-com/blob/6/CONTRIBUTING.md). If you want to build the site yourself, to test your changes before opening a pull request, then please check out the [Getting Started](#getting-started) guide below.
 
+## Getting started
 
-## Getting Started
-
-These instructions cover running this project locally on both macOS and Windows so that you can preview changes before pushing them to GitHub Pages.
+These instructions cover running this project locally on both macOS and Windows so that you can preview changes.
 
 First, navigate somewhere safe and clone the repository.
 
-```
+```bash
 git clone https://github.com/mcneel/developer-rhino3d-com.git
 ```
 
-If you are not comfortable using git on the command-line, then try [GitHub for Mac](https://mac.github.com/) and [GitHub for Windows](https://windows.github.com/). There's also the [git cheat sheet](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf).
+If you are not comfortable using git on the command-line, then check out the [git cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) or try [GitHub Desktop](https://desktop.github.com).
 
-**IMPORTANT:** The site is branch-aware and automatically deployed by [Travis CI](https://travis-ci.org/mcneel/developer-rhino3d-com). **DO NOT PUSH TO THE `gh-pages` BRANCH!**
+### Branches
 
-The current (_stable_) version Rhino is defined in the `stable:` field in the `_config.yml` file.  The `n` branch that corresponds to the stable release is built and deployed to http://developer.rhino3d.com.  
+:warning: _**DO NOT PUSH TO THE `gh-pages` BRANCH!** The site is branch-aware and automatically deployed by [Travis CI](https://travis-ci.org/mcneel/developer-rhino3d-com)._
+
+The current (_stable_) version of Rhino is defined in the `stable:` field in the `_config.yml` file.  The `n` branch that corresponds to the stable release is built and deployed to http://developer.rhino3d.com.  
 
 The `master` branch represents the WIP version of the site.  Changes to the `master` branch will be built by Travis and deployed to http://developer.rhino3d.com/wip.  
 
 Branches are defined in `_config.yml` (under `version_branches`) and will be built and deployed into a subpath with the same name; for example: the `5` branch is built and deployed to http://developer.rhino3d.com/5.
 
-### macOS
+### Installing Ruby
 
-macOS ships with Ruby and RubyGems, however it's [not wise](https://github.com/mcneel/developer-rhino3d-com/pull/2#issuecomment-112601698) to mess around with this installation. Instead, install your own Ruby using [Homebrew](http://brew.sh) (and optionally [rbenv](#install-ruby-the-rbenv-way)).
+See [Jekyll's official guides](https://jekyllrb.com/docs/installation/) for [macOS](https://jekyllrb.com/docs/installation/macos/) and [Windows](https://jekyllrb.com/docs/installation/windows/).
 
-#### Install Homebrew
+### Installing Jekyll and plug-ins
 
-As per the Homebrew [website](http://brew.sh), install via the following one-liner (which will prompt you to install the Xcode Command Line Tools, if you don't already have them).
+```bash
+cd developer-rhino3d-com
 
-```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+gem install bundler
 
-#### Install Ruby (the easy way)
+# script for macOS
+./script/bootstrap
 
-**Note**: Since OS X 10.11 (El Capitan) we've seen failures during the `gem install` step (`ERROR: While executing gem ... (Errno::EINVAL)`) on machines that didn't previously have homebrew installed. Using [rbenv](#install-ruby-the-rbenv-way) seems to solve this.
-
-Simply _brew_ Ruby.
-
-```
-brew install ruby
+# manual method for Windows
+bundle install
 ```
 
-Now close and reopen the Terminal window to make sure the system knows about the new version of Ruby and skip to [installing Jekyll](#install-jekyll).
+### Running the server locally
 
-#### Install Ruby (the rbenv way)
+You can now serve your local copy of this site by running the `server` script.
 
-This is a slightly more advanced method for installing ruby which allows you to easily switch between ruby versions.
-
-Install [rbenv](https://github.com/rbenv/rbenv) and [ruby-build](https://github.com/rbenv/ruby-build) using homebrew:
-```
-brew install rbenv ruby-build
+```bash
+./script/server
 ```
 
-Run `rbenv init` which will prompt you to add `eval "$(rbenv init -)"` to `~/.bash_profile`. Do this.
+_**Note**: The `api/*` subdirectories are excluded when previewing the site locally which speeds things up a bit!_
 
-Install ruby (see [.ruby-version](https://github.com/mcneel/developer-rhino3d-com/blob/6/.ruby-version) for the current version):
-
-```
-rbenv install 2.3.3
-```
-
-Check that everything worked as expected:
-
-1. `ruby --version` – should return something like `ruby 2.3.3p222 (2016-11-21 revision 56859) [universal.x86_64-darwin17]`
-2. `which ruby` – should return something like `/Users/will/.rbenv/shims/ruby` (**not `/usr/bin/ruby` or `/usr/local/bin/ruby`**)
-
-#### Install Jekyll
-
-The [GitHub Pages Ruby Gem](https://github.com/github/pages-gem) provides the same version of Jekyll as exists on the GitHub Pages servers. This ensures we aren't accidentally using features that have either been deprecated or simply don't exist on GitHub's servers yet!
-
-```
-gem install github-pages
-```
-
-You can now serve your local copy of this site by running the following commands, remembering to replace `CLONE_DIRECTORY` with the location to which you checked out this repository.
-
-```
-cd CLONE_DIRECTORY
-script/server
-```
-
-Navigate to http://localhost:4000 in your browser to view the site.
-
-**Note**: The `api` directory is excluded when previewing the site locally which speeds things up a bit!
-
-
-### Windows
-
-While [Jekyll](http://jekyllrb.com/docs/windows/) is not officially supported in Windows, it does work.  These instructions are based on the official _unofficial_ guide to [installing Jekyll on Windows](http://jekyll-windows.juthilo.com/).
-
-Optionally, you can follow the directions found on [Setting up your GitHub Pages site locally with Jekyll - Windows](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/#platform-windows) to use Bundler to install Jekyll.
-
-#### Install Ruby and Ruby DevKit
-
-Go to http://rubyinstaller.org/downloads/ and download the installer for Ruby that matches your system architecture (x86/x64). Check [.ruby-version](https://github.com/mcneel/developer-rhino3d-com/blob/6/.ruby-version) for the current recommended version.
-
-At the "Installation Destination and Optional Tasks" dialog, make sure to check the **"Add Ruby executable to your PATH"** box.
-
-Then, from the same page download the Development Kit that corresponds to your Ruby installation. Jekyll won't be fully functional without this.
-
-Run the self extracting archive, entering the path `C:\RubyDevKit` when prompted.
-
-To initialize and install the DevKit, open up a command prompt and roll up your sleeves...
-
-```
-cd C:\RubyDevKit
-ruby dk.rb init
-ruby dk.rb install
-```
-
-#### Install Jekyll and serve
-
-As with macOS, install the GitHub Pages Ruby Gem, navigate to the clone directory and run jekyll.
-
-```
-gem install github-pages
-cd CLONE_DIRECTORY
-jekyll serve
-```
-
-## Next Steps
+## What next?
 
 Once you have cloned or forked this repository and are able to build it locally, please read the following guides:
 

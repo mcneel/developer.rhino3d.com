@@ -1,12 +1,12 @@
 ---
 title: The Package Manifest
 description: What is a 'package manifest' and what should it include?
-authors: ['Will Pearson']
-author_contacts: ['will']
+authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']
+origin: unset
 order: 1
 keywords: ['developer', 'yak']
 layout: toc-guide-page
@@ -76,13 +76,16 @@ Partial version numbers are expanded to the full `major.minor.patch` by the serv
 version: 0.3.4
 ```
 
+For specific questions about versioning, please direct those to the [Yak Forum](https://discourse.mcneel.com/c/serengeti/yak)
+
 ### Authors
 
-A list of authors of the package.
+A list of author(s) of the package.
 
 ```yaml
 authors:
   - Daniel Piker
+  # list additional package authors below
   - Will Pearson
 ```
 
@@ -122,7 +125,7 @@ You should specify a license for your package so that people know how they are p
 
 ### URL
 
-A webpage for the package.
+A webpage for the package. This can be any URL i.e. author contact info, forums, tutorials or any other information about the plugin.
 
 <!-- NOTE: I'm thinking that, where this is a github repository, there is the possibility to build direct from HEAD. -->
 
@@ -144,12 +147,12 @@ dependencies:
   - name: plankton
     spec: "< 0.4.0, >= 0.3.0"
   - name: package_without_spec
-``` -->
+​``` -->
 
 
 <!--## Alternative (JSON)
 
-```json
+​```json
 {
   "name": "plankton",
   "version": "0.3.4",

@@ -1,8 +1,7 @@
 ---
 title: Line and Plane Methods
 description: This guide provides an overview of the rhinoscriptsytntax Line and Plane methods.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

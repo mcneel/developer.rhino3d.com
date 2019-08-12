@@ -1,8 +1,7 @@
 ---
 title: Python Scripting in Rhino
 description: This guide provides an overview of the scripting with Python in Rhino.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

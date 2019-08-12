@@ -1,8 +1,7 @@
 ---
 title: Tween Curve
 description: Demonstrates how to tween two curves.
-authors: ['Steve Baer']
-author_contacts: ['stevebaer']
+authors: ['steve_baer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

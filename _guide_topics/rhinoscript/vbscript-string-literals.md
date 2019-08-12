@@ -1,8 +1,7 @@
 ---
 title: VBScript String Literals
 description: This brief guide demonstrates how to use string literals in VBScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

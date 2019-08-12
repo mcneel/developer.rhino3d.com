@@ -1,8 +1,7 @@
 ---
 title: Hatch Boundary
 description: Demonstrates how to hatch a closed planar boundary.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

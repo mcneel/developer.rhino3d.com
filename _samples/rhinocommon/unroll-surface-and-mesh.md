@@ -1,8 +1,7 @@
 ---
 title: Unroll Surface and Mesh
 description: Unroll developable surface and associated mesh
-authors: ['Steve Baer']
-author_contacts: ['stevebaer']
+authors: ['steve_baer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

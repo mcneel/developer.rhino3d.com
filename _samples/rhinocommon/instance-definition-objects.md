@@ -1,8 +1,7 @@
 ---
 title: Instance Definition Objects
 description: Demonstrates how to print (or list) the objects that make up a block definition.
-authors: ['Steve Baer']
-author_contacts: ['stevebaer']
+authors: ['steve_baer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

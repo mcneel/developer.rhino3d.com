@@ -1,8 +1,7 @@
 ---
 title: Creating Rhino Commands Using Python
 description: This guide demonstrates how to create Rhino commands from Python scripts.
-authors: ['Pascal Golay', 'Will Pearson']
-author_contacts: ['pascal', 'will']
+authors: ['pascal_golay', 'will_pearson']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
@@ -70,11 +69,11 @@ With this file in place, you can zip the *contents of the `dev` sub-folder* and 
 
 <div class="bs-callout bs-callout-danger">
 
-<strong>Note</strong>: It's important that the <code>__plugin__.py</code> file and any <code>*_cmd.py</code> files are in the root of the RHI package. The Rhino Installer Engine will unpack the contents of the RHI into a sub-folder named according to the version found in <code>__plugin__.py</code>, replacing the <code>dev</code> sub-folder used during development.
+<strong>Note</strong>: It's important that the <code>__plugin__.py</code> file and any <code>cmd.py</code> files are in the root of the RHI package. The Rhino Installer Engine will unpack the contents of the RHI into a sub-folder named according to the version found in <code>__plugin__.py</code>, replacing the <code>dev</code> sub-folder used during development.
 
 </div>
 
-Double-clicking this `*.rhi` file on another system (with Rhino closed) should install all the files in the correct location for that user.  Rhino should then see the command as a regular command.
+Double-clicking this _rhi_ file on another system (with Rhino closed) should install all the files in the correct location for that user.  Rhino should then see the command as a regular command.
 
 <div class="bs-callout bs-callout-danger">
 
@@ -95,7 +94,7 @@ There are four things you need to pay attention to on macOS:
 
 On macOS, the location of the plugin folders must be in:
 
-*/Users/~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/PythonPlugIns/*
+*/Users/~/Library/Application Support/McNeel/Rhinoceros/6.0/Plug-ins/PythonPlugIns/*
 
 If the *PythonPlugIns* folder does not yet exist, you'll have to create it.
 
@@ -130,7 +129,7 @@ def RunCommand( is_interactive ):
 
 This command script must be saved to:
 
-`~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/PythonPlugIns/PlugInName{GUID}/dev`
+`~/Library/Application Support/McNeel/Rhinoceros/6.0/Plug-ins/PythonPlugIns/PlugInName{GUID}/dev`
 
 <div class="bs-callout bs-callout-danger">
 

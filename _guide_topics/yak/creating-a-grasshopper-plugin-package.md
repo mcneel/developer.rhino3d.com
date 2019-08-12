@@ -1,13 +1,12 @@
 ---
 title: Creating a Grasshopper Plug-In Package
-description: >
-  This is a step by step guide to creating a package for a Grasshopper plug-in.
-authors: ['Will Pearson']
-author_contacts: ['will']
+description: This is a step by step guide to creating a package for a Grasshopper plug-in.
+authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows']
 categories: ['Step By Step']
+origin: unset
 order: 1
 keywords: ['developer', 'yak']
 layout: toc-guide-page
@@ -40,11 +39,11 @@ Prompt and navigate to the directory above.
 ```
 
 Now, we need a `manifest.yml` file! You can easily create your own by studying
-the [reference](../the-package-manifest). Alternatively, you can use the `spec`
+the [Manifest Reference Guide](../the-package-manifest). Alternatively, you can use the `spec`
 command to generate a skeleton file. We'll do the latter here.
 
 ```commandline
-> "C:\Program Files\Rhino WIP\System\Yak.exe" spec
+> "C:\Program Files\Rhino 6\System\Yak.exe" spec
 
 Inspecting content: Plankton.gha
 
@@ -96,7 +95,7 @@ secret:
 Now that we have a manifest file, we can build the package!
 
 ```commandline
-> "C:\Program Files\Rhino WIP\System\Yak.exe" build
+> "C:\Program Files\Rhino 6\System\Yak.exe" build
 
 Building package from contents of C:\Users\Bozo\dist
 

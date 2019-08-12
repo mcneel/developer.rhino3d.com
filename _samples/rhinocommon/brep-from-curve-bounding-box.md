@@ -1,8 +1,7 @@
 ---
 title: Brep from Curve Bounding Box
 description: Demonstrates how to create a valid Brep from a curve's bounding box.
-authors: ['Steve Baer']
-author_contacts: ['stevebaer']
+authors: ['steve_baer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

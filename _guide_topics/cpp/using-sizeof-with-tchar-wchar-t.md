@@ -1,8 +1,7 @@
 ---
 title: Using the sizeof operator with TCHAR and wchar_t
 description: This guide outlines some common mistakes using sizeof when dealing with UNICODE strings.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

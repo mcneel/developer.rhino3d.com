@@ -1,8 +1,7 @@
 ---
 title: Plugin Installers (Windows)
 description: This guide explains how to create a plugin installer for Rhino for Windows.
-authors: ['Brian Gillespie', 'Will Pearson']
-author_contacts: ['brian', 'will']
+authors: ['brian_gillespie', 'will_pearson']
 sdk: ['RhinoCommon', 'C/C++']
 languages: ['C#', 'C/C++']
 platforms: ['Windows']
@@ -11,7 +10,6 @@ origin: http://wiki.mcneel.com/developer/rhinoinstallerengine/authoring
 order: 6
 keywords: ['first', 'RhinoCommon', 'Plugin', 'installing', 'c', 'C/C++', 'plugin', 'installer']
 layout: toc-guide-page
-redirect_from: /guides/cpp/plugin-installers-windows/
 TODO: Also port from http://wiki.mcneel.com/developer/rhinoinstallerengine/cpp
 ---
 
@@ -23,6 +21,10 @@ TODO: Also port from http://wiki.mcneel.com/developer/rhinoinstallerengine/cpp
 ## Overview
 
 Creating a plugin installer is very easy.  You simply add your compiled plugin to a zip archive and change the extension from *.zip* to *.rhi*.  Once this is done, you can double-click the archive and the [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine) will begin to install your plugin.  That's all there is to it!
+
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> This is intended to be a quickstart guide. For a more general overview please see the <a href="{{ site.baseurl }}/guides/general/rhino-installer-engine">Rhino Installer Engine</a> guide.
+</div>
 
 ## An Example
 
@@ -38,7 +40,7 @@ This is possible. You need to:
 1. Create an "installer image" folder. In this example, the folder is the name of the product – _Marmoset_. This folder will contain only the files you want to install on the user's system.
 
         Marmoset/
-        ├── Rhino WIP/
+        ├── Rhino 6/
         │   ├── Marmoset.rhp
         │   └── required_wip.dll
         ├── Rhino 5.0/
@@ -53,8 +55,8 @@ This is possible. You need to:
         └── README.txt
 
 
-1. Copy the appropriate files into the folders.  Note that all three versions of the plugin can have the same name, so long as they are in different folders.
-1. Add all the files inside the "installer image" folder to a new ZIP[^1] archive
+1. Copy the appropriate files into the folders[^1].  Note that all three versions of the plugin can have the same name, so long as they are in different folders.
+1. Add all the files inside the "installer image" folder to a new ZIP[^2] archive
 1. Change the extension from *.zip* to *.rhi*
 
 ## Everything but the kitchen sink
@@ -66,9 +68,11 @@ Because the Rhino Plugin Installer Engine unzips your *.rhi* file into a directo
 ## Related topics
 
 - [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine)
+- [Plugin Installers (Mac)]({{ site.baseurl }}/guides/rhinocommon/plugin-installers-mac)
 
 ---
 
 ## Footnotes
 
-[^1]: Other compression algorithms are not supported.
+[^1]: Folder names are not important; the *.rhp* files themselves are inspected to determine for which versions of Rhino they will be installed.
+[^2]: Other compression algorithms are not supported.

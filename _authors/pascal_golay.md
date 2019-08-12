@@ -1,0 +1,3 @@
+---
+layout: author-page
+---

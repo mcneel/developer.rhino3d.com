@@ -1,8 +1,7 @@
 ---
 title: Evaluate Curve Torsion
 description: Demonstrates how to evaluate the torsion of a curve in RhinoScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

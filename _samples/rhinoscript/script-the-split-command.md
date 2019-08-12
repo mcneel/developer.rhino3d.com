@@ -1,8 +1,7 @@
 ---
 title: Script the Split Command
 description: Demonstrates how to script the Split command using RhinoScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

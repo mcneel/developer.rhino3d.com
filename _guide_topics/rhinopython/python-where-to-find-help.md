@@ -1,8 +1,7 @@
 ---
 title: Where to find help...
 description:
-authors: ['Skylar Tibbits', 'Arthur van der Harten', 'Steve Baer']
-author_contacts: ['mailto:sjet@sjet.us', 'aharten', 'stevebaer']
+authors: ['skylar_tibbits', 'arthur_van_der_harten', 'steve_baer']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
@@ -13,7 +12,7 @@ keywords: ['python', 'commands']
 layout: toc-guide-page
 ---
 
-## Forums: 
+## Forums:
 
 The RhinoPython community is very active and offers a wonderful resource for posting questions/answers and finding help on just about anything!:
 [http://python.rhino3d.com/forums/](http://python.rhino3d.com/forums/)

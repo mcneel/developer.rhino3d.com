@@ -1,8 +1,7 @@
 ---
 title: How to use JSON with Python
 description: How to format in JSON or XML.
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
+authors: ['scott_davidson']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
@@ -47,12 +46,13 @@ Here is an example of a JSON structure describing a medical office, taken from a
         "sq-ft": 150,
         "price": 100
       }
-    ]},
+    ],
     "parking": {
       "location": "premium",
       "style": "covered",
       "price": 750
     }
+  }
 } 
 ```
 It is this dictionary setup that works best for Json.

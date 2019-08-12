@@ -1,8 +1,7 @@
 ---
 title: Synchronize Object Render Color
 description: Demonstrates how to synchronize the basic material color of an object with the object's display color.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,8 +1,7 @@
 ---
 title: Annotation Objects
 description: This guide discusses the annotation objects provided by the Rhino SDK.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

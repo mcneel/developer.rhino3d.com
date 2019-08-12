@@ -1,8 +1,7 @@
 ---
 title: Creating a Skin
 description: This guide outlines the tools for C/C++ developers to wrap their application around Rhino by creating custom Skin.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

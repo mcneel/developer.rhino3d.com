@@ -1,12 +1,14 @@
 # site settings for local development
 
 # ignore api dir because it's slow
+# 2018-07-05: ignore all things ignored by _config.yml too
 exclude:
-  - api/*
-  # copy excludes from _config.yml
+  # the usual suspects
   - script
   - test
   - README.md
   - CONTRIBUTING.md
   - Gemfile
   - vendor
+  # stuff we don't need day to day
+  - api/*

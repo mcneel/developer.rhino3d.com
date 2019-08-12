@@ -1,8 +1,7 @@
 ---
 title: FPU Issues
 description: This guide discusses math errors and floating point unit issues.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

@@ -1,8 +1,7 @@
 ---
 title: Making Plugins That Expire
 description: This guide demonstrates an easy way to make a plugin expire using C/C++.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

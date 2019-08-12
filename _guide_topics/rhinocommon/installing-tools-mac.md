@@ -1,8 +1,7 @@
 ---
 title: Installing Tools (Mac)
 description: This guide covers all the necessary tools required to author Rhino plugins on Mac.
-authors: ['Dan Belcher']
-author_contacts: ['dan']
+authors: ['dan_belcher']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Mac']
@@ -11,6 +10,7 @@ origin: unset
 order: 2
 keywords: ['first', 'RhinoCommon', 'Plugin']
 layout: toc-guide-page
+redirect_from: "/guides/rhinocommon/debug-rhinowip-mac"
 ---
 
 

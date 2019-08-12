@@ -1,8 +1,7 @@
 ---
 title: Convert an Arc to a NURBS Curve
 description: Demonstrates how to convert an ON_ArcCurve object to an ON_NurbsCurve object.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

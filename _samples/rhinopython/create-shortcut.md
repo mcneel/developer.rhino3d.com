@@ -1,8 +1,7 @@
 ---
 title: Create Shortcut
 description: Demonstrates how to create a shortcut with Python.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

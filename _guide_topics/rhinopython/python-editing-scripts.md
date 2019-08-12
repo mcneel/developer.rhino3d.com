@@ -1,8 +1,7 @@
 ---
 title: Editing a Python script in Rhino
 description: This guide demonstrates how to edit a Python script in Rhino.
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
+authors: ['scott_davidson']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

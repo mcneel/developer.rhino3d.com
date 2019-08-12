@@ -1,8 +1,7 @@
 ---
 title: Archiving Curves to a File
 description: This guide demonstrates how to write and read curves to a file using C/C++.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
@@ -26,31 +25,31 @@ It is probably best not to call `ON_Curve::Write` for this very reason.  When se
 
 ### Write
 ```cpp
-static bool WriteCurveFile( FILE* fp, const ON_Curve* curve )
+static bool WriteCurveFile(FILE* fp, const ON_Curve* curve)
 {
-  if( 0 == fp || 0 == curve )
+  if (nullptr == fp || nullptr == curve)
     return false;
 
-  ON_BinaryFile archive( ON::write3dm, fp );
+  ON_BinaryFile archive(ON::archive_mode::write3dm, fp);
 
   int major_version = 1;
   int minor_version = 0;
-  bool rc = archive.BeginWrite3dmChunk( TCODE_ANONYMOUS_CHUNK, major_version, minor_version );
-  if( !rc )
+  bool rc = archive.BeginWrite3dmChunk(TCODE_ANONYMOUS_CHUNK, major_version, minor_version);
+  if (!rc)
     return false;
 
-  for(;;)
+  for (;;)
   {
     // version 1.0 fields
-    rc = ( archive.WriteObject(curve) ? true : false );
-    if( !rc ) break;
+    rc = (archive.WriteObject(curve) ? true : false);
+    if (!rc) break;
 
     // todo...
 
     break;
   }
 
-  if( !archive.EndWrite3dmChunk() )
+  if (!archive.EndWrite3dmChunk())
     rc = false;
 
   return rc;
@@ -60,40 +59,40 @@ static bool WriteCurveFile( FILE* fp, const ON_Curve* curve )
 ### Read
 
 ```cpp
-static bool ReadCurveFile( FILE* fp, ON_Curve*& curve )
+static bool ReadCurveFile(FILE* fp, ON_Curve*& curve)
 {
-  if( 0 == fp )
+  if (nullptr == fp)
     return false;
 
-  ON_BinaryFile archive( ON::read3dm, fp );
+  ON_BinaryFile archive(ON::archive_mode::read3dm, fp);
 
   int major_version = 0;
   int minor_version = 0;
-  bool rc = archive.BeginRead3dmChunk( TCODE_ANONYMOUS_CHUNK, &major_version, &minor_version );
-  if( !rc )
+  bool rc = archive.BeginRead3dmChunk(TCODE_ANONYMOUS_CHUNK, &major_version, &minor_version);
+  if (!rc)
     return false;
 
-  for(;;)
+  for (;;)
   {
-    rc = ( 1 == major_version );
-    if( !rc ) break;
+    rc = (1 == major_version);
+    if (!rc) break;
 
     // version 1.0 fields
     ON_Object* object = 0;
-    rc = ( archive.ReadObject(&object) ? true : false );
-    if( !rc ) break;
+    rc = (archive.ReadObject(&object) ? true : false);
+    if (!rc) break;
 
-    curve = ON_Curve::Cast( object );
+    curve = ON_Curve::Cast(object);
 
     // todo...
 
     break;
   }
 
-  if( !archive.EndRead3dmChunk() )
+  if (!archive.EndRead3dmChunk())
     rc = false;
 
-  return ( rc && curve );
+  return (rc && curve);
 }
 ```
 
@@ -104,39 +103,41 @@ To use the above functions, you could do the following:
 ```cpp
 bool rc = false;
 
-FILE* fp = ON::OpenFile( filename, L"wb" );
-if( fp )
+FILE* fp = ON::OpenFile(filename, L"wb");
+if (fp)
 {
-  rc = WriteCurveFile( fp, curve );
-  ON::CloseFile( fp );
+  rc = WriteCurveFile(fp, curve);
+  ON::CloseFile(fp);
 }
 
-if( rc )
-  RhinoApp().Print( L"Successfully wrote %s.\n", filename.Array() );
+if (rc)
+  RhinoApp().Print(L"Successfully wrote %s.\n", filename);
 else
-  RhinoApp().Print( L"Errors while writing %s.\n", filename.Array() );
+  RhinoApp().Print(L"Errors while writing %s.\n", filename);
 ```
 
 and
 
 ```cpp
 bool rc = false;
-ON_Curve* curve = 0
+ON_Curve* curve = nullptr;
 
-FILE* fp = ON::OpenFile( filename, L"rb" );
-if( fp )
+FILE* fp = ON::OpenFile(filename, L"rb");
+if (fp)
 {
-  ReadCurveFile( fp, curve );
-  ON::CloseFile( fp );
+  rc = ReadCurveFile(fp, curve);
+  ON::CloseFile(fp);
 }
 
-if( rc )
+if (rc)
 {
   CRhinoCurveObject* curve_object = new CRhinoCurveObject();
-  curve_object->SetCurve( curve );
-  context.m_doc.AddObject( curve_object );
+  curve_object->SetCurve(curve);
+  context.m_doc.AddObject(curve_object);
   context.m_doc.Redraw();
 }
 else
-  RhinoApp().Print( L"Errors while reading %s.\n", filename.Array() );
+{
+  RhinoApp().Print(L"Errors while reading %s.\n", filename);
+}
 ```

@@ -1,8 +1,7 @@
 ---
 title: Python Code Conventions
 description: This guide provides an overview of Python coding conventions.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
@@ -22,27 +21,27 @@ Coding conventions are suggestions designed to help you write Python and RhinoSc
 - Code Block syntax
 - Whitespace (spaces vs tabs)
 
-The main reason for using a consistent set of coding conventions is to standardize the structure and coding style of a script or set of scripts so that you and others can easily read and understand the code.  Using good coding conventions results in clear, precise, and readable source code that is consistent with other language conventions and is intuitive.
+The reason for using coding conventions is to standardize the structure and style of a script or set of scripts so that you and others can easily read and understand the code.  Using coding conventions results in clear, precise, and readable code that is consistent with other language conventions and is intuitive.
 
-For the official very detailed documentation on Python Syntax, see the [Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
+For the official documentation on Python Syntax, see the [Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
 
-## Names and Capitailzation
+## Names and Capitalization
 
 In Python names are used as identifiers of functions, classes, variables, etc....  Identifiers must start with a Letter (A-Z) or an underscore ("_"), followed by more letters or numbers.
 
 Python does not allow characters such as @, $, and % within identifier names.
 
-Python is case sensitive.  So "selection" and " Selection" are two different identifiers. Normally class names will capital letters and other identifiers will be all lower case.  It is also common practice to start private identifiers with an underscore.
+Python is case sensitive.  So "selection" and "Selection" are two different identifiers. Normally class names will begin with capital letters and other identifiers will be all lower case.  It is also common practice to start private identifiers with an underscore.
 
-The body of a variable or procedure name should use mixed case and should be as descriptive as necessary.  Also, procedure names should begin with a verb, such as `InitNameArray` or `ValidateLayer`.
+The body of a variable or procedure name should use mixed case and be as descriptive as necessary.  Also, procedure names should begin with a verb, such as `InitNameArray` or `ValidateLayer`.
 
-For frequently used or long terms, standard abbreviations are recommended to help keep name length reasonable.  In general, variable names greater than 32 characters can be difficult to read.  When using abbreviations, make sure they are consistent throughout the entire script.  For example, randomly switching between `Cnt` and `Count` within a script or set of scripts may lead to confusion.
+For frequently used or long terms, standard abbreviations are recommended to help keep name length reasonable.  In general, variable names greater than 32 characters can be difficult to read.  When using abbreviations, make sure they are consistent throughout the entire script.  For example, randomly switching between `Cnt` and `Count` within a script may lead to confusion.
 
-Best practices for all Python naming can be found in the (Style Guide for Python Naming Conventions)[https://www.python.org/dev/peps/pep-0008/#naming-conventions]
+Best practices for Python naming can be found in the (Style Guide for Python Naming Conventions)[https://www.python.org/dev/peps/pep-0008/#naming-conventions]
 
 ## Comments in Python
 
-Comments in Pythons are used to leave notes in the code to better explain what is happening in the code.  Comments are ignored by the interpreter during compile.
+Comments in Pythons are used to leave notes in the code to better explain what is happening.  Comments are ignored by the interpreter during compile.
 
 Python comments are started with a hash (#) sign.  The hash sign can be used at the start of a line, followed by a single line comment.  This is considered a blank line by the interpreter.
 
@@ -51,7 +50,7 @@ Python comments are started with a hash (#) sign.  The hash sign can be used at 
 # this is a second line to this comment
 # use multiple hash characters to make multiline comments
 ```
-A hash sign can also be added at the end of a line of code.  After the hash sign add the comment.  To Python this is considered an end of statement character also.
+A hash sign can also be added at the end of a line of code.  After the hash sign add the comment.  To Python this is considered an end of statement comment.
 
 ```python
 print "Hello, World!" # the second comment that I make
@@ -60,7 +59,7 @@ print "Hello, World!" # the second comment that I make
 Remember the following points:
 
 - Every important variable declaration should include an inline comment describing the use of the variable being declared.
-- Variables, controls, and procedures should be named clearly to ensure that inline comments are only needed for complex implementation details.
+- Variables and procedures should be named clearly to ensure that inline comments are only needed for complex implementation details.
 - At the beginning of your script, you should include an overview that describes the script, enumerating objects, procedures, algorithms, dialog boxes, and other system dependencies.  Sometimes a piece of pseudocode describing the algorithm can be helpful.
 
 ## Block Statements
@@ -87,7 +86,7 @@ else:
   print "correct"
 ```  
 
-You may also see the use of the colon (:) in the statements above. The colon is used for compound code statements (suites in Python) such as if, while loops.
+You may also see the use of the colon (:) in the statements above. The colon is used for compound code statements (suites in Python) such as if and while loops.
 
 ## Whitepace
 
@@ -101,7 +100,7 @@ Screen space should be conserved as much as possible, while still allowing code 
 - Indent the overview comments of a procedure one space.
 - Indent the highest level statements that follow the overview comments two spaces, with each nested block indented an additional two spaces.
 
-## In Sum
+## In Summary
 
 The following code adheres to Python coding conventions:
 

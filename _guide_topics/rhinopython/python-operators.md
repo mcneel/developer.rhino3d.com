@@ -1,8 +1,7 @@
 ---
 title: Python Operators
 description: This guide is an overview of Python operators.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

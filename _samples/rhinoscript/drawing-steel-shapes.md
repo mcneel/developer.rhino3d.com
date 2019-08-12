@@ -1,8 +1,7 @@
 ---
 title: Drawing Steel Shapes
 description: Demonstrates how to draw steel shapes using RhinoScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

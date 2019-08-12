@@ -1,12 +1,12 @@
 ---
 title: Creating Linear Dimensions
 description: This guide demonstrates how to create linear dimensions using openNURBS.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']
 categories: ['Advanced']
+origin: unset
 order: 1
 keywords: ['openNURBS', 'dimension']
 layout: toc-guide-page

@@ -1,8 +1,7 @@
 ---
 title: Plugin Loading
 description: This guide discusses how Rhino loads C/C++ plugins.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

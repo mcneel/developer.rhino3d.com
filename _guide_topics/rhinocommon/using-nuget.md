@@ -1,8 +1,7 @@
 ---
 title: Using NuGet
 description: This guide describes how developers can use the NuGet packages available for RhinoCommon and Grasshopper.
-authors: ['Luis Fraguada', 'Will Pearson']
-author_contacts: ['fraguada', 'will']
+authors: ['luis_fraguada', 'will_pearson']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']
@@ -11,14 +10,8 @@ origin: unset
 order: 1
 keywords: ['nuget']
 layout: toc-guide-page
-redirect_from: /guides/rhinocommon/switching-to-nuget-packages/
 ---
 
-<div class="bs-callout bs-callout-danger">
-
-<strong>Warning</strong>: Here be dragons! This is work-in-progress. We have some ideas as to how NuGet packages for <a href="https://www.nuget.org/packages/rhinocommon">RhinoCommon</a> and <a href="https://www.nuget.org/packages/grasshopper">Grasshopper</a> might be useful, but we need developers like yourself to use them and figure out if and how they can improve your development workflows. Currently we're publishing NuGet packages for each Rhino release.
-
-</div>
 
 ## Why NuGet?
 
@@ -48,7 +41,7 @@ NuGet makes it easy to compile plug-ins against versions of Rhino other than tho
 
 </div>
 
-You can install the RhinoCommon package like you would any other, with one caveat – when searching for the package make sure you check "include prerelease". We're publishing packages for each Rhino WIP for Windows release, and as such all the packages are marked with the `-wip` suffix which NuGet interprets as "prerelease".
+We have a few NuGet packages available and you can install them like you would any other. 
 
 The [RhinoCommon] package includes
 
@@ -60,6 +53,12 @@ The [Grasshopper] package depends[^1] on the RhinoCommon package _with the same 
 
 * *Grasshopper.dll*
 * *GH_IO.dll*
+
+We also have a [RhinoWindows](https://www.nuget.org/packages/RhinoWindows) package.
+
+We're currently publishing new package versions for every public release of Rhino for Windows, including preleases (WIP, release candidate and beta). If you're developing for Rhino WIP for Mac, choose the latest 6.* package – RhinoCommon and Grasshopper are cross-platform!
+
+If you're searching for a version of one of our packages that corresponds to a prerelease version of Rhino then make sure you check "include prerelease". These packages are marked with a prerelease suffix in the version number, such as `-wip` or `-rc`.
 
 ### Step-by-Step (Windows)
 

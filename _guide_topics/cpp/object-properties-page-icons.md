@@ -1,8 +1,7 @@
 ---
 title: Object Properties Page Icons
 description: This brief guide discusses how to provide an icon for a custom object properties page using C/C++.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

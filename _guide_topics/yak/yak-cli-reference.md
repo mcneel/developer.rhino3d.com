@@ -1,16 +1,18 @@
 ---
 title: Yak CLI Reference
 description: A reference for the Yak command line tool.
-authors: ['Will Pearson']
-author_contacts: ['will']
+authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows']
 categories: ['Fundamentals']
+origin: unset
 order: 1
 keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
+
+The Yak command line tool is included with Rhino 6. On Windows the tool is located at `C:\Program Files\Rhino 6\System\yak.exe`.
 
 ## Build
 
@@ -111,9 +113,23 @@ Uninstalls a package.
 ```commandline
 yak uninstall <package>
 ```
-<div class="alert alert-info" role="alert">
+<!-- deactivation fallback removed in v0.6-->
+<!-- <div class="alert alert-info" role="alert">
   <strong>Note:</strong> Since 0.3, Yak will attempt to remove the package from the machine. If this isn't possible -- likely because Rhino is running -- then the package will be <em>deactivated</em> instead.
-</div>
+</div> -->
+
+## Yank
+
+_Since 0.6_
+
+Removes a version from the package index.
+
+```commandline
+yak yank <package> <version>
+```
+
+Yanked versions do not appear in searches but can still be installed if the
+exact package version is known. To all intents and purposes they are hidden.
 
 ---
 

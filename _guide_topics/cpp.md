@@ -2,9 +2,8 @@
 title: C/C++ Guides
 description: Guides to the C/C++ SDK for Rhino for Windows plugins.
 authors: unset
-author_contacts: unset
 sdk: unset
-languages: unset
+languages: ['C/C++']
 platforms: ['Windows']
 categories: ['Unsorted']
 origin: unset
@@ -45,6 +44,10 @@ layout: guide-homepage
   {% endfor %}
   </ul>
 </div>
+
+### Other Resources
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
+- [Developer discussions on Discourse](https://discourse.mcneel.com/c/rhino-developer)
 
 ### Troubleshooting
 

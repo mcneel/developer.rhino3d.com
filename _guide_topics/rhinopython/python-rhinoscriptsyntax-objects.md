@@ -1,8 +1,7 @@
 ---
 title: Rhino objects in Python
-description: This guide provides an overview of a RhinoScriptSytntax Object Geometry in Python.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+description: This guide provides an overview of RhinoScriptSyntax Object Geometry in Python.
+authors: ['dale_fugier']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
@@ -15,13 +14,13 @@ layout: toc-guide-page
  
 ## Objects
 
-Rhino can create and manipulate a number of geometric objects, including points, point clouds, curves, surfaces, B-reps, meshes, lights, annotations, and references.  Each object in the Rhino document is identified by a globally unique identifier, or GUID, that is generated and assigned to objects when they are created.  Because identifiers are saved in the 3DM file, an object's identifier will be the same between editing sessions.
+Rhino can create and manipulate a number of objects, including points, point clouds, curves, surfaces, B-reps, meshes, lights, annotations, and references.  Each object in the Rhino document is identified by a globally unique identifier, or GUID, that is generated and assigned to objects when they are created.  Object identifiers are saved in the 3dm file, so an object's identifier will be the same between editing sessions.
 
-To view an object's unique identifier, use Rhino's Properties command.
+To view an object's unique identifier, use Rhino's `Properties` command.
 
 For convenience, RhinoScriptSyntax returns object identifiers in the form of a string.  For example, an object's identifier will look something like the following:
 
-F6E01514-3264-4598-8A07-A58BFE739C38
+`F6E01514-3264-4598-8A07-A58BFE739C38`
 
 The majority of RhinoScriptSyntax's object manipulation methods require one or more object identifiers to be acquired before the method can be executed.
 
@@ -29,13 +28,13 @@ The majority of RhinoScriptSyntax's object manipulation methods require one or m
 
 Rhino objects consist of two components: the object's geometry and the object's attributes.
 
-The types of geometry support by Rhino include points, point clouds, curves, surfaces, polysurfaces, extrusions, meshes, annotations and dimensions, and other.
+The types of geometry support by Rhino include points, point clouds, curves, surfaces, polysurfaces, extrusions, meshes, annotations and dimensions.
 
-The attributes of an object include such properties as object color, layer, linetype, render material, group membership, and more.
+The attributes of an object include such properties as color, layer, linetype, render material, and group membership, amongst others.
 
 ## Example
 
-Here is an example using Object IDs to work reference geometry:
+The following example uses Object IDs to create reference geometry:
 
 ```python
 import rhinoscriptsyntax as rs

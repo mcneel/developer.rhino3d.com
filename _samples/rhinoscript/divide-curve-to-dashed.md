@@ -1,8 +1,7 @@
 ---
 title: Divide Curve to Dashed
 description: Demonstrates how to chop up a curve into segments and spaces.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

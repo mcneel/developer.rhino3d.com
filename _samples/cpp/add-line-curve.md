@@ -1,8 +1,7 @@
 ---
 title: Add a Line Curve Object
 description: Demonstrates how to add a line curve.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

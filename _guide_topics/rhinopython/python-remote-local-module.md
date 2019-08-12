@@ -1,8 +1,7 @@
 ---
 title: Creating a script and module
 description: How to create a Python definition that is both a importable module and a script.
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
+authors: ['scott_davidson']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

@@ -1,8 +1,7 @@
 ---
 title: Installing Tools (Windows)
 description: This guide covers all the necessary tools required to author Rhino plugins in C/C++ on Windows.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

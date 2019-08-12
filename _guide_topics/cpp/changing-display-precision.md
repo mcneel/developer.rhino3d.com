@@ -1,8 +1,7 @@
 ---
 title: Changing Display Precision
 description: This brief guide demonstrates how to change the unit's display precision of the current document using C/C++.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

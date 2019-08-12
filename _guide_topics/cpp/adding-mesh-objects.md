@@ -1,8 +1,7 @@
 ---
 title: Adding Mesh Objects
 description: This guide demonstrates how to add a simple mesh object to Rhino in C/C++.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

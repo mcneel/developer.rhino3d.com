@@ -43,7 +43,7 @@ The following guides and samples have [TODO items listed in their yaml]({{ site.
 </div>
 
 {% if guides_have_todo_items == false %}
-*NONE!  Good job!  Check [YouTrack](http://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved).*
+*NONE!  Good job!  Check [YouTrack](https://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved).*
 {% endif %}
 
 ### Samples
@@ -64,9 +64,9 @@ The following guides and samples have [TODO items listed in their yaml]({{ site.
 </div>
 
 {% if samples_have_todo_items == false %}
-*NONE!  Good job!  Check [YouTrack](http://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved).*
+*NONE!  Good job!  Check [YouTrack](https://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved).*
 {% endif %}
 
 ### YouTrack
 
-Many items relating to this site are logged in [YouTrack: project: WWW subsystem: developer.rhino3d.com #unresolved](http://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved)
+Many items relating to this site are logged in [YouTrack: project: WWW subsystem: developer.rhino3d.com #unresolved](https://mcneel.myjetbrains.com/youtrack/issues?q=project%3A+WWW+subsystem%3A+developer.rhino3d.com+%23unresolved)

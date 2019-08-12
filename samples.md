@@ -8,6 +8,9 @@ order: 4
 
 # Samples  
 
+For additional samples, visit the [Developer Samples Repository on GitHub.](https://github.com/mcneel/rhino-developer-samples)
+
+
 ---
 
 ## RhinoCommon <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac-logo-small.png" alt="macOS" class="guide_icon">
@@ -180,9 +183,8 @@ order: 4
   <h4>UNDER CONSTRUCTION</h4>
   <p>openNURBS samples have yet to be ported to this site.  Please check back soon for updates.  
   In the meantime, you can view the original documentation here:
-  <a href="http://wiki.mcneel.com/developer/opennurbs/home">http://wiki.mcneel.com/developer/opennurbs/home</a> or see the openNURBS samples bundled with the SDK.</p>
+  <a href="https://wiki.mcneel.com/developer/opennurbs/home">https://wiki.mcneel.com/developer/opennurbs/home</a> or see the openNURBS samples bundled with the SDK.</p>
 </div>
-
 
 ---
 
@@ -318,7 +320,7 @@ order: 4
   <h4>UNDER CONSTRUCTION</h4>
   <p>Grasshopper Component samples have yet to be ported to this site.  Please check back soon for updates.  
   In the meantime, you can view the original documentation here:
-  <a href="http://wiki.mcneel.com/developer/grasshopper/gha">http://wiki.mcneel.com/developer/grasshopper/gha</a></p>
+  <a href="https://wiki.mcneel.com/developer/grasshopper/gha">https://wiki.mcneel.com/developer/grasshopper/gha</a></p>
 </div>
 
 ---

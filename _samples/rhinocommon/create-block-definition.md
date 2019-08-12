@@ -1,8 +1,7 @@
 ---
 title: Create Block Definition
 description: Demonstrates how to create a block definition from scratch from user-specified objects, base-point, and name.
-authors: ['Steve Baer']
-author_contacts: ['stevebaer']
+authors: ['steve_baer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

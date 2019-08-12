@@ -1,8 +1,7 @@
 ---
 title: Getting the Units of the Active Document
 description: This brief guide demonstrates how to determine the unit system of the active document.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
@@ -16,12 +15,12 @@ layout: toc-guide-page
  
 ## Overview
 
-There are two unit systems associated with a document, model and page units.  The `ON_UnitSystem` class makes it easy to work with custom units.  The Rhino document class contains two functions:
+There are two unit systems associated with a document, model and page units. The `ON_UnitSystem` class makes it easy to work with custom units. The Rhino document class contains two functions to return these unit systems:
 
-1. `const ON_UnitSystem& ModelUnits() const;` and...
-1. `const ON_UnitSystem& PageUnits() const;`
+1. `const ON_UnitSystem& CRhinoDoc::ModelUnits() const;`
+1. `const ON_UnitSystem& CRhinoDoc::PageUnits() const;`
 
-## How To
+## More information
 
 The unit system of the active document is stored on an `ON_3dmUnitsAndTolerances` class that is located on the `CRhinoDoc` object.
 
@@ -29,22 +28,22 @@ If you inside of a `CRhinoCommand`-derived object's `RunCommand()` member, you c
 
 ```cpp
 const CRhinoDocProperties& doc_props = context.m_doc.Properties();
-const ON_3dmUnitsAndTolerances& units = doc_props.ModelUnitsAndTolerances();
-ON::unit_system units_system = units.m_unit_system;
+const ON_3dmUnitsAndTolerances& units_tolerances = doc_props.ModelUnitsAndTolerances();
+ON::LengthUnitSystem units_system = units_tolerances.m_unit_system;
 ```
 
 As a shortcut, you can do the following:
 
 ```cpp
-ON::unit_system units_system = context.m_doc.UnitSystem();
+ON::LengthUnitSystem units_system = context.m_doc.UnitSystem();
 ```
 
 If you outside of a `CRhinoCommand`-derived object's `RunCommand()` member, you can get the current units system as follows:
 
 ```cpp
 CRhinoDoc* doc = RhinoApp().ActiveDoc();
-if( doc )
+if (nullptr != doc)
 {
-  ON::unit_system units_system = doc->UnitSystem();
+  ON::LengthUnitSystem units_system = doc->UnitSystem();
 }
 ```

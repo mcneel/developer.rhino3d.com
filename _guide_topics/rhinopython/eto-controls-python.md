@@ -1,8 +1,7 @@
 ---
 title: Eto Controls in Python
 description: Using the Eto dialog framework to create interface controls.
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
+authors: ['scott_davidson']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
@@ -19,7 +18,7 @@ For details on creating a complete Eto Dialog in Rhino.Python go to the [Getting
 
 ## Buttons
 
-Buttons are placed on almost every dialog.  
+Buttons are placed on almost every dialog.
 
 ![{{ site.baseurl }}/images/eto-buttons.svg]({{ site.baseurl }}/images/eto-buttons.svg){: .img-center width="65%"}
 
@@ -255,7 +254,7 @@ More details can be found in the [Eto GridView API Documentation](https://github
 
 ## GroupBox
 
-A GroupBox displays a collection of controls surrounded by a border and optional title to identify the group:  
+A GroupBox displays a collection of controls surrounded by a border and optional title to identify the group:
 
 ![{{ site.baseurl }}/images/eto-controls-groupbox.png]({{ site.baseurl }}/images/eto-controls-groupbox.png){: .img-center width="45%"}
 
@@ -327,7 +326,7 @@ self.m_label = forms.Label(Text = 'Enter the Room Number:', VerticalAlignment = 
 Labels also can be created directly in layouts directly.  There is a shorthand syntax when adding controls to a layout that will automatically create a `forms.Label`
 
 ```python
-  #Adds a new Label diplaying "Camera:"      
+  #Adds a new Label diplaying "Camera:"
   layout.AddRow('Camera:', None)
 
   #Adds a new label displaying "Name :" inline with the Textbox control.
@@ -635,14 +634,14 @@ Creating the `forms.WebView()` is simple by creating the webview, then to set it
 More details can be found in the [Eto WebView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_WebView.htm).
 
 
-## Sample dialogs  
+## Sample Dialogs
 
 Now with some understanding of Eto Dialogs in Python, take a look at some of the Sample dialogs in the [Python Developer Samples Repo](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython):
 
-1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoDialog.py)
-2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoRebuildCurve.py)
-3.  [Capture a view dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoViewCaptureDialog.py)
-4.  [Collapsable controls on a Dialog](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython/SampleEtoCollapsibleDialog.py)
+1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/6/rhinopython/SampleEtoDialog.py)
+2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/6/rhinopython/SampleEtoRebuildCurve.py)
+3.  [Capture a view dialog](https://github.com/mcneel/rhino-developer-samples/blob/6/rhinopython/SampleEtoViewCaptureDialog.py)
+4.  [Collapsable controls on a Dialog](https://github.com/mcneel/rhino-developer-samples/blob/6/rhinopython/SampleEtoCollapsibleDialog.py)
 
 ---
 

@@ -1,8 +1,7 @@
 ---
 title: Visual Analysis Modes
 description: Demonstrates how to set the visual analysis mode to Z analysis for user-specified objects.
-authors: ['Steve Baer']
-author_contacts: ['stevebaer']
+authors: ['steve_baer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

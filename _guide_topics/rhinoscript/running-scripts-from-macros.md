@@ -1,8 +1,7 @@
 ---
 title: Running Scripts from Macros
 description: This guide explains how to set up and run macros and RhinoScripts.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

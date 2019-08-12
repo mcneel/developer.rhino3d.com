@@ -1,8 +1,7 @@
 ---
 title: Skipping current iteration in a For loop
 description: This guide demonstrates how to skip the current iteration in a For Loop.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

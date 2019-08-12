@@ -1,8 +1,7 @@
 ---
 title: Troubleshooting Python Install
 description:
-authors: ['Piac']
-author_contacts: ['piac']
+authors: ['giulio_piacentino']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']
@@ -15,10 +14,10 @@ layout: toc-guide-page
 
 Over the last few months, we received several reports about issues with independent IronPython installations (IIPI) and Rhino.
 
-## Problem: 
+## Problem:
 
 Python 2.7.7 can decompress assemblies into the GAC (Global Assembly Cache). IIPI are installations of IronPython made via MSI files, and they appear in the Control Panel like this:
- 
+
 ![{{ site.baseurl }}/images/iron-features.png]({{ site.baseurl }}/images/iron-features.png){: .img-center width="100%"}
 
 It is possible to install IronPython via folder decompression, and that has no impact on Rhino.

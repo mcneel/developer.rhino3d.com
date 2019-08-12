@@ -1,8 +1,7 @@
 ---
 title: Run a Rhino command from a Plugin
 description: This guide covers the proper techniques when running a Rhino command from within the context of a plugin command.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']
@@ -18,7 +17,7 @@ layout: toc-guide-page
 
 One of the most common questions asked by new plugin developers is how to run, or script, existing Rhino commands from a plugin command.  Rhino doesn't allow plugin commands to run other commands except under very special circumstances.
 
-Here's the problem: If you have a command that is modifying the run-time database, and you run another command, problems can happen.
+Here's the problem: If you have a command that is modifying the Rhino document, and you run another command, problems can happen.
 
 To work around this, the RhinoCommon provides a special kind of command called a script command.  You can create a script command as follows...
 

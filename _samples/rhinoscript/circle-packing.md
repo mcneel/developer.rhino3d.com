@@ -1,8 +1,7 @@
 ---
 title: Circle Packing
 description: Multi-radius circle packing algorithm in RhinoScript.
-authors: ['Steven Janssen']
-author_contacts: ['Steven']
+authors: ['steven_janssen']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

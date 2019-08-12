@@ -1,8 +1,7 @@
 ---
 title: Mesh Volume
 description: Demonstrates how to calculate the volume of a user-specified closed mesh.
-authors: ['Steve Baer']
-author_contacts: ['stevebaer']
+authors: ['steve_baer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

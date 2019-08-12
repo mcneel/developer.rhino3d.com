@@ -1,8 +1,7 @@
 ---
 title: Copying to Excel
 description: This guide demonstrates how to copy from Rhino and paste into Microsoft Excel using RhinoScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

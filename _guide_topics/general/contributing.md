@@ -1,8 +1,7 @@
 ---
 title: Contributing
-description: 'Hey, make yourself useful!'
-authors: ['Dan Belcher']
-author_contacts: ['dan']
+description: 'Pull requests are welcome!'
+authors: ['dan_belcher']
 sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
@@ -41,6 +40,7 @@ This site uses [Markdown](http://daringfireball.net/projects/markdown/) - specif
 
 To get started authoring content for this site, please read the following guides:
 
+- [Contributing (to this website)](https://github.com/mcneel/developer-rhino3d-com/blob/{{ site.git_branch | default: "6" }}/CONTRIBUTING.md)
 - [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/{{ site.git_branch | default: "master" }}/README.md)
 - [How This Site Works]({{ site.baseurl }}/guides/general/how-this-site-works)
 - [Developer Docs Style Guide]({{ site.baseurl }}/guides/general/developer-docs-style-guide)
@@ -51,12 +51,12 @@ You may also want to take a look at the [Admin]({{ site.baseurl }}/admin/) page.
 
 Who to talk to for what:
 
-- Steve Baer (RhinoCommon) - @stevebaer on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- Alain Cormier (Rhino.Python) - @alain on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- Dale Fugier (C/C++ SDK, Zoo, RAP) - @dale on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- Dale Lear (openNURBS) - @dalelear on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- David Rutten (Grasshopper) - [David Rutten](http://www.grasshopper3d.com/profile/DavidRutten) on the [Grasshopper 3D forum](http://www.grasshopper3d.com)
-- Giulio Piacentino (GhPython) - @piac on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- Andy le Bihan (RDK) - @andy on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- [Steve Baer]({{ site.baseurl }}/authors/steve_baer) (RhinoCommon) - @stevebaer on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- [Alain Cormier]({{ site.baseurl }}/authors/alain_cormier) (Rhino.Python) - @alain on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- [Dale Fugier]({{ site.baseurl }}/authors/dale_fugier) (C/C++ SDK, Zoo, RAP) - @dale on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- [Dale Lear]({{ site.baseurl }}/authors/dale_lear) (openNURBS) - @dalelear on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- [David Rutten]({{ site.baseurl }}/authors/david_rutten) (Grasshopper) - [David Rutten](http://www.grasshopper3d.com/profile/DavidRutten) on the [Grasshopper 3D forum](http://www.grasshopper3d.com)
+- [Giulio Piacentino]({{ site.baseurl }}/authors/giulio_piacentino) (GhPython) - @piac on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- [Andy le Bihan]({{ site.baseurl }}/authors/andrew_le_bihan) (RDK) - @andy on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
 - Curtis Wensley (Eto) - @curtisw on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- Dan Belcher (RhinoMobile) - @dan on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- [Dan Belcher]({{ site.baseurl }}/authors/dan_belcher) (RhinoMobile) - @dan on [Discourse](http://discourse.mcneel.com/c/rhino-developer)

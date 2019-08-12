@@ -1,8 +1,7 @@
 ---
 title: Select Text by Height
 description: Demonstrates how to select text objects by their text height using RhinoScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

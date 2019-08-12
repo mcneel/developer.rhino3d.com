@@ -1,8 +1,7 @@
 ---
 title: Transforming Breps
 description: This brief guide demonstrates two ways of transforming Breps using C/C++
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

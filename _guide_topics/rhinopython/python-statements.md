@@ -1,8 +1,7 @@
 ---
 title: Python Basic Syntax
 description: This guide presents an overview of Python syntax.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

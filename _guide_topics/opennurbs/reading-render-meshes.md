@@ -1,8 +1,7 @@
 ---
 title: Reading Render Meshes
 description: This brief guide describes how to read render meshes using the openNURBS toolkit.
-authors: ['Dale Lear']
-author_contacts: ['dalelear']
+authors: ['dale_lear']
 sdk: ['openNURBS']
 languages: ['C/C++']
 platforms: ['Windows', 'Mac']

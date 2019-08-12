@@ -1,8 +1,7 @@
 ---
 title: Selecting Objects
 description: This guide demonstrates interactively selecting objects using C/C++.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

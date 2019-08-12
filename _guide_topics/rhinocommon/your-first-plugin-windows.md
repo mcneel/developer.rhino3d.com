@@ -1,8 +1,7 @@
 ---
 title: Your First Plugin (Windows)
 description: This guide walks you through your first plugin for Rhino for Windows using RhinoCommon and Visual Studio.
-authors: ['Dan Belcher']
-author_contacts: ['dan']
+authors: ['dan_belcher']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
@@ -29,13 +28,13 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 1. If you have not done so already, *launch Visual Studio* (for the purposes of this guide, we are using Visual Studio 2017 Community Edition and C#).
 1. Navigate to *File* > *New* > *Project*...
 ![File New Project]({{ site.baseurl }}/images/your-first-plugin-windows-01.png)
-1. A *New Project* wizard should appear.  In the left column, find the *Installed* > *Templates* > *Visual C#* > *Rhinoceros* section.  In the central list, select the RhinoCommon Plug-In template...
+1. A *New Project* wizard should appear.  In the left column, find the *Installed* > *Visual C#* > *Rhinoceros* section.  In the central list, select the RhinoCommon Plug-In template...
 ![New Project]({{ site.baseurl }}/images/your-first-plugin-windows-02.png)
 1. For the purposes of this Guide, we will name our demo plugin *HelloRhinoCommon*.  At the bottom of the window, fill in the *Name* field.  *Browse* and select a location for this plugin on your disk...
 ![Project Configuration]({{ site.baseurl }}/images/your-first-plugin-windows-03.png)
 1. Check *Create directory for solution*.  *Note*: This is optional depending on how you want to structure your projects.
 1. Click the *OK* button.  *Note*: You don't have to add the project to source control for this demo.
-1. The *New RhinoCommon Plug-In* dialog appears.  This dialog allows you to *Configure your new plugin project*, as well as select which RhinoCommon references to use and which debug version of Rhino you would like to launch...  
+1. The *New RhinoCommon Plug-In* dialog appears.  This dialog allows you to *Configure your new plugin project*, as well as select which RhinoCommon references to use and which debug version of Rhino you would like to launch...
 ![HelloRhinoCommon Solution]({{ site.baseurl }}/images/your-first-plugin-windows-04.png)
 1. For the purposes of this guide, we will *accept the defaults* and click *Finish*...
 1. A *new solution* called *HelloRhinoCommon* should open...
@@ -48,7 +47,7 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 ![Start Button]({{ site.baseurl }}/images/your-first-plugin-windows-06.png)
 1. *Rhinoceros* launches.  Create a new, empty model.
 1. Since this is the first time you are running the plugin, you need to *"install"* it.  (The RhinoCommon template has set things up so when you compile the solution an *.rhp* file is compiled in the *bin* subdirectory of the project directory.) In the Rhino command prompt type the *PlugInManager* command.  Click the *Install...* button.
-1.  *Browse* to the *HelloRhinoCommon.rhp* file (in our case, this is in *C:\\dev\\repositories\\HelloRhinoCommon\\HelloRhinoCommon\\bin\\*) and click *Open*.  
+1.  *Browse* to the *HelloRhinoCommon.rhp* file (in our case, this is in *C:\\dev\\repositories\\HelloRhinoCommon\\HelloRhinoCommon\\bin\\*) and click *Open*.
 1. The HelloRhinoCommon plugin is now installed.  Click *OK* to close the Rhino Options dialog.
 1. Enter the *HelloRhinoCommonCommand* command.  Notice that the command autocompletes...
 1. The *HelloRhinoCommonCommand* command begins and prompts you to *Please select the start point:*.
@@ -61,16 +60,17 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 ### Plugin Anatomy
 
 1. Use the *Solution Explorer* to expand the *Solution* (*.sln*) so that it looks like this...
-![Solution Anatomy]({{ site.baseurl }}/images/your-first-plugin-windows-07.png)
-*Note*: Depending on your edition of Visual Studio, it may look slightly different.
-1. The *HelloRhinoCommon* project (*.csproj*) has the same name as its parent solution...this is the project that was created for us by the *RhinoCommon Plugin* template wizard earlier.
-1. *Properties* contains the *AssemblyInfo.cs* source file.  This file contains the meta-data (author, version, etc) about the plugin.
-1. *References*: Just as with most projects, you will be referencing other libraries.  The *RhinoCommon Plugin* template added the necessary references to create a basic RhinoCommon plugin.
+![Solution Anatomy]({{ site.baseurl }}/images/your-first-plugin-windows-07.png){: .float-img-left width="400"}
+1. The *HelloRhinoCommon* project (*.csproj*) has the same name as its parent solution. The project that was created for us by the *RhinoCommon Plugin* template wizard earlier.
+1. *Properties* contains the *AssemblyInfo.cs* source file.  This file contains the meta-data (author, version, etc).
+1. *References*: Just as with most projects, you will be referencing other libraries.  The *RhinoCommon Plugin* template added the necessary references to create a basic plugin.
+1. *Eto* is the cross-platform User Interface toolkit that comes with Rhino.
 1. *Microsoft.CSharp* contains classes required for C# code compilation.
+1. *Rhino.UI* contains the Windows-specific User Interface classes.
 1. *RhinoCommon* is *the* critical reference for our purposes here.
 1. *System*, *System.Core*, *System.Drawing*, *System.Windows.Forms* are .NET foundational libraries.
-1. *HelloRhinoCommonCommand.cs* is where the action is.  Let's take a look at this file below...
-1. *HelloRhinoCommonPlugin.cs* is where this template plugin derives from *Rhino.Plugins.Plugin* and returns a static Instance of itself.  
+1. *HelloRhinoCommonCommand.cs* is where the action is.  We'll make changes to this below...
+1. *HelloRhinoCommonPlugin.cs* is where this template plugin derives from *Rhino.Plugins.Plugin* and returns a static Instance of itself.
 
 ### Make Changes
 
@@ -108,7 +108,7 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 1. *Build* and *Run*.  Because you have changed the name of the command, you will need to *"install"* the plugin again.  Follow the steps 3-5 in the [Boilerplate Build](#boilerplate-build) section above.
 1. Run *HelloDrawLine* in Rhino.  Create the two points...as soon as you do, you should hit your breakpoint and pause...
 ![Hit a breakpoint]({{ site.baseurl }}/images/your-first-plugin-windows-09.png)
-1. With Rhino paused, in *Visual Studio* switch to the *Autos* tab (if it not already there).  In the list, find the `line1` object we authored.  Click the dropdown *arrow* to expand the list of members on `line1`.  Our `line1` is a `Rhino.Geometry.Line` this class has a `Length` property...  
+1. With Rhino paused, in *Visual Studio* switch to the *Autos* tab (if it not already there).  In the list, find the `line1` object we authored.  Click the dropdown *arrow* to expand the list of members on `line1`.  Our `line1` is a `Rhino.Geometry.Line` this class has a `Length` property...
 ![Autos panel]({{ site.baseurl }}/images/your-first-plugin-windows-10.png)
 1. *Continue* in Rhino by pressing the *Continue* button in the upper menu of *Visual Studio* (or press <kbd>F5</kbd>)...
 ![Continue Executing]({{ site.baseurl }}/images/your-first-plugin-windows-11.png)

@@ -1,8 +1,7 @@
 ---
 title: Simple Mathematics Component
 description: This guide contains a brief example of a component that deals with some simple mathematics and multiple input and output parameters.
-authors: ['David Rutten']
-author_contacts: ['DavidRutten']
+authors: ['david_rutten']
 sdk: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

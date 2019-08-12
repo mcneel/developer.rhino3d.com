@@ -1,8 +1,7 @@
 ---
 title: Custom Attributes
 description: This guide contains a step-by-step walkthrough regarding custom object display.
-authors: ['David Rutten']
-author_contacts: ['DavidRutten']
+authors: ['david_rutten']
 sdk: ['Grasshopper']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']
@@ -78,7 +77,7 @@ What we'll do is create a special attributes object for this parameter which als
 ```cs
 public override void CreateAttributes()
 {
-  m_attributes = new MySimpleIntegerParameterAttributes(Me);
+  m_attributes = new MySimpleIntegerParameterAttributes(this);
 }
 ```
 {: #cs1 .tab-pane .fade .in .active}
@@ -252,6 +251,7 @@ Inside our implementation of the `Render()` method, we need to draw the wires co
 
 ```cs
 protected override void Render(GH_Canvas canvas, Graphics graphics, GH_CanvasChannel channel)
+{
   // Render all the wires that connect the Owner to all its Sources.
   if (channel == GH_CanvasChannel.Wires)
   {
@@ -291,7 +291,7 @@ protected override void Render(GH_Canvas canvas, Graphics graphics, GH_CanvasCha
     // Now it's time to draw the text on top of the capsule.
     // First we'll draw the Owner NickName using a standard font and a black brush.
     // We'll also align the NickName in the center of the Bounds.
-    StringFormat format = New StringFormat();
+    StringFormat format = new StringFormat();
     format.Alignment = StringAlignment.Center;
     format.LineAlignment = StringAlignment.Center;
     format.Trimming = StringTrimming.EllipsisCharacter;

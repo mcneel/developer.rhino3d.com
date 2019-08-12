@@ -2,7 +2,6 @@
 title: Yak Guides
 description: Guides to using the Yak package manager.
 authors: unset
-author_contacts: unset
 sdk: unset
 languages: # empty
 platforms: ['Windows', 'Mac']

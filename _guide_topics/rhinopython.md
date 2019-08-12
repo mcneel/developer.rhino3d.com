@@ -2,9 +2,8 @@
 title: Rhino.Python Guides
 description: Quickly add functionality to Rhino or automate repetitive tasks.
 authors: unset
-author_contacts: unset
 sdk: unset
-languages: unset
+languages: ['Python']
 platforms: ['Windows', 'Mac']
 categories: ['Unsorted']
 origin: unset
@@ -36,6 +35,8 @@ layout: guide-homepage
 - Your First Python Script in Rhino ([Windows]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-rhino-mac), [Grasshopper]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-grasshopper))
 - [Where to get help...]({{ site.baseurl }}/guides/rhinopython/python-where-to-find-help)
 - [Troubleshooting Installation]({{ site.baseurl }}/guides/rhinopython/python-troubleshooting-install)
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
+- [Scripting discussions on Discourse](https://discourse.mcneel.com/c/scripting)
 
 ### Python Editor for Windows
 

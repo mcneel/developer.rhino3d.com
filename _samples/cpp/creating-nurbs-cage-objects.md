@@ -1,8 +1,7 @@
 ---
 title: Creating NURBS Cage Objects
 description: Demonstrates how to create a NURBS Cage objects.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

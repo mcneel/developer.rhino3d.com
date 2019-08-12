@@ -1,8 +1,7 @@
 ---
 title: Add Background Bitmaps to Viewports
 description: Demonstrates how to add a background bitmap to a viewport.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

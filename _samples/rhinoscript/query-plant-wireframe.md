@@ -1,8 +1,7 @@
 ---
 title: Query Plant Wireframe
 description: Demonstrates how to generate a wire-frame representation of a Flamingo 2.0 plant using RhinoScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

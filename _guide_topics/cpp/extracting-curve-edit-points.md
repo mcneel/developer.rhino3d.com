@@ -1,8 +1,7 @@
 ---
 title: Extracting Curve Edit Points
 description: This brief guide demonstrates how to extract a curve's edit points using C/C++.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

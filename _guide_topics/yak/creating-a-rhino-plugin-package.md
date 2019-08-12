@@ -1,13 +1,12 @@
 ---
 title: Creating a Rhino Plug-In Package
-description: >
-  This is a step by step guide to creating a package for a Rhino plug-in.
-authors: ['Will Pearson']
-author_contacts: ['will']
+description: This is a step by step guide to creating a package for a Rhino plug-in.
+authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows']
 categories: ['Step By Step']
+origin: unset
 order: 1
 keywords: ['developer', 'yak']
 layout: toc-guide-page
@@ -40,7 +39,7 @@ Prompt and navigate to the directory above.
 ```
 
 Now, we need a `manifest.yml` file! You can easily create your own by studying
-the [reference](../the-package-manifest). Alternatively, you can use the `spec`
+the [Manifest Reference Guide](../the-package-manifest). Alternatively, you can use the `spec`
 command to generate a skeleton file. We'll do the latter here.
 
 <div class="alert alert-info" role="alert">

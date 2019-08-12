@@ -1,8 +1,7 @@
 ---
 title: Brep Data Structure
 description: This guide discusses the Boundary Representation (B-rep) in the context of openNURBS.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

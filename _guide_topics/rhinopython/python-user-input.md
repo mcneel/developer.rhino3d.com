@@ -1,8 +1,7 @@
 ---
 title: How to get user input in a script
 description: How to prompt the user for input into a script.
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
+authors: ['scott_davidson']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

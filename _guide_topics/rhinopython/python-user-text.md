@@ -1,8 +1,7 @@
 ---
 title: Custom information on objects 
 description: How to create and access customer user text with Python.
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
+authors: ['scott_davidson']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

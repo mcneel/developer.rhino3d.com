@@ -1,8 +1,7 @@
 ---
 title: Platonic and Archimedean Solids
 description: Demonstrates how to generate platonic and archimedean solids with RhinoScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

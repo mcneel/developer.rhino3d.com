@@ -1,8 +1,7 @@
 ---
 title: Make a Circle with RhinoCommon
 description:  This sample creates a circle without using functions in the rhinoscript package.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac']

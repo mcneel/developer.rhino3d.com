@@ -14,11 +14,21 @@
                 <ul>
                   {% assign iterator_count = page.authors.size | minus: 1 %}
                   {% for i in (0..iterator_count) %}
-                    <li><a href="https://discourse.mcneel.com/users/{{ page.author_contacts[i] }}/activity">{{ page.authors[i] }}</a></li>
+                    {% for author in site.data.authors %}
+                      {% if author.name == page.authors[i] %}
+                        {% assign the_author = author %}
+                      {% endif %}
+                    {% endfor %}
+                    <li><a href="{{ site.baseurl }}/authors/{{ the_author.name }}">{{ the_author.display_name }}</a></li>
                   {% endfor %}
                 </ul>
               {% else %}
-                Author: <a href="https://discourse.mcneel.com/users/{{ page.author_contacts }}/activity">{{ page.authors }}</a>
+                {% for author in site.data.authors %}
+                  {% if author.name == page.authors[0] %}
+                    {% assign the_author = author %}
+                  {% endif %}
+                {% endfor %}
+                Author: <a href="{{ site.baseurl }}/authors/{{ the_author.name }}">{{ the_author.display_name }}</a>
               {% endif %}
             </p>
           </div>
@@ -38,7 +48,8 @@
         </div>
 
         <div class="row text-center">
-          © 1997 - 20{{ site.time | date: '%y' }} Robert McNeel &amp; Associates
+          © 1997 - 20{{ site.time | date: '%y' }} Robert McNeel &amp; Associates<br/>
+          <span class="glyphicon glyphicon-heart-empty"></span>&nbsp;<a href="{{ site.baseurl }}/authors">Contributions welcome</a>
         </div>
 
       {% else %}
@@ -54,7 +65,8 @@
           </div>
 
           <div class="col-md-6 text-center">
-            © 1997 - 20{{ site.time | date: '%y' }} Robert McNeel &amp; Associates
+            © 1997 - 20{{ site.time | date: '%y' }} Robert McNeel &amp; Associates<br/>
+            <span class="glyphicon glyphicon-heart-empty"></span>&nbsp;<a href="{{ site.baseurl }}/authors">Contributions welcome</a>
           </div>
 
           <div class="col-md-3">
@@ -62,7 +74,6 @@
               <span class="glyphicon glyphicon-cog"></span>&nbsp;<a href="{{ site.baseurl }}/admin">Admin</a>
             </span>
           </div>
-
         </div>
 
       {% endif %}

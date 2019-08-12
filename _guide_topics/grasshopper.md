@@ -2,9 +2,8 @@
 title: Grasshopper Guides
 description: Guides to creating custom Grasshopper components and plugins.
 authors: unset
-author_contacts: unset
 sdk: unset
-languages: unset
+languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
 categories: ['Unsorted']
 origin: unset
@@ -24,6 +23,8 @@ layout: guide-homepage
 
 - Installing Tools ([Windows]({{ site.baseurl }}/guides/grasshopper/installing-tools-windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/installing-tools-mac/))
 - Your First Component ([Windows]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/your-first-component-mac/))
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
+- [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
 
 <!--column-->
 

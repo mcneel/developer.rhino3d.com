@@ -1,8 +1,7 @@
 ---
 title: 3 Parametric Curves and Surfaces
 description: This guide is an in-depth review of parametric curves with special focus on NURBS curves and the concepts of continuity and curvature.
-authors: ['Rajaa Issa']
-author_contacts: ['rajaa']
+authors: ['rajaa_issa']
 sdk: ['General']
 languages: unset
 platforms: ['Windows', 'Mac']
@@ -100,7 +99,7 @@ The same principle applies for any parametric curve. Any point on the curve can 
 
 ### Curve domain or interval
 
-A curve *domain* or *interval* is defined as the range of parameters that evaluate into a pointwithin that curve. The domain is usually described with two realnumbers defining the domain limits expressed in the form (min to max)or (min, max). The domain limits can be any two values that may ormay not be related to the actual length of the curve. In anincreasing domain, the domain min parameter evaluates to the startpoint of the curve and the domain max evaluates to the end point ofthe curve.  
+A curve *domain* or *interval* is defined as the range of parameters that evaluate into a point within that curve. The domain is usually described with two real numbers defining the domain limits expressed in the form (min to max)or (min, max). The domain limits can be any two values that may or may not be related to the actual length of the curve. In an increasing domain, the domain min parameter evaluates to the start point of the curve and the domain max evaluates to the end point ofthe curve.  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image95.png" width="540px">
@@ -179,7 +178,7 @@ NURBS curves and surfaces are the main mathematical representation used by Rhino
 
 ### Evaluating cubic Bézier curves
 
-Named after its inventor, Paul de Casteljau, the de Casteljau algorithmi evaluates Bézier curves using a recursive method. The algorithm steps can be summarized as follows:  
+Named after its inventor, Paul de Casteljau, the de Casteljau algorithm evaluates Bézier curves using a recursive method. The algorithm steps can be summarized as follows:  
 
 **Input:**  
 
@@ -269,7 +268,7 @@ Each NURBS curve has a list of numbers associated with it called a *list of knot
 
 ### Knots are parameter values
 
-Knots are a non-decreasing list of parameter values. There is degree+1 more knots than control points. Usually, for non-periodic curves, the first degree many knots are the same and the last degree many are the same. The domain of the curve is between these two extreme knot values at start and end.  
+Knots are a non-decreasing list of parameter values. In Rhino, there is a degree-1 more knots than control points. Usually, for non-periodic curves, the first degree many knots are the same and the last degree many are the same. The domain of the curve is between these two extreme knot values at start and end.  
 
 For example, the knots of an open degree-3 NURBS curve with seven control points and a domain between 0 and 6 may look like the following:  
 
@@ -282,7 +281,7 @@ Knots= <0, 0, 0, 1, 2, 3, 4, 5, 6, 6, 6>
 
 ### Knot multiplicity
 
-The multiplicity of a knot is the number of times it is listed in the list of knots. The multiplicity of a knot cannot be more than the degree of the curve.  Knot multiplicity is used to control continuity at the corresponding curve point.  
+The multiplicity of a knot is the number of times it is listed in the list of knots. The multiplicity of a knot cannot be more than the degree of the curve. Knot multiplicity is used to control continuity at the corresponding curve point.  
 
 ### Fully-multiple knots
 
@@ -363,7 +362,7 @@ Both curve ends coincide with end control points.</td>
 <tr style="border-bottom: 1px solid #ccc;">  
 <td>Degree-3 closed periodic curve.<br>
 The curve seam does not go through a control point.</td>  
-<td><img src="{{ site.baseurl }}/images/math-image146.png"></td>  
+<td><img src="{{ site.baseurl }}/images/math-image150.png"></td>  
 </tr>  
 <tr style="border-bottom: 1px solid #ccc;">  
 <td>Moving control points of a periodic curve does not affect curve smoothness.</td>  
@@ -371,7 +370,7 @@ The curve seam does not go through a control point.</td>
 </tr>  
 <tr style="border-bottom: 1px solid #ccc;">  
 <td>Kinks are created when the curve is forced through some control points.</td>  
-<td><img src="{{ site.baseurl }}/images/math-image150.png"></td>  
+<td><img src="{{ site.baseurl }}/images/math-image146.png"></td>  
 </tr>  
 <tr style="border-bottom: 1px solid #ccc;">  
 <td>Moving the control points of a non-periodic curve does not guarantee smooth continuity of the curve, but enables more control over the outcome.</td>  
@@ -580,7 +579,7 @@ Where:
 
 &nbsp; $$u$$ and $$v$$ are the two parameters within the surface domain or region.  
 
-### Surfacedomain
+### Surface domain
 
 A surface domain is defined as therange of ($$u,v$$) parameters that evaluate into a 3 D point on thatsurface. The domain in each dimension ($$u$$ or $$v$$) is usually describedas two real numbers ($$u_{min}$$ to $$u_{max}$$) and ($$v_{min}$$ to $$v_{max}$$)
 

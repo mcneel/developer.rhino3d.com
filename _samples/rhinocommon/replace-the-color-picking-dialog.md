@@ -1,8 +1,7 @@
 ---
 title: Replace the Color Picking Dialog
 description: Demonstrates how to replace Rhino's color picking dialog.
-authors: ['Steve Baer']
-author_contacts: ['stevebaer']
+authors: ['steve_baer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'VB']
 platforms: ['Windows', 'Mac']

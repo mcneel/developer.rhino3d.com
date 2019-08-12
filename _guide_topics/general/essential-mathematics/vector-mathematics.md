@@ -1,8 +1,7 @@
 ---
 title: 1 Vector Mathematics
 description: This guide discusses vector math including vector representation, vector operation, and line and plane equations.
-authors: ['Rajaa Issa']
-author_contacts: ['rajaa']
+authors: ['rajaa_issa']
 sdk: ['General']
 languages: unset
 platforms: ['Windows', 'Mac']

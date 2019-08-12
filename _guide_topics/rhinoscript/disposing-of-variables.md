@@ -1,8 +1,7 @@
 ---
 title: Disposing of Variables
 description: This guide discusses VBScript variables, their scope, and how to clean them up.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

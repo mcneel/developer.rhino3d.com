@@ -1,8 +1,7 @@
 ---
 title: Finding Perfect Squares
 description: This guide demonstrates how to determine if an integer is a perfect square using RhinoScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

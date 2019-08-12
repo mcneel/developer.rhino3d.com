@@ -1,8 +1,7 @@
 ---
 title: Text Justify
 description: Demonstrates how to set text justification with a specific font.
-authors: ['Steve Baer']
-author_contacts: ['stevebaer']
+authors: ['steve_baer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']

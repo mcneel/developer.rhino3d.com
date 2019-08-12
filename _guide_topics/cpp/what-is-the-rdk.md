@@ -1,8 +1,7 @@
 ---
 title: What is the RDK?
-description: This guide describes the Rhino Renderer Development Kit and its features.
-authors: ['Andrew le Bihan']
-author_contacts: ['andy']
+description: This guide describes the Rhino Renderer Development Kit (AKA RDK) and its features.
+authors: ['andrew_le_bihan', 'john_croudy']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']
@@ -14,88 +13,99 @@ layout: toc-guide-page
 TODO: 'needs cleanup, standardization, editing, new images, etc.'
 ---
 
- 
-![RDK Logo]({{ site.baseurl }}/images/what-is-the-rdk-01.png)
+![RDK Logo]({{ site.baseurl }}/images/rdk-what-is-the-rdk-01.png)
 
-## Overview
+### Overview
+The RDK is a collection of tools that extend the Rhino application platform with visualization-specific capabilities. Third-party developers can use the RDK SDK to integrate their renderers into Rhino.
 
-The Rhino RDK is a collection of tools that extend the Rhino application platform with visualization specific capabilities.
+### Features
+![RDK Features Banner]({{ site.baseurl }}/images/rdk-what-is-the-rdk-02.png)
 
-The RDK underpins the [Brazil for Rhino](http://brazil.mcneel.com/) product, and all of the above features are supported in that product.  However, all of these features are available to third-party developers to integrate their products into Rhino.
-
-## Features
-
-![RDK Features Banner]({{ site.baseurl }}/images/what-is-the-rdk-02.png)
-
-- Extensible Material, Environment and Texture editor.
-- Frame buffer implementation with post and channel handling.
+- Extensible Material, Environment and Texture editors which display and edit Materials, Environments and Textures (AKA _Render Content_) and allow [operations](/guides/cpp/rdk-task-classes/) to be performed on them.
+- Render content can have tags assigned.
+- [Frame buffer](/guides/cpp/rdk-rendering-classes/) implementation with multiple channels and post-processing.
 - Pre-process custom mesh provision interface for third party developers.
+- Built-in material types, including gem, glass, plastic, plaster, metal, paint, picture and custom.
 - Built-in procedural textures, including wood, marble, granite, noise generators, perturbs, and so on.
 - Built-in HDR and OpenEXR support.
-- Improved render pipeline that makes it much easier for developers to implement a renderer engine in Rhino.
-- Rhino sun light and sun-angle calculation tools.
+- Improved [render pipeline](/guides/cpp/rdk-rendering-classes/) that makes it much easier for developers to implement a renderer engine in Rhino.
+- [Sun light](/guides/cpp/rdk-sun-classes/) and sun angle calculation tools.
+- [Skylight](/guides/cpp/rdk-skylight-classes/) support.
+- [Safe Frame](/guides/cpp/rdk-safe-frame-classes/) support.
+- Gamma, [Linear Workflow](/guides/cpp/rdk-linear-workflow-classes/) and [Dithering](/guides/cpp/rdk-dithering-classes/) support.
 - Automatic shader UI support for third party Material/Environment/Texture providers.
 - Several utility classes to aid in the development of renderers and visualization related tools.
-- Decal support similar to Flamingo 2.0.
-- 360 degree environment preview in the viewport.
+- Decal support with planar, UV, cylindrical or spherical mapping.
+- [Ground Plane](/guides/cpp/rdk-ground-plane-classes/) support with automatic height, material and texture mapping options.
+- 360 degree [environment](/guides/cpp/rdk-current-environment-classes/) preview in the viewport.
+- Extensive library of ready-to-use materials, environments and textures with Library browser.
 
+### Material, Environment and Texture Editors
+![MET editors]({{ site.baseurl }}/images/rdk-what-is-the-rdk-03.png){:style="float: right; margin-left: 12px; margin-right: 80px;"}
+The Material, Environment, and Texture Editors display objects called _Render Contents_ and allow the user to edit them. These editors are all based on a similar interface with only small functional differences between them. Render Contents are the foundation of the RDK and one of the most important objects it provides. The RDK SDK provides an extensive system that allows render engine developers to create their own custom render contents. The editors then allow users to create, edit and manage these specialized contents as well as the ones bundled with the RDK and apply them to objects in the scene.
 
-## Material, Environment, & Texture Editors
+Main articles:
 
-![Material Environment and Texture Editors]({{ site.baseurl }}/images/what-is-the-rdk-03.png)
+- [Render Content](/guides/cpp/rdk-render-content)
+- [Render Content Editors](/guides/cpp/rdk-render-content-editors)
 
-The material editor, environment editor, and texture palettes interact with the enhanced render content system.  All are based on a similar interface with only small functional differences between them.
+{:style="clear:both;"}
 
-Access the editors through the Rhino Render menu, the Rendering toolbar, or the editor commands.
+### Render Window
+![Render Window]({{ site.baseurl }}/images/rdk-what-is-the-rdk-04.png)
 
-Lists of materials, environments, and textures are stored in the Rhino document.  Each editor displays the relevant render content type as preview thumbnails.
+A user thinks of the [Render Window](/guides/cpp/rdk-rendering-classes/) as the window that appears on the screen when one renders a model (see the picture above). However, the render window object used by developers corresponds more to the actual _frame&nbsp;buffer_. It contains information about the channels and pixels that make up the rendered image. The standard render window provides a number of features to renderers, including built-in support for scripting, cloning, saving to high dynamic-range formats, post effects, zooming and channel display.
 
-A large button to the left of the editor controls the visibility of the editor side panel which displays a list of common tasks along with the structure of the currently selected material, environment, or texture.
+### HDR and EXR Support
+![HDR and EXR Support]({{ site.baseurl }}/images/rdk-what-is-the-rdk-05.png){:style="float: right; margin-left: 12px;"}
 
-The size of the preview thumbnails area can be adjusted by dragging the handle just below its lowest edge.
+An HDR image which provides automatic conversion to a bitmap for non-HDR capable renderers. This allows the Rhino renderer and viewport display to show HDR environments while providing HDR tools to third-party renderer engines.
 
-Contents display an interface below the preview thumbnails in an area reserved for collapsible UI panels.  An addition to the basic UI panels, several additional collapsible panels are provided by Rhino within the same area as the content UI.  These include the Texture Summary panel, the Notes panel, the Local Mapping panel, Graph panel and the Adjustment panel.  These are described later in the content UI section.
+The HDR texture also provides projection conversion features. Most HDRi files come as Light Probe projection. The Basic Environment requires Spherical (Equirectangular) projection for spherical environments, so the HDR texture defaults to this conversion. However, several other types are supported.
 
-The editor window can be minimized to the caption bar and restored by double clicking on the caption bar.
+The LDR exposure determines the brightness of the image when converted to a bitmap image. This will not affect the rendering when used by a HDR capable renderer.
 
-Each material, environment or texture can have child nodes.  The children can be of any content type, but specific child slots will only support specific types. The most common child type is a texture.  For example, the Texture child for a Basic Material will only support textures, as will the Background image slot on a Basic Environment.
+HDR multiplier is a simple linear multiplier on all values in the image. This can be used to brighten or dim the image in an HDR capable renderer.
 
-## Render Window
-
-![Render Window]({{ site.baseurl }}/images/what-is-the-rdk-04.png)
-
-The standard render window provides a number of features to renderers, including built in support for scripting, cloning, saving to High-Dynamic-Range formats, post effects, zooming and channel display.
-
-Many renderers call the render window the "frame buffer."  The terms are nearly interchangeable.
-
-## HDR and EXR Support
-
-![HDR and EXR Support]({{ site.baseurl }}/images/what-is-the-rdk-05.png)
-
-An HDR image which provides automatic conversion to a bitmap for non-HDR capable renderers.  This allows the Rhino renderer and viewport display to show HDR environments while providing HDR tools to third-party renderer engines.
-
-The HDR texture also provides projection conversion features.  Most HDRi files come as Light Probe projection.  The Basic Environment requires Spherical (Equirectangular) projection for spherical environments, so the HDR texture defaults to this conversion.  However, several other types are supported.
-
-The LDR exposure determines the brightness of the image when converted to a bitmap image.  This will not affect the rendering when used by a HDR capable renderer.
-
-HDR multiplier is a simple linear multiplier on all values in the image.  This can be used to brighten or dim the image in an HDR capable renderer.
-
-The Save As button can be used to convert the image to a bitmap file.  The LDR exposure value is used convert the image during this process.
+The Save As button can be used to convert the image to a bitmap file. The LDR exposure value is used convert the image during this process.
 
 Azimuth and Altitude values modify the way the image is rotated in space during the projection conversion.
 
-## Sunlight
+{:style="clear:both;"}
 
-![Sunlight]({{ site.baseurl }}/images/what-is-the-rdk-06.png)
+### Decals
+![Decals]({{ site.baseurl }}/images/rdk-what-is-the-rdk-07.png){:style="float: right; margin-left: 12px;"}
 
-Sun tools, including a docking panel to control the document sun, a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools make sun angle calculations easier.
+Decals are non-repeating textures that are applied to the surface of an object with a given projection. They are an easy-to-use way of attaching single images or similar textures to objects without going through the complexity of the texture mapping process.
 
-## Decals
+Decals are textures that are placed directly on a specified area of one or more objects. They consist of a single instance of a texture, rather than being tiled as they are when used in a material. Users use decals to modify a limited part of an object's color.
 
-![Decals]({{ site.baseurl }}/images/what-is-the-rdk-07.png)
+![Decals2]({{ site.baseurl }}/images/rdk-what-is-the-rdk-08.jpg)
 
-Decals are non-repeating textures that are applied to the surface of an object with a given projection.  They are an easy-to-use way of attaching single images or similar textures to objects without going through the complexity of the texture mapping process.
+{:style="clear:both;"}
 
-Decals are textures that are placed directly on a specified area of one or more objects.  Use decals to modify a limited part of an object's color.
+The following classes can be used to access decal features:
 
-Decals consist of a single instance of a texture, rather than being tiled as they are when used in a material.
+- [IRhRdkDecal](/guides/cpp/rdk-decal-classes/#IRhRdkDecal)
+- [CRhRdkObjectDataAccess](/guides/cpp/rdk-decal-classes/#CRhRdkObjectDataAccess)
+
+### Sun
+![Sun]({{ site.baseurl }}/images/rdk-what-is-the-rdk-06.png){:style="float: right; margin-left: 12px;"}
+
+The RDK provides easy-to-use sun tools, including a docking panel to control the [document sun](/guides/cpp/rdk-sun-classes/#DocumentSun), a sunlight preview within the Rendered viewport, a Sunlight command and a number of other scripting and developer tools to make sun-angle calculations easy.
+
+The following classes can be used to access sun features:
+
+- [IRhRdkSun](/guides/cpp/rdk-sun-classes/#IRhRdkSun)
+- [CRhRdkSun](/guides/cpp/rdk-sun-classes/#CRhRdkSun)
+- [CRhRdkSunDialog](/guides/cpp/rdk-sun-classes/#CRhRdkSunDialog)
+
+{:style="clear:both;"}
+
+### Summary
+This article introduced the RDK and described some of its main features. Each feature is explained in more detail in a different article.
+
+<!--
+### Automatic UI
+The RDK provides an automatic UI system to make it easy to quickly develop user interfaces in your plug-in. See the main article here: [Automatic UI](/guides/cpp/rdk-raw-auto-ui).
+-->

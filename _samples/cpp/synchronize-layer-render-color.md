@@ -1,8 +1,7 @@
 ---
 title: Synchronize Layer Render Color
 description: Demonstrates how to synchronize the basic material color of a layer with the layer's color.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

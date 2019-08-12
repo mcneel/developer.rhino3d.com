@@ -1,8 +1,7 @@
 ---
 title: Creating a Skin (Windows)
 description: This guide outlines the tools for RhinoCommon developers to wrap their application around Rhino by creating custom Skin.  Custom skins are supported on Windows only.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows']
@@ -87,32 +86,15 @@ End Namespace
 
 To install your custom Skin, use *REGEDIT.EXE* to add a scheme key to your registry with a path to your Skin DLL. For example:
 
-#### Rhino 64-bit
-
 | **Item** |    |    | **Value** |
 |:--------|:----:|:----:|:--------|
-| Subkey   |    |    | HKEY_LOCAL_MACHINE\SOFTWARE\McNeel\Rhinoceros\5.0x64\Scheme: MySkin   |
+| Subkey   |    |    | HKEY_LOCAL_MACHINE\SOFTWARE\McNeel\Rhinoceros\6.0\Scheme: MySkin   |
 | Entry name   |    |    | SkinDLLPath   |
 | Type   |    |    | REG_SZ   |
 | Data value   |    |    | C:\Src\MySkin\Bin\Release\MySkin.rhs   |
 
-#### Testing
+## Testing
 
 You can now test your custom Skin by creating shortcut to your Rhino executable with `/scheme="<scheme name from the previous step>"` as command line argument.  For example:
 
-*C:\Program Files\Rhinoceros 5 (64-bit)\System\Rhino.exe" /scheme=MySkin*
-
-#### Rhino 32-bit
-
-| **Item** |    |    | **Value** |
-|:--------|:----:|:----:|:--------|
-| Subkey   |    |    | HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\McNeel\Rhinoceros\5.0\Scheme: MySkin   |
-| Entry name   |    |    | SkinDLLPath   |
-| Type   |    |    | REG_SZ   |
-| Data value   |    |    | C:\Src\MySkin\Bin\Release\MySkin.rhs   |
-
-#### Testing
-
-You can now test your custom Skin by creating shortcut to your Rhino executable with `/scheme="<scheme name from the previous step>"` as command line argument. For example:
-
-*C:\Program Files (x86)\Rhinoceros 5\System\Rhino4.exe" /scheme=MySkin*
+*C:\Program Files\Rhino 6\System\Rhino.exe" /scheme=MySkin*

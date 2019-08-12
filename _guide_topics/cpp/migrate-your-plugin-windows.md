@@ -1,8 +1,7 @@
 ---
 title: Migrate your plugin project to Rhino 6
 description: This guide walks you through using migrator.exe.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

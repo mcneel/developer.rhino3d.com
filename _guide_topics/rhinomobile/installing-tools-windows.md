@@ -1,8 +1,7 @@
 ---
 title: Installing Tools (Windows)
 description: This guide covers all the necessary tools required for RhinoMobile on Windows
-authors: ['Dan Belcher']
-author_contacts: ['dan']
+authors: ['dan_belcher']
 sdk: ['RhinoMobile']
 languages: ['C#']
 platforms: ['iOS', 'Android']

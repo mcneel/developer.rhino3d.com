@@ -1605,13 +1605,13 @@
           {
             "Name": "mode",
             "TypeInfo": "(number, optional)",
-            "Desc": " The object snap mode or modes to set. Object snap modes\r\n                     can be added together to set multiple modes\r\n                     0     None\r\n                     1     Near\r\n                     2     Focus\r\n                     4     Center\r\n                     8     Knot\r\n                     16    Quadrant\r\n                     32    Midpoint\r\n                     64    Intersection\r\n                     128   End\r\n                     256   Perpendicular\r\n                     512   Tangent\r\n                     1024  Point\r\n                     2048  Vertex\r\n    "
+            "Desc": " The object snap mode or modes to set. Object snap modes\r\n                     can be added together to set multiple modes\r\n                     0          None\r\n                     2          Near\r\n                     8          Focus\r\n                     32         Center\r\n                     64         Vertex\r\n                     128        Knot\r\n                     512        Quadrant\r\n                     2048       Midpoint\r\n                     8192       Intersection\r\n                     131072     End\r\n                     524288     Perpendicular\r\n                     2097152    Tangent\r\n                     134217728  Point\r\n    "
           }
         ],
         "Signature": "OsnapMode(mode=None)",
         "Description": "Returns or sets the object snap mode. Object snaps are tools for\r\n    specifying points on existing objects",
         "HasArguments": true,
-        "ArgumentDesc": "mode (number, optional): The object snap mode or modes to set. Object snap modes\r\n               can be added together to set multiple modes\r\n               0     None\r\n               1     Near\r\n               2     Focus\r\n               4     Center\r\n               8     Knot\r\n               16    Quadrant\r\n               32    Midpoint\r\n               64    Intersection\r\n               128   End\r\n               256   Perpendicular\r\n               512   Tangent\r\n               1024  Point\r\n               2048  Vertex",
+        "ArgumentDesc": "mode (number, optional): The object snap mode or modes to set. Object snap modes\r\n               can be added together to set multiple modes\r\n               0          None\r\n               2          Near\r\n               8          Focus\r\n               32         Center\r\n               64         Vertex\r\n               128        Knot\r\n               512        Quadrant\r\n               2048       Midpoint\r\n               8192       Intersection\r\n               131072     End\r\n               524288     Perpendicular\r\n               2097152    Tangent\r\n               134217728  Point",
         "Returns": [
           {
             "Item1": "\r\n      number",
@@ -1621,13 +1621,14 @@
         "ReturnStr": "number: if mode is not specified, then the current object snap mode(s)\r\nnumber: if mode is specified, then the previous object snap mode(s)",
         "Example": [
           "import rhinoscriptsyntax as rs",
-          "rhOsnapModeEnd = 128",
+          "rhOsnapModeEnd = 131072",
+          "#add 'End' mode while keeping the ones that are already set",
           "mode = rs.OsnapMode()",
-          "if not (mode & rhOSnapModeEnd):",
-          "    mode = mode + rhOsnapModeEnd",
-          "    rs.OsnapMode(mode)"
+          "rs.OsnapMode(mode + rhOsnapModeEnd)",
+          "#add 'End' mode while clearing the others",
+          "rs.OsnapMode(rhOsnapModeEnd)"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nrhOsnapModeEnd = 128\r\nmode = rs.OsnapMode()\r\nif not (mode & rhOSnapModeEnd):\r\n    mode = mode + rhOsnapModeEnd\r\n    rs.OsnapMode(mode)",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nrhOsnapModeEnd = 131072\r\n#add 'End' mode while keeping the ones that are already set\r\nmode = rs.OsnapMode()\r\nrs.OsnapMode(mode + rhOsnapModeEnd)\r\n#add 'End' mode while clearing the others\r\nrs.OsnapMode(rhOsnapModeEnd)",
         "SeeAlso": [
           {
             "ModuleName": "application",
@@ -1642,7 +1643,7 @@
             "FunctionName": "ProjectOsnaps"
           }
         ],
-        "DocString": "    \"\"\"Returns or sets the object snap mode. Object snaps are tools for\r\n    specifying points on existing objects\r\n    Parameters:\r\n      mode (number, optional): The object snap mode or modes to set. Object snap modes\r\n                     can be added together to set multiple modes\r\n                     0     None\r\n                     1     Near\r\n                     2     Focus\r\n                     4     Center\r\n                     8     Knot\r\n                     16    Quadrant\r\n                     32    Midpoint\r\n                     64    Intersection\r\n                     128   End\r\n                     256   Perpendicular\r\n                     512   Tangent\r\n                     1024  Point\r\n                     2048  Vertex\r\n    Returns:\r\n      number: if mode is not specified, then the current object snap mode(s)\r\n      number: if mode is specified, then the previous object snap mode(s)\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      rhOsnapModeEnd = 128\r\n      mode = rs.OsnapMode()\r\n      if not (mode & rhOSnapModeEnd):\r\n          mode = mode + rhOsnapModeEnd\r\n          rs.OsnapMode(mode)\r\n    See Also:\r\n      Osnap\r\n      OsnapDialog\r\n      ProjectOsnaps\r\n    \"\"\"",
+        "DocString": "    \"\"\"Returns or sets the object snap mode. Object snaps are tools for\r\n    specifying points on existing objects\r\n    Parameters:\r\n      mode (number, optional): The object snap mode or modes to set. Object snap modes\r\n                     can be added together to set multiple modes\r\n                     0          None\r\n                     2          Near\r\n                     8          Focus\r\n                     32         Center\r\n                     64         Vertex\r\n                     128        Knot\r\n                     512        Quadrant\r\n                     2048       Midpoint\r\n                     8192       Intersection\r\n                     131072     End\r\n                     524288     Perpendicular\r\n                     2097152    Tangent\r\n                     134217728  Point\r\n    Returns:\r\n      number: if mode is not specified, then the current object snap mode(s)\r\n      number: if mode is specified, then the previous object snap mode(s)\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      rhOsnapModeEnd = 131072\r\n      #add 'End' mode while keeping the ones that are already set\r\n      mode = rs.OsnapMode()\r\n      rs.OsnapMode(mode + rhOsnapModeEnd)\r\n      #add 'End' mode while clearing the others\r\n      rs.OsnapMode(rhOsnapModeEnd)\r\n    See Also:\r\n      Osnap\r\n      OsnapDialog\r\n      ProjectOsnaps\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -5655,11 +5656,11 @@
           "    if curve:",
           "        results = rs.CurveClosestObject(curve, objects)",
           "        if results:",
-          "              print \"Curve id:\", results[0]",
-          "              rs.AddPoint( results[1] )",
-          "              rs.AddPoint( results[2] )"
+          "            print \"Curve id:\", results[0]",
+          "            rs.AddPoint( results[1] )",
+          "            rs.AddPoint( results[2] )"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nfilter = rs.filter.curve | rs.filter.pointcloud | rs.filter.surface | rs.filter.polysurface\r\nobjects = rs.GetObjects(\"Select target objects for closest point\", filter)\r\nif objects:\r\n    curve = rs.GetObject(\"Select curve\")\r\n    if curve:\r\n        results = rs.CurveClosestObject(curve, objects)\r\n        if results:\r\n              print \"Curve id:\", results[0]\r\n              rs.AddPoint( results[1] )\r\n              rs.AddPoint( results[2] )",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nfilter = rs.filter.curve | rs.filter.pointcloud | rs.filter.surface | rs.filter.polysurface\r\nobjects = rs.GetObjects(\"Select target objects for closest point\", filter)\r\nif objects:\r\n    curve = rs.GetObject(\"Select curve\")\r\n    if curve:\r\n        results = rs.CurveClosestObject(curve, objects)\r\n        if results:\r\n            print \"Curve id:\", results[0]\r\n            rs.AddPoint( results[1] )\r\n            rs.AddPoint( results[2] )",
         "SeeAlso": [
           {
             "ModuleName": "curve",
@@ -5674,7 +5675,7 @@
             "FunctionName": "IsCurve"
           }
         ],
-        "DocString": "    \"\"\"Returns the 3D point locations on two objects where they are closest to\r\n    each other. Note, this function provides similar functionality to that of\r\n    Rhino's ClosestPt command.\r\n    Parameters:\r\n      curve_id (guid):identifier of the curve object to test\r\n      object_ids ([guid, ...]) list of identifiers of point cloud, curve, surface, or\r\n        polysurface to test against\r\n    Returns:\r\n      tuple[guid, point, point]: containing the results of the closest point calculation.\r\n      The elements are as follows:\r\n        [0]    The identifier of the closest object.\r\n        [1]    The 3-D point that is closest to the closest object.\r\n        [2]    The 3-D point that is closest to the test curve.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      filter = rs.filter.curve | rs.filter.pointcloud | rs.filter.surface | rs.filter.polysurface\r\n      objects = rs.GetObjects(\"Select target objects for closest point\", filter)\r\n      if objects:\r\n          curve = rs.GetObject(\"Select curve\")\r\n          if curve:\r\n              results = rs.CurveClosestObject(curve, objects)\r\n              if results:\r\n                    print \"Curve id:\", results[0]\r\n                    rs.AddPoint( results[1] )\r\n                    rs.AddPoint( results[2] )\r\n    See Also:\r\n      CurveClosestPoint\r\n      EvaluateCurve\r\n      IsCurve\r\n    \"\"\"",
+        "DocString": "    \"\"\"Returns the 3D point locations on two objects where they are closest to\r\n    each other. Note, this function provides similar functionality to that of\r\n    Rhino's ClosestPt command.\r\n    Parameters:\r\n      curve_id (guid):identifier of the curve object to test\r\n      object_ids ([guid, ...]) list of identifiers of point cloud, curve, surface, or\r\n        polysurface to test against\r\n    Returns:\r\n      tuple[guid, point, point]: containing the results of the closest point calculation.\r\n      The elements are as follows:\r\n        [0]    The identifier of the closest object.\r\n        [1]    The 3-D point that is closest to the closest object.\r\n        [2]    The 3-D point that is closest to the test curve.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      filter = rs.filter.curve | rs.filter.pointcloud | rs.filter.surface | rs.filter.polysurface\r\n      objects = rs.GetObjects(\"Select target objects for closest point\", filter)\r\n      if objects:\r\n          curve = rs.GetObject(\"Select curve\")\r\n          if curve:\r\n              results = rs.CurveClosestObject(curve, objects)\r\n              if results:\r\n                  print \"Curve id:\", results[0]\r\n                  rs.AddPoint( results[1] )\r\n                  rs.AddPoint( results[2] )\r\n    See Also:\r\n      CurveClosestPoint\r\n      EvaluateCurve\r\n      IsCurve\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -7661,7 +7662,7 @@
           {
             "Name": "side",
             "TypeInfo": "(number)",
-            "Desc": "\r\n        0=extend from the start of the curve\r\n        1=extend from the end of the curve\r\n      "
+            "Desc": "\r\n        0=extend from the start of the curve\r\n        1=extend from the end of the curve\r\n        2=extend from both the start and the end of the curve\r\n      "
           },
           {
             "Name": "boundary_object_ids",
@@ -7672,7 +7673,7 @@
         "Signature": "ExtendCurve(curve_id, extension_type, side, boundary_object_ids)",
         "Description": "Extends a non-closed curve object by a line, arc, or smooth extension\r\n    until it intersects a collection of objects.",
         "HasArguments": true,
-        "ArgumentDesc": "curve_id (guid): identifier of curve to extend\r\nextension_type (number):\r\n  0 = line\r\n  1 = arc\r\n  2 = smooth\r\nside (number):\r\n  0=extend from the start of the curve\r\n  1=extend from the end of the curve\r\nboundary_object_ids (guid): curve, surface, and polysurface objects to extend to",
+        "ArgumentDesc": "curve_id (guid): identifier of curve to extend\r\nextension_type (number):\r\n  0 = line\r\n  1 = arc\r\n  2 = smooth\r\nside (number):\r\n  0=extend from the start of the curve\r\n  1=extend from the end of the curve\r\n  2=extend from both the start and the end of the curve\r\nboundary_object_ids (guid): curve, surface, and polysurface objects to extend to",
         "Returns": [
           {
             "Item1": "\r\n      guid",
@@ -7699,7 +7700,7 @@
             "FunctionName": "ExtendCurvePoint"
           }
         ],
-        "DocString": "    \"\"\"Extends a non-closed curve object by a line, arc, or smooth extension\r\n    until it intersects a collection of objects.\r\n    Parameters:\r\n      curve_id (guid): identifier of curve to extend\r\n      extension_type (number):\r\n        0 = line\r\n        1 = arc\r\n        2 = smooth\r\n      side (number):\r\n        0=extend from the start of the curve\r\n        1=extend from the end of the curve\r\n      boundary_object_ids (guid): curve, surface, and polysurface objects to extend to\r\n    Returns:\r\n      guid: The identifier of the new object if successful.\r\n      None: if not successful\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      filter = rs.filter.curve | rs.filter.surface | rs.filter.polysurface\r\n      objects = rs.GetObjects(\"Select boundary objects\", filter)\r\n      if objects:\r\n          curve = rs.GetObject(\"Select curve to extend\", rs.filter.curve)\r\n          if curve: rs.ExtendCurve( curve, 2, 1, objects )\r\n    See Also:\r\n      ExtendCurveLength\r\n      ExtendCurvePoint\r\n    \"\"\"",
+        "DocString": "    \"\"\"Extends a non-closed curve object by a line, arc, or smooth extension\r\n    until it intersects a collection of objects.\r\n    Parameters:\r\n      curve_id (guid): identifier of curve to extend\r\n      extension_type (number):\r\n        0 = line\r\n        1 = arc\r\n        2 = smooth\r\n      side (number):\r\n        0=extend from the start of the curve\r\n        1=extend from the end of the curve\r\n        2=extend from both the start and the end of the curve\r\n      boundary_object_ids (guid): curve, surface, and polysurface objects to extend to\r\n    Returns:\r\n      guid: The identifier of the new object if successful.\r\n      None: if not successful\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      filter = rs.filter.curve | rs.filter.surface | rs.filter.polysurface\r\n      objects = rs.GetObjects(\"Select boundary objects\", filter)\r\n      if objects:\r\n          curve = rs.GetObject(\"Select curve to extend\", rs.filter.curve)\r\n          if curve: rs.ExtendCurve( curve, 2, 1, objects )\r\n    See Also:\r\n      ExtendCurveLength\r\n      ExtendCurvePoint\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -8489,9 +8490,9 @@
           "    else:",
           "        print \"The object is not a rational NURBS curve.\"",
           "else:",
-          "   print \"The object is not a curve.\""
+          "    print \"The object is not a curve.\""
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nobj = rs.GetObject(\"Select a curve\")\r\nif rs.IsCurve(obj):\r\n    if rs.IsCurveRational(obj):\r\n        print \"The object is a rational NURBS curve.\"\r\n    else:\r\n        print \"The object is not a rational NURBS curve.\"\r\nelse:\r\n   print \"The object is not a curve.\"",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nobj = rs.GetObject(\"Select a curve\")\r\nif rs.IsCurve(obj):\r\n    if rs.IsCurveRational(obj):\r\n        print \"The object is a rational NURBS curve.\"\r\n    else:\r\n        print \"The object is not a rational NURBS curve.\"\r\nelse:\r\n    print \"The object is not a curve.\"",
         "SeeAlso": [
           {
             "ModuleName": "curve",
@@ -8510,7 +8511,7 @@
             "FunctionName": "IsCurvePeriodic"
           }
         ],
-        "DocString": "    \"\"\"Verifies an object is a rational NURBS curve\r\n    Parameters:\r\n      curve_id (guid): identifier of the curve object\r\n      segment_index (number, optional): the curve segment index if `curve_id` identifies a polycurve\r\n    Returns:\r\n      bool: True or False indicating success or failure\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select a curve\")\r\n      if rs.IsCurve(obj):\r\n          if rs.IsCurveRational(obj):\r\n              print \"The object is a rational NURBS curve.\"\r\n          else:\r\n              print \"The object is not a rational NURBS curve.\"\r\n      else:\r\n         print \"The object is not a curve.\"\r\n    See Also:\r\n      IsCurve\r\n      IsCurveClosed\r\n      IsCurveLinear\r\n      IsCurvePeriodic\r\n    \"\"\"",
+        "DocString": "    \"\"\"Verifies an object is a rational NURBS curve\r\n    Parameters:\r\n      curve_id (guid): identifier of the curve object\r\n      segment_index (number, optional): the curve segment index if `curve_id` identifies a polycurve\r\n    Returns:\r\n      bool: True or False indicating success or failure\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select a curve\")\r\n      if rs.IsCurve(obj):\r\n          if rs.IsCurveRational(obj):\r\n              print \"The object is a rational NURBS curve.\"\r\n          else:\r\n              print \"The object is not a rational NURBS curve.\"\r\n      else:\r\n          print \"The object is not a curve.\"\r\n    See Also:\r\n      IsCurve\r\n      IsCurveClosed\r\n      IsCurveLinear\r\n      IsCurvePeriodic\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -9070,7 +9071,7 @@
           "    if curve is None: return False",
           "    surface = rs.GetObject(\"Select base surface\", rs.filter.surface)",
           "    if surface is None: return False",
-          "    point = rc.GetPointOnSurface( surface, \"Through point\" )",
+          "    point = rs.GetPointOnSurface( surface, \"Through point\" )",
           "    if point is None: return False",
           "    parameter = rs.SurfaceClosestPoint(surface, point)",
           "    rc = rs.OffsetCurveOnSurface( curve, surface, parameter )",
@@ -9078,7 +9079,7 @@
           "       ",
           "TestOffset()"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\ndef TestOffset():\r\n    curve = rs.GetObject(\"Select curve on a surface\", rs.filter.curve)\r\n    if curve is None: return False\r\n    surface = rs.GetObject(\"Select base surface\", rs.filter.surface)\r\n    if surface is None: return False\r\n    point = rc.GetPointOnSurface( surface, \"Through point\" )\r\n    if point is None: return False\r\n    parameter = rs.SurfaceClosestPoint(surface, point)\r\n    rc = rs.OffsetCurveOnSurface( curve, surface, parameter )\r\n    return rc is not None\r\n       \r\nTestOffset()",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\ndef TestOffset():\r\n    curve = rs.GetObject(\"Select curve on a surface\", rs.filter.curve)\r\n    if curve is None: return False\r\n    surface = rs.GetObject(\"Select base surface\", rs.filter.surface)\r\n    if surface is None: return False\r\n    point = rs.GetPointOnSurface( surface, \"Through point\" )\r\n    if point is None: return False\r\n    parameter = rs.SurfaceClosestPoint(surface, point)\r\n    rc = rs.OffsetCurveOnSurface( curve, surface, parameter )\r\n    return rc is not None\r\n       \r\nTestOffset()",
         "SeeAlso": [
           {
             "ModuleName": "curve",
@@ -9089,7 +9090,7 @@
             "FunctionName": "OffsetSurface"
           }
         ],
-        "DocString": "    \"\"\"Offset a curve on a surface. The source curve must lie on the surface.\r\n    The offset curve or curves will be added to Rhino\r\n    Parameters:\r\n      curve_id, surface_id (guid): curve and surface identifiers\r\n      distance_or_parameter (number|tuple(number, number)): If a single number is passed, then this is the\r\n        distance of the offset. Based on the curve's direction, a positive value\r\n        will offset to the left and a negative value will offset to the right.\r\n        If a tuple of two values is passed, this is interpreted as the surface\r\n        U,V parameter that the curve will be offset through\r\n    Returns:\r\n      list(guid, ...): identifiers of the new curves if successful\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      def TestOffset():\r\n          curve = rs.GetObject(\"Select curve on a surface\", rs.filter.curve)\r\n          if curve is None: return False\r\n          surface = rs.GetObject(\"Select base surface\", rs.filter.surface)\r\n          if surface is None: return False\r\n          point = rc.GetPointOnSurface( surface, \"Through point\" )\r\n          if point is None: return False\r\n          parameter = rs.SurfaceClosestPoint(surface, point)\r\n          rc = rs.OffsetCurveOnSurface( curve, surface, parameter )\r\n          return rc is not None\r\n       \r\n      TestOffset()\r\n    See Also:\r\n      OffsetCurve\r\n      OffsetSurface\r\n    \"\"\"",
+        "DocString": "    \"\"\"Offset a curve on a surface. The source curve must lie on the surface.\r\n    The offset curve or curves will be added to Rhino\r\n    Parameters:\r\n      curve_id, surface_id (guid): curve and surface identifiers\r\n      distance_or_parameter (number|tuple(number, number)): If a single number is passed, then this is the\r\n        distance of the offset. Based on the curve's direction, a positive value\r\n        will offset to the left and a negative value will offset to the right.\r\n        If a tuple of two values is passed, this is interpreted as the surface\r\n        U,V parameter that the curve will be offset through\r\n    Returns:\r\n      list(guid, ...): identifiers of the new curves if successful\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      def TestOffset():\r\n          curve = rs.GetObject(\"Select curve on a surface\", rs.filter.curve)\r\n          if curve is None: return False\r\n          surface = rs.GetObject(\"Select base surface\", rs.filter.surface)\r\n          if surface is None: return False\r\n          point = rs.GetPointOnSurface( surface, \"Through point\" )\r\n          if point is None: return False\r\n          parameter = rs.SurfaceClosestPoint(surface, point)\r\n          rc = rs.OffsetCurveOnSurface( curve, surface, parameter )\r\n          return rc is not None\r\n       \r\n      TestOffset()\r\n    See Also:\r\n      OffsetCurve\r\n      OffsetSurface\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -26549,10 +26550,10 @@
         "Returns": [
           {
             "Item1": "\r\n      number",
-            "Item2": " The object type if successful.\r\n        The valid object types are as follows:\r\n        Value   Description\r\n          0       Unknown object\r\n          1       Point\r\n          2       Point cloud\r\n          4       Curve\r\n          8       Surface or single-face brep\r\n          16      Polysurface or multiple-face\r\n          32      Mesh\r\n          256     Light\r\n          512     Annotation\r\n          4096    Instance or block reference\r\n          8192    Text dot object\r\n          16384   Grip object\r\n          32768   Detail\r\n          65536   Hatch\r\n          131072  Morph control\r\n          134217728  Cage\r\n          268435456  Phantom\r\n          536870912  Clipping plane\r\n    "
+            "Item2": " The object type if successful.\r\n        The valid object types are as follows:\r\n        Value   Description\r\n          0           Unknown object\r\n          1           Point\r\n          2           Point cloud\r\n          4           Curve\r\n          8           Surface or single-face brep\r\n          16          Polysurface or multiple-face\r\n          32          Mesh\r\n          256         Light\r\n          512         Annotation\r\n          4096        Instance or block reference\r\n          8192        Text dot object\r\n          16384       Grip object\r\n          32768       Detail\r\n          65536       Hatch\r\n          131072      Morph control\r\n          134217728   Cage\r\n          268435456   Phantom\r\n          536870912   Clipping plane\r\n          1073741824  Extrusion\r\n    "
           }
         ],
-        "ReturnStr": "number: The object type if successful.\r\n  The valid object types are as follows:\r\n  Value   Description\r\n    0       Unknown object\r\n    1       Point\r\n    2       Point cloud\r\n    4       Curve\r\n    8       Surface or single-face brep\r\n    16      Polysurface or multiple-face\r\n    32      Mesh\r\n    256     Light\r\n    512     Annotation\r\n    4096    Instance or block reference\r\n    8192    Text dot object\r\n    16384   Grip object\r\n    32768   Detail\r\n    65536   Hatch\r\n    131072  Morph control\r\n    134217728  Cage\r\n    268435456  Phantom\r\n    536870912  Clipping plane",
+        "ReturnStr": "number: The object type if successful.\r\n  The valid object types are as follows:\r\n  Value   Description\r\n    0           Unknown object\r\n    1           Point\r\n    2           Point cloud\r\n    4           Curve\r\n    8           Surface or single-face brep\r\n    16          Polysurface or multiple-face\r\n    32          Mesh\r\n    256         Light\r\n    512         Annotation\r\n    4096        Instance or block reference\r\n    8192        Text dot object\r\n    16384       Grip object\r\n    32768       Detail\r\n    65536       Hatch\r\n    131072      Morph control\r\n    134217728   Cage\r\n    268435456   Phantom\r\n    536870912   Clipping plane\r\n    1073741824  Extrusion",
         "Example": [
           "import rhinoscriptsyntax as rs",
           "obj = rs.GetObject(\"Select object\")",
@@ -26567,7 +26568,7 @@
             "FunctionName": "ObjectsByType"
           }
         ],
-        "DocString": "    \"\"\"Returns the object type\r\n    Parameters:\r\n      object_id (guid): identifier of an object\r\n    Returns:\r\n      number: The object type if successful.\r\n        The valid object types are as follows:\r\n        Value   Description\r\n          0       Unknown object\r\n          1       Point\r\n          2       Point cloud\r\n          4       Curve\r\n          8       Surface or single-face brep\r\n          16      Polysurface or multiple-face\r\n          32      Mesh\r\n          256     Light\r\n          512     Annotation\r\n          4096    Instance or block reference\r\n          8192    Text dot object\r\n          16384   Grip object\r\n          32768   Detail\r\n          65536   Hatch\r\n          131072  Morph control\r\n          134217728  Cage\r\n          268435456  Phantom\r\n          536870912  Clipping plane\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select object\")\r\n      if obj:\r\n          objtype = rs.ObjectType(obj)\r\n          print \"Object type:\", objtype\r\n    See Also:\r\n      ObjectsByType\r\n    \"\"\"",
+        "DocString": "    \"\"\"Returns the object type\r\n    Parameters:\r\n      object_id (guid): identifier of an object\r\n    Returns:\r\n      number: The object type if successful.\r\n        The valid object types are as follows:\r\n        Value   Description\r\n          0           Unknown object\r\n          1           Point\r\n          2           Point cloud\r\n          4           Curve\r\n          8           Surface or single-face brep\r\n          16          Polysurface or multiple-face\r\n          32          Mesh\r\n          256         Light\r\n          512         Annotation\r\n          4096        Instance or block reference\r\n          8192        Text dot object\r\n          16384       Grip object\r\n          32768       Detail\r\n          65536       Hatch\r\n          131072      Morph control\r\n          134217728   Cage\r\n          268435456   Phantom\r\n          536870912   Clipping plane\r\n          1073741824  Extrusion\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select object\")\r\n      if obj:\r\n          objtype = rs.ObjectType(obj)\r\n          print \"Object type:\", objtype\r\n    See Also:\r\n      ObjectsByType\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -28776,17 +28777,17 @@
           "    if point:",
           "        results = rs.PointClosestObject(point, objs)",
           "        if results:",
-          "              print \"Object id:\", results[0]",
-          "              rs.AddPoint( results[1] )"
+          "            print \"Object id:\", results[0]",
+          "            rs.AddPoint( results[1] )"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nobjs = rs.GetObjects(\"Select target objects for closest point\", 63)\r\nif objs:\r\n    point = rs.GetPoint(\"Test point\")\r\n    if point:\r\n        results = rs.PointClosestObject(point, objs)\r\n        if results:\r\n              print \"Object id:\", results[0]\r\n              rs.AddPoint( results[1] )",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nobjs = rs.GetObjects(\"Select target objects for closest point\", 63)\r\nif objs:\r\n    point = rs.GetPoint(\"Test point\")\r\n    if point:\r\n        results = rs.PointClosestObject(point, objs)\r\n        if results:\r\n            print \"Object id:\", results[0]\r\n            rs.AddPoint( results[1] )",
         "SeeAlso": [
           {
             "ModuleName": "curve",
             "FunctionName": "CurveClosestObject"
           }
         ],
-        "DocString": "    \"\"\"Finds the object that is closest to a test point\r\n    Parameters:\r\n      point (point): point to test\r\n      object_id ([guid, ...]): identifiers of one or more objects\r\n    Returns:\r\n      list(guid, point): closest [0] object_id and [1] point on object on success\r\n      None: on failure\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      objs = rs.GetObjects(\"Select target objects for closest point\", 63)\r\n      if objs:\r\n          point = rs.GetPoint(\"Test point\")\r\n          if point:\r\n              results = rs.PointClosestObject(point, objs)\r\n              if results:\r\n                    print \"Object id:\", results[0]\r\n                    rs.AddPoint( results[1] )\r\n    See Also:\r\n      CurveClosestObject\r\n    \"\"\"",
+        "DocString": "    \"\"\"Finds the object that is closest to a test point\r\n    Parameters:\r\n      point (point): point to test\r\n      object_id ([guid, ...]): identifiers of one or more objects\r\n    Returns:\r\n      list(guid, point): closest [0] object_id and [1] point on object on success\r\n      None: on failure\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      objs = rs.GetObjects(\"Select target objects for closest point\", 63)\r\n      if objs:\r\n          point = rs.GetPoint(\"Test point\")\r\n          if point:\r\n              results = rs.PointClosestObject(point, objs)\r\n              if results:\r\n                  print \"Object id:\", results[0]\r\n                  rs.AddPoint( results[1] )\r\n    See Also:\r\n      CurveClosestObject\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -30406,7 +30407,12 @@
           {
             "Name": "filter",
             "TypeInfo": "(number, optional)",
-            "Desc": " The type(s) of geometry (points, curves, surfaces, meshes,...)\r\n          that can be selected. Object types can be added together to filter\r\n          several different kinds of geometry. use the filter class to get values\r\n      group (bool, optional) Honor object grouping.  If omitted and the user picks a group,\r\n          the entire group will be picked (True). Note, if filter is set to a\r\n          value other than 0 (All objects), then group selection will be disabled.\r\n      "
+            "Desc": " The type(s) of geometry (points, curves, surfaces, meshes,...)\r\n          that can be selected. Object types can be added together to filter\r\n          several different kinds of geometry. use the filter class to get values\r\n              Value         Description\r\n              0             All objects (default)\r\n              1             Point\r\n              2             Point cloud\r\n              4             Curve\r\n              8             Surface or single-face brep\r\n              16            Polysurface or multiple-face\r\n              32            Mesh\r\n              256           Light\r\n              512           Annotation\r\n              4096          Instance or block reference\r\n              8192          Text dot object\r\n              16384         Grip object\r\n              32768         Detail\r\n              65536         Hatch\r\n              131072        Morph control\r\n              134217728     Cage\r\n              268435456     Phantom\r\n              536870912     Clipping plane\r\n              1073741824    Extrusion\r\n      "
+          },
+          {
+            "Name": "group",
+            "TypeInfo": "(bool, optional)",
+            "Desc": " Honor object grouping.  If omitted and the user picks a group,\r\n          the entire group will be picked (True). Note, if filter is set to a\r\n          value other than 0 (All objects), then group selection will be disabled.\r\n      "
           },
           {
             "Name": "preselect",
@@ -30437,7 +30443,7 @@
         "Signature": "GetObjects(message=None, filter=0, group=True, preselect=False, select=False, objects=None, minimum_count=1, maximum_count=0, custom_filter=None)",
         "Description": "Prompts user to pick or select one or more objects.",
         "HasArguments": true,
-        "ArgumentDesc": "message (str, optional): a prompt or message.\r\nfilter (number, optional): The type(s) of geometry (points, curves, surfaces, meshes,...)\r\n    that can be selected. Object types can be added together to filter\r\n    several different kinds of geometry. use the filter class to get values\r\ngroup (bool, optional) Honor object grouping.  If omitted and the user picks a group,\r\n    the entire group will be picked (True). Note, if filter is set to a\r\n    value other than 0 (All objects), then group selection will be disabled.\r\npreselect (bool, optional):  Allow for the selection of pre-selected objects.\r\nselect (bool, optional): Select the picked objects.  If False, the objects that are\r\n    picked are not selected.\r\nobjects ([guid, ...]): list of objects that are allowed to be selected\r\nminimum_count, maximum_count(number): limits on number of objects allowed to be selected\r\ncustom_filter (str, optional): Calls a custom function in the script and passes the Rhino Object, Geometry, and component index and returns true or false indicating if the object can be selected",
+        "ArgumentDesc": "message (str, optional): a prompt or message.\r\nfilter (number, optional): The type(s) of geometry (points, curves, surfaces, meshes,...)\r\n    that can be selected. Object types can be added together to filter\r\n    several different kinds of geometry. use the filter class to get values\r\n        Value         Description\r\n        0             All objects (default)\r\n        1             Point\r\n        2             Point cloud\r\n        4             Curve\r\n        8             Surface or single-face brep\r\n        16            Polysurface or multiple-face\r\n        32            Mesh\r\n        256           Light\r\n        512           Annotation\r\n        4096          Instance or block reference\r\n        8192          Text dot object\r\n        16384         Grip object\r\n        32768         Detail\r\n        65536         Hatch\r\n        131072        Morph control\r\n        134217728     Cage\r\n        268435456     Phantom\r\n        536870912     Clipping plane\r\n        1073741824    Extrusion\r\ngroup (bool, optional): Honor object grouping.  If omitted and the user picks a group,\r\n    the entire group will be picked (True). Note, if filter is set to a\r\n    value other than 0 (All objects), then group selection will be disabled.\r\npreselect (bool, optional):  Allow for the selection of pre-selected objects.\r\nselect (bool, optional): Select the picked objects.  If False, the objects that are\r\n    picked are not selected.\r\nobjects ([guid, ...]): list of objects that are allowed to be selected\r\nminimum_count, maximum_count(number): limits on number of objects allowed to be selected\r\ncustom_filter (str, optional): Calls a custom function in the script and passes the Rhino Object, Geometry, and component index and returns true or false indicating if the object can be selected",
         "Returns": [
           {
             "Item1": "\r\n      list(guid, ...)",
@@ -30465,7 +30471,7 @@
             "FunctionName": "GetSurfaceObject"
           }
         ],
-        "DocString": "    \"\"\"Prompts user to pick or select one or more objects.\r\n    Parameters:\r\n      message (str, optional): a prompt or message.\r\n      filter (number, optional): The type(s) of geometry (points, curves, surfaces, meshes,...)\r\n          that can be selected. Object types can be added together to filter\r\n          several different kinds of geometry. use the filter class to get values\r\n      group (bool, optional) Honor object grouping.  If omitted and the user picks a group,\r\n          the entire group will be picked (True). Note, if filter is set to a\r\n          value other than 0 (All objects), then group selection will be disabled.\r\n      preselect (bool, optional):  Allow for the selection of pre-selected objects.\r\n      select (bool, optional): Select the picked objects.  If False, the objects that are\r\n          picked are not selected.\r\n      objects ([guid, ...]): list of objects that are allowed to be selected\r\n      minimum_count, maximum_count(number): limits on number of objects allowed to be selected\r\n      custom_filter (str, optional): Calls a custom function in the script and passes the Rhino Object, Geometry, and component index and returns true or false indicating if the object can be selected\r\n    Returns:\r\n      list(guid, ...): identifiers of the picked objects\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      objectIds = rs.GetObjects(\"Pick some curves\", rs.filter.curve)\r\n      for id in objectIds: print \"Object identifier:\", id\r\n    See Also:\r\n      GetCurveObject\r\n      GetObject\r\n      GetSurfaceObject\r\n    \"\"\"",
+        "DocString": "    \"\"\"Prompts user to pick or select one or more objects.\r\n    Parameters:\r\n      message (str, optional): a prompt or message.\r\n      filter (number, optional): The type(s) of geometry (points, curves, surfaces, meshes,...)\r\n          that can be selected. Object types can be added together to filter\r\n          several different kinds of geometry. use the filter class to get values\r\n              Value         Description\r\n              0             All objects (default)\r\n              1             Point\r\n              2             Point cloud\r\n              4             Curve\r\n              8             Surface or single-face brep\r\n              16            Polysurface or multiple-face\r\n              32            Mesh\r\n              256           Light\r\n              512           Annotation\r\n              4096          Instance or block reference\r\n              8192          Text dot object\r\n              16384         Grip object\r\n              32768         Detail\r\n              65536         Hatch\r\n              131072        Morph control\r\n              134217728     Cage\r\n              268435456     Phantom\r\n              536870912     Clipping plane\r\n              1073741824    Extrusion\r\n      group (bool, optional): Honor object grouping.  If omitted and the user picks a group,\r\n          the entire group will be picked (True). Note, if filter is set to a\r\n          value other than 0 (All objects), then group selection will be disabled.\r\n      preselect (bool, optional):  Allow for the selection of pre-selected objects.\r\n      select (bool, optional): Select the picked objects.  If False, the objects that are\r\n          picked are not selected.\r\n      objects ([guid, ...]): list of objects that are allowed to be selected\r\n      minimum_count, maximum_count(number): limits on number of objects allowed to be selected\r\n      custom_filter (str, optional): Calls a custom function in the script and passes the Rhino Object, Geometry, and component index and returns true or false indicating if the object can be selected\r\n    Returns:\r\n      list(guid, ...): identifiers of the picked objects\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      objectIds = rs.GetObjects(\"Pick some curves\", rs.filter.curve)\r\n      for id in objectIds: print \"Object identifier:\", id\r\n    See Also:\r\n      GetCurveObject\r\n      GetObject\r\n      GetSurfaceObject\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -31721,11 +31727,11 @@
           "import rhinoscriptsyntax as  rs",
           "curve_ids = rs.GetObjects(\"Select  curves in network\", 4, True, True)",
           "if len(curve_ids) > 0:",
-          "  rs.AddNetworkSrf(curve_ids)"
+          "    rs.AddNetworkSrf(curve_ids)"
         ],
-        "ExampleString": "import rhinoscriptsyntax as  rs\r\ncurve_ids = rs.GetObjects(\"Select  curves in network\", 4, True, True)\r\nif len(curve_ids) > 0:\r\n  rs.AddNetworkSrf(curve_ids)",
+        "ExampleString": "import rhinoscriptsyntax as  rs\r\ncurve_ids = rs.GetObjects(\"Select  curves in network\", 4, True, True)\r\nif len(curve_ids) > 0:\r\n    rs.AddNetworkSrf(curve_ids)",
         "SeeAlso": [],
-        "DocString": "    \"\"\"Creates a surface from a network of crossing curves\r\n    Parameters:\r\n      curves ([guid, ...]): curves from which to create the surface\r\n      continuity (number, optional): how the edges match the input geometry\r\n                 0 = loose\r\n                 1 = position\r\n                 2 = tangency\r\n                 3 = curvature\r\n    Returns:\r\n      guid: identifier of new object if successful\r\n    Example:\r\n      import rhinoscriptsyntax as  rs\r\n      curve_ids = rs.GetObjects(\"Select  curves in network\", 4, True, True)\r\n      if len(curve_ids) > 0:\r\n        rs.AddNetworkSrf(curve_ids)\r\n    See Also:\r\n      \r\n    \"\"\"",
+        "DocString": "    \"\"\"Creates a surface from a network of crossing curves\r\n    Parameters:\r\n      curves ([guid, ...]): curves from which to create the surface\r\n      continuity (number, optional): how the edges match the input geometry\r\n                 0 = loose\r\n                 1 = position\r\n                 2 = tangency\r\n                 3 = curvature\r\n    Returns:\r\n      guid: identifier of new object if successful\r\n    Example:\r\n      import rhinoscriptsyntax as  rs\r\n      curve_ids = rs.GetObjects(\"Select  curves in network\", 4, True, True)\r\n      if len(curve_ids) > 0:\r\n          rs.AddNetworkSrf(curve_ids)\r\n    See Also:\r\n      \r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -32548,11 +32554,11 @@
           "import rhinoscriptsyntax as rs",
           "profile = rs.GetObject(\"Select a profile\", rs.filter.curve)",
           "if profile:",
-          "  rail = rs.GetObject(\"Select a rail\", rs.filter.curve)",
-          "  if rail:",
-          "    rs.AddRailRevSrf(profile, rail, ((0,0,0),(0,0,1)))"
+          "    rail = rs.GetObject(\"Select a rail\", rs.filter.curve)",
+          "    if rail:",
+          "        rs.AddRailRevSrf(profile, rail, ((0,0,0),(0,0,1)))"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nprofile = rs.GetObject(\"Select a profile\", rs.filter.curve)\r\nif profile:\r\n  rail = rs.GetObject(\"Select a rail\", rs.filter.curve)\r\n  if rail:\r\n    rs.AddRailRevSrf(profile, rail, ((0,0,0),(0,0,1)))",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nprofile = rs.GetObject(\"Select a profile\", rs.filter.curve)\r\nif profile:\r\n    rail = rs.GetObject(\"Select a rail\", rs.filter.curve)\r\n    if rail:\r\n        rs.AddRailRevSrf(profile, rail, ((0,0,0),(0,0,1)))",
         "SeeAlso": [
           {
             "ModuleName": "surface",
@@ -32567,7 +32573,7 @@
             "FunctionName": "ReverseCurve"
           }
         ],
-        "DocString": "    \"\"\"Adds a surface created through profile curves that define the surface\r\n    shape and two curves that defines a surface edge.\r\n    Parameters:\r\n      profile (guid): identifier of the profile curve\r\n      rail (guid): identifier of the rail curve\r\n      axis ([point, point]): A list of two 3-D points identifying the start point and end point of the rail revolve axis, or a Line\r\n      scale_height (bool, optional): If True, surface will be locally scaled. Defaults to False\r\n    Returns:\r\n      guid: identifier of the new object if successful\r\n      None: if not successful, or on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      profile = rs.GetObject(\"Select a profile\", rs.filter.curve)\r\n      if profile:\r\n        rail = rs.GetObject(\"Select a rail\", rs.filter.curve)\r\n        if rail:\r\n          rs.AddRailRevSrf(profile, rail, ((0,0,0),(0,0,1)))\r\n    See Also:\r\n      AddSweep1\r\n      CurveDirectionsMatch\r\n      ReverseCurve\r\n    \"\"\"",
+        "DocString": "    \"\"\"Adds a surface created through profile curves that define the surface\r\n    shape and two curves that defines a surface edge.\r\n    Parameters:\r\n      profile (guid): identifier of the profile curve\r\n      rail (guid): identifier of the rail curve\r\n      axis ([point, point]): A list of two 3-D points identifying the start point and end point of the rail revolve axis, or a Line\r\n      scale_height (bool, optional): If True, surface will be locally scaled. Defaults to False\r\n    Returns:\r\n      guid: identifier of the new object if successful\r\n      None: if not successful, or on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      profile = rs.GetObject(\"Select a profile\", rs.filter.curve)\r\n      if profile:\r\n          rail = rs.GetObject(\"Select a rail\", rs.filter.curve)\r\n          if rail:\r\n              rs.AddRailRevSrf(profile, rail, ((0,0,0),(0,0,1)))\r\n    See Also:\r\n      AddSweep1\r\n      CurveDirectionsMatch\r\n      ReverseCurve\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -32823,9 +32829,9 @@
           "        arrCP = rs.BrepClosestPoint(obj, point)",
           "        if arrCP:",
           "            rs.AddPoint(point)",
-          "       rs.AddPoint( arrCP[0] )"
+          "            rs.AddPoint( arrCP[0] )"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nobj = rs.GetObject(\"Select a surface\", rs.filter.surface)\r\nif obj:\r\n    point = rs.GetPoint(\"Pick a test point\")\r\n    if point:\r\n        arrCP = rs.BrepClosestPoint(obj, point)\r\n        if arrCP:\r\n            rs.AddPoint(point)\r\n       rs.AddPoint( arrCP[0] )",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nobj = rs.GetObject(\"Select a surface\", rs.filter.surface)\r\nif obj:\r\n    point = rs.GetPoint(\"Pick a test point\")\r\n    if point:\r\n        arrCP = rs.BrepClosestPoint(obj, point)\r\n        if arrCP:\r\n            rs.AddPoint(point)\r\n            rs.AddPoint( arrCP[0] )",
         "SeeAlso": [
           {
             "ModuleName": "surface",
@@ -32840,7 +32846,7 @@
             "FunctionName": "SurfaceClosestPoint"
           }
         ],
-        "DocString": "    \"\"\"Returns the point on a surface or polysurface that is closest to a test\r\n    point. This function works on both untrimmed and trimmed surfaces.\r\n    Parameters:\r\n      object_id (guid): The object's identifier.\r\n      point (point): The test, or sampling point.\r\n    Returns:\r\n      tuple(point, [number, number], [number, number], vector): of closest point information if successful. The list will\r\n      contain the following information:\r\n      Element     Type             Description\r\n         0        Point3d          The 3-D point at the parameter value of the \r\n                                   closest point.\r\n         1        (U, V)           Parameter values of closest point. Note, V \r\n                                   is 0 if the component index type is brep_edge\r\n                                   or brep_vertex. \r\n         2        (type, index)    The type and index of the brep component that\r\n                                   contains the closest point. Possible types are\r\n                                   brep_face, brep_edge or brep_vertex.\r\n         3        Vector3d         The normal to the brep_face, or the tangent\r\n                                   to the brep_edge.  \r\n      None: if not successful, or on error.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select a surface\", rs.filter.surface)\r\n      if obj:\r\n          point = rs.GetPoint(\"Pick a test point\")\r\n          if point:\r\n              arrCP = rs.BrepClosestPoint(obj, point)\r\n              if arrCP:\r\n                  rs.AddPoint(point)\r\n             rs.AddPoint( arrCP[0] )\r\n    See Also:\r\n      EvaluateSurface\r\n      IsSurface\r\n      SurfaceClosestPoint\r\n    \"\"\"",
+        "DocString": "    \"\"\"Returns the point on a surface or polysurface that is closest to a test\r\n    point. This function works on both untrimmed and trimmed surfaces.\r\n    Parameters:\r\n      object_id (guid): The object's identifier.\r\n      point (point): The test, or sampling point.\r\n    Returns:\r\n      tuple(point, [number, number], [number, number], vector): of closest point information if successful. The list will\r\n      contain the following information:\r\n      Element     Type             Description\r\n         0        Point3d          The 3-D point at the parameter value of the \r\n                                   closest point.\r\n         1        (U, V)           Parameter values of closest point. Note, V \r\n                                   is 0 if the component index type is brep_edge\r\n                                   or brep_vertex. \r\n         2        (type, index)    The type and index of the brep component that\r\n                                   contains the closest point. Possible types are\r\n                                   brep_face, brep_edge or brep_vertex.\r\n         3        Vector3d         The normal to the brep_face, or the tangent\r\n                                   to the brep_edge.  \r\n      None: if not successful, or on error.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select a surface\", rs.filter.surface)\r\n      if obj:\r\n          point = rs.GetPoint(\"Pick a test point\")\r\n          if point:\r\n              arrCP = rs.BrepClosestPoint(obj, point)\r\n              if arrCP:\r\n                  rs.AddPoint(point)\r\n                  rs.AddPoint( arrCP[0] )\r\n    See Also:\r\n      EvaluateSurface\r\n      IsSurface\r\n      SurfaceClosestPoint\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -34563,18 +34569,18 @@
           "import rhinoscriptsyntax as rs",
           "surface = rs.GetObject(\"Select a surface\", rs.filter.surface)",
           "if surface:",
-          "  result = rs.SurfaceSphere(surface)",
-          "  if result:",
-          "    print(\"The sphere radius is: \" + str(result[1]))"
+          "    result = rs.SurfaceSphere(surface)",
+          "    if result:",
+          "        print(\"The sphere radius is: \" + str(result[1]))"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nsurface = rs.GetObject(\"Select a surface\", rs.filter.surface)\r\nif surface:\r\n  result = rs.SurfaceSphere(surface)\r\n  if result:\r\n    print(\"The sphere radius is: \" + str(result[1]))",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nsurface = rs.GetObject(\"Select a surface\", rs.filter.surface)\r\nif surface:\r\n    result = rs.SurfaceSphere(surface)\r\n    if result:\r\n        print(\"The sphere radius is: \" + str(result[1]))",
         "SeeAlso": [
           {
             "ModuleName": "surface",
             "FunctionName": "SurfaceCylinder"
           }
         ],
-        "DocString": "    \"\"\"Gets the sphere definition from a surface, if possible.\r\n    Parameters:\r\n      surface_id (guid): the identifier of the surface object\r\n    Returns:\r\n      (plane, number): The equatorial plane of the sphere, and its radius.\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      surface = rs.GetObject(\"Select a surface\", rs.filter.surface)\r\n      if surface:\r\n        result = rs.SurfaceSphere(surface)\r\n        if result:\r\n          print(\"The sphere radius is: \" + str(result[1]))\r\n    See Also:\r\n      SurfaceCylinder\r\n    \"\"\"",
+        "DocString": "    \"\"\"Gets the sphere definition from a surface, if possible.\r\n    Parameters:\r\n      surface_id (guid): the identifier of the surface object\r\n    Returns:\r\n      (plane, number): The equatorial plane of the sphere, and its radius.\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      surface = rs.GetObject(\"Select a surface\", rs.filter.surface)\r\n      if surface:\r\n          result = rs.SurfaceSphere(surface)\r\n          if result:\r\n              print(\"The sphere radius is: \" + str(result[1]))\r\n    See Also:\r\n      SurfaceCylinder\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -34893,10 +34899,10 @@
         "Example": [
           "import rhinoscriptsyntax as rs",
           "obj = rs.GetObject(\"Select a surface to reverse\")",
-          "ff rs.IsSurface(obj):",
-          "  rs.ReverseSurface( obj, 1 )"
+          "if rs.IsSurface(obj):",
+          "    rs.ReverseSurface( obj, 1 )"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nobj = rs.GetObject(\"Select a surface to reverse\")\r\nff rs.IsSurface(obj):\r\n  rs.ReverseSurface( obj, 1 )",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nobj = rs.GetObject(\"Select a surface to reverse\")\r\nif rs.IsSurface(obj):\r\n    rs.ReverseSurface( obj, 1 )",
         "SeeAlso": [
           {
             "ModuleName": "surface",
@@ -34907,7 +34913,7 @@
             "FunctionName": "IsSurface"
           }
         ],
-        "DocString": "    \"\"\"Reverses U or V directions of a surface, or swaps (transposes) U and V\r\n    directions.\r\n    Parameters:\r\n      surface_id (guid): identifier of a surface object\r\n      direction (number): as a bit coded flag to swap\r\n            1 = reverse U\r\n            2 = reverse V\r\n            4 = transpose U and V (values can be combined)\r\n    Returns:\r\n      bool: indicating success or failure\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select a surface to reverse\")\r\n      ff rs.IsSurface(obj):\r\n        rs.ReverseSurface( obj, 1 )\r\n    See Also:\r\n      FlipSurface\r\n      IsSurface\r\n    \"\"\"",
+        "DocString": "    \"\"\"Reverses U or V directions of a surface, or swaps (transposes) U and V\r\n    directions.\r\n    Parameters:\r\n      surface_id (guid): identifier of a surface object\r\n      direction (number): as a bit coded flag to swap\r\n            1 = reverse U\r\n            2 = reverse V\r\n            4 = transpose U and V (values can be combined)\r\n    Returns:\r\n      bool: indicating success or failure\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select a surface to reverse\")\r\n      if rs.IsSurface(obj):\r\n          rs.ReverseSurface( obj, 1 )\r\n    See Also:\r\n      FlipSurface\r\n      IsSurface\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -39056,10 +39062,10 @@
           "import rhinoscriptsyntax as rs",
           "obj = rs.GetObject(\"Select object\")",
           "if obj:",
-          "  rs.SetUserText( obj, \"PartNo\", \"KM40-4960\" )",
-          "  rs.SetUserText( obj, \"Price\", \"1.25\" )"
+          "    rs.SetUserText( obj, \"PartNo\", \"KM40-4960\" )",
+          "    rs.SetUserText( obj, \"Price\", \"1.25\" )"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nobj = rs.GetObject(\"Select object\")\r\nif obj:\r\n  rs.SetUserText( obj, \"PartNo\", \"KM40-4960\" )\r\n  rs.SetUserText( obj, \"Price\", \"1.25\" )",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nobj = rs.GetObject(\"Select object\")\r\nif obj:\r\n    rs.SetUserText( obj, \"PartNo\", \"KM40-4960\" )\r\n    rs.SetUserText( obj, \"Price\", \"1.25\" )",
         "SeeAlso": [
           {
             "ModuleName": "userdata",
@@ -39070,7 +39076,7 @@
             "FunctionName": "IsUserText"
           }
         ],
-        "DocString": "    \"\"\"Sets or removes user text stored on an object.\r\n    Parameters:\r\n      object_id (str): the object's identifier\r\n      key (str): the key name to set\r\n      value (str, optional) the string value to set. If omitted, the key/value pair\r\n          specified by key will be deleted\r\n      attach_to_geometry (bool, optional): location on the object to store the user text\r\n    Returns:\r\n      bool: True or False indicating success or failure\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select object\")\r\n      if obj:\r\n        rs.SetUserText( obj, \"PartNo\", \"KM40-4960\" )\r\n        rs.SetUserText( obj, \"Price\", \"1.25\" )\r\n    See Also:\r\n      GetUserText\r\n      IsUserText\r\n    \"\"\"",
+        "DocString": "    \"\"\"Sets or removes user text stored on an object.\r\n    Parameters:\r\n      object_id (str): the object's identifier\r\n      key (str): the key name to set\r\n      value (str, optional) the string value to set. If omitted, the key/value pair\r\n          specified by key will be deleted\r\n      attach_to_geometry (bool, optional): location on the object to store the user text\r\n    Returns:\r\n      bool: True or False indicating success or failure\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select object\")\r\n      if obj:\r\n          rs.SetUserText( obj, \"PartNo\", \"KM40-4960\" )\r\n          rs.SetUserText( obj, \"Price\", \"1.25\" )\r\n    See Also:\r\n      GetUserText\r\n      IsUserText\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       }
@@ -40363,9 +40369,9 @@
           "from scriptcontext import doc",
           "arr = rs.GetPolyline()",
           "if arr is not None:",
-          "  doc.AddPolyline(arr)"
+          "    doc.AddPolyline(arr)"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nfrom scriptcontext import doc\r\narr = rs.GetPolyline()\r\nif arr is not None:\r\n  doc.AddPolyline(arr)",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nfrom scriptcontext import doc\r\narr = rs.GetPolyline()\r\nif arr is not None:\r\n    doc.AddPolyline(arr)",
         "SeeAlso": [
           {
             "ModuleName": "userinterface",
@@ -40380,7 +40386,7 @@
             "FunctionName": "GetRectangle"
           }
         ],
-        "DocString": "  \"\"\"Prompts the user to pick points that define a polyline.\r\n  Parameters:\r\n    flags (number, optional) The options are bit coded flags. Values can be added together to specify more than one option. The default is 3.\r\n      value description\r\n      1     Permit close option. If specified, then after 3 points have been picked, the user can type \"Close\" and a closed polyline will be returned.\r\n      2     Permit close snap. If specified, then after 3 points have been picked, the user can pick near the start point and a closed polyline will be returned.\r\n      4     Force close. If specified, then the returned polyline is always closed. If specified, then intMax must be 0 or >= 4.\r\n      Note: the default is 3, or \"Permit close option = True\", \"Permit close snap = True\", and \"Force close = False\".\r\n    message1 (str, optional): A prompt or message for the first point.\r\n    message2 (str, optional): A prompt or message for the second point.\r\n    message3 (str, optional): A prompt or message for the third point.\r\n    message4 (str, optional): A prompt or message for the 'next' point.\r\n    min (number, optional): The minimum number of points to require. The default is 2.\r\n    max (number, optional): The maximum number of points to require; 0 for no limit.  The default is 0.\r\n  Returns:\r\n    list(point, ...): A list of 3-D points that define the polyline if successful.\r\n    None: if not successful or on error\r\n  Example:\r\n    import rhinoscriptsyntax as rs\r\n    from scriptcontext import doc\r\n    arr = rs.GetPolyline()\r\n    if arr is not None:\r\n      doc.AddPolyline(arr)\r\n  See Also:\r\n    GetBox\r\n    GetLine\r\n    GetRectangle\r\n  \"\"\"",
+        "DocString": "  \"\"\"Prompts the user to pick points that define a polyline.\r\n  Parameters:\r\n    flags (number, optional) The options are bit coded flags. Values can be added together to specify more than one option. The default is 3.\r\n      value description\r\n      1     Permit close option. If specified, then after 3 points have been picked, the user can type \"Close\" and a closed polyline will be returned.\r\n      2     Permit close snap. If specified, then after 3 points have been picked, the user can pick near the start point and a closed polyline will be returned.\r\n      4     Force close. If specified, then the returned polyline is always closed. If specified, then intMax must be 0 or >= 4.\r\n      Note: the default is 3, or \"Permit close option = True\", \"Permit close snap = True\", and \"Force close = False\".\r\n    message1 (str, optional): A prompt or message for the first point.\r\n    message2 (str, optional): A prompt or message for the second point.\r\n    message3 (str, optional): A prompt or message for the third point.\r\n    message4 (str, optional): A prompt or message for the 'next' point.\r\n    min (number, optional): The minimum number of points to require. The default is 2.\r\n    max (number, optional): The maximum number of points to require; 0 for no limit.  The default is 0.\r\n  Returns:\r\n    list(point, ...): A list of 3-D points that define the polyline if successful.\r\n    None: if not successful or on error\r\n  Example:\r\n    import rhinoscriptsyntax as rs\r\n    from scriptcontext import doc\r\n    arr = rs.GetPolyline()\r\n    if arr is not None:\r\n        doc.AddPolyline(arr)\r\n  See Also:\r\n    GetBox\r\n    GetLine\r\n    GetRectangle\r\n  \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },

@@ -1,8 +1,7 @@
 ---
 title: Count Objects
 description: Demonstrates how to count all the different object types using RhinoScript.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']

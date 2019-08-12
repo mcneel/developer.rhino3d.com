@@ -1,13 +1,12 @@
 ---
-# title: Creating a Grasshopper Plug-In Package
-description: >
-  This is a step by step guide to pushing a package to the Yak server.
-authors: ['Will Pearson']
-author_contacts: ['will']
+title: Pushing a Package to the Server
+description: This is a step by step guide to pushing a package to the Yak server.
+authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows']
 categories: ['Step By Step']
+origin: unset
 order: 2
 keywords: ['developer', 'yak']
 layout: toc-guide-page
@@ -25,7 +24,7 @@ Before you can push a package to the server, you need to authorize the Yak CLI
 tool using your Rhino Account.
 
 ```commandline
-> "C:\Program Files\Rhino WIP\System\Yak.exe" login
+> "C:\Program Files\Rhino 6\System\Yak.exe" login
 ```
 
 A browser tab should open asking you to log in to Rhino Accounts (assuming you
@@ -57,7 +56,7 @@ use the package created in the
 [previous guide](../creating-a-grasshopper-plugin-package) as an example.
 
 ```commandline
-> "C:\Program Files\Rhino WIP\System\Yak.exe" push marmoset-1.0.0.yak
+> "C:\Program Files\Rhino 6\System\Yak.exe" push marmoset-1.0.0.yak
 ```
 
 Currently (v0.2), this command doesn't produce any output on success.
@@ -67,7 +66,7 @@ it. You should see the name and version number of the package that you just
 pushed. 🤞
 
 ```commandline
-> "C:\Program Files\Rhino WIP\System\Yak.exe" search marmoset
+> "C:\Program Files\Rhino 6\System\Yak.exe" search --all --prerelease marmoset
 
 marmoset (1.0.0)
 ```
@@ -95,10 +94,10 @@ There are a few reasons why pushing a package might not work.
   it's not possible to delete or overwrite versions. Roll the version number and
   let your users know that there's something new for them to try!_
 
-  ---
+---
 
-  ## Related Topics
+## Related Topics
 
-  - [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
-  - [Creating a Grasshopper Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-grasshopper-plugin-package/)
-  - [Creating a Rhino Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)
+- [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
+- [Creating a Grasshopper Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-grasshopper-plugin-package/)
+- [Creating a Rhino Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)

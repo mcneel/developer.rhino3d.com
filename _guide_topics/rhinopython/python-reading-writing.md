@@ -1,8 +1,7 @@
 ---
 title: How to read and write a simple file
 description: Use Python to read and write files.
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
+authors: ['scott_davidson']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']

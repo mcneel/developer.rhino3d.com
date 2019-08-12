@@ -1,8 +1,7 @@
 ---
 title: Add Arrowheads to Curves
 description: Demonstrates how arrowheads can be added to any curve object my modifying attributes.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

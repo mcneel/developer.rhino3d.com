@@ -1,8 +1,7 @@
 ---
 title: Change Construction Plane Modes
 description: Demonstrates how to switch between standard and universal construction plane modes.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

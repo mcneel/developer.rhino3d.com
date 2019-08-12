@@ -1,8 +1,7 @@
 ---
 title: Supporting High DPI Displays
 description: This guide discusses the support of high resolution monitors.
-authors: ['Dale Fugier']
-author_contacts: ['dale']
+authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
 platforms: ['Windows']

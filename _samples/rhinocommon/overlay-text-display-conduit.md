@@ -1,8 +1,7 @@
 ---
 title: Overlay Text Display Conduit
 description: Demonstrates how to use a display conduit to draw overlay text.
-authors: ['Steve Baer']
-author_contacts: ['stevebaer']
+authors: ['steve_baer']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
