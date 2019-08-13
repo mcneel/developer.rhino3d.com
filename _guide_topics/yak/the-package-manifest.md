@@ -177,3 +177,4 @@ dependencies:
 - [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
 - [Anatomy of a Package]({{ site.baseurl }}/guides/yak/the-anatomy-of-a-package/)
 - [Yak CLI Reference]({{ site.baseurl }}/guides/yak/yak-cli-reference)
+
