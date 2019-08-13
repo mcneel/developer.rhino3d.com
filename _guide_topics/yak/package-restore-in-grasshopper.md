@@ -53,20 +53,13 @@ using `yak build` so this can all work happily!
 
 ### Version numbers
 
-Similar to the naming, the Yak server is strict in its use of Semantic
-Versioning[^2] for packages. The server will however attempt to coerce version
-strings that don't exactly match the specification, for example: `1 -> 1.0.0`.
-If the "Unrecognized Objects" dialog kicks up a plug-in that doesn't match
-Semantic Versioning (and can't be coerced), then it won't find any matches.
+Package version numbers can either follow the [Semantic Versioning 2.0.0](https://semver.org) (SemVer) spec or they can be four-digits[^2], as per `System.Version`. See the [package server](../the-package-server) guide for more details on the allowed version number formats.
 
-```commandline
-404: No package found by the name of 'plankton' with version number 'semwhat'.
-```
+The server allows both SemVer and four-digit because some Grasshopper plug-ins will specify their version number as a `string` in a class derived from `GH_AssemblyInfo` whereas others will rely on the `AssemblyVersionAttribute`.
 
-That said, you won't be able to upload a package without adopting Semantic
-Versioning, so...
+If the "Unrecognized Objects" dialog comes across a package/version pair that doesn't exist on the server, it will drop down to searching by GUID and grab the latest version if there's a match.
 
 ---
 
 [^1]: Package names are pretty strict. They only allow letters, numbers, hyphens and underscores.
-[^2]: [http://semver.org/spec/v2.0.0.html](http://semver.org/spec/v2.0.0.html)
+[^2]: Support for four-digit (`System.Version`) version numbers was added in Yak 0.8.
