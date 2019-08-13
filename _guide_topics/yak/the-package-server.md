@@ -34,6 +34,8 @@ The package server has a few conventions that must be followed.
 
 Package names are pretty strict. They only allow letters, numbers, hyphens and underscores, e.g. `Hello_World` or `hello-world1`.
 
+Package names adopt the case used in the very first version that was uploaded. Future uploads ignore the case of the package name and all queries are case-insensitive.
+
 ### Versioning
 
 Package version numbers must either follow [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html) (e.g. `1.1.0-beta`) or `System.Version` a.k.a. Microsoft's four-digit standard (e.g. `1.2.3.4`).

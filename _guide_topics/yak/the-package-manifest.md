@@ -68,15 +68,15 @@ name: plankton
 
 ### Version
 
-The version string given to the package, adhering strictly to [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html). We've adopted SemVer to make ordering straightforward and also for easy identification of pre-release versions – handy when releasing beta plug-ins for limited testing!
+_Since 0.8: four-digit version numbers allowed_
 
-Partial version numbers are expanded to the full `major.minor.patch` by the server, e.g. `0.1 -> 0.1.0`.
+The version number given to the package.
+
+Package version numbers **must** either follow [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html) (e.g. `1.1.0-beta`) or `System.Version` a.k.a. Microsoft's four-digit standard (e.g. `1.2.3.4`). It's recommended to use Semantic Versioning because it allows package authors to specify prerelease versions. These are handy for limited testing, since by default the latest _stable_ version is installed.
 
 ```yaml
 version: 0.3.4
 ```
-
-For specific questions about versioning, please direct those to the [Yak Forum](https://discourse.mcneel.com/c/serengeti/yak)
 
 ### Authors
 
