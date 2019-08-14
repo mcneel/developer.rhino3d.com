@@ -7,7 +7,7 @@ languages: ['Python']
 platforms: ['Windows', 'Mac', 'Grasshopper']
 categories: ['GhPython']
 origin:
-order: 3
+order: 6
 keywords: ['python', 'commands', 'grasshopper']
 layout: toc-guide-page
 ---
