@@ -28,11 +28,12 @@ Start with a standard [GHPython Component](https://developer.rhino3d.com/guides/
 
 ![{{ site.baseurl }}/images/ghpython-bake.png]({{ site.baseurl }}/images/ghpython-bake.png){: .img-center width="60%"}
 
+[Download this sample Gh file here....](https://github.com/mcneel/rhino.inside/raw/master/Autodesk/Revit/doc/samples/Python%20Bake.gh)
 
 In this case we use 3 inputs. Change the names of input and output and the Type hint by right clicking on each input:
 
-- `G`: Geometry to bake (GUIID)
-- `L`: Layer name to bake to (String).
+- `G`: Geometry to bake (Guid)
+- `L`: Layer name to bake to (str).
 - `B`: Activate toggle to bake (bool)
 
 To test this component. the Box Param is the easiest geometry type to use for testing.  Add a Layer name using a panel as input.  Use a Button or a Switch to toggle `True` and `False`.
@@ -58,39 +59,35 @@ import scriptcontext
 import Rhino
 
 
-scriptcontext.doc = ghdoc
-
-
 if B:
     
     print(type(G)) #debug message to Python output
     
     #we obtain the reference in the Rhino doc
     doc_object = rs.coercerhinoobject(G, True, True)
-    
-    print(type(doc_object)) #debug message to Python output
+    print(type(doc_object))
     
     attributes = doc_object.Attributes
-    print('the type of attributes is: ' + str(type(attributes))) #debug message to Python output
+    print('the type of attributes is: ' + str(type(attributes)))     #debug message to Python output
+
     geometry = doc_object.Geometry
-    print('the type of geometry is: ' + str(type(doc_object))) #debug message to Python output
+    print('the type of geometry is: ' + str(type(doc_object)))     #debug message to Python output
     
     #we change the scriptcontext
     scriptcontext.doc = Rhino.RhinoDoc.ActiveDoc
     
     #we add both the geometry and the attributes to the Rhino doc
     rhino_brep = scriptcontext.doc.Objects.Add(geometry, attributes)
-    print('the Rhino doc ID is: ' + str(rhino_brep)) #debug message to Python output
+    print('the Rhino doc ID is: ' + str(rhino_brep))     #debug message to Python output
     
-    #we can for example change color in Rhino...
-    # rs.ObjectColor(rhino_line, color)
+    #we can for example change the layer in Rhino...
     if not rs.IsLayer(L): 
         rs.AddLayer(L)
     rs.ObjectLayer(rhino_brep, L)
     
     #we put back the original Grasshopper document as default
     scriptcontext.doc = ghdoc
-    a = rhino_brep
+    a = G
 ```
 {: .line-numbers}
 
@@ -103,30 +100,26 @@ There are various key lines of code to be understand:
 </tr>
 <tr>
 <td>17</td>
-<td>Grasshopper has it's own document.  Rhino has its own document also.  This line makes sure the current scripting context is in the Grasshopper document.</td>
-</tr>
-<tr>
-<td>20</td>
 <td>Standard <code>if</code> statement to activate the bake once the <code>B</code> is set to <code>TRUE</code>.</td>
 </tr>
 <tr>
-<td>25</td>
+<td>22</td>
 <td>The coercerhinoobject method will attempt to take anything input and convert the results a Rhino Geoemtry Object.  There are many coerce methods for various input types.</td>
 </tr>
 <tr>
-<td>29</td>
-<td>Split the coerced object into its Attributes.  The attributes of an object include such properties as color, layer, linetype, render material, and group membership, amongst others. The Advanced section below covers object attributes some more.</td>
+<td>25</td>
+<td>Split off the coerced object's Attributes.  The attributes of an object include such properties as color, layer, linetype, render material, and group membership, amongst others. The Advanced section below covers object attributes some more.</td>
 </tr>
 <tr>
 <td>31</td>
-<td>Split the coerced object into its Geometry object. Used when baking the object into Rhino.</td>
+<td>Split off the coerced object's Geometry. Used when baking the object into Rhino.</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Grasshopper has its own document.  Rhino has its own document also. Make sure the script is talking to the Rhino Document for the following functions.</td>
 </tr>
 <tr>
 <td>35</td>
-<td>Make sure the script is talking to the Rhino Document for the following functions.</td>
-</tr>
-<tr>
-<td>38</td>
 <td>Add the object to the Rhino document. This is the actual Bake.  Take note that if it has been baked previous, there will now be two objects.</td>
 </tr>
 <tr>
@@ -161,31 +154,31 @@ In the sample above using the layername to specify where the object ultimately l
 
 <table>
 <tr>
-<td>ObjectName</td>
+<td>Object name</td>
 <td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectName">rs.ObjectName(object-id, name)</a></td>
 </tr>
 <tr>
-<td>Display Color</td>
+<td>Display color</td>
 <td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectColorSource">rs.ObjectColorSource(object_ids, source=None)</a><br><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectColor">rs.ObjectColor(object_ids, color=None)</a></td>
 </tr>
 <tr>
-<td>Print Color</td>
+<td>Print color</td>
 <td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectPrintColorSource">rs.ObjectPrintColorSource(object_ids, source=None)</a><br><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectPrintColor">rs.ObjectPrintColor(object_ids, color=None)</a></td>
 </tr>
 <tr>
-<td>UnlockObject</td>
+<td>Unlock object</td>
 <td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-UnlockObject">rs.UnlockObject(object_id)</a></td>
 </tr>
 <tr>
-<td>LockObject</td>
+<td>Lock object</td>
 <td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-LockObject">rs.LockObject(object_id)</a></td>
 </tr>
 <tr>
-<td>HideObject</td>
+<td>Hide object</td>
 <td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-HideObject">rs.HideObject(object_id)</a></td>
 </tr>
 <tr>
-<td>Material</td>
+<td>Set Material</td>
 <td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectMaterialSource">rs.ObjectMaterialSource(object_ids, source=None)</a><br>
 <a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectMaterialIndex">rs.ObjectMaterialIndex(object_id, material_index=None)</a>
 </td>
