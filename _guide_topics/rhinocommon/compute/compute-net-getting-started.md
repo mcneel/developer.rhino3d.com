@@ -95,7 +95,7 @@ namespace TestCompute
     {
         static void Main(string[] args)
         {
-            ComputeServer.ApiToken = "scottd@mcneel.com";
+            ComputeServer.AuthToken = "scottd@mcneel.com";
 
             // Uses standard Rhino3dmIO methods locally to create a sphere.
             var sphere = new Rhino.Geometry.Sphere(Rhino.Geometry.Point3d.Origin, 12);
@@ -158,7 +158,7 @@ namespace CircleIntersection
     {
         static void Main(string[] args)
         {
-            Rhino.Compute.ComputeServer.ApiToken = "circleintersectionsample@mcneel.com";
+            Rhino.Compute.ComputeServer.AuthToken = "circleintersectionsample@mcneel.com";
 
             // create a couple Circles using a local copy of Rhino3dmIo
             var c1 = new Circle(new Point3d(0, 0, 0), 100);
