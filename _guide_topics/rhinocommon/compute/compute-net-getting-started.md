@@ -124,7 +124,7 @@ namespace TestCompute
 ```
 {: .line-numbers}
 
-This example above first creates a sphere using Rhino3DMio locally. Then request Compute to mesh that BREP to Compute, the BREP sphere is meshed. Compute then returns the mesh.  Finally using the local Rhino3DMio package to walk through the mesh, the vertices are counted.
+This example above first creates a sphere using Rhino3dmIO locally. Then request Compute to mesh that BREP to Compute, the BREP sphere is meshed. Compute then returns the mesh.  Finally using the local Rhino3DMio package to walk through the mesh, the vertices are counted.
 
 <table>
 <tr>
