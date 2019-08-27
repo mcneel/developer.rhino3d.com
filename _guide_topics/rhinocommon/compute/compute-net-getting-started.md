@@ -60,7 +60,7 @@ Here are step by step instructions to setting up a basic project to use Compute:
 1. Close the *Manage NuGet Packages* dialog.  The Nuget packages are installed and ready to use.
 
 <div class="alert alert-info" role="alert">
-<strong>Note:</strong> RhinoCompute.cs relies on functionality added to Rhino3dmIO in version 7. It's recommended that you install the latest `7.0.*-wip` NuGet package. To do this, you'll need to check the _Include prerelease_ box.
+<strong>Note:</strong> RhinoCompute.cs relies on functionality added to Rhino3dmIO in version 7. It's recommended that you install the latest <code>7.0.*-wip</code> NuGet package. To do this, you'll need to check the <em>Include prerelease</em> box.
 </div>
 
 Changes that were made:
