@@ -59,6 +59,10 @@ Here are step by step instructions to setting up a basic project to use Compute:
 1. Continue by typing in the search box type "Newtonsoft.JSON" and click on a *NewtonSoft.JSON* option and click on the *Install* button.
 1. Close the *Manage NuGet Packages* dialog.  The Nuget packages are installed and ready to use.
 
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> RhinoCompute.cs relies on functionality added to Rhino3dmIO in version 7. It's recommended that you install the latest `7.0.*-wip` NuGet package. To do this, you'll need to check the _Include prerelease_ box.
+</div>
+
 Changes that were made:
 
 - The *Rhino3dmIO.Desktop and NewtonSoft.JSON NuGet packages* are installed in your project.
