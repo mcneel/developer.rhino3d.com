@@ -59,6 +59,10 @@ Here are step by step instructions to setting up a basic project to use Compute:
 1. Continue by typing in the search box type "Newtonsoft.JSON" and click on a *NewtonSoft.JSON* option and click on the *Install* button.
 1. Close the *Manage NuGet Packages* dialog.  The Nuget packages are installed and ready to use.
 
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> RhinoCompute.cs relies on functionality added to Rhino3dmIO in version 7. It's recommended that you install the latest <code>7.0.*-wip</code> NuGet package. To do this, you'll need to check the <em>Include prerelease</em> box.
+</div>
+
 Changes that were made:
 
 - The *Rhino3dmIO.Desktop and NewtonSoft.JSON NuGet packages* are installed in your project.
@@ -95,7 +99,7 @@ namespace TestCompute
     {
         static void Main(string[] args)
         {
-            ComputeServer.ApiToken = "scottd@mcneel.com";
+            ComputeServer.AuthToken = "scottd@mcneel.com";
 
             // Uses standard Rhino3dmIO methods locally to create a sphere.
             var sphere = new Rhino.Geometry.Sphere(Rhino.Geometry.Point3d.Origin, 12);
@@ -120,7 +124,7 @@ namespace TestCompute
 ```
 {: .line-numbers}
 
-This example above first creates a sphere using Rhino3DMio locally. Then request Compute to mesh that BREP to Compute, the BREP sphere is meshed. Compute then returns the mesh.  Finally using the local Rhino3DMio package to walk through the mesh, the vertices are counted.
+This example above first creates a sphere using Rhino3dmIO locally. Then request Compute to mesh that BREP to Compute, the BREP sphere is meshed. Compute then returns the mesh.  Finally using the local Rhino3DMio package to walk through the mesh, the vertices are counted.
 
 <table>
 <tr>
@@ -158,7 +162,7 @@ namespace CircleIntersection
     {
         static void Main(string[] args)
         {
-            Rhino.Compute.ComputeServer.ApiToken = "circleintersectionsample@mcneel.com";
+            Rhino.Compute.ComputeServer.AuthToken = "circleintersectionsample@mcneel.com";
 
             // create a couple Circles using a local copy of Rhino3dmIo
             var c1 = new Circle(new Point3d(0, 0, 0), 100);
