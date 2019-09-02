@@ -1,5 +1,5 @@
 ---
-title: Debugging GH-Python components Visual Studio 
+title: Debugging GhPython components Visual Studio 
 description: This guide will walk yoU through to debugging python scripts in Grasshopper using Visual Studio.
 authors: ['giulio_piacentino', 'david_leon']
 sdk: ['RhinoPython']
