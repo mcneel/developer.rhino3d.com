@@ -22,9 +22,9 @@ Compute can be accessed from CPython, JavaScript and C# (.NET).  It runs on many
 
 There are a few tools which are essential to communicate with the Compute server. Select one of the supported languages:
 
-- [Python](/compute-python-getting-started) -  The CPython wrapper for [OpenNurbs](https://developer.rhino3d.com/guides/opennurbs/) which contains the functions to read and write Rhino Geometry Objects. This is available as a Pip package.
-- [JavaScript](/compute-javascript-getting-started) - The Javascript library and web assembly (WASM) to access Compute through any major browser or Node JS.
-- [C# (.NET)](/compute-net-getting-started) - The nuget packages required to access to the Rhino3dm and Compute API.
+- [Python](compute-python-getting-started) -  The CPython wrapper for [OpenNurbs](https://developer.rhino3d.com/guides/opennurbs/) which contains the functions to read and write Rhino Geometry Objects. This is available as a Pip package.
+- [JavaScript](compute-javascript-getting-started) - The Javascript library and web assembly (WASM) to access Compute through any major browser or Node JS.
+- [C# (.NET)](compute-net-getting-started) - The nuget packages required to access to the Rhino3dm and Compute API.
 
 ## Support
 
