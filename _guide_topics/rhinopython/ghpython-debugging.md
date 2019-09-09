@@ -34,7 +34,8 @@ layout: toc-guide-page
 	```python
 	import sys
 
-	#this is the path where the Visual Studio Python modules are locate. Change to your own: 
+	# This is the path where the Visual Studio Python modules are locate. 
+	# Change to your own: 
 	loc = r'C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\Microsoft\python\Core'
 
 	if loc not in sys.path:
@@ -68,6 +69,7 @@ layout: toc-guide-page
 
 7. Input the path of *GHPythonDebug.py* as a text into the `Code` Input of the component. Optionally, make the path pass through a `FilePath` param, right click it, and choose ‘Synchronise’. If *test.py* is saved in the same folder as the Grasshopper file, then you only need to input the file name. 
 
+(At this point, Grasshopper will *freeze* waiting for PTVSD to attach)
 
 ## Debugging
 
