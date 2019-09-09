@@ -1,7 +1,7 @@
 ---
 title: Debugging GhPython components Visual Studio 
 description: This guide will walk you through to debugging python scripts in Grasshopper using Visual Studio.
-authors: ['giulio_piacentino', 'david_leon']
+authors: ['david_leon', 'giulio_piacentino']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Grasshopper']
@@ -25,6 +25,8 @@ layout: toc-guide-page
 
 
 1. Open **Visual Studio**, and create a new Iron Python Project called GHPythonDebug. 
+![{{ site.baseurl }}/images/ghpy_debug/01.png]({{ site.baseurl }}/images/ghpy_debug/01.png){: .img-center width="90%"}
+
 
 2. Go to Debug > Options > Python > Debugging and tick Use Legacy Debugger
 
