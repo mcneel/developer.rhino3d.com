@@ -85,11 +85,11 @@ Now that you have Tool Palette Collection *plist*, you need to add it to your pl
 1. Find the area of the xml near where *RhinoCommon* is being referenced and add the following entries:
 
         <Reference Include="Rhino.UI">
-          <HintPath>\Applications\RhinoWIP.app\Contents\Resources\Rhino.UI.dll</HintPath>
+          <HintPath>\Applications\Rhinoceros.app\Contents\Frameworks\RhCore.framework\Versions\Current\Resources\Rhino.UI.dll</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="RhinoMac">
-          <HintPath>\Applications\RhinoWIP.app\Contents\Resources\RhinoMac.dll</HintPath>
+          <HintPath>\Applications\Rhinoceros.app\Contents\Frameworks\RhCore.framework\Versions\Current\Resources\RhinoMac.dll</HintPath>
           <Private>False</Private>
         </Reference>
 1. Close the *csproj* that is open in the code editor.  Visual Studio for Mac reloads the project.  If you check in the *References* section of your project in the *Solution Explorer*, you should see references to *RhinoMac* and *Rhino.UI*.
