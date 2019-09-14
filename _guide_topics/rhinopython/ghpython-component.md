@@ -168,7 +168,7 @@ That lays out the basics of the GhPython component.  Next is a look into the com
 
 ## Related Topics
 
-- [Your first script with Python in Grasshopper]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
-- [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
-- [Editing Python in Grasshopper]({{ site.baseurl }}/guides/rhinopython/python-loading-scripts)
+- [Your first script with Python in Grasshopper]({{ site.baseurl }}/guides/rhinopython/your-first-python-script-in-grasshopper)
+- [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-is-rhinopython)
+- [An Overview of the GhPython Editor]({{ site.baseurl }}/guides/rhinopython/ghpython-editor)
 - [Python Guide for Rhino]({{ site.baseurl }}/guides/rhinopython/)
