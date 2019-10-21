@@ -15,6 +15,9 @@ layout: toc-guide-page
 
 By the end of this guide, you should have all the tools installed necessary for using the [Rhino Compute Service](https://www.rhino3d.com/compute) through Python.
 
+For an [getting started video tutorial from Junichiro Horikawa with Python](https://youtu.be/XCkRXAEJMhg)
+
+
 This guide presumes you have Python installed on the platform:
 
 - Python 2.7 - Windows (32 and 64 bit)
@@ -53,4 +56,3 @@ Please note that the compute Python calls are made through the `compute_rhino3d.
 1. The libraries are still very new and changing rapidly. Give them a try or get involved. Ask any questions or share what you are working on the [Compute Discussion Forum](https://discourse.mcneel.com/c/serengeti/compute-rhino3d)
 
 ---
-

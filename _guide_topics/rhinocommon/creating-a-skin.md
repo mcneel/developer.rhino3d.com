@@ -12,7 +12,7 @@ keywords: ['skin', 'RAP', 'rhino', 'RhinoCommon']
 layout: toc-guide-page
 ---
 
- 
+
 ## Overview
 
 Rhino allows developers to customize most of Rhino's interface so that the application appears to be their own.  We call this a custom *Skin*.  With a custom Skin, you can change the application icon, splash screen, the application name etc.
@@ -29,7 +29,10 @@ To create the Skin DLL:
 1. In the new Class Library project, add a reference to *RhinoCommon.dll*, which is found in Rhino's *System* folder. Note: make sure, after adding the reference, to set the properties of the reference to *Copy Local = False*.
 1. Create a new class that inherits from `Rhino.Runtime.Skin`.
 1. Add a post build event to the project to rename the assembly from *.dll* to *.rhs*:
-`(TargetPath)" "$(TargetDir)$(ProjectName).rhs" Erase "$(TargetPath)"`
+```
+Copy "$(TargetPath)" "$(TargetDir)$(ProjectName).rhs"
+Erase "$(TargetPath)"
+```
 
 ## Skin Class
 

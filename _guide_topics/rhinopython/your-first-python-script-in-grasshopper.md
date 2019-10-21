@@ -125,4 +125,4 @@ Now you can test that using the toggle.
 - [Canceling Scripts]({{ site.baseurl }}/guides/rhinopython/python-canceling-scripts)
 - [Editing Scripts]({{ site.baseurl }}/guides/rhinopython/python-editing-scripts)
 - [Scripting Options]({{ site.baseurl }}/guides/rhinopython/python-scripting-options)
-- [Reinitializing Python]({{ site.baseurl }}/guides/rhinopython/python-scripting-reinitialize)
+- [Troubleshooting Python]({{ site.baseurl }}/guides/rhinopython/python-troubleshooting-install)

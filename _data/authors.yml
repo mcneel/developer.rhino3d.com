@@ -2,6 +2,11 @@
   display_name: Alain Cormier
   email: alain@mcneel.com
   discourse: Alain
+  
+- name: aj
+  display_name: Andrés Jacobo
+  email: aj@mcneel.com
+  discourse: aj1
 
 - name: andrew_le_bihan
   display_name: Andrew le Bihan
@@ -32,6 +37,11 @@
   display_name: Dan Belcher
   email: dan@mcneel.com
   discourse: dan
+
+- name: david_leon
+  display_name: David Andres Leon
+  email: david.leon@mcneel.com
+  discourse: DavidLeon
 
 - name: david_rutten
   display_name: David Rutten

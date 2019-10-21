@@ -99,7 +99,7 @@ The same principle applies for any parametric curve. Any point on the curve can 
 
 ### Curve domain or interval
 
-A curve *domain* or *interval* is defined as the range of parameters that evaluate into a pointwithin that curve. The domain is usually described with two realnumbers defining the domain limits expressed in the form (min to max)or (min, max). The domain limits can be any two values that may ormay not be related to the actual length of the curve. In anincreasing domain, the domain min parameter evaluates to the startpoint of the curve and the domain max evaluates to the end point ofthe curve.  
+A curve *domain* or *interval* is defined as the range of parameters that evaluate into a point within that curve. The domain is usually described with two real numbers defining the domain limits expressed in the form (min to max)or (min, max). The domain limits can be any two values that may or may not be related to the actual length of the curve. In an increasing domain, the domain min parameter evaluates to the start point of the curve and the domain max evaluates to the end point ofthe curve.  
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image95.png" width="540px">
@@ -178,7 +178,7 @@ NURBS curves and surfaces are the main mathematical representation used by Rhino
 
 ### Evaluating cubic Bézier curves
 
-Named after its inventor, Paul de Casteljau, the de Casteljau algorithmi evaluates Bézier curves using a recursive method. The algorithm steps can be summarized as follows:  
+Named after its inventor, Paul de Casteljau, the de Casteljau algorithm evaluates Bézier curves using a recursive method. The algorithm steps can be summarized as follows:  
 
 **Input:**  
 
@@ -206,7 +206,12 @@ NURBS is an accurate mathematical representation of curves that is highly intuit
 <figure>
    <img src="{{ site.baseurl }}/images/math-image74.png">
    <figcaption> Figure (36): Non-uniform rational B-splines and their control structure.</figcaption>
-</figure>  
+</figure>
+
+There are many books and references for those of you interested in an in-depth reading about NURBS. A basic understanding of NURBS is however necessary to help use a NURBS modeler more effectively. There are four main attributes define the NURBS curve: degree, control points, knots, and evaluation rules.
+
+1. [Wikipedia: De Boor's algorithm](http://en.wikipedia.org/wiki/De_Boor's_algorithm)
+2. [Michigan Tech, Department of Computer Science, De Boor's algorithm](http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/spline/de-Boor.html)
 
 ### Degree
 
@@ -244,23 +249,35 @@ The number of control points that affect each span in a NURBS curve is defined b
 <td><img src="{{ site.baseurl }}/images/math-image132.png"></td>  
 </tr>  
 <tr style="border-bottom: 1px solid #ccc;">  
-<td>Control points of degree‑3 curves do not usually touch the curve, except at end points in open curves. In a degree‑3 NURBS curve, four (degree+1) control points define each span. Using five control points, the curve has two spans </td>  
+<td>Control points of degree‑3 curves do not usually touch the curve, except at the end points in open curves. In a degree‑3 NURBS curve, four (degree+1) control points define each span. Using five control points, the curve has two spans </td>  
 <td> <img src="{{ site.baseurl }}/images/math-image134.png"></td>  
 </tr>  
 </table>  
 
 ### Weights of control points
 
-Each control point has an associated number called *weight*. With a few exceptions, weights are positive numbers. When all control points have the same weight, usually 1, the curve is called non-rational. Intuitively, you can think of weights as the amount of gravity each control point has. The higher the relative weight a control point has, the closer the curve is pulled towards that control point.   
+Each control point has an associated number called *weight*. With a few exceptions, weights are positive numbers. When all control points have the same weight, usually 1, the curve is called non-rational. Intuitively, you can think of weights as the amount of gravity each control point has. The higher the relative weight a control point has, the closer the curve is pulled towards that control point.
+
+|knots| = |CVs| + Degree - 1
 
 It is worth noting that it is best to avoid changing curve weights. Changing weights rarely gives desired result while it introduces a lot of calculation challenges in operations such as intersections. The only good reason for using rational curves is to represent curves that cannot otherwise be drawn, such as circles and ellipses.  
 
 <figure>
-   <img src="{{ site.baseurl }}/images/math-image135.png" width="500px">
-   <figcaption>Figure (37): The effect of varying weights of control points on the result curve.
-The left curve is non-rational with uniform control point weights.
-The circle on the right is a rational curve with corner control points having weights less than 1.</figcaption>
-</figure>  
+   <img src="{{ site.baseurl }}/images/figure-38a.png" width="500px">
+   <figcaption>Figure (38-A): There are degree-1 more knots than control points. If the number of control points=7, and curve degree=3, then number of knots is 9.
+   Knots values are parameters that evaluate to points on the 3D curve.</figcaption>
+</figure>
+
+Scaling a knot list does not affect the 3D curve. If you change the domain of the curve in the above example from “0 to 4” to “0 to 1”, knot list get scaled, but the 3D curve does not change.
+
+
+<figure>
+   <img src="{{ site.baseurl }}/images/figure-38a.png" width="500px">
+   <figcaption>Figure (38-A): There are degree-1 more knots than control points. If the number of control points=7, and curve degree=3, then number of knots is 9.
+   Knots values are parameters that evaluate to points on the 3D curve.</figcaption>
+</figure>
+
+
 
 ### Knots
 
@@ -268,11 +285,15 @@ Each NURBS curve has a list of numbers associated with it called a *list of knot
 
 ### Knots are parameter values
 
-Knots are a non-decreasing list of parameter values. There is degree+1 more knots than control points. Usually, for non-periodic curves, the first degree many knots are the same and the last degree many are the same. The domain of the curve is between these two extreme knot values at start and end.  
+Knots are a non-decreasing list of parameter values that lie within the curve domain. In Rhino, there is degree-1 more knots than control points. That is the number of knots equals the
+number of control points plus curve degree minus 1:
 
-For example, the knots of an open degree-3 NURBS curve with seven control points and a domain between 0 and 6 may look like the following:  
 
-Knots= <0, 0, 0, 1, 2, 3, 4, 5, 6, 6, 6>  
+
+Usually, for non-periodic curves, the first degree many knots are equal to the domain minimum, and the last degree many knots are equal to the domain maximum.
+
+For example, the knots of an open degree-3 NURBS curve with 7 control points and a domain between 0 and 4 may look like <0, 0, 0, 1, 2, 3, 4, 4, 4>.
+
 
 <figure>
    <img src="{{ site.baseurl }}/images/math-image136.png" width="500px">
@@ -281,7 +302,7 @@ Knots= <0, 0, 0, 1, 2, 3, 4, 5, 6, 6, 6>
 
 ### Knot multiplicity
 
-The multiplicity of a knot is the number of times it is listed in the list of knots. The multiplicity of a knot cannot be more than the degree of the curve.  Knot multiplicity is used to control continuity at the corresponding curve point.  
+The multiplicity of a knot is the number of times it is listed in the list of knots. The multiplicity of a knot cannot be more than the degree of the curve. Knot multiplicity is used to control continuity at the corresponding curve point.  
 
 ### Fully-multiple knots
 
@@ -362,7 +383,7 @@ Both curve ends coincide with end control points.</td>
 <tr style="border-bottom: 1px solid #ccc;">  
 <td>Degree-3 closed periodic curve.<br>
 The curve seam does not go through a control point.</td>  
-<td><img src="{{ site.baseurl }}/images/math-image146.png"></td>  
+<td><img src="{{ site.baseurl }}/images/math-image150.png"></td>  
 </tr>  
 <tr style="border-bottom: 1px solid #ccc;">  
 <td>Moving control points of a periodic curve does not affect curve smoothness.</td>  
@@ -370,7 +391,7 @@ The curve seam does not go through a control point.</td>
 </tr>  
 <tr style="border-bottom: 1px solid #ccc;">  
 <td>Kinks are created when the curve is forced through some control points.</td>  
-<td><img src="{{ site.baseurl }}/images/math-image150.png"></td>  
+<td><img src="{{ site.baseurl }}/images/math-image146.png"></td>  
 </tr>  
 <tr style="border-bottom: 1px solid #ccc;">  
 <td>Moving the control points of a non-periodic curve does not guarantee smooth continuity of the curve, but enables more control over the outcome.</td>  
@@ -579,7 +600,7 @@ Where:
 
 &nbsp; $$u$$ and $$v$$ are the two parameters within the surface domain or region.  
 
-### Surfacedomain
+### Surface domain
 
 A surface domain is defined as therange of ($$u,v$$) parameters that evaluate into a 3 D point on thatsurface. The domain in each dimension ($$u$$ or $$v$$) is usually describedas two real numbers ($$u_{min}$$ to $$u_{max}$$) and ($$v_{min}$$ to $$v_{max}$$)
 

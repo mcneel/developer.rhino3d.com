@@ -5,13 +5,17 @@ authors: ['dan_belcher']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Mac']
-categories: ['Advanced']
+categories: ['Deprecated']
 origin: unset
 order: 1
 keywords: ['first', 'RhinoCommon', 'Plugin', 'RhinoWIP']
 layout: toc-guide-page
 ---
 
+<div class="bs-callout bs-callout-danger">
+  <h4>WARNING</h4>
+  <p>This guide is deprecated.  You can debug in the RhinoWIP using the RhinoCommon Visual Studio for Mac extension.  See the <a href="{{ site.baseurl }}/guides/rhinocommon/installing-tools-mac">Installing Tools (Mac)</a> guide for more information.</p>
+</div>
 
 By the end of this guide, you should understand how to modify your plugin's C# project file in order to target and debug using RhinoWIP.
 
@@ -39,22 +43,22 @@ We want to target those found in the *RhinoWIP.app* bundle.  Unfortunately, Visu
 ![Visual Studio for Mac Edit File]({{ site.baseurl }}/images/debug-rhinowip-mac-02.png)
 1. Use Visual Studio for Mac's *Search* > *Replace* function to find *\Applications\Rhinoceros.app* and replace it with *\Applications\RhinoWIP.app*...
 ![Search and Replace]({{ site.baseurl }}/images/debug-rhinowip-mac-03.png)
-1. Verify that these changes are only happening with the `<ItemGroup>` that contains `<Reference>` entries.  Accept your *\Applications\RhinoWIP.app* replacements to make the change...
+1. Verify that these changes are only happening with the `<ItemGroup>` that contains `<Reference>` entries.  Accept your *\Applications\RhinoWIP.app* replacements to make the change.  If you are not using Nuget packages, you will also need to add some changes to the default hint paths so they search the proper location within the app bundle:
 
         <ItemGroup>
           <Reference Include="System" />
           <Reference Include="System.Core" />
           <Reference Include="System.Drawing" />
           <Reference Include="RhinoCommon">
-            <HintPath>..\..\Applications\RhinoWIP.app\Contents\Resources\RhinoCommon.dll</HintPath>
+            <HintPath>..\..\Applications\RhinoWIP.app\Contents\Frameworks\RhCore.framework\Resources\RhinoCommon.dll</HintPath>
             <Private>False</Private>
           </Reference>
           <Reference Include="Rhino.UI">
-            <HintPath>..\..\Applications\RhinoWIP.app\Contents\Resources\Rhino.UI.dll</HintPath>
+            <HintPath>..\..\Applications\RhinoWIP.app\Contents\Frameworks\RhCore.framework\Resources\Rhino.UI.dll</HintPath>
             <Private>False</Private>
           </Reference>
           <Reference Include="Eto">
-            <HintPath>..\..\Applications\RhinoWIP.app\Contents\Resources\Eto.dll</HintPath>
+            <HintPath>..\..\Applications\RhinoWIP.app\Contents\Frameworks\RhCore.framework\Resources\Eto.dll</HintPath>
             <Private>False</Private>
           </Reference>
         </ItemGroup>

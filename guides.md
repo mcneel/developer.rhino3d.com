@@ -128,6 +128,21 @@ order: 2
   </ul>
 </div>
 
+### Cloud Zoo
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.sdk contains 'RhinoCommon' and guide.categories contains 'CloudZoo' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
 ---
 
 ## [Rhino.Python]({{ site.baseurl }}/guides/rhinopython) <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon"> <img src="{{ site.baseurl }}/images/mac-logo-small.png" alt="macOS" class="guide_icon">
