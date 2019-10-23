@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## Overview
 
-Rhino3dmIO is a .NET interface into the [OpenNURBS library](({{ site.baseurl }}/guides/opennurbs/what-is-opennurbs)).  This allows you to write .NET applications that can create and manipulate OpenNURBS Geometry.  The library also includes a full set of tools to read/write the *.3dm* file format.  And being OpenSource, you have access to the full source debug down to every little piece of code.
+Rhino3dmIO is a .NET interface into the [OpenNURBS library]({{ site.baseurl }}/guides/opennurbs/what-is-opennurbs).  This allows you to write .NET applications that can create and manipulate OpenNURBS Geometry.  The library also includes a full set of tools to read/write the *.3dm* file format.  And being OpenSource, you have access to the full source debug down to every little piece of code.
 
 Install the Rhino3dmIO NuGet package into your project for the easiest access.
 
