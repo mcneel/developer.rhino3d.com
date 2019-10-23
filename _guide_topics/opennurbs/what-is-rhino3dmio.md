@@ -28,7 +28,7 @@ Install the Rhino3dmIO NuGet package into your project for the easiest access.
 
 ## NuGet Package
 
-This is the quickest method to access Rhino3DMio. The NuGet package is available for 3 platforms:
+This is the quickest method to access Rhino3dmIO. The NuGet package is available for 3 platforms:
 
 * Rhino3dmIO.Desktop (Windows/macOS)
 * Rhino3dmIO.iOS
