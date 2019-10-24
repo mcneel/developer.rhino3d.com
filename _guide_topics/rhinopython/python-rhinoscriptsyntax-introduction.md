@@ -47,8 +47,8 @@ Rhino is a 3D modeler, therefore creating and modifying geometry is key to devel
 - [Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points)
 - [List of Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-list-points)
 - [Vectors]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Lines]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-lines)
-- [Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-planes)
+- [Lines]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-line)
+- [Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-plane)
 - [Rhino Geometry Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects)
 
 Creating, accessing and manipulating geometry is one of the first places RhinoScriptSyntax is used.  Simple geometry such as points, lines, and planes can be described with lists in Python.  More complicated geometry objects such as NURBS curves, Surfaces and Poly-surfaces can be created by Rhino and referenced by an object ID in RhinoScriptSyntax.
