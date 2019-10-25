@@ -42,19 +42,6 @@ The GhPython component brings:
 
 Rhino allows access to its algorithms through the Rhino SDK (software development kit). Rhino is written in C++ but it also provides a couple SDKs for scripting and programming languages.  The most basic SDK for Python is RhinoScriptSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon SDK. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon).
 
-## Installing GhPython into Rhino
-
-Only in Rhino for Windows, the Python component needs to the installed into Grasshopper.
-
-1. Download [GhPython for Grasshopper from Food4Rhino](http://www.food4rhino.com/app/ghpython).
-2. In Grasshopper, choose File > Special Folders > Components folder. Save the gha file there.
-2. Right-click the file > Properties > make sure to "unblock" it.
-3. Restart Rhino and Grasshopper.
-
-A successful install will result in a Python component in the Math > Script toolbar:
-
-![{{ site.baseurl }}/images/ghpython-installed.png]({{ site.baseurl }}/images/ghpython-installed.png){: .img-center width="95%"}
-
 
 ## Where to find the script components
 
