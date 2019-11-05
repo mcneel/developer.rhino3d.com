@@ -12,6 +12,7 @@ keywords: ['mathematics', 'geometry', 'grasshopper3d']
 layout: toc-guide-page
 category_page: guides/general/essential-mathematics/
 ---
+{% include youtube_player.html id="8BNyMC4EBcw" %}
 
 A vector indicates a quantity, such as velocity or force, that has direction and length. Vectors in 3D coordinate systems are represented with an ordered set of three real numbers and look like:
 
