@@ -12,8 +12,6 @@ keywords: ['mathematics', 'geometry', 'grasshopper3d']
 layout: toc-guide-page
 category_page: guides/general/essential-mathematics/
 ---
-{% include youtube_player.html id="8BNyMC4EBcw" %}
-
 A vector indicates a quantity, such as velocity or force, that has direction and length. Vectors in 3D coordinate systems are represented with an ordered set of three real numbers and look like:
 
 \$$\mathbf{\vec v}  = <a_1, a_2, a_3>$$
@@ -76,6 +74,8 @@ $$B = (a_1,a_2,a_3)$$
 <div class="note" markdown="1">
 A *position vector* for a given vector $$\vec v= < a_1,a_2,a_3 >$$ is a special line segment representation from the origin point $$(0,0,0)$$ to point $$(a_1, a_2, a_3)$$.
 </div>
+
+{% include youtube_player.html id="8BNyMC4EBcw" %}
 
 ### Vectors vs. points  
 
@@ -204,7 +204,7 @@ $$\mathbf{\vec b} = <4, 1, 4> $$
 $$\mathbf{\vec a}-\mathbf{\vec b} = <1-4, 2-1, 0-4>$$  
 $$\mathbf{\vec a}-\mathbf{\vec b} = <-3, 1, -4> = \mathbf{\mathbf{\vec b}a}$$
 
-If we subtract $$\mathbf{\vec b}​$$ from $$\mathbf{\vec a}​$$, we get a different result:  
+If we subtract $$\mathbf{\vec b}$$ from $$\mathbf{\vec a}$$, we get a different result:  
 
 $$\mathbf{\vec b} - \mathbf{\vec a} = <4-1, 1-2, 4-0>$$  
 $$\mathbf{\vec b} - \mathbf{\vec a} = <3, -1, 4> = \mathbf{\mathbf{\vec a}b}$$  
@@ -336,7 +336,7 @@ $$\mathbf{\vec a} · unit(\mathbf{\vec b}) = 2 (\text{which is equal to the proj
 In general, given a vector a and a non-zero vector b, we can calculate the projection length pL of vector a onto vector b using the dot product.  
 
 $$pL = \vert \mathbf{\vec a} \vert * cos(ө) $$  
-$$pL = \mathbf{\vec a} · unit(\mathbf{\vec b})​$$  
+$$pL = \mathbf{\vec a} · unit(\mathbf{\vec b})$$  
 
 ### Dot product properties
 
@@ -344,7 +344,7 @@ If $$\mathbf{\vec a}$$, $$\mathbf{\vec b}$$, and $$\mathbf{\vec c}$$ are vectors
 
 $$\mathbf{\vec a} · \mathbf{\vec a} = \vert  \mathbf{\vec a} \vert ^2$$  
 $$\mathbf{\vec a} · (\mathbf{\vec b} + \mathbf{\vec c}) = \mathbf{\vec a} · \mathbf{\vec b} + \mathbf{\vec a} · \mathbf{\vec c}$$  
-$$0 · \mathbf{\vec a} = 0​$$  
+$$0 · \mathbf{\vec a} = 0$$  
 $$\mathbf{\vec a} · \mathbf{\vec b} = \mathbf{\vec b} · \mathbf{\vec a}$$  
 $$(s * \mathbf{\vec a}) · \mathbf{\vec b} = s * (\mathbf{\vec a} · \mathbf{\vec b}) = \mathbf{\vec a} · (s * \mathbf{\vec b})$$  
 
@@ -452,7 +452,7 @@ $$\mathbf{\vec p} = \mathbf{\vec q} + \mathbf{\vec a}$$   (1)
 
 From 1 and 2:  
 
-$$\mathbf{\vec p} = \mathbf{\vec q} + t * \mathbf{\vec v}​$$  (3)   
+$$\mathbf{\vec p} = \mathbf{\vec q} + t * \mathbf{\vec v}$$  (3)   
 
 However, we can write (3) as follows:  
 
@@ -463,7 +463,7 @@ Therefore:
 
 $$x = x_0 + t * a$$  
 $$y = y_0 + t * b$$  
-$$z = z_0 + t * c​$$  
+$$z = z_0 + t * c$$  
 
 Which is the same as:  
 
