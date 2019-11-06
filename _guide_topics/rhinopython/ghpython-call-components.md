@@ -1,8 +1,8 @@
 ---
 title: Node in Code from Python.
-description: It is possible to call a Grasshopper component from inside a Python.
-authors: ['Scott Davidson']
-author_contacts: ['scottd']
+description: It is possible to call a Grasshopper component from inside a Python script.
+authors: ['scott_davidson']
+author_contacts: ['scotttd']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Windows', 'Mac', 'Grasshopper']
@@ -13,9 +13,9 @@ keywords: ['python', 'commands', 'grasshopper']
 layout: toc-guide-page
 ---
 
-**Node-in-Code™**: almost every Grasshopper component is now callable as a function in other places in Rhino.  Grasshopper components may be called in GhPython (on the Gh canvas) and from rhino.Python (off the canvas). This adds few thousand new functions accessible to GhPython. Functions are also available thru 3rd party components.  Along with the new functionality that this provides, the technique can be used to simplifying existing gh definition files by simply lumping together a bunch of related components into a single python script.
+**Node-in-Code™**: almost every Grasshopper component is now callable as a function in other places in Rhino.  Grasshopper components may be called in GhPython (on the Gh canvas) and from rhino.Python (off the canvas). This adds few thousand new functions accessible to GhPython. Functions are also available through 3rd party components.  Along with the new functionality that this provides, the technique can be used to simplify existing gh definition files by simply lumping together a bunch of related components into a single 'scott_davidson' script.
 
-There is a module in `ghpythonlib.components` which attempts to make every component available in python in the form of an easy to call function.
+There is a module in `ghpythonlib.components` which attempts to make every component available in Python in the form of an easy to call function.
 
 ## Components As functions from GhPython
 
@@ -28,7 +28,7 @@ Use a GhPython component with these inputs:
 ![{{ site.baseurl }}/images/nod-in-code-sample.png]({{ site.baseurl }}/images/nod-in-code-sample.png){: .img-center width="95%"}
 Node in Code sample file
 
-Before entering code in the GhPython component it to review the input properties to make sure the correc Type hint is used.  In this case the points input has a Point3D hint amd a List Access level set.  Do this by right clicking on the GhPython component input.
+Before entering code in the GhPython component it to review the input properties to make sure the correct Type hint is used.  In this case the points input has a Point3D hint and a List Access level set.  Do this by right clicking on the GhPython component input.
 
 Enter this code into the GhPython component:
 
@@ -38,7 +38,7 @@ curves = ghcomp.Voronoi(points) # call the Grasshopper Voronoi component
 centroids = ghcomp.Area(curves).centroid # call Grasshopper Area component with curves from Voronoi
 ```
 
-Of course you can mix in other python to perform calculations on the results of the component function calls. I tweaked the above example to find the curve generated from Voronoi that has the largest area.
+Of course you can mix in other Python to perform calculations on the results of the component function calls. I tweaked the above example to find the curve generated from Voronoi that has the largest area.
 
 ```python
 import ghpythonlib.components as ghcomp
@@ -59,7 +59,7 @@ Remember, this can be done for almost every component in Grasshopper (including 
 ### Configuring inputs:
 
 There are a few techniques that can make working with `ghpythonlib.components` easier.
-It is quite helpful and simplifies the code greatly if the proper [Type Hint]({{ site.baseurl }}/guides/rhinopython/ghpython-component/#advanced-input-properties) is set on the Input of the Python component. Setting the Type Hint to a specific data type will give the script direct access to the objects.   Without the Type Hint a lot more data checking and conversion may be necessary. For instance in a case where `points` are expected as input, set Type Hint > Point3D.  This assures the GhPython components passes in actual point objects to python. This is especially important for any inputs expecting geometry objects.
+It is quite helpful and simplifies the code greatly if the proper [Type Hint]({{ site.baseurl }}/guides/rhinopython/ghpython-component/#advanced-input-properties) is set on the Input of the Python component. Setting the Type Hint to a specific data type will give the script direct access to the objects.   Without the Type Hint a lot more data checking and conversion may be necessary. For instance in a case where `points` are expected as input, set Type Hint > Point3D.  This assures the GhPython components passes in actual point objects to Python. This is especially important for any inputs expecting geometry objects.
 
 Inputs also should be set properly for [Object Access, List Access, or Tree Access]({{ site.baseurl }}/guides/rhinopython/ghpython-component/#advanced-input-properties).  Setting the Object vs List level access is important for make sure the GhPython code gets objects one at a time, or as a whole list of objects all at once.
 
@@ -136,7 +136,7 @@ if points:
         scriptcontext.doc.Objects.AddPoint(point)
     scriptcontext.doc.Views.Redraw()
 ```
-The key is the ghpythonlib modules are available in the standard python editor in Rhino. Behind the scenes things are running through Grasshopper code, but you don’t have to use a canvas to do your work.
+The key is the ghpythonlib modules are available in the standard Python editor in Rhino. Behind the scenes things are running through Grasshopper code, but you don’t have to use a canvas to do your work.
 
 This also lets you work in a slightly different way where you can get points in Rhino using rhinoscriptsyntax “get input” type functions and pass those points (or curves or breps) into the Grasshopper component code.
 
