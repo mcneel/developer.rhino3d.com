@@ -221,7 +221,8 @@ code {
 */
 
 div.video-player {
-     margin: 0px 25px 0px 25px; 
+       margin: auto;
+       width: 80%;
 }
 
 
