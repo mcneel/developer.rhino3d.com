@@ -16,6 +16,8 @@ A vector indicates a quantity, such as velocity or force, that has direction and
 
 \$$\mathbf{\vec v}  = <a_1, a_2, a_3>$$
 
+{% include youtube_player.html id="NU34_aCoN3E" %}
+
 ## 1.1 Vector representation
 
 In this document, lower case bold letters with arrow on top will notate vectors. Vector components are also enclosed in angle brackets. Upper case letters will notate points. Point coordinates will always be enclosed by parentheses.
@@ -58,6 +60,9 @@ $$B = (6, 8, 10)$$
    <figcaption>Figure (2): The relationship between a vector, the vector anchor point, and the point coinciding with the vector tip location.</figcaption>
 </figure>  
 
+{% include youtube_player.html id="ELQ8NgENhJY" %}
+{% include youtube_player.html id="INtNgczxyWg" %}
+
 ### Position vector
 
 One special vector representation uses the $$\text{origin point} (0,0,0)$$ as the vector anchor point.
@@ -77,6 +82,8 @@ A *position vector* for a given vector $$\vec v= < a_1,a_2,a_3 >$$ is a special 
 
 {% include youtube_player.html id="8BNyMC4EBcw" %}
 
+{% include youtube_player.html id="Ft2edI4g1qY" %}
+
 ### Vectors vs. points  
 
 Do not confuse vectors and points. They are very different concepts. Vectors, as we mentioned, represent a quantity that has direction and length, while points indicate a location. For example, the North direction is a vector, while the North Pole is a location (point).
@@ -91,6 +98,8 @@ We can draw the vector and the point as follows:
    <img src="{{ site.baseurl }}/images/math-image174.png">
    <figcaption>Figure (4): A vector defines a direction and length. A point defines a location.</figcaption>
 </figure>  
+
+{% include youtube_player.html id="RRrTz_QO_rA" %}
 
 ### Vector length  
 
@@ -141,7 +150,11 @@ The unit vector of $$\mathbf{\vec a} = <a_1/\vert \mathbf{\vec a} \vert , a_2/\v
    <figcaption>Figure (6): Unit vector equals one-unit length of the vector.</figcaption>
 </figure>  
 
+{% include youtube_player.html id="yVSigpl3EUo" %}
+
 ## 1.2 Vector operations
+
+{% include youtube_player.html id="uInxocphhxI" %}
 
 ### Vector scalar operation
 
@@ -159,6 +172,8 @@ $$2*\mathbf{\vec a} = <8, 6, 0>$$
 In general, given vector $$\mathbf{\vec a} = <a_1, a_2, a_3>$$, and a real number $$t$$   
 
 \$$t*\mathbf{\vec a} = < t* a_1, t* a_2, t* a_3 >$$  
+
+{% include youtube_player.html id="S59M8BnDYAQ" %}
 
 ### Vector addition
 
@@ -195,6 +210,8 @@ Vector addition is useful for finding the average direction of two or more vecto
 
 Input vectors are not likely to be same length. In order to find the average direction, you need to use the unit vector of input vectors. As mentioned before, the unit vector is a vector of that has a length equal to 1.
 
+{% include youtube_player.html id="VTVk3t3WeAY" %}
+
 ### Vector subtraction
 
 Vector subtraction takes two vectors and produces a third vector. We subtract two vectors by subtracting corresponding components. For example, if we have two vectors $$\mathbf{\vec a}$$ and $$\mathbf{\vec b}$$ and we subtract $$\mathbf{\vec b}$$ from $$\mathbf{\vec a}$$, then:  
@@ -227,7 +244,9 @@ Vector subtraction is commonly used to find vectors between points. So if we nee
 <figure>
    <img src="{{ site.baseurl }}/images/math-image180.png">
    <figcaption>Figure (11): Use vector subtraction to find a vector between two points. </figcaption>
-</figure>  
+</figure> 
+
+{% include youtube_player.html id="RQK8pCIWKNY" %} 
 
 ### Vector properties
 
@@ -336,7 +355,9 @@ $$\mathbf{\vec a} · unit(\mathbf{\vec b}) = 2 (\text{which is equal to the proj
 In general, given a vector a and a non-zero vector b, we can calculate the projection length pL of vector a onto vector b using the dot product.  
 
 $$pL = \vert \mathbf{\vec a} \vert * cos(ө) $$  
-$$pL = \mathbf{\vec a} · unit(\mathbf{\vec b})$$  
+$$pL = \mathbf{\vec a} · unit(\mathbf{\vec b})$$ 
+
+ {% include youtube_player.html id="ZsM2RQbVDf4" %}
 
 ### Dot product properties
 
@@ -381,6 +402,8 @@ The cross product of the two vectors $$\mathbf{\vec a} = <a1, a2, a3>$$ and $$\m
 $$\mathbf{\vec a} × \mathbf{\vec b} = \color {red}{i (a_2 * b_3)} + \color {blue}{ j (a_3 * b_1)} + \color {green}{k(a_1 * b_2)} - \color {green}{k (a_2 * b_1)} - \color {red}{i (a_3 * b_2)} -\color {blue}{ j (a_1 * b_3)}$$  
 $$\mathbf{\vec a} × \mathbf{\vec b} = \color {red}{i (a_2 * b_3 - a_3 * b_2)} + \color {blue}{j (a_3 * b_1 - a_1 * b_3)} +\color {green}{k (a_1 * b_2 - a_2 * b_1)}$$  
 $$\mathbf{\vec a} × \mathbf{\vec b} = <\color {red}{a_2 * b_3 – a_3 * b_2},  \color {blue}{a_3 * b_1 - a_1 * b_3},  \color {green}{a_1 * b_2 - a_2 * b_1} >$$  
+
+{% include youtube_player.html id="I5WkhSo4p6o" %}
 
 ### Cross product and angle between vectors
 
