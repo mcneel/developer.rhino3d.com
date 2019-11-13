@@ -34,8 +34,7 @@ The openNURBS Toolkit is intended for C++ and .NET programmers.  The toolkit inc
 The tools provided by openNURBS include:
 
 - [Rhino3dmIO .NET Tookit]({{ site.baseurl }}/guides/opennurbs/what-is-rhino3dmio) .NET Package distributed as a NuGet package.  This contains assemblies to create and interpret OpenNurbs geometry.  Also, use this to read/write the Rhino 3DM file format.
-- [openNURBS C++ source SDK](https://www.rhino3d.com/download/openNURBS/6/release) - the original cross platform SDK.
-- [Sample 3D files](http://download.rhino3d.com/openNURBS/6/opennurbs6samples)
+- [openNURBS C++ source SDK and samples](https://www.rhino3d.com/download/openNURBS/7/release) - the original cross platform SDK.
 - Quality assurance and revision control.
 - Technical support.
 
