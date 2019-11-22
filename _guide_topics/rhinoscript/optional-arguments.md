@@ -5,7 +5,7 @@ authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Miscellaneous', 'Intermediate']
+categories: ['Intermediate']
 origin: http://wiki.mcneel.com/developer/scriptsamples/optionalarguments
 order: 1
 keywords: ['script', 'Rhino', 'vbscript']
