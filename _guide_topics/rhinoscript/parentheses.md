@@ -1,6 +1,6 @@
 ---
 title: Parentheses
-description: This guide discusses the Cannot use parentheses when calling a Sub error that occurs in RhinoScript.
+description: This guide discusses the "Cannot use parentheses when calling a Sub" error that occurs in RhinoScript.
 authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
