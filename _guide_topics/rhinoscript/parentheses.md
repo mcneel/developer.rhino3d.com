@@ -36,7 +36,7 @@ In VBScript, parentheses mean several different things:
 Evaluate a subexpression before the rest of the expression.  For example:
 
 ```vbnet
-Average = (First + Last) / 2)`
+Average = (First + Last) / 2
 ```
 
 or...
