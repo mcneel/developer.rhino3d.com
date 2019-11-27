@@ -75,7 +75,7 @@ This returns the `parking` dictionary object`{ "location": "premium", "style": "
 Knowing that the `value` for `medical` is a list.  Use and index number to access any single book:
 
 ```python
- print datastore["office"]["medical"][1]
+ print datastore["office"]["medical"][0]
 ```
 
 This returns the dictionary object for room 100, reception.
