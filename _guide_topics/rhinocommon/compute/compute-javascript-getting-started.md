@@ -40,7 +40,7 @@ There are a few client side tools which need to be referenced that are essential
 
 ## The first use of Compute
 
-An example of using JavaScript to access compute can be found in the [Javascript Sample repo](https://github.com/mcneel/rhino3dm/tree/master/samples/javascript) 
+An example of using JavaScript to access compute can be found in the [Javascript Sample repo](https://github.com/mcneel/rhino3dm/tree/master/docs/javascript/samples) 
 
 # Next Steps
 
