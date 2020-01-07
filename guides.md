@@ -32,6 +32,7 @@ order: 2
 - [What is a Rhino Plugin?]({{ site.baseurl }}/guides/general/what-is-a-rhino-plugin)
 - [Rhino Installer Engine]({{ site.baseurl }}/guides/general/rhino-installer-engine)
 - [Simple Command Macros]({{ site.baseurl }}/guides/general/creating-command-macros/)
+- [Rhino Package Manager]({{ site.baseurl }}/guides/yak/)
 
 ### [Essential Mathematics]({{ site.baseurl }}/guides/general/essential-mathematics)
 
