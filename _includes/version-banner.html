@@ -30,7 +30,9 @@
           <strong>WARNING:</strong> You're viewing the older <strong>Rhino {{ site.git_branch | upcase }}</strong> version of this page! <a href="{{site.baseurl_orig}}{{ page.url }}">View the <strong>Rhino {{ site.versions.stable | upcase }}</strong> version instead.</a>
         {% endif %}
         {% if current == stable %}
-          <strong>NEW:</strong> Welcome to the <strong>Rhino {{ site.git_branch | upcase }}</strong> version of this page! <a href="{{site.baseurl_orig}}/{{ current | minus: 1 }}{{ page.url }}">Looking for the older Rhino {{ current | minus: 1 }} version?</a>
+          <!-- <strong>NEW:</strong> Welcome to the <strong>Rhino {{ site.git_branch | upcase }}</strong> version of this page! <a href="{{site.baseurl_orig}}/{{ current | minus: 1 }}{{ page.url }}">Looking for the older Rhino {{ current | minus: 1 }} version?</a> -->
+          Welcome to the <strong>Rhino {{ site.git_branch | upcase }}</strong> version of this page!
+          <a href="{{site.baseurl_orig}}/wip{{ page.url }}">Looking for the newer Rhino {{ current | plus: 1 }} WIP version?</a>
         {% endif %}
         {% if current > stable %}
           <strong>WARNING:</strong> You're viewing the <strong>Rhino {{ site.git_branch | upcase }}</strong> version of this page! <a href="{{site.baseurl_orig}}{{ page.url }}">View the current version instead.</a>
@@ -42,8 +44,8 @@
 </div>
 
 <!-- Check the version banner for broken links and remove the link if found -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+<!-- <script>
 $(document).ready(function()
 {
   var splitPath = window.location.pathname.split("/");
@@ -56,4 +58,4 @@ $(document).ready(function()
     $aTag.attr("href", "/5/");
   });
 });
-</script>
+</script> -->
