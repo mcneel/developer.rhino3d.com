@@ -121,7 +121,9 @@ layout: fullwidth-page
 {: rules="groups"}
 
 <div align="center">
- <p>Welcome to the Rhino 6 version of this site. <a href="{{site.baseurl_orig}}/5">Looking for the Rhino 5 version?</a></p>
+ <p>Welcome to the Rhino 6 version of this site.
+ <a href="{{site.baseurl_orig}}/5">Looking for the older Rhino 5 version?</a>
+ <a href="{{site.baseurl_orig}}/wip">Or the newer Rhino 7 WIP version?</a></p>
 
 <p>Still unclear?  Browse the <a href="{{ site.baseurl }}/guides/">Guides</a>.  Ask a question in <a href="{{ site.baseurl }}/guides/general/contributing/#discourse">the Forum</a>.  Check out the <a href="{{ site.baseurl }}/guides/general/frequently-asked-questions/">FAQ</a>. Ask <a href="{{ site.baseurl }}/guides/general/contributing/#contacts">a developer</a>.</p>
 
