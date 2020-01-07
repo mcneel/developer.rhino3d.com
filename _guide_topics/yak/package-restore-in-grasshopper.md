@@ -29,7 +29,9 @@ new "Install" option.
 
 Yak uses the name and version of the "libraries" (plug-ins) to which the missing
 components belong to search the server. If any packages match the search query
-then they will be installed and made available the next time Grasshopper loads.
+then they will be installed and, if possible, loaded prior to opening the definition[^3].
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MsjRdRtHW08" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Constraints
 
@@ -39,10 +41,6 @@ In case the package name doesn't match[^1] the plug-in name (as defined in the
 `GH_AssemblyInfo` derived class), Yak will fall back to searching by plug-in ID.
 
 ![Package restore can still operate when the plug-in name doesn't match the package]({{ site.baseurl }}/images/yak-gh-restore-guid.gif)
-
-Here's a closer look.
-
-![Package restore can still operate when the plug-in name doesn't match the package]({{ site.baseurl }}/images/yak-gh-restore-guid.png)
 
 The plug-in ID (GUID) is extracted from the `.gha` assembly when you run
 `yak build` and added to `manifest.yml`. When the package is pushed, the server
@@ -63,3 +61,4 @@ If the "Unrecognized Objects" dialog comes across a package/version pair that do
 
 [^1]: Package names are pretty strict. They only allow letters, numbers, hyphens and underscores.
 [^2]: Support for four-digit (`System.Version`) version numbers was added in Yak 0.8.
+[^3]: Added to Grasshopper in December 2019. On-the-fly loading is only possible if another version of the Grasshopper library is not already installed and loaded. Otherwise, Rhino will need to be restarted to load the new version of the library.

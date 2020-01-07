@@ -134,9 +134,17 @@ url: "https://github.com/meshmash/Plankton"
 ```
 
 
-<!-- ## Optional Attributes
+## Optional Attributes
 
-### Dependencies
+### Icon URL
+
+Specify a link to an icon that will be used by the Package Manager in Rhino. Keep it small – a 32x32 PNG is ideal.
+
+```yaml
+icon_url: "https://example.com/path/to/icon.png"
+```
+
+<!-- ### Dependencies
 
 A list of packages upon which this package depends. Can also include optional version specifications, again adhering to Semantic Versioning.
 

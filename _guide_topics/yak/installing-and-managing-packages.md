@@ -1,6 +1,6 @@
 ---
 title: Installing and Managing Packages
-description: This is a step by step guide to installing a Yak package.
+description: This is a step by step guide to installing and uninstalling a Yak package using the CLI.
 authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
@@ -13,8 +13,9 @@ layout: toc-guide-page
 ---
 
 <div class="alert alert-info" role="alert">
-<strong>Note:</strong> Yak is cross-platform. Not everything is hooked up on the Mac side
-yet, however. So, for now, this guide is aimed at <strong>Windows users only</strong>.
+<strong>Note:</strong> Yak is cross-platform. The examples below are for Windows.
+For Mac, replace the path to the Yak CLI tool with
+<code>/Applications/RhinoWIP.app/Contents/Resources/bin/yak</code>.
 </div>
 
 ## Install
