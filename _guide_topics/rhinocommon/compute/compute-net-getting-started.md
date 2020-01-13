@@ -1,5 +1,5 @@
 ---
-title: Rhino Compute Service (Windows)
+title: Rhino Compute &trade; (Windows)
 description: This guide covers all the necessary tools required to get started with the Rhino Compute Service in Csharp
 authors: ['steve_baer', 'scott_davidson']
 sdk: ['RhinoCommon', 'Compute']
@@ -13,7 +13,7 @@ layout: toc-guide-page
 ---
 
 
-By the end of this guide, you should have all the tools installed necessary for using the [Rhino Compute Service](https://www.rhino3d.com/compute) with C# in Windows.
+By the end of this guide, you should have all the tools installed necessary for using the [Rhino Compute&trade;](https://www.rhino3d.com/compute) with C# in Windows.
 
 For a an extensive getting started tutorial from Junichiro Horikawa go to the [video showing using C# to access Compute from within Unity.](https://youtu.be/zUbm83ynn0Q)
 

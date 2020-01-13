@@ -1,5 +1,5 @@
 ---
-title: Rhino Compute Service
+title: Rhino Compute &trade;
 description: This guide covers the tools required to get started with the Rhino Compute Service.
 authors: ['steve_baer', 'scott_davidson']
 sdk: ['RhinoCommon', 'Compute']
@@ -12,7 +12,7 @@ keywords: ['first', 'RhinoCommon', 'Plugin', 'compute']
 layout: toc-guide-page
 ---
 
-Compute is an open-source online advanced geometry extension as a web service based on Rhinoceros 3d's RhinoCommon API. The Compute services are meant to compliment the Rhino3dm Geometry library. See the [Compute website](https://www.rhino3d.com/compute) for more overview information.
+Compute is an open-source online advanced geometry extension as a web product based on Rhinoceros 3d's RhinoCommon API. The Compute is a compliment the Rhino3dm Geometry library. See the [Compute website](https://www.rhino3d.com/compute) for more overview information.
 
 Compute can be accessed from CPython, JavaScript and C# (.NET).  It runs on many platforms including Windows, OSX, IOS, Unix, All major browsers and Node.JS.
 
