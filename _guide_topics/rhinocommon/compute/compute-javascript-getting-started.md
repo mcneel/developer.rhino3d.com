@@ -1,5 +1,5 @@
 ---
-title: Rhino Compute &trade; Service with JavaScript
+title: Rhino Compute &trade; with JavaScript
 description: This guide covers all the necessary tools required to get started with the Rhino Compute Service through JavaScript.
 authors: ['scott_davidson']
 sdk: ['RhinoCommon', 'Compute']
@@ -13,7 +13,7 @@ layout: toc-guide-page
 ---
 
 
-By the end of this guide, you should have all the tools installed necessary for using the [Rhino Compute Service](https://www.rhino3d.com/compute) through JavaScript.
+By the end of this guide, you should have all the tools installed necessary for using the [Rhino Compute](https://www.rhino3d.com/compute) through JavaScript.
 
 The libraries will run on on all major browsers as well as node.js.
 
