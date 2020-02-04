@@ -42,7 +42,7 @@ There are a few client side tools which need to be installed in Python that are 
 
 ## The first use of Compute
 
-An example of using Python to access compute can be found in the [MakeMesh example](https://github.com/mcneel/rhino3dm/blob/master/samples/python/makemesh.py).
+An example of using Python to access compute can be found in the [MakeMesh example](https://github.com/mcneel/rhino3dm/blob/master/docs/python/samples/makemesh.py).
 
 Please note that the compute Python calls are made through the `compute_rhino3d.py` package using a `_`  (underbar) and not a `-` (dash).
 
