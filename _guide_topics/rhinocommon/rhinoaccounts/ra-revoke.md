@@ -18,7 +18,7 @@ layout: toc-guide-page
 `RevokeTokenAsync` must be executed inside a protected function that is passed to `ExecuteProtectedCodeAsync`. This is done to make sure that only a valid, signed assembly can retrieve auth tokens. Code inside the protected function should be kept as small as possible for performance and security reasons.
 
 ```cs
-using McNeel.RhinoAccounts;
+using Rhino.Runtime.RhinoAccounts;
 
 ...
 

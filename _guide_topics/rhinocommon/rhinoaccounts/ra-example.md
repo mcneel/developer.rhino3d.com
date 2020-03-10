@@ -22,13 +22,13 @@ Both `GetAuthTokensAsync` and `TryGetAuthTokens` must be executed inside a prote
 Example:
 
 ```cs
-using McNeel.RhinoAccounts;
+using Rhino.Runtime.RhinoAccounts;
 
 ...
 
 Tuple<OpenIDConnectToken, OAuth2Token> authTokens = null;
 
-await RhinoAccountsManager.ExecuteProtectedCodeAsync(async (RhinoAccountsManager.SecretKey secretKey) =>
+await RhinoAccountsManager.ExecuteProtectedCodeAsync(async (SecretKey secretKey) =>
 {
 	authTokens = RhinoAccountsManager.TryGetAuthTokens("MY_PLUGIN_ID",secretKey);
 	

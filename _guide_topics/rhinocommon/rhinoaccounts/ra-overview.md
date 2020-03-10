@@ -30,7 +30,6 @@ Taking advantage of Rhino Accounts within Rhino is simple, and requires the foll
 ## Required Steps
 
 To take Advantage of Rhino Accounts within Rhino:
- 1. Add a reference to `Proxy.dll`
- 2. [Call `GetTokensAsync` or `TryGetAuthTokens` to retrieve authentication and authorization tokens]({{ site.baseurl }}/guides/rhinocommon/rhinoaccounts/ra-example).
- 3. (*Optional*) [Call `RevokeAuthTokenAsync` to invalidate an authorization token when you no longer need it.]({{ site.baseurl }}/guides/rhinocommon/rhinoaccounts/ra-revoke).
+ 1. [Call `GetTokensAsync` or `TryGetAuthTokens` to retrieve authentication and authorization tokens]({{ site.baseurl }}/guides/rhinocommon/rhinoaccounts/ra-example).
+ 2. (*Optional*) [Call `RevokeAuthTokenAsync` to invalidate an authorization token when you no longer need it.]({{ site.baseurl }}/guides/rhinocommon/rhinoaccounts/ra-revoke).
 
