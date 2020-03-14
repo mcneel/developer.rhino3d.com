@@ -18,8 +18,6 @@ For Mac, replace the path to the Yak CLI tool with
 <code>/Applications/RhinoWIP.app/Contents/Resources/bin/yak</code>.
 </div>
 
-<!-- The Yak CLI tool is located at `C:\Program Files\Rhino WIP\System\Yak.exe`. -->
-
 First, let's assume you have a folder on your computer which contains all the
 files that you would like to distribute in your package. Something like this...
 
@@ -49,7 +47,7 @@ now...
 </div>
 
 ```commandline
-> "C:\Program Files\Rhino WIP\System\Yak.exe" spec
+> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" spec
 
 Inspecting content: Tamarin.rhp
 
@@ -104,7 +102,7 @@ secret:
 Now that we have a manifest file, we can build the package!
 
 ```commandline
-> "C:\Program Files\Rhino WIP\System\Yak.exe" build
+> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" build
 
 Building package from contents of C:\Users\Bozo\dist
 
