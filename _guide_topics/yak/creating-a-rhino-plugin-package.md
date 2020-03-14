@@ -131,6 +131,10 @@ C:\Users\Bozo\dist\tamarin-1.0.0.yak
     └── README.md
 ```
 
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> The filename includes a <a href="../the-anatomy-of-a-package#distributions">"distribution tag"</a> (in this case <code>rh6_18-win</code>). This is inferred from the version of Rhinocommon.dll or Rhino C++ SDK that you reference in your plug-in project, as well as the platform on which you perform the packaging process.
+</div>
+
 Congratulations! 🙌 You've just created a Yak package for your Rhino
 plug-in.
 

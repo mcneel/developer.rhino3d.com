@@ -100,7 +100,7 @@ Building package from contents of C:\Users\Bozo\dist
 
 Found manifest.yml for package: marmoset (1.0.0)
 Inspecting content: Marmoset.gha
-Creating marmoset-1.0.0.yak
+Creating marmoset-1.0.0-rh6_18-win.yak
 
 ---
 name: marmoset
@@ -114,13 +114,17 @@ url: example.com
 secret:
   id: c9beedb9-07ec-4974-a0a2-44670ddb17e4
 
-C:\Users\Bozo\dist\marmoset-1.0.0.yak
+C:\Users\Bozo\dist\marmoset-1.0.0-rh6_18-win.yak
 ├── Marmoset.dll
 ├── Marmoset.gha
 ├── manifest.yml
 ├── misc\LICENSE.txt
 └── misc\README.md
 ```
+
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> The filename includes a <a href="../the-anatomy-of-a-package#distributions">"distribution tag"</a> (in this case <code>rh6_18-win</code>). This is inferred from the version of Grasshopper.dll or Rhinocommon.dll that you reference in your plug-in project, as well as the platform on which you perform the packaging process.
+</div>
 
 Congratulations! 🙌 You've just created a Yak package for your Grasshopper
 plug-in.

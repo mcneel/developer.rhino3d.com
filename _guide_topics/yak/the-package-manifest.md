@@ -69,10 +69,13 @@ name: plankton
 ### Version
 
 _Since 0.8: four-digit version numbers allowed_
+_Since 0.9: `$version` placeholder_
 
 The version number given to the package.
 
 Package version numbers **must** either follow [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html) (e.g. `1.1.0-beta`) or `System.Version` a.k.a. Microsoft's four-digit standard (e.g. `1.2.3.4`). It's recommended to use Semantic Versioning because it allows package authors to specify prerelease versions. These are handy for limited testing, since by default the latest _stable_ version is installed.
+
+To make the authoring process easier, it's possible to replace the version number with `$version` – the version number will be inferred from the contents of the package and substituted during `yak build`.
 
 ```yaml
 version: 0.3.4

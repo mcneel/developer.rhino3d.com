@@ -18,12 +18,17 @@ The Yak command line tool is included with Rhino 7 WIP. On Windows the tool is l
 
 * _Since 0.2: Command added_
 * _Since 0.4: Supports multiple .gha files, .rhp files or anything else for that matter_
+* _Since 0.9: Appends distribution tag to filename and expands $version placeholder_
 
 When run in a directory containing a valid `manifest.yaml` file, creates a package containing all files in the directory.
 
 ```commandline
 yak build
 ```
+
+<div class="alert alert-info" role="alert">
+  <strong>Note:</strong> A <a href="../the-anatomy-of-a-package#distributions">distribution tag</a> (e.g. `rh7-win`) is appended to the filename of the created package. The tag is determined by inspecting the contents of the package during creation. The filename can be manually adjusted if the author wants to publish a cross-platform distribution, e.g. `rh7-any`. Only .rhp and .gha files can currently be inspected. If a package contains none of these, it will have a distribution tag of `any-any`.
+</div>
 
 <!-- During the build, the component GUID is extracted to help with searching for the package later. -->
 
@@ -57,7 +62,7 @@ Authenticates with Rhino Accounts and stores a time-limited OAuth2 access token 
 yak login
 ```
 
-On macOS, credentials are stored in `~/.mcneel/yak.yml`. On Windows, they are stored in `%appdata%\McNeel\yak.yml`.
+On Windows, the token is stored in `%appdata%\McNeel\yak.yml`. On macOS, it is stored in `~/.mcneel/yak.yml`.
 
 ## Push
 
