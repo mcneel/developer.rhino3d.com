@@ -39,7 +39,7 @@ plankton-0.4.0-any-any.yak
 4. Package version numbers **must** either follow [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html) (e.g. `1.1.0-beta`) or `System.Version` a.k.a. Microsoft's four-digit standard (e.g. `1.2.3.4`). It's recommended to use Semantic Versioning because it allows package authors to specify prerelease versions. These are handy for limited testing, since by default the latest _stable_ version is installed.
 5. If you're packaging a `.gha` plug-in, you **should** ensure that the package
    name and version number in the `GH_AssemblyInfo` sub-class match those in the
-   `manifest.yml` file, otherwise [package restore][../package-restore-in-grasshopper] may not work
+   `manifest.yml` file, otherwise [package restore](../package-restore-in-grasshopper) may not work
 
 ## Distributions
 
