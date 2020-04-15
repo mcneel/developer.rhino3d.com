@@ -111,9 +111,8 @@ RhinoScriptSyntax contains a number of methods to manipulate vectors.  See [Rhin
 
 ## Related Topics
 
-- [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
 - [Python Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points)
 - [Python Vectors]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Python Lines]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-lines)
-- [Python Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-planes)
+- [Python Lines]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-line)
+- [Python Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-plane)
 - [Python Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects)
