@@ -1,5 +1,5 @@
 ---
-title: Yak CLI Reference
+title: Yak Command Line Interface Reference
 description: A reference for the Yak command line tool.
 authors: ['will_pearson']
 sdk: ['Yak']
