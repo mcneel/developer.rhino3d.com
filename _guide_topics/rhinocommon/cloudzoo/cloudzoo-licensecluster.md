@@ -25,7 +25,7 @@ layout: toc-guide-page
 
 ## When should I cluster licenses?
 
-Under normal circumstances, a License Cluster contains a single License object]({{ site.baseurl }}/guides/rhinocommon/cloudzoo/cloudzoo-license) in its `licenses` array. However, particularly when dealing with upgrades, clustering multiple related licenses may be useful. 
+Under normal circumstances, a License Cluster contains a single [License object]({{ site.baseurl }}/guides/rhinocommon/cloudzoo/cloudzoo-license) in its `licenses` array. However, particularly when dealing with upgrades, clustering multiple related licenses may be useful. 
 
 For example, consider a hypothetical Plug-In called *3D Donuts*. There are licenses for *3D Donuts* version 1, and licenses for *3D Donuts* version 2. 
 
