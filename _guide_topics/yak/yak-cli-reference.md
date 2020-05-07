@@ -133,6 +133,10 @@ Removes a version from the package index.
 yak yank <package> <version>
 ```
 
+<div class="alert alert-info" role="alert">
+  <strong>Note:</strong> Requires <a href="#login">authentication</a>.
+</div>
+
 Yanked versions do not appear in searches but can still be installed if the exact package version is known. To all intents and purposes they are hidden.
 
 Note, it is not possible to push a package that has been yanked. If you find yourself in this situation, then simply roll the version number of your package and push.
