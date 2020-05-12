@@ -68,15 +68,18 @@ name: plankton
 
 ### Version
 
-The version string given to the package, adhering strictly to [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html). We've adopted SemVer to make ordering straightforward and also for easy identification of pre-release versions – handy when releasing beta plug-ins for limited testing!
+_Since 0.8: four-digit version numbers allowed_
+_Since 0.9: `$version` placeholder_
 
-Partial version numbers are expanded to the full `major.minor.patch` by the server, e.g. `0.1 -> 0.1.0`.
+The version number given to the package.
+
+Package version numbers **must** either follow [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html) (e.g. `1.1.0-beta`) or `System.Version` a.k.a. Microsoft's four-digit standard (e.g. `1.2.3.4`). It's recommended to use Semantic Versioning because it allows package authors to specify prerelease versions. These are handy for limited testing, since by default the latest _stable_ version is installed.
+
+To make the authoring process easier, it's possible to replace the version number with `$version` – the version number will be inferred from the contents of the package and substituted during `yak build`.
 
 ```yaml
 version: 0.3.4
 ```
-
-For specific questions about versioning, please direct those to the [Yak Forum](https://discourse.mcneel.com/c/serengeti/yak)
 
 ### Authors
 
@@ -134,9 +137,17 @@ url: "https://github.com/meshmash/Plankton"
 ```
 
 
-<!-- ## Optional Attributes
+## Optional Attributes
 
-### Dependencies
+### Icon URL
+
+Specify a link to an icon that will be used by the Package Manager in Rhino. Keep it small – a 32x32 PNG is ideal.
+
+```yaml
+icon_url: "https://example.com/path/to/icon.png"
+```
+
+<!-- ### Dependencies
 
 A list of packages upon which this package depends. Can also include optional version specifications, again adhering to Semantic Versioning.
 
@@ -168,7 +179,7 @@ dependencies:
   "url": "https://github.com/meshmash/Plankton",
   "type": "gh-plugin"
 }
-​``` -->
+``` -->
 
 ---
 
@@ -178,4 +189,3 @@ dependencies:
 - [Anatomy of a Package]({{ site.baseurl }}/guides/yak/the-anatomy-of-a-package/)
 - [Yak CLI Reference]({{ site.baseurl }}/guides/yak/yak-cli-reference)
 
-```

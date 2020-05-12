@@ -18,7 +18,7 @@ For details on creating a complete Eto Dialog in Rhino.Python go to the [Getting
 
 ## Buttons
 
-Buttons are placed on almost every dialog.  
+Buttons are placed on almost every dialog.
 
 ![{{ site.baseurl }}/images/eto-buttons.svg]({{ site.baseurl }}/images/eto-buttons.svg){: .img-center width="65%"}
 
@@ -29,7 +29,7 @@ Creating a new button is simple. Use the `forms.Button` and specify the `Text` t
         self.m_button.Click += self.OnButtonClick
 ```
 
-The bound method, listed later in the calss definition is run if the button is clicked. 
+The bound method, listed later in the calss definition is run if the button is clicked.
 
 ```python
     # Close button click handler
@@ -73,7 +73,7 @@ Creating a Calender is very simple:
     self.m_calender = forms.Calendar()
 ```
 
-Often other properties are set on the calendar control.  There are a number of properties of a calender control that can be used to modify how the control works. 
+Often other properties are set on the calendar control.  There are a number of properties of a calender control that can be used to modify how the control works.
 
 ```python
     #Create a Calendar
@@ -85,7 +85,7 @@ Often other properties are set on the calendar control.  There are a number of p
 ```
 The `.Mode` property sets if only a single date can be setting `forms.CalendarMode.Single` or date range can be selected by setting `.mode` to `forms.CalendarMode.Range`.
 
-The `MaxDate` and `.MinDate` property limits the range of dates that can be selected from. 
+The `MaxDate` and `.MinDate` property limits the range of dates that can be selected from.
 
 The `.SelectedDate` will result in that date being initially selected.
 
@@ -185,7 +185,7 @@ More details can be found in the [Eto DateTimePicker API Documentation](http://a
 
 ## DropDown
 
-Drop down menu with a list of items. 
+Drop down menu with a list of items.
 
 ![{{ site.baseurl }}/images/eto-controls-combobox.png]({{ site.baseurl }}/images/eto-controls-combobox.png){: .img-center width="45%"}
 
@@ -234,7 +234,7 @@ Creating a `.GridView()` is more involved then othe ETo controls.  Start by crea
         column3.Editable = True
         column3.DataCell = forms.TextBoxCell(2)
         self.m_gridview.Columns.Add(column3)
-        
+
         column4 = forms.GridColumn()
         column4.HeaderText = 'Column 4'
         column4.Editable = True
@@ -245,7 +245,7 @@ Creating a `.GridView()` is more involved then othe ETo controls.  Start by crea
 Accessing the values in each cell of the `forms.GridView` can be done by using the index position of the value in the `.DataStore` property.
 
 ```python
-dialog.m_gridview.DataStore[1][2] 
+dialog.m_gridview.DataStore[1][2]
 ```
 
 This will result in a value of  'third pick' in the above example.
@@ -254,7 +254,7 @@ More details can be found in the [Eto GridView API Documentation](https://github
 
 ## GroupBox
 
-A GroupBox displays a collection of controls surrounded by a border and optional title to identify the group:  
+A GroupBox displays a collection of controls surrounded by a border and optional title to identify the group:
 
 ![{{ site.baseurl }}/images/eto-controls-groupbox.png]({{ site.baseurl }}/images/eto-controls-groupbox.png){: .img-center width="45%"}
 
@@ -264,10 +264,10 @@ Like the larger dialog, the `forms.GroupBox()` requires a *Layout* to help posit
 # Create a group box
         self.m_groupbox = forms.GroupBox(Text = 'Groupbox')
         self.m_groupbox.Padding = drawing.Padding(5)
-        
+
         grouplayout = forms.DynamicLayout()
         grouplayout.Spacing = Size(3, 3)
-        
+
         label1 = forms.Label(Text = 'Enter Text:')
         textbox1 = forms.TextBox()
 
@@ -275,12 +275,12 @@ Like the larger dialog, the `forms.GroupBox()` requires a *Layout* to help posit
 
         grouplayout.AddRow(label1, textbox1)
         grouplayout.AddRow(checkbox1)
-        
+
         self.m_groupbox.Content = grouplayout
-        
+
 ```
 
-More details can be found in the [Eto GroupBox API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_GroupBox.htm). 
+More details can be found in the [Eto GroupBox API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_GroupBox.htm).
 
 ## ImageView
 
@@ -295,7 +295,7 @@ Creating a space for a ImageView is easy. The first 3 lines below create the `fo
         self.m_image_view = forms.ImageView()
         self.m_image_view.Size = drawing.Size(300, 200)
         self.m_image_view.Image = None
-        
+
         # Capture the active view to a System.Drawing.Bitmap
         view = scriptcontext.doc.Views.ActiveView
         self.m_image_view.Image = Rhino.UI.EtoExtensions.ToEto(view.CaptureToBitmap())
@@ -303,7 +303,7 @@ Creating a space for a ImageView is easy. The first 3 lines below create the `fo
 
 Bitmaps may be formatted from a number of different forms. In this case the `view.CaptureToBitmap()` image is translated to an Eto bitmap using the `Rhino.UI.EtoExtensions.ToEto()` method.
 
-More details can be found in the [Eto ImageView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_ImageView.htm). 
+More details can be found in the [Eto ImageView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_ImageView.htm).
 
 ## Label
 
@@ -326,12 +326,12 @@ self.m_label = forms.Label(Text = 'Enter the Room Number:', VerticalAlignment = 
 Labels also can be created directly in layouts directly.  There is a shorthand syntax when adding controls to a layout that will automatically create a `forms.Label`
 
 ```python
-  #Adds a new Label diplaying "Camera:"      
-  layout.AddRow('Camera:', None) 
-  
+  #Adds a new Label diplaying "Camera:"
+  layout.AddRow('Camera:', None)
+
   #Adds a new label displaying "Name :" inline with the Textbox control.
-  layout.AddRow('Name:', forms.TextBox(Text = 'Persp1')) 
-  
+  layout.AddRow('Name:', forms.TextBox(Text = 'Persp1'))
+
 ```
 
 When adding Rows or Columns, a simple string can be inserted.  Eto will automatically create a Label out of the string.  This is a very fast way yo make `forms.Label`.
@@ -350,13 +350,13 @@ Like a standard button the `forms.LinkButton()` needs to be bound to an action t
 # Create LinkButton
         self.m_linkbutton = forms.LinkButton(Text = 'For more details...')
         self.m_linkbutton.Click += self.OnLinkButtonClick
-        
+
     # Linkbutton click handler
     def OnLinkButtonClick(self, sender, e):
         webbrowser.open("http://rhino3d.com")
 ```
 
-More details can be found in the [Eto LinkButton API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_LinkButton.htm). 
+More details can be found in the [Eto LinkButton API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_LinkButton.htm).
 
 ## ListBox
 
@@ -375,7 +375,7 @@ The `forms.ListBox()` and the `.DataStore` is required to create a `forms.ListBo
 
 The `self.m_listbox.SelectedIndex = 1` is optional and sets the default selected object withing the DataStore.
 
-More details can be found in the [Eto ListBox API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_ListBox.htm). 
+More details can be found in the [Eto ListBox API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_ListBox.htm).
 
 ## NumericUpDown
 
@@ -395,7 +395,7 @@ Controlling the behavior of the spinner when clicking on the up or down arrows i
         self.m_numeric_updown.Value = 5.0
 ```
 
-More details can be found in the [Eto NumericUpDown API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_NumericUpDown.htm). 
+More details can be found in the [Eto NumericUpDown API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_NumericUpDown.htm).
 
 ## PasswordBox
 
@@ -411,7 +411,7 @@ The `.MaxLength` property is optional:
         self.m_password.MaxLength = 7
 ```
 
-More details can be found at the [Eto PasswordBox API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_PasswordBox.htm). 
+More details can be found at the [Eto PasswordBox API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_PasswordBox.htm).
 
 ## ProgressBar
 
@@ -441,7 +441,7 @@ self.m_progress = 1
         self.m_progressbar.Value = self.m_progress
 ```
 
-More details can be found in the [Eto ProgressBar API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_ProgressBar.htm). 
+More details can be found in the [Eto ProgressBar API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_ProgressBar.htm).
 
 ## RadioButtonList
 
@@ -463,7 +463,7 @@ The `.Orientation` of the list can be set to `forms.Orientation.Vertical` or `fo
 
 The `.SelectedIndex` sets the initial default selected object in the list.
 
-More details can be found in the [Eto RadioButtonList API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_RadioButtonList.htm). 
+More details can be found in the [Eto RadioButtonList API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_RadioButtonList.htm).
 
 ## RichTextArea
 
@@ -481,7 +481,7 @@ Multi-line text area with rich text formatting:
 
 The text can be formatted by using keystrokes.  While these keystrokes may vary on different platforms, a good list of modifier keystrokes for this control can be found on the [Microsoft MSDN Editing Commands documentation](https://msdn.microsoft.com/en-us/library/system.windows.documents.editingcommands.aspx#Anchor_3).
 
-More details can be found in the [Eto RichTextArea API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_RichTextArea.htm). 
+More details can be found in the [Eto RichTextArea API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_RichTextArea.htm).
 
 
 ## Slider
@@ -490,7 +490,7 @@ A horizontal or vertical slider to select a value from a range:
 
 ![{{ site.baseurl }}/images/eto-controls-slider.png]({{ site.baseurl }}/images/eto-controls-slider.png){: .img-center width="45%"}
 
-A slider consists of the control, the maximum and minimum values.  The initial `.Value` can also be set at the time the dialog is created: 
+A slider consists of the control, the maximum and minimum values.  The initial `.Value` can also be set at the time the dialog is created:
 
 ```python
 # Create a slider
@@ -506,7 +506,7 @@ To set the sldier into a vertical orientation, add the line:
         self.m_slider.Orientation = forms.Orientation.Vertical
 ```
 
-More details can be found in the [Eto Slider API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_Slider.htm). 
+More details can be found in the [Eto Slider API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_Slider.htm).
 
 ## Spinner
 
@@ -522,7 +522,7 @@ When creating the `forms.Spinner()`, setting the `.Enabled` to `True` willl acti
         self.m_spinner.Enabled = True
 ```
 
-More details can be found in the [Eto Spinner API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_Spinner.htm). 
+More details can be found in the [Eto Spinner API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_Spinner.htm).
 
 ## TextArea
 
@@ -538,7 +538,7 @@ A simplified version of the `forms.RichTextArea()`.  The `forms.TextArea()` cont
         self.m_textarea.Size = drawing.Size(400, 400)
 ```
 
-More details can be found in the [Eto TextArea API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_TextArea.htm). 
+More details can be found in the [Eto TextArea API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_TextArea.htm).
 
 ## TextBox
 
@@ -549,7 +549,7 @@ A TextBox is used to enter a string into the dialog.
 To check the contents of the textbox in the script, the textbox control must have a name to reference it.
 
 ```python
-        self.m_textbox = forms.TextBox() 
+        self.m_textbox = forms.TextBox()
 ```
 
 In this case the name `m_textbox` can be used to reference the control later in the class method starting on line 44:
@@ -571,7 +571,7 @@ A TreeView with additional property columns:
 
 The TreeGridView takes the two most sophisticated controls in Eto, TreeView and GridView to combine them into one control. This make the control powerful, but also requires very specific syntax to work.  The first two lines are standard, create the `forms.TreeGridView()` and set its size:
 
-The `forms.TreeView()` control requires some very specific syntax.  The general `TreeView` container is easy enough.  Set the object up and then its size.  If editing of the items in the tree, then the `.LabelEdit` property can be set to `True`. 
+The `forms.TreeView()` control requires some very specific syntax.  The general `TreeView` container is easy enough.  Set the object up and then its size.  If editing of the items in the tree, then the `.LabelEdit` property can be set to `True`.
 
 ```python
 # Create TreeGridView
@@ -583,7 +583,7 @@ The `forms.TreeView()` control requires some very specific syntax.  The general 
         column1.Editable = True
         column1.DataCell = forms.TextBoxCell(0)
         self.m_treegridview.Columns.Add(column1)
-        
+
         column2 = forms.GridColumn()
         column2.HeaderText = 'Prop 2'
         column2.Editable = True
@@ -595,7 +595,7 @@ The `forms.TreeView()` control requires some very specific syntax.  The general 
         column3.Editable = True
         column3.DataCell = forms.TextBoxCell(2)
         self.m_treegridview.Columns.Add(column3)
-        
+
         treecollection = forms.TreeGridItemCollection()
         item1 = forms.TreeGridItem(Values=('node1', 'node1b', 'node1c'))
         item1.Expanded = True
@@ -614,7 +614,7 @@ The information for for a tree is stored into a `forms.TreeGridCollection()`.  I
 
 The `forms.TreeGridView` does not automatically update it contents.  After all the control is setup, the `DataStore` is set to the `treecollection`.  Doing this is a different order may end up in a control that does not display the data.
 
-More details can be found in the [Eto TreeGridView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_TreeGridView.htm). 
+More details can be found in the [Eto TreeGridView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_TreeGridView.htm).
 
 ## WebView
 
@@ -631,12 +631,12 @@ Creating the `forms.WebView()` is simple by creating the webview, then to set it
         self.m_webview.Url = System.Uri('http://developer.rhino3d.com/guides/rhinopython/')
 ```
 
-More details can be found in the [Eto WebView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_WebView.htm). 
+More details can be found in the [Eto WebView API Documentation](http://api.etoforms.picoe.ca/html/T_Eto_Forms_WebView.htm).
 
 
-## Sample Dialogs  
+## Sample Dialogs
 
-Now with some understanding of Eto Dialogs in Python, take a look at some of the Sample dialogs in the [Python Developer Samples Repo](https://github.com/mcneel/rhino-developer-samples/blob/wip/rhinopython):
+Now with some understanding of Eto Dialogs in Python, take a look at some of the Sample dialogs in the [Python Developer Samples Repo](https://github.com/mcneel/rhino-developer-samples/blob/{{ site.git_branch | default: "master" }}/rhinopython):
 
 1.  [A very simple dialog](https://github.com/mcneel/rhino-developer-samples/blob/6/rhinopython/SampleEtoDialog.py)
 2.  [Rebuild curve Dialog](https://github.com/mcneel/rhino-developer-samples/blob/6/rhinopython/SampleEtoRebuildCurve.py)

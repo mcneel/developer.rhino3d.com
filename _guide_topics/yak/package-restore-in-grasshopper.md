@@ -29,7 +29,9 @@ new "Install" option.
 
 Yak uses the name and version of the "libraries" (plug-ins) to which the missing
 components belong to search the server. If any packages match the search query
-then they will be installed and made available the next time Grasshopper loads.
+then they will be installed and, if possible, loaded prior to opening the definition[^3].
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MsjRdRtHW08" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Constraints
 
@@ -40,10 +42,6 @@ In case the package name doesn't match[^1] the plug-in name (as defined in the
 
 ![Package restore can still operate when the plug-in name doesn't match the package]({{ site.baseurl }}/images/yak-gh-restore-guid.gif)
 
-Here's a closer look.
-
-![Package restore can still operate when the plug-in name doesn't match the package]({{ site.baseurl }}/images/yak-gh-restore-guid.png)
-
 The plug-in ID (GUID) is extracted from the `.gha` assembly when you run
 `yak build` and added to `manifest.yml`. When the package is pushed, the server
 extracts the ID (along with the name, version, etc.) and makes it searchable.
@@ -53,20 +51,14 @@ using `yak build` so this can all work happily!
 
 ### Version numbers
 
-Similar to the naming, the Yak server is strict in its use of Semantic
-Versioning[^2] for packages. The server will however attempt to coerce version
-strings that don't exactly match the specification, for example: `1 -> 1.0.0`.
-If the "Unrecognized Objects" dialog kicks up a plug-in that doesn't match
-Semantic Versioning (and can't be coerced), then it won't find any matches.
+Package version numbers can either follow the [Semantic Versioning 2.0.0](https://semver.org) (SemVer) spec or they can be four-digits[^2], as per `System.Version`. See the [package server](../the-package-server) guide for more details on the allowed version number formats.
 
-```commandline
-404: No package found by the name of 'plankton' with version number 'semwhat'.
-```
+The server allows both SemVer and four-digit because some Grasshopper plug-ins will specify their version number as a `string` in a class derived from `GH_AssemblyInfo` whereas others will rely on the `AssemblyVersionAttribute`.
 
-That said, you won't be able to upload a package without adopting Semantic
-Versioning, so...
+If the "Unrecognized Objects" dialog comes across a package/version pair that doesn't exist on the server, it will drop down to searching by GUID and grab the latest version if there's a match.
 
 ---
 
 [^1]: Package names are pretty strict. They only allow letters, numbers, hyphens and underscores.
-[^2]: [http://semver.org/spec/v2.0.0.html](http://semver.org/spec/v2.0.0.html)
+[^2]: Support for four-digit (`System.Version`) version numbers was added in Yak 0.8.
+[^3]: Added to Grasshopper in December 2019. On-the-fly loading is only possible if another version of the Grasshopper library is not already installed and loaded. Otherwise, Rhino will need to be restarted to load the new version of the library.

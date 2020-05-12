@@ -38,7 +38,7 @@ and
 
 Notice the banner along the top of the "WIP" version of the site.  This tells the reader that they are on the version of the site that corresponds to information found in the Rhino Work-In-Progress (WIP) version of the software.  The "undecorated" ([http://developer.rhino3d.com](http://developer.rhino3d.com)) version of the site represents the current, stable, shipping version of Rhino.  (Legacy versions of documentation for legacy Rhino will be versioned accordingly.)
 
-How does this work for the author, developer, or contributor?  The current (_stable_) version Rhino is defined in the `stable:` field in the `_config.yml` file.  The `n` branch that corresponds to the stable release is built and deployed to http://developer.rhino3d.com.  
+How does this work for the author, developer, or contributor?  The current (_stable_) version Rhino is defined in the `stable:` field in the `_config.yml` file.  The `n` branch that corresponds to the stable release is built and deployed to [http://developer.rhino3d.com](http://developer.rhino3d.com).  
 
 The `master` branch represents the WIP version of the site.  Changes to the `master` branch will be built by Travis and deployed to [http://developer.rhino3d.com/wip](http://developer.rhino3d.com/wip).  
 

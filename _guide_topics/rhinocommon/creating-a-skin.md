@@ -100,4 +100,4 @@ To install your custom Skin, use *REGEDIT.EXE* to add a scheme key to your regis
 
 You can now test your custom Skin by creating shortcut to your Rhino executable with `/scheme="<scheme name from the previous step>"` as command line argument.  For example:
 
-*C:\Program Files\Rhino 6\System\Rhino.exe" /scheme=MySkin*
+*C:\Program Files\Rhino WIP\System\Rhino.exe" /scheme=MySkin*

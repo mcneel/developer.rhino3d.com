@@ -49,13 +49,13 @@
 $(document).ready(function()
 {
   var splitPath = window.location.pathname.split("/");
-  var linkURL = "/5/" + splitPath.splice(1,splitPath.length-1).join("/");
+  var linkURL = "/" + splitPath.splice(2,splitPath.length-2).join("/");
 
   $.get(linkURL).fail(function ()
   {
     var $aTag = $("div.version-banner > a");
-    $aTag.text("Looking for the older Rhino 5 site?");
-    $aTag.attr("href", "/5/");
+    $aTag.text("View the current site instead.");
+    $aTag.attr("href", "/");
   });
 });
 </script> -->

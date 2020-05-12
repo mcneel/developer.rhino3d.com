@@ -15,7 +15,7 @@ layout: toc-guide-page
 <div class="alert alert-info" role="alert">
 <strong>Note:</strong> Yak is cross-platform. The examples below are for Windows.
 For Mac, replace the path to the Yak CLI tool with
-<code>/Applications/Rhinoceros.app/Contents/Resources/bin/yak</code>.
+<code>/Applications/RhinoWIP.app/Contents/Resources/bin/yak</code>.
 </div>
 
 First, let's assume you have a folder on your computer which contains all the
@@ -47,7 +47,7 @@ now...
 </div>
 
 ```commandline
-> "C:\Program Files\Rhino 6\System\Yak.exe" spec
+> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" spec
 
 Inspecting content: Tamarin.rhp
 
@@ -102,7 +102,7 @@ secret:
 Now that we have a manifest file, we can build the package!
 
 ```commandline
-> "C:\Program Files\Rhino 6\System\Yak.exe" build
+> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" build
 
 Building package from contents of C:\Users\Bozo\dist
 
@@ -130,6 +130,10 @@ C:\Users\Bozo\dist\tamarin-1.0.0.yak
     ├── LICENSE.txt
     └── README.md
 ```
+
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> The filename includes a <a href="../the-anatomy-of-a-package#distributions">"distribution tag"</a> (in this case <code>rh6_18-win</code>). This is inferred from the version of Rhinocommon.dll or Rhino C++ SDK that you reference in your plug-in project, as well as the platform on which you perform the packaging process.
+</div>
 
 Congratulations! 🙌 You've just created a Yak package for your Rhino
 plug-in.
