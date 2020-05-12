@@ -17,10 +17,12 @@ layout: toc-guide-page
 Packages are simply ZIP archives. Take this simple example...
 
 ```
-plankton-0.4.0.zip
+howler-0.4.0.zip
 ├── manifest.yml
-├── Plankton.gha
-├── Plankton.dll
+├── Howler.rhp
+├── Howler.rui
+├── HowlerCommon.dll
+├── HowlerGrasshopper.gha
 └── misc/
     ├── README.md
     └── LICENSE.txt
