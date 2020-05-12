@@ -21,7 +21,7 @@ layout: toc-guide-page
 
 Yak is a package manager for the Rhino ecosystem. Yak assists in the discovery,
 installation, and management of Rhino and Grasshopper resources. Examples
-include plug-ins, components, scripts, and material definitions.  
+include plug-ins, components, scripts, and material definitions.
 
 Yak has several goals.
 
@@ -81,6 +81,11 @@ The command line tool provides a basic interface but with full functionality.
 It is modelled on well known domain-specific package managers such as Ruby's
 `gem` and Python's `pip`. It communicates with the server as well as hooking
 into Rhino Accounts for authentication.
+
+On Windows, the tool can be found at `C:\Program Files\Rhino 6\System\yak.exe`.
+On Mac there is a script, `/Applications/Rhinoceros.app/Contents/Resources/bin/yak`.
+
+Type `<path_to_yak> help` to get started.
 
 ---
 
