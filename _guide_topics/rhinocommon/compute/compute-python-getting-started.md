@@ -1,5 +1,5 @@
 ---
-title: Rhino Compute Service with Python
+title: Rhino Compute &trade; with Python
 description: This guide covers all the necessary tools required to get started with the Rhino Compute Service using Python.
 authors: ['scott_davidson']
 sdk: ['RhinoCommon', 'Compute']
@@ -13,7 +13,7 @@ layout: toc-guide-page
 ---
 
 
-By the end of this guide, you should have all the tools installed necessary for using the [Rhino Compute Service](https://www.rhino3d.com/compute) through Python.
+By the end of this guide, you should have all the tools installed necessary for using the [Rhino Compute](https://www.rhino3d.com/compute) through Python.
 
 For an [getting started video tutorial from Junichiro Horikawa with Python](https://youtu.be/XCkRXAEJMhg)
 
@@ -42,7 +42,7 @@ There are a few client side tools which need to be installed in Python that are 
 
 ## The first use of Compute
 
-An example of using Python to access compute can be found in the [MakeMesh example](https://github.com/mcneel/rhino3dm/blob/master/samples/python/makemesh.py).
+An example of using Python to access compute can be found in the [MakeMesh example](https://github.com/mcneel/rhino3dm/blob/master/docs/python/samples/makemesh.py).
 
 Please note that the compute Python calls are made through the `compute_rhino3d.py` package using a `_`  (underbar) and not a `-` (dash).
 

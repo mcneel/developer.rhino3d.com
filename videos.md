@@ -25,7 +25,7 @@ by Brian Gillespie.  Recorded October 20th, 2016.
 
 
 
-Presented by [Long Nguyen](https://discourse.mcneel.com/u/longnguyen).  Recorded April 26-28, 2018 at the [Institute for Computational Design (ICD)](http://icd.uni-stuttgart.de/) at the [University of Stuttgart](https://www.uni-stuttgart.de/).  
+Presented by [Long Nguyen](https://discourse.mcneel.com/u/longnguyen).  Recorded April 26-28, 2018 at the [Institute for Computational Design (ICD)](http://icd.uni-stuttgart.de/) at the [University of Stuttgart](https://www.uni-stuttgart.de/).
 
 More information is available at the [the workshop homepage](https://www.icd.uni-stuttgart.de/teaching/workshops/workshop-live-streaming-c-scripting-and-plugin-development-for-grasshopper/).
 
@@ -90,3 +90,4 @@ Presented by Curtis Wensley at the McNeel Global Developer Meeting, Barcelona, O
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mcFLsdLi5Hk"></iframe>
 </div>
+

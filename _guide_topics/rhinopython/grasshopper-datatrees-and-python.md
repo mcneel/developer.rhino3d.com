@@ -5,9 +5,9 @@ authors: ['giulio_piacentino']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
-categories: ['Getting Started']
+categories: ['GhPython']
 origin: http://wiki.mcneel.com/developer/python
-order: 2
+order: 7
 keywords: ['Rhino.Python', 'Python']
 layout: toc-guide-page
 ---

@@ -38,6 +38,11 @@
   email: dan@mcneel.com
   discourse: dan
 
+- name: david_leon
+  display_name: David Andres Leon
+  email: david.leon@mcneel.com
+  discourse: DavidLeon
+
 - name: david_rutten
   display_name: David Rutten
   email: david@mcneel.com

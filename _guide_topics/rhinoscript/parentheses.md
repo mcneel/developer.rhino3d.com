@@ -1,11 +1,11 @@
 ---
 title: Parentheses
-description: This guide discusses the Cannot use parentheses when calling a Sub error that occurs in RhinoScript.
+description: This guide discusses the "Cannot use parentheses when calling a Sub" error that occurs in RhinoScript.
 authors: ['dale_fugier']
 sdk: ['RhinoScript']
 languages: ['VBScript']
 platforms: ['Windows']
-categories: ['Miscellaneous', 'Intermediate']
+categories: ['Intermediate']
 origin: http://wiki.mcneel.com/developer/scriptsamples/parentheses
 order: 1
 keywords: ['script', 'Rhino', 'vbscript']
@@ -36,7 +36,7 @@ In VBScript, parentheses mean several different things:
 Evaluate a subexpression before the rest of the expression.  For example:
 
 ```vbnet
-Average = (First + Last) / 2)`
+Average = (First + Last) / 2
 ```
 
 or...

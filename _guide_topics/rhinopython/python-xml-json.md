@@ -1,5 +1,5 @@
 ---
-title: How to use JSON with Python
+title: How to use JSON
 description: How to format in JSON or XML.
 authors: ['scott_davidson']
 sdk: ['RhinoPython']

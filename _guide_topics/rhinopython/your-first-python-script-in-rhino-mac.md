@@ -19,7 +19,7 @@ To get acquainted with how Python scripts can help you model first run some of t
   1. In the Command prompt edit box (top left by default) type the RunPythonScript command.
   2. If it's the first time you run this command the dialog box that comes up will show the files in the samples directory.  If it's not then navigate to it.  It should be under:
   ```
-  ~/Library/Application/Support/McNeel/Rhinoceros/Scripts/samples
+  ~/Library/Application Support/McNeel/Rhinoceros/6.0/Scripts/samples
   ```
   (the beginning tilde (~) character is normally in the far upper left of the keyboard).
   3. Experiment by running HelloPython.py
@@ -29,14 +29,14 @@ To get acquainted with how Python scripts can help you model first run some of t
 You can open any of the sample Python scripts in a text editor. From Finder navigate to the samples directory:
 
 ```
-/Users/HOME/Library/Application\ Support/McNeel/Rhinoceros/Scripts/samples
+/Users/HOME/Library/Application Support/McNeel/Rhinoceros/6.0/Scripts/samples
 ```
 (replace HOME with your home directory name).
 
 Or in the Finder, use the Go pulldown > Go To Folder... and type:
 
 ```
-~/Library/Application/Support/McNeel/Rhinoceros/Scripts/samples
+~/Library/Application Support/McNeel/Rhinoceros/6.0/Scripts/samples
 ```
 
 Right-click on any of the scripts and from the context menu that pops up select Open With -> TextEdit.app which is the text editor that comes with macOS.  You can try editing and saving the files and then re-run them in Rhino with the `RunPythonScript` command.

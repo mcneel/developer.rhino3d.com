@@ -622,6 +622,26 @@ See the [MathJax basic tutorial and quick reference on StackExchange](http://met
 
 ---
 
+### Video Player embed
+
+Use the includes codes to quickly include an embedded player for Vimeo or Youtube.
+
+The Id code is the ID of the video to embed from Youtube or Vimeo. Ignore the "\\" escape characters.
+
+Youtube code:
+
+```kramdown
+\{\% include youtube_player.html id=\"8BNyMC4EBcw\" \%\}
+```
+
+Vimeo code:
+
+```kramdown
+\{\% include vimeo_player.html id=\"8BNyMC4EBcw\" \%\}
+```
+
+---
+
 ## Related topics
 
 - [How This Site Works]({{ site.baseurl }}/guides/general/how-this-site-works/)
