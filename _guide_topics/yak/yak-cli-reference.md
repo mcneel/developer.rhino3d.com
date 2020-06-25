@@ -19,7 +19,7 @@ The Yak command line tool is included with Rhino 7 WIP. On Windows the tool is l
 * _Since 0.2: Command added_
 * _Since 0.4: Supports multiple .gha files, .rhp files or anything else for that matter_
 * _Since 0.9: Appends distribution tag to filename and expands $version placeholder_
-* _Singe 0.10.1: Adds `--platform` argument_
+* _Since 0.10.1: Adds `--platform` argument_
 
 When run in a directory containing a valid `manifest.yaml` file, creates a package containing all files in the directory.
 
