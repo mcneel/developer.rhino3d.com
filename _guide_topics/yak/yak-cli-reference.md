@@ -146,6 +146,25 @@ Yanked versions do not appear in searches but can still be installed if the exac
 
 Note, it is not possible to push a package that has been yanked. If you find yourself in this situation, then simply roll the version number of your package and push.
 
+## Owner
+
+_Since 0.10_
+
+Adds, removes of lists the owners of a package. Package owners can push new versions of the package and (un)yank existing versions.
+
+```commandline
+Usage:
+    yak owner add [--source=URL] <package> <email>
+    yak owner remove [--source=URL] <package> <email>
+    yak owner list [--source=URL] <package>
+    
+Options:
+    -h, --help
+    -s, --source URL  Package repository location [default: https://yak.rhino3d.com/].
+```
+
+New owners can do everything that the original owner can do. Please bear this in mind!
+
 ---
 
 ## Related Topics
