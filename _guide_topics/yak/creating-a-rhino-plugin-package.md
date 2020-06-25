@@ -41,11 +41,6 @@ Now, we need a `manifest.yml` file! You can easily create your own by studying
 the [Manifest Reference Guide](../the-package-manifest). Alternatively, you can use the `spec`
 command to generate a skeleton file. We'll do the latter here.
 
-<div class="alert alert-info" role="alert">
-<strong>Note:</strong> Pre-population only works for RhinoCommon plug-ins right
-now...
-</div>
-
 ```commandline
 > "C:\Program Files\Rhino 7 WIP\System\Yak.exe" spec
 
@@ -55,11 +50,9 @@ Inspecting content: Tamarin.rhp
 name: tamarin
 version: 1.0.0
 authors:
-- <author>
+- Park Ranger
 description: An example RhinoCommon plug-in
-url: http://example.com
-secret:
-  id: 78959099-8b36-4c5d-bc57-10a6415745f6
+url: https://example.com
 
 
 Saved to C:\Users\Bozo\dist\manifest.yml
@@ -73,15 +66,11 @@ added this information, then placeholders will be used.
 The RhinoCommon plug-in inspector extracts the assembly attributes that you set
 when creating your plug-in. The `AssemblyInformationalVersion` attribute is used
 to populate the version field, since this attribute isn't bound to the Microsoft
-four-digit version spec and can contain a SemVer-compatible version string.
+four-digit version spec and can contain a SemVer-compatible version string. The
+`AssemblyVersion` attribute is used as a fallback.
 
-You might notice your plug-in's GUID lurking in the
-`secret/id` key. The GUID is stored in case we need to identify a
-plug-in package whose package name/version doesn't match the plug-in
-name/version.
-
-Next, open the manifest file with your [favourite editor](http://atom.io) and fill in
-the gaps.
+Next, open the manifest file with your [favourite editor](https://code.visualstudio.com)
+and fill in the gaps.
 
 Afterwards, you should have something that looks a little like this...
 
@@ -90,13 +79,13 @@ Afterwards, you should have something that looks a little like this...
 name: tamarin
 version: 1.0.0
 authors:
-- Will Pearson
+- Park Ranger
 description: >
   This plug-in does something. I'm not really sure exactly what it's supposed to
   do, but it does it better than any other plug-in.
-url: example.com
-secret:
-  id: c9beedb9-07ec-4974-a0a2-44670ddb17e4
+url: https://example.com
+keywords:
+- something
 ```
 
 Now that we have a manifest file, we can build the package!
@@ -118,9 +107,10 @@ authors:
 description: >
   This plug-in does something. I'm not really sure exactly what it's supposed to
   do, but it does it better than any other plug-in.
-url: example.com
-secret:
-  id: c9beedb9-07ec-4974-a0a2-44670ddb17e4
+url: https://example.com
+keywords:
+- something
+- guid:c9beedb9-07ec-4974-a0a2-44670ddb17e4
 
 C:\Users\Bozo\dist\tamarin-1.0.0.yak
 ├── Tamarin.dll
@@ -133,6 +123,13 @@ C:\Users\Bozo\dist\tamarin-1.0.0.yak
 
 <div class="alert alert-info" role="alert">
 <strong>Note:</strong> The filename includes a <a href="../the-anatomy-of-a-package#distributions">"distribution tag"</a> (in this case <code>rh6_18-win</code>). This is inferred from the version of Rhinocommon.dll or Rhino C++ SDK that you reference in your plug-in project, as well as the platform on which you perform the packaging process.
+</div>
+
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> You might notice your plug-in's GUID lurking in the
+keywords. More information on how this is used can be found in the
+<a href="../package-restore-in-grasshopper">"Package Restore in Grasshopper"
+</a> guide.
 </div>
 
 Congratulations! 🙌 You've just created a Yak package for your Rhino

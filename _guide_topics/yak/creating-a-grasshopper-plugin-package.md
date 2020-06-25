@@ -44,17 +44,17 @@ command to generate a skeleton file. We'll do the latter here.
 ```commandline
 > "C:\Program Files\Rhino 7 WIP\System\Yak.exe" spec
 
-Inspecting content: Plankton.gha
+Inspecting content: Marmoset.gha
 
 ---
 name: marmoset
 version: 1.0.0
 authors:
-- <author>
-description: <description>
-url: <url>
-secret:
-  id: c9beedb9-07ec-4974-a0a2-44670ddb17e4
+- Park Ranger
+description: >
+  This plug-in does something. I'm not really sure exactly what it's supposed to
+  do, but it does it better than any other plug-in.
+url: https://example.com
 
 
 Saved to C:\Users\Bozo\dist\manifest.yml
@@ -65,15 +65,8 @@ glean useful information from the `.gha` assembly and use it generate a
 `manifest.yml` with name, version, authors, etc. pre-populated. If you haven't
 added this information, then placeholders will be used.
 
-<div class="alert alert-info" role="alert">
-<strong>Note:</strong> You might notice your plug-in's GUID lurking in the
-<code>secret/id</code> key. More information on how this is used can be found in
-the <a href="../package-restore-in-grasshopper">"Package Restore in Grasshopper"
-</a> guide.
-</div>
-
-Open the manifest file with your [favourite editor](http://atom.io) and fill in
-the gaps.
+Open the manifest file with your [favourite editor](https://code.visualstudio.com)
+and fill in the gaps.
 
 Afterwards, you should have something that looks a little like this...
 
@@ -82,13 +75,13 @@ Afterwards, you should have something that looks a little like this...
 name: marmoset
 version: 1.0.0
 authors:
-- Will Pearson
+- Park Ranger
 description: >
   This plug-in does something. I'm not really sure exactly what it's supposed to
   do, but it does it better than any other plug-in.
-url: example.com
-secret:
-  id: c9beedb9-07ec-4974-a0a2-44670ddb17e4
+url: https://example.com
+keywords:
+- mammal
 ```
 
 Now that we have a manifest file, we can build the package!
@@ -111,8 +104,9 @@ description: >
   This plug-in does something. I'm not really sure exactly what it's supposed to
   do, but it does it better than any other plug-in.
 url: example.com
-secret:
-  id: c9beedb9-07ec-4974-a0a2-44670ddb17e4
+keywords:
+- mammal
+- guid:c9beedb9-07ec-4974-a0a2-44670ddb17e4
 
 C:\Users\Bozo\dist\marmoset-1.0.0-rh6_18-win.yak
 ├── Marmoset.dll
@@ -124,6 +118,13 @@ C:\Users\Bozo\dist\marmoset-1.0.0-rh6_18-win.yak
 
 <div class="alert alert-info" role="alert">
 <strong>Note:</strong> The filename includes a <a href="../the-anatomy-of-a-package#distributions">"distribution tag"</a> (in this case <code>rh6_18-win</code>). This is inferred from the version of Grasshopper.dll or Rhinocommon.dll that you reference in your plug-in project, as well as the platform on which you perform the packaging process.
+</div>
+
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> You might notice your plug-in's GUID lurking in the
+keywords. More information on how this is used can be found in the
+<a href="../package-restore-in-grasshopper">"Package Restore in Grasshopper"
+</a> guide.
 </div>
 
 Congratulations! 🙌 You've just created a Yak package for your Grasshopper

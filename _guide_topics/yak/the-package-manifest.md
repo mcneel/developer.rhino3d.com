@@ -29,6 +29,7 @@ The manifest's purpose is to help with streamlining (and potentially automating)
 **Recommended Attributes**
  <!-- - [`license`](#license) -->
  - [URL](#url)
+ - [Keywords](#keywords)
 
 <!-- ### Optional Attributes
  - [`dependencies`](#dependencies) -->
@@ -134,6 +135,16 @@ A webpage for the package. This can be any URL i.e. author contact info, forums,
 
 ```yaml
 url: "https://github.com/meshmash/Plankton"
+```
+
+### Keywords
+
+A list of keywords that will help users to find the package.
+
+```yaml
+keywords:
+- one
+- two
 ```
 
 

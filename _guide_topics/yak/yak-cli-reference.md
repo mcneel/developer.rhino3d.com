@@ -59,15 +59,23 @@ yak list
 
 ## Login
 
-_Since 0.2_
+_Since 0.2: Command added_
+_Since 0.10: User registered during login_
 
 Authenticates with Rhino Accounts and stores a time-limited OAuth2 access token so that the user can use commands which require authentication.
 
 ```commandline
-yak login
+Usage: yak login [options]
+
+Options:
+    --ci              Generate a non-expiring API key and display it
+    -s, --source URL  Package repository location [default: https://yak.rhino3d.com/].
+    -h, --help        Get help (equivalent to `yak help login`)
 ```
 
 On Windows, the token is stored in `%appdata%\McNeel\yak.yml`. On macOS, it is stored in `~/.mcneel/yak.yml`.
+
+During login, the user is registered on the server.
 
 ## Push
 
@@ -145,6 +153,25 @@ yak yank <package> <version>
 Yanked versions do not appear in searches but can still be installed if the exact package version is known. To all intents and purposes they are hidden.
 
 Note, it is not possible to push a package that has been yanked. If you find yourself in this situation, then simply roll the version number of your package and push.
+
+## Owner
+
+_Since 0.10_
+
+Adds, removes of lists the owners of a package. Package owners can push new versions of the package and (un)yank existing versions.
+
+```commandline
+Usage:
+    yak owner add [--source=URL] <package> <email>
+    yak owner remove [--source=URL] <package> <email>
+    yak owner list [--source=URL] <package>
+    
+Options:
+    -h, --help
+    -s, --source URL  Package repository location [default: https://yak.rhino3d.com/].
+```
+
+New owners can do everything that the original owner can do. Please bear this in mind!
 
 ---
 
