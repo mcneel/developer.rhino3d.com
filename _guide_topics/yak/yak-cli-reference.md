@@ -59,15 +59,23 @@ yak list
 
 ## Login
 
-_Since 0.2_
+_Since 0.2: Command added_
+_Since 0.10: User registered during login_
 
 Authenticates with Rhino Accounts and stores a time-limited OAuth2 access token so that the user can use commands which require authentication.
 
 ```commandline
-yak login
+Usage: yak login [options]
+
+Options:
+    --ci              Generate a non-expiring API key and display it
+    -s, --source URL  Package repository location [default: https://yak.rhino3d.com/].
+    -h, --help        Get help (equivalent to `yak help login`)
 ```
 
 On Windows, the token is stored in `%appdata%\McNeel\yak.yml`. On macOS, it is stored in `~/.mcneel/yak.yml`.
+
+During login, the user is registered on the server.
 
 ## Push
 
