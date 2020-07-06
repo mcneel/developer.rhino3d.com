@@ -104,15 +104,15 @@ There are various key lines of code to be understand:
 </tr>
 <tr>
 <td>22</td>
-<td>The coercerhinoobject method will attempt to take anything input and convert the results a Rhino Geoemtry Object.  There are many coerce methods for various input types.</td>
+<td>The doc.Objects.Find method will attempt to take the Object ID and find the actual Rhino Geometry Object.</td>
 </tr>
 <tr>
 <td>25</td>
-<td>Split off the coerced object's Attributes.  The attributes of an object include such properties as color, layer, linetype, render material, and group membership, amongst others. The Advanced section below covers object attributes some more.</td>
+<td>Split off the object's Attributes.  The attributes of an object include such properties as color, layer, linetype, render material, and group membership, amongst others. The Advanced section below covers object attributes some more.</td>
 </tr>
 <tr>
 <td>31</td>
-<td>Split off the coerced object's Geometry. Used when baking the object into Rhino.</td>
+<td>Split off the object's Geometry. Used when baking the object into Rhino.</td>
 </tr>
 <tr>
 <td>32</td>
