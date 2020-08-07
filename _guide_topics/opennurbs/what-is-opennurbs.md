@@ -57,6 +57,14 @@ openNURBS is an open source toolkit for only reading and writing 3DM models.  Ou
 
 Robert McNeel & Associates.  They feel that the 3D market is stifled because of the inability to reliably transfer 3D geometry between applications.  The problem is too big for us to solve alone.  By funding the operating cost of openNURBS, others will get involved in the toolkit design and development.  It will be a much cheaper and effective way to solve the problem.
 
+## References
+
+The following are references to fundamental work on NURBS:
+
+- Bohm, Wolfgang, Gerald Farin, Jurgen Kahman (1984). *A survey of curve and surface methods in CAGD*, Computer Aided Geometric Design Vol 1. 1-60
+- DeBoor, Carl. (1978).  *A Practical Guide To Splines*, Springer Verlag; ISBN: 0387953663
+- Farin, Gerald. (1997). *Curves and Surfaces for Computer-Aided Geometric Design: A Practical Guide*, 4th edition, Academic Press; ISBN: 0122490541
+
 ---
 
 ## Related Topics
