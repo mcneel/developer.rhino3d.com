@@ -16,10 +16,10 @@ Many times it is useful to create a custom component in Grasshopper to bake both
 
 There are a few different ways to approach baking.  This guide set's up the simplest approach. At the end of this guide is a section on some of the variations possible to fit other bake situations.
 
-For more details  any of the concepts in this guide, more details can be found in: 
+For more details  any of the concepts in this guide, more details can be found in:
 
 1. [GHPython editor basics guide](https://developer.rhino3d.com/guides/rhinopython/ghpython-component/)
-1. [RhinoScriptSyntax and Python Guide](http://developer.rhino3d.com/guides/rhinopython/) 
+1. [RhinoScriptSyntax and Python Guide](http://developer.rhino3d.com/guides/rhinopython/)
 1. RhinoCommon API please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon).
 
 ## Basic GHPython Component
@@ -60,31 +60,31 @@ import Rhino
 
 
 if B:
-    
+
     print(type(G)) #debug message to Python output
-    
+
     #we obtain the reference in the Rhino doc
-    doc_object = rs.coercerhinoobject(G, True, True)
+    doc_object = scriptcontext.doc.Objects.Find(G)
     print(type(doc_object))
-    
+
     attributes = doc_object.Attributes
     print('the type of attributes is: ' + str(type(attributes)))     #debug message to Python output
 
     geometry = doc_object.Geometry
     print('the type of geometry is: ' + str(type(doc_object)))     #debug message to Python output
-    
+
     #we change the scriptcontext
     scriptcontext.doc = Rhino.RhinoDoc.ActiveDoc
-    
+
     #we add both the geometry and the attributes to the Rhino doc
     rhino_brep = scriptcontext.doc.Objects.Add(geometry, attributes)
     print('the Rhino doc ID is: ' + str(rhino_brep))     #debug message to Python output
-    
+
     #we can for example change the layer in Rhino...
-    if not rs.IsLayer(L): 
+    if not rs.IsLayer(L):
         rs.AddLayer(L)
     rs.ObjectLayer(rhino_brep, L)
-    
+
     #we put back the original Grasshopper document as default
     scriptcontext.doc = ghdoc
     a = G
@@ -104,15 +104,15 @@ There are various key lines of code to be understand:
 </tr>
 <tr>
 <td>22</td>
-<td>The coercerhinoobject method will attempt to take anything input and convert the results a Rhino Geoemtry Object.  There are many coerce methods for various input types.</td>
+<td>The doc.Objects.Find method will attempt to take the Object ID and find the actual Rhino Geometry Object.</td>
 </tr>
 <tr>
 <td>25</td>
-<td>Split off the coerced object's Attributes.  The attributes of an object include such properties as color, layer, linetype, render material, and group membership, amongst others. The Advanced section below covers object attributes some more.</td>
+<td>Split off the object's Attributes.  The attributes of an object include such properties as color, layer, linetype, render material, and group membership, amongst others. The Advanced section below covers object attributes some more.</td>
 </tr>
 <tr>
 <td>31</td>
-<td>Split off the coerced object's Geometry. Used when baking the object into Rhino.</td>
+<td>Split off the object's Geometry. Used when baking the object into Rhino.</td>
 </tr>
 <tr>
 <td>32</td>
@@ -150,7 +150,7 @@ Beyond simply changing an objects layer after adding the new object to Rhino.  T
 
 ### Baking colors materials and other properties
 
-In the sample above using the layername to specify where the object ultimately lands is quite simple. Here are some other properties that may want to be changed: 
+In the sample above using the layername to specify where the object ultimately lands is quite simple. Here are some other properties that may want to be changed:
 
 <table>
 <tr>
