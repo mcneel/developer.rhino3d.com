@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 ## Vectors
 
-Similar to 3D points, 3D vectors are stored as [Vector3d](http://developer.rhino3d.com/api/RhinoCommonWin/html/T_Rhino_Geometry_Vector3d.htm) structures.  They can be thought as a zero-based, one-dimensional list that contain three numbers. These three number represent to the X, Y and Z coordinate direction of the vector.
+Similar to 3D points, 3D vectors are stored as [Vector3d](https://developer.rhino3d.com/api/RhinoCommon/html/T_Rhino_Geometry_Vector3d.htm) structures.  They can be thought as a zero-based, one-dimensional list that contain three numbers. These three number represent to the X, Y and Z coordinate direction of the vector.
 
 ```
 vector3d contains [1.0, 2.0, 3.0]  
@@ -111,9 +111,8 @@ RhinoScriptSyntax contains a number of methods to manipulate vectors.  See [Rhin
 
 ## Related Topics
 
-- [What is Python and RhinoScript?]({{ site.baseurl }}/guides/rhinopython/what-are-python-rhinoscript)
 - [Python Points]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-points)
 - [Python Vectors]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Python Lines]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-lines)
-- [Python Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-planes)
+- [Python Lines]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-line)
+- [Python Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-plane)
 - [Python Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects)

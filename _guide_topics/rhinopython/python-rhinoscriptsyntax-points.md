@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 ## Points
 
-In Python, a Rhino 3D point is represented as a [Point3d](http://developer.rhino3d.com/api/RhinoCommonWin/html/T_Rhino_Geometry_Point3d.htm) structure. Conceptually, Point3d exist in memory as a zero-based list containing three numbers.  These three numbers represent the X, Y and Z coordinate values of the point.
+In Python, a Rhino 3D point is represented as a [Point3d](http://developer.rhino3d.com/api/RhinoCommon/html/T_Rhino_Geometry_Point3d.htm) structure. Conceptually, Point3d exist in memory as a zero-based list containing three numbers.  These three numbers represent the X, Y and Z coordinate values of the point.
 
 ```
 point3D contains [1.0, 2.0, 3.0]  
@@ -120,4 +120,4 @@ It is important to understand the difference between a Point3d and a point objec
 - [Python Planes]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-plane)
 - [Python Objects]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-objects)
 - [RhinoScript Points and Vectors Methods]({{ site.baseurl }}/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods)
-- [Point3d RhinoCommon Documentation](http://developer.rhino3d.com/api/RhinoCommonWin/html/T_Rhino_Geometry_Point3d.htm)
+- [Point3d RhinoCommon Documentation](http://developer.rhino3d.com/api/RhinoCommon/html/T_Rhino_Geometry_Point3d.htm)

@@ -79,4 +79,33 @@ A non-successful (error) response (The license cannot be removed):
 - HTTP Status Code: A code greater or equal to `400 (Bad Request)`
 - Response Payload: [A non-successful response](#non-successful-responses)
 
+### PUT /license
+
+Adds or replaces a License Cluster in Cloud Zoo. If any of the licenses in the [License Cluster object]({{ site.baseurl }}/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster) passed already exist in the given entity, their license cluster will be overwritten with the License Cluster passed. If there is more than one cluster in the entity containing the licenses in the cluster passed, an error will be returned and the operation will be aborted.
+
+#### Example Request
+
+    PUT /license
+	
+	{
+	    "entityId": "9034901491490-|-Group",
+	    "licenseCluster": LICENSE_CLUSTER_OBJECT
+	}
+
+	
+The `entityId` should be the entity where the License Cluster will be added or updated.
+The `licenseCluster` should be a [License Cluster object]({{ site.baseurl }}/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster) representing the license(s) to be added or updated.
+
+#### Response
+
+A successful response (The license was removed):
+
+ - HTTP Status Code: `200 (OK)` 
+ - Response Payload: Empty. 
+
+A non-successful (error) response (The license cannot be added/updated):
+
+- HTTP Status Code: A code greater or equal to `400 (Bad Request)`
+- Response Payload: [A non-successful response](#non-successful-responses)
+
 

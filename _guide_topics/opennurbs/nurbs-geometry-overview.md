@@ -5,7 +5,7 @@ authors: ['dale_lear']
 sdk: ['openNURBS']
 languages: ['All']
 platforms: ['Windows', 'Mac']
-categories: ['NURBS']
+categories: ['NURBS', 'Overview']
 origin: http://wiki.mcneel.com/developer/ongeometry
 order: 1
 keywords: ['developer', 'rhino', 'NURBS', 'geometry']
@@ -58,6 +58,14 @@ Some modelers that use older algorithms for NURBS evaluation require two extra k
 A curve evaluation rule is a mathematical formula that takes a number and assigns a point.
 
 The NURBS evaluation rule is a formula that involves the degree, control points, and knots. In the formula there are some things called B-spline basis functions. The B and S in NURBS stand for “basis spline.” The number the evaluation rule starts with is called a parameter. You can think of the evaluation rule as a black box that eats a parameter and produces a point location. The degree, knots, and control points determine how the black box works.
+
+## References
+
+The following are references to fundamental work on NURBS:
+
+- Bohm, Wolfgang, Gerald Farin, Jurgen Kahman (1984). *A survey of curve and surface methods in CAGD*, Computer Aided Geometric Design Vol 1. 1-60
+- DeBoor, Carl. (1978).  *A Practical Guide To Splines*, Springer Verlag; ISBN: 0387953663
+- Farin, Gerald. (1997). *Curves and Surfaces for Computer-Aided Geometric Design: A Practical Guide*, 4th edition, Academic Press; ISBN: 0122490541
 
 ---
 

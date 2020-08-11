@@ -1,5 +1,5 @@
 ---
-title: Yak CLI Reference
+title: Yak Command Line Interface Reference
 description: A reference for the Yak command line tool.
 authors: ['will_pearson']
 sdk: ['Yak']
@@ -12,7 +12,7 @@ keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
-The Yak command line tool is included with Rhino 6. On Windows the tool is located at `C:\Program Files\Rhino 6\System\yak.exe`.
+The Yak command line tool is included with Rhino 6. On Windows the tool is located at `C:\Program Files\Rhino 6\System\yak.exe`. On macOS there is a convenience script at `/Applications/Rhinoceros.app/Contents/Resources/bin/yak`.
 
 ## Build
 
@@ -57,7 +57,7 @@ Authenticates with Rhino Accounts and stores a time-limited OAuth2 access token 
 yak login
 ```
 
-On macOS, credentials are stored in `~/.mcneel/yak.yml`. On Windows, they are stored in `%appdata%\McNeel\yak.yml`.
+On Windows, the token is stored in `%appdata%\McNeel\yak.yml`. On macOS, it is stored in `~/.mcneel/yak.yml`.
 
 ## Push
 
@@ -128,5 +128,18 @@ Removes a version from the package index.
 yak yank <package> <version>
 ```
 
-Yanked versions do not appear in searches but can still be installed if the
-exact package version is known. To all intents and purposes they are hidden.
+<div class="alert alert-info" role="alert">
+  <strong>Note:</strong> Requires <a href="#login">authentication</a>.
+</div>
+
+Yanked versions do not appear in searches but can still be installed if the exact package version is known. To all intents and purposes they are hidden.
+
+Note, it is not possible to push a package that has been yanked. If you find yourself in this situation, then simply roll the version number of your package and push.
+
+---
+
+## Related Topics
+
+- [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
+- [Anatomy of a Package]({{ site.baseurl }}/guides/yak/the-anatomy-of-a-package/)
+- [The Package Manifest]({{ site.baseurl }}/guides/yak/the-package-manifest/)

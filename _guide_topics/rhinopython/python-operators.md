@@ -32,10 +32,11 @@ When expressions contain operators from more than one category, arithmetic opera
  | Unary negation |    | `-` |
  | Multiplication |    | `*` |
  | Division |    | `/` |
- | Modulus arithmetic |    | `mod` |
+ | Integer Division |    | `//` |
+ | Modulus arithmetic |    | `%` |
  | Addition |    | `+` |
  | Subtraction |    | `-` |
- | String concatenation |    | `&` |
+ | String concatenation |    | `+` |
 
 
 ### Comparison
@@ -60,16 +61,13 @@ When expressions contain operators from more than one category, arithmetic opera
  | Logical negation |   | `not` |
  | Logical conjunction |    | `and` |
  | Logical disjunction |    | `or` |
- | Logical exclusion |    | `xor` |
- | Logical equivalence |    | `eqv` |
- | Logical implication |    | `imp` |
 
 
 ## Considerations
 
 When multiplication and division occur together in an expression, each operation is evaluated as it occurs from left to right.  Likewise, when addition and subtraction occur together in an expression, each operation is evaluated in order of appearance from left to right.
 
-The string concatenation (`&`) operator is not an arithmetic operator, but in precedence it falls after all arithmetic operators and before all comparison operators.  The `is` operator is an object reference comparison operator.  It does not compare objects or their values; it checks only to determine if two object references refer to the same object.
+The string concatenation (`+`) operator is not an arithmetic operator, but in precedence it falls after all arithmetic operators and before all comparison operators.  The `is` operator is an object reference comparison operator.  It does not compare objects or their values; it checks only to determine if two object references refer to the same object.
 
 ---
 
