@@ -32,7 +32,7 @@ If your post effect is intended to process the high dynamic range image, it must
 The following is an example of an early post effect. All post effects follow this general style.
 
 ```
-class CExamplePostEffect : public CRhRdkEarlyLatePostEffectPlugIn
+class CExamplePostEffect : public CRhRdkEarlyPostEffect
 {
 public:
 	CExamplePostEffect() { InternalResetToFactoryDefaults(); }
@@ -41,9 +41,10 @@ public:
 
 	virtual UUID Id(void) const override { return Ident(); }
 	virtual ON_wString LocalName(void) const override;
-	virtual unsigned int UsageFlags(void) const override { return uf_ProductionRendering; }
+	virtual unsigned int BitFlags(void) const override { uf_ExecuteForProductionRendering | uf_ExecuteForRealtimeRendering; }
+	virtual void RequiredChannels(OUT ON_SimpleArray<UUID>& aChan) const override;
 	virtual bool Execute(IRhRdkNewPostEffectPipeline& pipeline, const ON_4iRect& rect) const override;
-	virtual ExecuteWhileRenderingOptions GetExecuteWhileRenderingOption(void) const override { return ExecuteWhileRenderingOptions::Never; }
+	virtual ExecuteWhileRenderingOptions GetExecuteWhileRenderingOption(void) const override { return ExecuteWhileRenderingOptions::Always; }
 	virtual bool GetParameter(const wchar_t* wszName, OUT CRhRdkVariant& vValue) const override;
 	virtual bool SetParameter(const wchar_t* wszName, const CRhRdkVariant& vValue) override;
 	virtual bool ReadState(const IState& state) override;
@@ -58,13 +59,28 @@ private:
 };
 ```
 
-Each post effect has a unique id and a localized name which are returned by the `Id()` and `LocalName()` methods respectively. Next you specify a set of usage flags by implementing the `UsageFlags()` method. This tells the RDK under which circumstances the post effect should be executed, which is done by calling the `Execute()` method. The implementation of `Execute()` will be described in detail later. The pipeline executes some post effects while rendering is proceeding. To let it know if your post effect can support this, you implement `GetExecuteWhileRenderingOption()`. This can be one of the following:
+Each post effect has a unique id and a localized name which are returned by the `Id()` and `LocalName()` methods respectively. Next you specify a set of usage flags by implementing the `BitFlags()` method. This tells the RDK certain facts about the post effect, including under which circumstances the post effect should be executed, which is done by calling the `Execute()` method. The implementation of `Execute()` will be described in detail later. The pipeline executes some post effects while rendering is proceeding. To let it know if your post effect can support this, you implement `GetExecuteWhileRenderingOption()`. This can be one of the following:
 
 * 'Never' means the post effect does not support execution while rendering.
 * 'Always' means the post effect supports execution while rendering.
 * 'UseDelay' means the post effect supports execution while rendering, but only after a delay the first time.
 
 Which of these you return depends on how time-consuming your post effect is and whether or not it requires the final rendered image to work properly. For example, the Fog effect works on single pixels and does not need the surrounding pixels in order to work. It is also quite fast. Therefore, it returns `ExecuteWhileRenderingOptions::Always`. On the other hand, the Watermark post effect needs to know how long the rendering took to complete, so it returns `ExecuteWhileRenderingOptions::Never` as it should only be run at the end, after rendering finishes.
+
+#### Channels
+
+Your post effect will, of course, need to use existing channels to get its source data. You should implement `RequiredChannels()` to tell the RDK which channels it is planning to use. This information is needed if the user chooses 'Automatic' in the Render Channels section of the Rendering panel:
+
+```
+void CExamplePostEffect::RequiredChannels(OUT ON_SimpleArray<UUID>& aChan) const
+{
+	CRhRdkEarlyPostEffect::RequiredChannels(aChan); // Be sure to call the base class.
+
+	aChan.Append(IRhRdkRenderWindow::chanRGBA);
+
+	...
+}
+```
 
 #### Parameters
 
@@ -114,7 +130,7 @@ In order to get input channels to process, the post effect must call `GetChannel
 
 ```
 	// Get the RGBA channel.
-	const auto* pRGBA = pipeline.GetChannel(RW::chanRGBA);
+	const auto* pRGBA = pepl.GetChannelForRead(RW::chanRGBA, 0);
 	if (nullptr == pRGBA)
 		return false;
 ```
@@ -128,16 +144,16 @@ At this point you decide if you want to run on the CPU or the GPU and obtain the
 
 ```
 
-Having got the input channel, we now need to create a new output channel:
+Having got the input channel, we now need to get a new output channel:
 
 ```
 	// Create a new RGBA channel.
-	auto* pNewRGBA = pipeline.NewChannel(RW::chanRGBA, PEPL::Init::Empty, PEPL::ncf_None);
+	auto* pNewRGBA = pepl.GetChannelForWrite(RW::chanRGBA, 0);
 	if (nullptr == pNewRGBA)
 		return false;
 ```
 
-We use `Init::Empty` because we will be creating the output from the input. If your post effect operates on individual pixels in isolation, it's possible to use the output channel as the input as well, by specifying `Init::Copy`. This will create a new output channel copied from the input. You would then read and write the output directly. We also need to get the CPU interface:
+We also need to get the CPU interface:
 
 ```
 	auto* pNewRGBA_CPU = pNewRGBA->CPU();
@@ -145,7 +161,7 @@ We use `Init::Empty` because we will be creating the output from the input. If y
 		return false;
 ```
 
-Now we are read to enter the main pixel loop. Inside the loop, you read the input pixels by calling `pRGBA_CPU->GetValue()` or `pRGBA_CPU->GetValueEx()`. The latter is preferred because it's faster than the former which was only retained for backward compatibility. You write the output pixels by calling `pNewRGBA_CPU->SetValue()`. The iteration is best done by iterating over y and then x. You should include a call to `IRhRdkNewPostEffectPipeline::ReportProgress()` in the _y_ loop.
+Now we are ready to enter the main pixel loop. Inside the loop, you read the input pixels by calling `pRGBA_CPU->GetValue()` or `pRGBA_CPU->GetValueEx()`. The latter is preferred because it's faster than the former which was only retained for backward compatibility. You write the output pixels by calling `pNewRGBA_CPU->SetValue()`. The iteration is best done by iterating over y and then x. You should include a call to `IRhRdkNewPostEffectPipeline::ReportProgress()` in the _y_ loop.
 
 ```
 	// Iterate over all the pixels in the area.
