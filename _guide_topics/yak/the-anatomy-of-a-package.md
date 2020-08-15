@@ -28,20 +28,13 @@ howler-0.4.0-any-any.yak
     └── LICENSE.txt
 ```
 
-## Important Things to Note
+## Requirements
 
 1. Packages **must** have a top-level [`manifest.yml`](manifest.md) file.
    Details about the manifest can be found in the [Manifest Reference Guide](../the-package-manifest).
-2. Any plug-ins (`.rhp`, `.gha`, `.ghpy` files) **must** be in the top-level directory
+1. Any plug-ins (`.rhp`, `.gha`, `.ghpy` files) **must** be in the top-level directory
    so that Rhino and Grasshopper can find and load them
-3. Each package **should** have only one plug-in (`.gha`, `.rhp` or `.ghpy`). It
-   is possible to combine plug-ins in one package (e.g. `.gha` and `.rhp`)
-   however [package restore](../package-restore-in-grasshopper) will only work
-   for the plug-in which matches the details in the `manifest.yml` file.
-4. Package version numbers **must** either follow [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html) (e.g. `1.1.0-beta`) or `System.Version` a.k.a. Microsoft's four-digit standard (e.g. `1.2.3.4`). It's recommended to use Semantic Versioning because it allows package authors to specify prerelease versions. These are handy for limited testing, since by default the latest _stable_ version is installed.
-5. If you're packaging a `.gha` plug-in, you **should** ensure that the package
-   name and version number in the `GH_AssemblyInfo` sub-class match those in the
-   `manifest.yml` file, otherwise [package restore](../package-restore-in-grasshopper) may not work
+1. Package version numbers **must** either follow [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html) (e.g. `1.1.0-beta`) or `System.Version` a.k.a. Microsoft's four-digit standard (e.g. `1.2.3.4`). It's recommended to use Semantic Versioning because it allows package authors to specify prerelease versions. These are handy for limited testing, since by default the latest _stable_ version is installed.
 
 ## Distributions
 
