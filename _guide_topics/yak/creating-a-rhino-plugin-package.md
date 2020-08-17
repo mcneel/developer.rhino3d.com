@@ -97,7 +97,7 @@ Building package from contents of C:\Users\Bozo\dist
 
 Found manifest.yml for package: tamarin (1.0.0)
 Inspecting content: Tamarin.rhp
-Creating tamarin-1.0.0.yak
+Creating tamarin-1.0.0-rh6_18-any.yak
 
 ---
 name: tamarin
@@ -112,7 +112,7 @@ keywords:
 - something
 - guid:c9beedb9-07ec-4974-a0a2-44670ddb17e4
 
-C:\Users\Bozo\dist\tamarin-1.0.0.yak
+C:\Users\Bozo\dist\tamarin-1.0.0-rh6_18-any.yak
 ├── Tamarin.dll
 ├── Tamarin.rhp
 ├── manifest.yml
@@ -122,7 +122,7 @@ C:\Users\Bozo\dist\tamarin-1.0.0.yak
 ```
 
 <div class="alert alert-info" role="alert">
-<strong>Note:</strong> The filename includes a <a href="../the-anatomy-of-a-package#distributions">"distribution tag"</a> (in this case <code>rh6_18-win</code>). This is inferred from the version of Rhinocommon.dll or Rhino C++ SDK that you reference in your plug-in project, as well as the platform on which you perform the packaging process.
+<strong>Note:</strong> The filename includes a <a href="../the-anatomy-of-a-package#distributions">"distribution tag"</a> (in this case <code>rh6_18-any</code>). The first part, `rh6_18`, is inferred from the version of Rhinocommon.dll or Rhino C++ SDK that is referenced in the plug-in project. The second part, `any`, refers to the platform that the plug-in is intended for. To build a platform-specfic package, run the `build` command again with the `--platform <platform>` argument, where `<platform>` can be either `win` or `mac`.
 </div>
 
 <div class="alert alert-info" role="alert">

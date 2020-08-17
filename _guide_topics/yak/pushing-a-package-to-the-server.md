@@ -56,10 +56,10 @@ use the package created in the
 [previous guide](../creating-a-grasshopper-plugin-package) as an example.
 
 ```commandline
-> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" push marmoset-1.0.0.yak
+> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" push marmoset-1.0.0-rh6_18-any.yak
 ```
 
-Currently (v0.2), this command doesn't produce any output on success.
+This command doesn't produce any output on success.
 
 You can check that your package has been successfully pushed by searching for
 it. You should see the name and version number of the package that you just
