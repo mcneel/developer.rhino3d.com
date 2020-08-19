@@ -122,7 +122,7 @@ C:\Users\Bozo\dist\tamarin-1.0.0-rh6_18-any.yak
 ```
 
 <div class="alert alert-info" role="alert">
-<strong>Note:</strong> The filename includes a <a href="../the-anatomy-of-a-package#distributions">"distribution tag"</a> (in this case <code>rh6_18-any</code>). The first part, `rh6_18`, is inferred from the version of Rhinocommon.dll or Rhino C++ SDK that is referenced in the plug-in project. The second part, `any`, refers to the platform that the plug-in is intended for. To build a platform-specfic package, run the `build` command again with the `--platform <platform>` argument, where `<platform>` can be either `win` or `mac`.
+<strong>Note:</strong> The filename includes a <a href="../the-anatomy-of-a-package#distributions">"distribution tag"</a> (in this case <code>rh6_18-any</code>). The first part, <code>rh6_18</code>, is inferred from the version of Rhinocommon.dll or Rhino C++ SDK that is referenced in the plug-in project. The second part, <code>any</code>, refers to the platform that the plug-in is intended for. To build a platform-specfic package, run the <code>build</code> command again with the <code>--platform &lt;platform&gt;</code> argument, where <code>&lt;platform&gt;</code> can be either <code>win</code> or <code>mac</code>.
 </div>
 
 <div class="alert alert-info" role="alert">
