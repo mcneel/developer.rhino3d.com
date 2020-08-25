@@ -20,21 +20,19 @@ By the end of this guide, you should have all the tools installed necessary for 
 
 This guide presumes you have:
 
-- A PC running Microsoft Windows 7 or later.
-- [Rhino 6 for Windows](https://www.rhino3d.com/download).
+- A PC running Microsoft Windows 8.1 or later.
+- [Rhino 7 for Windows](https://www.rhino3d.com/download).
 
 ---
 
 ## Install Visual Studio
-In order to author, build, and debug C/C++ plugins for Rhino, you will need Microsoft [Visual Studio 2017](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx).
+In order to author, build, and debug C/C++ plugins for Rhino, you will need Microsoft [Visual Studio 2019](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx).
 
-Visual Studio 2017 comes in [three editions](https://www.visualstudio.com/downloads): Community, Professional, and Enterprise. All of these editions will work with the Rhino C/C++ SDK.
-
-*Note*: Rhino C/C++ SDK plugins **cannot** be authored in versions of Visual Studio other than 2017. The native classes and libraries that are made available via the Rhino C/C++ SDK are also used internally by Rhino. As a result of this tight linkage with Rhino itself, the libraries are very compiler specific, and work only with the same compiler that was used to build Rhino.
+Visual Studio 2019 comes in [three editions](https://www.visualstudio.com/downloads): Community, Professional, and Enterprise. All of these editions will work with the Rhino C/C++ SDK.
 
 #### Step-by-Step
 
-1. **[Visual Studio 2017 Community Edition](https://www.visualstudio.com/vs/community/)** is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/license-terms/mlt553321/).  Click the **Community** button to download the installer.
+1. **[Visual Studio 2019 Community Edition](https://www.visualstudio.com/vs/community/)** is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/license-terms/mlt553321/).  Click the **Community** button to download the installer.
 2. Run the **Visual Studio installer** you downloaded from Microsoft, in this case ***vs_community_[build_number].exe***.
   ![Visual Studio Install]({{ site.baseurl }}/images/installing-tools-windows-cpp-01.png)
 3. Follow the onscreen prompts to install Visual Studio. Make sure to select all of the **Desktop development with C++** features.
@@ -46,8 +44,8 @@ Visual Studio 2017 comes in [three editions](https://www.visualstudio.com/downlo
 The **Rhino C/C++ SDK** is a set of tools for creating plug-in using the C++ language. The SDK includes headers, libraries and Visual Studio project wizards to get you started creating plugins quickly.
 
 1. Exit **Visual Studio**.
-2. Download the **[Rhino C/C++ SDK](https://www.rhino3d.com/download/Rhino-SDK/6.0/release)**.
-3. Run the **SDK installer** you downloaded, in this case ***rh60sdk_[build_number].msi***.
+2. Download the **[Rhino C/C++ SDK](https://www.rhino3d.com/download/Rhino-SDK/7.0/release)**.
+3. Run the **SDK installer** you downloaded, in this case ***rh70sdk_[build_number].msi***.
 4. If the installation is successful, run Visual Studio.
 
 ---
