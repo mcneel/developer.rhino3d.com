@@ -66,6 +66,7 @@ order: 2
 - Installing Tools ([Windows]({{ site.baseurl }}/guides/rhinocommon/installing-tools-windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/installing-tools-mac/))
 - Your First Plugin ([Windows]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-mac/), [Cross-Platform]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-crossplatform/))
 - Plugin Installers ([Windows]({{ site.baseurl }}/guides/rhinocommon/plugin-installers-windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/plugin-installers-mac/))
+- [Distributing a Rhino Plug-In with the Package Manager]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)
 
 ### Fundamentals
 
@@ -327,6 +328,7 @@ order: 2
       {% endif %}
     {% endif %}
   {% endfor %}
+    <li><a href="{{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/">Distributing a Rhino Plug-In with the Package Manager</a></li>
   </ul>
 </div>
 
@@ -394,6 +396,7 @@ order: 2
       {% endif %}
     {% endif %}
   {% endfor %}
+    <li><a href="{{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/">Distributing a Rhino Plug-In with the Package Manager</a></li>
   </ul>
 </div>
 
@@ -487,6 +490,7 @@ order: 2
 
 - Installing Tools ([Windows]({{ site.baseurl }}/guides/grasshopper/installing-tools-windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/installing-tools-mac/))
 - Your First Component ([Windows]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/your-first-component-mac/))
+- [Distributing a Grasshopper Plug-In with the Package Manager]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)
 
 ### Fundamentals
 

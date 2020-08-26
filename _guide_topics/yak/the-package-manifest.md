@@ -16,7 +16,7 @@ layout: toc-guide-page
 
 Each package should have a manifest file containing a spec that can be distilled into the database when the package is pushed to the server. The manifest should be written in [YAML](http://www.yaml.org), following the structure of the example below.
 
-The manifest file should be named `manifest.yml` and should live in the root of the zipped package (renamed to \*.yak or whatever).
+The manifest file should be named `manifest.yml` and should live in the root of the package. (Don't worry, the Yak CLI tool's [`build` command]({{ site.baseurl }}/guides/yak/yak-cli-reference#build) takes care of this for you!)
 
 The manifest's purpose is to help with streamlining (and potentially automating) the process of releasing packages, removing the need for any web forms when publishing packages.
 

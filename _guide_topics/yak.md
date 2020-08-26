@@ -1,6 +1,6 @@
 ---
-title: Yak Guides
-description: Guides to using the Yak package manager.
+title: Package Manager Guides
+description: Guides to using the Rhino package manager, mostly from a developer's perspective.
 authors: unset
 sdk: unset
 languages: # empty
@@ -15,8 +15,8 @@ layout: guide-homepage
 
 ### Overview
 
-- [What is Yak?]({{ site.baseurl }}/guides/yak/what-is-yak)
-- [Join the Yak Discussion](https://discourse.mcneel.com/c/serengeti/yak)
+- [What is the Package Manager (a.k.a. Yak)?]({{ site.baseurl }}/guides/yak/what-is-yak)
+- [Join the Discussion](https://discourse.mcneel.com/c/serengeti/yak)
 
 ### Fundamentals
 
@@ -27,9 +27,9 @@ layout: guide-homepage
 {% endfor %}
 </ul>
 
-### Step By Step
+### Getting Started
 
-{% assign guides = site.guide_topics | where:"sdk","Yak" | where:"categories","Step By Step" | sort:"order" %}
+{% assign guides = site.guide_topics | where:"sdk","Yak" | where:"categories","Getting Started" | sort:"order" %}
 <ul>
 {% for guide in guides %}
   <li><a href="{{ guide.url | prepend: site.baseurl }}">{{ guide.title }}</a></li>

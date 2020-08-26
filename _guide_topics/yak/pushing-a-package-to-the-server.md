@@ -1,13 +1,13 @@
 ---
 title: Pushing a Package to the Server
-description: This is a step by step guide to pushing a package to the Yak server.
+description: This is a step by step guide to pushing a package to the package server.
 authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows']
-categories: ['Step By Step']
+categories: ['Getting Started']
 origin: unset
-order: 2
+order: 20
 keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
@@ -98,6 +98,6 @@ There are a few reasons why pushing a package might not work.
 
 ## Related Topics
 
-- [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
+- [Package Manager Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
 - [Creating a Grasshopper Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-grasshopper-plugin-package/)
 - [Creating a Rhino Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)

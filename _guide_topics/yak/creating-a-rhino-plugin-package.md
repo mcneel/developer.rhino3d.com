@@ -1,19 +1,21 @@
 ---
 title: Creating a Rhino Plug-In Package
-description: This is a step by step guide to creating a package for a Rhino plug-in.
+description: This is a step by step guide to creating a package for a Rhino plug-in (.rhp).
 authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
-platforms: ['Windows']
-categories: ['Step By Step']
+platforms: ['Windows', 'Mac']
+categories: ['Getting Started']
 origin: unset
-order: 1
+order: 10
 keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
+The [Package Manager](../yak/) is a new feature in Rhino 7 WIP. It makes it easier to discover, install and manage Rhino plug-ins from within Rhino. This guide will describe how to create a package from a Rhino plug-in that can be published to the package server.
+
 <div class="alert alert-info" role="alert">
-<strong>Note:</strong> Yak is cross-platform. The examples below are for Windows.
+<strong>Note:</strong> The package manager is cross-platform. The examples below are for Windows.
 For Mac, replace the path to the Yak CLI tool with
 <code>/Applications/RhinoWIP.app/Contents/Resources/bin/yak</code>.
 </div>
@@ -132,13 +134,20 @@ keywords. More information on how this is used can be found in the
 </a> guide.
 </div>
 
-Congratulations! 🙌 You've just created a Yak package for your Rhino
-plug-in.
+Congratulations! 🙌 You've just created a package for your Rhino plug-in.
 
 ---
 
 ## Next Steps
 
-Now that you've created a package, why not
-[push it to the Yak server](../pushing-a-package-to-the-server) to make it
-available to everyone else!
+Now that you've created a package, [push it to the package server](../pushing-a-package-to-the-server) to make it
+available in the package manager!
+
+---
+
+## Related Topics
+
+- [Creating a Grasshopper Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-grasshopper-plugin-package/)
+- [RhinoCommon: Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-windows)
+- [RhinoCommon: Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-mac)
+- [Creating your first C/C++ plugin for Rhino]({{ site.baseurl }}/guides/cpp/your-first-plugin-windows/)

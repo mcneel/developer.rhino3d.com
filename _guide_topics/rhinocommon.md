@@ -28,6 +28,7 @@ layout: guide-homepage
 - Plugin Installers ([Windows]({{ site.baseurl }}/guides/rhinocommon/plugin-installers-windows/), [Mac]({{ site.baseurl }}/guides/rhinocommon/plugin-installers-mac/))
 - [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
 - [Developer discussions on Discourse](https://discourse.mcneel.com/c/rhino-developer)
+- [Distributing a Rhino Plug-In with the Package Manager]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)
 
 ### Fundamentals
 

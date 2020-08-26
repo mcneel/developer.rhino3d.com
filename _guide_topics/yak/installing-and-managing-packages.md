@@ -5,9 +5,9 @@ authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows']
-categories: ['Step By Step']
+categories: ['Getting Started']
 origin: unset
-order: 3
+order: 30
 keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---

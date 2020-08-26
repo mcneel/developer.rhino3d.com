@@ -12,7 +12,9 @@ keywords: ['yak']
 layout: toc-guide-page
 ---
 
-We host a public package server for everyone to use. You don't need to configure anything. Both Yak and Rhino already know where to look.
+We host a public package server for everyone to use. You don't need to configure anything. Both the Yak CLI tool and Rhino already know where to look.
+
+Packages shared on the public package server are free to download and install. They may be free to use or require a license – see the [Cloud Zoo]({{ site.baseurl }}/guides/rhinocommon/cloudzoo/cloudzoo-overview/) and [Zoo]({{site.baseurl }}/guides/rhinocommon/rhinocommon-zoo-plugins/) guides for ways to implement licensing in your plug-in using our tools.
 
 Below are a few useful facts about our package server.
 

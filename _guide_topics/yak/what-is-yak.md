@@ -1,5 +1,5 @@
 ---
-title: What is Yak?
+title: What is the Package Manager?
 description: This guide introduces the Rhino Package Manager (a.k.a. Yak).
 authors: ['will_pearson']
 sdk: ['Yak']
@@ -12,21 +12,18 @@ keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
-<div class="alert alert-info" role="alert">
-<strong>Note:</strong> The Rhino Package Manager is a
-<strong>work-in-progress</strong> and we're adding new features all the time!
-</div>
-
 ## Overview
 
-Yak is a package manager for the Rhino ecosystem. Yak assists in the discovery,
-installation, and management of Rhino and Grasshopper resources. Examples
-include plug-ins, components, scripts, and material definitions.
+The Rhino Package Manager assists in the discovery, installation, and management resources in the Rhino ecosystem (Grasshopper included!). Currently it supports Rhino and Grasshopper plug-ins, but the goal is to include things like scripts, materials, viewports, etc. in the future!
 
-Yak has several goals.
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> The Rhino Package Manager was initially referred to by the codename "Yak". The name Yak is still used for the command line tool that creates and publishes packages.
+</div>
+
+The package manager has several goals.
 
 - Make it easier for users to discover and manage plug-ins and more
-- Help developers to share their work
+- Help developers and reusable content authors to share their work
 - Provide simple system administration tools
 
 Not wanting to reinvent the wheel, we've taken inspiration from Linux and the
@@ -68,12 +65,11 @@ server for the missing plug-ins and install them directly.
 
 ### Package Manager UI
 
-The package manager UI (work-in-progress) is currently avilable via the
-`TestPackageManager` command. It provides a NuGet-style interface that allows
+The package manager UI is avilable via the `_PackageManager` command. It provides a NuGet-style interface that allows
 users to search for packages, install them and see if any updates are avilable
 to currently installed packages.
 
-![The package manager UI in Rhino 6]({{ site.baseurl }}/images/testpackagemanager-wip.jpg)
+![The package manager UI]({{ site.baseurl }}/images/testpackagemanager-wip.jpg)
 
 ## Command Line Tool
 
@@ -91,7 +87,6 @@ Type `<path_to_yak> help` to get started.
 
 ## Related Topics
 
-- [Yak Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
 - [Anatomy of a Package]({{ site.baseurl }}/guides/yak/the-anatomy-of-a-package/)
 - [The Package Manifest]({{ site.baseurl }}/guides/yak/the-package-manifest/)
 - [Yak CLI Reference]({{ site.baseurl }}/guides/yak/yak-cli-reference)

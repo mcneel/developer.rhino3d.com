@@ -25,6 +25,7 @@ layout: guide-homepage
 - Your First Component ([Windows]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows/), [Mac]({{ site.baseurl }}/guides/grasshopper/your-first-component-mac/))
 - [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
 - [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
+- [Distributing a Grasshopper Plug-In with the Package Manager]({{ site.baseurl }}/guides/yak/creating-a-grasshopper-plugin-package/)
 
 <!--column-->
 

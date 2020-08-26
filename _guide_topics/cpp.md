@@ -42,6 +42,7 @@ layout: guide-homepage
       {% endif %}
     {% endif %}
   {% endfor %}
+    <li><a href="{{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/">Distributing a Rhino Plug-In with the Package Manager</a></li>
   </ul>
 </div>
 
