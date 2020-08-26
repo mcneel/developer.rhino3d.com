@@ -12,6 +12,8 @@ keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
+See the [package server]({{ site.baseurl }}/guides/yak/the-package-server/) guide for more information about the McNeel public package server.
+
 <div class="alert alert-info" role="alert">
 <strong>Note:</strong> Yak is cross-platform. The examples below are for Windows.
 For Mac, replace the path to the Yak CLI tool with
@@ -98,6 +100,6 @@ There are a few reasons why pushing a package might not work.
 
 ## Related Topics
 
-- [Package Manager Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
+- [The Package Server]({{ site.baseurl }}/guides/yak/the-package-server/)
 - [Creating a Grasshopper Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-grasshopper-plugin-package/)
 - [Creating a Rhino Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)
