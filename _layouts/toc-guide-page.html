@@ -20,6 +20,9 @@ layout: bootstrap
               {% if sdk_url == 'c/c++' %}
                 {% assign sdk_url = 'cpp' %}
               {% endif %}
+              {% if sdk == 'Yak' %}
+                {% assign sdk = 'Package Manager' %}
+              {% endif %}
               <li><a href="{{ site.baseurl }}/guides/{{ sdk_url }}">{{ sdk }}</a></li>
 
               {% if page.category_page %}
