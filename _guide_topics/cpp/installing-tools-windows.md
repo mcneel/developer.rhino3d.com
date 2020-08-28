@@ -32,7 +32,7 @@ Visual Studio 2019 comes in [three editions](https://www.visualstudio.com/downlo
 
 #### Step-by-Step
 
-1. **[Visual Studio 2019 Community Edition](https://www.visualstudio.com/vs/community/)** is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://visualstudio.microsoft.com/license-terms/mlt031819/).  Click the **Community** button to download the installer.
+1. **[Visual Studio 2019 Community](https://www.visualstudio.com/vs/community/)** is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://visualstudio.microsoft.com/license-terms/mlt031819/).  Click the **Community** button to download the installer.
 2. Run the **Visual Studio installer** you downloaded from Microsoft, in this case ***vs_community_[build_number].exe***.
   ![Visual Studio Install]({{ site.baseurl }}/images/installing-tools-windows-cpp-01.png)
 3. Follow the onscreen prompts to install Visual Studio. Make sure to select all of the **Desktop development with C++** features.
