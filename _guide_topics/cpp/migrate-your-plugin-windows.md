@@ -22,8 +22,8 @@ It is presumed you already have the necessary tools installed and are ready to g
 
 2. Navigate to your project's folder and open either your plugin project *(.vcxproj)* or solution *(.sln)*
 
-3. When your plugin project opens, Visual Studio will display the *Retarget Projects* dialog box. Specify the following actions and then click *OK*.
-   ![*Retarget Projects*]({{ site.baseurl }}/images/migrate-plugin-windows-cpp-01.png)
+3. When your plugin project opens, Visual Studio will display the *Retarget Projects* dialog box. Specify the following actions and then click *OK*.  
+![*Retarget Projects*]({{ site.baseurl }}/images/migrate-plugin-windows-cpp-01.png)
 
 ## Replace property sheets
 
