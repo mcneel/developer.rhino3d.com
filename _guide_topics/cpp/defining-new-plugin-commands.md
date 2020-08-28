@@ -28,13 +28,13 @@ Only ONE instance of a command class can be created.  This is why you should put
 
 The *Rhino Command Generator* wizard is a standalone application that will generate new skeleton `CRhinoCommand`-derived class.  The generated source code is copied to the Windows clipboard so you can easily paste it into your source files.
 
-To use this tool in Visual Studio 2017:
+To use this tool in Visual Studio 2019:
 
-1. Launch Visual Studio 2017.
+1. Launch Visual Studio 2019.
 2. Navigate to *Tools* > *External Tools...*.
-3. Use the *Add* button to add the *RhinoCommandGenerator.exe* file to the list.  The file can be found in the following location: *C:\\Program Files\\Rhino 6.0 SDK\\Wizards\\Command*
+3. Use the *Add* button to add the *RhinoCommandGenerator.exe* file to the list.  The file can be found in the following location: *C:\\Program Files\\Rhino 7.0 SDK\\Wizards\\Command*
 
-![Rhino Command Generator]({{ site.baseurl }}/images/your_first_plugin_windows_cpp_07.png)
+![Rhino Command Generator]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-08.png)
 
 Once the tool is installed, you can create a new command by selecting *Tools* > *Rhino Command*. If you add the command declaration to a new *.cpp* file, be sure to `#include "stdafx.h"` at the top.
 
