@@ -29,7 +29,7 @@ The Rhino SDK includes a Visual Studio Project Wizard.  The wizard program gener
     ![New Project Configure]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-02.png)
 5. Upon clicking *OK*, the *Overview* page of the *Rhino 6 Plug-In Wizard* dialog will appear.  This page gives you an overview of the type of project that the wizard is going to create.  
      ![New Project Overview]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-03.png)
-6. Not that, by default, the wizard will do the following:
+6. Note that, by default, the wizard will do the following:
      1. Create a general utility plugin.
 7. If you are satisfied with the default settings, just click the *Finish* button.  If you want to change any of these settings, click the *Next* button...
      ![Plugin Settings]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-04.png)
