@@ -29,30 +29,26 @@ The `CRhinoDoc::LookupObject` is somewhat easier.  So, we will demonstrate this 
 ## Sample
 
 ```cpp
-CRhinoCommand::result CCommandTest::RunCommand( const CRhinoCommandContext& context )
+CRhinoCommand::result CCommandTest::RunCommand(const CRhinoCommandContext& context)
 {
-  ON_wString layer_name = L"Default"; // some layer name to search for
-  int layer_index = context.m_doc.m_layer_table.FindLayer( layer_name );
-  if( layer_index >= 0 )
+  const wchar_t* psz_layer_name = L"Default"; ;
+  int layer_index = context.m_doc.m_layer_table.FindLayerFromFullPathName(psz_layer_name, ON_UNSET_INT_INDEX);
+  if (layer_index >= 0 && layer_index < context.m_doc.m_layer_table.LayerCount())
   {
     const CRhinoLayer& layer = context.m_doc.m_layer_table[layer_index];
     ON_SimpleArray<CRhinoObject*> objects;
-    int object_count = context.m_doc.LookupObject( layer, objects );
-    if( object_count > 0 )
+    int object_count = context.m_doc.LookupObject(layer, objects);
+    if (object_count > 0)
     {
-      const CRhinoObject* object = 0;
-      int i;
-      RhinoApp().Print( L"%s layer objects:\n", layer_name );
-
-      for( i = 0; i < object_count; i++ )
+      RhinoApp().Print(L"%s layer object(s)s:\n", psz_layer_name);
+      for (int i = 0; i < object_count; i++)
       {
-        object = objects[ i ];
-        if( object )
-          RhinoApp().Print( L"  %s\n", object->ShortDescription(false) );
+        const CRhinoObject* object = objects[i];
+        if (object)
+          RhinoApp().Print(L"  %s\n", object->ShortDescription(false));
       }
     }
   }
-
   return CRhinoCommand::success;
 }
 ```
