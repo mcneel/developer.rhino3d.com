@@ -42,5 +42,5 @@ Your plugin project should now be ready to build with the Rhino 7 C/C++ SDK.
 
 ## Related Topics
 
-- [What's New?]({{ site.baseurl }}/guides/general/whats-new)
+- [What's New?]({{ site.baseurl }}/guides/cpp/whats-new)
 
