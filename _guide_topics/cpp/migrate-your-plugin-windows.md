@@ -1,6 +1,6 @@
 ---
 title: Migrate your plugin project to Rhino 7
-description: This guide walks you through manually migrating your Rhino 6 plugin project to Rhino 7.
+description: This guide walks you through migrating your Rhino 6 plugin project to Rhino 7.
 authors: ['dale_fugier']
 sdk: ['C/C++']
 languages: ['C/C++']
