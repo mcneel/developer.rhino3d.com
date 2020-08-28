@@ -47,7 +47,7 @@ layout: guide-homepage
 </div>
 
 ### Other Resources
-- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples/tree/7)
 - [Developer discussions on Discourse](https://discourse.mcneel.com/c/rhino-developer)
 
 ### Troubleshooting
