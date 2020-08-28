@@ -22,17 +22,18 @@ The Rhino SDK includes a Visual Studio Project Wizard.  The wizard program gener
 
 ### Plugin Wizard
 
-1. Launch *Visual Studio 2017* and navigate to *File* > *New* > *Project...*.
-2. From the *New Project* dialog, select the *Rhinoceros 6 Plug-in* template from the list of installed templates...
-  ![New Project Template]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-01.png)
-3. Type the project name as shown above.  You can enter a different name if you want.  The wizard uses the project name when it creates files and classes.  If you enter a different name, your files and classes will have a name different from that of the files and classes mentioned in this tutorial.  Don’t forget to choose a location to store the project.  When finished, click the *OK* button.
-4. Upon clicking *OK*, the *Overview* page of the *Rhinoceros 6 Plug-In Wizard* dialog will appear.  This page gives you an overview of the type of project that the wizard is going to create.  
-  ![New Project Overview]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-02.png)
-5. Not that, by default, the wizard will do the following:
+1. Launch *Visual Studio 2019* and navigate to *File* > *New* > *Project...*.
+2. From the *New Project* dialog, select the *Rhino 7 Plug-in* template from the list of installed templates and click *Next*.
+    ![New Project Template]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-01.png)
+3. Type the project name as shown below.  You can enter a different name if you want.  The wizard uses the project name when it creates files and classes.  If you enter a different name, your files and classes will have a name different from that of the files and classes mentioned in this tutorial.  Don’t forget to choose a location to store the project.  When finished, click *Create*.
+    ![New Project Configure]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-02.png)
+5. Upon clicking *OK*, the *Overview* page of the *Rhino 6 Plug-In Wizard* dialog will appear.  This page gives you an overview of the type of project that the wizard is going to create.  
+     ![New Project Overview]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-03.png)
+6. Not that, by default, the wizard will do the following:
      1. Create a general utility plugin.
-6. If you are satisfied with the default settings, just click the *Finish* button.  If you want to change any of these settings, click the *Next* button...
-  ![Plugin Settings]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-03.png)
-7. The *Plug-in Settings* page allows you to modify a number of settings used by the wizard when generating the plugin source code:
+7. If you are satisfied with the default settings, just click the *Finish* button.  If you want to change any of these settings, click the *Next* button...
+     ![Plugin Settings]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-04.png)
+8. The *Plug-in Settings* page allows you to modify a number of settings used by the wizard when generating the plugin source code:
      1. *Plug-in name*: Modify this field if you want to change the name of the plugin.  *NOTE*: modifying this field does not modify the project name but rather the name of the plugin as listed in Rhino’s *PlugInManager* dialog box.
      2. *Plug-in type*: Select the [type of plugin]({{ site.baseurl }}/guides/general/what-is-a-rhino-plugin) that you want the wizard to create.
      3. *Source file comments*: Select this option if you want the wizard to add verbose comments to the generated source files.
@@ -40,7 +41,7 @@ The Rhino SDK includes a Visual Studio Project Wizard.  The wizard program gener
      5. *Automation*: Select this option to allow your program to manipulate objects implemented in another program.  Selecting this option also exposes your program to other Automation client plugins.
      6. *Windows sockets*: Select this option to indicate that your program supports Windows sockets.  Windows sockets allow you to write programs that communicate over TCP/IP networks.
      7. *Security Development Lifecycle (SDL) checks*: Select this option to add recommended Security Development Lifecycle (SDL) checks to the project. These checks include extra security-relevant warnings as errors, and additional secure code-generation features.  For more information, see [Enable Additional Security Checks](https://msdn.microsoft.com/en-us/library/jj161081.aspx).
-8. For this tutorial, just accept the default settings. Click the *Finish* button, and the wizard begins to generate your plugin project’s folders, files, and classes.  When the wizard is finished, look through the plugin project using *Visual Studio’s Solution Explorer*...
+9. For this tutorial, just accept the default settings. Click the *Finish* button, and the wizard begins to generate your plugin project’s folders, files, and classes.  When the wizard is finished, look through the plugin project using *Visual Studio’s Solution Explorer*...
 
 ### Plugin Anatomy
 
@@ -62,16 +63,16 @@ The following files are of interest:
 
 ### Project Settings
 
-With *Visual Studio 2017*, you can view a project's setting by clicking *Project* > *[ProjectName] Properties...*.
+With *Visual Studio 2019*, you can view a project's setting by clicking *Project* > *[ProjectName] Properties...*.
 
-![Test Property Pages]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-04.png)
+![Test Property Pages]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-05.png)
 
-Reviewing the above settings, you can see that, unlike Rhino 5 plugin projects, there is no 32-bit platform.  This is because Rhino 6 is only available as a 64-bit application.
+Reviewing the above settings, you can see that there is no 32-bit platform.  This is because Rhino 7 is only available as a 64-bit application.
 
 ### Property Sheets
 Visual Studio projects have hundreds of compiler switches and options to choose from. Using custom [Project Property Sheets](https://msdn.microsoft.com/en-us/library/669zx6zc.aspx) is a convenient way to synchronize or share these common settings among other projects.
 
-The Plugin Wizard, used to generate the plugin project, adds Rhino plugin-specific property sheets to the project.  To view these propety sheets, click *View* > *Property Manager*.
+The Plugin Wizard, used to generate the plugin project, adds Rhino plugin-specific property sheets to the project.  To view these property sheets, click *View* > *Property Manager*.
 
 ![Test Property Manager]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-06.png)
 
@@ -103,7 +104,7 @@ Before we can build our project, we need to fill in the Rhino plugin developer d
      - *Release*: The *Release* configuration of your program contains no symbolic debug information and is fully optimized.  *Debug* information can be generated in PDB Files (C++) depending on the compiler options used.  Creating PDB files can be very useful if you later need to debug your release version.  The *Release* configuration also links with release runtime libraries.  Plugins built with the *Release* configuration will only load in the release version of Rhino that was installed with Rhino.
 2. For this guide, build the *Debug* configuration.
 3. From within Rhino, navigate to *Tools* > *Options*.  Navigate to the *Plugins* page under *Rhino Options* and install your plugin.
-  ![Rhino Options]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-05.png)
+    ![Rhino Options]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-07.png)
 4. Once your plugin is loaded, close the options dialog and run your `Test` command.  You have finished creating your first plugin!
 
 ## Adding Additional Commands
@@ -204,13 +205,13 @@ A couple things to consider:
 
 The *Rhino Command Generator* wizard is a standalone application that will generate new skeleton `CRhinoCommand`-derived class.  The generated source code is copied to the Windows clipboard so you can easily paste it into your source files.
 
-To use this tool in Visual Studio 2017:
+To use this tool in Visual Studio 2019:
 
-1. Launch Visual Studio 2017.
+1. Launch Visual Studio 2019.
 2. Navigate to *Tools* > *External Tools...*.
-3. Use the *Add* button to add the *RhinoCommandGenerator.exe* file to the list.  The file can be found in the following location: *C:\\Program Files\\Rhino 6.0 SDK\\Wizards\\Command*
+3. Use the *Add* button to add the *RhinoCommandGenerator.exe* file to the list.  The file can be found in the following location: *C:\\Program Files\\Rhino 7.0 SDK\\Wizards\\Command*
 
-![Rhino Command Generator]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-07.png)
+![Rhino Command Generator]({{ site.baseurl }}/images/your-first-plugin-windows-cpp-08.png)
 
 ---
 
