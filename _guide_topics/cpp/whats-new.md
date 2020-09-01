@@ -28,11 +28,11 @@ What’s really exciting is that the free Community edition of Visual Studio wil
 
 # Subdivision Surfaces
 
-A new subdivision surface object has been added to Rhino 7. The core geometry component is '''ON_SubD''' class, which is also part of openNURBS. All subdivision code will be available in the Rhino plug-in SDK.
+A new subdivision surface object has been added to Rhino 7. The core geometry component is ```ON_SubD``` class, which is also part of openNURBS. All subdivision code will be available in the Rhino plug-in SDK.
 
-The '''ON_SubD''' class has full support for Catmull-Clark quad subdivision surfaces and for Loop-Warren triangle subdivision surfaces. The Rhino subdivision surface control polygons have no limits on vertex valences (edge and face counts) or facet edge counts.
+The ```ON_SubD``` class has full support for Catmull-Clark quad subdivision surfaces and for Loop-Warren triangle subdivision surfaces. The Rhino subdivision surface control polygons have no limits on vertex valences (edge and face counts) or facet edge counts.
 
-Rhino subdivision objects are automatically converted to cubic NURBS polysurfaces or meshes when a subdivision object is selected as input to a command that is expecting a polysurface or mesh. This is how Rhino's lightweight extrusion objects behave.
+Rhino subdivision objects are automatically converted to cubic NURBS polysurfaces or meshes when a subdivision object is selected as input to a command that is expecting a polysurface or mesh. This is how Rhino's lightweight extrusion object behaves.
 
 ## Deprecation
 
