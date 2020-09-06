@@ -38,6 +38,7 @@ your account.
   the package database has a graphical interface.
 - **Verify your identity**: Used for authentication when querying package
   ownership.
+- **View your email address**: Your primary email address is stored so that you can be [added as an owner](../yak-cli-reference/#owner) of packages that others have published.
 
 Once you've accepted, the browser window will close itself. Yak has retrieved an
 OAuth token from Rhino Accounts and has stored this on your computer.
@@ -73,6 +74,20 @@ pushed. 🤞
 marmoset (1.0.0)
 ```
 
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> If this is your first time, why not try pushing to the test server first?
+<br><br>
+<pre><code class="language-commandline">
+&gt; "C:\Program Files\Rhino 7 WIP\System\Yak.exe" push --source https://test.yak.rhino3d.com marmoset-1.0.0-rh6_18-any.yak
+
+&gt; "C:\Program Files\Rhino 7 WIP\System\Yak.exe" search --source https://test.yak.rhino3d.com --all --prerelease marmoset
+
+marmoset (1.0.0)
+</code></pre>
+<br><br>
+This server is wiped clean each night.
+</div>
+
 ## Troubleshooting
 
 There are a few reasons why pushing a package might not work.
@@ -86,15 +101,17 @@ There are a few reasons why pushing a package might not work.
 - The package name already exists, but you're not an **owner**.
 
   _Only package **owners** are permitted to push new versions of their packages.
-  When a user pushes the first version of a package, they become its **owner**.
-  In the future it will be possible to grant **ownership** to other users.
-  Package names are case-insensitive._
+  When a user pushes the first version of a package, they become its **owner**. Additional owners can be added with the [`owner`](../yak-cli-reference/#owner) command._
 
 - The package version already exists.
 
   _In order to prevent disruption to others who are using one of your packages,
   it's not possible to delete or overwrite versions. Roll the version number and
   let your users know that there's something new for them to try!_
+
+- Push something that you didn't mean to?
+
+  _Use the [`yank`](../yak-cli-reference/#yank) command to unlist a specific version._
 
 ---
 
