@@ -38,12 +38,30 @@ Visual Studio 2019 comes in [three editions](https://www.visualstudio.com/downlo
 3. Follow the onscreen prompts to install Visual Studio. Make sure to select all of the **Desktop development with C++** features.
 4. Click the **Individual components** tab, scroll to the **SDKs, libraries, and frameworks** section, and check **Visual Studio SDK**.
     ![Visual Studio Install]({{ site.baseurl }}/images/installing-tools-windows-cpp-02.png)
-5. Click **Install**.
-6. Depending on your internet connection, this can take minutes or hours.
+5. When finished, click **Install**.
+6. Depending on your internet connection, this can take several minutes to complete.
+
+## Modifying Visual Studio
+
+If you already have Microsoft Visual Studio 2019 installed, then you will want to re-run the Visual Studio Installer and verify you have all the the components required to build Rhino plug-in installed.
+
+#### Step-by-Step
+1. Open the **[Visual Studio Installer](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2019)**.
+2. In the installer, look for the 2019 edition of Visual Studio that you installed, and then choose **Modify**.
+3. As mentioned in **Install Visual Studio** above, select all of the **Desktop development with C++** features.
+4. Also mentioned above, click the **Individual components** tab, scroll to the **SDKs, libraries, and frameworks** section, and check **Visual Studio SDK**.
+5. When finished, click **Modify**.
+6. Depending on your internet connection, this can take several minutes to complete.
 
 ## Install the Rhino C/C++ SDK
 
 The **Rhino C/C++ SDK** is a set of tools for creating plug-in using the C++ language. The SDK includes headers, libraries and Visual Studio project wizards to get you started creating plugins quickly.
+
+```
+NOTE WELL: During the Rhino WIP development cycle, you MUST download the Rhino WIP C/C++ SDK which cooresponds to the version of Rhino WIP you are using. This SDK is extended/updated/bug fixed every week. But any plug-ins made with and of the updates will work in the released version of Rhino 7.
+```
+
+#### Step-by-Step
 
 1. Exit **Visual Studio**.
 2. Download the **[Rhino C/C++ SDK](https://www.rhino3d.com/download/Rhino-SDK/7.0/release)**.
