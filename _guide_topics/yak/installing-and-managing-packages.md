@@ -4,7 +4,7 @@ description: This is a step by step guide to installing and uninstalling a Yak p
 authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
-platforms: ['Windows']
+platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 origin: unset
 order: 30

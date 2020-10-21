@@ -4,7 +4,7 @@ description: This is a step by step guide to pushing a package to the package se
 authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
-platforms: ['Windows']
+platforms: ['Windows', 'Mac']
 categories: ['Getting Started']
 origin: unset
 order: 20

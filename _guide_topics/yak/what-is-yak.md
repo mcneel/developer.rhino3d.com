@@ -4,7 +4,7 @@ description: This guide introduces the Rhino Package Manager (a.k.a. Yak).
 authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
-platforms: ['Windows']
+platforms: ['Windows', 'Mac']
 categories: ['Overview']
 origin: unset
 order: 1

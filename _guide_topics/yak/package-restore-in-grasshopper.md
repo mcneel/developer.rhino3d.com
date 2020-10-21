@@ -4,7 +4,7 @@ description: How can Grasshopper use Yak to make your life easier?
 authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
-platforms: ['Windows']
+platforms: ['Windows', 'Mac']
 categories: ['Features']
 origin: unset
 order: 1

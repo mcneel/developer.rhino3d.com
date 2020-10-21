@@ -4,7 +4,7 @@ description: A reference for the Yak command line tool.
 authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
-platforms: ['Windows']
+platforms: ['Windows', 'Mac']
 categories: ['Fundamentals']
 origin: unset
 order: 1
