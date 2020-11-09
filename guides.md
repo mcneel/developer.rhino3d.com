@@ -647,15 +647,6 @@ order: 2
 
 ---
 
-## [RhinoScript]({{ site.baseurl }}/guides/rhinoscript) <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon">
-{: #rhinoscript }
-
-*RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino for Windows, or automate repetitive tasks.*
-
-### Overview
-
-- [What are VBScript and RhinoScript?]({{ site.baseurl }}/guides/rhinoscript/what-are-vbscript-rhinoscript)
-
 ## [Compute]({{ site.baseurl }}/guides/compute)
 
 
