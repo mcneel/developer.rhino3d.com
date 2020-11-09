@@ -9,10 +9,23 @@ categories: ['Unsorted']
 origin: unset
 order: 1
 keywords: ['rhino', 'developer']
-layout: guide-homepage
+layout: fullwidth-page
 ---
+<div class="row">
+<div class="col-12" markdown="1">   
+
+# Compute Guides
+
+</div>
+<div class="col-md-7 col-sm-12 col-sm-12" markdown="1">  
 
 Write code to access the Rhino and Grasshopper SDKs through a stateless REST API running on Windows Servers. Use Compute to enhance any online solution you are developing to create and manipulate two and three-dimensional curves, surfaces, and solids. Install and customize Compute to run on any cloud services framework.
+
+</div>
+</div>
+
+<div class="row-fluid">  
+<div class="col-md-4" markdown="1">  
 
 ### Getting Started
 
@@ -29,7 +42,11 @@ Write code to access the Rhino and Grasshopper SDKs through a stateless REST API
   </ul>
 </div>
 
-<!--column-->
+</div>
+</div>
+<div class="row-fluid">  
+<div class="col-md-4" markdown="1">  
+
 
 ### Production Deployment
 
@@ -44,4 +61,7 @@ Write code to access the Rhino and Grasshopper SDKs through a stateless REST API
     {% endif %}
   {% endfor %}
   </ul>
+</div>
+
+</div>
 </div>
