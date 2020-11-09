@@ -44,21 +44,8 @@ Core-hour billing is required when running Rhino on a Windows Server-based opera
 ⚠️ _**WARNING:** This token allows anyone with it to charge your team at will. Do **NOT** share this token with anyone._
 
 ## Using Core-Hour Billing
-  1. Install Rhino on one or more instances of Windows Server
-  1. Start Rhino on the server, and login to your service account (`compute@mydomain.com`, above)
+  1. Install Rhino on one or more instances of Windows Server where `RHINO_TOKEN` is set.
 
-[//]: ##Option 2 - Perpetual Licensing
-[//]: #Ordinary Rhino 7 commercial licenses will act as per-core licenses on Windows Server.
-[//]: #
-[//]: #***Example 1:**
-[//]: #Rhino running on a 32-core server licensed using the Zoo.*
-[//]: #
-[//]: #* When Rhino starts, it contacts the Zoo for licenses. If 32 licenses are available, Rhino will reserve all 32 licenses and start. If there are not 32 licenses available, Rhino will not start.
-[//]: #
-[//]: #***Example 2:**
-[//]: #Rhino running on 200 4-core servers, there are 100 licenses in the Zoo:*
-[//]: #
-[//]: #  * When each Rhino starts, it will request 4 licenses from the Zoo. Since there are 100 licenses available, the first 25 servers will successfully get licenses from the Zoo. The other 175 servers will fail to get licenses, and Rhino will fail to start.
-[//]: #
-#Single-Computer licensing Not Supported
+
+## Single-Computer licensing Not Supported
 When running on Windows Server, it is not possible to enter a license key to run as a single-computer license, as Rhino requires a license per core.
