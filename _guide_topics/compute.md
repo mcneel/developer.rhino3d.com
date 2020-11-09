@@ -1,0 +1,47 @@
+---
+title: Compute Guides
+description: Guides to developing, deploying, and contributing to Compute.
+authors: unset
+sdk: unset
+languages: ['C#', 'Python', 'VB']
+platforms: ['Windows', 'Mac']
+categories: ['Unsorted']
+origin: unset
+order: 1
+keywords: ['rhino', 'developer']
+layout: guide-homepage
+---
+
+Write code to access the Rhino and Grasshopper SDKs through a stateless REST API running on Windows Servers. Use Compute to enhance any online solution you are developing to create and manipulate two and three-dimensional curves, surfaces, and solids. Install and customize Compute to run on any cloud services framework.
+
+### Getting Started
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.sdk contains 'Compute' and guide.categories contains 'Getting Started' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+<!--column-->
+
+### Production Deployment
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.sdk contains 'Compute' and guide.categories contains 'Deployment' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>

@@ -1,13 +1,13 @@
 ---
-title: Rhino Compute &trade; with Python
+title: Calling Compute with Python
 description: This guide covers all the necessary tools required to get started with the Rhino Compute Service using Python.
 authors: ['scott_davidson']
 sdk: ['RhinoCommon', 'Compute']
 languages: ['Python']
 platforms: ['Windows', 'Mac', 'Unix']
-categories: ['Getting Started']
+categories: ['Getting Started', 'Client']
 origin:
-order: 2
+order: 3
 keywords: ['first', 'RhinoCommon', 'Plugin', 'compute']
 layout: toc-guide-page
 ---

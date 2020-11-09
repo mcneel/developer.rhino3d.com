@@ -1,13 +1,13 @@
 ---
-title: Rhino Compute &trade; (Windows)
+title: Calling Compute (Windows)
 description: This guide covers all the necessary tools required to get started with the Rhino Compute Service in Csharp
 authors: ['steve_baer', 'scott_davidson']
 sdk: ['RhinoCommon', 'Compute']
 languages: ['Csharp']
 platforms: ['Windows']
-categories: ['Getting Started']
+categories: ['Getting Started', 'Client']
 origin:
-order: 4
+order: 5
 keywords: ['first', 'RhinoCommon', 'Plugin', 'compute']
 layout: toc-guide-page
 ---
