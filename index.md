@@ -120,6 +120,7 @@ layout: fullwidth-page
 
 {: rules="groups"}
 
+<div align="center">
 <p>Still unclear?  Browse the <a href="{{ site.baseurl }}/guides/">Guides</a>.  Ask a question in <a href="{{ site.baseurl }}/guides/general/contributing/#discourse">the Forum</a>.  Check out the <a href="{{ site.baseurl }}/guides/general/frequently-asked-questions/">FAQ</a>. Ask <a href="{{ site.baseurl }}/guides/general/contributing/#contacts">a developer</a>.</p>
 
 <p>Rhino developer tools are royalty free and include support.</p>
