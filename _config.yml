@@ -72,8 +72,9 @@ exclude: [script, test, README.md, CONTRIBUTING.md, Gemfile, vendor]
 
 # version branches
 versions:
-  stable: "6"
+  stable: "7"
   branches:
     - master # => wip
     - "5"
     - "6"
+    - "7"
