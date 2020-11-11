@@ -22,7 +22,7 @@ Although not required, having some understanding of the computational methods us
 
 #### NURBS Geometry
 
-All NURBS curves and surfaces share terminology and behave simlarly.  Since curves are easiest to describe, we will cover them in detail.
+All NURBS curves and surfaces share terminology and behave similarly.  Since curves are easiest to describe, we will cover them in detail.
 
 A NURBS curve is defined by four things: degree, control points, knots, and an evaluation rule. 
 
