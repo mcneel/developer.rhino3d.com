@@ -1,7 +1,7 @@
 ---
 title: Licensing & Billing
 description: 
-authors: ['brian']
+authors: ['brian_gillespie']
 sdk: ['Compute']
 languages: []
 platforms: ['Windows']
@@ -41,7 +41,9 @@ Core-hour billing is required when running Rhino on a Windows Server-based opera
 6. Once the payment information is saved and core-hour billing is enabled, click _Action_ -> _Get Auth Token_.
 7. We'll pass this token to the bootstrap script in the next step to set the `RHINO_TOKEN` environment variable on the virtual machine. Just leave the page open for now.
 
-⚠️ _**WARNING:** This token allows anyone with it to charge your team at will. Do **NOT** share this token with anyone._
+<div class="alert alert-warning" role="alert">
+<strong>Warning!</strong> This token allows anyone with it to charge your team at will. Do <strong>NOT</strong> share this token with anyone.
+</div>
 
 ## Using Core-Hour Billing
   1. Install Rhino on one or more instances of Windows Server where `RHINO_TOKEN` is set.

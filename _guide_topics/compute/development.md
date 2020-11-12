@@ -1,7 +1,7 @@
 ---
 title: Running and Debugging Compute Locally
 description: Deploy Compute for Production
-authors: ['brian']
+authors: ['brian_gillespie', 'will_pearson']
 sdk: ['Compute']
 languages: ['C#', 'VB']
 platforms: ['Windows']
@@ -21,5 +21,5 @@ How to develop Compute on your Windows 10 computer.
 1. Make sure that `compute.geometry` is set as the startup project.
 1. Start the application in the debugger.
 1. Wait for Compute to load... ☕️
-    ![compute.geometry.exe](images/compute_geometry_screenshot.png)
+    ![compute.geometry.exe]({{site.basurl }}/images/compute_geometry_screenshot.png)
 1. Browse to http://localhost:8081/version to check that it's working!

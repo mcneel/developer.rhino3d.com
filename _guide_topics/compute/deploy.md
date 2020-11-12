@@ -1,7 +1,7 @@
 ---
 title: 'Deployment to Production Servers'
 description: Deploy Compute for Production
-authors: ['brian']
+authors: ['brian_gillespie', 'will_pearson']
 sdk: ['Compute']
 languages: ['C#', 'VB']
 platforms: ['Windows']

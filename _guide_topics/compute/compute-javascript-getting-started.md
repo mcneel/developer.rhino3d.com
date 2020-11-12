@@ -2,7 +2,7 @@
 title: Calling Compute with JavaScript
 description: This guide covers all the necessary tools required to get started with the Rhino Compute Service through JavaScript.
 authors: ['scott_davidson']
-sdk: ['RhinoCommon', 'Compute']
+sdk: ['Compute', 'RhinoCommon']
 languages: ['JavaScript']
 platforms: ['Windows', 'Mac', 'Unix']
 categories: ['Getting Started', 'Client']
