@@ -18,6 +18,8 @@ For Mac, replace the path to the Yak CLI tool with
 <code>"{{ site.rhino.mac_path }}/Contents/Resources/bin/yak"</code>.
 </div>
 
+{% include yak-mac-path-note.html %}
+
 ## Install
 
 Installing a yak package with the CLI tool is simple.

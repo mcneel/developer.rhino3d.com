@@ -20,6 +20,8 @@ For Mac, replace the path to the Yak CLI tool with
 <code>"{{ site.rhino.mac_path }}/Contents/Resources/bin/yak"</code>.
 </div>
 
+{% include yak-mac-path-note.html %}
+
 ## Authentication
 
 Before you can push a package to the server, you need to authorize the Yak CLI

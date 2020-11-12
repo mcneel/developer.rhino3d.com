@@ -20,6 +20,8 @@ For Mac, replace the path to the Yak CLI tool with
 <code>"{{ site.rhino.mac_path }}/Contents/Resources/bin/yak"</code>.
 </div>
 
+{% include yak-mac-path-note.html %}
+
 First, let's assume you have a folder on your computer which contains all the
 files that you would like to distribute in your package. Something like this...
 

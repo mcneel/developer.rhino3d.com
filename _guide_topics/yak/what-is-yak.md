@@ -83,6 +83,8 @@ On Mac there is a script, `"{{ site.rhino.mac_path }}/Contents/Resources/bin/yak
 
 Type `<path_to_yak> help` to get started.
 
+{% include yak-mac-path-note.html %}
+
 ---
 
 ## Related Topics
