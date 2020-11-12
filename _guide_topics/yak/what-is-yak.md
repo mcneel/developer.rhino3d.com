@@ -78,8 +78,8 @@ It is modelled on well known domain-specific package managers such as Ruby's
 `gem` and Python's `pip`. It communicates with the server as well as hooking
 into Rhino Accounts for authentication.
 
-On Windows, the tool can be found at `C:\Program Files\Rhino 7 WIP\System\yak.exe`.
-On Mac there is a script, `/Applications/RhinoWIP.app/Contents/Resources/bin/yak`.
+On Windows, the tool can be found at `"{{ site.rhino.windows_path }}\System\yak.exe"`.
+On Mac there is a script, `"{{ site.rhino.mac_path }}/Contents/Resources/bin/yak"`.
 
 Type `<path_to_yak> help` to get started.
 

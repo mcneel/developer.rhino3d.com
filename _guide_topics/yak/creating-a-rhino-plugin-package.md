@@ -17,7 +17,7 @@ The [Package Manager](../yak/) is a new feature in Rhino 7 WIP. It makes it easi
 <div class="alert alert-info" role="alert">
 <strong>Note:</strong> The package manager is cross-platform. The examples below are for Windows.
 For Mac, replace the path to the Yak CLI tool with
-<code>/Applications/RhinoWIP.app/Contents/Resources/bin/yak</code>.
+<code>"{{ site.rhino.mac_path }}/Contents/Resources/bin/yak"</code>.
 </div>
 
 First, let's assume you have a folder on your computer which contains all the
@@ -44,7 +44,7 @@ the [Manifest Reference Guide](../the-package-manifest). Alternatively, you can 
 command to generate a skeleton file. We'll do the latter here.
 
 ```commandline
-> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" spec
+> "{{ site.rhino.windows_path }}\System\Yak.exe" spec
 
 Inspecting content: Tamarin.rhp
 
@@ -93,7 +93,7 @@ keywords:
 Now that we have a manifest file, we can build the package!
 
 ```commandline
-> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" build
+> "{{ site.rhino.windows_path }}\System\Yak.exe" build
 
 Building package from contents of C:\Users\Bozo\dist
 

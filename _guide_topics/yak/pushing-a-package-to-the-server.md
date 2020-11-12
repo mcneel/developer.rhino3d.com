@@ -17,7 +17,7 @@ See the [package server]({{ site.baseurl }}/guides/yak/the-package-server/) guid
 <div class="alert alert-info" role="alert">
 <strong>Note:</strong> Yak is cross-platform. The examples below are for Windows.
 For Mac, replace the path to the Yak CLI tool with
-<code>/Applications/RhinoWIP.app/Contents/Resources/bin/yak</code>.
+<code>"{{ site.rhino.mac_path }}/Contents/Resources/bin/yak"</code>.
 </div>
 
 ## Authentication
@@ -26,7 +26,7 @@ Before you can push a package to the server, you need to authorize the Yak CLI
 tool using your Rhino Account.
 
 ```commandline
-> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" login
+> "{{ site.rhino.windows_path }}\System\Yak.exe" login
 ```
 
 A browser tab should open asking you to log in to Rhino Accounts (assuming you
@@ -59,7 +59,7 @@ use the package created in the
 [previous guide](../creating-a-grasshopper-plugin-package) as an example.
 
 ```commandline
-> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" push marmoset-1.0.0-rh6_18-any.yak
+> "{{ site.rhino.windows_path }}\System\Yak.exe" push marmoset-1.0.0-rh6_18-any.yak
 ```
 
 This command doesn't produce any output on success.
@@ -69,7 +69,7 @@ it. You should see the name and version number of the package that you just
 pushed. 🤞
 
 ```commandline
-> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" search --all --prerelease marmoset
+> "{{ site.rhino.windows_path }}\System\Yak.exe" search --all --prerelease marmoset
 
 marmoset (1.0.0)
 ```
@@ -78,9 +78,9 @@ marmoset (1.0.0)
 <strong>Note:</strong> If this is your first time, why not try pushing to the test server first?
 <br><br>
 <pre><code class="language-commandline">
-&gt; "C:\Program Files\Rhino 7 WIP\System\Yak.exe" push --source https://test.yak.rhino3d.com marmoset-1.0.0-rh6_18-any.yak
+&gt; "{{ site.rhino.windows_path }}\System\Yak.exe" push --source https://test.yak.rhino3d.com marmoset-1.0.0-rh6_18-any.yak
 
-&gt; "C:\Program Files\Rhino 7 WIP\System\Yak.exe" search --source https://test.yak.rhino3d.com --all --prerelease marmoset
+&gt; "{{ site.rhino.windows_path }}\System\Yak.exe" search --source https://test.yak.rhino3d.com --all --prerelease marmoset
 
 marmoset (1.0.0)
 </code></pre>

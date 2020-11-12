@@ -12,7 +12,7 @@ keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
-The Yak command line tool is included with Rhino 7 WIP. On Windows the tool is located at `C:\Program Files\Rhino 7 WIP\System\yak.exe`. On macOS there is a convenience script at `/Applications/RhinoWIP.app/Contents/Resources/bin/yak`.
+The Yak command line tool is included with Rhino 7 WIP. On Windows the tool is located at `"{{ site.rhino.windows_path }}\System\yak.exe"`. On macOS there is a convenience script at `"{{ site.rhino.mac_path }}/Contents/Resources/bin/yak"`.
 
 ## Build
 
