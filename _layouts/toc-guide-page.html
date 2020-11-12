@@ -26,10 +26,10 @@ layout: bootstrap
               <li><a href="{{ site.baseurl }}/guides/{{ sdk_url }}">{{ sdk }}</a></li>
 
               {% if page.category_page %}
-                <li class="active"><a href="{{ site.baseurl }}/{{ page.category_page }}">{{ page.categories }}</a></li>
+                <li class="active"><a href="{{ site.baseurl }}/{{ page.category_page }}">{{ page.categories[0] }}</a></li>
               {% else %}
                 {% if page.categories[0] != page.sdk[0] %}
-                  <li class="active">{{ page.categories }}</li>
+                  <li class="active">{{ page.categories[0] }}</li>
                 {% endif %}
               {% endif %}
           </ol>
