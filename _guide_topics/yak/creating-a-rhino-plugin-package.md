@@ -12,7 +12,7 @@ keywords: ['developer', 'yak']
 layout: toc-guide-page
 ---
 
-The [Package Manager](../) is a new feature in Rhino 7. It makes it easier to discover, install and manage Rhino plug-ins from within Rhino. This guide will describe how to create a package from a Rhino plug-in that can be published to the package server.
+The [Package Manager]({{ site.baseurl }}/guides/yak/yak/) is a new feature in Rhino 7. It makes it easier to discover, install and manage Rhino plug-ins from within Rhino. This guide will describe how to create a package from a Rhino plug-in that can be published to the package server.
 
 <div class="alert alert-info" role="alert">
 <strong>Note:</strong> The package manager is cross-platform. The examples below are for Windows.
