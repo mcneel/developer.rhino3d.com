@@ -60,7 +60,7 @@ The **Rhino C/C++ SDK** is a set of tools for creating plug-in using the C++ lan
 #### Step-by-Step
 
 1. Exit **Visual Studio**.
-2. Download the **[Rhino C/C++ SDK](https://www.rhino3d.com/download/Rhino-SDK/7.0/wip)**.
+2. Download the **[Rhino C/C++ SDK](https://www.rhino3d.com/download/Rhino-SDK/7.0/latest)**.
 3. Run the **SDK installer** you downloaded, in this case ***rh70sdk_[build_number].msi***.
 4. If the installation is successful, run Visual Studio.
 
