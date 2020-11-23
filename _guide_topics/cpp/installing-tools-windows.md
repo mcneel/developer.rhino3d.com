@@ -57,10 +57,6 @@ If you already have Microsoft Visual Studio 2019 installed, then you will want t
 
 The **Rhino C/C++ SDK** is a set of tools for creating plug-in using the C++ language. The SDK includes headers, libraries and Visual Studio project wizards to get you started creating plugins quickly.
 
-```
-NOTE WELL: During the Rhino WIP and BETA development cycles, you MUST download the Rhino WIP C/C++ SDK which cooresponds to the version of Rhino WIP or Rhino Beta you are using. This SDK is extended/updated/bug fixed every week. But any plug-ins made with and of the updates will work in the released version of Rhino 7.
-```
-
 #### Step-by-Step
 
 1. Exit **Visual Studio**.
