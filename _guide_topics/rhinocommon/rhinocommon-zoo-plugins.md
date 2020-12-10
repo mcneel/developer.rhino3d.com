@@ -1,6 +1,6 @@
 ---
-title: Creating Plugins that use the Zoo
-description: This guide discusses how to create RhinoCommon plugins that can obtain licenses the Zoo.
+title: Creating Plugins that use the LAN Zoo
+description: This guide discusses how to create RhinoCommon plugins that can obtain licenses the LAN Zoo.
 authors: ['dale_fugier']
 sdk: ['RhinoCommon']
 languages: ['C#']
@@ -16,15 +16,15 @@ TODO: 'needs to be compared with creating-zoo-plugins'
 
 ## Overview
 
-The Zoo supports 3rd party plugins. RhinoCommon allows developers to write plugins for Rhino that use the Rhino license manager and obtain licenses from Zoo servers.
+The LAN Zoo supports 3rd party plugins. RhinoCommon allows developers to write plugins for Rhino that use the Rhino license manager and obtain licenses from LAN Zoo servers.
 
-When a customer attempts to add a product license to the Zoo, the product's plugin is called to validate the user's request.  Upon validation, the plugin will return the product's licensing information back to the Zoo.  In turn, the Zoo will serialize, maintain, and distribute this license.
+When a customer attempts to add a product license to the LAN Zoo, the product's plugin is called to validate the user's request. Upon validation, the plugin will return the product's licensing information back to the LAN Zoo. In turn, the LAN Zoo will serialize, maintain, and distribute this license.
 
 ## Prerequisites
 
 It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)]({{ site.baseurl }}/guides/rhinocommon/installing-tools-windows).
 
-Also, all plugins that use the Zoo license system must be signed with an Authenticode certificate issued by McNeel Plugin Security.  These certificates are free, but must be requested by each developer.  Developers must agree to the Terms of Use before a certificate is issued.  For more information on plugin signing, see [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo).
+Also, all plugins that use the LAN Zoo license system must be signed with an Authenticode certificate issued by McNeel Plugin Security.  These certificates are free, but must be requested by each developer.  Developers must agree to the Terms of Use before a certificate is issued.  For more information on plugin signing, see [Digitally Signing Plugins for LAN Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo).
 
 It is also presumed you have a RhinoCommon plugin you wish to add license support to.  See the [Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-windows/) guide for instructions.
 
@@ -33,7 +33,7 @@ It is also presumed you have a RhinoCommon plugin you wish to add license suppor
 After you have built and tested your basic plugin, you can add licensing support as follows:
 
 #### Step-by-Step
-1. In your plugin's `Rhino.PlugIns.PlugIn` inherited class, create a new method with the same signature as the `Rhino.PlugIns.ValidateProductKeyDelegate` delegate.  Rhino will call into this function whenever it needs your plugin to validate a license that is entered by a user, returned by the Rhino license manager (standalone node), or returned from a Zoo server (network node).
+1. In your plugin's `Rhino.PlugIns.PlugIn` inherited class, create a new method with the same signature as the `Rhino.PlugIns.ValidateProductKeyDelegate` delegate.  Rhino will call into this function whenever it needs your plugin to validate a license that is entered by a user, returned by the Rhino license manager (standalone node), or returned from a LAN Zoo server (network node).
 2. In your plugin's `Rhino.PlugIns.PlugIn` inherited class, create a new method with the same signature as the `Rhino.PlugIns.OnLeaseChangedDelegate` delegate.  Rhino will call into this function if your product supports Rhino Accounts. When Rhino Accounts gets a new lease, this function is called. 
 3. In your plugin's `Rhino.PlugIns.PlugIn.OnLoad` override, call `Rhino.PlugIns.GetLicense` and pass it your licenses's capabilities (enum), a text mask to assist the user in entering a license, and your two delegate functions.
 4. Build your plugin.
@@ -42,8 +42,8 @@ After you have built and tested your basic plugin, you can add licensing support
 
 ## Related Topics
 
-- [Creating Zoo Plugins]({{ site.baseurl }}/guides/rhinocommon/creating-zoo-plugins)
-- [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo)
+- [Creating LAN Zoo Plugins]({{ site.baseurl }}/guides/rhinocommon/creating-zoo-plugins)
+- [Digitally Signing Plugins for LAN Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo)
 - [Sample RhinoCommon plugin project (GitHub)](https://github.com/mcneel/rhino-developer-samples/tree/6/rhinocommon/cs/SampleCsWithLicense)
 
 
