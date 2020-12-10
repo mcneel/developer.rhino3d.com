@@ -15,7 +15,7 @@ layout: toc-guide-page
 
 ## Overview
 
-The LAN Zoo allows third party plugin developers add licensing support for their products to the Zoo.
+The LAN Zoo allows third party plugin developers add licensing support for their products.
 
 When a customer attempts to add a product license to the LAN Zoo, the product's plugin is called to validate the user's request. Upon validation, the plugin will return the product's licensing information back to the Zoo. In turn, the LAN Zoo will serialize, maintain, and distribute this license.
 
