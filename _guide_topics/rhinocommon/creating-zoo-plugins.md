@@ -37,7 +37,7 @@ The general steps required to create a Zoo plugin are:
 3. Create a new *Class Library* project using either Visual C# or Visual Basic .NET.
 4. Add a reference to *ZooPlugin.dll*, which is found in the LAN Zoo installation folder. Make sure to set the reference's *Copy Local* property to `False`.
 5. Create a new public class that inherits from the `IZooPlugin3` interface.
-6. Implement the interface members.  (For detailed information about the interface members, see the sample Zoo plugin listed below.)
+6. Implement the interface members.  (For detailed information about the interface members, see the sample LAN Zoo plugin listed below.)
 7. Build your plugin.
 8. [Digitally sign your plugin]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo).
 
