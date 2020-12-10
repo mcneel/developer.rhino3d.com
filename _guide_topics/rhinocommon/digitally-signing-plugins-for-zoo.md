@@ -82,7 +82,7 @@ Created 'TestZooPluginKey.pfx'. Use this to sign your executable code.
 
 ## Sign Your Plugins
 
-Now that you have a personal information exchange (*.pfx*), you can use it to sign Zoo and Rhino plugins. 
+Now that you have a personal information exchange (*.pfx*), you can use it to sign LAN Zoo and Rhino plugins. 
 
 1. Open a *Visual Studio Command Prompt*.
 2. Use *Signtool.exe*, with the following syntax, to digitally sign your plugins...
