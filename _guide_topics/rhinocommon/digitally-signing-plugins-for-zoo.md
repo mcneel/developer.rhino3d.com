@@ -1,6 +1,6 @@
 ---
-title: Digitally Signing Zoo Plugins
-description: This guide discusses how to digitally sign Zoo and Rhino plugins.
+title: Digitally Signing LAN Zoo Plugins
+description: This guide discusses how to digitally sign LAN Zoo and Rhino plugins.
 authors: ['dale_fugier']
 sdk: ['RhinoCommon', 'C/C++']
 languages: ['BAT']
@@ -16,7 +16,7 @@ TODO: 'move out of Zoo because it applies to both Zoo and Rhino plugins'
 
 ## Overview
 
-To add plugins to Zoo, and to call the license functions from within your Rhino plugin, you must digitally sign your plugins using a certificate signed by the *Robert McNeel & Associates Code Signing Authority*.
+To add plugins to the LAN Zoo, and to call the license functions from within your Rhino plugin, you must digitally sign your plugins using a certificate signed by the *Robert McNeel & Associates Code Signing Authority*.
 
 ## Generate Private Key & Certificate Signing Request
 
@@ -65,7 +65,7 @@ Saved CSR: 'TestZooPluginKey.csr'
 
 ## Creating a Personal Information Exchange
 
-To digitally sign your Zoo or Rhino plugin, convert the signed digital certificate (*.crt*), emailed to you upon approval, into a personal information exchange (*.pfx*) file...
+To digitally sign your LAN Zoo or Rhino plugin, convert the signed digital certificate (*.crt*), emailed to you upon approval, into a personal information exchange (*.pfx*) file...
 
 1. Copy the signed digital certificate (*.crt*) you receive into the same folder as your private key (*.key*) and certificate signing request (*.csr*).
 2. Start a *Windows Command Prompt*.
