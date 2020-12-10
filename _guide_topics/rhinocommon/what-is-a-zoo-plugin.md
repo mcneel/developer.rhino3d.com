@@ -31,7 +31,7 @@ LAN Zoo plugins are .NET Framework 4.5 assemblies. Thus, to create a plugin for 
 1. Microsoft Visual C#
 1. Microsoft Visual Basic .NET
 
-Also, all plugins that use the LAN Zoo license system must be signed with an Authenticode certificate issued by McNeel Plugin Security. These certificates are free, but must be requested by each developer. Developers must agree to the Terms of Use before a certificate is issued. For more information on plugin signing, see [Digitally Signing Plugins for Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo).
+Also, all plugins that use the LAN Zoo license system must be signed with an Authenticode certificate issued by McNeel Plugin Security. These certificates are free, but must be requested by each developer. Developers must agree to the Terms of Use before a certificate is issued. For more information on plugin signing, see [Digitally Signing Plugins for LAN Zoo]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo).
 
 ---
 
