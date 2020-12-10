@@ -120,7 +120,7 @@ layout: guide-homepage
   </ul>
 </div>
 
-### Zoo
+### LAN Zoo
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
