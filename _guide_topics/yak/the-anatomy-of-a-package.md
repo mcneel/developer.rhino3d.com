@@ -49,7 +49,7 @@ A few examples...
 * `rh6_9-any` - Rhino 6 (both platforms) >= 6.9
 * `any-any` - anything goes! (existing behaviour)
 
-When installing packages, the server will check the version of Rhino[^1] and determine whether a compatible distribution exists for the requested version.
+When installing packages, the package manager checks whether a compatible distribution exists for the requested version. Only package versions that have at least one compatible distribution will show up when the `_PackageManager` command is run in Rhino 7+.
 
 The updated server works seamlessly with existing packages and old versions of Rhino. Pre-existing versions on the server (without distributions) will be treated as `any-any` when installing. New package versions that do not include a distribution tag, e.g. those created by previous versions of the CLI, will also be treated as `any-any` when publishing.
 
@@ -61,7 +61,3 @@ Now that you've have seen what is in a package, why not create a package:
 
 * [Create a Grasshopper package](../pushing-a-package-to-the-server) of your plugin.
 * [Create a Rhino package](../pushing-a-package-to-the-server) for everyone.
-
----
-
-[^1]: Each installation of Rhino comes with it's own version of the package manager.
