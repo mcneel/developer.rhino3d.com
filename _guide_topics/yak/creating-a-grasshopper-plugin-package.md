@@ -121,13 +121,13 @@ C:\Users\Bozo\dist\marmoset-1.0.0-rh6_18-any.yak
 ```
 
 <div class="alert alert-info" role="alert">
-<strong>Note:</strong> The filename includes a <a href="../the-anatomy-of-a-package#distributions">"distribution tag"</a> (in this case <code>rh6_18-any</code>). The first part, <code>rh6_18</code>, is inferred from the version of Grasshopper.dll or Rhinocommon.dll that is referenced in the plug-in project. The second part, <code>any</code>, refers to the platform that the plug-in is intended for. To build a platform-specfic package, run the <code>build</code> command again with the <code>--platform &lt;platform&gt;</code> argument, where <code>&lt;platform&gt;</code> can be either <code>win</code> or <code>mac</code>.
+<strong>Note:</strong> The filename includes a <a href="../the-anatomy-of-a-package#distributions" class="alert-link">"distribution tag"</a> (in this case <code>rh6_18-any</code>). The first part, <code>rh6_18</code>, is inferred from the version of Grasshopper.dll or Rhinocommon.dll that is referenced in the plug-in project. The second part, <code>any</code>, refers to the platform that the plug-in is intended for. To build a platform-specfic package, run the <code>build</code> command again with the <code>--platform &lt;platform&gt;</code> argument, where <code>&lt;platform&gt;</code> can be either <code>win</code> or <code>mac</code>.
 </div>
 
 <div class="alert alert-info" role="alert">
 <strong>Note:</strong> You might notice your plug-in's GUID lurking in the
 keywords. More information on how this is used can be found in the
-<a href="../package-restore-in-grasshopper">"Package Restore in Grasshopper"
+<a href="../package-restore-in-grasshopper" class="alert-link">"Package Restore in Grasshopper"
 </a> guide.
 </div>
 
@@ -145,5 +145,5 @@ available in the package manager!
 - [Package Manager Guides and Tutorials]({{ site.baseurl }}/guides/yak/)
 - [Creating a Rhino Plug-in Package]({{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/)
 - [Package Restore in Grasshopper]({{ site.baseurl }}/guides/yak/package-restore-in-grasshopper/)
-- [Grasshopper: Your First Component (Windows)]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows/
-- [Grasshopper: Your First Component (Mac)]({{ site.baseurl }}/guides/grasshopper/your-first-component-mac/
+- [Grasshopper: Your First Component (Windows)]({{ site.baseurl }}/guides/grasshopper/your-first-component-windows/)
+- [Grasshopper: Your First Component (Mac)]({{ site.baseurl }}/guides/grasshopper/your-first-component-mac/)
