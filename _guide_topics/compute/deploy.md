@@ -13,6 +13,10 @@ layout: toc-guide-page
 
 How to deploy Compute to production server environment. To run Compute locally for development and testing, read [Running and Debugging Compute Locally](../development).
 
+<div class="alert alert-info" role="alert">
+Running Compute locally uses your existing Rhino license. This is the best option for development and testing. Licensing works differently when running Rhino (i.e. via Compute) in a server-setting and you will be charged at a rate of <strong>$0.10 per core per hour</strong> if you follow this guide. 
+</div>
+
 ## 1. Set up Core-Hour Billing
 
 Follow the ["Core-Hour Billing" guide](../core-hour-billing) to get set up.
@@ -59,6 +63,10 @@ At the end of the installation process, Windows will restart to complete the set
 1. Go to the [Licenses Portal](https://www.rhino3d.com/licenses?_forceEmpty=true) (login to your Rhino account if prompted).
 1. Under _Team Licenses_ click your new team.
 1. Verify that Rhino is in use in your core-hour billing team.
+
+<div class="alert alert-info" role="alert">
+You are now being charged via <a href="../core-hour-billing" class="alert-link">Core-Hour Billing</a>. To stop the billing, either stop the "compute.geometry" service or shutdown the server or virtual machine.
+</div>
 
 ## 5. Next steps
 
