@@ -40,21 +40,24 @@ Wait for the virtual machine to spin up... ☕️
 
 ## 3. Install Rhino and Compute
 
-On the virtual machine, copy and paste the command below into a powershell window and hit Enter. You will be asked to enter a few things...
+1. Connect to the server or virtual machine (usually using RDP) and open a PowerShell window.
+2. Copy and paste the command below and hit Enter.
 
-* `EmailAddress` - the Rhino download link requires a valid email address
-* `ApiKey` - the API Key that clients will use when communicating with Compute
-* `RhinoToken` – the long token that links Rhino to your core-hour billing team
+    ```powershell
+    iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/bootstrap-server.ps1 -outfile bootstrap.ps1; .\bootstrap.ps1 -install
+    ```
 
-```powershell
-iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/bootstrap-server.ps1 -outfile bootstrap.ps1; .\bootstrap.ps1 -install
-```
-At the end of the installation process, Windows will restart to complete the setup. Wait a minute and log back in to check that the compute.geometry service is running.
+    This [script](https://github.com/mcneel/compute.rhino3d/blob/master/script/bootstrap-server.ps1) will install Rhino and the latest build of Compute as well as ensuring that clients can communicate with Compute. Compute will be installed as a Windows service (named "compute.geometry") so that it starts automatically when the server or virtual machine starts. You will be asked to enter a few things...
+    * `EmailAddress` - the Rhino download link requires a valid email address
+    * `ApiKey` - the API Key that clients will use when communicating with Compute
+    * `RhinoToken` – the long token that links Rhino to your core-hour billing team
+
+4. At the end of the installation process, Windows will restart to complete the setup. Wait a minute and log back in to check that the "compute.geometry" service is running.
 
 <!-- Compute won't start the first time because the .NET 4.8 install needs to finish up -->
 <!-- TODO: check if we can install the service with "delayed" start to make this work better -->
 <div class="alert alert-warning" role="alert">
-<strong>After the first restart</strong> you may need to start the compute.geometry service manually. <strong>Every other time it will start automatically.</strong>
+<strong>After the first restart</strong> you may need to start the "compute.geometry" service manually. <strong>Every other time it will start automatically.</strong>
 </div>
 
 ## 4. Verify Compute and license usage
