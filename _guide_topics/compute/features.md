@@ -1,7 +1,7 @@
 ---
 title: 'Compute: Features'
 description: Rhino SDK functions via REST API
-authors: ['brian']
+authors: ['brian_gillespie']
 sdk: ['Compute']
 languages: ['C#', 'VB']
 platforms: ['Windows']

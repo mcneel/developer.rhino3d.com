@@ -46,6 +46,7 @@ Although the openNURBS toolkit appears to be a full-featured geometry library, i
 - Closest point calculations
 - Intersection calculations
 - Surface tessellation (meshing)
+- SubD to Brep conversion
 - Interpolation
 - Booleans
 - Area and mass property calculations

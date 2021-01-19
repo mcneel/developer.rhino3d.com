@@ -15,15 +15,17 @@ layout: toc-guide-page
 <div class="alert alert-info" role="alert">
 <strong>Note:</strong> Yak is cross-platform. The examples below are for Windows.
 For Mac, replace the path to the Yak CLI tool with
-<code>/Applications/RhinoWIP.app/Contents/Resources/bin/yak</code>.
+<code>"{{ site.rhino.mac_path }}/Contents/Resources/bin/yak"</code>.
 </div>
+
+{% include yak-mac-path-note.html %}
 
 ## Install
 
 Installing a yak package with the CLI tool is simple.
 
 ```commandline
-> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" install marmoset
+> "{{ site.rhino.windows_path }}\System\Yak.exe" install marmoset
 
 Downloading marmoset (1.0.0)...
 Downloaded marmoset (1.0.0)
@@ -38,7 +40,7 @@ Successfully installed marmoset (1.0.0)
 You can also ask Yak to install a specific version.
 
 ```commandline
-> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" install marmoset 1.0.0
+> "{{ site.rhino.windows_path }}\System\Yak.exe" install marmoset 1.0.0
 
 ...
 ```
@@ -52,7 +54,7 @@ Libraries folder but with a folder/file structure that Yak controls.
 Packages can also be easily uninstalled using the Yak CLI tool.
 
 ```commandline
-> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" uninstall marmoset
+> "{{ site.rhino.windows_path }}\System\Yak.exe" uninstall marmoset
 
 marmoset successfully uninstalled
 ```
@@ -68,7 +70,7 @@ the next time it starts.
 At any point you can check which packages are currently installed.
 
 ```commandline
-> "C:\Program Files\Rhino 7 WIP\System\Yak.exe" list
+> "{{ site.rhino.windows_path }}\System\Yak.exe" list
 
 marmoset (1.0.0)
 ```

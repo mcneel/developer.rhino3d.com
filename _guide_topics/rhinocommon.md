@@ -87,7 +87,7 @@ layout: guide-homepage
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="{{ site.baseurl }}/images/rhinocommon-guides-col3.png">]({{ site.baseurl }}/guides/rhinocommon/creating-zoo-plugins/)
 
-### Zoo
+### LAN Zoo
 
 <div class="trigger">
   {% assign guides = site.guide_topics | sort:"order" %}
