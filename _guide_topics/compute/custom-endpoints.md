@@ -15,9 +15,7 @@ layout: toc-guide-page
 
 By default Compute exposes a long list of endpoints, designed to expose functionality in RhinoCommon as well as enabling Grasshopper definitions and Python scripts to be solved. It's also possible to extend Compute with your own custom endpoints by registering functions in a Rhino plug-in. Compute handles the serialization.
 
-There is a function in the V7 RhinoCommon named `Rhino.Runtime.HostUtils.RegisterComputeEndPoint(string, Type)`.
-
-First define a static class in your plug-in and add the new function as a static method.
+First define a static class in your plug-in and add the new function as a static method (you can add more than one!).
 
 ```csharp
 static class MyCustomComputeFunctions
