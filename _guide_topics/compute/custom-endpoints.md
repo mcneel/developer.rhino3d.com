@@ -5,7 +5,7 @@ authors: ['steve_baer', 'will_pearson']
 sdk: ['Compute']
 languages: ['C#', 'VB']
 platforms: ['Windows']
-categories: ['Features']
+categories: ['Getting Started']
 order: 1
 keywords: ['developer', 'compute', 'plug-in']
 layout: toc-guide-page
@@ -43,6 +43,8 @@ protected override LoadReturnCode OnLoad(ref string errorMessage)
 
 You will need to install your plug-in in Rhino, both locally for testing and on any servers where Compute runs.
 
-Once this is complete, you should be able to go to your custom compute `/sdk` endpoint and see the new functions listed at the bottom of the page.
+Once this is complete, you should be able to open the `/sdk` endpoint in a browser and see the new functions listed at the bottom of the page.
 
-See also the [ComputePlugIn sample](https://github.com/mcneel/rhino-developer-samples/tree/7/compute/cs/ComputePlugIn) in the Rhino Developer Samples repository.
+<div class="alert alert-info" role="alert">
+Check out the <a href="https://github.com/mcneel/rhino-developer-samples/tree/7/compute/cs/ComputePlugIn" class="alert-link">ComputePlugIn sample</a> in the Rhino Developer Samples repository.
+</div>
