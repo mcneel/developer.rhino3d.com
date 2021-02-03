@@ -6,7 +6,7 @@ sdk: ['Compute']
 languages: ['C#', 'VB']
 platforms: ['Windows']
 categories: ['Getting Started']
-order: 1
+order: 10
 keywords: ['developer', 'compute', 'plug-in']
 layout: toc-guide-page
 ---
