@@ -47,17 +47,21 @@ Wait for the virtual machine to spin up... ☕️
     iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/bootstrap-server.ps1 -outfile bootstrap.ps1; .\bootstrap.ps1 -install
     ```
 
-    This [script](https://github.com/mcneel/compute.rhino3d/blob/master/script/bootstrap-server.ps1) will install Rhino and the latest build of Compute as well as ensuring that clients can communicate with Compute. Compute will be installed as a Windows service (named "rhino.compute"[^1]) so that it starts automatically when the server or virtual machine starts. You will be asked to enter a few things...
+    This [script](https://github.com/mcneel/compute.rhino3d/blob/master/script/bootstrap-server.ps1) will install Rhino and the latest build of Compute as well as ensuring that clients can communicate with Compute. Compute will be installed as a Windows service (named "rhino.compute") so that it starts automatically when the server or virtual machine starts. You will be asked to enter a few things...
     * `EmailAddress` - the Rhino download link requires a valid email address
     * `ApiKey` - the API Key that clients will use when communicating with Compute
     * `RhinoToken` – the long token that links Rhino to your core-hour billing team
 
-4. At the end of the installation process, Windows will restart to complete the setup. Wait a minute and log back in to check that the "rhino.compute"[^1] service is running.
+4. At the end of the installation process, Windows will restart to complete the setup. Wait a minute and log back in to check that the "rhino.compute" service is running.
 
 <!-- Compute won't start the first time because the .NET 4.8 install needs to finish up -->
 <!-- TODO: check if we can install the service with "delayed" start to make this work better -->
 <div class="alert alert-warning" role="alert">
-<strong>After the first restart</strong> you may need to start the "rhino.compute"[^1] service manually. <strong>Every other time it will start automatically.</strong>
+<strong>After the first restart</strong> you may need to start the "rhino.compute" service manually. <strong>Every other time it will start automatically.</strong>
+</div>
+
+<div class="alert alert-info" role="alert">
+The Windows service display name was changed from "compute.geometry" to "rhino.compute" in early 2021. The underlying service name was not changed, so existing installations should keep functioning as normal.
 </div>
 
 ## 4. Verify Compute and license usage
@@ -68,15 +72,9 @@ Wait for the virtual machine to spin up... ☕️
 1. Verify that Rhino is in use in your core-hour billing team.
 
 <div class="alert alert-info" role="alert">
-You are now being charged via <a href="../core-hour-billing" class="alert-link">Core-Hour Billing</a>. To stop the billing, either stop the "rhino.compute"[^1] service or shutdown the server or virtual machine.
+You are now being charged via <a href="../core-hour-billing" class="alert-link">Core-Hour Billing</a>. To stop the billing, either stop the "rhino.compute" service or shutdown the server or virtual machine.
 </div>
 
 ## 5. Next steps
 
 Check out the [Rhino Compute AppServer](https://github.com/mcneel/compute.rhino3d.appserver) – a node.js server acting as a bridge between client apps and private Compute servers.
-
----
-
-## Footnotes
-
-[^1]: The Windows service display name was changed from "compute.geometry" to "rhino.compute" in early 2021
