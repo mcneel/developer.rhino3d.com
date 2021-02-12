@@ -5,7 +5,7 @@ authors: ['will_pearson']
 sdk: ['Yak']
 languages: # empty
 platforms: ['Windows', 'Mac']
-categories: ['Getting Started']
+categories: ['Advanced']
 origin: unset
 order: 20
 keywords: ['developer', 'yak']
