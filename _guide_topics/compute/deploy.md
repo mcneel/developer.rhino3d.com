@@ -19,7 +19,7 @@ Running Compute locally uses your existing Rhino license. This is the best optio
 
 ## 1. Set up Core-Hour Billing
 
-Follow the ["Core-Hour Billing" guide](../core-hour-billing) to get set up.
+Follow the ["Core-Hour Billing" guide](../core-hour-billing) to get set up. This is important so do not skip.
 
 ## 2. Prepare Windows Server
 
@@ -41,16 +41,16 @@ Wait for the virtual machine to spin up... ☕️
 ## 3. Install Rhino and Compute
 
 1. Connect to the server or virtual machine (usually using RDP) and open a PowerShell window.
-2. Copy and paste the command below and hit Enter.
+2. Copy and paste the command below and hit Enter, to download and run the installer scripts:
 
     ```powershell
     iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/bootstrap-server.ps1 -outfile bootstrap.ps1; .\bootstrap.ps1 -install
     ```
 
     This [script](https://github.com/mcneel/compute.rhino3d/blob/master/script/bootstrap-server.ps1) will install Rhino and the latest build of Compute as well as ensuring that clients can communicate with Compute. Compute will be installed as a Windows service (named "rhino.compute") so that it starts automatically when the server or virtual machine starts. You will be asked to enter a few things...
-    * `EmailAddress` - the Rhino download link requires a valid email address
-    * `ApiKey` - the API Key that clients will use when communicating with Compute
-    * `RhinoToken` – the long token that links Rhino to your core-hour billing team
+    * `EmailAddress` - The script will use this email to download a copy of Rhino to install. This is similar to the Rhino download page behavior.
+    * `ApiKey` - The API key is a string of text that is secret to your compute server and your applications that are using the compute API e.g. `u5E5kFMKDx5GDfYsnJPf3dy0BcVjJF4O`. It is basically how the compute server ensures that the API calls are coming from Your apps only. You can enter any string that is unique and secret to you and your compute apps. Make sure to keep this in a safe place.
+    * `RhinoToken` – This is a long token that identifies your instance of Rhino Compute to the core-hour billing system. Go to the [Licenses Portal](https://www.rhino3d.com/licenses?_forceEmpty=true) to generate this unique id based on your license. See ["Using Core-Hour Billing" guide](../core-hour-billing#using-core-hour-billing) for more information.
 
 4. At the end of the installation process, Windows will restart to complete the setup. Wait a minute and log back in to check that the "rhino.compute" service is running.
 
