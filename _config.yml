@@ -13,7 +13,8 @@ nwo: "mcneel/developer-rhino3d-com" # github repository (name with owner)
 # twitter_username: ""
 github_username:  mcneel
 
-repository: croudyj/developer-rhino3d-com
+repository: mcneel/developer-rhino3d-com
+
 
 # RhinoScriptSyntax API docs
 rss_show_bad_docstring: true
