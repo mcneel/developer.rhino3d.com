@@ -1,6 +1,6 @@
 ---
 title: Hops Component
-description: Hops is a component for Grasshopper that solves external Grasshopper documents.
+description: Hops adds functions to Grasshopper.
 authors: ['steve_baer', 'scott_davidson']
 sdk: ['Grasshopper']
 languages: ['C#']
@@ -17,7 +17,7 @@ layout: toc-guide-page
 
 <img src="{{ site.baseurl }}/images/hops-overview.png">{: .img-center  width="100%"}
 
-Hops treats external Grasshopper documents as functions. This has the same effect on the structure of Grasshopper documents as functions in other programming languages do:
+Hops is a new component for Grasshopper in Rhino 7 for Windows. Hops adds functions to Grasshopper. Functions are defined in separate Grasshopper document. Like other programming languages, functions let you:
 
 * Simplify complex algorithms by using the same function multiple times.
 * Eliminate duplicate component combinations by placing common combinations in a function.
