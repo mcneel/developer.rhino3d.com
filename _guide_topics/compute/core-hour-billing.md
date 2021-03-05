@@ -19,11 +19,18 @@ When Rhino is logged in to a service account and is running on a Windows Server-
 
 ***Example 1:** Rhino running on a 32-core server for one hour:*
 
-  * 32-cores * 1 hour * $0.10/core-hour = $3.20
+  * 1 computer * 32-cores * 1 hour * $0.10/core-hour = $3.20
 
 ***Example 2:** Rhino running on 200 4-core servers for 6 minutes:*
 
   * 200 computers * 4 cores * 0.1 hour * $0.10/core-hour = $8.00
+
+***Example 3:** 1 Rhino instance running on a 2-core server 8 hours a day for 30 days:*
+  * 1 computer * 2 cores * 8 hours/day * 30 days/month * $0.10/core-hour = $480/month
+
+***Example 4:** 10 Rhino instances running on a 2-core server 8 hours a day for 30 days:*
+  * 1 computer * 2 cores * 8 hours/day * 30 days/month * $0.10/core-hour = $480/month
+(Notice that the number of instances of Rhino does not affect your bill)
 
 **Billing is based on uptime**, not on usage - we don’t track the activity of each core, just that you have one running with Rhino. You can scale your workloads up and down to optimize performance and cost to you.
 
