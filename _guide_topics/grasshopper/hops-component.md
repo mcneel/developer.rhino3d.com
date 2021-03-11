@@ -3,7 +3,7 @@ title: Hops Component
 description: Hops adds functions to Grasshopper.
 authors: ['steve_baer', 'scott_davidson']
 sdk: ['Grasshopper']
-languages: ['C#']
+languages: ['Grasshopper']
 platforms: ['Windows', 'Mac']
 categories: ['In Depth']
 origin:
@@ -69,7 +69,7 @@ Hops outputs are geometry or primitive params in a group named: “RH_OUT:[name]
 
 ### Can Hops use other machines?
 
-No, at this time Hops functions using the local machine.  Files can be stored at any location available to Windows.
+Yes, with a proper configuration Hops can call out to remote computers. Files can be stored at any location available to Windows.
 
 ### Can you nest hops functions within other functions?
 
@@ -81,7 +81,7 @@ Hops it free to use.
 
 ### Can Hops be used with Grasshopper Player to make commands?
 
-Yes, Hops functions can use Context Bake and Context Print components to create Rhino commands in Grasshopper Player..
+Yes, Hops functions can use Context Bake and Context Print components to create Rhino commands in Grasshopper Player.
 
 ### Does hops support parallel processing?
 
@@ -114,3 +114,34 @@ We have not done extensive benchmarking on this. Any performance improvement com
 ### How does Hops deal with DataTrees?
 
 Standard datamatching rule apply to datatrees.  But Hops will spawn a new parallel thread for each branch of a tree
+
+## Remote Machine Configuration
+By default Hops will use the local computer to solve Grasshopper functions. It is possible to setup remote computers for Hops to call into.
+
+Remote machines must be running Windows and have Rhino installed on them.
+
+### Configuring a remote machine as a Hops node:
+
+1. Install Rhino 7.5 or above.
+1. Make sure Rhino runs and is properly licensed.
+1. Get the very latest version of compute.geometry.exe. Either build it yourself or get build from our CI server at
+https://ci.appveyor.com/project/mcneel/compute-rhino3d/branch/master/artifacts
+1. Run compute.geometry.exe from an Adminirator Command Line with an address parameter. For example
+'compute.geometry.exe -address http://192.168.1.6:6123'. 192.168.1.6 is your computer's address. The port can be any you want; but we tend to use values above 6000.
+1. Note the IP address of the remote machine.
+
+To test the status of the remote machine:
+1. On another computer, open a browser and enter
+`http://192.168.1.6:6123/healthcheck`. Use the IP and port numbers entered in the above steps.
+
+If you get the word "healthy" back, you are all set up.
+
+### Setting up Hops to communicate with the remote machine
+In the grasshopper preferences > Solver > Hops - Compute Server URLs enter the IP and port of each remote computer.  For the above example enter:
+http://192.168.1.6:6123
+
+## Calling a CPython Server
+
+## Shortcut to a single Grasshopper Component
+
+
