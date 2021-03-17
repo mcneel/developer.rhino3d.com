@@ -3,7 +3,7 @@ title: Hops Component
 description: Hops adds functions to Grasshopper.
 authors: ['steve_baer', 'scott_davidson']
 sdk: ['Grasshopper']
-languages: ['C#']
+languages: ['Grasshopper']
 platforms: ['Windows', 'Mac']
 categories: ['In Depth']
 origin:
@@ -17,7 +17,7 @@ layout: toc-guide-page
 
 <img src="{{ site.baseurl }}/images/hops-overview.png">{: .img-center  width="100%"}
 
-Hops is a new component for Grasshopper in Rhino 7 for Windows. Hops adds functions to Grasshopper. Functions are defined in separate Grasshopper document. Like other programming languages, functions let you:
+Hops is a new component for Grasshopper in Rhino 7. Hops adds functions to Grasshopper. Functions are defined in separate Grasshopper document. Like other programming languages, functions let you:
 
 * Simplify complex algorithms by using the same function multiple times.
 * Eliminate duplicate component combinations by placing common combinations in a function.
@@ -29,7 +29,7 @@ Hops displays inputs and outputs that match a function specified. During calcula
 
 ## How to use Hops <img src="{{ site.baseurl }}/images/hops.svg" alt="Windows" class="guide_icon"> 
 
-### Install Hops using the Package Manager in Rhino 7 for Windows:
+### Install Hops using the Package Manager in Rhino 7:
   1. To install [Hops, click in this link](rhino://package/search?name=hops)
   1. Or, type `PackageManger` on the Rhino command line.
   1. Search for “Hops”
