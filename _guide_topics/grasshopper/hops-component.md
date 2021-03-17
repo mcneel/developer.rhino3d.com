@@ -69,7 +69,7 @@ Hops outputs are geometry or primitive params in a group named: “RH_OUT:[name]
 
 ### Can Hops use other machines?
 
-No, at this time Hops functions using the local machine.  Files can be stored at any location available to Windows.
+No, at this time Hops functions using the local machine.  Files can be stored at any location available to the operating system.
 
 ### Can you nest hops functions within other functions?
 
