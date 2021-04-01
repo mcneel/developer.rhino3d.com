@@ -156,6 +156,12 @@ Yanked versions do not appear in searches but can still be installed if the exac
 
 It is not possible to re-push a package version that has been yanked. If you find yourself in this situation, then simply roll the version number of your package and push again.
 
+<div class="alert alert-info" role="warning">
+  <strong>Deleting a package from the McNeel server</strong>
+  </br>
+  If you absolutely need to delete your package from the public server, please email <a href="mailto:will@mcneel.com">will@mcneel.com</a>. Once a package has been deleted, the name can no longer be used.
+</div>
+
 ## Owner
 
 _Since 0.10_
