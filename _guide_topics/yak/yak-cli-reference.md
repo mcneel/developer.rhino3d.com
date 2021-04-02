@@ -34,7 +34,7 @@ Options:
 ```
 
 <div class="alert alert-info" role="alert">
-  <strong>Note:</strong> A <a href="../the-anatomy-of-a-package#distributions">distribution tag</a> (e.g. <code>rh7-win</code>) is appended to the filename of the created package. The tag is determined by inspecting the contents of the package during creation. The <code>--platform=any</code> argument can be used if the author wants to publish a cross-platform distribution, e.g. <code>rh7-any</code>. Only .rhp and .gha files can currently be inspected. If a package contains none of these, it will have a distribution tag of <code>any-any</code>.
+  A <a class="alert-link" href="../the-anatomy-of-a-package#distributions">distribution tag</a> (e.g. <code>rh7-win</code>) is appended to the filename of the created package. The tag is determined by inspecting the contents of the package during creation. The <code>--platform=any</code> argument can be used if the author wants to publish a cross-platform distribution, e.g. <code>rh7-any</code>. Only .rhp and .gha files can currently be inspected. If a package contains none of these, it will have a distribution tag of <code>any-any</code>.
 </div>
 
 <!-- During the build, the component GUID is extracted to help with searching for the package later. -->
@@ -61,8 +61,8 @@ yak list
 
 ## Login
 
-_Since 0.2: Command added_
-_Since 0.10: User registered during login_
+* _Since 0.2: Command added_
+* _Since 0.10: User registered during login_
 
 Authenticates with Rhino Accounts and stores a time-limited OAuth2 access token so that the user can use commands which require authentication.
 
@@ -90,7 +90,7 @@ yak push [--source=URL] <filename>
 ```
 
 <div class="alert alert-info" role="alert">
-  <strong>Note:</strong> Requires <a href="#login">authentication</a>.
+  Requires <a class="alert-link" href="#login">authentication</a>.
 </div>
 
 ## Search
@@ -149,7 +149,7 @@ yak yank <package> <version>
 ```
 
 <div class="alert alert-info" role="alert">
-  <strong>Note:</strong> Requires <a href="#login">authentication</a>.
+  Requires <a class="alert-link" href="#login">authentication</a>.
 </div>
 
 Yanked versions do not appear in searches but can still be installed if the exact package version is known. To all intents and purposes they are hidden.
@@ -157,9 +157,8 @@ Yanked versions do not appear in searches but can still be installed if the exac
 It is not possible to re-push a package version that has been yanked. If you find yourself in this situation, then simply roll the version number of your package and push again.
 
 <div class="alert alert-danger" role="alert">
-  <strong>Deleting a package from the McNeel server</strong>
-  <br/>
-  If you absolutely need to delete your package from the public server, please email <a href="mailto:will@mcneel.com">will@mcneel.com</a>. Once a package has been deleted, the name can no longer be used.
+  <p><strong>Deleting a package from the McNeel server</strong></p>
+  <p>If you absolutely need to delete your package from the public server, please email <a href="mailto:will@mcneel.com">will@mcneel.com</a>. Once a package has been deleted, the name can no longer be used.</p>
 </div>
 
 ## Owner
