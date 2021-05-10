@@ -61,14 +61,14 @@ Hops outputs are geometry or primitive params in a group named: “RH_OUT:[name]
 ### Use the Hops component
 
 1. Place the Grasshopper Params Tab > Util Group > Hops component on the canvas.
-1. Right-click the Hops Component, then click Path
+1. Right-click the Hops Component, then click Path.
 1. Select a Hops Function.
 1. The component will show the inputs and outputs.
 1. Use the new component like any other Grasshopper component.
 
 <img src="{{ site.baseurl }}/images/gh-hops-path.png">{: .img-center  width="100%"}
 
-## Frequently asked Questions:
+## Frequently Asked Questions:
 
 #### Can you nest Hops functions within other functions?
 
