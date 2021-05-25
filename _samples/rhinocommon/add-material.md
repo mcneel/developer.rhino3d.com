@@ -1,7 +1,7 @@
 ---
 title: Add Material
-description: Demonstrates how to add a material to the document's material table and apply it to a sphere object.
-authors: ['steve_baer']
+description: Demonstrates how to add a material to the document and apply it to a sphere object.
+authors: ['steve_baer', 'andrew_le_bihan']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
