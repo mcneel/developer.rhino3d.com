@@ -17,57 +17,72 @@ partial class Examples
 {
   public static Rhino.Commands.Result AddTexture(Rhino.RhinoDoc doc)
   {
-    // Select object to add texture
+    // Select object to add texture to.
     const ObjectType filter = Rhino.DocObjects.ObjectType.Surface |
                               Rhino.DocObjects.ObjectType.PolysrfFilter |
                               Rhino.DocObjects.ObjectType.Mesh;
-    Rhino.DocObjects.ObjRef objref;
-    Rhino.Commands.Result rc = Rhino.Input.RhinoGet.GetOneObject("Select object to add texture", false, filter, out objref);
-    if( rc!= Rhino.Commands.Result.Success )
-      return rc;
+    var rc = Rhino.Input.RhinoGet.GetOneObject("Select object to add texture", false, filter, out ObjRef objref);
+    if (rc != Rhino.Commands.Result.Success)
+    return rc;
 
-    Rhino.DocObjects.RhinoObject rhino_object = objref.Object();
+    var rhino_object = objref.Object();
     if (rhino_object == null)
       return Rhino.Commands.Result.Failure;
 
-    // Select texture
-    Rhino.UI.OpenFileDialog fd = new Rhino.UI.OpenFileDialog();
-    fd.Filter = "Image Files (*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg";
-    if (!fd.ShowDialog())
+    // Choose a texture file.
+    var fd = new Rhino.UI.OpenFileDialog
+    {
+      Filter = "Image Files (*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg"
+    };
+    if (!fd.ShowOpenDialog())
       return Rhino.Commands.Result.Cancel;
 
-    // Verify texture
+    // Verify that the file exists.
     string bitmap_filename = fd.FileName;
-    if( string.IsNullOrEmpty(bitmap_filename) || !System.IO.File.Exists(bitmap_filename) )
+    if (string.IsNullOrEmpty(bitmap_filename) || !System.IO.File.Exists(bitmap_filename))
       return Rhino.Commands.Result.Nothing;
 
-    // Make sure the object has it's material source set to "material_from_object"
-    rhino_object.Attributes.MaterialSource = Rhino.DocObjects.ObjectMaterialSource.MaterialFromObject;
-
-    // Make sure the object has a material assigned
-    int material_index = rhino_object.Attributes.MaterialIndex;
-    if (material_index < 0)
+    // Make sure the object has a render material assigned.
+    if (rhino_object.RenderMaterial == null)
     {
-      // Create a new material based on Rhino's default material
-      material_index = doc.Materials.Add();
-      // Assign the new material (index) to the object.
-      rhino_object.Attributes.MaterialIndex = material_index;
-    }
+      // Create a Rhino material.
+      var rhino_material = new Rhino.DocObjects.Material()
+      {
+        DiffuseColor = System.Drawing.Color.White
+      };
 
-    if (material_index >= 0)
-    {
-      Rhino.DocObjects.Material mat = doc.Materials[material_index];
-      mat.SetBumpTexture(bitmap_filename);
-      mat.CommitChanges();
+      // Create a basic Render material from the Rhino material.
+      var render_material = Rhino.Render.RenderMaterial.CreateBasicMaterial(rhino_material, doc);
 
-      //Don't forget to update the object, if necessary
+      // Create a Rhino texture for the filename.
+      var tex = new Rhino.DocObjects.Texture
+      {
+        FileName = bitmap_filename
+      };
+
+      // Create a bitmap texture from the Rhino texture.
+      var sim = new Rhino.Render.SimulatedTexture(doc, tex);
+      var render_texture = Rhino.Render.RenderTexture.NewBitmapTexture(sim, doc);
+
+      // Set the texture as a child of the material in the bump slot.
+      var child_slot_name = "bump-texture";
+      render_material.SetChild(render_texture, child_slot_name);
+      render_material.SetChildSlotOn(child_slot_name, true, Rhino.Render.RenderContent.ChangeContexts.Program);
+      render_material.SetChildSlotAmount(child_slot_name, 100.0, Rhino.Render.RenderContent.ChangeContexts.Program);
+
+      // Add the basic Render material to the document.
+      doc.RenderMaterials.Add(render_material);
+
+      // Assign the render material to the object.
+      rhino_object.RenderMaterial = render_material;
+
+      // Don't forget to update the object, if necessary.
       rhino_object.CommitChanges();
-
-      doc.Views.Redraw();
-      return Rhino.Commands.Result.Success;
     }
 
-    return Rhino.Commands.Result.Failure;
+    doc.Views.Redraw();
+
+    return Rhino.Commands.Result.Success;
   }
 }
 ```
@@ -77,7 +92,10 @@ partial class Examples
 ```vbnet
 Partial Friend Class Examples
   Public Shared Function AddTexture(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-	' Select object to add texture
+  
+  	' TODO: This needs to be converted to be the same as the C# method.
+  
+	' Select object to add texture to.
 	Const filter As ObjectType = Rhino.DocObjects.ObjectType.Surface Or Rhino.DocObjects.ObjectType.PolysrfFilter Or Rhino.DocObjects.ObjectType.Mesh
 	Dim objref As Rhino.DocObjects.ObjRef = Nothing
 	Dim rc As Rhino.Commands.Result = Rhino.Input.RhinoGet.GetOneObject("Select object to add texture", False, filter, objref)
@@ -90,14 +108,14 @@ Partial Friend Class Examples
 	  Return Rhino.Commands.Result.Failure
 	End If
 
-	' Select texture
+	' Choose a texture file.
 	Dim fd As New Rhino.UI.OpenFileDialog()
 	fd.Filter = "Image Files (*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg"
 	If Not fd.ShowDialog() Then
 	  Return Rhino.Commands.Result.Cancel
 	End If
 
-	' Verify texture
+	' Verify that the file exists.
 	Dim bitmap_filename As String = fd.FileName
 	If String.IsNullOrEmpty(bitmap_filename) OrElse Not System.IO.File.Exists(bitmap_filename) Then
 	  Return Rhino.Commands.Result.Nothing
@@ -106,7 +124,7 @@ Partial Friend Class Examples
 	' Make sure the object has it's material source set to "material_from_object"
 	rhino_object.Attributes.MaterialSource = Rhino.DocObjects.ObjectMaterialSource.MaterialFromObject
 
-	' Make sure the object has a material assigned
+	' Make sure the object has a material assigned.
 	Dim material_index As Integer = rhino_object.Attributes.MaterialIndex
 	If material_index < 0 Then
 	  ' Create a new material based on Rhino's default material
@@ -120,7 +138,7 @@ Partial Friend Class Examples
 	  mat.SetBumpTexture(bitmap_filename)
 	  mat.CommitChanges()
 
-	  'Don't forget to update the object, if necessary
+	  ' Don't forget to update the object, if necessary.
 	  rhino_object.CommitChanges()
 
 	  doc.Views.Redraw()
@@ -142,48 +160,63 @@ import System.Windows.Forms.DialogResult
 import System.IO.File
 
 def AddTexture():
-    # Select object to add texture
+    # Select object to add texture to.
     filter = Rhino.DocObjects.ObjectType.Surface | Rhino.DocObjects.ObjectType.PolysrfFilter | Rhino.DocObjects.ObjectType.Mesh
     rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select object to add texture", False, filter)
-    if rc!=Rhino.Commands.Result.Success: return rc
+    if rc != Rhino.Commands.Result.Success:
+        return rc
 
     rhino_object = objref.Object()
-    if not rhino_object: return Rhino.Commands.Result.Failure
+    if rhino_object is None:
+        return Rhino.Commands.Result.Failure
 
-    # Select texture
+    # Choose a texture file.
     fd = Rhino.UI.OpenFileDialog()
     fd.Filter = "Image Files (*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg"
     if not fd.ShowDialog():
         return Rhino.Commands.Result.Cancel
 
-    # Verify texture
+    # Verify that the file exists.
     bitmap_filename = fd.FileName
     if not System.IO.File.Exists(bitmap_filename):
         return Rhino.Commands.Result.Nothing
 
-    # Make sure the object has it's material source set to "material_from_object"
-    rhino_object.Attributes.MaterialSource = Rhino.DocObjects.ObjectMaterialSource.MaterialFromObject
+    # Make sure the object has a render material assigned.
+    if rhino_object.RenderMaterial is None:
+      
+      # Create a Rhino material.
+      rhino_material = Rhino.DocObjects.Material()
+      rhino_material.DiffuseColor = System.Drawing.Color.White
 
-    # Make sure the object has a material assigned
-    material_index = rhino_object.Attributes.MaterialIndex
-    if material_index<0:
-        # Create a new material based on Rhino's default material
-        material_index = scriptcontext.doc.Materials.Add()
-        # Assign the new material (index) to the object.
-        rhino_object.Attributes.MaterialIndex = material_index
+      # Create a basic Render material from the Rhino material.
+      render_material = Rhino.Render.RenderMaterial.CreateBasicMaterial(rhino_material, scriptcontext.doc);
 
-    if material_index>=0:
-        mat = scriptcontext.doc.Materials[material_index]
-        mat.SetBumpTexture(bitmap_filename)
-        mat.CommitChanges()
+      # Create a Rhino texture for the filename.
+      tex = Rhino.DocObjects.Texture()
+      tex.FileName = bitmap_filename
 
-        #Don't forget to update the object, if necessary
-        rhino_object.CommitChanges()
+      # Create a bitmap texture from the Rhino texture.
+      sim = Rhino.Render.SimulatedTexture(scriptcontext.doc, tex);
+      render_texture = Rhino.Render.RenderTexture.NewBitmapTexture(sim, scriptcontext.doc);
 
-        scriptcontext.doc.Views.Redraw()
-        return Rhino.Commands.Result.Success
+      # Set the texture as a child of the material in the bump slot.
+      child_slot_name = "bump-texture";
+      render_material.SetChild(render_texture, child_slot_name);
+      render_material.SetChildSlotOn(child_slot_name, True, Rhino.Render.RenderContent.ChangeContexts.Program);
+      render_material.SetChildSlotAmount(child_slot_name, 100.0, Rhino.Render.RenderContent.ChangeContexts.Program);
 
-    return Rhino.Commands.Result.Failure
+      # Add the basic Render material to the document.
+      scriptcontext.doc.RenderMaterials.Add(render_material);
+
+      # Assign the render material to the object.
+      rhino_object.RenderMaterial = render_material;
+
+      # Don't forget to update the object, if necessary.
+      rhino_object.CommitChanges();
+
+    scriptcontext.doc.Views.Redraw();
+
+    return Rhino.Commands.Result.Success;
 
 if __name__=="__main__":
     AddTexture()

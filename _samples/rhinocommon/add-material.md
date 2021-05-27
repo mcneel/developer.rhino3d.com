@@ -1,7 +1,7 @@
 ---
 title: Add Material
 description: Demonstrates how to add a material to the document and apply it to a sphere object.
-authors: ['steve_baer', 'andrew_le_bihan']
+authors: ['steve_baer', 'andrew_le_bihan', 'john_croudy']
 sdk: ['RhinoCommon']
 languages: ['C#', 'Python', 'VB']
 platforms: ['Windows', 'Mac']
@@ -17,30 +17,39 @@ partial class Examples
 {
   public static Rhino.Commands.Result AddMaterial(Rhino.RhinoDoc doc)
   {
-    // materials are stored in the document's material table
-    var mat = new Material();
-    mat.DiffuseColor = System.Drawing.Color.Chocolate;
-    mat.SpecularColor = System.Drawing.Color.CadetBlue;
+    // Create a Rhino material with a texture.
+    var rhino_material = new Material
+    {
+      Name = "Chocolate",
+      DiffuseColor = System.Drawing.Color.Chocolate,
+      SpecularColor = System.Drawing.Color.CadetBlue
+    };
 
-    var texture = new Texture();
-    texture.FileName = "my_image.jpg";
-    mat.SetTexture(texture, TextureType.Bitmap);
+    var texture = new Texture
+    {
+      FileName = "my_image.jpg"
+    };
+    rhino_material.SetTexture(texture, TextureType.Bitmap);
 
-    var rm = RenderMaterial.CreateBasicMaterial(mat, doc);
+    // Use the Rhino material to create a Render material.
+    var render_material = RenderMaterial.CreateBasicMaterial(rhino_material, doc);
+    doc.RenderMaterials.Add(render_material);
 
-    doc.RenderMaterials.Add(rm);
+    // Create a sphere.
+    var sphere = new Rhino.Geometry.Sphere(Rhino.Geometry.Plane.WorldXY, 5);
 
-    // set up object attributes to say they use a specific material
-    Rhino.Geometry.Sphere sp = new Rhino.Geometry.Sphere(Rhino.Geometry.Plane.WorldXY, 5);
-
-    var id = doc.Objects.AddSphere(sp);
-
-    var rhinoObject = doc.Objects.Find(id);
-
-    rhinoObject.RenderMaterial = rm;
-    rhinoObject.CommitChanges();
+    // Add the sphere to the document.
+    var id = doc.Objects.AddSphere(sphere);
+    var obj = doc.Objects.FindId(id);
+    if (obj != null)
+    {
+      // Assign the render material to the sphere object.
+      obj.RenderMaterial = render_material;
+      obj.CommitChanges();
+    }
 
     doc.Views.Redraw();
+
     return Rhino.Commands.Result.Success;
   }
 }
@@ -51,7 +60,7 @@ partial class Examples
 ```vbnet
 Partial Friend Class Examples
   Public Shared Function AddMaterial(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-    ' materials are stored in the document's material table
+
     Dim index As Integer = doc.Materials.Add()
     Dim mat As Rhino.DocObjects.Material = New Rhino.DocObjects.Material
     mat.DiffuseColor = System.Drawing.Color.Chocolate
@@ -62,20 +71,18 @@ Partial Friend Class Examples
     mat.SetTexture(texture, TextureType.Bitmap)
 
     Dim rm As Rhino.Render.RenderMaterial = Rhino.Render.RenderMaterial.CreateBasicMaterial(mat, doc)
-
     doc.RenderMaterials.Add(rm)
 
-    ' set up object attributes to say they use a specific material
     Dim sp As New Rhino.Geometry.Sphere(Rhino.Geometry.Plane.WorldXY, 5)
     Dim id As Guid = doc.Objects.AddSphere(sp)
-
     Dim rhinoObject As RhinoObject = doc.Objects.Find(id)
-
     rhinoObject.RenderMaterial = rm
     rhinoObject.CommitChanges()
 
     doc.Views.Redraw()
+
     Return Rhino.Commands.Result.Success
+
   End Function
 End Class
 ```
@@ -88,30 +95,35 @@ import scriptcontext
 import System.Drawing
 
 def AddMaterial():
-    # materials are stored in the document's material table
-    mat = Rhino.DocObjects.Material()
-    mat.DiffuseColor = System.Drawing.Color.Chocolate
-    mat.SpecularColor = System.Drawing.Color.CadetBlue
+
+    # Create a Rhino material.
+    rhino_material = Rhino.DocObjects.Material();
+    rhino_material.Name = "Chocolate";
+    rhino_material.DiffuseColor = System.Drawing.Color.Chocolate;
+    rhino_material.SpecularColor = System.Drawing.Color.CadetBlue;
     
     texture = Rhino.DocObjects.Texture()
     texture.FileName = "my_image.jpg"
-    mat.SetTexture(texture, Rhino.DocObjects.TextureType.Bitmap)
-    
-    rm = Rhino.Render.RenderMaterial.CreateBasicMaterial(mat, scriptcontext.doc)
+    rhino_material.SetTexture(texture, Rhino.DocObjects.TextureType.Bitmap)
 
-    scriptcontext.doc.RenderMaterials.Add(rm)
+    # Use the Rhino material to create a Render material.
+    render_material = Rhino.Render.RenderMaterial.CreateBasicMaterial(rhino_material, scriptcontext.doc)
+    scriptcontext.doc.RenderMaterials.Add(render_material);
 
-    sp = Rhino.Geometry.Sphere(Rhino.Geometry.Plane.WorldXY, 5)
-    scriptcontext.doc.Objects.AddSphere(sp)
-    
-    id = scriptcontext.doc.Objects.AddSphere(sp)
-    
-    rhinoObject = scriptcontext.doc.Objects.Find(id)
+    # Create a sphere.
+    sphere = Rhino.Geometry.Sphere(Rhino.Geometry.Plane.WorldXY, 5);
 
-    rhinoObject.RenderMaterial = rm
-    rhinoObject.CommitChanges()
+    # Add the sphere to the document with a material.
+    id = scriptcontext.doc.Objects.AddSphere(sphere);
+    obj = scriptcontext.doc.Objects.FindId(id);
+    if obj is not None:
+      # Assign the render material to the sphere object.
+      obj.RenderMaterial = render_material;
+      obj.CommitChanges();
 
     scriptcontext.doc.Views.Redraw();
+
+    return Rhino.Commands.Result.Success;
 
 if __name__=="__main__":
     AddMaterial()
