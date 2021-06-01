@@ -1,7 +1,7 @@
 ---
 title: Grasshopper data trees and Python
 description: This guide describes how to use data trees in Python.
-authors: ['giulio_piacentino']
+authors: ['giulio_piacentino'], ['scott_davidson']
 sdk: ['RhinoPython']
 languages: ['Python']
 platforms: ['Mac', 'Windows']
@@ -108,3 +108,7 @@ a = layerTree
 ## Complete sample
 
 - [datatree_examples.gh]({{ site.baseurl }}/files/datatree_examples.gh)
+
+## Source & Q&A
+
+A copy of the source is posted as [Gist](https://gist.github.com/piac/ef91ac83cb5ee92a1294) and there is also some Q&A on particular usages, such as [with simplified trees](https://gist.github.com/piac/ef91ac83cb5ee92a1294#gistcomment-3763417).
