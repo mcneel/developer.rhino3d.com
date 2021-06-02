@@ -85,7 +85,7 @@ Yes, Hops functions can use Context Bake and Context Print components to create 
 
 #### Does Hops support parallel processing?
 
-Yes, Hops by default will launch a parallel process for each branch of a datatree input stream. Also, by right-clicking on the component additional parallel threads can be created. (1 vs 6-pack)
+Yes, Hops by default will launch a parallel process for each branch of a datatree input stream.
 
 #### What input and output types does Hops support? (It supports all common types, ask about other ones if you need them)
 
@@ -113,13 +113,13 @@ We have not done extensive benchmarking on this. Any performance improvement com
 
 #### How does Hops deal with datatrees?
 
-Standard data-matching rules apply to datatrees.  But Hops will spawn a new parallel thread for each branch of a tree
+Standard data-matching rules apply to datatrees.  But Hops will spawn a new parallel thread for each branch of a tree.
 
 ## Hops Settings
 
 ### Application Settings
 
-The Hops settings control how hops runs on an application level.  It is available through the Grasshopper File pulldown > Preferences.
+The Hops settings control how Hops runs on an application level.  It is available through the Grasshopper File pulldown > Preferences.
 
 <img src="{{ site.baseurl }}/images/gh-hops-preferences.jpg">{: .img-center  width="60%"}
 
@@ -127,7 +127,7 @@ The Hops settings control how hops runs on an application level.  It is availabl
 * **Max Concurrent requests** - Used to limit the number of active requests in asynchronous situations. This way hops doesn't make thousands of requests while the original request is being processed.
 * **Clear Hops Memory cache** - Clears all previously stored solutions from memory.
 * **Hide Rhino.Compute Console Window** - Hops will solve in the background, but showing the window can be helpful for troubleshooting.
-* **Launch Local Rhino.COmpute at Start** - Use this for remote machines when Compute needs to start before any requests are sent.
+* **Launch Local Rhino.Compute at Start** - Use this for remote machines when Compute needs to start before any requests are sent.
 * **Child Process Count** - Used to limit the number of requests for additional parallel processes. May want to set this to the number of cores available.
 
 ### Component Settings
@@ -137,7 +137,7 @@ Right_click on the Hops component to select any number of options that control h
 <img src="{{ site.baseurl }}/images/gh-hops-options.jpg">{: .img-center  width="60%"}
 
 
-* **Parallel Computing** - Pass each item to a new parrelel node if available.
+* **Parallel Computing** - Pass each item to a new parallel node if available.
 * **Path...** - Add the location of the GH function to be solved. This may be a file name, IP address or URL.
 * **Show Input: Path** - Makes the Path an input on the component so Path can be set through the GH Canvas.
 * **Show Input: Enabled** - Shows an Enabled input that runs the component based on a `True` or `False` Boolean value.
