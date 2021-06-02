@@ -24,6 +24,7 @@ Hops is a component for Grasshopper in Rhino 7 for Windows. Hops adds external *
 * Share Grasshopper documents with other team members.
 * Reference Grasshopper documents across multiple projects.
 * Solve external documents in parallel, potentially speeding up large projects.
+* Can run asynchronously on long running calculations without blocking Rhino and Grasshopper interactions.
 
 Hops functions are stored as separate Grasshopper documents. The Hops component will adapt its inputs and outputs to match the function specified. During calculation Hops solves the definition in a separate process, then returns the outputs to the current document.
 
@@ -96,7 +97,7 @@ Yes, all the installed Grasshopper plugins can run within a Hops Function.
 
 #### Can this be used for extremely long calculations within a function?
 
-Yes, Hops will wait for all function calls to return before passing the outputs to the downstream components.
+Yes, each Hops component has an option to solve asynchronously. The user interface will not be blocked while waiting for a remote process to solve and the definition will be updated when the solve is complete. Hops will wait for all function calls to return before passing the outputs to the downstream components.
 
 #### Can any existing component be run remotely?
 
@@ -113,6 +114,36 @@ We have not done extensive benchmarking on this. Any performance improvement com
 #### How does Hops deal with DataTrees?
 
 Standard data-matching rules apply to datatrees.  But Hops will spawn a new parallel thread for each branch of a tree
+
+## Hops Settings
+
+### Application Settings
+
+The Hops settings that control how hops runs on an application level.  It is available through the Grasshopper File pulldown > Preferences.
+
+<img src="{{ site.baseurl }}/images/gh-hops-preferences.jpg">{: .img-center  width="60%"}
+
+* **Hops-Compute server URL** - List the IP address or URL of any remote machines or Compute servers.
+* **Max Concurrent requests** - Used to limit the number of active requests in asynchronous situations. This way hops does nto make thousands of requests while the original request is being processed.
+* **Clear Hops Memory cache** - Clears all previously stored solutions from memory.
+* **Hide Rhino.Compute Console Window** - Hops will solve in the background, but showing the window can be helpful for troubleshooting.
+* **Launch Local Rhino.COmpute at Start** - Use this for remote machines when Compute needs to start before any requests are sent.
+* **Child Process Count** - Used to limit the number of requests for additional parallel processes. May want to set this to the number of cores avilable.
+
+### Component Settings
+
+Right_click on the Hops component to select any number of options that control how Hops runs.
+
+<img src="{{ site.baseurl }}/images/gh-hops-options.jpg">{: .img-center  width="60%"}
+
+
+* **Parallel Computing** - Pass each item to a new parrelel node if available.
+* **Path...** - Add the location of the GH function to be solved. This may be a file name, IP address or URL.
+* **Show Input: Path** - Makes the Path an input on the component so Path can be set through the GH Canvas.
+* **Show Input: Enabled** - Shows a Enabled input that runs the component based on a `True` or `False` boolean value.
+* **Asynchronous** - The user interface will not be blocked while waiting for a remote process to solve and the definition will be updated when the solve is complete.
+* **Cache In Memory** - Previous solutions are stored in memory on the local machine to imporve preformance if the same inputs were previously calculated.
+* **Cache On Server** - Previous solutions are stored on the remote server to imporve performance. Currently available on Remote Hops services only.
 
 ## Remote Machine Configuration
 
@@ -153,9 +184,11 @@ Use Hops to call into CPython. Some advantages of this component:
 1. Create re-usable functions and parallel processing.
 1. Supports real debugging modes including breakpoints.
 1. Full support of Visual Studio Code.
-1. Other applications and services that support a Python API can also use the libraries included here.  
+1. Other applications and services that support a Python API can also use the libraries included here.
+1. The hops component attempts to detect when inputs and outputs have changed on a server and will rebuild itself.  
 
-### Getting started with CPython in Grasshopper.
+### Getting started with CPython in Grasshopper
+
 This Python module helps you create Python (specifically CPython) functions and use them inside your Grasshopper scripts using the new Hops components.
 
 **Required:**
