@@ -386,7 +386,7 @@ $$\mathbf{\vec a} × \mathbf{\vec b} = < (1 * 0 – 0 * 2), (0 * 1 - 3 * 0), (3 
 $$\mathbf{\vec a} × \mathbf{\vec b} = <0, 0, 5>$$  
 
 <div class="note" markdown="1">
-The vector $$\vec a x \vec b$$ is orthogonal to both $$\vec a$$ and $$\vec b$$.
+The vector $$\vec a \times \vec b$$ is orthogonal to both $$\vec a$$ and $$\vec b$$.
 </div>
 
 You will probably never need to calculate a cross product of two vectors by hand, but if you are curious about how it is done, continue reading; otherwise you can safely skip this section. The cross product $$a × b$$ is defined using determinants. Here is a simple illustration of how to calculate a determinant using the standard basis vectors:  
