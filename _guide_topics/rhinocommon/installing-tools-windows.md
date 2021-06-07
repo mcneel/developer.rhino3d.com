@@ -37,7 +37,7 @@ At the time of this writing, Visual Studio "proper" comes in [three editions](ht
 
 ## RhinoCommon templates
 
-The [RhinoCommon templates](https://marketplace.visualstudio.com/items?itemName=McNeel.RhinoCommontemplatesforv6) contains wizards to get you started creating plugins quickly.
+The [RhinoCommon templates](https://marketplace.visualstudio.com/items?itemName=McNeel.Rhino7Templates) contains wizards to get you started creating plugins quickly.
 
 #### Step-by-Step
 
