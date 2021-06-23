@@ -70,7 +70,7 @@ ON_SubD::GetSurfaceMesh()
 
 These two function are used internally by Rhino when exporting to file formats that do not support SubD objects. However, these two functions **are not available** in the free, publicly available openNURBS toolkit. 
 
-Rhino SubD objects are 100% "industry standard" and Rhino evaluation results comply 100% with public domain algorithms widely described in published technical literature. Please see the **Rhino SubD Rules document** for complete details about the subdivision algorithm. If you already have actually have code the correctly meshes and performs the "to NURBS" conversion on Catmull-Clark subdivision surfaces, then you should use it.
+Rhino SubD objects are 100% "industry standard" and Rhino evaluation results comply 100% with public domain algorithms widely described in published technical literature. Please see the **Rhino SubD Rules** document for complete details about the subdivision algorithm. If you already have actually have code the correctly meshes and performs the "to NURBS" conversion on Catmull-Clark subdivision surfaces, then you should use it.
 
 If you don't have this capability, then you might try subdividing the SubD object before acquiring the control net mesh.  Here is an example:
 
@@ -103,3 +103,4 @@ if (nullptr != subd)
 ## Related Topics
 
 [What is openNURBS?]({{ site.baseurl }}/guides/opennurbs/what-is-opennurbs)
+[Rhino SubD Rules](https://docs.google.com/document/d/13QkEGz9SedvauQQegiZ2HXSKOiwn0INVO4FxGlfvRps)
