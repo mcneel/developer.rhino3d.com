@@ -102,5 +102,5 @@ if (nullptr != subd)
 
 ## Related Topics
 
-[What is openNURBS?]({{ site.baseurl }}/guides/opennurbs/what-is-opennurbs)
-[Rhino SubD Rules](https://docs.google.com/document/d/13QkEGz9SedvauQQegiZ2HXSKOiwn0INVO4FxGlfvRps)
+- [What is openNURBS?]({{ site.baseurl }}/guides/opennurbs/what-is-opennurbs)
+- [Rhino SubD Rules](https://docs.google.com/document/d/13QkEGz9SedvauQQegiZ2HXSKOiwn0INVO4FxGlfvRps)
