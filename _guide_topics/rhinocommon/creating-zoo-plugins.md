@@ -21,7 +21,7 @@ When a customer attempts to add a product license to the LAN Zoo, the product's 
 
 ## Prerequisites
 
-LAN Zoo plugins are .NET Framework 4.5 assemblies. To create a plugins for the LAN Zoo, you need one of the following development tools:
+LAN Zoo plugins are .NET Framework 4.8 assemblies. To create a plugins for the LAN Zoo, you need one of the following development tools:
 
 1. Microsoft Visual C#.
 2. Microsoft Visual Basic .NET.
