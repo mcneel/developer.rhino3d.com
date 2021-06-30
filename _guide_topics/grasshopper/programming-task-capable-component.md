@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 ## Overview
 
-Grasshopper for Rhino 6 allows you to develop multi-threaded components by way of the new `IGH_TaskCapableComponent` interface. Benchmarks have shown that Grasshopper can run significantly faster when using multi-threaded components.  Results may vary, as not all solutions can be computed in parallel.
+Grasshopper for Rhino allows you to develop multi-threaded components by way of the new `IGH_TaskCapableComponent` interface. Benchmarks have shown that Grasshopper can run significantly faster when using multi-threaded components.  Results may vary, as not all solutions can be computed in parallel.
 
 ## The Interface
 
@@ -184,4 +184,4 @@ protected override void SolveInstance(IGH_DataAccess data)
 }
 ```
 
-The full source code for this revision [can be seen here](https://github.com/mcneel/rhino-developer-samples/tree/6/grasshopper/cs/SampleGhTaskCapable).
+The full source code for this revision [can be seen here](https://github.com/mcneel/rhino-developer-samples/tree/7/grasshopper/cs/SampleGhTaskCapable).
