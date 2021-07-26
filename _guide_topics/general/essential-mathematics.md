@@ -48,6 +48,15 @@ Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"
 
 <a href="https://www.youtube.com/playlist?list=PLWIvZT_UEpWW6Kgq8mxOgliGBFHhrI4mK"><span class="glyphicon glyphicon-play"></span></a> [Watch the Essential Mathematics Videos... ](https://www.youtube.com/playlist?list=PLWIvZT_UEpWW6Kgq8mxOgliGBFHhrI4mK)
 
+While we are translating the new edition, the previous edition is available in four languages:
+
+* [Essential Mathematics 2nd Edition in Korean](http://download.rhino3d.com/Rhino/4.0/EssentialMathematics_Korean/)
+* [Essential Mathematics 2nd Edition（日本語](http://download.rhino3d.com/ja/Rhino/4.0/EssentialMathematicsSecondEdition)
+* [Essential Mathematic 2nd Edition in Traditional Chinese (繁體中文版)](http://download.mcneel.com/download.asp?id=EssentialMathematics_ChineseTraditional)
+* [Essential Mathematic 2nd Edition in Simplified Chinese(簡體中文版)](http://download.rhino3d.com/Rhino/4.0/EssentialMathematics_ChineseSimplified/)
+* [Versione italiana del tutorial Essential Mathematics, tradotta da Nando Varriale](http://www.rhino3d.com/download/rhino/5.0/EssentialMathematicsThirdEditionItalian/)
+* [Matemáticas Esenciales para diseño computacional](http://www.garciadelcastillo.es/?p=126) - Versión en Español del tutorial Essential Mathematics, traducido por Jose Luis y Fernando García del Castillo.
+
 ### Table of Contents  
 
 </div>  
