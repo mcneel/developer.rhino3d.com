@@ -1,7 +1,7 @@
 ---
 title: Your First Plugin (Cross-Platform)
 description: This guide walks you through your first plugin that targets both Rhino for Windows and Rhino for Mac.
-authors: ['dan_belcher']
+authors: ['dan_rigdon_bel']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Windows', 'Mac']

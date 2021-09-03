@@ -1,7 +1,7 @@
 ---
 title: Loading Tool Palettes (Mac)
 description: This guide covers how to create and load a tool palette collection from your RhinoCommon plugin in Rhino for Mac.
-authors: ['dan_belcher']
+authors: ['dan_rigdon_bel']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Mac']

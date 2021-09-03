@@ -1,7 +1,7 @@
 ---
 title: Your First App (Windows)
 description: This guide walks you through your first mobile app using RhinoMobile and Visual Studio on Windows.
-authors: ['dan_belcher']
+authors: ['dan_rigdon_bel']
 sdk: ['RhinoMobile']
 languages: ['C#']
 platforms: ['iOS', 'Android']

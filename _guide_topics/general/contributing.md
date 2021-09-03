@@ -1,7 +1,7 @@
 ---
 title: Contributing
 description: 'Pull requests are welcome!'
-authors: ['dan_belcher']
+authors: ['dan_rigdon_bel']
 sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
@@ -59,4 +59,4 @@ Who to talk to for what:
 - [Giulio Piacentino]({{ site.baseurl }}/authors/giulio_piacentino) (GhPython) - @piac on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
 - [Andy le Bihan]({{ site.baseurl }}/authors/andrew_le_bihan) (RDK) - @andy on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
 - Curtis Wensley (Eto) - @curtisw on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- [Dan Belcher]({{ site.baseurl }}/authors/dan_belcher) (RhinoMobile) - @dan on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- [Dan Rigdon-Bel]({{ site.baseurl }}/authors/dan_rigdon_bel) (RhinoMobile) - @dan on [Discourse](http://discourse.mcneel.com/c/rhino-developer)

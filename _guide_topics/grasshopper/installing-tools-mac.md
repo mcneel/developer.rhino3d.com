@@ -1,7 +1,7 @@
 ---
 title: Installing Tools (Mac)
 description: This guide covers all the necessary tools required to author Grasshopper components on Mac.
-authors: ['dan_belcher']
+authors: ['dan_rigdon_bel']
 sdk: ['Grasshopper']
 languages: ['C#']
 platforms: ['Mac']

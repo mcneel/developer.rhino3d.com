@@ -1,7 +1,7 @@
 ---
 title: Your First Plugin (Mac)
 description: This guide walks you through your first plugin for Rhino for Mac using RhinoCommon and Visual Studio for Mac.
-authors: ['dan_belcher']
+authors: ['dan_rigdon_bel']
 sdk: ['RhinoCommon']
 languages: ['C#']
 platforms: ['Mac']

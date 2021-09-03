@@ -1,7 +1,7 @@
 ---
 title: Developer Training
 description: This guide describes our Rhino Developer Training.
-authors: ['dan_belcher']
+authors: ['dan_rigdon_bel']
 sdk: ['General']
 languages: ['All']
 platforms: ['Windows', 'Mac']
