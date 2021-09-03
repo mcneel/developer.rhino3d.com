@@ -1,7 +1,7 @@
 ---
 title: How This Site Works
 description: A guide to how this very developer document site works.
-authors: ['dan_belcher']
+authors: ['dan_rigdon_bel']
 sdk: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Windows', 'Mac']
@@ -131,7 +131,7 @@ Here is an example of the YAML for this guide:
 ---
 title: How This Site Works
 description: A guide to how this very developer document site works.
-authors: ['dan_belcher']
+authors: ['dan_rigdon_bel']
 sdk: ['General']
 languages: ['Markdown', 'Kramdown', 'YAML']
 platforms: ['Mac', 'Windows']

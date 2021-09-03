@@ -56,6 +56,6 @@ layout: toc-guide-page
 Who to talk to about Oscar:
 
 - [Pascal Golay]({{ site.baseurl }}/authors/pascal_golay)
-- [Dan Belcher]({{ site.baseurl }}/authors/dan_belcher)
+- [Dan Rigdon-Bel]({{ site.baseurl }}/authors/dan_rigdon_bel)
 - [Brian Gillespie]({{ site.baseurl }}/authors/brian_gillespie)
 - [Will Pearson]({{ site.baseurl }}/authors/will_pearson)
