@@ -1,0 +1,29 @@
+name: Jekyll
+
+on: push
+
+jobs:
+  build:
+    name: Build + Publish
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+        fetch-depth: 0 # required for jekyll-last-modified-at (WWW-316)
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        # ruby-version: 2.7.3 # uses .ruby-version
+        bundler-cache: true
+    - name: Run script
+      # continue using ssh deploy key because I couldn't get the built-in
+      # GITHUB_TOKEN to work...
+      env:
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< "${DEPLOY_KEY}"
+        ./script/cibuild

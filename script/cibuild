@@ -146,7 +146,7 @@ puts `git init`.cyan
 # setup the git user
 user = {
   name: ENV['GITHUB_USER_NAME'] || "Bozo",
-  email: ENV['GITHUB_USER_EMAIL'] || "brian+build@mcneel.com"
+  email: ENV['GITHUB_USER_EMAIL'] || "bozo@mcneel.com"
 }
 
 # inside this git repo we'll pretend to be a new user
@@ -190,20 +190,22 @@ if is_stable
   # stage and commit
   `git add -A .`
   # puts `git status -s` # debug
-  puts "Committing staged changes"
+  puts "::group::Committing staged changes"
   puts `git commit -m "Deploy #{sha}#{"+" if dirty} (default: #{branch})"`.cyan
+  puts "::endgroup::"
 else
   # stage and commit (branch directory only)
   `git add -A #{branch_dir}`
   # puts `git status -s #{branch_dir}` # debug
-  puts "Committing staged changes"
+  puts "::group::Committing staged changes"
   puts `git commit -m "Deploy #{sha}#{"+" if dirty} (#{branch})"`.cyan
+  puts "::endgroup::"
 end
 
 # exit if commit failed
 (puts "WARNING: Commit failed. Probably empty!".red; exit) if $?.exitstatus > 0
 
-puts "Pushing commit: #{`git rev-parse --verify --short HEAD`.rstrip.yellow}"
-
 # deploy (via ssh using bozo's deploy key)
+puts "Pushing commit: #{`git rev-parse --verify --short HEAD`.rstrip.yellow}"
 puts `git push #{production} HEAD:#{deploy_branch}`.cyan # stderr, whatever
+exit $?.exitstatus
