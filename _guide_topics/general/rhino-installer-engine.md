@@ -12,11 +12,11 @@ keywords: ['developer', 'rhino', 'installer']
 layout: toc-guide-page
 ---
 
-<div class="alert alert-info" role="alert">
-<strong>Note:</strong> This guide describes the Rhino Installer Engine that is installed with Rhino for <strong>Windows</strong>. Rhino for Mac also has a method of packaging plug-ins for easy installation, see the <a href="{{ site.baseurl }}/guides/rhinocommon/plugin-installers-mac">Plugin Installers (Mac)</a> guide.
+<div class="alert alert-warning" role="alert">
+⚠️ This technology is obsolete as of Rhino 7 and has been replaced by the <a href="{{ site.baseurl }}/guides/yak/">yak format along with the PackageManager.</a>
 </div>
 
-## Overview
+## Overview (Windows)
 
 The Rhino Installer Engine simplifies distribution, installation and updating of plug-ins for Rhino for Windows.
 

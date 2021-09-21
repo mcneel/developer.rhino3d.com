@@ -26,7 +26,7 @@ using Rhino.Runtime.RhinoAccounts;
 
 ...
 
-Tuple<OpenIDConnectToken, OAuth2Token> authTokens = null;
+Tuple<IOpenIDConnectToken, IOAuth2Token> authTokens = null;
 
 await RhinoAccountsManager.ExecuteProtectedCodeAsync(async (SecretKey secretKey) =>
 {

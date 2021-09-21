@@ -12,6 +12,9 @@ keywords: ['first', 'RhinoCommon', 'Plugin', 'installing']
 layout: toc-guide-page
 ---
 
+<div class="alert alert-warning" role="alert">
+⚠️ The .macrhi format is no longer in active development. Please see the <a class="alert-link" href="{{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/">Package Manager</a> instead.
+</div>
 
 It is presumed you have a plugin that successfully builds and runs already.  If you are not there yet, see [Your First Plugin (Mac)]({{ site.baseurl }}/guides/rhinocommon/your-first-plugin-mac).
 

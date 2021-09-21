@@ -34,8 +34,18 @@ layout: guide-homepage
 {% for guide in guides %}
   <li><a href="{{ guide.url | prepend: site.baseurl }}">{{ guide.title }}</a></li>
 {% endfor %}
+  <li><a href="https://www.food4rhino.com/faq#developers-yak">How to publish a food4Rhino app to the Package Server</a></li>
 </ul>
 
 ### Features
 
 - [Package Restore in Grasshopper]({{ site.baseurl }}/guides/yak/package-restore-in-grasshopper)
+
+### Advanced
+
+{% assign guides = site.guide_topics | where:"sdk","Yak" | where:"categories","Advanced" | sort:"order" %}
+<ul>
+{% for guide in guides %}
+  <li><a href="{{ guide.url | prepend: site.baseurl }}">{{ guide.title }}</a></li>
+{% endfor %}
+</ul>

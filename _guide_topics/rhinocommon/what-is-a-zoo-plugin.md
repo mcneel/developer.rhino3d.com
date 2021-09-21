@@ -26,7 +26,7 @@ When Rhino and Rhino-based products are installed as workgroup nodes, instead of
 
 #### What is required to build a plugin?
 
-LAN Zoo plugins are .NET Framework 4.5 assemblies. Thus, to create a plugin for the LAN Zoo, you will need one of the following development tools:
+LAN Zoo plugins are .NET Framework 4.8 assemblies. Thus, to create a plugin for the LAN Zoo, you will need one of the following development tools:
 
 1. Microsoft Visual C#
 1. Microsoft Visual Basic .NET

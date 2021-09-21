@@ -22,10 +22,10 @@ To add plugins to the LAN Zoo, and to call the license functions from within you
 
 Follow these steps to generate the necessary info to forward to *Robert McNeel & Associates Code Signing Authority*...
 
-1. Download and install the latest [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html). Note, download and installing the "light" version (smaller download) is sufficient.
-2. Save the contents of <a href="{{ site.baseurl }}/files/mcneelcodesigning.zip"><span class="glyphicon glyphicon-download"></span></a> [mcneelcodesigning.zip]({{ site.baseurl }}/files/mcneelcodesigning.zip) into a folder where you have write permissions. This is generally in your plugin project folder.
-3. Start a *Windows Command Prompt*.
-4. Add the OpenSSL installation folder to your Windows path: `set path=C:\OpenSSL-Win32\bin;%path%`
+1. Download and install the latest [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html). Note, downloading and installing the "light" version (smaller download) is sufficient.
+2. After installation, use Windows Explorer to navigate to the OpenSSL installation folder and double-click on `start.bat` found in the `Bin` folder.
+3. From the Windows command prompt that opens, navigate to your plug-in's project folder.
+4. Save the contents of <a href="{{ site.baseurl }}/files/mcneelcodesigning.zip"><span class="glyphicon glyphicon-download"></span></a> [mcneelcodesigning.zip]({{ site.baseurl }}/files/mcneelcodesigning.zip) to your plug-in's project folder.
 5. From the command prompt, run `CreateRequest.bat <filename>`, where *filename* is the name (without an extension) that will be used to save your private key (*.key*), certificate signing request (*.csr*), and final signed digital certificate (*.crt*).
 6. You will be prompted to answer some questions.  Be sure to answer them correctly...
 
@@ -67,9 +67,9 @@ Saved CSR: 'TestZooPluginKey.csr'
 
 To digitally sign your LAN Zoo or Rhino plugin, convert the signed digital certificate (*.crt*), emailed to you upon approval, into a personal information exchange (*.pfx*) file...
 
-1. Copy the signed digital certificate (*.crt*) you receive into the same folder as your private key (*.key*) and certificate signing request (*.csr*).
-2. Start a *Windows Command Prompt*.
-3. Add the OpenSSL installation folder to your Windows path: `set path=C:\OpenSSL-Win32\bin;%path%`
+1. Copy the signed digital certificate (*.crt*) you receive into the same folder as your private key (*.key*) and certificate signing request (*.csr*). 
+2. Use Windows Explorer to navigate to the OpenSSL installation folder and double-click on `start.bat` found in the `Bin` folder.
+3. From the Windows command prompt that opens, navigate to the above folder.
 4. From the command prompt, run `MakePfxFile.bat <filename>`, where *filename* is the name (without an extension)...
 
 ```cmd

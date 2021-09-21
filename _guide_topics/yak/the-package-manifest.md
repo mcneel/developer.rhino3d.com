@@ -152,7 +152,7 @@ keywords:
 
 ### Icon URL
 
-Specify a link to an icon that will be used by the Package Manager in Rhino. Keep it small – a 32x32 PNG is ideal.
+Specify a **direct** link to an icon that will be used by the Package Manager in Rhino. It should be small (32x32 is ideal) and it must be either a PNG or a JPEG.
 
 ```yaml
 icon_url: "https://example.com/path/to/icon.png"

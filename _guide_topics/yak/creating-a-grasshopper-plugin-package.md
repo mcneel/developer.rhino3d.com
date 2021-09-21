@@ -124,6 +124,10 @@ C:\Users\Bozo\dist\marmoset-1.0.0-rh6_18-any.yak
 <strong>Note:</strong> The filename includes a <a href="../the-anatomy-of-a-package#distributions" class="alert-link">"distribution tag"</a> (in this case <code>rh6_18-any</code>). The first part, <code>rh6_18</code>, is inferred from the version of Grasshopper.dll or Rhinocommon.dll that is referenced in the plug-in project. The second part, <code>any</code>, refers to the platform that the plug-in is intended for. To build a platform-specfic package, run the <code>build</code> command again with the <code>--platform &lt;platform&gt;</code> argument, where <code>&lt;platform&gt;</code> can be either <code>win</code> or <code>mac</code>.
 </div>
 
+<div class="alert alert-warning" role="alert">
+Currently, if you publish a package with a <code>rh6*</code> distribution tag, it will not be installable for Rhino 7. If your plug-in also works in Rhino 7, please mark it as compatible by copying the .yak file, updating the distribution tag part of the filename (i.e. <code>rh6_18</code> ➡ <code>rh7_0</code>) and <a href="../pushing-a-package-to-the-server" class="alert-link">pushing both to the package server</a>.
+</div>
+
 <div class="alert alert-info" role="alert">
 <strong>Note:</strong> You might notice your plug-in's GUID lurking in the
 keywords. More information on how this is used can be found in the

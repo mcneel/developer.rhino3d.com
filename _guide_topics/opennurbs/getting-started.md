@@ -25,10 +25,10 @@ To download the public C++ SDK, .NET SDK, or example 3DM files, visit https://ww
 
 The openNURBS C++ toolkit has been successfully used with the following compilers:
 
-- *Microsoft Visual Studio 2017*: to build openNURBS and the examples with *Visual Studio 2017*, use the solution *opennurbs_public.sln*.
+- *Microsoft Visual Studio 2019*: to build openNURBS and the examples with *Visual Studio 2019*, use the solution *opennurbs_public.sln*.
 
 To use C++ opennurbs in your Visual Studio project:
-1. Open opennurbs_public.sln in VisualStudio, select the platform and configuration, and rebuild all.
+1. Open opennurbs_public.sln in Visual Studio, select the platform and configuration, and rebuild all.
 1. In your project's stdafx.h, put the following lines. This will include all the header files you need to call C++ opennurbs and automatically link in the correct libraries:
 ```
 // defining OPENNURBS_PUBLIC_INSTALL_DIR enables automatic linking using pragmas

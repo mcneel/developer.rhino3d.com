@@ -1,6 +1,6 @@
 ---
 title: Installing Tools (Windows)
-description: This guide covers all the necessary tools required to author Rhino plugins on Windows.
+description: This guide covers the tools required to author, build and debug Rhino plugins on Windows.
 authors: ['steve_baer']
 sdk: ['RhinoCommon']
 languages: ['C#']
@@ -13,36 +13,31 @@ layout: toc-guide-page
 ---
 
 
-By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C# .NET plugins using RhinoCommon in Rhino for Windows.
-
 ## Prerequisites
 
-This guide presumes you have an:
-
-- A PC running Microsoft Windows 7 or later.
-- [Rhino for Windows](http://www.rhino3d.com/download)
+This guide presumes you have [Rhino 7 for Windows](http://www.rhino3d.com/download)
 
 ---
 
 ## Install Visual Studio
 
-[Visual Studio](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx) is Microsoft's flagship development platform and Integrated Development Environment (IDE).  Visual Studio now comes in three major "streams": Visual Studio Code[^1], Visual Studio Online[^2], and Visual Studio "proper"[^3].  In order to author RhinoCommon plugins, you will need Visual Studio "proper" (Visual Studio Code and Visual Studio Online are not supported).
+[Visual Studio](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx) is Microsoft's development platform and Integrated Development Environment (IDE).  Visual Studio comes in three major "streams": Visual Studio Code[^1], Visual Studio Online[^2], and Visual Studio "proper"[^3].  In order to author RhinoCommon plugins, you will need Visual Studio "proper" (Visual Studio Code and Visual Studio Online are not supported).
 
-At the time of this writing, Visual Studio "proper" comes in [three editions](https://www.visualstudio.com/vs-2015-product-editions): Community, Professional, and Enterprise.  Any of these editions will work. Additionally, [Visual Studio Express for Windows Desktop](https://www.visualstudio.com/products/visual-studio-express-vs.aspx) will work with more limited debugging support[^4]. Other Express versions, such as Express for Windows, Express for Web or Team Foundation Server 2015 Express, will not work.
+At the time of this writing, Visual Studio "proper" comes in [three editions](https://www.visualstudio.com/vs-2015-product-editions): Community, Professional, and Enterprise.  Any of these editions will work.
 
-**Note**: RhinoCommon plugins can be authored in Visual Studio 2010, 2012, 2013, 2015, and 2017 both in C# and VB, and included in Ultimate, Professional, Premium, C# Express, Vb Express and Windows Desktop Express (where available).  For the purposes of this guide, we will presume you are using Visual Studio 2017 Community Edition.
+**Note**: For the purposes of this guide, we will presume you are using Visual Studio 2019 Community Edition.
 
 #### Step-by-Step
 
-1. *[Visual Studio Community Edition](https://www.visualstudio.com/vs-2015-product-editions)* is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/en-us/support/legal/mt171547).  Click the *Community* button to download the installer.
-1. Run the *Visual Studio installer* you downloaded from Microsoft, in this case *vs_community.exe*.
-1. Follow the onscreen prompts to install Visual Studio.  It is recommended that you install the *Typical* installation.  Depending on your internet connection, this can take minutes or hours.  When successfully installed, click the *Launch* button.
+1. *[Visual Studio Community Edition](https://visualstudio.microsoft.com/vs/)* is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/en-us/support/legal/mt171547).  Click the *Community* button to download the installer.
+1. Run the *Visual Studio installer* you downloaded from Microsoft.
+1. Follow the onscreen prompts to install Visual Studio.  You will need the ".NET desktop development" workload for RhinoCommon based plug-in development. When successfully installed, click the *Launch* button.
 
 ---
 
 ## RhinoCommon templates
 
-The [RhinoCommon templates](https://marketplace.visualstudio.com/items?itemName=McNeel.RhinoCommontemplatesforv6) contains wizards to get you started creating plugins quickly.
+The [RhinoCommon templates](https://marketplace.visualstudio.com/items?itemName=McNeel.Rhino7Templates) contains wizards to get you started creating plugins quickly.
 
 #### Step-by-Step
 
@@ -73,5 +68,3 @@ Check out the [Your First Plugin (Windows)]({{ site.baseurl }}/guides/rhinocommo
 [^2]: Visual Studio Online is Microsoft's online counterpart to the desktop edition of Visual Studio (referred to as Visual Studio "proper" above).  We have not tested using Visual Studio Online to debug RhinoCommon plugins as having a copy of Rhino running would prove logistically difficult.
 
 [^3]: Visual Studio "proper" is the desktop version of Visual Studio...we are only attaching the "proper" epithet to distinguish it from the Visual Studio Code and Visual Studio Online.  In subsequent guides this will be referred to as simply "Visual Studio."
-
-[^4]: Visual Studio Express for Windows *Desktop* (also named "Express for Desktop" on some pages) offers a development platform that has a less strict licensing agreement policy than the Community edition. Please refer to the EULA for complete details, available during installation. In this edition, debugging of Rhino can be started, but the location of the Rhino executable (rhino.exe), usually available in the Project property page, in the Debug tab, cannot be changed in the UI. After Wizard completion, the location of the Rhino executable can only be edited in the XML of the resulting *.csproj* file, in the main folder of the solution.

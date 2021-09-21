@@ -17,7 +17,8 @@ layout: toc-guide-page
 Unless noted, the following conventions apply to *all* endpoints available to registered issuers in Cloud Zoo.
 
 ### Endpoint Location
-All endpoint requests should be made to All calls are to made to `https://cloudzoo.rhino3d.com/v1`.
+
+The base URL for all requests is `https://cloudzoo.rhino3d.com/v1`.
 
 ### JSON
 
@@ -58,6 +59,12 @@ If the status code is greater or equal to `500`, the response may not be in JSON
 ### DELETE /license
 
 Removes a license from Cloud Zoo. This method deletes the entire [License Cluster object]({{ site.baseurl }}/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster) the license is in. If the License Cluster the license belongs to contains additional licenses, they will be removed as well.
+
+<div class="alert alert-info" role="alert">
+    <!-- <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> -->
+	<strong>Heads up!</strong>
+    This endpoint expects the arguments to be passed as a <a href="https://en.wikipedia.org/wiki/Query_string" class="alert-link">query string</a>.
+</div>
 
 #### Example Request
 

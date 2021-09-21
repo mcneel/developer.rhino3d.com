@@ -33,13 +33,11 @@ When defining your command class, make sure to add the `ScriptRunner` command st
 {::options parse_block_html="true" /}
 <div class="tab-content">
 ```cs
-[System.Runtime.InteropServices.Guid(<<test_command_guid>>)]
 public class TestCommand : Rhino.Commands.Command
 ```
 {: #cs1 .tab-pane .fade .in .active}
 
 ```vbnet
-<System.Runtime.InteropServices.Guid(<<test_command_guid>>)> _
 Public Class TestCommand
   Inherits Rhino.Commands.Command
 ```
@@ -57,19 +55,13 @@ Define your command classes like this:
 {::options parse_block_html="true" /}
 <div class="tab-content">
 ```cs
-[
- System.Runtime.InteropServices.Guid(<<test_command_guid>>),
- Rhino.Commands.CommandStyle(Rhino.Commands.Style.ScriptRunner)
-]
+[Rhino.Commands.CommandStyle(Rhino.Commands.Style.ScriptRunner)]
 public class TestCommand : Rhino.Commands.Command
 ```
 {: #cs2 .tab-pane .fade .in .active}
 
 ```vbnet
-< _
-  System.Runtime.InteropServices.Guid(<<test_command_guid>>), _
-  Rhino.Commands.CommandStyle(Rhino.Commands.Style.ScriptRunner) _
-> _
+<Rhino.Commands.CommandStyle(Rhino.Commands.Style.ScriptRunner)>
 Public Class TestCommand
   Inherits Rhino.Commands.Command
 ```

@@ -13,6 +13,10 @@ layout: toc-guide-page
 TODO: Also port from http://wiki.mcneel.com/developer/rhinoinstallerengine/cpp
 ---
 
+<div class="alert alert-warning" role="alert">
+⚠️ The Rhino Installer Engine is no longer in active development. Please see the <a class="alert-link" href="{{ site.baseurl }}/guides/yak/creating-a-rhino-plugin-package/">Package Manager</a> instead.
+</div>
+
 <div class="alert alert-info" role="alert">
 <strong>Note</strong>: This process is the same for both C/C++ and RhinoCommon plug-ins!
 </div>
