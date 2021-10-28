@@ -1,7 +1,7 @@
 ---
 title: Hops Component
 description: Hops adds functions to Grasshopper.
-authors: ['steve_baer', 'scott_davidson']
+authors: ['steve_baer', 'scott_davidson', 'andy_payne']
 sdk: ['Grasshopper']
 languages: ['Grasshopper']
 platforms: ['Windows', 'Mac']
@@ -32,12 +32,14 @@ Hops functions are stored as separate Grasshopper documents. The Hops component 
 
 {% include vimeo_player.html id="537493812" %}
 
-### Install Hops using the Package Manager in Rhino 7 for Windows:
+### Installing Hops for Windows:
 
-  1. [Install Hops](rhino://package/search?name=hops)
+There are a few ways to install hops on your machine.
+  1. [Install Hops](rhino://package/search?name=hops) (This will launch Rhino)
   1. Or, type `PackageManager` on the Rhino command line.
-  1. Search for “Hops”
-  1. Select Hops and then Install
+      1. Then, search for “Hops”
+      1. Select Hops and then Install
+  1. Or, [download Hops](https://www.food4rhino.com/en/app/hops) from www.food4rhino.com
 
 <img src="{{ site.baseurl }}/images/hopsinstall.jpg">{: .img-center  width="80%"}
 
@@ -45,25 +47,41 @@ Hops functions are stored as separate Grasshopper documents. The Hops component 
 
 Hops functions are Grasshopper documents with special inputs and outputs.
 
-<img src="{{ site.baseurl }}/images/hops-function.png">{: .img-center  width="100%"}
+<img src="{{ site.baseurl }}/images/hops-function-3.png">{: .img-center  width="100%"}
 
-Hops inputs are Get components. The name of the component is used for the name of the Hops input parameter.
+#### Defining Inputs
 
-<img src="{{ site.baseurl }}/images/hops-input.png">{: .img-center  width="40%"}
+Hops inputs are created using the **Get Components**. The available Get components in Grasshopper are found under *Params Tab > Util Group*:
 
-Available Get components are:
+<img src="{{ site.baseurl }}/images/hops-get-components.png">{: .img-center  width="60%"}
 
-<img src="{{ site.baseurl }}/images/get-components.jpg">{: .img-center  width="80%"}
+The name of the component is used for the name of the Hops input parameter. So, in the example above, we have three Get components with names A, B, and C. Each of these Get components become input parameters when Hops compiles the definition.
+
+<img src="{{ site.baseurl }}/images/hops_inputs-2.png">{: .img-center  width="80%"}
+
+Each Get component has a context menu (right-click) with various settings.
+
+<img src="{{ site.baseurl }}/images/get_component_menu.png">{: .img-center  width="55%"}
+
+* **Component Name** - This is the name that will be assigned to the input of the Hops component.
+* **Prompt** - This input is only used for the Grasshopper Player and will show up as a command line prompt to the user.
+* **Enable/Disable** - Enable or disable this component.
+* **At Least** - This is only used for the Grasshopper Player and will define the minimum number of values to accept for this input.
+* **At Most** - This will define the maximum number of values to accept for this input (Default = 1). If this value is set to 1, the Hops component will treat this input as *Item Access*. However, if this value is more than one (or unset) Hops will treat this input as *List Access*.
+* **Minimum & Maximum** - These optional inputs are only used for the Grasshopper Player and will clamp numeric inputs to these bounds.
+* **Presets** - This optional input is only used for the Grasshopper Player and are only found on the *String*, *Integer*, and *Number* Get components. This dialog allows you to set a list of predefined options which will be displayed to the user via the command line prompt.
+
+#### Defining Outputs
 
 Hops outputs are geometry or primitive params in a group named: “RH_OUT:[name]”, where [name] is the name of the output parameter. In this case, the name of the output is “o”.
 
-<img src="{{ site.baseurl }}/images/hops-output.png">{: .img-center  width="30%"}
+<img src="{{ site.baseurl }}/images/hops_output.png">{: .img-center  width="80%"}
 
 ### Use the Hops component
 
-1. Place the Grasshopper Params Tab > Util Group > Hops component on the canvas.
+1. Place the Grasshopper *Params Tab > Util Group > Hops component* onto the canvas.
 1. Right-click the Hops Component, then click Path.
-1. Select a Hops Function.
+1. Select a Hops Function. Note: this can be a Grasshopper definition on your computer, on a remote computer, or a REST endpoint.
 1. The component will show the inputs and outputs.
 1. Use the new component like any other Grasshopper component.
 
@@ -156,7 +174,7 @@ Remote machines must be running Windows and have Rhino installed on them.
 1. Install Rhino 7.5 or above on the remote computer.
 1. Make sure Rhino runs and is properly licensed.
 1. Get the very latest version of compute.geometry.exe. Either build it yourself or get build from our CI server at
-https://ci.appveyor.com/project/mcneel/compute-rhino3d/branch/master/artifacts
+[https://ci.appveyor.com/project/mcneel/compute-rhino3d/branch/master/artifacts](https://ci.appveyor.com/project/mcneel/compute-rhino3d/branch/master/artifacts)
 1. Run compute.geometry.exe from an Administrator Command Line with an address parameter. For example
 'compute.geometry.exe -address http://192.168.1.6:6123'. 192.168.1.6 is your computer's address. The port can be any you want; but we tend to use values above 6000.
 1. Note the IP address of the remote machine.

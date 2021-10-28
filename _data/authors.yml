@@ -13,6 +13,11 @@
   email: andy@mcneel.com
   discourse: andy
 
+- name: andy_payne
+  display_name: Andy Payne
+  email: andy.payne@mcneel.com
+  discourse: AndyPayne
+
 - name: arthur_van_der_harten
   display_name: Arthur van der Harten
   email: unset
