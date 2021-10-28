@@ -52,7 +52,11 @@ bundle install
 You can now serve your local copy of this site by running the `server` script.
 
 ```bash
+# script for macOS
 ./script/server
+
+# manual method for Windows
+jekyll serve --incremental --host 127.0.0.1 --config _config.yml,_config_dev.yml --open-url
 ```
 
 _**Note**: The `api/*` subdirectories are excluded when previewing the site locally which speeds things up a bit!_
