@@ -156,10 +156,16 @@ Yanked versions do not appear in searches but can still be installed if the exac
 
 It is not possible to re-push a package version that has been yanked. If you find yourself in this situation, then simply roll the version number of your package and push again.
 
+If all versions of a package are removed, it will no longer show up in the package index.
+
 <div class="alert alert-danger" role="alert">
   <p><strong>Deleting a package from the McNeel server</strong></p>
   <p>If you absolutely need to delete your package from the public server, please email <a href="mailto:will@mcneel.com">will@mcneel.com</a>. Once a package has been deleted, the name can no longer be used.</p>
 </div>
+
+## Unyank
+
+Works in the same way as the yank command, but in reverse!
 
 ## Owner
 
