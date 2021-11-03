@@ -190,7 +190,7 @@ This module can use its built-in default HTTP server to serve the functions as G
 
 #### Can you nest Hops functions within other functions?
 
-Yes, it is possible to nest Hops function within other functions.
+Yes, it is possible to nest Hops function within other functions. This is called _recursion_ and the default recursion limit is set to 10.
 
 #### Does it cost money to use Hops?
 
