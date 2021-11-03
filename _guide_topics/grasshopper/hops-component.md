@@ -112,6 +112,8 @@ The Hops settings control how Hops runs on an application level.  It is availabl
 * **Launch Local Rhino.Compute at Start** - Use this for remote machines when Compute needs to start before any requests are sent.
 * **Child Process Count** - Used to limit the number of requests for additional parallel processes. May want to set this to the number of cores available.
 
+Note: As of Rhino version 7.13, the active model tolerances (ie. absolute distance and angle tolerances) are passed from Hops to the running instance of Rhino.compute as part of the JSON request.
+
 ### Component Settings
 
 Right_click on the Hops component to select any number of options that control how Hops runs.
