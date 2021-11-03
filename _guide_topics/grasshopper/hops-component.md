@@ -39,9 +39,8 @@ There are a few ways to install hops on your machine.
   1. Or, type `PackageManager` on the Rhino command line.
       1. Then, search for “Hops”
       1. Select Hops and then Install
-  1. Or, [download Hops](https://www.food4rhino.com/en/app/hops) from www.food4rhino.com
 
-<img src="{{ site.baseurl }}/images/hopsinstall.jpg">{: .img-center  width="80%"}
+<img src="{{ site.baseurl }}/images/gh-hops-package-manager.png">{: .img-center  width="100%"}
 
 ### Create a Hops Function
 
@@ -61,7 +60,7 @@ The name of the component is used for the name of the Hops input parameter. So, 
 
 Each Get component has a context menu (right-click) with various settings.
 
-<img src="{{ site.baseurl }}/images/get_component_menu.png">{: .img-center  width="55%"}
+<img src="{{ site.baseurl }}/images/gh-hops-get-component-menu.png">{: .img-center  width="55%"}
 
 * **Component Name** - This is the name that will be assigned to the input of the Hops component.
 * **Prompt** - This input is only used for the Grasshopper Player and will show up as a command line prompt to the user.
@@ -87,51 +86,16 @@ Hops outputs are geometry or primitive params in a group named: “RH_OUT:[name]
 
 <img src="{{ site.baseurl }}/images/gh-hops-path.png">{: .img-center  width="100%"}
 
-## Frequently Asked Questions:
+### A note about Hops for macOS users
 
-#### Can you nest Hops functions within other functions?
+The Hops component works in tandem with a local instance of a [Rhino.compute](https://developer.rhino3d.com/guides/compute/) server which, typically, is spun up whenever you launch Grasshopper. However, this server will not run on macOS which means there are two other options for you to consider. You can:
 
-Not at this time.
+1. make a REST API call to a remote server running on Windows.
+1. make a REST API call to a python ghhops_server running locally.
 
-#### Does it cost money to use Hops?
+The first option (making a call to a remote Windows server) will require some setup modifications to the remote machine. For more information on how to setup a remote server, checkout the section on [Remote Machine Configuration](https://developer.rhino3d.com/guides/grasshopper/hops-component/#remote-machine-configuration). 
 
-Hops is free to use.
-
-#### Can Hops be used with Grasshopper Player to make commands?
-
-Yes, Hops functions can use Context Bake and Context Print components to create Rhino commands in Grasshopper Player.
-
-#### Does Hops support parallel processing?
-
-Yes, Hops by default will launch a parallel process for each branch of a datatree input stream.
-
-#### What input and output types does Hops support? (It supports all common types, ask about other ones if you need them)
-
-Hops passes standard Grasshopper data types (Strings, Numbers, Lines, etc...). For other datatypes such as images or EPW weather files use a string for the file name so that the external function might also read in the same file.
-
-#### Can plugin components run in Hops Functions?
-
-Yes, all the installed Grasshopper plugins can run within a Hops Function.
-
-#### Can this be used for extremely long calculations within a function?
-
-Yes, each Hops component has an option to solve asynchronously. The user interface will not be blocked while waiting for a remote process to solve and the definition will be updated when the solve is complete. Hops will wait for all function calls to return before passing the outputs to the downstream components.
-
-#### Can any existing component be run remotely?
-
-All plugins and existing Grasshopper components can be run as a single component.
-
-#### Can the code for Hops be used in my C# or Python scripts?
-
-Not at this time.  As of now you may embed a custom C# or Python component within a function or before or after a Hops component. https://github.com/mcneel/compute.rhino3d/tree/master/src/compute.components
-
-#### What is Hops performance?
-
-We have not done extensive benchmarking on this. Any performance improvement comes from solving a complex calculation in parallel; each solution is calculated at the same speed as in Rhino plus the overhead of making the calls to the external function.
-
-#### How does Hops deal with datatrees?
-
-Standard data-matching rules apply to datatrees.  But Hops will spawn a new parallel thread for each branch of a tree.
+The second option (making a call to a local python server) is covered in more detail in the section called [Calling a CPython Server](https://developer.rhino3d.com/guides/grasshopper/hops-component/#calling-a-cpython-server).
 
 ## Hops Settings
 
@@ -152,7 +116,7 @@ The Hops settings control how Hops runs on an application level.  It is availabl
 
 Right_click on the Hops component to select any number of options that control how Hops runs.
 
-<img src="{{ site.baseurl }}/images/gh-hops-options.jpg">{: .img-center  width="60%"}
+<img src="{{ site.baseurl }}/images/gh-hops-component-settings.png">{: .img-center  width="60%"}
 
 
 * **Parallel Computing** - Pass each item to a new parallel node if available.
@@ -222,12 +186,32 @@ This Python module helps you create Python (specifically CPython) functions and 
 
 This module can use its built-in default HTTP server to serve the functions as Grasshopper components, or act as a middleware to a [Flask](https://flask.palletsprojects.com/en/1.1.x/) app. It can also work alongside [Rhino.Inside.CPython](https://discourse.mcneel.com/t/rhino-inside-python/78987) to give full access to the [RhinoCommon API](https://developer.rhino3d.com/api/).
 
-## Shortcut to a single Grasshopper Component
+## Frequently Asked Questions:
 
-Hops can call into a single Grasshopper component using the remote instance to solve it. This can be helpful if many parallel instances of the component would speed up a definition. Simply enter the name of the component.
+#### Can you nest Hops functions within other functions?
 
-## Using Remote Services
+Yes, it is possible to nest Hops function within other functions.
 
-Hops may call into other applications for results.  What is required on the other application is Hops protocol awareness.  An example of calling into a remote service is the Hops component calling into CPython. These libraries can also be used in the Python API of other applications and services. See the CPython Example above. For details see the [ReadMe on GH Hops CPython project](https://github.com/mcneel/compute.rhino3d/tree/master/src/ghhops-server-py).
+#### Does it cost money to use Hops?
 
-{% include vimeo_player.html id="537498238" %}
+Hops is free to use.
+
+#### Can Hops be used with Grasshopper Player to make commands?
+
+Yes, Hops functions can use Context Bake and Context Print components to create Rhino commands in Grasshopper Player.
+
+#### Does Hops support parallel processing?
+
+Yes, Hops by default will launch a parallel process for each branch of a datatree input stream.
+
+#### What input and output types does Hops support? (It supports all common types, ask about other ones if you need them)
+
+Hops passes standard Grasshopper data types (Strings, Numbers, Lines, etc...). For other datatypes such as images or EPW weather files use a string for the file name so that the external function might also read in the same file.
+
+#### Can plugin components run in Hops Functions?
+
+Yes, all the installed Grasshopper plugins can run within a Hops Function.
+
+#### Can this be used for extremely long calculations within a function?
+
+Yes, each Hops component has an option to solve asynchronously. The user interface will not be blocked while waiting for a remote process to solve and the definition will be updated when the solve is complete. Hops will wait for all function calls to return before passing the outputs to the downstream components.
