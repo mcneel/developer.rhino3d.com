@@ -63,7 +63,7 @@ Each Get component has a context menu (right-click) with various settings.
 <img src="{{ site.baseurl }}/images/gh-hops-get-component-menu.png">{: .img-center  width="55%"}
 
 * **Component Name** - This is the name that will be assigned to the input of the Hops component.
-* **Prompt** - This input is only used for the Grasshopper Player and will show up as a command line prompt to the user.
+* **Prompt** - This input will be the tooltip that is displayed when you hover over this parameter on the Hops component.
 * **Enable/Disable** - Enable or disable this component.
 * **At Least** - This is only used for the Grasshopper Player and will define the minimum number of values to accept for this input.
 * **At Most** - This will define the maximum number of values to accept for this input (Default = 1). If this value is set to 1, the Hops component will treat this input as *Item Access*. However, if this value is more than one (or unset) Hops will treat this input as *List Access*.
