@@ -113,7 +113,7 @@ There are a few reasons why pushing a package might not work.
 
 - Push something that you didn't mean to?
 
-  _Use the [`yank`](../yak-cli-reference/#yank) command to unlist a specific version._
+  _Use the [`yank` command](../yak-cli-reference/#yank) to unlist a specific version._
 
 ---
 
