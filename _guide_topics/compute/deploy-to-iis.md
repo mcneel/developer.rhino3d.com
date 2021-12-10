@@ -9,6 +9,7 @@ categories: ['Deployment']
 order: 2
 keywords: ['developer', 'compute', 'production', 'IIS']
 layout: toc-guide-page
+redirect_from: "/guides/compute/deployToIIS/"
 ---
 
 ## Overview
