@@ -67,17 +67,26 @@ To start, please confirm that you have a valid Azure subscription and that you h
 
 Once your virtual machine has been deployed you should be able to go to the resources home page. Here, you can change various settings and configurations. We are going to add an inbound port rule so that we can send API requests on a dedicated port.
 
-By default, Azure locks most (if not all) ports down from inbound traffic (for security reasons). In our VM configuration, we specified that we wanted to create inbound port rules for **RDP (port 3389)**, **HTTPS (port 443)**, and **HTTP (port 80**). Let's add one more port rule to allow incoming requests on a dedicated port.
+By default, Azure denies and blocks all public inbound traffic - which also includes ICMP traffic. This is a good thing since it improves security by reducing the attack surface. The [Internet Control Message Protocol (ICMP)](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol) is typically used for diagnostics and to troubleshoot networking issues. 
+
+We'll want to turn ICMP traffic on for our VM so that we can try to ping the IP address and make sure we get a response. The first thing we need to do is add an inbound port rule for ICMP traffic. 
 
 1. On the left-hand side menu, select the **Networking** menu item. This will open the Networking blade.
 
 1. Click on the **Add inbound port rule** button
 <img src="{{ site.baseurl }}/images/Azure_VM_Create6.png">{: .img-center  width="100%"}
 
-1. In the pop-out panel, set the **Destination port ranges** to **81**. Note: this number is arbitrary and can be any valid integer value. 
+1. In the **Add inbound security rule** pane, set the **Destination port ranges** to *, change the **Protocol** to **ICMP**, set the **Priority** to **100**, and type **ICMP** in the **Name** input.
+<img src="{{ site.baseurl }}/images/Azure_VM_Create8.png">{: .img-center  width="75%"}
 
-1. In the *Name* area, type in **Port_81**. Again, you can change this if you wish.
-<img src="{{ site.baseurl }}/images/Azure_VM_Create7.png">{: .img-center  width="75%"}
+1. Click **Add** to create the new inbound port rule.
+
+Next, we need to add a dedicated inbound port rule for the API requests we will be sending to the rhino.compute server. In our VM configuration, we specified that we wanted to create inbound port rules for **RDP (port 3389)**, **HTTPS (port 443)**, and **HTTP (port 80**). Let's add one more port rule to allow incoming requests on a new port (port 81).
+
+1. Again, click the **Add inbound port rule** button.
+
+1. In the **Add inbound security rule** pane, set the **Destination port ranges** to **81**. Note: this number is arbitrary and can be any valid integer value. In the **Name** area, type in **Port_81**. Leave all other defaults.
+<img src="{{ site.baseurl }}/images/Azure_VM_Create9.png">{: .img-center  width="75%"}
 
 1. Click **Add** to create the new inbound port rule.
 
@@ -117,14 +126,6 @@ Congratulations. You should now have access to the desktop of the remote machine
 
 Now that you have logged into the virtual machine via RDP, let's take a look at how to setup Windows Server to host our instance of rhino.compute.
 
-### Install .NET Core Hosting Bundle
-
-The first thing we need to do is install the *.NET Core Hosting Bundle* on the VM in order to run rhino.compute (an ASP.NET Core app) on the VM. The bundle installs the .NET Core Runtime, .Net Core Library, and the ASP.NET Core Module which allows ASP.NET Core apps to run behind IIS.
-
-1. Download the [.NET Core Hosting Bundle (direct download)](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-aspnetcore-5.0.12-windows-hosting-bundle-installer) Note: Rhino.compute currently targets the .NET Core 5.0 Framework.
-
-1. Restart your virtual machine.
-
 ### Open Firewall Port
 
 We have already created an inbound port rule for the Azure network interface, however we must also create a rule to allow messages through the Windows firewall.
@@ -161,7 +162,24 @@ We have already created an inbound port rule for the Azure network interface, ho
 
 1. Click **Finish**.
 
-1. Restart your virtual machine.
+We also need to setup the operating system to answer to ping/ICMP echo requests. On Windows Server, this is disabled by default. We could do this through the Firewall interface, but let's use a Powershell command instead.
+
+1. Launch **Powershell** (right-click to **Run as Administrator**).
+
+1. Type in the following commands:
+
+        # For IPv4
+        netsh advfirewall firewall add rule name="ICMP Allow incoming V4 echo request" protocol="icmpv4:8,any" dir=in action=allow
+ 
+        # For IPv6
+        netsh advfirewall firewall add rule name="ICMP Allow incoming V6 echo request" protocol="icmpv6:8,any" dir=in action=allow 
+
+1. You should see an **OK** message after each command.
+
+1. Now, Restart your virtual machine.
+
+You should be able to ping your Azure virtual machine using your public IP address. Note: your IP address will be different than the one shown below.
+<img src="{{ site.baseurl }}/images/Ping_IPAddress.png">{: .img-center  width="85%"}
 
 ### Install Rhino
 
@@ -195,8 +213,8 @@ By default, IIS is not enabled on Windows Server. To install IIS on the virtual 
 1. Click **Next**.
 <img src="{{ site.baseurl }}/images/IIS_Setup_4.png">{: .img-center  width="100%"}
 
-1. We do not need to install any additional features at this time, so click **Next** on the **Select Features** page.
-<img src="{{ site.baseurl }}/images/IIS_Setup_5.png">{: .img-center  width="100%"}
+1. On the **Select features** page, add all of the checkboxes under the **.NET Framework 4.8 Features**. Then scroll down and make sure the **IIS Hostable Web Core** checkbox is checked. Click Next.
+<img src="{{ site.baseurl }}/images/IIS_Setup_18.png">{: .img-center  width="100%"}
 
 1. On the **Select role services** page, review the available features that are available. For now, we will simply leave the default selections, but you can always come back and add more later.
 
@@ -211,6 +229,14 @@ By default, IIS is not enabled on Windows Server. To install IIS on the virtual 
 
 1. You can now open the **IIS Manager** app by clicking on the Windows **Start** menu and searching for *IIS Manager**. This will launch the IIS Manager console app. We won't do anything in the IIS Manager just yet, but you should be able to confirm that IIS is now operational on the VM.
 <img src="{{ site.baseurl }}/images/IIS_Setup_9.png">{: .img-center  width="100%"}
+
+### Install .NET Core Hosting Bundle
+
+The first thing we need to do is install the *.NET Core Hosting Bundle* on the VM in order to run rhino.compute (an ASP.NET Core app) on the VM. The bundle installs the .NET Core Runtime, .Net Core Library, and the ASP.NET Core Module which allows ASP.NET Core apps to run behind IIS. Before we can install the .NET Core Hosting Bundle, we need to make sure the 
+
+1. Download the [.NET Core Hosting Bundle (direct download)](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-aspnetcore-5.0.12-windows-hosting-bundle-installer) Note: Rhino.compute currently targets the .NET Core 5.0 Framework.
+
+1. Restart your virtual machine.
 
 ## Publish rhino.compute
 
@@ -283,11 +309,141 @@ The folder structure looks like this:
         * history
         * logs
         * temp
-        * wwwroot   <- copy/paste compute-for-IIS folder here 
+        * wwwroot
+            * aspnet_client
+                * system_web
+                    *4_0_30319   <- copy/paste rhino.compute and compute.geometry folders here 
 
 
-We need to copy/paste the contents of the **compute-for-IIS** folder into the **wwwroot** directory.
+We need to copy/paste the contents of the **compute-for-IIS** folder (the two subfolders) into the **4_0_30319** directory.
 
-<img src="{{ site.baseurl }}/images/Compute_Publish_10.png">{: .img-center  width="85%"}
+<img src="{{ site.baseurl }}/images/Compute_Publish_11.png">{: .img-center  width="100%"}
 
 In the next step, we will create an IIS application and point it to this directory in order to launch an instance of rhino.compute when it receives an API request.
+
+## Create the app in IIS
+
+### Setup the App Pool & Site
+
+Our next step will be to create an application in IIS and link it to the rhino.compute directory. To start we'll need to create a new **app pool** in IIS.
+
+1. Select the Windows **Start** button and type *IIS* in the search bar. Click on the **Internet Information Services (IIS) Manager** app to launch the IIS Manager.
+
+1. In the **Connections** pane on the left-hand side of the IIS Manager you should see two items: 1) Start Page and 2) Rhino-Compute-VM (or whatever you named your virtual machine). Click on the carat to the left of the VM name to expand the submenu.
+
+1. Select the **Application Pools** submenu item.
+
+1. In the **Actions** pane on the far right, click the **Add Application Pool** button.
+<img src="{{ site.baseurl }}/images/IIS_Setup_10.png">{: .img-center  width="100%"}
+
+1. In the **Add Application Pool** dialog, type *RhinoComputeAppPool* in the **Name** input. Set the **.NET CLR version** to **No Managed Code**. Leave all other defaults. 
+
+1. Click **OK** to add the new app pool.
+<img src="{{ site.baseurl }}/images/IIS_Setup_11.png">{: .img-center  width="45%"}
+
+1. Under the **Actions** pane, click **Advanced Settings**.
+<img src="{{ site.baseurl }}/images/IIS_Setup_12.png">{: .img-center  width="100%"}
+
+1. In the **Advanced Settings** dialog, scroll down to the **Process Model** section. Change the **Load User Profile** to **True**.
+<img src="{{ site.baseurl }}/images/IIS_Setup_23.png">{: .img-center  width="65%"}
+
+1. Click **OK** to close the **Advanced Settings** dialog.
+
+1. Now, in the **Connections** pane, click on the **Sites** menu item.
+
+1. In the **Actions** pane, select **Add Website**.
+<img src="{{ site.baseurl }}/images/IIS_Setup_16.png">{: .img-center  width="100%"}
+
+1. In the **Add Website** dialog, set the **Site name** to **Rhino.Compute**.
+
+1. Click the **Select** button and set the **Application Pool** to **RhinoComputeAppPool**.
+
+1. Click the **ellipsis** button next to the **Physical path** and select the **rhino.compute** directory (ie. C:\inetpub\wwwroot\compute-for\IIS\rhino.compute).
+
+1. Under the **Binding** section, type **81** to bind the application to incoming messages on port 81. For now, leave the binding type to **http**.
+<img src="{{ site.baseurl }}/images/IIS_Setup_17.png">{: .img-center  width="80%"}
+
+1. Click **OK** to create the site.
+
+1. Under the **Actions** pane, click **Advanced Settings**.
+<img src="{{ site.baseurl }}/images/IIS_Setup_24.png">{: .img-center  width="100%"}
+
+1. In the **Advanced Settings** dialog, under the **General** section, click on the **elipsis** button to set the **Physical Path Credentials**.
+<img src="{{ site.baseurl }}/images/IIS_Setup_20.png">{: .img-center  width="65%"}
+
+
+1. In the **Connect As** dialog, select **Specific user**. Then click the **Set** button to add your administrator credentials.
+<img src="{{ site.baseurl }}/images/IIS_Setup_21.png">{: .img-center  width="60%"}
+
+1. Enter the **Username** and **Password** associated with your administrator account. Hint: this should be the same username and password that you set in [step 7 when setting up Azure virtual machine](https://developer.rhino3d.com/guides/compute/deployToIIS/#creating-a-vm).
+<img src="{{ site.baseurl }}/images/IIS_Setup_22.png">{: .img-center  width="50%"}
+
+1. Click **OK** To save the credentials.
+
+1. Click **OK** to save the user information.
+
+1. In the **Advanced Settings** dialog, change the **Preload Enabled** value to **True**.
+<img src="{{ site.baseurl }}/images/IIS_Setup_25.png">{: .img-center  width="65%"}
+
+1. Click **OK** to save the settings.
+
+### Edit Permissions
+
+The next thing we have to do is edit the permissions of the **rhino.compute** and **compute.geometry** subfolders. Open the **File Explorer** and navigate to those subfolders (Hint: they should be located in C:\inetpub\wwwroot\aspnet_client\system_web\4_0_30319).
+
+1. Right-click on the **rhino.compute** folder and click **Properties**.
+
+1. Click on the **Security** tab and then click **Edit**.
+<img src="{{ site.baseurl }}/images/Edit_Permissions_1.png">{: .img-center  width="55%"}
+
+1. For each group or user name, provide **Full control** access.
+
+1. Next, click the **Add** button.
+<img src="{{ site.baseurl }}/images/Edit_Permissions_2.png">{: .img-center  width="55%"}
+
+1. Under the section titled **Enter the object names to select**, type in **IIS AppPool\RhinoComputeAppPool**. Then, click on the **Check Names** button to verify the name.
+<img src="{{ site.baseurl }}/images/Edit_Permissions_3.png">{: .img-center  width="70%"}
+
+1. Click **OK**.
+
+1. Back in the **Security** tab, make sure the RhinoComputeAppPool object is select. Then check **Full control** to give full access to this app pool.
+<img src="{{ site.baseurl }}/images/Edit_Permissions_4.png">{: .img-center  width="55%"}
+
+1. Click **Apply** to modify the permissions.
+
+1. Click **OK** to close the dialog.
+
+Now, follow the same steps to provide **Full control** access to the **compute.geometry** folder.
+
+## Testing the app
+
+At this point, IIS should be configured to launch the rhino.compute instance when an API request is made. You can test this by opening a web browser on your local machine (not the VM) and typing in "http://" followed by the IP address of the virtual machine followed by a `:` and the port number (81) followed by "/activechildren". So, the full address would look something like this:
+            
+    http://52.168.38.105:81/activechildren
+
+The `/activechildren` endpoint will return an integer value for the number of child processes that were started by rhino.compute (the default is 4). 
+
+If you've succeeded in returning a numeric value larger than zero, then at least one child process has been started. Next, let's try getting Hops to send a definition to that URL.
+
+1. Launch **Rhino** on your local machine.
+
+1. If you have not already installed hops on this machine, please do so by searching for it in the Rhino **Package Manager**.
+
+1. Start **Grasshopper** by typing the word *Grasshopper* into the command prompt and hitting enter.
+
+1. Go to **File** and then **Preferences** to open the preferences dialog. 
+
+1. Click on the **Solver** tab in the left-hand menu. 
+
+1. In the **Hops - Compute server URLs** section, type in the web address from above (do not include the `/activechildren` endpoint). Your URL should look something like this.
+<img src="{{ site.baseurl }}/images/Hops_To_IIS_1.png">{: .img-center  width="80%"}
+
+1. Add a **Hops** component to the **Grasshopper canvas** (Params/Util)
+
+1. Right-click on the **Hops** component and set the **Path** to a valid Hops/Grasshopper definition. To learn more about setting up a Grasshopper definition that will work properly with Hops, [follow this guide](https://developer.rhino3d.com/guides/grasshopper/hops-component/).
+<img src="{{ site.baseurl }}/images/Hops_To_IIS_2.png">{: .img-center  width="50%"}
+
+Once the path is set, the Hops component will create the appropriate API request and send it to the URL that we specified in step 6 (the rhino.compute server running on IIS). The compute server processes the request and send a response back to Hops, which returns the result.
+<img src="{{ site.baseurl }}/images/Hops_To_IIS_3.png">{: .img-center  width="70%"}
+
+Congratulations! You have successfully setup an instance of rhino.compute running behind IIS on a virtual machine. 
