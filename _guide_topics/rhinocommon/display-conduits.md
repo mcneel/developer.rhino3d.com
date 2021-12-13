@@ -94,8 +94,10 @@ Let's take a look at a more complex drawing routine:
 ```cs
 protected override void CalculateBoundingBox(CalculateBoundingBoxEventArgs e)
 {
-   base.CalculateBoundingBox(e);
-   e.IncludeBoundingBox(e.Display.Viewport.ConstructionPlane().Origin);
+  base.CalculateBoundingBox(e);
+  var bbox = new BoundingBox();
+  bbox.Union(e.Display.Viewport.ConstructionPlane().Origin);
+  e.IncludeBoundingBox(bbox);
 }
 
 protected override void PreDrawObjects(DrawEventArgs e)
