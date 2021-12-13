@@ -74,7 +74,9 @@ class MyConduit : Rhino.Display.DisplayConduit
   protected override void CalculateBoundingBox(CalculateBoundingBoxEventArgs e)
   {
     base.CalculateBoundingBox(e);
-    e.IncludeBoundingBox(new Point3d(0,0,0));
+    var bbox = new BoundingBox();
+    bbox.Union(new Point3d(0, 0, 0));
+    e.IncludeBoundingBox(bbox);
   }
 
   protected override void PreDrawObjects(DrawEventArgs e)
