@@ -50,4 +50,22 @@ To start, please confirm that you have a valid Azure subscription and that you h
 
 1. After deployment is complete, select **Go to resource**.
 
+### Add an inbound port rule
+
+Once your virtual machine has been deployed you should be able to go to the resource home page. Here, you can change various settings and configurations. We are going to add an inbound port rule so that we can send API requests on a dedicated port.
+
+By default, Azure denies and blocks all public inbound traffic - which also includes ICMP traffic. This is a good thing since it improves security by reducing the attack surface. The [Internet Control Message Protocol (ICMP)](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol) is typically used for diagnostics and to troubleshoot networking issues. 
+
+We'll want to turn ICMP traffic on for our VM so that we can try to ping the IP address and make sure we get a response. The first thing we need to do is add an inbound port rule for ICMP traffic. 
+
+1. On the left-hand side menu, select the **Networking** menu item. This will open the Networking blade.
+
+1. Click on the **Add inbound port rule** button
+<img src="{{ site.baseurl }}/images/Azure_VM_Create6.png">{: .img-center  width="100%"}
+
+1. In the **Add inbound security rule** pane, set the **Destination port ranges** to *, change the **Protocol** to **ICMP**, set the **Priority** to **100**, and type **ICMP** in the **Name** input.
+<img src="{{ site.baseurl }}/images/Azure_VM_Create8.png">{: .img-center  width="75%"}
+
+1. Click **Add** to create the new inbound port rule.
+
 Congratulations! In this guide, you deployed a simple virtual machine on Azure.
