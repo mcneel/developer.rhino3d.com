@@ -17,8 +17,6 @@ In this guide, we will walk through the process of setting up a virtual machine 
 
 To start, please confirm that you have a valid Azure subscription and that you have already setup a resource group to hold the various resources for this instance. To learn more about setting up a resource group on Azure, [visit this page](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal).
 
-### Azure Settings
-
 1. Sign in to the Azure [portal](https://portal.azure.com/#home).
 
 1. Type **virutal machines** in the search bar.
