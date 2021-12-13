@@ -6,7 +6,7 @@ sdk: ['Compute']
 languages: ['C#', 'VB']
 platforms: ['Windows']
 categories: ['Deployment']
-order: 2
+order: 4
 keywords: ['developer', 'compute', 'production', 'IIS']
 layout: toc-guide-page
 redirect_from: "/guides/compute/deployToIIS/"
@@ -25,48 +25,19 @@ When rhino.compute.exe does not receive requests to solve over a period of secon
 <img src="{{ site.baseurl }}/images/IIS_Request.png">{: .img-center  width="100%"}
 <figcaption align = "left"><b>Fig.1 - A flow diagram showing how IIS recieves an incoming request and launches rhino.compute.exe which in turn spins up child processes.</b></figcaption>
 
-## Creating a VM
+## Create the VM
 
-In this guide, we will walk through the process of setting up a virtual machine using Azure services. If you are configuring a VM on a different platform (ie. AWS), the settings should be similar, although the user interface and process may vary. 
+The first step in the process of deploying **rhino.compute** to a remote instance is to set up a virtual machine (VM). There are several popular services which can be configured to setup a wide array of virtual machines depending on your resource needs. Two of the most prominent providers include [Azure](https://azure.microsoft.com/en-us/free/virtual-machines/) and [AWS](https://aws.amazon.com/ec2/instance-types/).  
 
-To start, please confirm that you have a valid Azure subscription and that you have already setup a resource group to hold the various resources for this instance. To learn more about setting up a resource group on Azure, [visit this page](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal).
+Depending on your preferences, we recommend starting with an Azure or AWS VM. Use the following guides to walkthrough that process.
 
-### Azure Settings
+* [Create a Virtual Machine on Azure](https://developer.rhino3d.com/guides/compute/creating-an-Azure-VM).
 
-1. Sign in to the Azure [portal](https://portal.azure.com/#home).
-
-1. Type **virutal machines** in the search bar.
-
-1. Under **Services**, select **Virtual machines**.
-
-1. In the **Virtual machines** page, select **Create** then **Virtual Machine**
-
-1. In the **Basics** tab, under **Project details**, make sure the correct Subscription and Resource group are selected.
-
-1. Under **Instance details**, create a unique name for the virutal machine. We'll use *Rhino-Compute-VM* for our VM name. Select a region close to you, and then select *Windows Server 2022 Datacenter - Azure Edition Gen2* for the **Image**. Feel free to select any **Size** VM that fits your needs. We'll use *Standard DS2_v2* for this example. Leave the other defaults.
-<img src="{{ site.baseurl }}/images/Azure_VM_Create3.png">{: .img-center  width="100%"}
-
-1. Under **Administrator account**, provide a username and a password. Take note of these credentials as we will use these when we log into the remote machine.
-
-1. Under **Inbound port rules**, choose **Allow selected ports** then select **RDP (3389)**, **HTTPS (443)**, and **HTTP (80)**.
-<img src="{{ site.baseurl }}/images/Azure_VM_Create4.png">{: .img-center  width="100%"}
-
-1. Select **Next : Disk >**.
-
-1. Select **Next : Networking >**.
-
-1. Under the **Network interface** section, click on the *Create new* button under the **Public IP** subsection.
-
-1. When the pop-out blade opens up, select **Static** under the Assignment tab. Click **OK** to save this setting.
-<img src="{{ site.baseurl }}/images/Azure_VM_Create5.png">{: .img-center  width="100%"}
-
-1. Leave all other defaults. Select **Review + create**.
-
-1. Once your configuration passes the validation check, select **Create** to deploy your virtual machine.
+* Create a Virtual Machine on AWS (coming soon).
 
 ### Add an inbound port rule
 
-Once your virtual machine has been deployed you should be able to go to the resources home page. Here, you can change various settings and configurations. We are going to add an inbound port rule so that we can send API requests on a dedicated port.
+Once your virtual machine has been deployed you should be able to go to the resource home page. Here, you can change various settings and configurations. We are going to add an inbound port rule so that we can send API requests on a dedicated port.
 
 By default, Azure denies and blocks all public inbound traffic - which also includes ICMP traffic. This is a good thing since it improves security by reducing the attack surface. The [Internet Control Message Protocol (ICMP)](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol) is typically used for diagnostics and to troubleshoot networking issues. 
 

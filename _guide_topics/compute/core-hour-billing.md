@@ -7,7 +7,7 @@ languages: []
 platforms: ['Windows']
 categories: ['Deployment']
 origin: http://www.grasshopper3d.com/forum/topics/how-do-i-install-a-custom-ghx
-order: 4
+order: 6
 keywords: ['developer', 'compute', 'core-hour']
 layout: toc-guide-page
 ---
