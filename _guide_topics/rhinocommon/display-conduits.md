@@ -82,7 +82,7 @@ class MyConduit : Rhino.Display.DisplayConduit
   protected override void PreDrawObjects(DrawEventArgs e)
   {
     base.PreDrawObjects(e);
-    e.Display.DrawPoint(new Point3d(0,0,0));
+    e.Display.DrawPoint(new Point3d(0, 0, 0));
   }
 }
 ```
