@@ -31,9 +31,9 @@ The first step in the process of deploying **rhino.compute** to a remote instanc
 
 Depending on your preferences, we recommend starting with an Azure or AWS VM. Use the following guides to walkthrough that process.
 
-* [Create a Virtual Machine on Azure](https://developer.rhino3d.com/guides/compute/creating-an-Azure-VM).
+* [Create a Virtual Machine on Azure](https://developer.rhino3d.com/guides/compute/creating-an-azure-vm).
 
-* Create a Virtual Machine on AWS (coming soon).
+* [Create a Virtual Machine on AWS](https://developer.rhino3d.com/guides/compute/creating-an-aws-vm).
 
 ### Connect via RDP
 
