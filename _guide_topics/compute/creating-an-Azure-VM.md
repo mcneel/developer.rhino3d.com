@@ -9,6 +9,7 @@ categories: ['Deployment']
 order: 2
 keywords: ['developer', 'compute', 'production', 'Azure']
 layout: toc-guide-page
+redirect_from: "/guides/compute/creating-an-Azure-VM/"
 ---
 
 ## Creating the Virtual Machine
