@@ -44,9 +44,9 @@ Write code to access the Rhino and Grasshopper SDKs through a stateless REST API
 
 </div>
 </div>
+
 <div class="row-fluid">  
 <div class="col-md-4" markdown="1">  
-
 
 ### Production Deployment
 
@@ -55,6 +55,27 @@ Write code to access the Rhino and Grasshopper SDKs through a stateless REST API
   <ul>
   {% for guide in guides %}
     {% if guide.sdk contains 'Compute' and guide.categories contains 'Deployment' %}
+      {% if guide.title and guide.order %}
+        <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+</div>
+</div>
+
+<div class="row-fluid">  
+<div class="col-md-4" markdown="1">  
+
+### Hops
+
+<div class="trigger">
+  {% assign guides = site.guide_topics | sort:"order" %}
+  <ul>
+  {% for guide in guides %}
+    {% if guide.sdk contains 'Compute' and guide.categories contains 'Hops' %}
       {% if guide.title and guide.order %}
         <li><a class="page-link" href="{{ guide.url | prepend: site.baseurl }}" title="{{ guide.description }}">{{ guide.title }}</a></li>
       {% endif %}
