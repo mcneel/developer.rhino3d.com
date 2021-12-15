@@ -2,14 +2,15 @@
 title: Hops Component
 description: Hops adds functions to Grasshopper.
 authors: ['steve_baer', 'scott_davidson', 'andy_payne']
-sdk: ['Grasshopper']
+sdk: ['Compute']
 languages: ['Grasshopper']
 platforms: ['Windows', 'Mac']
-categories: ['In Depth']
+categories: ['Hops']
 origin:
-order: 2
+order: 1
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
+redirect_from: "/guides/grasshopper/hops-component/"
 ---
 
 ## Overview <img src="{{ site.baseurl }}/images/win-logo-small.png" alt="Windows" class="guide_icon"> 
