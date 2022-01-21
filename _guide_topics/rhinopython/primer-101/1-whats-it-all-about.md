@@ -39,7 +39,7 @@ _SelLast
 _Rotate3D w0,0,0 w10,0,0 90
 -_Properties _Object _Name ProfilePolygon _Enter _Enter
 _SelNone
--_Sweep1 _SelName RailPolygon _SelName ProfilePolygon _Enter _Enter _Closed=Yes Enter
+-_Sweep1 -_SelName RailPolygon -_SelName ProfilePolygon _Enter _Enter Closed=Yes _Enter
 ```
 
 ![{{ site.baseurl }}/images/hexagonaltorus.svg]({{ site.baseurl }}/images/hexagonaltorus.svg){: .float-img-right width="325"}
