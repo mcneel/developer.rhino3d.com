@@ -2,10 +2,10 @@
 title: 'Deployment to Production Servers'
 description: Deploy Compute for Production
 authors: ['brian_gillespie', 'will_pearson']
-sdk: ['Compute']
+sdk: ['Hidden']
 languages: ['C#', 'VB']
 platforms: ['Windows']
-categories: ['Deployment']
+categories: ['Hidden']
 order: 1
 keywords: ['developer', 'compute', 'production']
 layout: toc-guide-page
