@@ -36,6 +36,10 @@ body {
     border-left-color: #ce4844;
 }
 
+.bs-callout-danger-fill {
+  background-color: #edbdbb;
+}
+
 .guide_byline {
     font-style: italic;
     font-size: 14px;
