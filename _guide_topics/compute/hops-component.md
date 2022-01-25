@@ -133,33 +133,9 @@ Right_click on the Hops component to select any number of options that control h
 
 ## Remote Machine Configuration
 
-By default Hops will use the local computer to solve Grasshopper functions. It is possible to setup remote computers for Hops to call.
+By default Hops will use your local computer to solve Grasshopper functions. However, it is possible to setup remote computers (ie. servers) or virtual machines for Hops to call.
 
-Remote machines must be running Windows and have Rhino installed on them.
-
-**Configuring a remote machine as a Hops node:**
-
-1. Install Rhino 7.5 or above on the remote computer.
-1. Make sure Rhino runs and is properly licensed.
-1. Get the very latest version of compute.geometry.exe. Either build it yourself or get build from our CI server at
-[https://ci.appveyor.com/project/mcneel/compute-rhino3d/branch/master/artifacts](https://ci.appveyor.com/project/mcneel/compute-rhino3d/branch/master/artifacts)
-1. Run compute.geometry.exe from an Administrator Command Line with an address parameter. For example
-'compute.geometry.exe -address http://192.168.1.6:6123'. 192.168.1.6 is your computer's address. The port can be any you want; but we tend to use values above 6000.
-1. Note the IP address of the remote machine.
-
-**To test the status of the remote machine:**
-
-1. On another computer, open a browser and enter `http://192.168.1.6:6123/healthcheck`. Use the IP and port numbers entered in the above steps.
-
-If you get the word "healthy" back, you are all set up.
-
-### Setting up Hops to communicate with the remote machine
-In the Grasshopper preferences > Solver > Hops - Compute Server URLs enter the IP and port of each remote computer.  For the above example enter:
-http://192.168.1.6:6123
-
-**Video Tutorial:**
-
-{% include vimeo_player.html id="537494700" %}
+In order to make API calls to a remote machine, please follow this [guide on setting up a production environment](../deploy-to-iis/).
 
 ## Calling a CPython Server
 
