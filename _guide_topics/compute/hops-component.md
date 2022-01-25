@@ -104,9 +104,10 @@ The second option (making a call to a local python server) is covered in more de
 
 The Hops settings control how Hops runs on an application level.  It is available through the Grasshopper File pulldown > Preferences.
 
-<img src="{{ site.baseurl }}/images/gh-hops-preferences.jpg">{: .img-center  width="60%"}
+<img src="{{ site.baseurl }}/images/gh-hops-preferences.png">{: .img-center  width="60%"}
 
 * **Hops-Compute server URL** - List the IP address or URL of any remote machines or Compute servers.
+* **API Key** - The API key is a string of text that is secret to your compute server and your applications that are using the compute API e.g. `b8f91f04-3782-4f1c-87ac-8682f865bf1b`. It is optional if you are testing locally, but should be used in a production environment. It is basically how the compute server ensures that the API calls are coming from your apps only. You can enter any string that is unique and secret to you and your compute apps. Make sure to keep this in a safe place.
 * **Max Concurrent requests** - Used to limit the number of active requests in asynchronous situations. This way hops doesn't make thousands of requests while the original request is being processed.
 * **Clear Hops Memory cache** - Clears all previously stored solutions from memory.
 * **Hide Rhino.Compute Console Window** - Hops will solve in the background, but showing the window can be helpful for troubleshooting.
