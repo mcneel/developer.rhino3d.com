@@ -10,6 +10,11 @@ order: 1
 keywords: ['developer', 'compute', 'production']
 layout: toc-guide-page
 ---
+<div class="bs-callout bs-callout-danger bs-callout-danger-fill" role="alert">
+This guide is now obsolete. Check out <a href="../deploy-to-iis"><b><u>this page</u></b></a> for the updated version.
+</div>
+
+
 
 How to deploy Compute to production server environment. To run Compute locally for development and testing, read [Running and Debugging Compute Locally](../development).
 
