@@ -86,7 +86,7 @@ print var2[1:5] # this will print the substring 'hinoP`
 Python can use a special syntax to format multiple strings and numbers. The string formatter is quickly covered here because it is seen often and it is important to recognize the syntax.  
 
 ```python
-print "The item {} is repeated {} times".format(element,count))
+print("The item {} is repeated {} times".format(element,count))
 ```
 
 The `{}` are placeholders that are substituted by the variables `element` and `count` in the final string. This compact syntax is meant to keep the code more readable and compact.
