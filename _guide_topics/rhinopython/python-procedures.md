@@ -90,13 +90,15 @@ The end of the function is marked by the loss of whitespace in the next line of 
 In the following example, the Celsius `def` calculates degrees Celsius from degrees Fahrenheit. When the def is called from the `ConvertTemp` def procedure, a variable containing the argument value is passed to the def.  The result of the calculation is returned to the calling procedure and displayed in a message box.
 
 ```python
+import rhinoscriptsyntax as rs
+
 def Celsius(fDegrees):
-    _Celsius = (fDegrees - 32) * 5 / 9
+    _Celsius = (float(fDegrees) - 32) * 5 / 9
     return _Celsius;
 
 # Use this code to call the Celsius function
-temp = raw_input("Please enter the temperature in degrees F.", 1)
-MsgBox "The temperature is " & Celsius(temp) & " degrees C."
+temp = raw_input("Please enter the temperature in degrees F.")
+rs.MessageBox("The temperature is " + str(Celsius(temp)) + " degrees C.")
 
 ```
 
@@ -105,7 +107,7 @@ MsgBox "The temperature is " & Celsius(temp) & " degrees C."
 Each piece of data is passed into your procedures using an argument.  Arguments serve as placeholders for the data you want to pass into your procedure.  You can name your arguments any valid variable name.  When you create a procedure parentheses must be included after the name of the procedure.  Any arguments are placed inside these parentheses, separated by spaces.  For example, in the following example, `fDegrees` is a placeholder for the value being passed into the Celsius function for conversion.
 
 ```python
-Function Celsius(fDegrees)
+def Celsius(fDegrees)
     _Celsius = (fDegrees - 32) * 5 / 9
     return _Celsius;
 ```
