@@ -23,7 +23,7 @@ color contains [Red, Green, Blue, Alpha]
 Use the `CreateColor()` function to create a new color structure:
 
 ```python
-import rhinoscriptsytnax as rs
+import rhinoscriptsyntax as rs
 
 color1 = rs.CreateColor(128, 128, 128) # Creates a medium grey color.
 ```
