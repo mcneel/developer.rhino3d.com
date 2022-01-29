@@ -72,8 +72,8 @@ To find the vector between two points, use vector subtraction:
 ```python
 import rhinoscriptsyntax as rs
 
-point1 = rs.CreateVector(1,2,3)
-point2 = rs.CreateVector(4,5,6)
+point1 = rs.CreatePoint(1,2,3)
+point2 = rs.CreatePoint(4,5,6)
 
 vec = point2 - point1
 
