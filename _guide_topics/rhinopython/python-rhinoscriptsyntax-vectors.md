@@ -57,8 +57,6 @@ To change the individual coordinate of a Vector3d, simply assign a new value to 
 ```python
 import rhinoscriptsyntax as rs
 
-point1 = [1,2,3]
-point2 = [4,6,7]
 vec = rs.CreateVector(1.0, 2.0, 3.0)
 
 vec[0] = 5.0 # Sets the X coordinate to 5.0
@@ -72,8 +70,10 @@ To find the vector between two points, use vector subtraction:
 ![{{ site.baseurl }}/images/image180.png]({{ site.baseurl }}/images/math-image180.png){:  .float-img-right  }
 
 ```python
-point1 = [1,2,3]
-point2 = [4,5,6]
+import rhinoscriptsyntax as rs
+
+point1 = rs.CreateVector(1,2,3)
+point2 = rs.CreateVector(4,5,6)
 
 vec = point2 - point1
 
@@ -88,10 +88,11 @@ Vectors can also be added to points to create new point locations.  Here is an e
 
 ```python
 #  A base point
-point1 = [1,1,1]
+point1 = rs.CreatePoint(1,1,1)
 
 # A vectore with a direction of 2 units in the X direction
-vector1 = [2,0,0]
+vector1 = rs.CreateVector(2,0,0)
+
 
 # Setting the coordinate of point1 to to units more in the X direction.
 point1 = point1 + vector1
