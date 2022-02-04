@@ -44,18 +44,23 @@ Robert McNeel & Associates
 
 Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"><span class="glyphicon glyphicon-download"></span></a> [math-samplesandtutorials.zip]({{ site.baseurl }}/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
 
-<a href="http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/"><span class="glyphicon glyphicon-download"></span></a> [Download Essential Mathematics for Computational Design as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/)
+<a href="https://www.rhino3d.com/download/rhino/6/essentialmathematics"><span class="glyphicon glyphicon-download"></span></a> [Download Essential Mathematics for Computational Design as a single PDF ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/)
 
 <a href="https://www.youtube.com/playlist?list=PLWIvZT_UEpWW6Kgq8mxOgliGBFHhrI4mK"><span class="glyphicon glyphicon-play"></span></a> [Watch the Essential Mathematics Videos... ](https://www.youtube.com/playlist?list=PLWIvZT_UEpWW6Kgq8mxOgliGBFHhrI4mK)
 
-While we are translating the new edition, the previous edition is available in four languages:
+The current 4th Edition is availabe in four languages:
+
+* [Essential Mathematics 4th Edition in German (Deutsch)](https://files.mcneel.com/rhino/6/docs/de/TheEssentialMathematics_4thEdition_de.zip)
+* [Essential Mathematics 4th Edition in French (Version français)](https://files.mcneel.com/rhino/6/docs/fr/TheEssentialMathematics_4thEdition_fr.zip)
+* [Essential Mathematics 4th Edition in Spanish (Español)](https://files.mcneel.com/rhino/6/docs/es/TheEssentialMathematics_4thEdition2019_es.zip)
+* [Essential Mathematics 4th Edition in Italian (Versione italiana)](https://files.mcneel.com/rhino/6/docs/it/TheEssentialMathematics_4thEdition_it.zip)
+
+The 2nd edition is available in four languages:
 
 * [Essential Mathematics 2nd Edition in Korean](http://download.rhino3d.com/Rhino/4.0/EssentialMathematics_Korean/)
-* [Essential Mathematics 2nd Edition（日本語](http://download.rhino3d.com/ja/Rhino/4.0/EssentialMathematicsSecondEdition)
+* [Essential Mathematics 2nd Edition in Japanese（日本語)](http://download.rhino3d.com/ja/Rhino/4.0/EssentialMathematicsSecondEdition)
 * [Essential Mathematic 2nd Edition in Traditional Chinese (繁體中文版)](http://download.mcneel.com/download.asp?id=EssentialMathematics_ChineseTraditional)
 * [Essential Mathematic 2nd Edition in Simplified Chinese(簡體中文版)](http://download.rhino3d.com/Rhino/4.0/EssentialMathematics_ChineseSimplified/)
-* [Versione italiana del tutorial Essential Mathematics, tradotta da Nando Varriale](http://www.rhino3d.com/download/rhino/5.0/EssentialMathematicsThirdEditionItalian/)
-* [Matemáticas Esenciales para diseño computacional](http://www.garciadelcastillo.es/?p=126) - Versión en Español del tutorial Essential Mathematics, traducido por Jose Luis y Fernando García del Castillo.
 
 ### Table of Contents  
 
