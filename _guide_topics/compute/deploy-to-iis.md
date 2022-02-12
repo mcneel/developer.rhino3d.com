@@ -47,9 +47,9 @@ The first step in the process of deploying **rhino.compute** for production is t
 
 Depending on your preferences, we recommend starting with an Azure or AWS VM. Use the following guides to walkthrough that process.
 
-* [Create a Virtual Machine on Azure](https://developer.rhino3d.com/guides/compute/creating-an-azure-vm).
+* [Create a Virtual Machine on Azure](../creating-an-Azure-VM).
 
-* [Create a Virtual Machine on AWS](https://developer.rhino3d.com/guides/compute/creating-an-aws-vm).
+* [Create a Virtual Machine on AWS](../creating-an-aws-vm).
 
 ### Connect via RDP
 
@@ -77,7 +77,7 @@ To start, let's download the RDP file. We'll use the Azure VM Portal but a simil
 
 1. A security pop-up will be opened. Click the checkbox for **Don't ask me again for connections to this computer** and then click **Connect**.
 
-1. Enter the administrator credentials that you entered in step 7 of [Creating a Virtual Machine](https://developer.rhino3d.com/guides/compute/deployToIIS/#setting-up-a-virtual-machine).
+1. Enter the administrator credentials that you entered in step 7 of [Creating a Virtual Machine](../deploy-to-iis/#setting-up-a-virtual-machine).
 
 1. You may see another security pop-up. Again, select **Don't ask me again for connections to this computer** and click **Yes**.
 
@@ -123,7 +123,7 @@ If you've succeeded in returning a numeric value larger than zero, then at least
 
 1. Add a **Hops** component to the **Grasshopper canvas** (Params/Util)
 
-1. Right-click on the **Hops** component and set the **Path** to a valid Hops/Grasshopper definition. To learn more about setting up a Grasshopper definition that will work properly with Hops, [follow this guide](https://developer.rhino3d.com/guides/grasshopper/hops-component/).
+1. Right-click on the **Hops** component and set the **Path** to a valid Hops/Grasshopper definition. To learn more about setting up a Grasshopper definition that will work properly with Hops, [follow this guide](../hops-component/).
 <img src="{{ site.baseurl }}/images/Hops_To_IIS_2.png">{: .img-center  width="50%"}
 
 Once the path is set, the Hops component will create the appropriate API request and sends it to the URL that we specified in step 6 (the rhino.compute server running on IIS). The compute server processes the request and sends a response back to Hops, which returns the result.
