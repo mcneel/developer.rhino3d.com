@@ -51,9 +51,9 @@ Download the <a href="{{ site.baseurl }}/files/math-samplesandtutorials.zip.zip"
 The current 4th Edition is availabe in four languages:
 
 * [Essential Mathematics 4th Edition in German (Deutsch)](https://files.mcneel.com/rhino/6/docs/de/TheEssentialMathematics_4thEdition_de.zip)
-* [Essential Mathematics 4th Edition in French (Version français)](https://files.mcneel.com/rhino/6/docs/fr/TheEssentialMathematics_4thEdition_fr.zip)
+* [Essential Mathematics 4th Edition in French (Français)](https://files.mcneel.com/rhino/6/docs/fr/TheEssentialMathematics_4thEdition_fr.zip)
 * [Essential Mathematics 4th Edition in Spanish (Español)](https://files.mcneel.com/rhino/6/docs/es/TheEssentialMathematics_4thEdition2019_es.zip)
-* [Essential Mathematics 4th Edition in Italian (Versione italiana)](https://files.mcneel.com/rhino/6/docs/it/TheEssentialMathematics_4thEdition_it.zip)
+* [Essential Mathematics 4th Edition in Italian (Italiano)](https://files.mcneel.com/rhino/6/docs/it/TheEssentialMathematics_4thEdition_it.zip)
 
 The 2nd edition is available in four languages:
 
