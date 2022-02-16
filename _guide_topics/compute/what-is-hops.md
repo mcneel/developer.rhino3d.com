@@ -1,5 +1,5 @@
 ---
-title: What is Hops?
+title: 
 description: This guide will help explain what Hops is all about and why you might want to use it.
 authors: ['andy_payne']
 sdk: []
@@ -11,8 +11,37 @@ order: 1
 keywords: ['developer', 'grasshopper', 'components']
 layout: toc-guide-page
 ---
+## What is Hops?
 
-In its most basic form, Hops is simply a client application for a rhino.compute server. I know, I've already lost you. But bear with me. Let's break that statement down a bit. 
+Have you ever stared at a large complex Grasshopper definition and marveled at the inscrutability of it all? Visual programming is notorious for its ability to quickly become an illegible, tangled, mess of code. In fact, this state of disogranization is often referred to as [Spaghetti Code](http://wiki.c2.com/?SpaghettiCode) or sometimes a [Big Ball of Mud](https://joeyoder.com/PDFs/mud.pdf) for obvious reasons. There are a number of factors which often contribute to the creation of spaghetti code including time constraints, the skill level of the programmer, or even project complexity - but after trying to decipher a big ball of Grasshopper spaghetti, there is but one universal truth:
+
+> <h3 style="color:black; line-height: 1.3; margin-top: -5px;">Spaghetti code can make the task of understanding what the code actually does impractical or even impossible.</h3>
+
+### Calling Functions in Grasshopper
+
+So how do we begin to untangle this problem that has become so commonplace among Grasshopper developers? We begin by breaking down our spaghetti code into smaller reusable **functions**. In programming, a function is a "self-contained" module of code that usually takes in data, processes it, and returns a result. That sounds a lot like a Grasshopper definition. For example, Grasshopper definitions typically have inputs parameters like sliders, boolean toggles, or text which are fed through the graph to perform a series of actions, ultimately producing a result at the end. So, the key is to learn how to analyze a problem and break it down into smaller sub-definitions which we will use as functions. 
+
+Say, for instance, that you needed to run a shadow analysis for a parametric tower you were designing for New York City. This problem could be broken down into four smaller tasks:
+1. Create the building lot outline
+1. Create the building envelope
+1. Create the floor plates
+1. Run the shadow analysis from the building enevlope and surrounding buildings
+
+Once the tasks have been clearly defined, you can determine what information will be needed to perform each task (i.e., the inputs) and what data will be returned at the end (i.e., the outputs). So, for step 1, the inputs needed to generate the building lot outline would include site setbacks and other regulatory parameters from the building and zoning codes. The output for this function would likely include a polyline outlining the maximum building area at the ground floor. 
+
+To define the parameters which will be used in a Grasshopper function, we should use the **Context Get** components for the inputs and the **Context Bake** component for all outputs. Each of these can be found under the *Params Tab > Util Group*.
+
+<img src="{{ site.baseurl }}/images/hops_context_getters.png">{: .img-center  width="92%"}
+
+Now that we have the inputs and outputs defined, all that is left is to fill in the steps to turn those inputs into outputs. Here is the interesting part. After a function has been fully defined as a Grasshopper definition - meaning it contains some inputs and outputs and performs a number of actions in between - we can simplify our project by calling that function through Hops. Hops takes that larger definition and bundles it into a single component, only exposing the inputs and outputs you defined inside your function. Unlike clusters, Hops lets you reference external files which can be saved locally or on a network drive - making it easy to share definitions among other team members and collaborators.
+
+<img src="{{ site.baseurl }}/images/hops_ref_defintion.png">{: .img-center  width="100%"}
+
+In summary, Hops enables you to dramatically increase the legibility of your code by simplifying complex definitions. In addition, it lets you share an reuse functions while eliminating duplicate component combinations which can be placed into a function. Hops also lets you solve functions in parallel, potentially speeding up large projects. And lastly, Hops lets you solve functions asynchronously without blocking Rhino and Grasshopper interactions.
+
+## How does it work?
+
+In its most basic form, Hops is simply a client application for a Rhino.Compute server. I know, I've already lost you. But bear with me. Let's break that statement down a bit. 
 
 ### What is a Client?
 
@@ -45,19 +74,3 @@ When all of the Hops inputs have been connected to source parameters, it will th
 To have a better understanding of how each step above works, you can export the last request/response for both the `/io` and `/solve` endpoints directly from the Hops component.
 
 <img src="{{ site.baseurl }}/images/hops_export_requests.png">{: .img-center  width="100%"}
-
-### Why would you want to use Hops?
-
-At this point you are probably wondering why you would want to use Hops when you can just solve a Grasshopper definition the old-fashioned way. Well, here are a few reasons you might consider.
-
-* **Hops allows you to simplify complex definitions** by breaking them down into smaller "functions" - each of which can be solved by rhino.compute. A function, in the traditional sense of the word, is simply a self-contained module of code that usually takes in data, processes it, and returns a result.
-
-    With Hops, you can break down large definitions into smaller groups of components which perform a specific function. If this function is used multiple times within a regular grasshopper definition, you can elimnate duplicate component combinations by referencing that function inside a Hops component and solving via Rhino.compute. Alternatively, if the function is commonly used among multiple projects, it can be shared and reused simply by referencing a file path.
-
-* **Hops allows you to solve definitions in parallel**, potentially speeding up large projects. Rhino.compute can spin up or down as many headless versions of Rhino as needed (the default is 4 instances). Let's say you have a Grasshopper file which generates any number of permutations based on a set of inputs. You would like to see as many different options as possible so that you make the correct choice. You can configure Hops and Rhino.Compute to solve these definitions concurrently - dramatically improving the design decision making process.
-
-* **Hops allows you to share Grasshopper definitions** with other team members and collaborators. Because Hops and Rhino.Compute are always connected via a network, they can access files on local network drives or on remote servers. This means that there can always be a single source of truth for a document. When this document is modified, all clients (ie. other Hops components who have referenced that file) are updated automatically.
-
-* **Hops allows you to run calculations asynchronously** without blocking Rhino and Grasshopper interactions. Have you ever had a very large definition which takes seconds or even minutes to finish solving? If so, you probably noticed that the Rhino and Grasshopper interface locks up until the results are returned. This happens because Grasshopper is single threaded, and the calculations are being run on the same thread as the graphical interface. 
-
-    Hops can be configured to run asynchronously. This means that it will send the request to the server with the long calculation that you intend to solve. However, the headless version of Rhino is running on a separate thread so it can continue working on the calculation without blocking the thread which controls the main Rhino and Grasshopper interface.
