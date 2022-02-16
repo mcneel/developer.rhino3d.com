@@ -98,13 +98,7 @@ Assuming that you are now logged into the virtual machine (using RDP), follow th
 
 ## Testing the app
 
-At this point, IIS should be configured to launch the rhino.compute instance when an API request is made. You can test this by opening a web browser on your local machine (not the VM) and typing in "http://" followed by the IP address of the virtual machine followed by a `:` and the port number (80) followed by "/activechildren". So, the full address would look something like this:
-            
-    http://52.168.38.105:80/activechildren
-
-The `/activechildren` endpoint will return an integer value for the number of child processes that were started by rhino.compute (the default is 4). 
-
-If you've succeeded in returning a numeric value larger than zero, then at least one child process has been started. Next, let's try getting Hops to send a definition to that URL.
+At this point, IIS should be configured to launch the rhino.compute instance when an API request is made. Let's try getting Hops to send a definition to our virtual machine's URL. 
 
 1. Launch **Rhino** on your local machine.
 
@@ -116,7 +110,9 @@ If you've succeeded in returning a numeric value larger than zero, then at least
 
 1. Click on the **Solver** tab in the left-hand menu. 
 
-1. In the **Hops - Compute server URLs** section, type in the web address from above (do not include the `/activechildren` endpoint). Your URL should look something like this.
+1. In the **Hops - Compute server URLs** section, type in the web address of your virtual machine. Start by typing in `http://` followed by the IP address of the virtual machine followed by a `:` and the port number `80`. So, the full address would look something like this:
+            
+        http://52.168.38.105:80/
 
 1. In the **API Key** section, enter the API Key that you saved in the [Prerequisites](../deploy-to-iis/#prerequisites) section.
 <img src="{{ site.baseurl }}/images/Hops_To_IIS_4.png">{: .img-center  width="80%"}

@@ -8,7 +8,7 @@ platforms: ['Windows', 'Mac']
 categories: ['Hops']
 origin:
 order: 1
-keywords: ['developer', 'grasshopper', 'components']
+keywords: ['developer', 'grasshopper', 'components', 'hops']
 layout: toc-guide-page
 redirect_from: "/guides/grasshopper/hops-component/"
 ---
