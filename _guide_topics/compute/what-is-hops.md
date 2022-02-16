@@ -8,14 +8,14 @@ platforms: ['Windows', 'Mac']
 categories: []
 origin:
 order: 1
-keywords: ['developer', 'grasshopper', 'components']
+keywords: ['developer', 'grasshopper', 'components', 'hops']
 layout: toc-guide-page
 ---
 ## What is Hops?
 
 Have you ever stared at a large complex Grasshopper definition and marveled at the inscrutability of it all? Visual programming is notorious for its ability to quickly become an illegible, tangled, mess of code. In fact, this state of disogranization is often referred to as [Spaghetti Code](http://wiki.c2.com/?SpaghettiCode) or sometimes a [Big Ball of Mud](https://joeyoder.com/PDFs/mud.pdf) for obvious reasons. There are a number of factors which often contribute to the creation of spaghetti code including time constraints, the skill level of the programmer, or even project complexity - but after trying to decipher a big ball of Grasshopper spaghetti, there is but one universal truth:
 
-> <h3 style="color:black; line-height: 1.3; margin-top: -5px;">Spaghetti code can make the task of understanding what the code actually does impractical or even impossible.</h3>
+> <h3 style="color:black; line-height: 1.3; margin-top: -4px;">Spaghetti code can make the task of understanding what the code actually does impractical or even impossible.</h3>
 
 ### Calling Functions in Grasshopper
 
