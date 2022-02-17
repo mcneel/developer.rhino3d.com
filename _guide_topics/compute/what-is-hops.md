@@ -12,7 +12,7 @@ keywords: ['developer', 'grasshopper', 'components', 'hops']
 layout: toc-guide-page
 ---
 
-Grasshopper definitions can be big, complicated, and repetitive. This state of disorganization is called sometimes called [Spaghetti Code](http://wiki.c2.com/?SpaghettiCode). Many factors contribute to spaghetti code: time constraints, programmer skill level, project complexity, and limitations in the programming language. After trying to decipher a big ball of Grasshopper spaghetti, there is one universal truth:
+Grasshopper definitions can be big, complicated, and repetitive. This state of disorganization is called [Spaghetti Code](https://www.pcmag.com/encyclopedia/term/spaghetti-code). Many factors contribute to spaghetti code: time constraints, programmer skill level, project complexity, and limitations in the programming language. After trying to decipher a big ball of Grasshopper spaghetti, there is one universal truth:
 
 > <h4 style="color:black; line-height: 1.3; margin-top: -4px;">Spaghetti code is hard to read and understand!</h4>
 
