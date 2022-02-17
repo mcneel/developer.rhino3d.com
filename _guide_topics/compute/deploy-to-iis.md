@@ -126,3 +126,11 @@ Once the path is set, the Hops component will create the appropriate API request
 <img src="{{ site.baseurl }}/images/Hops_To_IIS_3.png">{: .img-center  width="70%"}
 
 Congratulations! You have successfully setup an instance of rhino.compute running behind IIS on a virtual machine. 
+
+ ---
+ 
+## Quick Links
+
+ - [What is Hops](../what-is-hops)
+ - [How Hops Works](../how-hops-works)
+ - [The Hops Component](../hops-component)
