@@ -44,7 +44,7 @@ Hops lets you  increase the legibility of your code by simplifying complex defin
 
 Behind the scenes, the Hops client passes the Grasshopper definition you specify to a headless instance of Rhino and Grasshopper server.  
 
-### The Hops Client?
+### The Hops Client
 
 A client is a hardware device (i.e., computer) or software application which makes a request for a digital resource from a server over a network connection. 
 
@@ -54,7 +54,7 @@ The Hops component is the client. It can be found under the *Params Tab > Util G
 Once you specify the definition, the component updates to show the inputs and outputs defined in the definition.
 <img src="{{ site.baseurl }}/images/hops_io.png">{: .img-center  width="30%"} 
 
-### The Rhino Server?
+### The Rhino Server
 
 A server serves data to its clients over a network connection. 
 
