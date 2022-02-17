@@ -12,7 +12,7 @@ keywords: ['developer', 'grasshopper', 'components', 'hops']
 layout: toc-guide-page
 ---
 
-The communication process between Hops and the Rhino.Compute server is a little more nuanced than simply sending and receiving a single http request and response. The first step in the process occurs when Hops bundles up the referenced Grasshopper definition and sends a http request to an endpoint on the server. 
+The communication process between Hops and a Hops compliant server is a little more nuanced than simply sending and receiving a single http request and response. The first step in the process occurs when Hops bundles up the referenced Grasshopper definition and sends a http request to an endpoint on the server. 
 
 An endpoint is a URL address where the server can be reached to perform a certain function. In this request, the server opens the Grasshopper definition sent from Hops and determines what information will be needed to populate the inputs and outputs for the Hops component. So, the endpoint will be called `/io` (short for Input Output).
 
