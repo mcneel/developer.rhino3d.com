@@ -12,7 +12,7 @@ keywords: ['python', 'commands', 'grasshopper']
 layout: toc-guide-page
 ---
 
-The GhPython component acts as a Python interpreter in Grasshopper.  Along with its access to IronPython 2.7, the GhPython component can also access the-easy-to-use RhinoScritSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon, which also can be imported into the GhPython component. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon).
+The GhPython component acts as a Python interpreter in Grasshopper.  Along with its access to IronPython 2.7, the GhPython component can also access the-easy-to-use RhinoScriptSyntax. For more direct access to Rhino functions, more experienced programmers may choose to use the RhinoCommon, which also can be imported into the GhPython component. There is extensive documentation about [RhinoScriptSyntax and Python](http://developer.rhino3d.com/guides/rhinopython/) on the Developer site. For more details about RhinoCommon, please refer to the [McNeel RhinoCommon Developer site](http://developer.rhino3d.com/guides/rhinocommon).
 
 ## Component Details
 
