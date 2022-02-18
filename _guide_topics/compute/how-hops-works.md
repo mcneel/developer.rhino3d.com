@@ -2,12 +2,12 @@
 title: How Hops Works
 description: 
 authors: ['andy_payne']
-sdk: []
+sdk: ['Compute']
 languages: ['Grasshopper']
 platforms: ['Windows', 'Mac']
-categories: []
+categories: ['Hops']
 origin:
-order: 1
+order: 2
 keywords: ['developer', 'grasshopper', 'components', 'hops']
 layout: toc-guide-page
 ---

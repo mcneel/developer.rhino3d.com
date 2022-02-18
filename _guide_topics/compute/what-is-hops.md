@@ -2,10 +2,10 @@
 title: What is Hops
 description: This guide will help explain what Hops is all about and why you might want to use it.
 authors: ['andy_payne']
-sdk: []
+sdk: ['Compute']
 languages: ['Grasshopper']
 platforms: ['Windows', 'Mac']
-categories: []
+categories: ['Hops']
 origin:
 order: 1
 keywords: ['developer', 'grasshopper', 'components', 'hops']
