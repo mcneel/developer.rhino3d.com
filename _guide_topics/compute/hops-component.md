@@ -1,5 +1,5 @@
 ---
-title: Hops Component
+title: The Hops Component
 description: Hops adds functions to Grasshopper.
 authors: ['steve_baer', 'scott_davidson', 'andy_payne']
 sdk: ['Compute']
@@ -18,7 +18,7 @@ redirect_from: "/guides/grasshopper/hops-component/"
 
 <img src="{{ site.baseurl }}/images/hops-overview.png">{: .img-center  width="100%"}
 
-Hops is a component for Grasshopper in Rhino 7 for Windows. Hops adds external *functions* to Grasshopper. Like other programming languages, functions let you:
+Hops is a component for Grasshopper in Rhino 7 and Rhino 8 WIP for Windows. Hops adds external **functions** to Grasshopper. Like other programming languages, functions let you:
 
 * Simplify complex algorithms by using the same function multiple times.
 * Eliminate duplicate component combinations by placing common combinations in a function.
@@ -47,21 +47,21 @@ There are a few ways to install hops on your machine.
 
 Hops functions are Grasshopper documents with special inputs and outputs.
 
-<img src="{{ site.baseurl }}/images/hops-function-3.png">{: .img-center  width="100%"}
+<img src="{{ site.baseurl }}/images/hops_simple_function.png">{: .img-center  width="100%"}
 
 #### Defining Inputs
 
 Hops inputs are created using the **Get Components**. The available Get components in Grasshopper are found under *Params Tab > Util Group*:
 
-<img src="{{ site.baseurl }}/images/hops-get-components.png">{: .img-center  width="60%"}
+<img src="{{ site.baseurl }}/images/hops_context_getters1.png">{: .img-center  width="65%"}
 
-The name of the component is used for the name of the Hops input parameter. So, in the example above, we have three Get components with names A, B, and C. Each of these Get components become input parameters when Hops compiles the definition.
+The name of the component is used for the name of the Hops input parameter. So, in the example above, we have three Get Number components with names A, B, and C. Each of these Get components become input parameters when Hops compiles the definition.
 
-<img src="{{ site.baseurl }}/images/hops_inputs-2.png">{: .img-center  width="80%"}
+<img src="{{ site.baseurl }}/images/hops_getter_inputs.png">{: .img-center  width="80%"}
 
 Each Get component has a context menu (right-click) with various settings.
 
-<img src="{{ site.baseurl }}/images/gh-hops-get-component-menu.png">{: .img-center  width="55%"}
+<img src="{{ site.baseurl }}/images/gh-hops-get-component-menu.png">{: .img-center  width="50%"}
 
 * **Component Name** - This is the name that will be assigned to the input of the Hops component.
 * **Prompt** - This input will be the tooltip that is displayed when you hover over this parameter on the Hops component.
@@ -73,9 +73,9 @@ Each Get component has a context menu (right-click) with various settings.
 
 #### Defining Outputs
 
-Hops outputs are geometry or primitive params in a group named: “RH_OUT:[name]”, where [name] is the name of the output parameter. In this case, the name of the output is “o”.
+Hops outputs can be defined using the **Context Bake** or **Context Print** components. The name of the input parameter on either of the Context components will be used as the name of the output parameter when Hops gets computed.
 
-<img src="{{ site.baseurl }}/images/hops_output.png">{: .img-center  width="80%"}
+<img src="{{ site.baseurl }}/images/hops_getter_outputs.png">{: .img-center  width="67%"}
 
 ### Use the Hops component
 
@@ -85,7 +85,7 @@ Hops outputs are geometry or primitive params in a group named: “RH_OUT:[name]
 1. The component will show the inputs and outputs.
 1. Use the new component like any other Grasshopper component.
 
-<img src="{{ site.baseurl }}/images/gh-hops-path.png">{: .img-center  width="100%"}
+<img src="{{ site.baseurl }}/images/hops_multiplyadd.png">{: .img-center  width="80%"}
 
 ### A note about Hops for macOS users
 
