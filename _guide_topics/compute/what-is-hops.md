@@ -38,7 +38,7 @@ Now that we have the inputs and outputs defined, all that is left is to fill in 
 
 <img src="{{ site.baseurl }}/images/hops_ref_defintion.png">{: .img-center  width="100%"}
 
-Hops lets you  increase the legibility of your code by simplifying complex definitions, reducing duplication, and sharing and reusing functions Hops lets you solve functions in parallel, potentially speeding up large projects. And Hops lets you solve functions asynchronously, without blocking Rhino and Grasshopper interactions.
+Hops lets you  increase the legibility of your code by simplifying complex definitions, reducing duplication, and sharing and reusing functions. Hops lets you solve functions in parallel, potentially speeding up large projects. It also lets you solve functions asynchronously, without blocking Rhino and Grasshopper interactions.
 
 ## How it works?
 
