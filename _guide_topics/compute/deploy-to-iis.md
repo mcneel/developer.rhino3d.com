@@ -127,6 +127,66 @@ Once the path is set, the Hops component will create the appropriate API request
 
 Congratulations! You have successfully setup an instance of rhino.compute running behind IIS on a virtual machine. 
 
+## Modifying Compute Parameters After Deployment
+
+There are a number of command line arguments that can be used to modify how rhino.compute behaves. This section covers how to change those parameters after rhino.compute has been deployed.
+
+1. Log into your VM (via RDP). See the section, [Connect via RDP](#connect-via-rdp) for more details.
+
+1. On the **Start** menu, click in the search area and type *Internet Information Services (IIS) Manager*. Click to launch the app.
+
+1. In the IIS Manager, **click** on the web server node in the **Connections** panel on the left. Note, this web server name should be the same name you used when setting up the name of your virtual machine. 
+
+1. In the **Actions** pane on the right, click **Stop** to stop the web server.
+<img src="{{ site.baseurl }}/images/iis_manager.png">{: .img-center  width="100%"}
+
+Now that the IIS web server has been stopped, we need to go and modify the **web.config* file for rhino.compute. The [web.config](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/web-config?view=aspnetcore-6.0) file is a file that is read by IIS and the ASP.NET Core module to configure an which is hosted by IIS. 
+
+1. Open a **File Explorer** window and navigate to *C:\inetpub\wwwroot\aspnet_client\system_web\4_0_30319\rhino.compute*. At the end of this directory, you should see a file labled **web.config**. Note, you may need to click on the **View** tab and click the checkbox to turn on **file name extensions**. Open the web.config file with **Notepad** or any other text editor you prefer.
+
+The full web.config file should look like this:
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified"/>
+    </handlers>
+    <aspNetCore processPath=".\rhino.compute.exe" arguments="--port 80" stdoutLogEnabled="true" stdoutLogFile="..\..\..\..\..\logs\LogFiles\W3SVC1\" forwardWindowsAuthToken="true" hostingModel="InProcess"/>
+  </system.webServer>
+</configuration>
+```
+The line we are most interested in modifying is the one which starts with the **`<aspNetCore>`** tag. You can see the second parameter on this line is called **`arguments`**. This is the section that you would edit to add other command line arguments to modify rhino.compute. 
+
+Below is a description of each command line argument which can be modified.
+
+- **port** - This is the port number to run rhino.compute on. Port number 80 is typically reserved for HTTP communication, while port number 443 is used for the HTTPS protocol. We have setup rhino.compute to be bound to port 80 in the bootstrap script, so do not modify this value unless you know what you are doing. Example usage: `--port 80`.
+
+- **childcount** - This parameter controls the number of child compute.geometry processes to manage. The *default value is 4* which means that rhino.compute will spawn four child processes each of which can handle incoming requests. Example usage: `--childcount 8` would tell rhino.compute to launch eight child processes.
+
+- **childof** - This is the process handle of parent process. Compute watches for the existence 
+of this handle and will shut down when this process has exited. Since we are relying on IIS starting and stopping rhino.compute, you do not need this parameter when running in a production environment.
+
+- **spawn-on-startup** - This flag determines whether to launch a child compute.geometry process when rhino.compute gets started. The *default value is false*. This parameter is a flag which means that if it is not included in the argument list, the value will be false. If you include this parameter, then its value will be true. For production environments, this value should remain false.
+
+- **idlespan** - This is the number of seconds that a child compute.geometry processes should remain open between requests. The *default value is 1 hour*. When rhino.compute.exe does not receive requests to solve over a period of `idlespan` seconds, child compute.geometry.exe processes will shut down and stop incurring core hour billing. At some date in the future when a new request is received, the child processes will be relaunched which will cause a small delay on requests while the child processes are launching. Example usage: `--idlespan 1800` would tell rhino.compute to shutdown the child processes after 30 minutes (30 mins x 60 secs = 1800).
+
+    If you change the `idelspan` value in the command line arguments for rhino.compute, you will also need to make a modification to the IIS configuration. This is because IIS also contains a setting to shut down rhino.compute if no new requests are received after a period of time. When rhino.compute gets shutdown, it will in turn shutdown any child processes. 
+
+    For example, lets say you change the `idlespan` value to 7,200 (2 hours). The bootstrap script sets the IIS `IdleTimeout` value to 65 minutes (slightly longer than the default `idlespan` value). After 65 minutes, IIS would shutdown rhino.compute, which would then shutdown all of its child processes much earlier than the expected 2 hour time limit. So, if you change the `idlespan` value, it is recommended that you also change the `IdleTimeout` value in the IIS settings.
+
+    1. To do this, go back to the IIS Manager and click on the **Application Pools** item in the **Connections** pane on the left. 
+    
+    1. In the center window click on the **RhinoComputeAppPool**.
+
+    1. In the **Actions** pane on the right, click **Advanced Settings**.
+
+    1. Find the **Idle Time-out** row under the **Process Model** section and change the time out value to be slightly longer than the `idlespan` value you set in the command line arguments. Note: the `idlespan` value is in seconds while the `Idle Timeout` value is in minutes.
+    <img src="{{ site.baseurl }}/images/iis_idletimout.png">{: .img-center  width="60%"}
+
+Once you have modified web.config file, **save** it and close the file. You can then go back to the IIS Manager and **Start** the web server by clicking on the web server node in the **Connections** panel on the left and clicking **Start** in the **Actions** pane on the right.
+
  ---
  
 ## Quick Links
