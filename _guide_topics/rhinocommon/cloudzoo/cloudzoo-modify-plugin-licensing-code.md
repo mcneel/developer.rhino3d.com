@@ -25,6 +25,7 @@ To support Cloud Zoo in your plugin, the following must be done in your plugin's
 
 1. Implement `OnLeaseChangedDelegate` method.
 2. Call `GetLicense` within your plugin.
+3. [Digitally sign your plugin]({{ site.baseurl }}/guides/rhinocommon/digitally-signing-plugins-for-zoo).
 
 
 ## Implement OnLeaseChangedDelegate
