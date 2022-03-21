@@ -65,11 +65,19 @@ Hops optionally lets you point to a Rhino.Compute server running on another comp
 
 To create a function that can be referenced by Hops, we need to break our definition into three distinct sections; one to define our input parameters, another to specify the outputs, and finally a section which performs the *actions* of the function. 
 
-In this example we want to create a simple function that will take in a user's name as an input (i.e., David) and return a message such as *"Hello David!"*. 
+In this example we want to create a simple function that will take in a user's name as an input (i.e., David) and return a message such as *"Hello David!"*.
+
+### Install Hops
+
+Before we begin, let's start by making sure Hops is installed properly. There are a few ways to install hops on your machine.
+  1. [Install Hops](rhino://package/search?name=hops) (This will launch Rhino)
+  1. Or, type `PackageManager` on the Rhino command line.
+      1. Then, search for “Hops”
+      1. Select Hops and then Install
 
 ### Create an Input
 
-Let's start by defining an input text parameter. Under the *Params Tab > Util Group* you will see a collection of Context Getter components. Place a **Get String** component onto your canvas. Right-click on the middle of this component and change the name from *"Get String"* to *"Name"*. This value is what Hops will use as the input parameter name.
+Now that we have Hops installed, let's start defining our function by creating an input text parameter. Under the *Params Tab > Util Group* you will see a collection of Context Getter components. Place a **Get String** component onto your canvas. Right-click on the middle of this component and change the name from `Get String` to `Name`. This value is what Hops will use as for the input parameter name.
 <img src="{{ site.baseurl }}/images/hops_getting_started_01.png">{: .img-center  width="100%"}
 
 You can assign a default value to this parameter by connecting a string to the input of the Get String component. Add a **Text Panel** to the canvas. This can be found under the *Params Tab > Input Group*. Double-click on the Text Panel and write your name in the input.
@@ -79,22 +87,22 @@ You can assign a default value to this parameter by connecting a string to the i
 
 Now that we have created an input parameter, we need to perform some sort of action using that value. Let's create a message using the name you just passed into the Get String component. Add a **Concatenate Component** onto the canvas. This can be found under the *Sets Tab > Text Group*. 
 
-The Concatenate component will add a series of text snippets into a single message. In our case, we want to create a string that reads "Hello *Your Name Here*!". 
+The Concatenate component will add a series of text snippets into a single message. In our case, we want to create a string that reads `Hello Your Name Here!`. 
 
 The Concatenate component is a special type of component in Grasshopper which uses a Zoomable User Interface (ZUI for short). If you zoom in on the component (using the middle scroll wheel), a small (+) button will appear on the left side of the component. Click on the (+) under the second parameter (B) to add a third input parameter.
 
-Now, zoom out and add another Text Panel onto the canvas. Double-click on it to enter some text. Type *Hello * into the panel (Note: there is an extra space added after the word). Connect that panel into the A-input of the Concatenate component.
+Now, zoom out and add another Text Panel onto the canvas. Double-click on it to enter some text. Type `Hello ` into the panel (Note: there is an extra space added after the word). Connect that panel into the A-input of the Concatenate component.
 
-Next, connect the output of the Get String component to the B-input of the Concatenate component. Finally, add another text panel onto your canvas and type an exclamation mark (!) into the panel. Connect the output of that text panel into the C-input of the Concatenate component.
+Next, connect the output of the Get String component to the B-input of the Concatenate component. Finally, add another text panel onto your canvas and type an exclamation mark `!` into the panel. Connect the output of that text panel into the C-input of the Concatenate component.
 
 Connect a Text Panel to the output of the Concatenate component to view this message. Your definition should look like this.
 <img src="{{ site.baseurl }}/images/hops_getting_started_03.png">{: .img-center  width="100%"}
 
-### Create the Output
+### Create an Output
 
 The last step in creating our Hops function would be to create an output parameter to return the string we just created. Go to the *Param Tab > Util Group* and add a **Context Print** component to your canvas.
 
-Right-click on the input parameter (labeled Tx) and change the name to *"Message"*. You can name this anything you like, but this value is what Hops will use for the output parameter.
+Right-click on the input parameter (labeled Tx) and change the name to `Message`. You can name this anything you like, but this value is what Hops will use for the output parameter.
 
 Now save your file to some directory on your computer. Call the file **Hello_World.gh**.
 <img src="{{ site.baseurl }}/images/hops_getting_started_04.png">{: .img-center  width="100%"}
@@ -105,7 +113,7 @@ We've now created a Hops compatible function. Let's use Hops to call that functi
 
 Go to the *Param Tab > Util Group* and add a **Hops** component to your canvas. Right-click on this component and select the **Path** menu item. In the pop-up dialog, select the **Hello_World.gh** file we just created. Select **OK** when the path has been selected.
 
-At this point, the Hops component should change appearance - adding one input called *Name* and one output called *Message*. Hops essentially bundled up the Hello_World.gh example we created and sent it to a local rhino.compute server to perform the calculation and return the result.
+At this point, the Hops component should change appearance - adding one input called `Name` and one output called `Message`. Hops essentially bundled up the Hello_World.gh example we created and sent it to a local rhino.compute server to perform the calculation and return the result.
 
 Try adding a new **Text Panel** onto the canvas and connect it to the Name-input of the Hops component. Double-click to change the name in the Text panel. Add another Text Panel to the output of the Hops component to see the result that is return from the rhino.compute server.
 <img src="{{ site.baseurl }}/images/hops_getting_started_05.png">{: .img-center  width="100%"}
