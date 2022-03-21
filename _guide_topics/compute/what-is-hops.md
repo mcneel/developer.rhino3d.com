@@ -14,7 +14,7 @@ layout: toc-guide-page
 
 Hops lets you simplify large complex definitions. Grasshopper definitions can be big, complicated, and repetitive. This state of disorganization is sometimes called [Spaghetti Code](https://www.pcmag.com/encyclopedia/term/spaghetti-code). Many factors contribute to spaghetti code including: time constraints, programmer skill level, project complexity, and limitations in the programming language. After trying to decipher a big ball of Grasshopper spaghetti, there is one universal truth - spaghetti code is hard to read and understand. **Now, you can use Hops to simplify hard to read spaghetti code.**
 
-<img src="{{ site.baseurl }}/images/hops_ref_defintion2.png">{: .img-center  width="100%"}
+<img src="{{ site.baseurl }}/images/hops_spaghetti_code_1.png">{: .img-center  width="100%"}
 
 ### Calling Functions in Grasshopper
 
