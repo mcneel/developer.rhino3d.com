@@ -1,5 +1,5 @@
 ---
-title: 
+title: What is Rhino.Compute?
 description: This guide will help explain what Rhino.Compute is all about.
 authors: ['andy_payne']
 sdk: []
