@@ -37,7 +37,7 @@ The body of a variable or procedure name should use mixed case and be as descrip
 
 For frequently used or long terms, standard abbreviations are recommended to help keep name length reasonable.  In general, variable names greater than 32 characters can be difficult to read.  When using abbreviations, make sure they are consistent throughout the entire script.  For example, randomly switching between `Cnt` and `Count` within a script may lead to confusion.
 
-Best practices for Python naming can be found in the (Style Guide for Python Naming Conventions)[https://www.python.org/dev/peps/pep-0008/#naming-conventions]
+Best practices for Python naming can be found in the [Style Guide for Python Naming Conventions](https://www.python.org/dev/peps/pep-0008/#naming-conventions)
 
 ## Comments in Python
 
