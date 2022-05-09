@@ -84,29 +84,33 @@ Now that you have Tool Palette Collection *plist*, you need to add it to your pl
 1. In order to load the tool palette, you must reference *RhinoMac.dll* and *Rhino.UI.dll*.  In *Visual Studio for Mac*, right-click on the project entry in the *Solution Explorer* and select *Tools* > *Edit File*.  This opens up the *csproj* file for your project as xml text in the code editor.
 1. Find the area of the xml near where *RhinoCommon* is being referenced and add the following entries:
 
-        <Reference Include="Rhino.UI">
-          <HintPath>\Applications\Rhinoceros.app\Contents\Frameworks\RhCore.framework\Versions\Current\Resources\Rhino.UI.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="RhinoMac">
-          <HintPath>\Applications\Rhinoceros.app\Contents\Frameworks\RhCore.framework\Versions\Current\Resources\RhinoMac.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
+```
+<Reference Include="Rhino.UI">
+  <HintPath>\Applications\Rhinoceros.app\Contents\Frameworks\RhCore.framework\Versions\Current\Resources\Rhino.UI.dll</HintPath>
+  <Private>False</Private>
+</Reference>
+<Reference Include="RhinoMac">
+  <HintPath>\Applications\Rhinoceros.app\Contents\Frameworks\RhCore.framework\Versions\Current\Resources\RhinoMac.dll</HintPath>
+  <Private>False</Private>
+</Reference>
+```
 1. Close the *csproj* that is open in the code editor.  Visual Studio for Mac reloads the project.  If you check in the *References* section of your project in the *Solution Explorer*, you should see references to *RhinoMac* and *Rhino.UI*.
 1. In your `Plugin` class, if you have not done so already, override the `OnLoad` method.
 1. Load your tool palette plist from your desired location by calling the `RhinoMac.Runtime.MacPlatformService.LoadToolPaletteCollection` and passing in the full path to your *plist*.  For example, if your *plist* is in the *Resources* folder of your *rhp*, use the following example:
 
-        protected override Rhino.PlugIns.LoadReturnCode OnLoad (ref string errorMessage)
-        {
-          var pluginPath = System.IO.Path.GetDirectoryName(Assembly.Location);
-          var resourcesPath = System.IO.Path.Combine (pluginPath, "Resources");
-          var plistPath = System.IO.Path.Combine (resourcesPath, "ToolPalette.plist");
-          bool didLoad = RhinoMac.Runtime.MacPlatformService.LoadToolPaletteCollection (plistPath);
-          if (!didLoad)
-            System.Diagnostics.Debug.WriteLine("WARNING: Failed to load tool palette.");
+```cs
+protected override Rhino.PlugIns.LoadReturnCode OnLoad (ref string errorMessage)
+{
+  var pluginPath = System.IO.Path.GetDirectoryName(Assembly.Location);
+  var resourcesPath = System.IO.Path.Combine (pluginPath, "Resources");
+  var plistPath = System.IO.Path.Combine (resourcesPath, "ToolPalette.plist");
+  bool didLoad = RhinoMac.Runtime.MacPlatformService.LoadToolPaletteCollection (plistPath);
+  if (!didLoad)
+    System.Diagnostics.Debug.WriteLine("WARNING: Failed to load tool palette.");
 
-          return base.OnLoad (ref errorMessage);
-        }
+  return base.OnLoad (ref errorMessage);
+}
+```
 
 Your tool palette collection will be loaded and displayed when Rhino loads your plugin.
 

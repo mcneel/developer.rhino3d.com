@@ -43,78 +43,84 @@ To create a Skin Plugin:
 1. These two methods must return the same *UUID*.  This is a critical step as it identifies the main plugin that Rhino will load to manage its menus and extend the Rhino command set.
 1. Add the following overrides to the header file of your `CRhinoPlugIn`-derived class:
 
-        // Skin DLL menu update handler
-        void OnInitPlugInMenuPopups(WPARAM wparam, LPARAM lparam);
-        // Skin DLL menu command handler
-        BOOL OnPlugInMenuCommand(WPARAM wparam );
-        // Change to CRhinoPlugIn::load_plugin_at_startup
-        plugin_load_time PlugInLoadTime();
+```cpp
+// Skin DLL menu update handler
+void OnInitPlugInMenuPopups(WPARAM wparam, LPARAM lparam);
+// Skin DLL menu command handler
+BOOL OnPlugInMenuCommand(WPARAM wparam );
+// Change to CRhinoPlugIn::load_plugin_at_startup
+plugin_load_time PlugInLoadTime();
+```
 1. Add the following definition to the *.cpp* file of your `CRhinoPlugIn`-derived class:
 
-        CRhinoPlugIn::plugin_load_time CSkinPlugInSamplePlugIn::PlugInLoadTime()
-        {
-          // Override to change load time to "at startup"
-          return CRhinoPlugIn::load_plugin_at_startup;
-        }
+```cpp
+CRhinoPlugIn::plugin_load_time CSkinPlugInSamplePlugIn::PlugInLoadTime()
+{
+  // Override to change load time to "at startup"
+  return CRhinoPlugIn::load_plugin_at_startup;
+}
+```
 1. If your Skin DLL is providing a custom menu, then add a source file named *MenuHandler.cpp* to the plugin project and put the definition of `CRhinoPlugIn::OnInitPlugInMenuPopups()` and `CRhinoPlugIn::OnPlugInMenuCommand()` in this file.
 1. Include the Skin DLL's *Resource.h* file in *MenuHandler.cpp* to provide access to the Skin DLL's menu resource identifiers.  For example:
 
-        #include "stdafx.h"
-        #include "MySkinPlugIn.h"
-        #include "../MySkinDLL/Resource.h"
+```cpp
+#include "stdafx.h"
+#include "MySkinPlugIn.h"
+#include "../MySkinDLL/Resource.h"
 
-        // Put these to overrides in a separate CPP file so they could
-        // include the MySkinDLL/Resource.h file without conflicting
-        // with this projects resource.h
+// Put these to overrides in a separate CPP file so they could
+// include the MySkinDLL/Resource.h file without conflicting
+// with this projects resource.h
 
-        void CSkinPlugInSamplePlugIn::OnInitPlugInMenuPopups(WPARAM wParam, LPARAM lParam)
-        {
-          HMENU hMenu = (HMENU)wParam;
-          if( NULL == hMenu )
-            return;
+void CSkinPlugInSamplePlugIn::OnInitPlugInMenuPopups(WPARAM wParam, LPARAM lParam)
+{
+  HMENU hMenu = (HMENU)wParam;
+  if( NULL == hMenu )
+    return;
 
-          switch( GetMenuItemID(hMenu, LOWORD(lParam)) )
-          {
-            case IDM_SAMPLE_DISABLE:
-              ::EnableMenuItem( hMenu, IDM_SAMPLE_DISABLE, MF_BYCOMMAND|MF_DISABLED|MF_GRAYED );
-              break;
-            case IDM_SAMPLE_SUB_DISABLE:
-              ::EnableMenuItem( hMenu, IDM_SAMPLE_SUB_DISABLE, MF_BYCOMMAND|MF_DISABLED|MF_GRAYED );
-              break;
-            // TODO...
-          }
-        }
+  switch( GetMenuItemID(hMenu, LOWORD(lParam)) )
+  {
+    case IDM_SAMPLE_DISABLE:
+      ::EnableMenuItem( hMenu, IDM_SAMPLE_DISABLE, MF_BYCOMMAND|MF_DISABLED|MF_GRAYED );
+      break;
+    case IDM_SAMPLE_SUB_DISABLE:
+      ::EnableMenuItem( hMenu, IDM_SAMPLE_SUB_DISABLE, MF_BYCOMMAND|MF_DISABLED|MF_GRAYED );
+      break;
+    // TODO...
+  }
+}
 
-        BOOL CSkinPlugInSamplePlugIn::OnPlugInMenuCommand(WPARAM wParam)
-        {
-          ON_wString w;
-          switch( (UINT)wParam )
-          {
-            case IDM_SAMPLE_ONE:
-              w = L"Test Item One";
-              break;
-            case IDM_SAMPLE_TWO:
-              w = L"Two";
-              break;
-            case IDM_SAMPLE_DISABLE:
-              w = L"Disabled";
-              break;
-            case IDM_SAMPLE_SUB_A:
-              w = L"Sub Menu A";
-              break;
-            case IDM_SAMPLE_SUB_B:
-              w = L"Sub Menu B";
-              break;
-            case IDM_SAMPLE_SUB_DISABLE:
-              w = L"Sub Menu Disabled";
-              break;
-            default:
-              return true;
-          }
+BOOL CSkinPlugInSamplePlugIn::OnPlugInMenuCommand(WPARAM wParam)
+{
+  ON_wString w;
+  switch( (UINT)wParam )
+  {
+    case IDM_SAMPLE_ONE:
+      w = L"Test Item One";
+      break;
+    case IDM_SAMPLE_TWO:
+      w = L"Two";
+      break;
+    case IDM_SAMPLE_DISABLE:
+      w = L"Disabled";
+      break;
+    case IDM_SAMPLE_SUB_A:
+      w = L"Sub Menu A";
+      break;
+    case IDM_SAMPLE_SUB_B:
+      w = L"Sub Menu B";
+      break;
+    case IDM_SAMPLE_SUB_DISABLE:
+      w = L"Sub Menu Disabled";
+      break;
+    default:
+      return true;
+  }
 
-          ::RhinoMessageBox( w, L"OnMenu", MB_OK );
-          return true;
-        }
+  ::RhinoMessageBox( w, L"OnMenu", MB_OK );
+  return true;
+}
+```
 1. Compile the Skin Plugin.
 1. Load the Skin Plugin using Rhino's *PluginManager* command so it has a chance to self-register.
 1. Compile the Skin DLL.

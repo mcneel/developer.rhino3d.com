@@ -42,7 +42,9 @@ All payload to and from callbacks happens in [JSON format](https://www.json.org)
 
 In some circumstances, such as when additional input is required from a user when adding a license to an account, a localized response SHOULD be returned by the issuer in the user's locale. To make this possible, every request to a callback will have an `Accept-Language` header present like so:
 
-    Accept-Language: fr-CH; fr;q=0.9, en;q=0.8, *;q=0.5
+```
+Accept-Language: fr-CH; fr;q=0.9, en;q=0.8, *;q=0.5
+```
 
 The header encodes the languages preferred by the user currently interacting with Cloud Zoo. If none of the languages specified in the header are available, English SHOULD be used.
 
@@ -80,10 +82,12 @@ def add_license()
 
 If returning a response with an HTTP status code greater or equal to `400`, the issuer SHOULD include the following JSON in the payload as well:
 
-    {
-		"description": "The license cannot be removed from Cloud Zoo because [Marley](https://example.com) says so.",
-		"details": "request id 239231203123212"
-	}
+```
+{
+	"description": "The license cannot be removed from Cloud Zoo because [Marley](https://example.com) says so.",
+	"details": "request id 239231203123212"
+}
+```
 
  - The `description` field is user facing, and SHOULD be localized.  In addition, the description string may have markdown style links as in the example above. The links can be used to help the user navigate and solve the issue.
  - The `details` field is not user-facing, but may be logged for troubleshooting purposes. You MUST NOT include sensitive data in the details string.
@@ -96,7 +100,9 @@ Return information about a specific license so users can see details about the l
 
 #### Example Request
 
-    GET /get_license?aud=PRODUCT_ID&key=A_LICENSE_KEY
+```
+GET /get_license?aud=PRODUCT_ID&key=A_LICENSE_KEY
+```
 
  - `aud`: The product id of the license whose information is to be returned.
  - `key`:  The license key of the license whose information is to be returned.
@@ -121,35 +127,37 @@ deny the request. This callback is invoked whenever a license is about to be add
 
 #### Example Request
 
-    POST /add_license
-    {
-	    "entityId": "9304194021213-|-Group",
-	    "entityType": "Group",
-	    "license": {
-			   "key": "RH50-ABCD-EFGZ-HIJK-LMNO",
-			   "aud": "PRODUCT-ID-HERE"
-		   },
-	    "userInfo": {
-		    "sub": "43190412048124",
-		    "email": "marley_the_dog@mcneel.com",
-		    "com.rhino3d.accounts.emails": [
-			    "marley_the_dog@mcneel.com",
-			    "marleyz121@gmail.com"
-		    ],
-		    "com.rhino3d.accounts.member_groups": [
-			    {
-				    "id": "9304194021213",
-				    "name": "Marley’s Friends LLC"
-				}
-		    ],
-		    "com.rhino3d.accounts.admin_groups": [],
-		    "com.rhino3d.accounts.owner_groups": [],
-		    "name": "Marley",
-		    "locale": "en-gb",
-			"picture": "http://marley.the.dog.com/images/coolpic.png"
-	     },    
-	    "precondition": "RH40-ABCD-EFGZ-HIJK-LMNO"
-    }
+```
+POST /add_license
+{
+	"entityId": "9304194021213-|-Group",
+	"entityType": "Group",
+	"license": {
+			"key": "RH50-ABCD-EFGZ-HIJK-LMNO",
+			"aud": "PRODUCT-ID-HERE"
+		},
+	"userInfo": {
+		"sub": "43190412048124",
+		"email": "marley_the_dog@mcneel.com",
+		"com.rhino3d.accounts.emails": [
+			"marley_the_dog@mcneel.com",
+			"marleyz121@gmail.com"
+		],
+		"com.rhino3d.accounts.member_groups": [
+			{
+				"id": "9304194021213",
+				"name": "Marley’s Friends LLC"
+			}
+		],
+		"com.rhino3d.accounts.admin_groups": [],
+		"com.rhino3d.accounts.owner_groups": [],
+		"name": "Marley",
+		"locale": "en-gb",
+		"picture": "http://marley.the.dog.com/images/coolpic.png"
+		},    
+	"precondition": "RH40-ABCD-EFGZ-HIJK-LMNO"
+}
+```
 
 -   `entityId`: The id of the entity whom the license will be added to. Entities can be individual users or groups as defined in Rhino Accounts.
 -  `userInfo`: The decoded JWT representing the user’s OpenID Token who wants to add the license to the specified entity. See [Rhino Accounts OpenID Tokens](https://docs.google.com/document/d/1-U0FYt6iQAM3UA6Rio4z0sDVXBSdc0kQk5e4zumnKig/edit#heading=h.qctsih4c0ctd) for details. The user is always a privileged member of the entity or is the entity itself in case `entityType` is `User`. Additional fields could be present and MAY be used but SHOULD NOT be assumed to be present.
@@ -185,21 +193,23 @@ See if a license can be removed from an entity. This callback is invoked right b
 
 #### Example Request
 
-    POST /remove_license
-	{
-		"entityId": "9304194021213-|-Group",
-		"entityType": "Group",
-		"userInfo": {
-				"sub": "43190412048124",
-				"email": "marley_the_dog@mcneel.com",
-				"name": "Marley",
-				"locale": "en-gb",
-				"picture":"http://marley.the.dog.com/images/coolpic.png"
-			}
-		"licenseCluster": {
-			"licenses":[ ONE OR MORE LICENSE OBJECTS ... ]
+```
+POST /remove_license
+{
+	"entityId": "9304194021213-|-Group",
+	"entityType": "Group",
+	"userInfo": {
+			"sub": "43190412048124",
+			"email": "marley_the_dog@mcneel.com",
+			"name": "Marley",
+			"locale": "en-gb",
+			"picture":"http://marley.the.dog.com/images/coolpic.png"
 		}
+	"licenseCluster": {
+		"licenses":[ ONE OR MORE LICENSE OBJECTS ... ]
 	}
+}
+```
 
  - `entityId`: The id of the entity whom the license will be removed from. Entities can be individual users or groups as defined in [Rhino Accounts](https://accounts.rhino3d.com/help).
  - `entityType`:  Entities can be individual users (`User`) or groups (`Group`) as defined in [Rhino Accounts](https://accounts.rhino3d.com/help).
