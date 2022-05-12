@@ -29,6 +29,7 @@ files that you would like to distribute in your package. Something like this...
 C:\Users\Bozo\dist
 ├── Tamarin.rhp
 ├── Tamarin.dll
+├── icon.png
 └── misc\
     ├── README.md
     └── LICENSE.txt
@@ -73,6 +74,12 @@ to populate the version field, since this attribute isn't bound to the Microsoft
 four-digit version spec and can contain a SemVer-compatible version string. The
 `AssemblyVersion` attribute is used as a fallback.
 
+<div class="alert alert-info" role="alert">
+<strong>Note:</strong> The `spec` command is useful for generating the
+manifest.yml file initially. Once you have one, keep it with your project and
+update it for each release.
+</div>
+
 Next, open the manifest file with your [favourite editor](https://code.visualstudio.com)
 and fill in the gaps.
 
@@ -88,6 +95,7 @@ description: >
   This plug-in does something. I'm not really sure exactly what it's supposed to
   do, but it does it better than any other plug-in.
 url: https://example.com
+icon: icon.png
 keywords:
 - something
 ```
