@@ -109,7 +109,17 @@ description: >
   This is such an awesome package
   that I'm going to write a whole
   bunch of text describing it!
+
+  This sentence will be on a new line.
 ```
+
+<!-- Or, if you want to preserve newlines, use the [literal style](https://yaml.org/spec/1.2-old/spec.html#id2795688)
+
+```yaml
+description: |
+  This is the first line of the description.
+  This sentence is (and will be) on a new line!
+``` -->
 
 
 ## Recommended Attributes
