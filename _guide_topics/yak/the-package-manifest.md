@@ -30,6 +30,7 @@ The manifest's purpose is to help with streamlining (and potentially automating)
  <!-- - [`license`](#license) -->
  - [URL](#url)
  - [Keywords](#keywords)
+ - [Icon](#icon)
 
 <!-- ### Optional Attributes
  - [`dependencies`](#dependencies) -->
@@ -147,16 +148,16 @@ keywords:
 - two
 ```
 
+### Icon
 
-## Optional Attributes
-
-### Icon URL
-
-Specify a **direct** link to an icon that will be used by the Package Manager in Rhino. It should be small (32x32 is ideal) and it must be either a PNG or a JPEG.
+An icon file in the package. It should be small (e.g. 64x64) and it must be either a PNG or a JPEG.
 
 ```yaml
-icon_url: "https://example.com/path/to/icon.png"
+icon: icon.png
 ```
+
+
+<!-- ## Optional Attributes -->
 
 <!-- ### Dependencies
 
@@ -191,6 +192,20 @@ dependencies:
   "type": "gh-plugin"
 }
 ``` -->
+
+## Obsolete Attributes
+
+### Icon URL
+
+<div class="alert alert-warning" role="alert">
+⚠️ Replaced by the [icon](#icon) attribute.
+</div>
+
+Specify a **direct** link to an icon that will be used by the Package Manager in Rhino. It should be small (32x32 is ideal) and it must be either a PNG or a JPEG.
+
+```yaml
+icon_url: "https://example.com/path/to/icon.png"
+```
 
 ---
 
