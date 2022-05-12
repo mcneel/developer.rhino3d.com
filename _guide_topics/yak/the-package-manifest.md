@@ -208,7 +208,7 @@ dependencies:
 ### Icon URL
 
 <div class="alert alert-warning" role="alert">
-⚠️ Replaced by the [icon](#icon) attribute.
+⚠️ Replaced by the <a href="#icon" class="alert-link">icon</a> attribute.
 </div>
 
 Specify a **direct** link to an icon that will be used by the Package Manager in Rhino. It should be small (32x32 is ideal) and it must be either a PNG or a JPEG.
