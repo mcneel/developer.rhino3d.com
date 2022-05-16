@@ -19,7 +19,7 @@ To start, please confirm that you have a valid Azure subscription and that you h
 
 1. Sign in to the Azure [portal](https://portal.azure.com/#home).
 
-1. Type **virutal machines** in the search bar.
+1. Type **virtual machines** in the search bar.
 
 1. Under **Services**, select **Virtual machines**.
 
