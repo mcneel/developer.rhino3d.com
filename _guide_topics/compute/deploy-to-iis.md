@@ -84,17 +84,56 @@ To start, let's download the RDP file. We'll use the Azure VM Portal but a simil
 Congratulations. You should now have access to the desktop of the remote machine running Windows Server 2019 or higher.
 
 ## Running the Bootstrap script
-Assuming that you are now logged into the virtual machine (using RDP), follow the following steps to install rhino compute behind IIS.
+Assuming that you are now logged into the virtual machine (using RDP), follow the following steps to install Rhino.Compute behind IIS. Note: The following steps assume that this is an installation on a new virtual machine or server (meaning Rhino.Compute has not been previously installed on this machine). If you have already setup Rhino.Compute and IIS on this machine and simply need to update Rhino and/or Rhino.Compute on this VM, please proceed to the section on [Updating Rhino Compute](../deploy-to-iis/#updating-the-deployment).
+
+### Step 1
 
 1. Click on the Windows Start menu and type in "Powershell". In the menu that appears, right-click on the **Windows Powershell app** and choose **Run As Administrator**.
 <img src="{{ site.baseurl }}/images/powershell_1.png">{: .img-center  width="50%"}
 
-1. **Copy and paste** the command below and hit **Enter**. This command will download the latest bootstrap script and install rhino compute on this machine. Note: you will be prompted to enter your **Email**, **API Key**, and **Rhino Token**, so please have that information handy.
+1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest step 1 bootstrap script and install Rhino and IIS onto your VM. Note: you will be prompted to enter your **Email Address**, **API Key**, and **Rhino Token**, so please have that information handy.
 
    ```powershell
-   $F="/bootstrap.zip";$T="$($Env:temp)\tmp$([convert]::tostring((get-random 65535),16).padleft(4,'0')).tmp"; New-Item -ItemType Directory -Path $T; iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/production/bootstrap.zip -outfile $T$F; Expand-Archive $T$F -DestinationPath $T; Remove-Item $T$F;& "$T\boostrap_server.ps1" 
+   $F="/bootstrap_step-1.zip";$T="$($Env:temp)\tmp$([convert]::tostring((get-random 65535),16).padleft(4,'0')).tmp"; New-Item -ItemType Directory -Path $T; iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/production/bootstrap_step-1.zip -outfile $T$F; Expand-Archive $T$F -DestinationPath $T; Remove-Item $T$F;& "$T\boostrap_step-1.ps1" 
    ```
-1. At the end of the installation process, you should see the following message in the powershell window, *"Congratulations! All components have now been installed."*
+1. At the end of step 1, your VM will automatically be restarted (You will be logged out of Remote Desktop).
+
+### Step 2
+
+1. Log back into your VM using Remote Desktop.
+
+1. Open a new instance of **Windows Powershell**. Make sure to right-click on the application and select **Run As Administrator**.
+
+1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest step 2 bootstrap script and will configure IIS to work with Rhino.Compute.
+
+   ```powershell
+   $F="/bootstrap_step-2.zip";$T="$($Env:temp)\tmp$([convert]::tostring((get-random 65535),16).padleft(4,'0')).tmp"; New-Item -ItemType Directory -Path $T; iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/production/bootstrap_step-2.zip -outfile $T$F; Expand-Archive $T$F -DestinationPath $T; Remove-Item $T$F;& "$T\boostrap_step-2.ps1"
+   ```
+
+1. At the end of the step 2 installation script, you should see the message *"Congratulations! All components have now been installed." This will be followed by some instructions about how to install 3rd party plugins so that they will work properly with Rhino.Compute. Please take note of the new **Username** and **Password** which will be required when logging back in to install any additional plugin.
+
+## Updating The Deployment
+If you have already setup Rhino.Compute and/or IIS on this machine, you may need to periodically update Rhino and/or the Rhino.Compute build files to the latest version. Follow the steps below to update these applications.
+
+### Update Rhino
+
+1. Click on the Windows Start menu and type in "Powershell". In the menu that appears, right-click on the **Windows Powershell app** and choose **Run As Administrator**.
+
+1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino for Windows. Note: you will be prompted to enter your **Email Address** so please have that information available.
+
+    ```powershell
+iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/production/module_update_rhino.ps1 -outfile update_rhino.ps1; .\update_rhino.ps1 
+    ```
+
+### Update Compute
+
+1. Click on the Windows Start menu and type in "Powershell". In the menu that appears, right-click on the **Windows Powershell app** and choose **Run As Administrator**.
+
+1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino.Compute.
+
+    ```powershell
+iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/production/module_update_compute.ps1 -outfile update_compute.ps1; .\update_compute.ps1 
+    ```
 
 ## Testing the app
 
