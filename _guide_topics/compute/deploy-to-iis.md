@@ -110,30 +110,7 @@ Assuming that you are now logged into the virtual machine (using RDP), follow th
    $F="/bootstrap_step-2.zip";$T="$($Env:temp)\tmp$([convert]::tostring((get-random 65535),16).padleft(4,'0')).tmp"; New-Item -ItemType Directory -Path $T; iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/production/bootstrap_step-2.zip -outfile $T$F; Expand-Archive $T$F -DestinationPath $T; Remove-Item $T$F;& "$T\boostrap_step-2.ps1"
    ```
 
-1. At the end of the step 2 installation script, you should see the message *"Congratulations! All components have now been installed." This will be followed by some instructions about how to install 3rd party plugins so that they will work properly with Rhino.Compute. Please take note of the new **Username** and **Password** which will be required when logging back in to install any additional plugin.
-
-## Updating The Deployment
-If you have already setup Rhino.Compute and/or IIS on this machine, you may need to periodically update Rhino and/or the Rhino.Compute build files to the latest version. Follow the steps below to update these applications.
-
-### Update Rhino
-
-1. Click on the Windows Start menu and type in "Powershell". In the menu that appears, right-click on the **Windows Powershell app** and choose **Run As Administrator**.
-
-1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino for Windows. Note: you will be prompted to enter your **Email Address** so please have that information available.
-
-    ```powershell
-iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/production/module_update_rhino.ps1 -outfile update_rhino.ps1; .\update_rhino.ps1 
-    ```
-
-### Update Compute
-
-1. Click on the Windows Start menu and type in "Powershell". In the menu that appears, right-click on the **Windows Powershell app** and choose **Run As Administrator**.
-
-1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino.Compute.
-
-    ```powershell
-iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/production/module_update_compute.ps1 -outfile update_compute.ps1; .\update_compute.ps1 
-    ```
+1. At the end of the step 2 installation script, you should see the message *Congratulations! All components have now been installed.* This will be followed by some instructions about how to install 3rd party plugins so that they will work properly with Rhino.Compute. Please take note of the new **Username** and **Password** which will be required when logging back in to install any additional plugin.
 
 ## Testing the app
 
@@ -225,6 +202,29 @@ of this handle and will shut down when this process has exited. Since we are rel
     <img src="{{ site.baseurl }}/images/iis_idletimout.png">{: .img-center  width="60%"}
 
 Once you have modified web.config file, **save** it and close the file. You can then go back to the IIS Manager and **Start** the web server by clicking on the web server node in the **Connections** panel on the left and clicking **Start** in the **Actions** pane on the right.
+
+## Updating The Deployment
+If you have already setup Rhino.Compute and/or IIS on this machine, you may need to periodically update Rhino and/or the Rhino.Compute build files to the latest version. Follow the steps below to update these applications.
+
+### Update Rhino
+
+1. Click on the Windows Start menu and type in "Powershell". In the menu that appears, right-click on the **Windows Powershell app** and choose **Run As Administrator**.
+
+1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino for Windows. Note: you will be prompted to enter your **Email Address** so please have that information available.
+
+    ```powershell
+iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/production/module_update_rhino.ps1 -outfile update_rhino.ps1; .\update_rhino.ps1 
+    ```
+
+### Update Compute
+
+1. Click on the Windows Start menu and type in "Powershell". In the menu that appears, right-click on the **Windows Powershell app** and choose **Run As Administrator**.
+
+1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino.Compute.
+
+    ```powershell
+iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/production/module_update_compute.ps1 -outfile update_compute.ps1; .\update_compute.ps1 
+    ```
 
  ---
  
