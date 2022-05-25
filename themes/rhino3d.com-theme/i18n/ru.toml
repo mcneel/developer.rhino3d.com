@@ -1,0 +1,287 @@
+[buy]
+other = "купить"
+
+[download]
+other = "загрузить"
+
+[gallery]
+other = "галерея"
+
+[features]
+other = "возможности"
+
+[news]
+other = "новости"
+
+[community]
+other = "сообщество"
+
+[learn]
+other = "обучение"
+
+[support]
+other = "поддержка"
+
+[resources]
+other = "ресурсы"
+
+[my-account]
+other = "профиль"
+
+[logged-in-title]
+other = "Управление учетной записью, лицензиями и командами"
+
+[sign-in]
+other = "войти"
+
+[sign-in-title]
+other = "Войти для управления своей учетной записью, лицензиями и командами"
+
+[Icon]
+other = "Значок"
+
+[Description]
+other = "Описание"
+
+[Toolbars]
+other = "Панели инструментов"
+
+[Menu]
+other = "Меню"
+
+[Crease-Splitting]
+other = "Разделение складки"
+
+[History]
+other = "История"
+
+[enabled]
+other = "включено"
+
+[More-details]
+other = "Подробно..."
+
+[Including]
+other = "Включает:"
+
+[Rhino-Commands]
+other = "Команды Rhino"
+
+# DO NOT TRANSLATE the contents of {{ }} placeholder.  It gets replaced with the correct version by a template.
+[NEW-in-Vx]
+other = "Новое в {{ .Params.included_in.since }}"
+
+# DO NOT TRANSLATE the [VERSION] placeholder.  It gets replaced with the correct version by a template.
+[New-in-N]
+other = "Новое в [VERSION]"
+
+[New-in-Rhino-7]
+other = "Новое в Rhino 7"
+
+[All-the-details]
+other = "Подробно..."
+
+[bob-loves-revit]
+other = "Bob ❤️s Revit 😘"
+
+# This is optionally shown as a header in some feature pages
+[new-in-rhino-7]
+other = "Новое в Rhino 7"
+
+# context: the bylines that sometimes show up under the title of a page.  Such as "by Scott Davidson..."
+[by]
+other = "by"
+
+# context: the bylines that sometimes show up under the title of a page, showing when the page was last updated
+[Last-updated]
+other = "Последнее обновление:"
+
+# context: the bylines that sometimes show up under the title of a page, joining the different authors.  Such as: "by Scott Davidson and..."s
+[and]
+other = "и"
+
+# context: the Edit menu at the bottom of the page
+[Edit-this-page]
+other = "Редактировать эту страницу"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-GitHub]
+other = "Редактировать на GitHub"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-Forestry]
+other = "Редактировать на Forestry"
+
+# context: the Edit menu at the bottom of the page
+[Admin]
+other = "Администратор"
+
+# context: page footer
+[Shop-online]
+other = "Онлайн-магазин"
+
+# context: page footer
+[or-find-a]
+other = "или найти"
+
+# context: page footer
+[find-a-reseller]
+other = "Найти реселлера"
+
+# context: page footer
+[Reseller]
+other = "Реселлер"
+
+# context: page footer
+[Privacy-Policy]
+other = "Политика конфиденциальности"
+
+# context: page footer
+[About]
+other = "О компании"
+
+# context: page footer
+[Contact-Us]
+other = "Контакты"
+
+# context: page footer
+[Language]
+other = "Язык"
+
+# context: page footer
+[change-region-lang]
+other = "Выбрать другой регион или язык"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[Windows-only]
+other = "Только для Windows"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[macOS-only]
+other = "Только для macOS"
+
+[Download-Rhino]
+other = "Загрузить Rhino"
+
+[Download-Rhino-Both]
+other = "[LINK]Загрузить [PRODUCT] [VERSION] [TYPE] для Windows или Mac[/LINK]."
+
+[Download-Rhino-Windows]
+other = "[LINK]Загрузить [PRODUCT] [VERSION] [TYPE] для Windows[/LINK]."
+
+[Download-Rhino-Mac]
+other = "[LINK]Загрузить [PRODUCT] [VERSION] [TYPE] для Mac[/LINK]."
+
+[Rhino]
+other = "Rhino"
+
+[Name]
+other = "Имя"
+
+[File-Extension]
+other = "Расширение файла"
+
+[Open-Import]
+other = "Открыть/Импорт"
+
+[Save-Export]
+other = "Сохранить/Экспорт"
+
+[Notes]
+other = "Примечания"
+
+[Latest-Updates]
+other = "Последние обновления"
+
+[Improved]
+other = "Улучшено"
+
+[Improvements]
+other = "Улучшения"
+
+[Mac-only]
+other = "Только для Mac"
+
+[Windows-and-Mac]
+other = "Windows | Mac"
+
+# Some languages, like Japanese, use a different punctuation mark for periods.
+[period-the-punctuation-mark]
+other = "."
+
+# This gets rendered under the title in the header of the page.  It needs to be a specific width, so if it exceeds the english width too much,
+# it might be best to leave it untranslated or figure out a way to condense it.  This is much "branding" as it is words.
+[product-tagline]
+other = "design, model, present, analyze, realize..."
+
+# This is the placeholder text in the search field on the top navbar
+[search-navbar]
+other = "поиск"
+
+# Homepage link in the upper part of screen
+[student-or-teacher]
+other = "Студент или преподаватель?"
+
+# Title on homepage video caption
+[caption-rhino-7]
+other = "Rhino 7"
+
+# Subtitle on homepage video caption
+[caption-rhino-7-subtitle]
+other = "Свобода и точность"
+
+# Details of the Rhino 7 video caption
+[caption-rhino-7-details]
+other = "SubD, Rhino.Inside.Revit, QuadRemesh и многое другое"
+
+# Link title on homepage video captions
+[caption-learn-more]
+other = "Узнать больше"
+
+# Link title on homepage video captions
+[caption-try]
+other = "попробовать"
+
+# The conjoiner before the Buy link in the video caption
+[caption-or-conjoiner]
+other = " или "
+
+# Link title on homepage video captions
+[caption-buy]
+other = "купить"
+
+# Title on homepage video caption
+[caption-rhino-refined]
+other = "Rhino 7"
+
+# Subtitle on homepage video caption
+[caption-less-pain]
+other = "Быстрее и лучше"
+
+# Details of the Rhino Refined video caption
+[caption-rhino-refined-details]
+other = "Именованные наборы, управление листами, расширенные текстовые поля, плеер Grasshopper, однострочные шрифты и многое другое"
+
+# The English comma conjoiner
+[comma-conjoiner]
+other = ", "
+
+# Title on homepage video caption
+[caption-presentation]
+other = "Rhino 7"
+
+# Subtitle on homepage video caption
+[caption-presentation-subtitle]
+other = "Эффектно и реалистично"
+
+# Details of a video caption
+[caption-presentation-details]
+other = "Улучшенные режимы и новые инструменты отображения, включая градиентные штриховки, шумоподавители, материалы PBR, LayerBook и многое другое"
+
+# New navigation button on Learn Pages
+[new]
+other = "New"
+
+# Featured button and tag on Learn Pages
+[featured]
+other = "Featured"

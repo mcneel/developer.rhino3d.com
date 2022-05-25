@@ -1,0 +1,34 @@
+### Hugo ###
+# Generated files by hugo
+/public*
+/resources/_gen/
+.hugo_build.lock
+
+# User-specific vscode files
+.vscode/.ropeproject
+
+# Generated files by deploy script
+/public-last-run/
+**/admin/localization-status/index.md
+_s3_sync.*
+hugo
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+*obj
+*bin
+# Temporary script-generated contents
+*_temp
+_s3_sync_test.sh
+hugo.log
+
+# Python
+__pycache__
+*.pyc
+
+# macOS cruft
+.DS_Store
+s5cmd
+themes/rhino3d.com-theme/script/Launch/.vs/Launch/xs

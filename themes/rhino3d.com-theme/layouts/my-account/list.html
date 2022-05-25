@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+{{ .Scratch.Set "groupBy" "list_group" }}
+{{ .Scratch.Set "groupOrder" "asc" }}
+
+<div class="single-content-area toc-page">
+  {{ if .Params.page_options.toc }}
+    {{ partial "toc.html" . }}
+  {{ end }}
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
+    {{.Content}}
+  </div>
+</div>
+{{ end }}

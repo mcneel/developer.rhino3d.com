@@ -1,0 +1,77 @@
+{{ define "main" }}
+
+<div class="single-content-area toc-page">
+  {{ if .Params.page_options.toc }}
+    {{ partial "toc.html" . }}
+  {{ end }}
+  
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
+    {{/* partial "breadcrumbs.html" . */}}    
+      <div class="feature-title-container">
+        <div class="feature-title">{{ .Page.Title }}</div>{{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}<div class="new-callout"><a href="/{{ .Site.Params.latestRhinoVersion}}/new">{{ i18n "NEW-in-Vx" . }}</a></div>{{ end }}{{- partial "platform-callout" . -}}        
+      </div>
+      <p>{{ partial "byline.html" . }}</p>
+      {{ with .Page.Params.what_why }}
+        <p>{{ . | markdownify }}</p>
+      {{ end }}
+      {{ with .Page.Params.whats_new.in_v7 }}
+        <h3>{{ i18n "New-in-Rhino-7" }}</h3>
+        <p>{{ . | markdownify }}</p>
+      {{ end }}      
+      {{ .Content }}
+      {{- $docs_base_url := "https://docs.mcneel.com/rhino/" -}}
+      {{- $docs_version_url := print $docs_base_url $.Site.Params.latestRhinoVersion -}}
+      {{- $docs_help_url := print $docs_version_url "/help/" -}}
+      {{- $docs_lang_url := print $docs_help_url .Site.Params.docLang -}}
+      {{- $docs_commands_url := print $docs_lang_url "/index.htm#commands/" -}}
+      {{ $.Scratch.Set "base_url" $docs_commands_url }}
+      
+      {{/*  If it's the non-english version, we need to look-up the english commands list... */}}
+      {{/*  This presumes the lists are in the same order in the English and non-English version */}}
+      {{- $.Scratch.Set "is-english" "false" -}}
+      {{- if eq .Site.Language.Lang "en" -}}
+        {{- $.Scratch.Set "is-english" "true" -}}
+      {{- end -}}
+      {{ if eq ($.Scratch.Get "is-english") "false" }}
+        {{- $.Scratch.Set "has-commands" "false" -}}
+        {{/*  Check if there are any commnds at all  */}}
+        {{- with .Page.Params.commands -}}
+          {{- $.Scratch.Set "has-commands" "true" -}}
+        {{- end -}}
+
+        {{- if eq ($.Scratch.Get "has-commands") "true" -}}
+          {{/*  Find the English version of this page and open it and read in the commands as a slice */}}
+          {{- $no_lang_url := substr .RelPermalink 3 -}}
+          {{- $en_url := print "/en" $no_lang_url -}}
+          {{- $en_page_url := print $en_url "index.md"}}
+          {{- range .Site.AllPages -}}
+            {{- if eq .RelPermalink $en_url -}}
+              {{- with .Params.commands -}}
+                {{- $.Scratch.Add "en-commands"  . -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+          <h2>{{ i18n "Rhino-Commands" }}</h3>
+          <ul>
+            {{- range $i, $command := .Page.Params.commands -}}
+              {{- $english_command := index ($.Scratch.Get "en-commands") $i -}}
+              <li><a href="{{ $.Scratch.Get "base_url" }}{{ lower $english_command }}.htm" target="_blank" rel="noopener noreferrer">{{ . }}</a></li>
+            {{- end -}}
+          </ul>
+        {{- end -}}
+      {{ else }}
+        {{ with .Page.Params.commands }}
+        <h2>{{ i18n "Rhino-Commands" }}</h3>
+          <ul>
+            {{ range . }}
+              <li><a href="{{ $.Scratch.Get "base_url" }}{{ lower . }}.htm" target="_blank" rel="noopener noreferrer">{{ . }}</a></li>
+            {{ end }}            
+          </ul>
+        {{ end }}
+      {{ end }}
+
+      {{- partial "edit_button.html" . -}}
+    {{/*  {{- partial "platform-switch" . -}}  */}}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,7 @@
+{{ $img := (resources.Get (index .Params 0 ) | resources.Fingerprint).Permalink }}
+<figure>
+    <img src="{{ $img }}">
+    <figcaption>
+        <h4>{{ index .Params 1 }}</h4>
+    </figcaption>
+</figure>

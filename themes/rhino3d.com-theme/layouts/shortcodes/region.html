@@ -1,0 +1,7 @@
+{{- if eq (.Get 0) (getenv "MCNEEL_REGION") -}}
+{{ .Inner | markdownify }}
+{{- end -}}
+
+{{- if eq "" (getenv "MCNEEL_REGION") }}
+{{ .Inner | markdownify }}
+{{- end -}}

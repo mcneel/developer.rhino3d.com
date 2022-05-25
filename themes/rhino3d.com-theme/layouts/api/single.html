@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="single-content-area">
+  {{ if .Params.page_options.toc }}
+    {{ partial "toc.html" . }}
+  {{ end }}
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
+    {{/* partial "breadcrumbs.html" . */}}
+    {{ if ne false (.Params.page_options.show_title) }}
+    <h1>{{ .Page.Title }}</h1>
+    {{ end }}
+    <p>{{ partial "byline.html" . }}</p> 
+    {{ .Content }}
+    {{ if and (not .Params.page_options.plain ) (not .Params.page_options.hide_edit_button ) }}
+      {{- partial "edit_button.html" . -}}
+    {{ end }}
+    {{/*  {{- partial "platform-switch" . -}}  */}}    
+  </div>
+</div>
+{{ end }}
+

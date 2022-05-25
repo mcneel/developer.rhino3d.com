@@ -1,0 +1,40 @@
+[buy]
+other = "buy"
+
+[download]
+other = "download"
+
+[gallery]
+other = "gallery"
+
+[features]
+other = "features"
+
+[news]
+other = "news"
+
+[community]
+other = "community"
+
+[learn]
+other = "learn"
+
+[support]
+other = "support"
+
+[resources]
+other = "resources"
+
+[my-account]
+other = "my account"
+
+[sign-in]
+other = "sign in"
+
+# New navigation button on Learn Pages
+[new]
+other = "New"
+
+# Featured button and tag on Learn Pages
+[featured]
+other = "Featured"

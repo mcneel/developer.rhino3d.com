@@ -1,0 +1,525 @@
+// ==============================
+// Learn page
+// ==============================
+
+.ui-tabs {
+	position: relative;
+	padding: 0.2em;
+	zoom: 1;
+
+	/* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+	.ui-tabs-panel {
+		display: block;
+		border-width: 0;
+		padding: 1em 1.4em;
+		background: none;
+	}
+	.ui-tabs-hide {
+		display: none !important;
+	}
+}
+
+.ui-tabs-vertical {
+	width: 65em;
+	.ui-tabs-nav {
+		padding: 0.2em 0.1em 0.2em 0.2em;
+		float: left;
+		width: 20%;
+		border-right: 1px solid $global-light-grey;
+		margin-left: 0;
+		li {
+			list-style: none;
+			position: relative;
+			top: 0;
+			right: -3px;
+			float: left;
+			padding: 0;
+			white-space: nowrap;
+			clear: left;
+			width: 100%;
+			border: 1px solid transparent;
+			border-right-width: 0;
+			border-left-width: 6px;
+			margin: 0 -3px 0.2em 0;
+			a {
+				padding: 0.3em 1em 0.3em 0.3em;
+				display: block;
+				color: #666;
+				font-size: 80%;
+				&:hover {
+					color: $global-rhino-color;
+				}
+			}
+		}
+		li.ui-state-default {
+		}
+		li.ui-state-hover {
+			font-weight: bold;
+		}
+		li.ui-state-focus {
+			outline: none;
+		}
+		:focus {
+			outline: none;
+		}
+		li.ui-tabs-active {
+			background-color: white !important;
+			border: 1px solid $global-light-grey;
+			background-color: white;
+			border-left-width: 6px;
+			border-right-width: 0;
+			a {
+				color: #000;
+				border: 0;
+			}
+		}
+	}
+
+	.ui-tabs-panel {
+		padding: 0;
+		padding-left: 1em;
+		float: left;
+		width: 80%;
+		margin-left: -1px;
+		border-left: 1px solid $global-light-grey;
+	}
+}
+
+.tabheader {
+	font-size: 18px;
+	text-decoration: underline;
+	color: black;
+}
+
+// .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+//    background-color:#ddd;
+//}
+
+div.learn_gallery_page {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	padding-left: 4px;
+	text-align: center;
+	.content_cell {
+		width: 30%;
+		height: 250px;
+		padding: 0;
+		margin: 0 6px 24px 6px;
+		vertical-align: top;
+		display: block;
+		text-align: left;
+		float: left;
+		border: 1px solid $global-light-grey;
+		border-radius: 10px;
+		p {
+			margin: 0;
+			padding: 0;
+		}
+		h3 {
+			margin: 4px;
+			padding: 0;
+			font-size: 14px;
+			font-weight: 700;
+		}
+		.thumbnail {
+			width: 100%;
+			height: 150px;
+			border-radius: 10px 10px 0 0;
+		}
+		.thumbnail_caption {
+			color: black;
+			font-size: 11px;
+			line-height: normal;
+			margin: 4px;
+		}
+	}
+	.hover_cell {
+		background-color: white;
+		border-radius: 10px;
+		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+		transition: box-shadow 0.3s ease-in-out;
+	}
+}
+
+
+.discover-gallery {
+	display: flex;
+	visibility: collapse;
+}
+
+.discover-grid {
+	display: grid;
+	grid-gap: 18px 15px;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	/* grid-template-columns: auto auto auto auto; */
+	align-items: start;
+	width: 800px;
+}
+
+.discover-grid-row {
+	grid-auto-rows: 226px;
+	margin-top: 15px;
+	margin-bottom: 50px;
+}
+
+.discover-item {
+	display: block;
+	min-height: 226px;
+	background-color: #fff;
+	/* border: 1px solid #b0b0b0; */
+	/* border-radius: 5px; */
+	color: black;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 4px 0px, rgba(0, 0, 0, 0.025) 0px 15px 20px -1px;
+	overflow: hidden;
+	position: relative;
+}
+
+/* different naming format otherwise vue.js breaks */
+.discoverItemHighlight {
+	/* box-shadow: 0 4px 0 #a0a0a0, 0 10px 8px rgba(0, 0, 0, .1);*/
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.discover-item-focused {
+	z-index: 1;
+}
+
+.discover-highlight {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}
+
+.discover-thumbnail {
+	overflow: hidden;
+}
+
+.discover-thumbnail img {
+	object-fit: cover;
+	width: 100%;
+	height: 135px;
+}
+
+.discover-thumbnail-dim {
+	-webkit-filter: saturate(0.7);
+	filter: saturate(0.7);
+}
+
+.discover-info {
+	padding: 5px 10px 5px 10px;
+}
+
+.discover-info-new {
+	display: none;
+	float: left;
+	color: white;
+	background: #dc3545;
+	border-radius: 3px;
+	margin-top: 3px;
+	margin-right: 5px;
+	text-align: center;
+	font-size: 12px;
+	padding: 0 5px 0px 5px;
+}
+
+.discover-info-new-ok {
+	display: none;
+	padding: 0 5px 0 5px;
+	border-radius: 0 3px 3px 0;
+}
+
+.discover-info-new-ok:hover {
+	background: #a70010;
+	cursor: pointer;
+}
+
+.discover-info-new-ok img {
+	width: 11px;
+	margin: 0px;
+	vertical-align: middle;
+	padding-bottom: 2px;
+}
+
+.discover-info-title,
+.discover-info-title:visited,
+.discover-info-title:hover {
+	display: block;
+	color: #111;
+	font-size: 1em;
+	font-weight: 500;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-decoration: none;
+	max-width: 300px;
+}
+
+.discover-info-subtitle {}
+
+.discover-info-author,
+.discover-info-author:visited,
+.discover-info-author:hover {
+	display: block;
+	height: 1.5em;
+	margin: 0 0 3px 0;
+	color: #a70010;
+	font-size: 13px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.discover-item.discover-item-focused .discover-info-title,
+.discover-item.discover-item-focused .discover-info-author {
+	white-space: unset;
+	overflow: unset;
+	text-overflow: unset;
+}
+
+.discover-info-extra {
+	display: none;
+	margin-top: 5px;
+	color: #828282;
+	font-size: 13px;
+}
+
+.discover-info-extra-open {
+	display: block;
+}
+
+.discover-info-extra p {
+	color: #828282;
+	font-size: 13px;
+	margin-bottom: 0;
+}
+
+.discover-info-tags {
+	display: block;
+	margin: 0 0 3px 0;
+	padding: 0;
+}
+
+.discover-info-tags-short {
+	height: 1.5em;
+	overflow: hidden;
+}
+
+.discover-info-tag {
+	display: inline-block;
+	border: 1px solid #d0d0d0;
+	border-radius: 2px;
+	margin-right: 5px;
+	color: #828282;
+	text-align: center;
+	font-size: 12px;
+	padding: 0 5px 0px 5px;
+}
+
+.discover-info-tag:hover {
+	cursor: pointer;
+	border: 1px solid #111;
+}
+
+.discover-info-kindtag {
+	display: none;
+	border: 1px solid #111;
+	border-radius: 2px;
+	margin-right: 5px;
+	color: #111;
+	text-align: center;
+	font-size: 12px;
+	padding: 0 5px 0px 5px;
+}
+
+.discover-info-kindtag:hover {
+	cursor: pointer;
+	color: white;
+	border: 1px solid #111;
+	background-color: #111;
+}
+
+.discover-filters-box {
+	position: sticky;
+	top: 100px;
+	min-width: 15%;
+	max-width: 15%;
+	height: 100%;
+	background-color: white;
+	border: none;
+	border-radius: 5px;
+	margin: 0 30px 50px 0;
+	padding: 0;
+}
+
+.discover-filters {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.discover-filter {
+	display: block;
+	/* height: 26px; */
+	font-size: 13px;
+	border-left: 3px solid transparent;
+}
+
+.discover-filter-featured-icon {
+	width: 16px;
+	float: right;
+	vertical-align: middle;
+	margin-top: 4px;
+	margin-right: 5px;
+}
+
+.discover-filter-new-icon {
+	margin-top: 2px;
+	width: 12px;
+}
+
+.discover-filter-name {
+	padding: 2px 10px 2px 10px;
+}
+
+.discoverFilterGray {
+	color: #828282;
+}
+
+.discoverFilterRed {
+	color: #dc3545;
+}
+
+.discoverFilterGray:hover {
+	background-color: $global-light-grey;
+	cursor: pointer;
+}
+
+.discoverFilterRed:hover {
+	color: white;
+	border: 1px solid #dc3545;
+	background-color: #dc3545;
+	cursor: pointer;
+}
+
+.discoverFilterGray.active-filter {
+	border-left-color: #888;
+    font-weight: 800;
+    color: #333;
+}
+
+.discoverFilterRed.active-filter {
+	color: white;
+	border: 1px solid #dc3545;
+	background-color: #dc3545;
+}
+
+.discover-unmarkall {
+	float: right;
+    height: 20px;
+    color: #fff;
+    background: #dc3545;
+    font-size: 13px;
+    border-radius: 0 1px 1px 0;
+    padding: 1px 4px;
+}
+
+.discover-unmarkall:hover {
+	background: #a70010;
+	cursor: pointer;
+}
+
+.discover-search {
+	display: block;
+	width: 100%;
+	height: 30px;
+	margin: 5px 0px;
+	padding: 2px 5px;
+	border: 1px solid #d0d0d0;
+	border-radius: 3px;
+	background: white;
+	font-size: 13px;
+}
+
+.discover-feature-badge {
+    display: block;
+    float: right;
+    border-top: 2px solid #0000;
+    text-align: right;
+    position: relative;
+    bottom: 60px;
+}
+
+.discover-feature-badge img {
+	width: 22px;
+	margin: 0;
+}
+
+.learn-title {
+	display: none;
+}
+
+@media only screen and (max-width: 1145px) {
+	.discover-filters-box {
+		position: unset;
+		margin: 0 0 10px 0;
+	}
+
+	.discover-filter {
+		display: inline-block;
+	}
+
+	.discover-filter-featured-icon {
+		max-width: unset;
+		float: none;
+		margin-top: -2px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.learn-title {
+		display: inline-block;
+	}
+
+	.discover-gallery {
+		flex-direction: column;
+	}
+	.discover-filters-box {
+		display: unset;
+		max-width: none;
+		max-width: none;
+		width: auto;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.discover-grid {
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		grid-auto-rows: unset;
+		width: auto;
+	}
+
+	.discover-info-extra {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 435px) {
+	.discover-grid {
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		grid-auto-rows: unset;
+		width: auto;
+	}
+
+	.discover-info-extra {
+		display: block;
+	}
+}
+
+/* This is an override to the Card Class from _card.scss.  The card class spacing is to limiting. This class is named to be temporary.*/
+/* TODO:: Dan wanted to fix card styling to handle spacing without overrides */
+/* These max width media quesries control how many cards can show up on one row */
+.learn-card-override {
+	max-width: none;
+ }

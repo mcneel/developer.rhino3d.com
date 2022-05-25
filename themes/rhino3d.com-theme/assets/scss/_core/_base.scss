@@ -1,0 +1,47 @@
+// ==============================
+// Base
+// ==============================
+
+html, body, button, input, select, textarea {
+	font-family: $global-font-family;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	overflow: vertical;
+	scroll-behavior: smooth;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+	display: block;
+}
+
+body {
+	color: #000;
+	font-size: $global-font-size;
+	line-height: $global-line-height;
+	font-weight: $global-font-weight;
+	font-style: normal;
+	font-variant: normal;
+	background-color: transparent;
+	margin: 0;
+}
+
+a {
+	color: $global-link-color;
+	text-decoration: none;
+}
+a:hover {
+	color: $global-link-hover-color;	
+}
+
+ul {
+	margin-top: 0px;
+	margin-left: 24px;
+	padding-left: 10px;
+}
+
+/*  */
+.style_bold {
+	font-weight: bold;
+}
+.style_italic {
+	font-style: italic;
+}

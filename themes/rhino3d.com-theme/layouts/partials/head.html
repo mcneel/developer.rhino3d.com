@@ -1,0 +1,52 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="rendering, raytracing, radiosity, computer graphics, NURBS, CAD, CAM, CAE, computer aided design, design, modeling, 3DM, Rhino, AutoCAD, AccuRender, DWG, DXF" http-equiv="Keywords" />
+   
+    <!-- Robots -->
+    <!-- The proxy as three options for handling of robots meta tags: -->
+    <!--      allow (rewrite all pages to allow crawling by robots) -->
+    <!--      block (rewrite all pages to block crawling by robots) -->
+    <!--      passthrough (let the origin pages set crawling parameters per page) -->
+    <!-- Each proxy origin can have its own settings. Currently, this hugo site is set to "passthrough": -->
+    <!--      https://github.com/mcneel/rhino3d.com-proxy/blob/www.rhino3d.com/config.json#L259 -->
+    <!-- See: https://mcneel.myjetbrains.com/youtrack/issue/WWW-1473 -->
+    <!-- To Disallow crawling on a particular section, this is currently set in robots.txt here: -->
+    <!-- https://github.com/mcneel/rhino3d.com-appengine/blob/master/static/en/robots.txt -->
+    <!-- Finally, some pages should never be crawled: -->
+    {{ with .Page.Params.page_options.block_webcrawlers }}
+    {{ if eq . true }}
+    <meta name="robots" content="noindex, nofollow">
+    {{ end }}
+    {{ end }}
+
+    <!-- Favicon -->
+    <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+   
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto' type='text/css' media="all" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto' type='text/css' media="all" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto' type='text/css' media="all" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto' type='text/css' media="all" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto' type='text/css' media="all" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap" rel="stylesheet">    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto' type='text/css' media="all" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto' type='text/css' media="all" />
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css' media="all" />
+    
+    <!-- Highlight.js https://highlightjs.readthedocs.io/en/latest/readme.html -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+    
+    {{ $sass := resources.Get "scss/style.scss" }}
+    {{ $style := $sass | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    
+    <!-- Preload webfonts -->
+    <link rel="preload" as="font" type="font/woff2" href="/webfonts/fa-brands-400.woff2" crossorigin="anonymous"/>
+    <link rel="preload" as="font" type="font/woff2" href="/webfonts/fa-solid-900.woff2" crossorigin="anonymous"/>
+    <link rel="preload" as="font" type="font/woff2" href="/webfonts/fa-regular-400.woff2" crossorigin="anonymous"/>
+
+    <!-- Meta -->
+    {{- partial "meta.html" . -}}
+</head>

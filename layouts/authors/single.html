@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="single-content-area">
+  {{ $author_key := .File.ContentBaseName }}
+  {{ $the_author := (index .Site.Data.authors $author_key) }}
+  
+  <div class="feature-title-container">
+    <h1><a href="/authors">Authors</a>: {{ $the_author.name }}</h1>
+  </div>
+  <br/>
+  {{- if ne $the_author.discourse "" -}}
+      <img src="https://files.mcneel.com/rhino/mcneel_discourse_new.ico" alt="Discourse" height="16" width="16">&nbsp;<a href="https://discourse.mcneel.com/u/{{ $the_author.discourse }}/activity">@{{ $the_author.discourse }}</a> on <a href="https://discourse.mcneel.com/c/rhino-developer">Discourse</a><br/>
+  {{- end -}}
+  
+  {{- if ne $the_author.email "" -}}
+    <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;<a href="mailto:{{ $the_author.email }}">{{ $the_author.email }}</a><br/>
+  {{- end -}}
+  <br/>
+
+  <p>{{ $the_author.name }} has contributed the following content:</p>
+  <ul>
+    {{ range sort (where .Site.Pages ".Params.authors" "intersect" (slice $author_key) ) "Title" }}
+    <li>
+      <a class="page-link" href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a>
+    </li>
+    {{- end -}}
+  </ul>
+</div>
+{{ end }}

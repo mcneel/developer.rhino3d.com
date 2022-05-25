@@ -1,0 +1,24 @@
+@media only print {
+  #navbar {
+    display: block;
+    position: unset;
+  }
+
+  #logo-container {
+    height: 125px;
+  }
+
+  #cref,
+  .menu-items {
+    display: none;
+  }
+
+  .toc,
+  .footer,
+  #designstudio-button {
+    display: none;
+  }
+  .outerbox {
+    margin-top: 50px;
+  }
+}

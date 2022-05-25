@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="single-content-area">
+    <div style='text-align:center;margin: 1em;'>
+        <h1>{{ .Page.Title }}</h1>
+        <p>{{ .Content }}</p> 
+        {{- partial "edit_button.html" . -}}
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,12 @@
+{{ $class := "" }}
+{{ $style := "" }}
+{{ if .IsNamedParams }}    
+    {{ if .Get "class"}}{{ $class =  .Get "class" }}{{ end }}
+    {{ if .Get "style"}}{{ $style =  .Get "style" }}{{ end }}
+{{ else }}
+    {{ $class = .Get 0 }}
+    {{ if .Get 1 }}{{ $style = .Get 1 }}{{ end }}
+{{ end }}
+<div {{ with $class }}class="{{ $class }}"{{ end }} {{ with $style }}style="{{ $style }}"{{ end }}>
+{{ .Inner | markdownify }}
+</div>

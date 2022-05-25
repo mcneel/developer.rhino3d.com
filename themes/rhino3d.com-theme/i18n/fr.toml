@@ -1,0 +1,291 @@
+[buy]
+other = "achat"
+
+[download]
+other = "télécharger"
+
+[gallery]
+other = "galerie"
+
+[features]
+other = "fonctions"
+
+[news]
+other = "infos"
+
+[community]
+other = "communauté"
+
+[learn]
+other = "apprendre"
+
+[support]
+other = "assistance "
+
+[resources]
+other = "ressources"
+
+[my-account]
+other = "mon compte"
+
+[logged-in-title]
+other = "Gérez votre compte, vos licences et vos équipes"
+
+[sign-in]
+other = "connexion"
+
+[sign-in-title]
+other = "Connectez-vous pour gérer votre compte, vos licences et vos équipes"
+
+[Icon]
+other = "Icône"
+
+[Description]
+other = "Description"
+
+[Toolbars]
+other = "Barres d'outils"
+
+[Menu]
+other = "Menu"
+
+[Crease-Splitting]
+other = "Division sur les plis"
+
+[History]
+other = "Historique"
+
+[enabled]
+other = "activé"
+
+[More-details]
+other = "Plus d'informations..."
+
+[Including]
+other = "Y compris :"
+
+[Rhino-Commands]
+other = "Commandes de Rhino"
+
+# DO NOT TRANSLATE the contents of {{ }} placeholder.  It gets replaced with the correct version by a template.
+[NEW-in-Vx]
+other = "Nouveautés de {{ .Params.included_in.since }}"
+
+# DO NOT TRANSLATE the [VERSION] placeholder.  It gets replaced with the correct version by a template.
+[New-in-N]
+other = "Nouveau dans [VERSION]"
+
+[New-in-Rhino-7]
+other = "Nouveautés de Rhino 7"
+
+[All-the-details]
+other = "Toutes les informations..."
+
+[bob-loves-revit]
+other = "Bob ❤️ Revit 😘"
+
+# This is optionally shown as a header in some feature pages
+[new-in-rhino-7]
+other = "Nouveautés de Rhino 7"
+
+# context: the bylines that sometimes show up under the title of a page.  Such as "par Scott Davidson..."
+[by]
+other = "par"
+
+# context: the bylines that sometimes show up under the title of a page, showing when the page was last updated
+[Last-updated]
+other = "Dernière mise à jour :"
+
+# context: the bylines that sometimes show up under the title of a page, joining the different authors.  Such as: "par Scott Davidson et..."s
+[and]
+other = "et"
+
+# context: the Edit menu at the bottom of the page
+[Edit-this-page]
+other = "Modifier cette page"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-GitHub]
+other = "Modifier sur GitHub"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-Forestry]
+other = "Modifier sur Forestry"
+
+# context: the Edit menu at the bottom of the page
+[Edit-data]
+other = "Modifier les données"
+
+# context: the Edit menu at the bottom of the page
+[Admin]
+other = "Admin"
+
+# context: page footer
+[Shop-online]
+other = "Boutique en ligne"
+
+# context: page footer
+[or-find-a]
+other = "ou trouver un"
+
+# context: page footer
+[find-a-reseller]
+other = "Trouver un revendeur"
+
+# context: page footer
+[Reseller]
+other = "revendeur"
+
+# context: page footer
+[Privacy-Policy]
+other = "Politique de confidentialité"
+
+# context: page footer
+[About]
+other = "À propos"
+
+# context: page footer
+[Contact-Us]
+other = "Nous contacter"
+
+# context: page footer
+[Language]
+other = "Langues"
+
+# context: page footer
+[change-region-lang]
+other = "Changer de région ou de langue"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[Windows-only]
+other = "Windows uniquement"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[macOS-only]
+other = "macOS uniquement"
+
+[Download-Rhino]
+other = "Télécharger Rhino"
+
+[Download-Rhino-Both]
+other = "[LINK]Téléchargez [PRODUCT] [VERSION] [TYPE] pour Windows ou Mac[/LINK]."
+
+[Download-Rhino-Windows]
+other = "[LINK]Téléchargez [PRODUCT] [VERSION] [TYPE] pour Windows[/LINK]."
+
+[Download-Rhino-Mac]
+other = "[LINK]Téléchargez [PRODUCT] [VERSION] [TYPE] pour Mac[/LINK]."
+
+[Rhino]
+other = "Rhino"
+
+[Name]
+other = "Nom"
+
+[File-Extension]
+other = "Extension de fichier"
+
+[Open-Import]
+other = "Ouvrir/Importer"
+
+[Save-Export]
+other = "Enregistrement/Exportation"
+
+[Notes]
+other = "Notes"
+
+[Latest-Updates]
+other = "Dernières mises à jour"
+
+[Improved]
+other = "Amélioré"
+
+[Improvements]
+other = "Améliorations"
+
+[Mac-only]
+other = "Mac uniquement"
+
+[Windows-and-Mac]
+other = "Windows | Mac"
+
+# Some languages, like Japanese, use a different punctuation mark for periods.
+[period-the-punctuation-mark]
+other = "."
+
+# This gets rendered under the title in the header of the page.  It needs to be a specific width, so if it exceeds the english width too much,
+# it might be best to leave it untranslated or figure out a way to condense it.  This is much "marque" as it is words.
+[product-tagline]
+other = "concevoir, modéliser, présenter, analyser, réaliser..."
+
+# This is the placeholder text in the search field on the top navbar
+[search-navbar]
+other = "chercher"
+
+# Homepage link in the upper part of screen
+[student-or-teacher]
+other = "Étudiant ou enseignant ?"
+
+# Title on homepage video caption
+[caption-rhino-7]
+other = "Rhino 7"
+
+# Subtitle on homepage video caption
+[caption-rhino-7-subtitle]
+other = "Forme libre et précision."
+
+# Details of the Rhino 7 video caption
+[caption-rhino-7-details]
+other = "SubD, Rhino.Inside.Revit, RemaillageQuad et bien plus maintenant inclus."
+
+# Link title on homepage video captions
+[caption-learn-more]
+other = "En savoir plus"
+
+# Link title on homepage video captions
+[caption-try]
+other = "Essayer"
+
+# The conjoiner before the Buy link in the video caption
+[caption-or-conjoiner]
+other = ", ou "
+
+# Link title on homepage video captions
+[caption-buy]
+other = "Achat"
+
+# Title on homepage video caption
+[caption-rhino-refined]
+other = "Rhino se perfectionne"
+
+# Subtitle on homepage video caption
+[caption-less-pain]
+other = "Moins d'entraves, plus de fluidité"
+
+# Details of the Rhino Refined video caption
+[caption-rhino-refined-details]
+other = "Outils pour la fabrication de moules, Sélections nommées, Gestion des mises en page, Amélioration des champs de texte, Lecteur de Grasshopper, Polices filaires (une seule passe) et bien plus."
+
+# The English comma conjoiner
+[comma-conjoiner]
+other = ", "
+
+# Title on homepage video caption
+[caption-presentation]
+other = "Magnifiques vues"
+
+# Subtitle on homepage video caption
+[caption-presentation-subtitle]
+other = "Somptueux travail"
+
+# Details of a video caption
+[caption-presentation-details]
+other = "Amélioration des modes d'affichage et nouveaux outils de présentation tels que les hachures en dégradé, les débruiteurs, les matériaux physiques (PBR) et bien plus."
+
+# New navigation button on Learn Pages
+[new]
+other = "Nouveau"
+
+# Featured button and tag on Learn Pages
+[featured]
+other = "Marqué"

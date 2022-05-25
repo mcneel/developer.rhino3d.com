@@ -1,0 +1,133 @@
+$grid-gap: 10px;
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: $grid-gap;
+    grid-auto-rows: minmax(150px, auto);
+    grid-auto-flow: dense;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.grid-item {
+    transition: 0.3s;
+    // border-radius: 10px; /* 5px rounded corners */
+    // border: 1px solid #dddddd;
+    padding: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #f3f3f3;
+    border-radius: $global-border-radius;
+}
+.grid-item img {
+    transition: transform .2s;
+    border-radius: $global-border-radius;
+    max-width: 100%;
+}
+.grid-item.faded {
+    opacity: 65%;
+}
+
+
+.grid-item:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transform: scale(1.05);
+    opacity: 100%;
+}
+
+.span-1 {
+    grid-column-end: span 1;
+    grid-row-end: span 1;
+}
+
+.span-2 {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+}
+
+.span-3 {
+    grid-column-end: span 3;
+    grid-row-end: span 3;
+}
+
+.span-4 {
+    grid-column-end: span 4;
+    grid-row-end: span 4;
+}
+
+.span-1-col-2-row {
+    grid-column-end: span 1;
+    grid-row-end: span 2;
+}
+
+.span-1-col-3-row {
+    grid-column-end: span 1;
+    grid-row-end: span 3;
+}
+
+.span-1-col-4-row {
+    grid-column-end: span 1;
+    grid-row-end: span 4;
+}
+
+.span-2-col-1-row {
+    grid-column-end: span 2;
+    grid-row-end: span 1;
+}
+
+.span-2-col-3-row {
+    grid-column-end: span 2;
+    grid-row-end: span 3;
+}
+
+.span-2-col-4-row {
+    grid-column-end: span 2;
+    grid-row-end: span 4;
+}
+
+.span-3-col-1-row {
+    grid-column-end: span 3;
+    grid-row-end: span 1;
+}
+
+.span-3-col-2-row {
+    grid-column-end: span 3;
+    grid-row-end: span 2;
+}
+
+.span-3-col-4-row {
+    grid-column-end: span 3;
+    grid-row-end: span 4;
+}
+
+.span-4-col-1-row {
+    grid-column-end: span 4;
+    grid-row-end: span 1;
+}
+
+.span-4-col-2-row {
+    grid-column-end: span 4;
+    grid-row-end: span 2;
+}
+
+.span-4-col-3-row {
+    grid-column-end: span 4;
+    grid-row-end: span 3;
+}
+
+.grid-layout-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(124px, 1fr));
+    grid-gap: $grid-gap;
+    grid-auto-rows: minmax(124px, auto);
+    grid-auto-flow: dense;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+  

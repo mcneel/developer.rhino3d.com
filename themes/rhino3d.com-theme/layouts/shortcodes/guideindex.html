@@ -1,0 +1,13 @@
+{{ $arrPages := .Page.Pages }}
+{{ with .Get "group" }}
+    {{ $prtName := printf "%s%s" "/categories/" . }}
+        {{ with $.Site.GetPage $prtName }}
+            <h2>{{ .Title | humanize }}</h2>
+                <ul>
+                {{ $filtered := .Pages | intersect $arrPages }}
+                {{ range $filtered }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+                </ul>
+        {{ end }}
+{{ end }}

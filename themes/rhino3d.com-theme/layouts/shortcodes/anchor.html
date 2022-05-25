@@ -1,0 +1,7 @@
+{{ $id := "" }}
+{{ if .IsNamedParams }}    
+    {{ if .Get "id"}}{{ $id =  .Get "id" }}{{ end }}
+{{ else }}
+    {{ $id = .Get 0 }}
+{{ end }}
+<div id="{{ $id }}"></div>

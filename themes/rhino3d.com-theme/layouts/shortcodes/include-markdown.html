@@ -1,0 +1,4 @@
+{{- $src := path.Join "/content" .Page.File.Lang .Page.File.Dir (.Get "src")}}
+{{with .Site.GetPage $src }}
+{{ .Content }}
+{{end}}

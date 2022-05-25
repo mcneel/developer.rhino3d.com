@@ -1,0 +1,17 @@
+{{ $verb := "file/open" }}
+{{ $url := "" }}
+{{ $title := "Open in Rhino" }}
+{{ if .IsNamedParams }}    
+    {{ if .Get "url"}}{{ $url =  .Get "url" }}{{ end }}
+    {{ if .Get "verb"}}{{ $verb =  .Get "verb" }}{{ end }}
+    {{ if .Get "title"}}{{ $title =  .Get "title" }}{{ end }}
+{{ else }}
+    {{ $url = .Get 0 }}
+    {{ if .Get 1 }}{{ $title = .Get 1 }}{{ end }}
+    {{ if .Get 2 }}{{ $verb = .Get 2 }}{{ end }}
+{{ end }}
+{{ if .Inner }}
+  {{ $title = .Inner }}
+{{ end }}
+
+<a class="rhinoProtocol" href="{{ $url }}" data-verb="{{ $verb }}"/>{{ $title | markdownify }}</a>

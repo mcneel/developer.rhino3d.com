@@ -1,0 +1,42 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/vbnet.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/yaml.min.js"></script>
+<script type="text/javascript" src="{{ (resources.Get "/script/highlightjs-line-numbers.js" | resources.Fingerprint).Permalink }}"></script>
+
+<script>hljs.highlightAll();</script>
+<script>hljs.initLineNumbersOnLoad();</script>
+<script>
+    function openCodeTab(evt, tabName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+      
+      // For the case where there are multiple code-tab samples on the same page, we need to get the tabCounter
+      var matches = tabName.match(/\d+$/); // Find numbers at the end of tabName (if any)
+      var tabCounter = "";
+      if (matches)
+        tabCounter = matches[0];
+      
+      // Get all elements with class="codetab-content" and hide them
+      tabcontent = document.getElementsByClassName("codetab-content" + tabCounter);
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+    
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks" + tabCounter);
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+    
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  
+    // activate all the defaultOpen tabs...
+    var defaultTabs = document.querySelectorAll(`*[id^="defaultOpen"]`);
+    defaultTabs.forEach(element => {
+      element.click();
+    });
+
+</script>

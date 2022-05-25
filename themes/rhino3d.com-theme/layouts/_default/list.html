@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="single-content-area index-page">
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
+    {{ .Content }}
+  </div>
+  {{- if ne .Page.Params.page_options.taxonomy false -}}
+  <div class="tax-list">
+    <h3>Section:</h3>
+    <ul>
+      {{ range .Site.Sections }}
+              <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+      {{ end }}
+    </ul>
+    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+      <h3>{{ humanize $taxonomyname }}:</h3>
+      <ul>
+        {{ range $key, $value := $taxonomy }}
+        <li>  <a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}{{ "/" }}{{ $key | urlize }}">{{ $key }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}    
+  </div>
+  {{- end -}}
+  {{- partial "edit_button.html" . -}}
+  {{- if ne .Page.Params.page_options.gallery_cards false -}}
+    {{- partial "gallery-cards" . -}}
+  {{- end -}}
+</div>
+{{end}}

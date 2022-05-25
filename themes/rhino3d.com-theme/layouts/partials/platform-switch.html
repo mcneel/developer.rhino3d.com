@@ -1,0 +1,15 @@
+<div class="platform-toggle">
+    <!-- Here is a good tutorial on image based radio buttons https://codepen.io/DavidBradbury/pen/HuCqx -->
+    <!-- A good one on using button click to hide show: https://www.geeksforgeeks.org/hide-or-show-html-elements-using-visibility-property-in-javascript/ -->
+    <input type="radio" src="/images/win-logo-small.png" class="input-hidden" name="showPlatform" id="rshowWin" onClick="showPlatform(`Rhino_Win`)" />
+      <label for="rshowWin">
+        <img src="/images/win-logo-small.png" alt="Window icon">
+      </label>
+
+    <input type="radio" src="/images/win-logo-small.png" class="input-hidden" name="showPlatform" id="rshowMac" onClick="showPlatform(`Rhino_Mac`)" />
+      <label for="rshowMac">
+        <img src="/images/mac-logo-small.png" alt="Mac icon">
+      </label>  
+  </div>
+<script type="text/javascript" src="{{ (resources.Get "/script/cookie.js" | resources.Fingerprint).Permalink }}"></script>
+<script type="text/javascript" src="{{ (resources.Get "/script/platform.js" | resources.Fingerprint).Permalink }}"></script>

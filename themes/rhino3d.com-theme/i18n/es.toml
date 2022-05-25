@@ -1,0 +1,291 @@
+[buy]
+other = "comprar"
+
+[download]
+other = "descargar"
+
+[gallery]
+other = "galería"
+
+[features]
+other = "características"
+
+[news]
+other = "noticias"
+
+[community]
+other = "comunidad"
+
+[learn]
+other = "formación"
+
+[support]
+other = "soporte"
+
+[resources]
+other = "recursos"
+
+[my-account]
+other = "cuenta"
+
+[logged-in-title]
+other = "Administre su cuenta, licencias y grupos"
+
+[sign-in]
+other = "login"
+
+[sign-in-title]
+other = "Inicie sesión para gestionar su cuenta, licencias y grupos"
+
+[Icon]
+other = "Icono"
+
+[Description]
+other = "Descripción"
+
+[Toolbars]
+other = "Barras de herramientas"
+
+[Menu]
+other = "Menú"
+
+[Crease-Splitting]
+other = "Partición de pliegues"
+
+[History]
+other = "Historial"
+
+[enabled]
+other = "activado"
+
+[More-details]
+other = "Más información..."
+
+[Including]
+other = "Incluyen:"
+
+[Rhino-Commands]
+other = "Comandos de Rhino"
+
+# DO NOT TRANSLATE the contents of {{ }} placeholder.  It gets replaced with the correct version by a template.
+[NEW-in-Vx]
+other = "Nuevo en Rhino {{ .Params.included_in.since }}"
+
+# DO NOT TRANSLATE the [VERSION] placeholder.  It gets replaced with the correct version by a template.
+[New-in-N]
+other = "Nuevo en Rhino [VERSION]"
+
+[New-in-Rhino-7]
+other = "Novedades de Rhino 7"
+
+[All-the-details]
+other = "Más información..."
+
+[bob-loves-revit]
+other = "Bob ❤️s Revit 😘"
+
+# This is optionally shown as a header in some feature pages
+[new-in-rhino-7]
+other = "Novedades de Rhino 7"
+
+# context: the bylines that sometimes show up under the title of a page.  Such as "por Scott Davidson..."
+[by]
+other = "por"
+
+# context: the bylines that sometimes show up under the title of a page, showing when the page was last updated
+[Last-updated]
+other = "Última actualización:"
+
+# context: the bylines that sometimes show up under the title of a page, joining the different authors.  Such as: "por Scott Davidson y..."s
+[and]
+other = "y"
+
+# context: the Edit menu at the bottom of the page
+[Edit-this-page]
+other = "Editar esta página"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-GitHub]
+other = "Editar en GitHub"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-Forestry]
+other = "Editar en Forestry"
+
+# context: the Edit menu at the bottom of the page
+[Edit-data]
+other = "Editar datos"
+
+# context: the Edit menu at the bottom of the page
+[Admin]
+other = "Admin"
+
+# context: page footer
+[Shop-online]
+other = "Compre online"
+
+# context: page footer
+[or-find-a]
+other = "o encuentre un"
+
+# context: page footer
+[find-a-reseller]
+other = "Encuentre un distribuidor"
+
+# context: page footer
+[Reseller]
+other = "distribuidor"
+
+# context: page footer
+[Privacy-Policy]
+other = "Política de privacidad"
+
+# context: page footer
+[About]
+other = "Acerca de"
+
+# context: page footer
+[Contact-Us]
+other = "Contacto"
+
+# context: page footer
+[Language]
+other = "Idioma"
+
+# context: page footer
+[change-region-lang]
+other = "Cambiar a otro idioma o región"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[Windows-only]
+other = "Solo Windows"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[macOS-only]
+other = "Solo macOS"
+
+[Download-Rhino]
+other = "Descargue Rhino"
+
+[Download-Rhino-Both]
+other = "[LINK]Descargue [PRODUCT] [VERSION] [TYPE] para Windows o Mac[/LINK]."
+
+[Download-Rhino-Windows]
+other = "[LINK]Descargue [PRODUCT] [VERSION] [TYPE] para Windows[/LINK]."
+
+[Download-Rhino-Mac]
+other = "[LINK]Descargue [PRODUCT] [VERSION] [TYPE] para Mac[/LINK]."
+
+[Rhino]
+other = "Rhino"
+
+[Name]
+other = "Nombre"
+
+[File-Extension]
+other = "Extensión de archivo"
+
+[Open-Import]
+other = "Abrir/Importar"
+
+[Save-Export]
+other = "Guardar/Exportar"
+
+[Notes]
+other = "Notas"
+
+[Latest-Updates]
+other = "Últimas actualizaciones"
+
+[Improved]
+other = "Mejorado"
+
+[Improvements]
+other = "Mejoras"
+
+[Mac-only]
+other = "Solo Mac"
+
+[Windows-and-Mac]
+other = "Windows | Mac"
+
+# Some languages, like Japanese, use a different punctuation mark for periods.
+[period-the-punctuation-mark]
+other = "."
+
+# This gets rendered under the title in the header of the page.  It needs to be a specific width, so if it exceeds the english width too much,
+# it might be best to leave it untranslated or figure out a way to condense it.  This is much "branding" as it is words.
+[product-tagline]
+other = "diseñar, modelar, presentar, analizar, producir..."
+
+# This is the placeholder text in the search field on the top navbar
+[search-navbar]
+other = "buscar"
+
+# Homepage link in the upper part of screen
+[student-or-teacher]
+other = "¿Estudiante o profesor?"
+
+# Title on homepage video caption
+[caption-rhino-7]
+other = "Rhino 7"
+
+# Subtitle on homepage video caption
+[caption-rhino-7-subtitle]
+other = "Formas libres, con precisión."
+
+# Details of the Rhino 7 video caption
+[caption-rhino-7-details]
+other = "Disponible ahora con SubD, Rhino.Inside.Revit, RemalladoCuad y mucho más."
+
+# Link title on homepage video captions
+[caption-learn-more]
+other = "Más información"
+
+# Link title on homepage video captions
+[caption-try]
+other = "probar"
+
+# The conjoiner before the Buy link in the video caption
+[caption-or-conjoiner]
+other = "o "
+
+# Link title on homepage video captions
+[caption-buy]
+other = "comprar"
+
+# Title on homepage video caption
+[caption-rhino-refined]
+other = "Rhino perfeccionado"
+
+# Subtitle on homepage video caption
+[caption-less-pain]
+other = "Menos trabas, más fluidez"
+
+# Details of the Rhino Refined video caption
+[caption-rhino-refined-details]
+other = "Herramientas de moldeado, selecciones guardadas, gestión de diseños, campos de texto mejorados, Grasshopper Player, fuentes de un solo trazo y mucho más."
+
+# The English comma conjoiner
+[comma-conjoiner]
+other = ", "
+
+# Title on homepage video caption
+[caption-presentation]
+other = "Vistas preciosas"
+
+# Subtitle on homepage video caption
+[caption-presentation-subtitle]
+other = "Trabajos impresionantes"
+
+# Details of a video caption
+[caption-presentation-details]
+other = "Modos de visualización de trabajo mejorados y nuevas herramientas de presentación como Tramas de degradado, Filtros de reducción de ruido, Materiales PBR, Presentación de capas y mucho más."
+
+# New navigation button on Learn Pages
+[new]
+other = "Nuevo"
+
+# Featured button and tag on Learn Pages
+[featured]
+other = "Destacado"

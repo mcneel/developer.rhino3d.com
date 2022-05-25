@@ -1,0 +1,16 @@
+{{- if .Get 0 -}}
+{{- $type := .Get 0 -}}
+{{- if eq $type "image" -}}
+<div style="display: flex; justify-content: center;">
+{{- .Inner | markdownify -}}
+</div>
+{{- else -}}
+<div style="text-align: center;display: block;">
+{{- .Inner | markdownify -}}
+</div>
+{{- end -}}
+{{- else -}}
+<div style="text-align: center; display: block;">
+{{- .Inner | markdownify -}}
+</div>
+{{- end -}}

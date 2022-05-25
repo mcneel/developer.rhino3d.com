@@ -1,0 +1,18 @@
+{{- $label := "Section Body" -}}
+{{- $name := "" -}}
+{{- $group := "" -}}
+{{- if .IsNamedParams -}}    
+    {{- if .Get "name"}}{{- $name =  .Get "name" -}}{{- end -}}
+    {{- if .Get "group"}}{{- $group =  .Get "group" -}}{{- end -}}
+    {{- if .Get "label"}}{{- $label =  .Get "label" -}}{{- end -}}
+{{- else -}}
+    {{- $group = .Get 0 -}}
+    {{- if .Get 1 -}}{{- $name = .Get 1 -}}{{- end -}}
+    {{- if .Get 2 -}}{{- $label = .Get 2 -}}{{- end -}}
+{{- end -}}
+{{- if .Inner -}}
+  {{- $label = .Inner -}}
+{{- end -}}
+<div class='section' style='display:none' data-group='{{ $group }}' data-name='{{ $name }}'>
+    {{ $label | markdownify }}
+</div>

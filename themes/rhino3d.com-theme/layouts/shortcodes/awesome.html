@@ -1,0 +1,12 @@
+<!-- This shortcode lacks indentation because intentation was causing problems with <pre><code> with the markdown parser in some contexts -->
+{{- if .IsNamedParams -}}
+{{- if .Get "color" -}}
+<span style="color: {{ .Get `color` }}"><i class="{{- .Get `id` -}} {{- .Get `size` -}}"></i></span>
+{{- end -}}
+{{- else -}}
+{{- if .Get 0 -}}
+<i class="{{ range .Params }}{{ . }} {{ end }}"></i>
+{{- else -}}
+<span class="shortcode-error">Shortcode usage: &lbrace;&lbrace;&lt; awesome "far fa-smile-wink" &gt;&rbrace;&rbrace;</span>
+{{- end -}}
+{{- end -}}

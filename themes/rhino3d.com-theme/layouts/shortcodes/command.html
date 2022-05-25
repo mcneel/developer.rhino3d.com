@@ -1,0 +1,36 @@
+{{ $.Scratch.Set "command" "" }}
+{{ $.Scratch.Set "param" "" }}
+{{ $.Scratch.Set "error" false }}
+{{ $params := slice "description" "short_description" "icon" "link" }}
+
+{{ if .Get 0 }}
+    {{ $path := print "docs/help/commands/" (.Get 0) }}
+    {{ $.Scratch.Set "command" $path }}
+{{ else }}
+    {{ $.Scratch.Set "error" true }}
+{{ end }}
+
+{{ if .Get 1 }}
+    {{ $.Scratch.Set "param" (.Get 1 ) }}
+    {{ if not (in $params ($.Scratch.Get "param") ) }}
+        {{ $.Scratch.Set "error" true }}
+    {{ end }}
+{{ else }}
+    {{ $.Scratch.Set "error" true }}
+{{ end }}
+
+{{ if ($.Scratch.Get "error") }}
+    <span class="shortcode-error">Shortcode usage: &lbrace;&lbrace;&lt; command [name] [param] &gt;&rbrace;&rbrace; supported params: {{ range $params }} {{ . }}, {{ end }}</span>
+{{ else }}    
+    {{ with .Site.GetPage ($.Scratch.Get "command") }}
+        {{ if (eq ($.Scratch.Get "param") "description") }}
+            {{ .Description }}
+        {{ else if (eq ($.Scratch.Get "param") "short_description") }}
+            {{ .Params.short_description }}
+        {{ else if (eq ($.Scratch.Get "param") "icon") }}
+            <a href="{{ .RelPermalink }}"><img style="vertical-align: middle;"src="{{ .Params.icon }}" width="30"></a>
+        {{ else if (eq ($.Scratch.Get "param") "link") }}
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ end }}        
+    {{ end }}
+{{ end }}

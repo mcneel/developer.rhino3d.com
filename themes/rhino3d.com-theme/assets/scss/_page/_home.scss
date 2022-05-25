@@ -1,0 +1,117 @@
+.home-content-offset {
+    margin-top: 90vh; 
+    margin-left:-1em; 
+    margin-right: -1em; 
+    margin-bottom:-1em;
+}
+
+@mixin coverer {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.video-wrapper {
+    display: grid;
+}
+
+.video-header {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    &, video {
+        @include coverer;
+    }
+    video {
+        background: $global-background-color;
+        object-fit: cover;
+    }
+    .video_caption_container {
+        display: flex;
+        position: absolute;
+        margin: auto;
+        top: $global-nav-height-large;
+        //bottom: 0;
+        left: 0;
+        right: 0;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        width: auto;
+        // If we don't set max-width and height, this div
+        // covers the video controls. The positioning of the child
+        // .video_caption div somehow allows it to be bigger than
+        // this parent div, which is fantastic.
+        max-width: 100px;
+        height: 100px;
+
+        // opacity: 85%; z-index: 9999; border: 2px solid yellow; background-color:red;  // For debugging
+        // Left and Right, below, apply to the child
+        // of this element - the .video_caption
+        .video_caption.left {
+            left: 0;
+            padding-left: 3em;
+            padding-top: 2em;
+            border-bottom-right-radius: $global-border-radius;
+        }
+        .video_caption.right {
+            right: 0;
+            padding-right: 3em;    
+            padding-top: 2em;
+            border-bottom-left-radius: $global-border-radius;
+        }
+        .video_caption {
+            display: none;
+            position: absolute;
+            top: 0;
+            min-width: 350px;
+            box-sizing: border-box;
+            padding: 0.5em;
+            background-color: white;
+            box-shadow: 0 0 2.5em 2.5em white;
+            opacity: 85%;
+            //border-radius: $global-border-radius;
+            .slide-headline {
+                font-size: 56px;
+                white-space:nowrap;
+                font-weight: bold;
+                color: $global-rhino-color;
+            } 
+            .slide-headline-small {
+                font-size: 42px;
+                font-weight: bold;
+                color: $global-rhino-color;
+                white-space:nowrap;
+            }
+            .slide-subtitle {
+                font-size: 1.4em;
+                font-style: italic;
+                font-weight: bold;
+                white-space:nowrap;
+            }
+            .slide-short-description {
+                font-size: 1.1em;
+                color: $global-dark-grey;
+            }
+            .slide-link {
+                font-weight: bold;
+                font-size: 1.25em;
+                white-space:nowrap;
+            }
+            
+        }                
+    }
+    .video_caption_container.left {
+        margin-left: 0;
+        align-items: left;
+        justify-content: left;
+    }
+    .video_caption_container.right {
+        margin-right: 0;
+        align-items: right;
+        justify-content: right;
+    }
+}

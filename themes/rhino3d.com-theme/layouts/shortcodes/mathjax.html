@@ -1,0 +1,6 @@
+<!-- MathJax containing some tokens like array and matrix get mangled by the markdown parser and are better passed as-is -->
+{{ if or (in .Inner "array") (in .Inner "bmatrix") }}
+    {{ .Inner }}    
+{{- else -}}
+    {{ .Inner | markdownify }}
+{{- end -}}

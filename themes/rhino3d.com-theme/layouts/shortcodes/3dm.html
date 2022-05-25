@@ -1,0 +1,164 @@
+{{ $path := .Get "path"}}
+{{ $id := (print $path "-" .Ordinal) }}
+{{ $width := .Get "width"}}
+{{ $height := .Get "height"}}
+{{ $title := .Get "title"}}
+{{ $camera := .Get "camera"}}
+{{ $background := or (.Get "background") "grey"}}
+{{ $text_color := or (.Get "text_color") "black" }}
+{{ $animation := .Get "animation"}}
+{{ $settings := .Get "settings"}}
+
+<style>
+    .load_spinner {
+        border: 5px solid #f3f3f3; /* Light grey */
+        border-top: 5px solid #3d3d3d; /* Grey */
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        position: absolute;
+        margin: auto;
+        left: calc(50% - 20px);
+        z-index: 2;
+    }
+    .title_3dm {
+        transform: translate(0px, -24px);
+        font-size: small;
+        text-align: center;
+        line-height: 1;
+        pointer-events: none;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+<div style="display: flex; justify-content: center; flex-direction: column; position: relative;">
+    <canvas id="canvas-{{ $id }}" style="width: {{ $width }}; height: {{ $height }}; margin: auto;"></canvas>
+    <div class="load_spinner" id="loader-{{ $id }}"></div>
+    <div class="title_3dm" id="title-{{ $id }}" style=" color: {{$text_color}};" >
+        {{ $title }}
+    </div>
+    <script type="module">
+            import * as THREE from 'https://cdn.skypack.dev/three@0.136.0';
+            import { OrbitControls } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/controls/OrbitControls.js';
+            import { Rhino3dmLoader } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/3DMLoader.js';
+
+            let camera, scene, renderer;
+            let controls;
+            let camPt = {{$camera}} ? JSON.parse({{$camera}}) : {"x":0,"y":0, "z":20};
+
+            //default settings
+            let settings = {{$settings}} ? JSON.parse({{$settings}}) : {};
+            let defaultSettings = {controls:true, camera:{type:"perspective", zoom:1, fov: 50}}
+            settings = _.merge(defaultSettings,settings)
+
+            //default animation params
+            let animation = {{$animation}} ? JSON.parse({{$animation}}) : {};
+            let defaultAnimation = {settings:{repeat:-1, eachDelay:1, eachDuration:1}}
+            animation = _.merge(defaultAnimation,animation)
+            if(animation.frames && animation.frames.length> 0 && !{{$camera}}){
+                camPt = animation.frames[0].camera
+            }
+
+            window.addEventListener( 'resize', resizeCanvasToDisplaySize, false );
+    
+            init();
+            animate();
+    
+            function init() {
+                THREE.Object3D.DefaultUp = new THREE.Vector3( 0, 0, 1 );
+    
+                renderer = new THREE.WebGLRenderer({canvas: document.getElementById("canvas-{{ $id }}")});
+                renderer.setPixelRatio( window.devicePixelRatio );
+                renderer.outputEncoding = THREE.sRGBEncoding;
+    
+                camera = settings.camera.type === "perspective" ? new THREE.PerspectiveCamera( 60, 2, 1, 1000 ) : new THREE.OrthographicCamera( -30, 30, 30, -30, 1, 1000 );
+                camera.zoom = settings.camera.zoom;
+                {{/*  camera.fov = settings.camera.fov;  */}}
+                camera.position.set( camPt.x, camPt.y, camPt.z );
+    
+                scene = new THREE.Scene();
+                scene.background = new THREE.Color( {{$background}} );
+    
+                const directionalLight = new THREE.DirectionalLight( 0x404040, 2 );
+                directionalLight.position.set( 0, 0, 2 );
+                scene.add( directionalLight );
+    
+                const directionalLight2 = new THREE.DirectionalLight( 0x404040, 1 );
+                directionalLight2.position.set( 1, 1, 1 );
+                scene.add( directionalLight2 );
+    
+                const directionalLight3 = new THREE.DirectionalLight( 0x404040, 0.3 );
+                directionalLight3.position.set( -1, -1, -1 );
+                scene.add( directionalLight3 );
+
+                controls = new OrbitControls( camera, renderer.domElement );
+                controls.enabled = settings.controls;
+
+                const loader = new Rhino3dmLoader();
+                loader.setLibraryPath( 'https://cdn.jsdelivr.net/npm/rhino3dm@7.11.1/' );
+
+                loader.load( {{ $path }}, function ( object ) {
+                    scene.add( object );
+                    // hide spinner
+                    document.getElementById( "loader-{{ $id }}" ).style.display = 'none';
+
+                    if (animation.frames)
+                    {const keyframes = animation.frames.map(frame =>{
+                        return {...frame.camera, delay: animation.settings.eachDelay , duration: animation.settings.eachDuration , onComplete:handleFrameEnd, onCompleteParams:[frame.title, animation.settings.eachDelay, animation.settings.eachDuration] }
+                    })
+                    gsap.to(camera.position, {
+                        keyframes,
+                        repeat: animation.settings.repeat,
+                        repeatRefresh: true,
+                        repeatDelay: 0.1
+                    });}
+
+                    });
+                
+                resizeCanvasToDisplaySize()
+            }
+
+            function handleFrameEnd(state, delay, duration) {
+                //running on completion of each frame of animation
+                let title = document.getElementById("title-{{ $id }}");
+                title.innerHTML = state
+                const tl = gsap.timeline({ 
+                    paused: true, 
+                  })
+                  .set(title, { opacity: 1 })
+                  .to(title, { opacity: 0, duration, delay })
+                tl.restart();
+            }
+    
+            function animate() {
+                {{/*  resizeCanvasToDisplaySize();  */}}
+                controls.update();
+                renderer.render( scene, camera );
+                requestAnimationFrame( animate );
+            }
+            
+            function resizeCanvasToDisplaySize() {
+              const canvas = renderer.domElement;
+              const width = canvas.clientWidth;
+              const height = canvas.clientHeight;
+              if (canvas.width !== width ||canvas.height !== height) {
+                renderer.setSize(width, height, false);
+                if (camera.type ==="OrthographicCamera"){
+                    camera.left = -canvas.clientWidth/2;
+                    camera.right = canvas.clientWidth/2;
+                    camera.top = canvas.clientHeight/2;
+                    camera.bottom = -canvas.clientHeight/2;
+                }
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+              }
+            }
+
+    </script>
+</div>

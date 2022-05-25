@@ -1,0 +1,100 @@
+/* 
+##################################################################
+# Style Search 
+##################################################################
+*/
+
+#sitesearch {
+	float: right;
+	margin: 8px;
+	margin-top: 38px;
+	margin-right: 20px;
+	transition: 0.4s;
+}
+
+@media only screen and (max-width: $global-mobile-maxwidth) {
+	#sitesearch {
+		display: none;
+	}
+}
+
+.searchBox {
+	background:white;
+	background-image: url('/images/search-solid.svg');
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: white;
+	cursor: pointer;
+	vertical-align:middle;
+	overflow: hidden;
+}
+
+@media screen and (max-width: $global-mobile-maxwidth) {
+	.navbar {
+	.searchBox {display: none;}
+	}
+}
+
+
+.searchBoxBeta {
+	background:white;
+	border-style: solid;
+	border-width: 1px;
+	border-color: white;
+	cursor: pointer;
+	vertical-align:middle;
+}
+
+#heading #cse-search-boxBeta {
+    padding:0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom:16px;
+    z-index: 100;
+}
+
+
+#search-box {
+	margin-top:10px;
+}
+
+#searchtext {
+	height:19px;
+	padding:0px;
+	line-height:19.5px;
+}
+
+#cse-search-results iframe {
+	height : 1150px;
+}
+
+#search-result-title {
+	margin-left:32px !important;
+}
+
+#bcs-results-div h1 a, h2 a {
+	color:  rgb(154,0,0) !important;
+	margin-bottom: 2px;
+}
+
+.bcs-result h2 {
+	font-family: $global-font-family;
+margin: 0px !important;
+padding-bottom:0px !important;
+font-size: 18px !important;
+line-height: 24px !important;
+}
+
+.bcs-result {
+	font-family: $global-font-family;
+margin-top: 0px !important;
+padding-top: 0px !important;
+margin-left: 20px !important;
+}
+
+#support-search {
+	// width: 80%;
+}

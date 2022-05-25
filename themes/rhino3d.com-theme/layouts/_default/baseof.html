@@ -1,0 +1,29 @@
+{{- partial "init.html" . -}}
+
+<!DOCTYPE html>
+<html dir="ltr" lang="{{.Site.Language.Lang}}" xmlns="http://www.w3.org/1999/xhtml">
+  {{ if (.Params.page_options.plain ) }}
+    {{- partial "head-plain" . -}}
+  {{ else }}
+    {{- partial "head" . -}}
+  {{ end }}
+  <body>
+    {{ if (not .Params.page_options.plain ) }}
+      <div id="mask"></div>
+      {{- block "header" . }}
+          {{- partial "header" . -}}
+      {{- end }}
+      <div class="outerbox">
+        {{- block "main" . }}
+        {{- end }}
+        {{- block "footer" . }}
+          {{- partial "footer" . -}}
+        {{- end }}
+      </div>
+      {{- partial "js-scripts" . }}
+    {{ else }}
+      {{- block "main" . }}
+      {{- end }}
+    {{ end }}
+  </body>
+</html>

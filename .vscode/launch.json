@@ -1,0 +1,53 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Hugo: Serve English",
+            "type": "pwa-chrome",
+            "preLaunchTask": "hugo serve english",
+            "postDebugTask": "hugo terminate",
+            "request": "attach",
+            "url": "http://localhost:1313",
+            "presentation": {
+                "hidden": false,
+                "group": "Hugo",
+                "order": 1,
+            },
+        },
+        {
+            "name": "Hugo: Preview Current",
+            "type": "pwa-chrome",
+            "preLaunchTask": "hugo preview current",
+            "request": "attach",
+            "url": "http://localhost:1313",
+            "presentation": {
+                "hidden": false,
+                "group": "Hugo",
+                "order": 2
+            }
+        },
+        {
+            "name": "Hugo: Serve All Languages",
+            "type": "pwa-chrome",
+            "preLaunchTask": "hugo serve all languages",
+            "postDebugTask": "hugo terminate",
+            "request": "attach",
+            "url": "http://localhost:1313",
+            "presentation": {
+                "hidden": false,
+                "group": "Hugo",
+                "order": 3
+            }
+        },        
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]
+}

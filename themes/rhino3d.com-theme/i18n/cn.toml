@@ -1,0 +1,291 @@
+[buy]
+other = "购买"
+
+[download]
+other = "下载"
+
+[gallery]
+other = "作品"
+
+[features]
+other = "功能"
+
+[news]
+other = "新闻"
+
+[community]
+other = "社区"
+
+[learn]
+other = "教学"
+
+[support]
+other = "支持"
+
+[resources]
+other = "资源"
+
+[my-account]
+other = "我的账户"
+
+[logged-in-title]
+other = "管理您的账户、授权与协作团队"
+
+[sign-in]
+other = "登录"
+
+[sign-in-title]
+other = "登录以管理您的账户、授权与协作团队"
+
+[Icon]
+other = "图标"
+
+[Description]
+other = "描述"
+
+[Toolbars]
+other = "工具列"
+
+[Menu]
+other = "功能表"
+
+[Crease-Splitting]
+other = "Crease Splitting"
+
+[History]
+other = "记录建构历史"
+
+[enabled]
+other = "启用"
+
+[More-details]
+other = "更多详情..."
+
+[Including]
+other = "包括:"
+
+[Rhino-Commands]
+other = "Rhino 指令"
+
+# 请勿翻译 {{ }} 占位符的内容。它会被模板替换为正确的版本。
+[NEW-in-Vx]
+other = "{{ .Params.included_in.since }} 新功能"
+
+# 请勿翻译 {{ }} 占位符的内容。它会被模板替换为正确的版本。
+[New-in-N]
+other = "[VERSION] 新功能"
+
+[New-in-Rhino-7]
+other = "Rhino 7 新功能"
+
+[All-the-details]
+other = "所有详情..."
+
+[bob-loves-revit]
+other = "Bob ❤️s Revit "
+
+# 这可以在某些功能页面中做为标题显示
+[new-in-rhino-7]
+other = "Rhino 7 新功能"
+
+# context: 有时在页面标题下显示的署名副标题。例如"作者：Scott Davidson..."
+[by]
+other = "by"
+
+# context: 有时在页面标题下显示的副标题，显示页面的最新更新时间
+[Last-updated]
+other = "最近更新:"
+
+# context: 有时会在页面标题下显示的署名副标题，并与其他作者一起出现。例如"作者：Scott Davidson 和..."
+[and]
+other = "and"
+
+# context: 页面底部的编辑菜单
+[Edit-this-page]
+other = "编辑此页面"
+
+# context: 页面底部的编辑菜单
+[Edit-on-GitHub]
+other = "在 GitHub 上编辑"
+
+# context: 页面底部的编辑菜单
+[Edit-on-Forestry]
+other = "在 Forestry 上编辑"
+
+# context: 页面底部的编辑菜单
+[Edit-data]
+other = "数据编辑"
+
+# context: 页面底部的编辑菜单
+[Admin]
+other = "管理员"
+
+# context: 页脚
+[Shop-online]
+other = "在线购买"
+
+# context: 页脚
+[or-find-a]
+other = "或者搜索"
+
+# context: 页脚
+[find-a-reseller]
+other = "查找经销商"
+
+# 上下文: 页脚
+[Reseller]
+other = "经销商"
+
+# context: 页脚
+[Privacy-Policy]
+other = "隐私政策"
+
+# context: 页脚
+[About]
+other = "关于"
+
+# context: 页脚
+[Contact-Us]
+other = "联系我们"
+
+# context: 页脚
+[Language]
+other = "语言"
+
+# context: 页脚
+[change-region-lang]
+other = "选择其他地区或语言"
+
+# context: 平台语言切换对话框，当它们只与一个平台相关时，有时会出现在功能页面的顶部
+[Windows-only]
+other = "仅适用于 Windows"
+
+# context: 平台语言切换对话框，当它们只与一个平台相关时，有时会出现在功能页面的顶部
+[macOS-only]
+other = "仅适用于 macOS"
+
+[Download-Rhino]
+other = "下载 Rhino"
+
+[Download-Rhino-Both]
+other = "[LINK]为 Windows 或者 Mac 下载 [PRODUCT] [VERSION] [TYPE]  [/LINK]。"
+
+[Download-Rhino-Windows]
+other = "[LINK]为 Windows 下载 [PRODUCT] [VERSION] [TYPE]  [/LINK]。"
+
+[Download-Rhino-Mac]
+other = "[LINK]为 Mac 下载 [PRODUCT] [VERSION] [TYPE]  [/LINK]。"
+
+[Rhino]
+other = "Rhino"
+
+[Name]
+other = "名称"
+
+[File-Extension]
+other = "文件扩展名"
+
+[Open-Import]
+other = "打开/导入"
+
+[Save-Export]
+other = "保存/导出"
+
+[Notes]
+other = "附注"
+
+[Latest-Updates]
+other = "最近更新"
+
+[Improved]
+other = "改进"
+
+[Improvements]
+other = "改进内容"
+
+[Mac-only]
+other = "仅适用于 Mac"
+
+[Windows-and-Mac]
+other = "Windows | Mac"
+
+# 有些语言，比如日语，用不同的标点符号来表示句号。
+[period-the-punctuation-mark]
+other = "."
+
+# 这将在页面头部的标题下呈现。它需要一个特定的宽度，所以如果它超过了英语的宽度太多，
+# 最好不要翻译它，或者找一种压缩的办法。
+[product-tagline]
+other = "设计、造型、提案、分析、实现..."
+
+# 这是顶部导航栏搜索字段中的占位符文本
+[search-navbar]
+other = "搜索"
+
+# 页面上方的主页链接
+[student-or-teacher]
+other = "学生或教师?"
+
+# 首页视频内容上方的标题
+[caption-rhino-7]
+other = "Rhino 7"
+
+# 首页视频中字幕标题
+[caption-rhino-7-subtitle]
+other = "更精确、更自由。"
+
+# Rhino 7 视频字幕的子标题
+[caption-rhino-7-details]
+other = "增加了细分建模、Rhino.Inside.Revit、四边面重新拓扑等新功能。"
+
+# 首页视频中的字幕
+[caption-learn-more]
+other = "了解更多"
+
+# 首页视频中的字幕
+[caption-try]
+other = "试用"
+
+# 视频标题中购买链接之前的链接
+[caption-or-conjoiner]
+other = ", 或者"
+
+# 首页视频中的字幕
+[caption-buy]
+other = "购买"
+
+# 首页视频中的字幕
+[caption-rhino-refined]
+other = "Rhino 更加精细"
+
+# 首页视频中字幕标题
+[caption-less-pain]
+other = "错误更少，收获更多"
+
+# Rhino 7 视频字幕中的子标题
+[caption-rhino-refined-details]
+other = "模具制作工具、已命名选集、图纸配置管理、增强的文本字段、Grasshopper Player、单线字体等等。"
+
+# 英语逗号连接符
+[comma-conjoiner]
+other = ", "
+
+# 首页视频中的字幕
+[caption-presentation]
+other = "精美的视图显示"
+
+# 首页视频中字幕标题
+[caption-presentation-subtitle]
+other = "优秀的作品"
+
+# 视频字幕中的子标题
+[caption-presentation-details]
+other = "我们对工作显示模式及演示工具进行了改进，如渐变剖面线、降噪器、PBR 材质、图层册等等。"
+
+# 学习页面的新导航按钮
+[new]
+other = "最新"
+
+# 学习页面的精选按钮和标签
+[featured]
+other = "精选"

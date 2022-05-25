@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="single-content-area toc-page">
+  {{ if .Params.page_options.toc }}
+    {{ partial "toc.html" . }}
+  {{ end }}
+  
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
+    {{ partial "breadcrumbs.html" . }}
+      <div class="feature-title-container">
+        <div class="feature-title">{{ .Page.Title }}</div>{{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}<div class="new-callout"><a href="/{{ .Site.Params.latestRhinoVersion}}/new">{{ i18n "NEW-in-Vx" . }}</a></div>{{ end }}{{- partial "platform-callout" . -}}        
+      </div>
+      <p>{{ partial "byline.html" . }}</p>
+      {{ with .Page.Params.what_why }}
+        <p>{{ . | markdownify }}</p>
+      {{ end }}
+      
+      {{ .Content }}
+
+      {{- partial "edit_button.html" . -}}
+    {{/*  {{- partial "platform-switch" . -}}  */}}
+  </div>
+</div>
+{{- partial "highlightjs" . }}
+{{ end }}

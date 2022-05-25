@@ -1,0 +1,97 @@
+{{/* 
+Download link shortcode. Accepts params in any order.
+{{< rhino-download >}}
+{{< rhino-download evaluation >}}
+{{< rhino-download commercial >}}
+{{< rhino-download commercial 6 mac >}}
+{{< rhino-download wip >}}
+*/}}
+
+{{- $.Scratch.Set "product" "Rhino" -}}
+{{- $.Scratch.Set "version" (string .Site.Params.latestRhinoVersion) -}}
+{{- $.Scratch.Set "platform" "both" -}} {{/* "windows" | "mac" | "both" */}}
+{{- $.Scratch.Set "type" "evaluation" -}} {{/* "wip" | "beta" | "commercial" | "evaluation" */}}
+{{- $.Scratch.Set "error" false -}}
+{{- $.Scratch.Set "error_message" "" -}}
+{{- if .IsNamedParams -}}
+    {{- if .Get "version" -}}{{- $.Scratch.Set "version" (.Get "version") -}}{{- end -}}
+    {{- if .Get "platform" -}}{{- $.Scratch.Set "platform" (.Get "platform") -}}{{- end -}}
+    {{- if .Get "type" -}}{{- $.Scratch.Set "type" (.Get "type") -}}{{- end -}}
+{{- else -}}
+    {{/* Allow positional params in any order, so we don't have to explicitly specify version just to set edition */}}
+    {{ range $val := .Params }}
+        {{- if $val -}}
+            {{- if in "windows mac both" $val}}{{- $.Scratch.Set "platform" $val -}}
+            {{- else if in "wip beta evaluation commercial" $val -}}{{- $.Scratch.Set "type" $val -}}
+            {{- else if eq (string ($.Scratch.Get "version")) (string (int ($.Scratch.Get "version"))) -}}{{- $.Scratch.Set "version" $val -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{/* Input validation */}}
+{{- if ne (string ($.Scratch.Get "version")) (string (int ($.Scratch.Get "version")))  -}}
+    {{- $.Scratch.Set "error" true -}}
+    {{- $.Scratch.Set "error_message" (printf "Bad version: '%s' '%T'" ($.Scratch.Get "version") (printf "%T" ($.Scratch.Get "version"))) -}}
+{{- end -}}
+{{- if (and (ne ($.Scratch.Get "platform") "windows") (ne ($.Scratch.Get "platform") "mac") (ne ($.Scratch.Get "platform") "both")) -}}
+    {{- $.Scratch.Set "error" true -}}
+    {{- $.Scratch.Set "error_message" (printf "Bad platform: '%s'" ($.Scratch.Get "platform")) -}}
+{{- end -}}
+{{- if (and (ne ($.Scratch.Get "type") "wip") (ne ($.Scratch.Get "type") "beta") (ne ($.Scratch.Get "type") "commercial") (ne ($.Scratch.Get "type") "evaluation")) -}}
+    {{- $.Scratch.Set "error" true -}}
+    {{- $.Scratch.Set "error_message" (printf "Bad type: '%s'" ($.Scratch.Get "type")) -}}
+{{- end -}}
+
+{{- if ($.Scratch.Get "error") -}}
+<span class="shortcode-error">Error: {{ $.Scratch.Get "error_message" }}<br>Shortcode usage: &lbrace;&lbrace;&lt; rhino-download version=[integer] platform=[windows | mac | both] type=[wip | beta | commercial | evaluation] &gt;&rbrace;&rbrace; <br/>or: &lbrace;&lbrace;&lt; rhino-download &gt;&rbrace;&rbrace; defaults to version=latest platform=both type=commercial</span>
+{{- else -}}
+    {{/* Construct appropriate URLs */}}
+    {{- if eq ($.Scratch.Get "type") "wip" -}}
+        {{- $.Scratch.Set "url_both" "https://www.rhino3d.com/download/rhino/wip/" -}}
+        {{- $.Scratch.Set "url_windows" "https://www.rhino3d.com/download/rhino-for-windows/wip/" -}}
+        {{- $.Scratch.Set "url_mac" "https://www.rhino3d.com/download/rhino-for-mac/wip/" -}}
+        {{- $.Scratch.Set "edition_name" "WIP" }}
+    {{- else if eq ($.Scratch.Get "type") "beta" -}}
+        {{- $.Scratch.Set "url_both" "https://www.rhino3d.com/download/rhino/beta/" -}}
+        {{- $.Scratch.Set "url_windows" "https://www.rhino3d.com/download/rhino-for-windows/beta/" -}}
+        {{- $.Scratch.Set "url_mac" "https://www.rhino3d.com/download/rhino-for-mac/beta/" -}}
+        {{- $.Scratch.Set "edition_name" "BETA" }}
+    {{- else if eq ($.Scratch.Get "type") "commercial" -}}
+        {{- $.Scratch.Set "url_both" (printf "https://www.rhino3d.com/download/rhino/%s/latest/" ($.Scratch.Get "version")) -}}
+        {{- $.Scratch.Set "url_windows" (printf "https://www.rhino3d.com/download/rhino-for-windows/%s/latest/" ($.Scratch.Get "version")) -}}
+        {{- $.Scratch.Set "url_mac" (printf "https://www.rhino3d.com/download/rhino-for-mac/%s/latest/" ($.Scratch.Get "version")) -}}
+        {{- $.Scratch.Set "edition_name" "" }}
+    {{- else if eq ($.Scratch.Get "type") "evaluation" -}}
+        {{- $.Scratch.Set "url_both" (printf "https://www.rhino3d.com/download/rhino/%s/evaluation/" ($.Scratch.Get "version")) -}}
+        {{- $.Scratch.Set "url_windows" (printf "https://www.rhino3d.com/download/rhino-for-windows/%s/evaluation/" ($.Scratch.Get "version")) -}}
+        {{- $.Scratch.Set "url_mac" (printf "https://www.rhino3d.com/download/rhino-for-mac/%s/evaluation/" ($.Scratch.Get "version")) -}}
+        {{- $.Scratch.Set "edition_name" "Evaluation" }}
+    {{- end -}}
+
+    {{/* Select proper URL and localized template */}}
+    {{- if (eq ($.Scratch.Get "platform") "both") -}}
+        {{- $.Scratch.Set "link" (printf "<a href='%s'>" ($.Scratch.Get "url_both")) -}}
+        {{- $.Scratch.Set "template" (i18n "Download-Rhino-Both") }}
+    {{- else -}}
+        {{- if (eq ($.Scratch.Get "platform") "windows") -}}
+            {{- $.Scratch.Set "link" (printf "<a href='%s'>" ($.Scratch.Get "url_windows")) -}}
+            {{- $.Scratch.Set "template" (i18n "Download-Rhino-Windows") }}
+        {{- else if (eq ($.Scratch.Get "platform") "mac") -}}
+            {{- $.Scratch.Set "link" (printf "<a href='%s'>" ($.Scratch.Get "url_mac")) -}}
+            {{- $.Scratch.Set "template" (i18n "Download-Rhino-Mac") }}
+        {{- end -}}
+    {{- end -}}        
+
+    {{/* Search and Replace in template to construct final localized links */}}
+    {{- $.Scratch.Set "result" (replace ($.Scratch.Get "template") "[PRODUCT]" ($.Scratch.Get "product")) }}
+    {{- $.Scratch.Set "result" (replace ($.Scratch.Get "result") "[VERSION]" ($.Scratch.Get "version")) }}
+    {{- $.Scratch.Set "result" (replace ($.Scratch.Get "result") "[TYPE]" ($.Scratch.Get "edition_name")) }}
+    {{- $.Scratch.Set "result" (replace ($.Scratch.Get "result") "[LINK]" ($.Scratch.Get "link")) }}
+    {{- $.Scratch.Set "result" (replace ($.Scratch.Get "result") "Windows" "<span class='platform-icon'><i class='fab fa-windows'></i></span> Windows" ) }}
+    {{- $.Scratch.Set "result" (replace ($.Scratch.Get "result") "Mac" "<span class='platform-icon'><i class='fab fa-apple'></i></span> Mac" ) }}
+    {{- $.Scratch.Set "result" (replace ($.Scratch.Get "result") "[/LINK]" "</span></a>") }}
+
+    {{ $.Scratch.Get "result" | markdownify }}
+
+{{- end -}}

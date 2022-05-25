@@ -1,0 +1,164 @@
+
+/* 
+##################################################################
+# Enable border-box sizing site-wide
+##################################################################
+*/
+// 6-Jan-2020, BG: added as part of making the new /learn page render better
+*, *:before, *:after {
+	box-sizing: border-box; 
+}
+
+/* 
+##################################################################
+# Highlight div containers should be responsive in their context
+##################################################################
+*/
+div.highlight {
+    width: 99%;
+    font-size: 14px;
+}
+
+div.highlight pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: $global-nav-height-collapsed;
+    margin: -$global-nav-height-collapsed 0 0;   
+	pointer-events: none; //quickfix for WWW-1696
+}
+
+/* 
+##################################################################
+# Default markdown tables should have more spacing between headers
+##################################################################
+*/
+th {
+    padding-right: 10px;
+}
+
+
+/* 
+##################################################################
+# Discourse topics lists container. These are via an iframe with 
+# their own style, set as part of our default Discourse theme:
+# https://discourse.mcneel.com/admin/customize/themes/10/common/embedded_scss/edit
+# Docs here: 
+# https://meta.discourse.org/t/embedding-a-list-of-discourse-topics-in-another-site/125911
+##################################################################
+*/
+d-topics-list iframe{
+	width: 100% !important;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/* 
+##################################################################
+# Code samples that have tabs for each language
+##################################################################
+*/
+.codetab {
+	overflow: hidden;
+  }
+  
+  .codetab button {
+	background-color: inherit;
+	border-radius: 0px;
+	border: none;
+	float: left;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	color: #337ab7;
+  }
+  
+  .codetab button:hover {
+	background-color: #eeeeee;
+	border-radius: 4px;
+  }
+  
+  .codetab button.active {
+	background-color: #337ab7;
+	border-radius: 4px;
+	color: white;
+  }
+  
+  .codetab-content {
+	display: none;
+	padding: 6px 12px;
+	background-color: $codetab-background;
+	border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+
+/* 
+####################################################################
+# Highlight https://highlightjs.readthedocs.io/en/latest/readme.html
+####################################################################
+*/
+
+/* for block of code */
+.hljs {
+	background-color: $codetab-background;
+}
+
+.hljs-ln-code {
+	border-bottom: none;
+}
+
+td.hljs-ln-line.hljs-ln-code {
+	padding-left: 0.5em;
+}
+
+.hljs-ln-n {
+    padding-right: 0.5em;
+}
+
+
+/* 
+####################################################################
+# Highlight.js linenumbers plugin overrides
+####################################################################
+*/
+
+.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: center;
+    color: #ccc;
+    border-right: 1px solid #CCC;
+	border-bottom: none;
+    vertical-align: top;
+	word-break: normal;
+}
+
+.hljs-ln-numbers {
+  display: none;
+}
+
+.line-numbers .hljs-ln-numbers {
+	display: block;
+}
+
+/* 
+####################################################################
+# MathJax css style overrides
+####################################################################
+*/
+.MathJax, .MathJax_Display  {
+  display: inline !important;
+  text-align: center;
+  margin: 1em 0;
+}

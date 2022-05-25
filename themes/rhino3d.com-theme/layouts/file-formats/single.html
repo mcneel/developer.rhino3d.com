@@ -1,0 +1,90 @@
+{{ define "main" }}
+<div class="single-content-area">
+    <div class="feature-title-container">
+        <div class="feature-title">{{ .Page.Title }}</div>{{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}<div class="new-callout"><a href="/{{ .Site.Params.latestRhinoVersion}}/new">{{ i18n "NEW-in-Vx" . }}</a></div>{{ end }}{{- partial "platform-callout" . -}}        
+    </div>
+    <div>
+        {{ with .Page.Params.what_why }}
+            <p>{{ . | markdownify }}</p>
+        {{ end }}
+        {{ with .Page.Params.whats_new.in_v7_summary }}
+            <p>{{ . | markdownify }}</p>
+        {{ end }}
+        <div>
+            <table id="TableWithComments" style="table-layout: auto; width: 100%;">
+                <thead>
+                    <tr>
+                    <th class= "th-sticky" style="text-align: left;">{{ i18n "Name" }}</th>
+                    <th class= "th-sticky" style="text-align: left;">{{ i18n "File-Extension" }}</th>
+                    <th class= "th-sticky" style="text-align: center; white-space: nowrap;">{{ i18n "Open-Import" }}</th>
+                    <th class= "th-sticky" style="text-align: center; white-space: nowrap;">{{ i18n "Save-Export" }}</th>
+                    <th class= "th-sticky" style="text-align: center;">{{ i18n "Latest-Updates" }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{- $docs_base_url := "https://docs.mcneel.com/rhino/" -}}
+                    {{- $docs_version_url := print $docs_base_url $.Site.Params.latestRhinoVersion -}}
+                    {{- $docs_help_url := print $docs_version_url "/help/" -}}
+                    {{- $docs_lang_url := print $docs_help_url .Site.Params.docLang -}}
+                    {{- $docs_fileio_url := print $docs_lang_url "/index.htm#fileio/" -}}
+                    {{ $.Scratch.Set "base_url" $docs_fileio_url }}
+                    {{ with index .Site.Data.formats .Site.Language.Lang }}
+                        {{ range sort .formats "weight" }}
+                            <tr>
+                                <td style="width: 30%;">
+                                    {{ $.Scratch.Set "name" .name }}
+                                    {{ with .docs_url }}
+                                        {{- $docs_url := (print ($.Scratch.Get "base_url") . ) -}}
+                                        <a href="{{ $docs_url }}" title="{{ $.Scratch.Get "name" }}" target="_blank" rel="noreferrer">
+                                    {{ end }}
+                                    {{ .name }}
+                                    {{ with .docs_url }}</a>{{ end }}
+                                </td>
+                                <td style="width: 18%;">
+                                    {{ $.Scratch.Set "extension" .extension }}
+                                    {{ with .docs_url }}
+                                        {{- $docs_url := (print ($.Scratch.Get "base_url") . ) -}}
+                                        <a href="{{ $docs_url }}" title="{{ $.Scratch.Get "extension" }}" target="_blank" rel="noreferrer">
+                                    {{ end }}
+                                    {{ .extension }}
+                                    {{ with .docs_url }}</a>{{ end }}
+                                </td>
+                                <td class="FileFormatCellWithComment" style="width: 12%; text-align: center;">
+                                    {{ with .open_import }}
+                                        {{ if not (in . "Mac") }}
+                                            <span style="color: #49abe9"><i class="fab fa-windows small" ></i></span><span class="FileFormatCellComment" style="font-size: small">{{ i18n "Windows-only" }}</span>
+                                        {{ else if not (in . "Windows") }}
+                                            <span style="color: #49abe9"><i class="fab fa-apple small" ></i></span><span class="FileFormatCellComment" style="font-size: small">{{ i18n "Mac-only" }}</span>
+                                        {{ else }}
+                                            <i class="fas fa-check small"></i><span class="FileFormatCellComment" style="font-size: small">{{ i18n "Windows-and-Mac" }}</span>
+                                        {{ end }}
+                                    {{ end }}
+                                </td>
+                                <td class="FileFormatCellWithComment" style="width: 12%; text-align: center;">
+                                    {{ with .save_export }}
+                                        {{ if not (in . "Mac") }}
+                                            <span style="color: #49abe9"><i class="fab fa-windows small" ></i></span><span class="FileFormatCellComment" style="font-size: small">{{ i18n "Windows-only" }}</span>
+                                        {{ else if not (in . "Windows") }}
+                                            <span style="color: #49abe9"><i class="fab fa-apple small" ></i></span><span class="FileFormatCellComment" style="font-size: small">{{ i18n "Mac-only" }}</span>
+                                        {{ else }}
+                                            <i class="fas fa-check small"></i><span class="FileFormatCellComment" style="font-size: small">{{ i18n "Windows-and-Mac" }}</span>
+                                        {{ end }}
+                                    {{ end }}
+                                </td>
+                                {{ $.Scratch.Set "extension" .extension }}
+                                {{ if .whats_new.in_v7 }}
+						  	        <td class="FileFormatCellWithComment" title="{{ .whats_new.in_v7 }}" style="text-align: center; color:#901010;"><i class="fas fa-plus-circle"></i> {{ i18n "Improved" }}<span class="FileFormatCellComment"><span style="text-align: center; color:#901010;"><i class="fas fa-arrow-circle-left"></i> {{ i18n "Improved" }}: {{ $.Scratch.Get "extension" }}</span><span style="text-align: left;">{{ .whats_new.in_v7 | markdownify }}</span></span></td>
+						        {{ else }}
+						  	        <td style="text-align: left;"></td>
+						        {{ end }}
+                            </tr>
+                        {{ end }}
+                    {{ end }}
+                </tbody>
+            </table>
+        </div>
+        {{ .Content }}
+        {{- partial "edit_button.html" . -}}
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,10 @@
+<div class="platform-callout">    
+    {{ if .Params.included_in.platforms }}
+        {{ if not (in .Params.included_in.platforms "Mac") }}
+            <i class="fab fa-windows"></i>  <div class="platform-callout-text">{{ i18n "Windows-only" }}</div>
+        {{ end }}
+        {{ if not (in .Params.included_in.platforms "Windows") }}
+            <i class="fab fa-apple"></i>  <div class="platform-callout-text">{{ i18n "macOS-only" }}</div>
+        {{ end }}
+    {{ end }}
+</div>

@@ -1,0 +1,90 @@
+{{ $topLevel := (cond .IsPage .Page.Parent .) }}
+{{ $tocType := (cond .IsPage "single" "multi") }}
+{{ if .Params.page_options.toc_type}}
+    {{ $tocType = .Params.page_options.toc_type }}
+{{ end }}
+
+<script langage="javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        $('body').scrollspy({ target: '.toc', offset: 90 });
+        $(window).on('activate.bs.scrollspy', function (e, o) {
+            //var s = 'a[href$="' + o.relatedTarget + '"]'
+            //console.log(s);
+            //$.find(s)[0].scrollIntoView();
+        });
+      });    
+
+</script>
+
+{{ if eq $tocType "single"}}
+<div class="toc">
+    <aside>
+        <div id="toc-top-container" style="
+        text-align: center;
+    ">
+        </div>
+        <header>
+            <a href="{{ .RelPermalink }}">{{.Title}}</a>
+        </header>
+        <nav id="TableOfContents" class="scrollbar">
+                {{ partial "toc-inner.html" $ }}
+                <div id="toc-bottom-container" style="
+                text-align: center;
+            ">
+                </div>
+        </nav>
+    </aside>
+</div>
+{{ else }}
+    <div class="toc">
+        <aside>
+            <div id="toc-top-container" style="
+            text-align: center;
+        ">
+            </div>
+            <header>
+                <a href="{{ $topLevel.RelPermalink }}">{{$topLevel.Title}}</a>
+            </header>
+            <nav id="TableOfContents" class="scrollbar">
+                    <!-- Groups content according to the "list_group" field in front matter -->
+                    {{ $groups := $topLevel.Pages.GroupByParam "list_group" }}
+
+                    <!-- ordering ground by "list_groups_order" field in front matter -->
+                    {{ $groups_order := $topLevel.Params.list_groups_order}}
+
+                    <!-- adding missing groups to the groups_order -->
+                    {{ range $groups }}
+                        {{ if not (in $groups_order .Key) }}
+                        {{ $groups_order = $groups_order | append .Key }}
+                        {{end}}
+                    {{ end }}
+
+                    {{ range $groups_order }}
+                      {{ with index (where $groups "Key" .) 0 }}
+                            <ul class="nav-wrapper">
+                                <li class="nav-item">
+                                    <a class="nav-group-link">{{.Key}}</a>
+                                </li>
+                            </ul>
+                            <ul class="nav-wrapper">
+                                {{ range .Pages }}
+                                <li class="nav-item">
+                                    {{ if (eq .Permalink $.Permalink )}}
+                                        <a class="toplevel-nav-link active" href="{{.Permalink}}">{{.Title}}</a>
+                                        {{ partial "toc-inner.html" $ }}
+                                    {{ else }}
+                                        <a class="toplevel-nav-link" href="{{.Permalink}}">{{.Title}}</a>
+                                    {{ end }}
+                                </li>
+                                {{ end }}
+                            </ul>
+                        {{ end }}                    
+                    {{ end }}
+                    <div id="toc-bottom-container" style="
+                    text-align: center;
+                ">
+                    </div>
+            </nav>
+        </aside>
+    </div>
+{{ end }}

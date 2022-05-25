@@ -1,0 +1,4 @@
+{{ $path := print "docs/help/commands/" (.Get 0) }}
+{{ with .Site.GetPage $path }}
+<a href="{{ .RelPermalink }}"><img style="vertical-align: middle;"src="{{ .Params.icon }}" width="40">{{ .Title }}</a> {{ .Params.whats_new  }}
+{{ end }}

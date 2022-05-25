@@ -1,0 +1,291 @@
+[buy]
+other = "購入"
+
+[download]
+other = "ダウンロード"
+
+[gallery]
+other = "ギャラリー"
+
+[features]
+other = "特長"
+
+[news]
+other = "ニュース"
+
+[community]
+other = "コミュニティ"
+
+[learn]
+other = "学ぶ"
+
+[support]
+other = "サポート"
+
+[resources]
+other = "リソース"
+
+[my-account]
+other = "マイアカウント"
+
+[logged-in-title]
+other = "アカウント、ライセンス、チームを管理"
+
+[sign-in]
+other = "サインイン"
+
+[sign-in-title]
+other = "サインインして、アカウント、ライセンス、チームを管理"
+
+[Icon]
+other = "アイコン"
+
+[Description]
+other = "説明"
+
+[Toolbars]
+other = "ツールバー"
+
+[Menu]
+other = "メニュー"
+
+[Crease-Splitting]
+other = "クリース分割"
+
+[History]
+other = "ヒストリ"
+
+[enabled]
+other = "enabled"
+
+[More-details]
+other = "詳細..."
+
+[Including]
+other = "Including:"
+
+[Rhino-Commands]
+other = "Rhinoのコマンド"
+
+# DO NOT TRANSLATE the contents of {{ }} placeholder.  It gets replaced with the correct version by a template.
+[NEW-in-Vx]
+other = "{{ .Params.included_in.since }} の新機能"
+
+# DO NOT TRANSLATE the [VERSION] placeholder.  It gets replaced with the correct version by a template.
+[New-in-N]
+other = "[VERSION] の新機能"
+
+[New-in-Rhino-7]
+other = "Rhino 7 の新機能"
+
+[All-the-details]
+other = "すべての詳細..."
+
+[bob-loves-revit]
+other = "Bob ❤️s Revit "
+
+# This is optionally shown as a header in some feature pages
+[new-in-rhino-7]
+other = "Rhino 7の 新機能"
+
+# context: the bylines that sometimes show up under the title of a page.  Such as "by Scott Davidson..."
+[by]
+other = "投稿者:"
+
+# context: the bylines that sometimes show up under the title of a page, showing when the page was last updated
+[Last-updated]
+other = "最終更新日:"
+
+# context: the bylines that sometimes show up under the title of a page, joining the different authors.  Such as: "by Scott Davidson and..."s
+[and]
+other = "及び"
+
+# context: the Edit menu at the bottom of the page
+[Edit-this-page]
+other = "このページを編集"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-GitHub]
+other = "GitHubで編集"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-Forestry]
+other = "Forestryで編集"
+
+# context: the Edit menu at the bottom of the page
+[Edit-data]
+other = "データを編集"
+
+# context: the Edit menu at the bottom of the page
+[Admin]
+other = "管理者"
+
+# context: page footer
+[Shop-online]
+other = "オンラインショッピング"
+
+# context: page footer
+[or-find-a]
+other = " または "
+
+# context: page footer
+[find-a-reseller]
+other = "製品取扱店を検索"
+
+# context: page footer
+[Reseller]
+other = "製品取扱店を検索"
+
+# context: page footer
+[Privacy-Policy]
+other = "プライバシーポリシー"
+
+# context: page footer
+[About]
+other = "会社情報"
+
+# context: page footer
+[Contact-Us]
+other = "お問い合わせ"
+
+# context: page footer
+[Language]
+other = "言語"
+
+# context: page footer
+[change-region-lang]
+other = "別の地域または言語に変更します。"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[Windows-only]
+other = "Windowsのみ"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[macOS-only]
+other = "macOSのみ"
+
+[Download-Rhino]
+other = "Rhinoをダウンロード"
+
+[Download-Rhino-Both]
+other = "[LINK]WindowsまたはMac版の [PRODUCT] [VERSION] [TYPE] をダウンロードしてください。[/LINK]"
+
+[Download-Rhino-Windows]
+other = "[LINK]Windows版 [PRODUCT] [VERSION] [TYPE] をダウンロードしてください。[/LINK]"
+
+[Download-Rhino-Mac]
+other = "[LINK]Mac版 [PRODUCT] [VERSION] [TYPE] をダウンロードしてください。[/LINK]"
+
+[Rhino]
+other = "Rhino"
+
+[Name]
+other = "名前"
+
+[File-Extension]
+other = "ファイル拡張子"
+
+[Open-Import]
+other = "開く/インポート"
+
+[Save-Export]
+other = "保存/エクスポート"
+
+[Notes]
+other = "Notes"
+
+[Latest-Updates]
+other = "最新の更新"
+
+[Improved]
+other = "機能向上"
+
+[Improvements]
+other = "Improvements"
+
+[Mac-only]
+other = "Macのみ"
+
+[Windows-and-Mac]
+other = "Windows | Mac"
+
+# Some languages, like Japanese, use a different punctuation mark for periods.
+[period-the-punctuation-mark]
+other = "。"
+
+# This gets rendered under the title in the header of the page.  It needs to be a specific width, so if it exceeds the english width too much,
+# it might be best to leave it untranslated or figure out a way to condense it.  This is much "branding" as it is words.
+[product-tagline]
+other = "design, model, present, analyze, realize..."
+
+# This is the placeholder text in the search field on the top navbar
+[search-navbar]
+other = "検索"
+
+# Homepage link in the upper part of screen
+[student-or-teacher]
+other = "学生または教員の方ですか？"
+
+# Title on homepage video caption
+[caption-rhino-7]
+other = "Rhino 7"
+
+# Subtitle on homepage video caption
+[caption-rhino-7-subtitle]
+other = "フリーフォーム、高精度"
+
+# Details of the Rhino 7 video caption
+[caption-rhino-7-details]
+other = "SubD、Rhino.Inside.Revit、QuadRemesh、その他の機能を搭載"
+
+# Link title on homepage video captions
+[caption-learn-more]
+other = "詳細"
+
+# Link title on homepage video captions
+[caption-try]
+other = "試す"
+
+# The conjoiner before the Buy link in the video caption
+[caption-or-conjoiner]
+other = "、または"
+
+# Link title on homepage video captions
+[caption-buy]
+other = "購入"
+
+# Title on homepage video caption
+[caption-rhino-refined]
+other = "Rhinoをより便利に"
+
+# Subtitle on homepage video caption
+[caption-less-pain]
+other = "イライラを解消、生産性を向上"
+
+# Details of the Rhino Refined video caption
+[caption-rhino-refined-details]
+other = "モールド作成ツール、名前の付いた選択セット、レイアウト管理、機能強化されたテキストフィールド、Grasshopper Player、シングルラインフォント、その他"
+
+# The English comma conjoiner
+[comma-conjoiner]
+other = "、"
+
+# Title on homepage video caption
+[caption-presentation]
+other = "美しく表示"
+
+# Subtitle on homepage video caption
+[caption-presentation-subtitle]
+other = "デザインをより印象的に"
+
+# Details of a video caption
+[caption-presentation-details]
+other = "向上した作業表示モード、グラデーションハッチング、ノイズ除去、PBRマテリアル、レイヤブックのような新しいプレゼンテーションツール"
+
+# New navigation button on Learn Pages
+[new]
+other = "新規"
+
+# Featured button and tag on Learn Pages
+[featured]
+other = "おすすめ"

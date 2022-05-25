@@ -1,0 +1,61 @@
+.comparison_table {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    text-align: center;
+    white-space: nowrap;
+    align-items: stretch;
+    vertical-align: middle;
+    width: 100%;
+    div {
+        display: table-cell;
+        border-collapse: collapse;
+    }
+    .content-column {
+        display: flex;
+        flex-direction: column;
+        align-items:stretch;
+        width: 15%;
+        min-width: 50px;
+        border-right: 1px solid #ddd;
+        &:last-of-type {
+            border-right: 0;
+        }
+    }
+    .label-column {
+        display: flex;
+        flex-direction: column;
+        display:flex;
+        align-items: right;
+        justify-content: center;
+        width: 38%;
+        min-width: 300px;
+    }
+    .header {
+        display:inline-block;
+        font-weight: 700;
+        clear:both;
+    }
+    .status {
+        display:block;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        img.micro {
+            height: 60%;
+            margin: 6px;
+        }
+        &:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+    }
+    .label {
+        height: 40px;
+        line-height: 40px;
+        font-weight: 700;
+        text-align: right;
+        padding-right: 0.5em;
+        vertical-align: middle;
+    }
+}

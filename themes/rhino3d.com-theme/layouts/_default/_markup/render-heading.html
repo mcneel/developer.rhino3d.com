@@ -1,0 +1,34 @@
+{{/* overriding headingIDs to be English www-1221 */}}
+{{ $enHeadings := slice }}
+{{ $translations := dict }}
+{{ $enOccurances := dict }}
+{{ $find := `#+ ([^{\n]+)[ \n]`}}
+{{ $clean := `^[\s#]+|\s+$`}}
+
+{{/* Fetching english version of the page and making a list of English headings */}}
+{{ with $enPage := $.Page.Sites.First.GetPage ($.Page.File.Path)}}
+    {{/*  {{$enPage.Language}}  */}}
+    {{ range (findRE $find $enPage.RawContent)}}
+        {{ $enHeading := anchorize (replaceRE $clean "" . )}}
+        {{ $enOccurance := (cond (isset $enOccurances $enHeading) (index $enOccurances $enHeading) 0) }}
+        {{ $enOccurances = merge $enOccurances (dict $enHeading (add $enOccurance 1)) }}
+        {{ $suffix := (cond (gt (index $enOccurances $enHeading) 1) (add "-" (string (sub (index $enOccurances $enHeading) 1))) "") }}
+        {{ $enHeading = add $enHeading $suffix}}
+        {{ $enHeadings = $enHeadings | append $enHeading }}
+    {{end}}
+{{ end }}
+
+{{/* Iterating through current page headings and matching up with English translations from step above */}}
+{{ $foreignOccurances := dict }}
+{{ range $index,$element := (findRE $find .Page.RawContent)}}
+    {{ $foreignHeading := anchorize (replaceRE $clean "" $element )}}
+    {{ $foreignOccurance := (cond (isset $foreignOccurances $foreignHeading) (index $foreignOccurances $foreignHeading) 0) }}
+    {{ $foreignOccurances = merge $foreignOccurances (dict $foreignHeading (add $foreignOccurance 1)) }}
+    {{ $suffix := (cond (gt (index $foreignOccurances $foreignHeading) 1) (add "-" (string (sub (index $foreignOccurances $foreignHeading) 1))) "") }}
+    {{ $foreignHeading = add $foreignHeading $suffix}}
+    {{ $translations = merge $translations (dict $foreignHeading  (index $enHeadings $index)) }}
+{{end}}
+
+{{/* overriding id and href of heading */}}
+{{ $generatedAnchor := index $translations $.Anchor }}
+<h{{ $.Level }} id="{{$generatedAnchor}}">{{ $.Text | safeHTML }}<a href="#{{$generatedAnchor}}"></a></h{{ $.Level }}>

@@ -1,0 +1,462 @@
+{{ define "main" }}
+<div class="single-content-area">
+    <div style="height: 10px;"></div>
+    <div id="discoverSpinner" style="text-align: center;">
+        Fetching learning materials...
+    </div>
+    <div class="feature-title-container learn-title">
+        <div class="feature-title">{{ .Page.Title }}</div>
+        {{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}<div class="new-callout"><a
+                href="/{{ .Site.Params.latestRhinoVersion}}/new">{{ i18n "NEW-in-Vx" . }}</a></div>
+        {{ end }}{{- partial "platform-callout" . -}}
+    </div>
+    <div id="discoverGallery" class="discover-gallery">
+        <div class="toc discover-filters-box">
+            <ul class="discover-filters">
+                <li class="discover-filter"
+                    v-bind:class="{ discoverFilterGray: !kind.isNew, discoverFilterRed: kind.isNew }"
+                    v-for="kind in cardKinds" v-on:click="filterCardsByKind" v-bind:kind="(( kind.keyword ))">
+                    <span style="display: inline-block; padding: 2px 10px 2px 10px;">(( kind.title ))</span>
+                    <img v-if="kind.isFeat" class="discover-filter-featured-icon"
+                        src="/images/learn/featured-icon.svg" />
+                    <div v-if="kind.isNew" id="unmarkall" class="discover-unmarkall" v-on:click="forgetAllItems"
+                        title="Unmark All">
+                        <img class="discover-filter-new-icon" src="/images/learn/check.svg" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <input id="searchbox" class="discover-search" type="text" placeholder="filter..." v-model.trim="keyword" />
+            <div class="discover-grid discover-grid-row">
+                <div v-for="card in discoverCards" v-bind:itemid="card.url"
+                    class="discover-item card learn-card-override">
+                    <a v-bind:href="card.url" target="blank">
+                        <div class="discover-thumbnail discover-thumbnail-dim">
+                            <img class="discover-img no-popup" v-bind:src="card.thumbnail" />
+                        </div>
+                    </a>
+                    <div class="discover-info">
+                        <div class="discover-info-new">
+                            {{ i18n "new" }}
+                            <a class="discover-info-new-ok" v-on:click="forgetItem" v-bind:itemid="card.url"
+                                title="Unmark">
+                                <img src="/images/learn/check.svg" />
+                            </a>
+                        </div>
+                        <a class=" discover-info-title" v-bind:href="card.url" target="blank">(( card.title ))</a>
+                        <a class="discover-info-author" v-bind:href="card.authorUrl" target="blank">((
+                            card.author))</a>
+                        <div class="discover-feature-badge" v-if="card.highlight">
+                            <img src="/images/learn/featured-badge.svg" />
+                        </div>
+                        <div class="discover-info-subtitle">
+                            (( card.subtitle ))
+                        </div>
+                        <ul class="discover-info-tags discover-info-tags-short">
+                            <li v-for="kind in card.kinds" v-bind:kind="(( kind.keyword ))"
+                                v-on:click="filterCardsByKind" class="discover-info-kindtag">
+                                (( kind.title ))
+                            </li>
+                            <li v-for="tag in card.tags" v-bind:tag="(( tag ))" v-on:click="filterCardsByTag"
+                                class="discover-info-tag">
+                                (( tag ))
+                            </li>
+                        </ul>
+                        <div class="discover-info-extra" v-html="card.description" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markdown@0.5.0/lib/markdown.min.js"></script>
+<script type="text/javascript" src="{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}">
+</script>
+<!-- <script type="text/javascript" src="{{ (resources.Get "/script/yaml.min.js" | resources.Fingerprint).Permalink }}"> -->
+<!-- </script> -->
+
+<script>
+    var authorData = JSON.parse("{{ jsonify $.Site.Data.authors }}");
+
+    function lookupAuthor(authorId) {
+        if (authorData[authorId]) {
+            var authorInfo = authorData[authorId];
+            return authorInfo.name;
+        }
+    }
+</script>
+
+<script>
+    const siteBase = "{{ .Site.BaseURL }}";
+    const pageLang = "{{ .Language.Lang }}";
+    const isProduction = "{{ if hugo.IsProduction }}1{{ else }}0{{ end }}";
+    const urlParams = new URLSearchParams(window.location.search);
+
+    function titleCase(str) {
+        str = str.toLowerCase().split(' ');
+        for (var i = 0; i < str.length; i++) {
+            str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+        }
+        return str.join(' ');
+    }
+
+    function getForgottenItems() {
+        if (typeof (Storage) !== 'undefined') {
+            return JSON.parse(window.localStorage.getItem("forgottenItems"))
+        }
+        return null;
+    }
+
+    function setForgottenItems(items) {
+        if (typeof (Storage) !== "undefined") {
+            let updatedItems = items;
+            var forgottenItems = getForgottenItems();
+            if (forgottenItems != undefined) {
+                forgottenItems = [].concat(forgottenItems, items);
+                forgottenItems = new Set(forgottenItems);
+                updatedItems = Array.from(forgottenItems);
+            }
+            window.localStorage.setItem("forgottenItems", JSON.stringify(updatedItems));
+        }
+    }
+
+    function selectItems(items) {
+        if (window.maxItems != undefined && items.length >= window.maxItems) {
+            return items.slice(0, window.maxItems);
+        }
+
+        return items;
+    }
+
+    function attachDiscoverItemHover(cards) {
+        cards.hover(function () {
+            $(this).find(".discover-info-new").css("padding-right", "0")
+            $(this).find(".discover-info-new-ok").css("display", "inline-block")
+            $(this).addClass("discover-item-focused");
+            $(this).find(".discover-thumbnail").removeClass("discover-thumbnail-dim");
+            $(this).find(".discover-info-extra").addClass("discover-info-extra-open");
+            $(this).find(".discover-info-tags").removeClass("discover-info-tags-short");
+        }, function () {
+            $(this).find(".discover-info-new").css("padding-right", "5px")
+            $(this).find(".discover-info-new-ok").css("display", "none")
+            $(this).removeClass("discover-item-focused");
+            $(this).find(".discover-thumbnail").addClass("discover-thumbnail-dim");
+            $(this).find(".discover-info-extra").removeClass("discover-info-extra-open");
+            $(this).find(".discover-info-tags").addClass("discover-info-tags-short");
+        });
+    };
+
+    function hideCardKind(cards) {
+        cards.each((i, c) => {
+            $(c).find(".discover-info-kindtag").css("display", "none")
+        });
+    }
+
+    function showCardKind(cards) {
+        cards.each((i, c) => {
+            $(c).find(".discover-info-kindtag").css("display", "inline-block")
+        });
+    }
+
+    function forgetItems(cards) {
+        var forgottenItems = [];
+        cards.each((i, c) => {
+            forgottenItems.push($(c).attr("itemid"));
+        });
+        setForgottenItems(forgottenItems);
+    }
+
+    function updateNewItems(cards) {
+        var forgottenItems = getForgottenItems() || [];
+        var atLeastOneNew = false;
+        cards.each((i, c) => {
+            var item = $(c);
+            var newMarker = item.find(".discover-info-new");
+            if (!forgottenItems.includes(item.attr("itemid"))) {
+                newMarker.css("display", "block");
+                atLeastOneNew = true;
+            } else {
+                newMarker.css("display", "none");
+            }
+        });
+        if (atLeastOneNew) {
+            $("#unmarkall").css("display", "inline-block");
+        } else {
+            $("#unmarkall").css("display", "none");
+        }
+    }
+
+    async function getDiscoverCards(filter) {
+        var dataUrl;
+        if (isProduction == "1")
+            dataUrl = `${window.location.origin}/${pageLang}/learn/learn.toml`;
+        else
+            dataUrl = `${window.location.origin}/learn/learn.toml`;
+        console.log(`Fetching learn data from ${dataUrl}`);
+        const res = await fetch(dataUrl);
+        if (res.ok) {
+            return TOML.parse(await res.text());
+        }
+    };
+
+    Vue.options.delimiters = ['((', '))'];
+
+    var app;
+
+    getDiscoverCards().then((learnData) => {
+        var cards = new Array();
+        var kinds = new Array();
+
+        // determine kinds of posts
+        // add a couple of predefined filters
+        kinds.push({
+            title: '{{ i18n "new" }}',
+            keyword: "new",
+            isNew: true
+        });
+        kinds.push({
+            title: '{{ i18n "featured" }}',
+            keyword: "featured",
+            isFeat: true
+        });
+
+        var groups = new Array();
+        for (const group in learnData) {
+            groups.push(group);
+        }
+        // sort kinds by weight
+        groups.sort((a, b) => learnData[a]["weight"] - learnData[b]["weight"]);
+
+        // build the card data
+        groups.forEach((g) => {
+            var groupId = g;
+            var groupObj = learnData[g];
+            var groupTitle = groupObj['title'];
+            var kind = {
+                title: groupTitle,
+                keyword: groupId
+            }
+            kinds.push(kind);
+            tutorials = groupObj['tutorial'];
+            if (tutorials != undefined) {
+                tutorials.forEach((t) => {
+                    t['kinds'] = new Array(kind);
+                    if (t['author'] != undefined) {
+                        t['author'] = lookupAuthor(t['author']);
+                    } else {
+                        t['author'] = lookupAuthor("support");
+                    }
+                    cards.push(t);
+                })
+            }
+        });
+
+        var defaultKeyword = undefined;
+        const platform = window.navigator.platform;
+        // Mac* is all mac platforms
+        if (platform.startsWith("Mac")) {
+            defaultKeyword = "kind: rhino_mac";
+        }
+        // Win* is all windows platforms
+        else if (platform.startsWith("Win")) {
+            defaultKeyword = "kind: rhino_win";
+        }
+        // assume *nix
+        else {
+            // use rhino_jump_start since we don't support *nix right now
+            defaultKeyword = "kind: rhino_jump_start";
+        }
+
+        app = new Vue({
+            el: '#discoverGallery',
+            data: {
+                keyword: '',
+                defaultKeyword: defaultKeyword,
+                pushNewState: true,
+                showKindTags: false,
+                cardKinds: kinds,
+                allCards: cards,
+                discoverCards: cards
+            },
+            methods: {
+                filterCardsByKind: function (event) {
+                    let kind = event.currentTarget.getAttribute('kind');
+                    this.internalFilter = true;
+                    this.keyword = 'kind: ' + kind;
+                },
+                filterCardsByTag: function (event) {
+                    let tag = event.currentTarget.getAttribute('tag');
+                    this.internalFilter = true;
+                    this.keyword = 'tag: ' + tag;
+                    window.scrollTo(0, 0);
+                    $("#searchbox").focus();
+                },
+                forgetItem: function (event) {
+                    let itemId = event.currentTarget.getAttribute('itemid');
+                    setForgottenItems(new Array(itemId));
+                    let discoverCards = $(".discover-item");
+                    updateNewItems(discoverCards);
+                },
+                forgetAllItems: function (event) {
+                    if (window.confirm("Are you sure you want to unmark all new items?")) {
+                        let discoverCards = $(".discover-item");
+                        forgetItems(discoverCards);
+                        updateNewItems(discoverCards);
+                    }
+                    event.cancelBubble = true;
+                }
+            },
+            watch: {
+                keyword: function (val) {
+                    if (this.updateTimer)
+                        clearTimeout(this.updateTimer);
+                    if (this.stateTimer)
+                        clearTimeout(this.stateTimer);
+
+                    this.showKindTags = false;
+
+                    const pushState = this.pushNewState;
+
+                    let origKwd = val.toLowerCase();
+                    var filteredCards = this.allCards;
+
+                    var kindMatch = origKwd.match(/kind:\s?(.+?)(\s|$)/)
+                    var tagMatch = origKwd.match(/tag:\s?(.+?)(\s|$)/)
+                    var kwdMatch = origKwd.trim();
+
+                    $('.discover-filter').removeClass('active-filter');
+
+                    if (kindMatch) {
+                        this.showKindTags = true;
+                        kwdMatch = kwdMatch.replace(kindMatch[0], '').trim();
+                        var kwd = kindMatch[1];
+                        if (kwd == 'new') {
+                            var forgottenItems = getForgottenItems() || [];
+                            filteredCards = selectItems(filteredCards.filter(
+                                (c) => !forgottenItems.includes(c.url)
+                            ));
+                        } else if (kwd == 'featured') {
+                            filteredCards = selectItems(filteredCards.filter(
+                                (c) => c.highlight
+                            ));
+                        } else if (kwd != 'all') {
+                            filteredCards = selectItems(filteredCards.filter(
+                                (c) => c.kinds.map(k => k.keyword).includes(kwd)
+                            ));
+                        } else {
+                            filteredCards = selectItems(filteredCards);
+                        }
+
+                        if (!(tagMatch || kwdMatch)) {
+                            $('.discover-filter').each(function () {
+                                var df = $(this);
+                                if (df.attr('kind') == kwd) {
+                                    df.addClass('active-filter');
+                                }
+                            });
+                        }
+                    }
+
+                    if (tagMatch) {
+                        kwdMatch = kwdMatch.replace(tagMatch[0], '').trim();
+                        var kwd = tagMatch[1];
+                        if (kwd != '') {
+                            filteredCards = selectItems(filteredCards.filter(
+                                (c) => c.tags.includes(kwd)
+                            ));
+                        } else {
+                            filteredCards = selectItems(filteredCards);
+                        }
+                    }
+
+                    if (kwdMatch) {
+                        filteredCards = selectItems(filteredCards.filter(
+                            (c) => c.title.toLowerCase().includes(kwdMatch) ||
+                            (c.author != undefined &&
+                                c.author.toLowerCase().includes(kwdMatch)) ||
+                            (c.description != undefined &&
+                                c.description.toLowerCase().includes(kwdMatch))
+                        ));
+                    }
+
+                    // set a history state only after user stopped changing
+                    // filter keyword (if no input in 1 second)
+                    this.stateTimer = setTimeout(() => {
+                        if (pushState) {
+                            var stateName = 'Search';
+                            if (kwdMatch) {
+                                stateName = `Search for "${kwdMatch}"`;
+                            }
+                            if (kindMatch) {
+                                stateName += ` of kind "${kindMatch[1]}"`;
+                            }
+
+                            if (tagMatch) {
+                                stateName += ` with tag "${tagMatch[1]}"`;
+                            }
+
+                            history.pushState({
+                                    keyword: origKwd
+                                }, stateName,
+                                `?keyword=${origKwd}`);
+                        }
+                    }, this.internalFilter ? 0 : 500);
+
+                    // if keyword has changed internally update immediately
+                    if (this.internalFilter) {
+                        this.discoverCards = filteredCards;
+                        this.pushNewState = true;
+                        this.internalFilter = false;
+                    }
+                    // only update data if the user stops typing for a bit
+                    else {
+                        this.updateTimer = setTimeout(() => {
+                            this.discoverCards = filteredCards;
+                            this.pushNewState = true;
+                            this.internalFilter = false;
+                        }, 100);
+                    }
+                }
+            },
+            mounted: function () {
+                $('#discoverSpinner').css('display', 'none');
+                $('#discoverGallery').css('visibility', 'visible');
+                const urlKeyword = urlParams.get('keyword');
+                this.keyword = urlKeyword ? urlKeyword : this.defaultKeyword;
+                let discoverCards = $(".discover-item");
+                attachDiscoverItemHover(discoverCards);
+                var forgottenItems = getForgottenItems();
+                if (forgottenItems == undefined) {
+                    forgetItems(discoverCards);
+                }
+                updateNewItems(discoverCards);
+            },
+            updated: function () {
+                this.$nextTick(function () {
+                    let discoverCards = $(".discover-item");
+                    if (this.showKindTags)
+                        hideCardKind(discoverCards);
+                    else
+                        showCardKind(discoverCards);
+                    attachDiscoverItemHover(discoverCards);
+                    updateNewItems(discoverCards);
+                })
+            }
+        });
+    });
+
+    window.onpopstate = function (event) {
+        app.pushNewState = false;
+        app.keyword = event.state.keyword;
+    };
+</script>
+
+{{ end }}

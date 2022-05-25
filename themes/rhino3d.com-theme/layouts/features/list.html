@@ -1,0 +1,47 @@
+{{ define "main" }}
+<div class="single-content-area toc-page">
+  {{ if .Params.page_options.toc }}
+    {{ partial "toc.html" . }}
+  {{ end }}
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    {{ range .Site.Sections }}
+      {{ if eq .Title "Stories" }}
+        {{ range .Pages }}
+          <hr/>
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Description }}</p>
+          {{ if .Params.Banner }}
+            {{ if hasPrefix .Params.Banner "/images/"}}
+              {{/*  Global image folder  */}}
+              <p><img src="{{ .Params.Banner }}" alt="{{ . }}"></p>
+            {{ else }}
+              {{/*  Page bundle  */}}
+              <p><img src="{{ .RelPermalink }}{{ .Params.Banner }}" alt="{{ . }}"></p>
+            {{ end }}
+          {{ end }}
+
+          {{ .Content }}
+
+          {{ $lowerTitle := (lower .File.ContentBaseName)}}
+          {{ range $name, $taxonomy := .Site.Taxonomies.stories }}            
+            {{ if eq  $name $lowerTitle}}
+              <p><strong>{{ i18n "Including" }}</strong></p>
+              <ul>
+                {{ range $taxonomy.Pages }}
+                  <li><a href="{{ .RelPermalink}}">{{ .LinkTitle }}</a>{{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }} <i>- {{ i18n "New-in-Rhino-7" }}</i>{{ end }} </li>
+                {{ end }}           
+              </ul>
+            {{ end }}        
+        {{ end }}
+        <div align="right">
+          <p><a href="{{ .RelPermalink }}">{{ i18n "More-details" }}</a></p>
+        </div>          
+        {{ end }}        
+      {{ end }}
+    {{ end }}
+    {{- partial "edit_button.html" . -}}
+  </div>
+</div>
+{{ end }}

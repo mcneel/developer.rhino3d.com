@@ -1,0 +1,141 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "hugo serve english",
+            "type": "process",
+            "command": "./Launch",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true,
+                "group": "Hugo"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "osx": {
+                "command": "./Launch"
+            },
+            "windows": {
+                "command": ".\\Launch.exe"
+            },
+            "args": [
+                "serve",
+                "browse=http://localhost:1313/",
+                "page=${file}",
+                "language=en"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/themes/rhino3d.com-theme/script/Launch"
+            }
+        },
+        {
+            "label": "hugo preview current",
+            "type": "process",
+            "command": "./Launch",
+            "presentation": {
+                "echo": false,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false,
+                "close": true,
+                "group": "Hugo"
+            },
+            "osx": {
+                "command": "./Launch"
+            },
+            "windows": {
+                "command": ".\\Launch.exe"
+            },
+            "args": [
+                "browse=http://localhost:1313/",
+                "page=${file}",
+                "language=en"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/themes/rhino3d.com-theme/script/Launch"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "hugo serve all languages",
+            "type": "process",
+            "command": "./Launch",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true,
+                "group": "Hugo"
+            },
+            "osx": {
+                "command": "./Launch"
+            },
+            "windows": {
+                "command": ".\\Launch.exe"
+            },
+            "args": [
+                "serve",
+                "-e",
+                "production",
+                "browse=http://localhost:1313",
+                "page=${file}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/themes/rhino3d.com-theme/script/Launch"
+            }
+        },
+        {
+            "label": "hugo terminate",
+            "command": "echo ${input:terminate}",
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
+            "label": "SetMaxFilesLimits",
+            "type": "shell",
+            "command": "sudo",
+            "args": [
+                "bash",
+                "./limit.maxfiles.sh"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}/.vscode"
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "group": "build"
+        },
+        {
+            "label": "theme sync (DANGER)",
+            "command": "python",
+            "args": [
+                "${workspaceRoot}/themes/rhino3d.com-theme/script/theme-sync.py"
+            ],
+            "presentation": {
+                "echo": true,
+                "panel": "shared",
+                "reveal": "always"
+            },
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+          "id": "terminate",
+          "type": "command",
+          "command": "workbench.action.tasks.terminate",
+          "args": "terminateAll"
+        }
+    ]
+}

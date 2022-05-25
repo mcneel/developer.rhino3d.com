@@ -1,0 +1,21 @@
+
+<div class='comparison_table'>
+    {{- $data := index $.Site.Data.licensecomparison -}}
+    {{- with $data -}}
+        <div class='label-column'>
+            <div class='header'>&nbsp;</div>
+            {{- range $data.data.rows -}}
+                <div class='label'>{{- i18n . -}}</div>
+                {{ end }}
+            </div>
+        {{- range $col_index, $col := .column -}}            
+            <div class='content-column'>
+                <div class='header'>{{- i18n .key -}}</div>
+                {{- range $data.data.rows -}}
+                <div class='status'>{{- if index $col . -}}<img src='tick.png' class='micro' >{{- end -}}</div>
+                {{ end }}
+            </div>
+        {{ end }}
+    {{ end }}
+    </div>
+    

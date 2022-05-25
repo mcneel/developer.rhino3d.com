@@ -1,0 +1,17 @@
+{{ if .Params.authors }}
+    {{ if eq .Params.page_options.byline true }}    
+    <span class="byline">
+        {{ i18n "by" }}
+        {{ $.Scratch.Set "counter" 0 }}
+        {{ $.Scratch.Set "length" (len .Params.authors )}}
+        {{ $length_min_one := sub ($.Scratch.Get "length") 1 }}
+        {{ range $index, $author_index := .Params.authors }}
+            {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
+            {{ $author := index $.Site.Data.authors $author_index}}
+            {{ $.Scratch.Set "singleAuthor" false }}
+            {{ if eq ($.Scratch.Get "length") 1 }} {{ $.Scratch.Set "singleAuthor" true }} {{ end }}
+            <a href="{{ $.Site.Params.discourseURL }}/u/{{ $author.discourse }}/">{{ $author.name }}</a>{{ if ne ($.Scratch.Get "singleAuthor") true }}{{ if eq ($.Scratch.Get "length") 2 }}{{ if lt ($.Scratch.Get "counter") ($.Scratch.Get "length") }} {{ i18n "and" }}{{ end }}{{ else }}{{ if eq ($.Scratch.Get "counter") $length_min_one }}, {{ i18n "and" }}{{ else }}{{ if lt ($.Scratch.Get "counter") ($.Scratch.Get "length") }}, {{ end}}{{ end }}{{ end }}{{ end }}                              
+        {{ end }} ({{ i18n "Last-updated" }}&nbsp;{{- partial "last-modified" . -}})
+  </span>
+  {{ end }}
+{{ end }}

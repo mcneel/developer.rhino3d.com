@@ -1,0 +1,56 @@
+{{ define "main" }}
+<div class="single-content-area toc-page">
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
+    {{/* partial "breadcrumbs.html" . */}}
+    <h1 style="border-bottom: 1px dashed #d0d0d0;">{{ .Page.Title }}</h1>    
+    <table style="border-spacing: 20px 0; background-color:white;">
+        <tr>
+            <th style="text-align: left;" scope="col">{{ i18n "Icon" }}</th>
+            <th style="text-align: left;" scope="col">{{ i18n "Description" }}</th>
+            <th style="text-align: left;" scope="col">{{ i18n "Toolbars" }}</th>
+            <th style="text-align: left;" scope="col">{{ i18n "Menu" }}</th>         
+        </tr>
+        <tr style="background-color: white;">
+            <td style="vertical-align: top; text-align: left; width: 40px;"><img src="{{ .Page.Params.icon }}" width="40"></td>
+            <td style="vertical-align: top; text-align: left; max-width: 500px; padding-top: 0px; padding-left: 10px; padding-bottom:0px">{{ .Page.Description }}</td>            
+            <td style="vertical-align: top; text-align: left;">
+                <ul>
+                {{ range .Page.Params.toolbars }}
+                    <li>{{ . }}</li>
+                {{ end }}
+                </ul>
+            </td>
+            <td scope="row" style="vertical-align: top; text-align: left;">
+                {{ range .Page.Params.menus }}
+                    {{ . }}<br/>
+                {{ end }}
+            </th>
+        </tr>
+    </table>
+
+    <table style="border-spacing: 20px 0; background-color:white;">
+        <tr>
+            {{ if .Params.history_enabled }}
+            <th style="text-align: left;" scope="col">{{ i18n "History" }}</th>
+            {{ end }}
+            {{ if .Params.crease_splitting_enabled }}
+            <th style="text-align: left; white-space: nowrap;" scope="col">{{ i18n "Crease-Splitting" }}</th>
+            {{ end }}
+        </tr>
+        <tr style="background-color: white;">
+            {{ if .Params.history_enabled }}
+            <td style="vertical-align: top; text-align: left; width: 30;"><img style="vertical-align:middle" src="/images/history.svg" width="30"> {{ i18n "enabled" }}</span></td>
+            {{ end }}
+            {{ if .Params.crease_splitting_enabled }}
+            <td style="vertical-align: top; text-align: left; width: 30;"><img style="vertical-align:middle" src="/images/crease-splitting.svg" width="30"> {{ i18n "enabled" }}</td>
+            {{ end }}
+        </tr>
+    </table>
+ 
+    {{ .Content }}
+    
+    {{- partial "edit_button.html" . -}}
+    
+  </div>
+</div>
+{{ end }}

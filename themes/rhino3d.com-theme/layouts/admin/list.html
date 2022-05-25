@@ -1,0 +1,221 @@
+{{ define "main" }}
+<div class="single-content-area">
+    <h1>{{ .Title }}</h1>
+		<div>
+			{{ .Content }}
+			<div>
+				{{ $.Scratch.Set "hasInProgress" "false" }}
+				{{- range sort (.Site.Pages.ByTitle ) -}}
+						{{ if or (eq "In Progress" (.Params.admin.state)) }}
+							{{ $.Scratch.Set "hasInProgress" "true" }}
+						{{- end -}}
+				{{- end -}}
+				<br/>
+				<h2>In Progress</h2>
+				{{- if eq ($.Scratch.Get "hasInProgress") "true" -}}
+					<table id="TableWithComments" style="table-layout: auto; width: 100%;">
+						<thead>
+						<tr>
+							<th style="text-align: left;">Page</th>
+							<th style="text-align: center;">State</th>
+							<th style="text-align: left;">TODO</th>
+							<th style="text-align: left;">Picky Sisters</th>
+						</tr>
+						</thead>
+						<tbody>
+						{{ range sort (.Site.Pages.ByTitle ) }}
+							{{ if or (eq "In Progress" (.Params.admin.state)) }}
+							<tr>
+							<td style="width: 30%;">
+								<a href="{{ .RelPermalink }}">{{ .Title | truncate 30 }}</a>
+							</td>
+							{{ if .Params.draft }}
+								<td style="width: 15%; text-align: center; padding: 6px 10px; color: white; background-color:#2b70dc">Draft
+							{{ else if eq .Params.admin.state "In Progress" }}
+								<td style="width: 15%; text-align: center; padding: 6px 10px; color: black; background-color:#f9d764">{{ .Params.admin.state }}
+							{{ else if eq .Params.admin.state "To Edit" }}
+								<td style="width: 15%; text-align: center; padding: 6px 10px; color: white; background-color:#851a51">{{ .Params.admin.state }}
+							{{ else if eq .Params.admin.state "Complete" }}
+								<td style="width: 15%; text-align: center; padding: 6px 10px; color: black;">{{ .Params.admin.state }}
+							{{ else }}
+								<td style="width: 15%; text-align: center; padding: 6px 10px; color: black;">{{ .Params.admin.state }}
+							{{ end }}
+							{{ if .Params.admin.TODO }}
+								<td class="CellWithComment" title="{{ .Params.admin.TODO }}" style="text-align: left;">{{ .Params.admin.TODO | truncate 40 }} {{ if (.Params.admin.origin) | and (eq (lower .Params.admin.TODO) "needs porting") }} from: <a href="{{ .Params.admin.origin }}"> {{ .Params.admin.origin | truncate 20 }}</a> {{ end }}<span class="CellComment">{{ .Params.admin.TODO }} {{ if (.Params.admin.origin) | and (eq (lower .Params.admin.TODO) "needs porting") }} from: <a href="{{ .Params.admin.origin }}"> {{ .Params.admin.origin }}</a> {{ end }}</span></td>
+							{{ else }}
+								<td style="text-align: left;"></td>
+							{{ end }}
+							{{ if .Params.admin.picky_sisters }}
+								<td class="CellWithComment" title="{{ .Params.admin.picky_sisters }}" style="text-align: left;">{{ .Params.admin.picky_sisters | truncate 30 }}<span class="CellComment">{{ .Params.admin.picky_sisters }}</span></td>
+							{{ else }}
+								<td style="text-align: left;"></td>
+							{{ end }}
+							</tr>
+							{{ end }}
+						{{ end }}
+						
+						</tbody>
+					</table>
+				{{- else -}}
+					No pages were found to be In Progress.
+					<br/>
+				{{- end -}}
+				
+				{{ $.Scratch.Set "hasToEdit" "false" }}
+				{{- range sort (.Site.Pages.ByTitle ) -}}
+						{{ if or (eq "To Edit" (.Params.admin.state)) }}
+							{{ $.Scratch.Set "hasToEdit" "true" }}
+						{{- end -}}
+				{{- end -}}
+				<br/>
+				<h2>Ready to Edit</h2>
+				{{- if eq ($.Scratch.Get "hasToEdit") "true" -}}
+					<table id="TableWithComments" style="table-layout: auto; width: 100%;">
+						<thead>
+						<tr>
+							<th style="text-align: left;">Page</th>
+							<th style="text-align: center;">State</th>
+							<th style="text-align: left;">TODO</th>
+							<th style="text-align: left;">Picky Sisters</th>
+						</tr>
+						</thead>
+						<tbody>
+						{{ range sort (.Site.Pages.ByTitle ) }}
+							{{ if (eq "To Edit" (.Params.admin.state)) }}
+							<tr>
+							<td style="width: 30%;">
+								<a href="{{ .RelPermalink }}">{{ .Title | truncate 30 }}</a>
+							</td>
+							{{ if .Params.draft }}
+								<td style="width: 15%; text-align: center; padding: 6px 10px; color: white; background-color:#2b70dc">Draft
+							{{ else if eq .Params.admin.state "In Progress" }}
+								<td style="width: 15%; text-align: center; padding: 6px 10px; color: black; background-color:#f9d764">{{ .Params.admin.state }}
+							{{ else if eq .Params.admin.state "To Edit" }}
+								<td style="width: 15%; text-align: center; padding: 6px 10px; color: white; background-color:#851a51">{{ .Params.admin.state }}
+							{{ else if eq .Params.admin.state "Complete" }}
+								<td style="width: 15%; text-align: center; padding: 6px 10px; color: black;">{{ .Params.admin.state }}
+							{{ else }}
+								<td style="width: 15%; text-align: center; padding: 6px 10px; color: black;">{{ .Params.admin.state }}
+							{{ end }}
+							{{ if .Params.admin.TODO }}
+								<td class="CellWithComment" title="{{ .Params.admin.TODO }}" style="text-align: left;">{{ .Params.admin.TODO | truncate 40 }} {{ if (.Params.admin.origin) | and (eq (lower .Params.admin.TODO) "needs porting") }} from: <a href="{{ .Params.admin.origin }}"> {{ .Params.admin.origin | truncate 20 }}</a> {{ end }}<span class="CellComment">{{ .Params.admin.TODO }} {{ if (.Params.admin.origin) | and (eq (lower .Params.admin.TODO) "needs porting") }} from: <a href="{{ .Params.admin.origin }}"> {{ .Params.admin.origin }}</a> {{ end }}</span></td>
+							{{ else }}
+								<td style="text-align: left;"></td>
+							{{ end }}
+							{{ if .Params.admin.picky_sisters }}
+								<td class="CellWithComment" title="{{ .Params.admin.picky_sisters }}" style="text-align: left;">{{ .Params.admin.picky_sisters | truncate 30 }}<span class="CellComment">{{ .Params.admin.picky_sisters }}</span></td>
+							{{ else }}
+								<td style="text-align: left;"></td>
+							{{ end }}
+							</tr>
+							{{ end }}
+						{{ end }}
+						
+						</tbody>
+					</table>
+				{{- else -}}
+					No pages were found that are ready To Edit.
+					<br/>
+				{{- end -}}
+
+				<br/>
+				<h2>Ready to Localize</h2>
+				<a href='localization-status'>See Localization Status</a>
+				<br/>
+				
+				<br/>
+				<h2>Other TODO:</h2>
+				<table id="TableWithComments" style="table-layout: auto; width: 100%;">
+					<thead>
+					  <tr>
+						<th style="text-align: left;">Page</th>
+						<th style="text-align: center;">State</th>
+						<th style="text-align: left;">TODO</th>
+						<th style="text-align: left;">Picky Sisters</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  {{ range sort (.Site.Pages.ByTitle ) }}
+						{{ if and (.Params.admin.TODO) (ne (.Params.admin.state) "In Progress") (ne (.Params.admin.state) "To Edit") }}
+						<tr>
+						  <td style="width: 30%;">
+							<a href="{{ .RelPermalink }}">{{ .Title | truncate 30 }}</a>
+						  </td>
+						  {{ if .Params.draft }}
+						  	<td style="width: 15%; text-align: center; padding: 6px 10px; color: white; background-color:#2b70dc">Draft
+						  {{ else if eq .Params.admin.state "In Progress" }}
+						  	<td style="width: 15%; text-align: center; padding: 6px 10px; color: black; background-color:#f9d764">{{ .Params.admin.state }}
+						  {{ else if eq .Params.admin.state "To Edit" }}
+						  	<td style="width: 15%; text-align: center; padding: 6px 10px; color: white; background-color:#851a51">{{ .Params.admin.state }}
+						  {{ else if eq .Params.admin.state "Complete" }}
+						  	<td style="width: 15%; text-align: center; padding: 6px 10px; color: black;">{{ .Params.admin.state }}
+						  {{ else }}
+						  	<td style="width: 15%; text-align: center; padding: 6px 10px; color: black;">{{ .Params.admin.state }}
+						  {{ end }}
+						  {{ if .Params.admin.TODO }}
+						  	<td class="CellWithComment" title="{{ .Params.admin.TODO }}" style="text-align: left;">{{ .Params.admin.TODO | truncate 40 }} {{ if (.Params.admin.origin) | and (eq (lower .Params.admin.TODO) "needs porting") }} from: <a href="{{ .Params.admin.origin }}"> {{ .Params.admin.origin | truncate 20 }}</a> {{ end }}<span class="CellComment">{{ .Params.admin.TODO }} {{ if (.Params.admin.origin) | and (eq (lower .Params.admin.TODO) "needs porting") }} from: <a href="{{ .Params.admin.origin }}"> {{ .Params.admin.origin }}</a> {{ end }}</span></td>
+						  {{ else }}
+						  	<td style="text-align: left;"></td>
+						  {{ end }}
+						  {{ if .Params.admin.picky_sisters }}
+						  	<td class="CellWithComment" title="{{ .Params.admin.picky_sisters }}" style="text-align: left;">{{ .Params.admin.picky_sisters | truncate 30 }}<span class="CellComment">{{ .Params.admin.picky_sisters }}</span></td>
+						  {{ else }}
+						  	<td style="text-align: left;"></td>
+						  {{ end }}
+						</tr>
+						{{ end }}
+					  {{ end }}
+					  
+					</tbody>
+				</table>
+				<br/>
+				<h2>Complete</h2>
+				<table id="TableWithComments" style="table-layout: auto; width: 100%;">
+					<thead>
+					  <tr>
+						<th style="text-align: left;">Page</th>
+						<th style="text-align: center;">State</th>
+						<th style="text-align: left;">TODO</th>
+						<th style="text-align: left;">Picky Sisters</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  {{ range sort (.Site.Pages.ByTitle ) }}
+						{{ if or (eq "Complete" (.Params.admin.state)) }}
+						<tr>
+						  <td style="width: 30%;">
+							<a href="{{ .RelPermalink }}">{{ .Title | truncate 30 }}</a>
+						  </td>
+						  {{ if .Params.draft }}
+						  	<td style="width: 15%; text-align: center; padding: 6px 10px; color: white; background-color:#2b70dc">Draft
+						  {{ else if eq .Params.admin.state "In Progress" }}
+						  	<td style="width: 15%; text-align: center; padding: 6px 10px; color: black; background-color:#f9d764">{{ .Params.admin.state }}
+						  {{ else if eq .Params.admin.state "To Edit" }}
+						  	<td style="width: 15%; text-align: center; padding: 6px 10px; color: white; background-color:#851a51">{{ .Params.admin.state }}
+						  {{ else if eq .Params.admin.state "Complete" }}
+						  	<td style="width: 15%; text-align: center; padding: 6px 10px; color: black;">{{ .Params.admin.state }}
+						  {{ else }}
+						  	<td style="width: 15%; text-align: center; padding: 6px 10px; color: black;">{{ .Params.admin.state }}
+						  {{ end }}
+						  {{ if .Params.admin.TODO }}
+						  	<td class="CellWithComment" title="{{ .Params.admin.TODO }}" style="text-align: left;">{{ .Params.admin.TODO | truncate 40 }} {{ if (.Params.admin.origin) | and (eq (lower .Params.admin.TODO) "needs porting") }} from: <a href="{{ .Params.admin.origin }}"> {{ .Params.admin.origin | truncate 20 }}</a> {{ end }}<span class="CellComment">{{ .Params.admin.TODO }} {{ if (.Params.admin.origin) | and (eq (lower .Params.admin.TODO) "needs porting") }} from: <a href="{{ .Params.admin.origin }}"> {{ .Params.admin.origin }}</a> {{ end }}</span></td>
+						  {{ else }}
+						  	<td style="text-align: left;"></td>
+						  {{ end }}
+						  {{ if .Params.admin.picky_sisters }}
+						  	<td class="CellWithComment" title="{{ .Params.admin.picky_sisters }}" style="text-align: left;">{{ .Params.admin.picky_sisters | truncate 30 }}<span class="CellComment">{{ .Params.admin.picky_sisters }}</span></td>
+						  {{ else }}
+						  	<td style="text-align: left;"></td>
+						  {{ end }}
+						</tr>
+						{{ end }}
+					  {{ end }}
+					  
+					</tbody>
+				</table>				
+			</div>
+
+			{{- partial "edit_button.html" . -}}
+        </div>    
+</div>
+{{ end }}

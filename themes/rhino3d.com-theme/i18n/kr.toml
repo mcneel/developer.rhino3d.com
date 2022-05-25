@@ -1,0 +1,291 @@
+[buy]
+other = "구매"
+
+[download]
+other = "다운로드"
+
+[gallery]
+other = "갤러리"
+
+[features]
+other = "기능"
+
+[news]
+other = "뉴스"
+
+[community]
+other = "커뮤니티"
+
+[learn]
+other = "학습"
+
+[support]
+other = "지원"
+
+[resources]
+other = "리소스"
+
+[my-account]
+other = "내 계정"
+
+[logged-in-title]
+other = "내 계정, 라이선스, 팀 관리"
+
+[sign-in]
+other = "로그인"
+
+[sign-in-title]
+other = "내 계정, 라이선스, 팀을 관리하려면 로그인하세요"
+
+[Icon]
+other = "아이콘"
+
+[Description]
+other = "설명"
+
+[Toolbars]
+other = "도구모음"
+
+[Menu]
+other = "메뉴"
+
+[Crease-Splitting]
+other = "주름 분할"
+
+[History]
+other = "히스토리"
+
+[enabled]
+other = "사용 설정됨"
+
+[More-details]
+other = "더 자세히..."
+
+[Including]
+other = "포함: "
+
+[Rhino-Commands]
+other = "Rhino 명령"
+
+# DO NOT TRANSLATE the contents of {{ }} placeholder.  It gets replaced with the correct version by a template.
+[NEW-in-Vx]
+other = "{{ .Params.included_in.since }} 의 새 기능"
+
+# DO NOT TRANSLATE the [VERSION] placeholder.  It gets replaced with the correct version by a template.
+[New-in-N]
+other = "[VERSION]의 새 기능"
+
+[New-in-Rhino-7]
+other = "Rhino 7의 새 기능"
+
+[All-the-details]
+other = "모든 정보..."
+
+[bob-loves-revit]
+other = "Bob ❤️ Revit"
+
+# This is optionally shown as a header in some feature pages
+[new-in-rhino-7]
+other = "Rhino 7의 새 기능"
+
+# context: the bylines that sometimes show up under the title of a page.  Such as "by Scott Davidson..."
+[by]
+other = "작성자: "
+
+# context: the bylines that sometimes show up under the title of a page, showing when the page was last updated
+[Last-updated]
+other = "마지막 업데이트: "
+
+# context: the bylines that sometimes show up under the title of a page, joining the different authors.  Such as: "by Scott Davidson and..."s
+[and]
+other = "및"
+
+# context: the Edit menu at the bottom of the page
+[Edit-this-page]
+other = "이 페이지 편집"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-GitHub]
+other = "GitHub에서 편집"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-Forestry]
+other = "Forestry에서 편집"
+
+# context: the Edit menu at the bottom of the page
+[Edit-data]
+other = "데이터 편집"
+
+# context: the Edit menu at the bottom of the page
+[Admin]
+other = "관리자"
+
+# context: page footer
+[Shop-online]
+other = "온라인 구매"
+
+# context: page footer
+[or-find-a]
+other = "또는 가까운"
+
+# context: page footer
+[find-a-reseller]
+other = "리셀러 찾기"
+
+# context: page footer
+[Reseller]
+other = "리셀러"
+
+# context: page footer
+[Privacy-Policy]
+other = "개인정보 보호 정책"
+
+# context: page footer
+[About]
+other = "McNeel 안내"
+
+# context: page footer
+[Contact-Us]
+other = "문의"
+
+# context: page footer
+[Language]
+other = "언어"
+
+# context: page footer
+[change-region-lang]
+other = "다른 지역 또는 언어로 변경하기"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[Windows-only]
+other = "Windows 전용"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[macOS-only]
+other = "macOS 전용"
+
+[Download-Rhino]
+other = "Rhino를 다운로드하세요"
+
+[Download-Rhino-Both]
+other = "[LINK]Windows 또는 Mac용 [PRODUCT] [VERSION] [TYPE] 을(를) 다운로드하세요[/LINK]."
+
+[Download-Rhino-Windows]
+other = "[LINK]Windows용 [PRODUCT] [VERSION] [TYPE] 을(를) 다운로드하세요[/LINK]."
+
+[Download-Rhino-Mac]
+other = "[LINK]Mac용 [PRODUCT] [VERSION] [TYPE] 을(를) 다운로드하세요[/LINK]."
+
+[Rhino]
+other = "Rhino"
+
+[Name]
+other = "이름"
+
+[File-Extension]
+other = "파일 확장자"
+
+[Open-Import]
+other = "열기/가져오기"
+
+[Save-Export]
+other = "저장/내보내기"
+
+[Notes]
+other = "노트"
+
+[Latest-Updates]
+other = "최신 업데이트"
+
+[Improved]
+other = "향상"
+
+[Improvements]
+other = "향상"
+
+[Mac-only]
+other = "Mac 전용"
+
+[Windows-and-Mac]
+other = "Windows | Mac"
+
+# Some languages, like Japanese, use a different punctuation mark for periods.
+[period-the-punctuation-mark]
+other = "."
+
+# This gets rendered under the title in the header of the page.  It needs to be a specific width, so if it exceeds the english width too much,
+# it might be best to leave it untranslated or figure out a way to condense it.  This is much "branding" as it is words.
+[product-tagline]
+other = "design, model, present, analyze, realize..."
+
+# This is the placeholder text in the search field on the top navbar
+[search-navbar]
+other = "검색"
+
+# Homepage link in the upper part of screen
+[student-or-teacher]
+other = "학생 또는 선생님이세요?"
+
+# Title on homepage video caption
+[caption-rhino-7]
+other = "Rhino 7"
+
+# Subtitle on homepage video caption
+[caption-rhino-7-subtitle]
+other = "자유 형상을 정확하게."
+
+# Details of the Rhino 7 video caption
+[caption-rhino-7-details]
+other = "SubD, Rhino.Inside.Revit, QuadRemesh 등, 많은 기능이 추가되었습니다."
+
+# Link title on homepage video captions
+[caption-learn-more]
+other = "자세히"
+
+# Link title on homepage video captions
+[caption-try]
+other = "시험 사용"
+
+# The conjoiner before the Buy link in the video caption
+[caption-or-conjoiner]
+other = ", 또는 "
+
+# Link title on homepage video captions
+[caption-buy]
+other = "구매"
+
+# Title on homepage video caption
+[caption-rhino-refined]
+other = "더욱 향상된 Rhino"
+
+# Subtitle on homepage video caption
+[caption-less-pain]
+other = "불편은 덜고, 기능은 더하고"
+
+# Details of the Rhino Refined video caption
+[caption-rhino-refined-details]
+other = "금형 제작 기능, 명명된 선택, 레이아웃 관리, 향상된 텍스트 필드, 단선체 글꼴, Grasshopper Player 그 외 다수."
+
+# The English comma conjoiner
+[comma-conjoiner]
+other = ", "
+
+# Title on homepage video caption
+[caption-presentation]
+other = "아름다운 뷰"
+
+# Subtitle on homepage video caption
+[caption-presentation-subtitle]
+other = "뛰어난 표현"
+
+# Details of a video caption
+[caption-presentation-details]
+other = "향상된 표시 모드, 그라데이션 해치, 디노이저, PBR 재질, 레이어북 등의 새로운 프레젠테이션 기능 등."
+
+# New navigation button on Learn Pages
+[new]
+other = "신규"
+
+# Featured button and tag on Learn Pages
+[featured]
+other = "추천"

@@ -1,0 +1,35 @@
+{{- $.Scratch.Set "caption-position" "bottom" -}}
+
+{{- if .Get 4 -}}
+    {{- if .Get 4 -}}
+        {{ if or (eq (.Get 4) "top") (eq (.Get 4) "bottom") }}
+            {{- $.Scratch.Set "caption-position" (.Get 4) -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if eq ($.Scratch.Get "caption-position") "top" -}}
+    {{ if .Get 2 }}
+    <div id="textbox">
+        <p style="float: left; text-align:left;">{{ .Get 2 | markdownify }}</p>
+        <p style="float: right; text-align:right;">{{ if .Get 3 }}{{ .Get 3 | markdownify }}{{ end }}</p>
+    </div>
+    <div style="clear: both;"></div>
+    {{ end }}
+{{- end -}}
+
+<div class="twentytwenty-container">
+    <img alt="Before" src="{{ .Get 0 }}"/>
+    <img alt="After" src="{{ .Get 1 }}"/>
+</div>
+
+{{- if eq ($.Scratch.Get "caption-position") "bottom" -}}
+    {{ if .Get 2 }}
+    <div id="textbox">
+        <p style="float: left; text-align:left;">{{ .Get 2 | markdownify }}</p>
+        <p style="float: right; text-align:right;">{{ if .Get 3 }}{{ .Get 3 | markdownify }}{{ end }}</p>
+    </div>
+    <div style="clear: both;"></div>
+    {{ end }}
+{{- end -}}
+

@@ -1,0 +1,7 @@
+{{ if hasPrefix .Params.Banner "/images/"}}
+    {{/*  Global image folder  */}}
+    <p><img src="{{ .Params.Banner }}" alt="{{ . }}"></p>
+{{ else }}
+    {{/*  Page bundle  */}}
+    <p><img src="{{ .RelPermalink }}{{ .Params.Banner }}" alt="{{ . }}"></p>
+{{ end }}

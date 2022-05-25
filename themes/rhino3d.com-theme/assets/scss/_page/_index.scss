@@ -1,0 +1,139 @@
+p {
+	padding: 0;
+	padding-left: 0px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 500;
+	margin: 0px;
+	padding: 0;
+	line-height: 1.1;
+	// 2020-11-25, Brian Gillespie
+	//   This is one of three things that causes
+	//   target scrolling with a fixed page header to not
+	//   work. See WWW-1154
+	// scroll-margin-top: $global-nav-height-collapsed;
+}
+
+h1 {
+	font-size: $global_h1_size; // pre font-size discussion: 36px;
+	margin-top: 15px;
+}
+h2 {
+	font-size: $global_h2_size; // pre font-size discussion: 28px;
+	border-bottom: 1px dashed #d0d0d0;
+	padding-bottom: 0.1em;
+	margin-top: 0.83em; // default value
+	// 2020-11-25, Brian Gillespie
+	//   This is one of three things that causes
+	//   target scrolling with a fixed page header to not
+	//   work. See WWW-1154
+	//	padding-top: 10px;
+}
+h3 {
+	font-size:  $global_h3_size; // pre font-size discussion: 22px;
+	margin-top: 10px;
+}
+h4 {
+	font-size: $global_h4_size;
+	margin-top: 8px;
+}
+h5 {
+	font-size: $global_h5_size;
+	margin-top: 5px;
+}
+h6 {
+	font-size: $global_h5_size;
+}
+
+.page-title {
+	width: 100%;
+}
+
+img {
+	border-style: none;
+	border-color: inherit;
+	border-width: 0;
+	max-width: 100%;
+	height: auto;
+	margin: 0px;
+}
+.no-float {
+    float: none;
+}
+
+.scaled {
+	width: 100%;
+}
+
+.compact {
+	p {
+		line-height: 1.5;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+figure {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+}
+ 
+@media screen and (max-width: 700px) {
+	figure {
+		float: none;
+		width: 80%;
+		border: none;
+	  }
+}
+
+hr {
+    border: none;
+    height: 1px;    
+    color: $global-medium-grey; /* old IE */
+	background-color: $global-medium-grey; /* Modern Browsers */	
+}
+
+ol {
+	margin-top: 0px;
+	margin-left: 36px;
+	padding-left: 0px;
+	list-style:decimal;
+}
+
+table {
+	border-collapse: collapse;
+}
+tr {
+}
+td {
+	vertical-align: center;
+	padding: 2px;
+	border-bottom: 1px solid $global-light-grey;
+}
+
+.align-left {
+	text-align: left;
+	justify-content: left;
+}
+.align-center {
+	text-align: center;
+	justify-content: center;
+}
+.align-right {
+	text-align: right;
+	justify-content: right;
+}
+
+
+@import "_single";
+@import "_sales";
+@import "_home";
+@import "_404";
+@import "_newsfeed";

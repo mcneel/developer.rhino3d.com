@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="single-content-area">
+  <div class="feature-title-container">
+    <div class="feature-title">{{ .Page.Title }}</div>
+  </div>
+  {{ .Content }}
+  
+  <ul>
+    {{ range where .Site.Sections "Section" "authors" }}
+      {{ range .Pages }}
+        {{ $author_key := .File.ContentBaseName }}
+        <li>
+          <a class="page-link" href="/authors/{{ $author_key }}">{{ (index .Site.Data.authors $author_key).name }}</a>
+        </li>
+      {{- end -}}
+    {{- end -}}
+  </ul>
+</div>
+{{ end }}

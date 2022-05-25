@@ -1,0 +1,13 @@
+{{- $params := .Scratch.Get "params" -}}
+
+<!-- Site Title -->
+<title>{{ i18n "Rhino" }}{{ with .Title }} - {{ . }}{{ end }}</title>
+
+<!-- Description and Author -->
+{{ with .Params.description }}<meta name="description" content="Rhinoceros 3D: {{ . }}">{{ end }} 
+{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+
+{{- partial "unfurl.html" . -}}
+
+<meta name="application-name" content="{{ .Site.Params.app.title | default .Site.Title }}">
+<meta name="apple-mobile-web-app-title" content="{{ .Site.Params.app.title | default .Site.Title }}">

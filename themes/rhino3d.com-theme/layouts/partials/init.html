@@ -1,0 +1,6 @@
+{{- if eq hugo.Environment "development" -}}    
+    {{- warnf "Current environment is \"development\". All languages except English are disabled. To run in production, use: hugo serve -e production" -}}
+{{- end -}}
+{{- if eq hugo.Environment "staging" -}}    
+    {{- warnf "Current environment is \"staging\". All languages except English are disabled. To run in production, use: hugo serve -e production" -}}
+{{- end -}}

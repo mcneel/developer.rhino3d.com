@@ -1,0 +1,31 @@
+// ==============================
+// Footer
+// ==============================
+
+.footer {
+	clear: both;
+	font-size: 13px;
+	color: #6e6e6e
+}
+
+.footer a {
+	color: #803030;
+	text-decoration: none;
+}
+.footer a:hover {
+	color: red;
+	text-decoration: underline;
+}
+.footer input {
+	color: #6e6e6e;
+	border : 1px solid #CCCCCC;
+	padding: 0px;
+	text-align: center;
+	margin-top: 0px;
+}
+.footer .footer-left.skin-napa {
+	display: none;
+}
+.footer .footer-left.skin-not-napa {
+	display: none;
+}

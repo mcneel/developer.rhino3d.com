@@ -1,0 +1,22 @@
+<span class="mcneel_only hidden">
+    <div style = "text-align: center;">
+        <div class="editdropdown" style="text-align: left;">        
+            <button class="editbutton"><div class="fas fa-pencil-alt"></div> {{ i18n "Edit-this-page" }}</button>
+            <div class="editdropdown-content">
+                {{- $path := "" -}}
+                {{- with .File -}}
+                    {{- $path = .Path -}}
+                {{- else -}}
+                    {{- $path = .Path -}}
+                {{- end -}}
+                {{ $.Scratch.Set "path_no_dashes" (replace $path "/" "-" )}}
+                {{ $.Scratch.Set "slugified_path" (replace ($.Scratch.Get "path_no_dashes") "." "-" )}}
+                <a href="https://github.com/{{ .Site.Params.nwo }}/edit/master/content/{{.Site.Language.Lang }}/{{ $path }}" target="_blank" rel="noopener noreferrer"><div class="fab fa-github"></div> {{ i18n "Edit-on-GitHub" }}</a>
+                <a href="{{ .Site.Params.forestryBaseURL }}-{{.Site.Language.Lang }}-{{ $.Scratch.Get "slugified_path"}}/" target="_blank" rel="noopener noreferrer"><div class="fas fa-tree"></div> {{ i18n "Edit-on-Forestry" }}</a>
+                {{- with .Page.Params.edit_data_url -}}<a href="{{ . }}" target="_blank" rel="noopener noreferrer"><div class="fas fa-database"></div> {{ i18n "Edit-data" }}</a>{{- end -}}
+                <a href="https://github.com/{{ .Site.Params.nwo }}/commits/master/content/{{.Site.Language.Lang }}/{{ $path }}" target="_blank" rel="noopener noreferrer"><div class="fas fa-history"></div> {{ i18n "History" }}</a>
+                <a href="/admin" target="_blank"><div class="fas fa-cog"></div> {{ i18n "Admin" }}</a>
+            </div>
+        </div>
+    </div>
+</span>

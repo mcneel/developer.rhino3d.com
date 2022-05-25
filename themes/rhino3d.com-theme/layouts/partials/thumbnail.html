@@ -1,0 +1,7 @@
+{{ if hasPrefix .Params.Thumbnail "/images/"}}
+    {{/*  Global image folder  */}}
+    <p><img src="{{ .Params.Thumbnail }}" alt="{{ . }}"></p>
+{{ else }}
+    {{/*  Page bundle  */}}
+    <p><img src="{{ .RelPermalink }}{{ .Params.Thumbnail }}" alt="{{ . }}"></p>
+{{ end }}

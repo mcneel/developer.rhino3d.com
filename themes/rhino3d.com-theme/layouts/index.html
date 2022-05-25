@@ -1,0 +1,58 @@
+{{ define "main" }}
+<style>
+</style>
+<div class="video-wrapper">
+<a class="student-teacher-btn rhino-btn" href="https://www.rhino3d.com/edu">{{ i18n "student-or-teacher" }}</a>
+<header class="video-header">
+    <video class="player" src="/images/home.mp4" controls autoplay playsinline muted poster="/images/home-poster.png"></video>
+    <div class="video_caption_container" >
+        <div class="video_caption video_sync" data-start-time="0.000" data-end-time="9" data-align="right">
+            <h1 class="slide-headline"><a href="/7/new">{{ i18n "caption-rhino-7" }}</a></h1>
+            <p class="slide-subtitle">{{ i18n "caption-rhino-7-subtitle" }}</p>
+            <p class="slide-short-description">{{ i18n "caption-rhino-7-details" }}</p>
+            <p class="slide-link"><a href="/7/new">{{ i18n "caption-learn-more" }}</a>{{ i18n "comma-conjoiner" }}<a href="{{.Site.Params.rhinoURL }}/download">{{ i18n "caption-try" }}</a>{{ i18n "caption-or-conjoiner"}}<a href="{{.Site.Params.rhinoURL }}/sales">{{ i18n "caption-buy" }}</a></p>
+        </div>
+        <div class="video_caption video_sync" data-start-time="9.5" data-end-time="18.5" data-align="left">
+            {{ with .Site.GetPage "/features/rhino-inside-revit/index.md" }}
+                <h1 class="slide-headline-small"><a href="{{ .RelPermalink }}">{{ .Params.Slide.headline }}</a></h1>
+                <p class="slide-subtitle">{{ .Params.Slide.subtitle }}</p>
+                <p class="slide-short-description">{{ .Params.Slide.short_description }}</p>
+                <p class="slide-link"><a href="{{ .Params.Slide.learn_more_url }}">{{ i18n "caption-learn-more" }}...</a></p>
+            {{ end }}
+        </div>
+        <div class="video_caption video_sync" data-start-time="21.5" data-end-time="29" data-align="right">
+            {{ with .Site.GetPage "/features/quadremesh/index.md" }}
+                <h1 class="slide-headline"><a href="{{ .RelPermalink }}">{{ .Params.Slide.headline }}</a></h1>
+                <p class="slide-subtitle">{{ .Params.Slide.subtitle }}</p>
+                <p class="slide-short-description">{{ .Params.Slide.short_description }}</p>
+                <p class="slide-link"><a href="{{ .Params.Slide.learn_more_url }}">{{ i18n "caption-learn-more" }}...</a></p>
+            {{ end }}
+        </div>
+        <div class="video_caption video_sync" data-start-time="31" data-end-time="39" data-align="left"> 
+            <h1 class="slide-headline"><a href="/7/new/#presentation">{{ i18n "caption-presentation" }}</a></h1>
+            <p class="slide-subtitle">{{ i18n "caption-presentation-subtitle" }}</p>
+            <p class="slide-short-description">{{ i18n "caption-presentation-details" }}</p>
+            <p class="slide-link"><a href="/7/new/#presentation">{{ i18n "caption-learn-more" }}...</a></p>           
+        </div>
+        <div class="video_caption video_sync" data-start-time="40" data-end-time="52" data-align="right">
+            <h1 class="slide-headline"><a href="/7/new/#rhino-refined">{{ i18n "caption-rhino-refined" }}</a></h1>
+            <p class="slide-subtitle">{{ i18n "caption-less-pain" }}</p>
+            <p class="slide-short-description">{{ i18n "caption-rhino-refined-details" }}</p>
+            <p class="slide-link"><a href="/7/new/#rhino-refined">{{ i18n "caption-learn-more" }}...</a></p>
+        </div>
+        <div class="video_caption video_sync" data-start-time="54" data-end-time="75" data-align="left">
+            <h1 class="slide-headline"><a href="/7/new">{{ i18n "caption-rhino-7" }}</a></h1>
+            <p class="slide-subtitle">{{ i18n "caption-rhino-7-subtitle" }}</p>
+            <p class="slide-short-description">{{ i18n "caption-rhino-7-details" }}</p>
+            <p class="slide-link"><a href="/7/new">{{ i18n "caption-learn-more" }}</a>{{ i18n "comma-conjoiner" }}<a href="{{.Site.Params.rhinoURL }}/download">{{ i18n "caption-try" }}</a>{{ i18n "caption-or-conjoiner"}}<a href="{{.Site.Params.rhinoURL }}/sales">{{ i18n "caption-buy" }}</a></p>
+        </div>
+    </div>
+</header>
+</div>
+
+<div class="single-content-area">
+    <div class='home-content-offset'>
+        {{ .Content }}
+    </div>
+</div>
+{{ end }}

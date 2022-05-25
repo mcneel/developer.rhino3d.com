@@ -1,0 +1,263 @@
+{{ define "main" }}
+<div class="single-content-area">
+    {{ .Content }}
+    <div id="vueApp" :class="{ 'disabled': saving }">
+    <div style="text-align: center; min-height:200px" v-if="loading">
+        <div class="load_spinner"></div>
+        Fetching maillist preferences...
+    </div>
+    <div style="text-align: center;" v-if="error">
+        (( error ))
+    </div>
+    <div v-if="!loading && !error">
+        <div id="maillistEditContainer">
+            <button @click="toggleEdit" v-if="readOnly">
+                Edit
+            </button>
+            <div v-if="!readOnly">
+                <button @click="handleReset" class="cancelBtn">Cancel</button>
+                <button @click="handleSubmit">Save</button>
+            </div>
+        </div>
+        <div class="form-group" v-for="(maillist,maillistKey) in maillists" :key="maillistKey">
+                <div class="FormSelect">
+                    <i class="load_spinner" v-if="saving"></i>
+                    <fieldset
+                    class="FormSelect__control"
+                    :class="{ 'FormSelect__control--readonly': readOnly }"
+                    >
+                    <legend class="FormSelect__legend">
+                        <div class="FormSelect__legend-inner">
+                        <div class="FormSelect__legend-body">
+                            <span
+                            class="FormSelect__placeholder"
+                            >(( maillist.label ))</span>
+                        </div>
+                        </div>
+                    </legend>
+                    <div class="FormSelect__options">
+                        <label v-for="(option, index) in maillist.options" :key="option.label || option" class="FormSelect__option" :class="{ 'u-visually-hidden': hideOptions(maillistKey, option, index) }">
+                        <!-- Using a dynamic :type is not possible because of a IE11 bug. -->
+                        <input
+                            :value="option.id"
+                            type="checkbox"
+                            class="FormSelect__input"
+                            :class="{ 'FormSelect__input--readonly': readOnly }"
+                            v-model="current_selection[maillistKey]"
+                        >
+                        (( option.label  ))
+                        </label>
+                    </div>
+                    <legend class="FormSelect__legend" @click="expanded[maillistKey] = !expanded[maillistKey]" :class="{ 'FormSelect__legend--readonly': readOnly }">
+                        <div class="FormSelect__legend-inner">
+                        <div class="FormSelect__legend-body">
+                            <span
+                            class="FormSelect__placeholder"
+                            v-if="!expanded[maillistKey]"
+                            >Show More</span>
+                            <span
+                            v-if="expanded[maillistKey]"
+                            class="FormSelect__placeholder"
+                            >Show Less</span>
+                        </div>
+                        <span class="SvgAngle FormSelect__icon" :class="{ 'FormSelect__icon--rotate-180': expanded[maillistKey] }">
+                            <svg width="18" height="18" viewBox="0 0 18 18" class="SvgAngle__svg" focusable="false">
+                            <path
+                                fill="currentColor"
+                                d="M9.012 12.751a.655.655 0 0 1-.464-.193L2.19 6.109a.674.674 0 0 1 .028-.914.651.651 0 0 1 .9-.027l5.894 5.978 5.894-5.978a.651.651 0 0 1 .901.027c.246.25.258.65.027.914l-6.357 6.449a.655.655 0 0 1-.465.194"
+                                fill-rule="evenodd"
+                            ></path>
+                            </svg>
+                        </span>
+
+                        </div>
+                    </legend>
+                    </fieldset>
+                </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+{{- partial "jquery" . }}
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+<script type="text/javascript" src='{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}'>
+</script>
+
+<script>
+    const siteBase = "{{ .Site.BaseURL }}";
+    const pageLang = "{{ .Language.Lang }}";
+    const isProduction = "{{ if hugo.IsProduction }}1{{ else }}0{{ end }}";
+    const urlParams = new URLSearchParams(window.location.search);
+
+    async function loadToml(filter) {
+        var dataUrl;
+        if (isProduction == "1")
+            dataUrl = `${window.location.origin}/${pageLang}/my-account/maillist/maillist.toml`;
+        else
+            dataUrl = `${window.location.origin}/my-account/maillist/maillist.toml`;
+        console.log(`Fetching maillist data from ${dataUrl}`);
+        const res = await fetch(dataUrl);
+        if (res.ok) {
+            return TOML.parse(await res.text());
+        }
+    };
+
+    const apiUrl = "https://api.mcneel.com/maillist/preferences"
+    Vue.options.delimiters = ['((', '))'];
+
+    var app;
+
+    loadToml().then((rawData) => {
+        app = new Vue({
+            el: '#vueApp',
+            components: { 
+            },
+            props: {
+            },
+            data(){
+                return {
+                loading: true,
+                saving: false,
+                error: "",
+                readOnly: true,
+                token: "",
+                maillists:rawData,
+                initial_selection: {
+                    companion_product: [],
+                    market_segment: [],
+                    profession:[]
+                },
+                current_selection:{
+                    companion_product: [],
+                    market_segment: [],
+                    profession:[]
+                },
+                expanded:{
+                    companion_product: false,
+                    market_segment: false,
+                    profession:false
+                },
+                }
+            },
+            watch: {
+                //current_selection: function( val ){
+                //    console.log("current_selection changed:", this.current_selection)
+                //}
+            },
+            computed: {
+                changed() {
+                    const added = (maillist)=>{
+                    return this.current_selection[maillist]
+                    .filter(id => !this.initial_selection[maillist].includes(id))
+                    .map(addedId => {return {id:addedId, add:true }})
+                    }
+                    const removed =(maillist)=>{
+                        return this.initial_selection[maillist]
+                        .filter(id => !this.current_selection[maillist].includes(id))
+                        .map(removedId => {return {id:removedId, add:false }})
+                        }
+                    return {
+                        profession: [...added("profession"), ...removed("profession")],
+                        market_segment: [...added("market_segment"), ...removed("market_segment")],
+                        companion_product: [...added("companion_product"), ...removed("companion_product")],
+                    }
+                },
+            },
+            created(){
+                $.ajax({
+                    url:"/licenses/session_variables.json"
+                }).then(licenseData => {
+                    this.token = JSON.parse(licenseData)["oauth2Token"]
+                    const headers = {"Authorization": `Bearer ${this.token}`}
+                    $.ajax({
+                    url: apiUrl,
+                    headers,
+                }).then(data => {
+                    this.initial_selection["profession"] = data.profession.map(x => x.ProfessionID)
+                    this.initial_selection["market_segment"] = data.market_segment.map(x => x.MarketSegmentID)
+                    this.initial_selection["companion_product"] = data.companion_product.map(x => x.CompanionProductId)
+
+                    this.current_selection = {...this.initial_selection}
+                    this.loading = false
+                }).catch(e =>
+                {
+                    this.loading = false
+                    this.error = "Failed loading preferences."
+                })
+            }).catch(e =>
+            {
+                this.loading = false
+                this.error = "You need to log in to see this page."
+            })
+            },
+            methods: {
+                toggleEdit() {
+                    this.readOnly = !this.readOnly
+                },
+                handleReset() {
+                    this.current_selection = {...this.initial_selection}
+                    this.readOnly = true
+                },
+                handleSubmit() {
+                    this.saving = true
+                    const headers = {"Authorization": `Bearer ${this.token}`, 'Content-Type': 'application/json',
+                    'Accept': 'application/json'}
+
+                    const anythingChanged = Object.values(this.changed).reduce(
+                        (previousValue, currentValue) => previousValue + currentValue.length>0,
+                        false
+                    );
+                    if (anythingChanged){
+                        // post request
+                        $.ajax({
+                            url: apiUrl,
+                            type: 'post',
+                            data: JSON.stringify(this.changed),
+                            headers,
+                            dataType: 'json',
+                        }).then( data => {
+                            console.log("success")
+                            this.initial_selection = {...this.current_selection}
+                            this.readOnly = true
+                            this.saving = false
+                        }).catch(e =>{
+                            alert("Error: Cannot perform changes")
+                            this.current_selection = {...this.initial_selection}
+                            this.saving = false
+                        })
+                    }
+                    else {
+                        this.readOnly = true
+                        this.saving = false
+                    }
+                },
+                hideOptions(maillist, item, index) {
+                    if(this.current_selection[maillist].includes(item.id)){
+                        return false
+                    }
+                    if( this.readOnly ){
+                        return true
+                    }
+                    if( index> 3 ) 
+                    {
+                        if( !this.expanded[maillist] ){
+                            return true
+                        }
+                        else{
+                            return false
+                        }
+                    }
+                    return false
+                },
+              }
+        });
+    });
+
+</script>
+  
+{{ $sass := resources.Get "/scss/_page/_maillist.scss" }}
+{{ $style := $sass | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+
+{{ end }}

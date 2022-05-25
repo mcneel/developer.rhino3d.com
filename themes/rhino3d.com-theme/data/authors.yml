@@ -1,0 +1,872 @@
+---
+support:
+  name: McNeel Support
+  email: tech@mcneel.com
+  discourse: ''
+  github: ''
+varies:
+  name: ''
+  email: tech@mcneel.com
+  discourse: ''
+  github: ''
+adan:
+  name: Adán Guillén
+  email: adan@mcneel.com
+  discourse: adanguillen
+  github: ''
+adam:
+  name: Adam Dereli
+  email: aademdereli@hotmail.com
+  discourse: ''
+  github: ''
+adobe:
+  name: Adobe Substance
+  email: https://www.youtube.com/channel/UC-toy9WMImypmLAiU9h_SzQ
+  discourse: ''
+  github: ''
+agnes.tan:
+  name: Agnes Tan
+  email: agnes.tan@mcneel.com
+  discourse: agnes_tan
+  github: ''
+alain:
+  name: Alain Cormier
+  email: alain@mcneel.com
+  discourse: Alain
+  github: acormier
+andres:
+  name: Andrés González Sr.
+  email: andres@mcneel.com
+  discourse: RhinoFabStudio
+  github: ''
+andrew.friedenberg:
+  name: Andrew Friedenberg
+  email: https://www.youtube.com/channel/UCSaBLkhFRckhPMGkGWHtd2g
+  discourse: ''
+  github: ''
+antonio.turiello:
+  name: Antonio Turiello
+  email: ''
+  discourse: ''
+  github: ''
+aj:
+  name: Andrés Jacobo (AJ) González
+  email: aj@mcneel.com
+  discourse: aj1
+  github: andresjacobo
+andy:
+  name: Andrew Le Bihan
+  email: andy@mcneel.com
+  discourse: andy
+  github: andylebihan
+andy.payne:
+  name: Andy Payne
+  email: ''
+  discourse: ''
+  github: ''
+anna.foglietta:
+  name: Anna Foglietta
+  email: 'anna.foglietta@mcneel.com '
+  discourse: Anna_Foglietta
+  github: AnnaFoglietta
+anna.villafane:
+  name: Anna Villafañe
+  email: anna.villafane@mcneel.com
+  discourse: ''
+  github: ''
+archihacks:
+  name: Archi Hacks
+  email: 'https://www.youtube.com/channel/UCNfL0P1MAXpM8pQEM9jqZAw'
+  discourse: ''
+  github: ''
+arkim:
+  name: Arkim7 Studio
+  email: 'https://www.youtube.com/channel/UCsKagnsaOr_R9Y2q5wwlZwA'
+  discourse: ''
+  github: ''
+architutors:
+  name: architutors
+  email: ''
+  discourse: ''
+  github: ''
+arthur-van-der-harten:
+  name: Arthur van der Harten
+  email: ''
+  discourse: aharten
+  github: ''
+arturo:
+  name: Arturo Tedeschi
+  email: info@arturotedeschi.com
+  discourse: ''
+  github: ''
+anurag:
+  name: Anurag
+  email: 3dwithanurag@gmail.com
+  discourse: ''
+  github: ''
+atsuo:
+  name: Atsuo Nakajima
+  email: atsuo@mcneel.com
+  discourse: atsuo
+  github: ''
+bella:
+  name: Bella Hsu
+  email: bella@mcneel.com
+  discourse: bella_hsu
+  github: BellaHsu68
+bernat:
+  name: Bernat Lorente
+  email: bernat@mcneel.com
+  discourse: Bernat
+  github: bernatlorente
+bim_corner:
+  name: BIM Corner
+  email: post@bimcorner.com
+  discourse: ''
+  github: ''
+bob:
+  name: Bob McNeel
+  email: bob@mcneel.com
+  discourse: bobmcneel
+  github: BobMcNeel
+brian:
+  name: Brian Gillespie
+  email: brian@mcneel.com
+  discourse: brian
+  github: golsby
+brianj:
+  name: Brian James
+  email: brianj@mcneel.com
+  discourse: BrianJ
+  github: BrianJames
+carla.sologuren:
+  name: Carla Sologuren
+  email: carla.sologuren@mcneel.com
+  discourse: Carla_Sologuren
+  github: carlasologuren
+carlos:
+  name: Carlos Pérez
+  email: carlos@mcneel.com
+  discourse: carlosperez
+  github: ''
+carlossoaresdesousa:
+  name: Carlos Soares de Sousa (external)
+  email: carlos@soaresdesousa.net
+  discourse: ''
+  github: carlossoaresdesousa
+cecile:
+  name: Cécile Lamborot
+  email: cecile@mcneel.com
+  discourse: cecile
+  github: CecileL
+cafer:
+  name: Chia Fu CHIANG (Cafer)
+  email: cafer@mcneel.com
+  discourse: Cafer
+  github: ''
+chuck:
+  name: Chuck Welsh
+  email: chuck@mcneel.com
+  discourse: chuck
+  github: ChuckWelsh
+cindy:
+  name: Cindy Streck
+  email: cindy@mcneel.com
+  discourse: cindystreck
+  github: ''
+curtis:
+  name: Curtis Wensley
+  email: curtis@mcneel.com
+  discourse: curtisw
+  github: cwensley
+dale:
+  name: Dale Fugier
+  email: dale@mcneel.com
+  discourse: dale
+  github: dalefugier
+dalelear:
+  name: Dale Lear
+  email: dalelear@mcneel.com
+  discourse: dalelear
+  github: dalelear
+dan:
+  name: Dan Rigdon-Bel
+  email: dan@mcneel.com
+  discourse: dan
+  github: dbelcher
+daniel.piker:
+  name: Daniel Piker
+  email: daniel.piker@mcneel.com
+  discourse: DanielPiker
+  github: Dan-Piker
+daniel.wunsch:
+  name: Daniel Wunsch
+  email: daniel.wunsch@mcneel.com
+  discourse: daniel_wunsch
+  github: DanielWunsch
+dario.donato:
+  name: Dario Donato
+  email: ''
+  discourse: ''
+  github: ''
+dave.schultze:
+  name: Dave Schultze
+  email: ''
+  discourse: schultzeworks
+  github: ''
+david.leon:
+  name: David Andrés Leon
+  email: david.leon@mcneel.com
+  discourse: DavidLeon
+  github: davidandresleon
+david.copete:
+  name: David Copete
+  email: copetedavid@gmail.com
+  discourse: 
+  github: 
+david.eranen:
+  name: David Eränen
+  email: david.eranen@mcneel.com
+  discourse: davideranen
+  github: deranen
+david:
+  name: David Rutten
+  email: david@mcneel.com
+  discourse: davidrutten
+  github: DavidRutten
+debbieg:
+  name: Debbie Green at FormLabs
+  email: delia@mcneel.com
+  discourse: delia
+  github: ''
+delia:
+  name: Delia Robalo
+  email: delia@mcneel.com
+  discourse: delia
+  github: ''
+designalyze:
+  name: designalyze
+  email: ''
+  discourse: ''
+  github: ''
+digitaltoolbox:
+  name: digital toolbox
+  email: ''
+  discourse: ''
+  github: ''
+dixon:
+  name: Dixon Sun
+  email: dixon@mcneel.com
+  discourse: dixon
+  github: ''
+doaa:
+  name: Doaa Alsharif
+  email: doaa@mcneel.com
+  discourse: doaa
+  github: doaa-sa
+ehsan:
+  name: Ehsan Iran-Nejad
+  email: ehsan@mcneel.com
+  discourse: eirannejad
+  github: eirannejad
+enric:
+  name: Enric Marquès
+  email: enric@mcneel.com
+  discourse: enric
+  github: enricmarques
+e.sosnovsky:
+  name: Evgeny Sosnovsky
+  email: e.sosnovsky@sabitsoft.com
+  discourse: Evgeny
+  github: '[not found]'
+formularch:
+  name: FORMul[a]RCH
+  email: ''
+  discourse: ''
+  github: ''
+fosters:
+  name: Foster + Partners
+  email: ''
+  discourse: ''
+  github: ''
+fran:
+  name: Fran Montero
+  email: fran@mcneel.com
+  discourse: fran
+  github: FranMontero
+francesc:
+  name: Francesc Pedrerol
+  email: francesc@mcneel.com
+  discourse: francescmcneel
+  github: ''
+fsalla:
+  name: Francesc Salla
+  email: fsalla@mcneel.com
+  discourse: fsalla
+  github: ''
+garyd:
+  name: Gary Dawson Design
+  email: https://www.garydawsondesigns.com/contact--schedule.html#/
+  discourse: ''
+  github: ''
+gediminas:
+  name: Gediminas Kirdeikis
+  email: gkirdeikis@gmail.com
+  discourse: ''
+  github: ''
+gemma:
+  name: Gemma Fernandez
+  email: gemma@mcneel.com
+  discourse: ''
+  github: ''
+giorgio:
+  name: Giorgio Gurioli
+  email: giorgio@guriolidesign.it
+  discourse: giorgio
+  github: ''
+giulio:
+  name: Giulio Piacentino
+  email: giulio@mcneel.com
+  discourse: piac
+  github: piac
+giuseppe:
+  name: Giuseppe Massoni
+  email: giuseppe@mcneel.com
+  discourse: giuseppe
+  github: ''
+graphisoft:
+  name: Graphisoft
+  email: 'https://graphisoft.com/us'
+  discourse: ''
+  github: ''
+grasshopper.tutorials:
+  name: Grasshopper Tutorials
+  email: ''
+  discourse: ''
+  github: ''
+greg:
+  name: Greg Arden
+  email: greg@mcneel.com
+  discourse: gregarden
+  github: greg-arden
+heeyoung.lee:
+  name: HeeYoung Lee
+  email: heeyoung.lee@mcneel.com
+  discourse: heeyoung
+  github: heeyoung-lee
+how.to.rhino:
+  name: How to Rhino
+  email: dusan@howtorhino.com
+  discourse: dusancv
+  github: ''
+inspirationtuts:
+  name: Inspiration Tuts
+  email: https://www.youtube.com/channel/UCOMUcuzNLBgfqK0ApR0Pk4A
+  discourse: ''
+  github: ''
+iproduction:
+  name: Individualized Production
+  email: https://www.youtube.com/channel/UC8_BRqGMzzPeyIJQXTovflg
+  discourse: ''
+  github: ''
+isaac:
+  name: Isaac Lage
+  email: isaac@mcneel.com
+  discourse: ''
+  github: ''
+jackie:
+  name: Jackie Nasser
+  email: jackie@mcneel.com
+  discourse: jackie
+  github: ''
+jamesc:
+  name: James Carruthers
+  email: jim@hydraulicdesign.net
+  discourse: ''
+  github: ''
+slanina:
+  name: Jan Slanina
+  email: slanina@dimensio.cz
+  discourse: ''
+  github: ''
+jeannie:
+  name: Jeannie Shek
+  email: jeannie@mcneel.com
+  discourse: jeannie_shek
+  github: ''
+jaeeminpark:
+  name: Jeemin Park
+  email: jaeeminpark@plusplastic.com
+  discourse: ''
+  github: ''
+jeff.lasor:
+  name: Jeff LaSor
+  email: jeff.lasor@mcneel.com
+  discourse: jeff
+  github: jlasor
+jennifer:
+  name: Jennifer Davidson
+  email: jennifer@mcneel.com
+  discourse: jennifer_davidson
+  github: ''
+jerry:
+  name: Jerry Hambly
+  email: jerry@mcneel.com
+  discourse: jerry
+  github: ''
+jess-maertterer:
+  name: Jess Maertterer
+  email: ''
+  discourse: Jess
+  github: ''
+joachim:
+  name: Joachim Kuntz
+  email: joachim@mcneel.com
+  discourse: Joachim_Kuntz
+  github: JoachimKuntz
+jody:
+  name: Jody Mills
+  email: jody@mcneel.com
+  discourse: jody
+  github: jodymills
+jb:
+  name: John (JB) Brock
+  email: jb@mcneel.com
+  discourse: John_Brock
+  github: JohnBrock
+john.croudy:
+  name: John Croudy
+  email: john.croudy@mcneel.com
+  discourse: johnc
+  github: croudyj
+johnm:
+  name: John Morse
+  email: johnm@mcneel.com
+  discourse: johnm
+  github: johnmorse
+joingik:
+  name: Joingik KIM
+  email: joingik@plusplastic.com
+  discourse: ''
+  github: ''
+ovidio:
+  name: José Ovidio Cardona
+  email: ovidio@mcneel.com
+  discourse: jose_o_cardona
+  github: ''
+jonm:
+  name:  Jon Mirtschin
+  email: jonm@geometrygym.com
+  discourse: ''
+  github: ''
+joshua:
+  name: Joshua Kennedy
+  email: joshua@mcneel.com
+  discourse: joshua_kennedy
+  github: jrz371
+julian:
+  name: Julian Oquendo
+  email: julian@mcneel.com
+  discourse: Julian_Oquendo
+  github: ''
+julieta:
+  name: Julieta Fopiani
+  email: julieta@mcneel.com
+  discourse: Julieta_Fopiani
+  github: ''
+watanabe:
+  name: Jun Watanabe
+  email: watanabe@mcneel.com
+  discourse: Jun_Watanabe
+  github: ''
+jussi:
+  name: Jussi Aaltonen
+  email: jussi@mcneel.com
+  discourse: Jussi_Aaltonen
+  github: jussiaaltonen
+k:
+  name: K (Kaitlin) Viljamaa
+  email: k@mcneel.com
+  discourse: K__
+  github: KaitlinRMA
+kanano:
+  name: Keisuke Kanano
+  email: kanano@mcneel.com
+  discourse: keisuke_kanano
+  github: ''
+kelvin:
+  name: Kelvin Cheng
+  email: kelvin@mcneel.com
+  discourse: KelvinC
+  github: thekelvincheng
+kike:
+  name: Kike Garcia
+  email: kike@mcneel.com
+  discourse: kike
+  github: kike-garbo
+kyle:
+  name: Kyle Houchens
+  email: kyle@mcneel.com
+  discourse: theoutside
+  github: kylehouchens
+ladybug_tools:
+  name: Ladybug Tools
+  email: info@ladybug.tools
+  discourse: ''
+  github: ''
+lars:
+  name: Lars Rivinius
+  email: lars@mcneel.com
+  discourse: lars
+  github: matulski
+lineweights:
+  name: Lineweights Academy
+  email: https://www.youtube.com/channel/UCR2YaYgISCb0HTN9-P9rCqQ
+  discourse:
+  github:
+lowell:
+  name: Lowell Walmsley
+  email: lowell@mcneel.com
+  discourse: lowell
+  github: LowellWalmsley
+luc:
+  name: Luc Wilson, KPF
+  email: https://www.linkedin.com/in/luc-wilson-261b56144/
+  discourse: ''
+  github: ''
+lucia:
+  name: Lucía N Miguel
+  email: lucia@mcneel.com
+  discourse: lucianmayo
+  github: ''
+luis:
+  name: Luis Fraguada
+  email: luis@mcneel.com
+  discourse: fraguada
+  github: fraguada
+luna:
+  name: Luna Matsuo
+  email: luna@mcneel.com
+  discourse: luna
+  github: lunamcneel
+marcello:
+  name: Marcello Sgambelluri
+  email:
+  discourse:
+  github:
+marika.almgren:
+  name: Marika Almgren
+  email: marika.almgren@mcneel.com
+  discourse: marika_almgren
+  github: marikaalmgren
+mary:
+  name: Mary Fugier
+  email: mary@mcneel.com
+  discourse: mary
+  github: maryfugier
+maryp:
+  name: Mary Polites
+  email: office@cameronmccarthy.com
+  discourse: 
+  github:
+tagami:
+  name: Masaki Tagami
+  email: tagami@mcneel.com
+  discourse: '11159'
+  github: ''
+max.soderstrom:
+  name: Max Soderstrom
+  email: max.soderstrom@mcneel.com
+  discourse: maxsoder
+  github: sodermax
+maxime:
+  name: Maxime Rouca
+  email: maxime@exoside.com
+  discourse: maxime1
+  github: ''
+michiyo:
+  name: Michiyo Takahashi
+  email: michiyo@applicraft.com
+  discourse: ''
+  github: ''
+mikko:
+  name: Mikko Oksanen
+  email: mikko@mcneel.com
+  discourse: mikko
+  github: MikkoOksanen
+mikolaj:
+  name: Mikolaj Jarski
+  email: mikolaj@lemondim.pl
+  discourse: mikolaj
+  github: mjarski
+modelab:
+  name: ModeLab
+  email: hello@modelab.is
+  discourse: ''
+  github: ''
+tack:
+  name: Mikyung "Miky" Tack
+  email: tack@plusplastic.com
+  discourse: ''
+  github: ''
+mingyun:
+  name: Mingyun Kim
+  email: mingyun@plusplastic.com
+  discourse: ''
+  github: ''
+monica:
+  name: Monica de Arana
+  email: monica@mcneel.com
+  discourse: monica_de_arana
+  github: ''
+mustapha:
+  name: Mostapha Sadeghipour Roudsari
+  email: https://www.linkedin.com/in/mostaphasadeghipour/
+  discourse: ''
+  github: ''
+mutsuko:
+  name: Mutsuko Tozawa
+  email: mutsuko@mcneel.com
+  discourse: mutsuko_tozawa
+  github: ''
+mutsumi:
+  name: Mutsumi Matsuo
+  email: mutsumi@mcneel.com
+  discourse: mutsumi
+  github: ''
+nathan:
+  name: Nathan Letwory
+  email: nathan@mcneel.com
+  discourse: nathanletwory
+  github: jesterKing
+natem:
+  name: Nate McKewon
+  email: https://www.youtube.com/channel/UC-XWabxbzChyCei2zCnIrEw
+  discourse: ''
+  github: ''
+nicks:
+  name: Nick Senske
+  email: nsenske@iastate.edu
+  discourse: ''
+  github: ''
+niloofar:
+  name: Niloofar Zaker
+  email: ''
+  discourse: ''
+  github: ''
+noemi:
+  name: Noemí Fluixà
+  email: noemi@mcneel.com
+  discourse: noemi
+  github: noemifm
+olivia:
+  name: Olivia Morgan
+  email: 'https://www.linkedin.com/learning/instructors/olivia-morgan'
+  discourse: ''
+  github: ''
+parametric_house:
+  name: Parametric House
+  email: ''
+  discourse: ''
+  github: ''
+parametriccamp:
+  name: ParametricCamp
+  email: https://www.youtube.com/c/ParametricCamp/featured
+  discourse: ''
+  github: ''
+pascal:
+  name: Pascal Golay
+  email: pascal@mcneel.com
+  discourse: pascal
+  github: pgolay
+paul.poinet:
+  name: Paul Poinet
+  email: https://www.paulpoinet.com/#/
+  discourse: 
+  github: 
+paul.wintour:
+  name: Paul Wintour
+  email: info@parametricmonkey.com
+  discourse: 
+  github: 
+philc:
+  name: Phil Cook
+  email: phil@simplyrhino.co.uk
+  discourse: ''
+  github: ''
+philip.galvan:
+  name: Philipp Galvan Design
+  email: https://www.youtube.com/channel/UCnrNz-zZxT6rnyN8ah-tsKw
+  discourse: ''
+  github: ''
+pierre:
+  name: Pierre Cuvilliers
+  email: pierre@mcneel.com
+  discourse: pierrec
+  github: pilcru
+pjchen:
+  name: PJ Chen Jewelry Design
+  email: pj@pjchendesign.com
+  discourse: ''
+  github: ''
+pointone:
+  name: PointOneStudio
+  email: https://www.youtube.com/user/POINTONEstudio
+  discourse: ''
+  github: ''
+rajaa:
+  name: Rajaa Issa
+  email: rajaa@mcneel.com
+  discourse: rajaa
+  github: rissa
+roy:
+  name: Roy Hirshkowitz
+  email: roy@mcneel.com
+  discourse: roy1
+  github: royhirshkowitz
+jessesn:
+  name: Jessesn Chen
+  email: jessesn@mcneel.com
+  discourse: jessesn
+  github: Jessesn
+jorin:
+  name: Jorin Chi
+  email: jorin@mcneel.com
+  discourse: jorinchi
+  github: ''
+sandy:
+  name: Sandy McNeel
+  email: sandy@mcneel.com
+  discourse: sandy
+  github: SMcNeel
+yoon:
+  name: Sanghoon Yoon
+  email: yoon@mcneel.com
+  discourse: yoon
+  github: JorinChi
+scottd:
+  name: Scott Davidson
+  email: scottd@mcneel.com
+  discourse: scottd
+  github: scotttd
+simply3d:
+  name: Simply 3D
+  email: tgroppi@ecuad.ca
+  discourse: ''
+  github: ''
+skylar-tibbits:
+  name: Skylar Tibbits
+  email: sjet@sjet.us
+  discourse: ''
+  github: ''
+studioair:
+  name: Studio AIR
+  email: ''
+  discourse: ''
+  github: ''
+onai:
+  name: Seiji Onai
+  email: onai@applicraft.com
+  discourse: Seiji
+  github: ''
+ssh:
+  name: Seunghwan Song
+  email: ssh@plusplastic.com
+  discourse: ''
+  github: ''
+steven-janssen:
+  name: Steven Janssen
+  email: ''
+  discourse: Steven
+  github: ''
+steve:
+  name: Steve Baer
+  email: steve@mcneel.com
+  discourse: stevebaer
+  github: sbaer
+stylianos-dritsas:
+  name: Stylianos Dritsas
+  email: ''
+  discourse: ''
+  github: ''
+thinkparametric:
+  name: ThinkParametric
+  email: hello@thinkparametric.com
+  discourse: ''
+  github: ''
+tim:
+  name: Tim Hemmelman
+  email: tim@mcneel.com
+  discourse: tim
+  github: TimHemmelman
+travis:
+  name: Travis Serio
+  email: travis@mcneel.com
+  discourse: trav
+  github: travisserio
+vanessa:
+  name: Vanessa Steeg
+  email: vanessa@mcneel.com
+  discourse: vanessa
+  github: vanesteeg
+verena:
+  name: Verena Vogler
+  email: verena@mcneel.com
+  discourse: Verena
+  github: ''
+wendy:
+  name: Wendy Hemmelman
+  email: wendy@mcneel.com
+  discourse: wendyhemmelman
+  github: ''
+will:
+  name: Will Pearson
+  email: will@mcneel.com
+  discourse: will
+  github: pearswj
+wfcook:
+  name: William F. Cook
+  email: wfcook@mcneel.com
+  discourse: bill_cook
+  github: wfcook
+wim:
+  name: Wim R. M. Dekeyser
+  email: wim@mcneel.com
+  discourse: wim
+  github: ''
+wk.lim:
+  name: WK Lim
+  email: wk.lim@mcneel.com
+  discourse: wk_lim
+  github: ''
+xavi:
+  name: Xavi Garcia
+  email: xavi@mcneel.com
+  discourse: Xavi_Garcia
+  github: ''
+yoko:
+  name: Yoko Kadotani
+  email: yoko@mcneel.com
+  discourse: yoko_kadotani
+  github: ''
+yokoo:
+  name: Yukiko Yokoo
+  email: yokoo@applicraft.com
+  discourse: yukiko_yokoo
+  github: ''
+kumano:
+  name: Yumi Kumano
+  email: kumano@mcneel.com
+  discourse: Yumi_Kumano
+  github: ''
+zigurat:
+  name: Zigurat Global IT
+  email: 'https://www.e-zigurat.com/blog/en/author/zitadmin/'
+  discourse: ''
+  github: ''
+zubin:
+  name: Zubin Khabazi
+  email: ''
+  discourse: ''
+  github: ''
+---

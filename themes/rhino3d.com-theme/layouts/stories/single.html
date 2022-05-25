@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="single-content-area toc-page">
+  {{ if .Params.page_options.toc }}
+    {{ partial "toc.html" . }}
+  {{ end }}
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
+    {{/* partial "breadcrumbs.html" . */}}
+    <h1>{{ .Page.Title }}</h1>
+    <p>{{ partial "byline.html" . }}</p> 
+    {{ .Content }}
+    {{- partial "edit_button.html" . -}}
+    {{/*  {{- partial "platform-switch" . -}}  */}}    
+  </div>
+</div>
+{{ end }}
+

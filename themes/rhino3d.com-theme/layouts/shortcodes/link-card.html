@@ -1,0 +1,25 @@
+{{- $linktarget := $.Get "src" }}
+{{- $thumbsrc := $.Get "thumbnail" }}
+{{- $type := $.Get "type" | default "link" }}
+{{- $text := $.Get "text" | default .Inner }}
+<a class="linkcard" href="{{ $linktarget }}">
+    {{ if eq $type "link" }}
+    <img class="linkcard-icon" src="/images/linkcard/open-in-new.svg" />
+    {{else if eq $type "video" }}
+    <img class="linkcard-icon" src="/images/linkcard/play-circle-outline.svg" />
+    {{ else if or (eq $type "document") (eq $type "pdf") }}
+    <img class="linkcard-icon" src="/images/linkcard/file-document-outline.svg" />
+    {{ else if or (eq $type "package") (eq $type "zip") }}
+    <img class="linkcard-icon" src="/images/linkcard/file-download-outline.svg" />
+    {{ end }}
+    <table class="link-table">
+        <tr>
+            {{ if eq $type "document" }}
+            <td class="linkcard-image"><img class="no-popup thumbnail-skew" src="{{ $thumbsrc }}" /></td>
+            {{ else }}
+            <td class="linkcard-image"><img class="no-popup" src="{{ $thumbsrc }}" /></td>
+            {{ end }}
+            <td class="linkcard-info">{{ $text }}</td>
+        </tr>
+    </table>
+</a>

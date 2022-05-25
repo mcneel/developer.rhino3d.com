@@ -1,0 +1,2 @@
+{{ $img := (resources.Get (index .Params 0 ) | resources.Fingerprint).Permalink }}
+<img src="{{ $img }}">

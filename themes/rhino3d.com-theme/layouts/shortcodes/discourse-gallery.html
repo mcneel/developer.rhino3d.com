@@ -1,0 +1,27 @@
+<!-- Discourse Gallery Embeds -->
+<!-- Docs here: https://www.rhino3d.com/admin/style-guide/#discourse-gallery -->
+<!-- Container styling overrides in rhino3d.com-theme/assets/scss/_override.scss -->
+<!-- iFrame styling is here: https://discourse.mcneel.com/admin/customize/themes/10/common/embedded_scss/edit -->
+{{- $.Scratch.Set "discourse_url" "https://discourse.mcneel.com" -}}
+
+{{- $.Scratch.Set "category" "46" -}}
+{{- $.Scratch.Set "tags" "" -}}
+{{- $.Scratch.Set "per-page" "12" -}}
+{{- $.Scratch.Set "template" "complete" -}}
+{{- $.Scratch.Set "top-period" "quarterly" -}}
+
+{{- if .IsNamedParams -}}
+    {{- if .Get "category" -}}{{- $.Scratch.Set "category" (.Get "category") -}}{{- end -}}
+    {{- if .Get "tags" -}}{{- $.Scratch.Set "tags" (.Get "tags") -}}{{- end -}}
+    {{- if .Get "per-page" -}}{{- $.Scratch.Set "per-page" (.Get "per-page") -}}{{- end -}}
+    {{- if .Get "template" -}}{{- $.Scratch.Set "template" (.Get "template") -}}{{- end -}}
+    {{- if .Get "top-period" -}}{{- $.Scratch.Set "top-period" (.Get "top-period") -}}{{- end -}}
+    <d-topics-list discourse-url="{{- $.Scratch.Get "discourse_url" -}}" category="{{- $.Scratch.Get "category" -}}" tags="{{- $.Scratch.Get "tags" -}}" per-page="{{- $.Scratch.Get "per-page" -}}" template="{{- $.Scratch.Get "template" -}}" top-period="{{- $.Scratch.Get "top-period" -}}"></d-topics-list>
+{{- else -}}
+    {{- if .Get 0 -}}{{- $.Scratch.Set "category" (.Get 0) -}}{{- end -}}
+    {{- if .Get 1 -}}{{- $.Scratch.Set "tags" (.Get 1) -}}{{- end -}}
+    {{- if .Get 2 -}}{{- $.Scratch.Set "per-page" (.Get 2) -}}{{- end -}}
+    {{- if .Get 3 -}}{{- $.Scratch.Set "template" (.Get 3) -}}{{- end -}}
+    {{- if .Get 4 -}}{{- $.Scratch.Set "top-period" (.Get 4) -}}{{- end -}}
+    <d-topics-list discourse-url="{{- $.Scratch.Get "discourse_url" -}}" category="{{- $.Scratch.Get "category" -}}" tags="{{- $.Scratch.Get "tags" -}}" per-page="{{- $.Scratch.Get "per-page" -}}" template="{{- $.Scratch.Get "template" -}}" top-period="{{- $.Scratch.Get "top-period" -}}"></d-topics-list>
+{{- end -}}

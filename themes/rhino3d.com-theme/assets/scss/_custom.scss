@@ -1,0 +1,536 @@
+// ==============================
+// Custom styles
+// ==============================
+
+
+/*
+##################################################################
+# Styles for Rhinoceros Logo
+##################################################################
+*/
+
+.logo-text-secondary {
+	color: $global-ceros-color;
+}
+
+
+/* 
+##################################################################
+# Byline Styles
+##################################################################
+*/
+
+.byline {
+    font-style: italic;
+    font-size: 14px;
+}
+
+
+/* 
+##################################################################
+# Utility Styles
+##################################################################
+*/
+.float_right {
+	float: right;
+	display: inline-block;
+}
+
+.float_left {
+	float: left;
+	display: inline-block;
+}
+
+.image_center {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+	float: none!important;
+}
+
+.clear_both {
+	clear:both;
+}
+
+.flex-vertical {
+	flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+.image_credit {
+	font-size: small;
+	text-align: center;
+	margin-top: -10px;
+	line-height: 1;
+	margin-bottom: 30px;
+}
+
+
+/* 
+##################################################################
+# AnchorJS Anchor-JS
+##################################################################
+*/
+.anchorjs-link {
+	transition: all .25s linear;
+  }
+  *:hover > .anchorjs-link {
+	margin-right: -1.125em !important;
+  }
+
+
+/* 
+##################################################################
+# Google-Maps Styling
+##################################################################
+*/
+.google-maps {
+	position: relative;
+	padding-bottom: 75%; // This is the aspect ratio
+	height: 0;
+	overflow: hidden;
+}
+.google-maps iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/*
+##################################################################
+# TOC
+##################################################################
+*/
+.toc {
+	header a {
+		color: #333;
+	}
+	#TableOfContents > ul > li { 
+		ul {
+			display: none; //hiding nested navigation unless <a> before them is active
+		}
+		a {
+			text-overflow: ellipsis;
+			overflow-x: hidden;
+			white-space: nowrap;
+			display: block;
+			border-left: 2px solid transparent;
+			font-size:80%;
+			color: #999;
+			text-indent: 10px;
+			&.active {
+				border-left-color: #888;
+				font-weight: 800;
+				color: #333;
+			}
+			&.active + ul {
+				display: block;
+			}
+		}
+	}
+
+	#TableOfContents {
+		overflow-y: scroll;
+
+		.nav-group-link {
+			 background-color: #f6f6f6;
+			 text-align: center;
+		}
+		.nav-wrapper { 
+			padding-left: 0px;
+			margin-right: 10px;
+		}
+	}
+}
+
+.scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #e8e8e8 #ffffff;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    border-radius: 3px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #e8e8e8;
+}
+
+@media only screen and (max-width: 768px) {
+	.toc {
+		height: none;
+	}
+}
+/* 
+##################################################################
+# TableWithComments Tables
+##################################################################
+*/
+#TableWithComments{
+	border-width:0px;
+  }
+  
+  #TableWithComments td{
+	border-width:0px;
+  }
+  
+  .CellWithComment{
+	position:relative;
+  }
+  
+  .CellComment{
+	display:none;
+	position:absolute; 
+	z-index:100;
+	border:1px;
+	background-color:white;
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	padding:3px;
+	color:black; 
+	top:20px; 
+	left:20px;
+  }
+  
+  .CellWithComment:hover span.CellComment{
+	display:block;
+  }
+
+  .FileFormatCellWithComment{
+	position:relative;
+  }
+  
+  .FileFormatCellComment{
+	visibility: hidden;
+	opacity: 0%;
+	transition: 0.3s;
+	position:absolute; 
+	z-index:100;
+	background-color:white;
+	border-style:solid;
+	border-width:1px;
+	border-color:$global-medium-grey;
+	padding-top: 3px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 3px;
+	color:black; 
+	top:-2px; 
+	left: 0px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .FileFormatCellWithComment:hover span.FileFormatCellComment{
+	visibility: visible;
+	opacity: 100%;
+  }
+
+/* 
+##################################################################
+# Feature Title / New callout / Platform-Callout
+##################################################################
+*/
+
+img.micro, .micro img {
+	height: 20px;
+	margin: 10px;
+}
+img.xsmall, .xsmall img {
+	height: 50px;
+	margin: 10px;
+}
+img.small, .small img {
+	height: 100px;
+	margin: 10px;
+}
+img.medium, .medium img {
+	height: 200px;
+	margin: 10px;
+}
+img.large, .large img {
+	height: 400px;
+	margin: 15px;
+}
+img.xlarge, .xlarge img {
+	height: 1000px;
+}
+
+
+/* 
+##################################################################
+# Feature Title / New callout / Platform-Callout
+##################################################################
+*/
+
+.feature-title-container div{
+	display: inline-block;
+}
+
+.feature-title {
+	font-weight: 500;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	padding: 0;
+	line-height: 1.1;
+	font-size: $global_h1_size;
+	vertical-align: middle;
+}
+
+.new-callout {
+	text-align: center;	
+	color: $global-background-color;
+	background-color: $global-rhino-color;
+	font-weight: bold;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 5px;
+	vertical-align: middle;
+	margin-top: 8px;
+	margin-left: 16px;
+	display:inline-block;
+}
+
+.new-callout-small, .new-callout-bullet {
+	text-align: center;	
+	color: $global-background-color;
+	background-color: $global-rhino-color;
+	font-size: 70%;
+	padding: 1px 5px;
+	border-radius: 10px;
+	position: relative;
+	bottom: 2px;
+	vertical-align: middle;
+	display:inline-block;
+	a {
+		color: $global-background-color;
+	}
+}
+
+li .new-callout-bullet {
+	margin-left: -20px;
+	font-size: 60%;
+	padding: 2px 6px 1px 6px;
+	font-weight: bold;
+}
+
+.new-callout-version-6 {
+	margin: 0;
+	padding: 1px 5px;
+}
+
+.new-callout a {
+	color: $global-background-color;
+}
+
+.platform-callout {
+	font-size: 30px; 
+	color: $global-platform-color;
+	vertical-align: middle;
+	margin-top: 16px;
+	margin-left: 16px;
+	float: right;
+	text-align: right;
+}
+
+.platform-callout-text {
+	color: black;
+	font-size: $global-font-size;
+	margin-bottom: 5px;
+	vertical-align: middle;	
+}
+
+@media screen and (max-width: 531px) {
+	.title-container { display: flex; flex-flow: column; }
+	.new-callout {
+		margin-top: 0px;
+		margin-left: 6px;		
+	}
+	.platform-callout {
+		float: none;
+		margin-top: 0px;
+		margin-left: 30px;
+		margin-bottom: 14px;		
+	}	
+}
+
+.platform-icon {
+	color: $global-platform-color;
+}
+
+
+
+/* 
+##################################################################
+# Sticky Table Headers Styles
+##################################################################
+*/
+.th-sticky {
+	background: white;
+	position: sticky;
+	top: $global-nav-height-collapsed;
+	z-index: +1;
+}
+
+
+/*
+##################################################################
+# Student/Teacher Button at top of Homepage
+##################################################################
+*/
+.rhino-btn {
+	-moz-box-shadow:inset 0px 1px 0px 0px $button-active-light;
+	-webkit-box-shadow:inset 0px 1px 0px 0px $button-active-light;
+	-khtml-box-shadow:inset 0px 1px 0px 0px $button-active-light;
+	box-shadow:inset 0px 1px 0px 0px $button-active-light;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, $button-active-light), color-stop(1,$button-active-dark) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$button-active-light', endColorstr='$button-active-dark');
+	background: linear-gradient(180deg, $button-active-light 5%, $button-active-dark 100% );
+	background-color:$button-active-light;
+	
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	-khtml-border-radius:6px;
+	border-radius:6px;
+	border:1px solid $button-border-color;
+	/* display:inline-block;  <-- that messes up corner radii in IE9! */
+	color: $button-text-color;
+	font-family:  Verdana, "Lucida Grande","Lucida Sans Unicode",Arial,sans-serif;
+	font-size:15px;
+	font-weight:normal;
+	padding:6px 14px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px $button-shadow-color;
+	z-index: 100;
+	&:hover {
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, $button-active-dark), color-stop(1, $button-active-light) );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$button-active-dark', endColorstr='$button-active-light');
+		background: linear-gradient(180deg, $button-active-dark 5%, $button-active-light 100% );
+
+		background-color:$button-active-dark;
+		color: $button-text-color;
+		text-decoration:none;
+	}
+}
+
+.student-teacher-btn {
+	position: absolute;
+	top: -4px;
+	right: 10%;
+}
+
+
+/*
+##################################################################
+# Figures with square borders
+##################################################################
+*/
+.figure-bordered {
+	border: 1px solid $global-medium-grey;
+}
+
+
+/*
+##################################################################
+# Sample Model images
+##################################################################
+*/
+
+.sample-model-thumbs img{
+	padding-top: 50px;
+}
+
+.section-selector {
+	color: $global-link-color;
+	&:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+.section-selector.selected {
+	background-color: yellow;
+}
+
+
+/*
+##############################################################################
+##  Multiline text tables for code explanation.  Look in Primer
+##############################################################################
+*/
+
+table.multiline {
+	rules:rows;
+	vertical-align:top;
+	margin:20px 0px;
+	border-bottom: 1px solid #ddd;
+}
+
+table.multiline th{
+     padding:0px 5px 0px 15px;
+	 margin: 0px 15px 0px 15px;
+	 border-bottom: 1px solid #ddd;
+}
+
+
+table.multiline tr {
+	vertical-align:top;
+    text-align:right;
+    border-bottom: 1px solid #ddd;
+}
+
+table.multiline td {
+	 vertical-align:top;
+	 padding:0px 5px 0px 15px;
+	 margin: 0px 15px 0px 15px;
+	 text-align: left;
+}
+
+table.multiline td:first-child{
+	 text-align:right;
+	 padding:0px 5px 0px 0px;
+	 margin: 0px 15px 0px 0px;
+}
+
+/*
+##############################################################################
+##  Formula text tables for code explanation.  Look in Primer
+##############################################################################
+*/
+
+table.multiline-middle {
+	rules:rows;
+	vertical-align:middle;
+	margin:20px 0px;
+	border-bottom: 1px solid #ddd;
+}
+
+table.multiline-middle th{
+     padding:0px 5px 0px 15px;
+	 margin: 0px 15px 0px 15px;
+	 border-bottom: 1px solid #ddd;
+}
+
+
+table.multiline-middle tr {
+	vertical-align:middle;
+    text-align:center;
+    border-bottom: 1px solid #ddd;
+}
+
+table.multiline-middle img{
+	margin:10px;
+}

@@ -1,0 +1,21 @@
+{{- $label := "Section Header" -}}
+{{- $name := "" -}}
+{{- $group := "" -}}
+{{- $behavior := "" -}}
+{{- if .Get "label"}}{{- $label =  .Get "label" -}}{{- end -}}
+{{- if .IsNamedParams -}}    
+    {{- if .Get "name"}}{{- $name =  .Get "name" -}}{{- end -}}
+    {{- if .Get "group"}}{{- $group =  .Get "group" -}}{{- end -}}
+    {{- if .Get "label"}}{{- $label =  .Get "label" -}}{{- end -}}
+    {{- if .Get "behavior"}}{{- $behavior =  .Get "behavior" -}}{{- end -}}
+{{- else -}}
+    {{- $group = .Get 0 -}}
+    {{- if .Get 1 -}}{{- $name = .Get 1 -}}{{- end -}}
+    {{- if .Get 2 -}}{{- $label = .Get 2 -}}{{- end -}}
+{{- end -}}
+{{- if .Inner -}}
+  {{- $label = .Inner -}}
+{{- end -}}
+<span class='section-selector' data-section-group='{{- $group -}}' data-section-name='{{- $name -}}' data-section-behavior='{{- $behavior -}}'>
+    {{- $label | markdownify -}}
+</span>

@@ -1,0 +1,31 @@
+{{- $.Scratch.Set "page" "" -}}
+{{- $.Scratch.Set "param" "" -}}
+{{- $.Scratch.Set "error" false -}}
+{{- $.Scratch.Set "error_message" "" -}}
+
+{{- if .IsNamedParams -}}
+    {{- if .Get "page" -}}
+        {{- $.Scratch.Set "page" (.Get "page") -}}
+    {{- else -}}
+        {{- $.Scratch.Set "error" true -}}
+        {{- $.Scratch.Set "error_message" "page is a required parameter" -}}
+    {{- end -}}
+
+    {{- if .Get "param" -}}
+        {{- $.Scratch.Set "param" (.Get "param") -}}
+    {{- else -}}
+        {{- $.Scratch.Set "error" true -}}
+        {{- $.Scratch.Set "error_message" "param is a required parameter" -}}
+    {{- end -}}
+{{- else -}}
+    {{- $.Scratch.Set "error" true -}}
+    {{- $.Scratch.Set "error_message" "Not using named params." -}}
+{{- end -}}
+
+{{- if ($.Scratch.Get "error") -}}
+<span class="shortcode-error">Error: {{ $.Scratch.Get "error_message" }}<br>Shortcode usage: &lbrace;&lbrace;&lt; include-page-param page=[path-to-page] param=[param-name] &gt;&rbrace;&rbrace;</span>
+{{- else -}}
+    {{ with .Site.GetPage ($.Scratch.Get "page") }}
+        {{ .Param ($.Scratch.Get "param") | markdownify }}
+    {{ end }}
+{{- end -}}

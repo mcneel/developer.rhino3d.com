@@ -1,0 +1,291 @@
+[buy]
+other = "buy"
+
+[download]
+other = "download"
+
+[gallery]
+other = "gallery"
+
+[features]
+other = "features"
+
+[news]
+other = "news"
+
+[community]
+other = "community"
+
+[learn]
+other = "learn"
+
+[support]
+other = "support"
+
+[resources]
+other = "resources"
+
+[my-account]
+other = "my account"
+
+[logged-in-title]
+other = "Manage your account, licenses, and teams"
+
+[sign-in]
+other = "sign in"
+
+[sign-in-title]
+other = "Sign in to manage your account, licenses, and teams"
+
+[Icon]
+other = "Icon"
+
+[Description]
+other = "Description"
+
+[Toolbars]
+other = "Toolbars"
+
+[Menu]
+other = "Menu"
+
+[Crease-Splitting]
+other = "Crease Splitting"
+
+[History]
+other = "History"
+
+[enabled]
+other = "enabled"
+
+[More-details]
+other = "More details..."
+
+[Including]
+other = "Including:"
+
+[Rhino-Commands]
+other = "Rhino Commands"
+
+# DO NOT TRANSLATE the contents of {{ }} placeholder.  It gets replaced with the correct version by a template.
+[NEW-in-Vx]
+other = "New in {{ .Params.included_in.since }}"
+
+# DO NOT TRANSLATE the [VERSION] placeholder.  It gets replaced with the correct version by a template.
+[New-in-N]
+other = "New in [VERSION]"
+
+[New-in-Rhino-7]
+other = "New in Rhino 7"
+
+[All-the-details]
+other = "All the details..."
+
+[bob-loves-revit]
+other = "Bob ❤️s Revit 😘"
+
+# This is optionally shown as a header in some feature pages
+[new-in-rhino-7]
+other = "New in Rhino 7"
+
+# context: the bylines that sometimes show up under the title of a page.  Such as "by Scott Davidson..."
+[by]
+other = "by"
+
+# context: the bylines that sometimes show up under the title of a page, showing when the page was last updated
+[Last-updated]
+other = "Last updated:"
+
+# context: the bylines that sometimes show up under the title of a page, joining the different authors.  Such as: "by Scott Davidson and..."s
+[and]
+other = "and"
+
+# context: the Edit menu at the bottom of the page
+[Edit-this-page]
+other = "Edit this page"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-GitHub]
+other = "Edit on GitHub"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-Forestry]
+other = "Edit on Forestry"
+
+# context: the Edit menu at the bottom of the page
+[Edit-data]
+other = "Edit Data"
+
+# context: the Edit menu at the bottom of the page
+[Admin]
+other = "Admin"
+
+# context: page footer
+[Shop-online]
+other = "Shop online"
+
+# context: page footer
+[or-find-a]
+other = "or find a"
+
+# context: page footer
+[find-a-reseller]
+other = "Find a Reseller"
+
+# context: page footer
+[Reseller]
+other = "Reseller"
+
+# context: page footer
+[Privacy-Policy]
+other = "Privacy Policy"
+
+# context: page footer
+[About]
+other = "About"
+
+# context: page footer
+[Contact-Us]
+other = "Contact Us"
+
+# context: page footer
+[Language]
+other = "Language"
+
+# context: page footer
+[change-region-lang]
+other = "Change to a different region or language"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[Windows-only]
+other = "Windows only"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[macOS-only]
+other = "macOS only"
+
+[Download-Rhino]
+other = "Download Rhino"
+
+[Download-Rhino-Both]
+other = "[LINK]Download [PRODUCT] [VERSION] [TYPE] for Windows or Mac[/LINK]."
+
+[Download-Rhino-Windows]
+other = "[LINK]Download [PRODUCT] [VERSION] [TYPE] for Windows[/LINK]."
+
+[Download-Rhino-Mac]
+other = "[LINK]Download [PRODUCT] [VERSION] [TYPE] for Mac[/LINK]."
+
+[Rhino]
+other = "Rhino"
+
+[Name]
+other = "Name"
+
+[File-Extension]
+other = "File Extension"
+
+[Open-Import]
+other = "Open/Import"
+
+[Save-Export]
+other = "Save/Export"
+
+[Notes]
+other = "Notes"
+
+[Latest-Updates]
+other = "Latest Updates"
+
+[Improved]
+other = "Improved"
+
+[Improvements]
+other = "Improvements"
+
+[Mac-only]
+other = "Mac only"
+
+[Windows-and-Mac]
+other = "Windows | Mac"
+
+# Some languages, like Japanese, use a different punctuation mark for periods.
+[period-the-punctuation-mark]
+other = "."
+
+# This gets rendered under the title in the header of the page.  It needs to be a specific width, so if it exceeds the english width too much,
+# it might be best to leave it untranslated or figure out a way to condense it.  This is much "branding" as it is words.
+[product-tagline]
+other = "design, model, present, analyze, realize..."
+
+# This is the placeholder text in the search field on the top navbar
+[search-navbar]
+other = "search"
+
+# Homepage link in the upper part of screen
+[student-or-teacher]
+other = "Student or Teacher?"
+
+# Title on homepage video caption
+[caption-rhino-7]
+other = "Rhino 7"
+
+# Subtitle on homepage video caption
+[caption-rhino-7-subtitle]
+other = "Free-form, precisely."
+
+# Details of the Rhino 7 video caption
+[caption-rhino-7-details]
+other = "Available now with SubD, Rhino.Inside.Revit, QuadRemesh, and more."
+
+# Link title on homepage video captions
+[caption-learn-more]
+other = "Learn more"
+
+# Link title on homepage video captions
+[caption-try]
+other = "Try"
+
+# The conjoiner before the Buy link in the video caption
+[caption-or-conjoiner]
+other = ", or "
+
+# Link title on homepage video captions
+[caption-buy]
+other = "Buy"
+
+# Title on homepage video caption
+[caption-rhino-refined]
+other = "Rhino Refined"
+
+# Subtitle on homepage video caption
+[caption-less-pain]
+other = "Less Pain, More Gain"
+
+# Details of the Rhino Refined video caption
+[caption-rhino-refined-details]
+other = "Mold Making Tools, Named Selections, Layout Management, Enhanced Text Fields, Grasshopper Player, Single-Line Fonts, and more."
+
+# The English comma conjoiner
+[comma-conjoiner]
+other = ", "
+
+# Title on homepage video caption
+[caption-presentation]
+other = "Beautiful Views"
+
+# Subtitle on homepage video caption
+[caption-presentation-subtitle]
+other = "Gorgeous Work"
+
+# Details of a video caption
+[caption-presentation-details]
+other = "Improved working display modes and new presentation tools like Gradient Hatches, Denoisers, PBR Materials, LayerBook, and more."
+
+# New navigation button on Learn Pages
+[new]
+other = "New"
+
+# Featured button and tag on Learn Pages
+[featured]
+other = "Featured"

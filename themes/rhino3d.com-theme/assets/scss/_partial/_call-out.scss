@@ -1,0 +1,67 @@
+.call-out {
+  position: relative;
+  margin: 1rem 0;
+  padding: 0 .75rem;
+  background-color: map-get($call-out-background-color-map, 'note');
+  border-left: .25rem solid map-get($call-out-color-map, 'note');
+  overflow: auto;
+
+  .call-out-title {
+    font-weight: bold;
+    margin: 0 -0.75rem;
+    padding: .25rem 1.8rem;
+    border-bottom: 1px solid map-get($call-out-background-color-map, 'note');
+    background-color: opacify(map-get($call-out-background-color-map, 'note'), 0.15);
+  }
+
+  &.open .call-out-title {
+    background-color: map-get($call-out-background-color-map, 'note');
+  }
+
+  .call-out-content {
+    padding: .5rem 0;
+  }
+
+  i.icon {
+    font-size: 0.85rem;
+    color: map-get($call-out-color-map, 'note');
+    position: absolute;
+    top: .6rem;
+    left: .4rem;
+  }
+
+  i.details-icon {
+    position: absolute;
+    top: .6rem;
+    right: .3rem;
+  }
+
+  @each $type, $color in $call-out-color-map {
+    &.#{$type} {
+      border-left-color: $color;
+
+      i.icon {
+        color: $color;
+      }
+    }
+  }
+
+  @each $type, $color in $call-out-background-color-map {
+    &.#{$type} {
+      background-color: $color;
+
+      .call-out-title {
+        border-bottom-color: $color;
+        background-color: opacify($color, 0.15);
+      }
+
+      &.open .call-out-title {
+        background-color: $color;
+      }
+    }
+  }
+
+  &:last-child {
+    margin-bottom: .75rem;
+  }
+}

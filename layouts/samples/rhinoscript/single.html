@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="single-content-area">
+  <div class="feature-title-container">
+    <div class="feature-title">{{ .Page.Title }}</div>{{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}<div class="new-callout"><a href="/{{ .Site.Params.latestRhinoVersion}}/new">{{ i18n "NEW-in-Vx" . }}</a></div>{{ end }}{{- partial "platform-callout" . -}}        
+  </div>
+
+  <p>{{ .Page.Description }}</p>
+
+  <div class="codetab">
+    <button class="tablinks" onclick="openCodeTab(event, 'vb')" id="defaultOpen">VBScript</button>    
+  </div>
+  
+  <div class="codetab-content" id="vb">
+    {{ .Content }}
+  </div>
+  <br/>
+</div>
+{{- partial "highlightjs" . }}
+{{ end }}

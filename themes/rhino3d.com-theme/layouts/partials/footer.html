@@ -1,0 +1,40 @@
+<div class="footer footer-area">
+    <div class="footer-columns">
+        <div class="footer-column footer-left default">
+            {{- if eq "NAPA" (getenv "MCNEEL_REGION") -}}
+            <a href="{{.Site.Params.rhinoURL }}/store">{{ i18n "Shop-online" }}</a>
+            {{ i18n "or-find-a" }}
+            <a href="{{.Site.Params.rhinoURL }}/sales">{{ i18n "Reseller" }}</a>
+            {{- else -}}
+            <a href="{{.Site.Params.rhinoURL }}/sales">{{ i18n "find-a-reseller" }}</a>
+            {{- end -}}
+        </div>
+        <div class="footer-column footer-left skin-napa">
+            <a href="{{.Site.Params.rhinoURL }}/store">{{ i18n "Shop-online" }}</a>
+            {{ i18n "or-find-a" }}
+            <a href="{{.Site.Params.rhinoURL }}/sales">{{ i18n "Reseller" }}</a>
+        </div>
+        <div class="footer-column footer-left skin-not-napa">
+            <a href="{{.Site.Params.rhinoURL }}/sales">{{ i18n "find-a-reseller" }}</a>
+        </div>
+        <div class="footer-column footer-right">           
+                <a href="{{.Site.Params.rhinoURL }}/privacy">{{ i18n "Privacy-Policy" }}</a> &bull;
+                <a href="{{.Site.Params.rhinoURL }}/mcneel/about">{{ i18n "About" }}</a> &bull;
+                <a href="{{.Site.Params.rhinoURL }}/mcneel/contact">{{ i18n "Contact-Us" }}</a> &bull;
+                <a href="{{.Site.Params.rhinoURL }}/language" title="{{ i18n "change-region-lang" }}">
+                    {{ i18n "Language" }}</a>            
+        </div>
+    </div>    
+    <div class="footer-middle">       
+        <a href="{{.Site.Params.rhinoURL }}/mcneel/about">{{ replace .Site.Params.Copyright "{year}" now.Year}}</a>
+    </div>
+    <div class="footer-middle">
+        <a href="{{ .Site.Params.facebookURL }}" class="fab fa-facebook" style="padding: 10px; font-size: 30px; text-decoration: none;" target="_blank" rel="noopener noreferrer"></a>
+        <a href="{{ .Site.Params.twitterURL }}" class="fab fa-twitter" style="padding: 10px; font-size: 30px; text-decoration: none;" target="_blank" rel="noopener noreferrer"></a>
+        <a href="{{ .Site.Params.linkedinURL }}" class="fab fa-linkedin" style="padding: 10px; font-size: 30px; text-decoration: none;" target="_blank" rel="noopener noreferrer"></a>
+        <a href="{{ .Site.Params.youtubeURL }}" class="fab fa-youtube" style="padding: 10px; font-size: 30px; text-decoration: none;" target="_blank" rel="noopener noreferrer"></a>
+        <a href="{{ .Site.Params.vimeoURL }}" class="fab fa-vimeo" style="padding: 10px; font-size: 30px; text-decoration: none;" target="_blank" rel="noopener noreferrer"></a>
+        <a href="{{ .Site.Params.bloggerURL }}" class="fa" style="padding: 10px; font-size: 30px; text-decoration: none;" target="_blank" rel="noopener noreferrer"><img alt="Blogger icon" src="/images/blogger.svg"></a>
+        <a href="{{ .Site.Params.food4rhinoURL }}" class="fa" style="padding: 10px; font-size: 30px; text-decoration: none;" target="_blank" rel="noopener noreferrer"><img alt="Food4Rhino" src="/images/f4r_icon_01.svg" height="32" width="32"></a>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="508.86px" height="280.34px" viewBox="0 0 508.86 280.34" enable-background="new 0 0 508.86 280.34" xml:space="preserve">
+<g id="Grid">
+	
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F2F2F2" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" points="
+		230.52,0.5 0.5,125.39 332.581,279.84 508.36,78.96 	"/>
+	<g opacity="0.25">
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="285.56" y1="257.971" x2="471.63" y2="68.59"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="241.66" y1="237.55" x2="436.589" y2="58.7"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="200.57" y1="218.45" x2="403.15" y2="49.25"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="162.04" y1="200.53" x2="371.19" y2="40.23"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="125.84" y1="183.69" x2="340.62" y2="31.59"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="91.75" y1="167.83" x2="311.339" y2="23.33"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="59.6" y1="152.88" x2="283.28" y2="15.4"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="29.23" y1="138.76" x2="256.36" y2="7.8"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="211.01" y1="11.1" x2="494.5" y2="94.81"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="190.3" y1="22.34" x2="479.589" y2="111.84"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="168.3" y1="34.29" x2="463.52" y2="130.21"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="144.87" y1="47.01" x2="446.13" y2="150.08"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="119.87" y1="60.58" x2="427.28" y2="171.63"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="93.13" y1="75.1" x2="406.75" y2="195.08"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="64.47" y1="90.66" x2="384.32" y2="220.721"/>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="33.68" y1="107.38" x2="359.709" y2="248.84"/>
+	</g>
+</g>
+<g id="Box">
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="251.7861" y1="104.1543" x2="358.2865" y2="96.6543">
+		<stop  offset="0" style="stop-color:#000000"/>
+		<stop  offset="1" style="stop-color:#999999"/>
+	</linearGradient>
+	<path opacity="0.6" fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_1_)" d="M301.331,126.97
+		c24.219-10.92,48.439-21.85,72.649-32.77c-20.76-6.63-41.53-13.27-62.29-19.9c-22.53,1.36-45.06,2.72-67.59,4.09
+		c-20.92,9.13-41.84,18.27-62.77,27.41c16.69,6.33,33.38,12.66,50.06,18.99C254.709,125.52,278.02,126.25,301.331,126.97z"/>
+	<g>
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#B0B0B0" points="162.13,63.47 180.89,104.9 230.95,123.89 214.64,81.9 		
+			"/>
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#7D7D7D" points="250.92,36.7 214.64,81.9 230.95,123.89 264.48,79.86 		
+			"/>
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="198.87,20.77 162.13,63.47 214.64,81.9 250.92,36.7 		
+			"/>
+	</g>
+	
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="
+		198.87,20.77 162.13,63.47 180.89,104.9 230.95,123.89 264.48,79.86 250.92,36.7 	"/>
+</g>
+<g id="Lines">
+	<g>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" x1="33.67" y1="107.39" x2="160.66" y2="85.28"/>
+		<polygon points="159.361,89.611 157.967,88.632 160.278,85.347 156.993,83.037 157.974,81.643 162.651,84.934 		"/>
+	</g>
+	<g>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" x1="157.64" y1="161.17" x2="201.81" y2="105.76"/>
+		<polygon points="203.721,109.884 202.02,110.076 201.567,106.065 197.557,106.519 197.364,104.816 203.076,104.172 		"/>
+	</g>
+	<g>
+		
+			<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" x1="403.15" y1="49.25" x2="275.35" y2="77.46"/>
+		<polygon points="276.459,73.053 277.903,73.973 275.73,77.376 279.133,79.547 278.211,80.991 273.367,77.898 		"/>
+	</g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-width="2" d="M30.66,107.2
+		c-0.03-1.63,1.27-2.96,2.9-2.99c1.62-0.02,2.96,1.28,2.98,2.9c0.03,1.63-1.27,2.96-2.9,2.99C32.02,110.12,30.68,108.82,30.66,107.2
+		z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-width="2" d="M168.25,83.53
+		c-0.02-1.62,1.28-2.96,2.9-2.98c1.62-0.03,2.96,1.27,2.98,2.9c0.03,1.62-1.27,2.96-2.89,2.98
+		C169.61,86.45,168.27,85.16,168.25,83.53z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-width="2" d="M205.75,97.18
+		c-0.02-1.63,1.27-2.96,2.9-2.99c1.62-0.02,2.96,1.28,2.98,2.9c0.03,1.62-1.27,2.96-2.9,2.99C207.11,100.1,205.77,98.8,205.75,97.18
+		z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-width="2" d="M154.7,161.21
+		c-0.03-1.62,1.27-2.96,2.9-2.989c1.62-0.021,2.96,1.279,2.98,2.899c0.03,1.63-1.27,2.97-2.9,2.989
+		C156.06,164.13,154.72,162.83,154.7,161.21z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-width="2" d="M261.54,79.9
+		c-0.029-1.62,1.271-2.96,2.891-2.98c1.63-0.03,2.97,1.27,2.99,2.9c0.02,1.62-1.28,2.96-2.9,2.98
+		C262.9,82.82,261.56,81.53,261.54,79.9z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-width="2" d="M400.209,49.3
+		c-0.02-1.63,1.271-2.97,2.9-2.99c1.62-0.02,2.96,1.28,2.979,2.9c0.03,1.62-1.27,2.96-2.899,2.99
+		C401.57,52.22,400.23,50.92,400.209,49.3z"/>
+	<text transform="matrix(1 0 0 1 29.8281 100.8125)" font-family="'TrebuchetMS-Bold'" font-size="12">A</text>
+	<text transform="matrix(1 0 0 1 153.4492 175.6543)" font-family="'TrebuchetMS-Bold'" font-size="12">B</text>
+	<text transform="matrix(1 0 0 1 399.4595 43.4858)" font-family="'TrebuchetMS-Bold'" font-size="12">C</text>
+	<text transform="matrix(1 0 0 1 93.9917 89.2363)" font-family="'Trebuchet-BoldItalic'" font-size="12">D</text>
+	<text transform="matrix(0.583 0 0 0.583 101.5796 91.2324)" font-family="'TrebuchetMS-Bold'" font-size="12">A</text>
+	<text transform="matrix(1 0 0 1 177.3198 86.7588)" font-family="'TrebuchetMS-Bold'" font-size="12">A</text>
+	<text transform="matrix(0.583 0 0 0.583 184.9194 88.7549)" font-family="'TrebuchetMS-Bold'" font-size="12">cp</text>
+</g>
+</svg>

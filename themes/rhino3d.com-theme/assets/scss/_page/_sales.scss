@@ -1,0 +1,71 @@
+// ==============================
+// Sales page
+// ==============================
+
+.pricetable {
+	font-size: 13px;
+	border: 0px;
+	padding: 0px;
+	width: 100%;
+}
+.pricelistheader, .dealerlistheader {
+	background-color: #dddddd;
+	vertical-align: bottom;
+	color: #393939;
+	font-size: 13px;
+	font-weight: bold;
+}
+#dealerlist {
+    float:left;
+    border: 1px solid #DDDDDD;
+    width: 330px;
+}
+
+.dealerlistheader {
+    padding: 2px 6px;
+}
+.dealerlistitem {
+    width:100%;
+    float: left;
+}
+
+.dealerlistitem img {
+    height:32px;
+    margin: 3px;
+    float:right;
+    border:0px;
+}
+
+.dealerlistitem .smaller {
+    font-size: smaller;
+    line-height: 1.2em;
+}
+
+.dealerlistitem .contact-info{
+    clear: both;
+    float: right;
+    margin-left: 1em;
+    font-size:75%;
+    line-height: 1.3em;
+}
+
+#dealerlist .even {
+	background-color: #F3F3F3;
+}
+.price1 {
+	background-color: white;
+	vertical-align: bottom;
+	font-size: 13px;
+}
+.price2 {
+	background-color: #F0F0F0;
+	vertical-align: bottom;
+	font-size: 13px;
+}
+.prices {
+	width: 40px;
+	text-align: right;
+}
+.nowrap {
+	white-space: nowrap;
+}

@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="single-content-area index-page">
+  <div class="tax-list">
+    {{.Content}}
+    {{- partial "edit_button.html" . -}}
+    <h3>Section:</h3>
+    <ul>
+      {{ range .Site.Sections }}
+              <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+      {{ end }}
+    </ul>
+    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+      <h3>{{ humanize $taxonomyname }}:</h3>
+      <ul>
+        {{ range $key, $value := $taxonomy }}
+        <li>  <a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}{{ "/" }}{{ $key | urlize }}">{{ $key }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}    
+  </div>
+  {{- partial "gallery-cards" . -}}
+</div>
+{{end}}

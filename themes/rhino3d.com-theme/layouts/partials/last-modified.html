@@ -1,0 +1,49 @@
+{{- $.Scratch.Set "lang" .Site.Language.Lang -}}
+
+{{ if .Params.override_last_modified }} <!-- This is for pages/sites that have been ported from other repos or other situations where using the git date is problematic  -->
+{{- $.Scratch.Set "weekday" (dateFormat "Monday" .Params.override_last_modified) -}}
+{{- $.Scratch.Set "day" (dateFormat "1" .Params.override_last_modified) -}}
+{{- $.Scratch.Set "month" (dateFormat "January" .Params.override_last_modified) -}}
+{{- $.Scratch.Set "year" (dateFormat "2006" .Params.override_last_modified) -}} <!-- "2006" is the magic dateFormat year number -->
+{{- else -}} <!-- but we default to the last time the file changed in git -->
+{{- $.Scratch.Set "weekday" (dateFormat "Monday" .Page.Lastmod) -}} 
+{{- $.Scratch.Set "day" .Page.Lastmod.Day -}}
+{{- $.Scratch.Set "month" (string .Page.Lastmod.Month) -}}
+{{- $.Scratch.Set "year" .Page.Lastmod.Year -}}
+{{- end -}}
+
+{{- with index .Site.Data.months .Site.Language.Lang -}}
+{{- $.Scratch.Set "month_trans" (index .months ($.Scratch.Get "month" )) -}}
+{{- end -}}
+
+{{- with index .Site.Data.weekdays .Site.Language.Lang -}}
+{{- $.Scratch.Set "weekday_trans" (index .weekdays ($.Scratch.Get "weekday" )) -}}
+{{- end -}}
+
+{{- if eq ($.Scratch.Get "lang") "cn" -}}
+{{ $.Scratch.Get "year" }}年{{ $.Scratch.Get "month_trans" }}月{{ $.Scratch.Get "day" }}日
+{{- else if eq ($.Scratch.Get "lang") "cs" -}}
+{{- $.Scratch.Get "day" }} {{ $.Scratch.Get "month_trans" }} {{ $.Scratch.Get "year" -}}
+{{- else if eq ($.Scratch.Get "lang") "de" -}}
+{{- $.Scratch.Get "weekday_trans" }}, {{ $.Scratch.Get "day" }}. {{ $.Scratch.Get "month_trans" }} {{ $.Scratch.Get "year" -}}
+{{- else if eq ($.Scratch.Get "lang") "es" -}}
+{{- $.Scratch.Get "weekday_trans" }}, {{ $.Scratch.Get "day" }} de {{ $.Scratch.Get "month_trans" }} de {{ $.Scratch.Get "year" -}}
+{{- else if eq ($.Scratch.Get "lang") "fr" -}}
+{{- $.Scratch.Get "weekday_trans" }} {{ $.Scratch.Get "day" }} {{ $.Scratch.Get "month_trans" }} {{ $.Scratch.Get "year" -}}
+{{- else if eq ($.Scratch.Get "lang") "it" -}}
+{{- $.Scratch.Get "weekday_trans" }} {{ $.Scratch.Get "day" }} {{ $.Scratch.Get "month_trans" }} {{ $.Scratch.Get "year" -}}
+{{- else if eq ($.Scratch.Get "lang") "jp" -}}
+{{ $.Scratch.Get "year" -}}年{{ $.Scratch.Get "month_trans" }}月{{ $.Scratch.Get "day" }}日 ({{- $.Scratch.Get "weekday_trans" }})
+{{- else if eq ($.Scratch.Get "lang") "kr" -}}
+{{ $.Scratch.Get "year" }}년 {{ $.Scratch.Get "month_trans" }}월 {{ $.Scratch.Get "day" }}일 {{ $.Scratch.Get "weekday_trans" -}}
+{{- else if eq ($.Scratch.Get "lang") "pl" -}}
+{{- $.Scratch.Get "day" }}.{{ $.Scratch.Get "month_trans" }}.{{ $.Scratch.Get "year" -}}
+{{- else if eq ($.Scratch.Get "lang") "pt" -}}
+{{- $.Scratch.Get "day" }}/{{ $.Scratch.Get "month_trans" }}/{{ $.Scratch.Get "year" -}}
+{{- else if eq ($.Scratch.Get "lang") "ru" -}}
+{{- $.Scratch.Get "day" }}.{{ $.Scratch.Get "month_trans" }}.{{ $.Scratch.Get "year" -}}
+{{- else if eq ($.Scratch.Get "lang") "tw" -}}
+{{ $.Scratch.Get "year" }}年{{ $.Scratch.Get "month_trans" }}月{{ $.Scratch.Get "day" }}日 {{ $.Scratch.Get "weekday_trans" -}}
+{{- else -}} <!-- English -->
+{{- $.Scratch.Get "weekday_trans" }}, {{ $.Scratch.Get "month_trans" }} {{ $.Scratch.Get "day" }}, {{ $.Scratch.Get "year" -}}
+{{- end -}}

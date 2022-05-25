@@ -1,0 +1,30 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <!-- Robots -->
+    <!-- During development, we do not want any pages crawled.  Once we "go live", we need to delete this line -->
+    <!-- See: https://mcneel.myjetbrains.com/youtrack/issue/WWW-996 -->
+    <meta name="robots" content="noindex, nofollow">
+    <!-- Some pages should never be listed or crawled. These have the _build.list page option set to "never" -->
+    <!-- See: https://gohugo.io/content-management/build-options/ -->
+    <!-- {{ if eq .Page.Params._build.list "never"}}
+        <meta name="robots" content="noindex, nofollow">
+    {{ end }} -->
+
+    <!-- Favicon -->
+    <link href="{{.Site.Params.rhinoURL }}/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="{{.Site.Params.rhinoURL }}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+   
+    <!-- Styles -->
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css' media="all" />
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto' type='text/css' media="all" />
+
+    <style>
+        body { 
+            font-family: "roboto mono",calibri,"courier new"; 
+        }
+    </style>
+
+    <!-- Meta -->
+    {{- partial "meta.html" . -}}
+</head>

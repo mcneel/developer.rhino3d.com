@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="single-content-area">
+  <div class="main-content toc-no">    
+    {{ .Content }}      
+    {{ if and (not .Params.page_options.plain ) (not .Params.page_options.hide_edit_button ) }}
+      {{- partial "edit_button.html" . -}}
+    {{ end }}
+</div>
+{{ end }}

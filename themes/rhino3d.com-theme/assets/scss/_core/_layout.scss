@@ -1,0 +1,295 @@
+// ==============================
+// Layout
+// ==============================
+
+.outerbox {
+    max-width: 1110px;
+    margin: 0 auto;
+    background-color: transparent;
+	margin-top: 150px;
+	padding-right: 75px;
+    padding-left: 75px;
+}
+
+.header-area {
+	grid-area: header-start / header-start / header-end / header-end;
+	z-index: 2;
+}
+
+.footer-area {
+	grid-area: footer-start / footer-start /footer-end / footer-end;
+	border-color: #CCCCCC;
+	padding-bottom: 15px;
+	border-top-style: ridge;
+	border-top-width: 1px;
+	background-color: transparent;
+}
+
+
+@media only screen and (max-width: $global-mobile-maxwidth) {
+	.outerbox {
+		background-image: none;
+		background-size: 60px;
+		grid-template-rows: [header-start] 75px [header-end single-page-start] 1fr [single-page-end footer-start] 75px [footer-end];
+		grid-template-columns: max(10px) [boundary-left-start boundary-left-end content-start page-title-start header-start footer-start] 1fr [content-end header-end page-title-end footer-end boundary-right-start boundary-right-end] max(10px);
+	}
+	.header-area {
+		height: 75px;
+		grid-area: header-start / boundary-left-start / header-end / boundary-right-end;
+	}
+	.single-content-area .main-content {
+		ul {
+			margin-left: 10px;
+		}
+		.flex-container {
+			margin: 0;
+		}
+	}
+
+}
+
+.heading {
+    vertical-align: bottom;
+    position: relative;
+    margin-bottom:10px;
+}
+
+.heading #cse-search-box {
+    padding:0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom:16px;
+    z-index: 100;
+}
+
+#heading #cse-search-box .searchBox {
+    width: 0;
+}
+
+.masthead-img {
+	width: 240px; 
+}
+
+
+@media only screen and (max-width: $global-mobile-maxwidth) {
+	.masthead-img {
+		width: 200px;
+		padding-top: 10px; 
+	}
+} 
+
+.single-content-area {
+    grid-column-start: boundary-left-end;
+    grid-column-end: boundary-right-start;
+    grid-row-start: single-page-start;
+	grid-row-end: single-page-end;
+	// 2020-11-25, Brian Gillespie
+	//   This is one of three things that causes
+	//   target scrolling with a fixed page header to not
+	//   work. See WWW-1154
+	//display: flex;
+    flex-direction: column;
+}
+
+
+#page_content {
+	width: auto;
+	margin-top: 0px;
+	background-color: white;
+}
+
+.index-page {
+	flex-direction: row;
+}
+
+.toc-page {
+	flex-direction: row;
+	display: flex;
+    width: fit-content;
+    justify-content: space-between;
+	grid-gap: 20px;
+}
+
+.toc {
+	position: sticky;
+    top: 150px;
+    height: 100%;
+    min-width: 240px;
+    max-width: 240px;
+    display: block;
+	transition: .4s;
+}
+
+
+
+.fixed-bottom-left {
+	position: fixed;
+	margin: 20px;
+	bottom: 0;
+	left: 0;
+	z-index: 99;
+}
+
+.fixed-bottom-right {
+	position: fixed;
+	margin: 20px;
+	bottom: 0;
+	right: 0;
+	z-index: 99;
+}
+
+.fixed-top-left {
+	position: fixed;
+	margin: 20px;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}
+
+.fixed-top-right {
+	position: fixed;
+	margin: 20px;
+	top: 0;
+	right: 0;
+	z-index: 99;
+}
+
+
+
+// columns and rows
+// See https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items
+// for creation of proper gutters in wrapped columns.
+.flex-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin: -1em;	// Required for gutters between columns, but not outside
+}
+  
+.flex-container > div,
+.flex-container > div.column {		
+	// padding: 5px;
+	flex: 1 1;
+	min-width: 250px;
+	margin: 1em;   // Required for gutters between columns but not outside
+}
+
+// .columns {
+// 	display: flex;
+// 	flex-flow: row wrap;
+// 	justify-content: center;
+// 	margin: 5px 0;
+// }
+
+// @media screen and (max-width: 680px) {
+// 	.columns .column {
+// 		flex-basis: 100%;
+// 		margin: 0 0 5px 0;
+// 	}
+// }
+
+
+@media only screen and (max-width: $global-mobile-maxwidth) {
+	.toc {
+		display: none; 
+	}
+	.main-content {
+		margin-left: 0;
+	}
+} 
+
+/* This moves the ming article page to the left with no TOC */
+.toc-no {
+	margin-left: 0;
+}
+
+.footer-flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.footer-right {
+	text-align: right;
+}
+
+.footer-left {
+	text-align: left;
+}
+
+.footer-middle {
+	text-align: center;
+	line-break: strict;
+}
+
+.footer-columns {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin: 5px 0;
+}
+
+.footer-column {
+	flex: 1;
+	margin: 2px;
+	&:first-child { margin-left: 0; };
+	&:last-child { margin-right: 0; };
+}
+
+
+@media only screen and (max-width: $global-mobile-maxwidth) {
+
+	.footer-columns {
+		flex-flow: column;
+		justify-content: flex-start;
+	}
+	.footer-right {
+		text-align: center;
+	}
+	.footer-left {
+		text-align: center;
+	}
+
+
+}
+
+
+// edit dropdowns
+.editbutton {
+    background-color: white;
+    color: black;
+    padding: $global-font-size;
+    font-size: $global-font-size;
+    border: none;
+}
+
+.editdropdown {
+    position: relative;
+    display: inline-flex;
+}
+
+.editdropdown-content {
+    display: none;
+	position: absolute;
+	top: -30px;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.editdropdown-content a {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.editdropdown-content a:hover {opacity: 0.7;}
+
+.editdropdown:hover .editdropdown-content {display: block;}
+
+.editdropdown:hover .editbutton {background-color: white;}
+
+

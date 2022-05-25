@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+{{ .Scratch.Set "groupBy" "list_group" }}
+{{ .Scratch.Set "groupOrder" "asc" }}
+
+<div class="single-content-area toc-page">
+  {{ if .Params.page_options.toc }}
+      {{ partial "toc.html" . }}
+  {{ end }}
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
+        {{.Content}}
+        {{ if and (not .Params.page_options.plain ) (not .Params.page_options.hide_edit_button ) }}
+          {{- partial "edit_button.html" . -}}
+        {{ end }}
+  </div>
+</div>
+{{ end }}

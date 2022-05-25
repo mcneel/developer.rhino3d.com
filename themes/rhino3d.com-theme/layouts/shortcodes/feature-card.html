@@ -1,0 +1,80 @@
+{{- $.Scratch.Set "page" "" -}}
+{{- $.Scratch.Set "url" "" -}}
+{{- $.Scratch.Set "error" false -}}
+{{- $.Scratch.Set "error_message" "" -}}
+
+{{- if .IsNamedParams -}}
+    {{- if .Get "page" -}}
+        {{- $.Scratch.Set "page" (.Get "page") -}}
+    {{- else -}}
+        {{- $.Scratch.Set "error" true -}}
+        {{- $.Scratch.Set "error_message" "page is a required parameter" -}}
+    {{- end -}}
+
+    {{/*  Optional Link override  */}}
+    {{- if .Get "url" -}}
+        {{- $.Scratch.Set "url" (.Get "url") -}}
+    {{- end -}}
+{{- else -}}
+    {{- $.Scratch.Set "error" true -}}
+    {{- $.Scratch.Set "error_message" "Not using named params." -}}
+{{- end -}}
+
+{{- if ($.Scratch.Get "error") -}}
+<span class="shortcode-error">Error: {{ $.Scratch.Get "error_message" }}<br>Shortcode usage: &lbrace;&lbrace;&lt; feature-card page=[path-to-page] &gt;&rbrace;&rbrace;</span>
+{{- else -}}
+    {{ with .Site.GetPage ($.Scratch.Get "page") }}
+        {{ $new_feature := (eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since)) }}
+        {{ $.Scratch.Set "new_feature" "false" }}
+        {{- if $new_feature -}}
+            {{ $.Scratch.Set "new_feature" "true" }}
+        {{- end -}}
+        {{ $.Scratch.Set "updated_feature" "false" }}
+        {{- with .Params.whats_new.in_v7_summary -}}
+            {{ $.Scratch.Set "updated_feature" "true" }}
+        {{- end -}}
+        
+        {{ if or (eq ($.Scratch.Get "new_feature") "true") (eq ($.Scratch.Get "updated_feature") "true") }}                                
+        <div class="card">
+            {{ $.Scratch.Set "page_link" .RelPermalink }}
+            {{- if ($.Scratch.Get "url") -}}
+                {{ $.Scratch.Set "page_link" ($.Scratch.Get "url") }}
+            {{- end -}}
+            {{ $.Scratch.Set "has-thumbnail" "false" }}
+            {{- with .Params.thumbnail -}}
+            {{ $.Scratch.Set "has-thumbnail" "true" }}
+            {{- end -}}
+            {{ if eq ($.Scratch.Get "has-thumbnail") "true" }}
+                {{ if hasPrefix .Params.Thumbnail "/images/"}}
+                    {{/*  Global image folder  */}}
+                    {{- $image := resources.Get .Params.Thumbnail -}}
+                    {{ $thumbnail := $image.Fill "800x450 Center" }}
+                    {{ with $thumbnail }}
+                            <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                    {{ end }}
+                {{ else }}
+                    {{/*  Page bundle  */}}
+                    {{ with .Resources.GetMatch ( printf "%s" .Params.thumbnail) }}
+                        {{ $thumbnail := .Fill "800x450 Center" }}
+                        {{ with $thumbnail }}
+                            <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            <div class="card-container">
+                <h1><a href="{{ $.Scratch.Get "page_link" }}">{{ .Title }}</a></h1>
+                {{ if (eq ($.Scratch.Get "new_feature") "true") }}
+                    <p>{{ truncate 75 .Params.short_description }}</p>
+                {{ else if (eq ($.Scratch.Get "updated_feature") "true") }}
+                    <p>{{ truncate 75 .Params.whats_new.in_v7_summary }}</p>
+                {{ else }}
+                    <p>{{ truncate 75 .Description }}</p>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    {{ end }}
+{{- end -}}
+
+

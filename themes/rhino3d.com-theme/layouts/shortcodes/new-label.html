@@ -1,0 +1,16 @@
+{{- $.Scratch.Set "version" (string .Page.Params.included_in.since) -}}
+{{- $.Scratch.Set "style" "flag" -}}
+{{- if .IsNamedParams -}}
+    {{- if .Get "version" -}}{{- $.Scratch.Set "version" (.Get "version") -}}{{- end -}}
+    {{- if .Get "style" -}}{{- $.Scratch.Set "style" (.Get "style") -}}{{- end -}}
+{{- else -}}
+    {{- if .Get 0 }}{{- $.Scratch.Set "version" (.Get 0) -}}{{- end -}}
+    {{- if .Get 1 }}{{- $.Scratch.Set "style" (.Get 1) -}}{{- end -}}
+{{- end -}}
+{{- if eq "bullet" ($.Scratch.Get "style") -}}
+<div class="new-callout-bullet new-callout-version-{{- $.Scratch.Get "version" -}}"><a href="/{{- $.Scratch.Get "version" -}}/new/">{{- ($.Scratch.Get "version") -}}</a></div>
+{{- else if eq "small" ($.Scratch.Get "style") -}}
+<div class="new-callout-small new-callout-version-{{- $.Scratch.Get "version" -}}"><a href="/{{- $.Scratch.Get "version" -}}/new/">{{- ($.Scratch.Get "version") -}}</a></div>
+{{- else -}}
+<div class="new-callout new-callout-version-{{- $.Scratch.Get "version" -}}"><a href="/{{- $.Scratch.Get "version" -}}/new/">{{- replace (i18n "New-in-N") "[VERSION]" ($.Scratch.Get "version") -}}</a></div>
+{{- end -}}

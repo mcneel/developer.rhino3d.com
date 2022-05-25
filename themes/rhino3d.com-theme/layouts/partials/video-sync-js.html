@@ -1,0 +1,71 @@
+<script>
+    console.log('start');
+    const player = document.querySelector('.player')
+
+    console.log('setup');
+    var $captions = [];
+
+    // Do JQuery wrapping of captions once, to save CPU cycles.
+    var tmp_captions = $('.video_sync');
+    for (var i = 0; i<tmp_captions.length; i++) {
+        $captions.push($(tmp_captions[i]));
+    }
+
+    console.log("Captions length: " + $captions.length);
+    var $caption_container = $('.video_caption_container');
+
+    function logEvent($item, index, playerTime, e) {
+        //console.log(e + " item " + index + " @ " + playerTime +  " start: " + $item.attr('data-start-time') + " end: " + $item.attr('data-end-time') + " data-visibility: " + $item.attr('data-visibility'));
+    }
+
+    function showItem(item) {
+        $caption_container.removeClass('left');
+        $caption_container.removeClass('right');
+
+        $caption_container.addClass(item.attr('data-align'));
+        item.addClass(item.attr('data-align'));
+
+        var visibility = item.attr('data-visibility');
+        if (visibility == 'hidden' || visibility == undefined) {
+            logEvent(item, i, player.currentTime, 'Fading in');
+            item.attr('data-visibility', 'fading-in');
+            item.fadeIn(1000, 'swing', function() {
+                $(this).attr('data-visibility', 'visible');
+            });
+        }
+    }
+
+    if (parseFloat($captions[0].attr('data-start-time')) == 0.0) {
+        showItem($captions[0]);
+    }
+
+    player.addEventListener('timeupdate', () => {
+        var found_other = false;
+        for (var i = $captions.length - 1; i >= 0; i--){
+            var $item = $captions[i];
+            var start_time = parseFloat($item.attr('data-start-time'));
+            if (start_time === undefined) {
+                start_time = 0.0
+            }
+            var end_time = parseFloat($item.attr('data-end-time'));
+            if (end_time === undefined) {
+                end_time = 9999.0
+            }
+
+            var visibility = $item.attr('data-visibility');
+
+            if (start_time <= player.currentTime && player.currentTime < end_time) {
+                showItem($item);
+            }
+            else if (player.currentTime < start_time || end_time < player.currentTime) {
+                if (visibility == 'visible') {
+                    logEvent($item, i, player.currentTime, 'Fading out');
+                    $item.attr('data-visibility', 'fading-out');
+                    $item.fadeOut('fast', 'swing', function(){
+                        $(this).attr('data-visibility', 'hidden');
+                    });
+                }
+            }
+        };
+    })
+</script>

@@ -1,0 +1,67 @@
+<!-- We'll probably want to customize these https://mcneel.myjetbrains.com/youtrack/issue/WWW-997 -->
+<!-- https://medium.com/slack-developer-blog/everything-you-ever-wanted-to-know-about-unfurling-but-were-afraid-to-ask-or-how-to-make-your-e64b4bb9254 -->
+
+<!-- OpenGraph for Facebook and slack -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:description" content="{{ .Description }}" />
+<meta property="og:site_name" content="www.rhino3d.com"/>
+<!-- og:images are added below -->
+
+<!-- twitter card tags additive with the og: tags -->
+{{ if .IsHome }}
+  <meta name="twitter:card" content="summary" />
+{{ else }}
+  <meta name="twitter:card" content="summary_large_image" />
+{{ end }}
+<meta name="twitter:domain" value="rhino3d.com" />
+<meta name="twitter:title" value="{{ .Title }}" />
+<meta name="twitter:description" value="{{ .Description }}" />
+
+{{ $.Scratch.Set "rhinoURL" .Site.Params.rhinoURLNewSource }}
+{{ $.Scratch.Set "page_rel_permalink" .RelPermalink }}
+
+{{ if not .IsHome }}
+  {{ $.Scratch.Set "has-thumbnail" "false" }}
+  {{- with .Params.thumbnail -}}
+    {{ $.Scratch.Set "has-thumbnail" "true" }}
+  {{- end -}}
+
+  {{ if eq ($.Scratch.Get "has-thumbnail") "true" }}
+    {{ if hasPrefix .Params.Thumbnail "/images/"}}
+      {{/*  Global image folder  */}}
+      {{- $image := resources.Get .Params.Thumbnail -}}
+      {{ with resources.Get .Params.Thumbnail }}
+        {{ $thumbnail := .Fill "520x218 Center" }}
+        {{ with $thumbnail }}
+          <meta property="og:image" content="{{ $.Scratch.Get "rhinoURL" }}{{ .RelPermalink }}" />
+          <meta name="twitter:image" content="{{ $.Scratch.Get "rhinoURL" }}{{ .RelPermalink }}" />
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      {{/*  Page bundle  */}}
+      {{ with .Resources.GetMatch ( printf "%s" .Params.thumbnail) }}
+        {{ $thumbnail := .Fill "520x218 Center" }}
+        {{ with $thumbnail }}
+          {{ $length := (len ($.Scratch.Get "page_rel_permalink"))}}
+          {{ $no_lang := (substr ($.Scratch.Get "page_rel_permalink") 3 $length )}}
+          <meta property="og:image" content="{{ $.Scratch.Get "rhinoURL" }}{{ $no_lang }}{{ . }}" />
+          <meta name="twitter:image" content="{{ $.Scratch.Get "rhinoURL" }}{{ $no_lang }}{{ . }}" />
+        {{ end }}
+      {{ end }}    
+    {{ end }}
+  {{ end }}
+{{ else }}
+  <meta property="og:image" content="{{ .Site.Params.rhinoURLNewSource }}/images/rhino-logo-unfurl.png" />
+  <meta name="twitter:image" content="{{ .Site.Params.rhinoURLNewSource }}/images/rhino-logo-unfurl.png" />
+{{ end }}
+
+{{ if .IsHome }}
+  <meta name="twitter:label1" value="Now Available" />
+  <meta name="twitter:data1" value="Version {{ .Site.Params.latestRhinoVersion }}" />
+  <meta name="twitter:label2" value="Platforms" />
+  <meta name="twitter:data2" value="{{ .Site.Params.supportedPlatforms }}" />
+{{ end }}
+
+<meta name="twitter:url" value="{{ .Permalink }}" />

@@ -1,0 +1,40 @@
+/* This is the radio button section */
+
+.platform-toggle {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.input-hidden {
+    position: absolute;
+    left: -9999px;
+  }
+  
+  input[type=radio]:checked + label>img {
+    box-shadow: 0 0 3px 3px darkgrey;
+    background-color: grey;
+  }
+  
+  /* Stuff after this is only to make things more pretty */
+  input[type=radio] + label>img {
+    width: 36px;
+    height: 36x;
+    transition: 500ms all;
+    background-color: white;
+  }
+  
+  
+  /* End of radio button section */
+  
+  /* Here is the beginnign on the Windows MAc styling */
+  
+  .Rhino_Win {
+    display: contents;
+  }
+  
+  .Rhino_Mac {
+    display: none;
+  }
+  
+  /* End of Windows mac styleing*/

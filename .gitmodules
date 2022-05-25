@@ -1,0 +1,13 @@
+[submodule "api/RhinoCommon"]
+	path = api/RhinoCommon
+	url = https://github.com/mcneel/rhinocommon-api-docs.git
+	branch = wip-mac5
+[submodule "api/grasshopper"]
+	path = api/grasshopper
+	url = https://github.com/mcneel/grasshopper-api-docs.git
+[submodule "api/rhinoscript"]
+	path = api/rhinoscript
+	url = https://github.com/mcneel/rhinoscript-api-docs.git
+[submodule "api/cpp"]
+	path = api/cpp
+	url = https://github.com/mcneel/rhino-cpp-api-docs.git

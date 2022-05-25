@@ -1,0 +1,189 @@
+$placeholder-color: #979797;
+$form-control-padding: 0.75em;
+
+@mixin form-control {
+  display: block;
+  padding: $form-control-padding;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 0.1875em;
+  outline: none;
+  background-color: #fff;
+  transition: border-color 0.2s;
+  line-height: 1;
+
+  // &:focus,
+  // &--focus {
+  //   border-color: #80bdff;
+  //   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  // }
+
+  &--readonly {
+    pointer-events: none;
+    border-color: #fff;
+  }
+}
+
+.load_spinner {
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3d3d3d; /* Grey */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  margin: auto;
+  z-index: 2;
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+}
+
+.FormSelect {
+    position: relative; // 1
+    padding: 10px;
+  
+    &__control {
+      @include form-control();
+      padding: 0;
+    }
+  
+    &__legend {
+      width: 100%; // 2
+      float: left; // 2
+      height: 100%;
+      &--readonly {
+        display: none
+      }
+    }
+  
+    &__legend-inner {
+      display: flex;
+      justify-content: space-between;
+      padding: $form-control-padding;
+    }
+  
+    &__legend-body {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  
+    &__placeholder {
+      color: $placeholder-color;
+    }
+  
+    &__icon {
+      transition: transform 0.2s;
+  
+      &--rotate-180 {
+        transform: rotate(180deg);
+      }
+    }
+  
+    &__options {
+      padding-right: $form-control-padding;
+      padding-bottom: $form-control-padding;
+      padding-left: $form-control-padding;
+    }
+  
+    &__option {
+      display: block;
+  
+      &:not(:first-child) {
+        margin-top: 0.25em;
+      }
+    }
+  
+    &__input {
+      margin-right: 0.125em;
+      transition: 0.2s;
+      &--readonly {
+        opacity: 0
+      }
+    }
+  }
+
+  #maillistEditContainer {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: flex-end;
+
+    button{
+      margin: 10px;
+      border-radius: 0.1875em;
+      background-color: #900; 
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+    .cancelBtn{
+      background-color: grey; 
+    }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.form-control {
+    display: block;
+    padding: 0.75em;
+    width: 100%;
+    border: 1px solid;
+    border-radius: 0.1875em;
+    outline: none;
+    background-color: #fff;
+    transition: 0.2s;
+    line-height: 1;
+}
+
+#vueApp {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.disabled {
+  pointer-events: none;
+  color: gray;
+  accent-color: grey;
+}
+
+.u-visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

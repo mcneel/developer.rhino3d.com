@@ -1,0 +1,147 @@
+{{- $inner := .Inner | .Page.RenderString -}}
+{{ $maillist := "" }}
+{{ $id := 0 }}
+{{ $label := "Subscribe to Maillist" }}
+{{ $class := "" }}
+{{ $container := "" }}
+{{ if .IsNamedParams }}  
+    {{ if .Get "maillist"}}{{ $maillist =  .Get "maillist" }}{{ end }}
+    {{ if .Get "id"}}{{ $id =  .Get "id" }}{{ end }}
+    {{ if .Get "label"}}{{ $label =  .Get "label" }}{{ end }}
+    {{ if .Get "class"}}{{ $class =  .Get "class" }}{{ end }}
+    {{ if .Get "container"}}{{ $container =  .Get "container" }}{{ end }}
+{{ end }}
+
+<div id="vueApp">
+<!-- Button trigger modal -->
+<button id="subscribe-button {{$maillist}}-{{$id}}" type="button" class="btn btn-primary {{$class}}" v-bind:class="{'btn-disappear': subscribed }" @click="handleSubscribe">
+    <i class="fas fa-check" v-if="subscribed"></i>
+    <i class="fas fa-envelope" v-if="!subscribed & !saving"></i>
+    <i class="fas fa-spinner fa-pulse" v-if="saving"></i>
+    {{$label}}
+</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title" id="ModalLongTitle">{{$label}}</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="email-field">
+          {{- $inner -}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{{- partial "jquery" . }}
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+<script type="text/javascript" src='{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}'>
+</script>
+
+<script>
+
+    const apiUrl = "https://api.mcneel.com/maillist/preferences"
+
+    Vue.options.delimiters = ['((', '))'];
+    var app;
+
+  app = new Vue({
+      el: '#vueApp',
+      components: { 
+      },
+      props: {
+      },
+      data(){
+          return {
+          saving: false,
+          error: "",
+          token: "",
+          subscribed: false,
+          current_subscriptions: {
+            companion_product: [],
+            market_segment: [],
+            profession:[]
+          },
+          }
+      },
+      watch: {
+      },
+      computed: {
+      },
+      created(){
+          $.ajax({
+              url:"/licenses/session_variables.json"
+          }).then(licenseData => {
+              this.token = JSON.parse(licenseData)["oauth2Token"]
+              const headers = {"Authorization": `Bearer ${this.token}`}
+              $.ajax({
+              url: apiUrl,
+              headers,
+          }).then(data => {
+              this.current_subscriptions["profession"] = data.profession.map(x => x.ProfessionID)
+              this.current_subscriptions["market_segment"] = data.market_segment.map(x => x.MarketSegmentID)
+              this.current_subscriptions["companion_product"] = data.companion_product.map(x => x.CompanionProductId)
+              if (this.current_subscriptions["{{$maillist}}"].includes(parseInt("{{$id}}"))){
+                this.subscribed = true
+              }
+          }).catch(e =>
+          {
+              this.error = "Failed loading subscriptions."
+          })
+      }).catch(e =>
+      {
+          this.error = "You need to log in to see this page."
+      })
+      },
+      methods: {
+        handleSubscribe() {
+          body = {}
+          body["{{ $maillist }}"]= [{"id":"{{ $id }}", "add":true }]
+
+          const headers = {"Authorization": `Bearer ${this.token}`, 'Content-Type': 'application/json',
+          'Accept': 'application/json'}
+
+          if (this.token){
+              this.saving = true
+              // post request
+              $.ajax({
+                  url: apiUrl,
+                  type: 'post',
+                  data: JSON.stringify(body),
+                  headers,
+                  dataType: 'json',
+              }).then( data => {
+                  this.saving = false
+                  this.subscribed = true
+              }).catch(e =>{
+                  alert("Something went wrong")
+                  this.saving = false
+              })
+          }
+          else {
+            $('#ModalCenter').modal()
+          }
+      },
+      }
+  });
+
+</script>
+
+<script>
+  if ("{{ $container }}"){
+  var button = document.getElementById("subscribe-button {{$maillist}}-{{$id}}");
+  var container = document.getElementById("{{ $container }}");
+  container.appendChild(button);
+  }
+</script>
+
+{{ $sass := resources.Get "/scss/_page/_subscribe.scss" }}
+{{ $style := $sass | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">

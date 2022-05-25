@@ -1,0 +1,37 @@
+<div class="discover-grid">
+    {{ range .Pages }}
+        {{ $Cpage := . }}
+          <div class="discover-item card learn-card-override">
+              <a href="{{ $Cpage.RelPermalink }}" target="blank">
+                    <div class="discover-thumbnail discover-thumbnail-dim">
+                        {{ if eq .Kind "page" }}
+                            {{ with .Resources.GetMatch ( printf "%s" .Params.thumbnail) }}
+                                {{ $thumbnail := .Fill "800x450 Center" }}
+                                {{ with $thumbnail }}
+                                <img src="{{ .RelPermalink }}" alt="{{ . }}" class="discover-img no-popup">
+                                {{ end }}         
+                            {{ end }}
+                        {{ else }}
+                            {{ if .Params.thumbnail }}
+                                {{ if $resource := .Resources.GetMatch ( printf "%s" .Params.thumbnail) }}
+                                    {{if $thumbnail := $resource.Fill "800x450 Center" }}
+                                        {{ with $thumbnail }}
+                                        <img src="{{ .RelPermalink }}" alt="{{ . }}" class="discover-img no-popup">
+                                        {{ end }}
+                                    {{ end }}  
+                                {{ else }} 
+                                <img src="{{ .Site.BaseURL }}/{{ .Site.Params.imagesDir }}/folderthumbnail.jpg" alt="Folder Icon" class="discover-img no-popup"> 
+                                {{ end }}
+                            {{ else }}
+                            <img src="{{ .Site.BaseURL }}/{{ .Site.Params.imagesDir }}/folderthumbnail.jpg" alt="Folder Icon" class="discover-img no-popup">   
+                            {{ end }}
+                        {{ end }}
+                    </div>
+                </a>
+                <div class="discover-info">
+                <a href="{{ $Cpage.RelPermalink }}" class="discover-info-title">{{ .Title }}</a>
+                <p>{{ truncate 75 .Description }}</p>
+                </div>
+          </div>
+    {{ end}}
+</div>

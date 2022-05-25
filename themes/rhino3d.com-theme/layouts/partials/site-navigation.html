@@ -1,0 +1,62 @@
+<div id="navbar">
+  <div id="wrap">
+    <!-- Google CSE Search Box Begins  -->
+    <div id="sitesearch">
+      <!-- Use of this code assumes agreement with the Google Custom Search Terms of Service. -->
+      <!-- The terms of service are available at https://www.google.com/cse/docs/tos.html -->
+      <form id="cref" action="{{.Site.Params.rhinoURL }}/searchresults/">
+        <input type="hidden" name="cref" value="007988927381198593803:mcq6pshqsn8" />
+        <label for="search"><input id="searchtext" type="text" name="q" size="24" value="" placeholder="{{ i18n "search-navbar" }}" /></label>  
+        <input class="searchBox" type="submit" name="sa" size="2" value=" " />
+      </form>
+    </div>
+    <!-- Google CSE Search Box Ends -->
+
+    <!-- The site Logo, site title and subtitle at the upper-left -->
+    <div id="logo-container">
+      <div id="logo-inner-container">
+        <div id="logo-title-text">
+          <a href="{{ .Site.Params.siteRootURL }}"><span id="logo-title-text-primary">{{ .Site.Params.logoTitleTextPrimary }}</span><span id="logo-title-text-secondary">{{ .Site.Params.logoTitleTextSecondary }}</span><sup id="protected-mark">{{ .Site.Params.protectedMark }}</sup></a>
+        </div>
+        <div id="logo-subtitle" {{- if eq .Site.Params.logoTitleTextHasDescenders true -}} style="margin-top:8px;" {{- end -}}>
+          <a href="{{ .Site.Params.siteRootURL }}"><span class="logo-text-secondary">{{ i18n "product-tagline" }}</span></a>
+        </div>
+        
+        <a href="{{ .Site.Params.siteRootURL }}"><img id="site-nav-logo" src="{{ .Site.Params.siteNavLogo }}"/></a>
+        <div class="clear"></div>
+      </div>
+      <div class="overlayMenuIcon" id="theoverlayMenuIcon">
+        <span onclick="toggleMenu()"><i class="fa fa-bars" id="menuToggleIcon" style="color: #c2c2c2; font-size: 2.5em"></i></span>
+      </div>
+    </div>
+
+    <!-- The Horizontal textual menu items -->
+    <div class="menu-items" id="theMenuItems">
+      {{- range .Site.Menus.main -}}
+        {{- $url := .URL -}}
+        {{- with .Page -}}
+            {{- $url = .RelPermalink -}}
+        {{- end -}}
+        {{ $.Scratch.Set "target" "_self" }}
+        {{ if (or (in $url "rhino3d.com") (hasPrefix $url "/")) }}
+          {{ $.Scratch.Set "target" "_self" }}
+        {{ else }}
+          {{ $.Scratch.Set "target" "_blank" }}
+        {{ end }}
+        <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }}title="{{ . }}"{{ end }} target="{{ $.Scratch.Get "target" }}">
+        {{- .Pre | safeHTML }}{{ .Name }}{{ .Post | safeHTML -}}
+        </a>
+      {{- end -}}
+      <span class="logged_in">
+        <a href="{{ .Site.Params.rhinoURL }}/my-account/" title="{{ i18n "logged-in-title" }}">{{ i18n "my-account" }}
+            <img alt="user avatar" style="width: 18px; height: 18px; float: right; border-radius: 50%; margin-top: 1px; margin-left: 4px;" src="https://www.rhino3d.com/user/avatar/">
+        </a>
+      </span>
+      <span class="logged_out hidden">
+        <a href="{{ .Site.Params.rhinoURL }}/my-account/" title="{{ i18n "sign-in-title" }}">{{ i18n "sign-in" }}</a>
+      </span>
+    </div>
+
+    </div>
+  </div>
+</div>

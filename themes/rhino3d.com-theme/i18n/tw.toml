@@ -1,0 +1,291 @@
+[buy]
+other = "購買"
+
+[download]
+other = "下載"
+
+[gallery]
+other = "作品"
+
+[features]
+other = "功能"
+
+[news]
+other = "新聞"
+
+[community]
+other = "論壇"
+
+[learn]
+other = "學習"
+
+[support]
+other = "支援"
+
+[resources]
+other = "資源"
+
+[my-account]
+other = "我的帳戶"
+
+[logged-in-title]
+other = "管理您的帳戶、授權及組別"
+
+[sign-in]
+other = "登入"
+
+[sign-in-title]
+other = "登入以管理您的帳戶、授權及組別"
+
+[Icon]
+other = "圖示"
+
+[Description]
+other = "描述"
+
+[Toolbars]
+other = "工具列"
+
+[Menu]
+other = "功能表"
+
+[Crease-Splitting]
+other = "Crease Splitting"
+
+[History]
+other = "歷史紀錄"
+
+[enabled]
+other = "啟用"
+
+[More-details]
+other = "詳情..."
+
+[Including]
+other = "包含:"
+
+[Rhino-Commands]
+other = "Rhino 指令"
+
+# DO NOT TRANSLATE the contents of {{ }} placeholder.  It gets replaced with the correct version by a template.
+[NEW-in-Vx]
+other = "{{ .Params.included_in.since }} 的新功能"
+
+# DO NOT TRANSLATE the [VERSION] placeholder.  It gets replaced with the correct version by a template.
+[New-in-N]
+other = "[VERSION] 的新功能"
+
+[New-in-Rhino-7]
+other = "Rhino 7 的新功能"
+
+[All-the-details]
+other = "所有細節..."
+
+[bob-loves-revit]
+other = "Bob ❤️s Revit "
+
+# This is optionally shown as a header in some feature pages
+[new-in-rhino-7]
+other = "Rhino 7 的新功能"
+
+# context: the bylines that sometimes show up under the title of a page.  Such as "by Scott Davidson..."
+[by]
+other = "編寫者:"
+
+# context: the bylines that sometimes show up under the title of a page, showing when the page was last updated
+[Last-updated]
+other = "上次更新日期:"
+
+# context: the bylines that sometimes show up under the title of a page, joining the different authors.  Such as: "by Scott Davidson and..."s
+[and]
+other = "及"
+
+# context: the Edit menu at the bottom of the page
+[Edit-this-page]
+other = "編輯此頁"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-GitHub]
+other = "在 GitHub 編輯"
+
+# context: the Edit menu at the bottom of the page
+[Edit-on-Forestry]
+other = "在 Forestry 編輯"
+
+# context: the Edit menu at the bottom of the page
+[Edit-data]
+other = "編輯資料"
+
+# context: the Edit menu at the bottom of the page
+[Admin]
+other = "管理"
+
+# context: page footer
+[Shop-online]
+other = "線上訂購"
+
+# context: page footer
+[or-find-a]
+other = "或查詢"
+
+# context: page footer
+[find-a-reseller]
+other = "尋找經銷商"
+
+# context: page footer
+[Reseller]
+other = "經銷商"
+
+# context: page footer
+[Privacy-Policy]
+other = "隱私政策"
+
+# context: page footer
+[About]
+other = "關於"
+
+# context: page footer
+[Contact-Us]
+other = "與我們聯絡"
+
+# context: page footer
+[Language]
+other = "語言"
+
+# context: page footer
+[change-region-lang]
+other = "切換至其它區域或語言"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[Windows-only]
+other = "限 Windows 版"
+
+# context: the platform call-outs that sometimes show up at the top of a feature page when they relate to just one platform
+[macOS-only]
+other = "限 macOS 版"
+
+[Download-Rhino]
+other = "下載 Rhino"
+
+[Download-Rhino-Both]
+other = "[LINK]下載 [PRODUCT] [VERSION] [TYPE] for Windows 或 Mac[/LINK]。"
+
+[Download-Rhino-Windows]
+other = "[LINK]下載 [PRODUCT] [VERSION] [TYPE] for Windows[/LINK]。"
+
+[Download-Rhino-Mac]
+other = "[LINK]下載 [PRODUCT] [VERSION] [TYPE] for Mac[/LINK]。"
+
+[Rhino]
+other = "Rhino"
+
+[Name]
+other = "名稱"
+
+[File-Extension]
+other = "副檔名"
+
+[Open-Import]
+other = "開啟/匯入"
+
+[Save-Export]
+other = "儲存/匯出"
+
+[Notes]
+other = "附註"
+
+[Latest-Updates]
+other = "最新更新"
+
+[Improved]
+other = "改善"
+
+[Improvements]
+other = "改善"
+
+[Mac-only]
+other = "僅限 Mac"
+
+[Windows-and-Mac]
+other = "Windows | Mac"
+
+# Some languages, like Japanese, use a different punctuation mark for periods.
+[period-the-punctuation-mark]
+other = "。"
+
+# This gets rendered under the title in the header of the page.  It needs to be a specific width, so if it exceeds the english width too much,
+# it might be best to leave it untranslated or figure out a way to condense it.  This is much "branding" as it is words.
+[product-tagline]
+other = "design, model, present, analyze, realize..."
+
+# This is the placeholder text in the search field on the top navbar
+[search-navbar]
+other = "搜尋"
+
+# Homepage link in the upper part of screen
+[student-or-teacher]
+other = "學生或教師嗎?"
+
+# Title on homepage video caption
+[caption-rhino-7]
+other = "Rhino 7"
+
+# Subtitle on homepage video caption
+[caption-rhino-7-subtitle]
+other = "精確的自由造型"
+
+# Details of the Rhino 7 video caption
+[caption-rhino-7-details]
+other = "新功能 SubD、Rhino.Inside.Revit、QuadRemesh 及更多其它功能。"
+
+# Link title on homepage video captions
+[caption-learn-more]
+other = "詳情"
+
+# Link title on homepage video captions
+[caption-try]
+other = "試用看看"
+
+# The conjoiner before the Buy link in the video caption
+[caption-or-conjoiner]
+other = "，或 "
+
+# Link title on homepage video captions
+[caption-buy]
+other = "購買"
+
+# Title on homepage video caption
+[caption-rhino-refined]
+other = "Rhino 精心製作"
+
+# Subtitle on homepage video caption
+[caption-less-pain]
+other = "減少缺失，更多功能"
+
+# Details of the Rhino Refined video caption
+[caption-rhino-refined-details]
+other = "模具製造工具、命名選取的物件、圖紙配置管理、文字方程式增強、Grasshopper Player、單線字體及其它功能。"
+
+# The English comma conjoiner
+[comma-conjoiner]
+other = "， "
+
+# Title on homepage video caption
+[caption-presentation]
+other = "美觀的視圖"
+
+# Subtitle on homepage video caption
+[caption-presentation-subtitle]
+other = "華麗的呈現"
+
+# Details of a video caption
+[caption-presentation-details]
+other = "提升工作呈現的方式及新的提案工具，如漸層剖面線、降噪器、PBR 材質、圖層簿及更多其它功能。"
+
+# New navigation button on Learn Pages
+[new]
+other = "最新"
+
+# Featured button and tag on Learn Pages
+[featured]
+other = "精選" 
