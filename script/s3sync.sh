@@ -11,7 +11,7 @@ else
     then
         wget https://github.com/peak/s5cmd/releases/download/v$EXPECTED_S5CMD_VERSION/s5cmd_$EXPECTED_S5CMD_VERSION\_macOS-64bit.tar.gz -O s5cmd.tar.gz
     else
-        wget https://github.com/peak/s5cmd/releases/download/v$EXPECTED_S5CMD_VERSION/s5cmd_$EXPECTED_S5CMD_VERSION-64bit.tar.gz -O s5cmd.tar.gz
+        wget https://github.com/peak/s5cmd/releases/download/v$EXPECTED_S5CMD_VERSION/s5cmd_$EXPECTED_S5CMD_VERSION\_Linux-64bit.tar.gz
     fi
     tar -xf s5cmd.tar.gz s5cmd
     rm -rf s5cmd.tar.gz
