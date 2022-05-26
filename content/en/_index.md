@@ -135,5 +135,6 @@ list_group = "uncategorized"
 <p>Still unclear?  Browse the <a href="/guides/">Guides</a>.  Ask a question in <a href="/guides/general/contributing/#discourse">the Forum</a>.  Check out the <a href="/guides/general/frequently-asked-questions/">FAQ</a>. Ask <a href="/guides/general/contributing/#contacts">a developer</a>.</p>
 
 <p>Rhino developer tools are royalty free and include support.</p>
+<p>Have fun!</p>
 
 </div>
