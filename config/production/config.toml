@@ -2,4 +2,4 @@
 # https://gohugo.io/getting-started/configuration/
 disableLanguages = ["cs", "cn", "de", "es", "fr", "it", "jp", "kr", "pl", "pt", "ru", "tw"]
 
-baseURL = "http://source-rhino3d-com.s3-website-us-east-1.amazonaws.com"
+baseURL = "http://source-developer-rhino3d-com.s3-website-us-west-2.amazonaws.com/"
