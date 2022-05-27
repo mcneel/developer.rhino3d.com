@@ -28,5 +28,5 @@ echo "Full Upload to S3 starting"
 echo "Full Upload to S3 complete"
 
 echo "Invalidating cloudfront cache"
-# aws cloudfront create-invalidation --distribution-id E119D0O6VEEKO8 --paths "/*"
+aws cloudfront create-invalidation --distribution-id E1RH976CGQBL84 --paths "/*"
 
