@@ -3,6 +3,40 @@
 /* IMPORTANT: for some reason, hugo does not notice the changes to this file properly and recompile the scss properly. 
 When changing this file, you will need to stop serving the site and restart the hugo process in order to see changes applied. */
 
+a {
+	color: #337ab7;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:visited {
+	color: #1756a9;
+}
+
+#navbar a {
+    color: #337ab7;
+    padding-right: 15px;
+}
+
+#navbar a:hover {
+	color: #337ab7;
+	text-decoration: underline;
+}
+
+#logo-title-text a:hover {
+    text-decoration: none;
+}
+
+#bcs-results-div h1 a, h2 a {
+	color: #337ab7 !important;
+	margin-bottom: 2px;
+}
+#bcs-results-div h1 a:visited, h2 a:visited {
+	color: #1756a9 !important;
+	margin-bottom: 2px;
+}
+
 .outerbox {
 	margin-top: 65px;
 }
