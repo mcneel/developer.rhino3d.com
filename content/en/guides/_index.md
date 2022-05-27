@@ -19,10 +19,7 @@ toc_type = "single"
 
 +++
 
-
-
 ## [General](/guides/general)
-
 
 *Guides that apply across platforms and SDKs*
 
