@@ -1,0 +1,42 @@
+{{ range .Site.Data.rhinoscriptsyntax }}
+  {{ $module := . }}
+  <h2>{{ $module.ModuleName }}</h2>
+
+  {{ range $module.functions }}
+    <h3 id="{{$module.ModuleName}}-{{.Name}}">{{ .Name }}</h3>
+
+    <pre style="white-space: pre-wrap;"><code class="language-python">{{ .Signature }}</code></pre>
+
+    <!-- <pre>{{ .Description }}</pre> -->
+    <span>{{ .Description }}</span>
+    
+    {{ if .HasArguments }}
+    <h5>Parameters:</h4>
+    <div>
+      <pre style="white-space: pre-wrap;">{{ .ArgumentDesc }}</pre>
+    </div>
+    {{ end }}
+
+    <h5>Returns:</h5>
+    <div>
+      <pre style="white-space: pre-wrap;">{{ .ReturnStr }}</pre>
+    </div>
+
+    {{ with .ExampleString }}
+    <h5>Example:</h5>
+    <div>
+      <pre style="white-space: pre-wrap;"><code class="language-python">{{ . }}</code></pre>
+    </div>
+    {{ end }}
+
+    {{ if gt (len .SeeAlso) 0 }}
+    <h5>See Also:</h5>
+    <ul>
+      {{ range .SeeAlso }}
+        <li><a href="#{{ $module.ModuleName }}-{{ .FunctionName }}">{{ .FunctionName }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+  {{ end }}
+{{ end }}
