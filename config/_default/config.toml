@@ -13,6 +13,7 @@ metaDataFormat = "toml"
 disable404 = "true" # we custom generate our 404 page based on a template for localization purposes
 enableGitInfo = "true"
 disableKinds = ["RSS"]
+disablePathToLower = true
 
 [security.funcs]
     getenv = ['^HUGO_', 'MCNEEL_REGION']
