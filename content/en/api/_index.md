@@ -25,6 +25,6 @@ since = 0
 <a href="https://compute-rhino3d.readthedocs.io/en/latest/" target="_blank">compute_rhino3d (python client library for compute.rhino3d)</a> {{< awesome "fas fa-external-link-alt" >}}  
 <a href="https://computerhino3djs.readthedocs.io/en/latest/" target="_blank">compute.rhino3d.js (javascript client library for compute.rhino3d)</a> {{< awesome "fas fa-external-link-alt" >}}  
 
-<a href="/api/rhino3dm" target="_blank">rhino3dm functionality in .NET</a> {{< awesome "fas fa-external-link-alt" >}}  
+<a href="/api/rhino3dm">rhino3dm functionality in .NET</a>  
 <a href="https://mcneel.github.io/rhino3dm/python/api/index.html" target="_blank">rhino3dm.py (python)</a> {{< awesome "fas fa-external-link-alt" >}}   
 <a href="https://mcneel.github.io/rhino3dm/javascript/api/index.html" target="_blank">rhino3dm.js (javascript)</a> {{< awesome "fas fa-external-link-alt" >}}
