@@ -65,36 +65,6 @@
             "problemMatcher": []
         },
         {
-            "label": "hugo serve all languages",
-            "type": "process",
-            "command": "./Launch",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": false,
-                "clear": true,
-                "group": "Hugo"
-            },
-            "osx": {
-                "command": "./Launch"
-            },
-            "windows": {
-                "command": ".\\Launch.exe"
-            },
-            "args": [
-                "serve",
-                "-e",
-                "production",
-                "browse=http://localhost:1313",
-                "page=${file}"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/themes/rhino3d.com-theme/script/Launch"
-            }
-        },
-        {
             "label": "hugo terminate",
             "command": "echo ${input:terminate}",
             "type": "shell",
