@@ -19,7 +19,7 @@ import shutil
 # /dev/mcneel/rhino3d.com
 # /dev/mcneel/rhino3d.com-bongo
 # are parallel to each other.
-sites = ["rhino3d.com", "rhino3d.com-bongo", "developer-rhino3d-com-hugo"] 
+sites = ["rhino3d.com", "rhino3d.com-bongo", "developer.rhino3d.com"] 
 
 # colors for terminal reporting
 class bcolors:
