@@ -26,6 +26,10 @@ toc_type = "single"
 
 +++
 
+{{< call-out "warning" "Transition underway" >}}
+This site is undergoing a transition from Jekyll to Hugo. This page is out-of-date while this warning is in place.
+{{< /call-out >}}
+
 Every time a commit is pushed to [this git repository](https://github.com/mcneel/developer.rhino3d.com)'s `main` branch, a static site-generator called [Hugo](https://gohugo.io/) churns through all the markdown content to generate html for the site.
 
 ## Workflow
@@ -38,17 +42,15 @@ The best way to understand how this site works is to make a change to it.  Follo
 1. Wait a minute or two (If you issued a pull-request, your change won't be live until a git administrator accepts it).
 1. On the live [developer.rhino3d.com](http://developer.rhino3d.com), you should see your change.
 
-## Frontmatter
-
-{{< call-out "warning" "Transition underway" >}}
-This site is undergoing a transition from Jekyll to Hugo. This page is out-of-date while this warning is in place.
-{{< /call-out >}}
-
 ## Markdown & Kramdown
+
+Nearly all content on this site uses [Markdown](http://daringfireball.net/projects/markdown/basics) as the base format. We are using the [Goldmark](https://github.com/yuin/goldmark) markdown parser, which is the default parser with Hugo. A complete guide to Markdown is beyond the scope of this guide. For markdown syntax, refer to the [Hugo Markdown Guide](https://www.markdownguide.org/tools/hugo) or use other files on this site as examples.
 
 Use the [Style Guide](/guides/general/developer-docs-style-guide/) guide as a reference when writing content for this site.
 
-Nearly all content on this site uses [Markdown](http://daringfireball.net/projects/markdown/basics) as the base format. We are using the [Goldmark](https://github.com/yuin/goldmark) markdown parser, which is the default parser with Hugo. A complete guide to Markdown is beyond the scope of this guide. For markdown syntax, refer to the [Hugo Markdown Guide](https://www.markdownguide.org/tools/hugo) or use other files on this site as examples.
+## Frontmatter
+
+TODO
 
 ## Layout
 
@@ -76,7 +78,6 @@ There are 4 types of content on this site:
  1. [Samples](#samples)
 
 All types of content - with the exception of APIs - begin with toml, which the site uses to categories and sort the content into appropriate areas.
-
 
 ### Pages
 
@@ -143,7 +144,7 @@ The [API documentation](/api/) is automatically generated from source-code and c
 
 ### Samples
 
-Samples are contained in the `/_samples/` directory.
+Samples are contained in the `/content/en/samples/` folder.
 
 Here is an example of the YAML for [this sample](/samples/cpp/add-a-cone-surface/):
 
@@ -205,19 +206,6 @@ If the TODO field is not present, the content will not be on the list.
 
 Much of this site is (or was) ported from a previous location.  The `origin` yaml field is reserved for a backlink to the original content.  If the `origin` yaml field is set to a URL - and `TODO` is set to `some value` - the content will show up on the [TODO list](/admin/index.html#todo-list) as needs porting from the `origin` URL.
 
-## Jekyll Plugins
-
-In general, we are attempting to stick to those [Jekyll dependencies that are ship with GitHub Pages](https://pages.github.com/versions/).  That said, since we are building this site with Travis CI, we can indeed use Jekyll plugins that are not part of the canonical GitHub pages dependencies.
-
-To add a plugin to the site:
-
-1. Verify that it is not in the [Dependency versions list](https://pages.github.com/versions/) already.
-1. Test the plugin locally on your machine to make sure it does what you want it to do.
-1. Add the plugin to the *Gemfile* on this site.
-1. Add the plugin to the the *_config.yml* list under the `plugins:` entry.
-
 ## Related topics
 
 - [Rhino Developer Docs Style Guide](/guides/general/developer-docs-style-guide/)
-- [Jekyll Documentation](http://jekyllrb.com/docs/home/)
-- [Liquid Docs](https://shopify.github.io/liquid/)
