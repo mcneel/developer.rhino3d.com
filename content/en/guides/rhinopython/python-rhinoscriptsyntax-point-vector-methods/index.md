@@ -66,7 +66,7 @@ The following methods are available for creating and manipulating 3-D points and
 
 ## Related Topics
 
-- [What is RhinoScriptSyntax and RhinoScript?](/guides/rhinopython/what-are-python-rhinoscript)
+- [What is RhinoScriptSyntax and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
 - [Python List of Points](/guides/rhinopython/python-rhinoscriptsyntax-list-points)
 - [Python Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors)
 - [Python Lines](/guides/rhinopython/python-rhinoscriptsyntax-lines)

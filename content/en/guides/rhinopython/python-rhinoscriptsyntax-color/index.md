@@ -70,7 +70,7 @@ For more colors see an [Online RGB Color table](http://www.rapidtables.com/web/c
 
 ## Related Topics
 
-- [What is Python and RhinoScript?](/guides/rhinopython/what-are-python-rhinoscript)
+- [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
 - [Python Points](/guides/rhinopython/python-rhinoscriptsyntax-points)
 - [Python Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors)
 - [Python Lines](/guides/rhinopython/python-rhinoscriptsyntax-lines)

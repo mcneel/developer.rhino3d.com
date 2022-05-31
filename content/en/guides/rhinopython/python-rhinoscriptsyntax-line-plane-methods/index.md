@@ -76,7 +76,7 @@ For more information in [RhinoScript Fundamentals](/guides/rhinopython/python-rh
 
 ## Related Topics
 
-- [What is RhinoScriptSyntax and RhinoScript?](/guides/rhinopython/what-are-python-rhinoscript)
+- [What is RhinoScriptSyntax and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
 - [Python List of Points](/guides/rhinopython/python-rhinoscriptsyntax-list-points)
 - [Python Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors)
 - [Python Lines](/guides/rhinopython/python-rhinoscriptsyntax-lines)

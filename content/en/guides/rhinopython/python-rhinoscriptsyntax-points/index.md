@@ -123,7 +123,7 @@ It is important to understand the difference between a Point3d and a point objec
 
 ## Related Topics
 
-- [What is RhinoScriptSyntax and RhinoScript?](/guides/rhinopython/what-are-python-rhinoscript)
+- [What is RhinoScriptSyntax and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
 - [Python List of Points](/guides/rhinopython/python-rhinoscriptsyntax-list-points)
 - [Python Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors)
 - [Python Lines](/guides/rhinopython/python-rhinoscriptsyntax-lines)

@@ -116,7 +116,7 @@ Now you can test that using the toggle.
 
 ## Related Topics
 
-- [What is Python and RhinoScript?](/guides/rhinopython/what-are-python-rhinoscript)
+- [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
 - [Loading Scripts](/guides/rhinopython/python-loading-scripts)
 - [Running Scripts](/guides/rhinopython/python-running-scripts)
 - [Canceling Scripts](/guides/rhinopython/python-canceling-scripts)

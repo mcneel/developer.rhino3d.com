@@ -96,7 +96,7 @@ The menu provides access to all the RhinoPythonScript Editor features.
 
 ## Related Topics
 
-- [What is Python and RhinoScript?](/guides/rhinopython/what-are-python-rhinoscript)
+- [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
 - [Your First Python Script in Rhino (Windows)](/guides/rhinopython/your-first-python-script-in-rhino-windows)
 - [Running Scripts](/guides/rhinopython/python-running-scripts)
 - [Canceling Scripts](/guides/rhinopython/python-canceling-scripts)
