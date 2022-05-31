@@ -74,8 +74,11 @@ Hops optionally lets you point to a Rhino.Compute server running on another comp
 
 ## Getting Started
 
-To create a function that can be referenced by Hops, we need to break our definition into three distinct sections; one to define our input parameters, another to specify the outputs, and finally a section which performs the *actions* of the function. 
+To create a function that can be referenced by Hops, we need to break our definition into three distinct sections; one to define our input parameters, another to specify the outputs, and finally a section which performs the *actions* of the function. To get started with Hops, you can either follow along in the video or walk through the steps listed below.
 
+{{< vimeo 713836707 >}}
+
+<br><br>
 In this example we want to create a simple function that will take in a user's name as an input (i.e., David) and return a message such as *"Hello David!"*.
 
 ### Install Hops
