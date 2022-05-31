@@ -41,9 +41,8 @@
 </div>
 
 {{- partial "jquery" . }}
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
-<script type="text/javascript" src='{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}'>
-</script>
+<script type="text/javascript" src="{{ (resources.Get "/script/vue-2.6.10.min.js" | resources.Fingerprint).Permalink }}"></script>
+<script type="text/javascript" src="{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}"></script>
 
 <script>
 
