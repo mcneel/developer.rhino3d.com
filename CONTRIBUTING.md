@@ -2,16 +2,9 @@
 
 Pull requests are welcome! :tada:
 
-:warning: _**THIS SITE IS TRANSITIONING FROM JEKYLL TO HUGO.**  Updated instructions coming soon_ :warning:
+Please read the [Style Guide](./content/en/guides/general/developer-docs-style-guide/index.md) and ["How This Site Works"](./content/en/guides/general//how-this-site-works/index.md).
 
-Please read the [Style Guide](./_guide_topics/general/developer-docs-style-guide.md)
-and ["How This Site Works"](./_guide_topics/general/how-this-site-works.md).
-
-For larger changes, please let us know your intentions via
-[Discourse](https://discourse.mcneel.com/c/rhino-developer)
-so we can coordinate efforts. You might also want to read the
-[Getting Started](./README.md#getting-started) guide so you can test your changes
-locally before submitting a pull request.
+For larger changes, please let us know your intentions via [Discourse](https://discourse.mcneel.com/c/rhino-developer) so we can coordinate efforts. You might also want to read the [Getting Started](./README.md#getting-started) instructions so you can test your changes locally before submitting a pull request.
 
 <a id="developers-certificate-of-origin"></a>
 ## Developer's Certificate of Origin 1.1

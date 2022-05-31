@@ -3,7 +3,7 @@ authors = [ "dan" ]
 categories = [ "This Site" ]
 description = "A guide to how this very developer document site works."
 keywords = [ "authoring", "writing", "editing", "overview" ]
-languages = [ "Markdown", "Kramdown", "YAML" ]
+languages = [ "Markdown", "Goldmark", "TOML" ]
 sdk = [ "General" ]
 title = "How This Site Works"
 type = "guides"
@@ -26,71 +26,39 @@ toc_type = "single"
 
 +++
 
-
-{{< call-out "warning" "Transition underway" >}}
-This site is undergoing a transition from Jekyll to Hugo. This page is out-of-date while this warning is in place.
-{{< /call-out >}}
-
-[This site](http://developer.rhino3d.com) is hosted on [GitHub Pages](https://pages.github.com/).  Every time a commit is made to [this git repository](https://github.com/mcneel/developer-rhino3d-com), a static site-generator called [Jekyll](http://jekyllrb.com/) churns through all the markdown content to generate html for the site.  Behind the scenes, Jekyll uses a templating language called [Liquid](https://shopify.github.io/liquid/), which allows for automatic generation of some content based upon yaml fields or page contents.
-
+Every time a commit is pushed to [this git repository](https://github.com/mcneel/developer.rhino3d.com)'s `main` branch, a static site-generator called [Hugo](https://gohugo.io/) churns through all the markdown content to generate html for the site.
 
 ## Workflow
 
 The best way to understand how this site works is to make a change to it.  Follow these steps:
 
-1. If you have not already, read the [Getting Started with Dev Docs](https://github.com/mcneel/developer-rhino3d-com/blob/main/README.md) guide.  This guide will get you setup building the entire site locally on your computer so you can preview changes before making them live (by committing).
-1. With the site up and running on your localhost, make a change to one of the pages (find a typo...there are many).  A good editor for Markdown is the [Atom editor](https://atom.io/).  Once you save your changes to the .md file, wait a moment, then refresh the localhost site in your browser to preview your change.
+1. If you have not already, read the [README's Getting Started](https://github.com/mcneel/developer.rhino3d.com/blob/main/README.md#getting-started) section. This will get you setup building the entire site locally on your computer so you can preview changes before making them live (by committing and pushing).
+1. With the site up and running on your localhost, make a change to one of the pages (find a typo...there are many). A good editor for Markdown is the [Visual Studio Code](https://code.visualstudio.com/). Once you save your changes to the .md file, Hugo will automatically refresh the page with your changes.
 1. If you are satisfied with your change, use git to commit your change to the GitHub repository (or submit a pull-request for review).
-1. Wait a couple minutes - this site is large and it may take a minute or two for Jekyll to process all the markdown and render the html contents.  (If you issued a pull-request, your change won't be live until a git administrator accepts it).
+1. Wait a minute or two (If you issued a pull-request, your change won't be live until a git administrator accepts it).
 1. On the live [developer.rhino3d.com](http://developer.rhino3d.com), you should see your change.
 
-### Versions
+## Frontmatter
 
-This site is version aware.  What does this mean?  First, open these two links in two separate tabs:
-
-[http://developer.rhino3d.com/guides/general/how-this-site-works/](http://developer.rhino3d.com/guides/general/how-this-site-works/)
-
-and
-
-[http://developer.rhino3d.com/wip/guides/general/how-this-site-works/](http://developer.rhino3d.com/wip/guides/general/how-this-site-works/)
-
-Notice the banner along the top of the "WIP" version of the site.  This tells the reader that they are on the version of the site that corresponds to information found in the Rhino Work-In-Progress (WIP) version of the software.  The "undecorated" ([http://developer.rhino3d.com](http://developer.rhino3d.com)) version of the site represents the current, stable, shipping version of Rhino.  (Legacy versions of documentation for legacy Rhino will be versioned accordingly.)
-
-How does this work for the author, developer, or contributor?  The current (_stable_) version Rhino is defined in the `stable:` field in the `_config.yml` file.  The `n` branch that corresponds to the stable release is built and deployed to [http://developer.rhino3d.com](http://developer.rhino3d.com).  
-
-The `master` branch represents the WIP version of the site.  Changes to the `master` branch will be built by Travis and deployed to [http://developer.rhino3d.com/wip](http://developer.rhino3d.com/wip).  
-
-Branches are defined in `_config.yml` (under `version_branches`) and will be built and deployed into a subpath with the same name; for example: the `5` branch is built and deployed to [http://developer.rhino3d.com/5](http://developer.rhino3d.com/5).
-
-So, if you want to author a guide that applies to the current (_stable_) version of Rhino, you should work on the branch marked `stable` branch in the `_config.yml` file.  If you would like to author a guide that applies to the RhinoWIP, then you should work in the `master` branch.
-
-#### Change multiple versions
-
-What if you want to write a guide that applies to both the current stable version of Rhino *and* the RhinoWIP?  
-
-The easiest way is to work in the `master` branch and then you can [cherry-pick](https://git-scm.com/docs/git-cherry-pick) your commit from the `master` branch into the stable `n` branch as well.
-
-#### Typos
-
-What if you want to just correct a typo in both the `master` and the stable `n` versions of the site?  
-
-In this case, the fastest and easiest way is to simply correct the typo in both branches on the GitHub site itself.  For example, if you wanted to correct a typo on [this very guide](https://github.com/mcneel/developer-rhino3d-com/blob/main/content/en/guides/general/how-this-site-works/index.md), just click the "Edit this file" - the little pencil icon in the upper right-hand corner.  Make your correction, then switch to the `wip` branch and do the same thing.  For small fixes, this works just as well as a [cherry-picked](https://git-scm.com/docs/git-cherry-pick) commit.
+{{< call-out "warning" "Transition underway" >}}
+This site is undergoing a transition from Jekyll to Hugo. This page is out-of-date while this warning is in place.
+{{< /call-out >}}
 
 ## Markdown & Kramdown
 
 Use the [Style Guide](/guides/general/developer-docs-style-guide/) guide as a reference when writing content for this site.
 
-Nearly all content on this site uses [Markdown](http://daringfireball.net/projects/markdown/basics) as the base format.  We are using the [Kramdown](http://kramdown.gettalong.org/quickref.html) markdown parser, which is the default parser with Jekyll.  A complete guide to Markdown and Kramdown is beyond the scope of this guide.  For markdown syntax, refer to the [Kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html) or use other files on this site as examples.
+Nearly all content on this site uses [Markdown](http://daringfireball.net/projects/markdown/basics) as the base format. We are using the [Goldmark](https://github.com/yuin/goldmark) markdown parser, which is the default parser with Hugo. A complete guide to Markdown is beyond the scope of this guide. For markdown syntax, refer to the [Hugo Markdown Guide](https://www.markdownguide.org/tools/hugo) or use other files on this site as examples.
 
 ## Layout
 
-Each page on this site is generated by Liquid using a layout.  These layouts are found in the `/_layouts/` folder.
+Each page on this site is generated by Hugo's templating engine using a layout. These layouts are found in the `/_layouts/` folder.
 
-You determine which layout should be used by typing the layout's title in the `layout: ` yaml field at the top of the markdown file.
+You determine which layout should be used by typing the layout's title in the `layout: ` toml field at the top of the markdown file.
 
 For example, this page uses the `toc-guide-page.html` layout, so you will find...
 
-```yaml
+```toml
 layout: toc-guide-page
 ```
 
@@ -107,7 +75,7 @@ There are 4 types of content on this site:
  1. [APIs](#apis)
  1. [Samples](#samples)
 
-All types of content - with the exception of APIs - begin with YAML, which the site uses to categories and sort the content into appropriate areas.
+All types of content - with the exception of APIs - begin with toml, which the site uses to categories and sort the content into appropriate areas.
 
 
 ### Pages

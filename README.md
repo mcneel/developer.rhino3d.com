@@ -2,25 +2,33 @@
 
 This repo contains the contents of https://developer.rhino3d.com.
 
-Pull requests are welcome! :tada: Please read our guide on [Contributing](https://github.com/mcneel/developer-rhino3d-com/blob/6/CONTRIBUTING.md). If you want to build the site yourself, to test your changes before opening a pull request, then please check out the [Getting Started](#getting-started) guide below.
+Pull requests are welcome! :tada: Please read our guide on [Contributing](https://github.com/mcneel/developer.rhino3d.com/blob/main/CONTRIBUTING.md).
 
-## Getting started
+If you want to build the site yourself, to test your changes before opening a pull request, then please check out the [Getting Started](#getting-started) section below.
 
-These instructions cover running this project locally on both macOS and Windows so that you can preview changes.
+## Getting Started
 
-First, navigate somewhere safe and clone the repository.
+These instructions cover running this project locally on both Windows and macOS so that you can preview changes:
 
-```bash
-git clone https://github.com/mcneel/developer.rhino3d.com.git
-```
+1. Clone\* this repository:
 
-If you are not comfortable using git on the command-line, then check out the [git cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) or try [GitHub Desktop](https://desktop.github.com).
+    ```sh
+    git clone https://github.com/mcneel/developer.rhino3d.com.git
+    ```
 
-:warning: _**THIS SITE IS TRANSITIONING FROM JEKYLL TO HUGO.**  Updated instructions coming soon_ :warning:
+2. In [Visual Studio Code](https://code.visualstudio.com/), open the root folder of the repository, and then open the *content/en/guides/general/how-this-site-works/index.md* file.
+
+3. In *Visual Studio Code's* left-hand sidebar, navigate to *Run and Debug* > *Hugo: Serve English* ...
+
+    ![VSCode hugo serve english](static/images/vscode-hugo-serve-english.png)
+
+Your web browser should open with the *How This Site Works* guide open ready for editing.
 
 ## What next?
 
-Once you have cloned or forked this repository and are able to build it locally, please read the following guides:
+Once you have cloned or forked this repository and are able to build it locally, please check out the following guides:
 
-- [How This Site Works](http://developer.rhino3d.com/guides/general/how-this-site-works/)
-- [Developer Docs Style Guide](http://developer.rhino3d.com/guides/general/developer-docs-style-guide/)
+* [How This Site Works](https://developer.rhino3d.com/guides/general/how-this-site-works/)
+* [Developer Docs Style Guide](https://developer.rhino3d.com/guides/general/developer-docs-style-guide/)
+
+\* If you are not comfortable using git on the command-line, then check out the [git cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) or try [GitHub Desktop](https://desktop.github.com).
