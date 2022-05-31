@@ -470,7 +470,7 @@ namespace Launch
         }
         else
         {
-          Console.WriteLine("vvvvvvvvvvvvvvvvvvv ERROR vvvvvvvvvvvvvvvvvvvv\nERROR: hugo needs more files\nTo fix this:\n1. Run the SetMaxFilesLimits tasks (Command+Shift+B) - be sure to enter your password in the terminal window.\n2. Restart your computer\n^^^^^^^^^^^^^^^^^^^ ERROR ^^^^^^^^^^^^^^^^^^^^");
+          Console.WriteLine("vvvvvvvvvvvvvvvvvvv ERROR vvvvvvvvvvvvvvvvvvvv\nERROR: McNeel Developer - Hugo needs more files\nTo fix this:\n1. Run the SetMaxFilesLimits tasks (Command+Shift+P, then Enter) - be sure to enter your password in the terminal window.\n2. Restart your computer\n^^^^^^^^^^^^^^^^^^^ ERROR ^^^^^^^^^^^^^^^^^^^^");
         }
       } else
       {
