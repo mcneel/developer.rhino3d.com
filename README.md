@@ -22,7 +22,7 @@ These instructions cover running this project locally on both Windows and macOS 
 
     ![VSCode hugo serve english](static/images/vscode-hugo-serve-english.png)
 
-Your web browser should open with the *How This Site Works* guide open ready for editing.
+Your web browser should open to the *How This Site Works* guide, ready for editing. Changes made to the *index.md* file in Visual Studio Code should appear in your browser immediately.
 
 ## What next?
 
