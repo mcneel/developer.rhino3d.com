@@ -24,11 +24,11 @@ These instructions cover running this project locally on both Windows and macOS 
 
 Your web browser should open to the *How This Site Works* guide, ready for editing. Changes made to the *index.md* file in Visual Studio Code should appear in your browser immediately.
 
+\* If you are not comfortable using git on the command-line, then check out the [git cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) or try [GitHub Desktop](https://desktop.github.com).
+
 ## What next?
 
 Once you have cloned or forked this repository and are able to build it locally, please check out the following guides:
 
 * [How This Site Works](https://developer.rhino3d.com/guides/general/how-this-site-works/)
 * [Developer Docs Style Guide](https://developer.rhino3d.com/guides/general/developer-docs-style-guide/)
-
-\* If you are not comfortable using git on the command-line, then check out the [git cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) or try [GitHub Desktop](https://desktop.github.com).
