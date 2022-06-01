@@ -36,3 +36,8 @@ Once you have cloned or forked this repository and are able to build it locally,
 
 * [How This Site Works](https://developer.rhino3d.com/guides/general/how-this-site-works/)
 * [Developer Docs Style Guide](https://developer.rhino3d.com/guides/general/developer-docs-style-guide/)
+
+## Notes
+
+* Commits to the `main` branch are published by our internal build server.
+* The computer-generated API documentation for RhinoCommon, Grasshopper, Rhino C++ SDK and RhinoScript are not part of this repository. These docs are hosted separately and we use CloudFront to route requests to the right place.
