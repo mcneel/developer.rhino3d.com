@@ -18,7 +18,7 @@ These instructions cover running this project locally on both Windows and macOS 
 
 2. Download, install, and launch [Visual Studio Code](https://code.visualstudio.com/) and open the root folder of the repository.
 
-3. **(macOS only)** In In *Visual Studio Code*, press `Command`+`Shift`+`P`, followed by `enter` to bring up the *Command Palette*, then type `Tasks` and select `Tasks: Run Task`, followed by `hugo SetMaxFilesLimits (run once only)` and press `enter`. *Restart your computer*. (This step only has to be run once if you have never used hugo before on this computer.)
+3. **(macOS only)** In *Visual Studio Code*, press `Command`+`Shift`+`P`, followed by `enter` to bring up the *Command Palette*, then type `Tasks` and select `Tasks: Run Task`, followed by `hugo SetMaxFilesLimits (run once only)` and press `enter`. *Restart your computer*. (This step only has to be run once if you have never used hugo before on this computer.)
 
 4. In *Visual Studio Code*'s left-hand sidebar, navigate to the (file) *Explorer* section, open the *content/en/guides/general/how-this-site-works/index.md* file.
 
