@@ -470,7 +470,7 @@ namespace Launch
         }
         else
         {
-          Console.WriteLine("vvvvvvvvvvvvvvvvvvv ERROR vvvvvvvvvvvvvvvvvvvv\nERROR: McNeel Developer - Hugo needs more files\nTo fix this:\n1. Run the hugo SetMaxFilesLimits tasks (Command+Shift+P, then Enter) - be sure to enter your password in the terminal window.\n2. Restart your computer\n^^^^^^^^^^^^^^^^^^^ ERROR ^^^^^^^^^^^^^^^^^^^^");
+          Console.WriteLine("vvvvvvvvvvvvvvvvvvv ERROR vvvvvvvvvvvvvvvvvvvv\nERROR: McNeel Developer - Hugo needs more files\nTo fix this:\n1. In VSCode, press Command+Shift+P, then Enter.\n2. Type Tasks and select Task: Run Task.\n3. From the list, select and run the hugo SetMaxFilesLimits (run once only) task - be sure to enter your password in the terminal window.\n4. Restart your computer.\n^^^^^^^^^^^^^^^^^^^ ERROR ^^^^^^^^^^^^^^^^^^^^");
         }
       } else
       {
