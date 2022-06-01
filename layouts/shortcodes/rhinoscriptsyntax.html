@@ -1,6 +1,6 @@
 {{ range .Site.Data.rhinoscriptsyntax }}
   {{ $module := . }}
-  <h2>{{ $module.ModuleName }}</h2>
+  <h2 id="{{$module.ModuleName}}">{{ $module.ModuleName }}</h2>
 
   {{ range $module.functions }}
     <h3 id="{{$module.ModuleName}}-{{.Name}}">{{ .Name }}</h3>
