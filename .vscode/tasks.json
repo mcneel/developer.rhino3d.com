@@ -71,7 +71,7 @@
             "problemMatcher": []
         },
         {
-            "label": "SetMaxFilesLimits",
+            "label": "hugo SetMaxFilesLimits",
             "type": "shell",
             "command": "sudo",
             "args": [
