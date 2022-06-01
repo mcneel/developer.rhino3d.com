@@ -1,5 +1,6 @@
 {{- $inner := .Inner | .Page.RenderString -}}
 {{ $maillist := "" }}
+{{ $loginLabel := "Login" }}
 {{ $id := 0 }}
 {{ $label := "Subscribe to Maillist" }}
 {{ $class := "" }}
@@ -8,6 +9,7 @@
     {{ if .Get "maillist"}}{{ $maillist =  .Get "maillist" }}{{ end }}
     {{ if .Get "id"}}{{ $id =  .Get "id" }}{{ end }}
     {{ if .Get "label"}}{{ $label =  .Get "label" }}{{ end }}
+    {{ if .Get "loginLabel"}}{{ $loginLabel =  .Get "loginLabel" }}{{ end }}
     {{ if .Get "class"}}{{ $class =  .Get "class" }}{{ end }}
     {{ if .Get "container"}}{{ $container =  .Get "container" }}{{ end }}
 {{ end }}
@@ -31,8 +33,13 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="email-field">
+        <div class="modal-body">
           {{- $inner -}}
+        </div>
+        <div class="modal-footer" >
+          <button type="button" class="btn btn-primary {{$class}}" @click="login">
+            {{$loginLabel}}
+        </button>
         </div>
       </div>
     </div>
@@ -41,8 +48,9 @@
 </div>
 
 {{- partial "jquery" . }}
-<script type="text/javascript" src="{{ (resources.Get "/script/vue-2.6.10.min.js" | resources.Fingerprint).Permalink }}"></script>
-<script type="text/javascript" src="{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+<script type="text/javascript" src='{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}'>
+</script>
 
 <script>
 
@@ -90,6 +98,18 @@
               if (this.current_subscriptions["{{$maillist}}"].includes(parseInt("{{$id}}"))){
                 this.subscribed = true
               }
+              else{
+                //Auto subscribe if query string is present
+                const params = new Proxy(new URLSearchParams(window.location.search), {
+                  get: (searchParams, prop) => searchParams.get(prop),
+                });
+                // Get the value of "subscribe" in query params
+                let autoSubscribe = params.subscribe; 
+                console.log("Auto subscribe:", autoSubscribe)
+                if (autoSubscribe>0){
+                  this.handleSubscribe();
+                }
+              }
           }).catch(e =>
           {
               this.error = "Failed loading subscriptions."
@@ -128,6 +148,13 @@
             $('#ModalCenter').modal()
           }
       },
+      login(){
+        let redirect = "https://www.rhino3d.com"+"{{ .Page.RelPermalink }}"+"?subscribe=1"
+        //console.log("redirect link:", redirect);
+        let loginLink = "https://www.rhino3d.com/user/login?redirect_uri="+encodeURIComponent(redirect)
+        //console.log("login link:", loginLink);
+        window.open(loginLink,"_self");
+      }
       }
   });
 
