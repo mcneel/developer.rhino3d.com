@@ -165,7 +165,7 @@
             },
             created(){
                 $.ajax({
-                    url:"/licenses/session_variables.json"
+                    url:"https://www.rhino3d.com/licenses/session_variables.json"
                 }).then(licenseData => {
                     this.token = JSON.parse(licenseData)["oauth2Token"]
                     const headers = {"Authorization": `Bearer ${this.token}`}

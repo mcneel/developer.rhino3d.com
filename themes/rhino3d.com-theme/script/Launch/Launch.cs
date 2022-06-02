@@ -126,9 +126,9 @@ namespace Launch
       if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
       {
         if (System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture == Architecture.Arm64) {
-          archive = string.Format("hugo_extended_{0}_macOS-64bit.tar.gz", requiredVersion);
-        } else {
           archive = string.Format("hugo_extended_{0}_macOS-ARM64.tar.gz", requiredVersion);
+        } else {
+          archive = string.Format("hugo_extended_{0}_macOS-64bit.tar.gz", requiredVersion);
         }
         filename = "hugo.tar.gz";
       } else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
