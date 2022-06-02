@@ -1,16 +1,16 @@
 <div id="navbar">
   <div id="wrap">
-    <!-- Google CSE Search Box Begins  -->
+    <!-- Search widget -->
     <div id="sitesearch">
-      <!-- Use of this code assumes agreement with the Google Custom Search Terms of Service. -->
-      <!-- The terms of service are available at https://www.google.com/cse/docs/tos.html -->
-      <form id="cref" action="{{.Site.Params.rhinoURL }}/searchresults/">
+      <!-- Bing Custom Search aka: Cognitive Services -->
+      <!-- Custom searches are created and managed here: https://www.customsearch.ai/applications -->
+      <!-- See 1Password: Azure Subscription Key credential for subscription key -->
+      <form id="cref" action="/searchresults/">
         <input type="hidden" name="cref" value="007988927381198593803:mcq6pshqsn8" />
         <label for="search"><input id="searchtext" type="text" name="q" size="24" value="" placeholder="{{ i18n "search-navbar" }}" /></label>  
         <input class="searchBox" type="submit" name="sa" size="2" value=" " />
       </form>
     </div>
-    <!-- Google CSE Search Box Ends -->
 
     <!-- The site Logo, site title and subtitle at the upper-left -->
     <div id="logo-container">
