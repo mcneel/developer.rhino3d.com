@@ -20,9 +20,9 @@ from shutil import copyfile
 import json
 
 # general globals
-debugging = True #TODO: Change this to True for the final run
+debugging = False #TODO: Change this to False for the final run
 baseURL = "https://developer.rhino3d.com"
-old_root = os.path.abspath(os.path.join(expanduser("~"), "dev", "mcneel", "developer-rhino3d-com"))
+old_root = os.path.abspath(os.path.join(expanduser("~"), "dev", "mcneel", "developer.rhino3d.com-archive"))
 old_content_authors_root_path = os.path.abspath(os.path.join(old_root, "_authors"))
 old_content_guides_root_path = os.path.abspath(os.path.join(old_root, "_guide_topics"))
 old_content_samples_root_path = os.path.abspath(os.path.join(old_root, "_samples"))
@@ -1290,16 +1290,16 @@ def audit_frontmatter():
 
 
 def main():
-    #handle_homepage()
-    #handle_authors()
-    #handle_guides()
-    #handle_samples()
-    #handle_api()
-    #handle_images()
-    #handle_files_folder()
-    #handle_videos()
-    #audit_frontmatter()
-    handle_rhinoscript_syntax_api()
+    handle_homepage()
+    handle_authors()
+    handle_guides()
+    handle_samples()
+    handle_api()
+    handle_images()
+    handle_files_folder()
+    handle_videos()
+    audit_frontmatter()
+    #handle_rhinoscript_syntax_api()
 
 if __name__ == "__main__":
     main()
