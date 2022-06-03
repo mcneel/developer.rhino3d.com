@@ -7,6 +7,7 @@ sdk = [ "Yak" ]
 title = "Installing and Managing Packages"
 type = "guides"
 weight = 30
+override_last_modified = "2020-11-12T12:17:36Z"
 
 [admin]
 TODO = ""

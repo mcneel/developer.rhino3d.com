@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "Migrate your Options, Document Properties and Object Properties Pages"
 type = "guides"
 weight = 8
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = ""

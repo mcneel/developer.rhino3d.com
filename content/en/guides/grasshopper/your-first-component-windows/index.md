@@ -8,6 +8,7 @@ sdk = [ "Grasshopper" ]
 title = "Your First Component (Windows)"
 type = "guides"
 weight = 2
+override_last_modified = "2022-05-09T09:40:08Z"
 
 [admin]
 TODO = ""

@@ -8,6 +8,7 @@ sdk = [ "RhinoCommon" ]
 title = "Cloud Zoo Product Object"
 type = "guides"
 weight = 1
+override_last_modified = "2019-06-25T11:12:09Z"
 
 [admin]
 TODO = ""

@@ -7,6 +7,7 @@ sdk = [ "Compute" ]
 title = "How to create a virtual machine (VM) on Amazon Web Service"
 type = "guides"
 weight = 3
+override_last_modified = "2021-12-14T13:16:19Z"
 
 [admin]
 picky_sisters = ""

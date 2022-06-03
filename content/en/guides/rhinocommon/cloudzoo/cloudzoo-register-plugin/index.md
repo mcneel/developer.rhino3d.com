@@ -8,6 +8,7 @@ sdk = [ "RhinoCommon" ]
 title = "Register as an Issuer in Cloud Zoo"
 type = "guides"
 weight = 2
+override_last_modified = "2021-05-13T09:15:01Z"
 
 [admin]
 TODO = ""

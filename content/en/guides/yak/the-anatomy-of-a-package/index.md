@@ -7,6 +7,7 @@ sdk = [ "Yak" ]
 title = "The Anatomy of a Package"
 type = "guides"
 weight = 1
+override_last_modified = "2021-01-04T18:06:13Z"
 
 [admin]
 TODO = ""

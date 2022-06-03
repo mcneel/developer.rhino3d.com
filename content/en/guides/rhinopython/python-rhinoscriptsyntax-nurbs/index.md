@@ -8,6 +8,7 @@ sdk = [ "RhinoPython" ]
 title = "Rhino NURBS Geometry Overview"
 type = "guides"
 weight = 99
+override_last_modified = "2020-11-11T22:06:09Z"
 
 [admin]
 picky_sisters = ""

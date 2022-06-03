@@ -8,6 +8,7 @@ sdk = [ "RhinoScript" ]
 title = "What are VBScript and RhinoScript?"
 type = "guides"
 weight = 1
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = "needs a bit more information to guide users through how to learn VBS."

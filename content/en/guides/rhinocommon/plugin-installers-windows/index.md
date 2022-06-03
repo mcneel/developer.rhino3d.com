@@ -8,6 +8,7 @@ sdk = [ "RhinoCommon", "C/C++" ]
 title = "Plugin Installers (Windows)"
 type = "guides"
 weight = 6
+override_last_modified = "2021-07-27T17:22:14Z"
 
 [admin]
 TODO = "Also port from http://wiki.mcneel.com/developer/rhinoinstallerengine/cpp"

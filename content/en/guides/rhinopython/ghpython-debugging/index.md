@@ -8,6 +8,7 @@ sdk = [ "RhinoPython" ]
 title = "Debugging GhPython components Visual Studio"
 type = "guides"
 weight = 3
+override_last_modified = "2019-09-10T09:29:18Z"
 
 [admin]
 picky_sisters = ""

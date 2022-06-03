@@ -7,6 +7,7 @@ sdk = [ "Compute" ]
 title = "How Hops Works"
 type = "guides"
 weight = 2
+override_last_modified = "2022-02-18T10:08:37Z"
 
 [admin]
 picky_sisters = ""

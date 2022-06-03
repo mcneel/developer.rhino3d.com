@@ -8,6 +8,7 @@ sdk = [ "RhinoPython" ]
 title = "Eto Controls in Python"
 type = "guides"
 weight = 19
+override_last_modified = "2019-08-12T08:10:53Z"
 
 [admin]
 picky_sisters = ""

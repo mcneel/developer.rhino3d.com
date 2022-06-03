@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "Determining if a Brep is a Box"
 type = "guides"
 weight = 1
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = ""

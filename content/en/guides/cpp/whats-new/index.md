@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "What's New?"
 type = "guides"
 weight = 2
+override_last_modified = "2020-08-31T17:29:09Z"
 
 [admin]
 TODO = "needs review and the original contained links to empty wiki entries."

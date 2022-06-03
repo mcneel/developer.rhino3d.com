@@ -8,6 +8,7 @@ sdk = [ "RhinoPython" ]
 title = "6 Tuples, Lists and Dictionaries"
 type = "guides"
 weight = 15
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 picky_sisters = ""

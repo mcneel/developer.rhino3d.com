@@ -8,6 +8,7 @@ sdk = [ "RhinoPython" ]
 title = "Points in Python"
 type = "guides"
 weight = 2
+override_last_modified = "2020-05-06T16:44:17Z"
 
 [admin]
 picky_sisters = ""

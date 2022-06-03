@@ -8,6 +8,7 @@ sdk = [ "Compute" ]
 title = "Running and Debugging Compute Locally"
 type = "guides"
 weight = 2
+override_last_modified = "2020-11-26T15:49:48Z"
 
 [admin]
 TODO = "needs editing"

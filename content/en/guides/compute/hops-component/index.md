@@ -8,6 +8,7 @@ sdk = [ "Compute" ]
 title = "The Hops Component"
 type = "guides"
 weight = 3
+override_last_modified = "2022-02-18T11:35:10Z"
 
 [admin]
 picky_sisters = ""

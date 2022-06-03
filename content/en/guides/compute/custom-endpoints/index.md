@@ -8,6 +8,7 @@ sdk = [ "Compute" ]
 title = "Extending Compute with Custom Endpoints"
 type = "guides"
 weight = 10
+override_last_modified = "2021-02-03T14:08:07Z"
 
 [admin]
 picky_sisters = ""

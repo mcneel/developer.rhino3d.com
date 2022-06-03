@@ -8,6 +8,7 @@ sdk = [ "RhinoPython" ]
 title = "8 Geometry"
 type = "guides"
 weight = 15
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 picky_sisters = ""

@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "Modifying Advanced Display Settings"
 type = "guides"
 weight = 1
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = ""

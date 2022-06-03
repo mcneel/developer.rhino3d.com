@@ -8,6 +8,7 @@ sdk = [ "C/C++", "RhinoScript" ]
 title = "Scripting Methods for RDK (Windows)"
 type = "guides"
 weight = 2
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = "needs cleanup and formatting work and to be added to rhinoscript guides"

@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "Crash Dump Analysis"
 type = "guides"
 weight = 1
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = "needs screen-capture update and overall review."

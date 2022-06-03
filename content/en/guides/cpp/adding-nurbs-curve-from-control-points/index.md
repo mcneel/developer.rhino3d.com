@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "Adding a NURBS Curve from Control Points"
 type = "guides"
 weight = 1
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = "needs more explanation in order to be a guide"
