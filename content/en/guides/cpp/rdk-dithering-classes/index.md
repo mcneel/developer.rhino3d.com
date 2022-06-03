@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "RDK Dithering"
 type = "guides"
 weight = 1
+override_last_modified = "2019-01-16T16:52:27Z"
 
 [admin]
 TODO = ""

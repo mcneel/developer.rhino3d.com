@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "Creating your first C/C++ plugin for Rhino"
 type = "guides"
 weight = 2
+override_last_modified = "2020-08-28T11:21:05Z"
 
 [admin]
 TODO = "needs new screenshots, review, and cleanup.  Consider breaking out Adding Commands."

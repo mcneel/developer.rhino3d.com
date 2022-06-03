@@ -8,6 +8,7 @@ sdk = [ "openNURBS" ]
 title = "What's New and Update Guide"
 type = "guides"
 weight = 2
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = ""

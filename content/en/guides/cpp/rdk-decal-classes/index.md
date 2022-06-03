@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "RDK Decals"
 type = "guides"
 weight = 1
+override_last_modified = "2019-01-16T17:20:12Z"
 
 [admin]
 TODO = ""

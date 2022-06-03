@@ -9,6 +9,7 @@ sdk = [ "General" ]
 title = "1 Vector Mathematics"
 type = "guides"
 weight = 1
+override_last_modified = "2021-06-03T20:37:31Z"
 
 [admin]
 picky_sisters = ""

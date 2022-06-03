@@ -9,6 +9,7 @@ sdk = [ "General" ]
 title = "3 Parametric Curves and Surfaces"
 type = "guides"
 weight = 1
+override_last_modified = "2019-08-14T13:31:55Z"
 
 [admin]
 picky_sisters = ""

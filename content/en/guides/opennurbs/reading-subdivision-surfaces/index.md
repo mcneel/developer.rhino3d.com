@@ -8,6 +8,7 @@ sdk = [ "openNURBS" ]
 title = "Reading Subdivision Surfaces"
 type = "guides"
 weight = 1
+override_last_modified = "2021-06-24T10:16:19Z"
 
 [admin]
 picky_sisters = ""

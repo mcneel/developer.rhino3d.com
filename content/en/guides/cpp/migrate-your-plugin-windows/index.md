@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "Migrate your plugin project to Rhino 7"
 type = "guides"
 weight = 6
+override_last_modified = "2020-08-28T14:47:34Z"
 
 [admin]
 TODO = ""

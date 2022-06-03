@@ -8,6 +8,7 @@ sdk = [ "RhinoPython" ]
 title = "Python Operators"
 type = "guides"
 weight = 10
+override_last_modified = "2020-03-06T10:19:02Z"
 
 [admin]
 picky_sisters = ""

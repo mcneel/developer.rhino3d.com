@@ -8,6 +8,7 @@ sdk = [ "RhinoScript" ]
 title = "7 Geometry"
 type = "guides"
 weight = 18
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 picky_sisters = ""

@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "RDK Rendering"
 type = "guides"
 weight = 1
+override_last_modified = "2019-01-23T17:37:16Z"
 
 [admin]
 TODO = ""

@@ -8,6 +8,7 @@ sdk = [ "Grasshopper" ]
 title = "What is a Grasshopper Component?"
 type = "guides"
 weight = 1
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = "needs to be reviewed for accuracy.  Also, needs a little more high-level info"

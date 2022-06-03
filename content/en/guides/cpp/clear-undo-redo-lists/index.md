@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "Clear Undo and Redo Lists"
 type = "guides"
 weight = 1
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = ""

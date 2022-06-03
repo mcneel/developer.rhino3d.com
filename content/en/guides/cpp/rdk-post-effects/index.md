@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "RDK Post Effect Classes"
 type = "guides"
 weight = 1
+override_last_modified = "2020-08-11T17:33:46Z"
 
 [admin]
 TODO = ""

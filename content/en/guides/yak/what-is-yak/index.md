@@ -7,6 +7,7 @@ sdk = [ "Yak" ]
 title = "What is the Package Manager?"
 type = "guides"
 weight = 1
+override_last_modified = "2020-11-12T12:17:36Z"
 
 [admin]
 TODO = ""

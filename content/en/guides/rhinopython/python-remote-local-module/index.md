@@ -8,6 +8,7 @@ sdk = [ "RhinoPython" ]
 title = "Creating a script and module"
 type = "guides"
 weight = 24
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 picky_sisters = ""

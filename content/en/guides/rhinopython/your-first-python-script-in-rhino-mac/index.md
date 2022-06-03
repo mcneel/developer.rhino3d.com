@@ -8,6 +8,7 @@ sdk = [ "RhinoPython" ]
 title = "Your First Python Script in Rhino (Mac)"
 type = "guides"
 weight = 2
+override_last_modified = "2019-09-13T13:01:12Z"
 
 [admin]
 TODO = ""

@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "Installing Tools (Windows)"
 type = "guides"
 weight = 1
+override_last_modified = "2020-11-22T16:48:28Z"
 
 [admin]
 TODO = "needs to be written."

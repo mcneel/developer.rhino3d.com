@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "Defining New Plugin Commands"
 type = "guides"
 weight = 3
+override_last_modified = "2020-08-28T11:26:09Z"
 
 [admin]
 TODO = "needs to be reviewed for accuracy and considered for consolidation with other plugin topics"

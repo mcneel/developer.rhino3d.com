@@ -7,6 +7,7 @@ sdk = [ "Compute" ]
 title = "How to create a virtual machine (VM) on Azure"
 type = "guides"
 weight = 2
+override_last_modified = "2022-02-14T14:13:06Z"
 
 [admin]
 picky_sisters = ""

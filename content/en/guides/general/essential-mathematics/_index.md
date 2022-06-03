@@ -8,6 +8,7 @@ sdk = [ "General" ]
 title = "Essential Mathematics for Computational Design"
 type = "guides"
 weight = 1
+override_last_modified = "2022-05-12T15:41:51Z"
 
 [admin]
 TODO = "This needs to be shimmed for Mac Platform."

@@ -8,6 +8,7 @@ sdk = [ "RhinoScript" ]
 title = "6 Arrays"
 type = "guides"
 weight = 17
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 picky_sisters = ""

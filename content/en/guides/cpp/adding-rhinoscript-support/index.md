@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "Adding RhinoScript Support"
 type = "guides"
 weight = 1
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = "needs to be reviewed to check to see if steps are up to date.  New screencaptures as well."

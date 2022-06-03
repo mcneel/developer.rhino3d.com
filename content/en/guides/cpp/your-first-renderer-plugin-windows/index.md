@@ -8,6 +8,7 @@ sdk = [ "C/C++" ]
 title = "Your First Renderer Plugin (Windows)"
 type = "guides"
 weight = 2
+override_last_modified = "2018-12-05T13:57:39Z"
 
 [admin]
 TODO = "needs porting"

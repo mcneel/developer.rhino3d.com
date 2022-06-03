@@ -8,6 +8,7 @@ sdk = [ "RhinoScript" ]
 title = "2 RhinoScript Essentials"
 type = "guides"
 weight = 4
+override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 picky_sisters = ""
