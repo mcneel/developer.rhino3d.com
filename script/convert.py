@@ -17,6 +17,7 @@ import toml
 import os, tempfile
 import shutil
 from shutil import copyfile
+import json
 
 # general globals
 debugging = True #TODO: Change this to True for the final run
@@ -30,10 +31,11 @@ old_content_videos_page_path = os.path.abspath(os.path.join(old_root, "videos.md
 old_content_api_page_path = os.path.abspath(os.path.join(old_root, "api.md"))
 old_files_root_path = os.path.abspath(os.path.join(old_root, "files"))
 
-new_root = os.path.abspath(os.path.join(expanduser("~"), "dev", "mcneel", "developer-rhino3d-com-hugo"))
+new_root = os.path.abspath(os.path.join(expanduser("~"), "dev", "mcneel", "developer.rhino3d.com"))
 new_content_root_path = os.path.abspath(os.path.join(new_root, "content", "en"))
 new_content_guides_root_path = os.path.abspath(os.path.join(new_content_root_path, "guides"))
 new_content_samples_root_path = os.path.abspath(os.path.join(new_content_root_path, "samples"))
+new_content_data_path = os.path.abspath(os.path.join(new_root, "data"))
 new_images_root_path = os.path.abspath(os.path.join(new_root, "static", "images"))
 new_files_root_path = os.path.abspath(os.path.join(new_root, "static", "files"))
 
@@ -1192,6 +1194,78 @@ def handle_files_folder():
     print_ok_message("files ported to new site.")
 
 
+def handle_rhinoscript_syntax_api():
+    print("Processing rhinoscriptsyntax data...")
+
+    # open and read the rhinoscriptsyntax.json file
+    path_to_rhinoscriptsyntax_json = os.path.abspath(os.path.join(new_content_data_path, "rhinoscriptsyntax.json"))
+    rs_json_file = open(path_to_rhinoscriptsyntax_json)
+    modules = json.load(rs_json_file)
+
+    for module in modules:
+        new_content_api_root_path = os.path.abspath(os.path.join(new_content_root_path, "api"))
+        rhinoscriptsyntax_root_path = os.path.abspath(os.path.join(new_content_api_root_path, "RhinoScriptSyntax"))
+        
+        # make the module folder
+        new_module_folder_path = os.path.abspath(os.path.join(rhinoscriptsyntax_root_path, module["ModuleName"]))
+        if not os.path.exists(new_module_folder_path):
+            os.makedirs(new_module_folder_path)
+        
+        # add the module index.md file
+        module_index_path = os.path.abspath(os.path.join(new_module_folder_path, "index.md"))
+        f = open(module_index_path, "w")
+
+        # write the frontmatter
+        f.write('+++\n')
+        f.write('Title = \"' + module["ModuleName"] + '\"\n')
+        f.write('type = \"guides\"\n')
+        #f.write('list_group = \"' + module["ModuleName"] + ' module \"\n\n')
+        f.write('[page_options]\n')
+        f.write('byline = false\n')
+        f.write('toc = true\n')
+        f.write('toc_type = \"multi\"\n')
+        f.write('+++\n\n')
+
+        for function in module["functions"]:
+            f.write('## ' + function["Name"] + '\n\n')
+            f.write('```py\n')
+            f.write(function["Signature"]  + '\n')
+            f.write('```\n\n')
+            description = function["Description"].replace('\r\n    ', '')
+            f.write(description + '\n\n')
+            if function["HasArguments"]:
+                f.write('**Parameters:**\n\n')
+                f.write('```\n')
+                f.write(function["ArgumentDesc"]  + '\n')
+                f.write('```\n\n')
+            if function["ReturnStr"]:
+                f.write('**Returns:**\n\n')
+                f.write('```\n')
+                f.write(function["ReturnStr"]  + '\n')
+                f.write('```\n\n')
+            if function["ExampleString"]:
+                f.write('**Example:**\n\n')
+                f.write('```py\n')
+                f.write(function["ExampleString"]  + '\n')
+                f.write('```\n\n')
+            if len(function["SeeAlso"]) > 0:
+                f.write('**See Also:**\n\n')
+                for entry in function["SeeAlso"]:
+                    moduleName = ''
+                    if not entry["ModuleName"]:
+                        moduleName = module["ModuleName"]
+                    else:
+                        moduleName = entry["ModuleName"]
+                    f.write('* [' + entry["FunctionName"] + '](/api/RhinoScriptSyntax/' + moduleName + '/#' + entry["FunctionName"].lower() + ')\n')
+                f.write('\n')
+        
+        f.close()
+    
+    rs_json_file.close()
+
+    print_ok_message("done processing rhinoscriptsyntax data.")
+
+
 def audit_frontmatter():
     global frontmatter_key_mapping
     global yaml_keys_to_ignore
@@ -1216,15 +1290,16 @@ def audit_frontmatter():
 
 
 def main():
-    handle_homepage()
-    handle_authors()
-    handle_guides()
-    handle_samples()
-    handle_api()
-    handle_images()
-    handle_files_folder()
-    handle_videos()
-    audit_frontmatter()
+    #handle_homepage()
+    #handle_authors()
+    #handle_guides()
+    #handle_samples()
+    #handle_api()
+    #handle_images()
+    #handle_files_folder()
+    #handle_videos()
+    #audit_frontmatter()
+    handle_rhinoscript_syntax_api()
 
 if __name__ == "__main__":
     main()
