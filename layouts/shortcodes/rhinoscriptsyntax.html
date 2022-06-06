@@ -5,7 +5,7 @@
 
   {{ range $module.functions }}
     
-    <a role="button" class="code_accordion" onclick="window.location.hash = '#{{$module.ModuleName}}-{{.Name}}';"><div id="{{$module.ModuleName}}-{{.Name}}">{{ .Name }}</div></a>
+    <a role="button" class="code_accordion" onclick="window.location.hash = '#collapse-{{.Name}}';"><div id="collapse-{{.Name}}">{{ .Name }}</div></a>
 
     <div class="code_panel">
       <pre style="white-space: pre-wrap;"><code class="language-python">{{ .Signature }}</code></pre>
@@ -36,7 +36,7 @@
       <ul>
         {{ range .SeeAlso }}
           <!-- <li><a href="#{{ $module.ModuleName }}-{{ .FunctionName }}">{{ .FunctionName }}</a></li>-->
-          <li><a role="button" onclick="$('#{{ $module.ModuleName }}-{{ .FunctionName }}').click(); location.hash = '#{{ $module.ModuleName }}-{{ .FunctionName }}';">{{ .FunctionName }}</a></li>
+          <li><a role="button" onclick="$('#collapse-{{ .FunctionName }}').click(); location.hash = '#collapse-{{ .FunctionName }}';">{{ .FunctionName }}</a></li>
         {{ end }}
       </ul>
       {{ end }}
