@@ -17,7 +17,7 @@ since = 0
 
 
 <a href="/api/RhinoCommon" target="_blank">RhinoCommon</a> {{< awesome "fas fa-external-link-alt" >}}  
-<a href="/api/rhinoscriptsyntax">Rhino.Python RhinoScriptSyntax</a>  
+<a href="/api/RhinoScriptSyntax">Rhino.Python RhinoScriptSyntax</a>  
 <a href="/api/grasshopper" target="_blank">Grasshopper (Rhino for Windows)</a> {{< awesome "fas fa-external-link-alt" >}}  
 <a href="/api/rhinoscript" target="_blank">RhinoScript (Rhino for Windows)</a> {{< awesome "fas fa-external-link-alt" >}}  
 <a href="/api/cpp" target="_blank">C++ API Docs (Rhino for Windows)</a> {{< awesome "fas fa-external-link-alt" >}}  

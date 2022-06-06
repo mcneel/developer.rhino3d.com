@@ -304,7 +304,7 @@ if radius: rs.AddCircle( (0,0,0), radius )
 ```
 rs.GetReal() accepts any number, including decimals. In some cases your code may need only whole numbers- in this case use `rs.GetInteger()`
 
-There are 22 different Get methods. For details on all the Get functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/rhinoscriptsyntax/#userinterface)
+There are 22 different Get methods. For details on all the Get functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/win/#userinterface)
 
 ## Dialog Methods
 
@@ -362,7 +362,7 @@ Here is a list of dialog box methods:
 | RealBox | | | Displays a dialog box prompting the user to enter a number. |
 | StringBox | | | Displays a dialog box prompting the user to enter a string. |
 
-For details on all the dialog box functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/rhinoscriptsyntax/#userinterface)
+For details on all the dialog box functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/win/#userinterface)
 
 ## File System dialogs
 
@@ -387,7 +387,7 @@ if filename: rs.MessageBox(filename)
 ## Related Topics
 
 - [Reading and Writing files with Python](/guides/rhinopython/python-reading-writing)
-- [RhinoScriptSyntax User interface methods](/api/rhinoscriptsyntax/#userinterface)
+- [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/win/#userinterface)
 
 
 

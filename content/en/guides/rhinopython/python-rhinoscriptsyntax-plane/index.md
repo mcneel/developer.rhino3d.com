@@ -52,7 +52,7 @@ print plane[1] # x-axis vector
 print plane[2] # y-axis vector
 ```
 
-Planes can also be created using the `CreatePlane()`, [PlaneFromFrame](/api/rhinoscriptsyntax/#collapse-PlaneFromFrame),  [PlaneFromNormal](/api/rhinoscriptsyntax/#collapse-PlaneFromNormal), and [PlaneFromPoints](/api/rhinoscriptsyntax/#collapse-PlaneFromPoints) functions.
+Planes can also be created using the `CreatePlane()`, [PlaneFromFrame](/api/RhinoScriptSyntax/win/#collapse-PlaneFromFrame),  [PlaneFromNormal](/api/RhinoScriptSyntax/win/#collapse-PlaneFromNormal), and [PlaneFromPoints](/api/RhinoScriptSyntax/win/#collapse-PlaneFromPoints) functions.
 
 Plane also have a number of properties that can be used to get or set the individual values in the Point object.  In the example below the `.Origin`, `.XAxis`, `.Yaxis`, `.Zaxis` are used:
 

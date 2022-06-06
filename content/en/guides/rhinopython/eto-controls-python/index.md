@@ -659,7 +659,7 @@ Now with some understanding of Eto Dialogs in Python, take a look at some of the
 
 ## Related Topics
 
-- [RhinoScriptSyntax User interface methods](/api/rhinoscriptsyntax/#userinterface)
+- [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/win/#userinterface)
 - [Custom Eto Forms in Python guide](/guides/rhinopython/eto-forms-python/)
 - [Eto Layouts in Python](/guides/rhinopython/eto-layouts-python/) guide
 - [Eto Controls in Python](/guides/rhinopython/eto-controls-python/) guide

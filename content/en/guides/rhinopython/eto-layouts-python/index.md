@@ -174,7 +174,7 @@ Now with some understanding of Eto Layouts, take a look at some of the Sample di
 
 ## Related Topics
 
-- [RhinoScriptSyntax User Interface methods](/api/rhinoscriptsyntax/#userinterface)
+- [RhinoScriptSyntax User Interface methods](/api/RhinoScriptSyntax/win/#userinterface)
 - [Custom Eto Forms in Python guide](/guides/rhinopython/eto-forms-python/)
 - [Eto Layouts in Python](/guides/rhinopython/eto-layouts-python/) guide
 - [Eto Controls in Python](/guides/rhinopython/eto-controls-python/) guide

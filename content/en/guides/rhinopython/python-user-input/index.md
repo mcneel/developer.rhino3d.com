@@ -41,9 +41,9 @@ The RhinoscriptSyntax module contains many ways to interactively prompt for seve
 
 Get are basic ways to prompt for specifc user feedback on the commandline and mouse input.  Good examples of a Get might be get a point, a string, or a distance.  There are 25 get methods that can   
 
-1. **Commandline Gets** - [GetReal](/api/rhinoscriptsyntax/#collapse-GetReal), [GetString](/api/rhinoscriptsyntax/#collapse-GetString), [GetInteger](/api/rhinoscriptsyntax/#collapse-GetInteger), [GetBoolean](/api/rhinoscriptsyntax/#collapse-GetBoolean)
-2. **Interactive Gets** - [GetPoint](/api/rhinoscriptsyntax/#collapse-GetPoint)([s](/api/rhinoscriptsyntax/#collapse-GetPoints)), [GetPointCoordinates](/api/rhinoscriptsyntax/#collapse-GetPointCoordinates), [GetLine](/api/rhinoscriptsyntax/#collapse-GetLine), [GetDistance](/api/rhinoscriptsyntax/#collapse-GetDistance), [GetAngle](/api/rhinoscriptsyntax/#collapse-GetAngle), [GetPolyline](/api/rhinoscriptsyntax/#collapse-GetPolyline), [GetRectangle](/api/rhinoscriptsyntax/#collapse-GetRectangle), [GetBox](/api/rhinoscriptsyntax/#collapse-GetBox), [GetCursorPos](/api/rhinoscriptsyntax/#collapse-GetCursorPos).
-3. **Geometry Gets** - [GetObject](/api/rhinoscriptsyntax/#collapse-GetObject), [GetCurveObject](/api/rhinoscriptsyntax/#collapse-GetCurveObject),  [GetSurfaceObject](/api/rhinoscriptsyntax/#collapse-GetSurfaceObject), [GetEdgeCurves](/api/rhinoscriptsyntax/#collapse-GetEdgeCurves), [GetMeshFaces](/api/rhinoscriptsyntax/#collapse-GetMeshFaces), [GetMeshVertices](/api/rhinoscriptsyntax/#collapse-GetMeshVertices), [GetPointOnCurve](/api/rhinoscriptsyntax/#collapse-GetPointOnCurve), [GetPointOnMesh](/api/rhinoscriptsyntax/#collapse-GetPointOnMesh), [GetPointOnSurface](/api/rhinoscriptsyntax/#collapse-GetPointOnSurface).
+1. **Commandline Gets** - [GetReal](/api/RhinoScriptSyntax/#collapse-GetReal), [GetString](/api/RhinoScriptSyntax/#collapse-GetString), [GetInteger](/api/RhinoScriptSyntax/#collapse-GetInteger), [GetBoolean](/api/RhinoScriptSyntax/#collapse-GetBoolean)
+2. **Interactive Gets** - [GetPoint](/api/RhinoScriptSyntax/#collapse-GetPoint)([s](/api/RhinoScriptSyntax/#collapse-GetPoints)), [GetPointCoordinates](/api/RhinoScriptSyntax/#collapse-GetPointCoordinates), [GetLine](/api/RhinoScriptSyntax/#collapse-GetLine), [GetDistance](/api/RhinoScriptSyntax/#collapse-GetDistance), [GetAngle](/api/RhinoScriptSyntax/#collapse-GetAngle), [GetPolyline](/api/RhinoScriptSyntax/#collapse-GetPolyline), [GetRectangle](/api/RhinoScriptSyntax/#collapse-GetRectangle), [GetBox](/api/RhinoScriptSyntax/#collapse-GetBox), [GetCursorPos](/api/RhinoScriptSyntax/#collapse-GetCursorPos).
+3. **Geometry Gets** - [GetObject](/api/RhinoScriptSyntax/#collapse-GetObject), [GetCurveObject](/api/RhinoScriptSyntax/#collapse-GetCurveObject),  [GetSurfaceObject](/api/RhinoScriptSyntax/#collapse-GetSurfaceObject), [GetEdgeCurves](/api/RhinoScriptSyntax/#collapse-GetEdgeCurves), [GetMeshFaces](/api/RhinoScriptSyntax/#collapse-GetMeshFaces), [GetMeshVertices](/api/RhinoScriptSyntax/#collapse-GetMeshVertices), [GetPointOnCurve](/api/RhinoScriptSyntax/#collapse-GetPointOnCurve), [GetPointOnMesh](/api/RhinoScriptSyntax/#collapse-GetPointOnMesh), [GetPointOnSurface](/api/RhinoScriptSyntax/#collapse-GetPointOnSurface).
 
 ### Command Line gets
 
@@ -62,7 +62,7 @@ if radius: rs.AddCircle( (0,0,0), radius )
 
 rs.GetReal() accepts any number, including decimals. In some cases your code may need only whole numbers- in this case use `rs.GetInteger()`
 
-The other command line gets are [GetString](/api/rhinoscriptsyntax/#collapse-GetString), [GetInteger](/api/rhinoscriptsyntax/#collapse-GetInteger), and [GetBoolean](/api/rhinoscriptsyntax/#collapse-GetBoolean). They all work essentially the same as [GetReal](/api/rhinoscriptsyntax/#collapse-GetReal).
+The other command line gets are [GetString](/api/RhinoScriptSyntax/#collapse-GetString), [GetInteger](/api/RhinoScriptSyntax/#collapse-GetInteger), and [GetBoolean](/api/RhinoScriptSyntax/#collapse-GetBoolean). They all work essentially the same as [GetReal](/api/RhinoScriptSyntax/#collapse-GetReal).
 
 ### Interactive gets
 
@@ -120,7 +120,7 @@ point1 = rs.GetPoint("Pick first point")
 point2 = rs.GetPoint("Pick second point", point1)
 ```
 
-The interactive gets have more options on how the input is filtered from the mouse.  For details on all the Get functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/rhinoscriptsyntax/#userinterface).  Additional interactive gets include: [GetLine](/api/rhinoscriptsyntax/#collapse-GetLine), [GetDistance](/api/rhinoscriptsyntax/#collapse-GetDistance), [GetAngle](/api/rhinoscriptsyntax/#collapse-GetAngle), [GetPolyline](/api/rhinoscriptsyntax/#collapse-GetPolyline), [GetRectangle](/api/rhinoscriptsyntax/#collapse-GetRectangle), [GetBox](/api/rhinoscriptsyntax/#collapse-GetBox), [GetCursorPos](/api/rhinoscriptsyntax/#collapse-GetCursorPos).  
+The interactive gets have more options on how the input is filtered from the mouse.  For details on all the Get functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/#userinterface).  Additional interactive gets include: [GetLine](/api/RhinoScriptSyntax/#collapse-GetLine), [GetDistance](/api/RhinoScriptSyntax/#collapse-GetDistance), [GetAngle](/api/RhinoScriptSyntax/#collapse-GetAngle), [GetPolyline](/api/RhinoScriptSyntax/#collapse-GetPolyline), [GetRectangle](/api/RhinoScriptSyntax/#collapse-GetRectangle), [GetBox](/api/RhinoScriptSyntax/#collapse-GetBox), [GetCursorPos](/api/RhinoScriptSyntax/#collapse-GetCursorPos).  
 
 ### Geometry Gets
 
@@ -143,7 +143,7 @@ objectId = rs.GetObject("Pick a curve or surface", rs.filter.curve | rs.filter.s
 if objectId: print objectID
 ```
 
-Additional geometry gets are: [GetCurveObject](/api/rhinoscriptsyntax/#collapse-GetCurveObject),  [GetSurfaceObject](/api/rhinoscriptsyntax/#collapse-GetSurfaceObject), [GetEdgeCurves](/api/rhinoscriptsyntax/#collapse-GetEdgeCurves), [GetMeshFaces](/api/rhinoscriptsyntax/#collapse-GetMeshFaces), [GetMeshVertices](/api/rhinoscriptsyntax/#collapse-GetMeshVertices), [GetPointOnCurve](/api/rhinoscriptsyntax/#collapse-GetPointOnCurve), [GetPointOnMesh](/api/rhinoscriptsyntax/#collapse-GetPointOnMesh), [GetPointOnSurface](/api/rhinoscriptsyntax/#collapse-GetPointOnSurface).
+Additional geometry gets are: [GetCurveObject](/api/RhinoScriptSyntax/#collapse-GetCurveObject),  [GetSurfaceObject](/api/RhinoScriptSyntax/#collapse-GetSurfaceObject), [GetEdgeCurves](/api/RhinoScriptSyntax/#collapse-GetEdgeCurves), [GetMeshFaces](/api/RhinoScriptSyntax/#collapse-GetMeshFaces), [GetMeshVertices](/api/RhinoScriptSyntax/#collapse-GetMeshVertices), [GetPointOnCurve](/api/RhinoScriptSyntax/#collapse-GetPointOnCurve), [GetPointOnMesh](/api/RhinoScriptSyntax/#collapse-GetPointOnMesh), [GetPointOnSurface](/api/RhinoScriptSyntax/#collapse-GetPointOnSurface).
 
 ## Special Dialogs
 
@@ -229,7 +229,7 @@ Will result in:
 
 {{< image url="/images/getlayer.png" alt="/images/getlayer.png" class="image_center" width="35%" >}}  
 
-For details on all the dialog box functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/rhinoscriptsyntax/#userinterface)  
+For details on all the dialog box functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/win/#userinterface)  
 
 ## File System dialogs  
 
@@ -271,5 +271,5 @@ Eto is very powerful, but that power comes with more sophisticated Python syntax
 ## Related Topics
 
 - [Reading and Writing files with Python](/guides/rhinopython/python-reading-writing)
-- [RhinoScriptSyntax User interface methods](/api/rhinoscriptsyntax/#userinterface)
+- [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/win/#userinterface)
 - [Eto Forms in Python](/guides/rhinopython/eto-forms-python/) guide

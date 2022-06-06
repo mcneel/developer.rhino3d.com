@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/api/RhinoScriptSyntax/", "/6/api/RhinoScriptSyntax/", "/7/api/RhinoScriptSyntax/", "/wip/api/RhinoScriptSyntax/", "/api/RhinoScriptSyntax"]
+aliases = ["/5/api/RhinoScriptSyntax/", "/6/api/RhinoScriptSyntax/", "/7/api/RhinoScriptSyntax/", "/wip/api/RhinoScriptSyntax/"]
 Title = "RhinoScriptSyntax"
 type = "guides"
 

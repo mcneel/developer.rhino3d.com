@@ -169,32 +169,32 @@ In the sample above using the layername to specify where the object ultimately l
 <table>
 <tr>
 <td>Object name</td>
-<td><a href="https://developer.rhino3d.com/api/rhinoscriptsyntax/#object-ObjectName">rs.ObjectName(object-id, name)</a></td>
+<td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectName">rs.ObjectName(object-id, name)</a></td>
 </tr>
 <tr>
 <td>Display color</td>
-<td><a href="https://developer.rhino3d.com/api/rhinoscriptsyntax/#object-ObjectColorSource">rs.ObjectColorSource(object_ids, source=None)</a><br><a href="https://developer.rhino3d.com/api/rhinoscriptsyntax/#object-ObjectColor">rs.ObjectColor(object_ids, color=None)</a></td>
+<td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectColorSource">rs.ObjectColorSource(object_ids, source=None)</a><br><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectColor">rs.ObjectColor(object_ids, color=None)</a></td>
 </tr>
 <tr>
 <td>Print color</td>
-<td><a href="https://developer.rhino3d.com/api/rhinoscriptsyntax/#object-ObjectPrintColorSource">rs.ObjectPrintColorSource(object_ids, source=None)</a><br><a href="https://developer.rhino3d.com/api/rhinoscriptsyntax/#object-ObjectPrintColor">rs.ObjectPrintColor(object_ids, color=None)</a></td>
+<td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectPrintColorSource">rs.ObjectPrintColorSource(object_ids, source=None)</a><br><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectPrintColor">rs.ObjectPrintColor(object_ids, color=None)</a></td>
 </tr>
 <tr>
 <td>Unlock object</td>
-<td><a href="https://developer.rhino3d.com/api/rhinoscriptsyntax/#object-UnlockObject">rs.UnlockObject(object_id)</a></td>
+<td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-UnlockObject">rs.UnlockObject(object_id)</a></td>
 </tr>
 <tr>
 <td>Lock object</td>
-<td><a href="https://developer.rhino3d.com/api/rhinoscriptsyntax/#object-LockObject">rs.LockObject(object_id)</a></td>
+<td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-LockObject">rs.LockObject(object_id)</a></td>
 </tr>
 <tr>
 <td>Hide object</td>
-<td><a href="https://developer.rhino3d.com/api/rhinoscriptsyntax/#object-HideObject">rs.HideObject(object_id)</a></td>
+<td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-HideObject">rs.HideObject(object_id)</a></td>
 </tr>
 <tr>
 <td>Set Material</td>
-<td><a href="https://developer.rhino3d.com/api/rhinoscriptsyntax/#object-ObjectMaterialSource">rs.ObjectMaterialSource(object_ids, source=None)</a><br>
-<a href="https://developer.rhino3d.com/api/rhinoscriptsyntax/#object-ObjectMaterialIndex">rs.ObjectMaterialIndex(object_id, material_index=None)</a>
+<td><a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectMaterialSource">rs.ObjectMaterialSource(object_ids, source=None)</a><br>
+<a href="https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectMaterialIndex">rs.ObjectMaterialIndex(object_id, material_index=None)</a>
 </td>
 </tr>
 </table>
@@ -203,7 +203,7 @@ In the sample above using the layername to specify where the object ultimately l
 
 Additional text data can be stored as a Key:Value pair on the Rhino object.  THe Keys and Values can be retrieved later in Rhino.
 
-[rs.SetUserText(object_id, key, value=None, attach_to_geometry=False)](https://developer.rhino3d.com/api/rhinoscriptsyntax/#object-ObjectMaterialSource)
+[rs.SetUserText(object_id, key, value=None, attach_to_geometry=False)](https://developer.rhino3d.com/api/RhinoScriptSyntax/#object-ObjectMaterialSource)
 
 For more information on [RhinoScript User Text help topic](https://developer.rhino3d.com/api/rhinoscript/user_data_methods/user_data_methods.htm).
 
