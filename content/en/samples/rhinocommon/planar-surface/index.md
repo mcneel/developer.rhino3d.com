@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/planar-surface/", "/6/samples/rhinocommon/planar-surface/", "/7/samples/rhinocommon/planar-surface/", "/wip/samples/rhinocommon/planar-surface/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to create a planar surface from a rectangle."

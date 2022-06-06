@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/add-sphere/", "/6/samples/rhinocommon/add-sphere/", "/7/samples/rhinocommon/add-sphere/", "/wip/samples/rhinocommon/add-sphere/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a sphere from a center point and radius."

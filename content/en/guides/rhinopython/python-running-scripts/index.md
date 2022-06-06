@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-running-scripts/", "/6/guides/rhinopython/python-running-scripts/", "/7/guides/rhinopython/python-running-scripts/", "/wip/guides/rhinopython/python-running-scripts/"]
 authors = [ "scottd" ]
 categories = [ "Python Windows" ]
 description = "This guide demonstrates how to run a Python script in Rhino."

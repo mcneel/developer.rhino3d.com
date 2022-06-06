@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/create-box-frames/", "/6/samples/rhinoscript/create-box-frames/", "/7/samples/rhinoscript/create-box-frames/", "/wip/samples/rhinoscript/create-box-frames/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a box frame with RhinoScript."

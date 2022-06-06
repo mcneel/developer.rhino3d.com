@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/rhinoaccounts/ra-revoke/", "/6/guides/rhinocommon/rhinoaccounts/ra-revoke/", "/7/guides/rhinocommon/rhinoaccounts/ra-revoke/", "/wip/guides/rhinocommon/rhinoaccounts/ra-revoke/"]
 authors = [ "aj" ]
 categories = [ "RhinoAccounts" ]
 description = "This guide discusses authorization token revocation within Rhino from Rhino Accounts."

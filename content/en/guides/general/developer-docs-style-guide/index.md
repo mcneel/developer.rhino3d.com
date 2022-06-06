@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/general/developer-docs-style-guide/", "/6/guides/general/developer-docs-style-guide/", "/7/guides/general/developer-docs-style-guide/", "/wip/guides/general/developer-docs-style-guide/"]
 authors = [ "dan" ]
 categories = [ "This Site" ]
 description = "This guide serves as an example and quick reference for the syntax and structure of this site."

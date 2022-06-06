@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/rename-layer/", "/6/samples/rhinocommon/rename-layer/", "/7/samples/rhinocommon/rename-layer/", "/wip/samples/rhinocommon/rename-layer/"]
 authors = [ "steve" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to rename a layer."

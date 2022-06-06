@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/box-shell/", "/6/samples/rhinocommon/box-shell/", "/7/samples/rhinocommon/box-shell/", "/wip/samples/rhinocommon/box-shell/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to give thickness to (or shell) a Brep box."

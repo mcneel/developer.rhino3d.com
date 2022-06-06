@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/loading-tool-palettes-mac/", "/6/guides/rhinocommon/loading-tool-palettes-mac/", "/7/guides/rhinocommon/loading-tool-palettes-mac/", "/wip/guides/rhinocommon/loading-tool-palettes-mac/"]
 authors = [ "dan" ]
 categories = [ "Fundamentals" ]
 description = "This guide covers how to create and load a tool palette collection from your RhinoCommon plugin in Rhino for Mac."

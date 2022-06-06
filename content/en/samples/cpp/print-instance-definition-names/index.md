@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/print-instance-definition-names/", "/6/samples/cpp/print-instance-definition-names/", "/7/samples/cpp/print-instance-definition-names/", "/wip/samples/cpp/print-instance-definition-names/"]
 authors = [ "dale" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to print the names of all instance definitions in the document."

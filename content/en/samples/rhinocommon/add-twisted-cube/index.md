@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/add-twisted-cube/", "/6/samples/rhinocommon/add-twisted-cube/", "/7/samples/rhinocommon/add-twisted-cube/", "/wip/samples/rhinocommon/add-twisted-cube/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to construct a twisted cube object from an array of points and a list of curves."

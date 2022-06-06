@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/crhinogetfiledialog-to-preview-images/", "/6/samples/cpp/crhinogetfiledialog-to-preview-images/", "/7/samples/cpp/crhinogetfiledialog-to-preview-images/", "/wip/samples/cpp/crhinogetfiledialog-to-preview-images/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to use the CRhinoGetFileDialog class to preview bitmap images."

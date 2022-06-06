@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/general/essential-mathematics/", "/6/guides/general/essential-mathematics/", "/7/guides/general/essential-mathematics/", "/wip/guides/general/essential-mathematics/"]
 authors = [ "rajaa" ]
 categories = [ "General" ]
 description = "Introduces to design professionals the foundation mathematical concepts for effective development of computational 3D models."

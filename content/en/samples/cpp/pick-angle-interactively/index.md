@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/pick-angle-interactively/", "/6/samples/cpp/pick-angle-interactively/", "/7/samples/cpp/pick-angle-interactively/", "/wip/samples/cpp/pick-angle-interactively/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to use the CRhinoGetAngle class to pick an angle."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/importing-points-from-txt-files/", "/6/guides/rhinoscript/importing-points-from-txt-files/", "/7/guides/rhinoscript/importing-points-from-txt-files/", "/wip/guides/rhinoscript/importing-points-from-txt-files/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstration of how to open a text file and import data from it into Rhino using RhinoScript."

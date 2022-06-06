@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/archimedian-spirals/", "/6/guides/rhinoscript/archimedian-spirals/", "/7/guides/rhinoscript/archimedian-spirals/", "/wip/guides/rhinoscript/archimedian-spirals/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to create Archimedean Spirals using RhinoScript."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/curve-properties-to-excel/", "/6/samples/rhinoscript/curve-properties-to-excel/", "/7/samples/rhinoscript/curve-properties-to-excel/", "/wip/samples/rhinoscript/curve-properties-to-excel/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Illustrates RhinoScript code that extracts curve properties into Excel."

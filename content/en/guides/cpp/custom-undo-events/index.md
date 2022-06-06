@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/custom-undo-events/", "/6/guides/cpp/custom-undo-events/", "/7/guides/cpp/custom-undo-events/", "/wip/guides/cpp/custom-undo-events/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses custom undo events."

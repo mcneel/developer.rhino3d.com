@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/modify-grip-weight/", "/6/samples/cpp/modify-grip-weight/", "/7/samples/cpp/modify-grip-weight/", "/wip/samples/cpp/modify-grip-weight/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to modify the weight of a grip object."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/boolean-difference/", "/6/samples/rhinocommon/boolean-difference/", "/7/samples/rhinocommon/boolean-difference/", "/wip/samples/rhinocommon/boolean-difference/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to perform a boolean difference operation on two selected polysurfaces."

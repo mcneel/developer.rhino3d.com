@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/creating-sublayers/", "/6/guides/cpp/creating-sublayers/", "/7/guides/cpp/creating-sublayers/", "/wip/guides/cpp/creating-sublayers/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to create sublayers of a parent layer using C/C++."

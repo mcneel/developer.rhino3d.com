@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/whats-new/", "/6/guides/rhinocommon/whats-new/", "/7/guides/rhinocommon/whats-new/", "/wip/guides/rhinocommon/whats-new/"]
 authors = [ "steve" ]
 categories = [ "Overview" ]
 description = "This brief guide outlines the changes in the RhinoCommon SDK."

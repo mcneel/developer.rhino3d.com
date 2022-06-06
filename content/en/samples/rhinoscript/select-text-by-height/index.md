@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/select-text-by-height/", "/6/samples/rhinoscript/select-text-by-height/", "/7/samples/rhinoscript/select-text-by-height/", "/wip/samples/rhinoscript/select-text-by-height/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to select text objects by their text height using RhinoScript."

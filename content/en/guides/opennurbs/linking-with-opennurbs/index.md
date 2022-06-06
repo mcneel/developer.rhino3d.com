@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/opennurbs/linking-with-opennurbs/", "/6/guides/opennurbs/linking-with-opennurbs/", "/7/guides/opennurbs/linking-with-opennurbs/", "/wip/guides/opennurbs/linking-with-opennurbs/"]
 authors = [ "dalelear" ]
 categories = [ "Getting Started" ]
 description = "This guide discusses openNURBS linking."

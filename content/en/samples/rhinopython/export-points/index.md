@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinopython/export-points/", "/6/samples/rhinopython/export-points/", "/7/samples/rhinopython/export-points/", "/wip/samples/rhinopython/export-points/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to export points with Python."

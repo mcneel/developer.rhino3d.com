@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/getting-layer-objects/", "/6/guides/cpp/getting-layer-objects/", "/7/guides/cpp/getting-layer-objects/", "/wip/guides/cpp/getting-layer-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to get all of the objects on a layer using C/C++."

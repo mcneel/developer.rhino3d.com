@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/convert-dots-to-text/", "/6/samples/rhinoscript/convert-dots-to-text/", "/7/samples/rhinoscript/convert-dots-to-text/", "/wip/samples/rhinoscript/convert-dots-to-text/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Illustrates RhinoScript code that converts annotation dots to text object."

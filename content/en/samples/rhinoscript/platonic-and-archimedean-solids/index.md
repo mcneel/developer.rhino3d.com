@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/platonic-and-archimedean-solids/", "/6/samples/rhinoscript/platonic-and-archimedean-solids/", "/7/samples/rhinoscript/platonic-and-archimedean-solids/", "/wip/samples/rhinoscript/platonic-and-archimedean-solids/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to generate platonic and archimedean solids with RhinoScript."

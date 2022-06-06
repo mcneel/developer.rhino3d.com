@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/what-are-vbscript-rhinoscript/", "/6/guides/rhinoscript/what-are-vbscript-rhinoscript/", "/7/guides/rhinoscript/what-are-vbscript-rhinoscript/", "/wip/guides/rhinoscript/what-are-vbscript-rhinoscript/"]
 authors = [ "dale" ]
 categories = [ "Overview" ]
 description = "This guide explains what VBScript and RhinoScript are."

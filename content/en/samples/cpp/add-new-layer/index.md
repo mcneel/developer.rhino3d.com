@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/add-new-layer/", "/6/samples/cpp/add-new-layer/", "/7/samples/cpp/add-new-layer/", "/wip/samples/cpp/add-new-layer/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Layers" ]
 description = "Demonstrates how to add a new layer to Rhino."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/furthest-z-on-surface-given-x-y/", "/6/samples/rhinocommon/furthest-z-on-surface-given-x-y/", "/7/samples/rhinocommon/furthest-z-on-surface-given-x-y/", "/wip/samples/rhinocommon/furthest-z-on-surface-given-x-y/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to determine the furthest Z on surface given the X Y coordinates."

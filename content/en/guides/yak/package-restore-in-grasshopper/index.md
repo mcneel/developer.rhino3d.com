@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/yak/package-restore-in-grasshopper/", "/6/guides/yak/package-restore-in-grasshopper/", "/7/guides/yak/package-restore-in-grasshopper/", "/wip/guides/yak/package-restore-in-grasshopper/"]
 authors = [ "will" ]
 categories = [ "Features" ]
 description = "How can Grasshopper use Yak to make your life easier?"

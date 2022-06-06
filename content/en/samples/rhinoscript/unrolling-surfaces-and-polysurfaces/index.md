@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/unrolling-surfaces-and-polysurfaces/", "/6/samples/rhinoscript/unrolling-surfaces-and-polysurfaces/", "/7/samples/rhinoscript/unrolling-surfaces-and-polysurfaces/", "/wip/samples/rhinoscript/unrolling-surfaces-and-polysurfaces/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to unroll surfaces and polysurfaces using RhinoScript."

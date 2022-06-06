@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinopython/draw-parametric-curve/", "/6/samples/rhinopython/draw-parametric-curve/", "/7/samples/rhinopython/draw-parametric-curve/", "/wip/samples/rhinopython/draw-parametric-curve/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to draw a parametric curve Python."

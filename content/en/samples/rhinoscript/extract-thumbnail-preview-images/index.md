@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/extract-thumbnail-preview-images/", "/6/samples/rhinoscript/extract-thumbnail-preview-images/", "/7/samples/rhinoscript/extract-thumbnail-preview-images/", "/wip/samples/rhinoscript/extract-thumbnail-preview-images/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to extract the thumbnail preview image from .3DM files using RhinoScript."

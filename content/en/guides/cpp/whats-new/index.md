@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/whats-new/", "/6/guides/cpp/whats-new/", "/7/guides/cpp/whats-new/", "/wip/guides/cpp/whats-new/"]
 authors = [ "dale" ]
 categories = [ "Overview" ]
 description = "This brief guide outlines the new and changed features in the Rhino C/C++ SDK."

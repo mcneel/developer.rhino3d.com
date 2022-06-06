@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/compute/deploy/", "/6/guides/compute/deploy/", "/7/guides/compute/deploy/", "/wip/guides/compute/deploy/"]
 authors = [ "brian", "will" ]
 categories = [ "Hidden" ]
 description = "Deploy Compute for Production"

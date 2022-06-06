@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/duplicating-objects-with-group/", "/6/guides/cpp/duplicating-objects-with-group/", "/7/guides/cpp/duplicating-objects-with-group/", "/wip/guides/cpp/duplicating-objects-with-group/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to duplicate objects that are members of one or more object groups using C/C++."

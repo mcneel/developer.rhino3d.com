@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/grasshopper/components-with-variable-number-of-parameters/", "/6/guides/grasshopper/components-with-variable-number-of-parameters/", "/7/guides/grasshopper/components-with-variable-number-of-parameters/", "/wip/guides/grasshopper/components-with-variable-number-of-parameters/"]
 authors = [ "david" ]
 categories = [ "Advanced" ]
 description = "This guide has yet to be authored or ported."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/parentheses/", "/6/guides/rhinoscript/parentheses/", "/7/guides/rhinoscript/parentheses/", "/wip/guides/rhinoscript/parentheses/"]
 authors = [ "dale" ]
 categories = [ "Intermediate" ]
 description = "This guide discusses the Cannot use parentheses when calling a Sub error that occurs in RhinoScript."

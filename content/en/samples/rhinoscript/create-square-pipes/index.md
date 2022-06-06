@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/create-square-pipes/", "/6/samples/rhinoscript/create-square-pipes/", "/7/samples/rhinoscript/create-square-pipes/", "/wip/samples/rhinoscript/create-square-pipes/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create square pipes using RhinoScript."

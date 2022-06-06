@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/getting-object-uuid/", "/6/guides/cpp/getting-object-uuid/", "/7/guides/cpp/getting-object-uuid/", "/wip/guides/cpp/getting-object-uuid/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to get an object's UUID using C/C++."

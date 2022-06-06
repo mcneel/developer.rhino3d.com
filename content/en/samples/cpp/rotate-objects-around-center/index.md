@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/rotate-objects-around-center/", "/6/samples/cpp/rotate-objects-around-center/", "/7/samples/cpp/rotate-objects-around-center/", "/wip/samples/cpp/rotate-objects-around-center/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how rotate objects around the center point of their bounding box."

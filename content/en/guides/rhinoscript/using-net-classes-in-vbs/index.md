@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/using-net-classes-in-vbs/", "/6/guides/rhinoscript/using-net-classes-in-vbs/", "/7/guides/rhinoscript/using-net-classes-in-vbs/", "/wip/guides/rhinoscript/using-net-classes-in-vbs/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide discusses several .NET classes that work with RhinoScript."

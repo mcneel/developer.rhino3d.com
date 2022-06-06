@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/modifying-light-colors/", "/6/guides/cpp/modifying-light-colors/", "/7/guides/cpp/modifying-light-colors/", "/wip/guides/cpp/modifying-light-colors/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide describes how to modify the diffuse color of an existing light using C/C++."

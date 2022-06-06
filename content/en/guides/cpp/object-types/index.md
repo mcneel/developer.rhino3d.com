@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/object-types/", "/6/guides/cpp/object-types/", "/7/guides/cpp/object-types/", "/wip/guides/cpp/object-types/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide is an overview of the Rhino geometric object types."

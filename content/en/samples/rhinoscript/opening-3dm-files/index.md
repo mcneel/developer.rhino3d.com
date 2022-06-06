@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/opening-3dm-files/", "/6/samples/rhinoscript/opening-3dm-files/", "/7/samples/rhinoscript/opening-3dm-files/", "/wip/samples/rhinoscript/opening-3dm-files/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to open 3DM files using RhinoScript."

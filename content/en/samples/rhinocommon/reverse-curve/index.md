@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/reverse-curve/", "/6/samples/rhinocommon/reverse-curve/", "/7/samples/rhinocommon/reverse-curve/", "/wip/samples/rhinocommon/reverse-curve/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to reverse the direction of user-specified curves."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/offsetting-meshes/", "/6/guides/rhinoscript/offsetting-meshes/", "/7/guides/rhinoscript/offsetting-meshes/", "/wip/guides/rhinoscript/offsetting-meshes/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to offset and solidify a mesh using RhinoScript."

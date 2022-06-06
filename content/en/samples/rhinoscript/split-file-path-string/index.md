@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/split-file-path-string/", "/6/samples/rhinoscript/split-file-path-string/", "/7/samples/rhinoscript/split-file-path-string/", "/wip/samples/rhinoscript/split-file-path-string/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to break a file path string in to its components using RhinoScript."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/yak/the-package-manifest/", "/6/guides/yak/the-package-manifest/", "/7/guides/yak/the-package-manifest/", "/wip/guides/yak/the-package-manifest/"]
 authors = [ "will" ]
 categories = [ "Fundamentals" ]
 description = "What is a 'package manifest' and what should it include?"

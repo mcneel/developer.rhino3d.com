@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/grasshopper/programming-task-capable-component/", "/6/guides/grasshopper/programming-task-capable-component/", "/7/guides/grasshopper/programming-task-capable-component/", "/wip/guides/grasshopper/programming-task-capable-component/"]
 authors = [ "steve", "scottd" ]
 categories = [ "Advanced" ]
 description = "A guide to programming multi-threaded components in Grasshopper"

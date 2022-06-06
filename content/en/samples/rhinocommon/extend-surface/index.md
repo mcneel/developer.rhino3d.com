@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/extend-surface/", "/6/samples/rhinocommon/extend-surface/", "/7/samples/rhinocommon/extend-surface/", "/wip/samples/rhinocommon/extend-surface/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to extend a user-specified edge of a surface."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/rdk-decal-classes/", "/6/guides/cpp/rdk-decal-classes/", "/7/guides/cpp/rdk-decal-classes/", "/wip/guides/cpp/rdk-decal-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK decal classes in C/C++."

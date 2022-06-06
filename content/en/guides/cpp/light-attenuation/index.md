@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/light-attenuation/", "/6/guides/cpp/light-attenuation/", "/7/guides/cpp/light-attenuation/", "/wip/guides/cpp/light-attenuation/"]
 authors = [ "dale" ]
 categories = [ "RDK" ]
 description = "This brief guide discusses light attenuation in Rhino."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/calculate-the-angle-between-two-vectors/", "/6/samples/rhinoscript/calculate-the-angle-between-two-vectors/", "/7/samples/rhinoscript/calculate-the-angle-between-two-vectors/", "/wip/samples/rhinoscript/calculate-the-angle-between-two-vectors/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to calculate the angle between two vectors using RhinoScript."

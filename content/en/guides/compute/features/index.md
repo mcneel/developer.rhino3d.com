@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/compute/features/", "/6/guides/compute/features/", "/7/guides/compute/features/", "/wip/guides/compute/features/"]
 authors = [ "brian" ]
 categories = [ "Getting Started" ]
 description = "Rhino SDK functions via REST API"

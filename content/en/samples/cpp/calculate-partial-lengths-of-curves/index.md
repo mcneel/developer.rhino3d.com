@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/calculate-partial-lengths-of-curves/", "/6/samples/cpp/calculate-partial-lengths-of-curves/", "/7/samples/cpp/calculate-partial-lengths-of-curves/", "/wip/samples/cpp/calculate-partial-lengths-of-curves/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to calculate the length of a curve from the start point to some point on the curve."

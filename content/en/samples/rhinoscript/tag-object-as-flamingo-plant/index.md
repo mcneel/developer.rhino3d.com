@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/tag-object-as-flamingo-plant/", "/6/samples/rhinoscript/tag-object-as-flamingo-plant/", "/7/samples/rhinoscript/tag-object-as-flamingo-plant/", "/wip/samples/rhinoscript/tag-object-as-flamingo-plant/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how to tag an object as a Flamingo nXt plant in RhinoScript."

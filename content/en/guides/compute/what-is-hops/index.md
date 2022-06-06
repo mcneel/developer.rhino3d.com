@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/compute/what-is-hops/", "/6/guides/compute/what-is-hops/", "/7/guides/compute/what-is-hops/", "/wip/guides/compute/what-is-hops/"]
 authors = [ "andy.payne" ]
 categories = [ "Hops" ]
 keywords = [ "developer", "grasshopper", "components", "hops" ]

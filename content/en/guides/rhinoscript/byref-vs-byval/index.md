@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/byref-vs-byval/", "/6/guides/rhinoscript/byref-vs-byval/", "/7/guides/rhinoscript/byref-vs-byval/", "/wip/guides/rhinoscript/byref-vs-byval/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide discusses VBScript argument passing."

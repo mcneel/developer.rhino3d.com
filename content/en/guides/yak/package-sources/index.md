@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/yak/package-sources/", "/6/guides/yak/package-sources/", "/7/guides/yak/package-sources/", "/wip/guides/yak/package-sources/"]
 authors = [ "will" ]
 categories = [ "Advanced" ]
 description = "This is a quick guide to configuring custom package repositories in Rhino."

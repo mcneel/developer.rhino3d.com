@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-operators/", "/6/guides/rhinopython/python-operators/", "/7/guides/rhinopython/python-operators/", "/wip/guides/rhinopython/python-operators/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide is an overview of Python operators."

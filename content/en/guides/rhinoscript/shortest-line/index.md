@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/shortest-line/", "/6/guides/rhinoscript/shortest-line/", "/7/guides/rhinoscript/shortest-line/", "/wip/guides/rhinoscript/shortest-line/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This brief guide demonstrates how to calculate the shortest line between two lines."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/vbscript-constants/", "/6/guides/rhinoscript/vbscript-constants/", "/7/guides/rhinoscript/vbscript-constants/", "/wip/guides/rhinoscript/vbscript-constants/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide is an overview of VBScript constants."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/move-objects-to-current-layer/", "/6/samples/rhinocommon/move-objects-to-current-layer/", "/7/samples/rhinocommon/move-objects-to-current-layer/", "/wip/samples/rhinocommon/move-objects-to-current-layer/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects", "Layers" ]
 description = "Demonstrates how to move object to the currently active layer."

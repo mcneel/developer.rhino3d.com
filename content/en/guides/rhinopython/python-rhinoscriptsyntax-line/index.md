@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-line/", "/6/guides/rhinopython/python-rhinoscriptsyntax-line/", "/7/guides/rhinopython/python-rhinoscriptsyntax-line/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-line/"]
 authors = [ "dale" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an overview of a RhinoScriptSytntax Line Geometry in Python."

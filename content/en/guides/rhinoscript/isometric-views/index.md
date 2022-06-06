@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/isometric-views/", "/6/guides/rhinoscript/isometric-views/", "/7/guides/rhinoscript/isometric-views/", "/wip/guides/rhinoscript/isometric-views/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to create isometric views using RhinoScript."

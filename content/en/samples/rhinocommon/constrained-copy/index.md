@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/constrained-copy/", "/6/samples/rhinocommon/constrained-copy/", "/7/samples/rhinocommon/constrained-copy/", "/wip/samples/rhinocommon/constrained-copy/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to use a constrained GetPoint to copy a curve."

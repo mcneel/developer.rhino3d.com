@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/get-flamingo-material/", "/6/samples/rhinoscript/get-flamingo-material/", "/7/samples/rhinoscript/get-flamingo-material/", "/wip/samples/rhinoscript/get-flamingo-material/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how get an objects Flamingo nXt material assignment using RhinoScript."

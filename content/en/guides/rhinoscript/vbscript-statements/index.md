@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/vbscript-statements/", "/6/guides/rhinoscript/vbscript-statements/", "/7/guides/rhinoscript/vbscript-statements/", "/wip/guides/rhinoscript/vbscript-statements/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide presents an overview of VBScript statements."

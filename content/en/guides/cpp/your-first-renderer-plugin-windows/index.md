@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/your-first-renderer-plugin-windows/", "/6/guides/cpp/your-first-renderer-plugin-windows/", "/7/guides/cpp/your-first-renderer-plugin-windows/", "/wip/guides/cpp/your-first-renderer-plugin-windows/"]
 authors = [ "andy" ]
 categories = [ "RDK" ]
 description = "This guide has yet to be authored or ported."

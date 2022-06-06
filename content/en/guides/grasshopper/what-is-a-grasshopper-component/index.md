@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/grasshopper/what-is-a-grasshopper-component/", "/6/guides/grasshopper/what-is-a-grasshopper-component/", "/7/guides/grasshopper/what-is-a-grasshopper-component/", "/wip/guides/grasshopper/what-is-a-grasshopper-component/"]
 authors = [ "david" ]
 categories = [ "Overview" ]
 description = "This guide gives an overview of custom Grasshopper components."

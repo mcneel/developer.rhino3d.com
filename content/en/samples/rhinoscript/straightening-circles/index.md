@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/straightening-circles/", "/6/samples/rhinoscript/straightening-circles/", "/7/samples/rhinoscript/straightening-circles/", "/wip/samples/rhinoscript/straightening-circles/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to create lines based on circle geometry using RhinoScript."

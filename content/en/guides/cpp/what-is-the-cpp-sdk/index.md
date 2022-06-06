@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/what-is-the-cpp-sdk/", "/6/guides/cpp/what-is-the-cpp-sdk/", "/7/guides/cpp/what-is-the-cpp-sdk/", "/wip/guides/cpp/what-is-the-cpp-sdk/"]
 authors = [ "dale" ]
 categories = [ "Overview" ]
 description = "This guide gives an overview of C/C++ SDK."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/change-construction-plane-modes/", "/6/samples/cpp/change-construction-plane-modes/", "/7/samples/cpp/change-construction-plane-modes/", "/wip/samples/cpp/change-construction-plane-modes/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to switch between standard and universal construction plane modes."

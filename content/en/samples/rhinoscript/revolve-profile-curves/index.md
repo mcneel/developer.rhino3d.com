@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/revolve-profile-curves/", "/6/samples/rhinoscript/revolve-profile-curves/", "/7/samples/rhinoscript/revolve-profile-curves/", "/wip/samples/rhinoscript/revolve-profile-curves/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Surfaces" ]
 description = "Demonstrates how to create a surface by revolving one or more profile curves using RhinoScript."

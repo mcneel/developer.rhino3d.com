@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/script-flowalongsrf/", "/6/samples/rhinoscript/script-flowalongsrf/", "/7/samples/rhinoscript/script-flowalongsrf/", "/wip/samples/rhinoscript/script-flowalongsrf/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to script the FlowAlongSrf command using RhinoScript."

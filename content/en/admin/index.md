@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/admin/", "/6/admin/", "/7/admin/", "/wip/admin/"]
 description = "The administrator's view of the developer.rhino3d.com website."
 title = "Administration"
 type = "admin"

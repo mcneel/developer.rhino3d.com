@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/curve-deviation/", "/6/samples/rhinocommon/curve-deviation/", "/7/samples/rhinocommon/curve-deviation/", "/wip/samples/rhinocommon/curve-deviation/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to determine the deviation between two curves."

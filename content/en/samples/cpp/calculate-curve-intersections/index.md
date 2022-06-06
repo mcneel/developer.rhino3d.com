@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/calculate-curve-intersections/", "/6/samples/cpp/calculate-curve-intersections/", "/7/samples/cpp/calculate-curve-intersections/", "/wip/samples/cpp/calculate-curve-intersections/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to calculate the intersection of two curves and obtain their intersection points."

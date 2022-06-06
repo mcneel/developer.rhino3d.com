@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/rhinocommon-zoo-plugins/", "/6/guides/rhinocommon/rhinocommon-zoo-plugins/", "/7/guides/rhinocommon/rhinocommon-zoo-plugins/", "/wip/guides/rhinocommon/rhinocommon-zoo-plugins/"]
 authors = [ "dale" ]
 categories = [ "Zoo" ]
 description = "This guide discusses how to create RhinoCommon plugins that can obtain licenses the LAN Zoo."

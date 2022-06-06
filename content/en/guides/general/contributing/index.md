@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/general/contributing/", "/6/guides/general/contributing/", "/7/guides/general/contributing/", "/wip/guides/general/contributing/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "Pull requests are welcome!"

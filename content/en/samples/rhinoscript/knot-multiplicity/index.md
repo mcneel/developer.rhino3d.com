@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/knot-multiplicity/", "/6/samples/rhinoscript/knot-multiplicity/", "/7/samples/rhinoscript/knot-multiplicity/", "/wip/samples/rhinoscript/knot-multiplicity/"]
 authors = [ "dale" ]
 categories = [ "Curves", "Surfaces" ]
 description = "Demonstrates how to determine curve and surface knot multiplicity using RhinoScript."

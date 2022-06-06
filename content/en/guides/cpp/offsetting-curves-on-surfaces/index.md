@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/offsetting-curves-on-surfaces/", "/6/guides/cpp/offsetting-curves-on-surfaces/", "/7/guides/cpp/offsetting-curves-on-surfaces/", "/wip/guides/cpp/offsetting-curves-on-surfaces/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to offset a curve on a surface using C/C++."

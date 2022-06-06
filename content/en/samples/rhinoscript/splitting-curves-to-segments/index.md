@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/splitting-curves-to-segments/", "/6/samples/rhinoscript/splitting-curves-to-segments/", "/7/samples/rhinoscript/splitting-curves-to-segments/", "/wip/samples/rhinoscript/splitting-curves-to-segments/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to split a curve into multiple segments using RhinoScript."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/create-deploy-plugin-toolbar/", "/6/guides/rhinocommon/create-deploy-plugin-toolbar/", "/7/guides/rhinocommon/create-deploy-plugin-toolbar/", "/wip/guides/rhinocommon/create-deploy-plugin-toolbar/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide covers the creation and deployment of plugin toolbars."

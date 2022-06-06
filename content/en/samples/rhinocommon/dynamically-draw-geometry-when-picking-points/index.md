@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/dynamically-draw-geometry-when-picking-points/", "/6/samples/rhinocommon/dynamically-draw-geometry-when-picking-points/", "/7/samples/rhinocommon/dynamically-draw-geometry-when-picking-points/", "/wip/samples/rhinocommon/dynamically-draw-geometry-when-picking-points/"]
 authors = [ "steve" ]
 categories = [ "Draw", "Picking and Selection" ]
 description = "Demonstrates how to dynamically draw geometry during point picking."

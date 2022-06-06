@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/add-truncated-cone/", "/6/samples/rhinocommon/add-truncated-cone/", "/7/samples/rhinocommon/add-truncated-cone/", "/wip/samples/rhinocommon/add-truncated-cone/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to construct a truncated cone (TCone) from two circles."

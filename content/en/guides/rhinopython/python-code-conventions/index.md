@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-code-conventions/", "/6/guides/rhinopython/python-code-conventions/", "/7/guides/rhinopython/python-code-conventions/", "/wip/guides/rhinopython/python-code-conventions/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide provides an overview of Python coding conventions."

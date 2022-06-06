@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/window-selecting/", "/6/guides/cpp/window-selecting/", "/7/guides/cpp/window-selecting/", "/wip/guides/cpp/window-selecting/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to drag a window to select objects."

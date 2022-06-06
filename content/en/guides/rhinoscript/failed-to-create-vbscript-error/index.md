@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/failed-to-create-vbscript-error/", "/6/guides/rhinoscript/failed-to-create-vbscript-error/", "/7/guides/rhinoscript/failed-to-create-vbscript-error/", "/wip/guides/rhinoscript/failed-to-create-vbscript-error/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Troubleshooting" ]
 description = "This guide discusses the Failed to create instance of VBScript engine error and how to fix it."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/creating-guids/", "/6/guides/rhinoscript/creating-guids/", "/7/guides/rhinoscript/creating-guids/", "/wip/guides/rhinoscript/creating-guids/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide demonstrates how to create a Globally Unique Identifier (GUID) in RhinoScript."

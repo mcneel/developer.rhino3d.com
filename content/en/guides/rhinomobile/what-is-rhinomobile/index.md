@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinomobile/what-is-rhinomobile/", "/6/guides/rhinomobile/what-is-rhinomobile/", "/7/guides/rhinomobile/what-is-rhinomobile/", "/wip/guides/rhinomobile/what-is-rhinomobile/"]
 authors = [ "dan" ]
 categories = [ "Overview" ]
 description = "This guide gives and overview of RhinoMobile."

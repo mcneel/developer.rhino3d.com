@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/create-contour-curves/", "/6/samples/cpp/create-contour-curves/", "/7/samples/cpp/create-contour-curves/", "/wip/samples/cpp/create-contour-curves/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create contour curves through surfaces, breps, and meshes using the MakeRhinoContours() function."

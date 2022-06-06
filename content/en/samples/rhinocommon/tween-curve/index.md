@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/tween-curve/", "/6/samples/rhinocommon/tween-curve/", "/7/samples/rhinocommon/tween-curve/", "/wip/samples/rhinocommon/tween-curve/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to tween two curves."

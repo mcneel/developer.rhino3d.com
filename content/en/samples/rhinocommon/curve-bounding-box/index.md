@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/curve-bounding-box/", "/6/samples/rhinocommon/curve-bounding-box/", "/7/samples/rhinocommon/curve-bounding-box/", "/wip/samples/rhinocommon/curve-bounding-box/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to create a curve bounding box (world and plane oriented)."

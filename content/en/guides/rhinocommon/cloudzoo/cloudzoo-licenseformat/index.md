@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/"]
 authors = [ "aj" ]
 categories = [ "CloudZooDoc" ]
 description = "A License Format object defines a pattern for a license key. When a user enters a license key to be added to their account or their team, Cloud Zoo will find a product with a matching license format and notify its issuer about the user's intent to add the license."

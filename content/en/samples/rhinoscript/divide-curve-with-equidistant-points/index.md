@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/divide-curve-with-equidistant-points/", "/6/samples/rhinoscript/divide-curve-with-equidistant-points/", "/7/samples/rhinoscript/divide-curve-with-equidistant-points/", "/wip/samples/rhinoscript/divide-curve-with-equidistant-points/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates equidistance curve division using RhinoScript."

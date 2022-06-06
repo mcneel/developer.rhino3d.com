@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/eto-controls-python/", "/6/guides/rhinopython/eto-controls-python/", "/7/guides/rhinopython/eto-controls-python/", "/wip/guides/rhinopython/eto-controls-python/"]
 authors = [ "scottd" ]
 categories = [ "Eto" ]
 description = "Using the Eto dialog framework to create interface controls."

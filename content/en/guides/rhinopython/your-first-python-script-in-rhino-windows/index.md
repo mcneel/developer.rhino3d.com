@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/your-first-python-script-in-rhino-windows/", "/6/guides/rhinopython/your-first-python-script-in-rhino-windows/", "/7/guides/rhinopython/your-first-python-script-in-rhino-windows/", "/wip/guides/rhinopython/your-first-python-script-in-rhino-windows/"]
 authors = [ "scottd" ]
 categories = [ "Getting Started" ]
 description = "This guide demonstrates how to create Python scripts in Rhino for Windows."

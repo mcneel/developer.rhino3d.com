@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/edit-text/", "/6/samples/rhinocommon/edit-text/", "/7/samples/rhinocommon/edit-text/", "/wip/samples/rhinocommon/edit-text/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to edit selected text, replacing it with new text."

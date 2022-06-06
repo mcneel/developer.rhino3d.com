@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/hatch-curve/", "/6/samples/rhinocommon/hatch-curve/", "/7/samples/rhinocommon/hatch-curve/", "/wip/samples/rhinocommon/hatch-curve/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to create a hatch from a curve."

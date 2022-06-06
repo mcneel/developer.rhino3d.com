@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/script-demand-load/", "/6/guides/rhinoscript/script-demand-load/", "/7/guides/rhinoscript/script-demand-load/", "/wip/guides/rhinoscript/script-demand-load/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to demand load and run RhinoScript routines."

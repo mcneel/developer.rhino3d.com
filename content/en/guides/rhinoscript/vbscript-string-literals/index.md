@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/vbscript-string-literals/", "/6/guides/rhinoscript/vbscript-string-literals/", "/7/guides/rhinoscript/vbscript-string-literals/", "/wip/guides/rhinoscript/vbscript-string-literals/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to use string literals in VBScript."

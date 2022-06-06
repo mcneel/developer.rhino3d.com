@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/adding-mesh-objects/", "/6/guides/cpp/adding-mesh-objects/", "/7/guides/cpp/adding-mesh-objects/", "/wip/guides/cpp/adding-mesh-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to add a simple mesh object to Rhino in C/C++."

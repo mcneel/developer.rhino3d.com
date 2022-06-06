@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/trim-curve-with-circle/", "/6/samples/rhinoscript/trim-curve-with-circle/", "/7/samples/rhinoscript/trim-curve-with-circle/", "/wip/samples/rhinoscript/trim-curve-with-circle/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to trim a closed curve with a circle using RhinoScript."

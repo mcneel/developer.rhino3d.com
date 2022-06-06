@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-user-input/", "/6/guides/rhinopython/python-user-input/", "/7/guides/rhinopython/python-user-input/", "/wip/guides/rhinopython/python-user-input/"]
 authors = [ "scottd" ]
 categories = [ "Intermediate" ]
 description = "How to prompt the user for input into a script."

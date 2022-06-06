@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/including-scripts/", "/6/guides/rhinoscript/including-scripts/", "/7/guides/rhinoscript/including-scripts/", "/wip/guides/rhinoscript/including-scripts/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide discusses how to include or use functions from another source file in RhinoScript."

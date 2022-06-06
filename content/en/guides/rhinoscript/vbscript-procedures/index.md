@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/vbscript-procedures/", "/6/guides/rhinoscript/vbscript-procedures/", "/7/guides/rhinoscript/vbscript-procedures/", "/wip/guides/rhinoscript/vbscript-procedures/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses VBScript procedures."

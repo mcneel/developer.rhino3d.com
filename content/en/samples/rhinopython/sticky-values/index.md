@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinopython/sticky-values/", "/6/samples/rhinopython/sticky-values/", "/7/samples/rhinopython/sticky-values/", "/wip/samples/rhinopython/sticky-values/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "This module contains a standard python dictionary called sticky which sticks around."

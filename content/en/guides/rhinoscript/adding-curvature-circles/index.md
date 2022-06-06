@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/adding-curvature-circles/", "/6/guides/rhinoscript/adding-curvature-circles/", "/7/guides/rhinoscript/adding-curvature-circles/", "/wip/guides/rhinoscript/adding-curvature-circles/"]
 authors = [ "dale" ]
 categories = [ "Tasks", "Analysis", "Curves", "Advanced" ]
 description = "This guide demonstrates how to add curvature circles using RhinoScript."

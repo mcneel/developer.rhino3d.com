@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-license/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-license/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-license/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-license/"]
 authors = [ "aj" ]
 categories = [ "CloudZooDoc" ]
 description = "A License is a JSON object that represents a license for a software product issued by a registered issuer in Cloud Zoo."

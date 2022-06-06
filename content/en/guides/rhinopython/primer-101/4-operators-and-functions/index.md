@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/primer-101/4-operators-and-functions/", "/6/guides/rhinopython/primer-101/4-operators-and-functions/", "/7/guides/rhinopython/primer-101/4-operators-and-functions/", "/wip/guides/rhinopython/primer-101/4-operators-and-functions/"]
 authors = [ "skylar-tibbits", "arthur-van-der-harten", "steve" ]
 categories = [ "Rhino.Python 101" ]
 category_page = "guides/rhinopython/primer-101/"

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/move-cplane/", "/6/samples/rhinocommon/move-cplane/", "/7/samples/rhinocommon/move-cplane/", "/wip/samples/rhinocommon/move-cplane/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to move a CPlane in the active viewport."

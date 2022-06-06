@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-plane/", "/6/guides/rhinopython/python-rhinoscriptsyntax-plane/", "/7/guides/rhinopython/python-rhinoscriptsyntax-plane/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-plane/"]
 authors = [ "dale" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an overview of RhinoScriptSyntax Plane Geometry in Python."

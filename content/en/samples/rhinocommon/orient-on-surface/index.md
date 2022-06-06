@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/orient-on-surface/", "/6/samples/rhinocommon/orient-on-surface/", "/7/samples/rhinocommon/orient-on-surface/", "/wip/samples/rhinocommon/orient-on-surface/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to orient objects on a surface."

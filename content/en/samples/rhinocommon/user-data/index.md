@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/user-data/", "/6/samples/rhinocommon/user-data/", "/7/samples/rhinocommon/user-data/", "/wip/samples/rhinocommon/user-data/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "RhinoCommon object plugin user data"

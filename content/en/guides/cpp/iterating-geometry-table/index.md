@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/iterating-geometry-table/", "/6/guides/cpp/iterating-geometry-table/", "/7/guides/cpp/iterating-geometry-table/", "/wip/guides/cpp/iterating-geometry-table/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to use the C/C++ CRhinoObjectIterator class to iterate through the document."

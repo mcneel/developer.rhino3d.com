@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/installing-tools-mac/", "/6/guides/rhinocommon/installing-tools-mac/", "/7/guides/rhinocommon/installing-tools-mac/", "/wip/guides/rhinocommon/installing-tools-mac/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "This guide covers all the necessary tools required to author Rhino plugins on Mac."

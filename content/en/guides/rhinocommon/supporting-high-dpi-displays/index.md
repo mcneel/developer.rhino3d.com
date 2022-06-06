@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/supporting-high-dpi-displays/", "/6/guides/rhinocommon/supporting-high-dpi-displays/", "/7/guides/rhinocommon/supporting-high-dpi-displays/", "/wip/guides/rhinocommon/supporting-high-dpi-displays/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses the support of high resolution monitors."

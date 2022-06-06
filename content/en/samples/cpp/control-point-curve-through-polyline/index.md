@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/control-point-curve-through-polyline/", "/6/samples/cpp/control-point-curve-through-polyline/", "/7/samples/cpp/control-point-curve-through-polyline/", "/wip/samples/cpp/control-point-curve-through-polyline/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to create a control points curve through a polyline."

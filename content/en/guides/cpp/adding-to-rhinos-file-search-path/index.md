@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/adding-to-rhinos-file-search-path/", "/6/guides/cpp/adding-to-rhinos-file-search-path/", "/7/guides/cpp/adding-to-rhinos-file-search-path/", "/wip/guides/cpp/adding-to-rhinos-file-search-path/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide demonstrates how to add a file path to Rhino's file search path using C/C++."

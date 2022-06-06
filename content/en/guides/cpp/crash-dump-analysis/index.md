@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/crash-dump-analysis/", "/6/guides/cpp/crash-dump-analysis/", "/7/guides/cpp/crash-dump-analysis/", "/wip/guides/cpp/crash-dump-analysis/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses how to analyze crash dump files in Visual Studio."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/wrapping-native-libraries/", "/6/guides/rhinocommon/wrapping-native-libraries/", "/7/guides/rhinocommon/wrapping-native-libraries/", "/wip/guides/rhinocommon/wrapping-native-libraries/"]
 authors = [ "dan" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to wrap a C/C++ library in order to call into it from .NET."

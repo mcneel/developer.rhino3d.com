@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/plugin-installers-windows/", "/6/guides/rhinocommon/plugin-installers-windows/", "/7/guides/rhinocommon/plugin-installers-windows/", "/wip/guides/rhinocommon/plugin-installers-windows/"]
 authors = [ "brian", "will" ]
 categories = [ "Getting Started" ]
 description = "This guide explains how to create a plugin installer for Rhino for Windows."

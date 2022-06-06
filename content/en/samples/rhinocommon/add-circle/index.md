@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/add-circle/", "/6/samples/rhinocommon/add-circle/", "/7/samples/rhinocommon/add-circle/", "/wip/samples/rhinocommon/add-circle/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a circle from a center point and radius."

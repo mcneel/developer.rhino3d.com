@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/compute/what-is-rhino-compute/", "/6/guides/compute/what-is-rhino-compute/", "/7/guides/compute/what-is-rhino-compute/", "/wip/guides/compute/what-is-rhino-compute/"]
 authors = [ "andy.payne" ]
 categories = []
 description = "This guide will help explain what Rhino.Compute is all about."

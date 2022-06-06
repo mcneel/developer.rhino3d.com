@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/creating-custom-color-picker/", "/6/guides/cpp/creating-custom-color-picker/", "/7/guides/cpp/creating-custom-color-picker/", "/wip/guides/cpp/creating-custom-color-picker/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to replace Rhino's color picker using C/C++."

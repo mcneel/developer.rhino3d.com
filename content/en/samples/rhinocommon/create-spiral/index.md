@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/create-spiral/", "/6/samples/rhinocommon/create-spiral/", "/7/samples/rhinocommon/create-spiral/", "/wip/samples/rhinocommon/create-spiral/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to create a spiral object from an axis and a radius point."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/unroll-surface/", "/6/samples/rhinocommon/unroll-surface/", "/7/samples/rhinocommon/unroll-surface/", "/wip/samples/rhinocommon/unroll-surface/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Unrolling a developable surface"

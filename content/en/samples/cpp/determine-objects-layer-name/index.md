@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/determine-objects-layer-name/", "/6/samples/cpp/determine-objects-layer-name/", "/7/samples/cpp/determine-objects-layer-name/", "/wip/samples/cpp/determine-objects-layer-name/"]
 authors = [ "dale" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to determine a selected object's layer name using C++."

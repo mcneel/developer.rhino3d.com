@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/determine-object-layer/", "/6/samples/rhinocommon/determine-object-layer/", "/7/samples/rhinocommon/determine-object-layer/", "/wip/samples/rhinocommon/determine-object-layer/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects", "Layers" ]
 description = "Demonstrates how to determine which layer a user-specified object is on and print the name."

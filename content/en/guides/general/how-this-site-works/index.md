@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/general/how-this-site-works/", "/6/guides/general/how-this-site-works/", "/7/guides/general/how-this-site-works/", "/wip/guides/general/how-this-site-works/"]
 authors = [ "dan" ]
 categories = [ "This Site" ]
 description = "A guide to how this very developer document site works."

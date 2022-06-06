@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/rdk-current-environment-classes/", "/6/guides/cpp/rdk-current-environment-classes/", "/7/guides/cpp/rdk-current-environment-classes/", "/wip/guides/cpp/rdk-current-environment-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK current environment class in C/C++."

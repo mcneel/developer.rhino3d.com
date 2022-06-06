@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/vbscript-looping/", "/6/guides/rhinoscript/vbscript-looping/", "/7/guides/rhinoscript/vbscript-looping/", "/wip/guides/rhinoscript/vbscript-looping/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide is an overview of looping through VBScript code."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/get-brep-face-vertices/", "/6/samples/cpp/get-brep-face-vertices/", "/7/samples/cpp/get-brep-face-vertices/", "/wip/samples/cpp/get-brep-face-vertices/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to get the vertices of a Brep face."

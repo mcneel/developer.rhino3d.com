@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/rename-object/", "/6/samples/rhinocommon/rename-object/", "/7/samples/rhinocommon/rename-object/", "/wip/samples/rhinocommon/rename-object/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to rename a user-specified object."

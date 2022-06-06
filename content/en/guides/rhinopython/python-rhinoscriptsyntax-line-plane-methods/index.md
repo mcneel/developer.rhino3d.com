@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods/", "/6/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods/", "/7/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods/"]
 authors = [ "dale" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an overview of the rhinoscriptsytntax Line and Plane methods."

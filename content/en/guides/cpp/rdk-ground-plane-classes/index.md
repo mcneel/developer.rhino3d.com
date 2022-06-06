@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/rdk-ground-plane-classes/", "/6/guides/cpp/rdk-ground-plane-classes/", "/7/guides/cpp/rdk-ground-plane-classes/", "/wip/guides/cpp/rdk-ground-plane-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK ground plane class in C/C++."

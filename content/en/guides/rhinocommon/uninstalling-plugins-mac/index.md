@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/uninstalling-plugins-mac/", "/6/guides/rhinocommon/uninstalling-plugins-mac/", "/7/guides/rhinocommon/uninstalling-plugins-mac/", "/wip/guides/rhinocommon/uninstalling-plugins-mac/"]
 authors = [ "dan" ]
 categories = [ "Fundamentals" ]
 description = "This guide explains how to uninstall or remove plugins in Rhino for Mac."

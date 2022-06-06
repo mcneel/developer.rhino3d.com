@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/scripting-methods-for-rdk/", "/6/guides/rhinoscript/scripting-methods-for-rdk/", "/7/guides/rhinoscript/scripting-methods-for-rdk/", "/wip/guides/rhinoscript/scripting-methods-for-rdk/"]
 authors = [ "andy" ]
 categories = [ "RDK" ]
 description = "This guide enumerates the RhinoScript methods for accessing the RDK."

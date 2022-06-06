@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/surface-from-control-points/", "/6/samples/cpp/surface-from-control-points/", "/7/samples/cpp/surface-from-control-points/", "/wip/samples/cpp/surface-from-control-points/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a surface from a grid of control points."

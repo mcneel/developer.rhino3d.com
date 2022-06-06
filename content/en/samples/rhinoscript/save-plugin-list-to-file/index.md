@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/save-plugin-list-to-file/", "/6/samples/rhinoscript/save-plugin-list-to-file/", "/7/samples/rhinoscript/save-plugin-list-to-file/", "/wip/samples/rhinoscript/save-plugin-list-to-file/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to save the names of loaded and unloaded plugins to a text file using RhinoScript."

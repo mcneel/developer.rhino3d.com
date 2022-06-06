@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/opennurbs/", "/6/guides/opennurbs/", "/7/guides/opennurbs/", "/wip/guides/opennurbs/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "Read/Write Rhino 3dm files in your application."

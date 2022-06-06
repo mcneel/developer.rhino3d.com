@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/lengths-of-curves/", "/6/guides/rhinoscript/lengths-of-curves/", "/7/guides/rhinoscript/lengths-of-curves/", "/wip/guides/rhinoscript/lengths-of-curves/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide demonstrates how to calculate the lengths of curve objects using RhinoScript."

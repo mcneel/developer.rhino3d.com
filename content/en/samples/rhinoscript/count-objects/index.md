@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/count-objects/", "/6/samples/rhinoscript/count-objects/", "/7/samples/rhinoscript/count-objects/", "/wip/samples/rhinoscript/count-objects/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to count all the different object types using RhinoScript."

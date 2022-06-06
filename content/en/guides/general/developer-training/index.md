@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/general/developer-training/", "/6/guides/general/developer-training/", "/7/guides/general/developer-training/", "/wip/guides/general/developer-training/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "This guide describes our Rhino Developer Training."

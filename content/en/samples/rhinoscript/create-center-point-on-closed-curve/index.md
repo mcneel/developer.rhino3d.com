@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/create-center-point-on-closed-curve/", "/6/samples/rhinoscript/create-center-point-on-closed-curve/", "/7/samples/rhinoscript/create-center-point-on-closed-curve/", "/wip/samples/rhinoscript/create-center-point-on-closed-curve/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to mark the center points of closed planar curves with a point object using RhinoScript."

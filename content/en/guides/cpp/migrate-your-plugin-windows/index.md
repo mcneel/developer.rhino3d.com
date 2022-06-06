@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/migrate-your-plugin-windows/", "/6/guides/cpp/migrate-your-plugin-windows/", "/7/guides/cpp/migrate-your-plugin-windows/", "/wip/guides/cpp/migrate-your-plugin-windows/"]
 authors = [ "dale" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through migrating your Rhino 6 plugin project to Rhino 7."

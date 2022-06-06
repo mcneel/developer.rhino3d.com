@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/using-nuget/", "/6/guides/rhinocommon/using-nuget/", "/7/guides/rhinocommon/using-nuget/", "/wip/guides/rhinocommon/using-nuget/"]
 authors = [ "luis", "will" ]
 categories = [ "Advanced" ]
 description = "This guide describes how developers can use the NuGet packages available for RhinoCommon and Grasshopper."

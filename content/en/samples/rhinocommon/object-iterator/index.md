@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/object-iterator/", "/6/samples/rhinocommon/object-iterator/", "/7/samples/rhinocommon/object-iterator/", "/wip/samples/rhinocommon/object-iterator/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to iterate (or enumerate) through Rhino's geometry table."

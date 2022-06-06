@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/move-points-non-uniform/", "/6/samples/rhinocommon/move-points-non-uniform/", "/7/samples/rhinocommon/move-points-non-uniform/", "/wip/samples/rhinocommon/move-points-non-uniform/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to move points in a non-uniform manner."

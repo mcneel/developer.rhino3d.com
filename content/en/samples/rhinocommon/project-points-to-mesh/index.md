@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/project-points-to-mesh/", "/6/samples/rhinocommon/project-points-to-mesh/", "/7/samples/rhinocommon/project-points-to-mesh/", "/wip/samples/rhinocommon/project-points-to-mesh/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to project points to a mesh."

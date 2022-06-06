@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/reversing-arrays/", "/6/guides/rhinoscript/reversing-arrays/", "/7/guides/rhinoscript/reversing-arrays/", "/wip/guides/rhinoscript/reversing-arrays/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This brief guide demonstrates how to reverse an array using RhinoScript."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/shading-individual-objects/", "/6/guides/cpp/shading-individual-objects/", "/7/guides/cpp/shading-individual-objects/", "/wip/guides/cpp/shading-individual-objects/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to shade individual objects using C/C++."

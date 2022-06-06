@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/script-the-split-command/", "/6/samples/rhinoscript/script-the-split-command/", "/7/samples/rhinoscript/script-the-split-command/", "/wip/samples/rhinoscript/script-the-split-command/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to script the Split command using RhinoScript."

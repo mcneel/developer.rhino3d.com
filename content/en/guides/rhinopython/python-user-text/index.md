@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-user-text/", "/6/guides/rhinopython/python-user-text/", "/7/guides/rhinopython/python-user-text/", "/wip/guides/rhinopython/python-user-text/"]
 authors = [ "scottd" ]
 categories = [ "intermediate" ]
 description = "How to create and access customer user text with Python."

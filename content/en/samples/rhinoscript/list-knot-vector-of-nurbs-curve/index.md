@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/list-knot-vector-of-nurbs-curve/", "/6/samples/rhinoscript/list-knot-vector-of-nurbs-curve/", "/7/samples/rhinoscript/list-knot-vector-of-nurbs-curve/", "/wip/samples/rhinoscript/list-knot-vector-of-nurbs-curve/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to print the knot vector of NURBS curve using RhinoScript."

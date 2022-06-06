@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/rdk-sun-classes/", "/6/guides/cpp/rdk-sun-classes/", "/7/guides/cpp/rdk-sun-classes/", "/wip/guides/cpp/rdk-sun-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK sun classes in C/C++."

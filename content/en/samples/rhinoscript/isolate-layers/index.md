@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/isolate-layers/", "/6/samples/rhinoscript/isolate-layers/", "/7/samples/rhinoscript/isolate-layers/", "/wip/samples/rhinoscript/isolate-layers/"]
 authors = [ "dale" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to isolate the layers of selected objects using RhinoScript."

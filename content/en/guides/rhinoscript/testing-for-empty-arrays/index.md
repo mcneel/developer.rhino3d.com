@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/testing-for-empty-arrays/", "/6/guides/rhinoscript/testing-for-empty-arrays/", "/7/guides/rhinoscript/testing-for-empty-arrays/", "/wip/guides/rhinoscript/testing-for-empty-arrays/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide discusses how to determine a VBScript array is empty."

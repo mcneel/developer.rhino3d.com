@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/display-conduit-arrowheads/", "/6/samples/rhinocommon/display-conduit-arrowheads/", "/7/samples/rhinocommon/display-conduit-arrowheads/", "/wip/samples/rhinocommon/display-conduit-arrowheads/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to drawing arrowheads in a Display Conduit."

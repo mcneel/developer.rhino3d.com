@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/convert-block-to-group/", "/6/samples/rhinoscript/convert-block-to-group/", "/7/samples/rhinoscript/convert-block-to-group/", "/wip/samples/rhinoscript/convert-block-to-group/"]
 authors = [ "dale" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to explode a block and group its components using RhinoScript."

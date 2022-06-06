@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/single-color-back-faces/", "/6/samples/rhinocommon/single-color-back-faces/", "/7/samples/rhinocommon/single-color-back-faces/", "/wip/samples/rhinocommon/single-color-back-faces/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to determine the curve and object colors of back faces."

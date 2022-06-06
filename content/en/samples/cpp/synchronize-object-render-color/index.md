@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/synchronize-object-render-color/", "/6/samples/cpp/synchronize-object-render-color/", "/7/samples/cpp/synchronize-object-render-color/", "/wip/samples/cpp/synchronize-object-render-color/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to synchronize the basic material color of an object with the object's display color."

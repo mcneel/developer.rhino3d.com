@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/intersect-line-and-circle/", "/6/samples/rhinocommon/intersect-line-and-circle/", "/7/samples/rhinocommon/intersect-line-and-circle/", "/wip/samples/rhinocommon/intersect-line-and-circle/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to find the intersection point(s) of a circle and a line."

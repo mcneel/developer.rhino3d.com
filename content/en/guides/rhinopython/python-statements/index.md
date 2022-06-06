@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-statements/", "/6/guides/rhinopython/python-statements/", "/7/guides/rhinopython/python-statements/", "/wip/guides/rhinopython/python-statements/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide presents an overview of Python syntax."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/primer-101/8-geometry/", "/6/guides/rhinopython/primer-101/8-geometry/", "/7/guides/rhinopython/primer-101/8-geometry/", "/wip/guides/rhinopython/primer-101/8-geometry/"]
 authors = [ "skylar-tibbits", "arthur-van-der-harten", "steve" ]
 categories = [ "Rhino.Python 101" ]
 category_page = "guides/rhinopython/primer-101/"

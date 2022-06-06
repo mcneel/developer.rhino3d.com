@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/calculating-lengths-of-nurbs-curves/", "/6/guides/cpp/calculating-lengths-of-nurbs-curves/", "/7/guides/cpp/calculating-lengths-of-nurbs-curves/", "/wip/guides/cpp/calculating-lengths-of-nurbs-curves/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses a problem when trying to calculate the length of a NURBS curve using C/C++."

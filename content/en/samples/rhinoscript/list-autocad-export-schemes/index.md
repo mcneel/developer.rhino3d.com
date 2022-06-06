@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/list-autocad-export-schemes/", "/6/samples/rhinoscript/list-autocad-export-schemes/", "/7/samples/rhinoscript/list-autocad-export-schemes/", "/wip/samples/rhinoscript/list-autocad-export-schemes/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to build a list of AutoCAD export schemes using RhinoScript."

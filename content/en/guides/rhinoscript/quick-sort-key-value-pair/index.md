@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/quick-sort-key-value-pair/", "/6/guides/rhinoscript/quick-sort-key-value-pair/", "/7/guides/rhinoscript/quick-sort-key-value-pair/", "/wip/guides/rhinoscript/quick-sort-key-value-pair/"]
 authors = [ "david" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to sort an array of key-value pairs in RhinoScript."

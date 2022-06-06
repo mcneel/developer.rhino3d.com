@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/grasshopper/your-first-component-mac/", "/6/guides/grasshopper/your-first-component-mac/", "/7/guides/grasshopper/your-first-component-mac/", "/wip/guides/grasshopper/your-first-component-mac/"]
 authors = [ "steve" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first Grasshopper component for Rhino for Mac using RhinoCommon and Xamarin Studio."

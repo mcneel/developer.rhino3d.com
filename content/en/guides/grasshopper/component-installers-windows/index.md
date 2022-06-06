@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/grasshopper/component-installers-windows/", "/6/guides/grasshopper/component-installers-windows/", "/7/guides/grasshopper/component-installers-windows/", "/wip/guides/grasshopper/component-installers-windows/"]
 authors = [ "david" ]
 categories = [ "In Depth" ]
 description = "This guide has yet to be authored or ported."

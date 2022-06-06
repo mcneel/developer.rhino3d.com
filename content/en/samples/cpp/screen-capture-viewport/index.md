@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/screen-capture-viewport/", "/6/samples/cpp/screen-capture-viewport/", "/7/samples/cpp/screen-capture-viewport/", "/wip/samples/cpp/screen-capture-viewport/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to screen capture a viewport to a file."

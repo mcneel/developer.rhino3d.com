@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/rdk-dithering-classes/", "/6/guides/cpp/rdk-dithering-classes/", "/7/guides/cpp/rdk-dithering-classes/", "/wip/guides/cpp/rdk-dithering-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK dithering class in C/C++."

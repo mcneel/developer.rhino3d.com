@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/arc-point-distribution/", "/6/samples/rhinoscript/arc-point-distribution/", "/7/samples/rhinoscript/arc-point-distribution/", "/wip/samples/rhinoscript/arc-point-distribution/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates arc point distribution."

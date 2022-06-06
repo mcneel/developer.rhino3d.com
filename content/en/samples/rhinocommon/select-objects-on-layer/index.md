@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/select-objects-on-layer/", "/6/samples/rhinocommon/select-objects-on-layer/", "/7/samples/rhinocommon/select-objects-on-layer/", "/wip/samples/rhinocommon/select-objects-on-layer/"]
 authors = [ "steve" ]
 categories = [ "Picking and Selection", "Adding Objects", "Layers" ]
 description = "Demonstrates how to select all the objects on a user-specified layer."

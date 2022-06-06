@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/morphing-a-surface/", "/6/samples/rhinoscript/morphing-a-surface/", "/7/samples/rhinoscript/morphing-a-surface/", "/wip/samples/rhinoscript/morphing-a-surface/"]
 authors = [ "stylianos-dritsas" ]
 categories = [ "Surfaces" ]
 description = "An example of how to morph a surface using RhinoScript."

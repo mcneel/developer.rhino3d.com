@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/split-brep-edges/", "/6/samples/cpp/split-brep-edges/", "/7/samples/cpp/split-brep-edges/", "/wip/samples/cpp/split-brep-edges/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to split the edges of breps."

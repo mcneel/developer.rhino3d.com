@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/extend-curve/", "/6/samples/rhinocommon/extend-curve/", "/7/samples/rhinocommon/extend-curve/", "/wip/samples/rhinocommon/extend-curve/"]
 authors = [ "steve" ]
 categories = [ "Curves", "Adding Objects" ]
 description = "Demonstrates how to extend a curve object to user-selected boundary objects."

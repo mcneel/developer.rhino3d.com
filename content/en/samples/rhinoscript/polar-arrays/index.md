@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/polar-arrays/", "/6/samples/rhinoscript/polar-arrays/", "/7/samples/rhinoscript/polar-arrays/", "/wip/samples/rhinoscript/polar-arrays/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create polar arrays of objects using RhinoScript."

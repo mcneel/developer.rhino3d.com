@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/display-order/", "/6/samples/rhinocommon/display-order/", "/7/samples/rhinocommon/display-order/", "/wip/samples/rhinocommon/display-order/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates the order of how objects are drawn in the Rhino viewport and how to change it."

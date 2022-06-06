@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/what-is-rhinocommon/", "/6/guides/rhinocommon/what-is-rhinocommon/", "/7/guides/rhinocommon/what-is-rhinocommon/", "/wip/guides/rhinocommon/what-is-rhinocommon/"]
 authors = [ "steve" ]
 categories = [ "Overview" ]
 description = "This guide gives an overview of RhinoCommon."

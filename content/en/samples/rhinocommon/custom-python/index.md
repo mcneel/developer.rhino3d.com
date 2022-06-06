@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/custom-python/", "/6/samples/rhinocommon/custom-python/", "/7/samples/rhinocommon/custom-python/", "/wip/samples/rhinocommon/custom-python/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to run a custom python script from within a command."

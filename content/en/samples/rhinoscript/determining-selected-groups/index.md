@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/determining-selected-groups/", "/6/samples/rhinoscript/determining-selected-groups/", "/7/samples/rhinoscript/determining-selected-groups/", "/wip/samples/rhinoscript/determining-selected-groups/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to determine what object groups are selected using RhinoScript."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/opennurbs/what-is-rhino3dmio/", "/6/guides/opennurbs/what-is-rhino3dmio/", "/7/guides/opennurbs/what-is-rhino3dmio/", "/wip/guides/opennurbs/what-is-rhino3dmio/"]
 authors = [ "dan" ]
 categories = [ "Overview" ]
 description = "This guide covers the RhinoCommon (.NET) build of openNURBS."

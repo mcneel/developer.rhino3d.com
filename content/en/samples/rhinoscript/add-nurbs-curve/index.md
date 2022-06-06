@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/add-nurbs-curve/", "/6/samples/rhinoscript/add-nurbs-curve/", "/7/samples/rhinoscript/add-nurbs-curve/", "/wip/samples/rhinoscript/add-nurbs-curve/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a NURBS curve to Rhino using RhinoScript."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/add-nurbs-circle/", "/6/samples/cpp/add-nurbs-circle/", "/7/samples/cpp/add-nurbs-circle/", "/wip/samples/cpp/add-nurbs-circle/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to use ON_NurbsCurve to create a circle."

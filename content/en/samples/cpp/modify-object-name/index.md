@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/modify-object-name/", "/6/samples/cpp/modify-object-name/", "/7/samples/cpp/modify-object-name/", "/wip/samples/cpp/modify-object-name/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to modify an object's user-defined name."

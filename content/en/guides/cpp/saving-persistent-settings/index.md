@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/saving-persistent-settings/", "/6/guides/cpp/saving-persistent-settings/", "/7/guides/cpp/saving-persistent-settings/", "/wip/guides/cpp/saving-persistent-settings/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses how to save plugin settings to the Registry using C/C++."

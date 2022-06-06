@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/add-points-at-curve-endpoints/", "/6/samples/rhinoscript/add-points-at-curve-endpoints/", "/7/samples/rhinoscript/add-points-at-curve-endpoints/", "/wip/samples/rhinoscript/add-points-at-curve-endpoints/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add point at the starting and ending locations of curves."

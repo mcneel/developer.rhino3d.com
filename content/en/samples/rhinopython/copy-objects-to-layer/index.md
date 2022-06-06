@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinopython/copy-objects-to-layer/", "/6/samples/rhinopython/copy-objects-to-layer/", "/7/samples/rhinopython/copy-objects-to-layer/", "/wip/samples/rhinopython/copy-objects-to-layer/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to copy objects to layer based on Python."

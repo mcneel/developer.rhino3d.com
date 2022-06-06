@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/compute/compute-javascript-getting-started/", "/6/guides/compute/compute-javascript-getting-started/", "/7/guides/compute/compute-javascript-getting-started/", "/wip/guides/compute/compute-javascript-getting-started/"]
 authors = [ "scottd" ]
 categories = [ "Getting Started", "Client" ]
 description = "This guide covers all the necessary tools required to get started with the Rhino Compute Service through JavaScript."

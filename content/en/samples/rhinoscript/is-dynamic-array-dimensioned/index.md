@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/is-dynamic-array-dimensioned/", "/6/samples/rhinoscript/is-dynamic-array-dimensioned/", "/7/samples/rhinoscript/is-dynamic-array-dimensioned/", "/wip/samples/rhinoscript/is-dynamic-array-dimensioned/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to determine of a dynamic array has been dimensioned."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/object-color/", "/6/samples/rhinocommon/object-color/", "/7/samples/rhinocommon/object-color/", "/wip/samples/rhinocommon/object-color/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to set the color of user-specified objects."

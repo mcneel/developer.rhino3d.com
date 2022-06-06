@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/fibonacci-numbers/", "/6/guides/rhinoscript/fibonacci-numbers/", "/7/guides/rhinoscript/fibonacci-numbers/", "/wip/guides/rhinoscript/fibonacci-numbers/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide is a survey of Fibonacci number algorithms in RhinoScript."

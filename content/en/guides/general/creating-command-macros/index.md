@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/general/creating-command-macros/", "/6/guides/general/creating-command-macros/", "/7/guides/general/creating-command-macros/", "/wip/guides/general/creating-command-macros/"]
 authors = [ "scottd" ]
 categories = [ "Overview" ]
 description = "A basic tutorial on creating macros (scripting together Rhino commands)"

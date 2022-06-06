@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/intersecting-meshes/", "/6/samples/cpp/intersecting-meshes/", "/7/samples/cpp/intersecting-meshes/", "/wip/samples/cpp/intersecting-meshes/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to intersect two meshes."

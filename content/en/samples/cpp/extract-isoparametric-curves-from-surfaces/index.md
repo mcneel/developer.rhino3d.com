@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/extract-isoparametric-curves-from-surfaces/", "/6/samples/cpp/extract-isoparametric-curves-from-surfaces/", "/7/samples/cpp/extract-isoparametric-curves-from-surfaces/", "/wip/samples/cpp/extract-isoparametric-curves-from-surfaces/"]
 authors = [ "dale" ]
 categories = [ "Curves", "Surfaces" ]
 description = "Demonstrates how to extract isoparametric curves from surfaces."

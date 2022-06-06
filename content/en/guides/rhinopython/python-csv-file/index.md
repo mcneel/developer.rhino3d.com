@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-csv-file/", "/6/guides/rhinopython/python-csv-file/", "/7/guides/rhinopython/python-csv-file/", "/wip/guides/rhinopython/python-csv-file/"]
 authors = [ "scottd" ]
 categories = [ "Intermediate" ]
 description = "Use Python to read and write comma-delimited files."

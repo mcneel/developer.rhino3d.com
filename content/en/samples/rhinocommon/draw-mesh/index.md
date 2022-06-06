@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/draw-mesh/", "/6/samples/rhinocommon/draw-mesh/", "/7/samples/rhinocommon/draw-mesh/", "/wip/samples/rhinocommon/draw-mesh/"]
 authors = [ "steve" ]
 categories = [ "Draw" ]
 description = "Demonstrates how to create a mesh from an existing surface and draw it in a display conduit."

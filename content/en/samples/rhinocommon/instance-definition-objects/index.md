@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/instance-definition-objects/", "/6/samples/rhinocommon/instance-definition-objects/", "/7/samples/rhinocommon/instance-definition-objects/", "/wip/samples/rhinocommon/instance-definition-objects/"]
 authors = [ "steve" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to print (or list) the objects that make up a block definition."

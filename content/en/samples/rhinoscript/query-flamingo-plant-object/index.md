@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/query-flamingo-plant-object/", "/6/samples/rhinoscript/query-flamingo-plant-object/", "/7/samples/rhinoscript/query-flamingo-plant-object/", "/wip/samples/rhinoscript/query-flamingo-plant-object/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how query a plant object using RhinoScript."

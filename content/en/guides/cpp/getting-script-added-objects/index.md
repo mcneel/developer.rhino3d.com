@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/getting-script-added-objects/", "/6/guides/cpp/getting-script-added-objects/", "/7/guides/cpp/getting-script-added-objects/", "/wip/guides/cpp/getting-script-added-objects/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to locate objects that were added to Rhino by a script using C/C++."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/event-watchers/", "/6/guides/rhinocommon/event-watchers/", "/7/guides/rhinocommon/event-watchers/", "/wip/guides/rhinocommon/event-watchers/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide covers how to synchronize a control's appearance with what is going on in Rhino using event watchers."

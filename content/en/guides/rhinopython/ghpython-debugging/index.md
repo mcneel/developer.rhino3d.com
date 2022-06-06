@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/ghpython-debugging/", "/6/guides/rhinopython/ghpython-debugging/", "/7/guides/rhinopython/ghpython-debugging/", "/wip/guides/rhinopython/ghpython-debugging/"]
 authors = [ "david.leon", "giulio" ]
 categories = [ "GhPython" ]
 description = "This guide will walk you through to debugging python scripts in Grasshopper using Visual Studio."

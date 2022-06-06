@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/retreiving-rhino-data-from-clipboard/", "/6/guides/cpp/retreiving-rhino-data-from-clipboard/", "/7/guides/cpp/retreiving-rhino-data-from-clipboard/", "/wip/guides/cpp/retreiving-rhino-data-from-clipboard/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to access Rhino data from the Windows Clipboard using C/C++."

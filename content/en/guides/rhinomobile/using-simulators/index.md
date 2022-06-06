@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinomobile/using-simulators/", "/6/guides/rhinomobile/using-simulators/", "/7/guides/rhinomobile/using-simulators/", "/wip/guides/rhinomobile/using-simulators/"]
 authors = [ "dan" ]
 categories = [ "Fundamentals" ]
 description = "This guide covers the basics of using Emulators or Simulators to debug your mobile application."

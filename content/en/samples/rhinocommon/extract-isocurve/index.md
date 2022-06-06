@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/extract-isocurve/", "/6/samples/rhinocommon/extract-isocurve/", "/7/samples/rhinocommon/extract-isocurve/", "/wip/samples/rhinocommon/extract-isocurve/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to extract the isoparametric curves from selected surfaces."

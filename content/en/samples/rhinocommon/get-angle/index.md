@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/get-angle/", "/6/samples/rhinocommon/get-angle/", "/7/samples/rhinocommon/get-angle/", "/wip/samples/rhinocommon/get-angle/"]
 authors = [ "steve" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to interactively pick an angle given a base point and two reference points."

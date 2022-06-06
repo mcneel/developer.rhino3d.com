@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/primer-101/4-operators-and-functions/", "/6/guides/rhinoscript/primer-101/4-operators-and-functions/", "/7/guides/rhinoscript/primer-101/4-operators-and-functions/", "/wip/guides/rhinoscript/primer-101/4-operators-and-functions/"]
 authors = [ "david" ]
 categories = [ "RhinoScript 101" ]
 category_page = "guides/rhinoscript/primer-101/"

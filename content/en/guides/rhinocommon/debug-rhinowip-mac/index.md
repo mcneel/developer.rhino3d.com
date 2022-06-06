@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/debug-rhinowip-mac/", "/6/guides/rhinocommon/debug-rhinowip-mac/", "/7/guides/rhinocommon/debug-rhinowip-mac/", "/wip/guides/rhinocommon/debug-rhinowip-mac/"]
 authors = [ "dan" ]
 categories = [ "Deprecated" ]
 description = "This guide explains how to debug using the RhinoWIP for Mac."

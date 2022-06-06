@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/grasshopper/your-first-component-windows/", "/6/guides/grasshopper/your-first-component-windows/", "/7/guides/grasshopper/your-first-component-windows/", "/wip/guides/grasshopper/your-first-component-windows/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first custom Grasshopper component library using Visual Studio."

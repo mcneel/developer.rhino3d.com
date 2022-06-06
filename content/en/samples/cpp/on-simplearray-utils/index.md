@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/on-simplearray-utils/", "/6/samples/cpp/on-simplearray-utils/", "/7/samples/cpp/on-simplearray-utils/", "/wip/samples/cpp/on-simplearray-utils/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to sort and cull simple arrays."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/add-cone/", "/6/samples/rhinocommon/add-cone/", "/7/samples/rhinocommon/add-cone/", "/wip/samples/rhinocommon/add-cone/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to construct a cone using a plane, height, and radius."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/do-not-test-for-equality/", "/6/guides/cpp/do-not-test-for-equality/", "/7/guides/cpp/do-not-test-for-equality/", "/wip/guides/cpp/do-not-test-for-equality/"]
 authors = [ "dale" ]
 categories = [ "Troubleshooting" ]
 description = "This brief guide contains a technical tip for floating point programming."

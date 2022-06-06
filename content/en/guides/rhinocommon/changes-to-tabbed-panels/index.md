@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/changes-to-tabbed-panels/", "/6/guides/rhinocommon/changes-to-tabbed-panels/", "/7/guides/rhinocommon/changes-to-tabbed-panels/", "/wip/guides/rhinocommon/changes-to-tabbed-panels/"]
 authors = [ "johnm" ]
 categories = [ "Advanced" ]
 description = "Discusses the changes in tabbed panels for Rhino 6."

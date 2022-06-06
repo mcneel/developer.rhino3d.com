@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/finding-points-on-curves-at-arc-length-distances/", "/6/guides/cpp/finding-points-on-curves-at-arc-length-distances/", "/7/guides/cpp/finding-points-on-curves-at-arc-length-distances/", "/wip/guides/cpp/finding-points-on-curves-at-arc-length-distances/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to find points that are a specified distance from the start of curves using C/C++."

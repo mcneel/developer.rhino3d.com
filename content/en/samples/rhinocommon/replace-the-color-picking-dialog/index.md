@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/replace-the-color-picking-dialog/", "/6/samples/rhinocommon/replace-the-color-picking-dialog/", "/7/samples/rhinocommon/replace-the-color-picking-dialog/", "/wip/samples/rhinocommon/replace-the-color-picking-dialog/"]
 authors = [ "steve" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to replace Rhino's color picking dialog."

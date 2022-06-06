@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/extract-isocurve-intersection-points/", "/6/samples/rhinoscript/extract-isocurve-intersection-points/", "/7/samples/rhinoscript/extract-isocurve-intersection-points/", "/wip/samples/rhinoscript/extract-isocurve-intersection-points/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to get the intersection points of a surface's isocurves using RhinoScript."

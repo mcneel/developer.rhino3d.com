@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinopython/curve-length/", "/6/samples/rhinopython/curve-length/", "/7/samples/rhinopython/curve-length/", "/wip/samples/rhinopython/curve-length/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to get curve length through Python."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/grasshopper/simple-parameters/", "/6/guides/grasshopper/simple-parameters/", "/7/guides/grasshopper/simple-parameters/", "/wip/guides/grasshopper/simple-parameters/"]
 authors = [ "david" ]
 categories = [ "Fundamentals" ]
 description = "This guide covers parameters; what they are, what they're for, what they can and cannot do."

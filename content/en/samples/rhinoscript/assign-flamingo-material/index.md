@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/assign-flamingo-material/", "/6/samples/rhinoscript/assign-flamingo-material/", "/7/samples/rhinoscript/assign-flamingo-material/", "/wip/samples/rhinoscript/assign-flamingo-material/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how to assign a Flamingo nXt material to an object using RhinoScript."

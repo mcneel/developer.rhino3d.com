@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/drawing-arrowheads-in-display-conduits/", "/6/guides/cpp/drawing-arrowheads-in-display-conduits/", "/7/guides/cpp/drawing-arrowheads-in-display-conduits/", "/wip/guides/cpp/drawing-arrowheads-in-display-conduits/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses and demonstrates how to draw arrowheads in Rhino Display Conduit."

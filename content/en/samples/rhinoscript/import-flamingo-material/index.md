@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/import-flamingo-material/", "/6/samples/rhinoscript/import-flamingo-material/", "/7/samples/rhinoscript/import-flamingo-material/", "/wip/samples/rhinoscript/import-flamingo-material/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how import a ArMaterial file using RhinoScript."

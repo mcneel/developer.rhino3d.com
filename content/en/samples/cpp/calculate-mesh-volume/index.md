@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/calculate-mesh-volume/", "/6/samples/cpp/calculate-mesh-volume/", "/7/samples/cpp/calculate-mesh-volume/", "/wip/samples/cpp/calculate-mesh-volume/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to calculate the volumes of mesh objects."

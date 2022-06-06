@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/divide-curve-straight/", "/6/samples/rhinocommon/divide-curve-straight/", "/7/samples/rhinocommon/divide-curve-straight/", "/wip/samples/rhinocommon/divide-curve-straight/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to divide a curve using equi-distance points."

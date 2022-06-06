@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/move-grip-objects/", "/6/samples/rhinocommon/move-grip-objects/", "/7/samples/rhinocommon/move-grip-objects/", "/wip/samples/rhinocommon/move-grip-objects/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to move grip objects on a selected surface."

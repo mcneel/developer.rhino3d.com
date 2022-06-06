@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/shading-viewports/", "/6/samples/cpp/shading-viewports/", "/7/samples/cpp/shading-viewports/", "/wip/samples/cpp/shading-viewports/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to set a viewport to shaded display."

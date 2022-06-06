@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-where-to-find-help/", "/6/guides/rhinopython/python-where-to-find-help/", "/7/guides/rhinopython/python-where-to-find-help/", "/wip/guides/rhinopython/python-where-to-find-help/"]
 authors = [ "skylar-tibbits", "arthur-van-der-harten", "steve" ]
 categories = [ "Getting Started" ]
 keywords = [ "python", "commands" ]

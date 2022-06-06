@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/set-material-colors-from-object-colors/", "/6/samples/rhinoscript/set-material-colors-from-object-colors/", "/7/samples/rhinoscript/set-material-colors-from-object-colors/", "/wip/samples/rhinoscript/set-material-colors-from-object-colors/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to modify an object's material color to match its display color using RhinoScript."

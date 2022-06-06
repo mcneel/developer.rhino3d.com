@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/creating-blocks/", "/6/guides/cpp/creating-blocks/", "/7/guides/cpp/creating-blocks/", "/wip/guides/cpp/creating-blocks/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to create an instance definition using C/C++."

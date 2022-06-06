@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/custom-picking-grip-objects/", "/6/guides/cpp/custom-picking-grip-objects/", "/7/guides/cpp/custom-picking-grip-objects/", "/wip/guides/cpp/custom-picking-grip-objects/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses how to write a custom grip object picker in C/C++."

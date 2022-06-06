@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/screen-capture-all-viewports/", "/6/samples/cpp/screen-capture-all-viewports/", "/7/samples/cpp/screen-capture-all-viewports/", "/wip/samples/cpp/screen-capture-all-viewports/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to screen capture all the visible viewports to a file."

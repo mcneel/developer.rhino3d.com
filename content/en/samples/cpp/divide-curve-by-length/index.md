@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/divide-curve-by-length/", "/6/samples/cpp/divide-curve-by-length/", "/7/samples/cpp/divide-curve-by-length/", "/wip/samples/cpp/divide-curve-by-length/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to divide a curve object by a specified length."

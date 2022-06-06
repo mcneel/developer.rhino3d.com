@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/import-text-from-file/", "/6/samples/rhinoscript/import-text-from-file/", "/7/samples/rhinoscript/import-text-from-file/", "/wip/samples/rhinoscript/import-text-from-file/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to import text from a file using RhinoScript."

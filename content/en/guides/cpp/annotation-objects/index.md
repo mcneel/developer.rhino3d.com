@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/annotation-objects/", "/6/guides/cpp/annotation-objects/", "/7/guides/cpp/annotation-objects/", "/wip/guides/cpp/annotation-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses the annotation objects provided by the Rhino SDK."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/array-by-distance/", "/6/samples/rhinocommon/array-by-distance/", "/7/samples/rhinocommon/array-by-distance/", "/wip/samples/rhinocommon/array-by-distance/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to array a user-selected object by specifying a start point and a contraint line."

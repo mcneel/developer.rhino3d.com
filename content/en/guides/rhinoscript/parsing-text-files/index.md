@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/parsing-text-files/", "/6/guides/rhinoscript/parsing-text-files/", "/7/guides/rhinoscript/parsing-text-files/", "/wip/guides/rhinoscript/parsing-text-files/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide discusses how to convert data read from a text file into its proper data type in RhinoScript."

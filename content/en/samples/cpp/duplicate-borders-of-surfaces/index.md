@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/duplicate-borders-of-surfaces/", "/6/samples/cpp/duplicate-borders-of-surfaces/", "/7/samples/cpp/duplicate-borders-of-surfaces/", "/wip/samples/cpp/duplicate-borders-of-surfaces/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to duplicate the borders of surfaces and polysurfaces."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-regexp-objects/", "/6/guides/rhinopython/python-regexp-objects/", "/7/guides/rhinopython/python-regexp-objects/", "/wip/guides/rhinopython/python-regexp-objects/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses the VBScript RegExp object."

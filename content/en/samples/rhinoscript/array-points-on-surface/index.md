@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/array-points-on-surface/", "/6/samples/rhinoscript/array-points-on-surface/", "/7/samples/rhinoscript/array-points-on-surface/", "/wip/samples/rhinoscript/array-points-on-surface/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Surfaces" ]
 description = "Demonstrates how to array points on a surface with a RhinoScript."

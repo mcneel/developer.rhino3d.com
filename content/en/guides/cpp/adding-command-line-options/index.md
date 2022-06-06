@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/adding-command-line-options/", "/6/guides/cpp/adding-command-line-options/", "/7/guides/cpp/adding-command-line-options/", "/wip/guides/cpp/adding-command-line-options/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses how to add a different type of command line options to a custom command."

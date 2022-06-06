@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/intersect-lines/", "/6/samples/rhinocommon/intersect-lines/", "/7/samples/rhinocommon/intersect-lines/", "/wip/samples/rhinocommon/intersect-lines/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to find the intersection point of two (non-parallel) lines."

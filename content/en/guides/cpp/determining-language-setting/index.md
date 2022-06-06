@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/determining-language-setting/", "/6/guides/cpp/determining-language-setting/", "/7/guides/cpp/determining-language-setting/", "/wip/guides/cpp/determining-language-setting/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to determine the language setting when developing localized C/C++ plugins."

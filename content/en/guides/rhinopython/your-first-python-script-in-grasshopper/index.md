@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/your-first-python-script-in-grasshopper/", "/6/guides/rhinopython/your-first-python-script-in-grasshopper/", "/7/guides/rhinopython/your-first-python-script-in-grasshopper/", "/wip/guides/rhinopython/your-first-python-script-in-grasshopper/"]
 authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "This manual is for Grasshopper users who would like to create their own custom scripts using Grasshopper for Rhino."

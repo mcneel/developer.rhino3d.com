@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinopython/create-shortcut/", "/6/samples/rhinopython/create-shortcut/", "/7/samples/rhinopython/create-shortcut/", "/wip/samples/rhinopython/create-shortcut/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a shortcut with Python."

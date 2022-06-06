@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/export-layer-objects/", "/6/samples/rhinoscript/export-layer-objects/", "/7/samples/rhinoscript/export-layer-objects/", "/wip/samples/rhinoscript/export-layer-objects/"]
 authors = [ "dale" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to export all objects by layer, with each layer exported to a new file using RhinoScript."

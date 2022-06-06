@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/compute/creating-an-aws-vm/", "/6/guides/compute/creating-an-aws-vm/", "/7/guides/compute/creating-an-aws-vm/", "/wip/guides/compute/creating-an-aws-vm/"]
 authors = [ "andy.payne" ]
 categories = [ "Deployment" ]
 keywords = [ "developer", "compute", "production", "AWS" ]

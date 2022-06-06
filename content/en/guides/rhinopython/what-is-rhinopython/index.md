@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/what-is-rhinopython/", "/6/guides/rhinopython/what-is-rhinopython/", "/7/guides/rhinopython/what-is-rhinopython/", "/wip/guides/rhinopython/what-is-rhinopython/"]
 authors = [ "dan" ]
 categories = [ "Overview" ]
 description = "This guide is an overview of Python in Rhino."

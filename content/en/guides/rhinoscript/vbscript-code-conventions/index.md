@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/vbscript-code-conventions/", "/6/guides/rhinoscript/vbscript-code-conventions/", "/7/guides/rhinoscript/vbscript-code-conventions/", "/wip/guides/rhinoscript/vbscript-code-conventions/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide provides an overview of VBScript coding conventions."

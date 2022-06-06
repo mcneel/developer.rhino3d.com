@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/vbscript-operators/", "/6/guides/rhinoscript/vbscript-operators/", "/7/guides/rhinoscript/vbscript-operators/", "/wip/guides/rhinoscript/vbscript-operators/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide is an overview of VBScript operators."

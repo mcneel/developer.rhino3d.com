@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/opennurbs/finding-annotation-font/", "/6/guides/opennurbs/finding-annotation-font/", "/7/guides/opennurbs/finding-annotation-font/", "/wip/guides/opennurbs/finding-annotation-font/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to get an Annotation object's font using openNURBS."

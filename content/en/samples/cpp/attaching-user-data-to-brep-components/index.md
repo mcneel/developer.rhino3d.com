@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/attaching-user-data-to-brep-components/", "/6/samples/cpp/attaching-user-data-to-brep-components/", "/7/samples/cpp/attaching-user-data-to-brep-components/", "/wip/samples/cpp/attaching-user-data-to-brep-components/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to attach object user data to components of a Brep."

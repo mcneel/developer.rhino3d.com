@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/determine-language-setting/", "/6/samples/rhinocommon/determine-language-setting/", "/7/samples/rhinocommon/determine-language-setting/", "/wip/samples/rhinocommon/determine-language-setting/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to determine Rhino's language setting."

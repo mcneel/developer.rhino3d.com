@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/add-layout/", "/6/samples/rhinocommon/add-layout/", "/7/samples/rhinocommon/add-layout/", "/wip/samples/rhinocommon/add-layout/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects", "Viewports and Views" ]
 description = "Demonstrates how to generate a layout with a single detail view that zooms to a list of objects."

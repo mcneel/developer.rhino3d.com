@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/select-text-objects/", "/6/samples/rhinoscript/select-text-objects/", "/7/samples/rhinoscript/select-text-objects/", "/wip/samples/rhinoscript/select-text-objects/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to use RhinoScript to select all text objects."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/", "/6/samples/", "/7/samples/", "/wip/samples/"]
 description = "All the official sample code available for Rhino and Grasshopper developers."
 title = "Samples"
 type = "guides"

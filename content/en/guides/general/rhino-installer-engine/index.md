@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/general/rhino-installer-engine/", "/6/guides/general/rhino-installer-engine/", "/7/guides/general/rhino-installer-engine/", "/wip/guides/general/rhino-installer-engine/"]
 authors = [ "brian", "will" ]
 categories = [ "Fundamentals" ]
 description = "This guide is a brief introduction to the Rhino Installer Engine."

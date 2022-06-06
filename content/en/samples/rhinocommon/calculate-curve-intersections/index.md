@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/calculate-curve-intersections/", "/6/samples/rhinocommon/calculate-curve-intersections/", "/7/samples/rhinocommon/calculate-curve-intersections/", "/wip/samples/rhinocommon/calculate-curve-intersections/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to calculate the intersection points between two user-specified curves."

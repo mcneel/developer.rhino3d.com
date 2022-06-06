@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/count-block-instances/", "/6/samples/rhinoscript/count-block-instances/", "/7/samples/rhinoscript/count-block-instances/", "/wip/samples/rhinoscript/count-block-instances/"]
 authors = [ "dale" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to count block instances using RhinoScript."

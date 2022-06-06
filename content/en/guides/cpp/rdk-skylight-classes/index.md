@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/rdk-skylight-classes/", "/6/guides/cpp/rdk-skylight-classes/", "/7/guides/cpp/rdk-skylight-classes/", "/wip/guides/cpp/rdk-skylight-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK skylight class in C/C++."

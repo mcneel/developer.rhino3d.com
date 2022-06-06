@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/fibonacci-spirals/", "/6/samples/rhinoscript/fibonacci-spirals/", "/7/samples/rhinoscript/fibonacci-spirals/", "/wip/samples/rhinoscript/fibonacci-spirals/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a Fibonacci Spiral with RhinoScript."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/zoom-to-object/", "/6/samples/rhinocommon/zoom-to-object/", "/7/samples/rhinocommon/zoom-to-object/", "/wip/samples/rhinocommon/zoom-to-object/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Zoom to a Selected Object"

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/ghpython-editor/", "/6/guides/rhinopython/ghpython-editor/", "/7/guides/rhinopython/ghpython-editor/", "/wip/guides/rhinopython/ghpython-editor/"]
 authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "This guide looks at the details of the GhPython Editor."

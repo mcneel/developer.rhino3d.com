@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/modifying-an-objects-color/", "/6/guides/cpp/modifying-an-objects-color/", "/7/guides/cpp/modifying-an-objects-color/", "/wip/guides/cpp/modifying-an-objects-color/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide discuss how to modify an object's color using C/C++."

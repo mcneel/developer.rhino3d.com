@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/calculate-solid-volumes/", "/6/samples/cpp/calculate-solid-volumes/", "/7/samples/cpp/calculate-solid-volumes/", "/wip/samples/cpp/calculate-solid-volumes/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to calculating the volumes of closed surface, polysurface, and mesh objects."

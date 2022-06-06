@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/picking-text-dots/", "/6/guides/cpp/picking-text-dots/", "/7/guides/cpp/picking-text-dots/", "/wip/guides/cpp/picking-text-dots/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to interactively select Text Dot objects with C/C++ CRhinoGetObject."

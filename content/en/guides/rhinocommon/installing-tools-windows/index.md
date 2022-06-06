@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/installing-tools-windows/", "/6/guides/rhinocommon/installing-tools-windows/", "/7/guides/rhinocommon/installing-tools-windows/", "/wip/guides/rhinocommon/installing-tools-windows/"]
 authors = [ "steve" ]
 categories = [ "Getting Started" ]
 description = "This guide covers the tools required to author, build and debug Rhino plugins on Windows."

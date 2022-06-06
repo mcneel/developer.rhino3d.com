@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/random-surface-points/", "/6/samples/rhinoscript/random-surface-points/", "/7/samples/rhinoscript/random-surface-points/", "/wip/samples/rhinoscript/random-surface-points/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Surfaces" ]
 description = "Generate random points on a surface using RhinoScript."

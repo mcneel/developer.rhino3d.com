@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/set-cplane-to-view/", "/6/samples/cpp/set-cplane-to-view/", "/7/samples/cpp/set-cplane-to-view/", "/wip/samples/cpp/set-cplane-to-view/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to set the construction plane in the active viewport parallel to the view."

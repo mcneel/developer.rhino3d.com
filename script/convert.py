@@ -20,7 +20,7 @@ from shutil import copyfile
 import json
 
 # general globals
-debugging = False #TODO: Change this to False for the final run
+debugging = True #TODO: Change this to False for the final run
 baseURL = "https://developer.rhino3d.com"
 old_root = os.path.abspath(os.path.join(expanduser("~"), "dev", "mcneel", "developer.rhino3d.com-archive"))
 old_content_authors_root_path = os.path.abspath(os.path.join(old_root, "_authors"))
@@ -1289,6 +1289,19 @@ def audit_frontmatter():
             print("    " + key + " -> " + value)
 
 
+def add_aliases_to_files_list(files_list):
+    for file_path in files_list:
+        with open(file_path, "r") as f:
+            contents = f.readlines()
+
+        old_link = re.sub(r'.*?\x2Fcontent\x2Fen(\x2F.*?\x2F).{0,1}index.md', r'\1', file_path, flags=re.MULTILINE | re.DOTALL)
+        contents.insert(1, "aliases = [\"/5" + old_link + "\", \"/6" + old_link + "\", \"/7" + old_link + "\", \"/wip" + old_link + "\"]\n")
+
+        with open(file_path, "w") as f:
+            contents = "".join(contents)
+            f.write(contents)
+
+
 def main():
     handle_homepage()
     handle_authors()
@@ -1300,6 +1313,7 @@ def main():
     handle_videos()
     audit_frontmatter()
     #handle_rhinoscript_syntax_api()
+    #add_aliases_to_files_list(get_markdown_files_list(new_content_root_path))
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/loft-surfaces/", "/6/samples/cpp/loft-surfaces/", "/7/samples/cpp/loft-surfaces/", "/wip/samples/cpp/loft-surfaces/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to use the CArgsRhinoLoft class and the RhinoSdkLoftSurface function."

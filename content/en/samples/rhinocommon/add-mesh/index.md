@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/add-mesh/", "/6/samples/rhinocommon/add-mesh/", "/7/samples/rhinocommon/add-mesh/", "/wip/samples/rhinocommon/add-mesh/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to construct a mesh from a list of vertices and faces."

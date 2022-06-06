@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/auto-label-objects/", "/6/samples/rhinoscript/auto-label-objects/", "/7/samples/rhinoscript/auto-label-objects/", "/wip/samples/rhinoscript/auto-label-objects/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to automatically label objects using RhinoScript."

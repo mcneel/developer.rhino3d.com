@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/divide-curve-by-segments/", "/6/samples/cpp/divide-curve-by-segments/", "/7/samples/cpp/divide-curve-by-segments/", "/wip/samples/cpp/divide-curve-by-segments/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to divide a selected curve object by a specified number of segments."

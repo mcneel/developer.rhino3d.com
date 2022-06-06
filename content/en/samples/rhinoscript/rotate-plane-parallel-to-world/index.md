@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/rotate-plane-parallel-to-world/", "/6/samples/rhinoscript/rotate-plane-parallel-to-world/", "/7/samples/rhinoscript/rotate-plane-parallel-to-world/", "/wip/samples/rhinoscript/rotate-plane-parallel-to-world/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to rotate a plane so its x-axis is parallel to the world using RhinoScript."

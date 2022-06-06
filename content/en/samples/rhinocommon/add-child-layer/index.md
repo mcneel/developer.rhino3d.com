@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/add-child-layer/", "/6/samples/rhinocommon/add-child-layer/", "/7/samples/rhinocommon/add-child-layer/", "/wip/samples/rhinocommon/add-child-layer/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects", "Layers" ]
 description = "Demonstrates how to add a child (or sub) layer to a parent layer in a Rhino model."

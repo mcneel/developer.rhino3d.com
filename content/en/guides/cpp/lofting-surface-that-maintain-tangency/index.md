@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/lofting-surface-that-maintain-tangency/", "/6/guides/cpp/lofting-surface-that-maintain-tangency/", "/7/guides/cpp/lofting-surface-that-maintain-tangency/", "/wip/guides/cpp/lofting-surface-that-maintain-tangency/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to loft surfaces that maintain tangency using C/C++."

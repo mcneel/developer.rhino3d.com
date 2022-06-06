@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/add-material/", "/6/samples/rhinocommon/add-material/", "/7/samples/rhinocommon/add-material/", "/wip/samples/rhinocommon/add-material/"]
 authors = [ "steve", "andy", "john.croudy" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a material to the document and apply it to a sphere object."

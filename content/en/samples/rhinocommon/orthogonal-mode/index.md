@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/orthogonal-mode/", "/6/samples/rhinocommon/orthogonal-mode/", "/7/samples/rhinocommon/orthogonal-mode/", "/wip/samples/rhinocommon/orthogonal-mode/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to enable or disable orthogonal mode and its effects."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/read-dimension-text/", "/6/samples/rhinocommon/read-dimension-text/", "/7/samples/rhinocommon/read-dimension-text/", "/wip/samples/rhinocommon/read-dimension-text/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to read dimension text from an annotation object."

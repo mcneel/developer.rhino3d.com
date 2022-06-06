@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/divide-curve-to-dashed/", "/6/samples/rhinoscript/divide-curve-to-dashed/", "/7/samples/rhinoscript/divide-curve-to-dashed/", "/wip/samples/rhinoscript/divide-curve-to-dashed/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to chop up a curve into segments and spaces."

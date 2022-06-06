@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/create-plane-surface/", "/6/samples/cpp/create-plane-surface/", "/7/samples/cpp/create-plane-surface/", "/wip/samples/cpp/create-plane-surface/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Surfaces" ]
 description = "Demonstrates how to create a plane surface."

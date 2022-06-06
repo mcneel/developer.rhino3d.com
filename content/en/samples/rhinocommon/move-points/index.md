@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/move-points/", "/6/samples/rhinocommon/move-points/", "/7/samples/rhinocommon/move-points/", "/wip/samples/rhinocommon/move-points/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to move user-specified points to a new location."

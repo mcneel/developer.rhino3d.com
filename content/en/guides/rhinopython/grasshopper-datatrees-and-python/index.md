@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/grasshopper-datatrees-and-python/", "/6/guides/rhinopython/grasshopper-datatrees-and-python/", "/7/guides/rhinopython/grasshopper-datatrees-and-python/", "/wip/guides/rhinopython/grasshopper-datatrees-and-python/"]
 authors = [ "giulio", "scottd" ]
 categories = [ "GhPython" ]
 description = "This guide describes how to use data trees in Python."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks/"]
 authors = [ "aj" ]
 categories = [ "CloudZoo" ]
 description = "This guide explains all the HTTPS callbacks that need to be implemented by an issuer of Cloud Zoo."

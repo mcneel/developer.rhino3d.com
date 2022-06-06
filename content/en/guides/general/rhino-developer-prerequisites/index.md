@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/general/rhino-developer-prerequisites/", "/6/guides/general/rhino-developer-prerequisites/", "/7/guides/general/rhino-developer-prerequisites/", "/wip/guides/general/rhino-developer-prerequisites/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "This guide describes the main requirements to develop for Rhino."

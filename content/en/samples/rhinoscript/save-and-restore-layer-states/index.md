@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/save-and-restore-layer-states/", "/6/samples/rhinoscript/save-and-restore-layer-states/", "/7/samples/rhinoscript/save-and-restore-layer-states/", "/wip/samples/rhinoscript/save-and-restore-layer-states/"]
 authors = [ "dale" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to save and restore the states of layers using RhinoScript."

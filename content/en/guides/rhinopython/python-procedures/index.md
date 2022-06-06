@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-procedures/", "/6/guides/rhinopython/python-procedures/", "/7/guides/rhinopython/python-procedures/", "/wip/guides/rhinopython/python-procedures/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses Python procedures."

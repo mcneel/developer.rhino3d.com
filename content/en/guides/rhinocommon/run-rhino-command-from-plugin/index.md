@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/run-rhino-command-from-plugin/", "/6/guides/rhinocommon/run-rhino-command-from-plugin/", "/7/guides/rhinocommon/run-rhino-command-from-plugin/", "/wip/guides/rhinocommon/run-rhino-command-from-plugin/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide covers the proper techniques when running a Rhino command from within the context of a plugin command."

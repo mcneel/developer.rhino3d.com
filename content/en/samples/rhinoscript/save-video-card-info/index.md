@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/save-video-card-info/", "/6/samples/rhinoscript/save-video-card-info/", "/7/samples/rhinoscript/save-video-card-info/", "/wip/samples/rhinoscript/save-video-card-info/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to save information about your system's video card to a text file using RhinoScript."

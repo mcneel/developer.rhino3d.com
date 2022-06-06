@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/draft-angle-contouring/", "/6/guides/cpp/draft-angle-contouring/", "/7/guides/cpp/draft-angle-contouring/", "/wip/guides/cpp/draft-angle-contouring/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to create contour curves based on draft angle using C/C++."

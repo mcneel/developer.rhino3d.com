@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/add-arrowheads-to-curves/", "/6/samples/rhinocommon/add-arrowheads-to-curves/", "/7/samples/rhinocommon/add-arrowheads-to-curves/", "/wip/samples/rhinocommon/add-arrowheads-to-curves/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects", "Curves" ]
 description = "Demonstrates how to decorate curves in a Rhino model with arrowheads."

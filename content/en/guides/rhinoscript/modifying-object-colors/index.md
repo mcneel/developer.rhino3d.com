@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/modifying-object-colors/", "/6/guides/rhinoscript/modifying-object-colors/", "/7/guides/rhinoscript/modifying-object-colors/", "/wip/guides/rhinoscript/modifying-object-colors/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide demonstrates how to modify the color of objects using RhinoScript."

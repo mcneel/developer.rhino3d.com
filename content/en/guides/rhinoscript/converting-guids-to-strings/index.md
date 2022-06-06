@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/converting-guids-to-strings/", "/6/guides/rhinoscript/converting-guids-to-strings/", "/7/guides/rhinoscript/converting-guids-to-strings/", "/wip/guides/rhinoscript/converting-guids-to-strings/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide demonstrates how convert an array of bytes containing a GUID to a string."

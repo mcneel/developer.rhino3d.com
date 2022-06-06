@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/grasshopper/multi-treaded-components/", "/6/guides/grasshopper/multi-treaded-components/", "/7/guides/grasshopper/multi-treaded-components/", "/wip/guides/grasshopper/multi-treaded-components/"]
 authors = [ "steve", "scottd" ]
 categories = [ "In Depth" ]
 description = "A guide to parallel computing in Grasshopper"

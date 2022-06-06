@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/opennurbs/migration-guide/", "/6/guides/opennurbs/migration-guide/", "/7/guides/opennurbs/migration-guide/", "/wip/guides/opennurbs/migration-guide/"]
 authors = [ "dalelear" ]
 categories = [ "Getting Started" ]
 description = "This guide contains information to help you use the current version of openNURBS."

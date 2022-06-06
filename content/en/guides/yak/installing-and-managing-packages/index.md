@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/yak/installing-and-managing-packages/", "/6/guides/yak/installing-and-managing-packages/", "/7/guides/yak/installing-and-managing-packages/", "/wip/guides/yak/installing-and-managing-packages/"]
 authors = [ "will" ]
 categories = [ "Getting Started" ]
 description = "This is a step by step guide to installing and uninstalling a Yak package using the CLI."

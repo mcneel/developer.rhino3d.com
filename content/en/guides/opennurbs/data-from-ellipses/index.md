@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/opennurbs/data-from-ellipses/", "/6/guides/opennurbs/data-from-ellipses/", "/7/guides/opennurbs/data-from-ellipses/", "/wip/guides/opennurbs/data-from-ellipses/"]
 authors = [ "dalelear" ]
 categories = [ "Advanced" ]
 description = "This guide discusses ellipses and their representation in openNURBS."

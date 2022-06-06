@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-canceling-scripts/", "/6/guides/rhinopython/python-canceling-scripts/", "/7/guides/rhinopython/python-canceling-scripts/", "/wip/guides/rhinopython/python-canceling-scripts/"]
 authors = [ "scottd" ]
 categories = [ "Python Windows" ]
 description = "This guide demonstrates how to cancel a Python script in Rhino."

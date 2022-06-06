@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/picking-brep-components/", "/6/guides/cpp/picking-brep-components/", "/7/guides/cpp/picking-brep-components/", "/wip/guides/cpp/picking-brep-components/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide discusses picking components of a Brep using C/C++."

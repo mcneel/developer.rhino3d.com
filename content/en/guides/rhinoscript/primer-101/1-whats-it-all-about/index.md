@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/primer-101/1-whats-it-all-about/", "/6/guides/rhinoscript/primer-101/1-whats-it-all-about/", "/7/guides/rhinoscript/primer-101/1-whats-it-all-about/", "/wip/guides/rhinoscript/primer-101/1-whats-it-all-about/"]
 authors = [ "david" ]
 categories = [ "RhinoScript 101" ]
 category_page = "guides/rhinoscript/primer-101/"

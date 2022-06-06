@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/create-nurbs-surface/", "/6/samples/cpp/create-nurbs-surface/", "/7/samples/cpp/create-nurbs-surface/", "/wip/samples/cpp/create-nurbs-surface/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Surfaces" ]
 description = "Demonstrates how to create a NURBS surface."

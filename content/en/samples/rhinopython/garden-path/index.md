@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinopython/garden-path/", "/6/samples/rhinopython/garden-path/", "/7/samples/rhinopython/garden-path/", "/wip/samples/rhinopython/garden-path/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates basic syntax for writing python scripts."

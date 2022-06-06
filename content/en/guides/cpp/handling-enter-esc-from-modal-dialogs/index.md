@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/handling-enter-esc-from-modal-dialogs/", "/6/guides/cpp/handling-enter-esc-from-modal-dialogs/", "/7/guides/cpp/handling-enter-esc-from-modal-dialogs/", "/wip/guides/cpp/handling-enter-esc-from-modal-dialogs/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses preventing modal dialogs from closing when the Enter or Escape key is pressed."

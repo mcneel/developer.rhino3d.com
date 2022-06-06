@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/opennurbs/reading-subdivision-surfaces/", "/6/guides/opennurbs/reading-subdivision-surfaces/", "/7/guides/opennurbs/reading-subdivision-surfaces/", "/wip/guides/opennurbs/reading-subdivision-surfaces/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide describes how to read subdivision surfaces using the openNURBS toolkit."

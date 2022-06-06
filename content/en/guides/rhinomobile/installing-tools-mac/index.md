@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinomobile/installing-tools-mac/", "/6/guides/rhinomobile/installing-tools-mac/", "/7/guides/rhinomobile/installing-tools-mac/", "/wip/guides/rhinomobile/installing-tools-mac/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "This guide covers all the necessary tools required for RhinoMobile on Mac."

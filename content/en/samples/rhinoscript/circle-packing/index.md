@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/circle-packing/", "/6/samples/rhinoscript/circle-packing/", "/7/samples/rhinoscript/circle-packing/", "/wip/samples/rhinoscript/circle-packing/"]
 authors = [ "steven-janssen" ]
 categories = [ "Other" ]
 description = "Multi-radius circle packing algorithm in RhinoScript."

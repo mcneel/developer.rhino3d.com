@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/add-linear-dimension/", "/6/samples/cpp/add-linear-dimension/", "/7/samples/cpp/add-linear-dimension/", "/wip/samples/cpp/add-linear-dimension/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a linear dimension object."

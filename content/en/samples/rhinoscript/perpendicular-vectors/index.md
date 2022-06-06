@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/perpendicular-vectors/", "/6/samples/rhinoscript/perpendicular-vectors/", "/7/samples/rhinoscript/perpendicular-vectors/", "/wip/samples/rhinoscript/perpendicular-vectors/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to calculate a vector that is perpendicular to another vector using RhinoScript."

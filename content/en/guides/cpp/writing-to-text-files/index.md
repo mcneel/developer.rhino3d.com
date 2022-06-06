@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/writing-to-text-files/", "/6/guides/cpp/writing-to-text-files/", "/7/guides/cpp/writing-to-text-files/", "/wip/guides/cpp/writing-to-text-files/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide discuss writing text files using C/C++."

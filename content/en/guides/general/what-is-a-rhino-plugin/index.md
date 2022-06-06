@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/general/what-is-a-rhino-plugin/", "/6/guides/general/what-is-a-rhino-plugin/", "/7/guides/general/what-is-a-rhino-plugin/", "/wip/guides/general/what-is-a-rhino-plugin/"]
 authors = [ "dan" ]
 categories = [ "Fundamentals" ]
 description = "This guide outlines what a Rhino plugin is and what forms it comes in."

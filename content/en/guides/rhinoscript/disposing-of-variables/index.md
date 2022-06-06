@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/disposing-of-variables/", "/6/guides/rhinoscript/disposing-of-variables/", "/7/guides/rhinoscript/disposing-of-variables/", "/wip/guides/rhinoscript/disposing-of-variables/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide discusses VBScript variables, their scope, and how to clean them up."

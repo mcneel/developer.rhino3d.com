@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/create-bounding-polyline-of-mesh/", "/6/samples/cpp/create-bounding-polyline-of-mesh/", "/7/samples/cpp/create-bounding-polyline-of-mesh/", "/wip/samples/cpp/create-bounding-polyline-of-mesh/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to create a bounding polyline of a mesh object."

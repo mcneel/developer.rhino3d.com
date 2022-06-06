@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/archiving-curves-to-a-file/", "/6/guides/cpp/archiving-curves-to-a-file/", "/7/guides/cpp/archiving-curves-to-a-file/", "/wip/guides/cpp/archiving-curves-to-a-file/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to write and read curves to a file using C/C++."

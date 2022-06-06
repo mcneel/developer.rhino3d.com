@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/disconnected-recordset-sorting/", "/6/guides/rhinoscript/disconnected-recordset-sorting/", "/7/guides/rhinoscript/disconnected-recordset-sorting/", "/wip/guides/rhinoscript/disconnected-recordset-sorting/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates using a disconnected recordset to sort data."

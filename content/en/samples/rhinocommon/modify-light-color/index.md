@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/modify-light-color/", "/6/samples/rhinocommon/modify-light-color/", "/7/samples/rhinocommon/modify-light-color/", "/wip/samples/rhinocommon/modify-light-color/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to change the color of a user-specified light."

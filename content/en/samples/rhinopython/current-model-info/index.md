@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinopython/current-model-info/", "/6/samples/rhinopython/current-model-info/", "/7/samples/rhinopython/current-model-info/", "/wip/samples/rhinopython/current-model-info/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to get current model information through Python."

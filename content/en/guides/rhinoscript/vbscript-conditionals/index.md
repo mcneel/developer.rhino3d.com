@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/vbscript-conditionals/", "/6/guides/rhinoscript/vbscript-conditionals/", "/7/guides/rhinoscript/vbscript-conditionals/", "/wip/guides/rhinoscript/vbscript-conditionals/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide is an survey of VBScript conditional statements."

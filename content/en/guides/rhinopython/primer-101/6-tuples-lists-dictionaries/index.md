@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/", "/6/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/", "/7/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/", "/wip/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/"]
 authors = [ "skylar-tibbits", "arthur-van-der-harten", "steve" ]
 categories = [ "Rhino.Python 101" ]
 category_page = "guides/rhinopython/primer-101/"

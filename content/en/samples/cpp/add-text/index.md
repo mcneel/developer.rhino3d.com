@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/add-text/", "/6/samples/cpp/add-text/", "/7/samples/cpp/add-text/", "/wip/samples/cpp/add-text/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Text" ]
 description = "Demonstrates how to use ON_TextEntity2 to add text to Rhino."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-nurbs/", "/6/guides/rhinopython/python-rhinoscriptsyntax-nurbs/", "/7/guides/rhinopython/python-rhinoscriptsyntax-nurbs/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-nurbs/"]
 authors = [ "dale" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an introduction to Rhino's NURBS Geometry from a Python perspective."

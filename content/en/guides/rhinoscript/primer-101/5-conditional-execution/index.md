@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/primer-101/5-conditional-execution/", "/6/guides/rhinoscript/primer-101/5-conditional-execution/", "/7/guides/rhinoscript/primer-101/5-conditional-execution/", "/wip/guides/rhinoscript/primer-101/5-conditional-execution/"]
 authors = [ "david" ]
 categories = [ "RhinoScript 101" ]
 category_page = "guides/rhinoscript/primer-101/"

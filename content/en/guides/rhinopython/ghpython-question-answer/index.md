@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinopython/ghpython-question-answer/", "/6/guides/rhinopython/ghpython-question-answer/", "/7/guides/rhinopython/ghpython-question-answer/", "/wip/guides/rhinopython/ghpython-question-answer/"]
 authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "Here are the most common questions and answers about GhPython."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/get-mapping-information-from-object/", "/6/samples/rhinoscript/get-mapping-information-from-object/", "/7/samples/rhinoscript/get-mapping-information-from-object/", "/wip/samples/rhinoscript/get-mapping-information-from-object/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how to get Flamingo nXt mapping information from an object using RhinoScript."

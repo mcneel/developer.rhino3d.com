@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/cpp/ghost-viewport/", "/6/samples/cpp/ghost-viewport/", "/7/samples/cpp/ghost-viewport/", "/wip/samples/cpp/ghost-viewport/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to set a viewport to ghosted display."

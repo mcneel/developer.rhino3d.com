@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinopython/make-circle-with-rhinocommon/", "/6/samples/rhinopython/make-circle-with-rhinocommon/", "/7/samples/rhinopython/make-circle-with-rhinocommon/", "/wip/samples/rhinopython/make-circle-with-rhinocommon/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "This sample creates a circle without using functions in the rhinoscript package."

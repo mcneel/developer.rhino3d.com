@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/tracking-camera-changes-with-conduits/", "/6/guides/cpp/tracking-camera-changes-with-conduits/", "/7/guides/cpp/tracking-camera-changes-with-conduits/", "/wip/guides/cpp/tracking-camera-changes-with-conduits/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to use a conduit that uses notifiers to track camera information using C/C++."

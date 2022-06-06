@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-overview/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-overview/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-overview/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-overview/"]
 authors = [ "aj" ]
 categories = [ "CloudZoo" ]
 description = "This guide discusses all the steps needed to create RhinoCommon plugins that support Cloud Zoo."

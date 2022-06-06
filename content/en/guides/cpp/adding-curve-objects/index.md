@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/adding-curve-objects/", "/6/guides/cpp/adding-curve-objects/", "/7/guides/cpp/adding-curve-objects/", "/wip/guides/cpp/adding-curve-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses how to add curve objects to Rhino using the Rhino C/C++ SDK."

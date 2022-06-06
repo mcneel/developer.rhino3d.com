@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/hot-cold-color-values/", "/6/guides/rhinoscript/hot-cold-color-values/", "/7/guides/rhinoscript/hot-cold-color-values/", "/wip/guides/rhinoscript/hot-cold-color-values/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how calculate colors for analysis using RhinoScript."

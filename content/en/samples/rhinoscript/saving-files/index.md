@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/saving-files/", "/6/samples/rhinoscript/saving-files/", "/7/samples/rhinoscript/saving-files/", "/wip/samples/rhinoscript/saving-files/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to save a file using RhinoScript."

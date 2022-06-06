@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/copy-groups/", "/6/samples/rhinocommon/copy-groups/", "/7/samples/rhinocommon/copy-groups/", "/wip/samples/rhinocommon/copy-groups/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to duplicate objects with grouping."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinoscript/set-hierarchical-layer-names/", "/6/samples/rhinoscript/set-hierarchical-layer-names/", "/7/samples/rhinoscript/set-hierarchical-layer-names/", "/wip/samples/rhinoscript/set-hierarchical-layer-names/"]
 authors = [ "dale" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to rename layers in a hierarchical manner using RhinoScript."

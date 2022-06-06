@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/grasshopper/simple-component/", "/6/guides/grasshopper/simple-component/", "/7/guides/grasshopper/simple-component/", "/wip/guides/grasshopper/simple-component/"]
 authors = [ "david" ]
 categories = [ "Fundamentals" ]
 description = "This guide gives an exhaustive, step by step explanation of how to build a simple Grasshopper component."

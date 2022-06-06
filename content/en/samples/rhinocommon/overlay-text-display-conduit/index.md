@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/overlay-text-display-conduit/", "/6/samples/rhinocommon/overlay-text-display-conduit/", "/7/samples/rhinocommon/overlay-text-display-conduit/", "/wip/samples/rhinocommon/overlay-text-display-conduit/"]
 authors = [ "steve" ]
 categories = [ "Draw" ]
 description = "Demonstrates how to use a display conduit to draw overlay text."

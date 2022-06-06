@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/pad-digits/", "/6/guides/rhinoscript/pad-digits/", "/7/guides/rhinoscript/pad-digits/", "/wip/guides/rhinoscript/pad-digits/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This short guide demonstrate how to pad numbers with leading zeros in RhinoScript."

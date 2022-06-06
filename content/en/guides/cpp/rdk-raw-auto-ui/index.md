@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/rdk-raw-auto-ui/", "/6/guides/cpp/rdk-raw-auto-ui/", "/7/guides/cpp/rdk-raw-auto-ui/", "/wip/guides/cpp/rdk-raw-auto-ui/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK's automatic UI classes in C/C++."

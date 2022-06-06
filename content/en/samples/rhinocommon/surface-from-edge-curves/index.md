@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/surface-from-edge-curves/", "/6/samples/rhinocommon/surface-from-edge-curves/", "/7/samples/rhinocommon/surface-from-edge-curves/", "/wip/samples/rhinocommon/surface-from-edge-curves/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Create a Surface from Edge Curves"

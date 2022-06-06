@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/opennurbs/getting-started/", "/6/guides/opennurbs/getting-started/", "/7/guides/opennurbs/getting-started/", "/wip/guides/opennurbs/getting-started/"]
 authors = [ "dalelear" ]
 categories = [ "Getting Started" ]
 description = "This guide explains how to use the openNURBS C++ toolkit in your project."

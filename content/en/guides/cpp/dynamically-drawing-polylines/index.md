@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/dynamically-drawing-polylines/", "/6/guides/cpp/dynamically-drawing-polylines/", "/7/guides/cpp/dynamically-drawing-polylines/", "/wip/guides/cpp/dynamically-drawing-polylines/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to derive a new class from CRhinoGetPoint to dynamically draw a polyline."

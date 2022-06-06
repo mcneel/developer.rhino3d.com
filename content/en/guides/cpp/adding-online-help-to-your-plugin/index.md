@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/cpp/adding-online-help-to-your-plugin/", "/6/guides/cpp/adding-online-help-to-your-plugin/", "/7/guides/cpp/adding-online-help-to-your-plugin/", "/wip/guides/cpp/adding-online-help-to-your-plugin/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "Discusses how to add online help support to your Rhino plugin using C/C++."

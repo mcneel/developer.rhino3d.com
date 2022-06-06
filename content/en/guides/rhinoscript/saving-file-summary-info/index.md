@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinoscript/saving-file-summary-info/", "/6/guides/rhinoscript/saving-file-summary-info/", "/7/guides/rhinoscript/saving-file-summary-info/", "/wip/guides/rhinoscript/saving-file-summary-info/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This brief guide demonstrates how to display the File Properties dialog when saving Rhino files using RhinoScript."

@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinopython/circle-from-length/", "/6/samples/rhinopython/circle-from-length/", "/7/samples/rhinopython/circle-from-length/", "/wip/samples/rhinopython/circle-from-length/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a circle based on its circumference using Python."

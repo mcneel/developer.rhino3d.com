@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/what-are-mono-and-xamarin/", "/6/guides/rhinocommon/what-are-mono-and-xamarin/", "/7/guides/rhinocommon/what-are-mono-and-xamarin/", "/wip/guides/rhinocommon/what-are-mono-and-xamarin/"]
 authors = [ "dan" ]
 categories = [ "Overview" ]
 description = "This guide is an overview of Mono and Xamarin and how they relate to RhinoCommon plugins."

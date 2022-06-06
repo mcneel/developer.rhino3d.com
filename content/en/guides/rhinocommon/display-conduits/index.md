@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/display-conduits/", "/6/guides/rhinocommon/display-conduits/", "/7/guides/rhinocommon/display-conduits/", "/wip/guides/rhinocommon/display-conduits/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide gives an overview of Display Conduits and how to use them to access Rhino's display pipeline."

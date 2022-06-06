@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/samples/rhinocommon/add-brep-box/", "/6/samples/rhinocommon/add-brep-box/", "/7/samples/rhinocommon/add-brep-box/", "/wip/samples/rhinocommon/add-brep-box/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a Brep Box to a Rhino model by specifying two points."

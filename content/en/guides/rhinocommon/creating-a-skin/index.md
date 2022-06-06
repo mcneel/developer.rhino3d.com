@@ -1,4 +1,5 @@
 +++
+aliases = ["/5/guides/rhinocommon/creating-a-skin/", "/6/guides/rhinocommon/creating-a-skin/", "/7/guides/rhinocommon/creating-a-skin/", "/wip/guides/rhinocommon/creating-a-skin/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide outlines the tools for RhinoCommon developers to wrap their application around Rhino by creating custom Skin.  Custom skins are supported on Windows only."
