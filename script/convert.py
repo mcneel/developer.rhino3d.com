@@ -1256,7 +1256,7 @@ def handle_rhinoscript_syntax_api():
                         moduleName = module["ModuleName"]
                     else:
                         moduleName = entry["ModuleName"]
-                    f.write('* [' + entry["FunctionName"] + '](/api/RhinoScriptSyntax/' + moduleName + '/#' + entry["FunctionName"].lower() + ')\n')
+                    f.write('* [' + entry["FunctionName"] + '](/api/rhinoscriptsyntax/' + moduleName + '/#' + entry["FunctionName"].lower() + ')\n')
                 f.write('\n')
         
         f.close()

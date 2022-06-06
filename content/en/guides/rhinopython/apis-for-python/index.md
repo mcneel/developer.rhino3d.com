@@ -48,7 +48,7 @@ The RhinoScriptSyntax methods library contains hundreds of easy-to-use functions
 * Document objects
 * Application methods
 
-To make these methods easy-to-use, all RhinoScriptSyntax methods return simple Python variables or Python List-based data structures. Thus, once you are familiar with Python, you will be able to use any and all functions in the RhinoScriptSyntax methods library. RhinoScriptSyntax is divided into [modules](/api/RhinoScriptSyntax/win) that mirror standard Rhino commands.
+To make these methods easy-to-use, all RhinoScriptSyntax methods return simple Python variables or Python List-based data structures. Thus, once you are familiar with Python, you will be able to use any and all functions in the RhinoScriptSyntax methods library. RhinoScriptSyntax is divided into [modules](/api/rhinoscriptsyntax) that mirror standard Rhino commands.
 
 For those that are familiar with the RhinoScript language in Rhino for Windows.  RhinoScriptSyntax is meant to duplicate the functionality provided by the RhinoScript language. If you are familiar with RhinoScript in Rhino for Windows the transition to Python in Rhino should be natural.
 
@@ -56,7 +56,7 @@ For those that are familiar with the RhinoScript language in Rhino for Windows. 
 
 RhinoCommon is an extensive, low level .NET library of the Rhino SDK. It is meant for more experienced programmers that would like to most extensive access to Rhino and its classes.
 
-An important detail that will become important as you are learning to script Rhino with Python is that the implementation of Python that is embedded in Rhino is called IronPython: a Python implementation in C# that runs on the .Net/mono platform which means that in addition to the Python language features and the [rhinoscriptsyntax package](/api/RhinoScriptSyntax/win), you also have access to all the libraries in .Net/mono and [RhinoCommon](../../rhinocommon/what-is-rhinocommon/).
+An important detail that will become important as you are learning to script Rhino with Python is that the implementation of Python that is embedded in Rhino is called IronPython: a Python implementation in C# that runs on the .Net/mono platform which means that in addition to the Python language features and the [rhinoscriptsyntax package](/api/rhinoscriptsyntax), you also have access to all the libraries in .Net/mono and [RhinoCommon](../../rhinocommon/what-is-rhinocommon/).
 
 The rhinoscriptsyntax package is implemented on top of RhinoCommon so reading the source code is a great way to learn how to use RhinoCommon from Python.  The source code files are included in the Rhino distribution on your computer and the default location is:
 ```
