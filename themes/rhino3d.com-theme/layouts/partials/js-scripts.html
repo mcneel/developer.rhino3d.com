@@ -34,11 +34,26 @@
     {{- partial "chat-talk-talk" . }}
   {{- end -}}
 {{- end -}}
-{{- partial "mathjax_support" . }}
-{{- partial "anchorjs" . }}
-{{- partial "twentytwenty" . }}
-{{- partial "photoswipe" . }}
-{{- partial "discourse-gallery-support" . }}
+
+{{- if not .Params.page_options.disableMathJax -}}
+  {{- partial "mathjax_support" . }}
+{{- end -}}
+
+{{- if not .Params.page_options.disableAnchorJS -}}
+  {{- partial "anchorjs" . }}
+{{- end -}}
+
+{{- if not .Params.page_options.disableTwentyTwenty -}}
+  {{- partial "twentytwenty" . }}
+{{- end -}}
+
+{{- if not .Params.page_options.disablePhotoswipe -}}
+  {{- partial "photoswipe" . }}
+{{- end -}}
+
+{{- if not .Params.page_options.disableDiscourseGallery -}}
+  {{- partial "discourse-gallery-support" . }}
+{{- end -}}
 
 {{/*  Homepage video  */}}
 {{ if .IsHome }}

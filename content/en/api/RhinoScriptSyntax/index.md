@@ -7,6 +7,7 @@ type = "guides"
 byline = false
 toc = true
 toc_type = "single"
+disableAnchorJS = true
 
 +++
 
