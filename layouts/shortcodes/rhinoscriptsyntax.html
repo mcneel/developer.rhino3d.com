@@ -5,7 +5,7 @@
 
   {{ range $module.functions }}
     
-    <a role="button" class="code_accordion" onclick="window.location.hash = '#collapse-{{.Name}}';"><div id="collapse-{{.Name}}">{{ .Name }}</div></a>
+    <a role="button" class="code_accordion" onclick="window.location.hash = '#{{.ModuleName}}-{{.Name}}';"><div id="{{.ModuleName}}-{{.Name}}">{{ .Name }}</div></a>
 
     <div class="code_panel">
       <pre style="white-space: pre-wrap;"><code class="language-python">{{ .Signature }}</code></pre>
@@ -36,7 +36,7 @@
       <ul>
         {{ range .SeeAlso }}
           <!-- <li><a href="#{{ $module.ModuleName }}-{{ .FunctionName }}">{{ .FunctionName }}</a></li>-->
-          <li><a role="button" onclick="$('#collapse-{{ .FunctionName }}').click(); location.hash = '#collapse-{{ .FunctionName }}';">{{ .FunctionName }}</a></li>
+          <li><a role="button" onclick="$('#{{.ModuleName}}-{{ .FunctionName }}').click(); location.hash = '#{{.ModuleName}}-{{ .FunctionName }}';">{{ .FunctionName }}</a></li>
         {{ end }}
       </ul>
       {{ end }}
@@ -46,18 +46,46 @@
 {{ end }}
 
 <script type="text/javascript">
+  function toggleAccordion(accordionBtn) {
+    accordionBtn.classList.toggle('active');
+    var panel = accordionBtn.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  }
+
+  function expandAccordion(accordionBtn) {
+    if (accordionBtn.className.includes('active')) return;
+    accordionBtn.classList.add('active');
+    const panel = accordionBtn.nextElementSibling;
+    panel.style.maxHeight = panel.scrollHeight + "px";
+  }
+
+  // the code in this event runs when double-clicking
+  // on a function name in the Rhino.Python function browser
+  addEventListener('DOMContentLoaded', event => {
+    console.log('Document loaded dude');
+    const idx = window.location.href.lastIndexOf('#');
+    if (idx == -1) return;
+
+    const id = window.location.href.slice(idx+1)
+    if (!id.includes('-')) return;
+
+    const element = document.getElementById(id);
+    if (element == null) return;
+
+    const accordionBtn = element.parentElement;
+    expandAccordion(accordionBtn);
+  });
+
   var acc = document.getElementsByClassName("code_accordion");
   var i;
 
   for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
+      toggleAccordion(this);
     });
   }
 </script>
