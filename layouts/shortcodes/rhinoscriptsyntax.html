@@ -1,3 +1,10 @@
+<input type="text" class="form-control" id="rsssearch" placeholder="Search" aria-labelledby="Search">
+<div class="popover" id="rsssearch_popover">
+  <div class="popover-content">
+      <ul class="list-unstyled" id="rsssearch_list" style="margin-left: 0; list-style-type: none;">
+      </ul>
+  </div>
+</div>
 {{ range .Site.Data.rhinoscriptsyntax }}
   {{ $module := . }}
   
@@ -5,7 +12,9 @@
 
   {{ range $module.functions }}
     
-    <a role="button" class="code_accordion" onclick="window.location.hash = '#{{.ModuleName}}-{{.Name}}';"><div id="{{.ModuleName}}-{{.Name}}">{{ .Name }}</div></a>
+    <a role="button" class="code_accordion" onclick="scrollUpAndToggleExpansion('{{.ModuleName}}-{{.Name}}');">
+      <div id="{{.ModuleName}}-{{.Name}}">{{ .Name }}</div>
+    </a>
 
     <div class="code_panel">
       <pre style="white-space: pre-wrap;"><code class="language-python">{{ .Signature }}</code></pre>
@@ -35,8 +44,7 @@
       <h5>See Also:</h5>
       <ul>
         {{ range .SeeAlso }}
-          <!-- <li><a href="#{{ $module.ModuleName }}-{{ .FunctionName }}">{{ .FunctionName }}</a></li>-->
-          <li><a role="button" onclick="$('#{{.ModuleName}}-{{ .FunctionName }}').click(); location.hash = '#{{.ModuleName}}-{{ .FunctionName }}';">{{ .FunctionName }}</a></li>
+          <li><a role="button" onclick="scrollUpAndExpand('{{.ModuleName}}-{{.FunctionName}}');">{{ .FunctionName }}</a></li>
         {{ end }}
       </ul>
       {{ end }}
@@ -66,7 +74,6 @@
   // the code in this event runs when double-clicking
   // on a function name in the Rhino.Python function browser
   addEventListener('DOMContentLoaded', event => {
-    console.log('Document loaded dude');
     const idx = window.location.href.lastIndexOf('#');
     if (idx == -1) return;
 
@@ -80,12 +87,77 @@
     expandAccordion(accordionBtn);
   });
 
-  var acc = document.getElementsByClassName("code_accordion");
-  var i;
-
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      toggleAccordion(this);
-    });
+  function scrollUpAndExpand(id) {
+      $("#rsssearch_popover").slideUp(1);
+      location.hash = "#" + id;
+      const element = document.getElementById(id).parentElement;
+      expandAccordion(element);
   }
+  function scrollUpAndToggleExpansion(id) {
+      $("#rsssearch_popover").slideUp(1);
+      location.hash = "#" + id;
+      const element = document.getElementById(id).parentElement;
+      toggleAccordion(element);
+  }
+
+  /// search box section //////////////////////////////
+  var searchResultClick;
+  addEventListener('DOMContentLoaded', function () {
+    window.rssdata = {{ .Site.Data.rhinoscriptsyntax }};
+
+   // position and hide popover
+   $prev = $("#rsssearch_popover").prev();
+   $("#rsssearch_popover")
+     .css("top", $prev[0].offsetTop + $prev.outerHeight(true) + 1)
+     .hide();
+   $("body").on("click", function (e) {
+
+     if (e.target.id !== "rsssearch") {
+         $("#rsssearch_popover").slideUp(100);
+     }
+   });
+
+   searchResultClick = function (mn, fn) {
+     $("#rsssearch_popover").slideUp(1);
+     const element = document.getElementById(mn + "-" + fn);
+     toggleAccordion(element.parentElement);
+     location.hash = "#" + mn + "-" + fn;
+   }
+   $("#rsssearch").on("keyup input", function (e) {
+
+     var currentVal = $(this).val().toLowerCase();
+     var $searchList = $("#rsssearch_list");
+     $searchList.empty();
+
+     if (currentVal.length < 2) {
+       $("#rsssearch_popover").slideUp(100);
+       return;
+     }
+
+     let searchResults = rssdata
+       .map(m => m.functions.filter(f => f.Name.toLowerCase().includes(currentVal)))
+       .reduce((x,y) => x.concat(y))
+       .slice(0,30)
+       .map(f => ({mn: f.ModuleName, fn: f.Name, idx: f.Name.toLowerCase().indexOf(currentVal)}));
+
+     if (searchResults.length == 0) {
+       $searchList.append($("<li class='edsAppGrayColor'>nothing found</li>"));
+     }
+     else {
+       searchResults.forEach(o => {
+         let text = o.fn.substring(0, o.idx) + "<span class='searchMatchSubstring'>" +
+           o.fn.substring(o.idx, o.idx + currentVal.length) + "</span>" +
+           o.fn.substring(o.idx + currentVal.length);
+         let $a = $("<a></a>")
+           .attr("role", "button")
+           .attr("onclick", "searchResultClick('" + o.mn + "', '" + o.fn + "');")
+           .attr("href", "#" + o.mn + "-" + o.fn)
+           .html(text);
+         $searchList.append($("<li></li>").append($a));
+       });
+     }
+     $("#rsssearch_popover").slideDown(100);
+   });
+  });
+  /// search box section //////////////////////////////
 </script>
