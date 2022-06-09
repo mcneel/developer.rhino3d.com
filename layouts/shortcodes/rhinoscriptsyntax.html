@@ -120,7 +120,7 @@
    searchResultClick = function (mn, fn) {
      $("#rsssearch_popover").slideUp(1);
      const element = document.getElementById(mn + "-" + fn);
-     toggleAccordion(element.parentElement);
+     expandAccordion(element.parentElement);
      location.hash = "#" + mn + "-" + fn;
    }
    $("#rsssearch").on("keyup input", function (e) {
