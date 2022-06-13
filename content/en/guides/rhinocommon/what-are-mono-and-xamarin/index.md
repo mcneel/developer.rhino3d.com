@@ -55,8 +55,8 @@ Xamarin - a subsidiary of Microsoft - is a company founded by the engineers who 
 The [Xamarin Platform](http://xamarin.com/platform) is comprised of the following pieces:
 
 - *[Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)*: C# Integrated Developer Environment (IDE) for Mac.  (Visual Studio for Mac was formerly known as Xamarin Studio, which was formerly known as MonoDevelop).
-- *Xamarin.Android*: Used to build C# .NET applications for Android devices.  This is useful to have installed if you wish to use the [RhinoMobile](/guides/#rhinomobile) toolkit, but not required for RhinoCommon in Rhino for Mac.
-- *Xamarin.iOS*: Used to build C# .NET applications for Apple iOS devices.  This is useful to have installed if you wish to use the [RhinoMobile](/guides/#rhinomobile) toolkit, but not required for RhinoCommon in Rhino for Mac.
+- *Xamarin.Android*: Used to build C# .NET applications for Android devices.
+- *Xamarin.iOS*: Used to build C# .NET applications for Apple iOS devices.
 - *Xamarin.Mac*: Xamarin's closed-source version of MonoMac.
 
 For developing RhinoCommon plugins, *only* Visual Studio for Mac is required.  

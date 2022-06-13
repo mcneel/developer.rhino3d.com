@@ -75,4 +75,4 @@ Who to talk to for what:
 - [Giulio Piacentino](/authors/giulio) (GhPython) - @piac on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
 - [Andy le Bihan](/authors/andy) (RDK) - @andy on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
 - Curtis Wensley (Eto) - @curtisw on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
-- [Dan Rigdon-Bel](/authors/dan) (RhinoMobile) - @dan on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
+- [Dan Rigdon-Bel](/authors/dan) - @dan on [Discourse](http://discourse.mcneel.com/c/rhino-developer)
