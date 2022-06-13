@@ -22,9 +22,9 @@ These instructions cover running this project locally on both Windows and macOS 
 
 4. In *Visual Studio Code*'s left-hand sidebar, navigate to the (file) *Explorer* section, open the *content/en/guides/general/how-this-site-works/index.md* file.
 
-5. In *Visual Studio Code's* left-hand sidebar, navigate to *Run and Debug* > *Hugo: Serve English* ...
+5. In *Visual Studio Code's* left-hand sidebar, navigate to *Run and Debug* > *Hugo: Serve* ...
 
-    ![VSCode hugo serve english](static/images/vscode-hugo-serve-english.png)
+    ![VSCode hugo serve](static/images/vscode-hugo-serve.png)
 
 Your web browser should open to the *How This Site Works* guide, ready for editing. Changes made to the *index.md* file in Visual Studio Code should appear in your browser immediately.
 
