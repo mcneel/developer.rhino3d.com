@@ -166,12 +166,3 @@ This guide has yet to be ported to this site. Please check back soon for updates
 ### Other
 
 {{< dev-topic-list "samples" "RhinoScript" "Other" "weight" >}}
-
-## RhinoMobile
-
-
-{{< call-out "danger" "Under Construction" >}}
-This guide has yet to be ported to this site. Please check back soon for updates.
-{{< /call-out >}}
-
-

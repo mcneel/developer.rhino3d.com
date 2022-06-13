@@ -118,12 +118,14 @@ list_group = "uncategorized"
     <td class="index_table_primary_use">Zoo license manager plugins on Windows</td>
   </tr>
   -->
+  <!--
   <tr>
     <td><a href="/guides/rhinomobile" title="Tools for using 3dm files in mobile applications"> RhinoMobile</a></td>
 	<td><img src="/images/android-logo-small.png" alt="Android" class="index_table_icon" title="Android"><img src="/images/ios-logo-small.png" alt="iOS" class="index_table_icon" title="Apple iOS"></td>
 	<td><img src="/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"></td>
     <td class="index_table_primary_use">3D mobile application development</td>
   </tr>
+  -->
  </tbody>
  </table>
  </div>

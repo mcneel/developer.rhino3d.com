@@ -9,7 +9,6 @@ sdk = [ "RhinoMobile" ]
 title = "Your First App (Mac)"
 type = "guides"
 weight = 4
-override_last_modified = "2021-09-03T08:29:10Z"
 
 [admin]
 TODO = ""
@@ -18,16 +17,23 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "iOS", "Android" ]
-since = 0
+platforms = [ "Mac" ]
+since = 5
+until = 7
 
 [page_options]
 byline = true
 toc = true
 toc_type = "single"
+block_webcrawlers = true
 
+[_build]
+list = "never"
 +++
 
+{{< call-out "warning" "RhinoMobile: Deprecated" >}}
+RhinoMobile is no longer supported. Rhino 3dm file I/O is still available on iOS and Android via the [rhino3dm library](https://github.com/mcneel/rhino3dm).
+{{< /call-out >}}
  
 This guide presumes you have gone through the [Installing Tools (Mac)](/guides/rhinomobile/installing-tools-mac) guide and have successfully installed Xamarin Studio, Xcode, and all the requisite libraries.
 

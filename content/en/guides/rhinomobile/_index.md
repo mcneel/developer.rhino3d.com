@@ -17,10 +17,21 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "Android", "iOS" ]
-since = 0
+platforms = [ "Mac" ]
+since = 5
+until = 7
 
+[page_options]
+block_webcrawlers = true
+
+[_build]
+list = "never"
 +++
+
+{{< call-out "warning" "RhinoMobile: Deprecated" >}}
+RhinoMobile is no longer supported. Rhino 3dm file I/O is still available on iOS and Android via the [rhino3dm library](https://github.com/mcneel/rhino3dm).
+{{< /call-out >}}
+
 {{< row >}}
 {{< column >}}
 
