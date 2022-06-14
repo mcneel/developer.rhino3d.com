@@ -587,7 +587,7 @@ You can create image-based before-and-after comparisons with the following short
 
 produces:
 
-{{< beforeafter "/features/quadremesh/before.png" "/features/quadremesh/after.png" >}}
+{{< beforeafter "https://www.rhino3d.com/features/quadremesh/before.png" "https://www.rhino3d.com/features/quadremesh/after.png" >}}
 
 You can also supply optional captions for the left and right images like this:
 
