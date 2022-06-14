@@ -675,42 +675,6 @@ produces
 ![This image is centered](logo.png)
 {{< /center >}}
 
-### Command
-
-{{< call-out failure TODO >}}
-This shortcode is not yet documented because we have not yet ported the commands over to the new website
-{{< /call-out >}}
-
-### Command What's New
-
-{{< call-out failure TODO >}}
-This shortcode is not yet documented because we have not yet ported the commands over to the new website
-{{< /call-out >}}
-
-### Discourse Gallery
-
-Use the `discourse-gallery` shortcode to embed a Discourse gallery with thumbnails as an iframe.
-
-```
-{{</* discourse-gallery category="136" per-page="3" top-period="all" */>}}
-```
-
-produces:
-
-{{< discourse-gallery category="136" per-page="3" top-period="all" >}}
-
-#### Arguments:
-
-* `category`: *Number*. Restrict topics to a single category. Pass the id of the target category.
-* `tags`: *String*. Restrict topics to those associated with this tag.
-* `per-page`: *Number*. Controls how many topics to return. We suggest multiples of 3.
-* `template`: *String*. Either `complete` (default) or `basic`  While basic is just a list of topic titles, the complete template brings title, user name, user avatar, and topic thumbnail.
-* `top-period`: *String*. One of `all` (default), `yearly`, `quarterly`, `monthly`, `weekly`, `daily`.
-
-{{< call-out "note" "Frontmatter: discourse_gallery = true" >}}
-In the page's frontmatter, make sure you set the `[page_option] discourse_gallery = true`. Doing so will load the necessary javascript in the page's footer.
-{{< /call-out >}}
-
 ### Figure
 
 Use the `figure` shortcode to insert images with captions like this:
@@ -724,30 +688,6 @@ produces:
 {{< figure src="/images/light-falloff-after.png" caption="Lights have a falloff value that can be set to inverse squared which mimics how light fades with distance." >}}
 
 Optionally, you can also use the [gallery](#gallery) and [load-photoswipe](#load-photoswipe) shortcodes to embed figures in a gallery and pop-up an image overlay when users click or tap on the image.
-
-### Gallery
-
-The `gallery` shortcode used to show multiple images in a thumbnail grid.  It is used in conjuction with the [figure](#figure) and [load-photoswipe](#load-photoswipe) shortcodes like this:
-
-```
-{{</* gallery */>}}
-  {{</* figure src="/images/quadremesh-thumbnail.png" caption="Horse mesh retopologized" */>}}
-  {{</* figure src="/images/pbr_material.png" caption="A PBR Material" */>}}
-  {{</* figure src="/images/project.jpg" caption="Look! A toaster!" */>}}  
-{{</* /gallery */>}}
-{{</* load-photoswipe */>}}
-```
-
-produces:
-
-{{< gallery >}}
-  {{< figure src="/images/quadremesh-thumbnail.png" caption="Horse mesh retopologized" >}}
-  {{< figure src="/images/pbr_material.png" caption="A PBR Material" >}}
-  {{< figure src="/images/project.jpg" caption="Look! A toaster!" >}}  
-{{< /gallery >}}
-{{< load-photoswipe >}}
-
-This shortcode uses the [hugo-easy-gallery](https://github.com/liwenyip/hugo-easy-gallery) shortcode, along with [Photoswipe](#load-photoswipe).
 
 ### Image (shortcode)
 
@@ -792,22 +732,6 @@ Avoid writing the latest Rhino version in text.  Instead, the site itself knows 
 
 `{{</* latest-rhino-version */>}}` produces {{< latest-rhino-version >}}
 
-### Load Photoswipe
-
-The `load-photoswipe` shortcode loads the javascript libraries on this page in order to support clicking or tapping on an image to show a lightbox-style image overlay.  You only need to call it once per page like this:
-
-```
-{{</* load-photoswipe */>}}
-```
-
-{{< load-photoswipe >}}
-
-and the library will load.
-
-### New Label
-
-Use the `New Label` along with the `included_in.since` frontmatter field to create version-specific "new" labels.
-
 #### Standard size:
 
 `{{</* new-label 6 */>}}` produces: {{< new-label 6 >}}
@@ -817,7 +741,6 @@ Use the `New Label` along with the `included_in.since` frontmatter field to crea
 `An inline {{</* new-label 6 small */>}} small new label` produces: 
 
 An inline {{< new-label 6 small >}} small new label. There's a bug here that causes a line-wrap in the middle. Brian doesn't know how to fix it.
-
 
 #### Bullet in list:
 
@@ -863,42 +786,6 @@ To open Rhino by clicking an image:
 {{< open-rhino "https://docs.mcneel.com/rhino/6/training-command/en-us/samples/Clip.3dm" >}}
 ![computelogo](/images/rhino_compute_logo.png)
 {{< /open-rhino >}}
-
-### Rhino Download
-
-To produce a link to a Rhino download page, use the:
-
-```
-  * {{</* rhino-download */>}}
-  * {{</* rhino-download 7 windows evaluation */>}}
-  * {{</* rhino-download 7 windows commercial */>}}
-  * {{</* rhino-download evaluation */>}}
-  * {{</* rhino-download commercial */>}}
-```
-
-to produce:
-
-  * {{< rhino-download >}}
-  * {{< rhino-download 7 windows evaluation >}}
-  * {{< rhino-download 7 windows commercial >}}
-  * {{< rhino-download evaluation >}}
-  * {{< rhino-download commercial >}}
-
-The acceptable arguments are:
-
-1. `version` eg: `7`, `8` (major versions only)
-1. `platform` eg: `windows` or `mac`
-1. `type` eg: `beta`, `wip`, or `commercial`.
-
-Without any arguments, a link to the latest commercial version on each platform is produced:
-
-```
-{{</* rhino-download */>}}
-```
-
-results in :
-
-- {{< rhino-download >}}
 
 ### Row and Column
 
@@ -989,58 +876,6 @@ Row 3: Column 3
 {{< /column >}}
 
 {{< /row >}}
-
-
-### Subscribe
-
-Use the `subscribe` shortcode to embed a button in the page that subscribes the user to the specified maillist.
-
-```
-{{</* subscribe maillist="market_segment" id="27" label="Sign up for Virtual Reality news" */>}}
-
-Please log into your Rhino Account to subscribe to this mailing list.
-<br>
-<br>
-<a class='rhino-btn' href='https://www.rhino3d.com/user/login/' target="_blank">Login</a>
-
-{{</* /subscribe */>}}
-```
-
-yields:
-
-{{< subscribe maillist="market_segment" id="27" label="Sign up for Virtual Reality news" loginLabel="login">}}
-Please log into your Rhino Account to subscribe to this mailing list.
-{{< /subscribe >}}
-
-{{< call-out note "Subscribe Widget Behavior" >}}
-
-* Subscribe widget will disappear after load if the user is already subscribed to specified maillist.
-
-* If visible and user is logged in, clicking the button will result in user getting added to specified maillist --> button disappears.
-
-* If user is not logged in, a modal window will show the content specified in shortcode body.
-{{< /call-out >}}
-
-{{< call-out tip "Manage Subscriptions" >}}
-
-Current subscriptions can be seen and managed at https://www.rhino3d.com/my-account/maillist/
-
-{{< /call-out >}}
-
-
-#### Required Arguments:
-
-* `maillist`: *string*. the name of the mailing list category matching of of the following `"market_segment"`, `"companion_product"` or `"profession"`.
-* `id`: *integer*. the id of the mailing list corresponding to ids defined in the database see https://github.com/mcneel/rhino3d.com/blob/master/content/en/my-account/maillist/maillist.toml for a complete list of IDs.
-
-#### Optional Arguments:
-
-* `label`: *string*. human readable label of the button. **(This value should be translated)**
-* `class`: *string*. name of css class to customize placement of the button, for example `class="fixed-bottom-left"` places the button on the bottom left corner of the page. Additional classes may be defined in page/global stylesheets.
-* `container`: *string*. id of existing html element to move the button to, this can be any element that's accessible on the page. For example table of contents has two empty elements on top and bottom of it that can be used for this purpose. `container="toc-top-container"` places the widget on the top of the table of contents. Similarly `container="toc-bottom-container"` places the widget on the bottom of table of contents.
-
-#### Inner body:
-Content between shortcode's opening and closing tags will be displayed in a modal when user is not logged in. The example above has a `login` button along with a message. **(Content should be translated)**
 
 ### Vimeo and YouTube Videos
 
