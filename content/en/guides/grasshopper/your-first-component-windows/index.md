@@ -9,7 +9,7 @@ sdk = [ "Grasshopper" ]
 title = "Your First Component (Windows)"
 type = "guides"
 weight = 2
-override_last_modified = "2022-05-09T09:40:08Z"
+thumbnail = "/images/dev-logo-grasshopper-small.png"
 
 [admin]
 TODO = ""
@@ -41,14 +41,12 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 
 ### File New
 
-1. If you have not done so already, **launch Visual Studio** (for the purposes of this guide, we are using Visual Studio 2017 Community Edition and C#).
+1. If you have not done so already, **launch Visual Studio** (for the purposes of this guide, we are using Visual Studio Community Edition and C#).
 1. Navigate to **File** > **New** > **Project**...
 ![File New Project](/images/your-first-plugin-windows-01.png)
-1. A **New Project** wizard should appear.  In the left column, find the **Installed** > **Templates** > **Visual C#** > **Rhinoceros** section.  In the central list, select the Grasshopper Add-On template...
-![New Project](/images/your-first-component-windows-01.png)
-1. For the purposes of this Guide, we will name our demo plugin *HelloGrasshopper*.  At the bottom of the window, fill in the **Name** field.  **Browse** and select a location for this project on your disk...
-![Project Configuration](/images/your-first-component-windows-02.png)
-1. The New Grasshopper Assembly dialog appears.  Check the *Provide sample code* checkbox.
+1. A **Create a new project** wizard should appear.  In the **Search for templates** area, search for `Grasshopper` to filter the results. Find and select the **Grasshopper Assembly for Rhino 7 (C\#)** entry and click **Next**.
+1. For the purposes of this Guide, we will name our demo plugin *HelloGrasshopper*. In the **Configure your new project** dialog, fill in the **Project name** field.  **Browse** and select a location for this project on your disk, then click **Next**
+1. The *New Grasshopper Add-On dialog* appears.  Check the *Provide sample code* checkbox.
 ![New Grasshopper Assembly](/images/your-first-component-windows-03.png)
 1. This is where you fill out information about your first component:
     1. Add-on display name: the name of component library itself.

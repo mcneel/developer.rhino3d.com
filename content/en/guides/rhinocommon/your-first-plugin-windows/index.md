@@ -9,7 +9,7 @@ sdk = [ "RhinoCommon" ]
 title = "Your First Plugin (Windows)"
 type = "guides"
 weight = 3
-override_last_modified = "2021-09-03T08:29:10Z"
+thumbnail = "/images/dev-logo-grasshopper-small.png"
 
 [admin]
 TODO = ""
@@ -41,21 +41,16 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 
 ### File New
 
-1. If you have not done so already, *launch Visual Studio* (for the purposes of this guide, we are using Visual Studio 2017 Community Edition and C#).
+1. If you have not done so already, *launch Visual Studio* (for the purposes of this guide, we are using Visual Studio Community Edition and C#).
 1. Navigate to *File* > *New* > *Project*...
 ![File New Project](/images/your-first-plugin-windows-01.png)
-1. A *New Project* wizard should appear.  In the left column, find the *Installed* > *Visual C#* > *Rhinoceros* section.  In the central list, select the RhinoCommon Plug-In template...
-![New Project](/images/your-first-plugin-windows-02.png)
-1. For the purposes of this Guide, we will name our demo plugin *HelloRhinoCommon*.  At the bottom of the window, fill in the *Name* field.  *Browse* and select a location for this plugin on your disk...
-![Project Configuration](/images/your-first-plugin-windows-03.png)
-1. Check *Create directory for solution*.  *Note*: This is optional depending on how you want to structure your projects.
-1. Click the *OK* button.  *Note*: You don't have to add the project to source control for this demo.
+1. A *Create a new project* wizard should appear.  In the *Search for templates* area, search for `RhinoCommon` to filter the results. Find and select the **RhinoCommon Plug-In for Rhino 7 (C\#)** entry and click *Next*.
+1. For the purposes of this Guide, we will name our demo plugin *HelloRhinoCommon*. In the *Configure your new project* dialog, fill in the *Project name* field.  *Browse* and select a location for this project on your disk, then click *Next*
 1. The *New RhinoCommon Plug-In* dialog appears.  This dialog allows you to *Configure your new plugin project*, as well as select which RhinoCommon references to use and which debug version of Rhino you would like to launch...
 ![HelloRhinoCommon Solution](/images/your-first-plugin-windows-04.png)
 1. For the purposes of this guide, we will *accept the defaults* and click *Finish*...
 1. A *new solution* called *HelloRhinoCommon* should open...
 ![HelloRhinoCommon Solution](/images/your-first-plugin-windows-05.png)
-
 
 ### Boilerplate Build
 
@@ -63,7 +58,7 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 ![Start Button](/images/your-first-plugin-windows-06.png)
 1. *Rhinoceros* launches.  Create a new, empty model.
 1. Since this is the first time you are running the plugin, you need to *"install"* it.  (The RhinoCommon template has set things up so when you compile the solution an *.rhp* file is compiled in the *bin* subdirectory of the project directory.) In the Rhino command prompt type the *PlugInManager* command.  Click the *Install...* button.
-1.  *Browse* to the *HelloRhinoCommon.rhp* file (in our case, this is in *C:\\dev\\repositories\\HelloRhinoCommon\\HelloRhinoCommon\\bin\\*) and click *Open*.
+1. *Browse* to the *HelloRhinoCommon.rhp* file (in our case, this is in *C:\\dev\\repositories\\HelloRhinoCommon\\HelloRhinoCommon\\bin\\*) and click *Open*.
 1. The HelloRhinoCommon plugin is now installed.  Click *OK* to close the Rhino Options dialog.
 1. Enter the *HelloRhinoCommonCommand* command.  Notice that the command autocompletes...
 1. The *HelloRhinoCommonCommand* command begins and prompts you to *Please select the start point:*.
