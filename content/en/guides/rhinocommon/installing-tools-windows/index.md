@@ -46,7 +46,7 @@ For the purposes of this guide, we will presume you are using Visual Studio 2022
 #### Step-by-Step
 
 1. *[Visual Studio Community Edition](https://visualstudio.microsoft.com/vs/)* is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/en-us/support/legal/mt171547).  Click the *Community* button to download the installer.
-1. Run the *Visual Studio installer* you downloaded from Microsoft.
+1. Run the **Visual Studio installer** you downloaded from Microsoft, in this case *VisualStudioSetup.exe*.
 1. Follow the onscreen prompts to install Visual Studio.  You will need the ".NET desktop development" workload for RhinoCommon based plug-in development. When successfully installed, click the *Launch* button.
 
 ## RhinoCommon Templates
