@@ -104,7 +104,7 @@ Vectors can also be added to points to create new point locations.  Here is an e
 #  A base point
 point1 = [1,1,1]
 
-# A vectore with a direction of 2 units in the X direction
+# A vector with a direction of 2 units in the X direction
 vector1 = [2,0,0]
 
 # Setting the coordinate of point1 to to units more in the X direction.
