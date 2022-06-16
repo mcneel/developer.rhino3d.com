@@ -43,9 +43,7 @@ This guide presumes you have an:
 [Visual Studio](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx) is Microsoft's flagship development platform and Integrated Development Environment (IDE).  Visual Studio now comes in three major "streams": Visual Studio Code[^1], Visual Studio Online[^2], and Visual Studio "proper"[^3].  In order to author custom Grasshopper components, you will need Visual Studio "proper" (Visual Studio Code and Visual Studio Online are not supported).
 
 {{< call-out "note" "Visual Studio Editions" >}}
-At the time of this writing, Visual Studio "proper" comes in [three editions](https://www.visualstudio.com/vs-2015-product-editions): Community, Professional, and Enterprise.  Any of these editions will work. Additionally, [Visual Studio Express 2015 for Windows Desktop](https://www.visualstudio.com/products/visual-studio-express-vs.aspx) will work with more limited debugging support[^4]. Other Express versions, such as Express for Windows, Express for Web or Team Foundation Server 2015 Express, will not work.
-
-Grasshopper components can be authored in Visual Studio 2010, 2012, 2013, 2015, 2017, 2019, and 2022 both in C# and VB, and included in Ultimate, Professional, Premium, C# Express, Vb Express and Windows Desktop Express (where available).  For the purposes of this guide, we will presume you are using Visual Studio Community Edition.
+For the purposes of this guide, we will presume you are using Visual Studio 2022 Community Edition.
 {{< /call-out >}}
 
 #### Step-by-Step
@@ -54,7 +52,7 @@ Grasshopper components can be authored in Visual Studio 2010, 2012, 2013, 2015, 
 1. Run the **Visual Studio installer** you downloaded from Microsoft, in this case *VisualStudioSetup.exe*.
 1. Follow the onscreen prompts to install Visual Studio.  It is recommended that you install the **Typical** installation.  Depending on your internet connection, this can take minutes or hours.  When successfully installed, click the **Launch** button.
 
-## Grasshopper Assembly
+## Grasshopper Templates
 
 The [RhinoCommon and Grasshopper templates for Rhino 7](https://marketplace.visualstudio.com/items?itemName=McNeel.Rhino7Templates2022) contains wizards to get you started creating components quickly.
 
@@ -85,5 +83,3 @@ Check out the [Your First Component (Windows)](/guides/grasshopper/your-first-co
 [^2]: Visual Studio Online is Microsoft's online counterpart to the desktop edition of Visual Studio (referred to as Visual Studio "proper" above).  We have not tested using Visual Studio Online to debug Grasshopper components as having a copy of Rhino and Grasshopper running would prove logistically difficult.
 
 [^3]: Visual Studio "proper" is the desktop version of Visual Studio...we are only attaching the "proper" epithet to distinguish it from the Visual Studio Code and Visual Studio Online.  In subsequent guides this will be referred to as simply "Visual Studio."
-
-[^4]: Visual Studio 2017 Community Edition offers a development platform that has a less strict licensing agreement policy than the Community edition. Please refer to the EULA for complete details, available during installation. In this edition, debugging of Rhino and Grasshopper can be started, but the location of the Rhino executable (rhino.exe), usually available in the Project property page, in the Debug tab, cannot be changed in the UI. After Wizard completion, the location of the Rhino executable can only be edited in the XML of the resulting **.csproj** file, in the main folder of the solution.

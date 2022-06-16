@@ -9,7 +9,7 @@ sdk = [ "RhinoCommon" ]
 title = "Installing Tools (Windows)"
 type = "guides"
 weight = 1
-override_last_modified = "2021-06-07T11:23:48Z"
+thumbnail = "/images/dev-logo-rhino-small.png"
 
 [admin]
 TODO = ""
@@ -31,7 +31,7 @@ toc_type = "single"
 
 ## Prerequisites
 
-This guide presumes you have [Rhino 7 for Windows](http://www.rhino3d.com/download)
+This guide presumes you have [Rhino 7 for Windows](http://www.rhino3d.com/download).
 
 ## Install Visual Studio
 
@@ -39,7 +39,9 @@ This guide presumes you have [Rhino 7 for Windows](http://www.rhino3d.com/downlo
 
 At the time of this writing, Visual Studio "proper" comes in [three editions](https://www.visualstudio.com/vs-2015-product-editions): Community, Professional, and Enterprise.  Any of these editions will work.
 
-**Note**: For the purposes of this guide, we will presume you are using Visual Studio 2019 Community Edition.
+{{< call-out "note" "Visual Studio Editions" >}}
+For the purposes of this guide, we will presume you are using Visual Studio 2022 Community Edition.
+{{< /call-out >}}
 
 #### Step-by-Step
 
@@ -47,21 +49,23 @@ At the time of this writing, Visual Studio "proper" comes in [three editions](ht
 1. Run the *Visual Studio installer* you downloaded from Microsoft.
 1. Follow the onscreen prompts to install Visual Studio.  You will need the ".NET desktop development" workload for RhinoCommon based plug-in development. When successfully installed, click the *Launch* button.
 
-## RhinoCommon templates
+## RhinoCommon Templates
 
-The [RhinoCommon templates](https://marketplace.visualstudio.com/items?itemName=McNeel.Rhino7Templates) contains wizards to get you started creating plugins quickly.
+The [RhinoCommon and Grasshopper templates for Rhino 7](https://marketplace.visualstudio.com/items?itemName=McNeel.Rhino7Templates2022) contains wizards to get you started creating components quickly.
 
 #### Step-by-Step
 
-1. Launch *Visual Studio*.
-1. Navigate to *Tools* > *Extensions and Updates...*
-1. In the left-hand sidebar, expand the *Online* section, then select the *Visual Studio Gallery* entry...
-![Extensions and Updates](/images/installing-tools-windows-01.png)
-1. In the *Search* field, search for *rhinocommon*.  This filters the gallery list below.
-1. Find *RhinoCommon templates* and select it.
-1. Click the *Download* button.  The extension installation should begin after you close Visual Studio.
-1. You must *Accept* the license agreement by clicking on the *Install* button.
-1. If the installation is successful, the extension should appear in your list of *Installed* extensions.
+1. Launch **Visual Studio**.
+1. Navigate to **Extensions** > **Manage Extensions**
+1. In the left-hand sidebar, expand the **Online** section, then select the **Visual Studio Marketplace** entry...
+![Extensions and Updates](/images/installing-tools-windows-grasshopper-01.png)
+1. In the **Search** field, search for *RhinoCommon*.  This filters the gallery list below.
+1. Find **RhinoCommon and Grasshopper templates for Rhino 7** and select it.
+1. Click the **Download** button.  The extension installation should begin.
+1. You must **Accept** the license agreement by clicking on the **Install** button.
+1. Press the **Close** button and **Quit** Visual Studio.
+1. The extension installer should start once you quit. Click the **Modify** button to install the extension.
+1. Once this is done, the extension should appear in your list of **Installed** extensions in **Extensions** > **Manage Extensions**.
 
 ## Next Steps
 
