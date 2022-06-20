@@ -183,7 +183,7 @@ rs.AddLayer (name=None, color=0, visible=True, locked=False, parent=None)
 
 This concludes the boring portion of the primer. We now have enough information to actually start making useful scripts. I still haven't told you about loops or conditionals, so the really awesome stuff will have to wait until Chapter 5, though. We're going to write a script which uses some Python functions and a few RhinoScriptSyntax methods. Our objective for today is to write a script that applies a custom name to selected objects. First, I'll show you the script, then we'll analyze it line by line:
 
-```python    
+```python
 import rhinoscriptsyntax as rs
 import time
 #This script will rename an object using the current system time
@@ -191,9 +191,7 @@ import time
 strObjectID = rs.GetObject("Select an object to rename",0,False,True)
 
 if strObjectID:
-
    strNewName = "Time: " + str(time.asctime(time.localtime()))
-
    rs.ObjectName(strObjectID, strNewName)
 ```
 
