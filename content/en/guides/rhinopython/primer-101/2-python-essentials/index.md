@@ -9,7 +9,6 @@ sdk = [ "RhinoPython" ]
 title = "2 Python Essentials"
 type = "guides"
 weight = 4
-override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 picky_sisters = ""
@@ -287,9 +286,9 @@ rs.Command ("_SelLast")
 rs.Command ("_Rotate3D w0,0,0 w1,0,0 90")
 rs.Command ("-_Properties _Object _Name Profile _Enter _Enter")
 rs.Command ("_SelNone")
-rs.Command ("-_Sweep1 _SelName Rail _SelName Profile _Enter _Enter _Closed=Yes _Enter")
-rs.Command ("_SelName Rail")
-rs.Command ("_SelName Profile")
+rs.Command ("-_Sweep1 -_SelName Rail -_SelName Profile _Enter _Enter _Closed=Yes _Enter")
+rs.Command ("-_SelName Rail")
+rs.Command ("-_SelName Profile")
 rs.Command ("_Delete")
 ```
 {{< /div >}}

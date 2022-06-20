@@ -9,7 +9,6 @@ sdk = [ "RhinoPython" ]
 title = "4 Operators and functions"
 type = "guides"
 weight = 15
-override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 picky_sisters = ""
@@ -193,9 +192,9 @@ strObjectID = rs.GetObject("Select an object to rename",0,False,True)
 
 if strObjectID:
 
-   strNewName = "Time: " + str(time.localtime())
+   strNewName = "Time: " + str(time.asctime(time.localtime()))
 
-   rs.ObjectName(strObjectID, strNewName)</td>
+   rs.ObjectName(strObjectID, strNewName)
 ```
 
 This is a complete script file which can be run directly from the disk. It adheres to the basic script structure according to page 13.
