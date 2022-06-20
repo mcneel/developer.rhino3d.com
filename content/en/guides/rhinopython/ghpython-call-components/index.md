@@ -165,5 +165,5 @@ Help for specific component arguments and return values can be found in the help
 
 - [Your first script with Python in Grasshopper](/guides/rhinopython/what-is-rhinopython)
 - [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Editing Python in Grasshopper](/guides/rhinopython/python-loading-scripts)
+- [Editing Python in Grasshopper](/guides/rhinopython/python-running-scripts)
 - [Python Guide for Rhino](/guides/rhinopython/)
