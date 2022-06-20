@@ -52,7 +52,7 @@ A macro is a prerecorded list of orders for Rhino to execute. The _Line command 
  _Rotate3D w0,0,0 w10,0,0 90
  -_Properties _Object _Name ProfilePolygon _Enter _Enter
  _SelNone
- -_Sweep1 _SelName RailPolygon _SelName ProfilePolygon _Enter   _Simplify=None Enter
+ -_Sweep1 -_SelName RailPolygon -_SelName ProfilePolygon _Enter   _Simplify=None Enter
 ```
 
 {{< image url="/images/hexagonaltorus.svg" alt="/images/hexagonaltorus.svg" class="float_right" width="325" >}}

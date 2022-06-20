@@ -313,9 +313,9 @@ Rhino.Command "_SelLast"
 Rhino.Command "_Rotate3D w0,0,0 w1,0,0 90"
 Rhino.Command "-_Properties _Object _Name Profile _Enter _Enter"
 Rhino.Command "_SelNone"
-Rhino.Command "-_Sweep1 _SelName Rail _SelName Profile _Enter _Closed=Yes Enter"
-Rhino.Command "_SelName Rail"
-Rhino.Command "_SelName Profile"
+Rhino.Command "-_Sweep1 -_SelName Rail -_SelName Profile _Enter _Closed=Yes Enter"
+Rhino.Command "-_SelName Rail"
+Rhino.Command "-_SelName Profile"
 Rhino.Command "_Delete"
 ```
 {{< /div >}}
