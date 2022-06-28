@@ -9,7 +9,6 @@ sdk = [ "RhinoCommon", "C/C++" ]
 title = "Digitally Signing LAN Zoo Plugins"
 type = "guides"
 weight = 5
-override_last_modified = "2021-06-25T13:04:05Z"
 
 [admin]
 TODO = "move out of Zoo because it applies to both Zoo and Rhino plugins"
