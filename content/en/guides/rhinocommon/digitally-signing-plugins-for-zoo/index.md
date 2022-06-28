@@ -103,13 +103,13 @@ Now that you have a personal information exchange (*.pfx*), you can use it to si
 2. Use *Signtool.exe*, with the following syntax, to digitally sign your plugins...
 
 ```cmd
-signtool.exe sign /f <filename>.pfx /t http://timestamp.verisign.com/scripts/timstamp.dll /v <plugin>
+signtool.exe sign /f <filename>.pfx /fd sha256 /tr http://timestamp.digicert.com /td sha256 /v <plugin>
 ```
 
 For example:
 
 ```cmd
-C:\Dev\Zoo\TestZooPlugin> signtool sign /f TestZooPluginKey.pfx /t http://timestamp.verisign.com/scripts/timstamp.dll /v TestZooPlugin.dll
+C:\Dev\Zoo\TestZooPlugin> signtool sign /f TestZooPluginKey.pfx /fd sha256 /tr http://timestamp.digicert.com /td sha256 /v TestZooPlugin.dll
 The following certificate was selected:
     Issued to: MCNEEL.COM
     Issued by: McNeel Software Development
