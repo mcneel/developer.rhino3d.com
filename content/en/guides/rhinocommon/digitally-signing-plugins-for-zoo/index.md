@@ -102,7 +102,7 @@ Now that you have a personal information exchange (*.pfx*), you can use it to si
 2. Use *Signtool.exe*, with the following syntax, to digitally sign your plugins...
 
 ```cmd
-signtool.exe sign /f <filename>.pfx /fd sha256 /t http://timestamp.digicert.com /td sha256 /v <plugin>
+signtool.exe sign /f <filename>.pfx /fd sha256 /tr http://timestamp.digicert.com /td sha256 /v <plugin>
 ```
 
 For example:
