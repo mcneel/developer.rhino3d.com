@@ -76,10 +76,8 @@ If the status code is greater or equal to `500`, the response may not be in JSON
 
 Removes a license from Cloud Zoo. This method deletes the entire [License Cluster object](/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster) the license is in. If the License Cluster the license belongs to contains additional licenses, they will be removed as well.
 
-{{< call-out "note" "Note" >}}
-    <!-- <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> -->
-	<strong>Heads up!</strong>
-    This endpoint expects the arguments to be passed as a <a href="https://en.wikipedia.org/wiki/Query_string" class="alert-link">query string</a>.
+{{< call-out "note" "Heads up!" >}}
+This endpoint expects the arguments to be passed as a <a href="https://en.wikipedia.org/wiki/Query_string" class="alert-link">query string</a>.
 {{< /call-out >}}
 
 #### Example Request
