@@ -90,3 +90,7 @@ When `LicenseLeaseChangedEventArgs.Lease` is null, you should assume the user do
 ## Call GetLicense
 
 Like other licensing methods, you should call `GetLicense` when your plugin is loaded. The only difference is that you must pass the `OnLeaseChanged` delegate you implemented in the previous step and add `SupportsRhinoAccounts` to the `LicenseCapabilities` argument so that Rhino can know that you support Cloud Zoo and so that Rhino can know which delegate to call when a license lease change occurs.
+
+{{< call-out "note" "Note" >}}
+If Rhino shows the <em>"The resource cannot be found."</em> error message when trying to get a lease for your plug-in from Cloud Zoo, make sure you've <a href="/guides/rhinocommon/cloudzoo/cloudzoo-add-products/">registered your product with Cloud Zoo</a> and that the product's ID matches the plug-in's GUID.
+{{< /call-out >}}
