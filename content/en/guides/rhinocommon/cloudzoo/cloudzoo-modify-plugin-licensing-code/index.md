@@ -94,3 +94,15 @@ Like other licensing methods, you should call `GetLicense` when your plugin is l
 {{< call-out "note" "Note" >}}
 If Rhino shows the <em>"The resource cannot be found."</em> error message when trying to get a lease for your plug-in from Cloud Zoo, make sure you've <a href="/guides/rhinocommon/cloudzoo/cloudzoo-add-products/">registered your product with Cloud Zoo</a> and that the product's ID matches the plug-in's GUID.
 {{< /call-out >}}
+
+{{< call-out "note" "Another note!" >}}
+When calling `GetLicense`, the `validatedProductKeyDelegate` argument cannot be null. If you only support Cloud Zoo licensing (`LicenseCapabilities.SupportsRhinoAccounts`), then use a dummy method, like below.
+<pre><code>
+private static ValidateResult OnValidateProductKey(string licenseKey, out LicenseData licenseData)
+{
+  // will not be called but must nonetheless be a valid delegate method
+  licenseData = null;
+  return ValidateResult.ErrorShowMessage;
+}
+</code><pre>
+{{< /call-out >}}
