@@ -12,7 +12,7 @@ block_webcrawlers = true
 list = "never"
 +++
 
-![](sad_rhino.png)
+![](/images/sad_rhino.png)
 
 404 Error - The link you followed no longer exists.
 
