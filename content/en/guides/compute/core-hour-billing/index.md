@@ -60,17 +60,14 @@ Core-hour billing is required when running Rhino on a Windows Server-based opera
 Creating a new team is not strictly required, but core-hour billing is *not compatible* with existing licenses in the team. So if your team has licenses in it, core-hour billing will not be allowed.
 {{< /call-out >}}
 
-3. Click _Action_ -> _Manage Core-Hour Billing_.
+3. Click _Manage Team_ -> _Manage Core-Hour Billing_.
 4. Check the checkbox next to Rhino 6 and Rhino 7 and the checkbox signaling you agree to pay.
 5. Click _Save_, and enter payment information when prompted for your new team.
 
 ## Using Core-Hour Billing
 
-{{< call-out "note" "Note" >}}
-If you're following the <a href="../deploy" class="alert-link">"Deployment" guide</a>, you can <strong>skip step 3.</strong> and simply leave the page open for now. We'll use the token later when running the boostrap script which will take care of setting up the environment variable.
-{{< /call-out >}}
-
 1. Go to the [Licenses Portal](https://www.rhino3d.com/licenses?_forceEmpty=true) and select the team that you just set up with Core-hour billing.
+1. Click _Manage Team_ -> _Manage Core-Hour Billing_.
 2. Click _Action_ -> _Get Auth Token_ to get a token.
 3. Create a new environment variable with the name `RHINO_TOKEN` and use the token as the value. Since the token is too long for Windows' Environment Variables dialog, it's easiest to do this via a PowerShell command.
 
