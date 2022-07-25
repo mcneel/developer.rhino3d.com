@@ -3,4 +3,4 @@
 disableLanguages = ["cs", "cn", "de", "es", "fr", "it", "jp", "kr", "pl", "pt", "ru", "tw"]
 
 [params]
-    forestryBaseURL = "https://app.forestry.io/sites/9bs6ghwu05ji2w/#/pages/content-en" #TODO: Change this
+    forestryBaseURL = "https://app.forestry.io/sites/9bs6ghwu05ji2w/#/pages/content-en" # deprecated; can be removed soon
