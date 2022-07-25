@@ -109,10 +109,6 @@ other = "このページを編集"
 other = "GitHubで編集"
 
 # context: the Edit menu at the bottom of the page
-[Edit-on-Forestry]
-other = "Forestryで編集"
-
-# context: the Edit menu at the bottom of the page
 [Edit-data]
 other = "データを編集"
 

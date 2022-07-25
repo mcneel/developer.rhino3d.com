@@ -109,10 +109,6 @@ other = "Modifica questa pagina"
 other = "Modifica su GitHub"
 
 # context: the Edit menu at the bottom of the page
-[Edit-on-Forestry]
-other = "Modifica on Forestry"
-
-# context: the Edit menu at the bottom of the page
 [Edit-data]
 other = "Modifica dati"
 

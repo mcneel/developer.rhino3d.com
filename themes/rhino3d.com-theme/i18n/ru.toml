@@ -109,10 +109,6 @@ other = "Редактировать эту страницу"
 other = "Редактировать на GitHub"
 
 # context: the Edit menu at the bottom of the page
-[Edit-on-Forestry]
-other = "Редактировать на Forestry"
-
-# context: the Edit menu at the bottom of the page
 [Admin]
 other = "Администратор"
 

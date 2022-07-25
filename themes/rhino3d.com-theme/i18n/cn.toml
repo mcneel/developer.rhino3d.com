@@ -109,10 +109,6 @@ other = "编辑此页面"
 other = "在 GitHub 上编辑"
 
 # context: 页面底部的编辑菜单
-[Edit-on-Forestry]
-other = "在 Forestry 上编辑"
-
-# context: 页面底部的编辑菜单
 [Edit-data]
 other = "数据编辑"
 

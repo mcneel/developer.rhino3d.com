@@ -109,10 +109,6 @@ other = "編輯此頁"
 other = "在 GitHub 編輯"
 
 # context: the Edit menu at the bottom of the page
-[Edit-on-Forestry]
-other = "在 Forestry 編輯"
-
-# context: the Edit menu at the bottom of the page
 [Edit-data]
 other = "編輯資料"
 

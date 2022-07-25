@@ -109,10 +109,6 @@ other = "Diese Seite bearbeiten"
 other = "Auf GitHub bearbeiten"
 
 # context: the Edit menu at the bottom of the page
-[Edit-on-Forestry]
-other = "Auf Forestry bearbeiten"
-
-# context: the Edit menu at the bottom of the page
 [Edit-data]
 other = "Daten bearbeiten"
 
