@@ -289,3 +289,11 @@ other = "新規"
 # Featured button and tag on Learn Pages
 [featured]
 other = "おすすめ"
+
+# All button and tag on Learn Pages
+[all]
+other = "すべて"
+
+# Filter textfield on Learn Pages
+[filter]
+other = "フィルタ..."

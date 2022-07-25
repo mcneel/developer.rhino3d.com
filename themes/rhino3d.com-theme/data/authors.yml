@@ -139,6 +139,11 @@ brianj:
   email: brianj@mcneel.com
   discourse: BrianJ
   github: BrianJames
+chaostv:
+  name: ChaosTV
+  email: ''
+  discourse: ''
+  github: ''
 carla.sologuren:
   name: Carla Sologuren
   email: carla.sologuren@mcneel.com
@@ -194,6 +199,11 @@ dan:
   email: dan@mcneel.com
   discourse: dan
   github: dbelcher
+dana.buscaglia:
+  name: Dana Buscaglia
+  email: ''
+  discourse: ''
+  github: ''
 daniel.piker:
   name: Daniel Piker
   email: daniel.piker@mcneel.com
@@ -274,6 +284,11 @@ enric:
   email: enric@mcneel.com
   discourse: enric
   github: enricmarques
+essential-jewelry:
+  name: Essential Jewelry Design
+  email: 
+  discourse:
+  github: 
 e.sosnovsky:
   name: Evgeny Sosnovsky
   email: e.sosnovsky@sabitsoft.com
@@ -319,6 +334,11 @@ gemma:
   email: gemma@mcneel.com
   discourse: ''
   github: ''
+gijs:
+  name: Gijs de Zwart
+  email: gijsdezwart@gmail.com 
+  discourse: gijs
+  github: 'studiogijs'
 giorgio:
   name: Giorgio Gurioli
   email: giorgio@guriolidesign.it
@@ -358,6 +378,11 @@ how.to.rhino:
   name: How to Rhino
   email: dusan@howtorhino.com
   discourse: dusancv
+  github: ''
+lee.su.huang:
+  name: Lee-Su Huang
+  email: ''
+  discourse: ''
   github: ''
 inspirationtuts:
   name: Inspiration Tuts
@@ -419,6 +444,11 @@ jess-maertterer:
   email: ''
   discourse: Jess
   github: ''
+jinmo-rhee:
+  name: Jinmo Rhee
+  email: ''
+  discourse: ''
+  github: ''
 joachim:
   name: Joachim Kuntz
   email: joachim@mcneel.com
@@ -430,7 +460,7 @@ jody:
   discourse: jody
   github: jodymills
 jb:
-  name: John (JB) Brock
+  name: John Brock
   email: jb@mcneel.com
   discourse: John_Brock
   github: JohnBrock
@@ -599,6 +629,11 @@ mikolaj:
   email: mikolaj@lemondim.pl
   discourse: mikolaj
   github: mjarski
+nathan.miller:
+  name: Nathen Miller
+  email: ''
+  discourse: ''
+  github: ''
 modelab:
   name: ModeLab
   email: hello@modelab.is
@@ -704,6 +739,11 @@ pierre:
   email: pierre@mcneel.com
   discourse: pierrec
   github: pilcru
+paula.pintos:
+  name: Paula Pintos
+  email: ''
+  discourse: ''
+  github: ''
 pjchen:
   name: PJ Chen Jewelry Design
   email: pj@pjchendesign.com
@@ -719,6 +759,21 @@ rajaa:
   email: rajaa@mcneel.com
   discourse: rajaa
   github: rissa
+rhino.architects:
+  name: Rhino for Architects
+  email: ''
+  discourse: ''
+  github: ''
+rhino.education:
+  name: Rhino3D Education
+  email: 'andres@mcneel.com'
+  discourse: ''
+  github: ''
+rhino.for.architects:
+  name: Rhino for Architects
+  email:
+  discourse:
+  github:
 roy:
   name: Roy Hirshkowitz
   email: roy@mcneel.com
@@ -739,6 +794,16 @@ sandy:
   email: sandy@mcneel.com
   discourse: sandy
   github: SMcNeel
+david.stasiuk:
+  name: David Stasiuk
+  email: ''
+  discourse: ''
+  github: ''
+nicolas.sterling:
+  name: Nicolas Sterling
+  email: ''
+  discourse: ''
+  github: ''
 yoon:
   name: Sanghoon Yoon
   email: yoon@mcneel.com
@@ -749,6 +814,11 @@ scottd:
   email: scottd@mcneel.com
   discourse: scottd
   github: scotttd
+sim.pern.chong:
+  name: Sim Pern Chong
+  email: ''
+  discourse: ''
+  github: ''
 simply3d:
   name: Simply 3D
   email: tgroppi@ecuad.ca
@@ -784,8 +854,18 @@ steve:
   email: steve@mcneel.com
   discourse: stevebaer
   github: sbaer
+structured.parametrics:
+  name: Structured Parametrics
+  email: ''
+  discourse: ''
+  github: ''
 stylianos-dritsas:
   name: Stylianos Dritsas
+  email: ''
+  discourse: ''
+  github: ''
+klaus.teltenkoetter:
+  name: Klaus Teltenkoetter
   email: ''
   discourse: ''
   github: ''
@@ -799,6 +879,11 @@ tim:
   email: tim@mcneel.com
   discourse: tim
   github: TimHemmelman
+tom.budd:
+  name: Tom Budd
+  email: ''
+  discourse: ''
+  github: ''
 travis:
   name: Travis Serio
   email: travis@mcneel.com
@@ -833,6 +918,11 @@ wim:
   name: Wim R. M. Dekeyser
   email: wim@mcneel.com
   discourse: wim
+  github: ''
+paul.wintour:
+  name: Paul Wintour
+  email: ''
+  discourse: ''
   github: ''
 wk.lim:
   name: WK Lim

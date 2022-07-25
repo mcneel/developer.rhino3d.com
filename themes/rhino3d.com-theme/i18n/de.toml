@@ -232,7 +232,7 @@ other = "Rhino 7"
 
 # Subtitle on homepage video caption
 [caption-rhino-7-subtitle]
-other = "Freiform mit Präzision."
+other = "Freiform, mit Präzision."
 
 # Details of the Rhino 7 video caption
 [caption-rhino-7-details]
@@ -289,3 +289,7 @@ other = "Neu"
 # Featured button and tag on Learn Pages
 [featured]
 other = "Auswahl"
+
+# All button and tag on Learn Pages
+[all]
+other = "Alle"

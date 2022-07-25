@@ -1,5 +1,5 @@
 [buy]
-other = "acquista" 
+other = "acquista"
 
 [download]
 other = "download"
@@ -289,3 +289,11 @@ other = "Nuovo"
 # Featured button and tag on Learn Pages
 [featured]
 other = "In evidenza"
+
+# All button and tag on Learn Pages
+[all]
+other = "Vengono"
+
+# Filter textfield on Learn Pages
+[filter]
+other = "Filtro..."

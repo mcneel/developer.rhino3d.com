@@ -288,4 +288,8 @@ other = "最新"
 
 # Featured button and tag on Learn Pages
 [featured]
-other = "精選" 
+other = "精選"
+
+# All button and tag on Learn Pages
+[all]
+other = "全部"

@@ -62,7 +62,7 @@ other = "사용 설정됨"
 other = "더 자세히..."
 
 [Including]
-other = "포함: "
+other = "포함:"
 
 [Rhino-Commands]
 other = "Rhino 명령"
@@ -94,7 +94,7 @@ other = "작성자: "
 
 # context: the bylines that sometimes show up under the title of a page, showing when the page was last updated
 [Last-updated]
-other = "마지막 업데이트: "
+other = "마지막 업데이트:"
 
 # context: the bylines that sometimes show up under the title of a page, joining the different authors.  Such as: "by Scott Davidson and..."s
 [and]
@@ -289,3 +289,11 @@ other = "신규"
 # Featured button and tag on Learn Pages
 [featured]
 other = "추천"
+
+# All button and tag on Learn Pages
+[all]
+other = "모두"
+
+# Filter textfield on Learn Pages
+[filter]
+other = "필터링..."

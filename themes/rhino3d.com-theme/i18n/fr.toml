@@ -289,3 +289,11 @@ other = "Nouveau"
 # Featured button and tag on Learn Pages
 [featured]
 other = "Marqué"
+
+# All button and tag on Learn Pages
+[all]
+other = "Toutes"
+
+# Filter textfield on Learn Pages
+[filter]
+other = "Filtrer..."
