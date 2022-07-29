@@ -292,4 +292,4 @@ other = "모두"
 
 # Filter textfield on Learn Pages
 [filter]
-other = "필터링..."
+other = "필터링... "

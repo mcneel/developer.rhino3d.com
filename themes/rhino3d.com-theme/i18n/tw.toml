@@ -289,3 +289,7 @@ other = "精選"
 # All button and tag on Learn Pages
 [all]
 other = "全部"
+
+# Filter textfield on Learn Pages
+[filter]
+other = "篩選..."
