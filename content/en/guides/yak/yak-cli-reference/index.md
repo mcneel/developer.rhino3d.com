@@ -64,6 +64,11 @@ Installs a package (optionally with a specific version).
 yak install [--source=URL] <package> [<version>]
 ```
 
+{{< call-out "note" "Note" >}}
+  Packages can be installed locally by using a local package repository. Place the .yak file in a folder and then run...
+  <pre><code>yak install --source="path/to/folder" &lt;package&gt;</code></pre>
+{{< /call-out >}}
+
 ## List
 
 _Since 0.2_
