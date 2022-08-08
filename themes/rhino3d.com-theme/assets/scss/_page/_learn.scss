@@ -260,7 +260,7 @@ div.learn_gallery_page {
 
 .discover-info-subtitle {}
 
-.discover-info-author,
+.discover-info-author ,
 .discover-info-author:visited,
 .discover-info-author:hover {
 	display: block;
@@ -271,6 +271,7 @@ div.learn_gallery_page {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	cursor: pointer;
 }
 
 .discover-item.discover-item-focused .discover-info-title,

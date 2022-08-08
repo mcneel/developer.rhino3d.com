@@ -289,3 +289,7 @@ other = "Auswahl"
 # All button and tag on Learn Pages
 [all]
 other = "Alle"
+
+# Filter textfield on Learn Pages
+[filter]
+other = "Filter..."

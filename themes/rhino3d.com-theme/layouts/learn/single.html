@@ -78,7 +78,7 @@
                     <div class="discover-info">
 
                         <a class=" discover-info-title" v-bind:itemid="card.url" v-on:click="handleCardOpen">(( card.title ))</a>
-                        <a class="discover-info-author" v-bind:href="card.authorUrl" target="blank">((
+                        <a class="discover-info-author" v-on:click="handleAuthorClick(card.author)">((
                             card.author))</a>
                         {{/*  <div class="discover-feature-badge" v-if="card.highlight">
                             <img src="/images/learn/featured-badge.svg" />
@@ -443,6 +443,9 @@
                         window.open(url, '_blank').focus();
                     }
                     this.forgetItem(event);
+                },
+                handleAuthorClick: function (author) {
+                    this.keyword = author;
                 },
                 forgetAllItems: function (event) {
                     if (window.confirm("Are you sure you want to unmark all new items?")) {

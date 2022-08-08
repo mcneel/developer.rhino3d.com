@@ -288,7 +288,7 @@ other = "Marqué"
 
 # All button and tag on Learn Pages
 [all]
-other = "Toutes"
+other = "Tout"
 
 # Filter textfield on Learn Pages
 [filter]

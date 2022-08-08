@@ -35,7 +35,7 @@ alain:
   discourse: Alain
   github: acormier
 andres:
-  name: Andrés González Sr.
+  name: Andrés Sr @McNeel
   email: andres@mcneel.com
   discourse: RhinoFabStudio
   github: ''
@@ -115,7 +115,7 @@ bella:
   discourse: bella_hsu
   github: BellaHsu68
 bernat:
-  name: Bernat Lorente
+  name: Bernat @McNeel
   email: bernat@mcneel.com
   discourse: Bernat
   github: bernatlorente
@@ -130,12 +130,12 @@ bob:
   discourse: bobmcneel
   github: BobMcNeel
 brian:
-  name: Brian Gillespie
+  name: Brian @McNeel
   email: brian@mcneel.com
   discourse: brian
   github: golsby
 brianj:
-  name: Brian James
+  name: BrianJ @McNeel
   email: brianj@mcneel.com
   discourse: BrianJ
   github: BrianJames
@@ -145,7 +145,7 @@ chaostv:
   discourse: ''
   github: ''
 carla.sologuren:
-  name: Carla Sologuren
+  name: Carla @McNeel
   email: carla.sologuren@mcneel.com
   discourse: Carla_Sologuren
   github: carlasologuren
@@ -240,7 +240,7 @@ david.eranen:
   discourse: davideranen
   github: deranen
 david:
-  name: David Rutten
+  name: David @McNeel
   email: david@mcneel.com
   discourse: davidrutten
   github: DavidRutten
@@ -250,7 +250,7 @@ debbieg:
   discourse: delia
   github: ''
 delia:
-  name: Delia Robalo
+  name: Delia @McNeel
   email: delia@mcneel.com
   discourse: delia
   github: ''
@@ -275,7 +275,7 @@ doaa:
   discourse: doaa
   github: doaa-sa
 ehsan:
-  name: Ehsan Iran-Nejad
+  name: Ehsan @McNeel
   email: ehsan@mcneel.com
   discourse: eirannejad
   github: eirannejad
@@ -350,7 +350,7 @@ giulio:
   discourse: piac
   github: piac
 giuseppe:
-  name: Giuseppe Massoni
+  name: Giuseppe @McNeel
   email: giuseppe@mcneel.com
   discourse: giuseppe
   github: ''
@@ -400,7 +400,7 @@ isaac:
   discourse: ''
   github: ''
 jackie:
-  name: Jackie Nasser
+  name: Jackie @McNeel
   email: jackie@mcneel.com
   discourse: jackie
   github: ''
@@ -460,7 +460,7 @@ jody:
   discourse: jody
   github: jodymills
 jb:
-  name: John Brock
+  name: John @McNeel
   email: jb@mcneel.com
   discourse: John_Brock
   github: JohnBrock
@@ -540,7 +540,7 @@ kike:
   discourse: kike
   github: kike-garbo
 kyle:
-  name: Kyle Houchens
+  name: Kyle @McNeel
   email: kyle@mcneel.com
   discourse: theoutside
   github: kylehouchens
@@ -570,12 +570,12 @@ luc:
   discourse: ''
   github: ''
 lucia:
-  name: Lucía N Miguel
+  name: Lucía @McNeel
   email: lucia@mcneel.com
   discourse: lucianmayo
   github: ''
 luis:
-  name: Luis Fraguada
+  name: Luis @McNeel
   email: luis@mcneel.com
   discourse: fraguada
   github: fraguada
@@ -589,13 +589,18 @@ marcello:
   email:
   discourse:
   github:
+marco:
+  name: Marco Traverso
+  email: marco@marcotraverso.it
+  discourse:
+  github:
 marika.almgren:
   name: Marika Almgren
   email: marika.almgren@mcneel.com
   discourse: marika_almgren
   github: marikaalmgren
 mary:
-  name: Mary Fugier
+  name: Mary @McNeel
   email: mary@mcneel.com
   discourse: mary
   github: maryfugier
@@ -715,7 +720,7 @@ parametriccamp:
   discourse: ''
   github: ''
 pascal:
-  name: Pascal Golay
+  name: Pascal @McNeel
   email: pascal@mcneel.com
   discourse: pascal
   github: pgolay
@@ -760,7 +765,7 @@ pointone:
   discourse: ''
   github: ''
 rajaa:
-  name: Rajaa Issa
+  name: Rajaa @McNeel
   email: rajaa@mcneel.com
   discourse: rajaa
   github: rissa
@@ -815,7 +820,7 @@ yoon:
   discourse: yoon
   github: JorinChi
 scottd:
-  name: Scott Davidson
+  name: Scott @McNeel
   email: scottd@mcneel.com
   discourse: scottd
   github: scotttd
@@ -843,6 +848,11 @@ onai:
   name: Seiji Onai
   email: onai@applicraft.com
   discourse: Seiji
+  github: ''
+sh:
+  name: SH Smith
+  email: 
+  discourse: ''
   github: ''
 ssh:
   name: Seunghwan Song
@@ -890,12 +900,12 @@ tom.budd:
   discourse: ''
   github: ''
 travis:
-  name: Travis Serio
+  name: Travis @McNeel
   email: travis@mcneel.com
   discourse: trav
   github: travisserio
 vanessa:
-  name: Vanessa Steeg
+  name: Vanessa @McNeel
   email: vanessa@mcneel.com
   discourse: vanessa
   github: vanesteeg
