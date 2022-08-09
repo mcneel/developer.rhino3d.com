@@ -56,18 +56,18 @@ Options:
 
 ## Install
 
-_Since 0.1_
+* _Since 0.1: Command added_
+* _Since 0.13.0: Supports installing local .yak files_
 
 Installs a package (optionally with a specific version).
 
 ```commandline
-yak install [--source=URL] <package> [<version>]
+Usage:
+    yak install [--source=URL] <package> [<version>]
+    yak install <package>
 ```
 
-{{< call-out "note" "Note" >}}
-  Packages can be installed locally by using a local package repository. Place the .yak file in a folder and then run...
-  <pre><code>yak install --source="path/to/folder" &lt;package&gt;</code></pre>
-{{< /call-out >}}
+Where `<package>` is either the name of a package or the path to a local .yak file.
 
 ## List
 
