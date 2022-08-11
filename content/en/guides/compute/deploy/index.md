@@ -25,9 +25,9 @@ toc = true
 toc_type = "single"
 
 +++
-<div class="bs-callout bs-callout-danger bs-callout-danger-fill" role="alert">
-This guide is now obsolete. Check out <a href="../deploy-to-iis"><b><u>this page</u></b></a> for the updated version.
-</div>
+{{< call-out "danger" "Obsolete" >}}
+This guide is now obsolete. <a href="../deploy-to-iis" class="alert-link">Check out the updated guide.</a>
+{{< /call-out >}}
 
 
 
