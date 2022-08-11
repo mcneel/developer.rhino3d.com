@@ -297,7 +297,8 @@ toc_type = "single"
 - [RhinoScript Dash Docset](https://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
 - [RhinoScript Help File On-Line](https://www.rhino3d.com/5/rhinoscript/index.html)
 
-## [Compute](/guides/compute)
+<!-- ## [Compute](/guides/compute) -->
+<h2 id="compute"><a href="/guides/compute">Compute</a></h2>
 
 
 ### Getting Started
