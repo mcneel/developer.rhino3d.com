@@ -44,7 +44,7 @@ Rhino.exe /runscript="-command -secondCommand"
 For example, if you want to start Rhino with a file called `hdri_test.3dm`, render it with the built-in renderer, save the file, and exit Rhino, you would pass this:
 
 ```cmd
-"C:\Program Files\Rhinoceros 5 (64-bit)\System\Rhino.exe" /runscript="_SetCurrentRenderPlugIn RhinoRender render -saverenderwindowas test.jpg closerenderwindow -exit" hdri_test.3dm
+"C:\Program Files\Rhinoceros 5 (64-bit)\System\Rhino.exe" /runscript="_SetCurrentRenderPlugIn Rhinoceros _Render _-SaveRenderWindowAs test.jpg _-CloseRenderWindow _-Exit" test.3dm
 ```
 
 ### Command line options
@@ -59,6 +59,3 @@ The following command line options are available in Rhino for Windows:
 - `/scheme`: Use a custom scheme. This is used by third party developers that include custom schemes.
 - `/runscript`: Run a script at startup.
 
-## Rhino for Mac
-
-Forthcoming.
