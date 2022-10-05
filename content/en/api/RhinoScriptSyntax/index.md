@@ -6,7 +6,7 @@ type = "guides"
 [page_options]
 byline = false
 toc = true
-toc_type = "single"
+toc_type = "singleWithSearchBox"
 disableAnchorJS = true
 
 +++

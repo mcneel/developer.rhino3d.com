@@ -35,6 +35,34 @@
         </nav>
     </aside>
 </div>
+{{ else if eq $tocType "singleWithSearchBox"}}
+<div class="toc">
+    <aside>
+        <div id="toc-top-container" style="
+        text-align: center;
+    ">
+        </div>
+        <header>
+            <a href="{{ .RelPermalink }}">{{.Title}}</a>
+        </header>
+
+        <input type="text" class="form-control" id="rsssearch" placeholder="Search" aria-labelledby="Search">
+        <div class="popover" id="rsssearch_popover">
+        <div class="popover-content">
+            <ul class="list-unstyled" id="rsssearch_list" style="margin-left: 0; list-style-type: none;">
+            </ul>
+        </div>
+        </div>
+
+        <nav id="TableOfContents" class="scrollbar">
+                {{ partial "toc-inner.html" $ }}
+                <div id="toc-bottom-container" style="
+                text-align: center;
+            ">
+                </div>
+        </nav>
+    </aside>
+</div>
 {{ else }}
     <div class="toc">
         <aside>
