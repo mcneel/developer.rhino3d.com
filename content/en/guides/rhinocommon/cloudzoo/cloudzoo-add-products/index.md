@@ -102,6 +102,10 @@ Adds a product to Cloud Zoo registered under the authenticating issuer.
 
 The payload should be a [Product object](/guides/rhinocommon/cloudzoo/cloudzoo-product).
 
+{{< call-out "note" "Note" >}}
+The product ID must be lowercase!
+{{< /call-out >}}
+
 #### Response
 
 A successful response (The product was created):

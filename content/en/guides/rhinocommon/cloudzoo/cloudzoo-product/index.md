@@ -56,7 +56,7 @@ toc_type = "single"
 
 ## Description
 
--   `id` (_readonly_) - A GUID that uniquely describes each product. This GUI must be unique in the entire system.
+-   `id` (_readonly_) - A **lowercase** GUID that uniquely describes each product. This GUID must be unique in the entire system.
 -   `creationDate` (_readonly_) - A unix timestamp in seconds representing the date the product was added to Cloud Zoo. 
 -  ` iss` (_readonly_) - The id of the issuer as registered with Cloud Zoo.
 -   `format` - A [License Format object](/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat). Cloud Zoo will send all requests to add a license to the system to the issuer of the product whose license format matches the given license key.
