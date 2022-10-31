@@ -244,7 +244,7 @@ other = "Ausprobieren"
 
 # The conjoiner before the Buy link in the video caption
 [caption-or-conjoiner]
-other = "oder "
+other = "oder"
 
 # Link title on homepage video captions
 [caption-buy]

@@ -1,0 +1,16 @@
+{{ $command := "" }}
+{{ if .IsNamedParams }}
+    {{ if .Get "command" }}{{ $command = .Get "command" }}{{ end }}
+{{ else }}
+    {{ $command = .Get 0 }}
+{{ end }}
+
+<a href="https://docs.mcneel.com/rhino/7/help/en-us/index.htm#commands/{{lower $command }}.htm" target="_blank">
+<span style="display: inline;">
+    <strong><img style="
+        display: inline-block;
+        margin-top: -4px;
+        margin-right: 2px;
+        vertical-align: middle;" src="https://docs.mcneel.com/rhino/7/help/en-us/image/command_icons/{{lower $command }}.png">{{ $command }}</strong>
+</span>
+</a>

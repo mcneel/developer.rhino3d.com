@@ -28,13 +28,22 @@
         {{ $.Scratch.Set "new_feature" "false" }}
         {{- if $new_feature -}}
             {{ $.Scratch.Set "new_feature" "true" }}
+        {{- else -}}
+            {{ $.Scratch.Set "updated_feature" "false" }}
+            {{ if (eq (int .Site.Params.latestRhinoVersion) (int "7")) }}
+                {{- with .Params.whats_new.in_v7_summary -}}
+                    {{ $.Scratch.Set "latest_update" . }}
+                    {{ $.Scratch.Set "updated_feature" "true" }}
+                {{- end -}}
+            {{- end -}}
+            {{ if (eq (int .Site.Params.latestRhinoVersion) (int "8")) }}
+                {{- with .Params.whats_new.in_v8_summary -}}
+                    {{ $.Scratch.Set "latest_update" . }}
+                    {{ $.Scratch.Set "updated_feature" "true" }}
+                {{- end -}}
+            {{- end -}}
         {{- end -}}
-        {{ $.Scratch.Set "updated_feature" "false" }}
-        {{- with .Params.whats_new.in_v7_summary -}}
-            {{ $.Scratch.Set "updated_feature" "true" }}
-        {{- end -}}
-        
-        {{ if or (eq ($.Scratch.Get "new_feature") "true") (eq ($.Scratch.Get "updated_feature") "true") }}                                
+
         <div class="card">
             {{ $.Scratch.Set "page_link" .RelPermalink }}
             {{- if ($.Scratch.Get "url") -}}
@@ -67,13 +76,12 @@
                 {{ if (eq ($.Scratch.Get "new_feature") "true") }}
                     <p>{{ truncate 75 .Params.short_description }}</p>
                 {{ else if (eq ($.Scratch.Get "updated_feature") "true") }}
-                    <p>{{ truncate 75 .Params.whats_new.in_v7_summary }}</p>
+                    <p>{{ truncate 75 ( $.Scratch.Get "latest_update" ) }}</p>
                 {{ else }}
-                    <p>{{ truncate 75 .Description }}</p>
+                    <p>{{ truncate 75 .Params.short_description }}</p>
                 {{ end }}
             </div>
         </div>
-        {{ end }}
     {{ end }}
 {{- end -}}
 

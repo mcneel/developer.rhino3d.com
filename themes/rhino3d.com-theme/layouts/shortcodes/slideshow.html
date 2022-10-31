@@ -1,0 +1,241 @@
+{{ $.Scratch.Add "width" (.Get "width" | default "100%") }}
+{{ $.Scratch.Add "item-width" (.Get "item-width" | default "250px") }}
+{{ $.Scratch.Add "height" (.Get "height" | default "300px") }}
+{{ $.Scratch.Add "auto-slide" (.Get "auto-slide" | default "0") }}
+{{ $.Scratch.Add "mode" (.Get "mode" | default "contain") }}
+{{ $.Scratch.Add "id" (.Get "id" | default "") }}
+{{ $.Scratch.Add "caption" (.Get "caption" | default "false") }}
+
+{{ $.Scratch.Add "arrow-left" (.Get "arrow-left" | default "fa-chevron-left") }}
+{{ $.Scratch.Add "arrow-right" (.Get "arrow-right" | default "fa-chevron-right") }}
+
+{{ if ne (.Get "no-fa") "true" }}
+    <!-- FontAwesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+{{end}}
+
+{{ if ne (.Get "no-jquery") "true" }}
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+{{end}}
+
+<style>
+#slide-window-{{ $.Scratch.Get "id" }} {
+    position: relative;
+    width: {{ $.Scratch.Get "width" }};
+    height: {{ $.Scratch.Get "height" }};
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+}
+
+#slides-list-{{ $.Scratch.Get "id" }} {
+    width: {{ $.Scratch.Get "width" }};
+    height: {{ $.Scratch.Get "height" }};
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+
+.slide {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: {{ $.Scratch.Get "width" }};
+    height: {{ $.Scratch.Get "height" }};
+    background: #ccc;
+    text-align: center;
+    line-height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    color: #fff;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform-style: preserve-3d;
+    background-size: {{ $.Scratch.Get "mode" }};
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: "100%" ;
+}
+
+.caption {
+    top: 102%;
+    position: relative;
+    color: #858585;
+}
+
+.slideshow-nav {
+    position: relative;
+    top: 45%;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+
+.slideshow-nav:hover {
+    opacity: 1.0;
+}
+
+#left-{{ $.Scratch.Get "id" }} {
+    left: 3%;
+    float: left;
+}
+
+#right-{{ $.Scratch.Get "id" }} {
+    right: 3%;
+    float: right;
+}
+</style>
+
+<!-- Gallery -->
+<div id="slide-window-{{ $.Scratch.Get "id" }}">
+    <ol id="slides-list-{{ $.Scratch.Get "id" }}">
+        {{- with $enPage := $.Page.Sites.First.GetPage ($.Page.File.Path) -}} 
+            {{- $localFiles := $.Page.Resources.Match (print ($.Get "dir") "/*") }} 
+            {{- $enFiles := $enPage.Resources.Match (print ($.Get "dir") "/*") }} 
+            {{- if eq (len $localFiles) 0 }}
+                {{- range $enFiles -}} 
+                    <li class="slide" style="background-image:url(data:{{ .MediaType }};base64,{{ .Content | base64Encode }});">
+                        <span class="caption"> {{index (split (index (split .Name ".") 0) "/") 1 }} </span>
+                    </li>
+                {{- end }} 
+            {{- else }}
+                {{- range $localFiles -}} 
+                    <li class="slide" style="background-image:url(data:{{ .MediaType }};base64,{{ .Content | base64Encode }});">
+                        <span class="caption"> {{index (split (index (split .Name ".") 0) "/") 1 }} </span>
+                    </li>
+                {{- end }} 
+            {{- end }} 
+        {{- end }}
+    </ol>
+    <span class="slideshow-nav fa {{ $.Scratch.Get "arrow-left" }} fa-3x" id="left-{{ $.Scratch.Get "id" }}"></span>
+    <span class="slideshow-nav fa {{ $.Scratch.Get "arrow-right" }} fa-3x" id="right-{{ $.Scratch.Get "id" }}"></span>
+</div>
+
+<script>
+sliderJQuery = jQuery.noConflict();
+sliderJQuery(function( $ ) {
+    $.global = new Object();
+    $.global.total = 0;
+
+    $(document).ready(function () {
+
+        var slideWindowWidth = {{ $.Scratch.Get "item-width" }}.match(/\d+/)[0]
+        if ({{ $.Scratch.Get "mode" }} == "cover"){
+            slideWindowWidth = $('#slide-window-{{ $.Scratch.Get "id" }}').width()
+        }
+        var slideCount = $('#slides-list-{{ $.Scratch.Get "id" }} li').length;
+
+        var firstMarginLeft = $('#slide-window-{{ $.Scratch.Get "id" }}').width()/2 - slideWindowWidth/2
+        var firstSlide = $('#slides-list-{{ $.Scratch.Get "id" }} li')[0]
+        firstSlide.style["margin-left"] = `${firstMarginLeft}px`
+
+        if ({{ $.Scratch.Get "mode" }} == "contain"){
+            let slides = $('#slides-list-{{ $.Scratch.Get "id" }} li')
+            slides.each(function( index ) {
+                $( this ).click(function () {
+                    $.global.item = index;
+                    moveCss(index);
+                });
+            });
+            slides.css("opacity", 0.5)
+            $('.slide').css('transition', '1s')
+            let middle = Math.round( (slideCount-1)/2 )
+            $.global.item = middle;
+            moveCss(middle);
+            var middleSlide = $('#slides-list-{{ $.Scratch.Get "id" }} li')[middle]
+            middleSlide.style["opacity"] = 1
+        }
+        else{
+            $.global.item = 0;
+        }
+
+        if ({{ $.Scratch.Get "caption" }} == "true"){
+            $('#slides-list-{{ $.Scratch.Get "id" }} li').css('height', '90%')
+            $("#left-{{ $.Scratch.Get "id" }}").css('top', '40%')
+            $("#right-{{ $.Scratch.Get "id" }}").css('top', '40%')
+        }
+
+
+        var totalSlidesWidth = slideCount * slideWindowWidth + firstMarginLeft;
+
+        $.global.total = slideCount;
+
+        $('#slides-list-{{ $.Scratch.Get "id" }} li').css('width', slideWindowWidth + 'px');
+        $('#slides-list-{{ $.Scratch.Get "id" }}').css('width', totalSlidesWidth + 'px');
+
+        $('#left-{{ $.Scratch.Get "id" }}').click(function () {
+            resetAutoSlide();
+            performSlide('back');
+        });
+
+        $('#right-{{ $.Scratch.Get "id" }}').click(function () {
+            resetAutoSlide();
+            performSlide('forward');
+        });
+
+    });
+
+    function performSlide(direction) {
+        if (direction == 'back') {
+            var nextSlideId = $.global.item - 1;
+        }
+        if (direction == 'forward') {
+            var nextSlideId = $.global.item + 1;
+        }
+
+        if (nextSlideId == -1) {
+            /* At first position and requesting 'back' -> Go to last item */
+            moveCss($.global.total - 1);
+        } else if (nextSlideId == $.global.total) {
+            /* At last position and requesting 'forward' -> Go to first item */
+            moveCss(0);
+        } else {
+            /* Move to requested item */
+            moveCss(nextSlideId);
+        }
+
+    }
+
+    function moveCss(nextSlideId) {
+        var slideWindowWidth =  {{ $.Scratch.Get "item-width" }}.match(/\d+/)[0]
+        if ({{ $.Scratch.Get "mode" }} == "cover"){
+            slideWindowWidth = $('#slide-window-{{ $.Scratch.Get "id" }}').width()
+        }
+        var margin = slideWindowWidth * nextSlideId;
+
+        $('#slides-list-{{ $.Scratch.Get "id" }}').css('transform', 'translate3d(-' + margin + 'px,0px,0px)');
+
+        $.global.item = nextSlideId;
+
+        if ({{ $.Scratch.Get "mode" }} == "contain"){
+            $('#slides-list-{{ $.Scratch.Get "id" }} li').css("opacity", 0.5)
+            let activeSlide = $('#slides-list-{{ $.Scratch.Get "id" }} li')[$.global.item]
+            activeSlide.style["opacity"] = 1
+        }
+    }
+
+    {{ if ne (.Get "auto-slide") "0" }}
+      var autoSlide = parseInt({{ $.Scratch.Get "auto-slide" }}, 10);
+      var autoSlideInterval;
+      function resetAutoSlide(){
+        if(autoSlide) {
+          if(autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+          }
+          autoSlideInterval = setInterval(function(){
+            performSlide('forward');
+          }, autoSlide)
+        }
+      }
+      resetAutoSlide();
+
+    {{- end }}
+});
+</script>

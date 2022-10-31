@@ -128,7 +128,7 @@ other = "或者搜索"
 [find-a-reseller]
 other = "查找经销商"
 
-# 上下文: 页脚
+# context: 页脚
 [Reseller]
 other = "经销商"
 
@@ -222,7 +222,7 @@ other = "搜索"
 [student-or-teacher]
 other = "学生或教师?"
 
-# 首页视频内容上方的标题
+# 首页视频中的字幕
 [caption-rhino-7]
 other = "Rhino 7"
 
@@ -285,3 +285,11 @@ other = "最新"
 # 学习页面的精选按钮和标签
 [featured]
 other = "精选"
+
+# 学习页面的所有按钮和标签
+[all]
+other = "所有"
+
+# 过滤学习页面上的文本字段
+[filter]
+other = "过滤..."

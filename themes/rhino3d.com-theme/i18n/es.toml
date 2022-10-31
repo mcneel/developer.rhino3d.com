@@ -103,7 +103,7 @@ other = "y"
 # context: the Edit menu at the bottom of the page
 [Edit-this-page]
 other = "Editar esta página"
-
+ 
 # context: the Edit menu at the bottom of the page
 [Edit-on-GitHub]
 other = "Editar en GitHub"
@@ -244,7 +244,7 @@ other = "probar"
 
 # The conjoiner before the Buy link in the video caption
 [caption-or-conjoiner]
-other = "o "
+other = " o "
 
 # Link title on homepage video captions
 [caption-buy]

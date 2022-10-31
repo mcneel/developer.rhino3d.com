@@ -249,7 +249,7 @@ namespace Launch
       }
       else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) || RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
       { 
-        var grepForHugo = "ps | grep '[h]ugo'".Bash();        
+        var grepForHugo = "ps | grep '[h]ugo'".Bash();
         if (!string.IsNullOrEmpty(grepForHugo))
         {
           Console.WriteLine("Found previously running Hugos...");
@@ -451,32 +451,106 @@ namespace Launch
       return location;
     }
 
+    public static bool LintFile(string filePath)
+    {
+      bool lintingDidSucceed = true;
+
+      string fullFilePath = Path.GetFullPath(Path.Combine(RepoRootPath, filePath));
+    
+      // Check for smart-quotes
+      int lineCounter = 1;
+      foreach (string line in File.ReadLines(fullFilePath))
+      {
+        if (line.Contains(@"“") || line.Contains(@"”"))
+        {
+          lintingDidSucceed = false;
+          Console.WriteLine("error: smart-quotes found on line " + lineCounter.ToString() + " of " + filePath + ". Please use normal quotes with the proper preceeding escape backslash, like this: \\\"");
+          break;
+        }
+        lineCounter = lineCounter + 1;
+      }
+
+      return lintingDidSucceed;
+    }
+
+    public static List<string> ReadLintList()
+    {
+      List<string> lintList = new List<string>();
+
+      string pathToLintList = Path.GetFullPath(Path.Combine(RepoRootPath, "script", "lintlist.txt"));
+      if (File.Exists(pathToLintList)) {
+        foreach (string line in System.IO.File.ReadLines(pathToLintList))
+        {
+          if (!line.StartsWith('#'))
+            lintList.Add(line.Trim());
+        }
+
+        // On Windows, convert the file paths...
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
+          List<string> windowsPathList = new List<string>();
+          foreach (string posixPath in lintList) {
+            string windowsPath = posixPath.Replace("/", "\\");
+            windowsPathList.Add(windowsPath);
+          }
+          lintList = windowsPathList;
+        }
+      }
+
+      return lintList;
+    }
+
+    public static bool Lint(bool fromCLI)
+    {
+      bool lintingDidSucceed = true;
+
+      Console.WriteLine("Linting...");
+      List<string> lintList = ReadLintList();
+      
+      foreach (string lintFilePath in lintList) {
+        lintingDidSucceed = LintFile(lintFilePath);
+        if (!lintingDidSucceed) {
+          break;
+        }
+      }
+
+      return lintingDidSucceed;
+    }
+
     static void Main(string[] args)
     {
       Directory.SetCurrentDirectory(RepoRootPath);
 
-      bool shouldServe = args[0].StartsWith("serve");      
+      if (args[0].StartsWith("lint")) {
+        int lintingReturn = Lint(true) ? 0 : 1;
+        System.Environment.Exit(lintingReturn);
+      } else {
+        bool shouldServe = args[0].StartsWith("serve");
 
-      Url = UrlFromArgs(args);
+        Url = UrlFromArgs(args);
 
-      if (shouldServe)
-      {
-        StopAllHugos();
-        GetHugo();
-        if (CheckMaxFiles())
+        if (shouldServe)
+        {
+          StopAllHugos();
+          GetHugo();
+          if (CheckMaxFiles())
+          {
+            bool lintingDidSucceed = Lint(false);
+            if (lintingDidSucceed) {
+              OpenBrowserToURL(Url);
+              ServeHugo(args);
+            } else {
+              Console.WriteLine("ERROR: Linting failed. The site will not serve properly. See errors above for details.");
+            }
+          }
+          else
+          {
+            Console.WriteLine("vvvvvvvvvvvvvvvvvvv ERROR vvvvvvvvvvvvvvvvvvvv\nERROR: McNeel Developer - Hugo needs more files\nTo fix this:\n1. In VSCode, press Command+Shift+P, then Enter.\n2. Type Tasks and select Task: Run Task.\n3. From the list, select and run the hugo SetMaxFilesLimits (run once only) task - be sure to enter your password in the terminal window.\n4. Restart your computer.\n^^^^^^^^^^^^^^^^^^^ ERROR ^^^^^^^^^^^^^^^^^^^^");
+          }
+        } else
         {
           OpenBrowserToURL(Url);
-          ServeHugo(args);
         }
-        else
-        {
-          Console.WriteLine("vvvvvvvvvvvvvvvvvvv ERROR vvvvvvvvvvvvvvvvvvvv\nERROR: McNeel Developer - Hugo needs more files\nTo fix this:\n1. In VSCode, press Command+Shift+P, then Enter.\n2. Type Tasks and select Task: Run Task.\n3. From the list, select and run the hugo SetMaxFilesLimits (run once only) task - be sure to enter your password in the terminal window.\n4. Restart your computer.\n^^^^^^^^^^^^^^^^^^^ ERROR ^^^^^^^^^^^^^^^^^^^^");
-        }
-      } else
-      {
-        OpenBrowserToURL(Url);        
       }
-      
     }
     
   }

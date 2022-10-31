@@ -124,7 +124,12 @@
     function lookupAuthor(authorId) {
         if (authorData[authorId]) {
             var authorInfo = authorData[authorId];
-            return authorInfo.name;
+            if (authorInfo.display_name){
+                return authorInfo.display_name;
+            }
+            else{
+                return authorInfo.name;
+            }
         }
     }
 </script>
@@ -234,14 +239,31 @@
 
     async function getDiscoverCards(filter) {
         var dataUrl;
+        var localDataUrl;
         if (isProduction == "1")
-            dataUrl = `${window.location.origin}/${pageLang}/learn/learn.toml`;
+            {
+                dataUrl = `${window.location.origin}/${pageLang}/learn/learn.toml`;
+                localDataUrl = `${window.location.origin}/${pageLang}/learn/learn-${pageLang}.toml`;
+            }
         else
-            dataUrl = `${window.location.origin}/learn/learn.toml`;
+            {
+                dataUrl = `${window.location.origin}/learn/learn.toml`;
+                localDataUrl = `${window.location.origin}/learn/learn-${pageLang}.toml`;
+            }
         const res = await fetch(dataUrl);
+        const localRes = await fetch(localDataUrl);
+
+        let combinedLearnData;
         if (res.ok) {
-            return TOML.parse(await res.text());
+            combinedLearnData = TOML.parse(await res.text());
         }
+        if (localRes.ok) {
+            localLearnData = TOML.parse(await localRes.text());
+            if (localLearnData["tutorials"]){
+                combinedLearnData = {...combinedLearnData, tutorials:[...localLearnData["tutorials"], ...combinedLearnData["tutorials"]]}
+            }
+        }
+        return combinedLearnData
     };
 
     function removeURLParameter(url, parameter) {
@@ -423,11 +445,13 @@
                         if (url.includes("/user/")){
                             return;
                         }
-                        if (url.includes("/playlist")){
+                        else if (url.includes("/playlist")){
                             return;
                         }
+                        else{
                         videoId = url.substring(url.lastIndexOf('/') + 1);
                         embedUrl = "https://www.youtube.com/embed/"+videoId+"?autoplay=1";
+                        }
 
                     }
                     return embedUrl;
@@ -436,6 +460,13 @@
                     const cardElement = event.currentTarget;
                     const url = cardElement.getAttribute('itemid');
                     embeddable = this.getEmbedUrl(url);
+                    //Hard coding playlist detection because line above fails in production
+                    console.log(url,"includes playlist",url.includes("playlist"))
+                    if (url.includes("playlist")){
+                        console.log("Youtube playlist failsafe")
+                        embeddable = false
+                    }
+                    console.log("Embed URL:", embeddable)
                     if(embeddable){
                         this.modalContent = url;
                     }
