@@ -67,6 +67,7 @@
     top: 102%;
     position: relative;
     color: #858585;
+    pointer-events: none;
 }
 
 .slideshow-nav {
@@ -76,6 +77,9 @@
     opacity: 0.7;
     transition: all 0.66s ease;
     -webkit-transition: all 0.66s ease;
+    background-color: white;
+    padding: 5px;
+    margin: -5px;
 }
 
 .slideshow-nav:hover {
@@ -83,12 +87,10 @@
 }
 
 #left-{{ $.Scratch.Get "id" }} {
-    left: 3%;
     float: left;
 }
 
 #right-{{ $.Scratch.Get "id" }} {
-    right: 3%;
     float: right;
 }
 </style>
@@ -125,8 +127,10 @@ sliderJQuery(function( $ ) {
     $.global.total = 0;
 
     $(document).ready(function () {
-
+        let maxSlideWidth = $('#slide-window-{{ $.Scratch.Get "id" }}').width()
         var slideWindowWidth = {{ $.Scratch.Get "item-width" }}.match(/\d+/)[0]
+        slideWindowWidth = Math.min(slideWindowWidth, maxSlideWidth)
+
         if ({{ $.Scratch.Get "mode" }} == "cover"){
             slideWindowWidth = $('#slide-window-{{ $.Scratch.Get "id" }}').width()
         }
@@ -204,7 +208,10 @@ sliderJQuery(function( $ ) {
     }
 
     function moveCss(nextSlideId) {
-        var slideWindowWidth =  {{ $.Scratch.Get "item-width" }}.match(/\d+/)[0]
+        let maxSlideWidth = $('#slide-window-{{ $.Scratch.Get "id" }}').width()
+        var slideWindowWidth = {{ $.Scratch.Get "item-width" }}.match(/\d+/)[0]
+        slideWindowWidth = Math.min(slideWindowWidth, maxSlideWidth)
+        
         if ({{ $.Scratch.Get "mode" }} == "cover"){
             slideWindowWidth = $('#slide-window-{{ $.Scratch.Get "id" }}').width()
         }

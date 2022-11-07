@@ -1,0 +1,19 @@
+{{ $link := "" }}
+{{ if .IsNamedParams }}    
+    {{ if .Get "link"}}{{ $link =  .Get "link" }}{{ end }}
+{{ else }}
+    {{ $link = .Get 0 }}
+{{ end }}
+
+<style>
+    .appstore-btn {
+        float: right;
+    }
+    .appstore-btn:hover {
+        opacity: .5;
+    }
+</style>
+<a class="appstore-btn" href="{{ $link }}">
+    <img src="/images/appstore/{{.Page.Language}}.svg" />
+</a>
+
