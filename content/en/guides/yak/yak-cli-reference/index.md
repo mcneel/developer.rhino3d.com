@@ -49,7 +49,7 @@ Options:
 ```
 
 {{< call-out "note" "Note" >}}
-  A <a class="alert-link" href="../the-anatomy-of-a-package#distributions">distribution tag</a> (e.g. <code>rh7-win</code>) is appended to the filename of the created package. The tag is determined by inspecting the contents of the package during creation. The <code>--platform=any</code> argument can be used if the author wants to publish a cross-platform distribution, e.g. <code>rh7-any</code>. Only .rhp and .gha files can currently be inspected. If a package contains none of these, it will have a distribution tag of <code>any-any</code>.
+  A <a class="alert-link" href="../the-anatomy-of-a-package#distributions">distribution tag</a> (e.g. <code>rh7-win</code>) is appended to the filename of the created package. The tag is determined by inspecting the contents of the package during creation. The <code>&#45;&#45;platform=any</code> argument can be used if the author wants to publish a cross-platform distribution, e.g. <code>rh7-any</code>. Only .rhp and .gha files can currently be inspected. If a package contains none of these, it will have a distribution tag of <code>any-any</code>.
 {{< /call-out >}}
 
 <!-- During the build, the component GUID is extracted to help with searching for the package later. -->
