@@ -105,6 +105,8 @@ Now that you have a personal information exchange (*.pfx*), you can use it to si
 signtool.exe sign /f <filename>.pfx /fd sha256 /tr http://timestamp.digicert.com /td sha256 /v <plugin>
 ```
 
+**Note:** If you set a password for your PFX file, above, you'll need to add ```/p <password>``` to your signing script. Be careful with your password!
+
 For example:
 
 ```cmd
