@@ -27,8 +27,8 @@ toc_type = "single"
 
 +++
 
-{{< call-out "warning" "Warning" >}}
-⚠️ This feature requires modifying advanced settings in Rhino!
+{{< call-out "note" "Note" >}}
+This feature requires modifying advanced settings in Rhino!
 {{< /call-out >}}
 
 By default Rhino uses the official McNeel package server - https://yak.rhino3d.com. In addition (or instead!), it's possible to configure Rhino to use your own package repositories.
