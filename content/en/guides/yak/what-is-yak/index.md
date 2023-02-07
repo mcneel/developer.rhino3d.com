@@ -56,7 +56,7 @@ to the server to share them with others. It keeps the packages organised for its
 clients – the command line tool and Rhino (via integrations).
 
 {{< call-out "note" "Note" >}}
-In addition to the public package server (https://yak.rhino3d.com), the package manager also supports file-/folder-based [custom package repositories](package-sources).
+In addition to the public package server (https://yak.rhino3d.com), the package manager also supports file-/folder-based [custom package repositories](../package-sources).
 {{< /call-out >}}
 
 ## Integrations
