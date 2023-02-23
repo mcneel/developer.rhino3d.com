@@ -129,7 +129,7 @@ The response will vary depending on the issuer’s decision as described below:
 A successful response:
 
  - HTTP Status Code: `200 (OK)` 
- - Response Payload: A [License object](/guides/rhinocommon/cloudzoo/cloudzoo-license). [See an actual example in our GitHub example](https://github.com/mcneel/cloudzoo-issuer/blob/67d66da0b062ca0f24baa7f04055b8b3841c2de1/app.py#L247)
+ - Response Payload: A [License object](/guides/rhinocommon/cloudzoo/cloudzoo-license). [See an actual example in our GitHub example](https://github.com/mcneel/cloudzoo-issuer/blob/7afc34a458589e17217e7e857b5b9695c46fe8ca/app.py#L264)
 
 A non-successful (error) response:
 
@@ -185,19 +185,19 @@ The response will vary depending on the issuer’s decision as described below:
 
 If the license *can* be added to an entity:
  - HTTP Status Code: `200 (OK)` 
- - Response Payload: A [License Cluster object](/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster) representing the license(s) to be added. See an actual example in our GitHub example [See an actual example in our GitHub example](https://github.com/mcneel/cloudzoo-issuer/blob/67d66da0b062ca0f24baa7f04055b8b3841c2de1/app.py#L124)
+ - Response Payload: A [License Cluster object](/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster) representing the license(s) to be added. See an actual example in our GitHub example [See an actual example in our GitHub example](https://github.com/mcneel/cloudzoo-issuer/blob/7afc34a458589e17217e7e857b5b9695c46fe8ca/app.py#L138)
 
 If more information (`precondition`) is required: 
 - HTTP Status Code: `428 (Precondition Required)`
-- Response Payload: [A non-successful response](#non-successful-responses). The `description` field will be used to describe what input is required from the user, such as a previous license key or a secret code. [See an actual example]((https://github.com/mcneel/cloudzoo-issuer/blob/67d66da0b062ca0f24baa7f04055b8b3841c2de1/app.py#L124).
+- Response Payload: [A non-successful response](#non-successful-responses). The `description` field will be used to describe what input is required from the user, such as a previous license key or a secret code. [See an actual example]((https://github.com/mcneel/cloudzoo-issuer/blob/7afc34a458589e17217e7e857b5b9695c46fe8ca/app.py#L138).
 
 If the additional information (`precondition`) is incorrect:
 - HTTP Status Code: `412 (Precondition Failed)`
-- Response Payload: [A non-successful response](#non-successful-responses). [See an actual example]((https://github.com/mcneel/cloudzoo-issuer/blob/67d66da0b062ca0f24baa7f04055b8b3841c2de1/app.py#L124).
+- Response Payload: [A non-successful response](#non-successful-responses). [See an actual example]((https://github.com/mcneel/cloudzoo-issuer/blob/7afc34a458589e17217e7e857b5b9695c46fe8ca/app.py#L138).
 
 If the license *cannot* be added to an entity:
 - HTTP Status Code: `409 (Conflict)`
-- Response Payload: [A non-successful response](#non-successful-responses). [See an actual example]((https://github.com/mcneel/cloudzoo-issuer/blob/67d66da0b062ca0f24baa7f04055b8b3841c2de1/app.py#L124).
+- Response Payload: [A non-successful response](#non-successful-responses). [See an actual example]((https://github.com/mcneel/cloudzoo-issuer/blob/7afc34a458589e17217e7e857b5b9695c46fe8ca/app.py#L138).
 
 #### Remarks
 
@@ -238,7 +238,7 @@ The response will vary depending on the issuer’s decision as described below:
 A successful response (The license can be removed):
 
  - HTTP Status Code: `200 (OK)` 
- - Response Payload: Empty. [See an actual example in our GitHub example](https://github.com/mcneel/cloudzoo-issuer/blob/67d66da0b062ca0f24baa7f04055b8b3841c2de1/app.py#L211)
+ - Response Payload: Empty. [See an actual example in our GitHub example](https://github.com/mcneel/cloudzoo-issuer/blob/7afc34a458589e17217e7e857b5b9695c46fe8ca/app.py#L227)
 
 A non-successful (error) response (The license cannot be removed):
 
