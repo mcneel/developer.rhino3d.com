@@ -18,7 +18,7 @@ since = 0
 
 <a href="/api/RhinoCommon" target="_blank">RhinoCommon</a> {{< awesome "fas fa-external-link-alt" >}}  
 <a href="/api/RhinoScriptSyntax">Rhino.Python RhinoScriptSyntax</a>  
-<a href="/api/grasshopper" target="_blank">Grasshopper (Rhino for Windows)</a> {{< awesome "fas fa-external-link-alt" >}}  
+<a href="/api/grasshopper" target="_blank">Grasshopper</a> {{< awesome "fas fa-external-link-alt" >}}  
 <a href="/api/rhinoscript" target="_blank">RhinoScript (Rhino for Windows)</a> {{< awesome "fas fa-external-link-alt" >}}  
 <a href="/api/cpp" target="_blank">C++ API Docs (Rhino for Windows)</a> {{< awesome "fas fa-external-link-alt" >}}  
 <a href="http://api.etoforms.picoe.ca/html/R_Project_EtoForms.htm" target="_blank">Eto.Forms</a> {{< awesome "fas fa-external-link-alt" >}}  
