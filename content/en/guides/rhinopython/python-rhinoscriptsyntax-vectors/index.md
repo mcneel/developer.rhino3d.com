@@ -9,7 +9,7 @@ sdk = [ "RhinoPython" ]
 title = "Vectors in Python"
 type = "guides"
 weight = 4
-override_last_modified = "2020-04-15T10:09:10Z"
+override_last_modified = "2023-03-09T10:09:10Z"
 
 [admin]
 picky_sisters = ""
