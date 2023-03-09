@@ -39,7 +39,7 @@ Here is an easy way to construct a vector:
 ```
 import rhinoscriptsyntax as rs
 
-vec = rs.CreateVector(1.0, 2.0, 3.0)
+vec = rs.VectorCreate(1.0, 2.0, 3.0)
 ```
 
 A Vector3d's coordinates can be accessed as a list, one element at a time:
@@ -47,7 +47,7 @@ A Vector3d's coordinates can be accessed as a list, one element at a time:
 ```python
 import rhinoscriptsyntax as rs
 
-vec = rs.CreateVector(1.0, 2.0, 3.0)
+vec = rs.VectorCreate(1.0, 2.0, 3.0)
 
 print(vec[0]) #Prints the X coordinate of the Vector3d
 print(vec[1]) #Print the Y coordinate of the Vector3d
@@ -59,7 +59,7 @@ The coordinates of a Vector3d may also be accessed through its `.X`, `.Y` and `.
 ```python
 import rhinoscriptsyntax as rs
 
-vec = rs.CreateVector(1.0, 2.0, 3.0)
+vec = rs.VectorCreate(1.0, 2.0, 3.0)
 
 print(vec.X) # Prints the X coordinate of the Vector3d
 print(vec.Y) # Print the Y coordinate of the Vector3d
@@ -73,7 +73,7 @@ import rhinoscriptsyntax as rs
 
 point1 = [1,2,3]
 point2 = [4,6,7]
-vec = rs.CreateVector(1.0, 2.0, 3.0)
+vec = rs.VectorCreate(1.0, 2.0, 3.0)
 
 vec[0] = 5.0 # Sets the X coordinate to 5.0
 vec.Y = 45.0 # Sets the Y coordinate to 45.0
