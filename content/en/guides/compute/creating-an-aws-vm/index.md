@@ -51,35 +51,27 @@ To create a new virtual machine instance on AWS, follow these steps:
 
 1. From the EC2 console dashboard, select **Launch Instance**.
 
-1. The **Choose an Amazon Machine Image (AMI)** page displays a list of basic machine configurations (AMIs) to choose from. Select the AMI for **Windows Server 2019 Base** or later. Note that these AMIs are marked *Free tier eligible*.
+1. Provide a name for the VM instance. For this tutorial, we'll use the name **"RhinoComputeVM"**.
+
+1. Under the section titled Application and OS Images, click on the button to **Browse more AMIs**. The **Choose an Amazon Machine Image (AMI)** page displays a list of basic machine configurations (AMIs) to choose from. In the filter on the left, select **All Windows** to show only Windows AMIs. Select the AMI for **Windows Server 2019 Base** or later. Note that these AMIs are marked *Free tier eligible*. We will be using Windows Server 2019 Base for this tutorial, but Windows Server 2022 Base has been tested and is supported.
 {{< image url="/images/AWS_Setup_01.png" alt="/images/AWS_Setup_01.png" class="image_center" width="100%" >}}
 
-1. On the **Choose an Instance Type** page, select the **t2.micro** instance type (default). Note: the *t2.micro* instance type is elegible for the free tier. In regions where *t2.micro* is unavailable, you can use a *t3.micro** instance under the free tier.
-{{< image url="/images/AWS_Setup_02.png" alt="/images/AWS_Setup_02.png" class="image_center" width="100%" >}}
+1. In the **Instance Type** section, select the **t2.micro** instance type (default) or a larger instance type if needed. Note: the *t2.micro* instance type is elegible for the free tier. In regions where *t2.micro* is unavailable, you can use a *t3.micro** instance under the free tier.
+{{< image url="/images/AWS_Setup_02A.png" alt="/images/AWS_Setup_02A.png" class="image_center" width="100%" >}}
 
-1. On the **Choose an Instance Type** page, select **Review and Launch** to let the wizard complete the other configuration settings for you.
+1. In the **Key Pair (login)** section, select the key pair name that you created in step 2 of the prerequisite section [prerequisite section](../creating-an-aws-vm/#prerequisites) from the drop-down list.
 
-1. On the **Review Instance Launch** page, under **Security Groups**, you'll see that the wizard created and selected a security group for you. We will need to specify the security group that was created in step 3 of the **Prerequisites** section.
-    * Choose **Edit security groups**.
-    * On the **Configure Security Group** page, choose **Select an existing security group**.
-    * In the table, select the **security group** from the list of existing security groups.
-    * Choose **Review and Launch**.
+1. In the **Network Settings** section, under the **Firewall (security groups)** choose the **Select existing security group** radio button. Then, under the **Common Security Groups** drop-down list, select the security group you created in step 3 of the [prerequisite section](../creating-an-aws-vm/#prerequisites). If the **Auto-assign public IP** setting is not set to **Enable**, click on the **Edit** button on the top-right of this section panel and change this setting appropriately.
+{{< image url="/images/AWS_Setup_10.png" alt="/images/AWS_Setup_10.png" class="image_center" width="100%" >}}
 
-1. On the **Review Instance Launch** page, select **Launch** to create the new virtual machine.
+1. In the **Configure storage** section, select the default amount of storage for this instance.
 
-1. When prompted for a key pair, select **Choose an existing key pair**. Then select the key pair that you created in step 2 of the **Prerequisites** section
-    <div class="alert alert-info" role="alert">Do not select <strong>Proceed without a key pair</strong>. If you launch your instance without a key pair, then you can't connect to it.
-    </div>
-    {{< image url="/images/AWS_Setup_03.png" alt="/images/AWS_Setup_03.png" class="image_center" width="100%" >}}
+1. Now, on the far right select the **Launch Instance**.
 
-1. Select the **acknowledgement** checkbox and then choose **Launch Instances**.
+1. A confirmation page lets you know that your instance has successfully launched. In the top-most menu which reads **EC2 > Instances > Launch an instance**, select the **Instances** menu item to view the instances console window.
+{{< image url="/images/AWS_Setup_09.png" alt="/images/AWS_Setup_09.png" class="image_center" width="100%" >}}
 
-1. A confirmation page lets you know that your instance is launching. Select **View Instances** to close the confirmation page and return to the console.
-
-1. On the **Instances** screen, you can view the status of the launch. In the **Name** column, select the **Edit** icon. In the popup dialog, type **RhinoComputeVM** to assign a namge to this instance.
-{{< image url="/images/AWS_Setup_04.png" alt="/images/AWS_Setup_04.png" class="image_center" width="50%" >}}
-
-1. Once the **Instance State** column says that the VM is **Running**, you can then try to connect to it via RDP.
+1. On the **Instances** screen, you can view the status of the launched instance. The instance should automatically be running after launch, but if not select the instance row checkbox and then select the **Instance State** menu item at the top. Select **Start Instance** to start the virtual machine.
 
 1. With the instance row selected, click the **Connect** button in the top menu.
 
@@ -87,7 +79,7 @@ To create a new virtual machine instance on AWS, follow these steps:
 
 1. Next, select the **Get password** button.
 
-1. Choose **Browse** and navigate to the private key (.pem) file that you created when you launched the instance.
+1. Choose **Upload private key file** and navigate to the private key (.pem) file that you created when you launched the instance.
 
 1. Choose **Decrypt Password**. The console displays the default administrator password for the instance under **Password**, replacing the **Get password** link shown previously. **Save this password in a safe place**. This passord is required to connect to the instance.
 
