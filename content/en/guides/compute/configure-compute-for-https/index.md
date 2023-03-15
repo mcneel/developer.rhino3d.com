@@ -31,7 +31,7 @@ In this guide, we will walk through the process of creating a valid SSL certific
 
 ## Prerequisites
 
-First, a few prerequisites must be completed.
+The following must be completed:
 
 1. You must have an active virtual machine (VM) instance. Use the following guides to walk through setting up a VM.
 
@@ -40,24 +40,15 @@ First, a few prerequisites must be completed.
 
 1. The VM must be accessible to the web (open port 80, and 443).
 
-1. A static public IPv4 address associated with your virtual machine.
+1. A static public IPv4 address must be associated with your virtual machine. To learn more about configuring static IP address, use the following links:
+    * [Configure IP addresses for an Azure network interface](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/virtual-network-network-interface-addresses?tabs=nic-address-portal#add-ip-addresses)
+    * [Associate an elastic IP address with an EC2 instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
 
-1. An existing domain and access to its DNS settings.
+1. You must have an existing domain and have access to its DNS settings. An **A record** in your DNS settings must point to the public IPv4 address of your virtual machine.
 
-1. An A-record in your DNS settings must point to the public IPv4 address of your virtual machine. For example, the procedure for the GoDaddy domain registrar is as follows:
-
-    * Sign in and select the custom domain you want to use
-    * In the **Domains** section, select **Manage All**, then select **DNS | Manage Zones**/
-    * For the **Domain Name**, enter your custom domain, then select **Search**.
-    * From the **DNS Management Page**, select **Add**, then select *A* in the Type list.
-    * Complete the fields of the *A* entry:
-        * Type: Leave **A** selected
-        * Host: Enter @
-        * Points to: Enter the public IP address of your virtual machine
-        * TTL: Leave the default value
-    * Select **Save**.
-    
-    The A-record will be added to the DNS records table. It usually takes about an hour for the DNS to propagate, although it can sometimes take up to 48 hours. You can use tools such as [https://www.whatsmydns.net](https://www.whatsmydns.net/) to check your DNS record against servers located in different parts of the world.
+{{< call-out "note" "Note" >}}
+For this guide, I have assoicated an elastic IP address with my virtual machine instance. I have also setup an A record in my DNS settings to point *rhino.compute.rhino3d.com* at the IP address of my virtual machine.
+{{< /call-out >}}
 
 ## Modify the Host Name
 
