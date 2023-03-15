@@ -7,7 +7,7 @@ languages = []
 sdk = [ "Compute" ]
 title = "Licensing & Billing"
 type = "guides"
-weight = 6
+weight = 1
 
 [admin]
 TODO = ""
