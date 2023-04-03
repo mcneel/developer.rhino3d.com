@@ -1,0 +1,113 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
+
+<script>
+    var startAnim = (id, sc, control) => {
+        scrollPos = lastFrames[id]
+    var vid = document.getElementById(`video-${id}`);
+    sc.addTo(control)
+    .duration(vid.clientHeight)
+    .on("progress", (e) => {
+        scrollPos = e.progress;
+        currentFrames[id] = scrollPos;
+    });
+    }
+
+    var preloadVid = (id, callback, animations, overlayAnimations) => {
+        var vid = document.getElementById(`video-${id}`);
+        var overlay = document.getElementById(`video-overlay-${id}`);
+        currentFrames[id] = 0;
+        lastFrames[id] = 0;
+        var control = new ScrollMagic.Controller();
+        var sc = new ScrollMagic.Scene({
+        triggerElement: `#video-${id}`,
+        triggerHook: 0.5
+        })
+        sc.on("enter", (e) => {
+            // Initial animation by removing effect classes
+            animations.forEach(animation =>{
+                vid.classList.remove(animation); 
+            })
+            overlayAnimations.forEach(animation =>{
+                overlay.classList.remove(animation); 
+            })
+        });
+    const ready = () => {
+    vid.removeEventListener('canplaythrough', ready);
+    let i = setInterval(() => {
+        vid.pause();
+        if(vid.readyState > 3) {
+        clearInterval(i);
+        vid.currentTime = 0;
+        callback(id, sc, control);
+        }
+    }, 50)
+    }
+
+    vid.addEventListener('canplaythrough', ready, false);
+    vid.play();
+    }
+</script>
+
+<style>
+    .scroll-video-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+      }
+      .scroll-video {
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        transition: all .75s ease-in-out;
+      }
+      .scroll-video-overlay {
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        transition: all .75s ease-in-out;
+      }
+      .fade {
+        opacity: 0;  
+    }
+    .zoom {
+        scale: 0;  
+    }
+    .perspective-bottom {
+        transform: perspective(300px) rotatex(45deg);
+        transform-origin: bottom center;
+    }
+    .right {
+        transform: translate(100%, 0);
+    }
+    .left {
+        transform: translate(-100%, 0);
+    }
+    
+
+</style>
+
+<script>
+    setInterval(() => {
+        requestAnimationFrame(() => {
+            for (const [key, value] of Object.entries(currentFrames)){
+                if(lastFrames[key] == currentFrames[key]){
+                    continue;
+                }
+                //console.log("setting frame for video:", key, "to:", value )
+                var vid = document.getElementById(`video-${key}`);
+                if (vid){
+                    vid.currentTime = vid.duration * value;
+                    vid.pause();
+                    lastFrames[key] = value;
+                }
+            }
+            });
+      }, 60);
+</script>
+

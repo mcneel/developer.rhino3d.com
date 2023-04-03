@@ -78,6 +78,9 @@ other = "[VERSION]의 새 기능"
 [New-in-Rhino-7]
 other = "Rhino 7의 새 기능"
 
+[New-in-Rhino-8]
+other = "Rhino 8의 새 기능"
+
 [All-the-details]
 other = "모든 정보..."
 
@@ -234,6 +237,18 @@ other = "자유 형상을 정확하게."
 [caption-rhino-7-details]
 other = "SubD, Rhino.Inside.Revit, QuadRemesh 등, 많은 기능이 추가되었습니다."
 
+# Title on homepage
+[caption-rhino-8]
+other = "Rhino 8"
+
+# Subtitle on homepage caption
+[caption-rhino-8-subtitle]
+other = "미래로의 전진"
+
+# Details of the Rhino 8 caption
+[caption-rhino-8-details]
+other = "ShrinkWrap, 날카로운 SubD, Mac 처리 속도 부스트 등 다양한 새 기능."
+
 # Link title on homepage video captions
 [caption-learn-more]
 other = "자세히"
@@ -292,4 +307,4 @@ other = "모두"
 
 # Filter textfield on Learn Pages
 [filter]
-other = "필터링... "
+other = "필터링..."

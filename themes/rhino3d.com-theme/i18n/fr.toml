@@ -78,6 +78,9 @@ other = "Nouveau dans [VERSION]"
 [New-in-Rhino-7]
 other = "Nouveautés de Rhino 7"
 
+[New-in-Rhino-8]
+other = "Nouveautés de Rhino 8"
+
 [All-the-details]
 other = "Toutes les informations..."
 
@@ -233,6 +236,18 @@ other = "Forme libre et précision."
 # Details of the Rhino 7 video caption
 [caption-rhino-7-details]
 other = "SubD, Rhino.Inside.Revit, RemaillageQuad et bien plus maintenant inclus."
+
+# Title on homepage
+[caption-rhino-8]
+other = "Rhino 8"
+
+# Subtitle on homepage caption
+[caption-rhino-8-subtitle]
+other = "En avant"
+
+# Details of the Rhino 8 caption
+[caption-rhino-8-details]
+other = "Disponible maintenant avec EnveloppeMaillée, SubD à bord vif, amélioration de la vitesse dans Mac, et bien plus. "
 
 # Link title on homepage video captions
 [caption-learn-more]

@@ -78,6 +78,9 @@ other = "[VERSION] 的新功能"
 [New-in-Rhino-7]
 other = "Rhino 7 的新功能"
 
+[New-in-Rhino-8]
+other = "Rhino 8 的新功能"
+
 [All-the-details]
 other = "所有細節..."
 
@@ -233,6 +236,18 @@ other = "精確的自由造型"
 # Details of the Rhino 7 video caption
 [caption-rhino-7-details]
 other = "新功能 SubD、Rhino.Inside.Revit、QuadRemesh 及更多其它功能。"
+
+# Title on homepage
+[caption-rhino-8]
+other = "Rhino 8"
+
+# Subtitle on homepage caption
+[caption-rhino-8-subtitle]
+other = "勇往直前"
+
+# Details of the Rhino 8 caption
+[caption-rhino-8-details]
+other = "新功能 ShrinkWrap、SubD 銳角、Mac 速度提升及更多其它功能。"
 
 # Link title on homepage video captions
 [caption-learn-more]

@@ -154,7 +154,7 @@ div.learn_gallery_page {
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	/* grid-template-columns: auto auto auto auto; */
 	align-items: start;
-	width: 800px;
+	width: 100%;
 }
 
 .discover-grid-row {
@@ -197,7 +197,7 @@ div.learn_gallery_page {
 	cursor: pointer;
 }
 
-.discover-thumbnail img {
+.discover-img {
 	object-fit: cover;
 	width: 100%;
 	height: 135px;
@@ -282,14 +282,17 @@ div.learn_gallery_page {
 }
 
 .discover-info-extra {
-	display: none;
+	display: block;
+		visibility: hidden;
 	margin-top: 5px;
 	color: #828282;
 	font-size: 13px;
+	height: 0;
 }
 
 .discover-info-extra-open {
-	display: block;
+	height: auto;
+		visibility: visible;
 }
 
 .discover-info-extra p {
@@ -318,6 +321,7 @@ div.learn_gallery_page {
 	text-align: center;
 	font-size: 12px;
 	padding: 0 5px 0px 5px;
+	margin-bottom: 5px;
 }
 
 .discover-info-tag:hover {
@@ -439,7 +443,7 @@ div.learn_gallery_page {
 	width: 100%;
 	height: 30px;
 	margin: 10px 0px;
-	padding: 2px 5px;
+	width: -webkit-fill-available;
 	border: 1px solid #d0d0d0;
 	border-radius: 3px;
 	background: white;
@@ -465,13 +469,28 @@ div.learn_gallery_page {
 }
 
 .learn-tagbox-hidden {
-	height: 24px;
+	height: fit-content;
+	max-height: 24px;
 	overflow: hidden;
+	display: flex;
+    flex-wrap: wrap;
+	overflow: hidden;
+    align-content: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+	transition: 0.5s;
 }
 
 .learn-tagbox-expanded {
 	height: fit-content;
-	overflow: visible;
+	max-height: 500px;
+	display: flex;
+    flex-wrap: wrap;
+	overflow: hidden;
+    align-content: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+	transition: 0.5s;
 }
 
 @media only screen and (max-width: 1145px) {

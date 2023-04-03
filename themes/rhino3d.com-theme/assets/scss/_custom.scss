@@ -534,3 +534,30 @@ table.multiline-middle tr {
 table.multiline-middle img{
 	margin:10px;
 }
+
+/*
+##############################################################################
+##  Scollable video (custom classes)
+##############################################################################
+*/
+
+.scrollVideoOverlayCenter {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.keyboard-btn {
+	font-size: 0.875rem;
+    line-height: 1.5;
+    box-shadow: 0 0 #d9d9d9, 0 0px #d9d9d9, 0 1px #d9d9d9, 0 2px #d9d9d9, 0 3px #d9d9d9, 2px 1.5px 4px #adb5bd, 0 -1px 1.5px #adb5bd;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+	border-color: #e6e6e6;
+    color: #343a40;
+    border-radius: 0.25rem;
+    display: inline-block;
+	backface-visibility: hidden;
+	}

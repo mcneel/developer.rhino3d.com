@@ -1,0 +1,25 @@
+{{ $src := .Get "src"}}
+{{ $animation := or (.Get "animation") ""}}
+{{ $id := (print .Ordinal) }}
+{{ $overlayClass := .Get "overlay-class"}}
+{{ $overlayAnimation := or (.Get "overlay-animation") ""}}
+
+
+ <div class="scroll-video-container" id="video-container-{{ $id }}">
+    <video loop autoplay playsinline muted class="scroll-video {{ $animation }}" id="video-{{ $id }}">
+      <source src="{{ $src }}" type='video/mp4' />
+    </video>
+        {{/*  adding overlay  */}}
+        <div class="scroll-video-overlay {{ $overlayAnimation }}" id="video-overlay-{{ $id }}">
+            <div class="{{$overlayClass}}">
+                {{ .Inner  }}
+            </div>
+        </div>
+ </div>
+
+<script>
+    //storing position in global variable that gets appended
+    var currentFrames = currentFrames || {}
+    var lastFrames = lastFrames || {}
+    preloadVid("{{$id}}", startAnim, "{{$animation}}".split(" "), "{{$overlayAnimation}}".split(" "))
+</script>

@@ -78,6 +78,9 @@ other = "Novità in [VERSION]"
 [New-in-Rhino-7]
 other = "Novità di Rhino 7"
 
+[New-in-Rhino-8]
+other = "Novità in Rhino 8"
+
 [All-the-details]
 other = "Tutti i dettagli..."
 
@@ -130,7 +133,7 @@ other = "Rivenditori"
 
 # context: page footer
 [Reseller]
-other = "Rivenditore"
+other = "rivenditore"
 
 # context: page footer
 [Privacy-Policy]
@@ -233,6 +236,18 @@ other = "Free-form con precisione."
 # Details of the Rhino 7 video caption
 [caption-rhino-7-details]
 other = "Disponibile ora con SubD, Rhino.Inside.Revit, RieseguiMeshQuad e altro ancora."
+
+# Title on homepage
+[caption-rhino-8]
+other = "Rhino 8"
+
+# Subtitle on homepage caption
+[caption-rhino-8-subtitle]
+other = "Novità"
+
+# Details of the Rhino 8 caption
+[caption-rhino-8-details]
+other = "Disponibile ora con AvvolgiMesh, SpigoliVivi SubD, Mac Speed Boost e altro ancora."
 
 # Link title on homepage video captions
 [caption-learn-more]

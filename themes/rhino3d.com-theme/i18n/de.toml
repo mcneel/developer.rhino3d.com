@@ -78,6 +78,9 @@ other = "Neu in [VERSION]"
 [New-in-Rhino-7]
 other = "Neu in Rhino 7"
 
+[New-in-Rhino-8]
+other = "Neu in Rhino 8"
+
 [All-the-details]
 other = "Alle Details..."
 
@@ -234,6 +237,18 @@ other = "Freiform, mit Präzision."
 [caption-rhino-7-details]
 other = "Jetzt erhältlich mit SubD, Rhino.Inside.Revit, VierecksNeuvermaschung und mehr."
 
+# Title on homepage
+[caption-rhino-8]
+other = "Rhino 8"
+
+# Subtitle on homepage caption
+[caption-rhino-8-subtitle]
+other = "Vorwärts"
+
+# Details of the Rhino 8 caption
+[caption-rhino-8-details]
+other = "Jetzt verfügbar mit Aufschrumpfen, Scharfe SubD, Mac Speed Boost und weiteren."
+
 # Link title on homepage video captions
 [caption-learn-more]
 other = "Weitere Informationen"
@@ -244,7 +259,7 @@ other = "Ausprobieren"
 
 # The conjoiner before the Buy link in the video caption
 [caption-or-conjoiner]
-other = "oder"
+other = "oder "
 
 # Link title on homepage video captions
 [caption-buy]

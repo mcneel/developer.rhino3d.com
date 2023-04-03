@@ -1,0 +1,71 @@
+{{- $.Scratch.Set "page" "" -}}
+{{- $.Scratch.Set "url" "" -}}
+{{- $.Scratch.Set "title" "" -}}
+{{- $.Scratch.Set "error" false -}}
+{{- $.Scratch.Set "error_message" "" -}}
+
+{{- if .IsNamedParams -}}
+    {{- if .Get "page" -}}
+        {{- $.Scratch.Set "page" (.Get "page") -}}
+    {{- else -}}
+        {{- $.Scratch.Set "error" true -}}
+        {{- $.Scratch.Set "error_message" "page is a required parameter" -}}
+    {{- end -}}
+
+    {{/*  Optional Link override  */}}
+    {{- if .Get "url" -}}
+        {{- $.Scratch.Set "url" (.Get "url") -}}
+    {{- end -}}
+
+    {{/*  Optional title override  */}}
+    {{- if .Get "title" -}}
+        {{- $.Scratch.Set "title" (.Get "title") -}}
+    {{- end -}}
+{{- else -}}
+    {{- $.Scratch.Set "error" true -}}
+    {{- $.Scratch.Set "error_message" "Not using named params." -}}
+{{- end -}}
+
+{{- if ($.Scratch.Get "error") -}}
+<span class="shortcode-error">Error: {{ $.Scratch.Get "error_message" }}<br>Shortcode usage: &lbrace;&lbrace;&lt; feature-card page=[path-to-page] &gt;&rbrace;&rbrace;</span>
+{{- else -}}
+    {{ with .Site.GetPage ($.Scratch.Get "page") }}
+        <div class="card-market">
+            {{ $.Scratch.Set "page_link" .RelPermalink }}
+            {{- if ($.Scratch.Get "url") -}}
+                {{ $.Scratch.Set "page_link" ($.Scratch.Get "url") }}
+            {{- end -}}
+            {{ $.Scratch.Set "has-thumbnail" "false" }}
+            {{- with .Params.thumbnail -}}
+            {{ $.Scratch.Set "has-thumbnail" "true" }}
+            {{- end -}}
+            {{ if eq ($.Scratch.Get "has-thumbnail") "true" }}
+                {{ if hasPrefix .Params.Thumbnail "/images/"}}
+                    {{/*  Global image folder  */}}
+                    {{- $image := resources.Get .Params.Thumbnail -}}
+                    {{ $thumbnail := $image.Fill "900x550" }}
+                    {{ with $thumbnail }}
+                            <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                    {{ end }}
+                {{ else }}
+                    {{/*  Page bundle  */}}
+                    {{ with .Resources.GetMatch ( printf "%s" .Params.thumbnail) }}
+                        {{ $thumbnail := .Fill "900x550" }}
+                        {{ with $thumbnail }}
+                            <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            <div class="card-container-market">
+                {{- if ($.Scratch.Get "title") -}}
+                <span class="card-title-market"><a href="{{ $.Scratch.Get "page_link" }}">{{ $.Scratch.Get "title" }}</a></span>
+                {{ else }}
+                <span class="card-title-market"><a href="{{ $.Scratch.Get "page_link" }}">{{ .Title }}</a></span>
+                {{ end }}
+            </div>
+        </div>
+    {{ end }}
+{{- end -}}
+
+

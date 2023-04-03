@@ -9,10 +9,10 @@
 {{ $.Scratch.Add "arrow-left" (.Get "arrow-left" | default "fa-chevron-left") }}
 {{ $.Scratch.Add "arrow-right" (.Get "arrow-right" | default "fa-chevron-right") }}
 
-{{ if ne (.Get "no-fa") "true" }}
+{{/*  {{ if ne (.Get "no-fa") "true" }}
     <!-- FontAwesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-{{end}}
+{{end}}  */}}
 
 {{ if ne (.Get "no-jquery") "true" }}
     <!-- JQuery -->
@@ -74,7 +74,7 @@
     position: relative;
     top: 45%;
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.4;
     transition: all 0.66s ease;
     -webkit-transition: all 0.66s ease;
     background-color: white;
@@ -83,7 +83,7 @@
 }
 
 .slideshow-nav:hover {
-    opacity: 1.0;
+    opacity: 0.9;
 }
 
 #left-{{ $.Scratch.Get "id" }} {

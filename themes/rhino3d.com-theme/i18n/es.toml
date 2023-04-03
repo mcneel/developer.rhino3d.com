@@ -78,11 +78,14 @@ other = "Nuevo en Rhino [VERSION]"
 [New-in-Rhino-7]
 other = "Novedades de Rhino 7"
 
+[New-in-Rhino-8]
+other = "Novedades de Rhino 8"
+
 [All-the-details]
 other = "Más información..."
 
 [bob-loves-revit]
-other = "Bob ❤️s Revit 😘"
+other = "Bob â¤ï¸s Revit ðŸ˜˜"
 
 # This is optionally shown as a header in some feature pages
 [new-in-rhino-7]
@@ -103,7 +106,7 @@ other = "y"
 # context: the Edit menu at the bottom of the page
 [Edit-this-page]
 other = "Editar esta página"
- 
+
 # context: the Edit menu at the bottom of the page
 [Edit-on-GitHub]
 other = "Editar en GitHub"
@@ -234,6 +237,18 @@ other = "Formas libres, con precisión."
 [caption-rhino-7-details]
 other = "Disponible ahora con SubD, Rhino.Inside.Revit, RemalladoCuad y mucho más."
 
+# Title on homepage
+[caption-rhino-8]
+other = "Rhino 8"
+
+# Subtitle on homepage caption
+[caption-rhino-8-subtitle]
+other = "Con muchos avances"
+
+# Details of the Rhino 8 caption
+[caption-rhino-8-details]
+other = "Disponible ahora con las funciones EnvolverMalla, DefinirBordes de SubD, aumento de velocidad en Mac y mucho más."
+
 # Link title on homepage video captions
 [caption-learn-more]
 other = "Más información"
@@ -244,7 +259,7 @@ other = "probar"
 
 # The conjoiner before the Buy link in the video caption
 [caption-or-conjoiner]
-other = " o "
+other = "o "
 
 # Link title on homepage video captions
 [caption-buy]
@@ -288,7 +303,7 @@ other = "Destacado"
 
 # All button and tag on Learn Pages
 [all]
-other = "Todo"
+other = "Todas"
 
 # Filter textfield on Learn Pages
 [filter]
