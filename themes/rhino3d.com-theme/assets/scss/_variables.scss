@@ -18,11 +18,14 @@ $global_h4_size: 18px; // pre font-size discussion: 18px;
 $global_h5_size: 16px; // pre font-size discussion: 16px;
 $global_h6_size: 14px; // pre font-size discussion: 14px;
 
+// Desktop MaxWidth
+$global-desktop-maxwidth: 1110px;
+
 // Mobile/Responsive MaxWidth
 $global-mobile-maxwidth: 768px;
 
 // Navbar
-$global-nav-height-large: 130px;
+$global-nav-height-large: 125px;
 $global-nav-height-collapsed: 60px;
 
 // Link colors
@@ -35,6 +38,7 @@ $global-background-color: #fff !default;
 $global-background-color-dark: #292a2d !default;
 
 // Various colors
+$global-light-color: white !default;
 $global-light-grey: #ececec !default;
 $global-medium-light-grey: #c2c2c2 !default;
 $global-medium-grey: #858585 !default;
@@ -79,6 +83,7 @@ $call-out-color-map: (
   'bug': #f50057,
   'example': #651fff,
   'quote': #9e9e9e,
+  'new': #5e9453,
 ) !default;
 
 // Color map of the call-out background
@@ -95,6 +100,7 @@ $call-out-background-color-map: (
   'bug': rgba(245, 0, 87, 0.1),
   'example': rgba(101, 31, 255, 0.1),
   'quote': rgba(159, 159, 159, 0.1),
+  'new': rgba(94, 138, 83, 0.1),
 ) !default;
 // ========== call-out ========== //
 
