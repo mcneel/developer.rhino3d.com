@@ -117,7 +117,10 @@ window.onresize = function() {resizeFunction()};
 
 function resizeFunction() {
     if ($(window).width() > 768 ) {
-    document.getElementById("sitesearch").style.display = "inline";
+        var scrollPos = document.body.scrollTop || document.documentElement.scrollTop; 
+        if (scrollPos <= 80 ) {
+            document.getElementById("sitesearch").style.display = "inline";
+        }
     } else {
     document.getElementById("sitesearch").style.display = "none";
     }
