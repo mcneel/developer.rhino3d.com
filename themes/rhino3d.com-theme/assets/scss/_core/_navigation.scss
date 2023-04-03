@@ -19,7 +19,7 @@
     position:absolute;
     right: 10px;
     bottom: 18px;
-	padding-right: 10px;	
+	padding-right: 4px;	
 }
 
 .navigation a {
@@ -48,30 +48,44 @@
 
 // NEW NAVBAR
 #navbar {
-	display: block;
-	overflow: hidden;
+	z-index: 1000;
 	background-color: $global-background-color;
 	transition: 0.4s;
 	position: fixed;
 	width: 100%;
 	top: 0;
-	z-index: 1000;
 	box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
-	display: flex;
-    align-items: center;
+	display:flex;
+	flex-direction: column;
+    align-items: flex-end;
 }
 
-#navbar #wrap {
-	margin-right: auto;
-    margin-left: auto;
-    padding: 0 8px;
-	width: calc(100% - 16px);
-	max-width: 1100px;
+@media screen and (max-width: $global-mobile-maxwidth) {
+	#navbar {
+		align-items: center;
+	}
+}
+
+#nav-logo-search-container {
+	display: block;
+	overflow: hidden;
+	display: flex;
+    justify-content: space-between;
+	width: 100%;
+	align-items: center;
+	max-width: calc(100% - 60px);
+	margin: auto;
+}
+
+@media screen and (max-width: $global-mobile-maxwidth) {
+	#nav-logo-search-container {
+		max-width: calc(100% - 30px);
+	}
 }
 
 #navbar a {
 	color: $global-dark-grey;
-	padding-right: 15px;
+	padding-right: 5px;
 }
 
 #navbar a:hover {
@@ -80,20 +94,21 @@
 }
 
 #logo-container {
-	height: 125px;
+	height: $global-nav-height-large;
 	transition: 0.4s;
-    overflow: hidden;
+    padding: 4px;
+	padding-left: 0px;
 	position: relative;
 }
 
 #logo-inner-container {
-	position: absolute;
 	z-index: 100;
+	height: 100%;
 }
 
 #site-nav-logo {
 	transition: 0.4s;
-	height: 125px;
+	height: 100%;
 }
 
 #logo-title-text {
@@ -144,20 +159,33 @@
 }
 
 .menu-items {
-	position: absolute;
-	bottom: 18px;
-	padding-left: 180px;
+    margin-top: -43px;
+    padding-bottom: 15px;
+	width: 800px;
+    max-width: 75%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+	margin-right: 30px;
 }
 
 @media screen and (max-width: $global-mobile-maxwidth) {
 	.menu-items { 
-		display: grid; 
-		position: relative; 
-		top: 5px; 
-		padding-left: 0px; 
-		justify-items: center; 
-		height: 0vh; 
-		transition: 0.4s; 
+		display: flex;
+		position: relative;
+		justify-items: center;
+		height: 0;
+		transition: .4s;
+		margin-top: 0;
+		padding-bottom: 0;
+		width: 100%;
+		flex-direction: column;
+		align-content: center;
+		justify-content: space-evenly;
+		align-items: center;
+		margin-right: 0px;    
+		flex-wrap: nowrap;
 	}
 	.menu-items a {
 		text-decoration: none;
@@ -177,21 +205,15 @@
 
 // Overlay menu for mobile navigation
 .overlayMenuIcon {
+	display: none;
 	visibility: hidden;
-	position: absolute;
-	right: 10px;
-	top: 40px;
+	transition: 0.4s;
 }
 
 @media screen and (max-width: $global-mobile-maxwidth) {
 	.overlayMenuIcon {
+		display: block;
 		visibility: visible;
-		right: 10px;
-		position: absolute;
-		top: 50%;
-		-ms-transform: translateY(-50%);
-		transform: translateY(-50%);
-		transition: 0.4s;
 	}
 }
 
