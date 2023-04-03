@@ -8,10 +8,16 @@
       {{ partial "toc.html" . }}
   {{ end }}
   <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
-        {{.Content}}
-        {{ if and (not .Params.page_options.plain ) (not .Params.page_options.hide_edit_button ) }}
-          {{- partial "edit_button.html" . -}}
-        {{ end }}
+    {{ if ne false (.Params.page_options.show_title) }}
+    <div class="feature-title-container">
+      <div class="feature-title">{{ .Page.Title }}</div>{{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}<div class="new-callout"><a href="/{{ .Site.Params.latestRhinoVersion}}/new">{{ i18n "NEW-in-Vx" . }}</a></div>{{ end }}{{- partial "platform-callout" . -}}        
+    </div>
+    {{ end }}
+    <p>{{ partial "byline.html" . }}</p> 
+    {{.Content}}
+    {{ if and (not .Params.page_options.plain ) (not .Params.page_options.hide_edit_button ) }}
+      {{- partial "edit_button.html" . -}}
+    {{ end }}
   </div>
 </div>
 {{ end }}
