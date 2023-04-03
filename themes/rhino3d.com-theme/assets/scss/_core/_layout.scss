@@ -1,14 +1,49 @@
 // ==============================
+// New Consolidated Layout Containers
+// ==============================
+
+.page-container {
+
+}
+
+//.toc{}
+
+.content-container {
+	background-color: transparent;
+	margin-top: $global-nav-height-large;
+	padding-top: 10px;
+	> :not(.content-fullwidth) {
+		max-width: $global-desktop-maxwidth;
+		margin: auto;
+	}
+}
+
+.content-fullwidth {
+	width: 100vw;
+}
+
+.content-wrapper {
+	display: flex;
+	justify-content: center;
+	> .toc {
+		margin-left: -240px;
+		padding-left: 10px;
+	}
+}
+
+// ==============================
 // Layout
 // ==============================
 
 .outerbox {
-    max-width: 1110px;
+    max-width: $global-desktop-maxwidth;
     margin: 0 auto;
-    background-color: transparent;
-	margin-top: 150px;
+    // background-color: #f8f8f8;
+	background-color: transparent;
+	margin-top: $global-nav-height-large;
 	padding-right: 75px;
     padding-left: 75px;
+	padding-top: 10px;
 }
 
 .header-area {
@@ -23,18 +58,28 @@
 	border-top-style: ridge;
 	border-top-width: 1px;
 	background-color: transparent;
+	padding-left: 15px;
+    padding-right: 15px;
 }
 
-
+//Mobile overrides
 @media only screen and (max-width: $global-mobile-maxwidth) {
 	.outerbox {
 		background-image: none;
 		background-size: 60px;
+		padding-right: 15px;
+		padding-left: 15px;
+		padding-top: 10px;
 		grid-template-rows: [header-start] 75px [header-end single-page-start] 1fr [single-page-end footer-start] 75px [footer-end];
 		grid-template-columns: max(10px) [boundary-left-start boundary-left-end content-start page-title-start header-start footer-start] 1fr [content-end header-end page-title-end footer-end boundary-right-start boundary-right-end] max(10px);
 	}
+
+	.fullwidth-override {
+		width: 100vw;
+		transform: none;
+	}
+
 	.header-area {
-		height: 75px;
 		grid-area: header-start / boundary-left-start / header-end / boundary-right-end;
 	}
 	.single-content-area .main-content {
@@ -51,7 +96,7 @@
 .heading {
     vertical-align: bottom;
     position: relative;
-    margin-bottom:10px;
+    // margin-bottom:10px;
 }
 
 .heading #cse-search-box {

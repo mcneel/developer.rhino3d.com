@@ -5,9 +5,10 @@
 ##################################################################
 */
 // 6-Jan-2020, BG: added as part of making the new /learn page render better
-*, *:before, *:after {
-	box-sizing: border-box; 
-}
+// 1-Nov-2022, MK: removed because it's affecting more than the learn page and it's not clear to me what it did. Probably obsolete with the refactoring of learn page
+// *, *:before, *:after {
+// 	box-sizing: border-box; 
+// }
 
 /* 
 ##################################################################
@@ -161,4 +162,14 @@ td.hljs-ln-line.hljs-ln-code {
   display: inline !important;
   text-align: center;
   margin: 1em 0;
+}
+
+// 1-Nov-2022, MK: Added because "sign in" and "my account" would split into two lince on some screen sizes
+.logged_out a{
+	display: inline-block;
+  width: max-content;
+}
+.logged_in a{
+	display: inline-block;
+  width: max-content;
 }

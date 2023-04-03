@@ -7,8 +7,32 @@
   {{ else }}
     {{- partial "head" . -}}
   {{ end }}
+
+{{ if (.Params.page_options.rhino_bg) }}
+  <body class="rhino-bg">
+{{ else }}
   <body>
-    {{ if (not .Params.page_options.plain ) }}
+  {{ end }}
+    {{ if (.Params.page_options.container_layout) }} <!--New container layouts-->
+
+    {{- block "header-container" . }}
+        {{- partial "header" . -}}
+    {{- end }}
+    <div class="content-wrapper">
+      {{ if .Params.page_options.toc }}
+        {{ partial "toc.html" . }}
+      {{ end }}
+        <div class="content-container">
+        {{- block "main" . }}
+        {{- end }}
+      </div>
+      </div>
+      {{- block "footer-container" . }}
+      {{- partial "footer" . -}}
+    {{- end }}
+
+    {{- partial "js-scripts" . }}
+    {{ else if (not .Params.page_options.plain ) }} <!--Regular layouts-->
       <div id="mask"></div>
       {{- block "header" . }}
           {{- partial "header" . -}}
@@ -21,7 +45,7 @@
         {{- end }}
       </div>
       {{- partial "js-scripts" . }}
-    {{ else }}
+    {{ else }}  <!--Plain pages-->
       {{- block "main" . }}
       {{- end }}
     {{ end }}
