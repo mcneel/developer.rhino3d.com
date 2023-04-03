@@ -1,0 +1,97 @@
+{{ $src := .Get "src"}}
+{{ $animation := or (.Get "animation") ""}}
+{{ $id := (print .Ordinal) }}
+{{ $class := .Get "class"}}
+{{ $mask := .Get "mask"}}
+{{ $overlayClass := .Get "overlay-class"}}
+{{ $overlayAnimation := or (.Get "overlay-animation") ""}}
+
+<div class="content-fullwidth">
+  <div style="
+      margin: 0 auto;
+      position: relative;">
+            <div id="scrollWatcher-{{ $id }}" style="display: flex;
+      justify-content: center; height: 125vh;">
+            </div>
+  </div>
+    <div id="sticky-video-container-{{ $id }}" 
+    style="bottom: 0;
+      margin-top: 0;
+      position: sticky;
+      z-index: -1;
+      ">
+
+      <div class="scroll-video-container {{ $class }}" id="video-container-{{ $id }}" style="text-align: center;">
+        <video loop autoplay playsinline muted class="scroll-video {{ $animation }}" id="video-{{ $id }}" style="margin:auto; max-height:calc(100vh - 72px); max-width: 100%; -webkit-mask-image: url({{ $mask }});  mask-image: url({{ $mask }}); -webkit-mask-size: 100%;
+        mask-size: 100%;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;    ;
+        ">
+          <source src="{{ $src }}" type='video/mp4' />
+        </video>
+            {{/*  adding overlay  */}}
+            <div class="scroll-video-overlay {{ $overlayAnimation }}" id="video-overlay-{{ $id }}">
+                <div class="{{$overlayClass}}">
+                    {{ .Inner  }}
+                </div>
+            </div>
+     </div>
+
+    </div>
+</div>
+
+<script>
+
+var video = document.getElementById('video-{{ $id }}');
+var scrollFactor = 0;
+
+(function(){
+
+  var throttle = function(type, name, obj){
+    var obj = obj || window;
+    var running = false;
+    var func = function(){
+      if (running){ return; }
+      running = true;
+      requestAnimationFrame(function(){
+        obj.dispatchEvent(new CustomEvent(name));
+        running = false;
+      });
+    };
+    obj.addEventListener(type, func);
+  };
+  
+  throttle("scroll", "optimizedScroll", video);
+})();
+
+window.addEventListener("optimizedScroll", function(){
+    var scrollWatcher = document.getElementById("scrollWatcher-{{ $id }}");
+    var rect = scrollWatcher.getBoundingClientRect();
+    scrollFactor = rect.top > 0 ? 0 : Math.min((scrollWatcher.clientHeight- rect.bottom)/scrollWatcher.clientHeight, 1 );
+})
+
+window.addEventListener('load', function(e) {
+  video.pause();
+  video.currentTime = 0;
+  var stickyContainer = document.getElementById("sticky-video-container-{{ $id }}");
+  stickyContainer.style.bottom = `${(window.innerHeight-video.clientHeight)/2-36}px`; //36 is half of 72 which is the height of navbar
+
+});
+
+window.addEventListener("resize", (event) => {
+  var stickyContainer = document.getElementById("sticky-video-container-{{ $id }}");
+  stickyContainer.style.bottom = `${(window.innerHeight-video.clientHeight)/2-36}px`; //36 is half of 72 which is the height of navbar
+});
+</script>
+
+<script>
+  setInterval(() => {
+      requestAnimationFrame(() => {
+              if (video){
+                  video.currentTime = (video.duration * scrollFactor).toFixed(3);
+                  video.pause();
+              }
+
+          });
+    }, 60);
+</script>

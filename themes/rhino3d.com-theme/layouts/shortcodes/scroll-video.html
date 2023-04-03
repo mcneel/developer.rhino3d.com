@@ -1,11 +1,11 @@
 {{ $src := .Get "src"}}
 {{ $animation := or (.Get "animation") ""}}
 {{ $id := (print .Ordinal) }}
+{{ $class := .Get "class"}}
 {{ $overlayClass := .Get "overlay-class"}}
 {{ $overlayAnimation := or (.Get "overlay-animation") ""}}
 
-
- <div class="scroll-video-container" id="video-container-{{ $id }}">
+ <div class="scroll-video-container {{ $class }}" id="video-container-{{ $id }}">
     <video loop autoplay playsinline muted class="scroll-video {{ $animation }}" id="video-{{ $id }}">
       <source src="{{ $src }}" type='video/mp4' />
     </video>

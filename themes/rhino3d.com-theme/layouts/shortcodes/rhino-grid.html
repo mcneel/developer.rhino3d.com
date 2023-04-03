@@ -1,0 +1,39 @@
+<div class="content-fullwidth rhino-grid-container" style="position:sticky; bottom:0px; height:300px; 
+margin-top: -250px;">
+    <div id="grid" class="rhino-bg rhino-grid">
+    </div>
+</div>
+<script>
+
+// Source credit: http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript
+
+var leftItem = document.getElementById('grid');
+(function(){
+
+  var throttle = function(type, name, obj){
+    var obj = obj || window;
+    var running = false;
+    var func = function(){
+      if (running){ return; }
+      running = true;
+      requestAnimationFrame(function(){
+        obj.dispatchEvent(new CustomEvent(name));
+        running = false;
+      });
+    };
+    obj.addEventListener(type, func);
+  };
+  
+  throttle("scroll", "optimizedScroll");
+})();
+
+window.addEventListener("optimizedScroll", function(){
+    var h = document.documentElement, 
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight';
+    var scrollFactor = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight);
+    leftItem.style.transform = `perspective(300px) rotatex(${scrollFactor*45}deg) scale(2)`;
+    leftItem.style.transformOrigin = "bottom center";
+})
+</script>

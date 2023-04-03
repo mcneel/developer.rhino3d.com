@@ -55,21 +55,21 @@
     .scroll-video-container {
         position: relative;
         width: 100%;
-        height: 0;
-        padding-bottom: 56.25%;
+        overflow: hidden;
       }
       .scroll-video {
-        position: absolute;
-        display: inline-block;
+        position: relative;
         width: 100%;
-        height: 100%;
         transition: all .75s ease-in-out;
       }
       .scroll-video-overlay {
         position: absolute;
         display: inline-block;
         width: 100%;
-        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
         transition: all .75s ease-in-out;
       }
       .fade {
