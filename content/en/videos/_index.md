@@ -61,16 +61,3 @@ More information is available at the [the workshop homepage](https://www.icd.uni
 ### Day 3: Part 6
 
 {{< youtube _4rHh6LVBLI >}}
-
-## What's New in the Rhino 6 SDK
-
-Presented by Steve Baer at the McNeel Global Developer Meeting, Barcelona, October 11-14th, 2016.
-
-{{< youtube HBKaeOfVhDo >}}
-
-## Cross Platform Plugins for Rhino
-
-Presented by Curtis Wensley at the McNeel Global Developer Meeting, Barcelona, October 11-14th, 2016.
-
-{{< youtube mcFLsdLi5Hk >}}
-
