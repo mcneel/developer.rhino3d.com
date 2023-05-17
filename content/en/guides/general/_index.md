@@ -36,7 +36,6 @@ since = 0
 ### Getting Started
 
 - [Developer Prerequisites](/guides/general/rhino-developer-prerequisites)
-- [Developer Training](/guides/general/developer-training)
 - [Contributing](/guides/general/contributing)
 
 {{< /column >}}
