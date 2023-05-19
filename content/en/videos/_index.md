@@ -14,8 +14,6 @@ since = 0
 
 +++
 
-
-
 A growing collection of recorded events, internal presentations, and tutorials crafted for developers *by developers*.
 
 ## Getting Started with Rhino Development
@@ -24,9 +22,21 @@ by Brian Gillespie.  Recorded October 20th, 2016.
 
 {{< vimeo 188730450 >}}
 
+<br/>
+
+## Migrating Plugins to Rhino 8
+
+by Curtis Wensley.  Recorded May 4th, 2023.
+
+{{< youtube Dmt5GUluU90 >}}
+
+<br/>
+
+See the [Moving to .NET 7](/guides/rhinocommon/moving-to-dotnet-7) guide for additional details.
+
+<br/>
+
 ## C# Scripting and Plugin Development for Grasshopper
-
-
 
 Presented by [Long Nguyen](https://discourse.mcneel.com/u/longnguyen).  Recorded April 26-28, 2018 at the [Institute for Computational Design (ICD)](http://icd.uni-stuttgart.de/) at the [University of Stuttgart](https://www.uni-stuttgart.de/).
 
