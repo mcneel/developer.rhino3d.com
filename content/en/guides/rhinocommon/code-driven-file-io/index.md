@@ -1,19 +1,19 @@
 +++
-authors = []
-categories = []
+authors = ["steve"]
+categories = ["Intermediate", "Advanced"]
 description = "This guide gives an overview of using RhinoCommon to drive file format IO"
 keywords = [ ".NET", "RhinoCommon", "Plugin" ]
-languages = [ "C#" ]
-sdk = [ "RhinoCommon" ]
+languages = [ "C#", "Python" ]
+sdk = [ "RhinoCommon", "RhinoPython" ]
 title = "Code-Driven File IO"
 type = "guides"
 weight = 4
 
 [admin]
-TODO = "Author this page"
+TODO = ""
 origin = ""
 picky_sisters = ""
-state = "In Progress"
+state = "Complete"
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
@@ -26,16 +26,27 @@ toc_type = "single"
 block_webcrawlers = true
 +++
 
-Prior to Rhino 8, code driven exporting was done by using the active document and scripting the export command. This was both painful to write and inefficient.
+Prior to Rhino 8, code-driven exporting was done by using the active document and scripting the export command. This was both inefficient and painful to write.
 
 Rhino 8 introduces the abililty to read and write files of any format that Rhino supports entirely through code. This includes support for options that need to be applied to properly read or write different files.
 
 ## How does it work?
-Import and export plug-ins are provided an optional dictionary at read and write time. When the dictionary is present, the importers and exporters should pay attention to keys and values in the dictionary to make decisions on options for I/O instead of asking for user input. RhinoCommon provides classes for these options that can be converted into a dictionary that the import and export plug-ins can interpret. Look in the Rhino.FileIO namespace for format specific option classes.
 
-## Example - Write active RhinoDoc to an AutoCAD dwg file with options
-``` C#
-// C# Sample
+Import and export plug-ins are provided an optional dictionary at read and write time. When the dictionary is present, instead of asking for user input, the importers and exporters pay attention to keys and values in the dictionary to make decisions on options for I/O. RhinoCommon provides classes for these options that can be converted into a dictionary that the import and export plug-ins can interpret. Look in the `Rhino.FileIO` namespace for format specific option classes.
+
+## Example: Write an AutoCAD dwg
+
+This example shows how to write the active `RhinoDoc` to an AutoCAD dwg with options:
+
+<div class="codetab">
+  <button class="tablinks" onclick="openCodeTab(event, 'cs')" id="defaultOpen">C#</button>
+  <button class="tablinks" onclick="openCodeTab(event, 'py')">Python</button>
+</div>
+
+<div class="tab-content">
+<div class="codetab-content" id="cs">
+
+```cs
 var doc = Rhino.RhinoDoc.ActiveDoc;
 if (doc != null)
 {
@@ -58,8 +69,11 @@ if (doc != null)
 }
 ```
 
-``` Py
-# Python Sample
+</div>
+
+<div class="codetab-content" id="py">
+
+```py
 import scriptcontext
 import Rhino
 import os
@@ -78,13 +92,26 @@ if scriptcontext.doc is not None:
         print("Error while trying to export sample.dwg")
 ```
 
+</div>
+</div>
+
 ## Headless Document Support
-Headless RhinoDoc instances can be used to further streamline the process. Headless documents are RhinoDoc instances that never affect the Rhino user interface. Their use can improve performance as none of the geometry in the document needs to be displayed in Rhino. You can either create a headless document from scratch and add geometry to it or import from a file using options
 
-## Example - Read SketchUp file and examine the geometry using a headless RhinoDoc
+Headless `RhinoDoc` instances can be used to further streamline the process. Headless documents are `RhinoDoc` instances that never affect the Rhino user interface. Their use can improve performance as none of the geometry in the document needs to be displayed in Rhino. You can either create a headless document from scratch and add geometry to it or import from a file using options.
 
-``` C#
-// C# Sample
+## Example: Read a SketchUp file
+
+This example shows how to read a SketchUp skp file and example the geometry using a headless RhinoDoc:
+
+<div class="codetab">
+  <button class="tablinks1" onclick="openCodeTab(event, 'cs1')" id="defaultOpen1">C#</button>
+  <button class="tablinks1" onclick="openCodeTab(event, 'py1')">Python</button>
+</div>
+
+<div class="tab-content">
+<div class="codetab-content1" id="cs1">
+
+```cs
 // Create a headless doc and import SketchUp file into it
 var doc = Rhino.RhinoDoc.CreateHeadless(null);
 var options = new Rhino.FileIO.FileSkpReadOptions();
@@ -107,8 +134,11 @@ foreach(var obj in doc.Objects)
 doc.Dispose();
 ```
 
-``` Py
-# Python sample
+</div>
+
+<div class="codetab-content1" id="py1">
+
+```py
 import Rhino
 import os
 
@@ -128,6 +158,10 @@ for obj in doc.Objects:
 doc.Dispose()
 ```
 
+</div>
+</div>
+
 ## Other Use Cases
-- Batch processing - a directory of files could be read into headless documents and exported to another format
-- Grasshopper - Using headless documents in Grasshopper with all Rhino file formats supports allows for processing geometry from different files without forcing the main Rhino active doc to change
+
+- Batch processing: a directory of files could be read into headless documents and exported to another format.
+- Grasshopper: Using headless documents in Grasshopper with all Rhino file formats supports allows for processing geometry from different files without forcing the main Rhino active doc to change.
