@@ -43,12 +43,15 @@ files that you would like to distribute in your package. Something like this...
 ```commandline
 C:\Users\Bozo\dist
 ├── Tamarin.rhp
-├── Tamarin.dll
 ├── icon.png
 └── misc\
     ├── README.md
     └── LICENSE.txt
 ```
+
+{{< call-out "note" "Note" >}}
+This is just an example. The only files that matter are Tamarin.rhp and icon.png (we'll reference the icon in the manifest.yml file later).
+{{< /call-out >}}
 
 We're going to use the Yak CLI tool to create the package, so open up a Command
 Prompt and navigate to the directory above.
