@@ -26,9 +26,11 @@ toc_type = "single"
 block_webcrawlers = true
 +++
 
-OpenNURBS and Rhino3dm now provide direct access to rendering information without the need for Rhino. Prior to this, the only way to access this information outside of Rhino was by getting the data as XML and parsing it.
+OpenNURBS and Rhino3dm now provide direct access to rendering information without the need for Rhino. (Prior to this, the only way to access this information outside of Rhino was by getting the data as XML and parsing it.) For example:
 
 **TODO**: Three.js model here?
+
+This guide outlines classes used to access these rendering assets and provides examples.
 
 ## Overview
 
