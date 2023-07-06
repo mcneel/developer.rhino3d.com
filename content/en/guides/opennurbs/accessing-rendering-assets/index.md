@@ -47,13 +47,13 @@ In C++, the following objects are accessible through the use of `ONX_Model`. In 
   </thead>
   <tbody class="table-striped index_table">
   <tr>
-	<td>File3dmRenderContent</td>
-    <td>ON_RenderContent</td>
+	<td>ON_RenderContent</td>
+    <td>File3dmRenderContent</td>
 	<td>Provides access to generic render content settings.</td>
   </tr>
   <tr>
-    <td>File3dmRenderMaterial</td>
     <td>ON_RenderMaterial</td>
+    <td>File3dmRenderMaterial</td>
 	<td>Provides access to settings specific to render materials.</td>
   </tr>
   <tr>
