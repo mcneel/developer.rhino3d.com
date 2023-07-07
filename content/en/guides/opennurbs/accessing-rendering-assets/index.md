@@ -136,6 +136,8 @@ To access [decals](/guides/cpp/what-is-the-rdk/#decals) you need to get the `3dm
 
 <div class="codetab">
   <button class="tablinks" onclick="openCodeTab(event, 'cs')" id="defaultOpen">C#</button>
+  <button class="tablinks" onclick="openCodeTab(event, 'py')">Python</button>
+  <button class="tablinks" onclick="openCodeTab(event, 'js')">JavaScript</button>
   <button class="tablinks" onclick="openCodeTab(event, 'cpp')">C/C++</button>
 </div>
 
@@ -159,6 +161,22 @@ while (e.MoveNext())
     }
   }
 }
+```
+
+</div>
+
+<div class="codetab-content" id="py">
+
+```py
+
+```
+
+</div>
+
+<div class="codetab-content" id="js">
+
+```js
+
 ```
 
 </div>
@@ -202,6 +220,8 @@ while (nullptr != component)
 
 <div class="codetab">
   <button class="tablinks0" onclick="openCodeTab(event, 'cs0')" id="defaultOpen0">C#</button>
+  <button class="tablinks0" onclick="openCodeTab(event, 'py0')">Python</button>
+  <button class="tablinks0" onclick="openCodeTab(event, 'js0')">JavaScript</button>
   <button class="tablinks0" onclick="openCodeTab(event, 'cpp0')">C/C++</button>
 </div>
 
@@ -215,6 +235,22 @@ Console.WriteLine("On:      {0}", dit.On);
 Console.WriteLine("Method:  {0}", dit.Method);
 dit.On = true;
 dit.Method = Dithering.Methods.FloydSteinberg;
+
+```
+
+</div>
+
+<div class="codetab-content0" id="py0">
+
+```py
+
+```
+
+</div>
+
+<div class="codetab-content0" id="js0">
+
+```js
 
 ```
 
@@ -242,6 +278,8 @@ model.Write(filename_out);
 
 <div class="codetab">
   <button class="tablinks1" onclick="openCodeTab(event, 'cs1')" id="defaultOpen1">C#</button>
+  <button class="tablinks1" onclick="openCodeTab(event, 'py1')">Python</button>
+  <button class="tablinks1" onclick="openCodeTab(event, 'js1')">JavaScript</button>  
   <button class="tablinks1" onclick="openCodeTab(event, 'cpp1')">C/C++</button>
 </div>
 
@@ -256,6 +294,22 @@ Console.WriteLine("Altitude:            {0}", gp.Altitude);
 Console.WriteLine("TextureSize:         {0}", gp.TextureSize);
 gp.TextureSize = new Vector2d(1.2, 3.4);
 model.Write(filename_out);
+```
+
+</div>
+
+<div class="codetab-content1" id="py1">
+
+```py
+
+```
+
+</div>
+
+<div class="codetab-content1" id="js1">
+
+```js
+
 ```
 
 </div>
@@ -282,6 +336,8 @@ model.Write(filename_out);
 
 <div class="codetab">
   <button class="tablinks2" onclick="openCodeTab(event, 'cs2')" id="defaultOpen2">C#</button>
+  <button class="tablinks2" onclick="openCodeTab(event, 'py2')">Python</button>
+  <button class="tablinks2" onclick="openCodeTab(event, 'js2')">JavaScript</button>
   <button class="tablinks2" onclick="openCodeTab(event, 'cpp2')">C/C++</button>
 </div>
 
@@ -295,6 +351,22 @@ Console.WriteLine("PostProcessGammaOn: {0}", lw.PostProcessGammaOn);
 Console.WriteLine("PostProcessGamma:   {0}", lw.PostProcessGamma);
 lw.PostProcessGamma = 3.4f;
 model.Write(filename_out);
+```
+
+</div>
+
+<div class="codetab-content2" id="py2">
+
+```py
+
+```
+
+</div>
+
+<div class="codetab-content2" id="js2">
+
+```js
+
 ```
 
 </div>
@@ -320,6 +392,8 @@ Render channel information is accessed through `3dmRenderSettings`. To access it
 
 <div class="codetab">
   <button class="tablinks3" onclick="openCodeTab(event, 'cs3')" id="defaultOpen3">C#</button>
+  <button class="tablinks3" onclick="openCodeTab(event, 'py3')">Python</button>
+  <button class="tablinks3" onclick="openCodeTab(event, 'js3')">JavaScript</button>
   <button class="tablinks3" onclick="openCodeTab(event, 'cpp3')">C/C++</button>
 </div>
 
@@ -332,6 +406,22 @@ var lw = file3dm.Settings.RenderSettings.RenderChannels;
 Console.WriteLine("Mode: {0}", rch.Mode);
 rch.Mode = RenderChannels.Modes.Custom;
 model.Write(filename_out);
+```
+
+</div>
+
+<div class="codetab-content3" id="py3">
+
+```py
+
+```
+
+</div>
+
+<div class="codetab-content3" id="js3">
+
+```js
+
 ```
 
 </div>
@@ -356,6 +446,8 @@ model.Write(filename_out);
 
 <div class="codetab">
   <button class="tablinks4" onclick="openCodeTab(event, 'cs4')" id="defaultOpen4">C#</button>
+  <button class="tablinks4" onclick="openCodeTab(event, 'py4')">Python</button>
+  <button class="tablinks4" onclick="openCodeTab(event, 'js4')">JavaScript</button>
   <button class="tablinks4" onclick="openCodeTab(event, 'cpp4')">C/C++</button>
 </div>
 
@@ -372,6 +464,23 @@ model.Write(filename_out);
 ```
 
 </div>
+
+<div class="codetab-content4" id="py4">
+
+```py
+
+```
+
+</div>
+
+<div class="codetab-content4" id="js4">
+
+```js
+
+```
+
+</div>
+
 
 <div class="codetab-content4" id="cpp4">
 
@@ -395,6 +504,8 @@ model.Write(filename_out);
 
 <div class="codetab">
   <button class="tablinks5" onclick="openCodeTab(event, 'cs5')" id="defaultOpen5">C#</button>
+  <button class="tablinks5" onclick="openCodeTab(event, 'py5')">Python</button>
+  <button class="tablinks5" onclick="openCodeTab(event, 'js5')">JavaScript</button>
   <button class="tablinks5" onclick="openCodeTab(event, 'cpp5')">C/C++</button>
 </div>
 
@@ -411,6 +522,23 @@ model.Write(filename_out);
 ```
 
 </div>
+
+<div class="codetab-content5" id="py5">
+
+```py
+
+```
+
+</div>
+
+<div class="codetab-content5" id="js5">
+
+```js
+
+```
+
+</div>
+
 
 <div class="codetab-content5" id="cpp5">
 
@@ -434,6 +562,8 @@ model.Write(filename_out);
 
 <div class="codetab">
   <button class="tablinks6" onclick="openCodeTab(event, 'cs6')" id="defaultOpen6">C#</button>
+  <button class="tablinks6" onclick="openCodeTab(event, 'py6')">Python</button>
+  <button class="tablinks6" onclick="openCodeTab(event, 'js6')">JavaScript</button>
   <button class="tablinks6" onclick="openCodeTab(event, 'cpp6')">C/C++</button>
 </div>
 
@@ -458,6 +588,23 @@ model.Write(filename_out);
 ```
 
 </div>
+
+<div class="codetab-content6" id="py6">
+
+```py
+
+```
+
+</div>
+
+<div class="codetab-content6" id="js6">
+
+```js
+
+```
+
+</div>
+
 
 <div class="codetab-content6" id="cpp6">
 
@@ -488,6 +635,8 @@ The direction of north and the observer’s latitude and longitude are stored in
 
 <div class="codetab">
   <button class="tablinks7" onclick="openCodeTab(event, 'cs7')" id="defaultOpen7">C#</button>
+  <button class="tablinks7" onclick="openCodeTab(event, 'py7')">Python</button>
+  <button class="tablinks7" onclick="openCodeTab(event, 'js7')">JavaScript</button>
   <button class="tablinks7" onclick="openCodeTab(event, 'cpp7')">C/C++</button>
 </div>
 
@@ -516,6 +665,23 @@ foreach (var post_effect in post_effects)
 ```
 
 </div>
+
+<div class="codetab-content7" id="py7">
+
+```py
+
+```
+
+</div>
+
+<div class="codetab-content7" id="js7">
+
+```js
+
+```
+
+</div>
+
 
 <div class="codetab-content7" id="cpp7">
 
@@ -556,6 +722,8 @@ Render contents are model components and, in C++, can be accessed by iterating o
 
 <div class="codetab">
   <button class="tablinks8" onclick="openCodeTab(event, 'cs8')" id="defaultOpen8">C#</button>
+  <button class="tablinks8" onclick="openCodeTab(event, 'py8')">Python</button>
+  <button class="tablinks8" onclick="openCodeTab(event, 'js8')">JavaScript</button>
   <button class="tablinks8" onclick="openCodeTab(event, 'cpp8')">C/C++</button>
 </div>
 
@@ -590,6 +758,22 @@ foreach (var rt in file3dm.RenderTextures)
   var tex = rt.ToTexture();
   Console.WriteLine("{0}", tex.FileReference.FullPath);
 }
+```
+
+</div>
+
+<div class="codetab-content8" id="py8">
+
+```py
+
+```
+
+</div>
+
+<div class="codetab-content8" id="js8">
+
+```js
+
 ```
 
 </div>
@@ -661,6 +845,8 @@ Embedded Files (not to be confused with Embedded Bitmaps) are files that are emb
 
 <div class="codetab">
   <button class="tablinks9" onclick="openCodeTab(event, 'cs9')" id="defaultOpen9">C#</button>
+  <button class="tablinks9" onclick="openCodeTab(event, 'py9')">Python</button>
+  <button class="tablinks9" onclick="openCodeTab(event, 'js9')">JavaScript</button>
   <button class="tablinks9" onclick="openCodeTab(event, 'cpp9')">C/C++</button>
 </div>
 
@@ -677,6 +863,22 @@ foreach (var ef in file3dm.EmbeddedFiles)
   var new_file = System.IO.Path.Combine(dir, "CopyOf_" + file);
   ef.SaveToFile(new_file);
 }
+```
+
+</div>
+
+<div class="codetab-content9" id="py9">
+
+```py
+
+```
+
+</div>
+
+<div class="codetab-content9" id="js9">
+
+```js
+
 ```
 
 </div>
