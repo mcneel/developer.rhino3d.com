@@ -231,11 +231,10 @@ while (nullptr != component)
 ```cs
 var file3dm = File3dm.Read(filename_in);
 var dit = file3dm.Settings.RenderSettings.Dithering;
-Console.WriteLine("On:      {0}", dit.On);
+Console.WriteLine("Enabled: {0}", dit.Enabled);
 Console.WriteLine("Method:  {0}", dit.Method);
-dit.On = true;
+dit.Enabled = true;
 dit.Method = Dithering.Methods.FloydSteinberg;
-
 ```
 
 </div>
@@ -243,7 +242,13 @@ dit.Method = Dithering.Methods.FloydSteinberg;
 <div class="codetab-content0" id="py0">
 
 ```py
-
+import _rhino3dm
+model = _rhino3dm.File3dm.Read(filename_in)
+dit = model.Settings.RenderSettings.Dithering
+print(dit.Enabled)
+print(dit.Method)
+dit.Enabled = True
+dit.Method = _rhino3dm.DitheringMethods.FloydSteinberg
 ```
 
 </div>
@@ -262,9 +267,9 @@ dit.Method = Dithering.Methods.FloydSteinberg;
 ONX_Model model;
 model.Read(filename_in);
 auto& dit = model.m_settings.m_RenderSettings.Dithering();
-const auto on = dit.On();
+const auto on = dit.Enabled();
 const auto method = dit.Method();
-dit.SetOn(true);
+dit.SetEnabled(true);
 dit.SetMethod(ON_Dithering::Methods::FloydSteinberg);
 model.Write(filename_out);
 ```
@@ -289,10 +294,9 @@ model.Write(filename_out);
 ```cs
 var file3dm = File3dm.Read(filename_in);
 var gp = file3dm.Settings.RenderSettings.GroundPlane;
-Console.WriteLine("On:                  {0}", gp.Enabled);
+Console.WriteLine("Enabled:             {0}", gp.Enabled);
 Console.WriteLine("Altitude:            {0}", gp.Altitude);
-Console.WriteLine("TextureSize:         {0}", gp.TextureSize);
-gp.TextureSize = new Vector2d(1.2, 3.4);
+gp.Enabled = false;
 model.Write(filename_out);
 ```
 
@@ -301,7 +305,12 @@ model.Write(filename_out);
 <div class="codetab-content1" id="py1">
 
 ```py
-
+import _rhino3dm
+model = _rhino3dm.File3dm.Read(filename_in)
+gp = model.Settings.RenderSettings.GroundPlane
+print(gp.Enabled)
+print(gp.Altitude)
+gp.Enabled = False
 ```
 
 </div>
@@ -321,10 +330,9 @@ ONX_Model model;
 model.Read(filename_in);
 auto& gp = model.m_settings.m_RenderSettings.GroundPlane();
 const auto on = gp.Enabled();
-const auto alt gp.Altitude();
-gp.SetOn(false);
+const auto alt = gp.Altitude();
+gp.SetEnabled(false);
 model.Write(filename_out);
-
 ```
 
 </div>
@@ -358,7 +366,12 @@ model.Write(filename_out);
 <div class="codetab-content2" id="py2">
 
 ```py
-
+import _rhino3dm
+model = _rhino3dm.File3dm.Read(filename_in)
+lw = model.Settings.RenderSettings.LinearWorkflow
+print(lw.PostProcessGammaOn)
+print(lw.PostProcessGamma)
+lw.PostProcessGamma = 3.4
 ```
 
 </div>
@@ -413,7 +426,11 @@ model.Write(filename_out);
 <div class="codetab-content3" id="py3">
 
 ```py
-
+import _rhino3dm
+model = _rhino3dm.File3dm.Read(filename_in)
+rch = model.Settings.RenderSettings.RenderChannels
+print(rch.Mode)
+rch.Mode = _rhino3dm.RenderChannelsModes.Custom
 ```
 
 </div>
@@ -468,7 +485,12 @@ model.Write(filename_out);
 <div class="codetab-content4" id="py4">
 
 ```py
-
+import _rhino3dm
+model = _rhino3dm.File3dm.Read(filename_in)
+sf = model.Settings.RenderSettings.SafeFrame
+print(sf.Enabled)
+print(sf.ActionFrameXScale)
+sf.ActionFrameXScale = 0.45
 ```
 
 </div>
@@ -515,7 +537,7 @@ model.Write(filename_out);
 ```cs
 var file3dm = File3dm.Read(filename_in);
 var sl = file3dm.Settings.RenderSettings.Skylight;
-Console.WriteLine("On:              {0}", sl.Enabled);
+Console.WriteLine("Enabled:         {0}", sl.Enabled);
 Console.WriteLine("ShadowIntensity: {0}", sl.ShadowIntensity);
 sl.ShadowIntensity = 1.4;
 model.Write(filename_out);
@@ -526,7 +548,12 @@ model.Write(filename_out);
 <div class="codetab-content5" id="py5">
 
 ```py
-
+import _rhino3dm
+model = _rhino3dm.File3dm.Read(filename_in)
+sl = model.Settings.RenderSettings.Skylight
+print(sl.Enabled)
+print(sl.ShadowIntensity)
+sl.ShadowIntensity = 1.4
 ```
 
 </div>
@@ -546,9 +573,9 @@ model.Write(filename_out);
 ONX_Model model;
 model.Read(filename_in);
 auto& sl = model.m_settings.m_RenderSettings.Skylight();
-const auto on = sl.On();
+const auto on = sl.Enabled();
 const auto si = sl.ShadowIntensity();
-sl.SetOn(false);
+sl.SetEnabled(false);
 sl.SetShadowIntensity(1.4);
 model.Write(filename_out);
 ```
@@ -592,7 +619,18 @@ model.Write(filename_out);
 <div class="codetab-content6" id="py6">
 
 ```py
-
+import _rhino3dm
+model = _rhino3dm.File3dm.Read(filename_in)
+sun = model.Settings.RenderSettings.Sun;
+print(sun.EnableOn);
+print(sun.TimeZone);
+print(sun.Year, sun.Month, sun.Day, sun.Hours)
+print(sun.Azimuth)
+print("Place sun observer at the Greenwich observatory in London")
+sun.Latitude = 51.4769;
+sun.Longitude = -0.0005;
+print(sun.Azimuth)
+sun.TimeZone = 0.0;
 ```
 
 </div>
@@ -612,7 +650,7 @@ model.Write(filename_out);
 ONX_Model model;
 model.Read(filename_in);
 auto& sun = model.m_settings.m_RenderSettings.Sun();
-const auto on = sun.sun.EnableOn();
+const auto on = sun.EnableOn();
 const auto tz = sun.TimeZone();
 sun.SetEnableOn(true);
 sun.SetTimeZone(2.0);
@@ -649,11 +687,12 @@ var post_effects = file3dm.Settings.RenderSettings.PostEffects;
 
 foreach (var post_effect in post_effects)
 {
-  Console.WriteLine("Id:        {0}", pep.Id);
-  Console.WriteLine("Type:      {0}", pep.Type);
-  Console.WriteLine("LocalName: {0}", pep.LocalName);
-  Console.WriteLine("On:        {0}", pep.On);
-  Console.WriteLine("Shown:     {0}", pep.Shown);
+  Console.WriteLine(pep.LocalName);
+  Console.WriteLine("--------------------");
+  Console.WriteLine("Id   : {0}", pep.Id);
+  Console.WriteLine("Type : {0}", pep.Type);
+  Console.WriteLine("On   : {0}", pep.On);
+  Console.WriteLine("Shown: {0}", pep.Shown);
 
   // If the post effect has a radius parameter, change its value.
   var p = pep.GetParameter("radius");
@@ -669,7 +708,18 @@ foreach (var post_effect in post_effects)
 <div class="codetab-content7" id="py7">
 
 ```py
+import _rhino3dm
+model = _rhino3dm.File3dm.Read(filename_in)
+post_effects = model.Settings.RenderSettings.PostEffects
 
+for pe in post_effects :
+    print(pe.LocalName)
+    print("--------------------")
+    print("Id   : ", pe.Id)
+    print("Type : ", pe.Type)
+    print("On   : ", pe.On)
+    print("Shown: ", pe.Shown)
+    print("")
 ```
 
 </div>
@@ -765,7 +815,21 @@ foreach (var rt in file3dm.RenderTextures)
 <div class="codetab-content8" id="py8">
 
 ```py
+import _rhino3dm
+model = _rhino3dm.File3dm.Read(filename_in)
 
+for rc in model.RenderContent :
+    if isinstance(rc, _rhino3dm.RenderMaterial) :
+       print(rc.TypeName)
+       print(rc.GetParameter("ior"))
+       print("Setting IOR and transparency")
+       _ = rc.SetParameter("ior", "2.5")
+       _ = rc.SetParameter("transparency", "0.5")
+    if isinstance(rc, _rhino3dm.RenderEnvironment) :
+       e = rc.ToEnvironment()
+       print(e.BackgroundColor)
+    if isinstance(rc, _rhino3dm.RenderTexture) :
+       print(rc.Filename)
 ```
 
 </div>
@@ -870,7 +934,15 @@ foreach (var ef in file3dm.EmbeddedFiles)
 <div class="codetab-content9" id="py9">
 
 ```py
+import os
+import _rhino3dm
+model = _rhino3dm.File3dm.Read(filename_in)
 
+for ef in model.EmbeddedFiles :
+    dir = os.path.dirname(ef.Filename)
+    file = os.path.basename(ef.Filename)
+    new_file = os.path.join(dir, "CopyOf_" + file)
+    ef.Write(new_file)
 ```
 
 </div>
