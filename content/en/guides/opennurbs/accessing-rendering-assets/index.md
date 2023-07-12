@@ -168,7 +168,16 @@ while (e.MoveNext())
 <div class="codetab-content" id="py">
 
 ```py
+import _rhino3dm
+model = _rhino3dm.File3dm.Read(filename_in)
 
+for obj in model.Objects:
+    for decal in obj.Attributes.Decals:
+        print(decal.Mapping)
+        print(decal.Projection)
+        print(decal.Origin)
+        print(decal.Transparency)
+        print()
 ```
 
 </div>
