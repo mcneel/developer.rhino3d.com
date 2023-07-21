@@ -14,6 +14,7 @@ disable404 = "true" # we custom generate our 404 page based on a template for lo
 enableGitInfo = "true"
 disableKinds = ["RSS"]
 disablePathToLower = true
+buildFuture = "true"
 
 [security.funcs]
     getenv = ['^HUGO_', 'MCNEEL_REGION']
