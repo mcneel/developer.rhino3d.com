@@ -1,6 +1,6 @@
 +++
 authors = ["john.croudy"]
-categories = []
+categories = ["Fundamentals"]
 description = "OpenNURBS and Rhino3dm provide direct access to rendering information without the need for Rhino."
 keywords = [ "Rendering", "RDK", "OpenNURBS", "Materials", "Textures" ]
 languages = [ "C/C++", "C#" ]
