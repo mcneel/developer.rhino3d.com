@@ -190,10 +190,10 @@ import * as fs from 'fs' //only if running in node.js
 import rhino3dm from 'rhino3dm'
 
 const rhino = await rhino3dm()
-
 const buffer = fs.readFileSync( filename_in )
+
 /*
-if you are running this in a browser, you can replace the above line with these two lines:
+if you are running this in a browser, comment out the first line (the fs import) and replace the above line with these two lines:
 const file = await fetch( filename_in )
 const buffer = await file.arrayBuffer()
 */
@@ -302,11 +302,10 @@ import * as fs from 'fs' //only if running in node.js
 import rhino3dm from 'rhino3dm'
 
 const rhino = await rhino3dm()
-
 const buffer = fs.readFileSync( filename_in )
 
 /*
-if you are running this in a browser, you can replace the above line with these two lines:
+if you are running this in a browser, comment out the first line (the fs import) and replace the above line with these two lines:
 const file = await fetch( filename_in )
 const buffer = await file.arrayBuffer()
 */
@@ -391,13 +390,10 @@ import * as fs from 'fs' //only if running in node.js
 import rhino3dm from 'rhino3dm'
 
 const rhino = await rhino3dm()
-
-//const file3dm = new rhino.File3dm()
-
 const buffer = fs.readFileSync( filename_in )
 
 /*
-if you are running this in a browser, you can replace the above line with these two lines:
+if you are running this in a browser, comment out the first line (the fs import) and replace the above line with these two lines:
 const file = await fetch( filename_in )
 const buffer = await file.arrayBuffer()
 */
@@ -477,13 +473,10 @@ import * as fs from 'fs' //only if running in node.js
 import rhino3dm from 'rhino3dm'
 
 const rhino = await rhino3dm()
-
-//const file3dm = new rhino.File3dm()
-
 const buffer = fs.readFileSync( filename_in )
 
 /*
-if you are running this in a browser, you can replace the above line with these two lines:
+if you are running this in a browser, comment out the first line (the fs import) and replace the above line with these two lines:
 const file = await fetch( filename_in )
 const buffer = await file.arrayBuffer()
 */
@@ -559,13 +552,10 @@ import * as fs from 'fs' //only if running in node.js
 import rhino3dm from 'rhino3dm'
 
 const rhino = await rhino3dm()
-
-//const file3dm = new rhino.File3dm()
-
 const buffer = fs.readFileSync( filename_in )
 
 /*
-if you are running this in a browser, you can replace the above line with these two lines:
+if you are running this in a browser, comment out the first line (the fs import) and replace the above line with these two lines:
 const file = await fetch( filename_in )
 const buffer = await file.arrayBuffer()
 */
@@ -643,13 +633,10 @@ import * as fs from 'fs' //only if running in node.js
 import rhino3dm from 'rhino3dm'
 
 const rhino = await rhino3dm()
-
-//const file3dm = new rhino.File3dm()
-
 const buffer = fs.readFileSync( filename_in )
 
 /*
-if you are running this in a browser, you can replace the above line with these two lines:
+if you are running this in a browser, comment out the first line (the fs import) and replace the above line with these two lines:
 const file = await fetch( filename_in )
 const buffer = await file.arrayBuffer()
 */
@@ -730,13 +717,10 @@ import * as fs from 'fs' //only if running in node.js
 import rhino3dm from 'rhino3dm'
 
 const rhino = await rhino3dm()
-
-//const file3dm = new rhino.File3dm()
-
 const buffer = fs.readFileSync( filename_in )
 
 /*
-if you are running this in a browser, you can replace the above line with these two lines:
+if you are running this in a browser, comment out the first line (the fs import) and replace the above line with these two lines:
 const file = await fetch( filename_in )
 const buffer = await file.arrayBuffer()
 */
@@ -831,13 +815,10 @@ import * as fs from 'fs' //only if running in node.js
 import rhino3dm from 'rhino3dm'
 
 const rhino = await rhino3dm()
-
-//const file3dm = new rhino.File3dm()
-
 const buffer = fs.readFileSync( filename_in )
 
 /*
-if you are running this in a browser, you can replace the above line with these two lines:
+if you are running this in a browser, comment out the first line (the fs import) and replace the above line with these two lines:
 const file = await fetch( filename_in )
 const buffer = await file.arrayBuffer()
 */
@@ -947,7 +928,35 @@ for pe in post_effects :
 <div class="codetab-content7" id="js7">
 
 ```js
+// node.js
+import * as fs from 'fs' //only if running in node.js
+import rhino3dm from 'rhino3dm'
 
+const rhino = await rhino3dm()
+const buffer = fs.readFileSync( filename_in )
+
+/*
+if you are running this in a browser, comment out the first line (the fs import) and replace the above line with these two lines:
+const file = await fetch( filename_in )
+const buffer = await file.arrayBuffer()
+*/
+
+const arr = new Uint8Array( buffer )
+const file3dm = rhino.File3dm.fromByteArray( arr )
+
+const pes = file3dm.settings().renderSettings().postEffects
+
+for( let i = 0; i < pes.count; i ++ ) {
+
+    const pe = pes.get( i )
+
+    console.log( `Post Effect localName: ${ pe.localName }` )
+    console.log( `Post Effect id: ${ pe.id }` )
+    console.log( `Post Effect type: ${ pe.type.constructor.name }` )
+    console.log( `Post Effect on: ${ pe.on }` )
+    console.log( `Post Effect shown: ${ pe.shown }` )
+    console.log()
+}
 ```
 
 </div>
@@ -1057,7 +1066,53 @@ for rc in model.RenderContent :
 <div class="codetab-content8" id="js8">
 
 ```js
+// node.js
+import * as fs from 'fs' //only if running in node.js
+import rhino3dm from 'rhino3dm'
 
+const rhino = await rhino3dm()
+const buffer = fs.readFileSync( filename_in )
+
+/*
+if you are running this in a browser, comment out the first line (the fs import) and replace the above line with these two lines:
+const file = await fetch( filename_in )
+const buffer = await file.arrayBuffer()
+*/
+
+const arr = new Uint8Array( buffer )
+const file3dm = rhino.File3dm.fromByteArray( arr )
+
+for ( let i = 0; i < file3dm.renderContent().count; i ++ ) {
+
+  const rc = file3dm.renderContent().get(i)
+
+  switch( rc.kind ) {
+
+    case 'material':
+
+      console.log( `Render Material ior: ${ rc.getParameter( "ior" ) }` )
+      console.log( 'Setting IOR and transparency' )
+      rc.setParameter( 'ior', '2.5' )
+      rc.setParameter( 'transparency', '0.5' )
+
+      break
+
+    case 'environment':
+
+      console.log( `Render Environment Background Color: ${ rc.getParameter( 'background-color' ) }` )
+
+      break
+
+    case 'texture':
+
+      console.log( `Render Texture FileName: ${ rc.fileName }` )
+
+      break
+
+  }
+
+
+}
 ```
 
 </div>
@@ -1170,7 +1225,30 @@ for ef in model.EmbeddedFiles :
 <div class="codetab-content9" id="js9">
 
 ```js
+// node.js
+import * as fs from 'fs' //only if running in node.js
+import rhino3dm from 'rhino3dm'
 
+const rhino = await rhino3dm()
+const buffer = fs.readFileSync( filename_in )
+
+/*
+if you are running this in a browser, comment out the first line (the fs import) and replace the above line with these two lines:
+const file = await fetch( filename_in )
+const buffer = await file.arrayBuffer()
+*/
+
+const arr = new Uint8Array( buffer )
+const file3dm = rhino.File3dm.fromByteArray( arr )
+
+const embeddedFiles = file3dm.embeddedFiles()
+
+for( let i = 0; i < embeddedFiles.count; i ++ ) {
+
+    const ef = embeddedFiles.get( i )
+    console.log(`Embedded File fileName: ${file.fileName}`)
+
+}
 ```
 
 </div>
