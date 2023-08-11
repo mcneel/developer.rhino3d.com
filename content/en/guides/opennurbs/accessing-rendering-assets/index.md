@@ -10,7 +10,7 @@ type = "guides"
 weight = 4
 
 [admin]
-TODO = "Author this page"
+TODO = "Add a three.js viewer at the top"
 origin = "https://docs.google.com/document/d/1t92RN1Uqb7olnkiH0WNqK3oP8e0rgnomSrutlV3jRGc"
 picky_sisters = ""
 state = "In Progress"
@@ -23,12 +23,12 @@ since = 8
 byline = true
 toc = true
 toc_type = "single"
-block_webcrawlers = true
+block_webcrawlers = false
 +++
 
-OpenNURBS and Rhino3dm now provide direct access to rendering information without the need for Rhino. (Prior to this, the only way to access this information outside of Rhino was by getting the data as XML and parsing it.) For example:
+OpenNURBS and Rhino3dm now provide direct access to rendering information without the need for Rhino. (Prior to this, the only way to access this information outside of Rhino was by getting the data as XML and parsing it.)
 
-**TODO**: Three.js model here?
+<!-- **TODO**: Three.js model here? -->
 
 This guide outlines classes used to access these rendering assets and provides examples.
 
