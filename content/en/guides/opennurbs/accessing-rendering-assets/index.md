@@ -185,6 +185,38 @@ for obj in model.Objects:
 <div class="codetab-content" id="js">
 
 ```js
+// node.js
+import * as fs from 'fs' //only if running in node.js
+import rhino3dm from 'rhino3dm'
+
+const rhino = await rhino3dm()
+
+const buffer = fs.readFileSync( filename_in )
+/*
+if you are running this in a browser, you can replace the above line with these two lines:
+const file = await fetch( filename_in )
+const buffer = await file.arrayBuffer()
+*/
+
+const arr = new Uint8Array( buffer )
+const file3dm = rhino.File3dm.fromByteArray( arr )
+const objects = file3dm.objects()
+
+for( let i = 0; i < objects.count; i ++ ) {
+
+    const attributes = objects.get( i ).attributes()
+
+    for( let j = 0; j < attributes.decals().count; j ++ ) {
+
+        const decal = attributes.decals().get( j )
+
+        console.log( `Decal Mapping: ${decal.mapping.constructor.name}` )
+        console.log( `Decal Projection: ${decal.projection.constructor.name}`)
+        console.log( `Decal Origin: ${decal.origin}` )
+        console.log( `Decal Transparency: ${decal.transparency}` )
+
+    }
+}
 
 ```
 
@@ -265,6 +297,33 @@ dit.Method = _rhino3dm.DitheringMethods.FloydSteinberg
 <div class="codetab-content0" id="js0">
 
 ```js
+// node.js
+import * as fs from 'fs' //only if running in node.js
+import rhino3dm from 'rhino3dm'
+
+const rhino = await rhino3dm()
+
+const buffer = fs.readFileSync( filename_in )
+
+/*
+if you are running this in a browser, you can replace the above line with these two lines:
+const file = await fetch( filename_in )
+const buffer = await file.arrayBuffer()
+*/
+
+const arr = new Uint8Array( buffer )
+const file3dm = rhino.File3dm.fromByteArray( arr )
+
+const dithering = file3dm.settings().renderSettings().dithering
+
+console.log( `Dithering Enabled: ${ dithering.enabled }` )
+console.log( `Dithering Method: ${ dithering.method.constructor.name }` )
+
+dithering.enabled = true
+dithering.method = rhino.DitheringMethods.SimpleNoise
+
+console.log( `Dithering Enabled: ${ dithering.enabled }` )
+console.log( `Dithering Method: ${ dithering.method.constructor.name }` )
 
 ```
 
@@ -327,6 +386,31 @@ gp.Enabled = False
 <div class="codetab-content1" id="js1">
 
 ```js
+// node.js
+import * as fs from 'fs' //only if running in node.js
+import rhino3dm from 'rhino3dm'
+
+const rhino = await rhino3dm()
+
+//const file3dm = new rhino.File3dm()
+
+const buffer = fs.readFileSync( filename_in )
+
+/*
+if you are running this in a browser, you can replace the above line with these two lines:
+const file = await fetch( filename_in )
+const buffer = await file.arrayBuffer()
+*/
+
+const arr = new Uint8Array( buffer )
+const file3dm = rhino.File3dm.fromByteArray( arr )
+
+const gp = file3dm.settings().renderSettings().groundPlane
+
+console.log( `Ground Plane Enabled: ${ gp.enabled }` )
+console.log( `Ground Plane Altitude: ${ gp.altitude }` )
+
+gp.enabled = false
 
 ```
 
@@ -388,7 +472,30 @@ lw.PostProcessGamma = 3.4
 <div class="codetab-content2" id="js2">
 
 ```js
+// node.js
+import * as fs from 'fs' //only if running in node.js
+import rhino3dm from 'rhino3dm'
 
+const rhino = await rhino3dm()
+
+//const file3dm = new rhino.File3dm()
+
+const buffer = fs.readFileSync( filename_in )
+
+/*
+if you are running this in a browser, you can replace the above line with these two lines:
+const file = await fetch( filename_in )
+const buffer = await file.arrayBuffer()
+*/
+
+const arr = new Uint8Array( buffer )
+const file3dm = rhino.File3dm.fromByteArray( arr )
+
+const lw = file3dm.settings().renderSettings().linearWorkflow
+
+console.log( `Linear Workflow Post Proces Gamma On: ${ lw.postProcessGammaOn }` )
+console.log( `Linear Workflow Post Proces Gamma: ${ lw.postProcessGamma }` )
+lw.PostProcessGamma = 3.4
 ```
 
 </div>
@@ -447,7 +554,31 @@ rch.Mode = _rhino3dm.RenderChannelsModes.Custom
 <div class="codetab-content3" id="js3">
 
 ```js
+// node.js
+import * as fs from 'fs' //only if running in node.js
+import rhino3dm from 'rhino3dm'
 
+const rhino = await rhino3dm()
+
+//const file3dm = new rhino.File3dm()
+
+const buffer = fs.readFileSync( filename_in )
+
+/*
+if you are running this in a browser, you can replace the above line with these two lines:
+const file = await fetch( filename_in )
+const buffer = await file.arrayBuffer()
+*/
+
+const arr = new Uint8Array( buffer )
+const file3dm = rhino.File3dm.fromByteArray( arr )
+
+const rch = file3dm.settings().renderSettings().renderChannels
+
+console.log( `renderChannels mode: ${ rch.mode.constructor.name }` )
+console.log( `renderChannels customIds: ${ rch.customIds }` )
+
+rch.mode = rhino.RenderChannelsModes.Custom
 ```
 
 </div>
@@ -507,7 +638,31 @@ sf.ActionFrameXScale = 0.45
 <div class="codetab-content4" id="js4">
 
 ```js
+// node.js
+import * as fs from 'fs' //only if running in node.js
+import rhino3dm from 'rhino3dm'
 
+const rhino = await rhino3dm()
+
+//const file3dm = new rhino.File3dm()
+
+const buffer = fs.readFileSync( filename_in )
+
+/*
+if you are running this in a browser, you can replace the above line with these two lines:
+const file = await fetch( filename_in )
+const buffer = await file.arrayBuffer()
+*/
+
+const arr = new Uint8Array( buffer )
+const file3dm = rhino.File3dm.fromByteArray( arr )
+
+const sf = file3dm.settings().renderSettings().safeFrame
+
+console.log( `Safe Frame Enabled: ${ sf.enabled }` )
+console.log( `Safe Frame ActionFrameXScale: ${ sf.actionFrameXScale }` )
+
+sf.actionFrameXScale = 0.45
 ```
 
 </div>
@@ -570,7 +725,31 @@ sl.ShadowIntensity = 1.4
 <div class="codetab-content5" id="js5">
 
 ```js
+// node.js
+import * as fs from 'fs' //only if running in node.js
+import rhino3dm from 'rhino3dm'
 
+const rhino = await rhino3dm()
+
+//const file3dm = new rhino.File3dm()
+
+const buffer = fs.readFileSync( filename_in )
+
+/*
+if you are running this in a browser, you can replace the above line with these two lines:
+const file = await fetch( filename_in )
+const buffer = await file.arrayBuffer()
+*/
+
+const arr = new Uint8Array( buffer )
+const file3dm = rhino.File3dm.fromByteArray( arr )
+
+const sl = file3dm.settings().renderSettings().skylight
+
+console.log( `Skylight Enabled: ${ sl.enabled }` )
+console.log( `Skylight Shadow Intensity: ${ sl.shadowIntensity }` )
+
+sl.shadowIntensity = 0.45
 ```
 
 </div>
@@ -647,7 +826,39 @@ sun.TimeZone = 0.0;
 <div class="codetab-content6" id="js6">
 
 ```js
+// node.js
+import * as fs from 'fs' //only if running in node.js
+import rhino3dm from 'rhino3dm'
 
+const rhino = await rhino3dm()
+
+//const file3dm = new rhino.File3dm()
+
+const buffer = fs.readFileSync( filename_in )
+
+/*
+if you are running this in a browser, you can replace the above line with these two lines:
+const file = await fetch( filename_in )
+const buffer = await file.arrayBuffer()
+*/
+
+const arr = new Uint8Array( buffer )
+const file3dm = rhino.File3dm.fromByteArray( arr )
+
+const sun = file3dm.settings().renderSettings().sun
+
+console.log( `Sun enableOn: ${ sun.enableOn }` )
+console.log( `Sun timeZone: ${ sun.timeZone }` )
+console.log( `Sun azimuth: ${ sun.azimuth }` )
+console.log( `Sun year: ${ sun.year }` )
+console.log( `Sun month: ${ sun.month }` )
+console.log( `Sun day: ${ sun.day }` )
+console.log( `Sun hours: ${ sun.hours }` )
+console.log('Place sun observer at the Greenwich observatory in London')
+sun.latitude = 51.4769
+sun.longitude = -0.0005
+console.log( `Sun azimuth: ${ sun.azimuth }` )
+sun.timeZone = 0.0;
 ```
 
 </div>
