@@ -1,5 +1,5 @@
 +++
-authors = ["john.croudy"]
+authors = ["john.croudy", "luis"]
 categories = ["Fundamentals"]
 description = "OpenNURBS and Rhino3dm provide direct access to rendering information without the need for Rhino."
 keywords = [ "Rendering", "RDK", "OpenNURBS", "Materials", "Textures" ]
