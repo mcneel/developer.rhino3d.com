@@ -112,12 +112,12 @@ To install your custom Skin, use *REGEDIT.EXE* to add a scheme key to your regis
 
 | **Item** |    |    | **Value** |
 |:--------|:----:|:----:|:--------|
-| Subkey   |    |    | HKEY_LOCAL_MACHINE\SOFTWARE\McNeel\Rhinoceros\[MajorVersion].0\Scheme: MySkin   |
+| Subkey   |    |    | HKEY_LOCAL_MACHINE\SOFTWARE\McNeel\Rhinoceros\MajorVersion.0\Scheme: MySkin   |
 | Entry name   |    |    | SkinDLLPath   |
 | Type   |    |    | REG_SZ   |
 | Data value   |    |    | C:\Src\MySkin\Bin\Release\MySkin.rhs   |
 
-Where `[MajorVersion]` is the major version of Rhino (e.g. 6, 7, 8).
+Where `MajorVersion` is the major version of Rhino (e.g. 6, 7, 8).
 
 ## Testing
 
