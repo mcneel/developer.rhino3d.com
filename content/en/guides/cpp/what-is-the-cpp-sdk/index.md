@@ -35,17 +35,18 @@ The Rhino C/C++SDK consists primarily of C++ headers and libraries that can be u
 
 ## Types of Plugins
 
-Rhino supports five different types of plugins:
+Rhino supports five different types of plug-ins:
 
 | Type                 | Description                                                  |
-| -------------------- | ------------------------------------------------------------ |
+|:-------------------- |:------------------------------------------------------------ |
 | **General Utility**  | A general purpose utility that can contain one or more commands. |
 | **File Import**      | Imports data from other file formats into Rhino; can support multiple file formats. |
 | **File Export**      | Exports data from Rhino to other file formats; can support multiple file formats. |
 | **Custom Rendering** | Applies materials, textures, and lights to a scene to produce rendered images. |
 | **3D Digitizing**    | Interfaces with 3D digitizing and other alternative input devices. |
 
-Note: File Import, File Export, Custom Rendering and 3D Digitizing plug-ins are all specialized enhancements to the General Utility plug-in.  Thus, all plugin types can contain one or more commands.
+
+Note: File Import, File Export, Custom Rendering and 3D Digitizing plug-ins are all specialized enhancements to the General Utility plug-in.  Thus, all plug-in types can contain one or more commands.
 
 As with all of our development tools, the Rhino C/C++ SDK is free, royalty free, and includes free developer support.
 
