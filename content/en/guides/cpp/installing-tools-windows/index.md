@@ -28,57 +28,86 @@ toc_type = "single"
 
 +++
 
-
-By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C/C++ plugins using the Rhino C/C++ SDK on Windows.
+By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C/C++ plug-ins using the Rhino C/C++ SDK on Windows.
 
 ## Prerequisites
 
 This guide presumes you have:
 
+### Rhino 8
+
+- A PC running Microsoft Windows 10 or later.
+- [Rhino 8 for Windows](https://www.rhino3d.com/download).
+
+### Rhino 7
+
 - A PC running Microsoft Windows 8.1 or later.
 - [Rhino 7 for Windows](https://www.rhino3d.com/download).
 
 ## Install Visual Studio
-In order to author, build, and debug C/C++ plugins for Rhino, you will need Microsoft [Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/).
 
-Visual Studio 2019 comes in three editions: Community, Professional, and Enterprise. All of these editions will work with the Rhino C/C++ SDK.
+### Rhino 8
 
-#### Step-by-Step
+To write C++ plug-ins for Rhino 8 using the Rhino 8 C/C++ SDK, you will need a version of Microsoft Visual Studio that includes the Visual Studio 2019 (v142) platform toolset. Thus, you can use either [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) or [Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/).
 
-1. **[Visual Studio 2019 Community](https://apps.microsoft.com/store/detail/visual-studio-community-2019/XP8CDJNZKFM06W)** is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://visualstudio.microsoft.com/license-terms/mlt031819/).  Click the **Community** button to download the installer.
-2. Run the **Visual Studio installer** you downloaded from Microsoft, in this case ***vs_community_[build_number].exe***.
+1. Download **Microsoft Visual Studio**, either [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) or [Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/).
+2. Run the **Visual Studio installer** you just downloaded.
     ![Visual Studio Install](/images/installing-tools-windows-cpp-01.png)
-3. Follow the onscreen prompts to install Visual Studio. Make sure to select all of the **Desktop development with C++** features.
-4. Click the **Individual components** tab, scroll to the **SDKs, libraries, and frameworks** section, and check **Visual Studio SDK**.
+3. Follow the onscreen prompts to install Visual Studio.
+4. Check the **Desktop development with C++** workload.
+5. Click the **Individual components** tab.
+6. Scroll to the **Compilers, build tools, and runtimes** section and check the following option:
+    1. MSVC v142 - VS 2019 C++ x64/x86 build tools
+7. Scroll to the **SDKs, libraries, and frameworks** section and check the following options:
+    1. C++ v14.2 ATL for v142 build tools (x86 & x64)
+    2. C++ v14.2 MFC for v142 build tools (x86 & x64)
+    3. Windows 10 SDK
+8. Check any additional features required for your project.
+9. When finished, click **Install**.
+10. Depending on your internet connection, this can take several minutes to complete.
+
+If you already have Microsoft Visual Studio 2022 or 2019 installed, then you will want to re-run the **Visual Studio Installer** and verify you have all the the components installed.
+
+### Rhino 7
+
+To write C++ plug-ins for Rhino 7 using the Rhino 7 C/C++ SDK, you will need [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/).
+
+1. Download **[Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/)**.
+2. Run the **Visual Studio installer** you just downloaded.
     ![Visual Studio Install](/images/installing-tools-windows-cpp-02.png)
-5. When finished, click **Install**.
-6. Depending on your internet connection, this can take several minutes to complete.
+3. Follow the onscreen prompts to install Visual Studio.
+4. Check the **Desktop development with C++** workload.
+5. Click the **Individual components** tab.
+6. Scroll to the **SDKs, libraries, and frameworks** section and check the following option:
+    1. Visual Studio SDK
+7. Check any additional features required for your project.
+8. When finished, click **Install**.
+9. Depending on your internet connection, this can take several minutes to complete.
 
-## Modifying Visual Studio
-
-If you already have Microsoft Visual Studio 2019 installed, then you will want to re-run the Visual Studio Installer and verify you have all the the components required to build Rhino plug-in installed.
-
-#### Step-by-Step
-1. Open the **[Visual Studio Installer](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2019)**.
-2. In the installer, look for the 2019 edition of Visual Studio that you installed, and then choose **Modify**.
-3. As mentioned in **Install Visual Studio** above, select all of the **Desktop development with C++** features.
-4. Also mentioned above, click the **Individual components** tab, scroll to the **SDKs, libraries, and frameworks** section, and check **Visual Studio SDK**.
-5. When finished, click **Modify**.
-6. Depending on your internet connection, this can take several minutes to complete.
+If you already have Microsoft Visual Studio 2019 installed, then you will want to re-run the **Visual Studio Installer** and verify you have all the the components installed.
 
 ## Install the Rhino C/C++ SDK
 
 The **Rhino C/C++ SDK** is a set of tools for creating plug-in using the C++ language. The SDK includes headers, libraries and Visual Studio project wizards to get you started creating plugins quickly.
 
-#### Step-by-Step
+### Rhino 8
 
 1. Exit **Visual Studio**.
-2. Download the **[Rhino C/C++ SDK](https://www.rhino3d.com/download/Rhino-SDK/7.0/latest)**.
-3. Run the **SDK installer** you downloaded, in this case ***rh70sdk_[build_number].msi***.
+2. Download the **[Rhino 8 C/C++ SDK](https://www.rhino3d.com/download/rhino-sdk/wip)**.
+3. Run the **SDK installer** you downloaded.
+4. Download the **[Rhino Visual Studio Extension (VSIX)](https://github.com/mcneel/RhinoVisualStudioExtensions/releases)**.
+5. Run the **VSIX installer** you downloaded.
+6. If the installation is successful, run Visual Studio.
+
+### Rhino 7
+
+1. Exit **Visual Studio**.
+2. Download the **[Rhino 7 C/C++ SDK](https://www.rhino3d.com/download/Rhino-SDK/7.0/latest)**.
+3. Run the **SDK installer** you downloaded.
 4. If the installation is successful, run Visual Studio.
 
 ## Next Steps
 
 **Congratulations!** You have the tools to build a C/C++ plugin for Rhino for Windows. **Now what?**
 
-Check out the [Creating your first C/C++ plugin for Rhino](/guides/cpp/your-first-plugin-windows/) guide for instructions building - you guessed it - your first plugin.
+Check out the [Creating your first C/C++ plugin for Rhino](/guides/cpp/your-first-plugin-windows/) guide for instructions building your first plug-in.
