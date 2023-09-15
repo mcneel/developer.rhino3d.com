@@ -33,12 +33,22 @@ On Windows, you can still optionally run using the .NET Framework runtime in the
 
 Most plugins are already compatible when running in .NET Core without any recompilation, but in the case of any incompatibilities you may need to update your plugin.
 
+## Advantages of .NET Core for Rhino
+
+Using .NET Core allows Rhino and plugins to take advantage of many [performance improvements](https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7/) which will make just about all .NET code execute much faster.  This can potentially provide huge productivity gains with computational libraries or large data sets.
+
+Additionally, using .NET Core on Mac eliminates a lot of compatibility issues between the Mac and Windows versions of Rhino making it easier to make plugins work on both platforms.
+
 ## Choosing the .NET Runtime on Windows
 
-There are two ways to select the runtime that Rhino uses:
+There may be reasons to continue to use .NET Framework on Windows, in particular if you need to use 3rd party plugins that aren't compatible with .NET Core yet.  The disadvantage to using .NET Framework is that Rhino may run a little slower in certain use cases.  There are two ways to select the runtime that Rhino uses:
 
 1. Use the `SetDotNetRuntime` command, then restart Rhino.
 1. Pass either `/netcore` or `/netfx` as an argument when launching `Rhino.exe`. This overrides the `SetDotNetRuntime` setting.
+
+## Rhino.Inside
+
+When using Rhino.Inside, the runtime Rhino uses is the same as the host application.  For example, since Revit currently uses .NET Framework, Rhino.Inside.Revit will also run using .NET Framework.  Custom Rhino.Inside applications should still work, however migrating to .NET 7+ would allow you to take advantage of the performance improvements offered with .NET Core.
 
 ## Checking if your plugin is compatible
 
@@ -93,3 +103,7 @@ On Mac, get the [latest RhinoCommon Visual Studio extension](https://github.com/
 To override this, you can go to the **Project Properties > Rhino** panel and select the launcher version. This adds a `<RhinoMacLauncher>8</RhinoMacLauncher>` property to your project file.
 
 You can also use Visual Studio Code with the `coreclr` debugger type from the C# extension. Set the program to `/Applications/RhinoWIP.app/Contents/MacOS/Rhinoceros` and set either the `RHINO_PLUGIN_PATH` or `GRASSHOPPER_PLUGINS` to the path of your built plugin/component.
+
+## Discussions
+
+Jump over to our [developer discourse channel](https://discourse.mcneel.com/c/rhino-developer/3) to ask questions regarding the move to .NET Core.
