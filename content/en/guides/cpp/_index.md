@@ -36,7 +36,7 @@ since = 0
 {{< dev-topic-list "guides" "C/C++" "Getting Started" "weight" >}}
 
 ### Other Resources
-- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples/tree/7)
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
 - [Developer discussions on Discourse](https://discourse.mcneel.com/c/rhino-developer)
 
 ### Troubleshooting
