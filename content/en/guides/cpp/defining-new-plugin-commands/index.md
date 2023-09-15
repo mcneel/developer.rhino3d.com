@@ -6,10 +6,9 @@ description = "This guide discusses Rhino commands and how define new commands u
 keywords = [ "rhino", "commands" ]
 languages = [ "C/C++" ]
 sdk = [ "C/C++" ]
-title = "Defining New Plugin Commands"
+title = "Defining New Plug-in Commands"
 type = "guides"
 weight = 3
-override_last_modified = "2020-08-28T11:26:09Z"
 
 [admin]
 TODO = "needs to be reviewed for accuracy and considered for consolidation with other plugin topics"
@@ -28,24 +27,31 @@ toc_type = "single"
 
 +++
 
-
 ## Overview
 
-Rhino plugins can contain any number of commands.  Commands are created by deriving a new class from `CRhinoCommand`.  See *rhinoSdkCommand.h* for details on the `CRhinoCommand` class.
+Rhino plug-ins can contain any number of commands. Commands are created by deriving a new class from `CRhinoCommand`.  See *rhinoSdkCommand.h* for details on the `CRhinoCommand` class.
 
-Command classes must return a unique *UUID*.  If you try to use a *UUID* that is already in use, then your command will not work.  Use the *GUIDGEN.EXE* that comes with Visual Studio to create unique *UUIDs*.
+Command classes must return a unique *GUID*. If you try to use a *GUID* that is already in use, then your command will not work.  Use the *GUIDGEN.EXE* utility, that comes with Visual Studio, to create unique *GUIDs*.
 
-Command classes must return a unique command name.  If you try to use a command name that is already in use, then your command will not work.
+Command classes must return a unique command name. If you try to use a command name that is already in use, then your command will not work.
 
-Only ONE instance of a command class can be created.  This is why you should put the definition of your command classes in *.cpp* files.
+Only ONE instance of a command class can be created. This is why you should put the definition of your command classes in *.cpp* files.
 
-## Rhino Command Generator
+## Rhino 8
 
-The *Rhino Command Generator* wizard is a standalone application that will generate new skeleton `CRhinoCommand`-derived class.  The generated source code is copied to the Windows clipboard so you can easily paste it into your source files.
+The **[Rhino Visual Studio Extension](https://github.com/mcneel/RhinoVisualStudioExtensions/releases)**, for the Rhino 8 C/C++ SDK, includes a template that lets you quickly add new commands to your plug-in project.
 
-To use this tool in Visual Studio 2019:
+To add a new Rhino command to your plug-in project, right-click on the *Source Files* folder, in *Visual Studio’s Solution Explorer*, and click *Add > New Item...*. From the *Add New Item* dialog, select *Empty Command for Rhino 3D (C++)*, specify the name of the command, and click *Add*.
 
-1. Launch Visual Studio 2019.
+![Add New Item](/images/defining-new-plugin-commands-cpp.png)
+
+## Rhino 7
+
+The *Rhino Command Generator* wizard, included with the Rhino 7 C/C++ SDK, is a standalone application that will generate new skeleton `CRhinoCommand`-derived class. The generated source code is copied to the Windows clipboard so you can easily paste it into your source files.
+
+To use this tool in Visual Studio:
+
+1. Launch Visual Studio.
 2. Navigate to *Tools* > *External Tools...*.
 3. Use the *Add* button to add the *RhinoCommandGenerator.exe* file to the list.  The file can be found in the following location: *C:\\Program Files\\Rhino 7.0 SDK\\Wizards\\Command*
 
