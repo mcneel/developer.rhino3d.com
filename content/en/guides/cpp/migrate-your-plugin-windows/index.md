@@ -2,11 +2,11 @@
 aliases = ["/5/guides/cpp/migrate-your-plugin-windows/", "/6/guides/cpp/migrate-your-plugin-windows/", "/7/guides/cpp/migrate-your-plugin-windows/", "/wip/guides/cpp/migrate-your-plugin-windows/"]
 authors = [ "dale" ]
 categories = [ "Getting Started" ]
-description = "This guide walks you through migrating your Rhino 6 plugin project to Rhino 7."
+description = "This guide walks you through migrating your Rhino 6 plug-in project to Rhino 7."
 keywords = [ "c", "C/C++", "plugin" ]
 languages = [ "C/C++" ]
 sdk = [ "C/C++" ]
-title = "Migrate your plugin project to Rhino 7"
+title = "Migrate your plug-in project to Rhino 7"
 type = "guides"
 weight = 6
 override_last_modified = "2020-08-28T14:47:34Z"
