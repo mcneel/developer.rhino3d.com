@@ -39,13 +39,15 @@ While reading this article, it is helpful to use the standard Windows Registry e
 
 Rhino plugins are registered at the following location in the Windows Registry:
 
-`HKEY_LOCAL_MACHINE\Software\McNeel\Rhinoceros\7.0\Plug-ins`
+`HKEY_LOCAL_MACHINE\Software\McNeel\Rhinoceros\MajorVersion.0\Plug-ins`
+
+Where `MajorVersion` is the major version of Rhino (e.g. 6, 7, 8).
 
 ## Registering Your Plugin
 
 To register your plugin with Rhino, you will need to create a new Registry key at the above location.  The name of the Registry key will be your plugin's GUID, formatted as a string.  For example:
 
-`HKEY_LOCAL_MACHINE\Software\McNeel\Rhinoceros\7.0\Plug-ins\<your_plugin_guid>`
+`HKEY_LOCAL_MACHINE\Software\McNeel\Rhinoceros\MajorVersion.0\Plug-ins\<your_plugin_guid>`
 
 Under this new Registry key, create two new value names, ```Name``` and ```FileName``` that contain strings that identify your plugin's name and the full path to the *.rhp* file, respectively.  For example, if you had created a new plugin named *"MySamplePlugIn"*, the registry might look something like the following:
 
@@ -71,7 +73,7 @@ When your plugin loads for the first time, the rest of the normal Registry keys/
 
 There are other useful key values that are found in the following locations depending on the Rhino version:
 
-`HKEY_LOCAL_MACHINE\SOFTWARE\McNeel\Rhinoceros\7.0\Install`
+`HKEY_LOCAL_MACHINE\SOFTWARE\McNeel\Rhinoceros\MajorVersion.0\Install`
 
 where...
 
