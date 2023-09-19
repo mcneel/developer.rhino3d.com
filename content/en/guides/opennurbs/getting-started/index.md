@@ -76,12 +76,13 @@ Use `ONX_Model::Read()` and `ONX_Model::Write()` to add support for reading and 
 
 ## 3DM File Versions
 
-1. *Version 1 3DM files*. The openNURBS toolkit will read version 1 files.  Rhino 1 and other applications using the old Rhino I/O toolkit create version 1 files.
-1. *Version 2 3DM files*. The openNURBS toolkit will read and write version 2 files.  Rhino 2 and applications using an openNURBS toolkit released on or after December 2000 create version 2 files.  (Rhino 1 and the old Rhino I/O toolkit will not read version 2 files.)
-1. *Version 3 3DM files*. The openNURBS toolkit will read and write version 3 files.  Rhino 3 and applications using an openNURBS toolkit released on or after October 2002 create version 3 files.  (Rhino 1 and Rhino 2 will not read version 2 files.)
-1. *Version 4 3DM files*. The openNURBS toolkit will read and write version 4 files.  Rhino 4 and applications using an openNURBS toolkit released on or after September 2006 create version 4 files.  (Rhino 1, Rhino 2, and Rhino 3 will not read version 4 files.)
-1. *Version 5 3DM files*. The openNURBS toolkit will read and write version 5 files.  Rhino 5 and applications using an openNURBS toolkit released on or after September 2009 create version 5 files.  (Rhino 1, Rhino 2, Rhino 3 and Rhino 4 will not read version 5 files.)
-1. *Version 6 3DM files*. The openNURBS toolkit will read and write version 6 files.  Rhino 6 and applications using an openNURBS toolkit released on or after January 2018 create version 6 files.  (Rhino 1, Rhino 2, Rhino 3, Rhino 4 and Rhino 5 will not read version 6 files.)
+1. *Version 1 3DM files*. The openNURBS toolkit will read version 1 files. Rhino 1.0 and other applications using the old Rhino I/O toolkit create version 1 files.
+1. *Version 2 3DM files*. The openNURBS toolkit will read and write version 2 files. Rhino 2.0 and applications using an openNURBS toolkit released on or after December 2000 create version 2 files.  (Rhino 1.0 and the old Rhino I/O toolkit will not read version 2 files.)
+1. *Version 3 3DM files*. The openNURBS toolkit will read and write version 3 files. Rhino 3.0 and applications using an openNURBS toolkit released on or after October 2002 create version 3 files.  (Rhino's 1.0 and 2.0 will not read version 3 files.)
+1. *Version 4 3DM files*. The openNURBS toolkit will read and write version 4 files. Rhino 4.0 and applications using an openNURBS toolkit released on or after September 2006 create version 4 files.  (Rhino's 1.0, 2.0 and 3.0 will not read version 4 files.)
+1. *Version 5 3DM files*. The openNURBS toolkit will read and write version 5 files. Rhino 5 and applications using an openNURBS toolkit released on or after September 2009 create version 5 files.  (Rhino's 1.0, 2.0, 3.0 and 4.0 will not read version 5 files.)
+1. *Version 6 3DM files*. The openNURBS toolkit will read and write version 6 files. Rhino 6 and applications using an openNURBS toolkit released on or after January 2018 create version 6 files.  (Rhino's 1.0, 2.0, 3.0, 4.0 and 5 will not read version 6 files.)
+1. *Version 7 3DM files*. The openNURBS toolkit will read and write version 7 files. Rhino 7 and applications using an openNURBS toolkit released on or after November 2020 create version 7 files.  (Rhino's 1.0, 2.0, 3.0, 4.0, 5 and 6 will not read version 7 files.)
 
 Sample 3DM files are availble from https://www.rhino3d.com/opennurbs
 
