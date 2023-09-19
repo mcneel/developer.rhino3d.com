@@ -8,7 +8,7 @@ languages = [ "All" ]
 sdk = [ "openNURBS" ]
 title = "NURBS Geometry Overview"
 type = "guides"
-weight = 1
+weight = 3
 override_last_modified = "2020-08-07T08:34:31Z"
 
 [admin]
