@@ -75,6 +75,6 @@ Rhino subdivision objects are automatically converted to cubic NURBS polysurface
 
 To build openNURBS 6, use a C++ compiler that supports C++11. Both Microsoft’s Visual Studio 2017 and Apple’s XCode 9 support C++11.
 
-Use iterators to go through the contents of an `ONX_Model`. For an example, look at the source code for `ONX_Model::DumpComponentList()` in **opennurbs_extensions.cpp*.
+Use iterators to go through the contents of an `ONX_Model`. For an example, look at the source code for `ONX_Model::DumpComponentList()` in *opennurbs_extensions.cpp*.
 
 `ON_ComponentManifest` is a manifest of every component in a model or 3DM file. It provides simple ways fo find components by id or name. The function `ONX_Model.Manifest()` returns the manifest of the `ONX_Model`. When merging models, `ON_ManifestMap` can be used to efficiently manage name and id collisions.

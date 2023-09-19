@@ -28,14 +28,13 @@ toc_type = "single"
 
 +++
 
-
 ## Prerequisites
 
-openNURBS is intended for *skilled* C++ developers. Please read [What is openNURBS?](/guides/opennurbs/what-is-opennurbs) if you have not already.  It is also presumed that you have an application that wishes to access *3dm* files outside of Rhinoceros.
+openNURBS is intended for *skilled* C++ developers. Please read [What is openNURBS?](/guides/opennurbs/what-is-opennurbs) if you have not already. It is also presumed that you have an application that wishes to access *3DM* files outside of Rhinoceros.
 
 ## openNURBS public SDK
 
-To download the public C++ SDK, .NET SDK, or example 3DM files, visit https://www.rhino3d.com/opennurbs
+To download the public C++ SDK and example 3DM files, visit https://www.rhino3d.com/opennurbs.
 
 ## Supported C++ Compilers
 
@@ -44,9 +43,11 @@ The openNURBS C++ toolkit has been successfully used with the following compiler
 - *Microsoft Visual Studio 2019*: to build openNURBS and the examples with *Visual Studio 2019*, use the solution *opennurbs_public.sln*.
 
 To use C++ opennurbs in your Visual Studio project:
+
 1. Open opennurbs_public.sln in Visual Studio, select the platform and configuration, and rebuild all.
 1. In your project's stdafx.h, put the following lines. This will include all the header files you need to call C++ opennurbs and automatically link in the correct libraries:
-```
+
+```cpp
 // defining OPENNURBS_PUBLIC_INSTALL_DIR enables automatic linking using pragmas
 #define OPENNURBS_PUBLIC_INSTALL_DIR "<MY_INSTALLPATH>"
 // uncomment the next line if you want to use opennurbs as a DLL
