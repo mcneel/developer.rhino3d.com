@@ -35,6 +35,10 @@ since = 0
 
 {{< dev-topic-list "guides" "openNURBS" "Getting Started" "weight" >}}
 
+### Other Resources
+
+- [Developer discussions on Discourse](https://discourse.mcneel.com/c/opennurbs)
+
 {{< /column >}}
 {{< column >}}
 
