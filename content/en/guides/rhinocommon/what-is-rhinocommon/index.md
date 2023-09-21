@@ -9,7 +9,6 @@ sdk = [ "RhinoCommon" ]
 title = "What is RhinoCommon?"
 type = "guides"
 weight = 1
-override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = ""
@@ -33,34 +32,39 @@ RhinoCommon is the cross-platform .NET plugin SDK available for:
 
 - Rhino for Windows
 - Rhino for Mac
-- Rhino.Python scripting
+- Rhino.Python Scripting
 - Grasshopper
 
-The term _common_ is meant to be just that: an SDK that can be used across Rhino platforms. A plugin built with RhinoCommon could potentially run on both Windows and Mac platforms with no changes...
+The term _Common_ is meant to be just that: an SDK that can be used across Rhino platforms. A plugin built with RhinoCommon could potentially run on both Windows and Mac platforms with no changes.
 
 <div align="center">
   <img src="/images/rhinocommon-one-binary-two-platforms.png">
 </div>
 
+RhinoCommon is available as [NuGet package](https://www.nuget.org/packages/rhinocommon).
 
 ## Inside RhinoCommon
 
-RhinoCommon is composed of the following pieces.  These files are included with Rhino for Windows and Mac:
+RhinoCommon is composed of the following components:
 
-1. *RhinoCommon.dll* - This is a pure .NET DLL that plugins can reference and use to work with Rhino.
-1. *RhinoCommon.xml* - This is an XML file that contains SDK documentation comments specific to RhinoCommon.dll. Programming development environments like Visual Studio and MonoDevelop use this XML file to display tooltips and other helpful information while the developer writes code.
-1. *rhcommon_c.dll* and *monomanager.rhp* - These are C++ shared libraries compiled for specific target platforms (Win64 and macOS). These libraries are used by RhinoCommon, but should never be directly accessed by plugin developers.
+| Assembly       | Description                                                  |
+| :-------------- | :----------------------------------------------------------- |
+| **RhinoCommon.dll** | [RhinoCommon](https://developer.rhino3d.com/api/rhinocommon/html/R_Project_RhinoCommon.htm?version=8.x) is the core .NET assembly that plugins reference in order to interact with Rhino. |
+| **Eto.dll**         | [Eto](https://github.com/picoe/Eto) is a framework can be used to build user interfaces that run across multiple platforms using their native toolkit, with an easy to use API. This will make your plug-in look and work as a native application on all platforms, using a single UI codebase. |
+| **Rhino.UI.dll**    | [Rhino.UI](https://developer.rhino3d.com/api/rhinocommon/rhino.ui) is a utility .NET assembly that contains Rhino-specific user interface and other miscellaneous classes. |
 
-RhinoCommon on macOS is executed through an embedded [Mono framework](http://www.mono-project.com/).
+## Types of Plugins
 
-## Rhino uses RhinoCommon
+RhinoCommon supports five different types of plugins:
 
-All .NET plugins that ship with Rhino for Windows and Rhino for Mac, including the Python interpreter, reference RhinoCommon.
+| Type                 | Description                                                  |
+|:-------------------- |:------------------------------------------------------------ |
+| **General Utility**  | A general purpose utility that can contain one or more commands. |
+| **File Import**      | Imports data from other file formats into Rhino; can support multiple file formats. |
+| **File Export**      | Exports data from Rhino to other file formats; can support multiple file formats. |
+| **Custom Rendering** | Applies materials, textures, and lights to a scene to produce rendered images. |
+| **3D Digitizing**    | Interfaces with 3D digitizing and other alternative input devices. |
 
-In 2011, Grasshopper was rewritten using RhinoCommon.  This was a big project and took some time to complete, but once done it provided performance improvements and better memory management.  This is also a step toward Grasshopper running on Rhino for Mac.
+Note: File Import, File Export, Custom Rendering and 3D Digitizing plugins are all specialized enhancements to the General Utility plugin. Thus, all plugin types can contain one or more commands.
 
-The [Python](/guides#rhinopython) script engine is entirely based on RhinoCommon.  All python scripts use RhinoCommon to work with Rhino. Typically, if it is difficult to write a Python script using a RhinoCommon API, then the RhinoCommon SDK needs to be fixed.
-
-## Related topics
-
-- [What are Mono and Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/)
+As with all of our development tools, RhinoCommon is free, royalty free, and includes free developer support.
