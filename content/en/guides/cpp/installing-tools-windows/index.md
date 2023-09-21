@@ -27,7 +27,7 @@ toc_type = "single"
 
 +++
 
-By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C/C++ plug-ins using the Rhino C/C++ SDK on Windows.
+By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C/C++ plugins using the Rhino C/C++ SDK on Windows.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ This guide presumes you have:
 
 ### Rhino 8
 
-To write C++ plug-ins for Rhino 8 using the Rhino 8 C/C++ SDK, you will need a version of Microsoft Visual Studio that includes the Visual Studio 2019 (v142) platform toolset. Thus, you can use either [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) or [Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/).
+To write C++ plugins for Rhino 8 using the Rhino 8 C/C++ SDK, you will need a version of Microsoft Visual Studio that includes the Visual Studio 2019 (v142) platform toolset. Thus, you can use either [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) or [Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/).
 
 1. Download **Microsoft Visual Studio**, either [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) or [Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/).
 2. Run the **Visual Studio installer** you just downloaded.
@@ -69,7 +69,7 @@ If you already have Microsoft Visual Studio 2022 or 2019 installed, then you wil
 
 ### Rhino 7
 
-To write C++ plug-ins for Rhino 7 using the Rhino 7 C/C++ SDK, you will need [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/).
+To write C++ plugins for Rhino 7 using the Rhino 7 C/C++ SDK, you will need [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/).
 
 1. Download **[Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/)**.
 2. Run the **Visual Studio installer** you just downloaded.
@@ -87,7 +87,7 @@ If you already have Microsoft Visual Studio 2019 installed, then you will want t
 
 ## Install the Rhino C/C++ SDK
 
-The **Rhino C/C++ SDK** is a set of tools for creating plug-in using the C++ language. The SDK includes headers, libraries and Visual Studio project wizards to get you started creating plugins quickly.
+The **Rhino C/C++ SDK** is a set of tools for creating plugin using the C++ language. The SDK includes headers, libraries and Visual Studio project wizards to get you started creating plugins quickly.
 
 ### Rhino 8
 
@@ -109,4 +109,4 @@ The **Rhino C/C++ SDK** is a set of tools for creating plug-in using the C++ lan
 
 **Congratulations!** You have the tools to build a C/C++ plugin for Rhino for Windows. **Now what?**
 
-Check out the [Creating your first C/C++ plugin for Rhino](/guides/cpp/your-first-plugin-windows/) guide for instructions building your first plug-in.
+Check out the [Creating your first C/C++ plugin for Rhino](/guides/cpp/your-first-plugin-windows/) guide for instructions building your first plugin.

@@ -6,7 +6,7 @@ description = "This guide discusses Rhino commands and how define new commands u
 keywords = [ "rhino", "commands" ]
 languages = [ "C/C++" ]
 sdk = [ "C/C++" ]
-title = "Defining New Plug-in Commands"
+title = "Defining New Plugin Commands"
 type = "guides"
 weight = 3
 
@@ -29,7 +29,7 @@ toc_type = "single"
 
 ## Overview
 
-Rhino plug-ins can contain any number of commands. Commands are created by deriving a new class from `CRhinoCommand`.  See *rhinoSdkCommand.h* for details on the `CRhinoCommand` class.
+Rhino plugins can contain any number of commands. Commands are created by deriving a new class from `CRhinoCommand`.  See *rhinoSdkCommand.h* for details on the `CRhinoCommand` class.
 
 Command classes must return a unique *GUID*. If you try to use a *GUID* that is already in use, then your command will not work.  Use the *GUIDGEN.EXE* utility, that comes with Visual Studio, to create unique *GUIDs*.
 
@@ -39,9 +39,9 @@ Only ONE instance of a command class can be created. This is why you should put 
 
 ## Rhino 8
 
-The **[Rhino Visual Studio Extension](https://github.com/mcneel/RhinoVisualStudioExtensions/releases)**, for the Rhino 8 C/C++ SDK, includes a template that lets you quickly add new commands to your plug-in project.
+The **[Rhino Visual Studio Extension](https://github.com/mcneel/RhinoVisualStudioExtensions/releases)**, for the Rhino 8 C/C++ SDK, includes a template that lets you quickly add new commands to your plugin project.
 
-To add a new Rhino command to your plug-in project, right-click on the *Source Files* folder, in *Visual Studio’s Solution Explorer*, and click *Add > New Item...*. From the *Add New Item* dialog, select *Empty Command for Rhino 3D (C++)*, specify the name of the command, and click *Add*.
+To add a new Rhino command to your plugin project, right-click on the *Source Files* folder, in *Visual Studio’s Solution Explorer*, and click *Add > New Item...*. From the *Add New Item* dialog, select *Empty Command for Rhino 3D (C++)*, specify the name of the command, and click *Add*.
 
 ![Add New Item](/images/defining-new-plugin-commands-cpp.png)
 
