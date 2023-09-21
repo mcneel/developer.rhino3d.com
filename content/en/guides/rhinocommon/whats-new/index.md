@@ -44,6 +44,8 @@ Also, we've updated the [Rhino Visual Studio Extension](https://github.com/mcnee
 
 And, there is an all new [RhinoCommon API Reference](https://developer.rhino3d.com/api/rhinocommon/html/R_Project_RhinoCommon.htm) online.
 
+Here is what is new in [RhinoCommon 8](https://developer.rhino3d.com/api/rhinocommon/whatsnew/8.0).
+
 ## Rhino 7
 
 RhinoCommon plug-ins for Rhino 7 are based on the Microsoft .NET Framework 4.8.
@@ -51,3 +53,5 @@ RhinoCommon plug-ins for Rhino 7 are based on the Microsoft .NET Framework 4.8.
 To developer plug-is Windows, use either [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) or [Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/).
 
 To develop plug-in on Mac, use [Visual Studio 2022 for Mac](https://visualstudio.microsoft.com/vs/mac/). Visual Studio 2019 for Mac should work as well.
+
+Here is what is new in [RhinoCommon 7](https://developer.rhino3d.com/api/rhinocommon/whatsnew/7.0).
