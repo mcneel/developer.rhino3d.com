@@ -30,6 +30,10 @@ toc_type = "single"
 
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging .NET plugins using RhinoCommon on Windows.
 
+## Prerequisites
+
+This guide presumes you have:
+
 ### Rhino 8
 
 - A PC running Microsoft Windows 10 or later.
@@ -62,7 +66,7 @@ To write .NET plugins for Rhino using using RhinoCommon, you will Microsoft Visu
 
 If you already have Microsoft Visual Studio installed, then you will want to re-run the **Visual Studio Installer** and verify you have all the the components installed.
 
-## Installing Rhino Visual Studio Extension
+## Installing Visual Studio Extension
 
 The **Rhino Visual Studio Extension** contains templatesto get you started creating plugin projects quickly.
 
