@@ -51,6 +51,7 @@ To write C++ plugins for Rhino 8 using the Rhino 8 C/C++ SDK, you will need a ve
 
 1. Download **Microsoft Visual Studio**, either [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) or [Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/).
 2. Run the **Visual Studio installer** you just downloaded.
+
     ![Visual Studio Install](/images/installing-tools-windows-cpp-01.png)
 3. Follow the onscreen prompts to install Visual Studio.
 4. Check the **Desktop development with C++** workload.
@@ -73,6 +74,7 @@ To write C++ plugins for Rhino 7 using the Rhino 7 C/C++ SDK, you will need [Mic
 
 1. Download **[Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/)**.
 2. Run the **Visual Studio installer** you just downloaded.
+
     ![Visual Studio Install](/images/installing-tools-windows-cpp-02.png)
 3. Follow the onscreen prompts to install Visual Studio.
 4. Check the **Desktop development with C++** workload.
@@ -107,6 +109,6 @@ The **Rhino C/C++ SDK** is a set of tools for creating plugin using the C++ lang
 
 ## Next Steps
 
-**Congratulations!** You have the tools to build a C/C++ plugin for Rhino for Windows. **Now what?**
+**Congratulations!** You have the tools to build a C/C++ plugin for Rhino for Windows. *Now what?*
 
 Check out the [Creating your first C/C++ plugin for Rhino](/guides/cpp/your-first-plugin-windows/) guide for instructions building your first plugin.

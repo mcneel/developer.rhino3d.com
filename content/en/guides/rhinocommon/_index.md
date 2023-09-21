@@ -30,8 +30,8 @@ since = 0
 ### Overview
 
 - [What is RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon/)
-- [What are Mono & Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/)
-- [What's New/Changes?](/guides/rhinocommon/whats-new/)
+- [What's New?](/guides/rhinocommon/whats-new/)
+- [Moving to .NET 7](/guides/rhinocommon/moving-to-dotnet-7)
 
 ### Getting Started
 

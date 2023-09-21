@@ -28,55 +28,50 @@ toc_type = "single"
 
 +++
 
+By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging .NET plugins using RhinoCommon on Windows.
 
-## Prerequisites
+### Rhino 8
 
-This guide presumes you have [Rhino 7 for Windows](http://www.rhino3d.com/download).
+- A PC running Microsoft Windows 10 or later.
+- [Rhino 8 for Windows](https://www.rhino3d.com/download).
+
+### Rhino 7
+
+- A PC running Microsoft Windows 8.1 or later.
+- [Rhino 7 for Windows](https://www.rhino3d.com/download).
+
 
 ## Install Visual Studio
 
-[Visual Studio](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx) is Microsoft's development platform and Integrated Development Environment (IDE).  Visual Studio comes in three major "streams": Visual Studio Code[^1], Visual Studio Online[^2], and Visual Studio "proper"[^3].  In order to author RhinoCommon plugins, you will need Visual Studio "proper" (Visual Studio Code and Visual Studio Online are not supported).
+To write .NET plugins for Rhino using using RhinoCommon, you will Microsoft Visual Studio. As of this writing, the current version is [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/).
 
-At the time of this writing, Visual Studio "proper" comes in [three editions](https://www.visualstudio.com/vs-2015-product-editions): Community, Professional, and Enterprise.  Any of these editions will work.
+1. Download [**Microsoft Visual Studio**](https://visualstudio.microsoft.com/downloads/).
+2. Run the **Visual Studio installer** you just downloaded.
 
-{{< call-out "note" "Visual Studio Editions" >}}
-For the purposes of this guide, we will presume you are using Visual Studio 2022 Community Edition.
-{{< /call-out >}}
+    ![Visual Studio Install](/images/installing-tools-windows-rhinocommon-01.png)
+3. Follow the onscreen prompts to install Visual Studio.
+4. Check the **.NET desktop development** workload.
+5. Click the **Individual components** tab.
+6. Scroll to the **.NET** section and check the following options:
+    1. .NET 7.0 Runtime
+    2. .NET Framework 4.8 SDK
+    3. .NET Framework 4.8 targeting pack
+7. Check any additional features required for your project.
+8. When finished, click **Install**.
+9. Depending on your internet connection, this can take several minutes to complete.
 
-#### Step-by-Step
+If you already have Microsoft Visual Studio installed, then you will want to re-run the **Visual Studio Installer** and verify you have all the the components installed.
 
-1. *[Visual Studio Community Edition](https://visualstudio.microsoft.com/vs/)* is free from Microsoft for students, open-source contributors, and small teams. [Details here](https://www.visualstudio.com/en-us/support/legal/mt171547).  Click the *Community* button to download the installer.
-1. Run the **Visual Studio installer** you downloaded from Microsoft, in this case *VisualStudioSetup.exe*.
-1. Follow the onscreen prompts to install Visual Studio.  You will need the ".NET desktop development" workload for RhinoCommon based plugin development. When successfully installed, click the *Launch* button.
+## Installing Rhino Visual Studio Extension
 
-## RhinoCommon Templates
+The **Rhino Visual Studio Extension** contains templatesto get you started creating plugin projects quickly.
 
-The [RhinoCommon and Grasshopper templates for Rhino 7](https://marketplace.visualstudio.com/items?itemName=McNeel.Rhino7Templates2022) contains wizards to get you started creating components quickly.
-
-#### Step-by-Step
-
-1. Launch **Visual Studio**.
-1. Navigate to **Extensions** > **Manage Extensions**
-1. In the left-hand sidebar, expand the **Online** section, then select the **Visual Studio Marketplace** entry...
-![Extensions and Updates](/images/installing-tools-windows-grasshopper-01.png)
-1. In the **Search** field, search for *RhinoCommon*.  This filters the gallery list below.
-1. Find **RhinoCommon and Grasshopper templates for Rhino 7** and select it.
-1. Click the **Download** button.  The extension installation should begin.
-1. You must **Accept** the license agreement by clicking on the **Install** button.
-1. Press the **Close** button and **Quit** Visual Studio.
-1. The extension installer should start once you quit. Click the **Modify** button to install the extension.
-1. Once this is done, the extension should appear in your list of **Installed** extensions in **Extensions** > **Manage Extensions**.
+1. Download the **[Rhino Visual Studio Extension (VSIX)](https://github.com/mcneel/RhinoVisualStudioExtensions/releases)**.
+2. Run the **VSIX installer** you downloaded.
+3. If the installation is successful, run Visual Studio.
 
 ## Next Steps
 
-*Congratulations!*  You have the tools to build a RhinoCommon plugin for Rhino for Windows.  *Now what?*
+*Congratulations!*  You have the tools to build a RhinoCommon plugin for Rhino for Windows. *Now what?*
 
-Check out the [Your First Plugin (Windows)](/guides/rhinocommon/your-first-plugin-windows) guide for instructions building - your guessed it - your first plugin.
-
-**Footnotes**
-
-[^1]: Visual Studio Code is Microsoft's cross-platform source code editor for Windows, Linux, and macOS.  At the time of this writing, Visual Studio code does not yet support the features required to author RhinoCommon plugins.
-
-[^2]: Visual Studio Online is Microsoft's online counterpart to the desktop edition of Visual Studio (referred to as Visual Studio "proper" above).  We have not tested using Visual Studio Online to debug RhinoCommon plugins as having a copy of Rhino running would prove logistically difficult.
-
-[^3]: Visual Studio "proper" is the desktop version of Visual Studio...we are only attaching the "proper" epithet to distinguish it from the Visual Studio Code and Visual Studio Online.  In subsequent guides this will be referred to as simply "Visual Studio."
+Check out the [Your First Plugin (Windows)](/guides/rhinocommon/your-first-plugin-windows) guide for instructions building your first plugin.

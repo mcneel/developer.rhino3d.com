@@ -1,13 +1,13 @@
 +++
 authors = ["curtis"]
-categories = []
+categories = [ "Overview" ]
 description = "This guide walks you through making the transition to .NET 7"
 keywords = [ ".NET", "RhinoCommon", "Plugin" ]
-languages = [ "C#" ]
+languages = [ "C#", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Moving to .NET 7"
 type = "guides"
-weight = 4
+weight = 3
 
 [admin]
 TODO = ""

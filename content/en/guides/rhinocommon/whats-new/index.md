@@ -28,17 +28,26 @@ toc_type = "single"
 
 +++
 
-
 ## Overview
 
-The following document describes what has been added, what has changed, and how to deal with these changes in the RhinoCommon SDK. A lot of effort has been put into keeping the RhinoCommon SDK in Rhino 6 as compatible with the Rhino 5 version as possible, but in a small number of cases this was impossible. One goal of this document is to describe these breaking changes and what to do about them.
+The following document describes what has been added, what has changed, and how to deal with these changes in the RhinoCommon SDK. A lot of effort has been put into keeping RhinoCommon compatible with versions found in earlier Rhino releaes. One goal of this document is to describe these breaking changes and what to do about them.
 
-## Additions
+## Rhino 8
 
-TODO: what has been added?
+Rhino 8 now uses the open source [.NET Core Runtime](https://github.com/dotnet/runtime) for running .NET code on both Windows and Mac. This brings some performance improvements and aligns the .NET runtimes used across platforms. Previously, Rhino 7 and earlier used the [Mono runtime](https://www.mono-project.com/) on Mac, and .NET Framework exclusively on Windows.
 
-## Changes
+On Windows, you can still optionally run using the .NET Framework runtime in the case of compatibility issues or running inside other software that requires it (e.g. Rhino.Inside Revit).
 
-- InstanceDefinition and InstanceDefinitionGeometry are no longer derived from GeometryBase
-  - https://mcneel.myjetbrains.com/youtrack/issue/RH-34036
-  - TODO: describe what this means
+Most plugins are already compatible when running in .NET Core without any recompilation, but in the case of any incompatibilities you may need to update your plugin.
+
+Also, we've updated the [Rhino Visual Studio Extension](https://github.com/mcneel/RhinoVisualStudioExtensions/releases) for both Windows and Mac.
+
+And, there is an all new [RhinoCommon API Reference](https://developer.rhino3d.com/api/rhinocommon/html/R_Project_RhinoCommon.htm) online.
+
+## Rhino 7
+
+RhinoCommon plug-ins for Rhino 7 are based on the Microsoft .NET Framework 4.8.
+
+To developer plug-is Windows, use either [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) or [Visual Studio 2019](https://visualstudio.microsoft.com/vs/older-downloads/).
+
+To develop plug-in on Mac, use [Visual Studio 2022 for Mac](https://visualstudio.microsoft.com/vs/mac/). Visual Studio 2019 for Mac should work as well.
