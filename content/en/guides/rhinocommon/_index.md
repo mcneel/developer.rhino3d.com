@@ -38,6 +38,9 @@ since = 0
 - Installing Tools ([Windows](/guides/rhinocommon/installing-tools-windows/), [Mac](/guides/rhinocommon/installing-tools-mac/))
 - Your First Plugin ([Windows](/guides/rhinocommon/your-first-plugin-windows/), [Mac](/guides/rhinocommon/your-first-plugin-mac/), [Cross-Platform](/guides/rhinocommon/your-first-plugin-crossplatform/))
 - [Creating a Rhino Plugin Package](/guides/yak/creating-a-rhino-plugin-package/)
+
+### Other Resources
+
 - [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
 - [Developer discussions on Discourse](https://discourse.mcneel.com/c/rhino-developer)
 
