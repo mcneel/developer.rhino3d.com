@@ -31,7 +31,7 @@ It is presumed you already have the necessary tools installed and are ready to g
 
 ## Barebones plugin
 
-The Rhino SDK includes a Visual Studio Project Template. The template generates the code for a functioning plugin. Follow these steps to build the plugin.
+We will use the *Rhino 3D Plugin (C++)* project template to create a new general purpose plugin. The project template generates the code for a functioning plugin. Follow these steps to build the plugin.
 
 ### Plugin Template
 
@@ -116,11 +116,12 @@ Before we can build our project, we need to fill in the Rhino plugin developer d
 1. From *Visual Studio*, navigate to *Debug* > *Start Debugging*. This will load Rhino. The version of Rhino that is launched depends on the configuration that you build. The template adds the following configurations to your project:
      - *Debug*: The *Debug* project is a *Release* project that disables optimizations and generates debugging information using the compiler’s *Program Database* (`/Zi`) option and the linker’s *Generate Debug Information* (`/DEBUG`) option. These option settings let you use the debugger while you are developing your custom plugin. The *Debug* configuration also links with release runtime libraries. Plugins built with the *Debug* configuration will only load in the release version of Rhino that was installed with Rhino.
      - *Release*: The *Release* configuration of your program contains no symbolic debug information and is fully optimized. *Debug* information can be generated in PDB Files (C++) depending on the compiler options used. Creating PDB files can be very useful if you later need to debug your release version. The *Release* configuration also links with release runtime libraries. Plugins built with the *Release* configuration will only load in the release version of Rhino that was installed with Rhino.
-2. For this guide, build the *Debug* configuration.
-3. From within Rhino, navigate to *Tools* > *Options*. Navigate to the *Plugins* page under *Rhino Options* and install your plugin.
+1. For this guide, build the *Debug* configuration.
+1. From within Rhino, navigate to *Tools* > *Options*. Navigate to the *Plugins* page under *Rhino Options* and install your plugin.
 
     ![Rhino Options](/images/your-first-plugin-windows-cpp-07.png)
-4. Once your plugin is loaded, close the options dialog and run your `Test` command. You have finished creating your first plugin!
+1. Once your plugin is loaded, close the options dialog and run your *Test* command.
+1. You have finished creating your first plugin!
 
 ## Adding Additional Commands
 
