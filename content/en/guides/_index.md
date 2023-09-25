@@ -64,8 +64,7 @@ toc_type = "single"
 ### Overview
 
 - [What is RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon/)
-- [What are Mono & Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/)
-- [What's New/Changes?](/guides/rhinocommon/whats-new/)
+- [What's New?](/guides/rhinocommon/whats-new/)
 
 ### Getting Started
 
