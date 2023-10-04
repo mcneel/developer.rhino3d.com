@@ -8,7 +8,7 @@ languages = [ "C/C++" ]
 sdk = [ "C/C++" ]
 title = "Migrate your plug-in project to Rhino 6"
 type = "guides"
-weight = 7
+weight = 6
 
 [admin]
 TODO = ""
