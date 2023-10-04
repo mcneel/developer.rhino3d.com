@@ -123,4 +123,4 @@ Where `MajorVersion` is the major version of Rhino (e.g. 6, 7, 8).
 
 You can now test your custom Skin by creating shortcut to your Rhino executable with `/scheme="<scheme name from the previous step>"` as command line argument.  For example:
 
-*C:\Program Files\Rhino 7\System\Rhino.exe" /scheme=MySkin*
+*C:\Program Files\Rhino 8\System\Rhino.exe" /scheme=MySkin*
