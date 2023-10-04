@@ -52,7 +52,7 @@ To register your plugin with Rhino, you will need to create a new Registry key a
 Under this new Registry key, create two new value names, ```Name``` and ```FileName``` that contain strings that identify your plugin's name and the full path to the *.rhp* file, respectively.  For example, if you had created a new plugin named *"MySamplePlugIn"*, the registry might look something like the following:
 
 ```
-HKEY_LOCAL_MACHINE\SOFTWARE\McNeel\Rhinoceros\7.0\Plug-Ins\F3CF4A28-EA9E-4E08-BABA-5FC6645A5D72
+HKEY_LOCAL_MACHINE\SOFTWARE\McNeel\Rhinoceros\MajorVersion.0\Plug-Ins\F3CF4A28-EA9E-4E08-BABA-5FC6645A5D72
 
 Value:  Name
 Type:   REG_SZ
