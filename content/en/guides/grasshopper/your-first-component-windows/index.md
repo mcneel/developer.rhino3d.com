@@ -44,7 +44,7 @@ We are presuming you have never used Visual Studio before, so we'll go through t
 1. If you have not done so already, **launch Visual Studio** (for the purposes of this guide, we are using Visual Studio Community Edition and C#).
 1. Navigate to **File** > **New** > **Project**...
 ![File New Project](/images/your-first-plugin-windows-01.png)
-1. A **Create a new project** wizard should appear.  In the **Search for templates** area, search for `Grasshopper` to filter the results. Find and select the **Grasshopper Assembly for Rhino 7 (C\#)** entry and click **Next**.
+1. A **Create a new project** wizard should appear.  In the **Search for templates** area, search for `Grasshopper` to filter the results. Find and select the **Grasshopper Assembly for Rhino (C\#)** entry and click **Next**.
 1. For the purposes of this Guide, we will name our demo plugin *HelloGrasshopper*. In the **Configure your new project** dialog, fill in the **Project name** field.  **Browse** and select a location for this project on your disk, then click **Next**
 1. The *New Grasshopper Add-On dialog* appears.  Check the *Provide sample code* checkbox.
 ![New Grasshopper Assembly](/images/your-first-component-windows-03.png)
