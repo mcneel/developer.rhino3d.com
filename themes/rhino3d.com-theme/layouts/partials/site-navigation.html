@@ -1,5 +1,17 @@
 <div id="navbar">
-<div id="nav-logo-search-container">
+  <div id="wrap">
+    <!-- Search widget -->
+    <div id="sitesearch">
+      <!-- Bing Custom Search aka: Cognitive Services -->
+      <!-- Custom searches are created and managed here: https://www.customsearch.ai/applications -->
+      <!-- See 1Password: Azure Subscription Key credential for subscription key -->
+      <form id="cref" action="/searchresults/">
+        <input type="hidden" name="cref" value="007988927381198593803:mcq6pshqsn8" />
+        <label for="search"><input id="searchtext" type="text" name="q" size="24" value="" placeholder="{{ i18n "search-navbar" }}" /></label>  
+        <input class="searchBox" type="submit" name="sa" size="2" value=" " />
+      </form>
+    </div>
+
     <!-- The site Logo, site title and subtitle at the upper-left -->
     <div id="logo-container">
       <div id="logo-inner-container">
@@ -13,24 +25,10 @@
         <a href="{{ .Site.Params.siteRootURL }}"><img id="site-nav-logo" src="{{ .Site.Params.siteNavLogo }}"/></a>
         <div class="clear"></div>
       </div>
+      <div class="overlayMenuIcon" id="theoverlayMenuIcon">
+        <span onclick="toggleMenu()"><i class="fa fa-bars" id="menuToggleIcon" style="color: #c2c2c2; font-size: 2.5em"></i></span>
+      </div>
     </div>
-
-    <div class="overlayMenuIcon" id="theoverlayMenuIcon">
-      <span onclick="toggleMenu()"><i class="fa fa-bars" id="menuToggleIcon" style="color: #c2c2c2; font-size: 2.5em"></i></span>
-    </div>
-    <!-- Search widget -->
-    <div id="sitesearch">
-      <!-- Bing Custom Search aka: Cognitive Services -->
-      <!-- Custom searches are created and managed here: https://www.customsearch.ai/applications -->
-      <!-- See 1Password: Azure Subscription Key credential for subscription key -->
-      <form id="cref" action="/searchresults/">
-        <input type="hidden" name="cref" value="007988927381198593803:mcq6pshqsn8" />
-        <label for="search"><input id="searchtext" type="text" name="q" size="24" value="" placeholder="{{ i18n "search-navbar" }}" /></label>  
-        <input class="searchBox" type="submit" name="sa" size="2" value=" " />
-      </form>
-    </div>
-</div>
-
 
     <!-- The Horizontal textual menu items -->
     <div class="menu-items" id="theMenuItems">
@@ -59,4 +57,6 @@
       </span>
     </div>
 
+    </div>
+  </div>
 </div>

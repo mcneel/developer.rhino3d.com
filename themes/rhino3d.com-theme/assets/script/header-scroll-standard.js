@@ -31,6 +31,7 @@ function expandNavBar() {
     document.getElementById("logo-title-text").style.fontSize = "40px";
     document.getElementById("logo-title-text").style.top = "-10px";
     document.getElementById("logo-title-text").style.left = "90px";
+    document.getElementById("site-nav-logo").style.height = "125px";
     document.getElementById("logo-subtitle").style.opacity = 1;
     document.getElementById("logo-subtitle").style.pointerEvents = "all";
     expandTOC();
@@ -39,9 +40,10 @@ function expandNavBar() {
 function contractNavBar() {
     document.getElementById("sitesearch").style.display = "none";
     document.getElementById("logo-container").style.height = "55px";
+    document.getElementById("site-nav-logo").style.height = "55px";
     document.getElementById("logo-title-text-secondary").style.display = "none";
     document.getElementById("logo-title-text").style.fontSize = "25px";
-    document.getElementById("logo-title-text").style.top = "11px";
+    document.getElementById("logo-title-text").style.top = "7px";
     document.getElementById("logo-title-text").style.left = "70px";
     document.getElementById("logo-subtitle").style.opacity = 0;
     document.getElementById("logo-subtitle").style.pointerEvents = "none";
