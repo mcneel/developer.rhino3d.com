@@ -34,8 +34,8 @@ By the end of this guide, you should have all the tools installed necessary for 
 
 This guide presumes you have an:
 
-- [Apple Mac](http://store.apple.com/) running [macOS Monterey](https://www.apple.com/osx/) (12.5) or later.
-- [Rhino 7 for Mac](https://www.rhino3d.com/download/)
+- [Apple Mac](http://store.apple.com/) running [macOS](https://www.apple.com/osx/) Monterey (12) or later.
+- [Rhino for Mac](https://www.rhino3d.com/download/)
 
 ## Install Visual Studio for Mac
 
@@ -52,12 +52,12 @@ This guide is authored using Visual Studio 2022. These steps - or very similar o
 1. You must accept the Visual Studio Software License Agreement.
 1. Visual Studio for Mac can install the following items:
    - Visual Studio for Mac (required)
-   - .NET Core (optional)
-   - .NET MAUI (not necessary)
+   - .NET Core (required for targeting Rhino 8 and later)
+   - .NET Multi-Platform App UI or MAUI (not necessary)
    - .NET WebAssembly Build Tools (not necessary)
    - tvOS (not necessary)
    - macOS Cocoa (optional)
-1. Verify that *Visual Studio for Mac* is checked and click *Install*.
+1. Verify that *Visual Studio for Mac* and *NET Core* are checked and click *Install*.
 1. If you do not have Xcode installed, the installer may prompt you to install it. You can ignore this warning.
 1. The installer downloads and installs *Visual Studio for Mac* and any additional components you checked.
 1. When the installer is finished, click the *Launch Visual Studio* button.
@@ -70,10 +70,10 @@ The Rhino AddIn/Extension is required to debug your plugin code in an active ses
 #### Step-by-Step
 
 1. Visit the [Extension's GitHub releases page](https://github.com/mcneel/RhinoVisualStudioExtensions/releases) and find the *Latest release* in the [list of releases](https://github.com/mcneel/RhinoVisualStudioExtensions/releases).
-1. Download the *.mpack* file in the list of Downloads on that release. For example, at the time of this writing, the *Latest release* download is entitled *Rhino.VisualStudio.Mac.2022-7.21.0.mpack*. (If you are using Visual Studio for Mac 2019, you will want to get *Rhino.VisualStudio.Mac.2019-7.21.0.mpack*).
+1. Download the *.mpack* file in the list of Downloads on that release. For example, at the time of this writing, the *Latest release* download is entitled *Rhino.VisualStudio.Mac.2022-8.0.0.mpack*. (If you are using Visual Studio for Mac 2019, you will want to get *Rhino.VisualStudio.Mac.2019-7.21.0.mpack*).
 1. Launch *Visual Studio for Mac* if it not already open.
 1. Navigate to *Visual Studio* > *Extensions...*...
-1. Click the *Install from file...* button in the lower left-hand corner.
+1. Click the *Install from file...* button in the lower right-hand corner.
 1. Navigate to the *.mpack* file you downloaded in step 2 above.
 1. Click *Install*. The plugin should install.
 1. *IMPORTANT*: You must *Quit* and *Restart* Visual Studio for Mac.
