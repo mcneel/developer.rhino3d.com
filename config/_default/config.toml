@@ -21,7 +21,7 @@ buildFuture = "true"
 
 [params]
   nwo = "mcneel/developer.rhino3d.com" # github repository (name with owner)
-  latestRhinoVersion = 7
+  latestRhinoVersion = 8
   supportedPlatforms = "Windows and macOS"
   siteRootURL = "/" # used in navigation banner
   rhinoURL = "https://www.rhino3d.com"
