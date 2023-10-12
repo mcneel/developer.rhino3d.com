@@ -27,7 +27,7 @@ toc_type = "single"
 
 +++
 
-The [Package Manager](/guides/yak/) is a new feature in Rhino 7. It makes it easier to discover, install and manage Rhino plug-ins from within Rhino. This guide will describe how to create a package from a Rhino plug-in that can be published to the package server.
+The [Package Manager](/guides/yak/) was introduced in Rhino 7. It makes it easier to discover, install and manage Rhino plug-ins from within Rhino. This guide will describe how to create a package from a Rhino plug-in that can be published to the package server.
 
 {{< call-out "note" "Note" >}}
 The package manager is cross-platform. The examples below are for Windows.
