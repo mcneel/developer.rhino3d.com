@@ -94,7 +94,7 @@ The **Rhino C/C++ SDK** is a set of tools for creating plugin using the C++ lang
 ### Rhino 8
 
 1. Exit **Visual Studio**.
-2. Download the **[Rhino 8 C/C++ SDK](https://www.rhino3d.com/download/rhino-sdk/8/beta/)**.
+2. Download the **[Rhino 8 C/C++ SDK](https://www.rhino3d.com/download/rhino-sdk/8/latest/)**.
 3. Run the **SDK installer** you downloaded.
 4. Download the **[Rhino Visual Studio Extension (VSIX)](https://github.com/mcneel/RhinoVisualStudioExtensions/releases)**.
 5. Run the **VSIX installer** you downloaded.
