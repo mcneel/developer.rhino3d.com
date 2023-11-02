@@ -232,7 +232,7 @@ If you have already setup Rhino.Compute and/or IIS on this machine, you may need
 
 1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino for Windows. Note: you will be prompted to enter your **Email Address** so please have that information available.
     ```powershell
-    iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/production/module_update_rhino.ps1 -outfile update_rhino.ps1; .\update_rhino.ps1 
+    iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/7.x/script/production/module_update_rhino.ps1 -outfile update_rhino.ps1; .\update_rhino.ps1 
     ```
 
 ### Update Compute
@@ -242,7 +242,7 @@ If you have already setup Rhino.Compute and/or IIS on this machine, you may need
 1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino.Compute.
 
     ```powershell
-    iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/master/script/production/module_update_compute.ps1 -outfile update_compute.ps1; .\update_compute.ps1 
+    iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/7.x/script/production/module_update_compute.ps1 -outfile update_compute.ps1; .\update_compute.ps1 
     ```
 
  
