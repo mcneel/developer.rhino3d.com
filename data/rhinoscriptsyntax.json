@@ -6906,10 +6906,10 @@
           "import rhinoscriptsyntax as rs",
           "obj = rs.GetObject(\"Select a dimension\")",
           "if rs.IsDimension(obj):",
-          "    usertext = \"<> \" + chr(177) + str(rs.UnitAbsoluteTolerance())",
+          "    usertext = \"!= \" + chr(177) + str(rs.UnitAbsoluteTolerance())",
           "    rs.DimensionUserText( obj, usertext )"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nobj = rs.GetObject(\"Select a dimension\")\r\nif rs.IsDimension(obj):\r\n    usertext = \"<> \" + chr(177) + str(rs.UnitAbsoluteTolerance())\r\n    rs.DimensionUserText( obj, usertext )",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nobj = rs.GetObject(\"Select a dimension\")\r\nif rs.IsDimension(obj):\r\n    usertext = \"!= \" + chr(177) + str(rs.UnitAbsoluteTolerance())\r\n    rs.DimensionUserText( obj, usertext )",
         "SeeAlso": [
           {
             "ModuleName": "dimension",
@@ -6924,7 +6924,7 @@
             "FunctionName": "IsDimension"
           }
         ],
-        "DocString": "    \"\"\"Returns of modifies the user text string of a dimension object. The user\r\n    text is the string that gets printed when the dimension is defined\r\n    Parameters:\r\n      object_id (guid): identifier of the object\r\n      usertext (str, optional): the new user text string value\r\n    Returns:\r\n      str: if usertext is not specified, the current usertext string\r\n      str: if usertext is specified, the previous usertext string\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select a dimension\")\r\n      if rs.IsDimension(obj):\r\n          usertext = \"<> \" + chr(177) + str(rs.UnitAbsoluteTolerance())\r\n          rs.DimensionUserText( obj, usertext )\r\n    See Also:\r\n      DimensionText\r\n      DimensionValue\r\n      IsDimension\r\n    \"\"\"",
+        "DocString": "    \"\"\"Returns of modifies the user text string of a dimension object. The user\r\n    text is the string that gets printed when the dimension is defined\r\n    Parameters:\r\n      object_id (guid): identifier of the object\r\n      usertext (str, optional): the new user text string value\r\n    Returns:\r\n      str: if usertext is not specified, the current usertext string\r\n      str: if usertext is specified, the previous usertext string\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select a dimension\")\r\n      if rs.IsDimension(obj):\r\n          usertext = \"!= \" + chr(177) + str(rs.UnitAbsoluteTolerance())\r\n          rs.DimensionUserText( obj, usertext )\r\n    See Also:\r\n      DimensionText\r\n      DimensionValue\r\n      IsDimension\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -23834,11 +23834,11 @@
         "ModuleName": "surface",
         "Name": "JoinSurfaces",
         "Arguments": [],
-        "Signature": "JoinSurfaces(object_ids, delete_input=False)",
+        "Signature": "JoinSurfaces(object_ids, delete_input=False, return_all=False)",
         "Description": "Joins two or more surface or polysurface objects together to form one\r\n    polysurface object",
         "HasArguments": true,
-        "ArgumentDesc": "object_ids ([guid, ...]) list of object identifiers\r\ndelete_input (bool, optional): Delete the original surfaces",
-        "Returns": "guid: identifier of newly created object on success\r\nNone: on failure",
+        "ArgumentDesc": "object_ids ([guid, ...]) list of object identifiers\r\ndelete_input (bool, optional): Delete the original surfaces\r\nreturn_all (bool, optional): Return all surfaces in result",
+        "Returns": "guid or guid list: identifier, or list of identifiers if return_all == True, of newly created object(s) on success\r\nNone: on failure",
         "Example": [
           "import rhinoscriptsyntax as rs",
           "objs = rs.GetObjects(\"Select surfaces in order\", rs.filter.surface)",
@@ -23867,7 +23867,7 @@
             "FunctionName": "IsSurfaceClosed"
           }
         ],
-        "DocString": "    \"\"\"Joins two or more surface or polysurface objects together to form one\r\n    polysurface object\r\n    Parameters:\r\n      object_ids ([guid, ...]) list of object identifiers\r\n      delete_input (bool, optional): Delete the original surfaces\r\n    Returns:\r\n      guid: identifier of newly created object on success\r\n      None: on failure\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      objs = rs.GetObjects(\"Select surfaces in order\", rs.filter.surface)\r\n      if objs and len(objs)>1: rs.JoinSurfaces(objs)\r\n    See Also:\r\n      ExplodePolysurfaces\r\n      IsPolysurface\r\n      IsPolysurfaceClosed\r\n      IsSurface\r\n      IsSurfaceClosed\r\n    \"\"\"",
+        "DocString": "    \"\"\"Joins two or more surface or polysurface objects together to form one\r\n    polysurface object\r\n    Parameters:\r\n      object_ids ([guid, ...]) list of object identifiers\r\n      delete_input (bool, optional): Delete the original surfaces\r\n      return_all (bool, optional): Return all surfaces in result\r\n    Returns:\r\n      guid or guid list: identifier, or list of identifiers if return_all == True, of newly created object(s) on success\r\n      None: on failure\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      objs = rs.GetObjects(\"Select surfaces in order\", rs.filter.surface)\r\n      if objs and len(objs)>1: rs.JoinSurfaces(objs)\r\n    See Also:\r\n      ExplodePolysurfaces\r\n      IsPolysurface\r\n      IsPolysurfaceClosed\r\n      IsSurface\r\n      IsSurfaceClosed\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -27850,10 +27850,10 @@
           "        names.append(name)",
           "    results = rs.PropertyListBox(objs, names, \"Modify object name(s)\")",
           "    if results:",
-          "        for i in xrange(len(objs)):",
+          "        for i in compat.RANGE(len(objs)):",
           "            rs.ObjectName( objs[i], results[i] )"
         ],
-        "ExampleString": "import rhinoscriptsyntax as rs\r\nobjs = rs.GetObjects(\"Select Objects\")\r\nif objs:\r\n    names = []\r\n    for obj in objs:\r\n        name = rs.ObjectName(obj)\r\n        if name is None: name=\"\"\r\n        names.append(name)\r\n    results = rs.PropertyListBox(objs, names, \"Modify object name(s)\")\r\n    if results:\r\n        for i in xrange(len(objs)):\r\n            rs.ObjectName( objs[i], results[i] )",
+        "ExampleString": "import rhinoscriptsyntax as rs\r\nobjs = rs.GetObjects(\"Select Objects\")\r\nif objs:\r\n    names = []\r\n    for obj in objs:\r\n        name = rs.ObjectName(obj)\r\n        if name is None: name=\"\"\r\n        names.append(name)\r\n    results = rs.PropertyListBox(objs, names, \"Modify object name(s)\")\r\n    if results:\r\n        for i in compat.RANGE(len(objs)):\r\n            rs.ObjectName( objs[i], results[i] )",
         "SeeAlso": [
           {
             "ModuleName": "userinterface",
@@ -27872,7 +27872,7 @@
             "FunctionName": "MultiListBox"
           }
         ],
-        "DocString": "    \"\"\"Displays list of items and their values in a property-style list box dialog\r\n    Parameters:\r\n      items, values ([str, ...]): list of string items and their corresponding values\r\n      message (str, optional): a prompt or message\r\n      title (str, optional): a dialog box title\r\n    Returns:\r\n      list(str, ..): of new values on success\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      objs = rs.GetObjects(\"Select Objects\")\r\n      if objs:\r\n          names = []\r\n          for obj in objs:\r\n              name = rs.ObjectName(obj)\r\n              if name is None: name=\"\"\r\n              names.append(name)\r\n          results = rs.PropertyListBox(objs, names, \"Modify object name(s)\")\r\n          if results:\r\n              for i in xrange(len(objs)):\r\n                  rs.ObjectName( objs[i], results[i] )\r\n    See Also:\r\n      CheckListBox\r\n      ComboListBox\r\n      ListBox\r\n      MultiListBox\r\n    \"\"\"",
+        "DocString": "    \"\"\"Displays list of items and their values in a property-style list box dialog\r\n    Parameters:\r\n      items, values ([str, ...]): list of string items and their corresponding values\r\n      message (str, optional): a prompt or message\r\n      title (str, optional): a dialog box title\r\n    Returns:\r\n      list(str, ..): of new values on success\r\n      None: on error\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      objs = rs.GetObjects(\"Select Objects\")\r\n      if objs:\r\n          names = []\r\n          for obj in objs:\r\n              name = rs.ObjectName(obj)\r\n              if name is None: name=\"\"\r\n              names.append(name)\r\n          results = rs.PropertyListBox(objs, names, \"Modify object name(s)\")\r\n          if results:\r\n              for i in compat.RANGE(len(objs)):\r\n                  rs.ObjectName( objs[i], results[i] )\r\n    See Also:\r\n      CheckListBox\r\n      ComboListBox\r\n      ListBox\r\n      MultiListBox\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
