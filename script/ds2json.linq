@@ -6,10 +6,7 @@
 
 void Main()
 {
-  //var rss = @"Z:\src_osx\mcneel.com\osx\trunk\src4\rhino4\Plug-ins\ironpython\plugin\rhinoscriptsyntax\Scripts\rhinoscript";
-  //var rss = @"d:\\src\mcneel\rhino\src4\rhino4\Plug-ins\ironpython\plugin\rhinoscriptsyntax\Scripts\rhinoscript";
   var rss = @"S:\\rhino8\src4\rhino4\Plug-ins\ironpython\plugin\rhinoscriptsyntax\Scripts\rhinoscript";
-  //var data = @"Z:\mcneel.com\RhinoDocsMainGhpSite\developer-rhino3d-com\_data";
   var data = @"S:\\developer.rhino3d.com\data";
   var filename = "rhinoscriptsyntax.json";
   
