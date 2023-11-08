@@ -45,7 +45,7 @@ Many [McNeel projects](http://github.com/mcneel) are open-source and on [GitHub]
 
 ## Report Bugs
 
-Whenever you encounter something that doesn't work as it should, we'd love it if you could file a bug report.  At McNeel, we use [YouTrack](http://mcneel.myjetbrains.com/youtrack/) to track issues and bugs.  YouTrack requires that you create a login. The vast majority of bugs are visible to the public.  Please report issues or bugs with our APIs or SDKs on YouTrack.
+Whenever you encounter something that doesn't work as it should, we'd love it if you could file a bug report. Please report issues or bugs with our APIs or SDKs on the appropriate Discourse category, above.
 
 
 ## This website
