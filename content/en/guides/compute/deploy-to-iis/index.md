@@ -145,12 +145,12 @@ Assuming that you are now logged into the virtual machine (using RDP), follow th
 
 1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest step 2 bootstrap script and will configure IIS to work with Rhino.Compute.
     <div class="codetab">
-      <button class="tablinks2" onclick="openCodeTab(event, 'r7-1')">Rhino 7: Step 2</button>
-      <button class="tablinks2" onclick="openCodeTab(event, 'r8-1')" id="defaultOpen2">Rhino 8: Step 2</button>
+      <button class="tablinks2" onclick="openCodeTab(event, 'r7-2')">Rhino 7: Step 2</button>
+      <button class="tablinks2" onclick="openCodeTab(event, 'r8-2')" id="defaultOpen2">Rhino 8: Step 2</button>
     </div>
 
     <div class="tab-content">
-    <div class="codetab-content2" id="r7-1">
+    <div class="codetab-content2" id="r7-2">
 
     ```powershell
     $F="/bootstrap_step-2.zip";$T="$($Env:temp)\tmp$([convert]::tostring((get-random 65535),16).padleft(4,'0')).tmp"; New-Item -ItemType Directory -Path $T; iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/7.x/script/production/bootstrap_step-2.zip -outfile $T$F; Expand-Archive $T$F -DestinationPath $T; Remove-Item $T$F;& "$T\bootstrap_step-2\boostrap_step-2.ps1"
@@ -158,7 +158,7 @@ Assuming that you are now logged into the virtual machine (using RDP), follow th
 
     </div>
 
-    <div class="codetab-content2" id="r8-1">
+    <div class="codetab-content2" id="r8-2">
 
     ```powershell
     $F="/bootstrap_step-2.zip";$T="$($Env:temp)\tmp$([convert]::tostring((get-random 65535),16).padleft(4,'0')).tmp"; New-Item -ItemType Directory -Path $T; iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/8.x/script/production/bootstrap_step-2.zip -outfile $T$F; Expand-Archive $T$F -DestinationPath $T; Remove-Item $T$F;& "$T\bootstrap_step-2\boostrap_step-2.ps1"
