@@ -62,7 +62,7 @@ To create a new virtual machine instance on AWS, follow these steps:
 1. In the **Key Pair (login)** section, select the key pair name that you created in step 2 of the prerequisite section [prerequisite section](../creating-an-aws-vm/#prerequisites) from the drop-down list.</p>
 {{< image url="/images/AWS_Setup_13.png" alt="/images/AWS_Setup_13.png" class="image_left" width="90%" >}}
 
-1. In the **Network Settings** section, under the **Firewall (security groups)** choose the **Select existing security group** radio button. Then, under the **Common Security Groups** drop-down list, select the security group you created in step 3 of the [prerequisite section](../creating-an-aws-vm/#prerequisites).{{< call-out "warning" "Note" >}}If the **Auto-assign public IP** setting is set to **Disabled**, click on the **Edit** button on the top-right of this section panel and change this setting to **Enabled**.{{< /call-out >}}
+1. In the **Network Settings** section, under the **Firewall (security groups)** choose the **Select existing security group** radio button. Then, under the **Common Security Groups** drop-down list, select the security group you created in step 3 of the [prerequisite section](../creating-an-aws-vm/#prerequisites).{{< call-out "warning" "Important" >}}If the **Auto-assign public IP** setting is set to **Disabled**, click on the **Edit** button on the top-right of this section panel and change this setting to **Enabled**.{{< /call-out >}}
 {{< image url="/images/AWS_Setup_14.png" alt="/images/AWS_Setup_14.png" class="image_left" width="90%" >}}
 
 1. In the **Configure storage** section, select the default amount of storage for this instance.
