@@ -268,9 +268,29 @@ If you have already setup Rhino.Compute and/or IIS on this machine, you may need
 1. Click on the Windows Start menu and type in "Powershell". In the menu that appears, right-click on the **Windows Powershell app** and choose **Run As Administrator**.
 
 1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino for Windows. Note: you will be prompted to enter your **Email Address** so please have that information available.
+
+    <div class="codetab">
+      <button class="tablinks1" onclick="openCodeTab(event, 'r7-3')">Update Rhino 7</button>
+      <button class="tablinks1" onclick="openCodeTab(event, 'r8-3')" id="defaultOpen3">Update Rhino 8</button>
+    </div>
+
+    <div class="tab-content">
+    <div class="codetab-content1" id="r7-3">
+
     ```powershell
     iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/7.x/script/production/module_update_rhino.ps1 -outfile update_rhino.ps1; .\update_rhino.ps1 
     ```
+
+    </div>
+
+    <div class="codetab-content1" id="r8-3">
+
+    ```powershell
+    iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/8.x/script/production/module_update_rhino.ps1 -outfile update_rhino.ps1; .\update_rhino.ps1 
+    ```
+
+    </div>
+    </div>
 
 ### Update Compute
 
@@ -278,9 +298,28 @@ If you have already setup Rhino.Compute and/or IIS on this machine, you may need
 
 1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino.Compute.
 
+    <div class="codetab">
+      <button class="tablinks1" onclick="openCodeTab(event, 'r7-4')">Update Rhino.Compute for Rhino 7</button>
+      <button class="tablinks1" onclick="openCodeTab(event, 'r8-4')" id="defaultOpen4">Update Rhino.Compute for Rhino 8</button>
+    </div>
+
+    <div class="tab-content">
+    <div class="codetab-content1" id="r7-4">
+
     ```powershell
     iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/7.x/script/production/module_update_compute.ps1 -outfile update_compute.ps1; .\update_compute.ps1 
     ```
+
+    </div>
+
+    <div class="codetab-content1" id="r8-4">
+
+    ```powershell
+    iwr -useb https://raw.githubusercontent.com/mcneel/compute.rhino3d/8.x/script/production/module_update_compute.ps1 -outfile update_compute.ps1; .\update_compute.ps1 
+    ```
+
+    </div>
+    </div>
 
  
 ## Quick Links
