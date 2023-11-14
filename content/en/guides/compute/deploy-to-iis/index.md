@@ -270,8 +270,8 @@ If you have already setup Rhino.Compute and/or IIS on this machine, you may need
 1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino for Windows. Note: you will be prompted to enter your **Email Address** so please have that information available.
 
     <div class="codetab">
-      <button class="tablinks1" onclick="openCodeTab(event, 'r7-3')">Update Rhino 7</button>
-      <button class="tablinks1" onclick="openCodeTab(event, 'r8-3')" id="defaultOpen3">Update Rhino 8</button>
+      <button class="tablinks1" onclick="openCodeTab(event, 'r7-3')">Update to Latest Rhino 7 Install</button>
+      <button class="tablinks1" onclick="openCodeTab(event, 'r8-3')" id="defaultOpen3">Update to Latest Rhino 8 Install</button>
     </div>
 
     <div class="tab-content">
