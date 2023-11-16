@@ -173,3 +173,23 @@ td.hljs-ln-line.hljs-ln-code {
 	display: inline-block;
   width: max-content;
 }
+
+/* 
+####################################################################
+# Google Search Results Overrides
+####################################################################
+*/
+
+.gs-snippet {color: #333 !important; font-size:12pt !important;}
+.gsc-control-cse { max-width: 700px !important; margin-left:200px !important;}
+a.gs-title { 
+  font-size: 16pt !important; 
+  color: #337ab7 !important;
+  &:hover {
+    text-decoration: underline;
+  }
+  b {
+    font-size: 16pt !important;
+    color: #337ab7 !important;
+  }
+}
