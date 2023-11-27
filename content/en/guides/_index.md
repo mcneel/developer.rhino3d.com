@@ -56,8 +56,50 @@ toc_type = "single"
 - [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/main/README.md)
 - [Developer Docs Style Guide](/guides/general/developer-docs-style-guide)
 
-## [RhinoCommon](/guides/rhinocommon)
 
+## [Scripting](/guides/scripting)      <!-- RH-76268 -->
+
+*Guides on using scripting features in Rhino 8 and above, that apply to all programming languages*
+
+### Overview
+- [What is Script Editor?](/guides/scripting/what-is-scripteditor)
+
+### Getting Started
+
+- [ScriptEditor Command](/guides/scripting/scripting-command)
+- [Grasshopper Script Component](/guides/scripting/scripting-component)
+- [Python Scripting](/guides/scripting/scripting-python)
+- [C# Scripting](/guides/scripting/scripting-csharp)
+
+### Editor Features
+
+- [Editing Features](/guides/scripting/editor-editing)
+- [Explorer](/guides/scripting/editor-explorer)
+- [Search & Replace](/guides/scripting/editor-search)
+- [Terminal](/guides/scripting/editor-terminal)
+- [Problems Tray](/guides/scripting/editor-problems)
+- [Debugging Your Scripts](/guides/scripting/editor-debug-scripts)
+- [Templates](/guides/scripting/editor-templates)
+- [Help & Examples](/guides/scripting/editor-help)
+- [Configurations](/guides/scripting/editor-configs)
+- [Logs](/guides/scripting/editor-logs)
+
+### Publishing
+
+- [Script Editor Projects](/guides/scripting/projects)
+- [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish)
+
+### Advanced
+
+- [Language Initialization](/guides/scripting/advanced-langinit)
+- [Language Libraries](/guides/scripting/advanced-libraries)
+- [Async Execution](/guides/scripting/advanced-async)
+- [VisualStudioCode Integration](/guides/scripting/advanced-vscode)
+- [RhinoCode Command Line Interface](/guides/scripting/advanced-cli)
+- [Rhino.Runtime.Code API](/guides/scripting/advanced-core-api)
+- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api)
+
+## [RhinoCommon](/guides/rhinocommon)
 
 *The cross-platform .NET plugin SDK for Rhino.*
 
@@ -165,7 +207,6 @@ toc_type = "single"
 
 ## [openNURBS](/guides/opennurbs)
 
-
 *Read/Write Rhino 3dm files in your application.*
 
 ### Overview
@@ -185,7 +226,6 @@ toc_type = "single"
 {{< dev-topic-list "guides" "openNURBS" "Advanced" "weight" >}}
 
 ## [C/C++](/guides/cpp)
-
 
 *Native SDK for Rhino for Windows plugins.*
 
@@ -312,7 +352,6 @@ toc_type = "single"
 {{< dev-topic-list "guides" "Compute" "Hops" "weight" >}}
 
 ## Developer Services
-
 
 ### [Localization](https://www.rhino3d.com/localization)
 
