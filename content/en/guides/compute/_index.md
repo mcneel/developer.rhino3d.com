@@ -41,6 +41,9 @@ Write code to access the Rhino and Grasshopper SDKs through a stateless REST API
 
 {{< dev-topic-list "guides" "Compute" "Getting Started" "weight" >}}
 
+{{< /column >}}
+{{< /row >}}  
+
 {{< row >}}  
 {{< column >}}  
 
@@ -48,9 +51,15 @@ Write code to access the Rhino and Grasshopper SDKs through a stateless REST API
 
 {{< dev-topic-list "guides" "Compute" "Deployment" "weight" >}}
 
+{{< /column >}}
+{{< /row >}}  
+
 {{< row >}}  
 {{< column >}}  
 
 ### Hops
 
 {{< dev-topic-list "guides" "Compute" "Hops" "weight" >}}
+
+{{< /column >}}
+{{< /row >}}  
