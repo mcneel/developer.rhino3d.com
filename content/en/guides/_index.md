@@ -68,21 +68,21 @@ toc_type = "single"
 
 - [ScriptEditor Command](/guides/scripting/scripting-command)
 - [Grasshopper Script Component](/guides/scripting/scripting-component)
-- [Python Scripting](/guides/scripting/scripting-python)
-- [C# Scripting](/guides/scripting/scripting-csharp)
+- [Python Scripting](/guides/scripting/scripting-python) {{% comingsoon-label %}}
+- [C# Scripting](/guides/scripting/scripting-csharp) {{% comingsoon-label %}}
 
 ### Editor Features
 
-- [Editing Features](/guides/scripting/editor-editing)
-- [Explorer](/guides/scripting/editor-explorer)
-- [Search & Replace](/guides/scripting/editor-search)
-- [Terminal](/guides/scripting/editor-terminal)
-- [Problems Tray](/guides/scripting/editor-problems)
-- [Debugging Your Scripts](/guides/scripting/editor-debug-scripts)
-- [Templates](/guides/scripting/editor-templates)
-- [Help & Examples](/guides/scripting/editor-help)
-- [Configurations](/guides/scripting/editor-configs)
-- [Logs](/guides/scripting/editor-logs)
+- [Editing Features](/guides/scripting/editor-editing) {{% comingsoon-label %}}
+- [Explorer](/guides/scripting/editor-explorer) {{% comingsoon-label %}}
+- [Search & Replace](/guides/scripting/editor-search) {{% comingsoon-label %}}
+- [Terminal](/guides/scripting/editor-terminal) {{% comingsoon-label %}}
+- [Problems Tray](/guides/scripting/editor-problems) {{% comingsoon-label %}}
+- [Debugging Your Scripts](/guides/scripting/editor-debug-scripts) {{% comingsoon-label %}}
+- [Templates](/guides/scripting/editor-templates) {{% comingsoon-label %}}
+- [Help & Examples](/guides/scripting/editor-help) {{% comingsoon-label %}}
+- [Configurations](/guides/scripting/editor-configs) {{% comingsoon-label %}}
+- [Logs](/guides/scripting/editor-logs) {{% comingsoon-label %}}
 
 ### Publishing
 
@@ -91,13 +91,13 @@ toc_type = "single"
 
 ### Advanced
 
-- [Language Initialization](/guides/scripting/advanced-langinit)
-- [Language Libraries](/guides/scripting/advanced-libraries)
-- [Async Execution](/guides/scripting/advanced-async)
-- [VisualStudioCode Integration](/guides/scripting/advanced-vscode)
-- [RhinoCode Command Line Interface](/guides/scripting/advanced-cli)
-- [Rhino.Runtime.Code API](/guides/scripting/advanced-core-api)
-- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api)
+- [Language Initialization](/guides/scripting/advanced-langinit) {{% comingsoon-label %}}
+- [Language Libraries](/guides/scripting/advanced-libraries) {{% comingsoon-label %}}
+- [Async Execution](/guides/scripting/advanced-async) {{% comingsoon-label %}}
+- [VisualStudioCode Integration](/guides/scripting/advanced-vscode) {{% comingsoon-label %}}
+- [RhinoCode Command Line Interface](/guides/scripting/advanced-cli) {{% comingsoon-label %}}
+- [Rhino.Runtime.Code API](/guides/scripting/advanced-core-api) {{% comingsoon-label %}}
+- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api) {{% comingsoon-label %}}
 
 ## [RhinoCommon](/guides/rhinocommon)
 

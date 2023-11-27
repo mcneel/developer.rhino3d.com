@@ -372,6 +372,18 @@ li .new-callout-bullet {
 	color: $global-platform-color;
 }
 
+.comingsoon-label {
+	text-align: center;	
+	color: rgb(255, 255, 255);
+	background-color: orange;
+	font-size: .8rem;
+	margin-left: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-radius: 3px;
+	vertical-align: middle;
+	display:inline-block;
+}
 
 
 /* 
