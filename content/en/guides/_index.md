@@ -38,9 +38,9 @@ toc_type = "single"
 ### Fundamentals
 
 - [What is a Rhino Plugin?](/guides/general/what-is-a-rhino-plugin)
-- [Rhino Installer Engine](/guides/general/rhino-installer-engine)
-- [Simple Command Macros](/guides/general/creating-command-macros/)
 - [Rhino Package Manager](/guides/yak/)
+- [Rhino UI System](/guides/general/rhino-ui-system/)
+- [Simple Command Macros](/guides/general/creating-command-macros/)
 
 ### [Essential Mathematics](/guides/general/essential-mathematics)
 

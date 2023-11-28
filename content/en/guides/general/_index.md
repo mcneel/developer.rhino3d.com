@@ -48,6 +48,7 @@ since = 0
 
 - [What is a Rhino Plugin?](/guides/general/what-is-a-rhino-plugin)
 - [Rhino Installer Engine](/guides/general/rhino-installer-engine)
+- [Rhino UI System](/guides/general/rhino-ui-system/)
 - [Simple Command Macros](/guides/general/creating-command-macros/)
 
 ### [Essential Mathematics](/guides/general/essential-mathematics)
