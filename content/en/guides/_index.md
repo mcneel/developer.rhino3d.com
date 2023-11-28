@@ -64,7 +64,6 @@ toc_type = "single"
 ### Getting Started
 
 - [ScriptEditor Command](/guides/scripting/scripting-command)
-- [Grasshopper Script Component](/guides/scripting/scripting-component)
 
 ## [RhinoCommon](/guides/rhinocommon)
 
