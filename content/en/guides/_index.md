@@ -61,18 +61,10 @@ toc_type = "single"
 
 *Guides on using scripting features in Rhino 8 and above, that apply to all programming languages*
 
-### Overview
-- [What is Script Editor?](/guides/scripting/what-is-scripteditor)
-
 ### Getting Started
 
 - [ScriptEditor Command](/guides/scripting/scripting-command)
 - [Grasshopper Script Component](/guides/scripting/scripting-component)
-
-### Publishing
-
-- [Creating Rhino Projects](/guides/scripting/projects-create)
-- [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish)
 
 ## [RhinoCommon](/guides/rhinocommon)
 

@@ -1,3 +1,6 @@
+### Overview
+- [What is Script Editor?](/guides/scripting/what-is-scripteditor)
+
 ### Getting Started
 
 - <!-- [Python Scripting](/guides/scripting/scripting-python) --> Python Scripting {{% comingsoon-label %}}
@@ -15,6 +18,11 @@
 - <!-- [Help & Examples](/guides/scripting/editor-help) --> Help & Examples {{% comingsoon-label %}}
 - <!-- [Configurations](/guides/scripting/editor-configs) --> Configurations {{% comingsoon-label %}}
 - <!-- [Logs](/guides/scripting/editor-logs) --> Logs {{% comingsoon-label %}}
+
+### Publishing
+
+- [Creating Rhino Projects](/guides/scripting/projects-create)
+- [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish)
 
 ### Advanced
 
