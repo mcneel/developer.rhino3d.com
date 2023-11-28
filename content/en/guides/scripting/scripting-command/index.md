@@ -94,7 +94,6 @@ for i in range(5):
 
 ![](12.png)
 
-
 Move your mouse cursor to the left side of the line number column on line 12 and click. This should add a red dot and mark that line as a **Breakpoint**. Lets do the same for line number 14:
 
 ![](13.png)
@@ -178,7 +177,6 @@ or
 
 Let's create a new Python 3 script and add `numpy` as a package and use that in our script:
 
-
 ```python
 # requirements: numpy
 
@@ -197,11 +195,9 @@ Click Run, and the script editor will attempt to install the required packages b
 
 ![](25.png)
 
-
 ### Python Libraries (Modules)
 
 Another method of adding local packages to python scripts is by adding their path to the `sys.path`. You can simpify this step by using the `# env:` specifier in your scripts to automatically add a path to the `sys.path` before running your script:
-
 
 ```python
 # env: C:/Path/To/Where/My/Library/Is/Located/
@@ -238,7 +234,6 @@ Console.WriteLine(response.Content);
 ```
 
 ![](27.png)
-
 
 ## Editor Features
 
