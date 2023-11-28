@@ -265,6 +265,6 @@ Use the search field to search for class or method names. The info panel at the 
 
 ![](32.png)
 
-<!-- If the selected member has an online documentation, a preview tab opens in the editor showing the contents:
+If the selected member has an online documentation, a preview tab opens in the editor showing the contents:
 
-![](33.png) -->
+![](33.png)
