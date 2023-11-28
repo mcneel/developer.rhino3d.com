@@ -56,8 +56,16 @@ toc_type = "single"
 - [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/main/README.md)
 - [Developer Docs Style Guide](/guides/general/developer-docs-style-guide)
 
-## [RhinoCommon](/guides/rhinocommon)
 
+## [Scripting](/guides/scripting)      <!-- RH-76268 -->
+
+*Guides on using scripting features in Rhino 8 and above, that apply to all programming languages*
+
+### Getting Started
+
+- [ScriptEditor Command](/guides/scripting/scripting-command)
+
+## [RhinoCommon](/guides/rhinocommon)
 
 *The cross-platform .NET plugin SDK for Rhino.*
 
@@ -165,7 +173,6 @@ toc_type = "single"
 
 ## [openNURBS](/guides/opennurbs)
 
-
 *Read/Write Rhino 3dm files in your application.*
 
 ### Overview
@@ -185,7 +192,6 @@ toc_type = "single"
 {{< dev-topic-list "guides" "openNURBS" "Advanced" "weight" >}}
 
 ## [C/C++](/guides/cpp)
-
 
 *Native SDK for Rhino for Windows plugins.*
 
@@ -312,7 +318,6 @@ toc_type = "single"
 {{< dev-topic-list "guides" "Compute" "Hops" "weight" >}}
 
 ## Developer Services
-
 
 ### [Localization](https://www.rhino3d.com/localization)
 

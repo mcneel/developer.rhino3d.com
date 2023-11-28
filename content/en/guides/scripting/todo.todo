@@ -1,0 +1,37 @@
+### Overview
+- [What is Script Editor?](/guides/scripting/what-is-scripteditor)
+
+### Getting Started
+
+- [Grasshopper Script Component](/guides/scripting/scripting-component)
+- <!-- [Python Scripting](/guides/scripting/scripting-python) --> Python Scripting {{% comingsoon-label %}}
+- <!-- [C# Scripting](/guides/scripting/scripting-csharp) --> C# Scripting {{% comingsoon-label %}}
+
+### Editor Features
+
+- <!-- [Editing Features](/guides/scripting/editor-editing) --> Editing Features {{% comingsoon-label %}}
+- <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
+- <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
+- <!-- [Terminal](/guides/scripting/editor-terminal) --> Terminal {{% comingsoon-label %}}
+- <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
+- <!-- [Debugging Your Scripts](/guides/scripting/editor-debug-scripts) --> Debugging Your Scripts {{% comingsoon-label %}}
+- <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
+- <!-- [Help & Examples](/guides/scripting/editor-help) --> Help & Examples {{% comingsoon-label %}}
+- <!-- [Configurations](/guides/scripting/editor-configs) --> Configurations {{% comingsoon-label %}}
+- <!-- [Logs](/guides/scripting/editor-logs) --> Logs {{% comingsoon-label %}}
+
+### Publishing
+
+- [Creating Rhino Projects](/guides/scripting/projects-create)
+- [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish)
+
+### Advanced
+
+- <!-- [Language Initialization](/guides/scripting/advanced-langinit) --> Language Initialization {{% comingsoon-label %}}
+- <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
+- <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
+- <!-- [Async Execution](/guides/scripting/advanced-async) --> Async Execution {{% comingsoon-label %}}
+- <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
+- <!-- [RhinoCode Command Line Interface](/guides/scripting/advanced-cli) --> RhinoCode Command Line Interface {{% comingsoon-label %}}
+- <!-- [RhinoCode API](/guides/scripting/advanced-core-api) --> RhinoCode API {{% comingsoon-label %}}
+- <!-- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api) --> RhinoCodeEditor API {{% comingsoon-label %}}
