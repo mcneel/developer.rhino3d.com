@@ -337,6 +337,10 @@ li .new-callout-bullet {
 	color: $global-background-color;
 }
 
+.new-callout a:visited {
+	color: $global-background-color;
+}
+
 .platform-callout {
 	font-size: 30px; 
 	color: $global-platform-color;
