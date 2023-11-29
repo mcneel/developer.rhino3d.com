@@ -80,7 +80,7 @@ The Terminal tray has a series of buttons on the top-right side to **Copy** and 
 
 ## Debugging Scripts
 
-The new script editor can debug scripts of any supported language. During debug, we can execute the script line by line, or pause the execution at certain lines called **Breakpoints** and inspect the values of global and local variables.
+The script editor can debug scripts of any supported language. During debug, we can execute the script line by line, or pause the execution at certain lines called **Breakpoints** and inspect the values of global and local variables.
 
 Let's add these lines to our script:
 
@@ -145,7 +145,7 @@ Progressively clicking on **Step Over**, will continue executing the script and 
 
 ![](21.png)
 
-Once the script ends, the editor UI changes back to normal, and the **Variables** tray will show the last state of the variables. The tray will keep these data until the script is closed or another session of debugging is started.
+Once the script ends, the editor UI changes back to normal, and the **Variables** tray will show the last state of the variables. The tray will keep these data until the script is closed or another session of debugging is started:
 
 ![](22.png)
 
