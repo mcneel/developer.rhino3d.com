@@ -56,8 +56,7 @@ toc_type = "single"
 - [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/main/README.md)
 - [Developer Docs Style Guide](/guides/general/developer-docs-style-guide)
 
-
-## [Scripting](/guides/scripting)      <!-- RH-76268 -->
+## [Scripting](/guides/scripting)
 
 *Guides on using scripting features in Rhino 8 and above, that apply to all programming languages*
 
