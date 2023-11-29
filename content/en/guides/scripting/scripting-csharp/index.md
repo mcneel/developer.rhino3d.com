@@ -5,7 +5,7 @@ type = "guides"
 categories = ["Scripting"]
 keywords = [ "", "" ]
 languages = [ "C#", "Python", "CPython", "IronPython", "VB" ]
-authors = ["eirannejad"]
+authors = ["ehsan"]
 sdk = [ "RhinoCommon" ]
 weight = 4
 
