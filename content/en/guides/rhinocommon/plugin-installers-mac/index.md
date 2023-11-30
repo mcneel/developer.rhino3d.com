@@ -9,7 +9,6 @@ sdk = [ "RhinoCommon" ]
 title = "Plugin Installers (Mac)"
 type = "guides"
 weight = 6
-override_last_modified = "2021-09-03T08:26:49Z"
 
 [admin]
 TODO = ""
@@ -81,6 +80,30 @@ To make your Library visible in the Finder:
 1. Press <kbd>Command</kbd>+<kbd>J</kbd> to bring up the *Finder View* options dialog...
 ![finder_view_options](/images/finder-view-options.png)
 1. Check the *Show Library Folder* check box.  Now your Library should show up in the view.  You may want to drag this folder to your Favorites area of the Finder sidebar for easy access later.
+
+## Maintaining Your Own Installer?
+
+As explained above, when Rhino for Mac launches, it searches the contents of the:
+
+*~/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/*
+
+folder scanning the sub-folders looking for *.rhp* files. When it finds such "file" (which are actually packages), Rhino for Mac attempts to load the assembly with the same name contained within this package. If you are maintaining your own installer, simply writing your plugin to this folder should be sufficient.
+
+### Version-Specific Installations
+
+*If you are maintaing your own installer*, in Rhino 8 for Mac onward\*, it is possible to register version-specific installations. To do this, your installer will need to create a *MacPlugIns* folder *within the version folder* that resides in:
+
+*~/Library/Application Support/McNeel/Rhinoceros/*
+
+For example, to register a plugin that only Rhino 8 will load, your installer should write to:
+
+*~/Library/Application Support/McNeel/Rhinoceros/8.0/MacPlugIns/YourPluginName*
+
+{{< call-out "info" "Package Manager" >}}
+
+\* Rhino 7's package manager already supports version-specific (and even platform-specific) targets. See the [Anatomy of a Package: Distributions section](/guides/yak/the-anatomy-of-a-package/#distributions) for more information.
+
+{{< /call-out >}}
 
 ## Related topics
 
