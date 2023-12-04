@@ -19,6 +19,7 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
+version = [ "8" ]
 
 +++
 {{< row >}}
