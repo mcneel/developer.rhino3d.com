@@ -108,7 +108,7 @@ toc_type = "single"
 
 ### Overview
 
-{{< dev-topic-list "guides" "RhinoPython" "Overview" "weight" >}}
+{{< dev-topic-list "guides" "RhinoPython" "Overview" "weight" "8" >}}
 
 ### Getting Started
 
@@ -118,20 +118,20 @@ toc_type = "single"
 
 ### Python Editor for Windows
 
-{{< dev-topic-list "guides" "RhinoPython" "Python Windows" "weight" >}}
+{{< dev-topic-list "guides" "RhinoPython" "Python Windows" "weight" "8" >}}
 
 ### Python in Grasshopper
 
-{{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" >}}
+{{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" "8" >}}
 
 
 ### Fundamentals
 
-{{< dev-topic-list "guides" "RhinoPython" "Fundamentals" "weight" >}}
+{{< dev-topic-list "guides" "RhinoPython" "Fundamentals" "weight" "8" >}}
 
 ### Python in Rhino
 
-{{< dev-topic-list "guides" "RhinoPython" "Python in Rhino" "weight" >}}
+{{< dev-topic-list "guides" "RhinoPython" "Python in Rhino" "weight" "8" >}}
 
 ### [Rhino.Python 101](/guides/rhinopython/primer-101)
 
@@ -151,11 +151,11 @@ toc_type = "single"
 
 ### Intermediate
 
-{{< dev-topic-list "guides" "RhinoPython" "Intermediate" "weight" >}}
+{{< dev-topic-list "guides" "RhinoPython" "Intermediate" "weight" "8" >}}
 
 ### Custom Dialogs in Eto
 
-{{< dev-topic-list "guides" "RhinoPython" "Eto" "weight" >}}
+{{< dev-topic-list "guides" "RhinoPython" "Eto" "weight" "8" >}}
 
 
 ### Other Resources
@@ -252,7 +252,7 @@ toc_type = "single"
 
 ### Python in Grasshopper
 
-{{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" >}}
+{{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" "8" >}}
 
 
 ## [RhinoScript](/guides/rhinoscript)
