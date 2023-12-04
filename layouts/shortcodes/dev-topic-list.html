@@ -2,26 +2,26 @@
 {{- $.Scratch.Set "sdk" "" -}}
 {{- $.Scratch.Set "category" "" -}}
 {{- $.Scratch.Set "sort-by" "weight" -}}
-{{- $.Scratch.Set "include_in" "version" "" -}}
+{{- $.Scratch.Set "version" "" -}}
 
 {{- if .IsNamedParams -}}
     {{- if .Get "section" -}}{{- $.Scratch.Set "section" (.Get "section") -}}{{- end -}}
     {{- if .Get "sdk" -}}{{- $.Scratch.Set "sdk" (.Get "sdk") -}}{{- end -}}
     {{- if .Get "category" -}}{{- $.Scratch.Set "category" (.Get "category") -}}{{- end -}}
     {{- if .Get "sort-by" -}}{{- $.Scratch.Set "sort-by" (.Get "sort-by") -}}{{- end -}}
-    {{- if .Get "version" -}}{{- $.Scratch.Set "version" (.Get "version") -}}{{- end -}}   
+    {{- if .Get "included_in.version" -}}{{- $.Scratch.Set "version" (.Get "included_in.version") -}}{{- end -}}
 {{- else -}}
     {{- if .Get 0 -}}{{- $.Scratch.Set "section" (.Get 0) -}}{{- end -}}
     {{- if .Get 1 -}}{{- $.Scratch.Set "sdk" (.Get 1) -}}{{- end -}}
     {{- if .Get 2 -}}{{- $.Scratch.Set "category" (.Get 2) -}}{{- end -}}
     {{- if .Get 2 -}}{{- $.Scratch.Set "sort-by" (.Get 3) -}}{{- end -}}
-    {{- if .Get 2 -}}{{- $.Scratch.Set "version" (.Get 4) -}}{{- end -}} 
+    {{- if .Get 4 -}}{{- $.Scratch.Set "version" (.Get 4) -}}{{- end -}}
 {{- end -}}
 
 <ul>
     {{- range where .Site.Pages "Section" ($.Scratch.Get "section") -}}
         {{- if in .Params.sdk ($.Scratch.Get "sdk") -}}
-            {{- if in .Params.version ($.Scratch.Get "version") -}}
+            {{- if or (in .Params.Included_in.Version ($.Scratch.Get "version")) (not ($.Scratch.Get "version")) -}}
                 {{- if in .Params.categories ($.Scratch.Get "category") -}}
                     <li><a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a></li>
                 {{- end -}}

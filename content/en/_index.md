@@ -44,7 +44,7 @@ list_group = "uncategorized"
 </div>
 -->
 
-<div style='background-color:#ffffcc;border:2px solid yellow;padding:10px;text-align:center;text-weight:bold;'><a href='https://developer.rhino3d.com/guides/rhinocommon/moving-to-dotnet-7/'>Need help migrating to Rhino 8? Click here!</a></div>
+{{< alt-version "https://developer.rhino3d.com/guides/rhinocommon/moving-to-dotnet-7/" "Need help migrating C# to Rhino 8? Click here!">}}
 
 {{< vimeo 188730450 >}}
 

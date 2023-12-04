@@ -29,6 +29,9 @@ toc_type = "single"
 
 +++
 
+
+{{< alt-version "https://developer.rhino3d.com/guides/rhinocommon/moving-to-dotnet-7/" "This guide is for Rhino 8 Python 3  For Rhino 7 Python 2? Click here!">}}
+
 ...but a better question is...
 
 ## What is Python?

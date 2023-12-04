@@ -107,6 +107,7 @@ googlefonts = [
       "platform" = "platforms"
       "task" = "tasks"
       "level" = "levels"
+      "version" = "versions"
     [languages.en.menu]
       [[languages.en.menu.main]]
         identifier = "guides"
