@@ -18,7 +18,7 @@ state = ""
 [included_in]
 platforms = [ "Mac", "Windows" ]
 since = 0
-version = [ "8" ]
+version = [  "7", "8" ]
 
 [page_options]
 byline = true
