@@ -70,7 +70,7 @@ num = 85
 pi = 3.14159
 
 print(type(message))  # This will return a string
-print(type(n))  # This will return an integer
+print(type(num))  # This will return an integer
 print(type(pi))  # This will return a float
 ```
 
@@ -91,14 +91,14 @@ Strings can be accessed as a whole string, or a substring of the complete variab
 var1 = 'Hello World!'
 var2 = 'RhinoPython'
 
-print var1[0] # this will print the first character in the string an `H`
-print var2[1:5] # this will print the substring 'hinoP`
+print (var1[0]) # this will print the first character in the string an `H`
+print (var2[1:5]) # this will print the substring 'hinoP`
 ```
 
 Python can use a special syntax to format multiple strings and numbers. The string formatter is quickly covered here because it is seen often and it is important to recognize the syntax.  
 
 ```python
-print "The item {} is repeated {} times".format(element,count))
+print ("The item {} is repeated {} times".format(element,count))
 ```
 
 The `{}` are placeholders that are substituted by the variables `element` and `count` in the final string. This compact syntax is meant to keep the code more readable and compact.
@@ -129,8 +129,8 @@ All lists in Python are zero-based indexed. When referencing a member or the len
 ```python
 mylist = ['Rhino', 'Grasshopper', 'Flamingo', 'Bongo']
 B = len(mylist) # This will return the length of the list which is 3. The index is 0, 1, 2, 3.
-print mylist[1] # This will return the value at index 1, which is 'Grasshopper'
-print mylist[0:2] # This will return the first 3 elements in the list.
+print (mylist[1]) # This will return the value at index 1, which is 'Grasshopper'
+print (mylist[0:2]) # This will return the first 3 elements in the list.
 ```
 
 You can assign data to a specific element of the list using an index into the list. The list index starts at zero. Data can be assigned to the elements of an array as follows:
@@ -141,7 +141,7 @@ mylist[0] = 'Rhino'
 mylist[1] = 'Grasshopper'
 mylist[2] = 'Flamingo'
 mylist[3] = 'Bongo'
-print mylist[1]
+print (mylist[1])
 ```
 
 Lists aren't limited to a single dimension. Although most people can't comprehend more than three or four dimensions. You can declare multiple dimensions by separating an with commas.  In the following example, the MyTable variable is a two-dimensional array :

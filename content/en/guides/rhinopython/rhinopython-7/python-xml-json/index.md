@@ -72,7 +72,7 @@ Here is an example of a JSON structure describing a medical office, taken from a
 ```
 It is this dictionary setup that works best for Json.
 
-For more information on creating and manipulating this type of information in Python see the [Dictionary as a Database Guide](/guides/rhinopython/python-dictionary-database/)
+For more information on creating and manipulating this type of information in Python see the [Dictionary as a Database Guide](/guides/rhinopython/rhinopython-7/python-dictionary-database/)
 
 ## JSON in Python
 
@@ -111,7 +111,7 @@ if filename:
         json.dump(datastore, f)
 ```
 
-Remember only a JSON formatted string can be written to the file. For more information about using Rhino.Python to read and write files see the [How to read and write a simple file](/guides/rhinopython/python-reading-writing/)
+Remember only a JSON formatted string can be written to the file. For more information about using Rhino.Python to read and write files see the [How to read and write a simple file](/guides/rhinopython/rhinopython-7/python-reading-writing/)
 
 ## Reading JSON
 
@@ -136,6 +136,6 @@ print datastore["office"]["parking"]["style"]
 
 The result of the code above will result in the same data structure at the top of this guide.
 
-For more information about using Rhino.Python to read and write files see the [How to read and write a simple file](/guides/rhinopython/python-reading-writing/)
+For more information about using Rhino.Python to read and write files see the [How to read and write a simple file](/guides/rhinopython/rhinopython-7/python-reading-writing/)
 
-For more details on accessing the information in the dictionary datastructure see,  [Dictionary as a Database Guide](/guides/rhinopython/python-dictionary-database/)
+For more details on accessing the information in the dictionary datastructure see,  [Dictionary as a Database Guide](/guides/rhinopython/rhinopython-7/python-dictionary-database/)

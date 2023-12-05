@@ -90,9 +90,9 @@ A complete list of predefined modules in Python, see the [Python Standard Librar
 
 ## Related Topics
 
-- [What are Python and RhinoScriptSyntax?](/guides/rhinopython/what-is-rhinopython)
-- [Python Basic Syntax](/guides/rhinopython/python-statements/)
-- [Python Procedures](/guides/rhinopython/python-procedures/)
-- [Rhinoscript Syntax in Python](/guides/rhinopython/python-rhinoscriptsyntax-introduction/)
-- [Rhino.Python Home Page](/guides/rhinopython/)
+- [What are Python and RhinoScriptSyntax?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Python Basic Syntax](/guides/rhinopython/rhinopython-7/python-statements/)
+- [Python Procedures](/guides/rhinopython/rhinopython-7/python-procedures/)
+- [Rhinoscript Syntax in Python](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-introduction/)
+- [Rhino.Python Home Page](/guides/rhinopython/rhinopython-7/)
 - [Python (homepage)](https://www.python.org/)

@@ -29,7 +29,7 @@ toc_type = "single"
 
 [Eto is an open source cross-platform dialog box framework](https://github.com/picoe/Eto/wiki) available in Rhino 6.  This guide demonstrates the syntax required to create the most common Eto controls in Rhino.Python.  Eto controls include labels, buttons, edit boxes and sliders. In Eto there are [more than 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created.
 
-For details on creating a complete Eto Dialog in Rhino.Python go to the [Getting Started with Eto Guide](/guides/rhinopython/eto-forms-python/). The samples in this guide can be added to the controls section of the Basic dialog framework covered in the [Getting Started Guide](/guides/rhinopython/eto-forms-python/).
+For details on creating a complete Eto Dialog in Rhino.Python go to the [Getting Started with Eto Guide](/guides/rhinopython/rhinopython-7/eto-forms-python/). The samples in this guide can be added to the controls section of the Basic dialog framework covered in the [Getting Started Guide](/guides/rhinopython/rhinopython-7/eto-forms-python/).
 
 ## Buttons
 
@@ -661,6 +661,6 @@ Now with some understanding of Eto Dialogs in Python, take a look at some of the
 ## Related Topics
 
 - [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/win/#userinterface)
-- [Custom Eto Forms in Python guide](/guides/rhinopython/eto-forms-python/)
-- [Eto Layouts in Python](/guides/rhinopython/eto-layouts-python/) guide
-- [Eto Controls in Python](/guides/rhinopython/eto-controls-python/) guide
+- [Custom Eto Forms in Python guide](/guides/rhinopython/rhinopython-7/eto-forms-python/)
+- [Eto Layouts in Python](/guides/rhinopython/rhinopython-7/eto-layouts-python/) guide
+- [Eto Controls in Python](/guides/rhinopython/rhinopython-7/eto-controls-python/) guide

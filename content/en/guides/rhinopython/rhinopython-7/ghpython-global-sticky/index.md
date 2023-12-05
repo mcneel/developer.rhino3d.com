@@ -59,7 +59,7 @@ Within Rhino.Python, the same value can be accessed the same way through [Rhino.
 
 ## Related Topics
 
-- [Your first script with Python in Grasshopper](/guides/rhinopython/what-is-rhinopython)
-- [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Editing Python in Grasshopper](/guides/rhinopython/python-running-scripts)
-- [Python Guide for Rhino](/guides/rhinopython/)
+- [Your first script with Python in Grasshopper](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [What is Python and RhinoScript?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Editing Python in Grasshopper](/guides/rhinopython/rhinopython-7/python-running-scripts)
+- [Python Guide for Rhino](/guides/rhinopython/rhinopython-7/)

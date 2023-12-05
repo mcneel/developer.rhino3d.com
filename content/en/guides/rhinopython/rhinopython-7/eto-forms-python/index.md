@@ -31,7 +31,7 @@ toc_type = "single"
 
 [Eto is an open source cross-platform user-interface framework](https://github.com/picoe/Eto/wiki) available in Rhino 6.  Eto can be used in Rhino plug-ins, Grasshopper components, and Python scripts to create dialog boxes and other user-interface features.
 
-Rhino.Python comes with a series of [pre-defined user interface dialogs](/guides/rhinopython/python-user-input/) which can be used for the times a simple dialog box is needed.  But, if the pre-defined dialogs above do not provide enough functionality, then creating a custom dialog box using Eto may be the right solution.
+Rhino.Python comes with a series of [pre-defined user interface dialogs](/guides/rhinopython/rhinopython-7/python-user-input/) which can be used for the times a simple dialog box is needed.  But, if the pre-defined dialogs above do not provide enough functionality, then creating a custom dialog box using Eto may be the right solution.
 
 For example, here is a custom, collapsing dialog that uses many controls:
 
@@ -165,7 +165,7 @@ Along the left column of the Python editor, the methods within this Eto Assembly
 
 ## Custom Dialog Class
 
-The next section of the code creates a new class definition that extends the `Dialog(T)` class. [Creating classes in Python](/guides/rhinopython/primer-101/7-classes/) requires some very specific syntax.  While it may seems little more complicated to create a class, the ability to reuse, import and interact with class based dialog in Python scripts is well worth the practice.  A class will contain the default information about the default layouts and actions of the class controls. The class will also be used to store all the values of the controls for the while the script is running.  contain the values of
+The next section of the code creates a new class definition that extends the `Dialog(T)` class. [Creating classes in Python](/guides/rhinopython/rhinopython-7/primer-101/7-classes/) requires some very specific syntax.  While it may seems little more complicated to create a class, the ability to reuse, import and interact with class based dialog in Python scripts is well worth the practice.  A class will contain the default information about the default layouts and actions of the class controls. The class will also be used to store all the values of the controls for the while the script is running.  contain the values of
 
 A dialog class is started with these lines:
 
@@ -238,7 +238,7 @@ After creating the dialog framework, we will start to create some controls for t
 
 ## The Controls  
 
-The business end of a dialog is the user-interface controls it displays.  Controls may include Labels, Buttons, Edit boxes and Sliders. In Eto, there are [more then 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created. For details information on these controls, go to the [Eto Controls in Python](/guides/rhinopython/eto-controls-python/) guide.
+The business end of a dialog is the user-interface controls it displays.  Controls may include Labels, Buttons, Edit boxes and Sliders. In Eto, there are [more then 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created. For details information on these controls, go to the [Eto Controls in Python](/guides/rhinopython/rhinopython-7/eto-controls-python/) guide.
 
 Controls normally need to be setup properly in a layout before they are added to a dialog.  
 
@@ -347,7 +347,7 @@ In this a case a new dynamic layout object is created at:
         layout = forms.DynamicLayout()
 ```
 
-The [DynamicLayout](https://github.com/picoe/Eto/wiki/DynamicLayout) is one of [5 layout types](https://github.com/picoe/Eto/wiki/Containers) supported by Eto.  The Dynamic layout is a virtual grid that can organized controls both vertically and horizontally. For a detailed look at layouts, go to the [Eto Layouts in Python](/guides/rhinopython/eto-layouts-python/) guide.
+The [DynamicLayout](https://github.com/picoe/Eto/wiki/DynamicLayout) is one of [5 layout types](https://github.com/picoe/Eto/wiki/Containers) supported by Eto.  The Dynamic layout is a virtual grid that can organized controls both vertically and horizontally. For a detailed look at layouts, go to the [Eto Layouts in Python](/guides/rhinopython/rhinopython-7/eto-layouts-python/) guide.
 
 The spacing between controls in the layout is set by `layout.Spacing` on the line:
 
@@ -482,7 +482,7 @@ Now with some understanding of Eto Dialogs in Python, take a look at some of the
 
 ## Related Topics
 
-- [Reading and Writing files with Python](/guides/rhinopython/python-reading-writing)
+- [Reading and Writing files with Python](/guides/rhinopython/rhinopython-7/python-reading-writing)
 - [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/win/#userinterface)
-- [Eto Layouts in Python](/guides/rhinopython/eto-layouts-python/) guide
-- [Eto Controls in Python](/guides/rhinopython/eto-controls-python/) guide
+- [Eto Layouts in Python](/guides/rhinopython/rhinopython-7/eto-layouts-python/) guide
+- [Eto Controls in Python](/guides/rhinopython/rhinopython-7/eto-controls-python/) guide

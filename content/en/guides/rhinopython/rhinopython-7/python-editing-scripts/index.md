@@ -99,10 +99,10 @@ The menu provides access to all the RhinoPythonScript Editor features.
 
 ## Related Topics
 
-- [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Your First Python Script in Rhino (Windows)](/guides/rhinopython/your-first-python-script-in-rhino-windows)
-- [Running Scripts](/guides/rhinopython/python-running-scripts)
-- [Canceling Scripts](/guides/rhinopython/python-canceling-scripts)
-- [Editing Scripts](/guides/rhinopython/python-editing-scripts)
-- [Scripting Options](/guides/rhinopython/python-scripting-options)
-- [Reinitializing Python](/guides/rhinopython/python-scripting-reinitialize)
+- [What is Python and RhinoScript?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Your First Python Script in Rhino (Windows)](/guides/rhinopython/rhinopython-7/your-first-python-script-in-rhino-windows)
+- [Running Scripts](/guides/rhinopython/rhinopython-7/python-running-scripts)
+- [Canceling Scripts](/guides/rhinopython/rhinopython-7/python-canceling-scripts)
+- [Editing Scripts](/guides/rhinopython/rhinopython-7/python-editing-scripts)
+- [Scripting Options](/guides/rhinopython/rhinopython-7/python-scripting-options)
+- [Reinitializing Python](/guides/rhinopython/rhinopython-7/python-scripting-reinitialize)

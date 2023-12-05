@@ -119,10 +119,10 @@ Now you can test that using the toggle.
 
 ## Related Topics
 
-- [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Loading Scripts](/guides/rhinopython/python-running-scripts)
-- [Running Scripts](/guides/rhinopython/python-running-scripts)
-- [Canceling Scripts](/guides/rhinopython/python-canceling-scripts)
-- [Editing Scripts](/guides/rhinopython/python-editing-scripts)
-- [Scripting Options](/guides/rhinopython/python-scripting-options)
-- [Troubleshooting Python](/guides/rhinopython/python-troubleshooting-install)
+- [What is Python and RhinoScript?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Loading Scripts](/guides/rhinopython/rhinopython-7/python-running-scripts)
+- [Running Scripts](/guides/rhinopython/rhinopython-7/python-running-scripts)
+- [Canceling Scripts](/guides/rhinopython/rhinopython-7/python-canceling-scripts)
+- [Editing Scripts](/guides/rhinopython/rhinopython-7/python-editing-scripts)
+- [Scripting Options](/guides/rhinopython/rhinopython-7/python-scripting-options)
+- [Troubleshooting Python](/guides/rhinopython/rhinopython-7/python-troubleshooting-install)

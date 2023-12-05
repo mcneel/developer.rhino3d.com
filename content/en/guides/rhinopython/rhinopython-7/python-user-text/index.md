@@ -387,7 +387,7 @@ if filename: rs.MessageBox(filename)
 
 ## Related Topics
 
-- [Reading and Writing files with Python](/guides/rhinopython/python-reading-writing)
+- [Reading and Writing files with Python](/guides/rhinopython/rhinopython-7/python-reading-writing)
 - [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/win/#userinterface)
 
 

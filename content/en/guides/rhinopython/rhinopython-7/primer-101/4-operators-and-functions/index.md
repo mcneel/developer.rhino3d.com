@@ -406,4 +406,4 @@ This gets into the topic of mutability.  An element is considered mutable if it 
 
 ## Next Steps
 
-Ok, so now that you can get some functions to work. Next is [conditional execution](/guides/rhinopython/primer-101/5-conditional-execution/) to control how the script reacts to input.
+Ok, so now that you can get some functions to work. Next is [conditional execution](/guides/rhinopython/rhinopython-7/primer-101/5-conditional-execution/) to control how the script reacts to input.

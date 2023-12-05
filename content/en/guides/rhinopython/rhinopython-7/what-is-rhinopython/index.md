@@ -101,22 +101,22 @@ if start:
 
 Yes, different...but similar enough that you should be able to figure out what is happening in python if you've written RhinoScript. Rhinoscriptsyntax also contains many helper functions to make it easier to program with in Python.
 
-For more information on how to use Rhinoscriptsyntax and Python, see the [Rhino.Python Guide](/guides/rhinopython/)
+For more information on how to use Rhinoscriptsyntax and Python, see the [Rhino.Python Guide](/guides/rhinopython/rhinopython-7/)
 
 
 #### Grasshopper
 
 Python can also be used in Grasshopper to create custom components within a larger grasshopper definition. The GhPython component contains a Python script editor and direct access to Python, Rhino and Grasshopper functions.  Use GhPython to create and manipulate customer data within Grasshopper.
 
-For an introduction to GhPython in Grasshopper, see the [Your First Python Script in Grasshopper Guide](/guides/rhinopython/your-first-python-script-in-grasshopper)
+For an introduction to GhPython in Grasshopper, see the [Your First Python Script in Grasshopper Guide](/guides/rhinopython/rhinopython-7/your-first-python-script-in-grasshopper)
 
 #### RhinoCommon
 
-[Rhinocommon](/guides/rhinopython/what-is-rhinocommon/) is a low-level powerful SDK for all Rhino platforms used mainly by more experienced developers.  Python scripts can use Rhinocommon, to have full access to the .NET framework including access to Rhino's RhinoCommon SDK.  A guide of accessing RhinoCommon from Python scripts is at [Using RhinoCommon from Python](/guides/rhinopython/using-rhinocommon-from-python).
+[Rhinocommon](/guides/rhinopython/rhinopython-7/what-is-rhinocommon/) is a low-level powerful SDK for all Rhino platforms used mainly by more experienced developers.  Python scripts can use Rhinocommon, to have full access to the .NET framework including access to Rhino's RhinoCommon SDK.  A guide of accessing RhinoCommon from Python scripts is at [Using RhinoCommon from Python](/guides/rhinopython/rhinopython-7/using-rhinocommon-from-python).
 
 ## Related Topics
 
-- [Python Basic Syntax](/guides/rhinopython/python-statements/)
-- [Rhinoscript Syntax in Python](/guides/rhinopython/python-rhinoscriptsyntax-introduction/)
-- [Rhino.Python Home Page](/guides/rhinopython/)
+- [Python Basic Syntax](/guides/rhinopython/rhinopython-7/python-statements/)
+- [Rhinoscript Syntax in Python](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-introduction/)
+- [Rhino.Python Home Page](/guides/rhinopython/rhinopython-7/)
 - [Python (homepage)](https://www.python.org/)

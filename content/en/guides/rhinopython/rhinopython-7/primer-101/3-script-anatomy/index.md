@@ -120,4 +120,4 @@ Use the "Step Into", "Step Over", "Step Out" buttons to walk line-by-line throug
 
 ## Next Steps
 
-That was a basic overview of Python running in Rhino.  Now learn to use [operators and functions](/guides/rhinopython/primer-101/4-operators-and-functions/) to get something done.
+That was a basic overview of Python running in Rhino.  Now learn to use [operators and functions](/guides/rhinopython/rhinopython-7/primer-101/4-operators-and-functions/) to get something done.

@@ -46,7 +46,7 @@ To run only one statement when a condition is True, use the single-line syntax f
 
 ```python
 var1 = 350
-if var1 == 350 : print "The value of the variable is 350"
+if var1 == 350 : print ("The value of the variable is 350")
 ```
 
 To run more than one line of code, you must use the multiple-line (or block) syntax. The first line ends in a colon (:). As with all Python block syntax, the whitespaces to the left of the lines must be the same throughout the block. As an example:
@@ -54,9 +54,9 @@ To run more than one line of code, you must use the multiple-line (or block) syn
 ```python
 var1 = 350
 if var1 == 350 :
-    print "The value of the variable is 350"
+    print ("The value of the variable is 350")
     var2 = 450
-    print "The value of variable 2 is 450"
+    print ("The value of variable 2 is 450")
 ```
 
 ### if..else
@@ -71,7 +71,7 @@ if var1 == 0 :
 else :
     MyLayerColor = 'vbGreen'
     MyObjectColor = 'vbBlack'
-print MyLayerColor
+print (MyLayerColor)
 ```
 
 ### if..elif..elif..else
@@ -81,13 +81,13 @@ A variation on the `if`...`else` statement allows you to choose from several alt
 ```python
 var1 = 0
 if var1 == 0 :
-    print "This is the first " + str(var1)
+    print ("This is the first " + str(var1))
 elif var1 == 1 :
-    print "This is the second " + str(var1)
+    print ("This is the second " + str(var1))
 elif var1 == 2 :
-    print "This is the third " + str(var1)
+    print ("This is the third " + str(var1))
 else :
-    print "Value out of range!"
+    print ("Value out of range!")
 ```
 
 You can add as many `elif` clauses as you need to provide alternative choices. Thie `elif` statement takes the place of the `Select Case` statement in other languages.

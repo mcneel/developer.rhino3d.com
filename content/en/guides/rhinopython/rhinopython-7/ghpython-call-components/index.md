@@ -73,9 +73,9 @@ Remember, this can be done for almost every component in Grasshopper (including 
 ### Configuring inputs:
 
 There are a few techniques that can make working with `ghpythonlib.components` easier.
-It is quite helpful and simplifies the code greatly if the proper [Type Hint](/guides/rhinopython/ghpython-component/#advanced-input-properties) is set on the Input of the Python component. Setting the Type Hint to a specific data type will give the script direct access to the objects.   Without the Type Hint a lot more data checking and conversion may be necessary. For instance in a case where `points` are expected as input, set Type Hint > Point3D.  This assures the GhPython components passes in actual point objects to Python. This is especially important for any inputs expecting geometry objects.
+It is quite helpful and simplifies the code greatly if the proper [Type Hint](/guides/rhinopython/rhinopython-7/ghpython-component/#advanced-input-properties) is set on the Input of the Python component. Setting the Type Hint to a specific data type will give the script direct access to the objects.   Without the Type Hint a lot more data checking and conversion may be necessary. For instance in a case where `points` are expected as input, set Type Hint > Point3D.  This assures the GhPython components passes in actual point objects to Python. This is especially important for any inputs expecting geometry objects.
 
-Inputs also should be set properly for [Object Access, List Access, or Tree Access](/guides/rhinopython/ghpython-component/#advanced-input-properties).  Setting the Object vs List level access is important for make sure the GhPython code gets objects one at a time, or as a whole list of objects all at once.
+Inputs also should be set properly for [Object Access, List Access, or Tree Access](/guides/rhinopython/rhinopython-7/ghpython-component/#advanced-input-properties).  Setting the Object vs List level access is important for make sure the GhPython code gets objects one at a time, or as a whole list of objects all at once.
 
 Working with multiple inputs and outputs from component methods is like working with any other Python functions.  Inputs can be passed to the function through a list of arguments.  For instance the Divide Curve component has multiple inputs (Curve, Number, Kinks)
 
@@ -164,7 +164,7 @@ Help for specific component arguments and return values can be found in the help
 
 ## Related Topics
 
-- [Your first script with Python in Grasshopper](/guides/rhinopython/what-is-rhinopython)
-- [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Editing Python in Grasshopper](/guides/rhinopython/python-running-scripts)
-- [Python Guide for Rhino](/guides/rhinopython/)
+- [Your first script with Python in Grasshopper](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [What is Python and RhinoScript?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Editing Python in Grasshopper](/guides/rhinopython/rhinopython-7/python-running-scripts)
+- [Python Guide for Rhino](/guides/rhinopython/rhinopython-7/)

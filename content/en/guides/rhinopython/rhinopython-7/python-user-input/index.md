@@ -255,9 +255,9 @@ if filename: rs.MessageBox(filename)
 | SaveFileName    |      |      | Displays a Windows file save dialog box. |
  
 
-For a complete detailed sample see the [How to read and write a simple file guide](/guides/rhinopython/python-reading-writing/).
+For a complete detailed sample see the [How to read and write a simple file guide](/guides/rhinopython/rhinopython-7/python-reading-writing/).
 
-## [Eto Custom Dialog Framework](/guides/rhinopython/eto-forms-python/)
+## [Eto Custom Dialog Framework](/guides/rhinopython/rhinopython-7/eto-forms-python/)
 
 Eto is an open source cross-platform dialog box framework available in Rhino 6.  Eto can be used to create advanced dialog boxes from within C#, C++ and Rhino.Python.
 
@@ -267,10 +267,10 @@ As an example, here is a custom collapsing dialog that uses many controls:
 
 {{< image url="/images/dialog-collapse.png" alt="/images/dialog-collapse.png" class="image_center" width="50%" >}}
 
-Eto is very powerful, but that power comes with more sophisticated Python syntax. Understanding how best to write, organize and use Eto dialogs will take some work.  To start learning about the Eto framework in Python, go to the [Eto Forms in Python](/guides/rhinopython/eto-forms-python/) guide. 
+Eto is very powerful, but that power comes with more sophisticated Python syntax. Understanding how best to write, organize and use Eto dialogs will take some work.  To start learning about the Eto framework in Python, go to the [Eto Forms in Python](/guides/rhinopython/rhinopython-7/eto-forms-python/) guide. 
 
 ## Related Topics
 
-- [Reading and Writing files with Python](/guides/rhinopython/python-reading-writing)
+- [Reading and Writing files with Python](/guides/rhinopython/rhinopython-7/python-reading-writing)
 - [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/win/#userinterface)
-- [Eto Forms in Python](/guides/rhinopython/eto-forms-python/) guide
+- [Eto Forms in Python](/guides/rhinopython/rhinopython-7/eto-forms-python/) guide

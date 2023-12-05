@@ -197,6 +197,6 @@ Dictionaries can be more complex to understand, but they are great to store data
 
 ## Related topics
 
-- [What are Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Python Variables](/guides/rhinopython/python-variables/)
-- [Python Dictionaries](/guides/rhinopython/python-dictionaries/)
+- [What are Python and RhinoScript?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Python Variables](/guides/rhinopython/rhinopython-7/python-variables/)
+- [Python Dictionaries](/guides/rhinopython/rhinopython-7/python-dictionaries/)

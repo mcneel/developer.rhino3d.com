@@ -47,7 +47,7 @@ To import more the one module, use commas to separate module names:
 ```python
 import rhinoscriptsyntax, time, math
 ```
-To access procedures in imported modeles, prefix the function with the imported model name, seperated by a period (.):
+To access procedures in imported modules, prefix the function with the imported model name, separated by a period (.):
 
 ```python
 import time

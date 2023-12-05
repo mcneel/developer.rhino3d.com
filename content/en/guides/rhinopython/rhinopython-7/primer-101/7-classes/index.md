@@ -211,4 +211,4 @@ Classes can be nested, they can have multiple functions, create powerful systems
 
 ## Next Steps
 
-Classes are the last of the pure Python units. The last chapter is all about [geometry](/guides/rhinopython/primer-101/8-geometry/) in Rhino and Python.
+Classes are the last of the pure Python units. The last chapter is all about [geometry](/guides/rhinopython/rhinopython-7/primer-101/8-geometry/) in Rhino and Python.

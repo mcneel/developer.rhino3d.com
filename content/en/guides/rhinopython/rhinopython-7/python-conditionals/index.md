@@ -36,7 +36,7 @@ You can control the flow of your script with conditional statements and looping 
 * `if`...`else` statement
 * `if`...`elif`...`elif`...`else` nested statement
 
-The `if`... statement is used to evaluate whether a condition is True or False and, depending on the result, to specify one or more statements to run.  Usually the condition is an expression that uses a comparison operator to compare one value or variable with another.  For information about comparison operators, see the [Python Operators](/guides/rhinopython/python-operators) guide. `if`... and `if...elif` statements can be nested to as many levels as you need.
+The `if`... statement is used to evaluate whether a condition is True or False and, depending on the result, to specify one or more statements to run.  Usually the condition is an expression that uses a comparison operator to compare one value or variable with another.  For information about comparison operators, see the [Python Operators](/guides/rhinopython/rhinopython-7/python-operators) guide. `if`... and `if...elif` statements can be nested to as many levels as you need.
 
 Python programming language assumes any non-zero and non-null values as TRUE, and if it is either zero or null, then it is assumed as FALSE value.
 
@@ -97,5 +97,5 @@ For more information on nesting if..elif..else statements see [Python nested if 
 
 ## Related Topics
 
-- [What are Python and RhinoScriptSyntax?](/guides/rhinopython/what-is-rhinopython)
-- [Python Operators](/guides/rhinopython/python-operators)
+- [What are Python and RhinoScriptSyntax?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Python Operators](/guides/rhinopython/rhinopython-7/python-operators)

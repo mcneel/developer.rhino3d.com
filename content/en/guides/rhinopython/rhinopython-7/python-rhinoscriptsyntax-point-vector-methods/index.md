@@ -29,7 +29,7 @@ toc_type = "single"
  
 ## Point  & Vector Methods
 
-The following methods are available for creating and manipulating 3-D points and 3-D vectors.  3-D points and 3-D vectors are represented as  zero-based, one-dimensional arrays that contain three numbers. For more information, see the [Points](/guides/rhinopython/python-rhinoscriptsyntax-points) and [Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors) discussion in [RhinoScript Fundamentals](/guides/rhinopython/python-rhinoscriptsyntax-introduction).
+The following methods are available for creating and manipulating 3-D points and 3-D vectors.  3-D points and 3-D vectors are represented as  zero-based, one-dimensional arrays that contain three numbers. For more information, see the [Points](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-points) and [Vectors](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors) discussion in [RhinoScript Fundamentals](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-introduction).
 
 | Method | | |  Description |
 |:--------|:-:|:-:|:--------|
@@ -69,10 +69,10 @@ The following methods are available for creating and manipulating 3-D points and
 
 ## Related Topics
 
-- [What is RhinoScriptSyntax and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Python List of Points](/guides/rhinopython/python-rhinoscriptsyntax-list-points)
-- [Python Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Python Lines](/guides/rhinopython/python-rhinoscriptsyntax-lines)
-- [Python Planes](/guides/rhinopython/python-rhinoscriptsyntax-planes)
-- [Python Objects](/guides/rhinopython/python-rhinoscriptsyntax-objects)
-- [RhinoScript Points and Vectors Methods](/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods)
+- [What is RhinoScriptSyntax and RhinoScript?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Python List of Points](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-list-points)
+- [Python Vectors](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors)
+- [Python Lines](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-lines)
+- [Python Planes](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-planes)
+- [Python Objects](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-objects)
+- [RhinoScript Points and Vectors Methods](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-point-vector-methods)

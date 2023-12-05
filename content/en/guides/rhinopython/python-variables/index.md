@@ -91,12 +91,12 @@ global_var = True
 
 def function1():
     local_var = False
-    print global_var
-    print local_var
+    print (global_var)
+    print (local_var)
 
 function1() # this runs the function
-print global_var # this works because global_var is accessible
-print local_var  # this gives an error because we are outside function1
+print (global_var) # this works because global_var is accessible
+print (local_var)  # this gives an error because we are outside function1
 ```
 
 It is important to be careful when declaring variables.  It is easy to create duplicate variable names that do not reference the correct values.  For instance do not declare a global variable this way:
@@ -105,10 +105,9 @@ It is important to be careful when declaring variables.  It is easy to create du
 g_var = 'True'
 def function2():
     g_var = 'False'
-    print 'inside the function var is ', g_var
+    print ('inside the function var is ', g_var)
 
-ex2()
-print 'outside the function var is ', g_var
+print ('outside the function var is ', g_var)
 ```
 The example above will create a `Global` variable named `g_var`.  When dropping in the `function2` function, there will be a second `local` variable created named `g_var` with a different value. The proper way to work with a global variable is to be very explicit with the `global` statement in the `local` scope:
 
@@ -116,12 +115,11 @@ The example above will create a `Global` variable named `g_var`.  When dropping 
 g_var = "Global"
 def function2():
     g_var = "Local"
-    print 'inside the function var is ', g_var
+    print ('inside the function var is ', g_var)
     return;
 
 function2()
-print 'outside the function var is ', g_var
-
+print ('outside the function var is ', g_var)
 ```
 
 For more scope example see the (Notes on Python Variables)[http://www.saltycrane.com/blog/2008/01/python-variable-scope-notes/]
