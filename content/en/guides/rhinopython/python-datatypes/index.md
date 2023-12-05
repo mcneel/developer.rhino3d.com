@@ -106,7 +106,7 @@ The `{}` are placeholders that are substituted by the variables `element` and `c
 Python is currently transitioning to the format syntax above, but python can use an older syntax, which is being phased out, but is still seen in some example code:
 
 ```python
-print "The item %i is repeated %i times"% (element,count)
+print ("The item %i is repeated %i times"% (element,count))
 ```
 
 For more information on the string formatter in Python see the article: [PyFormat Website](https://pyformat.info/)
