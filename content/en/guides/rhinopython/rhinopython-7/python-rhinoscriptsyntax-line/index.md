@@ -53,13 +53,13 @@ When adding geometry to Rhino, rhinoscriptsyntax will return an 'Object ID' for 
 
 Of course you could also send the `startPoint` and the `endPoint` directly into the `rs.AddLine()` method to create the line in Rhino.
 
-RhinoScript contains a number of methods to manipulate lines.  See [Lines and Planes](/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods) for details.
+RhinoScript contains a number of methods to manipulate lines.  See [Lines and Planes](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-line-plane-methods) for details.
 
 ## Related Topics
 
-- [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Python Points](/guides/rhinopython/python-rhinoscriptsyntax-points)
-- [Python Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Python Lines](/guides/rhinopython/python-rhinoscriptsyntax-lines)
-- [Python Planes](/guides/rhinopython/python-rhinoscriptsyntax-planes)
-- [Python Objects](/guides/rhinopython/python-rhinoscriptsyntax-objects)
+- [What is Python and RhinoScript?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Python Points](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-points)
+- [Python Vectors](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors)
+- [Python Lines](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-lines)
+- [Python Planes](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-planes)
+- [Python Objects](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-objects)

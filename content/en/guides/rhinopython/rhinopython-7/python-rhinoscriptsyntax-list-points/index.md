@@ -29,7 +29,7 @@ toc_type = "single"
  
 ## Lists of Points
 
-Many rhinoscriptsyntax functions require a list of points as an argument or return a list of [Point3d](/guides/rhinopython/python-rhinoscriptsyntax-points) structures. For example the 'DivideCurve()' function will return a list of points:
+Many rhinoscriptsyntax functions require a list of points as an argument or return a list of [Point3d](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-points) structures. For example the 'DivideCurve()' function will return a list of points:
 
 ```python
 import rhinoscriptsyntax as rs
@@ -64,7 +64,7 @@ It is also possible to use nested indexes to access a specific coordinate of a p
 print(points[1][1])
 ```
 
-Using the .Y property on the [Point3d](/guides/rhinopython/python-rhinoscriptsyntax-points) also would work:
+Using the .Y property on the [Point3d](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-points) also would work:
 
 ```python
 print(points[1].Y)
@@ -81,9 +81,9 @@ for i in points:
 
 ## Related Topics
 
-- [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Python Points](/guides/rhinopython/python-rhinoscriptsyntax-points)
-- [Python Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Python Lines](/guides/rhinopython/python-rhinoscriptsyntax-lines)
-- [Python Planes](/guides/rhinopython/python-rhinoscriptsyntax-planes)
-- [Python Objects](/guides/rhinopython/python-rhinoscriptsyntax-objects)
+- [What is Python and RhinoScript?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Python Points](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-points)
+- [Python Vectors](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors)
+- [Python Lines](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-lines)
+- [Python Planes](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-planes)
+- [Python Objects](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-objects)

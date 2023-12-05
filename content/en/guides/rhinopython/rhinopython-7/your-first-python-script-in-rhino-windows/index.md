@@ -104,7 +104,7 @@ Your script will run, and display the familiar "Hello World" dialog box.
 
 ## Related Topics
 
-- [What is RhinoPython?](/guides/rhinopython/what-is-rhinopython)
-- [Running Scripts](/guides/rhinopython/python-running-scripts)
-- [Canceling Scripts](/guides/rhinopython/python-canceling-scripts)
-- [Editing Scripts](/guides/rhinopython/python-editing-scripts)
+- [What is RhinoPython?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Running Scripts](/guides/rhinopython/rhinopython-7/python-running-scripts)
+- [Canceling Scripts](/guides/rhinopython/rhinopython-7/python-canceling-scripts)
+- [Editing Scripts](/guides/rhinopython/rhinopython-7/python-editing-scripts)

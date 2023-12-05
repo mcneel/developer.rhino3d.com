@@ -98,7 +98,7 @@ As usual the script starts with imports.  This time the csv module is used.
 ```python
 import csv
 ```
-Lines 2 thru 8 are standard lines from the Rhino.Python [How to read and write a simple file](/guides/rhinopython/python-reading-writing) guide.
+Lines 2 thru 8 are standard lines from the Rhino.Python [How to read and write a simple file](/guides/rhinopython/rhinopython-7/python-reading-writing) guide.
 
 At line 10 the file is opened for reading.
 
@@ -178,7 +178,7 @@ This script uses the dictionary reader in the csv module on line 12:
 ```
         reader = csv.DictReader(csvfile)
 ```
-The [dictionary object](/guides/rhinopython/python-dictionaries) contains *key:value* pairs where the name (key) of the values can be used to search through the data.  The complete dictionary object looks like this:
+The [dictionary object](/guides/rhinopython/rhinopython-7/python-dictionaries) contains *key:value* pairs where the name (key) of the values can be used to search through the data.  The complete dictionary object looks like this:
 
 ```none
 {'Floor':'1', 'Use':'Retail', 'Square Footage':'6598', 'Price':'6500', 'RoomID':'100', 'Capacity':'55'}
@@ -258,7 +258,7 @@ if( __name__ == "__main__" ):
 ```
 {{< /div >}}
 
-Lines 1 thru 8 are standard lines from the Rhino.Python [How to read and write a simple file](/guides/rhinopython/python-reading-writing) guide.
+Lines 1 thru 8 are standard lines from the Rhino.Python [How to read and write a simple file](/guides/rhinopython/rhinopython-7/python-reading-writing) guide.
 
 There are a couple of things to notice compared to the previous example. We need some points to export, 
 so we'll let the user select some point objects.  Then check that some points were picked:
@@ -344,5 +344,5 @@ For more information on CSV manipulation, see the [Python.org csv module](https:
 ## Related Topics
 
 - [Python.org csv module](https://docs.python.org/2/library/csv.html)
-- [How to read and write a simple file](/guides/rhinopython/python-reading-writing) guide.
-- [How to use JSON with Python](/guides/rhinopython/python-xml-json)
+- [How to read and write a simple file](/guides/rhinopython/rhinopython-7/python-reading-writing) guide.
+- [How to use JSON with Python](/guides/rhinopython/rhinopython-7/python-xml-json)

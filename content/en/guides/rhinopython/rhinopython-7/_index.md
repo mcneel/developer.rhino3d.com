@@ -6,7 +6,7 @@ description = "Quickly add functionality to Rhino or automate repetitive tasks."
 keywords = [ "rhino", "developer" ]
 languages = [ "Python" ]
 sdk = "unset"
-title = "Rhino.Python Guides"
+title = "Rhino.Python Version 7 Guides"
 type = "guides"
 weight = 1
 
@@ -23,11 +23,13 @@ version = [ "7" ]
 
 
 +++
+
+{{< alt-version "/guides/rhinopython/" "This guide is for Rhino 7 Python 2  For Rhino 8 Python 3? Click here!">}}
 {{< row >}}
 {{< column >}}
 
 <!--the .snagit project for this image can be found next to the image -->
-[<img src="/images/rhinopython-guides-col1.png">](/guides/rhinopython/what-is-rhinopython/)
+[<img src="/images/rhinopython-guides-col1.png">](/guides/rhinopython/rhinopython-7/what-is-rhinopython/)
 
 ### Overview
 
@@ -35,9 +37,9 @@ version = [ "7" ]
 
 ### Getting Started
 
-- Your First Python Script in Rhino ([Windows](/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac](/guides/rhinopython/your-first-python-script-in-rhino-mac), [Grasshopper](/guides/rhinopython/your-first-python-script-in-grasshopper))
-- [Where to get help...](/guides/rhinopython/python-where-to-find-help)
-- [Troubleshooting Installation](/guides/rhinopython/python-troubleshooting-install)
+- Your First Python Script in Rhino ([Windows](/guides/rhinopython/rhinopython-7/your-first-python-script-in-rhino-windows), [Mac](/guides/rhinopython/rhinopython-7/your-first-python-script-in-rhino-mac), [Grasshopper](/guides/rhinopython/rhinopython-7/your-first-python-script-in-grasshopper))
+- [Where to get help...](/guides/rhinopython/rhinopython-7/python-where-to-find-help)
+- [Troubleshooting Installation](/guides/rhinopython/rhinopython-7/python-troubleshooting-install)
 - [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
 - [Scripting discussions on Discourse](https://discourse.mcneel.com/c/scripting)
 
@@ -85,18 +87,18 @@ version = [ "7" ]
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/rhinopython-guides-col3.png">](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101)
 
-### [Rhino.Python 101](/guides/rhinopython/primer-101)
+### [Rhino.Python 101](/guides/rhinopython/rhinopython-7/primer-101)
 
-&nbsp;&nbsp; [Introduction](/guides/rhinopython/primer-101)  
-&nbsp;&nbsp; [Where to find help](/guides/rhinopython/primer-101/where-to-find-help/)  
-&nbsp;&nbsp; 1. [What's it all about?](/guides/rhinopython/primer-101/1-whats-it-all-about/)  
-&nbsp;&nbsp; 2. [Python Essentials](/guides/rhinopython/primer-101/2-python-essentials/)  
-&nbsp;&nbsp; 3. [Script anatomy](/guides/rhinopython/primer-101/3-script-anatomy/)  
-&nbsp;&nbsp; 4. [Operators and functions](/guides/rhinopython/primer-101/4-operators-and-functions/)  
-&nbsp;&nbsp; 5. [Conditional execution](/guides/rhinopython/primer-101/5-conditional-execution/)  
-&nbsp;&nbsp; 6. [Tuples, Lists and Dictionaries](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/)  
-&nbsp;&nbsp; 7. [Classes](/guides/rhinopython/primer-101/7-classes/)  
-&nbsp;&nbsp; 8. [Geometry](/guides/rhinopython/primer-101/8-geometry/)  
+&nbsp;&nbsp; [Introduction](/guides/rhinopython/rhinopython-7/primer-101)  
+&nbsp;&nbsp; [Where to find help](/guides/rhinopython/rhinopython-7/primer-101/where-to-find-help/)  
+&nbsp;&nbsp; 1. [What's it all about?](/guides/rhinopython/rhinopython-7/primer-101/1-whats-it-all-about/)  
+&nbsp;&nbsp; 2. [Python Essentials](/guides/rhinopython/rhinopython-7/primer-101/2-python-essentials/)  
+&nbsp;&nbsp; 3. [Script anatomy](/guides/rhinopython/rhinopython-7/primer-101/3-script-anatomy/)  
+&nbsp;&nbsp; 4. [Operators and functions](/guides/rhinopython/rhinopython-7/primer-101/4-operators-and-functions/)  
+&nbsp;&nbsp; 5. [Conditional execution](/guides/rhinopython/rhinopython-7/primer-101/5-conditional-execution/)  
+&nbsp;&nbsp; 6. [Tuples, Lists and Dictionaries](/guides/rhinopython/rhinopython-7/primer-101/6-tuples-lists-dictionaries/)  
+&nbsp;&nbsp; 7. [Classes](/guides/rhinopython/rhinopython-7/primer-101/7-classes/)  
+&nbsp;&nbsp; 8. [Geometry](/guides/rhinopython/rhinopython-7/primer-101/8-geometry/)  
 
 &nbsp;&nbsp; [{{< awesome "fas fa-download">}} ](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/) [Download the Rhino.Python 101 Primer as a single PDF ](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)
 

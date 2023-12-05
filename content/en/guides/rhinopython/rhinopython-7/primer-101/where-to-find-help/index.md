@@ -72,8 +72,8 @@ For a list of common errors, exceptions and pitfalls that you are likely to run 
 
 ## Related Topics
 
-- [Where to find help - Next Topic >>](/guides/rhinopython/primer-101/1-whats-it-all-about/)
-- [Rhino.Python Primer 101](/guides/rhinopython/primer-101/rhinopython101)
-- [Running Scripts](/guides/rhinopython/python-running-scripts)
-- [Canceling Scripts](/guides/rhinopython/python-canceling-scripts)
-- [Editing Scripts](/guides/rhinopython/python-editing-scripts)
+- [Where to find help - Next Topic >>](/guides/rhinopython/rhinopython-7/primer-101/1-whats-it-all-about/)
+- [Rhino.Python Primer 101](/guides/rhinopython/rhinopython-7/primer-101/rhinopython101)
+- [Running Scripts](/guides/rhinopython/rhinopython-7/python-running-scripts)
+- [Canceling Scripts](/guides/rhinopython/rhinopython-7/python-canceling-scripts)
+- [Editing Scripts](/guides/rhinopython/rhinopython-7/python-editing-scripts)

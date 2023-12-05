@@ -628,4 +628,4 @@ def iterativeshortencurve():
 
 ## Next Steps
 
-Tuples, Lists and Dictionaries are very powerful in Python. Let's make a quick stop to learn about [class syntax](/guides/rhinopython/primer-101/7-classes/#class-syntax).
+Tuples, Lists and Dictionaries are very powerful in Python. Let's make a quick stop to learn about [class syntax](/guides/rhinopython/rhinopython-7/primer-101/7-classes/#class-syntax).

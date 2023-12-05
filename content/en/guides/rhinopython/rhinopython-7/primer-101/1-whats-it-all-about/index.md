@@ -99,4 +99,4 @@ All the example code in this primer can be copy-pasted directly into the *_EditP
 
 ## Next Steps
 
-Now that you know what a scripting language is, check out the [Python Essentials](/guides/rhinopython/primer-101/2-python-essentials/) guide to learn more about the Python language.
+Now that you know what a scripting language is, check out the [Python Essentials](/guides/rhinopython/rhinopython-7/primer-101/2-python-essentials/) guide to learn more about the Python language.

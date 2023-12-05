@@ -329,4 +329,4 @@ We're also limiting the numeric domain to a value between one and a thousand. If
 
 ## Next Steps
 
-There are the basics of the Python datastructures, next learn the Python's [script anatomy](/guides/rhinopython/primer-101/3-script-anatomy/).
+There are the basics of the Python datastructures, next learn the Python's [script anatomy](/guides/rhinopython/rhinopython-7/primer-101/3-script-anatomy/).

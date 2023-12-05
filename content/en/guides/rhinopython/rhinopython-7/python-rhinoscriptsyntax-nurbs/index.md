@@ -29,9 +29,9 @@ toc_type = "single"
 
 ## Overview
 
-Rhino uses various geometry types.  There are some basic types like [Points](/guides/rhinopython/python-rhinoscriptsyntax-points), [Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors), [Lines](/guides/rhinopython/python-rhinoscriptsyntax-lines) and [Planes](/guides/rhinopython/python-rhinoscriptsyntax-planes).  In Python, simple geometry can be described with simple lists.
+Rhino uses various geometry types.  There are some basic types like [Points](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-points), [Vectors](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors), [Lines](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-lines) and [Planes](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-planes).  In Python, simple geometry can be described with simple lists.
 
-More complicated geometry objects such as NURBS curves, surfaces, and poly-surfaces can be created by Rhino. [Rhino Geometry Objects](/guides/rhinopython/python-rhinoscriptsyntax-objects) are referenced by an object ID by RhinoScriptSyntax
+More complicated geometry objects such as NURBS curves, surfaces, and poly-surfaces can be created by Rhino. [Rhino Geometry Objects](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-objects) are referenced by an object ID by RhinoScriptSyntax
 
 Although not required, having some understanding of the computational methods used in 3D modeling and computer graphics can be helpful when developing in Rhino.  A good introductory resource is the [Essential Mathematics for Computational Design](/guides/general/essential-mathematics/parametric-curves-surfaces/#32-nurbs-curves).  Although all concepts are explained visually using Grasshopper®, they are directly applicable to RhinoScriptSyntax.
 
@@ -86,4 +86,4 @@ The NURBS evaluation rule is a formula that involves the degree, control points,
 ## Related Topics
 
 - [Essential Mathematics for Computational Design](/guides/general/essential-mathematics/parametric-curves-surfaces/#32-nurbs-curves)
-- [Rhino Geometry Objects](/guides/rhinopython/python-rhinoscriptsyntax-objects)
+- [Rhino Geometry Objects](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-objects)

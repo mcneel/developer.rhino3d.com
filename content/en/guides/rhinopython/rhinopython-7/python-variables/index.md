@@ -35,13 +35,13 @@ When a variable is stored in memory, the interpreter will allocate a certain amo
 
 In Python, variables are always one of the five fundamental data types:
 
-* [Numbers](/guides/rhinopython/python-datatypes/#numbers)
-* [String](/guides/rhinopython/python-datatypes/#string)
-* [List](/guides/rhinopython/python-datatypes/#list)
-* [Tuple](/guides/rhinopython/python-datatypes/#tuple)
-* [Dictionary](/guides/rhinopython/python-datatypes/#dictionary)
+* [Numbers](/guides/rhinopython/rhinopython-7/python-datatypes/#numbers)
+* [String](/guides/rhinopython/rhinopython-7/python-datatypes/#string)
+* [List](/guides/rhinopython/rhinopython-7/python-datatypes/#list)
+* [Tuple](/guides/rhinopython/rhinopython-7/python-datatypes/#tuple)
+* [Dictionary](/guides/rhinopython/rhinopython-7/python-datatypes/#dictionary)
 
-For a detailed look at each variable type see [Python Variable Types](/guides/rhinopython/python-datatypes/) in this guide.
+For a detailed look at each variable type see [Python Variable Types](/guides/rhinopython/rhinopython-7/python-datatypes/) in this guide.
 
 While each variable has its own properties and methods, there are common methods we use to deal with all variables in Python.
 
@@ -166,7 +166,7 @@ B = [1, 23, 45, 67] # this list creates an initial list of 4 numbers.
 C = [2, 4, 'john'] # lists can contain different variable types.
 ```
 
-For a detailed look at managing lists, take a look at the the [Python List Datatype Article](/guides/rhinopython/python-datatypes/#list)
+For a detailed look at managing lists, take a look at the the [Python List Datatype Article](/guides/rhinopython/rhinopython-7/python-datatypes/#list)
 
 ## Related topics
 

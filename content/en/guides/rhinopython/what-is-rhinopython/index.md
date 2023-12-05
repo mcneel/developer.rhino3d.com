@@ -30,7 +30,7 @@ toc_type = "single"
 +++
 
 
-{{< alt-version "https://developer.rhino3d.com/guides/rhinocommon/moving-to-dotnet-7/" "This guide is for Rhino 8 Python 3  For Rhino 7 Python 2? Click here!">}}
+{{< alt-version "/guides/rhinopython/rhinopython-7" "This guide is for Rhino 8 Python 3  For Rhino 7 Python 2? Click here!">}}
 
 ...but a better question is...
 
@@ -57,7 +57,9 @@ Rhino already has a scripting language called RhinoScript why do we need another
 
 ### What version of Python does Rhino use?
 
-Rhino uses Python version 2.7. To be more specific Rhino uses [IronPython](http://ironpython.net/) which brings together the Python language and [Microsoft's .NET framework](https://en.wikipedia.org/wiki/.NET_Framework).
+Rhino 8 uses Python version 3.8. This is based on [Cpython](https://www.python.org/), the reference implementation of Python. 
+
+Rhino 7 uses Python version 2.7. To be more specific Rhino uses [IronPython](http://ironpython.net/). This is an older open-source version of Python. See the [Rhino 7 Python Guides](/guides/rhinopython/rhinopython-7/).
 
 ## Where can you use Python in Rhino?
 

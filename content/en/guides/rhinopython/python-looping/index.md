@@ -64,7 +64,7 @@ The following example causes a procedure to execute 4 times. The *for* statement
 
 ```python
 for x in range(0, 3):
-    print "We're on loop " + str(x)
+    print ("We're on loop " + str(x))
 ```
 
 Python can use any iterable method as a the for loop counter. In the case above we are using `range()`. Other iterable objects can be lists or a string. You can also create you own iterable objects if needed.
@@ -73,14 +73,14 @@ Sometimes it is required to increase or decrease the counter variable by the val
 
 ```python
 for j in range(0, 10, 2):
-    print "We're on loop " + str(j)
+    print ("We're on loop " + str(j))
 ```
 
 To decrease the counter variable, use a negative `range` value. You must specify an end value that is less than the start value. In the following example, the counter variable `j` is decreased by 2 each time the loop repeats. When the loop is finished, total is the sum of 10, 8, 6, 4, and 2.
 
 ```python
  for j in range(10, 0, -2):
-    print "We're on loop " + str(j)
+    print ("We're on loop " + str(j))
 ```
 
  You can exit any *for* statement before the counter reaches its end value by using the `break` statement. Because you usually want to exit only in certain situations, such as when an error occurs, you could also use the `if` statement in the *True* statement block. If the condition is *False*, the loop runs as usual.
@@ -96,7 +96,7 @@ var1 = 2
 while var1 < 32:
     var1 = var1 * 2
     print var1
-print "Exited while loop."
+print ("Exited while loop.")
 ```
 
 *while* loops are not used as much as *for* loops.  But *while* loops are used often in in cases the following way, polling for specific input or a loop that will execute forever until a condition is met:
@@ -119,7 +119,7 @@ Python allows for loops to be nested inside one another.  Any type of loop can b
 ```python
 for x in range(0, 100):
    if x % 2 == 0:
-      print str(x) + " is an even number."
+      print (str(x) + " is an even number.")
 ```
 
 ## Related Topics

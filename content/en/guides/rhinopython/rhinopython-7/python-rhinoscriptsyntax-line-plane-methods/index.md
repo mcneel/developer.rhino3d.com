@@ -35,7 +35,7 @@ Lines are represented as zero-based, one-dimensional arrays containing two eleme
 
 Planes are represented as zero-based, one-dimensional arrays containing four elements: the plane's origin (3-D point), the plane's x-axis direction (3-D vector), the plane's y-axis direction (3-D vector), and the plane's z-axis direction (3-D vector).
 
-For more information in [RhinoScript Fundamentals](/guides/rhinopython/python-rhinoscriptsyntax-introduction).
+For more information in [RhinoScript Fundamentals](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-introduction).
 
 | Method | | |  Description |
 |:--------|:-:|:-:|:--------|
@@ -79,10 +79,10 @@ For more information in [RhinoScript Fundamentals](/guides/rhinopython/python-rh
 
 ## Related Topics
 
-- [What is RhinoScriptSyntax and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Python List of Points](/guides/rhinopython/python-rhinoscriptsyntax-list-points)
-- [Python Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Python Lines](/guides/rhinopython/python-rhinoscriptsyntax-lines)
-- [Python Planes](/guides/rhinopython/python-rhinoscriptsyntax-planes)
-- [Python Objects](/guides/rhinopython/python-rhinoscriptsyntax-objects)
-- [RhinoScript Points and Vectors Methods](/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods)
+- [What is RhinoScriptSyntax and RhinoScript?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Python List of Points](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-list-points)
+- [Python Vectors](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors)
+- [Python Lines](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-lines)
+- [Python Planes](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-planes)
+- [Python Objects](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-objects)
+- [RhinoScript Points and Vectors Methods](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-point-vector-methods)

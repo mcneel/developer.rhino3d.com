@@ -120,12 +120,12 @@ for c in vec:
     print c # This will loop through each coordinate in the vector3d
 ```
 
-RhinoScriptSyntax contains a number of methods to manipulate vectors.  See [RhinoScript Points and Vectors Methods](/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods) for details.
+RhinoScriptSyntax contains a number of methods to manipulate vectors.  See [RhinoScript Points and Vectors Methods](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-point-vector-methods) for details.
 
 ## Related Topics
 
-- [Python Points](/guides/rhinopython/python-rhinoscriptsyntax-points)
-- [Python Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Python Lines](/guides/rhinopython/python-rhinoscriptsyntax-line)
-- [Python Planes](/guides/rhinopython/python-rhinoscriptsyntax-plane)
-- [Python Objects](/guides/rhinopython/python-rhinoscriptsyntax-objects)
+- [Python Points](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-points)
+- [Python Vectors](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors)
+- [Python Lines](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-line)
+- [Python Planes](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-plane)
+- [Python Objects](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-objects)

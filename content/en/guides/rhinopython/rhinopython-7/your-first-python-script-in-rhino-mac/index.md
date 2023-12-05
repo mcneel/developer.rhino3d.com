@@ -64,8 +64,8 @@ After you've followed the above links and setup Atom the next step is to get fam
 
 ## Related Topics
 
-- [What are Python and RhinoScriptSyntax?](/guides/rhinopython/what-is-rhinopython)
+- [What are Python and RhinoScriptSyntax?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
 - [Using the Atom.io editor with Rhino.Python](https://atom.io/packages/rhino-python)
-- [Python Basic Syntax](/guides/rhinopython/python-statements/)
-- [Rhinoscript Syntax in Python](/guides/rhinopython/python-rhinoscriptsyntax-introduction/)
-- [Rhino.Python Home Page](/guides/rhinopython/)
+- [Python Basic Syntax](/guides/rhinopython/rhinopython-7/python-statements/)
+- [Rhinoscript Syntax in Python](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-introduction/)
+- [Rhino.Python Home Page](/guides/rhinopython/rhinopython-7/)

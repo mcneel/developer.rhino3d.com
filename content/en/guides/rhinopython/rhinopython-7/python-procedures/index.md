@@ -135,5 +135,5 @@ Python allows a variable to contain a function.
 
 ## Related Topics
 
-- [What are Python and RhinoScriptSyntax?](/guides/rhinopython/what-is-rhinopython)
+- [What are Python and RhinoScriptSyntax?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
 - [Additional information on Functions in Python](https://www.tutorialspoint.com/python/python_functions.htm)

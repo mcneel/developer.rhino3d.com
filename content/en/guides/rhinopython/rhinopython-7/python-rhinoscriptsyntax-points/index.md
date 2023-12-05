@@ -116,21 +116,21 @@ for c in pnt:
     print c # This will loop through each coordinate in the point3d
 ```
 
-Rhinoscriptsyntax contains a number of methods to manipulate points.  See [RhinoScript Points and Vectors Methods](/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods) for details.
+Rhinoscriptsyntax contains a number of methods to manipulate points.  See [RhinoScript Points and Vectors Methods](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-point-vector-methods) for details.
 
 For those familiar with RhinoScript, which represents points as a pure list, the Python representation is a little different and offers a few more options.
 
 ### Adding a point to display in Rhino
 
-It is important to understand the difference between a Point3d and a point object added to Rhino's document.  Any geometry object that exists in Rhino's database is assigned an object identifier.  This is represented as a [Guid](/guides/rhinopython/python-rhinoscriptsyntax-objects). The [Guid's object](/guides/rhinopython/python-rhinoscriptsyntax-objects) is something that can be drawn, belongs to a layer, is saved to a Rhino file and is counted as a Rhino object.  A Point3d is simply a structure of 3 numbers that exists in memory.  It can be manipulated in memory, but will not be seen in Rhino or saved.  A Point3d is added to the Rhino document through the `rs.AddPoint()` command.  To create a Point3d from a Guid, use the `rs.PointCoordinates(guid)` or the `rs.CreatePoint(Guid)` function.
+It is important to understand the difference between a Point3d and a point object added to Rhino's document.  Any geometry object that exists in Rhino's database is assigned an object identifier.  This is represented as a [Guid](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-objects). The [Guid's object](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-objects) is something that can be drawn, belongs to a layer, is saved to a Rhino file and is counted as a Rhino object.  A Point3d is simply a structure of 3 numbers that exists in memory.  It can be manipulated in memory, but will not be seen in Rhino or saved.  A Point3d is added to the Rhino document through the `rs.AddPoint()` command.  To create a Point3d from a Guid, use the `rs.PointCoordinates(guid)` or the `rs.CreatePoint(Guid)` function.
 
 ## Related Topics
 
-- [What is RhinoScriptSyntax and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Python List of Points](/guides/rhinopython/python-rhinoscriptsyntax-list-points)
-- [Python Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Python Lines](/guides/rhinopython/python-rhinoscriptsyntax-lines)
-- [Python Planes](/guides/rhinopython/python-rhinoscriptsyntax-plane)
-- [Python Objects](/guides/rhinopython/python-rhinoscriptsyntax-objects)
-- [RhinoScript Points and Vectors Methods](/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods)
+- [What is RhinoScriptSyntax and RhinoScript?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Python List of Points](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-list-points)
+- [Python Vectors](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors)
+- [Python Lines](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-lines)
+- [Python Planes](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-plane)
+- [Python Objects](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-objects)
+- [RhinoScript Points and Vectors Methods](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-point-vector-methods)
 - [Point3d RhinoCommon Documentation](http://developer.rhino3d.com/api/RhinoCommon/html/T_Rhino_Geometry_Point3d.htm)

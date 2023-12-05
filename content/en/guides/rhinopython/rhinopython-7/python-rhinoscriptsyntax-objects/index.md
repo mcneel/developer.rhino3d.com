@@ -70,9 +70,9 @@ int1 = rs.LineLineIntersection(line1ID,line2ID) # passing the ObjectIDs to the f
 ```
 ## Related Topics
 
-- [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Points](/guides/rhinopython/python-rhinoscriptsyntax-points)
-- [Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Lines](/guides/rhinopython/python-rhinoscriptsyntax-lines)
-- [Planes](/guides/rhinopython/python-rhinoscriptsyntax-planes)
-- [Rhino NURBs Geometry](/guides/rhinopython/python-rhinoscriptsyntax-nurbs)
+- [What is Python and RhinoScript?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Points](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-points)
+- [Vectors](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors)
+- [Lines](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-lines)
+- [Planes](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-planes)
+- [Rhino NURBs Geometry](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-nurbs)

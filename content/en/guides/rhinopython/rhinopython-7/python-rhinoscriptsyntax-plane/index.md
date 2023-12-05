@@ -29,7 +29,7 @@ toc_type = "single"
 
 ## Planes
 
-Planes are represented by a [Plane](/api/RhinoCommon/html/T_Rhino_Geometry_Plane.htm) structure.  Planes  can be thought of as a zero-based, one-dimensional list containing four elements: the plane's origin ([point3D](/guides/rhinopython/python-rhinoscriptsyntax-points)), the plane's X axis direction ([vector3d](/guides/rhinopython/python-rhinoscriptsyntax-vectors)), the plane's Y axis direction ([vector3d](/guides/rhinopython/python-rhinoscriptsyntax-vectors)), and the plane's Z axis direction ([vector3d](/guides/rhinopython/python-rhinoscriptsyntax-vectors)).
+Planes are represented by a [Plane](/api/RhinoCommon/html/T_Rhino_Geometry_Plane.htm) structure.  Planes  can be thought of as a zero-based, one-dimensional list containing four elements: the plane's origin ([point3D](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-points)), the plane's X axis direction ([vector3d](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors)), the plane's Y axis direction ([vector3d](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors)), and the plane's Z axis direction ([vector3d](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors)).
 
 {{< image url="/images/primer-planedefinition.svg" alt="/images/primer-planedefinition.svg" class="image_center" width="45%" >}}
 
@@ -82,15 +82,15 @@ for p in plane:
     print p
 ```
 
-RhinoScriptSyntax contains a number of functions to manipulate planes.  See [Lines and Planes](/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods) for details.
+RhinoScriptSyntax contains a number of functions to manipulate planes.  See [Lines and Planes](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-line-plane-methods) for details.
 
-Also, please see the Python primer [Section 8.5 Planes](/guides/rhinopython/primer-101/8-geometry/#85-planes).
+Also, please see the Python primer [Section 8.5 Planes](/guides/rhinopython/rhinopython-7/primer-101/8-geometry/#85-planes).
 
 ## Related Topics
 
-- [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)
-- [Python Points](/guides/rhinopython/python-rhinoscriptsyntax-points)
-- [Python Vectors](/guides/rhinopython/python-rhinoscriptsyntax-vectors)
-- [Python Lines](/guides/rhinopython/python-rhinoscriptsyntax-lines)
-- [Python Planes](/guides/rhinopython/python-rhinoscriptsyntax-planes)
-- [Python Objects](/guides/rhinopython/python-rhinoscriptsyntax-objects)
+- [What is Python and RhinoScript?](/guides/rhinopython/rhinopython-7/what-is-rhinopython)
+- [Python Points](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-points)
+- [Python Vectors](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-vectors)
+- [Python Lines](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-lines)
+- [Python Planes](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-planes)
+- [Python Objects](/guides/rhinopython/rhinopython-7/python-rhinoscriptsyntax-objects)
