@@ -18,7 +18,7 @@ state = ""
 
 [included_in]
 platforms = [ "Mac", "Windows" ]
-since = 8
+since = 7
 until = ""
 
 [page_options]
