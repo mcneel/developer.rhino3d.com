@@ -10,6 +10,7 @@ title = "Rhino.Python 101"
 type = "guides"
 weight = 1
 override_last_modified = "2018-12-05T13:57:39Z"
+draft = false
 
 [admin]
 TODO = ""
@@ -19,8 +20,8 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
-version = [  "7", "8" ]
+since = 7
+until = 0
 
 +++
 

@@ -10,6 +10,7 @@ title = "An Overview of the GhPython Component"
 type = "guides"
 weight = 2
 override_last_modified = "2019-09-14T11:27:08Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,10 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac", "Grasshopper" ]
-since = 0
-version = [  "7", "8" ]
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

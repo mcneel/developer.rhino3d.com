@@ -10,6 +10,7 @@ title = "How to use JSON"
 type = "guides"
 weight = 9
 override_last_modified = "2020-01-15T17:29:23Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,10 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Mac", "Windows" ]
-since = 0
-version = [  "7", "8" ]
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

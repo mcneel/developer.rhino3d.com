@@ -10,6 +10,7 @@ title = "Eto Controls in Python"
 type = "guides"
 weight = 19
 override_last_modified = "2019-08-12T08:10:53Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,10 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Mac", "Windows" ]
-since = 0
-version = [  "7", "8" ]
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

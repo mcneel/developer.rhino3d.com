@@ -10,6 +10,7 @@ title = "Creating Rhino Commands Using Python"
 type = "guides"
 weight = 380
 override_last_modified = "2019-05-17T12:47:13Z"
+draft = false
 
 [admin]
 TODO = ""
@@ -19,10 +20,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
-version = [  "7", "8" ]
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

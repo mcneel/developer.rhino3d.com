@@ -10,6 +10,7 @@ title = "Using RhinoCommon from Python"
 type = "guides"
 weight = 1
 override_last_modified = "2021-09-03T08:29:10Z"
+draft = false
 
 [admin]
 TODO = "needs more information."
@@ -19,10 +20,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
-version = [  "7", "8" ]
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

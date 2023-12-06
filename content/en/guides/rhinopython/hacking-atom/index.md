@@ -10,6 +10,7 @@ title = "Hacking and Testing latest Atom rhino-python package"
 type = "guides"
 weight = 1
 override_last_modified = "2018-12-05T14:59:06Z"
+draft = false
 
 [admin]
 TODO = ""
@@ -19,8 +20,8 @@ state = ""
 
 [included_in]
 platforms = [ "Mac" ]
-since = 0
-version = [  "7", "8" ]
+since = 7
+until = ""
 
 +++
 

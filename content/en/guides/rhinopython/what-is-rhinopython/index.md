@@ -10,6 +10,7 @@ title = "What is Rhino.Python?"
 type = "guides"
 weight = 1
 override_last_modified = "2021-09-03T08:29:10Z"
+draft = false
 
 [admin]
 TODO = "needs more GHPython info."
@@ -19,10 +20,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
-version = [ "7", "8" ]
+since = 8
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
@@ -56,7 +58,7 @@ Rhino already has a scripting language called RhinoScript why do we need another
 
 Rhino 8 uses Python version 3.8. This is based on [Cpython](https://www.python.org/), the reference implementation of Python. 
 
-Rhino 7 uses Python version 2.7. To be more specific Rhino uses [IronPython](http://ironpython.net/). This is an older open-source version of Python. See the [Rhino 7 Python Guides](/guides/rhinopython/rhinopython-7/).
+Rhino 7 uses Python version 2.7. To be more specific Rhino uses [IronPython](http://ironpython.net/). This is an older open-source version of Python. See the [Rhino 7 Python Guides](/guides/rhinopython/7/).
 
 ## Where can you use Python in Rhino?
 

@@ -10,6 +10,7 @@ title = "Vectors in Python"
 type = "guides"
 weight = 4
 override_last_modified = "2023-03-09T10:09:10Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,10 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Mac", "Windows" ]
-since = 0
-version = [ "8" ]
+since = 8
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

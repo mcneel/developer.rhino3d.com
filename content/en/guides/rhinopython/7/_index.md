@@ -9,6 +9,7 @@ sdk = "unset"
 title = "Rhino.Python Version 7 Guides"
 type = "guides"
 weight = 1
+draft = false
 
 [admin]
 TODO = ""
@@ -18,9 +19,12 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
-version = [ "7" ]
+since = 7
+until = 8
 
+
+[page_options]
+block_webcrawlers = true
 
 +++
 
@@ -33,7 +37,7 @@ version = [ "7" ]
 
 ### Overview
 
-{{< dev-topic-list "guides" "RhinoPython" "Overview" "weight" "7" >}}
+{{< dev-topic-list "guides" "RhinoPython" "Overview" "weight" 7 >}}
 
 ### Getting Started
 
@@ -45,11 +49,11 @@ version = [ "7" ]
 
 ### Python Editor for Windows
 
-{{< dev-topic-list "guides" "RhinoPython" "Python Windows" "weight" "7" >}}
+{{< dev-topic-list "guides" "RhinoPython" "Python Windows" "weight" 7 >}}
 
 ### Python in Grasshopper
 
-{{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" "7" >}}
+{{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" 7 >}}
 
 
 
@@ -61,11 +65,11 @@ version = [ "7" ]
 
 ### Fundamentals
 
-{{< dev-topic-list "guides" "RhinoPython" "Fundamentals" "weight" "7" >}}
+{{< dev-topic-list "guides" "RhinoPython" "Fundamentals" "weight" 7 >}}
 
 ### Python in Rhino
 
-{{< dev-topic-list "guides" "RhinoPython" "Python in Rhino" "weight" "7" >}}
+{{< dev-topic-list "guides" "RhinoPython" "Python in Rhino" "weight" 7 >}}
 
 ### Other Resources
 
@@ -105,12 +109,12 @@ version = [ "7" ]
 
 ### Intermediate
 
-{{< dev-topic-list "guides" "RhinoPython" "Intermediate" "weight" "7" >}}
+{{< dev-topic-list "guides" "RhinoPython" "Intermediate" "weight" 7 >}}
 
 
 ### Custom Dialogs in Eto
 
-{{< dev-topic-list "guides" "RhinoPython" "Eto" "weight" "7" >}}
+{{< dev-topic-list "guides" "RhinoPython" "Eto" "weight" 7 >}}
 
 
 {{< /column >}}

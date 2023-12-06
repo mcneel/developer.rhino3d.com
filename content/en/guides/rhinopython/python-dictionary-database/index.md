@@ -10,6 +10,7 @@ title = "Using Python Dictionary as a database"
 type = "guides"
 weight = 12
 override_last_modified = "2019-11-27T11:14:44Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,10 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Mac", "Windows" ]
-since = 0
-version = [  "7", "8" ]
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

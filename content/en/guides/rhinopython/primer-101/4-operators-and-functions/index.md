@@ -9,6 +9,7 @@ sdk = [ "RhinoPython" ]
 title = "4 Operators and functions"
 type = "guides"
 weight = 15
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -16,10 +17,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
-version = [  "7", "8" ]
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

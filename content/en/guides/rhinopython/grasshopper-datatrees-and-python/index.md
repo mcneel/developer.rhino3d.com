@@ -10,6 +10,7 @@ title = "Grasshopper data trees and Python"
 type = "guides"
 weight = 7
 override_last_modified = "2021-06-02T11:32:10Z"
+draft = false
 
 [admin]
 TODO = ""
@@ -19,10 +20,11 @@ state = ""
 
 [included_in]
 platforms = [ "Mac", "Windows" ]
-since = 0
-version = [  "7", "8" ]
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

@@ -21,7 +21,7 @@
 <ul>
     {{- range where .Site.Pages "Section" ($.Scratch.Get "section") -}}
         {{- if in .Params.sdk ($.Scratch.Get "sdk") -}}
-            {{- if or (in .Params.Included_in.Version ($.Scratch.Get "version")) (not ($.Scratch.Get "version")) -}}
+            {{- if or (and ( ge ($.Scratch.Get "version") .Params.Included_in.Since) ( or (not .Params.Included_in.Until) ( lt ($.Scratch.Get "version") .Params.Included_in.Until))) (not ($.Scratch.Get "version")) -}}
                 {{- if in .Params.categories ($.Scratch.Get "category") -}}
                     <li><a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a></li>
                 {{- end -}}

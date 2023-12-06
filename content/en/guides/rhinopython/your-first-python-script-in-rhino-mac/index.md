@@ -10,6 +10,7 @@ title = "Your First Python Script in Rhino (Mac)"
 type = "guides"
 weight = 2
 override_last_modified = "2019-09-13T13:01:12Z"
+draft = false
 
 [admin]
 TODO = ""
@@ -19,10 +20,11 @@ state = ""
 
 [included_in]
 platforms = [ "Mac" ]
-since = 0
-version = [  "7", "8" ]
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
