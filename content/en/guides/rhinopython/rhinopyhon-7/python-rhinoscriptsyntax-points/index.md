@@ -18,7 +18,7 @@ state = ""
 [included_in]
 platforms = [ "Mac", "Windows" ]
 since = 0
-version = [  "8" ]
+version = [  "7" ]
 
 [page_options]
 byline = true
@@ -109,14 +109,16 @@ pnt.Y = 45.0 # Sets the Y coordinate to 45.0
 print(pnt) #Print the new coordinates
 ```
 
-Using the Python `for` function it is quite easy to pull each coordinate in succession:
+Using the Python `for` function it is quite easy to walk through each coordinate in succession:
 
 ```
-for c in (pnt.X, pnt.Y, pnt.Z):
+for c in pnt:
     print (c) # This will loop through each coordinate in the point3d
 ```
 
 Rhinoscriptsyntax contains a number of methods to manipulate points.  See [RhinoScript Points and Vectors Methods](/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods) for details.
+
+For those familiar with RhinoScript, which represents points as a pure list, the Python representation is a little different and offers a few more options.
 
 ### Adding a point to display in Rhino
 

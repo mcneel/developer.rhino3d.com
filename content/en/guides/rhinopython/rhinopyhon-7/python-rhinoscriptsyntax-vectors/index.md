@@ -18,7 +18,7 @@ state = ""
 [included_in]
 platforms = [ "Mac", "Windows" ]
 since = 0
-version = [ "8" ]
+version = [  "7" ]
 
 [page_options]
 byline = true
@@ -40,7 +40,7 @@ Here is an easy way to construct a vector:
 ```
 import rhinoscriptsyntax as rs
 
-vec = rs.CreateVector(1.0, 2.0, 3.0)
+vec = rs.VectorCreate(1.0, 2.0, 3.0)
 ```
 
 A Vector3d's coordinates can be accessed as a list, one element at a time:
@@ -48,7 +48,7 @@ A Vector3d's coordinates can be accessed as a list, one element at a time:
 ```python
 import rhinoscriptsyntax as rs
 
-vec = rs.CreateVector(1.0, 2.0, 3.0)
+vec = rs.VectorCreate(1.0, 2.0, 3.0)
 
 print(vec[0]) #Prints the X coordinate of the Vector3d
 print(vec[1]) #Print the Y coordinate of the Vector3d
@@ -60,7 +60,7 @@ The coordinates of a Vector3d may also be accessed through its `.X`, `.Y` and `.
 ```python
 import rhinoscriptsyntax as rs
 
-vec = rs.CreateVector(1.0, 2.0, 3.0)
+vec = rs.VectorCreate(1.0, 2.0, 3.0)
 
 print(vec.X) # Prints the X coordinate of the Vector3d
 print(vec.Y) # Print the Y coordinate of the Vector3d
@@ -74,7 +74,7 @@ import rhinoscriptsyntax as rs
 
 point1 = [1,2,3]
 point2 = [4,6,7]
-vec = rs.CreateVector(1.0, 2.0, 3.0)
+vec = rs.VectorCreate(1.0, 2.0, 3.0)
 
 vec[0] = 5.0 # Sets the X coordinate to 5.0
 vec.Y = 45.0 # Sets the Y coordinate to 45.0
@@ -87,15 +87,15 @@ To find the vector between two points, use vector subtraction:
 {{< image url="/images/math-image180.png" alt="/images/image180.png" class="float_right" >}}
 
 ```python
-point1 = rs.CreatePoint(1,2,3)
-point2 = rs.CreatePoint(4,5,6)
+point1 = [1,2,3]
+point2 = [4,5,6]
 
-vector = rs.VectorAdd(point1, point2)
+vec = point2 - point1
 
-print(vector) #prints the new coordinates.
+print(vec) #prints the new coordinates.
 ```
 
-In the above example, the vector goes from point1 to point2.  Reversing this direction is a common mistake.  It is important to be sure that the starting point is subtracted from the ending point.
+In the above example, the vector goes from point1 to point2.  Reversing this direction is a common mistake.  It is importatnt to be sure that the starting point is subtraced from the ending point.
 
 Vectors can also be added to points to create new point locations.  Here is an example of moving a point location by a vector:
 
@@ -103,21 +103,21 @@ Vectors can also be added to points to create new point locations.  Here is an e
 
 ```python
 #  A base point
-point1 = rs.CreatePoint(1,1,1)
+point1 = [1,1,1]
 
 # A vector with a direction of 2 units in the X direction
-vector1 = rs.CreateVector(2.0, 0.0, 0.0)
+vector1 = [2,0,0]
 
 # Setting the coordinate of point1 to to units more in the X direction.
-vector = rs.VectorAdd(point1, vector1)
+point1 = point1 + vector1
 # point1 + vector1 = [1+2, 1+0, 1+0] = [3,1,1]
 ```
 
 Use a `for` loop to walk through each coordinate in succession:
 
 ```python
-for c in (vector.X, vector.Y, Vector.Z):
-    print (c) # This will loop through each coordinate in the vector3d
+for c in vec:
+    print c # This will loop through each coordinate in the vector3d
 ```
 
 RhinoScriptSyntax contains a number of methods to manipulate vectors.  See [RhinoScript Points and Vectors Methods](/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods) for details.

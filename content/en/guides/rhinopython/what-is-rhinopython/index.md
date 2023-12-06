@@ -2,7 +2,7 @@
 aliases = ["/5/guides/rhinopython/what-is-rhinopython/", "/6/guides/rhinopython/what-is-rhinopython/", "/7/guides/rhinopython/what-is-rhinopython/", "/wip/guides/rhinopython/what-is-rhinopython/"]
 authors = [ "dan" ]
 categories = [ "Overview" ]
-descripcontent\en\guides\rhinopython\rhinopython-7\*tion = "This guide is an overview of Python in Rhino."
+description = "This guide is an overview of Python in Rhino."
 keywords = [ "python", "overview" ]
 languages = [ "Python" ]
 sdk = [ "RhinoPython" ]
@@ -20,7 +20,7 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-version = [  "7", "8" ]
+version = [ "7", "8" ]
 
 [page_options]
 byline = true

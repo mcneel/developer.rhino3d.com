@@ -18,7 +18,7 @@ state = ""
 [included_in]
 platforms = [ "Mac", "Windows" ]
 since = 0
-version = [ "8" ]
+version = [  "7" ]
 
 [page_options]
 byline = true
@@ -50,11 +50,11 @@ import rhinoscriptsyntax as rs
 
 col = rs.CreateColor(43,45,56)
 
-print (col.R)
-print (col.G)
-print (col.B)
+print (col[0])
+print (col[1])
+print (col[2])
 ```
-Unlike many other Rhino types, colors are immutable.  This means you cannot set one channel by itself, but must always create a new color when trying to make a color.  Setting one channel will not work, for instance `color1.B = 56` will throw an error. 
+Unlike many other Rhino types, colors are immutable.  This means you cannot set one channel by itself, but must always create a new color when trying to make a color.  Setting one channel will not work, for instance `color1[1] = 56` will throw an error. 
 
 Here is a table of commonly used colors:
 
