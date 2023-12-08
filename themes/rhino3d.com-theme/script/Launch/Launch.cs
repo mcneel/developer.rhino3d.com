@@ -2,6 +2,7 @@
 using System.IO;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using System.Net;
 using System.Linq;
 using System.Collections.Generic;
@@ -102,18 +103,22 @@ namespace Launch
     public static string ParseHugoVersionNumber(string version)
     {
       string parsedVersion = "";
+      string versionPattern = @"\d{1,3}.\d{1,3}.\d{1,3}";
+      string splitVersion = "";
 
       if (version.StartsWith("Hugo Static Site Generator v"))
       {
         // Hugo Static Site Generator v0.71.1-A301F6B2/extended darwin/amd64 BuildDate: 2020-05-25T09:16:12Z
-        parsedVersion = version.Split("Hugo Static Site Generator v")[1].Substring(0,6);
+        splitVersion = version.Split("Hugo Static Site Generator v")[1];
       }
       else
       {
         // hugo v0.83.1+extended darwin/amd64 BuildDate=unknown
-        parsedVersion = version.Split("hugo v")[1].Substring(0,6);
+        // hugo v0.117.0-b2f0696cad918fb61420a6aff173eb36662b406e+extended darwin/arm64 BuildDate=2023-08-07T12:49:48Z VendorInfo=gohugoio
+        splitVersion = version.Split("hugo v")[1];
       }
-
+      
+      parsedVersion = Regex.Match(splitVersion, versionPattern, RegexOptions.Singleline).Value;
       return parsedVersion;
     }
 
@@ -124,12 +129,17 @@ namespace Launch
       string archive = "";
       string filename = "";
       if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-      {
-        if (System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture == Architecture.Arm64) {
-          archive = string.Format("hugo_extended_{0}_macOS-ARM64.tar.gz", requiredVersion);
+      {        
+        // Starting in v0.102.0, it's a universal binary like this: https://github.com/gohugoio/hugo/releases/download/v0.102.0/hugo_extended_0.102.0_darwin-universal.tar.gz      
+        if (new Version(requiredVersion).Minor > 101) {
+          archive = string.Format("hugo_extended_{0}_darwin-universal.tar.gz", requiredVersion);
         } else {
-          archive = string.Format("hugo_extended_{0}_macOS-64bit.tar.gz", requiredVersion);
-        }
+          if (System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture == Architecture.Arm64) {
+            archive = string.Format("hugo_extended_{0}_macOS-ARM64.tar.gz", requiredVersion);
+          } else {
+            archive = string.Format("hugo_extended_{0}_macOS-64bit.tar.gz", requiredVersion);
+          }
+        } 
         filename = "hugo.tar.gz";
       } else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
       {
@@ -288,6 +298,8 @@ namespace Launch
         arguments = "serve";
       }
 
+      Console.WriteLine(">> hugo {0}", arguments);
+
       using (var process = new Process
       {
         StartInfo = new ProcessStartInfo
@@ -371,7 +383,7 @@ namespace Launch
           procOutput = proc.StandardOutput.ReadLine();
         }
 
-        if (procOutput.Contains("maxfiles    655360         1048576")) 
+        if (procOutput.Contains("maxfiles    655360         1048576") || procOutput.Contains("maxfiles    256            unlimited") || procOutput.Contains("maxfiles    655360         unlimited")) 
         {
           return true;
         } else {
@@ -516,41 +528,52 @@ namespace Launch
       return lintingDidSucceed;
     }
 
-    static void Main(string[] args)
+    static bool VerifyHugo() {
+        StopAllHugos();
+        GetHugo();
+        return CheckMaxFiles();
+    }
+
+    static int Main(string[] args)
     {
       Directory.SetCurrentDirectory(RepoRootPath);
 
       if (args[0].StartsWith("lint")) {
         int lintingReturn = Lint(true) ? 0 : 1;
         System.Environment.Exit(lintingReturn);
-      } else {
+      } 
+      else 
+      {
         bool shouldServe = args[0].StartsWith("serve");
 
         Url = UrlFromArgs(args);
 
-        if (shouldServe)
+        if (true)
         {
-          StopAllHugos();
-          GetHugo();
-          if (CheckMaxFiles())
+          if (VerifyHugo())
           {
             bool lintingDidSucceed = Lint(false);
             if (lintingDidSucceed) {
               OpenBrowserToURL(Url);
-              ServeHugo(args);
+              if (shouldServe) {
+                ServeHugo(args);
+              }
             } else {
               Console.WriteLine("ERROR: Linting failed. The site will not serve properly. See errors above for details.");
+              return 1;
             }
           }
           else
           {
             Console.WriteLine("vvvvvvvvvvvvvvvvvvv ERROR vvvvvvvvvvvvvvvvvvvv\nERROR: McNeel Developer - Hugo needs more files\nTo fix this:\n1. In VSCode, press Command+Shift+P, then Enter.\n2. Type Tasks and select Task: Run Task.\n3. From the list, select and run the hugo SetMaxFilesLimits (run once only) task - be sure to enter your password in the terminal window.\n4. Restart your computer.\n^^^^^^^^^^^^^^^^^^^ ERROR ^^^^^^^^^^^^^^^^^^^^");
+            return 1;
           }
         } else
         {
           OpenBrowserToURL(Url);
         }
       }
+      return 0;
     }
     
   }
