@@ -56,7 +56,7 @@ With Python, it is easy to use the `for` loop to walk through the list and print
 
 ```python
 for i in points:
-    print (i)
+    print(i)
 ```
 
 It is also possible to use nested indexes to access a specific coordinate of a point in the list.  This example will access the Y coordinate of the second point in the list:
@@ -78,7 +78,7 @@ To add a point to this list, first create the point3d with `CreatePoint()`, then
 points.append(rs.CreatePoint(1.0, 2.0, 3.0))
 
 for i in points:
-    print (i)
+    print(i)
 ```
 
 ## Related Topics

@@ -33,13 +33,13 @@ toc_type = "single"
 
 Similar to 3D points, 3D vectors are stored as [Vector3d](https://developer.rhino3d.com/api/RhinoCommon/html/T_Rhino_Geometry_Vector3d.htm) structures.  They can be thought as a zero-based, one-dimensional list that contain three numbers. These three number represent to the X, Y and Z coordinate direction of the vector.
 
-```
-vector3d contains [1.0, 2.0, 3.0]  
+```python
+vector3d contains (1.0, 2.0, 3.0)  
 ```
 
 Here is an easy way to construct a vector:
 
-```
+```python
 import rhinoscriptsyntax as rs
 
 vec = rs.CreateVector(1.0, 2.0, 3.0)
@@ -74,8 +74,8 @@ To change the individual coordinate of a Vector3d, simply assign a new value to 
 ```python
 import rhinoscriptsyntax as rs
 
-point1 = [1,2,3]
-point2 = [4,6,7]
+point1 = (1,2,3)
+point2 = (4,6,7)
 vec = rs.CreateVector(1.0, 2.0, 3.0)
 
 vec[0] = 5.0 # Sets the X coordinate to 5.0
@@ -92,7 +92,7 @@ To find the vector between two points, use vector subtraction:
 point1 = rs.CreatePoint(1,2,3)
 point2 = rs.CreatePoint(4,5,6)
 
-vector = rs.VectorAdd(point1, point2)
+vector = point1 - point2
 
 print(vector) #prints the new coordinates.
 ```
@@ -111,15 +111,10 @@ point1 = rs.CreatePoint(1,1,1)
 vector1 = rs.CreateVector(2.0, 0.0, 0.0)
 
 # Setting the coordinate of point1 to to units more in the X direction.
-vector = rs.VectorAdd(point1, vector1)
+vector = point1 + vector1
 # point1 + vector1 = [1+2, 1+0, 1+0] = [3,1,1]
-```
 
-Use a `for` loop to walk through each coordinate in succession:
-
-```python
-for c in (vector.X, vector.Y, Vector.Z):
-    print (c) # This will loop through each coordinate in the vector3d
+print(vector)
 ```
 
 RhinoScriptSyntax contains a number of methods to manipulate vectors.  See [RhinoScript Points and Vectors Methods](/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods) for details.

@@ -36,7 +36,7 @@ Planes are represented by a [Plane](/api/RhinoCommon/html/T_Rhino_Geometry_Plane
 {{< image url="/images/primer-planedefinition.svg" alt="/images/primer-planedefinition.svg" class="image_center" width="45%" >}}
 
 ```
-plane contains [pointOrigin, vectorX, vectorY, vectorZ]
+plane contains (pointOrigin, vectorX, vectorY, vectorZ)
 ```
 
 It is easy to forget that there is a specific geometric relationship between the axes.  With Planes, the Y axis is automatically oriented 90-degrees to the X axis.  The X axis is the only axis that can be easily defined.  The Y axis is made orthogonal to the X vector, and the direction of the Z axis is computed from the cross-product of the other two vectors.
@@ -46,42 +46,33 @@ Planes can be constructed in a number of ways. One common function is `PlaneFrom
 ```python
 import rhinoscriptsyntax as rs
 
-corners = rs.GetRectangle()
-if corners:
-    plane = rs.PlaneFromPoints(corners[0], corners[1], corners[3])
+plane = rs.PlaneFromPoints((-2,-5,0),(1,2,0),(-3,3,0))
 
-print plane[0] # origin point
-print plane[1] # x-axis vector
-print plane[2] # y-axis vector
+print(plane.Origin) # origin point
+print(plane.XAxis) # x-axis vector
+print(plane.YAxis) # y-axis vector
 ```
+
+Plane also have a number of properties that can be used to get or set the individual values in the Point object.  In the example below the `.Origin`, `.XAxis`, `.Yaxis`, `.Zaxis` are used.
 
 Planes can also be created using the `CreatePlane()`, [PlaneFromFrame](/api/RhinoScriptSyntax/win/#collapse-PlaneFromFrame),  [PlaneFromNormal](/api/RhinoScriptSyntax/win/#collapse-PlaneFromNormal), and [PlaneFromPoints](/api/RhinoScriptSyntax/win/#collapse-PlaneFromPoints) functions.
 
-Plane also have a number of properties that can be used to get or set the individual values in the Point object.  In the example below the `.Origin`, `.XAxis`, `.Yaxis`, `.Zaxis` are used:
+To change origin of a Plane, simply assign a new value to the `.Origin` property.
 
-```
+```python
 import rhinoscriptsyntax as rs
 
-plane = rs.PlaneFromPoints([-2,-5,0],[1,2,0],[-3,3,0])
+plane = rs.PlaneFromPoints((-2,-5,0),(1,2,0),(-3,3,0))
 
-print plane.Origin # origin point
-print plane.XAxis # x-axis vector
-print plane.YAxis # y-axis vector
+print(plane.Origin) # origin point
+print(plane.XAxis) # x-axis vector
+print(plane.YAxis) # y-axis vector
 
 plane.Origin = rs.CreatePoint(3,4,5) # Changes the origin of the plane.
 
-print plane.Origin
-print plane.XAxis # x-axis vector
-print plane.YAxis # y-axis vector
-```
-
-To change origin of a Plane, simply assign a new value to the `.Origin` property.
-
-Use the Python `for` iterator to walk through each point coordinate in succession:
-
-```
-for p in plane:
-    print p
+print(plane.Origin)
+print(plane.XAxis) # x-axis vector
+print(plane.YAxis) # y-axis vector
 ```
 
 RhinoScriptSyntax contains a number of functions to manipulate planes.  See [Lines and Planes](/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods) for details.

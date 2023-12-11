@@ -56,20 +56,21 @@ The following example uses Object IDs to create reference geometry:
 ```python
 import rhinoscriptsyntax as rs
 
-startPoint = [1.0, 2.0, 0.0]
-endPoint = [4.0, 5.0, 0.0]
-line1 = [startPoint, endPoint]
+startPoint = (1.0, 2.0, 0.0)
+endPoint = (4.0, 5.0, 0.0)
 
-line1ID = rs.AddLine(line1[0],line1[1]) # Adds a line to the Rhino Document and returns an ObjectID
+line1ID = rs.AddLine(startPoint,endPoint) # Adds a line to the Rhino Document and returns an ObjectID
 
-startPoint2 = [1.0, 4.0, 0.0]
-endPoint2 = [4.0, 2.0, 0.0]
-line2 = [startPoint2, endPoint2]
+startPoint2 = (1.0, 4.0, 0.0)
+endPoint2 = (4.0, 2.0, 0.0)
 
-line2ID = rs.AddLine(line2[0],line2[1]) # Returns another ObjectID
+line2ID = rs.AddLine(startPoint2,endPoint2) # Returns another ObjectID
 
 int1 = rs.LineLineIntersection(line1ID,line2ID) # passing the ObjectIDs to the function.
+
+print(int1)
 ```
+
 ## Related Topics
 
 - [What is Python and RhinoScript?](/guides/rhinopython/what-is-rhinopython)

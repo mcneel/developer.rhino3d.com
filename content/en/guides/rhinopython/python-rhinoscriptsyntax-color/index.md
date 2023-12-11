@@ -34,7 +34,7 @@ toc_type = "single"
 Colors in Rhino are represented as  zero-based, one-dimensional arrays that contain four values.  The first 3 values are the Red, Green and Blue channels.  Each channel may contain a value from 0 to 255.  The fourth value is the Alpha Channel.  This control transparency of the color.  0 is completely transparent and the default value of 255 is completely opaque. 
 
 ```
-color contains [Red, Green, Blue, Alpha]
+color contains (Red, Green, Blue, Alpha)
 ```
 
 Use the `CreateColor()` function to create a new color structure:
@@ -56,6 +56,7 @@ print (col.R)
 print (col.G)
 print (col.B)
 ```
+
 Unlike many other Rhino types, colors are immutable.  This means you cannot set one channel by itself, but must always create a new color when trying to make a color.  Setting one channel will not work, for instance `color1.B = 56` will throw an error. 
 
 Here is a table of commonly used colors:
