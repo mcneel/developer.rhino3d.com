@@ -65,6 +65,10 @@ toc_type = "single"
 - [ScriptEditor Command](/guides/scripting/scripting-command)
 - [Grasshopper Script Component](/guides/scripting/scripting-component)
 
+### Advanced
+
+- [Language Initialization](/guides/scripting/advanced-langinit)
+
 ## [RhinoCommon](/guides/rhinocommon)
 
 *The cross-platform .NET plugin SDK for Rhino.*
