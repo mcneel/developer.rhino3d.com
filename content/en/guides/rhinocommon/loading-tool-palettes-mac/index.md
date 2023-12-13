@@ -19,7 +19,8 @@ state = ""
 
 [included_in]
 platforms = [ "Mac" ]
-since = 0
+since = 5
+until = 8
 
 [page_options]
 byline = true
@@ -28,6 +29,16 @@ toc_type = "single"
 
 +++
 
+{{< call-out warning DEPRECATED >}}
+
+This guide covers information relevant to Rhino 5-7 for Mac. Rhino {{< latest-rhino-version >}} is the current shipping version.
+
+For updated guides see:
+
+- [The Rhino UI System](/guides/general/rhino-ui-system/)
+- [Creating and Deploying Plugin Toolbars](/guides/rhinocommon/create-deploy-plugin-toolbar/)
+
+{{< /call-out >}}
 
 ## Prerequisites
 
