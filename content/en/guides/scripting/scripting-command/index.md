@@ -21,7 +21,7 @@ block_webcrawlers = false
 +++
 
 <style>
-    img { zoom: 50%; }
+    .main-content img { zoom: 50%; }
 </style>
 
 ## Opening Script Editor
