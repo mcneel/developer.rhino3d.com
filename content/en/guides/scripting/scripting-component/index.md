@@ -22,15 +22,15 @@ block_webcrawlers = false
 
 ## Script Component
 
-To access the unified script editor in Grasshopper, go to **Maths** tab and **Script** panel and drop a Script component onto the canvas:
+To access the unified script editor in Grasshopper, go to the **Maths** tab and **Script** panel and drop a Script component onto the canvas:
 
 ![](01.png)
 
-This component is designed to work with any of the supported languages. While being completely new and internally different from the legacy GHPython and C# components, it tries to replicate the same behaviours as those legacy components and stay familiar as much as possible.
+This component is designed to work with any of the supported languages. While being completely new and internally different from the legacy GHPython and C# components, it tries to replicate the same behaviors as those legacy components and stay familiar as much as possible.
 
 ## First Script
 
-Once an instance of the **Script** component is placed on the canvas, it will show a warning that it is missing a script. We first need to choose the programming language we would like to script in to initialize the component:
+Once you place an instance of the **Script** component on the canvas, it will show a warning that it is missing a script. We first need to choose the programming language we would like to script in to initialize the component:
 
 {{< call-out "note" "Note" >}}
 Double-click on the component to quickly start a new script using the most-recently used language.
@@ -38,7 +38,7 @@ Double-click on the component to quickly start a new script using the most-recen
 
 ![](03.png)
 
-The first button at the buttom of the component shows the default or last used language for this component. double-clicking on the component itself will automatically use this language to initilize the component and start a new script:
+The first button at the bottom of the component shows the default or last used language for this component. Double-clicking on the component itself will automatically use this language to initialize the component and start a new script:
 
 ![](04.png)
 
@@ -64,7 +64,7 @@ The **Script** component supports *Zoomable User Interface* (*ZUI* for short). T
 
 ![](07.png)
 
-When all parameters on either side are removed, the component will draw a jagged edge on that side. This is completely okay as not all scritps require inputs or produce values on the other output:
+When all parameters on either side are removed, the component will draw a jagged edge on that side. This is completely okay as not all scripts require inputs or produce values on the other output:
 
 ![](08.png)
 
@@ -74,7 +74,7 @@ For this example lets keep the **x** and **y** inputs and the **a** as output:
 
 ## Edit Script
 
-Let's remove the script contents and type a new line instead. The editor will help autocompleting the names:
+Let's remove the script contents and type a new line instead. The editor will help autocomplete the names:
 
 ```python
 import Rhino
@@ -94,7 +94,7 @@ Connect a panel to the output **a** and run the Grasshopper canvas. The script w
 
 ![](12.png)
 
-Lets add another output named **total** and add a few more lines to the script to compute a total of the given inputs:
+Let's add another output named **total** and add a few more lines to the script to compute a total of the given inputs:
 
 ```python
 import Rhino
@@ -103,11 +103,11 @@ a = Rhino.RhinoApp.Version
 total = x + y
 ```
 
-The editor will popup an execution error since it does not know the types for **x** and **y** due to the fact that no values are assigned to these inputs yet:
+The editor will pop up an execution error since it does not know the types for **x** and **y** because no values are assigned to these inputs yet:
 
 ![](13.png)
 
-Right-click on each input and choose **float** option from the **Type Hints** submenu. This will ensure the inputs are initialized with the default value for chosen type:
+Right-click on each input and choose the **float** option from the **Type Hints** submenu. This will ensure the inputs are initialized with the default value for the chosen type:
 
 ![](14.png)
 
@@ -117,7 +117,7 @@ Apply the script, connect a Range component to inputs and see a list of sums on 
 
 ## Debugging Scripts
 
-The script editor can debug scripts of any supported language. During debug, we can execute the script line by line, or pause the execution at certain lines called **Breakpoints** and inspect the values of global and local variables.
+The script editor can debug scripts of any supported language. During debug, we can execute the script line by line or pause the execution at certain lines called **Breakpoints** and inspect the values of global and local variables.
 
 Move your mouse cursor to the left side of the line number column on line 5 and click. This should add a red dot and mark that line as a **Breakpoint**:
 
@@ -127,14 +127,14 @@ The **Breakpoints** tray at the bottom will show all the active breakpoints, and
 
 ![](17.png)
 
-When breakpoints are added, editor makes a few UI changes and provides a few more utilities for debugging:
+When you add breakpoints, the editor makes a few UI changes and provides a few more utilities for debugging:
 
 - The **Run** button will change to **Debug**
 - **Variables**, **Watch**, and **Call Stack** trays will be added to the bottom tray bar
 
-Now click on the green **Debug** button on the Dashboard. The editor will run the script and will:
+Now click on the green **Debug** button on the Dashboard. The editor will run the script and:
 
-- Stop at breakpoint on line 5
+- Stops at breakpoint on line 5
 - Highlights the breakpoint line in orange and shows an arrow on the left side of the line
 - Highlights Status Bar in orange to show we are debugging a script
 - Activates the debug control buttons on the Dashboard
@@ -146,7 +146,7 @@ We can control the execution of script using the debug control buttons on the Da
 
 ![](19.png)
 
-From left to right, the are:
+From left to right, they are:
 
 - **Continue:** continues running the script until it stops on another breakpoint
 - **Step Over:** executes current line and moves on the next line
@@ -160,7 +160,7 @@ Notice that the **Variables** panel now shows new values for **x** and **y**. Th
 
 ![](20.png)
 
-Progressively clicking on **Continue**, will continue executing the script and modifying the variables. At each stop, **Variables** tray shows the current values of global and local variables.
+Progressively clicking on **Continue** will continue executing the script and modifying the variables. At each stop, the **Variables** tray shows the current values of global and local variables.
 
 Now click on **Stop** button to stop the debugging. The script component will show an error marking with the message **Debug Stopped**:
 
@@ -179,10 +179,10 @@ At any point in time, you can use the **Toggle** button in the **Breakpoints** p
 You can specify the packages required for your scripts inside the script source. This creates self-contained scripts that carry all their requirements with them.
 
 - Python 3 will use **pip** to install packages from [PyPI.org](https://pypi.org)
-  - **pip** does not support Python 2 anymore so we are limited to the packages used in IronPython
+  - **pip** does not support Python 2 anymore, so we are limited to the packages used in IronPython
 - C# will use **NuGet** to install packages from [NuGet.org](https://www.nuget.org)
 
-The default script for each language has a NOTE section at the top that describes how to specify the requirements in your scripts. Looking at Python 3 default script, we can specify required packages using this syntax:
+The default script for each language has a NOTE section at the top that describes how to specify the requirements in your scripts. Looking at the Python 3 default script, we can specify required packages using this syntax:
 
 ```python
 # r: numpy
@@ -207,13 +207,13 @@ a = numpy.random.rand(10)
 
 ```
 
-Click Run, and the script editor will attempt to install the required packages before running the script. This process might take some time and the editor is going to be disabled. Once the packages are installed, editor will continue to execute the script:
+Click Run, and the script editor will attempt to install the required packages before running the script. This process might take some time and the editor is going to be disabled. Once the packages are installed, the editor will continue to execute the script:
 
 ![](23.png)
 
 ### Python Libraries (Modules)
 
-Another method of adding local packages to python scripts is by adding their path to the `sys.path`. You can simpify this step by using the `# env:` specifier in your scripts to automatically add a path to the `sys.path` before running your script:
+Another method of adding local packages to Python scripts is by adding their path to the `sys.path`. You can simplify this step by using the `# env:` specifier in your scripts to automatically add a path to the `sys.path` before running your script:
 
 ```python
 # env: C:/Path/To/Where/My/Library/Is/Located/
@@ -225,11 +225,11 @@ mylibrary.do_something()
 
 ### NuGet Packages
 
-Same convention applies to C# scripts. They use a different syntax to specify packages that matches the format provided in NuGet.org page for the package you want to use:
+The same convention applies to C# scripts. They use a different syntax to specify packages that match the format provided in NuGet.org page for the package you want to use:
 
 ![](24.png)
 
-Here is an example script that uses [RestSharp](https://www.nuget.org/packages/RestSharp/110.2.0) NuGet package to grab some data from a website. Note the first line of the script is specifying the **RestSharp** package version `110.2.0`
+Here is an example script that uses the [RestSharp](https://www.nuget.org/packages/RestSharp/110.2.0) NuGet package to grab some data from a website. Note that the first line of the script specifies the **RestSharp** package version `110.2.0`
 
 ```csharp
 #r "nuget: RestSharp, 110.2.0"
@@ -254,7 +254,7 @@ a = response.Content;
 
 ## Editor Features
 
-Script editor has other noteworthy features. Here we highlight a few that are used more often:
+Script Editor has other noteworthy features. Here we highlight a few that are used more often:
 
 ### Search
 
@@ -264,7 +264,7 @@ Click on the **Search** tab to open the Search panel. Searching for a keyword wi
 
 ### Help
 
-Click on the **Help** tab to open the Help panel. This panel provides a simple method to get help on Rhino and Grasshopper APIs and provided python modules:
+Click on the **Help** tab to open the Help panel. This panel provides a simple method to get help on Rhino and Grasshopper APIs and provided Python modules:
 
 ![](27.png)
 
