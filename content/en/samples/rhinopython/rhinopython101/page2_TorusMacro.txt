@@ -1,0 +1,11 @@
+_SelNone
+_Polygon _NumSides=6 w0,0,0 w10,0,0
+_SelLast
+-_Properties _Object _Name RailPolygon _Enter _Enter
+_SelNone
+_Polygon _NumSides=6 w10,0,0 w12,0,0
+_SelLast
+_Rotate3D w0,0,0 w10,0,0 90
+-_Properties _Object _Name ProfilePolygon _Enter _Enter
+_SelNone
+-_Sweep1 _SelName RailPolygon _SelName ProfilePolygon _Enter _Simplify=None Enter
