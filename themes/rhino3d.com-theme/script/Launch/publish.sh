@@ -10,8 +10,8 @@ echo "Building for Linux..."
 dotnet publish -r linux-x64 -c Release
 
 echo "Copying published executables..."
-cp bin/Release/net5.0/osx-x64/publish/Launch .
-cp bin/Release/net5.0/win10-x64/publish/Launch.exe .
-cp bin/Release/net5.0/linux-x64/publish/Launch ./LaunchL
+cp bin/Release/net7.0/osx-x64/publish/Launch .
+cp bin/Release/net7.0/win10-x64/publish/Launch.exe .
+cp bin/Release/net7.0/linux-x64/publish/Launch ./LaunchL
 
 echo "Done"
