@@ -6,7 +6,7 @@ description = "This manual is for Grasshopper users who would like to create the
 keywords = [ "python", "commands", "grasshopper" ]
 languages = [ "Python" ]
 sdk = [ "RhinoPython" ]
-title = "Your First Python Script in Grasshopper"
+title = "Your First Python Script in Grasshopper for 7"
 type = "guides"
 weight = 1
 override_last_modified = "2019-10-25T13:24:40Z"
@@ -19,7 +19,7 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac", "Grasshopper" ]
 since = 7
-until = ""
+until = 8
 
 [page_options]
 block_webcrawlers = false

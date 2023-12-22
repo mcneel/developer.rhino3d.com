@@ -4,4 +4,4 @@ line = rs.AddLine( (0,0,0), (somenumber,0,0) )
 if line is None:
     print("Something went wrong")
 else:
-    print("Line curve inserted")
+    print("Line curve inserted with id", line)

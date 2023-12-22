@@ -2,11 +2,11 @@
 aliases = ["/5/guides/rhinopython/your-first-python-script-in-rhino-windows/", "/6/guides/rhinopython/your-first-python-script-in-rhino-windows/", "/7/guides/rhinopython/your-first-python-script-in-rhino-windows/", "/wip/guides/rhinopython/your-first-python-script-in-rhino-windows/"]
 authors = [ "scottd" ]
 categories = [ "Getting Started" ]
-description = "This guide demonstrates how to create Python scripts in Rhino."
+description = "This guide demonstrates how to create Python scripts in Rhino for Windows."
 keywords = [ "python", "commands" ]
 languages = [ "Python" ]
 sdk = [ "RhinoPython" ]
-title = "Your First Python Script in Rhino"
+title = "Your First Python Script in Rhino 7 (Windows)"
 type = "guides"
 weight = 1
 override_last_modified = "2018-12-05T14:59:06Z"
@@ -18,8 +18,8 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 8
-until = ""
+since = 7
+until = 8
 
 [page_options]
 block_webcrawlers = false
@@ -42,11 +42,11 @@ rs.MessageBox ("Hello World")
 To test the Script:
 
 - Start Rhino
-- At the command prompt, type Scripteditor and press Enter.
-- The Script editor dialog box appears.
+- At the command prompt, type EditPythonScript and press Enter.
+- The Edit Script dialog box appears.
 - In the script Code window, type the code sample above.
 - Click the "Run the script" button.
-- The editor dialog box disappears, and the message below appears:
+- The Edit Script dialog box disappears, and the message below appears:
 
 ## The HelloWorld Function
 
@@ -78,7 +78,7 @@ In Python the functions definitions need to come before being called in the code
 #### Testing HelloWorld
 
 - At the command prompt, type EditScript and press Enter.
-- The Scripteditor dialog box appears.
+- The Edit Script dialog box appears.
 - In the script Code window, type
 
 ```python

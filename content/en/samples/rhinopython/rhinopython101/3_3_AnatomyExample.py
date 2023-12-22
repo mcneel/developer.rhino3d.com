@@ -1,10 +1,9 @@
-#Script written by Steve Baer on 18-01-2011
+import rhinoscriptsyntax as rs                        # Import Statement
+#Script written by Skylar Tibbits on 03-09-2011        # Default comments
 
-def main():
-    info = "This is just a test"
-    print(info)
-    print("I repeat: ", info)
+strInfo = "This is just a test"                        # Global Variable
 
-
-if __name__=="__main__":
-    main()
+def simpleFunction(text):                # Function Declaration
+    print(text)                            # Code to Execute Within the Function
+                                        # (Note the Indentation)
+simpleFunction(strInfo)                    # Calling the Function (After it's created)

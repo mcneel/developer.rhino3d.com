@@ -2,15 +2,15 @@
 title = "Script Component"
 description = "This guide provides an overview on how to edit and run scripts inside of Grasshopper"
 type = "guides"
-categories = ["Scripting"]
-keywords = [ "", "" ]
-languages = [ "C#", "Python", "CPython", "IronPython", "VB" ]
+categories = ["Scripting", "GhPython"]
+keywords = [ "python", "commands", "grasshopper" ]
+languages = [ "C#", "Python", "CPython", "IronPython", "VB", "RhinoPython" ]
 authors = ["ehsan"]
-sdk = [ "RhinoCommon" ]
+sdk = [ "RhinoCommon",  "RhinoPython"]
 weight = 4
 
 [included_in]
-platforms = [ "Windows", "Mac" ]
+platforms = [ "Windows", "Mac", "Grasshopper"]
 since = 8
 
 [page_options]

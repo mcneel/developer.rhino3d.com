@@ -4,7 +4,7 @@ authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "This guide looks at the details of the GhPython Editor."
 keywords = [ "python", "commands", "grasshopper" ]
-languages = [ "Python" ]
+languages = [ "Python", "RhinoPython" ]
 sdk = [ "RhinoPython" ]
 title = "An Overview of the GhPython Editor"
 type = "guides"
@@ -19,7 +19,7 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac", "Grasshopper" ]
 since = 7
-until = ""
+until = 8
 
 [page_options]
 block_webcrawlers = false

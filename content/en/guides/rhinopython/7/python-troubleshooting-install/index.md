@@ -5,7 +5,7 @@ categories = [ "Getting Started" ]
 keywords = [ "python", "commands" ]
 languages = [ "Python" ]
 sdk = [ "RhinoPython" ]
-title = "Troubleshooting Python Install"
+title = "Troubleshooting GHPython Install Rhino 7"
 type = "guides"
 weight = 5
 override_last_modified = "2018-12-05T13:57:39Z"
@@ -18,7 +18,7 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 7
-until = ""
+until = 8
 
 [page_options]
 block_webcrawlers = false

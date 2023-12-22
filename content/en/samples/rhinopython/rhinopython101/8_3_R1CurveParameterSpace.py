@@ -11,14 +11,6 @@ def main():
         t+=0.002
     rs.EnableRedraw(True)
 
-
-def parametercolor(parameter):
-    red = 255 * parameter
-    if red<0: red=0
-    if red>255: red=255
-    return (red,0,255-red)
-
-
 def addpointat_r1_parameter(curve_id, parameter):
     domain = rs.CurveDomain(curve_id)
     if not domain: return
@@ -29,6 +21,11 @@ def addpointat_r1_parameter(curve_id, parameter):
         point_id = rs.AddPoint(r3point)
         rs.ObjectColor(point_id, parametercolor(parameter))
 
+def parametercolor(parameter):
+    red = 255 * parameter
+    if red<0: red=0
+    if red>255: red=255
+    return (red,0,255-red)
 
 if __name__=="__main__":
     main()

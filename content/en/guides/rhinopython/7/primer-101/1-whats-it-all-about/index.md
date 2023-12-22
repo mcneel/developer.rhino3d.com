@@ -18,8 +18,8 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 8
-until = ""
+since = 7
+until = 8
 
 [page_options]
 block_webcrawlers = false
@@ -93,11 +93,11 @@ Python is a wonderful language for beginners or advanced programmers.  It offers
 
 There are several ways to run scripts in Rhino, each has its own (dis)advantages. You could store scripts as external text files and have Rhino load them for you whenever you want to run them. You could also use Rhino's in-build script editor which means you can run the Scripts directly from the editor. The last option is to embed scripts in toolbar buttons, which makes it very hard to edit them, but much easier to distribute them.
 
-Throughout this book, I will use the in-build editor method. I find this to be the best way to work on simple scripts. In order to run a script via the in-build editor,  Use the *_ScriptEditor* command to activate it, then type in your script and press the Run button:
+Throughout this book, I will use the in-build editor method. I find this to be the best way to work on simple scripts. In order to run a script via the in-build editor,  Use the *_EditPythonScript* command to activate it, then type in your script and press the Run button:
 
-{{< image url="script_editor.png" alt="script_editor.png" class="image_center" width="75%" >}}
+{{< image url="/images/primer-editscriptdialog-python.png" alt="/images/primer-editscriptdialog-python.png" class="image_center" width="75%" >}}
 
-All the example code in this primer can be copy-pasted directly into the *_ScriptEditor* dialog.
+All the example code in this primer can be copy-pasted directly into the *_EditPythonScript* dialog.
 
 ## Next Steps
 

@@ -46,6 +46,8 @@ This table lists most of the attributes and properties which are available to pl
 
 The following procedure displays some attributes of a single object in a dialog box. There is nothing exciting going on here so I'll refrain from providing a step-by-step explanation.
 
+{{< download-script "rhinopython/rhinopython101/8_2_DisplayObjectAttributes.py" "8_2_DisplayObjectAttributes.py">}}
+
 ```python
 import rhinoscriptsyntax as rs
 
@@ -101,6 +103,8 @@ If the above is a hard concept to swallow, it might help you to think of yoursel
 
 Let's start with conversion from R1 to R3 space. The following script will add 500 colored points to the
 document, all of which are sampled at regular intervals across the R1 parameter space of a curve object:
+
+{{< download-script "rhinopython/rhinopython101/8_3_R1CurveParameterSpace.py" "8_3_R1CurveParameterSpace.py">}}
 
 {{< div class="line-numbers" >}}
 ```python
@@ -209,6 +213,8 @@ The distribution of R1 points on a spiral is not very enticing since it approxim
 
 Let's take a look at an example which uses all parameter spaces we've discussed so far:
 
+{{< download-script "rhinopython/rhinopython101/8_3_EvaluateDeviation.py" "8_3_EvaluateDeviation.py">}}
+
 {{< div class="line-numbers" >}}
 ```python
 import rhinoscriptsyntax as rs
@@ -290,6 +296,8 @@ There are several ways in which polylines can be manifested in openNURBS™ and 
 
 The dialog claims an "Open polyline with 8 points". However, when we drag a control-point Rhino will
 automatically convert any curve to a Nurbs curve, as the image on the right shows. It is now an open nurbs curve of degree=1. From a geometric point of view, these two curves are identical. From a programmatic point of view, they are anything but. For the time being we will only deal with 'proper' polylines though; lists of sequential coordinates. For purposes of clarification I've added two example functions which perform basic operations on polyline point-lists.
+
+{{< download-script "rhinopython/rhinopython101/8_4_GeodesicCurve.py" "8_4_GeodesicCurve.py">}}
 
 Compute the length of a polyline point-array:
 
@@ -557,7 +565,7 @@ def geodesiccurve():
     surface_id = rs.GetObject("Select surface for geodesic curve solution", 8, True, True)
     if not surface_id: return
 
-    vertices = getr2pathonsurface(surface_id, 10, "Start of geodes curve", "End of geodes curve")
+    vertices = getr2pathonsurface(surface_id, 10, "Start of geodesic curve", "End of geodesic curve")
     if not vertices: return
 
     tolerance = rs.UnitAbsoluteTolerance() / 10
@@ -575,7 +583,7 @@ def geodesiccurve():
         length = newlength
 
     rs.AddPolyline(vertices)
-    print "Geodesic curve added with length: ", newlength
+    print("Geodesic curve added with length: ", newlength)
 ```
 {{< /div >}}
 
@@ -640,6 +648,8 @@ A plane definition is an array of one point and three vectors, the point marks t
 
 The illustration shows how rules #2 and #3 work in practice.
 
+{{< download-script "rhinopython/rhinopython101/8_5_PlaneExample.py" "8_5_PlaneExample.py">}}
+
 {{< div class="line-numbers" >}}
 ```python
 ptOrigin = rs.GetPoint("Plane origin")
@@ -665,26 +675,33 @@ The adjacent illustration shows how the rs.AddPlaneSurface() call on line 11 res
 
 We'll only pause briefly at plane definitions since planes, like vectors, are usually only constructive elements. In examples to come they will be used extensively so don't worry about getting the hours in. A more interesting script which uses the *rs.AddPlaneSurface()* method is the one below which populates a surface with so-called surface frames:
 
+{{< download-script "rhinopython/rhinopython101/8_5_WhoFramedTheSurface.py" "8_5_WhoFramedTheSurface.py">}}
+
 {{< div class="line-numbers" >}}
 ```python
-idSurface = rs.GetObject("Surface to frame", 8, True, True)
+    surface_id = rs.GetObject("Surface to frame", 8, True, True)
+    if not surface_id: return
 
-intCount = rs.GetInteger("Number of iterations per direction", 20, 2)
+    count = rs.GetInteger("Number of iterations per direction", 20, 2)
+    if not count: return
 
-uDomain = rs.SurfaceDomain(idSurface, 0)
-vDomain = rs.SurfaceDomain(idSurface, 1)
-uStep = (uDomain[1] - uDomain[0]) / intCount
-vStep = (vDomain[1] - vDomain[0]) / intCount
+    udomain = rs.SurfaceDomain(surface_id, 0)
+    vdomain = rs.SurfaceDomain(surface_id, 1)
+    ustep = (udomain[1] - udomain[0]) / count
+    vstep = (vdomain[1] - vdomain[0]) / count
 
-rs.EnableRedraw(False)
-for u in range(uDomain[0],uDomain[1], uStep):
-    For v in range(vdomain[0],vDomain[1],vStep):
-        pt = rs.EvaluateSurface(idSurface, [u, v])
-        if rs.Distance(pt, rs.BrepClosestPoint(idSurface, pt)[0]) < 0.1:
-            srfFrame = rs.SurfaceFrame(idSurface, [u, v])
-            rs.AddPlaneSurface(srfFrame, 1.0, 1.0)
-
-rs.EnableRedraw(True)
+    rs.EnableRedraw(False)
+    u = udomain[0]
+    while u<=udomain[1]:
+        v = vdomain[0]
+        while v<=vdomain[1]:
+            pt = rs.EvaluateSurface(surface_id, u, v)
+            if rs.Distance(pt, rs.BrepClosestPoint(surface_id, pt)[0])<0.1:
+                srf_frame = rs.SurfaceFrame(surface_id, [u, v])
+                rs.AddPlaneSurface(srf_frame, 1.0, 1.0)
+            v+=vstep
+        u+=ustep
+    rs.EnableRedraw(True)
 ```
 {{< /div >}}
 
@@ -692,11 +709,11 @@ Frames are planes which are used to indicate geometrical directions. Both curves
 
 {{< image url="/images/primersurfaceframes.svg" alt="/images/primersurfaceframes.svg" class="float_right" width="325" >}}
 
-On lines 5 and 6 we determine the domain of the surface in u and v directions and we derive the required stepsize from those limits.
+On lines 9 and 10 we determine the domain of the surface in u and v directions and we derive the required stepsize from those limits.
 
-Line 11 and 12 form the main structure of the two-dimensional iteration. You can read such nested For loops as "Iterate through all columns and inside every column iterate through all rows".
+Line 14 and 16 form the main structure of the two-dimensional iteration. You can read such nested For loops as "Iterate through all columns and inside every column iterate through all rows".
 
-Line 14 does something interesting which is not apparent in the adjacent illustration. When we are dealing with trimmed surfaces, those two lines prevent the script from adding planes in cut-away areas. By comparing the point on the (untrimmed) surface to it's projection onto the trimmed surface, we know whether or not the [uv] coordinate in question represents an actual point on the trimmed surface.
+Line 18 does something interesting which is not apparent in the adjacent illustration. When we are dealing with trimmed surfaces, those two lines prevent the script from adding planes in cut-away areas. By comparing the point on the (untrimmed) surface to it's projection onto the trimmed surface, we know whether or not the [uv] coordinate in question represents an actual point on the trimmed surface.
 
 The *rs.SurfaceFrame()* method returns a unitized frame whose axes point in the [u] and [v] directions of the surface. Note that the [u] and [v] directions are not necessarily perpendicular to each other, but we only add valid planes whose x and y axis are always at 90º, thus we ignore the direction of the v-component.
 
@@ -735,6 +752,7 @@ Home stretch time, we've collected all the information we need in order to popul
 
 in case you need to impress anyone…
 
+{{< download-script "rhinopython/rhinopython101/8_6_0_DistributeCirclesOnSphere.py" "8_6_0_DistributeCirclesOnSphere.py">}}
 
 {{< div class="line-numbers" >}}
 ```python
@@ -834,6 +852,8 @@ The following example script demonstrates very clearly how the orientation of th
 
 It gives a clear impression of the range of different curvatures in the spline, but it doesn't communicate the helical twisting of the curvature very well. Parts of the spline that are near-linear tend to have a garbled curvature since they are the transition from one well defined bend to another. The arrows in the left image indicate these areas of twisting but it is hard to deduce this from the curvature graph alone. The upcoming script will use the curvature information to loft a surface through a set of ellipses which have been oriented into the curvature plane of the local spline geometry. The ellipses have a small radius in the bending plane of the curve and a large one perpendicular to the bending plane. Since we will not be using the strength of the curvature but only its orientation, small details will become very apparent.
 
+{{< download-script "rhinopython/rhinopython101/8_6_1_FlatWorm.py" "8_6_1_FlatWorm.py">}}
+
 {{< div class="line-numbers" >}}
 ```python
 def FlatWorm():
@@ -854,7 +874,7 @@ def FlatWorm():
     crosssections = []
     t_step = (crvdomain[1]-crvdomain[0])/samples
     t = crvdomain[0]
-    for t in rs.frange(crvdomain[0], crvdomain[1], t_step):
+    while t<=crvdomain[1]:
         crvcurvature = rs.CurveCurvature(curve_object, t)
         crosssectionplane = None
         if not crvcurvature:
@@ -878,7 +898,6 @@ def FlatWorm():
     if not crosssections: return
     rs.AddLoftSrf(crosssections)
     rs.DeleteObjects(crosssections)
-```
 {{< /div >}}
 
 <table class="multiline">
@@ -958,6 +977,7 @@ The relationship between a and the lengths of the sides of the triangle is:
 
 We now have the equation we need in order to solve the length of the slant edge. The only remaining problem is cos(a). In the paragraph on vector mathematics (6.2 Points and Vectors) the vector dotproduct is briefly introduced as a way to compute the angle between two vectors. When we use unitized vectors, the arccosine of the dotproduct gives us the angle between them. This means the dotproduct returns the cosine of the angle between these vectors. This is a very fortunate turn of events since the cosine of the angle is exactly the thing we're looking for. In other words, the dotproduct saves us from having to use the cosine and arccosine functions altogether. Thus, the distance between {A} and {M} is the result of:
 
+{{< download-script "rhinopython/rhinopython101/8_6_2_AddArcDir.py" "8_6_2_AddArcDir.py">}}
 
 ```python
 (0.5 * rs.Distance(A, B)) / rs.VectorDotProduct(D, Bisector)
@@ -968,18 +988,19 @@ We now have the equation we need in order to solve the length of the slant edge.
 def AddArcDir(ptStart, ptEnd, vecDir):
     vecBase = rs.PointSubtract(ptEnd, ptStart)
     if rs.VectorLength(vecBase)==0.0: return
-
-    if rs.IsVectorParallelTo(vecBase, vecDir): return
+    
+    if rs.IsVectorParallelTo(vecBase, vecDir):
+        return rs.AddLine(ptStart, ptEnd)
 
     vecBase = rs.VectorUnitize(vecBase)
     vecDir = rs.VectorUnitize(vecDir)
 
     vecBisector = rs.VectorAdd(vecDir, vecBase)
     vecBisector = rs.VectorUnitize(vecBisector)
-
+    
     dotProd = rs.VectorDotProduct(vecBisector, vecDir)
     midLength = (0.5*rs.Distance(ptStart, ptEnd))/dotProd
-
+    
     vecBisector = rs.VectorScale(vecBisector, midLength)
     return rs.AddArc3Pt(ptStart, rs.PointAdd(ptStart, vecBisector), ptEnd)
 ```
@@ -1007,27 +1028,27 @@ def AddArcDir(ptStart, ptEnd, vecDir):
 <td>If vecDir is parallel (or anti-parallel) to the baseline vector, then no solution is possible at all.</td>
 </tr>
 <tr>
-<td>7...8</td>
+<td>8...9</td>
 <td>Make sure all vector definitions so far are unitized - that is, they all have a vector length value of one</td>
 </tr>
 <tr>
-<td>10...11</td>
+<td>11...12</td>
 <td>Create the bisector vector and unitize it.</td>
 </tr>
 <tr>
-<td>13</td>
+<td>14</td>
 <td>Compute the dotproduct between the bisector and the direction vector. Since the bisector is exactly halfway between the direction vector and baseline vector (indeed, that is the point to its existence), we could just as well have calculated the dotproduct between it and the baseline vector.</td>
 </tr>
 <tr>
-<td>14</td>
+<td>15</td>
 <td>Compute the distance between ptStart and the center point of the desired arc.</td>
 </tr>
 <tr>
-<td>16</td>
+<td>17</td>
 <td>Resize the (unitized) bisector vector to match this length.</td>
 </tr>
 <tr>
-<td>17</td>
+<td>18</td>
 <td>Create an arc using the start, end and midpoint arguments, return the ID.</td>
 </tr>
 </table>
@@ -1036,6 +1057,8 @@ def AddArcDir(ptStart, ptEnd, vecDir):
 
 We need this function in order to build a recursive tree-generator which outputs trees made of arcs. Our trees will be governed by a set of five variables but -due to the
 flexible nature of the recursive paradigm- it will be very easy to add more behavioral patterns. The growing algorithm as implemented in this example is very simple and doesn't allow a great deal of variation.
+
+{{< download-script "rhinopython/rhinopython101/8_6_2_RecursivePlantGenerator.py" "8_6_2_RecursivePlantGenerator.py">}}
 
 The five base parameters are:
 
@@ -1060,6 +1083,8 @@ The adjacent illustration shows the algorithm we'll be using for twig propagatio
 4. Rotate {T} around {D} to randomize the orientation
 
 {{< div class="clear_both" />}}  
+
+{{< download-script "rhinopython/rhinopython101/8_6_2_RecursivePlantGenerator.py" "8_6_2_RecursivePlantGenerator.py">}}
 
 {{< div class="line-numbers" >}}
 ```python
@@ -1271,6 +1296,8 @@ The third image shows the original control points (the filled circles) and all b
 
 Finally, the last image shows all the control points that will be added in between the existing control points. Once we have an ordered array of all control points (ordered as they appear along the original polyline) we can create a {{< mathjax >}}$$D^5$${{< /mathjax >}} curve using *rs.AddCurve()*.
 
+{{< download-script "rhinopython/rhinopython101/8_7_1_BlendCorners.py" "8_7_1_BlendCorners.py">}}
+
 {{< div class="line-numbers" >}}
 ```python
 def blendcorners():
@@ -1394,6 +1421,8 @@ This is an example of the simplest implementation of a binary-search algorithm a
 The theory of binary searching might be easy to grasp (maybe not right away, but you'll see the beauty eventually), any practical implementation has to deal with some annoying, code-bloating aspects. For example, before we start a binary search operation, we must make sure that the answer we're looking for is actually contained within the set. In our case, if we're looking for a point {P} on the curve {C} which is 100.0 units away from the start of {C}, there exists no answer if {C} is shorter than 100.0 itself. Also, since we're dealing with a parameter domain as opposed to a list of integers, we do not have an actual list showing all the possible values. This array would be too big to fit in the memory of your computer. Instead, all we have is the knowledge that any number between and including {tmin} and {tmax} is theoretically possible. Finally, there might not exist an exact answer. All we can really hope for is that we can find an answer within tolerance of the exact length. Many operations in computational geometry are tolerance bound, sometimes because of speed issues (calculating an exact answer would take far too long), sometimes because an exact answer cannot be found (there is simply no math available, all we can do is make a set of guesses each one progressively better than the last).
 
 At any rate, here's the binary-search script I came up with, I'll deal with the inner workings afterwards:
+
+{{< download-script "rhinopython/rhinopython101/8_7_2_EquiDistanceOffset.py" "8_7_2_EquiDistanceOffset.py">}}
 
 {{< div class="line-numbers" >}}
 ```python
@@ -1550,24 +1579,31 @@ Since we know exactly what we need to do in order to mimic the *_CurvatureGraph*
 
 Our function will need to know the ID of the curve in question, the subdomain {t<sub>0</sub>; t<sub>1</sub>}, the number of samples it is allowed to take in this domain and the scale of the curvature graph. The return value should be a collection of object IDs which were inserted to make the graph. This means all the perpendicular red segments and the  dashed black curve connecting them.
 
+{{< download-script "rhinopython/rhinopython101/8_7_3_CreateCurvatureGraph.py" "8_7_3_CreateCurvatureGraph.py">}}
+
+
 {{< div class="line-numbers" >}}
 ```python
 def addcurvaturegraphsection(idCrv, t0, t1, samples, scale):
     if (t1-t0)<=0.0: return
+    N = -1
     tstep = (t1-t0)/samples
+    t = t0
     points = []
     objects = []
-    for t in rs.frange(t0,t1+(0.5*tstep),tstep):
+    while t<=(t1+(0.5*tstep)):
         if t>=t1:t = t1-1e-10
+        N += 1
         cData = rs.CurveCurvature(idCrv, t)
         if not cData:
-            points.append(rs.EvaluateCurve(idCrv, t))
+            points.append( rs.EvaluateCurve(idCrv, t) )
         else:
             c = rs.VectorScale(cData[4], scale)
             a = cData[0]
             b = rs.VectorSubtract(a, c)
             objects.append(rs.AddLine(a,b))
             points.append(b)
+        t += tstep
 
     objects.append(rs.AddInterpCurve(points))
     return objects
@@ -1584,28 +1620,28 @@ def addcurvaturegraphsection(idCrv, t0, t1, samples, scale):
 <td>Check for a null span, this happens inside kinks.</td>
 </tr>
 <tr>
-<td>3</td>
+<td>4</td>
 <td>Determine a step size for our loop (Subdomain length / Sample count).
 </td>
 </tr>
 <tr>
-<td>5</td>
+<td>7</td>
 <td><i>objects()</i> will hold the IDs of the perpendicular lines, and the connecting curve.</td>
 </tr>
 <tr>
-<td>6</td>
+<td>8</td>
 <td>Define the loop and make sure we always process the final parameter by increasing the threshold with half the step size.</td>
 </tr>
 <tr>
-<td>7</td>
+<td>9</td>
 <td>Make sure <i>t</i> does not go beyond <i>t1</i>, since that might give us the curvature data of the next segment.</td>
 </tr>
 <tr>
-<td>10</td>
+<td>13</td>
 <td>In case of a curvature data discontinuity, do not add a line segment but append the point on the curve at the current curve coordinate <i>t</i>.</td>
 </tr>
 <tr>
-<td>12...16</td>
+<td>15...19</td>
 <td>Compute the A and B coordinates, append them to the appropriate array and add the line segment.</td>
 </tr>
 </table>
@@ -1806,16 +1842,22 @@ We'll run into four problems while writing this script which we have not encount
 
 It's easy enough to generate a grid of points, we've done similar looping before where a nested loop was used to generate a grid wrapped around a cylinder. The problem this time is that it's not enough to generate the points. We also have to generate the face-list, which is highly dependent on the row and column dimensions of the vertex list. It's going to take a lot of logic insight to get this right (probably easiest to make a schematic first). Let us turn to the problem of generating the vertex coordinates, which is a straightforward one:
 
+{{< download-script "rhinopython/rhinopython101/8_8_1_MeshFunction.py" "8_8_1_MeshFunction.py">}}
+
 {{< div class="line-numbers" >}}
 ```python
 def createmeshvertices(function, fdomain, resolution):
     xstep = (fdomain[1]-fdomain[0])/resolution
     ystep = (fdomain[3]-fdomain[2])/resolution
     v = []
-    for x in rs.frange(fdomain[0],fdomain[1]+(0.5*xstep), xstep):
-        for y in rs.frange(fdomain[2],fdomain[3]+(0.5*ystep),ystep):
+    x = fdomain[0]
+    while x <= fdomain[1]+(0.5*xstep):
+        y = fdomain[2]
+        while y<=fdomain[3]+(0.5*ystep):
             z = solveequation(function, x, y)
             v.append( (x,y,z) )
+            y += ystep
+        x += xstep
     return v
 ```
 {{< /div >}}
@@ -1846,19 +1888,19 @@ We can access those easily enough, but since the step size in x and y direction 
 </td>
 </tr>
 <tr>
-<td>5</td>
+<td>6</td>
 <td>Begin at the lower end of the x-domain and step through the entire domain until the maximum value has been reached. We can refer to this loop as the row-loop.</td>
 </tr>
 <tr>
-<td>6</td>
+<td>8</td>
 <td>Begin at the lower end of the y-domain and step through the entire domain until the maximum value has been reached. We can refer to this loop as the column-loop.</td>
 </tr>
 <tr>
-<td>8</td>
+<td>9</td>
 <td>This is where we're calling an -as of yet- non-existent function. However, I think the signature is straightforward enough to not require further explanation now.</td>
 </tr>
 <tr>
-<td>11...13</td>
+<td>9...11</td>
 <td>Append the new vertex to the <i>V</i> list. Note that vertices are stored as a one-dimensional list, which makes accessing items at a specific (<i>row, column</i>) coordinate slightly cumbersome.</td>
 </tr>
 </table>
@@ -2051,8 +2093,8 @@ def meshfunction_xy():
     if not zfunc: return
 
     while True:
-        prompt = "Function domain x{domain[0],domain[1]} y{domain[2],domain[3]} @resolution"
-        result = rs.GetString(prompt, "Insert", ("xMin","xMax","yMin","yMax", "Resolution","Insert"))
+        prompt = "Function domain x{%f,%f} y{%f,%f} @%d" % (domain[0], domain[1], domain[2], domain[3], resolution)
+        result = rs.GetString(prompt, "Insert", ("xMin","xMax","yMin","yMax","Resolution","Insert"))
         if not result: return
         result = result.upper()
         if result=="XMIN":
@@ -2075,7 +2117,6 @@ def meshfunction_xy():
     verts = createmeshvertices(zfunc, domain, resolution)
     faces = createmeshfaces(resolution)
     rs.AddMesh(verts, faces)
-    SaveFunctionData(zfunc, domain, resolution)
 ```
 
 
@@ -2137,6 +2178,8 @@ The vertex and face lists of a mesh object define its form (geometry and topolog
 
 {{< image url="/images/primer-meshfalsecolours.svg" alt="/images/primer-meshfalsecolours.svg" class="image_center" width="80%" >}}
 
+{{< download-script "rhinopython/rhinopython101/8_8_2_RandomMeshColours.py" "8_8_2_RandomMeshColours.py">}}
+
 {{< div class="line-numbers" >}}
 ```python
 def randommeshcolors():
@@ -2189,6 +2232,8 @@ As you can see pretty much all the variation is within the {0.0; 10.0} range, wi
 {{< image url="/images/primer-gradienttable.svg" alt="/images/primer-gradienttable.svg" class="image_center" width="100%" >}}
 
 There is just one snag, the logarithm function returns negative numbers for input between zero and one. In fact, the logarithm of zero is minus-infinity, which plays havoc with all mathematics down the road since infinity is way beyond the range of numbers we can represent using doubles. And since the smallest possible distance between two points in space is zero, we cannot just apply a logarithm and expect our script to work. The solution is a simple one, add 1.0 to all distance values prior to calculating the logarithm, and all our results are nice, positive numbers.
+
+{{< download-script "rhinopython/rhinopython101/8_8_2_RandomMeshColours.py" "8_8_2_RandomMeshColours.py">}}
 
 {{< div class="line-numbers" >}}
 ```python
@@ -2340,6 +2385,10 @@ First of all, a surface is a 2D entity meaning it has no thickness and thus no "
 Although this is a useful way of describing coordinates in surface space, you should at all times remember that the {u} and {v} components are expressed in surface parameter space while the {w} component is expressed in world units. We are using mixed coordinate systems which means that we cannot blindly use distances or angles between these points because those properties are meaningless now.
 
 In order to find the coordinates in surface {S} space of a point {P}, we need to find the projection {P'} of {P} onto {S}. Then we need to find the distance between {P} and {P'} so we know the magnitude of the {w} component and then we need to figure out on which side of the surface {P} is in order to figure out the sign of {w} (positive or negative). Since our script will be capable of fitting a surface to multiple points, we might as well make our function list-capable:
+
+{{< download-script "rhinopython/rhinopython101/8_9_1_fitsurface_.py" "8_9_1_fitsurface_.py">}}
+
+{{< download-script "rhinopython/rhinopython101/8_9_1_surface fitter.3dm" "8_9_1_surface fitter.3dm">}}
 
 {{< div class="line-numbers" >}}
 ```python

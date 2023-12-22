@@ -6,7 +6,7 @@ description = "This guide demonstrates how to edit a Python script in Rhino."
 keywords = [ "python", "commands" ]
 languages = [ "Python" ]
 sdk = [ "RhinoPython" ]
-title = "Editing a Python script in Rhino"
+title = "Editing a Python script in Rhino 7"
 type = "guides"
 weight = 6
 override_last_modified = "2018-12-05T14:59:06Z"
@@ -19,7 +19,7 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 7
-until = ""
+until = 8
 
 [page_options]
 block_webcrawlers = false

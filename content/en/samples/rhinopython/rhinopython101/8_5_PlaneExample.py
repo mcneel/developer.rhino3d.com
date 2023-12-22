@@ -1,19 +1,18 @@
 ﻿import rhinoscriptsyntax as rs
 
 def planeexample():
-    origin = rs.GetPoint("Plane origin")
-    if not origin: return
+    ptOrigin = rs.GetPoint("Plane origin")
 
-    ptX = rs.GetPoint("Plane X-axis", origin)
-    if not ptX: return
-    ptY = rs.GetPoint("Plane Y-axis", origin)
-    if not ptY: return
-	
-    x = rs.Distance(origin, ptX)
-    y = rs.Distance(origin, ptY)
-    plane = rs.PlaneFromPoints(origin, ptX, ptY)
-    rs.AddPlaneSurface(plane, 1.0, 1.0)
-    rs.AddPlaneSurface(plane, x, y)
+    ptX = rs.GetPoint("Plane X-axis", ptOrigin)
+
+    ptY = rs.GetPoint("Plane Y-axis", ptOrigin)
+
+    dX = rs.Distance(ptOrigin, ptX)
+    dY = rs.Distance(ptOrigin, ptY)
+    arrPlane = rs.PlaneFromPoints(ptOrigin, ptX, ptY)
+
+    rs.AddPlaneSurface(arrPlane, 1.0, 1.0)
+    rs.AddPlaneSurface(arrPlane, dX, dY)
 
 
 if __name__=="__main__":

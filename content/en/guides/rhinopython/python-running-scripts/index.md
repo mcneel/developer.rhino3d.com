@@ -8,7 +8,7 @@ languages = [ "Python" ]
 sdk = [ "RhinoPython" ]
 title = "Running a Python script in Rhino"
 type = "guides"
-weight = 4
+weight = 20
 override_last_modified = "2018-12-05T14:59:06Z"
 draft = false
 
