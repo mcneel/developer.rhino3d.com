@@ -22,7 +22,7 @@ since = 7
 until = ""
 
 [page_options]
-block_webcrawlers = false
+block_webcrawlers = true
 byline = true
 toc = true
 toc_type = "single"

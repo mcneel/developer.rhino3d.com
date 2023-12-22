@@ -24,7 +24,7 @@ since = 7
 until = 8
 
 [page_options]
-block_webcrawlers = false
+block_webcrawlers = true
 byline = true
 toc = true
 toc_type = "single"
