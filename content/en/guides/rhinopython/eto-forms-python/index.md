@@ -67,6 +67,8 @@ The rest of this guide will cover the sections of the code in much more detail:
 
 {{< div class="line-numbers" >}}
 ```python
+#! python3
+
 # Imports
 import Rhino
 import scriptcontext
@@ -74,66 +76,71 @@ import System
 import Rhino.UI
 import Eto.Drawing as drawing
 import Eto.Forms as forms
-
+ 
 # SampleEtoRoomNumber dialog class
 class SampleEtoRoomNumberDialog(forms.Dialog[bool]):
-
+ 
     # Dialog box Class initializer
     def __init__(self):
+        super().__init__()
         # Initialize dialog box
         self.Title = 'Sample Eto: Room Number'
         self.Padding = drawing.Padding(10)
         self.Resizable = False
-
+ 
         # Create controls for the dialog
-        self.m_label = forms.Label(Text = 'Enter the Room Number:')
-        self.m_textbox = forms.TextBox(Text = None)
+        self.m_label = forms.Label()
+        self.m_label.Text = 'Enter the Room Number:'
+        self.m_textbox = forms.TextBox()
+        self.m_textbox.Text = ""
 
         # Create the default button
-        self.DefaultButton = forms.Button(Text = 'OK')
+        self.DefaultButton = forms.Button()
+        self.DefaultButton.Text ='OK'
         self.DefaultButton.Click += self.OnOKButtonClick
-
+ 
         # Create the abort button
-        self.AbortButton = forms.Button(Text = 'Cancel')
+        self.AbortButton = forms.Button()
+        self.AbortButton.Text ='Cancel'
         self.AbortButton.Click += self.OnCloseButtonClick
-
+ 
         # Create a table layout and add all the controls
         layout = forms.DynamicLayout()
         layout.Spacing = drawing.Size(5, 5)
         layout.AddRow(self.m_label, self.m_textbox)
         layout.AddRow(None) # spacer
         layout.AddRow(self.DefaultButton, self.AbortButton)
-
+ 
         # Set the dialog content
         self.Content = layout
-
+ 
     # Start of the class functions
-
+ 
     # Get the value of the textbox
     def GetText(self):
         return self.m_textbox.Text
-
+ 
     # Close button click handler
     def OnCloseButtonClick(self, sender, e):
         self.m_textbox.Text = ""
         self.Close(False)
-
+ 
     # OK button click handler
     def OnOKButtonClick(self, sender, e):
         if self.m_textbox.Text == "":
             self.Close(False)
         else:
             self.Close(True)
-
+ 
     ## End of Dialog Class ##
-
+ 
 # The script that will be using the dialog.
 def RequestRoomNumber():
     dialog = SampleEtoRoomNumberDialog();
     rc = dialog.ShowModal(Rhino.UI.RhinoEtoApp.MainWindow)
     if (rc):
-        print dialog.GetText() #Print the Room Number from the dialog control
-
+        print(dialog.GetText()) #Print the Room Number from the dialog control
+ 
 ##########################################################################
 # Check to see if this file is being executed as the "main" python
 # script instead of being used as a module by some other python script
@@ -188,6 +195,7 @@ Once the new class is declared, then the *init* instantiation operation to assig
 class SampleEtoViewRoomNumber(forms.Dialog[bool]):
 
     def __init__(self):
+        super().__init__()
         # Initialize dialog box
         self.Title = 'Sample Eto: Room Number'
         self.Padding = drawing.Padding(10)
@@ -196,6 +204,7 @@ class SampleEtoViewRoomNumber(forms.Dialog[bool]):
 
 The first section of the *init* is a few common properties that all dialogs have:
 
+1. `super().__init__()` - Intialize the base class.
 1. `self.Title` - Sets the title of the dialog.  This is a standard string.
 2. `self.Padding` - Set a blank border area within which any child content will be placed.  This requires the creation of a  [Eto.Drawing.Padding](http://api.etoforms.picoe.ca/html/T_Eto_Drawing_Padding.htm) structure.
 3. `self.Resizable` - Whether the dialog box is resizable by dragging with the mouse.  This is a True/False Boolean.
@@ -251,7 +260,8 @@ The simplest control is the Label control.  It is simply a piece of text that no
 {{< image url="/images/eto-label.svg" alt="/images/eto-label.svg" class="image_center" width="65%" >}}
 
 ```python
-        self.m_label = forms.Label(Text = 'Enter the Room Number:')
+    self.m_label = forms.Label()
+    self.m_label.Text = 'Enter the Room Number:'
 ```
 
 As with many controls, the line above create a name for the control `m_label`.  Then the main property of a Label is the text it shows by setting the Text Property of the label.
@@ -259,7 +269,9 @@ As with many controls, the line above create a name for the control `m_label`.  
 Normally this is as complex as a label needs to be, but a label also has many more properties in addition to `Text`.  Additonal properties include `VerticalAlignment`, `Horizontal Alignment`, `TextAlignment`, `Wrap`, `TextColor`, and `Font`. Properties can be added to the Text Property by using a comma(`,`):
 
 ```python
-        self.m_label = forms.Label(Text = 'Enter the Room Number:', VerticalAlignment = VerticalAlignment.Center)
+    self.m_label = forms.Label()
+    self.m_label.Text = 'Enter the Room Number:'
+    self.m_label.VerticalAlignment = `VerticalAlignment.Center`
 ```
 
 For a complete list of properties and events of the Label class, see the [Eto Label Class](http://api.etoforms.picoe.ca/html/T_Eto_Forms_Label.htm) documentation.
@@ -296,14 +308,16 @@ Buttons can be assigned to any name. Along with the name, the `Text` property ca
 
 ```python
         # Create the default button
-        self.DefaultButton = forms.Button(Text = 'OK')
+        self.DefaultButton = forms.Button()
+        self.DefaultButton.Text ='OK'
         self.DefaultButton.Click += self.OnOKButtonClick
 ```
 Once created, the button then can be bound to an event method (`OnOKButtonClick`) through `.Click` class using the `+=` syntax as follows:
 
 ```python
         # Create the default button
-        self.DefaultButton = forms.Button(Text = 'OK')
+        self.DefaultButton = forms.Button()
+        self.DefaultButton.Text ='OK'
         self.DefaultButton.Click += self.OnOKButtonClick
 ```
 The bound method is run if the button is clicked on.  The bound method is declared in the methods section later in the class:
@@ -334,6 +348,7 @@ Layouts are used to size and place controls in a logical way in a dialog.  They 
         layout = forms.DynamicLayout()
         layout.Spacing = drawing.Size(5, 5)
         layout.AddRow(self.m_label, self.m_textbox)
+        layout.AddRow(None) # spacer
         layout.AddRow(self.DefaultButton, self.AbortButton)
 
 
