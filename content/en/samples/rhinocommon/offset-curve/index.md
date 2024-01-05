@@ -126,8 +126,8 @@ def RunCommand():
 
     curves = curve.Offset(point, Vector3d.ZAxis, 1.0, doc.ModelAbsoluteTolerance, CurveOffsetCornerStyle.None)
 
-    for offset-curve in curves:
-        doc.Objects.AddCurve(offset-curve)
+    for offset_curve in curves:
+        doc.Objects.AddCurve(offset_curve)
 
     doc.Views.Redraw()
     return Result.Success
