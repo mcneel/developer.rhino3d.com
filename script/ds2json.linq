@@ -1,13 +1,15 @@
 <Query Kind="Program">
-  <Reference>D:\src\acormier.com\rnd\ConsoleApplication3\packages\Newtonsoft.Json.10.0.1\lib\net20\Newtonsoft.Json.dll</Reference>
   <NuGetReference>morelinq</NuGetReference>
+  <NuGetReference>Newtonsoft.Json</NuGetReference>
   <Namespace>MoreLinq</Namespace>
 </Query>
 
 void Main()
 {
-  var rss = @"S:\\rhino8\src4\rhino4\Plug-ins\ironpython\plugin\rhinoscriptsyntax\Scripts\rhinoscript";
-  var data = @"S:\\developer.rhino3d.com\data";
+  //var rss = @"S:\\rhino8\src4\rhino4\Plug-ins\ironpython\plugin\rhinoscriptsyntax\Scripts\rhinoscript";
+  var rss = @"C:\\Users\alain\src\rhino8\src4\rhino4\Plug-ins\ironpython\plugin\rhinoscriptsyntax\Scripts\rhinoscript";
+  //var data = @"S:\\developer.rhino3d.com\data";
+  var data = @"C:\\Users\alain\src\developer.rhino3d.com\data";
   var filename = "rhinoscriptsyntax.json";
   
   Func<string, string> indentLeft = txtToIndent => {
