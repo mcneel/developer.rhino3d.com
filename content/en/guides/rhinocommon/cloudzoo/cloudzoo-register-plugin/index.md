@@ -1,6 +1,6 @@
 +++
 aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/"]
-authors = [ "aj" ]
+authors = [ "aj", "will" ]
 categories = [ "CloudZoo" ]
 description = "This guide explains how to register yourself as an issuer in Cloud Zoo"
 keywords = [ "Plugin", "Cloud Zoo" ]
@@ -28,4 +28,20 @@ toc_type = "single"
 
 +++
 
-In Cloud Zoo, an _issuer_ represents a vendor of products with license keys. If you want your plugin to use Cloud Zoo, you must register to be an issuer by emailing [will@mcneel.com](mailto:will@mcneel.com). You will be provided with an issuer id and a secret that will uniquely identify you as a product vendor and will allow you to implement the required HTTPS callbacks.
+In Cloud Zoo, an _issuer_ represents a vendor of products with license keys. If you want your plugin to use Cloud Zoo, you must register to be an issuer by emailing support@mcneel.com.
+
+<br/>
+
+{{< mailto
+    email="support@mcneel.com"
+    subject="Cloud Zoo issuer registration for NAME"
+    body="Please register a new Cloud Zoo issuer for 'NAME' to use with the following plug-in(s): ..."
+    class="btn btn-primary btn-czreg"
+    >}}Send us a registration email{{</ mailto >}}
+
+<br/>
+<br/>
+
+Please provide the name (organization or individual) that you would like the issuer to be registered under, e.g. "Acme Inc" or "Jolyn Bloggs".
+
+You will be provided with an issuer id and a secret that will uniquely identify you as a product vendor and will allow you to implement the required HTTPS callbacks.
