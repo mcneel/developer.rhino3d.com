@@ -60,7 +60,8 @@ Creating a new team is not strictly required, but core-hour billing is *not comp
 {{< /call-out >}}
 
 3. Click _Manage Team_ -> _Manage Core-Hour Billing_.
-4. Check the checkbox next to Rhino 6 and Rhino 7 and the checkbox signaling you agree to pay.
+4. Check the checkbox next to the products you want to enable. \
+**Note, if you've had a team running for years, you may need to enable newer versions of Rhino.**
 5. Click _Save_, and enter payment information when prompted for your new team.
 
 ## Using Core-Hour Billing
