@@ -71,6 +71,7 @@ toc_type = "single"
 ### Advanced
 
 - [Language Initialization](/guides/scripting/advanced-langinit)
+- [Path Files](/guides/scripting/advanced-pthfiles)
 
 ## [RhinoCommon](/guides/rhinocommon)
 
