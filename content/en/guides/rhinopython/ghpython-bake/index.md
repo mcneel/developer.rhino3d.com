@@ -10,6 +10,7 @@ title = "Custom GhPython Baking Component"
 type = "guides"
 weight = 6
 override_last_modified = "2020-07-06T15:02:16Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,9 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac", "Grasshopper" ]
-since = 0
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

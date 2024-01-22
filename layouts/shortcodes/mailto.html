@@ -1,0 +1,30 @@
+{{/* This is a shortcode from https://github.com/isqua/hugo-shortcodes */}}
+{{/* If you have any problems, check the latest version in this repository */}}
+
+{{- $email := .Get "email" -}}
+{{- $subject := .Get "subject" | default "" -}}
+{{- $body := .Get "body" | default "" -}}
+{{- $cc := .Get "cc" | default ""}}
+{{- $bcc := .Get "bcc" | default "" -}}
+{{- $class := .Get "class" | default "" -}}
+{{- $text := .Inner | default $email -}}
+
+{{- $url := printf "mailto:%s" $email -}}
+
+{{- if $subject -}}
+    {{- $url = printf "%s?subject=%s" $url $subject -}}
+{{- end -}}
+
+{{- if $body -}}
+    {{- $url = printf "%s&body=%s" $url $body -}}
+{{- end -}}
+
+{{- if $cc -}}
+    {{- $url = printf "%s&cc=%s" $url $cc -}}
+{{- end -}}
+
+{{- if $bcc -}}
+    {{- $url = printf "%s&bcc=%s" $url $bcc -}}
+{{- end -}}
+
+<a class="{{ $class | safeURL }}" href="{{ $url | safeURL }}">{{ $text | markdownify }}</a>

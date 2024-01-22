@@ -10,6 +10,7 @@ title = "5 Conditional Statements"
 type = "guides"
 weight = 15
 override_last_modified = "2021-04-24T10:10:40Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,9 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
@@ -41,6 +44,8 @@ The first conditional statement evaluates a single boolean value; an object is e
 The translation from English into Python is not very difficult. We just need to learn how conditional syntax works.
 
 Problem 1:
+
+{{< download-script "rhinopython/rhinopython101/5_1_DeleteCurveOnTuesdays.py" "5_1_DeleteCurveOnTuesdays.py">}}
 
 ```python
 if (rs.IsCurve(strObjectID)):
@@ -148,6 +153,8 @@ while (something is true):
 All the lines indented after the while keyword will be repeated until we abort the loop ourselves. If we do not abort the loop, I.e. if we omit the break statement or if our condition just never happens to be met, the loop will continue forever. This sounds like an easy problem to avoid but it is in fact a very common bug.
 
 In Python it does not signify the end of the world to have a truly infinite loop. The following example script contains an endless While...Loop which can only be cancelled by shutting down the application.
+
+{{< download-script "rhinopython/rhinopython101/5_3_ViewportClock.py" "5_3_ViewportClock.py">}}
 
 {{< div class="line-numbers" >}}
 ```python
@@ -263,15 +270,18 @@ This approach means that curves that turn out to be longer than {L} will probabl
 
 A possible solution to this problem might look like this:
 
+{{< download-script "rhinopython/rhinopython101/5_3_IterateCurveScaling.py" "5_3_IterateCurveScaling.py">}}
+
 {{< div class="line-numbers" >}}
 ```python
-import rhinoscriptsyntax as rs
 # Iteratively scale down a curve until it becomes shorter than a certain length
+import rhinoscriptsyntax as rs
+
 
 def fitcurvetolength():
-    curve_id = rs.GetObject("Select a curve to fit to length", rs.filter.curve, True, True)
+    curve_id = rs.GetObject("Select a curve to fit to length", 4, True, True)
     if curve_id is None: return
-
+    
     length = rs.CurveLength(curve_id)
 
     length_limit = rs.GetReal("Length limit", 0.5 * length, 0.01 * length, length)
@@ -281,10 +291,11 @@ def fitcurvetolength():
         if rs.CurveLength(curve_id)<=length_limit: break
         curve_id = rs.ScaleObject(curve_id, (0,0,0), (0.95, 0.95, 0.95))
         if curve_id is None:
-            print "Something went wrong..."
+            print("Something went wrong...")
             return
 
-    print "New curve length: ", rs.CurveLength(curve_id)
+    print("New curve length: ", rs.CurveLength(curve_id))
+
 
 if __name__=="__main__":
     fitcurvetolength()
@@ -342,7 +353,7 @@ method takes four arguments, the last one of which is optional. We do not overri
 <td>This line ends all indented code, which instructs the interpreter to go back to line 13</td>
 </tr>
 <tr>
-<td>6</td>
+<td>21</td>
 <td>Eventually all curves will become shorter than the limit length and the While... loop will abort. We print out a message to the command line informing the user of the new curve length.</td>
 </tr>
 </table>
@@ -371,45 +382,62 @@ The variable i starts out by being equal to A and it is incremented by N until i
 If we want to abort a For... loop ahead of time, we can use break in order to short-circuit the process.
 Creating mathematical graphs is a typical example of the usage of For…Loops:
 
+{{< download-script "rhinopython/rhinopython101/5_4_DrawSineWave.py" "5_4_DrawSineWave.py">}}
 
 ```python
-import math
+# Draw a sine wave using points
 import rhinoscriptsyntax as rs
-#Draw a sine wave using points
+import math
 
-dblA = -8.0
-dblB = 8.0
-dblStep = 0.25
+def drawsinewave():
+    a = -8.0
+    b = 8.0
+    step = 0.25
+    x = a
+    while x<=b:
+        y = 2*math.sin(x)
+        rs.AddPoint( (x,y,0) )
+        x += step
 
-for x in rs.frange(dblA, dblB, dblStep):
-    y = 2*math.sin(x)
-    rs.AddPoint([x, y, 0])    
+
+if __name__=="__main__":
+    drawsinewave()   
 ```
 
 {{< image url="/images/primer-sinewave.svg" alt="/images/primer-sinewave.svg" class="float_right" width="375" >}}
 
-The above example draws a sine wave graph in a certain numeric domain with a certain accuracy. There is no user input since that is not the focus of this paragraph, but you can change the values in the script. The numeric domain we're interested in ranges from -8.0 to +8.0 and with the current stepsize of 0.25 that means we'll be running this loop 64 times. 64 = dblStep-1 × (dblB - dblA))
+The above example draws a sine wave graph in a certain numeric domain with a certain accuracy. There is no user input since that is not the focus of this paragraph, but you can change the values in the script. The numeric domain we're interested in ranges from -8.0 to +8.0 and with the current stepsize of 0.25 that means we'll be running this loop 64 times. 64 = Step-1 × (B - A))
 
 The For…loop will increment the value of x automatically with the specified stepsize, so we don't have to worry about it when we use x on line 10. We should be careful not to change x inside the loop since that will play havoc with the logic of the iterations.
 
 Loop structures can be nested at will, there are no limitations, but you'll rarely encounter more than three. The following example shows how nested For…Loops can be used to compute distributions:
 
+
+{{< download-script "rhinopython/rhinopython101/5_4_TwistAndShout.py" "5_4_TwistAndShout.py">}}
+
 ```python
-import math
 import rhinoscriptsyntax as rs
+import math
 
-dblTwistAngle = 0.0
 
-rs.EnableRedraw(False)
-for z in rs.frange(0.0, 5.0, 0.5):
-   dblTwistAngle = dblTwistAngle + (math.pi/30)
+def twistandshout():
+    twist_angle = 0.0
+    rs.EnableRedraw(False)
+    z = 0
+    while z<=5:
+        twist_angle += math.pi/30
+        a = 0
+        while a<2*math.pi:
+            x = 5 * math.sin(a + twist_angle)
+            y = 5 * math.cos(a + twist_angle)
+            rs.AddSphere((x,y,z), 0.5)
+            a += math.pi/15
+        z += 0.5
+    rs.EnableRedraw(True)
 
-   for a in rs.frange(0.0, 2*math.pi, (math.pi/15)):
-       x = 5 * math.sin(a + dblTwistAngle)
-       y = 5 * math.cos(a + dblTwistAngle)
-       rs.AddSphere([x,y,z], 0.5)
 
-rs.EnableRedraw(True)
+if __name__=="__main__":
+    twistandshout()
 ```
 
 {{< image url="/images/primer-twistandshout.svg" alt="/images/primer-twistandshout.svg" class="float_right" width="375" >}}

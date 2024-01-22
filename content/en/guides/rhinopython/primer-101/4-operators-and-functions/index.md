@@ -9,6 +9,7 @@ sdk = [ "RhinoPython" ]
 title = "4 Operators and functions"
 type = "guides"
 weight = 15
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -16,9 +17,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
@@ -28,6 +31,8 @@ toc_type = "single"
 ## 4.1 What on earth are they and why should I care?
 
 When we were discussing numeric variables in paragraph 2.3.1, there was an example about mathematical operations on numbers:
+
+{{< download-script "rhinopython/rhinopython101/4_1_MathSyntax.py" "4_1_MathSyntax.py">}}
 
 ```python
 x = 15 + 26 * 2.33
@@ -105,9 +110,11 @@ Otherwise, abort
 
 When we translate this into Python code we get the following:
 
+{{< download-script "rhinopython/rhinopython101/4_3_BlockNameCheck.py" "4_3_BlockNameCheck.py">}}
+
 ```python
 if (not rs.IsBlock("SomeBlockName")):
-    print ("Missing block definition: SomeBlockName")
+    print("Missing block definition: SomeBlockName")
 ```
 
 And and Or at least behave like proper operators; they take two arguments on either side. The And operator requires both of them to be True in order for it to evaluate to True. The Or operator is more than happy with a single True value. Let's take a look at a typical 'one-beer-too-many' algorithm:
@@ -183,6 +190,8 @@ rs.AddLayer (name=None, color=0, visible=True, locked=False, parent=None)
 
 This concludes the boring portion of the primer. We now have enough information to actually start making useful scripts. I still haven't told you about loops or conditionals, so the really awesome stuff will have to wait until Chapter 5, though. We're going to write a script which uses some Python functions and a few RhinoScriptSyntax methods. Our objective for today is to write a script that applies a custom name to selected objects. First, I'll show you the script, then we'll analyze it line by line:
 
+{{< download-script "rhinopython/rhinopython101/4_4_1_RenameObject.py" "4_4_1_RenameObject.py">}}
+
 ```python
 import rhinoscriptsyntax as rs
 import time
@@ -256,17 +265,20 @@ def Alphabet():
     strSeries = "abcdefghijklmnopqrstuvwxyz"
     return strSeries
 
-print Alphabet()
+print(Alphabet())
 ```
 
 The "return value" identifies what will be returned once the method is called and the code within its scope is executed.  When this code is run, it will call the function *Alphabet()*, the code within the function's scope will be run and the function will return the value of strSeries.  This returned value will then be printed to the command line.  It should be noted that at first glance, the return and print functions appear to be very similar.  However, they are not! *print()* will print anything to the command line and console.  return(), on the other hand, will only return a value from a function - basically assigning a value to a variable whenever the function was called. Return is used for the output of a function (in this case the function "Alphabet"), print is used for debugging code or whenever the user wants to see a value printed to the screen.
 
 Imagine you want to lock all curve objects in the document. Doing this by hand requires three steps and it will ruin your current selection set, so it pays to make a script for it. A function which performs this task might fail if there are no curve objects to be found. If the function is designed-not-to-fail you can always call it without thinking and it will sort itself out. If the function is designed-to-fail it will crash if you try to run it without making sure everything is set up correctly. The respective functions are:
 
+{{< download-script "rhinopython/rhinopython101/4_4_2_LockCurves_Fail.py" "4_4_2_LockCurves_Fail.py">}}
+
 ```python
 def lockcurves_fail():
     rs.LockObjects(rs.ObjectsByType(rs.filter.curve))
 ```
+{{< download-script "rhinopython/rhinopython101/4_4_2_LockCurves_NoFail.py" "4_4_2_LockCurves_NoFail.py">}}
 
 ```python
 def lockcurves_nofail():
@@ -292,6 +304,9 @@ The first line which contains the name and the arguments is called the function 
 
 The argument list takes a bit more of explaining. Usually, you can simply comma separate a bunch of arguments and they will act as variables from there on end:
 
+
+{{< download-script "rhinopython/rhinopython101/4_4_2_MyBogusFunction.py" "4_4_2_MyBogusFunction.py">}}
+
 ```python
 def MyBogusFunction(intNumber1, intNumber2):
 ```
@@ -315,7 +330,7 @@ def MyBogusFunction(intNumber1, intNumber2):
 In this function, we can see that we have used "def" to indicate that we are creating a new function, we have called it "MyBogusFunction" and have given it two input variables (intNumber1, intNumber2). Within the indentation (the guts of the function), we have done a few calculations and we have used the "return" statement to output an evaluation of our calculations. Now, when we call the function somewhere else in our code, the variable will be set to the return value of our function.:
 
 ```python
-print MyBogusFunction(5, 6)
+print(MyBogusFunction(5, 6))
 ```
 
 The result will be True (105 is indeed greater than 36)!
@@ -326,7 +341,7 @@ Previously, we mentioned something called variable scope - this refers to where 
 def testFunction():
     y=20
     return y
-print y*testFunction()
+print(y*testFunction())
 ```
 
 This code will return an error, "'y' is not defined" because the variable named "y" has only been defined within a function. That means that we cannot use that variable outside of the function unless we pass it through the input or return statements. The code literally does not understand what "y" means because it was created inside of the function. Otherwise, we could have defined y outside of the function which would make it have global scope and we could use it anywhere within the code.
@@ -335,7 +350,7 @@ This code will return an error, "'y' is not defined" because the variable named 
 y = 20
 def testFunction():
     return y
-print testFunction()
+print(testFunction())
 ```
 
 ## 4.5 Mutability
@@ -357,7 +372,7 @@ What will be printed? It turns out, the result is 10!  That means that y is refe
 x = (1,2)
 y = x
 x = (3,4)
-print y # The result = (1,2)
+print(y) # The result = (1,2)
 ```
 
 
@@ -368,7 +383,7 @@ Tuples act very similar to variables with regard to referencing other items.  In
 x = [1,2]
 y = x
 x.append(3)
-print y The result = (1,2,3)
+print(y) # The result = (1,2,3)
 ```
 
 In this example, the List "y" DOES change once we change the value of "x". Thus, the result is (1,2,3), not (1,2) as was the case in the previous examples.  This demonstrates that Lists are referencing the variable not the value of "x".  In order to make "y" act as its own, independent variable and value, we must create a copy of the first variable:
@@ -378,7 +393,7 @@ In this example, the List "y" DOES change once we change the value of "x". Thus,
 x = [1,2]
 y = x[:] #This creates a copy of the list "x"
 x.append(3)
-print y The result = (1,2)
+print(y) # The result = (1,2)
 ```
 
 The variable[:] symbol creates a copy of the variable.  This means that "y" will now be an independent list and will not change when "x" changes!  One more example:
@@ -388,7 +403,7 @@ The variable[:] symbol creates a copy of the variable.  This means that "y" will
 x = {1:'a',2:'b'}
 y = x
 x[3] = 'c'
-print y The result = {1:'a',2:'b',3:'c'}
+print(y) # The result = {1:'a',2:'b',3:'c'}
 ```
 
 In this example the dictionary "y" will be changed with the dictionary "x", unless we use *x.copy()*.
@@ -398,7 +413,7 @@ In this example the dictionary "y" will be changed with the dictionary "x", unle
 x = {1:'a',2:'b'}
 y = x.copy()
 x[3] = 'c'
-print y The result = {1: 'a', 2: 'b'}
+print(y) # The result = {1: 'a', 2: 'b'}
 ```
 
 This gets into the topic of mutability.  An element is considered mutable if it can be changed/modified once they are created.  Variables and Tuples are considered Immutable, meaning that they cannot be changed unless you create a new variable with the newly desired value (or copy over top of the old variable).  Lists and Dictionaries are considered mutable, because they can be modified once they have been created. This means that we can freely add, remove, slice the values within a List or Dictionary.  This is an exciting and powerful tool, that was previously not available with VBscript Arrays!  More on this later when we get into Tuples, Lists and Dictionaries...

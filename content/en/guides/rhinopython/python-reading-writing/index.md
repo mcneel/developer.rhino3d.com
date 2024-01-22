@@ -10,6 +10,7 @@ title = "How to read and write a simple file"
 type = "guides"
 weight = 3
 override_last_modified = "2018-12-05T14:59:06Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,9 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Mac", "Windows" ]
-since = 0
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

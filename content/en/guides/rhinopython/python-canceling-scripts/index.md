@@ -8,8 +8,9 @@ languages = [ "Python" ]
 sdk = [ "RhinoPython" ]
 title = "Canceling a Python script in Rhino"
 type = "guides"
-weight = 5
+weight = 10
 override_last_modified = "2018-12-05T14:59:06Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,9 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

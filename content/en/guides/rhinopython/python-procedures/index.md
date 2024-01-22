@@ -10,6 +10,7 @@ title = "Python Procedures"
 type = "guides"
 weight = 2
 override_last_modified = "2018-12-05T14:59:06Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,9 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Mac", "Windows" ]
-since = 0
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
@@ -46,7 +49,7 @@ To import more the one module, use commas to separate module names:
 ```python
 import rhinoscriptsyntax, time, math
 ```
-To access procedures in imported modeles, prefix the function with the imported model name, seperated by a period (.):
+To access procedures in imported modules, prefix the function with the imported model name, separated by a period (.):
 
 ```python
 import time

@@ -10,6 +10,7 @@ title = "Python Dictionaries"
 type = "guides"
 weight = 100
 override_last_modified = "2018-12-05T14:59:06Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,9 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Mac", "Windows" ]
-since = 0
+since = 8
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
@@ -62,7 +65,7 @@ To add a value to a Dictionary, specify the new key and set a value. Below, the 
 ```python
 room_num = {'John': 425, 'Liz': 212}
 room_num['Isaac'] = 345
-print room_num
+print (room_num)
 ```
 There is no limit to the number of values that can be added to a dictionary (within the bounds of physical memory).
 
@@ -75,7 +78,7 @@ To remove a value from a dictionary, use the `del` method and specify the key to
 ```python
 room_num = {'John': 425, 'Liz': 212, 'Isaac': 345}
 del room_num['Isaac']
-print room_num
+print (room_num)
 ```
 
 ## Counting Values
@@ -94,14 +97,14 @@ The `in` syntax returns True if the specified key exists within the dictionary. 
 ```python
 room_num = {'John': 425, 'Liz': 212, 'Isaac': 345}
 var1 = 'Tom' in room_num
-print "Is Tom in the dictionary? " + str(var1)
+print ("Is Tom in the dictionary? " + str(var1))
 ```
 or you may want to know if an Isaac is *not* in the dictionary. Below the answer will be also be False:
 
 ```python
 room_num = {'John': 425, 'Liz': 212, 'Isaac': 345}
 var1 = 'Isaac' not in room_num
-print "Is Isaac not in room_num? " + str(var1)
+print ("Is Isaac not in room_num? " + str(var1))
 ```
 
 Use the variable name and the key value in brackets `[]` to get the value associated with the key.
@@ -109,7 +112,7 @@ Use the variable name and the key value in brackets `[]` to get the value associ
 ```python
 room_num = {'John': 425, 'Liz': 212, 'Isaac': 345}
 var1 = room_num['Isaac']
-print "Isaac is in room number " + str(var1)
+print ("Isaac is in room number " + str(var1))
 ```
 
 The `.keys()` and `.values()` methods return an array containing all the keys or values from the dictionary. For example:
@@ -127,7 +130,7 @@ Dictionaires can be used to control loops.  In addition both the keys and values
 ```python
 room_num = {'john': 425, 'tom': 212, 'isaac': 345}
 for k, v in room_num.items():
-    print k + ' is in room ' + str(v)
+    print (k + ' is in room ' + str(v))
 ```
 
 You can also go through the dictionary backwards by using the `reversed()` method:
@@ -135,7 +138,7 @@ You can also go through the dictionary backwards by using the `reversed()` metho
 ```python
 room_num = {'john': 425, 'tom': 212, 'isaac': 345}
 for k, v in reversed(room_num.items()):
-    print k + ' is in room ' + str(v)
+    print (k + ' is in room ' + str(v))
 ```
 
 ## Sorting Dictionaries
@@ -146,14 +149,14 @@ To sort a dictionary by key using the following `sorted()` function:
 
 ```python
 room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-print sorted(room_num)
+print (sorted(room_num))
 ```
 
 To sort by `values` use the `sorted()` method along with the `.values()` function:
 
 ```python
 room_num = {'john': 425, 'tom': 212, 'isaac': 345}
-print sorted(room_num.values())
+print (sorted(room_num.values()))
 ```
 
 The Dictionary object is not there to replace list iteration, but there are times when it makes more sense to index your array using English-like terms as opposed to numerical values. It can be much faster to locate an object in a dictionary than in a list.

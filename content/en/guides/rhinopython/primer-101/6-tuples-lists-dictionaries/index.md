@@ -10,6 +10,7 @@ title = "6 Tuples, Lists and Dictionaries"
 type = "guides"
 weight = 15
 override_last_modified = "2018-12-05T14:59:06Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,9 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
@@ -54,6 +57,8 @@ Tuples can be used for coordinates (x,y) or any other time you need to store var
 
 Lists are just like Tuples, however they can be changed (mutable), they use brackets rather than parenthesis and  have far more powerful built-in functionality!  Lists can be added to, items can be removed, they can be sorted, sliced apart, nested with multiple levels of inner lists and packed with other objects.  Lists are very powerful!
 
+{{< download-script "rhinopython/rhinopython101/5_4_TwistAndShout.py" "5_4_TwistAndShout.py">}}
+
 ```python
 myList = [] #This creates an empty list with the variable name myList
 myList.append(5)
@@ -68,7 +73,7 @@ Lists also can be sliced by using the following syntax:
 
 ```python
 myList = [1,2,3,4] #This creates a list with elements 1,2,3,4
-print (myList[1:3])
+print(myList[1:3])
 #This returns [2,3] - the 1st and 2nd elements of the list
 ```
 
@@ -96,7 +101,7 @@ List comprehensions are a way of utilizing the functionality of Lists and For...
 
 ```python
 myList = [2,4,6] #This creates a list with elements 2,4,6
-print ([3*x for x in myList]
+print([3*x for x in myList])
 # This returns [6,12,18] as the resultant calculation from the List Comprehension
 ```
 
@@ -104,22 +109,27 @@ List comprehensions can become far more complex and include more complicated exp
 
 ```python
 myList = [2,4,6] #This creates a list with elements 2,4,6
-print ([3*x for x in myList if x>3]
+print([3*x for x in myList if x>3])
 # This returns [12,18] as the resultant calculation from the expression, loop and conditional
 ```
 
 The following example should teach you almost all there is to know about lists, except nesting:
 
+
+{{< download-script "rhinopython/rhinopython101/6_2_1_MyFavouriteThings.py" "6_2_1_MyFavouriteThings.py">}}
+
 {{< div class="line-numbers" >}}
 ```python
 import rhinoscriptsyntax as rs
+
 
 def myfavoritethings():
     things = []
 
     while True:
         count = len(things)
-        prompt = "What is your {0}th most favorite thing?".format(count+1)
+        prompt = "What is your {}th most favorite thing?".format(count+1)
+
         if len(things)==0:
             prompt = "What is your most favorite thing?"
         elif count==1:
@@ -132,8 +142,12 @@ def myfavoritethings():
         things.append(answer)
     if len(things)==0: return
 
-    print "Your", len(things)+1, "favorite things are:"
-    for i,thing in enumerate(things): print i+1, ".", thing
+    print("Your", len(things)+1, "favorite things are:")
+    for i,thing in enumerate(things): print(i+1, ".", thing)
+
+
+if __name__=="__main__":
+    myfavoritethings()
 ```
 {{< /div >}}
 
@@ -147,27 +161,27 @@ def myfavoritethings():
 <td>We do not know how many favourite things the user has, so there's no way we can set the list to a certain size in advance. Luckily, we do not have to. Items can be appended to a list on an as needed basis!</td>
 </tr>
 <tr>
-<td>7</td>
+<td>8</td>
 <td>The function len() returns the length of a list object. The very first time this line is run, count will be 0.</td>
 </tr>
 <tr>
-<td>17</td>
+<td>19</td>
 <td>If the user does not enter an answer to our question regarding his/her Nth favorite thing, we will exit the loop and move into the last task of the script on lines 21 and 22.</td>
 </tr>
 <tr>
-<td>18</td>
+<td>20</td>
 <td>We've just asked the user what his/her Nth favourite thing was, and he/she answered truthfully. This means that it is time to store the answer in a safe place. A list is a convenient place to store an arbitrarily long collection of data. The append function shown will add the entry to the end of the list.</td>
 </tr>
 <tr>
-<td>19</td>
+<td>21</td>
 <td>It is possible the user has not entered any String. If this is the case then the result of len(things) will still have a its initial value of zero. There is nothing for us to do in this case and we should abort the subroutine.</td>
 </tr>
 <tr>
-<td>21</td>
+<td>23</td>
 <td>After the loop has completed and we've made certain the array contains some actual data, we print all the gathered information to the command history. First we will tell the user how many favourite things he/she entered.</td>
 </tr>
 <tr>
-<td>22</td>
+<td>24</td>
 <td>Using a For...loop, we can iterate through the items in the list. Note that this For...loop has two iteration variables - one to keep track of the index of the list item, and one to get the actual list item. This is convenient, as it is not necessary to explicitly retrieve the item in the list using the index.
 We then print the index of the user's nth favority thing, and the favorite thing.</td>
 </tr>
@@ -197,18 +211,24 @@ Because of the associated Key:Value relationship, Dictionaries are great for rep
 
 As was just explained, points are represented by lists containing three values - [x,y,z]. This notation is used for both points and vectors. First, a point example:
 
+{{< download-script "rhinopython/rhinopython101/6_4_PointSpiral.py" "6_4_PointSpiral.py">}}
+
 {{< div class="line-numbers" >}}
 ```python
 import rhinoscriptsyntax as rs
 import math
 
-#Call rs.EnableRedraw(False)
-for t in rs.frange(-50,50,1.25):
-    arrPoint = [t * math.sin(5*t), t * math.cos(5*t),t]
+def pointspiral():
+    t = -5
+    while t<=5:
+        point = t*math.sin(5*t), t*math.cos(5*t), t
+        print(point)
+        rs.AddPoint(point)
+        t+=0.025
 
-   print(arrPoint)
-   rs.AddPoint(arrPoint)
-#Call rs.EnableRedraw(True)
+
+if __name__=="__main__":
+    pointspiral()
 ```
 {{< /div >}}
 
@@ -358,7 +378,6 @@ factor. This is the equivalent of *PointDivide()*.</td>
 
 IronPython has no method for displaying vectors, which is a pity since this would be very useful for visual feedback. I shall define a function here called *AddVector()* which we will use in examples to come. The function must be able to take two arguments; one vector definition and a point definition. If the point array is not defined the vector will be drawn starting at the world origin.
 
-
 {{< div class="line-numbers" >}}
 ```python
 def AddVector(vecdir, base_point=[0,0,0]):
@@ -404,28 +423,41 @@ In case of scenario #2, the line variable will be set to None. The last option m
 
 ## 6.5 An AddVector() example
 
+{{< download-script "rhinopython/rhinopython101/6_5_AddVectorExample.py" "6_5_AddVectorExample.py">}}
+
 {{< image url="/images/primeraddvectorexample.svg" alt="/images/primeraddvectorexample.svg" class="float_right" width="325" >}}
 
 {{< div class="line-numbers" >}}
 ```python
-import rhinoscriptsyntax as rs
 # This script will compute a bunch of cross-product vector based on a pointcloud
+import rhinoscriptsyntax as rs
+
 
 def vectorfield():
     cloud_id = rs.GetObject("Input pointcloud", 2, True, True)
     if cloud_id is None: return
 
-    listpoints = rs.PointCloudPoints(cloud_id)
+    points = rs.PointCloudPoints(cloud_id)
     base_point = rs.GetPoint("Vector field base point")
     if base_point is None: return
 
-    for point in listpoints:
+    for point in points:
         vecbase = rs.VectorCreate(point, base_point)
         vecdir = rs.VectorCrossProduct(vecbase, (0,0,1))
         if vecdir:
             vecdir = rs.VectorUnitize(vecdir)
             vecdir = rs.VectorScale(vecdir, 2.0)
             AddVector(vecdir, point)
+
+
+def AddVector(vecdir, base_point):
+    tip_point = rs.PointAdd(base_point, vecdir)
+    line = rs.AddLine(base_point, tip_point)
+    if line: rs.CurveArrows(line, 2)
+
+
+if __name__=="__main__":
+    vectorfield()
 ```
 {{< /div >}}
 
@@ -435,11 +467,11 @@ def vectorfield():
 <th>Description</th>
 </tr>
 <tr>
-<td>8</td>
+<td>9</td>
 <td>The <i>listpoints</i> variable is a list which contains all the coordinates of a pointcloud object. This is an example of a nested list (see paragraph 6.6).</td>
 </tr>
 <tr>
-<td>12</td>
+<td>13</td>
 <td>The variable <i>point</i>, which is taken from the <i>listpoints</i> variable, contains an array of three doubles; a standard Rhino point definition. We use that point to construct a new vector definition which points from the Base point to <i>arrPoints(i)</i>.</td>
 </tr>
 <tr>
@@ -451,11 +483,11 @@ def vectorfield():
 <td><i>rs.VectorCrossProduct()</i> will fail if one of the input vectors is zero-length or if both input vectors are parallel. In those cases we will not add a vector to the document.</td>
 </tr>
 <tr>
-<td>16 & 17</td>
+<td>17 & 18</td>
 <td>Here we make sure the <i>vecdir</i> vector is two units long. First we unitize the vector, making it one unit long, then we double the length.</td>
 </tr>
 <tr>
-<td>25</td>
+<td>19</td>
 <td>Finally, place a call to the <i>AddVector()</i> function we defined on page 40. If you intend to run this script, you must also include the <i>AddVector()</i> function in the same script.</td>
 </tr>
 </table>
@@ -512,6 +544,8 @@ Every control-point or 'vertex' of the original curve (except the ones at the en
 
 We're going to put the vector math bit in a separate function. This function will compute the {vM} vector given the control points {pN-1; p; pN+1} and a smoothing factor {s}. Since this function is not designed to fail, we will not be adding any error checking, if the thing crashes we'll have to fix the bug. Instead of using variable naming conventions, I'll use the same codes as in the diagram:
 
+{{< download-script "rhinopython/rhinopython101/6_6_IterativeSmoothCurve.py" "6_6_IterativeSmoothCurve.py">}}
+
 {{< div class="line-numbers" >}}
 ```python
 def smoothingvector(point, prev_point, next_point, s):
@@ -554,9 +588,11 @@ def smoothcurve(curve_id, s):
     curve_points = rs.CurvePoints(curve_id)
     new_curve_points = []
 
+    new_curve_points.append(curve_points[0])
     for i in range(1, len(curve_points)-1):
         vm = smoothingvector(curve_points[i], curve_points[i-1], curve_points[i+1], s)
         new_curve_points.append( rs.PointAdd(curve_points[i], vm) )
+    new_curve_points.append(curve_points[-1])
 
     knots = rs.CurveKnots(curve_id)
     degree = rs.CurveDegree(curve_id)
@@ -585,23 +621,23 @@ def smoothcurve(curve_id, s):
 <td>This loop will start at one and stop one short of the length of the curve_points list. In other words, we're skipping the first and last items in the array.</td>
 </tr>
 <tr>
-<td>6</td>
+<td>7</td>
 <td>Compute the smoothing vector using the current control point, the previous one (<i>i-1</i>) and the next one (<i>i+1</i>). Since we're omitting the first and last point in the array, every point we're dealing with has two neighbors.</td>
 </tr>
 <tr>
-<td>7</td>
+<td>8</td>
 <td>Set the new control point position. The new coordinate equals the old coordinate plus the smoothing vector.</td>
 </tr>
 <tr>
-<td>9...11</td>
+<td>9...10</td>
 <td>We'll be adding a new curve to the document which is identical to the existing one, but with different control point positions. A nurbs curve is defined by four different blocks of data: control points, knots, weights and degree (see paragraph 7.7 Nurbs Curves). We just need to copy the other bits from the old curve.</td>
 </tr>
 <tr>
-<td>12</td>
+<td>14</td>
 <td>Create a new nurbs curve and store the object ID in the variable newcurve_id.</td>
 </tr>
 <tr>
-<td>13</td>
+<td>15</td>
 <td>Delete the original curve.</td>
 </tr>
 </table>
@@ -612,7 +648,7 @@ The top-level subroutine doesn't contain anything you're not already familiar wi
 def iterativeshortencurve():
     curve_id = rs.GetObject("Open curve to smooth", 4, True)
     if curve_id is None or rs.IsCurveClosed(curve_id): return
-
+    
     min = rs.Distance(rs.CurveStartPoint(curve_id), rs.CurveEndPoint(curve_id))
     max = rs.CurveLength(curve_id)
     goal = rs.GetReal("Goal length", 0.5*(min+max) , min, max)

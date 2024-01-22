@@ -10,6 +10,7 @@ title = "APIs Available to Python"
 type = "guides"
 weight = 27
 override_last_modified = "2018-12-05T14:59:06Z"
+draft = false
 
 [admin]
 TODO = ""
@@ -19,9 +20,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"

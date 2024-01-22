@@ -10,6 +10,7 @@ title = "List of Points in Python"
 type = "guides"
 weight = 3
 override_last_modified = "2018-12-05T14:59:06Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,9 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Mac", "Windows" ]
-since = 0
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
@@ -53,7 +56,7 @@ With Python, it is easy to use the `for` loop to walk through the list and print
 
 ```python
 for i in points:
-    print i
+    print(i)
 ```
 
 It is also possible to use nested indexes to access a specific coordinate of a point in the list.  This example will access the Y coordinate of the second point in the list:
@@ -75,7 +78,7 @@ To add a point to this list, first create the point3d with `CreatePoint()`, then
 points.append(rs.CreatePoint(1.0, 2.0, 3.0))
 
 for i in points:
-    print i
+    print(i)
 ```
 
 ## Related Topics

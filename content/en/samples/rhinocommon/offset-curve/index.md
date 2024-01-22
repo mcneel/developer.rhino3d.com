@@ -111,23 +111,23 @@ from scriptcontext import doc
 import rhinoscriptsyntax as rs
 
 def RunCommand():
-    rs, obj_ref = RhinoGet.GetOneObject("Select Curve", False, ObjectType.Curve)
-    if rs != Result.Success:
-        return rs
+    rc, obj_ref = RhinoGet.GetOneObject("Select Curve", False, ObjectType.Curve)
+    if rc != Result.Success:
+        return rc
     curve = obj_ref.Curve()
     if curve == None:
         return Result.Nothing
 
-    rs, point = RhinoGet.GetPoint("Select Side", False)
-    if rs != Result.Success:
-        return rs
+    rc, point = RhinoGet.GetPoint("Select Side", False)
+    if rc != Result.Success:
+        return rc
     if point == Point3d.Unset:
         return Result.Nothing
 
     curves = curve.Offset(point, Vector3d.ZAxis, 1.0, doc.ModelAbsoluteTolerance, CurveOffsetCornerStyle.None)
 
-    for offset-curve in curves:
-        doc.Objects.AddCurve(offset-curve)
+    for offset_curve in curves:
+        doc.Objects.AddCurve(offset_curve)
 
     doc.Views.Redraw()
     return Result.Success

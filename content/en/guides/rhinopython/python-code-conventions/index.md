@@ -10,6 +10,7 @@ title = "Python Code Conventions"
 type = "guides"
 weight = 100
 override_last_modified = "2022-04-29T08:06:15Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,9 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Mac", "Windows" ]
-since = 0
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
@@ -67,7 +70,7 @@ Python comments are started with a hash (#) sign.  The hash sign can be used at 
 A hash sign can also be added at the end of a line of code.  After the hash sign add the comment.  To Python this is considered an end of statement comment.
 
 ```python
-print "Hello, World!" # the second comment that I make
+print ("Hello, World!") # the second comment that I make
 ```
 
 Remember the following points:
@@ -84,20 +87,20 @@ A good example is an if block. For example −
 
 ```python
 if True:
-    print "Your answer is True."
+    print ("Your answer is True.")
 else:
-  print "Your answer is False."
+  print ("Your answer is False.")
 ```
 
 However, the following block generates an error −
 
 ```python
 if True:
-    print "You are "
-    print "correct"
+    print ("You are ")
+    print ("correct")
 else:
-    print "You are not"
-  print "correct"
+    print ("You are not")
+  print ("correct")
 ```  
 
 You may also see the use of the colon (:) in the statements above. The colon is used for compound code statements (suites in Python) such as if and while loops.

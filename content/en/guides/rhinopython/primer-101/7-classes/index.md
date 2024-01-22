@@ -10,6 +10,7 @@ title = "7 Classes"
 type = "guides"
 weight = 15
 override_last_modified = "2018-12-05T14:59:06Z"
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -17,9 +18,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
@@ -45,8 +48,8 @@ class MyClass:
         return 'hello'
 
 obj = MyClass()
-print obj.x
-print obj.test()
+print(obj.x)
+print(obj.test())
 ```
 {{< /div >}}
 
@@ -98,7 +101,7 @@ Now, if we change the value of x and print the result:
 
 ```python
 obj.x = 5
-print obj.x
+print(obj.x)
 ```
 ```
 >> 5
@@ -115,8 +118,8 @@ class Harder:
         self.i = m
         self.j = n
 newObj = Harder(10,20)
-print newObj.i
-print newObj.j
+print(newObj.i)
+print(newObj.j)
 ```
 {{< /div >}}
 
@@ -168,7 +171,7 @@ class Weird(MyClass):
     k = 17
 
 newerObj = Weird()
-print newerObj.test()
+print(newerObj.test())
 ```
 {{< /div >}}
 

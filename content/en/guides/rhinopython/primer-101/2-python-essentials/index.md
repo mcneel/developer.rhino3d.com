@@ -9,6 +9,7 @@ sdk = [ "RhinoPython" ]
 title = "2 Python Essentials"
 type = "guides"
 weight = 4
+draft = false
 
 [admin]
 picky_sisters = ""
@@ -16,9 +17,11 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 0
+since = 7
+until = ""
 
 [page_options]
+block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
@@ -39,8 +42,11 @@ Assuming that you might be reading these pages without any prior programming exp
 import rhinoscriptsyntax as rs
 
 somenumber = rs.GetReal("Line length")
-line = rs.AddLine([0,0,0], [somenumber,0,0])
-print "Line curve inserted with id", line
+line = rs.AddLine( (0,0,0), (somenumber,0,0) )
+if line is None:
+    print("Something went wrong")
+else:
+    print("Line curve inserted with id", line)
 ```
 Of course you might have no conception of what [0,0,0] actually means and you might be confused by rs.GetReal() but on the whole it is pretty much the same as the English you use at the grocers:
 
@@ -125,6 +131,8 @@ bigger numbers, the gaps between two adjacent Double values will become bigger a
 
 The Python syntax for working with numeric variables should be very familiar:
 
+{{< download-script "rhinopython/rhinopython101/2_3_1_MathematicalNotation.py" "2_3_1_MathematicalNotation.py">}}
+
 ```python
 x = 15 + 26                # x equals 41
 x = 15 + 26 * 2.33        #  x equals 75.58
@@ -150,9 +158,9 @@ Note, there is a special shortcut in Python that allows you to define multiple v
 
 ```python
 x, y, z = [1,2,3]
-print x  # returns 1
-print y  # returns 2
-print z  # returns 3
+print(x) # returns 1
+print(y)  # returns 2
+print(z)  # returns 3
 ```
 
 ### 2.3.2 Booleans
@@ -175,7 +183,7 @@ In Python we never write "0" or "1" or "Yes" or "No", for boolean values we alwa
 
 ```python
 if curve is None:
-    print "Something went terribly wrong!"
+    print("Something went terribly wrong!")
 ```
 
 This will return either True or False, only if the result is True (the curve is None) will the code pass into the conditional statement and print "Something went terribly wrong!."
@@ -192,22 +200,32 @@ variable2 = "5"
 You could print these variables to the command line and they would both look like 5, but the String variable behaves differently once we start using it in calculations:
 
 ```python
-print (variable1 + variable2)        # Results in an "Unsupported Operand Type" Error
+print(variable1 + variable2)        # Results in an "Unsupported Operand Type" Error
 ```
 
 Python throws an error when we try to add a String variable to an Integer Variable.  We must first convert the string to an integer, then we can add them together.
 
 ```python
-print (variable1 + int(variable2))        # Results in 10
+print(variable1 + int(variable2))        # Results in 10
 ```
 
 When you need to store text, you have no choice but to use Strings. The syntax for Strings is quite simple, but working with Strings can involve some very tricky code. For the time being we’ll only focus on simple operations such as assignment and concatenation:
 
+{{< download-script "rhinopython/rhinopython101/2_3_3_StringConcatenation.py" "2_3_3_StringConcatenation.py">}}
+
 ```python
-a = "Apfelstrudel"                # Apfelstrudel
-a = "Apfel" + "strudel"                # Apfelstrudel
-a = "4" + " " + "Apfelstrudel"            # 4 Apfelstrudel
-a = "The sqrt of 2.0 = " + str(math.sqrt(2.0))    # The sqrt of 2.0 = 1.4142135623731
+import math
+a = "Apfelstrudel"
+print(a)
+
+a = "Apfel" + "strudel"
+print(a)
+
+a = "4" + " " + "Apfelstrudel"
+print(a)
+
+a = "The square root of 2.0 = " + str(math.sqrt(2.0))
+print(a)
 ```
 
 Internally, a String is stored as a series of characters. Every character (or 'char') is taken from the Unicode table, which stores a grand total of ~100.000 different characters. The index into the unicode table for the question mark for example is 63, lowercase e is 101 and the blank space is 32:
@@ -229,7 +247,9 @@ Whenever we ask Rhino a question which might not have an answer, we need a way f
 curve = rs.AddLine([0,0,0], [somenumber,0,0])
 ```
 
-It is not a certainty that a curve was created. If the user enters zero when he is asked to supply the value for somenumber, then the startpoint of the line would be coincident with the endpoint. Rhino does not like zero-length lines and will not add the object to the document. This means that the return value of `rs.AddLine()` is not a valid object ID. Almost all methods in Rhino will return a None variable if they fail, this way we can add error-checks to our script and take evasive action when something goes wrong:
+It is not a certainty that a curve was created. If the user enters zero when he is asked to supply the value for somenumber, then the startpoint of the line would be coincident with the endpoint. Rhino does not like zero-length lines and will not add the object to the document. This means that the return value of `rs.AddLine()` is not a valid object ID. Almost all methods in Rhino will return a None variable if they fail, this way we can add error-checks to our script and take evasive action when something goes wrong.
+
+{{< download-script "rhinopython/rhinopython101/2_1_SomeNumber.py" "2_1_SomeNumber.py">}}
 
 ```python
 curve = rs.AddLine([0,0,0], [somenumber,0,0])
@@ -253,43 +273,47 @@ When using a variable, you choose the name and then set it equal to a value (Num
 
 Don't worry about all those weird variable types, some we will get to in later chapters, others you will probably never use. The scope (sometimes called "lifetime") of a variable refers to the region of the script where it is accessible. Whenever you declare a variable inside a function, only that one function can read and write to it. Variables go 'out of scope' whenever their containing function terminates. 'Lifetime' is not a very good description in my opinion, since some variables may be very much alive, yet unreachable due to being in another scope. But we'll worry about scopes once we get to function declarations. For now, let's just look at an example with proper variable usage:
 
-```python
-strComplaint = "I don't like "
-strFood = "Apfelstrudel. "
-strNag = "Can I go now?"
+{{< download-script "rhinopython/rhinopython101/2_3_5_VariableDeclaration.py" "2_3_5_VariableDeclaration.py">}}
 
-print(strComplaint + strFood + strNag)
+```python
+complaint = "I don't like "
+food = "Apfelstrudel. "
+nag = "Can I go now?"
+
+print(complaint, food, nag)
 ```
 
 An important note to reiterate is Python's case sensitivity.  Unlike other languages, in Python "Apfelstrudel", "apfelstrudel" and "ApfelStrudel" are not equivalent, this is also true for all variable names, functions, classes and any other part of the code. Just remember to be very careful with upper and lower case letters!
 
 Now, high time for an example. We'll be using the macro from page 2, but we'll replace some of the hard coded numbers with variables for added flexibility. This script looks rather intimidating, but keep in mind that the messy looking bits (line 10 and beyond) are caused by the script trying to mimic a macro, which is a bit like trying to drive an Aston-Martin down the sidewalk. Usually, we talk to Rhino directly without using the command-line and the code looks much friendlier:
 
+{{< download-script "rhinopython/rhinopython101/2_3_5_TorusScript.py" "2_3_5_TorusScript.py">}}
+
 {{< div class="line-numbers" >}}
 ```python
 import rhinoscriptsyntax as rs
 
-dblMajorRadius = rs.GetReal("Major radius", 10.0, 1.0, 1000.0)
-dblMinorRadius = rs.GetReal("Minor radius", 2.0, 0.1, 100.0)
-intSides = rs.GetInteger("Number of sides", 6, 3, 20)
+major_radius = rs.GetReal("Major radius", 10.0, 1.0, 1000.0)
+minor_radius = rs.GetReal("Minor radius", 2.0, 0.1, 100.0)
+sides = rs.GetInteger("Number of sides", 6, 3, 20)
 
-strPoint1 = " w" + str(dblMajorRadius) + ",0,0"
-strPoint2 = " w" + str(dblMajorRadius + dblMinorRadius) + ",0,0"
+point1 = " w" + str(major_radius) + ",0,0"
+point2 = " w" + str(major_radius + minor_radius) + ",0,0"
 
-rs.Command ("_SelNone")
-rs.Command ("_Polygon _NumSides=" + str(intSides) + " w0,0,0" + strPoint1)
-rs.Command ("_SelLast")
-rs.Command ("-_Properties _Object _Name Rail _Enter _Enter")
-rs.Command ("_SelNone")
-rs.Command ("_Polygon _NumSides=" + str(intSides) + strPoint1 + strPoint2)
-rs.Command ("_SelLast")
-rs.Command ("_Rotate3D w0,0,0 w1,0,0 90")
-rs.Command ("-_Properties _Object _Name Profile _Enter _Enter")
-rs.Command ("_SelNone")
-rs.Command ("-_Sweep1 -_SelName Rail -_SelName Profile _Enter _Enter _Closed=Yes _Enter")
-rs.Command ("-_SelName Rail")
-rs.Command ("-_SelName Profile")
-rs.Command ("_Delete")
+rs.Command("_SelNone")
+rs.Command("_Polygon _NumSides=" + str(sides) + " w0,0,0" + point1)
+rs.Command("_SelLast")
+rs.Command("-_Properties _Object _Name Rail _Enter _Enter")
+rs.Command("_SelNone")
+rs.Command("_Polygon _NumSides=" + str(sides) + point1 + point2)
+rs.Command("_SelLast")
+rs.Command("_Rotate3D w0,0,0 w1,0,0 90")
+rs.Command("-_Properties _Object _Name Profile _Enter _Enter")
+rs.Command("_SelNone")
+rs.Command(" _-Sweep1 _-SelName Rail _-SelName Profile _Enter _Enter _Closed=Yes _Enter")
+rs.Command("_-SelName Rail")
+rs.Command("_-SelName Profile")
+rs.Command("_Delete")
 ```
 {{< /div >}}
 
