@@ -21,12 +21,12 @@ block_webcrawlers = false
 +++
 
 <style>
-code {
-    background-color: #efefef;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 3px;
-}
+    code {
+        background-color: #efefef;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 3px;
+    }
 </style>
 
 ## Scripting Root Directory

@@ -65,6 +65,9 @@ toc_type = "single"
 - [ScriptEditor Command](/guides/scripting/scripting-command)
 - [Grasshopper Script Component](/guides/scripting/scripting-component)
 
+### Editor Features
+- [Configurations](/guides/scripting/editor-configs)
+
 ### Advanced
 
 - [Language Initialization](/guides/scripting/advanced-langinit)
