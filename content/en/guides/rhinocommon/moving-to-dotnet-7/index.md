@@ -57,7 +57,7 @@ Rhino 8 will automatically scan plugins for any known API breakages when running
 To check manually, you can use the `compat.exe` tool on each of your plugin assemblies:
 
 ```
-"C:\Program Files\Rhino 8 WIP\System\netcore\compat.exe" -q --check-system-assemblies MyPlugin.rhp
+"C:\Program Files\Rhino 8\System\netcore\compat.exe" -q --check-system-assemblies MyPlugin.rhp
 ```
 
 You can also use Microsoft's [upgrade assistant](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) to analyze your project for compatibility issues.
@@ -92,7 +92,7 @@ This is only required when you want to debug in .NET Core using Visual Studio 20
 1. Go to the **Application > General** panel and change the **Output Type** drop down to *Windows Application*.
 1. Go to the **Debug > General** panel and click *Open debug launch profiles UI*.
 1. Delete the default profile by clicking the *Delete selected profile* button.
-1. Create a new **Executable** profile, and enter the path to Rhino.exe. E.g. `C:\Program Files\Rhino 8 WIP\System\Rhino.exe`
+2. Create a new **Executable** profile, and enter the path to Rhino.exe. E.g. `C:\Program Files\Rhino 8\System\Rhino.exe`
 
 You may also want to add your plugin project as a dependency of the launcher project so it compiles before launching.
 
@@ -102,7 +102,7 @@ On Mac, get the [latest RhinoCommon Visual Studio extension](https://github.com/
 
 To override this, you can go to the **Project Properties > Rhino** panel and select the launcher version. This adds a `<RhinoMacLauncher>8</RhinoMacLauncher>` property to your project file.
 
-You can also use Visual Studio Code with the `coreclr` debugger type from the C# extension. Set the program to `/Applications/RhinoWIP.app/Contents/MacOS/Rhinoceros` and set either the `RHINO_PLUGIN_PATH` or `GRASSHOPPER_PLUGINS` to the path of your built plugin/component.
+You can also use Visual Studio Code with the `coreclr` debugger type from the C# extension. Set the program to `/Applications/Rhino 8.app/Contents/MacOS/Rhinoceros` and set either the `RHINO_PLUGIN_PATH` or `GRASSHOPPER_PLUGINS` to the path of your built plugin/component.
 
 ## Discussions
 
