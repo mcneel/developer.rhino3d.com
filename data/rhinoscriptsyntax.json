@@ -27198,7 +27198,7 @@
           "import rhinoscriptsyntax as  rs",
           "dist = rs.GetDistance()",
           "if dist:",
-          "    print( dist)"
+          "    print(dist)"
         ],
         "ExampleString": "import rhinoscriptsyntax as  rs\r\ndist = rs.GetDistance()\r\nif dist:\r\n    print( dist)",
         "SeeAlso": [
