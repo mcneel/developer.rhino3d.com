@@ -46,7 +46,7 @@ There are a few tools which are essential to communicate with the Compute server
 
 - [Rhino3dmIO.Desktop](https://www.nuget.org/packages/Rhino3dmIO.Desktop) -  The Dotnet wrapper for [OpenNurbs](https://developer.rhino3d.com/guides/opennurbs/) which contains the functions to read and write Rhino Geometry Objects. This is available as a NuGet package.
 - [NewtonSoft.JSON](https://www.nuget.org/packages/Newtonsoft.Json/) - The very popular JSON library.  Compute communicates using a JSON format in the body of a REST POST. This is available as a NuGet Package. This package is called directly by RhinoCompute.cs.
-- [RhinoCompute.cs](https://compute.rhino3d.com/sdk/csharp) - This is a work in progress package which is meant to add classes available in RhinoCommon, but not available through Rhino3dmIO. RhinoCompute makes calls into RhinoCompute for these functions.
+- [RhinoCompute.cs](https://github.com/mcneel/compute.rhino3d/blob/7.x/src/compute.geometry/RhinoCompute.cs) - This is a work in progress package which is meant to add classes available in RhinoCommon, but not available through Rhino3dmIO. RhinoCompute makes calls into RhinoCompute for these functions.
 
 Here are step by step instructions to setting up a basic project to use Compute:
 
@@ -83,16 +83,16 @@ Changes that were made:
 
 #### Include RhinoCompute.cs in the project
 
-RhinoCompute.cs is a the package which adds the methods to call into the compute server.  It is organized similar to RhinoCommon calls.
+RhinoCompute.cs is a package which adds the methods to call into the compute server.  It is organized similar to RhinoCommon calls.
 
-1. Download the [RhinoCompute.cs source file](https://compute.rhino3d.com/sdk/csharp) from compute.rhino3d.com into the project folder.
+1. Download the [RhinoCompute.cs source file](https://github.com/mcneel/compute.rhino3d/blob/7.x/src/compute.geometry/RhinoCompute.cs) from compute.rhino3d.com into the project folder.
 2. Using the *Project* pulldown > *Add Existing Item...*
-3. Select the [RhinoCompute.cs source file](https://compute.rhino3d.com/sdk/csharp) to add it to the project.
+3. Select the [RhinoCompute.cs source file](https://github.com/mcneel/compute.rhino3d/blob/7.x/src/compute.geometry/RhinoCompute.cs) to add it to the project.
 
 Changes that were made:
 
-- The [RhinoCompute.cs source file](https://compute.rhino3d.com/sdk/csharp) are installed in your project.
-- The [RhinoCompute.cs source file](https://compute.rhino3d.com/sdk/csharp) helper functions are available to the project.
+- The [RhinoCompute.cs source file](https://github.com/mcneel/compute.rhino3d/blob/7.x/src/compute.geometry/RhinoCompute.cs) are installed in your project.
+- The [RhinoCompute.cs source file](https://github.com/mcneel/compute.rhino3d/blob/7.x/src/compute.geometry/RhinoCompute.cs) helper functions are available to the project.
 
 ## The first use of Compute
 
