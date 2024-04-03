@@ -23,7 +23,7 @@ since = 8
 byline = true
 toc = true
 toc_type = "single"
-block_webcrawlers = true
+block_webcrawlers = false
 +++
 
 Prior to Rhino 8, code-driven exporting was done by using the active document and scripting the export command. This was both inefficient and painful to write.
