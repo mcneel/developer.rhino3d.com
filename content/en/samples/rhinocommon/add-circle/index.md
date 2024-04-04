@@ -70,7 +70,7 @@ End Class
 ```python
 import Rhino
 import scriptcontext
-import System.Guid
+from System import Guid
 
 def AddCircle():
     center = Rhino.Geometry.Point3d(0, 0, 0)

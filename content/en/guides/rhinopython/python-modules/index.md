@@ -1,12 +1,12 @@
 +++
-aliases = ["/5/guides/rhinopython/apis-for-python/", "/6/guides/rhinopython/apis-for-python/", "/7/guides/rhinopython/apis-for-python/", "/wip/guides/rhinopython/apis-for-python/"]
-authors = [ "alain" ]
+aliases = ""
+authors = [ "scott" ]
 categories = [ "Intermediate" ]
-description = "This guide covers the APIs available to Python in Rhino."
+description = "This guide covers the various ways to import modules Python in Rhino."
 keywords = [ "Rhino.Python", "Python" ]
 languages = [ "Python" ]
 sdk = [ "RhinoPython" ]
-title = "APIs Available to Python"
+title = "Module Libraries in Python"
 type = "guides"
 weight = 27
 override_last_modified = "2018-12-05T14:59:06Z"
