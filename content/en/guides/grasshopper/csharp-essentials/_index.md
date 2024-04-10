@@ -36,11 +36,9 @@ This is an essential scripting guide
 
 {{< image url="/images/math-logo.svg" alt="/images/math-logo.svg" class="float_right" >}}
 
-*Essential Mathematics for Computational Design* introduces to design professionals the foundation mathematical concepts that are necessary for effective development of computational methods for 3D modeling and computer graphics. This is not meant to be a complete and comprehensive resource, but rather an overview of the basic and most commonly used concepts. The material is directed towards designers who have little or no background in mathematics beyond high school. All concepts are explained visually using [Grasshopper® (GH)](www.grasshopper3d.com), the generative modeling environment for [Rhinoceros® (Rhino)](www.rhino3d.com).  
+This manual is intended for designers who are experienced in [Grasshopper® (GH)](www.grasshopper3d.com) visual scripting, and would like to take their skills to the next level to create their own custom scripts using C# programming language. This guide does not assume nor require any background in programming. The document is divided into four parts. [Chapter 1](/guides/general/essential-mathematics/vector-mathematics/) explains the general interface of the C# scripting component in Grasshopper. [Chapter 2](/guides/general/essential-mathematics/matrices-transformations/) reviews the basics of the C# DotNet programming language. [Chapter 3](/guides/general/essential-mathematics/parametric-curves-surfaces/) covers the main geometry types and functions in the RhinoCommon SDK. [Chapter 4](/guides/general/essential-mathematics/parametric-curves-surfaces/) includes examples of a number of design algorithms. The guide includes many examples that are also available as a Grasshopper file available with the download of this guide. Note that all examples are written in version 8 of [Rhinoceros® (Rhino)](www.rhino3d.com) and Grasshopper.
 
-The content is divided into three chapters. [Chapter 1](/guides/general/essential-mathematics/vector-mathematics/) discusses vector math including vector representation, vector operation, and line and plane equations. [Chapter 2](/guides/general/essential-mathematics/matrices-transformations/) reviews matrix operations and transformations. [Chapter 3](/guides/general/essential-mathematics/parametric-curves-surfaces/) includes an in-depth review of parametric curves with special focus on NURBS curves and the concepts of continuity and curvature.  It also reviews NURBS surfaces and polysurfaces.
-
-*I would like to acknowledge the excellent and thorough technical review by [Dr. Dale Lear](https://discourse.mcneel.com/u/dalelear/activity) of Robert McNeel & Associates. His valuable comments were instrumental in producing this edition. I would also like to acknowledge Ms. [Margaret Becker](https://discourse.mcneel.com/u/margaret/activity) of Robert McNeel & Associates for reviewing the technical writing and formatting*.
+I would like to acknowledge the excellent technical review by Mr. Steve Baer of Robert McNeel and Associates. I would also like to acknowledge Ms. Sandy McNeel for reviewing the writing and formatting of this document.
 
 {{< /column >}}  
 </div>  
@@ -51,26 +49,6 @@ The content is divided into three chapters. [Chapter 1](/guides/general/essentia
 ***[Rajaa Issa](https://discourse.mcneel.com/users/rajaa/activity)***
 
 Robert McNeel & Associates
-
-Download the [{{< awesome "fas fa-download">}} ](/files/math-samplesandtutorials.zip.zip) [math-samplesandtutorials.zip](/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
-
-[{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics) [Download Essential Mathematics for Computational Design as a single PDF ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/)
-
-<a href="https://www.youtube.com/playlist?list=PLWIvZT_UEpWW6Kgq8mxOgliGBFHhrI4mK"><span class="glyphicon glyphicon-play"></span></a> [Watch the Essential Mathematics Videos... ](https://www.youtube.com/playlist?list=PLWIvZT_UEpWW6Kgq8mxOgliGBFHhrI4mK)
-
-The current 4th Edition is available in four languages:
-
-* [Essential Mathematics 4th Edition in German (Deutsch)](https://files.mcneel.com/rhino/6/docs/de/TheEssentialMathematics_4thEdition_de.zip)
-* [Essential Mathematics 4th Edition in French (Français)](https://files.mcneel.com/rhino/6/docs/fr/TheEssentialMathematics_4thEdition_fr.zip)
-* [Essential Mathematics 4th Edition in Spanish (Español)](https://files.mcneel.com/rhino/6/docs/es/TheEssentialMathematics_4thEdition2019_es.zip)
-* [Essential Mathematics 4th Edition in Italian (Italiano)](https://files.mcneel.com/rhino/6/docs/it/TheEssentialMathematics_4thEdition_it.zip)
-
-The 2nd edition is available in four languages:
-
-* [Essential Mathematics 2nd Edition in Korean](http://download.rhino3d.com/Rhino/4.0/EssentialMathematics_Korean/)
-* [Essential Mathematics 2nd Edition in Japanese（日本語)](http://download.rhino3d.com/ja/Rhino/4.0/EssentialMathematicsSecondEdition)
-* [Essential Mathematic 2nd Edition in Traditional Chinese (繁體中文版)](http://download.mcneel.com/download.asp?id=EssentialMathematics_ChineseTraditional)
-* [Essential Mathematic 2nd Edition in Simplified Chinese(簡體中文版)](http://download.rhino3d.com/Rhino/4.0/EssentialMathematics_ChineseSimplified/)
 
 ### Table of Contents  
 
