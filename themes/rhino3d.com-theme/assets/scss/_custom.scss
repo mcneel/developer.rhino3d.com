@@ -469,6 +469,67 @@ li .new-callout-bullet {
 	background-color: yellow;
 }
 
+/*
+##############################################################################
+##  Rounded text tables for code explanation.  Look in Primer
+##############################################################################
+*/
+
+table.rounded {
+	rules:rows;
+	width: 90%;
+	vertical-align:top;
+	margin:20px 0px;
+	border-bottom: 1px solid #000000;
+	border-collapse:separate;
+	border:solid black 2px;
+	border-radius:10px;
+	border-spacing: 0;
+	overflow: hidden;
+}
+
+table.rounded th{
+    padding:0px 5px 0px 15px;
+	margin: 0px 15px 0px 15px;
+	border-bottom: 1px solid #000000;
+	background-color: rgb(200, 200, 200);
+	border-top: none;
+}
+
+table.rounded tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+table.rounded tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+table.rounded tr {
+	vertical-align:center;
+    text-align:left;
+    border-bottom: 1px solid #000000;
+}
+
+table.rounded td {
+	 vertical-align:top;
+	 padding:0px 5px 0px 15px;
+	 margin: 0px 15px 0px 15px;
+	 text-align: left;
+	 border-bottom: 1px solid #000000;
+	 width:0.1%;
+	 white-space: nowrap;
+}
+
+
+/* For image center vertically in row.  Need to be wrapped in span */
+table.rounded span {
+    display:table-cell;
+    vertical-align:middle;
+}
+
+table.rounded td img { 
+	vertical-align: top;
+  }
+
 
 /*
 ##############################################################################

@@ -175,10 +175,60 @@ This topic requires knowledge in C# programming. If you need to review or refres
 
 Grasshopper scripting components, just like all other GH components, can process three types of data access; **item access**, **list access** and **tree access**.
 
+<table class="rounded">
+  <tr>
+    <th>Icons in GH</th>
+    <th>Data Access</th>
+  </tr>
+  <tr>
+    <td><span><img src="item_access.png"></span></td>
+    <td>Item Access</td>
+  </tr>
+  <tr>
+    <td><img src="list_access.png"></td>
+    <td>List Access</td>
+  </tr>
+  <tr>
+    <td><img src="tree_access.png"></td>
+    <td>Tree Access</td>
+  </tr>
+</table>
 
-
-
+You need to right-mouse-click on the input parameter to set its data access, otherwise it is set to **item access** by default. We will explain what each access means and how data is processed inside the component in each case.
 
 ## Next Steps
 
 Now that you know what a scripting language is, check out the [Python Essentials](/guides/rhinopython/primer-101/2-python-essentials/) guide to learn more about the Python language.
+
+<figure>
+   <img src="drop_menu.png">
+   <figcaption>Figure(22): Set the input parameter to be an **item access** to indicate that input in processed one element at a time
+</figcaption>
+</figure>
+
+###1.8.1: Item access
+
+**Item access** means that the input is processed one item at a time. Suppose you have a list of numbers that you need to test if they are odd or even. To simplify your code, you can choose to only process one number at a time. In this case, **item access** is appropriate to use. So even if the input to **num** is a list of integers, the scripting component will process one integer at a time and run the script a number of times equal to the length of the list.
+
+<img src="item_num.png">
+
+```C#
+private void RunScript( int num, ref object IsEven )
+{
+    int mod = num % 2;
+    IsEven = (mod == 0 ? true : false);
+}
+```
+
+With **item access**, each element in a list is processed independently from the rest of the elements.  For example, if you have a list of 6 numbers {1, 2, 3, 4, 5, 6} that you would like to increment each one of them by some number – let’s say 10 – to get the list {11, 12, 13, 14, 15, 16}, then you can set the data access to **item access**. The script will run 6 times, once for each element in the list and the output will be a list of 6 numbers. Notice in the following implementation in GH where **x** is input as a single item of type **double**.
+
+
+<img src="double_single.png">
+
+```C#
+private void RunScript( int num, ref object IsEven )
+{
+    A = x + 10;
+    Print("Run# " + Iteration);
+}
+```
