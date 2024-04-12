@@ -22,6 +22,13 @@ block_webcrawlers = false
 
 <style>
     .main-content img { zoom: 50%; }
+    code {
+        background-color: #efefef;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 3px;
+        font-size: 14px;
+    }
 </style>
 
 ## Opening Script Editor
@@ -34,7 +41,7 @@ If this is the first time you are using the scripting features in Rhino, the edi
 
 ![](02.png)
 
-Once the initialization is complete, the editor will load all the previously open scripts (of any), and will enable the buttons and menus:
+Once the initialization is complete, the editor will load all the previously open scripts (if any), and will enable the buttons and menus:
 
 ![](03.png)
 
