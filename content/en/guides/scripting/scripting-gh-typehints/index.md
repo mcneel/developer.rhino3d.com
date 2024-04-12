@@ -1,10 +1,10 @@
 +++
-title = ""
+title = "Type Hints"
 description = ""
 type = "guides"
 categories = ["Scripting"]
 keywords = [ "", "" ]
-languages = [ "C#", "Python", "CPython", "IronPython", "VB" ]
+languages = [ "Python", "CPython", "IronPython" ]
 authors = ["ehsan"]
 sdk = [ "RhinoCommon" ]
 weight = 4
@@ -20,9 +20,4 @@ toc_type = "single"
 block_webcrawlers = false
 +++
 
-
-- csharp scripting
-- modern csharp features
-- creating a csharp script in editor or gh
-- adding a csharp package in editor or gh
-- debugging csharp code in editor or gh
+- list of all availabe type hints

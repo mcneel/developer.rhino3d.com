@@ -17,7 +17,6 @@ since = 0
 byline = false
 toc = true
 toc_type = "single"
-
 +++
 
 ## [General](/guides/general)
@@ -64,6 +63,8 @@ toc_type = "single"
 
 - [ScriptEditor Command](/guides/scripting/scripting-command)
 - [Grasshopper Script Component](/guides/scripting/scripting-component)
+- [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
+- [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
 
 ### Editor Features
 - [Configurations](/guides/scripting/editor-configs)

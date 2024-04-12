@@ -4,7 +4,7 @@ description = ""
 type = "guides"
 categories = ["Scripting"]
 keywords = [ "", "" ]
-languages = [ "C#", "Python", "CPython", "IronPython", "VB" ]
+languages = [ "Python", "CPython", "IronPython" ]
 authors = ["ehsan"]
 sdk = [ "RhinoCommon" ]
 weight = 4
@@ -28,3 +28,4 @@ block_webcrawlers = false
 - debugging python code in editor or gh
 - python engines and resetting
 - python envs
+- python venvs
