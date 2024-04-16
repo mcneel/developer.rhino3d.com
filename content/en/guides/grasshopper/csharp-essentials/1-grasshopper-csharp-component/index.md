@@ -6,10 +6,10 @@ category_page = "guides/grasshopper/csharp-essentials/"
 keywords = [ "csharp", "commands" ]
 languages = [ "C#" ]
 sdk = [ "RhinoCommon" ]
-title = "Chapter One: Grasshopper C# Component"
+title = "1: Grasshopper C# Component"
 type = "guides"
 weight = 15
-override_last_modified = "2018-12-05T14:59:06Z"
+override_last_modified = "2024-04-15T14:59:06Z"
 draft = false
 
 [admin]
@@ -222,13 +222,164 @@ private void RunScript( int num, ref object IsEven )
 
 With **item access**, each element in a list is processed independently from the rest of the elements.  For example, if you have a list of 6 numbers {1, 2, 3, 4, 5, 6} that you would like to increment each one of them by some number – let’s say 10 – to get the list {11, 12, 13, 14, 15, 16}, then you can set the data access to **item access**. The script will run 6 times, once for each element in the list and the output will be a list of 6 numbers. Notice in the following implementation in GH where **x** is input as a single item of type **double**.
 
-
 <img src="double_single.png">
 
 ```C#
-private void RunScript( int num, ref object IsEven )
+private void RunScript( double x, ref object a )
 {
     A = x + 10;
     Print("Run# " + Iteration);
 }
 ```
+
+### 1.8.2: List access
+
+**List access** means that the whole list is processed all in one call to the scripting component. In the previous example, we can change the data access from **item access** to **list access** and change the script to add 10 to each one of the items in the list as in the following. Note that the script runs only once.
+
+<img src="xlist_acess_10.png">
+
+```C#
+private void RunScript( List<double> xList, ref object a )
+{
+    List<double> newList = new List<double>();
+    foreach( var x in xList)
+      newList.Add(x + 10);
+    Print("Run# " + Iteration);
+    A = newList;
+}
+```
+
+The **list access** is most useful when you need to process the whole list in order to find the result. For example, to calculate the sum of a list of input numbers, you need to access the whole list. Remember to set the data access to **list access**.
+
+<img src="xlist_access_sum.png">
+
+```C#
+private void RunScript( List<double> xList, ref object Sum)
+{
+    double xSum = 0;
+    foreach( var x in xList)
+       xSum = xSum + x;
+    Print("Run# " + Iteration);
+    Sum = xSum;
+}
+```
+
+### 1.8.3: Tree Access
+
+**Tree** data access in Grasshopper is an advanced topic. You might not need to deal with trees, but if you encounter them in your code, then this section will help you understand how they work and how to do some basic operations with them.
+
+Trees (or multi-dimensional data) can be processed one element at a time or one branch (path) at a time or all branches at the same time.  That will depend on how you set the data access (item, list or tree). For example, if you divide two curves into two segments each, then we get a tree structure that has two branches (or paths), each with three points. Now suppose you want to write a script to place a sphere around each point. The code will be different based on how you set the **data access**. If you make it **item access**, then the script will run 6 times (once for each point), but the tree data structure will be maintained in the output with two branches and three spheres in each branch. Your code will be simple because it deals with one point at a time.
+
+<img src="pt3d_access.png">
+
+```C#
+private void RunScript( Point3d pt, ref object Sphere)
+{
+    Sphere ptSphere = new Sphere(x, 0.5);
+    Print("Run# " + Iteration);
+    Sphere = ptSphere;
+}
+```
+The same result can be achieved with the **list access**, but this time your code will have to process each branch as a list. The script runs 2 times, once for each branch.
+
+<img src="ptlist_acess.png">
+
+```C#
+private void RunScript( List<Point3d> ptList, ref object Spheres)
+{
+    List<Sphere> sphereList = new List<Sphere>();
+    foreach (Point3d pt in ptList) {
+      Sphere sphere = new Sphere(pt, 0.5);
+      sphereList.Add(sphere);
+    }
+    Print("Run# " + Iteration);
+    Spheres = sphereList;
+}
+```
+
+The **tree access** allows you to process the whole tree and your code will run only once. While this might be necessary in some cases, it also complicates your code.
+
+<img src="ptlist_access.png">
+
+```C#
+private void RunScript( List<Point3d> ptList, ref object Spheres)
+{
+    List<Sphere> sphereList = new List<Sphere>();
+    foreach (Point3d pt in ptList) {
+      Sphere sphere = new Sphere(pt, 0.5);
+      sphereList.Add(sphere);
+    }
+    Print("Run# " + Iteration);
+    Spheres = sphereList;
+}
+```
+
+The **tree access** allows you to process the whole tree and your code will run only once. While this might be necessary in some cases, it also complicates your code.
+
+<img src="pttree_acess.png">
+
+```C#
+private void RunScript( DataTree<Point3d> ptTree, ref object Spheres)
+{
+    //Declare a tree of spheres
+    DataTree<Sphere> sphereTree = new DataTree<Sphere>();
+    int pathIndex = 0;
+    foreach (List<Point3d> branch in ptTree.Branches) {
+      List<Sphere> sphereList = new List<Sphere>();
+      GH_Path path = new GH_Path(pathIndex);
+      pathIndex = pathIndex + 1;
+      foreach (Point3d pt in branch)
+      {
+        Sphere sphere = new Sphere(pt, 0.5);
+        sphereList.Add(sphere);
+      }
+      sphereTree.AddRange(sphereList, path);
+    }
+    Print("Run# " + Iteration);
+    Spheres = sphereTree;
+}
+```
+
+The **tree data** structure is a special data type that is unique to Grasshopper. If you need to generate a tree inside your script, then the following shows how to do just that. For more details about Grasshopper data structures, please refer to the [Essential Algorithms and Data structures for Grasshopper](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms).
+
+<img src="tree_numbers.png">
+
+```C#
+private void RunScript( ref object Numbers)
+{
+    DataTree<double> numTree = new DataTree<double>();
+    int pathIndex = 0;
+    for (int b = 0; b <= 1; b++) {
+      List<double> numList = new List<double>();
+      GH_Path path = new GH_Path(pathIndex);
+      pathIndex = pathIndex + 1;
+      for (int i = 0; i <= 2; i++) {
+        numList.Add(10);
+      }
+      numTree.AddRange(numList, path);
+    }
+    Numbers = numTree;
+}
+```
+
+The following example shows how to step through a given data tree of numbers to calculate the overall sum.
+
+<img src="tree_access_sum.png">
+
+```C#
+private void RunScript( DataTree<double> x, ref object Sum)
+{
+    double xSum = 0;
+    foreach (List<double> branch in x.Branches){
+      foreach (double num in branch) {
+        xSum = xSum + num;
+      }
+    }
+    Sum = xSum;
+}
+```
+
+## Next Steps
+
+There are the basics of the C# datastructures, next learn the [Chapter Two: C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics).
+
