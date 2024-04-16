@@ -477,7 +477,7 @@ li .new-callout-bullet {
 
 table.rounded {
 	rules:rows;
-	width: 90%;
+	width: 100%;
 	vertical-align:top;
 	margin:20px 0px;
 	border-bottom: 1px solid #000000;
@@ -485,7 +485,10 @@ table.rounded {
 	border:solid black 2px;
 	border-radius:10px;
 	border-spacing: 0;
-	overflow: hidden;
+	table-layout:fixed;
+	word-wrap:break-word;
+	overflow-wrap: break-word;
+	overflow:hidden;
 }
 
 table.rounded th{
@@ -516,7 +519,8 @@ table.rounded td {
 	 text-align: left;
 	 border-bottom: 1px solid #000000;
 	 width:0.1%;
-	 white-space: nowrap;
+	 word-wrap:break-word;
+	 overflow-wrap: break-word;
 }
 
 

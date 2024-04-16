@@ -414,7 +414,7 @@ else
 Loops allows you to run the body of your loop a fixed number of times, or until the loop condition is no longer true.
 
 <figure>
-   <img src="loop_flow.png">
+   <img src="loop_flow.png" class="image_center" width="75%" >
    <figcaption>Figure(18): Loops in the context of the overall flow of the program.</figcaption>
 </figure> 
 
@@ -565,7 +565,7 @@ Print( x.ToString() );
 A nested loop is a loop that contains another loop inside it. You can nest as many loops as you need, but keep in mind that this can make the logic harder to follow.
 
 <figure>
-   <img src="nested_loops.png">
+   <img src="nested_loops.png" class="image_center" width="75%">
    <figcaption>Figure(19): Nested loops.</figcaption>
 </figure> 
 
@@ -990,7 +990,7 @@ Because structs are value types, if you pass your colored points to a function, 
 
 Using our **ColorPoint** struct, the following is a program that generates 2 colored points, compares their location and color, then finds their average:
 
-<img src="ponts_avg.png">
+<img src="ponts_avg.png"  class="float_right" width="225">
 
 ```C#
     //create 2 instances of ColorPoints type
@@ -1004,6 +1004,389 @@ Using our **ColorPoint** struct, the following is a program that generates 2 col
     ColorPoint avPt = ColorPoint.Average(cp0, cp1);
 ```
 
+### 2.9.3: Classes
+
+Classes help create new data types that are **reference-type**. They also have added functionality compared to structures. The main one is that they support creating a hierarchy of types where each new level inherits the members and methods of the level above it. Many of the geometry types in **RhinoCommon** use classes to define them. Let us redefine the **ColorPoint** above as a class that inherits from a generic **Point** class.
+
+```C#
+class CPoint{
+    //fields
+    private double _x;
+    private double _y;
+    private double _z;
+    //constructors
+    public CPoint() : this(0,0,0) //default calls another constructor
+    {
+    }
+    public CPoint(double x, double y, double z)
+    {
+      _x = x;
+      _y = y;
+      _z = z;
+    }
+    //properties
+    public double X { get { return _x; } set { _x = value; } }
+    public double Y { get { return _y; } set { _y = value; } }
+    public double Z { get { return _z; } set { _z = value; } }
+    //static methods
+    public static bool IsEqualLocation(CColorPoint p1, CColorPoint p2)
+    {
+      return (p1.X == p2.X && p1.Y == p2.Y && p1.Z == p2.Z);
+    }
+}
+
+class CColorPoint: CPoint{
+    //fields
+    private System.Drawing.Color _c;
+
+    //constructors
+    public CColorPoint() : base()//default
+    {
+      _c = System,.Drawing.Color.White;
+    }
+    public CColorPoint(double x, double y, double z, System.Drawing.Color c) : base (x, y, z)
+    {
+      _c = c;
+    }
+    //properties
+    public System.Drawing.Color C { get { return _c; } set { _c = value; } }
+    //static methods
+    public static bool IsEqualColor(CColorPoint p1, CColorPoint p2)
+    {
+      return p1.C.Equals(p2.C);
+    }
+    //method
+    public static CColorPoint Average (CColorPoint a, CColorPoint b)
+    {
+      CColorPoint avPt = new CColorPoint();
+      avPt.X = (a.X + b.X) / 2;
+      avPt.Y = (a.Y + b.Y) / 2;
+      avPt.Z = (a.Z + b.Z) / 2;
+      avPt.C = Color.FromArgb((a.C.A + b.C.A) / 2, (a.C.R + b.C.R) / 2, (a.C.G + b.C.G) / 2, (a.C.B + b.C.B) / 2);
+      return avPt;
+    }
+}
+```
+
+You can use the same program written above for **ColorPoint struct** to create an average point between 2 color points. The only difference is that if you now pass an instance of the class **CColorPoint** to a function, it will be passed by reference, even without using the **ref** keyword.
+Here are the key differences between structures and classes:
+
+<table class="rounded">
+  <tr>
+    <th>Struct</th>
+    <th>Class</th>
+    <th>What does it mean?</th>
+  </tr>
+  <tr>
+    <td>Value type</td>
+    <td>Reference type</td>
+    <td>Value types (struct) are cheaper to allocate and deallocate in memory, however the assignment of a large value type can be more costly than a reference type (class).</td>
+  </tr>
+  <tr>
+    <td>Passed to functions by value</td>
+    <td>Passed to functions by reference</td>
+    <td>When you pass a parameter to a function as an instance of a reference type, changes inside the function affect all references pointing to that same instance. Value types are copied when passed by value.</td>
+  </tr>
+  <tr>
+    <td>Cannot use inheritance</td>
+    <td>Can use inheritance</td>
+    <td>Use classes when building a hierarchy of objects or when the data type is large, and use structs when creating types that are generally small, short lived and embedded inside other objects.</td>
+  </tr>
+</table>
+
+### 2.9.4: Value vs reference types
+
+It is worth stressing the two data classifications: **value-types** and **reference-types**. We touched on that topic when introducing methods and how parameters are passed by value or by reference. There are also differences in how the two are stored and managed in memory. Here is a summary comparison between the two classifications:
+
+<table class="rounded">
+  <tr>
+    <th> </th>
+    <th>Value data types</th>
+    <th>Reference data types</th>
+  </tr>
+  <tr>
+    <td><b>Examples</b></td>
+    <td>All built-in numeric data types (such as Integer, double, bool,  and char), Arrays,
+Structures.</td>
+    <td>Lists </br>Classes</td>
+  </tr>
+  <tr>
+    <td><b>Memory storage</b></td>
+    <td>Stored inline in the program stack.</td>
+    <td>Stored in the heap.</td>
+  </tr>
+  <tr>
+    <td><b>Memory management</b></td>
+    <td>Cheaper to create and clear from memory especially for small data.</td>
+    <td>Costly to clear (use garbage collectors), but more efficient for big data.</td>
+  </tr>
+  <tr>
+    <td><b>When passed as parameters in methods</b></td>
+    <td>Passes a copy of the data to methods, which means that the original data is not changed even when altered inside the method.</td>
+    <td>Passes the address of the original data, and hence any changes to the data inside the method changes the original data as well.</td>
+  </tr>
+</table>
+
+### 2.9.5: Interface
+
+You may need your structures and classes to implement some common functionality. For example, you may need to check if two instances of the same type are equal. In this case, you would like to make sure that you use the same method name and signature. To ensure that, you can define that functionality inside a separate entity called **interface**, and have your structure and classes implement that same **interface**.
+
+**The .NET Framework** provides interfaces, but you can also define your own. For example, we can implement an **IEquatable** interface in the **ColorPoint struct** as in the following.
+
+```C#
+struct ColorPoint: IEquatable<ColorPoint>
+{
+    //fields
+    private double _x;
+    private double _y;
+    private double _z;
+    private System.Drawing.Color _c;
+    //properties
+    public double X { get { return _x; } set { _x = value; } }
+    public double Y { get { return _y; } set { _y = value; } }
+    public double Z { get { return _z; } set { _z = value; } }
+    public System.Drawing.Color C { get { return _c; } set { _c = value; } }
+    //implement Equals method inside IEquatable interface - if omitted, you’ll get error
+    public bool Equals( ColorPoint pt )
+    {
+        return (this._x == pt._x && this._y == pt._y && this._z == pt._z && this._c == pt._c);
+    }
+}
+```
+
+## 2.10:  Read and write text files
+
+There are many ways to read from and write to files in **C#** and many tutorials and documents are available online. In general, reading a file involves the following:
+- Open the file. Generally you need a path to point to.
+- Read a string (whole text or line by line).
+- Tokenize the string using some delimiter characters (such as a comma, space, etc.).
+- Cast each token to the appropriate data type.
+- Store the result in your data structure.
+
+We will discuss a simple example that parses points from a text file.  Using the following text file format, we will read each line as a point and use the first value as x coordinate, the second as y and the third as z of the point.  We will then use these points to create a NURBS curve.
+
+<img src="point_file.png" width="325">
+
+The input to the scripting component is the path to the text file, and the output is an array of points. You can then use these points as input to create a curve in Grasshopper.
+
+<img src="curve_points.png">
+
+Here is the code inside the script component. It reads the file line by line, then parses each into a point assuming that each point is stored in one line and the coordinates are comma separated.
+
+```C#
+//Read the file
+string[] lines = File.ReadAllLines(path);
+//Declare list of points (Point3d is a data type in RhinoCommon SDK)
+List<Point3d> pts = new List<Point3d>();
+//Loop through lines
+foreach (string line in lines)
+{
+      //Tokenize line into array of strings separated by ","
+      string[] parts = line.Split(",".ToCharArray());
+      //Convert each coordinate from string to double
+      double x = Convert.ToDouble(parts[0]);
+      double y = Convert.ToDouble(parts[1]);
+      double z = Convert.ToDouble(parts[2]);
+      pts.Add(new Point3d(x, y, z));
+}
+Points = pts;
+```
+
+The above code does not do any validation of the data and will only work if the text file has no errors such as empty lines, invalid numbers, or simply does not follow the expected format. Validating the data before using it is a good practice that helps make your program robust and avoid crashes and errors.The following is a rewrite of the same code, but with validation (highlighted). 
+
+```C#
+if ((!File.Exists(path)) || !read) {
+      //Show message box
+      System.Windows.Forms.MessageBox.Show("File does not exist or could not be read");
+      //Give feedback in the component out parameter
+      Print("Exit without reading");
+      return;
+}
+//Read the file
+string[] lines = File.ReadAllLines(path);
+//Check that file is not empty
+if ((lines == null)) 
+{
+    Print("File has no content. Exit without reading");
+    return;
+}
+//Declare list of points (Point3d is a data type in RhinoCommon SDK)
+List<Point3d> pts = new List<Point3d>();
+//Characters to remove
+var charsToRemove = new string[] { " ", ")", "(", "[", "]", "{", "}" };
+//Loop through lines
+foreach (string line in lines)
+{
+    //Trim invalid char
+    var tLine = line;
+    foreach (var c in charsToRemove)
+    {
+        tLine = tLine.Replace(c, string.Empty);
+    }
+    if (String.IsNullOrEmpty(line)) continue;
+    //Tokenize line into array of strings separated by ","
+    string[] parts = tLine.Split(",".ToCharArray());
+    //Make sure that each line has exactly 3 values
+    if (parts.Length != 3)
+        continue;
+    //Convert each coordinate from string to double
+    double x = Convert.ToDouble(parts[0]);
+    double y = Convert.ToDouble(parts[1]);
+    double z = Convert.ToDouble(parts[2]);
+    pts.Add(new Point3d(x, y, z));
+}
+A = pts;
+```
+
+## 2.11: Recursive functions
+
+Recursive functions are functions that call themselves until a stopping condition is met.  Recursion is not very common to use, but is useful in data search, subdividing and generative systems. 
+
+Just like conditional loops, recursive functions need to be designed and tested carefully for all possible input; otherwise you run the risk of crashing your code.
+
+The following example takes an input line then makes a copy that is shorter and rotated.  It keeps doing that for each newly generated line until the line length becomes less than some minimum length. The following table shows the input and output parameters.
+
+<table class="rounded">
+  <tr>
+    <th>Function parameters</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><b>Input parameters</b></td>
+    <td>Line inputLine</td>
+    <td>Starting line</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>double angle</td>
+    <td>Angle in radians</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>double minLength</td>
+    <td>The stopping condition</td>
+  </tr>
+  <tr>
+    <td><b>Output parameters</b></td>
+    <td>Line [] A</td>
+    <td>The result as an array of lines</td>
+  </tr>
+</table>
+
+To compare the two approaches, we will solve the problem recursively and iteratively to be able to compare the two approaches. Note that not all recursive cases can be solved iteratively. Also some cases are easier to solve recursively than iteratively or vice versa. If you do not design your recursive function carefully, you can end up in an infinite loop.
+
+In the following recursive solution, note that inside the **DivideAndRotate** function includes:
+
+- A stopping condition to exit the function.
+- A call to the same function from within the function (recursive function call themselves).
+- The result (array of lines) is passed by reference to keep adding new lines to the list.
+
+<img src="recursive_function.png">
+
+
+```C#
+private void RunScript(Line inputLine, double angle, double minLength, ref object Lines)
+{
+    //Declare all lines
+    List<Line> allLines = new List<Line>();
+
+
+    //Call recursive function
+    if(inputLine.IsValid && angle != 0 && minLength > 0)
+    {
+        //Append input line as a first line in the list of lines
+        allLines.Add(inputLine);
+        DivideAndRotate(inputLine, ref allLines, angle, minLength);
+    }
+    else
+        Print("Invalid input. Nothing done.");
+
+
+    //Assign return value
+    Lines = allLines;
+}
+  public void DivideAndRotate(Line currLine, ref List<Line> allLines, double angle, double minLength)
+  {
+    //Check the stopping condition
+    if (currLine.Length < minLength)
+      return;
+
+    //Take a portion of the line
+    Line newLine = new Line();
+    newLine = currLine;
+
+    Point3d endPt = new Point3d();
+    endPt = newLine.PointAt(0.95);
+
+    newLine.To = endPt;
+
+    //Rotate
+    Transform xform = default(Transform);
+    xform = Transform.Rotation(angle, Vector3d.ZAxis, newLine.From);
+    newLine.Transform(xform);
+
+    allLines.Add(newLine);
+
+    //Call self
+    DivideAndRotate(newLine, ref allLines, angle, minLength);
+  }
+```
+
+We can solve the same problem using an iterative solution through a conditional loop. Note that:
+
+- The stopping condition appears in the **while** loop condition.
+- The **DivideAndRotate** function parameters are passed by value (not changed inside the function). The function simply calculates and returns the new line.
+
+
+<img src="recursive_function.png">
+
+
+```C#
+private void RunScript(Line inputLine, double angle, double minLength, ref object Lines)
+{
+    //Declare all lines
+    var allLines = new List<Line>();
+
+
+    if(inputLine.IsValid && angle != 0 && minLength > 0)
+    {
+        //Find current length
+        double length = inputLine.Length;
+        Line newLine = default(Line);
+        newLine = inputLine;
+        //Loop until length is less than min length
+        while (length > minLength)
+        {
+            //Generate the new line
+            newLine = DivideAndRotate(newLine, angle);
+            //Add to list
+            allLines.Add(newLine);
+            //Stopping condition
+            length = newLine.Length;
+        }
+    }
+    else
+        Print("Invalid input. Nothing done.");
+
+
+    //Assign return value
+    Lines = allLines;
+}
+public Line DivideAndRotate(Line currLine, double angle)
+{
+    //Take a portion of the line
+    Line newLine = new Line();
+    newLine = currLine;
+    Point3d endPt = new Point3d();
+    endPt = newLine.PointAt(0.95);
+    newLine.To = endPt;
+    //Rotate
+    newLine.Transform(Transform.Rotation(angle, Vector3d.ZAxis, newLine.From));
+    //Function return
+    return newLine;
+}
+```
 
 ## Next Steps
 
