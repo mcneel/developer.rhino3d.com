@@ -408,17 +408,33 @@ They are also accessible from the **Tools -> Options** menu in the editor. Hover
 
 ![](compacteditor-01.png)
 
-## Publishing Script
+## Publishing Scripts
 
-!!!
+If you are planning to publish your script components in a Grasshopper plugin, a few considerations are important.
+
+Right-Click on the script component and set appropriate values for **Tooltip**. This description is used for publishing the script and is shown on the published component.
+
+![](publishing-01.png)
+
+Right-Click on all input and output parameters and set a **Name** (Human-readable) and  **Tooltip** for each parameter. The human-readable name is shown when **Display -> Draw Full Names** are enabled in Grasshopper. Setting a human-readable name and description helps understanding what inputs the component requires, and what outputs it provides and generally makes it easier to work with your published components.
+
+![](publishing-02.png)
+
+Check out [Grasshopper Script Component](/guides/scripting/projects-publish) on how to publish your script components in a Grasshopper plugin.
 
 ## Template Scripts
 
-!!!
+There are a few template scripts available in the **Templates** panel in the editor. You can Double-Click on any of these templates to replace the contents of your script with the template. This is a good way to start slightly more complicated scripts:
+
+![](templates-01.png)
+
+### User Objects As Templates
+
+Another great way to create template scripts is to setup one script component with the desired inputs, outputs, and template script, and then save that as a Grasshopper **User Object**. You can set extra metadata on the component and customize its icon. Every time you would place an instance of this *User Object*, you are effectively creating a new script component instance with the template script and parameters.
 
 ### Resetting Icon
 
-If you have a script component that has an incorrect or low-resolution icon, you can reset the icon back to the default for the scripting language using the **Reset Icon** menu button in the Advanced context menu (Shift + Right-Click).
+If you have a script component that has an overriden, incorrect, or low-resolution icon, you can reset the icon back to the default for the scripting language using the **Reset Icon** menu button in the *Advanced* context menu (Shift + Right-Click).
 
 ## Shared Scripts
 
@@ -482,7 +498,7 @@ You can toggle this option off for any of the output parameters and hide the pre
 
 ## Exporting Script
 
-You can save the script that is embedded in a C# script component, using the **Export Script** menu item from component context menu.
+You can save the script that is embedded in a C# script component, using the **Export Script** menu item from component context menu. When *Save Dialog* opens, choose a file name and location where you would like to save the script, and hit save.
 
 ## Script Cache
 
