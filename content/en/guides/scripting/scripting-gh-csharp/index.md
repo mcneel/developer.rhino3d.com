@@ -551,7 +551,7 @@ Right-Click on all input and output parameters and set a **Name** (Human-readabl
 
 ![](publishing-02.png)
 
-Check out [Grasshopper Script Component](/guides/scripting/projects-publish) on how to publish your script components in a Grasshopper plugin.
+Check out [Projects: Publish](/guides/scripting/projects-publish) on how to publish your script components in a Grasshopper plugin.
 
 ## Template Scripts
 
