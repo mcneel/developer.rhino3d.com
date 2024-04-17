@@ -4,7 +4,7 @@ categories = ["Intermediate", "Advanced"]
 description = "This guide gives an overview of using RhinoCommon to drive file format IO"
 keywords = [ ".NET", "RhinoCommon", "Plugin" ]
 languages = [ "C#", "Python" ]
-sdk = [ "RhinoCommon", "RhinoPython" ]
+sdk = [ "RhinoCommon", "RhinoPython", "Grasshopper"]
 title = "Code-Driven File IO"
 type = "guides"
 weight = 4
@@ -34,7 +34,7 @@ Rhino 8 introduces the abililty to read and write files of any format that Rhino
 
 Import and export plug-ins are provided an optional dictionary at read and write time. When the dictionary is present, instead of asking for user input, the importers and exporters pay attention to keys and values in the dictionary to make decisions on options for I/O. RhinoCommon provides classes for these options that can be converted into a dictionary that the import and export plug-ins can interpret. Look in the `Rhino.FileIO` namespace for format specific option classes.
 
-## Example: Write an AutoCAD dwg
+## Example: Write an AutoCAD dwg from Rhino
 
 This example shows how to write the active `RhinoDoc` to an AutoCAD dwg with options:
 
@@ -99,7 +99,7 @@ if scriptcontext.doc is not None:
 
 Headless `RhinoDoc` instances can be used to further streamline the process. Headless documents are `RhinoDoc` instances that never affect the Rhino user interface. Their use can improve performance as none of the geometry in the document needs to be displayed in Rhino. You can either create a headless document from scratch and add geometry to it or import from a file using options.
 
-## Example: Read a SketchUp file
+## Example: Read a SketchUp file into Rhino
 
 This example shows how to read a SketchUp skp file and example the geometry using a headless RhinoDoc:
 
@@ -160,6 +160,44 @@ doc.Dispose()
 
 </div>
 </div>
+
+## Using Grasshopper with Code Driven File.io
+
+When using Grasshopper to read or write files, there are some differences then the above examples.  The main difference is Grasshopper is it own document.  When reading in a file, objects are then processed thru Grasshopper independantly.  And when writing out a file format, then a headless doc needs to be created in the same component that writes the file.  See the examples below:
+
+Reading in a file format can be done in new Rhino 8 components using the Import File component:
+
+{{< image url="import_file_gh.png" alt="import_file_gh.png" class="image_center">}}
+
+[{{< awesome "fas fa-download">}} ](ExportTo3MFV3.gh) [Download Example Grasshopper Definition for Exporting a File](ExportTo3MFV3.gh)
+
+Here the file is imported and the objects can then be processed.
+
+To write out any of the File formats from Rhino, create headless Doc and then add objects to it.  The example below writes a 3MF file using a Python 3 component. Set the script component `objects` input to `List Access` and `GeometryBase` Input Hint:
+
+```py
+import System
+import Rhino
+
+doc = Rhino.RhinoDoc.CreateHeadless(None)
+
+if not objects is None:
+    for o in objects:
+        doc.Objects.Add(o)
+
+options = Rhino.FileIO.File3mfWriteOptions()
+options.Title = title
+options.Designer = Rhino.RhinoApp.LicenseUserName
+options.Metadata["Test"] = "Star"
+options.MoveOutputToPositiveXYZOctant = True;
+
+if not path is None:
+    path = System.Environment.ExpandEnvironmentVariables(path)
+    success = doc.Export(path, options.ToDictionary())
+    print(success)
+doc.Dispose();
+```
+
 
 ## Other Use Cases
 
