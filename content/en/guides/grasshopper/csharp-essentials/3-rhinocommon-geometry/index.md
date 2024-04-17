@@ -6,10 +6,10 @@ category_page = "guides/grasshopper/csharp-essentials/"
 keywords = [ "csharp", "commands" ]
 languages = [ "C#" ]
 sdk = [ "RhinoCommon" ]
-title = "Chapter Three: RhinoCommon Geometry"
+title = "3: RhinoCommon Geometry"
 type = "guides"
 weight = 15
-override_last_modified = "2018-12-05T14:59:06Z"
+override_last_modified = "2024-04-15T14:59:06Z"
 draft = false
 
 [admin]
@@ -29,94 +29,180 @@ toc_type = "single"
 
 +++
 
-## 3.1 Programming in Rhino
+## 3.1 Overview
 
-Rhinoceros offers various ways of programmatic access. We've already met macros and scripts, but the plot thickens. Please invest a few moments of your life into looking at the diagram below, which you will never be asked to reproduce:
+**RhinoCommon** is the **.NET SDK** for Rhino. It is used by Rhino plug-in developers to write **.NET** plug-ins for Rhino and Grasshopper. All Grasshopper scripting components can access **RhinoCommon** including all geometry objects and functions. For the whole namespace, see the **[RhinoCommon documentation](https://developer.rhino3d.com/api/RhinoCommon)**
 
-{{< image url="/images/rhino-technology-overview-01.png" alt="The Rhino Stack" class="image_center" width="75%" >}}
+In this chapter, we will focus on the part of the **SDK** dealing with Rhino geometry.  We will show examples of how to create and manipulate geometry using the Grasshopper C# component.
 
-The above is a complete breakdown of all developer tools that Rhino has to offer. I'll give you a brief introduction as to what this diagram actually represents and although that is not vital information for our primary goal here ("learning how to script" in case you were wondering), you might as well familiarize yourself with it so you have something to talk about on a first date.
+The use of the geometry classes in the **SDK** requires basic knowledge in vector mathematics, transformations and NURBS geometry. If you need to review or refresh your knowledge in these topics, then refer to the *[Essential Mathematics for Computational Design](https://www.rhino3d.com/download/rhino/6/essentialmathematics)*
 
-At the very core of Rhino are the code libraries. These are essentially collections of procedures and objects which are used to make life easier for the programs that link to them. The most famous one is the openNURBS library which was developed by Robert McNeel & Associates but is completely open source and has been ported by 3rd party programmers to other operating systems such as Unix and Linux. OpenNURBS provides all the required file writing and reading methods as well the basic geometry library. Practically all the 3D applications that support the 3dm file format use the openNURBS library. These code libraries have no knowledge of Rhino at all, they are 'upstream' so to speak.
+If you recall from Chapter 2, we worked with value types such as **int** and **double**. Those are system built-in types provided by the programming language, **C#** in this case. We also learned that you can pass the value types to a function without changing the original variables (unless passed by reference using the **ref** keyword). We also learned that some types, such as **objects**, are always passed by reference. That means changes inside the function also changes the original value.
 
-Rhino itself (the red blob) is tightly wrapped around these core libraries, it both implements and extends them. Apart from this obvious behavior, Rhino also adds the possibility of plugins. Whereas most companies provide plugin support for 3rd party developers, McNeel has taken a rather exotic approach which eliminates several big problems. The technical term for this approach is "eating your own dogfood" and it essentially boils down to McNeel programmers using the same tools as 3rd party programmers. Rather than adding code to Rhino itself, McNeel programmers prefer writing a plugin instead. For one, if they screw up the collateral damage is usually fairly minor. It also means that the SDK (Software Development Kit, that which is used to build plugins) is rigorously tested internally and there is no need to maintain and support a separate product. Unfortunately the result of this policy has made plugins so powerful that it is very easy for ill-informed programmers to crash Rhino. This is slightly less true for those developers that use the dotNET SDK to write plugins and it doesn't apply at all to us, scripters. A common proverb in the software industry states that you can easily shoot yourself in the foot with programming, but you can take your whole leg off with C++. Scripters rarely have to deal with anything more severe than a paper-cut.
+The system built-in types, whether they are value or reference types, are often very limiting in specialized programming applications. For example, in computer graphics, we commonly deal with points, lines, curves or matrices. These types need to be defined by the **SDK** to ease the creation, storage and manipulation of geometry data. Programming languages offer the ability to define new types using **structures** ( value types) and **classes** ( reference types). The **RhinoCommon SDK** defines many new types as we will see in this chapter.
 
-The orange pimples on Rhino's smooth surface are plugins. These days plugins can be written in C++ and all languages that support the DotNET framework (VB.NET, CSharp, Delphi, J#, IronPython etc. etc.). One of these plugins is the Python plugin and it implements and extends the basic IronPython Language.
-language as well as Python at the front end, while tapping into all the core Rhino resources at the back end. Scripts thus gain access to Rhino, the core libraries and even other plugins through the RhinoScriptSyntax plugin.
+## 3.2: Geometry structures
 
-Right, enough fore-play, time to get back to hard core programming.
+**RhinoCommon** defines basic geometry types using structures. We will dissect the **Point3d** structure and show how to read in the documentation and use it in a script. This should help you navigate and use other structures. Below is a list of the geometry structures.
 
-## 3.2 The bones
+<table class="rounded">
+  <tr>
+    <th>Structures</th>
+    <th>Summary description</th>
+  </tr>
+  <tr>
+    <td><b>Point3d</b></td>
+    <td>Location in 3D space. There are other points that have different dimensions such as: Point2d (parameter space point) and Point4d to represent control points.</td>
+  </tr>
+  <tr>
+    <td><b>Vector3d</b></td>
+    <td>Vector in 3D space. There is also Vector2d for vectors in parameter space</td>
+  </tr>
+  <tr>
+    <td><b>Interval</b></td>
+    <td>Domain. Has min and max numbers</td>
+  </tr>
+  <tr>
+    <td><b>Line</b></td>
+    <td>A line defined by two points (from-to)</td>
+  </tr>
+  <tr>
+    <td><b>Plane</b></td>
+    <td>A plane defined by a plane origin, X-Axis, Y-Axis and Z-Axis</td>
+  </tr>
+ <tr>
+    <td><b>Arc</b></td>
+    <td>Represents the value of a plane, two angles and a radius in a subcurve of a circle</td>
+  </tr>
+ <tr>
+    <td><b>Circle</b></td>
+    <td>Defined by a plane and radius</td>
+  </tr>
+ <tr>
+    <td><b>Ellipse</b></td>
+    <td>Defined by a plane and 2 radii</td>
+  </tr>
+ <tr>
+    <td><b>Rectangle3d</b></td>
+    <td>Represents the values of a plane and two intervals that form an oriented rectangle </td>
+  </tr>
+ <tr>
+    <td><b>Cone</b></td>
+    <td>Represents the center plane, radius and height values in a right circular cone.</td>
+  </tr>
+ <tr>
+    <td><b>Cylinder</b></td>
+    <td>Represents the values of a plane, a radius and two heights -on top and beneath- that define a right circular cylinder.</td>
+  </tr>
+ <tr>
+    <td><b>BoundingBox</b></td>
+    <td>Represents the value of two points in a bounding box defined by the two extreme corner points.This box is therefore aligned to the world X, Y and Z axes.</td>
+  </tr>
+ <tr>
+    <td><b>Box</b></td>
+    <td>Represents the value of a plane and three intervals in an orthogonal, oriented box that is not necessarily parallel to the world Y, X, Z axes.</td>
+  </tr>
+ <tr>
+    <td><b>Sphere</b></td>
+    <td>Represents the plane and radius values of a sphere.</td>
+  </tr>
+ <tr>
+    <td><b>Torus</b></td>
+    <td>Represents the value of a plane and two radii in a torus that is oriented in 3D space.</td>
+  </tr>
+ <tr>
+    <td><b>Transform</b></td>
+    <td>4x4 matrix of numbers to represent geometric transformation</td>
+  </tr>
+</table>
 
-Once you run a script through the in-build editor (remember you can access the editor by typing "Scripteditor" in Rhino's command line) the Python interpreter will thumb through your script and superficially parse the syntax. It will not actually execute any of the code at this point, before it starts doing that it first wants to get a feel for the script. The interpreter is capable of finding certain syntax errors during this prepass. If you see a dialog box like this:
+## 3.2.1: The Point3d structure
 
-{{< image url="/images/syntaxerror.jpg" alt="/images/syntaxerror.jpg" class="image_center" width="75%" >}}
+The **[Point3d](https://developer.rhino3d.com/api/RhinoCommon/html/T_Rhino_Geometry_Point3d.htm)** type includes three **fields** (X, Y and Z). It defines a number of **properties** and also has **constructors** and **methods**. We will walk through all the different parts of **Point3d** and how it is listed in the **RhinoCommon** documentation. First, you can navigate to **Point3d** from the left menu under the **Rhino.Geometry** namespace. When you click on it, the full documentation appears on the right. At the very top, you will see the following:
 
-before anything has actually taken place, it means the compiler ran into a problem with the syntax and decided it wasn't worth trying to run the script. If the script crashes while it is running, the Source of the error message will not be the Python Compiler. However, even scripts without syntax errors might not function as expected. In order for a script to run successfully, it must adhere to a few rules. Apart from syntax errors -which must be avoided- every script must implement a certain structure which tells the interpreter what's what:
+<img src="point3d_api.png">
 
-{{< image url="/images/primer-script-structure.svg" alt="/images/primer-script-structure.svg" class="image_center" width="75%" >}}
+Here is a break down of what each part in the above **Point3d** documentation means:
 
-<!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
+<table class="rounded">
+  <tr>
+    <th>Part</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><b>Point3D</b> Structure Represents the ...</td>
+    <td>Title and description</td>
+  </tr>
+  <tr>
+    <td><b>Namespace: Rhino.Geometry</b></td>
+    <td>The namespace that contains Point3d</td>
+  </tr>
+  <tr>
+    <td><b>Assembly: RhinoCommon (in RhinoCommon.dll)</b></td>
+    <td>The assembly that includes that type. All geometry types are part of the RhinoCommon.dll</td>
+  </tr>
+  <tr>
+    <td>/[SerializableAttribute/]</td>
+    <td>Allow serializing the object</td>
+  </tr>
+  <tr>
+    <td><b>public struct Point3d</b></td>
+    <td>public: public access: your program can instantiate an object of that type</br>struct: structure value type.</br>Point3d: name of your structure</td>
+  </tr>
+ <tr>
+    <td>: ISerializable,</br>
+    IEquatable<Point3d>, </br>
+    IComparable<Point3d>, </br>
+    IComparable, </br>
+    IEpsilonComparable<Point3d>
+</td>
+    <td>The “:” is used after the struct name to indicate what the struct implements.
+Structures can implement any number of interfaces. An interface contains a common functionality that a structure or a class can implement. It helps with using consistent names to perform similar functionality across different types. 
+For example IEquatable interface has a method called “Equal”. If a structure implements IEquatable, it must define what it does (in Point3d, it compares all X, Y and Z values and returns true or false).</td>
+  </tr>
+</table>
 
-Note that the example script on page 11 did not adhere to these rules. It ran just the same, but it was a bad example in this respect.
+#### Point3d Constructors:
 
-The Import Statement allows the user to import different modules that are either built into Python when its downloaded, or from external developments.  Importing modules allows a user to access methods outside of the current file and reference objects, functions or other information.  There are various types of Import Statements: *import X, from X import, from X import a, b, c, X = __import__(‘X’)*, each with advantages and disadvantages.  For simplicity we can stick with import X for the time being.  This technique imports module X and allows us to use any methods within that module.
+Structures define constructors to instantiate the data. One of the **Point3d** constructors takes three numbers to initialize the values of X, Y and Z. Here are all the constructors of the **Point3d** structure .
 
-Comments (blocks of text in the script which are ignored by the compiler and the interpreter), can be used to add explanations or information to a file, or to temporarily disable certain lines of code. It is considered good practice to always include information about the current script at the top of the file such as author, version and date. Comment lines are indicated with a # sign.
+<img src="constructors.png">
 
-Global variables are variables that can be accessed anywhere in your code (outside of functions, within functions and within classes).  Variable scope refers to the limitation or accessibility of a variable across different portions of code.  Global variables obviously can be accessed globally, while other variables may be limited to certain areas of your code.  For example, any variable that is created within a class or a function (we will cover classes and functions later) is limited to within that function.  This means they cannot be used outside of that function or class (unless they are specifically passed as input/output).  For now, we don't need to worry about different types of scope and let's assume that our variables are globally accessible unless otherwise noted.
+The following example shows how to define a variable of type Point3d using a GH C# component.
 
-Functions are blocks of code that compact certain functionality into a small package.  Functions can have variables, take input, provide output and do a number of other important tasks.  We will go into further detail about functions in the coming chapters.  Classes are similar in that they provide an opportunity for creating module code to package/compress segments of your code, while also providing other powerful tools.  Functions and classes must be created before they can be used (this is rather obvious). For that reason, the *Functions & Classes section* comes before the *Function Calls and Class Instances section*.  This just means that before we can actually *Call* (use) a Function, we need to first create the function.
+<img src="point3d_gh.png">
 
-## 3.3 The guts
+```C#
+private void RunScript(double x, double y, double z, ref object Point)
+{
+    //Create an instance of a point and initialize to x, y and z
+    Point3d pt = new Point3d(x, y, z);
 
-The following example shows the essential structure that was just described, including: the Import Statement (always needed!), Global Variables, a Function and a Call to the Function.  The importance of syntax should also be stated - Please take note of the capitalization and indentation within this example.  Python is both case sensitive and indent sensitive.  If you spell a variable name once with a capital letter and another time with a lowercase letter, it will not recognize it as the same variable! The indent is used to indicate if certain lines should be included within a Function, Class, Loop or Conditional statement.  In this example, the line "print (text)" is indented to be contained within the function "simpleFunction" because it should only be executed once that function is called (Don't worry yet about how and why functions work, we will explain them soon).   Indentation and Case Sensitivity should be highly emphasized since they are a couple of the most common mistakes that you will run into!
-
-{{< download-script "rhinopython/rhinopython101/3_3_AnatomyExample.py" "3_3_AnatomyExample.py">}}
-
-```python
-#! python3                                 # Language Type
-
-import rhinoscriptsyntax as rs             # Import Statements
-import scriptcontext as sc
-import math
-
-import System
-import System.Collections.Generic
-import Rhino
-import rhinoscriptsyntax as rs                        
-#Script written by Ehsan Iran-Nijad        # Default comments
-
-strInfo = "This is just a test"            # Global Variable
-
-def simpleFunction(text):                  # Function Declaration
-    print(text)                            # Code to Execute Within the Function
-                                               # (Note the Indentation)
-simpleFunction(strInfo)                    # Calling the Function (After it's created)
+    //Assign the point "pt" to output
+    Point = pt;
+}
 ```
 
-One of the key features of RhinoScriptSyntax that makes it easy to write powerful scripts is the large library of Rhino specific functions.  This set of functions is known as the rhinoscriptsyntax package. To import the rhinoscriptsyntax package you must include the `import rhinoscriptsyntax` statement, `as rs` indicates that we will be using the name "rs" whenever we refer to this package. In the Editor, go to Help>Python Help for a list of all the rhinoscriptsyntax methods. Documentation can also be found at [http://www.rhino3d.com/5/ironpython/index.html](http://www.rhino3d.com/5/ironpython/index.html)
+#### Point3d Properties: 
 
-Note: McNeel has made all of the classes in the .NET Framework available to Python, including the classes available in RhinoCommon. This allows you to do some pretty amazing things inside of a python script. Many of the features that once could only be done in a .NET plug-in can now be done in a python script!
-(Don't stress about this until you become a master of the basics...for now, just know its available!)
+Properties are mostly used to “get” and/or “set” the fields of the structure. For example, there are the “X”, “Y” and “Z” properties to get and set the coordinates of an instance of **Point3d**. Properties can be **static** to get specific points, such as the origin of the coordinate system (0,0,0). The following are **Point3d** properties as they appear in the documentation:
 
-## 3.4 The skin
+<img src="properties.png">
+ 
+Here are two GH examples to show how to get and set the coordinates of a **Point3d**. 
 
-{{< image url="/images/buttonscript.jpg" alt="/images/buttonscript.jpg" class="float_right" width="325" >}}
+<img src="set_point3d.png">
 
-After a script has been written and tested, you might want to put it in a place which has easy
-access such as a Rhino toolbar button. If you want to run scripts from within buttons, there are two things you can do:
+```C#
+private void RunScript(Point3d pt, ref object A, ref object B, ref object C)
+{
+    //Assign the point coordinates to output
+    a = pt.X;
+    b = pt.Y;
+    c = pt.Z;
+}
+```
 
-1. Link the script
-2. Implement the script
-
-If you want to implement the script, you'll have to wrap it up into a *_RunPythonScript* command. Imagine the script on the previous page has been saved on the hard disk as an \*.py file. The following button editor screenshot shows how to use the two options:    
-
-## 3.5 The Editor
-
-A Code Editor is an essential tool for any programmer.  Luckily, the script-editor within Rhino is built-in. It includes a Debugger for testing and working line-by-line through any script!  It is extremely good practice to use the debugger when writing any code longer than just a few lines.  The expression "bug in your code," means that something has gone wrong in your code - i.e your code fails, cannot continue to run or has given the wrong output. *(Of interesting note -  the first computer bug is said to have been found in 1947, when Harvard University's Mark II Aiken Relay Calculator machine was experiencing problems. An investigation showed that there was a moth trapped in the machine. The operators removed the moth and taped it into the log book. The entry reads: "First actual case of bug being found." And thus, the world of debugging was born!)* With any malfunctioning code, the programmers job is to quickly and easily identify the bug, however, this can be sometimes extremely difficult, especially if the code has many loops, conditional statements, functions, classes and spans hundreds or thousands of lines.  
-
-To find out more about using the editor and its integrated debugger, see the [Script Editing Guide](/guides/scripting/scripting-command/)
 ## Next Steps
 
 That was a basic overview of Python running in Rhino.  Now learn to use [operators and functions](/guides/rhinopython/primer-101/4-operators-and-functions/) to get something done.
