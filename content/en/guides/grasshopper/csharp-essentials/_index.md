@@ -1,11 +1,11 @@
 +++
 aliases = [""]
 authors = [ "rajaa" ]
-categories = [ "Unsorted" ]
+categories = [ "Basic" ]
 description = "A full course on RhinoComon in Grasshopper using C#"
-keywords = [ "rhino", "developer", "grasshopper" ]
-languages = "unset"
-sdk = "unset"
+keywords = [ "rhino", "developer", "grasshopper", ".NET", "RhinoCommon", "Plugin"  ]
+languages = [ "C#"]
+sdk = [ "RhinoCommon", "RhinoPython", "Grasshopper" ]
 title = "Essential C# Scripting for Grasshopper"
 type = "guides"
 weight = 1
