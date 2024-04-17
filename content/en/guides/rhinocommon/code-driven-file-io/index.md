@@ -1,8 +1,8 @@
 +++
 authors = ["steve"]
 categories = ["Intermediate", "Advanced"]
-description = "This guide gives an overview of using RhinoCommon to drive file format IO"
-keywords = [ ".NET", "RhinoCommon", "Plugin" ]
+description = "This guide gives an overview of using RhinoCommon to drive file format IO with code"
+keywords = [ ".NET", "RhinoCommon", "Plugin", "Python", "Grasshopper", "Rhino3D" ]
 languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon", "RhinoPython", "Grasshopper"]
 title = "Code-Driven File IO"
