@@ -234,9 +234,9 @@ However, a typical Grasshopper component can:
 
 The methods linked above are part of Grasshopper SDK for creating custom components. Every developer that creates a Grasshoper plugin is aware of these methods and might be using them to customize the component behaviour.
 
-In a C# script component, we can implement our scripts in a similar manner. That is why we are calling it the SDK-mode as it provides similar functionality that is available in Grasshopper SDK to the scripts.
+In a C# script component, we can implement our scripts in a similar manner. That is why we are calling it the **SDK-Mode** as it provides similar functionality that is available in Grasshopper SDK.
 
-By default when you create a C# script component, the template script is already in SDK-mode as this is how C# components before Rhino 8 have been working and we kept it the same in Rhino 8 and above.
+By default when you create a C# script component, the template script is already in *SDK-Mode* as this is how C# components before Rhino 8 have been working and we kept it the same in Rhino 8 and above.
 
 This is how the default script looks like (actual script might not be identical):
 
@@ -375,16 +375,147 @@ Check out [NuGet Packages]({{< relref "#nuget-packages" >}}) for another example
 
 ## Debugging Scripts
 
-!!!
+You can debug your C# scripts in the script component. During debug, we can execute the script line by line or pause the execution at certain lines called **Breakpoints** and inspect the values of global and local variables.
+
+Move your mouse cursor to the left side of any script line and click to add a **Breakpoint**:
+
+![](debugging-01.png)
+
+The **Breakpoints** tray at the bottom will show all the breakpoints, and will provide buttons to *Enabled/Disable* or *Clear* them:
+
+![](debugging-02.png)
+
+Use the **Toggle** button to activate or deactivate the breakpoints. Deactivated breakpoints will show up as gray dots in the editor:
+
+![](debugging-03.png)
+
+When you add breakpoints, the editor makes a few UI changes and provides a few more utilities for debugging:
+
+- The **Run** button will change to **Debug**
+- **Variables**, **Watch**, and **Call Stack** trays will be added to the bottom tray bar
+
+Now click on the green **Debug** button on the editor toolbar. The editor will run the script and:
+
+- Stops at breakpoints
+- Highlights the breakpoint line in orange and shows an arrow on the left side of the line
+- Highlights status bar in orange to show we are debugging a script
+- Activates the debug control buttons on the editor toolbar
+- Opens the **Variables** tray at the bottom to show global and local variables
+
+![](debugging-04.png)
+
+We can control the execution of script using the debug control buttons on the editor toolbar:
+
+![](debugging-05.png)
+
+From left to right, they are:
+
+- **Continue:** continues running the script until it stops on another breakpoint
+- **Step Over:** executes current line and moves on the next line
+- **Step In:** if the current line includes a function call, this will step into the lines defining the function code
+- **Step Out:** if previously stepped into a function code, this will continue executing the function code until control is returned from the function to the calling code and will stop there
+- **Stop:** stops debugging the script and does not continue executing the rest
+
+Click on **Continue** to see the execution move to the next line:
+
+Notice that the **Variables** panel now shows new values for **x** and **y**. The panel header also shows **Run Script (2 of 11)** on the top-right meaning this is the second time Grasshopper is executing this component with a pair of **x** and **y** inputs:
+
+![](debugging-06.png)
+
+Progressively clicking on **Continue** will continue executing the script and modifying the variables. At each stop, the **Variables** tray shows the current values of global and local variables.
+
+At any point during debug, the **Stop** button stops debugging. The script component will show an error marking with the message **Debug Stopped**:
+
+![](debugging-07.png)
+
+Once the debug stops, the editor UI changes back to normal, and the **Variables** tray will show the last state of the variables. The tray will keep these data until another session of debugging is started.
+
+### Variables Tray
+
+*Variables* tray is a great tool to inspect the current values of all the global and local variables in our script. Variables data is shown in a table with 3 columns: **Name**, **Value**, **Type**. For each variable you can see the current value and the type of data it is holding. A red marker will highlight the variables that changed during debug:
+
+![](debugging-08.png)
+
+For more complicated data types with fields and properties, you can expand the variable to see current values of its members:
+
+![](debugging-09.png)
+
+If a value is a collection of other values, you can expand the variable to see each item individually. The *Name* column shows the item index like `[0]`:
+
+![](debugging-10.png)
+
+### Watch Tray
+
+*Watch* tray is very similar to the variables tray. The primary difference is that *Watch* tray only shows the variables that you have specifically added to watch. Use the **Add Expression** button on the tray toolbar to add a new variable to watch. Hit Enter on the added *Expression* item to edit and type the variable name:
+
+![](debugging-11.png)
+
+*Watch* tray will show a green checkmark when it can extract the variable value during debug. A yellow warning icon is shown when the variable is not in scope:
+
+![](debugging-12.png)
+
+### Call Stack Tray
+
+*Call Stack* tray shows the call stack frames. This loosly translates to functions calls in our script. The item at the top is the last function that the script is executing, and the list goes on to show other functions that called the current function
+
+In the example below, script execution started by running `RunScript`. Then the script called the `Sum` method and that is where we are paused during debug right now. *Call Stack* tray shows this function at the top of the list, with `RunScript` following right after. *Variable* and *Watch* trays also show the values of variables in the current call frame:
+
+![](debugging-13.png)
+
+You can click on other stack frames, and switch to *Variables* or *Watch* tray to inspect the values in their scope:
+
+![](debugging-14.png)
+
+*Call Stack* tray shows stack frames for different threads in your script independently.
 
 ## NuGet Packages
 
-!!!
+C# script can benefit from third-party packages that are published on [NuGet](https://www.nuget.org) package server. You can use the *Install Package* button to install any of these packages and use in your script:
+
+![](packages-01.png)
+
+The Install Package dialog, shows a couple of example of how you can specify the package name and version requirements.
+
+The **Add Package Reference to Script** option, when check (default), adds a package reference to the script text. In this manner, the script always knows which packages it needs even when you send this script to others and they do not have the required packages installed.
+
+Notice the `#r "nuget: RestSharp, 110.2.0"` line in the example script below. The format follows the package reference for script on NuGet website:
+
+![](packages-02.png)
+
+```csharp
+#r "nuget: RestSharp, 110.2.0"
+ 
+using System;
+using System.Collections.Generic;
+using Rhino;
+ 
+using RestSharp;
+using RestSharp.Authenticators;
+ 
+var client = new RestClient("https://httpbin.org");
+var request = new RestRequest("get");
+var response = client.Get(request);
+ 
+a = response.Content;
+```
 
 ### Assembly References
 
-- absolute/relative/loaded
-!!!
+C# scripts can also directly reference dotnet assembly files. You can use the **Install Package** dialog and change the **Package Source** option to **DLL Reference**:
+
+![](packages-03.png)
+
+If the assembly is already loaded in Rhino, you can reference it by just typing the name of the assembly. Make sure the extension is included in the assembly name (e.g. `.dll`) A package reference like example below is optionally added to your script:
+
+```csharp
+#r "System.Text.Json.dll"
+```
+
+As the *Install Package* dialog examples show, you can also provide a relative or absolute path to the assembly:
+
+```csharp
+#r "/path/to/my/assemblies/MySharedAssembly.dll"
+```
 
 ## Customizing Editor
 
