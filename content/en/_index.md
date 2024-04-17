@@ -146,7 +146,7 @@ list_group = "uncategorized"
 <h3>MIT License</h3>
 Rhino developer tools are royalty free and include support.
 
-Copyright (c) 1993-2023 Robert McNeel & Associates. All Rights Reserved.
+Copyright (c) 1993-2024 Robert McNeel & Associates. All Rights Reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of Rhino SDKs and APIs, including openNURBS, rhino3dm, RhinoCommon, the Grasshopper API, and associated documentation files (the "Software"), to deal
