@@ -63,7 +63,11 @@ toc_type = "single"
 
 - [ScriptEditor Command](/guides/scripting/scripting-command)
 - [Grasshopper Script Component](/guides/scripting/scripting-component)
+
+### Python Scripting
 - [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
+
+### C# Scripting
 - [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
 
 ### Editor Features
