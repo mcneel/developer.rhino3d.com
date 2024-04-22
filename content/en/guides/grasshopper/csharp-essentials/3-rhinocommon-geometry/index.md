@@ -1166,6 +1166,607 @@ Curve nc = Rhino.Geometry.Curve.CreateControlPointCurve(points, degree);
 
 <img src="nurbscurve.png" width="50%">
 
+Create an array of tween curves using two input curves and a the number of tween curves
+
+
+```C#
+//Declare a variable of type Curve
+Curve[ ] tweenCurves = null;
+
+//Create an array of tween curves
+tweenCurves = Rhino.Geometry.Curve.CreateTweenCurves(curve0, curve1, count, 0.01);
+```
+
+<img src="tweencurves.png" width="50%">
+
+Another way to create new curves is to use the constructor of the curve with the **new** keyword. The following are examples to create different types of curves using the constructor or the **Create** method in the class. You can reference the **RhinoCommon** help for more details about the constructors of each one of the derived curve classes.
+
+The following example uses declared 3 new points:
+
+```C#
+Point3d p0 = new Point3d(0, 0, 0);
+Point3d p1 = new Point3d(5, 1, 0);
+Point3d p2 = new Point3d(6, -3, 0);
+```
+
+Create an instance of a **LineCurve** using the class constructor and **new** keyword:
+
+```C#
+//Create an instance of an LineCurve
+LineCurve line = new LineCurve(p0, p1);
+```
+
+<img src="simple_line.png" width="50%">
+
+Create an instance of a **ArcCurve** using the class constructor and **new** keyword:
+
+```C#
+//Create an instance of a lightweight Arc to pass to the 
+//  constructor of the ArchCurve class
+Arc arc = new Arc(p0, p1, p2);
+
+//Create a new instance of ArcCurve
+ArcCurve arcCurve = new ArcCurve(arc);
+```
+
+<img src="arc.png" width="50%">
+
+Create an instance of a **PolylineCurve** using the class constructor and **new** keyword
+
+```C#
+//Put the 3 points in a list
+Point3d[ ] pointList = {p0, p1, p2};
+
+//Create an instance of an PolylineCurve
+PolylineCurve polyline = new PolylineCurve(pointList);
+```
+
+<img src="polyline.png" width="50%">
+
+Create one open and one closed (periodic) curves using the **Create** function of the **NurbsCurve** class
+
+```C#
+bool isPeriodic = false;
+int degree = 3;
+NurbsCurve openCurve = NurbsCurve.Create(isPeriodic , degree, pointList);
+
+isPeriodic = true;
+NurbsCurve periodicCurve = NurbsCurve.Create(isPeriodic , degree, pointList);
+```
+
+<img src="periodic_curves.png" width="50%">
+
+Curves can also be the return value of a method. For example, offsetting a given curve creates one or more new curves. Also the surface **IsoCurve** method returns an instance of a curve. 
+
+Extract iso-curve from a surface. A new instance of a curve is the return value of a method:
+
+```C#
+//srf = input surface, t = input parameter
+var uIso = srf.IsoCurve(0, t);
+var vIso = srf.IsoCurve(1, t);
+```
+
+<img src="isocurve.png" width="50%">
+
+Or create multiple offset of curve:
+
+```C#
+private void RunScript(Curve crv, int num, double dis, double tol, Plane plane)
+{
+  //Declare the list of curve
+  List<Curve> crvs = new List<Curve>();
+  Curve lastCurve = crv;
+  for (int i = 1; i <= num; i++) 
+  {
+    Curve[ ] curveArray = last_crv.Offset(plane, dis, tol, CurveOffsetCornerStyle.None);
+
+    //Ignore if output is multiple offset curves
+    if (crv.IsValid && curveArray.Count() == 1) {
+      //append offset curve to array
+      crvs.Add(curveArray[0]);
+
+      //update the next curve to offset
+      lastCUrve = curveArray[0];
+    } 
+    else 
+        break;
+  }
+}
+```
+
+<img src="offset_curve.png" width="50%">
+
+#### Curve methods:
+
+Each class can define methods that help navigate the data of the class and extract some relevant information. For example, you might want to find the endpoints of a curve, find the tangent at some point, get a list of control points or divide the curve. The **AutoComplete** helps to quickly navigate and access these methods, but you can also find the full description in the **RhinoCommon** help. 
+
+Keep in mind that a derived class such as **NurbsCurve** can access not only its own methods, but also the methods of the classes it was derived from. Therefore an instance of a **NurbsCurve**, can access the **NurbsCurve** methods and the **Curve** methods as well. The methods that are defined under the **Curve** are available to all of the classes derived from the **Curve** class such as **LineCurve**, **ArcCurve**, **NurbsCurve**, etc. Here are a few examples of curve methods.
+
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">NurbsCurve methods</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the domain or interval of the curve
+Interval domain = crv.Domain;
+```
+
+</td>
+<td>
+<img src="curve_domain.png" width="100%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the start and end points of a curve
+Point3d startPoint = crv.PointAtStart;
+Point3d endPoint = crv.PointAtEnd;
+```
+
+</td>
+<td>
+<img src="start_end_point.png" width="100%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the tangent at start of a curve
+Vector3d startTangent = crv.TangentAtStart;
+```
+
+</td>
+<td>
+<img src="curve_tangent.png" width="100%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the control points of a NurbsCurve (nc)
+List<Point3d> cpList = new List<Point3d>();
+int count = nc.Points.Count;
+
+//Loop to get all cv points
+for (int i = 0; i <= count - 1; i++) {
+    ControlPoint cp = nc.Points[i];
+    cpList.Add(cp.Location);
+}
+```
+
+</td>
+<td>
+<img src="curve_control_point.png" width="100%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the knot list of a NurbsCurve (nc)
+List<double> knotList = new List<double>();
+int count = nc.Points.Count;
+
+//Loop to get all knots values
+for (int i = 0; i <= count - 1; i++) {
+    double knot = nc.Knots[i];
+    knotList.Add(knot);
+}
+```
+
+</td>
+<td>
+<img src="knots_list.png" width="100%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Divide curve (crv) by number (num)
+//Declare an array of points
+Point3d[ ] points = { };
+
+//Divide the curve by number
+crv.DivideByCount(num, true, out points);
+```
+
+</td>
+<td>
+<img src="kknots_curve.png" width="100%">
+</td>
+</tr>
+</table>
+
+###3.3.2: Surfaces
+
+There are many surface classes derived from the abstract **Rhino.Geometry.Surface** class. The **Surface** class provides common functionality among all of the derived types. The following is a list of the surface classes and a summary description.
+
+<table class="rounded">
+  <tr>
+    <th>Surface Types</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td><b>Extrusion</b></td>
+    <td>Represents surfaces from extrusion. It is much lighter than a NurbsSurface</td>
+  </tr>
+  <tr>
+    <td><b>NurbsSurface</b></td>
+    <td>Used to create free form surfaces</td>
+  </tr>
+  <tr>
+    <td><b>PlaneSurface</b></td>
+    <td>Used to create planar surfaces</td>
+  </tr>
+  <tr>
+    <td><b>RevSurface</b></td>
+    <td>Represents a surface of revolution</td>
+  </tr>
+  <tr>
+    <td><b>SumSurface</b></td>
+    <td>Represents a sum surface, or an extrusion of a curve along a curved path.</td>
+  </tr>
+  <tr>
+    <td><b>SurfaceProxy</b></td>
+    <td>Cannot instantiate an instance of it. Provides a base class to brep faces and other surface proxies.</td>
+  </tr>
+ </table>
+
+#### Create surface objects:
+
+One way to create surfaces is by using the static methods in the **Rhino.Geometry.Surface** class that start with the keyword **Create**. Here are some of these create methods..
+
+<table class="rounded">
+  <tr>
+    <th colspan="2">Create methods in Rhino.Geometry.Surface class</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><b>CreateExtrusion</b></td>
+    <td>Constructs a surface by extruding a curve along a vector.</td>
+  </tr>
+  <tr>
+    <td><b>CreateExtrusionToPoint</b></td>
+    <td>Constructs a surface by extruding a curve to a point.</td>
+  </tr>
+  <tr>
+    <td><b>CreatePeriodicSurface</b></td>
+    <td>Constructs a periodic surface from a base surface and a direction.</td>
+  </tr>
+  <tr>
+    <td><b>CreateRollingBallFillet</b></td>
+    <td>Constructs a rolling ball fillet between two surfaces.</td>
+  </tr>
+  <tr>
+    <td><b>CreateSoftEditSurface</b></td>
+    <td>Creates a soft edited surface from an existing surface using a smooth field of influence.</td>
+  </tr>
+ </table>
+
+The following is an example to create a fillet surface between 2 input surfaces given some radius and tolerance.
+
+<img src="fillet_surface.png"  class="float_right" width="225">
+
+```C#
+private void RunScript(Surface srfA, Surface srfB, double radius, double tol, ref object A)
+{
+    //Declare an array of surfaces
+    Surface[ ] surfaces = {};
+
+    //Check for a valid input
+    if (srfA != null && srfB != null) {
+        //Create fillet surfaces
+        surfaces = Surface.CreateRollingBallFillet(srfA, srfB, radius, tol);
+      }
+  }
+```
+However, the most common way to create a new instance of a derived surface type is to either use the constructor (with **new** keyword), or the **Create** method of the derived surface class. Here are a couple examples that show how to create instances from different surface types. 
+
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">NurbsCurve methods</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the domain or interval of the curve
+Interval domain = crv.Domain;
+```
+
+</td>
+<td>
+<img src="curve_domain.png" width="50%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the start and end points of a curve
+Point3d startPoint = crv.PointAtStart;
+Point3d endPoint = crv.PointAtEnd;
+```
+
+</td>
+<td>
+<img src="start_end_point.png" width="80%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the tangent at start of a curve
+Vector3d startTangent = crv.TangentAtStart;
+```
+
+</td>
+<td>
+<img src="curve_tangent.png" width="80%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the control points of a NurbsCurve (nc)
+List<Point3d> cpList = new List<Point3d>();
+int count = nc.Points.Count;
+
+//Loop to get all cv points
+for (int i = 0; i <= count - 1; i++) {
+    ControlPoint cp = nc.Points[i];
+    cpList.Add(cp.Location);
+}
+```
+
+</td>
+<td>
+<img src="curve_control_point.png" width="80%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the knot list of a NurbsCurve (nc)
+List<double> knotList = new List<double>();
+int count = nc.Points.Count;
+
+//Loop to get all knots values
+for (int i = 0; i <= count - 1; i++) {
+    double knot = nc.Knots[i];
+    knotList.Add(knot);
+}
+```
+
+</td>
+<td>
+<img src="knots_list.png" width="50%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Divide curve (crv) by number (num)
+//Declare an array of points
+Point3d[ ] points = { };
+
+//Divide the curve by number
+crv.DivideByCount(num, true, out points);
+```
+
+</td>
+<td>
+<img src="knots_curve.png" width="80%">
+</td>
+</tr>
+</table>
+
+<table class="multiline" width="100%">
+<tr>
+<th width="20%">Notation</th>
+<th width="50%">Syntax</th>
+<th>result</th>
+</tr>
+<tr>
+<td>
+Create an instance of a **PlaneSurface** using the constructor and **new** keyword
+</td>
+<td>
+
+```C#
+var plane = Plane.WorldXY;
+var x_interval = new Interval(1.0, 3.5);
+var y_interval = new Interval(2.0, 6.0);
+
+//Create planar surface
+var planeSrf = new PlaneSurface(plane, x_interval, y_interval);
+```
+
+</td>
+<td><img src="planesurface.png" width="100%"></td>
+</tr>
+<tr>
+<td>Create an instance of a **RevSurface** from a line and a profile curve</td>
+<td>
+
+```C#
+RevCurve revCrv = … //from input
+Line revAxis = … //from input
+
+//Create surface of revolution
+var revSrf = RevSurface.Create(revCrv, revAxis);
+```
+
+</td>
+<td><img src="revsurface.png" width="100%"></td>
+</tr>
+<tr>
+<td>
+Create an instance of a **NurbsSurface** from a list of control points
+</td>
+<td>
+
+```C#
+List<Point3d> points = … //from input
+
+//Create nurbs surface from control points
+NurbsSurface ns = null;
+ns = NurbsSurface.CreateThroughPoints(points, 2, 2, 1, 1, false, false);
+```
+
+</td>
+<td><img src="nurbsurface_new.png" width="100%"></td>
+</tr>
+<tr>
+<td>
+Create an instance of a **NurbsSurface** from extruding a curve in certain direction 
+</td>
+<td>
+
+```C#
+Curve cv = … //from input
+Vector3d dir = … //from input
+
+//Create a nurbs surface from extruding a curve in some dir
+var nSrf = NurbsSurface.CreateExtrusion(crv, dir);
+//Create an extrusion from extruding a curve in some dir
+var ex = Extrusion.Create(crv, 10, false);
+
+//Note that in Grasshopper 1.0 there is no support to extrusion objects and hence the output within GH is converted to a nurbs surface. The only way to bake an Extrusion instance is to add the object to the active  document from within the scripting component as in the following
+Rhino.RhinoDoc.ActiveDoc.Objects.AddExtrusion(ex);
+```
+
+</td>
+<td><img src="extrude_surface.png" width="100%"></td>
+</tr>
+</table>
+
+#### Surface methods:
+
+Surface methods help edit and extract information about the surface object. For example, you might want to learn if the surface is closed or if it is planar. You might need to evaluate the surface at some parameter to calculate points on the surface, or get its bounding box. There are also methods to extract a lightweight geometry out of the surface. They start with “Try” keyword. For example, you might have a RevSurface that is actually a portion of a torus. In that case, you can call TryGetTorus. All these methods and many more can be accessed through the surface methods. A full list of these methods is documented in the **RhinoCommon SDK** documentation.
+
+
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">NurbsCurve methods</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the domain or interval of the curve
+Interval domain = crv.Domain;
+```
+
+</td>
+<td>
+<img src="curve_domain.png" width="100%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the start and end points of a curve
+Point3d startPoint = crv.PointAtStart;
+Point3d endPoint = crv.PointAtEnd;
+```
+
+</td>
+<td>
+<img src="start_end_point.png" width="100%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the tangent at start of a curve
+Vector3d startTangent = crv.TangentAtStart;
+```
+
+</td>
+<td>
+<img src="curve_tangent.png" width="100%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the control points of a NurbsCurve (nc)
+List<Point3d> cpList = new List<Point3d>();
+int count = nc.Points.Count;
+
+//Loop to get all cv points
+for (int i = 0; i <= count - 1; i++) {
+    ControlPoint cp = nc.Points[i];
+    cpList.Add(cp.Location);
+}
+```
+
+</td>
+<td>
+<img src="curve_control_point.png" width="100%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Get the knot list of a NurbsCurve (nc)
+List<double> knotList = new List<double>();
+int count = nc.Points.Count;
+
+//Loop to get all knots values
+for (int i = 0; i <= count - 1; i++) {
+    double knot = nc.Knots[i];
+    knotList.Add(knot);
+}
+```
+
+</td>
+<td>
+<img src="knots_list.png" width="100%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Divide curve (crv) by number (num)
+//Declare an array of points
+Point3d[ ] points = { };
+
+//Divide the curve by number
+crv.DivideByCount(num, true, out points);
+```
+
+</td>
+<td>
+<img src="kknots_curve.png" width="100%">
+</td>
+</tr>
+</table>
+
 
 ## Next Steps
 
