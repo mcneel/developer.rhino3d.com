@@ -37,7 +37,7 @@ Grasshopper supports multiple scripting languages such as **VB.NET**, **C#** and
 
 The scripting components are integrated within Grasshopper and have a similar interface to that of other typical components. They can read input and produce output, and have an editor to write custom code with access to **RhinoCommon**. They are used to create specialized code and workflows not supported by other Grasshopper components. You can also use them to simplify, optimize and streamline your definitions by combining multiple functions.
 
-To add an instance of the C# script component to the canvas, drag and drop the component from the **Script** panel under the **Maths** tab. The default script component has two inputs and two outputs. The user can change the names of input and output, set the input data type and data structure and also add more inputs and outputs parameters or remove them. We will explain how to do all that shortly.
+To add an instance of the C# script component to the canvas, drag and drop the component from the **Script** panel under the **Maths** tab. The default script component has two inputs and two outputs. The user can change the names of input and output, set the input data type and data structure, and also add more inputs and outputs parameters or remove them. We will explain how to do all that shortly.
 
 <figure>
    <img src="component_base.png">
