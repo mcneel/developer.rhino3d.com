@@ -287,14 +287,14 @@ Arrays are a common way to assemble an ordered group of data. Arrays are best su
 For example, you can organize the days of the week using an array. The following declares and initializes the weekdays array in one step:
 
 ```C#
-//Declare and initialize the days of the week array
+// Declare and initialize the days of the week array
 string[] weekdays = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
 ```
 
 You can also declare the array first with a specific dimension representing the number of elements to allocate in memory for the array, then assign the values of the elements in separate statements. In the C# language, each statement ends with a semicolon.
 
 ```C#
-//Declare the days of the week in one statement, then assign the values later
+// Declare the days of the week in one statement, then assign the values later
 string[ ] weekdays = new string[7];
 weekdays[0] = "Sunday";
 weekdays[1] = "Monday";
@@ -320,10 +320,10 @@ If you need to create an ordered collection of data dynamically, then use a **Li
 
 
 ```C#
-//Declare a dynamic ordered collection using “List”
+// Declare a dynamic ordered collection using “List”
 List<string> myWorkDays =  new List<string>();
 
-//Add any number of new elements to the list
+// Add any number of new elements to the list
 myWorkDays.Add("Tuesday");
 myWorkDays.Add("Wednesday");
 myWorkDays.Add("Thursday");
@@ -341,7 +341,7 @@ Conditional statements allow you to decide on which part of your code to use bas
 
 <figure>
    <img src="conditional_diagram.png">
-   <figcaption>Figure(17): Conditional statements 1 and 2, and how they affect the flow of the program</figcaption>
+   <figcaption>Figure(17): Conditional statements 1 & 2 and how they affect the flow of the program</figcaption>
 </figure> 
 
 The following script examines a number variable and prints “zero” if it equals zero:
@@ -411,7 +411,7 @@ else
 
 ### 2.7.2: Loops
 
-Loops allow you to run the body of your loop a fixed number of times, or until the loop condition is no longer true.
+Loops allow you to run the body of your loop a fixed number of times or until the loop condition is no longer true.
 
 <figure>
    <img src="loop_flow.png" class="image_center" width="75%" >
@@ -428,7 +428,7 @@ This is a common way of looping when you need to run a block of code a specific 
 ```C#
 for (int i = 1; i <= 10; i++)
 {
-  //Convert a number to string
+  // Convert a number to string
   Print( i.ToString() );
 }
 ```
@@ -464,7 +464,7 @@ for (int i = 10; i >= -10; i = i-2)
 }
 ```
 
-If you happen to have an array that you need to iterate through, then you can set your counter to loop through the indices of your array. Just remember that the indices of arrays are zero-based,and therefore, you need to remember to loop from index=0 to the length of the array minus 1, or else you will get an out-of-bound error.
+If you happen to have an array that you need to iterate through, then you can set your counter to loop through the indices of your array. Just remember that the indices of arrays are zero-based, and therefore, you need to remember to loop from index=0 to the length of the array minus 1, or else you will get an out-of-bounds error.
 
 ```C#
 string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -475,17 +475,17 @@ for (int i = 0; i < letters.Length; i++)
 }
 ```
 
-Here is another example that iterates through a list of places.
+Here is another example that iterates through a list of places:
 
 ```C#
-//List of places
+// List of places
 List< string > placesList = new List< string >();
 placesList.Add( "Paris" );
 placesList.Add( "NY" );
 placesList.Add( "Beijing" );
 
 int count = placesList.Count();
-//Loop starting from 0 to count -1 (count = 3, but last index of the placesList is 2)
+// Loop starting from 0 to count -1 (count = 3, but last index of the placesList is 2)
 for (int i = 0; i < count; i++)
 { 
     Print( "I have been to " + placesList[i] );
@@ -494,16 +494,16 @@ for (int i = 0; i < count; i++)
 
 **Iterative Loops: foreach loop**
 
-You can use the **foreach** loop to iterate through the elements of an array or a list without using a counter or index. This is a less error-prone way to avoid out of bound error. The above example can be rewritten as follows to use **foreach** instead of the **for** loop:
+You can use the **foreach** loop to iterate through the elements of an array or a list without using a counter or index. This is a less error-prone way to avoid an out-of-bounds error. The above example can be rewritten as follows to use **foreach** instead of the **for** loop:
 
 ```C#
-//List of places
+// List of places
 List< string > placesList = new List< string >();
 placesList.Add( "Paris" );
 placesList.Add( "NY" );
 placesList.Add( "Beijing" );
 
-//Loop
+// Loop
 foreach (string place in placesList)
 {
     Print(place);
@@ -513,7 +513,8 @@ foreach (string place in placesList)
 **Conditional Loops: while loop**
 
 Conditional loops are ones that keep repeating until certain conditions are no longer true. You have to be very careful when you use conditional loops because you can be trapped looping infinitely until you crash when your condition continues to be true.
-Some problems can be solved iteratively but others cannot. For example if you need to find the sum of 10 consecutive positive even integers starting with 2, then this can be solved iteratively with a **for** loop. Why? This is because you have a specified number of times to loop (10 in this case). This is how you might write your loop to solve your problem.
+
+Some problems can be solved iteratively, but others cannot. For example, if you need to find the sum of 10 consecutive positive even integers starting with 2, then this can be solved iteratively with a **for** loop. Why? This is because you have a specified number of times to loop (10 in this case). This is how you might write your loop to solve your problem:
 
 ```C#
 int sum = 0;
@@ -530,15 +531,15 @@ On the other hand, if you need to add consecutive positive even integers startin
 int sum = 0;
 int counter = 0;
 int number = 2;
-//Loop
+// Loop
 while (sum < 1000)
 {
    sum = sum + number;
-   //Make sure you increment the counter and the number
+   // Make sure you increment the counter and the number
    counter = counter + 1;
    number = number + 2;
 }
-//Remove last number
+// Remove last number
 sum -= number;
 counter --;
 Print("Count = " + counter);
@@ -562,30 +563,30 @@ Print( x.ToString() );
 
 **Nested loops**
 
-A nested loop is a loop that contains another loop inside it. You can nest as many loops as you need, but keep in mind that this can make the logic harder to follow.
+A nested loop is a loop that contains another loop inside it. You can nest as many loops as you need, but keep in mind this can make the logic harder to follow.
 
 <figure>
    <img src="nested_loops.png" class="image_center" width="75%">
-   <figcaption>Figure(19): Nested loops.</figcaption>
+   <figcaption>Figure(19): Nested loops</figcaption>
 </figure> 
 
 For example, suppose you have the following list of words as input: {apple, orange, banana, strawberry} and you need to calculate the number of letters **a**. You will have to do the following:
 1. Loop through each one of the fruits. This is the outer loop.
-1. For each fruit, loop through all the letters. This is the inner, or the nested, loop.
-1. Whenever you find the letter “a” increment your counter by 1.
-1. Print the counter.
+2. For each fruit, loop through all the letters. This is the inner loop (nested).
+3. Whenever you find the letter “a”, increment your counter by 1.
+4. Print the counter.
 
 ```C#
-//Declare and initialize the fruits
+// Declare and initialize the fruits
 string[ ] fruits =  {“apple”, “orange”, “banana”, “strawberry”};
 int count = 0;
-//Loop through the fruits
+// Loop through the fruits
 foreach (string fruit in fruits)
 {
-   //loop through the letters in each fruit
+   // Loop through the letters in each fruit
    foreach (char letter in fruit)
    {
-      //Check if the letter is ‘a"
+      // Check if the letter is "a"
       If (letter == ‘a’)      {
          count = count + 1;
       }
@@ -596,40 +597,40 @@ Print( “Letter a is repeated “ + count + “ times“ );
 
 **Using break and continue inside loops**
 
-The **break** statement is used to terminate or exit the loop while the **continue** statement helps skip one loop iteration. Here is an example to show the use of both. It checks if there is an orange in a list of fruits, and counts how many fruits have at least one letter **r** in their name.
+The **break** statement is used to terminate or exit the loop, while the **continue** statement helps skip one loop iteration. Here is an example to show the use of both. It checks if there is an orange in a list of fruits and counts how many fruits have at least one letter **r** in their name.
 
 ```C#
-//Declare and initialize the fruits
+// Declare and initialize the fruits
 string[ ] fruits =  {“apple”, “orange”, “banana”, “strawberry”};
 //Check if there is at least one orange
 foreach (string fruit in fruits)
 {
-   //Check if it is an orange
+   // Check if it is an orange
    if (fruit == "orange")
    {
-      //Check if the letter is ‘a"
+      // Check if the letter is ‘a"
       Print( "Found an orange" );
-      //No need to check the rest of the list, exit the loop
+      // No need to check the rest of the list, exit the loop
       break;
    }
 }
-//Check how many fruits has at least one letter ‘r’ in the name
+// Check how many fruits has at least one letter ‘r’ in the name
 int count = 0;
-//Loop through the fruits
+// Loop through the fruits
 foreach (string fruit in fruits)
 {
-   //loop through the letters in each fruit
+   // Loop through the letters in each fruit
    foreach (char letter in fruit)
    {
-      //Check if the letter is ‘r"
+      // Check if the letter is "r"
       if (letter == ‘r’)      {
          count = count + 1;
-         //No need to check the rest of the letters, and skip to the next fruit
+         // No need to check the rest of the letters, and skip to the next fruit
          continue;
       }
    }
 }
-Print( "Number of fruits that has at least one letter r is: " + count );
+Print( "Number of fruits that have at least one letter r is: " + count );
 ```
 
 ## 2.8: Methods
@@ -643,7 +644,7 @@ A method is a self-contained entity that performs a specific task. The program c
    <figcaption>Figure(20): Sequential flow of the script where tasks are repeated</figcaption>
 </figure> 
 
-Most programming languages allow you to organize your tasks into separate modules or what is called functions or methods. You can think of Grasshopper components each as a function. This allows you to write the instructions of each task once and give it an identifying name. Once you do that, anytime you need to perform the task in your program, you simply call the name of that task. Your program flow will look like the following:
+Most programming languages allow you to organize your tasks into separate modules or what are called functions or methods. You can think of each Grasshopper component as a function. This allows you to write the instructions of each task once and give it an identifying name. Once you do that, anytime you need to perform the task in your program, you simply call the name of that task. Your program flow will look like the following:
 
 
 <figure>
@@ -653,19 +654,19 @@ Most programming languages allow you to organize your tasks into separate module
 
 Whenever you need to perform the same task multiple times in different places in your code, you should consider isolating it in a separate function. Here are some of the benefits you will get from using functions:
 1. Break your program into manageable pieces. It is much easier to understand, develop, test and maintain smaller chunks of code, than one big chunk.
-1. Write and test the code once, and reuse instead of writing it again. Also update in one place if a modification is required at any time.
+2. Write and test the code once, and reuse instead of writing it again. Also update in one place if a modification is required at any time.
 
 Writing functions might not always be easy and it needs some planning. There are four general steps that you need to satisfy when writing a function:
 1. Define the purpose of your function and give it a descriptive name.
-1. Identify the data that comes into the function when it is called.
-1. Identify the data that the function needs to hand back or return.
-1. Consider what you need to include inside the function to perform your task.
+2. Identify the data that comes into the function when it is called.
+3. Identify the data that the function needs to hand back or return.
+4. Consider what you need to include inside the function to perform your task.
 
 For example, suppose you would like to develop a function that checks whether a given natural number is a prime number or not. Here are the four things you need to do:
 1. **Purpose & name**: Check if a given number is prime. Find a descriptive name for your function, for example “**IsPrimeNumber**”.
-1. **Input parameters**: Pass your number as type integer.
-1. **Return**: True if the number is prime, otherwise return false.
-1. **Implementation**: Use a loop of integers between 2 and half the number. If the number is not divisible by any of those integers, then it must be a prime number. Note that there might be other more efficient ways to test for a prime number that can expedite the execution.
+2. **Input parameters**: Pass your number as type integer.
+3. **Return**: True if the number is prime, otherwise return false.
+4. **Implementation**: Use a loop of integers between 2 and half the number. If the number is not divisible by any of those integers, then it must be a prime number. Note that there might be other more efficient ways to test for a prime number that can expedite the execution.
 
 {{< div class="line-numbers" >}}
 ```C#
@@ -678,7 +679,7 @@ bool IsPrimeNumber( int x)
       if( x % i == 0)
       {
         primeFlag = false;
-        break; //exit the loop
+        break; // Exit the loop
       }
     }
     return primeFlag;
@@ -744,16 +745,16 @@ Let’s expand the **IsPrimeNumber** function to return all the numbers that the
 ```C#
 private void RunScript(int num, ref object IsPrime, ref object Factors)
 {
-    //Assign variables to output
+    // Assign variables to output
     List<int> factors = new List<int>();
     IsPrime= isPrimeNumber(num, factors);
     Factors = factors;
 }
-//Note: “List” is a reference type and hence you can pass it by value (without “ref” keyword)
+// Note: “List” is a reference type and hence you can pass it by value (without “ref” keyword)
 //          and the caller still get any changes the function makes to the list
 bool IsPrimeNumber( int num, ref List<int> factors )
 {
-    //all numbers are divisible by 1
+    // All numbers are divisible by 1
     factors.Add(1);
     bool primeFlag = true;
     for( int i = 2; i < (num / 2); i++)
@@ -764,7 +765,7 @@ bool IsPrimeNumber( int num, ref List<int> factors )
         factors.Add( i); //append number
       }
     }
-    //all numbers are divisible by the number itself
+    // All numbers are divisible by the number itself
     factors.Add(num);
 
     return primeFlag;
@@ -853,13 +854,13 @@ A structure is used to define a new **value-type**. In C# programming , we use t
 
 ```C#
 struct ColorPoint{
-    //fields for the point XYZ location and color
+    // Fields for the point XYZ location and color
     private double _x;
     private double _y;
     private double _z;
     private System.Drawing.Color _c;
 
-    //properties to get and set the location and color
+    // Properties to get and set the location and color
     public double X { get { return _x; } set { _x = value; } }
     public double Y { get { return _y; } set { _y = value; } }
     public double Z { get { return _z; } set { _z = value; } }
@@ -871,9 +872,9 @@ As an example, you might have two instances of the **ColorPoint** type, and you 
 
 ```C#
     ColorPoint cp0 = new ColorPoint();
-    //Using default constructor sets the fields to zero
+    // Using default constructor sets the fields to zero
     Print("Default ColorPoint 0: X=" + cp0.X + ", Y=" + cp0.Y + ", Z=" + cp0.Z + ", Color=" + cp0.C.Name);
-    //set fields
+    // Set fields
     cp0.X = x;
     cp0.Y = y;
     cp0.Z = z;
@@ -881,19 +882,19 @@ As an example, you might have two instances of the **ColorPoint** type, and you 
     Print("ColorPoint 0: X=" + cp0.X + ", Y=" + cp0.Y + ", Z=" + cp0.Z + ", Color=" + cp0.C.Name);
 
     ColorPoint cp1 = new ColorPoint();
-    //set fields
+    // Set fields
     cp1.X = x1;
     cp1.Y = y1;
     cp1.Z = z1;
     cp1.C = c1;
     Print("ColorPoint 1: X=" + cp1.X + ", Y=" + cp1.Y + ", Z=" + cp1.Z + ", Color=" + cp1.C.Name);
 
-    //compare location
+    // Compare location
     MatchLoc = false;
     if(cp0.X == cp1.X && cp0.Y == cp1.Y && cp0.Z == cp1.Z)
       MatchLoc = true;
 
-    //compare color
+    // Compare color
     MatchColor = cp0.C.Equals(cp1.C);
 ```
 
@@ -905,12 +906,12 @@ Structs typically define one or more constructors to allow setting the fields. H
 
 ```C#
 struct ColorPoint{
-    //fields
+    // Fields
     private double _x;
     private double _y;
     private double _z;
     private System.Drawing.Color _c;
-    //constructor
+    // Constructor
     public ColorPoint(double x, double y, double z, System.Drawing.Color c)
     {
       _x = x;
@@ -918,7 +919,7 @@ struct ColorPoint{
       _z = z;
       _c = c;
     }
-    //properties
+    // Properties
     public double X { get { return _x; } set { _x = value; } }
     public double Y { get { return _y; } set { _y = value; } }
     public double Z { get { return _z; } set { _z = value; } }
@@ -929,21 +930,21 @@ struct ColorPoint{
 You can use properties to only set or get data. For example you can write a property that get the color saturation:
 
 ```C#
-    //property
+    // Property
     public double Saturation { get { return _c.GetSaturation(); } }
 ```
 
 We can rewrite the **Saturation** property as a method as in the following:
 
 ```C#
-    //method
+    // Method
     public double Saturation() { return _c.GetSaturation(); }
 ```
 
 However, methods typically include more complex functionality, multiple input or possible exceptions. There are no fixed rules about when to use either, but it is generally acceptable that properties involve data, while methods involve actions. We can write a method to calculate the average location and color of two input ColorPoints.
 
 ```C#
-    //method
+    // Method
     public static Average (ColorPoint a, ColorPoint b)
     {
       ColorPoint avPt = new ColorPoint();
@@ -957,7 +958,7 @@ However, methods typically include more complex functionality, multiple input or
 Structures can include members and methods that can be called even if there is no instance created of that type. Those use the keyword **static**. For example, we can add a member called OriginBlack that creates a black point located at the origin. We can also include a **static** method to compare if two existing points have the same color, as in the following.
 
 ```C#
-    //static methods
+    // Static methods
     public static bool IsEqualLocation(ColorPoint p1, ColorPoint p2)
     {
       return (p1.X == p2.X && p1.Y == p2.Y && p1.Z == p2.Z);
@@ -993,14 +994,14 @@ Using our **ColorPoint** struct, the following is a program that generates 2 col
 <img src="ponts_avg.png"  class="float_right" width="225">
 
 ```C#
-    //create 2 instances of ColorPoints type
+    // Create 2 instances of ColorPoints type
     ColorPoint cp0 = new ColorPoint(1, 1, 1, System.Drawing.Color.Red);
     ColorPoint cp1 = new ColorPoint(1, 1, 1, System.Drawing.Color.Blue);
-    //compare location
+    // Compare location
     bool matchLoc = ColorPoint.isEqualLocation(cp0, cp1);
-    //compare color
+    // Compare color
     Bool matchColor = ColorPoint.isEqualColor(cp0, cp1);
-    //Output average point and color
+    // Output average point and color
     ColorPoint avPt = ColorPoint.Average(cp0, cp1);
 ```
 
@@ -1010,11 +1011,11 @@ Classes help create new data types that are **reference-type**. They also have a
 
 ```C#
 class CPoint{
-    //fields
+    // Fields
     private double _x;
     private double _y;
     private double _z;
-    //constructors
+    // Constructors
     public CPoint() : this(0,0,0) //default calls another constructor
     {
     }
@@ -1024,11 +1025,11 @@ class CPoint{
       _y = y;
       _z = z;
     }
-    //properties
+    // Properties
     public double X { get { return _x; } set { _x = value; } }
     public double Y { get { return _y; } set { _y = value; } }
     public double Z { get { return _z; } set { _z = value; } }
-    //static methods
+    // Static methods
     public static bool IsEqualLocation(CColorPoint p1, CColorPoint p2)
     {
       return (p1.X == p2.X && p1.Y == p2.Y && p1.Z == p2.Z);
@@ -1036,10 +1037,10 @@ class CPoint{
 }
 
 class CColorPoint: CPoint{
-    //fields
+    // Fields
     private System.Drawing.Color _c;
 
-    //constructors
+    // Constructors
     public CColorPoint() : base()//default
     {
       _c = System,.Drawing.Color.White;
@@ -1048,14 +1049,14 @@ class CColorPoint: CPoint{
     {
       _c = c;
     }
-    //properties
+    // Properties
     public System.Drawing.Color C { get { return _c; } set { _c = value; } }
-    //static methods
+    // Static methods
     public static bool IsEqualColor(CColorPoint p1, CColorPoint p2)
     {
       return p1.C.Equals(p2.C);
     }
-    //method
+    // Method
     public static CColorPoint Average (CColorPoint a, CColorPoint b)
     {
       CColorPoint avPt = new CColorPoint();
@@ -1069,6 +1070,7 @@ class CColorPoint: CPoint{
 ```
 
 You can use the same program written above for **ColorPoint struct** to create an average point between 2 color points. The only difference is that if you now pass an instance of the class **CColorPoint** to a function, it will be passed by reference, even without using the **ref** keyword.
+
 Here are the key differences between structures and classes:
 
 <table class="rounded">
@@ -1136,17 +1138,17 @@ You may need your structures and classes to implement some common functionality.
 ```C#
 struct ColorPoint: IEquatable<ColorPoint>
 {
-    //fields
+    // Fields
     private double _x;
     private double _y;
     private double _z;
     private System.Drawing.Color _c;
-    //properties
+    // Properties
     public double X { get { return _x; } set { _x = value; } }
     public double Y { get { return _y; } set { _y = value; } }
     public double Z { get { return _z; } set { _z = value; } }
     public System.Drawing.Color C { get { return _c; } set { _c = value; } }
-    //implement Equals method inside IEquatable interface - if omitted, you’ll get error
+    // Implement Equals method inside IEquatable interface - if omitted, you’ll get error
     public bool Equals( ColorPoint pt )
     {
         return (this._x == pt._x && this._y == pt._y && this._z == pt._z && this._c == pt._c);
@@ -1174,16 +1176,16 @@ The input to the scripting component is the path to the text file, and the outpu
 Here is the code inside the script component. It reads the file line by line, then parses each into a point assuming that each point is stored in one line and the coordinates are comma separated.
 
 ```C#
-//Read the file
+// Read the file
 string[] lines = File.ReadAllLines(path);
-//Declare list of points (Point3d is a data type in RhinoCommon SDK)
+// Declare list of points (Point3d is a data type in RhinoCommon SDK)
 List<Point3d> pts = new List<Point3d>();
-//Loop through lines
+// Loop through lines
 foreach (string line in lines)
 {
-      //Tokenize line into array of strings separated by ","
+      // Tokenize line into array of strings separated by ","
       string[] parts = line.Split(",".ToCharArray());
-      //Convert each coordinate from string to double
+      // Convert each coordinate from string to double
       double x = Convert.ToDouble(parts[0]);
       double y = Convert.ToDouble(parts[1]);
       double z = Convert.ToDouble(parts[2]);
@@ -1196,40 +1198,40 @@ The above code does not do any validation of the data and will only work if the 
 
 ```C#
 if ((!File.Exists(path)) || !read) {
-      //Show message box
+      // Show message box
       System.Windows.Forms.MessageBox.Show("File does not exist or could not be read");
-      //Give feedback in the component out parameter
+      // Give feedback in the component out parameter
       Print("Exit without reading");
       return;
 }
-//Read the file
+// Read the file
 string[] lines = File.ReadAllLines(path);
-//Check that file is not empty
+// Check that file is not empty
 if ((lines == null)) 
 {
     Print("File has no content. Exit without reading");
     return;
 }
-//Declare list of points (Point3d is a data type in RhinoCommon SDK)
+// Declare list of points (Point3d is a data type in RhinoCommon SDK)
 List<Point3d> pts = new List<Point3d>();
-//Characters to remove
+// Characters to remove
 var charsToRemove = new string[] { " ", ")", "(", "[", "]", "{", "}" };
-//Loop through lines
+// Loop through lines
 foreach (string line in lines)
 {
-    //Trim invalid char
+    // Trim invalid char
     var tLine = line;
     foreach (var c in charsToRemove)
     {
         tLine = tLine.Replace(c, string.Empty);
     }
     if (String.IsNullOrEmpty(line)) continue;
-    //Tokenize line into array of strings separated by ","
+    // Tokenize line into array of strings separated by ","
     string[] parts = tLine.Split(",".ToCharArray());
-    //Make sure that each line has exactly 3 values
+    // Make sure that each line has exactly 3 values
     if (parts.Length != 3)
         continue;
-    //Convert each coordinate from string to double
+    // Convert each coordinate from string to double
     double x = Convert.ToDouble(parts[0]);
     double y = Convert.ToDouble(parts[1]);
     double z = Convert.ToDouble(parts[2]);
@@ -1288,14 +1290,14 @@ In the following recursive solution, note that inside the **DivideAndRotate** fu
 ```C#
 private void RunScript(Line inputLine, double angle, double minLength, ref object Lines)
 {
-    //Declare all lines
+    // Declare all lines
     List<Line> allLines = new List<Line>();
 
 
-    //Call recursive function
+    // Call recursive function
     if(inputLine.IsValid && angle != 0 && minLength > 0)
     {
-        //Append input line as a first line in the list of lines
+        // Append input line as a first line in the list of lines
         allLines.Add(inputLine);
         DivideAndRotate(inputLine, ref allLines, angle, minLength);
     }
@@ -1303,16 +1305,16 @@ private void RunScript(Line inputLine, double angle, double minLength, ref objec
         Print("Invalid input. Nothing done.");
 
 
-    //Assign return value
+    // Assign return value
     Lines = allLines;
 }
   public void DivideAndRotate(Line currLine, ref List<Line> allLines, double angle, double minLength)
   {
-    //Check the stopping condition
+    // Check the stopping condition
     if (currLine.Length < minLength)
       return;
 
-    //Take a portion of the line
+    // Take a portion of the line
     Line newLine = new Line();
     newLine = currLine;
 
@@ -1321,14 +1323,14 @@ private void RunScript(Line inputLine, double angle, double minLength, ref objec
 
     newLine.To = endPt;
 
-    //Rotate
+    // Rotate
     Transform xform = default(Transform);
     xform = Transform.Rotation(angle, Vector3d.ZAxis, newLine.From);
     newLine.Transform(xform);
 
     allLines.Add(newLine);
 
-    //Call self
+    // Call self
     DivideAndRotate(newLine, ref allLines, angle, minLength);
   }
 ```
@@ -1345,24 +1347,24 @@ We can solve the same problem using an iterative solution through a conditional 
 ```C#
 private void RunScript(Line inputLine, double angle, double minLength, ref object Lines)
 {
-    //Declare all lines
+    // Declare all lines
     var allLines = new List<Line>();
 
 
     if(inputLine.IsValid && angle != 0 && minLength > 0)
     {
-        //Find current length
+        // Find current length
         double length = inputLine.Length;
         Line newLine = default(Line);
         newLine = inputLine;
-        //Loop until length is less than min length
+        // Loop until length is less than min length
         while (length > minLength)
         {
-            //Generate the new line
+            // Generate the new line
             newLine = DivideAndRotate(newLine, angle);
-            //Add to list
+            // Add to list
             allLines.Add(newLine);
-            //Stopping condition
+            // Stopping condition
             length = newLine.Length;
         }
     }
@@ -1370,20 +1372,20 @@ private void RunScript(Line inputLine, double angle, double minLength, ref objec
         Print("Invalid input. Nothing done.");
 
 
-    //Assign return value
+    // Assign return value
     Lines = allLines;
 }
 public Line DivideAndRotate(Line currLine, double angle)
 {
-    //Take a portion of the line
+    // Take a portion of the line
     Line newLine = new Line();
     newLine = currLine;
     Point3d endPt = new Point3d();
     endPt = newLine.PointAt(0.95);
     newLine.To = endPt;
-    //Rotate
+    // Rotate
     newLine.Transform(Transform.Rotation(angle, Vector3d.ZAxis, newLine.From));
-    //Function return
+    // Function return
     return newLine;
 }
 ```
