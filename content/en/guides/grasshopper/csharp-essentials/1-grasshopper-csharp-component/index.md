@@ -238,7 +238,7 @@ private void RunScript( double x, ref object a )
 
 **List access** means the whole list is processed all in one call to the scripting component. In the previous example, we can change the data access from **item access** to **list access** and change the script to add 10 to each one of the items in the list as in the following. *Note that the script runs only once.*
 
-<img src="xlist_acess_10.png">
+<img src="xlist_access_10.png">
 
 ```C#
 private void RunScript( List<double> xList, ref object a )
@@ -285,7 +285,7 @@ private void RunScript( Point3d pt, ref object Sphere)
 
 The same result can be achieved with the **list access**, but this time, your code will have to process each branch as a list. The script runs 2 times, once for each branch.
 
-<img src="ptlist_acess.png">
+<img src="ptlist_access.png">
 
 ```C#
 private void RunScript( List<Point3d> ptList, ref object Spheres)
@@ -319,7 +319,7 @@ private void RunScript( List<Point3d> ptList, ref object Spheres)
 
 The **tree access** allows you to process the whole tree, and your code will run only once. While this might be necessary in some cases, it also complicates your code.
 
-<img src="pttree_acess.png">
+<img src="pttree_access.png">
 
 ```C#
 private void RunScript( DataTree<Point3d> ptTree, ref object Spheres)
