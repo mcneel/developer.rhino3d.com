@@ -637,36 +637,36 @@ Print( "Number of fruits that have at least one letter r is: " + count );
 
 ### 2.8.1: Overview
 
-A method is a self-contained entity that performs a specific task. The program can call it any number of times. Functions are basically used to organize your program into sub-tasks. The following is an example of the flow of a program that uses two distinct tasks repeatedly, but does not implement as a separate function, and hence has to retype at each encounter.
+A method is a self-contained block of code that performs a specific task. Methods, which are similar to functions, can be called multiple times within a program, allowing for code reusability and modularity. Functions are basically used to organize your program into sub-tasks. The following is an example of a program flow that performs two specific tasks multiple times. Without using separate functions for these tasks, the same code must be rewritten each time the tasks are needed, leading to unnecessary repetition.
 
 <figure>
    <img src="task_flow.png">
    <figcaption>Figure(20): Sequential flow of the script where tasks are repeated</figcaption>
 </figure> 
 
-Most programming languages allow you to organize your tasks into separate modules or what are called functions or methods. You can think of each Grasshopper component as a function. This allows you to write the instructions of each task once and give it an identifying name. Once you do that, anytime you need to perform the task in your program, you simply call the name of that task. Your program flow will look like the following:
+Most programming languages let you organize your tasks into separate modules, known as functions or methods. Think of each Grasshopper component like a function. You write the instructions for a task once, give it a name, and then use that name to refer to it whenever you need to perform the task again in your program. This makes your code cleaner and easier to manage. Your program flow will look like the following:
 
 
 <figure>
    <img src="method_flow.png">
-   <figcaption>Figure(21): Methods can be called and executed as many times as the script requires</figcaption>
+   <figcaption>Figure(21): Methods can be called and executed as many times as the program requires</figcaption>
 </figure> 
 
-Whenever you need to perform the same task multiple times in different places in your code, you should consider isolating it in a separate function. Here are some of the benefits you will get from using functions:
-1. Break your program into manageable pieces. It is much easier to understand, develop, test and maintain smaller chunks of code, than one big chunk.
-2. Write and test the code once, and reuse instead of writing it again. Also update in one place if a modification is required at any time.
+When you need to do the same task multiple times in your code, it’s a good idea to put that task in its own function. Using functions has several advantages:
+1. It divides your program into smaller, easier-to-manage pieces. Smaller sections of code are simpler to understand, develop, test, and maintain than a large, single block.
+2. You write and test the code once, then reuse it wherever needed. If you need to make changes, you only have to update it in one place.
 
-Writing functions might not always be easy and it needs some planning. There are four general steps that you need to satisfy when writing a function:
-1. Define the purpose of your function and give it a descriptive name.
-2. Identify the data that comes into the function when it is called.
-3. Identify the data that the function needs to hand back or return.
+Writing functions might not always be easy, and they need some planning. There are four general steps you need to satisfy when writing a function:
+1. Define the purpose of your function, and give it a descriptive name.
+2. Identify the data that goes into the function when it is called.
+3. Identify the data that the function needs to give back or return.
 4. Consider what you need to include inside the function to perform your task.
 
-For example, suppose you would like to develop a function that checks whether a given natural number is a prime number or not. Here are the four things you need to do:
+For example, suppose you would like to develop a function that checks whether a given natural number is a prime number or not. Here are four things you need to do:
 1. **Purpose & name**: Check if a given number is prime. Find a descriptive name for your function, for example “**IsPrimeNumber**”.
 2. **Input parameters**: Pass your number as type integer.
 3. **Return**: True if the number is prime, otherwise return false.
-4. **Implementation**: Use a loop of integers between 2 and half the number. If the number is not divisible by any of those integers, then it must be a prime number. Note that there might be other more efficient ways to test for a prime number that can expedite the execution.
+4. **Implementation**: Use a loop of integers between 2 and half the number. If the number is not divisible by any of those integers, then it must be a prime number. *Note: There are more efficient ways to quickly test for a prime number.*
 
 {{< div class="line-numbers" >}}
 ```C#
@@ -705,7 +705,7 @@ Let us dissect the different parts of the **IsPrimeNumber** function to understa
 </tr>
 <tr>
 <td>13</td>
-<td>Return value. Use return keyword to indicate the value the function hands back.
+<td>Return value. Use return keyword to indicate the value the function gives back.
 </td>
 </tr>
 </table>
@@ -729,7 +729,7 @@ Input parameters are enclosed within parentheses after the method name. The para
   </tr>
   <tr>
     <td><b>Pass by value</b> a <b>reference-type</b> data such as lists, arrays, object, and all classes</td>
-    <td>Reference Type data holds the address of the data in the memory. Passing a Reference Type data by value simply copy the address, so changes inside the function will change original data. If the caller cares that ita data is not affected by the function, it should duplicate the data before passing it to any function</td>
+    <td>Reference-Type data holds the address of the data in memory. Passing a Reference-Type data by value simply copies the address, so changes inside the function will change the original data. If the caller cares that its data is not affected by the function, it should duplicate the data before passing it to any function.</td>
   </tr>
   <tr>
     <td><b>Pass by reference</b> a <b>reference-type</b> data</td>
@@ -738,9 +738,9 @@ Input parameters are enclosed within parentheses after the method name. The para
 </table>
 
 
-As you can see from the table, whether the parameter is passed as a copy (by value) or as a reference (by reference), is mostly relevant to **value-type** variables such as **int**, **double**, **bool**, etc. If you need to pass a **reference-type** such as objects and lists, and you do not wish the function to change your original data (act as though the variable is passed by value), then you need to duplicate your data before passing it. All input values to the GH **RunScript** function (the main function in the scripting component) are duplicated before being used inside the component so that input data is not affected.
+As you can see from the table, whether the parameter is passed as a copy (by value) or as a direct link (by reference), it's mostly relevant to **value-type** variables such as **int**, **double**, **bool**, etc. If you need to pass a **reference-type** such as objects and lists, and you do not wish the function to change your original data (act as though the variable is passed by value), then you need to duplicate your data before passing it. All input values to the GH **RunScript** function (the main function in the scripting component) are duplicated before being used inside the component so that input data is not affected.
 
-Let’s expand the **IsPrimeNumber** function to return all the numbers that the input is divisible by. We can pass a list of numbers to be set inside the function (**List** is a reference type). Notice it will not matter if you pass the list with the **ref** keyword or not. In both cases, the caller changes the original data inside the function.
+Let’s expand the **IsPrimeNumber** function to return all numbers each input is divisible by. We can pass a list of numbers to be processed inside the function (**List** is a reference type). Notice it does not matter if you pass the list with the **ref** keyword. In both cases, the caller changes the original data inside the function.
 
 ```C#
 private void RunScript(int num, ref object IsPrime, ref object Factors)
@@ -751,7 +751,7 @@ private void RunScript(int num, ref object IsPrime, ref object Factors)
     Factors = factors;
 }
 // Note: “List” is a reference type and hence you can pass it by value (without “ref” keyword)
-//          and the caller still get any changes the function makes to the list
+//          and the caller still gets any changes the function makes to the list
 bool IsPrimeNumber( int num, ref List<int> factors )
 {
     // All numbers are divisible by 1
@@ -772,7 +772,7 @@ bool IsPrimeNumber( int num, ref List<int> factors )
 }
 ```
 
-Passing parameters **by reference** using keyword **ref** is very useful when you need to get more than one **value-type** back from your function. Since functions are allowed to return only one value, programmers typically pass more parameters by reference as a way to return more values. Here is an example of a division function that returns success if the calculation is successful, but also returns the result of the division using the **rc** parameter that is passed **by-reference**.
+Passing parameters **by reference** using keyword **ref** is very useful when you need to get more than one **value-type** back from your function. Since functions are allowed to return only one value, programmers typically pass more parameters by reference as a way to return more values. Here is an example of a division function that returns success if the calculation is successful but also returns the result of the division using the **rc** parameter that is passed **by-reference**.
 
 ```C#
 public bool Divide(double x, double y, ref double rc)
@@ -785,7 +785,7 @@ public bool Divide(double x, double y, ref double rc)
 }
 ```
 
-As we explained before, the **RunScript** is the main function that is available is the **C#** and other script components. This is where the main code lives. Notice that the scripting component output is passed by reference. This is what you see when you open a default **C#** script component in Grasshopper.
+As we explained before, **RunScript** is the main function that is available in the **C#** and other script components. This is where the main code lives. Notice that the scripting component output is passed by reference. This is what you see when you open a default **C#** script component in Grasshopper.
 
 <img src="runscript_ref.png">
 
@@ -797,7 +797,7 @@ As we explained before, the **RunScript** is the main function that is available
   </tr>
   <tr>
     <td>{ </br> }</td>
-    <td>Curly parentheses enclose the function body of code.</td>
+    <td>Curly parentheses enclose the function's body of code.</td>
   </tr>
   <tr>
     <td><b>RunScript</b></td>
@@ -809,25 +809,25 @@ As we explained before, the **RunScript** is the main function that is available
   </tr>
   <tr>
     <td><b>object x</b></td>
-    <td><b>x</b> is the first input parameter. It is passed by value and its type is object. That means changes to “x” inside the RunScript does not change the original value.</td>
+    <td><b>x</b> is the first input parameter. It is passed by value, and its type is object. That means changes to “x” inside the RunScript do not change the original value.</td>
   </tr>
   <tr>
     <td><b>object y</b></td>
-    <td><b>y</b> is the second input parameter. It is passed ByVal and its type is Object.</td>
+    <td><b>y</b> is the second input parameter. It is passed ByVal, and its type is Object.</td>
   </tr>
   <tr>
     <td><b>ref object a</b></td>
-    <td><b>ax</b>is the third input parameter. It is passed by reference and its type is object. It is also an output because you can assign it a value inside your script and the change will be carried outside the RunScript function.</td>
+    <td><b>ax</b>is the third input parameter. It is passed by reference, and its type is Object. It is also an output, because you can assign it a value inside your script and the change will be carried outside the RunScript function.</td>
   </tr>
 </table>
 
 ## 2.9: User-Defined Data Types
 
-We mentioned above that there are built-in data types and come with and are supported by the programming language such as int, double, string and object. However, users can create their own custom types with custom functionality that suits the application. There are a few ways to create custom data types. We will explain the most common ones: enumerations, structures and classes.
+We mentioned above that there are built-in data types supported by the programming language, such as int, double, string, and object. However, users can create their own custom data types with specific functionalities that suit the application. There are a few ways to create custom data types. We will explain the most common ones: enumerations, structures, and classes.
 
 ### 2.9.1: Enumerations
 
-Enumerations help make the code more readable. An enumeration “provides an efficient way to define a set of named integral constants that may be assigned to a variable”. You can use enumerations to group a family of options under one category and use descriptive names. For example, there are only three values in a traffic light signal.
+Enumerations help make the code more readable. An enumeration “provides an efficient way to define a set of named integral constants that may be assigned to a variable.” You can use enumerations to group a family of options under one category and use descriptive names. For example, there are only three values in a traffic light signal.
 
 ```C#
 enum Traffic
@@ -850,17 +850,17 @@ else
 
 ### 2.9.2: Structures
 
-A structure is used to define a new **value-type**. In C# programming , we use the keyword **struct** to define new structure. The following is an example of a simple structure that defines a number of variables (fields) to create a custom type of a colored 3D point. We use **private** access to the fields, and use **properties** to **get** and **set** the fields.
+A structure is used to define a new **value-type**. In C# programming , we use the keyword **struct** to define new structure. The following is an example of a simple structure that defines a number of variables (fields) to create a custom type of a colored 3D point. We use **private** access to the fields and use **properties** to **get** and **set** the fields.
 
 ```C#
 struct ColorPoint{
-    // Fields for the point XYZ location and color
+    // Fields for the point XYZ location & color
     private double _x;
     private double _y;
     private double _z;
     private System.Drawing.Color _c;
 
-    // Properties to get and set the location and color
+    // Properties to get and set the location & color
     public double X { get { return _x; } set { _x = value; } }
     public double Y { get { return _y; } set { _y = value; } }
     public double Z { get { return _z; } set { _z = value; } }
@@ -868,7 +868,7 @@ struct ColorPoint{
 }
 ```
 
-As an example, you might have two instances of the **ColorPoint** type, and you need to compare their location and color. Notice that when you instantiate a new instance of **ColorPoint** object, the object uses a default constructor that sets all fields to “0”:
+As an example, you might have two instances of the **ColorPoint** type, and you need to compare their location & color. Notice that when you instantiate a new instance of the **ColorPoint** object, the object uses a default constructor that sets all fields to “0”:
 
 ```C#
     ColorPoint cp0 = new ColorPoint();
@@ -902,7 +902,7 @@ This is the output you get when implementing the above struct and function in a 
 
 <img src="struct.png">
 
-Structs typically define one or more constructors to allow setting the fields. Here is how we expand the example above to include a constructor.
+Structs typically define one or more constructors to allow setting the fields. Here is how we expand the example above to include a constructor:
 
 ```C#
 struct ColorPoint{
@@ -941,7 +941,7 @@ We can rewrite the **Saturation** property as a method as in the following:
     public double Saturation() { return _c.GetSaturation(); }
 ```
 
-However, methods typically include more complex functionality, multiple input or possible exceptions. There are no fixed rules about when to use either, but it is generally acceptable that properties involve data, while methods involve actions. We can write a method to calculate the average location and color of two input ColorPoints.
+However, methods typically include more complex functionality, multiple inputs, or possible exceptions. There are no fixed rules about when to use either, but it is generally acceptable that properties involve data, while methods involve actions. We can write a method to calculate the average location & color of two input ColorPoints:
 
 ```C#
     // Method
@@ -955,7 +955,7 @@ However, methods typically include more complex functionality, multiple input or
       return avPt;
     }
 ```
-Structures can include members and methods that can be called even if there is no instance created of that type. Those use the keyword **static**. For example, we can add a member called OriginBlack that creates a black point located at the origin. We can also include a **static** method to compare if two existing points have the same color, as in the following.
+Structures can include members and methods that can be called, even if there is no instance created of that type. Those use the keyword **static**. For example, we can add a member called OriginBlack that creates a black point located at the origin. We can also include a **static** method to compare if two existing points have the same color, as in the following:
 
 ```C#
     // Static methods
@@ -969,7 +969,7 @@ Structures can include members and methods that can be called even if there is n
     }
 ```
 
-Because structs are value types, if you pass your colored points to a function, and change the location (x,y,z), it will only be changed inside or within the scope of that function, but will not affect the original data, unless explicitly passed by reference as in the following example:
+Because structs are value types, if you pass your colored points to a function and change the location (x,y,z), it will only be changed inside or within the scope of that function but will not affect the original data, unless explicitly passed by reference, as in the following example:
 
 
 ```C#
@@ -989,7 +989,7 @@ Because structs are value types, if you pass your colored points to a function, 
   }
 ```
 
-Using our **ColorPoint** struct, the following is a program that generates 2 colored points, compares their location and color, then finds their average:
+Using our **ColorPoint** struct, the following is a program that generates 2 colored points, compares their location & color, then finds their average:
 
 <img src="ponts_avg.png"  class="float_right" width="225">
 
@@ -1007,7 +1007,7 @@ Using our **ColorPoint** struct, the following is a program that generates 2 col
 
 ### 2.9.3: Classes
 
-Classes help create new data types that are **reference-type**. They also have added functionality compared to structures. The main one is that they support creating a hierarchy of types where each new level inherits the members and methods of the level above it. Many of the geometry types in **RhinoCommon** use classes to define them. Let us redefine the **ColorPoint** above as a class that inherits from a generic **Point** class.
+Classes help create new data types that are **reference-type**. They also have added functionality compared to structures. The main added functionality is they support creating a hierarchy of types, where each new level inherits the members and methods of the level above it. Many of the geometry types in **RhinoCommon** use classes to define them. Let us redefine the **ColorPoint** above as a class that inherits from a generic **Point** class:
 
 ```C#
 class CPoint{
@@ -1092,13 +1092,13 @@ Here are the key differences between structures and classes:
   <tr>
     <td>Cannot use inheritance</td>
     <td>Can use inheritance</td>
-    <td>Use classes when building a hierarchy of objects or when the data type is large, and use structs when creating types that are generally small, short lived and embedded inside other objects.</td>
+    <td>Use classes when building a hierarchy of objects or when the data type is large, and use structs when creating types that are generally small, short-lived, and embedded inside other objects.</td>
   </tr>
 </table>
 
 ### 2.9.4: Value vs Reference Types
 
-It is worth stressing the two data classifications: **value-types** and **reference-types**. We touched on that topic when introducing methods and how parameters are passed by value or by reference. There are also differences in how the two are stored and managed in memory. Here is a summary comparison between the two classifications:
+It is worth stressing the two data classifications: **value-types** and **reference-types**. We touched on that topic when introducing methods and how parameters are passed **by value** or **by reference**. There are also differences in how the two are stored and managed in memory. Here is a summary comparison between the two classifications:
 
 <table class="rounded">
   <tr>
@@ -1108,32 +1108,32 @@ It is worth stressing the two data classifications: **value-types** and **refere
   </tr>
   <tr>
     <td><b>Examples</b></td>
-    <td>All built-in numeric data types (such as Integer, double, bool,  and char), Arrays,
+    <td>All built-in numeric data types (such as integer, double, bool, and char), Arrays,
 Structures.</td>
     <td>Lists </br>Classes</td>
   </tr>
   <tr>
     <td><b>Memory storage</b></td>
-    <td>Stored inline in the program stack.</td>
-    <td>Stored in the heap.</td>
+    <td>Stored inline in the program stack</td>
+    <td>Stored in the heap</td>
   </tr>
   <tr>
     <td><b>Memory management</b></td>
-    <td>Cheaper to create and clear from memory especially for small data.</td>
-    <td>Costly to clear (use garbage collectors), but more efficient for big data.</td>
+    <td>Cheaper to create and clear from memory especially for small data</td>
+    <td>Costly to clear (use garbage collectors), but more efficient for big data</td>
   </tr>
   <tr>
     <td><b>When passed as parameters in methods</b></td>
-    <td>Passes a copy of the data to methods, which means that the original data is not changed even when altered inside the method.</td>
-    <td>Passes the address of the original data, and hence any changes to the data inside the method changes the original data as well.</td>
+    <td>Passes a copy of the data to methods, which means that the original data is not changed even when altered inside the method</td>
+    <td>Passes the address of the original data, and hence any changes to the data inside the method change the original data as well</td>
   </tr>
 </table>
 
 ### 2.9.5: Interface
 
-You may need your structures and classes to implement some common functionality. For example, you may need to check if two instances of the same type are equal. In this case, you would like to make sure that you use the same method name and signature. To ensure that, you can define that functionality inside a separate entity called **interface**, and have your structure and classes implement that same **interface**.
+You may need your structures & classes to implement some common functionality. For example, you may need to check if two instances of the same type are equal. In this case, you would like to make sure that you use the same method name and signature. To ensure that, you can define that functionality inside a separate entity called **interface** and have your structure & classes implement that same **interface**.
 
-**The .NET Framework** provides interfaces, but you can also define your own. For example, we can implement an **IEquatable** interface in the **ColorPoint struct** as in the following.
+**The .NET Framework** provides interfaces, but you can also define your own. For example, we can implement an **IEquatable** interface in the **ColorPoint struct** as in the following:
 
 ```C#
 struct ColorPoint: IEquatable<ColorPoint>
@@ -1148,7 +1148,7 @@ struct ColorPoint: IEquatable<ColorPoint>
     public double Y { get { return _y; } set { _y = value; } }
     public double Z { get { return _z; } set { _z = value; } }
     public System.Drawing.Color C { get { return _c; } set { _c = value; } }
-    // Implement Equals method inside IEquatable interface - if omitted, you’ll get error
+    // Implement Equals method inside IEquatable interface - if omitted, you’ll get an error
     public bool Equals( ColorPoint pt )
     {
         return (this._x == pt._x && this._y == pt._y && this._z == pt._z && this._c == pt._c);
@@ -1158,14 +1158,14 @@ struct ColorPoint: IEquatable<ColorPoint>
 
 ## 2.10:  Read & Write Text Files
 
-There are many ways to read from and write to files in **C#** and many tutorials and documents are available online. In general, reading a file involves the following:
-- Open the file. Generally you need a path to point to.
+There are many ways to read from and write to files in **C#** and many tutorials & documents are available online. In general, reading a file involves the following:
+- Open the file (generally, you need a path to point to).
 - Read a string (whole text or line by line).
-- Tokenize the string using some delimiter characters (such as a comma, space, etc.).
+- Tokenize the string using some delimiter characters (such as a comma, space, etc.)
 - Cast each token to the appropriate data type.
 - Store the result in your data structure.
 
-We will discuss a simple example that parses points from a text file.  Using the following text file format, we will read each line as a point and use the first value as x coordinate, the second as y and the third as z of the point.  We will then use these points to create a NURBS curve.
+We will discuss a simple example that parses points from a text file. Using the following text file format, we will read each line as a point and use the first value as x coordinate, the second as y, and the third as z of the point.  We will then use these points to create a NURBS curve.
 
 <img src="point_file.png" width="325">
 
@@ -1173,7 +1173,7 @@ The input to the scripting component is the path to the text file, and the outpu
 
 <img src="curve_points.png">
 
-Here is the code inside the script component. It reads the file line by line, then parses each into a point assuming that each point is stored in one line and the coordinates are comma separated.
+Here is the code inside the C# script component. It reads the file line by line, then parses each into a point assuming that each point is stored in one line and the coordinates are comma-separated.
 
 ```C#
 // Read the file
@@ -1194,7 +1194,7 @@ foreach (string line in lines)
 Points = pts;
 ```
 
-The above code does not do any validation of the data and will only work if the text file has no errors such as empty lines, invalid numbers, or simply does not follow the expected format. Validating the data before using it is a good practice that helps make your program robust and avoid crashes and errors.The following is a rewrite of the same code, but with validation (highlighted). 
+The above code does not do any validation of the data and will only work if the text file has no errors, such as empty lines, invalid numbers, or simply does not follow the expected format. Validating the data before using it is a good practice that helps make your program robust and avoid crashes & errors. The following is a rewrite of the same code but with validation (highlighted):
 
 ```C#
 if ((!File.Exists(path)) || !read) {
@@ -1242,11 +1242,11 @@ A = pts;
 
 ## 2.11: Recursive Functions
 
-Recursive functions are functions that call themselves until a stopping condition is met.  Recursion is not very common to use, but is useful in data search, subdividing and generative systems. 
+Recursive functions are functions that call themselves until a stopping condition is met. Recursion is not very common, but it is useful in data searching, subdividing, and generative systems.
 
-Just like conditional loops, recursive functions need to be designed and tested carefully for all possible input; otherwise you run the risk of crashing your code.
+Just like conditional loops, recursive functions need to be designed & tested carefully for all possible input; otherwise, you run the risk of crashing your code.
 
-The following example takes an input line then makes a copy that is shorter and rotated.  It keeps doing that for each newly generated line until the line length becomes less than some minimum length. The following table shows the input and output parameters.
+The next example takes an input line then makes a copy that is shorter & rotated. It keeps doing that for each newly generated line until the line length becomes less than some minimum length. The following table shows the input & output parameters:
 
 <table class="rounded">
   <tr>
@@ -1276,12 +1276,12 @@ The following example takes an input line then makes a copy that is shorter and 
   </tr>
 </table>
 
-To compare the two approaches, we will solve the problem recursively and iteratively to be able to compare the two approaches. Note that not all recursive cases can be solved iteratively. Also some cases are easier to solve recursively than iteratively or vice versa. If you do not design your recursive function carefully, you can end up in an infinite loop.
+To compare the two approaches, we will solve the problem recursively & iteratively to be able to compare the two approaches. Note that not all recursive cases can be solved iteratively. Also, some cases are easier to solve recursively than iteratively or vice-versa. If you do not design your recursive function carefully, you can end up in an infinite loop.
 
 In the following recursive solution, note that inside the **DivideAndRotate** function includes:
 
-- A stopping condition to exit the function.
-- A call to the same function from within the function (recursive function call themselves).
+- A stopping condition to exit the function
+- A call to the same function from within the function (recursive function call themselves)
 - The result (array of lines) is passed by reference to keep adding new lines to the list.
 
 <img src="recursive_function.png">
@@ -1392,4 +1392,4 @@ public Line DivideAndRotate(Line currLine, double angle)
 
 ## Next Steps
 
-There are the basics of the Python data structures. Next, learn Python's [script anatomy](/guides/rhinopython/primer-101/3-script-anatomy/).
+Those are the basics of the Python data structures. Next, learn Python's [script anatomy](/guides/rhinopython/primer-101/3-script-anatomy/).
