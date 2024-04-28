@@ -31,11 +31,11 @@ toc_type = "single"
 
 ## 2.1 Introduction
 
-This chapter covers basic C# programming concepts. It serves as an introduction and quick reference to the language syntax. It is not meant to be complete by any measure, so please refer to the C# resources available online and in print. All examples in this chapter are implemented using the Grasshopper C# component. For additional documentation [The Microsoft CSharp Programming Guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/) is a good resource.
+This chapter covers basic C# programming concepts. It serves as an introduction and quick reference to C#'s language syntax. It is not meant to be complete by any measure, so please refer to the C# resources available online and in print. All examples in this chapter are implemented using the Grasshopper C# component. For additional documentation [The Microsoft CSharp Programming Guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/) is a good resource.
 
 ## 2.2: Comments
 
-Comments are very useful to describe your code in plain language. They are useful as a reminder for you, and also for others to help them understand your code.  To add a comment, you can use two forward slashes // to signal that the rest of the line is a comment and the compiler should ignore it.  In the Grasshopper C# code editor, comments are displayed in green. You should enclose a multi-line comment between /* and */ as in the following example.
+Comments are very useful to describe your code in plain language. They are useful as a reminder for you and also for others to help them understand your code. To add a comment, you can use two forward slashes // to signal that the rest of the line is a comment and the compiler should ignore it. In the Grasshopper C# code editor, comments are displayed in green. You should enclose a multi-line comment between /* and */ as in the following example.
 
 ```C#
 // The compiler ignores this line 
@@ -47,14 +47,14 @@ Comments are very useful to describe your code in plain language. They are usefu
 
 ## 2.3: Variables
 
-You can think of variables as labeled containers in your computer’s memory where you can store and retrieve data. Your script can define any number of variables and label them with the names of your choice, as long as you do not use spaces, special characters, or reserved words by the programming language. Try to always variable names that are descriptive of the data you intend to store. This will make it easier for you to remember what kind of information is stored in each variable.
+You can think of variables as labeled containers in your computer’s memory where you can store and retrieve data. Your script can define any number of variables and label them with the names of your choice, as long as you do not use spaces, special characters, or reserved words by the programming language. Try to always use variable names that are descriptive of the data you intend to store. This will make it easier for you to remember what kind of information is stored in each variable.
 
 <figure>
    <img src="variable_container.png">
-   <figcaption>Figure(16): How variables are stored in the computer memory</figcaption>
+   <figcaption>Figure(16): How variables are stored in a computer's memory</figcaption>
 </figure>  
 
-Your script uses variable names to access the value stored in them. In general, you can assign new values to any variable at any point in your program, but each new value wipes out the old one. When you come to retrieve the value of your variable, you will only get the last one stored. For example, let’s define a variable and name it **x**. Suppose we want **x** to be of type integer. Also,suppose we would like to assign it an initial value of 10. This is how you write a statement in C# to declare and assign an integer:
+Your script uses variable names to access the value stored in them. In general, you can assign new values to any variable at any point in your program, but each new value wipes out the old one. When you come to retrieve the value of your variable, you will only get the last one stored. For example, let’s define a variable and name it **x**. Suppose we want **x** to be of type integer. Also, suppose we would like to assign it an initial value of 10. This is how you write a statement in C# to declare and assign an integer:
 
 ```C#
 int x = 10;
@@ -73,11 +73,11 @@ Let us dissect all the different parts of the above statement:
 </tr>
 <tr>
 <td><b>=</b></td>
-<td>Used for assignment, and it means that the value that follows will be stored in the variable x.</td>
+<td>Used for assignment and it means the value that follows will be stored in the variable x.</td>
 </tr>
 <tr>
 <td><b>=</b></td>
-<td>Compute the distance between the two points and add geometry if necessary. This function returns True if the deviation is less than one unit, False if it is more than one unit and Null if something went wrong.</td>
+<td>Compute the distance between the two points, and add geometry if necessary. This function returns True if the deviation is less than one unit, False if it is more than one unit and NULL if something went wrong.</td>
 </tr>
 <tr>
 <td><b>10</b></td>
@@ -85,7 +85,7 @@ Let us dissect all the different parts of the above statement:
 </tr>
 <tr>
 <td>;</td>
-<td>The Semicolon is used to end a single statement.</td>
+<td>The semicolon is used to end a single statement.</td>
 </tr>
 </table>
 
@@ -93,7 +93,7 @@ In general, when you declare a variable, you need to explicitly specify the **da
 
 ## 2.4: Operators
 
-Operators are used to perform arithmetic, logical and other operations. Operators make the code more readable because you can write expressions in a format similar to that in mathematics. So instead of having to use functions and write **C=Add(A, B)**, we can write **C=A+B**, which is easier to read. The following is a table of the common operators provided by the C# programming language for quick reference:
+Operators are used to perform arithmetic, logical, and other operations. Operators make the code more readable because you can write expressions in a format similar to that in mathematics. So, instead of having to use functions and write **C=Add(A, B)**, we can write **C=A+B**, which is easier to read. The following is a table of the common operators provided by the C# programming language for quick reference:
 
 
 <table class="rounded">
@@ -105,32 +105,32 @@ Operators are used to perform arithmetic, logical and other operations. Operator
   <tr>
     <td>Arithmetic </n>Operators</td>
     <td>^</td>
-    <td>Raises a number to the power of another number.</td>
+    <td>Raises a number to the power of another number</td>
   </tr>
   <tr>
     <td> </td>
     <td>*</td>
-    <td>Multiplies two numbers.</td>
+    <td>Multiplies two numbers</td>
   </tr>
   <tr>
     <td> </td>
     <td>/</td>
-    <td>Divides two numbers and returns a floating-point result.</td>
+    <td>Divides two numbers and returns a floating-point result</td>
   </tr>
   <tr>
     <td> </td>
     <td>\</td>
-    <td>Divides two numbers and returns an integer result.</td>
+    <td>Divides two numbers and returns an integer result</td>
   </tr>
   <tr>
     <td> </td>
     <td>%</td>
-    <td>Remainder: divides two numbers and returns only the remainder.</td>
+    <td>Remainder: divides two numbers and returns only the remainder</td>
   </tr>
   <tr>
     <td> </td>
     <td>+</td>
-    <td>Adds two numbers or returns the positive value of a numeric expression.</td>
+    <td>Adds two numbers or returns the positive value of a numeric expression</td>
   </tr>
   <tr>
     <td> </td>
@@ -145,7 +145,7 @@ Operators are used to perform arithmetic, logical and other operations. Operator
   <tr>
     <td> </td>
     <td>*=</td>
-    <td>Multiplies the value of a variable by the value of an expression and assigns the result to the variable.</td>
+    <td>Multiplies the value of a variable by the value of an expression and assigns the result to the variable</td>
   </tr>
   <tr>
     <td> </td>
@@ -155,7 +155,7 @@ Operators are used to perform arithmetic, logical and other operations. Operator
   <tr>
     <td> </td>
     <td>-=</td>
-    <td>Subtracts the value of an expression from the value of a variable and assigns the result to the variable.</td>
+    <td>Subtracts the value of an expression from the value of a variable and assigns the result to the variable</td>
   </tr>
   <tr>
     <td>Comparison </n>Operators</td>
@@ -195,12 +195,12 @@ Operators are used to perform arithmetic, logical and other operations. Operator
   <tr>
     <td> </td>
     <td>&</td>
-    <td>Generates a string concatenation of two expressions.</td>
+    <td>Generates a string concatenation of two expressions</td>
   </tr>
   <tr>
     <td> </td>
     <td>+</td>
-    <td>Concatenate two string expressions.</td>
+    <td>Concatenate two string expressions</td>
   </tr>
   <tr>
     <td>Logical </n>Operators</td>
@@ -221,7 +221,7 @@ Operators are used to perform arithmetic, logical and other operations. Operator
 
 ## 2.5: Namespaces
 
-Namespaces are very useful to group and organize classes especially for large projects. The **.NET** uses namespaces to organize its classes. For example **System** namespace has many classes under it including the **Math** class, so if you like to calculate the square root of a number, your code will look like the following:
+Namespaces are very useful to group and organize classes, especially for large projects. **.NET** uses namespaces to organize its classes. For example, **System** namespace has many classes under it, including the **Math** class, so if you like to calculate the square root of a number, your code will look like the following:
 
 ```C#
 double num = 16;
@@ -236,13 +236,13 @@ double num = 16;
 double sqrNum = Math.Sqrt(num);
 ```
 
-2.6: Data
+## 2.6: Data
 
 Data types refer to the kind of data stored in the variable. There are two main data types. The first is supplied by the programming language and involves things like numbers, logical true or false, and characters. Those are generally referred to as primitive or built-in types. Variables of any data type can be composed into groups or collections.
 
-### 2.6.1: Primitive data types
+### 2.6.1: Primitive Data Types
 
-Primitive types refer to the basic and built-in types provided by the programming language. Following examples declare variables of primitive data types:
+Primitive types refer to the basic and built-in types provided by the programming language. The following examples declare variables of primitive data types:
 
 <table class="rounded">
   <tr>
@@ -251,19 +251,19 @@ Primitive types refer to the basic and built-in types provided by the programmin
   </tr>
   <tr>
     <td>double pi = 3.1415;</td>
-    <td>double: big number with decimal point.</td>
+    <td>double: big number with decimal point</td>
   </tr>
   <tr>
     <td>bool pass = true;</td>
-    <td>bool: set to either true or false. Used mainly to represent the truth value of a variable or a logical statement.</td>
+    <td>bool: set to either true or false. Used mainly to represent the truth value of a variable or a logical statement</td>
   </tr>
   <tr>
     <td>char initial = ‘R’;</td>
-    <td>char: stores exactly one character.</td>
+    <td>char: stores exactly one character</td>
   </tr>
   <tr>
     <td>string myName = “Mary”;</td>
-    <td>string: a sequence of characters.</td>
+    <td>string: a sequence of characters</td>
   </tr>
   <tr>
     <td>object someData = “Mary”;</td>
@@ -284,14 +284,14 @@ Arrays are a common way to assemble an ordered group of data. Arrays are best su
    <figcaption>Figure(17): How arrays are stored in the computer memory</figcaption>
 </figure> 
 
-For example, you can organize the days of the week using an array. The following declares and initializes the weekdays array in one step.
+For example, you can organize the days of the week using an array. The following declares and initializes the weekdays array in one step:
 
 ```C#
 //Declare and initialize the days of the week array
 string[] weekdays = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
 ```
 
-You can also declare the array first with a specific dimension representing the number of elements to allocate in memory for the array, then assign the values of the elements in separate statements. In C# language, each statement ends with a semicolon.
+You can also declare the array first with a specific dimension representing the number of elements to allocate in memory for the array, then assign the values of the elements in separate statements. In the C# language, each statement ends with a semicolon.
 
 ```C#
 //Declare the days of the week in one statement, then assign the values later
@@ -312,11 +312,11 @@ Let’s take the statement that sets the first value in the weekdays array in th
 weekdays[0] = “Sunday”;
 ```
 
-**Sunday** is called an **array element**. The number between brackets is called the **index** of the element in the array. Notice that in **C# language** the array always starts with index=0 that points to the first element. The last index of an array of seven elements therefore equals 6. If you try to retrieve data from an invalid index, for example 7 in the weekday example above, then you will get what is called an **out of bound error** because you are basically trying to access a part of the memory that you did not allocate for your array and it can lead to a crash.
+**Sunday** is called an **array element**. The number between brackets is called the **index** of the element in the array. Notice that in **C# language** the array always starts with index=0 that points to the first element. The last index of an array of seven elements therefore equals 6. If you try to retrieve data from an invalid index, for example 7 in the weekday example above, then you will get what is called an **out of bound error** because you are basically trying to access a part of the memory that you did not allocate for your array, and it can lead to a crash.
 
 **Lists**
 
-If you need to create an ordered collection of data dynamically, then use a **List**. You will need to use the **new** keyword and specify the data type of the list. The following example declares a new list of integers and appends elements incrementally in subsequent statements. Note that the indices of a list are also zero based just like arrays.
+If you need to create an ordered collection of data dynamically, then use a **List**. You will need to use the **new** keyword and specify the data type of the list. The following example declares a new list of integers and appends elements incrementally in subsequent statements. *Note that the indices of a list are also zero based just like arrays.*
 
 
 ```C#
@@ -329,19 +329,19 @@ myWorkDays.Add("Wednesday");
 myWorkDays.Add("Thursday");
 myWorkDays.Add("Friday");
 ```
-You need to use the keyword **new** to declare an instance of a **List**. We will explain what it means to be a reference type with some more details later.
+You need to use the keyword **new** to declare an instance of a **List**. *We will explain what it means to be a reference type with some more details later.*
 
-## 2.7: Flow control
+## 2.7: Flow Control
 
-The flow of your scripts indicates the order of code execution. Sometimes you might need to branch or loop through specific statements several times. For example, you might want to branch your script to implement a different sequence based on some condition. Other times, you might need to repeat a certain sequence multiple times. We will discuss three important mechanisms to control the flow of a program; conditional statements, loops and methods.
+The flow of your scripts indicates the order of code execution. Sometimes you might need to branch or loop through specific statements several times. For example, you might want to branch your script to implement a different sequence based on some condition. Other times, you might need to repeat a certain sequence multiple times. We will discuss three important mechanisms to control the flow of a program: conditional statements, loops, and methods.
 
-### 2.7.1: Conditional statements
+### 2.7.1: Conditional Statements
 
-Conditional statements allow you to decide on which part of your code to use based on some condition that can change during run time. Unlike regular programming instructions, conditional statements can be described as decision-making logic. Conditional statements help control and regulate the flow of the program.
+Conditional statements allow you to decide on which part of your code to use based on some condition that can change during runtime. Unlike regular programming instructions, conditional statements can be described as decision-making logic. Conditional statements help control and regulate the flow of the program.
 
 <figure>
    <img src="conditional_diagram.png">
-   <figcaption>Figure(17): Conditional statements 1 and 2, and how they affect the flow of the program.</figcaption>
+   <figcaption>Figure(17): Conditional statements 1 and 2, and how they affect the flow of the program</figcaption>
 </figure> 
 
 The following script examines a number variable and prints “zero” if it equals zero:
@@ -379,7 +379,7 @@ if (myNumber >= 0 && myNumber <= 100)
 }
 ```
 
-Sometimes the script needs to execute one block when some condition is satisfied, and another if not. Here is an example that prints the word **positive** when the given number is greater than zero, and prints **less than 1** if not. It uses the **if… else** statement.
+Sometimes, the script needs to execute one block when some condition is satisfied and another if not. Here is an example that prints the word **positive** when the given number is greater than zero and prints **less than 1** if not. It uses the **if… else** statement.
 
 ```C#
 if (myNumber > 0)
@@ -392,7 +392,7 @@ else
 }
 ```
 
-You can use as many conditions as you need as shown in the following example.
+You can use as many conditions as you need, as shown in the following example:
 
 ```C#
 if (myNumber > 0)
@@ -411,18 +411,18 @@ else
 
 ### 2.7.2: Loops
 
-Loops allows you to run the body of your loop a fixed number of times, or until the loop condition is no longer true.
+Loops allow you to run the body of your loop a fixed number of times, or until the loop condition is no longer true.
 
 <figure>
    <img src="loop_flow.png" class="image_center" width="75%" >
-   <figcaption>Figure(18): Loops in the context of the overall flow of the program.</figcaption>
+   <figcaption>Figure(18): Loops in the context of the overall flow of the program</figcaption>
 </figure> 
 
 There are two kinds of loops. The first is iterative where you can repeat code a defined number of times, and the second is conditional where you repeat until some condition is no longer satisfied.
 
 **Iterative loops: for loop**
 
-This is a common way of looping when you need to run some lock of code a specific number of times. Here is a simple example that prints numbers from 1 to 10. You first declare a counter and then increment in the loop to run the code specific number of times. Notice that the code statements that you would like to repeat are bound by the block after the for statement. 
+This is a common way of looping when you need to run a block of code a specific number of times. Here is a simple example that prints numbers from 1 to 10. You first declare a counter and then increment in the loop to run the code a specific number of times. *Notice that the code statements you would like to repeat are bound by the block after the for statement.*
 
 {{< div class="line-numbers" >}}
 ```C#
@@ -450,12 +450,12 @@ i++: increment the counter (by 1 in this case)</td>
 <tr>
 <td>3-5</td>
 <td>The body of the for loop. This is the code that is executed as long as the condition is met.</br>
-Note that if the condition of the for loop is always true, then the program will enter what is called an “infinite loop” that leads to a crash. For example if the condition was “i>0” instead of “i<=10” then it will cause an infinite loop.
+Note: if the condition of the for loop is always true, then the program will enter what is called an “infinite loop” that leads to a crash. For example, if the condition was “i>0” instead of “i<=10”, then it will cause an infinite loop.
 </td>
 </tr>
 </table>
 
-The loop counter does not have to be increasing, or change by 1. The following example prints the even numbers between 10 and -10. You start with a counter value equal to 10, and then change by -2 thereafter until the counter becomes smaller than -10.
+The loop counter does not have to be increasing or change by 1. The following example prints the even numbers between 10 and -10. You start with a counter value equal to 10, and then change by -2 thereafter until the counter becomes smaller than -10.
 
 ```C#
 for (int i = 10; i >= -10; i = i-2)
@@ -464,7 +464,7 @@ for (int i = 10; i >= -10; i = i-2)
 }
 ```
 
-If you happen to have an array that you need to iterate through, then you can set your counter to loop through the indices of your array. Just remember that the indices of arrays are zero based and therefore you need to remember to loop from index=0 to the length of the array minus 1, or else you will get an out-of-bound error.
+If you happen to have an array that you need to iterate through, then you can set your counter to loop through the indices of your array. Just remember that the indices of arrays are zero-based,and therefore, you need to remember to loop from index=0 to the length of the array minus 1, or else you will get an out-of-bound error.
 
 ```C#
 string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -494,7 +494,7 @@ for (int i = 0; i < count; i++)
 
 **Iterative Loops: foreach loop**
 
-You can use the **foreach** loop to iterate through the elements of an array or a list without using a counter or index. This is a less error prone way to avoid out of bound error. The above example can be rewritten as follows to use **foreach** instead of the **for** loop:
+You can use the **foreach** loop to iterate through the elements of an array or a list without using a counter or index. This is a less error-prone way to avoid out of bound error. The above example can be rewritten as follows to use **foreach** instead of the **for** loop:
 
 ```C#
 //List of places
@@ -709,7 +709,7 @@ Let us dissect the different parts of the **IsPrimeNumber** function to understa
 </tr>
 </table>
 
-###2.8.2: Method parameters
+### 2.8.2: Method Parameters
 
 Input parameters are enclosed within parentheses after the method name. The parameters are a list of variables and their types. They represent the data the function receives from the code that calls it. Each parameter is passed either **by value** or **by reference**. Keep in mind that variables themselves can be a value-type such as primitive data (int, double, etc.), or reference-types such as lists and user-defined classes. The following table explains what it means to pass value or reference types by value or by reference.
 
@@ -820,7 +820,7 @@ As we explained before, the **RunScript** is the main function that is available
   </tr>
 </table>
 
-## 2.9: User-defined data types
+## 2.9: User-Defined Data Types
 
 We mentioned above that there are built-in data types and come with and are supported by the programming language such as int, double, string and object. However, users can create their own custom types with custom functionality that suits the application. There are a few ways to create custom data types. We will explain the most common ones: enumerations, structures and classes.
 
@@ -847,7 +847,7 @@ else
    Print("This is not a traffic signal color!");
 ```
 
-2.9.2: Structures
+### 2.9.2: Structures
 
 A structure is used to define a new **value-type**. In C# programming , we use the keyword **struct** to define new structure. The following is an example of a simple structure that defines a number of variables (fields) to create a custom type of a colored 3D point. We use **private** access to the fields, and use **properties** to **get** and **set** the fields.
 
@@ -1094,7 +1094,7 @@ Here are the key differences between structures and classes:
   </tr>
 </table>
 
-### 2.9.4: Value vs reference types
+### 2.9.4: Value vs Reference Types
 
 It is worth stressing the two data classifications: **value-types** and **reference-types**. We touched on that topic when introducing methods and how parameters are passed by value or by reference. There are also differences in how the two are stored and managed in memory. Here is a summary comparison between the two classifications:
 
@@ -1154,7 +1154,7 @@ struct ColorPoint: IEquatable<ColorPoint>
 }
 ```
 
-## 2.10:  Read and write text files
+## 2.10:  Read & Write Text Files
 
 There are many ways to read from and write to files in **C#** and many tutorials and documents are available online. In general, reading a file involves the following:
 - Open the file. Generally you need a path to point to.
@@ -1238,7 +1238,7 @@ foreach (string line in lines)
 A = pts;
 ```
 
-## 2.11: Recursive functions
+## 2.11: Recursive Functions
 
 Recursive functions are functions that call themselves until a stopping condition is met.  Recursion is not very common to use, but is useful in data search, subdividing and generative systems. 
 
@@ -1390,4 +1390,4 @@ public Line DivideAndRotate(Line currLine, double angle)
 
 ## Next Steps
 
-There are the basics of the Python datastructures, next learn the Python's [script anatomy](/guides/rhinopython/primer-101/3-script-anatomy/).
+There are the basics of the Python data structures. Next, learn Python's [script anatomy](/guides/rhinopython/primer-101/3-script-anatomy/).
