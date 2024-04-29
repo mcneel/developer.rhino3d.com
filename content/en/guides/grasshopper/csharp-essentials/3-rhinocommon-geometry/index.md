@@ -1387,7 +1387,7 @@ crv.DivideByCount(num, true, out points);
 </tr>
 </table>
 
-###3.3.2: Surfaces
+### 3.3.2: Surfaces
 
 There are many surface classes derived from the abstract **Rhino.Geometry.Surface** class. The **Surface** class provides common functionality among all of the derived types. The following is a list of the surface classes and a summary description.
 
@@ -1665,107 +1665,637 @@ Surface methods help edit and extract information about the surface object. For 
 
 <table class="multiline" width="100%">
 <tr>
-<th width="60%">NurbsCurve methods</th>
+<th width="60%">Examples of the **Surface** and **NurbsSurface** methods</th>
 <th width="40%"></th>
 </tr>
 <tr>
 <td>
 
 ```C#
-//Get the domain or interval of the curve
-Interval domain = crv.Domain;
+Surface srf = … //from input
+//Check if the input surface is closed in the u or v direction
+bool isClosedU = srf.IsClosed(0);
+bool isClosedV = srf.IsClosed(1);
+
+//Check if the surface is planar at zero tolerance
+bool isPlanar = srf.IsPlanar();
 ```
 
 </td>
 <td>
-<img src="curve_domain.png" width="100%">
+<img src="surface_simple.png" width="100%">
 </td>
 </tr>
 <tr>
 <td>
 
 ```C#
-//Get the start and end points of a curve
-Point3d startPoint = crv.PointAtStart;
-Point3d endPoint = crv.PointAtEnd;
+Surface srf = … //from input
+double u = 0.5;
+double v = 0.5;
+//Declare and instantiate the evaluation point and derivative vectors
+Point3d evalPt = new Point3d(Point3d.Unset);
+Vector3d[ ] derivatives = {};
+
+//Evaluate the surface and extract the first derivative to get tangents
+srf.Evaluate(u, v, 1, out evalPt, out derivatives);
+
+Vector3d tanU = derivatives[0];
+Vector3d tanV = derivatives[1];
 ```
 
 </td>
 <td>
-<img src="start_end_point.png" width="100%">
+<img src="surface_derivative.png" width="100%">
 </td>
 </tr>
 <tr>
 <td>
 
 ```C#
-//Get the tangent at start of a curve
-Vector3d startTangent = crv.TangentAtStart;
-```
+//Declare the list of surfaces
+List<Surface> srfs = new List<Surface>();
 
-</td>
-<td>
-<img src="curve_tangent.png" width="100%">
-</td>
-</tr>
-<tr>
-<td>
-
-```C#
-//Get the control points of a NurbsCurve (nc)
-List<Point3d> cpList = new List<Point3d>();
-int count = nc.Points.Count;
-
-//Loop to get all cv points
-for (int i = 0; i <= count - 1; i++) {
-    ControlPoint cp = nc.Points[i];
-    cpList.Add(cp.Location);
+Surface lastSrf = srf;
+for (int i = 1; i <= num; i++) {t
+    Surface offset_srf = last_srf.Offset(dis, tol);
+    if (srf.IsValid) {
+        //append offset surface to array
+        srfs.Add(offset_srf);
+        //update the next curve to offset
+        lastSrf = offset_srf;
+    } 
+    else 
+        break;
 }
 ```
 
 </td>
 <td>
-<img src="curve_control_point.png" width="100%">
+<img src="surface_list.png" width="100%">
 </td>
 </tr>
 <tr>
 <td>
 
 ```C#
-//Get the knot list of a NurbsCurve (nc)
-List<double> knotList = new List<double>();
-int count = nc.Points.Count;
+//Declare and instantiate an axis and a curve
+Line axis = new Line (Point3d.Origin, new Point3d(0, 0, 10));
+LineCurve crv = new LineCurve(new Point3d(2, 0, 0), new Point3d(3.5, 0, 5));
 
-//Loop to get all knots values
-for (int i = 0; i <= count - 1; i++) {
-    double knot = nc.Knots[i];
-    knotList.Add(knot);
-}
+//Create surface of revolution
+RevSurface revSrf = RevSurface.Create(crv, axis);
+
+//Try to get a Cone
+Cone cone;
+if( revSrf.TryGetCone(out cone))
+    Print(“Cone was successfully create from surface”);
 ```
 
 </td>
 <td>
-<img src="knots_list.png" width="100%">
-</td>
-</tr>
-<tr>
-<td>
-
-```C#
-//Divide curve (crv) by number (num)
-//Declare an array of points
-Point3d[ ] points = { };
-
-//Divide the curve by number
-crv.DivideByCount(num, true, out points);
-```
-
-</td>
-<td>
-<img src="kknots_curve.png" width="100%">
+<img src="cone_surface.png" width="100%">
 </td>
 </tr>
 </table>
+
+### 3.3.3: Meshes
+
+Meshes represent a geometry class that is defined by faces and vertices. The mesh data structure basically includes a list of vertex locations, faces that describe vertices connections and normal of vertices and faces. More specifically, the geometry lists of a mesh class include the following.
+
+<table class="rounded">
+  <tr>
+    <th>Mesh geometry</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><b>Vertices</b></td>
+    <td>Of type MeshVertexList  - includes a list of vertex locations type Point3f.</td>
+  </tr>
+  <tr>
+    <td><b>Normals</b></td>
+    <td>Of type MeshVertexNormalList - includes a list of normals of type Vector3f.</td>
+  </tr>
+  <tr>
+    <td><b>Faces</b></td>
+    <td>Of type MeshFaceList - includes a list of normals of type MeshFace.</td>
+  </tr>
+  <tr>
+    <td><b>FaceNormals</b></td>
+    <td>Of type “MeshFaceNormalList” - includes a list of normals of type Vector3f.</td>
+  </tr>
+ </table>
+
+#### Create surface objects:
+
+You can create a mesh from scratch by specifying vertex locations, faces and compute the normal as in the following examples.
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">Examples of the **Mesh** methods</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+//Create a simple rectangular mesh that has 1 face
+//Create a new instance of a mesh
+Rhino.Geometry.Mesh mesh = new Rhino.Geometry.Mesh();
+
+//Add mesh vertices
+mesh.Vertices.Add(0.0, 0.0, 0.0); //0
+mesh.Vertices.Add(5.0, 0.0, 0.0); //1
+mesh.Vertices.Add(5.0, 5.0, 0.0); //2
+mesh.Vertices.Add(0.0, 5.0, 0.0); //3
+
+//Add mesh faces
+mesh.Faces.AddFace(0, 1, 2, 3);
+
+//Compute mesh normals
+mesh.Normals.ComputeNormals();
+
+//Generate any additional mesh data
+mesh.Compact();
+```
+
+</td>
+<td>
+<img src="mesh_face.png" width="100%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Create simple triangular mesh that has 2 faces
+//Create a new instance of a mesh
+Rhino.Geometry.Mesh mesh = new Rhino.Geometry.Mesh();
+
+//Add mesh vertices
+mesh.Vertices.Add(0.0, 0.0, 0.0); //0
+mesh.Vertices.Add(5.0, 0.0, 2.0); //1
+mesh.Vertices.Add(5.0, 5.0, 0.0); //2
+mesh.Vertices.Add(0.0, 5.0, 2.0); //3
+
+//Add mesh faces
+mesh.Faces.AddFace(0, 1, 2);
+mesh.Faces.AddFace(0, 2, 3);
+
+//Compute mesh normals
+mesh.Normals.ComputeNormals();
+
+//Generate any additional mesh data
+mesh.Compact();
+```
+
+</td>
+<td>
+<img src="mesh_faces.png" width="100%">
+</td>
+</tr>
+</table>
+
+The Mesh class includes many **CreateFrom** static methods to create a new mesh from various other geometry. Here is the list with description as it appears in the **RhinoCommon** help.
+
+<img src="mesh_api.png" width="100%">
+
+Here are a couple examples to show how to create a mesh from a brep and a closed polyline.
+
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">**Mesh** Samples</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+//Set mesh parameters to default
+var mp = MeshingParameters.Default;
+
+//Create meshes from brep
+var newMesh = Mesh.CreateFromBrep(brep, mp);
+```
+
+</td>
+<td>
+<img src="mesh_revolve.png" width="100%">
+</td>
+</tr>
+<tr>
+<td>
+
+```C#
+//Create a new mesh from polyline
+var newMesh = Mesh.CreateFromClosedPolyline(pline);
+```
+
+</td>
+<td>
+<img src="mesh_closedpoly.png" width="100%">
+</td>
+</tr>
+</table>
+
+#### Navigate mesh geometry and topology:
+
+You can navigate mesh data using **Vertices** and **Faces** properties. The list of vertices and faces are stored in a collection class or type with added functionality to manage the list efficiently. **Vertices** list for example, is of type **MeshVertexList**. So if you need to change the locations of mesh vertices, then you need to get a copy of each vertex, change the coordinates, then reassign in the vertices list. You can also use the Set methods inside the MeshVertexList class to change vertex locations. 
+
+The following example shows how to randomly change the **Z** coordinate of a mesh using two different approaches. Notice that mesh vertices use a **Point3f** and not **Point3d** type because mesh vertex locations are stored as a single precision floating point.
+
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">Change the location of mesh vertices by assigning the new value to the Vertices’ list</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+//Change mesh vertex location
+int index = 0;
+Random rand = new Random();
+
+foreach (Point3f loc in mesh.Vertices) {
+    Point3f newLoc = loc;
+    newLoc.Z = rand.Next(10) / 3;
+    mesh.Vertices[index] = newLoc;
+    index = index + 1;
+}
+```
+
+</td>
+<td>
+<img src="mesh_random_verts.png" width="100%">
+</td>
+</tr>
+</table>
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">Change the location of mesh vertices using the **SetVertix** method</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+Mesh mesh = … // from input
+
+//Create a new instance of random generator
+Random rand = new Random();
+for (int i = 0; i <= mesh.Vertices.Count - 1; i++){
+    //Get vertex
+    Point3f loc = mesh.Vertices[i];
+    loc.Z = rand.Next(10) / 3;
+    //Assign new location
+    mesh.Vertices.SetVertex(i, loc);
+}
+```
+
+</td>
+<td>
+<img src="mesh_setvert.png" width="100%">
+</td>
+</tr>
+</table>
+
+Here is an example that deletes a mesh vertex and all surrounding faces
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">Delete mesh faces randomly</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+Mesh mesh = … // from input
+int index = 32;
+//Remove a mesh vertex (make sure index falls within range)
+if (index >= 0 & i < mesh.Vertices.Count)
+{
+    mesh.Vertices.Remove(index, true);
+}
+```
+
+</td>
+<td>
+<img src="mesh_delete_face.png" width="100%">
+</td>
+</tr>
+</table>
+
+You can also manage the **Faces** list of a mesh. Here is an example that deletes about half the faces randomly from a given mesh.
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">Delete mesh faces randomly</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+List<int> faceIndices = new List<int>();
+int count = mesh.Faces.Count;
+
+//Create a new instance of random generator
+Random rand = new Random();
+
+for (int i = 0; i <= count - 1; i += 2){
+      int index = rand.Next(count);
+      faceIndices.Add(index);
+}
+
+//delete faces
+mesh.Faces.DeleteFaces(distinctIndices);
+```
+
+</td>
+<td>
+<img src="mesh_rand_face.png" width="100%">
+</td>
+</tr>
+</table>
+
+Meshes keep track of the connectivity of the different parts of the mesh. If you need to navigate related faces, edges or vertices, then this is done using the mesh topology. The following example shows how to extract the outline of a mesh using the mesh topology.
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">Mesh topology example: extract the outline of a mesh</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+// Get the mesh's topology
+Rhino.Geometry.Collections.MeshTopologyEdgeList meshEdges = mesh.TopologyEdges;
+
+List<Line> lines = new List<Line>();
+
+// Find all of the mesh edges that have only a single mesh face
+for (int i = 0; i <= meshEdges.Count - 1; i++) {
+    int numOfFaces = meshEdges.GetConnectedFaces(i).Length;
+
+    if ((numOfFaces  == 1)) {
+        Line line = meshEdges.EdgeLine(i);
+        lines.Add(line);
+    }
+}
+```
+
+</td>
+<td>
+<img src="mesh_outline.png" width="100%">
+</td>
+</tr>
+</table>
+
+#### Mesh Methods:
+
+Once a new mesh object is created, you can edit and extract data out of that mesh object. The following example extracts naked edges out of some input mesh.
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">Extract the outline of a mesh</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+Mesh mesh = … // from input
+
+//Declare an array of polylines
+Polyline[ ] naked_edges = { };
+
+//Create a new mesh from polyline
+nakedEdges = mesh.GetNakedEdges();
+```
+
+</td>
+<td>
+<img src="mesh_naked_edges.png" width="100%">
+</td>
+</tr>
+</table>
+
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">Test if a given point is inside a closed mesh</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+Mesh mesh = … // from input
+Point3d pt = … // from input
+
+//Test if the point is inside the mesh
+mesh.IsPointInside(pt, tolerance, true);
+```
+
+</td>
+<td>
+<img src="mesh_sphere.png" width="100%">
+</td>
+</tr>
+</table>
+
+<table class="multiline" width="100%">
+<tr>
+<th width="60%">Delete every other mesh face, then split disjoint meshes</th>
+<th width="40%"></th>
+</tr>
+<tr>
+<td>
+
+```C#
+Mesh mesh = … // from input
+List<int> faceIndeces = new List<int>();
+
+//Loop through faces and delete every other face
+for (int i = 0; i <= mesh.Faces.Count - 1; i += 2) {
+      faceIndeces.Add(i);
+}
+//delete faces
+mesh.Faces.DeleteFaces(faceIndeces);
+//Split disjoint meshes
+Mesh[ ] meshArray = mesh.SplitDisjointPieces();
+```
+
+</td>
+<td>
+<img src="mesh_array.png" width="100%">
+</td>
+</tr>
+</table>
+
+### 3.3.4: Boundary representation (Brep)
+
+The boundary representation is used to unambiguously represent trimmed nurbs surfaces and polysurfaces. There are two sets of data that are needed to fully describe the 3D objects using the boundary representation. Those are geometry and topology.
+
+#### Brep Geometry:
+
+Three geometry elements are used to create any Breps:
+1. The 3D untrimmed nurbs surfaces in the modeling space.
+1. The 3D curves, which are the geometry of edges in modeling space.
+1. The 2D curves, which are the geometry of trims in the parameter space.
+
+
+<figure>
+   <img src="brep_levels.png">
+   <figcaption>Figure(24): Geometry elements of a typical trimmed nurbs surface. 
+(1) Trimmed surface with control points turned on. (2) Underlying 3-D untrimmed surface. (3) 3-D curves (for the edges) in modeling space. (4) 2-D curves (for the trims) in parameter space</figcaption>
+</figure> 
+
+#### Brep topology:
+
+A topology refers to how different parts of the 3-D object are connected. For example we might have two adjacent faces with one of their edges aligned.  There are two possibilities to describe the relationship or connectivity between these two faces. They could either be two separate entities that they can be pulled apart, or they are joined in one object sharing that edge. The topology is the part that describes such relationships.
+
+<figure>
+   <img src="mesh_connect.png">
+   <figcaption>Figure(25): Topology describes connectivity between geometry elements. Two adjacent faces can either be joined together in one polysurface or are two separate faces that can be pulled apart.</figcaption>
+</figure> 
+
+Brep topology includes faces, edges, vertices, trims and loops. The following diagram lists the Brep topology elements and their relation to geometry in the context of **RhinoCommon**.
+
+<figure>
+   <img src="brep_topology.png">
+   <figcaption>Figure(26): The Brep topology elements and their relation to geometry</figcaption>
+</figure> 
+
+The topology elements of the Brep can be defined as follows:
+
+<table class="rounded">
+  <tr>
+    <th>Topology</th>
+    <th>Referenced Geometry</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><b>Vertices</b></td>
+    <td>3D points </br>(location in 3D space)</td>
+    <td>They describe the corners of the brep. Each vertex has a 3D location. They are located at the ends of edges and are shared between neighboring edges.</td>
+  </tr>
+  <tr>
+    <td><b>Edges</b></td>
+    <td>3D Nurbs curves </br>(location in 3D space)</td>
+    <td>Edges describe the bounds of the brep.  Each references the 3D curve, two end vertices and the list of trims. If an edge has more than one trim that means the edge is shared among more than one face. Multiple edges can reference the same 3D curve (typically different portion of it).</td>
+  </tr>
+  <tr>
+    <td><b>Faces</b></td>
+    <td>3D underlying Nurbs surfaces</br>(location in 3D space)</td>
+    <td>Faces reference the 3D surface and at least one outer loop. A face normal direction might not be the same as that of the underlying surface normal. Multiple faces can reference the same 3D surface (typically different portion of it).</td>
+  </tr>
+  <tr>
+    <td><b>Loops</b></td>
+    <td>2D closed curves of connected trims </br>(in 2D  parameter space)</td>
+    <td>Each face has exactly one outer loop defining the outer boundary of the face. A face can also have inner loops (holes). Each loop contains a list of trims.</td>
+  </tr>
+  <tr>
+    <td><b>Trims</b></td>
+    <td>2D Curves </br>(in 2D  parameter space)</td>
+    <td>Each trim references one 2D curve and exactly one edge, except in singular trims, there is no edge. The 2D curves of the trims run in a consistent direction. Trims of outer or boundary of the face run anti-clockwise regardless of the 3D curve direction of its edge. The 2D curves of the trims of the inner loops run clockwise.</td>
+  </tr>
+</table>
+
+Each brep includes lists of geometry and topology elements. Topology elements point to each other and the geometry they reference which makes it easy to navigate through the brep data structure. The following diagram shows navigation paths of the brep topology and geometry elements.
+
+<figure>
+   <img src="brep_navigate.png">
+   <figcaption>Figure(27): Navigation diagram of the Brep data structure in RhinoCommon.</figcaption>
+</figure> 
+
+The topology of the Brep and navigating different parts:
+
+<img src="fillet_surface.png"  class="float_right" width="225">
+
+```C#
+Brep brep = … //from input
+//BrepFace topology (3D modeling space)
+Rhino.Geometry.Collections.BrepFaceList faces = brep.Faces;
+for(int fi = 0; fi < faces.Count; fi++)
+    {
+      BrepFace face = faces[fi];
+      //Get Adjacent faces
+      var aFaces = face.AdjacentFaces();
+      //Get Adjacent edges
+      var aEdges = face.AdjacentEdges();
+      //Get face loops
+      var faceLoops = face.Loops;
+      //Get the 3D untrimmed surface
+      var face3dSurface = face.UnderlyingSurface();
+}
+
+//BrepLoop topology (2D parameter space)
+Rhino.Geometry.Collections.BrepLoopList loops = brep.Loops;
+for(int li = 0; li < loops.Count; li++)
+{
+      BrepLoop loop = loops[li];
+      //Get loop face
+      var loopFace = loop.Face;
+      //Get loop trims
+      var loopTrims = loop.Trims;
+      //Get loop 2D and 3D curves
+      var loop2dCurve = loop.To2dCurve();
+      var loop3dCurve = loop.To3dCurve();
+}
+
+//BrepEdge topology (3D modeling space)
+Rhino.Geometry.Collections.BrepEdgeList edges = brep.Edges;
+for(int ei = 0; ei < edges.Count; ei++)
+{
+      BrepEdge edge = edges[ei];
+      //Get edge faces
+      var eFaces_i = edge.AdjacentFaces();
+      //Get edge start and end vertices
+      var eStartVertex = edge.StartVertex;
+      var eEndVertex = edge.EndVertex;
+      //Get edge trim indices
+      var eTrimIndeces = edge.TrimIndices();
+      //Get edge 3D curve
+      var e3dCurve = edge.EdgeCurve;
+}
+
+//BrepTrim topology (2D parameter space)
+Rhino.Geometry.Collections.BrepTrimList trims = brep.Trims;
+for(int ti = 0; ti < trims.Count; ti++)
+{
+      BrepTrim trim = trims[ti];
+      //Get the edge
+      var trimEdge = trim.Edge;
+      //Get trim start and end vertices
+      var trimStartVertex = trim.StartVertex;
+      var trimEndVertex = trim.EndVertex;
+      //Get trim loop
+      var trimLoop = trim.Loop;
+      //Get trim face
+      var trimFace = trim.Face;
+      //Get trim 2D curve
+      var trim2dCurve = trim.TrimCurve;
+}
+
+//BrepVertex topology (3D modeling space)
+Rhino.Geometry.Collections.BrepVertexList vertices = brep.Vertices;
+for(int vi = 0; vi < vertices.Count; vi++)
+{
+      BrepVertex vertex = vertices[vi];
+      //Get vertex edges
+      var vEdges = vertex.EdgeIndices();
+      //Get vertex location
+      var vPoint = vertex.Location;
+}
+```
+In polysurfaces (which are **Breps** with multiple faces), some geometry and topology elements are shared along the connecting curves and vertices where polysurface faces join together. In the following example, the two faces F0 and F1 share one edge E0 and two vertices V0 and V2.
 
 
 ## Next Steps
