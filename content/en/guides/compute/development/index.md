@@ -59,6 +59,14 @@ On your local computer, create a folder where you want to clone the repository i
 git clone https://github.com/mcneel/compute.rhino3d.git
 ```
 
+## Anatomy of the solution
+
+The Rhino.Compute repository consists of two main projects, each serving distinct purposes within the framework. Understanding these can help clarify how Rhino.Compute operates, especially if you're looking to work with or contribute to its development. Here's a breakdown of the two projects:
+
+- compute.geometry. This project primarily focuses on the geometric calculation aspects. Esentially, compute.geometry provides a REST API that exposes Rhino's geometry engine to be used over the web. This means that geometric operations can be performed on a server, and results can be retrieved remotely, making it highly useful for web-based applications or serices that require complex geometric processing.
+
+- rhino.compute. This other project can though of as a higher-level service layer that manages and orchestrates the calls to the compute.geometry API, handling tasks like authentication, limiting the number of child processes, and setting up time limits for shutting down processes.
+
 ## Compile the solution
 
 Now that you have the code, it's time to open the project in Visual Studio 2022 and prepare it for debugging.
@@ -70,13 +78,14 @@ Now that you have the code, it's time to open the project in Visual Studio 2022 
 ![compute_geometry_vs_debug](/images/compute_geometry_vs_debug.png)
 
 - In the File menu, click on Build -> Build Solution (Ctrl + Shift + B). This will compile all of the project files.
-.......Need a new image here........
 
-- In the Solution Explorer on the right, right-click on the `compute.geometry` project and select `Set as Startup Project`. This ensures that when you run the debugger, Visual Studio will start this particular project.
+![compute_geometry_vs_build](/images/compute_geometry_vs_build.png)
+
+- In the Solution Explorer on the right, right-click on the `rhino.compute` project and select `Set as Startup Project`. This ensures that when you run the debugger, Visual Studio will start this particular project.
 
 ![compute_geometry_vs_startup](/images/compute_geometry_vs_startup.png)
 
-- Click on `compute_geometry` to start the application in the debugger. A console application should show up in your task bar showing the status of the Rhino.Compute loading process.
+- Click on `rhino.compute` to start the application in the debugger. A console application should show up in your task bar showing the status of the Rhino.Compute loading process.
 
 ![compute_geometry_vs_run](/images/compute_geometry_vs_run.png)
 
@@ -86,7 +95,4 @@ Now that you have the code, it's time to open the project in Visual Studio 2022 
 
 ## Test an endpoint
 
-Browse to the version endpoint to check that everything is working fine! Note that the port is different according with the Rhino.Compute version you are running.
-
-- Rhino.Compute branch 7.x. [http://localhost:8081/version](http://localhost:8081/version).
-- Rhino.Compute branch 8.x. [http://localhost:5000/version](http://localhost:5000/version).
+Browse to the [version](http://localhost:6500/version) endpoint to check that everything is working fine!
