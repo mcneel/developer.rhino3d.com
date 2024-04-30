@@ -651,7 +651,7 @@ Output parameters have their own individual *Preview* control. This option is on
 
 ![](outputpreview-01.png)
 
-You can toggle this option off for any of the output parameters and hide the preview, using the **Preview** menu in the component context menu:
+You can toggle this option off for any of the output parameters and hide the preview, using the **Preview** menu in the component context menu. Notice that the box preview does not show up while sphere is still previewed:
 
 ![](outputpreview-02.png)
 
