@@ -44,11 +44,13 @@ block_webcrawlers = false
 This guide is meant to be a detailed reference on all the important aspects and features of the Grasshopper C# Script component. If you would like a quick introduction to the script component, please check out:
 
 [Grasshopper Script Component](/guides/scripting/scripting-component)
+{{< /call-out >}}
 
+<!-- {{< call-out "note" "Note" >}}
 This guide does not discuss Rhino or Grasshopper APIs either. So if you would like to know how to create complex geometries in Rhino and Grasshopper, please check out:
 
 [Essential Guide to C# Scripting in Grasshopper - by Rajaa Issa](https://developer.rhino3d.com/guides/grasshopper/csharp-essentials)
-{{< /call-out >}}
+{{< /call-out >}} -->
 
 ## C# Component
 
