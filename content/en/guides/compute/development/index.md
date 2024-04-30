@@ -95,4 +95,8 @@ Now that you have the code, it's time to open the project in Visual Studio 2022 
 
 ## Test an endpoint
 
-Browse to the [version](http://localhost:6500/version) endpoint to check that everything is working fine!
+Browse to any of these endpoints to check that everything is working fine!
+- [Version](http://localhost:6500/version)
+- [Server time](http://localhost:6500/servertime)
+- [Active children](http://localhost:6500/activechildren)
+- [SDK](http://localhost:6500/sdk)
