@@ -289,7 +289,7 @@ If the data type does not have an associated *Type Hint*, it will adopt a *Cast 
 
 You can easily add the `BeforeRunScript` and `AfterRunScript` methods to your `Script_Instance` implementation by:
 
-- Click on the **Add SolveInstance Overrides** button on the editor toolbar
+- Click on the **Add SolveInstance Overrides** button on the editor dashboard
 - Click on the **Add SolveInstance Overrides** menu inside the **Grasshopper** menu on the editor
 - Typing them yourself
 
@@ -323,7 +323,7 @@ The `AfterRunScript` is executed after all the iterations of `RunScript` have co
 
 You can easily add the `DrawViewportWires` and `DrawViewportMeshes` methods to your `Script_Instance` implementation by:
 
-- Click on the **Add Preview Overrides** button on the editor toolbar
+- Click on the **Add Preview Overrides** button on the editor dashboard
 - Click on the **Add Preview Overrides** menu inside the **Grasshopper** menu on the editor
 - Typing them yourself
 
@@ -394,17 +394,17 @@ When you add breakpoints, the editor makes a few UI changes and provides a few m
 - The **Run** button will change to **Debug**
 - **Variables**, **Watch**, and **Call Stack** trays will be added to the bottom tray bar
 
-Now click on the green **Debug** button on the editor toolbar. The editor will run the script and:
+Now click on the green **Debug** button on the editor dashboard. The editor will run the script and:
 
 - Stops at breakpoints
 - Highlights the breakpoint line in orange and shows an arrow on the left side of the line
 - Highlights status bar in orange to show we are debugging a script
-- Activates the debug control buttons on the editor toolbar
+- Activates the debug control buttons on the editor dashboard
 - Opens the **Variables** tray at the bottom to show global and local variables
 
 ![](debugging-04.png)
 
-We can control the execution of script using the debug control buttons on the editor toolbar:
+We can control the execution of script using the debug control buttons on the editor dashboard:
 
 ![](debugging-05.png)
 
@@ -499,7 +499,7 @@ var response = client.Get(request);
 a = response.Content;
 ```
 
-### Assembly References
+## Assembly References
 
 C# scripts can also directly reference dotnet assembly files. You can use the **Install Package** dialog and change the **Package Source** option to **DLL Reference**:
 
@@ -521,7 +521,7 @@ As the *Install Package* dialog examples show, you can also provide a relative o
 
 Script editor used in C# script component, is an embedded variant of the main script editor in Rhino that is launched from `ScriptEditor` command. The component script editor, has a *Grasshopper* menu and few other Grasshopper-specific buttons.
 
-We have already discussed the *SDK-Mode* related buttons in the editor toolbar. Here is a description of other editor options that are useful in Grasshopper:
+We have already discussed the *SDK-Mode* related buttons in the editor dashboard. Here is a description of other editor options that are useful in Grasshopper:
 
 ### Close On Save
 
@@ -531,13 +531,41 @@ This behaviour can be changed using the **Grasshopper -> Toggle Close Editor On 
 
 ### Layout Options
 
-Script editor used in C# script component, has a series of toggle menus to change the layout of the editor and make it more compact. These options can be accessed from **Window** menu in the editor:
-
-![](compacteditor-02.mov)
+Script editor used in C# script component, has a series of toggle menus to change the layout of the editor and make it more compact. These options can be accessed from **Window** menu in the editor, and can be used to dedicated more screen space to scripting area, and also visually differentiate the Grasshopper editor from the main editor in Rhino.
 
 They are also accessible from the **Tools -> Options** menu in the editor. Hover the mouse over the question mark icons to see more information on each option:
 
 ![](compacteditor-01.png)
+
+#### Toggle Dashboard
+
+You can completely hide the editor dashboard and open up more space for script:
+
+![](toggle-dashboard.png)
+
+#### Toggle Compact Dashboard
+
+When Dashboard is visible, you can save some space by making it more compact:
+
+![](toggle-compact-dashboard.png)
+
+#### Toggle Compact Script Tabs
+
+By default, Grasshopper editor does not show the script tabs, unless debug steps into a source file other than the main script. Toggle this option if you want the tabs to be always visible:
+
+![](toggle-compact-scripttabs.png)
+
+#### Toggle Compact Browser
+
+By default Browser tabs are NOT shown on the left side of the editor in Grasshopper. The tab selector buttons are shown on the status bar to save some space. Toggle this option if you want to see the browser tabs on the left side:
+
+![](toggle-compact-browser.png)
+
+#### Toggle Compact Console
+
+By default Console tabs are shown on the bottom edge of the editor in Grasshopper. Toggle this option if you want to see the tab selector buttons on the status bar to save some space:
+
+![](toggle-compact-console.png)
 
 ## Publishing Scripts
 
