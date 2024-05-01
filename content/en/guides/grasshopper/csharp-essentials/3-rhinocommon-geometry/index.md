@@ -2297,6 +2297,348 @@ for(int vi = 0; vi < vertices.Count; vi++)
 ```
 In polysurfaces (which are **Breps** with multiple faces), some geometry and topology elements are shared along the connecting curves and vertices where polysurface faces join together. In the following example, the two faces F0 and F1 share one edge E0 and two vertices V0 and V2.
 
+<figure>
+   <img src="verts_edges.png">
+   <figcaption>Figure (28): Vertices, edges and 3-D curves are shared between neighboring faces. Edge (E0) and Vertices (V0 and V2) are shared between the two faces (F0 & F1).</figcaption>
+</figure> 
+
+As illustrated before, **Breps** has a rather complex data structure and it is useful to learn how to navigate this data.  The following examples show how to get some of the geometry parts.
+
+Example to count geometry and topology elements of a Brep and then extract the 3D geometry
+
+<img src="count_brep.png"  class="float_right" width="225">
+<img src="count_brep_panel.png"  class="float_right" width="225">
+
+
+```C#
+Brep brep = … //from input
+//Print the number of geometry elements
+Print("brep.Vertices.Count = {0}", brep.Vertices.Count);
+Print("brep.Curves3D.Count = {0}", brep.Curves3D.Count);
+Print("brep.Curves2D.Count = {0}", brep.Curves2D.Count);
+Print("brep.Surfaces.Count = {0}", brep.Surfaces.Count);
+
+//Print the number of topology elements
+Print("brep.Trims.Count = {0}", brep.Trims.Count);
+Print("brep.Loops.Count = {0}", brep.Loops.Count);
+Print("brep.Faces.Count = {0}", brep.Faces.Count);
+Print("brep.Edges.Count = {0}", brep.Edges.Count);
+
+//Extract 3d geometry elements
+var V = brep.Vertices;
+var C = brep.Curves3D;
+var S = brep.Surfaces;
+```
+
+Example to extract the outline of a Brep ignoring all holes
+
+<img src="brep_trim.png"  class="float_right" width="225">
+
+
+```C#
+Brep brep = … //from input
+//Declare outline list of curves
+List<Curve> outline = new List<Curve>();
+//Check all the loops and extract naked that are not inner
+foreach (BrepLoop eLoop in brep.Loops) {
+    //Make sure the loop type is outer
+    if (eLoop.LoopType == BrepLoopType.Outer) {
+        //Navigate through the trims of the loop
+        foreach (BrepTrim trim in eLoop.Trims) {
+            //Get the edge of each trim
+            BrepEdge edge = trim.Edge;
+            //Check if the edge has only one trim
+            if (edge.TrimCount == 1) {
+                //Add a copy of the edge curve to the list
+                outline.Add(edge.DuplicateCurve());
+          }
+        }
+    }
+}
+```
+
+Example to extract all the faces of a **Brep** box and move them away from the center
+
+<img src="brep_faces.png"  class="float_right" width="225">
+
+```C#
+Brep brep = … //from input
+//Declare a new list of faces
+List<Brep> faces = new List<Brep>();
+
+//Find the center
+Point3d center = brep.GetBoundingBox(true).Center;
+for (int i = 0; i <= brep.Faces.Count - 1; i++) {
+    //Extract the faces
+    int[ ] iList = { i };
+    Brep face = brep.DuplicateSubBrep(iList);
+    //Find face center
+    Point3d faceCenter = face.GetBoundingBox(true).Center;
+    //Find moving direction
+    Vector3d dir = new Vector3d();
+    dir = faceCenter - center;
+    //Move the face and add to the list
+    face.Translate(dir);
+    faces.Add(face);
+}
+```
+#### Create Brep objects:
+
+The **Brep** class has many **Create** methods. For example, if you need to create a twisted box, then you can use the **CreateFromBox** method in the **Brep** class as in the following. You can also create a surface out of boundary curves or create a solid out of bounding surfaces.
+
+Create a **Brep** from corners
+
+<img src="brep_corners.png"  class="float_right" width="225">
+
+```C#
+List<Point3d> corners = … // from input
+
+//Create the brep from corners
+Brep twistedBox = Brep.CreateFromBox(corners);
+```
+
+Create a **Brep** from bounding edge curves
+
+<img src="brep_boundary.png"  class="float_right" width="225">
+
+```C#
+List<Curve> crvs = … // from input
+
+//Build the brep from edges
+Brep edgeBrep = Brep.CreateEdgeSurface(crvs);
+```
+
+Create a **Brep** from from bounding surfaces
+
+<img src="brep_bounding.png"  class="float_right" width="225">
+
+```C#
+List<Brep> breps = … // from input
+double tol = … // from input
+
+ //Build the brep from corners
+Brep[ ] solids = Brep.CreateSolid(breps, tol);
+```
+
+#### Brep methods:
+
+Here is a list of some of the commonly used create methods found under the **Brep** class. For the full list and details about each method, please refer to the **RhinoCommon SDK** help.
+
+<img src="brep_methods.png">
+
+The **Brep** methods serve multiple functions. Some are to extract information such as finding out if the brep is solid (closed polysurface), others perform calculations in relation to the brep such as area, volume or find a point inside a solid. Some methods change the brep such as cap holes or merge coplanar faces. Methods that operate on multiple instances of breps include joining or performing some boolean operations. Following are examples to show the range of **Brep** methods.
+
+Example methods to extract **Brep** information: Find if a brep is valid and is a solid.
+
+<img src="brep_solids.png"  class="float_right" width="225">
+
+```C#
+Brep[] breps = … // from input
+
+List<bool> isSolid = new List<bool>();
+foreach( Brep brep in breps)
+    if( brep.IsValid )
+        isSolid.Add(brep.IsSolid);
+```
+
+Example to calculate a brep area, volume and centroid
+
+<img src="brep_spiral.png"  class="float_right" width="225">
+
+```C#
+Brep brep = … // from input
+//Declare variable
+double area = 0;
+double volume = 0;
+Point3d vc = default(Point3d);
+
+//Create a new instance of the mass properties classes
+VolumeMassProperties volumeMp = VolumeMassProperties.Compute(brep);
+AreaMassProperties areaMp = AreaMassProperties.Compute(brep);
+
+//Calculate area, volume and centroid
+area = brep.GetArea();           //or use: area = areaMp.Area
+volume = brep.GetVolume();  //or use: volume = volumeMp.Volume
+centroid = volumeMp.Centroid;
+```
+
+Example methods that change a brep  topology: merge coplanar faces in a brep
+
+<img src="brep_merge.png"  class="float_right" width="225">
+
+```C#
+Brep brep = … // from input
+double tol = 0.01;
+
+bool merged = brep.MergeCoplanarFaces(tol);
+```
+
+Example methods that operate on multiple breps: Boolean union 2 breps
+
+<img src="brep_union.png"  class="float_right" width="225">
+
+```C#
+List<Brep> breps = … // from input
+
+//Boolean union the input breps
+Brep[ ] unionBrep = Brep.CreateBooleanUnion(breps, tol);
+```
+
+### 3.3.5 Other geometry classes
+
+There are many important classes under the **Rhino.Geometry** namespace that are not derived from **GeometryBase**. Those are commonly used when writing scripts to create and manipulate geometry. We used a couple of them in the examples. You can find the full list of **RhinoCommon** classes in the documentation. Most of these classes are derived directly from the **C#** abstract class **System.Object**. This is the inheritance hierarchy for these classes.
+
+<img src="rhinogeometry_namespace.png">
+
+One important cluster of classes in this list has to do with extracting 2D outlines of the geometry, (**Make2D**). These classes start with **HiddenLineDrawing** keyword. The following diagram shows the sequence of creating the drawing and which classes are used in each step.
+
+<figure>
+   <img src="hiddenline.png">
+   <figcaption>Figure(29): Workflow and classes used to extract 2D drawing of the geometry.</figcaption>
+</figure> 
+
+The first step involves setting the parameters such as the source geometry, view and all other options. Once the parameters are set, the HLD core class can calculate all the lines and hand back to the HLD Segment class with all visibility information and associated source. The user can then use this information to create the final drawing.
+
+
+Create 2D drawing from 3D geometry (Make2D)
+
+<img src="create_3d_drawing.png">
+
+```C#
+List<GeometryBase> geomList = … //from input
+List<Plane> cplaneList = … //from input
+
+//Use the active view in the Rhino document
+var _view = doc.Views.ActiveView;
+//Set Make2D Parameters
+var _hldParams = new HiddenLineDrawingParameters
+{
+        AbsoluteTolerance = doc.ModelAbsoluteTolerance,
+        IncludeTangentEdges = false,
+        IncludeHiddenCurves = true
+        };
+    _hldParams.SetViewport(_view.ActiveViewport);
+
+    //add objects to hld_param
+    foreach (var geom in geomList){
+      _hldParams.AddGeometry(geom, Transform.Identity, null);
+}
+
+//Add clipping planes
+foreach (var cplane in cplaneList ){
+      _hldParams.AddClippingPlane(cplane);
+}
+
+//perform HLD calculation
+var  visibleList = new List<Curve>();
+var  hiddenList = new List<Curve>();
+var  secVisibleList = new List<Curve>();
+var  secHiddenList = new List<Curve>();
+var _hld = HiddenLineDrawing.Compute(_hldParams, true);
+if (_hld != null)
+{
+    //transform
+    var flatten = Transform.PlanarProjection(Plane.WorldXY);
+    BoundingBox pageBox = _hld.BoundingBox(true);
+    var delta2D = new Vector2d(0, 0);
+    delta2D = delta2D - new Vector2d(pageBox.Min.X, pageBox.Min.Y);
+    var delta3D = Transform.Translation(new Vector3d(delta2D.X, delta2D.Y, 0.0));
+    flatten = delta3D * flatten;
+    //add curves to lists
+    foreach (HiddenLineDrawingSegment hldCurve in _hld.Segments)
+    {
+        if (hldCurve == null || 
+            hldCurve.ParentCurve == null || 
+            hldCurve.ParentCurve.SilhouetteType == SilhouetteType.None)
+          continue;
+        var crv = hldCurve.CurveGeometry.DuplicateCurve();
+        if (crv != null)
+        {
+          crv.Transform(flatten);
+          if (hldCurve.SegmentVisibility == HiddenLineDrawingSegment.Visibility.Visible)
+          {
+            if (hldCurve.ParentCurve.SilhouetteType == SilhouetteType.SectionCut)
+              secVisibleList.Add(crv);
+            else
+              visibleList.Add(crv);
+          }
+          else if (hldCurve.SegmentVisibility == HiddenLineDrawingSegment.Visibility.Hidden)
+          {
+            if (hldCurve.ParentCurve.SilhouetteType == SilhouetteType.SectionCut)
+              secHiddenList.Add(crv);
+            else
+              hiddenList.Add(crv);
+          }
+        }
+    }
+}
+```
+
+## 3.4 Geometry transformations
+
+All classes derived from **GeometryBase** inherit four transformation methods.  The first three are probably the most commonly used which are **Rotate**, **Scale** and **Translate**.  But there is also a generic **Transform** method that takes a **Transform** structure and can be set to any transformation matrix. The following example shows how to use the scale, rotate and translate methods on a list of geometry objects.
+
+Use different transformation methods (scale, Rotate and Translate)
+
+<img src="geo_transform.png"  class="float_right" width="225">
+
+```C#
+List<GeometryBase> objs = … //from input 
+
+//Create a new list of geometry objects
+List<GeometryBase> newObjs = new List<GeometryBase>();
+
+foreach (GeometryBase obj in objs) {
+    //scale, rotate And move
+    obj.Scale(factor);
+    obj.Rotate(angle, Vector3d.YAxis, Point3d.Origin);
+    obj.Translate(dir);
+
+    //add to list
+    newObjs.Add(obj);
+}
+```
+
+The **Transform** structure is a 4x4 matrix with several methods to help create geometry transformations. This includes defining a shear, projection, rotation, mirror and others. The structure also has functions that support operations such as multiplication and transpose. For more information about the mathematics of transformations, please refer to *“The Essential Mathematics for Computational Design”*. The following examples show how to create a shear transform and planar projection.
+
+Create shear transformation and output the matrix
+
+<img src="geo_shear.png"  class="float_right" width="225">
+
+```C#
+Brep brep = … //from input 
+
+//Create a shear Transform
+Plane p = Plane.WorldXY;
+var v = new Vector3d(0.5, 0.5, 0);
+var y = Vector3d.YAxis;
+var z = Vector3d.ZAxis;
+
+var xform = Transform.Shear(p, v, y, z);
+
+//shear the brep
+brep.Transform(xform);
+```
+
+Create planar projection transform to project curves
+
+<img src="geo_projection.png"  class="float_right" width="225">
+
+```C#
+List<GeometryBase> objs = … //from input 
+
+//Create a new list of geometry objects
+List<GeometryBase> newObjs = new List<GeometryBase>();
+
+foreach (GeometryBase obj in objs) {
+    //Create a project transform
+    obj.Transform(Transform.PlanarProjection(Plane.WorldXY));
+
+    //add to list
+    newObjs.Add(obj);
+}
+```
+
 
 ## Next Steps
 
