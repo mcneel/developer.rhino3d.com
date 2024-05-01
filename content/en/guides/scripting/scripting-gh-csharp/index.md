@@ -56,23 +56,23 @@ This guide does not discuss Rhino or Grasshopper APIs either. So if you would li
 
 Let's dive into C# scripting in Grasshopper by creating a Script component. Go to the **Maths** tab and **Script** panel and drop a C# Script component onto the canvas:
 
-![](01.png)
+![](csharp-component.png)
 
 You can also use the generic *Script* component that can run any language, and choose C# from the [ ● ● ● ] menu:
 
-![](02.png)
+![](csharp-component-generic.png)
 
 ### Opening Script Editor
 
 Now we can double-click on the component to open a script editor. Note that the component draws a cone pointing to the editor that is associated with this component.
 
-![](03.png)
+![](csharp-component-open.png)
 
 ### Component Options
 
 At any time, you can right-click on a script component to access a few options that would change how the component behaves. You know a couple of them that are common with other Grasshopper components like **Preview**, **Enable**, and **Bake**. We will discuss all the options that are specific to this script component in detail below:
 
-![](04-a.png)
+![](csharp-component-menu.png)
 
 #### Advanced Options
 
@@ -80,9 +80,9 @@ An extended (advanced) flavour if the context menu is accessible by holding the 
 
 #### Script Name
 
-Scripts in Grasshopper are not stored as files. Most often they are embedded inside script components. To name a script, we bascially renamed the component itself. The script tab and breakpoints panel reflect the script name:
+Scripts in Grasshopper are not stored as files. Most often they are embedded inside script components. To name a script, we basically renamed the component itself. The script tab and breakpoints panel reflect the script name:
 
-![](04-b.png)
+![](csharp-component-name.png)
 
 ### Modern C#
 
@@ -102,22 +102,21 @@ Console.WriteLine($"Value: {value}");
 
 The script editor shows the version of C# language on the status bar:
 
-![](04-c.png)
+![](csharp-component-version.png)
 
 ## Inputs, Outputs
 
-The most important concept on a script component is the inputs/outputs. The **Script** component supports *Zoomable User Interface* (*ZUI* for short). TThis means that you can modify the inputs and outputs of the component by zooming in until the **Insert** [ ⊕ ] and **Remove** [ ⊖ ] controls are visible on either side:
+The most important concept on a script component is the inputs/outputs. The **Script** component supports *Zoomable User Interface* (*ZUI* for short). This means that you can modify the inputs and outputs of the component by zooming in until the **Insert** [ ⊕ ] and **Remove** [ ⊖ ] controls are visible on either side:
 
-![](05.png)
+![](csharp-component-params-zui.png)
 
 By default a script component will have `x` and `y` inputs, and `out` and `a` as outputs. When all parameters on either side are removed, the component will draw a jagged edge on that side. This is completely okay as not all scripts require inputs or produce values as outputs:
 
-![](06.png)
+![](csharp-component-params.png)
 
 Every time you add a parameter, a new temporary name is assigned to it. You can right-click on the parameter itself, to edit the name. It is good practice to assign a meaningful name to parameters so others can understand what kind of inputs to pass to your component or what these inputs are gonna be used for.
 
-![](07.png)
-
+![](csharp-component-params-name.png)
 
 {{< call-out "note" "Note" >}}
 C# is a compiled language. Every time you are changing the combination of input and output parameters, or their *Type Hints* you C# script is updated and must be recompiled. The component will show any compile or execute error messages that might occur on the message bubbles.
@@ -129,7 +128,7 @@ A short compile delay is expected when you are making parameter changes. If you 
 
 Every programming language has a set of reserved words (or keywords) that are used in its language constructs. For example in C#, the words `return`, `decimal`, or `default` are all reserved. The C# script component does not allow using any of these keywords for input or output parameters:
 
-![](08.png)
+![](csharp-component-params-reserved-names.png)
 
 Check out [C# Keywords](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/) for more information on these keywords.
 
@@ -137,18 +136,17 @@ Check out [C# Keywords](https://learn.microsoft.com/en-us/dotnet/csharp/language
 
 The `out` output parameter is special. It captures anything that the script prints to the console (`Console.WriteLine`). The captured output is passed to this parameter as one string or multiple strings (one for each line). The default behaviour is that each line being printed to the console, becomes one item in the `out` parameter:
 
-![](outparam-01.png)
+![](csharp-component-outparam-01.png)
 
 You can control the single vs multi-line behaviour using the **Avoid Grafting Output Lines**. When this option is checked, all the console output will be passed as one single item to the `out` parameter.
 
-![](outparam-02.png)
-
+![](csharp-component-outparam-02.png)
 
 #### Toggling Output 
 
 In case your script is not printing anything to the output, the `out` and be toggled using the **Standard Output/Error Parameter** option in the component context menu. When checked, the `out` parameter is added as the first output parameter. Otherwise, it would be removed:
 
-![](outparam-03.png)
+![](csharp-component-outparam-03.png)
 
 Removing the `out` parameter may improve the performance of your script component by a small amount, as the component will not attempt to capture the output, process (split into lines), and set the results on the `out` parameter. This performance increase might not be meaningful for a single component, but it would possibly be noticable in a larger Grasshopper definitions with multiple script components, each running thousands of times to process your data. Genereally it is good practice to toggle off the `out` parameter when unused.
 
