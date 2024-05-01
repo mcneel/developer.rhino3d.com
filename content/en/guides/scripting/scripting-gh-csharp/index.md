@@ -162,11 +162,13 @@ By default all inputs and outputs of a C# component have **No Type Hint** meanin
 a = x + y;
 ```
 
-![](typehinting-addition-fail.png)
+![](csharp-component-typehints-addition-fail.png)
 
-There are plenty of *Type Hints* to choose from. They are available on both input and output parameters:
+We can choose an `int` type hint for both `x` and `y` inputs to allow the addition to work in our script:
 
-![](typehints-01.png)
+![](csharp-component-typehints.png)
+
+There are plenty of *Type Hints* to choose from. They are available on both input and output parameters.
 
 Check out [Type Hints](/guides/scripting/scripting-gh-typehints) for more information on these type hints and their use cases.
 
@@ -191,15 +193,15 @@ Component input parameters have another useful option on their context menu. Thi
 
 We can modify this option on the script component inputs as well:
 
-![](paramaccess-01.png)
+![](csharp-component-paramaccess-01.png)
 
 Here is an example of the data type passed to the script component on the `x` parameter, for the three access kinds. Notice, on **Item** access, `x` is set passed as an individual `double` representing the number value, for **List** access, `x` is set to a `List<object>` that contains all the number values in one branch, and for **Tree** access,`x` is set to a `DataTree<object>` that provides access to all branches and items of the input:
 
-![](paramaccess-02.png)
+![](csharp-component-paramaccess-02.png)
 
 To get the generic collection data structures to use the correct `double` type, we can apply a `double` *Type Hint* to input parameter `x`:
 
-![](paramaccess-03.png)
+![](csharp-component-paramaccess-03.png)
 
 ### Extracting Parameters
 
@@ -207,11 +209,11 @@ Grasshopper allows extracting an input parameter from a component. Parameters on
 
 You can extract a script input by choosing **Extract** from the right-click menu on the parameter:
 
-![](extractparam-01.png)
+![](csharp-component-extractparam-01.png)
 
 If you have a *Type Hint* set on a parameter, the extracted floating parameter will be of that data type:
 
-![](extractparam-02.png)
+![](csharp-component-extractparam-02.png)
 
 ## SDK-Mode
 
@@ -541,31 +543,31 @@ They are also accessible from the **Tools -> Options** menu in the editor. Hover
 
 You can completely hide the editor dashboard and open up more space for script:
 
-![](toggle-dashboard.png)
+![](csharp-component-toggle-dashboard.png)
 
 #### Toggle Compact Dashboard
 
 When Dashboard is visible, you can save some space by making it more compact:
 
-![](toggle-compact-dashboard.png)
+![](csharp-component-toggle-compact-dashboard.png)
 
 #### Toggle Compact Script Tabs
 
 By default, Grasshopper editor does not show the script tabs, unless debug steps into a source file other than the main script. Toggle this option if you want the tabs to be always visible:
 
-![](toggle-compact-scripttabs.png)
+![](csharp-component-toggle-compact-scripttabs.png)
 
 #### Toggle Compact Browser
 
 By default Browser tabs are NOT shown on the left side of the editor in Grasshopper. The tab selector buttons are shown on the status bar to save some space. Toggle this option if you want to see the browser tabs on the left side:
 
-![](toggle-compact-browser.png)
+![](csharp-component-toggle-compact-browser.png)
 
 #### Toggle Compact Console
 
 By default Console tabs are shown on the bottom edge of the editor in Grasshopper. Toggle this option if you want to see the tab selector buttons on the status bar to save some space:
 
-![](toggle-compact-console.png)
+![](csharp-component-toggle-compact-console.png)
 
 ## Publishing Scripts
 

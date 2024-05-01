@@ -134,32 +134,45 @@ In case your script is not printing anything to the output, the `out` and be tog
 
 Removing the `out` parameter may improve the performance of your script component by a small amount, as the component will not attempt to capture the output, process (split into lines), and set the results on the `out` parameter. This performance increase might not be meaningful for a single component, but it would possibly be noticable in a larger Grasshopper definitions with multiple script components, each running thousands of times to process your data. Genereally it is good practice to toggle off the `out` parameter when unused.
 
-### Type Hints
+### Type Safety
 
-C# is a strongly-typed language. More often than not we need to define the types of inputs and outputs to be able to use all their associated features. For example, C# knows how to add two integers (`int`) together, so if we are going to add inputs in the script, we would need to define a type that supports the addition.
+Python is NOT a type-safe language. This means a variable named `x` can be assigned a value if any type. This is very different from typed languages like C# where if variable `x` is defined as an `int`, a value of type `Sphere` can not be assigned to it.
 
-This is where *Type Hints* come into play. They define the type of input or output parameter while also act as data type converters. For example you can pass a *Line* to an input of type `integer` and the converter would capture the length of the line and pass that as the integer to the component. The conversions are identical to how Grasshopper parameters can convert to each other.
+Lets assume a Python Script Component that contains this script:
 
-By default all inputs and outputs of a C# component have **No Type Hint** meaning they are defined as type `object` in the script. This provides a lot of flexibility but if you pass two integers to the default `x` and `y` inputs, this script below would fail as C# does not know how to add two `object`s to each other.
-
-```csharp
-a = x + y;
+```python
+a = x + y
 ```
 
-![](typehinting-addition-fail.png)
+If the `x` and `y` inputs are not connected and therefore do not carry any value (value of `None`), Python will throw an error when this component is executed since it does not know how to add a `None` to another `None`:
 
-There are plenty of *Type Hints* to choose from. They are available on both input and output parameters:
+![](python3-component-typesafety-01.png)
 
-![](typehints-01.png)
+Type-safety really means that the language would detect variable types during compile (before even executing the script) and will throw errors if operations or function calls does not support the specific variable type. But as we mentioned Python is not type-safe so during compilation it assumes you are gonna provide values that support the `+` operation in the `a = x + y`. This is why it throws the error shown above, during execution of the script.
+
+By providing values that support the addition, in this example integers, the component will run without any errors:
+
+![](python3-component-typesafety-02.png)
+
+
+### Type Hints
+
+In plenty of cases we need to make conversions to the input values of our script. These are the well-known parameter conversions that we all know and love in Grasshopper. As an example, you can pass a *Line* parameter to a *Number* parameter and it will automatically grab the lenght of the line as the value for the *Number* parameter:
+
+![](python3-component-typehints-01.png)
+
+We can easily apply these automatic conversions to Script Component input parameters. In this example, two *Line* values are passed to a Python script `a = x + y`. Both `x` and `y` inputs have been assigned *Type Hint* of `float` which can hold floating point values (*Number* in Grasshopper):
+
+![](python3-component-typehints-02.png)
+
+Therefore before running the script, both inputs lines will be converted to `float` values by the *Type Hint* and the output `a` will be set to the sum of the line lenghts:
+
+![](python3-component-typehints-03.png)
+
+
+There are plenty of *Type Hints* to choose from. They are available on both input and output parameters.
 
 Check out [Type Hints](/guides/scripting/scripting-gh-typehints) for more information on these type hints and their use cases.
-
-### Outputs Are Objects
-
-In C# script component, the output parameters are always defined as `object`. Their associated *Type Hint* is only used as a converter to convert the output value to the desired type, and does not affect the data type defined in the script.
-
-This provides the flexibility to assign any value to an output and let the Type Hint determine how to convert that to the desired type. For example, assume output value `a` have an `int` *Type Hint* assigned. Since it is defined as `object` we can assign a value of `Sphere` and let the *Hint* convert the Sphere into a single numerical value.
-
 
 ### Parameter Access
 
@@ -175,15 +188,17 @@ Component input parameters have another useful option on their context menu. Thi
 
 We can modify this option on the script component inputs as well:
 
-![](paramaccess-01.png)
+![](python3-component-paramaccess-01.png)
 
 Here is an example of the data type passed to the script component on the `x` parameter, for the three access kinds. Notice, on **Item** access, `x` is set passed as an individual `double` representing the number value, for **List** access, `x` is set to a `List<object>` that contains all the number values in one branch, and for **Tree** access,`x` is set to a `DataTree<object>` that provides access to all branches and items of the input:
 
-![](paramaccess-02.png)
+![](python3-component-paramaccess-02.png)
 
-To get the generic collection data structures to use the correct `double` type, we can apply a `double` *Type Hint* to input parameter `x`:
+Notice that the *Item* and *List* access are showing builtin Python types of `float` and `list`, however the *Tree* access is showing `Grasshopper.DataTree[Object]` type (See [DataTree](https://developer.rhino3d.com/api/grasshopper/html/T_Grasshopper_DataTree_1.htm)). This is an important topic that is discussed in [Marshalling]({{< relref "#marshalling" >}}).
 
-![](paramaccess-03.png)
+To get the generic DataTree structure to use the correct type, we can apply a `float` *Type Hint* to input parameter `x`. Note that generic DataTree structure shows *Double* as the element type. This is the type for *Number* parameter in Grasshopper that can fit large floating point values and it somewhat similar to `float` in Python:
+
+![](python3-component-paramaccess-03.png)
 
 ### Extracting Parameters
 
@@ -191,11 +206,11 @@ Grasshopper allows extracting an input parameter from a component. Parameters on
 
 You can extract a script input by choosing **Extract** from the right-click menu on the parameter:
 
-![](extractparam-01.png)
+![](python3-component-extractparam-01.png)
 
 If you have a *Type Hint* set on a parameter, the extracted floating parameter will be of that data type:
 
-![](extractparam-02.png)
+![](python3-component-extractparam-02.png)
 
 ## Script-Mode
 
