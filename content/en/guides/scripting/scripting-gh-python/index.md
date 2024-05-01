@@ -534,37 +534,37 @@ Script editor used in C# script component, has a series of toggle menus to chang
 
 They are also accessible from the **Tools -> Options** menu in the editor. Hover the mouse over the question mark icons to see more information on each option:
 
-![](compacteditor-01.png)
+![](python3-component-layoutoptions.png)
 
 #### Toggle Dashboard
 
 You can completely hide the editor dashboard and open up more space for script:
 
-![](toggle-dashboard.png)
+![](python3-component-toggle-dashboard.png)
 
 #### Toggle Compact Dashboard
 
 When Dashboard is visible, you can save some space by making it more compact:
 
-![](toggle-compact-dashboard.png)
+![](python3-component-toggle-compact-dashboard.png)
 
 #### Toggle Compact Script Tabs
 
 By default, Grasshopper editor does not show the script tabs, unless debug steps into a source file other than the main script. Toggle this option if you want the tabs to be always visible:
 
-![](toggle-compact-scripttabs.png)
+![](python3-component-toggle-compact-scripttabs.png)
 
 #### Toggle Compact Browser
 
 By default Browser tabs are NOT shown on the left side of the editor in Grasshopper. The tab selector buttons are shown on the status bar to save some space. Toggle this option if you want to see the browser tabs on the left side:
 
-![](toggle-compact-browser.png)
+![](python3-component-toggle-compact-browser.png)
 
 #### Toggle Compact Console
 
 By default Console tabs are shown on the bottom edge of the editor in Grasshopper. Toggle this option if you want to see the tab selector buttons on the status bar to save some space:
 
-![](toggle-compact-console.png)
+![](python3-component-toggle-compact-console.png)
 
 ## Publishing Scripts
 

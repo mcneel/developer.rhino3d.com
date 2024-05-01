@@ -537,7 +537,7 @@ Script editor used in C# script component, has a series of toggle menus to chang
 
 They are also accessible from the **Tools -> Options** menu in the editor. Hover the mouse over the question mark icons to see more information on each option:
 
-![](csharp-component-compacteditor-01.png)
+![](csharp-component-layoutoptions.png)
 
 #### Toggle Dashboard
 
