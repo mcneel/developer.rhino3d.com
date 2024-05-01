@@ -20,4 +20,6 @@ toc_type = "single"
 block_webcrawlers = false
 +++
 
-- list of all availabe type hints
+Coming Soon. If you have any questions please reach out on [McNeel Forums](https://discourse.mcneel.com)
+
+<!-- - list of all availabe type hints -->

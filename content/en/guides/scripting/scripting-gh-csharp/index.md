@@ -47,7 +47,7 @@ This guide is meant to be a detailed reference on all the important aspects and 
 {{< /call-out >}}
 
 <!-- {{< call-out "note" "Note" >}}
-This guide does not discuss Rhino or Grasshopper APIs either. So if you would like to know how to create complex geometries in Rhino and Grasshopper, please check out:
+This guide does not discuss Rhino or Grasshopper APIs. If you would like to know how to create complex geometries in Rhino and Grasshopper, please check out:
 
 [Essential Guide to C# Scripting in Grasshopper - by Rajaa Issa](https://developer.rhino3d.com/guides/grasshopper/csharp-essentials)
 {{< /call-out >}} -->
@@ -170,7 +170,7 @@ We can choose an `int` type hint for both `x` and `y` inputs to allow the additi
 
 There are plenty of *Type Hints* to choose from. They are available on both input and output parameters.
 
-Check out [Type Hints](/guides/scripting/scripting-gh-typehints) for more information on these type hints and their use cases.
+Check out [Advanced: Type Hints](/guides/scripting/advanced-typehints) for more information on these type hints and their use cases.
 
 ### Outputs Are Objects
 
@@ -639,7 +639,7 @@ Right-Click on all input and output parameters and set a **Name** (Human-readabl
 
 ![](csharp-component-publishing-02.png)
 
-Check out [Projects: Publish](/guides/scripting/projects-publish) on how to publish your script components in a Grasshopper plugin.
+Check out [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) on how to publish your script components in a Grasshopper plugin.
 
 ## Template Scripts
 

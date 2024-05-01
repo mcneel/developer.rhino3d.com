@@ -38,6 +38,15 @@ block_webcrawlers = false
     .scriptTable th {
         background-color: #efefef;
     }
+
+    .pythonCompareTable {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .pythonCompareTable th {
+        background-color: #efefef;
+    }
 </style>
 
 {{< call-out "note" "Note" >}}
@@ -46,25 +55,11 @@ This guide is meant to be a detailed reference on all the important aspects and 
 [Grasshopper Script Component](/guides/scripting/scripting-component)
 {{< /call-out >}}
 
-<!-- {{< call-out "note" "Note" >}}
-This guide does not discuss Rhino or Grasshopper APIs either. So if you would like to know how to create complex geometries in Rhino and Grasshopper, please check out:
+{{< call-out "note" "Note" >}}
+This guide does not discuss Rhino or Grasshopper APIs. If you would like to know how to create complex geometries in Rhino and Grasshopper, please check out:
 
-[Essential Guide to Python Scripting in Grasshopper - by ?]()
-{{< /call-out >}} -->
-
-- python 3 vs python 2
-- cpython vs ironpython
-- adding a python package in editor or gh
-- adding python env path in editor or gh
-- python engines and resetting
-- python envs
-- python venvs
-- 
-## Why Python 3
-
-
-## Why Python 2
-
+[Python in Rhino & Grasshopper](/guides/rhinopython)
+{{< /call-out >}}
 
 ## Python Component
 
@@ -162,7 +157,6 @@ By providing values that support the addition, in this example integers, the com
 
 ![](python3-component-typesafety-02.png)
 
-
 ### Type Hints
 
 In plenty of cases we need to make conversions to the input values of our script. These are the well-known parameter conversions that we all know and love in Grasshopper. As an example, you can pass a *Line* parameter to a *Number* parameter and it will automatically grab the lenght of the line as the value for the *Number* parameter:
@@ -180,7 +174,7 @@ Therefore before running the script, both inputs lines will be converted to `flo
 
 There are plenty of *Type Hints* to choose from. They are available on both input and output parameters.
 
-Check out [Type Hints](/guides/scripting/scripting-gh-typehints) for more information on these type hints and their use cases.
+Check out [Advanced: Type Hints](/guides/scripting/advanced-typehints) for more information on these type hints and their use cases.
 
 ### Parameter Access
 
@@ -208,7 +202,6 @@ To get the generic DataTree structure to use the correct type, we can apply a `f
 
 ![](python3-component-paramaccess-03.png)
 
-
 ### Extracting Parameters
 
 Grasshopper allows extracting an input parameter from a component. Parameters on a component are independent entities that could exist as inputs or outputs on a component or as floating parameters ([Types of Parameters](https://developer.rhino3d.com/guides/grasshopper/simple-parameters/#types-of-parameters)).
@@ -221,9 +214,16 @@ If you have a *Type Hint* set on a parameter, the extracted floating parameter w
 
 ![](python3-component-extractparam-02.png)
 
-### Marshalling
+## Marshalling
 
-sdsdp
+### Marshalling Guids
+
+The ubiquitous `rhinoscriptsyntax` modules (usually imported as `rs` ), references Rhino document elements by their unique identifier (Guid). Python Script component has a few features to make life easier when dealing with `rhinoscriptsyntax` functions:
+
+- If the input parameter has **ghdoc Object** *Type Hint*, input elements are marshalled to their unique identifier so they can be passed to `rhinoscriptsyntax` functions. 
+
+- Convert unique identifiers to their associated elements on the output parameters. This capability can be toggle from the component context menu item *Avoid Marshalling Output Guids*
+
 
 ## Script-Mode
 
@@ -560,6 +560,23 @@ import numpy as np
 a = list(np.random.rand(7))
 ```
 
+### Module Search Paths
+
+Script editor has global configurations for Python 3 and 2 search paths. See [Editor Configs: Python Paths](/guides/scripting/editor-configs/#python-paths) for detailed information.
+
+You can also use the `# env` directive as shown below to specifically add a search path to your script:
+
+```python
+#! python 3
+# env: C:\Path\To\MyPythonModules\
+
+import my_module
+```
+
+### Virtual Environments
+
+- 
+
 ## NuGet Packages
 
 Python script can benefit from third-party packages that are published on [NuGet](https://www.nuget.org) package server. You can use the **Install Package** dialog and change the **Package Source** option to **NuGet**:
@@ -609,6 +626,10 @@ As the *Install Package* dialog examples show, you can also provide a relative o
 
 from MySharedAssembly import MyData
 ```
+
+## Reload Engine
+
+## Reset Runtime
 
 ## Customizing Editor
 
@@ -672,7 +693,7 @@ Right-Click on all input and output parameters and set a **Name** (Human-readabl
 
 ![](python3-component-publishing-02.png)
 
-Check out [Projects: Publish](/guides/scripting/projects-publish) on how to publish your script components in a Grasshopper plugin.
+Check out [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) on how to publish your script components in a Grasshopper plugin.
 
 ## Template Scripts
 
