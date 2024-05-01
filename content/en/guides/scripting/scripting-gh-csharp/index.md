@@ -217,7 +217,7 @@ If you have a *Type Hint* set on a parameter, the extracted floating parameter w
 
 ## SDK-Mode
 
-There are two ways you can create a C# script in Grasshopper. The first and the easiest is to write a C# script in the simplest form. For example, if we want to pass the sum of our two `x` and `y` inputs to the `a` output, we would create C# script component with this script:
+There are two ways you can create a C# script in Grasshopper. The first and the easiest is to write a C# script in the simplest form. For example, if we want to pass the sum of our two `x` and `y` inputs to the `a` output, we would create a script component with this script:
 
 ```csharp
 a = x + y;
@@ -233,12 +233,11 @@ However, a typical Grasshopper component can:
 - Execute code to draw geometry wires on Rhino viewports ([DrawViewportWires](https://developer.rhino3d.com/api/grasshopper/html/M_Grasshopper_Kernel_GH_Component_DrawViewportWires.htm))
 - Execute code to draw geometry meshes on Rhino viewports ([DrawViewportMeshes](https://developer.rhino3d.com/api/grasshopper/html/M_Grasshopper_Kernel_GH_Component_DrawViewportMeshes.htm))
 
-
 The methods linked above are part of Grasshopper SDK for creating custom components. Every developer that creates a Grasshoper plugin is aware of these methods and might be using them to customize the component behaviour.
 
 In a C# script component, we can implement our scripts in a similar manner. That is why we are calling it the **SDK-Mode** as it provides similar functionality that is available in Grasshopper SDK.
 
-By default when you create a C# script component, the template script is already in *SDK-Mode* as this is how C# components before Rhino 8 have been working and we kept it the same in Rhino 8 and above.
+By default when you create a C# script component, the template script is already in *SDK-Mode* as this is how C# components before Rhino 8 have been working and we kept it the same in Rhino 8 and after.
 
 This is how the default script looks like (actual script might not be identical):
 
@@ -281,7 +280,7 @@ You can write the logic of your component inside the `RunScript` block, take the
 
 ![](csharp-component-runscriptsig-01.mov)
 
-Notice that input and output types will be used to apply an appropriate type hint to the parameter. The collection type of the input (`List`, or `DataTree`) is also used to apply the correct access kind to the associated input parameter.
+Notice that input and output types will be used to apply an appropriate *Type Hint* to the parameter. The collection type of the input (`List`, or `DataTree`) is also used to apply the correct access kind to the associated input parameter.
 
 If the data type does not have an associated *Type Hint*, it will adopt a *Cast Type Hint* that tries to directly cast input values to the data type:
 
@@ -337,7 +336,7 @@ These two methods will be added to the class implementation:
 
 `DrawViewportWires` is called first and here you can draw points and curves. `DrawViewportMeshes` is called later and this is where you can draw transparent shapes, such as meshes.
 
-Notice there is also a `BoundingBox` property implementation that is added as well. The default value is `BoundingBox.Empty` but you should change that to a larger bounding box that bounds any custom geometry being drawn by your component.
+Notice there is also a `ClippingBox` property implementation that is added as well. The default value is `BoundingBox.Empty` but you should change that to a larger bounding box that bounds any custom geometry being drawn by your component.
 
 Here is an example of a component that draws a 2D filled rectangle at the top-left corner of Rhino viewport:
 
@@ -367,17 +366,76 @@ Here is a very simple example:
 
 ![](csharp-component-scriptmode-01.png)
 
-Notice that we do not have a `RunScript` method that would show the input and outputs and their data types. The `x` input parameter is magically defined and set before your script starts.
-
 Check out [NuGet Packages]({{< relref "#nuget-packages" >}}) for another example.
 
 {{< call-out "note" "Note" >}}
 *SDK-Mode* and *Script-Mode* are both valid ways of writing scripts in C# script component. Choose the one you are comfortable with and is the most appropriate for the use case.
 {{< /call-out >}}
 
+### Accessing Inputs
+
+Notice that we do not have a `RunScript` method that would show the input and outputs and their data types. The `x` input parameter is magically defined and set before your script starts. You can reference the input values anywhere in the *Global* scope of your script.
+
+In the example above, the output `x` is already defined and set in the script scope, and its value can be used in the script:
+
+```csharp
+a = $"Hello {x}";
+```
+
+You can also define functions in the global scope without defining classes. These global functions can access the globally defined parameters:
+
+```csharp
+using System;
+
+double Solve()
+{
+    return x + y;
+}
+
+a = Solve();
+```
+
+However, the script below will throw an error since `Solver.Compute()` method does not have access to the `x` and `y` inputs defined in the global scope. This is a limitation of C# language itself and is by design:
+
+```csharp
+using System;
+
+Solver s = new Solver();
+a = s.Compute();
+
+class Solver 
+{
+    public double Compute()
+    {
+        return x + y;
+    }
+}
+```
+
+In these cases, try passing the desired values to your custom methods:
+
+```csharp
+using System;
+
+Solver s = new Solver();
+a = s.Compute(x, y);
+
+class Solver 
+{
+    public double Compute(double left, double right)
+    {
+        return left + right;
+    }
+}
+```
+
+### Settings Outputs
+
+As mentioned above, in *Script-Mode*, the output variables are magically defined in the script scope by the component. Assign the desired values to the outputs in your script and they will be set on the component outputs.
+
 ## Debugging Scripts
 
-You can debug your C# scripts in the script component. During debug, we can execute the script line by line or pause the execution at certain lines called **Breakpoints** and inspect the values of global and local variables.
+You can debug your C# scripts in the script editor. During debug, we can execute the script line by line or pause the execution at certain lines called **Breakpoints** and inspect the values of global and local variables.
 
 Move your mouse cursor to the left side of any script line and click to add a **Breakpoint**:
 
@@ -609,7 +667,7 @@ You can create a C# script (SDK-Mode is not yet supported for shared scripts) in
 
 ### Language Specifier Directive
 
-Notice that the scripts starts with `// #! csharp`. This is called a language specifier directive. Its purpose is to embed the expected language in the script code itself as a comment and a known pattern. Since scripts that are stored in this way do not have a file extension so the language specifier is necessary for the script component to determine the language it should use to run the script. Alternatively you can Right-Click on the `script` parameter and choose a language from the menu, but that means all the input scripts must be of the chosen language.
+Notice that the scripts starts with `// #! csharp`. This is called a language specifier directive. Its purpose is to embed the expected language in the script code itself as a comment and a known pattern. Since scripts that are stored in this way do not have a file extension the language specifier is necessary for the script component to determine the language it should use to run the script. Alternatively you can Right-Click on the `script` parameter and choose a language from the menu, but that means all the input scripts must be of the chosen language.
 
 Also note that the component icon changes to a generic script icon. The reason is that a script component with an `script` input can executed any of the supported languages. Notice the language specifer for the second script is `#! python 3`:
 
