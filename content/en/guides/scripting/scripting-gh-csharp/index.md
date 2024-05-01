@@ -279,13 +279,13 @@ You can write the logic of your component inside the `RunScript` block, take the
 
 *Script* component is smart enough to update the RunScript signature when parameters on the component are changed. It is also capable of updating parameters on the component, when the RunScript signature is manually edited:
 
-![](runscriptsig-01.mov)
+![](csharp-component-runscriptsig-01.mov)
 
 Notice that input and output types will be used to apply an appropriate type hint to the parameter. The collection type of the input (`List`, or `DataTree`) is also used to apply the correct access kind to the associated input parameter.
 
 If the data type does not have an associated *Type Hint*, it will adopt a *Cast Type Hint* that tries to directly cast input values to the data type:
 
-![](runscriptsig-02.png)
+![](csharp-component-runscriptsig-02.png)
 
 ### Before, After Solve Overrides
 
@@ -295,11 +295,11 @@ You can easily add the `BeforeRunScript` and `AfterRunScript` methods to your `S
 - Click on the **Add SolveInstance Overrides** menu inside the **Grasshopper** menu on the editor
 - Typing them yourself
 
-![](sdkmode-01.png)
+![](csharp-component-sdkmode-01.png)
 
 These two methods will be added to the class implementation:
 
-![](sdkmode-02.png)
+![](csharp-component-sdkmode-02.png)
 
 {{< call-out "note" "Note" >}}
 A good example of using these two methods would be to setup instance variables on the class instance during `BeforeRunScript` and clean them up after the execution during `AfterRunScript`. The component is not allowed to make changes to the output parameters inside these methods.
@@ -307,7 +307,7 @@ A good example of using these two methods would be to setup instance variables o
 
 Each one of these methods is executed only once, per one full execution of this component. We can put a few print statements in these methods, and check the order of execution:
 
-![](sdkmode-03.png)
+![](csharp-component-sdkmode-03.png)
 
 There are two range components included in this example to provide inputs to the script component. Each range component outputs 3 items, and their associated input parameter on the script component has a `double` *Type Hint* assigned to it. This means the `RunScript` method is going to be executed 3 times for 3 pairs of `x` and `y`.
 
@@ -329,11 +329,11 @@ You can easily add the `DrawViewportWires` and `DrawViewportMeshes` methods to y
 - Click on the **Add Preview Overrides** menu inside the **Grasshopper** menu on the editor
 - Typing them yourself
 
-![](sdkmode-04.png)
+![](csharp-component-sdkmode-04.png)
 
 These two methods will be added to the class implementation:
 
-![](sdkmode-05.png)
+![](csharp-component-sdkmode-05.png)
 
 `DrawViewportWires` is called first and here you can draw points and curves. `DrawViewportMeshes` is called later and this is where you can draw transparent shapes, such as meshes.
 
@@ -341,7 +341,7 @@ Notice there is also a `BoundingBox` property implementation that is added as we
 
 Here is an example of a component that draws a 2D filled rectangle at the top-left corner of Rhino viewport:
 
-![](sdkmode-06.png)
+![](csharp-component-sdkmode-06.png)
 
 An argument of type [IGH_PreviewArgs](https://developer.rhino3d.com/api/grasshopper/html/T_Grasshopper_Kernel_GH_PreviewArgs.htm) is passed to these preview override methods. As you can see in the example above, you can access the `args.Display` property which is a Rhino [DisplayPipeline](https://developer.rhino3d.com/api/rhinocommon/rhino.display.displaypipeline) instance and has a lot of helpful draw methods.
 
@@ -365,7 +365,7 @@ A simpler, more script-like, method of using *C# Script Component* is to write C
 
 Here is a very simple example:
 
-![](scriptmode-01.png)
+![](csharp-component-scriptmode-01.png)
 
 Notice that we do not have a `RunScript` method that would show the input and outputs and their data types. The `x` input parameter is magically defined and set before your script starts.
 
@@ -381,15 +381,15 @@ You can debug your C# scripts in the script component. During debug, we can exec
 
 Move your mouse cursor to the left side of any script line and click to add a **Breakpoint**:
 
-![](debugging-01.png)
+![](csharp-component-debugging-01.png)
 
 The **Breakpoints** tray at the bottom will show all the breakpoints, and will provide buttons to *Enabled/Disable* or *Clear* them:
 
-![](debugging-02.png)
+![](csharp-component-debugging-02.png)
 
 Use the **Toggle** button to activate or deactivate the breakpoints. Deactivated breakpoints will show up as gray dots in the editor:
 
-![](debugging-03.png)
+![](csharp-component-debugging-03.png)
 
 When you add breakpoints, the editor makes a few UI changes and provides a few more utilities for debugging:
 
@@ -404,11 +404,11 @@ Now click on the green **Debug** button on the editor dashboard. The editor will
 - Activates the debug control buttons on the editor dashboard
 - Opens the **Variables** tray at the bottom to show global and local variables
 
-![](debugging-04.png)
+![](csharp-component-debugging-04.png)
 
 We can control the execution of script using the debug control buttons on the editor dashboard:
 
-![](debugging-05.png)
+![](csharp-component-debugging-05.png)
 
 From left to right, they are:
 
@@ -422,13 +422,13 @@ Click on **Continue** to see the execution move to the next line:
 
 Notice that the **Variables** panel now shows new values for **x** and **y**. The panel header also shows **Run Script (2 of 11)** on the top-right meaning this is the second time Grasshopper is executing this component with a pair of **x** and **y** inputs:
 
-![](debugging-06.png)
+![](csharp-component-debugging-06.png)
 
 Progressively clicking on **Continue** will continue executing the script and modifying the variables. At each stop, the **Variables** tray shows the current values of global and local variables.
 
 At any point during debug, the **Stop** button stops debugging. The script component will show an error marking with the message **Debug Stopped**:
 
-![](debugging-07.png)
+![](csharp-component-debugging-07.png)
 
 Once the debug stops, the editor UI changes back to normal, and the **Variables** tray will show the last state of the variables. The tray will keep these data until another session of debugging is started.
 
@@ -436,25 +436,25 @@ Once the debug stops, the editor UI changes back to normal, and the **Variables*
 
 *Variables* tray is a great tool to inspect the current values of all the global and local variables in our script. Variables data is shown in a table with 3 columns: **Name**, **Value**, **Type**. For each variable you can see the current value and the type of data it is holding. A red marker will highlight the variables that changed during debug:
 
-![](debugging-08.png)
+![](csharp-component-debugging-08.png)
 
 For more complicated data types with fields and properties, you can expand the variable to see current values of its members:
 
-![](debugging-09.png)
+![](csharp-component-debugging-09.png)
 
 If a value is a collection of other values, you can expand the variable to see each item individually. The *Name* column shows the item index like `[0]`:
 
-![](debugging-10.png)
+![](csharp-component-debugging-10.png)
 
 ### Watch Tray
 
 *Watch* tray is very similar to the variables tray. The primary difference is that *Watch* tray only shows the variables that you have specifically added to watch. Use the **Add Expression** button on the tray toolbar to add a new variable to watch. Hit Enter on the added *Expression* item to edit and type the variable name:
 
-![](debugging-11.png)
+![](csharp-component-debugging-11.png)
 
 *Watch* tray will show a green checkmark when it can extract the variable value during debug. A yellow warning icon is shown when the variable is not in scope:
 
-![](debugging-12.png)
+![](csharp-component-debugging-12.png)
 
 ### Call Stack Tray
 
@@ -462,11 +462,11 @@ If a value is a collection of other values, you can expand the variable to see e
 
 In the example below, script execution started by running `RunScript`. Then the script called the `Sum` method and that is where we are paused during debug right now. *Call Stack* tray shows this function at the top of the list, with `RunScript` following right after. *Variable* and *Watch* trays also show the values of variables in the current call frame:
 
-![](debugging-13.png)
+![](csharp-component-debugging-13.png)
 
 You can click on other stack frames, and switch to *Variables* or *Watch* tray to inspect the values in their scope:
 
-![](debugging-14.png)
+![](csharp-component-debugging-14.png)
 
 *Call Stack* tray shows stack frames for different threads in your script independently.
 
@@ -474,7 +474,7 @@ You can click on other stack frames, and switch to *Variables* or *Watch* tray t
 
 C# script can benefit from third-party packages that are published on [NuGet](https://www.nuget.org) package server. You can use the *Install Package* button to install any of these packages and use in your script:
 
-![](packages-01.png)
+![](csharp-component-packages-01.png)
 
 The Install Package dialog, shows a couple of example of how you can specify the package name and version requirements.
 
@@ -482,7 +482,7 @@ The **Add Package Reference to Script** option, when check (default), adds a pac
 
 Notice the `#r "nuget: RestSharp, 110.2.0"` line in the example script below. The format follows the package reference for script on NuGet website:
 
-![](packages-02.png)
+![](csharp-component-packages-02.png)
 
 ```csharp
 #r "nuget: RestSharp, 110.2.0"
@@ -505,7 +505,7 @@ a = response.Content;
 
 C# scripts can also directly reference dotnet assembly files. You can use the **Install Package** dialog and change the **Package Source** option to **DLL Reference**:
 
-![](packages-03.png)
+![](csharp-component-packages-03.png)
 
 If the assembly is already loaded in Rhino, you can reference it by just typing the name of the assembly. Make sure the extension is included in the assembly name (e.g. `.dll`) A package reference like example below is optionally added to your script:
 
@@ -537,7 +537,7 @@ Script editor used in C# script component, has a series of toggle menus to chang
 
 They are also accessible from the **Tools -> Options** menu in the editor. Hover the mouse over the question mark icons to see more information on each option:
 
-![](compacteditor-01.png)
+![](csharp-component-compacteditor-01.png)
 
 #### Toggle Dashboard
 
@@ -575,11 +575,11 @@ If you are planning to publish your script components in a Grasshopper plugin, a
 
 Right-Click on the script component and set appropriate values for **Tooltip**. This description is used for publishing the script and is shown on the published component.
 
-![](publishing-01.png)
+![](csharp-component-publishing-01.png)
 
 Right-Click on all input and output parameters and set a **Name** (Human-readable) and  **Tooltip** for each parameter. The human-readable name is shown when **Display -> Draw Full Names** are enabled in Grasshopper. Setting a human-readable name and description helps understanding what inputs the component requires, and what outputs it provides and generally makes it easier to work with your published components.
 
-![](publishing-02.png)
+![](csharp-component-publishing-02.png)
 
 Check out [Projects: Publish](/guides/scripting/projects-publish) on how to publish your script components in a Grasshopper plugin.
 
@@ -587,7 +587,7 @@ Check out [Projects: Publish](/guides/scripting/projects-publish) on how to publ
 
 There are a few template scripts available in the **Templates** panel in the editor. You can Double-Click on any of these templates to replace the contents of your script with the template. This is a good way to start slightly more complicated scripts:
 
-![](templates-01.png)
+![](csharp-component-templates-01.png)
 
 ### User Objects As Templates
 
@@ -605,7 +605,7 @@ If you have a script component that has an overriden, incorrect, or low-resoluti
 
 You can create a C# script (SDK-Mode is not yet supported for shared scripts) in a Grasshopper panel, and pass that as an input to multiple *Script* components. Script components have a special `script` input parameter that can be activated from the advanced context menu. Shift + Right-Click on the component and choose **Script Input Parameter ("script")** to toggle this input:
 
-![](sharedscripts-01.png)
+![](csharp-component-sharedscripts-01.png)
 
 ### Language Specifier Directive
 
@@ -613,17 +613,17 @@ Notice that the scripts starts with `// #! csharp`. This is called a language sp
 
 Also note that the component icon changes to a generic script icon. The reason is that a script component with an `script` input can executed any of the supported languages. Notice the language specifer for the second script is `#! python 3`:
 
-![](sharedscripts-02.png)
+![](csharp-component-sharedscripts-02.png)
 
 ### Output Script
 
 Editing a script in a Grasshopper panel is not very convenient. Script components have a special `script` output parameter that can be activated from the advanced context menu. Shift + Right-Click on the component and choose **Script Output Parameter ("script")** to toggle this output:
 
-![](sharedscripts-03.png)
+![](csharp-component-sharedscripts-03.png)
 
 In this manner, we can use the first component to create and use our script, and pass the same script to other components to ensure they all run the same script. And as shown above, you can pass scripts of other languages to the `script` input as well:
 
-![](sharedscripts-04.png)
+![](csharp-component-sharedscripts-04.png)
 
 ## Value-Type Outputs
 
@@ -639,11 +639,11 @@ If your C# script (*SDK* or *Script-Mode*), has an input that is marked with a *
 
 See this example. The C# script has two `double` inputs (`x` and `y`) but only assigns a value to the first input `x`. The `y` output will be set to the default value for the type `double` which is `0`:
 
-![](valuetypes-01.png)
+![](csharp-component-valuetypes-01.png)
 
 Similarly, if your C# script (*SDK* or *Script-Mode*), has an output that is marked with a *Type Hint* representing a *Value Type*, and this output is not set in your script, the output will adopt the default value:
 
-![](valuetypes-02.png)
+![](csharp-component-valuetypes-02.png)
 
 Keep this in mind when working with output Type Hints in C# script component.
 
@@ -651,11 +651,11 @@ Keep this in mind when working with output Type Hints in C# script component.
 
 Output parameters have their own individual *Preview* control. This option is on by default and Grasshopper renders previews for geometry values in output parameters:
 
-![](outputpreview-01.png)
+![](csharp-component-outputpreview-01.png)
 
 You can toggle this option off for any of the output parameters and hide the preview, using the **Preview** menu in the component context menu. Notice that the box preview does not show up while sphere is still previewed:
 
-![](outputpreview-02.png)
+![](csharp-component-outputpreview-02.png)
 
 ## Exporting Script
 
