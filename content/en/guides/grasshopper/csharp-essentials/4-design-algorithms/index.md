@@ -29,395 +29,656 @@ toc_type = "single"
 
 +++
 
-## 4.1 What on earth are they and why should I care?
+## 4.1 Introduction
 
-When we were discussing numeric variables in paragraph 2.3.1, there was an example about mathematical operations on numbers:
+In this chapter we will implement a few examples to create mathematical curves and surfaces and solve a few generative algorithms using C# in Grasshopper. Many of the examples involve using loops and recursions which are not supported in regular Grasshopper components.
 
-{{< download-script "rhinopython/rhinopython101/4_1_MathSyntax.py" "4_1_MathSyntax.py">}}
+## 4.2 Geometry algorithms
 
-```python
-x = 15 + 26 * 2.33
-x = math.sin(15 + 26) + math.sqrt(2.33)
-x = math.tan(15 + 26) / math.log(55)
+It is relatively easy to create curves and surfaces that follow certain mathematical equations when you use scripting. You can generate control points to create smooth Nurbs, or interpolate points to create the geometry.
+
+### 4.2.1 Sine curves and surface
+
+The following example shows how to create NurbsCurves and NurbsSurfaces and a lofted Brep using the sine of an angle.
+
+Create curves and surface using the sine equation
+
+<img src="curves_sin_curve.png">
+
+```C#
+private void RunScript(int num, ref object OutCurves, ref object OutSurface, ref object OutLoft)
+{
+  //list of all points
+  List<Point3d> allPoints = new List<Point3d>();
+  //list of curves
+  List<Curve> curves = new List<Curve>();
+
+  for(int y = 0; y < num; y++)
+  {
+      //curve points
+      List<Point3d> crvPoints= new List<Point3d>();
+      for(int x = 0; x < num; x++)
+      {
+        double z = Math.Sin(Math.PI / 180 + (x + y));
+        Point3d pt = new Point3d(x, y, z);
+        crvPoints.Add(pt);
+        allPoints.Add(pt);
+      }
+      //create a degree 3 nurbs curve from control points
+      NurbsCurve crv = Curve.CreateControlPointCurve(crvPoints, 3);
+      curves.Add(crv);
+  }
+  //create a nurbs surface from control points
+  NurbsSurface srf = NurbsSurface.CreateFromPoints(allPoints, num, num, 3, 3);
+
+  //create a loft brep from curves
+  Brep[ ] breps = Brep.CreateFromLoft(curves, Point3d.Unset, Point3d.Unset, LoftType.Tight, false);
+
+  //Assign output
+  OutCurves = curves;
+  OutSurface = srf;
+  OutLoft = breps;
+}
 ```
 
-The four lines of code above contain four kinds of code:
+### 4.2.2 De Casteljau algorithm to interpolate a Bezier curve
 
-1. Numbers        `15, 26, 2.33 and 55`
-2. Variables    `x`
-3. Operators    `=, +, * and /`
-4. Functions    `math.sin(), math.sqrt(), math.tan() and math.log()`
+You can create a cubic Bezier curve from four input points. De Casteljau algorithm is used in computer graphics to evaluate the Bezier curve at any parameter. If evaluated at multiple parameters, then the points can be connected to draw the curve. The following example shows a recursive function implementation to interpolate through a Bezier curve.
 
-Numbers and variables are well behind us now. Arithmetic operators should be familiar from everyday life, Python uses them in the same way as you used to during math classes. Python comes with a limited amount of arithmetic operators and they are always positioned between two variables or constants (a constant is a fixed number).  The function first signifies that we have imported math at the top of our code, using "import math", and then call a function that is within the math module called "sin()". Thus we write: math.sin(value).
+De Casteljau algorithm to draw a Bezier curve with 2, 4, 8 and 16 segments
 
-{{< image url="/images/primer-operators.svg" alt="/images/primer-operators.svg" class="image_center" width="95%" >}}
+<img src="de_casteljau.png">
 
+```C#
+private void RunScript(Point3d pt0, Point3d pt1, Point3d pt2, Point3d pt3, int segments, ref object BezierCrv)
+{
+    if(segments < 2)
+      segments = 2;
 
-## 4.2 Careful...
+    List<Point3d> bezierPts = new List<Point3d>();
+    bezierPts.Add(pt0);
+    bezierPts.Add(pt1);
+    bezierPts.Add(pt2);
+    bezierPts.Add(pt3);
 
-One thing to watch out for is operator precedence. As you will remember from math classes, the addition and the multiplication operator have a different precedence. If you see an equation like this:
+    List<Point3d> evalPts = new List<Point3d>();
+    double step = 1 / (double) segments;
+    for(int i = 0; i <= segments; i++)
+    {
+      double t = i * step;
+      Point3d pt = Point3d.Unset;
+      EvalPoint(bezierPts, t, ref pt);
+      if(pt.IsValid)
+        evalPts.Add(pt);
+    }
+    Polyline pline = new Polyline(evalPts);
+    BezierCrv = pline;
+}
+void EvalPoint(List<Point3d> points, double t, ref Point3d evalPt)
+{
+    //stopping condition - point at parameter t is found
+    if(points.Count < 2)
+      return;
+    List<Point3d> tPoints = new List<Point3d>();
+    for(int i = 1; i < points.Count; i++)
+    {
+      Line line = new Line(points[i - 1], points[i]);
+      Point3d pt = line.PointAt(t);
+      tPoints.Add(pt);
+    }
+    if(tPoints.Count == 1)
+      evalPt = tPoints[0];
+    EvalPoint(tPoints, t, ref evalPt);
+}
+```
+### 4.2.3 Simple subdivision mesh
 
-```python
-x = 4 + 5 * 2
+The following example takes a surface and closed polyline, then creates a subdivision mesh. It pulls the mid points of the polyline edges to the surface to then subdivide and pull again.
 
-x = (4 + 5) * 2        # wrong precedence
-x = 4 + (5 * 2)        # correct precedence
+<img src="subdivision.png">
+
+```C#
+private void RunScript(Surface srf, List<Polyline> inPolylines, int degree, ref object OutPolylines, ref object OutMesh)
+{
+    //instantiate the collection of all panels
+    List<Polyline> outPanels = new List<Polyline>();
+    //limit to 6 subdivisions
+    if( degree > 6)
+      degree = 6;
+    for(int i = 0; i < degree; i++)
+    {
+      //outer polylines
+      List<Polyline> plines = new List<Polyline>();
+      //mid polylines
+      List<Polyline> midPlines = new List<Polyline>();
+      //generate subdivided panels
+      bool result = SubPanelOnSurface(srf, inPolylines, ref plines, ref midPlines);
+      if( result == false)
+        break;
+      //add outer panels
+      outPanels.AddRange(plines);
+      //add mid panels only in the last iteration
+      if(i == degree - 1)
+        outPanels.AddRange(midPlines);
+      else //subdivide mid panels only
+        inPolylines = midPlines;
+    }
+    //Create a mesh from all polylines
+    Mesh joinedMesh = new Mesh();
+    for(int i = 0; i < outPanels.Count; i++)
+    {
+      Mesh mesh = Mesh.CreateFromClosedPolyline(outPanels[i]);
+      joinedMesh.Append(mesh);
+    }
+    //make sure all mesh faces normals are in the same general direction
+    joinedMesh.UnifyNormals();
+
+    //Assign output
+    OutPolylines = outPanels;
+    OutMesh = joinedMesh;
+    bool SubPanelOnSurface( Surface srf, List<Polyline>
+ inputPanels, ref List<Polyline> outPanels, ref List<Polyline> midPanels)
+{
+    //check for a valid input
+    if (inputPanels.Count == 0 || null == srf)
+      return false;
+    for (int i = 0; i < inputPanels.Count; i++)
+    {
+      Polyline ipline = inputPanels[i];
+      if (!ipline.IsValid || !ipline.IsClosed)
+        continue;
+      //stack of points
+      List<Point3d> stack = new List<Point3d>();
+      Polyline newPline = new Polyline();
+      for (int j = 1; j < ipline.Count; j++)
+      {
+        Line line = new Line(ipline[j - 1], ipline[j]);
+        if (line.IsValid)
+        {
+          Point3d mid = line.PointAt(0.5);
+          double s, t;
+          srf.ClosestPoint(mid, out s, out t);
+          mid = srf.PointAt(s, t);
+          newPline.Add(mid);
+          stack.Add(ipline[j - 1]);
+          stack.Add(mid);
+        }
+      }
+      //add the first 2 point to close last triangle
+      stack.Add(stack[0]);
+      stack.Add(stack[1]);
+      //close
+      newPline.Add(newPline[0]);
+      midPanels.Add(newPline);
+
+      for (int j = 2; j < stack.Count; j = j + 1)
+      {
+        Polyline pl = new Polyline { stack[j - 2], stack[j - 1], stack[j], stack[j - 2] };
+        outPanels.Add(pl);
+      }
+    }
+    return true;
+}
 ```
 
-x doesn't equal 18, even though many cheap calculators seem to disagree. The precedence of the multiplication is higher which means you first have to multiply 5 by 2, and then add the result to 4. Thus, x equals 14. Python is not a cheap calculator and it has no problems whatsoever with operator precedence. It is us, human beings, who are the confused ones. The example above is fairly straightforward, but how would you code the following?
+## 4.3 Generative algorithms
 
-{{< mathjax >}}$$y =\frac{\sqrt{x^2+(x+1)}}{x-3} + \left|{\frac{2x}{x^{0.5x}}}\right|$${{< /mathjax >}}
+Most of the generative algorithms require recursive functions that are only possible through scripting in Grasshopper. The following are four examples of generative solutions to generate the dragon curve, fractals, penrose tiling and game of life.
 
-Without extensive use of parenthesis, this would be very nasty indeed. By using parenthesis in equations we can force precedence, and we can easily group different bits of mathematics. All the individual bits in the mathematical notation have been grouped inside parenthesis and extra spaces have been inserted to accentuate transitions from one top level group to the next:
+### 4.3.1 Dragon Curve
 
-```python
-y = ( math.sqrt(x ** 2 + (x - 1)) / (x - 3) )   +   abs( (2 * x) / (x ** (0.5 * x)) )
+<table>
+<tr>
+<td>
+<img src="dragon_var.png" class="float_left" width="325">
+</td>
+<td>
+<img src="dragon_curve.png">
+</td>
+</tr>
+</table>
+
+```C#
+private void RunScript(string startString, string ruleX, string ruleY, int Num, double Length, ref object DragonCurve)
+{
+    // declare string
+    string dragonString = startString;
+    // generate the string
+    GrowString(ref Num, ref dragonString , ruleX, ruleY);
+    //generate the points
+    List<Point3d> dragonPoints = new List<Point3d>();;
+    ParseDeagonString(dragonString, Length, ref dragonPoints);
+    // create the curve
+    PolylineCurve dragonCrv= new PolylineCurve(dragonPoints); 
+    // assign output
+    DragonCurve = dragonCrv;
+}
+void GrowString(ref int Num, ref string finalString, string ruleX, string ruleY)
+  {
+    // decrement the count with each new execution of the grow function
+    Num = Num - 1;
+    char rule;
+    // create new string
+    string newString = "";
+    for (int i = 0; i < finalString.Length ; i++)
+    {
+      rule = finalString[i];
+      if (rule == 'X')
+        newString = newString + ruleX;
+      if (rule == 'Y')
+        newString = newString + ruleY;
+      if (rule == 'F' | rule == '+' | rule == '-')
+        newString = newString + rule;
+    }
+    finalString = newString;
+    // stopper condition
+    if (Num == 0)
+      return;
+    // grow again
+    GrowString(ref Num, ref finalString, ruleX, ruleY);
+}
+void ParseDeagonString(string dragonString, double Length, ref List<Point3d> dragonPoints)
+{
+    //parse instruction string to generate points
+    //let base point be world origin
+    Point3d pt = Point3d.Origin;
+    dragonPoints .Add(pt);
+
+    //drawing direction vector - strat along the x-axis
+    //vector direction will be rotated depending on (+,-) instructions
+    Vector3d V = new Vector3d(1.0, 0.0, 0.0);
+
+    char rule;
+    for(int i = 0 ; i < dragonString.Length;i++)
+    {
+      //always start for 1 and length 1 to get one char at a time
+      rule = DragonString[i];
+      //move Forward using direction vector
+      if( rule == 'F')
+      {
+        pt = pt + (V * Length);
+        dragonPoints.Add(pt);
+      }
+      //rotate Left
+      if( rule == '+')
+        V.Rotate(Math.PI / 2, Vector3d.ZAxis);
+      //rotate Right
+      if( rule == '-')
+        V.Rotate(-Math.PI / 2, Vector3d.ZAxis);
+    }
+}
 ```
 
-It is still not anywhere near as neat as the original notation, but I guess that is why the original notation was invented in the first place. Usually, one of the best things to do when lines of code are getting out of hand, is to break them up into smaller pieces. The equation becomes far more readable when spread out over multiple lines of code:
+### 4.3.2 Fractal Tree
 
-```python
-A = x**2 + (x-1)
-B = x-3
-C = 2*x
-D = x**(0.5* x)
-y = (math.sqrt(A) / B) + abs(C / D)
+<table>
+<tr>
+<td>
+<img src="tree_var.png" class="float_left" width="325">
+</td>
+<td>
+<img src="tree_fractal.png">
+</td>
+</tr>
+</table>
+
+```C#
+private void RunScript(string startString, string ruleX, string ruleY, int num, double length, ref object FractalLines)
+{
+    // declare string
+    string fractalString = startString;
+    // generate the string
+    GrowString(ref num, ref dragonString , ruleX, ruleY);
+    //generate the points
+    List<Line> fractalLines = new List<Line>();;
+    ParsefractalString(fractalString, length, ref fractalLines );
+    // assign output
+    FractalLines = fractalLines ;
+}
+void GrowString(ref int num, ref string finalString, string ruleX, string ruleF)
+{
+    // Decrement the count with each new execution of the grow function
+    num = num - 1;
+    char rule;
+    // Create new string
+    string newString = "";
+    for (int i = 0; i < finalString.Length ; i++)
+    {
+      rule = finalString[i];
+      if (rule == 'X')
+        newString = newString + ruleX;
+      if (rule == 'F')
+        newString = newString + ruleF;
+      if (rule == '[' || rule == ']' || rule == '+' || rule == '-')
+        newString = newString + rule;
+    }
+    finalString = newString;
+    // Stopper condition
+    if (num == 0)
+      return;
+    // Grow again
+    GrowString(ref num, ref finalString, ruleX, ruleF);
+}
+void ParsefractalString(string fractalString, double length, ref List<Line> fractalLines)
+{
+    //Parse instruction string to generate points
+    //Let base point be world origin
+    Point3d pt = Point3d.Origin;
+
+    //Declare points array
+    //Vector rotates with (+,-) instructions by 30 degrees
+    List<Point3d> arrPoints = new List<Point3d>();
+
+    //Draw forward direction
+    //Vector direction will be rotated depending on (+,-) instructions
+    Vector3d vec = new Vector3d(0.0, 1.0, 0.0);
+
+    //Stacks of points and vectors
+    List<Point3d> ptStack = new List<Point3d>();
+    List<Vector3d> vStack = new List<Vector3d>();
+
+    //Declare loop variables
+    char rule;
+    for(int i = 0 ; i < fractalString.Length; i++)
+    {
+      //Always start for 1 and length 1 to get one char at a time
+      rule = fractalString[i];
+      //Rotate Left
+      if( rule == '+')
+        vec.Rotate(Math.PI / 6, Vector3d.ZAxis);
+      //Rotate Right
+      if( rule == '-')
+        vec.Rotate(-Math.PI / 6, Vector3d.ZAxis);
+      //Draw Forward by direction
+      if( rule == 'F')
+      {
+        //Add current points
+        Point3d newPt1 = new Point3d(pt);
+        arrPoints.Add(newPt1);
+        //Calculate next point
+        Point3d newPt2 = new Point3d(pt);
+        newPt2 = newPt2 + (vec * length);
+        //Add next point
+        arrPoints.Add(newPt2);
+        //Save new location
+        pt = newPt2;
+      }
+      //Save point location
+      if( rule == '[')
+      {
+        //Save current point and direction
+        Point3d newPt = new Point3d(pt);
+        ptStack.Add(newPt);
+
+        Vector3d newV = new Vector3d(vec);
+        vStack.Add(newV);
+      }
+      //Retrieve point and direction
+      if( rule == ']')
+      {
+        pt = ptStack[ptStack.Count - 1];
+        vec = vStack[vStack.Count - 1];
+        //Remove from stack
+        ptStack.RemoveAt(ptStack.Count - 1);
+        vStack.RemoveAt(vStack.Count - 1);
+      }
+    }
+    //Generate lines
+    List<Line> allLines = new List<Line>();
+    for(int i = 1; i < arrPoints.Count; i = i + 2)
+    {
+      Line line = new Line(arrPoints[i - 1], arrPoints[i]);
+      allLines.Add(line);
+    }
+}
 ```
 
-## 4.3 Logical operators
+### 4.3.3 Penrose Tiling
 
-I realize the last thing you want right now is an in-depth tutorial on logical operators, but it is an absolute must if we want to start making smart code. I'll try to keep it as painless as possible.
+<table>
+<tr>
+<td>
+<img src="penrose_var.png" class="float_left" width="325">
+</td>
+<td>
+<img src="penrose_tile.png">
+</td>
+</tr>
+</table>
 
-Logical operators mostly work on booleans and they are indeed very logical. As you will remember, booleans can only have two values. Boolean mathematics were developed by George Boole (1815-1864) and today they are at the very core of the entire digital industry. Boolean algebra provides us with tools to analyze, compare and describe sets of data. Although George originally defined six boolean operators we will only discuss three of them:
+```C#
+private void RunScript(string startString, string rule6, string rule7, string rule8, string rule9, int num, ref object PenroseString)
+  {
+    // Declare string
+    string finalString;
+    finalString = startString;
+    // Generate the string
+    GrowString(ref num, ref finalString, rule6, rule7, rule8, rule9);
+    // Return the string
+    PenroseString = finalString;
+  }
+  void GrowString(ref int num, ref string finalString, string rule6, string rule7, string rule8, string rule9)
+  {
+    // Decrement the count with each new execution of the grow function
+    num = num - 1;
+    char rule;
 
-1. Not
-2. And
-3. Or
+    // Create new string
+    string newString = "";
+    for (int i = 0; i < finalString.Length; i++)
+    {
+      rule = finalString[i];
+      if (rule == '6')
+        newString = newString + rule6;
+      if (rule == '7')
+        newString = newString + rule7;
+      if (rule == '8')
+        newString = newString + rule8;
+      if (rule == '9')
+        newString = newString + rule9;
 
-The Not operator is a bit of an oddity among operators. It is odd because it doesn't require two values. Instead, it simply inverts the one on the right. Imagine we have a script which checks for the existence of a bunch of Block definitions in Rhino. If a block definition does not exist, we want to inform the user and abort the script. The English version of this process might look something like:
+      if (rule == '[' || rule == ']' || rule == '+' || rule == '-')
+        newString = newString + rule;
+    }
+    finalString = newString;
 
-```
-Ask Rhino if a certain Block definition exists
-If not, abort this sinking ship
-```
+    // Stopper condition
+    if (num == 0)
+      return;
 
-The more observant among you will already have noticed that English version also requires a "not" in order to make this work. Of course you could circumvent it, but that means you need an extra line of code:
+    // Grow again
+    GrowString(ref num, ref finalString, rule6, rule7, rule8, rule9);
+  }
+private void RunScript(string penroseString, double length, ref object PenroseLines)
+  {
+    //Parse instruction string to generate points
+    //Let base point be world origin
+    Point3d pt = Point3d.Origin;
 
-```
-Ask Rhino if a certain Block definition exists
-If it does, continue unimpeded
-Otherwise, abort
-```
+    //Declare points array
+    //Vector rotates with (+,-) instructions by 36 degrees
+    List<Point3d> arrPoints = new List<Point3d>();
 
-When we translate this into Python code we get the following:
+    //Draw forward direction
+    //Vector direction will be rotated depending on (+,-) instructions
+    Vector3d vec = new Vector3d(1.0, 0.0, 0.0);
 
-{{< download-script "rhinopython/rhinopython101/4_3_BlockNameCheck.py" "4_3_BlockNameCheck.py">}}
+    //Stacks of points and vectors
+    List<Point3d> ptStack = new List<Point3d>();
+    List<Vector3d> vStack = new List<Vector3d>();
 
-```python
-if (not rs.IsBlock("SomeBlockName")):
-    print("Missing block definition: SomeBlockName")
-```
+    //Declare loop variables
+    char rule;
+    for(int i = 0 ; i < penroseString.Length; i++)
+    {
+      //Always start for 1 and length 1 to get one char at a time
+      rule = penroseString[i];
+      //Rotate Left
+      if( rule == '+')
+        vec.Rotate(36 * (Math.PI / 180), Vector3d.ZAxis);
+      //Rotate Right
+      if( rule == '-')
+        vec.Rotate(-36 * (Math.PI / 180), Vector3d.ZAxis);
+      //Draw Forward by direction
+      if( rule == '1')
+      {
+        //Add current points
+        Point3d newPt1 = new Point3d(pt);
+        arrPoints.Add(newPt1);
+        //Calculate next point
+        Point3d newPt2 = pt + (vec * length);
+        //Add next point
+        arrPoints.Add(newPt2);
+        //Save new location
+        pt = newPt2;
+      }
 
-And and Or at least behave like proper operators; they take two arguments on either side. The And operator requires both of them to be True in order for it to evaluate to True. The Or operator is more than happy with a single True value. Let's take a look at a typical 'one-beer-too-many' algorithm:
+      //Save point location
+      if( rule == '[')
+      {
+        //Save current point and direction
+        Point3d newPt = new Point3d(pt);
+        ptStack.Add(newPt);
 
-```python
-person = GetPersonOverThere()
-colHair = GetHairColour(person)
+        Vector3d newVec = new Vector3d(vec);
+        vStack.Add(newVec);
+      }
 
-if((IsGirl(person)) and (colHair == Blond or colHair == Brunette) and (Age(person) >= 18)):
-    neighbour = GetAdjacentPerson(person)
-    if(not IsGuy(neighbour) or not LooksStrong(neighbour)):
-        print("Hey baby, you like Heineken?")
-    else:
-        RotateAngleOfVision 5.0
-```
-As you can see the problem with Logical operators is not the theory, it's what happens when you need a lot of them to evaluate something. Stringing them together, quickly results in convoluted code not to mention operator precedence problems.
+      //Retrieve point and direction
+      if( rule == ']')
+      {
+        pt = ptStack[ptStack.Count - 1];
+        vec = vStack[vStack.Count - 1];
 
-A good way to exercise your own boolean logic is to use Venn-diagrams. A Venn diagram is a graphical representation of boolean sets, where every region contains a (sub)set of values that share a common property. The most famous one is the three-circle diagram:
+        //Remove from stack
+        ptStack.RemoveAt(ptStack.Count - 1);
+        vStack.RemoveAt(vStack.Count - 1);
+      }
+    }
 
-{{< image url="/images/primer-venn-1.svg" alt="/images/primer-venn-1.svg" class="image_center" width="50%" >}}
+    //Generate lines
+    List<Line> allLines = new List<Line>();
+    for(int i = 1; i < arrPoints.Count; i = i + 2)
+    {
+      Line line = new Line(arrPoints[i - 1], arrPoints[i]);
+      allLines.Add(line);
+    }
 
-<!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
-
-Every circular region contains all values that belong to a set; the top circle for example marks off set {A}. Every value inside that circle evaluates True for {A} and every value not in that circle evaluates False for {A}. If you're uncomfortable with "A, B and C", you can substitute them with *"Employed"*, *"Single"* and *"HomeOwner"*. By coloring the regions we can mimic boolean evaluation in programming code:
-
-{{< image url="/images/primer-venn-2.svg" alt="/images/primer-venn-2.svg" class="image_center" width="100%" >}}
-
-<!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
-
-Try to color the four diagrams below so they match the boolean logic:
-
-{{< image url="/images/venn-blank.svg" alt="/images/venn-blank.svg" class="image_center" width="100%" >}}
-
-<!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
-
-Venn diagrams are useful for simple problems, but once you start dealing with more than three regions it becomes a bit opaque. The following image is an example of a 6-regional Venn diagram. Pretty, but not very practical:
-
-{{< image url="/images/venn-complex.svg" alt="/images/venn-complex.svg" class="image_center" width="35%" >}}
-
-<!--TODO: The font in the SVG above is not rendeirng correctly.  What Font to use -->
-
-## 4.4 Functions and Procedures
-
-In the end, all that a computer is good at is shifting little bits of memory back and forth. When you are drawing a cube in Rhino, you are not really drawing a cube, you are just setting some bits to zero and others to one.
-At the level of Python there are so many wrappers around those bits that we can't even access them anymore. A group of 32 bits over there happens to behave as a number, even though it isn't really. When we multiply two numbers in Python, a very complicated operation is taking place in the memory of your PC and we may be very thankful that we are never confronted with the inner workings. As you can imagine, a lot of multiplications are taking place during any given second your computer is turned on and they are probably all calling the same low-level function that takes care of the nasty bits. That is what functions are about, they wrap up nasty bits of code so we don't have to bother with it. This is called encapsulation.
-
-A good example is the *math.sin()* function, which takes a single numeric value and returns the sine of that value. If we want to know the sine of -say- 4.7, all we need to do is type in *x = math.sin(4.7)*. Internally the computer might calculate the sine by using a digital implementation of the Taylor series:
-
-{{< mathjax >}}$$f(x) = \sum_{n=0}^\infty \frac{f^n(a)}{n!} {(x-a)^n}$${{< /mathjax >}}
-
-In other words: you don't want to know. The good people who develop programming languages predicted you don't want to know, which is why they implemented a *math.sin()* function. Python comes with a long list of predefined functions all of which are available to RhinoScripters. Some deal with mathematical
-computations such as *math.sin()*, others perform String operations such as *abs()* which returns the absolute value. Python lists 75 native procedures plus many more in any of the modules that can be imported (i.e. the *math* module). I won't discuss them here, except when they are to be used in examples.
-
-Apart from implementing the native Python functions, Rhino adds a number of extra ones for us to use. The current RhinoScriptSyntax helpfile for Rhino5 claims a total number of about 800 additional functions, and new ones are added frequently. Rhino's built in functions are referred to as "methods". They behave exactly the same as Python procedures although you do need to look in a different helpfile to see what they do. [http://www.rhino3d.com/5/ironpython/index.html](http://www.rhino3d.com/5/ironpython/index.html)
-
-So how do functions/procedures/methods behave? Since the point of having procedures is to encapsulate code for frequent use, we should expect them to blend seamlessly into written code. In order to do this they must be able to both receive and return variables. *math.sin()* is an example of a function which both requires and returns a single numeric variable. The *datetime.now()* function on the other hand only returns a single value which contains the current date and time. It does not need any additional information from you, it is more than capable of finding out what time it is all by itself. An even more extreme example is the *rs.Exit()* method which does not accept any argument and does not return any value. There are two scenarios for calling procedures. We either use them to assign a value or we call them out of the blue:
-
-```python
-strPointID = rs.AddPoint([0.0, 0.0, 1.0])    # Correct
-rs.AddPoint([0.0, 0.0, 1.0])                # Correct
-rs.AddPoint [0.0, 0.0, 1.0]                    # Wrong
-```
-
-If you look in the RhinoScriptSyntax helpfile and search for the *AddLayer()* method, you'll see the following text:
-
-```python
-rs.AddLayer (name=None, color=0, visible=True, locked=False, parent=None)
-```
-
-*rs.AddLayer()* is capable of taking five arguments, all of which are optional. We can tell they are optional because it says *"Optional"* next to each item under the *"Parameters"* section of the helpfile. The *"Parameters"* signify the Input values for the Function, while the *"Returns"* section tells us what the Function will return. Optional arguments have a default value which is used when we do not override it. If we omit to specify the `lngColor` argument for example the new layer will become black.
-
-### 4.4.1 A simple function example
-
-This concludes the boring portion of the primer. We now have enough information to actually start making useful scripts. I still haven't told you about loops or conditionals, so the really awesome stuff will have to wait until Chapter 5, though. We're going to write a script which uses some Python functions and a few RhinoScriptSyntax methods. Our objective for today is to write a script that applies a custom name to selected objects. First, I'll show you the script, then we'll analyze it line by line:
-
-{{< download-script "rhinopython/rhinopython101/4_4_1_RenameObject.py" "4_4_1_RenameObject.py">}}
-
-```python
-import rhinoscriptsyntax as rs
-import time
-#This script will rename an object using the current system time
-
-strObjectID = rs.GetObject("Select an object to rename",0,False,True)
-
-if strObjectID:
-   strNewName = "Time: " + str(time.asctime(time.localtime()))
-   rs.ObjectName(strObjectID, strNewName)
-```
-
-This is a complete script file which can be run directly from the disk. It adheres to the basic script structure according to page 13.
-
-We'll be using two variables in this script, one to hold the ID of the object we're going to rename and one containing the new name. On line 5 we declare a new variable. Although the "str" prefix indicates that we'll be storing Strings in this variable, that is by no means a guarantee. You can still put numbers into something that starts with str.  It is simply the convention to name a variable with strSomething if it is storing a string, similarly you can use intSomething for integers etc.
-
-On line 5, we're assigning a value to *strObjectID* by using the RhinoScriptSyntax method *GetObject()* to ask the user to select an object. The help topic on *GetObject()* tells us the following:
-
-```python
-Rhino.GetObject (message=None,filter=0,preselect=False,Select=False,custom_filter=None,subobjects=False)
-```
-
-```
-Returns:
-String        » The identifier of the picked object if successful.
-None        » If not successful, or on error.
+    PenroseLines = allLines;
+  }
 ```
 
-This method accepts six arguments, all of which happen to be optional. In our script we're only specifying the first and fourth argument. The *strMessage* refers to the String which will be visible in the command-line during the picking operation. We're overriding the default, which is "Select object", with something a bit more specific. The second argument is an integer which allows us to set the selection filter. The default behavior is to apply no filter; all objects can be selected whether they are points, textdots, polysurfaces, lights or whatever. We want the default behavior. The same applies to the third argument which allows us to override the default behavior of accepting preselected objects. The fourth argument is False by default, meaning that the object we pick will not be actually selected. This is not desired behavior in our case. The fifth argument takes a bit more explaining so we'll leave it for now.
+### 4.3.4 Conway Game of Life
 
-Note that we can simply omit optional arguments and put a closing bracket after the last argument that we do specify.
+A cellular automaton consists of a regular grid of cells, each in one of a finite number of states, "On" and "Off" for example. The grid can be in any finite number of dimensions. For each cell, a set of cells called its neighborhood (usually including the cell itself) is defined relative to the specified cell. For example, the neighborhood of a cell might be defined as the set of cells a distance of 2 or less from the cell. An initial state (time t=0) is selected by assigning a state for each cell. A new generation is created (advancing t by 1), according to some fixed rule (generally, a mathematical function) that determines the new state of each cell in terms of the current state of the cell and the states of the cells in its neighborhood.
+Check wikipedia for full details and examples.
 
-When the user is asked to pick an object -any object- on line 5, there exists a possibility they changed their mind and pressed the escape button instead. If this was the case then *strObjectID* will not contain a valid Object ID, it will be None instead. If we do not check for variable validity (line 7) but simply press on, we will get an error on line 11 where we are trying to pass that None value as an argument into the *rs.ObjectName()* method. We must always check our return values and act accordingly. In the case of this script the proper reaction to an Escape is to abort the whole thing. The If: structure on Line 7 will abort the current script if *strObjectID* turns out to be None.
+<img src="game_of_life.png">
 
-If *strObjectID* turns out to be an actual valid object identifier, our next job is to fabricate a new name and to assign it to the selected object. The first thing we need is a variable which contains this new name. We declare it and assign it a value on line 9.
+```C#
+  private void RunScript(Surface srf, int uNum, int vNum, int seed, ref object PointGrid, ref object StateGrid)
+  {
+    if(uNum < 2)
+      uNum = 2;
+    if(vNum < 2)
+      vNum = 2;
 
-The name we are constructing always has the same prefix but the suffix depends on the current system time. In order to get the current system time we use the *time.localtime()* function which is a function built into the time module (which we have imported at the top of our script). Since a Time and a String are not the same thing, we cannot concatenate them with the ampersand operator. We must first convert the Time into a valid String representation. The *str()* function is another Python native function which is used to convert non-string variables into Strings. When I tested this script, the value assigned to *strNewName* at line 11 was:
+    double uStep = srf.Domain(0).Length / uNum;
+    double vStep = srf.Domain(1).Length / vNum;
+    double uMin = srf.Domain(0).Min;
+    double vMin = srf.Domain(1).Min;
 
-```
-Time: (2011, 3, 10, 22, 17, 53, 3, 69, 0)
-```
+    //create a grid of points and a grid of states
+    DataTree<Point3d> pointsTree = new DataTree<Point3d>();
+    DataTree<int> statesTree = new DataTree<int>();
+    int pathIndex = 0;
+    Random rand = new Random(seed);
+    for (int i = 0; i <= uNum; i++)
+    {
+      List<Point3d> ptList = new List<Point3d>();
+      List<int> stateList = new List<int>();
+      GH_Path path = new GH_Path(pathIndex);
+      pathIndex = pathIndex + 1;
+      for (int j = 0; j <= vNum; j++)
+      {
+        Point3d srfPt = srf.PointAt(uMin + i * uStep, vMin + j * vStep);
+        ptList.Add(srfPt);
+        int randState = rand.Next(0, 2);
+        stateList.Add(randState);
+      }
+      pointsTree.AddRange(ptList, path);
+      statesTree.AddRange(stateList, path);
+    }
 
-Finally, at line 11, we reach the end of our quest. We tell Rhino to assign the new name to the old object:
+    PointGrid = pointsTree;
+    StateGrid = statesTree;
 
-{{< image url="/images/primer-objectname.jpg" alt="/images/primer-objectname.jpg" class="image_center" width="35%" >}}
-
-Instead of using *strNewName* to store the name String, we could have gotten away with the following:
-
-```python
-rs.ObjectName(strObjectID, "Time: " & str(time.localtime()))
-```
-
-This one line replaces lines 9 through 11 of the original script. Sometimes brevity is a good thing, sometimes not. Especially in the beginning it might be smart to be explicit and take up multiple lines; it makes debugging a lot easier (until you feel comfortable making your code shorter and possibly harder to decipher).
-
-### 4.4.2 Advanced function syntax
-
-Whenever you call a function it always returns a value, even if you do not specifically set it. By default, every function returns a *None* value, since this is the default value for all variables and functions in Python. So if you want to write a function which returns you a String containing the alphabet, doing this is not enough:
-
-```python
-def Alphabet():
-    strSeries = "abcdefghijklmnopqrstuvwxyz"
-```
-
-The word "def" signifies the start of a function.  "Alphabet" is a name we have made-up for our function.  Again, the indentation indicates that line 2 is within the function and should only be run after the function is called.  
-
-Although the function actually assigns the alphabet to the variable called strSeries, this variable will go out of scope once the function ends on line #2 and its data will be lost. You have to assign the return value to the function
-name, like so:
-
-```python
-def Alphabet():
-    strSeries = "abcdefghijklmnopqrstuvwxyz"
-    return strSeries
-
-print(Alphabet())
-```
-
-The "return value" identifies what will be returned once the method is called and the code within its scope is executed.  When this code is run, it will call the function *Alphabet()*, the code within the function's scope will be run and the function will return the value of strSeries.  This returned value will then be printed to the command line.  It should be noted that at first glance, the return and print functions appear to be very similar.  However, they are not! *print()* will print anything to the command line and console.  return(), on the other hand, will only return a value from a function - basically assigning a value to a variable whenever the function was called. Return is used for the output of a function (in this case the function "Alphabet"), print is used for debugging code or whenever the user wants to see a value printed to the screen.
-
-Imagine you want to lock all curve objects in the document. Doing this by hand requires three steps and it will ruin your current selection set, so it pays to make a script for it. A function which performs this task might fail if there are no curve objects to be found. If the function is designed-not-to-fail you can always call it without thinking and it will sort itself out. If the function is designed-to-fail it will crash if you try to run it without making sure everything is set up correctly. The respective functions are:
-
-{{< download-script "rhinopython/rhinopython101/4_4_2_LockCurves_Fail.py" "4_4_2_LockCurves_Fail.py">}}
-
-```python
-def lockcurves_fail():
-    rs.LockObjects(rs.ObjectsByType(rs.filter.curve))
-```
-{{< download-script "rhinopython/rhinopython101/4_4_2_LockCurves_NoFail.py" "4_4_2_LockCurves_NoFail.py">}}
-
-```python
-def lockcurves_nofail():
-    curves = rs.ObjectsByType(rs.filter.curve)
-    if not curves: return False
-    rs.LockObjects(curves)
-    return True
-```
-
-If you call the first function when there are no curve objects in the document, the *rs.ObjectsByType()* method will return a None variable. It returns None because it was designed-not-to-fail and the *None* variable is just its way of telling you; "tough luck". However, if you pass a None variable as an argument to the *rs.LockObjects()* method it will keel over and die, generating a fatal error!
-
-```
-Error Message: iteration over non-sequence of type NoneType
-```
-
-This means that the *rs.LockObjects()* method requires a list to iterate through and we have provided None variable - thus the error!
-
-The second function, which is designed-not-to-fail, will detect this problem on line 6 and abort the operation. As you can see, it takes a lot more lines of code to make sure things run smoothly...
-
-A custom defined function can take any amount of arguments between nill and a gazillion. Anyone who calls this function must provide a matching signature or an error will occur. More on the argument list in a bit.
-
-The first line which contains the name and the arguments is called the function declaration. Everything in between  is called the function body, and is noted by the indentation. In the function body you can declare variables, assign values, call other functions and return variables.
-
-The argument list takes a bit more of explaining. Usually, you can simply comma separate a bunch of arguments and they will act as variables from there on end:
+  }
 
 
-{{< download-script "rhinopython/rhinopython101/4_4_2_MyBogusFunction.py" "4_4_2_MyBogusFunction.py">}}
+  private void RunScript(DataTree<int> grid, int gen, ref object OutGrid)
+  {
+    //Get state at the defined generation
+    for(int i = 0; i < gen; i++)
+      grid = NewGeneration(grid);
 
-```python
-def MyBogusFunction(intNumber1, intNumber2):
-```
+    OutGrid = grid;
+  }
 
-This function declaration already provides three variables to be used inside the function body:
 
-1. MyBogusFunction - (when a user calls this function - it will provide the return value)
-2. intNumber1 - (the first argument)
-3. intNumber2 - (the second argument)
+    public DataTree<int> NewGeneration(DataTree<int> inStates)
+  {
+    int i, j, c, nc;
+    List<int> prvBranch;
+    List<int> nxtBranch;
+    List<int> branch;
+    DataTree<int> states = new DataTree<int>();
+    states = inStates;
 
-Let's assume this function determines whether *intNumber1* plus 100 is larger than twice the value of *intNumber2*.
-The function could look like this:
+    for (i = 0; i <= states.Branches.Count - 1; i++)
+    {
+      branch = states.Branches[i];
+      for (j = 0; j <= branch.Count - 1; j++)
+      {
+        c = branch[j];
+        nc = 0;
 
-```python
-def MyBogusFunction(intNumber1, intNumber2):
-    intNumber1 = intNumber1 + 100
-    intNumber2 = intNumber2 * 2
-    return (intNumber1 > intNumber2)
-```
+        // Check neighbouring states
+        // next
+        nc = nc + branch[(j + 1 + branch.Count) % branch.Count];
+        // prv
+        nc = nc + branch[(j - 1 + branch.Count) % branch.Count];
 
-In this function, we can see that we have used "def" to indicate that we are creating a new function, we have called it "MyBogusFunction" and have given it two input variables (intNumber1, intNumber2). Within the indentation (the guts of the function), we have done a few calculations and we have used the "return" statement to output an evaluation of our calculations. Now, when we call the function somewhere else in our code, the variable will be set to the return value of our function.:
+        // top
+        nxtBranch = states.Branches[(i + 1 + states.Branches.Count) % states.Branches.Count];
+        nc = nc + nxtBranch[(j + 1 + nxtBranch.Count) % nxtBranch.Count];
+        nc = nc + nxtBranch[(j + nxtBranch.Count) % nxtBranch.Count];
+        nc = nc + nxtBranch[(j - 1 + nxtBranch.Count) % nxtBranch.Count];
 
-```python
-print(MyBogusFunction(5, 6))
+        // bottom
+        prvBranch = states.Branches[(i - 1 + states.Branches.Count) % states.Branches.Count];
+        nc = nc + prvBranch[(j + 1 + prvBranch.Count) % prvBranch.Count];
+        nc = nc + prvBranch[(j + prvBranch.Count) % prvBranch.Count];
+        nc = nc + prvBranch[(j - 1 + prvBranch.Count) % prvBranch.Count];
+
+        // set the new state
+        if (c == 1)
+        {
+          if (nc < 2 | nc > 3)
+            c = 0;
+        }
+        else if (c == 0)
+        {
+          if (nc == 3)
+            c = 1;
+        }
+        branch[j] = c;
+      }
+    }
+    return states;
+  }
 ```
 
-The result will be True (105 is indeed greater than 36)!
-
-Previously, we mentioned something called variable scope - this refers to where a variable has been defined and where it can be used.  Functions and Classes are very specific when it comes to variable scope.  Variables that are defined within a function cannot be referenced outside of the function unless they are passed through the input or return statements!! For example:
-
-```python
-def testFunction():
-    y=20
-    return y
-print(y*testFunction())
-```
-
-This code will return an error, "'y' is not defined" because the variable named "y" has only been defined within a function. That means that we cannot use that variable outside of the function unless we pass it through the input or return statements. The code literally does not understand what "y" means because it was created inside of the function. Otherwise, we could have defined y outside of the function which would make it have global scope and we could use it anywhere within the code.
-
-```python
-y = 20
-def testFunction():
-    return y
-print(testFunction())
-```
-
-## 4.5 Mutability
-
-Python includes a fairly confusing, although sometimes useful, quality pertaining to variables, tuples, lists and dictionaries (the last three we will dive into deeper a bit later).  When we create a variable it points to a specific place in memory and if we create a second variable that is equal to the first - Does y point to the same space in memory as x, or does it now have its own referenced space? For example:
-
-```python
-#VARIABLE EXAMPLE:
-x = 10
-y = x
-x = 5
-print(y)
-```
-
-What will be printed? It turns out, the result is 10!  That means that y is referencing the initial value of x, it is NOT referencing the variable (and thus it does not change when x changes). Although we haven't gone through them, Tuples will act the same as this variable example, while Lists and Dictionaries will be changed based on the referenced variable. For example:
-
-```python
-#TUPLE EXAMPLE:
-x = (1,2)
-y = x
-x = (3,4)
-print(y) # The result = (1,2)
-```
-
-
-Tuples act very similar to variables with regard to referencing other items.  In this example, the tuple called "y" is NOT changed once we change the value of "x".
-
-```python
-#LIST EXAMPLE - BAD:
-x = [1,2]
-y = x
-x.append(3)
-print(y) # The result = (1,2,3)
-```
-
-In this example, the List "y" DOES change once we change the value of "x". Thus, the result is (1,2,3), not (1,2) as was the case in the previous examples.  This demonstrates that Lists are referencing the variable not the value of "x".  In order to make "y" act as its own, independent variable and value, we must create a copy of the first variable:
-
-```python
-#LIST EXAMPLE - GOOD:
-x = [1,2]
-y = x[:] #This creates a copy of the list "x"
-x.append(3)
-print(y) # The result = (1,2)
-```
-
-The variable[:] symbol creates a copy of the variable.  This means that "y" will now be an independent list and will not change when "x" changes!  One more example:
-
-```python
-#DICTIONARY EXAMPLE - BAD:
-x = {1:'a',2:'b'}
-y = x
-x[3] = 'c'
-print(y) # The result = {1:'a',2:'b',3:'c'}
-```
-
-In this example the dictionary "y" will be changed with the dictionary "x", unless we use *x.copy()*.
-
-```python
-#DICTIONARY EXAMPLE - GOOD:
-x = {1:'a',2:'b'}
-y = x.copy()
-x[3] = 'c'
-print(y) # The result = {1: 'a', 2: 'b'}
-```
-
-This gets into the topic of mutability.  An element is considered mutable if it can be changed/modified once they are created.  Variables and Tuples are considered Immutable, meaning that they cannot be changed unless you create a new variable with the newly desired value (or copy over top of the old variable).  Lists and Dictionaries are considered mutable, because they can be modified once they have been created. This means that we can freely add, remove, slice the values within a List or Dictionary.  This is an exciting and powerful tool, that was previously not available with VBscript Arrays!  More on this later when we get into Tuples, Lists and Dictionaries...
 
 ## Next Steps
 
