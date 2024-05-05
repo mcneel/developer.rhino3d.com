@@ -6,7 +6,7 @@ category_page = "guides/grasshopper/csharp-essentials/"
 keywords = [ "csharp", "commands" ]
 languages = [ "C#" ]
 sdk = [ "RhinoCommon" ]
-title = "Chapter Four: Design Algorithms"
+title = "Chapter 4: Design Algorithms"
 type = "guides"
 weight = 15
 override_last_modified = "2018-12-05T14:59:06Z"
@@ -29,33 +29,33 @@ toc_type = "single"
 
 +++
 
-## 4.1 Introduction
+## 4.1: Introduction
 
-In this chapter we will implement a few examples to create mathematical curves and surfaces and solve a few generative algorithms using C# in Grasshopper. Many of the examples involve using loops and recursions which are not supported in regular Grasshopper components.
+In this chapter we will implement a few examples to create mathematical curves & surfaces and solve a few generative algorithms using C# in Grasshopper. Many of the examples involve using loops & recursions, which are not supported in regular Grasshopper components.
 
-## 4.2 Geometry algorithms
+## 4.2: Geometry Algorithms
 
-It is relatively easy to create curves and surfaces that follow certain mathematical equations when you use scripting. You can generate control points to create smooth Nurbs, or interpolate points to create the geometry.
+It is relatively easy to create curves & surfaces that follow certain mathematical equations when you use scripting. You can generate control points to create smooth NURBS or interpolate points to create the geometry.
 
-### 4.2.1 Sine curves and surface
+### 4.2.1: Sine Curves & Surface
 
-The following example shows how to create NurbsCurves and NurbsSurfaces and a lofted Brep using the sine of an angle.
+The following example shows how to create NurbsCurves, NurbsSurfaces, and a lofted Brep using the sine of an angle:
 
-Create curves and surface using the sine equation
+Create curves & surface using the sine equation
 
 <img src="curves_sin_curve.png">
 
 ```C#
 private void RunScript(int num, ref object OutCurves, ref object OutSurface, ref object OutLoft)
 {
-  //list of all points
+  // List of all points
   List<Point3d> allPoints = new List<Point3d>();
-  //list of curves
+  // List of curves
   List<Curve> curves = new List<Curve>();
 
   for(int y = 0; y < num; y++)
   {
-      //curve points
+      // Curve points
       List<Point3d> crvPoints= new List<Point3d>();
       for(int x = 0; x < num; x++)
       {
@@ -64,28 +64,28 @@ private void RunScript(int num, ref object OutCurves, ref object OutSurface, ref
         crvPoints.Add(pt);
         allPoints.Add(pt);
       }
-      //create a degree 3 nurbs curve from control points
+      // Create a degree 3 nurbs curve from control points
       NurbsCurve crv = Curve.CreateControlPointCurve(crvPoints, 3);
       curves.Add(crv);
   }
-  //create a nurbs surface from control points
+  // Create a nurbs surface from control points
   NurbsSurface srf = NurbsSurface.CreateFromPoints(allPoints, num, num, 3, 3);
 
-  //create a loft brep from curves
+  // Create a lofted brep from curves
   Brep[ ] breps = Brep.CreateFromLoft(curves, Point3d.Unset, Point3d.Unset, LoftType.Tight, false);
 
-  //Assign output
+  // Assign output
   OutCurves = curves;
   OutSurface = srf;
   OutLoft = breps;
 }
 ```
 
-### 4.2.2 De Casteljau algorithm to interpolate a Bezier curve
+### 4.2.2: De Casteljau Algorithm to Interpolate a Bezier Curve
 
-You can create a cubic Bezier curve from four input points. De Casteljau algorithm is used in computer graphics to evaluate the Bezier curve at any parameter. If evaluated at multiple parameters, then the points can be connected to draw the curve. The following example shows a recursive function implementation to interpolate through a Bezier curve.
+You can create a cubic Bezier curve from four input points. The De Casteljau algorithm is used in computer graphics to evaluate the Bezier curve at any parameter. If evaluated at multiple parameters, then the points can be connected to draw the curve. The following example shows a recursive function implementation to interpolate through a Bezier curve:
 
-De Casteljau algorithm to draw a Bezier curve with 2, 4, 8 and 16 segments
+The De Casteljau algorithm to draw a Bezier curve with 2, 4, 8, and 16 segments
 
 <img src="de_casteljau.png">
 
@@ -116,7 +116,7 @@ private void RunScript(Point3d pt0, Point3d pt1, Point3d pt2, Point3d pt3, int s
 }
 void EvalPoint(List<Point3d> points, double t, ref Point3d evalPt)
 {
-    //stopping condition - point at parameter t is found
+    // Stopping condition - point at parameter t is found
     if(points.Count < 2)
       return;
     List<Point3d> tPoints = new List<Point3d>();
@@ -131,55 +131,55 @@ void EvalPoint(List<Point3d> points, double t, ref Point3d evalPt)
     EvalPoint(tPoints, t, ref evalPt);
 }
 ```
-### 4.2.3 Simple subdivision mesh
+### 4.2.3: Simple Subdivision Mesh
 
-The following example takes a surface and closed polyline, then creates a subdivision mesh. It pulls the mid points of the polyline edges to the surface to then subdivide and pull again.
+The following example takes a surface & closed polyline, then creates a subdivision mesh. It pulls the midpoints of the polyline edges to the surface to then subdivide & pull again:
 
 <img src="subdivision.png">
 
 ```C#
 private void RunScript(Surface srf, List<Polyline> inPolylines, int degree, ref object OutPolylines, ref object OutMesh)
 {
-    //instantiate the collection of all panels
+    // Instantiate the collection of all panels
     List<Polyline> outPanels = new List<Polyline>();
-    //limit to 6 subdivisions
+    // Limit to 6 subdivisions
     if( degree > 6)
       degree = 6;
     for(int i = 0; i < degree; i++)
     {
-      //outer polylines
+      // Outer polylines
       List<Polyline> plines = new List<Polyline>();
-      //mid polylines
+      // Mid polylines
       List<Polyline> midPlines = new List<Polyline>();
-      //generate subdivided panels
+      // Generate subdivided panels
       bool result = SubPanelOnSurface(srf, inPolylines, ref plines, ref midPlines);
       if( result == false)
         break;
-      //add outer panels
+      // Add outer panels
       outPanels.AddRange(plines);
-      //add mid panels only in the last iteration
+      // Add mid panels only in the last iteration
       if(i == degree - 1)
         outPanels.AddRange(midPlines);
-      else //subdivide mid panels only
+      else // Subdivide mid panels only
         inPolylines = midPlines;
     }
-    //Create a mesh from all polylines
+    // Create a mesh from all polylines
     Mesh joinedMesh = new Mesh();
     for(int i = 0; i < outPanels.Count; i++)
     {
       Mesh mesh = Mesh.CreateFromClosedPolyline(outPanels[i]);
       joinedMesh.Append(mesh);
     }
-    //make sure all mesh faces normals are in the same general direction
+    // Make sure all mesh faces normals are in the same general direction
     joinedMesh.UnifyNormals();
 
-    //Assign output
+    // Assign output
     OutPolylines = outPanels;
     OutMesh = joinedMesh;
     bool SubPanelOnSurface( Surface srf, List<Polyline>
  inputPanels, ref List<Polyline> outPanels, ref List<Polyline> midPanels)
 {
-    //check for a valid input
+    // Check for a valid input
     if (inputPanels.Count == 0 || null == srf)
       return false;
     for (int i = 0; i < inputPanels.Count; i++)
@@ -187,7 +187,7 @@ private void RunScript(Surface srf, List<Polyline> inPolylines, int degree, ref 
       Polyline ipline = inputPanels[i];
       if (!ipline.IsValid || !ipline.IsClosed)
         continue;
-      //stack of points
+      // Stack of points
       List<Point3d> stack = new List<Point3d>();
       Polyline newPline = new Polyline();
       for (int j = 1; j < ipline.Count; j++)
@@ -204,10 +204,10 @@ private void RunScript(Surface srf, List<Polyline> inPolylines, int degree, ref 
           stack.Add(mid);
         }
       }
-      //add the first 2 point to close last triangle
+      // Add the first 2 point to close last triangle
       stack.Add(stack[0]);
       stack.Add(stack[1]);
-      //close
+      // Close
       newPline.Add(newPline[0]);
       midPanels.Add(newPline);
 
@@ -221,11 +221,11 @@ private void RunScript(Surface srf, List<Polyline> inPolylines, int degree, ref 
 }
 ```
 
-## 4.3 Generative algorithms
+## 4.3: Generative Algorithms
 
-Most of the generative algorithms require recursive functions that are only possible through scripting in Grasshopper. The following are four examples of generative solutions to generate the dragon curve, fractals, penrose tiling and game of life.
+Most of the generative algorithms require recursive functions that are only possible through scripting in Grasshopper. The following are four examples of generative solutions to generate the dragon curve, fractals, penrose tiling, and game of life:
 
-### 4.3.1 Dragon Curve
+### 4.3.1: Dragon Curve
 
 <table>
 <tr>
@@ -241,24 +241,24 @@ Most of the generative algorithms require recursive functions that are only poss
 ```C#
 private void RunScript(string startString, string ruleX, string ruleY, int Num, double Length, ref object DragonCurve)
 {
-    // declare string
+    // Declare string
     string dragonString = startString;
-    // generate the string
+    // Generate the string
     GrowString(ref Num, ref dragonString , ruleX, ruleY);
-    //generate the points
+    // Generate the points
     List<Point3d> dragonPoints = new List<Point3d>();;
     ParseDeagonString(dragonString, Length, ref dragonPoints);
-    // create the curve
+    // Create the curve
     PolylineCurve dragonCrv= new PolylineCurve(dragonPoints); 
-    // assign output
+    // Assign output
     DragonCurve = dragonCrv;
 }
 void GrowString(ref int Num, ref string finalString, string ruleX, string ruleY)
   {
-    // decrement the count with each new execution of the grow function
+    // Decrement the count with each new execution of the grow function
     Num = Num - 1;
     char rule;
-    // create new string
+    // Create new string
     string newString = "";
     for (int i = 0; i < finalString.Length ; i++)
     {
@@ -271,45 +271,45 @@ void GrowString(ref int Num, ref string finalString, string ruleX, string ruleY)
         newString = newString + rule;
     }
     finalString = newString;
-    // stopper condition
+    // Stopper condition
     if (Num == 0)
       return;
-    // grow again
+    // Grow again
     GrowString(ref Num, ref finalString, ruleX, ruleY);
 }
 void ParseDeagonString(string dragonString, double Length, ref List<Point3d> dragonPoints)
 {
-    //parse instruction string to generate points
-    //let base point be world origin
+    // Parse instruction string to generate points
+    // Let base point be world origin
     Point3d pt = Point3d.Origin;
     dragonPoints .Add(pt);
 
-    //drawing direction vector - strat along the x-axis
-    //vector direction will be rotated depending on (+,-) instructions
+    // Drawing direction vector - strat along the x-axis
+    // Vector direction will be rotated depending on (+,-) instructions
     Vector3d V = new Vector3d(1.0, 0.0, 0.0);
 
     char rule;
     for(int i = 0 ; i < dragonString.Length;i++)
     {
-      //always start for 1 and length 1 to get one char at a time
+      // Always start for 1 & length 1 to get one char at a time
       rule = DragonString[i];
-      //move Forward using direction vector
+      // Move forward using direction vector
       if( rule == 'F')
       {
         pt = pt + (V * Length);
         dragonPoints.Add(pt);
       }
-      //rotate Left
+      // Rotate Left
       if( rule == '+')
         V.Rotate(Math.PI / 2, Vector3d.ZAxis);
-      //rotate Right
+      // Rotate Right
       if( rule == '-')
         V.Rotate(-Math.PI / 2, Vector3d.ZAxis);
     }
 }
 ```
 
-### 4.3.2 Fractal Tree
+### 4.3.2: Fractal Tree
 
 <table>
 <tr>
@@ -325,14 +325,14 @@ void ParseDeagonString(string dragonString, double Length, ref List<Point3d> dra
 ```C#
 private void RunScript(string startString, string ruleX, string ruleY, int num, double length, ref object FractalLines)
 {
-    // declare string
+    // Declare string
     string fractalString = startString;
-    // generate the string
+    // Denerate the string
     GrowString(ref num, ref dragonString , ruleX, ruleY);
-    //generate the points
+    // Generate the points
     List<Line> fractalLines = new List<Line>();;
     ParsefractalString(fractalString, length, ref fractalLines );
-    // assign output
+    // Assign output
     FractalLines = fractalLines ;
 }
 void GrowString(ref int num, ref string finalString, string ruleX, string ruleF)
@@ -361,69 +361,69 @@ void GrowString(ref int num, ref string finalString, string ruleX, string ruleF)
 }
 void ParsefractalString(string fractalString, double length, ref List<Line> fractalLines)
 {
-    //Parse instruction string to generate points
-    //Let base point be world origin
+    // Parse instruction string to generate points
+    // Let base point be world origin
     Point3d pt = Point3d.Origin;
 
-    //Declare points array
-    //Vector rotates with (+,-) instructions by 30 degrees
+    // Declare points array
+    // Vector rotates with (+,-) instructions by 30 degrees
     List<Point3d> arrPoints = new List<Point3d>();
 
-    //Draw forward direction
-    //Vector direction will be rotated depending on (+,-) instructions
+    // Draw forward direction
+    // Vector direction will be rotated depending on (+,-) instructions
     Vector3d vec = new Vector3d(0.0, 1.0, 0.0);
 
-    //Stacks of points and vectors
+    // Stacks of points and vectors
     List<Point3d> ptStack = new List<Point3d>();
     List<Vector3d> vStack = new List<Vector3d>();
 
-    //Declare loop variables
+    // Declare loop variables
     char rule;
     for(int i = 0 ; i < fractalString.Length; i++)
     {
-      //Always start for 1 and length 1 to get one char at a time
+      // Always start for 1 & length 1 to get one char at a time
       rule = fractalString[i];
-      //Rotate Left
+      // Rotate Left
       if( rule == '+')
         vec.Rotate(Math.PI / 6, Vector3d.ZAxis);
-      //Rotate Right
+      // Rotate Right
       if( rule == '-')
         vec.Rotate(-Math.PI / 6, Vector3d.ZAxis);
-      //Draw Forward by direction
+      // Draw Forward by direction
       if( rule == 'F')
       {
-        //Add current points
+        // Add current points
         Point3d newPt1 = new Point3d(pt);
         arrPoints.Add(newPt1);
-        //Calculate next point
+        // Calculate next point
         Point3d newPt2 = new Point3d(pt);
         newPt2 = newPt2 + (vec * length);
-        //Add next point
+        // Add next point
         arrPoints.Add(newPt2);
-        //Save new location
+        // Save new location
         pt = newPt2;
       }
-      //Save point location
+      // Save point location
       if( rule == '[')
       {
-        //Save current point and direction
+        // Save current point & direction
         Point3d newPt = new Point3d(pt);
         ptStack.Add(newPt);
 
         Vector3d newV = new Vector3d(vec);
         vStack.Add(newV);
       }
-      //Retrieve point and direction
+      // Retrieve point & direction
       if( rule == ']')
       {
         pt = ptStack[ptStack.Count - 1];
         vec = vStack[vStack.Count - 1];
-        //Remove from stack
+        // Remove from stack
         ptStack.RemoveAt(ptStack.Count - 1);
         vStack.RemoveAt(vStack.Count - 1);
       }
     }
-    //Generate lines
+    // Generate lines
     List<Line> allLines = new List<Line>();
     for(int i = 1; i < arrPoints.Count; i = i + 2)
     {
@@ -433,7 +433,7 @@ void ParsefractalString(string fractalString, double length, ref List<Line> frac
 }
 ```
 
-### 4.3.3 Penrose Tiling
+### 4.3.3: Penrose Tiling
 
 <table>
 <tr>
@@ -491,52 +491,52 @@ private void RunScript(string startString, string rule6, string rule7, string ru
   }
 private void RunScript(string penroseString, double length, ref object PenroseLines)
   {
-    //Parse instruction string to generate points
-    //Let base point be world origin
+    // Parse instruction string to generate points
+    // Let base point be world origin
     Point3d pt = Point3d.Origin;
 
-    //Declare points array
-    //Vector rotates with (+,-) instructions by 36 degrees
+    // Declare points array
+    // Vector rotates with (+,-) instructions by 36 degrees
     List<Point3d> arrPoints = new List<Point3d>();
 
-    //Draw forward direction
-    //Vector direction will be rotated depending on (+,-) instructions
+    // Draw forward direction
+    // Vector direction will be rotated depending on (+,-) instructions
     Vector3d vec = new Vector3d(1.0, 0.0, 0.0);
 
-    //Stacks of points and vectors
+    // Stacks of points & vectors
     List<Point3d> ptStack = new List<Point3d>();
     List<Vector3d> vStack = new List<Vector3d>();
 
-    //Declare loop variables
+    // Declare loop variables
     char rule;
     for(int i = 0 ; i < penroseString.Length; i++)
     {
-      //Always start for 1 and length 1 to get one char at a time
+      // Always start for 1 & length 1 to get one char at a time
       rule = penroseString[i];
-      //Rotate Left
+      // Rotate Left
       if( rule == '+')
         vec.Rotate(36 * (Math.PI / 180), Vector3d.ZAxis);
-      //Rotate Right
+      // Rotate Right
       if( rule == '-')
         vec.Rotate(-36 * (Math.PI / 180), Vector3d.ZAxis);
-      //Draw Forward by direction
+      // Draw Forward by direction
       if( rule == '1')
       {
-        //Add current points
+        // Add current points
         Point3d newPt1 = new Point3d(pt);
         arrPoints.Add(newPt1);
-        //Calculate next point
+        // Calculate next point
         Point3d newPt2 = pt + (vec * length);
-        //Add next point
+        // Add next point
         arrPoints.Add(newPt2);
-        //Save new location
+        // Save new location
         pt = newPt2;
       }
 
-      //Save point location
+      // Save point location
       if( rule == '[')
       {
-        //Save current point and direction
+        // Save current point & direction
         Point3d newPt = new Point3d(pt);
         ptStack.Add(newPt);
 
@@ -544,19 +544,19 @@ private void RunScript(string penroseString, double length, ref object PenroseLi
         vStack.Add(newVec);
       }
 
-      //Retrieve point and direction
+      // Retrieve point & direction
       if( rule == ']')
       {
         pt = ptStack[ptStack.Count - 1];
         vec = vStack[vStack.Count - 1];
 
-        //Remove from stack
+        // Remove from stack
         ptStack.RemoveAt(ptStack.Count - 1);
         vStack.RemoveAt(vStack.Count - 1);
       }
     }
 
-    //Generate lines
+    // Generate lines
     List<Line> allLines = new List<Line>();
     for(int i = 1; i < arrPoints.Count; i = i + 2)
     {
@@ -568,10 +568,9 @@ private void RunScript(string penroseString, double length, ref object PenroseLi
   }
 ```
 
-### 4.3.4 Conway Game of Life
+### 4.3.4: Conway Game of Life
 
-A cellular automaton consists of a regular grid of cells, each in one of a finite number of states, "On" and "Off" for example. The grid can be in any finite number of dimensions. For each cell, a set of cells called its neighborhood (usually including the cell itself) is defined relative to the specified cell. For example, the neighborhood of a cell might be defined as the set of cells a distance of 2 or less from the cell. An initial state (time t=0) is selected by assigning a state for each cell. A new generation is created (advancing t by 1), according to some fixed rule (generally, a mathematical function) that determines the new state of each cell in terms of the current state of the cell and the states of the cells in its neighborhood.
-Check wikipedia for full details and examples.
+A cellular automaton consists of a regular grid of cells, each in one of a finite number of states, "On" & "Off" for example. The grid can be in any finite number of dimensions. For each cell, a set of cells called its neighborhood (usually including the cell itself) is defined relative to the specified cell. For example, the neighborhood of a cell might be defined as the set of cells a distance of 2 or less from the cell. An initial state (time t=0) is selected by assigning a state for each cell. A new generation is created (advancing t by 1), according to some fixed rule (generally, a mathematical function) that determines the new state of each cell in terms of the current state of the cell and the states of the cells in its neighborhood. *Check wikipedia for full details and examples.*
 
 <img src="game_of_life.png">
 
@@ -588,7 +587,7 @@ Check wikipedia for full details and examples.
     double uMin = srf.Domain(0).Min;
     double vMin = srf.Domain(1).Min;
 
-    //create a grid of points and a grid of states
+    // Create a grid of points & a grid of states
     DataTree<Point3d> pointsTree = new DataTree<Point3d>();
     DataTree<int> statesTree = new DataTree<int>();
     int pathIndex = 0;
@@ -618,7 +617,7 @@ Check wikipedia for full details and examples.
 
   private void RunScript(DataTree<int> grid, int gen, ref object OutGrid)
   {
-    //Get state at the defined generation
+    // Get state at the defined generation
     for(int i = 0; i < gen; i++)
       grid = NewGeneration(grid);
 
@@ -626,7 +625,7 @@ Check wikipedia for full details and examples.
   }
 
 
-    public DataTree<int> NewGeneration(DataTree<int> inStates)
+  public DataTree<int> NewGeneration(DataTree<int> inStates)
   {
     int i, j, c, nc;
     List<int> prvBranch;
@@ -644,24 +643,24 @@ Check wikipedia for full details and examples.
         nc = 0;
 
         // Check neighbouring states
-        // next
+        // Next
         nc = nc + branch[(j + 1 + branch.Count) % branch.Count];
-        // prv
+        // Prev
         nc = nc + branch[(j - 1 + branch.Count) % branch.Count];
 
-        // top
+        // Top
         nxtBranch = states.Branches[(i + 1 + states.Branches.Count) % states.Branches.Count];
         nc = nc + nxtBranch[(j + 1 + nxtBranch.Count) % nxtBranch.Count];
         nc = nc + nxtBranch[(j + nxtBranch.Count) % nxtBranch.Count];
         nc = nc + nxtBranch[(j - 1 + nxtBranch.Count) % nxtBranch.Count];
 
-        // bottom
+        // Bottom
         prvBranch = states.Branches[(i - 1 + states.Branches.Count) % states.Branches.Count];
         nc = nc + prvBranch[(j + 1 + prvBranch.Count) % prvBranch.Count];
         nc = nc + prvBranch[(j + prvBranch.Count) % prvBranch.Count];
         nc = nc + prvBranch[(j - 1 + prvBranch.Count) % prvBranch.Count];
 
-        // set the new state
+        // Set the new state
         if (c == 1)
         {
           if (nc < 2 | nc > 3)

@@ -6,7 +6,7 @@ category_page = "guides/grasshopper/csharp-essentials/"
 keywords = [ "csharp", "commands" ]
 languages = [ "C#" ]
 sdk = [ "RhinoCommon" ]
-title = "2: C# Programming Basics"
+title = "Chapter 2: C# Programming Basics"
 type = "guides"
 weight = 15
 override_last_modified = "2024-04-15T14:59:06Z"
@@ -29,7 +29,7 @@ toc_type = "single"
 
 +++
 
-## 2.1 Introduction
+## 2.1: Introduction
 
 This chapter covers basic C# programming concepts. It serves as an introduction and quick reference to C#'s language syntax. It is not meant to be complete by any measure, so please refer to the C# resources available online and in print. All examples in this chapter are implemented using the Grasshopper C# component. For additional documentation [The Microsoft CSharp Programming Guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/) is a good resource.
 
@@ -69,11 +69,11 @@ Let us dissect all the different parts of the above statement:
 </tr>
 <tr>
 <td><b>x</b></td>
-<td><i>The name of the variable.</td>
+<td><i>The name of the variable</i></td>
 </tr>
 <tr>
 <td><b>=</b></td>
-<td>Used for assignment and it means the value that follows will be stored in the variable x.</td>
+<td>Used for assignment and it means the value that follows will be stored in the variable x</td>
 </tr>
 <tr>
 <td><b>=</b></td>
@@ -81,11 +81,11 @@ Let us dissect all the different parts of the above statement:
 </tr>
 <tr>
 <td><b>10</b></td>
-<td>The initial value stored in the <b>x</b> variable.</td>
+<td>The initial value stored in the <b>x</b> variable</td>
 </tr>
 <tr>
 <td>;</td>
-<td>The semicolon is used to end a single statement.</td>
+<td>The semicolon is used to end a single statement</td>
 </tr>
 </table>
 
@@ -94,7 +94,6 @@ In general, when you declare a variable, you need to explicitly specify the **da
 ## 2.4: Operators
 
 Operators are used to perform arithmetic, logical, and other operations. Operators make the code more readable because you can write expressions in a format similar to that in mathematics. So, instead of having to use functions and write **C=Add(A, B)**, we can write **C=A+B**, which is easier to read. The following is a table of the common operators provided by the C# programming language for quick reference:
-
 
 <table class="rounded">
   <tr>
@@ -228,7 +227,7 @@ double num = 16;
 double sqrNum = System.Math.Sqrt(num);
 ```
 
-Notice how you use the namespace followed by “.” to access the classes within that namespace. If you do not want to type the namespace each time you need to access one of the classes within that namespace, then you can use the **using** keyword as in the following.
+Notice how you use the namespace followed by “.” to access the classes within that namespace. If you do not want to type the namespace each time you need to access one of the classes within that namespace, then you can use the **using** keyword as in the following:
 
 ```C#
 using System;
@@ -291,7 +290,7 @@ For example, you can organize the days of the week using an array. The following
 string[] weekdays = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
 ```
 
-You can also declare the array first with a specific dimension representing the number of elements to allocate in memory for the array, then assign the values of the elements in separate statements. In the C# language, each statement ends with a semicolon.
+You can also declare the array first with a specific dimension representing the number of elements to allocate in memory for the array, then assign the values of the elements in separate statements. In the C# language, each statement ends with a semicolon:
 
 ```C#
 // Declare the days of the week in one statement, then assign the values later
@@ -420,7 +419,7 @@ Loops allow you to run the body of your loop a fixed number of times or until th
 
 There are two kinds of loops. The first is iterative where you can repeat code a defined number of times, and the second is conditional where you repeat until some condition is no longer satisfied.
 
-**Iterative loops: for loop**
+**Iterative Loops: for loop**
 
 This is a common way of looping when you need to run a block of code a specific number of times. Here is a simple example that prints numbers from 1 to 10. You first declare a counter and then increment in the loop to run the code a specific number of times. *Notice that the code statements you would like to repeat are bound by the block after the for statement.*
 
@@ -546,7 +545,7 @@ Print("Count = " + counter);
 Print("Sum = " + sum);
 ```
 
-Here is another example from mathematics where you can solve the **[Collatz conjecture(http://en.wikipedia.org/wiki/Collatz_conjecture)]**. It basically says that you can start with any natural positive integer, and if even then divide by 2, but if odd, then multiply by 3 and add 1. If you repeat the process long enough, then you always converge to 1. The following example prints all the numbers in a **Collatz conjecture** for a given number:
+Here is another example from mathematics where you can solve the **[Collatz conjecture](http://en.wikipedia.org/wiki/Collatz_conjecture)**. It basically says that you can start with any natural positive integer, and if even then divide by 2, but if odd, then multiply by 3 and add 1. If you repeat the process long enough, then you always converge to 1. The following example prints all the numbers in a **Collatz conjecture** for a given number:
 
 ```C#
 int x = 46;
@@ -561,7 +560,7 @@ while(x > 1)
 Print( x.ToString() );
 ```
 
-**Nested loops**
+**Nested Loops**
 
 A nested loop is a loop that contains another loop inside it. You can nest as many loops as you need, but keep in mind this can make the logic harder to follow.
 
@@ -736,7 +735,6 @@ Input parameters are enclosed within parentheses after the method name. The para
     <td>Indicates that the original reference of the variable is passed. Again, any changes made to the variable inside the function are also seen by the caller.</td>
   </tr>
 </table>
-
 
 As you can see from the table, whether the parameter is passed as a copy (by value) or as a direct link (by reference), it's mostly relevant to **value-type** variables such as **int**, **double**, **bool**, etc. If you need to pass a **reference-type** such as objects and lists, and you do not wish the function to change your original data (act as though the variable is passed by value), then you need to duplicate your data before passing it. All input values to the GH **RunScript** function (the main function in the scripting component) are duplicated before being used inside the component so that input data is not affected.
 
@@ -927,7 +925,7 @@ struct ColorPoint{
 }
 ```
 
-You can use properties to only set or get data. For example you can write a property that get the color saturation:
+You can use properties to only set or get data. For example, you can write a property that get the color saturation:
 
 ```C#
     // Property
@@ -1071,7 +1069,7 @@ class CColorPoint: CPoint{
 
 You can use the same program written above for **ColorPoint struct** to create an average point between 2 color points. The only difference is that if you now pass an instance of the class **CColorPoint** to a function, it will be passed by reference, even without using the **ref** keyword.
 
-Here are the key differences between structures and classes:
+Here are the key differences between structures & classes:
 
 <table class="rounded">
   <tr>
@@ -1082,7 +1080,7 @@ Here are the key differences between structures and classes:
   <tr>
     <td>Value type</td>
     <td>Reference type</td>
-    <td>Value types (struct) are cheaper to allocate and deallocate in memory, however the assignment of a large value type can be more costly than a reference type (class).</td>
+    <td>Value types (struct) are cheaper to allocate & deallocate in memory, however the assignment of a large value type can be more costly than a reference type (class).</td>
   </tr>
   <tr>
     <td>Passed to functions by value</td>
@@ -1098,7 +1096,7 @@ Here are the key differences between structures and classes:
 
 ### 2.9.4: Value vs Reference Types
 
-It is worth stressing the two data classifications: **value-types** and **reference-types**. We touched on that topic when introducing methods and how parameters are passed **by value** or **by reference**. There are also differences in how the two are stored and managed in memory. Here is a summary comparison between the two classifications:
+It is worth stressing the two data classifications: **value-types** & **reference-types**. We touched on that topic when introducing methods and how parameters are passed **by value** or **by reference**. There are also differences in how the two are stored and managed in memory. Here is a summary comparison between the two classifications:
 
 <table class="rounded">
   <tr>
@@ -1108,8 +1106,8 @@ It is worth stressing the two data classifications: **value-types** and **refere
   </tr>
   <tr>
     <td><b>Examples</b></td>
-    <td>All built-in numeric data types (such as integer, double, bool, and char), Arrays,
-Structures.</td>
+    <td>All built-in numeric data types (such as integer, double, bool, and char), Arrays, and
+Structures</td>
     <td>Lists </br>Classes</td>
   </tr>
   <tr>

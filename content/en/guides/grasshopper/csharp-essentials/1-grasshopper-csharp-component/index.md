@@ -6,7 +6,7 @@ category_page = "guides/grasshopper/csharp-essentials/"
 keywords = [ "csharp", "commands" ]
 languages = [ "C#" ]
 sdk = [ "RhinoCommon" ]
-title = "1: Grasshopper C# Component"
+title = "Chapter 1: Grasshopper C# Component"
 type = "guides"
 weight = 15
 override_last_modified = "2024-04-15T14:59:06Z"
@@ -29,11 +29,11 @@ toc_type = "single"
 
 +++
 
-## 1.1 Introduction
+## 1.1: Introduction
 
 Grasshopper supports multiple scripting languages such as **C#**, **Python**, and **VB.NET** to help develop custom components using the Rhino and Grasshopper SDKs (software development kit). Rhino publishes a cross-platform **SDK** for **.NET** languages called **RhinoCommon**. The documentation of the SDK and other developer resources are available at [Rhino Developer Documentation](http://developer.rhino3d.com/).
 
-## 1.2 C# Component Interface
+## 1.2: C# Component Interface
 
 The scripting components are integrated within Grasshopper and have a similar interface to that of other typical components. They can read input & produce output, and they have an editor to write custom code with access to **RhinoCommon**. They are used to create specialized code and workflows not supported by other Grasshopper components. You can also use them to simplify, optimize, and streamline your definitions by combining multiple functions.
 
@@ -51,7 +51,7 @@ Alternatively, you can use the generic **Script** component, then click on the C
    <figcaption>Figure(2): The default Script component in Grasshopper</figcaption>
 </figure>  
 
-## 1.3 The Input Parameters
+## 1.3: The Input Parameters
 
 By default, there are two input parameters named **x** and **y**.  It is possible to edit the parameters’ names, delete them or add new ones. If you zoom in, you will notice a few “+” and “-” signs appearing. You can click on those to add or remove parameters. You can also right-click on a parameter to change its name. Note that the names of the parameters and their types are passed to the main function inside the script component, which is called **RunScript**. It is a good practice to set the input and output parameter names to reflect what each parameter does. Parameter names should not use spaces or special characters.
 
@@ -176,7 +176,7 @@ This is the main function where you write your code. The signature of the **RunS
 
 This topic requires knowledge in C# programming. If you need to review or refresh your knowledge in C# programming, please review *Chapter 2* before reading this section.
 
-Grasshopper scripting components, just like all other GH components, can process three types of data access; **item access**, **list access** and **tree access**.
+Grasshopper scripting components, just like all other GH components, can process three types of data access; **item access**, **list access**, and **tree access**.
 
 <table class="rounded">
   <tr>
@@ -198,10 +198,6 @@ Grasshopper scripting components, just like all other GH components, can process
 </table>
 
 You need to right-click on the input parameter to set its data access, otherwise it is set to **item access** by default. We will explain what each access means and how data is processed inside the component in each case.
-
-## Next Steps
-
-Now that you know what a scripting language is, check out the [Python Essentials](/guides/rhinopython/primer-101/2-python-essentials/) guide to learn more about the Python language.
 
 <figure>
    <img src="drop_menu.png">
@@ -365,7 +361,7 @@ private void RunScript( ref object Numbers)
 }
 ```
 
-The following example shows how to step through a given data tree of numbers to calculate the overall sum.
+The following example shows how to step through a given data tree of numbers to calculate the overall sum:
 
 <img src="tree_access_sum.png">
 
@@ -384,4 +380,4 @@ private void RunScript( DataTree<double> x, ref object Sum)
 
 ## Next Steps
 
-Those are the basics of the C# data structures. Next, learn the [Chapter Two: C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics).
+Those are the basics of the C# data structures. Next, learn the [Chapter 2: C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics).
