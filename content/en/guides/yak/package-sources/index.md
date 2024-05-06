@@ -47,3 +47,7 @@ for now it just supports whatever Directory.EnumerateFiles() supports, which as 
 On Windows use the UNC path, i.e. `\\server\share\packages`. If the share requires credentials then first navigate to `\\server` in Explorer, log in and check the "remember my credentials" box.
 
 On macOS the file share needs to be mounted first in Finder via _Go > Connect to Server..._ (<kbd>⌘</kbd> + <kbd>K</kbd>). Enter the address (`smb://server/share`) and provide credentials if required. Now the mounted path can be used as a package source, i.e. `/Volumes/share/packages`. The mount isn't persistent, so it'll need to be remounted in future.
+
+### Administrator-Enforced Settings
+
+See [Administrator-Enforced Settings](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#information/admin-enforced_settings.htm) for tips on how to deploy and enforce this setting for Windows users in your organisation.
