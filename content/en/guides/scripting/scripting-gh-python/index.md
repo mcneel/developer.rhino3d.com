@@ -214,16 +214,6 @@ If you have a *Type Hint* set on a parameter, the extracted floating parameter w
 
 ![](python3-component-extractparam-02.png)
 
-## Marshalling
-
-### Marshalling Guids
-
-The ubiquitous `rhinoscriptsyntax` modules (usually imported as `rs` ), references Rhino document elements by their unique identifier (Guid). Python Script component has a few features to make life easier when dealing with `rhinoscriptsyntax` functions:
-
-- If the input parameter has **ghdoc Object** *Type Hint*, input elements are marshalled to their unique identifier so they can be passed to `rhinoscriptsyntax` functions. 
-
-- Convert unique identifiers to their associated elements on the output parameters. This capability can be toggle from the component context menu item *Avoid Marshalling Output Guids*
-
 
 ## Script-Mode
 
@@ -446,6 +436,55 @@ Any interaction with Rhino viewports results in Grasshopper receiving a request 
 
 This is exactly where the *Preview Overrides* come into play. Their main purpose is to peform custom drawings in Rhino viewports based on the results of the computation done by *Solve Overrides*. Contradictory to the solve methods, the *Preview Overrides* are continuously called as you are interacting with the Rhino viewports.
 
+## Marshalling
+
+### Marshalling Guids
+
+The ubiquitous `rhinoscriptsyntax` modules (usually imported as `rs`) references Rhino document elements by their unique identifier (Guid). Python Script component has a few features to make life easier when dealing with `rhinoscriptsyntax` functions:
+
+- **Output** parameters, by default, automatically convert unique identifiers to their associated Rhino document elements. This capability can be toggled from the component context menu item **Avoid Marshalling Output Guids**:
+
+![](python3-component-marsh01.png)
+
+- **Inputs** parameter with *Type Hint* of **ghdoc Object** automatically marshall input Rhino document elements to their unique identifier so they can be passed to `rhinoscriptsyntax` functions. If we pass the output *Sphere* from the example above, into anther script component with input of `sphere` that has *Type Hint* of *ghdoc Object*, the actual value contained in `sphere` would be the unique identifier. We can easily pass this identifier to `rs.RebuildSurface` to rebuild the sphere:
+
+![](python3-component-marsh02.png)
+
+{{< call-out "note" "Note" >}}
+When marshalling input elements to their unique identifers, the elements are stored in a proxy headless document. This document is then assigned to `scriptcontext.doc` for the duration of the script execution (alongside setting `scriptcontext.id == 2` to denote Grasshopper context). All `rhinoscriptsyntax` functions use this proxy document for their operations, therefore everything runs smoothly.
+{{< /call-out >}}
+
+### Marshalling Data Types (CPython)
+
+Current implementation of Python 3 in Rhino uses [CPython](https://www.python.org), and its data types are very different from dotnet types. For example a dotnet `List<int>` has a `Count` property that reports the length of the list. However `list` type in Python 3 does not have such property and we normally use the built-in function `len()` to measure length of an iterable.
+
+#### Inputs
+
+When working with Python 3 scripts in [Script-Mode]({{< relref "#script-mode" >}}), dotnet data types are automatically marshalled into Python 3 data types. So an input `List<int>` will be converted into a python `list` containing only integers. This behaviour can be toggled using **Avoid Marshalling Inputs** item in component [Advanced Options]({{< relref "#advanced-options" >}}).
+
+In the example below, input parameter `x` has *Access* of *List*. The top component is defaulting to convert a dotnet input `List<>` to a python `list`, and the bottom component has *Avoid Marshalling Inputs* checked and is skipping the conversion.
+
+![](python3-component-marsh03.png)
+
+When working in [SDK-Mode]({{< relref "#sdk-mode" >}}), any input parameter with *Access* of *List*, will be defined as a dotnet `List<>` in the *RunScript* syntax, and the *Avoid Marshalling Inputs* is checked by default. In the example below, input parameter `x` has an *Access* of *Item* and *Type Hint* of integer. Notice the parameter `x` in *RunScript* signature is hinted as `x: System.Collections.Generic.List<int>`:
+
+```python
+class MyComponent(Grasshopper.Kernel.GH_ScriptInstance):
+    def RunScript(self, x: System.Collections.Generic.List<int>):
+        ...
+```
+
+#### Outputs
+
+Output parameters follow the same logic. Be default, an output of Python 3 `list` is converted to a dotnet `List<object>` so other Grasshopper components can use the data. This behaviour can be toggled using **Avoid Marshalling Outputs** item in component advanced context menu.
+
+{{< call-out "note" "Note" >}}
+When multiple Python 3 components are working together, you have the option of avoiding the input and output marshalling since the data is flowing directly from one Python 3 component to another Python 3 component without involvement from any other components in between. In these cases, there is no need to convert a python `list` to a dotnet `List<>` and back to a python `list`. Just **Avoid Marshalling Outputs** on the upstream component and the exact same data will be passed downstream with no conversions. Notice that the Grasshopper wires between components are single lines as they now carry a single python `list` instance:
+
+![](python3-component-marsh04.png)
+
+{{< /call-out >}}
+
 ## Debugging Scripts
 
 You can debug your Python scripts in the script editor. During debug, we can execute the script line by line or pause the execution at certain lines called **Breakpoints** and inspect the values of global and local variables.
@@ -626,10 +665,6 @@ As the *Install Package* dialog examples show, you can also provide a relative o
 
 from MySharedAssembly import MyData
 ```
-
-## Reload Engine
-
-## Reset Runtime
 
 ## Customizing Editor
 
