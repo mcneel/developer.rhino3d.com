@@ -354,7 +354,7 @@ It is also acceptable to return the values explicitly as a tuple:
 
 *Script* component is smart enough to update the RunScript signature when parameters on the component are changed. It is also capable of updating parameters on the component, when the RunScript signature is manually edited:
 
-![](python3-component-runscriptsig-01.mov)
+{{< vimeo id="943289663" autoplay="1" loop="1" autopause="0" >}}
 
 Notice that input types will be used to apply an appropriate *Type Hint* to the parameter. The collection type of the input (`List`, or `DataTree`) is also used to apply the correct access kind to the associated input parameter.
 

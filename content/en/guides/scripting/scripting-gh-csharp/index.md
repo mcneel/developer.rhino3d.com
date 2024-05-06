@@ -278,7 +278,7 @@ You can write the logic of your component inside the `RunScript` block, take the
 
 *Script* component is smart enough to update the RunScript signature when parameters on the component are changed. It is also capable of updating parameters on the component, when the RunScript signature is manually edited:
 
-![](csharp-component-runscriptsig-01.mov)
+{{< vimeo id="943290704" autoplay="1" loop="1" autopause="0" >}}
 
 Notice that input and output types will be used to apply an appropriate *Type Hint* to the parameter. The collection type of the input (`List`, or `DataTree`) is also used to apply the correct access kind to the associated input parameter.
 
