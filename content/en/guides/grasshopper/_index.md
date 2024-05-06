@@ -39,15 +39,19 @@ since = 0
 - [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
 - [Distributing a Grasshopper Plug-In with the Package Manager](/guides/yak/creating-a-grasshopper-plugin-package/)
 
+### Fundamentals
+
+{{< dev-topic-list "guides" "Grasshopper" "Fundamentals" "weight" >}}
+
 {{< /column >}}
 {{< column >}}
 
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/grasshopper-guides-col2.png">](/guides/grasshopper/simple-component/)
 
-### Fundamentals
+### In Depth
 
-{{< dev-topic-list "guides" "Grasshopper" "Fundamentals" "weight" >}}
+{{< dev-topic-list "guides" "Grasshopper" "In Depth" "weight" >}}
 
 ### Advanced
 
@@ -59,13 +63,16 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/grasshopper-guides-col3.png">](/guides/grasshopper/grasshopper-data-types/)
 
-### In Depth
-
-{{< dev-topic-list "guides" "Grasshopper" "In Depth" "weight" >}}
-
 ### Python in Grasshopper
 
 {{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" >}}
+
+### [C# in Grasshopper](/guides/grasshopper/csharp-essentials/)
+
+- [C# Component in Grasshopper](/guides/grasshopper/csharp-essentials/1-grasshopper-csharp-component/#21-introduction)
+- [C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics/)
+- [RhinoCommon Geometry](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/)
+- [Design Algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/)
 
 {{< /column >}}
 {{< /row >}}

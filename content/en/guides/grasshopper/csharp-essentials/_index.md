@@ -122,7 +122,7 @@ Robert McNeel & Associates
 &nbsp;&nbsp; 3.3.5 [Other geometry classes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#335-other-geometry-classes)  
    3.4 [Geometry transformations](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#34-geometry-transformations)  
 
-### 4. [RhinoCommon Geometry](/guides/grasshopper/csharp-essentials/4-design-algorithms/)
+### 4. [Design Algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/)
 
    4.1 [Introduction](/guides/grasshopper/csharp-essentials/4-design-algorithms/#41-introduction)  
    4.2 [Geometry algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/#42-geometry-algorithms)  

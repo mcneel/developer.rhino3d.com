@@ -161,7 +161,6 @@ toc_type = "single"
 
 {{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" "8" >}}
 
-
 ### Fundamentals
 
 {{< dev-topic-list "guides" "RhinoPython" "Fundamentals" "weight" "8" >}}
@@ -290,6 +289,13 @@ toc_type = "single"
 ### Python in Grasshopper
 
 {{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" "8" >}}
+
+### [C# in Grasshopper](/guides/grasshopper/csharp-essentials/)
+
+- [C# Component in Grasshopper](/guides/grasshopper/csharp-essentials/1-grasshopper-csharp-component/#21-introduction)
+- [C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics/)
+- [RhinoCommon Geometry](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/)
+- [Design Algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/)
 
 
 ## [RhinoScript](/guides/rhinoscript)
