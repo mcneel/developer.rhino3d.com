@@ -37,7 +37,7 @@ In this chapter we will implement a few examples to create mathematical curves &
 
 It is relatively easy to create curves & surfaces that follow certain mathematical equations when you use scripting. You can generate control points to create smooth NURBS or interpolate points to create the geometry.
 
-### 4.2.1: Sine Curves & Surface
+### 4.2.1: Sine Curves and Surface
 
 The following example shows how to create NurbsCurves, NurbsSurfaces, and a lofted Brep using the sine of an angle:
 
