@@ -36,14 +36,14 @@ This is an essential scripting guide
 
 {{< image url="/images/math-logo.svg" alt="/images/math-logo.svg" class="float_right" >}}
 
-This manual is intended for designers who are experienced in [Grasshopper® (GH)](www.grasshopper3d.com) visual scripting, and would like to take their skills to the next level to create their own custom scripts using C# programming language. This guide does not assume nor require any background in programming. The document is divided into four parts. 
+This manual is intended for designers who are experienced in [Grasshopper® (GH)](https://www.grasshopper3d.com) visual scripting, and would like to take their skills to the next level to create their own custom scripts using C# programming language. This guide does not assume nor require any background in programming. The document is divided into four parts. 
 
 1. [C# Component in Grasshopper](/guides/grasshopper/csharp-essentials/1-grasshopper-csharp-component/) explains the general interface of the C# scripting component in Grasshopper. 
 1. [C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics/) reviews the basics of the C# DotNet programming language. 
 1. [RhinoCommon Geometry](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/) covers the main geometry types and functions in the RhinoCommon SDK. 
 1. [Design Algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/) includes examples of a number of design algorithms. 
 
-The guide includes many examples that are also available as a Grasshopper file available with the download of this guide. Note that all examples are written in version 8 of [Rhinoceros® (Rhino)](www.rhino3d.com) and Grasshopper.
+The guide includes many examples that are also available as a Grasshopper file available with the download of this guide. Note that all examples are written in version 8 of [Rhinoceros® (Rhino)](https://www.rhino3d.com) and Grasshopper.
 
 I would like to acknowledge the excellent technical review by Mr. Steve Baer of Robert McNeel and Associates. I would also like to acknowledge Ms. Sandy McNeel for reviewing the writing and formatting of this document.
 
