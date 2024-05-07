@@ -29,11 +29,11 @@ toc_type = "single"
 
 +++
 
-## 2.1: Introduction
+## 2.1 Introduction
 
 This chapter covers basic C# programming concepts. It serves as an introduction and quick reference to C#'s language syntax. It is not meant to be complete by any measure, so please refer to the C# resources available online and in print. All examples in this chapter are implemented using the Grasshopper C# component. For additional documentation [The Microsoft CSharp Programming Guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/) is a good resource.
 
-## 2.2: Comments
+## 2.2 Comments
 
 Comments are very useful to describe your code in plain language. They are useful as a reminder for you and also for others to help them understand your code. To add a comment, you can use two forward slashes // to signal that the rest of the line is a comment and the compiler should ignore it. In the Grasshopper C# code editor, comments are displayed in green. You should enclose a multi-line comment between /* and */ as in the following example.
 
@@ -45,7 +45,7 @@ Comments are very useful to describe your code in plain language. They are usefu
 */
 ```
 
-## 2.3: Variables
+## 2.3 Variables
 
 You can think of variables as labeled containers in your computer’s memory where you can store and retrieve data. Your script can define any number of variables and label them with the names of your choice, as long as you do not use spaces, special characters, or reserved words by the programming language. Try to always use variable names that are descriptive of the data you intend to store. This will make it easier for you to remember what kind of information is stored in each variable.
 
@@ -91,7 +91,7 @@ Let us dissect all the different parts of the above statement:
 
 In general, when you declare a variable, you need to explicitly specify the **data type**.
 
-## 2.4: Operators
+## 2.4 Operators
 
 Operators are used to perform arithmetic, logical, and other operations. Operators make the code more readable because you can write expressions in a format similar to that in mathematics. So, instead of having to use functions and write **C=Add(A, B)**, we can write **C=A+B**, which is easier to read. The following is a table of the common operators provided by the C# programming language for quick reference:
 
@@ -218,7 +218,7 @@ Operators are used to perform arithmetic, logical, and other operations. Operato
   </tr>
 </table>
 
-## 2.5: Namespaces
+## 2.5 Namespaces
 
 Namespaces are very useful to group and organize classes, especially for large projects. **.NET** uses namespaces to organize its classes. For example, **System** namespace has many classes under it, including the **Math** class, so if you like to calculate the square root of a number, your code will look like the following:
 
@@ -235,11 +235,11 @@ double num = 16;
 double sqrNum = Math.Sqrt(num);
 ```
 
-## 2.6: Data
+## 2.6 Data
 
 Data types refer to the kind of data stored in the variable. There are two main data types. The first is supplied by the programming language and involves things like numbers, logical true or false, and characters. Those are generally referred to as primitive or built-in types. Variables of any data type can be composed into groups or collections.
 
-### 2.6.1: Primitive Data Types
+### 2.6.1 Primitive Data Types
 
 Primitive types refer to the basic and built-in types provided by the programming language. The following examples declare variables of primitive data types:
 
@@ -270,7 +270,7 @@ Primitive types refer to the basic and built-in types provided by the programmin
   </tr>
 </table>
 
-### 2.6.2: Collections
+### 2.6.2 Collections
 
 In many cases, you will need to create and manage a group of objects. There are generally two ways to group objects: either by organizing them in arrays or using a collection. Collections are more versatile and flexible, and they allow you to expand or shrink the group dynamically. There are many ways to create collections, but we will focus on ordered ones that contain elements of the same data type. For more information, you can reference the literature.
 
@@ -330,11 +330,11 @@ myWorkDays.Add("Friday");
 ```
 You need to use the keyword **new** to declare an instance of a **List**. *We will explain what it means to be a reference type with some more details later.*
 
-## 2.7: Flow Control
+## 2.7 Flow Control
 
 The flow of your scripts indicates the order of code execution. Sometimes you might need to branch or loop through specific statements several times. For example, you might want to branch your script to implement a different sequence based on some condition. Other times, you might need to repeat a certain sequence multiple times. We will discuss three important mechanisms to control the flow of a program: conditional statements, loops, and methods.
 
-### 2.7.1: Conditional Statements
+### 2.7.1 Conditional Statements
 
 Conditional statements allow you to decide on which part of your code to use based on some condition that can change during runtime. Unlike regular programming instructions, conditional statements can be described as decision-making logic. Conditional statements help control and regulate the flow of the program.
 
@@ -408,7 +408,7 @@ else
 }
 ```
 
-### 2.7.2: Loops
+### 2.7.2 Loops
 
 Loops allow you to run the body of your loop a fixed number of times or until the loop condition is no longer true.
 
@@ -632,9 +632,9 @@ foreach (string fruit in fruits)
 Print( "Number of fruits that have at least one letter r is: " + count );
 ```
 
-## 2.8: Methods
+## 2.8 Methods
 
-### 2.8.1: Overview
+### 2.8.1 Overview
 
 A method is a self-contained block of code that performs a specific task. Methods, which are similar to functions, can be called multiple times within a program, allowing for code reusability and modularity. Functions are basically used to organize your program into sub-tasks. The following is an example of a program flow that performs two specific tasks multiple times. Without using separate functions for these tasks, the same code must be rewritten each time the tasks are needed, leading to unnecessary repetition.
 
@@ -709,7 +709,7 @@ Let us dissect the different parts of the **IsPrimeNumber** function to understa
 </tr>
 </table>
 
-### 2.8.2: Method Parameters
+### 2.8.2 Method Parameters
 
 Input parameters are enclosed within parentheses after the method name. The parameters are a list of variables and their types. They represent the data the function receives from the code that calls it. Each parameter is passed either **by value** or **by reference**. Keep in mind that variables themselves can be a value-type such as primitive data (int, double, etc.), or reference-types such as lists and user-defined classes. The following table explains what it means to pass value or reference types by value or by reference.
 
@@ -819,11 +819,11 @@ As we explained before, **RunScript** is the main function that is available in 
   </tr>
 </table>
 
-## 2.9: User-Defined Data Types
+## 2.9 User-Defined Data Types
 
 We mentioned above that there are built-in data types supported by the programming language, such as int, double, string, and object. However, users can create their own custom data types with specific functionalities that suit the application. There are a few ways to create custom data types. We will explain the most common ones: enumerations, structures, and classes.
 
-### 2.9.1: Enumerations
+### 2.9.1 Enumerations
 
 Enumerations help make the code more readable. An enumeration “provides an efficient way to define a set of named integral constants that may be assigned to a variable.” You can use enumerations to group a family of options under one category and use descriptive names. For example, there are only three values in a traffic light signal.
 
@@ -846,7 +846,7 @@ else
    Print("This is not a traffic signal color!");
 ```
 
-### 2.9.2: Structures
+### 2.9.2 Structures
 
 A structure is used to define a new **value-type**. In C# programming , we use the keyword **struct** to define new structure. The following is an example of a simple structure that defines a number of variables (fields) to create a custom type of a colored 3D point. We use **private** access to the fields and use **properties** to **get** and **set** the fields.
 
@@ -1003,7 +1003,7 @@ Using our **ColorPoint** struct, the following is a program that generates 2 col
     ColorPoint avPt = ColorPoint.Average(cp0, cp1);
 ```
 
-### 2.9.3: Classes
+### 2.9.3 Classes
 
 Classes help create new data types that are **reference-type**. They also have added functionality compared to structures. The main added functionality is they support creating a hierarchy of types, where each new level inherits the members and methods of the level above it. Many of the geometry types in **RhinoCommon** use classes to define them. Let us redefine the **ColorPoint** above as a class that inherits from a generic **Point** class:
 
@@ -1094,7 +1094,7 @@ Here are the key differences between structures & classes:
   </tr>
 </table>
 
-### 2.9.4: Value vs Reference Types
+### 2.9.4 Value vs Reference Types
 
 It is worth stressing the two data classifications: **value-types** & **reference-types**. We touched on that topic when introducing methods and how parameters are passed **by value** or **by reference**. There are also differences in how the two are stored and managed in memory. Here is a summary comparison between the two classifications:
 
@@ -1127,7 +1127,7 @@ Structures</td>
   </tr>
 </table>
 
-### 2.9.5: Interface
+### 2.9.5 Interface
 
 You may need your structures & classes to implement some common functionality. For example, you may need to check if two instances of the same type are equal. In this case, you would like to make sure that you use the same method name and signature. To ensure that, you can define that functionality inside a separate entity called **interface** and have your structure & classes implement that same **interface**.
 
@@ -1154,7 +1154,7 @@ struct ColorPoint: IEquatable<ColorPoint>
 }
 ```
 
-## 2.10:  Read & Write Text Files
+## 2.10 Read & Write Text Files
 
 There are many ways to read from and write to files in **C#** and many tutorials & documents are available online. In general, reading a file involves the following:
 - Open the file (generally, you need a path to point to).
@@ -1238,7 +1238,7 @@ foreach (string line in lines)
 A = pts;
 ```
 
-## 2.11: Recursive Functions
+## 2.11 Recursive Functions
 
 Recursive functions are functions that call themselves until a stopping condition is met. Recursion is not very common, but it is useful in data searching, subdividing, and generative systems.
 
@@ -1390,6 +1390,6 @@ public Line DivideAndRotate(Line currLine, double angle)
 
 ## Next Steps
 
-Those are the basics of the C# Programing . Next, learn [RhinoCommon Geometry in Grasshopper](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/).
+Those are the basics of C# Programming. Next, learn [RhinoCommon Geometry in Grasshopper](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/).
 
-This is the part 2 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).
+This is part 2 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).
