@@ -46,11 +46,19 @@ This guide is meant to be a detailed reference on all the important aspects and 
 [Grasshopper Script Component](/guides/scripting/scripting-component)
 {{< /call-out >}}
 
-<!-- {{< call-out "note" "Note" >}}
+{{< call-out "note" "Note" >}}
+
+<table style="width: 100%">
+<tr><td style="vertical-align: top;">
 This guide does not discuss Rhino or Grasshopper APIs. If you would like to know how to create complex geometries in Rhino and Grasshopper, please check out:
 
-[Essential Guide to C# Scripting in Grasshopper - by Rajaa Issa](https://developer.rhino3d.com/guides/grasshopper/csharp-essentials)
-{{< /call-out >}} -->
+<a href="https://developer.rhino3d.com/guides/grasshopper/csharp-essentials">Essential C# Scripting for Grasshopper - by Rajaa Issa</a>
+</td><td>
+<img src="csharp-essentials.svg" style="width: 400px; zoom: 100%;">
+</td></tr>
+</table>
+
+{{< /call-out >}}
 
 ## C# Component
 
