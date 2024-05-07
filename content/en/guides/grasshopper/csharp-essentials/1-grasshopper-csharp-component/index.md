@@ -124,7 +124,7 @@ You can access the main component menu by hovering over the middle of the script
 
 ## 1.7: Code Editor
 
-To show the code editor window for the C# script component, you need to double-click in the middle of the component (or right-click the middle and select **Open Script Editor…**). The code editor supports debugging. For a full explanation of the editor interface and functionality, please visit xyz… **[TODO]**
+To show the code editor window for the C# script component, you need to double-click in the middle of the component (or right-click the middle and select **Open Script Editor…**). The code editor supports debugging. For a full explanation of the editor interface and functionality, please visit the [Grasshopper Script Editor for C# guide](/guides/scripting/scripting-gh-csharp/).
 
 <figure>
    <img src="code_editor.png">
@@ -381,3 +381,5 @@ private void RunScript( DataTree<double> x, ref object Sum)
 ## Next Steps
 
 Those are the basics of the C# data structures. Next, learn the [Chapter 2: C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics).
+
+This is the part 1 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).

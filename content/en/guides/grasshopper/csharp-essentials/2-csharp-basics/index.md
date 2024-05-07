@@ -1390,4 +1390,6 @@ public Line DivideAndRotate(Line currLine, double angle)
 
 ## Next Steps
 
-Those are the basics of the Python data structures. Next, learn Python's [script anatomy](/guides/rhinopython/primer-101/3-script-anatomy/).
+Those are the basics of the C# Programing . Next, learn [RhinoCommon Geometry in Grasshopper](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/).
+
+This is the part 2 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).

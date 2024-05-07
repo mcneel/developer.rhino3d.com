@@ -2635,4 +2635,6 @@ foreach (GeometryBase obj in objs) {
 
 ## Next Steps
 
-That was a basic overview of Python running in Rhino. Now learn to use [operators & functions](/guides/rhinopython/primer-101/4-operators-and-functions/) to get something done.
+That was a basic overview of RhinoCommon Geometry in Rhino. Now learn to use these methods in [Design Algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/) to get something done.
+
+This is the part 3 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).

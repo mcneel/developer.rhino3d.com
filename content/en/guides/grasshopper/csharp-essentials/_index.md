@@ -34,7 +34,7 @@ This is an essential scripting guide
 </div>
 {{< column >}}  
 
-{{< image url="/images/math-logo.svg" alt="/images/math-logo.svg" class="float_right" >}}
+{{< image url="cover_csharp.png" alt="/images/math-logo.svg" class="float_right" >}}
 
 This manual is intended for designers who are experienced in [Grasshopper® (GH)](https://www.grasshopper3d.com) visual scripting, and would like to take their skills to the next level to create their own custom scripts using C# programming language. This guide does not assume nor require any background in programming. The document is divided into four parts. 
 

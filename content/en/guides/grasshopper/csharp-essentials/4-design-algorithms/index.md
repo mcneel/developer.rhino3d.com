@@ -681,4 +681,4 @@ A cellular automaton consists of a regular grid of cells, each in one of a finit
 
 ## Next Steps
 
-Ok, so now that you can get some functions to work. Next is [conditional execution](/guides/rhinopython/primer-101/5-conditional-execution/) to control how the script reacts to input.
+This is the part 4 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).
