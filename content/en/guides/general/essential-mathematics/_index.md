@@ -44,7 +44,7 @@ The content is divided into three chapters. [Chapter 1](/guides/general/essentia
 <div class="row">  
 <div class="col-md-12" markdown="1">  
 
-***[Rajaa Issa](https://discourse.mcneel.com/users/rajaa/activity)***
+***[Rajaa Issa](https://discourse.mcneel.com/u/rajaa/activity)***
 
 Robert McNeel & Associates
 
