@@ -53,7 +53,7 @@ I would like to acknowledge the excellent technical review by Mr. Steve Baer of 
 <div class="row">  
 <div class="col-md-12" markdown="1">  
 
-***[Rajaa Issa](https://discourse.mcneel.com/users/rajaa/activity)***
+***[Rajaa Issa](https://discourse.mcneel.com/u/rajaa/activity)***
 
 Robert McNeel & Associates
 
