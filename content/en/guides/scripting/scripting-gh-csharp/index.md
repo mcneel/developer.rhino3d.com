@@ -52,7 +52,7 @@ This guide is meant to be a detailed reference on all the important aspects and 
 <tr><td style="vertical-align: top;">
 This guide does not discuss Rhino or Grasshopper APIs. If you would like to know how to create complex geometries in Rhino and Grasshopper, please check out:
 
-<a href="https://developer.rhino3d.com/guides/grasshopper/csharp-essentials">Essential C# Scripting for Grasshopper - by Rajaa Issa</a>
+<a href="{{< relref "/guides/grasshopper/csharp-essentials" >}}">Essential C# Scripting for Grasshopper - by Rajaa Issa</a>
 </td><td>
 <img src="csharp-essentials.svg" style="width: 400px; zoom: 100%;">
 </td></tr>
