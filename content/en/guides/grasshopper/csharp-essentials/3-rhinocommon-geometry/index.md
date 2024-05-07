@@ -29,7 +29,7 @@ toc_type = "single"
 
 +++
 
-## 3.1: Overview
+## 3.1 Overview
 
 **RhinoCommon** is the **.NET SDK** for Rhino. It is used by Rhino plug-in developers to write **.NET** plug-ins for Rhino and Grasshopper. All Grasshopper scripting components can access **RhinoCommon** including all geometry objects and functions. For the whole namespace, see the **[RhinoCommon documentation](https://developer.rhino3d.com/api/RhinoCommon)**.
 
@@ -41,7 +41,7 @@ If you recall from Chapter 2, we worked with value types such as **int** and **d
 
 The system built-in types, whether they are value or reference types, are often very limiting in specialized programming applications. For example, in computer graphics, we commonly deal with points, lines, curves, or matrices. These types need to be defined by the **SDK** to ease the creation, storage, and manipulation of geometry data. Programming languages offer the ability to define new types using **structures** (value types) and **classes** (reference types). The **RhinoCommon SDK** defines many new types as we will see in this chapter.
 
-## 3.2: Geometry Structures
+## 3.2 Geometry Structures
 
 **RhinoCommon** defines basic geometry types using structures. We will dissect the **Point3d** structure, show how to read in the documentation, and use it in a script. This should help you navigate and use other structures. Below is a list of the geometry structures:
 
@@ -116,7 +116,7 @@ The system built-in types, whether they are value or reference types, are often 
   </tr>
 </table>
 
-### 3.2.1: The Point3d Structure
+### 3.2.1 The Point3d Structure
 
 The **[Point3d](https://developer.rhino3d.com/api/RhinoCommon/html/T_Rhino_Geometry_Point3d.htm)** type includes three **fields** (X, Y, and Z). It defines a number of **properties** and also has **constructors** and **methods**. We will walk through all the different parts of **Point3d** and how it is listed in the **RhinoCommon** documentation. First, you can navigate to **Point3d** from the left menu under the **Rhino.Geometry** namespace. When you click on it, the full documentation appears on the right. At the very top, you will see the following:
 
@@ -338,7 +338,7 @@ private void RunScript(double x, double y, double z, Point3d pt2, ref object Poi
     Print("Inside ChangeX: pt.x=" + pt.X);
   }
 ```
-### 3.2.2: Points & Vectors
+### 3.2.2 Points & Vectors
 
 **RhinoCommon** has a few structures to store and manipulate points and vectors. Take for example the double precision points. There are three types of points that are commonly used listed in the table below. For more detailed explanation of vectors and points, please refer to the *[Essential Mathematics for Computational Design](https://www.rhino3d.com/download/rhino/6/essentialmathematics)*, a publication by McNeel.
 
@@ -576,7 +576,7 @@ angle = acos(0) = 90 degrees
 </tr>
 </table>
 
-### 3.2.3: Lightweight Curves
+### 3.2.3 Lightweight Curves
 
 **RhinoCommon** defines basic types of curves such as lines & circles as structures, and hence, most of them are value types. The mathematical representation is easier to understand and is typically more lightweight. If needed, it is relatively easy to get the NURBS approximation of these curves using the method **ToNurbsCurve**. The following is a list of the lightweight curves:
 
@@ -738,7 +738,7 @@ for (Int i = 1; i <= ellipseCount; i++) {
 </tr>
 </table>
 
-### 3.2.4: Lightweight Surfaces
+### 3.2.4 Lightweight Surfaces
 
 Just like with curves, **RhinoCommon** defines a number of lightweight surfaces that are defined as structures. They can be converted to NURBS surfaces using the **ToNurbsSurface()** method. They include common surfaces such as cones & spheres. Here is a list of them:
 
@@ -871,7 +871,7 @@ Torus torus = new Torus(Plane.WorldXY, majorRadius, minorRadius);
 </tr>
 </table>
 
-### 3.2.5: Other Geometry Structures
+### 3.2.5 Other Geometry Structures
 
 Now that we have explained the **Point3d** structure in some depth, and some of the lightweight geometry structures, you should be able to review & use the rest using the **RhinoCommon** documentation. As a wrap up, the following example uses eight different structures defined in the **Rhino.Geometry** namespace. Those are **Plane**, **Point3d**, **Interval**, **Arc**, **Vector3d**, **Line**, **Sphere**, and **Cylinder**. The goal is to create the following composition:
 
@@ -936,7 +936,7 @@ Now that we have explained the **Point3d** structure in some depth, and some of 
     Sphere sphere = new Sphere(sphereCenter, radius);
 ```
 
-## 3.3: Geometry Classes
+## 3.3 Geometry Classes
 
 Just like structures, classes enable defining custom types by grouping other types together, along with some custom methods & events. A class is like a blueprint that encapsulates the data and the behavior of the user-defined type. But, unlike structures, classes allow **inheritance** which enables defining a hierarchy of types that starts with a generic type and branches into more specific types. For example, the **Curve** class in RhinoCommon branches into specialized curve types such as **ArcCurve** and **NurbsCurve**. The following diagram shows the hierarchy of the **Curve** class:
 
@@ -1118,7 +1118,7 @@ private void RunScript(Point3d pt, Curve crv, ref object newCrv)
 }
 ```
 
-### 3.3.1: Curves
+### 3.3.1 Curves
 
 The **RhinoCommon SDK** has the abstract **Rhino.Geometry.Curve** class that provides a rich set of functionality across all curves. There are many classes derived from the parent **Curve** class, and we will learn about how to create and manipulate them. The following is a list of the classes derived from the **Curve** class:
 
@@ -1385,7 +1385,7 @@ crv.DivideByCount(num, true, out points);
 </tr>
 </table>
 
-### 3.3.2: Surfaces
+### 3.3.2 Surfaces
 
 There are many surface classes derived from the abstract **Rhino.Geometry.Surface** class. The **Surface** class provides common functionality among all of the derived types. The following is a list of the surface classes and a summary description:
 
@@ -1757,7 +1757,7 @@ if( revSrf.TryGetCone(out cone))
 </tr>
 </table>
 
-### 3.3.3: Meshes
+### 3.3.3 Meshes
 
 Meshes represent a geometry class that is defined by faces & vertices. The mesh data structure basically includes a list of vertex locations, faces that describe vertices connections, and normal of vertices & faces. More specifically, the geometry lists of a mesh class include the following:
 
@@ -2134,7 +2134,7 @@ Mesh[ ] meshArray = mesh.SplitDisjointPieces();
 </tr>
 </table>
 
-### 3.3.4: Boundary Representation (Brep)
+### 3.3.4 Boundary Representation (Brep)
 
 The boundary representation is used to unambiguously represent trimmed nurbs surfaces and polysurfaces. There are two sets of data that are needed to fully describe the 3D objects using the boundary representation. Those are geometry & topology.
 
@@ -2479,7 +2479,7 @@ List<Brep> breps = … // from input
 Brep[ ] unionBrep = Brep.CreateBooleanUnion(breps, tol);
 ```
 
-### 3.3.5: Other Geometry Classes
+### 3.3.5 Other Geometry Classes
 
 There are many important classes under the **Rhino.Geometry** namespace that are not derived from **GeometryBase**. Those are commonly used when writing scripts to create & manipulate geometry. We used a couple of them in the examples. You can find the full list of **RhinoCommon** classes in the documentation. Most of these classes are derived directly from the **C#** abstract class **System.Object**. This is the inheritance hierarchy for these classes:
 
@@ -2568,7 +2568,7 @@ if (_hld != null)
 }
 ```
 
-## 3.4: Geometry Transformations
+## 3.4 Geometry Transformations
 
 All classes derived from **GeometryBase** inherit four transformation methods. The first three are probably the most commonly used which are **Rotate**, **Scale**, and **Translate**. But, there is also a generic **Transform** method that takes a **Transform** structure and can be set to any transformation matrix. The following example shows how to use the scale, rotate, and translate methods on a list of geometry objects.
 
@@ -2637,4 +2637,4 @@ foreach (GeometryBase obj in objs) {
 
 That was a basic overview of RhinoCommon Geometry in Rhino. Now learn to use these methods in [Design Algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/) to get something done.
 
-This is the part 3 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).
+This is part 3 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).
