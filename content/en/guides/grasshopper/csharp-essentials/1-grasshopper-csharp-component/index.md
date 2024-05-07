@@ -380,6 +380,6 @@ private void RunScript( DataTree<double> x, ref object Sum)
 
 ## Next Steps
 
-Those are the basics of the C# data structures. Next, learn the [Chapter 2: C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics).
+Those are the basics of C# data structures. Next, learn the [Chapter 2: C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics).
 
 This is part 1 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).
