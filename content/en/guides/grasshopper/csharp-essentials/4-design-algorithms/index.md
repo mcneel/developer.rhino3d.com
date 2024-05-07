@@ -29,15 +29,15 @@ toc_type = "single"
 
 +++
 
-## 4.1: Introduction
+## 4.1 Introduction
 
 In this chapter we will implement a few examples to create mathematical curves & surfaces and solve a few generative algorithms using C# in Grasshopper. Many of the examples involve using loops & recursions, which are not supported in regular Grasshopper components.
 
-## 4.2: Geometry Algorithms
+## 4.2 Geometry Algorithms
 
 It is relatively easy to create curves & surfaces that follow certain mathematical equations when you use scripting. You can generate control points to create smooth NURBS or interpolate points to create the geometry.
 
-### 4.2.1: Sine Curves and Surface
+### 4.2.1 Sine Curves & Surface
 
 The following example shows how to create NurbsCurves, NurbsSurfaces, and a lofted Brep using the sine of an angle:
 
@@ -81,7 +81,7 @@ private void RunScript(int num, ref object OutCurves, ref object OutSurface, ref
 }
 ```
 
-### 4.2.2: De Casteljau Algorithm to Interpolate a Bezier Curve
+### 4.2.2 De Casteljau Algorithm to Interpolate a Bezier Curve
 
 You can create a cubic Bezier curve from four input points. The De Casteljau algorithm is used in computer graphics to evaluate the Bezier curve at any parameter. If evaluated at multiple parameters, then the points can be connected to draw the curve. The following example shows a recursive function implementation to interpolate through a Bezier curve:
 
@@ -131,7 +131,7 @@ void EvalPoint(List<Point3d> points, double t, ref Point3d evalPt)
     EvalPoint(tPoints, t, ref evalPt);
 }
 ```
-### 4.2.3: Simple Subdivision Mesh
+### 4.2.3 Simple Subdivision Mesh
 
 The following example takes a surface & closed polyline, then creates a subdivision mesh. It pulls the midpoints of the polyline edges to the surface to then subdivide & pull again:
 
@@ -221,11 +221,11 @@ private void RunScript(Surface srf, List<Polyline> inPolylines, int degree, ref 
 }
 ```
 
-## 4.3: Generative Algorithms
+## 4.3 Generative Algorithms
 
 Most of the generative algorithms require recursive functions that are only possible through scripting in Grasshopper. The following are four examples of generative solutions to generate the dragon curve, fractals, penrose tiling, and game of life:
 
-### 4.3.1: Dragon Curve
+### 4.3.1 Dragon Curve
 
 <table>
 <tr>
@@ -309,7 +309,7 @@ void ParseDeagonString(string dragonString, double Length, ref List<Point3d> dra
 }
 ```
 
-### 4.3.2: Fractal Tree
+### 4.3.2 Fractal Tree
 
 <table>
 <tr>
@@ -433,7 +433,7 @@ void ParsefractalString(string fractalString, double length, ref List<Line> frac
 }
 ```
 
-### 4.3.3: Penrose Tiling
+### 4.3.3 Penrose Tiling
 
 <table>
 <tr>
@@ -568,7 +568,7 @@ private void RunScript(string penroseString, double length, ref object PenroseLi
   }
 ```
 
-### 4.3.4: Conway Game of Life
+### 4.3.4 Conway Game of Life
 
 A cellular automaton consists of a regular grid of cells, each in one of a finite number of states, "On" & "Off" for example. The grid can be in any finite number of dimensions. For each cell, a set of cells called its neighborhood (usually including the cell itself) is defined relative to the specified cell. For example, the neighborhood of a cell might be defined as the set of cells a distance of 2 or less from the cell. An initial state (time t=0) is selected by assigning a state for each cell. A new generation is created (advancing t by 1), according to some fixed rule (generally, a mathematical function) that determines the new state of each cell in terms of the current state of the cell and the states of the cells in its neighborhood. *Check wikipedia for full details and examples.*
 
@@ -679,6 +679,6 @@ A cellular automaton consists of a regular grid of cells, each in one of a finit
 ```
 
 
-## Next Steps
+## End of Guide
 
-This is the part 4 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).
+This is part 4 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).
