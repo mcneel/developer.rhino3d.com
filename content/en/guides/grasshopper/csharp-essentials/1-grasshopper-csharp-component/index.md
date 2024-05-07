@@ -29,11 +29,11 @@ toc_type = "single"
 
 +++
 
-## 1.1: Introduction
+## 1.1 Introduction
 
 Grasshopper supports multiple scripting languages such as **C#**, **Python**, and **VB.NET** to help develop custom components using the Rhino and Grasshopper SDKs (software development kit). Rhino publishes a cross-platform **SDK** for **.NET** languages called **RhinoCommon**. The documentation of the SDK and other developer resources are available at [Rhino Developer Documentation](http://developer.rhino3d.com/).
 
-## 1.2: C# Component Interface
+## 1.2 C# Component Interface
 
 The scripting components are integrated within Grasshopper and have a similar interface to that of other typical components. They can read input & produce output, and they have an editor to write custom code with access to **RhinoCommon**. They are used to create specialized code and workflows not supported by other Grasshopper components. You can also use them to simplify, optimize, and streamline your definitions by combining multiple functions.
 
@@ -51,7 +51,7 @@ Alternatively, you can use the generic **Script** component, then click on the C
    <figcaption>Figure(2): The default Script component in Grasshopper</figcaption>
 </figure>  
 
-## 1.3: The Input Parameters
+## 1.3 The Input Parameters
 
 By default, there are two input parameters named **x** and **y**.  It is possible to edit the parameters’ names, delete them or add new ones. If you zoom in, you will notice a few “+” and “-” signs appearing. You can click on those to add or remove parameters. You can also right-click on a parameter to change its name. Note that the names of the parameters and their types are passed to the main function inside the script component, which is called **RunScript**. It is a good practice to set the input and output parameter names to reflect what each parameter does. Parameter names should not use spaces or special characters.
 
@@ -90,7 +90,7 @@ The Type hint, gives access to many data types and can be divided into three gro
 2. **Primitive** types. Those are made available by the **.NET** framework.
 3. **RhinoCommon** types. Those are defined in the **RhinoCommon SDK**.
 
-## 1.4: The Output Parameters
+## 1.4 The Output Parameters
 
 Just like with input parameters, you can add or remove output parameters by zooming in, then use the “+” or “-” signs. You can also change the name of the output. However, there is no data access or data types that you can set. They are always defined as **System.Object**, and hence you can assign any type, and as defined by your script and GH, take care of parsing it to use downstream.
 
@@ -99,7 +99,7 @@ Just like with input parameters, you can add or remove output parameters by zoom
    <figcaption>Figure(6): Zoom in to add or remove an output parameter by pressing the + and - gadgets</figcaption>
 </figure>
 
-## 1.5: The Out String
+## 1.5 The Out String
 
 The **out** string is used to list errors and other useful information about your code. You can connect the **out** to a **Panel** component to be able to read the information.
 
@@ -113,7 +113,7 @@ There are two types of messages that print to the **out** string.
 1. **Compile-time** messages. These include compiler errors and warnings about your code. This is very helpful information to point you to the lines in your code that the compiler is complaining about, so that you can correct the error(s).
 2. **Runtime** messages. You can print any text to the **out** string to track information generated inside your code during execution.
 
-## 1.6: Main Menu
+## 1.6 Main Menu
 
 You can access the main component menu by hovering over the middle of the scripting component (black label) and right-clicking. Most of the functions are similar to other GH components, but there are a couple specialized functions such as **Open Script Editor...** to open the code editor and **Manage Assemblies** to help add external libraries to access in your script.
 
@@ -122,7 +122,7 @@ You can access the main component menu by hovering over the middle of the script
    <figcaption>Figure(8): Scripting component main menu</figcaption>
 </figure>
 
-## 1.7: Code Editor
+## 1.7 Code Editor
 
 To show the code editor window for the C# script component, you need to double-click in the middle of the component (or right-click the middle and select **Open Script Editor…**). The code editor supports debugging. For a full explanation of the editor interface and functionality, please visit the [Grasshopper Script Editor for C# guide](/guides/scripting/scripting-gh-csharp/).
 
@@ -138,7 +138,7 @@ The code window of the C# scripting component has a few distinct sections as in 
    <figcaption>Figure(10): The parts of the code section of the C# scripting component: (1) default imports, (2) default members and functions of the script instance, (3) the RunScript function when the code is placed.</figcaption>
 </figure>
 
-### 1.7.1: Imports
+### 1.7.1 Imports
 
 There are assemblies that you can access and use in your code. Most of them are the .NET system ones, but there are also the Rhino and Grasshopper assemblies that give access to the Rhino geometry classes and the Grasshopper types and functions. You can also add your custom libraries or external assemblies in this section.
 
@@ -147,7 +147,7 @@ There are assemblies that you can access and use in your code. Most of them are 
    <figcaption>Figure(11): Default imports in the C# scripting component: (1) system imports, (2) Rhino imports, (3) Grasshopper imports</figcaption>
 </figure>
 
-### 1.7.2: Utility Members & Functions
+### 1.7.2 Utility Members & Functions
 
 The members are useful variables that can be utilized in your code. Members include a one-and-only instance to the active Rhino document, an instance to the Grasshopper document, the current GH scripting component, and finally the iteration variable, which references the number of times the script component is called (usually based on the input and data access). For example, when your input parameters are single items, then the script component runs only once, but if you input a list of values, say 10 of them, then the component is executed 10 times (that is assuming that the **data access** is set to a **single item**). You can use the **Iteration** variable if you would like your code to do different things at different iterations or to simply analyze how many times the component is called.
 
@@ -163,7 +163,7 @@ You can use the methods to help debug and communicate useful information. The **
    <figcaption>Figure(13): Reference list of built-in utility members</figcaption>
 </figure>
 
-### 1.7.3: The RunScript
+### 1.7.3 The RunScript
 
 This is the main function where you write your code. The signature of the **RunScript** includes the input and output parameters along with their data types and names. There is a space between the open and closed parentheses to indicate the region where you can type your code.
 
@@ -172,7 +172,7 @@ This is the main function where you write your code. The signature of the **RunS
    <figcaption>Figure(14): The RunScript is the main function within which the user can put their code.</figcaption>
 </figure>
 
-## 1.8: Data Access
+## 1.8 Data Access
 
 This topic requires knowledge in C# programming. If you need to review or refresh your knowledge in C# programming, please review *Chapter 2* before reading this section.
 
@@ -204,7 +204,7 @@ You need to right-click on the input parameter to set its data access, otherwise
    <figcaption>Figure(22): Set the input parameter to be an **item access** to indicate that input in processed one element at a time.</figcaption>
 </figure>
 
-### 1.8.1: Item Access
+### 1.8.1 Item Access
 
 **Item access** means that the input is processed one item at a time. Suppose you have a list of numbers that you need to test if they are odd or even. To simplify your code, you can choose to only process one number at a time. In this case, **item access** is appropriate to use. So even if the input to **num** is a list of integers, the scripting component will process one integer at a time and run the script a number of times equal to the length of the list.
 
@@ -230,7 +230,7 @@ private void RunScript( double x, ref object a )
 }
 ```
 
-### 1.8.2: List Access
+### 1.8.2 List Access
 
 **List access** means the whole list is processed all in one call to the scripting component. In the previous example, we can change the data access from **item access** to **list access** and change the script to add 10 to each one of the items in the list as in the following. *Note that the script runs only once.*
 
@@ -262,7 +262,7 @@ private void RunScript( List<double> xList, ref object Sum)
 }
 ```
 
-### 1.8.3: Tree Access
+### 1.8.3 Tree Access
 
 **Tree** data access in Grasshopper is an advanced topic. You might not need to deal with trees, but if you encounter them in your code, then this section will help you understand how they work and how to do some basic operations with them.
 
@@ -382,4 +382,4 @@ private void RunScript( DataTree<double> x, ref object Sum)
 
 Those are the basics of the C# data structures. Next, learn the [Chapter 2: C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics).
 
-This is the part 1 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).
+This is part 1 of the [Essential C# Scripting for Grasshopper guide](/guides/grasshopper/csharp-essentials/).
