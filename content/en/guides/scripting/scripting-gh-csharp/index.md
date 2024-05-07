@@ -41,7 +41,7 @@ block_webcrawlers = false
 </style>
 
 {{< call-out "note" "Note" >}}
-This guide is meant to be a detailed reference on all the important aspects and features of the Grasshopper C# Script component. If you would like a quick introduction to the script component, please check out:
+This guide is meant to be a detailed reference on all the important aspects and features of the Grasshopper C# Script component. If you would like a quick introduction to the script component, please check:
 
 [Grasshopper Script Component](/guides/scripting/scripting-component)
 {{< /call-out >}}
@@ -50,7 +50,7 @@ This guide is meant to be a detailed reference on all the important aspects and 
 
 <table style="width: 100%">
 <tr><td style="vertical-align: top;">
-This guide does not discuss Rhino or Grasshopper APIs. If you would like to know how to create geometries in Rhino and Grasshopper using C#, please check out:
+This guide does not discuss C# programming language syntax or the Rhino APIs. If you would like to learn how to create custom scripts using C# programming language, please check:
 
 <a href="{{< relref "/guides/grasshopper/csharp-essentials" >}}">Essential C# Scripting for Grasshopper - by Rajaa Issa</a>
 </td><td>

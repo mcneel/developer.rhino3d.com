@@ -50,7 +50,7 @@ block_webcrawlers = false
 </style>
 
 {{< call-out "note" "Note" >}}
-This guide is meant to be a detailed reference on all the important aspects and features of the Grasshopper Python 3 or 2 Script component. If you would like a quick introduction to the script component, please check out:
+This guide is meant to be a detailed reference on all the important aspects and features of the Grasshopper Python 3 or 2 Script component. If you would like a quick introduction to the script component, please check:
 
 [Grasshopper Script Component](/guides/scripting/scripting-component)
 {{< /call-out >}}
