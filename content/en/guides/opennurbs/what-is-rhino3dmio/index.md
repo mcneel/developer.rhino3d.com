@@ -41,6 +41,8 @@ Functionality includes:
 
 Rhino3dm is [open source](https://github.com/mcneel/rhino3dm).
 
+Explore all of the rhino3dm samples: [rhino3dm samples](https://github.com/mcneel/rhino-developer-samples/tree/8/rhino3dm)
+
 <div class="bs-callout bs-callout-danger">
   <h4>WARNING</h4>
   <p>Rhino3dm is NOT meant for any Rhino plug-in development. You should only be using Rhino3dm if you are attempting to read/write 3dm files from an application other than Rhino!</p>

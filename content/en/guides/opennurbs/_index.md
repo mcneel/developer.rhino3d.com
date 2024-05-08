@@ -6,7 +6,7 @@ description = "Read/Write Rhino 3dm files in your application."
 keywords = [ "rhino", "developer" ]
 languages = [ "C/C++" ]
 sdk = "unset"
-title = "openNURBS Guides"
+title = "openNURBS and rhino3dm Guides"
 type = "guides"
 weight = 1
 
