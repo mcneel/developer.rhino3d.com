@@ -61,7 +61,7 @@ toc_type = "single"
 
 ### Getting Started
 
-#### [ScriptEditor](/guides/scripting/scripting-command)
+#### [Rhino Script Editor](/guides/scripting/scripting-command)
   1. [Opening Script Editor](http://localhost:1313/guides/scripting/scripting-command/#opening-script-editor)
   1. [First Script](http://localhost:1313/guides/scripting/scripting-command/#first-script)
   1. [Edit Script](http://localhost:1313/guides/scripting/scripting-command/#edit-script)
