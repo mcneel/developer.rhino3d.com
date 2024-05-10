@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/"]
+aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/", "/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin/"]
 authors = [ "aj", "will" ]
 categories = [ "CloudZoo" ]
 description = "This guide explains how to register yourself as an issuer in Cloud Zoo"
