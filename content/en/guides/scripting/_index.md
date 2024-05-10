@@ -34,7 +34,7 @@ since = 8
 
 ### Getting Started
 
-#### [ScriptEditor Command](/guides/scripting/scripting-command)
+#### [ScriptEditor](/guides/scripting/scripting-command)
   1. [Opening Script Editor](http://localhost:1313/guides/scripting/scripting-command/#opening-script-editor)
   1. [First Script](http://localhost:1313/guides/scripting/scripting-command/#first-script)
   1. [Edit Script](http://localhost:1313/guides/scripting/scripting-command/#edit-script)
