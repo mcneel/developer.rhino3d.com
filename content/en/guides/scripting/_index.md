@@ -27,35 +27,35 @@ since = 8
 </style>
 
 
+[<img src="title_image.png" width="90%">](/guides/rhinopython/what-is-rhinopython/)
 {{< row >}}
 
-<!-- empty column to push the images to the center -->
 {{< column >}}
-{{< /column >}}
-
-{{< column >}}
-<!--the .snagit project for this image can be found next to the image -->
-[<img src="/images/rhinopython-guides-col1.png">](/guides/rhinopython/what-is-rhinopython/)
-{{< /column >}}
-
-{{< column >}}
-[<img src="/images/rhinocommon-guides-col1.png">](/guides/rhinocommon/what-is-rhinocommon/)
-{{< /column >}}
-
-{{< column >}}
-[<img src="/images/grasshopper-guides-col1.png">](/guides/scripting/scripting-component/)
-{{< /column >}}
-
-<!-- empty column to push the images to the center -->
-{{< column >}}
-{{< /column >}}
-
-{{< /row >}}
 
 ### Getting Started
 
-- [ScriptEditor Command](/guides/scripting/scripting-command)
-- [Grasshopper Script Component](/guides/scripting/scripting-component)
+#### [ScriptEditor Command](/guides/scripting/scripting-command)
+  1. [Opening Script Editor](http://localhost:1313/guides/scripting/scripting-command/#opening-script-editor)
+  1. [First Script](http://localhost:1313/guides/scripting/scripting-command/#first-script)
+  1. [Edit Script](http://localhost:1313/guides/scripting/scripting-command/#edit-script)
+  1. [Running Scripts](http://localhost:1313/guides/scripting/scripting-command/#running-scripts)
+  1. [Debugging Scripts](http://localhost:1313/guides/scripting/scripting-command/#debugging-scripts)
+  1. [Using Packages](http://localhost:1313/guides/scripting/scripting-command/#using-packages)
+  1. [Editor Features](http://localhost:1313/guides/scripting/scripting-command/#editor-features)
+
+#### [Grasshopper Script Component](/guides/scripting/scripting-component)
+  1. [Script Component](http://localhost:1313/guides/scripting/scripting-component/#script-component)
+  1. [First Script](http://localhost:1313/guides/scripting/scripting-component/#first-script)
+  1. [Script Inputs and Outputs](http://localhost:1313/guides/scripting/scripting-component/#script-inputs-and-outputs)
+  1. [Edit Script](http://localhost:1313/guides/scripting/scripting-component/#edit-script)
+  1. [Run Scripts](http://localhost:1313/guides/scripting/scripting-component/#debugging-scripts)
+  1. [Debugging Scripts](http://localhost:1313/guides/scripting/scripting-component/#debugging-scripts)
+  1. [Using Packages](http://localhost:1313/guides/scripting/scripting-component/#using-packages)
+  1. [Editor Features](http://localhost:1313/guides/scripting/scripting-component/#editor-features)
+
+{{< /column >}}
+
+{{< column >}}
 
 ### Python Scripting
 - <!-- [Python Scripting](/guides/scripting/scripting-python) --> Scripting: Python {{% comingsoon-label %}}
@@ -78,6 +78,10 @@ since = 8
 - [Configurations](/guides/scripting/editor-configs)
 - <!-- [Logs](/guides/scripting/editor-logs) --> Logs {{% comingsoon-label %}}
 
+{{< /column >}}
+
+{{< column >}}
+
 ### Publishing
 
 - <!-- [Creating Rhino Projects](/guides/scripting/projects-create) --> Creating Rhino Projects {{% comingsoon-label %}}
@@ -94,3 +98,10 @@ since = 8
 - <!-- [RhinoCode Command Line Interface](/guides/scripting/advanced-cli) --> RhinoCode Command Line Interface {{% comingsoon-label %}}
 <!-- [RhinoCode API](/guides/scripting/advanced-core-api) -->
 <!-- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api) -->
+
+{{< /column >}}
+
+
+{{< /row >}}
+
+

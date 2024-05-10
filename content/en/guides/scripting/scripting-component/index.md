@@ -1,5 +1,5 @@
 +++
-title = "Script Component"
+title = "Script Component Grasshopper"
 description = "This guide provides an overview on how to edit and run scripts inside of Grasshopper"
 type = "guides"
 categories = ["Scripting", "GhPython"]
