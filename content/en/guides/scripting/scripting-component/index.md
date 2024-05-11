@@ -1,5 +1,5 @@
 +++
-title = "Script Component Grasshopper"
+title = "Script Component: Grasshopper"
 description = "This guide provides an overview on how to edit and run scripts inside of Grasshopper"
 type = "guides"
 categories = ["Scripting", "GhPython"]
@@ -31,7 +31,7 @@ block_webcrawlers = false
     }
 </style>
 
-## Script Component
+## Create Script Component
 
 To access the unified script editor in Grasshopper, go to the **Maths** tab and **Script** panel and drop a Script component onto the canvas:
 

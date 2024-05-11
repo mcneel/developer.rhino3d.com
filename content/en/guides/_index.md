@@ -61,24 +61,24 @@ toc_type = "single"
 
 ### Getting Started
 
-#### [Rhino Script Editor](/guides/scripting/scripting-command)
-  1. [Opening Script Editor](http://localhost:1313/guides/scripting/scripting-command/#opening-script-editor)
-  1. [First Script](http://localhost:1313/guides/scripting/scripting-command/#first-script)
-  1. [Edit Script](http://localhost:1313/guides/scripting/scripting-command/#edit-script)
-  1. [Running Scripts](http://localhost:1313/guides/scripting/scripting-command/#running-scripts)
-  1. [Debugging Scripts](http://localhost:1313/guides/scripting/scripting-command/#debugging-scripts)
-  1. [Using Packages](http://localhost:1313/guides/scripting/scripting-command/#using-packages)
-  1. [Editor Features](http://localhost:1313/guides/scripting/scripting-command/#editor-features)
+#### Script Editor
+  - [Opening Script Editor](http://localhost:1313/guides/scripting/scripting-command/#opening-script-editor)
+  - [First Script](http://localhost:1313/guides/scripting/scripting-command/#first-script)
+  - [Edit Script](http://localhost:1313/guides/scripting/scripting-command/#edit-script)
+  - [Running Scripts](http://localhost:1313/guides/scripting/scripting-command/#running-scripts)
+  - [Debugging Scripts](http://localhost:1313/guides/scripting/scripting-command/#debugging-scripts)
+  - [Using Packages](http://localhost:1313/guides/scripting/scripting-command/#using-packages)
+  - [Editor Features](http://localhost:1313/guides/scripting/scripting-command/#editor-features)
 
-#### [Grasshopper Script Component](/guides/scripting/scripting-component)
-  1. [Script Component](http://localhost:1313/guides/scripting/scripting-component/#script-component)
-  1. [First Script](http://localhost:1313/guides/scripting/scripting-component/#first-script)
-  1. [Script Inputs and Outputs](http://localhost:1313/guides/scripting/scripting-component/#script-inputs-and-outputs)
-  1. [Edit Script](http://localhost:1313/guides/scripting/scripting-component/#edit-script)
-  1. [Run Scripts](http://localhost:1313/guides/scripting/scripting-component/#debugging-scripts)
-  1. [Debugging Scripts](http://localhost:1313/guides/scripting/scripting-component/#debugging-scripts)
-  1. [Using Packages](http://localhost:1313/guides/scripting/scripting-component/#using-packages)
-  1. [Editor Features](http://localhost:1313/guides/scripting/scripting-component/#editor-features)
+#### Script Component
+  - [Create Script Component](http://localhost:1313/guides/scripting/scripting-component/#script-component)
+  - [First Script](http://localhost:1313/guides/scripting/scripting-component/#first-script)
+  - [Script Inputs and Outputs](http://localhost:1313/guides/scripting/scripting-component/#script-inputs-and-outputs)
+  - [Edit Script](http://localhost:1313/guides/scripting/scripting-component/#edit-script)
+  - [Run Scripts](http://localhost:1313/guides/scripting/scripting-component/#debugging-scripts)
+  - [Debugging Scripts](http://localhost:1313/guides/scripting/scripting-component/#debugging-scripts)
+  - [Using Packages](http://localhost:1313/guides/scripting/scripting-component/#using-packages)
+  - [Editor Features](http://localhost:1313/guides/scripting/scripting-component/#editor-features)
 
 ### Python Scripting
 - <!-- [Python Scripting](/guides/scripting/scripting-python) --> Scripting: Python {{% comingsoon-label %}}
