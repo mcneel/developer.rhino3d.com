@@ -32,7 +32,7 @@ since = 0
 
 {{< image url="/images/math-logo.svg" alt="/images/math-logo.svg" class="float_right" >}}
 
-*Essential Mathematics for Computational Design* introduces to design professionals the foundation mathematical concepts that are necessary for effective development of computational methods for 3D modeling and computer graphics. This is not meant to be a complete and comprehensive resource, but rather an overview of the basic and most commonly used concepts. The material is directed towards designers who have little or no background in mathematics beyond high school. All concepts are explained visually using [Grasshopper® (GH)](www.grasshopper3d.com), the generative modeling environment for [Rhinoceros® (Rhino)](www.rhino3d.com).  
+*Essential Mathematics for Computational Design* introduces to design professionals the foundation mathematical concepts that are necessary for effective development of computational methods for 3D modeling and computer graphics. This is not meant to be a complete and comprehensive resource, but rather an overview of the basic and most commonly used concepts. The material is directed towards designers who have little or no background in mathematics beyond high school. All concepts are explained visually using [Grasshopper® (GH)](https://www.grasshopper3d.com), the generative modeling environment for [Rhinoceros® (Rhino)](https://www.rhino3d.com).  
 
 The content is divided into three chapters. [Chapter 1](/guides/general/essential-mathematics/vector-mathematics/) discusses vector math including vector representation, vector operation, and line and plane equations. [Chapter 2](/guides/general/essential-mathematics/matrices-transformations/) reviews matrix operations and transformations. [Chapter 3](/guides/general/essential-mathematics/parametric-curves-surfaces/) includes an in-depth review of parametric curves with special focus on NURBS curves and the concepts of continuity and curvature.  It also reviews NURBS surfaces and polysurfaces.
 
@@ -44,7 +44,7 @@ The content is divided into three chapters. [Chapter 1](/guides/general/essentia
 <div class="row">  
 <div class="col-md-12" markdown="1">  
 
-***[Rajaa Issa](https://discourse.mcneel.com/users/rajaa/activity)***
+***[Rajaa Issa](https://discourse.mcneel.com/u/rajaa/activity)***
 
 Robert McNeel & Associates
 

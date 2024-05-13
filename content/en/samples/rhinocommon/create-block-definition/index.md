@@ -62,7 +62,7 @@ partial class Examples
       return Rhino.Commands.Result.Nothing;
 
     // See if block name already exists
-    Rhino.DocObjects.InstanceDefinition existing_idef = doc.InstanceDefinitions.Find(idef_name, true);
+    Rhino.DocObjects.InstanceDefinition existing_idef = doc.InstanceDefinitions.Find(idef_name);
     if (existing_idef != null)
     {
       Rhino.RhinoApp.WriteLine("Block definition {0} already exists", idef_name);

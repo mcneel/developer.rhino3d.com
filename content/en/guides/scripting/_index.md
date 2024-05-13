@@ -21,39 +21,87 @@ state = ""
 platforms = [ "Windows", "Mac" ]
 since = 8
 +++
-{{< row >}}
-{{< column >}}
 
-<!--the .snagit project for this image can be found next to the image -->
-[<img src="/images/rhinopython-guides-col1.png">](/guides/rhinopython/what-is-rhinopython/)
+<style>
+    .flex-container>div.column { min-width: 0 }
+</style>
+
+
+[<img src="title_image.png" width="90%">](/guides/rhinopython/what-is-rhinopython/)
+{{< row >}}
+
+{{< column >}}
 
 ### Getting Started
 
-- [ScriptEditor Command](/guides/scripting/scripting-command)
-- [Grasshopper Script Component](/guides/scripting/scripting-component)
+#### Script Editor
+  - [Opening Script Editor](http://localhost:1313/guides/scripting/scripting-command/#opening-script-editor)
+  - [First Script](http://localhost:1313/guides/scripting/scripting-command/#first-script)
+  - [Edit Script](http://localhost:1313/guides/scripting/scripting-command/#edit-script)
+  - [Running Scripts](http://localhost:1313/guides/scripting/scripting-command/#running-scripts)
+  - [Debugging Scripts](http://localhost:1313/guides/scripting/scripting-command/#debugging-scripts)
+  - [Using Packages](http://localhost:1313/guides/scripting/scripting-command/#using-packages)
+  - [Editor Features](http://localhost:1313/guides/scripting/scripting-command/#editor-features)
+
+#### Script Component
+  - [Create Script Component](http://localhost:1313/guides/scripting/scripting-component/#script-component)
+  - [First Script](http://localhost:1313/guides/scripting/scripting-component/#first-script)
+  - [Script Inputs and Outputs](http://localhost:1313/guides/scripting/scripting-component/#script-inputs-and-outputs)
+  - [Edit Script](http://localhost:1313/guides/scripting/scripting-component/#edit-script)
+  - [Run Scripts](http://localhost:1313/guides/scripting/scripting-component/#debugging-scripts)
+  - [Debugging Scripts](http://localhost:1313/guides/scripting/scripting-component/#debugging-scripts)
+  - [Using Packages](http://localhost:1313/guides/scripting/scripting-component/#using-packages)
+  - [Editor Features](http://localhost:1313/guides/scripting/scripting-component/#editor-features)
+
+{{< /column >}}
+
+{{< column >}}
+
+### Python Scripting
+- <!-- [Python Scripting](/guides/scripting/scripting-python) --> Scripting: Python {{% comingsoon-label %}}
+- [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
+
+### C# Scripting
+- <!-- [C# Scripting](/guides/scripting/scripting-csharp) --> Scripting: C# {{% comingsoon-label %}}
+- [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
+
+### Editor Features
+- <!-- [Editing Features](/guides/scripting/editor-editing) --> Editing Features {{% comingsoon-label %}}
+- <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
+- <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
+- <!-- [Terminal](/guides/scripting/editor-terminal) --> Terminal {{% comingsoon-label %}}
+- <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
+- <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
+- <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
+- <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
+- <!-- [Help](/guides/scripting/editor-help) --> Help {{% comingsoon-label %}}
+- [Configurations](/guides/scripting/editor-configs)
+- <!-- [Logs](/guides/scripting/editor-logs) --> Logs {{% comingsoon-label %}}
+
+{{< /column >}}
+
+{{< column >}}
+
+### Publishing
+
+- <!-- [Creating Rhino Projects](/guides/scripting/projects-create) --> Creating Rhino Projects {{% comingsoon-label %}}
+- <!-- [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) --> Creating Rhino and Grasshopper Plugins {{% comingsoon-label %}}
 
 ### Advanced
 
 - [Language Initialization](/guides/scripting/advanced-langinit)
-
-
-{{< /column >}}
-{{< column >}}
-
-[<img src="/images/rhinocommon-guides-col1.png">](/guides/rhinocommon/what-is-rhinocommon/)
-
-
-{{< /column >}}
-{{< column >}}
-
-[<img src="/images/grasshopper-guides-col1.png">](/guides/scripting/scripting-component/)
-
-
+- <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
+- [Python Path Files](/guides/scripting/advanced-pthfiles)
+- <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
+- <!-- [Async Execution](/guides/scripting/advanced-async) --> Async Execution {{% comingsoon-label %}}
+- <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
+- <!-- [RhinoCode Command Line Interface](/guides/scripting/advanced-cli) --> RhinoCode Command Line Interface {{% comingsoon-label %}}
+<!-- [RhinoCode API](/guides/scripting/advanced-core-api) -->
+<!-- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api) -->
 
 {{< /column >}}
-{{< column >}}
 
 
-
-{{< /column >}}
 {{< /row >}}
+
+

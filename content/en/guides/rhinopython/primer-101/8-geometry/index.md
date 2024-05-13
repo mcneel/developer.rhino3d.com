@@ -1,12 +1,12 @@
 +++
-aliases = ["/5/guides/rhinopython/primer-101/8-geometry/", "/6/guides/rhinopython/primer-101/8-geometry/", "/7/guides/rhinopython/primer-101/8-geometry/", "/wip/guides/rhinopython/primer-101/8-geometry/"]
-authors = [ "skylar-tibbits", "arthur-van-der-harten", "steve" ]
-categories = [ "Rhino.Python 101" ]
-category_page = "guides/rhinopython/primer-101/"
-keywords = [ "python", "commands" ]
-languages = [ "Python" ]
-sdk = [ "RhinoPython" ]
-title = "8 Geometry"
+aliases = [""]
+authors = [ "rajaa" ]
+categories = [ "Csharp Essentials" ]
+category_page = "guides/grasshopper/csharp-essentials/"
+keywords = [ "csharp", "commands" ]
+languages = [ "C#" ]
+sdk = [ "RhinoCommon" ]
+title = "Chapter One: Grasshopper C# Component"
 type = "guides"
 weight = 15
 override_last_modified = "2018-12-05T14:59:06Z"

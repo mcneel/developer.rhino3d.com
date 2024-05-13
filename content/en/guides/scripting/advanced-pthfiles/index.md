@@ -61,9 +61,9 @@ As you might have noticed, the name of the `.pth` file specifies language specif
 
 `<language>-<major>.<minor>.<patch>`
 
-So `python-3.pth` specifies Python of version 3. The names can be more specific as in `python-3.9.10.pth`. You can also include other text after the language specification as in `python-3_dev.pth`.
+So `python-3.pth` specifies Python of version 3. The names can be more specific as in `python-3.9.10.pth`. You can also include other text after the language specification as in `python-3_dev.pth`. Any text after the language specification is only for creating unique path file names and will be ignored.
 
-For example, to make sure custom python modules are importbale, a Rhino plugin developer can:
+For example, to make sure custom python modules are importable, a Rhino plugin developer can:
 
 - place their python modules under shared `scripts/`
 

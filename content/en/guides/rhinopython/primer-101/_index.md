@@ -124,7 +124,7 @@ Good luck!
    4.4	[Functions and Procedures](/guides/rhinopython/primer-101/4-operators-and-functions/#functions-and-procedures)     
 &nbsp;&nbsp; 4.4.1 [A simple function example](/guides/rhinopython/primer-101/4-operators-and-functions/#a-simple-function-example)     
 &nbsp;&nbsp; 4.4.2 [Advanced function syntax](/guides/rhinopython/primer-101/4-operators-and-functions/#advanced-function-syntax)     
-&nbsp;&nbsp; 4.5	[Mutability](/guides/rhinopython/primer-101/4-operators-and-functions/#mutability)      
+   4.5	[Mutability](/guides/rhinopython/primer-101/4-operators-and-functions/#mutability)      
 
 ### 5. [Conditional execution](/guides/rhinopython/primer-101/5-conditional-execution/)
 

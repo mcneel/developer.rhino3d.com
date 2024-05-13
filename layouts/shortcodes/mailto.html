@@ -27,4 +27,4 @@
     {{- $url = printf "%s&bcc=%s" $url $bcc -}}
 {{- end -}}
 
-<a class="{{ $class | safeURL }}" href="{{ $url | safeURL }}">{{ $text | markdownify }}</a>
+<a class="{{ $class | safeURL }}" href="{{ $url | safeURL }}"  target="_blank">{{ $text | markdownify }}</a>

@@ -54,19 +54,39 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/rhinocommon-guides-col2.png">](/guides/rhinocommon/display-conduits/)
 
+### RhinoCommon Geometry
+
+   3.1 [Overview](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#31-overview)  
+   3.2 [Geometry structures](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#32-geometry-structures)  
+&nbsp;&nbsp; 3.2.1 [The Point3d structure](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#321-the-point3d-structure)  
+&nbsp;&nbsp; 3.2.2 [Points and vectors](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#322-points--vectors)  
+&nbsp;&nbsp; 3.2.3 [Lightweight curves](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#323-lightweight-curves)  
+&nbsp;&nbsp; 3.2.4 [Lightweight surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#324-lightweight-surfaces)  
+&nbsp;&nbsp; 3.2.5 [Lightweight surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#325-other-geometry-structures)  
+   3.3 [Geometry classes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#33-geometry-classes)  
+&nbsp;&nbsp; 3.3.1 [Curves](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#331-curves)  
+&nbsp;&nbsp; 3.3.2 [Surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#332-surfaces)  
+&nbsp;&nbsp; 3.3.3 [Meshes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#333-meshes)  
+&nbsp;&nbsp; 3.3.4 [Boundary representation (Brep)](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#334-boundary-representation-brep)  
+&nbsp;&nbsp; 3.3.5 [Other geometry classes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#335-other-geometry-classes)  
+   3.4 [Geometry transformations](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#34-geometry-transformations)  
+
 ### Rendering
 
 {{< dev-topic-list "guides" "RhinoCommon" "Rendering" "weight" >}}
 
-### Advanced
-
-{{< dev-topic-list "guides" "RhinoCommon" "Advanced" "weight" >}}
 
 {{< /column >}}
 {{< column >}}
 
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/rhinocommon-guides-col3.png">](/guides/rhinocommon/creating-zoo-plugins/)
+
+
+### Advanced
+
+{{< dev-topic-list "guides" "RhinoCommon" "Advanced" "weight" >}}
+
 
 ### LAN Zoo
 

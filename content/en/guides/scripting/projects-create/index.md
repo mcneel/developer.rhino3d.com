@@ -20,7 +20,9 @@ toc_type = "single"
 block_webcrawlers = false
 +++
 
-- rhino projects
+Coming Soon. If you have any questions please reach out on [McNeel Forums](https://discourse.mcneel.com)
+
+<!-- - rhino projects
 - project menu items
 - create a project
 - edit project info
@@ -35,4 +37,4 @@ block_webcrawlers = false
 - add/remove libraries
 - opening a script and using a library in project
 - add/remove shared
-- choose names wisely
+- choose names wisely -->

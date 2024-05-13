@@ -17,7 +17,6 @@ since = 0
 byline = false
 toc = true
 toc_type = "single"
-
 +++
 
 ## [General](/guides/general)
@@ -62,16 +61,62 @@ toc_type = "single"
 
 ### Getting Started
 
-- [ScriptEditor Command](/guides/scripting/scripting-command)
-- [Grasshopper Script Component](/guides/scripting/scripting-component)
+#### Script Editor
+  - [Opening Script Editor](http://localhost:1313/guides/scripting/scripting-command/#opening-script-editor)
+  - [First Script](http://localhost:1313/guides/scripting/scripting-command/#first-script)
+  - [Edit Script](http://localhost:1313/guides/scripting/scripting-command/#edit-script)
+  - [Running Scripts](http://localhost:1313/guides/scripting/scripting-command/#running-scripts)
+  - [Debugging Scripts](http://localhost:1313/guides/scripting/scripting-command/#debugging-scripts)
+  - [Using Packages](http://localhost:1313/guides/scripting/scripting-command/#using-packages)
+  - [Editor Features](http://localhost:1313/guides/scripting/scripting-command/#editor-features)
+
+#### Script Component
+  - [Create Script Component](http://localhost:1313/guides/scripting/scripting-component/#script-component)
+  - [First Script](http://localhost:1313/guides/scripting/scripting-component/#first-script)
+  - [Script Inputs and Outputs](http://localhost:1313/guides/scripting/scripting-component/#script-inputs-and-outputs)
+  - [Edit Script](http://localhost:1313/guides/scripting/scripting-component/#edit-script)
+  - [Run Scripts](http://localhost:1313/guides/scripting/scripting-component/#debugging-scripts)
+  - [Debugging Scripts](http://localhost:1313/guides/scripting/scripting-component/#debugging-scripts)
+  - [Using Packages](http://localhost:1313/guides/scripting/scripting-component/#using-packages)
+  - [Editor Features](http://localhost:1313/guides/scripting/scripting-component/#editor-features)
+
+### Python Scripting
+- <!-- [Python Scripting](/guides/scripting/scripting-python) --> Scripting: Python {{% comingsoon-label %}}
+- [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
+
+### C# Scripting
+- <!-- [C# Scripting](/guides/scripting/scripting-csharp) --> Scripting: C# {{% comingsoon-label %}}
+- [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
 
 ### Editor Features
+- <!-- [Editing Features](/guides/scripting/editor-editing) --> Editing Features {{% comingsoon-label %}}
+- <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
+- <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
+- <!-- [Terminal](/guides/scripting/editor-terminal) --> Terminal {{% comingsoon-label %}}
+- <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
+- <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
+- <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
+- <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
+- <!-- [Help](/guides/scripting/editor-help) --> Help {{% comingsoon-label %}}
 - [Configurations](/guides/scripting/editor-configs)
+- <!-- [Logs](/guides/scripting/editor-logs) --> Logs {{% comingsoon-label %}}
+
+### Publishing
+
+- <!-- [Creating Rhino Projects](/guides/scripting/projects-create) --> Creating Rhino Projects {{% comingsoon-label %}}
+- <!-- [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) --> Creating Rhino and Grasshopper Plugins {{% comingsoon-label %}}
 
 ### Advanced
 
 - [Language Initialization](/guides/scripting/advanced-langinit)
-- [Path Files](/guides/scripting/advanced-pthfiles)
+- <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
+- [Python Path Files](/guides/scripting/advanced-pthfiles)
+- <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
+- <!-- [Async Execution](/guides/scripting/advanced-async) --> Async Execution {{% comingsoon-label %}}
+- <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
+- <!-- [RhinoCode Command Line Interface](/guides/scripting/advanced-cli) --> RhinoCode Command Line Interface {{% comingsoon-label %}}
+<!-- [RhinoCode API](/guides/scripting/advanced-core-api) -->
+<!-- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api) -->
 
 ## [RhinoCommon](/guides/rhinocommon)
 
@@ -92,6 +137,22 @@ toc_type = "single"
 ### Fundamentals
 
 {{< dev-topic-list "guides" "RhinoCommon" "Fundamentals" "weight" >}}
+
+### RhinoCommon Geometry
+
+- [Overview](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#31-overview)  
+- [Geometry structures](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#32-geometry-structures)  
+    - [The Point3d structure](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#321-the-point3d-structure)  
+    - [Points and vectors](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#322-points--vectors)  
+    - [Lightweight curves](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#323-lightweight-curves)  
+    - [Lightweight surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#324-lightweight-surfaces)  
+    - [Lightweight surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#325-other-geometry-structures)  
+- [Geometry classes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#33-geometry-classes)  
+    -  [Curves](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#331-curves)  
+    - [Surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#332-surfaces)  
+    - [Boundary representation (Brep)](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#334-boundary-representation-brep)  
+    - [Other geometry classes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#335-other-geometry-classes)  
+- [Geometry transformations](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#34-geometry-transformations)  
 
 ### Rendering
 
@@ -131,7 +192,6 @@ toc_type = "single"
 ### Python in Grasshopper
 
 {{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" "8" >}}
-
 
 ### Fundamentals
 
@@ -261,6 +321,13 @@ toc_type = "single"
 ### Python in Grasshopper
 
 {{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" "8" >}}
+
+### [C# in Grasshopper](/guides/grasshopper/csharp-essentials/)
+
+- [C# Component in Grasshopper](/guides/grasshopper/csharp-essentials/1-grasshopper-csharp-component/#21-introduction)
+- [C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics/)
+- [RhinoCommon Geometry](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/)
+- [Design Algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/)
 
 
 ## [RhinoScript](/guides/rhinoscript)

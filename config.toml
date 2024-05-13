@@ -1,3 +1,5 @@
 # We are using directory-based config files in /config/
 # See: https://gohugo.io/getting-started/configuration/
 # This is a dummy config.toml for forestry.io
+[markup.goldmark.parser.attribute]
+block = true
