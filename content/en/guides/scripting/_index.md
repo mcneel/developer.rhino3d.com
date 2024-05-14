@@ -35,23 +35,23 @@ since = 8
 ### Getting Started
 
 #### Script Editor
-  - [Opening Script Editor](http://localhost:1313/guides/scripting/scripting-command/#opening-script-editor)
-  - [First Script](http://localhost:1313/guides/scripting/scripting-command/#first-script)
-  - [Edit Script](http://localhost:1313/guides/scripting/scripting-command/#edit-script)
-  - [Running Scripts](http://localhost:1313/guides/scripting/scripting-command/#running-scripts)
-  - [Debugging Scripts](http://localhost:1313/guides/scripting/scripting-command/#debugging-scripts)
-  - [Using Packages](http://localhost:1313/guides/scripting/scripting-command/#using-packages)
-  - [Editor Features](http://localhost:1313/guides/scripting/scripting-command/#editor-features)
+  - [Opening Script Editor](/guides/scripting/scripting-command/#opening-script-editor)
+  - [First Script](/guides/scripting/scripting-command/#first-script)
+  - [Edit Script](/guides/scripting/scripting-command/#edit-script)
+  - [Running Scripts](/guides/scripting/scripting-command/#running-scripts)
+  - [Debugging Scripts](/guides/scripting/scripting-command/#debugging-scripts)
+  - [Using Packages](/guides/scripting/scripting-command/#using-packages)
+  - [Editor Features](/guides/scripting/scripting-command/#editor-features)
 
 #### Script Component
-  - [Create Script Component](http://localhost:1313/guides/scripting/scripting-component/#script-component)
-  - [First Script](http://localhost:1313/guides/scripting/scripting-component/#first-script)
-  - [Script Inputs and Outputs](http://localhost:1313/guides/scripting/scripting-component/#script-inputs-and-outputs)
-  - [Edit Script](http://localhost:1313/guides/scripting/scripting-component/#edit-script)
-  - [Run Scripts](http://localhost:1313/guides/scripting/scripting-component/#debugging-scripts)
-  - [Debugging Scripts](http://localhost:1313/guides/scripting/scripting-component/#debugging-scripts)
-  - [Using Packages](http://localhost:1313/guides/scripting/scripting-component/#using-packages)
-  - [Editor Features](http://localhost:1313/guides/scripting/scripting-component/#editor-features)
+  - [Create Script Component](/guides/scripting/scripting-component/#script-component)
+  - [First Script](/guides/scripting/scripting-component/#first-script)
+  - [Script Inputs and Outputs](/guides/scripting/scripting-component/#script-inputs-and-outputs)
+  - [Edit Script](/guides/scripting/scripting-component/#edit-script)
+  - [Run Scripts](/guides/scripting/scripting-component/#debugging-scripts)
+  - [Debugging Scripts](/guides/scripting/scripting-component/#debugging-scripts)
+  - [Using Packages](/guides/scripting/scripting-component/#using-packages)
+  - [Editor Features](/guides/scripting/scripting-component/#editor-features)
 
 {{< /column >}}
 
