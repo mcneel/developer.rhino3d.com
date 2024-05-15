@@ -41,64 +41,103 @@ Broadly speaking, there are five concepts that are important to understand when 
 
 ## Sample
 
-The following sample creates a material with a bitmap texture, then modifies a mesh object's attributes and texture coordinates so the bitmap is projected onto the mesh along the world Z axis...
+The following sample creates a material with a bitmap texture, then modifies a mesh object's attributes and surface parameters so the bitmap is projected onto the mesh along the world Z axis...
 
 ```cpp
-// Create a material with a texture bitmap
-ON_Texture tex;
-tex.m_filename = L"full path to your texture.jpg/bmp/...";
-tex.m_bOn = true;
-tex.m_type = ON_Texture::bitmap_texture;
-tex.m_mode = ON_Texture::modulate_texture;
+  CRhinoDoc* pDoc = context.Document();
+  if (nullptr == pDoc)
+    return CRhinoCommand::failure;
+  CRhinoDoc& doc = *pDoc;
 
-ON_Material mat;
-mat.m_diffuse.SetRGB(150,0,0);
-mat.m_specular.SetRGB(200,200,200);
-mat.m_shine = 0.5*ON_Material::GetMaxShine()
-mat.AddTexture(tex);
+  // Id of the currently active render plug-in
+  const UUID renderPlugInId = RhinoApp().CurrentRenderPlugIn()->PlugInID();
 
-int mat_index = context.m_doc.m_material_table.AddMaterial(mat);
-if ( mat_index < 0 )
-  return CRhinoCommand::failure;  
+  // Create a material with a texture bitmap
+  ON_Texture tex;
+  tex.m_image_file_reference.SetFullPath(L"C:/my-texture-folder/sample-texture.bmp", true);
+  tex.m_bOn = true;
+  tex.m_type = ON_Texture::TYPE::bitmap_texture;
+  tex.m_mode = ON_Texture::MODE::modulate_texture;
+  tex.m_mapping_channel_id = 1;
 
-// Select a mesh to modify
-CRhinoGetObject go;
-go.SetGeometryFilter(ON::mesh_object);
-go.SetCommandPrompt(L"Select a mesh");
-go.GetObjects(1,1);
-if ( CRhinoCommand::success != go.CommandResult() )
-  return go.CommandResult();
-const CRhinoMeshObject* mesh0_object =
-   CRhinoMeshObject::Cast(go.Object(0).Object());
-if ( 0 == mesh0_object )
-  return CRhinoCommand::failure;
-const ON_Mesh* mesh0 = mesh0_object->Mesh();
-if ( 0 == mesh0 )
-  return CRhinoCommand::failure;
+  ON_Material mat;
+  mat.m_diffuse.SetRGB(150, 0, 0);
+  mat.m_specular.SetRGB(200, 200, 200);
+  mat.m_shine = 0.5 * ON_Material::MaxShine;
+  mat.AddTexture(tex);
 
-// Copy the mesh and set its texture coordinates
-ON_Mesh* mesh1 = new OnMesh(mesh0);
-ON_BoundingBox bbox = mesh1->BoundingBox();
-ON_Interval x_extents(bbox.m_min.x,bbox.m_max.x);
-ON_Interval y_extents(bbox.m_min.y,bbox.m_max.y);
+  int mat_index = doc.m_material_table.AddMaterial(mat);
+  if (mat_index < 0)
+    return CRhinoCommand::failure;
 
-const int vertex_count = mesh1->m_V.Count();
-mesh1->m_T.Reserve(vertex_count);
-mesh1->m_T.SetCount(0);
-for ( int vi = 0; vi < vertex_count; vi++ )
-{
-  const ON_3dPoint& V = mesh->m_V[vi];
-  ON_2fPoint& tc = mesh1->m_T.AppendNew();
-  tc.x = (float)x_extents.NormalizedParameterAt(V.x);
-  tc.y = (float)y_extents.NormalizedParameterAt(V.y);
-}
+  // Select a mesh to modify
+  CRhinoGetObject go;
+  go.SetGeometryFilter(ON::mesh_object);
+  go.SetCommandPrompt(L"Select a mesh");
+  go.GetObjects(1, 1);
+  if (CRhinoCommand::success != go.CommandResult())
+    return go.CommandResult();
+  const CRhinoMeshObject* mesh0_object =
+    CRhinoMeshObject::Cast(go.Object(0).Object());
+  if (0 == mesh0_object)
+    return CRhinoCommand::failure;
+  const ON_Mesh* mesh0 = mesh0_object->Mesh();
+  if (0 == mesh0)
+    return CRhinoCommand::failure;
 
-// Update the mesh
-CRhinoMeshObject* mesh1_object = new CRhinoMeshObject();
-mesh1_object.SetMesh(mesh1);
-context.m_doc.ReplaceObject(CRhinoObjRef(mesh0_object),mesh1_object);
-ON_3dmObjectAttributes att = mesh1_object->Attributes();
-att.m_material_index;
-att.SetMaterialSource( ON::material_from_object );
-context.m_doc.Redraw();
+  // Copy the mesh
+  ON_Mesh* mesh1 = new ON_Mesh(*mesh0);
+  ON_BoundingBox bbox = mesh1->BoundingBox();
+  ON_Interval x_extents(bbox.m_min.x, bbox.m_max.x);
+  ON_Interval y_extents(bbox.m_min.y, bbox.m_max.y);
+
+  // Set up surface parameters.
+  // They will be used by a surface parameter mapping.
+  const int vertex_count = mesh1->m_V.Count();
+  mesh1->m_S.Reserve(vertex_count);
+  mesh1->m_S.SetCount(0);
+  for (int vi = 0; vi < vertex_count; vi++)
+  {
+    const ON_3dPoint& V = mesh0->m_V[vi];
+    ON_2dPoint& tc = mesh1->m_S.AppendNew();
+    tc.x = (float)x_extents.NormalizedParameterAt(V.x);
+    tc.y = (float)y_extents.NormalizedParameterAt(V.y);
+  }
+
+  // Adjust surface packing settings so that surface parameter
+  // mapping will create vertex coordinates 1-to-1 with the
+  // surface parameters.
+  mesh1->m_srf_domain[0].Set(0.0, 1.0);
+  mesh1->m_srf_domain[1].Set(0.0, 1.0);
+  mesh1->m_srf_scale[0] = 0.0;
+  mesh1->m_srf_scale[1] = 0.0;
+  mesh1->m_packed_tex_domain[0].Set(0.0, 1.0);
+  mesh1->m_packed_tex_domain[1].Set(0.0, 1.0);
+  mesh1->m_packed_tex_rotate = false;
+
+  // Update the mesh
+  CRhinoMeshObject* mesh1_object = new CRhinoMeshObject();
+  mesh1_object->SetMesh(mesh1);
+  doc.ReplaceObject(CRhinoObjRef(mesh0_object), mesh1_object);
+
+  // Make a copy of the object attributes in order to apply some changes
+  ON_3dmObjectAttributes att = mesh1_object->Attributes();
+
+  // Update the object to use the new material
+  att.m_material_index = mat_index;
+  att.SetMaterialSource(ON::material_from_object);
+
+  // Add new texture mapping to the document texture mapping table
+  const int textureMappingIndex = doc.m_texture_mapping_table.AddTextureMapping(ON_TextureMapping::SurfaceParameterTextureMapping);
+  // Look up the mapping id of the newly added texture mapping
+  const UUID textureMappingId = doc.m_texture_mapping_table[textureMappingIndex].Id();
+  // Remove all texture mappings from the object attributes
+  att.m_rendering_attributes.m_mappings.Destroy();
+  // Add the newly added texture mapping on the mapping channel that the texture uses
+  att.m_rendering_attributes.AddMappingChannel(renderPlugInId, tex.m_mapping_channel_id, textureMappingId);
+
+  // Apply the modified attributes to the mesh object
+  doc.ModifyObjectAttributes(CRhinoObjRef(mesh1_object), att);
+
+  doc.Redraw();
 ```
