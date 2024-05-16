@@ -46,7 +46,7 @@ Taking advantage of Rhino Accounts within Rhino is simple, and requires the foll
 ## Required Steps
 
 To take Advantage of Rhino Accounts within Rhino:
- 1. [Contact us](mailto:will@mcneel.com) to obtain a unique client id and secret for Rhino Accounts. This will represent your service within the system.
+ 1. [Contact us](mailto:support@mcneel.com) to obtain a unique client id and secret for Rhino Accounts. This will represent your service within the system.
  2. [Call `GetTokensAsync` or `TryGetAuthTokens` to retrieve authentication and authorization tokens](/guides/rhinocommon/rhinoaccounts/ra-example).
  3. (*Optional*) [Call `RevokeAuthTokenAsync` to invalidate an authorization token when you no longer need it.](/guides/rhinocommon/rhinoaccounts/ra-revoke).
 
