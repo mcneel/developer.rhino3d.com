@@ -1,6 +1,6 @@
 +++
 aliases = ["/5/guides/cpp/textures-and-mappings/", "/6/guides/cpp/textures-and-mappings/", "/7/guides/cpp/textures-and-mappings/", "/wip/guides/cpp/textures-and-mappings/"]
-authors = [ "dale" ]
+authors = [ "dale", "jussi" ]
 categories = [ "RDK" ]
 description = "This guide discusses materials, textures, and texture mapping using C/C++."
 keywords = [ "rhino", "textures", "materials", "mapping" ]
@@ -9,10 +9,9 @@ sdk = [ "C/C++" ]
 title = "Textures and Mappings"
 type = "guides"
 weight = 3
-override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
-TODO = "needs review and more explanatory content."
+TODO = "Overview's Texture Coordinates section does not use names used in sample"
 origin = "http://wiki.mcneel.com/developer/sdksamples/texturesandmappings"
 picky_sisters = ""
 state = ""
