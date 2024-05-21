@@ -30,7 +30,7 @@ toc_type = "single"
  
 ## Overview
 
-Broadly speaking, there are five concepts that are important to understand when dealing with materials, textures, and mappings:
+Broadly speaking, there are six concepts that are important to understand when dealing with materials, textures, and mappings:
 
 - **Texture Bitmap**: A bitmap image, usually saved in a file.
 - **Texture Coordinates**: In Rhino these are 2d and 3d points that are saved in an `ON_Mesh` in the `m_T[]` or `m_TC[]` arrays. They should always be set by a texture mapping and never modified directly.
