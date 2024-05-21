@@ -41,7 +41,7 @@ Broadly speaking, there are six concepts that are important to understand when d
 
 ## Sample
 
-The following sample creates a material with a bitmap texture, then modifies a mesh object's attributes, sets up surface parameter and applies a surface parameter mapping so the bitmap is projected onto the mesh along the world Z axis...
+The following sample creates a material with a bitmap texture, then modifies a mesh object's attributes, sets up surface parameters and applies a surface parameter mapping so the bitmap is projected onto the mesh along the world Z axis...
 
 ```cpp
   CRhinoDoc* pDoc = context.Document();
