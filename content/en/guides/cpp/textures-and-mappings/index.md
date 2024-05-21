@@ -34,14 +34,15 @@ toc_type = "single"
 Broadly speaking, there are five concepts that are important to understand when dealing with materials, textures, and mappings:
 
 - **Texture Bitmap**: A bitmap image, usually saved in a file.
-- **Texture Coordinates**: In Rhino these are 2d and 3d points that are saved in an `ON_Mesh` in the `m_T[]` or `m_TC[]` arrays.
+- **Texture Coordinates**: In Rhino these are 2d and 3d points that are saved in an `ON_Mesh` in the `m_T[]` or `m_TC[]` arrays. They should always be set by a texture mapping and never modified directly.
 - **Texture Mapping**: A function that sets texture coordinates.  Persistent texture mappings are stored in `CRhinoDoc::m_texture_mapping_table[]`.
+- **Surface parameters**: A set of 2d points stored in an `ON_Mesh` in the `m_S[]` array. They are used by the surface parameter mapping.
 - **Render Material**: A collection of rendering color and shading information, including the names of texture bitmaps.  Rendering materials are stored in `CRhinoDoc::m_material_table[]`.
 - **Object Attributes**: Attributes of a Rhino object, including the rendering materials and texture mappings the object uses, are stored in the `CRhinoObjectAttributes` class returned by `CRhinoObject::Attributes()`.
 
 ## Sample
 
-The following sample creates a material with a bitmap texture, then modifies a mesh object's attributes and surface parameters so the bitmap is projected onto the mesh along the world Z axis...
+The following sample creates a material with a bitmap texture, then modifies a mesh object's attributes, sets up surface parameter and applies a surface parameter mapping so the bitmap is projected onto the mesh along the world Z axis...
 
 ```cpp
   CRhinoDoc* pDoc = context.Document();
