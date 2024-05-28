@@ -68,7 +68,7 @@ If you already have Microsoft Visual Studio installed, then you will want to re-
 
 ## Installing Visual Studio Extension
 
-The **Rhino Visual Studio Extension** contains templatesto get you started creating plugin projects quickly.
+The **Rhino Visual Studio Extension** contains templates to get you started creating plugin projects quickly.
 
 1. Download the **[Rhino Visual Studio Extension (VSIX)](https://github.com/mcneel/RhinoVisualStudioExtensions/releases)**.
 2. Run the **VSIX installer** you downloaded.
