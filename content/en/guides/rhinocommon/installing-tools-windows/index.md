@@ -78,4 +78,4 @@ The **Rhino Visual Studio Extension** contains templates to get you started crea
 
 *Congratulations!*  You have the tools to build a RhinoCommon plugin for Rhino for Windows. *Now what?*
 
-Check out the [Your First Plugin (Windows)](/guides/rhinocommon/your-first-plugin-windows) guide for instructions building your first plugin.
+Check out the [Your First Plugin (Windows)](/guides/rhinocommon/your-first-plugin-windows) guide for instructions on how to build your first plugin.
