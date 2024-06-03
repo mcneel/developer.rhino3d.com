@@ -58,8 +58,8 @@ Good luck!
 <div class="row">  
 <div class="col-md-12" markdown="1">  
 
-David Rutten
-Robert McNeel & Associates
+David Rutten\n
+_Robert McNeel & Associates_
 
 [{{< awesome "fas fa-download">}} ](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101) [Download the RhinoScript 101 Primer as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 
@@ -100,7 +100,7 @@ Robert McNeel & Associates
 
 ### 4. [Operators and functions](/guides/rhinoscript/primer-101/4-operators-and-functions/)
 
-   4.1	[What on earth are they and why should I care?](/guides/rhinoscript/primer-101/4-operators-and-functions/#41-what-on-earth-are-they-and-why-should-i-care)   
+   4.1	[What on Earth are they and why should I care?](/guides/rhinoscript/primer-101/4-operators-and-functions/#41-what-on-earth-are-they-and-why-should-i-care)   
    4.2	[Careful…](/guides/rhinoscript/primer-101/4-operators-and-functions/#42-careful)     
    4.3	[Logical operators](/guides/rhinoscript/primer-101/4-operators-and-functions/#43-logical-operators)     
    4.4	[Functions and Procedures](/guides/rhinoscript/primer-101/4-operators-and-functions/#44-functions-and-procedures)     

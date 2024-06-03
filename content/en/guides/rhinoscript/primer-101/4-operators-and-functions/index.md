@@ -26,7 +26,7 @@ toc_type = "single"
 
 +++
 
-## 4.1 What on earth are they and why should I care?
+## 4.1 What on Earth are they and why should I care?
 
 When we were discussing numeric variables in paragraph 2.3.1, there was an example about mathematical operations on numbers:
 
@@ -445,4 +445,4 @@ It's a bit too early for optimizations though, more on this in Chapter 9.
 
 ## Next Steps
 
-Ok, so now that you can get some functions to work. Next is [conditional execution](/guides/rhinoscript/primer-101/5-conditional-execution/) to control how the script reacts to input.
+Ok, so now that you can get some functions to work, next is [conditional execution](/guides/rhinoscript/primer-101/5-conditional-execution/) to control how the script reacts to input.

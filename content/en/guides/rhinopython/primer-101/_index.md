@@ -118,7 +118,7 @@ Good luck!
 
 ### 4. [Operators and functions](/guides/rhinopython/primer-101/4-operators-and-functions/)
 
-   4.1	[What on earth are they and why should I care?](/guides/rhinopython/primer-101/4-operators-and-functions/#what-on-earth-are-they-and-why-should-i-care)   
+   4.1	[What on Earth are they and why should I care?](/guides/rhinopython/primer-101/4-operators-and-functions/#what-on-earth-are-they-and-why-should-i-care)   
    4.2	[Careful…](/guides/rhinopython/primer-101/4-operators-and-functions/#careful)     
    4.3	[Logical operators](/guides/rhinopython/primer-101/4-operators-and-functions/#logical-operators)     
    4.4	[Functions and Procedures](/guides/rhinopython/primer-101/4-operators-and-functions/#functions-and-procedures)     
