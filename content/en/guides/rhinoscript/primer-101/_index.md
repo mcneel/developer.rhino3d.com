@@ -58,7 +58,7 @@ Good luck!
 <div class="row">  
 <div class="col-md-12" markdown="1">  
 
-David Rutten\n
+David Rutten</br>
 _Robert McNeel & Associates_
 
 [{{< awesome "fas fa-download">}} ](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101) [Download the RhinoScript 101 Primer as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
