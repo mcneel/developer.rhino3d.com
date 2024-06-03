@@ -452,4 +452,4 @@ while the spheres are inserted. The script completes much faster if it doesn't h
 
 ## Next Steps
 
-Now it should be coming together on how Python works.  Just a few more details. Leanr more about Python's advanced variables in [Tuples, Lists and Dictionaries](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/).
+Now it should be coming together on how Python works. Just a few more details. Learn more about Python's advanced variables in [Tuples, Lists and Dictionaries](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/).
