@@ -139,7 +139,7 @@ Add five spoons of cinnamon
 Conditional loops will keep repeating until some condition is met where as incremental loops will run a predefined number of times. Life isn't as simple as that though, and there are many different syntax specifications for loops in Python, we'll only discuss the two most important ones in depth.
 
 
-## 5.3 Conditional loops
+## 5.3 Conditional Loops
 
 Sometimes we do not know how many iterations we will need in advance, so we need a loop which is potentially capable of running an infinite number of times. This type is called a Do…Loop. In the most basic form it looks like this:
 
@@ -358,7 +358,7 @@ method takes four arguments, the last one of which is optional. We do not overri
 </tr>
 </table>
 
-## 5.4 Incremental loops
+## 5.4 Incremental Loops
 
 When the number of iterations is known in advance, we could still use a While…Loop statement, but we'll have to do the bookkeeping ourselves. This is rather cumbersome since it involves us declaring, incrementing and evaluating variables. The For...statement is a loop which takes care of all this hassle. The underlying idea behind For... loops is to have a value incremented by a fixed amount every iteration until it exceeds a preset threshold:
 
@@ -452,4 +452,4 @@ while the spheres are inserted. The script completes much faster if it doesn't h
 
 ## Next Steps
 
-Now it should be coming together on how Python works. Just a few more details. Learn more about Python's advanced variables in [Tuples, Lists and Dictionaries](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/).
+Now it should be coming together on how Python works. Just a few more details. Learn more about Python's advanced variables in [Tuples, Lists, and Dictionaries](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/).

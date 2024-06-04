@@ -6,7 +6,7 @@ category_page = "guides/rhinopython/primer-101/"
 keywords = [ "python", "commands" ]
 languages = [ "Python" ]
 sdk = [ "RhinoPython" ]
-title = "6 Tuples, Lists and Dictionaries"
+title = "6 Tuples, Lists, and Dictionaries"
 type = "guides"
 weight = 15
 override_last_modified = "2018-12-05T14:59:06Z"
@@ -492,7 +492,7 @@ if __name__=="__main__":
 </tr>
 </table>
 
-## 6.6 Nested lists
+## 6.6 Nested Lists
 
 > I wonder why, I wonder why.  
 > I wonder why I wonder.  

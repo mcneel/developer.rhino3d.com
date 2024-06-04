@@ -6,7 +6,7 @@ category_page = "guides/rhinopython/primer-101/"
 keywords = [ "python", "commands" ]
 languages = [ "Python" ]
 sdk = [ "RhinoPython" ]
-title = "4 Operators and functions"
+title = "4 Operators and Functions"
 type = "guides"
 weight = 15
 draft = false
@@ -83,7 +83,7 @@ D = x**(0.5* x)
 y = (math.sqrt(A) / B) + abs(C / D)
 ```
 
-## 4.3 Logical operators
+## 4.3 Logical Operators
 
 I realize the last thing you want right now is an in-depth tutorial on logical operators, but it is an absolute must if we want to start making smart code. I'll try to keep it as painless as possible.
 
@@ -186,7 +186,7 @@ rs.AddLayer (name=None, color=0, visible=True, locked=False, parent=None)
 
 *rs.AddLayer()* is capable of taking five arguments, all of which are optional. We can tell they are optional because it says *"Optional"* next to each item under the *"Parameters"* section of the helpfile. The *"Parameters"* signify the Input values for the Function, while the *"Returns"* section tells us what the Function will return. Optional arguments have a default value which is used when we do not override it. If we omit to specify the `lngColor` argument for example the new layer will become black.
 
-### 4.4.1 A simple function example
+### 4.4.1 A Simple Function Example
 
 This concludes the boring portion of the primer. We now have enough information to actually start making useful scripts. I still haven't told you about loops or conditionals, so the really awesome stuff will have to wait until Chapter 5, though. We're going to write a script which uses some Python functions and a few RhinoScriptSyntax methods. Our objective for today is to write a script that applies a custom name to selected objects. First, I'll show you the script, then we'll analyze it line by line:
 
@@ -246,7 +246,7 @@ rs.ObjectName(strObjectID, "Time: " & str(time.localtime()))
 
 This one line replaces lines 9 through 11 of the original script. Sometimes brevity is a good thing, sometimes not. Especially in the beginning it might be smart to be explicit and take up multiple lines; it makes debugging a lot easier (until you feel comfortable making your code shorter and possibly harder to decipher).
 
-### 4.4.2 Advanced function syntax
+### 4.4.2 Advanced Function Syntax
 
 Whenever you call a function it always returns a value, even if you do not specifically set it. By default, every function returns a *None* value, since this is the default value for all variables and functions in Python. So if you want to write a function which returns you a String containing the alphabet, doing this is not enough:
 

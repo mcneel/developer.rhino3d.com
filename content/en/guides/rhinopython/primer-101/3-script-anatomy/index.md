@@ -46,7 +46,7 @@ language as well as Python at the front end, while tapping into all the core Rhi
 
 Right, enough fore-play, time to get back to hard core programming.
 
-## 3.2 The bones
+## 3.2 The Bones
 
 Once you run a script through the in-build editor (remember you can access the editor by typing "Scripteditor" in Rhino's command line) the Python interpreter will thumb through your script and superficially parse the syntax. It will not actually execute any of the code at this point, before it starts doing that it first wants to get a feel for the script. The interpreter is capable of finding certain syntax errors during this prepass. If you see a dialog box like this:
 
@@ -68,7 +68,7 @@ Global variables are variables that can be accessed anywhere in your code (outsi
 
 Functions are blocks of code that compact certain functionality into a small package.  Functions can have variables, take input, provide output and do a number of other important tasks.  We will go into further detail about functions in the coming chapters.  Classes are similar in that they provide an opportunity for creating module code to package/compress segments of your code, while also providing other powerful tools.  Functions and classes must be created before they can be used (this is rather obvious). For that reason, the *Functions & Classes section* comes before the *Function Calls and Class Instances section*.  This just means that before we can actually *Call* (use) a Function, we need to first create the function.
 
-## 3.3 The guts
+## 3.3 The Guts
 
 The following example shows the essential structure that was just described, including: the Import Statement (always needed!), Global Variables, a Function and a Call to the Function.  The importance of syntax should also be stated - Please take note of the capitalization and indentation within this example.  Python is both case sensitive and indent sensitive.  If you spell a variable name once with a capital letter and another time with a lowercase letter, it will not recognize it as the same variable! The indent is used to indicate if certain lines should be included within a Function, Class, Loop or Conditional statement.  In this example, the line "print (text)" is indented to be contained within the function "simpleFunction" because it should only be executed once that function is called (Don't worry yet about how and why functions work, we will explain them soon).   Indentation and Case Sensitivity should be highly emphasized since they are a couple of the most common mistakes that you will run into!
 
@@ -100,7 +100,7 @@ One of the key features of RhinoScriptSyntax that makes it easy to write powerfu
 Note: McNeel has made all of the classes in the .NET Framework available to Python, including the classes available in RhinoCommon. This allows you to do some pretty amazing things inside of a python script. Many of the features that once could only be done in a .NET plug-in can now be done in a python script!
 (Don't stress about this until you become a master of the basics...for now, just know its available!)
 
-## 3.4 The skin
+## 3.4 The Skin
 
 {{< image url="/images/buttonscript.jpg" alt="/images/buttonscript.jpg" class="float_right" width="325" >}}
 
@@ -117,6 +117,7 @@ If you want to implement the script, you'll have to wrap it up into a *_RunPytho
 A Code Editor is an essential tool for any programmer.  Luckily, the script-editor within Rhino is built-in. It includes a Debugger for testing and working line-by-line through any script!  It is extremely good practice to use the debugger when writing any code longer than just a few lines.  The expression "bug in your code," means that something has gone wrong in your code - i.e your code fails, cannot continue to run or has given the wrong output. *(Of interesting note -  the first computer bug is said to have been found in 1947, when Harvard University's Mark II Aiken Relay Calculator machine was experiencing problems. An investigation showed that there was a moth trapped in the machine. The operators removed the moth and taped it into the log book. The entry reads: "First actual case of bug being found." And thus, the world of debugging was born!)* With any malfunctioning code, the programmers job is to quickly and easily identify the bug, however, this can be sometimes extremely difficult, especially if the code has many loops, conditional statements, functions, classes and spans hundreds or thousands of lines.  
 
 To find out more about using the editor and its integrated debugger, see the [Script Editing Guide](/guides/scripting/scripting-command/)
+
 ## Next Steps
 
-That was a basic overview of Python running in Rhino.  Now learn to use [operators and functions](/guides/rhinopython/primer-101/4-operators-and-functions/) to get something done.
+That was a basic overview of Python running in Rhino. Now learn to use [operators and functions](/guides/rhinopython/primer-101/4-operators-and-functions/) to get something done.

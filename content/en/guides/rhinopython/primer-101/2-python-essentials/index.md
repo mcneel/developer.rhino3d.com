@@ -28,7 +28,7 @@ toc_type = "single"
 
 +++
 
-## 2.1 Language origin
+## 2.1 Language Origin
 
 Like conversational languages, programming languages group together in clusters. Python is a high level language, indicating that the language was designed to be easy for humans to understand.  On the opposite end of the spectrum are extremely low level languages, (often referred to as machine-code), that are most definitely not easy to understand.  In between are languages such as C or C++ which offer layers of abstraction above machine-code.  As I mentioned, Python is a step even higher, meaning that it is far easier to read (closer to the English language) and we don't need to manage difficult functionality like memory allocation, or declaring variables!
 
@@ -64,7 +64,7 @@ As mentioned before, there are three things the syntax has to support, and the a
 2. Variable data        » somenumber is used to store a variable number
 3. Communication        » The user is asked to supply information and is informed about the result
 
-## 2.2 Flow control
+## 2.2 Flow Control
 
 We use flow-control in Python to skip certain lines of code or to execute others more than once. We can also use flow-control to jump to different lines in our script and back again. You can add conditional statements to your code which allow you to shield off certain portions. If…Else…Else If structures are examples of conditional statements, but we'll discuss them later. A typical conditional statement is:
 
@@ -87,7 +87,7 @@ Keep adding milk until the dough is kneadable.
 ```
 The repeating of lines is called ‘Looping’ in coding slang. There are several loop types available but they all work more or less the same. They will be covered in detail later on.
 
-## 2.3 Variable data
+## 2.3 Variable Data
 
 Whenever we want our code to be dynamic we have to make sure it can handle all kinds of different situations. In order to do that we must have the ability to store variables. For instance we might want to store a selection of curves in our 3D model so we can delete them at a later stage. Or perhaps our script needs to add a line from the mouse pointer to the origin of the 3D scene. Or we need to check the current date to see whether or not our software has expired. This is information which was not available at the time the script was written.
 
@@ -239,7 +239,7 @@ understanding of how Strings work, but while we are still just using the simple 
 
 Strings are used heavily in Python since object IDs are always written as strings. Object IDs are those weird codes that show up in the Object Property Details: *D7EFCF0A-DB47-427D-9B6B-44EC0670C573*. IDs are designed to be absolutely unique for every object which will ever exist in this universe, which is why we can use them to safely and unambiguously identify objects in the document.
 
-### 2.3.4 None variable
+### 2.3.4 None Variable
 
 Whenever we ask Rhino a question which might not have an answer, we need a way for Rhino to say "I don't know". Using the example on page 5:
 
@@ -259,7 +259,7 @@ if not curve:
 
 The statement, `if not x` in Python will return a value True if the variable "curve" is *None*, 0 or an empty list.
 
-### 2.3.5 Using variables
+### 2.3.5 Using Variables
 
 Conventionally, whenever we intend to use variables in a script, we would have to declare them first.  However, with Python, we are relieved of this duty and we can simply create and use variables without initially declaring them. Python also does not require that we declare the type of variable we are using, as in other programming languages.  Both of these qualities emphasize why Python is such a quick and easy to learn language. So, to declare a variable we simply write:
 

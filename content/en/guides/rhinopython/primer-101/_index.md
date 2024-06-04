@@ -96,52 +96,52 @@ Good luck!
 
 ### 2. [Python Essentials](/guides/rhinopython/primer-101/2-python-essentials/)  
 
-   2.1	[Language origin](/guides/rhinopython/primer-101/2-python-essentials/#language-origin)  
-   2.2	[Flow control](/guides/rhinopython/primer-101/2-python-essentials/#flow-control)  
-   2.3	[Variable data](/guides/rhinopython/primer-101/2-python-essentials/#variable-data)  
+   2.1	[Language Origin](/guides/rhinopython/primer-101/2-python-essentials/#language-origin)  
+   2.2	[Flow Control](/guides/rhinopython/primer-101/2-python-essentials/#flow-control)  
+   2.3	[Variable Data](/guides/rhinopython/primer-101/2-python-essentials/#variable-data)  
 &nbsp;&nbsp; 2.3.1	[Integers and Doubles](/guides/rhinopython/primer-101/2-python-essentials/#integers-and-doubles/)  
 &nbsp;&nbsp; 2.3.2	[Booleans]((/guides/rhinopython/primer-101/2-python-essentials/#booleans/))  
 &nbsp;&nbsp; 2.3.3	[Strings]((/guides/rhinopython/primer-101/2-python-essentials/#strings/))  
-&nbsp;&nbsp; 2.3.4	[None variable](/guides/rhinopython/primer-101/2-python-essentials/#none-variable/)  
-&nbsp;&nbsp; 2.3.5	[Using variables]((/guides/rhinopython/primer-101/2-python-essentials/#using-variables/))  
+&nbsp;&nbsp; 2.3.4	[None Variable](/guides/rhinopython/primer-101/2-python-essentials/#none-variable/)  
+&nbsp;&nbsp; 2.3.5	[Using Variables]((/guides/rhinopython/primer-101/2-python-essentials/#using-variables/))  
 
-### 3. [Script anatomy](/guides/rhinopython/primer-101/3-script-anatomy/)
+### 3. [Script Anatomy](/guides/rhinopython/primer-101/3-script-anatomy/)
 
    3.1 [Programming in Rhino](/guides/rhinopython/primer-101/3-script-anatomy/#31-programming-in-rhino)    
-   3.2 [The bones](/guides/rhinopython/primer-101/3-script-anatomy/#32-the-bones)  
-   3.3 [The guts](/guides/rhinopython/primer-101/3-script-anatomy/#33-the-guts)  
-   3.4 [The skin](/guides/rhinopython/primer-101/3-script-anatomy/#34-the-skin)  
+   3.2 [The Bones](/guides/rhinopython/primer-101/3-script-anatomy/#32-the-bones)  
+   3.3 [The Buts](/guides/rhinopython/primer-101/3-script-anatomy/#33-the-guts)  
+   3.4 [The Skin](/guides/rhinopython/primer-101/3-script-anatomy/#34-the-skin)  
    3.5 [The Debugger](/guides/rhinopython/primer-101/3-script-anatomy/#35-the-debugger)   
 
 {{< /column >}}
 {{< column >}}
 
-### 4. [Operators and functions](/guides/rhinopython/primer-101/4-operators-and-functions/)
+### 4. [Operators and Functions](/guides/rhinopython/primer-101/4-operators-and-functions/)
 
    4.1	[What on Earth are they and why should I care?](/guides/rhinopython/primer-101/4-operators-and-functions/#what-on-earth-are-they-and-why-should-i-care)   
    4.2	[Careful…](/guides/rhinopython/primer-101/4-operators-and-functions/#careful)     
-   4.3	[Logical operators](/guides/rhinopython/primer-101/4-operators-and-functions/#logical-operators)     
+   4.3	[Logical Operators](/guides/rhinopython/primer-101/4-operators-and-functions/#logical-operators)     
    4.4	[Functions and Procedures](/guides/rhinopython/primer-101/4-operators-and-functions/#functions-and-procedures)     
-&nbsp;&nbsp; 4.4.1 [A simple function example](/guides/rhinopython/primer-101/4-operators-and-functions/#a-simple-function-example)     
-&nbsp;&nbsp; 4.4.2 [Advanced function syntax](/guides/rhinopython/primer-101/4-operators-and-functions/#advanced-function-syntax)     
+&nbsp;&nbsp; 4.4.1 [A Simple Function Example](/guides/rhinopython/primer-101/4-operators-and-functions/#a-simple-function-example)     
+&nbsp;&nbsp; 4.4.2 [Advanced Function Syntax](/guides/rhinopython/primer-101/4-operators-and-functions/#advanced-function-syntax)     
    4.5	[Mutability](/guides/rhinopython/primer-101/4-operators-and-functions/#mutability)      
 
-### 5. [Conditional execution](/guides/rhinopython/primer-101/5-conditional-execution/)
+### 5. [Conditional Execution](/guides/rhinopython/primer-101/5-conditional-execution/)
 
    5.1	[What if?](/guides/rhinopython/primer-101/5-conditional-execution/#what-if)  
    5.2	[Looping](/guides/rhinopython/primer-101/5-conditional-execution/#looping)  
-   5.3	[Conditional loops](/guides/rhinopython/primer-101/5-conditional-execution/#conditional-loops)  
-   5.4	[Incremental loops](/guides/rhinopython/primer-101/5-conditional-execution/#incremental-loops)  
+   5.3	[Conditional Loops](/guides/rhinopython/primer-101/5-conditional-execution/#conditional-loops)  
+   5.4	[Incremental Loops](/guides/rhinopython/primer-101/5-conditional-execution/#incremental-loops)  
 
 
-### 6. [Tuples, Lists and Dictionaries](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/)
+### 6. [Tuples, Lists, and Dictionaries](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/)
 
    6.1	[Tuples](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#tuples)  
    6.2	[Lists](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#lists)  
 &nbsp;&nbsp; 6.2.1	[List Comprehensions](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#list-comprehension)  
    6.3	[Dictionaries](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#dictionaries)  
    6.4	[Points and Vectors](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#points-and-vectors)  
-   6.5	[An AddVector() example](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#an-addvector-example)  
+   6.5	[An AddVector() Example](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#an-addvector-example)  
    6.6	[Nested Lists](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/#nested-lists)  
 
 {{< /column >}}  
@@ -155,23 +155,23 @@ Good luck!
 
 ### 8. [Geometry](/guides/rhinopython/primer-101/8-geometry/)
 
-   8.1	[The openNURBS™ kernel](/guides/rhinopython/primer-101/8-geometry/#the-opennurbs-kernel)  
+   8.1	[The openNURBS™ Kernel](/guides/rhinopython/primer-101/8-geometry/#the-opennurbs-kernel)  
    8.2	[Objects in Rhino](/guides/rhinopython/primer-101/8-geometry/#obects-in-rhino)  
    8.3	[Points and Pointclouds](/guides/rhinopython/primer-101/8-geometry/#points-andpointclouds)  
    8.4	[Lines and Polylines](/guides/rhinopython/primer-101/8-geometry/#lines-and-polylines)  
    8.5	[Planes](/guides/rhinopython/primer-101/8-geometry/#planes)  
-   8.6	[Circles, Ellipses and Arcs](/guides/rhinopython/primer-101/8-geometry/#circles-ellipses-and-arcs)  
+   8.6	[Circles, Ellipses, and Arcs](/guides/rhinopython/primer-101/8-geometry/#circles-ellipses-and-arcs)  
 &nbsp;&nbsp; 8.6.1 [Ellipses](/guides/rhinopython/primer-101/8-geometry/#ellipses)  
 &nbsp;&nbsp; 8.6.2 [Arcs](/guides/rhinopython/primer-101/8-geometry/#arcs)  
-   8.7	[Nurbs Curves](/guides/rhinopython/primer-101/8-geometry/#nurbs-curves)  
-&nbsp;&nbsp; 8.7.1 [Control-point curves](/guides/rhinopython/primer-101/8-geometry/#control-point-curves)  
-&nbsp;&nbsp; 8.7.2 [Interpolated curves](/guides/rhinopython/primer-101/8-geometry/#interpolate-curves)  
-&nbsp;&nbsp; 8.7.3 [Geometric curve properties](/guides/rhinopython/primer-101/8-geometry/#geometric-curve-properties)    
+   8.7	[NURBS Curves](/guides/rhinopython/primer-101/8-geometry/#nurbs-curves)  
+&nbsp;&nbsp; 8.7.1 [Control-Point Curves](/guides/rhinopython/primer-101/8-geometry/#control-point-curves)  
+&nbsp;&nbsp; 8.7.2 [Interpolated Curves](/guides/rhinopython/primer-101/8-geometry/#interpolate-curves)  
+&nbsp;&nbsp; 8.7.3 [Geometric Curve Properties](/guides/rhinopython/primer-101/8-geometry/#geometric-curve-properties)    
    8.8	[Meshes](/guides/rhinopython/primer-101/8-geometry/#meshes)  
 &nbsp;&nbsp; 8.8.1 [Geometry vs. Topology](/guides/rhinopython/primer-101/8-geometry/#geometry-vs-topology)  
 &nbsp;&nbsp; 8.8.1 [Shape vs. Image](/guides/rhinopython/primer-101/8-geometry/#shape-vs-image)  
    8.9	[Surfaces](/guides/rhinopython/primer-101/8-geometry/#surfaces)  
-&nbsp;&nbsp; 8.9.1 [Nurbs surfaces](/guides/rhinopython/primer-101/8-geometry/#nurbs-surfaces)  
+&nbsp;&nbsp; 8.9.1 [NURBS surfaces](/guides/rhinopython/primer-101/8-geometry/#nurbs-surfaces)  
 &nbsp;&nbsp; 8.9.2 [Surface Curvature](/guides/rhinopython/primer-101/8-geometry/#surface-curvature)  
 &nbsp;&nbsp; 8.9.3 [Vector And Tensor Spaces](/guides/rhinopython/primer-101/8-geometry/#vector-and-tensor-spaces)   
 
