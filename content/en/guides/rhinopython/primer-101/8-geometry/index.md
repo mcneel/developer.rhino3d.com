@@ -2872,4 +2872,4 @@ We need to make 2 more nested loops which iterate over the 9 coordinates in this
 
 ## Next Steps
 
-Congratulations, you have made it through the [Python 101 Primer](/guides/rhinopython/primer-101).
+Congratulations, you have made it through the [Rhino.Python 101 Primer](/guides/rhinopython/primer-101).
