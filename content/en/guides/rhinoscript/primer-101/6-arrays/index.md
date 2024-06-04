@@ -26,7 +26,7 @@ toc_type = "single"
 
 +++
 
-## 6.1 My favorite things
+## 6.1 My Favorite Things
 
 We've already been using arrays in examples and I've always told you not to worry about it. Those days are officially over. Now is the time to panic. Perhaps it's best if we just get the obvious stuff out of the way first:
 
@@ -459,7 +459,7 @@ In case of scenario #2, the AddVector will be set to Null. Of course it already 
 </table>
 
 
-## 6.3 An AddVector() example
+## 6.3 An AddVector() Example
 
 {{< image url="/images/primeraddvectorexample.svg" alt="/images/primeraddvectorexample.svg" class="float_right" width="275" >}}
 
@@ -532,7 +532,7 @@ End Sub
 </tr>
 </table>
 
-## 6.4 Nested lists
+## 6.4 Nested Lists
 
 > I wonder why, I wonder why.  
 > I wonder why I wonder.  

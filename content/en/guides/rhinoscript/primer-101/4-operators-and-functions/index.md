@@ -6,7 +6,7 @@ category_page = "guides/rhinoscript/primer-101/"
 keywords = [ "rhinoscript", "vbscript", "commands" ]
 languages = [ "VBScript" ]
 sdk = [ "RhinoScript" ]
-title = "4 Operators and functions"
+title = "4 Operators and Functions"
 type = "guides"
 weight = 15
 override_last_modified = "2018-12-05T14:59:06Z"
@@ -96,7 +96,7 @@ D = x^(0.5* x)
 y = (Sqr(A) / B) + Abs(C / D)
 ```
 
-## 4.3 Logical operators
+## 4.3 Logical Operators
 
 I realize the last thing you want right now is an in-depth tutorial on logical operators, but it is an absolute must if we want to start making smart code. I'll try to keep it as painless as possible.
 
@@ -203,7 +203,7 @@ Rhino.AddLayer ([strLayer [, lngColor [, blnVisible [, blnLocked [, strParent]]]
 
 The combined information of procedure name and arguments is called the 'signature'. `Rhino.AddLayer()` is capable of taking five arguments, all of which are optional. We can tell they are optional by the fact that they are encapsulated in square brackets. Optional arguments have a default value which is used when we do not override it. If we omit to specify the lngColor argument for example the new layer will become black.
 
-### 4.4.1 A simple function example
+### 4.4.1 A Simple Function Example
 
 This concludes the boring portion of the primer. We now have enough information to actually start making useful scripts. I still haven't told you about arrays and loops, so the really awesome stuff will have to wait till Chapter 5 though. We're going to write a script which uses some VBScript functions and a few RhinoScript methods. Our objective for today is to write a script that applies a custom name to selected objects. First, I'll show you the script, then we'll analyze it line by line:
 
@@ -273,7 +273,7 @@ This one line replaces lines 10 through 13 of the original script. Sometimes bre
 
 On line 14 we tell the script interpreter that our subroutine has ended.
 
-### 4.4.2 Advanced function syntax
+### 4.4.2 Advanced Function Syntax
 
 The previous example showed a very simple subroutine which did not take any arguments and did not
 return a value. In many cases you will need something a bit more advanced. For one, a complex function will

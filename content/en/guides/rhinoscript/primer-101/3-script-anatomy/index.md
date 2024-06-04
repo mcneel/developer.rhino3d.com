@@ -43,7 +43,7 @@ language at the front end, while tapping into all the core Rhino resources at th
 
 Right, enough fore-play, time to get back to hard core programming.
 
-## 3.2 The bones
+## 3.2 The Bones
 
 Once you run a certain script, either through the in-build editor or as an external file, the VBScript interpreter will thumb through your script and superficially parse the syntax. It will not actually execute any of the code at this point, before it starts doing that it first want to get a feel for the script. The interpreter is capable of finding certain syntax errors during this prepass. If you see a dialog box like this:
 
@@ -61,7 +61,7 @@ In addition to the Option Explicit statement, the Option Explicit area may also 
 
 The area of the script which is outside the function declarations is referred to as 'script level'. All script level code will be executed by the interpreter whenever it feels like it so you're usually better off by putting all the code into functions and having them execute at your command.
 
-## 3.3 The guts
+## 3.3 The Guts
 
 Every script requires at least one function (or subroutine) which contains the main code of the script. It doesn't have to be a big function, and it can place calls to any number of other functions but it is special because it delineates the extents of the script. The script starts running as soon as this function is called and it stops when the function completes. Without a main function, there is nothing to run.
 
@@ -86,7 +86,7 @@ End Sub							             < Main function end
 ```
 
 
-## 3.4 The skin
+## 3.4 The Skin
 
 {{< image url="/images/buttonscript.jpg" alt="/images/buttonscript.jpg" class="float_right" width="325" >}}
 

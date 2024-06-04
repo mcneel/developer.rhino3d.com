@@ -78,51 +78,51 @@ _Robert McNeel & Associates_
 
 ### 2. [VBscript Essentials](/guides/rhinoscript/primer-101/2-vbscript-essentials/)  
 
-   2.1	[Language origin](/guides/rhinoscript/primer-101/2-vbscript-essentials/#21-language-origin)  
-   2.2	[Flow control](/guides/rhinoscript/primer-101/2-vbscript-essentials/#f22-low-control)  
-   2.3	[Variable data](/guides/rhinoscript/primer-101/2-vbscript-essentials/#23-variable-data)  
+   2.1	[Language Origin](/guides/rhinoscript/primer-101/2-vbscript-essentials/#21-language-origin)  
+   2.2	[Flow Control](/guides/rhinoscript/primer-101/2-vbscript-essentials/#f22-low-control)  
+   2.3	[Variable Data](/guides/rhinoscript/primer-101/2-vbscript-essentials/#23-variable-data)  
 &nbsp;&nbsp; 2.3.1	[Integers and Doubles](/guides/rhinoscript/primer-101/2-vbscript-essentials/#231-integers-and-doubles)  
 &nbsp;&nbsp; 2.3.2	[Booleans](/guides/rhinoscript/primer-101/2-vbscript-essentials/#232-booleans)  
 &nbsp;&nbsp; 2.3.3	[Strings](/guides/rhinoscript/primer-101/2-vbscript-essentials/#233-strings)  
-&nbsp;&nbsp; 2.3.4	[None variable](/guides/rhinoscript/primer-101/2-vbscript-essentials/#234-none-variable)  
-&nbsp;&nbsp; 2.3.5	[Using variables](/guides/rhinoscript/primer-101/2-vbscript-essentials/#235-using-variables)  
+&nbsp;&nbsp; 2.3.4	[None Variable](/guides/rhinoscript/primer-101/2-vbscript-essentials/#234-none-variable)  
+&nbsp;&nbsp; 2.3.5	[Using Variables](/guides/rhinoscript/primer-101/2-vbscript-essentials/#235-using-variables)  
 
-### 3. [Script anatomy](/guides/rhinoscript/primer-101/3-script-anatomy/)
+### 3. [Script Anatomy](/guides/rhinoscript/primer-101/3-script-anatomy/)
 
    3.1 [Programming in Rhino](/guides/rhinoscript/primer-101/3-script-anatomy/#31-programming-in-rhino)    
-   3.2 [The bones](/guides/rhinoscript/primer-101/3-script-anatomy/#32-the-bones)  
-   3.3 [The guts](/guides/rhinoscript/primer-101/3-script-anatomy/#33-the-guts)  
-   3.4 [The skin](/guides/rhinoscript/primer-101/3-script-anatomy/#34-the-skin)  
+   3.2 [The Bones](/guides/rhinoscript/primer-101/3-script-anatomy/#32-the-bones)  
+   3.3 [The Guts](/guides/rhinoscript/primer-101/3-script-anatomy/#33-the-guts)  
+   3.4 [The Skin](/guides/rhinoscript/primer-101/3-script-anatomy/#34-the-skin)  
 
 {{< /column >}}
 {{< column >}}
 
 
-### 4. [Operators and functions](/guides/rhinoscript/primer-101/4-operators-and-functions/)
+### 4. [Operators and Functions](/guides/rhinoscript/primer-101/4-operators-and-functions/)
 
    4.1	[What on Earth are they and why should I care?](/guides/rhinoscript/primer-101/4-operators-and-functions/#41-what-on-earth-are-they-and-why-should-i-care)   
    4.2	[Careful…](/guides/rhinoscript/primer-101/4-operators-and-functions/#42-careful)     
-   4.3	[Logical operators](/guides/rhinoscript/primer-101/4-operators-and-functions/#43-logical-operators)     
+   4.3	[Logical Operators](/guides/rhinoscript/primer-101/4-operators-and-functions/#43-logical-operators)     
    4.4	[Functions and Procedures](/guides/rhinoscript/primer-101/4-operators-and-functions/#44-functions-and-procedures)     
-&nbsp;&nbsp; 4.4.1 [A simple function example](/guides/rhinoscript/primer-101/4-operators-and-functions/#441-a-simple-function-example)     
-&nbsp;&nbsp; 4.4.2 [Advanced function syntax](/guides/rhinoscript/primer-101/4-operators-and-functions/#442-advanced-function-syntax)     
+&nbsp;&nbsp; 4.4.1 [A Simple Function Example](/guides/rhinoscript/primer-101/4-operators-and-functions/#441-a-simple-function-example)     
+&nbsp;&nbsp; 4.4.2 [Advanced Function Syntax](/guides/rhinoscript/primer-101/4-operators-and-functions/#442-advanced-function-syntax)     
 
 
-### 5. [Conditional execution](/guides/rhinoscript/primer-101/5-conditional-execution/)
+### 5. [Conditional Execution](/guides/rhinoscript/primer-101/5-conditional-execution/)
 
    5.1	[What if?](/guides/rhinoscript/primer-101/5-conditional-execution/#51-what-if)  
    5.2	[Select Case](/guides/rhinoscript/primer-101/5-conditional-execution/#52-select-case)  
    5.3	[Looping](/guides/rhinoscript/primer-101/5-conditional-execution/#53-looping)  
-   5.4	[Conditional loops](/guides/rhinoscript/primer-101/5-conditional-execution/#54-conditional-loops)  
-   5.5	[Alternate syntax](/guides/rhinoscript/primer-101/5-conditional-execution/#55-alternate-syntax)   
-   5.6	[Incremental loops](/guides/rhinoscript/primer-101/5-conditional-execution/#56-incremental-loops)
+   5.4	[Conditional Loops](/guides/rhinoscript/primer-101/5-conditional-execution/#54-conditional-loops)  
+   5.5	[Alternate Syntax](/guides/rhinoscript/primer-101/5-conditional-execution/#55-alternate-syntax)   
+   5.6	[Incremental Loops](/guides/rhinoscript/primer-101/5-conditional-execution/#56-incremental-loops)
 
 
 ### 6. [Arrays](/guides/rhinoscript/primer-101/6-arrays/)
 
-   6.1	[My favorite things](/guides/rhinoscript/primer-101/6-arrays/#61-my-favorite-things)  
+   6.1	[My Favorite Things](/guides/rhinoscript/primer-101/6-arrays/#61-my-favorite-things)  
    6.2	[Points and Vectors](/guides/rhinoscript/primer-101/6-arrays/#62-points-and-vectors)  
-   6.3	[An AddVector() example](/guides/rhinoscript/primer-101/6-arrays/#63-an-addvector-example)  
+   6.3	[An AddVector() Example](/guides/rhinoscript/primer-101/6-arrays/#63-an-addvector-example)  
    6.4	[Nested Lists](/guides/rhinoscript/primer-101/6-arrays/#64-nested-lists)  
 
 {{< /column >}}
@@ -131,23 +131,23 @@ _Robert McNeel & Associates_
 
 ### 7. [Geometry](/guides/rhinoscript/primer-101/7-geometry/)
 
-   7.1	[The openNURBS™ kernel](/guides/rhinoscript/primer-101/7-geometry/#71-the-opennurbs-kernel)  
+   7.1	[The openNURBS™ Kernel](/guides/rhinoscript/primer-101/7-geometry/#71-the-opennurbs-kernel)  
    7.2	[Objects in Rhino](/guides/rhinoscript/primer-101/7-geometry/#72-objects-in-rhino)  
    7.3	[Points and Pointclouds](/guides/rhinoscript/primer-101/7-geometry/#73-points-and-pointclouds)  
    7.4	[Lines and Polylines](/guides/rhinoscript/primer-101/7-geometry/#74-lines-and-polylines)  
    7.5	[Planes](/guides/rhinoscript/primer-101/7-geometry/#75-planes)  
-   7.6	[Circles, Ellipses and Arcs](/guides/rhinoscript/primer-101/7-geometry/#76-circles-ellipses-and-arcs)  
+   7.6	[Circles, Ellipses, and Arcs](/guides/rhinoscript/primer-101/7-geometry/#76-circles-ellipses-and-arcs)  
 &nbsp;&nbsp; 7.6.1 [Ellipses](/guides/rhinoscript/primer-101/7-geometry/#761-ellipses)  
 &nbsp;&nbsp; 7.6.2 [Arcs](/guides/rhinoscript/primer-101/7-geometry/#762-arcs)  
-   7.7	[Nurbs Curves](/guides/rhinoscript/primer-101/7-geometry/#77-nurbs-curves)  
-&nbsp;&nbsp; 7.7.1 [Control-point curves](/guides/rhinoscript/primer-101/7-geometry/#771-control-point-curves)  
-&nbsp;&nbsp; 7.7.2 [Interpolated curves](/guides/rhinoscript/primer-101/7-geometry/#772-interpolate-curves)  
-&nbsp;&nbsp; 7.7.3 [Geometric curve properties](/guides/rhinoscript/primer-101/7-geometry/#773-geometric-curve-properties)    
+   7.7	[NURBS Curves](/guides/rhinoscript/primer-101/7-geometry/#77-nurbs-curves)  
+&nbsp;&nbsp; 7.7.1 [Control-Point Curves](/guides/rhinoscript/primer-101/7-geometry/#771-control-point-curves)  
+&nbsp;&nbsp; 7.7.2 [Interpolated Curves](/guides/rhinoscript/primer-101/7-geometry/#772-interpolate-curves)  
+&nbsp;&nbsp; 7.7.3 [Geometric Curve Properties](/guides/rhinoscript/primer-101/7-geometry/#773-geometric-curve-properties)    
    7.8	[Meshes](/guides/rhinoscript/primer-101/7-geometry/#78-meshes)  
 &nbsp;&nbsp; 7.8.1 [Geometry vs. Topology](/guides/rhinoscript/primer-101/7-geometry/#781-geometry-vs-topology)  
 &nbsp;&nbsp; 7.8.1 [Shape vs. Image](/guides/rhinoscript/primer-101/7-geometry/#781-shape-vs-image)  
    7.9	[Surfaces](/guides/rhinoscript/primer-101/7-geometry/#79-surfaces)  
-&nbsp;&nbsp; 7.9.1 [Nurbs surfaces](/guides/rhinoscript/primer-101/7-geometry/#791-nurbs-surfaces)  
+&nbsp;&nbsp; 7.9.1 [NURBS surfaces](/guides/rhinoscript/primer-101/7-geometry/#791-nurbs-surfaces)  
 &nbsp;&nbsp; 7.9.2 [Surface Curvature](/guides/rhinoscript/primer-101/7-geometry/#792-surface-curvature)  
 &nbsp;&nbsp; 7.9.3 [Vector And Tensor Spaces](/guides/rhinoscript/primer-101/7-geometry/#793-vector-and-tensor-spaces)   
 

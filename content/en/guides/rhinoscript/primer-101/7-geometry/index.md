@@ -26,7 +26,7 @@ toc_type = "single"
 
 +++
 
-## 7.1 The openNURBS™ kernel
+## 7.1 The openNURBS™ Kernel
 
 Now that you are familiar with the basics of scripting, it is time to start with the actual geometry part of RhinoScript. To keep things interesting we've used plenty of Rhino methods in examples before now, but that was all peanuts. Now you will embark upon that great journey which, if you survive, will turn you into a real 3D geek.
 
@@ -776,7 +776,7 @@ Line 21 and 22 do something interesting which is not apparent in the adjacent il
 
 The *Rhino.SurfaceFrame()* method returns a unitized frame whose axes point in the {u} and {v} directions of the surface. Note that the {u} and {v} directions are not necessarily perpendicular to each other, but we only add valid planes whose x and y axis are always at 90º, thus we ignore the direction of the v-component.
 
-## 7.6 Circles, Ellipses and Arcs
+## 7.6 Circles, Ellipses, and Arcs
 
 Although the user is never confronted with parametric objects in Rhino, the openNURBS™ kernel has a certain set of mathematical primitives which are stored parametrically. Examples of these are cylinders, spheres, circles, revolutions and sum-surfaces. To highlight the difference between explicit (parametric) and implicit circles:
 
@@ -1320,7 +1320,7 @@ A small comparison table for different setting combinations. Please note that th
 
 {{< image url="/images/primer-treechart.svg" alt="/images/primer-treechart.svg" class="image_center" width="100%" >}}
 
-## 7.7 Nurbs-curves
+## 7.7 NURBS Curves
 
 Circles and arcs are all fine and dandy, but they cannot be used to draw freeform shapes. For that you need splines. The worlds most famous spline is probably the Bézier curve, which was developed in 1962 by the French engineer *Pierre Bézier* while he was working for Renault. Most splines used in computer graphics these days are variations on the Bézier spline, and they are thus a surprisingly recent arrival on the mathematical scene. Other ground-breaking work on splines was done by *Paul de Casteljau* at Citroën and *Carl de Boor* at General Motors. The thing that jumps out here is the fact that all these people worked for car manufacturers. With the increase in engine power and road quality, the automobile industry started to face new problems halfway through the twentieth century, one of which was aerodynamics. New methods were needed to design mass-production cars that had smooth, fluent curves as opposed to the tangency and curvature fractured shapes of old. They needed mathematically accurate, freely adjustable geometry. Enter splines.
 
@@ -1354,7 +1354,7 @@ In the image on the previous page, the red and purple pieces do in fact touch th
 
 A clamped curve always has a bunch of knots at the beginning and end (periodic curves do not, but we'll get to that later). If a curve has knot clusters on the interior as well, then it will touch one of the interior control points and we have a kinked curve. There is a lot more to know about knots, but I suggest we continue with some simple nurbs curves and let Rhino worry about the knot vector for the time being.
 
-### 7.7.1 Control-point curves
+### 7.7.1 Control-Point Curves
 
 {{< image url="/images/primer-filletcorners.svg" alt="/images/primer-filletcorners.svg" class="float_right" width="275" >}}
 
@@ -1483,7 +1483,7 @@ End Function
 </tr>
 </table>
 
-### 7.7.2 Interpolated curves
+### 7.7.2 Interpolated Curves
 
 When creating control-point curves it is very difficult to make them go through specific coordinates. Even when tweaking control-points this would be an arduous task. This is why commands like* _HBar* are so important. However, if you need a curve to go through many points, you're better off creating it using an interpolated method rather than a control-point method. The *_InterpCrv* and * _InterpCrvOnSrf* commands allow you to create a curve that intersects any number of 3D points and both of these methods have an equivalent in RhinoScript.
 
@@ -1689,7 +1689,7 @@ The image on the right shows the result of the script, where offset values are a
 {{< div class="clear_both" />}}  
 
 
-### 7.7.3 Geometric curve properties
+### 7.7.3 Geometric Curve Properties
 
 Since curves are geometric objects, they possess a number of properties or characteristics which can be used to describe or analyze them. For example, every curve has a starting coordinate and every curve has an ending coordinate. When the distance between these two coordinates is zero, the curve is closed. Also, every curve has a number of control-points, if all these points are located in the same plane, the curve as a whole is planar. Some properties apply to the curve as a whole, others only apply to specific points on the curve. For example, planarity is a global property while tangent vectors are a local property. Also, some properties only apply to some curve types. So far we've dealt with lines, polylines, circles, ellipses, arcs and nurbs curves:
 
@@ -2962,7 +2962,7 @@ The other important curvature definition is Mean curvature ("average"), which is
 
 As you know, summation behaves very different from multiplication, and Mean curvature can be used to analyze different properties of a surface because it has different special cases. If the minimum and maximum principal curvatures are equal in amplitude but have opposing signs, the average of both is zero. A surface with zero Mean curvature is not merely anticlastic, it is a very special surface known as a *minimal* or *zero-energy* surface. It is the natural shape of a soap film with equal atmospheric pressure on both sides. These surfaces are extremely important in the field of tensile architecture since they spread stress equally across the surface resulting in structurally strong geometry.
 
-### 7.9.3 Vector and Tensor spaces
+### 7.9.3 Vector and Tensor Spaces
 
 On the previous page I mentioned the words "tensor", "smoothing" and "algorithm" in one breath. Even though you most likely know the latter two, the combination probably makes little sense. Tensor smoothing is a useful tool to have in your repertoire so I'll deal with this specific case in detail. Just remember that most of the script which is to follow is generic and can be easily adjusted for different classes of tensors. But first some background information...
 

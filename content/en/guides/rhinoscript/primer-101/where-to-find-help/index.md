@@ -26,7 +26,7 @@ toc_type = "single"
 
 +++
 
-## Forums:
+## Forums
 
 The RhinoScript community is very active and offers a wonderful resource for posting questions/answers and finding help on just about anything!:
 [https://discourse.mcneel.com/c/scripting](https://discourse.mcneel.com/c/scripting)

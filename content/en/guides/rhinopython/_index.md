@@ -2,7 +2,7 @@
 aliases = ["/5/guides/rhinopython/", "/6/guides/rhinopython/", "/7/guides/rhinopython/", "/wip/guides/rhinopython/"]
 authors = "unset"
 categories = [ "Unsorted" ]
-description = "Quickly add functionality to Rhino or automate repetitive tasks."
+description = "Quickly add functionality to Rhino or automate repetitive tasks"
 keywords = [ "rhino", "developer" ]
 languages = [ "Python" ]
 sdk = "unset"
@@ -89,10 +89,10 @@ platforms = [ "Windows", "Mac" ]
 &nbsp;&nbsp; [Where to find help](/guides/rhinopython/primer-101/where-to-find-help/)  
 &nbsp;&nbsp; 1. [What's it all about?](/guides/rhinopython/primer-101/1-whats-it-all-about/)  
 &nbsp;&nbsp; 2. [Python Essentials](/guides/rhinopython/primer-101/2-python-essentials/)  
-&nbsp;&nbsp; 3. [Script anatomy](/guides/rhinopython/primer-101/3-script-anatomy/)  
-&nbsp;&nbsp; 4. [Operators and functions](/guides/rhinopython/primer-101/4-operators-and-functions/)  
-&nbsp;&nbsp; 5. [Conditional execution](/guides/rhinopython/primer-101/5-conditional-execution/)  
-&nbsp;&nbsp; 6. [Tuples, Lists and Dictionaries](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/)  
+&nbsp;&nbsp; 3. [Script Anatomy](/guides/rhinopython/primer-101/3-script-anatomy/)  
+&nbsp;&nbsp; 4. [Operators and Functions](/guides/rhinopython/primer-101/4-operators-and-functions/)  
+&nbsp;&nbsp; 5. [Conditional Execution](/guides/rhinopython/primer-101/5-conditional-execution/)  
+&nbsp;&nbsp; 6. [Tuples, Lists, and Dictionaries](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/)  
 &nbsp;&nbsp; 7. [Classes](/guides/rhinopython/primer-101/7-classes/)  
 &nbsp;&nbsp; 8. [Geometry](/guides/rhinopython/primer-101/8-geometry/)  
 

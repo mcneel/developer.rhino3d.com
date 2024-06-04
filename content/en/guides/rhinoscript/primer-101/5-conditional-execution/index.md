@@ -6,7 +6,7 @@ category_page = "guides/rhinoscript/primer-101/"
 keywords = [ "rhinoscript", "vbscript", "commands" ]
 languages = [ "VBScript" ]
 sdk = [ "RhinoScript" ]
-title = "5 Conditional execution"
+title = "5 Conditional Execution"
 type = "guides"
 weight = 16
 override_last_modified = "2018-12-05T14:59:06Z"
@@ -210,7 +210,7 @@ Add five spoons of cinnamon
 
 Conditional loops will keep repeating until some condition is met where as incremental loops will run a predefined number of times. Life isn't as simple as that though, and there are as many as eight different syntax specifications for loops in VBScript, we'll only discuss the two most important ones in depth.
 
-## 5.4 Conditional loops
+## 5.4 Conditional Loops
 
 Sometimes we do not know how many iterations we will need in advance, so we need a loop which is potentially capable of running an infinite number of times. This type is called a Do…Loop. In the most basic form it looks like this:
 
@@ -420,7 +420,7 @@ This should be familiar by now
 </tr>
 </table>
 
-## 5.5 Alternate syntax
+## 5.5 Alternate Syntax
 
 Do…Loops are almost always conditional. The infinite loop example of the viewport clock is a rare exception. If the condition for the continuation of the loop is fairly complicated we will probably want to do it ourselves. In simple cases we could use one of the alternative loop syntax rules, which has the conditional evaluation baked in:
 
@@ -462,7 +462,7 @@ Loop While SomeCondition
 
 Now, you are guaranteed that *DoSomething()* will be called at least once.
 
-## 5.6 Incremental loops
+## 5.6 Incremental Loops
 
 When the number of iterations is known in advance, we could still use a Do…Loop statement, but we'll have to do the bookkeeping ourselves. This is rather cumbersome since it involves us declaring, incrementing and evaluating variables. The For…Next statement is a loop which takes care of all this hassle. The underlying idea behind For…Next loops is to have a value incremented by a fixed amount every iteration until it exceeds a preset threshold:
 

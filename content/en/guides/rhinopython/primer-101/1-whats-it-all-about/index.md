@@ -89,7 +89,7 @@ Although most of us are smart enough to understand all four lines, a computer is
 
 Python is a wonderful language for beginners or advanced programmers.  It offers a simple and efficient syntax as well as powerful programming functions, object-oriented capabilities and a large fan-base with user-built libraries.  Also, since Rhino Python is available on both Windows and Mac, the exact same python scripts will run on both versions of Rhino!  Don't get too excited yet - will get more of the details in the following sections!
 
-## 1.3 Script Editor
+## 1.3 Running Scripts
 
 There are several ways to run scripts in Rhino, each has its own (dis)advantages. You could store scripts as external text files and have Rhino load them for you whenever you want to run them. You could also use Rhino's in-build script editor which means you can run the Scripts directly from the editor. The last option is to embed scripts in toolbar buttons, which makes it very hard to edit them, but much easier to distribute them.
 
