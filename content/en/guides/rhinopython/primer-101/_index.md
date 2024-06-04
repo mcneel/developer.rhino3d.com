@@ -77,7 +77,7 @@ Good luck!
 <div class="row">  
 <div class="col-md-12" markdown="1">  
 
-*A special thanks to David Rutten for the inspiration and invaluable work, pioneering the original [Rhinoscript101 Primer](/guides/rhinoscript/primer-101). Also many thanks to Bob McNeel and everyone at Robert McNeel & Associates for their generous support!*
+*A special thanks to David Rutten for the inspiration and invaluable work, pioneering the original [RhinoScript 101 Primer](/guides/rhinoscript/primer-101). Also many thanks to Bob McNeel and everyone at Robert McNeel & Associates for their generous support!*
 
 [{{< awesome "fas fa-download">}} ](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)  [Download the Rhino.Python 101 Primer as a single PDF ](http://download.rhino3d.com/IronPython/5.0/RhinoPython101/)
 
@@ -171,7 +171,7 @@ Good luck!
 &nbsp;&nbsp; 8.8.1 [Geometry vs. Topology](/guides/rhinopython/primer-101/8-geometry/#geometry-vs-topology)  
 &nbsp;&nbsp; 8.8.1 [Shape vs. Image](/guides/rhinopython/primer-101/8-geometry/#shape-vs-image)  
    8.9	[Surfaces](/guides/rhinopython/primer-101/8-geometry/#surfaces)  
-&nbsp;&nbsp; 8.9.1 [NURBS surfaces](/guides/rhinopython/primer-101/8-geometry/#nurbs-surfaces)  
+&nbsp;&nbsp; 8.9.1 [NURBS Surfaces](/guides/rhinopython/primer-101/8-geometry/#nurbs-surfaces)  
 &nbsp;&nbsp; 8.9.2 [Surface Curvature](/guides/rhinopython/primer-101/8-geometry/#surface-curvature)  
 &nbsp;&nbsp; 8.9.3 [Vector And Tensor Spaces](/guides/rhinopython/primer-101/8-geometry/#vector-and-tensor-spaces)   
 
