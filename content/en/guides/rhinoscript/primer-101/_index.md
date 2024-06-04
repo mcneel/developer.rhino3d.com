@@ -147,7 +147,7 @@ _Robert McNeel & Associates_
 &nbsp;&nbsp; 7.8.1 [Geometry vs. Topology](/guides/rhinoscript/primer-101/7-geometry/#781-geometry-vs-topology)  
 &nbsp;&nbsp; 7.8.1 [Shape vs. Image](/guides/rhinoscript/primer-101/7-geometry/#781-shape-vs-image)  
    7.9	[Surfaces](/guides/rhinoscript/primer-101/7-geometry/#79-surfaces)  
-&nbsp;&nbsp; 7.9.1 [NURBS surfaces](/guides/rhinoscript/primer-101/7-geometry/#791-nurbs-surfaces)  
+&nbsp;&nbsp; 7.9.1 [NURBS Surfaces](/guides/rhinoscript/primer-101/7-geometry/#791-nurbs-surfaces)  
 &nbsp;&nbsp; 7.9.2 [Surface Curvature](/guides/rhinoscript/primer-101/7-geometry/#792-surface-curvature)  
 &nbsp;&nbsp; 7.9.3 [Vector And Tensor Spaces](/guides/rhinoscript/primer-101/7-geometry/#793-vector-and-tensor-spaces)   
 
