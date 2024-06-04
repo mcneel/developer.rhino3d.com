@@ -3142,4 +3142,4 @@ We need to make 2 more nested loops which iterate over the 9 coordinates in this
 
 ## Last Step
 
-Congratulations, you have made it through the Python 101 Primer.
+Congratulations, you have made it through the [RhinoScript 101 Primer](/guides/rhinoscript/primer-101).
