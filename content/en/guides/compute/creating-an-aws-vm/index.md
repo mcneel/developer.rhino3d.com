@@ -76,7 +76,7 @@ To create a new virtual machine instance on AWS, follow these steps:
 
 1. With the instance row selected, click the **Connect** button in the top menu.
 
-1. On the **Connect to instance** page, select the **RDP client** tab. Select the **Download remote desktop file** and save the .rdp file somewhere on your local computer.
+1. On the **Connect to instance** page, select the **RDP client** tab.
 
 1. Next, select the **Get password** button.
 
