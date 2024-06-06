@@ -309,7 +309,7 @@ namespace CircleIntersection
 
 **Congratulations!**  You have the tools to use the [Rhino.Compute server](https://www.rhino3d.com/compute). *Now what?*
 
-1. Download the [Compute Samples repo from GitHub](https://github.com/mcneel/compute.rhino3d.samples).
+1. Download the [Compute Samples repo from GitHub](https://github.com/mcneel/rhino-developer-samples/tree/8/compute/cs).
 1. The libraries are still very new and changing rapidly. Give them a try or get involved. Ask any questions or share what you are working on the [Compute Discussion Forum](https://discourse.mcneel.com/c/serengeti/compute-rhino3d)
 
 <!-- 
