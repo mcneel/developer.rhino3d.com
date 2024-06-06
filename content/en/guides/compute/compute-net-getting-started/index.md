@@ -9,7 +9,7 @@ sdk = [ "Compute", "RhinoCommon" ]
 title = "Calling Compute with .NET"
 type = "guides"
 weight = 5
-override_last_modified = "2020-11-12T13:14:51Z"
+override_last_modified = "2024-06-06T13:14:51Z"
 
 [admin]
 picky_sisters = ""
@@ -32,12 +32,7 @@ To be able to make HTTP requests, it is necessary to have Rhino.Compute running 
 - [Running Rhino.Compute locally](https://developer.rhino3d.com/guides/compute/development/)
 - [Deployment to production servers](https://developer.rhino3d.com/guides/compute/deploy-to-iis/)
 
-{{< call-out "note" "Note" >}}
-For a an extensive getting started tutorial from Junichiro Horikawa go to the [video showing using C# to access Compute from within Unity.](https://youtu.be/zUbm83ynn0Q)
-{{< /call-out >}}
-
-
-## Prerrequisites
+## Prerequisites
 
 Before continuing, please ensure you need the right tools. This guide presumes you have an:
 
@@ -46,8 +41,9 @@ Before continuing, please ensure you need the right tools. This guide presumes y
     - [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/). The most comprehensive IDE for .NET developers on Windows.
     - [Visual Studio Code](https://code.visualstudio.com/). A standalone cross-platform IDE. It is free and open source.
 
-**note:** It is recommended that you install the *Typical* installation.
-
+{{< call-out "note" "Note" >}}
+It is recommended that you install the typical installation.
+{{< /call-out >}}
 
 ## Setting up a Compute Project in Visual Studio
 
@@ -57,69 +53,66 @@ Once you have your Rhino.Compute server up and running (either local or remote),
 - [NewtonSoft.JSON](https://www.nuget.org/packages/Newtonsoft.Json/) - The very popular JSON library. This package is called directly by RhinoCompute.cs as the information is defined in JSON format embedded in the body of a REST POST. As rhino3dm, it is also available as a NuGet Package.
 - [RhinoCompute.cs](https://github.com/mcneel/compute.rhino3d/blob/8.x/src/compute.geometry/RhinoCompute.cs) - This is a work in progress package which is meant to add classes available in RhinoCommon, but not available through Rhino3dm. RhinoCompute makes calls into RhinoCompute for these functions.
 
-Here are step by step instructions to setting up a basic project to use Compute:
+Here are step by step instructions to setting up a basic project to use Rhino.Compute:
 
-  
 ### File New
-  
-1. If you have not done so already, *launch Visual Studio* (for the purposes of this guide, we are using Visual Studio 2022 Community Edition and C#).
-1. On the left hand click on *Create a new project*...
-![file_new_project](/images/calling_net_01.png)
-1. A *Create a new Project* wizard should appear.  In the right column you will find a list with all the possible project templates you can choose from. To filter among them enter the word *console*.
-1. Select the C# version of the *Console App* template and click on *Next*.
-![Select Console App](/images/calling_net_02.png)
-1. For the purposes of this Guide, we will name our demo plugin *TestCompute*. Enter your desired name in the space reserved for it under the *Project name* field.
-![Name the project](/images/calling_net_03.png)
-1. Below the name, you can select a *Location* for this project on you device. This is optional depending on how you want to structure your project.
-![Select location](/images/calling_net_04.png)
-1. Click the *Next* button.  *Note*: You can place the solution and the project in the same directory to simplify the root path.
-![Next button](/images/calling_net_05.png)
-1. Select the target framework for your project according to your specifications. In this guide we will choose *.NET 8.0 (Long Term Support)*. 
-![Select framework](/images/calling_net_06.png)
-1. Once you click on *Create* a new solution called *TestCompute* should open...
-![New solution](/images/calling_net_07.png)
+
+1. If you have not done so already, **launch Visual Studio**. For the purposes of this guide, we are using Visual Studio 2022 Community Edition and C#.
+1. On the right-hand menu, click on **Create a new project**...
+{{< image url="/images/calling_net_01.png" alt="/images/calling_net_01.png" class="image_left" width="100%" >}}
+1. The New Project wizard should appear.  In the right column you will find a list with all the possible project templates you can choose from. To filter among them enter the word *console*.
+1. Select the C# version of the **Console App** template and click on **Next**.
+{{< image url="/images/calling_net_02.png" alt="/images/calling_net_02.png" class="image_left" width="100%" >}}
+1. For the purposes of this guide, we will name our demo plugin *TestCompute*. Enter your desired name in the space reserved for it under the **Project name** field.
+{{< image url="/images/calling_net_03.png" alt="/images/calling_net_03.png" class="image_left" width="100%" >}}
+1. Below the name, you can select a **Location** for this project on you device. This is optional depending on how you want to structure your project.
+{{< image url="/images/calling_net_04.png" alt="/images/calling_net_04.png" class="image_left" width="100%" >}}
+1. Click the **Next** button. **Note**: You can place the solution and the project in the same directory to simplify the root path.
+{{< image url="/images/calling_net_05.png" alt="/images/calling_net_05.png" class="image_left" width="100%" >}}
+1. Select the target framework for your project according to your specifications. In this guide we will choose **.NET 8.0 (Long Term Support)**.
+{{< image url="/images/calling_net_06.png" alt="/images/calling_net_06.png" class="image_left" width="100%" >}}
+1. Once you click on **Create** a new solution called *TestCompute* should open...
+{{< image url="/images/calling_net_07.png" alt="/images/calling_net_07.png" class="image_left" width="100%" >}}
 
 ### Steps to install the NuGet packages
   
-1. *Right-click* your project name in *Solution Explorer* and select *Manage NuGet Packages ...*.
-![nuget](/images/calling_net_nuget_01.png)
-1. On the left side of the dialog click on *Browse*.
-![browse](/images/calling_net_nuget_02.png)
-1. In the search box enter *rhino3dm* and wait fo the results to appear. 
-1. Click on the first one. You will find other packages starting by "Rhino3dmIO*, but all of them have been discontinued.
-![select_rhino3dm](/images/calling_net_nuget_03.png)
-1. Click on the *Install* button.
-![install](/images/calling_net_nuget_04.png)
-1. Continue by typing in the search box type "Newtonsoft.JSON" and click on a *NewtonSoft.JSON* option and click on the *Install* button.
-1. Close the *Manage NuGet Packages* dialog.  The Nuget packages are installed and ready to use.
+1. Right-click your project name in Solution Explorer and select **Manage NuGet Packages ...**.
+{{< image url="/images/calling_net_nuget_01.png" alt="/images/calling_net_nuget_01.png" class="image_left" width="100%" >}}
+1. On the left side of the dialog click on **Browse**.
+{{< image url="/images/calling_net_nuget_02.png" alt="/images/calling_net_nuget_02.png" class="image_left" width="100%" >}}
+1. In the search box enter **rhino3dm** and wait fo the results to appear.
+1. Click on the first one. You will find other packages starting by *Rhino3dmIO*, but all of them have been discontinued.
+{{< image url="/images/calling_net_nuget_03.png" alt="/images/calling_net_nuget_03.png" class="image_left" width="100%" >}}
+1. Click on the **Install** button.
+{{< image url="/images/calling_net_nuget_04.png" alt="/images/calling_net_nuget_04.png" class="image_left" width="100%" >}}
+1. Continue by searching for **Newtonsoft.JSON**. Click on a *NewtonSoft.JSON* option and click on the **Install** button.
+1. Close the Manage NuGet Packages dialog.  The Nuget packages are installed and ready to use.
 
 Changes that were made:
 
-- The *Rhino3dm and NewtonSoft.JSON NuGet packages* are installed in your project.
-- The project now references the *Rhino3dm* and *Newtonsoft.JSON* assembly.
-
+- The *Rhino3dm* and *NewtonSoft.JSON* NuGet packages were installed in your project.
+- Your project now references the *Rhino3dm* and *Newtonsoft.JSON* assemblies.
 
 ### Include RhinoCompute.cs in the project
 
-RhinoCompute.cs is a package which adds the methods to call into the compute server.  It is organized similar to RhinoCommon calls.
+RhinoCompute.cs is a package which adds the methods to call into the Rhino.Compute server.  It is organized similarly to RhinoCommon calls.
 
-1. Download the [RhinoCompute.cs](https://github.com/mcneel/compute.rhino3d/blob/8.x/src/compute.geometry/RhinoCompute.cs) source file from compute.rhino3d.com. Click on the *Download raw file* icon and store it wherever you prefer on your device.
-![rhino-compute-file](/images/calling_net_compute_01.png)
-2. Using the *Project* pulldown > *Add Existing Item...*
-![add-existing-item](/images/calling_net_compute_02.png)
+1. Download the [RhinoCompute.cs](https://github.com/mcneel/compute.rhino3d/blob/8.x/src/compute.geometry/RhinoCompute.cs) source file from the [compute.rhino3d github repo](https://github.com/mcneel/compute.rhino3d). Click on the **Download raw file** icon and store it wherever you prefer on your device.
+{{< image url="/images/calling_net_compute_01.png" alt="/images/calling_net_compute_01.png" class="image_left" width="100%" >}}
+2. In Visual Studio, using the **Project** pulldown, select **Add Existing Item...**
+{{< image url="/images/calling_net_compute_02.png" alt="/images/calling_net_compute_02.png" class="image_left" width="100%" >}}
 3. Select the file you have just downloaded and add it to the project.
 
 Changes that were made:
 
-- The [RhinoCompute.cs](https://github.com/mcneel/compute.rhino3d/blob/8.x/src/compute.geometry/RhinoCompute.cs) source file are now installed and its functions are available in your project.
+- The [RhinoCompute.cs](https://github.com/mcneel/compute.rhino3d/blob/8.x/src/compute.geometry/RhinoCompute.cs) source file is now installed and its functions are available in your project.
 
+## The first use of Rhino.Compute
 
-## The first use of Compute
-
-As a place to start, a simple console app shows the standard workflow using Compute. This is the simplest example of using *Rhino3dm* locally to read, write and create Rhino geometry.  Then use compute to handle a function that does not exist in *Rhino3dm*.
+As a place to start, let's create a simple console app that shows the standard workflow for calling methods using Rhino.Compute. The guide below shows a simple example of using *Rhino3dm* locally to read, write and create Rhino geometry.  Then we will use Rhino.Compute to handle a function that does not exist in *Rhino3dm*.
 
 {{< call-out "note" "Note" >}}
-To simplify these examples, Rhino.Compute is running locally using the default web address: http://localhost:6500, so an API Key is not required.
+To simplify this example, Rhino.Compute is running locally using the default web address: http://localhost:6500, No API Key is required in this instance. If you are sending a request to a remote VM which is configured to require an API Key, then you will need to provide that information in the HTTP request header.
 {{< /call-out >}}
 
 {{< div class="line-numbers" >}}
@@ -140,7 +133,7 @@ namespace TestCompute
             var sphere = new Rhino.Geometry.Sphere(Rhino.Geometry.Point3d.Origin, 12);
             var sphereAsBrep = sphere.ToBrep();
 
-            // the following function calls compute.rhino3d.com to get access to something not
+            // the following function calls rhino.compute to get access to something not
             // available in Rhino3dm. In this case send a Brep to Compute and get a Mesh back.
             var meshes = MeshCompute.CreateFromBrep(sphereAsBrep);
 
@@ -159,7 +152,7 @@ namespace TestCompute
 ```
 {{< /div >}}
 
-This example above first creates a sphere using *Rhino3dm* locally. Then request Compute to mesh that BREP to Compute, the BREP sphere is meshed. Compute then returns the mesh.  Finally using the local *Rhino3dm* package to walk through the mesh, the vertices are counted.
+The example above first creates a sphere using *Rhino3dm*. Then, we make a call to Rhino.Compute to create a mesh from that Brep object. Rhino.Compute then returns the mesh.  Finally, we use *Rhino3dm* to walk through the mesh and count the number of vertices.
 
 <table class="multiline">
 <tr>
@@ -176,10 +169,9 @@ This example above first creates a sphere using *Rhino3dm* locally. Then request
 </tr>
 </table>
 
-
 ## Seeing the results of Compute
 
-Many times the intersection of objects may need to be calculated. Intersections are not in OpenNurbs, but are part of Compute. Here is a tutorial on creating two circles, finding their intersection, then converting the circles to an SVG image to display.
+Now let's look at another example. Many times the intersection of objects may need to be calculated. Intersections are not in OpenNurbs, but they are part of Rhino.Compute. Here is a tutorial to create two circles, find their intersection, then convert the circles to an SVG image to display.
 
 ```C#
 using System.Collections.Generic;
@@ -216,7 +208,7 @@ namespace CircleIntersection
 
 
         /// <summary>
-        /// Very basic SVG file creation routine to make an SVG the displays two circles and a mesh.
+        /// Very basic SVG file creation routine to make an SVG that displays two circles and a mesh.
         /// Kept simple just for this sample; there are much better SVG toolkits available that could
         /// be used for general purpose routines.
         /// </summary>
@@ -315,9 +307,8 @@ namespace CircleIntersection
 
 ## Next Steps
 
-*Congratulations!*  You have the tools to use [Rhino Compute server](https://www.rhino3d.com/compute).  *Now what?*
+**Congratulations!**  You have the tools to use the [Rhino.Compute server](https://www.rhino3d.com/compute). *Now what?*
 
-1. See a list of the [2400+ API calls](https://compute.rhino3d.com/sdk) available for compute.rhino3d.com.
 1. Download the [Compute Samples repo from GitHub](https://github.com/mcneel/compute.rhino3d.samples).
 1. The libraries are still very new and changing rapidly. Give them a try or get involved. Ask any questions or share what you are working on the [Compute Discussion Forum](https://discourse.mcneel.com/c/serengeti/compute-rhino3d)
 
