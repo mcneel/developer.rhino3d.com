@@ -162,10 +162,6 @@ If you cannot see the .vscode folder, ensure you enable hidden folders with _(‚å
 1. *HelloRhinoCommonCommand.cs* is where the action is.  Let's take a look at this file...
 1. *HelloRhinoCommonPlugin.cs* is where this template plugin derives from *Rhino.Plugins.Plugin* and returns a static Instance of itself.  
 
-### Starting with Version Control
-1. Git Init
-1. *.gitignore* is a file added by the git version control system. Feel free to ignore this for now.
-
 ### Make Changes
 
 1. Open *HelloRhinoCommonCommand.cs* in Visual Studio Code's Source Editor (if it isn't already).
