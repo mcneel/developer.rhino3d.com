@@ -34,7 +34,7 @@ It is presumed you already have the necessary tools installed and are ready to g
 
 We will use Visual Studio Code to create a new, basic, command plugin called HelloRhinoCommon.
 
-We are presuming you have never used Visual Studio Code on Mac before, so we'll go through this one step at a time.
+We are presuming you are new to Visual Studio Code, so we'll go through this one step at a time.
 
 ### Download the required template
 1. Launch Visual Studio Code
@@ -42,100 +42,89 @@ We are presuming you have never used Visual Studio Code on Mac before, so we'll 
 1. Inside Terminal Run
 
 ``` pwsh
-> dotnet new install Rhino.Templates
+dotnet new install Rhino.Templates
 ```
 
 ### Starting the Project
 
+1. Create a folder on your mac where you would like your project to live. Call the folder HelloRhinoCommon
 1. If you have not done so already, *launch Visual Studio Code*.
-2. Open Terminal via *Terminal* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search Terminal
-
+1. Now we can open our new folder, navigate to *File* > *Open Folder* and choose the folder we just created
+1. Open Terminal via *Terminal* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search Terminal
+1. Enter the following command into the terminal
 ``` pwsh
-> `dotnet new rhino -rl "/Applications/Rhino 8.app/Contents/MacOS/Rhinoceros" --version 8 -n HelloRhinoCommon`
+dotnet new rhino --version 8
 ```
-
-| Switch | Description |
-|:--------|:-------:|--------:|
-| -rl | specifies where Rhino is installed |
-| --version | specifies the Rhino Version |
-| -n | specifies the project Name |
-
-
-6. Navigate to *File* > *Open Folder*...
-7. Open the folder of your newly created project
-8. Expand the Solution Explorer, this is the best way to interact with C# projects on Mac in Visual Studio Code
+6. In our Folder explorer, we should see the project appear as Visual Studio Code discovers the files
+1. Expand the Solution Explorer, this is the best way to interact with C# projects on Mac in Visual Studio Code
 
     ![New Project](/images/your-first-plugin-mac-01.png)
 
 
 ### Setting up Debug
 
-{{< call-out hint ".vscode" >}}
-.vscode Debug is not included in the Rhino Template at this time, but will be in the future
-{{< /call-out >}}
-
-1. We will need to create a folder called .vscode in our solution directory if one does not already exist 
+1. We will need to create a folder called .vscode in our solution directory
 {{< call-out hint "Required Plugin" >}}
-If you cannot see .vscode, ensure you enable hidden folders with _(⌘ ⇧ .)_
+If you cannot see the .vscode folder, ensure you enable hidden folders with _(⌘ ⇧ .)_
 {{< /call-out >}}
 1. We need to create 3 new files in the .vscode new directory
 1. settings.json
-``` json
-{
-        // This file will specify the solution we use to build
-        "dotnet.defaultSolution": "HelloRhinoCommon.sln"
-}
-```
+    ``` json
+    {
+            // This file will specify the solution we use to build
+            "dotnet.defaultSolution": "HelloRhinoCommon.sln"
+    }
+    ```
 4. tasks.json
-``` json
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "build-plugin-netcore",
-            // This will ensure the project is built before we try to debug it
-            "command": "dotnet build ${workspaceFolder}/*.csproj -f net7.0",
-            "type": "shell",
-            "args": [],
-            "problemMatcher": [
-                "$msCompile"
-            ],
-            "presentation": {
-                "reveal": "always"
-            },
-            "group": "build"
-        }
-    ]
-}
-```
+    ``` json
+    {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "build-plugin-netcore",
+                // This will ensure the project is built before we try to debug it
+                "command": "dotnet build ${workspaceFolder}/*.csproj -f net7.0",
+                "type": "shell",
+                "args": [],
+                "problemMatcher": [
+                    "$msCompile"
+                ],
+                "presentation": {
+                    "reveal": "always"
+                },
+                "group": "build"
+            }
+        ]
+    }
+    ```
 5. launch.json
-``` json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Run Rhino 8 (Mac)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build-plugin-netcore",
-            // Launches Rhino for us
-            "program": "/Applications/Rhino 8.app/Contents/MacOS/Rhinoceros",
-            // Add in any args here such as /nosplash or even /runscript
-            // See : https://developer.rhino3d.com/guides/cpp/running-rhino-from-command-line/
-            "args": [],
-            "cwd": "${workspaceFolder}",
-            "stopAtEntry": false,
-            "console": "internalConsole",
-            // RHINO_PACKAGE_DIRS is required for Multi-Targeted plugins
-            // This is what enables Rhino to register our Plug-in
-            "env": {
-                "RHINO_PACKAGE_DIRS": "${workspaceFolder}/bin/Debug/"
-            } 
-        },
-    ],
-    "compounds": []
-}
-```
+    ``` json
+    {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Run Rhino 8 (Mac)",
+                "type": "coreclr",
+                "request": "launch",
+                "preLaunchTask": "build-plugin-netcore",
+                // Launches Rhino for us
+                "program": "/Applications/Rhino 8.app/Contents/MacOS/Rhinoceros",
+                // Add in any args here such as /nosplash or even /runscript
+                // See : https://developer.rhino3d.com/guides/cpp/running-rhino-from-command-line/
+                "args": [],
+                "cwd": "${workspaceFolder}",
+                "stopAtEntry": false,
+                "console": "internalConsole",
+                // RHINO_PACKAGE_DIRS is required for Multi-Targeted plugins
+                // This is what enables Rhino to register our Plug-in
+                "env": {
+                    "RHINO_PACKAGE_DIRS": "${workspaceFolder}/bin/Debug/"
+                } 
+            },
+        ],
+        "compounds": []
+    }
+    ```
 6. The Folder Explorer should look like below (Note that we cannot see .vscode in the Solution Explorer)
 
     ![New Project](/images/your-first-plugin-mac-02.png)
@@ -143,7 +132,7 @@ If you cannot see .vscode, ensure you enable hidden folders with _(⌘ ⇧ .)_
 
 
 ### Boilerplate Build
-1. Before we do anything, let's *Build* and *Run* HelloRhinoCommon to make sure everything is working as expected. We'll just build the boilerplate Plugin template. Click the *Run & Debug* button on the left hand side of Visual Studio Code and then the green play button in the newly opened panel.
+1. Before we do anything, let's *Run and Debug* HelloRhinoCommon to make sure everything is working as expected. We'll just build the boilerplate Plugin template. Click the *Run and Debug* button on the left hand side of Visual Studio Code and then the green play button in the newly opened panel.
 
     ![New Project](/images/your-first-plugin-mac-03.png)
 
@@ -170,8 +159,8 @@ If you cannot see .vscode, ensure you enable hidden folders with _(⌘ ⇧ .)_
 1. *Dependencies*: Just as with most projects, you will be referencing other libraries. The *RhinoCommon Plugin* template added the necessary references to create a basic RhinoCommon plugin.
 1. *EmbeddedResources*: This is where you would place any image assets you want to ship with your plugin. The *RhinoCommon Plugin* template added an icon file with a default boilerplate icon.
 1. *Properties* contains the *AssemblyInfo.cs* source file.  This file contains the meta-data (author, version, etc), including the very-important `Guid`, which identifies the plugin.
-1. *HelloRhinoCommonPlugin.cs* is where this template plugin derives from *Rhino.Plugins.Plugin* and returns a static Instance of itself.  
 1. *HelloRhinoCommonCommand.cs* is where the action is.  Let's take a look at this file...
+1. *HelloRhinoCommonPlugin.cs* is where this template plugin derives from *Rhino.Plugins.Plugin* and returns a static Instance of itself.  
 
 ### Starting with Version Control
 1. Git Init
@@ -265,7 +254,7 @@ Our `pt1` is a `Rhino.Geometry.Point3d` this class has an `X`, `Y`, `Z` property
 
 ## Next Steps
 
-The above guide will also work perfectly well on Windows, If you need a more complex cross-platform plugin, check out the [Your First Plugin (Cross Platform)](/guides/rhinocommon/your-first-plugin-crossplatform) guide.
+The above guide will also work perfectly well on Windows, if you need a more complex cross-platform plugin, check out the [Your First Plugin (Cross Platform)](/guides/rhinocommon/your-first-plugin-crossplatform) guide.
 
 ## Related topics
 
