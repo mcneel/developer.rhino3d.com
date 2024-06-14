@@ -1,6 +1,6 @@
 +++
 aliases = ["/5/guides/rhinocommon/using-nuget/", "/6/guides/rhinocommon/using-nuget/", "/7/guides/rhinocommon/using-nuget/", "/wip/guides/rhinocommon/using-nuget/"]
-authors = [ "luis", "will" ]
+authors = [ "luis", "will", "callum" ]
 categories = [ "Advanced" ]
 description = "This guide describes how developers can use the NuGet packages available for RhinoCommon and Grasshopper."
 keywords = [ "nuget" ]
@@ -38,9 +38,10 @@ In [previous](/guides/rhinocommon/your-first-plugin-windows/) [guides](/guides/r
 There are several potential advantages to using NuGet packages for RhinoCommon SDKs:
 
 * It's great for projects with multiple developers (or developers with multiple computers). No more references to `Grasshopper.dll` that include `C:\Users\<username>\AppData\...`.
-* NuGet runs on Windows and Mac and is baked into Visual Studio (for both Window and Mac).
+* NuGet runs on Windows and Mac and is baked into Visual Studio (for Windows).
 * Are you using Continuous Integration (CI)?  Your build servers can automatically download the correct version of the SDK before compiling and publishing your shiny new release.
 * You're probably already using it to install packages like [Json.NET](https://www.nuget.org/packages/newtonsoft.json).
+* You can target a lower version of RhinoCommon than you have installed to ensure full compatibility across all Rhino versions
 
 ### Potential Pitfalls
 
@@ -53,7 +54,8 @@ NuGet makes it easy to compile plug-ins against versions of Rhino other than tho
 
 <div class="bs-callout">
 
-<strong>Note</strong>: You may wish to read Microsoft's guide to <a href="https://docs.microsoft.com/en-gb/nuget/quickstart/use-a-package">installing NuGet packages</a> in addition to this one.
+<strong>Note</strong>: You may wish to read Microsoft's guide to <a href="https://docs.microsoft.com/en-gb/nuget/quickstart/use-a-package">installing NuGet packages in Visual Studio</a> in addition to this one.
+And how to <a href="https://code.visualstudio.com/docs/csharp/package-management">install a Nuget Package in Visual Studio Code.</a>
 
 </div>
 
@@ -96,26 +98,42 @@ To switch to NuGet packages, follow these steps:
 
     ![Copy Local](/images/using-nuget-03.png)
 
-4. _(Optional)_ If you're using version control, don't forget to commit the new _packages.config_ file!
 
 ### Step-by-Step (Mac)
+Further Reading [NuGet in Visual Studio Code](https://code.visualstudio.com/docs/csharp/package-management)
 
-1. In Visual Studio for Mac, find the *Solution Explorer* and double-click on the *Packages* section of your project.  Alternatively, the same can be done through the Visual Studio *Project* menu, and choosing *Add NuGet Packages...*
+1. In Visual Studio Code, open the Command Palette _(⌘ ⇧ P)_ and search nuget, choose *Add NuGet Package*. Alternatively, the same can be done through the Solution Explorer  by right clicking the Project you wish to add the package to, and choosing *Add NuGet Package...*
+
+    {{< call-out hint "Required Plugin" >}}
+[C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit))
+    {{< /call-out >}}
 
     ![Manage NuGet Packages - Mac](/images/using-nuget-04.png)
 
-2. The *Add Packages* dialog which appears. In the search box, type in *RhinoCommon*. You should see an entry for RhinoCommon and one for Grasshopper. If you are writing a Rhino Plugin or Grasshopper Add-on for Rhino WIP, ensure you check *Show pre-release packages*.
 
-    If your project is a **RhinoCommon Plug-in**, select the [RhinoCommon] package. For Rhino WIP choose the *Latest version* and click *Add Package*. NuGet will install[^2] *RhinoCommon.dll*, *Rhino.UI* and *Eto.dll*.
+2. The command palette will appear at the top of Visual Studio Code. In the search box, type in *RhinoCommon* and press enter. You should see an entry for RhinoCommon and one for Grasshopper.
 
-    If your project is a **Grasshopper Add-on**, select the [Grasshopper] package. For Grasshopper Add-ons in Rhino WIP choose the *Latest version* and click *Add Package*. NuGet will install[^2] *Grasshopper.dll* and *GH_IO.dll* as well as the corresponding version of the RhinoCommon assemblies.
+    ![Manage NuGet Packages - Mac](/images/using-nuget-05.png)
 
-    ![Choose NuGet Packages - Mac](/images/using-nuget-05.png)
+3. Now you can choose the version of the NuGet package you wish to target
 
-3. *(Optional)* The references created by these packages have *Local Copy* set to `true`.  Normally, it is a best practice to make sure that the references are not copied to the output directory, since they are included with Rhino. You can do this by selecting any of the following references if they exist in your project - *RhinoCommon*, *Eto*, *Rhino.UI*, *Grasshopper*, *GH_IO* - and, in the *Properties* window, set *Local Copy* to `false` (or unchecked).  The reason this step is *optional* is that we've included some MSBuild witchcraft that will ensure that *Local Copy* is set to `false` when compiling your project, regardless of what it says in the *Properties* window.
+    ![Choose NuGet Packages - Mac](/images/using-nuget-06.png)
 
-    <p style="text-align:center;"><img src="/images/using-nuget-06.png" alt="Copy Local - Mac" style="width: 450px;"/></p>
-4. _(Optional)_ If you're using version control, don't forget to commit the new _packages.config_ file!
+{{< call-out hint "Pre-release Versions" >}}
+If you are writing a Rhino Plugin or Grasshopper Add-on for Rhino WIP, you will need to install a pre-release NuGet Package.
+At the time of writing time the C# Dev Kit does not include a way to show pre-release versions.
+You must use _dotnet add package RhinoCommon_ in the terminal, _([The RhinoCommon NuGet Page](https://www.nuget.org/packages/rhinocommon) has a handy copy paste to make this easier)_.
+Or you can use the [NuGet Gallery Plugin](https://marketplace.visualstudio.com/items?itemName=patcx.vscode-nuget-gallery) which offers this functionality.
+{{< /call-out >}}
+
+If your project is a **RhinoCommon Plug-in**, select the [RhinoCommon] package. NuGet will install *RhinoCommon.dll*, *Rhino.UI* and *Eto.dll* once you have selected a version.
+
+If your project is a **Grasshopper Add-on**, select the [Grasshopper] package. NuGet will install[^1] *Grasshopper.dll* and *GH_IO.dll* as well as the corresponding version of the RhinoCommon assemblies once you have selected a version.
+
+4. Confirm your NuGet Packages installed correctly
+Check your Project in the Solution Explorer, you should see a new entry under dependencies > Packages
+    
+    ![Choose NuGet Packages - Mac](/images/using-nuget-07.png)
 
 ## Related topics
 
