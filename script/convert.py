@@ -90,6 +90,7 @@ authors_mapping = {
     "dan_rigdon_bel": "dan",
     "david_leon": "david.leon",
     "david_rutten": "david",
+    "callum_sykes": "callum",
     "giulio_piacentino": "giulio",
     "jess_maertterer": "jess-maertterer",
     "john_croudy": "john.croudy",
