@@ -8,7 +8,6 @@ sdk = [ "Yak" ]
 title = "Yak Command Line Tool Reference"
 type = "guides"
 weight = 1
-override_last_modified = "2021-10-26T12:47:16Z"
 
 [admin]
 TODO = ""
