@@ -39,22 +39,20 @@ This guide presumes you have an:
 
 ## Install Visual Studio Code
 
+{{< call-out info "What happened to Visual Studio for Mac?" >}}
+Visual Studio for Mac has been [retired by Microsoft](https://learn.microsoft.com/en-us/visualstudio/mac/what-happened-to-vs-for-mac?view=vsmac-2022).
+{{< /call-out >}}
+
 #### Step-by-Step
 
 1. *[Download Visual Studio Code](https://code.visualstudio.com/)*.
 1. Once you have downloaded the *VSCode-darwin-universal.zip*, double-click it to unzip.
-1. Drag Visual Studio Code to the Applications directory.
-1. Open Visual Studio Code, you will need to click "Open" the first time you open it
-1. You will need to install a number of packages before starting. These can be found by clicking "Extensions" on the left side bar
-   - **Required**
-   - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
-   - [C# Dev kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
+1. Drag Visual Studio Code to the */Applications* folder.
+1. Open Visual Studio Code, you will need to click "Open" the first time you open it.
+1. You will need to install some packages before starting, luckily all the required pacakges are bundled together. These can be found by clicking "Extensions" on the left side bar:
    - [Intellicode for C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscodeintellicode-csharp)
-   - [.NET Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-pack)
-   - **Recommended**
-   - [.NET Install Tool](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime&ssr=false#overview)
-   - [NuGet Gallery](https://marketplace.visualstudio.com/items?itemName=patcx.vscode-nuget-gallery)
-1. Restart Visual Studio Code
+   - [NuGet Gallery Plugin](https://marketplace.visualstudio.com/items?itemName=patcx.vscode-nuget-gallery) (*Recommended*)
+1. Restart Visual Studio Code.
 1. Visual Studio Code is installed in your */Applications* folder. You will want to *drag its icon to your Dock* for future use or - if it's running - right/option-click the icon in the Dock and select *Keep in Dock*.
 
 ## Next Steps
@@ -62,6 +60,3 @@ This guide presumes you have an:
 *Congratulations!*  You have all the tools necessary to build a RhinoCommon plugin for Rhino for Mac.  *Now what?*
 
 Check out the [Your First Plugin (Mac)](/guides/rhinocommon/your-first-plugin-mac) guide for instructions building - your guessed it - your first plugin.
-
-## Visual Studio for Mac
-Visual Studio for Mac has been retired by Microsoft [See Here](https://learn.microsoft.com/en-us/visualstudio/mac/what-happened-to-vs-for-mac?view=vsmac-2022)
