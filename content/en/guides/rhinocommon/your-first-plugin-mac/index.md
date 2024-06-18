@@ -49,13 +49,13 @@ We are presuming you are new to Visual Studio Code, so we'll go through this one
 
 1. Create a folder on your mac where you would like your project to live. Name the folder `HelloRhinoCommon`.
 1. If you have not done so already, *launch Visual Studio Code*.
-1. Now we can open our new folder, navigate to *File* > *Open Folder* and choose the folder we just created
-1. Open Terminal via *Terminal* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search Terminal
-1. Enter the following command into the terminal
+1. Now we can open our new folder, navigate to *File* > *Open Folder* and choose the folder we just created.
+1. Open Terminal via *Terminal* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search for "Terminal".
+1. Enter the following command into the Terminal:
     ``` pwsh
     dotnet new rhino --version 8
     ```
-6. In our Folder explorer, we should see the project appear as Visual Studio Code discovers the files
+6. In our Folder explorer, we should see the project appear as Visual Studio Code discovers the files.
 1. Expand the Solution Explorer, this is the best way to interact with C# projects on Mac in Visual Studio Code.
 
 ### Setting up Debug
@@ -154,7 +154,7 @@ If you cannot see the *.vscode* folder, toggle hidden folders in Finder: click o
 1. *Dependencies*: Just as with most projects, you will be referencing other libraries. The *RhinoCommon Plugin* template added the necessary references to create a basic RhinoCommon plugin.
 1. *EmbeddedResources*: This is where you would place any image assets you want to ship with your plugin. The *RhinoCommon Plugin* template added an icon file with a default boilerplate icon.
 1. *Properties* contains the *AssemblyInfo.cs* source file.  This file contains the meta-data (author, version, etc), including the very-important `Guid`, which identifies the plugin.
-1. *HelloRhinoCommonCommand.cs* is where the action is.  Let's take a look at this file...
+1. *HelloRhinoCommonCommand.cs* is where the action is.  Let's take a look at this file in the next section below...
 1. *HelloRhinoCommonPlugin.cs* is where this template plugin derives from *Rhino.Plugins.Plugin* and returns a static Instance of itself.  
 
 ### Make Changes
