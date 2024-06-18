@@ -45,7 +45,7 @@ Let's begin by creating a new solution to contain both platforms' projects.  For
 
 1. If you have not done so already, *launch Visual Studio for Mac*.
 1. Navigate to *File* > *New* > *Solution*...
-![File New Solution](/images/your-first-plugin-mac-01.png)
+![File New Solution](/images/your-first-plugin-crossplatform-00.png)
 1. A *New Project* wizard should appear.  In the left column, find the *Other* > *Miscellaneous* section.  Under Generic, select the *Blank Solution* template...
 ![New Solution](/images/your-first-plugin-crossplatform-01.png)
 1. Click the *Next* button.
