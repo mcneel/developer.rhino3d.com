@@ -37,45 +37,42 @@ We will use Visual Studio Code to create a new, basic, command plugin called Hel
 We are presuming you are new to Visual Studio Code, so we'll go through this one step at a time.
 
 ### Download the required template
-1. Launch Visual Studio Code
-1. Open Terminal via *Terminal* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search Terminal
-1. Inside Terminal Run
 
-``` pwsh
-dotnet new install Rhino.Templates
-```
+1. Launch Visual Studio Code.
+1. Open *Visual Studio Code's Terminal* via *Terminal (menu entry)* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search for "Terminal".
+1. Inside Terminal, run:
+    ``` pwsh
+    dotnet new install Rhino.Templates
+    ```
 
 ### Starting the Project
 
-1. Create a folder on your mac where you would like your project to live. Call the folder HelloRhinoCommon
+1. Create a folder on your mac where you would like your project to live. Name the folder `HelloRhinoCommon`.
 1. If you have not done so already, *launch Visual Studio Code*.
 1. Now we can open our new folder, navigate to *File* > *Open Folder* and choose the folder we just created
 1. Open Terminal via *Terminal* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search Terminal
 1. Enter the following command into the terminal
-``` pwsh
-dotnet new rhino --version 8
-```
+    ``` pwsh
+    dotnet new rhino --version 8
+    ```
 6. In our Folder explorer, we should see the project appear as Visual Studio Code discovers the files
-1. Expand the Solution Explorer, this is the best way to interact with C# projects on Mac in Visual Studio Code
-
-    ![New Project](/images/your-first-plugin-mac-01.png)
-
+1. Expand the Solution Explorer, this is the best way to interact with C# projects on Mac in Visual Studio Code.
 
 ### Setting up Debug
 
-1. We will need to create a folder called .vscode in our solution directory
-{{< call-out hint "Required Plugin" >}}
-If you cannot see the .vscode folder, ensure you enable hidden folders with _(⌘ ⇧ .)_
+1. Create a folder called *.vscode* in the solution directory.
+{{< call-out hint "Can't see the folder?" >}}
+If you cannot see the *.vscode* folder, toggle hidden folders in Finder: click on your Desktop and press _⌘ ⇧ ._  (`command` + `shift` + `period`)
 {{< /call-out >}}
-1. We need to create 3 new files in the .vscode new directory
-1. settings.json
+1. We will need to create three new files in the *.vscode* new folder: *settings.json*, *tasks.json*, and *launch.json*...
+1. Create *settings.json* with the following contents:
     ``` json
     {
             // This file will specify the solution we use to build
             "dotnet.defaultSolution": "HelloRhinoCommon.sln"
     }
     ```
-4. tasks.json
+4. Create *tasks.json* with the following contents:
     ``` json
     {
         "version": "2.0.0",
@@ -97,7 +94,7 @@ If you cannot see the .vscode folder, ensure you enable hidden folders with _(�
         ]
     }
     ```
-5. launch.json
+5. Create *launch.json* with the following contents:
     ``` json
     {
         "version": "0.2.0",
@@ -125,10 +122,9 @@ If you cannot see the .vscode folder, ensure you enable hidden folders with _(�
         "compounds": []
     }
     ```
-6. The Folder Explorer should look like below (Note that we cannot see .vscode in the Solution Explorer)
+6. The Folder Explorer should look like below (Note that we cannot see *.vscode* in the Solution Explorer)
 
     ![New Project](/images/your-first-plugin-mac-02.png)
-
 
 
 ### Boilerplate Build
@@ -136,17 +132,16 @@ If you cannot see the .vscode folder, ensure you enable hidden folders with _(�
 
     ![New Project](/images/your-first-plugin-mac-03.png)
 
-1. *Rhinoceros* launches. Click *New Model*
-1. Type Hello into the Rhino Commandline.  Notice that the command autocompletes
+1. *Rhinoceros* launches. Click *New Model*.
+1. Type `Hello` into the Rhino Commandline.  Notice that the command autocompletes.
 
 ![Command Autocompletes](/images/your-first-plugin-mac-04.png)
 
-1. The *HelloRhinoCommonCommand* command prints a message
+1. The *HelloRhinoCommonCommand* command prints a message:
 
 ![Command Prompt](/images/your-first-plugin-mac-05.png)
 
-1. *Quit* Rhinoceros. This stops the session. Go back to *Visual Studio Code*. Let's take a look at the Plugin Anatomy
-
+1. *Quit* Rhinoceros. This stops the session. Go back to *Visual Studio Code*. Let's take a look at the Plugin Anatomy.
 
 ### Plugin Anatomy
 
@@ -154,8 +149,8 @@ If you cannot see the .vscode folder, ensure you enable hidden folders with _(�
 
 ![Solution Anatomy](/images/your-first-plugin-mac-06.png)
 
-1. The *HelloRhinoCommon* solution (*.sln*) contians all of our projects. This was created for us by the dotnet command we ran earlier.
-1. The *HelloRhinoCommon* project (*.csproj*) has the same name as its parent solution. This is the project that was created for us by dotnet command we ran earlier.
+1. The *HelloRhinoCommon* solution (*.sln*) contians all of our projects. This was created for us by the `dotnet` command we ran earlier.
+1. The *HelloRhinoCommon* project (*.csproj*) has the same name as its parent solution. This is the project that was created for us by `dotnet` command we ran earlier.
 1. *Dependencies*: Just as with most projects, you will be referencing other libraries. The *RhinoCommon Plugin* template added the necessary references to create a basic RhinoCommon plugin.
 1. *EmbeddedResources*: This is where you would place any image assets you want to ship with your plugin. The *RhinoCommon Plugin* template added an icon file with a default boilerplate icon.
 1. *Properties* contains the *AssemblyInfo.cs* source file.  This file contains the meta-data (author, version, etc), including the very-important `Guid`, which identifies the plugin.
