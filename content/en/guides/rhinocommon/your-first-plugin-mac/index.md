@@ -1,8 +1,8 @@
 +++
 aliases = ["/5/guides/rhinocommon/your-first-plugin-mac/", "/6/guides/rhinocommon/your-first-plugin-mac/", "/7/guides/rhinocommon/your-first-plugin-mac/", "/wip/guides/rhinocommon/your-first-plugin-mac/"]
-authors = [ "dan" ]
+authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
-description = "This guide walks you through your first plugin for Rhino for Mac using RhinoCommon and Visual Studio for Mac."
+description = "This guide walks you through your first plugin for Rhino for Mac using RhinoCommon and Visual Studio Code."
 keywords = [ "first", "RhinoCommon", "Plugin" ]
 languages = [ "C#" ]
 sdk = [ "RhinoCommon" ]
@@ -32,132 +32,223 @@ It is presumed you already have the necessary tools installed and are ready to g
 
 ## HelloRhinoCommon
 
-We will use the Rhino Visual Studio Extension to create a new, basic, command plugin called HelloRhinoCommon.
+We will use Visual Studio Code to create a new, basic, command plugin called HelloRhinoCommon.
 
-{{< call-out tip "Experienced with Visual Studio?" >}}
-If you are familiar with Visual Studio for Windows or Visual Studio for Mac, these step-by-step instructions may be overly detailed for you. The executive summary: create a new Solution using the RhinoCommon Plugin template, build and run, and then make a change.
+We are presuming you are new to Visual Studio Code, so we'll go through this one step at a time.
+
+### Download the required template
+
+1. Launch Visual Studio Code.
+1. Open *Visual Studio Code's Terminal* via *Terminal (menu entry)* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search for "Terminal".
+1. Inside Terminal, run:
+    ``` pwsh
+    dotnet new install Rhino.Templates
+    ```
+
+### Starting the Project
+
+1. Create a folder on your mac where you would like your project to live. Name the folder `HelloRhinoCommon`.
+1. If you have not done so already, *launch Visual Studio Code*.
+1. Now we can open our new folder, navigate to *File* > *Open Folder* and choose the folder we just created.
+1. Open Terminal via *Terminal* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search for "Terminal".
+1. Enter the following command into the Terminal:
+    ``` pwsh
+    dotnet new rhino --version 8
+    ```
+6. In our Folder explorer, we should see the project appear as Visual Studio Code discovers the files.
+1. Expand the Solution Explorer, this is the best way to interact with C# projects on Mac in Visual Studio Code.
+
+### Setting up Debug
+
+1. Create a folder called *.vscode* in the solution directory.
+{{< call-out hint "Can't see the folder?" >}}
+If you cannot see the *.vscode* folder, toggle hidden folders in Finder: click on your Desktop and press _⌘ ⇧ ._  (`command` + `shift` + `period`)
 {{< /call-out >}}
+1. We will need to create three new files in the *.vscode* new folder: *settings.json*, *tasks.json*, and *launch.json*...
+1. Create *settings.json* with the following contents:
+    ``` json
+    {
+            // This file will specify the solution we use to build
+            "dotnet.defaultSolution": "HelloRhinoCommon.sln"
+    }
+    ```
+4. Create *tasks.json* with the following contents:
+    ``` json
+    {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "build-plugin-netcore",
+                // This will ensure the project is built before we try to debug it
+                "command": "dotnet build ${workspaceFolder}/*.csproj -f net7.0",
+                "type": "shell",
+                "args": [],
+                "problemMatcher": [
+                    "$msCompile"
+                ],
+                "presentation": {
+                    "reveal": "always"
+                },
+                "group": "build"
+            }
+        ]
+    }
+    ```
+5. Create *launch.json* with the following contents:
+    ``` json
+    {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Run Rhino 8 (Mac)",
+                "type": "coreclr",
+                "request": "launch",
+                "preLaunchTask": "build-plugin-netcore",
+                // Launches Rhino for us
+                "program": "/Applications/Rhino 8.app/Contents/MacOS/Rhinoceros",
+                // Add in any args here such as /nosplash or even /runscript
+                // See : https://developer.rhino3d.com/guides/cpp/running-rhino-from-command-line/
+                "args": [],
+                "cwd": "${workspaceFolder}",
+                "stopAtEntry": false,
+                "console": "internalConsole",
+                // RHINO_PACKAGE_DIRS is required for Multi-Targeted plugins
+                // This is what enables Rhino to register our Plug-in
+                "env": {
+                    "RHINO_PACKAGE_DIRS": "${workspaceFolder}/bin/Debug/"
+                } 
+            },
+        ],
+        "compounds": []
+    }
+    ```
+6. The Folder Explorer should look like below (Note that we cannot see *.vscode* in the Solution Explorer)
 
-We are presuming you have never used Visual Studio for Mac before, so we'll go through this one step at a time.
+    ![New Project](/images/your-first-plugin-mac-02.png)
 
-### File New
-
-1. If you have not done so already, *launch Visual Studio for Mac*.
-1. Navigate to *File* > *New Project*...
-![File New Project](/images/your-first-plugin-mac-01.png)
-1. A *New Project* wizard should appear. In the left column, find the *Other* > *Miscellaneous* section. Under General, select the RhinoCommon Plug-In template...
-![New Project](/images/your-first-plugin-mac-02.png)
-1. Click the *Continue* button.
-1. You will now *Configure your new project*. For the purposes of this Guide, we will name our demo plugin *HelloRhinoCommon*. Fill in the *Project Name* field. Leave the other defaults alone.
-![Project Configuration](/images/your-first-plugin-mac-03.png)
-1. Click the *Continue* button.
-1. *Browse* and select a location for this plugin on your Mac.
-1. Click the *Create* button. *Note*: You don't have to create a .git repository for this demo.
-1. A *new project* called *HelloRhinoCommon* should open...
-![HelloRhinoCommon Solution](/images/your-first-plugin-mac-04.png)
 
 ### Boilerplate Build
+1. Before we do anything, let's *Run and Debug* HelloRhinoCommon to make sure everything is working as expected. We'll just build the boilerplate Plugin template. Click the *Run and Debug* button on the left hand side of Visual Studio Code and then the green play button in the newly opened panel.
 
-{{< image url="/images/your-first-plugin-mac-05.png" alt="Play Button" class="float_right" >}}
-1. Before we do anything, let's *build* and *run* HelloRhinoCommon to make sure everything is working as expected. We'll just build the boilerplate Plugin template. Click the large *Build* > *Run* (play) button in the upper-left corner of Visual Studio for Mac...
-{{< image url="/images/your-first-plugin-mac-06.png" alt="New Model Button" class="float_right" >}}
-1. *Rhinoceros* launches.  Create a *New Model*...
-1. Enter the *HelloRhinoCommonCommand* command.  Notice that the command autocompletes...
-![Command Autocompletes](/images/your-first-plugin-mac-07.png)
-1. The *HelloRhinoCommonCommand* command begins and prompts you...
-![Command Prompt](/images/your-first-plugin-mac-08.png)
-1. Notice there is *also a command status* in Rhino's command history area when the command begins...
-![Command Starts](/images/your-first-plugin-mac-09.png)
-1. Also note there is *a command status* in Rhino's command history area when the command ends.
-1. *Quit* Rhinoceros. This stops the session. Go back to *Visual Studio for Mac*.  Let's take a look at the...
+    ![New Project](/images/your-first-plugin-mac-03.png)
 
+1. *Rhinoceros* launches. Click *New Model*.
+1. Type `Hello` into the Rhino Commandline.  Notice that the command autocompletes.
+
+![Command Autocompletes](/images/your-first-plugin-mac-04.png)
+
+1. The *HelloRhinoCommonCommand* command prints a message:
+
+![Command Prompt](/images/your-first-plugin-mac-05.png)
+
+1. *Quit* Rhinoceros. This stops the session. Go back to *Visual Studio Code*. Let's take a look at the Plugin Anatomy.
 
 ### Plugin Anatomy
 
-1. Use the *Solution Explorer* to expand the *Solution* (*.sln*) so that it looks like this...
-![Solution Anatomy](/images/your-first-plugin-mac-11.png)
-1. The *HelloRhinoCommon* project (*.csproj*) has the same name as its parent solution...this is the project that was created for us by the *RhinoCommon Plugin* template wizard earlier.
+1. Use the *Solution Explorer* to expand the project so that it looks like below.
+
+![Solution Anatomy](/images/your-first-plugin-mac-06.png)
+
+1. The *HelloRhinoCommon* solution (*.sln*) contians all of our projects. This was created for us by the `dotnet` command we ran earlier.
+1. The *HelloRhinoCommon* project (*.csproj*) has the same name as its parent solution. This is the project that was created for us by `dotnet` command we ran earlier.
 1. *Dependencies*: Just as with most projects, you will be referencing other libraries. The *RhinoCommon Plugin* template added the necessary references to create a basic RhinoCommon plugin.
 1. *EmbeddedResources*: This is where you would place any image assets you want to ship with your plugin. The *RhinoCommon Plugin* template added an icon file with a default boilerplate icon.
 1. *Properties* contains the *AssemblyInfo.cs* source file.  This file contains the meta-data (author, version, etc), including the very-important `Guid`, which identifies the plugin.
-1. *.gitignore* is a file added by the git version control system. Feel free to ignore this for now.
+1. *HelloRhinoCommonCommand.cs* is where the action is.  Let's take a look at this file in the next section below...
 1. *HelloRhinoCommonPlugin.cs* is where this template plugin derives from *Rhino.Plugins.Plugin* and returns a static Instance of itself.  
-1. *HelloRhinoCommonCommand.cs* is where the action is.  Let's take a look at this file...
-
 
 ### Make Changes
 
-1. Open *HelloRhinoCommonCommand.cs* in Visual Studio for Mac's Source Editor (if it isn't already).
-1. Notice that `HelloRhinoCommonCommand` inherits from `Rhino.Commands.Command` ...
+1. Open *HelloRhinoCommonCommand.cs* in Visual Studio Code's Source Editor (if it isn't already).
+2. Notice that `HelloRhinoCommonCommand` inherits from `Rhino.Commands.Command`
 
+``` c#
         public class HelloRhinoCommonCommand : Rhino.Commands.Command
-1. ...and overrides one inherited property called `EnglishName` ...
+```
 
-        public override string EnglishName {
-          get { return "HelloRhinoCommonCommand"; }
-        }
-1. All Rhino commands must have a `EnglishName` property.  This command name is not very accurate.  We know from running the boilerplate code that this command prompts the user to draw a line.  Let's rename the command to *HelloDrawLine*:
+3. And that it overrides one inherited property called `EnglishName`
 
-        public override string EnglishName {
-          get { return "HelloDrawLine"; }
-        }
-1. Further down, notice that `HelloRhinoCommandCommand` overrides the `RunCommand` method:
+``` c#
+        public override string EnglishName  => "HelloRhinoCommonCommand";
+```
 
+4. All Rhino commands must have an `EnglishName` property.  This command name will become inaccurate soon, as we're going to spice up our quite pointless command. Let's rename the command to *HelloDrawLine*:
+
+``` c#
+        public override string EnglishName  => "HelloDrawLine";
+```
+
+5. Further down, notice that `HelloRhinoCommandCommand` overrides the `RunCommand` method:
+
+``` c#
         protected override Result RunCommand (Rhino.RhinoDoc doc, RunMode mode)
-1. All Rhino commands must have a `RunCommand` method.  As you can see, this is where the action happens.  Let's create an intermediary line object that we can feed to the `AddLine` method.  Find the spot in `RunCommand` after the user has been prompted to select two points.  Type in...
+```
 
-        Rhino.Geometry.Line line1 = new Line (pt0, pt1);
-1. Notice that - as you type - Visual Studio for Mac uses IntelliSense, just like Visual Studio for Windows (and many other editors).  Now, feed `line1` as an argument to the `doc.Objects.AddLine` method...
+6. All Rhino commands must have a `RunCommand` method. Copy paste the below code into `RunCommand` between the brackets `{}`
 
-        doc.Objects.AddLine (line1);
-1. Now that we have a line of our own, let's examine it...
+``` c#
+Point3d pt0;
+using (GetPoint getPointAction = new GetPoint())
+{
+        getPointAction.SetCommandPrompt("Please select the start point");
+        if (getPointAction.Get() != GetResult.Point)
+        {
+                RhinoApp.WriteLine("No start point was selected.");
+                return getPointAction.CommandResult();
+        }
+        pt0 = getPointAction.Point();
+}
+
+Point3d pt1;
+using (GetPoint getPointAction = new GetPoint())
+{
+        getPointAction.SetCommandPrompt("Please select the end point");
+        getPointAction.SetBasePoint(pt0, true);
+        getPointAction.DynamicDraw +=
+                (sender, e) => e.Display.DrawLine(pt0, e.CurrentPoint, System.Drawing.Color.DarkRed);
+        if (getPointAction.Get() != GetResult.Point)
+        {
+                RhinoApp.WriteLine("No end point was selected.");
+                return getPointAction.CommandResult();
+        }
+        pt1 = getPointAction.Point();
+}
+```
+
+7. And then type in the following by hand to get a feel for the editor.
+
+``` c#
+doc.Objects.AddLine(pt0, pt1);
+doc.Views.Redraw();
+
+return Result.Success;
+```
+
+8. Notice that - as you type - Visual Studio Code uses IntelliSense, just like Visual Studio for Windows (and many other editors).
 
 
 ### Debugging
 
-1. Set a breakpoint on line[^1] 59 of *HelloRhinoCommonCommand.cs*.  You set breakpoints in Visual Studio for Mac by clicking in the gutter...
-![Set a breakpoint](/images/your-first-plugin-mac-12.png)
-1. *Build* and *Run*.  Run *HelloDrawLine* in Rhino.  Create the two points...as soon as you do, you should hit your breakpoint and pause...
-![Hit a breakpoint](/images/your-first-plugin-mac-13.png)
-1. With Rhino paused, in *Visual Studio for Mac* switch to the *Locals* tab.  In the list, find the `line1` object we authored.  Click the dropdown *arrow* to expand the list of members on `line1`.  Our `line1` is a `Rhino.Geometry.Line` this class has a `Length` property...  
-![Locals panel](/images/your-first-plugin-mac-14.png)
-{{< image url="/images/your-first-plugin-mac-15.png" alt="Continue Executing" class="float_right" >}}
-4. *Continue Executing* in Rhino by pressing the *Play* button in the upper navigation menu of *Visual Studio for Mac*...
+1. Set a breakpoint on line 52 of *HelloRhinoCommonCommand.cs*.  You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
+![Set a breakpoint](/images/your-first-plugin-mac-07.png)
+1. *Run and Debug*. our project. The breakpoint will become an empty circle, this is because our code has not been loaded yet. Once we hit the breakpoint once and continue, the code will be loaded until we end our Debug session.
+![Set a breakpoint](/images/your-first-plugin-mac-08.png)
+1. Click New Model. And then run our *HelloDrawLine* command. Create the two points and as soon as you do, you should hit your breakpoint and rhino will pause
+![Hit a breakpoint](/images/your-first-plugin-mac-09.png)
+1. With Rhino paused, in *Visual Studio Code* we will see *Locals* under *Variables*.  In the list, find the `pt1` object we authored.  Click the dropdown *arrow* to expand the list of members on `pt1`.  
+Our `pt1` is a `Rhino.Geometry.Point3d` this class has an `X`, `Y`, `Z` property just as we'll find documented in the [RhinoCommon API](https://developer.rhino3d.com/api/rhinocommon/rhino.geometry.point3d).
+![Locals panel](/images/your-first-plugin-mac-10.png)
+4. Let's Continue Execution in Rhino by pressing the Green *Play* button in the Debug Bar
 1. Control is passed back to *Rhino* and your command finishes.  *Quit* Rhino or *Stop* the debugging session.
-1. *Remove* the breakpoint you created above by clicking on it in the gutter.
-1. Now, let's use the `Length` value to report something to the user.  Near the very end of `RunCommand`, add the following line...
-
-```cs
-RhinoApp.WriteLine ("The distance between the two points is {0}.", line1.Length);
-```
-
-8. *Build* and *Run*.  Run `HelloDrawLine` in Rhino yet again (create the two points...).  Rhino now reports the length of the line you created.  However, this is not very clean.
-1. *Quit* Rhino to *Stop* the debugging session once more.
-1. Let's add a unit system and be explicit about what we're reporting...
-
-```cs
-RhinoApp.WriteLine ("The distance between the two points is {0} {1}.", line1.Length, doc.ModelUnitSystem.ToString().ToLower());
-```
-
-11. *Build* and *Run* again.  Now we're reporting the length of the line we created with the document's unit system (`doc.ModelUnitSystem`) with the proper case (`ToLower()`).  Much better.
-
-**DONE!**
-
-Well, we could go on and on - `line1` was never necessary, we could have just used `pt0.DistanceTo(pt1).ToString()`, etc. - but that is beside the point:
 
 *Congratulations!*  You have just built your first RhinoCommon plugin for Rhino for Mac.  *Now what?*
 
 ## Next Steps
 
-You're using RhinoCommon, so this plugin will actually run on both platforms.  Check out the [Your First Plugin (Cross Platform)](/guides/rhinocommon/your-first-plugin-crossplatform) guide.
+The above guide will also work perfectly well on Windows, if you need a more complex cross-platform plugin, check out the [Your First Plugin (Cross Platform)](/guides/rhinocommon/your-first-plugin-crossplatform) guide.
 
 ## Related topics
 
 - [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac)
 - [Your First Plugin (Cross-Platform)](/guides/rhinocommon/your-first-plugin-crossplatform)
 - [Plugin Installers (Mac)](/guides/rhinocommon/plugin-installers-mac)
-
-
-**Footnotes**
-
-[^1]: *Line numbers* in Visual Studio for Mac can be enabled and disabled in *Visual Studio* > *Preferences...* > *Text Editor* section > *Markers and Rulers* entry > check *Show line numbers*.
