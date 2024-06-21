@@ -26,7 +26,7 @@ These instructions cover running this project locally on both Windows and macOS 
 
     ![VSCode hugo serve](static/images/vscode-hugo-serve.png)
 
-Your web browser should open to the *How This Site Works* guide, ready for editing. Changes made to the *index.md* file in Visual Studio Code should appear in your browser immediately.
+Press the green triangle to start the process. It will take a few seconds and then your web browser should open to the *How This Site Works* guide, ready for editing. Changes made to the *index.md* file in Visual Studio Code should appear in your browser immediately. Note that your web browser might show an error, in which case you'll need to refresh the page once VS Code has finished setting up the server on port 1313.
 
 \* If you are not comfortable using git on the command-line, then check out the [git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf) or try [GitHub Desktop](https://desktop.github.com).
 
