@@ -88,8 +88,8 @@ The position vector {{< mathjax >}}$$\mathbf{\vec v} = <a_1,a_2,a_3>$${{< /mathj
 {{< mathjax >}}$$B = (a_1,a_2,a_3)$${{< /mathjax >}}  
 
 <figure>
-   <img src="/images/math-image169.png">
-   <figcaption>Figure (1): Vector representation in the 3-D coordinate system.</figcaption>
+   <img src="/images/math-image171.png">
+   <figcaption>Figure (3): Position vector. The tip point coordinates equal the corresponding vector components.</figcaption>
 </figure>  
 
 {{< call-out note "Note" >}}
