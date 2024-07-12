@@ -1035,52 +1035,55 @@ Using the Grasshopper C# component:
 ```cs
 Private Sub RunScript(ByVal c1 As Curve, ByVal c2 As Curve, ByRef A As Object)
 
-  'declare variables
-  Dim continuity As New String("")
-  Dim t1, t2 As Double
-  Dim v_c1, v_c2, c_c1, c_c2 As Vector3d
+    //decalre variables
+    string continuity = ("");
+    double t1, t2;
+    Vector3d v_c1, v_c2, c_c1, c_c2;
 
-  'extract start and end points
-  Dim end_c1 = c1.PointAtEnd
-  Dim start_c2 = c2.PointAtStart
+    //extract start and end points
+    Point3d end_c1 = c1.PointAtEnd;
+    Point3d start_c2 = c2.PointAtStart;
 
-  'check G0 continuity
-  If end_c1.DistanceTo(start_c2) = 0 Then
-    continuity = "G0"
-  End If
-   'check G1 continuity
-  If continuity = "G0" Then
-    'calculate tangents
-    v_c1 = c1.TangentAtEnd
-    v_c2 = c2.TangentAtStart
-    'unitize tangent vectors
-    v_c1.Unitize
-    v_c2.Unitize
-    'compare tangents
-    If v_c1 * v_c2 = 1.0 Then
-      continuity = "G1"
-    End If
-  End If
+    //check G0 continuity
+    if( end_c1.DistanceTo(start_c2) == 0){
+      continuity = "G0";
+    }
 
-  'check G2 continuity
-  If continuity = "G1" Then
-    'extract the parameter at start and end of the curves domain
-    t1 = c1.Domain.Max
-    t2 = c2.Domain.Min
-    'calculate curvature
-    c_c1 = c1.CurvatureAt(t1)
-    c_c2 = c2.CurvatureAt(t2)
-    'unitize curvature vectors
-    c_c1.Unitize
-    c_c2.Unitize
-    'compare vectors
-    If c_c1 * c_c2 = 1.0 Then
-      continuity = "G2"
-    End If
-  End If
+    //check G1 continuity
+    if( continuity == "G0")
+    {
+      //calculate tangents
+      v_c1 = c1.TangentAtEnd;
+      v_c2 = c2.TangentAtStart;
+      //unitize tangent vectors
+      v_c1.Unitize();
+      v_c2.Unitize();
+      //compare tangents
+      if( v_c1 * v_c2 == 1.0 ){
+        continuity = "G1";
+      }
+    }
 
-  'Assign output
-  A = continuity
+    //check G2 continuity
+    if( continuity == "G1" )
+    {
+      //extract the parameter at start and end of the curves domain
+      t1 = c1.Domain.Max;
+      t2 = c2.Domain.Min;
+      //calculate curvature
+      c_c1 = c1.CurvatureAt(t1);
+      c_c2 = c2.CurvatureAt(t2);
+      //unitize curvature vectors
+      c_c1.Unitize();
+      c_c2.Unitize();
+      //compare vectors
+      if( c_c1 * c_c2 == 1.0 ){
+        continuity = "G2";
+      }
+    }
+
+    //assign output
+    A = continuity;
 
 End Sub
 ```

@@ -850,24 +850,42 @@ Using the Grasshopper Python component with RhinoCommon:
 <img src="/images/math-image4.png">
 
 ```python
-import Rhino #import RhinoCommon module
+import Rhino
 
-#find a point between A and B
-D = A + t * (B - A)
+#get the brep center
+area = Rhino.Geometry.AreaMassProperties.Compute(box)
+box_center = area.Centroid
 
-#find mid point between A and D
-C1 = A + 0.5 * (D - A)
+#get a list of faces
+faces = box.Faces
 
-#find mid point between D and B
-C2 = D + 0.5 * (B - D)
+#decalre variables
+exploded_faces = []
 
-#find spheres radius
-r1 = A.DistanceTo(C1)
-r2 = B.DistanceTo(C2)
+#loop through all faces
+for i, face in enumerate(faces):
 
-#create spheres and assign to output
-S1 = Rhino.Geometry.Sphere(C1, r1)
-S2 = Rhino.Geometry.Sphere(C2, r2)
+	#get a duplicate of the face
+	extracted_face = faces.ExtractFace(i)
+	
+	#get the center of each face
+	area = Rhino.Geometry.AreaMassProperties.Compute(extracted_face)
+	center = area.Centroid
+	
+	#calculate move direction (from box centroid to face center)
+	dir = center - box_center
+	dir.Unitize()
+	dir *= dis
+	
+	#move the extracted face
+	move = Rhino.Geometry.Transform.Translation(dir)
+	extracted_face.Transform(move)
+	
+	#add to exploded_faces list
+	exploded_faces.append(extracted_face)
+
+#assign exploded list of faces to output
+A = exploded_faces
 ```
 
 Using the Grasshopper C# component:
