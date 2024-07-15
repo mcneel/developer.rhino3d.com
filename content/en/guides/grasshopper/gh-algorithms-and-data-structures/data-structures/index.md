@@ -65,6 +65,6 @@ LabLab
 
 ## Next Steps
 
-Those are the introduction to data structures. Next, learn [Advanced Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-strucutres/).
+Those are the introduction to data structures. Next, learn [Advanced Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/).
 
 This is part 2-3 of the [Essential Algorithms and Data Structures for Grasshopper](/guides/grasshopper/gh-algorithms-and-data/).
