@@ -87,7 +87,7 @@ The content is divided into three chapters. [Chapter 1](/guides/grasshopper/gh-a
 &nbsp;&nbsp; Pitfalls tutorial  
 
 {{< /column >}}
-{{< column >}} 
+{{< column >}}
 
 ### 2. [Introduction to Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/)
 
@@ -121,11 +121,11 @@ The content is divided into three chapters. [Chapter 1](/guides/grasshopper/gh-a
 &nbsp;&nbsp; Combining data streams  
 &nbsp;&nbsp; Flipping the data structure  
 &nbsp;&nbsp; Simplifying the data structure  
-   3.6 [Advanced tree operations](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#36-advanced-tree-operations)  
+   3.6 [Advanced tree operations](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#36-advanced-tree-operations)  
 &nbsp;&nbsp; Relative items  
 &nbsp;&nbsp; Split trees  
 &nbsp;&nbsp; Path mapper  
-   3.7 [Tutorials: advanced data structures](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#37-tutorials-advanced-data-structures)  
+   3.7 [Tutorials: advanced data structures](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#37-tutorials-advanced-data-structures)  
 &nbsp;&nbsp; Sloped roof tutorial  
 &nbsp;&nbsp; Diagonal triangles tutorial  
 &nbsp;&nbsp; Zigzag tutorial  
