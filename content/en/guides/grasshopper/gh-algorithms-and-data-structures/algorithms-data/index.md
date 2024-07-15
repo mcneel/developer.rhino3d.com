@@ -129,4 +129,4 @@ LabLab
 
 Those are the algorithms and data. Next, learn [Introduction to Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/).
 
-This is part 1-3 of the [Essential Algorithms and Data Structures for Grasshopper](/guides/grasshopper/gh-algorithms-and-data/).
+This is part 1-3 of the [Essential Algorithms and Data Structures for Grasshopper](/guides/grasshopper/gh-algorithms-and-data-structures/).
