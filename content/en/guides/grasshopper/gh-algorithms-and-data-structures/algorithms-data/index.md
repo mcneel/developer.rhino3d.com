@@ -278,38 +278,286 @@ In Grasshopper, there are three main ways to supply data to processes (or what i
   </tr>
 </table>
 
-
 ## 1.6 Data types
 
-LabLab
+All programming languages identify the kind of data used in terms of the values that can be assigned to and the operations and processes it can participate in. There are common data types such as <b>Integer, Number, Text, Boolean</b> (Boolean type can be set to <b>True</b> or <b>False</b>), and others. Grasshopper lists those under the <b>Params > Primitives</b> tab.
+
+<figure>
+   <img src="ads-028.png">
+   <figcaption>Figure(6): Examples of primitive data types common to all programming languages</figcaption>
+</figure>  
+
+Grasshopper supports geometry types that are useful in the context of 3D modeling such as Point (3 numbers for coordinates), <b>Line</b> (2 points), <b>NURBS Curve, NURBS Surface, Brep</b>, and others. All geometry types are included under the <b>Params> Geometry</b> tab in GH.
+
+<figure>
+   <img src="ads-029.png">
+   <figcaption>Figure(7): Examples of geometry data types</figcaption>
+</figure>  
+
+There are other mathematics types that designers do not usually use in 3D modeling, but are very common in parametric design such as Domains, Vectors, Planes, and Transformation Matrices. GH provides a rich set of tools to help create, analyze and use these types. To fully understand the mathematical as well as geometry types such as NURBS curves and surfaces, you can refer to the Essential Mathematics for Computational Design book by the author
+
+<figure>
+   <img src="ads-030.png">
+   <figcaption>Figure(8): Examples of data types common in computer graphics</figcaption>
+</figure>  
+
+The parameters in GH can be used to convert data from one type to another (cast). For example if you need to turn a text into a number, you can feed your text into a <b>Number</b> parameter. If the text cannot be converted, you’ll get an error.
+
+<figure>
+   <img src="ads-031.png">
+   <figcaption>Figure(9): Data conversion (casting) inside parameters in Grasshopper</figcaption>
+</figure>  
+
+Grasshopper components internally convert input to suitable types when possible. For example, if you feed a “text” to <b>Addition</b> component, GH tries to read the text as a number. If a component can process more than one type, it uses the input type without conversion. For example, equality in an expression can compare text as well as numbers. In such case, make sure you use the intended type to avoid confusion.
+
+<figure>
+   <img src="ads-032.png">
+   <figcaption>Figure(10): Some operations can be performed on multiple types. Cast to the intended type especially if the component is capable of processing multiple types (such as Expression in GH)</figcaption>
+</figure>  
+
+It is worth noting that sometimes GH components simply ignore invalid input (null or wrong type). In such cases, you are likely to end up with an unexpected result and it will be hard to find the bug. It is very important to verify the output from each component before using it.
+
+<figure>
+   <img src="ads-033.png">
+   <figcaption>Figure(11): Invalid input is ignored and a default value is used. For example a number inside a Panel component can be interpreted as a text and hence become invalid input to an Addition component</figcaption>
+</figure>  
 
 ## 1.7 Processing Data
 
-LabLab
+Algorithmic designs use many data operations and processes. In the context of this book, we will focus on five categories: numeric and logical operations, analysis, sorting and selection.
 
 ### 1.7.1 Numeric operations
 
-LABLAB
+Numeric operations include operations such as arithmetic, trigonometry, polynomials and complex numbers. GH has a rich set of numeric operations, and they are mostly found under the <b>Math</b> tab. There are two main ways to perform operations in GH. First by using designated components for specific operations such as <b>Addition, Subtraction</b> and <b>Multiplication</b>.
+
+<figure>
+   <img src="ads-034.png">
+   <figcaption>Figure(12): Examples of  numeric operations components in GH</figcaption>
+</figure>  
+
+Second, use an <b>Expression</b> component where you can combine multiple operations and perform a rich set of math and trigonometry operations, all in one expression.
+
+<figure>
+   <img src="ads-035.png">
+   <figcaption>Figure(13): Expression component in GH can be used to perform multiple operations</figcaption>
+</figure>  
+
+The <b>Expression</b> component is more robust and readable when you have multiple operations.
+
+<figure>
+   <img src="ads-036.png">
+   <figcaption>Figure(14): When a chain of operations is involved, using the Expression component is easier to maintain</figcaption>
+</figure>  
+
+Input to Expressions can be treated as text depending on the context.
+
+<figure>
+   <img src="ads-037.png">
+   <figcaption>Figure(15): Expression can process and format text</figcaption>
+</figure>  
+
+It is worth mentioning that most numeric input to components allow writing an expression to modify the inputs inline. For example, the Range component has N (number of steps) input. If you right mouse click on “N”, you can set an expression. You always use “x” to represent the supplied input regardless of the name.
+
+<figure>
+   <img src="ads-038.png">
+   <figcaption>Figure(16):  Expression can be set inside the input parameter. Variable “x” refers to the supplied input value</figcaption>
+</figure>  
 
 ### 1.7.2 Logical operations
 
-LabLAB
+Main logical operations in GH include equalities, sets and logic gates.
+
+<figure>
+   <img src="ads-039.png">
+   <figcaption>Figure(17):  GH has multiple components to perform Logical operations</figcaption>
+</figure>  
+
+Logical operations are used to create conditional flow of data. For example, if you like to draw a sphere only when the radius is between two values, then you need to create a logic that blocks the radius when it is not within your limits.
+
+<figure>
+   <img src="ads-040.png">
+   <figcaption>Figure(18):  Data flow control using logical operations</figcaption>
+</figure>  
 
 ### 1.7.3 Data analysis
 
-LabLAB
+There are many tools in GH to examine and preview data. <b>Panel</b> is used to show the full details of the data and its structure, while the <b>Parameter Viewer</b> shows the data structure only. Other analysis components include <b>Quick Graph</b> that plots data in a graph, and <b>Bounds</b> to find the limits in a given set of numbers (the min and max values in the set).
+
+<figure>
+   <img src="ads-041.png">
+   <figcaption>Figure(19):  Some of the ways to analyze data in Grasshopper</figcaption>
+</figure>  
 
 ### 1.7.4 Sorting
 
-LabLAB
+GH has designated components to sort numeric and geometry data. The Sort List component can sort a list of numeric keys. It can sort a list of numbers in ascending order or reverse the order. You can also use the Sort List component to sort geometry by some numeric keys, for example sort curves by length. GH has components designated to sort geometry sets such as Sort Points to sort points by their coordinates.
+
+<figure>
+   <img src="ads-042.png">
+   <figcaption>Figure(20):  Sorting numbers in Grasshopper</figcaption>
+</figure>  
 
 ### 1.7.5 Selection
 
-LabLAB
+3D modeling allows picking specific or a group of objects interactively, but this is not possible in algorithmic design. Data is selected in GH based on the location within the data structure, or by a selection pattern. For example <b>List</b> Item component allows selecting elements based on their indices.
+
+<figure>
+   <img src="ads-043.png">
+   <figcaption>Figure(21):  Select items from a list in Grasshopper</figcaption>
+</figure>  
+
+The <b>Cull Pattern</b> component allows using some repeated patterns to select a subset of the data.
+
+<figure>
+   <img src="ads-044.png">
+   <figcaption>Figure(22):  An example to select every other item in a list</figcaption>
+</figure>  
+
+As you can see from the examples, selecting specific items or using cull components yield a subset of the data, and the rest is thrown away. Many times you only need to isolate a subset to operate on, then recombine back with the original set. This is possible in GH, but involves more advanced operations. We will get into the details of these operations when we talk about advanced data structures in chapter 3.
 
 ### 1.7.6 Mapping
 
-LabLAB
+That refers to the linear mapping of a range of numbers where each number in a set is mapped to exactly one value in the new set. GH has a component to perform linear mapping called <b>ReMap</b>. You can use it to scale a set of numbers from its original range to a new one. This is useful to scale your range to a domain that suits your algorithm’s needs and limitations.
+
+<figure>
+   <img src="ads-045.png">
+   <figcaption>Figure(23):  An example of linear remapping of numbers in Grasshopper</figcaption>
+</figure>  
+
+Converting data involves mapping. For example, you may need to convert an angle unit from degrees to radians ( GH components accept angles in radians only). 
+
+<figure>
+   <img src="ads-046.png">
+   <figcaption>Figure(24):  Convert angles from degrees to radians</figcaption>
+</figure>  
+
+As you know, parametric curves have “domains” (the range of parameters that evaluate to points on the curve). For example, if the domain of a given curve is between 12.5 to 51.3, evaluating the curve at 12.5 gives the point at the start of the curve. Many times you need to evaluate multiple curves using consistent parameters. Reparameterizing the domain of curves to some unified range helps solve this problem. One common domain to use is “0 To 1”. At the input of each curve in any GH component, there is the option to <b>Reparameterize</b> which resets the domain of the curve to be “0 to 1”.
+
+<figure>
+   <img src="ads-047.png">
+   <figcaption>Figure(25):  Normalize the domain of curves (set to 0-1). Use Reparameterize input flag in Grasshopper</figcaption>
+</figure>  
+
+<table class="rounded">
+  <tr>
+    <th>Tutorial 1-7-A: Flow control</th>
+  </tr>
+  <tr>
+    <td>
+    What is the purpose of the following algorithm? Notate and color code to describe the purpose of each part.
+    <figure>
+    <img src="ads-048.png">
+    </figure>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br><b>Analyze the algorithm</b><br>
+        The algorithm has an output that is a sphere, a radius input and some conditional logic to process the radius.
+        <figure>
+        <img src="ads-049.png"><br>
+        <br><b>Notate and color-code the solution</b><br>
+        From testing the output and following the steps of the solution it becomes apparent that the intention is to make sure that the radius of the sphere cannot be less than 1 unit.<br>
+        Test with radius greater than 1 (3.4 in the example)
+        <figure>
+        <img src="ads-050.png"><br>
+        </figure><br>
+        Test with radius less than 1 (-2.8 in the example)
+        <figure>
+        <img src="ads-051.png"><br>
+        </figure><br>
+        </details>
+    </td>
+  </tr>
+</table>
+
+<table class="rounded">
+  <tr>
+    <th>Tutorial 1-7-B: Data processing</th>
+  </tr>
+  <tr>
+    <td>
+    Given a list of numbers of some point coordinates, do the following:<br>
+    1. Analyze the list to understand the data.<br>
+    2. Write an algorithm to convert the list of <b>Numbers</b> to a list of <b>Points</b>.<br>
+    3. Change the domain of coordinate values to be between 3 and 9.<br>
+    <br>Note that the input number list is organized so that the first 3 numbers refer to the x,y,z of the first point, the second 3 numbers belong to the second point and so on.
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br><b>Analyze the algorithm</b><br>
+                <table>
+          <tr>
+            <td>
+            There are 2 inputs: a list of 51 numbers (3 coordinates for each point) which means that the list has 17 points.<br>
+            Using a <b>QuickGraph</b>, we can see that the numbers are between 2.60 and 15.89. We can also see that the values are distributed randomly. The other input is the target domain to be from 3 to 9.
+            </td>
+            <td>
+            <img src="ads-052.png">
+            </td>
+          </tr>
+        </table>
+        <b>Use the 4-step process to solve the algorithms</b><br>
+        <table>
+          <tr>
+            <td style="background-color:#cfe2f3">
+            <b>Output:<br>List of points</b>
+            </td>
+            <td>
+            <img src="ads-054.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#f4cccc">
+            <b>Key Process #1: Remap Coordinates</b><br>
+            Map the coordinates list from its current domain (2.60 to 15.89) to a new domain (3.0 to 9.0)<br>
+            Use <b>ReMap</b> component to achieve that
+            </td>
+            <td>
+            <img src="ads-055.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#eee4c5">
+            <b>Intermediate processes #1</b><br>
+            The input domain is missing and can be extracted using <b>Bounds</b> component
+            </td>
+            <td>
+            <img src="ads-056.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#f4cccc">
+            <b>Key Process #2: Construct Points</b><br>
+            Construct points from coordinates<br>
+            Use <b>Construct Point (Pt)</b> component
+            </td>
+            <td>
+            <img src="ads-057.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#eee4c5">
+            <b>Intermediate processes #2</b><br>
+            Extract all X coordinates as one list, Y in another and Z in the third. Use <b>Cull Pattern</b> component with appropriate pattern to extract each coordinate as a separate list.<br><br>
+            The input to <b>Cull</b> is the remapped points from process #1
+            </td>
+            <td>
+            <img src="ads-058.png">
+            </td>
+          </tr>
+        </table>
+        <b>Putting it all together</b><br>
+        <img src="ads-059.png">
+        </details>
+    </td>
+  </tr>
+</table>
 
 ## 1.8 Pitfalls of algorithmic design
 
