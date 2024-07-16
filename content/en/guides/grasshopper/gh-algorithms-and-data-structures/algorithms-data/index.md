@@ -714,23 +714,175 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
   </tr>
 </table>
 
-### 1.9.2 Sphere with bounds tutorial
+<table class="rounded">
+  <tr>
+    <th>Tutorial 1.9.2: Sphere with bounds</th>
+  </tr>
+  <tr>
+    <td>
+    Use the 4-step process to draw a sphere with a radius between 2 and 6. If input is less than 2, then set the radius to 2, and if input radius is greater than 6, set the radius to 6. Use a number slider to input the radius and set between 0 and 10 to test. Make sure your solution is well organized, color-coded and labeled properly.
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <b>The 4-step process to solve the algorithm</b><br>
+        <table>
+          <tr>
+            <td style="background-color:#cfe2f3">
+            <b>Output: The sphere as geometry</b>
+            </td>
+            <td>
+            <img src="ads-075.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#f4cccc">
+            <b>Key Process: Create a sphere</b><br>
+            Use the <b>Sphere</b> component to create a sphere from a base plane and radius
+            </td>
+            <td>
+            <img src="ads-076.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#d9d2e9">
+            <b>Input:</b><br>
+            1. The radius parameter (0 - 10)<br>
+            2. The bounds of the radius are 2 & 6
+            </td>
+            <td>
+            <img src="ads-077.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#eee4c5">
+            <b>Intermediate processes #1:</b><br>
+            Construct a selection logic of radii and pattern. The radii is a list of the values from the slider, min and max. <br>
+            The list of pattern is generated to select the correct radius value
+            </td>
+            <td>
+            <img src="ads-078.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#eee4c5">
+            <b>Intermediate processes #2</b><br>
+            Generate the center and plane of the 2nd circle<br>
+            The selection logic ensures that the radius value falls within the intended range. If the radius input is less than the minimum value of the bounds, then the radius is set to the min value, and if it is greater than the maximum, then the max value is used instead.
+            </td>
+            <td>
+            <img src="ads-079.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
 
-Use the 4-step process to draw a sphere with a radius between 2 and 6. If input is less than 2, then set the radius to 2, and if input radius is greater than 6, set the radius to 6. Use a number slider to input the radius and set between 0 and 10 to test. Make sure your solution is well organized, color-coded and labeled properly.
+<table class="rounded">
+  <tr>
+    <th>Tutorial 1.9.3: Data operations</th>
+  </tr>
+  <tr>
+    <td>
+    Given the numbers embedded in the <b>Number</b> parameter do the following:<br>
+    1. Analyze input in terms of bounds and distribution<br>
+    2. View the data and how it is structured<br>
+    3. Extract even numbers<br>
+    4. Sort numbers descending<br>
+    5. Remap sorted numbers to (100 to 200)
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <table>
+          <tr>
+            <td>
+            <br><b>1- Analyze the input bounds and distribution</b><br><br>
+            Use the <b>QuickGraph</b> to show that the set of numbers are between 3 and 98 and are distributed randomly.
+            </td>
+            <td>
+            <img src="ads-081.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <b>2- Analyze the input data structure and values</b><br><br>
+            Use the <b>Panel</b> and <b>Parameter Viewer</b> to show that there are 16 elements organized in a list
+            </td>
+            <td>
+            <img src="ads-082.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <b>3- Extract Even numbers</b><br><br>
+            Create the logic to test if a number is even (divisible by 2 without a remainder) and use <b>Dispatch</b> to extract even numbers
+            </td>
+            <td>
+            <img src="ads-083.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <b>4- Sort numbers descending</b><br><br>
+            The Sort List component sorts numbers in ascending order. Use Reverse List component to further process the list to order descending
+            </td>
+            <td>
+            <img src="ads-084.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <b>5- Remap to 100-200</b><br><br>
+            Check the input range and use Remap component to scale data to be between 100-200
+            </td>
+            <td>
+            <img src="ads-085.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
 
-### 1.9.3 Data operations tutorial
-
-Given the numbers embedded in the Number parameter below:<br>
-1. Analyze input in terms of bounds and distribution
-2. View the data and how it is structured
-3. Extract even numbers
-4. Sort numbers descending
-5. Remap sorted numbers to (100 to 200)
-
-
-### 1.9.4 Pitfalls tutorial
-
-Analyze what the following algorithm is intended to do, identify the errors that are preventing it from working as intended, then rewrite to fix the errors. Organize to reflect the algorithm flow, label and color-code.
+<table class="rounded">
+  <tr>
+    <th>Tutorial 1.9.4: Algorithmic Pitfalls</th>
+  </tr>
+  <tr>
+    <td>
+    Analyze what the following algorithm is intended to do, identify the errors that are preventing it from working as intended, then rewrite to fix the errors. Organize to reflect the algorithm flow, label and color-code.
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <table>
+          <tr>
+            <td>
+            <br>The first step is to mark the errors:
+            <img src="ads-086.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Next, fix the errors and rewrite the solution with labels and proper color codes:
+            <img src="ads-087.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
 
 ## Next Steps
 
