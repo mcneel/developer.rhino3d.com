@@ -506,7 +506,8 @@ As you know, parametric curves have “domains” (the range of parameters that 
         <table>
           <tr>
             <td style="background-color:#cfe2f3">
-            <b>Output:<br>List of points</b>
+            <b>Output: List of points</b><br>
+            Use the <b>Parameter Viewer</b> to view the resulting data structure. To start, it will be empty.
             </td>
             <td>
             <img src="ads-054.png">
@@ -561,29 +562,73 @@ As you know, parametric curves have “domains” (the range of parameters that 
 
 ## 1.8 Pitfalls of algorithmic design
 
+Writing elegant algorithms that are efficient and easy to read and debug is hard. We explained in this chapter how to write algorithms with style using color-coding and labeling. We also articulated a 4-step process to help develop algorithms. Following these guides help minimize bugs and improve the readability of the scripts. We will list a few of the common issues that lead to incorrect or unintended result.
+
 ### 1.8.1 Invalid or wrong input type
 
-LabLab
+If the input is of the wrong type or is invalid, GH changes the color of components to red or orange to indicate an error warning, with feedback about what the issue might be. This is helpful, but sometimes faulty input goes unnoticed if the components assign a default value, or calculate an alternative value to replace the input, that is not what was intended. It is a good practice to always double check the input (hook to a panel or parameter viewer and label the input). To avoid using wrong types, it is advisable to convert to the intended type to ensure accuracy.
+
+<figure>
+   <img src="ads-060.png">
+   <figcaption>Figure(26): Error resulting from wrong input type</figcaption>
+</figure>  
 
 ### 1.8.2 Unintended input
 
-LabLab
+Input is prone to unintended change via intermediate processes or when multiple users have writing access to the script. It is very useful to preview and verify all key input and output. The Panel component is very versatile and can help check all types of values. Also you can set up guarding logic against out of range values or to trap undesired values.
+
+<figure>
+   <img src="ads-061.png">
+   <figcaption>Figure(27): Error resulting from unintended input. Cannot assume curve domain is 0-1 and use 0.5 to evaluate the midpoint</figcaption>
+</figure>  
+
+<figure>
+   <img src="ads-062.png">
+   <figcaption>Figure(28): Example of a robust solution to evaluate the midpoint of a curve</figcaption>
+</figure>  
 
 ### 1.8.3 Incorrect order of operation
 
-LabLab
+You should try to organize your solutions horizontally or vertically to clearly see the sequence of operations. You should also check the output from each step to make sure it is as expected before continuing on your code. There are also some techniques that help consolidate the script, for example use <b>Expression</b> when multiple numeric and math operations are involved. The following highlights some unfavorable organization.
+
+<figure>
+   <img src="ads-063.png">
+   <figcaption>Figure(29): Easy to confuse input to operations with poor organization</figcaption>
+</figure>  
+
+The following shows how to rewrite the same code to make it less error prone.
+
+<figure>
+   <img src="ads-064.png">
+   <figcaption>Figure(30): Best practices to align input with processes, or use Expressions</figcaption>
+</figure>
 
 ### 1.8.4 Mismatched data structures
 
-LabLab
+The issue of mismatched data structures as input to the same process or component is particularly tricky to guard against in GH, and has the potential to spiral the solution out of memory. It is essential to test the data structure of all input (except trivial ones) before feeding into any component. It is also important to examine desired matching under different scenarios (data matching will be explained at length later).
+
+<figure>
+   <img src="ads-065.png">
+   <figcaption>Figure(31): Mismatched data structures of input can cause errors in the output</figcaption>
+</figure>
 
 ### 1.8.5 Long processing time
 
-LabLab
+Some algorithms are time consuming, and you simply have to wait for it to process, but there are ways to minimize the wait when it is unnecessary. For example, at the early cycles of development, you should try to use a smaller set of data to test your solution with before committing the time to process the full set of data. It is also a good practice to break the solution into stages when possible, so you can isolate and disable the time consuming parts. Also, it is often possible to rewrite your solution to be more optimized and consume less time. Use the GH <b>Profiler</b> to test processing time. When a solution takes far too long to process or crashes, you should do the following: before you reopen the solution, disable it, and disconnect the input that caused the crash.
+
+<figure>
+   <img src="ads-066.png">
+   <figcaption>Figure(32): Grasshopper Profiler widget helps observe processing time</figcaption>
+</figure>
 
 ### 1.8.6 Poor organization
 
-LabLab
+Poorly organized definitions are not easy to debug, understand, reuse or modify. We can’t stress enough the importance of writing your definitions with styles, even if it costs extra time to start with. You should always color code, label everything, give meaningful names to variables, break repeated operations into modules and preview your input and output.
+
+<figure>
+   <img src="ads-067.png">
+   <figcaption>Figure(33): Poor organization in visual programming make the code hard to read or debug</figcaption>
+</figure>
 
 ## 1.9 Tutorials: algorithms and data
 
