@@ -63,16 +63,20 @@ Algorithm to create a circle on the XY-Plane from a center and a radius
    <img src="ads-004.png">
 </figure>  
 
-Some solutions are not written with styles and hence are hard to read and build on. It is very important that you take the time to organize and label your solutions to make them easier to understand, debug and use by others.
-
-**Tutorial 1-2-3:** Read existing algorithm
-Given the following definition, write a description of what the algorithm does, identify input, the main process(s) and output, then label and color-code all the parts. Re-write the solution to make it more readable.
-
-<figure>
-   <img src="ads-005.png">
-</figure>  
+Some solutions are not written with styles and hence are hard to read and build on. It is very important that you take the time to organize and label your solutions to make them easier to understand, debug and use by others.  
 
 <table class="rounded">
+  <tr>
+    <th>Tutorial 1-2-3: Read existing algorithm</th>
+  </tr>
+  <tr>
+    <td>
+    Given the following definition, write a description of what the algorithm does, identify input, the main process(s) and output, then label and color-code all the parts. Re-write the solution to make it more readable.
+    <figure>
+    <img src="ads-005.png">
+    </figure>
+    </td>
+  </tr>
   <tr>
     <th>Solution</th>
   </tr>
