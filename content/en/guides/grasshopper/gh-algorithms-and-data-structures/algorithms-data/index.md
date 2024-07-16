@@ -157,11 +157,11 @@ Designing algorithms requires knowledge in geometry, mathematics and programming
   </tr>
     <tr>
     <td style="background-color:#eee4c5"><b>4. Intermediate steps</b></td>
-    <td>Define intermediate steps to generate missing data</td>
+    <td>Define intermediate parameters and processes to generate additional data</td>
   </tr>
 </table>
 
-Thinking in terms of these 4 steps is key to developing the skill of algorithmic design. We will start with simple examples to illustrate the methodology, and gradually apply more complex examples. 
+Thinking in terms of these 4 steps is key to developing the skill of algorithmic design. We will start with simple examples to illustrate the methodology, and gradually apply more complex examples.
 
 **Example 1-3-1: Add two numbers**
 Use the 4-Step process to write an algorithm to add two numbers
@@ -241,11 +241,43 @@ In more complex algorithms, we will need to analyze the problems, investigate po
 
 ## 1.4 Data
 
-LabLab
+Data is information stored in a computer and processed by a program. Data can be collected from different sources, it has many types and is stored in well defined structures so that it can be used efficiently. While there are commonalities when it comes to data across all scripting languages, there are also some differences. This book explores data and data structures specific to Grasshopper.
 
 ## 1.5 Data sources
 
-LabLab
+In Grasshopper, there are three main ways to supply data to processes (or what is called components): internal, referenced and external.
+
+<table class="rounded">
+  <tr>
+    <th>Data sources in Grasshopper</th>
+  </tr>
+    <tr>
+    <td>
+    <b>1. Internally set data</b><br> Data can be set inside any instance of a parameter. Once set, it remains constant, unless manually changed or overridden by external input. This is a good way when you do not
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <b>2. Referenced data</b><br> Data can be referenced from Rhino or some external document. For example, you can reference a point created in a Rhino document. When you move the point in Rhino, its reference in Grasshopper updates as well. Grasshopper files are saved separately from Rhino files, and hence if the GH file has referenced data, the Rhino file needs to be saved and passed along with the GH file to avoid any loss of data<br>
+    <figure>
+    <img src="ads-025.png">
+    </figure><br>
+    generally need to change the data after it is set (constant). Data is stored inside the GH file<br>
+    <figure>
+    <img src="ads-026.png">
+    </figure>
+    </td>
+  </tr>
+    <tr>
+    <td>
+    <b>3. Externally supplied data</b><br> Data can be supplied from previous processes. This method is best suited for dynamic data or data controlled parametrically. Externally supplied data to a parameter takes precedent over the internal or referenced values (when both exist)<br>
+    <figure>
+    <img src="ads-027.png">
+    </figure>
+    </td>
+  </tr>
+</table>
+
 
 ## 1.6 Data types
 
