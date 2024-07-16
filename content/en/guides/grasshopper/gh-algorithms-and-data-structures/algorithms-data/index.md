@@ -627,26 +627,110 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
 
 <figure>
    <img src="ads-067.png">
-   <figcaption>Figure(33): Poor organization in visual programming make the code hard to read or debug</figcaption>
+   <figcaption>Figure(33): Poor organization in visual programming make the code hard to read and debug</figcaption>
 </figure>
 
 ## 1.9 Tutorials: algorithms and data
 
-### 1.9.1 Unioned circles tutorial
-
-LabLab
+<table class="rounded">
+  <tr>
+    <th>Tutorial 1.9.1: Unioned circles</th>
+  </tr>
+  <tr>
+    <td>
+    Use the 4-step process to design an algorithm that combines 2 circles, given the following:<br>
+    Both circles are located on the XY-Plane. The first circle (Cir1) has a center (C1) = (2,2,2) and radius (R1) that is equal to a random number between 3 and 6. The second circle (Cir2) has a center (C2) that is shifted to the right of the first circle (Cir1) by an amount equal to the radius of the first circle (R1) along the positive X-Axis. The second circle radius (R2) is 20% bigger, or in other words (R2) = (R1) * 1.2.
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br><b>Analyze the question and the flow of the solution</b><br>
+        <table>
+          <tr>
+            <td>
+            There are 2 inputs: the coordinates of the center of the first circle (2,2,2) and the XY-Plane where both circles are located. Also, we know that the second circle is shifted the positive X-Axis direction, The following diagram shows an overview of the solution:<br>
+            <img src="ads-068.png">
+            </td>
+          </tr>
+        </table>
+        <b>Solution steps</b><br>
+        <table>
+          <tr>
+            <td style="background-color:#cfe2f3">
+            <b>Output: Curve for the region union</b>
+            </td>
+            <td>
+            <img src="ads-069.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#f4cccc">
+            <b>Key Process: Union of 2 circles</b><br>
+            Use the <b>Region Union</b> component that takes curves and a plane
+            </td>
+            <td>
+            <img src="ads-070.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#d9d2e9">
+            <b>Input: needed to calculate the region union</b><br>
+            Identify the input needed and use given input when relevant.<br><br>
+            The plane for region union has been given. The 2 circles need their own plane and radius. The center of the plane is the center of the circle.
+            </td>
+            <td>
+            <img src="ads-071.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#eee4c5">
+            <b>Intermediate processes #1:</b><br>
+            generate the center and plane of the 1st circle<br>
+            Construct a center from the given coordinates. Create a plane using <b>Plane Origin</b> component and use the constructed center and XY-Plane.<br><br>
+            The radius is from a random number between 3 and 6. Use <b>Random</b> component to create the radius
+            </td>
+            <td>
+            <img src="ads-072.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#eee4c5">
+            <b>Intermediate processes #2</b><br>
+            Generate the center and plane of the 2nd circle<br>
+            Calculate the 2nd circle plane by moving the first circle plane along the x-axis by an amount = first radius<br><br>
+            Calculate the 2nd circle radius by multiplying the first radius by 1.2 
+            </td>
+            <td>
+            <img src="ads-073.png">
+            </td>
+          </tr>
+        </table>
+        <b>Putting it all together</b><br>
+        <img src="ads-074.png">
+        </details>
+    </td>
+  </tr>
+</table>
 
 ### 1.9.2 Sphere with bounds tutorial
 
-LabLab
+Use the 4-step process to draw a sphere with a radius between 2 and 6. If input is less than 2, then set the radius to 2, and if input radius is greater than 6, set the radius to 6. Use a number slider to input the radius and set between 0 and 10 to test. Make sure your solution is well organized, color-coded and labeled properly.
 
 ### 1.9.3 Data operations tutorial
 
-LabLab
+Given the numbers embedded in the Number parameter below:<br>
+1. Analyze input in terms of bounds and distribution
+2. View the data and how it is structured
+3. Extract even numbers
+4. Sort numbers descending
+5. Remap sorted numbers to (100 to 200)
+
 
 ### 1.9.4 Pitfalls tutorial
 
-LabLab
+Analyze what the following algorithm is intended to do, identify the errors that are preventing it from working as intended, then rewrite to fix the errors. Organize to reflect the algorithm flow, label and color-code.
 
 ## Next Steps
 
