@@ -140,7 +140,7 @@ Algorithmic solutions are not interactive and require explicit articulation of d
 </figure>  
 
 **Designing algorithms**
-Designing algorithms requires knowledge in geometry, mathematics and programming. Knowledge in geometry and mathematics is covered in the [Essential Mathematics for Computational Design](https://www.rhino3d.com/download/rhino/6/essentialmathematics/). As for programming skills, it takes time and practice to build the ability to formulate design intentions into logical steps to process and manage geometric data. To help get started, it is useful to think of any **algorithm as a 4-step process** as in the following:
+Designing algorithms requires knowledge in geometry, mathematics and programming. Knowledge in geometry and mathematics is covered in the [Essential Mathematics for Computational Design](https://developer.rhino3d.com/guides/general/essential-mathematics/). As for programming skills, it takes time and practice to build the ability to formulate design intentions into logical steps to process and manage geometric data. To help get started, it is useful to think of any **algorithm as a 4-step process** as in the following:
 
 <table class="rounded">
   <tr>
@@ -160,6 +160,84 @@ Designing algorithms requires knowledge in geometry, mathematics and programming
     <td>Define intermediate steps to generate missing data</td>
   </tr>
 </table>
+
+Thinking in terms of these 4 steps is key to developing the skill of algorithmic design. We will start with simple examples to illustrate the methodology, and gradually apply more complex examples. 
+
+**Example 1-3-1: Add two numbers**
+Use the 4-Step process to write an algorithm to add two numbers
+
+<figure>
+   <img src="ads-011.png">
+</figure> 
+
+<table class="rounded">
+  <tr>
+    <td style="background-color:#cfe2f3"><b>1. Output:<br>The sum of the 2 numbers</b> <br>Use the Panel component to collect the sum</td>
+    <td><img src="ads-012.png"></td>
+  </tr>
+  <tr>
+    <td style="background-color:#f4cccc"><b>2. Key processes:<br>Addition</b><br>Use the Addition component that takes 2 numbers and gives the sum</td>
+    <td><img src="ads-013.png"></td>
+  </tr>
+  <tr>
+    <td style="background-color:#d9d2e9"><b>3. Input:<br>2 numbers</b><br>Use the Panel component to hold and view the values of input numbers</td>
+    <td><img src="ads-014.png"></td>
+  </tr>
+</table>
+
+**Example 1-3-2: Create a circle**
+Use the 4-Step process to create a circle from a given center and radius
+
+<figure>
+   <img src="ads-015.png">
+</figure> 
+
+<table class="rounded">
+  <tr>
+    <td style="background-color:#cfe2f3"><b>1. Output:<br>A Circle</b><br>Use the <b>Circle</b> parameter to collect the output</td>
+    <td><img src="ads-016.png"></td>
+  </tr>
+  <tr>
+    <td style="background-color:#f4cccc"><b>2. Key processes:</b><br>Identify a key process that generates a circle from a radius<br>Use the <b>Circle</b> component in Grasshopper</td>
+    <td><img src="ads-017.png"></td>
+  </tr>
+  <tr>
+    <td style="background-color:#d9d2e9"><b>3. Input:</b><br>Use the given input (center and radius). Feed the radius to the <b>Circle</b> component</td>
+    <td><img src="ads-018.png"></td>
+  </tr>
+  <tr>
+    <td style="background-color:#eee4c5"><b>4.  Intermediate process:</b><br>The circle needs a center, and also the plane on which the circle is located. Let's assume the circle is on a plane parallel to the XY-Plane and use the circle center as the origin of the plane</td>
+    <td><img src="ads-019.png"></td>
+  </tr>
+</table>
+
+**Example 1-3-3: Create a line**
+Use the 4-Step process to create an algorithm to generate a line from 2 points. One point is referenced from Rhino, and the other is created using three coordinates (x=1, y=0.5 and z=3)
+
+<figure>
+   <img src="ads-020.png">
+</figure> 
+
+<table class="rounded">
+  <tr>
+    <td style="background-color:#cfe2f3"><b>1. Output:</b><br>The line geometry. Use the <b>Geometry</b> parameter to collect the output</td>
+    <td><img src="ads-021.png"></td>
+  </tr>
+  <tr>
+    <td style="background-color:#f4cccc"><b>2. Key processes:</b><br>Identify a key process that generates a line from 2 points. Use the <b>Line</b> component in Grasshopper</td>
+    <td><img src="ads-022.png"></td>
+  </tr>
+  <tr>
+    <td style="background-color:#d9d2e9"><b>3. Input:</b><br>Use the given input (a referenced point and 3 coordinates). Feed one point to one of the ends of the line</td>
+    <td><img src="ads-023.png"></td>
+  </tr>
+  <tr>
+    <td style="background-color:#eee4c5"><b>4.  Intermediate process:</b><br>Before we can use the coordinates as a point, we need to construct a point</td>
+    <td><img src="ads-024.png"></td>
+  </tr>
+</table>
+
+In more complex algorithms, we will need to analyze the problems, investigate possible solutions and break them down to pieces whenever possible to make it more manageable and readable. We will continue to use the 4-step process and other techniques to solve more complex algorithms throughout the book.
 
 ## 1.4 Data
 
