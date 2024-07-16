@@ -78,19 +78,20 @@ Some solutions are not written with styles and hence are hard to read and build 
     </td>
   </tr>
   <tr>
-    <th>Solution</th>
-  </tr>
-  <tr>
     <td>
-    In order to figure out what the algorithm is meant to do, we need to group the input on the left side, and collect the output on the right side, then organize the processes in the order of execution. We then step through the solution from left to right to deduce what it does. We can examine and preview the output in each step.
-    <br><br>
-    The example of the tutorial is meant to create a circle that is twice as large as another circle that goes through three given points. One of the points is constructed out of its 3 coordinates.
-    <figure>
-    <img src="ads-006.png">
-    </figure> 
+        <details>
+        <summary> Solution...</summary>
+        <br>In order to figure out what the algorithm is meant to do, we need to group the input on the left side, and collect the output on the right side, then organize the processes in the order of execution. We then step through the solution from left to right to deduce what it does. We can examine and preview the output in each step.
+        <br><br>
+        The example of the tutorial is meant to create a circle that is twice as large as another circle that goes through three given points. One of the points is constructed out of its 3 coordinates.
+        <figure>
+        <img src="ads-006.png">
+        </figure>
+        </details>
     </td>
   </tr>
 </table>
+
 
 ## 1.3 Designing algorithms: the 4-step process
 
