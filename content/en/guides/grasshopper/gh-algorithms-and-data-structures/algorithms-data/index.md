@@ -80,7 +80,7 @@ Some solutions are not written with styles and hence are hard to read and build 
   <tr>
     <td>
         <details>
-        <summary> Solution...</summary>
+        <summary><b>Solution...</b></summary>
         <br>In order to figure out what the algorithm is meant to do, we need to group the input on the left side, and collect the output on the right side, then organize the processes in the order of execution. We then step through the solution from left to right to deduce what it does. We can examine and preview the output in each step.
         <br><br>
         The example of the tutorial is meant to create a circle that is twice as large as another circle that goes through three given points. One of the points is constructed out of its 3 coordinates.
@@ -138,6 +138,28 @@ Algorithmic solutions are not interactive and require explicit articulation of d
    <img src="ads-010.png">
    <figcaption>Figure(5): Algorithmic solutions involve explicit definition of geometry, vectors and transformations</figcaption>
 </figure>  
+
+**Designing algorithms**
+Designing algorithms requires knowledge in geometry, mathematics and programming. Knowledge in geometry and mathematics is covered in the [Essential Mathematics for Computational Design](https://www.rhino3d.com/download/rhino/6/essentialmathematics/). As for programming skills, it takes time and practice to build the ability to formulate design intentions into logical steps to process and manage geometric data. To help get started, it is useful to think of any **algorithm as a 4-step process** as in the following:
+
+<table class="rounded">
+  <tr>
+    <td style="background-color:#cfe2f3"><b>1. Output</b></td>
+    <td>Clearly identify the desired outcome</td>
+  </tr>
+  <tr>
+    <td style="background-color:#f4cccc"><b>2. Key processes</b></td>
+    <td>Identify key steps to reach the outcome</td>
+  </tr>
+  <tr>
+    <td style="background-color:#d9d2e9"><b>3. Input</b></td>
+    <td>Examine initial data and parameters</td>
+  </tr>
+    <tr>
+    <td style="background-color:#eee4c5"><b>4. Intermediate steps</b></td>
+    <td>Define intermediate steps to generate missing data</td>
+  </tr>
+</table>
 
 ## 1.4 Data
 
