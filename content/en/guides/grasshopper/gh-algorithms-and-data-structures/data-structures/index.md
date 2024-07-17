@@ -85,6 +85,7 @@ The wires connecting the data with components in GH offer additional visual refe
   </tr>
 </table
 
+
 ## 2.2 Generating lists
 
 There are many ways to generate lists of data in GH. So far we have seen how to directly embed a list of values inside a parameter or a panel (with multiline data). There are also special components to generate lists. For example, to generate a list of numbers, there are three key components: <b>Range</b>, <b>Series</b> and <b>Random</b>. The Range component creates equally spaced range of numbers between a min and max values (called domain) and a number of steps (the number of values in the resulting list is equal to the number of steps plus one).
@@ -92,7 +93,6 @@ There are many ways to generate lists of data in GH. So far we have seen how to 
 ## 2.3 List operations
 
 LabLab
-
 
 ## 2.4 List matching
 

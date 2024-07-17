@@ -73,7 +73,7 @@ Some solutions are not written with styles and hence are hard to read and build 
     <td>
     Given the following definition, write a description of what the algorithm does, identify input, the main process(s) and output, then label and color-code all the parts. Re-write the solution to make it more readable.
     <figure>
-    <img src="ads-005.png">
+    <img src="ads-005.png" class="image_center" width="75%">
     </figure>
     </td>
   </tr>
@@ -173,11 +173,13 @@ Use the 4-Step process to write an algorithm to add two numbers
 <table class="rounded">
   <tr>
     <td style="background-color:#cfe2f3"><b>1. Output:<br>The sum of the 2 numbers</b> <br>Use the Panel component to collect the sum</td>
-    <td><img src="ads-012.png"></td>
+    <td>
+   <img src="ads-012.png" class="image_center" width="25%">
+    </td>
   </tr>
   <tr>
     <td style="background-color:#f4cccc"><b>2. Key processes:<br>Addition</b><br>Use the Addition component that takes 2 numbers and gives the sum</td>
-    <td><img src="ads-013.png"></td>
+    <td><img src="ads-013.png" class="image_center" width="60%"></td>
   </tr>
   <tr>
     <td style="background-color:#d9d2e9"><b>3. Input:<br>2 numbers</b><br>Use the Panel component to hold and view the values of input numbers</td>
@@ -195,15 +197,15 @@ Use the 4-Step process to create a circle from a given center and radius
 <table class="rounded">
   <tr>
     <td style="background-color:#cfe2f3"><b>1. Output:<br>A Circle</b><br>Use the <b>Circle</b> parameter to collect the output</td>
-    <td><img src="ads-016.png"></td>
+    <td><img src="ads-016.png" class="image_center" width="25%"></td>
   </tr>
   <tr>
     <td style="background-color:#f4cccc"><b>2. Key processes:</b><br>Identify a key process that generates a circle from a radius<br>Use the <b>Circle</b> component in Grasshopper</td>
-    <td><img src="ads-017.png"></td>
+    <td><img src="ads-017.png" class="image_center" width="50%"></td>
   </tr>
   <tr>
     <td style="background-color:#d9d2e9"><b>3. Input:</b><br>Use the given input (center and radius). Feed the radius to the <b>Circle</b> component</td>
-    <td><img src="ads-018.png"></td>
+    <td><img src="ads-018.png" class="image_center" width="75%"></td>
   </tr>
   <tr>
     <td style="background-color:#eee4c5"><b>4.  Intermediate process:</b><br>The circle needs a center, and also the plane on which the circle is located. Let's assume the circle is on a plane parallel to the XY-Plane and use the circle center as the origin of the plane</td>
@@ -216,20 +218,20 @@ Use the 4-Step process to create an algorithm to generate a line from 2 points. 
 
 <figure>
    <img src="ads-020.png">
-</figure> 
+</figure>
 
 <table class="rounded">
   <tr>
     <td style="background-color:#cfe2f3"><b>1. Output:</b><br>The line geometry. Use the <b>Geometry</b> parameter to collect the output</td>
-    <td><img src="ads-021.png"></td>
+    <td><img src="ads-021.png" class="image_center" width="25%"></td>
   </tr>
   <tr>
     <td style="background-color:#f4cccc"><b>2. Key processes:</b><br>Identify a key process that generates a line from 2 points. Use the <b>Line</b> component in Grasshopper</td>
-    <td><img src="ads-022.png"></td>
+    <td><img src="ads-022.png" class="image_center" width="50%"></td>
   </tr>
   <tr>
     <td style="background-color:#d9d2e9"><b>3. Input:</b><br>Use the given input (a referenced point and 3 coordinates). Feed one point to one of the ends of the line</td>
-    <td><img src="ads-023.png"></td>
+    <td><img src="ads-023.png" class="image_center" width="75%"></td>
   </tr>
   <tr>
     <td style="background-color:#eee4c5"><b>4.  Intermediate process:</b><br>Before we can use the coordinates as a point, we need to construct a point</td>
@@ -260,11 +262,11 @@ In Grasshopper, there are three main ways to supply data to processes (or what i
     <td>
     <b>2. Referenced data</b><br> Data can be referenced from Rhino or some external document. For example, you can reference a point created in a Rhino document. When you move the point in Rhino, its reference in Grasshopper updates as well. Grasshopper files are saved separately from Rhino files, and hence if the GH file has referenced data, the Rhino file needs to be saved and passed along with the GH file to avoid any loss of data<br>
     <figure>
-    <img src="ads-025.png">
+    <img src="ads-025.png" class="image_center" width="60%">
     </figure><br>
     generally need to change the data after it is set (constant). Data is stored inside the GH file<br>
     <figure>
-    <img src="ads-026.png">
+    <img src="ads-026.png" class="image_center" width="75%">
     </figure>
     </td>
   </tr>
@@ -272,7 +274,7 @@ In Grasshopper, there are three main ways to supply data to processes (or what i
     <td>
     <b>3. Externally supplied data</b><br> Data can be supplied from previous processes. This method is best suited for dynamic data or data controlled parametrically. Externally supplied data to a parameter takes precedent over the internal or referenced values (when both exist)<br>
     <figure>
-    <img src="ads-027.png">
+    <img src="ads-027.png" class="image_center" width="75%">
     </figure>
     </td>
   </tr>
@@ -283,21 +285,21 @@ In Grasshopper, there are three main ways to supply data to processes (or what i
 All programming languages identify the kind of data used in terms of the values that can be assigned to and the operations and processes it can participate in. There are common data types such as <b>Integer, Number, Text, Boolean</b> (Boolean type can be set to <b>True</b> or <b>False</b>), and others. Grasshopper lists those under the <b>Params > Primitives</b> tab.
 
 <figure>
-   <img src="ads-028.png">
+   <img src="ads-028.png" class="image_center" width="40%">
    <figcaption>Figure(6): Examples of primitive data types common to all programming languages</figcaption>
 </figure>  
 
 Grasshopper supports geometry types that are useful in the context of 3D modeling such as Point (3 numbers for coordinates), <b>Line</b> (2 points), <b>NURBS Curve, NURBS Surface, Brep</b>, and others. All geometry types are included under the <b>Params> Geometry</b> tab in GH.
 
 <figure>
-   <img src="ads-029.png">
+   <img src="ads-029.png" class="image_center" width="60%">
    <figcaption>Figure(7): Examples of geometry data types</figcaption>
 </figure>  
 
 There are other mathematics types that designers do not usually use in 3D modeling, but are very common in parametric design such as Domains, Vectors, Planes, and Transformation Matrices. GH provides a rich set of tools to help create, analyze and use these types. To fully understand the mathematical as well as geometry types such as NURBS curves and surfaces, you can refer to the Essential Mathematics for Computational Design book by the author
 
 <figure>
-   <img src="ads-030.png">
+   <img src="ads-030.png" class="image_center" width="75%">
    <figcaption>Figure(8): Examples of data types common in computer graphics</figcaption>
 </figure>  
 
@@ -318,7 +320,7 @@ Grasshopper components internally convert input to suitable types when possible.
 It is worth noting that sometimes GH components simply ignore invalid input (null or wrong type). In such cases, you are likely to end up with an unexpected result and it will be hard to find the bug. It is very important to verify the output from each component before using it.
 
 <figure>
-   <img src="ads-033.png">
+   <img src="ads-033.png" class="image_center" width="75%">
    <figcaption>Figure(11): Invalid input is ignored and a default value is used. For example a number inside a Panel component can be interpreted as a text and hence become invalid input to an Addition component</figcaption>
 </figure>  
 
@@ -331,28 +333,28 @@ Algorithmic designs use many data operations and processes. In the context of th
 Numeric operations include operations such as arithmetic, trigonometry, polynomials and complex numbers. GH has a rich set of numeric operations, and they are mostly found under the <b>Math</b> tab. There are two main ways to perform operations in GH. First by using designated components for specific operations such as <b>Addition, Subtraction</b> and <b>Multiplication</b>.
 
 <figure>
-   <img src="ads-034.png">
+   <img src="ads-034.png" class="image_center" width="75%">
    <figcaption>Figure(12): Examples of  numeric operations components in GH</figcaption>
 </figure>  
 
 Second, use an <b>Expression</b> component where you can combine multiple operations and perform a rich set of math and trigonometry operations, all in one expression.
 
 <figure>
-   <img src="ads-035.png">
+   <img src="ads-035.png" class="image_center" width="70%">
    <figcaption>Figure(13): Expression component in GH can be used to perform multiple operations</figcaption>
 </figure>  
 
 The <b>Expression</b> component is more robust and readable when you have multiple operations.
 
 <figure>
-   <img src="ads-036.png">
+   <img src="ads-036.png" class="image_center" width="90%">
    <figcaption>Figure(14): When a chain of operations is involved, using the Expression component is easier to maintain</figcaption>
 </figure>  
 
 Input to Expressions can be treated as text depending on the context.
 
 <figure>
-   <img src="ads-037.png">
+   <img src="ads-037.png" class="image_center" width="75%">
    <figcaption>Figure(15): Expression can process and format text</figcaption>
 </figure>  
 
@@ -368,8 +370,8 @@ It is worth mentioning that most numeric input to components allow writing an ex
 Main logical operations in GH include equalities, sets and logic gates.
 
 <figure>
-   <img src="ads-039.png">
-   <figcaption>Figure(17):  GH has multiple components to perform Logical operations</figcaption>
+   <img src="ads-039.png" class="image_center" width="60%">
+   <figcaption>Figure(17):  Grasshopper has multiple components to perform Logical operations</figcaption>
 </figure>  
 
 Logical operations are used to create conditional flow of data. For example, if you like to draw a sphere only when the radius is between two values, then you need to create a logic that blocks the radius when it is not within your limits.
@@ -402,14 +404,14 @@ GH has designated components to sort numeric and geometry data. The Sort List co
 3D modeling allows picking specific or a group of objects interactively, but this is not possible in algorithmic design. Data is selected in GH based on the location within the data structure, or by a selection pattern. For example <b>List</b> Item component allows selecting elements based on their indices.
 
 <figure>
-   <img src="ads-043.png">
+   <img src="ads-043.png" class="image_center" width="75%">
    <figcaption>Figure(21):  Select items from a list in Grasshopper</figcaption>
 </figure>  
 
 The <b>Cull Pattern</b> component allows using some repeated patterns to select a subset of the data.
 
 <figure>
-   <img src="ads-044.png">
+   <img src="ads-044.png" class="image_center" width="75%">
    <figcaption>Figure(22):  An example to select every other item in a list</figcaption>
 </figure>  
 
@@ -427,14 +429,14 @@ That refers to the linear mapping of a range of numbers where each number in a s
 Converting data involves mapping. For example, you may need to convert an angle unit from degrees to radians ( GH components accept angles in radians only). 
 
 <figure>
-   <img src="ads-046.png">
+   <img src="ads-046.png" class="image_center" width="75%">
    <figcaption>Figure(24):  Convert angles from degrees to radians</figcaption>
 </figure>  
 
 As you know, parametric curves have “domains” (the range of parameters that evaluate to points on the curve). For example, if the domain of a given curve is between 12.5 to 51.3, evaluating the curve at 12.5 gives the point at the start of the curve. Many times you need to evaluate multiple curves using consistent parameters. Reparameterizing the domain of curves to some unified range helps solve this problem. One common domain to use is “0 To 1”. At the input of each curve in any GH component, there is the option to <b>Reparameterize</b> which resets the domain of the curve to be “0 to 1”.
 
 <figure>
-   <img src="ads-047.png">
+   <img src="ads-047.png" class="image_center" width="75%">
    <figcaption>Figure(25):  Normalize the domain of curves (set to 0-1). Use Reparameterize input flag in Grasshopper</figcaption>
 </figure>  
 
@@ -569,7 +571,7 @@ Writing elegant algorithms that are efficient and easy to read and debug is hard
 If the input is of the wrong type or is invalid, GH changes the color of components to red or orange to indicate an error warning, with feedback about what the issue might be. This is helpful, but sometimes faulty input goes unnoticed if the components assign a default value, or calculate an alternative value to replace the input, that is not what was intended. It is a good practice to always double check the input (hook to a panel or parameter viewer and label the input). To avoid using wrong types, it is advisable to convert to the intended type to ensure accuracy.
 
 <figure>
-   <img src="ads-060.png">
+   <img src="ads-060.png" class="image_center" width="90%">
    <figcaption>Figure(26): Error resulting from wrong input type</figcaption>
 </figure>  
 
@@ -578,7 +580,7 @@ If the input is of the wrong type or is invalid, GH changes the color of compone
 Input is prone to unintended change via intermediate processes or when multiple users have writing access to the script. It is very useful to preview and verify all key input and output. The Panel component is very versatile and can help check all types of values. Also you can set up guarding logic against out of range values or to trap undesired values.
 
 <figure>
-   <img src="ads-061.png">
+   <img src="ads-061.png" class="image_center" width="90%">
    <figcaption>Figure(27): Error resulting from unintended input. Cannot assume curve domain is 0-1 and use 0.5 to evaluate the midpoint</figcaption>
 </figure>  
 
@@ -662,7 +664,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
             <b>Output: Curve for the region union</b>
             </td>
             <td>
-            <img src="ads-069.png">
+            <img src="ads-069.png" class="image_center" width="25%">
             </td>
           </tr>
           <tr>
@@ -671,7 +673,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
             Use the <b>Region Union</b> component that takes curves and a plane
             </td>
             <td>
-            <img src="ads-070.png">
+            <img src="ads-070.png" class="image_center" width="50%">
             </td>
           </tr>
           <tr>
@@ -734,7 +736,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
             <b>Output: The sphere as geometry</b>
             </td>
             <td>
-            <img src="ads-075.png">
+            <img src="ads-075.png" class="image_center" width="25%">
             </td>
           </tr>
           <tr>
@@ -743,7 +745,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
             Use the <b>Sphere</b> component to create a sphere from a base plane and radius
             </td>
             <td>
-            <img src="ads-076.png">
+            <img src="ads-076.png" class="image_center" width="50%">
             </td>
           </tr>
           <tr>
