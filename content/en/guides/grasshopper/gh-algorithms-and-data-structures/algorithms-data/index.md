@@ -512,7 +512,7 @@ As you know, parametric curves have “domains” (the range of parameters that 
             Use the <b>Parameter Viewer</b> to view the resulting data structure. To start, it will be empty.
             </td>
             <td>
-            <img src="ads-054.png">
+            <img src="ads-054.png" class="image_center" width="25%">
             </td>
           </tr>
           <tr>
@@ -522,7 +522,7 @@ As you know, parametric curves have “domains” (the range of parameters that 
             Use <b>ReMap</b> component to achieve that
             </td>
             <td>
-            <img src="ads-055.png">
+            <img src="ads-055.png" class="image_center" width="60%">
             </td>
           </tr>
           <tr>
