@@ -1,6 +1,6 @@
 +++
 aliases = ["/5/guides/grasshopper/your-first-component-mac/", "/6/guides/grasshopper/your-first-component-mac/", "/7/guides/grasshopper/your-first-component-mac/", "/wip/guides/grasshopper/your-first-component-mac/"]
-authors = [ "steve" ]
+authors = [ "steve", "callum" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first Grasshopper component for Rhino for Mac using RhinoCommon and Xamarin Studio."
 keywords = [ "developer", "grasshopper", "components" ]
@@ -28,112 +28,184 @@ toc_type = "single"
 
 +++
 
- 
 ## Prerequisites
 
-Grasshopper for Mac only exists in the RhinoWIP until the next major version of Rhino for Mac is released.  
-
-<div class="bs-callout bs-callout-danger">
-  <h4>WARNING</h4>
-  <p><b>Early-adopters</b>: the following steps will <b>NOT</b> work with the currently released Rhinoceros (5.x.x).  You will need to use WIP version of Rhinoceros.</p>
-</div>
-
-Due to this, there are a few additional steps that need to be taken to install all of the tools needed to develop components.  You will need to do the following:
-
-1. Install the [latest RhinoWIP](http://www.rhino3d.com/go/download/rhino-for-mac/wip/latest). The WIP can be safely installed along side the stable release of Rhino for Mac (but they cannot be run simultaneously).
-1. Install Xamarin Studio.  Instructions can be found in the [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac) guide.
-1. Install the Rhino Xamarin Add-in.  Instructions can be found in the [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac) guide in the [Install the Rhino Add-in](/guides/rhinocommon/installing-tools-mac/#install-the-rhino-add-in) section.
+It is presumed you already have the necessary tools installed and are ready to go. If you are not there yet, see [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac).
+ 
 
 
 ## HelloGrasshopper
 
-We will use the Rhino Xamarin Add-in to create a new, basic, Grasshopper component called *HelloGrasshopper*.
+We will use Visual Studio Code and the dotnet Rhino Grasshopper template to create a new, basic, Grasshopper component called *HelloGrasshopper*.
 
-If you are familiar with Visual Studio or Xamarin Studio, these step-by-step instructions may be overly detailed for you.  The executive summary: create a new Solution using the Grasshopper Component template, build and run, and then make a change.
+If you are familiar with Visual Studio Code, these step-by-step instructions may be overly detailed for you.  The executive summary: create a new Solution using the Grasshopper Component dotnet template, build and run, and then make a change.
 
 We are presuming you have never used Xamarin Studio before, so we'll go through this one step at a time.
 
-### File New
 
-1. If you have not done so already, **launch Xamarin Studio**.
-1. Navigate to **File** > **New** > **Solution**...
-![File New Solution](/images/your-first-plugin-mac-01.png)
-1. A **New Project** wizard should appear.  In the left column, find the **Other** > **Miscellaneous** section.  Under General, select the **Grasshopper Component** template...
-![New Project](/images/your-first-component-mac-02.png)
-1. Click the **Next** button.
-1. You will now **Configure your new project**.  For the purposes of this Guide, we will name our demo component *HelloGrasshopper*.  Fill in the **Project Name** field.  **Browse** and select a location for this component on your Mac...
-![Project Configuration](/images/your-first-component-mac-03.png)
-1. Click the **Create** button.
-1. A **new solution** called **HelloGrasshopper** should open...
-![HelloRhinoCommon Solution](/images/your-first-component-mac-04.png)
+
+### Download the required template
+
+1. Launch Visual Studio Code.
+1. Open *Visual Studio Code's Terminal* via *Terminal (menu entry)* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search for "Terminal".
+1. Inside Terminal, run:
+    ``` pwsh
+    dotnet new install Rhino.Templates
+    ```
+
+
+### Starting the Project
+
+1. Create a folder on your mac where you would like your project to live. Name the folder `HelloGrasshopper`.
+1. If you have not done so already, *launch Visual Studio Code*.
+1. Now we can open our new folder, navigate to *File* > *Open Folder* and choose the folder we just created.
+1. Open Terminal via *Terminal* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search for "Terminal".
+1. Enter the following command into the Terminal:
+    ``` pwsh
+    dotnet new grasshopper --version 8
+    ```
+6. In our Folder explorer, we should see the project appear as Visual Studio Code discovers the files.
+1. Expand the Solution Explorer, this is the best way to interact with C# projects on Mac in Visual Studio Code.
+
+
+
+### Setting up Debug
+
+1. Create a folder called *.vscode* in the solution directory.
+{{< call-out hint "Can't see the folder?" >}}
+If you cannot see the *.vscode* folder, toggle hidden folders in Finder: click on your Desktop and press _⌘ ⇧ ._  (`command` + `shift` + `period`)
+{{< /call-out >}}
+1. We will need to create three new files in the *.vscode* new folder: *settings.json*, *tasks.json*, and *launch.json*...
+1. Create *settings.json* with the following contents:
+    ``` json
+    {
+            // This file will specify the solution we use to build
+            "dotnet.defaultSolution": "HelloGrasshopper.sln"
+    }
+    ```
+4. Create *tasks.json* with the following contents:
+    ``` json
+    {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "build-plugin-netcore",
+                // This will ensure the project is built before we try to debug it
+                "command": "dotnet build ${workspaceFolder}/*.csproj -f net7.0",
+                "type": "shell",
+                "args": [],
+                "problemMatcher": [
+                    "$msCompile"
+                ],
+                "presentation": {
+                    "reveal": "always"
+                },
+                "group": "build"
+            }
+        ]
+    }
+    ```
+5. Create *launch.json* with the following contents:
+    ``` json
+    {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Run GH 8 (Mac)",
+                "type": "coreclr",
+                "request": "launch",
+                "preLaunchTask": "build-plugin-netcore",
+                // Launches Rhino for us
+                "program": "/Applications/Rhino 8.app/Contents/MacOS/Rhinoceros",
+                // See : https://developer.rhino3d.com/guides/cpp/running-rhino-from-command-line/
+                "args": ["-runscript=_Grasshopper"],
+                "cwd": "${workspaceFolder}",
+                "stopAtEntry": false,
+                "console": "internalConsole",
+                // RHINO_PACKAGE_DIRS is required for Multi-Targeted plugins
+                // This is what enables Rhino to register our Plug-in
+                "env": {
+                    "RHINO_PACKAGE_DIRS": "${workspaceFolder}/bin/Debug/"
+                } 
+            },
+        ],
+        "compounds": []
+    }
+    ```
+6. The Folder Explorer should look like below (Note that we cannot see *.vscode* in the Solution Explorer)
+
+    ![New Project](/images/your-first-plugin-mac-02.png)
+
+
 
 ### Boilerplate Build
+1. Before we do anything, let's *Run and Debug* HelloGrasshopper to make sure everything is working as expected. We'll just build the boilerplate Plugin template. Click the *Run and Debug* button on the left hand side of Visual Studio Code and then the green play button in the newly opened panel.
 
-1. Before we do anything, let's **build** and **run** HelloGrasshopper to make sure everything is working as expected.  We'll just build the boilerplate Component template.  Click the large **Build > Run** (play) button in the upper-left corner of Xamarin Studio...
-![Play Button](/images/your-first-plugin-mac-05.png)
-1. **Rhinoceros** launches.  Create a **New Model**...
-![New Model Button](/images/your-first-plugin-mac-06.png)
-1. Enter the **ExplicitHistory** command.  Notice that your new component is listed a loaded by Grasshopper...
-![HelloGrasshopper Loaded](/images/your-first-component-mac-05.png)
-1. Go to the **Curve** tab in Grasshopper and you should see a new blank icon for your new component...
-![Curve Tab](/images/your-first-component-mac-06.png)
-1. Drag this component on to the Grasshopper canvas to verify that it is working...
-![Command Starts](/images/your-first-component-mac-07.png)
-1. **Quit** Rhinoceros.  This stops the session.  Go back to **Xamarin Studio**.  Let's take a look at the...
+    ![New Project](/images/your-first-component-mac-01.png)
+
+1. *Rhinoceros and Grasshopper* launch.
+1. We will find the HelloGrasshopper Component under **Category / SubCategory**
+
+  ![Solution Anatomy](/images/your-first-component-mac-02.png)
+
+4. Adding the component to the canvas will perform no action
+
+  ![Solution Anatomy](/images/your-first-component-mac-03.png)
+
+5. *Quit* Rhinoceros. This stops the session. Go back to *Visual Studio Code*. Let's take a look at the Plugin Anatomy.
+
 
 
 ### Component Anatomy
+Use the **Solution Explorer** to expand the **Solution** (*.sln*) so that it looks like this...
 
-1. Use the **Solution Explorer** to expand the **Solution** (*.sln*) so that it looks like this...
-![Solution Anatomy](/images/your-first-component-mac-08.png)
-1. The **HelloGrasshopper** project (*.csproj*) has the same name as its parent solution...this is the project that was created for us by the **Grasshopper Component** template wizard earlier.
-1. **References**: Just as with most projects, you will be referencing other libraries.  The **Grasshopper Component** template added the necessary references to create a basic Grasshopper component.
-1. **Eto** is the cross-platform User Interface (UI) library Rhino uses.  If you examine its properties, you will notice it comes bundled as part of Rhino for Mac.
-1. **GH_IO** is used for reading and writing Grasshopper definitions.
+  ![Solution Anatomy](/images/your-first-component-mac-04.png)
+
+1. The **HelloGrasshopper** solution (*.sln*)
+1. The **HelloGrasshopper** project (*.csproj*) has the same name as its parent solution...this is the project that was created for us by the template earlier.
+1. **References**: Just as with most projects, you will be referencing other libraries.  The template added the necessary references to create a basic Grasshopper component.
 1. **Grasshopper** is the Rhino for Mac main grasshopper DLL. Classes in this DLL are subclassed and used by your custom component.
-1. **Rhino.UI** is the Rhino-specific User Interface (UI) library associated with...
-1. **RhinoCommon** is used by your component to work with all of the geometry defined in Rhino.
-1. **System**, **System.Core**, and **System.Drawing** are .NET foundational libraries...in this case, we are referencing the Mono versions of these libraries (on Windows, these references will point to the canonical, Microsoft-provided, versions).
-1. **Packages** is used the the [NuGet](https://www.nuget.org/) package-manager.  There are no referenced packages in this boilerplate project, but note that Xamarin Studio supports NuGet, just like Visual Studio does.
-1. **Properties** contains the **AssemblyInfo.cs** source file.  This file contains general information about your component.
 1. **HelloGrasshopperComponent.cs** is where a custom `Grasshopper.Kernal.GH_Component` subclass is defined. Your project may contain multiple subclasses of GH_Component if you want to ship multiple components in a single *gha*.  
 1. **HelloGrasshopperInfo.cs** defines general information about this *gha*.
 
+
+
 ### Debugging
 
-1. Set a breakpoint on line[^1] 103 of *HelloGrasshopperComponent.cs*.  You set breakpoints in Xamarin Studio by clicking in the gutter...
-![Set a breakpoint](/images/your-first-component-mac-09.png)
-1. **Build** and **Run**.  Drag one of your new components on to the Grasshopper canvas...as soon as you do, you should hit your breakpoint and pause...
-![Hit a breakpoint](/images/your-first-component-mac-10.png)
-1. With Rhino paused, in **Xamarin Studio** switch to the **Locals** tab.  In the list, you can inspect all of the values for the variables in your function...  
-![Locals panel](/images/your-first-component-mac-11.png)
-1. **Continue Executing** in Rhino by pressing the **Play** button in the upper navigation menu of **Xamarin Studio**...
-![Continue Executing](/images/your-first-plugin-mac-15.png)
-1. Control is passed back to **Rhino** and your command finishes.  **Quit** Rhino or **Stop** the debugging session.
+1. Add a semicolon to line 47 of *HelloGrasshopperComponent.cs*, and set a breakpoint on it. You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
+![Set a breakpoint](/images/your-first-component-mac-05.png)
+1. *Run and Debug*. our project. The breakpoint will become an empty circle, this is because our code has not been loaded yet. Once we hit the breakpoint once and continue, the code will be loaded until we end our Debug session.
+![Set a breakpoint](/images/your-first-component-mac-06.png)
+1. Click New Model. And then run our *HelloDrawLine* command. Create the two points and as soon as you do, you should hit your breakpoint and rhino will pause
+![Hit a breakpoint](/images/your-first-component-mac-07.png)
+1. With Rhino paused, in *Visual Studio Code* we will see *Locals* under *Variables*.  You can inspect all of the values for the variables in your component.
+![Locals panel](/images/your-first-component-mac-08.png)
+4. Let's Continue Execution in Rhino by pressing the Green *Play* button in the Debug Bar
+1. Control is passed back to *Rhino* and your command finishes.  *Quit* Rhino or *Stop* the debugging session.
 1. **Remove** the breakpoint you created above by clicking on it in the gutter.
 
-**DONE!**
-
 **Congratulations!**  You have just built your first Grasshopper component for Rhino for Mac.  **Now what?**
+
+
 
 ## Next Steps
 
 ### Adding components
 
-A single gha can contain more than one GH_Component derived class (and commonly does). The Xamarin Studio has support for adding more custom components to your project.
+A single gha can contain more than one [GH_Component](https://mcneel.github.io/grasshopper-api-docs/api/grasshopper/html/T_Grasshopper_Kernel_GH_Component.htm) derived class (and commonly does). Dotnet has support for adding more custom components to your project.
 
-1. Navigate to **File** > **New** > **File**...
-![File New Solution](/images/your-first-component-mac-12.png)
-1. A **New File** wizard should appear.  In the left column, find the **Rhinoceros** section.  This should give you the ability to select an "Empty Grasshopper Component"...
-![New Project](/images/your-first-component-mac-13.png)
-1. After deciding on a name for the component click the **New** button.
+1. Open *Visual Studio Code's Terminal* via *Terminal (menu entry)* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search for "Terminal".
+1. Inside Terminal, run:
+
+  ``` pwsh
+  dotnet new ghcomponent -n "NewComponent"
+  ```
+
+1. A new component will appear called *NewComponent*
 
 ## Related topics
 
-This article is focused on initial setup and debugging a Grasshopper component in Rhino for Mac.  For further reading on customizing your component please see: **TODO - provide good reference for component development**
+This article is focused on initial setup and debugging a Grasshopper component in Rhino for Mac.  For further reading on customizing your component please see:
 
-- [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac)
-
-**Footnotes**
-
-[^1]: **Line numbers** in Xamarin Studio can be enabled and disabled in **Xamarin Studio** > **Preferences...** > **Text Editor** section > **Markers and Rulers** entry > check **Show line numbers**.
+- [Grasshopper](/guides/grasshopper/csharp-essentials/)
+- [Distributing your Plugin](/guides/yak/creating-a-rhino-plugin-package/)
