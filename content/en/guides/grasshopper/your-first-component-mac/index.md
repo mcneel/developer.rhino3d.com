@@ -33,6 +33,7 @@ toc_type = "single"
 It is presumed you already have the necessary tools installed and are ready to go. If you are not there yet, see [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac).
  
 
+
 ## HelloGrasshopper
 
 We will use Visual Studio Code and the dotnet Rhino Grasshopper template to create a new, basic, Grasshopper component called *HelloGrasshopper*.
@@ -40,6 +41,8 @@ We will use Visual Studio Code and the dotnet Rhino Grasshopper template to crea
 If you are familiar with Visual Studio Code, these step-by-step instructions may be overly detailed for you.  The executive summary: create a new Solution using the Grasshopper Component dotnet template, build and run, and then make a change.
 
 We are presuming you have never used Xamarin Studio before, so we'll go through this one step at a time.
+
+
 
 ### Download the required template
 
@@ -49,6 +52,7 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
     ``` pwsh
     dotnet new install Rhino.Templates
     ```
+
 
 ### Starting the Project
 
@@ -62,6 +66,8 @@ We are presuming you have never used Xamarin Studio before, so we'll go through 
     ```
 6. In our Folder explorer, we should see the project appear as Visual Studio Code discovers the files.
 1. Expand the Solution Explorer, this is the best way to interact with C# projects on Mac in Visual Studio Code.
+
+
 
 ### Setting up Debug
 
@@ -131,6 +137,7 @@ If you cannot see the *.vscode* folder, toggle hidden folders in Finder: click o
     ![New Project](/images/your-first-plugin-mac-02.png)
 
 
+
 ### Boilerplate Build
 1. Before we do anything, let's *Run and Debug* HelloGrasshopper to make sure everything is working as expected. We'll just build the boilerplate Plugin template. Click the *Run and Debug* button on the left hand side of Visual Studio Code and then the green play button in the newly opened panel.
 
@@ -147,6 +154,8 @@ If you cannot see the *.vscode* folder, toggle hidden folders in Finder: click o
 
 5. *Quit* Rhinoceros. This stops the session. Go back to *Visual Studio Code*. Let's take a look at the Plugin Anatomy.
 
+
+
 ### Component Anatomy
 Use the **Solution Explorer** to expand the **Solution** (*.sln*) so that it looks like this...
 
@@ -159,7 +168,25 @@ Use the **Solution Explorer** to expand the **Solution** (*.sln*) so that it loo
 1. **HelloGrasshopperComponent.cs** is where a custom `Grasshopper.Kernal.GH_Component` subclass is defined. Your project may contain multiple subclasses of GH_Component if you want to ship multiple components in a single *gha*.  
 1. **HelloGrasshopperInfo.cs** defines general information about this *gha*.
 
+
+
+### Debugging
+
+1. Add a semicolon to line 47 of *HelloGrasshopperComponent.cs*, and set a breakpoint on it. You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
+![Set a breakpoint](/images/your-first-component-mac-05.png)
+1. *Run and Debug*. our project. The breakpoint will become an empty circle, this is because our code has not been loaded yet. Once we hit the breakpoint once and continue, the code will be loaded until we end our Debug session.
+![Set a breakpoint](/images/your-first-component-mac-06.png)
+1. Click New Model. And then run our *HelloDrawLine* command. Create the two points and as soon as you do, you should hit your breakpoint and rhino will pause
+![Hit a breakpoint](/images/your-first-component-mac-07.png)
+1. With Rhino paused, in *Visual Studio Code* we will see *Locals* under *Variables*.  You can inspect all of the values for the variables in your component.
+![Locals panel](/images/your-first-component-mac-08.png)
+4. Let's Continue Execution in Rhino by pressing the Green *Play* button in the Debug Bar
+1. Control is passed back to *Rhino* and your command finishes.  *Quit* Rhino or *Stop* the debugging session.
+1. **Remove** the breakpoint you created above by clicking on it in the gutter.
+
 **Congratulations!**  You have just built your first Grasshopper component for Rhino for Mac.  **Now what?**
+
+
 
 ## Next Steps
 
@@ -170,9 +197,9 @@ A single gha can contain more than one [GH_Component](https://mcneel.github.io/g
 1. Open *Visual Studio Code's Terminal* via *Terminal (menu entry)* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search for "Terminal".
 1. Inside Terminal, run:
 
-    ``` pwsh
+  ``` pwsh
   dotnet new ghcomponent -n "NewComponent"
-    ```
+  ```
 
 1. A new component will appear called *NewComponent*
 
