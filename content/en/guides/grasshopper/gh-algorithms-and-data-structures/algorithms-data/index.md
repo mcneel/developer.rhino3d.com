@@ -174,12 +174,12 @@ Use the 4-Step process to write an algorithm to add two numbers
   <tr>
     <td style="background-color:#cfe2f3"><b>1. Output:<br>The sum of the 2 numbers</b> <br>Use the Panel component to collect the sum</td>
     <td>
-   <img src="ads-012.png" class="image_center" width="25%">
+   <img src="ads-012.png" class="image_center" width="50%">
     </td>
   </tr>
   <tr>
     <td style="background-color:#f4cccc"><b>2. Key processes:<br>Addition</b><br>Use the Addition component that takes 2 numbers and gives the sum</td>
-    <td><img src="ads-013.png" class="image_center" width="60%"></td>
+    <td><img src="ads-013.png" class="image_center" width="75%"></td>
   </tr>
   <tr>
     <td style="background-color:#d9d2e9"><b>3. Input:<br>2 numbers</b><br>Use the Panel component to hold and view the values of input numbers</td>
@@ -197,15 +197,15 @@ Use the 4-Step process to create a circle from a given center and radius
 <table class="rounded">
   <tr>
     <td style="background-color:#cfe2f3"><b>1. Output:<br>A Circle</b><br>Use the <b>Circle</b> parameter to collect the output</td>
-    <td><img src="ads-016.png" class="image_center" width="25%"></td>
+    <td><img src="ads-016.png" class="image_center" width="50%"></td>
   </tr>
   <tr>
     <td style="background-color:#f4cccc"><b>2. Key processes:</b><br>Identify a key process that generates a circle from a radius<br>Use the <b>Circle</b> component in Grasshopper</td>
-    <td><img src="ads-017.png" class="image_center" width="50%"></td>
+    <td><img src="ads-017.png" class="image_center" width="75%"></td>
   </tr>
   <tr>
     <td style="background-color:#d9d2e9"><b>3. Input:</b><br>Use the given input (center and radius). Feed the radius to the <b>Circle</b> component</td>
-    <td><img src="ads-018.png" class="image_center" width="75%"></td>
+    <td><img src="ads-018.png"></td>
   </tr>
   <tr>
     <td style="background-color:#eee4c5"><b>4.  Intermediate process:</b><br>The circle needs a center, and also the plane on which the circle is located. Let's assume the circle is on a plane parallel to the XY-Plane and use the circle center as the origin of the plane</td>
@@ -223,15 +223,15 @@ Use the 4-Step process to create an algorithm to generate a line from 2 points. 
 <table class="rounded">
   <tr>
     <td style="background-color:#cfe2f3"><b>1. Output:</b><br>The line geometry. Use the <b>Geometry</b> parameter to collect the output</td>
-    <td><img src="ads-021.png" class="image_center" width="25%"></td>
+    <td><img src="ads-021.png" class="image_center" width="50%"></td>
   </tr>
   <tr>
     <td style="background-color:#f4cccc"><b>2. Key processes:</b><br>Identify a key process that generates a line from 2 points. Use the <b>Line</b> component in Grasshopper</td>
-    <td><img src="ads-022.png" class="image_center" width="50%"></td>
+    <td><img src="ads-022.png" class="image_center" width="75%"></td>
   </tr>
   <tr>
     <td style="background-color:#d9d2e9"><b>3. Input:</b><br>Use the given input (a referenced point and 3 coordinates). Feed one point to one of the ends of the line</td>
-    <td><img src="ads-023.png" class="image_center" width="75%"></td>
+    <td><img src="ads-023.png" class="image_center" width="100%"></td>
   </tr>
   <tr>
     <td style="background-color:#eee4c5"><b>4.  Intermediate process:</b><br>Before we can use the coordinates as a point, we need to construct a point</td>
@@ -512,7 +512,7 @@ As you know, parametric curves have “domains” (the range of parameters that 
             Use the <b>Parameter Viewer</b> to view the resulting data structure. To start, it will be empty.
             </td>
             <td>
-            <img src="ads-054.png" class="image_center" width="25%">
+            <img src="ads-054.png" class="image_center" width="50%">
             </td>
           </tr>
           <tr>
@@ -522,7 +522,7 @@ As you know, parametric curves have “domains” (the range of parameters that 
             Use <b>ReMap</b> component to achieve that
             </td>
             <td>
-            <img src="ads-055.png" class="image_center" width="60%">
+            <img src="ads-055.png" class="image_center" width="75%">
             </td>
           </tr>
           <tr>
@@ -610,7 +610,7 @@ The following shows how to rewrite the same code to make it less error prone.
 The issue of mismatched data structures as input to the same process or component is particularly tricky to guard against in GH, and has the potential to spiral the solution out of memory. It is essential to test the data structure of all input (except trivial ones) before feeding into any component. It is also important to examine desired matching under different scenarios (data matching will be explained at length later).
 
 <figure>
-   <img src="ads-065.png">
+   <img src="ads-065.png" class="image_center" width="75%">
    <figcaption>Figure(31): Mismatched data structures of input can cause errors in the output</figcaption>
 </figure>
 
@@ -619,7 +619,7 @@ The issue of mismatched data structures as input to the same process or componen
 Some algorithms are time consuming, and you simply have to wait for it to process, but there are ways to minimize the wait when it is unnecessary. For example, at the early cycles of development, you should try to use a smaller set of data to test your solution with before committing the time to process the full set of data. It is also a good practice to break the solution into stages when possible, so you can isolate and disable the time consuming parts. Also, it is often possible to rewrite your solution to be more optimized and consume less time. Use the GH <b>Profiler</b> to test processing time. When a solution takes far too long to process or crashes, you should do the following: before you reopen the solution, disable it, and disconnect the input that caused the crash.
 
 <figure>
-   <img src="ads-066.png">
+   <img src="ads-066.png" class="image_center" width="75%">
    <figcaption>Figure(32): Grasshopper Profiler widget helps observe processing time</figcaption>
 </figure>
 
@@ -664,7 +664,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
             <b>Output: Curve for the region union</b>
             </td>
             <td>
-            <img src="ads-069.png" class="image_center" width="25%">
+            <img src="ads-069.png" class="image_center" width="50%">
             </td>
           </tr>
           <tr>
@@ -673,7 +673,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
             Use the <b>Region Union</b> component that takes curves and a plane
             </td>
             <td>
-            <img src="ads-070.png" class="image_center" width="50%">
+            <img src="ads-070.png" class="image_center" width="75%">
             </td>
           </tr>
           <tr>
@@ -736,7 +736,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
             <b>Output: The sphere as geometry</b>
             </td>
             <td>
-            <img src="ads-075.png" class="image_center" width="25%">
+            <img src="ads-075.png" class="image_center" width="50%">
             </td>
           </tr>
           <tr>
@@ -745,7 +745,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
             Use the <b>Sphere</b> component to create a sphere from a base plane and radius
             </td>
             <td>
-            <img src="ads-076.png" class="image_center" width="50%">
+            <img src="ads-076.png" class="image_center" width="75%">
             </td>
           </tr>
           <tr>
