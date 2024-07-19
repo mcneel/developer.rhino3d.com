@@ -2,14 +2,13 @@
 aliases = ["/5/guides/grasshopper/your-first-component-mac/", "/6/guides/grasshopper/your-first-component-mac/", "/7/guides/grasshopper/your-first-component-mac/", "/wip/guides/grasshopper/your-first-component-mac/"]
 authors = [ "steve", "callum" ]
 categories = [ "Getting Started" ]
-description = "This guide walks you through your first Grasshopper component for Rhino for Mac using RhinoCommon and Xamarin Studio."
+description = "This guide walks you through your first Grasshopper component for Rhino for Mac using RhinoCommon and Visual Studio Code."
 keywords = [ "developer", "grasshopper", "components" ]
 languages = [ "C#" ]
 sdk = [ "Grasshopper" ]
 title = "Your First Component (Mac)"
 type = "guides"
 weight = 3
-override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = ""
@@ -139,6 +138,12 @@ If you cannot see the *.vscode* folder, toggle hidden folders in Finder: click o
 
 
 ### Boilerplate Build
+
+{{< call-out hint "Build Issue?" >}}
+Older Rhino Templates do not have System.Drawing.Common referenced.
+To add them to your project run the command **dotnet add package System.Drawing.Common -v 7.0.0** in the terminal.
+{{< /call-out >}}
+
 1. Before we do anything, let's *Run and Debug* HelloGrasshopper to make sure everything is working as expected. We'll just build the boilerplate Plugin template. Click the *Run and Debug* button on the left hand side of Visual Studio Code and then the green play button in the newly opened panel.
 
     ![New Project](/images/your-first-component-mac-01.png)
