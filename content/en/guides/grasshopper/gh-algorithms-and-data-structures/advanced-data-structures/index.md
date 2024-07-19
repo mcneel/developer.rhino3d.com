@@ -826,8 +826,8 @@ Here are some examples of valid split masks.
 
 <table class="rounded">
   <tr>
-    <th><b>Split by branches</b></th>
-    <th><b></b></th>
+    <th><b>Split mask by branches</b></th>
+    <th><b>Description</b></th>
   </tr>
   <tr>
     <td><b>{ * }</b></td>
@@ -849,8 +849,8 @@ Here are some examples of valid split masks.
 
 <table class="rounded">
   <tr>
-    <th><b>Split by branches and leaves</b></th>
-    <th><b></b></th>
+    <th><b>Split mask by branches and leaves</b></th>
+    <th><b>Description</b></th>
   </tr>
   <tr>
     <td><b>{ * }[(1,3,...)]</b></td>
@@ -885,15 +885,214 @@ Suppose you have a grid with 7 branches and 11 elements in each branch, and you�
 This is the GH definition that does the above using the <b>Split Tree</b> component.
 
 <figure>
-   <img src="ads-280.png">
+   <img src="ads-281.png">
    <figcaption>Figure (83): Split tree Grasshopper implementation of Figure (82)</figcaption>
 </figure>  
 
 One of the advantages of using <b>Split Tree</b> over relative trees is that the split mask is very versatile and it is easier to isolate the desired portion of the tree. Also the data structure is preserved across the negative and positive trees which makes it easy to recombine the elements of the tree after processing the parts.
 
+<table class="rounded">
+  <tr>
+    <th>Tutorial 3.6.2.A: Split tree pattern</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Given a 6x9 grid, use the split tree to generate the following pattern:<br>
+     <img src="ads-282.png" class="image_center" width="50%">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br>
+        <table>
+          <tr>
+            <td>
+            Create the grid<br>
+            <img src="ads-283.png" class="image_center" width="70%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Split the tree to isolate the middle part<br>
+            <img src="ads-284.png" class="image_center" width="85%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Split the middle part into two new parts<br>
+            <img src="ads-285.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Move the two middle parts in opposite directions then recombine them<br>
+            <img src="ads-286.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Recombine the middle part with the rest of the tree and create polylines through each branch elements<br>
+            <img src="ads-287.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
+
+<table class="rounded">
+  <tr>
+    <th>Tutorial 3.6.2.B: Split tree truss</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Given a grid, create the following truss system using the split tree method<br>
+     <img src="ads-288.png" class="image_center" width="50%">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br>
+        <table>
+          <tr>
+            <td>
+            Create the 6x9 grid<br>
+            <img src="ads-289.png" class="image_center" width="90%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Split at every other element<br>
+            <img src="ads-290.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Move positive tree vertically<br>
+            <img src="ads-291.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Combine positive and negative trees, and create a polyline through each branch<br>
+            <img src="ads-292.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Create bottom curves using negative tree<br>
+            <img src="ads-293.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Create top curves using positive tree<br>
+            <img src="ads-294.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
+
 ### 3.6.3 Path mapper
 
-LabLab
+When dealing with complex data structures such as the Grasshopper data trees, you’ll find that you need to simplify or rearrange your elements within the tree. There are a few components offered in Grasshopper for that purpose such as <b>Flatten</b>, <b>Graft</b> or <b>Flip</b>. While very useful, these might not suffice when operating on multiple trees or needing custom rearrangement. There is one very powerful component in Grasshopper that helps with reorganizing elements in trees or change the tree structure called the <b>Path Mapper</b>. It is perhaps the least intuitive to use and can cause a loss of data, but it is also the only way to find a solution in some cases, and hence it pays to address here.
+The <b>Path Mapper</b> maps data between source and target paths. The source path is fixed, and is given by the input tree. You can only set the target path. There is a set of constants that you can use to help construct the mapping. Those are listed in the table below.
+
+<table class="rounded">
+  <tr>
+    <th><b>Path Mapper Constants</b></th>
+    <th><b>Description</b></th>
+  </tr>
+  <tr>
+    <td><b>item_count</b></td>
+    <td>Number of items in the current branch</td>
+  </tr>
+  <tr>
+    <td><b>path_count</b></td>
+    <td>Number of paths (branches) in the tree</td>
+  </tr>
+  <tr>
+    <td><b>path_index</b></td>
+    <td>Index of the current path</td>
+  </tr>
+</table>
+
+Let’s start by familiarizing ourselves with the syntax using built-in mappings inside the <b>Path Mappers</b>. If you right-muse-click on the mapper components, you can open the editor, and also access a bumber of default mapping functions that are commonely used.
+
+<figure>
+   <img src="ads-295.png" class="image_center" width="75%">
+   <figcaption>Figure(5): Algorithmic solutions involve explicit definition of geometry, vectors and transformations</figcaption>
+</figure>
+
+The following example examines different built-in mapping in the <b>Path Mapper</b> and how it changes the data structure. The <b>Polyline</b> component creates one polyline through each branch of the tree. Notice how different mapping affect the result.
+
+<table class="rounded">
+  <tr>
+    <th width=20%><b>Mappings</b></th>
+    <th width=40%></th>
+    <th width=40%></th>
+  </tr>
+  <tr>
+    <td><b>Null</b></td>
+    <td>Output = Input tree</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><img src="ads-296.png"></td>
+    <td><img src="ads-297.png"></td>
+  </tr>
+  <tr>
+    <td><b>Flatten</b></td>
+    <td>Convert to a list</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><img src="ads-298.png"></td>
+    <td><img src="ads-299.png"></td>
+  </tr>
+  <tr>
+    <td><b>Graft</b></td>
+    <td>Put leaves in branches</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><img src="ads-300.png"></td>
+    <td><img src="ads-301.png"></td>
+  </tr>
+  <tr>
+    <td><b>Reverse</b></td>
+    <td>Reverse the tree</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><img src="ads-296.png"></td>
+    <td><img src="ads-303.png"></td>
+  </tr>
+  <tr>
+    <td><b>Renumbering </b></td>
+    <td>Renumber branches</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><img src="ads-296.png"></td>
+    <td><img src="ads-305.png"></td>
+  </tr>
+</table>
 
 ## 3.7 Tutorials: advanced data structures
 
