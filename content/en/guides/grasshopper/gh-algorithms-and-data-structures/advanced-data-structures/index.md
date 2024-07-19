@@ -583,9 +583,313 @@ As your solutions increase in complexity, so will your data structures. We will 
 
 The first operation has to do with solving the general problem of connectivity between elements in one tree or across multiple trees. Suppose you have a grid of points and you need to connect the points diagonally. For each point, you connect to another in the +1 branch and +1 index. For example a point in branch {0}, index [0], connects to the point in branch {1}, index [1].
 
+<figure>
+   <img src="ads-261.png" class="image_center" width="75%">
+   <figcaption>Figure (76): Relative Item mask {+1}[+1] create positive diagonal connectivity</figcaption>
+</figure>
+
+In Grasshopper, the way you communicate the offset is expressed with an offset string in the format “{branch offset}[index offset]”. In our example, the string to connect points diagonally is “{+1}[+1]”. Here is an example that uses relative tree component in Grasshopper. Notice that the relative item component creates two new trees that correlate in the manner specified in the offset string.
+
+<figure>
+   <img src="ads-262.png">
+   <figcaption>Figure (77): Relative Item mask {+1}[+1] breaks the original tree into 2 new trees with diagonal connectivity</figcaption>
+</figure>
+
+Here is an example implementation in Grasshopper where we define relative items in one tree, then connect the two resulting trees with lines using the <b>Relative Item</b> component.
+
+<figure>
+   <img src="ads-263.png">
+   <figcaption>Figure (78): Relative Item with mask {+1}[+1] in Grasshopper</figcaption>
+</figure>
+
+<table class="rounded">
+  <tr>
+    <th>Tutorial 3.6.1.A Relative item pattern</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Create the pattern shown in the image using a square grid of 7 branches where each branch has11 elements.<br>
+     <img src="ads-264.png" class="image_center" width="75%">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br>
+        <table>
+          <tr>
+            <td>
+            Create the grid<br>
+            <img src="ads-265.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Create relative trees that connect each element with -1 branch and +1 index: {-1}[+1]<br>
+            Create lines to connect the 2 relative trees.<br>
+            <img src="ads-266.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Change the offset to {+2}[+3] to create the second connections<br>
+            <img src="ads-267.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
+
+We showed how to define relative items in one tree, but you can also specify relative items between 2 trees. You’ll need to pay attention to the data structure of the two input trees and make sure they are compatible. For example, if you connect each point from the first tree with another point from a different tree with the same index, but +1 branch, then you can set the offset string to be {+1}[0].
+
+<figure>
+   <img src="ads-268.png">
+   <figcaption>Figure (79): Relative Items create connections across multiple trees</figcaption>
+</figure>
+
+The input to the Relative Items component is two trees and the output is two trees with corresponding items according to the offset string.
+
+<figure>
+   <img src="ads-269.png">
+   <figcaption>Figure (80): The offset mask of the Relative Items generates new trees with the desired connections</figcaption>
+</figure>
+
+The following GH definition achieves the above:
+
+<figure>
+   <img src="ads-270.png">
+   <figcaption>Figure (81): Relative Items implementation in Grasshopper</figcaption>
+</figure>
+
+<table class="rounded">
+  <tr>
+    <th>Tutorial 3.6.1.B Relative item truss</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Use relative items between 2 bounding grids to generate the structure shown in the image<br>
+     <img src="ads-271.png" class="image_center" width="75%">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br>
+        <table>
+          <tr>
+            <td>
+            <br>Create the connections for the bottom tree <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Cull every other index and keep the same number of branches (cull indices 1, 3,...)<br>
+            Define the offset strings for RelativeItem components to create the vertical and horizontal connections<br>
+            <img src="ads-272.png">
+            <br>
+            The Grasshopper definition:<br>
+            <img src="ads-273.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <br>Create the connections for the top tree <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Cull every other index and keep the same number of branches. (cull indices 0, 2,...)<br>
+            Define the offset strings for RelativeItem components to create the vertical and horizontal connections<br>
+            <img src="ads-274.png">
+            <br>
+            The Grasshopper definition:<br>
+            <img src="ads-275.png">
+            </td>
+          </tr>
+                    <tr>
+            <td>
+            <br>Connections between the bottom and top trees<br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Use culled grids, then define first offset string for RelativeItems component to create the first set of cross lines: {0}[0]<br>
+            <img src="ads-276.png">
+            <br>
+            Define second offset string for RelativeItems component to define the second set of cross lines: {0}[-1]<br>
+            <img src="ads-277.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
+
 ### 3.6.2 Split trees
 
-LabLab
+The ability to select a portion of a tree, or split into two parts is a very powerful tree operation in Grasshopper. You can split the tree using a string mask using specific syntax (see examples below). The mask filters, or helps select, the positive part of your tree. The portion of the tree left, is also given as an output and is called the negative part of the tree. Since all trees are made out of branches and indices, the split mask should include information about which branches and indices within these branches to split along. Here are the rules of the split mask:
+
+<table class="rounded">
+  <tr>
+    <th width=25%><b>Mask syntax</b></th>
+    <th width=75%><b>General rules</b></th>
+  </tr>
+  <tr>
+    <td><b>{ ; ; }</b></td>
+    <td>Use curly brackets to enclose the mask for the tree branches.</td>
+  </tr>
+  <tr>
+    <td><b>[ ] </b></td>
+    <td>Use square brackets to enclose the mask for the elements (leaves). Can be omitted if select all items or use [*]
+    </td>
+  </tr>
+    <tr>
+    <td><b>( )</b></td>
+    <td>Round brackets are used for organizing and grouping</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>*</b></td>
+    <td>Any number of integers in a path. The asterisk also allows you to include all branches, no matter what their paths look like</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>?</b></td>
+    <td>Any single integer</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>6</b></td>
+    <td>Any specific integer</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>!6</b></td>
+    <td>Anything except a specific integer</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>(2,6,7)</b></td>
+    <td>Any one of the specific integers in this group.</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>!(2,6,7)</b></td>
+    <td>Anything except one of the integers in this group.</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>(2 to 20)</b></td>
+    <td>Any integer in this range (including both 2 and 20).</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>!(2 to 20)</b></td>
+    <td>Any integer outside of this range.
+    </td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>(0,2,...)</b></td>
+    <td>Any integer part of this infinite sequence. Sequences have to be at least two integers long, and every subsequent integer has to be bigger than the previous one (sorry, that may be a temporary limitation, don't know yet).</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>(0,2,...,48)</b></td>
+    <td>Any integer part of this finite sequence. You can optionally provide a single sequence limit after the three dots</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>!(3,5,...)</b></td>
+    <td>Any integer not part of this infinite sequence. The sequence doesn't extend to the left, only towards the right. So this rule would select the numbers 0, 1, 2, 4, 6, 8, 10, 12 and all remaining even numbers.</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>!(7,10,21,...,425)  </b></td>
+    <td>Any integer not part of this finite sequence.</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><b>{ * }[ (0 to 4) or (6,11,41) ]</b></td>
+    <td>It is possible to combine two or more rules using the boolean and/or operators. The example selects the first five items in every list of a tree and also the items 7, 12 and 42.</td>
+  </tr>
+</table>
+
+Here are some examples of valid split masks.
+
+<table class="rounded">
+  <tr>
+    <th><b>Split by branches</b></th>
+    <th><b></b></th>
+  </tr>
+  <tr>
+    <td><b>{ * }</b></td>
+    <td>Select all (the whole tree output as positive, and negative tree will be empty)</td>
+  </tr>
+  <tr>
+    <td><b>{ *; 2 }</b></td>
+    <td>Select the third branch</td>
+  </tr>
+  <tr>
+    <td><b>{ *; (0,1) }</b></td>
+    <td>Select the first two end branches</td>
+  </tr>
+  <tr>
+    <td><b>{ *; (0, 2, …) }</b></td>
+    <td>Select all even branches</td>
+  </tr>
+</table>
+
+<table class="rounded">
+  <tr>
+    <th><b>Split by branches and leaves</b></th>
+    <th><b></b></th>
+  </tr>
+  <tr>
+    <td><b>{ * }[(1,3,...)]</b></td>
+    <td>Select elements located at odd indices in all branches</td>
+  </tr>
+  <tr>
+    <td><b>{ *; 0 }[(1,3,...)]</b></td>
+    <td>Select elements located at odd indices in the first branch</td>
+  </tr>
+  <tr>
+    <td><b>{ *; (0, 2) }[(1,3,...)]</b></td>
+    <td>Select elements located at odd indices in the first and third branches</td>
+  </tr>
+  <tr>
+    <td><b>{*; (0,2,...) } [ (1,3,...) ]</b></td>
+    <td>Select elements located at odd indices in branches located at even indices</td>
+  </tr>
+  <tr>
+    <td><b> {*; (0,2,...) } [(0) or (1,3,...)]</b></td>
+    <td>Select elements located at odd indices, and index “0”, in branches located at even indices</td>
+  </tr>
+</table>
+
+One of the common applications that uses split tree functionality is when you have a grid of points that you like to transform a subset of. When splitting, the structure of the original tree is preserved, and the elements that are split out are replaced with null. Therefore, when applying transformation to the split tree, it is easy to recombine back.
+Suppose you have a grid with 7 branches and 11 elements in each branch, and you’d like to shift elements between indices 1-3 and 7-9. You can use the split tree to help isolate the points you need to move using the mask: {*}[ (1,2,3) or (7,8,9) ], move the positive tree, then recombine back with the negative tree.
+
+<figure>
+   <img src="ads-280.png">
+   <figcaption>Figure (82): Split tree allows operating on a subset of the tree with the possibility to recombine back</figcaption>
+</figure>  
+
+This is the GH definition that does the above using the <b>Split Tree</b> component.
+
+<figure>
+   <img src="ads-280.png">
+   <figcaption>Figure (83): Split tree Grasshopper implementation of Figure (82)</figcaption>
+</figure>  
+
+One of the advantages of using <b>Split Tree</b> over relative trees is that the split mask is very versatile and it is easier to isolate the desired portion of the tree. Also the data structure is preserved across the negative and positive trees which makes it easy to recombine the elements of the tree after processing the parts.
 
 ### 3.6.3 Path mapper
 
