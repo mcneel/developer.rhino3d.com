@@ -519,7 +519,7 @@ If none of the matching methods produce the desired result, you can explicitly a
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 2.5.2: Custom matching</th>
+    <th>Tutorial 2.5.2: Custom list matching</th>
   </tr>
   <tr>
     <td>
@@ -623,7 +623,7 @@ If none of the matching methods produce the desired result, you can explicitly a
           </tr>
           <tr>
             <td>
-            <br><b>Algorithm implementation:</b>
+            <br><b>Solution steps:</b>
             </td>
           </tr>
           <tr>
@@ -702,9 +702,107 @@ If none of the matching methods produce the desired result, you can explicitly a
   </tr>
 </table>
 
-### 2.5.4 Pearl necklace tutorial
-
-LabLab
+<table class="rounded">
+  <tr>
+    <th>Tutorial 2.5.4: Pearl necklace</th>
+  </tr>
+  <tr>
+    <td>
+    Create a necklace with one big pearl in the middle, and gradually smaller size pearls towards the ends as in the image. The number of pearls is between 15-25.<br>
+    <img src="ads-173.png" class="image_center">
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <table>
+          <tr>
+            <td>
+            <br><b>Algorithm analysis:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            The workflow to create the necklace follows these general lines:<br>
+            1. Divide the curve into segments of variable distances (widest in the middle and narrow towards the ends)<br>
+            2. Find length and midpoints of each segment<br>
+            3. Create spheres at midpoints using half the length as radius<br>
+            </td>
+            <td>
+            <br><img src="ads-174.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <br><b>Solution steps:</b>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#cfe2f3">
+            <b>Output:</b><br>
+            The surfaces
+            </td>
+            <td>
+            <img src="ads-175.png" class="image_center" width="50%">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#f4cccc">
+            <b>Key Process:</b><br>
+            Use the Sphere component to generate the pearl surfaces
+            </td>
+            <td>
+            <img src="ads-175A.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#d9d2e9">
+            <b>Input:</b><br>
+            Necklace curve,<br>
+            Number of pearls as a parameter (can be changed by the user)
+            </td>
+            <td>
+            <img src="ads-176.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#eee4c5">
+            <b>Intermediate processes #1:</b><br>
+            The <b>Range</b> component creates equal distances. We need to change to variable distances and for that we can use the <b>Graph Mapper</b> component to control the spacing.
+            </td>
+            <td>
+            <img src="ads-177.png">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#eee4c5">
+            <b>Intermediate processes #2:</b><br>
+            Since we have normalized distances from the start of the curve (parameters are between 0 to 1), we can use the <b>Evaluate</b> <b>Length</b> component to find the divide points.
+            </td>
+            <td>
+            <img src="ads-178.png">
+            </td>
+          </tr>
+          </tr>
+          <tr>
+            <td style="background-color:#eee4c5">
+            <b>Intermediate processes #3:</b><br>
+            Generate the segments. Use Polyline and Explode components to turn the points into segments<br>
+            Center points are calculated at the middle of the segments. Use Evaluate Length at mid length<br>
+            Radii are calculated as half of each segment length. Use Length and Division components<br>
+            </td>
+            <td>
+            <img src="ads-179.png">
+            </td>
+          </tr>
+        </table>
+        <b>Putting it all together</b><br>
+        <img src="ads-180.png">
+        </details>
+    </td>
+  </tr>
+</table>
 
 ## Next Steps
 

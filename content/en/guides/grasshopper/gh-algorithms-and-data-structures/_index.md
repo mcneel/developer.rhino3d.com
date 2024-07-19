@@ -102,8 +102,8 @@ The content is divided into three chapters. [Chapter 1](/guides/grasshopper/gh-a
    2.4 [List matching](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/#24-list-matching)  
    2.5 [Tutorials: data structures](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/#25-tutorials-data-structures)  
 &nbsp;&nbsp; Variable thickness pipe tutorial  
-&nbsp;&nbsp; Custom matching tutorial  
-&nbsp;&nbsp; Pearl necklace tutorial  
+&nbsp;&nbsp; Custom list matching tutorial  
+&nbsp;&nbsp; Simple truss tutorial  
 &nbsp;&nbsp; Pearl necklace tutorial  
 
 {{< /column >}}
