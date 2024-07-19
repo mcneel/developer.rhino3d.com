@@ -288,39 +288,300 @@ If you know that your structure might change, or you simply do not want to type 
 
 ## 3.5 Basic tree operations
 
-### 3.5.1 Viewing the tree structure
+Basic tree operations are widely used and you will likely need them in most solutions. It is very important to understand what these operations do, and how they affect the output.
 
-LabLab
+### 3.5.1: Viewing the tree structure
+As we have seen in the data matching, different data structures of the same set of elements produce different results. Grasshopper offers three ways to view the data structure, the Parameter Viewer in text or diagram format, and the Panel.
+
+<figure>
+   <img src="ads-228.png">
+   <figcaption>Figure(65):  View trees using the Parameter Viewer and the Panel components</figcaption>
+</figure>
+
+Tree information can be extracted using the <b>TStats</b> component. You can extract the list of paths to all branches, number of elements in each branch and the number of branches.
+
+<figure>
+   <img src="ads-229.png">
+   <figcaption>Figure(66):  Extract trees structure using TStats component</figcaption>
+</figure>
 
 ### 3.5.2 List operations on trees
 
-LabLab
+Trees can be thought of as a list of branches. When using list operations on trees, each branch is treated as a separate list and the operation is applied to each branch independently. It is tricky to predict the resulting data structure and therefore it is always important to check your input and output structures before and after applying any operation.
+To illustrate how list operations work in trees, we will use a simple tree, a grid of points, and apply different list operations on it. We will then examine the output and its data structure.
+
+<table class="rounded">
+  <tr>
+    <th>Common list operation and how they apply to trees</th>
+  </tr>
+  <tr>
+    <td>
+    <b>List Item</b>: Select items at specific index in each branch<br>
+    <img src="ads-230.png">
+    </td>
+  </tr>
+    <tr>
+    <td>
+    <b>List Item</b>: Select multiple indices to isolate part of the tree and perform one operation on such as <b>Mass Addition</b><br>
+    <img src="ads-231.png">
+    </td>
+  </tr>
+    <tr>
+    <td>
+    <b>Split List</b>: Split the elements of branches into 2 trees at the specified index<br>
+    <img src="ads-232.png">
+    </td>
+  </tr>
+    <tr>
+    <td>
+    <b>Shift List</b>: Shifts the elements of each branch<br>
+    <img src="ads-233.png" class="image_center" width="75%">
+    </td>
+  </tr>
+    <tr>
+    <td>
+    <b>Cull Pattern</b>: Culls each branch<br>
+    <img src="ads-234.png" class="image_center" width="75%">
+    </td>
+  </tr>
+</table>
 
 ### 3.5.3 Grafting from lists to a trees
 
-LabLab
+In some cases you need to turn a list into a tree where each element is placed in its own branch. Grafting can handle complex trees with branches of variable depths.
+
+<figure>
+   <img src="ads-235.png">
+   <figcaption>Figure(67):  Grafting a tree creates a new branch for each element</figcaption>
+</figure>
+
+It might feel unintuitive to complicate the data structure (from a simple list to a tree), but grafting is very useful when trying to achieve certain matching. For example if you need to add each element of one list with all the elements in the second list, then you will need to graft the first list before inputting to the addition process.
+
+<figure>
+   <img src="ads-236.png">
+   <figcaption>Figure(68):  Grafting complex trees</figcaption>
+</figure>
 
 ### 3.5.4 Flattening from trees to lists
 
-LabLab
+Other times you might need to turn your tree structure into a simple list. This is achieved with the flattening process. Data from each branch is extracted and sequentially attached to one list.
+
+<figure>
+   <img src="ads-237.png">
+   <figcaption>Figure(69):  Flattening place all tree elements in one list</figcaption>
+</figure>
+
+Flatten also can handle any complex tree. It takes the branches in order starting with the lowest index trunk and put all elements in one list.
+
+<figure>
+   <img src="ads-238.png">
+   <figcaption>Figure(70):  Flattening complex trees</figcaption>
+</figure>
 
 ### 3.5.5 Combining data streams
 
-LabLab
+It is possible to compose a number of lists into a tree where each list becomes a branch in a new tree. It is different from the merging of lists where simply one bigger list is created.
+
+<figure>
+   <img src="ads-239.png" class="image_center" width="75%">
+   <figcaption>Figure(71):  Entwine and Merge components combine lists into trees or bigger lists</figcaption>
+</figure>
 
 ### 3.5.6 Flipping the data structure
 
-LabLab
+It is logical in some cases to flip the tree to change the direction of branches.This is specially useful in grids when points are organized in rows and columns (similar to a 2 dimensional array structure). Flipping causes corresponding elements across branches (have the same index in their branch) to be grouped in one branch. For example, a data tree that has 2 branches and 4 items in each branch, can be flipped into a tree with 4 branches and 2 elements in each branch.
+
+<figure>
+   <img src="ads-240.png">
+   <figcaption>Figure(72):  Flip helps reorganize data in a trees</figcaption>
+</figure>
+
+If the number of elements in the branches are variable in length, some of the branches in the flipped tree will have “null” values.
+
+<figure>
+   <img src="ads-241.png">
+   <figcaption>Figure(73):  Add “null” when flipping trees with variable length branches</figcaption>
+</figure>
+
+Flipping is one of the operations that cannot handle variable depth branches, simply because there is no logical solution to flip.
+
+<figure>
+   <img src="ads-242.png">
+   <figcaption>Figure(74):  Flip fails when the input tree has variable depth branches</figcaption>
+</figure>
 
 ### 3.5.7 Simplifying the data structure
 
-LabLab
+Processing data through multiple components can add unnecessary complexity to the data structure. The most common form is adding leading or trailing zeros to the paths addresses. Complex data structures are hard to match. <b>Simplify Tree</b> process helps remove empty branches. There are other operations such as <b>Clean Tree</b> and <b>Trim Tree</b> to help remove null elements, empty branches and reduce complexity. It is also possible to extract all branches as separate lists using the <b>Explode Tree</b> operation.
+
+<figure>
+   <img src="ads-243.png">
+   <figcaption>Figure(75): Paths can increase in complexity as more operations are applied to the data. Simplify helps remove empty branches</figcaption>
+</figure>
+
+<table class="rounded">
+  <tr>
+    <th>Tutorial 3.5.A Louvers</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Given one curve on XY-Plane, create horizontal and vertical louvers as in the image<br>
+     <img src="ads-244.png" class="image_center" width="75%">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br>
+        <table>
+          <tr>
+            <td>
+            Examine the <b>data structure</b> of output from each step before feeding it into the next process:<br>
+            input curve data strucuture: Single item (one branch and one item in the branch)<br>
+            <img src="ads-245.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Divide input curve to extract points.<br>
+            Data structure: List (one branch with 11 items). Note that the path has added leading “0”. This indicates the next layer of calculation.<br>
+            <img src="ads-246.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Create vertical lines at each point.<br>
+            Data structure: List (one branch with 11 items). Note that the path did not increase in complexity.<br>
+            <img src="ads-249.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Divide vertical lines to create a grid of points.<br>
+            Data structure: Tree (11 branches with 6 items). Note that the path has added leading “0”.<br>
+            <img src="ads-248.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Create horizontal lines at each point.<br>
+            Data structure: Tree (11 branches with 6 items). Note that the path did not increase in complexity.<br>
+            <img src="ads-247.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Create lofted surfaces through branches of lines.<br>
+            Data structure:Tree (11 branches with 1 item each). Note that the path did not increase in complexity.<br>
+            <img src="ads-250.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Flip the tree matrix and then create lofted surfaces through branches of lines.<br>
+            Data structure: Tree (11 branches with 1 item each). Note that the path did not increase in complexity.<br>
+            You can flatten the tree to create one list of horizontal louvers.<br>
+            <img src="ads-251.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
+
+<table class="rounded">
+  <tr>
+    <th>Tutorial 3.5.B Shutters</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Given four corner points on a plane and a radius for the hinge, create a shutter that can open and shut as in the image using a rotation parameter<br>
+     <img src="ads-252.png">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br>
+        <table>
+          <tr>
+            <td>
+            <b>Algorithm analysis:</b><br>
+            For each shutter there are two parts: the rectangle and the hinge.<br>
+            Union the rectangle and hinge, then allow rotating around the hinge.<br>
+            There is one rotation control to move all shutters together.<br>
+            <img src="ads-253.png" class="image_center" width="75%"><br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <br><b>Solution steps:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Output: Surface of the shutters and curves for the frame<br>
+            <img src="ads-254.png" class="image_center" width="50%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Input: The window four corner points (and center), the hinge radius and the rotation angle parameter<br>
+            <img src="ads-255.png" class="image_center" width="75%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Key processe #1: create rectangle and hinges. Use the <b>Rectangle</b> component<br>
+            <img src="ads-256.png" class="image_center" width="75%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Key processe #2: Union the curves. Use the <b>RUnion</b> component, then create a surface from the boundary using <b>Boundary</b> component<br>
+            <img src="ads-257.png" class="image_center" width="75%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Intermediate process #1: Rotate the rectangles using the angle. Use <b>Rotate</b> component<br>
+            <img src="ads-258.png" class="image_center" width="75%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Properly match the data structures of the rectangles and hinges before the region union. Use the <b>Graft</b> so that rectangles and hinges pair correctly.<br>
+            <img src="ads-259.png" class="image_center" width="75%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <br><b>Putting it all together:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <img src="ads-260.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
 
 ## 3.6 Advanced tree operations
 
+As your solutions increase in complexity, so will your data structures. We will discuss three advanced tree operations that are necessary to solve specific problems, or are used to simplify your solution by tabbing directly into the power of the data tree structure.
+
 ### 3.6.1 Relative items
 
-LabLab
+The first operation has to do with solving the general problem of connectivity between elements in one tree or across multiple trees. Suppose you have a grid of points and you need to connect the points diagonally. For each point, you connect to another in the +1 branch and +1 index. For example a point in branch {0}, index [0], connects to the point in branch {1}, index [1].
 
 ### 3.6.2 Split trees
 
