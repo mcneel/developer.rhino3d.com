@@ -493,7 +493,7 @@ As you know, parametric curves have “domains” (the range of parameters that 
         <details>
         <summary><b>Solution...</b></summary>
         <br><b>Analyze the algorithm</b><br>
-                <table>
+        <table>
           <tr>
             <td>
             There are 2 inputs: a list of 51 numbers (3 coordinates for each point) which means that the list has 17 points.<br>
