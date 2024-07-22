@@ -3,7 +3,7 @@ aliases = [""]
 authors = [ "rajaa" ]
 categories = [ "" ]
 description = "Introduces the fundementals of algorithmic design and data structures using Grasshopper."
-keywords = [ "grasshopper", "developer" ]
+keywords = [ "grasshopper", "developer", "algorithms", "data", "data structures" ]
 languages = [ "" ]
 sdk = [ "" ]
 title = "Essential Algorithms and Data Structures for Grasshopper"
@@ -31,7 +31,7 @@ since = 0
 
 <br>
 
-{{< image url="ads-cover2nd.png" alt="Essential Algorithms and Data Strucutures" class="float_right" >}}
+{{< image url="ads-cover2nd.png" alt="Essential Algorithms and Data Structures" class="float_right" >}}
 
 The Essential Algorithms and Data Structures guide introduces to design professionals effective methodologies to develop complex 3D modeling algorithms using [Grasshopper® (GH)](https://www.grasshopper3d.com), the generative modeling environment for [Rhinoceros® (Rhino)](https://www.rhino3d.com). It also covers extensively the data structure adopted by Grasshopper and its core organization and management tools.
 

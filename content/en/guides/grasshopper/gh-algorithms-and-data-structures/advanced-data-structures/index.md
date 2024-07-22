@@ -3,7 +3,7 @@ aliases = [""]
 authors = [ "rajaa" ]
 categories = [ "Essentials Algorithms and Data Structures" ]
 category_page = "guides/grasshopper/gh-algorithms-and-data/"
-keywords = [ "data strucutres", "grasshopper" ]
+keywords = [ "data structures", "grasshopper" ]
 languages = [ "" ]
 sdk = [ "" ]
 title = "Chapter 3: Advanced Data Structures"
@@ -187,7 +187,7 @@ Perhaps one of the most common cases to generate a tree is when dividing a list 
 We explained the <b>Long</b>, <b>Short</b> and <b>Cross</b> matching with lists. Trees follow similar conventions to expand the shorter branches by repeating the last element to match. If one tree has fewer branches, the last branch is repeated. The following illustrates common tree matching cases.
 
 ### 3.3.1 Item-to-tree matching
-When matching an item to a tree, a matching tree structure is created and the item is repeated. For example when adding a single number to a tree of numbers, the single number is added to every item in the tree and the result is a tree with matching strucuture to the input tree.
+When matching an item to a tree, a matching tree structure is created and the item is repeated. For example when adding a single number to a tree of numbers, the single number is added to every item in the tree and the result is a tree with matching structure to the input tree.
 <img src="ads-216.png">
 
 ### 3.3.2 Short-list-to-tree matching
@@ -195,17 +195,17 @@ When matching a short list to a tree, where the length of the list is shorter th
 <img src="ads-217.png">
 
 ### 3.3.3 Long-list-to-tree matching
-When matching a long list to a tree with branches that are shorter than the list, the tree branches expand to match the length of the list. The last item in each branch is repeated to match the list length Note that the resulting tree strucuture will be differenent than the input tree. In the following example, both input, the list and the tree, are modified to arrive to a matching structure, then the addition result have than new data strucuture.
+When matching a long list to a tree with branches that are shorter than the list, the tree branches expand to match the length of the list. The last item in each branch is repeated to match the list length Note that the resulting tree structure will be differenent than the input tree. In the following example, both input, the list and the tree, are modified to arrive to a matching structure, then the addition result have than new data structure.
 <img src="ads-218.png">
 
 ### 3.3.4 Tree-to-tree matching
-There are numerous possibilities when matching two trees, but the basic principle apply. The goal is to find a tree strucuture that can combine both input tree strucutures. Let’s assume the case when there is a simple tree with one level of branches that match in depth. There are two possibilities. The first is that both input trees have same number of branches. In this case, the length of the shorter corresponding branches is matched. The output tree might end up matching at least one of the input trees, or be different to both.
+There are numerous possibilities when matching two trees, but the basic principle apply. The goal is to find a tree structure that can combine both input tree structure. Let’s assume the case when there is a simple tree with one level of branches that match in depth. There are two possibilities. The first is that both input trees have same number of branches. In this case, the length of the shorter corresponding branches is matched. The output tree might end up matching at least one of the input trees, or be different to both.
 <img src="ads-219.png">
 
 The second possibility is that one tree might have more branches than the other. In that case, new branches are inserted into the smaller tree repeating the last branch, then each branch is expanded (repeating the last item in the branch) to create matching length among all corresponding branches as in the following example.
 <img src="ads-220.png">
 
-When working with trees, it is of utmost importance to examine the data strucuture of each input before using it as input to one component. A small change in the strucuture can have big impact. For example, the following two trees of numbers appear to be matching at first, but because there is one level depth added to one of the trees (indicating an extra branch near the root of the tree), the result may be different than what is intended.
+When working with trees, it is of utmost importance to examine the data structure of each input before using it as input to one component. A small change in the structure can have big impact. For example, the following two trees of numbers appear to be matching at first, but because there is one level depth added to one of the trees (indicating an extra branch near the root of the tree), the result may be different than what is intended.
 
 <table class="rounded">
   <tr>
@@ -439,7 +439,7 @@ Processing data through multiple components can add unnecessary complexity to th
           <tr>
             <td>
             Examine the <b>data structure</b> of output from each step before feeding it into the next process:<br>
-            input curve data strucuture: Single item (one branch and one item in the branch)<br>
+            input curve data structure: Single item (one branch and one item in the branch)<br>
             <img src="ads-245.png">
             </td>
           </tr>
