@@ -1094,24 +1094,443 @@ The following example examines different built-in mapping in the <b>Path Mapper<
   </tr>
 </table>
 
+For more details about the Path Mapper, please refer to the help inside the component in Grasshopper.
+
+<table class="rounded">
+  <tr>
+    <th>Tutorial 3.6.3.A: Partitions</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Given a grid, create the following truss system using the split tree method<br>
+     <img src="ads-306.png">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br>
+        <table>
+          <tr>
+            <td>
+            The input has two trees, and each has 5 branches with 11 elements in each branch, a total of 10 branches<br>
+            <img src="ads-307.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            A Polyline is used to connect the elements in each branch<br>
+            <img src="ads-308.png"><br><br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            To create the vertical connections, you need to create a branch for each 2 corresponding elements across the 2 trees, then use Polyline to connect them<br>
+            1. Analyze the paths of the trees<br>
+            2. Come up with a mapping that generates the desired grouping<br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            First, group corresponding branches across the 2 trees.<br>
+            That can be achieved by switching the last two integers in the paths:<br>
+            <img src="ads-311.png" class="image_center" width="50%">
+            <img src="ads-309.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Second, Flip each of the 5 trees. Since the branches have 11 elements each, flipping each tree will create 11 branches with 2 elements in each branch. Total of 55 branches.<br>
+            You flip by switching the last integer of the path with the element index:<br>
+            <img src="ads-312.png" class="image_center" width="50%">
+            <img src="ads-310.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Finally, a Polyline makes the vertical connections.<br>
+            Note: You can combine the 2 mappings in one step as in the following:<br>
+            <img src="ads-314.png" class="image_center" width="50%">
+            <img src="ads-313.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
+
+
+<table class="rounded">
+  <tr>
+    <th>Tutorial 3.6.3.B: Bruilding structure</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Given the input tree of points, create the following structure.<br>
+     <img src="ads-315.png">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br>
+        <table>
+          <tr>
+            <td>
+            The initial tree has 42 branches, 7 branches in each of the 6 trees<br>
+            <img src="ads-320.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            The Polyline component connects the elements in each branch<br>
+            <img src="ads-321.png"><br><br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Flip the trees using Path Mapper by switching branch and element indices<br>
+            <img src="ads-322.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Regroup the elements of corresponding branches in all trees using the Path Mapper<br>
+            <img src="ads-323.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Final result Create all connections<br>
+            <img src="ads-324.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
+
 ## 3.7 Tutorials: advanced data structures
 
-### 3.7.1 Sloped roof tutorial
+<table class="rounded">
+  <tr>
+    <th>Tutorial 3.7.1: Sloped roof</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Create a parametric truss system that changes gradually in height as shown in the image.<br>
+     <img src="ads-325.png">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br>
+        <table>
+          <tr>
+            <td>
+            <b>Algorithm analysis: First, solve it for one simple truss</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Identify desired output for a single truss<br>
+            <img src="ads-326.png" class="image_center" width="75%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Define initial input<br>
+            1- Base line on XY-Plane<br>
+            2- Number of runs<br>
+            3- Height<br>
+            <img src="ads-327.png" class="image_center" width="75%"><br><br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <br><b>Algorithms steps:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Create input (L=line, H=height and R= #runs)<br>
+            <img src="ads-328.png" class="image_center" width="75%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Divide curve by 2*R<br>
+            <img src="ads-328A.png" class="image_center" width="75%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Move every other point in the Z direction by height<br>
+            <img src="ads-328B.png" class="image_center" width="75%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Create 3 sets of ordered points for the bottom beams, top beams and middle beams, then connect each of the 3 sets with a polyline<br>
+            <img src="ads-329.png" class="image_center" width="75%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <br><b>Implement the algorithm for a single truss  In Grasshopper:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <img src="ads-330.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <br><b>Resolve for multiple trusses with variable height:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Create a series of base lines using the initial line and copy in Y-Axis direction<br>
+            <img src="ads-331.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Use the list of lines as input instead of a single line.<br>
+            Notice that instead of a list of points for each of the 3 sets (bottom, top and middle), we now have a tree or grid of points with a number of branches equal to the number of trusses<br>
+            <img src="ads-332.png" class="image_center" width="75%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Create cross connections using Flip tree operation for the bottom and top trees<br>
+            <img src="ads-333.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Create variable height<br>
+            <img src="ads-335.png">
+            </td>
+          </tr>
+          <tr>
+          <tr>
+            <td>
+            <br><b>The complete solution implementation in Grasshopper:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <img src="ads-336.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
 
-LabLab
+<table class="rounded">
+  <tr>
+    <th>Tutorial 3.7.2: Diagonal triangles</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Given the input grid, use the RelativeItem component to create diagonal triangles<br>
+     <img src="ads-337.png" class="image_center" width="75%">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br>
+        <table>
+          <tr>
+            <td>
+            <b>Algorithm analysis:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            To generate the triangles, we need 3 sets of corner points.<br>
+            Two of the point sets (A, B) are within the grid. B is diagonal from A (relative index is +1 branch and +1 element)<br>
+            The third point set (C) is a copy of set (B) moved vertically.<br>
+            Group corners to connect into boundaries then generate surfaces<br>
+            <img src="ads-338.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <br><b>Grasshopper implementation:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Use RelativeItem to create set A and set B (use “{+1}[+1] mask)<br>
+            Move set B vertically.<br>
+            <img src="ads-339.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Create a tree with 3 branches for sets A, B and C.<br>
+            Flip the tree to group corresponding points.<br>
+            Use Polyline and Boundary to generate the surfaces.<br>
+            <img src="ads-340.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
 
-### 3.7.2 Diagonal triangles tutorial
+<table class="rounded">
+  <tr>
+    <th>Tutorial 3.7.3: Zigzag</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Create the structure shown in the image using a base grid as input.<br>
+     <img src="ads-341.png" class="image_center" width="75%">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br>
+        <table>
+          <tr>
+            <td>
+            <b>Algorithm analysis:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Since the zigzags alternate directions from one row to the next, it is best to split the grid into 2 parts, positive and negative.<br>
+            Find 3 sets of points in the positive tree and order<br>
+            Reverse the elements in the branches of the negative tree, then find the 3 sets of points and order<br>
+            Merge back the 2 trees to create geometry through points
+            <img src="ads-342.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <br><b>Grasshopper implementation:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Use the Split Tree component to generate positive and negative trees for both bottom and top grids. Use {0,2,...} split mask.<br>
+            Use RelativeItems2 to create A and B trees, use {0}[+1] relative mask.<br>
+            Use Shift to create the C tree.<br>
+            Use Weave to combine data in the intended order, then remove consecutive duplicates using the DCon component.<br>
+            <img src="ads-343.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Merge ordered positive and negative  trees to generate geometry using Polyline and Pipe components.<br>
+            <img src="ads-344.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
 
-LabLab
+<table class="rounded">
+  <tr>
+    <th>Tutorial 3.7.4: Weaving</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Create the structure shown in the image using a base grid as input.<br>
+     <img src="ads-345.png" class="image_center" width="75%">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br>
+        <table>
+          <tr>
+            <td>
+            <b>Algorithm analysis:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            The input is a planar square grid with vertical branches. For vertical threads:<br>
+            Split the grid into two parts alternating elements in each branch.<br>
+            Move the first part up, and the second down, then recombine the parts into one set<br>
+            Draw a curve through the points in each branch.<br>
+            Flip the grid, then repeat to create horizontal curves<br>
+            <img src="ads-346.png" class="image_center" width="75%">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <br><b>Grasshopper implementation:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Use Split Tree to separate alternating points and move up and down<br>
+            Combine points and use IntCrv to interpolate through points of each branch<br>
+            Flip the tree, and repeat Split, Combine and IntCrv to create curves in the other direction<br>
+            <img src="ads-347.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            The full Grasshopper definition<br>
+            <img src="ads-348.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <br><b>Expanded solution:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Instead of using the Z-Axis to move points up and down, use the surface normal direction at each point<br>
+            Note: Make sure the data structure of normals and points match<br>
+            <img src="ads-349.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            The Grasshopper definition:<br>
+            <img src="ads-350.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
 
-### 3.7.3 Zigzag tutorial
-
-LabLab
-
-### 3.7.4 Weaving tutorial
-
-LabLab
-
+<br><br>
 ## End of guide
 
 This is part 3-3 of the [Essential Algorithms and Data Structures for Grasshopper](/guides/grasshopper/gh-algorithms-and-data-structures/).
