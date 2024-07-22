@@ -31,7 +31,7 @@ since = 0
 
 <br>
 
-{{< image url="ads-000-cover-s.png" alt="" class="float_right" >}}
+{{< image url="ads-cover2nd.png" alt="Essential Algorithms and Data Strucutures" class="float_right" >}}
 
 The Essential Algorithms and Data Structures guide introduces to design professionals effective methodologies to develop complex 3D modeling algorithms using [Grasshopper® (GH)](https://www.grasshopper3d.com), the generative modeling environment for [Rhinoceros® (Rhino)](https://www.rhino3d.com). It also covers extensively the data structure adopted by Grasshopper and its core organization and management tools.
 
