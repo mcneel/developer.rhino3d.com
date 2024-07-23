@@ -63,6 +63,15 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/grasshopper-guides-col3.png">](/guides/grasshopper/grasshopper-data-types/)
 
+
+### [Essential Algorithms and Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/)
+
+- [Introduction](/guides/grasshopper/gh-algorithms-and-data-structures/)
+- [Algorithms and Data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/)
+- [Introduction to Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/)
+- [Advanced Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/)
+- [{{< awesome "fas fa-download">}} ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/) [Download Essential Algorithms and Data Strucutures as a single PDF with GH examples ](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/)
+
 ### Python in Grasshopper
 
 {{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" >}}
