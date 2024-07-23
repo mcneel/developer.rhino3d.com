@@ -116,7 +116,7 @@ If you cannot see the *.vscode* folder, toggle hidden folders in Finder: click o
                 "preLaunchTask": "build-plugin-netcore",
                 // Launches Rhino for us
                 "program": "/Applications/Rhino 8.app/Contents/MacOS/Rhinoceros",
-                // See : https://developer.rhino3d.com/guides/cpp/running-rhino-from-command-line/
+                // See : http://docs.mcneel.com/rhino/8mac/help/en-us/index.htm#information/startingrhino.htm
                 "args": ["-runscript=_Grasshopper"],
                 "cwd": "${workspaceFolder}",
                 "stopAtEntry": false,
