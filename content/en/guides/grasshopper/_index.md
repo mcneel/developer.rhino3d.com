@@ -64,7 +64,7 @@ since = 0
 [<img src="/images/grasshopper-guides-col3.png">](/guides/grasshopper/grasshopper-data-types/)
 
 
-### [Essential Algorithms and Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/)
+### [Essential Algorithms and Data Structures for Grasshopper](/guides/grasshopper/gh-algorithms-and-data-structures/)
 
 - [Introduction](/guides/grasshopper/gh-algorithms-and-data-structures/)
 - [Algorithms and Data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/)
