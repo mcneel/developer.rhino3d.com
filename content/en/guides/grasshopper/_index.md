@@ -43,26 +43,19 @@ since = 0
 
 {{< dev-topic-list "guides" "Grasshopper" "Fundamentals" "weight" >}}
 
+### In Depth
+
+{{< dev-topic-list "guides" "Grasshopper" "In Depth" "weight" >}}
+
 {{< /column >}}
 {{< column >}}
 
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/grasshopper-guides-col2.png">](/guides/grasshopper/simple-component/)
 
-### In Depth
-
-{{< dev-topic-list "guides" "Grasshopper" "In Depth" "weight" >}}
-
 ### Advanced
 
 {{< dev-topic-list "guides" "Grasshopper" "Advanced" "weight" >}}
-
-{{< /column >}}
-{{< column >}}
-
-<!--the .snagit project for this image can be found next to the image -->
-[<img src="/images/grasshopper-guides-col3.png">](/guides/grasshopper/grasshopper-data-types/)
-
 
 ### [Essential Algorithms and Data Structures for Grasshopper](/guides/grasshopper/gh-algorithms-and-data-structures/)
 
@@ -70,7 +63,13 @@ since = 0
 - [Algorithms and Data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/)
 - [Introduction to Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/)
 - [Advanced Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/)
-- [{{< awesome "fas fa-download">}} ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/) [Download Essential Algorithms and Data Strucutures as a single PDF with GH examples ](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/)
+- [{{< awesome "fas fa-download">}}](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/) [Download full PDF and GH examples](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/)
+
+{{< /column >}}
+{{< column >}}
+
+<!--the .snagit project for this image can be found next to the image -->
+[<img src="/images/grasshopper-guides-col3.png">](/guides/grasshopper/grasshopper-data-types/)
 
 ### Python in Grasshopper
 
