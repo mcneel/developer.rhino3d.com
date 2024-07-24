@@ -296,7 +296,7 @@ Grasshopper supports geometry types that are useful in the context of 3D modelin
    <figcaption>Figure(7): Examples of geometry data types</figcaption>
 </figure>  
 
-There are other mathematics types that designers do not usually use in 3D modeling, but are very common in parametric design such as Domains, Vectors, Planes, and Transformation Matrices. GH provides a rich set of tools to help create, analyze and use these types. To fully understand the mathematical as well as geometry types such as NURBS curves and surfaces, you can refer to the Essential Mathematics for Computational Design book by the author
+There are other mathematics types that designers do not usually use in 3D modeling, but are very common in parametric design such as Domains, Vectors, Planes, and Transformation Matrices. GH provides a rich set of tools to help create, analyze and use these types. To fully understand the mathematical as well as geometry types such as NURBS curves and surfaces, you can refer to the [Essential Mathematics for Computational Design](https://developer.rhino3d.com/guides/general/essential-mathematics/) book by the author
 
 <figure>
    <img src="ads-030.png" class="image_center" width="75%">
