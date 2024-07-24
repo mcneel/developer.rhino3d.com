@@ -636,7 +636,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 1.9.1: Unioned circles</th>
+    <th><a href="Tutorial-1-9-1-Unioned-circles.gh" class="fas fa-download"></a> Tutorial 1.9.1: Unioned circles</th>
   </tr>
   <tr>
     <td>
@@ -648,7 +648,8 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
     <td>
         <details>
         <summary><b>Solution...</b></summary>
-        <br><b>Analyze the question and the flow of the solution</b><br>
+        <br><a href="Tutorial-1-9-1-Unioned-circles.gh"> <i>download GH file...</i> </a><br>
+        <b>Analyze the question and the flow of the solution</b><br>
         <table>
           <tr>
             <td>
@@ -718,7 +719,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 1.9.2: Sphere with bounds</th>
+    <th><a href="Tutorial-1-9-2-Sphere-with-bounds.gh" class="fas fa-download"></a> Tutorial 1.9.2: Sphere with bounds</th>
   </tr>
   <tr>
     <td>
@@ -729,6 +730,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
     <td>
         <details>
         <summary><b>Solution...</b></summary>
+        <br><a href="Tutorial-1-9-2-Sphere-with-bounds.gh"> <i>download GH file...</i> </a><br>
         <b>The 4-step process to solve the algorithm</b><br>
         <table>
           <tr>
@@ -786,7 +788,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 1.9.3: Data operations</th>
+    <th><a href="Tutorial-1-9-3-Data-operations.gh" class="fas fa-download"></a> Tutorial 1.9.3: Data operations</th>
   </tr>
   <tr>
     <td>
@@ -802,6 +804,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
     <td>
         <details>
         <summary><b>Solution...</b></summary>
+        <br><a href="Tutorial-1-9-3-Data-operations.gh"> <i>download GH file...</i> </a>
         <table>
           <tr>
             <td>
@@ -856,7 +859,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 1.9.4: Algorithmic Pitfalls</th>
+    <th><a href="Tutorial-1-9-4-Algorithmic-pitfalls.gh" class="fas fa-download"></a> Tutorial 1.9.4: Algorithmic Pitfalls</th>
   </tr>
   <tr>
     <td>
@@ -867,6 +870,7 @@ Poorly organized definitions are not easy to debug, understand, reuse or modify.
     <td>
         <details>
         <summary><b>Solution...</b></summary>
+        <br><a href="Tutorial-1-9-4-Algorithmic-pitfalls.gh"> <i>download GH file...</i> </a>
         <table>
           <tr>
             <td>

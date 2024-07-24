@@ -1220,7 +1220,7 @@ For more details about the Path Mapper, please refer to the help inside the comp
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 3.7.1: Sloped roof</th>
+    <th><a href="Tutorial-3-7-1-Sloped-roof.gh" class="fas fa-download"></a> Tutorial 3.7.1: Sloped roof</th>
   </tr>
   <tr>
   <tr>
@@ -1233,6 +1233,7 @@ For more details about the Path Mapper, please refer to the help inside the comp
     <td>
         <details>
         <summary><b>Solution...</b></summary>
+        <br><a href="Tutorial-3-7-1-Sloped-roof.gh"> <i>ownload GH file...</i></a>
         <br>
         <table>
           <tr>
@@ -1343,7 +1344,7 @@ For more details about the Path Mapper, please refer to the help inside the comp
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 3.7.2: Diagonal triangles</th>
+    <th><a href="Tutorial-3-7-2-Diagonal triangles.gh" class="fas fa-download"></a> Tutorial 3.7.2: Diagonal triangles</th>
   </tr>
   <tr>
   <tr>
@@ -1356,6 +1357,7 @@ For more details about the Path Mapper, please refer to the help inside the comp
     <td>
         <details>
         <summary><b>Solution...</b></summary>
+        <br><a href="Tutorial-3-7-2-Diagonal triangles.gh"> <i>download GH file...</i> </a>
         <br>
         <table>
           <tr>
@@ -1400,7 +1402,7 @@ For more details about the Path Mapper, please refer to the help inside the comp
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 3.7.3: Zigzag</th>
+    <th><a href="Tutorial-3-7-3-Zigzag.gh" class="fas fa-download"></a> Tutorial 3.7.3: Zigzag</th>
   </tr>
   <tr>
   <tr>
@@ -1413,6 +1415,7 @@ For more details about the Path Mapper, please refer to the help inside the comp
     <td>
         <details>
         <summary><b>Solution...</b></summary>
+        <br><a href="Tutorial-3-7-3-Zigzag.gh"> <i>download GH file...</i> </a>
         <br>
         <table>
           <tr>
@@ -1457,7 +1460,7 @@ For more details about the Path Mapper, please refer to the help inside the comp
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 3.7.4: Weaving</th>
+    <th><a href="Tutorial-3-7-4-Weaving.gh" class="fas fa-download"></a> Tutorial 3.7.4: Weaving</th>
   </tr>
   <tr>
   <tr>
@@ -1470,6 +1473,7 @@ For more details about the Path Mapper, please refer to the help inside the comp
     <td>
         <details>
         <summary><b>Solution...</b></summary>
+        <br><a href="Tutorial-3-7-4-Weaving.gh"> <i>download GH file...</i> </a>
         <br>
         <table>
           <tr>

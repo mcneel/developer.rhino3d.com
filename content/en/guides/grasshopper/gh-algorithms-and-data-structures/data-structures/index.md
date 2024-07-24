@@ -431,7 +431,7 @@ If none of the matching methods produce the desired result, you can explicitly a
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 2.5.1: Variable thickness pipe</th>
+    <th><a href="Tutorial-2-5-1-Variable-thickness-pipe.gh" class="fas fa-download"></a> Tutorial 2.5.1: Variable thickness pipe</th>
   </tr>
   <tr>
     <td>
@@ -443,6 +443,7 @@ If none of the matching methods produce the desired result, you can explicitly a
     <td>
         <details>
         <summary><b>Solution...</b></summary>
+        <br><a href="Tutorial-2-5-1-Variable-thickness-pipe.gh"> <i>download GH file...</i> </a>
         <br><b> Algorithm Analysis:</b><br>
         We can think of two different ways to generate this surface:<br>
         1. <b>Loft</b> circles created along a line at random locations with random radii<br>
@@ -519,7 +520,7 @@ If none of the matching methods produce the desired result, you can explicitly a
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 2.5.2: Custom list matching</th>
+    <th><a href="Tutorial-2-5-2-Custom-list-matching.gh" class="fas fa-download"></a> Tutorial 2.5.2: Custom list matching</th>
   </tr>
   <tr>
     <td>
@@ -530,6 +531,7 @@ If none of the matching methods produce the desired result, you can explicitly a
     <td>
         <details>
         <summary><b>Solution...</b></summary>
+        <br><a href="Tutorial-2-5-2-Custom-list-matching.gh"> <i>download GH file...</i> </a>
         <table>
           <tr>
             <td>
@@ -567,7 +569,7 @@ If none of the matching methods produce the desired result, you can explicitly a
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 2.5.3: Simple truss</th>
+    <th><a href="Tutorial-2-5-3-Simple-truss.gh" class="fas fa-download"></a> Tutorial 2.5.3: Simple truss</th>
   </tr>
   <tr>
     <td>
@@ -579,6 +581,7 @@ If none of the matching methods produce the desired result, you can explicitly a
     <td>
         <details>
         <summary><b>Solution...</b></summary>
+        <br><a href="Tutorial-2-5-3-Simple-truss.gh"> <i>download GH file...</i> </a>
         <table>
           <tr>
             <td>
@@ -704,7 +707,7 @@ If none of the matching methods produce the desired result, you can explicitly a
 
 <table class="rounded">
   <tr>
-    <th>Tutorial 2.5.4: Pearl necklace</th>
+    <th><a href="Tutorial-2-5-4-Pearl-necklace.gh" class="fas fa-download"></a> Tutorial 2.5.4: Pearl necklace</th>
   </tr>
   <tr>
     <td>
@@ -716,6 +719,7 @@ If none of the matching methods produce the desired result, you can explicitly a
     <td>
         <details>
         <summary><b>Solution...</b></summary>
+        <br><a href="Tutorial-2-5-4-Pearl-necklace.gh"> <i>download GH file...</i> </a>
         <table>
           <tr>
             <td>
