@@ -1460,7 +1460,108 @@ For more details about the Path Mapper, please refer to the help inside the comp
 
 <table class="rounded">
   <tr>
-    <th><a href="Tutorial-3-7-4-Weaving.gh" class="fas fa-download"></a> Tutorial 3.7.4: Weaving</th>
+    <th><a href="Tutorial-3-7-4-Truss.gh" class="fas fa-download"></a> Tutorial 3.7.4: Truss</th>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+     Create the structure shown in the image using a base grid as input.<br>
+     <img src="ads-351.png" class="image_center" width="75%">
+    </td>
+    </tr>
+  <tr>
+    <td>
+        <details>
+        <summary><b>Solution...</b></summary>
+        <br><a href="Tutorial-3-7-4-Truss.gh"> <i>download GH file...</i> </a>
+        <br>
+        <table>
+          <tr>
+            <td>
+            <b>Algorithm analysis:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <b>Understanding input:</b><br>
+            The 2 input grids with similar data structure (7 branches and with 9 elements).<br> 
+            <br>Bottom grid:
+            <img src="ads-352.png">
+             <br>Top grid:
+            <img src="ads-353.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <b>Understanding output:</b><br>
+            There are 4 parts to the output:<br><br>
+            <table>
+          <tr>
+            <td>
+            1. Bottom beams<br>
+            <img src="ads-354.png">
+            </td>
+            <td>
+            2. Top beams<br>
+            <img src="ads-355.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            3. Middle beams<br>
+            <img src="ads-356.png">
+            </td>
+            <td>
+            4. Middle plates<br>
+            <img src="ads-357.png">
+            </td>
+          </tr>
+          </table>
+            <b>Discussion:</b><br>
+            Constructing the bottom and top grids can be achieved with culling some points and flipping the points grid to get both directions. The middle beams weave the 2 culled grids of the bottom and top grids. We can also use the culled points to create the joints.<br><br>
+            Constructing the triangular connections is more involved since we need to create groups of 3 points that use a pair of consecutive points from the bottom grid and one point from the top. We can use relative trees to solve this. We can then offset the triangles to create the frame points, and offset again to create the plates points.
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <br><b>Grasshopper implementation:</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Cull top and bottom tree, flip culled tree, then feed the 4 trees into a pipe component with the desired radius as a parameter<br>
+            <img src="ads-358.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Weave bottom and top grids to generate the grid of middle beams. Connect grid rows with a Polyline the use Pipe with the radius as a parameter<br>
+            <img src="ads-359.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            To create the triangular connections, we will use a relative tree on the culled bottom grid, and combine with the culled top grid. Use Offset to generate smaller grid for the plates and their frame<br>
+            <img src="ads-360.png">
+            <br>Offset the triangles to create desired sizes. Use Pipe and boundary to create frames and surfaces for the plates<br>
+            <img src="ads-361.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            The full Grasshopper definition<br>
+            <img src="ads-362.png">
+            </td>
+          </tr>
+        </table>
+        </details>
+    </td>
+  </tr>
+</table>
+
+<table class="rounded">
+  <tr>
+    <th><a href="Tutorial-3-7-5-Weaving.gh" class="fas fa-download"></a> Tutorial 3.7.5: Weaving</th>
   </tr>
   <tr>
   <tr>
