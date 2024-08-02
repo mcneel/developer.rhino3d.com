@@ -1,7 +1,7 @@
 +++
 aliases = ["/5/guides/", "/6/guides/", "/7/guides/", "/wip/guides/"]
-description = "All the guides available for developing for Rhino or Grasshopper."
-title = "Guides"
+description = "Todas las guías disponibles para desarrollar Rhino o Grasshopper."
+title = "Guías"
 type = "guides"
 weight = 2
 
@@ -21,144 +21,144 @@ toc_type = "single"
 
 ## [General](/guides/general)
 
-*Guides that apply across platforms and SDKs*
+*Guías aplicables a todas las plataformas y SDK*
 
-### Overview
+### Información general
 
-- [Developing Software In Public](/guides/general/developing-software-in-public)
-- [Rhino Technology Overview](/guides/general/rhino-technology-overview)
-- [Frequently Asked Questions (FAQ)](/guides/general/frequently-asked-questions)
+- [Desarrollo de software público](/guides/general/developing-software-in-public)
+- [Información general de la tecnología de Rhino](/guides/general/rhino-technology-overview)
+- [Preguntas más frecuentes (FAQ)](/guides/general/frequently-asked-questions)
 
-### Getting Started
+### Introducción
 
-- [Developer Prerequisites](/guides/general/rhino-developer-prerequisites)
-- [Contributing](/guides/general/contributing)
+- [Requisitos previos para desarrolladores](/guides/general/rhino-developer-prerequisites)
+- [Contribuir](/guides/general/contributing)
 
-### Fundamentals
+### Fundamentos
 
-- [What is a Rhino Plugin?](/guides/general/what-is-a-rhino-plugin)
-- [Rhino Package Manager](/guides/yak/)
-- [Rhino UI System](/guides/general/rhino-ui-system/)
-- [Simple Command Macros](/guides/general/creating-command-macros/)
+- [¿Qué es un plugin de Rhino?](/guides/general/what-is-a-rhino-plugin)
+- [Administrador de paquetes de Rhino](/guides/yak/)
+- [Sistema de la IU de Rhino](/guides/general/rhino-ui-system/)
+- [Macros de comandos simples](/guides/general/creating-command-macros/)
 
-### [Essential Mathematics](/guides/general/essential-mathematics)
+### [Matemáticas esenciales](/guides/general/essential-mathematics)
 
-- [Introduction](/guides/general/essential-mathematics)  
-- [Vector Mathematics](/guides/general/essential-mathematics/vector-mathematics)  
-- [Matrices and Transformations](/guides/general/essential-mathematics/matrices-transformations)  
-- [Parametric Curves and Surfaces](/guides/general/essential-mathematics/parametric-curves-surfaces)  
-- [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) [Download Essential Mathematics for Computational Design as a single PDF ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/)
+- [Introducción](/guides/general/essential-mathematics)  
+- [Matemáticas vectoriales](/guides/general/essential-mathematics/vector-mathematics)  
+- [Matrices y transformaciones](/guides/general/essential-mathematics/matrices-transformations)  
+- [Curvas paramétricas y superficies](/guides/general/essential-mathematics/parametric-curves-surfaces)  
+- [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) [Descargar Matemáticas Esenciales para Diseño Computacional como PDF](https://www.rhino3d.com/download/rhino/6/essentialmathematics/)
 
-### This Site
+### Este sitio web
 
-- [How This Site Works](/guides/general/how-this-site-works)
-- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/main/README.md)
-- [Developer Docs Style Guide](/guides/general/developer-docs-style-guide)
+- [Cómo funciona este sitio](/guides/general/how-this-site-works)
+- [Introducción a los documentos para desarrolladores](https://github.com/mcneel/developer-rhino3d-com/blob/main/README.md)
+- [Guía de estilo de los documentos para desarrolladores](/guides/general/developer-docs-style-guide)
 
 ## [Scripting](/guides/scripting)
 
-*Guides on using scripting features in Rhino 8 and above, that apply to all programming languages*
+*Guías sobre el uso de las funciones de scripting en Rhino 8 y versiones posteriores, que se aplican a todos los lenguajes de programación*
 
-### Getting Started
+### Introducción
 
-#### Script Editor
-  - [Opening Script Editor](/guides/scripting/scripting-command/#opening-script-editor)
-  - [First Script](/guides/scripting/scripting-command/#first-script)
-  - [Edit Script](/guides/scripting/scripting-command/#edit-script)
-  - [Running Scripts](/guides/scripting/scripting-command/#running-scripts)
-  - [Debugging Scripts](/guides/scripting/scripting-command/#debugging-scripts)
-  - [Using Packages](/guides/scripting/scripting-command/#using-packages)
-  - [Editor Features](/guides/scripting/scripting-command/#editor-features)
+#### Editor de scripts
+  - [Abrir el editor de scripts](/guides/scripting/scripting-command/#opening-script-editor)
+  - [Primer script](/guides/scripting/scripting-command/#first-script)
+  - [Editar un script](/guides/scripting/scripting-command/#edit-script)
+  - [Ejecutar scripts](/guides/scripting/scripting-command/#running-scripts)
+  - [Depurar scripts](/guides/scripting/scripting-command/#debugging-scripts)
+  - [Usar paquetes](/guides/scripting/scripting-command/#using-packages)
+  - [Funciones del editor](/guides/scripting/scripting-command/#editor-features)
 
-#### Script Component
-  - [Create Script Component](/guides/scripting/scripting-component/#script-component)
-  - [First Script](/guides/scripting/scripting-component/#first-script)
-  - [Script Inputs and Outputs](/guides/scripting/scripting-component/#script-inputs-and-outputs)
-  - [Edit Script](/guides/scripting/scripting-component/#edit-script)
-  - [Run Scripts](/guides/scripting/scripting-component/#debugging-scripts)
-  - [Debugging Scripts](/guides/scripting/scripting-component/#debugging-scripts)
-  - [Using Packages](/guides/scripting/scripting-component/#using-packages)
-  - [Editor Features](/guides/scripting/scripting-component/#editor-features)
+#### Componente de script
+  - [Crear un componente de script](/guides/scripting/scripting-component/#script-component)
+  - [Primer script](/guides/scripting/scripting-component/#first-script)
+  - [Entradas y salidas de scripts](/guides/scripting/scripting-component/#script-inputs-and-outputs)
+  - [Editar script](/guides/scripting/scripting-component/#edit-script)
+  - [Ejecutar scripts](/guides/scripting/scripting-component/#debugging-scripts)
+  - [Depurar scripts](/guides/scripting/scripting-component/#debugging-scripts)
+  - [Usar paquetes](/guides/scripting/scripting-component/#using-packages)
+  - [Funciones del editor](/guides/scripting/scripting-component/#editor-features)
 
-### Python Scripting
-- <!-- [Python Scripting](/guides/scripting/scripting-python) --> Scripting: Python {{% comingsoon-label %}}
-- [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
+### Scripts de Python
+- <!-- [Scripts de Python](/guides/scripting/scripting-python) --> Scripting: Python {{% comingsoon-label %}}
+- [Scripts de Grasshopper: Python](/guides/scripting/scripting-gh-python)
 
-### C# Scripting
-- <!-- [C# Scripting](/guides/scripting/scripting-csharp) --> Scripting: C# {{% comingsoon-label %}}
-- [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
+### Scripts C#
+- <!-- [Scripts C#](/guides/scripting/scripting-csharp) --> Scripting: C# {{% comingsoon-label %}}
+- [Scripts de Grasshopper: C#](/guides/scripting/scripting-gh-csharp)
 
-### Editor Features
-- <!-- [Editing Features](/guides/scripting/editor-editing) --> Editing Features {{% comingsoon-label %}}
-- <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
-- <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
+### Funciones del editor
+- <!-- [Funciones de edición](/guides/scripting/editor-editing) --> Funciones de edición {{% comingsoon-label %}}
+- <!-- [Explorador](/guides/scripting/editor-explorer) --> Explorador {{% comingsoon-label %}}
+- <!-- [Buscar y reemplazar](/guides/scripting/editor-search) --> Buscar y reemplazar {{% comingsoon-label %}}
 - <!-- [Terminal](/guides/scripting/editor-terminal) --> Terminal {{% comingsoon-label %}}
-- <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
-- <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
-- <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
-- <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
-- <!-- [Help](/guides/scripting/editor-help) --> Help {{% comingsoon-label %}}
-- [Configurations](/guides/scripting/editor-configs)
-- <!-- [Logs](/guides/scripting/editor-logs) --> Logs {{% comingsoon-label %}}
+- <!-- [Bandeja de problemas](/guides/scripting/editor-problems) --> Bandeja de problemas {{% comingsoon-label %}}
+- <!-- [Depurar scripts](/guides/scripting/editor-debug) --> Depurador {{% comingsoon-label %}}
+- <!-- [Plantillas](/guides/scripting/editor-templates) --> Plantillas {{% comingsoon-label %}}
+- <!-- [Ejemplos](/guides/scripting/editor-examples) --> Ejemplos {{% comingsoon-label %}}
+- <!-- [Ayuda](/guides/scripting/editor-help) --> Ayuda {{% comingsoon-label %}}
+- [Configuraciones](/guides/scripting/editor-configs)
+- <!-- [Registros](/guides/scripting/editor-logs) --> Registros {{% comingsoon-label %}}
 
-### Publishing
+### Publicación 
 
-- <!-- [Creating Rhino Projects](/guides/scripting/projects-create) --> Creating Rhino Projects {{% comingsoon-label %}}
-- <!-- [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) --> Creating Rhino and Grasshopper Plugins {{% comingsoon-label %}}
+- <!-- [Crear de proyectos de Rhino](/guides/scripting/projects-create) --> Crear proyectos de Rhino {{% comingsoon-label %}}
+- <!-- [Crear plugins de Rhino y Grasshopper](/guides/scripting/projects-publish) --> Crear plugins de Rhino y Grasshopper {{% comingsoon-label %}}
 
-### Advanced
+### Avanzado
 
-- [Language Initialization](/guides/scripting/advanced-langinit)
-- <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
-- [Python Path Files](/guides/scripting/advanced-pthfiles)
-- <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
-- <!-- [Async Execution](/guides/scripting/advanced-async) --> Async Execution {{% comingsoon-label %}}
-- <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
-- <!-- [RhinoCode Command Line Interface](/guides/scripting/advanced-cli) --> RhinoCode Command Line Interface {{% comingsoon-label %}}
-<!-- [RhinoCode API](/guides/scripting/advanced-core-api) -->
-<!-- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api) -->
+- [Inicialización de lenguaje](/guides/scripting/advanced-langinit)
+- <!-- [CPython Runtime y servidor de lenguaje](/guides/scripting/advanced-pyruntime) --> CPython Runtime y servidor de lenguaje {{% comingsoon-label %}}
+- [Archivos de ruta de Python](/guides/scripting/advanced-pthfiles)
+- <!-- [Librerías de lenguajes](/guides/scripting/advanced-libraries) --> Librerías de lenguajes {{% comingsoon-label %}}
+- <!-- [Ejecución asíncrona](/guides/scripting/advanced-async) --> Ejecución asíncrona {{% comingsoon-label %}}
+- <!-- [Extensión de VisualStudioCode](/guides/scripting/advanced-vscode) --> Extensión de VisualStudioCode {{% comingsoon-label %}}
+- <!-- [Interfaz de línea de comandos de RhinoCode](/guides/scripting/advanced-cli) --> Interfaz de línea de comandos de RhinoCode {{% comingsoon-label %}}
+<!-- [API de RhinoCode](/guides/scripting/advanced-core-api) -->
+<!-- [API de RhinoCodeEditor](/guides/scripting/advanced-editor-api) -->
 
 ## [RhinoCommon](/guides/rhinocommon)
 
-*The cross-platform .NET plugin SDK for Rhino.*
+*El SDK de plug-ins .NET multiplataforma para Rhino.*
 
-### Overview
+### Información general
 
-- [What is RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon/)
-- [What's New?](/guides/rhinocommon/whats-new/)
+- [¿Qué es RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon/)
+- [Novedades](/guides/rhinocommon/whats-new/)
 
-### Getting Started
+### Introducción
 
-- Installing Tools ([Windows](/guides/rhinocommon/installing-tools-windows/), [Mac](/guides/rhinocommon/installing-tools-mac/))
-- Your First Plugin ([Windows](/guides/rhinocommon/your-first-plugin-windows/), [Mac](/guides/rhinocommon/your-first-plugin-mac/), [Cross-Platform](/guides/rhinocommon/your-first-plugin-crossplatform/))
-- Plugin Installers ([Windows](/guides/rhinocommon/plugin-installers-windows/), [Mac](/guides/rhinocommon/plugin-installers-mac/))
-- [Distributing a Rhino Plug-In with the Package Manager](/guides/yak/creating-a-rhino-plugin-package/)
+- Instalar herramientas ([Windows](/guides/rhinocommon/installing-tools-windows/), [Mac](/guides/rhinocommon/installing-tools-mac/))
+- Su primer plugin ([Windows](/guides/rhinocommon/your-first-plugin-windows/), [Mac](/guides/rhinocommon/your-first-plugin-mac/), [Multiplataforma](/guides/rhinocommon/your-first-plugin-crossplatform/))
+- Instaladores de plugins ([Windows](/guides/rhinocommon/plugin-installers-windows/), [Mac](/guides/rhinocommon/plugin-installers-mac/))
+- [Distribuir un plug-in de Rhino con el administrador de paquetes](/guides/yak/creating-a-rhino-plugin-package/)
 
-### Fundamentals
+### Fundamentos
 
 {{< dev-topic-list "guides" "RhinoCommon" "Fundamentals" "weight" >}}
 
-### RhinoCommon Geometry
+### Geometría de RhinoCommon 
 
-- [Overview](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#31-overview)  
-- [Geometry structures](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#32-geometry-structures)  
-    - [The Point3d structure](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#321-the-point3d-structure)  
-    - [Points and vectors](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#322-points--vectors)  
-    - [Lightweight curves](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#323-lightweight-curves)  
-    - [Lightweight surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#324-lightweight-surfaces)  
-    - [Lightweight surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#325-other-geometry-structures)  
-- [Geometry classes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#33-geometry-classes)  
-    -  [Curves](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#331-curves)  
-    - [Surfaces](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#332-surfaces)  
-    - [Boundary representation (Brep)](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#334-boundary-representation-brep)  
-    - [Other geometry classes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#335-other-geometry-classes)  
-- [Geometry transformations](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#34-geometry-transformations)  
+- [Introducción](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#31-overview)  
+- [Estructuras geométricas](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#32-geometry-structures)  
+    - [La estructura Point3d](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#321-the-point3d-structure)  
+    - [Puntos y vectores](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#322-points--vectors)  
+    - [Curvas ligeras](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#323-lightweight-curves)  
+    - [Superficies ligeras](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#324-lightweight-surfaces)  
+    - [Superficies ligeras](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#325-other-geometry-structures)  
+- [Clases de geometría](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#33-geometry-classes)  
+    -  [Curvas](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#331-curves)  
+    - [Superficies](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#332-surfaces)  
+    - [Representación de contornos (Brep)](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#334-boundary-representation-brep)  
+    - [Otras clases de geometría](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#335-other-geometry-classes)  
+- [Transformaciones geométricas](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#34-geometry-transformations)  
 
-### Rendering
+### Renderizado
 
 {{< dev-topic-list "guides" "RhinoCommon" "Rendering" "weight" >}}
 
-### Advanced
+### Avanzado
 
 {{< dev-topic-list "guides" "RhinoCommon" "Advanced" "weight" >}}
 
@@ -173,113 +173,113 @@ toc_type = "single"
 ## [Rhino.Python](/guides/rhinopython)
 
 
-*Quickly add functionality to Rhino or automate repetitive tasks.*
+*Añada rápidamente funcionalidades a Rhino o automatizar tareas repetitivas.*
 
-### Overview
+### Información general
 
 {{< dev-topic-list "guides" "RhinoPython" "Overview" "weight" "8" >}}
 
-### Getting Started
+### Introducción
 
-- Your First Python Script in Rhino ([Windows](/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac](/guides/rhinopython/your-first-python-script-in-rhino-mac), [Grasshopper](/guides/rhinopython/your-first-python-script-in-grasshopper))
-- [Where to get help...](/guides/rhinopython/python-where-to-find-help)
-- [Troubleshooting Installation](/guides/rhinopython/python-troubleshooting-install)
+- Su primer script Python en Rhino ([Windows](/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac](/guides/rhinopython/your-first-python-script-in-rhino-mac), [Grasshopper](/guides/rhinopython/your-first-python-script-in-grasshopper))
+- [Dónde encontrar ayuda...](/guides/rhinopython/python-where-to-find-help)
+- [Solución de problemas de instalación](/guides/rhinopython/python-troubleshooting-install)
 
-### Python Editor for Windows
+### Editor de Python para Windows
 
 {{< dev-topic-list "guides" "RhinoPython" "Python Windows" "weight" "8" >}}
 
-### Python in Grasshopper
+### Python en Grasshopper
 
 {{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" "8" >}}
 
-### Fundamentals
+### Fundamentos
 
 {{< dev-topic-list "guides" "RhinoPython" "Fundamentals" "weight" "8" >}}
 
-### Python in Rhino
+### Python en Rhino
 
 {{< dev-topic-list "guides" "RhinoPython" "Python in Rhino" "weight" "8" >}}
 
 ### [Rhino.Python 101](/guides/rhinopython/primer-101)
 
-&nbsp;&nbsp; [Introduction](/guides/rhinopython/primer-101)  
-&nbsp;&nbsp; [Where to find help](/guides/rhinopython/primer-101/where-to-find-help/)  
-&nbsp;&nbsp; 1. [What's it all about?](/guides/rhinopython/primer-101/1-whats-it-all-about/)  
-&nbsp;&nbsp; 2. [Python Essentials](/guides/rhinopython/primer-101/2-python-essentials/)  
-&nbsp;&nbsp; 3. [Script Anatomy](/guides/rhinopython/primer-101/3-script-anatomy/)  
-&nbsp;&nbsp; 4. [Operators and Functions](/guides/rhinopython/primer-101/4-operators-and-functions/)  
-&nbsp;&nbsp; 5. [Conditional Execution](/guides/rhinopython/primer-101/5-conditional-execution/)  
-&nbsp;&nbsp; 6. [Tuples, Lists, and Dictionaries](/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/)  
-&nbsp;&nbsp; 7. [Classes](/guides/rhinopython/primer-101/7-classes/)  
-&nbsp;&nbsp; 8. [Geometry](/guides/rhinopython/primer-101/8-geometry/)  
+&nbsp;&nbsp; [Introducción](/guides/rhinopython/primer-101)  
+&nbsp;&nbsp; [Dónde encontrar ayuda](/guides/rhinopython/primer-101/where-to-find-help/)  
+&nbsp;&nbsp; 1. [¿Qué es?](/guides/rhinopython/primer-101/1-whats-it-all-about/)  
+&nbsp;&nbsp; 2. [Fundamentos de Python](/guides/rhinopython/primer-101/2-python-essentials/)  
+&nbsp;&nbsp; 3. [Anatomía de los scripts](/guides/rhinopython/primer-101/3-script-anatomy/)  
+&nbsp;&nbsp; 4. [Operadores y funciones](/guides/rhinopython/primer-101/4-operators-and-functions/)  
+&nbsp;&nbsp; 5. [Ejecución condicional](/guides/rhinopython/primer-101/5-conditional-execution/)  
+&nbsp;&nbsp; 6. [Tuplas, listas y diccionarios](/guides/rhinopython/primer-101/6-tuplas-listas-diccionarios/)  
+&nbsp;&nbsp; 7. [Clases](/guides/rhinopython/primer-101/7-classes/)  
+&nbsp;&nbsp; 8. [Geometría](/guides/rhinopython/primer-101/8-geometry/)  
 
-&nbsp;&nbsp; [{{< awesome "fas fa-download">}} ](https://download.rhino3d.com/IronPython/5.0/RhinoPython101/) [Download the Rhino.Python 101 Primer as a single PDF ](https://download.rhino3d.com/IronPython/5.0/RhinoPython101/)  
+&nbsp;&nbsp; [{{< awesome "fas fa-download">}} ](https://download.rhino3d.com/IronPython/5.0/RhinoPython101/) [Descargue el Manual de Rhino.Python 101 como PDF ](https://download.rhino3d.com/IronPython/5.0/RhinoPython101/)  
 
 
-### Intermediate
+### Intermedio
 
 {{< dev-topic-list "guides" "RhinoPython" "Intermediate" "weight" "8" >}}
 
-### Custom Dialogs in Eto
+### Diálogos personalizados en Eto
 
 {{< dev-topic-list "guides" "RhinoPython" "Eto" "weight" "8" >}}
 
 
-### Other Resources
+### Otros recursos
 
-- [Rhino Scripting Forum (Discourse)](https://discourse.mcneel.com/c/scripting)  
-- [Rhino.Python Samples](/samples/#rhinopython)  
-- [Rhino.Python Developer Samples GitHub](https://github.com/mcneel/rhino-developer-samples/tree/master/rhinopython)  
-- [Designalyze Python Tutorials](https://designalyze.com/)
-- [Plethora Project](https://www.plethora-project.com/education/2017/5/31/rhino-python-programming)
-- [Steve Baer's Blog](https://stevebaer.wordpress.com/category/python/)
-- [Python Beginner's Guide](https://wiki.python.org/moin/BeginnersGuide/Programmers)
-- [Tutorials Point Python Series](https://www.tutorialspoint.com/python/index.htm)
+- [Foro sobre scripts de Rhino (Discourse)](https://discourse.mcneel.com/c/scripting)  
+- [Muestras de Rhino.Python](/samples/#rhinopython)  
+- [Muestras de Rhino.Python para desarrolladores en GitHub](https://github.com/mcneel/rhino-developer-samples/tree/master/rhinopython)  
+- [Tutoriales de Python de Designalyze](https://designalyze.com/)
+- [Proyecto Pletora](https://www.plethora-project.com/education/2017/5/31/rhino-python-programming)
+- [Blog de Steve Baer](https://stevebaer.wordpress.com/category/python/)
+- [Guía de Python para principiantes](https://wiki.python.org/moin/BeginnersGuide/Programmers)
+- [Serie de Python en Tutorials Point](https://www.tutorialspoint.com/python/index.htm)
 - [Rhino.Python Dash Docset](https://discourse.mcneel.com/t/rhino-python-dash-docset/6399)
-- [Nature of Code Video Tutorials](https://www.youtube.com/watch?v=Kyi_K85Gsm4&list=PL5Up_u-XkWgP7nB7XIevMTyBCZ7pvLBGP)
+- [Tutoriales en vídeo sobre la naturaleza del código](https://www.youtube.com/watch?v=Kyi_K85Gsm4&list=PL5Up_u-XkWgP7nB7XIevMTyBCZ7pvLBGP)
 
 ## [openNURBS](/guides/opennurbs)
 
-*Read/Write Rhino 3dm files in your application.*
+*Lea y escriba archivos 3dm de Rhino en su aplicación.*
 
-### Overview
+### Información general
 
 {{< dev-topic-list "guides" "openNURBS" "Overview" "weight" >}}
 
-### Getting Started
+### Introducción
 
 {{< dev-topic-list "guides" "openNURBS" "Getting Started" "weight" >}}
 
-### Fundamentals
+### Fundamentos
 
 {{< dev-topic-list "guides" "openNURBS" "Fundamentals" "weight" >}}
 
-### Advanced
+### Avanzado
 
 {{< dev-topic-list "guides" "openNURBS" "Advanced" "weight" >}}
 
 ## [C/C++](/guides/cpp)
 
-*Native SDK for Rhino for Windows plugins.*
+*SDK nativo de Rhino para plugins de Windows.*
 
-### Overview
+### Información general
 
 {{< dev-topic-list "guides" "C/C++" "Overview" "weight" >}}
 
-### Getting Started
+### Introducción
 
 {{< dev-topic-list "guides" "C/C++" "Getting Started" "weight" >}}
 
-### Fundamentals
+### Fundamentos
 
 {{< dev-topic-list "guides" "C/C++" "Fundamentals" "weight" >}}
 
-### Advanced
+### Avanzado
 
 {{< dev-topic-list "guides" "C/C++" "Advanced" "weight" >}}
 
-### Rendering (RDK)
+### Renderizado (RDK)
 
 {{< dev-topic-list "guides" "C/C++" "RDK" "weight" >}}
 
@@ -287,112 +287,112 @@ toc_type = "single"
 
 {{< dev-topic-list "guides" "C/C++" "Zoo" "weight" >}}
 
-### Troubleshooting
+### Solución de problemas
 
 {{< dev-topic-list "guides" "C/C++" "Troubleshooting" "weight" >}}
 
 ## [Grasshopper](/guides/grasshopper)
 
 
-*Create custom Grasshopper components and plugins.*
+*Crear componentes y plugins de Grasshopper personalizados.*
 
-### Overview
+### Información general
 
-- [What is a Grasshopper Component?](/guides/grasshopper/what-is-a-grasshopper-component/)
+- [¿Qué es un componente de Grasshopper?](/guides/grasshopper/what-is-a-grasshopper-component/)
 
-### Getting Started
+### Introducción
 
-- Installing Tools ([Windows](/guides/grasshopper/installing-tools-windows/), [Mac](/guides/grasshopper/installing-tools-mac/))
-- Your First Component ([Windows](/guides/grasshopper/your-first-component-windows/), [Mac](/guides/grasshopper/your-first-component-mac/))
-- [Distributing a Grasshopper Plug-In with the Package Manager](/guides/yak/creating-a-rhino-plugin-package/)
+- Herramientas de instalación ([Windows](/guides/grasshopper/installing-tools-windows/), [Mac](/guides/grasshopper/installing-tools-mac/))
+- Su primer componente ([Windows](/guides/grasshopper/your-first-component-windows/), [Mac](/guides/grasshopper/your-first-component-mac/))
+- [Distribuir un complemento de Grasshopper con el administrador de paquetes](/guides/yak/creating-a-rhino-plugin-package/)
 
-### Fundamentals
+### Fundamentos
 
 {{< dev-topic-list "guides" "Grasshopper" "Fundamentals" "weight" >}}
 
-### Advanced
+### Avanzado
 
 {{< dev-topic-list "guides" "Grasshopper" "Advanced" "weight" >}}
 
-### In Depth
+### En profundidad
 
 {{< dev-topic-list "guides" "Grasshopper" "In Depth" "weight" >}}
 
-### [Essential Algorithms and Data Structures for Grasshopper](/guides/grasshopper/gh-algorithms-and-data-structures/)
+### [Algoritmos y estructuras de datos esenciales para Grasshopper](/guides/grasshopper/gh-algorithms-and-data-structures/)
 
-- [Introduction](/guides/grasshopper/gh-algorithms-and-data-structures/)
-- [Algorithms and Data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/)
-- [Introduction to Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/)
-- [Advanced Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/)
-- [{{< awesome "fas fa-download">}}](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/) [Download full PDF and GH examples](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/)
+- [Introducción](/guides/grasshopper/gh-algorithms-and-data-structures/)
+- [Algoritmos y datos](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/)
+- [Introducción a las estructuras de datos](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/)
+- [Estructuras de datos avanzadas](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/)
+- [{{< awesome "fas fa-download">}}](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/) [Descargar el PDF completo y ejemplos de GH](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/)
 
-### Python in Grasshopper
+### Python en Grasshopper
 
 {{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" "8" >}}
 
-### [C# in Grasshopper](/guides/grasshopper/csharp-essentials/)
+### [C# en Grasshopper](/guides/grasshopper/csharp-essentials/)
 
-- [C# Component in Grasshopper](/guides/grasshopper/csharp-essentials/1-grasshopper-csharp-component/#21-introduction)
-- [C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics/)
-- [RhinoCommon Geometry](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/)
-- [Design Algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/)
+- [Componente C# en Grasshopper](/guides/grasshopper/csharp-essentials/1-grasshopper-csharp-component/#21-introduction)
+- [Conceptos básicos de programación en C#](/guides/grasshopper/csharp-essentials/2-csharp-basics/)
+- [Geometría de RhinoCommon](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/)
+- [Algoritmos de diseño](/guides/grasshopper/csharp-essentials/4-design-algorithms/)
 
 
 ## [RhinoScript](/guides/rhinoscript)
 
 
-*RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino for Windows, or automate repetitive tasks.*
+*RhinoScript, herramienta de scripting basada en el lenguaje VBScript de Microsoft. Con RhinoScript, puede agregar rápidamente funcionalidades a Rhino para Windows o automatizar tareas repetitivas.*
 
-### Overview
+### Información general
 
-- [What are VBScript and RhinoScript?](/guides/rhinoscript/what-are-vbscript-rhinoscript)
+- [¿Qué son VBScript y RhinoScript?](/guides/rhinoscript/what-are-vbscript-rhinoscript)
 
 ### [RhinoScript 101](/guides/rhinoscript/primer-101)
 
-&nbsp;&nbsp; [Introduction](/guides/rhinoscript/primer-101)  
-&nbsp;&nbsp; [Where to find help](/guides/rhinoscript/primer-101/where-to-find-help/)  
-&nbsp;&nbsp; 1. [What's it all about?](/guides/rhinoscript/primer-101/1-whats-it-all-about/)  
+&nbsp;&nbsp; [Introducción](/guides/rhinoscript/primer-101)  
+&nbsp;&nbsp; [Dónde encontrar ayuda](/guides/rhinoscript/primer-101/where-to-find-help/)  
+&nbsp;&nbsp; 1. [¿Qué es?](/guides/rhinoscript/primer-101/1-whats-it-all-about/)  
 &nbsp;&nbsp; 2. [RhinoScript Essentials](/guides/rhinoscript/primer-101/2-vbscript-essentials/)  
-&nbsp;&nbsp; 3. [Script Anatomy](/guides/rhinoscript/primer-101/3-script-anatomy/)  
-&nbsp;&nbsp; 4. [Operators and Functions](/guides/rhinoscript/primer-101/4-operators-and-functions/)  
-&nbsp;&nbsp; 5. [Conditional Execution](/guides/rhinoscript/primer-101/5-conditional-execution/)  
-&nbsp;&nbsp; 6. [Arrays](/guides/rhinoscript/primer-101/6-arrays/)  
-&nbsp;&nbsp; 7. [Geometry](/guides/rhinoscript/primer-101/7-geometry/)  
-&nbsp;&nbsp; [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/5.0/rhinoscript101) [Download the RhinoScript 101 Primer as a single PDF ](https://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
+&nbsp;&nbsp; 3. [Anatomía de los scripts](/guides/rhinoscript/primer-101/3-script-anatomy/)  
+&nbsp;&nbsp; 4. [Operadores y funciones](/guides/rhinoscript/primer-101/4-operators-and-functions/)  
+&nbsp;&nbsp; 5. [Ejecución condicional](/guides/rhinoscript/primer-101/5-conditional-execution/)  
+&nbsp;&nbsp; 6. [Matrices](/guides/rhinoscript/primer-101/6-arrays/)  
+&nbsp;&nbsp; 7. [Geometría](/guides/rhinoscript/primer-101/7-geometry/)  
+&nbsp;&nbsp; [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/5.0/rhinoscript101) [Descargar el Manual de RhinoScript 101 como PDF](https://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 
-### Fundamentals
+### Fundamentos
 
 {{< dev-topic-list "guides" "RhinoScript" "Fundamentals" "weight" >}}
 
 
-### Intermediate
+### Intermedio
 
 {{< dev-topic-list "guides" "RhinoScript" "Intermediate" "weight" >}}
 
-### Advanced
+### Avanzado
 
 {{< dev-topic-list "guides" "RhinoScript" "Advanced" "weight" >}}
 
-### Troubleshooting
+### Solución de problemas
 
 {{< dev-topic-list "guides" "RhinoScript" "Troubleshooting" "weight" >}}
 
-### Other Resources
+### Otros recursos
 
-- [Pascal Golay's scripted utilities for Rhino](https://wiki.mcneel.com/people/pascalgolay)
-- [RhinoScript Samples on GitHub](https://github.com/mcneel/rhinoscript)
+- [Utilidades de scripts de Pascal Golay para Rhino](https://wiki.mcneel.com/people/pascalgolay)
+- [Muestras de RhinoScript en GitHub](https://github.com/mcneel/rhinoscript)
 - [RhinoScript Dash Docset](https://discourse.mcneel.com/t/rhinoscript-dash-docset/6382)
-- [RhinoScript Help File On-Line](https://www.rhino3d.com/5/rhinoscript/index.html)
+- [Ayuda online de RhinoScript](https://www.rhino3d.com/5/rhinoscript/index.html)
 
 <!-- ## [Compute](/guides/compute) -->
 <h2 id="compute"><a href="/guides/compute">Compute</a></h2>
 
 
-### Getting Started
+### Introducción
 
 {{< dev-topic-list "guides" "Compute" "Getting Started" "weight" >}}
 
-### Production Deployment
+### Implementación de producción
 
 {{< dev-topic-list "guides" "Compute" "Deployment" "weight" >}}
 
@@ -400,12 +400,12 @@ toc_type = "single"
 
 {{< dev-topic-list "guides" "Compute" "Hops" "weight" >}}
 
-## Developer Services
+## Servicios para desarrolladores
 
-### [Localization](https://www.rhino3d.com/localization)
+### [Localización](https://www.rhino3d.com/localization)
 
-Our regional office in Europe provides a translation and localization service for third-party developers and anyone else interested in translating their products to French, German, Italian, Spanish, etc. [Details…](https://www.rhino3d.com/localization)
+Nuestra oficina regional en Europa proporciona un servicio de traducción y localización para desarrolladores externos y cualquier persona interesada en traducir su productos al alemán, español, francés, italiano, inglés, etc. [Más información...](https://www.rhino3d.com/localization)
 
-### Marketing Support
+### Soporte de marketing
 
-If you have developed a Rhino add-on that you would like to make available to other Rhino users, [food4Rhino](https://www.food4rhino.com/) is the place to post the details about your plug-ins for Rhino and Grasshopper. Food4Rhino is the Plug-in Community Service by McNeel.  Users can find the newest Rhino Plug-ins, Grasshopper Add-ons, Materials, Textures and Backgrounds, Scripts and much more. It is free. [See the frequently asked questions...](https://www.food4rhino.com/faq)
+Si ha desarrollado un complemento de Rhino que le gustaría poner a disposición de otros usuarios, [food4Rhino](https://www.food4rhino.com/) es el lugar donde puede publicar toda la información sobre sus plug‑ins para Rhino y Grasshopper. Food4Rhino es el servicio de comunidad de plug-ins de McNeel. Los usuarios pueden encontrar los últimos plug-ins de Rhino, complementos de Grasshopper, materiales, texturas y fondos, scripts y mucho más. Es gratuito. [Preguntas más frecuentes](https://www.food4rhino.com/es/faq)

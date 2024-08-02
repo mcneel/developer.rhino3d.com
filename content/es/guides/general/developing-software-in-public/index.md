@@ -1,12 +1,12 @@
 +++
 aliases = ["/5/guides/general/developing-software-in-public/", "/6/guides/general/developing-software-in-public/", "/7/guides/general/developing-software-in-public/", "/wip/guides/general/developing-software-in-public/"]
-authors = [ "brian" ]
+authors = ["brian" ]
 categories = [ "Overview" ]
-description = "An overview of the McNeel Development Process."
+description = "Información general del proceso de desarrollo de Rhino."
 keywords = [ "developer", "rhino" ]
 languages = [ "All" ]
 sdk = [ "General" ]
-title = "Developing Software In Public"
+title = "Desarrollo de software público"
 type = "guides"
 weight = 0
 override_last_modified = "2018-12-05T14:59:06Z"
@@ -18,7 +18,7 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "Windows", "Mac" ]
+platforms = ["Windows", "Mac" ]
 since = 0
 
 [page_options]
@@ -29,116 +29,116 @@ toc_type = "single"
 +++
 
 
-## Overview
+## Información general
 
-Over the last 20 years we've put together a process that helps us build customer delight.  There are eight pieces to this process, and they are all equally important.  For years, we built our own proprietary tools to support most of the parts of this process.  But now, there are great commercially available tools - tools we encourage you to use, too.
+En los últimos 20 años hemos desarrollado un proceso que nos ayuda a satisfacer a nuestros clientes.  Este proceso consta de ocho partes, todas ellas igualmente importantes.  Durante años, hemos creado nuestras propias herramientas para facilitar la mayor parte de este proceso.  Pero ahora existen excelentes herramientas comerciales que os animamos a utilizar.
 
-Our Software Development process, just like the other processes, is a cycle.  So we can start anywhere.
+Nuestro proceso de desarrollo de software, al igual que los demás procesos, es un ciclo.  Así que podemos empezar en cualquier fase.
 
-![Rhino Development Cycle](/images/developing-software-in-public-01.png)
+![Ciclo de desarrollo de Rhino](/images/developing-software-in-public-01.png)
 
-## The Cycle
+## El ciclo
 
-Since this is a developer guide, let's start with writing code.
+Como esta guía es para desarrolladores, empecemos por escribir código.
 
-### Code
+### Escribir código
 
-This is what we as software developers spend a lot of our time doing.  We’ve got our favorite IDE open, we write code, we debug, we solve problems.  We don’t know a software developer that doesn’t love solving problems.
+Escribir código es lo que nosotros, como desarrolladores de software, pasamos mucho tiempo haciendo. Tenemos nuestro IDE favorito abierto, escribimos código, depuramos, resolvemos problemas. No conocemos a ningún desarrollador de software al que no le guste resolver problemas.
 
-When we’ve got something, we *commit* it to our version control system...
+Cuando tenemos algo, lo enviamos (*commit*) a nuestro sistema de control de versiones...
 
-### Commit
+### Enviar
 
-We commit code to a [Version Control System](https://en.wikipedia.org/wiki/Version_control).  In our case, we use [git](https://git-scm.com/) with [GitHub](https://github.com/).  There are many other version control systems out there.  We used to use [Subversion](https://subversion.apache.org/), but now we use [GitHub](https://github.com/).  [GitHub](https://github.com/) plays nicely with so many other tools and has such a rich API.  But there are others worth considering: [BitBucket](https://bitbucket.org), [Mercurial](https://www.mercurial-scm.org/), etc.
+Enviamos código a un [Sistema de control de versiones](https://es.wikipedia.org/wiki/Control_de_versiones). En nuestro caso, utilizamos [git](https://git-scm.com/) con [GitHub](https://github.com/).  Existen muchos otros sistemas de control de versiones.  Antes usábamos [Subversion](https://subversion.apache.org/), pero ahora usamos [GitHub](https://github.com/).  [GitHub](https://github.com/) es compatible con muchas otras herramientas y tiene una API muy completa.  Pero hay otros que se pueden tener en cuenta: [BitBucket](https://bitbucket.org), [Mercurial](https://www.mercurial-scm.org/), etc.
 
-If you don’t use any version control, we beg you: please start.  It’s so easy now.  It lets you get back to other versions of your software before you introduced a problem.  It helps you collaborate as a team.  It is required for any kind of build automation.  Did we mention it's easy?
+Si no utiliza ningún control de versiones, por favor, empiece ya.  Ahora es muy fácil.  Permite volver a otras versiones del software antes de introducir un problema.  Ayuda a colaborar en equipo.  Es necesario para cualquier tipo de automatización de la compilación.  ¿Hemos mencionado que es fácil?
 
-As developers, we use a modified version of [GitHub Flow](https://guides.github.com/introduction/flow/) to create and merge pull requests into our master branch.
+Como desarrolladores, utilizamos una versión modificada de [GitHub Flow](https://guides.github.com/introduction/flow/) para crear y fusionar solicitudes de extracción (*pull requests*) en nuestra rama principal (*master branch*).
 
-After we commit our code, we build it...
+Después de enviar el código, lo compilamos...
 
-### Compile
+### Compilar
 
-In addition to compiling at our desks, we have dedicated [TeamCity](https://www.jetbrains.com/teamcity/) servers that constantly build our code, and verify that it works with our master branch on [GitHub](https://github.com/).  This makes sure that we don’t break each other’s ability to get the latest code and compile.
+Además de compilar en nuestros escritorios, tenemos servidores dedicados de [TeamCity](https://www.jetbrains.com/teamcity/) que compilan constantemente el código y verifican que funciona en la rama *master* en [GitHub](https://github.com/).  Así nos aseguramos de que no haya errores y todos los demás puedan obtener el código más reciente y compilar.
 
-These [TeamCity](https://www.jetbrains.com/teamcity/) servers verify every commit and also build our daily releases - many of them - about every four hours.  They also build our public WIP and Service Release builds.
+Estos servidores [TeamCity](https://www.jetbrains.com/teamcity/) verifican cada envío (*commit*) y también crean nuestras versiones diarias cada cuatro horas aproximadamente. También crean nuestras versiones públicas WIP y Service Release.
 
-With every new build, we test...
+Con cada nueva compilación, realizamos pruebas (*test*)...
 
-### Test
+### Probar
 
-When developers fix bugs and close issues, our internal testing staff makes sure the public build works correctly.  We also rely on our customers to test WIP and Release Candidate builds.
+Cuando los desarrolladores corrigen errores y solucionan problemas, nuestro personal interno de pruebas se asegura de que la versión pública funcione correctamente.  También confiamos en nuestros clientes para probar las versiones WIP y Release Candidate.
 
-Testing happens before and after the next step: Publishing...
+Las pruebas se realizan antes y después del siguiente paso: publicar (*publish*)...
 
-### Publish
+### Publicar
 
-Whenever we’ve got a build that is ready to go out to customers, we deploy (or publish) it.
+Cuando tenemos una compilación lista para enviar a los clientes, la implementamos (o publicamos).
 
-This includes releasing ...
+Esto incluye la publicación de...
 
-- [Downloadable installers](http://www.rhino3d.com/download)
-- [SDKs](http://developer.mcneel.com)
-- Documentation (this here site)
+- [Instaladores descargables](http://www.rhino3d.com/download)
+- [SDK](http://developer.mcneel.com)
+- Documentación (este sitio web)
 
-...and making public announcements by email, blogs, and social media.
+...y el envío de anuncios públicos por correo electrónico, blogs y redes sociales.
 
-### Listen
+### Escuchar
 
-We listen in as many ways as we can:
+Escuchamos de todas las formas posibles:
 
 - [Chat](http://www.rhino3d.com/support#)
-- [Email](mailto:tech@mcneel.com)
-- Telephone Support (206) 545-6877
-- [Forum (Discourse)](https://discourse.mcneel.com/)
+- [Correo electrónico](mailto:tech@mcneel.com)
+- Soporte telefónico +34 933 199 002
+- [Foro (Discourse)](https://discourse.mcneel.com/)
 
-And often, when we listen, we find problems that need to be fixed.  Sometimes they’re little...sometimes they’re HUGE.  We always log an issue...
+Y a menudo, cuando escuchamos, encontramos problemas que hay que solucionar.  A veces son pequeños... a veces son ENORMES.  Siempre registramos un problema...
 
-### Track
+### Registrar
 
-We log issues in [YouTrack](https://mcneel.myjetbrains.com).
+Registramos los problemas en [YouTrack](https://mcneel.myjetbrains.com) y hacemos seguimiento.
 
-[YouTrack](https://mcneel.myjetbrains.com) works well for us because it helps us ensure that each issue gets properly tested and documented.
+[YouTrack](https://mcneel.myjetbrains.com) nos funciona bien porque nos ayuda a garantizar que cada problema se prueba y documenta adecuadamente.
 
-### Prioritize
+### Priorizar
 
-Figuring out what is the next most important thing is HARD.  We talk with our customers.  We talk with each other.  We use Gmail, Google Drive, and Google Docs to communicate.  We chat 24 hours a day on [Slack](https://slack.com/).
+Averiguar cuáles son las prioridades es DIFÍCIL.  Hablamos con nuestros clientes.  Hablamos entre nosotros.  Utilizamos Gmail, Google Drive y Google Docs para comunicarnos.  Chateamos 24 horas al día en [Slack](https://slack.com/).
 
-We meet every week on Tuesday.  Before we meet, we share what we’ve done in a Google Doc. In that document, we share our goals for each of the products we’re releasing next each of the feature groups we’re working on including graphs of how we’re progressing over time there are links back to our [YouTrack](https://mcneel.myjetbrains.com) issues and we get verbal reports from each of the people working on the features.
+Nos reunimos los martes de cada semana.  Antes de reunirnos, compartimos lo que hemos hecho en un Google Doc. En ese documento, compartimos los objetivos de cada producto que vamos a lanzar y cada grupo de funciones en las que estamos trabajando, incluimos gráficos de nuestro progreso y enlaces a nuestros problemas [YouTrack](https://mcneel.myjetbrains.com), y recibimos informes verbales de persona que trabaja en las funciones.
 
-Also, each developer writes down what they’ve been working on, what they plan to do next, and what is getting in their way of completing their work.
+Además, cada desarrollador escribe en qué ha estado trabajando, qué tiene previsto hacer a continuación y qué le impide completar su trabajo.
 
-### Automation
+### Automatizar
 
-And last but not least, we do a LOT of automation.
+Y por último, pero no por ello menos importante, hacemos MUCHA automatización.
 
-Here are some of the things we automate:
+Algunas de las cosas que automatizamos:
 
-- Build every commit from every developer before it goes into our master development branch.
-- Closing issues in [YouTrack](https://mcneel.myjetbrains.com) when fixes get merged into our master development branch by the [TeamCity](https://www.jetbrains.com/teamcity/) servers.
-- Build internal and public releases on our [TeamCity](https://www.jetbrains.com/teamcity/) servers.
-- Publishing new WIP releases by typing a command into [Slack](https://slack.com/).
-- Upload public releases to our download servers.
+- Compilar cada envío o *commit* de cada desarrollador antes de que pase a la rama *master* de desarrollo.
+- Cerrar incidencias en [YouTrack](https://mcneel.myjetbrains.com) cuando los servidores de [TeamCity](https://www.jetbrains.com/teamcity) fusionan las correcciones en nuestra rama *master* de desarrollo.
+- Compilar versiones internas y públicas en nuestros servidores de [TeamCity](https://www.jetbrains.com/teamcity).
+- Publicar nuevas versiones WIP escribiendo un comando en [Slack](https://slack.com/).
+- Subir versiones públicas a nuestros servidores de descarga.
 
-## In Public
+## En público
 
-Up until recently, these are the parts of our processes that we’ve made public:
+Hasta hace poco, estas son las partes de nuestros procesos que hemos hecho públicas:
 
-- Testing
-- Publishing (at least you see what we publish)
-- Listening
+- Probar
+- Publicar (al menos se ve lo que publicamos)
+- Escuchar
 
-And in the last couple of years, we made our issue tracker public by switching to YouTrack.  Some issues we hide from public view for security or user privacy reasons.
+Y en los últimos dos años, hemos hecho público nuestro gestor de incidencias al cambiar a YouTrack. Algunas cuestiones las ocultamos al público por motivos de seguridad o privacidad de los usuarios.
 
-Something we'd like to do soon is to make even more of this public:
+Lo que nos gustaría hacer pronto es hacer aún más pública esta información:
 
-- Sharing some of our code as public repos on GitHub so you’ve got some real, production-hardened code examples to work from
-- Letting you share fixes and improvements to our code.
-- Making it easier to build plug-in projects by publishing RhinoCommon as a NuGet package.
-- Helping with build automation where necessary.
+- Compartir parte de nuestro código como repositorios públicos en GitHub para que los desarrolladores tengan ejemplos de código reales con los que trabajar.
+- Permitir a los desarrolladores compartir correcciones y mejoras de nuestro código.
+- Facilitar la creación de proyectos de plug-ins publicando RhinoCommon como paquete NuGet.
+- Ayudar en la automatización de compilaciones cuando sea necesario.
 
-## Related Topics
+## Temas relacionados
 
-- [Rhino Technology Overview](/guides/general/rhino-technology-overview)
-- [Contributing](/guides/general/contributing)
-- [Developer Prerequisites](/guides/general/rhino-developer-prerequisites)
+- [Información general de la tecnología de Rhino](/guides/general/rhino-technology-overview)
+- [Contribuir](/guides/general/contributing)
+- [Requisitos previos para desarrolladores](/guides/general/rhino-developer-prerequisites)
