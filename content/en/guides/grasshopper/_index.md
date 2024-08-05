@@ -27,25 +27,34 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/grasshopper-guides-col1.png">](/guides/grasshopper/what-is-a-grasshopper-component/)
 
-### Overview
+### [Essential Algorithms and Data Structures for Grasshopper](/guides/grasshopper/gh-algorithms-and-data-structures/)
 
-- [What is a Grasshopper Component?](/guides/grasshopper/what-is-a-grasshopper-component/)
-
-### Getting Started
-
-- Installing Tools ([Windows](/guides/grasshopper/installing-tools-windows/), [Mac](/guides/grasshopper/installing-tools-mac/))
-- Your First Component ([Windows](/guides/grasshopper/your-first-component-windows/), [Mac](/guides/grasshopper/your-first-component-mac/))
-- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
-- [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
-- [Distributing a Grasshopper Plug-In with the Package Manager](/guides/yak/creating-a-grasshopper-plugin-package/)
-
-### Fundamentals
-
-{{< dev-topic-list "guides" "Grasshopper" "Fundamentals" "weight" >}}
-
-### In Depth
-
-{{< dev-topic-list "guides" "Grasshopper" "In Depth" "weight" >}}
+- [Introduction](/guides/grasshopper/gh-algorithms-and-data-structures/)
+- [Algorithms and Data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/)
+  - 1.1 Algorithmic design
+  - 1.2 Algorithms parts
+  - 1.3 Designing algorithms: the 4-step process
+  - 1.4 Data
+  - 1.5 Data sources
+  - 1.6 Data types
+  - 1.7 Processing Data
+  - 1.8 Pitfalls of algorithmic design
+  - 1.9 Tutorials: algorithms and data
+- [Introduction to Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/)
+  - 2.1 Overview
+  - 2.2 Generating lists
+  - 2.3 List operations
+  - 2.4 List matching
+  - 2.5 Tutorials: data structures
+- [Advanced Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/)
+  - 3.1 The Grasshopper data structure
+  - 3.2 Generating trees
+  - 3.3 Tree matching
+  - 3.4 Traversing trees
+  - 3.5 Basic tree operations
+  - 3.6 Advanced tree operations
+  - 3.7 Tutorials: advanced data structures
+- [{{< awesome "fas fa-download">}}](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/) [Download full PDF and GH examples](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/)
 
 {{< /column >}}
 {{< column >}}
@@ -53,17 +62,16 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/grasshopper-guides-col2.png">](/guides/grasshopper/simple-component/)
 
-### Advanced
+### Python Scripting in Grasshopper
 
-{{< dev-topic-list "guides" "Grasshopper" "Advanced" "weight" >}}
+{{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" >}}
 
-### [Essential Algorithms and Data Structures for Grasshopper](/guides/grasshopper/gh-algorithms-and-data-structures/)
+### [C# Scripting in Grasshopper](/guides/grasshopper/csharp-essentials/)
 
-- [Introduction](/guides/grasshopper/gh-algorithms-and-data-structures/)
-- [Algorithms and Data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/)
-- [Introduction to Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/)
-- [Advanced Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/)
-- [{{< awesome "fas fa-download">}}](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/) [Download full PDF and GH examples](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/)
+- [C# Component in Grasshopper](/guides/grasshopper/csharp-essentials/1-grasshopper-csharp-component/#21-introduction)
+- [C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics/)
+- [RhinoCommon Geometry](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/)
+- [Design Algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/)
 
 {{< /column >}}
 {{< column >}}
@@ -71,16 +79,23 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/grasshopper-guides-col3.png">](/guides/grasshopper/grasshopper-data-types/)
 
-### Python in Grasshopper
+### Grasshopper Plugins
 
-{{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" >}}
+- [What is a Grasshopper Component?](/guides/grasshopper/what-is-a-grasshopper-component/)
+- Installing Tools ([Windows](/guides/grasshopper/installing-tools-windows/), [Mac](/guides/grasshopper/installing-tools-mac/))
+- Your First Component ([Windows](/guides/grasshopper/your-first-component-windows/), [Mac](/guides/grasshopper/your-first-component-mac/))
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
+- [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
+- [Distributing a Grasshopper Plug-In with the Package Manager](/guides/yak/creating-a-grasshopper-plugin-package/)
 
-### [C# in Grasshopper](/guides/grasshopper/csharp-essentials/)
+#### Plugin Fundamentals
+{{< dev-topic-list "guides" "Grasshopper" "Fundamentals" "weight" >}}
 
-- [C# Component in Grasshopper](/guides/grasshopper/csharp-essentials/1-grasshopper-csharp-component/#21-introduction)
-- [C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics/)
-- [RhinoCommon Geometry](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/)
-- [Design Algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/)
+#### In Depth
+{{< dev-topic-list "guides" "Grasshopper" "In Depth" "weight" >}}
+
+#### Advanced
+{{< dev-topic-list "guides" "Grasshopper" "Advanced" "weight" >}}
 
 {{< /column >}}
 {{< /row >}}
