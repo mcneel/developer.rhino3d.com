@@ -149,3 +149,64 @@ googlefonts = [
         url = "https://discourse.mcneel.com/c/rhino-developer"
         title = ""
         weight = 6
+  [languages.es]
+    title = "Rhinoceros - Herramientas de modelado para diseñadores"
+    description = "Rhino es un modelador 3D que se utiliza para crear, editar, analizar, documentar, renderizar, animar y traducir curvas NURBS*, superficies y sólidos, nubes de puntos, superficies SubD y mallas poligonales. No hay límite de complejidad, grado o tamaño, a parte del que tenga su hardware."
+    author = "Robert McNeel & Associates"
+    weight = 4
+    languageName = "Español"
+    contentDir = "content/es"
+    [languages.es.params]
+      copyright = "Copyright © 1993-{year} Robert McNeel & Associates (TLM, Inc.). Todos los derechos reservados."
+      #rhinoURL = "https://www.rhino3d.com/es"
+      imagesDir = "images"
+      docLang = "es-es" # the language code used on docs.mcneel.com
+      [languages.es.params.navigation]
+        help = "Ayuda"
+    [languages.es.taxonomies]
+      "etiqueta" = "etiquetas"
+      "categoría" = "categorías"
+      "plataforma" = "plataformas"
+      "tarea" = "tareas"
+      "nivel" = "niveles"
+    [languages.es.menu]
+      [[languages.es.menu.main]]
+        identifier = "guides"
+        pre = ""
+        post = ""
+        name = "Guides"
+        url = "/guides"
+        title = ""
+        weight = 2
+      [[languages.es.menu.main]]
+        identifier = "samples"
+        pre = ""
+        post = ""
+        name = "Samples"
+        url = "/samples"
+        title = ""
+        weight = 3
+      [[languages.es.menu.main]]
+        identifier = "api"
+        pre = ""
+        post = ""
+        name = "API"
+        url = "/api"
+        title = ""
+        weight = 4
+      [[languages.es.menu.main]]
+        identifier = "videos"
+        pre = ""
+        post = ""
+        name = "Videos"
+        url = "/videos"
+        title = ""
+        weight = 5
+      [[languages.es.menu.main]]
+        identifier = "community"
+        pre = ""
+        post = ""
+        name = "Community"
+        url = "https://discourse.mcneel.com/c/rhino-developer"
+        title = ""
+        weight = 6
