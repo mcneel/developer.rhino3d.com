@@ -169,3 +169,44 @@ googlefonts = [
       "plataforma" = "plataformas"
       "tarea" = "tareas"
       "nivel" = "niveles"
+    [languages.es.menu]
+      [[languages.es.menu.main]]
+        identifier = "guides"
+        pre = ""
+        post = ""
+        name = "Guides"
+        url = "/guides"
+        title = ""
+        weight = 2
+      [[languages.es.menu.main]]
+        identifier = "samples"
+        pre = ""
+        post = ""
+        name = "Samples"
+        url = "/samples"
+        title = ""
+        weight = 3
+      [[languages.es.menu.main]]
+        identifier = "api"
+        pre = ""
+        post = ""
+        name = "API"
+        url = "/api"
+        title = ""
+        weight = 4
+      [[languages.es.menu.main]]
+        identifier = "videos"
+        pre = ""
+        post = ""
+        name = "Videos"
+        url = "/videos"
+        title = ""
+        weight = 5
+      [[languages.es.menu.main]]
+        identifier = "community"
+        pre = ""
+        post = ""
+        name = "Community"
+        url = "https://discourse.mcneel.com/c/rhino-developer"
+        title = ""
+        weight = 6
