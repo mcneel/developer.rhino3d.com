@@ -31,29 +31,29 @@ since = 0
 
 - [Introduction](/guides/grasshopper/gh-algorithms-and-data-structures/)
 - [Algorithms and Data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/)
-  - 1.1 Algorithmic design
-  - 1.2 Algorithms parts
-  - 1.3 Designing algorithms: the 4-step process
-  - 1.4 Data
-  - 1.5 Data sources
-  - 1.6 Data types
-  - 1.7 Processing Data
-  - 1.8 Pitfalls of algorithmic design
-  - 1.9 Tutorials: algorithms and data
+  - [1.1 Algorithmic design](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#11-algorithmic-design)
+  - [1.2 Algorithms parts](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#12-algorithms-parts)
+  - [1.3 Designing algorithms: the 4-step process](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#13-designing-algorithms-the-4-step-process)
+  - [1.4 Data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#14-data)
+  - [1.5 Data sources](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#15-data-sources)
+  - [1.6 Data types](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#16-data-types)
+  - [1.7 Processing Data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#17-processing-data)
+  - [1.8 Pitfalls of algorithmic design](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#18-pitfalls-of-algorithmic-design)
+  - [1.9 Tutorials: algorithms and data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#19-tutorials-algorithms-and-data)
 - [Introduction to Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/)
-  - 2.1 Overview
-  - 2.2 Generating lists
-  - 2.3 List operations
-  - 2.4 List matching
-  - 2.5 Tutorials: data structures
+  - [2.1 Overview](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/#21-overview)
+  - [2.2 Generating lists](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/#22-generating-lists)
+  - [2.3 List operations](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/#23-list-operations)
+  - [2.4 List matching](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/#24-list-matching)
+  - [2.5 Tutorials: data structures](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/#25-tutorials-data-structures)
 - [Advanced Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/)
-  - 3.1 The Grasshopper data structure
-  - 3.2 Generating trees
-  - 3.3 Tree matching
-  - 3.4 Traversing trees
-  - 3.5 Basic tree operations
-  - 3.6 Advanced tree operations
-  - 3.7 Tutorials: advanced data structures
+  - [3.1 The Grasshopper data structure](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#31-the-grasshopper-data-structure)
+  - [3.2 Generating trees](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#32-generating-trees)
+  - [3.3 Tree matching](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#33-tree-matching)
+  - [3.4 Traversing trees](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#34-traversing-trees)
+  - [3.5 Basic tree operations](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#35-basic-tree-operations)
+  - [3.6 Advanced tree operations](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#36-advanced-tree-operations)
+  - [3.7 Tutorials: advanced data ](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#37-tutorials-advanced-data-structures)
 - [{{< awesome "fas fa-download">}}](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/) [Download full PDF and GH examples](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/)
 
 {{< /column >}}
@@ -64,7 +64,20 @@ since = 0
 
 ### Python Scripting in Grasshopper
 
-{{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" >}}
+- [Create Script Component](/guides/scripting/scripting-component/#script-component)
+- [First Script](/guides/scripting/scripting-component/#first-script)
+- [Script Inputs and Outputs](/guides/scripting/scripting-component/#script-inputs-and-outputs)
+- [Edit Script](/guides/scripting/scripting-component/#edit-script)
+- [Run Scripts](/guides/scripting/scripting-component/#debugging-scripts)
+- [Debugging Scripts](/guides/scripting/scripting-component/#debugging-scripts)
+- [Using Packages](/guides/scripting/scripting-component/#using-packages)
+- [Editor Features](/guides/scripting/scripting-component/#editor-features)
+- [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
+- [Creating Global Sticky Variables](/guides/rhinopython/ghpython-global-sticky/)
+- [Node in Code from Python](/guides/rhinopython/ghpython-call-components/)
+- [Custom GhPython Baking Component](/guides/rhinopython/ghpython-bake/)
+- [Grasshopper data trees and Python](/guides/rhinopython/grasshopper-datatrees-and-python/)
+- [GhPython Common Questions and Answers](/guides/rhinopython/ghpython-question-answer/)
 
 ### [C# Scripting in Grasshopper](/guides/grasshopper/csharp-essentials/)
 
