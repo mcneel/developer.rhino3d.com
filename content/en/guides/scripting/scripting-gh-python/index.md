@@ -259,17 +259,17 @@ a = Solve()
 In more complicated cases, when accessing global variables, make sure to reference them as `global` to ensure there are no naming conflicts with other variables of the same name:
 
 ```python
-s = Solver()
-a = s.Compute()
-
 class Solver:
     def __init__(self):
         pass
-
-    def Compute() -> float
+    
+    def Compute(self) -> float:
         global x
         global y
         return x + y
+
+s = Solver()
+a = s.Compute()
 ```
 
 ### Settings Outputs
