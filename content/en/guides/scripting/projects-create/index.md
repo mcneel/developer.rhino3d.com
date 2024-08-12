@@ -29,6 +29,10 @@ block_webcrawlers = false
         border-radius: 3px;
         font-size: 14px;
     }
+
+    .language-csharp {
+        font-size: .9em;
+    }
 </style>
 
 Rhino Script Editor is designed to utilize the widespread plugin infrastructure in both Rhino and Grasshopper, and generate plugins from your scripts.
@@ -94,6 +98,10 @@ See [Running Published Commands](#running-published-commands) for information on
 
 During build, each script under **Commands/** is converted into a Rhino command. The script name is the default name of the command. See [Edit Commands](#edit-commands) for information on editing command, assigning icons, and changing command types.
 
+To remove a command, select the command in *Project Tray* and click the trash button on the toolbar:
+
+![](project-commands-remove.png)
+
 ## Add Components
 
 To add components, click on the **+** icon on the *Project Tray* toolbar and select **Add Components/** item:
@@ -116,7 +124,7 @@ When adding components to a project, an open dialog appears asking for Grasshopp
 
   ![](project-comps-added-scripts.png)
 
-  This is how the components look like when published. They show a default icon since we have not added any icons yet. Also note that although they are generated from scripts of different languages, the published components are language agnostic and the three components look the same:
+  This is how the components look like when published (default icon). Note that although they are generated from scripts of different languages, the published components are language agnostic and the three components look the same:
 
   ![](project-comps-published-script.png)
 
@@ -128,9 +136,13 @@ When adding components to a project, an open dialog appears asking for Grasshopp
 
   ![](project-comps-added-ctx.png)
 
-  This is how the component looks like when published. It shows a default icon since we have not added any icons yet:
+  This is how the component looks like when published (default icon):
 
   ![](project-comps-published-ctx.png)
+
+To remove a component, select the source Grasshopper definition in *Project Tray* and click the trash button on the toolbar. Note that you can only remove complete definitions from **Components/** and not the individual components:
+
+![](project-comps-remove.png)
 
 ## Build and Publish
 
@@ -146,19 +158,77 @@ See [Pushing a Package to the Server](/guides/yak/pushing-a-package-to-the-serve
 
 ## Edit Project Info
 
+To edit project information, either use the **Publish Project** dialog, or run the **Edit Project Info** command from editor command prompt. Both dialogs show identical project information edit fields:
+
+![](project-edit-fields.png)
+
 ### Project Id
+
+Project UUID is assigned when the project is created an remains read-only afterwards. This id, uniquely identifies your plugin among all other past and future Rhino and Grasshopper plugins.
+
+This id is embedded in the final plugin assemblies as:
+
+```csharp
+[assembly: Guid("e73d16e6-a2d4-4917-93e7-aebeac2f38f5")]
+```
+
+It is also assigned to the Grasshopper `AssemblyInfo`:
+
+```csharp
+public sealed class AssemblyInfo : GH_AssemblyInfo
+{
+    public override Guid Id { get; } = new Guid("e73d16e6-a2d4-4917-93e7-aebeac2f38f5");
+}
+```
 
 ### Project Name
 
 ### Project Version
 
+![](project-edit-version.png)
+![](project-edit-version-patch.png)
+![](project-edit-version-beta.png)
+![](project-edit-version-patch-beta.png)
+
+```csharp
+[assembly: AssemblyVersion("0.1.234.8991")]
+[assembly: AssemblyFileVersion("0.1.234.8991")]
+[assembly: AssemblyInformationalVersion("0.1.234.8991")]
+```
+
 ### Project Authors
 
 ### Project Copyright, License, and URL
 
+Edit the copyright field and add your custom copyright message, or click on the **Copyright** button to add a default message based on the selected Author:
+
+![](project-edit-copyright.png)
+
+The copyright message is embedded in the final plugin assemblies as:
+
+```csharp
+[assembly: AssemblyCopyright("Copyright © 2024 Ehsan Iran-Nejad")]
+```
+
 ## Edit Commands
 
+![](project-commands-edit-name-icon.png)
+
+![](project-commands-edit-type.png)
+
+![](project-commands-edit-exclude.png)
+
+![](project-commands-excluded.png)
+
 ## Edit Components
+
+![](project-comps-edit-name-icon.png)
+
+![](project-comps-edit-exposure.png)
+
+![](project-comps-edit-exclude.png)
+
+![](project-comps-excluded.png)
 
 ## Advanced
 
