@@ -20,11 +20,24 @@ toc_type = "single"
 block_webcrawlers = false
 +++
 
-Coming Soon. If you have any questions please reach out on [McNeel Forums](https://discourse.mcneel.com)
+## Build and Publish
 
-<!-- - building a project
+- building a project
 - which rhino to choose?
 - build files: rhp rui gha source
-- yak package
-- installing published plugin
-- troubleshooting -->
+
+Once the project is built, a Yak package is generated that contains both Rhino and Grasshopper plugins.
+
+{{< call-out "note" "Note" >}}
+See [Pushing a Package to the Server](/guides/yak/pushing-a-package-to-the-server) on how to publish `.yak` files to package server
+{{< /call-out >}}
+
+## Which Rhino Version?
+
+## Run Published Commands
+
+## Use Published Components
+
+## Project Solution
+
+## Troubleshooting

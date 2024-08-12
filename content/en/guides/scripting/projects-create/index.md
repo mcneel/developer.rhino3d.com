@@ -93,7 +93,7 @@ Rhino commands can be created from Grasshopper scripts that contain contextual i
 
 ![](project-commands-gh1.png)
 
-See [Running Published Commands](#running-published-commands) for information on how the inputs are collected on Rhino command line.
+See [Run Published Commands](/guides/scripting/projects-publish#run-published-commands) for information on how the inputs are collected on Rhino command line.
 {{< /call-out >}}
 
 During build, each script under **Commands/** is converted into a Rhino command. The script name is the default name of the command. See [Edit Commands](#edit-commands) for information on editing command, assigning icons, and changing command types.
@@ -143,18 +143,6 @@ When adding components to a project, an open dialog appears asking for Grasshopp
 To remove a component, select the source Grasshopper definition in *Project Tray* and click the trash button on the toolbar. Note that you can only remove complete definitions from **Components/** and not the individual components:
 
 ![](project-comps-remove.png)
-
-## Build and Publish
-
-Once the project is built, a Yak package is generated that contains both Rhino and Grasshopper plugins.
-
-{{< call-out "note" "Note" >}}
-See [Pushing a Package to the Server](/guides/yak/pushing-a-package-to-the-server) on how to publish `.yak` files to package server
-{{< /call-out >}}
-
-## Run Published Commands
-
-## Use Published Components
 
 ## Edit Project Info
 
@@ -230,10 +218,7 @@ The copyright message is embedded in the final plugin assemblies as:
 
 ![](project-comps-excluded.png)
 
-## Advanced
+## Shared Libraries
 
-### Shared Libraries
+## Shared Resources
 
-### Shared Resources
-
-### Project Solution
