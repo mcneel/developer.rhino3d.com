@@ -347,3 +347,28 @@ Legacy components are still included in the published plugin but are hidden and 
 
 ## Shared Resources
 
+You can include data files of any type and extension in your project under **Shared/** path. Choose **Add Shared/** from **+** menu in *Project Tray* toolbar or right-click on **Shared/** and add a shared file:
+
+![](project-shared-add-menu.png)
+
+![](project-shared-add.png)
+
+These files will be included in the final *Yak* package under `shared/` path and are deployed on target machine. Here is an example of including `data.json` in the project. The file is included in the *Yak* package as `shared/data.json` and deployed when *Yak* package is installed:
+
+```text
+myproject-0.1.234.8992-rh8-any.yak
+├── MyProject.rhp
+├── MyProject.rui
+├── MyProject.Components.gha
+├── manifest.yml
+└── shared/
+    └── data.json
+```
+
+![](project-shared-deployed.png)
+
+To query and get access to the deployed data files, use [Rhino.PlugIns.PlugIn.PathFromId](https://developer.rhino3d.com/api/rhinocommon/rhino.plugins.plugin/pathfromname) to get the installed path of you plugin. Use this path to build a path to the deployed data files:
+
+![](project-shared-query.png)
+
+You can also use [Rhino.PlugIns.PlugIn.PathFromName](https://developer.rhino3d.com/api/rhinocommon/rhino.plugins.plugin/pathfromname) and pass your plugin name however the plugin id is better since it should never change and is more unique than the name.
