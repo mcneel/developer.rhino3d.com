@@ -98,7 +98,7 @@ Rhino commands can be created from Grasshopper scripts that contain contextual i
 See [Run Published Commands](/guides/scripting/projects-publish#run-published-commands) for information on how the inputs are collected on Rhino command line.
 {{< /call-out >}}
 
-During build, each script under **Commands/** is converted into a Rhino command. The script name is the default name of the command. See [Project Commands](#project-commands) for information on editing command, assigning icons, and changing command types.
+During build, each script under **Commands/** is converted into a Rhino command. The script name is the default name of the command. See [Project Commands](#commands) for information on editing command, assigning icons, and changing command types.
 
 To remove a command, select the command in *Project Tray* and click the trash button on the toolbar:
 
@@ -122,7 +122,7 @@ When adding components to a project, an open dialog appears asking for Grasshopp
 
   **Example:**
 
-  In this example, the definition contains 3 *Script* components, nicknamed *First*, *Second*, and *Third*. Each script components becomes a component in published Grasshopper plugin matching the nickname, inputs, and outputs. See [Project Components](#project-components) on how to edit components, add icons, and set their exposure.
+  In this example, the definition contains 3 *Script* components, nicknamed *First*, *Second*, and *Third*. Each script components becomes a component in published Grasshopper plugin matching the nickname, inputs, and outputs. See [Project Components](#components) on how to edit components, add icons, and set their exposure.
 
   ![](project-comps-added-scripts.png)
 
@@ -134,7 +134,7 @@ When adding components to a project, an open dialog appears asking for Grasshopp
 
   **Example:**
 
-  In this example, the definition contains contextual inputs and outputs. The complete definition becomes a component in published Grasshopper plugin, and its name matches the definition name by default. Component inputs and outputs will match contextual inputs and outputs of the definition. Note that any other *Script* component in this definition is not converted. See [Project Components](#project-components) on how to edit components, add icons, and set their exposure.
+  In this example, the definition contains contextual inputs and outputs. The complete definition becomes a component in published Grasshopper plugin, and its name matches the definition name by default. Component inputs and outputs will match contextual inputs and outputs of the definition. Note that any other *Script* component in this definition is not converted. See [Project Components](#components) on how to edit components, add icons, and set their exposure.
 
   ![](project-comps-added-ctx.png)
 
@@ -271,7 +271,7 @@ The copyright message is embedded in the final plugin assemblies as:
 [assembly: AssemblyCopyright("Copyright © 2024 Ehsan Iran-Nejad")]
 ```
 
-## Project Commands
+## Commands
 
 Once a command is added to the project, you can select and click the *Edit* icon on the *Project Tray* toolbar, to edit the command properties. The *Edit Command* dialog provides fields to modify the command *Name*, and to add/remove SVG icons (both light and dark) for the command. This icon will be used in the generated toolbar layout file (*.rui):
 
@@ -293,7 +293,7 @@ Note that *Project Tray* shows a dimmed icon for excluded commands:
 
 ![](project-commands-excluded.png)
 
-## Project Components
+## Components
 
 Once a component is added to the project, you can select and click the *Edit* icon on the *Project Tray* toolbar, to edit the component properties. The *Edit Component* dialog provides fields to modify the component *Name*, *NickName*, *Description*, and to add/remove SVG icons (both light and dark) for the component:
 
@@ -317,7 +317,47 @@ Note that *Project Tray* shows a dimmed icon for excluded components:
 
 ![](project-comps-excluded.png)
 
-## Project Component Versioning
+## Contextual Components
+
+### Inputs
+
+Contextual components embed and run full Grasshopper definitions as a single component. Inputs and outputs of the component are based on the Contextual inputs and outputs placed on the source Grasshopper definition. Take this file as an example:
+
+![](project-commands-gh1.png)
+
+This Grasshopper definition is converted to a component like below. Note that a specific *GH Parameter* corresponding with the type of *Get Integer* contextual component is used as inputs to the component:
+
+![](project-comps-ctx-simple.png)
+
+*Prompt* value is used as the name of the input parameter:
+
+![](project-comps-ctx-simple-prompt.png)
+
+There are a few contextual components that can filter their input data. *Get Geometry* is an example of such contextual component. The more specific the filter, the more specific the final parameter will be. If filter is specific to one type, a parameter of that specific type is created on published component:
+
+![](project-comps-ctx-specific-brep.png)
+
+![](project-comps-ctx-specific-brep-param.png)
+
+If filter not specific, a flexible geometry parameter is created on published component:
+
+![](project-comps-ctx-specific-geom.png)
+
+![](project-comps-ctx-specific-geom-param.png)
+
+### Outputs
+
+Contextual output components are converted to:
+
+- Generic Goo parameter for *Context Bake*
+  
+  ![](project-comps-ctx-outgoo.png)
+
+- Text parameter for *Context Print*
+  
+  ![](project-comps-ctx-outtext.png)
+
+## Component Versioning
 
 Script editor creates a new component in the Grasshopper plugin for each script component extracted from Grasshopper definition.
 
