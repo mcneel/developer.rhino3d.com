@@ -20,7 +20,27 @@ toc_type = "single"
 block_webcrawlers = false
 +++
 
-## Build from Script Editor
+<style>
+    .main-content img { zoom: 50%; }
+    code {
+        background-color: #efefef;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 3px;
+        font-size: 14px;
+    }
+
+    .language-csharp {
+        font-size: .9em;
+    }
+</style>
+
+
+{{< call-out "note" "Note" >}}
+[Creating Rhino Projects](/guides/scripting/projects-create) for information on creating projects in Script Editor.
+{{< /call-out >}}
+
+## Build Plugins from Script Editor
 
 You can build a project directly from Script Editor:
 
@@ -40,7 +60,7 @@ You can build a project directly from Script Editor:
 
 - Choose a **Build Path**:
   
-  This is where all generated assemblies and files are placed. Depending on the *Build Target* a subpath is added to this build path to avoid conflicts (e.g `build/rh8`)
+  This is where all generated assemblies and files are placed. Depending on the *Build Target* a subpath is added to this build path to avoid conflicts (e.g `build/rh8/`)
 
   ![](project-build-editor-buildpath.png)
 
@@ -50,7 +70,7 @@ You can build a project directly from Script Editor:
 
   ![](project-build-success.png)
 
-## Build from Terminal
+## Build Plugins from Terminal
 
 {{< call-out "note" "Note" >}}
 To build a project in terminal, use the `rhinocode` command line utility shipped with Rhino.
@@ -76,7 +96,7 @@ $ rhinocode project build ~/MyProject.rhproj
 
 See [RhinoCode: Build a Project](/guides/scripting/advanced-cli#build-a-project) for more information.
 
-## Build Artifcats:
+## Build Artifcats
 
 Once project is built, the target path will contain all the generated artifacts:
 

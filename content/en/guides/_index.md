@@ -103,8 +103,8 @@ toc_type = "single"
 
 ### Publishing
 
-- <!-- [Creating Rhino Projects](/guides/scripting/projects-create) --> Creating Rhino Projects {{% comingsoon-label %}}
-- <!-- [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) --> Creating Rhino and Grasshopper Plugins {{% comingsoon-label %}}
+- [Creating Rhino Projects](/guides/scripting/projects-create)
+- [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish)
 
 ### Advanced
 

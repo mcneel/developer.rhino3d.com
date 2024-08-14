@@ -49,7 +49,7 @@ It can also:
 - Share code libraries and data files with published commands or components
 - Generate dotnet project solution for published plugins for furthur customization (`.sln` and `.csproj` files)
 
-![](project-overview.jpg)
+![](create-project.svg)
 
 ## Create a Project
 
@@ -273,6 +273,8 @@ The copyright message is embedded in the final plugin assemblies as:
 
 ## Commands
 
+### Name and Icon
+
 Once a command is added to the project, you can select and click the *Edit* icon on the *Project Tray* toolbar, to edit the command properties. The *Edit Command* dialog provides fields to modify the command *Name*, and to add/remove SVG icons (both light and dark) for the command. This icon will be used in the generated toolbar layout file (*.rui):
 
 ![](project-commands-edit-name-icon.png)
@@ -281,9 +283,13 @@ Command icons are used for the project toolbar:
 
 ![](project-commands-toolbar-buttons.png)
 
+### Type (Style)
+
 Choose the type of Rhino command from the *Type* dropdown menu. Hidden and Transparent correspond with the [Rhino.Commands.Style.Hidden](https://developer.rhino3d.com/api/rhinocommon/rhino.commands.style) and [Rhino.Commands.Style.Transparent](https://developer.rhino3d.com/api/rhinocommon/rhino.commands.style) enum values in RhinoCommon:
 
 ![](project-commands-edit-type.png)
+
+### Excluding Commands
 
 Sometimes it is desired to keep a command in the project but exclude that from published plugins. You can check the *Exclude* box to exclude the command:
 
@@ -295,9 +301,13 @@ Note that *Project Tray* shows a dimmed icon for excluded commands:
 
 ## Components
 
+### Name and Icon
+
 Once a component is added to the project, you can select and click the *Edit* icon on the *Project Tray* toolbar, to edit the component properties. The *Edit Component* dialog provides fields to modify the component *Name*, *NickName*, *Description*, and to add/remove SVG icons (both light and dark) for the component:
 
 ![](project-comps-edit-name-icon.png)
+
+### Panel Name (Sub-Category)
 
 *Sub-Category* is then name of Grasshopper panel that contains the published component. You can edit and customize the panel name or choose from a list of previously set panel names in the project:
 
@@ -305,9 +315,13 @@ Once a component is added to the project, you can select and click the *Edit* ic
 
 ![](project-comps-edit-subcategory.png)
 
+### Exposure
+
 Exposure dropdown sets the location of component on the subcategory panel. It is simplified from [Grasshopper.Kernel.GH_Exposure](https://developer.rhino3d.com/api/grasshopper/html/T_Grasshopper_Kernel_GH_Exposure.htm) and includes 4 main areas (`primary`, `secondary`, `tertiary`, and `quarternary`) of the subcategory panel. See [Component Versioning](#component-versioning) for information on how to update your component versions.
 
 ![](project-comps-edit-exposure.png)
+
+### Excluding Components
 
 Sometimes it is desired to keep a component in the project but exclude that from published plugins. You can check the *Exclude* box to exclude the component:
 
@@ -369,6 +383,8 @@ The **Instance Id** of the source script component, will be used as **Component 
 **This is a feature and not a bug.**
 {{< /call-out >}}
 
+### Legacy and New
+
 If you need to make a "breaking" change to a published component (e.g. changing inputs or outputs), it is a good practice to mark the previously published component as Legacy and create a new component.
 
 Simply duplicate the previous script component on the source Grasshopper definition, and make your changes to this new instance. Saved the definition and the *Project Tray* will update to show then new component. Select and edit the first component and choose *Legacy* exposure (Corresponds with [Grasshopper.Kernel.GH_Exposure.hidden](https://developer.rhino3d.com/api/grasshopper/html/T_Grasshopper_Kernel_GH_Exposure.htm)):
@@ -388,6 +404,8 @@ Legacy components are still included in the published plugin but are hidden and 
 To share code between command and components, create a code library and add that to your project. These libraries will be embedded in the published plugins and deployed on the target machine. Here is an example of a project with a *Python 3* and *C#* library added:
 
 ![](project-libs-example.png)
+
+### What is a Library
 
 Code libraries are a group of source files organized in a folder. They are language-specific and follow the library or module creation patterns of that language. For example, to create a *Python 3* library, you would need to organize your python sources like below and include `__init__.py` files. Otherwise *Python* will not be able to import these libraries correctly:
 
@@ -414,17 +432,23 @@ Language libraries are cached when the project is being edited or is published.
 See [Language Libraries](/guides/scripting/advanced-libraries) for more information.
 {{< /call-out >}}
 
+### Add Language Libraries
+
 You can include code libraries in your project under **Libraries/** path. Choose **Add * Library** from **+** menu in *Project Tray* toolbar or right-click on **Libraries/** and add a shared file:
 
 ![](project-libs-add-menu.png)
 
 ![](project-libs-add.png)
 
+### Reference Libraries
+
 Once libraries are added, you can reference them in your scripts:
 
 ![](project-libs-use-csharp.png)
 
 ## Shared Resources
+
+### Add Shared Resources
 
 You can include data files of any type and extension in your project under **Shared/** path. Choose **Add Shared/** from **+** menu in *Project Tray* toolbar or right-click on **Shared/** and add a shared file:
 
@@ -446,7 +470,9 @@ myproject-0.1.234.8992-rh8-any.yak
 
 ![](project-shared-deployed.png)
 
-To query and get access to the deployed data files, use [Rhino.PlugIns.PlugIn.PathFromId](https://developer.rhino3d.com/api/rhinocommon/rhino.plugins.plugin/pathfromname) to get the installed path of you plugin. Use this path to build a path to the deployed data files:
+### Find Shared Resource
+
+To query and get access to the deployed data files, use [Rhino.PlugIns.PlugIn.PathFromId](https://developer.rhino3d.com/api/rhinocommon/rhino.plugins.plugin/pathfromname) to get the installed path of you plugin. Use this path to build a path to the deployed data files. Note that data files and deployed under `shared/` path alongside the plugin assembly file:
 
 ![](project-shared-query.png)
 
