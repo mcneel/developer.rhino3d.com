@@ -49,6 +49,8 @@ It can also:
 - Share code libraries and data files with published commands or components
 - Generate dotnet project solution for published plugins for furthur customization (`.sln` and `.csproj` files)
 
+![](project-overview.jpg)
+
 ## Create a Project
 
 To create a project:
@@ -146,13 +148,13 @@ To remove a component, select the source Grasshopper definition in *Project Tray
 
 ## Edit Project Info
 
-To edit project information, either use the **Publish Project** dialog, or run the **Edit Project Info** command from editor command prompt. Both dialogs show identical project information edit fields:
+To edit project information, either use the **Publish Project** dialog, or run the **Edit Project Info** command from editor command prompt. Both dialogs show identical project information fields:
 
 ![](project-edit-fields.png)
 
 ### Project Id
 
-Project UUID is assigned when the project is created an remains read-only afterwards. This id, uniquely identifies your plugin among all other past and future Rhino and Grasshopper plugins.
+Project UUID is assigned when the project is created and remains read-only afterwards. This id, uniquely identifies your plugin among all other past and future Rhino and Grasshopper plugins.
 
 This id is embedded in the final plugin assemblies as:
 
@@ -169,14 +171,66 @@ public sealed class AssemblyInfo : GH_AssemblyInfo
 }
 ```
 
-### Project Name
+### Project Name and Icon
+
+*Name* is the official name of your project. This name will be used when generating plugin assemblies and other associated files (`<name>` is the project name in this example):
+
+```text
+    ├── <name>.rhp
+    ├── <name>.rui
+    ├── <name>.Components.gha
+    ├── <name>-0.1.16222.8992-rh8-any.yak
+    └── src
+        ├── <name>
+        │   ├── AssemblyInfo.cs
+        │   ├── ProjectCommand_*.cs
+        │   ├── ProjectInterop.cs
+        │   ├── ProjectPlugin.cs
+        │   └── <name>.csproj
+        ├── <name>.Components
+        │   ├── AssemblyInfo.cs
+        │   ├── ProjectComponent_*.cs
+        │   ├── ProjectComponent_Base.cs
+        │   ├── ProjectInterop.cs
+        │   ├── ProjectPlugin_Grasshopper.cs
+        │   └── <name>.Components.csproj
+        └── <name>.sln
+```
+
+You can add/remove SVG icons (both light and dark) for the plugin. This icon is used in plugin manager and toolbars for both Rhino and Grasshopper:
+
+![](project-edit-name-icon.png)
+
+Project name and icon are used for the toolbar:
+
+![](project-commands-installed.png)
+
+Project name is also used as the main category name in Grasshopper UI. Project icon is shown if Grasshopper is set to show the icons in category tabs (or first letter of project name if no icon is set):
+
+![](project-comps-plugin.png)
+
 
 ### Project Version
 
+This is the project version and follows [Semantic Versioning](https://semver.org) style. When creating a new project it is set to v0.1 by default.
+
 ![](project-edit-version.png)
+
+Note that the final version used in building assemblies is `0.1.28927+8991`. Script editor automatically generates patch and build numbers to completion the version and make it specific:
+
+- *Patch* is the number of seconds since midnight divided by 2.
+- *Build* number is number of days since start of century (01/01/2000)
+
+You can assign your own custom patch number by entering a value in the *Patch* field.
+
 ![](project-edit-version-patch.png)
+
+You can also mark the version as *PreRelease* by checking the box. The patch suffix `-beta` will be added to the full version. Note that due to lack of support for custom patch extensions in `AssemblyVersion` attributes, `-beta` extension is excluded. However the generated *Yak* package will include the tag and is marked as pre-release.
+
 ![](project-edit-version-beta.png)
 ![](project-edit-version-patch-beta.png)
+
+Here is an example of how the full version number is included in the plugins:
 
 ```csharp
 [assembly: AssemblyVersion("0.1.234.8991")]
@@ -185,6 +239,25 @@ public sealed class AssemblyInfo : GH_AssemblyInfo
 ```
 
 ### Project Authors
+
+Assigning an *Author* is required for a build. Project Edit or Publish dialogs show a dropdown, listing all the available authors. Selected author information will be saved within the project file.
+
+![](project-edit-author-dropdown.png)
+
+Choose *Edit* button on the right side of author dropdown to edit the list of available authors:
+
+![](project-edit-author.png)
+
+Author information is also included in the published plugins using the [PlugInDescription](https://developer.rhino3d.com/api/rhinocommon/rhino.plugins.plugindescriptionattribute) attribute in RhinoCommon. Note that the full name of author is not listed and is usually included as part of *Copyright* message:
+
+```csharp
+[assembly: PlugInDescription(DescriptionType.Email, "ehsan@mcneel.com")]
+[assembly: PlugInDescription(DescriptionType.Phone, "+1 (206)-888 8888")]
+[assembly: PlugInDescription(DescriptionType.Organization, "McNeel")]
+[assembly: PlugInDescription(DescriptionType.Address, "Seattle, WA")]
+[assembly: PlugInDescription(DescriptionType.Country, "USA")]
+[assembly: PlugInDescription(DescriptionType.WebSite, "https://www.rhino3d.com/")]
+```
 
 ### Project Copyright, License, and URL
 
@@ -200,23 +273,75 @@ The copyright message is embedded in the final plugin assemblies as:
 
 ## Edit Commands
 
+Once a command is added to the project, you can select and click the *Edit* icon on the *Project Tray* toolbar, to edit the command properties. The *Edit Command* dialog provides fields to modify the command *Name*, and to add/remove SVG icons (both light and dark) for the command. This icon will be used in the generated toolbar layout file (*.rui):
+
 ![](project-commands-edit-name-icon.png)
+
+Command icons are used for the project toolbar:
+
+![](project-commands-toolbar-buttons.png)
+
+Choose the type of Rhino command from the *Type* dropdown menu. Hidden and Transparent correspond with the [Rhino.Commands.Style.Hidden](https://developer.rhino3d.com/api/rhinocommon/rhino.commands.style) and [Rhino.Commands.Style.Transparent](https://developer.rhino3d.com/api/rhinocommon/rhino.commands.style) enum values in RhinoCommon:
 
 ![](project-commands-edit-type.png)
 
+Sometimes it is desired to keep a command in the project but exclude that from published plugins. You can check the *Exclude* box to exclude the command:
+
 ![](project-commands-edit-exclude.png)
+
+Note that *Project Tray* shows a dimmed icon for excluded commands:
 
 ![](project-commands-excluded.png)
 
 ## Edit Components
 
+Once a component is added to the project, you can select and click the *Edit* icon on the *Project Tray* toolbar, to edit the component properties. The *Edit Component* dialog provides fields to modify the component *Name*, *NickName*, *Description*, and to add/remove SVG icons (both light and dark) for the component:
+
 ![](project-comps-edit-name-icon.png)
+
+*Sub-Category* is then name of Grasshopper panel that contains the published component. You can edit and customize the panel name or choose from a list of previously set panel names in the project:
+
+![](project-comps-subcategory.png)
+
+![](project-comps-edit-subcategory.png)
+
+Exposure dropdown sets the location of component on the subcategory panel. It is simplified from [Grasshopper.Kernel.GH_Exposure](https://developer.rhino3d.com/api/grasshopper/html/T_Grasshopper_Kernel_GH_Exposure.htm) and includes 4 main areas (`primary`, `secondary`, `tertiary`, and `quarternary`) of the subcategory panel. See [Component Versioning](#component-versioning) for information on how to update your component versions.
 
 ![](project-comps-edit-exposure.png)
 
+Sometimes it is desired to keep a component in the project but exclude that from published plugins. You can check the *Exclude* box to exclude the component:
+
 ![](project-comps-edit-exclude.png)
 
+Note that *Project Tray* shows a dimmed icon for excluded components:
+
 ![](project-comps-excluded.png)
+
+## Component Versioning
+
+Script editor creates a new component in the Grasshopper plugin for each script component extracted from Grasshopper definition.
+
+{{< call-out "note" "Note" >}}
+The **Instance Id** of the source script component, will be used as **Component Id** of the published component. This means that if you duplicate the same script component on your Grasshopper canvas, you will end up with multiple unique components in the published plugin:
+
+![](project-comps-identical.png)
+
+**This is a feature and not a bug.**
+{{< /call-out >}}
+
+If you need to make a "breaking" change to a published component (e.g. changing inputs or outputs), it is a good practice to mark the previously published component as Legacy and create a new component.
+
+Simply duplicate the previous script component on the source Grasshopper definition, and make your changes to this new instance. Saved the definition and the *Project Tray* will update to show then new component. Select and edit the first component and choose *Legacy* exposure (Corresponds with [Grasshopper.Kernel.GH_Exposure.hidden](https://developer.rhino3d.com/api/grasshopper/html/T_Grasshopper_Kernel_GH_Exposure.htm)):
+
+![](project-comps-edit-legacy.png)
+
+Note that *Project Tray* shows a dimmed icon with `(Legacy)` postfix for legacy components:
+
+![](project-comps-legacy.png)
+
+Legacy components are still included in the published plugin but are hidden and marked as *Old*. You would need to prefix search with `#` to see these hidden components. This allows your plugin to be backwards compatible and all previous Grasshopper definitions using the old component still work. The source Grasshopper definition (`identical.gh` in the screenshot above) also ends up including the source for each of the published component versions:
+
+![](project-comps-legacy-published.png)
 
 ## Shared Libraries
 
