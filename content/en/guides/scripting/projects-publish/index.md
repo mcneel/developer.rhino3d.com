@@ -29,10 +29,6 @@ block_webcrawlers = false
         border-radius: 3px;
         font-size: 14px;
     }
-
-    .language-csharp {
-        font-size: .9em;
-    }
 </style>
 
 

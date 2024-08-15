@@ -76,7 +76,7 @@ since = 8
 - <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
 - <!-- [Help](/guides/scripting/editor-help) --> Help {{% comingsoon-label %}}
 - [Configurations](/guides/scripting/editor-configs)
-- <!-- [Logs](/guides/scripting/editor-logs) --> Logs {{% comingsoon-label %}}
+- [Logs](/guides/scripting/editor-logs)
 
 {{< /column >}}
 
