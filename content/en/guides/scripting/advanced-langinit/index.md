@@ -1,13 +1,7 @@
 +++
 title = "Scripting Languages Initialization"
-description = "This guides covers initialization process of various language runtimes"
-type = "guides"
-categories = ["Scripting"]
-keywords = [ "initialize", "rhinocode" ]
-languages = [ "C#", "Python", "CPython", "IronPython", "VB" ]
+description = "Provides information on initialization process of various language runtimes"
 authors = ["ehsan"]
-sdk = [ "RhinoCommon" ]
-weight = 4
 
 [included_in]
 platforms = [ "Windows", "Mac" ]

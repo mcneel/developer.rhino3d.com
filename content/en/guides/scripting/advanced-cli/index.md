@@ -1,13 +1,7 @@
 +++
 title = "RhinoCode Command Line Interface"
-description = ""
-type = "guides"
-categories = ["Scripting"]
-keywords = [ "", "" ]
-languages = [ "C#", "Python", "CPython", "IronPython", "VB" ]
+description = "Provides information on using rhinocode command line utility that shipped with rhino"
 authors = ["ehsan"]
-sdk = [ "RhinoCommon" ]
-weight = 4
 
 [included_in]
 platforms = [ "Windows", "Mac" ]

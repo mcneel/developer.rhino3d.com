@@ -1,13 +1,7 @@
 +++
 title = "Grasshopper Scripting: Python"
-description = ""
-type = "guides"
-categories = ["Scripting"]
-keywords = [ "", "" ]
-languages = [ "Python" ]
+description = "Provides detailed information on Python scripting in Grasshopper"
 authors = ["ehsan"]
-sdk = [ "RhinoCommon" ]
-weight = 4
 
 [included_in]
 platforms = [ "Windows", "Mac" ]

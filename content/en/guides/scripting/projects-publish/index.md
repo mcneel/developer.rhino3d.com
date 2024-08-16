@@ -1,13 +1,7 @@
 +++
 title = "Creating Rhino and Grasshopper Plugins"
-description = ""
-type = "guides"
-categories = ["Scripting"]
-keywords = [ "", "" ]
-languages = [ "C#", "Python", "CPython", "IronPython", "VB" ]
+description = "Provides information on publishing plugin projects in Script Editor"
 authors = ["ehsan"]
-sdk = [ "RhinoCommon" ]
-weight = 4
 
 [included_in]
 platforms = [ "Windows", "Mac" ]

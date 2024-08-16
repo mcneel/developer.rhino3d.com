@@ -1,13 +1,7 @@
 +++
-title = ""
-description = ""
-type = "guides"
-categories = ["Scripting"]
-keywords = [ "", "" ]
-languages = [ "C#", "Python", "CPython", "IronPython", "VB" ]
+title = "Script Editing Features"
+description = "Provides information on editing features in Script Editor"
 authors = ["ehsan"]
-sdk = [ "RhinoCommon" ]
-weight = 4
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
@@ -20,11 +14,4 @@ toc_type = "single"
 block_webcrawlers = false
 +++
 
-- monaco
-- autocompletion
-- diagnostics - squiggly lines
-- minimap
-- show spaces
-- convert spaces to tabs or vice versa
-- errors
-- breakpoints
+- monaco- autocompletion- diagnostics - squiggly lines- minimap- show spaces- convert spaces to tabs or vice versa- errors- breakpoints

@@ -1,0 +1,4 @@
+{{- $.Scratch.Set "title" (.Get 0) -}}
+{{ with .Site.GetPage (.Get 1) }}
+    <a class="dev-topic" href="{{ .RelPermalink }}" title="{{ .Description }}" >{{ ($.Scratch.Get "title") }}</a>
+{{ end }}
