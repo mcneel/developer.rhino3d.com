@@ -32,6 +32,10 @@ block_webcrawlers = false
 
 **Editor Options** dialog (*Tools > Options* menu) provides access to editor and language settings that are persistent.
 
+Hovering over help icons provides more information about each option:
+
+![](editor-options-tipdot.png)
+
 ## General Options
 
 General options are under **General** tab of *Editor Options* dialog and are self explanatory:
