@@ -26,16 +26,18 @@ block_webcrawlers = false
 
 ## What is Async
 
-Normally, most operations on an application with a UI, run on the *UI Thread*. That is the thread (usually application main thread) that starts the UI *Application* and listens to the UI events. So when you click on a button, the code behind that button runs on the UI thread.
+Normally, most operations in an application with a graphical user interface (GUI), run on the *UI Thread*. That is the thread that starts the UI and listens to the events like clicking buttons and moving the mouse. When you click on a button, the code behind that button runs on the UI thread.
 
-If the task is time-consuming, the UI thread (now executing the task after button click) can not respond to any other UI events. Therefore the application UI is *"Frozen"* (not the Disney® movie) and unresponsive. Normally this is ok since you would not want the user to change the application state while the task is running. So, it is a good idea to use an *Asynchronous (Async for short)* operation for the time-consuming task.
+**Asynchronous (Async for short) operations run on Non-UI threads and do not freeze the UI.**
+
+If the task is time-consuming, the UI thread (now executing the task after button click) can not respond to any other events. Therefore UI is *"Frozen"* (not the Disney® movie) and unresponsive. Normally this is ok since you would not want the user to change the document while the task is running. It is a good idea to use Non-UI threads for time-consuming tasks and run them *Asynchronously*.
 
 ### Async in Script Editor
-In the context of Script Editor, if a script is performing a time-consuming task, clicking on the *Run* button in the UI would cause Rhino UI to freeze for the duration of the script. As we mentioned before this is ok. However, if your task does not deal with the Rhino document or other states that could be changed by the Rhino user while your script is running, it could be made async. This would make Rhino UI responsive while your script is performing its computation. It is also a good habit to show progress while the task is running in the background.
+In Rhino Script Editor, if a script is performing a time-consuming task, clicking on the *Run* button would cause Rhino UI to freeze for the duration of the script. As we mentioned above this is ok. However, if your task does not deal with the Rhino document (could be changed by the Rhino user while your script is running), it could be made async. This would make Rhino UI responsive while your script is running. It is also a good habit to show progress while the task is running in the background.
 
 ## Async C#
 
-This script completely freezes Rhino UI for about 2 seconds. That the amount of time we are specifying in `Thread.Sleep` below to simulate work. This could be a long running computation or waiting to receive data from a website:
+The example C# script below completely freezes Rhino UI for about 2 seconds. That the amount of time we are specifying in `Thread.Sleep` to simulate work. This could be a long running computation or waiting to receive some data from web:
 
 ```csharp
 // #! csharp
@@ -49,7 +51,7 @@ Thread.Sleep(2000); // simulate work
 RhinoApp.WriteLine("End Task");
 ```
 
-By adding the line `// async:true`, we can force this complete script run on a Non-UI thread, keeping Rhino UI active so we can continue working while the script is running:
+By adding the line `// async:true`, we can force this complete script to run on a Non-UI thread, keeping Rhino UI active so we can continue working while the script is running (this is a feature of Rhino Script Editor and not C# language):
 
 ```csharp
 // #! csharp
