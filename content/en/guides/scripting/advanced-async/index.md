@@ -90,7 +90,8 @@ for (int i = 0; i < 5; i++)
 
     // update progress
     StatusBar.UpdateProgressMeter("Progress", i, true);
-    // call this method to force Rhino UI to update itself
+    // since we are on the main thread here,
+    // call this method to force Rhino UI to update
     Application.Instance.RunIteration();
 }
 
@@ -100,6 +101,23 @@ RhinoApp.WriteLine("End Task");
 ```
 
 ![](editor-csharp-progress-sync.png)
+
+### Python Progress
+
+In Python you can use `rhinoscriptsyntax` module to access the progress indicator easier:
+
+```python
+import rhinoscriptsyntax as rs
+from Rhino import RhinoApp
+
+MAX = 1000
+rs.StatusBarProgressMeterShow("Progress", 0, MAX)
+
+for i in range(0, MAX):
+    rs.StatusBarProgressMeterUpdate(i)
+
+rs.StatusBarProgressMeterHide()
+```
 
 ## Advanced Async
 
