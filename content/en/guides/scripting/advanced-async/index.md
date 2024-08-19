@@ -33,9 +33,14 @@ Normally, most operations in an application with a graphical user interface (GUI
 If the task is time-consuming, the UI thread (now executing the task after button click) can not respond to any other events. Therefore UI is *"Frozen"* (not the Disney® movie) and unresponsive. Normally this is ok since you would not want the user to change the document while the task is running. It is a good idea to use Non-UI threads for time-consuming tasks and run them *Asynchronously*.
 
 ## Async in Script Editor
-In Rhino Script Editor, if a script is performing a time-consuming task, clicking on the *Run* button would cause Rhino UI to freeze for the duration of the script. As we mentioned above this is ok. However, if your task does not deal with the Rhino document (could be changed by the Rhino user while your script is running), it could be made async. This would make Rhino UI responsive while your script is running. It is also a good habit to show progress while the task is running in the background.
+In Rhino Script Editor, if a script is performing a time-consuming task, clicking on the *Run* button would cause Rhino UI to freeze for the duration of the script. As we mentioned above this is ok. However, if your task does not deal with the Rhino document (could be changed by the Rhino user while your script is running), it could be made async. This would make Rhino UI responsive while your script is running. It is also a good habit to show progress while the task is running in the background:
 
-## Async C#
+- In C#, add `// async:true` to the top of your script. 
+- In Python, add `# async:true` to the top of your script.
+
+When script is marked as `async: true` the Script Editor runs the full script on a Non-UI thread. This is a feature of Rhino Script Editor and not the scripting language. You can remove this line or set it to `false` to make the script synchronous again.
+
+## Asynchronous C#
 
 The example C# script below completely freezes Rhino UI for about 2 seconds. That the amount of time we are specifying in `Thread.Sleep` to simulate work. This could be a long running computation or waiting to receive some data from web:
 
@@ -51,7 +56,7 @@ Thread.Sleep(2000); // simulate work
 RhinoApp.WriteLine("End Task");
 ```
 
-By adding the line `// async:true`, we can force this complete script to run on a Non-UI thread, keeping Rhino UI active so we can continue working while the script is running (this is a feature of Rhino Script Editor and not C# language):
+By adding the line `// async:true`, we can force this complete script to run on a Non-UI thread, keeping Rhino UI active so we can continue working while the script is running:
 
 ```csharp
 // #! csharp
@@ -70,7 +75,7 @@ Notice that this is the only change we made to the script. Also note that the *R
 
 ![](editor-csharp-async.png)
 
-## Async Python
+## Asynchronous Python
 
 The example Python script below completely freezes Rhino UI for about 2 seconds. That the amount of time we are specifying in `time.sleep` to simulate work. This could be a long running computation or waiting to receive some data from web:
 
@@ -182,6 +187,68 @@ for i in range(0, MAX):
 
 rs.StatusBarProgressMeterHide()
 ```
+
+## Async in Grasshopper
+
+{{< call-out "note" "Note" >}}
+`async: true` pattern is NOT SUPPORTED in Grasshopper, since it needs to wait for the script to fully execute and set the output data before executing the rest of component graph. We can however have background threads running computations, and continuously trigger a Grasshopper solve to update the results.
+{{< /call-out >}}
+
+This is an example of a python script component that runs computation on background thread. We use the *Trigger* component is Grasshopper to recompute this component on intervals and therefore update the geometry previews in Rhino:
+
+- `RunScript` sets up the worked thread on the first run. It does not do anything on later runs except for outputing `"Training in Progress"` and the current state of compute mesh
+- `main_solve` is the solver function that is being executed by the worker thread. It updates the class variable `MyComponent.CURRENT_MESH` while running
+- `DrawViewportMeshes` is called by Grasshopper after each trigger and displays the current state of computed mesh in `MyComponent.CURRENT_MESH`
+
+```python
+import System
+import System.Drawing as SD
+import Rhino
+import Rhino.Geometry as G
+import Grasshopper
+import Grasshopper.Kernel as GHK
+import threading
+import time
+
+
+def main_solve():
+    for r in range(10, 20):
+        # wait represents compute work
+        Rhino.RhinoApp.WriteLine("computing mesh")
+        time.sleep(1)
+
+        sphere = G.Sphere(G.Point3d.Origin, r)
+        MyComponent.CURRENT_MESH = G.Mesh.CreateFromSphere(sphere, 10, 10)
+        Rhino.RhinoApp.WriteLine("computed mesh")
+
+    Rhino.RhinoApp.WriteLine("computed completed")
+
+
+class MyComponent(Grasshopper.Kernel.GH_ScriptInstance):
+    SOVLE_STARTED = False
+    CURRENT_MESH = None
+
+    def RunScript(self):
+        if MyComponent.SOVLE_STARTED:
+            return ("Training in Progress", MyComponent.CURRENT_MESH)
+        
+        MyComponent.SOVLE_STARTED = True
+        threading.Thread(target=main_solve).start()
+        return ("Training in Progress", None)
+        
+    @property
+    def ClippingBox(self):
+        return G.BoundingBox(-30, -30, -30, 30, 30, 30)
+
+    def DrawViewportMeshes(self, args: GHK.IGH_PreviewArgs):
+        if d := getattr(args, "Display", None):
+            if MyComponent.CURRENT_MESH:
+                d.DrawMeshWires(MyComponent.CURRENT_MESH, SD.Color.Blue, 2)
+```
+
+Notice that Rhino UI stays active during this background computation:
+
+{{< vimeo id="999893058" autoplay="1" loop="1" autopause="0" >}}
 
 ## Advanced Async
 
@@ -300,60 +367,57 @@ Notice that the thread id matches for `part_a` and `part_c`, but the middle sect
 
 ![](editor-python-mixed-threadids.png)
 
-## Async in Grasshopper
 
-This is an example of a python script component that runs computation on background thread. We use the *Trigger* component is Grasshopper to recompute this component on intervals and therefore update the geometry previews in Rhino:
+### C# Async/Await
 
-- `RunScript` sets up the worked thread on the first run. It does not do anything on later runs except for outputing `"Training in Progress"` and the current state of compute mesh
-- `main_solve` is the solver function that is being executed by the worker thread. It updates the class variable `MyComponent.CURRENT_MESH` while running
-- `DrawViewportMeshes` is called by Grasshopper after each trigger and displays the current state of computed mesh in `MyComponent.CURRENT_MESH`
+In C# (Rhino >= 8.12) you can use [async/await](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/) for asynchronous programming. Here is an example of creating an async function in the script editor:
 
-```python
-import System
-import System.Drawing as SD
-import Rhino
-import Rhino.Geometry as G
-import Grasshopper
-import Grasshopper.Kernel as GHK
-import threading
-import time
+```csharp
+// #! csharp
+// async: true
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
+async Task<int> Compute()
+{
+    await Task.Delay(TimeSpan.FromMilliseconds(2000));
+    return 42;
+}
 
-def main_solve():
-    for r in range(10, 20):
-        # wait represents compute work
-        Rhino.RhinoApp.WriteLine("computing mesh")
-        time.sleep(1)
+int result = await Compute();
 
-        sphere = G.Sphere(G.Point3d.Origin, r)
-        MyComponent.CURRENT_MESH = G.Mesh.CreateFromSphere(sphere, 10, 10)
-        Rhino.RhinoApp.WriteLine("computed mesh")
-
-    Rhino.RhinoApp.WriteLine("computed completed")
-
-
-class MyComponent(Grasshopper.Kernel.GH_ScriptInstance):
-    SOVLE_STARTED = False
-    CURRENT_MESH = None
-
-    def RunScript(self):
-        if MyComponent.SOVLE_STARTED:
-            return ("Training in Progress", MyComponent.CURRENT_MESH)
-        
-        MyComponent.SOVLE_STARTED = True
-        threading.Thread(target=main_solve).start()
-        return ("Training in Progress", None)
-        
-    @property
-    def ClippingBox(self):
-        return G.BoundingBox(-30, -30, -30, 30, 30, 30)
-
-    def DrawViewportMeshes(self, args: GHK.IGH_PreviewArgs):
-        if d := getattr(args, "Display", None):
-            if MyComponent.CURRENT_MESH:
-                d.DrawMeshWires(MyComponent.CURRENT_MESH, SD.Color.Blue, 2)
+Console.WriteLine($"Result: {result}");
 ```
 
-Notice that Rhino UI stays active during this background computation:
+Notice that if we remove the `// async: true` line or set that to `false` the editor shows an error on the `await` call in global scope:
 
-{{< vimeo id="999893058" autoplay="1" loop="1" autopause="0" >}}
+![](editor-csharp-await-error.png)
+
+When running C# scripts, the editor recomposes the script into something that looks like the example below. This is done so multiple instances of the same script can be created, holding onto their own internal states, and executed using different contexts. Notice that the main `__RunScript__` method is NOT marked as *async*:
+
+```csharp
+sealed class __RhinoCodeScript__ {
+public void __RunScript__(Rhino.Runtime.Code.Execution.RunContext __context__)
+{
+        // YOUR SCRIPT IS EMBEDDED HERE
+}}
+```
+
+When using `await` in global scope, we need to mark the script as `// async: true` to ensure `__RunScript__` is marked as `async` and returns a `Task` instance so the editor can await the execution:
+
+```csharp
+sealed class __RhinoCodeScript__ {
+public async Task __RunScript__(Rhino.Runtime.Code.Execution.RunContext __context__)
+{
+        async Task<int> Compute()
+        {
+            await Task.Delay(TimeSpan.FromMilliseconds(2000));
+            return 42;
+        }
+
+        int result = await Compute();
+
+        Console.WriteLine($"Result: {result}");
+}}
+```
