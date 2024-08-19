@@ -92,7 +92,7 @@ $ rhinocode project build ~/MyProject.rhproj
 
 See [RhinoCode: Build a Project](/guides/scripting/advanced-cli#build-a-project) for more information.
 
-## Build Artifcats
+## Build Artifacts
 
 Once project is built, the target path will contain all the generated artifacts:
 
