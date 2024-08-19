@@ -1,5 +1,5 @@
 +++
-title = "Async Execution"
+title = "Asynchronous Execution"
 description = "Provides information on running scripts in asynchronous mode to avoid locking Rhino UI with long running tasks"
 authors = ["ehsan"]
 
@@ -24,7 +24,7 @@ block_webcrawlers = false
     }
 </style>
 
-## What is Async
+## What is Asynchronous
 
 Normally, most operations in an application with a graphical user interface (GUI), run on the *UI Thread*. That is the thread that starts the UI and listens to the events like clicking buttons and moving the mouse. When you click on a button, the code behind that button runs on the UI thread.
 

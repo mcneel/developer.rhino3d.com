@@ -112,7 +112,7 @@ toc_type = "single"
 - <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
 - {{< dev-topic "Python Path Files" "/guides/scripting/advanced-pthfiles" >}}
 - <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
-- {{< dev-topic "Async Execution" "/guides/scripting/advanced-async" >}}
+- {{< dev-topic "Asynchronous Execution" "/guides/scripting/advanced-async" >}}
 - <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
 - {{< dev-topic "RhinoCode Command Line Interface" "/guides/scripting/advanced-cli" >}}
 <!-- [RhinoCode API](/guides/scripting/advanced-core-api) -->
