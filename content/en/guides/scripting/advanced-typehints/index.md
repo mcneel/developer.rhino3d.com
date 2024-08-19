@@ -1,13 +1,7 @@
 +++
-title = "Type Hints"
+title = ""
 description = ""
-type = "guides"
-categories = ["Scripting"]
-keywords = [ "", "" ]
-languages = [ "Python", "CPython", "IronPython" ]
 authors = ["ehsan"]
-sdk = [ "RhinoCommon" ]
-weight = 4
 
 [included_in]
 platforms = [ "Windows", "Mac" ]

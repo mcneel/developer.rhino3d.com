@@ -1,6 +1,6 @@
 +++
-title = ""
-description = ""
+title = "Script Editor Options"
+description = "Provides information on editing and language support options in Script Editor"
 type = "guides"
 categories = ["Scripting"]
 keywords = [ "", "" ]
@@ -30,6 +30,40 @@ block_webcrawlers = false
     }
 </style>
 
+**Editor Options** dialog (*Tools > Options* menu) provides access to editor and language settings that are persistent.
+
+Hovering over help icons provides more information about each option:
+
+![](editor-options-tipdot.png)
+
+## General Options
+
+General options are under **General** tab of *Editor Options* dialog and are self explanatory:
+
+![](editor-options-general.png)
+
+Grasshopper Script Editor has a few layout options under *General* tab. *Window* menu also shows toggles for these options:
+
+![](editor-options-general-embedded.png)
+
+*Window > Toggle \** menu items provide toggles for Editor UI elements. Editor remembers the last UI layout before it is closed. See [Layout Options: Python](/guides/scripting/scripting-gh-python/#layout-options) or [C#](/guides/scripting/scripting-gh-csharp/#layout-options) for more information on these options.
+
+## Editing Options
+
+Editing options are language-specific. Each language tab has its own editing options:
+
+![](editor-options-editing.png)
+
+*Edit > Toggle \** menu items provide toggles for some of the options. These changes are in-session only and do not get saved to settings file. See [Editing Features](/guides/scripting/editor-editing/) for more information on these options.
+
+## Language Support Options
+
+Language Support options are language-specific. Each language tab has its own language options:
+
+![](editor-options-langserver.png)
+
+*Edit > Toggle \** menu items provide toggles for some of the options. These changes are in-session only and do not get saved to settings file. See [Editing Features](/guides/scripting/editor-editing/) for more information on these options.
+
 ## Python Paths
 
 ### Scripts Path
@@ -52,7 +86,7 @@ Note that the first path on either platform, is the shared path and takes preced
 
 You can add a list of other search paths for each Python version in Editor options:
 
-![](01.png)
+![](editor-options-python-paths.png)
 
 Note that the order of these paths is important. First path on the list would be the first path to be search for a module.
 

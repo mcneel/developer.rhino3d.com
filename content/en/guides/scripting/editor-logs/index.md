@@ -1,13 +1,7 @@
 +++
-title = ""
-description = "Script Editor Logs"
-type = "guides"
-categories = ["Scripting"]
-keywords = [ "", "" ]
-languages = [ "C#", "Python", "CPython", "IronPython", "VB" ]
+title = "Script Editor Logs"
+description = "Provides information on Script Editor logs viewer window"
 authors = ["ehsan"]
-sdk = [ "RhinoCommon" ]
-weight = 4
 
 [included_in]
 platforms = [ "Windows", "Mac" ]

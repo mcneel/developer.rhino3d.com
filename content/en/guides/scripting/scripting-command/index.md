@@ -1,13 +1,7 @@
 +++
 title = "ScriptEditor Command"
-description = "This guide provides an overview on how to edit and run scripts inside of Rhino"
-type = "guides"
-categories = ["Scripting",  "Python Windows" ]
-keywords = [ "", "" ]
-languages = [ "C#", "Python", "CPython", "IronPython", "VB", "RhinoPython" ]
+description = "Provides an overview on how to edit and run scripts inside of Rhino"
 authors = ["ehsan"]
-sdk = [ "RhinoCommon", "RhinoPython"]
-weight = 4
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
