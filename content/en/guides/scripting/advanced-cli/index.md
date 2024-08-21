@@ -41,12 +41,12 @@ To run `rhinocode`:
 - Make sure script server is started by running `StartScriptServer` in Rhino.
 
 On Windows:
-- Add `%PROGRAMFILES%/Rhino 8/System` to user or system `PATH` environment variable. Then open a terminal and run `rhinocode`
+- Add `%PROGRAMFILES%\Rhino 8\System` to user or system `PATH` environment variable. Then open a terminal and run `rhinocode`
 
 On macOS:
 - Depending on the type of shell you are using, add `/Applications/Rhino 8.app/Contents/Resources/bin` to the `PATH` environment variable. Then reload the terminal and run `rhinocode`
 
-If, for whatever reason, you do not want to modify the `PATH` environment variable, navigate to Rhino installation folder inside terminal and run `./rhinocode` from there.
+If, for whatever reason, you do not want to modify the `PATH` environment variable, navigate to Rhino installation folder inside terminal and run `.\rhinocode` from there.
 
 
 Test running `rhinocode` by specifying `-V` argument to get the version. Under current implementation, the version matches version of Rhino that ships this utility:
@@ -95,7 +95,7 @@ Arguments:
   <PATH>                   Full path of script to be executed
 
 Examples:
-  > rhinocode script /path/to/script.py
+  > rhinocode script C:\path\to\script.py
 ```
 
 ## Listing Rhino Instances
@@ -107,7 +107,7 @@ You can use ID with `--rhino` option to run a subcommand on that specific Rhino 
 ```text
 $ rhinocode list
        PID ID                             DOC                  PATH
-     75029 rhinocode_remotepipe_75029     Sphere.3dm           /Users/me/Sphere.3dm
+     75029 rhinocode_remotepipe_75029     Sphere.3dm           C:\path\to\rhinofiles\Sphere.3dm
 ```
 
 Add `--json` flag to get results in JSON. This can be used to parse the results of this command easier in your custom integrations:
@@ -123,7 +123,7 @@ $ rhinocode list --json
     "processAge": 103,
     "activeDoc": {
       "title": "Sphere.3dm",
-      "location": "/Users/ein/Downloads/Sphere.3dm"
+      "location": "C:\\path\\to\\rhinofiles\\Sphere.3dm"
     },
     "activeViewport": "Perspective",
     "$meta": {
@@ -152,21 +152,22 @@ $ rhinocode --rhino rhinocode_remotepipe_75029 command "_circle 0 0 0 20"
 Use `command` subcommand to run a rhino command in an instance of Rhino:
 
 ```text
-$ rhinocode script ~/scripts/foo.py
-$ rhinocode script ~/scripts/foo.cs
-$ rhinocode script ~/scripts/foo.py2
+$ rhinocode script C:\path\to\scripts\foo.py
+$ rhinocode script C:\path\to\scripts\foo.cs
+$ rhinocode script C:\path\to\scripts\foo.py2
 ```
 
 If you have multiple instance of Rhino running, you can specify which instance to run the command on using `--rhino` option:
 
 ```text
-$ rhinocode --rhino rhinocode_remotepipe_75029 script ~/scripts/foo.py
+$ rhinocode --rhino rhinocode_remotepipe_75029 script C:\path\to\scripts\foo.py
 ```
 
 ## Working With Projects
 
 {{< call-out "note" "Note" >}}
-See [Creating Rhino Projects](/guides/scripting/projects-create) and [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) for more information on creating projects in Rhino script editor
+- `project` command builds projects without requiring a running instance of Rhino. It can be used is build scripts in you CI/CD pipeline.
+- See [Creating Rhino Projects](/guides/scripting/projects-create) and [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) for more information on creating projects in Rhino script editor.
 {{< /call-out >}}
 
 Use `project` subcommand to work with projects created in the Rhino script editor.
@@ -176,7 +177,7 @@ Use `project` subcommand to work with projects created in the Rhino script edito
 The `build` subcommand build Rhino and Grasshopper plugins from a project. The project file only stores references to scripts, Grasshopper definitions, and language libraries so these resources can be updated outside of the project without affecting the project file itself. The most recent state of these references is used when building a project.
 
 ```text
-$ rhinocode project build ~/MyTools.rhproj
+$ rhinocode project build C:\path\to\projects\MyTools.rhproj
   0% - Preparing project
  10% - Preparing build path
  20% - Preparing plugin assembly
@@ -214,8 +215,8 @@ Options:
                                                  8.9-mac
 
   -bp, --buildpath <BUILD-PATH>        Absolute or relative build path
-                                       Examples: ./mybuild
-                                                 /home/me/mybuild
+                                       Examples: .\mybuild
+                                                 C:\path\to\mybuild
 ```
 
 The build folder (depends on build target) will contain the generated plugins as well as a yak package that packs the plugins and other resources:
@@ -234,5 +235,5 @@ See [Pushing a Package to the Server](/guides/yak/pushing-a-package-to-the-serve
 To get a more verbose report during the build process use the `-d|--debug` or `-t|--trace` options:
 
 ```text
-rhinocode -t project build ~/MyTools.rhproj
+rhinocode -t project build C:\path\to\projects\MyTools.rhproj
 ```
