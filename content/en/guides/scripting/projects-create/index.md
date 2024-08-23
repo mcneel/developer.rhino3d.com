@@ -471,3 +471,9 @@ To query and get access to the deployed data files, use [Rhino.PlugIns.PlugIn.Pa
 ![](project-shared-query.png)
 
 You can also use [Rhino.PlugIns.PlugIn.PathFromName](https://developer.rhino3d.com/api/rhinocommon/rhino.plugins.plugin/pathfromname) and pass your plugin name however the plugin id is better since it should never change and is more unique than the name.
+
+## Projects in Explorer
+
+The file explorer on the left side of Script Editor shows project source files. You can open a project by double-clicking the entry in the explorer (Rhino >=8.12):
+
+![](project-in-explorer.png)
