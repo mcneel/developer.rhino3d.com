@@ -77,11 +77,11 @@ To add them to your project run the command **dotnet add package System.Drawing.
 
 ![Solution Anatomy](/images/your-first-component-mac-02.png)
 
-4. Adding the component to the canvas will perform no action
+4. Adding the component to the canvas will run the component and output some interesting geometry in the Rhino Viewport
 
 ![Solution Anatomy](/images/your-first-component-mac-03.png)
 
-5. _Quit_ Rhinoceros. This stops the session. Go back to _Visual Studio Code_. Let's take a look at the Plugin Anatomy.
+5. Press Stop Debugging _(⇧ F5)_ , in Visual Studio Code, signified by the Red Square in the debug toolbar. This stops the debugging session. Now let's n take a look at the Plugin Anatomy.
 
 ### Component Anatomy
 
