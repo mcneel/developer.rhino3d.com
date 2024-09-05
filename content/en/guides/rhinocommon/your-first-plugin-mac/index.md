@@ -115,51 +115,17 @@ We are presuming you are new to Visual Studio Code, so we'll go through this one
         protected override Result RunCommand (Rhino.RhinoDoc doc, RunMode mode)
 ```
 
-6. All Rhino commands must have a `RunCommand` method. Copy paste the below code into `RunCommand` between the brackets `{}`
+6. And then type in the following by hand on line 62 to get a feel for the editor.
 
 ```c#
-Point3d pt0;
-using (GetPoint getPointAction = new GetPoint())
-{
-        getPointAction.SetCommandPrompt("Please select the start point");
-        if (getPointAction.Get() != GetResult.Point)
-        {
-                RhinoApp.WriteLine("No start point was selected.");
-                return getPointAction.CommandResult();
-        }
-        pt0 = getPointAction.Point();
-}
-
-Point3d pt1;
-using (GetPoint getPointAction = new GetPoint())
-{
-        getPointAction.SetCommandPrompt("Please select the end point");
-        getPointAction.SetBasePoint(pt0, true);
-        getPointAction.DynamicDraw +=
-                (sender, e) => e.Display.DrawLine(pt0, e.CurrentPoint, System.Drawing.Color.DarkRed);
-        if (getPointAction.Get() != GetResult.Point)
-        {
-                RhinoApp.WriteLine("No end point was selected.");
-                return getPointAction.CommandResult();
-        }
-        pt1 = getPointAction.Point();
-}
+RhinoApp.WriteLine("I'm writing my first Rhino Plugin!");
 ```
 
-7. And then type in the following by hand to get a feel for the editor.
-
-```c#
-doc.Objects.AddLine(pt0, pt1);
-doc.Views.Redraw();
-
-return Result.Success;
-```
-
-8. Notice that - as you type - Visual Studio Code uses IntelliSense, just like Visual Studio for Windows (and many other editors).
+7. Notice that - as you type - Visual Studio Code uses IntelliSense, just like Visual Studio for Windows (and many other editors).
 
 ### Debugging
 
-1. Set a breakpoint on line 52 of _HelloRhinoCommonCommand.cs_. You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
+1. Set a breakpoint on line 59 of _HelloRhinoCommonCommand.cs_. You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
    ![Set a breakpoint](/images/your-first-plugin-mac-07.png)
 1. _Run and Debug_. our project. The breakpoint will become an empty circle, this is because our code has not been loaded yet. Once we hit the breakpoint once and continue, the code will be loaded until we end our Debug session.
    ![Set a breakpoint](/images/your-first-plugin-mac-08.png)
