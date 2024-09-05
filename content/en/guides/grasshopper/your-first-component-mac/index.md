@@ -98,16 +98,17 @@ Use the **Solution Explorer** to expand the **Solution** (_.sln_) so that it loo
 
 ### Debugging
 
-1. Add a semicolon to line 47 of _HelloGrasshopperComponent.cs_, and set a breakpoint on it. You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
+1. Add a semicolon to line 75 of _HelloGrasshopperComponent.cs_, and set a breakpoint on it. You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
    ![Set a breakpoint](/images/your-first-component-mac-05.png)
 1. _Run and Debug_. our project. The breakpoint will become an empty circle, this is because our code has not been loaded yet. Once we hit the breakpoint once and continue, the code will be loaded until we end our Debug session.
    ![Set a breakpoint](/images/your-first-component-mac-06.png)
-1. Click New Model. And then run our _HelloDrawLine_ command. Create the two points and as soon as you do, you should hit your breakpoint and rhino will pause
+1. Rhino and Grasshopper should open, if Grasshopper does not open, click "New Model" and run the _Grasshopper_ command.
+1. Place our sample component _HelloGrasshopperComponent_ and as soon as you do, you should hit your breakpoint and rhino will pause
    ![Hit a breakpoint](/images/your-first-component-mac-07.png)
-1. With Rhino paused, in _Visual Studio Code_ we will see _Locals_ under _Variables_. You can inspect all of the values for the variables in your component.
+1. With Rhino/Grasshopper paused, in _Visual Studio Code_ we will see _Locals_ under _Variables_. You can inspect all of the values for the variables in your component.
    ![Locals panel](/images/your-first-component-mac-08.png)
-1. Let's Continue Execution in Rhino by pressing the Green _Play_ button in the Debug Bar
-1. Control is passed back to _Rhino_ and your command finishes. _Quit_ Rhino or _Stop_ the debugging session.
+1. Let's Continue Execution in Rhino and Grasshopper by pressing the Green _Play_ button in the Debug Bar
+1. Control is passed back to _Rhino / Grasshopper_ and your command finishes. _Quit_ Rhino and Grasshopper or _Stop_ the debugging session.
 1. **Remove** the breakpoint you created above by clicking on it in the gutter.
 
 **Congratulations!** You have just built your first Grasshopper component for Rhino for Mac. **Now what?**
