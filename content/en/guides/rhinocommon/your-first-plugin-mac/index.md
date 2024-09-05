@@ -52,10 +52,10 @@ We are presuming you are new to Visual Studio Code, so we'll go through this one
 1. Now we can open our new folder, navigate to *File* > *Open Folder* and choose the folder we just created.
 1. Open Terminal via *Terminal* > *New Terminal*, or using the command palette _(⌘ ⇧ P)_ and search for "Terminal".
 1. Enter the following command into the Terminal:
-    ``` pwsh
-    dotnet new rhino --version 8
-    ```
-6. In our Folder explorer, we should see the project appear as Visual Studio Code discovers the files.
+   ```pwsh
+   dotnet new rhino --version 8 -sample
+   ```
+1. In our Folder explorer, we should see the project appear as Visual Studio Code discovers the files.
 1. Expand the Solution Explorer, this is the best way to interact with C# projects on Mac in Visual Studio Code.
 
 ### Boilerplate Build
