@@ -103,11 +103,6 @@ Operators are used to perform arithmetic, logical, and other operations. Operato
   </tr>
   <tr>
     <td>Arithmetic </n>Operators</td>
-    <td>^</td>
-    <td>Raises a number to the power of another number</td>
-  </tr>
-  <tr>
-    <td> </td>
     <td>*</td>
     <td>Multiplies two numbers</td>
   </tr>
