@@ -1784,7 +1784,7 @@ Meshes represent a geometry class that is defined by faces & vertices. The mesh 
   </tr>
  </table>
 
-#### Create Surface Objects
+#### Create Mesh Objects
 
 You can create a mesh from scratch by specifying vertex locations & faces and compute the normal as in the following examples:
 
@@ -1963,7 +1963,7 @@ Here is an example that deletes a mesh vertex and all surrounding faces:
 
 <table class="multiline" width="100%">
 <tr>
-<th width="60%">Delete mesh faces randomly</th>
+<th width="60%">Delete mesh Vertices randomly</th>
 <th width="40%"></th>
 </tr>
 <tr>
