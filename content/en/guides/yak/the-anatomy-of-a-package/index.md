@@ -1,6 +1,6 @@
 +++
 aliases = ["/5/guides/yak/the-anatomy-of-a-package/", "/6/guides/yak/the-anatomy-of-a-package/", "/7/guides/yak/the-anatomy-of-a-package/", "/wip/guides/yak/the-anatomy-of-a-package/"]
-authors = [ "will" ]
+authors = [ "will", "callum" ]
 categories = [ "Fundamentals" ]
 description = "This guide explains the structure of a Yak package."
 keywords = [ "developer", "yak" ]
@@ -8,7 +8,6 @@ sdk = [ "Yak" ]
 title = "The Anatomy of a Package"
 type = "guides"
 weight = 1
-override_last_modified = "2021-01-04T18:06:13Z"
 
 [admin]
 TODO = ""
@@ -43,9 +42,35 @@ howler-0.4.0-any-any.yak
     └── LICENSE.txt
 ```
 
+## Multi-targeting Package Structure
+
+From Rhino 8 onwards, Yak also supports multi-targeted applications so that your Rhino Plugin can be run in either dotnet core or dotnet framework.
+Note that the `manifest.yml` must now be outside the framework directory, rather than inside of it.
+
+```
+howler-0.4.0-rh8-any.yak
+├── manifest.yml
+├── net48/
+│  ├── Howler.rhp
+│  ├── Howler.rui
+│  ├── HowlerCommon.dll
+│  ├── HowlerGrasshopper.gha
+│  └── misc/
+│     ├── README.md
+│     └── LICENSE.txt
+└── net7.0/
+   ├── Howler.rhp
+   ├── Howler.rui
+   ├── HowlerCommon.dll
+   ├── HowlerGrasshopper.gha
+   └── misc/
+      ├── README.md
+      └── LICENSE.txt
+```
+
 ## Requirements
 
-1. Packages **must** have a top-level [`manifest.yml`](manifest.md) file.
+1. Packages **must** have a [`manifest.yml`](manifest.md) file placed in the appropriate location, as shown above.
    Details about the manifest can be found in the [Manifest Reference Guide](../the-package-manifest).
 1. Any plug-ins (`.rhp`, `.gha`, `.ghpy` files) **must** be in the top-level directory
    so that Rhino and Grasshopper can find and load them
@@ -74,3 +99,4 @@ Now that you've have seen what is in a package, why not create a package:
 
 * [Create a Grasshopper package](../pushing-a-package-to-the-server) of your plugin.
 * [Create a Rhino package](../pushing-a-package-to-the-server) for everyone.
+* [Create a multi-targeted package](../creating-a-multi-targeted-rhino-plugin-package) for Rhino 8.
