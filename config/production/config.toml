@@ -1,5 +1,3 @@
 # production overrides
 # https://gohugo.io/getting-started/configuration/
-disableLanguages = ["cs", "cn", "de", "fr", "it", "jp", "kr", "pl", "pt", "ru", "tw"]
-
 baseURL = "https://developer.rhino3d.com/"
