@@ -5,9 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Hugo: Serve",
+            "name": "Hugo: Serve English",
             "type": "pwa-chrome",
-            "preLaunchTask": "hugo serve",
+            "preLaunchTask": "hugo serve english",
             "postDebugTask": "hugo terminate",
             "request": "attach",
             "url": "http://localhost:1313",
