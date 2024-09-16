@@ -18,6 +18,19 @@
             },
         },
         {
+            "name": "Hugo: Serve All Languages",
+            "type": "pwa-chrome",
+            "preLaunchTask": "hugo serve all languages",
+            "postDebugTask": "hugo terminate",
+            "request": "attach",
+            "url": "http://localhost:1313",
+            "presentation": {
+                "hidden": false,
+                "group": "Hugo",
+                "order": 3
+            }
+        },
+        {
             "name": "Hugo: Preview Current",
             "type": "pwa-chrome",
             "preLaunchTask": "hugo preview current",
