@@ -8,19 +8,10 @@
 {{- $.Scratch.Set "month_trans" ($.Scratch.Get "month") -}}
 {{- $.Scratch.Set "weekday_trans" ($.Scratch.Get "weekday") -}}
 {{- else -}} <!-- but we default to the last time the file changed in git -->
-{{- $.Scratch.Set "weekday" (dateFormat "Monday" .Page.Lastmod) -}} 
+{{- $.Scratch.Set "weekday_trans" (dateFormat "Monday" .Page.Lastmod) -}} 
 {{- $.Scratch.Set "day" .Page.Lastmod.Day -}}
-{{- $.Scratch.Set "month" (string .Page.Lastmod.Month) -}}
+{{- $.Scratch.Set "month_trans" (string .Page.Lastmod.Month) -}}
 {{- $.Scratch.Set "year" .Page.Lastmod.Year -}}
-{{- end -}}
-
-{{- if or (eq ($.Scratch.Get "lang") "cn") (eq ($.Scratch.Get "lang") "jp") (eq ($.Scratch.Get "lang") "kr") (eq ($.Scratch.Get "lang") "tw") -}}
-{{- with index .Site.Data.months .Site.Language.Lang -}}
-{{- $.Scratch.Set "month_trans" (index .months ($.Scratch.Get "month" )) -}}
-{{- end -}}
-{{- with index .Site.Data.weekdays .Site.Language.Lang -}}
-{{- $.Scratch.Set "weekday_trans" (index .weekdays ($.Scratch.Get "weekday" )) -}}
-{{- end -}}
 {{- end -}}
 
 {{- if eq ($.Scratch.Get "lang") "cn" -}}
