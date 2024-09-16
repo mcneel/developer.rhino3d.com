@@ -1,13 +1,7 @@
 +++
 title = ""
 description = ""
-type = "guides"
-categories = ["Scripting"]
-keywords = [ "", "" ]
-languages = [ "C#", "Python", "CPython", "IronPython", "VB" ]
 authors = ["ehsan"]
-sdk = [ "RhinoCommon" ]
-weight = 4
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
@@ -19,3 +13,8 @@ toc = true
 toc_type = "single"
 block_webcrawlers = false
 +++
+
+
+### Local Library Cache
+
+### Published Library Cache

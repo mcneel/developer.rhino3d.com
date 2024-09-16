@@ -24,6 +24,7 @@ since = 8
 
 <style>
     .flex-container>div.column { min-width: 0 }
+    .flex-container p { margin: 0px }
 </style>
 
 
@@ -59,14 +60,14 @@ since = 8
 
 ### Python Scripting
 - <!-- [Python Scripting](/guides/scripting/scripting-python) --> Scripting: Python {{% comingsoon-label %}}
-- [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
+- {{< dev-topic "Grasshopper Scripting: Python" "/guides/scripting/scripting-gh-python" >}}
 
 ### C# Scripting
 - <!-- [C# Scripting](/guides/scripting/scripting-csharp) --> Scripting: C# {{% comingsoon-label %}}
-- [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
+- {{< dev-topic "Grasshopper Scripting: C#" "/guides/scripting/scripting-gh-csharp" >}}
 
 ### Editor Features
-- <!-- [Editing Features](/guides/scripting/editor-editing) --> Editing Features {{% comingsoon-label %}}
+- {{< dev-topic "Editing Features" "/guides/scripting/editor-editing" >}}
 - <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
 - <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
 - <!-- [Terminal](/guides/scripting/editor-terminal) --> Terminal {{% comingsoon-label %}}
@@ -75,8 +76,8 @@ since = 8
 - <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
 - <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
 - <!-- [Help](/guides/scripting/editor-help) --> Help {{% comingsoon-label %}}
-- [Configurations](/guides/scripting/editor-configs)
-- <!-- [Logs](/guides/scripting/editor-logs) --> Logs {{% comingsoon-label %}}
+- {{< dev-topic "Options" "/guides/scripting/editor-configs" >}}
+- {{< dev-topic "Logs" "/guides/scripting/editor-logs" >}}
 
 {{< /column >}}
 
@@ -84,18 +85,18 @@ since = 8
 
 ### Publishing
 
-- <!-- [Creating Rhino Projects](/guides/scripting/projects-create) --> Creating Rhino Projects {{% comingsoon-label %}}
-- <!-- [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) --> Creating Rhino and Grasshopper Plugins {{% comingsoon-label %}}
+- {{< dev-topic "Creating Rhino Projects" "/guides/scripting/projects-create" >}}
+- {{< dev-topic "Creating Rhino and Grasshopper Plugins" "/guides/scripting/projects-publish" >}}
 
 ### Advanced
 
-- [Language Initialization](/guides/scripting/advanced-langinit)
+- {{< dev-topic "Language Initialization" "/guides/scripting/advanced-langinit" >}}
 - <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
-- [Python Path Files](/guides/scripting/advanced-pthfiles)
+- {{< dev-topic "Python Path Files" "/guides/scripting/advanced-pthfiles" >}}
 - <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
-- <!-- [Async Execution](/guides/scripting/advanced-async) --> Async Execution {{% comingsoon-label %}}
+- {{< dev-topic "Asynchronous Execution" "/guides/scripting/advanced-async" >}}
 - <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
-- <!-- [RhinoCode Command Line Interface](/guides/scripting/advanced-cli) --> RhinoCode Command Line Interface {{% comingsoon-label %}}
+- {{< dev-topic "RhinoCode Command Line Interface" "/guides/scripting/advanced-cli" >}}
 <!-- [RhinoCode API](/guides/scripting/advanced-core-api) -->
 <!-- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api) -->
 
