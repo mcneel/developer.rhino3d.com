@@ -149,7 +149,7 @@ If you cannot see the *.vscode* folder, toggle hidden folders in Finder: click o
 
 ![Solution Anatomy](/images/your-first-plugin-mac-06.png)
 
-1. The *HelloRhinoCommon* solution (*.sln*) contians all of our projects. This was created for us by the `dotnet` command we ran earlier.
+1. The *HelloRhinoCommon* solution (*.sln*) contains all of our projects. This was created for us by the `dotnet` command we ran earlier.
 1. The *HelloRhinoCommon* project (*.csproj*) has the same name as its parent solution. This is the project that was created for us by `dotnet` command we ran earlier.
 1. *Dependencies*: Just as with most projects, you will be referencing other libraries. The *RhinoCommon Plugin* template added the necessary references to create a basic RhinoCommon plugin.
 1. *EmbeddedResources*: This is where you would place any image assets you want to ship with your plugin. The *RhinoCommon Plugin* template added an icon file with a default boilerplate icon.
