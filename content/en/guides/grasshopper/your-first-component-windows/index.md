@@ -102,37 +102,37 @@ protected override void RegisterInputParams(GH_Component.GH_InputParamManager pM
 protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
 ```
 
-1. The actual work done by the component is to be found in the `SolveInstance` method...
+5. The actual work done by the component is to be found in the `SolveInstance` method...
 
 ```cs
 protected override void SolveInstance(IGH_DataAccess DA)
 ```
 
-1. As you can see, this is where the action happens. This boilerplate component creates a spiral on a plane. Just to make sure everything is working, let's change the default plane on which the spiral is constructed. On line[^1] 67, in `SolveInstance`, notice that an XY plane is constructed...
+6. As you can see, this is where the action happens. This boilerplate component creates a spiral on a plane. Just to make sure everything is working, let's change the default plane on which the spiral is constructed. On line[^1] 67, in `SolveInstance`, notice that an XY plane is constructed...
 
 ```cs
 Plane plane = Plane.WorldXY;
 ```
 
-1. Further down in the `SolveInstance` method, you will notice that the input data is being fed into this plane...
+7. Further down in the `SolveInstance` method, you will notice that the input data is being fed into this plane...
 
 ```cs
 if (!DA.GetData(0, ref plane)) return;
 ```
 
-1. Go back to the `RegisterInputParams`, and find the line where the _Plane_ input is registered. The last argument being fed to the method - `Plane.WorldXY` - is the default value of the input...
+8. Go back to the `RegisterInputParams`, and find the line where the _Plane_ input is registered. The last argument being fed to the method - `Plane.WorldXY` - is the default value of the input...
 
 ```cs
 pManager.AddPlaneParameter("Plane", "P", "Base plane for spiral", GH_ParamAccess.item, Plane.WorldXY);
 ```
 
-1. Change the default value of the _Plane_ input to be `Plane.WorldYZ` ...
+9. Change the default value of the _Plane_ input to be `Plane.WorldYZ` ...
 
 ```cs
 pManager.AddPlaneParameter("Plane", "P", "Base plane for spiral", GH_ParamAccess.item, Plane.WorldYZ);
 ```
 
-1. Now let's examine what happens when inputs are given to this component...
+10. Now let's examine what happens when inputs are given to this component...
 
 ### Debugging
 
