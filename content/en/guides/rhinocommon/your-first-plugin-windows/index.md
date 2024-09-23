@@ -166,11 +166,8 @@ namespace HelloRhinoCommon
 
 ## Next Steps
 
-If you want to make your new Plugin Cross Platform, check out the [Your First Plugin (Cross Platform)](/guides/rhinocommon/your-first-plugin-crossplatform) guide.
-
 If you'd like to push your exciting new plugin to Yak so that everyone can use it, check out the [Creating a Yak Package](/guides/yak/creating-a-rhino-plugin-package/) guide.
 
 ## Related topics
 
 - [Installing Tools (Windows)](/guides/rhinocommon/installing-tools-windows)
-- [Your First Plugin (Cross-Platform)](/guides/rhinocommon/your-first-plugin-crossplatform)

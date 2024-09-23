@@ -25,8 +25,14 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
+block_webcrawlers = true
 
 +++
+
+{{< call-out bug "OBSOLETE" >}}
+This guide is out of date and should not be used.
+View the [Your First Plugin (Windows)](/guides/rhinocommon/your-first-plugin-windows) or [Your First Plugin (Mac)](/guides/rhinocommon/your-first-plugin-mac) guides, they are both cross-platform by default.
+{{< /call-out >}}
 
 
 It is presumed you already have *all* the necessary tools installed and are ready to go.  If you are not there yet, see both [Installing Tools (Windows)](/guides/rhinocommon/installing-tools-windows) and [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac).  It is also helpful to have read and understood [Your First Plugin (Windows)](/guides/rhinocommon/your-first-plugin-windows) and [Your First Plugin (Mac)](/guides/rhinocommon/your-first-plugin-mac).
