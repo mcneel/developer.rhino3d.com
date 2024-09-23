@@ -37,7 +37,7 @@ We will use Visual Studio Code and the dotnet Rhino Grasshopper template to crea
 
 If you are familiar with Visual Studio Code, these step-by-step instructions may be overly detailed for you. The executive summary: create a new Solution using the Grasshopper Component dotnet template, build and run, and then make a change.
 
-We are presuming you have never used Xamarin Studio before, so we'll go through this one step at a time.
+We are presuming you have never used Visual Studio Code before, so we'll go through this one step at a time.
 
 ### Download the required template
 
@@ -81,7 +81,7 @@ To add them to your project run the command **dotnet add package System.Drawing.
 
 ![Solution Anatomy](/images/your-first-component-mac-03.png)
 
-5. Press Stop Debugging _(⇧ F5)_ , in Visual Studio Code, signified by the Red Square in the debug toolbar. This stops the debugging session. Now let's n take a look at the Plugin Anatomy.
+5. Press Stop Debugging _(⇧ F5)_, in Visual Studio Code, signified by the Red Square in the debug toolbar. This stops the debugging session. Now let's n take a look at the Plugin Anatomy.
 
 ### Component Anatomy
 
@@ -98,17 +98,17 @@ Use the **Solution Explorer** to expand the **Solution** (_.sln_) so that it loo
 
 ### Debugging
 
-1. Add a semicolon to line 75 of _HelloGrasshopperComponent.cs_, and set a breakpoint on it. You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
+1. Add a breakpoint to line 75 of _HelloGrasshopperComponent.cs_. You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
    ![Set a breakpoint](/images/your-first-component-mac-05.png)
 1. _Run and Debug_. our project. The breakpoint will become an empty circle, this is because our code has not been loaded yet. Once we hit the breakpoint once and continue, the code will be loaded until we end our Debug session.
    ![Set a breakpoint](/images/your-first-component-mac-06.png)
 1. Rhino and Grasshopper should open, if Grasshopper does not open, click "New Model" and run the _Grasshopper_ command.
-1. Place our sample component _HelloGrasshopperComponent_ and as soon as you do, you should hit your breakpoint and rhino will pause
+1. Place our sample component _HelloGrasshopperComponent_ and as soon as you do, you should hit your breakpoint and rhino/Grasshopper will pause (You may need to drag the Grasshopper window out of the way to see Visual Studio Code)
    ![Hit a breakpoint](/images/your-first-component-mac-07.png)
 1. With Rhino/Grasshopper paused, in _Visual Studio Code_ we will see _Locals_ under _Variables_. You can inspect all of the values for the variables in your component.
    ![Locals panel](/images/your-first-component-mac-08.png)
 1. Let's Continue Execution in Rhino and Grasshopper by pressing the Green _Play_ button in the Debug Bar
-1. Control is passed back to _Rhino / Grasshopper_ and your command finishes. _Quit_ Rhino and Grasshopper or _Stop_ the debugging session.
+1. Control is passed back to _Rhino / Grasshopper_ and your command finishes. Now _Stop_ _(⇧ F5)_ the debugging session as before.
 1. **Remove** the breakpoint you created above by clicking on it in the gutter.
 
 **Congratulations!** You have just built your first Grasshopper component for Rhino for Mac. **Now what?**

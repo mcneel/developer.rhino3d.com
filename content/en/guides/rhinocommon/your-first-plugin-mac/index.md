@@ -69,7 +69,7 @@ We are presuming you are new to Visual Studio Code, so we'll go through this one
 ![Command Autocompletes](/images/your-first-plugin-mac-04.png)
 
 4. The _HelloRhinoCommonCommand_ command lets us draw a line, and then prints out a message
-1. Press the red stop button in Visual Studio Code. This stops the session. Go back to _Visual Studio Code_. Let's take a look at the Plugin Anatomy.
+1. Press Stop Debugging _(⇧ F5)_, in Visual Studio Code, signified by the Red Square in the debug toolbar. This stops the debugging session. Go back to _Visual Studio Code_. Let's take a look at the Plugin Anatomy.
 
 ### Plugin Anatomy
 
