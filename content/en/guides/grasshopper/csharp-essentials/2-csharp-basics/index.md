@@ -76,10 +76,6 @@ Let us dissect all the different parts of the above statement:
 <td>Used for assignment and it means the value that follows will be stored in the variable x</td>
 </tr>
 <tr>
-<td><b>=</b></td>
-<td>Compute the distance between the two points, and add geometry if necessary. This function returns True if the deviation is less than one unit, False if it is more than one unit and NULL if something went wrong.</td>
-</tr>
-<tr>
 <td><b>10</b></td>
 <td>The initial value stored in the <b>x</b> variable</td>
 </tr>
@@ -103,11 +99,6 @@ Operators are used to perform arithmetic, logical, and other operations. Operato
   </tr>
   <tr>
     <td>Arithmetic </n>Operators</td>
-    <td>^</td>
-    <td>Raises a number to the power of another number</td>
-  </tr>
-  <tr>
-    <td> </td>
     <td>*</td>
     <td>Multiplies two numbers</td>
   </tr>

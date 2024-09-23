@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "hugo serve",
+            "label": "hugo serve english",
             "type": "process",
             "command": "./Launch",
             "presentation": {
@@ -64,6 +64,34 @@
                 "cwd": "${workspaceFolder}/themes/rhino3d.com-theme/script/Launch"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "hugo serve all languages",
+            "type": "process",
+            "dependsOn": [
+                "hugo-verify-all-languages"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true,
+                "group": "Hugo"
+            },
+            "osx": {
+                "command": "./hugo"
+            },
+            "windows": {
+                "command": ".\\hugo.exe"
+            },
+            "args": [
+                "serve",
+                "--renderToDisk",
+                "-e",
+                "production"
+            ]
         },
         {
             "label": "hugo terminate",

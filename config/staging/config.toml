@@ -1,6 +1,6 @@
 # staging overrides
 # https://gohugo.io/getting-started/configuration/
-disableLanguages = ["cn", "de", "es", "fr", "it", "jp", "kr", "pl", "pt", "ru", "tw"]
+disableLanguages = ["cs", "cn", "de", "es", "fr", "it", "jp", "kr", "pl", "pt", "ru", "tw"]
 
 [params]
     forestryBaseURL = "https://app.forestry.io/sites/9bs6ghwu05ji2w/#/pages/content-en" #TODO: Change this.
