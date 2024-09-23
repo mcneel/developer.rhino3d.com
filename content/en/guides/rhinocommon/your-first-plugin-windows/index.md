@@ -1,6 +1,6 @@
 +++
 aliases = ["/5/guides/rhinocommon/your-first-plugin-windows/", "/6/guides/rhinocommon/your-first-plugin-windows/", "/7/guides/rhinocommon/your-first-plugin-windows/", "/wip/guides/rhinocommon/your-first-plugin-windows/"]
-authors = [ "dan" ]
+authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first plugin for Rhino for Windows using RhinoCommon and Visual Studio."
 keywords = [ "first", "RhinoCommon", "Plugin" ]
