@@ -156,6 +156,8 @@ pManager.AddPlaneParameter("Plane", "P", "Base plane for spiral", GH_ParamAccess
 
 You've built a component library from boilerplate code, but what about putting together a new simple component "from scratch" and adding it to your project? (Component libraries are made up of multiple components after all). Next, check out the [Simple Component](/guides/grasshopper/simple-component) guide.
 
+Try debugging your new grasshopper plugin on [Mac](/guides/grasshopper/your-first-component-mac/), all plugins using the new templates are now cross-platform by default.
+
 ## Related topics
 
 - [Installing Tools (Windows)](/guides/grasshopper/installing-tools-windows)

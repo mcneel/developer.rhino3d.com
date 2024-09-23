@@ -140,6 +140,8 @@ _Congratulations!_ You have just built your first RhinoCommon plugin for Rhino f
 
 If you'd like to push your exciting new plugin to Yak so that everyone can use it, check out the [Creating a Yak Package](/guides/yak/creating-a-rhino-plugin-package/) guide.
 
+Try debugging your new plugin on [Windows](/guides/rhinocommon/your-first-plugin-windows/), all plugins using the new templates are now cross-platform by default.
+
 ## Related topics
 
 - [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac)

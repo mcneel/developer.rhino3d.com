@@ -168,6 +168,8 @@ namespace HelloRhinoCommon
 
 If you'd like to push your exciting new plugin to Yak so that everyone can use it, check out the [Creating a Yak Package](/guides/yak/creating-a-rhino-plugin-package/) guide.
 
+Try debugging your new plugin on [Mac](/guides/rhinocommon/your-first-plugin-mac/), all plugins using the new templates are now cross-platform by default.
+
 ## Related topics
 
 - [Installing Tools (Windows)](/guides/rhinocommon/installing-tools-windows)
