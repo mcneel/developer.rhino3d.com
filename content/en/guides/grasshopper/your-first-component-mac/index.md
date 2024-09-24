@@ -115,6 +115,10 @@ Use the **Solution Explorer** to expand the **Solution** (_.sln_) so that it loo
 
 ## Next Steps
 
+You've built a component library from boilerplate code, but what about putting together a new simple component "from scratch" and adding it to your project? (Component libraries are made up of multiple components after all). Next, check out the [Simple Component](/guides/grasshopper/simple-component) guide.
+
+Try debugging your new grasshopper plugin on [Windows](/guides/grasshopper/your-first-component-windows/), all plugins using the new templates are now cross-platform by default.
+
 ### Adding components
 
 A single gha can contain more than one [GH_Component](https://mcneel.github.io/grasshopper-api-docs/api/grasshopper/html/T_Grasshopper_Kernel_GH_Component.htm) derived class (and commonly does). Dotnet has support for adding more custom components to your project.

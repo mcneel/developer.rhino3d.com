@@ -138,12 +138,11 @@ _Congratulations!_ You have just built your first RhinoCommon plugin for Rhino f
 
 ## Next Steps
 
-The above guide will also work perfectly well on Windows, if you need a more complex cross-platform plugin, check out the [Your First Plugin (Cross Platform)](/guides/rhinocommon/your-first-plugin-crossplatform) guide.
-
 If you'd like to push your exciting new plugin to Yak so that everyone can use it, check out the [Creating a Yak Package](/guides/yak/creating-a-rhino-plugin-package/) guide.
+
+Try debugging your new plugin on [Windows](/guides/rhinocommon/your-first-plugin-windows/), all plugins using the new templates are now cross-platform by default.
 
 ## Related topics
 
 - [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac)
-- [Your First Plugin (Cross-Platform)](/guides/rhinocommon/your-first-plugin-crossplatform)
 - [Plugin Installers (Mac)](/guides/rhinocommon/plugin-installers-mac)
