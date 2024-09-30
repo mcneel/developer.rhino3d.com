@@ -8,7 +8,7 @@
 {{ $clean := `^[\s#]+|\s+$`}}
 
 {{/* Fetching english version of the page and making a list of English headings */}}
-{{ with $enPage := $.Page.Sites.First.GetPage ($.Page.File.Path)}}
+{{ with $enPage := $.Page.Sites.Default.GetPage ($.Page.File.Path)}}
     {{/*  {{$enPage.Language}}  */}}
     {{ range (findRE $find $enPage.RawContent)}}
         {{ $enHeading := anchorize (replaceRE $clean "" . )}}

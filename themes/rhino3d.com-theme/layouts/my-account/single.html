@@ -256,7 +256,7 @@
 </script>
   
 {{ $sass := resources.Get "/scss/_page/_maillist.scss" }}
-{{ $style := $sass | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $style := $sass | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 
 {{ end }}
