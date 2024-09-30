@@ -2,27 +2,38 @@
 # In local "development" builds, baseURL is always switched to localhost
 # For "production" of the site, AWS Amplify deploys with "environment" - see the production/config.toml for overrides
 baseURL = "http://developer.rhino3d.com" #TODO: We mnight need to switch this...
-#baseURL = "https://source.rhino3d.com"
 title = "Rhino Developer Docs"
-defaultContentLanguage = "en"
-assetDir = "static"
-defaultContentLanguageInSubdir = "true"
-timeout = 60000
+# assetDir = "static"
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = true
+timeout = '60s'
 theme = "rhino3d.com-theme"
-metaDataFormat = "toml"
-disable404 = "true" # we custom generate our 404 page based on a template for localization purposes
-enableGitInfo = "true"
+enableGitInfo = true
 disableKinds = ["RSS"]
-disablePathToLower = true
-buildFuture = "true"
+buildFuture = true
+
+[[module.mounts]]
+source = 'assets'
+target = 'assets'
+
+[[module.mounts]]
+source = 'static'
+target = 'assets'
+
 
 [security.funcs]
     getenv = ['^HUGO_', 'MCNEEL_REGION']
 
+[server]
+[[server.headers]]
+  for = '/**.3dm'
+  [server.headers.values]
+    Access-Control-Allow-Origin= '' # use for allowing access to 3rd party viewer (rview)
+
 [params]
   nwo = "mcneel/developer.rhino3d.com" # github repository (name with owner)
   latestRhinoVersion = 8
-  supportedPlatforms = "Windows and macOS"
+  supportedPlatforms = "Windows and macOS" # used for unfurls
   siteRootURL = "/" # used in navigation banner
   rhinoURL = "https://www.rhino3d.com"
   rhinoURLNewSource = "https://www.rhino3d.com/new-source"
@@ -32,17 +43,17 @@ buildFuture = "true"
   siteNavLogo = "/images/rhinodevlogo.png"
   logoTitleTextPrimary = "Rhino"
   logoTitleTextSecondary = "Developer"
-  protectedMark = ""
+  protectedMark = "®"
   discourseURL = "https://discourse.mcneel.com"
-  forestryBaseURL = "https://app.forestry.io/sites/9bs6ghwu05ji2w/#/pages/content" # deprecated; can be removed soon
+  forestryBaseURL = "https://app.forestry.io/sites/9bs6ghwu05ji2w/#/pages/content"  # deprecated; can be removed soon
   facebookURL = "https://www.facebook.com/McNeelRhinoceros/"
   twitterURL = "https://twitter.com/bobmcneel"
   linkedinURL = "https://www.linkedin.com/groups/75313/"
-  youtubeURL = "https://www.youtube.com/channel/UCFk2HeZDZprti9Sm5LWeMPA"
+  youtubeURL = "https://www.youtube.com/user/RhinoGuide/videos"
   vimeoURL = "https://vimeo.com/rhino"
   bloggerURL = "http://blog.rhino3d.com/"
   food4rhinoURL = "https://www.food4rhino.com"
-[params.tableOfContents]
+  [params.tableOfContents]
     endLevel = 3
     startLevel = 2
 
@@ -50,53 +61,24 @@ buildFuture = "true"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-  [markup.tableOfContents]
-    endLevel = 3
-    ordered = false
-    startLevel = 2
   [markup.highlight]
     anchorLineNos = true
-    codeFences = true
     guessSyntax = true
-    hl_Lines = ""
-    lineAnchors = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true    
-    noClasses = true
     style = "vs"
-    tabWidth = 4
-
-# 2020-03-19, Scott Davidson. Loads the Google fonts in the Head.html
-googlefonts = [
-    "Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
-    "Roboto+Mono:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic"
-]
 
 # https://gohugo.io/templates/sitemap-template/
 [sitemap]
   changefreq = "daily"
 
-# Permalinks config (https://gohugo.io/content-management/urls/#permalinks)
-[Permalinks]
-  # posts = ":year/:month/:filename"
-  posts = ":filename"
-
-[frontmatter]
-  date = ["date", "publishDate", "lastmod"]
-  lastmod = [":git", "lastmod", "date", "publishDate"]
-  publishDate = ["publishDate", "date"]
-  expiryDate = ["expiryDate"]
-
 [languages]
   [languages.en]
-    title = "Rhino Developer Docs"
-    description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
-    author = "Robert McNeel & Associates"
-    weight = 1
-    languageName = "English"
     contentDir = "content/en"
+    languageName = "English"
+    title = "Rhino Developer Docs"
+    weight = 1
     [languages.en.params]
+      description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
+      author = "Robert McNeel & Associates"
       copyright = "Copyright © 1993-{year} Robert McNeel & Associates. All Rights Reserved."
       siteNav = "original-site-navigation"
       imagesDir = "images"
@@ -150,13 +132,13 @@ googlefonts = [
         title = ""
         weight = 6
   [languages.cn]
-    title = "Rhino Developer Docs"
-    description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
-    author = "Robert McNeel & Associates"
-    weight = 1
-    languageName = "中文简体"
     contentDir = "content/cn"
+    languageName = "中文简体"
+    title = "Rhino Developer Docs"
+    weight = 1
     [languages.cn.params]
+      description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
+      author = "Robert McNeel & Associates"
       copyright = "Copyright © 1993-{year} Robert McNeel & Associates. All Rights Reserved."
       siteNav = "original-site-navigation"
       imagesDir = "images"
@@ -210,13 +192,13 @@ googlefonts = [
         title = ""
         weight = 6
   [languages.de]
-    title = "Rhino Developer Docs"
-    description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
-    author = "Robert McNeel & Associates"
-    weight = 1
-    languageName = "German"
     contentDir = "content/de"
+    languageName = "German"
+    title = "Rhino Developer Docs"
+    weight = 1
     [languages.de.params]
+      description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
+      author = "Robert McNeel & Associates"
       copyright = "Copyright © 1993-{year} Robert McNeel & Associates. All Rights Reserved."
       siteNav = "original-site-navigation"
       imagesDir = "images"
@@ -270,13 +252,13 @@ googlefonts = [
         title = ""
         weight = 6
   [languages.es]
-    title = "Rhinoceros - Herramientas de modelado para diseñadores"
-    description = "Rhino es un modelador 3D que se utiliza para crear, editar, analizar, documentar, renderizar, animar y traducir curvas NURBS*, superficies y sólidos, nubes de puntos, superficies SubD y mallas poligonales. No hay límite de complejidad, grado o tamaño, a parte del que tenga su hardware."
-    author = "Robert McNeel & Associates"
-    weight = 4
-    languageName = "Español"
     contentDir = "content/es"
+    languageName = "Español"
+    title = "Rhinoceros - Herramientas de modelado para diseñadores"
+    weight = 4
     [languages.es.params]
+      description = "Rhino es un modelador 3D que se utiliza para crear, editar, analizar, documentar, renderizar, animar y traducir curvas NURBS*, superficies y sólidos, nubes de puntos, superficies SubD y mallas poligonales. No hay límite de complejidad, grado o tamaño, a parte del que tenga su hardware."
+      author = "Robert McNeel & Associates"
       copyright = "Copyright © 1993-{year} Robert McNeel & Associates (TLM, Inc.). Todos los derechos reservados."
       #rhinoURL = "https://www.rhino3d.com/es"
       imagesDir = "images"
@@ -331,13 +313,13 @@ googlefonts = [
         title = ""
         weight = 6
   [languages.fr]
-    title = "Rhino Developer Docs"
-    description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
-    author = "Robert McNeel & Associates"
-    weight = 1
-    languageName = "Français"
     contentDir = "content/fr"
+    languageName = "Français"
+    title = "Rhino Developer Docs"
+    weight = 1
     [languages.fr.params]
+      description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
+      author = "Robert McNeel & Associates"
       copyright = "Copyright © 1993-{year} Robert McNeel & Associates. All Rights Reserved."
       siteNav = "original-site-navigation"
       imagesDir = "images"
@@ -391,13 +373,13 @@ googlefonts = [
         title = ""
         weight = 6
   [languages.it]
-    title = "Rhino Developer Docs"
-    description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
-    author = "Robert McNeel & Associates"
-    weight = 1
-    languageName = "Italiano"
     contentDir = "content/it"
+    languageName = "Italiano"
+    title = "Rhino Developer Docs"
+    weight = 1
     [languages.it.params]
+      description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
+      author = "Robert McNeel & Associates"
       copyright = "Copyright © 1993-{year} Robert McNeel & Associates. All Rights Reserved."
       siteNav = "original-site-navigation"
       imagesDir = "images"
@@ -451,13 +433,13 @@ googlefonts = [
         title = ""
         weight = 6
   [languages.jp]
-    title = "Rhino Developer Docs"
-    description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
-    author = "Robert McNeel & Associates"
-    weight = 1
-    languageName = "日本語"
     contentDir = "content/jp"
+    languageName = "日本語"
+    title = "Rhino Developer Docs"
+    weight = 1
     [languages.jp.params]
+      description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
+      author = "Robert McNeel & Associates"
       copyright = "Copyright © 1993-{year} Robert McNeel & Associates. All Rights Reserved."
       siteNav = "original-site-navigation"
       imagesDir = "images"
@@ -511,13 +493,13 @@ googlefonts = [
         title = ""
         weight = 6
   [languages.kr]
-    title = "Rhino Developer Docs"
-    description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
-    author = "Robert McNeel & Associates"
-    weight = 1
-    languageName = "한국어"
     contentDir = "content/kr"
+    languageName = "한국어"
+    title = "Rhino Developer Docs"
+    weight = 1
     [languages.kr.params]
+      description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
+      author = "Robert McNeel & Associates"
       copyright = "Copyright © 1993-{year} Robert McNeel & Associates. All Rights Reserved."
       siteNav = "original-site-navigation"
       imagesDir = "images"
@@ -571,13 +553,13 @@ googlefonts = [
         title = ""
         weight = 6
   [languages.tw]
-    title = "Rhino Developer Docs"
-    description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
-    author = "Robert McNeel & Associates"
-    weight = 1
-    languageName = "中文繁體"
     contentDir = "content/tw"
+    languageName = "中文繁體"
+    title = "Rhino Developer Docs"
+    weight = 1
     [languages.tw.params]
+      description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
+      author = "Robert McNeel & Associates"
       copyright = "Copyright © 1993-{year} Robert McNeel & Associates. All Rights Reserved."
       siteNav = "original-site-navigation"
       imagesDir = "images"
