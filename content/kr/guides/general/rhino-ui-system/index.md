@@ -59,13 +59,13 @@ toc_type = "single"
 
 Rhino를 닫을 때 컨테이너 정의, 표시 여부, 위치, 크기가 저장되고 Rhino를 다시 시작하면 복원됩니다.  이 정보는 창 레이아웃에 저장되고 이를 통해 공유될 수 있습니다. 
 
-컨테이너는 Rhino의 **[Containers](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/containers.htm#(null))** 명령을 사용하여 관리할 수 있습니다. 
+컨테이너는 Rhino의 **[Containers](https://docs.mcneel.com/rhino/8/help/ko-kr/index.htm#commands/containers.htm#(null))** 명령을 사용하여 관리할 수 있습니다. 
 
 ### 창 레이아웃
 
 창 레이아웃은 컨테이너 정의, 표시 여부 상태, 위치, 크기의 스냅샷입니다.  창 레이아웃을 복원하면 현재 UI가 재구성되어 레이아웃이 만들어졌을 때처럼 표시됩니다.  복원된 컨테이너에는 창 레이아웃이 만들어졌을 때의 순서대로 탭이 표시되며, 같은 위치와 크기로 표시됩니다.  도구모음 탭은 도구모음의 현재 정의를 참조합니다. 도구모음이 더 이상 존재하지 않으면, 탭이 표시되지 않습니다. 
 
-창 레이아웃은 Rhino의 **[WindowLayout](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/windowlayout.htm#(null))** 명령을 사용하여 관리할 수 있습니다. 
+창 레이아웃은 Rhino의 **[WindowLayout](https://docs.mcneel.com/rhino/8/help/ko-kr/index.htm#commands/windowlayout.htm#(null))** 명령을 사용하여 관리할 수 있습니다. 
 
 #### 창 레이아웃 내보내기 및 가져오기
 
@@ -73,7 +73,7 @@ Rhino를 닫을 때 컨테이너 정의, 표시 여부, 위치, 크기가 저장
 
 RHW 파일을 가져오면, 내장된 사용자 지정 RUI 파일이 현재 열려 있는지 확인합니다. 해당 파일이 열려있지 않다면, 사용자 지정 파일이 추출되어 열립니다.  사용자 지정 목록이 추출되거나 확인되면, RHW 파일에 저장된 RUI 변경 사항이 현재 RUI 파일에 적용됩니다.  존재하지 않는 플러그인 파일로 정의된 도구모음과 연관된 변경 정보는 무시됩니다. 일단 RUI 데이터가 복원되면, RHW 파일에 저장된 정의와 일치하도록 컨테이너가 만들어지거나 수정됩니다. 설치되지 않은 플러그인의 도구모음만 참조하는 컨테이너는 무시됩니다.  가져온 레이아웃은 창 레이아웃 목록에 나타나며 나중에 복원할 수 있습니다. 
 
-창 레이아웃은 Rhino의 **[WindowLayout](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/windowlayout.htm#(null))** 명령으로 내보내거나 가져올 수 있습니다. 
+창 레이아웃은 Rhino의 **[WindowLayout](https://docs.mcneel.com/rhino/8/help/ko-kr/index.htm#commands/windowlayout.htm#(null))** 명령으로 내보내거나 가져올 수 있습니다. 
 
 ### RUI 파일
 
@@ -81,7 +81,7 @@ Rhino 8에서 이제 RUI 파일은 도구모음, 매크로, 이미지의 단순�
 
 RUI 파일에 정의된 도구모음 그룹은 레거시 및 플러그인 RUI 파일을 지원하기 위해 로드될 때 컨테이너로 변환되며, 플러그인 RUI 파일이 플러그인과 연관된 컨테이너를 만들 수 있게 하는 방법을 제공합니다.
 
-링크된 RUI 파일은 Rhino의 **[옵션 > 화면표시 > 도구모음](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#options/appearance_toolbars.htm#(null))** 옵션을 사용하여 관리할 수 있습니다. 
+링크된 RUI 파일은 Rhino의 **[옵션 > 화면표시 > 도구모음](https://docs.mcneel.com/rhino/8/help/ko-kr/index.htm#options/appearance_toolbars.htm#(null))** 옵션을 사용하여 관리할 수 있습니다. 
 
 ### 도구모음
 
@@ -95,7 +95,7 @@ RUI 파일에 정의된 도구모음 그룹은 레거시 및 플러그인 RUI �
 
 도구모음은 도구모음 단추의 모음이며, 여러 컨테이너에서 참조할 수 있습니다.  다른 도구모음에서 단추를 끌어 놓거나 새 단추 마법사를 사용하여 수정할 수 있습니다.
 
-도구모음은 Rhino의 **[Toolbar](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/toolbar.htm#(null))** 명령을 사용하여 관리할 수 있습니다.
+도구모음은 Rhino의 **[Toolbar](https://docs.mcneel.com/rhino/8/help/ko-kr/index.htm#commands/toolbar.htm#(null))** 명령을 사용하여 관리할 수 있습니다.
 
 #### 도구모음 단추
 
@@ -110,7 +110,7 @@ Rhino 메뉴 시스템은 RUI 파일에 정의된 메뉴 개체를 사용하여 
 - 메뉴 항목 위에 마우스를 올리면 상태 표시줄에 표시되는 도움말 텍스트.
 - 메뉴 항목을 클릭할 때 실행되는 명령 스크립트.
 
-메뉴는 Rhino의 **[Menus](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#toolbarsandmenus/workspace_editor.htm#(null))** 명령을 사용하여 관리할 수 있습니다. 
+메뉴는 Rhino의 **[Menus](https://docs.mcneel.com/rhino/8/help/ko-kr/index.htm#toolbarsandmenus/workspace_editor.htm#(null))** 명령을 사용하여 관리할 수 있습니다. 
 
 #### 매크로
 
@@ -124,7 +124,7 @@ Rhino 메뉴 시스템은 RUI 파일에 정의된 메뉴 개체를 사용하여 
 - 메뉴 텍스트
 - 도움말 텍스트
 
-매크로는 Rhino의 **[Macros](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/macros.htm#(null))** 명령으로 관리할 수 있습니다.
+매크로는 Rhino의 **[Macros](https://docs.mcneel.com/rhino/8/help/ko-kr/index.htm#commands/macros.htm#(null))** 명령으로 관리할 수 있습니다.
 
 ### 패널
 
@@ -182,7 +182,7 @@ RUI 파일은 위에 언급된 항목의 모음이며, 쓰기 가능한 디렉�
 
 Rhino 플러그인은 플러그인과 같은 이름의 RUI 파일을 설치할 수 있으며, 해당 파일은 쓰기 가능한 위치에 복사되어 Rhino가 시작될 때 자동으로 열립니다. 플러그인은 참조될 때까지 로드되지 않아, 이를 통해 플러그인은 로드되지 않고도 Rhino 인터페이스를 확장할 수 있습니다. 
 
-참고로, 위의 모든 기능은 Rhino 7의 **[Toobars](https://docs.mcneel.com/rhino/7/help/en-us/index.htm#options/toolbars.htm#(null))** 명령으로 관리할 수 있습니다. 
+참고로, 위의 모든 기능은 Rhino 7의 **[Toobars](https://docs.mcneel.com/rhino/7/help/ko-kr/index.htm#options/toolbars.htm#(null))** 명령으로 관리할 수 있습니다. 
 
 ### Rhino 패널
 
