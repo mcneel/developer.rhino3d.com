@@ -93,13 +93,8 @@
             },
             "args": [
                 "serve",
-                "--renderStaticToDisk",
-                "-e",
-                "development"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/"
-            }
+                "--renderStaticToDisk"
+            ]
         },
         {
             "label": "hugo preview current",
@@ -157,10 +152,7 @@
                 "--renderStaticToDisk",
                 "-e",
                 "production"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/"
-            }
+            ]
         },
         {
             "label": "hugo terminate",
