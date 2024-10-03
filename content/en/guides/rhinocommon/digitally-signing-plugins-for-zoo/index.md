@@ -39,7 +39,7 @@ Follow these steps to generate the necessary info to forward to *Robert McNeel &
 1. Download and install the latest [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html). Note, downloading and installing the "light" version (smaller download) is sufficient.
 2. After installation, use Windows Explorer to navigate to the OpenSSL installation folder and double-click on `start.bat` found in the `Bin` folder.
 3. From the Windows command prompt that opens, navigate to your plug-in's project folder.
-4. Save the contents of [{{< awesome "fas fa-download">}} mcneelcodesigning.zip](/https://files.mcneel.com/zoo/mcneelcodesigning.zip) to your plug-in's project folder.
+4. Save the contents of [{{< awesome "fas fa-download">}} mcneelcodesigning.zip](https://files.mcneel.com/zoo/mcneelcodesigning.zip) to your plug-in's project folder.
 5. From the command prompt, run `CreateRequest.bat <filename>`, where *filename* is the name (without an extension) that will be used to save your private key (*.key*), certificate signing request (*.csr*), and final signed digital certificate (*.crt*).
 6. You will be prompted to answer some questions.  Be sure to answer them correctly...
 

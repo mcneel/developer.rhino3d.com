@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
     
     {{ $sass := resources.Get "scss/style.scss" }}
-    {{ $style := $sass | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    {{ $style := $sass | css.Sass | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     
     <!-- Preload webfonts -->
