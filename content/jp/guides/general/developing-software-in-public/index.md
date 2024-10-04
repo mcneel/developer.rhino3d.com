@@ -2,11 +2,11 @@
 aliases = ["/5/guides/general/developing-software-in-public/", "/6/guides/general/developing-software-in-public/", "/7/guides/general/developing-software-in-public/", "/wip/guides/general/developing-software-in-public/"]
 authors = [ "brian" ]
 categories = [ "Overview" ]
-description = "An overview of the McNeel Development Process."
+description = "McNeelの開発プロセスについての概要"
 keywords = [ "developer", "rhino" ]
 languages = [ "All" ]
 sdk = [ "General" ]
-title = "Developing Software In Public"
+title = "公開ソフトウェア開発"
 type = "guides"
 weight = 0
 override_last_modified = "2018-12-05T14:59:06Z"
@@ -29,116 +29,116 @@ toc_type = "single"
 +++
 
 
-## Overview
+## 概要
 
-Over the last 20 years we've put together a process that helps us build customer delight.  There are eight pieces to this process, and they are all equally important.  For years, we built our own proprietary tools to support most of the parts of this process.  But now, there are great commercially available tools - tools we encourage you to use, too.
+当社は過去20年の間、お客様に満足していただけるようなソフトウェア開発プロセスを構築してきました。このプロセスには8つの部分があり、どれもが同じように重要です。長年に渡り、当社はこのプロセスのほとんどの部分をサポートするために独自のツールを構築してきましたが、今では優れた市販ツールがあります。(これらは皆さまにもぜひ使用していただきたいツールです。)
 
-Our Software Development process, just like the other processes, is a cycle.  So we can start anywhere.
+当社のソフトウェアの開発プロセスは、他のプロセスと同様にサイクルとなっており、どこからでも開始可能です。
 
 ![Rhino Development Cycle](/images/developing-software-in-public-01.png)
 
-## The Cycle
+## サイクル
 
-Since this is a developer guide, let's start with writing code.
+これは開発者向けのガイドなので、まずは「Code (コード)」から説明を始めましょう。
 
-### Code
+### Code (コード)
 
-This is what we as software developers spend a lot of our time doing.  We’ve got our favorite IDE open, we write code, we debug, we solve problems.  We don’t know a software developer that doesn’t love solving problems.
+この部分は、私達ソフトウェア開発者が多くの時間を費やしている部分です。お気に入りのIDE(統合開発環境)を開いて、コードを書き、デバッグし、問題を解決します。
 
-When we’ve got something, we *commit* it to our version control system...
+何かが出来上がると、私達はそれをバージョン管理システムに *コミット* します。
 
-### Commit
+### Commit (コミット)
 
-We commit code to a [Version Control System](https://en.wikipedia.org/wiki/Version_control).  In our case, we use [git](https://git-scm.com/) with [GitHub](https://github.com/).  There are many other version control systems out there.  We used to use [Subversion](https://subversion.apache.org/), but now we use [GitHub](https://github.com/).  [GitHub](https://github.com/) plays nicely with so many other tools and has such a rich API.  But there are others worth considering: [BitBucket](https://bitbucket.org), [Mercurial](https://www.mercurial-scm.org/), etc.
+コードは [バージョン管理システム](https://en.wikipedia.org/wiki/Version_control) にコミットします。私達の場合、 [GitHub](https://github.com/) で [git](https://git-scm.com/) を使用しています。バージョン管理システムは他にもいろいろあり、以前は [Subversion](https://subversion.apache.org/) を使用していましたが、現在は [GitHub](https://github.com/) を使用しています。 [GitHub](https://github.com/) は他の多くのツールとうまく連携し、豊富なAPIを備えています。(しかし、 [BitBucket](https://bitbucket.org) や [Mercurial](https://www.mercurial-scm.org/) など、検討する価値のある他のツールもあります。)
 
-If you don’t use any version control, we beg you: please start.  It’s so easy now.  It lets you get back to other versions of your software before you introduced a problem.  It helps you collaborate as a team.  It is required for any kind of build automation.  Did we mention it's easy?
+バージョン管理をまったく使用していない場合は、ぜひ使用してください。現在では非常に簡単です。バージョン管理を使用すると、ソフトウェアを問題が発生する前のバージョンを選んで戻すことができます。チームとして共同作業するのに役に立ちます。バージョン管理はどのような種類のビルド自動化にも必要なものです。
 
-As developers, we use a modified version of [GitHub Flow](https://guides.github.com/introduction/flow/) to create and merge pull requests into our master branch.
+私達は開発者として、 [GitHub Flow](https://guides.github.com/introduction/flow/) の変更バージョンを使用してプルリクエストを作成し、マスターブランチにマージします
 
-After we commit our code, we build it...
+コードをコミットしたら、それをビルドします。
 
-### Compile
+### Compile (コンパイル)
 
-In addition to compiling at our desks, we have dedicated [TeamCity](https://www.jetbrains.com/teamcity/) servers that constantly build our code, and verify that it works with our master branch on [GitHub](https://github.com/).  This makes sure that we don’t break each other’s ability to get the latest code and compile.
+私達は自分達のデスクでコンパイルするだけでなく、コードを継続的にビルドする専用の複数の [TeamCity](https://www.jetbrains.com/teamcity/) サーバーを使用し、[GitHub](https://github.com/) のマスターブランチと適合するかどうかを確認しています。これにより、お互いが最新のコードを取得してコンパイルが正常に行えます。
 
-These [TeamCity](https://www.jetbrains.com/teamcity/) servers verify every commit and also build our daily releases - many of them - about every four hours.  They also build our public WIP and Service Release builds.
+これらの [TeamCity](https://www.jetbrains.com/teamcity/) サーバーは、すべてのコミットを検証し、毎日のリリースをビルドします(多くの場合、約4時間毎)。また、公開用のWIPビルドやサービスリリースのビルドもビルドします。
 
-With every new build, we test...
+ビルドはそれぞれテストを行います。
 
-### Test
+### Test (テスト)
 
-When developers fix bugs and close issues, our internal testing staff makes sure the public build works correctly.  We also rely on our customers to test WIP and Release Candidate builds.
+開発者がバグを修正し、イシューをクローズすると、社内のテストスタッフが公開予定のビルドが正しく動作することを確認します。また、WIPビルドとリリース候補ビルドはお客さまにも試していただいています。
 
-Testing happens before and after the next step: Publishing...
+テストは次のステップである公開の前と後に行っています。
 
-### Publish
+### Publish (公開)
 
-Whenever we’ve got a build that is ready to go out to customers, we deploy (or publish) it.
+お客様に提供する準備が整ったビルドができたら、それをデプロイ(または公開)します。
 
-This includes releasing ...
+これには、下記のリリースが含まれます。
 
-- [Downloadable installers](http://www.rhino3d.com/download)
-- [SDKs](http://developer.mcneel.com)
-- Documentation (this here site)
+- [ダウンロード可能なインストーラ](http://www.rhino3d.com/download)
+- [SDK](http://developer.mcneel.com)
+- ドキュメンテーション
 
-...and making public announcements by email, blogs, and social media.
+また、メール、ブログ、そしてソーシャルメディアを通じて公に発表します。
 
-### Listen
+### Listen (お客様のフィードバックに耳を傾ける)
 
-We listen in as many ways as we can:
+私達はできる限り多くの方法でフィードバックに耳を傾けます:
 
-- [Chat](http://www.rhino3d.com/support#)
-- [Email](mailto:tech@mcneel.com)
-- Telephone Support (206) 545-6877
-- [Forum (Discourse)](https://discourse.mcneel.com/)
+- [チャット](http://www.rhino3d.com/support#)
+- [メール](mailto:tech@mcneel.com)
+- 電話によるサポート (206) 545-6877
+- [フォーラム (Discourse)](https://discourse.mcneel.com/)
 
-And often, when we listen, we find problems that need to be fixed.  Sometimes they’re little...sometimes they’re HUGE.  We always log an issue...
+フィードバックに耳を傾けると、解決すべき問題が見つかることがよくあります。小さな問題もあれば、非常に大きな問題もあります。私たちは常に問題を記録しています。
 
-### Track
+### Track (追跡)
 
-We log issues in [YouTrack](https://mcneel.myjetbrains.com).
+課題(問題)は [YouTrack](https://mcneel.myjetbrains.com) に記録します。
 
-[YouTrack](https://mcneel.myjetbrains.com) works well for us because it helps us ensure that each issue gets properly tested and documented.
+[YouTrack](https://mcneel.myjetbrains.com) は、各課題が適切に検証され、文書化されることを確実にできるため、当社にとって非常に便利です。
 
-### Prioritize
+### Prioritize (優先順位付け)
 
-Figuring out what is the next most important thing is HARD.  We talk with our customers.  We talk with each other.  We use Gmail, Google Drive, and Google Docs to communicate.  We chat 24 hours a day on [Slack](https://slack.com/).
+開発にとって次に何が最も重要なことかを見極めるのは困難なため、私達はお客様と連絡を取り合います。コミュニケーションにはGmail、Googleドライブ、Googleドキュメントを使用します。私達は [Slack](https://slack.com/) を用い24時間チャットしています。
 
-We meet every week on Tuesday.  Before we meet, we share what we’ve done in a Google Doc. In that document, we share our goals for each of the products we’re releasing next each of the feature groups we’re working on including graphs of how we’re progressing over time there are links back to our [YouTrack](https://mcneel.myjetbrains.com) issues and we get verbal reports from each of the people working on the features.
+私達は毎週火曜日にミーティングを行います。ミーティングの前、そしてミーティング中には、Googleドキュメントで次にリリースするバージョン、製品、機能の目標を共有します。ドキュメントは、時間の経過に伴う進捗状況のグラフや [YouTrack](https://mcneel.myjetbrains.com) の課題へのリンクなども含んでいます。
 
-Also, each developer writes down what they’ve been working on, what they plan to do next, and what is getting in their way of completing their work.
+また、各開発者は、これまで何に取り組んできたか、次に何を計画しているか、そして仕事の完了を妨げているものは何かなどをドキュメントに記入します。ミーティングでは、機能に取り組んでいる各メンバーから口頭で報告も受けています。
 
-### Automation
+### 自動化
 
-And last but not least, we do a LOT of automation.
+私達の行っていることで忘れてはいけないのは、多くの自動化です。
 
-Here are some of the things we automate:
+これらは私達が自動化していることのいくつかです:
 
-- Build every commit from every developer before it goes into our master development branch.
-- Closing issues in [YouTrack](https://mcneel.myjetbrains.com) when fixes get merged into our master development branch by the [TeamCity](https://www.jetbrains.com/teamcity/) servers.
-- Build internal and public releases on our [TeamCity](https://www.jetbrains.com/teamcity/) servers.
-- Publishing new WIP releases by typing a command into [Slack](https://slack.com/).
-- Upload public releases to our download servers.
+- すべての開発者からのすべてのコミットを、マスター開発ブランチに移動する前にビルドする
+- [TeamCity](https://www.jetbrains.com/teamcity/) サーバーによって修正がマスター開発ブランチにマージされたら、 [YouTrack](https://mcneel.myjetbrains.com) の課題を閉じる
+- [TeamCity](https://www.jetbrains.com/teamcity/) サーバー上で社内リリースと公開リリースをビルドする
+- [Slack](https://slack.com/) にコマンドを入力して、新しいWIPリリースを公開する
+- 公開リリースをダウンロードサーバーにアップロードする
 
-## In Public
+## 公開範囲
 
-Up until recently, these are the parts of our processes that we’ve made public:
+最近まで、私達が公開していたプロセスの一部は次のとおりです。
 
-- Testing
-- Publishing (at least you see what we publish)
-- Listening
+- Test (テスト)
+- Publish (公開)
+- Listen (お客様のフィードバックに耳を傾ける)
 
-And in the last couple of years, we made our issue tracker public by switching to YouTrack.  Some issues we hide from public view for security or user privacy reasons.
+上記の内容に加えて、私達は数年前にYouTrackに切り替えて課題の追跡を公開しました。(セキュリティやユーザーのプライバシー上の理由から、一部の課題は一般公開されません。)
 
-Something we'd like to do soon is to make even more of this public:
+私達が近々したいことは、公開内容を増やすことです:
 
-- Sharing some of our code as public repos on GitHub so you’ve got some real, production-hardened code examples to work from
-- Letting you share fixes and improvements to our code.
-- Making it easier to build plug-in projects by publishing RhinoCommon as a NuGet package.
-- Helping with build automation where necessary.
+- 実際の問題なく運用できるコード例を参考にできるように、私達のコードの一部をGitHubのパブリックリポジトリとして共有する
+- 私達のコードに加えた修正や改良を共有する
+- RhinoCommonをNuGetパッケージとして公開することで、プラグインのプロジェクトのビルドを容易にする
+- 必要に応じてビルドの自動化を支援する
 
-## Related Topics
+## 関連トピック
 
-- [Rhino Technology Overview](/guides/general/rhino-technology-overview)
+- [Rhinoの技術的概要](/guides/general/rhino-technology-overview)
 - [Contributing](/guides/general/contributing)
 - [Developer Prerequisites](/guides/general/rhino-developer-prerequisites)
