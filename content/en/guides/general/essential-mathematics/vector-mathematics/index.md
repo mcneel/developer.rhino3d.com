@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/essential-mathematics/vector-mathematics/", "/6/guides/general/essential-mathematics/vector-mathematics/", "/7/guides/general/essential-mathematics/vector-mathematics/", "/wip/guides/general/essential-mathematics/vector-mathematics/"]
+aliases = ["/en/5/guides/general/essential-mathematics/vector-mathematics/", "/en/6/guides/general/essential-mathematics/vector-mathematics/", "/en/7/guides/general/essential-mathematics/vector-mathematics/", "/wip/guides/general/essential-mathematics/vector-mathematics/"]
 authors = [ "rajaa" ]
 categories = [ "Essential Mathematics" ]
 category_page = "guides/general/essential-mathematics/"

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/yak/yak-cli-reference/", "/6/guides/yak/yak-cli-reference/", "/7/guides/yak/yak-cli-reference/", "/wip/guides/yak/yak-cli-reference/"]
+aliases = ["/en/5/guides/yak/yak-cli-reference/", "/en/6/guides/yak/yak-cli-reference/", "/en/7/guides/yak/yak-cli-reference/", "/wip/guides/yak/yak-cli-reference/"]
 authors = [ "will" ]
 categories = [ "Fundamentals" ]
 description = "A reference for the Yak command line tool."

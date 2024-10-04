@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/mark-points-on-a-line/", "/6/samples/rhinoscript/mark-points-on-a-line/", "/7/samples/rhinoscript/mark-points-on-a-line/", "/wip/samples/rhinoscript/mark-points-on-a-line/"]
+aliases = ["/en/5/samples/rhinoscript/mark-points-on-a-line/", "/en/6/samples/rhinoscript/mark-points-on-a-line/", "/en/7/samples/rhinoscript/mark-points-on-a-line/", "/wip/samples/rhinoscript/mark-points-on-a-line/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to mark points on a line using RhinoScript."

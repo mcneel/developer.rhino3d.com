@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/select-multiple-files/", "/6/samples/rhinoscript/select-multiple-files/", "/7/samples/rhinoscript/select-multiple-files/", "/wip/samples/rhinoscript/select-multiple-files/"]
+aliases = ["/en/5/samples/rhinoscript/select-multiple-files/", "/en/6/samples/rhinoscript/select-multiple-files/", "/en/7/samples/rhinoscript/select-multiple-files/", "/wip/samples/rhinoscript/select-multiple-files/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to use RhinoScript's MultiListBox function to select multiple files."

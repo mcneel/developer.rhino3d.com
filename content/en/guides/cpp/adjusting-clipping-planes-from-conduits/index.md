@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/adjusting-clipping-planes-from-conduits/", "/6/guides/cpp/adjusting-clipping-planes-from-conduits/", "/7/guides/cpp/adjusting-clipping-planes-from-conduits/", "/wip/guides/cpp/adjusting-clipping-planes-from-conduits/"]
+aliases = ["/en/5/guides/cpp/adjusting-clipping-planes-from-conduits/", "/en/6/guides/cpp/adjusting-clipping-planes-from-conduits/", "/en/7/guides/cpp/adjusting-clipping-planes-from-conduits/", "/wip/guides/cpp/adjusting-clipping-planes-from-conduits/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide discusses adjusting clipping planes from display conduits using C/C++."

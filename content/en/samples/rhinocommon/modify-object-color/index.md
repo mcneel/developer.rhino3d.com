@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/modify-object-color/", "/6/samples/rhinocommon/modify-object-color/", "/7/samples/rhinocommon/modify-object-color/", "/wip/samples/rhinocommon/modify-object-color/"]
+aliases = ["/en/5/samples/rhinocommon/modify-object-color/", "/en/6/samples/rhinocommon/modify-object-color/", "/en/7/samples/rhinocommon/modify-object-color/", "/wip/samples/rhinocommon/modify-object-color/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to modify the color of a user-specified object."

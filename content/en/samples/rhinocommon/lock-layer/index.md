@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/lock-layer/", "/6/samples/rhinocommon/lock-layer/", "/7/samples/rhinocommon/lock-layer/", "/wip/samples/rhinocommon/lock-layer/"]
+aliases = ["/en/5/samples/rhinocommon/lock-layer/", "/en/6/samples/rhinocommon/lock-layer/", "/en/7/samples/rhinocommon/lock-layer/", "/wip/samples/rhinocommon/lock-layer/"]
 authors = [ "steve" ]
 categories = [ "Blocks", "Layers" ]
 description = "Demonstrates how to lock a user-specified layer."

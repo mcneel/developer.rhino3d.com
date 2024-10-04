@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/mesh-volume/", "/6/samples/rhinocommon/mesh-volume/", "/7/samples/rhinocommon/mesh-volume/", "/wip/samples/rhinocommon/mesh-volume/"]
+aliases = ["/en/5/samples/rhinocommon/mesh-volume/", "/en/6/samples/rhinocommon/mesh-volume/", "/en/7/samples/rhinocommon/mesh-volume/", "/wip/samples/rhinocommon/mesh-volume/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to calculate the volume of a user-specified closed mesh."

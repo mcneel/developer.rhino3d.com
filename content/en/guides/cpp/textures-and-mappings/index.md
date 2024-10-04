@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/textures-and-mappings/", "/6/guides/cpp/textures-and-mappings/", "/7/guides/cpp/textures-and-mappings/", "/wip/guides/cpp/textures-and-mappings/"]
+aliases = ["/en/5/guides/cpp/textures-and-mappings/", "/en/6/guides/cpp/textures-and-mappings/", "/en/7/guides/cpp/textures-and-mappings/", "/wip/guides/cpp/textures-and-mappings/"]
 authors = [ "dale", "jussi" ]
 categories = [ "RDK" ]
 description = "This guide discusses materials, textures, and texture mapping using C/C++."

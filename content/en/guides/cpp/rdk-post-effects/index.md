@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-post-effects/", "/6/guides/cpp/rdk-post-effects/", "/7/guides/cpp/rdk-post-effects/", "/wip/guides/cpp/rdk-post-effects/"]
+aliases = ["/en/5/guides/cpp/rdk-post-effects/", "/en/6/guides/cpp/rdk-post-effects/", "/en/7/guides/cpp/rdk-post-effects/", "/wip/guides/cpp/rdk-post-effects/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK's post effect classes in C/C++."

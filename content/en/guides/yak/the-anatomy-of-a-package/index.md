@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/yak/the-anatomy-of-a-package/", "/6/guides/yak/the-anatomy-of-a-package/", "/7/guides/yak/the-anatomy-of-a-package/", "/wip/guides/yak/the-anatomy-of-a-package/"]
+aliases = ["/en/5/guides/yak/the-anatomy-of-a-package/", "/en/6/guides/yak/the-anatomy-of-a-package/", "/en/7/guides/yak/the-anatomy-of-a-package/", "/wip/guides/yak/the-anatomy-of-a-package/"]
 authors = [ "will" ]
 categories = [ "Fundamentals" ]
 description = "This guide explains the structure of a Yak package."

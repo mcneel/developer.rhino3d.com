@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/your-first-plugin-mac/", "/6/guides/rhinocommon/your-first-plugin-mac/", "/7/guides/rhinocommon/your-first-plugin-mac/", "/wip/guides/rhinocommon/your-first-plugin-mac/"]
+aliases = ["/en/en/5/guides/rhinocommon/your-first-plugin-mac/", "/en/6/guides/rhinocommon/your-first-plugin-mac/", "/en/7/guides/rhinocommon/your-first-plugin-mac/", "/wip/guides/rhinocommon/your-first-plugin-mac/"]
 authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first plugin for Rhino for Mac using RhinoCommon and Visual Studio Code."

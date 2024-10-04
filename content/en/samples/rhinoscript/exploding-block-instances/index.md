@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/exploding-block-instances/", "/6/samples/rhinoscript/exploding-block-instances/", "/7/samples/rhinoscript/exploding-block-instances/", "/wip/samples/rhinoscript/exploding-block-instances/"]
+aliases = ["/en/5/samples/rhinoscript/exploding-block-instances/", "/en/6/samples/rhinoscript/exploding-block-instances/", "/en/7/samples/rhinoscript/exploding-block-instances/", "/wip/samples/rhinoscript/exploding-block-instances/"]
 authors = [ "dale" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to explode an instance of a block using RhinoScript."

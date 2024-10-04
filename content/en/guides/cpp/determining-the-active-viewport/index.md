@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/determining-the-active-viewport/", "/6/guides/cpp/determining-the-active-viewport/", "/7/guides/cpp/determining-the-active-viewport/", "/wip/guides/cpp/determining-the-active-viewport/"]
+aliases = ["/en/5/guides/cpp/determining-the-active-viewport/", "/en/6/guides/cpp/determining-the-active-viewport/", "/en/7/guides/cpp/determining-the-active-viewport/", "/wip/guides/cpp/determining-the-active-viewport/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to determine the active viewport using C/C++."

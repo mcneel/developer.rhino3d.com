@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/determine-max-z-of-surface/", "/6/samples/cpp/determine-max-z-of-surface/", "/7/samples/cpp/determine-max-z-of-surface/", "/wip/samples/cpp/determine-max-z-of-surface/"]
+aliases = ["/en/5/samples/cpp/determine-max-z-of-surface/", "/en/6/samples/cpp/determine-max-z-of-surface/", "/en/7/samples/cpp/determine-max-z-of-surface/", "/wip/samples/cpp/determine-max-z-of-surface/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how determine the maximum Z coordinate value of a surface or polysurface given some X,Y coordinate."

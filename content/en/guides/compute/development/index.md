@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/development/", "/6/guides/compute/development/", "/7/guides/compute/development/", "/wip/guides/compute/development/"]
+aliases = ["/en/5/guides/compute/development/", "/en/6/guides/compute/development/", "/en/7/guides/compute/development/", "/wip/guides/compute/development/"]
 authors = [ "pedro" ]
 categories = [ "Getting Started", "Development" ]
 description = "Deploy Compute for Production"

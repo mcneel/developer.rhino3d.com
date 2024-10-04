@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/primer-101/3-script-anatomy/", "/6/guides/rhinoscript/primer-101/3-script-anatomy/", "/7/guides/rhinoscript/primer-101/3-script-anatomy/", "/wip/guides/rhinoscript/primer-101/3-script-anatomy/"]
+aliases = ["/en/5/guides/rhinoscript/primer-101/3-script-anatomy/", "/en/6/guides/rhinoscript/primer-101/3-script-anatomy/", "/en/7/guides/rhinoscript/primer-101/3-script-anatomy/", "/wip/guides/rhinoscript/primer-101/3-script-anatomy/"]
 authors = [ "david" ]
 categories = [ "RhinoScript 101" ]
 category_page = "guides/rhinoscript/primer-101/"

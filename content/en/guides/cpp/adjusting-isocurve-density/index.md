@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/adjusting-isocurve-density/", "/6/guides/cpp/adjusting-isocurve-density/", "/7/guides/cpp/adjusting-isocurve-density/", "/wip/guides/cpp/adjusting-isocurve-density/"]
+aliases = ["/en/5/guides/cpp/adjusting-isocurve-density/", "/en/6/guides/cpp/adjusting-isocurve-density/", "/en/7/guides/cpp/adjusting-isocurve-density/", "/wip/guides/cpp/adjusting-isocurve-density/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to modify the isocurve density of a surface."

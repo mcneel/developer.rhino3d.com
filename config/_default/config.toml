@@ -71,66 +71,7 @@ target = 'assets'
   changefreq = "daily"
 
 [languages]
-  [languages.en]
-    contentDir = "content/en"
-    languageName = "English"
-    title = "Rhino Developer Docs"
-    weight = 1
-    [languages.en.params]
-      description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
-      author = "Robert McNeel & Associates"
-      copyright = "Copyright © 1993-{year} Robert McNeel & Associates. All Rights Reserved."
-      siteNav = "original-site-navigation"
-      imagesDir = "images"
-      docLang = "en-us" # the language code used on docs.mcneel.com
-    [languages.en.taxonomies]
-      "tag" = "tags"
-      "category" = "categories"
-      "platform" = "platforms"
-      "task" = "tasks"
-      "level" = "levels"
-      "version" = "versions"
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "guides"
-        pre = ""
-        post = ""
-        name = "Guides"
-        url = "/guides"
-        title = ""
-        weight = 2
-      [[languages.en.menu.main]]
-        identifier = "samples"
-        pre = ""
-        post = ""
-        name = "Samples"
-        url = "/samples"
-        title = ""
-        weight = 3
-      [[languages.en.menu.main]]
-        identifier = "api"
-        pre = ""
-        post = ""
-        name = "API"
-        url = "/api"
-        title = ""
-        weight = 4
-      [[languages.en.menu.main]]
-        identifier = "videos"
-        pre = ""
-        post = ""
-        name = "Videos"
-        url = "/videos"
-        title = ""
-        weight = 5
-      [[languages.en.menu.main]]
-        identifier = "community"
-        pre = ""
-        post = ""
-        name = "Community"
-        url = "https://discourse.mcneel.com/c/rhino-developer"
-        title = ""
-        weight = 6
+
   [languages.cn]
     contentDir = "content/cn"
     languageName = "中文简体"
@@ -605,6 +546,66 @@ target = 'assets'
         title = ""
         weight = 5
       [[languages.tw.menu.main]]
+        identifier = "community"
+        pre = ""
+        post = ""
+        name = "Community"
+        url = "https://discourse.mcneel.com/c/rhino-developer"
+        title = ""
+        weight = 6
+  [languages.en]
+    contentDir = "content/en"
+    languageName = "English"
+    title = "Rhino Developer Docs"
+    weight = 1
+    [languages.en.params]
+      description = "Rhino is a 3D modeler used to create, edit, analyze, document, render, animate, and translate NURBS* curves, surfaces, and solids, point clouds, SubD surfaces, and polygon meshes. There are no limits on complexity, degree, or size beyond those of your hardware."
+      author = "Robert McNeel & Associates"
+      copyright = "Copyright © 1993-{year} Robert McNeel & Associates. All Rights Reserved."
+      siteNav = "original-site-navigation"
+      imagesDir = "images"
+      docLang = "en-us" # the language code used on docs.mcneel.com
+    [languages.en.taxonomies]
+      "tag" = "tags"
+      "category" = "categories"
+      "platform" = "platforms"
+      "task" = "tasks"
+      "level" = "levels"
+      "version" = "versions"
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "guides"
+        pre = ""
+        post = ""
+        name = "Guides"
+        url = "/guides"
+        title = ""
+        weight = 2
+      [[languages.en.menu.main]]
+        identifier = "samples"
+        pre = ""
+        post = ""
+        name = "Samples"
+        url = "/samples"
+        title = ""
+        weight = 3
+      [[languages.en.menu.main]]
+        identifier = "api"
+        pre = ""
+        post = ""
+        name = "API"
+        url = "/api"
+        title = ""
+        weight = 4
+      [[languages.en.menu.main]]
+        identifier = "videos"
+        pre = ""
+        post = ""
+        name = "Videos"
+        url = "/videos"
+        title = ""
+        weight = 5
+      [[languages.en.menu.main]]
         identifier = "community"
         pre = ""
         post = ""

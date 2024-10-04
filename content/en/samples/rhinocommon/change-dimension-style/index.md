@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/change-dimension-style/", "/6/samples/rhinocommon/change-dimension-style/", "/7/samples/rhinocommon/change-dimension-style/", "/wip/samples/rhinocommon/change-dimension-style/"]
+aliases = ["/en/5/samples/rhinocommon/change-dimension-style/", "/en/6/samples/rhinocommon/change-dimension-style/", "/en/7/samples/rhinocommon/change-dimension-style/", "/wip/samples/rhinocommon/change-dimension-style/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to change the dimension style on all objects in a Rhino document."

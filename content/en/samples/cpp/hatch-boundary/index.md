@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/hatch-boundary/", "/6/samples/cpp/hatch-boundary/", "/7/samples/cpp/hatch-boundary/", "/wip/samples/cpp/hatch-boundary/"]
+aliases = ["/en/5/samples/cpp/hatch-boundary/", "/en/6/samples/cpp/hatch-boundary/", "/en/7/samples/cpp/hatch-boundary/", "/wip/samples/cpp/hatch-boundary/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to hatch a closed planar boundary."

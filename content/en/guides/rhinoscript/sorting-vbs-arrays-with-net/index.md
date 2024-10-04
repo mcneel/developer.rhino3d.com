@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/sorting-vbs-arrays-with-net/", "/6/guides/rhinoscript/sorting-vbs-arrays-with-net/", "/7/guides/rhinoscript/sorting-vbs-arrays-with-net/", "/wip/guides/rhinoscript/sorting-vbs-arrays-with-net/"]
+aliases = ["/en/5/guides/rhinoscript/sorting-vbs-arrays-with-net/", "/en/6/guides/rhinoscript/sorting-vbs-arrays-with-net/", "/en/7/guides/rhinoscript/sorting-vbs-arrays-with-net/", "/wip/guides/rhinoscript/sorting-vbs-arrays-with-net/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to use the .NET Framework to sort arrays in RhinoScript."

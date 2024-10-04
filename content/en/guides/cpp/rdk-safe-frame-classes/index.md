@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-safe-frame-classes/", "/6/guides/cpp/rdk-safe-frame-classes/", "/7/guides/cpp/rdk-safe-frame-classes/", "/wip/guides/cpp/rdk-safe-frame-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-safe-frame-classes/", "/en/6/guides/cpp/rdk-safe-frame-classes/", "/en/7/guides/cpp/rdk-safe-frame-classes/", "/wip/guides/cpp/rdk-safe-frame-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK safe frame class in C/C++."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/your-first-plugin-windows/", "/6/guides/rhinocommon/your-first-plugin-windows/", "/7/guides/rhinocommon/your-first-plugin-windows/", "/wip/guides/rhinocommon/your-first-plugin-windows/"]
+aliases = ["/en/en/5/guides/rhinocommon/your-first-plugin-windows/", "/en/6/guides/rhinocommon/your-first-plugin-windows/", "/en/7/guides/rhinocommon/your-first-plugin-windows/", "/wip/guides/rhinocommon/your-first-plugin-windows/"]
 authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first plugin for Rhino for Windows using RhinoCommon and Visual Studio."

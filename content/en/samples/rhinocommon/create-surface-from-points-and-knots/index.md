@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/create-surface-from-points-and-knots/", "/6/samples/rhinocommon/create-surface-from-points-and-knots/", "/7/samples/rhinocommon/create-surface-from-points-and-knots/", "/wip/samples/rhinocommon/create-surface-from-points-and-knots/"]
+aliases = ["/en/5/samples/rhinocommon/create-surface-from-points-and-knots/", "/en/6/samples/rhinocommon/create-surface-from-points-and-knots/", "/en/7/samples/rhinocommon/create-surface-from-points-and-knots/", "/wip/samples/rhinocommon/create-surface-from-points-and-knots/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to create a surface from scratch from points and knots."

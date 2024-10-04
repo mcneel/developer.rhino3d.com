@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/linear-regression/", "/6/guides/rhinoscript/linear-regression/", "/7/guides/rhinoscript/linear-regression/", "/wip/guides/rhinoscript/linear-regression/"]
+aliases = ["/en/5/guides/rhinoscript/linear-regression/", "/en/6/guides/rhinoscript/linear-regression/", "/en/7/guides/rhinoscript/linear-regression/", "/wip/guides/rhinoscript/linear-regression/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to calculate linear regression using RhinoScript."

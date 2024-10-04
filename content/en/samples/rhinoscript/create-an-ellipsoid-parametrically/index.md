@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/create-an-ellipsoid-parametrically/", "/6/samples/rhinoscript/create-an-ellipsoid-parametrically/", "/7/samples/rhinoscript/create-an-ellipsoid-parametrically/", "/wip/samples/rhinoscript/create-an-ellipsoid-parametrically/"]
+aliases = ["/en/5/samples/rhinoscript/create-an-ellipsoid-parametrically/", "/en/6/samples/rhinoscript/create-an-ellipsoid-parametrically/", "/en/7/samples/rhinoscript/create-an-ellipsoid-parametrically/", "/wip/samples/rhinoscript/create-an-ellipsoid-parametrically/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates one way of creating a Ellipsoid using RhinoScript."

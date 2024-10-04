@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/offset-curve/", "/6/samples/rhinocommon/offset-curve/", "/7/samples/rhinocommon/offset-curve/", "/wip/samples/rhinocommon/offset-curve/"]
+aliases = ["/en/5/samples/rhinocommon/offset-curve/", "/en/6/samples/rhinocommon/offset-curve/", "/en/7/samples/rhinocommon/offset-curve/", "/wip/samples/rhinocommon/offset-curve/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to offset curves to one side or another by a distance."

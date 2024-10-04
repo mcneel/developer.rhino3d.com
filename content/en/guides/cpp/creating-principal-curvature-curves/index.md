@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/creating-principal-curvature-curves/", "/6/guides/cpp/creating-principal-curvature-curves/", "/7/guides/cpp/creating-principal-curvature-curves/", "/wip/guides/cpp/creating-principal-curvature-curves/"]
+aliases = ["/en/5/guides/cpp/creating-principal-curvature-curves/", "/en/6/guides/cpp/creating-principal-curvature-curves/", "/en/7/guides/cpp/creating-principal-curvature-curves/", "/wip/guides/cpp/creating-principal-curvature-curves/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to use the ON_EvPrincipalCurvatures function in C/C++."

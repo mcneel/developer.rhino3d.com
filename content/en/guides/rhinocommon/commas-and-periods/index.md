@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/commas-and-periods/", "/6/guides/rhinocommon/commas-and-periods/", "/7/guides/rhinocommon/commas-and-periods/", "/wip/guides/rhinocommon/commas-and-periods/"]
+aliases = ["/en/en/5/guides/rhinocommon/commas-and-periods/", "/en/6/guides/rhinocommon/commas-and-periods/", "/en/7/guides/rhinocommon/commas-and-periods/", "/wip/guides/rhinocommon/commas-and-periods/"]
 authors = [ "steve" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to consistently read/write numbers to strings."

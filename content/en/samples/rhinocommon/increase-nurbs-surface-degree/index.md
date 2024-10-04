@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/increase-nurbs-surface-degree/", "/6/samples/rhinocommon/increase-nurbs-surface-degree/", "/7/samples/rhinocommon/increase-nurbs-surface-degree/", "/wip/samples/rhinocommon/increase-nurbs-surface-degree/"]
+aliases = ["/en/5/samples/rhinocommon/increase-nurbs-surface-degree/", "/en/6/samples/rhinocommon/increase-nurbs-surface-degree/", "/en/7/samples/rhinocommon/increase-nurbs-surface-degree/", "/wip/samples/rhinocommon/increase-nurbs-surface-degree/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to increase the degree of a NURBS surface."

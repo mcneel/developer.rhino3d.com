@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-conditionals/", "/6/guides/rhinopython/python-conditionals/", "/7/guides/rhinopython/python-conditionals/", "/wip/guides/rhinopython/python-conditionals/"]
+aliases = ["/en/5/guides/rhinopython/python-conditionals/", "/en/6/guides/rhinopython/python-conditionals/", "/en/7/guides/rhinopython/python-conditionals/", "/wip/guides/rhinopython/python-conditionals/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide is an survey of Python conditional statements."

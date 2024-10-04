@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/license-agreement/", "/6/guides/cpp/license-agreement/", "/7/guides/cpp/license-agreement/", "/wip/guides/cpp/license-agreement/"]
+aliases = ["/en/5/guides/cpp/license-agreement/", "/en/6/guides/cpp/license-agreement/", "/en/7/guides/cpp/license-agreement/", "/wip/guides/cpp/license-agreement/"]
 authors = [ "dale" ]
 categories = [ "Overview" ]
 description = "This guide provides the license agreement of C/C++ SDK."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/videos/", "/6/videos/", "/7/videos/", "/wip/videos/"]
+aliases = ["/en/5/videos/", "/en/6/videos/", "/en/7/videos/", "/wip/videos/"]
 title = "Videos"
 type = "guides"
 weight = 6

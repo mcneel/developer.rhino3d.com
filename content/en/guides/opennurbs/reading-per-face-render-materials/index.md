@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/reading-per-face-render-materials/", "/6/guides/opennurbs/reading-per-face-render-materials/", "/7/guides/opennurbs/reading-per-face-render-materials/", "/wip/guides/opennurbs/reading-per-face-render-materials/"]
+aliases = ["/en/5/guides/opennurbs/reading-per-face-render-materials/", "/en/6/guides/opennurbs/reading-per-face-render-materials/", "/en/7/guides/opennurbs/reading-per-face-render-materials/", "/wip/guides/opennurbs/reading-per-face-render-materials/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide describes how to read render materials from Brep faces using the openNURBS toolkit."

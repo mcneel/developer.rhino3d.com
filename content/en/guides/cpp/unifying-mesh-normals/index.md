@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/unifying-mesh-normals/", "/6/guides/cpp/unifying-mesh-normals/", "/7/guides/cpp/unifying-mesh-normals/", "/wip/guides/cpp/unifying-mesh-normals/"]
+aliases = ["/en/5/guides/cpp/unifying-mesh-normals/", "/en/6/guides/cpp/unifying-mesh-normals/", "/en/7/guides/cpp/unifying-mesh-normals/", "/wip/guides/cpp/unifying-mesh-normals/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide demonstrates how to unify the normal direction of mesh faces using C/C++."

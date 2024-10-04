@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-reference/", "/6/guides/rhinopython/python-reference/", "/7/guides/rhinopython/python-reference/", "/wip/guides/rhinopython/python-reference/"]
+aliases = ["/en/5/guides/rhinopython/python-reference/", "/en/6/guides/rhinopython/python-reference/", "/en/7/guides/rhinopython/python-reference/", "/wip/guides/rhinopython/python-reference/"]
 authors = [ "dale" ]
 categories = [ "Intermediate" ]
 description = "This guide discusses calling methods with by-ref parameters with IronPython."

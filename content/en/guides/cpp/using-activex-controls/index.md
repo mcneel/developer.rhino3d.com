@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/using-activex-controls/", "/6/guides/cpp/using-activex-controls/", "/7/guides/cpp/using-activex-controls/", "/wip/guides/cpp/using-activex-controls/"]
+aliases = ["/en/5/guides/cpp/using-activex-controls/", "/en/6/guides/cpp/using-activex-controls/", "/en/7/guides/cpp/using-activex-controls/", "/wip/guides/cpp/using-activex-controls/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide discusses how to use ActiveX controls in C/C++ plugins."

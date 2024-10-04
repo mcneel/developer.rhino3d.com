@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/core-hour-billing/", "/6/guides/compute/core-hour-billing/", "/7/guides/compute/core-hour-billing/", "/wip/guides/compute/core-hour-billing/"]
+aliases = ["/en/5/guides/compute/core-hour-billing/", "/en/6/guides/compute/core-hour-billing/", "/en/7/guides/compute/core-hour-billing/", "/wip/guides/compute/core-hour-billing/"]
 authors = [ "brian" ]
 categories = [ "Deployment" ]
 keywords = [ "developer", "compute", "core-hour" ]

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/frequently-asked-questions/", "/6/guides/general/frequently-asked-questions/", "/7/guides/general/frequently-asked-questions/", "/wip/guides/general/frequently-asked-questions/"]
+aliases = ["/en/5/guides/general/frequently-asked-questions/", "/en/6/guides/general/frequently-asked-questions/", "/en/7/guides/general/frequently-asked-questions/", "/wip/guides/general/frequently-asked-questions/"]
 authors = [ "dan" ]
 categories = [ "Overview" ]
 description = "This guide is a list of Frequently Asked Questions (FAQ)."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/sprite-drawing/", "/6/samples/rhinocommon/sprite-drawing/", "/7/samples/rhinocommon/sprite-drawing/", "/wip/samples/rhinocommon/sprite-drawing/"]
+aliases = ["/en/5/samples/rhinocommon/sprite-drawing/", "/en/6/samples/rhinocommon/sprite-drawing/", "/en/7/samples/rhinocommon/sprite-drawing/", "/wip/samples/rhinocommon/sprite-drawing/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to draw bitmap sprites in Rhino."

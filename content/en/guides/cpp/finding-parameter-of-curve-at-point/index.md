@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/finding-parameter-of-curve-at-point/", "/6/guides/cpp/finding-parameter-of-curve-at-point/", "/7/guides/cpp/finding-parameter-of-curve-at-point/", "/wip/guides/cpp/finding-parameter-of-curve-at-point/"]
+aliases = ["/en/5/guides/cpp/finding-parameter-of-curve-at-point/", "/en/6/guides/cpp/finding-parameter-of-curve-at-point/", "/en/7/guides/cpp/finding-parameter-of-curve-at-point/", "/wip/guides/cpp/finding-parameter-of-curve-at-point/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to find the parameter of a curve at a given 3D point using C/C++."

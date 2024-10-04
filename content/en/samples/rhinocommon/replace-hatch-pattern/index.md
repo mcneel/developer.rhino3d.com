@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/replace-hatch-pattern/", "/6/samples/rhinocommon/replace-hatch-pattern/", "/7/samples/rhinocommon/replace-hatch-pattern/", "/wip/samples/rhinocommon/replace-hatch-pattern/"]
+aliases = ["/en/5/samples/rhinocommon/replace-hatch-pattern/", "/en/6/samples/rhinocommon/replace-hatch-pattern/", "/en/7/samples/rhinocommon/replace-hatch-pattern/", "/wip/samples/rhinocommon/replace-hatch-pattern/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to replace an object's hatch pattern."

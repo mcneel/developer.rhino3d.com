@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/getting-object-attributes/", "/6/guides/opennurbs/getting-object-attributes/", "/7/guides/opennurbs/getting-object-attributes/", "/wip/guides/opennurbs/getting-object-attributes/"]
+aliases = ["/en/5/guides/opennurbs/getting-object-attributes/", "/en/6/guides/opennurbs/getting-object-attributes/", "/en/7/guides/opennurbs/getting-object-attributes/", "/wip/guides/opennurbs/getting-object-attributes/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to obtain attributes from model geometry objects."

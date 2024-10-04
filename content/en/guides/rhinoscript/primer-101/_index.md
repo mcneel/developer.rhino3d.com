@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/primer-101/", "/6/guides/rhinoscript/primer-101/", "/7/guides/rhinoscript/primer-101/", "/wip/guides/rhinoscript/primer-101/"]
+aliases = ["/en/5/guides/rhinoscript/primer-101/", "/en/6/guides/rhinoscript/primer-101/", "/en/7/guides/rhinoscript/primer-101/", "/wip/guides/rhinoscript/primer-101/"]
 authors = [ "david" ]
 categories = [ "Unsorted" ]
 description = "A full course on RhinoScript"

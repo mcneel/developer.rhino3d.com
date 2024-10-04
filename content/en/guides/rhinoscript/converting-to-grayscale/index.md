@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/converting-to-grayscale/", "/6/guides/rhinoscript/converting-to-grayscale/", "/7/guides/rhinoscript/converting-to-grayscale/", "/wip/guides/rhinoscript/converting-to-grayscale/"]
+aliases = ["/en/5/guides/rhinoscript/converting-to-grayscale/", "/en/6/guides/rhinoscript/converting-to-grayscale/", "/en/7/guides/rhinoscript/converting-to-grayscale/", "/wip/guides/rhinoscript/converting-to-grayscale/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to convert an RGB color value to grayscale."

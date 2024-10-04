@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/text-justify/", "/6/samples/rhinocommon/text-justify/", "/7/samples/rhinocommon/text-justify/", "/wip/samples/rhinocommon/text-justify/"]
+aliases = ["/en/5/samples/rhinocommon/text-justify/", "/en/6/samples/rhinocommon/text-justify/", "/en/7/samples/rhinocommon/text-justify/", "/wip/samples/rhinocommon/text-justify/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to set text justification with a specific font."

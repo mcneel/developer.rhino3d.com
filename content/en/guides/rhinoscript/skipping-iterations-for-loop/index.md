@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/skipping-iterations-for-loop/", "/6/guides/rhinoscript/skipping-iterations-for-loop/", "/7/guides/rhinoscript/skipping-iterations-for-loop/", "/wip/guides/rhinoscript/skipping-iterations-for-loop/"]
+aliases = ["/en/5/guides/rhinoscript/skipping-iterations-for-loop/", "/en/6/guides/rhinoscript/skipping-iterations-for-loop/", "/en/7/guides/rhinoscript/skipping-iterations-for-loop/", "/wip/guides/rhinoscript/skipping-iterations-for-loop/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to skip the current iteration in a For Loop."

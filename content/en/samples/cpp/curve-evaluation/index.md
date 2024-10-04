@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/curve-evaluation/", "/6/samples/cpp/curve-evaluation/", "/7/samples/cpp/curve-evaluation/", "/wip/samples/cpp/curve-evaluation/"]
+aliases = ["/en/5/samples/cpp/curve-evaluation/", "/en/6/samples/cpp/curve-evaluation/", "/en/7/samples/cpp/curve-evaluation/", "/wip/samples/cpp/curve-evaluation/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to evaluate a curve."

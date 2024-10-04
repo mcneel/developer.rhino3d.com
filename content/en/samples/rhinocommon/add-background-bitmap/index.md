@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-background-bitmap/", "/6/samples/rhinocommon/add-background-bitmap/", "/7/samples/rhinocommon/add-background-bitmap/", "/wip/samples/rhinocommon/add-background-bitmap/"]
+aliases = ["/en/5/samples/rhinocommon/add-background-bitmap/", "/en/6/samples/rhinocommon/add-background-bitmap/", "/en/7/samples/rhinocommon/add-background-bitmap/", "/wip/samples/rhinocommon/add-background-bitmap/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a background bitmap to a Rhino model at a user-specified location."

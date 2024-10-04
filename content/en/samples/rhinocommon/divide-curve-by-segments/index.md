@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/divide-curve-by-segments/", "/6/samples/rhinocommon/divide-curve-by-segments/", "/7/samples/rhinocommon/divide-curve-by-segments/", "/wip/samples/rhinocommon/divide-curve-by-segments/"]
+aliases = ["/en/5/samples/rhinocommon/divide-curve-by-segments/", "/en/6/samples/rhinocommon/divide-curve-by-segments/", "/en/7/samples/rhinocommon/divide-curve-by-segments/", "/wip/samples/rhinocommon/divide-curve-by-segments/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to divide a user-selected curve into length segments."

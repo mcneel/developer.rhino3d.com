@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/avoiding-buffer-overruns-in-string-functions/", "/6/guides/cpp/avoiding-buffer-overruns-in-string-functions/", "/7/guides/cpp/avoiding-buffer-overruns-in-string-functions/", "/wip/guides/cpp/avoiding-buffer-overruns-in-string-functions/"]
+aliases = ["/en/5/guides/cpp/avoiding-buffer-overruns-in-string-functions/", "/en/6/guides/cpp/avoiding-buffer-overruns-in-string-functions/", "/en/7/guides/cpp/avoiding-buffer-overruns-in-string-functions/", "/wip/guides/cpp/avoiding-buffer-overruns-in-string-functions/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses how to write safe string function using C/C++."

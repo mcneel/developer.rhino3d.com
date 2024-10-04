@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-color/", "/6/guides/rhinopython/python-rhinoscriptsyntax-color/", "/7/guides/rhinopython/python-rhinoscriptsyntax-color/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-color/"]
+aliases = ["/en/5/guides/rhinopython/python-rhinoscriptsyntax-color/", "/en/6/guides/rhinopython/python-rhinoscriptsyntax-color/", "/en/7/guides/rhinopython/python-rhinoscriptsyntax-color/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-color/"]
 authors = [ "scottd" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an overview of a RhinoScriptSyntax Color type in Python."

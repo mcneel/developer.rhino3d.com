@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-torus/", "/6/samples/rhinocommon/add-torus/", "/7/samples/rhinocommon/add-torus/", "/wip/samples/rhinocommon/add-torus/"]
+aliases = ["/en/5/samples/rhinocommon/add-torus/", "/en/6/samples/rhinocommon/add-torus/", "/en/7/samples/rhinocommon/add-torus/", "/wip/samples/rhinocommon/add-torus/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to construct a torus from a set of radii and a plane."

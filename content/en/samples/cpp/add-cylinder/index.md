@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/add-cylinder/", "/6/samples/cpp/add-cylinder/", "/7/samples/cpp/add-cylinder/", "/wip/samples/cpp/add-cylinder/"]
+aliases = ["/en/5/samples/cpp/add-cylinder/", "/en/6/samples/cpp/add-cylinder/", "/en/7/samples/cpp/add-cylinder/", "/wip/samples/cpp/add-cylinder/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a cylinder using ON_BrepCylinder and add it to Rhino."

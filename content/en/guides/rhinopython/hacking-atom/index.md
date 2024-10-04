@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/hacking-atom/", "/6/guides/rhinopython/hacking-atom/", "/7/guides/rhinopython/hacking-atom/", "/wip/guides/rhinopython/hacking-atom/"]
+aliases = ["/en/5/guides/rhinopython/hacking-atom/", "/en/6/guides/rhinopython/hacking-atom/", "/en/7/guides/rhinopython/hacking-atom/", "/wip/guides/rhinopython/hacking-atom/"]
 authors = [ "alain" ]
 categories = [ "General" ]
 description = "This guide describes how to run and test the latest Atom rhino-python package."

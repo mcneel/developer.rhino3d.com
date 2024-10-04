@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-nurbs-curve/", "/6/samples/rhinocommon/add-nurbs-curve/", "/7/samples/rhinocommon/add-nurbs-curve/", "/wip/samples/rhinocommon/add-nurbs-curve/"]
+aliases = ["/en/5/samples/rhinocommon/add-nurbs-curve/", "/en/6/samples/rhinocommon/add-nurbs-curve/", "/en/7/samples/rhinocommon/add-nurbs-curve/", "/wip/samples/rhinocommon/add-nurbs-curve/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects", "Curves" ]
 description = "Demonstrates how to create a NURBS curve from a list of points."

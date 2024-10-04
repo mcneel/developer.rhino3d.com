@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/create-new-view/", "/6/samples/cpp/create-new-view/", "/7/samples/cpp/create-new-view/", "/wip/samples/cpp/create-new-view/"]
+aliases = ["/en/5/samples/cpp/create-new-view/", "/en/6/samples/cpp/create-new-view/", "/en/7/samples/cpp/create-new-view/", "/wip/samples/cpp/create-new-view/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Viewports and Views" ]
 description = "Demonstrates how to create a new view that has the properties of an existing view."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/determine-normal-direction-of-brep-face/", "/6/samples/rhinocommon/determine-normal-direction-of-brep-face/", "/7/samples/rhinocommon/determine-normal-direction-of-brep-face/", "/wip/samples/rhinocommon/determine-normal-direction-of-brep-face/"]
+aliases = ["/en/5/samples/rhinocommon/determine-normal-direction-of-brep-face/", "/en/6/samples/rhinocommon/determine-normal-direction-of-brep-face/", "/en/7/samples/rhinocommon/determine-normal-direction-of-brep-face/", "/wip/samples/rhinocommon/determine-normal-direction-of-brep-face/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to determine the normal direction of a Brep face at a specified point."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-line/", "/6/guides/rhinopython/python-rhinoscriptsyntax-line/", "/7/guides/rhinopython/python-rhinoscriptsyntax-line/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-line/"]
+aliases = ["/en/5/guides/rhinopython/python-rhinoscriptsyntax-line/", "/en/6/guides/rhinopython/python-rhinoscriptsyntax-line/", "/en/7/guides/rhinopython/python-rhinoscriptsyntax-line/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-line/"]
 authors = [ "dale" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an overview of a RhinoScriptSytntax Line Geometry in Python."

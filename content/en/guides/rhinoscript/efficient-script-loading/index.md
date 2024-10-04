@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/efficient-script-loading/", "/6/guides/rhinoscript/efficient-script-loading/", "/7/guides/rhinoscript/efficient-script-loading/", "/wip/guides/rhinoscript/efficient-script-loading/"]
+aliases = ["/en/5/guides/rhinoscript/efficient-script-loading/", "/en/6/guides/rhinoscript/efficient-script-loading/", "/en/7/guides/rhinoscript/efficient-script-loading/", "/wip/guides/rhinoscript/efficient-script-loading/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide discusses different techniques of loading and running script and their efficiencies."

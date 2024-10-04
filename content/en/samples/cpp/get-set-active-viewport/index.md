@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/get-set-active-viewport/", "/6/samples/cpp/get-set-active-viewport/", "/7/samples/cpp/get-set-active-viewport/", "/wip/samples/cpp/get-set-active-viewport/"]
+aliases = ["/en/5/samples/cpp/get-set-active-viewport/", "/en/6/samples/cpp/get-set-active-viewport/", "/en/7/samples/cpp/get-set-active-viewport/", "/wip/samples/cpp/get-set-active-viewport/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to get and set the active view."

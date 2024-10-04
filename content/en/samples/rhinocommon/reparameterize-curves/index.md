@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/reparameterize-curves/", "/6/samples/rhinocommon/reparameterize-curves/", "/7/samples/rhinocommon/reparameterize-curves/", "/wip/samples/rhinocommon/reparameterize-curves/"]
+aliases = ["/en/5/samples/rhinocommon/reparameterize-curves/", "/en/6/samples/rhinocommon/reparameterize-curves/", "/en/7/samples/rhinocommon/reparameterize-curves/", "/wip/samples/rhinocommon/reparameterize-curves/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to reparameterize - or change the domain of - user-specified curves."

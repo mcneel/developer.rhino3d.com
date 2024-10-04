@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/split-brep/", "/6/samples/cpp/split-brep/", "/7/samples/cpp/split-brep/", "/wip/samples/cpp/split-brep/"]
+aliases = ["/en/5/samples/cpp/split-brep/", "/en/6/samples/cpp/split-brep/", "/en/7/samples/cpp/split-brep/", "/wip/samples/cpp/split-brep/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to split a brep with another brep using the RhinoSplitBrep function."

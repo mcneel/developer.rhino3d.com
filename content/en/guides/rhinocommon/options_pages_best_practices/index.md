@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/options_pages_best_practices/", "/6/guides/rhinocommon/options_pages_best_practices/", "/7/guides/rhinocommon/options_pages_best_practices/", "/wip/guides/rhinocommon/options_pages_best_practices/"]
+aliases = ["/en/en/5/guides/rhinocommon/options_pages_best_practices/", "/en/6/guides/rhinocommon/options_pages_best_practices/", "/en/7/guides/rhinocommon/options_pages_best_practices/", "/wip/guides/rhinocommon/options_pages_best_practices/"]
 authors = [ "johnm" ]
 categories = [ "Advanced" ]
 description = "Discusses the best practices for writing options or document properties pages."

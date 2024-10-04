@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/rotate-object-around-point/", "/6/samples/rhinoscript/rotate-object-around-point/", "/7/samples/rhinoscript/rotate-object-around-point/", "/wip/samples/rhinoscript/rotate-object-around-point/"]
+aliases = ["/en/5/samples/rhinoscript/rotate-object-around-point/", "/en/6/samples/rhinoscript/rotate-object-around-point/", "/en/7/samples/rhinoscript/rotate-object-around-point/", "/wip/samples/rhinoscript/rotate-object-around-point/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to rotate an object around the centroid of its bounding box using RhinoScript."

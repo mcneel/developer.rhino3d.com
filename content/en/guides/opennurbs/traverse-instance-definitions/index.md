@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/traverse-instance-definitions/", "/6/guides/opennurbs/traverse-instance-definitions/", "/7/guides/opennurbs/traverse-instance-definitions/", "/wip/guides/opennurbs/traverse-instance-definitions/"]
+aliases = ["/en/5/guides/opennurbs/traverse-instance-definitions/", "/en/6/guides/opennurbs/traverse-instance-definitions/", "/en/7/guides/opennurbs/traverse-instance-definitions/", "/wip/guides/opennurbs/traverse-instance-definitions/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide describes how to read instance definitions using the openNURBS toolkit."

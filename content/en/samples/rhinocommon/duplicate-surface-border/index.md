@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/duplicate-surface-border/", "/6/samples/rhinocommon/duplicate-surface-border/", "/7/samples/rhinocommon/duplicate-surface-border/", "/wip/samples/rhinocommon/duplicate-surface-border/"]
+aliases = ["/en/5/samples/rhinocommon/duplicate-surface-border/", "/en/6/samples/rhinocommon/duplicate-surface-border/", "/en/7/samples/rhinocommon/duplicate-surface-border/", "/wip/samples/rhinocommon/duplicate-surface-border/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to duplicate the borders of a user-specified surface or polysurface."

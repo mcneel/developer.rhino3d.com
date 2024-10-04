@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/plugin-loading/", "/6/guides/cpp/plugin-loading/", "/7/guides/cpp/plugin-loading/", "/wip/guides/cpp/plugin-loading/"]
+aliases = ["/en/5/guides/cpp/plugin-loading/", "/en/6/guides/cpp/plugin-loading/", "/en/7/guides/cpp/plugin-loading/", "/wip/guides/cpp/plugin-loading/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses how Rhino loads C/C++ plugins."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/set-command-prompt/", "/6/samples/cpp/set-command-prompt/", "/7/samples/cpp/set-command-prompt/", "/wip/samples/cpp/set-command-prompt/"]
+aliases = ["/en/5/samples/cpp/set-command-prompt/", "/en/6/samples/cpp/set-command-prompt/", "/en/7/samples/cpp/set-command-prompt/", "/wip/samples/cpp/set-command-prompt/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to set Rhino's command prompt text to show the progress of long processes."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/yak/creating-a-rhino-plugin-package/", "/6/guides/yak/creating-a-rhino-plugin-package/", "/7/guides/yak/creating-a-rhino-plugin-package/", "/wip/guides/yak/creating-a-rhino-plugin-package/"]
+aliases = ["/en/5/guides/yak/creating-a-rhino-plugin-package/", "/en/6/guides/yak/creating-a-rhino-plugin-package/", "/en/7/guides/yak/creating-a-rhino-plugin-package/", "/wip/guides/yak/creating-a-rhino-plugin-package/"]
 authors = [ "will" ]
 categories = [ "Getting Started" ]
 description = "This is a step by step guide to creating a package for a Rhino plug-in (.rhp)."

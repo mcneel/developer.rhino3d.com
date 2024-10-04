@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/finding-perfect-squares/", "/6/guides/rhinoscript/finding-perfect-squares/", "/7/guides/rhinoscript/finding-perfect-squares/", "/wip/guides/rhinoscript/finding-perfect-squares/"]
+aliases = ["/en/5/guides/rhinoscript/finding-perfect-squares/", "/en/6/guides/rhinoscript/finding-perfect-squares/", "/en/7/guides/rhinoscript/finding-perfect-squares/", "/wip/guides/rhinoscript/finding-perfect-squares/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide demonstrates how to determine if an integer is a perfect square using RhinoScript."

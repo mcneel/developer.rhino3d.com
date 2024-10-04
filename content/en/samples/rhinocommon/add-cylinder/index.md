@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-cylinder/", "/6/samples/rhinocommon/add-cylinder/", "/7/samples/rhinocommon/add-cylinder/", "/wip/samples/rhinocommon/add-cylinder/"]
+aliases = ["/en/5/samples/rhinocommon/add-cylinder/", "/en/6/samples/rhinocommon/add-cylinder/", "/en/7/samples/rhinocommon/add-cylinder/", "/wip/samples/rhinocommon/add-cylinder/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to construct a cylinder using a center-point, height and axis."

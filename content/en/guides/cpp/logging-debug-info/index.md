@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/logging-debug-info/", "/6/guides/cpp/logging-debug-info/", "/7/guides/cpp/logging-debug-info/", "/wip/guides/cpp/logging-debug-info/"]
+aliases = ["/en/5/guides/cpp/logging-debug-info/", "/en/6/guides/cpp/logging-debug-info/", "/en/7/guides/cpp/logging-debug-info/", "/wip/guides/cpp/logging-debug-info/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide discusses the use of the ON_TextLog class for debugging C/C++ plugins."

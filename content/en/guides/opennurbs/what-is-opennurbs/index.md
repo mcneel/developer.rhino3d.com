@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/what-is-opennurbs/", "/6/guides/opennurbs/what-is-opennurbs/", "/7/guides/opennurbs/what-is-opennurbs/", "/wip/guides/opennurbs/what-is-opennurbs/"]
+aliases = ["/en/5/guides/opennurbs/what-is-opennurbs/", "/en/6/guides/opennurbs/what-is-opennurbs/", "/en/7/guides/opennurbs/what-is-opennurbs/", "/wip/guides/opennurbs/what-is-opennurbs/"]
 authors = [ "dalelear" ]
 categories = [ "Overview" ]
 description = "This guide gives an overview of the openNURBS toolkit."

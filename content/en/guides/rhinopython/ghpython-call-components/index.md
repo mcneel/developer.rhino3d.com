@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/ghpython-call-components/", "/6/guides/rhinopython/ghpython-call-components/", "/7/guides/rhinopython/ghpython-call-components/", "/wip/guides/rhinopython/ghpython-call-components/"]
+aliases = ["/en/5/guides/rhinopython/ghpython-call-components/", "/en/6/guides/rhinopython/ghpython-call-components/", "/en/7/guides/rhinopython/ghpython-call-components/", "/wip/guides/rhinopython/ghpython-call-components/"]
 authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "It is possible to call a Grasshopper component from inside a Python script."

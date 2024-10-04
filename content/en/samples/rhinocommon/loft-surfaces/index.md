@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/loft-surfaces/", "/6/samples/rhinocommon/loft-surfaces/", "/7/samples/rhinocommon/loft-surfaces/", "/wip/samples/rhinocommon/loft-surfaces/"]
+aliases = ["/en/5/samples/rhinocommon/loft-surfaces/", "/en/6/samples/rhinocommon/loft-surfaces/", "/en/7/samples/rhinocommon/loft-surfaces/", "/wip/samples/rhinocommon/loft-surfaces/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to create a lofted surface from a set of user-specified curves."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinomobile/", "/6/guides/rhinomobile/", "/7/guides/rhinomobile/", "/wip/guides/rhinomobile/"]
+aliases = ["/en/5/guides/rhinomobile/", "/en/6/guides/rhinomobile/", "/en/7/guides/rhinomobile/", "/wip/guides/rhinomobile/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "RhinoMobile is a 3D mobile application development SDK."

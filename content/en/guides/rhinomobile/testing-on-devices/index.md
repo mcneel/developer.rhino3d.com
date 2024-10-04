@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinomobile/testing-on-devices/", "/6/guides/rhinomobile/testing-on-devices/", "/7/guides/rhinomobile/testing-on-devices/", "/wip/guides/rhinomobile/testing-on-devices/"]
+aliases = ["/en/5/guides/rhinomobile/testing-on-devices/", "/en/6/guides/rhinomobile/testing-on-devices/", "/en/7/guides/rhinomobile/testing-on-devices/", "/wip/guides/rhinomobile/testing-on-devices/"]
 authors = [ "dan" ]
 categories = [ "Fundamentals" ]
 description = "This guide walks you through setting up devices for testing mobile applications."

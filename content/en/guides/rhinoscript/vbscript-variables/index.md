@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/vbscript-variables/", "/6/guides/rhinoscript/vbscript-variables/", "/7/guides/rhinoscript/vbscript-variables/", "/wip/guides/rhinoscript/vbscript-variables/"]
+aliases = ["/en/5/guides/rhinoscript/vbscript-variables/", "/en/6/guides/rhinoscript/vbscript-variables/", "/en/7/guides/rhinoscript/vbscript-variables/", "/wip/guides/rhinoscript/vbscript-variables/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide provides an overview of VBScript variables."

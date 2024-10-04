@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/extending-the-gui/", "/6/guides/grasshopper/extending-the-gui/", "/7/guides/grasshopper/extending-the-gui/", "/wip/guides/grasshopper/extending-the-gui/"]
+aliases = ["/en/5/guides/grasshopper/extending-the-gui/", "/en/6/guides/grasshopper/extending-the-gui/", "/en/7/guides/grasshopper/extending-the-gui/", "/wip/guides/grasshopper/extending-the-gui/"]
 authors = [ "david" ]
 categories = [ "Advanced" ]
 description = "This guide describes how to extend the default behaviour, functionality, and graphical user interface (GUI) of Grasshopper document objects."

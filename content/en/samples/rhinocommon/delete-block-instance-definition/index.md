@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/delete-block-instance-definition/", "/6/samples/rhinocommon/delete-block-instance-definition/", "/7/samples/rhinocommon/delete-block-instance-definition/", "/wip/samples/rhinocommon/delete-block-instance-definition/"]
+aliases = ["/en/5/samples/rhinocommon/delete-block-instance-definition/", "/en/6/samples/rhinocommon/delete-block-instance-definition/", "/en/7/samples/rhinocommon/delete-block-instance-definition/", "/wip/samples/rhinocommon/delete-block-instance-definition/"]
 authors = [ "steve" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to delete a block instance definition given the name of the block."

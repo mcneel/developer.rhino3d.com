@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/instance-definition-tree/", "/6/samples/rhinocommon/instance-definition-tree/", "/7/samples/rhinocommon/instance-definition-tree/", "/wip/samples/rhinocommon/instance-definition-tree/"]
+aliases = ["/en/5/samples/rhinocommon/instance-definition-tree/", "/en/6/samples/rhinocommon/instance-definition-tree/", "/en/7/samples/rhinocommon/instance-definition-tree/", "/wip/samples/rhinocommon/instance-definition-tree/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to list or enumerate the objects that make up a nested block definition."

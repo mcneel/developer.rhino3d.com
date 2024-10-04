@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/", "/6/guides/general/", "/7/guides/general/", "/wip/guides/general/"]
+aliases = ["/en/5/guides/general/", "/en/6/guides/general/", "/en/7/guides/general/", "/wip/guides/general/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "Guides that apply across platforms and SDKs."

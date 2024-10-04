@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/pick-point/", "/6/samples/rhinocommon/pick-point/", "/7/samples/rhinocommon/pick-point/", "/wip/samples/rhinocommon/pick-point/"]
+aliases = ["/en/5/samples/rhinocommon/pick-point/", "/en/6/samples/rhinocommon/pick-point/", "/en/7/samples/rhinocommon/pick-point/", "/wip/samples/rhinocommon/pick-point/"]
 authors = [ "steve" ]
 categories = [ "Picking and Selection", "Adding Objects" ]
 description = "Demonstrates how to pick and select a point object."

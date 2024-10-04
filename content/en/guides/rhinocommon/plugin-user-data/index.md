@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/plugin-user-data/", "/6/guides/rhinocommon/plugin-user-data/", "/7/guides/rhinocommon/plugin-user-data/", "/wip/guides/rhinocommon/plugin-user-data/"]
+aliases = ["/en/en/5/guides/rhinocommon/plugin-user-data/", "/en/6/guides/rhinocommon/plugin-user-data/", "/en/7/guides/rhinocommon/plugin-user-data/", "/wip/guides/rhinocommon/plugin-user-data/"]
 authors = [ "steve" ]
 categories = [ "Fundamentals" ]
 description = "This guide gives an overview of user data and how to use it with RhinoCommon."

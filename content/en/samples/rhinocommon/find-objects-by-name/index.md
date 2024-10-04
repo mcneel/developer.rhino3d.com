@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/find-objects-by-name/", "/6/samples/rhinocommon/find-objects-by-name/", "/7/samples/rhinocommon/find-objects-by-name/", "/wip/samples/rhinocommon/find-objects-by-name/"]
+aliases = ["/en/5/samples/rhinocommon/find-objects-by-name/", "/en/6/samples/rhinocommon/find-objects-by-name/", "/en/7/samples/rhinocommon/find-objects-by-name/", "/wip/samples/rhinocommon/find-objects-by-name/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to find objects by their name or label."

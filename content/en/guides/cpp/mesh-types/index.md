@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/mesh-types/", "/6/guides/cpp/mesh-types/", "/7/guides/cpp/mesh-types/", "/wip/guides/cpp/mesh-types/"]
+aliases = ["/en/5/guides/cpp/mesh-types/", "/en/6/guides/cpp/mesh-types/", "/en/7/guides/cpp/mesh-types/", "/wip/guides/cpp/mesh-types/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide discusses the types of meshes found in Rhino."

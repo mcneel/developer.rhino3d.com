@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/move-surface-grips/", "/6/samples/rhinoscript/move-surface-grips/", "/7/samples/rhinoscript/move-surface-grips/", "/wip/samples/rhinoscript/move-surface-grips/"]
+aliases = ["/en/5/samples/rhinoscript/move-surface-grips/", "/en/6/samples/rhinoscript/move-surface-grips/", "/en/7/samples/rhinoscript/move-surface-grips/", "/wip/samples/rhinoscript/move-surface-grips/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to move a surface's grip objects using RhinoScript."

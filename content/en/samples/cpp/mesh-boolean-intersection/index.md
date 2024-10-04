@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/mesh-boolean-intersection/", "/6/samples/cpp/mesh-boolean-intersection/", "/7/samples/cpp/mesh-boolean-intersection/", "/wip/samples/cpp/mesh-boolean-intersection/"]
+aliases = ["/en/5/samples/cpp/mesh-boolean-intersection/", "/en/6/samples/cpp/mesh-boolean-intersection/", "/en/7/samples/cpp/mesh-boolean-intersection/", "/wip/samples/cpp/mesh-boolean-intersection/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to intersect meshes."

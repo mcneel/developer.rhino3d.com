@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/create-block-definition/", "/6/samples/rhinocommon/create-block-definition/", "/7/samples/rhinocommon/create-block-definition/", "/wip/samples/rhinocommon/create-block-definition/"]
+aliases = ["/en/5/samples/rhinocommon/create-block-definition/", "/en/6/samples/rhinocommon/create-block-definition/", "/en/7/samples/rhinocommon/create-block-definition/", "/wip/samples/rhinocommon/create-block-definition/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects", "Blocks" ]
 description = "Demonstrates how to create a block definition from scratch from user-specified objects, base-point, and name."

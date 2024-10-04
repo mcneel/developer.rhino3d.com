@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/move-construction-plane/", "/6/samples/cpp/move-construction-plane/", "/7/samples/cpp/move-construction-plane/", "/wip/samples/cpp/move-construction-plane/"]
+aliases = ["/en/5/samples/cpp/move-construction-plane/", "/en/6/samples/cpp/move-construction-plane/", "/en/7/samples/cpp/move-construction-plane/", "/wip/samples/cpp/move-construction-plane/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to move the origin of a construction plane."

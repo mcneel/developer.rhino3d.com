@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/add-spherical-surface/", "/6/samples/cpp/add-spherical-surface/", "/7/samples/cpp/add-spherical-surface/", "/wip/samples/cpp/add-spherical-surface/"]
+aliases = ["/en/5/samples/cpp/add-spherical-surface/", "/en/6/samples/cpp/add-spherical-surface/", "/en/7/samples/cpp/add-spherical-surface/", "/wip/samples/cpp/add-spherical-surface/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Surfaces" ]
 description = "Demonstrates how to create a sphere using ON_RevSurface and add it to Rhino."

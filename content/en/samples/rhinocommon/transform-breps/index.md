@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/transform-breps/", "/6/samples/rhinocommon/transform-breps/", "/7/samples/rhinocommon/transform-breps/", "/wip/samples/rhinocommon/transform-breps/"]
+aliases = ["/en/5/samples/rhinocommon/transform-breps/", "/en/6/samples/rhinocommon/transform-breps/", "/en/7/samples/rhinocommon/transform-breps/", "/wip/samples/rhinocommon/transform-breps/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to move (or transform) a user-specified Brep object."

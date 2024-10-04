@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-rendering-classes/", "/6/guides/cpp/rdk-rendering-classes/", "/7/guides/cpp/rdk-rendering-classes/", "/wip/guides/cpp/rdk-rendering-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-rendering-classes/", "/en/6/guides/cpp/rdk-rendering-classes/", "/en/7/guides/cpp/rdk-rendering-classes/", "/wip/guides/cpp/rdk-rendering-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK's rendering classes in C/C++."

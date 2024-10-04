@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/eto-layouts-python/", "/6/guides/rhinopython/eto-layouts-python/", "/7/guides/rhinopython/eto-layouts-python/", "/wip/guides/rhinopython/eto-layouts-python/"]
+aliases = ["/en/5/guides/rhinopython/eto-layouts-python/", "/en/6/guides/rhinopython/eto-layouts-python/", "/en/7/guides/rhinopython/eto-layouts-python/", "/wip/guides/rhinopython/eto-layouts-python/"]
 authors = [ "scottd" ]
 categories = [ "Eto" ]
 description = "Using the Eto DynamicLayout to organize controls."

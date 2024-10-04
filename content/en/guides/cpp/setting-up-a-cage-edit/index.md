@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/setting-up-a-cage-edit/", "/6/guides/cpp/setting-up-a-cage-edit/", "/7/guides/cpp/setting-up-a-cage-edit/", "/wip/guides/cpp/setting-up-a-cage-edit/"]
+aliases = ["/en/5/guides/cpp/setting-up-a-cage-edit/", "/en/6/guides/cpp/setting-up-a-cage-edit/", "/en/7/guides/cpp/setting-up-a-cage-edit/", "/wip/guides/cpp/setting-up-a-cage-edit/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to setup a cage editing scenario using C/C++."

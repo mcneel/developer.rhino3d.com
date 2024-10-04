@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/transform-world-to-screen-coordinates/", "/6/samples/cpp/transform-world-to-screen-coordinates/", "/7/samples/cpp/transform-world-to-screen-coordinates/", "/wip/samples/cpp/transform-world-to-screen-coordinates/"]
+aliases = ["/en/5/samples/cpp/transform-world-to-screen-coordinates/", "/en/6/samples/cpp/transform-world-to-screen-coordinates/", "/en/7/samples/cpp/transform-world-to-screen-coordinates/", "/wip/samples/cpp/transform-world-to-screen-coordinates/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to transform world coordinates to screen coordinates."

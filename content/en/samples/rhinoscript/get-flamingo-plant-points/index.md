@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/get-flamingo-plant-points/", "/6/samples/rhinoscript/get-flamingo-plant-points/", "/7/samples/rhinoscript/get-flamingo-plant-points/", "/wip/samples/rhinoscript/get-flamingo-plant-points/"]
+aliases = ["/en/5/samples/rhinoscript/get-flamingo-plant-points/", "/en/6/samples/rhinoscript/get-flamingo-plant-points/", "/en/7/samples/rhinoscript/get-flamingo-plant-points/", "/wip/samples/rhinoscript/get-flamingo-plant-points/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how get a list of points that represent a Flamingo nXt plant in RhinoScript."

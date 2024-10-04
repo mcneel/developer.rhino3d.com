@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/grasshopper-icons/", "/6/guides/grasshopper/grasshopper-icons/", "/7/guides/grasshopper/grasshopper-icons/", "/wip/guides/grasshopper/grasshopper-icons/"]
+aliases = ["/en/5/guides/grasshopper/grasshopper-icons/", "/en/6/guides/grasshopper/grasshopper-icons/", "/en/7/guides/grasshopper/grasshopper-icons/", "/wip/guides/grasshopper/grasshopper-icons/"]
 authors = [ "david" ]
 categories = [ "In Depth" ]
 description = "This guide contains the original vector graphics used for Grasshopper icons."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/replace-object-hatch-pattern/", "/6/samples/cpp/replace-object-hatch-pattern/", "/7/samples/cpp/replace-object-hatch-pattern/", "/wip/samples/cpp/replace-object-hatch-pattern/"]
+aliases = ["/en/5/samples/cpp/replace-object-hatch-pattern/", "/en/6/samples/cpp/replace-object-hatch-pattern/", "/en/7/samples/cpp/replace-object-hatch-pattern/", "/wip/samples/cpp/replace-object-hatch-pattern/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to replace a Hatch Object's pattern."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/pre-and-post-pick-objects/", "/6/samples/rhinocommon/pre-and-post-pick-objects/", "/7/samples/rhinocommon/pre-and-post-pick-objects/", "/wip/samples/rhinocommon/pre-and-post-pick-objects/"]
+aliases = ["/en/5/samples/rhinocommon/pre-and-post-pick-objects/", "/en/6/samples/rhinocommon/pre-and-post-pick-objects/", "/en/7/samples/rhinocommon/pre-and-post-pick-objects/", "/wip/samples/rhinocommon/pre-and-post-pick-objects/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to customize Rhino's pre and post picking of objects behavior."

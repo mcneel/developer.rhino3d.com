@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/tight-bounding-boxes-for-breps/", "/6/samples/rhinocommon/tight-bounding-boxes-for-breps/", "/7/samples/rhinocommon/tight-bounding-boxes-for-breps/", "/wip/samples/rhinocommon/tight-bounding-boxes-for-breps/"]
+aliases = ["/en/5/samples/rhinocommon/tight-bounding-boxes-for-breps/", "/en/6/samples/rhinocommon/tight-bounding-boxes-for-breps/", "/en/7/samples/rhinocommon/tight-bounding-boxes-for-breps/", "/wip/samples/rhinocommon/tight-bounding-boxes-for-breps/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to generate tight bounding boxes for Brep objects."

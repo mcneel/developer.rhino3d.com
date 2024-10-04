@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/setting-viewport-titles/", "/6/guides/cpp/setting-viewport-titles/", "/7/guides/cpp/setting-viewport-titles/", "/wip/guides/cpp/setting-viewport-titles/"]
+aliases = ["/en/5/guides/cpp/setting-viewport-titles/", "/en/6/guides/cpp/setting-viewport-titles/", "/en/7/guides/cpp/setting-viewport-titles/", "/wip/guides/cpp/setting-viewport-titles/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to set the title of a viewport using C/C++."

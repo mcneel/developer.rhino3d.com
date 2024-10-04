@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/split-breps-with-planes/", "/6/samples/rhinocommon/split-breps-with-planes/", "/7/samples/rhinocommon/split-breps-with-planes/", "/wip/samples/rhinocommon/split-breps-with-planes/"]
+aliases = ["/en/5/samples/rhinocommon/split-breps-with-planes/", "/en/6/samples/rhinocommon/split-breps-with-planes/", "/en/7/samples/rhinocommon/split-breps-with-planes/", "/wip/samples/rhinocommon/split-breps-with-planes/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Split a Set of BReps with a Plane"

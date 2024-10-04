@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-render-content-editors/", "/6/guides/cpp/rdk-render-content-editors/", "/7/guides/cpp/rdk-render-content-editors/", "/wip/guides/cpp/rdk-render-content-editors/"]
+aliases = ["/en/5/guides/cpp/rdk-render-content-editors/", "/en/6/guides/cpp/rdk-render-content-editors/", "/en/7/guides/cpp/rdk-render-content-editors/", "/wip/guides/cpp/rdk-render-content-editors/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This guide describes the RDK Material, Environment, and Texture Editors"

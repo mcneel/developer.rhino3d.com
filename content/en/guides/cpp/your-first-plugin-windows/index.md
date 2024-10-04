@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/your-first-plugin-windows/", "/6/guides/cpp/your-first-plugin-windows/", "/7/guides/cpp/your-first-plugin-windows/", "/wip/guides/cpp/your-first-plugin-windows/"]
+aliases = ["/en/5/guides/cpp/your-first-plugin-windows/", "/en/6/guides/cpp/your-first-plugin-windows/", "/en/7/guides/cpp/your-first-plugin-windows/", "/wip/guides/cpp/your-first-plugin-windows/"]
 authors = [ "dale" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first plugin for Rhino for Windows using C/C++ and Visual Studio."

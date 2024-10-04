@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/fpu-issues/", "/6/guides/cpp/fpu-issues/", "/7/guides/cpp/fpu-issues/", "/wip/guides/cpp/fpu-issues/"]
+aliases = ["/en/5/guides/cpp/fpu-issues/", "/en/6/guides/cpp/fpu-issues/", "/en/7/guides/cpp/fpu-issues/", "/wip/guides/cpp/fpu-issues/"]
 authors = [ "dale" ]
 categories = [ "Troubleshooting" ]
 description = "This guide discusses math errors and floating point unit issues."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/two-view-layout/", "/6/samples/cpp/two-view-layout/", "/7/samples/cpp/two-view-layout/", "/wip/samples/cpp/two-view-layout/"]
+aliases = ["/en/5/samples/cpp/two-view-layout/", "/en/6/samples/cpp/two-view-layout/", "/en/7/samples/cpp/two-view-layout/", "/wip/samples/cpp/two-view-layout/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to create a two-view viewport layout."

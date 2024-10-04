@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/trimming-curves/", "/6/guides/rhinoscript/trimming-curves/", "/7/guides/rhinoscript/trimming-curves/", "/wip/guides/rhinoscript/trimming-curves/"]
+aliases = ["/en/5/guides/rhinoscript/trimming-curves/", "/en/6/guides/rhinoscript/trimming-curves/", "/en/7/guides/rhinoscript/trimming-curves/", "/wip/guides/rhinoscript/trimming-curves/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to trim curves using RhinoScript."

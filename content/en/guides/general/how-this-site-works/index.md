@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/how-this-site-works/", "/6/guides/general/how-this-site-works/", "/7/guides/general/how-this-site-works/", "/wip/guides/general/how-this-site-works/"]
+aliases = ["/en/5/guides/general/how-this-site-works/", "/en/6/guides/general/how-this-site-works/", "/en/7/guides/general/how-this-site-works/", "/wip/guides/general/how-this-site-works/"]
 authors = [ "dan" ]
 categories = [ "This Site" ]
 description = "A guide to how this very developer document site works."
@@ -45,7 +45,7 @@ The top of each file in the */contents/en* folder - "content" for short - contai
 
 ```toml
 +++
-aliases = ["/5/guides/general/how-this-site-works/", "/6/guides/general/how-this-site-works/", "/7/guides/general/how-this-site-works/", "/wip/guides/general/how-this-site-works/"]
+aliases = ["/en/5/guides/general/how-this-site-works/", "/en/6/guides/general/how-this-site-works/", "/en/7/guides/general/how-this-site-works/", "/wip/guides/general/how-this-site-works/"]
 authors = [ "dan" ]
 categories = [ "This Site" ]
 description = "A guide to how this very developer document site works."
@@ -115,7 +115,7 @@ Here is an example of the toml frontmatter for [a index page](/guides/):
 
 ```toml
 +++
-aliases = ["/5/guides/", "/6/guides/", "/7/guides/", "/wip/guides/"]
+aliases = ["/en/5/guides/", "/en/6/guides/", "/en/7/guides/", "/wip/guides/"]
 description = "All the guides available for developing for Rhino or Grasshopper."
 title = "Guides"
 type = "guides"
@@ -144,7 +144,7 @@ Here is an example of the YAML for this guide:
 
 ```toml
 +++
-aliases = ["/5/guides/general/how-this-site-works/", "/6/guides/general/how-this-site-works/", "/7/guides/general/how-this-site-works/", "/wip/guides/general/how-this-site-works/"]
+aliases = ["/en/5/guides/general/how-this-site-works/", "/en/6/guides/general/how-this-site-works/", "/en/7/guides/general/how-this-site-works/", "/wip/guides/general/how-this-site-works/"]
 authors = [ "dan" ]
 categories = [ "This Site" ]
 description = "A guide to how this very developer document site works."
@@ -183,7 +183,7 @@ Here is an example of the YAML for [this sample](/samples/cpp/add-a-cone-surface
 
 ```toml
 +++
-aliases = ["/5/samples/cpp/add-a-cone-surface/", "/6/samples/cpp/add-a-cone-surface/", "/7/samples/cpp/add-a-cone-surface/", "/wip/samples/cpp/add-a-cone-surface/"]
+aliases = ["/en/5/samples/cpp/add-a-cone-surface/", "/en/6/samples/cpp/add-a-cone-surface/", "/en/7/samples/cpp/add-a-cone-surface/", "/wip/samples/cpp/add-a-cone-surface/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Surfaces" ]
 description = "Demonstrates how to create a cone using ON_BrepCone."

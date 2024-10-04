@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/essential-mathematics/matrices-transformations/", "/6/guides/general/essential-mathematics/matrices-transformations/", "/7/guides/general/essential-mathematics/matrices-transformations/", "/wip/guides/general/essential-mathematics/matrices-transformations/"]
+aliases = ["/en/5/guides/general/essential-mathematics/matrices-transformations/", "/en/6/guides/general/essential-mathematics/matrices-transformations/", "/en/7/guides/general/essential-mathematics/matrices-transformations/", "/wip/guides/general/essential-mathematics/matrices-transformations/"]
 authors = [ "rajaa" ]
 categories = [ "Essential Mathematics" ]
 category_page = "guides/general/essential-mathematics/"

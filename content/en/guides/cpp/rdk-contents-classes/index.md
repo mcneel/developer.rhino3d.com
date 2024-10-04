@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-contents-classes/", "/6/guides/cpp/rdk-contents-classes/", "/7/guides/cpp/rdk-contents-classes/", "/wip/guides/cpp/rdk-contents-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-contents-classes/", "/en/6/guides/cpp/rdk-contents-classes/", "/en/7/guides/cpp/rdk-contents-classes/", "/wip/guides/cpp/rdk-contents-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK document contents class in C/C++."

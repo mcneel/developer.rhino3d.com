@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/conduit-draw-shaded-mesh/", "/6/samples/rhinocommon/conduit-draw-shaded-mesh/", "/7/samples/rhinocommon/conduit-draw-shaded-mesh/", "/wip/samples/rhinocommon/conduit-draw-shaded-mesh/"]
+aliases = ["/en/5/samples/rhinocommon/conduit-draw-shaded-mesh/", "/en/6/samples/rhinocommon/conduit-draw-shaded-mesh/", "/en/7/samples/rhinocommon/conduit-draw-shaded-mesh/", "/wip/samples/rhinocommon/conduit-draw-shaded-mesh/"]
 authors = [ "steve" ]
 categories = [ "Draw" ]
 description = "Demonstrates how to draw a shaded mesh using a display conduit."

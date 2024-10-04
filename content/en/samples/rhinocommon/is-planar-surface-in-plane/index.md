@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/is-planar-surface-in-plane/", "/6/samples/rhinocommon/is-planar-surface-in-plane/", "/7/samples/rhinocommon/is-planar-surface-in-plane/", "/wip/samples/rhinocommon/is-planar-surface-in-plane/"]
+aliases = ["/en/5/samples/rhinocommon/is-planar-surface-in-plane/", "/en/6/samples/rhinocommon/is-planar-surface-in-plane/", "/en/7/samples/rhinocommon/is-planar-surface-in-plane/", "/wip/samples/rhinocommon/is-planar-surface-in-plane/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to determine if a user-selected surface is in plane."

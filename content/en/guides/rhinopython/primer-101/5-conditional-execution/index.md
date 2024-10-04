@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/primer-101/5-conditional-execution/", "/6/guides/rhinopython/primer-101/5-conditional-execution/", "/7/guides/rhinopython/primer-101/5-conditional-execution/", "/wip/guides/rhinopython/primer-101/5-conditional-execution/"]
+aliases = ["/en/5/guides/rhinopython/primer-101/5-conditional-execution/", "/en/6/guides/rhinopython/primer-101/5-conditional-execution/", "/en/7/guides/rhinopython/primer-101/5-conditional-execution/", "/wip/guides/rhinopython/primer-101/5-conditional-execution/"]
 authors = [ "skylar-tibbits", "arthur-van-der-harten", "steve" ]
 categories = [ "Rhino.Python 101" ]
 category_page = "guides/rhinopython/primer-101/"

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/migrate-properties-pages-windows/", "/6/guides/cpp/migrate-properties-pages-windows/", "/7/guides/cpp/migrate-properties-pages-windows/", "/wip/guides/cpp/migrate-properties-pages-windows/"]
+aliases = ["/en/5/guides/cpp/migrate-properties-pages-windows/", "/en/6/guides/cpp/migrate-properties-pages-windows/", "/en/7/guides/cpp/migrate-properties-pages-windows/", "/wip/guides/cpp/migrate-properties-pages-windows/"]
 authors = [ "johnm" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through migrating existing Rhino 5, plug-in provided, Options, Document Properties and Object Properties pages to Rhino 6."

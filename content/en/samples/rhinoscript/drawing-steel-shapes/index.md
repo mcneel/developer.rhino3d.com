@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/drawing-steel-shapes/", "/6/samples/rhinoscript/drawing-steel-shapes/", "/7/samples/rhinoscript/drawing-steel-shapes/", "/wip/samples/rhinoscript/drawing-steel-shapes/"]
+aliases = ["/en/5/samples/rhinoscript/drawing-steel-shapes/", "/en/6/samples/rhinoscript/drawing-steel-shapes/", "/en/7/samples/rhinoscript/drawing-steel-shapes/", "/wip/samples/rhinoscript/drawing-steel-shapes/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to draw steel shapes using RhinoScript."

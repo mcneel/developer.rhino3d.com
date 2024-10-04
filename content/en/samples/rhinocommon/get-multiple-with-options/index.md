@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/get-multiple-with-options/", "/6/samples/rhinocommon/get-multiple-with-options/", "/7/samples/rhinocommon/get-multiple-with-options/", "/wip/samples/rhinocommon/get-multiple-with-options/"]
+aliases = ["/en/5/samples/rhinocommon/get-multiple-with-options/", "/en/6/samples/rhinocommon/get-multiple-with-options/", "/en/7/samples/rhinocommon/get-multiple-with-options/", "/wip/samples/rhinocommon/get-multiple-with-options/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to get multiple objects in Rhino command-line options."

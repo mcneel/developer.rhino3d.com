@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/yak/", "/6/guides/yak/", "/7/guides/yak/", "/wip/guides/yak/"]
+aliases = ["/en/5/guides/yak/", "/en/6/guides/yak/", "/en/7/guides/yak/", "/wip/guides/yak/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "Guides to using the Rhino package manager, mostly from a developer's perspective."

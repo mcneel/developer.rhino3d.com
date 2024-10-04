@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-linear-workflow-classes/", "/6/guides/cpp/rdk-linear-workflow-classes/", "/7/guides/cpp/rdk-linear-workflow-classes/", "/wip/guides/cpp/rdk-linear-workflow-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-linear-workflow-classes/", "/en/6/guides/cpp/rdk-linear-workflow-classes/", "/en/7/guides/cpp/rdk-linear-workflow-classes/", "/wip/guides/cpp/rdk-linear-workflow-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK linear workflow class in C/C++."

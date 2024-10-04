@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/simple-geometry-component/", "/6/guides/grasshopper/simple-geometry-component/", "/7/guides/grasshopper/simple-geometry-component/", "/wip/guides/grasshopper/simple-geometry-component/"]
+aliases = ["/en/5/guides/grasshopper/simple-geometry-component/", "/en/6/guides/grasshopper/simple-geometry-component/", "/en/7/guides/grasshopper/simple-geometry-component/", "/wip/guides/grasshopper/simple-geometry-component/"]
 authors = [ "david" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to use some of the simpler geometry types and classes in RhinoCommon & Grasshopper."

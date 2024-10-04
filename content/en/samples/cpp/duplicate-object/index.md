@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/duplicate-object/", "/6/samples/cpp/duplicate-object/", "/7/samples/cpp/duplicate-object/", "/wip/samples/cpp/duplicate-object/"]
+aliases = ["/en/5/samples/cpp/duplicate-object/", "/en/6/samples/cpp/duplicate-object/", "/en/7/samples/cpp/duplicate-object/", "/wip/samples/cpp/duplicate-object/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to make a copy of a CRhinoObject-derived object."

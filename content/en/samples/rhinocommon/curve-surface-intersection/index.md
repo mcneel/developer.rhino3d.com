@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/curve-surface-intersection/", "/6/samples/rhinocommon/curve-surface-intersection/", "/7/samples/rhinocommon/curve-surface-intersection/", "/wip/samples/rhinocommon/curve-surface-intersection/"]
+aliases = ["/en/5/samples/rhinocommon/curve-surface-intersection/", "/en/6/samples/rhinocommon/curve-surface-intersection/", "/en/7/samples/rhinocommon/curve-surface-intersection/", "/wip/samples/rhinocommon/curve-surface-intersection/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to calculate the intersection points of a user-specified Brep and a curve."

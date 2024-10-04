@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/persistent-settings/", "/6/guides/rhinoscript/persistent-settings/", "/7/guides/rhinoscript/persistent-settings/", "/wip/guides/rhinoscript/persistent-settings/"]
+aliases = ["/en/5/guides/rhinoscript/persistent-settings/", "/en/6/guides/rhinoscript/persistent-settings/", "/en/7/guides/rhinoscript/persistent-settings/", "/wip/guides/rhinoscript/persistent-settings/"]
 authors = [ "jess-maertterer" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This brief guide demonstrates how to use private variables for persistent settings in RhinoScript."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/", "/6/guides/cpp/", "/7/guides/cpp/", "/wip/guides/cpp/"]
+aliases = ["/en/5/guides/cpp/", "/en/6/guides/cpp/", "/en/7/guides/cpp/", "/wip/guides/cpp/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "Guides to the C/C++ SDK for Rhino for Windows plugins."

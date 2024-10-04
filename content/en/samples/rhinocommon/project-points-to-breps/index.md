@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/project-points-to-breps/", "/6/samples/rhinocommon/project-points-to-breps/", "/7/samples/rhinocommon/project-points-to-breps/", "/wip/samples/rhinocommon/project-points-to-breps/"]
+aliases = ["/en/5/samples/rhinocommon/project-points-to-breps/", "/en/6/samples/rhinocommon/project-points-to-breps/", "/en/7/samples/rhinocommon/project-points-to-breps/", "/wip/samples/rhinocommon/project-points-to-breps/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to project points to Brep objects."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinomobile/your-first-app-windows/", "/6/guides/rhinomobile/your-first-app-windows/", "/7/guides/rhinomobile/your-first-app-windows/", "/wip/guides/rhinomobile/your-first-app-windows/"]
+aliases = ["/en/5/guides/rhinomobile/your-first-app-windows/", "/en/6/guides/rhinomobile/your-first-app-windows/", "/en/7/guides/rhinomobile/your-first-app-windows/", "/wip/guides/rhinomobile/your-first-app-windows/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first mobile app using RhinoMobile and Visual Studio on Windows."

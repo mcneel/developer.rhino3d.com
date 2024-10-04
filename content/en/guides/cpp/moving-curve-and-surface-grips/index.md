@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/moving-curve-and-surface-grips/", "/6/guides/cpp/moving-curve-and-surface-grips/", "/7/guides/cpp/moving-curve-and-surface-grips/", "/wip/guides/cpp/moving-curve-and-surface-grips/"]
+aliases = ["/en/5/guides/cpp/moving-curve-and-surface-grips/", "/en/6/guides/cpp/moving-curve-and-surface-grips/", "/en/7/guides/cpp/moving-curve-and-surface-grips/", "/wip/guides/cpp/moving-curve-and-surface-grips/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to move curve and surface object grips using C/C++."

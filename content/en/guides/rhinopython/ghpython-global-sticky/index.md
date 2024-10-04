@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/ghpython-global-sticky/", "/6/guides/rhinopython/ghpython-global-sticky/", "/7/guides/rhinopython/ghpython-global-sticky/", "/wip/guides/rhinopython/ghpython-global-sticky/"]
+aliases = ["/en/5/guides/rhinopython/ghpython-global-sticky/", "/en/6/guides/rhinopython/ghpython-global-sticky/", "/en/7/guides/rhinopython/ghpython-global-sticky/", "/wip/guides/rhinopython/ghpython-global-sticky/"]
 authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "Create a variable that sticks around for other components."

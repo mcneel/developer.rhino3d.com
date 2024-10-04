@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/query-plant-wireframe/", "/6/samples/rhinoscript/query-plant-wireframe/", "/7/samples/rhinoscript/query-plant-wireframe/", "/wip/samples/rhinoscript/query-plant-wireframe/"]
+aliases = ["/en/5/samples/rhinoscript/query-plant-wireframe/", "/en/6/samples/rhinoscript/query-plant-wireframe/", "/en/7/samples/rhinoscript/query-plant-wireframe/", "/wip/samples/rhinoscript/query-plant-wireframe/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how to generate a wire-frame representation of a Flamingo 2.0 plant using RhinoScript."

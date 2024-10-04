@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/array-utilities/", "/6/guides/rhinoscript/array-utilities/", "/7/guides/rhinoscript/array-utilities/", "/wip/guides/rhinoscript/array-utilities/"]
+aliases = ["/en/5/guides/rhinoscript/array-utilities/", "/en/6/guides/rhinoscript/array-utilities/", "/en/7/guides/rhinoscript/array-utilities/", "/wip/guides/rhinoscript/array-utilities/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide presents an array of VBScript Array utilities."

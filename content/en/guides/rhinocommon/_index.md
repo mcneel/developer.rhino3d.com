@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/", "/6/guides/rhinocommon/", "/7/guides/rhinocommon/", "/wip/guides/rhinocommon/"]
+aliases = ["/en/en/5/guides/rhinocommon/", "/en/6/guides/rhinocommon/", "/en/7/guides/rhinocommon/", "/wip/guides/rhinocommon/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "RhinoCommon is the cross-platform .NET plugin SDK for Rhino."

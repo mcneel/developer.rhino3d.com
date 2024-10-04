@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/intersect-curve-with-mesh/", "/6/samples/cpp/intersect-curve-with-mesh/", "/7/samples/cpp/intersect-curve-with-mesh/", "/wip/samples/cpp/intersect-curve-with-mesh/"]
+aliases = ["/en/5/samples/cpp/intersect-curve-with-mesh/", "/en/6/samples/cpp/intersect-curve-with-mesh/", "/en/7/samples/cpp/intersect-curve-with-mesh/", "/wip/samples/cpp/intersect-curve-with-mesh/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to intersect a curve with a mesh."

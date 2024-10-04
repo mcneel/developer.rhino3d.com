@@ -33,4 +33,4 @@
 
 {{/* overriding id and href of heading */}}
 {{ $generatedAnchor := index $translations $.Anchor }}
-<h{{ $.Level }} id="{{$generatedAnchor}}">{{ $headingText | safeHTML }}<a aria-label="{{ $headingText | safeHTML }}" href="#{{$generatedAnchor}}"></a>{{ if $badge }}<div class="new-callout new-callout-inline"><a href="/8/new/">{{ $badge | safeHTML }}</a></div>{{ end }}</h{{ $.Level }}>
+<h{{ $.Level }} id="{{$generatedAnchor}}">{{ $headingText | safeHTML }}<a aria-label="{{ $headingText | safeHTML }}" href="#{{$generatedAnchor}}"></a>{{ if $badge }}<div class="new-callout new-callout-inline"><a href="/en/8/new/">{{ $badge | safeHTML }}</a></div>{{ end }}</h{{ $.Level }}>

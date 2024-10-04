@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/brep-from-curve-bounding-box/", "/6/samples/rhinocommon/brep-from-curve-bounding-box/", "/7/samples/rhinocommon/brep-from-curve-bounding-box/", "/wip/samples/rhinocommon/brep-from-curve-bounding-box/"]
+aliases = ["/en/5/samples/rhinocommon/brep-from-curve-bounding-box/", "/en/6/samples/rhinocommon/brep-from-curve-bounding-box/", "/en/7/samples/rhinocommon/brep-from-curve-bounding-box/", "/wip/samples/rhinocommon/brep-from-curve-bounding-box/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to create a valid Brep from a curve's bounding box."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/rhinoaccounts/ra-example/", "/6/guides/rhinocommon/rhinoaccounts/ra-example/", "/7/guides/rhinocommon/rhinoaccounts/ra-example/", "/wip/guides/rhinocommon/rhinoaccounts/ra-example/"]
+aliases = ["/en/en/5/guides/rhinocommon/rhinoaccounts/ra-example/", "/en/6/guides/rhinocommon/rhinoaccounts/ra-example/", "/en/7/guides/rhinocommon/rhinoaccounts/ra-example/", "/wip/guides/rhinocommon/rhinoaccounts/ra-example/"]
 authors = [ "aj" ]
 categories = [ "RhinoAccounts" ]
 description = "This guide gives an example of how to obtain authentication and authorization tokens within Rhino from Rhino Accounts."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/unroll-surface-and-mesh/", "/6/samples/rhinocommon/unroll-surface-and-mesh/", "/7/samples/rhinocommon/unroll-surface-and-mesh/", "/wip/samples/rhinocommon/unroll-surface-and-mesh/"]
+aliases = ["/en/5/samples/rhinocommon/unroll-surface-and-mesh/", "/en/6/samples/rhinocommon/unroll-surface-and-mesh/", "/en/7/samples/rhinocommon/unroll-surface-and-mesh/", "/wip/samples/rhinocommon/unroll-surface-and-mesh/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Unroll developable surface and associated mesh"

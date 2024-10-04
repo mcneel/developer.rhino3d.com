@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/authors/", "/6/authors/", "/7/authors/", "/wip/authors/"]
+aliases = ["/en/5/authors/", "/en/6/authors/", "/en/7/authors/", "/wip/authors/"]
 description = "Author credits and contributions"
 title = "Authors"
 type = "authors"

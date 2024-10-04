@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/digitally-signing-plugins-for-zoo/", "/6/guides/rhinocommon/digitally-signing-plugins-for-zoo/", "/7/guides/rhinocommon/digitally-signing-plugins-for-zoo/", "/wip/guides/rhinocommon/digitally-signing-plugins-for-zoo/"]
+aliases = ["/en/en/5/guides/rhinocommon/digitally-signing-plugins-for-zoo/", "/en/6/guides/rhinocommon/digitally-signing-plugins-for-zoo/", "/en/7/guides/rhinocommon/digitally-signing-plugins-for-zoo/", "/wip/guides/rhinocommon/digitally-signing-plugins-for-zoo/"]
 authors = [ "dale" ]
 categories = [ "Zoo" ]
 description = "This guide discusses how to digitally sign LAN Zoo and Rhino plugins."

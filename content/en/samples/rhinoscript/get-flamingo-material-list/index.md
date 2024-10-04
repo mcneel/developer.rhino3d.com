@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/get-flamingo-material-list/", "/6/samples/rhinoscript/get-flamingo-material-list/", "/7/samples/rhinoscript/get-flamingo-material-list/", "/wip/samples/rhinoscript/get-flamingo-material-list/"]
+aliases = ["/en/5/samples/rhinoscript/get-flamingo-material-list/", "/en/6/samples/rhinoscript/get-flamingo-material-list/", "/en/7/samples/rhinoscript/get-flamingo-material-list/", "/wip/samples/rhinoscript/get-flamingo-material-list/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how to get a the Flamingo nXt material list from the current document using RhinoScript."

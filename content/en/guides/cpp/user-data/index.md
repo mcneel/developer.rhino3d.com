@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/user-data/", "/6/guides/cpp/user-data/", "/7/guides/cpp/user-data/", "/wip/guides/cpp/user-data/"]
+aliases = ["/en/5/guides/cpp/user-data/", "/en/6/guides/cpp/user-data/", "/en/7/guides/cpp/user-data/", "/wip/guides/cpp/user-data/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide covers user data using C/C++."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/set-camera-angle/", "/6/samples/rhinoscript/set-camera-angle/", "/7/samples/rhinoscript/set-camera-angle/", "/wip/samples/rhinoscript/set-camera-angle/"]
+aliases = ["/en/5/samples/rhinoscript/set-camera-angle/", "/en/6/samples/rhinoscript/set-camera-angle/", "/en/7/samples/rhinoscript/set-camera-angle/", "/wip/samples/rhinoscript/set-camera-angle/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to set the camera angle using RhinoScript."

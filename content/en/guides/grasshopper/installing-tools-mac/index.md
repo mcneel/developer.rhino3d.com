@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/installing-tools-mac/", "/6/guides/grasshopper/installing-tools-mac/", "/7/guides/grasshopper/installing-tools-mac/", "/wip/guides/grasshopper/installing-tools-mac/"]
+aliases = ["/en/5/guides/grasshopper/installing-tools-mac/", "/en/6/guides/grasshopper/installing-tools-mac/", "/en/7/guides/grasshopper/installing-tools-mac/", "/wip/guides/grasshopper/installing-tools-mac/"]
 authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
 description = "This guide covers all the necessary tools required to author Grasshopper components on Mac."

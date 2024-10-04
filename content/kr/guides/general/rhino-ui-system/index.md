@@ -1,5 +1,5 @@
 +++
-aliases = ["/8/guides/general/rhino-ui-system/"]
+aliases = ["/en/8/guides/general/rhino-ui-system/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "Rhino의 사용자 인터페이스 시스템을 간략하게 설명하는 가이드입니다."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-variables/", "/6/guides/rhinopython/python-variables/", "/7/guides/rhinopython/python-variables/", "/wip/guides/rhinopython/python-variables/"]
+aliases = ["/en/5/guides/rhinopython/python-variables/", "/en/6/guides/rhinopython/python-variables/", "/en/7/guides/rhinopython/python-variables/", "/wip/guides/rhinopython/python-variables/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide provides an overview of Python variables."

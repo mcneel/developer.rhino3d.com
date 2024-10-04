@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/convert-arc-to-nurbs-curve/", "/6/samples/cpp/convert-arc-to-nurbs-curve/", "/7/samples/cpp/convert-arc-to-nurbs-curve/", "/wip/samples/cpp/convert-arc-to-nurbs-curve/"]
+aliases = ["/en/5/samples/cpp/convert-arc-to-nurbs-curve/", "/en/6/samples/cpp/convert-arc-to-nurbs-curve/", "/en/7/samples/cpp/convert-arc-to-nurbs-curve/", "/wip/samples/cpp/convert-arc-to-nurbs-curve/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to convert an ON_ArcCurve object to an ON_NurbsCurve object."

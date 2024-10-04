@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/copying-to-excel/", "/6/guides/rhinoscript/copying-to-excel/", "/7/guides/rhinoscript/copying-to-excel/", "/wip/guides/rhinoscript/copying-to-excel/"]
+aliases = ["/en/5/guides/rhinoscript/copying-to-excel/", "/en/6/guides/rhinoscript/copying-to-excel/", "/en/7/guides/rhinoscript/copying-to-excel/", "/wip/guides/rhinoscript/copying-to-excel/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to copy from Rhino and paste into Microsoft Excel using RhinoScript."

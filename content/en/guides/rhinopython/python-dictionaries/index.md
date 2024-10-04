@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-dictionaries/", "/6/guides/rhinopython/python-dictionaries/", "/7/guides/rhinopython/python-dictionaries/", "/wip/guides/rhinopython/python-dictionaries/"]
+aliases = ["/en/5/guides/rhinopython/python-dictionaries/", "/en/6/guides/rhinopython/python-dictionaries/", "/en/7/guides/rhinopython/python-dictionaries/", "/wip/guides/rhinopython/python-dictionaries/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses using Python's Dictionary object."

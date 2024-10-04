@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/opennurbs/read-notes-from-3dm/", "/6/samples/opennurbs/read-notes-from-3dm/", "/7/samples/opennurbs/read-notes-from-3dm/", "/wip/samples/opennurbs/read-notes-from-3dm/"]
+aliases = ["/en/5/samples/opennurbs/read-notes-from-3dm/", "/en/6/samples/opennurbs/read-notes-from-3dm/", "/en/7/samples/opennurbs/read-notes-from-3dm/", "/wip/samples/opennurbs/read-notes-from-3dm/"]
 authors = [ "dalelear" ]
 categories = [ "Fundamentals" ]
 description = "Demonstrates how to read the user-added notes field from a 3DM file using either C/C++ or the openNURBS toolkit."

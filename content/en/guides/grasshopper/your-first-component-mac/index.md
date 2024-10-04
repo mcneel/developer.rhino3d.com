@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/your-first-component-mac/", "/6/guides/grasshopper/your-first-component-mac/", "/7/guides/grasshopper/your-first-component-mac/", "/wip/guides/grasshopper/your-first-component-mac/"]
+aliases = ["/en/5/guides/grasshopper/your-first-component-mac/", "/en/6/guides/grasshopper/your-first-component-mac/", "/en/7/guides/grasshopper/your-first-component-mac/", "/wip/guides/grasshopper/your-first-component-mac/"]
 authors = [ "steve", "callum" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first Grasshopper component for Rhino for Mac using RhinoCommon and Visual Studio Code."

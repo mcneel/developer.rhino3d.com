@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/batch-save-small/", "/6/samples/rhinoscript/batch-save-small/", "/7/samples/rhinoscript/batch-save-small/", "/wip/samples/rhinoscript/batch-save-small/"]
+aliases = ["/en/5/samples/rhinoscript/batch-save-small/", "/en/6/samples/rhinoscript/batch-save-small/", "/en/7/samples/rhinoscript/batch-save-small/", "/wip/samples/rhinoscript/batch-save-small/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to recurse through a folder and save small every Rhino file using RhinoScript."

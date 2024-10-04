@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/print-surface-control-points/", "/6/samples/rhinoscript/print-surface-control-points/", "/7/samples/rhinoscript/print-surface-control-points/", "/wip/samples/rhinoscript/print-surface-control-points/"]
+aliases = ["/en/5/samples/rhinoscript/print-surface-control-points/", "/en/6/samples/rhinoscript/print-surface-control-points/", "/en/7/samples/rhinoscript/print-surface-control-points/", "/wip/samples/rhinoscript/print-surface-control-points/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to print the location of a surface's control points using RhinoScript."

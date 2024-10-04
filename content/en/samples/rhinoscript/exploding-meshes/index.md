@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/exploding-meshes/", "/6/samples/rhinoscript/exploding-meshes/", "/7/samples/rhinoscript/exploding-meshes/", "/wip/samples/rhinoscript/exploding-meshes/"]
+aliases = ["/en/5/samples/rhinoscript/exploding-meshes/", "/en/6/samples/rhinoscript/exploding-meshes/", "/en/7/samples/rhinoscript/exploding-meshes/", "/wip/samples/rhinoscript/exploding-meshes/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to explode a mesh into individual faces using RhinoScript."

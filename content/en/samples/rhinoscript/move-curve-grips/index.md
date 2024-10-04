@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/move-curve-grips/", "/6/samples/rhinoscript/move-curve-grips/", "/7/samples/rhinoscript/move-curve-grips/", "/wip/samples/rhinoscript/move-curve-grips/"]
+aliases = ["/en/5/samples/rhinoscript/move-curve-grips/", "/en/6/samples/rhinoscript/move-curve-grips/", "/en/7/samples/rhinoscript/move-curve-grips/", "/wip/samples/rhinoscript/move-curve-grips/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to move a curve's grips using RhinoScript."

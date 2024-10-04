@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-texture/", "/6/samples/rhinocommon/add-texture/", "/7/samples/rhinocommon/add-texture/", "/wip/samples/rhinocommon/add-texture/"]
+aliases = ["/en/5/samples/rhinocommon/add-texture/", "/en/6/samples/rhinocommon/add-texture/", "/en/7/samples/rhinocommon/add-texture/", "/wip/samples/rhinocommon/add-texture/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a texture to an object from a user-specified bitmap file."

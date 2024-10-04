@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/vbscript-regexp-objects/", "/6/guides/rhinoscript/vbscript-regexp-objects/", "/7/guides/rhinoscript/vbscript-regexp-objects/", "/wip/guides/rhinoscript/vbscript-regexp-objects/"]
+aliases = ["/en/5/guides/rhinoscript/vbscript-regexp-objects/", "/en/6/guides/rhinoscript/vbscript-regexp-objects/", "/en/7/guides/rhinoscript/vbscript-regexp-objects/", "/wip/guides/rhinoscript/vbscript-regexp-objects/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses the VBScript RegExp object."

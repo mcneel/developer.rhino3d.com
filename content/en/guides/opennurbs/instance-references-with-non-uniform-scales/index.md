@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/instance-references-with-non-uniform-scales/", "/6/guides/opennurbs/instance-references-with-non-uniform-scales/", "/7/guides/opennurbs/instance-references-with-non-uniform-scales/", "/wip/guides/opennurbs/instance-references-with-non-uniform-scales/"]
+aliases = ["/en/5/guides/opennurbs/instance-references-with-non-uniform-scales/", "/en/6/guides/opennurbs/instance-references-with-non-uniform-scales/", "/en/7/guides/opennurbs/instance-references-with-non-uniform-scales/", "/wip/guides/opennurbs/instance-references-with-non-uniform-scales/"]
 authors = [ "dalelear" ]
 categories = [ "Advanced" ]
 description = "This guide discusses non-uniform scaling issues when using the openNURBS toolkit"

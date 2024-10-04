@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/primer-101/", "/6/guides/rhinopython/primer-101/", "/7/guides/rhinopython/primer-101/", "/wip/guides/rhinopython/primer-101/"]
+aliases = ["/en/5/guides/rhinopython/primer-101/", "/en/6/guides/rhinopython/primer-101/", "/en/7/guides/rhinopython/primer-101/", "/wip/guides/rhinopython/primer-101/"]
 authors = [ "skylar-tibbits", "arthur-van-der-harten", "steve" ]
 categories = [ "Unsorted" ]
 description = "A full course on Rhino.Python"

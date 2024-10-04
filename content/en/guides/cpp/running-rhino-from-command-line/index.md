@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/running-rhino-from-command-line/", "/6/guides/cpp/running-rhino-from-command-line/", "/7/guides/cpp/running-rhino-from-command-line/", "/wip/guides/cpp/running-rhino-from-command-line/"]
+aliases = ["/en/5/guides/cpp/running-rhino-from-command-line/", "/en/6/guides/cpp/running-rhino-from-command-line/", "/en/7/guides/cpp/running-rhino-from-command-line/", "/wip/guides/cpp/running-rhino-from-command-line/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide explains how to run Rhino from the command line."

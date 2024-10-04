@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/using-rhinocommon-from-python/", "/6/guides/rhinopython/using-rhinocommon-from-python/", "/7/guides/rhinopython/using-rhinocommon-from-python/", "/wip/guides/rhinopython/using-rhinocommon-from-python/"]
+aliases = ["/en/5/guides/rhinopython/using-rhinocommon-from-python/", "/en/6/guides/rhinopython/using-rhinocommon-from-python/", "/en/7/guides/rhinopython/using-rhinocommon-from-python/", "/wip/guides/rhinopython/using-rhinocommon-from-python/"]
 authors = [ "dan" ]
 categories = [ "Advanced" ]
 description = "This brief guide cover using RhinoCommon from Python."

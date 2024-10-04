@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/show-surface-direction/", "/6/samples/rhinocommon/show-surface-direction/", "/7/samples/rhinocommon/show-surface-direction/", "/wip/samples/rhinocommon/show-surface-direction/"]
+aliases = ["/en/5/samples/rhinocommon/show-surface-direction/", "/en/6/samples/rhinocommon/show-surface-direction/", "/en/7/samples/rhinocommon/show-surface-direction/", "/wip/samples/rhinocommon/show-surface-direction/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to show a surface's direction using a display conduit."

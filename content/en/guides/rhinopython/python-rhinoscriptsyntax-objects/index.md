@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-objects/", "/6/guides/rhinopython/python-rhinoscriptsyntax-objects/", "/7/guides/rhinopython/python-rhinoscriptsyntax-objects/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-objects/"]
+aliases = ["/en/5/guides/rhinopython/python-rhinoscriptsyntax-objects/", "/en/6/guides/rhinopython/python-rhinoscriptsyntax-objects/", "/en/7/guides/rhinopython/python-rhinoscriptsyntax-objects/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-objects/"]
 authors = [ "dale" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an overview of RhinoScriptSyntax Object Geometry in Python."

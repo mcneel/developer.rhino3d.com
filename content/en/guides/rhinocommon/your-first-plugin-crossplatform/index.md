@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/your-first-plugin-crossplatform/", "/6/guides/rhinocommon/your-first-plugin-crossplatform/", "/7/guides/rhinocommon/your-first-plugin-crossplatform/", "/wip/guides/rhinocommon/your-first-plugin-crossplatform/"]
+aliases = ["/en/en/5/guides/rhinocommon/your-first-plugin-crossplatform/", "/en/6/guides/rhinocommon/your-first-plugin-crossplatform/", "/en/7/guides/rhinocommon/your-first-plugin-crossplatform/", "/wip/guides/rhinocommon/your-first-plugin-crossplatform/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first plugin that targets both Rhino for Windows and Rhino for Mac."

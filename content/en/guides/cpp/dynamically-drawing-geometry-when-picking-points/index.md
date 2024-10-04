@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/dynamically-drawing-geometry-when-picking-points/", "/6/guides/cpp/dynamically-drawing-geometry-when-picking-points/", "/7/guides/cpp/dynamically-drawing-geometry-when-picking-points/", "/wip/guides/cpp/dynamically-drawing-geometry-when-picking-points/"]
+aliases = ["/en/5/guides/cpp/dynamically-drawing-geometry-when-picking-points/", "/en/6/guides/cpp/dynamically-drawing-geometry-when-picking-points/", "/en/7/guides/cpp/dynamically-drawing-geometry-when-picking-points/", "/wip/guides/cpp/dynamically-drawing-geometry-when-picking-points/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to derive a new class to dynamically draw geometry during a point picking operation using C/C++."

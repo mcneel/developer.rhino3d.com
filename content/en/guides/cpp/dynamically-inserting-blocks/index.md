@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/dynamically-inserting-blocks/", "/6/guides/cpp/dynamically-inserting-blocks/", "/7/guides/cpp/dynamically-inserting-blocks/", "/wip/guides/cpp/dynamically-inserting-blocks/"]
+aliases = ["/en/5/guides/cpp/dynamically-inserting-blocks/", "/en/6/guides/cpp/dynamically-inserting-blocks/", "/en/7/guides/cpp/dynamically-inserting-blocks/", "/wip/guides/cpp/dynamically-inserting-blocks/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to insert a block instance at a user specified location using C/C++."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/nothing-empty-null/", "/6/guides/rhinoscript/nothing-empty-null/", "/7/guides/rhinoscript/nothing-empty-null/", "/wip/guides/rhinoscript/nothing-empty-null/"]
+aliases = ["/en/5/guides/rhinoscript/nothing-empty-null/", "/en/6/guides/rhinoscript/nothing-empty-null/", "/en/7/guides/rhinoscript/nothing-empty-null/", "/wip/guides/rhinoscript/nothing-empty-null/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide discusses what nothing means in VBScript."

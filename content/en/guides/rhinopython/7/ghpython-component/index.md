@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/ghpython-component/", "/6/guides/rhinopython/ghpython-component/", "/7/guides/rhinopython/ghpython-component/", "/wip/guides/rhinopython/ghpython-component/"]
+aliases = ["/en/5/guides/rhinopython/ghpython-component/", "/en/6/guides/rhinopython/ghpython-component/", "/en/7/guides/rhinopython/ghpython-component/", "/wip/guides/rhinopython/ghpython-component/"]
 authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "The GhPython component is the key to working with Python in Grasshopper."

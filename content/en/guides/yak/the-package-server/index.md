@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/yak/the-package-server/", "/6/guides/yak/the-package-server/", "/7/guides/yak/the-package-server/", "/wip/guides/yak/the-package-server/"]
+aliases = ["/en/5/guides/yak/the-package-server/", "/en/6/guides/yak/the-package-server/", "/en/7/guides/yak/the-package-server/", "/wip/guides/yak/the-package-server/"]
 authors = [ "will" ]
 categories = [ "Fundamentals" ]
 description = "This guide introduces the Rhino Package Manager server - https://yak.rhino3d.com"

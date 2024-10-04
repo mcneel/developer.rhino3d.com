@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/batch-convert-autocad-files/", "/6/samples/rhinoscript/batch-convert-autocad-files/", "/7/samples/rhinoscript/batch-convert-autocad-files/", "/wip/samples/rhinoscript/batch-convert-autocad-files/"]
+aliases = ["/en/5/samples/rhinoscript/batch-convert-autocad-files/", "/en/6/samples/rhinoscript/batch-convert-autocad-files/", "/en/7/samples/rhinoscript/batch-convert-autocad-files/", "/wip/samples/rhinoscript/batch-convert-autocad-files/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to convert a folder of AutoCAD files to Rhino 3dm files using RhinoScript."

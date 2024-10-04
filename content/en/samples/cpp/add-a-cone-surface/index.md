@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/add-a-cone-surface/", "/6/samples/cpp/add-a-cone-surface/", "/7/samples/cpp/add-a-cone-surface/", "/wip/samples/cpp/add-a-cone-surface/"]
+aliases = ["/en/5/samples/cpp/add-a-cone-surface/", "/en/6/samples/cpp/add-a-cone-surface/", "/en/7/samples/cpp/add-a-cone-surface/", "/wip/samples/cpp/add-a-cone-surface/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Surfaces" ]
 description = "Demonstrates how to create a cone using ON_BrepCone."

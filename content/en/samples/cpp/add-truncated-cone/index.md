@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/add-truncated-cone/", "/6/samples/cpp/add-truncated-cone/", "/7/samples/cpp/add-truncated-cone/", "/wip/samples/cpp/add-truncated-cone/"]
+aliases = ["/en/5/samples/cpp/add-truncated-cone/", "/en/6/samples/cpp/add-truncated-cone/", "/en/7/samples/cpp/add-truncated-cone/", "/wip/samples/cpp/add-truncated-cone/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a truncated cone ON_BrepRevSurface and add it to Rhino."

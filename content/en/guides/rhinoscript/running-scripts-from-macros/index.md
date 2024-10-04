@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/running-scripts-from-macros/", "/6/guides/rhinoscript/running-scripts-from-macros/", "/7/guides/rhinoscript/running-scripts-from-macros/", "/wip/guides/rhinoscript/running-scripts-from-macros/"]
+aliases = ["/en/5/guides/rhinoscript/running-scripts-from-macros/", "/en/6/guides/rhinoscript/running-scripts-from-macros/", "/en/7/guides/rhinoscript/running-scripts-from-macros/", "/wip/guides/rhinoscript/running-scripts-from-macros/"]
 authors = [ "dale" ]
 categories = [ "Scripts", "Macros", "How To" ]
 description = "This guide explains how to set up and run macros and RhinoScripts."

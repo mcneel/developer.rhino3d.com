@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/evaluate-curve-torsion/", "/6/samples/rhinoscript/evaluate-curve-torsion/", "/7/samples/rhinoscript/evaluate-curve-torsion/", "/wip/samples/rhinoscript/evaluate-curve-torsion/"]
+aliases = ["/en/5/samples/rhinoscript/evaluate-curve-torsion/", "/en/6/samples/rhinoscript/evaluate-curve-torsion/", "/en/7/samples/rhinoscript/evaluate-curve-torsion/", "/wip/samples/rhinoscript/evaluate-curve-torsion/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to evaluate the torsion of a curve in RhinoScript."

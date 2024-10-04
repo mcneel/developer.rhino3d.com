@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/test-if-object-is-circle/", "/6/samples/cpp/test-if-object-is-circle/", "/7/samples/cpp/test-if-object-is-circle/", "/wip/samples/cpp/test-if-object-is-circle/"]
+aliases = ["/en/5/samples/cpp/test-if-object-is-circle/", "/en/6/samples/cpp/test-if-object-is-circle/", "/en/7/samples/cpp/test-if-object-is-circle/", "/wip/samples/cpp/test-if-object-is-circle/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to test if an object looks like a circle."

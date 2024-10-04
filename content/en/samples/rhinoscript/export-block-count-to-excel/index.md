@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/export-block-count-to-excel/", "/6/samples/rhinoscript/export-block-count-to-excel/", "/7/samples/rhinoscript/export-block-count-to-excel/", "/wip/samples/rhinoscript/export-block-count-to-excel/"]
+aliases = ["/en/5/samples/rhinoscript/export-block-count-to-excel/", "/en/6/samples/rhinoscript/export-block-count-to-excel/", "/en/7/samples/rhinoscript/export-block-count-to-excel/", "/wip/samples/rhinoscript/export-block-count-to-excel/"]
 authors = [ "dale" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to count blocks and then export the results to Microsoft Excel."

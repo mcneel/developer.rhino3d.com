@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-modify-plugin-licensing-code/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-modify-plugin-licensing-code/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-modify-plugin-licensing-code/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-modify-plugin-licensing-code/"]
+aliases = ["/en/en/5/guides/rhinocommon/cloudzoo/cloudzoo-modify-plugin-licensing-code/", "/en/6/guides/rhinocommon/cloudzoo/cloudzoo-modify-plugin-licensing-code/", "/en/7/guides/rhinocommon/cloudzoo/cloudzoo-modify-plugin-licensing-code/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-modify-plugin-licensing-code/"]
 authors = [ "aj" ]
 categories = [ "CloudZoo" ]
 description = "This guide discusses all the steps needed to have a Plug-In support Cloud Zoo."

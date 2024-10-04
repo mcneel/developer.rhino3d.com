@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/determining-curve-object-types/", "/6/guides/cpp/determining-curve-object-types/", "/7/guides/cpp/determining-curve-object-types/", "/wip/guides/cpp/determining-curve-object-types/"]
+aliases = ["/en/5/guides/cpp/determining-curve-object-types/", "/en/6/guides/cpp/determining-curve-object-types/", "/en/7/guides/cpp/determining-curve-object-types/", "/wip/guides/cpp/determining-curve-object-types/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to determine the curve type using C/C++."

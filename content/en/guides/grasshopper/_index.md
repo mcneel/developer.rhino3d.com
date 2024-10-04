@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/", "/6/guides/grasshopper/", "/7/guides/grasshopper/", "/wip/guides/grasshopper/"]
+aliases = ["/en/5/guides/grasshopper/", "/en/6/guides/grasshopper/", "/en/7/guides/grasshopper/", "/wip/guides/grasshopper/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "Guides to creating custom Grasshopper components and plugins."

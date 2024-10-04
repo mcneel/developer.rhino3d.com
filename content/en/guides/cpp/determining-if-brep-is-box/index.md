@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/determining-if-brep-is-box/", "/6/guides/cpp/determining-if-brep-is-box/", "/7/guides/cpp/determining-if-brep-is-box/", "/wip/guides/cpp/determining-if-brep-is-box/"]
+aliases = ["/en/5/guides/cpp/determining-if-brep-is-box/", "/en/6/guides/cpp/determining-if-brep-is-box/", "/en/7/guides/cpp/determining-if-brep-is-box/", "/wip/guides/cpp/determining-if-brep-is-box/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide discusses how to determine if a brep object is a box using C/C++."

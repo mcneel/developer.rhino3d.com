@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-reading-writing/", "/6/guides/rhinopython/python-reading-writing/", "/7/guides/rhinopython/python-reading-writing/", "/wip/guides/rhinopython/python-reading-writing/"]
+aliases = ["/en/5/guides/rhinopython/python-reading-writing/", "/en/6/guides/rhinopython/python-reading-writing/", "/en/7/guides/rhinopython/python-reading-writing/", "/wip/guides/rhinopython/python-reading-writing/"]
 authors = [ "scottd" ]
 categories = [ "Intermediate" ]
 description = "Use Python to read and write files."

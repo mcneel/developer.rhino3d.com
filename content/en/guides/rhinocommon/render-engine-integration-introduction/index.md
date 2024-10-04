@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/render-engine-integration-introduction/", "/6/guides/rhinocommon/render-engine-integration-introduction/", "/7/guides/rhinocommon/render-engine-integration-introduction/", "/wip/guides/rhinocommon/render-engine-integration-introduction/"]
+aliases = ["/en/en/5/guides/rhinocommon/render-engine-integration-introduction/", "/en/6/guides/rhinocommon/render-engine-integration-introduction/", "/en/7/guides/rhinocommon/render-engine-integration-introduction/", "/wip/guides/rhinocommon/render-engine-integration-introduction/"]
 authors = [ "nathan" ]
 categories = [ "Rendering" ]
 description = "This guide introduces integrating a render engine in Rhino using RhinoCommon."

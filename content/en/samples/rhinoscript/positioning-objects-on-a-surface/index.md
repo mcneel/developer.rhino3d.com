@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/positioning-objects-on-a-surface/", "/6/samples/rhinoscript/positioning-objects-on-a-surface/", "/7/samples/rhinoscript/positioning-objects-on-a-surface/", "/wip/samples/rhinoscript/positioning-objects-on-a-surface/"]
+aliases = ["/en/5/samples/rhinoscript/positioning-objects-on-a-surface/", "/en/6/samples/rhinoscript/positioning-objects-on-a-surface/", "/en/7/samples/rhinoscript/positioning-objects-on-a-surface/", "/wip/samples/rhinoscript/positioning-objects-on-a-surface/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to positioning objects on a surface using RhinoScript."

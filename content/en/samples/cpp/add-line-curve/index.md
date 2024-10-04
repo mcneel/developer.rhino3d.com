@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/add-line-curve/", "/6/samples/cpp/add-line-curve/", "/7/samples/cpp/add-line-curve/", "/wip/samples/cpp/add-line-curve/"]
+aliases = ["/en/5/samples/cpp/add-line-curve/", "/en/6/samples/cpp/add-line-curve/", "/en/7/samples/cpp/add-line-curve/", "/wip/samples/cpp/add-line-curve/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Curves" ]
 description = "Demonstrates how to add a line curve."

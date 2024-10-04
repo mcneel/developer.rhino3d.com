@@ -1,8 +1,8 @@
 +++
 aliases = [
-  "/5/guides/compute/deploy-to-iis/",
-  "/6/guides/compute/deploy-to-iis/",
-  "/7/guides/compute/deploy-to-iis/",
+  "/en/5/guides/compute/deploy-to-iis/",
+  "/en/6/guides/compute/deploy-to-iis/",
+  "/en/7/guides/compute/deploy-to-iis/",
   "/wip/guides/compute/deploy-to-iis/",
   "/guides/compute/deploy/"
 ]

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/print-instance-definition-tree/", "/6/samples/cpp/print-instance-definition-tree/", "/7/samples/cpp/print-instance-definition-tree/", "/wip/samples/cpp/print-instance-definition-tree/"]
+aliases = ["/en/5/samples/cpp/print-instance-definition-tree/", "/en/6/samples/cpp/print-instance-definition-tree/", "/en/7/samples/cpp/print-instance-definition-tree/", "/wip/samples/cpp/print-instance-definition-tree/"]
 authors = [ "dale" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to print the names of all instance definitions, including objects and sub-instances, in a tree-style format."

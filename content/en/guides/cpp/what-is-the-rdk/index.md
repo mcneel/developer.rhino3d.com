@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/what-is-the-rdk/", "/6/guides/cpp/what-is-the-rdk/", "/7/guides/cpp/what-is-the-rdk/", "/wip/guides/cpp/what-is-the-rdk/"]
+aliases = ["/en/5/guides/cpp/what-is-the-rdk/", "/en/6/guides/cpp/what-is-the-rdk/", "/en/7/guides/cpp/what-is-the-rdk/", "/wip/guides/cpp/what-is-the-rdk/"]
 authors = [ "andy", "john.croudy" ]
 categories = [ "RDK" ]
 description = "This guide describes the Rhino Renderer Development Kit (AKA RDK) and its features."

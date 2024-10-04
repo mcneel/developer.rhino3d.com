@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/basepoint-of-block-instance/", "/6/samples/cpp/basepoint-of-block-instance/", "/7/samples/cpp/basepoint-of-block-instance/", "/wip/samples/cpp/basepoint-of-block-instance/"]
+aliases = ["/en/5/samples/cpp/basepoint-of-block-instance/", "/en/6/samples/cpp/basepoint-of-block-instance/", "/en/7/samples/cpp/basepoint-of-block-instance/", "/wip/samples/cpp/basepoint-of-block-instance/"]
 authors = [ "dale" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to find the basepoint coordinates of a block instance."

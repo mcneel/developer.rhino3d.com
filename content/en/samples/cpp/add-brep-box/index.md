@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/add-brep-box/", "/6/samples/cpp/add-brep-box/", "/7/samples/cpp/add-brep-box/", "/wip/samples/cpp/add-brep-box/"]
+aliases = ["/en/5/samples/cpp/add-brep-box/", "/en/6/samples/cpp/add-brep-box/", "/en/7/samples/cpp/add-brep-box/", "/wip/samples/cpp/add-brep-box/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a Brep Box from a Rhino C++ plugin."

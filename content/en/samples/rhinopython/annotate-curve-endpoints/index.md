@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinopython/annotate-curve-endpoints/", "/6/samples/rhinopython/annotate-curve-endpoints/", "/7/samples/rhinopython/annotate-curve-endpoints/", "/wip/samples/rhinopython/annotate-curve-endpoints/"]
+aliases = ["/en/5/samples/rhinopython/annotate-curve-endpoints/", "/en/6/samples/rhinopython/annotate-curve-endpoints/", "/en/7/samples/rhinopython/annotate-curve-endpoints/", "/wip/samples/rhinopython/annotate-curve-endpoints/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a NURBS curve to Rhino using Python."

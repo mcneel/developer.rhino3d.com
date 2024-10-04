@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/create-mesh-from-brep/", "/6/samples/rhinocommon/create-mesh-from-brep/", "/7/samples/rhinocommon/create-mesh-from-brep/", "/wip/samples/rhinocommon/create-mesh-from-brep/"]
+aliases = ["/en/5/samples/rhinocommon/create-mesh-from-brep/", "/en/6/samples/rhinocommon/create-mesh-from-brep/", "/en/7/samples/rhinocommon/create-mesh-from-brep/", "/wip/samples/rhinocommon/create-mesh-from-brep/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to create a mesh from a selected surface or polysurface."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/get-rgb-color-intensities/", "/6/samples/rhinoscript/get-rgb-color-intensities/", "/7/samples/rhinoscript/get-rgb-color-intensities/", "/wip/samples/rhinoscript/get-rgb-color-intensities/"]
+aliases = ["/en/5/samples/rhinoscript/get-rgb-color-intensities/", "/en/6/samples/rhinoscript/get-rgb-color-intensities/", "/en/7/samples/rhinoscript/get-rgb-color-intensities/", "/wip/samples/rhinoscript/get-rgb-color-intensities/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates retrieve red, green, and blue color intensities using VBScript."

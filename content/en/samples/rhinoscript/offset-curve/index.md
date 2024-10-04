@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/offset-curve/", "/6/samples/rhinoscript/offset-curve/", "/7/samples/rhinoscript/offset-curve/", "/wip/samples/rhinoscript/offset-curve/"]
+aliases = ["/en/5/samples/rhinoscript/offset-curve/", "/en/6/samples/rhinoscript/offset-curve/", "/en/7/samples/rhinoscript/offset-curve/", "/wip/samples/rhinoscript/offset-curve/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to offset a curve inside or outside using RhinoScript."

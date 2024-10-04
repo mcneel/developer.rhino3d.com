@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/projecting-points-to-breps/", "/6/guides/cpp/projecting-points-to-breps/", "/7/guides/cpp/projecting-points-to-breps/", "/wip/guides/cpp/projecting-points-to-breps/"]
+aliases = ["/en/5/guides/cpp/projecting-points-to-breps/", "/en/6/guides/cpp/projecting-points-to-breps/", "/en/7/guides/cpp/projecting-points-to-breps/", "/wip/guides/cpp/projecting-points-to-breps/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide demonstrates how to project points onto Brep objects using C/C++."

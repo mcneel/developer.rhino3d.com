@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/fillet-curve/", "/6/samples/cpp/fillet-curve/", "/7/samples/cpp/fillet-curve/", "/wip/samples/cpp/fillet-curve/"]
+aliases = ["/en/5/samples/cpp/fillet-curve/", "/en/6/samples/cpp/fillet-curve/", "/en/7/samples/cpp/fillet-curve/", "/wip/samples/cpp/fillet-curve/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a fillet between two curves."

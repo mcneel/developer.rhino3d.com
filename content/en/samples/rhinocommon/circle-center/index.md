@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/circle-center/", "/6/samples/rhinocommon/circle-center/", "/7/samples/rhinocommon/circle-center/", "/wip/samples/rhinocommon/circle-center/"]
+aliases = ["/en/5/samples/rhinocommon/circle-center/", "/en/6/samples/rhinocommon/circle-center/", "/en/7/samples/rhinocommon/circle-center/", "/wip/samples/rhinocommon/circle-center/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to find the center of a circle."

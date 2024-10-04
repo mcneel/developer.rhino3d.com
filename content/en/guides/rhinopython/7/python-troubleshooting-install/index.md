@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-troubleshooting-install/", "/6/guides/rhinopython/python-troubleshooting-install/", "/7/guides/rhinopython/python-troubleshooting-install/", "/wip/guides/rhinopython/python-troubleshooting-install/"]
+aliases = ["/en/5/guides/rhinopython/python-troubleshooting-install/", "/en/6/guides/rhinopython/python-troubleshooting-install/", "/en/7/guides/rhinopython/python-troubleshooting-install/", "/wip/guides/rhinopython/python-troubleshooting-install/"]
 authors = [ "giulio" ]
 categories = [ "Getting Started" ]
 keywords = [ "python", "commands" ]

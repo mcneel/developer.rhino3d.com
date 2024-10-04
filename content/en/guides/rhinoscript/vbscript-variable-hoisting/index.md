@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/vbscript-variable-hoisting/", "/6/guides/rhinoscript/vbscript-variable-hoisting/", "/7/guides/rhinoscript/vbscript-variable-hoisting/", "/wip/guides/rhinoscript/vbscript-variable-hoisting/"]
+aliases = ["/en/5/guides/rhinoscript/vbscript-variable-hoisting/", "/en/6/guides/rhinoscript/vbscript-variable-hoisting/", "/en/7/guides/rhinoscript/vbscript-variable-hoisting/", "/wip/guides/rhinoscript/vbscript-variable-hoisting/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guides discusses variable scoping and hoisting in VBScript."

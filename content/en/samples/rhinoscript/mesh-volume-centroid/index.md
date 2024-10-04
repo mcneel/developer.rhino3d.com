@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/mesh-volume-centroid/", "/6/samples/rhinoscript/mesh-volume-centroid/", "/7/samples/rhinoscript/mesh-volume-centroid/", "/wip/samples/rhinoscript/mesh-volume-centroid/"]
+aliases = ["/en/5/samples/rhinoscript/mesh-volume-centroid/", "/en/6/samples/rhinoscript/mesh-volume-centroid/", "/en/7/samples/rhinoscript/mesh-volume-centroid/", "/wip/samples/rhinoscript/mesh-volume-centroid/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to calculate the volume centroid of a mesh."

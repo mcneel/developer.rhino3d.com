@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/applying-non-uniform-transforms-to-objects/", "/6/guides/cpp/applying-non-uniform-transforms-to-objects/", "/7/guides/cpp/applying-non-uniform-transforms-to-objects/", "/wip/guides/cpp/applying-non-uniform-transforms-to-objects/"]
+aliases = ["/en/5/guides/cpp/applying-non-uniform-transforms-to-objects/", "/en/6/guides/cpp/applying-non-uniform-transforms-to-objects/", "/en/7/guides/cpp/applying-non-uniform-transforms-to-objects/", "/wip/guides/cpp/applying-non-uniform-transforms-to-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide discusses similarity transformations and how to use them on objects."

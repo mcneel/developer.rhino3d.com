@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/localize-plugin-toolbar/", "/6/guides/rhinocommon/localize-plugin-toolbar/", "/7/guides/rhinocommon/localize-plugin-toolbar/", "/wip/guides/rhinocommon/localize-plugin-toolbar/"]
+aliases = ["/en/en/5/guides/rhinocommon/localize-plugin-toolbar/", "/en/6/guides/rhinocommon/localize-plugin-toolbar/", "/en/7/guides/rhinocommon/localize-plugin-toolbar/", "/wip/guides/rhinocommon/localize-plugin-toolbar/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide covers the localization of plugin toolbars."

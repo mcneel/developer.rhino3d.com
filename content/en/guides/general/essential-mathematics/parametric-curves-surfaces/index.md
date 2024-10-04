@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/essential-mathematics/parametric-curves-surfaces/", "/6/guides/general/essential-mathematics/parametric-curves-surfaces/", "/7/guides/general/essential-mathematics/parametric-curves-surfaces/", "/wip/guides/general/essential-mathematics/parametric-curves-surfaces/"]
+aliases = ["/en/5/guides/general/essential-mathematics/parametric-curves-surfaces/", "/en/6/guides/general/essential-mathematics/parametric-curves-surfaces/", "/en/7/guides/general/essential-mathematics/parametric-curves-surfaces/", "/wip/guides/general/essential-mathematics/parametric-curves-surfaces/"]
 authors = [ "rajaa" ]
 categories = [ "Essential Mathematics" ]
 category_page = "guides/general/essential-mathematics/"

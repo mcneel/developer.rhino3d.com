@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinopython/hello-python/", "/6/samples/rhinopython/hello-python/", "/7/samples/rhinopython/hello-python/", "/wip/samples/rhinopython/hello-python/"]
+aliases = ["/en/5/samples/rhinopython/hello-python/", "/en/6/samples/rhinopython/hello-python/", "/en/7/samples/rhinopython/hello-python/", "/wip/samples/rhinopython/hello-python/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates Basic syntax for writing python scripts."

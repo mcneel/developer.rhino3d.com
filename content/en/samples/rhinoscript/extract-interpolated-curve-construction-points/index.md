@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/extract-interpolated-curve-construction-points/", "/6/samples/rhinoscript/extract-interpolated-curve-construction-points/", "/7/samples/rhinoscript/extract-interpolated-curve-construction-points/", "/wip/samples/rhinoscript/extract-interpolated-curve-construction-points/"]
+aliases = ["/en/5/samples/rhinoscript/extract-interpolated-curve-construction-points/", "/en/6/samples/rhinoscript/extract-interpolated-curve-construction-points/", "/en/7/samples/rhinoscript/extract-interpolated-curve-construction-points/", "/wip/samples/rhinoscript/extract-interpolated-curve-construction-points/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to reverse engineer an interpolated curve using RhinoScript."

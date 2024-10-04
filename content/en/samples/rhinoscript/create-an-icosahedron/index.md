@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/create-an-icosahedron/", "/6/samples/rhinoscript/create-an-icosahedron/", "/7/samples/rhinoscript/create-an-icosahedron/", "/wip/samples/rhinoscript/create-an-icosahedron/"]
+aliases = ["/en/5/samples/rhinoscript/create-an-icosahedron/", "/en/6/samples/rhinoscript/create-an-icosahedron/", "/en/7/samples/rhinoscript/create-an-icosahedron/", "/wip/samples/rhinoscript/create-an-icosahedron/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates one way of creating a Icosahedron in RhinoScript."

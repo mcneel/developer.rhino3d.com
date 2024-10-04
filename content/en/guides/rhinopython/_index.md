@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/", "/6/guides/rhinopython/", "/7/guides/rhinopython/", "/wip/guides/rhinopython/"]
+aliases = ["/en/5/guides/rhinopython/", "/en/6/guides/rhinopython/", "/en/7/guides/rhinopython/", "/wip/guides/rhinopython/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "Quickly add functionality to Rhino or automate repetitive tasks"

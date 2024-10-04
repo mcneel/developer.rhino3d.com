@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/custom-attributes/", "/6/guides/grasshopper/custom-attributes/", "/7/guides/grasshopper/custom-attributes/", "/wip/guides/grasshopper/custom-attributes/"]
+aliases = ["/en/5/guides/grasshopper/custom-attributes/", "/en/6/guides/grasshopper/custom-attributes/", "/en/7/guides/grasshopper/custom-attributes/", "/wip/guides/grasshopper/custom-attributes/"]
 authors = [ "david" ]
 categories = [ "Advanced" ]
 description = "This guide contains a step-by-step walkthrough regarding custom object display."

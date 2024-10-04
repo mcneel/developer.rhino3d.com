@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/project-curves-onto-breps/", "/6/guides/cpp/project-curves-onto-breps/", "/7/guides/cpp/project-curves-onto-breps/", "/wip/guides/cpp/project-curves-onto-breps/"]
+aliases = ["/en/5/guides/cpp/project-curves-onto-breps/", "/en/6/guides/cpp/project-curves-onto-breps/", "/en/7/guides/cpp/project-curves-onto-breps/", "/wip/guides/cpp/project-curves-onto-breps/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to project a curve onto a brep using C/C++."

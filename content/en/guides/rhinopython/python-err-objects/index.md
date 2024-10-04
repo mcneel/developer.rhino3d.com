@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-err-objects/", "/6/guides/rhinopython/python-err-objects/", "/7/guides/rhinopython/python-err-objects/", "/wip/guides/rhinopython/python-err-objects/"]
+aliases = ["/en/5/guides/rhinopython/python-err-objects/", "/en/6/guides/rhinopython/python-err-objects/", "/en/7/guides/rhinopython/python-err-objects/", "/wip/guides/rhinopython/python-err-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses the VBScript Err object."

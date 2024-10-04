@@ -1,5 +1,5 @@
 +++
-aliases = ["/8/guides/general/rhino-ui-system/"]
+aliases = ["/en/8/guides/general/rhino-ui-system/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide outlines Rhino's User Interface System."

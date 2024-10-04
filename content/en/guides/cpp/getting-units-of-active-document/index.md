@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/getting-units-of-active-document/", "/6/guides/cpp/getting-units-of-active-document/", "/7/guides/cpp/getting-units-of-active-document/", "/wip/guides/cpp/getting-units-of-active-document/"]
+aliases = ["/en/5/guides/cpp/getting-units-of-active-document/", "/en/6/guides/cpp/getting-units-of-active-document/", "/en/7/guides/cpp/getting-units-of-active-document/", "/wip/guides/cpp/getting-units-of-active-document/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to determine the unit system of the active document."

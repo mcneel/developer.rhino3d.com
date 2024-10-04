@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/rhino-technology-overview/", "/6/guides/general/rhino-technology-overview/", "/7/guides/general/rhino-technology-overview/", "/wip/guides/general/rhino-technology-overview/"]
+aliases = ["/en/5/guides/general/rhino-technology-overview/", "/en/6/guides/general/rhino-technology-overview/", "/en/7/guides/general/rhino-technology-overview/", "/wip/guides/general/rhino-technology-overview/"]
 authors = ["brian" ]
 categories = [ "Overview" ]
 description = "Resumen de la tecnología de Rhino"

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/yak/creating-a-grasshopper-plugin-package/", "/6/guides/yak/creating-a-grasshopper-plugin-package/", "/7/guides/yak/creating-a-grasshopper-plugin-package/", "/wip/guides/yak/creating-a-grasshopper-plugin-package/"]
+aliases = ["/en/5/guides/yak/creating-a-grasshopper-plugin-package/", "/en/6/guides/yak/creating-a-grasshopper-plugin-package/", "/en/7/guides/yak/creating-a-grasshopper-plugin-package/", "/wip/guides/yak/creating-a-grasshopper-plugin-package/"]
 authors = [ "will" ]
 categories = [ "Getting Started" ]
 description = "This is a step by step guide to creating a package for a Grasshopper plug-in (.gha)."

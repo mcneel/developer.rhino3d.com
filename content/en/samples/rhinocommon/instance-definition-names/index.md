@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/instance-definition-names/", "/6/samples/rhinocommon/instance-definition-names/", "/7/samples/rhinocommon/instance-definition-names/", "/wip/samples/rhinocommon/instance-definition-names/"]
+aliases = ["/en/5/samples/rhinocommon/instance-definition-names/", "/en/6/samples/rhinocommon/instance-definition-names/", "/en/7/samples/rhinocommon/instance-definition-names/", "/wip/samples/rhinocommon/instance-definition-names/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to print the instance definition names."

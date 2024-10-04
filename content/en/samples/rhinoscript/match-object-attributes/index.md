@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/match-object-attributes/", "/6/samples/rhinoscript/match-object-attributes/", "/7/samples/rhinoscript/match-object-attributes/", "/wip/samples/rhinoscript/match-object-attributes/"]
+aliases = ["/en/5/samples/rhinoscript/match-object-attributes/", "/en/6/samples/rhinoscript/match-object-attributes/", "/en/7/samples/rhinoscript/match-object-attributes/", "/wip/samples/rhinoscript/match-object-attributes/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates a custom object attribute matching function in RhinoScript."

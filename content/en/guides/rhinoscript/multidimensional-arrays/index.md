@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/multidimensional-arrays/", "/6/guides/rhinoscript/multidimensional-arrays/", "/7/guides/rhinoscript/multidimensional-arrays/", "/wip/guides/rhinoscript/multidimensional-arrays/"]
+aliases = ["/en/5/guides/rhinoscript/multidimensional-arrays/", "/en/6/guides/rhinoscript/multidimensional-arrays/", "/en/7/guides/rhinoscript/multidimensional-arrays/", "/wip/guides/rhinoscript/multidimensional-arrays/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide discusses rectangular and ragged multidimensional arrays."

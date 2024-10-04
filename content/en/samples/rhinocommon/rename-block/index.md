@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/rename-block/", "/6/samples/rhinocommon/rename-block/", "/7/samples/rhinocommon/rename-block/", "/wip/samples/rhinocommon/rename-block/"]
+aliases = ["/en/5/samples/rhinocommon/rename-block/", "/en/6/samples/rhinocommon/rename-block/", "/en/7/samples/rhinocommon/rename-block/", "/wip/samples/rhinocommon/rename-block/"]
 authors = [ "steve" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to rename an instance definition (block)."

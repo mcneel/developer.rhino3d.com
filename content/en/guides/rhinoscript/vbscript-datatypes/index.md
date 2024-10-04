@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/vbscript-datatypes/", "/6/guides/rhinoscript/vbscript-datatypes/", "/7/guides/rhinoscript/vbscript-datatypes/", "/wip/guides/rhinoscript/vbscript-datatypes/"]
+aliases = ["/en/5/guides/rhinoscript/vbscript-datatypes/", "/en/6/guides/rhinoscript/vbscript-datatypes/", "/en/7/guides/rhinoscript/vbscript-datatypes/", "/wip/guides/rhinoscript/vbscript-datatypes/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide is an overview of VBScript Data Types."

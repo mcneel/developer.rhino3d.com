@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/what-is-a-zoo-plugin/", "/6/guides/rhinocommon/what-is-a-zoo-plugin/", "/7/guides/rhinocommon/what-is-a-zoo-plugin/", "/wip/guides/rhinocommon/what-is-a-zoo-plugin/"]
+aliases = ["/en/en/5/guides/rhinocommon/what-is-a-zoo-plugin/", "/en/6/guides/rhinocommon/what-is-a-zoo-plugin/", "/en/7/guides/rhinocommon/what-is-a-zoo-plugin/", "/wip/guides/rhinocommon/what-is-a-zoo-plugin/"]
 authors = [ "dale" ]
 categories = [ "Zoo" ]
 description = "This guide describes what a LAN Zoo Plugin is and what is does."

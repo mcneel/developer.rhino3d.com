@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/ghpython-bake/", "/6/guides/rhinopython/ghpython-bake/", "/7/guides/rhinopython/ghpython-bake/", "/wip/guides/rhinopython/ghpython-bake/"]
+aliases = ["/en/5/guides/rhinopython/ghpython-bake/", "/en/6/guides/rhinopython/ghpython-bake/", "/en/7/guides/rhinopython/ghpython-bake/", "/wip/guides/rhinopython/ghpython-bake/"]
 authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "Use GhPython to create custom baking components."

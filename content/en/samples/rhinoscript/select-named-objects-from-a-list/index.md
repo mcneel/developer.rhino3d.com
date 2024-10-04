@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/select-named-objects-from-a-list/", "/6/samples/rhinoscript/select-named-objects-from-a-list/", "/7/samples/rhinoscript/select-named-objects-from-a-list/", "/wip/samples/rhinoscript/select-named-objects-from-a-list/"]
+aliases = ["/en/5/samples/rhinoscript/select-named-objects-from-a-list/", "/en/6/samples/rhinoscript/select-named-objects-from-a-list/", "/en/7/samples/rhinoscript/select-named-objects-from-a-list/", "/wip/samples/rhinoscript/select-named-objects-from-a-list/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to use a dialog box to select named objects using RhinoScript."

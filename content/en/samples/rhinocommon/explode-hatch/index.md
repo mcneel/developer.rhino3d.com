@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/explode-hatch/", "/6/samples/rhinocommon/explode-hatch/", "/7/samples/rhinocommon/explode-hatch/", "/wip/samples/rhinocommon/explode-hatch/"]
+aliases = ["/en/5/samples/rhinocommon/explode-hatch/", "/en/6/samples/rhinocommon/explode-hatch/", "/en/7/samples/rhinocommon/explode-hatch/", "/wip/samples/rhinocommon/explode-hatch/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to explode a user-specified hatch object into its constituent parts (curves, points, etc.)"

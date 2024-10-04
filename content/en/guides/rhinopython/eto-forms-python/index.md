@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/eto-forms-python/", "/6/guides/rhinopython/eto-forms-python/", "/7/guides/rhinopython/eto-forms-python/", "/wip/guides/rhinopython/eto-forms-python/"]
+aliases = ["/en/5/guides/rhinopython/eto-forms-python/", "/en/6/guides/rhinopython/eto-forms-python/", "/en/7/guides/rhinopython/eto-forms-python/", "/wip/guides/rhinopython/eto-forms-python/"]
 authors = [ "scottd" ]
 categories = [ "Eto" ]
 description = "Using the Eto dialog framework to create custom dialogs."

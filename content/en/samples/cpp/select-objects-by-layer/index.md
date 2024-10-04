@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/select-objects-by-layer/", "/6/samples/cpp/select-objects-by-layer/", "/7/samples/cpp/select-objects-by-layer/", "/wip/samples/cpp/select-objects-by-layer/"]
+aliases = ["/en/5/samples/cpp/select-objects-by-layer/", "/en/6/samples/cpp/select-objects-by-layer/", "/en/7/samples/cpp/select-objects-by-layer/", "/wip/samples/cpp/select-objects-by-layer/"]
 authors = [ "dale" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to select all of the objects on a specified layer."

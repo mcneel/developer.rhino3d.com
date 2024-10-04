@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-xml-json/", "/6/guides/rhinopython/python-xml-json/", "/7/guides/rhinopython/python-xml-json/", "/wip/guides/rhinopython/python-xml-json/"]
+aliases = ["/en/5/guides/rhinopython/python-xml-json/", "/en/6/guides/rhinopython/python-xml-json/", "/en/7/guides/rhinopython/python-xml-json/", "/wip/guides/rhinopython/python-xml-json/"]
 authors = [ "scottd" ]
 categories = [ "Intermediate" ]
 description = "How to format in JSON or XML."

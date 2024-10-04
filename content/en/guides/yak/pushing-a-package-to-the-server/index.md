@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/yak/pushing-a-package-to-the-server/", "/6/guides/yak/pushing-a-package-to-the-server/", "/7/guides/yak/pushing-a-package-to-the-server/", "/wip/guides/yak/pushing-a-package-to-the-server/"]
+aliases = ["/en/5/guides/yak/pushing-a-package-to-the-server/", "/en/6/guides/yak/pushing-a-package-to-the-server/", "/en/7/guides/yak/pushing-a-package-to-the-server/", "/wip/guides/yak/pushing-a-package-to-the-server/"]
 authors = [ "will" ]
 categories = [ "Getting Started" ]
 description = "This is a step by step guide to pushing a package to the package server."

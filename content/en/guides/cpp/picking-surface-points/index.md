@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/picking-surface-points/", "/6/guides/cpp/picking-surface-points/", "/7/guides/cpp/picking-surface-points/", "/wip/guides/cpp/picking-surface-points/"]
+aliases = ["/en/5/guides/cpp/picking-surface-points/", "/en/6/guides/cpp/picking-surface-points/", "/en/7/guides/cpp/picking-surface-points/", "/wip/guides/cpp/picking-surface-points/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide discusses how to pick points on a surface using C/C++."

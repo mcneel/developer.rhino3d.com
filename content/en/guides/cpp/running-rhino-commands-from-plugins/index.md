@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/running-rhino-commands-from-plugins/", "/6/guides/cpp/running-rhino-commands-from-plugins/", "/7/guides/cpp/running-rhino-commands-from-plugins/", "/wip/guides/cpp/running-rhino-commands-from-plugins/"]
+aliases = ["/en/5/guides/cpp/running-rhino-commands-from-plugins/", "/en/6/guides/cpp/running-rhino-commands-from-plugins/", "/en/7/guides/cpp/running-rhino-commands-from-plugins/", "/wip/guides/cpp/running-rhino-commands-from-plugins/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses the proper techniques to use when running a Rhino command from within the context of a C/C++ plugin command."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/render-named-views/", "/6/samples/rhinoscript/render-named-views/", "/7/samples/rhinoscript/render-named-views/", "/wip/samples/rhinoscript/render-named-views/"]
+aliases = ["/en/5/samples/rhinoscript/render-named-views/", "/en/6/samples/rhinoscript/render-named-views/", "/en/7/samples/rhinoscript/render-named-views/", "/wip/samples/rhinoscript/render-named-views/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to render named views using RhinoScript."

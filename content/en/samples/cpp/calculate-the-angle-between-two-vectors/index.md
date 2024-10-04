@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/calculate-the-angle-between-two-vectors/", "/6/samples/cpp/calculate-the-angle-between-two-vectors/", "/7/samples/cpp/calculate-the-angle-between-two-vectors/", "/wip/samples/cpp/calculate-the-angle-between-two-vectors/"]
+aliases = ["/en/5/samples/cpp/calculate-the-angle-between-two-vectors/", "/en/6/samples/cpp/calculate-the-angle-between-two-vectors/", "/en/7/samples/cpp/calculate-the-angle-between-two-vectors/", "/wip/samples/cpp/calculate-the-angle-between-two-vectors/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to calculate the angle between two vectors."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/boolean-difference/", "/6/samples/cpp/boolean-difference/", "/7/samples/cpp/boolean-difference/", "/wip/samples/cpp/boolean-difference/"]
+aliases = ["/en/5/samples/cpp/boolean-difference/", "/en/6/samples/cpp/boolean-difference/", "/en/7/samples/cpp/boolean-difference/", "/wip/samples/cpp/boolean-difference/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to perform a Boolean Difference operation on two sets of polysurfaces."

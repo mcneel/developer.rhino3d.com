@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/adding-nurbs-curve-from-control-points/", "/6/guides/cpp/adding-nurbs-curve-from-control-points/", "/7/guides/cpp/adding-nurbs-curve-from-control-points/", "/wip/guides/cpp/adding-nurbs-curve-from-control-points/"]
+aliases = ["/en/5/guides/cpp/adding-nurbs-curve-from-control-points/", "/en/6/guides/cpp/adding-nurbs-curve-from-control-points/", "/en/7/guides/cpp/adding-nurbs-curve-from-control-points/", "/wip/guides/cpp/adding-nurbs-curve-from-control-points/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates two ways to create a clamped NURBS curve from a set of control points using C/C++."

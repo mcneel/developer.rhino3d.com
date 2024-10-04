@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/extend-curve/", "/6/samples/cpp/extend-curve/", "/7/samples/cpp/extend-curve/", "/wip/samples/cpp/extend-curve/"]
+aliases = ["/en/5/samples/cpp/extend-curve/", "/en/6/samples/cpp/extend-curve/", "/en/7/samples/cpp/extend-curve/", "/wip/samples/cpp/extend-curve/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to extend a curve by a line, arc or smooth extension until it intersects a collection of objects."

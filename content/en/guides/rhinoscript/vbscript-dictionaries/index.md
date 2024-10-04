@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/vbscript-dictionaries/", "/6/guides/rhinoscript/vbscript-dictionaries/", "/7/guides/rhinoscript/vbscript-dictionaries/", "/wip/guides/rhinoscript/vbscript-dictionaries/"]
+aliases = ["/en/5/guides/rhinoscript/vbscript-dictionaries/", "/en/6/guides/rhinoscript/vbscript-dictionaries/", "/en/7/guides/rhinoscript/vbscript-dictionaries/", "/wip/guides/rhinoscript/vbscript-dictionaries/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses using VBScript's Dictionary object in RhinoScript."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/orienting-objects-on-surfaces/", "/6/guides/cpp/orienting-objects-on-surfaces/", "/7/guides/cpp/orienting-objects-on-surfaces/", "/wip/guides/cpp/orienting-objects-on-surfaces/"]
+aliases = ["/en/5/guides/cpp/orienting-objects-on-surfaces/", "/en/6/guides/cpp/orienting-objects-on-surfaces/", "/en/7/guides/cpp/orienting-objects-on-surfaces/", "/wip/guides/cpp/orienting-objects-on-surfaces/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to orient objects on a surface using C/C++."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-clipping-plane/", "/6/samples/rhinocommon/add-clipping-plane/", "/7/samples/rhinocommon/add-clipping-plane/", "/wip/samples/rhinocommon/add-clipping-plane/"]
+aliases = ["/en/5/samples/rhinocommon/add-clipping-plane/", "/en/6/samples/rhinocommon/add-clipping-plane/", "/en/7/samples/rhinocommon/add-clipping-plane/", "/wip/samples/rhinocommon/add-clipping-plane/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a clipping plane from an array or corner points."

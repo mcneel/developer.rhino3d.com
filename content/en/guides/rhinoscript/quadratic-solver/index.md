@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/quadratic-solver/", "/6/guides/rhinoscript/quadratic-solver/", "/7/guides/rhinoscript/quadratic-solver/", "/wip/guides/rhinoscript/quadratic-solver/"]
+aliases = ["/en/5/guides/rhinoscript/quadratic-solver/", "/en/6/guides/rhinoscript/quadratic-solver/", "/en/7/guides/rhinoscript/quadratic-solver/", "/wip/guides/rhinoscript/quadratic-solver/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide demonstrates how to solve quadratic equations in RhinoScript."

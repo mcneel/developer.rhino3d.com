@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/simple-data-types/", "/6/guides/grasshopper/simple-data-types/", "/7/guides/grasshopper/simple-data-types/", "/wip/guides/grasshopper/simple-data-types/"]
+aliases = ["/en/5/guides/grasshopper/simple-data-types/", "/en/6/guides/grasshopper/simple-data-types/", "/en/7/guides/grasshopper/simple-data-types/", "/wip/guides/grasshopper/simple-data-types/"]
 authors = [ "david" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses how Grasshopper deals with data items and types."

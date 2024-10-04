@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/apis-for-python/", "/6/guides/rhinopython/apis-for-python/", "/7/guides/rhinopython/apis-for-python/", "/wip/guides/rhinopython/apis-for-python/"]
+aliases = ["/en/5/guides/rhinopython/apis-for-python/", "/en/6/guides/rhinopython/apis-for-python/", "/en/7/guides/rhinopython/apis-for-python/", "/wip/guides/rhinopython/apis-for-python/"]
 authors = [ "alain" ]
 categories = [ "Intermediate" ]
 description = "This guide covers the APIs available to Python in Rhino."

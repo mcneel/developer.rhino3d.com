@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-nurbs-circle/", "/6/samples/rhinocommon/add-nurbs-circle/", "/7/samples/rhinocommon/add-nurbs-circle/", "/wip/samples/rhinocommon/add-nurbs-circle/"]
+aliases = ["/en/5/samples/rhinocommon/add-nurbs-circle/", "/en/6/samples/rhinocommon/add-nurbs-circle/", "/en/7/samples/rhinocommon/add-nurbs-circle/", "/wip/samples/rhinocommon/add-nurbs-circle/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a NURBS circle from scratch using points and knots."

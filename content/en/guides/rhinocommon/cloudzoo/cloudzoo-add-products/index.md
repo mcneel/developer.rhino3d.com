@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-add-products/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-add-products/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-add-products/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-add-products/"]
+aliases = ["/en/en/5/guides/rhinocommon/cloudzoo/cloudzoo-add-products/", "/en/6/guides/rhinocommon/cloudzoo/cloudzoo-add-products/", "/en/7/guides/rhinocommon/cloudzoo/cloudzoo-add-products/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-add-products/"]
 authors = [ "aj" ]
 categories = [ "CloudZoo" ]
 description = "Once you are registered as an issuer, you can add, view, and modify products in Cloud Zoo using the endpoints described below."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/join-the-dots/", "/6/samples/rhinoscript/join-the-dots/", "/7/samples/rhinoscript/join-the-dots/", "/wip/samples/rhinoscript/join-the-dots/"]
+aliases = ["/en/5/samples/rhinoscript/join-the-dots/", "/en/6/samples/rhinoscript/join-the-dots/", "/en/7/samples/rhinoscript/join-the-dots/", "/wip/samples/rhinoscript/join-the-dots/"]
 authors = [ "steven-janssen" ]
 categories = [ "Other" ]
 description = "Demonstrates joining points into polylines in RhinoScript."

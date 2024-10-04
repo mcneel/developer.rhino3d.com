@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/viewport-resolution/", "/6/samples/rhinocommon/viewport-resolution/", "/7/samples/rhinocommon/viewport-resolution/", "/wip/samples/rhinocommon/viewport-resolution/"]
+aliases = ["/en/5/samples/rhinocommon/viewport-resolution/", "/en/6/samples/rhinocommon/viewport-resolution/", "/en/7/samples/rhinocommon/viewport-resolution/", "/wip/samples/rhinocommon/viewport-resolution/"]
 authors = [ "steve" ]
 categories = [ "Viewports and Views" ]
 description = "Print Active Viewport Resolution"

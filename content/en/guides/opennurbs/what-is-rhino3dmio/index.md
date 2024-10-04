@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/what-is-rhino3dmio/", "/6/guides/opennurbs/what-is-rhino3dmio/", "/7/guides/opennurbs/what-is-rhino3dmio/", "/wip/guides/opennurbs/what-is-rhino3dmio/"]
+aliases = ["/en/5/guides/opennurbs/what-is-rhino3dmio/", "/en/6/guides/opennurbs/what-is-rhino3dmio/", "/en/7/guides/opennurbs/what-is-rhino3dmio/", "/wip/guides/opennurbs/what-is-rhino3dmio/"]
 authors = [ "dan" ]
 categories = [ "Overview" ]
 description = "This guide covers Rhino3dm builds of openNURBS."

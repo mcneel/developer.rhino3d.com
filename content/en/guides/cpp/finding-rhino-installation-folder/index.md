@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/finding-rhino-installation-folder/", "/6/guides/cpp/finding-rhino-installation-folder/", "/7/guides/cpp/finding-rhino-installation-folder/", "/wip/guides/cpp/finding-rhino-installation-folder/"]
+aliases = ["/en/5/guides/cpp/finding-rhino-installation-folder/", "/en/6/guides/cpp/finding-rhino-installation-folder/", "/en/7/guides/cpp/finding-rhino-installation-folder/", "/wip/guides/cpp/finding-rhino-installation-folder/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses how to find Rhino's installation folder."

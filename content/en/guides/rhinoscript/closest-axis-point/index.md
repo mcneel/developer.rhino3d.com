@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/closest-axis-point/", "/6/guides/rhinoscript/closest-axis-point/", "/7/guides/rhinoscript/closest-axis-point/", "/wip/guides/rhinoscript/closest-axis-point/"]
+aliases = ["/en/5/guides/rhinoscript/closest-axis-point/", "/en/6/guides/rhinoscript/closest-axis-point/", "/en/7/guides/rhinoscript/closest-axis-point/", "/wip/guides/rhinoscript/closest-axis-point/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to find the closest point on a planar curve to an axis."

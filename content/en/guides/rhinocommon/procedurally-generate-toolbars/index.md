@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/procedurally-generate-toolbars/", "/6/guides/rhinocommon/procedurally-generate-toolbars/", "/7/guides/rhinocommon/procedurally-generate-toolbars/", "/wip/guides/rhinocommon/procedurally-generate-toolbars/"]
+aliases = ["/en/en/5/guides/rhinocommon/procedurally-generate-toolbars/", "/en/6/guides/rhinocommon/procedurally-generate-toolbars/", "/en/7/guides/rhinocommon/procedurally-generate-toolbars/", "/wip/guides/rhinocommon/procedurally-generate-toolbars/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide covers the generation of toolbar button images."

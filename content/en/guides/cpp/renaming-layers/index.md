@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/renaming-layers/", "/6/guides/cpp/renaming-layers/", "/7/guides/cpp/renaming-layers/", "/wip/guides/cpp/renaming-layers/"]
+aliases = ["/en/5/guides/cpp/renaming-layers/", "/en/6/guides/cpp/renaming-layers/", "/en/7/guides/cpp/renaming-layers/", "/wip/guides/cpp/renaming-layers/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide discusses how to rename a layer using C/C++."

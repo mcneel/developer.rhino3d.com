@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/multiple-pipe/", "/6/samples/rhinoscript/multiple-pipe/", "/7/samples/rhinoscript/multiple-pipe/", "/wip/samples/rhinoscript/multiple-pipe/"]
+aliases = ["/en/5/samples/rhinoscript/multiple-pipe/", "/en/6/samples/rhinoscript/multiple-pipe/", "/en/7/samples/rhinoscript/multiple-pipe/", "/wip/samples/rhinoscript/multiple-pipe/"]
 authors = [ "rajaa" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to Pipe on multiple curves at a time using RhinoScript."

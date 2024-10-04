@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/finding-duplicate-strings/", "/6/guides/rhinoscript/finding-duplicate-strings/", "/7/guides/rhinoscript/finding-duplicate-strings/", "/wip/guides/rhinoscript/finding-duplicate-strings/"]
+aliases = ["/en/5/guides/rhinoscript/finding-duplicate-strings/", "/en/6/guides/rhinoscript/finding-duplicate-strings/", "/en/7/guides/rhinoscript/finding-duplicate-strings/", "/wip/guides/rhinoscript/finding-duplicate-strings/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide demonstrates finding duplicate string using RhinoScript."

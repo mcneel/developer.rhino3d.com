@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/move-objects-to-current-layer/", "/6/samples/cpp/move-objects-to-current-layer/", "/7/samples/cpp/move-objects-to-current-layer/", "/wip/samples/cpp/move-objects-to-current-layer/"]
+aliases = ["/en/5/samples/cpp/move-objects-to-current-layer/", "/en/6/samples/cpp/move-objects-to-current-layer/", "/en/7/samples/cpp/move-objects-to-current-layer/", "/wip/samples/cpp/move-objects-to-current-layer/"]
 authors = [ "dale" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to iterate through the Rhino geometry table and modify the layer of selected objects."

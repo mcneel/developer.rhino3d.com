@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/select-objects-in-object-groups/", "/6/samples/rhinocommon/select-objects-in-object-groups/", "/7/samples/rhinocommon/select-objects-in-object-groups/", "/wip/samples/rhinocommon/select-objects-in-object-groups/"]
+aliases = ["/en/5/samples/rhinocommon/select-objects-in-object-groups/", "/en/6/samples/rhinocommon/select-objects-in-object-groups/", "/en/7/samples/rhinocommon/select-objects-in-object-groups/", "/wip/samples/rhinocommon/select-objects-in-object-groups/"]
 authors = [ "steve" ]
 categories = [ "Picking and Selection", "Adding Objects" ]
 description = "Demonstrates how to select objects that are an object group."

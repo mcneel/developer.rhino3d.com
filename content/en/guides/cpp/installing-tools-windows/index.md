@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/installing-tools-windows/", "/6/guides/cpp/installing-tools-windows/", "/7/guides/cpp/installing-tools-windows/", "/wip/guides/cpp/installing-tools-windows/"]
+aliases = ["/en/5/guides/cpp/installing-tools-windows/", "/en/6/guides/cpp/installing-tools-windows/", "/en/7/guides/cpp/installing-tools-windows/", "/wip/guides/cpp/installing-tools-windows/"]
 authors = [ "dale" ]
 categories = [ "Getting Started" ]
 description = "This guide covers all the necessary tools required to author Rhino plugins in C/C++ on Windows."

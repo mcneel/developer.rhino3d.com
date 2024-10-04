@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-annotation-text/", "/6/samples/rhinocommon/add-annotation-text/", "/7/samples/rhinocommon/add-annotation-text/", "/wip/samples/rhinocommon/add-annotation-text/"]
+aliases = ["/en/5/samples/rhinocommon/add-annotation-text/", "/en/6/samples/rhinocommon/add-annotation-text/", "/en/7/samples/rhinocommon/add-annotation-text/", "/wip/samples/rhinocommon/add-annotation-text/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add annotation text to a Rhino model at a specific location."

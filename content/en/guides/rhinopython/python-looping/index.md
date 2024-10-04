@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-looping/", "/6/guides/rhinopython/python-looping/", "/7/guides/rhinopython/python-looping/", "/wip/guides/rhinopython/python-looping/"]
+aliases = ["/en/5/guides/rhinopython/python-looping/", "/en/6/guides/rhinopython/python-looping/", "/en/7/guides/rhinopython/python-looping/", "/wip/guides/rhinopython/python-looping/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide is an overview of looping through Python code."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/determine-active-viewport/", "/6/samples/rhinocommon/determine-active-viewport/", "/7/samples/rhinocommon/determine-active-viewport/", "/wip/samples/rhinocommon/determine-active-viewport/"]
+aliases = ["/en/5/samples/rhinocommon/determine-active-viewport/", "/en/6/samples/rhinocommon/determine-active-viewport/", "/en/7/samples/rhinocommon/determine-active-viewport/", "/wip/samples/rhinocommon/determine-active-viewport/"]
 authors = [ "steve" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to determine the active viewport name, even in a layout or a detail view."

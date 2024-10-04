@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/create-cutplane/", "/6/samples/rhinoscript/create-cutplane/", "/7/samples/rhinoscript/create-cutplane/", "/wip/samples/rhinoscript/create-cutplane/"]
+aliases = ["/en/5/samples/rhinoscript/create-cutplane/", "/en/6/samples/rhinoscript/create-cutplane/", "/en/7/samples/rhinoscript/create-cutplane/", "/wip/samples/rhinoscript/create-cutplane/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to script the CutPlane command using RhinoScript."

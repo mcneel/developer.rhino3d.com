@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinopython/import-points/", "/6/samples/rhinopython/import-points/", "/7/samples/rhinopython/import-points/", "/wip/samples/rhinopython/import-points/"]
+aliases = ["/en/5/samples/rhinopython/import-points/", "/en/6/samples/rhinopython/import-points/", "/en/7/samples/rhinopython/import-points/", "/wip/samples/rhinopython/import-points/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates importing points from a file into Rhino using Python."

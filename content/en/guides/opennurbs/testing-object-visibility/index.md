@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/testing-object-visibility/", "/6/guides/opennurbs/testing-object-visibility/", "/7/guides/opennurbs/testing-object-visibility/", "/wip/guides/opennurbs/testing-object-visibility/"]
+aliases = ["/en/5/guides/opennurbs/testing-object-visibility/", "/en/6/guides/opennurbs/testing-object-visibility/", "/en/7/guides/opennurbs/testing-object-visibility/", "/wip/guides/opennurbs/testing-object-visibility/"]
 authors = [ "dalelear" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to detect whether or not an object is visible using openNURBS."

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/block-insertion-point/", "/6/samples/rhinocommon/block-insertion-point/", "/7/samples/rhinocommon/block-insertion-point/", "/wip/samples/rhinocommon/block-insertion-point/"]
+aliases = ["/en/5/samples/rhinocommon/block-insertion-point/", "/en/6/samples/rhinocommon/block-insertion-point/", "/en/7/samples/rhinocommon/block-insertion-point/", "/wip/samples/rhinocommon/block-insertion-point/"]
 authors = [ "steve" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to set (or reset) the block insertion point of a block instance."
