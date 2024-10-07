@@ -90,6 +90,7 @@ since = 8
 
 ### Advanced
 
+- {{< dev-topic "ScriptEditor Macros" "/guides/scripting/advanced-scripteditor-macros" >}}
 - {{< dev-topic "Language Initialization" "/guides/scripting/advanced-langinit" >}}
 - <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
 - {{< dev-topic "Python Path Files" "/guides/scripting/advanced-pthfiles" >}}
