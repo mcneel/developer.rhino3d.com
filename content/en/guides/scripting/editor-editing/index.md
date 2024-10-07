@@ -107,4 +107,4 @@ Usually when typing up arguments to a function, we would like to keep the *Signa
 
 ![](editor-autocomplete-insignature.png)
 
-To change this behaviour - for example to get the autocompletion for `os.` in example above - choose **Edit > Toggle Autocomplete in Function Help**. See **Autocompletion** in [Language Support Options](/guides/scripting/editor-configs/#language-support-options) to toggle this option on for a specific language.
+To change this behaviour - for example to get the autocompletion for `os.` in example above - choose **Edit > Toggle Autocomplete in Function Help**. See **Autocompletion** in [Language Support Options](/guides/scripting/editor-configs/#language-support-options) to toggle this option for a specific language.
