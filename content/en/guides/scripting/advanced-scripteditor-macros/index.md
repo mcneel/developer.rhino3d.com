@@ -30,10 +30,11 @@ block_webcrawlers = false
 *ScriptEditor* command has a few options that could be used in macros. Run `_-ScriptEditor` command in Rhino prompt to see these options (`-` is for non-interactive mode, and `_` ensures command works in all Rhino UI languages. [See Command Macros & Scripting](https://docs.mcneel.com/rhino/8/help/en-us/information/rhinoscripting.htm) for more):
 
 - **Edit (E):** This is the default option when running ScriptEditor command in Rhino. It opens the standalone Script Editor and initialized all languages.
+
 - **Run (R):** Runs given script using the new scripting infrastructure in Rhino 8. It can run scripts or script files of any supported language.
   - **Browse (B):** Using this suboption, allows to browse and select a script file
   - Run a script file in a macro this way 👉 `_-ScriptEditor _R "C:\path\to\script.py"` 
-  - Run a script in a macro this way 👇:
+  - Run a script in a macro this way 👇. Note that the language specifier (`#! python 3`, `#! python 2`, or `// #! csharp`) is necessary so the command can determine which language to run the script with:
 
 ```text
 _-ScriptEditor _R (
@@ -41,6 +42,7 @@ _-ScriptEditor _R (
     print("Hello Rhino")
 )
 ```
+
 - **Open (O):**: Opens given script file in ScriptEditor
   - **Browse (B):** Using this suboption, allows to browse and open a script file
   - Open a script file to edit this way 👉 `_-ScriptEditor _O "C:\path\to\script.py"` 
