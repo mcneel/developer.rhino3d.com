@@ -57,7 +57,7 @@ since = 0
 - [Matemáticas vectoriales](/guides/general/essential-mathematics/vector-mathematics)
 - [Matrices y transformaciones](/guides/general/essential-mathematics/matrices-transformations)
 - [Curvas paramétricas y superficies](/guides/general/essential-mathematics/parametric-curves-surfaces)
-- [{{< awesome "fas fa-download">}} ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/) [Descargar Matemáticas Esenciales para Diseño Computacional como PDF](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/)
+- [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/8/essentialmathematics/) [Descargar Matemáticas Esenciales para Diseño Computacional como PDF](https://www.rhino3d.com/download/rhino/8/essentialmathematics/)
 
 {{< /column >}}
 {{< column >}}

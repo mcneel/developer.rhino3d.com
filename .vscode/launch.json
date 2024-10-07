@@ -5,9 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Hugo: Serve",
+            "name": "Hugo: Serve English",
             "type": "pwa-chrome",
-            "preLaunchTask": "hugo serve",
+            "preLaunchTask": "hugo serve english",
             "postDebugTask": "hugo terminate",
             "request": "attach",
             "url": "http://localhost:1313",
@@ -30,11 +30,35 @@
             }
         },
         {
+            "name": "Hugo: Serve All Languages",
+            "type": "pwa-chrome",
+            "preLaunchTask": "hugo serve all languages",
+            "postDebugTask": "hugo terminate",
+            "request": "attach",
+            "url": "http://localhost:1313",
+            "presentation": {
+                "hidden": false,
+                "group": "Hugo",
+                "order": 3
+            }
+        },        
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Debug Launch",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "Build Launch",
+            "program": "${workspaceFolder}/themes/rhino3d.com-theme/script/Launch/bin/Debug/net7.0/Launch.dll",
+            "args": ["serve", "--renderStaticToDisk", "-e", "development", "page=${file}"],
+            "cwd": "${workspaceFolder}/themes/rhino3d.com-theme/script/Launch",
+            "stopAtEntry": false,
+            "console": "internalConsole"
         }
     ]
 }

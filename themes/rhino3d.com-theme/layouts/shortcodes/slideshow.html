@@ -98,7 +98,7 @@
 <!-- Gallery -->
 <div id="slide-window-{{ $.Scratch.Get "id" }}">
     <ol id="slides-list-{{ $.Scratch.Get "id" }}">
-        {{- with $enPage := $.Page.Sites.First.GetPage ($.Page.File.Path) -}} 
+        {{- with $enPage := $.Page.Sites.Default.GetPage ($.Page.File.Path) -}} 
             {{- $localFiles := $.Page.Resources.Match (print ($.Get "dir") "/*") }} 
             {{- $enFiles := $enPage.Resources.Match (print ($.Get "dir") "/*") }} 
             {{- if eq (len $localFiles) 0 }}

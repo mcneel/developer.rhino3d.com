@@ -143,7 +143,7 @@ namespace Launch
         filename = "hugo.tar.gz";
       } else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
       {
-        archive = string.Format("hugo_extended_{0}_Windows-64bit.zip", requiredVersion);
+        archive = string.Format("hugo_extended_{0}_windows-amd64.zip", requiredVersion);
         filename = "hugo.zip";
       } else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
       {        
@@ -197,11 +197,16 @@ namespace Launch
       Directory.CreateDirectory(tempPath);
 
       // Download Hugo
-      using (var client = new WebClient())
-      {
-        Console.WriteLine("Downloading: {0} ...", filename);
-        client.DownloadFile(url, Path.Combine(RepoRootPath, filename));
-        Console.WriteLine("Download {0} complete.", filename);
+      try {
+        using (var client = new WebClient())
+        {
+          Console.WriteLine("Downloading: {0} ...", filename);
+          client.DownloadFile(url, Path.Combine(RepoRootPath, filename));
+          Console.WriteLine("Download {0} complete.", filename);
+        }
+      } catch (Exception e) {
+        Console.WriteLine("Error downloading Hugo: {0}", e.Message);
+        return false;
       }
 
       // Decompress Hugo
@@ -452,9 +457,6 @@ namespace Launch
         {
           return location;
         }
-
-        if (!string.IsNullOrWhiteSpace(language))
-          page = page.Replace(String.Format("/{0}", language), "", StringComparison.InvariantCultureIgnoreCase);
 
         char[] forwardSlash = { '/' };
         location = location.TrimEnd(forwardSlash) + "/" + page.TrimStart(forwardSlash);        

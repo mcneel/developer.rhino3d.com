@@ -82,7 +82,7 @@ Uno de los plugins de C++ que incluimos con Rhino es [RhinoScript](/guides/rhino
 
 Para obtener más información, consulte las [guías de RhinoScript](/guides/rhinoscript/), y más concretamente la guía [¿Qué son VBScript y RhinoScript?](/guides/rhinoscript/what-are-vbscript-rhinoscript/).
 
-## .Pila .NET
+## Pila .NET
 
 El SDK .NET se representa aquí en tres capas:
 

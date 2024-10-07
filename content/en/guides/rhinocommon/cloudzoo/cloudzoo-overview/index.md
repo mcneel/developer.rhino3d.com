@@ -42,7 +42,7 @@ Under certain scenarios, such as when adding or removing a license, Cloud Zoo wi
 ## Required Steps
 
 To have your Plug-In support Cloud Zoo, you must:
- 1. [Register as an Issuer in Cloud Zoo.](/guides/rhinocommon/cloudzoo/cloudzoo-register-plugin)
+ 1. [Register as an Issuer in Cloud Zoo.](/guides/rhinocommon/cloudzoo/cloudzoo-issuer)
  2. [Add products to Cloud Zoo.](/guides/rhinocommon/cloudzoo/cloudzoo-add-products)
  3. [Implement the required HTTPS callbacks.](/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks)
  4. [Modify Plug-In licensing code to support Cloud Zoo.](/guides/rhinocommon/cloudzoo/cloudzoo-modify-plugin-licensing-code)

@@ -107,8 +107,7 @@ For example, to register a plugin that only Rhino 8 will load, your installer sh
 
 ## Related topics
 
-- [Your First Plugin (Mac)](/guides/rhinocommon/your-first-plugin-mac)
-- [Your First Plugin (Cross-Platform)](/guides/rhinocommon/your-first-plugin-crossplatform)
+- [Your First Plugin (Mac)](/guides/rhinocommon/your-first-plugin-mac)-crossplatform)
 - [Uninstalling Plugins (Mac)](/guides/rhinocommon/uninstalling-plugins-mac)
 - [Plugin Installers (Windows)](/guides/rhinocommon/plugin-installers-windows)
 

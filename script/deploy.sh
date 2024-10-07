@@ -19,7 +19,7 @@ else
     rm -rf hugo
     if [ $PLATFORM = "Darwin" ]
     then
-        wget https://github.com/gohugoio/hugo/releases/download/v$FORESTRY_HUGO_VERSION/hugo_extended_${FORESTRY_HUGO_VERSION}_macOS-64bit.tar.gz -O hugo.tar.gz
+        wget https://github.com/gohugoio/hugo/releases/download/v$FORESTRY_HUGO_VERSION/hugo_extended_${FORESTRY_HUGO_VERSION}_darwin-universal.tar.gz -O hugo.tar.gz
     else
         wget https://github.com/gohugoio/hugo/releases/download/v$FORESTRY_HUGO_VERSION/hugo_extended_${FORESTRY_HUGO_VERSION}_Linux-64bit.tar.gz -O hugo.tar.gz
     fi
