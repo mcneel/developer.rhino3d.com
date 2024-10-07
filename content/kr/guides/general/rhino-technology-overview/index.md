@@ -30,7 +30,7 @@ toc_type = "single"
 
 ## 개요
 
-Rhinoceros는 많은 언어로 쓰여져 서로 계층을 이루며 쌓여 있는 구성입니다.  가장 기본적인 토대는 바닥에 위치하지만, 최상단 계층을 결코 표면적인 것으로 생각하면 안 됩니다.
+Rhinoceros는 많은 언어로 쓰여져 서로 계층을 이루며 쌓여 있는 구성입니다.  가장 기본적인 토대는 바닥에 위치하지만, 최상단 계층을 결코 피상적으로만 생각하면 안 됩니다.
 
 ![The Rhino Stack](/images/rhino-technology-overview-01.png)
 
