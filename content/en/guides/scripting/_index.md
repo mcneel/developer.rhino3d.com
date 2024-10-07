@@ -35,7 +35,7 @@ since = 8
 
 ### Getting Started
 
-#### Script Editor
+#### ScriptEditor Command
   - [Opening Script Editor](/guides/scripting/scripting-command/#opening-script-editor)
   - [First Script](/guides/scripting/scripting-command/#first-script)
   - [Edit Script](/guides/scripting/scripting-command/#edit-script)
@@ -83,7 +83,7 @@ since = 8
 
 {{< column >}}
 
-### Publishing
+### Publishing Script Plugins
 
 - {{< dev-topic "Creating Rhino Projects" "/guides/scripting/projects-create" >}}
 - {{< dev-topic "Creating Rhino and Grasshopper Plugins" "/guides/scripting/projects-publish" >}}

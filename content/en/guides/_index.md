@@ -61,7 +61,7 @@ toc_type = "single"
 
 ### Getting Started
 
-#### Script Editor
+#### ScriptEditor Command
   - [Opening Script Editor](/guides/scripting/scripting-command/#opening-script-editor)
   - [First Script](/guides/scripting/scripting-command/#first-script)
   - [Edit Script](/guides/scripting/scripting-command/#edit-script)
@@ -101,13 +101,14 @@ toc_type = "single"
 - {{< dev-topic "Options" "/guides/scripting/editor-configs" >}}
 - {{< dev-topic "Logs" "/guides/scripting/editor-logs" >}}
 
-### Publishing
+### Publishing Script Plugins
 
 - {{< dev-topic "Creating Rhino Projects" "/guides/scripting/projects-create" >}}
 - {{< dev-topic "Creating Rhino and Grasshopper Plugins" "/guides/scripting/projects-publish" >}}
 
 ### Advanced
 
+- {{< dev-topic "ScriptEditor Macros" "/guides/scripting/advanced-scripteditor-macros" >}}
 - {{< dev-topic "Language Initialization" "/guides/scripting/advanced-langinit" >}}
 - <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
 - {{< dev-topic "Python Path Files" "/guides/scripting/advanced-pthfiles" >}}
