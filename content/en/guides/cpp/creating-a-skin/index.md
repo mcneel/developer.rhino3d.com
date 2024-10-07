@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/creating-a-skin/", "/6/guides/cpp/creating-a-skin/", "/7/guides/cpp/creating-a-skin/", "/wip/guides/cpp/creating-a-skin/"]
+aliases = ["/en/5/guides/cpp/creating-a-skin/", "/en/6/guides/cpp/creating-a-skin/", "/en/7/guides/cpp/creating-a-skin/", "/en/wip/guides/cpp/creating-a-skin/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide outlines the tools for C/C++ developers to wrap their application around Rhino by creating custom Skin."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

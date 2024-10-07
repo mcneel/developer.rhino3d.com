@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/installing-tools-windows/", "/6/guides/rhinocommon/installing-tools-windows/", "/7/guides/rhinocommon/installing-tools-windows/", "/wip/guides/rhinocommon/installing-tools-windows/"]
+aliases = ["/en/5/guides/rhinocommon/installing-tools-windows/", "/en/6/guides/rhinocommon/installing-tools-windows/", "/en/7/guides/rhinocommon/installing-tools-windows/", "/en/wip/guides/rhinocommon/installing-tools-windows/"]
 authors = [ "steve" ]
 categories = [ "Getting Started" ]
 description = "This guide covers the tools required to author, build and debug Rhino plugins on Windows."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging .NET plugins using RhinoCommon on Windows.

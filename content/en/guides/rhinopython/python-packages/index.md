@@ -1,5 +1,5 @@
 +++
-aliases = ""
+aliases = []
 authors = [ "scott" ]
 categories = [ "Intermediate" ]
 description = "This guide covers the various ways to install packages in Python for Rhino."
@@ -28,7 +28,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 One of the powers of Python is its ability to use thousands of additional modules in its scripts.

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/how-hops-works/", "/6/guides/compute/how-hops-works/", "/7/guides/compute/how-hops-works/", "/wip/guides/compute/how-hops-works/"]
+aliases = ["/en/5/guides/compute/how-hops-works/", "/en/6/guides/compute/how-hops-works/", "/en/7/guides/compute/how-hops-works/", "/en/wip/guides/compute/how-hops-works/"]
 authors = [ "andy.payne" ]
 categories = [ "Hops" ]
 keywords = [ "developer", "grasshopper", "components", "hops" ]
@@ -22,7 +22,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 The communication process between Hops and a Hops compliant server is a little more nuanced than simply sending and receiving a single http request and response. The first step in the process occurs when Hops bundles up the referenced Grasshopper definition and sends a http request to an endpoint on the server. 

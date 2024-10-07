@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/determining-normal-direction-of-brep-face/", "/6/guides/cpp/determining-normal-direction-of-brep-face/", "/7/guides/cpp/determining-normal-direction-of-brep-face/", "/wip/guides/cpp/determining-normal-direction-of-brep-face/"]
+aliases = ["/en/5/guides/cpp/determining-normal-direction-of-brep-face/", "/en/6/guides/cpp/determining-normal-direction-of-brep-face/", "/en/7/guides/cpp/determining-normal-direction-of-brep-face/", "/en/wip/guides/cpp/determining-normal-direction-of-brep-face/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to determine the normal direction of a Brep face using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

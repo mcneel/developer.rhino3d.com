@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/", "/6/", "/7/", "/wip/"]
+aliases = ["/de/5/", "/de/6/", "/de/7/", "/de/wip/"]
 description = "Official developer resources for Rhino and Grasshopper.  Rhino developer tools are royalty free and include support."
 title = "Rhino and Grasshopper Developer Documentation"
 type = "home"

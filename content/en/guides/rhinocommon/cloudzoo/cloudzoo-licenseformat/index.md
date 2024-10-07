@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/"]
+aliases = ["/en/5/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/en/6/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/en/7/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/en/wip/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/"]
 authors = [ "aj" ]
 categories = [ "CloudZooDoc" ]
 description = "A License Format object defines a pattern for a license key. When a user enters a license key to be added to their account or their team, Cloud Zoo will find a product with a matching license format and notify its issuer about the user's intent to add the license."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 **Note:** Not all format possibilities are described in this document. If your license keys have a format that cannot be accurately defined in the fields below, we might be able to help. Please contact aj@mcneel.com for details.

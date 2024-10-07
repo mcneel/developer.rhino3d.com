@@ -1,9 +1,8 @@
 +++
-aliases = ["/5/admin/", "/6/admin/", "/7/admin/", "/wip/admin/"]
+aliases = ["/en/5/admin/", "/en/6/admin/", "/en/7/admin/", "/en/wip/admin/"]
 description = "The administrator's view of the developer.rhino3d.com website."
 title = "Administration"
 type = "admin"
-
 +++
 
 [![Build Status](https://travis-ci.org/mcneel/developer-rhino3d-com.svg?branch=master)](https://travis-ci.org/mcneel/developer-rhino3d-com)

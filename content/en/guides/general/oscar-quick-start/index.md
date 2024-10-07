@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/oscar-quick-start/", "/6/guides/general/oscar-quick-start/", "/7/guides/general/oscar-quick-start/", "/wip/guides/general/oscar-quick-start/"]
+aliases = ["/en/5/guides/general/oscar-quick-start/", "/en/6/guides/general/oscar-quick-start/", "/en/7/guides/general/oscar-quick-start/", "/en/wip/guides/general/oscar-quick-start/"]
 authors = [ "pascal" ]
 categories = [ "Caffeine" ]
 description = "This guide shows you how to pull a good shot of espresso from Oscar, McNeel espresso machine."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 > *No matter. Try again. Fail again. Fail better.  -Beckett*

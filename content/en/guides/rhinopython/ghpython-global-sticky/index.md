@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/ghpython-global-sticky/", "/6/guides/rhinopython/ghpython-global-sticky/", "/7/guides/rhinopython/ghpython-global-sticky/", "/wip/guides/rhinopython/ghpython-global-sticky/"]
+aliases = ["/en/5/guides/rhinopython/ghpython-global-sticky/", "/en/6/guides/rhinopython/ghpython-global-sticky/", "/en/7/guides/rhinopython/ghpython-global-sticky/", "/en/wip/guides/rhinopython/ghpython-global-sticky/"]
 authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "Create a variable that sticks around for other components."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 Sometimes there is a need to share information between Grasshopper and Rhino.Python.  This can be done through a global [sticky variable](http://developer.rhino3d.com/samples/rhinopython/sticky-values/) creating a definition wide global sticky variable. Both Rhino.Python and gh.python use the same Python instance, so the Python sticky is shared between the two.

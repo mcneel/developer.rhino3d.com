@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/auto-label-objects/", "/6/samples/rhinoscript/auto-label-objects/", "/7/samples/rhinoscript/auto-label-objects/", "/wip/samples/rhinoscript/auto-label-objects/"]
+aliases = ["/en/5/samples/rhinoscript/auto-label-objects/", "/en/6/samples/rhinoscript/auto-label-objects/", "/en/7/samples/rhinoscript/auto-label-objects/", "/en/wip/samples/rhinoscript/auto-label-objects/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to automatically label objects using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

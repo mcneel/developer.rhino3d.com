@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-datatypes/", "/6/guides/rhinopython/python-datatypes/", "/7/guides/rhinopython/python-datatypes/", "/wip/guides/rhinopython/python-datatypes/"]
+aliases = ["/en/5/guides/rhinopython/python-datatypes/", "/en/6/guides/rhinopython/python-datatypes/", "/en/7/guides/rhinopython/python-datatypes/", "/en/wip/guides/rhinopython/python-datatypes/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide is an overview of Python Data Types."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

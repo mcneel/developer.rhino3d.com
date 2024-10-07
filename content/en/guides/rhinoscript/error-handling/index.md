@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/error-handling/", "/6/guides/rhinoscript/error-handling/", "/7/guides/rhinoscript/error-handling/", "/wip/guides/rhinoscript/error-handling/"]
+aliases = ["/en/5/guides/rhinoscript/error-handling/", "/en/6/guides/rhinoscript/error-handling/", "/en/7/guides/rhinoscript/error-handling/", "/en/wip/guides/rhinoscript/error-handling/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide describes the error handling semantics of VBScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

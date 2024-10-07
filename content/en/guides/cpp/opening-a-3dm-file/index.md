@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/opening-a-3dm-file/", "/6/guides/cpp/opening-a-3dm-file/", "/7/guides/cpp/opening-a-3dm-file/", "/wip/guides/cpp/opening-a-3dm-file/"]
+aliases = ["/en/5/guides/cpp/opening-a-3dm-file/", "/en/6/guides/cpp/opening-a-3dm-file/", "/en/7/guides/cpp/opening-a-3dm-file/", "/en/wip/guides/cpp/opening-a-3dm-file/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to open a Rhino 3DM file from a plugin command using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

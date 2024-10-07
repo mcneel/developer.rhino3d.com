@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/loading-plugins-at-startup/", "/6/guides/cpp/loading-plugins-at-startup/", "/7/guides/cpp/loading-plugins-at-startup/", "/wip/guides/cpp/loading-plugins-at-startup/"]
+aliases = ["/en/5/guides/cpp/loading-plugins-at-startup/", "/en/6/guides/cpp/loading-plugins-at-startup/", "/en/7/guides/cpp/loading-plugins-at-startup/", "/en/wip/guides/cpp/loading-plugins-at-startup/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses how to configure plugins to load at startup using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinomobile/your-first-app-mac/", "/6/guides/rhinomobile/your-first-app-mac/", "/7/guides/rhinomobile/your-first-app-mac/", "/wip/guides/rhinomobile/your-first-app-mac/"]
+aliases = ["/en/5/guides/rhinomobile/your-first-app-mac/", "/en/6/guides/rhinomobile/your-first-app-mac/", "/en/7/guides/rhinomobile/your-first-app-mac/", "/en/wip/guides/rhinomobile/your-first-app-mac/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first mobile app using RhinoMobile and Xamarin Studio on Mac."

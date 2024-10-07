@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/hatch-curve/", "/6/samples/rhinocommon/hatch-curve/", "/7/samples/rhinocommon/hatch-curve/", "/wip/samples/rhinocommon/hatch-curve/"]
+aliases = ["/en/5/samples/rhinocommon/hatch-curve/", "/en/6/samples/rhinocommon/hatch-curve/", "/en/7/samples/rhinocommon/hatch-curve/", "/en/wip/samples/rhinocommon/hatch-curve/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to create a hatch from a curve."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

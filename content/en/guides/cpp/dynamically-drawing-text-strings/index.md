@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/dynamically-drawing-text-strings/", "/6/guides/cpp/dynamically-drawing-text-strings/", "/7/guides/cpp/dynamically-drawing-text-strings/", "/wip/guides/cpp/dynamically-drawing-text-strings/"]
+aliases = ["/en/5/guides/cpp/dynamically-drawing-text-strings/", "/en/6/guides/cpp/dynamically-drawing-text-strings/", "/en/7/guides/cpp/dynamically-drawing-text-strings/", "/en/wip/guides/cpp/dynamically-drawing-text-strings/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to dynamically draw text strings using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

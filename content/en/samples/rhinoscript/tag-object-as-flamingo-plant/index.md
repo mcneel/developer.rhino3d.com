@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/tag-object-as-flamingo-plant/", "/6/samples/rhinoscript/tag-object-as-flamingo-plant/", "/7/samples/rhinoscript/tag-object-as-flamingo-plant/", "/wip/samples/rhinoscript/tag-object-as-flamingo-plant/"]
+aliases = ["/en/5/samples/rhinoscript/tag-object-as-flamingo-plant/", "/en/6/samples/rhinoscript/tag-object-as-flamingo-plant/", "/en/7/samples/rhinoscript/tag-object-as-flamingo-plant/", "/en/wip/samples/rhinoscript/tag-object-as-flamingo-plant/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how to tag an object as a Flamingo nXt plant in RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

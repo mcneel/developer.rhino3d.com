@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/optional-arguments/", "/6/guides/rhinoscript/optional-arguments/", "/7/guides/rhinoscript/optional-arguments/", "/wip/guides/rhinoscript/optional-arguments/"]
+aliases = ["/en/5/guides/rhinoscript/optional-arguments/", "/en/6/guides/rhinoscript/optional-arguments/", "/en/7/guides/rhinoscript/optional-arguments/", "/en/wip/guides/rhinoscript/optional-arguments/"]
 authors = [ "dale" ]
 categories = [ "Intermediate" ]
 description = "This guide demonstrates how to implement optional arguments in VBScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

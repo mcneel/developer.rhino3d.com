@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-task-classes/", "/6/guides/cpp/rdk-task-classes/", "/7/guides/cpp/rdk-task-classes/", "/wip/guides/cpp/rdk-task-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-task-classes/", "/en/6/guides/cpp/rdk-task-classes/", "/en/7/guides/cpp/rdk-task-classes/", "/en/wip/guides/cpp/rdk-task-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK task classes in C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 ### Introduction
 {{< image url="/images/rdk-tasks.png" alt="Task" class="float_right" >}}

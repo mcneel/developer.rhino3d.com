@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/move-points-non-uniform/", "/6/samples/rhinocommon/move-points-non-uniform/", "/7/samples/rhinocommon/move-points-non-uniform/", "/wip/samples/rhinocommon/move-points-non-uniform/"]
+aliases = ["/en/5/samples/rhinocommon/move-points-non-uniform/", "/en/6/samples/rhinocommon/move-points-non-uniform/", "/en/7/samples/rhinocommon/move-points-non-uniform/", "/en/wip/samples/rhinocommon/move-points-non-uniform/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to move points in a non-uniform manner."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

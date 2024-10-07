@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-regexp-objects/", "/6/guides/rhinopython/python-regexp-objects/", "/7/guides/rhinopython/python-regexp-objects/", "/wip/guides/rhinopython/python-regexp-objects/"]
+aliases = ["/en/5/guides/rhinopython/python-regexp-objects/", "/en/6/guides/rhinopython/python-regexp-objects/", "/en/7/guides/rhinopython/python-regexp-objects/", "/en/wip/guides/rhinopython/python-regexp-objects/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses the VBScript RegExp object."
@@ -28,7 +28,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 <!-- TODO: This page is not a fundamental page, but it would be good to update for python. Currently this page is for VB. Use Python "re" module for regular expression handling. -->

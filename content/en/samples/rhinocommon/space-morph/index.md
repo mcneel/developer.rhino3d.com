@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/space-morph/", "/6/samples/rhinocommon/space-morph/", "/7/samples/rhinocommon/space-morph/", "/wip/samples/rhinocommon/space-morph/"]
+aliases = ["/en/5/samples/rhinocommon/space-morph/", "/en/6/samples/rhinocommon/space-morph/", "/en/7/samples/rhinocommon/space-morph/", "/en/wip/samples/rhinocommon/space-morph/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to construct the Twist, Bend, Taper, Maelstrom, Stretch, Sporph, Flow, and Splop space morphs."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-nested-block/", "/6/samples/rhinocommon/add-nested-block/", "/7/samples/rhinocommon/add-nested-block/", "/wip/samples/rhinocommon/add-nested-block/"]
+aliases = ["/en/5/samples/rhinocommon/add-nested-block/", "/en/6/samples/rhinocommon/add-nested-block/", "/en/7/samples/rhinocommon/add-nested-block/", "/en/wip/samples/rhinocommon/add-nested-block/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects", "Blocks" ]
 description = "Demonstrates how to add a nested block to an instance definition."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

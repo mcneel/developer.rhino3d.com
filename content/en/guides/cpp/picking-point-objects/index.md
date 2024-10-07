@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/picking-point-objects/", "/6/guides/cpp/picking-point-objects/", "/7/guides/cpp/picking-point-objects/", "/wip/guides/cpp/picking-point-objects/"]
+aliases = ["/en/5/guides/cpp/picking-point-objects/", "/en/6/guides/cpp/picking-point-objects/", "/en/7/guides/cpp/picking-point-objects/", "/en/wip/guides/cpp/picking-point-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to use CRhinoGetObject to pick point objects using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/debug-rhinowip-mac/", "/6/guides/rhinocommon/debug-rhinowip-mac/", "/7/guides/rhinocommon/debug-rhinowip-mac/", "/wip/guides/rhinocommon/debug-rhinowip-mac/"]
+aliases = ["/en/5/guides/rhinocommon/debug-rhinowip-mac/", "/en/6/guides/rhinocommon/debug-rhinowip-mac/", "/en/7/guides/rhinocommon/debug-rhinowip-mac/", "/en/wip/guides/rhinocommon/debug-rhinowip-mac/"]
 authors = [ "dan" ]
 categories = [ "Deprecated" ]
 description = "This guide explains how to debug using the RhinoWIP for Mac."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 <div class="bs-callout bs-callout-danger">

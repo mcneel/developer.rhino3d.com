@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/your-first-renderer-plugin-windows/", "/6/guides/cpp/your-first-renderer-plugin-windows/", "/7/guides/cpp/your-first-renderer-plugin-windows/", "/wip/guides/cpp/your-first-renderer-plugin-windows/"]
+aliases = ["/en/5/guides/cpp/your-first-renderer-plugin-windows/", "/en/6/guides/cpp/your-first-renderer-plugin-windows/", "/en/7/guides/cpp/your-first-renderer-plugin-windows/", "/en/wip/guides/cpp/your-first-renderer-plugin-windows/"]
 authors = [ "andy" ]
 categories = [ "RDK" ]
 description = "This guide has yet to be authored or ported."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

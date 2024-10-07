@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/grasshopper-data-types/", "/6/guides/grasshopper/grasshopper-data-types/", "/7/guides/grasshopper/grasshopper-data-types/", "/wip/guides/grasshopper/grasshopper-data-types/"]
+aliases = ["/en/5/guides/grasshopper/grasshopper-data-types/", "/en/6/guides/grasshopper/grasshopper-data-types/", "/en/7/guides/grasshopper/grasshopper-data-types/", "/en/wip/guides/grasshopper/grasshopper-data-types/"]
 authors = [ "david" ]
 categories = [ "In Depth" ]
 description = "This guide covers the basic data types that Grasshopper deals with."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

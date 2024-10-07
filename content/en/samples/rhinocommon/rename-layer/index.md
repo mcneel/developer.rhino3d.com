@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/rename-layer/", "/6/samples/rhinocommon/rename-layer/", "/7/samples/rhinocommon/rename-layer/", "/wip/samples/rhinocommon/rename-layer/"]
+aliases = ["/en/5/samples/rhinocommon/rename-layer/", "/en/6/samples/rhinocommon/rename-layer/", "/en/7/samples/rhinocommon/rename-layer/", "/en/wip/samples/rhinocommon/rename-layer/"]
 authors = [ "steve" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to rename a layer."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

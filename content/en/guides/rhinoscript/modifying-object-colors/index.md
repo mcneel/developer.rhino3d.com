@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/modifying-object-colors/", "/6/guides/rhinoscript/modifying-object-colors/", "/7/guides/rhinoscript/modifying-object-colors/", "/wip/guides/rhinoscript/modifying-object-colors/"]
+aliases = ["/en/5/guides/rhinoscript/modifying-object-colors/", "/en/6/guides/rhinoscript/modifying-object-colors/", "/en/7/guides/rhinoscript/modifying-object-colors/", "/en/wip/guides/rhinoscript/modifying-object-colors/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide demonstrates how to modify the color of objects using RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

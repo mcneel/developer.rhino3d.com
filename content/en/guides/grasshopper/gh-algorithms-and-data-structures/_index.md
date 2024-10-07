@@ -1,5 +1,5 @@
 +++
-aliases = [""]
+aliases = ["/en"]
 authors = [ "rajaa" ]
 categories = [ "" ]
 description = "Introduces the fundementals of algorithmic design and data structures using Grasshopper."
@@ -20,7 +20,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="row">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/extend-surface/", "/6/samples/cpp/extend-surface/", "/7/samples/cpp/extend-surface/", "/wip/samples/cpp/extend-surface/"]
+aliases = ["/en/5/samples/cpp/extend-surface/", "/en/6/samples/cpp/extend-surface/", "/en/7/samples/cpp/extend-surface/", "/en/wip/samples/cpp/extend-surface/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to use RhinoExtendSurface() to extend a surface object."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

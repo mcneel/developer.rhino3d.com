@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/query-flamingo-plant-object/", "/6/samples/rhinoscript/query-flamingo-plant-object/", "/7/samples/rhinoscript/query-flamingo-plant-object/", "/wip/samples/rhinoscript/query-flamingo-plant-object/"]
+aliases = ["/en/5/samples/rhinoscript/query-flamingo-plant-object/", "/en/6/samples/rhinoscript/query-flamingo-plant-object/", "/en/7/samples/rhinoscript/query-flamingo-plant-object/", "/en/wip/samples/rhinoscript/query-flamingo-plant-object/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how query a plant object using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

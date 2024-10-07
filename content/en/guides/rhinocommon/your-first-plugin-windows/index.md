@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/your-first-plugin-windows/", "/6/guides/rhinocommon/your-first-plugin-windows/", "/7/guides/rhinocommon/your-first-plugin-windows/", "/wip/guides/rhinocommon/your-first-plugin-windows/"]
+aliases = ["/en/5/guides/rhinocommon/your-first-plugin-windows/", "/en/6/guides/rhinocommon/your-first-plugin-windows/", "/en/7/guides/rhinocommon/your-first-plugin-windows/", "/en/wip/guides/rhinocommon/your-first-plugin-windows/"]
 authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first plugin for Rhino for Windows using RhinoCommon and Visual Studio."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 It is presumed you already have the necessary tools installed and are ready to go. If you are not there yet, see [Installing Tools (Windows)](/guides/rhinocommon/installing-tools-windows).

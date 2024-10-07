@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-linear-dimension/", "/6/samples/rhinocommon/add-linear-dimension/", "/7/samples/rhinocommon/add-linear-dimension/", "/wip/samples/rhinocommon/add-linear-dimension/"]
+aliases = ["/en/5/samples/rhinocommon/add-linear-dimension/", "/en/6/samples/rhinocommon/add-linear-dimension/", "/en/7/samples/rhinocommon/add-linear-dimension/", "/en/wip/samples/rhinocommon/add-linear-dimension/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a linear dimension to a Rhino model."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-troubleshooting-install/", "/6/guides/rhinopython/python-troubleshooting-install/", "/7/guides/rhinopython/python-troubleshooting-install/", "/wip/guides/rhinopython/python-troubleshooting-install/"]
+aliases = ["/en/5/guides/rhinopython/python-troubleshooting-install/", "/en/6/guides/rhinopython/python-troubleshooting-install/", "/en/7/guides/rhinopython/python-troubleshooting-install/", "/en/wip/guides/rhinopython/python-troubleshooting-install/"]
 authors = [ "giulio" ]
 categories = [ "Getting Started" ]
 keywords = [ "python", "commands" ]
@@ -25,7 +25,6 @@ block_webcrawlers = true
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 Over the last few months, we received several reports about issues with independent IronPython installations (IIPI) and Rhino.

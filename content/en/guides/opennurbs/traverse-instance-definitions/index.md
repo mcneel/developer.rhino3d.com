@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/traverse-instance-definitions/", "/6/guides/opennurbs/traverse-instance-definitions/", "/7/guides/opennurbs/traverse-instance-definitions/", "/wip/guides/opennurbs/traverse-instance-definitions/"]
+aliases = ["/en/5/guides/opennurbs/traverse-instance-definitions/", "/en/6/guides/opennurbs/traverse-instance-definitions/", "/en/7/guides/opennurbs/traverse-instance-definitions/", "/en/wip/guides/opennurbs/traverse-instance-definitions/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide describes how to read instance definitions using the openNURBS toolkit."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 If you are developing software to read .3dm files, you might also read instance, or block, definitions, in addition to standard geometry.

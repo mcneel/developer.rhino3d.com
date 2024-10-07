@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/display-precision/", "/6/samples/rhinocommon/display-precision/", "/7/samples/rhinocommon/display-precision/", "/wip/samples/rhinocommon/display-precision/"]
+aliases = ["/en/5/samples/rhinocommon/display-precision/", "/en/6/samples/rhinocommon/display-precision/", "/en/7/samples/rhinocommon/display-precision/", "/en/wip/samples/rhinocommon/display-precision/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to change the display precision in a Rhino model."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

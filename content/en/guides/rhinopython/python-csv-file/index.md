@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-csv-file/", "/6/guides/rhinopython/python-csv-file/", "/7/guides/rhinopython/python-csv-file/", "/wip/guides/rhinopython/python-csv-file/"]
+aliases = ["/en/5/guides/rhinopython/python-csv-file/", "/en/6/guides/rhinopython/python-csv-file/", "/en/7/guides/rhinopython/python-csv-file/", "/en/wip/guides/rhinopython/python-csv-file/"]
 authors = [ "scottd" ]
 categories = [ "Intermediate" ]
 description = "Use Python to read and write comma-delimited files."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 CSV (comma separated values ) files are commonly used to store and retrieve many different types of data. 
 The CSV format is one of the most flexible and easiest format to read.

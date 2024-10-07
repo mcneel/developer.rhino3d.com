@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/calculating-angle-between-two-points/", "/6/guides/cpp/calculating-angle-between-two-points/", "/7/guides/cpp/calculating-angle-between-two-points/", "/wip/guides/cpp/calculating-angle-between-two-points/"]
+aliases = ["/en/5/guides/cpp/calculating-angle-between-two-points/", "/en/6/guides/cpp/calculating-angle-between-two-points/", "/en/7/guides/cpp/calculating-angle-between-two-points/", "/en/wip/guides/cpp/calculating-angle-between-two-points/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to calculate the angle between two points using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

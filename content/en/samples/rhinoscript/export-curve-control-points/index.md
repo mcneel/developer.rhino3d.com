@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/export-curve-control-points/", "/6/samples/rhinoscript/export-curve-control-points/", "/7/samples/rhinoscript/export-curve-control-points/", "/wip/samples/rhinoscript/export-curve-control-points/"]
+aliases = ["/en/5/samples/rhinoscript/export-curve-control-points/", "/en/6/samples/rhinoscript/export-curve-control-points/", "/en/7/samples/rhinoscript/export-curve-control-points/", "/en/wip/samples/rhinoscript/export-curve-control-points/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to export the 3D coordinates of a curve's control points to a text file using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

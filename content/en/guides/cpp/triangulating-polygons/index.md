@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/triangulating-polygons/", "/6/guides/cpp/triangulating-polygons/", "/7/guides/cpp/triangulating-polygons/", "/wip/guides/cpp/triangulating-polygons/"]
+aliases = ["/en/5/guides/cpp/triangulating-polygons/", "/en/6/guides/cpp/triangulating-polygons/", "/en/7/guides/cpp/triangulating-polygons/", "/en/wip/guides/cpp/triangulating-polygons/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to triangulate polygons using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

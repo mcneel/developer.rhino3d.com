@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/essential-mathematics/references/", "/6/guides/general/essential-mathematics/references/", "/7/guides/general/essential-mathematics/references/", "/wip/guides/general/essential-mathematics/references/"]
+aliases = ["/en/5/guides/general/essential-mathematics/references/", "/en/6/guides/general/essential-mathematics/references/", "/en/7/guides/general/essential-mathematics/references/", "/en/wip/guides/general/essential-mathematics/references/"]
 authors = [ "rajaa" ]
 categories = [ "Essential Mathematics" ]
 category_page = "guides/general/essential-mathematics/"
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## References

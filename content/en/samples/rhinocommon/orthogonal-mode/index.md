@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/orthogonal-mode/", "/6/samples/rhinocommon/orthogonal-mode/", "/7/samples/rhinocommon/orthogonal-mode/", "/wip/samples/rhinocommon/orthogonal-mode/"]
+aliases = ["/en/5/samples/rhinocommon/orthogonal-mode/", "/en/6/samples/rhinocommon/orthogonal-mode/", "/en/7/samples/rhinocommon/orthogonal-mode/", "/en/wip/samples/rhinocommon/orthogonal-mode/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to enable or disable orthogonal mode and its effects."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

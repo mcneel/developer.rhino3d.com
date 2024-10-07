@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/primer-101/1-whats-it-all-about/", "/6/guides/rhinoscript/primer-101/1-whats-it-all-about/", "/7/guides/rhinoscript/primer-101/1-whats-it-all-about/", "/wip/guides/rhinoscript/primer-101/1-whats-it-all-about/"]
+aliases = ["/en/5/guides/rhinoscript/primer-101/1-whats-it-all-about/", "/en/6/guides/rhinoscript/primer-101/1-whats-it-all-about/", "/en/7/guides/rhinoscript/primer-101/1-whats-it-all-about/", "/en/wip/guides/rhinoscript/primer-101/1-whats-it-all-about/"]
 authors = [ "david" ]
 categories = [ "RhinoScript 101" ]
 category_page = "guides/rhinoscript/primer-101/"
@@ -23,7 +23,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## 1.1 Macros

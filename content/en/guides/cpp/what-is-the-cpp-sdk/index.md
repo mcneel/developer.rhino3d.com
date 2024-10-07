@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/what-is-the-cpp-sdk/", "/6/guides/cpp/what-is-the-cpp-sdk/", "/7/guides/cpp/what-is-the-cpp-sdk/", "/wip/guides/cpp/what-is-the-cpp-sdk/"]
+aliases = ["/en/5/guides/cpp/what-is-the-cpp-sdk/", "/en/6/guides/cpp/what-is-the-cpp-sdk/", "/en/7/guides/cpp/what-is-the-cpp-sdk/", "/en/wip/guides/cpp/what-is-the-cpp-sdk/"]
 authors = [ "dale" ]
 categories = [ "Overview" ]
 description = "This guide gives an overview of C/C++ SDK."
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

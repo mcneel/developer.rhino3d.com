@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/programming-task-capable-component/", "/6/guides/grasshopper/programming-task-capable-component/", "/7/guides/grasshopper/programming-task-capable-component/", "/wip/guides/grasshopper/programming-task-capable-component/"]
+aliases = ["/en/5/guides/grasshopper/programming-task-capable-component/", "/en/6/guides/grasshopper/programming-task-capable-component/", "/en/7/guides/grasshopper/programming-task-capable-component/", "/en/wip/guides/grasshopper/programming-task-capable-component/"]
 authors = [ "steve", "scottd" ]
 categories = [ "Advanced" ]
 description = "A guide to programming multi-threaded components in Grasshopper"
@@ -23,7 +23,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Overview

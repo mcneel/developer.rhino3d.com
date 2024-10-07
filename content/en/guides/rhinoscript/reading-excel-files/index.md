@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/reading-excel-files/", "/6/guides/rhinoscript/reading-excel-files/", "/7/guides/rhinoscript/reading-excel-files/", "/wip/guides/rhinoscript/reading-excel-files/"]
+aliases = ["/en/5/guides/rhinoscript/reading-excel-files/", "/en/6/guides/rhinoscript/reading-excel-files/", "/en/7/guides/rhinoscript/reading-excel-files/", "/en/wip/guides/rhinoscript/reading-excel-files/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This brief guide demonstrates how to read a Microsoft Excel file from RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

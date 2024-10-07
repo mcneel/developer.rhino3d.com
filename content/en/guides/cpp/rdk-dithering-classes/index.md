@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-dithering-classes/", "/6/guides/cpp/rdk-dithering-classes/", "/7/guides/cpp/rdk-dithering-classes/", "/wip/guides/cpp/rdk-dithering-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-dithering-classes/", "/en/6/guides/cpp/rdk-dithering-classes/", "/en/7/guides/cpp/rdk-dithering-classes/", "/en/wip/guides/cpp/rdk-dithering-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK dithering class in C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 ### Introduction
 Image _dithering_ is a process in which some form of noise is added to an image in order to reduce color banding and other artifacts. This is commonly used when a display device is unable to display the full range of colors. The image below shows an extreme example. A photo was converted to use only two colors. On the left, no dithering was used and a lot of detail has been lost. On the right, Floyd-Steinberg dithering was used and the amount of detail is much improved. Although modern displays don't usually require any dithering, there are cases where it can make a subtle difference to the final quality of an image. For this reason, the RDK provides two kinds of dithering, _Simple Noise_ and _Floyd Steinberg_.

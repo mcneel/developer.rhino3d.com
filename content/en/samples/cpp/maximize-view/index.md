@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/maximize-view/", "/6/samples/cpp/maximize-view/", "/7/samples/cpp/maximize-view/", "/wip/samples/cpp/maximize-view/"]
+aliases = ["/en/5/samples/cpp/maximize-view/", "/en/6/samples/cpp/maximize-view/", "/en/7/samples/cpp/maximize-view/", "/en/wip/samples/cpp/maximize-view/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to maximize a view."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

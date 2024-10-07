@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/furthest-z-on-surface-given-x-y/", "/6/samples/rhinocommon/furthest-z-on-surface-given-x-y/", "/7/samples/rhinocommon/furthest-z-on-surface-given-x-y/", "/wip/samples/rhinocommon/furthest-z-on-surface-given-x-y/"]
+aliases = ["/en/5/samples/rhinocommon/furthest-z-on-surface-given-x-y/", "/en/6/samples/rhinocommon/furthest-z-on-surface-given-x-y/", "/en/7/samples/rhinocommon/furthest-z-on-surface-given-x-y/", "/en/wip/samples/rhinocommon/furthest-z-on-surface-given-x-y/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to determine the furthest Z on surface given the X Y coordinates."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/primer-101/1-whats-it-all-about/", "/6/guides/rhinopython/primer-101/1-whats-it-all-about/", "/7/guides/rhinopython/primer-101/1-whats-it-all-about/", "/wip/guides/rhinopython/primer-101/1-whats-it-all-about/"]
+aliases = ["/en/5/guides/rhinopython/primer-101/1-whats-it-all-about/", "/en/6/guides/rhinopython/primer-101/1-whats-it-all-about/", "/en/7/guides/rhinopython/primer-101/1-whats-it-all-about/", "/en/wip/guides/rhinopython/primer-101/1-whats-it-all-about/"]
 authors = [ "skylar-tibbits", "arthur-van-der-harten", "steve" ]
 categories = [ "Rhino.Python 101" ]
 category_page = "guides/rhinopython/primer-101/"
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## 1.1 Macros

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/extracting-thumbnail-preview-images/", "/6/guides/cpp/extracting-thumbnail-preview-images/", "/7/guides/cpp/extracting-thumbnail-preview-images/", "/wip/guides/cpp/extracting-thumbnail-preview-images/"]
+aliases = ["/en/5/guides/cpp/extracting-thumbnail-preview-images/", "/en/6/guides/cpp/extracting-thumbnail-preview-images/", "/en/7/guides/cpp/extracting-thumbnail-preview-images/", "/en/wip/guides/cpp/extracting-thumbnail-preview-images/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to extract the thumbnail preview image from a 3dm file using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

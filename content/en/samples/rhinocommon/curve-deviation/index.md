@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/curve-deviation/", "/6/samples/rhinocommon/curve-deviation/", "/7/samples/rhinocommon/curve-deviation/", "/wip/samples/rhinocommon/curve-deviation/"]
+aliases = ["/en/5/samples/rhinocommon/curve-deviation/", "/en/6/samples/rhinocommon/curve-deviation/", "/en/7/samples/rhinocommon/curve-deviation/", "/en/wip/samples/rhinocommon/curve-deviation/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to determine the deviation between two curves."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

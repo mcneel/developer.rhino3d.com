@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/clear-undo-redo-lists/", "/6/guides/cpp/clear-undo-redo-lists/", "/7/guides/cpp/clear-undo-redo-lists/", "/wip/guides/cpp/clear-undo-redo-lists/"]
+aliases = ["/en/5/guides/cpp/clear-undo-redo-lists/", "/en/6/guides/cpp/clear-undo-redo-lists/", "/en/7/guides/cpp/clear-undo-redo-lists/", "/en/wip/guides/cpp/clear-undo-redo-lists/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to clear Rhino's Undo and Redo lists using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

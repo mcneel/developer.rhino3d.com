@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/using-methodgen/", "/6/guides/rhinocommon/using-methodgen/", "/7/guides/rhinocommon/using-methodgen/", "/wip/guides/rhinocommon/using-methodgen/"]
+aliases = ["/en/5/guides/rhinocommon/using-methodgen/", "/en/6/guides/rhinocommon/using-methodgen/", "/en/7/guides/rhinocommon/using-methodgen/", "/en/wip/guides/rhinocommon/using-methodgen/"]
 authors = [ "giulio" ]
 categories = [ "Advanced" ]
 description = "This guide covers the automatic pInvoke call generator and enum synchronization utility called methodgen."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

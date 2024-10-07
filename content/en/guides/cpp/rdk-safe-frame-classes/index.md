@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-safe-frame-classes/", "/6/guides/cpp/rdk-safe-frame-classes/", "/7/guides/cpp/rdk-safe-frame-classes/", "/wip/guides/cpp/rdk-safe-frame-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-safe-frame-classes/", "/en/6/guides/cpp/rdk-safe-frame-classes/", "/en/7/guides/cpp/rdk-safe-frame-classes/", "/en/wip/guides/cpp/rdk-safe-frame-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK safe frame class in C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 ### Introduction
 A _Safe Frame_ is a guide to help ensure that the most important elements of a scene will appear inside a certain region of the rendered image. The name comes from movie and TV production where a camera operator sees one or more rectangles in the camera's viewfinder which shows limits inside which an actor or prop is guaranteed to be visible on all viewer's screens.

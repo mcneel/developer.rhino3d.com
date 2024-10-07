@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/developing-software-in-public/", "/6/guides/general/developing-software-in-public/", "/7/guides/general/developing-software-in-public/", "/wip/guides/general/developing-software-in-public/"]
+aliases = ["/jp/5/guides/general/developing-software-in-public/", "/jp/6/guides/general/developing-software-in-public/", "/jp/7/guides/general/developing-software-in-public/", "/jp/wip/guides/general/developing-software-in-public/"]
 authors = [ "brian" ]
 categories = [ "Overview" ]
 description = "McNeelの開発プロセスについての概要"
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

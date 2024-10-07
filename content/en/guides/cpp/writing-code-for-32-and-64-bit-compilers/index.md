@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/writing-code-for-32-and-64-bit-compilers/", "/6/guides/cpp/writing-code-for-32-and-64-bit-compilers/", "/7/guides/cpp/writing-code-for-32-and-64-bit-compilers/", "/wip/guides/cpp/writing-code-for-32-and-64-bit-compilers/"]
+aliases = ["/en/5/guides/cpp/writing-code-for-32-and-64-bit-compilers/", "/en/6/guides/cpp/writing-code-for-32-and-64-bit-compilers/", "/en/7/guides/cpp/writing-code-for-32-and-64-bit-compilers/", "/en/wip/guides/cpp/writing-code-for-32-and-64-bit-compilers/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide outlines some considerations when writing C/C++ code for both 32- and 64-bit compilers."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

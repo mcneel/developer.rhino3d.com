@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/compute-net-getting-started/", "/6/guides/compute/compute-net-getting-started/", "/7/guides/compute/compute-net-getting-started/", "/wip/guides/compute/compute-net-getting-started/"]
+aliases = ["/en/5/guides/compute/compute-net-getting-started/", "/en/6/guides/compute/compute-net-getting-started/", "/en/7/guides/compute/compute-net-getting-started/", "/en/wip/guides/compute/compute-net-getting-started/"]
 authors = [ "steve", "scottd", "pedro" ]
 categories = [ "Getting Started", "Client" ]
 description = "This guide covers all the necessary tools required to get started with the Rhino Compute Service in Csharp"
@@ -23,7 +23,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 In this guide, we will detail how you can leverage [Rhino Compute&trade;](https://www.rhino3d.com/compute) from your .NET development environment in Windows to perform geometric operations in your application.

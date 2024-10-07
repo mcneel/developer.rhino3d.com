@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/get-object-uuid/", "/6/samples/rhinocommon/get-object-uuid/", "/7/samples/rhinocommon/get-object-uuid/", "/wip/samples/rhinocommon/get-object-uuid/"]
+aliases = ["/en/5/samples/rhinocommon/get-object-uuid/", "/en/6/samples/rhinocommon/get-object-uuid/", "/en/7/samples/rhinocommon/get-object-uuid/", "/en/wip/samples/rhinocommon/get-object-uuid/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to get the UUID (sometimes called GUID) of a Rhino object."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

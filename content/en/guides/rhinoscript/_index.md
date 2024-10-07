@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/", "/6/guides/rhinoscript/", "/7/guides/rhinoscript/", "/wip/guides/rhinoscript/"]
+aliases = ["/en/5/guides/rhinoscript/", "/en/6/guides/rhinoscript/", "/en/7/guides/rhinoscript/", "/en/wip/guides/rhinoscript/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino for Windows, or automate repetitive tasks."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 {{< row >}}
 {{< column >}}

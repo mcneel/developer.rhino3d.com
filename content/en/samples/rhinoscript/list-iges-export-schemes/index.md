@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/list-iges-export-schemes/", "/6/samples/rhinoscript/list-iges-export-schemes/", "/7/samples/rhinoscript/list-iges-export-schemes/", "/wip/samples/rhinoscript/list-iges-export-schemes/"]
+aliases = ["/en/5/samples/rhinoscript/list-iges-export-schemes/", "/en/6/samples/rhinoscript/list-iges-export-schemes/", "/en/7/samples/rhinoscript/list-iges-export-schemes/", "/en/wip/samples/rhinoscript/list-iges-export-schemes/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to build a list of IGES export schemes using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

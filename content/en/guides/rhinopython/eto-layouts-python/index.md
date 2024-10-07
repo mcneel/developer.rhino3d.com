@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/eto-layouts-python/", "/6/guides/rhinopython/eto-layouts-python/", "/7/guides/rhinopython/eto-layouts-python/", "/wip/guides/rhinopython/eto-layouts-python/"]
+aliases = ["/en/5/guides/rhinopython/eto-layouts-python/", "/en/6/guides/rhinopython/eto-layouts-python/", "/en/7/guides/rhinopython/eto-layouts-python/", "/en/wip/guides/rhinopython/eto-layouts-python/"]
 authors = [ "scottd" ]
 categories = [ "Eto" ]
 description = "Using the Eto DynamicLayout to organize controls."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 [Eto is an open source cross-platform dialog box framework](https://github.com/picoe/Eto/wiki) available in Rhino 6.  This guide demonstrates the syntax required to create Layouts.  Layouts are containers in which controls are placed.  The Layout will position the controls in a dialog or another Layout. It is possible to nest Layouts within each other to handle more complex Layouts.

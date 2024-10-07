@@ -1,5 +1,5 @@
 +++
-aliases = [""]
+aliases = ["/en"]
 authors = [ "rajaa" ]
 categories = [ "Csharp Essentials" ]
 category_page = "guides/grasshopper/csharp-essentials/"
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## 1.1 Introduction

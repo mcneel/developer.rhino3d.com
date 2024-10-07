@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/primer-101/7-classes/", "/6/guides/rhinopython/primer-101/7-classes/", "/7/guides/rhinopython/primer-101/7-classes/", "/wip/guides/rhinopython/primer-101/7-classes/"]
+aliases = ["/en/5/guides/rhinopython/primer-101/7-classes/", "/en/6/guides/rhinopython/primer-101/7-classes/", "/en/7/guides/rhinopython/primer-101/7-classes/", "/en/wip/guides/rhinopython/primer-101/7-classes/"]
 authors = [ "skylar-tibbits", "arthur-van-der-harten", "steve" ]
 categories = [ "Rhino.Python 101" ]
 category_page = "guides/rhinopython/primer-101/"
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## 7.1 Class Syntax

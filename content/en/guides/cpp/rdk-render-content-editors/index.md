@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-render-content-editors/", "/6/guides/cpp/rdk-render-content-editors/", "/7/guides/cpp/rdk-render-content-editors/", "/wip/guides/cpp/rdk-render-content-editors/"]
+aliases = ["/en/5/guides/cpp/rdk-render-content-editors/", "/en/6/guides/cpp/rdk-render-content-editors/", "/en/7/guides/cpp/rdk-render-content-editors/", "/en/wip/guides/cpp/rdk-render-content-editors/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This guide describes the RDK Material, Environment, and Texture Editors"
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 The _RDK Render Content Editors_ display objects called _Render Contents_ and allow the user to edit them. These editors are all based on a similar interface with only small functional differences between them. Render Contents are the foundation of the RDK core and one of the most important objects it provides. Please see [Render Content](/guides/cpp/rdk-render-content) for more information. The Texture Editor is known to users as the Texture _Palette_ but programmatically it is an editor just like the other two.
 

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/custom-endpoints/", "/6/guides/compute/custom-endpoints/", "/7/guides/compute/custom-endpoints/", "/wip/guides/compute/custom-endpoints/"]
+aliases = ["/en/5/guides/compute/custom-endpoints/", "/en/6/guides/compute/custom-endpoints/", "/en/7/guides/compute/custom-endpoints/", "/en/wip/guides/compute/custom-endpoints/"]
 authors = [ "steve", "will" ]
 categories = [ "Getting Started" ]
 description = "Extending Compute with custom endpoints"
@@ -23,7 +23,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 <!-- originally posted to discourse: https://discourse.mcneel.com/t/extending-rhinocompute-server-with-plugins/84266 -->

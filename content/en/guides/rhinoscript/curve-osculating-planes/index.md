@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/curve-osculating-planes/", "/6/guides/rhinoscript/curve-osculating-planes/", "/7/guides/rhinoscript/curve-osculating-planes/", "/wip/guides/rhinoscript/curve-osculating-planes/"]
+aliases = ["/en/5/guides/rhinoscript/curve-osculating-planes/", "/en/6/guides/rhinoscript/curve-osculating-planes/", "/en/7/guides/rhinoscript/curve-osculating-planes/", "/en/wip/guides/rhinoscript/curve-osculating-planes/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to calculate osculating planes."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

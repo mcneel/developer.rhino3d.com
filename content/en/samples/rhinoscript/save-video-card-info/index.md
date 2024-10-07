@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/save-video-card-info/", "/6/samples/rhinoscript/save-video-card-info/", "/7/samples/rhinoscript/save-video-card-info/", "/wip/samples/rhinoscript/save-video-card-info/"]
+aliases = ["/en/5/samples/rhinoscript/save-video-card-info/", "/en/6/samples/rhinoscript/save-video-card-info/", "/en/7/samples/rhinoscript/save-video-card-info/", "/en/wip/samples/rhinoscript/save-video-card-info/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to save information about your system's video card to a text file using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

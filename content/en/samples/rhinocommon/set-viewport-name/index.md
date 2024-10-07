@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/set-viewport-name/", "/6/samples/rhinocommon/set-viewport-name/", "/7/samples/rhinocommon/set-viewport-name/", "/wip/samples/rhinocommon/set-viewport-name/"]
+aliases = ["/en/5/samples/rhinocommon/set-viewport-name/", "/en/6/samples/rhinocommon/set-viewport-name/", "/en/7/samples/rhinocommon/set-viewport-name/", "/en/wip/samples/rhinocommon/set-viewport-name/"]
 authors = [ "steve" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to set a viewport's name or title."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

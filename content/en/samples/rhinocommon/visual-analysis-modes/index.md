@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/visual-analysis-modes/", "/6/samples/rhinocommon/visual-analysis-modes/", "/7/samples/rhinocommon/visual-analysis-modes/", "/wip/samples/rhinocommon/visual-analysis-modes/"]
+aliases = ["/en/5/samples/rhinocommon/visual-analysis-modes/", "/en/6/samples/rhinocommon/visual-analysis-modes/", "/en/7/samples/rhinocommon/visual-analysis-modes/", "/en/wip/samples/rhinocommon/visual-analysis-modes/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to set the visual analysis mode to Z analysis for user-specified objects."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

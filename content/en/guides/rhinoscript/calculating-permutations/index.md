@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/calculating-permutations/", "/6/guides/rhinoscript/calculating-permutations/", "/7/guides/rhinoscript/calculating-permutations/", "/wip/guides/rhinoscript/calculating-permutations/"]
+aliases = ["/en/5/guides/rhinoscript/calculating-permutations/", "/en/6/guides/rhinoscript/calculating-permutations/", "/en/7/guides/rhinoscript/calculating-permutations/", "/en/wip/guides/rhinoscript/calculating-permutations/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide discusses how to calculate permutations using RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

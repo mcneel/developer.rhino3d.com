@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/vbscript-err-objects/", "/6/guides/rhinoscript/vbscript-err-objects/", "/7/guides/rhinoscript/vbscript-err-objects/", "/wip/guides/rhinoscript/vbscript-err-objects/"]
+aliases = ["/en/5/guides/rhinoscript/vbscript-err-objects/", "/en/6/guides/rhinoscript/vbscript-err-objects/", "/en/7/guides/rhinoscript/vbscript-err-objects/", "/en/wip/guides/rhinoscript/vbscript-err-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses the VBScript Err object."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

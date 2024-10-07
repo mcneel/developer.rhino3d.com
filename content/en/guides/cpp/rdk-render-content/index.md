@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-render-content/", "/6/guides/cpp/rdk-render-content/", "/7/guides/cpp/rdk-render-content/", "/wip/guides/cpp/rdk-render-content/"]
+aliases = ["/en/5/guides/cpp/rdk-render-content/", "/en/6/guides/cpp/rdk-render-content/", "/en/7/guides/cpp/rdk-render-content/", "/en/wip/guides/cpp/rdk-render-content/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK render content class in C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 ![Material Environment and Texture](/images/rdk-met.png)
 

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/morphing-a-surface/", "/6/samples/rhinoscript/morphing-a-surface/", "/7/samples/rhinoscript/morphing-a-surface/", "/wip/samples/rhinoscript/morphing-a-surface/"]
+aliases = ["/en/5/samples/rhinoscript/morphing-a-surface/", "/en/6/samples/rhinoscript/morphing-a-surface/", "/en/7/samples/rhinoscript/morphing-a-surface/", "/en/wip/samples/rhinoscript/morphing-a-surface/"]
 authors = [ "stylianos-dritsas" ]
 categories = [ "Surfaces" ]
 description = "An example of how to morph a surface using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

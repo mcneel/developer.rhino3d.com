@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/extract-render-mesh/", "/6/samples/rhinocommon/extract-render-mesh/", "/7/samples/rhinocommon/extract-render-mesh/", "/wip/samples/rhinocommon/extract-render-mesh/"]
+aliases = ["/en/5/samples/rhinocommon/extract-render-mesh/", "/en/6/samples/rhinocommon/extract-render-mesh/", "/en/7/samples/rhinocommon/extract-render-mesh/", "/en/wip/samples/rhinocommon/extract-render-mesh/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to extract the render mesh from a surface or polysurface."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/rename-object/", "/6/samples/rhinocommon/rename-object/", "/7/samples/rhinocommon/rename-object/", "/wip/samples/rhinocommon/rename-object/"]
+aliases = ["/en/5/samples/rhinocommon/rename-object/", "/en/6/samples/rhinocommon/rename-object/", "/en/7/samples/rhinocommon/rename-object/", "/en/wip/samples/rhinocommon/rename-object/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to rename a user-specified object."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods/", "/6/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods/", "/7/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods/"]
+aliases = ["/en/5/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods/", "/en/6/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods/", "/en/7/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods/", "/en/wip/guides/rhinopython/python-rhinoscriptsyntax-point-vector-methods/"]
 authors = [ "dale" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an overview of the RhinoScriptSytntax Point and Vector methods."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
  
 ## Point  & Vector Methods

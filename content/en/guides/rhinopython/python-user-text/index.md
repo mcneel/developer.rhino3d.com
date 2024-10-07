@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-user-text/", "/6/guides/rhinopython/python-user-text/", "/7/guides/rhinopython/python-user-text/", "/wip/guides/rhinopython/python-user-text/"]
+aliases = ["/en/5/guides/rhinopython/python-user-text/", "/en/6/guides/rhinopython/python-user-text/", "/en/7/guides/rhinopython/python-user-text/", "/en/wip/guides/rhinopython/python-user-text/"]
 authors = [ "scottd" ]
 categories = [ "intermediate" ]
 description = "How to create and access customer user text with Python."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## User Text

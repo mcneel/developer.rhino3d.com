@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/add-arrowheads-to-curves/", "/6/samples/cpp/add-arrowheads-to-curves/", "/7/samples/cpp/add-arrowheads-to-curves/", "/wip/samples/cpp/add-arrowheads-to-curves/"]
+aliases = ["/en/5/samples/cpp/add-arrowheads-to-curves/", "/en/6/samples/cpp/add-arrowheads-to-curves/", "/en/7/samples/cpp/add-arrowheads-to-curves/", "/en/wip/samples/cpp/add-arrowheads-to-curves/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how arrowheads can be added to any curve object my modifying attributes."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

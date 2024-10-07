@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/development/", "/6/guides/compute/development/", "/7/guides/compute/development/", "/wip/guides/compute/development/"]
+aliases = ["/en/5/guides/compute/development/", "/en/6/guides/compute/development/", "/en/7/guides/compute/development/", "/en/wip/guides/compute/development/"]
 authors = [ "pedro" ]
 categories = [ "Getting Started", "Development" ]
 description = "Deploy Compute for Production"
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 Rhino.Compute allows you to bring the Rhino's geometric computation capabilities to the cloud. Before deploying your application to a production environment, you should ensure that everything works perfectly in a controlled environment.

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/how-this-site-works/", "/6/guides/general/how-this-site-works/", "/7/guides/general/how-this-site-works/", "/wip/guides/general/how-this-site-works/"]
+aliases = ["/en/5/guides/general/how-this-site-works/", "/en/6/guides/general/how-this-site-works/", "/en/7/guides/general/how-this-site-works/", "/en/wip/guides/general/how-this-site-works/"]
 authors = [ "dan" ]
 categories = [ "This Site" ]
 description = "A guide to how this very developer document site works."
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 Every time a commit is pushed to [this git repository](https://github.com/mcneel/developer.rhino3d.com)'s `main` branch, a static site-generator called [Hugo](https://gohugo.io/) churns through all the markdown content to generate html for the site.

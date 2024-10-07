@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/mesh-boolean-difference/", "/6/samples/cpp/mesh-boolean-difference/", "/7/samples/cpp/mesh-boolean-difference/", "/wip/samples/cpp/mesh-boolean-difference/"]
+aliases = ["/en/5/samples/cpp/mesh-boolean-difference/", "/en/6/samples/cpp/mesh-boolean-difference/", "/en/7/samples/cpp/mesh-boolean-difference/", "/en/wip/samples/cpp/mesh-boolean-difference/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to use the RhinoMeshBooleanDifference function."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/synchronize-layer-render-color/", "/6/samples/cpp/synchronize-layer-render-color/", "/7/samples/cpp/synchronize-layer-render-color/", "/wip/samples/cpp/synchronize-layer-render-color/"]
+aliases = ["/en/5/samples/cpp/synchronize-layer-render-color/", "/en/6/samples/cpp/synchronize-layer-render-color/", "/en/7/samples/cpp/synchronize-layer-render-color/", "/en/wip/samples/cpp/synchronize-layer-render-color/"]
 authors = [ "dale" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to synchronize the basic material color of a layer with the layer's color."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

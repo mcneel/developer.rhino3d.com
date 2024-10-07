@@ -1,5 +1,5 @@
 +++
-aliases = [""]
+aliases = ["/en"]
 authors = [ "rajaa" ]
 categories = [ "Essentials Algorithms and Data Structures" ]
 category_page = "guides/grasshopper/gh-algorithms-and-data/"
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 This chapter is devoted to the advanced data structure in GH, namely the data trees, and different ways to generate and manage them. The aim is to start to appreciate when and how to use tree structures, and best practices to effectively use and manipulate them.<br>

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-xml-json/", "/6/guides/rhinopython/python-xml-json/", "/7/guides/rhinopython/python-xml-json/", "/wip/guides/rhinopython/python-xml-json/"]
+aliases = ["/en/5/guides/rhinopython/python-xml-json/", "/en/6/guides/rhinopython/python-xml-json/", "/en/7/guides/rhinopython/python-xml-json/", "/en/wip/guides/rhinopython/python-xml-json/"]
 authors = [ "scottd" ]
 categories = [ "Intermediate" ]
 description = "How to format in JSON or XML."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 [JSON (JavaScript Object Notation)](http://www.json.org/) is an easy to read, flexible text based format that can be used to store and communicate information to other products. It is mainly based on key:value pairs and is web and .NET friendly.  There are many libraries and products that support JSON.

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-editing-scripts/", "/6/guides/rhinopython/python-editing-scripts/", "/7/guides/rhinopython/python-editing-scripts/", "/wip/guides/rhinopython/python-editing-scripts/"]
+aliases = ["/en/5/guides/rhinopython/python-editing-scripts/", "/en/6/guides/rhinopython/python-editing-scripts/", "/en/7/guides/rhinopython/python-editing-scripts/", "/en/wip/guides/rhinopython/python-editing-scripts/"]
 authors = [ "scottd" ]
 categories = [ "Python Windows" ]
 description = "This guide demonstrates how to edit a Python script in Rhino."
@@ -26,7 +26,6 @@ block_webcrawlers = true
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Editing Scripts

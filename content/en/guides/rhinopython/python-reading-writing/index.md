@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-reading-writing/", "/6/guides/rhinopython/python-reading-writing/", "/7/guides/rhinopython/python-reading-writing/", "/wip/guides/rhinopython/python-reading-writing/"]
+aliases = ["/en/5/guides/rhinopython/python-reading-writing/", "/en/6/guides/rhinopython/python-reading-writing/", "/en/7/guides/rhinopython/python-reading-writing/", "/en/wip/guides/rhinopython/python-reading-writing/"]
 authors = [ "scottd" ]
 categories = [ "Intermediate" ]
 description = "Use Python to read and write files."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 We'll use a couple of simple scripts from the Python Samples folder as examples - we'll dissect these to see how they work.
 

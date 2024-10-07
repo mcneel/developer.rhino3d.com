@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/airfoil-shapes/", "/6/samples/rhinoscript/airfoil-shapes/", "/7/samples/rhinoscript/airfoil-shapes/", "/wip/samples/rhinoscript/airfoil-shapes/"]
+aliases = ["/en/5/samples/rhinoscript/airfoil-shapes/", "/en/6/samples/rhinoscript/airfoil-shapes/", "/en/7/samples/rhinoscript/airfoil-shapes/", "/en/wip/samples/rhinoscript/airfoil-shapes/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "How to read point files that describe airfoils and create interpolated curves using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

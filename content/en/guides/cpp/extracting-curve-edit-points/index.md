@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/extracting-curve-edit-points/", "/6/guides/cpp/extracting-curve-edit-points/", "/7/guides/cpp/extracting-curve-edit-points/", "/wip/guides/cpp/extracting-curve-edit-points/"]
+aliases = ["/en/5/guides/cpp/extracting-curve-edit-points/", "/en/6/guides/cpp/extracting-curve-edit-points/", "/en/7/guides/cpp/extracting-curve-edit-points/", "/en/wip/guides/cpp/extracting-curve-edit-points/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide demonstrates how to extract a curve's edit points using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

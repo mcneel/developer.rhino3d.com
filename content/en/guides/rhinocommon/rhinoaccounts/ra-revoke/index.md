@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/rhinoaccounts/ra-revoke/", "/6/guides/rhinocommon/rhinoaccounts/ra-revoke/", "/7/guides/rhinocommon/rhinoaccounts/ra-revoke/", "/wip/guides/rhinocommon/rhinoaccounts/ra-revoke/"]
+aliases = ["/en/5/guides/rhinocommon/rhinoaccounts/ra-revoke/", "/en/6/guides/rhinocommon/rhinoaccounts/ra-revoke/", "/en/7/guides/rhinocommon/rhinoaccounts/ra-revoke/", "/en/wip/guides/rhinocommon/rhinoaccounts/ra-revoke/"]
 authors = [ "aj" ]
 categories = [ "RhinoAccounts" ]
 description = "This guide discusses authorization token revocation within Rhino from Rhino Accounts."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 [Once you have obtained an OAuth 2 Token](/guides/rhinocommon/rhinoaccounts/ra-example), you can use it in any authentication workflow you wish. There may come a time, however, when the token is no longer needed. In such cases, it is highly recommended that your software has a way of revoking the OAuth 2 token. Revoking a token will generate a network request to the Rhino Accounts server which will invalidate the token so that it can no longer be used.

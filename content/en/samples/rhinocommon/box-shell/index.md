@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/box-shell/", "/6/samples/rhinocommon/box-shell/", "/7/samples/rhinocommon/box-shell/", "/wip/samples/rhinocommon/box-shell/"]
+aliases = ["/en/5/samples/rhinocommon/box-shell/", "/en/6/samples/rhinocommon/box-shell/", "/en/7/samples/rhinocommon/box-shell/", "/en/wip/samples/rhinocommon/box-shell/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to give thickness to (or shell) a Brep box."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

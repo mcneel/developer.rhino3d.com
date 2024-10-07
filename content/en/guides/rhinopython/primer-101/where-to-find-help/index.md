@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/primer-101/where-to-find-help/", "/6/guides/rhinopython/primer-101/where-to-find-help/", "/7/guides/rhinopython/primer-101/where-to-find-help/", "/wip/guides/rhinopython/primer-101/where-to-find-help/"]
+aliases = ["/en/5/guides/rhinopython/primer-101/where-to-find-help/", "/en/6/guides/rhinopython/primer-101/where-to-find-help/", "/en/7/guides/rhinopython/primer-101/where-to-find-help/", "/en/wip/guides/rhinopython/primer-101/where-to-find-help/"]
 authors = [ "skylar-tibbits", "arthur-van-der-harten", "steve" ]
 categories = [ "Rhino.Python 101" ]
 category_page = "guides/rhinopython/primer-101/"
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Forums:

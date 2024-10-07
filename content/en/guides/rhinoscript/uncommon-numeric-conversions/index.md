@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/uncommon-numeric-conversions/", "/6/guides/rhinoscript/uncommon-numeric-conversions/", "/7/guides/rhinoscript/uncommon-numeric-conversions/", "/wip/guides/rhinoscript/uncommon-numeric-conversions/"]
+aliases = ["/en/5/guides/rhinoscript/uncommon-numeric-conversions/", "/en/6/guides/rhinoscript/uncommon-numeric-conversions/", "/en/7/guides/rhinoscript/uncommon-numeric-conversions/", "/en/wip/guides/rhinoscript/uncommon-numeric-conversions/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This brief guide demonstrates some useful (or not so useful) numeric conversions in RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

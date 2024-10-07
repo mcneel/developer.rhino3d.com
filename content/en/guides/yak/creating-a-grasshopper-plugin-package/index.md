@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/yak/creating-a-grasshopper-plugin-package/", "/6/guides/yak/creating-a-grasshopper-plugin-package/", "/7/guides/yak/creating-a-grasshopper-plugin-package/", "/wip/guides/yak/creating-a-grasshopper-plugin-package/"]
+aliases = ["/en/5/guides/yak/creating-a-grasshopper-plugin-package/", "/en/6/guides/yak/creating-a-grasshopper-plugin-package/", "/en/7/guides/yak/creating-a-grasshopper-plugin-package/", "/en/wip/guides/yak/creating-a-grasshopper-plugin-package/"]
 authors = [ "will" ]
 categories = [ "Getting Started" ]
 description = "This is a step by step guide to creating a package for a Grasshopper plug-in (.gha)."
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 The [Package Manager](../yak/) was introduced in Rhino 7. It makes it easier to discover, install and manage Grasshopper plug-ins from within Rhino. This guide will describe how to create a package from a Grasshopper plug-in that can be published to the package server.

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/match-text-properties/", "/6/samples/rhinoscript/match-text-properties/", "/7/samples/rhinoscript/match-text-properties/", "/wip/samples/rhinoscript/match-text-properties/"]
+aliases = ["/en/5/samples/rhinoscript/match-text-properties/", "/en/6/samples/rhinoscript/match-text-properties/", "/en/7/samples/rhinoscript/match-text-properties/", "/en/wip/samples/rhinoscript/match-text-properties/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to match text object properties in RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

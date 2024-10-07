@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/selecting-curves-by-type/", "/6/guides/rhinoscript/selecting-curves-by-type/", "/7/guides/rhinoscript/selecting-curves-by-type/", "/wip/guides/rhinoscript/selecting-curves-by-type/"]
+aliases = ["/en/5/guides/rhinoscript/selecting-curves-by-type/", "/en/6/guides/rhinoscript/selecting-curves-by-type/", "/en/7/guides/rhinoscript/selecting-curves-by-type/", "/en/wip/guides/rhinoscript/selecting-curves-by-type/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This brief guide demonstrates how to select linear and non-linear curves using RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

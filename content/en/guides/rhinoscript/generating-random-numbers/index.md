@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/generating-random-numbers/", "/6/guides/rhinoscript/generating-random-numbers/", "/7/guides/rhinoscript/generating-random-numbers/", "/wip/guides/rhinoscript/generating-random-numbers/"]
+aliases = ["/en/5/guides/rhinoscript/generating-random-numbers/", "/en/6/guides/rhinoscript/generating-random-numbers/", "/en/7/guides/rhinoscript/generating-random-numbers/", "/en/wip/guides/rhinoscript/generating-random-numbers/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide demonstrates how to generate random numbers that fall within a specified range using RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

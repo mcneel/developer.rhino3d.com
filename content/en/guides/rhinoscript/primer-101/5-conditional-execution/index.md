@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/primer-101/5-conditional-execution/", "/6/guides/rhinoscript/primer-101/5-conditional-execution/", "/7/guides/rhinoscript/primer-101/5-conditional-execution/", "/wip/guides/rhinoscript/primer-101/5-conditional-execution/"]
+aliases = ["/en/5/guides/rhinoscript/primer-101/5-conditional-execution/", "/en/6/guides/rhinoscript/primer-101/5-conditional-execution/", "/en/7/guides/rhinoscript/primer-101/5-conditional-execution/", "/en/wip/guides/rhinoscript/primer-101/5-conditional-execution/"]
 authors = [ "david" ]
 categories = [ "RhinoScript 101" ]
 category_page = "guides/rhinoscript/primer-101/"
@@ -23,7 +23,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## 5.1 What if?

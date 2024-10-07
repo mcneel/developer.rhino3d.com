@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/", "/6/guides/opennurbs/", "/7/guides/opennurbs/", "/wip/guides/opennurbs/"]
+aliases = ["/en/5/guides/opennurbs/", "/en/6/guides/opennurbs/", "/en/7/guides/opennurbs/", "/en/wip/guides/opennurbs/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "Read/Write Rhino 3dm files in your application."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 {{< row >}}
 {{< column >}}

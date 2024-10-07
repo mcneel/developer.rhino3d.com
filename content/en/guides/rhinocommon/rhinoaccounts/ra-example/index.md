@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/rhinoaccounts/ra-example/", "/6/guides/rhinocommon/rhinoaccounts/ra-example/", "/7/guides/rhinocommon/rhinoaccounts/ra-example/", "/wip/guides/rhinocommon/rhinoaccounts/ra-example/"]
+aliases = ["/en/5/guides/rhinocommon/rhinoaccounts/ra-example/", "/en/6/guides/rhinocommon/rhinoaccounts/ra-example/", "/en/7/guides/rhinocommon/rhinoaccounts/ra-example/", "/en/wip/guides/rhinocommon/rhinoaccounts/ra-example/"]
 authors = [ "aj" ]
 categories = [ "RhinoAccounts" ]
 description = "This guide gives an example of how to obtain authentication and authorization tokens within Rhino from Rhino Accounts."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 To retrieve an OAuth 2 Token for authorization or an OpenID Connect token to learn about the user's identity, all that is needed is to call one of the different overloads of `GetAuthTokensAsync`. This method will asynchronously ask the user for permission to obtain the tokens, and return them to you so that you can use them as you wish.

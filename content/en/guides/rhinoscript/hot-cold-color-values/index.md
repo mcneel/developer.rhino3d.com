@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/hot-cold-color-values/", "/6/guides/rhinoscript/hot-cold-color-values/", "/7/guides/rhinoscript/hot-cold-color-values/", "/wip/guides/rhinoscript/hot-cold-color-values/"]
+aliases = ["/en/5/guides/rhinoscript/hot-cold-color-values/", "/en/6/guides/rhinoscript/hot-cold-color-values/", "/en/7/guides/rhinoscript/hot-cold-color-values/", "/en/wip/guides/rhinoscript/hot-cold-color-values/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how calculate colors for analysis using RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

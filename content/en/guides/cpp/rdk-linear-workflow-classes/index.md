@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-linear-workflow-classes/", "/6/guides/cpp/rdk-linear-workflow-classes/", "/7/guides/cpp/rdk-linear-workflow-classes/", "/wip/guides/cpp/rdk-linear-workflow-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-linear-workflow-classes/", "/en/6/guides/cpp/rdk-linear-workflow-classes/", "/en/7/guides/cpp/rdk-linear-workflow-classes/", "/en/wip/guides/cpp/rdk-linear-workflow-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK linear workflow class in C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 ### Introduction
 Many consumer digital cameras output JPEG files which use the sRGB color space. This color space incorporates gamma correction which makes it possible to directly display the images on a computer monitor without even knowing that gamma correction exists. This means that many available photographic textures have already been gamma-corrected. Working with these images can give unsatisfactory results when intermediate processing and rendering works in a linear fashion. This problem can be avoided by using a _Linear Workflow_. This means that the gamma correction is removed from the images before they are used for rendering, and reapplied afterwards for display.

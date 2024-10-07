@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/count-block-instances/", "/6/samples/rhinoscript/count-block-instances/", "/7/samples/rhinoscript/count-block-instances/", "/wip/samples/rhinoscript/count-block-instances/"]
+aliases = ["/en/5/samples/rhinoscript/count-block-instances/", "/en/6/samples/rhinoscript/count-block-instances/", "/en/7/samples/rhinoscript/count-block-instances/", "/en/wip/samples/rhinoscript/count-block-instances/"]
 authors = [ "dale" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to count block instances using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/batch-render/", "/6/samples/rhinoscript/batch-render/", "/7/samples/rhinoscript/batch-render/", "/wip/samples/rhinoscript/batch-render/"]
+aliases = ["/en/5/samples/rhinoscript/batch-render/", "/en/6/samples/rhinoscript/batch-render/", "/en/7/samples/rhinoscript/batch-render/", "/en/wip/samples/rhinoscript/batch-render/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to recurse through a folder and render every Rhino file using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/closest-point-calculation-with-rtree/", "/6/samples/rhinocommon/closest-point-calculation-with-rtree/", "/7/samples/rhinocommon/closest-point-calculation-with-rtree/", "/wip/samples/rhinocommon/closest-point-calculation-with-rtree/"]
+aliases = ["/en/5/samples/rhinocommon/closest-point-calculation-with-rtree/", "/en/6/samples/rhinocommon/closest-point-calculation-with-rtree/", "/en/7/samples/rhinocommon/closest-point-calculation-with-rtree/", "/en/wip/samples/rhinocommon/closest-point-calculation-with-rtree/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to perform a closest point calculation using an RTree data structure."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

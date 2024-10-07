@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/fibonacci-numbers/", "/6/guides/rhinoscript/fibonacci-numbers/", "/7/guides/rhinoscript/fibonacci-numbers/", "/wip/guides/rhinoscript/fibonacci-numbers/"]
+aliases = ["/en/5/guides/rhinoscript/fibonacci-numbers/", "/en/6/guides/rhinoscript/fibonacci-numbers/", "/en/7/guides/rhinoscript/fibonacci-numbers/", "/en/wip/guides/rhinoscript/fibonacci-numbers/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide is a survey of Fibonacci number algorithms in RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

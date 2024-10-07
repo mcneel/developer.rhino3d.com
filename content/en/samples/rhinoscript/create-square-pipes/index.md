@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/create-square-pipes/", "/6/samples/rhinoscript/create-square-pipes/", "/7/samples/rhinoscript/create-square-pipes/", "/wip/samples/rhinoscript/create-square-pipes/"]
+aliases = ["/en/5/samples/rhinoscript/create-square-pipes/", "/en/6/samples/rhinoscript/create-square-pipes/", "/en/7/samples/rhinoscript/create-square-pipes/", "/en/wip/samples/rhinoscript/create-square-pipes/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create square pipes using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

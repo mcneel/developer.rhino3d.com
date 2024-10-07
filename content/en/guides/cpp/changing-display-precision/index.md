@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/changing-display-precision/", "/6/guides/cpp/changing-display-precision/", "/7/guides/cpp/changing-display-precision/", "/wip/guides/cpp/changing-display-precision/"]
+aliases = ["/en/5/guides/cpp/changing-display-precision/", "/en/6/guides/cpp/changing-display-precision/", "/en/7/guides/cpp/changing-display-precision/", "/en/wip/guides/cpp/changing-display-precision/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide demonstrates how to change the unit's display precision of the current document using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

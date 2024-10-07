@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/essential-mathematics/vector-mathematics/", "/6/guides/general/essential-mathematics/vector-mathematics/", "/7/guides/general/essential-mathematics/vector-mathematics/", "/wip/guides/general/essential-mathematics/vector-mathematics/"]
+aliases = ["/en/5/guides/general/essential-mathematics/vector-mathematics/", "/en/6/guides/general/essential-mathematics/vector-mathematics/", "/en/7/guides/general/essential-mathematics/vector-mathematics/", "/en/wip/guides/general/essential-mathematics/vector-mathematics/"]
 authors = [ "rajaa" ]
 categories = [ "Essential Mathematics" ]
 category_page = "guides/general/essential-mathematics/"
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 A vector indicates a quantity, such as velocity or force, that has direction and length. Vectors in 3D coordinate systems are represented with an ordered set of three real numbers and look like:
 

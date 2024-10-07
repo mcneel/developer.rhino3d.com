@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/read-write-utf8/", "/6/guides/rhinoscript/read-write-utf8/", "/7/guides/rhinoscript/read-write-utf8/", "/wip/guides/rhinoscript/read-write-utf8/"]
+aliases = ["/en/5/guides/rhinoscript/read-write-utf8/", "/en/6/guides/rhinoscript/read-write-utf8/", "/en/7/guides/rhinoscript/read-write-utf8/", "/en/wip/guides/rhinoscript/read-write-utf8/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This brief guide demonstrates how to read and write UTF-8 encoded text files using VBScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

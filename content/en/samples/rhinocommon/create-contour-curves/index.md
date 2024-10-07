@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/create-contour-curves/", "/6/samples/rhinocommon/create-contour-curves/", "/7/samples/rhinocommon/create-contour-curves/", "/wip/samples/rhinocommon/create-contour-curves/"]
+aliases = ["/en/5/samples/rhinocommon/create-contour-curves/", "/en/6/samples/rhinocommon/create-contour-curves/", "/en/7/samples/rhinocommon/create-contour-curves/", "/en/wip/samples/rhinocommon/create-contour-curves/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to create contour curves on user-specified objects."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

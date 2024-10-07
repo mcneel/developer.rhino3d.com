@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-list-points/", "/6/guides/rhinopython/python-rhinoscriptsyntax-list-points/", "/7/guides/rhinopython/python-rhinoscriptsyntax-list-points/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-list-points/"]
+aliases = ["/en/5/guides/rhinopython/python-rhinoscriptsyntax-list-points/", "/en/6/guides/rhinopython/python-rhinoscriptsyntax-list-points/", "/en/7/guides/rhinopython/python-rhinoscriptsyntax-list-points/", "/en/wip/guides/rhinopython/python-rhinoscriptsyntax-list-points/"]
 authors = [ "dale" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an overview of a rhinoscriptsyntax list of Point Geometry in Python."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
  
 ## Lists of Points

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/yak/what-is-yak/", "/6/guides/yak/what-is-yak/", "/7/guides/yak/what-is-yak/", "/wip/guides/yak/what-is-yak/"]
+aliases = ["/en/5/guides/yak/what-is-yak/", "/en/6/guides/yak/what-is-yak/", "/en/7/guides/yak/what-is-yak/", "/en/wip/guides/yak/what-is-yak/"]
 authors = [ "will" ]
 categories = [ "Overview" ]
 description = "This guide introduces the Rhino Package Manager (a.k.a. Yak)."
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Overview

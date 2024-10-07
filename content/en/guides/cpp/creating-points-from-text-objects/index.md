@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/creating-points-from-text-objects/", "/6/guides/cpp/creating-points-from-text-objects/", "/7/guides/cpp/creating-points-from-text-objects/", "/wip/guides/cpp/creating-points-from-text-objects/"]
+aliases = ["/en/5/guides/cpp/creating-points-from-text-objects/", "/en/6/guides/cpp/creating-points-from-text-objects/", "/en/7/guides/cpp/creating-points-from-text-objects/", "/en/wip/guides/cpp/creating-points-from-text-objects/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide demonstrates how to create point objects based on text entities using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

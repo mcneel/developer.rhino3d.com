@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/yak/yak-cli-reference/", "/6/guides/yak/yak-cli-reference/", "/7/guides/yak/yak-cli-reference/", "/wip/guides/yak/yak-cli-reference/"]
+aliases = ["/en/5/guides/yak/yak-cli-reference/", "/en/6/guides/yak/yak-cli-reference/", "/en/7/guides/yak/yak-cli-reference/", "/en/wip/guides/yak/yak-cli-reference/"]
 authors = [ "will" ]
 categories = [ "Fundamentals" ]
 description = "A reference for the Yak command line tool."
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 The Yak command line tool is included with Rhino 7 WIP. On Windows the tool is located at `"C:\Program Files\Rhino {{< latest-rhino-version >}}\System\yak.exe"`. On macOS there is a convenience script at `"/Applications/Rhino {{< latest-rhino-version >}}.app/Contents/Resources/bin/yak"`.

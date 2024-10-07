@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/surface-from-edge-curves/", "/6/samples/rhinocommon/surface-from-edge-curves/", "/7/samples/rhinocommon/surface-from-edge-curves/", "/wip/samples/rhinocommon/surface-from-edge-curves/"]
+aliases = ["/en/5/samples/rhinocommon/surface-from-edge-curves/", "/en/6/samples/rhinocommon/surface-from-edge-curves/", "/en/7/samples/rhinocommon/surface-from-edge-curves/", "/en/wip/samples/rhinocommon/surface-from-edge-curves/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Create a Surface from Edge Curves"
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

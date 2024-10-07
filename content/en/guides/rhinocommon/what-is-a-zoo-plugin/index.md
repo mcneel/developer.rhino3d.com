@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/what-is-a-zoo-plugin/", "/6/guides/rhinocommon/what-is-a-zoo-plugin/", "/7/guides/rhinocommon/what-is-a-zoo-plugin/", "/wip/guides/rhinocommon/what-is-a-zoo-plugin/"]
+aliases = ["/en/5/guides/rhinocommon/what-is-a-zoo-plugin/", "/en/6/guides/rhinocommon/what-is-a-zoo-plugin/", "/en/7/guides/rhinocommon/what-is-a-zoo-plugin/", "/en/wip/guides/rhinocommon/what-is-a-zoo-plugin/"]
 authors = [ "dale" ]
 categories = [ "Zoo" ]
 description = "This guide describes what a LAN Zoo Plugin is and what is does."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 The LAN Zoo keeps your licenses on your private LAN server and lets you share them among the Rhino users on your network.

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinopython/custom-get-point/", "/6/samples/rhinopython/custom-get-point/", "/7/samples/rhinopython/custom-get-point/", "/wip/samples/rhinopython/custom-get-point/"]
+aliases = ["/en/5/samples/rhinopython/custom-get-point/", "/en/6/samples/rhinopython/custom-get-point/", "/en/7/samples/rhinopython/custom-get-point/", "/en/wip/samples/rhinopython/custom-get-point/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "A Rhino GetPoint that performs some custom dynamic drawing."
@@ -17,7 +17,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/rotate-objects-around-center/", "/6/samples/cpp/rotate-objects-around-center/", "/7/samples/cpp/rotate-objects-around-center/", "/wip/samples/cpp/rotate-objects-around-center/"]
+aliases = ["/en/5/samples/cpp/rotate-objects-around-center/", "/en/6/samples/cpp/rotate-objects-around-center/", "/en/7/samples/cpp/rotate-objects-around-center/", "/en/wip/samples/cpp/rotate-objects-around-center/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how rotate objects around the center point of their bounding box."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

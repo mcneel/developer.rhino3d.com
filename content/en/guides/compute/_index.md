@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/", "/6/guides/compute/", "/7/guides/compute/", "/wip/guides/compute/"]
+aliases = ["/en/5/guides/compute/", "/en/6/guides/compute/", "/en/7/guides/compute/", "/en/wip/guides/compute/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "Guides to developing, deploying, and contributing to Compute."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 <div class="row">
 <div class="col-12" markdown="1">   

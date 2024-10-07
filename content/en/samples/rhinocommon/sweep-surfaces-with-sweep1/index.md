@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/sweep-surfaces-with-sweep1/", "/6/samples/rhinocommon/sweep-surfaces-with-sweep1/", "/7/samples/rhinocommon/sweep-surfaces-with-sweep1/", "/wip/samples/rhinocommon/sweep-surfaces-with-sweep1/"]
+aliases = ["/en/5/samples/rhinocommon/sweep-surfaces-with-sweep1/", "/en/6/samples/rhinocommon/sweep-surfaces-with-sweep1/", "/en/7/samples/rhinocommon/sweep-surfaces-with-sweep1/", "/en/wip/samples/rhinocommon/sweep-surfaces-with-sweep1/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to sweep along a single rail curve."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinopython/make-circle-with-rhinocommon/", "/6/samples/rhinopython/make-circle-with-rhinocommon/", "/7/samples/rhinopython/make-circle-with-rhinocommon/", "/wip/samples/rhinopython/make-circle-with-rhinocommon/"]
+aliases = ["/en/5/samples/rhinopython/make-circle-with-rhinocommon/", "/en/6/samples/rhinopython/make-circle-with-rhinocommon/", "/en/7/samples/rhinopython/make-circle-with-rhinocommon/", "/en/wip/samples/rhinopython/make-circle-with-rhinocommon/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "This sample creates a circle without using functions in the rhinoscript package."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 Rhino Python Sample - MakeCircleWithRhinoCommon

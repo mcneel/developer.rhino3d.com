@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/object-properties-page-icons/", "/6/guides/cpp/object-properties-page-icons/", "/7/guides/cpp/object-properties-page-icons/", "/wip/guides/cpp/object-properties-page-icons/"]
+aliases = ["/en/5/guides/cpp/object-properties-page-icons/", "/en/6/guides/cpp/object-properties-page-icons/", "/en/7/guides/cpp/object-properties-page-icons/", "/en/wip/guides/cpp/object-properties-page-icons/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide discusses how to provide an icon for a custom object properties page using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

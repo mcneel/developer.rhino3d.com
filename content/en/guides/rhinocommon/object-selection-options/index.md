@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/object-selection-options/", "/6/guides/rhinocommon/object-selection-options/", "/7/guides/rhinocommon/object-selection-options/", "/wip/guides/rhinocommon/object-selection-options/"]
+aliases = ["/en/5/guides/rhinocommon/object-selection-options/", "/en/6/guides/rhinocommon/object-selection-options/", "/en/7/guides/rhinocommon/object-selection-options/", "/en/wip/guides/rhinocommon/object-selection-options/"]
 authors = [ "steve" ]
 categories = [ "Fundamentals" ]
 description = "This guide covers how to pick some objects, select command options, return to picking more objects, all while keeping your current selection set."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

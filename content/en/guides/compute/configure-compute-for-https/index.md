@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/configure-https/", "/6/guides/compute/configure-https/", "/7/guides/compute/configure-https/", "/wip/guides/compute/configure-https/"]
+aliases = ["/en/5/guides/compute/configure-https/", "/en/6/guides/compute/configure-https/", "/en/7/guides/compute/configure-https/", "/en/wip/guides/compute/configure-https/"]
 authors = [ "andy.payne" ]
 categories = [ "Deployment" ]
 keywords = [ "developer", "compute", "production", "AWS" ]
@@ -22,7 +22,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Overview

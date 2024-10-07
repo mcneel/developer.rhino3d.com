@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/object-iterator/", "/6/samples/rhinocommon/object-iterator/", "/7/samples/rhinocommon/object-iterator/", "/wip/samples/rhinocommon/object-iterator/"]
+aliases = ["/en/5/samples/rhinocommon/object-iterator/", "/en/6/samples/rhinocommon/object-iterator/", "/en/7/samples/rhinocommon/object-iterator/", "/en/wip/samples/rhinocommon/object-iterator/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to iterate (or enumerate) through Rhino's geometry table."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

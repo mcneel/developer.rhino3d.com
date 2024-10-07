@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/defining-new-plugin-commands/", "/6/guides/cpp/defining-new-plugin-commands/", "/7/guides/cpp/defining-new-plugin-commands/", "/wip/guides/cpp/defining-new-plugin-commands/"]
+aliases = ["/en/5/guides/cpp/defining-new-plugin-commands/", "/en/6/guides/cpp/defining-new-plugin-commands/", "/en/7/guides/cpp/defining-new-plugin-commands/", "/en/wip/guides/cpp/defining-new-plugin-commands/"]
 authors = [ "dale" ]
 categories = [ "Getting Started" ]
 description = "This guide discusses Rhino commands and how define new commands using C/C++."
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Overview

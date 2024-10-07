@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/draw-mesh/", "/6/samples/rhinocommon/draw-mesh/", "/7/samples/rhinocommon/draw-mesh/", "/wip/samples/rhinocommon/draw-mesh/"]
+aliases = ["/en/5/samples/rhinocommon/draw-mesh/", "/en/6/samples/rhinocommon/draw-mesh/", "/en/7/samples/rhinocommon/draw-mesh/", "/en/wip/samples/rhinocommon/draw-mesh/"]
 authors = [ "steve" ]
 categories = [ "Draw" ]
 description = "Demonstrates how to create a mesh from an existing surface and draw it in a display conduit."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

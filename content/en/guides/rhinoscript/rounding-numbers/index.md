@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/rounding-numbers/", "/6/guides/rhinoscript/rounding-numbers/", "/7/guides/rhinoscript/rounding-numbers/", "/wip/guides/rhinoscript/rounding-numbers/"]
+aliases = ["/en/5/guides/rhinoscript/rounding-numbers/", "/en/6/guides/rhinoscript/rounding-numbers/", "/en/7/guides/rhinoscript/rounding-numbers/", "/en/wip/guides/rhinoscript/rounding-numbers/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide discusses number rounding in RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

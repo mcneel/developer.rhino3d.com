@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/flamingo-object-mapping-properties/", "/6/samples/rhinoscript/flamingo-object-mapping-properties/", "/7/samples/rhinoscript/flamingo-object-mapping-properties/", "/wip/samples/rhinoscript/flamingo-object-mapping-properties/"]
+aliases = ["/en/5/samples/rhinoscript/flamingo-object-mapping-properties/", "/en/6/samples/rhinoscript/flamingo-object-mapping-properties/", "/en/7/samples/rhinoscript/flamingo-object-mapping-properties/", "/en/wip/samples/rhinoscript/flamingo-object-mapping-properties/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how to set Flamingo nXt mapping properties for an object using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet
