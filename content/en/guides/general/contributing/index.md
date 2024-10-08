@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/contributing/", "/6/guides/general/contributing/", "/7/guides/general/contributing/", "/wip/guides/general/contributing/"]
+aliases = ["/en/5/guides/general/contributing/", "/en/6/guides/general/contributing/", "/en/7/guides/general/contributing/", "/en/wip/guides/general/contributing/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "Pull requests are welcome!"
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

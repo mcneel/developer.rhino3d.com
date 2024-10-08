@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/what-are-vbscript-rhinoscript/", "/6/guides/rhinoscript/what-are-vbscript-rhinoscript/", "/7/guides/rhinoscript/what-are-vbscript-rhinoscript/", "/wip/guides/rhinoscript/what-are-vbscript-rhinoscript/"]
+aliases = ["/en/5/guides/rhinoscript/what-are-vbscript-rhinoscript/", "/en/6/guides/rhinoscript/what-are-vbscript-rhinoscript/", "/en/7/guides/rhinoscript/what-are-vbscript-rhinoscript/", "/en/wip/guides/rhinoscript/what-are-vbscript-rhinoscript/"]
 authors = [ "dale" ]
 categories = [ "Overview" ]
 description = "This guide explains what VBScript and RhinoScript are."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

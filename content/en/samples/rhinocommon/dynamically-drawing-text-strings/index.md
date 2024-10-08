@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/dynamically-drawing-text-strings/", "/6/samples/rhinocommon/dynamically-drawing-text-strings/", "/7/samples/rhinocommon/dynamically-drawing-text-strings/", "/wip/samples/rhinocommon/dynamically-drawing-text-strings/"]
+aliases = ["/en/5/samples/rhinocommon/dynamically-drawing-text-strings/", "/en/6/samples/rhinocommon/dynamically-drawing-text-strings/", "/en/7/samples/rhinocommon/dynamically-drawing-text-strings/", "/en/wip/samples/rhinocommon/dynamically-drawing-text-strings/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to dynamically draw text strings relative to a given screen to world transform."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

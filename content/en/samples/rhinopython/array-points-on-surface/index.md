@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinopython/array-points-on-surface/", "/6/samples/rhinopython/array-points-on-surface/", "/7/samples/rhinopython/array-points-on-surface/", "/wip/samples/rhinopython/array-points-on-surface/"]
+aliases = ["/en/5/samples/rhinopython/array-points-on-surface/", "/en/6/samples/rhinopython/array-points-on-surface/", "/en/7/samples/rhinopython/array-points-on-surface/", "/en/wip/samples/rhinopython/array-points-on-surface/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to array points on a surface using Python."
@@ -17,7 +17,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 ```python

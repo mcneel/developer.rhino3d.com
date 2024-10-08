@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/vbscript-logic/", "/6/guides/rhinoscript/vbscript-logic/", "/7/guides/rhinoscript/vbscript-logic/", "/wip/guides/rhinoscript/vbscript-logic/"]
+aliases = ["/en/5/guides/rhinoscript/vbscript-logic/", "/en/6/guides/rhinoscript/vbscript-logic/", "/en/7/guides/rhinoscript/vbscript-logic/", "/en/wip/guides/rhinoscript/vbscript-logic/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses the logic, or lack of, in VBScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

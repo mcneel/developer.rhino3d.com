@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/select-planar-meshes/", "/6/samples/rhinoscript/select-planar-meshes/", "/7/samples/rhinoscript/select-planar-meshes/", "/wip/samples/rhinoscript/select-planar-meshes/"]
+aliases = ["/en/5/samples/rhinoscript/select-planar-meshes/", "/en/6/samples/rhinoscript/select-planar-meshes/", "/en/7/samples/rhinoscript/select-planar-meshes/", "/en/wip/samples/rhinoscript/select-planar-meshes/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to select mesh objects that are planar using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

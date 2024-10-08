@@ -1,11 +1,5 @@
 +++
-aliases = [
-  "/5/guides/compute/deploy-to-iis/",
-  "/6/guides/compute/deploy-to-iis/",
-  "/7/guides/compute/deploy-to-iis/",
-  "/wip/guides/compute/deploy-to-iis/",
-  "/guides/compute/deploy/"
-]
+aliases = ["/jp/5/guides/compute/deploy-to-iis/", "/jp/6/guides/compute/deploy-to-iis/", "/jp/7/guides/compute/deploy-to-iis/", "/jp/wip/guides/compute/deploy-to-iis/", "/jp/guides/compute/deploy/"]
 authors = [ "andy.payne" ]
 categories = [ "Deployment" ]
 description = "How to deploy rhino compute for production on a machine running Internet Information Services (IIS)."
@@ -29,7 +23,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Overview

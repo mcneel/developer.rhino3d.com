@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/create-surface-from-edge-curves/", "/6/samples/cpp/create-surface-from-edge-curves/", "/7/samples/cpp/create-surface-from-edge-curves/", "/wip/samples/cpp/create-surface-from-edge-curves/"]
+aliases = ["/en/5/samples/cpp/create-surface-from-edge-curves/", "/en/6/samples/cpp/create-surface-from-edge-curves/", "/en/7/samples/cpp/create-surface-from-edge-curves/", "/en/wip/samples/cpp/create-surface-from-edge-curves/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Curves", "Surfaces" ]
 description = "Demonstrates how to create a surface object from four edge curves."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/isocurve-density/", "/6/samples/rhinocommon/isocurve-density/", "/7/samples/rhinocommon/isocurve-density/", "/wip/samples/rhinocommon/isocurve-density/"]
+aliases = ["/en/5/samples/rhinocommon/isocurve-density/", "/en/6/samples/rhinocommon/isocurve-density/", "/en/7/samples/rhinocommon/isocurve-density/", "/en/wip/samples/rhinocommon/isocurve-density/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to adjust the the isocurve density of a user-specified surface."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/polar-arrays/", "/6/samples/rhinoscript/polar-arrays/", "/7/samples/rhinoscript/polar-arrays/", "/wip/samples/rhinoscript/polar-arrays/"]
+aliases = ["/en/5/samples/rhinoscript/polar-arrays/", "/en/6/samples/rhinoscript/polar-arrays/", "/en/7/samples/rhinoscript/polar-arrays/", "/en/wip/samples/rhinoscript/polar-arrays/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create polar arrays of objects using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

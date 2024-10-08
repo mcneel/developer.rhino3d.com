@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/", "/6/guides/general/", "/7/guides/general/", "/wip/guides/general/"]
+aliases = ["/cn/5/guides/general/", "/cn/6/guides/general/", "/cn/7/guides/general/", "/cn/wip/guides/general/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "Guides that apply across platforms and SDKs."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 {{< row >}}
 {{< column >}}

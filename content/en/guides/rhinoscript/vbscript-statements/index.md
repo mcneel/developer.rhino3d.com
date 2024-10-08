@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/vbscript-statements/", "/6/guides/rhinoscript/vbscript-statements/", "/7/guides/rhinoscript/vbscript-statements/", "/wip/guides/rhinoscript/vbscript-statements/"]
+aliases = ["/en/5/guides/rhinoscript/vbscript-statements/", "/en/6/guides/rhinoscript/vbscript-statements/", "/en/7/guides/rhinoscript/vbscript-statements/", "/en/wip/guides/rhinoscript/vbscript-statements/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide presents an overview of VBScript statements."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

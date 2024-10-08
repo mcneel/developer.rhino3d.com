@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/using-sizeof-with-tchar-wchar-t/", "/6/guides/cpp/using-sizeof-with-tchar-wchar-t/", "/7/guides/cpp/using-sizeof-with-tchar-wchar-t/", "/wip/guides/cpp/using-sizeof-with-tchar-wchar-t/"]
+aliases = ["/en/5/guides/cpp/using-sizeof-with-tchar-wchar-t/", "/en/6/guides/cpp/using-sizeof-with-tchar-wchar-t/", "/en/7/guides/cpp/using-sizeof-with-tchar-wchar-t/", "/en/wip/guides/cpp/using-sizeof-with-tchar-wchar-t/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide outlines some common mistakes using sizeof when dealing with UNICODE strings."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

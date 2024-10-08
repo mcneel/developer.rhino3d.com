@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/calculate-surface-curvature/", "/6/samples/rhinocommon/calculate-surface-curvature/", "/7/samples/rhinocommon/calculate-surface-curvature/", "/wip/samples/rhinocommon/calculate-surface-curvature/"]
+aliases = ["/en/5/samples/rhinocommon/calculate-surface-curvature/", "/en/6/samples/rhinocommon/calculate-surface-curvature/", "/en/7/samples/rhinocommon/calculate-surface-curvature/", "/en/wip/samples/rhinocommon/calculate-surface-curvature/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to calculate the principle curvature at a user-specified point on a surface."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

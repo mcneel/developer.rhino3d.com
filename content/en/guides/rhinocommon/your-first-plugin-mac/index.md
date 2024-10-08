@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/your-first-plugin-mac/", "/6/guides/rhinocommon/your-first-plugin-mac/", "/7/guides/rhinocommon/your-first-plugin-mac/", "/wip/guides/rhinocommon/your-first-plugin-mac/"]
+aliases = ["/en/5/guides/rhinocommon/your-first-plugin-mac/", "/en/6/guides/rhinocommon/your-first-plugin-mac/", "/en/7/guides/rhinocommon/your-first-plugin-mac/", "/en/wip/guides/rhinocommon/your-first-plugin-mac/"]
 authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first plugin for Rhino for Mac using RhinoCommon and Visual Studio Code."
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 It is presumed you already have the necessary tools installed and are ready to go. If you are not there yet, see [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac).

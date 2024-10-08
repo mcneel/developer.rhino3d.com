@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/developing-software-in-public/", "/6/guides/general/developing-software-in-public/", "/7/guides/general/developing-software-in-public/", "/wip/guides/general/developing-software-in-public/"]
+aliases = ["/es/5/guides/general/developing-software-in-public/", "/es/6/guides/general/developing-software-in-public/", "/es/7/guides/general/developing-software-in-public/", "/es/wip/guides/general/developing-software-in-public/"]
 authors = ["brian" ]
 categories = [ "Overview" ]
 description = "Información general del proceso de desarrollo de Rhino."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

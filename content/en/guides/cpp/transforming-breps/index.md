@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/transforming-breps/", "/6/guides/cpp/transforming-breps/", "/7/guides/cpp/transforming-breps/", "/wip/guides/cpp/transforming-breps/"]
+aliases = ["/en/5/guides/cpp/transforming-breps/", "/en/6/guides/cpp/transforming-breps/", "/en/7/guides/cpp/transforming-breps/", "/en/wip/guides/cpp/transforming-breps/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates two ways of transforming Breps using C/C++"
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

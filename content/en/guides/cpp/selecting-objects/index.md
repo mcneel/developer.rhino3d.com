@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/selecting-objects/", "/6/guides/cpp/selecting-objects/", "/7/guides/cpp/selecting-objects/", "/wip/guides/cpp/selecting-objects/"]
+aliases = ["/en/5/guides/cpp/selecting-objects/", "/en/6/guides/cpp/selecting-objects/", "/en/7/guides/cpp/selecting-objects/", "/en/wip/guides/cpp/selecting-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates interactively selecting objects using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/select-curves-by-degree/", "/6/samples/rhinoscript/select-curves-by-degree/", "/7/samples/rhinoscript/select-curves-by-degree/", "/wip/samples/rhinoscript/select-curves-by-degree/"]
+aliases = ["/en/5/samples/rhinoscript/select-curves-by-degree/", "/en/6/samples/rhinoscript/select-curves-by-degree/", "/en/7/samples/rhinoscript/select-curves-by-degree/", "/en/wip/samples/rhinoscript/select-curves-by-degree/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection", "Curves" ]
 description = "Demonstrates how to use RhinoScript to select all curves that are of a specified degree."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

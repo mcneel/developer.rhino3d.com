@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-remote-local-module/", "/6/guides/rhinopython/python-remote-local-module/", "/7/guides/rhinopython/python-remote-local-module/", "/wip/guides/rhinopython/python-remote-local-module/"]
+aliases = ["/en/5/guides/rhinopython/python-remote-local-module/", "/en/6/guides/rhinopython/python-remote-local-module/", "/en/7/guides/rhinopython/python-remote-local-module/", "/en/wip/guides/rhinopython/python-remote-local-module/"]
 authors = [ "scottd" ]
 categories = [ "Intermediate" ]
 description = "How to create a Python definition that is both a importable module and a script."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Overview

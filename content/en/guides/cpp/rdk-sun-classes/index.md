@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-sun-classes/", "/6/guides/cpp/rdk-sun-classes/", "/7/guides/cpp/rdk-sun-classes/", "/wip/guides/cpp/rdk-sun-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-sun-classes/", "/en/6/guides/cpp/rdk-sun-classes/", "/en/7/guides/cpp/rdk-sun-classes/", "/en/wip/guides/cpp/rdk-sun-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK sun classes in C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 ### Introduction
 The angle and color of sunlight at various times of the day changes drastically with the location on Earth, the time of day and the time of year. When rendering an outdoor scene, the angle and color of the sunlight can be a very important part of the result. Buildings and other objects might be designed and placed to look aesthetically pleasing or have certain highlights at certain times of the day or year. To facilitate this kind of visualization, the RDK provides a comprehensive set of sun tools which allow the plug-in developer to do sun calculations and display a sun user interface.

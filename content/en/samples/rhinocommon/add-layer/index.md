@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-layer/", "/6/samples/rhinocommon/add-layer/", "/7/samples/rhinocommon/add-layer/", "/wip/samples/rhinocommon/add-layer/"]
+aliases = ["/en/5/samples/rhinocommon/add-layer/", "/en/6/samples/rhinocommon/add-layer/", "/en/7/samples/rhinocommon/add-layer/", "/en/wip/samples/rhinocommon/add-layer/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects", "Layers" ]
 description = "Demonstrates how to add a layer to a Rhino model and validate that it does not already exist."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

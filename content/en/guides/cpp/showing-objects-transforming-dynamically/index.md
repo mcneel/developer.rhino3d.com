@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/showing-objects-transforming-dynamically/", "/6/guides/cpp/showing-objects-transforming-dynamically/", "/7/guides/cpp/showing-objects-transforming-dynamically/", "/wip/guides/cpp/showing-objects-transforming-dynamically/"]
+aliases = ["/en/5/guides/cpp/showing-objects-transforming-dynamically/", "/en/6/guides/cpp/showing-objects-transforming-dynamically/", "/en/7/guides/cpp/showing-objects-transforming-dynamically/", "/en/wip/guides/cpp/showing-objects-transforming-dynamically/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to dynamically draw transforming objects using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

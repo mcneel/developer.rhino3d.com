@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-leader/", "/6/samples/rhinocommon/add-leader/", "/7/samples/rhinocommon/add-leader/", "/wip/samples/rhinocommon/add-leader/"]
+aliases = ["/en/5/samples/rhinocommon/add-leader/", "/en/6/samples/rhinocommon/add-leader/", "/en/7/samples/rhinocommon/add-leader/", "/en/wip/samples/rhinocommon/add-leader/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to add a leaders to your Rhino model from an array of points."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

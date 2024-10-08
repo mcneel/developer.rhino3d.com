@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-err-objects/", "/6/guides/rhinopython/python-err-objects/", "/7/guides/rhinopython/python-err-objects/", "/wip/guides/rhinopython/python-err-objects/"]
+aliases = ["/en/5/guides/rhinopython/python-err-objects/", "/en/6/guides/rhinopython/python-err-objects/", "/en/7/guides/rhinopython/python-err-objects/", "/en/wip/guides/rhinopython/python-err-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses the VBScript Err object."
@@ -28,7 +28,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 <!-- TODO: This page is not a fundamental page, but it would be good to update for python. Currently this page is for VB. Use Python tri-catch to handle errors. -->
  

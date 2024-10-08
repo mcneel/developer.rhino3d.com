@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-line/", "/6/samples/rhinocommon/add-line/", "/7/samples/rhinocommon/add-line/", "/wip/samples/rhinocommon/add-line/"]
+aliases = ["/en/5/samples/rhinocommon/add-line/", "/en/6/samples/rhinocommon/add-line/", "/en/7/samples/rhinocommon/add-line/", "/en/wip/samples/rhinocommon/add-line/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to construct a line from two points."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

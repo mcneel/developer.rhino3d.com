@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/import-text-from-file/", "/6/samples/rhinoscript/import-text-from-file/", "/7/samples/rhinoscript/import-text-from-file/", "/wip/samples/rhinoscript/import-text-from-file/"]
+aliases = ["/en/5/samples/rhinoscript/import-text-from-file/", "/en/6/samples/rhinoscript/import-text-from-file/", "/en/7/samples/rhinoscript/import-text-from-file/", "/en/wip/samples/rhinoscript/import-text-from-file/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to import text from a file using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

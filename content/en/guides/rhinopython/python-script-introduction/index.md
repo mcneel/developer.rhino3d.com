@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-script-introduction/", "/6/guides/rhinopython/python-script-introduction/", "/7/guides/rhinopython/python-script-introduction/", "/wip/guides/rhinopython/python-script-introduction/"]
+aliases = ["/en/5/guides/rhinopython/python-script-introduction/", "/en/6/guides/rhinopython/python-script-introduction/", "/en/7/guides/rhinopython/python-script-introduction/", "/en/wip/guides/rhinopython/python-script-introduction/"]
 authors = [ "dale" ]
 categories = [ "python-scripting" ]
 description = "This guide provides an overview of the scripting with Python in Rhino."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Introduction

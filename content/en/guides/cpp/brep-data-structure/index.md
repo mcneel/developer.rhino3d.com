@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/brep-data-structure/", "/6/guides/cpp/brep-data-structure/", "/7/guides/cpp/brep-data-structure/", "/wip/guides/cpp/brep-data-structure/"]
+aliases = ["/en/5/guides/cpp/brep-data-structure/", "/en/6/guides/cpp/brep-data-structure/", "/en/7/guides/cpp/brep-data-structure/", "/en/wip/guides/cpp/brep-data-structure/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses the Boundary Representation (B-rep) in the context of openNURBS."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

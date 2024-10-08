@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/canceling-long-processes-with-esc/", "/6/guides/cpp/canceling-long-processes-with-esc/", "/7/guides/cpp/canceling-long-processes-with-esc/", "/wip/guides/cpp/canceling-long-processes-with-esc/"]
+aliases = ["/en/5/guides/cpp/canceling-long-processes-with-esc/", "/en/6/guides/cpp/canceling-long-processes-with-esc/", "/en/7/guides/cpp/canceling-long-processes-with-esc/", "/en/wip/guides/cpp/canceling-long-processes-with-esc/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates two methods for checking the Escape key."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

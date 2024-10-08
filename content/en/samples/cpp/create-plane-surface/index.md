@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/create-plane-surface/", "/6/samples/cpp/create-plane-surface/", "/7/samples/cpp/create-plane-surface/", "/wip/samples/cpp/create-plane-surface/"]
+aliases = ["/en/5/samples/cpp/create-plane-surface/", "/en/6/samples/cpp/create-plane-surface/", "/en/7/samples/cpp/create-plane-surface/", "/en/wip/samples/cpp/create-plane-surface/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Surfaces" ]
 description = "Demonstrates how to create a plane surface."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

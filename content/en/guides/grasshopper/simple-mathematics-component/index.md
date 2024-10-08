@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/simple-mathematics-component/", "/6/guides/grasshopper/simple-mathematics-component/", "/7/guides/grasshopper/simple-mathematics-component/", "/wip/guides/grasshopper/simple-mathematics-component/"]
+aliases = ["/en/5/guides/grasshopper/simple-mathematics-component/", "/en/6/guides/grasshopper/simple-mathematics-component/", "/en/7/guides/grasshopper/simple-mathematics-component/", "/en/wip/guides/grasshopper/simple-mathematics-component/"]
 authors = [ "david" ]
 categories = [ "Fundamentals" ]
 description = "This guide contains a brief example of a component that deals with some simple mathematics and multiple input and output parameters."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

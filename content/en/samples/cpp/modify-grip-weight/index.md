@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/modify-grip-weight/", "/6/samples/cpp/modify-grip-weight/", "/7/samples/cpp/modify-grip-weight/", "/wip/samples/cpp/modify-grip-weight/"]
+aliases = ["/en/5/samples/cpp/modify-grip-weight/", "/en/6/samples/cpp/modify-grip-weight/", "/en/7/samples/cpp/modify-grip-weight/", "/en/wip/samples/cpp/modify-grip-weight/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to modify the weight of a grip object."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

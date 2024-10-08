@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/features/", "/6/guides/compute/features/", "/7/guides/compute/features/", "/wip/guides/compute/features/"]
+aliases = ["/de/5/guides/compute/features/", "/de/6/guides/compute/features/", "/de/7/guides/compute/features/", "/de/wip/guides/compute/features/"]
 authors = [ "brian" ]
 categories = [ "Getting Started" ]
 description = "Rhino SDK functions via REST API"
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

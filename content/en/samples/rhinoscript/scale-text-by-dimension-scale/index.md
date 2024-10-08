@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/scale-text-by-dimension-scale/", "/6/samples/rhinoscript/scale-text-by-dimension-scale/", "/7/samples/rhinoscript/scale-text-by-dimension-scale/", "/wip/samples/rhinoscript/scale-text-by-dimension-scale/"]
+aliases = ["/en/5/samples/rhinoscript/scale-text-by-dimension-scale/", "/en/6/samples/rhinoscript/scale-text-by-dimension-scale/", "/en/7/samples/rhinoscript/scale-text-by-dimension-scale/", "/en/wip/samples/rhinoscript/scale-text-by-dimension-scale/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to properly scale text objects by the document's dimension scale in RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

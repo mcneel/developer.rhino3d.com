@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/yak/the-package-manifest/", "/6/guides/yak/the-package-manifest/", "/7/guides/yak/the-package-manifest/", "/wip/guides/yak/the-package-manifest/"]
+aliases = ["/en/5/guides/yak/the-package-manifest/", "/en/6/guides/yak/the-package-manifest/", "/en/7/guides/yak/the-package-manifest/", "/en/wip/guides/yak/the-package-manifest/"]
 authors = [ "will" ]
 categories = [ "Fundamentals" ]
 description = "What is a 'package manifest' and what should it include?"
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Overview

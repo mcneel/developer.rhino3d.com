@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-mesh-box/", "/6/samples/rhinocommon/add-mesh-box/", "/7/samples/rhinocommon/add-mesh-box/", "/wip/samples/rhinocommon/add-mesh-box/"]
+aliases = ["/en/5/samples/rhinocommon/add-mesh-box/", "/en/6/samples/rhinocommon/add-mesh-box/", "/en/7/samples/rhinocommon/add-mesh-box/", "/en/wip/samples/rhinocommon/add-mesh-box/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to construct a mesh box from a Brep box."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

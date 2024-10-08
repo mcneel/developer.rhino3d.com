@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/using-nuget/", "/6/guides/rhinocommon/using-nuget/", "/7/guides/rhinocommon/using-nuget/", "/wip/guides/rhinocommon/using-nuget/"]
+aliases = ["/en/5/guides/rhinocommon/using-nuget/", "/en/6/guides/rhinocommon/using-nuget/", "/en/7/guides/rhinocommon/using-nuget/", "/en/wip/guides/rhinocommon/using-nuget/"]
 authors = [ "luis", "will", "callum" ]
 categories = [ "Advanced" ]
 description = "This guide describes how developers can use the NuGet packages available for RhinoCommon and Grasshopper."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

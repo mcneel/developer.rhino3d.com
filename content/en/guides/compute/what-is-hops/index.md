@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/what-is-hops/", "/6/guides/compute/what-is-hops/", "/7/guides/compute/what-is-hops/", "/wip/guides/compute/what-is-hops/"]
+aliases = ["/en/5/guides/compute/what-is-hops/", "/en/6/guides/compute/what-is-hops/", "/en/7/guides/compute/what-is-hops/", "/en/wip/guides/compute/what-is-hops/"]
 authors = [ "andy.payne" ]
 categories = [ "Hops" ]
 keywords = [ "developer", "grasshopper", "components", "hops" ]
@@ -22,7 +22,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 Hops lets you simplify large complex definitions. Grasshopper definitions can be big, complicated, and repetitive. This state of disorganization is sometimes called [Spaghetti Code](https://www.pcmag.com/encyclopedia/term/spaghetti-code). Many factors contribute to spaghetti code including: time constraints, programmer skill level, project complexity, and limitations in the programming language. After trying to decipher a big ball of Grasshopper spaghetti, there is one universal truth - spaghetti code is hard to read and understand. **Now, you can use Hops to simplify hard to read spaghetti code.**

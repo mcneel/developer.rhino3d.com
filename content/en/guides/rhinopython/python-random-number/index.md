@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-random-number/", "/6/guides/rhinopython/python-random-number/", "/7/guides/rhinopython/python-random-number/", "/wip/guides/rhinopython/python-random-number/"]
+aliases = ["/en/5/guides/rhinopython/python-random-number/", "/en/6/guides/rhinopython/python-random-number/", "/en/7/guides/rhinopython/python-random-number/", "/en/wip/guides/rhinopython/python-random-number/"]
 authors = [ "scottd" ]
 categories = [ "Intermediate" ]
 description = "This guide discusses using Python to generate random numbers in a certain range."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

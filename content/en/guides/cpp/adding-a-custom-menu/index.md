@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/adding-a-custom-menu/", "/6/guides/cpp/adding-a-custom-menu/", "/7/guides/cpp/adding-a-custom-menu/", "/wip/guides/cpp/adding-a-custom-menu/"]
+aliases = ["/en/5/guides/cpp/adding-a-custom-menu/", "/en/6/guides/cpp/adding-a-custom-menu/", "/en/7/guides/cpp/adding-a-custom-menu/", "/en/wip/guides/cpp/adding-a-custom-menu/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This short guide demonstrates how to add a custom menu to Rhino's menu using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

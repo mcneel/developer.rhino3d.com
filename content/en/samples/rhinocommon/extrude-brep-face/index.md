@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/extrude-brep-face/", "/6/samples/rhinocommon/extrude-brep-face/", "/7/samples/rhinocommon/extrude-brep-face/", "/wip/samples/rhinocommon/extrude-brep-face/"]
+aliases = ["/en/5/samples/rhinocommon/extrude-brep-face/", "/en/6/samples/rhinocommon/extrude-brep-face/", "/en/7/samples/rhinocommon/extrude-brep-face/", "/en/wip/samples/rhinocommon/extrude-brep-face/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to extrude the Brep face from a user-specified surface."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

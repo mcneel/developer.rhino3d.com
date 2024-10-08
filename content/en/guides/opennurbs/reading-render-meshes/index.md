@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/reading-render-meshes/", "/6/guides/opennurbs/reading-render-meshes/", "/7/guides/opennurbs/reading-render-meshes/", "/wip/guides/opennurbs/reading-render-meshes/"]
+aliases = ["/en/5/guides/opennurbs/reading-render-meshes/", "/en/6/guides/opennurbs/reading-render-meshes/", "/en/7/guides/opennurbs/reading-render-meshes/", "/en/wip/guides/opennurbs/reading-render-meshes/"]
 authors = [ "dalelear" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide describes how to read render meshes using the openNURBS toolkit."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

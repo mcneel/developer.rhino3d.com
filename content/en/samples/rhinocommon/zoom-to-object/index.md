@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/zoom-to-object/", "/6/samples/rhinocommon/zoom-to-object/", "/7/samples/rhinocommon/zoom-to-object/", "/wip/samples/rhinocommon/zoom-to-object/"]
+aliases = ["/en/5/samples/rhinocommon/zoom-to-object/", "/en/6/samples/rhinocommon/zoom-to-object/", "/en/7/samples/rhinocommon/zoom-to-object/", "/en/wip/samples/rhinocommon/zoom-to-object/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Zoom to a Selected Object"
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

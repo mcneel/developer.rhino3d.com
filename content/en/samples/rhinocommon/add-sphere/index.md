@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-sphere/", "/6/samples/rhinocommon/add-sphere/", "/7/samples/rhinocommon/add-sphere/", "/wip/samples/rhinocommon/add-sphere/"]
+aliases = ["/en/5/samples/rhinocommon/add-sphere/", "/en/6/samples/rhinocommon/add-sphere/", "/en/7/samples/rhinocommon/add-sphere/", "/en/wip/samples/rhinocommon/add-sphere/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a sphere from a center point and radius."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

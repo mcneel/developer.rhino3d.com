@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/your-first-python-script-in-rhino-windows/", "/6/guides/rhinopython/your-first-python-script-in-rhino-windows/", "/7/guides/rhinopython/your-first-python-script-in-rhino-windows/", "/wip/guides/rhinopython/your-first-python-script-in-rhino-windows/"]
+aliases = ["/en/5/guides/rhinopython/your-first-python-script-in-rhino-windows/", "/en/6/guides/rhinopython/your-first-python-script-in-rhino-windows/", "/en/7/guides/rhinopython/your-first-python-script-in-rhino-windows/", "/en/wip/guides/rhinopython/your-first-python-script-in-rhino-windows/"]
 authors = [ "scottd" ]
 categories = [ "Getting Started" ]
 description = "This guide demonstrates how to create Python scripts in Rhino."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

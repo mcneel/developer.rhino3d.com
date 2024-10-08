@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-points/", "/6/guides/rhinopython/python-rhinoscriptsyntax-points/", "/7/guides/rhinopython/python-rhinoscriptsyntax-points/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-points/"]
+aliases = ["/en/5/guides/rhinopython/python-rhinoscriptsyntax-points/", "/en/6/guides/rhinopython/python-rhinoscriptsyntax-points/", "/en/7/guides/rhinopython/python-rhinoscriptsyntax-points/", "/en/wip/guides/rhinopython/python-rhinoscriptsyntax-points/"]
 authors = [ "dale" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an overview of the RhinoScriptSyntax Point Geometry in Python."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Points

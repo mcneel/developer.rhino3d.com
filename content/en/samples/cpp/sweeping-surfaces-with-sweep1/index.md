@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/sweeping-surfaces-with-sweep1/", "/6/samples/cpp/sweeping-surfaces-with-sweep1/", "/7/samples/cpp/sweeping-surfaces-with-sweep1/", "/wip/samples/cpp/sweeping-surfaces-with-sweep1/"]
+aliases = ["/en/5/samples/cpp/sweeping-surfaces-with-sweep1/", "/en/6/samples/cpp/sweeping-surfaces-with-sweep1/", "/en/7/samples/cpp/sweeping-surfaces-with-sweep1/", "/en/wip/samples/cpp/sweeping-surfaces-with-sweep1/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to use the CArgsRhinoSweep1 class and the RhinoSweep1 function. The definitions of these can be found in rhinoSdkSweep.h."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

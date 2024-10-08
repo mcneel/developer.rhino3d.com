@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/creating-leaders/", "/6/guides/cpp/creating-leaders/", "/7/guides/cpp/creating-leaders/", "/wip/guides/cpp/creating-leaders/"]
+aliases = ["/en/5/guides/cpp/creating-leaders/", "/en/6/guides/cpp/creating-leaders/", "/en/7/guides/cpp/creating-leaders/", "/en/wip/guides/cpp/creating-leaders/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to an annotation leader using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

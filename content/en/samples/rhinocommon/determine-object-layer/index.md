@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/determine-object-layer/", "/6/samples/rhinocommon/determine-object-layer/", "/7/samples/rhinocommon/determine-object-layer/", "/wip/samples/rhinocommon/determine-object-layer/"]
+aliases = ["/en/5/samples/rhinocommon/determine-object-layer/", "/en/6/samples/rhinocommon/determine-object-layer/", "/en/7/samples/rhinocommon/determine-object-layer/", "/en/wip/samples/rhinocommon/determine-object-layer/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects", "Layers" ]
 description = "Demonstrates how to determine which layer a user-specified object is on and print the name."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

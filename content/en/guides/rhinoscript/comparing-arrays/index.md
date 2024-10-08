@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/comparing-arrays/", "/6/guides/rhinoscript/comparing-arrays/", "/7/guides/rhinoscript/comparing-arrays/", "/wip/guides/rhinoscript/comparing-arrays/"]
+aliases = ["/en/5/guides/rhinoscript/comparing-arrays/", "/en/6/guides/rhinoscript/comparing-arrays/", "/en/7/guides/rhinoscript/comparing-arrays/", "/en/wip/guides/rhinoscript/comparing-arrays/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide discusses efficient VBScript array comparison."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/what-is-a-grasshopper-component/", "/6/guides/grasshopper/what-is-a-grasshopper-component/", "/7/guides/grasshopper/what-is-a-grasshopper-component/", "/wip/guides/grasshopper/what-is-a-grasshopper-component/"]
+aliases = ["/en/5/guides/grasshopper/what-is-a-grasshopper-component/", "/en/6/guides/grasshopper/what-is-a-grasshopper-component/", "/en/7/guides/grasshopper/what-is-a-grasshopper-component/", "/en/wip/guides/grasshopper/what-is-a-grasshopper-component/"]
 authors = [ "david" ]
 categories = [ "Overview" ]
 description = "This guide gives an overview of custom Grasshopper components."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

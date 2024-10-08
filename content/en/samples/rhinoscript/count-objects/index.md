@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/count-objects/", "/6/samples/rhinoscript/count-objects/", "/7/samples/rhinoscript/count-objects/", "/wip/samples/rhinoscript/count-objects/"]
+aliases = ["/en/5/samples/rhinoscript/count-objects/", "/en/6/samples/rhinoscript/count-objects/", "/en/7/samples/rhinoscript/count-objects/", "/en/wip/samples/rhinoscript/count-objects/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to count all the different object types using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

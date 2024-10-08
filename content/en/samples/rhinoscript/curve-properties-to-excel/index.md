@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/curve-properties-to-excel/", "/6/samples/rhinoscript/curve-properties-to-excel/", "/7/samples/rhinoscript/curve-properties-to-excel/", "/wip/samples/rhinoscript/curve-properties-to-excel/"]
+aliases = ["/en/5/samples/rhinoscript/curve-properties-to-excel/", "/en/6/samples/rhinoscript/curve-properties-to-excel/", "/en/7/samples/rhinoscript/curve-properties-to-excel/", "/en/wip/samples/rhinoscript/curve-properties-to-excel/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Illustrates RhinoScript code that extracts curve properties into Excel."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

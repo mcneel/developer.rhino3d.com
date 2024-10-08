@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/unroll-surface/", "/6/samples/rhinocommon/unroll-surface/", "/7/samples/rhinocommon/unroll-surface/", "/wip/samples/rhinocommon/unroll-surface/"]
+aliases = ["/en/5/samples/rhinocommon/unroll-surface/", "/en/6/samples/rhinocommon/unroll-surface/", "/en/7/samples/rhinocommon/unroll-surface/", "/en/wip/samples/rhinocommon/unroll-surface/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Unrolling a developable surface"
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

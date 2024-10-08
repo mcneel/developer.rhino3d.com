@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/line-between-curves/", "/6/samples/rhinocommon/line-between-curves/", "/7/samples/rhinocommon/line-between-curves/", "/wip/samples/rhinocommon/line-between-curves/"]
+aliases = ["/en/5/samples/rhinocommon/line-between-curves/", "/en/6/samples/rhinocommon/line-between-curves/", "/en/7/samples/rhinocommon/line-between-curves/", "/en/wip/samples/rhinocommon/line-between-curves/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to draw a line between two user-specified curves."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/accessing-databases/", "/6/guides/rhinoscript/accessing-databases/", "/7/guides/rhinoscript/accessing-databases/", "/wip/guides/rhinoscript/accessing-databases/"]
+aliases = ["/en/5/guides/rhinoscript/accessing-databases/", "/en/6/guides/rhinoscript/accessing-databases/", "/en/7/guides/rhinoscript/accessing-databases/", "/en/wip/guides/rhinoscript/accessing-databases/"]
 authors = [ "dale" ]
 categories = [ "Interoperability", "Databases", "Advanced" ]
 description = "This guide demonstrates how to access databases from VBScript using RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

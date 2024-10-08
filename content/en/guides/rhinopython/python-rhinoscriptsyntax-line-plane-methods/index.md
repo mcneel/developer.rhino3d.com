@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods/", "/6/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods/", "/7/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods/"]
+aliases = ["/en/5/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods/", "/en/6/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods/", "/en/7/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods/", "/en/wip/guides/rhinopython/python-rhinoscriptsyntax-line-plane-methods/"]
 authors = [ "dale" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an overview of the rhinoscriptsytntax Line and Plane methods."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
  
 ## Line and Plane Methods

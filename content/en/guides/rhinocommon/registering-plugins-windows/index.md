@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/registering-plugins-windows/", "/6/guides/rhinocommon/registering-plugins-windows/", "/7/guides/rhinocommon/registering-plugins-windows/", "/wip/guides/rhinocommon/registering-plugins-windows/"]
+aliases = ["/en/5/guides/rhinocommon/registering-plugins-windows/", "/en/6/guides/rhinocommon/registering-plugins-windows/", "/en/7/guides/rhinocommon/registering-plugins-windows/", "/en/wip/guides/rhinocommon/registering-plugins-windows/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide provides instructions for registering plugins for Windows."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

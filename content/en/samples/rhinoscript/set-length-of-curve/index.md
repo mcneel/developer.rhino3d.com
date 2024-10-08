@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/set-length-of-curve/", "/6/samples/rhinoscript/set-length-of-curve/", "/7/samples/rhinoscript/set-length-of-curve/", "/wip/samples/rhinoscript/set-length-of-curve/"]
+aliases = ["/en/5/samples/rhinoscript/set-length-of-curve/", "/en/6/samples/rhinoscript/set-length-of-curve/", "/en/7/samples/rhinoscript/set-length-of-curve/", "/en/wip/samples/rhinoscript/set-length-of-curve/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection", "Curves" ]
 description = "Demonstrates how to set the length of a curve object using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

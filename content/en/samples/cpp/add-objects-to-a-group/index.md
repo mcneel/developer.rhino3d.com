@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/add-objects-to-a-group/", "/6/samples/cpp/add-objects-to-a-group/", "/7/samples/cpp/add-objects-to-a-group/", "/wip/samples/cpp/add-objects-to-a-group/"]
+aliases = ["/en/5/samples/cpp/add-objects-to-a-group/", "/en/6/samples/cpp/add-objects-to-a-group/", "/en/7/samples/cpp/add-objects-to-a-group/", "/en/wip/samples/cpp/add-objects-to-a-group/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add selected objects to an object group."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

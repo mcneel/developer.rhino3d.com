@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/script-flowalongsrf/", "/6/samples/rhinoscript/script-flowalongsrf/", "/7/samples/rhinoscript/script-flowalongsrf/", "/wip/samples/rhinoscript/script-flowalongsrf/"]
+aliases = ["/en/5/samples/rhinoscript/script-flowalongsrf/", "/en/6/samples/rhinoscript/script-flowalongsrf/", "/en/7/samples/rhinoscript/script-flowalongsrf/", "/en/wip/samples/rhinoscript/script-flowalongsrf/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to script the FlowAlongSrf command using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

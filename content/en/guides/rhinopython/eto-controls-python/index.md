@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/eto-controls-python/", "/6/guides/rhinopython/eto-controls-python/", "/7/guides/rhinopython/eto-controls-python/", "/wip/guides/rhinopython/eto-controls-python/"]
+aliases = ["/en/5/guides/rhinopython/eto-controls-python/", "/en/6/guides/rhinopython/eto-controls-python/", "/en/7/guides/rhinopython/eto-controls-python/", "/en/wip/guides/rhinopython/eto-controls-python/"]
 authors = [ "scottd" ]
 categories = [ "Eto" ]
 description = "Using the Eto dialog framework to create interface controls."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 [Eto is an open source cross-platform dialog box framework](https://github.com/picoe/Eto/wiki) available in Rhino 6.  This guide demonstrates the syntax required to create the most common Eto controls in Rhino.Python.  Eto controls include labels, buttons, edit boxes and sliders. In Eto there are [more than 35 different controls](https://github.com/picoe/Eto/wiki/Controls) that can be created.

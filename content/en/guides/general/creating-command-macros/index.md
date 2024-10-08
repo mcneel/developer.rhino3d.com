@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/creating-command-macros/", "/6/guides/general/creating-command-macros/", "/7/guides/general/creating-command-macros/", "/wip/guides/general/creating-command-macros/"]
+aliases = ["/en/5/guides/general/creating-command-macros/", "/en/6/guides/general/creating-command-macros/", "/en/7/guides/general/creating-command-macros/", "/en/wip/guides/general/creating-command-macros/"]
 authors = [ "scottd" ]
 categories = [ "Overview" ]
 description = "A basic tutorial on creating macros (scripting together Rhino commands)"
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 You can create macros in Rhino to automate many tasks, customize your commands, and improve your workflow.

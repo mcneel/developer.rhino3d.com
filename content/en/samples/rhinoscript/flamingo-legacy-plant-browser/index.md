@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/flamingo-legacy-plant-browser/", "/6/samples/rhinoscript/flamingo-legacy-plant-browser/", "/7/samples/rhinoscript/flamingo-legacy-plant-browser/", "/wip/samples/rhinoscript/flamingo-legacy-plant-browser/"]
+aliases = ["/en/5/samples/rhinoscript/flamingo-legacy-plant-browser/", "/en/6/samples/rhinoscript/flamingo-legacy-plant-browser/", "/en/7/samples/rhinoscript/flamingo-legacy-plant-browser/", "/en/wip/samples/rhinoscript/flamingo-legacy-plant-browser/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how to display the Flamingo nXt legacy plant browser using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

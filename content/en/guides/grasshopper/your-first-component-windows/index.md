@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/your-first-component-windows/", "/6/guides/grasshopper/your-first-component-windows/", "/7/guides/grasshopper/your-first-component-windows/", "/wip/guides/grasshopper/your-first-component-windows/"]
+aliases = ["/en/5/guides/grasshopper/your-first-component-windows/", "/en/6/guides/grasshopper/your-first-component-windows/", "/en/7/guides/grasshopper/your-first-component-windows/", "/en/wip/guides/grasshopper/your-first-component-windows/"]
 authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first custom Grasshopper component library using Visual Studio."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 It is presumed you already have the necessary tools installed and are ready to go. If you are not there yet, see [Installing Tools (Windows)](/guides/grasshopper/installing-tools-windows).

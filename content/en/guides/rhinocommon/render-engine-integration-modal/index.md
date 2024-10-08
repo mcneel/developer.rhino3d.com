@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/render-engine-integration-modal/", "/6/guides/rhinocommon/render-engine-integration-modal/", "/7/guides/rhinocommon/render-engine-integration-modal/", "/wip/guides/rhinocommon/render-engine-integration-modal/"]
+aliases = ["/en/5/guides/rhinocommon/render-engine-integration-modal/", "/en/6/guides/rhinocommon/render-engine-integration-modal/", "/en/7/guides/rhinocommon/render-engine-integration-modal/", "/en/wip/guides/rhinocommon/render-engine-integration-modal/"]
 authors = [ "nathan" ]
 categories = [ "Rendering" ]
 description = "This guide, the second of a series, demonstrates integrating a modal rendering engine using RhinoCommon."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

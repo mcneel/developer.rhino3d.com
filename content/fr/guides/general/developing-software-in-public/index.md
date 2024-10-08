@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/developing-software-in-public/", "/6/guides/general/developing-software-in-public/", "/7/guides/general/developing-software-in-public/", "/wip/guides/general/developing-software-in-public/"]
+aliases = ["/fr/5/guides/general/developing-software-in-public/", "/fr/6/guides/general/developing-software-in-public/", "/fr/7/guides/general/developing-software-in-public/", "/fr/wip/guides/general/developing-software-in-public/"]
 authors = [ "brian" ]
 categories = [ "Overview" ]
 description = "An overview of the McNeel Development Process."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

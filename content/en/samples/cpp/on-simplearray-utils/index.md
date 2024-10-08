@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/on-simplearray-utils/", "/6/samples/cpp/on-simplearray-utils/", "/7/samples/cpp/on-simplearray-utils/", "/wip/samples/cpp/on-simplearray-utils/"]
+aliases = ["/en/5/samples/cpp/on-simplearray-utils/", "/en/6/samples/cpp/on-simplearray-utils/", "/en/7/samples/cpp/on-simplearray-utils/", "/en/wip/samples/cpp/on-simplearray-utils/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to sort and cull simple arrays."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/isolate-layers/", "/6/samples/rhinoscript/isolate-layers/", "/7/samples/rhinoscript/isolate-layers/", "/wip/samples/rhinoscript/isolate-layers/"]
+aliases = ["/en/5/samples/rhinoscript/isolate-layers/", "/en/6/samples/rhinoscript/isolate-layers/", "/en/7/samples/rhinoscript/isolate-layers/", "/en/wip/samples/rhinoscript/isolate-layers/"]
 authors = [ "dale" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to isolate the layers of selected objects using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

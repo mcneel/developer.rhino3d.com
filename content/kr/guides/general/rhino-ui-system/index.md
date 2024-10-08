@@ -1,5 +1,5 @@
 +++
-aliases = ["/8/guides/general/rhino-ui-system/"]
+aliases = ["/kr/8/guides/general/rhino-ui-system/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "Rhino의 사용자 인터페이스 시스템을 간략하게 설명하는 가이드입니다."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 이 가이드는 Rhino의 사용자 인터페이스(UI) 시스템에 대한 간략히 설명하고, Rhino 8에 추가된 새로운 시스템을 Rhino 7 및 이전 버전과 비교합니다.

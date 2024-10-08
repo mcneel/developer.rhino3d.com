@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/transform-screen-to-world-coordinates/", "/6/samples/cpp/transform-screen-to-world-coordinates/", "/7/samples/cpp/transform-screen-to-world-coordinates/", "/wip/samples/cpp/transform-screen-to-world-coordinates/"]
+aliases = ["/en/5/samples/cpp/transform-screen-to-world-coordinates/", "/en/6/samples/cpp/transform-screen-to-world-coordinates/", "/en/7/samples/cpp/transform-screen-to-world-coordinates/", "/en/wip/samples/cpp/transform-screen-to-world-coordinates/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to transform screen coordinates to world coordinates."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

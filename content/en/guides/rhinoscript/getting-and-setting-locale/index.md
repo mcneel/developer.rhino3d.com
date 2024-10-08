@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/getting-and-setting-locale/", "/6/guides/rhinoscript/getting-and-setting-locale/", "/7/guides/rhinoscript/getting-and-setting-locale/", "/wip/guides/rhinoscript/getting-and-setting-locale/"]
+aliases = ["/en/5/guides/rhinoscript/getting-and-setting-locale/", "/en/6/guides/rhinoscript/getting-and-setting-locale/", "/en/7/guides/rhinoscript/getting-and-setting-locale/", "/en/wip/guides/rhinoscript/getting-and-setting-locale/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to format locale-sensitive numbers using RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

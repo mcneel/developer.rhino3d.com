@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-where-to-find-help/", "/6/guides/rhinopython/python-where-to-find-help/", "/7/guides/rhinopython/python-where-to-find-help/", "/wip/guides/rhinopython/python-where-to-find-help/"]
+aliases = ["/en/5/guides/rhinopython/python-where-to-find-help/", "/en/6/guides/rhinopython/python-where-to-find-help/", "/en/7/guides/rhinopython/python-where-to-find-help/", "/en/wip/guides/rhinopython/python-where-to-find-help/"]
 authors = [ "skylar-tibbits", "arthur-van-der-harten", "steve" ]
 categories = [ "Getting Started" ]
 keywords = [ "python", "commands" ]
@@ -25,7 +25,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Forums:

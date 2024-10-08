@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/essential-mathematics/matrices-transformations/", "/6/guides/general/essential-mathematics/matrices-transformations/", "/7/guides/general/essential-mathematics/matrices-transformations/", "/wip/guides/general/essential-mathematics/matrices-transformations/"]
+aliases = ["/en/5/guides/general/essential-mathematics/matrices-transformations/", "/en/6/guides/general/essential-mathematics/matrices-transformations/", "/en/7/guides/general/essential-mathematics/matrices-transformations/", "/en/wip/guides/general/essential-mathematics/matrices-transformations/"]
 authors = [ "rajaa" ]
 categories = [ "Essential Mathematics" ]
 category_page = "guides/general/essential-mathematics/"
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 *Transformations* refer to operations such as moving (also called *translating*), rotating, and scaling objects. They are stored in 3 D programming using matrices, which are nothing but rectangular arrays of numbers. Multiple transformations can be performed very quickly using matrices. It turns out that a [4x4] matrix can represent all transformations. Having a unified matrix dimension for all transformations saves calculation time.

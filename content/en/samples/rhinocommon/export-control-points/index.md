@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/export-control-points/", "/6/samples/rhinocommon/export-control-points/", "/7/samples/rhinocommon/export-control-points/", "/wip/samples/rhinocommon/export-control-points/"]
+aliases = ["/en/5/samples/rhinocommon/export-control-points/", "/en/6/samples/rhinocommon/export-control-points/", "/en/7/samples/rhinocommon/export-control-points/", "/en/wip/samples/rhinocommon/export-control-points/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to export the control points of a user-selected curve and write them to a file."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

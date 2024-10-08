@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/modify-light-color/", "/6/samples/rhinocommon/modify-light-color/", "/7/samples/rhinocommon/modify-light-color/", "/wip/samples/rhinocommon/modify-light-color/"]
+aliases = ["/en/5/samples/rhinocommon/modify-light-color/", "/en/6/samples/rhinocommon/modify-light-color/", "/en/7/samples/rhinocommon/modify-light-color/", "/en/wip/samples/rhinocommon/modify-light-color/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to change the color of a user-specified light."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

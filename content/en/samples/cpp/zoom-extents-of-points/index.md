@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/zoom-extents-of-points/", "/6/samples/cpp/zoom-extents-of-points/", "/7/samples/cpp/zoom-extents-of-points/", "/wip/samples/cpp/zoom-extents-of-points/"]
+aliases = ["/en/5/samples/cpp/zoom-extents-of-points/", "/en/6/samples/cpp/zoom-extents-of-points/", "/en/7/samples/cpp/zoom-extents-of-points/", "/en/wip/samples/cpp/zoom-extents-of-points/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to zoom to the extends of an array of 3D points."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

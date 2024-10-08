@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/periodic-curves-and-surfaces/", "/6/guides/opennurbs/periodic-curves-and-surfaces/", "/7/guides/opennurbs/periodic-curves-and-surfaces/", "/wip/guides/opennurbs/periodic-curves-and-surfaces/"]
+aliases = ["/en/5/guides/opennurbs/periodic-curves-and-surfaces/", "/en/6/guides/opennurbs/periodic-curves-and-surfaces/", "/en/7/guides/opennurbs/periodic-curves-and-surfaces/", "/en/wip/guides/opennurbs/periodic-curves-and-surfaces/"]
 authors = [ "dalelear" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses periodic curves and surfaces and openNURBS toolkit."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/calculate-radius-of-curvature/", "/6/samples/cpp/calculate-radius-of-curvature/", "/7/samples/cpp/calculate-radius-of-curvature/", "/wip/samples/cpp/calculate-radius-of-curvature/"]
+aliases = ["/en/5/samples/cpp/calculate-radius-of-curvature/", "/en/6/samples/cpp/calculate-radius-of-curvature/", "/en/7/samples/cpp/calculate-radius-of-curvature/", "/en/wip/samples/cpp/calculate-radius-of-curvature/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to compute the radius of curvature of a curve object at a selected location."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

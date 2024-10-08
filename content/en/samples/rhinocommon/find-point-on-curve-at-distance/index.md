@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/find-point-on-curve-at-distance/", "/6/samples/rhinocommon/find-point-on-curve-at-distance/", "/7/samples/rhinocommon/find-point-on-curve-at-distance/", "/wip/samples/rhinocommon/find-point-on-curve-at-distance/"]
+aliases = ["/en/5/samples/rhinocommon/find-point-on-curve-at-distance/", "/en/6/samples/rhinocommon/find-point-on-curve-at-distance/", "/en/7/samples/rhinocommon/find-point-on-curve-at-distance/", "/en/wip/samples/rhinocommon/find-point-on-curve-at-distance/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how find a point on a curve given a specified length from the start of the curve."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

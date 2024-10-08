@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/ghpython-question-answer/", "/6/guides/rhinopython/ghpython-question-answer/", "/7/guides/rhinopython/ghpython-question-answer/", "/wip/guides/rhinopython/ghpython-question-answer/"]
+aliases = ["/en/5/guides/rhinopython/ghpython-question-answer/", "/en/6/guides/rhinopython/ghpython-question-answer/", "/en/7/guides/rhinopython/ghpython-question-answer/", "/en/wip/guides/rhinopython/ghpython-question-answer/"]
 authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "Here are the most common questions and answers about GhPython."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 The GhPython component allows to use both RhinoCommon and RhinoScript from within Grasshopper. Here some Q&As.

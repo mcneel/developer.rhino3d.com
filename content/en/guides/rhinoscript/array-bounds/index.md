@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/array-bounds/", "/6/guides/rhinoscript/array-bounds/", "/7/guides/rhinoscript/array-bounds/", "/wip/guides/rhinoscript/array-bounds/"]
+aliases = ["/en/5/guides/rhinoscript/array-bounds/", "/en/6/guides/rhinoscript/array-bounds/", "/en/7/guides/rhinoscript/array-bounds/", "/en/wip/guides/rhinoscript/array-bounds/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Intermediate" ]
 description = "This guide discusses how to determine the dimension and the upper bounds of arrays in RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

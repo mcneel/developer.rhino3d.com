@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/replacing-points-with-blocks/", "/6/guides/rhinoscript/replacing-points-with-blocks/", "/7/guides/rhinoscript/replacing-points-with-blocks/", "/wip/guides/rhinoscript/replacing-points-with-blocks/"]
+aliases = ["/en/5/guides/rhinoscript/replacing-points-with-blocks/", "/en/6/guides/rhinoscript/replacing-points-with-blocks/", "/en/7/guides/rhinoscript/replacing-points-with-blocks/", "/en/wip/guides/rhinoscript/replacing-points-with-blocks/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to replace point objects with block objects using RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

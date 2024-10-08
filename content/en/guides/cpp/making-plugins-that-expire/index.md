@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/making-plugins-that-expire/", "/6/guides/cpp/making-plugins-that-expire/", "/7/guides/cpp/making-plugins-that-expire/", "/wip/guides/cpp/making-plugins-that-expire/"]
+aliases = ["/en/5/guides/cpp/making-plugins-that-expire/", "/en/6/guides/cpp/making-plugins-that-expire/", "/en/7/guides/cpp/making-plugins-that-expire/", "/en/wip/guides/cpp/making-plugins-that-expire/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates an easy way to make a plugin expire using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/compute-python-getting-started/", "/6/guides/compute/compute-python-getting-started/", "/7/guides/compute/compute-python-getting-started/", "/wip/guides/compute/compute-python-getting-started/"]
+aliases = ["/en/5/guides/compute/compute-python-getting-started/", "/en/6/guides/compute/compute-python-getting-started/", "/en/7/guides/compute/compute-python-getting-started/", "/en/wip/guides/compute/compute-python-getting-started/"]
 authors = [ "scottd" ]
 categories = [ "Getting Started", "Client" ]
 description = "This guide covers all the necessary tools required to get started with the Rhino Compute Service using Python."
@@ -23,7 +23,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/fibonacci-spirals/", "/6/samples/rhinoscript/fibonacci-spirals/", "/7/samples/rhinoscript/fibonacci-spirals/", "/wip/samples/rhinoscript/fibonacci-spirals/"]
+aliases = ["/en/5/samples/rhinoscript/fibonacci-spirals/", "/en/6/samples/rhinoscript/fibonacci-spirals/", "/en/7/samples/rhinoscript/fibonacci-spirals/", "/en/wip/samples/rhinoscript/fibonacci-spirals/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a Fibonacci Spiral with RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

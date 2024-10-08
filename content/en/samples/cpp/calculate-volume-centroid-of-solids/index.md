@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/calculate-volume-centroid-of-solids/", "/6/samples/cpp/calculate-volume-centroid-of-solids/", "/7/samples/cpp/calculate-volume-centroid-of-solids/", "/wip/samples/cpp/calculate-volume-centroid-of-solids/"]
+aliases = ["/en/5/samples/cpp/calculate-volume-centroid-of-solids/", "/en/6/samples/cpp/calculate-volume-centroid-of-solids/", "/en/7/samples/cpp/calculate-volume-centroid-of-solids/", "/en/wip/samples/cpp/calculate-volume-centroid-of-solids/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "http://wiki.mcneel.com/developer/sdksamples/volumecentroid"
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

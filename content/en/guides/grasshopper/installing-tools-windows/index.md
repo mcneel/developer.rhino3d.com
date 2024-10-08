@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/installing-tools-windows/", "/6/guides/grasshopper/installing-tools-windows/", "/7/guides/grasshopper/installing-tools-windows/", "/wip/guides/grasshopper/installing-tools-windows/"]
+aliases = ["/en/5/guides/grasshopper/installing-tools-windows/", "/en/6/guides/grasshopper/installing-tools-windows/", "/en/7/guides/grasshopper/installing-tools-windows/", "/en/wip/guides/grasshopper/installing-tools-windows/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "This guide covers all the necessary tools required to author custom Grasshopper components on Windows."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

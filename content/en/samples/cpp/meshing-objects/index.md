@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/meshing-objects/", "/6/samples/cpp/meshing-objects/", "/7/samples/cpp/meshing-objects/", "/wip/samples/cpp/meshing-objects/"]
+aliases = ["/en/5/samples/cpp/meshing-objects/", "/en/6/samples/cpp/meshing-objects/", "/en/7/samples/cpp/meshing-objects/", "/en/wip/samples/cpp/meshing-objects/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to mesh surface and polysurface objects using the RhinoMeshObjects function."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

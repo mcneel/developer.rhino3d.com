@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-product/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-product/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-product/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-product/"]
+aliases = ["/en/5/guides/rhinocommon/cloudzoo/cloudzoo-product/", "/en/6/guides/rhinocommon/cloudzoo/cloudzoo-product/", "/en/7/guides/rhinocommon/cloudzoo/cloudzoo-product/", "/en/wip/guides/rhinocommon/cloudzoo/cloudzoo-product/"]
 authors = [ "aj" ]
 categories = [ "CloudZooDoc" ]
 description = "A Product is a JSON object that represents a a product for a specific issuer in Cloud Zoo. A product's id should be correlated with your Plug-In's id. All licenses in the system are related to a specific product."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Structure

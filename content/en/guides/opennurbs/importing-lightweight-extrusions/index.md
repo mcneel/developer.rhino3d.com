@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/importing-lightweight-extrusions/", "/6/guides/opennurbs/importing-lightweight-extrusions/", "/7/guides/opennurbs/importing-lightweight-extrusions/", "/wip/guides/opennurbs/importing-lightweight-extrusions/"]
+aliases = ["/en/5/guides/opennurbs/importing-lightweight-extrusions/", "/en/6/guides/opennurbs/importing-lightweight-extrusions/", "/en/7/guides/opennurbs/importing-lightweight-extrusions/", "/en/wip/guides/opennurbs/importing-lightweight-extrusions/"]
 authors = [ "dalelear" ]
 categories = [ "Fundamentals" ]
 description = "This guide demonstrates how to convert openNURBS Lightweight Extrusion objects into Breps for importing."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

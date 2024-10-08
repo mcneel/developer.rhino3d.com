@@ -1,5 +1,5 @@
 +++
-aliases = ""
+aliases = []
 authors = [ "scott" ]
 categories = [ "Intermediate" ]
 description = "This guide covers the various ways to import modules Python in Rhino."
@@ -28,7 +28,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Overview

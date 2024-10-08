@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/import-interpolated-curve/", "/6/samples/rhinoscript/import-interpolated-curve/", "/7/samples/rhinoscript/import-interpolated-curve/", "/wip/samples/rhinoscript/import-interpolated-curve/"]
+aliases = ["/en/5/samples/rhinoscript/import-interpolated-curve/", "/en/6/samples/rhinoscript/import-interpolated-curve/", "/en/7/samples/rhinoscript/import-interpolated-curve/", "/en/wip/samples/rhinoscript/import-interpolated-curve/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to read a point file and create an interpolated curve using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

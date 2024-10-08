@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/show-hidden-objects/", "/6/samples/cpp/show-hidden-objects/", "/7/samples/cpp/show-hidden-objects/", "/wip/samples/cpp/show-hidden-objects/"]
+aliases = ["/en/5/samples/cpp/show-hidden-objects/", "/en/6/samples/cpp/show-hidden-objects/", "/en/7/samples/cpp/show-hidden-objects/", "/en/wip/samples/cpp/show-hidden-objects/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to iterate through the geometry table and unhide hidden objects."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/cancelling-scripts/", "/6/guides/rhinoscript/cancelling-scripts/", "/7/guides/rhinoscript/cancelling-scripts/", "/wip/guides/rhinoscript/cancelling-scripts/"]
+aliases = ["/en/5/guides/rhinoscript/cancelling-scripts/", "/en/6/guides/rhinoscript/cancelling-scripts/", "/en/7/guides/rhinoscript/cancelling-scripts/", "/en/wip/guides/rhinoscript/cancelling-scripts/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to allow scripts to be cancelled by the user."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

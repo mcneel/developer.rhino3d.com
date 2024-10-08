@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/duplicated-mesh-boundary/", "/6/samples/rhinocommon/duplicated-mesh-boundary/", "/7/samples/rhinocommon/duplicated-mesh-boundary/", "/wip/samples/rhinocommon/duplicated-mesh-boundary/"]
+aliases = ["/en/5/samples/rhinocommon/duplicated-mesh-boundary/", "/en/6/samples/rhinocommon/duplicated-mesh-boundary/", "/en/7/samples/rhinocommon/duplicated-mesh-boundary/", "/en/wip/samples/rhinocommon/duplicated-mesh-boundary/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to create a bounding polyline from naked edges of an open mesh."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

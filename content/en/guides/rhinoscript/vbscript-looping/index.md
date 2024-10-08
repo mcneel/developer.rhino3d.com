@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/vbscript-looping/", "/6/guides/rhinoscript/vbscript-looping/", "/7/guides/rhinoscript/vbscript-looping/", "/wip/guides/rhinoscript/vbscript-looping/"]
+aliases = ["/en/5/guides/rhinoscript/vbscript-looping/", "/en/6/guides/rhinoscript/vbscript-looping/", "/en/7/guides/rhinoscript/vbscript-looping/", "/en/wip/guides/rhinoscript/vbscript-looping/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide is an overview of looping through VBScript code."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

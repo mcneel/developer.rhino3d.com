@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/block-definition-geometry/", "/6/samples/cpp/block-definition-geometry/", "/7/samples/cpp/block-definition-geometry/", "/wip/samples/cpp/block-definition-geometry/"]
+aliases = ["/en/5/samples/cpp/block-definition-geometry/", "/en/6/samples/cpp/block-definition-geometry/", "/en/7/samples/cpp/block-definition-geometry/", "/en/wip/samples/cpp/block-definition-geometry/"]
 authors = [ "dale" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to obtain a block instance's definition geometry."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

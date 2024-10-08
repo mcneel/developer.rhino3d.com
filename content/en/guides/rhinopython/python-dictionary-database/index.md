@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-dictionary-database/", "/6/guides/rhinopython/python-dictionary-database/", "/7/guides/rhinopython/python-dictionary-database/", "/wip/guides/rhinopython/python-dictionary-database/"]
+aliases = ["/en/5/guides/rhinopython/python-dictionary-database/", "/en/6/guides/rhinopython/python-dictionary-database/", "/en/7/guides/rhinopython/python-dictionary-database/", "/en/wip/guides/rhinopython/python-dictionary-database/"]
 authors = [ "scottd" ]
 categories = [ "Intermediate" ]
 description = "This guide discusses using Python's Dictionary object to access nested data."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

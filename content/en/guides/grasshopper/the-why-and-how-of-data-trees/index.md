@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/the-why-and-how-of-data-trees/", "/6/guides/grasshopper/the-why-and-how-of-data-trees/", "/7/guides/grasshopper/the-why-and-how-of-data-trees/", "/wip/guides/grasshopper/the-why-and-how-of-data-trees/"]
+aliases = ["/en/5/guides/grasshopper/the-why-and-how-of-data-trees/", "/en/6/guides/grasshopper/the-why-and-how-of-data-trees/", "/en/7/guides/grasshopper/the-why-and-how-of-data-trees/", "/en/wip/guides/grasshopper/the-why-and-how-of-data-trees/"]
 authors = [ "david" ]
 categories = [ "In Depth" ]
 description = "This guide explains why data trees are used in Grasshopper."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

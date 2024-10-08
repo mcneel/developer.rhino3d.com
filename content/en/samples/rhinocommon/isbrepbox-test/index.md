@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/isbrepbox-test/", "/6/samples/rhinocommon/isbrepbox-test/", "/7/samples/rhinocommon/isbrepbox-test/", "/wip/samples/rhinocommon/isbrepbox-test/"]
+aliases = ["/en/5/samples/rhinocommon/isbrepbox-test/", "/en/6/samples/rhinocommon/isbrepbox-test/", "/en/7/samples/rhinocommon/isbrepbox-test/", "/en/wip/samples/rhinocommon/isbrepbox-test/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to determine whether a given Brep is a box."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

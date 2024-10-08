@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/tweak-colors/", "/6/samples/rhinocommon/tweak-colors/", "/7/samples/rhinocommon/tweak-colors/", "/wip/samples/rhinocommon/tweak-colors/"]
+aliases = ["/en/5/samples/rhinocommon/tweak-colors/", "/en/6/samples/rhinocommon/tweak-colors/", "/en/7/samples/rhinocommon/tweak-colors/", "/en/wip/samples/rhinocommon/tweak-colors/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to set the default paint colors in Rhino."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

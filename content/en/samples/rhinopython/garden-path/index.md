@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinopython/garden-path/", "/6/samples/rhinopython/garden-path/", "/7/samples/rhinopython/garden-path/", "/wip/samples/rhinopython/garden-path/"]
+aliases = ["/en/5/samples/rhinopython/garden-path/", "/en/6/samples/rhinopython/garden-path/", "/en/7/samples/rhinopython/garden-path/", "/en/wip/samples/rhinopython/garden-path/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates basic syntax for writing python scripts."
@@ -17,7 +17,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 

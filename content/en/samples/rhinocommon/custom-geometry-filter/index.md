@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/custom-geometry-filter/", "/6/samples/rhinocommon/custom-geometry-filter/", "/7/samples/rhinocommon/custom-geometry-filter/", "/wip/samples/rhinocommon/custom-geometry-filter/"]
+aliases = ["/en/5/samples/rhinocommon/custom-geometry-filter/", "/en/6/samples/rhinocommon/custom-geometry-filter/", "/en/7/samples/rhinocommon/custom-geometry-filter/", "/en/wip/samples/rhinocommon/custom-geometry-filter/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to create a specialized GetObject with a custom geometry filter."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

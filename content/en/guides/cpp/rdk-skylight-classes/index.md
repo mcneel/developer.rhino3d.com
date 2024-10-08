@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-skylight-classes/", "/6/guides/cpp/rdk-skylight-classes/", "/7/guides/cpp/rdk-skylight-classes/", "/wip/guides/cpp/rdk-skylight-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-skylight-classes/", "/en/6/guides/cpp/rdk-skylight-classes/", "/en/7/guides/cpp/rdk-skylight-classes/", "/en/wip/guides/cpp/rdk-skylight-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK skylight class in C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 ### Introduction
 The _skylight_ is a feature that allows a scene to be rendered realistically, as if the objects in the scene were in a real environment under a real sky. When the skylight is used, the objects in the scene are lit not only by the scene's lights (or the sun), but also by the environment. The image below shows a comparison of a scene rendered with the skylight disabled (left) and enabled (right). Notice the subtly different coloring and the softer more diffuse shadows in the sky-lit image. The disadvantage of the skylight is that it is very CPU-intensive and renderings are much slower when it is enabled.

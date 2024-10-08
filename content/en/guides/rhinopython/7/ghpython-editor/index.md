@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/ghpython-editor/", "/6/guides/rhinopython/ghpython-editor/", "/7/guides/rhinopython/ghpython-editor/", "/wip/guides/rhinopython/ghpython-editor/"]
+aliases = ["/en/5/guides/rhinopython/ghpython-editor/", "/en/6/guides/rhinopython/ghpython-editor/", "/en/7/guides/rhinopython/ghpython-editor/", "/en/wip/guides/rhinopython/ghpython-editor/"]
 authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "This guide looks at the details of the GhPython Editor."
@@ -26,7 +26,6 @@ block_webcrawlers = true
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Inside the script component

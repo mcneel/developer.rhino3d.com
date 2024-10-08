@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/custom-undo-events/", "/6/guides/cpp/custom-undo-events/", "/7/guides/cpp/custom-undo-events/", "/wip/guides/cpp/custom-undo-events/"]
+aliases = ["/en/5/guides/cpp/custom-undo-events/", "/en/6/guides/cpp/custom-undo-events/", "/en/7/guides/cpp/custom-undo-events/", "/en/wip/guides/cpp/custom-undo-events/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses custom undo events."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

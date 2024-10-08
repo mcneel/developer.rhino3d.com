@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/constrained-copy/", "/6/samples/rhinocommon/constrained-copy/", "/7/samples/rhinocommon/constrained-copy/", "/wip/samples/rhinocommon/constrained-copy/"]
+aliases = ["/en/5/samples/rhinocommon/constrained-copy/", "/en/6/samples/rhinocommon/constrained-copy/", "/en/7/samples/rhinocommon/constrained-copy/", "/en/wip/samples/rhinocommon/constrained-copy/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to use a constrained GetPoint to copy a curve."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

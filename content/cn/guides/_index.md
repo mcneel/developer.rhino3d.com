@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/", "/6/guides/", "/7/guides/", "/wip/guides/"]
+aliases = ["/cn/5/guides/", "/cn/6/guides/", "/cn/7/guides/", "/cn/wip/guides/"]
 description = "All the guides available for developing for Rhino or Grasshopper."
 title = "Guides"
 type = "guides"

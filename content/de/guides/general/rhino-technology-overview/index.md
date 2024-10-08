@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/rhino-technology-overview/", "/6/guides/general/rhino-technology-overview/", "/7/guides/general/rhino-technology-overview/", "/wip/guides/general/rhino-technology-overview/"]
+aliases = ["/de/5/guides/general/rhino-technology-overview/", "/de/6/guides/general/rhino-technology-overview/", "/de/7/guides/general/rhino-technology-overview/", "/de/wip/guides/general/rhino-technology-overview/"]
 authors = [ "brian" ]
 categories = [ "Overview" ]
 description = "A summary of the Rhino technology architecture."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

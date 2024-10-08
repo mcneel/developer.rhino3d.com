@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/select-points-by-z-coordinate/", "/6/samples/rhinoscript/select-points-by-z-coordinate/", "/7/samples/rhinoscript/select-points-by-z-coordinate/", "/wip/samples/rhinoscript/select-points-by-z-coordinate/"]
+aliases = ["/en/5/samples/rhinoscript/select-points-by-z-coordinate/", "/en/6/samples/rhinoscript/select-points-by-z-coordinate/", "/en/7/samples/rhinoscript/select-points-by-z-coordinate/", "/en/wip/samples/rhinoscript/select-points-by-z-coordinate/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to select point objects with a user-specified z coordinate using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

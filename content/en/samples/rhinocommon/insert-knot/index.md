@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/insert-knot/", "/6/samples/rhinocommon/insert-knot/", "/7/samples/rhinocommon/insert-knot/", "/wip/samples/rhinocommon/insert-knot/"]
+aliases = ["/en/5/samples/rhinocommon/insert-knot/", "/en/6/samples/rhinocommon/insert-knot/", "/en/7/samples/rhinocommon/insert-knot/", "/en/wip/samples/rhinocommon/insert-knot/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to insert a knot into a user-selected NURBS curve."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

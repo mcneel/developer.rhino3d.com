@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/exporting-meshes-to-geomview/", "/6/samples/rhinoscript/exporting-meshes-to-geomview/", "/7/samples/rhinoscript/exporting-meshes-to-geomview/", "/wip/samples/rhinoscript/exporting-meshes-to-geomview/"]
+aliases = ["/en/5/samples/rhinoscript/exporting-meshes-to-geomview/", "/en/6/samples/rhinoscript/exporting-meshes-to-geomview/", "/en/7/samples/rhinoscript/exporting-meshes-to-geomview/", "/en/wip/samples/rhinoscript/exporting-meshes-to-geomview/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to export a mesh object to Geomview's OFF file format using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

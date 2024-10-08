@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/untag-object-as-a-flamingo-plant/", "/6/samples/rhinoscript/untag-object-as-a-flamingo-plant/", "/7/samples/rhinoscript/untag-object-as-a-flamingo-plant/", "/wip/samples/rhinoscript/untag-object-as-a-flamingo-plant/"]
+aliases = ["/en/5/samples/rhinoscript/untag-object-as-a-flamingo-plant/", "/en/6/samples/rhinoscript/untag-object-as-a-flamingo-plant/", "/en/7/samples/rhinoscript/untag-object-as-a-flamingo-plant/", "/en/wip/samples/rhinoscript/untag-object-as-a-flamingo-plant/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how to un-tag an object as a Flamingo nXt plant using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

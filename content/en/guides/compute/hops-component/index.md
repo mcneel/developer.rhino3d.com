@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/hops-component/", "/6/guides/compute/hops-component/", "/7/guides/compute/hops-component/", "/wip/guides/compute/hops-component/"]
+aliases = ["/en/5/guides/compute/hops-component/", "/en/6/guides/compute/hops-component/", "/en/7/guides/compute/hops-component/", "/en/wip/guides/compute/hops-component/"]
 authors = [ "steve", "scottd", "andy.payne" ]
 categories = [ "Hops" ]
 description = "Hops adds functions to Grasshopper."
@@ -23,7 +23,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Overview 

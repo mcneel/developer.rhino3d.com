@@ -1,5 +1,5 @@
 +++
-aliases = ["/wip/guides/cpp/create-dependent-dll/"]
+aliases = ["/en/wip/guides/cpp/create-dependent-dll/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide outlines the process of creating a Rhino-dependent C++ DLL."
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

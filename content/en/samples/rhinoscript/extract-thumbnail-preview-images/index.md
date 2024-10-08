@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/extract-thumbnail-preview-images/", "/6/samples/rhinoscript/extract-thumbnail-preview-images/", "/7/samples/rhinoscript/extract-thumbnail-preview-images/", "/wip/samples/rhinoscript/extract-thumbnail-preview-images/"]
+aliases = ["/en/5/samples/rhinoscript/extract-thumbnail-preview-images/", "/en/6/samples/rhinoscript/extract-thumbnail-preview-images/", "/en/7/samples/rhinoscript/extract-thumbnail-preview-images/", "/en/wip/samples/rhinoscript/extract-thumbnail-preview-images/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to extract the thumbnail preview image from .3DM files using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

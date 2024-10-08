@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/tween-curve/", "/6/samples/rhinocommon/tween-curve/", "/7/samples/rhinocommon/tween-curve/", "/wip/samples/rhinocommon/tween-curve/"]
+aliases = ["/en/5/samples/rhinocommon/tween-curve/", "/en/6/samples/rhinocommon/tween-curve/", "/en/7/samples/rhinocommon/tween-curve/", "/en/wip/samples/rhinocommon/tween-curve/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to tween two curves."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

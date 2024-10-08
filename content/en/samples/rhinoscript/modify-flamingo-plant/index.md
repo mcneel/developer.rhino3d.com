@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/modify-flamingo-plant/", "/6/samples/rhinoscript/modify-flamingo-plant/", "/7/samples/rhinoscript/modify-flamingo-plant/", "/wip/samples/rhinoscript/modify-flamingo-plant/"]
+aliases = ["/en/5/samples/rhinoscript/modify-flamingo-plant/", "/en/6/samples/rhinoscript/modify-flamingo-plant/", "/en/7/samples/rhinoscript/modify-flamingo-plant/", "/en/wip/samples/rhinoscript/modify-flamingo-plant/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how to modify an existing Flamingo nXt plant using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

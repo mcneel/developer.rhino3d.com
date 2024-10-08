@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/deviation-between-two-curves/", "/6/samples/cpp/deviation-between-two-curves/", "/7/samples/cpp/deviation-between-two-curves/", "/wip/samples/cpp/deviation-between-two-curves/"]
+aliases = ["/en/5/samples/cpp/deviation-between-two-curves/", "/en/6/samples/cpp/deviation-between-two-curves/", "/en/7/samples/cpp/deviation-between-two-curves/", "/en/wip/samples/cpp/deviation-between-two-curves/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to determine the deviation between two curves using the RhinoGetOverlapDistance() function."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

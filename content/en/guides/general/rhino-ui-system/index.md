@@ -1,5 +1,5 @@
 +++
-aliases = ["/8/guides/general/rhino-ui-system/"]
+aliases = ["/en/8/guides/general/rhino-ui-system/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide outlines Rhino's User Interface System."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 This guide proves an overview of Rhino's User Interface (UI) system, and it compares the new system found in Rhino 8 with the previous system found in Rhino 7 and earlier.

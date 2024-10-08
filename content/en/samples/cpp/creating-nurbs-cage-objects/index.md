@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/creating-nurbs-cage-objects/", "/6/samples/cpp/creating-nurbs-cage-objects/", "/7/samples/cpp/creating-nurbs-cage-objects/", "/wip/samples/cpp/creating-nurbs-cage-objects/"]
+aliases = ["/en/5/samples/cpp/creating-nurbs-cage-objects/", "/en/6/samples/cpp/creating-nurbs-cage-objects/", "/en/7/samples/cpp/creating-nurbs-cage-objects/", "/en/wip/samples/cpp/creating-nurbs-cage-objects/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a NURBS Cage objects."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

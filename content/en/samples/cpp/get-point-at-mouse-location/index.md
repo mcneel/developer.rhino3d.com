@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/get-point-at-mouse-location/", "/6/samples/cpp/get-point-at-mouse-location/", "/7/samples/cpp/get-point-at-mouse-location/", "/wip/samples/cpp/get-point-at-mouse-location/"]
+aliases = ["/en/5/samples/cpp/get-point-at-mouse-location/", "/en/6/samples/cpp/get-point-at-mouse-location/", "/en/7/samples/cpp/get-point-at-mouse-location/", "/en/wip/samples/cpp/get-point-at-mouse-location/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection" ]
 description = "Discusses how to convert a 2D screen point into a 3D world point."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

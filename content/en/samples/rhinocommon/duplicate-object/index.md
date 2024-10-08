@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/duplicate-object/", "/6/samples/rhinocommon/duplicate-object/", "/7/samples/rhinocommon/duplicate-object/", "/wip/samples/rhinocommon/duplicate-object/"]
+aliases = ["/en/5/samples/rhinocommon/duplicate-object/", "/en/6/samples/rhinocommon/duplicate-object/", "/en/7/samples/rhinocommon/duplicate-object/", "/en/wip/samples/rhinocommon/duplicate-object/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to clone (or copy, or duplicate) a Rhino object."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">
