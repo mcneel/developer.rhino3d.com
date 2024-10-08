@@ -94,6 +94,7 @@ since = 8
 - {{< dev-topic "Language Initialization" "/guides/scripting/advanced-langinit" >}}
 - <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
 - {{< dev-topic "Python Path Files" "/guides/scripting/advanced-pthfiles" >}}
+- {{< dev-topic "Python Package Environments" "/guides/scripting/advanced-pyvenvs" >}}
 - <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
 - {{< dev-topic "Asynchronous Execution" "/guides/scripting/advanced-async" >}}
 - <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
