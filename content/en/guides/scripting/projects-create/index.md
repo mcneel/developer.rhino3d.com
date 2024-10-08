@@ -293,6 +293,15 @@ Note that *Project Tray* shows a dimmed icon for excluded commands:
 
 ![](project-commands-excluded.png)
 
+### Special Variables
+
+There are a few builtin variables available when published scripts are executed as Rhino commands:
+
+- `__rhino_command__` ([Rhino.Commands.Command](https://developer.rhino3d.com/api/rhinocommon/rhino.commands.command)): Rhino command instance. This is the automatically generated command in your plugin, that contains and runs its embedded script.
+- `__rhino_doc__` ([Rhino.RhinoDoc](https://developer.rhino3d.com/api/rhinocommon/rhino.rhinodoc)): Active document the command is running on
+- `__rhino_runmode__` ([Rhino.Commands.RunMode](https://developer.rhino3d.com/api/rhinocommon/rhino.commands.runmode)): Command Run Mode
+- `__is_interactive__` (boolean): Whether command is executed interactively (when `RunMode == RunMode.Interactive`)
+
 ## Components
 
 ### Name and Icon
