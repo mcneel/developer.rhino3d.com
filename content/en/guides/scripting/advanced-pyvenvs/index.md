@@ -69,6 +69,17 @@ In Rhino, however, both *script_a* and *script_b* are executed inside the same p
 
 ![](venvs-rhino-conflict.jpg)
 
+{{< call-out "note" "Environments in Rhino" >}}
+
+Virtual Environments in Rhino are usually helpful in avoiding to reinstall packages. If you are running a script with conflicting packages, pip has to uninstall the existing to install new versions. This means that your scripts keep uninstalling and reinstalling packages and will eventually overwrite each other, corrupting the installed environment.
+
+`venv` tag helps keeping these install packages separate and is great when running scripts in separate Rhino processes:
+
+![](venvs-rhino-noconflict.jpg)
+
+Note that if you are running two scripts with two different versions of torch library in the same Rhino instance you might/will run into runtime conflicts as described above.
+
+{{< /call-out >}}
 
 ### Default Environment
 
@@ -83,7 +94,7 @@ By default, all python packages are installed to `site-envs/default-<unique-id>`
 /Users/*/.rhinocode/py39-rh8/lib/python3.9
 ```
 
-### Create Custom Environments
+### Custom Environments
 
 You can configure your script to install required packages in a custom environment using `# venv: <environment-name>` tag. When running this example script, Python 3 will create new folder `site-envs/my-pytorch-tools-<unique-id>` to install pytorch v2.4.1 in that environment. `<unique-id>` is automatically assigned to the environment to avoid conflicts:
 
@@ -97,18 +108,6 @@ import pytorch
 ```
 
 This will ensure that the requirements for your package do not override any existing installed packages for other scripts. If you are fixing the version of a package in your script or use packages that might cause conflicts, it is good practice to specify a unique name for this environment to avoid conflicts.
-
-{{< call-out "note" "TLDR" >}}
-
-Virtual Environments in Rhino are usually helpful in avoiding to reinstall packages. If you are running a script with conflicting packages, pip has to uninstall the existing to install new versions. This means that your scripts keep uninstalling and reinstalling packages and will eventually overwrite each other, corrupting the installed environment.
-
-`venv` tag helps keeping these install packages separate and is great when running scripts in separate Rhino processes:
-
-![](venvs-rhino-noconflict.jpg)
-
-Note that if you are running two scripts with two different versions of torch library in the same Rhino instance you might/will run into runtime conflicts as described above.
-
-{{< /call-out >}}
 
 ### Invalid Environments
 
