@@ -8,8 +8,10 @@
 {{- $.Scratch.Set "month_trans" ($.Scratch.Get "month") -}}
 {{- $.Scratch.Set "weekday_trans" ($.Scratch.Get "weekday") -}}
 {{- else -}} <!-- but we default to the last time the file changed in git -->
+{{- $.Scratch.Set "weekday" (dateFormat "Monday" .Page.Lastmod) -}} 
 {{- $.Scratch.Set "weekday_trans" (dateFormat "Monday" .Page.Lastmod) -}} 
 {{- $.Scratch.Set "day" .Page.Lastmod.Day -}}
+{{- $.Scratch.Set "month" (string .Page.Lastmod.Month) -}}
 {{- $.Scratch.Set "month_trans" (string .Page.Lastmod.Month) -}}
 {{- $.Scratch.Set "year" .Page.Lastmod.Year -}}
 {{- end -}}
