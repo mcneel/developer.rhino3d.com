@@ -1,0 +1,36 @@
+/*
+##############################################################################
+## Scripting Page
+##############################################################################
+*/
+
+.full-width-bar {
+    position: absolute;
+    width: 100vw;
+    left: 0px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+  }
+
+  .full-width-bar td {
+    vertical-align: top;
+  }
+
+  .full-width-bar p {
+    font-size: 21px;
+    font-weight: 500;
+    text-align: right;
+  }
+
+  .full-width-bar-content ul {
+    margin-top: 10px;
+    margin-left: 50px;
+  }
+
+  .legacy-note {
+    font-size: small;
+    color: #6c6c6c;
+  }
