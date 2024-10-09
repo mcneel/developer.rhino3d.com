@@ -9,6 +9,11 @@ varies:
   email: tech@mcneel.com
   discourse: ''
   github: ''
+3dshoemaker:
+  name: 3D Shoemaker
+  email: 3DShoemaker@gmail.com
+  discourse: ''
+  github: ''
 adan:
   name: Adán Guillén
   email: adan@mcneel.com
@@ -62,12 +67,13 @@ andy:
   github: andylebihan
 andy.payne:
   name: Andy Payne
-  email: ''
-  discourse: ''
-  github: ''
+  display_name: Andy P @McNeel
+  email: andy.payne@mcneel.com
+  discourse: andypayne
+  github: andyopayne
 anna.foglietta:
   name: Anna Foglietta
-  email: 'anna.foglietta@mcneel.com '
+  email: anna.foglietta@mcneel.com
   discourse: Anna_Foglietta
   github: AnnaFoglietta
 anna.villafane:
@@ -139,7 +145,7 @@ brian:
   github: golsby
 brianj:
   name: Brian James
-  display_name: Brian @McNeel
+  display_name: BrianJ @McNeel
   email: brianj@mcneel.com
   discourse: BrianJ
   github: BrianJames
@@ -272,6 +278,11 @@ designalyze:
   email: ''
   discourse: ''
   github: ''
+designupgrade:
+  name: Design Upgrade
+  email: mail@design-upgrade.com
+  discourse: ''
+  github: ''
 digitaltoolbox:
   name: digital toolbox
   email: ''
@@ -353,9 +364,15 @@ gemma:
   email: gemma@mcneel.com
   discourse: ''
   github: ''
+gemma:
+  name: Gerard Petersen
+  email: gerard@rhinocentre.nl
+  discourse: Gerard
+  github: ''
 gijs:
   name: Gijs de Zwart
-  email: gijsdezwart@gmail.com 
+  display_name: Gijs @McNeel
+  email: gijs@mcneel.com 
   discourse: gijs
   github: 'studiogijs'
 giorgio:
@@ -465,6 +482,11 @@ jess-maertterer:
   email: ''
   discourse: Jess
   github: ''
+jevero:
+  name: Jevero
+  email: https://jeveropattern.com/
+  discourse: Jess
+  github: ''
 jinmo-rhee:
   name: Jinmo Rhee
   email: ''
@@ -541,6 +563,16 @@ jussi:
   email: jussi@mcneel.com
   discourse: Jussi_Aaltonen
   github: jussiaaltonen
+jessesn:
+  name: Jessesn Chen
+  email: jessesn@mcneel.com
+  discourse: jessesn
+  github: Jessesn
+jorin:
+  name: Jorin Chi
+  email: jorin@mcneel.com
+  discourse: jorinchi
+  github: JorinChi
 k:
   name: K (Kaitlin) Viljamaa
   email: k@mcneel.com
@@ -580,6 +612,11 @@ lars:
 lineweights:
   name: Lineweights Academy
   email: https://www.youtube.com/channel/UCR2YaYgISCb0HTN9-P9rCqQ
+  discourse:
+  github:
+lorenzom:
+  name: Lorenzo Masini
+  email: https://www.linkedin.com/in/lorenzo-masini-3aa9789b/
   discourse:
   github:
 lowell:
@@ -786,9 +823,19 @@ paula.pintos:
   email: ''
   discourse: ''
   github: ''
+phstudio:
+  name: PH Studio
+  email: ''
+  discourse: ''
+  github: ''
 pjchen:
   name: PJ Chen Jewelry Design
   email: pj@pjchendesign.com
+  discourse: ''
+  github: ''
+podotools:
+  name: PodoTools
+  email: https://www.youtube.com/@podotools/about
   discourse: ''
   github: ''
 pointone:
@@ -827,16 +874,6 @@ roy:
   email: roy@mcneel.com
   discourse: roy1
   github: royhirshkowitz
-jessesn:
-  name: Jessesn Chen
-  email: jessesn@mcneel.com
-  discourse: jessesn
-  github: Jessesn
-jorin:
-  name: Jorin Chi
-  email: jorin@mcneel.com
-  discourse: jorinchi
-  github: ''
 sandy:
   name: Sandy McNeel
   email: sandy@mcneel.com
@@ -857,6 +894,11 @@ yoon:
   email: yoon@mcneel.com
   discourse: yoon
   github: JorinChi
+samw:
+  name: Sam Whitworth
+  email: https://www.youtube.com/@samwhitworth9540
+  discourse: ''
+  github: ''
 scottd:
   name: Scott Davidson
   display_name: Scott @McNeel
@@ -908,6 +950,12 @@ steve:
   email: steve@mcneel.com
   discourse: stevebaer
   github: sbaer
+stevef:
+name: Steve Fuchs
+display_name: SteveF @McNeel
+email: steve.fuchs@mcneel.com
+discourse: stevefuchs
+github: stevefuchs
 structured.parametrics:
   name: Structured Parametrics
   email: ''
@@ -926,6 +974,11 @@ klaus.teltenkoetter:
 thinkparametric:
   name: ThinkParametric
   email: hello@thinkparametric.com
+  discourse: ''
+  github: ''
+thinkscan:
+  name: ThinkScan3D
+  email: https://www.thinkscan.co.uk/
   discourse: ''
   github: ''
 thirtysixverts:
@@ -949,6 +1002,12 @@ travis:
   email: travis@mcneel.com
   discourse: trav
   github: travisserio
+urbandec:
+  name: Urban Decoders
+  display_name: Urban Decoders
+  email: 
+  discourse:
+  github: 
 vanessa:
   name: Vanessa Steeg
   display_name: Vanessa @McNeel
@@ -983,6 +1042,11 @@ wim:
 paul.wintour:
   name: Paul Wintour
   email: ''
+  discourse: ''
+  github: ''
+valeriap:
+  name: Valeria Palacio
+  email: https://www.rhino3d.education/courses/author/1232512
   discourse: ''
   github: ''
 wk.lim:
