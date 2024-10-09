@@ -1,0 +1,95 @@
+{{ $.Scratch.Add "elements" (.Get "elements" | default "p") }}
+{{ $.Scratch.Add "weights" (.Get "weights") }}
+
+<div id="search">
+    <input type="text" id="search-input" placeholder="Find in this page..." style="width:100%">
+    <div id="search-results" style="
+    display: none;
+    position: absolute;
+    background: white;
+    z-index: 5;
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-right: 10px;
+    border-radius: 0 10px 10px;
+    box-shadow: 0 1px 20px rgba(0,0,0,0.2);
+    padding: 5px;
+    "
+    >
+  </div>
+</div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.6/fuse.min.js" integrity="sha384-mxhvTsMXyoP8EZ3llbD7fxqwyqQVbdtrHUwQlKhnFcwkBNyX4+n8FVUpzH4qktFT" crossorigin="anonymous"></script>
+  <script>
+
+    let elements = {{ $.Scratch.Get "elements" }}
+    elements = elements.split(",").map(e => e.trim().toUpperCase())
+    let weights = {{ $.Scratch.Get "weights" }}
+    weights = weights.split(",").map(e => parseInt(e))
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const fuseOptions = {
+        shouldSort: true,
+        threshold: 0.3,
+        location: 0,
+        distance: 100,
+        maxPatternLength: 32,
+        minMatchCharLength: 1,
+        keys: ["textContent"]
+      };
+  
+      const content = Array.from(document.querySelectorAll(elements)).map((element, i) => 
+        {
+          const weightIndex = elements.indexOf(element.nodeName);
+          const weight = weights[weightIndex] || 1
+        return {
+          id: i,
+          textContent: element.textContent,
+          nodeName: element.nodeName,
+          weight: weight,
+          element: element
+          }
+        }
+      );
+  
+      const fuse = new Fuse(content, fuseOptions);
+  
+      document.getElementById('search-input').addEventListener('input', function() {
+
+        if (document.getElementById('search-input').value.length === 0) {
+          document.getElementById('search-results').style.display = "none"
+        }
+        else{
+          document.getElementById('search-results').style.display = "block"
+        }
+
+        let results = fuse.search(this.value);
+        document.getElementById('search-results').innerHTML = ''
+
+        results.forEach(result => {
+            let p = document.createElement("p")
+            p.style.overflow = "hidden";
+            p.innerHTML = `${result['textContent']}`
+            p.style.cursor = "pointer"
+
+            p.addEventListener('mouseover', function() {
+              this.style.backgroundColor = 'aliceblue';
+            });
+            
+            p.addEventListener('mouseout', function() {
+              this.style.backgroundColor = '';
+            });
+            p.addEventListener('click', function(e) {
+                  const y = result['element'].getBoundingClientRect().top + window.pageYOffset - 70;
+                  window.scrollTo({top: y, behavior: 'smooth'});
+                  document.getElementById('search-input').value = ""
+                  document.getElementById('search-results').innerHTML = ''
+              });
+            document.getElementById('search-results').appendChild(p)
+        })
+      });
+  
+    });
+  </script>
+  

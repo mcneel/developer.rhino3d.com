@@ -1,0 +1,13 @@
+{{ with .Get 0 }}
+
+<a href="{{ . }}">{{ . }}</a>
+
+<script>
+    // console.log(window.location.hash);
+    const url = window.location.origin + "{{ . }}" + window.location.hash;
+    // console.log(url);
+    window.location.href = url;
+</script>
+
+{{ end }}
+

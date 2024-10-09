@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="single-content-area flex-vertical">
+    <div class="page-title">
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+    </div>
+<div class="single-content-area">
+  {{- partial "gallery-cards" . -}}
+</div>
+</div>
+{{end}}

@@ -1,0 +1,172 @@
+{{/* NOTE: This layout is not being used (or should not be used). It was an initial attempt to author the 7/new page by using stories as an organizing approach. */}}
+{{/* This approach proved difficult to maintain. However, I'm keeping it here because there might be some useful code that can be used when we do have a more  */}}
+{{/* comprehensive set of features authored on this site.  -dan@mcneel.com 11/11/2020  */}}
+{{ define "main" }}
+<div class="single-content-area toc-page">
+  {{ if .Params.page_options.toc }}
+    {{ partial "toc.html" . }}
+  {{ end }}
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
+    {{/*  Rhino 7  ------------------------------------------------------------------------------------ */}}
+    {{ if eq .Site.Params.latestRhinoVersion 7 }}
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+        {{/*  Sub D special case  */}}
+        {{ with .Site.GetPage "/features/subd/_index.md" }}
+        <div style="padding-top:5px;padding-bottom:5px;"> 
+            <h2>{{ .Title }}</h2>            
+            {{ with .Params.what_why }}
+            <p>{{ . | markdownify }}</p>
+            {{ end }}
+            {{/*  <p>{{ .Params.whats_new | markdownify }}</p>  */}}
+            {{ if .Params.Banner }}
+                <a href="{{ .RelPermalink }}">{{- partial "banner" . -}}</a>
+            {{ else if .Params.Thumbnail }}
+                <div style="float:left;width:200px;height:150px;margin-right:20px;margin-bottom:5px;">{{- partial "thumbnail" . -}}</div>
+            {{ end }}
+            </div>
+            <div align="right">
+                <p><a href="{{ .RelPermalink }}"><b>{{ i18n "All-the-details" }}</b></a></p>
+            </div>
+        {{ end }}
+        
+        {{/*  Rhino.Inside Revit special case  */}}
+        {{ with .Site.GetPage "/features/rhino-inside-revit/index.md" }}        
+        <div style="padding-top:5px;padding-bottom:5px;">     
+            <h2>{{ .Title }}</h2>
+            {{ with .Params.what_why }}
+            <p>{{ . | markdownify }}</p>
+            {{ end }}
+            {{/*  <p>{{ .Params.whats_new | markdownify }}</p>  */}}
+            {{ if .Params.Banner }}
+                <a href="{{ .RelPermalink }}">{{- partial "banner" . -}}</a>
+                {{/*  <a href="{{ .RelPermalink }}"><p style="font-weight: bold; font-size: 7.5vw; text-align: center;">{{ i18n "bob-loves-revit" }}</p></a>  */}}
+            {{ else if .Params.Thumbnail }}
+                <div style="float:left;width:200px;height:150px;margin-right:20px;margin-bottom:5px;">{{- partial "thumbnail" . -}}</div>
+            {{ end }}
+            </div>
+            <div align="right">
+                <p><a href="{{ .RelPermalink }}"><b>{{ i18n "All-the-details" }}</b></a></p>
+            </div>
+        {{ end }}
+
+        {{/*  QuadRemesh special case  */}}
+        {{ with .Site.GetPage "/features/quadremesh/index.md" }}
+        <div style="padding-top:5px;padding-bottom:5px;"> 
+            <h2>{{ .Title }}</h2>
+            {{ with .Params.what_why }}
+            <p>{{ . | markdownify }}</p>
+            {{ end }}
+            {{/*  <p>{{ .Params.whats_new | markdownify }}</p>  */}}
+            {{ if .Params.Banner }}
+                <a href="{{ .RelPermalink }}">{{- partial "banner" . -}}</a>
+            {{ else if .Params.Thumbnail }}
+                <div style="float:left;width:200px;height:150px;margin-right:20px;margin-bottom:5px;">{{- partial "thumbnail" . -}}</div>
+            {{ end }}
+            </div>
+            <div align="right">
+                <p><a href="{{ .RelPermalink }}"><b>{{ i18n "All-the-details" }}</b></a></p>
+            </div>
+        {{ end }}
+
+        {{/*  Display special case  */}}
+        {{ with .Site.GetPage "/features/display/_index.md" }}
+        <div style="padding-top:5px;padding-bottom:5px;"> 
+            <h2>{{ .Title }}</h2>
+            {{ with .Params.whats_new.in_v7_summary }}
+            <p>{{ . | markdownify }}</p>
+            {{ end }}
+            {{/*  <p>{{ .Params.whats_new | markdownify }}</p>  */}}
+            {{ if .Params.Banner }}
+                <a href="{{ .RelPermalink }}">{{- partial "banner" . -}}</a>
+            {{ else if .Params.Thumbnail }}
+                <div style="float:left;width:200px;height:150px;margin-right:20px;margin-bottom:5px;">{{- partial "thumbnail" . -}}</div>
+            {{ end }}
+            </div>
+            <div align="right">
+                <p><a href="{{ .RelPermalink }}"><b>{{ i18n "All-the-details" }}</b></a></p>
+            </div>
+        {{ end }}
+        
+        {{ range where .Site.Sections "Section" "stories" }}
+            {{ range .Pages }}                
+                {{ $exclude := slice "3d-capture" "analysis" "large-projects" "interface" "serengeti" "licensing-and-administration" "reverse-engineering" "mesh-tools" "display" }}
+                {{ if not (in $exclude .File.ContentBaseName ) }}
+                    <h2>{{ .Title }}</h2>                
+                    {{/*  {{ if .Params.Banner }}
+                        {{- partial "banner" . -}}
+                    {{ end }}                  */}}
+                    <p>{{ .Params.whats_new.in_v7_summary | markdownify }}</p>
+
+                    {{ $.Scratch.Set "story" (lower .Title ) }}
+                    {{ $.Scratch.Set "story_urlized" (urlize ($.Scratch.Get "story")) }}
+                    {{/*  <p><i>Including:</i></p>  */}}
+                    <div class="gallery-container">
+                    {{ range where $.Site.Pages "Section" "features"}}
+                        {{ range .Pages }}
+                            {{ if or (in .Params.stories ($.Scratch.Get "story")) (in .Params.stories ($.Scratch.Get "story_urlized")) }}
+                                {{/* Check if this is a new feature or if it's one with updates for the current version */}}
+                                {{ $new_feature := (eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since)) }}
+                                {{ $.Scratch.Set "new_feature" "false" }}
+                                {{- if $new_feature -}}
+                                    {{ $.Scratch.Set "new_feature" "true" }}
+                                {{- end -}}
+                                {{ $.Scratch.Set "updated_feature" "false" }}
+                                {{- with .Params.whats_new.in_v7_summary -}}
+                                    {{ $.Scratch.Set "updated_feature" "true" }}
+                                {{- end -}}
+                                
+                                {{ if or (eq ($.Scratch.Get "new_feature") "true") (eq ($.Scratch.Get "updated_feature") "true") }}                                
+                                <div class="card">
+                                    {{ $.Scratch.Set "page_rel_permalink" .RelPermalink }}
+                                    {{ $.Scratch.Set "has-thumbnail" "false" }}
+                                    {{- with .Params.thumbnail -}}
+                                      {{ $.Scratch.Set "has-thumbnail" "true" }}
+                                    {{- end -}}
+                                    {{ if eq ($.Scratch.Get "has-thumbnail") "true" }}
+                                        {{ if hasPrefix .Params.Thumbnail "/images/"}}
+                                            {{/*  Global image folder  */}}
+                                            {{- $image := resources.Get .Params.Thumbnail -}}
+                                            {{ $thumbnail := $image.Fill "800x450 Center" }}
+                                            {{ with $thumbnail }}
+                                                    <a href="{{ $.Scratch.Get "page_rel_permalink" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                                            {{ end }}
+                                        {{ else }}
+                                            {{/*  Page bundle  */}}
+                                            {{ with .Resources.GetMatch ( printf "%s" .Params.thumbnail) }}
+                                                {{ $thumbnail := .Fill "800x450 Center" }}
+                                                {{ with $thumbnail }}
+                                                    <a href="{{ $.Scratch.Get "page_rel_permalink" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                                                {{ end }}
+                                            {{ end }}
+                                        {{ end }}
+                                    {{ end }}
+                                    <div class="card-container">
+                                        <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+                                        {{ if (eq ($.Scratch.Get "new_feature") "true") }}
+                                            <p>{{ truncate 75 .Params.short_description }}</p>
+                                        {{ else if (eq ($.Scratch.Get "updated_feature") "true") }}
+                                            <p>{{ truncate 75 .Params.whats_new.in_v7_summary }}</p>
+                                        {{ else }}
+                                            <p>{{ truncate 75 .Description }}</p>
+                                        {{ end }}
+                                    </div>
+                                </div>
+                                {{ end }}
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                    </div>
+                    {{/*  <div align="right">
+                        <p><a href="{{ .RelPermalink }}"><b>{{ i18n "All-the-details" }}</b></a></p>
+                    </div>  */}}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+    {{ end }}
+    {{/*  End Rhino 7  -------------------------------------------------------------------------------- */}}
+    {{- partial "edit_button.html" . -}}
+  </div>
+</div>
+{{ end }}

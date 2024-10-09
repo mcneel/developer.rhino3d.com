@@ -1,0 +1,4 @@
+{{ $.Scratch.Add "background" (.Get "background" | default "#900") }}
+<span class="badge-btn" style='background-color: {{ $.Scratch.Get "background" }};'>
+    {{ .Inner }}
+</span>

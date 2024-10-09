@@ -1,0 +1,7 @@
+{{ $tag := "" }}
+{{ if .IsNamedParams }}    
+    {{ if .Get "tag"}}{{ $tag =  .Get "tag" }}{{ end }}
+{{ else }}
+    {{ $tag = .Get 0 }}
+{{ end }}
+<search-tag style="display: block; width:0px; height:0px; overflow: hidden;">{{ $tag }}</search-tag>

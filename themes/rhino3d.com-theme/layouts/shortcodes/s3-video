@@ -1,0 +1,64 @@
+{{ $id := .Get "id" }}
+{{ $texttrack := .Get "texttrack" }}
+{{ $autoplay := .Get "autoplay" }}
+<div class="video-player">
+    <div class="caption-locator">
+        <center>
+        <span class="rma-caption" style="display:none;"></span>
+    </center>
+    </div>
+    {{/*
+      2023-11-13, Brian G
+      Autoplay of video requires:
+        `muted` setting because videos that make noise are not allowed to auto play
+        `playsinline` to work on mobile Safari on iOS
+       */}}
+    <video 
+      id="video" 
+      controls 
+      {{ if $autoplay }}autoplay loop playsinline muted{{ end }} 
+      preload="metadata" 
+      style="width:100%"
+      poster="https://www.rhino3d.com/static-media/video/{{ $id }}/{{$id}}.jpg"
+      >
+        <source src="https://www.rhino3d.com/static-media/video/{{ $id }}/{{ $id }}-1080p.mp4" type="video/mp4" />
+        {{ if $texttrack }}
+        <track
+        kind="metadata"
+        srclang="{{.Site.Language.Lang}}"
+        src="https://www.rhino3d.com/static-media/video/{{ $id }}/{{ $texttrack }}.vtt"
+        default
+        />
+        {{ end }}
+    </video>
+</div>
+
+  <script>
+    //window.onload = function() {
+        let video = document.querySelector('video');
+        const track = video.textTracks[0] //you should choose you text track
+        track.addEventListener('cuechange', onCueChange);
+        caption = document.querySelector('.rma-caption');
+        caption.innerHTML = 'Blah';
+      
+        function onCueChange(event) {
+          console.log(event.currentTarget.activeCues);
+          if (event.currentTarget.activeCues.length > 0) {
+            caption.style.display = 'inline-block'
+            caption.innerHTML = event.currentTarget.activeCues[0].text;
+            //console.log(event.currentTarget.activeCues[0].text);
+          }
+          else {
+            caption.style.display = 'none';
+            caption.innerHTML = "(empty)"
+            //console.log("empty");
+          }
+          const cues = event.currentTarget.cues;
+          for (let i = 0; i < cues.length; i++) {
+            cues[i].line = 5;
+            //cues[i].size = 0;
+            cues[i].visibility = 'hidden';
+          }
+        }
+      //}    
+  </script>

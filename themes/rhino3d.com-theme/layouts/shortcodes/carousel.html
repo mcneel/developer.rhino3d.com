@@ -1,0 +1,340 @@
+
+{{ $.Scratch.Add "height" (.Get "height" | default "300px") }}
+{{ $.Scratch.Add "mode" (.Get "mode" | default "contain") }}
+{{ $.Scratch.Add "auto-slide" (.Get "auto-slide" | default "0") }}
+{{ $id := (print "carousel" "-" .Ordinal) }}
+
+<div style="margin-top:15px; margin-bottom: 15px;">
+<div class="wrapper">
+    <div class="container">
+      <div class="carousel" id="{{$id}}"></div>
+    </div>
+</div>
+</div>
+<style>
+    body {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      
+      .wrapper {
+        display: table;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .container {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+      }
+      
+      .carousel {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: {{ $.Scratch.Get "height" }};
+        overflow: hidden;
+      }
+      
+      .carousel__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -25%;
+        width: 50%;
+        height: 100%;
+        background-position: center;
+        background-size: {{ $.Scratch.Get "mode" }};
+        background-repeat: no-repeat;
+        background-color: transparent;
+        transition: transform 0.5s, opacity 0.5s;
+      }
+      
+      .carousel__item.static {
+        transition: none;
+      }
+      
+      .carousel__item--left {
+        transform: translateX(-75%) scale(0.5);
+        opacity: 0.4;
+      }
+      
+      .carousel__item--center {
+          {{/*  box-shadow: 0px 0px 8px #0000002e;  */}}
+          filter: drop-shadow(0px 0px 3px rgba(66,55,55, .1));
+        z-index: 1;
+      }
+
+      .caption {
+        color: #858585;
+        pointer-events: none;
+    }
+      
+      .carousel__item--right {
+        transform: translateX(75%) scale(0.5);
+        opacity: 0.4;
+      }
+      
+      .carousel__item--out { /* ¯\_(ツ)_/¯ */ }
+      
+      .carousel__item--out.carousel__item--left {
+        transform: translateX(-125%) scale(0.5);
+      }
+      
+      .carousel__item--out.carousel__item--right {
+        transform: translateX(125%) scale(0.5);
+      }
+      
+      .carousel__arrow {
+        display: table-cell;
+        vertical-align: middle;
+        position: absolute;
+        top: 0;
+        width: 25%;
+        height: 100%;
+        {{/*  background-color: rgba(255, 255, 255, 0.5);  */}}
+      }
+      
+      .carousel__arrow::before {
+        display: inline-block;
+        position: relative;
+        top: 50%;
+        font-size: 80px;
+        line-height: 1;
+        transform: translateY(-50%);
+        color: white;
+        text-shadow: 0 0 10px #5a5a5a;
+      }
+      
+      .carousel__arrow--left {
+        left: 0;
+      }
+      
+      .carousel__arrow--left::before {
+        content: '«';
+      }
+      
+      .carousel__arrow--right {
+        right: 0;
+      }
+      
+      .carousel__arrow--right::before {
+        content: '»';
+      }
+</style>
+<script type="text/javascript" src='{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}'>
+</script>
+<script type="module">
+    const  data = TOML.parse("{{ .Inner }}");
+
+    {{/*  const permaLink = '{{$.Page.Permalink}}'  */}}
+    {{/*  const baseLink = "https://www.rhino3d.com/new-source";
+    data.items.forEach(item =>{
+      item.image = `${baseLink}${item.image}`
+      console.log("item",item)
+    })  */}}
+
+    class Carousel {
+        constructor (config) {
+          this.target = config.target;
+        this.items = config.items;
+        this.active = 0;
+        this.animating = false;
+        this.interrupted = false;
+
+        this.target.addEventListener('click', ()=>{this.interrupted = true;});
+        
+        this.populate();
+      }
+      
+      slide (forward) {
+          const delay = 50;
+        
+        this.elements.items.out.classList.add('static');
+        
+          switch (forward) {
+               case true: 
+              setTimeout(() => {
+                this.elements.items.out.classList.add('carousel__item--right');
+                this.elements.items.out.classList.remove('carousel__item--left');
+              
+              setTimeout(() => {
+                  this.elements.items.out.classList.remove('static');
+                  
+                setTimeout(() => {
+                  this.elements.items.left.classList.add('carousel__item--out');
+                  
+                  this.elements.items.center.classList.remove('carousel__item--center');
+                  this.elements.items.center.classList.add('carousel__item--left');
+                  
+                  this.elements.items.right.classList.remove('carousel__item--right');
+                  this.elements.items.right.classList.add('carousel__item--center');
+                  
+                  this.elements.items.out.classList.remove('carousel__item--out');
+                }, delay);
+              }, delay);
+            }, delay);
+          break;
+          
+          case false:
+              setTimeout(() => {
+                this.elements.items.out.classList.add('carousel__item--left');
+                this.elements.items.out.classList.remove('carousel__item--right');
+              
+              setTimeout(() => {
+                  this.elements.items.out.classList.remove('static');
+              
+                setTimeout(() => {
+                  this.elements.items.right.classList.add('carousel__item--out');
+    
+                  this.elements.items.center.classList.remove('carousel__item--center');
+                  this.elements.items.center.classList.add('carousel__item--right');
+    
+                  this.elements.items.left.classList.remove('carousel__item--left');
+                  this.elements.items.left.classList.add('carousel__item--center');
+    
+                  this.elements.items.out.classList.remove('carousel__item--out');
+                }, delay);
+              }, delay);
+            }, delay);      
+          break;
+        }  
+                  
+        setTimeout(() => {
+          this.elements.items.left = this.target.querySelector('.carousel__item--left:not(.carousel__item--out)');
+          this.elements.items.center = this.target.querySelector('.carousel__item--center');
+          this.elements.items.right = this.target.querySelector('.carousel__item--right:not(.carousel__item--out)');
+          this.elements.items.out = this.target.querySelector('.carousel__item--out');
+          
+          this.animating = false;
+        }, delay * 4);
+      }
+
+      caption (text) {
+        const p = document.createElement("p");
+        p.classList.add('caption');
+        p.innerHTML = text;
+        return p;
+      }
+      
+      updateValues (forward) {
+          if (!this.animating) {
+            this.animating = true;
+          
+          let newItem = 0;
+    
+            switch (forward) {
+
+            case true:
+              if (this.active < this.items.length - 1) {
+                ++this.active;
+              } else {
+                this.active = 0;
+              }
+    
+              newItem = this.active + 1 <= this.items.length - 1 ? this.active + 1 : 0;
+            break;
+            
+            case false:
+              if (this.active > 0) {
+                --this.active;
+              } else {
+                this.active = this.items.length - 1;
+              }
+    
+              newItem = this.active - 1 >= 0 ? this.active - 1 : this.items.length - 1;
+            break;
+          }
+    
+          this.elements.items.out.style.backgroundImage = `url('${this.items[newItem].image}')`;
+          this.elements.items.out.firstChild.innerHTML = this.items[newItem].caption;
+
+          this.slide(forward);
+        }
+      }
+      
+      eventListeners () {
+          this.elements.arrows.left.addEventListener('click', this.updateValues.bind(this, false));
+          this.elements.arrows.right.addEventListener('click', this.updateValues.bind(this, true));
+      }
+
+
+      populate () {
+        function append (obj, target) {
+          for (const el in obj) {
+            if (obj[el].nodeName) {
+              target.appendChild(obj[el]);
+            } else {
+              append(obj[el], target);
+            }
+          }
+        }
+
+
+        this.elements = {};
+        this.elements.items = {};
+        this.elements.arrows = {};
+        
+        this.elements.items.left = document.createElement('div');
+        this.elements.items.left.appendChild(this.caption(this.items[this.items.length - 1].caption));
+        this.elements.items.center = document.createElement('div');
+        this.elements.items.center.appendChild(this.caption(this.items[0].caption));
+        this.elements.items.right = document.createElement('div');
+        this.elements.items.right.appendChild(this.caption(this.items[1].caption));
+        this.elements.items.out = document.createElement('div');
+        this.elements.items.out.appendChild(this.caption("out"));;
+        this.elements.arrows.left = document.createElement('div');
+        this.elements.arrows.right = document.createElement('div');
+        
+        this.elements.items.left.classList.add('carousel__item');
+        this.elements.items.center.classList.add('carousel__item');
+        this.elements.items.right.classList.add('carousel__item');
+        this.elements.items.out.classList.add('carousel__item');
+        this.elements.items.left.classList.add('carousel__item--left');
+        this.elements.items.center.classList.add('carousel__item--center');
+        this.elements.items.right.classList.add('carousel__item--right');
+        this.elements.items.out.classList.add('carousel__item--right');
+        this.elements.items.out.classList.add('carousel__item--out');
+        this.elements.arrows.left.classList.add('carousel__arrow');
+        this.elements.arrows.right.classList.add('carousel__arrow');
+        this.elements.arrows.left.classList.add('carousel__arrow--left');
+        this.elements.arrows.right.classList.add('carousel__arrow--right');
+        
+        this.elements.items.left.style.backgroundImage = `url('${this.items[this.items.length - 1].image}')`;
+        this.elements.items.center.style.backgroundImage = `url('${this.items[0].image}')`;
+        this.elements.items.right.style.backgroundImage = `url('${this.items[1].image}')`;
+        
+        append(this.elements, this.target);
+        
+        this.eventListeners();
+      }
+    }
+    
+    const carousel = new Carousel({
+        target: document.querySelector('#'+"{{$id}}"),
+      items:  data.items
+    });
+
+    {{ if ne (.Get "auto-slide") "0" }}
+    var autoSlide = parseInt({{ $.Scratch.Get "auto-slide" }}, 10);
+    var autoSlideInterval;
+    function resetAutoSlide(){
+      if(autoSlide) {
+        if(autoSlideInterval) {
+          clearInterval(autoSlideInterval);
+        }
+        autoSlideInterval = setInterval(function(){
+          if (!carousel.interrupted){carousel.updateValues(true);}
+        }, autoSlide)
+      }
+    }
+    resetAutoSlide();
+
+  {{- end }}
+    
+</script>
