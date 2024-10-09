@@ -17,7 +17,7 @@ other = "新闻"
 other = "社区"
 
 [learn]
-other = "教学"
+other = "学习"
 
 [support]
 other = "支持"
@@ -33,6 +33,9 @@ other = "管理您的账户、授权与协作团队"
 
 [sign-in]
 other = "登录"
+
+[sign-out]
+other = "登出"
 
 [sign-in-title]
 other = "登录以管理您的账户、授权与协作团队"
@@ -71,12 +74,15 @@ other = "Rhino 指令"
 [NEW-in-Vx]
 other = "{{ .Params.included_in.since }} 新功能"
 
-# 请勿翻译 {{ }} 占位符的内容。它会被模板替换为正确的版本。
+# 请勿翻译 [VERSION] 占位符的内容。它会被模板替换为正确的版本。
 [New-in-N]
 other = "[VERSION] 新功能"
 
 [New-in-Rhino-7]
 other = "Rhino 7 新功能"
+
+[New-in-Rhino-8]
+other = "Rhino 8 新功能"
 
 [All-the-details]
 other = "所有详情..."
@@ -110,7 +116,7 @@ other = "在 GitHub 上编辑"
 
 # context: 页面底部的编辑菜单
 [Edit-data]
-other = "数据编辑"
+other = "编辑数据"
 
 # context: 页面底部的编辑菜单
 [Admin]
@@ -154,23 +160,23 @@ other = "选择其他地区或语言"
 
 # context: 平台语言切换对话框，当它们只与一个平台相关时，有时会出现在功能页面的顶部
 [Windows-only]
-other = "仅适用于 Windows"
+other = "仅限 Windows"
 
 # context: 平台语言切换对话框，当它们只与一个平台相关时，有时会出现在功能页面的顶部
 [macOS-only]
-other = "仅适用于 macOS"
+other = "仅限 macOS"
 
 [Download-Rhino]
 other = "下载 Rhino"
 
 [Download-Rhino-Both]
-other = "[LINK]为 Windows 或者 Mac 下载 [PRODUCT] [VERSION] [TYPE]  [/LINK]。"
+other = "[LINK]为 Windows 或 Mac 下载 [PRODUCT] [VERSION] [TYPE] [/LINK]。"
 
 [Download-Rhino-Windows]
-other = "[LINK]为 Windows 下载 [PRODUCT] [VERSION] [TYPE]  [/LINK]。"
+other = "[LINK]为 Windows 下载 [PRODUCT] [VERSION] [TYPE] [/LINK]。"
 
 [Download-Rhino-Mac]
-other = "[LINK]为 Mac 下载 [PRODUCT] [VERSION] [TYPE]  [/LINK]。"
+other = "[LINK]为 Mac 下载 [PRODUCT] [VERSION] [TYPE] [/LINK]。"
 
 [Rhino]
 other = "Rhino"
@@ -200,7 +206,7 @@ other = "改进"
 other = "改进内容"
 
 [Mac-only]
-other = "仅适用于 Mac"
+other = "仅限 Mac"
 
 [Windows-and-Mac]
 other = "Windows | Mac"
@@ -210,9 +216,9 @@ other = "Windows | Mac"
 other = "."
 
 # 这将在页面头部的标题下呈现。它需要一个特定的宽度，所以如果它超过了英语的宽度太多，
-# 最好不要翻译它，或者找一种压缩的办法。
+# 最好将其保持不翻译，或者找出一种方式将其缩短。
 [product-tagline]
-other = "设计、造型、提案、分析、实现..."
+other = "设计，造型，提案，分析，实现..."
 
 # 这是顶部导航栏搜索字段中的占位符文本
 [search-navbar]
@@ -220,7 +226,7 @@ other = "搜索"
 
 # 页面上方的主页链接
 [student-or-teacher]
-other = "学生或教师?"
+other = "学生或教师？"
 
 # 首页视频中的字幕
 [caption-rhino-7]
@@ -234,25 +240,37 @@ other = "更精确、更自由。"
 [caption-rhino-7-details]
 other = "增加了细分建模、Rhino.Inside.Revit、四边面重新拓扑等新功能。"
 
-# 首页视频中的字幕
+# 首页标题
+[caption-rhino-8]
+other = "Rhino 8"
+
+# 首页副标题说明
+[caption-rhino-8-subtitle]
+other = "Charging Forward"
+
+# Rhino 8 字幕的子标题
+[caption-rhino-8-details]
+other = "现在可提供 ShrinkWrap、SubD Creases、Mac Speed Boost 等功能。"
+
+# 首页视频字幕的链接标题
 [caption-learn-more]
 other = "了解更多"
 
-# 首页视频中的字幕
+# 首页视频字幕的链接标题
 [caption-try]
 other = "试用"
 
 # 视频标题中购买链接之前的链接
 [caption-or-conjoiner]
-other = ", 或者"
+other = ", 或 "
 
-# 首页视频中的字幕
+# 首页视频字幕的链接标题
 [caption-buy]
 other = "购买"
 
 # 首页视频中的字幕
 [caption-rhino-refined]
-other = "Rhino 更加精细"
+other = "Rhino 更加精炼"
 
 # 首页视频中字幕标题
 [caption-less-pain]
@@ -276,15 +294,15 @@ other = "优秀的作品"
 
 # 视频字幕中的子标题
 [caption-presentation-details]
-other = "我们对工作显示模式及演示工具进行了改进，如渐变剖面线、降噪器、PBR 材质、图层册等等。"
+other = "改进的工作显示模式和新的展示工具，如渐变剖面线、降噪器、PBR 材质、图层册等等。"
 
 # 学习页面的新导航按钮
 [new]
-other = "最新"
+other = "新功能"
 
 # 学习页面的精选按钮和标签
 [featured]
-other = "精选"
+other = "功能"
 
 # 学习页面的所有按钮和标签
 [all]

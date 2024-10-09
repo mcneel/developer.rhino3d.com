@@ -34,6 +34,9 @@ other = "アカウント、ライセンス、チームを管理"
 [sign-in]
 other = "サインイン"
 
+[sign-out]
+other = "サインアウト"
+
 [sign-in-title]
 other = "サインインして、アカウント、ライセンス、チームを管理"
 
@@ -85,7 +88,7 @@ other = "Rhino 8 の新機能"
 other = "すべての詳細..."
 
 [bob-loves-revit]
-other = "Bob ❤️s Revit "
+other = "Bob ❤️s Revit 😘"
 
 # This is optionally shown as a header in some feature pages
 [new-in-rhino-7]
@@ -247,7 +250,7 @@ other = "充電、進行中"
 
 # Details of the Rhino 8 caption
 [caption-rhino-8-details]
-other = "ShrinkWrap、シャープなSubD、その他の新機能を搭載しました。またMacでの速度が向上しました。"
+other = "ShrinkWrap、SubDのクリース、その他の新機能を搭載しました。またMacでの速度が向上しました。"
 
 # Link title on homepage video captions
 [caption-learn-more]

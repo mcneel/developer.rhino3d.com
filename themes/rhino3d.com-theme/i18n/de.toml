@@ -34,6 +34,9 @@ other = "Verwaltung Ihres Kontos sowie Ihrer Lizenzen und Teams"
 [sign-in]
 other = "Anmelden"
 
+[sign-out]
+other = "Abmelden"
+
 [sign-in-title]
 other = "Melden Sie sich an, um Ihr Konto sowie Ihrer Lizenzen und Teams zu verwalten"
 
@@ -247,7 +250,7 @@ other = "Vorwärts"
 
 # Details of the Rhino 8 caption
 [caption-rhino-8-details]
-other = "Jetzt verfügbar mit Aufschrumpfen, Scharfe SubD, Mac Speed Boost und weiteren."
+other = "Jetzt verfügbar mit Aufschrumpfen, SubD-Falten, Mac Speed Boost und mehr."
 
 # Link title on homepage video captions
 [caption-learn-more]
