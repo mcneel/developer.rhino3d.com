@@ -235,3 +235,12 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .proxy-skin.skin-sales .sales_details #column_ls {
+      width: 100%;
+     }
+    .proxy-skin.skin-sales .sales_details #column_rs {
+      width: 100%;
+     }
+}

@@ -16,7 +16,7 @@
                     <tr>
                     <th class= "th-sticky" style="text-align: left;">{{ i18n "Name" }}</th>
                     <th class= "th-sticky" style="text-align: left;">{{ i18n "File-Extension" }}</th>
-                    <th class= "th-stcky" style="text-align: center; white-space: nowrap;">{{ i18n "Open-Import" }}</th>
+                    <th class= "th-sticky" style="text-align: center; white-space: nowrap;">{{ i18n "Open-Import" }}</th>
                     <th class= "th-sticky" style="text-align: center; white-space: nowrap;">{{ i18n "Save-Export" }}</th>
                     <th class= "th-sticky" style="text-align: center;">{{ i18n "Latest-Updates" }}</th>
                     </tr>
@@ -28,8 +28,8 @@
                     {{- $docs_lang_url := print $docs_help_url .Site.Params.docLang -}}
                     {{- $docs_fileio_url := print $docs_lang_url "/index.htm#fileio/" -}}
                     {{ $.Scratch.Set "base_url" $docs_fileio_url }}
-                    {{ with index .Site.Data.formatsnew .Site.Language.Lang }}
-                        {{ range sort .formatsnew "weight" }}
+                    {{ with index .Site.Data.formats .Site.Language.Lang }}
+                        {{ range sort .formats "weight" }}
                             <tr>
                                 <td style="width: 30%;">
                                     {{ $.Scratch.Set "name" .name }}

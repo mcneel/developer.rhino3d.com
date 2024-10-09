@@ -7,7 +7,7 @@
         {{ with .Page.Params.what_why }}
             <p>{{ . | markdownify }}</p>
         {{ end }}
-        {{ with .Page.Params.whats_new.in_v7_summary }}
+        {{ with .Page.Params.whats_new.in_v8_summary }}
             <p>{{ . | markdownify }}</p>
         {{ end }}
         <div>
@@ -28,8 +28,8 @@
                     {{- $docs_lang_url := print $docs_help_url .Site.Params.docLang -}}
                     {{- $docs_fileio_url := print $docs_lang_url "/index.htm#fileio/" -}}
                     {{ $.Scratch.Set "base_url" $docs_fileio_url }}
-                    {{ with index .Site.Data.formats .Site.Language.Lang }}
-                        {{ range sort .formats "weight" }}
+                    {{ with index .Site.Data.formatsnew .Site.Language.Lang }}
+                        {{ range sort .formatsnew "weight" }}
                             <tr>
                                 <td style="width: 30%;">
                                     {{ $.Scratch.Set "name" .name }}
@@ -72,8 +72,12 @@
                                     {{ end }}
                                 </td>
                                 {{ $.Scratch.Set "extension" .extension }}
-                                {{ if .whats_new.in_v7 }}
-						  	        <td class="FileFormatCellWithComment" title="{{ .whats_new.in_v7 }}" style="text-align: center; color:#901010;"><i class="fas fa-plus-circle"></i> {{ i18n "Improved" }}<span class="FileFormatCellComment"><span style="text-align: center; color:#901010;"><i class="fas fa-arrow-circle-left"></i> {{ i18n "Improved" }}: {{ $.Scratch.Get "extension" }}</span><span style="text-align: left;">{{ .whats_new.in_v7 | markdownify }}</span></span></td>
+                                {{ if .whats_new.in_v8 }}
+                                    {{ if eq 8 (int .since) }}
+                                        <td class="FileFormatCellWithComment" title="{{ .whats_new.in_v8 }}" style="text-align: center; color:#901010;"><i class="fas fa-file"></i> {{ i18n "New-in-Rhino-8" }}<span class="FileFormatCellComment"><span style="text-align: center; color:#901010;"><i class="fas fa-arrow-circle-left"></i> {{ i18n "New-in-Rhino-8" }}: {{ $.Scratch.Get "extension" }}</span><span style="text-align: left;">{{ .whats_new.in_v8 | markdownify }}</span></span></td>
+                                    {{ else }}
+                                        <td class="FileFormatCellWithComment" title="{{ .whats_new.in_v8 }}" style="text-align: center; color:#901010;"><i class="fas fa-plus-circle"></i> {{ i18n "Improved" }}<span class="FileFormatCellComment"><span style="text-align: center; color:#901010;"><i class="fas fa-arrow-circle-left"></i> {{ i18n "Improved" }}: {{ $.Scratch.Get "extension" }}</span><span style="text-align: left;">{{ .whats_new.in_v8 | markdownify }}</span></span></td>
+                                    {{ end }}
 						        {{ else }}
 						  	        <td style="text-align: left;"></td>
 						        {{ end }}
