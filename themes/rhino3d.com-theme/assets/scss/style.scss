@@ -20,6 +20,7 @@
 @import "_page/home";
 @import "_page/support";
 @import "_page/download";
+@import "_page/scripting";
 
 @import "_mixin/index";
 
@@ -36,7 +37,7 @@
 @import "_partial/comparison_table";
 @import "_partial/app-engine-html";
 
-
+@import "_shortcodes/_left-selector-cards";
 @import "_shortcodes/_link-card";
 
 /* Placed here to override the partial card style in the learn page galleries */

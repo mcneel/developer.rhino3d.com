@@ -11,6 +11,8 @@
 <div class="new-callout-bullet new-callout-version-{{- $.Scratch.Get "version" -}}"><a href="/{{- $.Scratch.Get "version" -}}/new/">{{- ($.Scratch.Get "version") -}}</a></div>
 {{- else if eq "small" ($.Scratch.Get "style") -}}
 <div class="new-callout-small new-callout-version-{{- $.Scratch.Get "version" -}}"><a href="/{{- $.Scratch.Get "version" -}}/new/">{{- ($.Scratch.Get "version") -}}</a></div>
+{{- else if eq "inline" ($.Scratch.Get "style") -}}
+<div class="new-callout new-callout-inline"><a href="/{{- $.Scratch.Get "version" -}}/new/">{{- replace (i18n "New-in-N") "[VERSION]" ($.Scratch.Get "version") -}}</a></div>
 {{- else -}}
 <div class="new-callout new-callout-version-{{- $.Scratch.Get "version" -}}"><a href="/{{- $.Scratch.Get "version" -}}/new/">{{- replace (i18n "New-in-N") "[VERSION]" ($.Scratch.Get "version") -}}</a></div>
 {{- end -}}
