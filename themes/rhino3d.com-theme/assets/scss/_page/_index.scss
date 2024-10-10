@@ -31,6 +31,12 @@ h2 {
 	//   work. See WWW-1154
 	//	padding-top: 10px;
 }
+h2.large-font { // this is for select cases where we want an anchor link on an H1 sized headline
+	font-size: $global_h1_size; 
+	border-bottom: none;
+	padding-bottom: none;
+	margin-top: 15 px;
+}
 h3 {
 	font-size:  $global_h3_size; // pre font-size discussion: 22px;
 	margin-top: 10px;
