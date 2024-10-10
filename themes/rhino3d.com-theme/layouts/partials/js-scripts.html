@@ -9,7 +9,6 @@
 {{ end }}
 <script type="text/javascript" src="{{ (resources.Get "/script/protocolcheck.js" | resources.Fingerprint).Permalink }}"></script>
 <script type="text/javascript" src="{{ (resources.Get "/script/theme.js" | resources.Fingerprint).Permalink }}"></script>
-<script type="text/javascript" src="{{ (resources.Get "/script/mcneel_accounts_login_status.js" | resources.Fingerprint).Permalink }}"></script>
 <script>
     mca.addLogoutListenerForClientId(window.location.host == "www.rhino3d.com" ? "rhino3dWebsite" : "rhino3dWebsiteDEBUG", function (url) {
       console.log("Redirecting to logout URL: " + url);
@@ -17,7 +16,7 @@
     });
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-512742-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-512742-1" crossorigin="anonymous"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -27,11 +26,13 @@
 </script>
 
 {{- if .Site.Params.supportsChat -}}
-  {{- if in "en es fr de it" $.Site.Language -}}
-    {{- partial "snapengage" . }}
-  {{- end -}}
-  {{- if in "kr" $.Site.Language -}}
-    {{- partial "chat-talk-talk" . }}
+  {{- if not .Params.page_options.disableChat -}}
+    {{- if in "en es fr de it" $.Site.Language -}}
+      {{- partial "snapengage" . }}
+    {{- end -}}
+    {{- if in "kr" $.Site.Language -}}
+      {{- partial "chat-talk-talk" . }}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
@@ -61,5 +62,6 @@
 
 {{/*  Homepage video  */}}
 {{ if .IsHome }}
-{{- partial "video-sync-js" . }}
+{{/* 2023-11-13, BG: remove javascript from homepage; no longer needed*/}}
+{{/*- partial "video-sync-js" . */}}
 {{ end }}
