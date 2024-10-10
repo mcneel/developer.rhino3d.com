@@ -1,7 +1,7 @@
 {{ $toc := .Site.Params.tableOfContents }}
 {{ $hRange := printf "[%s-%s]" (string $toc.startLevel) (string $toc.endLevel)}}
 
-{{- $headers := findRE (printf "<h%s.*?>(.|\n])+?</h%s>" $hRange $hRange) .Content -}}
+{{- $headers := findRE (printf "<h%s.*?>(.|\n)*?</h%s>" $hRange $hRange) .Content -}}
 {{- $has_headers := ge (len $headers) 1 -}}
 {{- if $has_headers -}}
 
