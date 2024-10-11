@@ -155,7 +155,7 @@ model-viewer {
 
 /*
 ##################################################################
-# Site Home - from RIR - experimental
+# Site Home
 ##################################################################
 */
 
@@ -201,32 +201,30 @@ model-viewer {
     }
 }
 
-.home-headline-container {
+.home-headline-container-transparent {
     //display: flex;
     position: absolute;
     margin: match-parent;
     text-align: center;
-    top: $global-nav-height-large;
+    top: 0px;
     right: 0;
     align-items: right;
     justify-content: right;
     box-sizing: border-box;
     width: auto;
-
-    padding-right: 17em;
-    padding-top: 2em;
-    background-color: white;
-    box-shadow: 0 0 2.5em 2.5em white;
-    opacity: 85%;
-    border-bottom-left-radius: $global-border-radius;
+    background-color: $global-background-rhino-grid-color;
+    box-shadow: 0 0 1.0em 1.0em $global-background-rhino-grid-color;
+    opacity: 100%;
     
     @media only screen and (max-width: $global-mobile-maxwidth) { 
-        padding-right: 2em;
+        padding-left: 1em;
+        padding-right: 1em;
+        opacity: 100%;
     }
 }
 
 .home-headline {
-    font-size: 66px;
+    font-size: 60px;
     white-space: nowrap;
     font-weight: bold;
     color: $global-rhino-color;
@@ -256,7 +254,7 @@ model-viewer {
 }
 
 .home-short-description {
-    font-size: 1.4em;
+    font-size: 1.35em;
     max-width: 400px;
     color: $global-dark-grey;
     @media only screen and (max-width: $global-mobile-maxwidth) { 
@@ -266,7 +264,7 @@ model-viewer {
 
 .home-link {
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 1.2em;
     white-space:nowrap;
 }
 
@@ -297,8 +295,6 @@ model-viewer {
 }
 
 .home-market {
-    background-color: $global-light-grey;
-
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: calc((100vw - #{$global-desktop-maxwidth})/2);
@@ -307,9 +303,6 @@ model-viewer {
     @media only screen and (max-width: $global-desktop-maxwidth) { 
         padding-left: 20px;
         padding-right: 20px;
-    }
-    h2 {
-        font-size: 55px;
     }
 }
 
@@ -337,12 +330,14 @@ model-viewer {
 
 .home-grasshopper {
     background-size: cover;
-    background-image: url("https://www.rhino3d.com/new-source/images/home_feature_gh.png");
+    background-image: url("https://www.rhino3d.com/new-source/images/home_feature_gh.webp");
     background-position: center;
     padding-top: 40px;
     padding-bottom: 40px;
-    padding-left: calc((100vw - #{$global-desktop-maxwidth})/2);
-    padding-right: calc((100vw - #{$global-desktop-maxwidth})/2);
+    padding-left: 20px;
+    padding-right: 20px;
+    //padding-left: calc((80vw - #{$global-desktop-maxwidth})/2);
+    //padding-right: calc((80vw - #{$global-desktop-maxwidth})/2);
     font-size: 1.3em;
     color: $global-light-color;
     text-shadow: 2px 4px 8px black;
@@ -648,7 +643,7 @@ model-viewer {
 }
 
 .rhino-bg {
-    background-color: #e3e3e3;
+    background-color: $global-background-rhino-grid-color;
 }
 
 .soft-shadow {
@@ -668,3 +663,9 @@ model-viewer {
     color: #82868B;
     background: #F9F953;
   }
+
+.homepage-hero-images {
+    @media only screen and (max-width: $global-mobile-maxwidth) { 
+        display: none;
+    }
+}
