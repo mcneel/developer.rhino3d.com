@@ -43,7 +43,7 @@ toc_type = "single"
 
 ## Description
 
--   `length` - A range of `min` and `max` integers representing the minimum and maximum characters--inclusive--a license key is expected to contain. To avoid conflicts with other formats, this number should be as specific as possible.
+-   `length` - A range of `min` and `max` integers representing the minimum and maximum characters--inclusive--a license key is expected to contain. To avoid conflicts with other formats, this number should be as specific as possible. Note that the length is for the overall license key and includes the characters in the prefix.
 -   `prefix` - A string representing the common prefix a license key is expected to begin with. The prefix should be as specific as possible to avoid conflicts with other formats.
 -  ` example` - An example license key that may be shown to the user when entering a license. It should begin with the `prefix` specified.
 -   `regexFilter`- (_optional_) - A regular expression defining the allowed characters in the license key. By default, only characters A-Z (both lowercase and uppercase) and numbers 0-9 are allowed. Whitespace, dashes, and slashes will not be considered for a pattern match.
