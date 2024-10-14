@@ -15,36 +15,10 @@ since = 0
 [cascade]
 list_group = "uncategorized"
 +++
-<!--
-<div align="center"><h1 id="getting-started-with-rhino-development">Getting Started with Rhino Development</h1></div>
--->
-<!--
-<div>
-  <table style="width:100%; border: 1px; margin: 0 auto; padding:0; border-spacing: 0px; border-collapse: separate;">
-    <tbody>
-      <tr>
-        <td style="padding: 20px; text-align: center;">
-          <a href="/guides/grasshopper" title="Grasshopper Components">
-            <img src="/images/ghcomponent-logo-intro.png" class="index_use_images">
-          </a>
-        </td>
-        <td style="padding: 20px; text-align: center;">
-          <a href="/guides/#rhinocommon" title="RhinoCommon: The cross-platform .NET SDK for Rhino and Grasshopper">
-            <img src="/images/rhinocommon-logo-intro.png" class="index_use_images">
-          </a>
-        </td>
-        <td style="padding: 20px; text-align: center;">
-          <a href="/guides/#rhinopython" title="Rhino.Python: Pythonic in three dimensions!">
-            <img src="/images/rhino-python-logo-intro.png" class="index_use_images">
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
--->
 
-{{< alt-version "https://developer.rhino3d.com/guides/rhinocommon/moving-to-dotnet-7/" "Need help migrating C# to Rhino 8? Click here!">}}
+{{< call-out note "Need help migrating C# to Rhino 8?" >}}
+Please check out the [Moving to .NET 7 guide](/guides/rhinocommon/moving-to-dotnet-7/).
+{{< /call-out >}}
 
 {{< vimeo 188730450 >}}
 
