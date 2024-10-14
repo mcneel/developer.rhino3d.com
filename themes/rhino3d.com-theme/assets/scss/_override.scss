@@ -28,7 +28,7 @@ div.highlight pre {
 :target:before {
     content: "";
     display: block;
-    height: $global-nav-height-collapsed;
+    height: $global-nav-height-collapsed+15; // add a 15 to adjust for navbar padding
     margin: -$global-nav-height-collapsed 0 0;   
 	pointer-events: none; //quickfix for WWW-1696
 }
@@ -229,14 +229,9 @@ td.hljs-ln-line.hljs-ln-code {
 
 .gs-snippet {color: #333 !important; font-size:12pt !important;}
 .gsc-control-cse { max-width: 700px !important; margin-left:200px !important;}
-a.gs-title { 
+.gs-title { 
   font-size: 16pt !important; 
-  color: #337ab7 !important;
-  &:hover {
-    text-decoration: underline;
-  }
   b {
     font-size: 16pt !important;
-    color: #337ab7 !important;
   }
 }
