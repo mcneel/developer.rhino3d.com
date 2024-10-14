@@ -40,6 +40,7 @@ target = 'assets'
   sitemapBaseURL = "https://developer.rhino3d.com"
   navBarShouldResize = false
   supportsChat = false
+  supportsLogin = false
   siteNavLogo = "/images/rhinodevlogo.png"
   logoTitleTextPrimary = "Rhino"
   logoTitleTextSecondary = "Developer"
