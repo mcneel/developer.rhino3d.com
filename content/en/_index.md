@@ -140,28 +140,6 @@ list_group = "uncategorized"
 
 <p>Still unclear?  Browse the <a href="/guides/">Guides</a>.  Ask a question in <a href="/guides/general/contributing/#discourse">the Forum</a>.  Check out the <a href="/guides/general/frequently-asked-questions/">FAQ</a>. Ask <a href="/guides/general/contributing/#contacts">a developer</a>.</p>
 
-
+<p><a href="/license">{{< awesome "fas fa-balance-scale" >}} MIT License</a>. Rhino developer tools are royalty free and include support. </p>
 </div>
 
-<h3>MIT License</h3>
-Rhino developer tools are royalty free and include support.
-
-Copyright (c) 1993-2024 Robert McNeel & Associates. All Rights Reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of Rhino SDKs and APIs, including openNURBS, rhino3dm, RhinoCommon, the Grasshopper API, and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
