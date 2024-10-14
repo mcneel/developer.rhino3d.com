@@ -307,6 +307,9 @@ img.xlarge, .xlarge img {
 	vertical-align: middle;
 }
 
+.new-callout a {
+	color: $global-background-color;
+}
 .new-callout {
 	text-align: center;	
 	color: $global-background-color;
@@ -351,6 +354,9 @@ li .new-callout-bullet {
 	padding: 1px 5px;
 }
 
+.new-callout a {
+	color: $global-background-color;
+}
 .new-callout-inline {
 	margin-bottom:5px; 
 	margin-left:5px;
@@ -360,6 +366,9 @@ li .new-callout-bullet {
 	font-size: 16px;
 }
 
+.new-callout a:visited {
+	color: $global-background-color;
+}
 .new-callout a {
 	color: $global-background-color;
 }
