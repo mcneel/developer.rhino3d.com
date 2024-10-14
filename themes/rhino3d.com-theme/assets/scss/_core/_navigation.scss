@@ -175,12 +175,113 @@
 	}
 }
 
+/* nav-Dropdown */
+
+.nav-dropdown {
+	display: inline-block;
+	position: relative;
+	overflow: visible;
+	height: 24px;
+  }
+
+  .dd-button {
+	display: inline-block;
+	cursor: pointer;
+	white-space: nowrap;
+	padding: 0px !important;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 24px !important;
+	height: 24px  !important;
+  }
+
+  .avatar {
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	max-width: 24px;
+ 	max-height: 24px;
+  }
+  
+  .dd-button:hover {
+	opacity: 50%;
+  }
+  
+  
+  .dd-input {
+	display: none;
+  }
+  
+  .dd-menu {
+	position: absolute;
+	top: 100%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0;
+	margin: 2px 0 0 0;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+	background-color: #ffffff;
+	list-style-type: none;
+	right: 0;
+	width: 150px;
+  }
+
+  @media screen and (max-width: $global-mobile-maxwidth) {
+	.dd-menu {
+		position: relative;
+		top: unset;
+		width: auto;
+		// bottom: 100%;
+	}
+	.dd-button {
+		position: relative;
+		left: 50%;
+	}
+	.nav-dropdown{
+		width: 100%;
+	}
+}
+
+  
+  .dd-menu a {
+	padding: 10px !important;
+  }
+  
+  .dd-input + .dd-menu {
+	display: none;
+  } 
+  
+  .dd-input:checked + .dd-menu {
+	display: block;
+  } 
+  
+  .dd-menu li {
+	padding: 10px 20px;
+	cursor: pointer;
+	white-space: nowrap;
+  }
+  
+  .dd-menu li:hover {
+	background-color: #f6f6f6;
+  }
+  
+  .dd-menu li a {
+	display: block;
+	margin: -10px -20px;
+	padding: 10px 20px;
+  }
+  
+  .dd-menu li.divider{
+	padding: 0;
+	border-bottom: 1px solid #cccccc;
+  }
+
 // Overlay menu for mobile navigation
 .overlayMenuIcon {
+	display: none;
 	visibility: hidden;
-	position: absolute;
-	right: 10px;
-	top: 40px;
+	transition: 0.4s;
 }
 
 @media screen and (max-width: $global-mobile-maxwidth) {
