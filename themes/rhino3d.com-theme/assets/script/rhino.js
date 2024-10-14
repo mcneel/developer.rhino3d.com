@@ -116,7 +116,7 @@ function toggleMenu() {
 window.onresize = function() {resizeFunction()};
 
 function resizeFunction() {
-    if ($(window).width() > 768 ) {
+    if ($(window).width() > 848 ) {
         var scrollPos = document.body.scrollTop || document.documentElement.scrollTop; 
         if (scrollPos <= 80 ) {
             document.getElementById("sitesearch").style.display = "inline";

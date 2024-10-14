@@ -41,6 +41,12 @@
 	display: inline-block;
 }
 
+@media screen and (max-width: $global-desktop-maxwidth) {
+	.float_small_none {
+		float: none!important;
+	}
+}
+
 .image_center {
 	display: block;
 	max-width: 100%;
@@ -168,7 +174,7 @@
     background-color: #e8e8e8;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 848px) {
 	.toc {
 		height: none;
 	}
