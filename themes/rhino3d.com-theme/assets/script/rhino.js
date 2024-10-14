@@ -82,9 +82,24 @@ $(document).ready(function(){
         var name = $this.attr('data-section-name');
         var behavior = $this.attr('data-section-behavior');
         if (behavior === 'close-all') {
+            document.location.hash = "#"
             $('.section').hide();
         }
         showOneInFamily(fam, name);
+    });
+
+    //read url hash and update selected section in section-selector
+    $(function() {
+        if (document.location.hash){
+            var names = document.location.hash.split("#")
+            names.forEach(name =>{
+                var matchedFam = $($('.section[data-name="' + name + '"]')[0]).attr("data-group")
+                if(matchedFam){
+                    // console.log("showing:", name, "in", matchedFam)
+                    showOneInFamily(matchedFam, name);
+                }
+            })
+        }
     });
 
 });
@@ -136,6 +151,19 @@ function clearActionShowLicenseType(name) {
     showOneInFamily('license-type', name);
 }
 function showOneInFamily(family, name) {
+
+    $.each( $('.section[data-group="' + family + '"]'), function( index, el ) {
+        if (name == $(el).attr("data-name")){
+            //console.log("adding:",$(el).attr("data-name"))
+            if (!document.location.hash.includes(name)){
+                document.location.hash = `${document.location.hash}#${name}`
+            }
+        }
+        else{
+            // console.log(`removing #${$(el).attr("data-name")} from hash ${document.location.hash} while processing ${name},${family}`)
+            document.location.hash = document.location.hash.split("#").filter(h => h != $(el).attr("data-name")).join("#")
+        }
+    } );
     $('.section[data-group="' + family + '"]').hide();
     if (name != '') {
         $('.section[data-name="' + name + '"]').show()[0].scrollIntoView({
