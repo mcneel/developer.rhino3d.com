@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/rhino-technology-overview/", "/6/guides/general/rhino-technology-overview/", "/7/guides/general/rhino-technology-overview/", "/wip/guides/general/rhino-technology-overview/"]
+aliases = ["/jp/5/guides/general/rhino-technology-overview/", "/jp/6/guides/general/rhino-technology-overview/", "/jp/7/guides/general/rhino-technology-overview/", "/jp/wip/guides/general/rhino-technology-overview/"]
 authors = [ "brian" ]
 categories = [ "Overview" ]
 description = "Rhinoのテクノロジ・アーキテクチャの概要"
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 
