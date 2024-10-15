@@ -143,9 +143,9 @@ def main():
             print_warning_message(site + " contains changes that would be lost. Skipping.")
             continue
 
-        # Check to make sure each site contains the /static/scss/_overrides.scss file
+        # Check to make sure each site contains the /static/scss/_site-override.scss file
         path_to_site_scss_path = os.path.abspath(os.path.join(target_site_path, "static", "scss"))
-        path_to_site_scss_overrides_path = os.path.abspath(os.path.join(path_to_site_scss_path, "_overrides.scss"))
+        path_to_site_scss_overrides_path = os.path.abspath(os.path.join(path_to_site_scss_path, "_site-override.scss"))
         if not os.path.exists(path_to_site_scss_overrides_path):
             print_warning_message(path_to_site_scss_overrides_path + ' does not exist. Creating it now...')
             if not os.path.exists(path_to_site_scss_path):
