@@ -1,12 +1,12 @@
 +++
-aliases = ["/jp/5/guides/general/", "/jp/6/guides/general/", "/jp/7/guides/general/", "/jp/wip/guides/general/"]
+aliases = ["/en/5/guides/general/", "/en/6/guides/general/", "/en/7/guides/general/", "/en/wip/guides/general/"]
 authors = "unset"
 categories = [ "Unsorted" ]
-description = "Guides that apply across platforms and SDKs."
+description = "SDK、そして複数のプラットフォームに共通のガイドです。"
 keywords = [ "rhino", "developer" ]
 languages = [ "C/C++", "C#", "VB", "Python", "VBScript" ]
 sdk = "unset"
-title = "General Guides"
+title = "一般的なガイド"
 type = "guides"
 weight = 1
 
@@ -26,13 +26,13 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/general-guides-col1.png">](/guides/general/developing-software-in-public)
 
-### Overview
+### 概要
 
-- [Developing Software In Public](/guides/general/developing-software-in-public)
-- [Rhino Technology Overview](/guides/general/rhino-technology-overview)
+- [公開のソフトウェア開発](/guides/general/developing-software-in-public)
+- [Rhinoの技術的概要](/guides/general/rhino-technology-overview)
 - [Frequently Asked Questions (FAQ)](/guides/general/frequently-asked-questions)
 
-### Getting Started
+### はじめに
 
 - [Developer Prerequisites](/guides/general/rhino-developer-prerequisites)
 - [Contributing](/guides/general/contributing)
@@ -43,7 +43,7 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/general-guides-col2.png">](/guides/general/what-is-a-rhino-plugin)
 
-### Fundamentals
+### 基礎
 
 - [What is a Rhino Plugin?](/guides/general/what-is-a-rhino-plugin)
 - [Rhino Installer Engine](/guides/general/rhino-installer-engine)
@@ -64,7 +64,7 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/general-guides-col3.png">](/guides/general/how-this-site-works)
 
-### This Site
+### このサイト
 
 - [How This Site Works](/guides/general/how-this-site-works)
 - [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/main/README.md)
