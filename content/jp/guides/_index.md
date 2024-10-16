@@ -1,6 +1,6 @@
 +++
 aliases = ["/en/5/guides/", "/en/6/guides/", "/en/7/guides/", "/en/wip/guides/"]
-description = "RhinoまたはGrasshopperのための開発に利用できるすべてのガイドです。"
+description = "RhinoまたはGrasshopper向けの開発に利用できるガイドです。"
 title = "ガイド"
 type = "guides"
 weight = 2
