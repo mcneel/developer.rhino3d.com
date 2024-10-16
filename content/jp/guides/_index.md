@@ -1,7 +1,7 @@
 +++
-aliases = ["/jp/5/guides/", "/jp/6/guides/", "/jp/7/guides/", "/jp/wip/guides/"]
-description = "All the guides available for developing for Rhino or Grasshopper."
-title = "Guides"
+aliases = ["/en/5/guides/", "/en/6/guides/", "/en/7/guides/", "/en/wip/guides/"]
+description = "RhinoまたはGrasshopperのための開発に利用できるすべてのガイドです。"
+title = "ガイド"
 type = "guides"
 weight = 2
 
@@ -19,22 +19,22 @@ toc = true
 toc_type = "single"
 +++
 
-## [General](/guides/general)
+## [一般](/guides/general)
 
-*Guides that apply across platforms and SDKs*
+*SDK、そして複数のプラットフォームに共通のガイドです。*
 
-### Overview
+### 概要
 
-- [Developing Software In Public](/guides/general/developing-software-in-public)
-- [Rhino Technology Overview](/guides/general/rhino-technology-overview)
+- [公開のソフトウェア開発](/guides/general/developing-software-in-public)
+- [Rhinoの技術的概要](/guides/general/rhino-technology-overview)
 - [Frequently Asked Questions (FAQ)](/guides/general/frequently-asked-questions)
 
-### Getting Started
+### はじめに
 
 - [Developer Prerequisites](/guides/general/rhino-developer-prerequisites)
 - [Contributing](/guides/general/contributing)
 
-### Fundamentals
+### 基礎
 
 - [What is a Rhino Plugin?](/guides/general/what-is-a-rhino-plugin)
 - [Rhino Package Manager](/guides/yak/)
@@ -49,19 +49,19 @@ toc_type = "single"
 - [Parametric Curves and Surfaces](/guides/general/essential-mathematics/parametric-curves-surfaces)  
 - [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) [Download Essential Mathematics for Computational Design as a single PDF ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/)
 
-### This Site
+### このサイト
 
 - [How This Site Works](/guides/general/how-this-site-works)
 - [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/main/README.md)
 - [Developer Docs Style Guide](/guides/general/developer-docs-style-guide)
 
-## [Scripting](/guides/scripting)
+## [スクリプト作成](/guides/scripting)
 
-*Guides on using scripting features in Rhino 8 and above, that apply to all programming languages*
+*Rhino 8以降のスクリプト作成機能の使用に関するガイド。すべてのプログラミング言語に適用されます。*
 
-### Getting Started
+### はじめに
 
-#### Script Editor
+#### ScriptEditorコマンド
   - [Opening Script Editor](/guides/scripting/scripting-command/#opening-script-editor)
   - [First Script](/guides/scripting/scripting-command/#first-script)
   - [Edit Script](/guides/scripting/scripting-command/#edit-script)
@@ -70,7 +70,7 @@ toc_type = "single"
   - [Using Packages](/guides/scripting/scripting-command/#using-packages)
   - [Editor Features](/guides/scripting/scripting-command/#editor-features)
 
-#### Script Component
+#### Scriptコンポーネント
   - [Create Script Component](/guides/scripting/scripting-component/#script-component)
   - [First Script](/guides/scripting/scripting-component/#first-script)
   - [Script Inputs and Outputs](/guides/scripting/scripting-component/#script-inputs-and-outputs)
@@ -80,19 +80,19 @@ toc_type = "single"
   - [Using Packages](/guides/scripting/scripting-component/#using-packages)
   - [Editor Features](/guides/scripting/scripting-component/#editor-features)
 
-### Python Scripting
+### Pythonでのスクリプト作成
 - <!-- [Python Scripting](/guides/scripting/scripting-python) --> Scripting: Python {{% comingsoon-label %}}
 - {{< dev-topic "Grasshopper Scripting: Python" "/guides/scripting/scripting-gh-python" >}}
 
-### C# Scripting
+### C#でのスクリプト作成
 - <!-- [C# Scripting](/guides/scripting/scripting-csharp) --> Scripting: C# {{% comingsoon-label %}}
 - {{< dev-topic "Grasshopper Scripting: C#" "/guides/scripting/scripting-gh-csharp" >}}
 
-### Editor Features
+### エディタの機能
 - {{< dev-topic "Editing Features" "/guides/scripting/editor-editing" >}}
 - <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
 - <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
-- <!-- [Terminal](/guides/scripting/editor-terminal) --> Terminal {{% comingsoon-label %}}
+- {{< dev-topic "Terminal" "/guides/scripting/editor-terminal" >}}
 - <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
 - <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
 - <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
@@ -101,16 +101,18 @@ toc_type = "single"
 - {{< dev-topic "Options" "/guides/scripting/editor-configs" >}}
 - {{< dev-topic "Logs" "/guides/scripting/editor-logs" >}}
 
-### Publishing
+### スクリプトプラグインの公開
 
 - {{< dev-topic "Creating Rhino Projects" "/guides/scripting/projects-create" >}}
 - {{< dev-topic "Creating Rhino and Grasshopper Plugins" "/guides/scripting/projects-publish" >}}
 
-### Advanced
+### 上級
 
+- {{< dev-topic "ScriptEditor Macros" "/guides/scripting/advanced-scripteditor-macros" >}}
 - {{< dev-topic "Language Initialization" "/guides/scripting/advanced-langinit" >}}
 - <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
 - {{< dev-topic "Python Path Files" "/guides/scripting/advanced-pthfiles" >}}
+- {{< dev-topic "Python Package Environments" "/guides/scripting/advanced-pyvenvs" >}}
 - <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
 - {{< dev-topic "Asynchronous Execution" "/guides/scripting/advanced-async" >}}
 - <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
@@ -120,25 +122,25 @@ toc_type = "single"
 
 ## [RhinoCommon](/guides/rhinocommon)
 
-*The cross-platform .NET plugin SDK for Rhino.*
+*Rhino用のクロスプラットフォーム.NETプラグインのSDKです。*
 
-### Overview
+### 概要
 
 - [What is RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon/)
 - [What's New?](/guides/rhinocommon/whats-new/)
 
-### Getting Started
+### はじめに
 
 - Installing Tools ([Windows](/guides/rhinocommon/installing-tools-windows/), [Mac](/guides/rhinocommon/installing-tools-mac/))
-- Your First Plugin ([Windows](/guides/rhinocommon/your-first-plugin-windows/), [Mac](/guides/rhinocommon/your-first-plugin-mac/), [Cross-Platform](/guides/rhinocommon/your-first-plugin-crossplatform/))
+- Your First Plugin ([Windows](/guides/rhinocommon/your-first-plugin-windows/), [Mac](/guides/rhinocommon/your-first-plugin-mac/)
 - Plugin Installers ([Windows](/guides/rhinocommon/plugin-installers-windows/), [Mac](/guides/rhinocommon/plugin-installers-mac/))
 - [Distributing a Rhino Plug-In with the Package Manager](/guides/yak/creating-a-rhino-plugin-package/)
 
-### Fundamentals
+### 基礎
 
 {{< dev-topic-list "guides" "RhinoCommon" "Fundamentals" "weight" >}}
 
-### RhinoCommon Geometry
+### RhinoCommonのジオメトリ
 
 - [Overview](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#31-overview)  
 - [Geometry structures](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#32-geometry-structures)  
@@ -154,11 +156,11 @@ toc_type = "single"
     - [Other geometry classes](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#335-other-geometry-classes)  
 - [Geometry transformations](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/#34-geometry-transformations)  
 
-### Rendering
+### レンダリング
 
 {{< dev-topic-list "guides" "RhinoCommon" "Rendering" "weight" >}}
 
-### Advanced
+### 上級
 
 {{< dev-topic-list "guides" "RhinoCommon" "Advanced" "weight" >}}
 
@@ -173,31 +175,31 @@ toc_type = "single"
 ## [Rhino.Python](/guides/rhinopython)
 
 
-*Quickly add functionality to Rhino or automate repetitive tasks.*
+*Rhinoに機能を素早く追加したり、反復的なタスクを自動化したりします。*
 
-### Overview
+### 概要
 
 {{< dev-topic-list "guides" "RhinoPython" "Overview" "weight" "8" >}}
 
-### Getting Started
+### はじめに
 
 - Your First Python Script in Rhino ([Windows](/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac](/guides/rhinopython/your-first-python-script-in-rhino-mac), [Grasshopper](/guides/rhinopython/your-first-python-script-in-grasshopper))
 - [Where to get help...](/guides/rhinopython/python-where-to-find-help)
 - [Troubleshooting Installation](/guides/rhinopython/python-troubleshooting-install)
 
-### Python Editor for Windows
+### Windows用Pythonエディタ
 
 {{< dev-topic-list "guides" "RhinoPython" "Python Windows" "weight" "8" >}}
 
-### Python in Grasshopper
+### GrasshopperでのPython
 
 {{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" "8" >}}
 
-### Fundamentals
+### 基礎
 
 {{< dev-topic-list "guides" "RhinoPython" "Fundamentals" "weight" "8" >}}
 
-### Python in Rhino
+### RhinoでのPython
 
 {{< dev-topic-list "guides" "RhinoPython" "Python in Rhino" "weight" "8" >}}
 
@@ -217,16 +219,16 @@ toc_type = "single"
 &nbsp;&nbsp; [{{< awesome "fas fa-download">}} ](https://download.rhino3d.com/IronPython/5.0/RhinoPython101/) [Download the Rhino.Python 101 Primer as a single PDF ](https://download.rhino3d.com/IronPython/5.0/RhinoPython101/)  
 
 
-### Intermediate
+### 中級
 
 {{< dev-topic-list "guides" "RhinoPython" "Intermediate" "weight" "8" >}}
 
-### Custom Dialogs in Eto
+### Etoでのカスタムダイアログ
 
 {{< dev-topic-list "guides" "RhinoPython" "Eto" "weight" "8" >}}
 
 
-### Other Resources
+### その他のリソース
 
 - [Rhino Scripting Forum (Discourse)](https://discourse.mcneel.com/c/scripting)  
 - [Rhino.Python Samples](/samples/#rhinopython)  
@@ -241,45 +243,45 @@ toc_type = "single"
 
 ## [openNURBS](/guides/opennurbs)
 
-*Read/Write Rhino 3dm files in your application.*
+*ご自身のアプリケーションでRhinoの3dmファイルを読み書きできます。*
 
-### Overview
+### 概要
 
 {{< dev-topic-list "guides" "openNURBS" "Overview" "weight" >}}
 
-### Getting Started
+### はじめに
 
 {{< dev-topic-list "guides" "openNURBS" "Getting Started" "weight" >}}
 
-### Fundamentals
+### 基礎
 
 {{< dev-topic-list "guides" "openNURBS" "Fundamentals" "weight" >}}
 
-### Advanced
+### 上級
 
 {{< dev-topic-list "guides" "openNURBS" "Advanced" "weight" >}}
 
 ## [C/C++](/guides/cpp)
 
-*Native SDK for Rhino for Windows plugins.*
+*Windows版Rhinoのプラグイン用のネイティブSDKです。*
 
-### Overview
+### 概要
 
 {{< dev-topic-list "guides" "C/C++" "Overview" "weight" >}}
 
-### Getting Started
+### はじめに
 
 {{< dev-topic-list "guides" "C/C++" "Getting Started" "weight" >}}
 
-### Fundamentals
+### 基礎
 
 {{< dev-topic-list "guides" "C/C++" "Fundamentals" "weight" >}}
 
-### Advanced
+### 上級
 
 {{< dev-topic-list "guides" "C/C++" "Advanced" "weight" >}}
 
-### Rendering (RDK)
+### レンダリング (RDK)
 
 {{< dev-topic-list "guides" "C/C++" "RDK" "weight" >}}
 
@@ -287,14 +289,14 @@ toc_type = "single"
 
 {{< dev-topic-list "guides" "C/C++" "Zoo" "weight" >}}
 
-### Troubleshooting
+### トラブルシューティング
 
 {{< dev-topic-list "guides" "C/C++" "Troubleshooting" "weight" >}}
 
 ## [Grasshopper](/guides/grasshopper)
 
 
-*Create custom Grasshopper components and plugins.*
+*カスタムのGrasshopperコンポーネントやプラグインを作成します。*
 
 ### [Essential Algorithms and Data Structures for Grasshopper](/guides/grasshopper/gh-algorithms-and-data-structures/)
 
@@ -325,7 +327,7 @@ toc_type = "single"
   - [3.7 Tutorials: advanced data ](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#37-tutorials-advanced-data-structures)
 - [{{< awesome "fas fa-download">}}](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/) [Download full PDF and GH examples](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/)
 
-### Python Scripting in Grasshopper
+### GrasshopperでのPythonスクリプトの作成
 
 - [Create Script Component](/guides/scripting/scripting-component/#script-component)
 - [First Script](/guides/scripting/scripting-component/#first-script)
@@ -334,7 +336,7 @@ toc_type = "single"
 - [Run Scripts](/guides/scripting/scripting-component/#debugging-scripts)
 - [Debugging Scripts](/guides/scripting/scripting-component/#debugging-scripts)
 - [Using Packages](/guides/scripting/scripting-component/#using-packages)
-- [Editor Features](/guides/scripting/scripting-component/#editor-features)
+- [エディタの機能](/guides/scripting/scripting-component/#editor-features)
 - [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
 - [Creating Global Sticky Variables](/guides/rhinopython/ghpython-global-sticky/)
 - [Node in Code from Python](/guides/rhinopython/ghpython-call-components/)
@@ -342,14 +344,14 @@ toc_type = "single"
 - [Grasshopper data trees and Python](/guides/rhinopython/grasshopper-datatrees-and-python/)
 - [GhPython Common Questions and Answers](/guides/rhinopython/ghpython-question-answer/)
 
-### [C# Scripting in Grasshopper](/guides/grasshopper/csharp-essentials/)
+### [GrasshopperでのC#スクリプトの作成](/guides/grasshopper/csharp-essentials/)
 
 - [C# Component in Grasshopper](/guides/grasshopper/csharp-essentials/1-grasshopper-csharp-component/#21-introduction)
 - [C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics/)
 - [RhinoCommon Geometry](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/)
 - [Design Algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/)
 
-### Grasshopper Plugins
+### Grasshopperのプラグイン
 
 - [What is a Grasshopper Component?](/guides/grasshopper/what-is-a-grasshopper-component/)
 - Installing Tools ([Windows](/guides/grasshopper/installing-tools-windows/), [Mac](/guides/grasshopper/installing-tools-mac/))
@@ -358,22 +360,22 @@ toc_type = "single"
 - [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
 - [Distributing a Grasshopper Plug-In with the Package Manager](/guides/yak/creating-a-grasshopper-plugin-package/)
 
-#### Plugin Fundamentals
+#### プラグインの基礎
 {{< dev-topic-list "guides" "Grasshopper" "Fundamentals" "weight" >}}
 
-#### In Depth
+#### 詳細
 {{< dev-topic-list "guides" "Grasshopper" "In Depth" "weight" >}}
 
-#### Advanced
+#### 上級
 {{< dev-topic-list "guides" "Grasshopper" "Advanced" "weight" >}}
 
 
 ## [RhinoScript](/guides/rhinoscript)
 
 
-*RhinoScript is a scripting tool based on Microsoft's VBScript language. With RhinoScript, you can quickly add functionality to Rhino for Windows, or automate repetitive tasks.*
+*RhinoScriptはMicrosoftのVBScript言語を元にしたスクリプトツールです。RhinoScriptを使うと、Windows版Rhinoに機能を追加したり、繰り返し行う作業を自動化したりすることができます。*
 
-### Overview
+### 概要
 
 - [What are VBScript and RhinoScript?](/guides/rhinoscript/what-are-vbscript-rhinoscript)
 
@@ -390,24 +392,24 @@ toc_type = "single"
 &nbsp;&nbsp; 7. [Geometry](/guides/rhinoscript/primer-101/7-geometry/)  
 &nbsp;&nbsp; [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/5.0/rhinoscript101) [Download the RhinoScript 101 Primer as a single PDF ](https://www.rhino3d.com/download/rhino/5.0/rhinoscript101)
 
-### Fundamentals
+### 基礎
 
 {{< dev-topic-list "guides" "RhinoScript" "Fundamentals" "weight" >}}
 
 
-### Intermediate
+### 中級
 
 {{< dev-topic-list "guides" "RhinoScript" "Intermediate" "weight" >}}
 
-### Advanced
+### 上級
 
 {{< dev-topic-list "guides" "RhinoScript" "Advanced" "weight" >}}
 
-### Troubleshooting
+### トラブルシューティング
 
 {{< dev-topic-list "guides" "RhinoScript" "Troubleshooting" "weight" >}}
 
-### Other Resources
+### その他のリソース
 
 - [Pascal Golay's scripted utilities for Rhino](https://wiki.mcneel.com/people/pascalgolay)
 - [RhinoScript Samples on GitHub](https://github.com/mcneel/rhinoscript)
@@ -418,11 +420,11 @@ toc_type = "single"
 <h2 id="compute"><a href="/guides/compute">Compute</a></h2>
 
 
-### Getting Started
+### はじめに
 
 {{< dev-topic-list "guides" "Compute" "Getting Started" "weight" >}}
 
-### Production Deployment
+### 実稼働環境への導入
 
 {{< dev-topic-list "guides" "Compute" "Deployment" "weight" >}}
 
@@ -430,12 +432,12 @@ toc_type = "single"
 
 {{< dev-topic-list "guides" "Compute" "Hops" "weight" >}}
 
-## Developer Services
+## 開発者向けサービス
 
-### [Localization](https://www.rhino3d.com/localization)
+### [ローカライゼーション](https://www.rhino3d.com/localization)
 
-Our regional office in Europe provides a translation and localization service for third-party developers and anyone else interested in translating their products to French, German, Italian, Spanish, etc. [Details…](https://www.rhino3d.com/localization)
+弊社のヨーロッパ支店では、サードパーティ、またはその他の製品のフランス語、ドイツ語、イタリア語、スペイン語などへの翻訳、ローカライズサービスを行っています。 [詳細…](https://www.rhino3d.com/localization)
 
-### Marketing Support
+### マーケティングサポート
 
-If you have developed a Rhino add-on that you would like to make available to other Rhino users, [food4Rhino](https://www.food4rhino.com/) is the place to post the details about your plug-ins for Rhino and Grasshopper. Food4Rhino is the Plug-in Community Service by McNeel.  Users can find the newest Rhino Plug-ins, Grasshopper Add-ons, Materials, Textures and Backgrounds, Scripts and much more. It is free. [See the frequently asked questions...](https://www.food4rhino.com/faq)
+RhinoやのGrasshopperのアドオンを開発し、Rhinoのユーザーの方達にそれをお知らせされたい場合は、 [food4Rhino](https://www.food4rhino.com/) に詳細を掲載していただけます。 Food4Rhinoは、McNeelが無料で運用しているプラグインのコミュニティサービスです。このウェブサイトでは、最新のRhinoのプラグイン、Grasshopperのアドオン、マテリアル、テクスチャ、背景、スクリプトなどを見つけていただけます。 [FAQをご覧ください...](https://www.food4rhino.com/faq)
