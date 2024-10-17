@@ -6,7 +6,7 @@
 {{ $.Scratch.Add "action" (.Get "action" | default "Buy Now") }}
 {{ $.Scratch.Add "ribbon" (.Get "ribbon" | default "") }}
 {{ $.Scratch.Add "link" (.Get "link" | default "") }}
-{{ $.Scratch.Add "region" (getenv "MCNEEL_REGION"| default "NAPA") }}
+{{ $.Scratch.Add "region" (.Page.Params.MCNEEL_REGION | default (getenv "MCNEEL_REGION"| default "NAPA")) }}
 {{ $.Scratch.Add "price" (index (index .Page.Params.pricing ($.Scratch.Get "region")) ($.Scratch.Get "type")) }}
 {{ $.Scratch.Add "promo-price" (index (index .Page.Params.pricing ($.Scratch.Get "region")) (print ($.Scratch.Get "type") "-promo")) }}
 
