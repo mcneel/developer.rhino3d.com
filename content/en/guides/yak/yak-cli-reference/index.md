@@ -26,16 +26,7 @@ toc_type = "single"
 
 +++
 
-The Yak command line tool is included with all versions of Rhino, from 7 onwards.
-
-##### Rhino 7 (and onwards) for Windows
-On Windows the tool is located at `"C:\Program Files\Rhino {{< latest-rhino-version >}}\System\yak.exe"`.
-
-##### Rhino 7 for Mac
-There is a convenience script at `"/Applications/Rhino {{< latest-rhino-version >}}.app/Contents/Resources/bin/yak"`.
-
-##### Rhino 8 (and onwards) for Mac
-Yak is now cross platform, and located at `"/Applications/Rhino {{< latest-rhino-version >}}.app/Contents/Resources/bin/yak"`.
+The Yak command line tool is included with Rhino 7 WIP. On Windows the tool is located at `"C:\Program Files\Rhino {{< latest-rhino-version >}}\System\yak.exe"`. On macOS there is a convenience script at `"/Applications/Rhino {{< latest-rhino-version >}}.app/Contents/Resources/bin/yak"`.
 
 
 
