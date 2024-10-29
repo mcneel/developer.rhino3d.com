@@ -24,7 +24,7 @@ since = 0
 ### Overview
 
 - [What is the Package Manager (a.k.a. Yak)?](/guides/yak/what-is-yak)
-- [Join the Discussion](https://discourse.mcneel.com/c/serengeti/yak)
+- [Join the Discussion](https://discourse.mcneel.com/c/rhino-developer/yak/71)
 
 ### Fundamentals
 
