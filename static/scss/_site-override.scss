@@ -1,0 +1,191 @@
+/* IMPORTANT: for some reason, hugo does not notice the changes to this file properly and recompile the scss properly. 
+When changing this file, you will need to stop serving the site and restart the hugo process in order to see changes applied. */
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:visited {
+  color: #1756a9;
+}
+
+#navbar a {
+  color: #337ab7;
+  padding-right: 15px;
+}
+
+#navbar a:hover {
+  color: #337ab7;
+  text-decoration: underline;
+}
+
+#logo-title-text a:hover {
+  text-decoration: none;
+}
+
+#bcs-results-div h1 a,
+h2 a {
+  color: #337ab7 !important;
+  margin-bottom: 2px;
+}
+#bcs-results-div h1 a:visited,
+h2 a:visited {
+  color: #1756a9 !important;
+  margin-bottom: 2px;
+}
+
+.outerbox {
+  margin-top: 65px;
+}
+
+#logo-container {
+  height: 55px;
+}
+
+#site-nav-logo {
+  transition: none;
+  height: 55px;
+}
+
+#logo-title-text {
+  transition: none;
+  font-size: 25px;
+  top: 7px;
+  left: 62px;
+}
+
+#logo-subtitle {
+  visibility: hidden;
+  transition: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-items {
+  position: absolute;
+  bottom: 15px;
+  padding-left: 300px;
+}
+
+@media screen and (max-width: $global-mobile-maxwidth) {
+  .menu-items {
+    display: grid;
+    position: relative;
+    top: 5px;
+    padding-left: 0px;
+    justify-items: center;
+    height: 0vh;
+    transition: 0.4s;
+  }
+  .menu-items a {
+    text-decoration: none;
+    font-size: 26px;
+    color: #818181;
+  }
+}
+
+@media screen and (max-width: $global-mobile-maxwidth) {
+  .menu-items.responsive {
+    position: relative;
+  }
+  .menu-items.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+#sitesearch {
+  margin-top: 13px;
+}
+
+.toc {
+  top: 80px;
+}
+
+.footer a {
+	color: #337ab7;
+	text-decoration: none;
+}
+.footer a:hover {
+	color: #337ab7;
+	text-decoration: underline;
+}
+.footer a:visited {
+	color: #1756a9;
+}
+
+/*
+##############################################################################
+##  Index.md Page
+##############################################################################
+*/
+.index_use_images {
+  width: 290px;
+}
+
+tbody.index_table tr td {
+  vertical-align: middle;
+}
+
+.index_table_icon {
+  width: 32px;
+  height: 32px;
+}
+
+.index_table_primary_use {
+  margin: 10px;
+  font-size: 1em;
+}
+
+.index_free_support {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+/*
+##############################################################################
+## RhinoScriptSyntax API docs
+##############################################################################
+*/
+
+.code_accordion {
+  color: #337ab7;
+  cursor: pointer;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.2s linear;
+}
+
+.code_panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s linear;
+}
+
+/*
+##############################################################################
+## RhinoCode/Scripting API docs
+##############################################################################
+*/
+
+.dev-topic {
+}
+
+/*
+##############################################################################
+## Misc
+##############################################################################
+*/
+
+// the btn classes don't look right, so I'm tweaking them for my own use
+.btn-czreg {
+  font-size: large;
+  height: auto;
+}

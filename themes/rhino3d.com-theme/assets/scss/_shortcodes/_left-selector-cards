@@ -1,0 +1,27 @@
+.discover-more-divider {
+    text-align: center;
+    padding-top: 20px;
+    height: 50px;
+    color: gray;
+    font-family: monospace, monospace;
+    font-size: small;
+    vertical-align: middle;
+  }
+
+  .leftSelectorCard-item,
+  .leftSelectorCard-item-active {
+    position: relative;
+  }
+
+  .leftSelectorCard-item p,
+  .leftSelectorCard-item-active p {
+    margin: 0;
+  }
+
+  .leftSelectorCard-item ul,
+  .leftSelectorCard-item-active ul {
+    position: absolute;
+    bottom: 0px;
+    margin-left: 30px;
+    margin-bottom: 25px;
+  }

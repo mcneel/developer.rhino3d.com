@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/random-surface-points/", "/6/samples/rhinoscript/random-surface-points/", "/7/samples/rhinoscript/random-surface-points/", "/wip/samples/rhinoscript/random-surface-points/"]
+aliases = ["/en/5/samples/rhinoscript/random-surface-points/", "/en/6/samples/rhinoscript/random-surface-points/", "/en/7/samples/rhinoscript/random-surface-points/", "/en/wip/samples/rhinoscript/random-surface-points/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Surfaces" ]
 description = "Generate random points on a surface using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

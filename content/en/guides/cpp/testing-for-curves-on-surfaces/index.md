@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/testing-for-curves-on-surfaces/", "/6/guides/cpp/testing-for-curves-on-surfaces/", "/7/guides/cpp/testing-for-curves-on-surfaces/", "/wip/guides/cpp/testing-for-curves-on-surfaces/"]
+aliases = ["/en/5/guides/cpp/testing-for-curves-on-surfaces/", "/en/6/guides/cpp/testing-for-curves-on-surfaces/", "/en/7/guides/cpp/testing-for-curves-on-surfaces/", "/en/wip/guides/cpp/testing-for-curves-on-surfaces/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses how to test to see if a curve lies on a surface using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/vbscript-passing-parameters/", "/6/guides/rhinoscript/vbscript-passing-parameters/", "/7/guides/rhinoscript/vbscript-passing-parameters/", "/wip/guides/rhinoscript/vbscript-passing-parameters/"]
+aliases = ["/en/5/guides/rhinoscript/vbscript-passing-parameters/", "/en/6/guides/rhinoscript/vbscript-passing-parameters/", "/en/7/guides/rhinoscript/vbscript-passing-parameters/", "/en/wip/guides/rhinoscript/vbscript-passing-parameters/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses parameter passing in VBScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

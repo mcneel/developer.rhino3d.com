@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/surface-from-corner-points/", "/6/samples/rhinocommon/surface-from-corner-points/", "/7/samples/rhinocommon/surface-from-corner-points/", "/wip/samples/rhinocommon/surface-from-corner-points/"]
+aliases = ["/en/5/samples/rhinocommon/surface-from-corner-points/", "/en/6/samples/rhinocommon/surface-from-corner-points/", "/en/7/samples/rhinocommon/surface-from-corner-points/", "/en/wip/samples/rhinocommon/surface-from-corner-points/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to create a surface from a set of corner points."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinopython/curve-length/", "/6/samples/rhinopython/curve-length/", "/7/samples/rhinopython/curve-length/", "/wip/samples/rhinopython/curve-length/"]
+aliases = ["/en/5/samples/rhinopython/curve-length/", "/en/6/samples/rhinopython/curve-length/", "/en/7/samples/rhinopython/curve-length/", "/en/wip/samples/rhinopython/curve-length/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to get curve length through Python."
@@ -17,7 +17,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 ```python

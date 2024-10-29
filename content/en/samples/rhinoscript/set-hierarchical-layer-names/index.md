@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/set-hierarchical-layer-names/", "/6/samples/rhinoscript/set-hierarchical-layer-names/", "/7/samples/rhinoscript/set-hierarchical-layer-names/", "/wip/samples/rhinoscript/set-hierarchical-layer-names/"]
+aliases = ["/en/5/samples/rhinoscript/set-hierarchical-layer-names/", "/en/6/samples/rhinoscript/set-hierarchical-layer-names/", "/en/7/samples/rhinoscript/set-hierarchical-layer-names/", "/en/wip/samples/rhinoscript/set-hierarchical-layer-names/"]
 authors = [ "dale" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to rename layers in a hierarchical manner using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

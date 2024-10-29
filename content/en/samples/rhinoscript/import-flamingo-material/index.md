@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/import-flamingo-material/", "/6/samples/rhinoscript/import-flamingo-material/", "/7/samples/rhinoscript/import-flamingo-material/", "/wip/samples/rhinoscript/import-flamingo-material/"]
+aliases = ["/en/5/samples/rhinoscript/import-flamingo-material/", "/en/6/samples/rhinoscript/import-flamingo-material/", "/en/7/samples/rhinoscript/import-flamingo-material/", "/en/wip/samples/rhinoscript/import-flamingo-material/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how import a ArMaterial file using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

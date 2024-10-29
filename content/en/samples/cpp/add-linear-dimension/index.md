@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/add-linear-dimension/", "/6/samples/cpp/add-linear-dimension/", "/7/samples/cpp/add-linear-dimension/", "/wip/samples/cpp/add-linear-dimension/"]
+aliases = ["/en/5/samples/cpp/add-linear-dimension/", "/en/6/samples/cpp/add-linear-dimension/", "/en/7/samples/cpp/add-linear-dimension/", "/en/wip/samples/cpp/add-linear-dimension/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a linear dimension object."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

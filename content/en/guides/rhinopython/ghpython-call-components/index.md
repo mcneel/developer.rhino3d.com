@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/ghpython-call-components/", "/6/guides/rhinopython/ghpython-call-components/", "/7/guides/rhinopython/ghpython-call-components/", "/wip/guides/rhinopython/ghpython-call-components/"]
+aliases = ["/en/5/guides/rhinopython/ghpython-call-components/", "/en/6/guides/rhinopython/ghpython-call-components/", "/en/7/guides/rhinopython/ghpython-call-components/", "/en/wip/guides/rhinopython/ghpython-call-components/"]
 authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "It is possible to call a Grasshopper component from inside a Python script."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 **Node-in-Code™**: almost every Grasshopper component is now callable as a function in other places in Rhino.  Grasshopper components may be called in GhPython (on the Gh canvas) and from rhino.Python (off the canvas). This adds few thousand new functions accessible to GhPython. Functions are also available through 3rd party components.  Along with the new functionality that this provides, the technique can be used to simplify existing gh definition files by simply lumping together a bunch of related components into a single 'scott_davidson' script.

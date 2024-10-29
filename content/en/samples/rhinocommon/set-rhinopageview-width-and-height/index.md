@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/set-rhinopageview-width-and-height/", "/6/samples/rhinocommon/set-rhinopageview-width-and-height/", "/7/samples/rhinocommon/set-rhinopageview-width-and-height/", "/wip/samples/rhinocommon/set-rhinopageview-width-and-height/"]
+aliases = ["/en/5/samples/rhinocommon/set-rhinopageview-width-and-height/", "/en/6/samples/rhinocommon/set-rhinopageview-width-and-height/", "/en/7/samples/rhinocommon/set-rhinopageview-width-and-height/", "/en/wip/samples/rhinocommon/set-rhinopageview-width-and-height/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to set the RhinoPageView width and height dimensions."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

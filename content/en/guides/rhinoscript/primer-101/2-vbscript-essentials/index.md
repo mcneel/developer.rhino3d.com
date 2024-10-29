@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/primer-101/2-vbscript-essentials/", "/6/guides/rhinoscript/primer-101/2-vbscript-essentials/", "/7/guides/rhinoscript/primer-101/2-vbscript-essentials/", "/wip/guides/rhinoscript/primer-101/2-vbscript-essentials/"]
+aliases = ["/en/5/guides/rhinoscript/primer-101/2-vbscript-essentials/", "/en/6/guides/rhinoscript/primer-101/2-vbscript-essentials/", "/en/7/guides/rhinoscript/primer-101/2-vbscript-essentials/", "/en/wip/guides/rhinoscript/primer-101/2-vbscript-essentials/"]
 authors = [ "david" ]
 categories = [ "RhinoScript 101" ]
 category_page = "guides/rhinoscript/primer-101/"
@@ -23,7 +23,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## 2.1 Language Origin

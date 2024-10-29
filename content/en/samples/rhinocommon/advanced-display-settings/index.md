@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/advanced-display-settings/", "/6/samples/rhinocommon/advanced-display-settings/", "/7/samples/rhinocommon/advanced-display-settings/", "/wip/samples/rhinocommon/advanced-display-settings/"]
+aliases = ["/en/5/samples/rhinocommon/advanced-display-settings/", "/en/6/samples/rhinocommon/advanced-display-settings/", "/en/7/samples/rhinocommon/advanced-display-settings/", "/en/wip/samples/rhinocommon/advanced-display-settings/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to change advanced display settings in Rhino where the mesh wireframe thickness (in pixels) is modified."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

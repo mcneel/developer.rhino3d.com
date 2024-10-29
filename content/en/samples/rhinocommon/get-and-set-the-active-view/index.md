@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/get-and-set-the-active-view/", "/6/samples/rhinocommon/get-and-set-the-active-view/", "/7/samples/rhinocommon/get-and-set-the-active-view/", "/wip/samples/rhinocommon/get-and-set-the-active-view/"]
+aliases = ["/en/5/samples/rhinocommon/get-and-set-the-active-view/", "/en/6/samples/rhinocommon/get-and-set-the-active-view/", "/en/7/samples/rhinocommon/get-and-set-the-active-view/", "/en/wip/samples/rhinocommon/get-and-set-the-active-view/"]
 authors = [ "steve" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to determine and set the active view in Rhino."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

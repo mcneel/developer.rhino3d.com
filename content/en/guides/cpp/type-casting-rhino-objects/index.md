@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/type-casting-rhino-objects/", "/6/guides/cpp/type-casting-rhino-objects/", "/7/guides/cpp/type-casting-rhino-objects/", "/wip/guides/cpp/type-casting-rhino-objects/"]
+aliases = ["/en/5/guides/cpp/type-casting-rhino-objects/", "/en/6/guides/cpp/type-casting-rhino-objects/", "/en/7/guides/cpp/type-casting-rhino-objects/", "/en/wip/guides/cpp/type-casting-rhino-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses type casting Rhino C/C++ SDK objects."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

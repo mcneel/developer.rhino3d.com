@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/enabling-orthogonal-mode/", "/6/guides/cpp/enabling-orthogonal-mode/", "/7/guides/cpp/enabling-orthogonal-mode/", "/wip/guides/cpp/enabling-orthogonal-mode/"]
+aliases = ["/en/5/guides/cpp/enabling-orthogonal-mode/", "/en/6/guides/cpp/enabling-orthogonal-mode/", "/en/7/guides/cpp/enabling-orthogonal-mode/", "/en/wip/guides/cpp/enabling-orthogonal-mode/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide demonstrates how to enable Rhino's orthogonal mode using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

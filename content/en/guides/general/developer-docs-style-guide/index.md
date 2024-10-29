@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/developer-docs-style-guide/", "/6/guides/general/developer-docs-style-guide/", "/7/guides/general/developer-docs-style-guide/", "/wip/guides/general/developer-docs-style-guide/"]
+aliases = ["/en/5/guides/general/developer-docs-style-guide/", "/en/6/guides/general/developer-docs-style-guide/", "/en/7/guides/general/developer-docs-style-guide/", "/en/wip/guides/general/developer-docs-style-guide/"]
 authors = [ "dan" ]
 categories = [ "This Site" ]
 description = "This guide serves as an example and quick reference for the syntax and structure of this site."
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 <a id="top"></a> <!-- this is just a sample anchor -->

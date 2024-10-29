@@ -1,0 +1,158 @@
+{{ $.Scratch.Add "title" (.Get "title" | default "title") }}
+{{ $.Scratch.Add "type" (.Get "type" | default "type") }}
+{{ $.Scratch.Add "has-promo" (.Get "has-promo" | default "") }}
+{{ $.Scratch.Add "promo-active" (.Get "has-promo" | default "") }}
+{{ $.Scratch.Add "subtitle" (.Get "subtitle" | default "") }}
+{{ $.Scratch.Add "action" (.Get "action" | default "Buy Now") }}
+{{ $.Scratch.Add "ribbon" (.Get "ribbon" | default "") }}
+{{ $.Scratch.Add "link" (.Get "link" | default "") }}
+{{ $.Scratch.Add "region" (.Page.Params.MCNEEL_REGION | default (getenv "MCNEEL_REGION"| default "NAPA")) }}
+{{ $.Scratch.Add "price" (index (index .Page.Params.pricing ($.Scratch.Get "region")) ($.Scratch.Get "type")) }}
+{{ $.Scratch.Add "promo-price" (index (index .Page.Params.pricing ($.Scratch.Get "region")) (print ($.Scratch.Get "type") "-promo")) }}
+
+{{ $currentDate := now.Format "2006-01-02" }}
+{{ $promoEndDate := "2024-02-27" }} 
+{{ if ge $currentDate $promoEndDate }}
+  {{ $.Scratch.Set "promo-active" ""}}
+{{ end }}
+
+<div class="plan">
+    {{ if ne (.Get "ribbon") "" }}
+      {{ if ne (.Get "has-promo") "" }}
+        {{ if ne ($.Scratch.Get "promo-active") "" }}
+          <div class="featured-ribbon">{{ $.Scratch.Get "ribbon" }}</div>
+        {{- end }}
+      {{ else }}
+        <div class="featured-ribbon">{{ $.Scratch.Get "ribbon" }}</div>
+      {{- end }}
+      
+    {{- end }}
+    <div>
+        <p class="plan-title">{{ $.Scratch.Get "title" }}</p>
+        <p class="plan-price">
+            {{ if ne ($.Scratch.Get "promo-active") "" }}
+            <span class="plan-price-inactive">{{ $.Scratch.Get "price" }}</span>
+            <span class="plan-price-active">{{ $.Scratch.Get "promo-price" }}</span>
+            {{ else }}
+            <span class="plan-price-active">{{ $.Scratch.Get "price" }}</span>
+            {{- end }}
+        </p>
+        <p class="plan-subtitle">
+            <span>{{ $.Scratch.Get "subtitle" }}</span>
+        </p>
+        <div class="plan-details">{{.Inner | markdownify}}</div>
+    </div>
+    <a class="button" href='{{ $.Scratch.Get "link" }}'>{{ $.Scratch.Get "action" }}</a>
+</div>
+
+<style>
+
+    :root {
+        --white: #fff;
+        --gray: #f5f5f5;
+        --green: #c5ffe4b2;
+        --purple: #c5ceffb2;
+        --yellow: #ffdf9bb2;
+        --dark: #333;
+        --rhinored: #901010;
+
+      }
+
+      .plan {
+        border-radius: 2em;
+        padding: 1em;
+        background-color: white;
+        width: 260px;
+        box-shadow:0 1px 20px rgba(0,0,0,0.1);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      
+      .plan:hover {
+        box-shadow:0 1px 20px rgba(0,0,0,0.3);
+        transition: all 0.3s ease-in-out;
+      }
+      
+      .button {
+        padding: 0.7em;
+        border-radius: 2.5em;
+        text-align: center;
+        cursor: pointer;
+        background: var(--gray);
+        color: var(--rhinored);
+        display: block;
+      }
+      
+      .button:hover {
+        background-color: var(--rhinored);
+        color: var(--white);
+      }
+      
+      .plan-title {
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.1em;
+        text-transform: uppercase;
+      }
+
+      .plan-subtitle {
+        text-align: center;
+        font-size: 1.3em;
+        font-weight: 500;
+      }
+
+      .plan-price {
+        text-align: center;
+        font-size: 2.2em;
+      }
+      
+      .plan-price-active {
+        font-weight: 900;
+      }
+
+      .plan-price-inactive {
+        font-weight: 100;
+        text-decoration-line: line-through;
+        color: gray;
+    }
+
+      
+      .plan-features-title {
+        font-weight: bold;
+      }
+
+      .divider {
+        width: 100%;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.2);
+        margin: 2rem 0;
+      }
+
+    .plan-details  {
+        padding: 10px;
+        font-weight: 300;
+    }
+
+    .featured-ribbon {
+        width: 200px;
+        background: var(--rhinored);
+        position: absolute;
+        top: 15px;
+        line-height: 37px;
+        font-size: 0.75em;
+        left: -65px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        font-weight: 700;
+        color: white;
+        text-transform: uppercase;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        /* Custom styles */
+        /* Different positions */
+      }
+      
+</style>

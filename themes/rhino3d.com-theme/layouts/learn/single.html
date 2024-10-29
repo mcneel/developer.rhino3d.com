@@ -41,7 +41,21 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                        <iframe width='100%' height='400px' v-bind:src="selectedCard.embedUrl" frameborder='0' allow="autoplay; fullscreen" allowFullScreen></iframe>
+                        <iframe v-if="!selectedCard.embedUrl.includes('rhino3d.com/static-media/video')" width='100%' height='400px' v-bind:src="selectedCard.embedUrl" frameborder='0' allow="autoplay; fullscreen" allowFullScreen></iframe>
+
+                        <div class="video-player" v-else>
+                            <div class="caption-locator">
+                            <center>
+                                    <span class="rma-caption" style="display:none;"></span>
+                            </center>
+                            </div>
+                            
+                            <video id="video" controls="" autoplay="" loop="" playsinline="" muted="" preload="metadata" style="width:100%">
+                                <source v-bind:src="selectedCard.embedUrl">
+                                <track kind="metadata" srclang="{{.Site.Language.Lang}}" v-bind:src="`${selectedCard.embedUrl.substr(0, selectedCard.embedUrl.lastIndexOf('/'))}/{{.Site.Language.Lang}}.vtt`" default="">
+                            </video>
+                        </div>
+                        
                     </div>
                     <div class="modal-footer" >
                             (( selectedCard.description ))
@@ -67,6 +81,66 @@
                 Nothing to show
                 <span style="color:#900; cursor:pointer" v-on:click="resetQuery()">Reset filters</span>
             </div>
+
+            <!-- healthcheck, internal mcneel only -->
+            <div class="mcneel_only hidden">
+                <div style="display: flex; justify-content: space-between; align-items: center; background-color: antiquewhite;padding: 10px;border-radius: 5px;">
+                    <strong>Admin tools (McNeel only):</strong>
+                    <button v-on:click="linkHealthCheckModal()" >Check links health</button>
+                    <div class="modal fade" id="HealthCheckModal" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="modal-title" id="ModalLongTitle">Check links health</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Ignore links from following domains</p>
+                                <ul>
+                                    <li v-for="(value, name, index) in linkCheckIgnores">
+                                        <input type="checkbox" v-model="linkCheckIgnores[name]"  v-bind:id="name">
+                                        <span>(( name ))</span>
+                                    </li>
+                                </ul>
+                                <p>((linksToCheck.length)) Links to check:</p>
+                                {{/*  <ul>
+                                    <li v-for="link in linksToCheck">
+                                        <a :href="'https://www.whatsmydns.net/redirect-checker?q='+link" target="_blank">((link))</a>
+                                    </li>
+                                </ul>  */}}
+                                <p>
+                                    <b>Redirected links need to be manually checked:</b>
+                                    <br/>
+                                    If a link is no longer relevant, it should be removed from learn.toml
+                                    <br/>
+                                    If it is still relevant, you can put a new key <span><b>verified = "mm/dd/yyyy"</b></span> under <span><b>[[tutorials]]</b></span> for that link in learn.toml so I know to ignore them in future checks
+                                </p>
+                                <div style="text-align: center;" v-if="checkingLinkHealthInProgress">
+                                    Please Wait...
+                                </div>
+                                <ol style="overflow-wrap: anywhere;">
+                                    <template v-for="item in redirectedLinks">
+                                        <li v-if="item">
+                                            <div v-for="[link, details] of Object.entries(item)">
+                                                <a :href="link" target="_blank">(( link ))</a>
+                                                <template v-for="step,i in details.steps">
+                                                    <p :style="`padding-left: ${i*15}px;`">↘ ((step.status)) ((step.url))</p>
+                                                </template>
+                                                <a :href="details.destination_url" target="_blank">((details.destination_url))</a>
+                                            </div>
+                                            <br/>
+                                        </li>
+                                    </template>
+                                </ol>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div  class="discover-grid discover-grid-row" v-if="discoverCards.length>0">
                 <div v-for="card in discoverCards"  v-bind:itemid="card.url"
                     class="discover-item card learn-card-override">
@@ -106,6 +180,7 @@
 </div>
 
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" integrity="sha384-Oapd3DvPeXtjgp4dZhVuEpPpwgE9OOzAeNAp0y3TrgcF3TxLkDhk5/4JMvN5453i" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
 </script>
@@ -113,7 +188,7 @@
 <script src='{{ (resources.Get "/script/markdown-0.5.0.min.js" | resources.Fingerprint).Permalink }}'></script>
 <script type="text/javascript" src='{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}'>
 </script>
-<script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.1/fuzzysort.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.1/fuzzysort.min.js" integrity="sha384-/AGrezUaKQXXMlRybn/0egtqO3/JjMrXCpEK51HoVJGvQ3mScXfD0/pK5Qi+89P6" crossorigin="anonymous"></script>
 {{/*  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>  */}}
 <!-- <script type="text/javascript" src="{{ (resources.Get "/script/yaml.min.js" | resources.Fingerprint).Permalink }}"> -->
 <!-- </script> -->
@@ -403,7 +478,17 @@
                 allCards: cards,
                 discoverCards: [],
                 selectedCard: null,
-                modalContent: null
+                modalContent: null,
+                linkCheckIgnores: {
+                    "mcneel.com": true,
+                    "rhino3d.com": true,
+                    "vimeo.com": true,
+                    "youtube.com": true,
+                    "youtu.be": true
+                },
+                linksToCheck: learnData["tutorials"].map(t => t.url),
+                redirectedLinks: [],
+                checkingLinkHealthInProgress: false
             },
             methods: {
                 filterCardsByKind: function (event) {
@@ -422,6 +507,40 @@
                 },
                 resetQuery: function (event) {
                     this.query = defaultQuery;
+                },
+                linkHealthCheckModal: function (event){
+                    $('#HealthCheckModal').modal();
+                    this.linkHealthCheck(this.linkCheckIgnores);
+                },
+                linkHealthCheck: function (ignoreLinksFrom){
+                    this.checkingLinkHealthInProgress = true;
+                    var ignoredDomains = [];
+                        Object.keys(ignoreLinksFrom).forEach(function(key, index) {
+                            if (ignoreLinksFrom[key]){
+                                ignoredDomains.push(key)
+                            }
+                        });
+                        this.linksToCheck = learnData["tutorials"].map(t => t.url).filter(l =>{
+                            const shouldIgnore = ignoredDomains.some(d => l.includes(d));
+                            return !shouldIgnore
+                        })
+
+                        //TODO: check url redirect counts
+                        axios.post('https://www.rhino3d.com/www-api/utils/redirect-checker', this.linksToCheck).then( r =>{
+                            const data = r.data;
+
+                            const redirectMaps = Object.keys(data).map( url => {
+                                const d = data[url]
+                                if (d["redirected"]){
+                                    return {[url]:d}
+                                }
+                            })
+                            this.redirectedLinks=redirectMaps
+                            this.checkingLinkHealthInProgress = false;
+                        }).catch(e => {
+                            this.checkingLinkHealthInProgress = false;
+                        })
+  
                 },
                 forgetItem: function (event) {
                     let itemId = event.currentTarget.getAttribute('itemid');
@@ -461,6 +580,9 @@
                         embedUrl = "https://www.youtube.com/embed/"+videoId+"?autoplay=1";
                         }
 
+                    }
+                    if (url.startsWith("https://www.rhino3d.com/static-media/video")){
+                        embedUrl = url;
                     }
                     return embedUrl;
                 },
@@ -730,6 +852,39 @@
 
                         history.pushState({...history.state, modal : url}, "modal",
                         queryUrl);
+
+                        //TODO: handle caption play for self hosted videos
+                        setTimeout(function() { 
+                            let video = document.querySelector('video');
+                                    if (video){
+                                    console.log("theres a video:", video)
+                                    const track = video.textTracks[0] //you should choose you text track
+                                    track.addEventListener('cuechange', onCueChange);
+                                    caption = document.querySelector('.rma-caption');
+                                    caption.innerHTML = 'Blah';
+                                
+                                    function onCueChange(event) {
+                                    console.log(event.currentTarget.activeCues);
+                                    if (event.currentTarget.activeCues.length > 0) {
+                                        caption.style.display = 'inline-block'
+                                        caption.innerHTML = event.currentTarget.activeCues[0].text;
+                                        //console.log(event.currentTarget.activeCues[0].text);
+                                    }
+                                    else {
+                                        caption.style.display = 'none';
+                                        caption.innerHTML = "(empty)"
+                                        //console.log("empty");
+                                    }
+                                    const cues = event.currentTarget.cues;
+                                    for (let i = 0; i < cues.length; i++) {
+                                        cues[i].line = 5;
+                                        //cues[i].size = 0;
+                                        cues[i].visibility = 'hidden';
+                                    }
+                                }
+                            }
+                         }, 1000);
+
                     }
                     else{
                         queryUrl = removeURLParameter(window.location.search, "modal")
@@ -737,6 +892,12 @@
                         queryUrl);
                         this.selectedCard = null;
                     }
+                },
+                linkCheckIgnores: {
+                    handler(ignoreLinksFrom){
+                        this.linkHealthCheck(ignoreLinksFrom)
+                      },
+                      deep: true
                 }
             },
             mounted: function () {
@@ -789,7 +950,6 @@
         app.query = event.state.query;
     };
 </script>
-
 
 
 {{ end }}

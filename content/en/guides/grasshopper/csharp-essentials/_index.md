@@ -1,5 +1,5 @@
 +++
-aliases = [""]
+aliases = ["/en"]
 authors = [ "rajaa" ]
 categories = [ "Basic" ]
 description = "A full course on RhinoComon in Grasshopper using C#"
@@ -22,7 +22,6 @@ state = ""
 platforms = [ "Windows", "Mac" ]
 since = 7
 until = 0
-
 +++
 
 This is an essential scripting guide

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/print-instance-definition-names/", "/6/samples/cpp/print-instance-definition-names/", "/7/samples/cpp/print-instance-definition-names/", "/wip/samples/cpp/print-instance-definition-names/"]
+aliases = ["/en/5/samples/cpp/print-instance-definition-names/", "/en/6/samples/cpp/print-instance-definition-names/", "/en/7/samples/cpp/print-instance-definition-names/", "/en/wip/samples/cpp/print-instance-definition-names/"]
 authors = [ "dale" ]
 categories = [ "Blocks" ]
 description = "Demonstrates how to print the names of all instance definitions in the document."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

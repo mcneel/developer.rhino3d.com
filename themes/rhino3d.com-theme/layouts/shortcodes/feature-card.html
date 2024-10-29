@@ -1,5 +1,8 @@
 {{- $.Scratch.Set "page" "" -}}
 {{- $.Scratch.Set "url" "" -}}
+{{- $.Scratch.Set "image" "" -}}
+{{- $.Scratch.Set "title" "" -}}
+{{- $.Scratch.Set "description" "" -}}
 {{- $.Scratch.Set "error" false -}}
 {{- $.Scratch.Set "error_message" "" -}}
 
@@ -14,6 +17,21 @@
     {{/*  Optional Link override  */}}
     {{- if .Get "url" -}}
         {{- $.Scratch.Set "url" (.Get "url") -}}
+    {{- end -}}
+
+    {{/*  Optional Image override  */}}
+    {{- if .Get "image" -}}
+        {{- $.Scratch.Set "image" (.Get "image") -}}
+    {{- end -}}
+
+    {{/*  Optional Image override  */}}
+    {{- if .Get "title" -}}
+        {{- $.Scratch.Set "title" (.Get "title") -}}
+    {{- end -}}
+
+    {{/*  Optional Image override  */}}
+    {{- if .Get "description" -}}
+        {{- $.Scratch.Set "description" (.Get "description") -}}
     {{- end -}}
 {{- else -}}
     {{- $.Scratch.Set "error" true -}}
@@ -49,37 +67,57 @@
             {{- if ($.Scratch.Get "url") -}}
                 {{ $.Scratch.Set "page_link" ($.Scratch.Get "url") }}
             {{- end -}}
-            {{ $.Scratch.Set "has-thumbnail" "false" }}
-            {{- with .Params.thumbnail -}}
-            {{ $.Scratch.Set "has-thumbnail" "true" }}
+
+            {{ $.Scratch.Set "page_title" .Title }}
+            {{- if ($.Scratch.Get "title") -}}
+                {{ $.Scratch.Set "page_title" ($.Scratch.Get "title") }}
             {{- end -}}
-            {{ if eq ($.Scratch.Get "has-thumbnail") "true" }}
-                {{ if hasPrefix .Params.Thumbnail "/images/"}}
-                    {{/*  Global image folder  */}}
-                    {{- $image := resources.Get .Params.Thumbnail -}}
-                    {{ $thumbnail := $image.Fill "800x450 Center" }}
-                    {{ with $thumbnail }}
-                            <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
-                    {{ end }}
-                {{ else }}
-                    {{/*  Page bundle  */}}
-                    {{ with .Resources.GetMatch ( printf "%s" .Params.thumbnail) }}
-                        {{ $thumbnail := .Fill "800x450 Center" }}
+
+            {{ $.Scratch.Set "page_description" .Params.short_description }}
+            {{ if (eq ($.Scratch.Get "new_feature") "true") }}
+                {{ $.Scratch.Set "page_description" .Params.short_description }}
+            {{ else if (eq ($.Scratch.Get "updated_feature") "true") }}
+                {{ $.Scratch.Set "page_description" ( truncate 75 ( $.Scratch.Get "latest_update" ) ) }}
+            {{ else }}
+                {{ $.Scratch.Set "page_description" ( truncate 75 .Params.short_description ) }}
+            {{ end }}
+            {{- if ($.Scratch.Get "description") -}}
+                {{ $.Scratch.Set "page_description" ($.Scratch.Get "description") }}
+            {{- end -}}
+
+            {{- if ($.Scratch.Get "image") -}}
+                {{- $image := resources.Get ($.Scratch.Get "image") -}}
+                {{ $thumbnail := $image.Fill "800x450 Center" }}
+                {{ with $thumbnail }}
+                    <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                {{ end }}
+            {{ else }}
+                {{ $.Scratch.Set "has-thumbnail" "false" }}
+                {{- with .Params.thumbnail -}}
+                {{ $.Scratch.Set "has-thumbnail" "true" }}
+                {{- end -}}
+                {{ if eq ($.Scratch.Get "has-thumbnail") "true" }}
+                    {{ if hasPrefix .Params.Thumbnail "/images/"}}
+                        {{/*  Global image folder  */}}
+                        {{- $image := resources.Get .Params.Thumbnail -}}
+                        {{ $thumbnail := $image.Fill "800x450 Center" }}
                         {{ with $thumbnail }}
-                            <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                                <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                        {{ end }}
+                    {{ else }}
+                        {{/*  Page bundle  */}}
+                        {{ with .Resources.GetMatch ( printf "%s" .Params.thumbnail) }}
+                            {{ $thumbnail := .Fill "800x450 Center" }}
+                            {{ with $thumbnail }}
+                                <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                            {{ end }}
                         {{ end }}
                     {{ end }}
                 {{ end }}
-            {{ end }}
+            {{- end -}}
             <div class="card-container">
-                <h1><a href="{{ $.Scratch.Get "page_link" }}">{{ .Title }}</a></h1>
-                {{ if (eq ($.Scratch.Get "new_feature") "true") }}
-                    <p>{{ truncate 75 .Params.short_description }}</p>
-                {{ else if (eq ($.Scratch.Get "updated_feature") "true") }}
-                    <p>{{ truncate 75 ( $.Scratch.Get "latest_update" ) }}</p>
-                {{ else }}
-                    <p>{{ truncate 75 .Params.short_description }}</p>
-                {{ end }}
+                <h1><a href="{{ $.Scratch.Get "page_link" }}">{{ $.Scratch.Get "page_title" }}</a></h1>
+                <p>{{ $.Scratch.Get "page_description" }}</p>
             </div>
         </div>
     {{ end }}

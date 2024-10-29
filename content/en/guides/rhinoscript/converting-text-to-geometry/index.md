@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/converting-text-to-geometry/", "/6/guides/rhinoscript/converting-text-to-geometry/", "/7/guides/rhinoscript/converting-text-to-geometry/", "/wip/guides/rhinoscript/converting-text-to-geometry/"]
+aliases = ["/en/5/guides/rhinoscript/converting-text-to-geometry/", "/en/6/guides/rhinoscript/converting-text-to-geometry/", "/en/7/guides/rhinoscript/converting-text-to-geometry/", "/en/wip/guides/rhinoscript/converting-text-to-geometry/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to convert text to curves using RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

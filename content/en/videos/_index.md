@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/videos/", "/6/videos/", "/7/videos/", "/wip/videos/"]
+aliases = ["/en/5/videos/", "/en/6/videos/", "/en/7/videos/", "/en/wip/videos/"]
 title = "Videos"
 type = "guides"
 weight = 6
@@ -11,7 +11,6 @@ state = ""
 [included_in]
 platforms = []
 since = 0
-
 +++
 
 A growing collection of recorded events, internal presentations, and tutorials crafted for developers *by developers*.

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/simple-parameters/", "/6/guides/grasshopper/simple-parameters/", "/7/guides/grasshopper/simple-parameters/", "/wip/guides/grasshopper/simple-parameters/"]
+aliases = ["/en/5/guides/grasshopper/simple-parameters/", "/en/6/guides/grasshopper/simple-parameters/", "/en/7/guides/grasshopper/simple-parameters/", "/en/wip/guides/grasshopper/simple-parameters/"]
 authors = [ "david" ]
 categories = [ "Fundamentals" ]
 description = "This guide covers parameters; what they are, what they're for, what they can and cannot do."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/api/", "/6/api/", "/7/api/", "/wip/api/"]
+aliases = ["/en/5/api/", "/en/6/api/", "/en/7/api/", "/en/wip/api/"]
 description = "The API programmer references for Rhino and Grasshopper."
 title = "API References"
 type = "guides"
@@ -12,7 +12,6 @@ state = ""
 [included_in]
 platforms = []
 since = 0
-
 +++
 
 

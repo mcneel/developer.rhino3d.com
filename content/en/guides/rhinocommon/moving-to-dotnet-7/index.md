@@ -1,5 +1,5 @@
 +++
-authors = ["curtis"]
+authors = ["curtis", "callum"]
 categories = [ "Overview" ]
 description = "This guide walks you through making the transition to .NET 7"
 keywords = [ ".NET", "RhinoCommon", "Plugin" ]
@@ -104,11 +104,7 @@ You may also want to add your plugin project as a dependency of the launcher pro
 
 ## Debugging on Mac
 
-On Mac, get the [latest RhinoCommon Visual Studio extension](https://github.com/mcneel/RhinoVisualStudioExtensions) for Visual Studio for Mac. The extension automatically selects which version to debug based on the referenced version of RhinoCommon.
-
-To override this, you can go to the **Project Properties > Rhino** panel and select the launcher version. This adds a `<RhinoMacLauncher>8</RhinoMacLauncher>` property to your project file.
-
-You can also use Visual Studio Code with the `coreclr` debugger type from the C# extension. Set the program to `/Applications/Rhino 8.app/Contents/MacOS/Rhinoceros` and set either the `RHINO_PLUGIN_PATH` or `GRASSHOPPER_PLUGINS` to the path of your built plugin/component.
+On Mac, you will need to use [Visual Studio Code](https://code.visualstudio.com/). Follow the [Your First Plugin (Mac)](/guides/rhinocommon/your-first-plugin-mac/#setting-up-debug)
 
 ## Discussions
 

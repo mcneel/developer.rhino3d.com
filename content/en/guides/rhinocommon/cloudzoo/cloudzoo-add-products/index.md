@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-add-products/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-add-products/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-add-products/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-add-products/"]
+aliases = ["/en/5/guides/rhinocommon/cloudzoo/cloudzoo-add-products/", "/en/6/guides/rhinocommon/cloudzoo/cloudzoo-add-products/", "/en/7/guides/rhinocommon/cloudzoo/cloudzoo-add-products/", "/en/wip/guides/rhinocommon/cloudzoo/cloudzoo-add-products/"]
 authors = [ "aj" ]
 categories = [ "CloudZoo" ]
 description = "Once you are registered as an issuer, you can add, view, and modify products in Cloud Zoo using the endpoints described below."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 
@@ -106,6 +105,10 @@ The payload should be a [Product object](/guides/rhinocommon/cloudzoo/cloudzoo-p
 The product ID must be lowercase!
 {{< /call-out >}}
 
+{{< call-out "note" "Note" >}}
+Products are heavily cached in Cloud Zoo. In some cases, it might take a couple of minutes for changes to propagate.
+{{< /call-out >}}
+
 #### Response
 
 A successful response (The product was created):
@@ -132,6 +135,10 @@ Modifies an existing product with the given `product_id`. Note that some propert
 	    ],
 	    "picture": "https://elisapi.mcneel.com/media/new_icon_url"
 	}
+
+{{< call-out "note" "Note" >}}
+Products are heavily cached in Cloud Zoo. In some cases, it might take a couple of minutes for changes to propagate.
+{{< /call-out >}}
 
 #### Response
 

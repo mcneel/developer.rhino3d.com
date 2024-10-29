@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/plugin-installers-mac/", "/6/guides/rhinocommon/plugin-installers-mac/", "/7/guides/rhinocommon/plugin-installers-mac/", "/wip/guides/rhinocommon/plugin-installers-mac/"]
+aliases = ["/en/5/guides/rhinocommon/plugin-installers-mac/", "/en/6/guides/rhinocommon/plugin-installers-mac/", "/en/7/guides/rhinocommon/plugin-installers-mac/", "/en/wip/guides/rhinocommon/plugin-installers-mac/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "This guide explains how to create a plugin installer for Rhino for Mac."
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 {{< call-out "warning" "Warning" >}}
@@ -107,8 +106,7 @@ For example, to register a plugin that only Rhino 8 will load, your installer sh
 
 ## Related topics
 
-- [Your First Plugin (Mac)](/guides/rhinocommon/your-first-plugin-mac)
-- [Your First Plugin (Cross-Platform)](/guides/rhinocommon/your-first-plugin-crossplatform)
+- [Your First Plugin (Mac)](/guides/rhinocommon/your-first-plugin-mac)-crossplatform)
 - [Uninstalling Plugins (Mac)](/guides/rhinocommon/uninstalling-plugins-mac)
 - [Plugin Installers (Windows)](/guides/rhinocommon/plugin-installers-windows)
 

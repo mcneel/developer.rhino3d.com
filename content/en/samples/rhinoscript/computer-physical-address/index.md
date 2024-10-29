@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/computer-physical-address/", "/6/samples/rhinoscript/computer-physical-address/", "/7/samples/rhinoscript/computer-physical-address/", "/wip/samples/rhinoscript/computer-physical-address/"]
+aliases = ["/en/5/samples/rhinoscript/computer-physical-address/", "/en/6/samples/rhinoscript/computer-physical-address/", "/en/7/samples/rhinoscript/computer-physical-address/", "/en/wip/samples/rhinoscript/computer-physical-address/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Illustrates RhinoScript code that determines the physical, or MAC, address of a computer."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

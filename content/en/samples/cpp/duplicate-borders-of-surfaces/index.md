@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/duplicate-borders-of-surfaces/", "/6/samples/cpp/duplicate-borders-of-surfaces/", "/7/samples/cpp/duplicate-borders-of-surfaces/", "/wip/samples/cpp/duplicate-borders-of-surfaces/"]
+aliases = ["/en/5/samples/cpp/duplicate-borders-of-surfaces/", "/en/6/samples/cpp/duplicate-borders-of-surfaces/", "/en/7/samples/cpp/duplicate-borders-of-surfaces/", "/en/wip/samples/cpp/duplicate-borders-of-surfaces/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to duplicate the borders of surfaces and polysurfaces."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

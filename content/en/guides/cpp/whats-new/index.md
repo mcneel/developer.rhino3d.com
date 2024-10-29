@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/whats-new/", "/6/guides/cpp/whats-new/", "/7/guides/cpp/whats-new/", "/wip/guides/cpp/whats-new/"]
+aliases = ["/en/5/guides/cpp/whats-new/", "/en/6/guides/cpp/whats-new/", "/en/7/guides/cpp/whats-new/", "/en/wip/guides/cpp/whats-new/"]
 authors = [ "dale" ]
 categories = [ "Overview" ]
 description = "This brief guide outlines the new and changed features in the Rhino C/C++ SDK."
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

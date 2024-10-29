@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks/"]
+aliases = ["/en/5/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks/", "/en/6/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks/", "/en/7/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks/", "/en/wip/guides/rhinocommon/cloudzoo/cloudzoo-implement-http-callbacks/"]
 authors = [ "aj" ]
 categories = [ "CloudZoo" ]
 description = "This guide explains all the HTTPS callbacks that need to be implemented by an issuer of Cloud Zoo."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 As an issuer, you must implement four HTTPS endpoints to answer basic questions Cloud Zoo requires to function. We provide a [ready-to-deploy solution in our Github repository](https://github.com/mcneel/cloudzoo-issuer) you can use as a template to implement these callbacks, or if you're experienced with HTTP rest APIs, you can roll your own from scratch. Regardless of the path you choose, the issuer must answer the following questions:

@@ -2,22 +2,27 @@
 
 {{ if .Params.override_last_modified }} <!-- This is for pages/sites that have been ported from other repos or other situations where using the git date is problematic  -->
 {{- $.Scratch.Set "weekday" (dateFormat "Monday" .Params.override_last_modified) -}}
-{{- $.Scratch.Set "day" (dateFormat "1" .Params.override_last_modified) -}}
+{{- $.Scratch.Set "day" (dateFormat "2" .Params.override_last_modified) -}} <!-- "2" is the magic dateFormat for day (of the month) -->
 {{- $.Scratch.Set "month" (dateFormat "January" .Params.override_last_modified) -}}
 {{- $.Scratch.Set "year" (dateFormat "2006" .Params.override_last_modified) -}} <!-- "2006" is the magic dateFormat year number -->
+{{- $.Scratch.Set "month_trans" ($.Scratch.Get "month") -}}
+{{- $.Scratch.Set "weekday_trans" ($.Scratch.Get "weekday") -}}
 {{- else -}} <!-- but we default to the last time the file changed in git -->
 {{- $.Scratch.Set "weekday" (dateFormat "Monday" .Page.Lastmod) -}} 
+{{- $.Scratch.Set "weekday_trans" (dateFormat "Monday" .Page.Lastmod) -}} 
 {{- $.Scratch.Set "day" .Page.Lastmod.Day -}}
 {{- $.Scratch.Set "month" (string .Page.Lastmod.Month) -}}
+{{- $.Scratch.Set "month_trans" (string .Page.Lastmod.Month) -}}
 {{- $.Scratch.Set "year" .Page.Lastmod.Year -}}
 {{- end -}}
 
+{{- if or (eq ($.Scratch.Get "lang") "cn") (eq ($.Scratch.Get "lang") "jp") (eq ($.Scratch.Get "lang") "kr") (eq ($.Scratch.Get "lang") "tw") -}}
 {{- with index .Site.Data.months .Site.Language.Lang -}}
 {{- $.Scratch.Set "month_trans" (index .months ($.Scratch.Get "month" )) -}}
 {{- end -}}
-
 {{- with index .Site.Data.weekdays .Site.Language.Lang -}}
 {{- $.Scratch.Set "weekday_trans" (index .weekdays ($.Scratch.Get "weekday" )) -}}
+{{- end -}}
 {{- end -}}
 
 {{- if eq ($.Scratch.Get "lang") "cn" -}}

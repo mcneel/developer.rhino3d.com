@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/ghpython-bake/", "/6/guides/rhinopython/ghpython-bake/", "/7/guides/rhinopython/ghpython-bake/", "/wip/guides/rhinopython/ghpython-bake/"]
+aliases = ["/en/5/guides/rhinopython/ghpython-bake/", "/en/6/guides/rhinopython/ghpython-bake/", "/en/7/guides/rhinopython/ghpython-bake/", "/en/wip/guides/rhinopython/ghpython-bake/"]
 authors = [ "scottd" ]
 categories = [ "GhPython" ]
 description = "Use GhPython to create custom baking components."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 Many times it is useful to create a custom component in Grasshopper to bake both geometry and other properties into Rhino in the same component. This guide will cover the varying calls to create these custom components using GhPython.

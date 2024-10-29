@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/printing-layer-full-path/", "/6/guides/cpp/printing-layer-full-path/", "/7/guides/cpp/printing-layer-full-path/", "/wip/guides/cpp/printing-layer-full-path/"]
+aliases = ["/en/5/guides/cpp/printing-layer-full-path/", "/en/6/guides/cpp/printing-layer-full-path/", "/en/7/guides/cpp/printing-layer-full-path/", "/en/wip/guides/cpp/printing-layer-full-path/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates now to obtain a layer's full path using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

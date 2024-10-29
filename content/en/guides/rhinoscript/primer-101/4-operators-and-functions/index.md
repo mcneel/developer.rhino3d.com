@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/primer-101/4-operators-and-functions/", "/6/guides/rhinoscript/primer-101/4-operators-and-functions/", "/7/guides/rhinoscript/primer-101/4-operators-and-functions/", "/wip/guides/rhinoscript/primer-101/4-operators-and-functions/"]
+aliases = ["/en/5/guides/rhinoscript/primer-101/4-operators-and-functions/", "/en/6/guides/rhinoscript/primer-101/4-operators-and-functions/", "/en/7/guides/rhinoscript/primer-101/4-operators-and-functions/", "/en/wip/guides/rhinoscript/primer-101/4-operators-and-functions/"]
 authors = [ "david" ]
 categories = [ "RhinoScript 101" ]
 category_page = "guides/rhinoscript/primer-101/"
@@ -23,7 +23,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## 4.1 What on Earth are they and why should I care?

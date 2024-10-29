@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/circle-packing/", "/6/samples/rhinoscript/circle-packing/", "/7/samples/rhinoscript/circle-packing/", "/wip/samples/rhinoscript/circle-packing/"]
+aliases = ["/en/5/samples/rhinoscript/circle-packing/", "/en/6/samples/rhinoscript/circle-packing/", "/en/7/samples/rhinoscript/circle-packing/", "/en/wip/samples/rhinoscript/circle-packing/"]
 authors = [ "steven-janssen" ]
 categories = [ "Other" ]
 description = "Multi-radius circle packing algorithm in RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/screen-capture-all-viewports/", "/6/samples/cpp/screen-capture-all-viewports/", "/7/samples/cpp/screen-capture-all-viewports/", "/wip/samples/cpp/screen-capture-all-viewports/"]
+aliases = ["/en/5/samples/cpp/screen-capture-all-viewports/", "/en/6/samples/cpp/screen-capture-all-viewports/", "/en/7/samples/cpp/screen-capture-all-viewports/", "/en/wip/samples/cpp/screen-capture-all-viewports/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to screen capture all the visible viewports to a file."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

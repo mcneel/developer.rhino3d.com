@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/modifying-advanced-display-settings/", "/6/guides/cpp/modifying-advanced-display-settings/", "/7/guides/cpp/modifying-advanced-display-settings/", "/wip/guides/cpp/modifying-advanced-display-settings/"]
+aliases = ["/en/5/guides/cpp/modifying-advanced-display-settings/", "/en/6/guides/cpp/modifying-advanced-display-settings/", "/en/7/guides/cpp/modifying-advanced-display-settings/", "/en/wip/guides/cpp/modifying-advanced-display-settings/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to modify advanced display settings using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/"]
+aliases = ["/en/5/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/en/6/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/en/7/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/", "/en/wip/guides/rhinocommon/cloudzoo/cloudzoo-licenseformat/"]
 authors = [ "aj" ]
 categories = [ "CloudZooDoc" ]
 description = "A License Format object defines a pattern for a license key. When a user enters a license key to be added to their account or their team, Cloud Zoo will find a product with a matching license format and notify its issuer about the user's intent to add the license."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 **Note:** Not all format possibilities are described in this document. If your license keys have a format that cannot be accurately defined in the fields below, we might be able to help. Please contact aj@mcneel.com for details.
@@ -44,7 +43,7 @@ toc_type = "single"
 
 ## Description
 
--   `length` - A range of `min` and `max` integers representing the minimum and maximum characters--inclusive--a license key is expected to contain. To avoid conflicts with other formats, this number should be as specific as possible.
+-   `length` - A range of `min` and `max` integers representing the minimum and maximum characters--inclusive--a license key is expected to contain. To avoid conflicts with other formats, this number should be as specific as possible. Note that the length is for the overall license key and includes the characters in the prefix.
 -   `prefix` - A string representing the common prefix a license key is expected to begin with. The prefix should be as specific as possible to avoid conflicts with other formats.
 -  ` example` - An example license key that may be shown to the user when entering a license. It should begin with the `prefix` specified.
 -   `regexFilter`- (_optional_) - A regular expression defining the allowed characters in the license key. By default, only characters A-Z (both lowercase and uppercase) and numbers 0-9 are allowed. Whitespace, dashes, and slashes will not be considered for a pattern match.

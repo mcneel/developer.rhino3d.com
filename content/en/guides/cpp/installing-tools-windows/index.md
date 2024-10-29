@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/installing-tools-windows/", "/6/guides/cpp/installing-tools-windows/", "/7/guides/cpp/installing-tools-windows/", "/wip/guides/cpp/installing-tools-windows/"]
+aliases = ["/en/5/guides/cpp/installing-tools-windows/", "/en/6/guides/cpp/installing-tools-windows/", "/en/7/guides/cpp/installing-tools-windows/", "/en/wip/guides/cpp/installing-tools-windows/"]
 authors = [ "dale" ]
 categories = [ "Getting Started" ]
 description = "This guide covers all the necessary tools required to author Rhino plugins in C/C++ on Windows."
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 By the end of this guide, you should have all the tools installed necessary for authoring, building, and debugging C/C++ plugins using the Rhino C/C++ SDK on Windows.

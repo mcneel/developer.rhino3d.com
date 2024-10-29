@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/split-brep-edges/", "/6/samples/cpp/split-brep-edges/", "/7/samples/cpp/split-brep-edges/", "/wip/samples/cpp/split-brep-edges/"]
+aliases = ["/en/5/samples/cpp/split-brep-edges/", "/en/6/samples/cpp/split-brep-edges/", "/en/7/samples/cpp/split-brep-edges/", "/en/wip/samples/cpp/split-brep-edges/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to split the edges of breps."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

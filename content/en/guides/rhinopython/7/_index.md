@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/", "/6/guides/rhinopython/", "/7/guides/rhinopython/", "/wip/guides/rhinopython/"]
+aliases = ["/en/5/guides/rhinopython/", "/en/6/guides/rhinopython/", "/en/7/guides/rhinopython/", "/en/wip/guides/rhinopython/"]
 authors = "unset"
 categories = [ "Unsorted" ]
 description = "Quickly add functionality to Rhino or automate repetitive tasks."
@@ -25,7 +25,6 @@ until = 8
 
 [page_options]
 block_webcrawlers = true
-
 +++
 
 {{< alt-version "/guides/rhinopython/" "This guide is for Rhino 7 Python 2  For Rhino 8 Python 3? Click here!">}}

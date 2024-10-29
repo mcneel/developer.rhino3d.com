@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/annotation-objects/", "/6/guides/cpp/annotation-objects/", "/7/guides/cpp/annotation-objects/", "/wip/guides/cpp/annotation-objects/"]
+aliases = ["/en/5/guides/cpp/annotation-objects/", "/en/6/guides/cpp/annotation-objects/", "/en/7/guides/cpp/annotation-objects/", "/en/wip/guides/cpp/annotation-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses the annotation objects provided by the Rhino SDK."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
  
 ## Overview

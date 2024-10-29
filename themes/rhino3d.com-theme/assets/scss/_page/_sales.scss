@@ -19,6 +19,8 @@
     float:left;
     border: 1px solid #DDDDDD;
     width: 330px;
+	max-height: 400px;
+	overflow-y:auto;
 }
 
 .dealerlistheader {

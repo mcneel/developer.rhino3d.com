@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/hops-component/", "/6/guides/compute/hops-component/", "/7/guides/compute/hops-component/", "/wip/guides/compute/hops-component/"]
+aliases = ["/en/5/guides/compute/hops-component/", "/en/6/guides/compute/hops-component/", "/en/7/guides/compute/hops-component/", "/en/wip/guides/compute/hops-component/"]
 authors = [ "steve", "scottd", "andy.payne" ]
 categories = [ "Hops" ]
 description = "Hops adds functions to Grasshopper."
@@ -9,7 +9,7 @@ sdk = [ "Compute" ]
 title = "The Hops Component"
 type = "guides"
 weight = 3
-override_last_modified = "2022-02-18T11:35:10Z"
+override_last_modified = "2024-10-28T11:35:10Z"
 
 [admin]
 picky_sisters = ""
@@ -23,7 +23,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Overview 
@@ -31,7 +30,7 @@ toc_type = "single"
 
 {{< image url="/images/hops-overview.png" alt="/images/hops-overview.png" class="image_center" width="100%" >}}
 
-Hops is a component for Grasshopper in Rhino 7 and Rhino 8 WIP for Windows. Hops adds external **functions** to Grasshopper. Like other programming languages, functions let you:
+Hops is a component for Grasshopper in Rhino 7 and Rhino 8 for Windows. Hops adds external **functions** to Grasshopper. Like other programming languages, functions let you:
 
 * Simplify complex algorithms by using the same function multiple times.
 * Eliminate duplicate component combinations by placing common combinations in a function.
@@ -46,7 +45,7 @@ Hops functions are stored as separate Grasshopper documents. The Hops component 
 
 {{< vimeo 713836707 >}}
 
-### Installing Hops for Windows:
+### Installing Hops:
 
 There are a few ways to install hops on your machine.
   1. [Install Hops](rhino://package/search?name=hops) (This will launch Rhino)
@@ -54,7 +53,7 @@ There are a few ways to install hops on your machine.
       1. Then, search for “Hops”
       1. Select Hops and then Install
 
-{{< image url="/images/gh-hops-package-manager.png" alt="/images/gh-hops-package-manager.png" class="image_center" width="100%" >}}
+{{< image url="/images/hops-package-manager.png" alt="/images/hops-package-manager.png" class="image_center" width="100%" >}}
 
 ### Create a Hops Function
 
@@ -74,13 +73,14 @@ The name of the component is used for the name of the Hops input parameter. So, 
 
 Each Get component has a context menu (right-click) with various settings.
 
-{{< image url="/images/gh-hops-get-component-menu.png" alt="/images/gh-hops-get-component-menu.png" class="image_center" width="50%" >}}
+{{< image url="/images/hops-get-component-menu.png" alt="/images/hops-get-component-menu.png" class="image_center" width="50%" >}}
 
 * **Component Name** - This is the name that will be assigned to the input of the Hops component.
 * **Prompt** - This input will be the tooltip that is displayed when you hover over this parameter on the Hops component.
 * **Enable/Disable** - Enable or disable this component.
 * **At Least** - This is only used for the Grasshopper Player and will define the minimum number of values to accept for this input.
 * **At Most** - This will define the maximum number of values to accept for this input (Default = 1). If this value is set to 1, the Hops component will treat this input as *Item Access*. However, if this value is more than one (or unset) Hops will treat this input as *List Access*.
+* **Tree Access** - This will define whether you expect to pass a Data Tree into this input. This input is only used in Hops and if it is set to True, then this value will supercede the *At Most* value set above.
 * **Minimum & Maximum** - These optional inputs are only used for the Grasshopper Player and will clamp numeric inputs to these bounds.
 * **Presets** - This optional input is only used for the Grasshopper Player and are only found on the *String*, *Integer*, and *Number* Get components. This dialog allows you to set a list of predefined options which will be displayed to the user via the command line prompt.
 
@@ -107,17 +107,17 @@ The Hops component works in tandem with a local instance of a [Rhino.compute](ht
 1. make a REST API call to a remote server running on Windows.
 1. make a REST API call to a python ghhops_server running locally.
 
-The first option (making a call to a remote Windows server) will require some setup modifications to the remote machine. For more information on how to setup a remote server, checkout the section on [Remote Machine Configuration](https://developer.rhino3d.com/guides/grasshopper/hops-component/#remote-machine-configuration). 
+The first option (making a call to a remote Windows server) will require some setup modifications to the remote machine. For more information on how to setup a remote server, checkout the section on [Remote Machine Configuration](../hops-component/#remote-machine-configuration).
 
-The second option (making a call to a local python server) is covered in more detail in the section called [Calling a CPython Server](https://developer.rhino3d.com/guides/grasshopper/hops-component/#calling-a-cpython-server).
+The second option (making a call to a local python server) is covered in more detail in the section called [Calling a CPython Server](../hops-component/#calling-a-cpython-server).
 
 ## Hops Settings
 
 ### Application Settings
 
-The Hops settings control how Hops runs on an application level.  It is available through the Grasshopper File pulldown > Preferences.
+The Hops settings control how Hops runs on an application level.  It is available through the Grasshopper File pulldown > Preferences > Solver.
 
-{{< image url="/images/gh-hops-preferences.png" alt="/images/gh-hops-preferences.png" class="image_center" width="60%" >}}
+{{< image url="/images/hops-preferences.png" alt="/images/hops-preferences.png" class="image_center" width="60%" >}}
 
 * **Hops-Compute server URL** - List the IP address or URL of any remote machines or Compute servers.
 * **API Key** - The API key is a string of text that is secret to your compute server and your applications that are using the compute API e.g. `b8f91f04-3782-4f1c-87ac-8682f865bf1b`. It is optional if you are testing locally, but should be used in a production environment. It is basically how the compute server ensures that the API calls are coming from your apps only. You can enter any string that is unique and secret to you and your compute apps. Make sure to keep this in a safe place.
@@ -126,15 +126,17 @@ The Hops settings control how Hops runs on an application level.  It is availabl
 * **Hide Rhino.Compute Console Window** - Hops will solve in the background, but showing the window can be helpful for troubleshooting.
 * **Launch Local Rhino.Compute at Start** - Use this for remote machines when Compute needs to start before any requests are sent.
 * **Child Process Count** - Used to limit the number of requests for additional parallel processes. May want to set this to the number of cores available.
+* **Function Sources** - This section lets you add a path (either to a local directory or a URL) to frequently used Hops functions (ie. Grasshopper definitions).
 
-Note: As of Rhino version 7.13, the active model tolerances (ie. absolute distance and angle tolerances) are passed from Hops to the running instance of Rhino.compute as part of the JSON request.
+{{< call-out "note" "Note" >}}
+As of Rhino version 7.13, the active model tolerances (ie. absolute distance and angle tolerances) are passed from Hops to the running instance of Rhino.compute as part of the JSON request.
+{{< /call-out >}}
 
 ### Component Settings
 
 Right_click on the Hops component to select any number of options that control how Hops runs.
 
 {{< image url="/images/gh-hops-component-settings.png" alt="/images/gh-hops-component-settings.png" class="image_center" width="60%" >}}
-
 
 * **Parallel Computing** - Pass each item to a new parallel node if available.
 * **Path...** - Add the location of the GH function to be solved. This may be a file name, IP address or URL.

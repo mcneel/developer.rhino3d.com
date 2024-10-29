@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-vectors/", "/6/guides/rhinopython/python-rhinoscriptsyntax-vectors/", "/7/guides/rhinopython/python-rhinoscriptsyntax-vectors/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-vectors/"]
+aliases = ["/en/5/guides/rhinopython/python-rhinoscriptsyntax-vectors/", "/en/6/guides/rhinopython/python-rhinoscriptsyntax-vectors/", "/en/7/guides/rhinopython/python-rhinoscriptsyntax-vectors/", "/en/wip/guides/rhinopython/python-rhinoscriptsyntax-vectors/"]
 authors = [ "dale" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an overview of RhinoScriptSyntax Vector Geometry in Python."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Vectors

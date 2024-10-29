@@ -34,6 +34,9 @@ other = "Gérez votre compte, vos licences et vos équipes"
 [sign-in]
 other = "connexion"
 
+[sign-out]
+other = "déconnexion"
+
 [sign-in-title]
 other = "Connectez-vous pour gérer votre compte, vos licences et vos équipes"
 
@@ -247,7 +250,7 @@ other = "En avant"
 
 # Details of the Rhino 8 caption
 [caption-rhino-8-details]
-other = "Disponible maintenant avec EnveloppeMaillée, SubD à bord vif, amélioration de la vitesse dans Mac, et bien plus. "
+other = "Disponible maintenant avec EnveloppeMaillée, les plis de SubD, amélioration de la vitesse dans Mac, et bien plus."
 
 # Link title on homepage video captions
 [caption-learn-more]

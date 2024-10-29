@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/creating-linear-dimensions/", "/6/guides/opennurbs/creating-linear-dimensions/", "/7/guides/opennurbs/creating-linear-dimensions/", "/wip/guides/opennurbs/creating-linear-dimensions/"]
+aliases = ["/en/5/guides/opennurbs/creating-linear-dimensions/", "/en/6/guides/opennurbs/creating-linear-dimensions/", "/en/7/guides/opennurbs/creating-linear-dimensions/", "/en/wip/guides/opennurbs/creating-linear-dimensions/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to create linear dimensions using openNURBS."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

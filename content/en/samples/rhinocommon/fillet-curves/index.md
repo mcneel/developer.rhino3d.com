@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/fillet-curves/", "/6/samples/rhinocommon/fillet-curves/", "/7/samples/rhinocommon/fillet-curves/", "/wip/samples/rhinocommon/fillet-curves/"]
+aliases = ["/en/5/samples/rhinocommon/fillet-curves/", "/en/6/samples/rhinocommon/fillet-curves/", "/en/7/samples/rhinocommon/fillet-curves/", "/en/wip/samples/rhinocommon/fillet-curves/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to fillet two curves by a specified radius."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

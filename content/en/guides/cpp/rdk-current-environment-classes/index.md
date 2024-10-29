@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-current-environment-classes/", "/6/guides/cpp/rdk-current-environment-classes/", "/7/guides/cpp/rdk-current-environment-classes/", "/wip/guides/cpp/rdk-current-environment-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-current-environment-classes/", "/en/6/guides/cpp/rdk-current-environment-classes/", "/en/7/guides/cpp/rdk-current-environment-classes/", "/en/wip/guides/cpp/rdk-current-environment-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK current environment class in C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 ### Introduction
 The _Current Environment_ is a document-resident environment which has been selected for use during rendering. There are currently three such environments which are identified by _usage_. These are:

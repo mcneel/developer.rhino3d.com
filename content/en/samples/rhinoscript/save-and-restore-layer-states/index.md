@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/save-and-restore-layer-states/", "/6/samples/rhinoscript/save-and-restore-layer-states/", "/7/samples/rhinoscript/save-and-restore-layer-states/", "/wip/samples/rhinoscript/save-and-restore-layer-states/"]
+aliases = ["/en/5/samples/rhinoscript/save-and-restore-layer-states/", "/en/6/samples/rhinoscript/save-and-restore-layer-states/", "/en/7/samples/rhinoscript/save-and-restore-layer-states/", "/en/wip/samples/rhinoscript/save-and-restore-layer-states/"]
 authors = [ "dale" ]
 categories = [ "Layers" ]
 description = "Demonstrates how to save and restore the states of layers using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

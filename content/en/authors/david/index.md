@@ -1,4 +1,4 @@
 +++
-aliases = ["/5/authors/david/", "/6/authors/david/", "/7/authors/david/", "/wip/authors/david/"]
+aliases = ["/en/5/authors/david/", "/en/6/authors/david/", "/en/7/authors/david/", "/en/wip/authors/david/"]
 type = "authors"
 +++

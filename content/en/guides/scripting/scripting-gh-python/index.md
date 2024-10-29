@@ -1,13 +1,7 @@
 +++
 title = "Grasshopper Scripting: Python"
-description = ""
-type = "guides"
-categories = ["Scripting"]
-keywords = [ "", "" ]
-languages = [ "Python" ]
+description = "Provides detailed information on Python scripting in Grasshopper"
 authors = ["ehsan"]
-sdk = [ "RhinoCommon" ]
-weight = 4
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
@@ -612,9 +606,11 @@ You can also use the `# env` directive as shown below to specifically add a sear
 import my_module
 ```
 
-### Virtual Environments
+{{< call-out "note" "Note: Package Environments" >}}
 
-- 
+Installing multiple versions of the same package can get very complicated. Script Editor supports `# venv:` directive that attempts to simplify dependency trees for different scripts. Take a look at [Python Package Environments](/guides/scripting/advanced-pyvenvs) for detailed information on this topic.
+
+{{< /call-out >}}
 
 ## NuGet Packages
 

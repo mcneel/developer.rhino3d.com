@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-rendering-classes/", "/6/guides/cpp/rdk-rendering-classes/", "/7/guides/cpp/rdk-rendering-classes/", "/wip/guides/cpp/rdk-rendering-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-rendering-classes/", "/en/6/guides/cpp/rdk-rendering-classes/", "/en/7/guides/cpp/rdk-rendering-classes/", "/en/wip/guides/cpp/rdk-rendering-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK's rendering classes in C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 ### Introduction
 Even before the RDK existed, Rhino had a rendering pipeline and a _Render_ command which would allow the current render engine (e.g., Rhino Render or Flamingo) to render the scene. The RDK builds on and enhances this system to provide the following features:

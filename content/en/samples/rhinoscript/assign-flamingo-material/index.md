@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/assign-flamingo-material/", "/6/samples/rhinoscript/assign-flamingo-material/", "/7/samples/rhinoscript/assign-flamingo-material/", "/wip/samples/rhinoscript/assign-flamingo-material/"]
+aliases = ["/en/5/samples/rhinoscript/assign-flamingo-material/", "/en/6/samples/rhinoscript/assign-flamingo-material/", "/en/7/samples/rhinoscript/assign-flamingo-material/", "/en/wip/samples/rhinoscript/assign-flamingo-material/"]
 authors = [ "dale" ]
 categories = [ "Flamingo" ]
 description = "Demonstrates how to assign a Flamingo nXt material to an object using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

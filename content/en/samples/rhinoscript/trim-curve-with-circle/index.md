@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/trim-curve-with-circle/", "/6/samples/rhinoscript/trim-curve-with-circle/", "/7/samples/rhinoscript/trim-curve-with-circle/", "/wip/samples/rhinoscript/trim-curve-with-circle/"]
+aliases = ["/en/5/samples/rhinoscript/trim-curve-with-circle/", "/en/6/samples/rhinoscript/trim-curve-with-circle/", "/en/7/samples/rhinoscript/trim-curve-with-circle/", "/en/wip/samples/rhinoscript/trim-curve-with-circle/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to trim a closed curve with a circle using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

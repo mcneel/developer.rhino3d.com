@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/adding-commands-to-projects/", "/6/guides/rhinocommon/adding-commands-to-projects/", "/7/guides/rhinocommon/adding-commands-to-projects/", "/wip/guides/rhinocommon/adding-commands-to-projects/"]
+aliases = ["/en/5/guides/rhinocommon/adding-commands-to-projects/", "/en/6/guides/rhinocommon/adding-commands-to-projects/", "/en/7/guides/rhinocommon/adding-commands-to-projects/", "/en/wip/guides/rhinocommon/adding-commands-to-projects/"]
 authors = [ "dan" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to add additional commands to a RhinoCommon plugin project."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

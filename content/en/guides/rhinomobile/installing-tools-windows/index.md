@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinomobile/installing-tools-windows/", "/6/guides/rhinomobile/installing-tools-windows/", "/7/guides/rhinomobile/installing-tools-windows/", "/wip/guides/rhinomobile/installing-tools-windows/"]
+aliases = ["/en/5/guides/rhinomobile/installing-tools-windows/", "/en/6/guides/rhinomobile/installing-tools-windows/", "/en/7/guides/rhinomobile/installing-tools-windows/", "/en/wip/guides/rhinomobile/installing-tools-windows/"]
 authors = [ "dan" ]
 categories = [ "Getting Started" ]
 description = "This guide covers all the necessary tools required for RhinoMobile on Windows"

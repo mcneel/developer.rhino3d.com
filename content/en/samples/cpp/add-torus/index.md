@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/add-torus/", "/6/samples/cpp/add-torus/", "/7/samples/cpp/add-torus/", "/wip/samples/cpp/add-torus/"]
+aliases = ["/en/5/samples/cpp/add-torus/", "/en/6/samples/cpp/add-torus/", "/en/7/samples/cpp/add-torus/", "/en/wip/samples/cpp/add-torus/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a torus using ON_BrepTorus and add it to Rhino."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

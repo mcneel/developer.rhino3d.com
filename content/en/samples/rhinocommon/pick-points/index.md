@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/pick-points/", "/6/samples/rhinocommon/pick-points/", "/7/samples/rhinocommon/pick-points/", "/wip/samples/rhinocommon/pick-points/"]
+aliases = ["/en/5/samples/rhinocommon/pick-points/", "/en/6/samples/rhinocommon/pick-points/", "/en/7/samples/rhinocommon/pick-points/", "/en/wip/samples/rhinocommon/pick-points/"]
 authors = [ "steve" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to pick and select point objects."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/divide-by-length-points/", "/6/samples/rhinocommon/divide-by-length-points/", "/7/samples/rhinocommon/divide-by-length-points/", "/wip/samples/rhinocommon/divide-by-length-points/"]
+aliases = ["/en/5/samples/rhinocommon/divide-by-length-points/", "/en/6/samples/rhinocommon/divide-by-length-points/", "/en/7/samples/rhinocommon/divide-by-length-points/", "/en/wip/samples/rhinocommon/divide-by-length-points/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to divide a user-selected curve into a set of spaced points along the curve."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

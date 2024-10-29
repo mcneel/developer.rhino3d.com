@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/set-views-construction-plane/", "/6/samples/cpp/set-views-construction-plane/", "/7/samples/cpp/set-views-construction-plane/", "/wip/samples/cpp/set-views-construction-plane/"]
+aliases = ["/en/5/samples/cpp/set-views-construction-plane/", "/en/6/samples/cpp/set-views-construction-plane/", "/en/7/samples/cpp/set-views-construction-plane/", "/en/wip/samples/cpp/set-views-construction-plane/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to set a view's construction plane."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

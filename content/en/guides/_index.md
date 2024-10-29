@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/", "/6/guides/", "/7/guides/", "/wip/guides/"]
+aliases = ["/en/5/guides/", "/en/6/guides/", "/en/7/guides/", "/en/wip/guides/"]
 description = "All the guides available for developing for Rhino or Grasshopper."
 title = "Guides"
 type = "guides"
@@ -61,7 +61,7 @@ toc_type = "single"
 
 ### Getting Started
 
-#### Script Editor
+#### ScriptEditor Command
   - [Opening Script Editor](/guides/scripting/scripting-command/#opening-script-editor)
   - [First Script](/guides/scripting/scripting-command/#first-script)
   - [Edit Script](/guides/scripting/scripting-command/#edit-script)
@@ -82,39 +82,41 @@ toc_type = "single"
 
 ### Python Scripting
 - <!-- [Python Scripting](/guides/scripting/scripting-python) --> Scripting: Python {{% comingsoon-label %}}
-- [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
+- {{< dev-topic "Grasshopper Scripting: Python" "/guides/scripting/scripting-gh-python" >}}
 
 ### C# Scripting
 - <!-- [C# Scripting](/guides/scripting/scripting-csharp) --> Scripting: C# {{% comingsoon-label %}}
-- [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
+- {{< dev-topic "Grasshopper Scripting: C#" "/guides/scripting/scripting-gh-csharp" >}}
 
 ### Editor Features
-- <!-- [Editing Features](/guides/scripting/editor-editing) --> Editing Features {{% comingsoon-label %}}
+- {{< dev-topic "Editing Features" "/guides/scripting/editor-editing" >}}
 - <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
 - <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
-- <!-- [Terminal](/guides/scripting/editor-terminal) --> Terminal {{% comingsoon-label %}}
+- {{< dev-topic "Terminal" "/guides/scripting/editor-terminal" >}}
 - <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
 - <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
 - <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
 - <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
 - <!-- [Help](/guides/scripting/editor-help) --> Help {{% comingsoon-label %}}
-- [Configurations](/guides/scripting/editor-configs)
-- <!-- [Logs](/guides/scripting/editor-logs) --> Logs {{% comingsoon-label %}}
+- {{< dev-topic "Options" "/guides/scripting/editor-configs" >}}
+- {{< dev-topic "Logs" "/guides/scripting/editor-logs" >}}
 
-### Publishing
+### Publishing Script Plugins
 
-- <!-- [Creating Rhino Projects](/guides/scripting/projects-create) --> Creating Rhino Projects {{% comingsoon-label %}}
-- <!-- [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) --> Creating Rhino and Grasshopper Plugins {{% comingsoon-label %}}
+- {{< dev-topic "Creating Rhino Projects" "/guides/scripting/projects-create" >}}
+- {{< dev-topic "Creating Rhino and Grasshopper Plugins" "/guides/scripting/projects-publish" >}}
 
 ### Advanced
 
-- [Language Initialization](/guides/scripting/advanced-langinit)
+- {{< dev-topic "ScriptEditor Macros" "/guides/scripting/advanced-scripteditor-macros" >}}
+- {{< dev-topic "Language Initialization" "/guides/scripting/advanced-langinit" >}}
 - <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
-- [Python Path Files](/guides/scripting/advanced-pthfiles)
+- {{< dev-topic "Python Path Files" "/guides/scripting/advanced-pthfiles" >}}
+- {{< dev-topic "Python Package Environments" "/guides/scripting/advanced-pyvenvs" >}}
 - <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
-- <!-- [Async Execution](/guides/scripting/advanced-async) --> Async Execution {{% comingsoon-label %}}
+- {{< dev-topic "Asynchronous Execution" "/guides/scripting/advanced-async" >}}
 - <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
-- <!-- [RhinoCode Command Line Interface](/guides/scripting/advanced-cli) --> RhinoCode Command Line Interface {{% comingsoon-label %}}
+- {{< dev-topic "RhinoCode Command Line Interface" "/guides/scripting/advanced-cli" >}}
 <!-- [RhinoCode API](/guides/scripting/advanced-core-api) -->
 <!-- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api) -->
 
@@ -130,7 +132,7 @@ toc_type = "single"
 ### Getting Started
 
 - Installing Tools ([Windows](/guides/rhinocommon/installing-tools-windows/), [Mac](/guides/rhinocommon/installing-tools-mac/))
-- Your First Plugin ([Windows](/guides/rhinocommon/your-first-plugin-windows/), [Mac](/guides/rhinocommon/your-first-plugin-mac/), [Cross-Platform](/guides/rhinocommon/your-first-plugin-crossplatform/))
+- Your First Plugin ([Windows](/guides/rhinocommon/your-first-plugin-windows/), [Mac](/guides/rhinocommon/your-first-plugin-mac/)
 - Plugin Installers ([Windows](/guides/rhinocommon/plugin-installers-windows/), [Mac](/guides/rhinocommon/plugin-installers-mac/))
 - [Distributing a Rhino Plug-In with the Package Manager](/guides/yak/creating-a-rhino-plugin-package/)
 
@@ -296,38 +298,76 @@ toc_type = "single"
 
 *Create custom Grasshopper components and plugins.*
 
-### Overview
+### [Essential Algorithms and Data Structures for Grasshopper](/guides/grasshopper/gh-algorithms-and-data-structures/)
 
-- [What is a Grasshopper Component?](/guides/grasshopper/what-is-a-grasshopper-component/)
+- [Introduction](/guides/grasshopper/gh-algorithms-and-data-structures/)
+- [Algorithms and Data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/)
+  - [1.1 Algorithmic design](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#11-algorithmic-design)
+  - [1.2 Algorithms parts](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#12-algorithms-parts)
+  - [1.3 Designing algorithms: the 4-step process](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#13-designing-algorithms-the-4-step-process)
+  - [1.4 Data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#14-data)
+  - [1.5 Data sources](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#15-data-sources)
+  - [1.6 Data types](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#16-data-types)
+  - [1.7 Processing Data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#17-processing-data)
+  - [1.8 Pitfalls of algorithmic design](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#18-pitfalls-of-algorithmic-design)
+  - [1.9 Tutorials: algorithms and data](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/#19-tutorials-algorithms-and-data)
+- [Introduction to Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/)
+  - [2.1 Overview](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/#21-overview)
+  - [2.2 Generating lists](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/#22-generating-lists)
+  - [2.3 List operations](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/#23-list-operations)
+  - [2.4 List matching](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/#24-list-matching)
+  - [2.5 Tutorials: data structures](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures/#25-tutorials-data-structures)
+- [Advanced Data Structures](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/)
+  - [3.1 The Grasshopper data structure](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#31-the-grasshopper-data-structure)
+  - [3.2 Generating trees](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#32-generating-trees)
+  - [3.3 Tree matching](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#33-tree-matching)
+  - [3.4 Traversing trees](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#34-traversing-trees)
+  - [3.5 Basic tree operations](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#35-basic-tree-operations)
+  - [3.6 Advanced tree operations](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#36-advanced-tree-operations)
+  - [3.7 Tutorials: advanced data ](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures/#37-tutorials-advanced-data-structures)
+- [{{< awesome "fas fa-download">}}](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/) [Download full PDF and GH examples](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms/)
 
-### Getting Started
+### Python Scripting in Grasshopper
 
-- Installing Tools ([Windows](/guides/grasshopper/installing-tools-windows/), [Mac](/guides/grasshopper/installing-tools-mac/))
-- Your First Component ([Windows](/guides/grasshopper/your-first-component-windows/), [Mac](/guides/grasshopper/your-first-component-mac/))
-- [Distributing a Grasshopper Plug-In with the Package Manager](/guides/yak/creating-a-rhino-plugin-package/)
+- [Create Script Component](/guides/scripting/scripting-component/#script-component)
+- [First Script](/guides/scripting/scripting-component/#first-script)
+- [Script Inputs and Outputs](/guides/scripting/scripting-component/#script-inputs-and-outputs)
+- [Edit Script](/guides/scripting/scripting-component/#edit-script)
+- [Run Scripts](/guides/scripting/scripting-component/#debugging-scripts)
+- [Debugging Scripts](/guides/scripting/scripting-component/#debugging-scripts)
+- [Using Packages](/guides/scripting/scripting-component/#using-packages)
+- [Editor Features](/guides/scripting/scripting-component/#editor-features)
+- [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
+- [Creating Global Sticky Variables](/guides/rhinopython/ghpython-global-sticky/)
+- [Node in Code from Python](/guides/rhinopython/ghpython-call-components/)
+- [Custom GhPython Baking Component](/guides/rhinopython/ghpython-bake/)
+- [Grasshopper data trees and Python](/guides/rhinopython/grasshopper-datatrees-and-python/)
+- [GhPython Common Questions and Answers](/guides/rhinopython/ghpython-question-answer/)
 
-### Fundamentals
-
-{{< dev-topic-list "guides" "Grasshopper" "Fundamentals" "weight" >}}
-
-### Advanced
-
-{{< dev-topic-list "guides" "Grasshopper" "Advanced" "weight" >}}
-
-### In Depth
-
-{{< dev-topic-list "guides" "Grasshopper" "In Depth" "weight" >}}
-
-### Python in Grasshopper
-
-{{< dev-topic-list "guides" "RhinoPython" "GhPython" "weight" "8" >}}
-
-### [C# in Grasshopper](/guides/grasshopper/csharp-essentials/)
+### [C# Scripting in Grasshopper](/guides/grasshopper/csharp-essentials/)
 
 - [C# Component in Grasshopper](/guides/grasshopper/csharp-essentials/1-grasshopper-csharp-component/#21-introduction)
 - [C# Programming Basics](/guides/grasshopper/csharp-essentials/2-csharp-basics/)
 - [RhinoCommon Geometry](/guides/grasshopper/csharp-essentials/3-rhinocommon-geometry/)
 - [Design Algorithms](/guides/grasshopper/csharp-essentials/4-design-algorithms/)
+
+### Grasshopper Plugins
+
+- [What is a Grasshopper Component?](/guides/grasshopper/what-is-a-grasshopper-component/)
+- Installing Tools ([Windows](/guides/grasshopper/installing-tools-windows/), [Mac](/guides/grasshopper/installing-tools-mac/))
+- Your First Component ([Windows](/guides/grasshopper/your-first-component-windows/), [Mac](/guides/grasshopper/your-first-component-mac/))
+- [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
+- [Developer discussions on Discourse](https://discourse.mcneel.com/c/grasshopper-developer)
+- [Distributing a Grasshopper Plug-In with the Package Manager](/guides/yak/creating-a-grasshopper-plugin-package/)
+
+#### Plugin Fundamentals
+{{< dev-topic-list "guides" "Grasshopper" "Fundamentals" "weight" >}}
+
+#### In Depth
+{{< dev-topic-list "guides" "Grasshopper" "In Depth" "weight" >}}
+
+#### Advanced
+{{< dev-topic-list "guides" "Grasshopper" "Advanced" "weight" >}}
 
 
 ## [RhinoScript](/guides/rhinoscript)

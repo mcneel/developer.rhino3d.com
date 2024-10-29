@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/list-components/", "/6/guides/grasshopper/list-components/", "/7/guides/grasshopper/list-components/", "/wip/guides/grasshopper/list-components/"]
+aliases = ["/en/5/guides/grasshopper/list-components/", "/en/6/guides/grasshopper/list-components/", "/en/7/guides/grasshopper/list-components/", "/en/wip/guides/grasshopper/list-components/"]
 authors = [ "david" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to operate on more than one item at a time."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

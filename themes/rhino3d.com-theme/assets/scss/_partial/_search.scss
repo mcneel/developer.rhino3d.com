@@ -6,9 +6,6 @@
 
 #sitesearch {
 	float: right;
-	margin: 8px;
-	margin-top: 38px;
-	margin-right: 20px;
 	transition: 0.4s;
 }
 
@@ -76,7 +73,7 @@
 }
 
 #bcs-results-div h1 a, h2 a {
-	color:  rgb(154,0,0) !important;
+	color:  rgb(154,0,0); //Morteza: June 26, 2023 removed important! because header "New" badge was illegible
 	margin-bottom: 2px;
 }
 

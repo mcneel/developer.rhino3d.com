@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/adding-rhinoscript-support/", "/6/guides/cpp/adding-rhinoscript-support/", "/7/guides/cpp/adding-rhinoscript-support/", "/wip/guides/cpp/adding-rhinoscript-support/"]
+aliases = ["/en/5/guides/cpp/adding-rhinoscript-support/", "/en/6/guides/cpp/adding-rhinoscript-support/", "/en/7/guides/cpp/adding-rhinoscript-support/", "/en/wip/guides/cpp/adding-rhinoscript-support/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to add RhinoScript support to C++ plugins."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

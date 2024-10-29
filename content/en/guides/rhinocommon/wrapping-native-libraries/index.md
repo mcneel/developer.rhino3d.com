@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/wrapping-native-libraries/", "/6/guides/rhinocommon/wrapping-native-libraries/", "/7/guides/rhinocommon/wrapping-native-libraries/", "/wip/guides/rhinocommon/wrapping-native-libraries/"]
+aliases = ["/en/5/guides/rhinocommon/wrapping-native-libraries/", "/en/6/guides/rhinocommon/wrapping-native-libraries/", "/en/7/guides/rhinocommon/wrapping-native-libraries/", "/en/wip/guides/rhinocommon/wrapping-native-libraries/"]
 authors = [ "dan" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to wrap a C/C++ library in order to call into it from .NET."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 
@@ -41,7 +40,7 @@ This guide does not presume you are a C/C++ or .NET expert, but assumes you have
 
 We will be analyzing a sample solution called *[SampleNativeLibrary](https://github.com/dalefugier/SampleNativeLibrary)*.  Please clone or download this repository.  *SampleNativeLibrary* builds against the RhinoWIP (on Windows) and Rhino 5 for Mac (on macOS).  (On Windows, it is possible to use Rhino 6, but you will have to change the RhinoCommon references).
 
-It is presumed you already have *all* the necessary tools installed and are ready to go.  If you are not there yet, see both [Installing Tools (Windows)](/guides/rhinocommon/installing-tools-windows) and [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac).  It is also helpful to have read and understood [Your First Plugin (Cross-Platform)](/guides/rhinocommon/your-first-plugin-crossplatform).
+It is presumed you already have *all* the necessary tools installed and are ready to go.  If you are not there yet, see both [Installing Tools (Windows)](/guides/rhinocommon/installing-tools-windows) and [Installing Tools (Mac)](/guides/rhinocommon/installing-tools-mac).  It is also helpful to have read and understood [Your First Plugin (Windows)](/guides/rhinocommon/your-first-plugin-windows) and [Your First Plugin (Mac)](/guides/rhinocommon/your-first-plugin-mac).
 
 <div class="bs-callout bs-callout-danger">
   <h4>WARNING</h4>
@@ -91,7 +90,7 @@ Now that we have examined the simple native SampleLibrary, let's turn our attent
 
 ## SampleNativeLibrary
 
-SampleNativeLibrary is the .NET project that calls into the SampleLibrary.  On each platform, we are using the exact same wrapping source code, just using cloned .csproj projects on each platform.  (For more information on this cross-platform strategy, see the [Your First Plugin (Cross-Platform)](/guides/rhinocommon/your-first-plugin-crossplatform) guide).  
+SampleNativeLibrary is the .NET project that calls into the SampleLibrary.  On each platform, we are using the exact same wrapping source code, just using cloned .csproj projects on each platform.
 
 Let's take a look at SampleNativeLibrary on Windows using Visual Studio first...
 
@@ -189,5 +188,4 @@ Check out the [Using methodgen](/guides/rhinocommon/using-methodgen) guide for i
 - [Interop with Native Libraries on mono-project.org](http://www.mono-project.com/docs/advanced/pinvoke/)
 - [Attributes on MSDN](https://msdn.microsoft.com/en-us/library/z0w1kczw.aspx)
 - [Moose sample on GitHub](https://github.com/dalefugier/Moose)
-- [Your First Plugin (Cross-Platform)](/guides/rhinocommon/your-first-plugin-crossplatform)
 - [Using methodgen](/guides/rhinocommon/using-methodgen)

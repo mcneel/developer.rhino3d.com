@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/instance-archive-file-status/", "/6/samples/rhinocommon/instance-archive-file-status/", "/7/samples/rhinocommon/instance-archive-file-status/", "/wip/samples/rhinocommon/instance-archive-file-status/"]
+aliases = ["/en/5/samples/rhinocommon/instance-archive-file-status/", "/en/6/samples/rhinocommon/instance-archive-file-status/", "/en/7/samples/rhinocommon/instance-archive-file-status/", "/en/wip/samples/rhinocommon/instance-archive-file-status/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to find the status of a file that contains an instance (block) definition."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

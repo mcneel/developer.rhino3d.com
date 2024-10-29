@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/screen-capture-viewport/", "/6/samples/cpp/screen-capture-viewport/", "/7/samples/cpp/screen-capture-viewport/", "/wip/samples/cpp/screen-capture-viewport/"]
+aliases = ["/en/5/samples/cpp/screen-capture-viewport/", "/en/6/samples/cpp/screen-capture-viewport/", "/en/7/samples/cpp/screen-capture-viewport/", "/en/wip/samples/cpp/screen-capture-viewport/"]
 authors = [ "dale" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to screen capture a viewport to a file."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

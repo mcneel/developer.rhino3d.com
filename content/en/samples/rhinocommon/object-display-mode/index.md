@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/object-display-mode/", "/6/samples/rhinocommon/object-display-mode/", "/7/samples/rhinocommon/object-display-mode/", "/wip/samples/rhinocommon/object-display-mode/"]
+aliases = ["/en/5/samples/rhinocommon/object-display-mode/", "/en/6/samples/rhinocommon/object-display-mode/", "/en/7/samples/rhinocommon/object-display-mode/", "/en/wip/samples/rhinocommon/object-display-mode/"]
 authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to set the object display mode of a user-specified mesh or surface."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

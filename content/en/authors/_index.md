@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/authors/", "/6/authors/", "/7/authors/", "/wip/authors/"]
+aliases = ["/en/5/authors/", "/en/6/authors/", "/en/7/authors/", "/en/wip/authors/"]
 description = "Author credits and contributions"
 title = "Authors"
 type = "authors"
@@ -12,7 +12,6 @@ state = ""
 [included_in]
 platforms = []
 since = 0
-
 +++
 
 Thanks to all who have [contributed to this site](https://github.com/mcneel/developer-rhino3d-com/graphs/contributors).  Contributions, both large and small, are welcome and appreciated.  If you would like to help improve this site, please see the [Contributing](/guides/general/contributing/#this-website) guide.

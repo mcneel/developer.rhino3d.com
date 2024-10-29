@@ -34,6 +34,9 @@ other = "Administre su cuenta, licencias y grupos"
 [sign-in]
 other = "login"
 
+[sign-out]
+other = "cerrar sesión"
+
 [sign-in-title]
 other = "Inicie sesión para gestionar su cuenta, licencias y grupos"
 
@@ -76,20 +79,20 @@ other = "Nuevo en Rhino {{ .Params.included_in.since }}"
 other = "Nuevo en Rhino [VERSION]"
 
 [New-in-Rhino-7]
-other = "Novedades de Rhino 7"
+other = "Nuevo en Rhino 7"
 
 [New-in-Rhino-8]
-other = "Novedades de Rhino 8"
+other = "Nuevo en Rhino 8"
 
 [All-the-details]
 other = "Más información..."
 
 [bob-loves-revit]
-other = "Bob â¤ï¸s Revit ðŸ˜˜"
+other = "Bob ❤️s Revit 😘"
 
 # This is optionally shown as a header in some feature pages
 [new-in-rhino-7]
-other = "Novedades de Rhino 7"
+other = "Nuevo en Rhino 7"
 
 # context: the bylines that sometimes show up under the title of a page.  Such as "por Scott Davidson..."
 [by]
@@ -243,11 +246,11 @@ other = "Rhino 8"
 
 # Subtitle on homepage caption
 [caption-rhino-8-subtitle]
-other = "Con muchos avances"
+other = "Un gran paso adelante"
 
 # Details of the Rhino 8 caption
 [caption-rhino-8-details]
-other = "Disponible ahora con las funciones EnvolverMalla, DefinirBordes de SubD, aumento de velocidad en Mac y mucho más."
+other = "Disponible ahora con EnvolverMalla, PlieguesDeSubD, aumento de velocidad en Mac y mucho más."
 
 # Link title on homepage video captions
 [caption-learn-more]
@@ -255,7 +258,7 @@ other = "Más información"
 
 # Link title on homepage video captions
 [caption-try]
-other = "probar"
+other = "probar "
 
 # The conjoiner before the Buy link in the video caption
 [caption-or-conjoiner]

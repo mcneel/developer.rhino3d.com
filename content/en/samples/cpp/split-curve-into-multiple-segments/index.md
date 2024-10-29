@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/split-curve-into-multiple-segments/", "/6/samples/cpp/split-curve-into-multiple-segments/", "/7/samples/cpp/split-curve-into-multiple-segments/", "/wip/samples/cpp/split-curve-into-multiple-segments/"]
+aliases = ["/en/5/samples/cpp/split-curve-into-multiple-segments/", "/en/6/samples/cpp/split-curve-into-multiple-segments/", "/en/7/samples/cpp/split-curve-into-multiple-segments/", "/en/wip/samples/cpp/split-curve-into-multiple-segments/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to split a curve into multiple curve segments."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

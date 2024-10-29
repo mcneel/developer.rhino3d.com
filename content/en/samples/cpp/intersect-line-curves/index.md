@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/intersect-line-curves/", "/6/samples/cpp/intersect-line-curves/", "/7/samples/cpp/intersect-line-curves/", "/wip/samples/cpp/intersect-line-curves/"]
+aliases = ["/en/5/samples/cpp/intersect-line-curves/", "/en/6/samples/cpp/intersect-line-curves/", "/en/7/samples/cpp/intersect-line-curves/", "/en/wip/samples/cpp/intersect-line-curves/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to intersect line curves."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

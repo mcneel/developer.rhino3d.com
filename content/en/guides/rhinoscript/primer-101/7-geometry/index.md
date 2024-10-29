@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/primer-101/7-geometry/", "/6/guides/rhinoscript/primer-101/7-geometry/", "/7/guides/rhinoscript/primer-101/7-geometry/", "/wip/guides/rhinoscript/primer-101/7-geometry/"]
+aliases = ["/en/5/guides/rhinoscript/primer-101/7-geometry/", "/en/6/guides/rhinoscript/primer-101/7-geometry/", "/en/7/guides/rhinoscript/primer-101/7-geometry/", "/en/wip/guides/rhinoscript/primer-101/7-geometry/"]
 authors = [ "david" ]
 categories = [ "RhinoScript 101" ]
 category_page = "guides/rhinoscript/primer-101/"
@@ -23,7 +23,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## 7.1 The openNURBS™ Kernel

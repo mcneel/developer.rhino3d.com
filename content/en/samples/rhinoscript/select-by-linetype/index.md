@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/select-by-linetype/", "/6/samples/rhinoscript/select-by-linetype/", "/7/samples/rhinoscript/select-by-linetype/", "/wip/samples/rhinoscript/select-by-linetype/"]
+aliases = ["/en/5/samples/rhinoscript/select-by-linetype/", "/en/6/samples/rhinoscript/select-by-linetype/", "/en/7/samples/rhinoscript/select-by-linetype/", "/en/wip/samples/rhinoscript/select-by-linetype/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to select objects by linetype using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

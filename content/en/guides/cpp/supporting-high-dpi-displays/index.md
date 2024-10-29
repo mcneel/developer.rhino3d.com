@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/supporting-high-dpi-displays/", "/6/guides/cpp/supporting-high-dpi-displays/", "/7/guides/cpp/supporting-high-dpi-displays/", "/wip/guides/cpp/supporting-high-dpi-displays/"]
+aliases = ["/en/5/guides/cpp/supporting-high-dpi-displays/", "/en/6/guides/cpp/supporting-high-dpi-displays/", "/en/7/guides/cpp/supporting-high-dpi-displays/", "/en/wip/guides/cpp/supporting-high-dpi-displays/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses the support of high resolution monitors."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

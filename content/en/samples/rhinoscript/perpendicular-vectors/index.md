@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/perpendicular-vectors/", "/6/samples/rhinoscript/perpendicular-vectors/", "/7/samples/rhinoscript/perpendicular-vectors/", "/wip/samples/rhinoscript/perpendicular-vectors/"]
+aliases = ["/en/5/samples/rhinoscript/perpendicular-vectors/", "/en/6/samples/rhinoscript/perpendicular-vectors/", "/en/7/samples/rhinoscript/perpendicular-vectors/", "/en/wip/samples/rhinoscript/perpendicular-vectors/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to calculate a vector that is perpendicular to another vector using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

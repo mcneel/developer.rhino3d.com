@@ -34,6 +34,9 @@ other = "내 계정, 라이선스, 팀 관리"
 [sign-in]
 other = "로그인"
 
+[sign-out]
+other = "로그아웃"
+
 [sign-in-title]
 other = "내 계정, 라이선스, 팀을 관리하려면 로그인하세요"
 
@@ -69,17 +72,17 @@ other = "Rhino 명령"
 
 # DO NOT TRANSLATE the contents of {{ }} placeholder.  It gets replaced with the correct version by a template.
 [NEW-in-Vx]
-other = "{{ .Params.included_in.since }} 의 새 기능"
+other = "{{ .Params.included_in.since }}버전 새 기능"
 
 # DO NOT TRANSLATE the [VERSION] placeholder.  It gets replaced with the correct version by a template.
 [New-in-N]
-other = "[VERSION]의 새 기능"
+other = "[VERSION]버전 새 기능"
 
 [New-in-Rhino-7]
-other = "Rhino 7의 새 기능"
+other = "Rhino 7 새 기능"
 
 [New-in-Rhino-8]
-other = "Rhino 8의 새 기능"
+other = "Rhino 8 새 기능"
 
 [All-the-details]
 other = "모든 정보..."
@@ -89,7 +92,7 @@ other = "Bob ❤️ Revit"
 
 # This is optionally shown as a header in some feature pages
 [new-in-rhino-7]
-other = "Rhino 7의 새 기능"
+other = "Rhino 7 새 기능"
 
 # context: the bylines that sometimes show up under the title of a page.  Such as "by Scott Davidson..."
 [by]
@@ -247,7 +250,7 @@ other = "미래로의 전진"
 
 # Details of the Rhino 8 caption
 [caption-rhino-8-details]
-other = "ShrinkWrap, 날카로운 SubD, Mac 처리 속도 부스트 등 다양한 새 기능."
+other = "ShrinkWrap, SubD 주름, Mac 처리 속도 부스트 등 다양한 새 기능."
 
 # Link title on homepage video captions
 [caption-learn-more]

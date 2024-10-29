@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-canceling-scripts/", "/6/guides/rhinopython/python-canceling-scripts/", "/7/guides/rhinopython/python-canceling-scripts/", "/wip/guides/rhinopython/python-canceling-scripts/"]
+aliases = ["/en/5/guides/rhinopython/python-canceling-scripts/", "/en/6/guides/rhinopython/python-canceling-scripts/", "/en/7/guides/rhinopython/python-canceling-scripts/", "/en/wip/guides/rhinopython/python-canceling-scripts/"]
 authors = [ "scottd" ]
 categories = [ "Python Windows" ]
 description = "This guide demonstrates how to cancel a Python script in Rhino."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 In Rhino 6, when a script is running and it is not waiting for user input, it can be cancelled by pressing the ESC.  In Rhino.Python this is done by adding a `scriptcontext.escape_test` test.

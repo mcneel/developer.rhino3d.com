@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/increase-nurbs-curve-degree/", "/6/samples/rhinocommon/increase-nurbs-curve-degree/", "/7/samples/rhinocommon/increase-nurbs-curve-degree/", "/wip/samples/rhinocommon/increase-nurbs-curve-degree/"]
+aliases = ["/en/5/samples/rhinocommon/increase-nurbs-curve-degree/", "/en/6/samples/rhinocommon/increase-nurbs-curve-degree/", "/en/7/samples/rhinocommon/increase-nurbs-curve-degree/", "/en/wip/samples/rhinocommon/increase-nurbs-curve-degree/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to increase the degree of a NURBS curve."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/pre-and-post-picking-objects/", "/6/guides/cpp/pre-and-post-picking-objects/", "/7/guides/cpp/pre-and-post-picking-objects/", "/wip/guides/cpp/pre-and-post-picking-objects/"]
+aliases = ["/en/5/guides/cpp/pre-and-post-picking-objects/", "/en/6/guides/cpp/pre-and-post-picking-objects/", "/en/7/guides/cpp/pre-and-post-picking-objects/", "/en/wip/guides/cpp/pre-and-post-picking-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide demonstrates how to both pre-pick and post-pick objects using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

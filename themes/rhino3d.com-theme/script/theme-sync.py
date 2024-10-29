@@ -143,9 +143,9 @@ def main():
             print_warning_message(site + " contains changes that would be lost. Skipping.")
             continue
 
-        # Check to make sure each site contains the /static/scss/_overrides.scss file
+        # Check to make sure each site contains the /static/scss/_site-override.scss file
         path_to_site_scss_path = os.path.abspath(os.path.join(target_site_path, "static", "scss"))
-        path_to_site_scss_overrides_path = os.path.abspath(os.path.join(path_to_site_scss_path, "_overrides.scss"))
+        path_to_site_scss_overrides_path = os.path.abspath(os.path.join(path_to_site_scss_path, "_site-override.scss"))
         if not os.path.exists(path_to_site_scss_overrides_path):
             print_warning_message(path_to_site_scss_overrides_path + ' does not exist. Creating it now...')
             if not os.path.exists(path_to_site_scss_path):
@@ -173,12 +173,16 @@ def main():
 
             # get the last modified date of those files in the target repo and compare it to the source modified dates
             for modified_file in modified_files:
-                source_file_last_modified = source_theme_last_modified[modified_file]
-                target_file_last_modified = target_theme_last_modified[modified_file]
-                source_file_last_modified_date = datetime.strptime(source_file_last_modified, '%Y-%m-%d %H:%M:%S %z')
-                target_file_last_modified_date = datetime.strptime(target_file_last_modified, '%Y-%m-%d %H:%M:%S %z')
-                if target_file_last_modified_date > source_file_last_modified_date:
-                    print_warning_message(modified_file + ' has been edited in the ' + site + '\'s theme more recently.')
+                if modified_file in source_theme_last_modified:
+                    source_file_last_modified = source_theme_last_modified[modified_file]
+                    target_file_last_modified = target_theme_last_modified[modified_file]
+                    source_file_last_modified_date = datetime.strptime(source_file_last_modified, '%Y-%m-%d %H:%M:%S %z')
+                    target_file_last_modified_date = datetime.strptime(target_file_last_modified, '%Y-%m-%d %H:%M:%S %z')
+                    if target_file_last_modified_date > source_file_last_modified_date:
+                        print_warning_message(modified_file + ' has been edited in the ' + site + '\'s theme more recently.')
+                else:
+                    print_warning_message(f"{modified_file} not found in source_theme_last_modified")
+                    source_file_last_modified = None  # or set a default value
 
             print_ok_message(site + "'s theme/rhino3d.com theme updated.")
 

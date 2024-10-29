@@ -41,6 +41,12 @@
 	display: inline-block;
 }
 
+@media screen and (max-width: $global-desktop-maxwidth) {
+	.float_small_none {
+		float: none!important;
+	}
+}
+
 .image_center {
 	display: block;
 	max-width: 100%;
@@ -168,7 +174,7 @@
     background-color: #e8e8e8;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 848px) {
 	.toc {
 		height: none;
 	}
@@ -245,27 +251,39 @@
 */
 
 img.micro, .micro img {
-	height: 20px;
+	// height: 20px;
 	margin: 10px;
+	max-height: 20px;
+	height: auto;
 }
 img.xsmall, .xsmall img {
-	height: 50px;
+	// height: 50px;
 	margin: 10px;
+	max-height: 50px;
+	height: auto;
 }
 img.small, .small img {
-	height: 100px;
+	// height: 100px;
 	margin: 10px;
+	max-height: 100px;
+	height: auto;
 }
 img.medium, .medium img {
-	height: 200px;
+	// height: 200px;
 	margin: 10px;
+	max-height: 200px;
+	height: auto;
 }
 img.large, .large img {
-	height: 400px;
+	// height: 400px;
 	margin: 15px;
+	max-height: 400px;
+	height: auto;
 }
 img.xlarge, .xlarge img {
-	height: 1000px;
+	// height: 1000px;
+	max-height: 1000px;
+	height: auto;
 }
 
 
@@ -289,6 +307,9 @@ img.xlarge, .xlarge img {
 	vertical-align: middle;
 }
 
+.new-callout a {
+	color: $global-background-color;
+}
 .new-callout {
 	text-align: center;	
 	color: $global-background-color;
@@ -333,11 +354,19 @@ li .new-callout-bullet {
 	padding: 1px 5px;
 }
 
-.new-callout a {
-	color: $global-background-color;
+.new-callout-inline {
+	margin-bottom:5px; 
+	margin-left:5px;
+	margin-top:0px; 
+	margin-right: 5px;
+	vertical-align:middle;
+	font-size: 16px;
 }
 
 .new-callout a:visited {
+	color: $global-background-color;
+}
+.new-callout a {
 	color: $global-background-color;
 }
 
@@ -630,6 +659,24 @@ table.multiline-middle img{
 	transform: translate(-50%, -50%);
 }
 
+.scrollVideoOverlayLowerRight {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.badge-btn {
+	color: white;
+	border-radius: 0.8em;
+	-moz-border-radius: 0.8em;
+	-webkit-border-radius: 0.8em;
+	display: inline-block;
+	font-weight: bold;
+	line-height: 1.2em;
+	text-align: center;
+	width: 1.2em;
+}
+
 .keyboard-btn {
 	font-size: 0.875rem;
     line-height: 1.5;
@@ -642,3 +689,67 @@ table.multiline-middle img{
     display: inline-block;
 	backface-visibility: hidden;
 	}
+
+
+
+	.viewport-btn {
+		font-size: 0.875rem;
+		font-weight: bold;
+		line-height: 1.5;
+		background-color: #6ba3ff;
+		border: 0px;
+		color: #2d2e2e;
+		border-radius: 0rem 0rem 0.35rem 0rem;
+		display: inline-block;
+		backface-visibility: hidden;
+		}
+
+/*
+##############################################################################
+## d3js animated bar chart (/features/display/metal, etc)
+##############################################################################
+*/
+
+.chart .legend {
+	fill: black;
+	font: 14px sans-serif;
+	text-anchor: start;
+	font-size: 12px;
+  }
+  
+  .chart text {
+	fill: white;
+	font: 12px sans-serif;
+	text-anchor: end;
+  }
+  
+  .chart .label {
+	fill: black;
+	font: 12px sans-serif;
+	text-anchor: end;
+  }
+  
+  .bar {
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+	.bar-animation {
+	  animation: 1s cubic-bezier(.25, 1, .30, 1) wipe-in-right both;
+	}
+  }
+  
+  @keyframes wipe-in-right {
+	from {
+	  clip-path: inset(0 100% 0 0);
+	}
+	to {
+	  clip-path: inset(0 0 0 0);
+	}
+  }
+  
+  .axis path,
+  .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+  }

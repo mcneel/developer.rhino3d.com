@@ -1,6 +1,6 @@
 +++
-aliases = ["/5/guides/rhinocommon/your-first-plugin-windows/", "/6/guides/rhinocommon/your-first-plugin-windows/", "/7/guides/rhinocommon/your-first-plugin-windows/", "/wip/guides/rhinocommon/your-first-plugin-windows/"]
-authors = [ "dan" ]
+aliases = ["/en/5/guides/rhinocommon/your-first-plugin-windows/", "/en/6/guides/rhinocommon/your-first-plugin-windows/", "/en/7/guides/rhinocommon/your-first-plugin-windows/", "/en/wip/guides/rhinocommon/your-first-plugin-windows/"]
+authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
 description = "This guide walks you through your first plugin for Rhino for Windows using RhinoCommon and Visual Studio."
 keywords = [ "first", "RhinoCommon", "Plugin" ]
@@ -25,56 +25,60 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
-It is presumed you already have the necessary tools installed and are ready to go.  If you are not there yet, see [Installing Tools (Windows)](/guides/rhinocommon/installing-tools-windows).
+It is presumed you already have the necessary tools installed and are ready to go. If you are not there yet, see [Installing Tools (Windows)](/guides/rhinocommon/installing-tools-windows).
 
 ## Barebones plugin
 
-We will use the *RhinoCommon Plugin for Rhino 3D (C#)* project template to create a new general purpose plugin. The project template generates the code for a functioning plugin. Follow these steps to build the plugin.
+We will use the _RhinoCommon Plugin for Rhino 3D (C#)_ project template to create a new general purpose plugin. The project template generates the code for a functioning plugin. Follow these steps to build the plugin.
 
 ### Plugin Template
 
-1. Launch *Visual Studio* and navigate to *File* > *New* > *Project...*.
-2. From the *Create a new project* dialog, select the *RhinoCommon Plugin for Rhino 3D (C#)* template from the list of installed templates and click *Next*.
+1. Launch _Visual Studio_ and navigate to _File_ > _New_ > _Project..._.
+2. From the _Create a new project_ dialog, select the _RhinoCommon Plugin for Rhino 3D (C#)_ template from the list of installed templates and click _Next_.
 
-    ![New Project Template](/images/your-first-plugin-windows-01.png)
-3. Type the project name as shown below. You can enter a different name if you want. The template uses the project name when it creates files and classes. If you enter a different name, your files and classes will have a name different from that of the files and classes mentioned in this tutorial. Don’t forget to choose a location to store the project. When finished, click *Create*.
+   ![New Project Template](/images/your-first-plugin-windows-01.png)
 
-    ![New Project Configure](/images/your-first-plugin-windows-02.png)
-4. Upon clicking *Create*, the *New Rhino C++ Plugin* dialog will appear. By default, the template will create a *General Utility* plugin.
+3. Type the project name as shown below. You can enter a different name if you want. The template uses the project name when it creates files and classes. If you enter a different name, your files and classes will have a name different from that of the files and classes mentioned in this tutorial. Don’t forget to choose a location to store the project. When finished, click _Create_.
 
-    ![Plugin Settings](/images/your-first-plugin-windows-03.png)
-5. The *New RhinoCommon .NET Plugin* dialog allows you to modify a number of settings used by the template when generating the plugin source code:
-     1. **Plugin name**: Modify this field if you want to change the name of the plugin's class name.
-     2. **Command class name:**: Modify this field if you want to change the name of the plugin's initial command class name.
-     3. **Plugin type**: Select the [type of plugin](/guides/general/what-is-a-rhino-plugin) that you want the template to create.
-     4. **Target Version**: Select the target Rhino version.
-     5. **Wndows UI**: If you are planning on using Windows Forms or WPF for user interface, instead of Eto, then check the approprate box.
-     6. **Rhino location**: Modify this field if the path to *Rhino.exe* is found in a different location than what is shown.
-6. For this tutorial, just accept the default settings. Click the *Finish* button, and the template begins to generate your plugin project’s folders, files, and classes. When the template is finished, look through the plugin project using *Visual Studio’s Solution Explorer*...
+   ![New Project Configure](/images/your-first-plugin-windows-02.png)
+
+4. Upon clicking _Create_, the _New Rhino C# Plugin_ dialog will appear. By default, the template will create a _General Utility_ plugin.
+
+   ![Plugin Settings](/images/your-first-plugin-windows-03.png)
+
+5. The _New RhinoCommon .NET Plugin_ dialog allows you to modify a number of settings used by the template when generating the plugin source code:
+   1. **Plugin name**: Modify this field if you want to change the name of the plugin's class name.
+   1. **Command class name:**: Modify this field if you want to change the name of the plugin's initial command class name.
+   1. **Plugin type**: Select the [type of plugin](/guides/general/what-is-a-rhino-plugin) that you want the template to create.
+   1. **Minimum Target Version**: Select the lowest Rhino version to target.
+   1. **Build Yak Package**: Toggle true to have Rhino build a Yak package automatically from your project
+   1. **Include VS Code launch/tasks json files**: Includes `.vscode` folder so the plugin can be debugged in VSCode as well (Very handy for Mac).
+   1. **Wndows UI**: If you are planning on using Windows Forms or WPF for user interface, instead of Eto, then check the approprate box.
+6. For this tutorial, just accept the default settings. Click the _Finish_ button, and the template begins to generate your plugin project’s folders, files, and classes. When the template is finished, look through the plugin project using _Visual Studio’s Solution Explorer_...
 
 ### Plugin Anatomy
 
-Use the *Solution Explorer* to expand the *Solution* (*.sln*) so that it looks like this.
+Use the _Solution Explorer_ to expand the _Solution_ (_.sln_) so that it looks like this.
 
 ![Plugin Anatomy](/images/your-first-plugin-windows-04.png)
 
-1. **HelloRhinoCommon**: The plugin project (*.csproj*), which has the same name as its parent solution. The project that was created for us by the project template we just used.
+1. **HelloRhinoCommon**: The plugin project (_.csproj_), which has the same name as its parent solution. The project that was created for us by the project template we just used.
 1. **Dependencies**: Contains references to both the .NET Framework 4.8 and .NET 7.0 assemblies required by the plugin. The project obtains RhinoCommon dependencies via [NuGet](https://www.nuget.org/packages/rhinocommon).
-1. **Properties**: Contains the *AssemblyInfo.cs* source file. This file contains the meta-data, such as author and copyright, that appears in Rhino's [Plugin Manager](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#options/plug-ins.htm).
+1. **Properties**: Contains the _AssemblyInfo.cs_ source file. This file contains the meta-data, such as author and copyright, that appears in Rhino's [Plugin Manager](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#options/plug-ins.htm).
 1. **Embedded Resources**: Contains icons, bitmaps, and other non-code resources you want embedded in your plugin.
 1. **HelloRhinoCommonCommand.cs**: The initial plugin command, which inherits from `Rhino.Commands.Command`.
-1. **HelloRhinoCommonPlugin.cs**:  The plugin class, which inherits from `Rhino.Plugins.Plugin`.
+1. **HelloRhinoCommonPlugin.cs**: The plugin class, which inherits from `Rhino.Plugins.Plugin`.
 
 ### Testing
 
-1. From *Visual Studio*, navigate to *Debug* > *Start Debugging*. You can also press *F5*, or click the *Debug* button on Visual Studio's toolbar. This will load Rhino.
-1. From within Rhino, navigate to *Tools* > *Options*. Navigate to the *Plugins* page under *Rhino Options* and install your plugin.
+1. From _Visual Studio_, navigate to _Debug_ > _Start Debugging_. You can also press _F5_, or click the _Debug_ button on Visual Studio's toolbar. This will load Rhino.
+1. From within Rhino, navigate to _Tools_ > _Options_. Navigate to the _Plugins_ page under _Rhino Options_ and install your plugin.
 
-    ![Rhino Options](/images/your-first-plugin-windows-05.png)
-1. Once your plugin is loaded, close the options dialog and run your *HelloRhinoCommonCommand* command.
+   ![Rhino Options](/images/your-first-plugin-windows-05.png)
+
+1. Once your plugin is loaded, close the options dialog and run your _HelloRhinoCommonCommand_ command.
 1. You have finished creating your first plugin!
 
 ## Adding Additional Commands
@@ -83,7 +87,7 @@ Rhino plugins can contain any number of commands. Commands are created by inheri
 
 Note, Command classes must return a unique command name. If you try to use a command name that is already in use, then your command will not work.
 
-To add a new Rhino command to your plugin project, right-click on the project, in Visual Studio’s Solution Explorer, and click Add > New Item…. From the Add New Item dialog, select *Empty RhinoCommon Command for Rhino 3D (C++)*, specify the name of the command, and click *Add*.
+To add a new Rhino command to your plugin project, right-click on the project, in Visual Studio’s Solution Explorer, and click Add > New Item…. From the Add New Item dialog, select _Empty RhinoCommon Command for Rhino 3D (C++)_, specify the name of the command, and click _Add_.
 
 ![Rhino Command](/images/your-first-plugin-windows-06.png)
 
@@ -159,7 +163,12 @@ namespace HelloRhinoCommon
 }
 ```
 
+## Next Steps
+
+If you'd like to push your exciting new plugin to Yak so that everyone can use it, check out the [Creating a Yak Package](/guides/yak/creating-a-rhino-plugin-package/) guide.
+
+Try debugging your new plugin on [Mac](/guides/rhinocommon/your-first-plugin-mac/), all plugins using the new templates are now cross-platform by default.
+
 ## Related topics
 
 - [Installing Tools (Windows)](/guides/rhinocommon/installing-tools-windows)
-- [Your First Plugin (Cross-Platform)](/guides/rhinocommon/your-first-plugin-crossplatform)

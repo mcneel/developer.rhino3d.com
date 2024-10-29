@@ -1,0 +1,102 @@
+{{ $link := .Destination }}
+{{ $isRemote := strings.HasPrefix $link "http" }}
+{{ $isDoc := strings.Contains $link "docs.mcneel.com/"}}
+{{- if not $isRemote -}}
+{{ $url := urls.Parse .Destination }}
+{{- if $url.Path -}}
+{{ $fragment := "" }}
+{{- with $url.Fragment }}{{ $fragment = printf "#%s" . }}{{ end -}}
+{{- with .Page.GetPage $url.Path }}{{ $link = printf "%s%s" .RelPermalink $fragment }}{{ end }}{{ end -}}
+{{- end -}}
+
+{{- if $isDoc -}}
+<span class="tooltip">
+    <a href="{{ $link | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if $isRemote }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
+    <span class="bottom">
+        <img src="/images/rhino_compute_logo.png" />
+        <b>Title</b>
+        <br/>
+        Description
+    </span>
+</span>
+{{- else -}}
+<a href="{{ $link | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if $isRemote }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- end -}}
+
+
+<style>
+    .tooltip {
+        display:inline-block;
+        position:relative;
+        border-bottom:1px dotted #666;
+        text-align:left;
+    }
+    
+    .tooltip h3 {margin:12px 0;}
+    
+    .tooltip .bottom {
+        min-width:200px;
+        /*max-width:400px;*/
+        top:40px;
+        left:50%;
+        transform:translate(-50%, 0);
+        padding:20px;
+        color:#666666;
+        background-color:#EEEEEE;
+        font-weight:normal;
+        font-size:13px;
+        border-radius:8px;
+        position:absolute;
+        z-index:99999999;
+        box-sizing:border-box;
+        box-shadow:0 1px 8px rgba(0,0,0,0.5);
+        display:none;
+    }
+    
+    .tooltip:hover .bottom {
+        display:block;
+    }
+    
+    .tooltip .bottom img {
+        width:400px;
+    }
+    
+    .tooltip .bottom i {
+        position:absolute;
+        bottom:100%;
+        left:50%;
+        margin-left:-12px;
+        width:24px;
+        height:12px;
+        overflow:hidden;
+    }
+    
+    .tooltip .bottom i::after {
+        content:'';
+        position:absolute;
+        width:12px;
+        height:12px;
+        left:50%;
+        transform:translate(-50%,50%) rotate(45deg);
+        background-color:#EEEEEE;
+        box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    }
+    
+    </style>
+
+    {{/*  <script>
+        let parser = new DOMParser();
+        let doc = parser.parseFromString("{{(.Inner | markdownify) }}", 'text/html');
+        let href = doc.querySelector('a').getAttribute('href');
+        console.log("getting link info:", href)
+
+        const image = "/images/rhino_compute_logo.png"
+        const title = "foo"
+        const description = "bar"
+        const previewTemplate = ```<img src= ${image} />
+        <b>${title}</b>
+        <br/>
+        ${description}```
+        
+
+    </script>  */}}

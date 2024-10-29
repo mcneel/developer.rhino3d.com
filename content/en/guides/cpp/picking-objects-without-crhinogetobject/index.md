@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/picking-objects-without-crhinogetobject/", "/6/guides/cpp/picking-objects-without-crhinogetobject/", "/7/guides/cpp/picking-objects-without-crhinogetobject/", "/wip/guides/cpp/picking-objects-without-crhinogetobject/"]
+aliases = ["/en/5/guides/cpp/picking-objects-without-crhinogetobject/", "/en/6/guides/cpp/picking-objects-without-crhinogetobject/", "/en/7/guides/cpp/picking-objects-without-crhinogetobject/", "/en/wip/guides/cpp/picking-objects-without-crhinogetobject/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates an alternate technique to picking objects without using CRhinoGetObject."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

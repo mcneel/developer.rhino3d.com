@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/superfluous-knots/", "/6/guides/opennurbs/superfluous-knots/", "/7/guides/opennurbs/superfluous-knots/", "/wip/guides/opennurbs/superfluous-knots/"]
+aliases = ["/en/5/guides/opennurbs/superfluous-knots/", "/en/6/guides/opennurbs/superfluous-knots/", "/en/7/guides/opennurbs/superfluous-knots/", "/en/wip/guides/opennurbs/superfluous-knots/"]
 authors = [ "dalelear" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses superfluous knots and the openNURBS toolkit."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

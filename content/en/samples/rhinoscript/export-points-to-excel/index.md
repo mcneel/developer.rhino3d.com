@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/export-points-to-excel/", "/6/samples/rhinoscript/export-points-to-excel/", "/7/samples/rhinoscript/export-points-to-excel/", "/wip/samples/rhinoscript/export-points-to-excel/"]
+aliases = ["/en/5/samples/rhinoscript/export-points-to-excel/", "/en/6/samples/rhinoscript/export-points-to-excel/", "/en/7/samples/rhinoscript/export-points-to-excel/", "/en/wip/samples/rhinoscript/export-points-to-excel/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Illustrates RhinoScript code that exports Rhino point coordinates to Microsoft Excel."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

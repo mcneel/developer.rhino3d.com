@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/vbscript-constants/", "/6/guides/rhinoscript/vbscript-constants/", "/7/guides/rhinoscript/vbscript-constants/", "/wip/guides/rhinoscript/vbscript-constants/"]
+aliases = ["/en/5/guides/rhinoscript/vbscript-constants/", "/en/6/guides/rhinoscript/vbscript-constants/", "/en/7/guides/rhinoscript/vbscript-constants/", "/en/wip/guides/rhinoscript/vbscript-constants/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This brief guide is an overview of VBScript constants."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

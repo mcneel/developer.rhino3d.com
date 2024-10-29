@@ -26,8 +26,16 @@
   border-radius: $global-border-radius; /* 5px rounded corners */
   border: .5px solid #dddddd;
   width: 100%;
+  background-color: $global-background-color;
 }
 
+
+.price-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
+}
 // /* These max width media quesries control how many cards can show up on one row */
 // @media screen and (min-width: 40em) {
 //   .card {

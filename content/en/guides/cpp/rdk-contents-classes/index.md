@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-contents-classes/", "/6/guides/cpp/rdk-contents-classes/", "/7/guides/cpp/rdk-contents-classes/", "/wip/guides/cpp/rdk-contents-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-contents-classes/", "/en/6/guides/cpp/rdk-contents-classes/", "/en/7/guides/cpp/rdk-contents-classes/", "/en/wip/guides/cpp/rdk-contents-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK document contents class in C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 The _RDK Document Contents_ is an object that enables the plug-in developer to perform certain operations on document-resident [Render Contents](/guides/cpp/rdk-render-content/) (AKA 'Contents'). It is particularly useful for attaching contents to a document and finding contents by their instance ids. If you have a Rhino document, you can read and modify that document's contents through the document's [IRhRdkContents](/api/cpp/class_i_rh_rdk_contents.html) interface. Any changes you make will appear in the relevant editor and will also be stored in the 3dm file. Getting the contents from a document always returns a const reference. To write to the contents, you must begin a batch of write operations and afterwards end the batch. This is done using the RDK's standard BeginChange / EndChange system. The following is an example of how to access the document contents:
 ```cpp

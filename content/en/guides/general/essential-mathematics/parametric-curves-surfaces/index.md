@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/general/essential-mathematics/parametric-curves-surfaces/", "/6/guides/general/essential-mathematics/parametric-curves-surfaces/", "/7/guides/general/essential-mathematics/parametric-curves-surfaces/", "/wip/guides/general/essential-mathematics/parametric-curves-surfaces/"]
+aliases = ["/en/5/guides/general/essential-mathematics/parametric-curves-surfaces/", "/en/6/guides/general/essential-mathematics/parametric-curves-surfaces/", "/en/7/guides/general/essential-mathematics/parametric-curves-surfaces/", "/en/wip/guides/general/essential-mathematics/parametric-curves-surfaces/"]
 authors = [ "rajaa" ]
 categories = [ "Essential Mathematics" ]
 category_page = "guides/general/essential-mathematics/"
@@ -24,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 Suppose you travel every weekday from your house to your work. You leave at 8:00 in the morning and arrive at 9:00. At each point in time between 8:00 and 9:00, you would be at some location along the way. If you plot your location every minute during your trip, you can define the path between home and work by connecting the 60 points you plotted. Assuming you travel the exact same speed every day, at 8:00 you would be at home (start location), at 9:00 you would be at work (end location) and at 8:40 you would at the exact same location on the path as the 40th plot point. Congratulations, you have just defined your first parametric curve! You have used *time* as a *parameter* to define your path, and hence you can call your path curve a *parametric curve*. The time interval you spend from start to end (8 to 9) is called the curve *domain* or *interval*.
@@ -272,26 +271,14 @@ The number of control points that affect each span in a NURBS curve is defined b
 
 Each control point has an associated number called *weight*. With a few exceptions, weights are positive numbers. When all control points have the same weight, usually 1, the curve is called non-rational. Intuitively, you can think of weights as the amount of gravity each control point has. The higher the relative weight a control point has, the closer the curve is pulled towards that control point.
 
-|knots| = |CVs| + Degree - 1
-
 It is worth noting that it is best to avoid changing curve weights. Changing weights rarely gives desired result while it introduces a lot of calculation challenges in operations such as intersections. The only good reason for using rational curves is to represent curves that cannot otherwise be drawn, such as circles and ellipses.  
 
 <figure>
-   <img src="/images/figure-38a.png" width="500px">
-   <figcaption>Figure (38-A): There are degree-1 more knots than control points. If the number of control points=7, and curve degree=3, then number of knots is 9.
-   Knots values are parameters that evaluate to points on the 3D curve.</figcaption>
-</figure>
-
-Scaling a knot list does not affect the 3D curve. If you change the domain of the curve in the above example from “0 to 4” to “0 to 1”, knot list get scaled, but the 3D curve does not change.
-
-
-<figure>
-   <img src="/images/figure-38a.png" width="500px">
-   <figcaption>Figure (38-A): There are degree-1 more knots than control points. If the number of control points=7, and curve degree=3, then number of knots is 9.
-   Knots values are parameters that evaluate to points on the 3D curve.</figcaption>
-</figure>
-
-
+   <img src="/images/math-image135.png" width="500px">
+   <figcaption>Figure (37): The effect of varying weights of control points on the result curve. 
+The left curve is non-rational with uniform control point weights. 
+The circle on the right is a rational curve with corner control points having weights less than 1.</figcaption>
+</figure>  
 
 ### Knots
 
@@ -302,7 +289,7 @@ Each NURBS curve has a list of numbers associated with it called a *list of knot
 Knots are a non-decreasing list of parameter values that lie within the curve domain. In Rhino, there is degree-1 more knots than control points. That is the number of knots equals the
 number of control points plus curve degree minus 1:
 
-
+|knots| = |CVs| + Degree - 1
 
 Usually, for non-periodic curves, the first degree many knots are equal to the domain minimum, and the last degree many knots are equal to the domain maximum.
 
@@ -310,9 +297,20 @@ For example, the knots of an open degree-3 NURBS curve with 7 control points and
 
 
 <figure>
-   <img src="/images/math-image136.png" width="500px">
-   <figcaption>Figure (39): Clamped curves have fully-multiple knots at their start and end. The rest of the knots are simple.</figcaption>
-</figure>  
+   <img src="/images/figure-38a.png" width="500px">
+   <figcaption>Figure (38): There are degree minus 1 more knots than control points. If the number of control points=7, and curve degree=3, then number of knots is 9.
+   Knots values are parameters that evaluate to points on the 3D curve.</figcaption>
+</figure>
+
+Scaling a knot list does not affect the 3D curve. If you change the domain of the curve in the above example from “0 to 4” to “0 to 1”, knot list get scaled, but the 3D curve does not change.
+
+
+<figure>
+   <img src="/images/math-image-figure38A.png" width="500px">
+   <figcaption>Figure (39): Scaling the knot list does not change the 3D curve.</figcaption>
+</figure>
+
+We call a knot with value appearing only once as simple knot. Interior knots are typically simple as in the two examples above.
 
 ### Knot multiplicity
 
@@ -322,24 +320,11 @@ The multiplicity of a knot is the number of times it is listed in the list of kn
 
 A fully multiple knot has multiplicity equal to the curve degree. At a fully multiple knot there is a corresponding control point, and the curve goes through this point.  
 
-For example, clamped or open curves have knots with full multiplicity at the ends of the curve. This is why the end control points coincide with the curve end points. Interior fully multiple knots allow a kink in the curve at the corresponding point.  
+For example, clamped or open curves have knots with full multiplicity at the ends of the curve. This is why the end control points coincide with the curve end points. Interior fully multiple knots allow a kink in the curve at the corresponding point. 
 
-### Simple knot
+For example, the following two curves are both degree-3, and have the same number and location of control points. However they have different knots and their shape is also different. Fully multiplicity forces the curve through the associated control point.
 
-A simple knot is one with value appearing only once. Interior knots are typically simple.
-
-<figure>
-   <img src="/images/math-image152.png" width="500px">
-   <figcaption>Figure (39): Clamped curves have fully-multiple knots at their start and end. The rest of the knots are simple.</figcaption>
-</figure>  
-
-### Uniform knots
-
-A uniform list of knots satisfies the following condition.
-
-Knots start with a fully-multiple knot, are followed by simple knots, and terminate with a fully-multiple knot. The values are increasing and equally spaced. This is typical of clamped or open curves. Periodic curves work differently as we will see later.  
-
-Here are two curves that have the same number and location of control points, and yet have different knots and curve shape:  
+Here are two curves that have the same degree, and same number and location of control points, and yet have different knots vector that results in different curve shape:  
 
 <table width="100%">  
 <tr style="border-bottom: 1px solid #ccc;border-top: 1px solid #ccc;">  
@@ -357,7 +342,36 @@ Domain (0 to 4) <br>
 <b>Note:</b> A fully multiple knot in the middle creates a kink and the curve is forced to go through the associated control point.</td>  
 <td><img src="/images/math-image154.png"></td>  
 </tr>  
-</table>  
+</table> 
+
+### Uniform knots
+
+A uniform list of knots satisfies the following condition.
+
+Knots start with a fully-multiple knot, are followed by simple knots, and terminate with a fully-multiple knot. The values are increasing and equally spaced. This is typical of clamped or open curves. Periodic curves work differently as we will see later.  
+
+<figure>
+   <img src="/images/math-image-figure41.png" width="500px">
+   <figcaption>Figure (40): Uniform knot list means that spacing between knots is constant, with the exception of clamped curves where they can have full multiplicity knots at start and end, and still be considered uniform. The left curve is periodic (closed without kink), and the right is clamped (open).</figcaption>
+</figure> 
+
+### Non uniform knots
+
+NURBS curves are allowed to have non-uniform spacing between knots. This can help control the curvature along the curve to create more smooth curves. Take the following example interpolating through points using non-uniform knots list in the left, and uniform in the right. In general, if a NURBS curve spacing of knots is proportional to the spacing between control points, then the curve is smoother. 
+
+<figure>
+   <img src="/images/figure-38b.png" width="500px">
+   <figcaption>Figure (41): Non-uniform knot list can help produce smoother curves. The curve on the left interpolate through points with non-uniform knots, and produces smoother curvature. The curve on the right interpolate through the same points but forces a uniform spacing of knots, resulting curve is not as smooth.</figcaption>
+</figure> 
+
+An example of a curve that is both non-uniform and rational is a NURBS circle. The following is a degree 2 curve with 9 control points and 10 knots. Domain is 0-4, and the spacing alternate between 0 and 1.
+knots = <0,0,1,1,2,2,3,3,4,4> --- (full multiplicity in the interior knots)
+spacing between knots = [0,1,0,1,0,1,0,1,0] --- (non-uniform)
+
+<figure>
+   <img src="/images/math-image-figure43.png" width="500px">
+   <figcaption>Figure (42): A NURBS approximation of a circle is rational and non-uniform NURBS.</figcaption>
+</figure> 
 
 ### Evaluation rule
 
@@ -367,7 +381,7 @@ Using this formula, specialized curve functions can take a curve parameter and p
 
 <figure>
    <img src="/images/math-image153.png" width="500px">
-   <figcaption>Figure (40): Evaluate parameters to points on curve.</figcaption>
+   <figcaption>Figure (43): Evaluate parameters to points on curve.</figcaption>
 </figure>  
 
 ### Characteristics of NURBS curves
@@ -421,14 +435,14 @@ The following is an example of an open, clamped non-rational NURBS curve. This c
 
 <figure>
    <img src="/images/math-image118.png" width="500px">
-   <figcaption>Figure (41): Analyze degree-3 open non-rational NURBS curve.</figcaption>
+   <figcaption>Figure (44): Analyze degree-3 open non-rational NURBS curve.</figcaption>
 </figure>  
 
 The following circular curve is an example of a degree-3 closed periodic NURBS curve. It is also non-rational because all weights are equal. Note that periodic curves require more control points with few overlapping. Also the knots are simple.  
 
 <figure>
    <img src="/images/math-image119.png" width="500px">
-   <figcaption>Figure (42): Analyze degree-3 closed (periodic) NURBS curve.</figcaption>
+   <figcaption>Figure (45): Analyze degree-3 closed (periodic) NURBS curve.</figcaption>
 </figure>  
 
 Notice that the periodic curve turned the four input points into seven control points (degree+4), while the clamped curve used only the four control points. The knots of the periodic curve uses only simple knots, while the clamped curve start and end knots have full multiplicity forcing the curve to go through the start and end control points.  
@@ -437,12 +451,12 @@ If we set the degree of the previous examples to 2 instead of 3, the knots becom
 
 <figure>
    <img src="/images/math-image120.png" width="500px">
-   <figcaption>Figure (43): Analyze degree-2 open NURBS curve.</figcaption>
+   <figcaption>Figure (46): Analyze degree-2 open NURBS curve.</figcaption>
 </figure>  
 
 <figure>
    <img src="/images/math-image121.png" width="500px">
-   <figcaption>Figure (44): Analyze degree-2 closed (periodic) NURBS curve.</figcaption>
+   <figcaption>Figure (47): Analyze degree-2 closed (periodic) NURBS curve.</figcaption>
 </figure>  
 
 ### Weights
@@ -451,12 +465,12 @@ Weights of control points in a uniform NURBS curve are set to 1, but this number
 
 <figure>
    <img src="/images/math-image122.png" width="500px">
-   <figcaption>Figure (45): Analyze weights in open NURBS curve.</figcaption>
+   <figcaption>Figure (48): Analyze weights in open NURBS curve.</figcaption>
 </figure>  
 
 <figure>
    <img src="/images/math-image115.png" width="500px">
-   <figcaption>Figure (46): Analyze weights in closed NURBS curve.</figcaption>
+   <figcaption>Figure (49): Analyze weights in closed NURBS curve.</figcaption>
 </figure>  
 
 ### Evaluating NURBS curves
@@ -523,7 +537,7 @@ The following table shows various continuities and their definitions:
 
 <figure>
    <img src="/images/math-image138.png" >
-   <figcaption>Figure (47): Examining curve continuity with curvature graph analysis.</figcaption>
+   <figcaption>Figure (50): Examining curve continuity with curvature graph analysis.</figcaption>
 </figure>  
 
 ## 3.4 Curve curvature
@@ -534,7 +548,7 @@ At any point on a curve in the plane, the line best approximating the curve that
 
 <figure>
    <img src="/images/math-image188.png" >
-   <figcaption>Figure (48): Examining curve curvature at different points.</figcaption>
+   <figcaption>Figure (51): Examining curve curvature at different points.</figcaption>
 </figure>  
 
 The best approximating circle can lie either to the left or to the right of the curve. If we care about this, we establish a convention, such as giving the curvature positive sign if the circle lies to the left and negative sign if the circle lies to the right of the curve. This is known as signed curvature. Curvature values of joined curves indicate continuity between these curves.  
@@ -557,7 +571,7 @@ Where:
 
 <figure>
    <img src="/images/math-image189.png" width="500px" >
-   <figcaption>Figure (49): The parameter rectangle of a plane.</figcaption>
+   <figcaption>Figure (52): The parameter rectangle of a plane.</figcaption>
 </figure>  
 
 Another example is the sphere. The Cartesian equation of a sphere centered at the origin with radius {{< mathjax >}}$$R$${{< /mathjax >}} is  
@@ -572,7 +586,7 @@ That means for each point, there are three variables ({{< mathjax >}}$$x$${{< /m
 
 <figure>
    <img src="/images/math-image127.png" >
-   <figcaption>Figure (50): Spherical coordinate system.</figcaption>
+   <figcaption>Figure (53): Spherical coordinate system.</figcaption>
 </figure>  
 
 A conversion of points from spherical to Cartesian coordinate can be obtained as follows:  
@@ -602,7 +616,7 @@ Where ({{< mathjax >}}$$u$${{< /mathjax >}}, {{< mathjax >}}$$v$${{< /mathjax >}
 
 <figure>
    <img src="/images/math-image191.png" >
-   <figcaption>Figure (51): The parameter rectangle of a sphere.</figcaption>
+   <figcaption>Figure (54): The parameter rectangle of a sphere.</figcaption>
 </figure>  
 
 The parametric surface follows the general form:  
@@ -622,7 +636,7 @@ Changing a surface domain is referredto as *reparameterizing* the surface. An in
 
 <figure>
    <img src="/images/math-image192.png" >
-   <figcaption>Figure (52): NURBS surface in 3-D modeling space (left). The surface parameter rectangle with domain spanning from u0 to u1 in the first direction and v0 to v1 in the second direction (right).</figcaption>
+   <figcaption>Figure (55): NURBS surface in 3-D modeling space (left). The surface parameter rectangle with domain spanning from u0 to u1 in the first direction and v0 to v1 in the second direction (right).</figcaption>
 </figure>  
 
 ### Surface evaluation
@@ -631,7 +645,7 @@ Evaluating a surface at a parameter that is within the surface domain results in
 
 <figure>
    <img src="/images/math-image193.png" >
-   <figcaption>Figure (53): Surface evaluation.</figcaption>
+   <figcaption>Figure (56): Surface evaluation.</figcaption>
 </figure>  
 
 ### Tangent plane of a surface
@@ -640,7 +654,7 @@ The tangent plane to a surface at a given point is the plane that touches the su
 
 <figure>
    <img src="/images/math-image194.png" >
-   <figcaption>Figure (54): Tangent and normal vectors to a surface.</figcaption>
+   <figcaption>Figure (57): Tangent and normal vectors to a surface.</figcaption>
 </figure>  
 
 ## 3.6 Surface geometric continuity
@@ -656,7 +670,7 @@ The following table shows various continuities and their definitions:
 
 <figure>
    <img src="/images/math-image126.png" >
-   <figcaption>Figure (55): Examining surface continuity with zebra analysis.</figcaption>
+   <figcaption>Figure (58): Examining surface continuity with zebra analysis.</figcaption>
 </figure>  
 
 ## 3.7 Surface curvature
@@ -667,7 +681,7 @@ If we look at all directions in the tangent plane to the surface at our point, a
 
 <figure>
    <img src="/images/math-image125.png" >
-   <figcaption>Figure (56): Normal curvatures.</figcaption>
+   <figcaption>Figure (59): Normal curvatures.</figcaption>
 </figure>  
 
 ### Principal curvatures
@@ -678,7 +692,7 @@ For example, in a cylindrical surface, there is no bend along the linear directi
 
 <figure>
    <img src="/images/math-image86.png" >
-   <figcaption>Figure (57): Principle curvatures at a surface point are the minimum and maximum curvatures at that point.</figcaption>
+   <figcaption>Figure (60): Principle curvatures at a surface point are the minimum and maximum curvatures at that point.</figcaption>
 </figure>  
 
 ### Gaussian curvature
@@ -693,7 +707,7 @@ C: Zero curvature when surface is flat in at least one direction (plane, cylinde
 
 <figure>
    <img src="/images/math-image89.png" width="500px" >
-   <figcaption>Figure (58): Analyzing the surface Gaussian curvature.</figcaption>
+   <figcaption>Figure (61): Analyzing the surface Gaussian curvature.</figcaption>
 </figure>  
 
 ### Mean curvature
@@ -710,24 +724,24 @@ You can think of NURBS surfaces as a grid of NURBS curves that go in two directi
 
 <figure>
    <img src="/images/math-image80.png" width="500px">
-   <figcaption>Figure (59): NURBS surface with red isocurves in the u-direction and green isocurves in the v-direction.</figcaption>
+   <figcaption>Figure (62): NURBS surface with red isocurves in the u-direction and green isocurves in the v-direction.</figcaption>
 </figure>  
 
 <figure>
    <img src="/images/math-image78.png" width="500px">
-   <figcaption>Figure (60): The control structure of a NURBS surface.</figcaption>
+   <figcaption>Figure (63): The control structure of a NURBS surface.</figcaption>
 </figure>  
 
 <figure>
    <img src="/images/math-image84.png" width="500px">
-   <figcaption>Figure (61): The parameter rectangle of a NURBS surface.</figcaption>
+   <figcaption>Figure (64): The parameter rectangle of a NURBS surface.</figcaption>
 </figure>  
 
 Evaluating parameters at equal intervals in the 2-D parameter rectangle does not translate into equal intervals in 3-D space in most cases.  
 
 <figure>
    <img src="/images/math-image82.png">
-   <figcaption>Figure (62): Evaluating surfaces.</figcaption>
+   <figcaption>Figure (65): Evaluating surfaces.</figcaption>
 </figure>  
 
 ### Characteristics of NURBS surfaces
@@ -779,14 +793,14 @@ For example, if you have a linear edge of a simple plane, and you drag the two e
 
 <figure>
    <img src="/images/math-image109.png" width="500px">
-   <figcaption>Figure (63): Collapse two corner points of a rectangular NURBS surface to create a triangular surface with singularity. The parameter rectangle remains rectangular.</figcaption>
+   <figcaption>Figure (66): Collapse two corner points of a rectangular NURBS surface to create a triangular surface with singularity. The parameter rectangle remains rectangular.</figcaption>
 </figure>  
 
 The above triangular shape can be created without singularity. You can trim a surface with a triangle polyline. When you examine the underlying NURBS structure, you see that it remains a rectangular shape.  
 
 <figure>
    <img src="/images/math-image99.png" width="500px">
-   <figcaption>Figure (64): Trim a rectangular NURBS surface to create a trimmed triangular surface.</figcaption>
+   <figcaption>Figure (67): Trim a rectangular NURBS surface to create a trimmed triangular surface.</figcaption>
 </figure>  
 
 Other common examples of surfaces that are hard to generate without singularity are the cone and the sphere. The top of a cone and top and bottom edges of a sphere are collapsed into one point. Whether there is singularity or not, the parameter rectangle maintains a more or less rectangular region.  
@@ -797,7 +811,7 @@ NURBS surfaces can be trimmed or untrimmed. Trimmed surfaces use an underlying N
 
 <figure>
    <img src="/images/math-image97.png" width="500px">
-   <figcaption>Figure (65): Trimmed surface in modeling space (left) and in parameter rectangle (right).</figcaption>
+   <figcaption>Figure (68): Trimmed surface in modeling space (left) and in parameter rectangle (right).</figcaption>
 </figure>  
 
 ## 3.9 Polysurfaces
@@ -806,7 +820,7 @@ A polysurface consists of two or more(possibly trimmed) NURBS surfaces joined to
 
 <figure>
    <img src="/images/math-image103.png" width="500px">
-   <figcaption>Figure (66): Polysurfaces are made out of joined surfaces with common edges aligning perfectly within tolerance.</figcaption>
+   <figcaption>Figure (69): Polysurfaces are made out of joined surfaces with common edges aligning perfectly within tolerance.</figcaption>
 </figure>  
 
 The BRep is a data structure that describes each face in terms of its underlying surface, surrounding 3-D edges, vertices, parameter space 2-D trims, and relationship between neighboring faces. BRep objects are also called solids when they are closed (watertight).  
@@ -815,40 +829,40 @@ An example polysurface is a simple box that is made out of six untrimmed surface
 
 <figure>
    <img src="/images/math-image101.png" width="500px">
-   <figcaption>Figure (67): Box made out of six untrimmed surfaces joined in one polysurface.</figcaption>
+   <figcaption>Figure (70): Box made out of six untrimmed surfaces joined in one polysurface.</figcaption>
 </figure>  
 
 The same box can be made using trimmed surfaces, such as the top one in the following example.
 
 <figure>
    <img src="/images/math-image93.png" width="500px">
-   <figcaption>Figure (68): Box faces can be trimmed.</figcaption>
+   <figcaption>Figure (71): Box faces can be trimmed.</figcaption>
 </figure>  
 
 The top and bottom faces of the cylinder in the following example are trimmed from planar surfaces.  
 
 <figure>
    <img src="/images/math-image92.png" width="500px">
-   <figcaption>Figure (69) shows the control points of the underlying surfaces.</figcaption>
+   <figcaption>Figure (72) shows the control points of the underlying surfaces.</figcaption>
 </figure>  
 
 We saw that editing NURBS curves and untrimmed surfaces is intuitive and can be done interactively by moving control points. However, editing trimmed surfaces and polysurfaces can be challenging. The main challenge is to be able to maintain joined edges of different faces within the desired tolerance. Neighboring faces that share common edges can be trimmed and do not usually have matching NURBS structure, and therefore modifying the object in a way that deforms that common edge might result in a gap.  
 
 <figure>
    <img src="/images/math-image51.png" width="500px">
-   <figcaption>Figure (70): Two triangular faces joined in one polysurface but do not have matching joined edge. Moving one corner create a hole.</figcaption>
+   <figcaption>Figure (73): Two triangular faces joined in one polysurface but do not have matching joined edge. Moving one corner create a hole.</figcaption>
 </figure>  
 
 Another challenge is that there is typically less control over the outcome, especially when modifying trimmed geometry.   
 
 <figure>
    <img src="/images/math-image44.png" width="500px">
-   <figcaption>Figure (71): Once a trimmed surface is created, there is limited control to edit the result.</figcaption>
+   <figcaption>Figure (74): Once a trimmed surface is created, there is limited control to edit the result.</figcaption>
 </figure>  
 
 <figure>
    <img src="/images/math-image42.png" width="500px">
-   <figcaption>Figure (72): Use cage edit technique in Rhino to edit polysurfaces.</figcaption>
+   <figcaption>Figure (75): Use cage edit technique in Rhino to edit polysurfaces.</figcaption>
 </figure>  
 
 Trimmed surfaces are described in parameter space using the untrimmed underlying surface combined with the 2-D trim curves that evaluate to the 3-D edges within the 3-D surface.  
@@ -1020,52 +1034,55 @@ Using the Grasshopper C# component:
 ```cs
 Private Sub RunScript(ByVal c1 As Curve, ByVal c2 As Curve, ByRef A As Object)
 
-  'declare variables
-  Dim continuity As New String("")
-  Dim t1, t2 As Double
-  Dim v_c1, v_c2, c_c1, c_c2 As Vector3d
+    //decalre variables
+    string continuity = ("");
+    double t1, t2;
+    Vector3d v_c1, v_c2, c_c1, c_c2;
 
-  'extract start and end points
-  Dim end_c1 = c1.PointAtEnd
-  Dim start_c2 = c2.PointAtStart
+    //extract start and end points
+    Point3d end_c1 = c1.PointAtEnd;
+    Point3d start_c2 = c2.PointAtStart;
 
-  'check G0 continuity
-  If end_c1.DistanceTo(start_c2) = 0 Then
-    continuity = "G0"
-  End If
-   'check G1 continuity
-  If continuity = "G0" Then
-    'calculate tangents
-    v_c1 = c1.TangentAtEnd
-    v_c2 = c2.TangentAtStart
-    'unitize tangent vectors
-    v_c1.Unitize
-    v_c2.Unitize
-    'compare tangents
-    If v_c1 * v_c2 = 1.0 Then
-      continuity = "G1"
-    End If
-  End If
+    //check G0 continuity
+    if( end_c1.DistanceTo(start_c2) == 0){
+      continuity = "G0";
+    }
 
-  'check G2 continuity
-  If continuity = "G1" Then
-    'extract the parameter at start and end of the curves domain
-    t1 = c1.Domain.Max
-    t2 = c2.Domain.Min
-    'calculate curvature
-    c_c1 = c1.CurvatureAt(t1)
-    c_c2 = c2.CurvatureAt(t2)
-    'unitize curvature vectors
-    c_c1.Unitize
-    c_c2.Unitize
-    'compare vectors
-    If c_c1 * c_c2 = 1.0 Then
-      continuity = "G2"
-    End If
-  End If
+    //check G1 continuity
+    if( continuity == "G0")
+    {
+      //calculate tangents
+      v_c1 = c1.TangentAtEnd;
+      v_c2 = c2.TangentAtStart;
+      //unitize tangent vectors
+      v_c1.Unitize();
+      v_c2.Unitize();
+      //compare tangents
+      if( v_c1 * v_c2 == 1.0 ){
+        continuity = "G1";
+      }
+    }
 
-  'Assign output
-  A = continuity
+    //check G2 continuity
+    if( continuity == "G1" )
+    {
+      //extract the parameter at start and end of the curves domain
+      t1 = c1.Domain.Max;
+      t2 = c2.Domain.Min;
+      //calculate curvature
+      c_c1 = c1.CurvatureAt(t1);
+      c_c2 = c2.CurvatureAt(t2);
+      //unitize curvature vectors
+      c_c1.Unitize();
+      c_c2.Unitize();
+      //compare vectors
+      if( c_c1 * c_c2 == 1.0 ){
+        continuity = "G2";
+      }
+    }
+
+    //assign output
+    A = continuity;
 
 End Sub
 ```

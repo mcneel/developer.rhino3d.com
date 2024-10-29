@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/pull-curve-to-surface/", "/6/samples/cpp/pull-curve-to-surface/", "/7/samples/cpp/pull-curve-to-surface/", "/wip/samples/cpp/pull-curve-to-surface/"]
+aliases = ["/en/5/samples/cpp/pull-curve-to-surface/", "/en/6/samples/cpp/pull-curve-to-surface/", "/en/7/samples/cpp/pull-curve-to-surface/", "/en/wip/samples/cpp/pull-curve-to-surface/"]
 authors = [ "dale" ]
 categories = [ "Curves", "Surfaces" ]
 description = "Demonstrates how to use ON_Surface::Pullback() to pull a curve object to a surface object."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

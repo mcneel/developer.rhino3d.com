@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinoscript/distance-on-a-curve-from-a-point/", "/6/guides/rhinoscript/distance-on-a-curve-from-a-point/", "/7/guides/rhinoscript/distance-on-a-curve-from-a-point/", "/wip/guides/rhinoscript/distance-on-a-curve-from-a-point/"]
+aliases = ["/en/5/guides/rhinoscript/distance-on-a-curve-from-a-point/", "/en/6/guides/rhinoscript/distance-on-a-curve-from-a-point/", "/en/7/guides/rhinoscript/distance-on-a-curve-from-a-point/", "/en/wip/guides/rhinoscript/distance-on-a-curve-from-a-point/"]
 authors = [ "dale" ]
 categories = [ "Miscellaneous", "Advanced" ]
 description = "This guide demonstrates how to determine a point on a curve that is a specified distance from another point using RhinoScript."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

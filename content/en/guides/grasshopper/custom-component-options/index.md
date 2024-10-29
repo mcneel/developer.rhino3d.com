@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/grasshopper/custom-component-options/", "/6/guides/grasshopper/custom-component-options/", "/7/guides/grasshopper/custom-component-options/", "/wip/guides/grasshopper/custom-component-options/"]
+aliases = ["/en/5/guides/grasshopper/custom-component-options/", "/en/6/guides/grasshopper/custom-component-options/", "/en/7/guides/grasshopper/custom-component-options/", "/en/wip/guides/grasshopper/custom-component-options/"]
 authors = [ "david" ]
 categories = [ "Advanced" ]
 description = "This guide discusses how to add custom options to a component and have them included in *.gh/.ghx* (de)serialization."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

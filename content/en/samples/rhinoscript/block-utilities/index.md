@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/block-utilities/", "/6/samples/rhinoscript/block-utilities/", "/7/samples/rhinoscript/block-utilities/", "/wip/samples/rhinoscript/block-utilities/"]
+aliases = ["/en/5/samples/rhinoscript/block-utilities/", "/en/6/samples/rhinoscript/block-utilities/", "/en/7/samples/rhinoscript/block-utilities/", "/en/wip/samples/rhinoscript/block-utilities/"]
 authors = [ "dale" ]
 categories = [ "Blocks" ]
 description = "A couple of useful block utilities written in RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

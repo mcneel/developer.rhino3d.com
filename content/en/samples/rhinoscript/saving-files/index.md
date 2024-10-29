@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/saving-files/", "/6/samples/rhinoscript/saving-files/", "/7/samples/rhinoscript/saving-files/", "/wip/samples/rhinoscript/saving-files/"]
+aliases = ["/en/5/samples/rhinoscript/saving-files/", "/en/6/samples/rhinoscript/saving-files/", "/en/7/samples/rhinoscript/saving-files/", "/en/wip/samples/rhinoscript/saving-files/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to save a file using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

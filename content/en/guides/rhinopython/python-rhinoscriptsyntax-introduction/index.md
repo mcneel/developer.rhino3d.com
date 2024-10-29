@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-rhinoscriptsyntax-introduction/", "/6/guides/rhinopython/python-rhinoscriptsyntax-introduction/", "/7/guides/rhinopython/python-rhinoscriptsyntax-introduction/", "/wip/guides/rhinopython/python-rhinoscriptsyntax-introduction/"]
+aliases = ["/en/5/guides/rhinopython/python-rhinoscriptsyntax-introduction/", "/en/6/guides/rhinopython/python-rhinoscriptsyntax-introduction/", "/en/7/guides/rhinopython/python-rhinoscriptsyntax-introduction/", "/en/wip/guides/rhinopython/python-rhinoscriptsyntax-introduction/"]
 authors = [ "dale" ]
 categories = [ "Python in Rhino" ]
 description = "This guide provides an overview of the RhinoScriptSyntax in Python."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Overview

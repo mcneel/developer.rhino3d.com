@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/adding-user-strings-to-objects/", "/6/guides/cpp/adding-user-strings-to-objects/", "/7/guides/cpp/adding-user-strings-to-objects/", "/wip/guides/cpp/adding-user-strings-to-objects/"]
+aliases = ["/en/5/guides/cpp/adding-user-strings-to-objects/", "/en/6/guides/cpp/adding-user-strings-to-objects/", "/en/7/guides/cpp/adding-user-strings-to-objects/", "/en/wip/guides/cpp/adding-user-strings-to-objects/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses attaching custom user data to any object using the Rhino C/C++ SDK."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

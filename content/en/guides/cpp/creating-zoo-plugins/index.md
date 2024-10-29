@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/creating-zoo-plugins/", "/6/guides/cpp/creating-zoo-plugins/", "/7/guides/cpp/creating-zoo-plugins/", "/wip/guides/cpp/creating-zoo-plugins/"]
+aliases = ["/en/5/guides/cpp/creating-zoo-plugins/", "/en/6/guides/cpp/creating-zoo-plugins/", "/en/7/guides/cpp/creating-zoo-plugins/", "/en/wip/guides/cpp/creating-zoo-plugins/"]
 authors = [ "dale" ]
 categories = [ "Zoo" ]
 description = "This guide discusses how to create C/C++ plugins that can obtain licenses from the LAN Zoo."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/add-radial-dimension/", "/6/samples/rhinocommon/add-radial-dimension/", "/7/samples/rhinocommon/add-radial-dimension/", "/wip/samples/rhinocommon/add-radial-dimension/"]
+aliases = ["/en/5/samples/rhinocommon/add-radial-dimension/", "/en/6/samples/rhinocommon/add-radial-dimension/", "/en/7/samples/rhinocommon/add-radial-dimension/", "/en/wip/samples/rhinocommon/add-radial-dimension/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to add radial dimensions to a selected curve."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

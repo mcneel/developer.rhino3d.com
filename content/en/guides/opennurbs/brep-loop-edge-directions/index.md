@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/brep-loop-edge-directions/", "/6/guides/opennurbs/brep-loop-edge-directions/", "/7/guides/opennurbs/brep-loop-edge-directions/", "/wip/guides/opennurbs/brep-loop-edge-directions/"]
+aliases = ["/en/5/guides/opennurbs/brep-loop-edge-directions/", "/en/6/guides/opennurbs/brep-loop-edge-directions/", "/en/7/guides/opennurbs/brep-loop-edge-directions/", "/en/wip/guides/opennurbs/brep-loop-edge-directions/"]
 authors = [ "dalelear" ]
 categories = [ "Fundamentals" ]
 description = "This guide discusses Brep loop end edge directions in the openNURBS toolkit."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

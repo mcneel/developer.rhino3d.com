@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-raw-auto-ui/", "/6/guides/cpp/rdk-raw-auto-ui/", "/7/guides/cpp/rdk-raw-auto-ui/", "/wip/guides/cpp/rdk-raw-auto-ui/"]
+aliases = ["/en/5/guides/cpp/rdk-raw-auto-ui/", "/en/6/guides/cpp/rdk-raw-auto-ui/", "/en/7/guides/cpp/rdk-raw-auto-ui/", "/en/wip/guides/cpp/rdk-raw-auto-ui/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK's automatic UI classes in C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 <div class="bs-callout bs-callout-danger">
   <h4>UNDER CONSTRUCTION</h4>

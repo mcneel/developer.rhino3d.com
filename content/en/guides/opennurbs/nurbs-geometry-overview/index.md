@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/opennurbs/nurbs-geometry-overview/", "/6/guides/opennurbs/nurbs-geometry-overview/", "/7/guides/opennurbs/nurbs-geometry-overview/", "/wip/guides/opennurbs/nurbs-geometry-overview/"]
+aliases = ["/en/5/guides/opennurbs/nurbs-geometry-overview/", "/en/6/guides/opennurbs/nurbs-geometry-overview/", "/en/7/guides/opennurbs/nurbs-geometry-overview/", "/en/wip/guides/opennurbs/nurbs-geometry-overview/"]
 authors = [ "dalelear" ]
 categories = [ "NURBS", "Overview" ]
 description = "This guide is brief overview of NURBS geometry from a mathematical and technical perspective."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

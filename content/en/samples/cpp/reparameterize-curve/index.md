@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/reparameterize-curve/", "/6/samples/cpp/reparameterize-curve/", "/7/samples/cpp/reparameterize-curve/", "/wip/samples/cpp/reparameterize-curve/"]
+aliases = ["/en/5/samples/cpp/reparameterize-curve/", "/en/6/samples/cpp/reparameterize-curve/", "/en/7/samples/cpp/reparameterize-curve/", "/en/wip/samples/cpp/reparameterize-curve/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to Reparameterize a curve object."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

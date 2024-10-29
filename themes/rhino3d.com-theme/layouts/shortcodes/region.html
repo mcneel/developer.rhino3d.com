@@ -1,7 +1,12 @@
-{{- if eq (.Get 0) (getenv "MCNEEL_REGION") -}}
-{{ .Inner | markdownify }}
-{{- end -}}
-
-{{- if eq "" (getenv "MCNEEL_REGION") }}
-{{ .Inner | markdownify }}
+{{- if $.Page.Params.MCNEEL_REGION -}}
+    {{- if eq (.Get 0) ($.Page.Params.MCNEEL_REGION) -}}
+    {{ .Inner | markdownify }}
+    {{- end -}}
+{{- else -}}
+    {{- if eq (.Get 0) (getenv "MCNEEL_REGION") -}}
+    {{ .Inner | markdownify }}
+    {{- end -}}
+    {{- if eq "" (getenv "MCNEEL_REGION") }}
+    {{ .Inner | markdownify }}
+    {{- end -}}
 {{- end -}}

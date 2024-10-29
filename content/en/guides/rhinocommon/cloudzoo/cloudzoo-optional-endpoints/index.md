@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-optional-endpoints/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-optional-endpoints/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-optional-endpoints/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-optional-endpoints/"]
+aliases = ["/en/5/guides/rhinocommon/cloudzoo/cloudzoo-optional-endpoints/", "/en/6/guides/rhinocommon/cloudzoo/cloudzoo-optional-endpoints/", "/en/7/guides/rhinocommon/cloudzoo/cloudzoo-optional-endpoints/", "/en/wip/guides/rhinocommon/cloudzoo/cloudzoo-optional-endpoints/"]
 authors = [ "aj" ]
 categories = [ "CloudZoo" ]
 description = "It is possible to query and modify licensing data stored in Cloud Zoo by a registered issuer. This can be useful when a customer returns a license for a refund, as well as other scenarios. It is not required that you interact with these endpoints, but you may find them useful given your business requirements."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Endpoint Conventions

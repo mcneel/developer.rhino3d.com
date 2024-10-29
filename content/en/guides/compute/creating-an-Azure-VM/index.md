@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/compute/creating-an-Azure-VM/", "/6/guides/compute/creating-an-Azure-VM/", "/7/guides/compute/creating-an-Azure-VM/", "/wip/guides/compute/creating-an-Azure-VM/"]
+aliases = ["/en/5/guides/compute/creating-an-Azure-VM/", "/en/6/guides/compute/creating-an-Azure-VM/", "/en/7/guides/compute/creating-an-Azure-VM/", "/en/wip/guides/compute/creating-an-Azure-VM/"]
 authors = [ "andy.payne" ]
 categories = [ "Deployment" ]
 keywords = [ "developer", "compute", "production", "Azure" ]
@@ -22,7 +22,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Creating the Virtual Machine

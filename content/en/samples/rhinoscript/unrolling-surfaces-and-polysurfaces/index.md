@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/unrolling-surfaces-and-polysurfaces/", "/6/samples/rhinoscript/unrolling-surfaces-and-polysurfaces/", "/7/samples/rhinoscript/unrolling-surfaces-and-polysurfaces/", "/wip/samples/rhinoscript/unrolling-surfaces-and-polysurfaces/"]
+aliases = ["/en/5/samples/rhinoscript/unrolling-surfaces-and-polysurfaces/", "/en/6/samples/rhinoscript/unrolling-surfaces-and-polysurfaces/", "/en/7/samples/rhinoscript/unrolling-surfaces-and-polysurfaces/", "/en/wip/samples/rhinoscript/unrolling-surfaces-and-polysurfaces/"]
 authors = [ "dale" ]
 categories = [ "Surfaces" ]
 description = "Demonstrates how to unroll surfaces and polysurfaces using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

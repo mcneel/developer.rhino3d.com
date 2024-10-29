@@ -21,7 +21,7 @@ function scrollFunction() {
 }
 
 function expandNavBar() {
-    if ($(window).width() > 768) {
+    if ($(window).width() > 848) {
     document.getElementById("sitesearch").style.display = "inline";
     } else {
     document.getElementById("sitesearch").style.display = "none";

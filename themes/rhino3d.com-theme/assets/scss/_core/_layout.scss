@@ -12,10 +12,16 @@
 	background-color: transparent;
 	margin-top: $global-nav-height-large;
 	padding-top: 10px;
+	width:100vw;
 	> :not(.content-fullwidth) {
 		max-width: $global-desktop-maxwidth;
 		margin: auto;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
+	// .gallery-container{
+	// 	width: 100vw;
+	// }
 }
 
 .content-fullwidth {
@@ -234,6 +240,21 @@
 // 	}
 // }
 
+
+// .flex-container-header-decorated {
+// 	display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+// 	align-items: flex-end;
+// 	overflow: hidden;
+// }
+
+// .flex-container-header-decorated > h1,h2,h3 {
+// 	// Required to continue the dashed underline all the way under the right item
+// 	flex-grow: 1;
+// 	width: 100%;
+//     margin-right: -300px !important;
+// }
 
 @media only screen and (max-width: $global-mobile-maxwidth) {
 	.toc {

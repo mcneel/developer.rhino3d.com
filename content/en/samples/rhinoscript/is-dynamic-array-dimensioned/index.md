@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/is-dynamic-array-dimensioned/", "/6/samples/rhinoscript/is-dynamic-array-dimensioned/", "/7/samples/rhinoscript/is-dynamic-array-dimensioned/", "/wip/samples/rhinoscript/is-dynamic-array-dimensioned/"]
+aliases = ["/en/5/samples/rhinoscript/is-dynamic-array-dimensioned/", "/en/6/samples/rhinoscript/is-dynamic-array-dimensioned/", "/en/7/samples/rhinoscript/is-dynamic-array-dimensioned/", "/en/wip/samples/rhinoscript/is-dynamic-array-dimensioned/"]
 authors = [ "dale" ]
 categories = [ "Other" ]
 description = "Demonstrates how to determine of a dynamic array has been dimensioned."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

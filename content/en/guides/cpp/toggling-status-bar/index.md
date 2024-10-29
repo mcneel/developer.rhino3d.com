@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/toggling-status-bar/", "/6/guides/cpp/toggling-status-bar/", "/7/guides/cpp/toggling-status-bar/", "/wip/guides/cpp/toggling-status-bar/"]
+aliases = ["/en/5/guides/cpp/toggling-status-bar/", "/en/6/guides/cpp/toggling-status-bar/", "/en/7/guides/cpp/toggling-status-bar/", "/en/wip/guides/cpp/toggling-status-bar/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide demonstrates how to show or hide the Rhino status bar using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

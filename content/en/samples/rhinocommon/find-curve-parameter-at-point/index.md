@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/find-curve-parameter-at-point/", "/6/samples/rhinocommon/find-curve-parameter-at-point/", "/7/samples/rhinocommon/find-curve-parameter-at-point/", "/wip/samples/rhinocommon/find-curve-parameter-at-point/"]
+aliases = ["/en/5/samples/rhinocommon/find-curve-parameter-at-point/", "/en/6/samples/rhinocommon/find-curve-parameter-at-point/", "/en/7/samples/rhinocommon/find-curve-parameter-at-point/", "/en/wip/samples/rhinocommon/find-curve-parameter-at-point/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to find the curve parameter given a specific point on the curve."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

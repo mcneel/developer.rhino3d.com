@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/moving-mesh-vertices/", "/6/guides/cpp/moving-mesh-vertices/", "/7/guides/cpp/moving-mesh-vertices/", "/wip/guides/cpp/moving-mesh-vertices/"]
+aliases = ["/en/5/guides/cpp/moving-mesh-vertices/", "/en/6/guides/cpp/moving-mesh-vertices/", "/en/7/guides/cpp/moving-mesh-vertices/", "/en/wip/guides/cpp/moving-mesh-vertices/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This brief guide demonstrates how to move mesh vertices using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

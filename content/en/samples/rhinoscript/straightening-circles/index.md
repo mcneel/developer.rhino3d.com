@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/straightening-circles/", "/6/samples/rhinoscript/straightening-circles/", "/7/samples/rhinoscript/straightening-circles/", "/wip/samples/rhinoscript/straightening-circles/"]
+aliases = ["/en/5/samples/rhinoscript/straightening-circles/", "/en/6/samples/rhinoscript/straightening-circles/", "/en/7/samples/rhinoscript/straightening-circles/", "/en/wip/samples/rhinoscript/straightening-circles/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to create lines based on circle geometry using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

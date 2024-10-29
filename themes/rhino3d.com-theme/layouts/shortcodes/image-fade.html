@@ -1,0 +1,151 @@
+
+{{ $.Scratch.Add "height" (.Get "height" | default "100%") }}
+{{ $.Scratch.Add "width" (.Get "width" | default "100%") }}
+{{ $.Scratch.Add "mode" (.Get "mode" | default "contain") }}
+{{ $.Scratch.Add "focus" (.Get "focus" | default "2000") }}
+{{ $.Scratch.Add "fade" (.Get "fade" | default "2000") }}
+{{ $.Scratch.Add "captionStyle" (.Get "captionStyle" | default "") }}
+{{ $id := (print .Ordinal) }}
+
+<div class="imageFade" id="imageFade-{{ $id }}"></div>
+<style>
+
+#imageFade-{{ $id }} {
+  width: {{ $.Scratch.Get "width" }};
+  height: {{ $.Scratch.Get "height" }};
+  overflow: hidden;
+  position: relative;
+  background-color: transparent;
+}
+#imageFade-{{ $id }} > div {
+  width: 100%;
+  height: 100%;
+  background-size: {{ $.Scratch.Get "mode" }};
+  background-repeat: no-repeat;
+  position: absolute;
+  opacity: 0;
+}
+  .caption {
+    color: #858585;
+    position: absolute;
+}
+
+</style>
+
+
+<script type="text/javascript" src='{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}'>
+</script>
+<script>
+
+    {{/*  const permaLink = '{{$.Page.Permalink}}'  */}}
+    {{/*  const baseLink = "https://www.rhino3d.com/new-source";
+    data.items.forEach(item =>{
+      item.image = `${baseLink}${item.image}`
+      console.log("item",item)
+    })  */}}
+
+    TOML.parse("{{ .Inner }}").items.forEach((item,i) =>{
+      const slide = document.createElement("div");
+      slide.style.backgroundImage = `url(${item.image})`
+      if (item.caption){
+        const caption = item.captionLink ? document.createElement("a") : document.createElement("p");
+        caption.classList.add('caption');
+        caption.style.cssText = {{ $.Scratch.Get "captionStyle" }};
+        caption.innerHTML = item.caption;
+        if (item.captionLink){
+          caption.href = item.captionLink
+          caption.target = "_blank"
+        }
+        slide.appendChild(caption)
+      }
+
+
+      //https://www.devtwins.com/blog/css-cross-fading-images
+      let a = parseInt({{ $.Scratch.Get "focus" }}, 10);
+      let b = parseInt({{ $.Scratch.Get "fade" }}, 10);
+      let n = TOML.parse("{{ .Inner }}").items.length;
+      let t = (a+b)*n;
+
+      var style = document.createElement('style');
+      style.type = 'text/css';
+      var id = "{{ $id }}";
+      var keyFrames = `\
+      @-keyframes fade-${id} {\
+          0% {\
+            opacity: 1;\
+            pointer-events: all;\
+          }\
+          ${a/t * 100}% {\
+            opacity: 1;\
+            pointer-events: all;\ 
+          }\
+          ${1/n * 100}% {\
+            opacity: 0;\
+            pointer-events: none;\
+          }\
+          ${100 - (b/t * 100)}% {\
+            opacity: 0;\
+            pointer-events: none;\
+          }\
+          100% {\
+            opacity: 1;\
+            pointer-events: all;\
+          }\
+      }\
+      @-moz-keyframes fade-${id} {\
+        0% {\
+          opacity: 1;\
+          pointer-events: all;\
+        }\
+        ${a/t * 100}% {\
+          opacity: 1;\
+          pointer-events: all;\ 
+        }\
+        ${1/n * 100}% {\
+          opacity: 0;\
+          pointer-events: none;\
+        }\
+        ${100 - (b/t * 100)}% {\
+          opacity: 0;\
+          pointer-events: none;\
+        }\
+        100% {\
+          opacity: 1;\
+          pointer-events: all;\
+        }\
+      }\
+      @-webkit-keyframes fade-${id} {\
+        0% {\
+          opacity: 1;\
+          pointer-events: all;\
+        }\
+        ${a/t * 100}% {\
+          opacity: 1;\
+          pointer-events: all;\ 
+        }\
+        ${1/n * 100}% {\
+          opacity: 0;\
+          pointer-events: none;\
+        }\
+        ${100 - (b/t * 100)}% {\
+          opacity: 0;\
+          pointer-events: none;\
+        }\
+        100% {\
+          opacity: 1;\
+          pointer-events: all;\
+        }\
+    }\
+      }`;
+      style.innerHTML = keyFrames;
+      document.getElementsByTagName('head')[0].appendChild(style);
+
+      
+      slide.style.animation = `fade-${id} ${t}ms infinite`
+      slide.style.animationDelay = `${ (-1)*(a+b)*i}ms`
+
+      document.getElementById(`imageFade-${id}`).appendChild(slide);
+    })
+
+    
+</script>

@@ -1,16 +1,36 @@
-{{ $command := "" }}
+{{ $englishCommand := "" }}
+{{ $localCommand := ""}}
+{{ $imageName := "" }}
+{{ $version := "" }}
+{{ $platform := "" }}
+
 {{ if .IsNamedParams }}
-    {{ if .Get "command" }}{{ $command = .Get "command" }}{{ end }}
+    {{ if .Get "english-command" }}{{ $englishCommand = .Get "english-command" }}{{ end }}
+    {{ $localCommand = (.Get "local-command" | default $englishCommand) }}
+    {{ $imageName = (.Get "image-name" | default $englishCommand) }}
+    {{ $version = (.Get "version" | default (string .Site.Params.latestRhinoVersion)) }}
+    {{ $platform = (.Get "platform" | default "win") }}
 {{ else }}
-    {{ $command = .Get 0 }}
+    {{ $englishCommand = .Get 0 }}
+    {{ $localCommand = (.Get 1 | default $englishCommand) }}
+    {{ $imageName = (.Get 2 | default $englishCommand)}}
+    {{ $version = (.Get 3 | default (string .Site.Params.latestRhinoVersion)) }}
+    {{ $platform = (.Get 4 | default "win") }}
 {{ end }}
 
-<a href="https://docs.mcneel.com/rhino/7/help/en-us/index.htm#commands/{{lower $command }}.htm" target="_blank">
-<span style="display: inline;">
-    <strong><img style="
-        display: inline-block;
+
+<a href="https://docs.mcneel.com/rhino/{{$version}}/help/{{.Site.Params.docLang}}/index.htm#commands/{{lower $englishCommand }}.htm" target="_blank">
+<span style="display: inline-block;">
+    <strong>
+        <img style="
         margin-top: -4px;
-        margin-right: 2px;
-        vertical-align: middle;" src="https://docs.mcneel.com/rhino/7/help/en-us/image/command_icons/{{lower $command }}.png">{{ $command }}</strong>
+        padding-top: 2px;
+        padding-bottom: 2px;
+        height: 24px;
+        vertical-align: middle;" src="https://docs.mcneel.com/rhino/{{$version}}/help/{{.Site.Params.docLang}}/image/command_icons/{{lower $imageName }}.png"
+        onerror="this.onerror=null;this.style.display='none';"
+        >
+        {{ $localCommand }}
+    </strong>
 </span>
 </a>

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/creating-custom-crhinogetobject-class/", "/6/guides/cpp/creating-custom-crhinogetobject-class/", "/7/guides/cpp/creating-custom-crhinogetobject-class/", "/wip/guides/cpp/creating-custom-crhinogetobject-class/"]
+aliases = ["/en/5/guides/cpp/creating-custom-crhinogetobject-class/", "/en/6/guides/cpp/creating-custom-crhinogetobject-class/", "/en/7/guides/cpp/creating-custom-crhinogetobject-class/", "/en/wip/guides/cpp/creating-custom-crhinogetobject-class/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to derive a class from CRhinoGetObject to handle special case object picking."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

@@ -2,11 +2,13 @@
 {{ $enHeadings := slice }}
 {{ $translations := dict }}
 {{ $enOccurances := dict }}
+{{ $headingText := index (split .Text "%%") 0}}
+{{ $badge := index (split .Text "%%") 1}}
 {{ $find := `#+ ([^{\n]+)[ \n]`}}
 {{ $clean := `^[\s#]+|\s+$`}}
 
 {{/* Fetching english version of the page and making a list of English headings */}}
-{{ with $enPage := $.Page.Sites.First.GetPage ($.Page.File.Path)}}
+{{ with $enPage := $.Page.Sites.Default.GetPage ($.Page.File.Path)}}
     {{/*  {{$enPage.Language}}  */}}
     {{ range (findRE $find $enPage.RawContent)}}
         {{ $enHeading := anchorize (replaceRE $clean "" . )}}
@@ -31,4 +33,4 @@
 
 {{/* overriding id and href of heading */}}
 {{ $generatedAnchor := index $translations $.Anchor }}
-<h{{ $.Level }} id="{{$generatedAnchor}}">{{ $.Text | safeHTML }}<a href="#{{$generatedAnchor}}"></a></h{{ $.Level }}>
+<h{{ $.Level }} id="{{$generatedAnchor}}">{{ $headingText | safeHTML }}<a aria-label="{{ $headingText | safeHTML }}" href="#{{$generatedAnchor}}"></a>{{ if $badge }}<div class="new-callout new-callout-inline"><a href="/8/new/">{{ $badge | safeHTML }}</a></div>{{ end }}</h{{ $.Level }}>

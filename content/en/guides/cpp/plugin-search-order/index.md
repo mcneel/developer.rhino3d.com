@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/plugin-search-order/", "/6/guides/cpp/plugin-search-order/", "/7/guides/cpp/plugin-search-order/", "/wip/guides/cpp/plugin-search-order/"]
+aliases = ["/en/5/guides/cpp/plugin-search-order/", "/en/6/guides/cpp/plugin-search-order/", "/en/7/guides/cpp/plugin-search-order/", "/en/wip/guides/cpp/plugin-search-order/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide discusses the order in which Rhino searches and loads plugins."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

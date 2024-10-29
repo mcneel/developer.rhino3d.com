@@ -1,0 +1,177 @@
+{{ $.Scratch.Add "A" (.Get "A" | default "A") }}
+{{ $.Scratch.Add "B" (.Get "B" | default "B") }}
+{{ $.Scratch.Add "Atarget" (.Get "Atarget" | default "") }}
+{{ $.Scratch.Add "Btarget" (.Get "Btarget" | default "") }}
+
+
+<div class="segmented-controls">
+    <input id="segmentA" name="option" class="segmentInput" type="radio" checked>
+    <label for="segmentA">{{ $.Scratch.Get "A" }}</label>
+    <input id="segmentB" name="option" class="segmentInput" type="radio">
+    <label for="segmentB">{{ $.Scratch.Get "B" }}</label>
+</div>
+
+
+  <style>
+
+  /* 
+   * SEGMENTED CONTROLS LAYOUT
+   */ 
+  
+  /*
+   * Container
+   */
+  .segmented-controls {
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s ease;
+    max-width: 100%;
+    width: 300px;
+    z-index: 0;
+  }
+  
+  /*
+   * Vissualy hidden radiobuttons
+   */
+  .segmented-controls input {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+  }
+  
+  /* 
+   * Labels need to be the same size
+   */
+  .segmented-controls label {
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    flex: 1 1 0px;
+    position: relative;
+    z-index: 2;
+    transition: inherit;  
+  }
+  
+  /* 
+   * Adjust z-index of last label since that contains 
+   * the paddle that needs to go beneath all other labels 
+   */
+  .segmented-controls label:last-of-type {
+    z-index: 1;
+  }
+  
+  /*
+   * Paddle 
+   */
+  .segmented-controls label:last-of-type::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+    background-color: black;
+    transition: inherit;
+  }
+  
+
+.segmented-controls input:nth-last-of-type(2):checked ~ label:last-of-type::after {
+    transform: translateX(-100%);
+}
+
+  
+  
+  /*
+   * Container
+   */
+  .segmented-controls {
+    border-radius: 0.5rem;
+    background: #e2e2e9;
+    height: 2rem;
+    padding: 0.125rem;
+  }
+  
+  /*
+   * Labels 
+   */
+  .segmented-controls label {
+    font-size: 0.8125rem;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
+    line-height: 1;
+  }
+  
+  /*
+   * Dividers
+   */
+  .segmented-controls label:not(:first-of-type)::before {
+    content: "";
+    position: absolute;
+    z-index: -3;
+    top: 0.5rem;
+    left: 0;
+    bottom: 0.5rem;
+    width: 1px;
+    background: rgba(0,0,0,0.15);
+    transition: inherit;
+  }
+  
+  
+  /*
+   * Selected option 
+   */
+  .segmented-controls input:checked + label {
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  
+  /*
+   * Hide dividers before and after the selected option
+   */
+  .segmented-controls input:checked + label::before,
+  .segmented-controls input:checked + label + input + label::before {
+    opacity: 0;
+  }
+  
+  
+  /*
+   * Paddle
+   */
+  .segmented-controls label:last-of-type::after {
+    background: white;
+    border-radius: 0.4275rem;
+    border: 0.5px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.04), 0px 3px 8px rgba(0, 0, 0, 0.12);
+  }
+  
+  </style>
+
+  <script>
+
+    $(window).on('pageshow', function(){
+        var showSegment = function() { 
+            if($('#segmentA').is(':checked')){
+                $('{{ $.Scratch.Get "Atarget" }}').css('display', '');
+                $('{{ $.Scratch.Get "Btarget" }}').css('display', 'none');
+              } else {
+                  $('{{ $.Scratch.Get "Atarget" }}').css('display', 'none');
+                  $('{{ $.Scratch.Get "Btarget" }}').css('display', '');
+              }
+        };
+        showSegment();
+      $('.segmentInput').change(function(){
+        showSegment();
+      });
+    });
+    </script>

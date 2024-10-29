@@ -34,6 +34,9 @@ other = "Manage your account, licenses, and teams"
 [sign-in]
 other = "sign in"
 
+[sign-out]
+other = "sign out"
+
 [sign-in-title]
 other = "Sign in to manage your account, licenses, and teams"
 
@@ -247,7 +250,7 @@ other = "Charging Forward"
 
 # Details of the Rhino 8 caption
 [caption-rhino-8-details]
-other = "Available now with ShrinkWrap, Sharp SubD, Mac Speed Boost, and more."
+other = "Available now with ShrinkWrap, SubD Creases, Mac Speed Boost, and more."
 
 # Link title on homepage video captions
 [caption-learn-more]

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/planar-surface/", "/6/samples/rhinocommon/planar-surface/", "/7/samples/rhinocommon/planar-surface/", "/wip/samples/rhinocommon/planar-surface/"]
+aliases = ["/en/5/samples/rhinocommon/planar-surface/", "/en/6/samples/rhinocommon/planar-surface/", "/en/7/samples/rhinocommon/planar-surface/", "/en/wip/samples/rhinocommon/planar-surface/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to create a planar surface from a rectangle."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/reverse-curve/", "/6/samples/rhinocommon/reverse-curve/", "/7/samples/rhinocommon/reverse-curve/", "/wip/samples/rhinocommon/reverse-curve/"]
+aliases = ["/en/5/samples/rhinocommon/reverse-curve/", "/en/6/samples/rhinocommon/reverse-curve/", "/en/7/samples/rhinocommon/reverse-curve/", "/en/wip/samples/rhinocommon/reverse-curve/"]
 authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to reverse the direction of user-specified curves."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

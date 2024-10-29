@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/find-closest-curve-to-point/", "/6/samples/rhinoscript/find-closest-curve-to-point/", "/7/samples/rhinoscript/find-closest-curve-to-point/", "/wip/samples/rhinoscript/find-closest-curve-to-point/"]
+aliases = ["/en/5/samples/rhinoscript/find-closest-curve-to-point/", "/en/6/samples/rhinoscript/find-closest-curve-to-point/", "/en/7/samples/rhinoscript/find-closest-curve-to-point/", "/en/wip/samples/rhinoscript/find-closest-curve-to-point/"]
 authors = [ "dale" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to find the closest curve to test point using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

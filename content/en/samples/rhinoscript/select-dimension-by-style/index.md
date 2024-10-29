@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/select-dimension-by-style/", "/6/samples/rhinoscript/select-dimension-by-style/", "/7/samples/rhinoscript/select-dimension-by-style/", "/wip/samples/rhinoscript/select-dimension-by-style/"]
+aliases = ["/en/5/samples/rhinoscript/select-dimension-by-style/", "/en/6/samples/rhinoscript/select-dimension-by-style/", "/en/7/samples/rhinoscript/select-dimension-by-style/", "/en/wip/samples/rhinoscript/select-dimension-by-style/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to select an objects (dimensions) by their dimension style using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/highlighting-objects-in-conduits/", "/6/guides/cpp/highlighting-objects-in-conduits/", "/7/guides/cpp/highlighting-objects-in-conduits/", "/wip/guides/cpp/highlighting-objects-in-conduits/"]
+aliases = ["/en/5/guides/cpp/highlighting-objects-in-conduits/", "/en/6/guides/cpp/highlighting-objects-in-conduits/", "/en/7/guides/cpp/highlighting-objects-in-conduits/", "/en/wip/guides/cpp/highlighting-objects-in-conduits/"]
 authors = [ "dale" ]
 categories = [ "Advanced" ]
 description = "This guide demonstrates how to highlight objects in a conduit using C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
  

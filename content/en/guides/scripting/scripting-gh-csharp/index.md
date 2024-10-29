@@ -1,13 +1,7 @@
 +++
 title = "Grasshopper Scripting: C#"
-description = ""
-type = "guides"
-categories = ["Scripting"]
-keywords = [ "", "" ]
-languages = [ "C#" ]
+description = "Provides detailed information on C# scripting in Grasshopper"
 authors = ["ehsan"]
-sdk = [ "RhinoCommon" ]
-weight = 4
 
 [included_in]
 platforms = [ "Windows", "Mac" ]

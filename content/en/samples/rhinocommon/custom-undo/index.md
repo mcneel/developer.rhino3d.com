@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/custom-undo/", "/6/samples/rhinocommon/custom-undo/", "/7/samples/rhinocommon/custom-undo/", "/wip/samples/rhinocommon/custom-undo/"]
+aliases = ["/en/5/samples/rhinocommon/custom-undo/", "/en/6/samples/rhinocommon/custom-undo/", "/en/7/samples/rhinocommon/custom-undo/", "/en/wip/samples/rhinocommon/custom-undo/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to set up a custom set of actions when the Undo command is called."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

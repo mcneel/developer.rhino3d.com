@@ -1,0 +1,197 @@
+<style>
+  .leftSelectorCards-container {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: {{ $.Get "margin" }};
+  }
+
+  .leftSelectorCards-container td {
+    vertical-align: top;
+    padding: 0 7.5px 0 7.5px;
+    border-width: 0;
+  }
+
+  .leftSelectorCards-container td:first-child {
+    padding-left: 0;
+  }
+
+  .leftSelectorCards-container td:last-child {
+    padding-right: 0;
+  }
+
+  .leftSelectorCards {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .leftSelectorCards li{
+    margin-bottom: 10px;
+  }
+
+  .leftSelectorCards li:last-child {
+    margin-bottom: 0px;
+  }
+
+  .leftSelectorCard {
+    display: block;
+    width: 198px;
+    height: 130px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 0.9em;
+    color:#6e6e6e;
+    background-color: #fff;
+    border: 1px solid #b0b0b0;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 4px 0px,
+      rgba(0, 0, 0, 0.025) 0px 15px 20px -1px;
+    overflow: hidden;
+  }
+
+  .leftSelectorCard:hover,
+  .leftSelectorCard-active {
+    z-index: 1;
+    color: black;
+    border: 1px solid #6c6c6c;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px 0px,
+      rgba(0, 0, 0, 0.025) 0px 15px 20px -1px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .leftSelectorCard-active
+    >.leftSelectorCard-active-dot{
+      display: block;
+    }
+
+  .leftSelectorCard-active-dot {
+    height: 16px;
+    width: 16px;
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-size: smaller;
+    line-height: 1.4em;
+    background-color: #900;
+    border-radius: 8px;
+    position: relative;
+    float: right;
+    display: none;
+    top: -125px;
+    right: 5px;
+  }
+
+  .leftSelectorCard-cover {
+    display: block;
+    height: 95px;
+    background-color: #EBEBEB;
+  }
+
+  .leftSelectorCard-item {
+    display: none;
+  }
+
+  .leftSelectorCard-item-active {
+    display: block;
+  }
+
+  .leftSelectorCard-item ul,
+  .leftSelectorCard-item-active ul {
+    display: block;
+    background: linear-gradient(transparent, white 60%);
+    margin: initial;
+    padding-left: 30px;
+    padding-bottom: 0px;
+    padding-top: 100px;
+    width: 100%;
+  }
+</style>
+
+<table id="container" class="leftSelectorCards-container">
+  <tr>
+    <td style="width: 200px; padding: 0">
+      <ul id="leftSelectorCards" class="leftSelectorCards"></ul>
+    </td>
+    <td>{{ .Inner | markdownify }}</td>
+  </tr>
+</table>
+
+<script>
+  var items = document.getElementsByClassName("leftSelectorCard-item");
+
+  function loadContent(card) {
+    let cards = document.getElementsByClassName("leftSelectorCard");
+    let index = card.getAttribute("tab-index");
+    let item = items[index];
+
+    for (var i = 0; i < items.length; i++) {
+      items[i].classList.remove("leftSelectorCard-item-active");
+    }
+
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].classList.remove("leftSelectorCard-active");
+    }
+
+    item.classList.add("leftSelectorCard-item-active");
+    card.classList.add("leftSelectorCard-active");
+
+    return item;
+  }
+
+  function scrollToAnchor(anchor) {
+    var element = document.getElementById(anchor);
+    if (element)
+      element.scrollIntoView((scrollIntoViewOptions = { block: "center" }));
+  }
+
+  function setContent(card) {
+    var item = loadContent(card);
+    var url = document.URL.replace(/#.*$/, "");
+    window.history.pushState(
+      undefined,
+      document.title,
+      "#" + item.getAttribute("id")
+    );
+  }
+
+  window.addEventListener("load", () => {
+    let cardsselector = document.getElementById("leftSelectorCards");
+    let target;
+    let gotocards = false;
+
+    for (var i = 0; i < items.length; i++) {
+      let t = items[i];
+
+      let card = document.createElement("li");
+      let id = t.getAttribute("id");
+      card.classList.add("leftSelectorCard");
+      card.innerHTML =
+        `<a id="${id}" href="${"#" + id}"></a>` +
+        `<div class='leftSelectorCard-cover' ><img src='${t.getAttribute(
+          "cover"
+        )}' /></div>` +
+        `<div>${t.getAttribute("header")}</div>` +
+        "<div class='leftSelectorCard-active-dot'>8</div>";
+      card.setAttribute("tab-index", i);
+      card.addEventListener("click", () => {
+        setContent(card);
+      });
+
+      cardsselector.appendChild(card);
+
+      if (i == 0) target = card;
+      if (window.location.hash == "#" + id) {
+        target = card;
+        gotocards = true;
+      }
+    }
+
+    loadContent(target);
+
+    if (gotocards) {
+      scrollToAnchor("container");
+      gotocards = false;
+    }
+  });
+</script>

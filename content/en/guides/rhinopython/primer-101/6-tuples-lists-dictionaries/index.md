@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/", "/6/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/", "/7/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/", "/wip/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/"]
+aliases = ["/en/5/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/", "/en/6/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/", "/en/7/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/", "/en/wip/guides/rhinopython/primer-101/6-tuples-lists-dictionaries/"]
 authors = [ "skylar-tibbits", "arthur-van-der-harten", "steve" ]
 categories = [ "Rhino.Python 101" ]
 category_page = "guides/rhinopython/primer-101/"
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## 6.1 Tuples

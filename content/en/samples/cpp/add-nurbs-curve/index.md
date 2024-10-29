@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/cpp/add-nurbs-curve/", "/6/samples/cpp/add-nurbs-curve/", "/7/samples/cpp/add-nurbs-curve/", "/wip/samples/cpp/add-nurbs-curve/"]
+aliases = ["/en/5/samples/cpp/add-nurbs-curve/", "/en/6/samples/cpp/add-nurbs-curve/", "/en/7/samples/cpp/add-nurbs-curve/", "/en/wip/samples/cpp/add-nurbs-curve/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects", "Curves" ]
 description = "Demonstrates how to add a NURBS curve to Rhino."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```cpp

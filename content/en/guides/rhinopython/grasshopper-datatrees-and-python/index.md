@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/grasshopper-datatrees-and-python/", "/6/guides/rhinopython/grasshopper-datatrees-and-python/", "/7/guides/rhinopython/grasshopper-datatrees-and-python/", "/wip/guides/rhinopython/grasshopper-datatrees-and-python/"]
+aliases = ["/en/5/guides/rhinopython/grasshopper-datatrees-and-python/", "/en/6/guides/rhinopython/grasshopper-datatrees-and-python/", "/en/7/guides/rhinopython/grasshopper-datatrees-and-python/", "/en/wip/guides/rhinopython/grasshopper-datatrees-and-python/"]
 authors = [ "giulio", "scottd" ]
 categories = [ "GhPython" ]
 description = "This guide describes how to use data trees in Python."
@@ -28,7 +28,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Data trees, technically

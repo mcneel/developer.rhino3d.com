@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinopython/annotate-curve-form/", "/6/samples/rhinopython/annotate-curve-form/", "/7/samples/rhinopython/annotate-curve-form/", "/wip/samples/rhinopython/annotate-curve-form/"]
+aliases = ["/en/5/samples/rhinopython/annotate-curve-form/", "/en/6/samples/rhinopython/annotate-curve-form/", "/en/7/samples/rhinopython/annotate-curve-form/", "/en/wip/samples/rhinopython/annotate-curve-form/"]
 authors = [ "dale" ]
 categories = [ "Adding Objects" ]
 description = "The following sample shows how to create a custom Windows form."
@@ -17,7 +17,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 

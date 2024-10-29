@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/python-statements/", "/6/guides/rhinopython/python-statements/", "/7/guides/rhinopython/python-statements/", "/wip/guides/rhinopython/python-statements/"]
+aliases = ["/en/5/guides/rhinopython/python-statements/", "/en/6/guides/rhinopython/python-statements/", "/en/7/guides/rhinopython/python-statements/", "/en/wip/guides/rhinopython/python-statements/"]
 authors = [ "dale" ]
 categories = [ "Fundamentals" ]
 description = "This guide presents an overview of Python syntax."
@@ -26,7 +26,6 @@ block_webcrawlers = false
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

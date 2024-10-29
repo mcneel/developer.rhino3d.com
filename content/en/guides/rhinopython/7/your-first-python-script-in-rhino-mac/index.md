@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/your-first-python-script-in-rhino-mac/", "/6/guides/rhinopython/your-first-python-script-in-rhino-mac/", "/7/guides/rhinopython/your-first-python-script-in-rhino-mac/", "/wip/guides/rhinopython/your-first-python-script-in-rhino-mac/"]
+aliases = ["/en/5/guides/rhinopython/your-first-python-script-in-rhino-mac/", "/en/6/guides/rhinopython/your-first-python-script-in-rhino-mac/", "/en/7/guides/rhinopython/your-first-python-script-in-rhino-mac/", "/en/wip/guides/rhinopython/your-first-python-script-in-rhino-mac/"]
 authors = [ "alain" ]
 categories = [ "Getting Started" ]
 description = "This guide covers the basics of getting started writing Python in Rhino for Mac."
@@ -28,7 +28,6 @@ block_webcrawlers = true
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 ## Running a Python script

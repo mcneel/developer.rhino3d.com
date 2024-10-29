@@ -48,7 +48,7 @@
 </div>
 
 {{- partial "jquery" . }}
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js" integrity="sha384-8t+aLluUVnn5SPPG/NbeZCH6TWIvaXIm/gDbutRvtEeElzxxWaZN+G/ZIEdI/f+y" crossorigin="anonymous"></script>
 <script type="text/javascript" src='{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}'>
 </script>
 
@@ -169,5 +169,5 @@
 </script>
 
 {{ $sass := resources.Get "/scss/_page/_subscribe.scss" }}
-{{ $style := $sass | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $style := $sass | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">

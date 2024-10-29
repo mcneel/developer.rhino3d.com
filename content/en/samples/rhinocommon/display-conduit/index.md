@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinocommon/display-conduit/", "/6/samples/rhinocommon/display-conduit/", "/7/samples/rhinocommon/display-conduit/", "/wip/samples/rhinocommon/display-conduit/"]
+aliases = ["/en/5/samples/rhinocommon/display-conduit/", "/en/6/samples/rhinocommon/display-conduit/", "/en/7/samples/rhinocommon/display-conduit/", "/en/wip/samples/rhinocommon/display-conduit/"]
 authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates a basic display conduit that draws a custom axis in the Rhino viewport."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 since = 0
-
 +++
 
 <div class="codetab-content" id="cs">

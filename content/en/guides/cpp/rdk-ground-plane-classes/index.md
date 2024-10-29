@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/cpp/rdk-ground-plane-classes/", "/6/guides/cpp/rdk-ground-plane-classes/", "/7/guides/cpp/rdk-ground-plane-classes/", "/wip/guides/cpp/rdk-ground-plane-classes/"]
+aliases = ["/en/5/guides/cpp/rdk-ground-plane-classes/", "/en/6/guides/cpp/rdk-ground-plane-classes/", "/en/7/guides/cpp/rdk-ground-plane-classes/", "/en/wip/guides/cpp/rdk-ground-plane-classes/"]
 authors = [ "john.croudy" ]
 categories = [ "RDK" ]
 description = "This document describes how to use the RDK ground plane class in C/C++."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 ### Introduction
 When rendering real-world scenes, it is very often the case that the rendering will include a large area of ground or flooring. This could be modeled by using a plane, but this is inconvenient because the ground tends to stretch as far as the eye can see. To circumvent this problem, the RDK provides a set of _ground plane_ services to make it easier to add a ground or floor to your scene. A ground plane has an _altitude_, which is usually the same as its position along the z-axis. It can also have a material assigned to it, which will appear in renderings and in the viewport, much as materials assigned to objects do. If the _auto-altitude_ option is enabled, the ground plane will adjust itself to sit below the objects in the scene.

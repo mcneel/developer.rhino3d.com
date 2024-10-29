@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinopython/creating-rhino-commands-using-python/", "/6/guides/rhinopython/creating-rhino-commands-using-python/", "/7/guides/rhinopython/creating-rhino-commands-using-python/", "/wip/guides/rhinopython/creating-rhino-commands-using-python/"]
+aliases = ["/en/5/guides/rhinopython/creating-rhino-commands-using-python/", "/en/6/guides/rhinopython/creating-rhino-commands-using-python/", "/en/7/guides/rhinopython/creating-rhino-commands-using-python/", "/en/wip/guides/rhinopython/creating-rhino-commands-using-python/"]
 authors = [ "pascal", "will" ]
 categories = [ "Python in Rhino" ]
 description = "This guide demonstrates how to create Rhino commands from Python scripts."
@@ -28,7 +28,6 @@ block_webcrawlers = true
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

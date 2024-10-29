@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster/", "/6/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster/", "/7/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster/", "/wip/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster/"]
+aliases = ["/en/5/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster/", "/en/6/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster/", "/en/7/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster/", "/en/wip/guides/rhinocommon/cloudzoo/cloudzoo-licensecluster/"]
 authors = [ "aj" ]
 categories = [ "CloudZooDoc" ]
 description = "A License Cluster object is a JSON object that represents a list of License objects for a software product issued by a registered issuer in Cloud Zoo."
@@ -25,7 +25,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 

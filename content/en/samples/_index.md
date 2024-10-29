@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/", "/6/samples/", "/7/samples/", "/wip/samples/"]
+aliases = ["/en/5/samples/", "/en/6/samples/", "/en/7/samples/", "/en/wip/samples/"]
 description = "All the official sample code available for Rhino and Grasshopper developers."
 title = "Samples"
 type = "guides"
@@ -17,7 +17,6 @@ since = 0
 byline = false
 toc = true
 toc_type = "single"
-
 +++
 
   

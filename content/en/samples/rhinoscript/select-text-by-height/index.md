@@ -1,5 +1,5 @@
 +++
-aliases = ["/5/samples/rhinoscript/select-text-by-height/", "/6/samples/rhinoscript/select-text-by-height/", "/7/samples/rhinoscript/select-text-by-height/", "/wip/samples/rhinoscript/select-text-by-height/"]
+aliases = ["/en/5/samples/rhinoscript/select-text-by-height/", "/en/6/samples/rhinoscript/select-text-by-height/", "/en/7/samples/rhinoscript/select-text-by-height/", "/en/wip/samples/rhinoscript/select-text-by-height/"]
 authors = [ "dale" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to select text objects by their text height using RhinoScript."
@@ -19,7 +19,6 @@ state = ""
 [included_in]
 platforms = [ "Windows" ]
 since = 0
-
 +++
 
 ```vbnet

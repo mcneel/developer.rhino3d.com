@@ -1,6 +1,6 @@
 +++
-aliases = ["/5/guides/general/rhino-developer-prerequisites/", "/6/guides/general/rhino-developer-prerequisites/", "/7/guides/general/rhino-developer-prerequisites/", "/wip/guides/general/rhino-developer-prerequisites/"]
-authors = [ "dan" ]
+aliases = ["/en/5/guides/general/rhino-developer-prerequisites/", "/en/6/guides/general/rhino-developer-prerequisites/", "/en/7/guides/general/rhino-developer-prerequisites/", "/en/wip/guides/general/rhino-developer-prerequisites/"]
+authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
 description = "This guide describes the main requirements to develop for Rhino."
 keywords = [ "developer", "rhino" ]
@@ -9,7 +9,6 @@ sdk = [ "General" ]
 title = "Developer Prerequisites"
 type = "guides"
 weight = 1
-override_last_modified = "2021-09-03T08:29:10Z"
 
 [admin]
 TODO = ""
@@ -25,7 +24,6 @@ since = 0
 byline = true
 toc = true
 toc_type = "single"
-
 +++
 
 
@@ -49,8 +47,7 @@ Depending on what you want to do, the software prerequisites vary.  However, in 
 - [Rhinoceros](http://www.rhino3d.com/download)
 - A code editor.  There are many options...here are a few:
    - [Visual Studio for Windows](https://www.visualstudio.com): Microsoft's flagship Integrated Development Environment (IDE) for Windows.
-   - [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/): Microsoft's flagship IDE for macOS.
-   - [Atom](https://atom.io/): A Cross-Platform Extensible Text Editor.
+   - [Visual Studio Code](https://code.visualstudio.com/): The best free cross-platform editor
 
 See the [SDK-specific guides](/guides/) for the software prerequisites...normally found in the *"Installing Tools"* guides.
 
@@ -134,6 +131,12 @@ RhinoScript is a scripting tool based on Microsoft's VBScript language.  RhinoSc
 
 - [Check out samples](/samples/#rhinoscript) on this site
 - [Ask for help on Discourse](http://discourse.mcneel.com/c/scripting)
+
+### Learning More
+
+- [Crafting Interpreters](https://craftinginterpreters.com/) by Robert Nystrom
+- [Clean Code](https://www.oreilly.com/library/view/clean-code-a/9780136083238/) by Robert C. Martin
+
 
 ## Related topics
 
