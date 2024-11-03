@@ -196,6 +196,14 @@ To get the generic DataTree structure to use the correct type, we can apply a `f
 
 ![](python3-component-paramaccess-03.png)
 
+### Required Parameter
+
+Script input parameters are always created as *Optional*. This means that your script runs whether wires are connected to the inputs or not. However, sometimes it is important to mark an input as **Required** (not *Optional*) to ensure there is a value available on that input before script runs. This is especially important if you are planning to [publish your scripts](#publishing-scripts).
+
+As of Rhino 8.14, there is a *Required* option on the input context menu that you could check to make an input required:
+
+![](python3-component-required.png)
+
 ### Extracting Parameters
 
 Grasshopper allows extracting an input parameter from a component. Parameters on a component are independent entities that could exist as inputs or outputs on a component or as floating parameters ([Types of Parameters](https://developer.rhino3d.com/guides/grasshopper/simple-parameters/#types-of-parameters)).
@@ -724,7 +732,7 @@ Right-Click on all input and output parameters and set a **Name** (Human-readabl
 
 ![](python3-component-publishing-02.png)
 
-Check out [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-publish) on how to publish your script components in a Grasshopper plugin.
+Check out [Creating Rhino and Grasshopper Plugins](/guides/scripting/projects-create) on how to publish your script components in a Grasshopper plugin.
 
 ## Template Scripts
 
