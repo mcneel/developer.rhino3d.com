@@ -98,6 +98,29 @@ To remove a command, select the command in *Project Tray* and click the trash bu
 
 ![](project-commands-remove.png)
 
+### Grasshopper Previews
+
+Grasshopper calls the components and parameters on the canvas to draw previews and follows the drawing settings and mode that is stored in the document. You can changes the mode and settings for each document from the Grasshopper UI. Component previews are also configurable, and there is a *Custom Preview* component available as well.
+
+This means that you can customize how your Grasshopper definition previews the geometry it is working with. When running a published command that embeds a Grasshopper definition, previews are drawn in Rhino viewport, in the same way as Grasshopper UI would draw the previews, while command is asking for inputs.
+
+This is an example of a Grasshopper definition that creates a sphere at given point. It draws its own preview of the sphere using *Custom Preview* component:
+
+![](project-commands-ghpreview_def.png)
+
+When publishing this Grasshopper definition as a Rhino command and running that command, the same preview is drawn while Rhino is asking for the input point:
+
+![](project-commands-ghpreview_run.gif)
+
+### Special Variables
+
+There are a few builtin variables available when published scripts are executed as Rhino commands:
+
+- `__rhino_command__` ([Rhino.Commands.Command](https://developer.rhino3d.com/api/rhinocommon/rhino.commands.command)): Rhino command instance. This is the automatically generated command in your plugin, that contains and runs its embedded script.
+- `__rhino_doc__` ([Rhino.RhinoDoc](https://developer.rhino3d.com/api/rhinocommon/rhino.rhinodoc)): Active document the command is running on
+- `__rhino_runmode__` ([Rhino.Commands.RunMode](https://developer.rhino3d.com/api/rhinocommon/rhino.commands.runmode)): Command Run Mode
+- `__is_interactive__` (boolean): Whether command is executed interactively (when `RunMode == RunMode.Interactive`)
+
 ## Add Components
 
 To add components, click on the **+** icon on the *Project Tray* toolbar and select **Add Components/** item:
@@ -108,37 +131,105 @@ You can also right-click on the **Components/** to add new components:
 
 ![](project-comps-add-rclick.png)
 
-#### Components Types
-
-When adding components to a project, an open dialog appears asking for Grasshopper definitions (`.gh` or `.ghx`). Depending on the contents of the definition, one of these two types of components are created in the project:
-
-- **Script:** If Grasshopper definition *does not contain* any contextual inputs or outputs, a component is created for each *Script* that exist in the definition. The new component matches nickname, inputs, and outputs of the *Script* and runs the same code.
-
-  **Example:**
-
-  In this example, the definition contains 3 *Script* components, nicknamed *First*, *Second*, and *Third*. Each script components becomes a component in published Grasshopper plugin matching the nickname, inputs, and outputs. See [Project Components](#components) on how to edit components, add icons, and set their exposure.
-
-  ![](project-comps-added-scripts.png)
-
-  This is how the components look like when published (default icon). Note that although they are generated from scripts of different languages, the published components are language agnostic and the three components look the same:
-
-  ![](project-comps-published-script.png)
-
-- **Contextual:** If Grasshopper definition *does contain* contextual inputs or outputs, a single component is created for the complete definition. The new component matches the contextual inputs and outputs of the definition and runs the full definition on each iteration.
-
-  **Example:**
-
-  In this example, the definition contains contextual inputs and outputs. The complete definition becomes a component in published Grasshopper plugin, and its name matches the definition name by default. Component inputs and outputs will match contextual inputs and outputs of the definition. Note that any other *Script* component in this definition is not converted. See [Project Components](#components) on how to edit components, add icons, and set their exposure.
-
-  ![](project-comps-added-ctx.png)
-
-  This is how the component looks like when published (default icon):
-
-  ![](project-comps-published-ctx.png)
-
 To remove a component, select the source Grasshopper definition in *Project Tray* and click the trash button on the toolbar. Note that you can only remove complete definitions from **Components/** and not the individual components:
 
 ![](project-comps-remove.png)
+
+## Components Types: Script
+
+When adding components to a project, an open dialog appears asking for Grasshopper definitions (`.gh` or `.ghx`). Depending on the contents of the definition, one of these two types of components are created in the project:
+
+**Script:** If Grasshopper definition *does not contain* any contextual inputs or outputs, a component is created for each *Script* that exist in the definition. The new component matches nickname, inputs, and outputs of the *Script* and runs the same code.
+
+**Example:**
+
+In this example, the definition contains 3 *Script* components, nicknamed *First*, *Second*, and *Third*. Each script components becomes a component in published Grasshopper plugin matching the nickname, inputs, and outputs. See [Project Components](#components) on how to edit components, add icons, and set their exposure.
+
+![](project-comps-added-scripts.png)
+
+This is how the components look like when published (default icon). Note that although they are generated from scripts of different languages, the published components are language agnostic and the three components look the same:
+
+![](project-comps-published-script.png)
+
+### Required Inputs
+
+Input parameters of published components follow the *Required*, *Access*, and *Type Hint* settings of their corresponding input on the original script component:
+
+![](project-commands-requiredinputs.png)
+
+### Output Previews
+
+Outputs parameters of published components follow the *Preview* settings of their corresponding output on the original script component:
+
+![](project-comps-outputpreview.png)
+
+## Components Types: Contextual
+
+**Contextual:** If Grasshopper definition *does contain* contextual inputs or outputs, a single component is created for the complete definition. The new component matches the contextual inputs and outputs of the definition and runs the full definition on each iteration.
+
+**Example:**
+
+In this example, the definition contains contextual inputs and outputs. The complete definition becomes a component in published Grasshopper plugin, and its name matches the definition name by default. Component inputs and outputs will match contextual inputs and outputs of the definition. Note that any other *Script* component in this definition is not converted. See [Project Components](#components) on how to edit components, add icons, and set their exposure.
+
+![](project-comps-added-ctx.png)
+
+This is how the component looks like when published (default icon):
+
+![](project-comps-published-ctx.png)
+
+### Inputs and Outputs
+
+Contextual components embed and run full Grasshopper definitions as a single component. Inputs and outputs of the component are based on the Contextual inputs and outputs placed on the source Grasshopper definition. Take this file as an example:
+
+![](project-commands-gh1.png)
+
+This Grasshopper definition is converted to a component like below. Note that a specific *GH Parameter* corresponding with the type of *Get Integer* contextual component is used as inputs to the component:
+
+![](project-comps-ctx-simple.png)
+
+*Prompt* value is used as the name of the input parameter:
+
+![](project-comps-ctx-simple-prompt.png)
+
+There are a few contextual components that can filter their input data. *Get Geometry* is an example of such contextual component. The more specific the filter, the more specific the final parameter will be. If filter is specific to one type, a parameter of that specific type is created on published component:
+
+![](project-comps-ctx-specific-brep.png)
+
+![](project-comps-ctx-specific-brep-param.png)
+
+If filter not specific, a flexible geometry parameter is created on published component:
+
+![](project-comps-ctx-specific-geom.png)
+
+![](project-comps-ctx-specific-geom-param.png)
+
+Contextual output components are converted to:
+
+- Generic Goo parameter for *Context Bake*
+  
+  ![](project-comps-ctx-outgoo.png)
+
+- Text parameter for *Context Print*
+  
+  ![](project-comps-ctx-outtext.png)
+
+### Grasshopper Previews
+
+Grasshopper calls the components and parameters on the canvas to draw previews and follows the drawing settings and mode that is stored in the document. You can changes the mode and settings for each document from the Grasshopper UI. Component previews are also configurable, and there is a *Custom Preview* component available as well. This means that you can customize how your Grasshopper definition previews the geometry it is working with. 
+
+Normally a published component that embeds a script (e.g. Python) draws previews on its outputs as well as any drawings performed by [Preview Overrides](/guides/scripting/scripting-gh-python/#preview-overrides) of its script.
+
+In case of published component with embedded Grasshopper definitions, the component itself does not draw any previews and asks the embedded definition to draw its own previews (Rhino >= 8.13). This means that whatever custom preview you have specified in the embedded definition, the same preview is drawn on the canvas.
+
+**Note:** To preserve consistency with other Grasshopper components, Contextual Components will not draw previews of embedded definition if the Preview option is off on the component or it is disabled. Preview mode is also synchronized to the embedded definition, meaning that if you set preview mode to *Wireframe Preview* in Grasshopper UI, the embedded definition will also draws in wireframe mode.
+
+This is an example of a Grasshopper definition that creates a sphere at given point. It draws its own preview of the sphere using *Custom Preview* component:
+
+![](project-comps-ghpreview_def.png)
+
+When publishing this Grasshopper definition as a Contextual Component, the same preview is drawn with the input provided to the component:
+
+![](project-comps-ghpreview_run.gif)
 
 ## Project Info
 
@@ -293,15 +384,6 @@ Note that *Project Tray* shows a dimmed icon for excluded commands:
 
 ![](project-commands-excluded.png)
 
-### Special Variables
-
-There are a few builtin variables available when published scripts are executed as Rhino commands:
-
-- `__rhino_command__` ([Rhino.Commands.Command](https://developer.rhino3d.com/api/rhinocommon/rhino.commands.command)): Rhino command instance. This is the automatically generated command in your plugin, that contains and runs its embedded script.
-- `__rhino_doc__` ([Rhino.RhinoDoc](https://developer.rhino3d.com/api/rhinocommon/rhino.rhinodoc)): Active document the command is running on
-- `__rhino_runmode__` ([Rhino.Commands.RunMode](https://developer.rhino3d.com/api/rhinocommon/rhino.commands.runmode)): Command Run Mode
-- `__is_interactive__` (boolean): Whether command is executed interactively (when `RunMode == RunMode.Interactive`)
-
 ## Components
 
 ### Name and Icon
@@ -333,46 +415,6 @@ Sometimes it is desired to keep a component in the project but exclude that from
 Note that *Project Tray* shows a dimmed icon for excluded components:
 
 ![](project-comps-excluded.png)
-
-## Contextual Components
-
-### Inputs
-
-Contextual components embed and run full Grasshopper definitions as a single component. Inputs and outputs of the component are based on the Contextual inputs and outputs placed on the source Grasshopper definition. Take this file as an example:
-
-![](project-commands-gh1.png)
-
-This Grasshopper definition is converted to a component like below. Note that a specific *GH Parameter* corresponding with the type of *Get Integer* contextual component is used as inputs to the component:
-
-![](project-comps-ctx-simple.png)
-
-*Prompt* value is used as the name of the input parameter:
-
-![](project-comps-ctx-simple-prompt.png)
-
-There are a few contextual components that can filter their input data. *Get Geometry* is an example of such contextual component. The more specific the filter, the more specific the final parameter will be. If filter is specific to one type, a parameter of that specific type is created on published component:
-
-![](project-comps-ctx-specific-brep.png)
-
-![](project-comps-ctx-specific-brep-param.png)
-
-If filter not specific, a flexible geometry parameter is created on published component:
-
-![](project-comps-ctx-specific-geom.png)
-
-![](project-comps-ctx-specific-geom-param.png)
-
-### Outputs
-
-Contextual output components are converted to:
-
-- Generic Goo parameter for *Context Bake*
-  
-  ![](project-comps-ctx-outgoo.png)
-
-- Text parameter for *Context Print*
-  
-  ![](project-comps-ctx-outtext.png)
 
 ## Component Versioning
 
