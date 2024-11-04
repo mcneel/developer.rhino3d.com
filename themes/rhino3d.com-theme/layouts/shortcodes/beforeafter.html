@@ -23,6 +23,16 @@
     <img alt="After" src="{{ .Get 1 }}"/>
 </div>
 
+<div class="twentytwenty-container-print container-print">
+    <div class="column-print">
+        <img class="img-print" alt="Before" src="{{ .Get 0 }}"/>
+    </div>
+    <div class="column-print">
+        <img class="img-print" alt="After" src="{{ .Get 1 }}"/>
+    </div>
+</div>
+
+
 {{- if eq ($.Scratch.Get "caption-position") "bottom" -}}
     {{ if .Get 2 }}
     <div id="textbox">
