@@ -205,7 +205,7 @@ To get the generic collection data structures to use the correct `double` type, 
 
 ![](csharp-component-paramaccess-03.png)
 
-### Required Parameter
+### Required Inputs
 
 Script input parameters are always created as *Optional*. This means that your script runs whether wires are connected to the inputs or not. However, sometimes it is important to mark an input as **Required** (not *Optional*) to ensure there is a value available on that input before script runs. This is especially important if you are planning to [publish your scripts](#publishing-scripts).
 
