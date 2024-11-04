@@ -1,12 +1,18 @@
 {{- if $.Page.Params.MCNEEL_REGION -}}
     {{- if eq (.Get 0) ($.Page.Params.MCNEEL_REGION) -}}
-    {{ .Inner | markdownify }}
+        {{ .Inner | markdownify }}
+    {{- end -}}
+    {{/*  temprorary fix to make japan region show asia content.  */}}
+    {{- if eq (.Get 0) "ASIA" -}}
+        {{- if eq ($.Page.Params.MCNEEL_REGION) "JAPAN" -}}
+            {{ .Inner | markdownify }}
+        {{- end -}}
     {{- end -}}
 {{- else -}}
     {{- if eq (.Get 0) (getenv "MCNEEL_REGION") -}}
-    {{ .Inner | markdownify }}
+        {{ .Inner | markdownify }}
     {{- end -}}
     {{- if eq "" (getenv "MCNEEL_REGION") }}
-    {{ .Inner | markdownify }}
+        {{ .Inner | markdownify }}
     {{- end -}}
 {{- end -}}
