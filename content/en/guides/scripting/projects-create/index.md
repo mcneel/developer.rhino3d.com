@@ -100,7 +100,7 @@ To remove a command, select the command in *Project Tray* and click the trash bu
 
 ### Grasshopper Previews
 
-Grasshopper calls the components and parameters on the canvas to draw previews and follows the drawing settings and mode that is stored in the document. You can changes the mode and settings for each document from the Grasshopper UI. Component previews are also configurable, and there is a *Custom Preview* component available as well.
+Grasshopper calls the components and parameters on the canvas to draw previews and follows the drawing settings and mode that is stored in the document. You can change the mode and settings for each document from the Grasshopper UI. Component previews are also configurable, and there is a *Custom Preview* component available as well.
 
 This means that you can customize how your Grasshopper definition previews the geometry it is working with. When running a published command that embeds a Grasshopper definition, previews are drawn in Rhino viewport, in the same way as Grasshopper UI would draw the previews, while command is asking for inputs.
 
@@ -215,7 +215,7 @@ Contextual output components are converted to:
 
 ### Grasshopper Previews
 
-Grasshopper calls the components and parameters on the canvas to draw previews and follows the drawing settings and mode that is stored in the document. You can changes the mode and settings for each document from the Grasshopper UI. Component previews are also configurable, and there is a *Custom Preview* component available as well. This means that you can customize how your Grasshopper definition previews the geometry it is working with. 
+Grasshopper calls the components and parameters on the canvas to draw previews and follows the drawing settings and mode that is stored in the document. You can change the mode and settings for each document from the Grasshopper UI. Component previews are also configurable, and there is a *Custom Preview* component available as well. This means that you can customize how your Grasshopper definition previews the geometry it is working with. 
 
 Normally a published component that embeds a script (e.g. Python) draws previews on its outputs as well as any drawings performed by [Preview Overrides](/guides/scripting/scripting-gh-python/#preview-overrides) of its script.
 
