@@ -1,5 +1,5 @@
 +++
-title = "Creating Rhino and Grasshopper Plugins"
+title = "Publishing Rhino/Grasshopper Script Plugins"
 description = "Provides information on publishing plugin projects in Script Editor"
 authors = ["ehsan"]
 
