@@ -85,8 +85,8 @@ since = 8
 
 ### Publishing Script Plugins
 
-- {{< dev-topic "Creating Rhino Projects" "/guides/scripting/projects-create" >}}
-- {{< dev-topic "Creating Rhino and Grasshopper Plugins" "/guides/scripting/projects-publish" >}}
+- {{< dev-topic "Creating Rhino/Grasshopper Script Plugins" "/guides/scripting/projects-create" >}}
+- {{< dev-topic "Building & Publishing Script Plugins" "/guides/scripting/projects-publish" >}}
 
 ### Advanced
 
