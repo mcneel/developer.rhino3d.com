@@ -49,8 +49,9 @@ The content is divided into three chapters. [Chapter 1](/guides/grasshopper/gh-a
 
 <br>
 
-#### Download:
-* [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms) [Essential Algorithms and Data Structures](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms) containing the guide text (PDF) and all the example Grasshopper files in this guide.
+#### The Guide Material:
+* [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms) [Download PDF and GH examples](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms) containing the download includes the guide text in PDF format and all the example Grasshopper files.
+* [{{< awesome "fas fa-solid fa-video">}} ](https://vimeo.com/showcase/11456959) [Link to the video recordings](https://vimeo.com/showcase/11456959) explaining all of the concepts in this guide and selected tutorials.
 
 <br>
 
