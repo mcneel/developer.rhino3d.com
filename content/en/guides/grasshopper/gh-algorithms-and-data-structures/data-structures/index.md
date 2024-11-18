@@ -31,6 +31,7 @@ toc_type = "single"
 All algorithms involve processing input data to generate a new set of data as output. Data is stored in well-defined structures to help access and manipulate efficiently. Understanding these structures is the key for successful algorithmic designs. This chapter includes an in-depth review of the basic data structures in Grasshopper.<br>
 
 ## 2.1 Overview
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030596360" target="_blank"> Overview of data structures in Grasshopper</a>
 
 Grasshopper has three distinct data structures: single item, list of items and tree of items. GH components execute differently based on input data structures, and hence it is essential to be fully aware of the data structure before using. There are tools in GH to help identify the data structure. Those are Panel and Param Viewer.
 
@@ -85,6 +86,7 @@ The wires connecting the data with components in GH offer additional visual refe
 </table>
 
 ## 2.2 Generating lists
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030597432" target="_blank"> Generate lists in Grasshopper</a>
 
 There are many ways to generate lists of data in GH. So far we have seen how to directly embed a list of values inside a parameter or a panel (with multiline data). There are also special components to generate lists. For example, to generate a list of numbers, there are three key components: <b>Range</b>, <b>Series</b> and <b>Random</b>. Lists can be the output of some components such as <b>Divide</b> curve (the output includes lists of points, tangents and parameters). Use the <b>Panel</b> component to preview the values in a list and <b>Parameter Viewer</b> to examine the data structures.
 
@@ -172,6 +174,7 @@ There are many ways to generate lists of data in GH. So far we have seen how to 
 </table>
 
 ## 2.3 List operations
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030599906" target="_blank"> Generate lists in Grasshopper</a>
 
 Grasshopper offers an extensive list of components for list operations and list management. We will review the most commonly used ones.<br>
 
@@ -243,6 +246,11 @@ Grasshopper offers an extensive list of components for list operations and list 
         <details>
         <summary><b>Solution...</b></summary>
         <table style="width:100%">
+          <tr>
+            <td>
+            {{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030600858" target="_blank"> Solution video...</a>
+            </td>
+          </tr>
           <tr>
             <td style="width:25%">
             <img src="ads-119.png">
@@ -322,6 +330,7 @@ Grasshopper offers an extensive list of components for list operations and list 
 </table>
 
 ## 2.4 List matching
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030598866" target="_blank"> Generate lists in Grasshopper</a>
 
 When the input is a single item or has an equal number of elements in a simple list, it is easy to imagine how the data is matched. The matching is based on corresponding indices. Let’s use the <b>Addition</b> component to examine list matching in GH. Note that the same principles apply to all other Grasshopper components.
 
@@ -443,7 +452,8 @@ If none of the matching methods produce the desired result, you can explicitly a
         <details>
         <summary><b>Solution...</b></summary>
         <br><a href="Tutorial-2-5-1-Variable-thickness-pipe.gh"> <i>download GH file...</i> </a>
-        <br><b> Algorithm Analysis:</b><br>
+        <br>{{<awesome "fas fa-solid fa-video">}}<a href="https://vimeo.com/showcase/11456959/video/1030601815" target="_blank"> Solution video...</a>
+        <br><br><b> Algorithm Analysis:</b><br>
         We can think of two different ways to generate this surface:<br>
         1. <b>Loft</b> circles created along a line at random locations with random radii<br>
         2. Create a profile curve at the circles start points, and <b>Revolve</b> around the line<br>
@@ -581,6 +591,7 @@ If none of the matching methods produce the desired result, you can explicitly a
         <details>
         <summary><b>Solution...</b></summary>
         <br><a href="Tutorial-2-5-3-Simple-truss.gh"> <i>download GH file...</i> </a>
+        <br>{{<awesome "fas fa-solid fa-video">}}<a href="https://vimeo.com/showcase/11456959/video/1030602374" target="_blank"> Solution video...</a>
         <table>
           <tr>
             <td>

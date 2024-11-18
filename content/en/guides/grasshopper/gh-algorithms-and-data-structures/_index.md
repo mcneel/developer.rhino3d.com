@@ -29,8 +29,8 @@ since = 0
 {{< column >}}  
 
 <br>
-
 {{< image url="ads-cover2nd.png" alt="Essential Algorithms and Data Structures" class="float_right" >}}
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030213652" target="_blank"> Introduction video</a>
 
 The Essential Algorithms and Data Structures guide introduces to design professionals effective methodologies to develop complex 3D modeling algorithms using [Grasshopper® (GH)](https://www.grasshopper3d.com), the generative modeling environment for [Rhinoceros® (Rhino)](https://www.rhino3d.com). It also covers extensively the data structure adopted by Grasshopper and its core organization and management tools.
 
@@ -50,8 +50,8 @@ The content is divided into three chapters. [Chapter 1](/guides/grasshopper/gh-a
 <br>
 
 #### The Guide Material:
-* [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms) [Download PDF and GH examples](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms) containing the download includes the guide text in PDF format and all the example Grasshopper files.
-* [{{< awesome "fas fa-solid fa-video">}} ](https://vimeo.com/showcase/11456959) [Link to the video recordings](https://vimeo.com/showcase/11456959) explaining all of the concepts in this guide and selected tutorials.
+* [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms) [Download the guide PDF and all Grasshopper examples](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms)
+* [{{< awesome "fas fa-solid fa-video">}}](https://vimeo.com/showcase/11456959) [Link to the guide video recordings](https://vimeo.com/showcase/11456959)
 
 <br>
 
