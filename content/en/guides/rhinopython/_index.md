@@ -32,7 +32,7 @@ platforms = [ "Windows", "Mac" ]
 
 ### Getting Started
 
-- Your First Python Script in Rhino ([Windows](/guides/rhinopython/your-first-python-script-in-rhino-windows), [Mac](/guides/rhinopython/your-first-python-script-in-rhino-mac), [Grasshopper](/guides/rhinopython/your-first-python-script-in-grasshopper))
+- Your First Python Script in Rhino ([Windows](/guides/rhinopython/your-first-python-script-in-rhino-windows), [Grasshopper](/guides/rhinopython/your-first-python-script-in-grasshopper))
 - [Where to get help...](/guides/rhinopython/python-where-to-find-help)
 - [Troubleshooting Installation](/guides/rhinopython/python-troubleshooting-install)
 - [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples)
