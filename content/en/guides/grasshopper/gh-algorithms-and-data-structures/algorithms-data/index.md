@@ -578,6 +578,7 @@ As you know, parametric curves have “domains” (the range of parameters that 
 </table>
 
 ## 1.8 Pitfalls of algorithmic design
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1032151256" target="_blank"> Pitfalls of algorithmic design</a>
 
 Writing elegant algorithms that are efficient and easy to read and debug is hard. We explained in this chapter how to write algorithms with style using color-coding and labeling. We also articulated a 4-step process to help develop algorithms. Following these guides help minimize bugs and improve the readability of the scripts. We will list a few of the common issues that lead to incorrect or unintended result.
 

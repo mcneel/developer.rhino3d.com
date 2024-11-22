@@ -32,7 +32,6 @@ since = 0
 {{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030213652" target="_blank"> Introduction video</a>
 {{< image url="ads-cover2nd.png" alt="Essential Algorithms and Data Structures" class="float_right" >}}
 
-
 The Essential Algorithms and Data Structures guide introduces to design professionals effective methodologies to develop complex 3D modeling algorithms using [Grasshopper® (GH)](https://www.grasshopper3d.com), the generative modeling environment for [Rhinoceros® (Rhino)](https://www.rhino3d.com). It also covers extensively the data structure adopted by Grasshopper and its core organization and management tools.
 
 The material is directed towards designers who are interested in parametric design and have little or no background in programming. All concepts are explained visually using Grasshopper. This guide is not intended as a beginners guide to Grasshopper in terms of user interface or tools. Basic knowledge of the interface and workflow is assumed. For more resources and getting started guides, go to the learn section in www.rhino3d.com.
