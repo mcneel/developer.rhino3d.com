@@ -1012,6 +1012,7 @@ One of the advantages of using <b>Split Tree</b> over relative trees is that the
 </table>
 
 ### 3.6.3 Path mapper
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1032534380" target="_blank">The Utility of the Path Mapper</a>
 
 When dealing with complex data structures such as the Grasshopper data trees, you’ll find that you need to simplify or rearrange your elements within the tree. There are a few components offered in Grasshopper for that purpose such as <b>Flatten</b>, <b>Graft</b> or <b>Flip</b>. While very useful, these might not suffice when operating on multiple trees or needing custom rearrangement. There is one very powerful component in Grasshopper that helps with reorganizing elements in trees or change the tree structure called the <b>Path Mapper</b>. It is perhaps the least intuitive to use and can cause a loss of data, but it is also the only way to find a solution in some cases, and hence it pays to address here.
 The <b>Path Mapper</b> maps data between source and target paths. The source path is fixed, and is given by the input tree. You can only set the target path. There is a set of constants that you can use to help construct the mapping. Those are listed in the table below.
