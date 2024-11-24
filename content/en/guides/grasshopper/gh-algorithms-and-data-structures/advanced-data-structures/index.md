@@ -1041,8 +1041,16 @@ Let’s start by familiarizing ourselves with the syntax using built-in mappings
 
 <figure>
    <img src="ads-295.png" class="image_center" width="75%">
-   <figcaption>Figure(5): Algorithmic solutions involve explicit definition of geometry, vectors and transformations</figcaption>
+   <figcaption>Figure(83): Algorithmic solutions involve explicit definition of geometry, vectors and transformations</figcaption>
 </figure>
+
+The **Null Mapping** does not change the data tree organization, but it offers a good start because it populates the editor with the input data structure. Set the mapping to **Null Mapping** and double click on the component to open the editor. The default tree source include the path only to start, but can add the data index part if needed for your mapping.
+
+<figure>
+   <img src="ads-295a.png" class="image_center" width="75%">
+   <figcaption>Figure(84): The Path Mapper syntax and editor</figcaption>
+</figure>
+
 
 The following example examines different built-in mapping in the <b>Path Mapper</b> and how it changes the data structure. The <b>Polyline</b> component creates one polyline through each branch of the tree. Notice how different mapping affect the result.
 
