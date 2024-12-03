@@ -29,7 +29,7 @@ since = 8
 
 - [What is Eto?](/guides/eto/what-is-eto/)
 - [Why Eto?](/guides/eto/why-eto/)
-- [What's New?](/guides/eto/whats-new/)
+<!-- - [What's New?](/guides/eto/whats-new/) -->
 
 {{< /column >}}
 {{< column >}}
@@ -93,7 +93,7 @@ since = 8
 {{< column >}}
 
 ### Getting Started
-- [DataContext](/guides/eto/view-and-data/data-context) <!-- Explain how the DataContext trickles downwards! -->
+- [DataContext](/guides/eto/view-and-data/data-context/) <!-- Explain how the DataContext trickles downwards! -->
 - [What is a View Model?](/guides/etoview-and-data//view-models)
 - [Binding Data with a ViewModel](/guides/etoview-and-data//binding)
 - [Binding without a View Model](/guides/eto/view-and-data/no-view-model)
