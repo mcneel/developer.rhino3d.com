@@ -56,17 +56,17 @@ platforms = [ "Windows", "Mac" ]
 
 - [Forms & Dialogs](/guides/eto/forms-and-dialogs)
 - [Containers](/guides/eto/containers)
-    - [Panels](/guides/eto/containers/panel)
-    - [Tables](/guides/eto/containers/tables)
-    - [Stack Layouts](/guides/eto/containers/stack-layout)
-    - [Dynamic Layouts](/guides/eto/containers/dynamic-layout)
-    - [Pixel Layouts](/guides/eto/containers/pixel-layout)
+    - [Panels](/guides/eto/containers#panels)
+    - [Tables](/guides/eto/containers#tables)
+    - [Stack Layouts](/guides/eto/containers#stack-layouts)
+    - [Dynamic Layouts](/guides/eto/containers#dynamic-layouts)
+    - [Pixel Layouts](/guides/eto/containers#pixel-layouts)
 - [Menu Bar](/guides/eto/menu-bar)
   <!-- Ensure to mention advanced menu bars -->
 - [Commands](/guides/eto/commands)
   <!-- I think commands are awesome and should be used more  -->
 - [Layouts](/guides/eto/layouts)
-  <!-- Spacing, Padding all the good stuff  -->
+  <!-- Spacing, Padding (using nulls to space things out!) all the good stuff  -->
 - [Sizing](/guides/eto/sizing)
   <!-- Sizing, automatic, manual etc. -->
 
@@ -83,7 +83,7 @@ platforms = [ "Windows", "Mac" ]
   - [Text Inputs](/guides/eto/controls/textinput/)
     - [Text Box](/guides/eto/controls/textinput/box)
     - [Text Area](/guides/eto/controls/textinput/area)
-  - [Grid View](/guides/eto/containers/grid-view)
+  - [Grid View](/guides/eto/containers#grid-view)
     <!-- Ensuring the data works on these is so annoying. Documenting this will be so helpful -->
   - [Tree Views](/guides/eto/controls/treeviews/)
     <!-- Ensuring the data works on these is so annoying. Documenting this will be so helpful -->
@@ -127,7 +127,7 @@ Building a cross platform UI Layout Manager
 {{< row >}}
 {{< column >}}
 
-1. Setup <!-- Creating the command and the initial space for our project -->
+1. [Setup](my-first-eto/setup) <!-- Creating the command and the initial space for our project -->
 1. The Form <!-- Set up the form -->
 1. The View Model <!-- Set up the view model -->
 1. The Rhino Command <!-- Set up the command -->
@@ -146,6 +146,10 @@ n. Creating the ...
 {{< /row >}}
 
 ## Further Reading
+
+{{< call-out warning "Rhino 8" >}}
+  The examples below assume you are using Rhino 8, many of these methods or controls may not exist in Rhino 7 or earlier.
+{{< /call-out >}}
 
 {{< row >}}
 {{< column >}}
@@ -207,7 +211,7 @@ n. Creating the ...
 {{< /column >}}
 {{< /row >}}
 
-## Further Reading
+## Eto Links
 
 {{< row >}}
 {{< column >}}
