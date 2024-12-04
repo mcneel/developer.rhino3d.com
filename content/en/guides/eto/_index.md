@@ -1,11 +1,11 @@
 +++
 aliases = [ "8/guides/eto", "/wip/guides/eto/"]
-authors = "unset"
-categories = [ "Unsorted" ]
+authors = [ "callum", "curtis" ]
+categories = [ "Eto" ]
 description = "Guides that apply to developing UIs across platforms using Eto."
 keywords = [ "rhino", "developer", "eto", "ui", "ux" ]
 languages = [ "C#", "Python" ]
-sdk = "unset"
+sdk = "eto"
 title = "Eto Guides"
 type = "guides"
 weight = 1
@@ -18,9 +18,15 @@ state = ""
 
 [included_in]
 platforms = [ "Windows", "Mac" ]
-since = 8
 
 +++
+
+{{< call-out note "Follow Along" >}}
+  It is worth noting that many, if not all of these pages will have code samples. If you're new to Eto, or even an advanced user, it is recommended to open the [script editor](http://localhost:1313/en/guides/scripting/scripting-command/#first-script) and copy/paste (or better yet write out!) the sample code so you can walk through and understand how Eto works.
+
+  Each page with samples will have both C# and Python 3, will work on both Windows and Mac and assumes minor familiarity with Rhino.
+{{< /call-out >}}
+
 {{< row >}}
 {{< column >}}
 
@@ -35,8 +41,8 @@ since = 8
 
 ### Getting Started
 
-- Installing Tools ([Cross Platform](/guides/eto/installing-tools/))
-- Your First UI ([Cross Platform](/guides/eto/your-first-ui/))
+- [Required Tools](/guides/eto/required-tools/)
+- [Your First UI](/guides/eto/your-first-ui/)
 
 {{< /column >}}
 {{< /row >}}
@@ -49,17 +55,20 @@ since = 8
 ### Overview 
 
 - [Forms & Dialogs](/guides/eto/forms-and-dialogs)
-  - [Premade Dialogs](/guides/eto/forms-and-dialogs/premade)
 - [Containers](/guides/eto/containers)
-    - [Panel](/guides/eto/containers/panel)
+    - [Panels](/guides/eto/containers/panel)
     - [Tables](/guides/eto/containers/tables)
-    - [Stack Layout](/guides/eto/containers/stack-layout)
-    - [Dynamic Layout](/guides/eto/containers/dynamic-layout)
-    - [Pixel Layout](/guides/eto/containers/pixel-layout)
+    - [Stack Layouts](/guides/eto/containers/stack-layout)
+    - [Dynamic Layouts](/guides/eto/containers/dynamic-layout)
+    - [Pixel Layouts](/guides/eto/containers/pixel-layout)
 - [Menu Bar](/guides/eto/menu-bar)
   <!-- Ensure to mention advanced menu bars -->
 - [Commands](/guides/eto/commands)
   <!-- I think commands are awesome and should be used more  -->
+- [Layouts](/guides/eto/layouts)
+  <!-- Spacing, Padding all the good stuff  -->
+- [Sizing](/guides/eto/sizing)
+  <!-- Sizing, automatic, manual etc. -->
 
 {{< /column >}}
 {{< column >}}
@@ -145,13 +154,22 @@ n. Creating the ...
 
 {{< dev-topic-list "guides" "eto" "Advanced" "weight" >}}
 
-- [Eto UIs in Rhino](/guides/eto/rhino-specific)
+- [Extensions and Helpers](/guides/eto/rhino-specific)
+  - [Proper Parenting](/guides/eto/rhino-specific#showing-a-dialog)
+  - [Light and Dark Mode](/guides/eto/rhino-specific#rhinostyle)
+  - [Converters](/guides/eto/rhino-specific#converters)
+  - [Rhino Document](/guides/eto/rhino-specific#rhino-doc)
   - UIs in Grasshopper {{%comingsoon-label %}}
   - UIs in the Script Editor {{%comingsoon-label %}}
   - UIs in Commands {{%comingsoon-label %}}
 <!-- -->
-- Rhino Controls {{%comingsoon-label %}}
-  - Rhino Controls {{%comingsoon-label %}}
+- [Rhino Controls](/guides/eto/rhino-specific/controls) {{%comingsoon-label %}}
+  - NumericUpDownWithUnitParsing {{%comingsoon-label %}}
+  - ViewportControl {{%comingsoon-label %}}
+  - RhinoButtonStackLayout {{%comingsoon-label %}}
+  - RhinoDialogPanel {{%comingsoon-label %}}
+  - ImageButton {{%comingsoon-label %}}
+  - AddRemoveButton {{%comingsoon-label %}}
 
 {{< /column >}}
 {{< column >}}
@@ -197,8 +215,13 @@ n. Creating the ...
 - [Eto Source](https://github.com/picoe/eto)
 - [Eto API Reference](http://pages.picoe.ca/docs/api/)
 - [Eto License](https://github.com/picoe/eto/LICENSE.md)
+
 <!-- - [How does Eto work?](/guides/eto/eto-explained) {{%comingsoon-label %}} -->
 <!-- An explaination of How eto wraps other UIs, mostly for my own benefit -->
+
+#### Get Involved
+Eto is completely open source and accepting edits, fixes, changes and suggestions
+- [Work on Eto](https://github.com/picoe/eto)
 
 {{< /column >}}
 {{< /row >}}
