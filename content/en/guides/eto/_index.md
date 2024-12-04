@@ -9,7 +9,6 @@ sdk = "unset"
 title = "Eto Guides"
 type = "guides"
 weight = 1
-draft = true
 
 [admin]
 TODO = ""
@@ -119,25 +118,25 @@ Building a cross platform UI Layout Manager
 {{< row >}}
 {{< column >}}
 
-1. [Setup](/guides/eto/project-1/step-1) <!-- Creating the command and the initial space for our project -->
-1. [The Form](/guides/eto/project-1/step-2) <!-- Set up the form -->
-1. [The View Model](/guides/eto/project-1/step-3) <!-- Set up the view model -->
-1. [The Rhino Command](/guides/eto/project-1/step-4) <!-- Set up the command -->
-1. [Starting the View](/guides/eto/project-1/step-5) <!-- Set up the view with a layout -->
-1. [The Eto Commands](/guides/eto/project-1/step-6) <!-- Set up the ui commands -->
-1. [Creating a Toolbar](/guides/eto/project-1/step-7) <!-- Set up the toolbar, buttons with icons etc -->
-1. [Styling](/guides/eto/project-1/step-...) <!-- Set up the styling -->
-1. [The MenuBar](/guides/eto/project-1/step-...) <!-- Set up the MenuBar -->
+1. Setup <!-- Creating the command and the initial space for our project -->
+1. The Form <!-- Set up the form -->
+1. The View Model <!-- Set up the view model -->
+1. The Rhino Command <!-- Set up the command -->
+1. Starting the View <!-- Set up the view with a layout -->
+1. The Eto Commands <!-- Set up the ui commands -->
+1. Creating a Toolbar <!-- Set up the toolbar, buttons with icons etc -->
+1. Styling <!-- Set up the styling -->
+1. The MenuBar <!-- Set up the MenuBar -->
 
 {{< /column >}}
 {{< column >}}
 
-n. [Creating the ...](/guides/eto/project-1/step-n)
+n. Creating the ...
 
 {{< /column >}}
 {{< /row >}}
 
-## Further Reading {{%comingsoon-label %}}
+## Further Reading
 
 {{< row >}}
 {{< column >}}
@@ -147,12 +146,12 @@ n. [Creating the ...](/guides/eto/project-1/step-n)
 {{< dev-topic-list "guides" "eto" "Advanced" "weight" >}}
 
 - [Eto UIs in Rhino](/guides/eto/rhino-specific)
-  - [UIs in Grasshopper](/guides/eto/rhino-specific/grasshopper)
-  - [UIs in the Script Editor](/guides/eto/rhino-specific/script-editor)
-  - [UIs in Commands](/guides/eto/rhino-specific/command-uis)
+  - UIs in Grasshopper {{%comingsoon-label %}}
+  - UIs in the Script Editor {{%comingsoon-label %}}
+  - UIs in Commands {{%comingsoon-label %}}
 <!-- -->
-- [Rhino Controls](/guides/eto/rhino-controls)
-  - [Rhino Controls](/guides/eto/rhino-controls)
+- Rhino Controls {{%comingsoon-label %}}
+  - Rhino Controls {{%comingsoon-label %}}
 
 {{< /column >}}
 {{< column >}}
@@ -161,27 +160,27 @@ n. [Creating the ...](/guides/eto/project-1/step-n)
 
 {{< dev-topic-list "guides" "eto" "Advanced" "weight" >}}
 
-- [OS Specific eccentricities](/guides/eto/os-specifics)
-  - [Windows](/guides/eto/os-specifics/win)
+- OS Specific eccentricities {{%comingsoon-label %}}
+  - Windows {{%comingsoon-label %}}
     <!-- I can't think of any in particular -->
-  - [Mac OSX](/guides/eto/os-specifics/mac)
-    - [Multiple Documents](/guides/eto/os-specifics/mac/multi-doc)
-  - [Styling](/guides/eto/os-specifics/styling)
+  - Mac OSX {{%comingsoon-label %}}
+    - Multiple Documents {{%comingsoon-label %}}
+  - Styling {{%comingsoon-label %}}
     <!-- How to create os specific styles  -->
-- [Custom Controls](/guides/eto/custom-controls)
+- Custom Controls {{%comingsoon-label %}}
   <!-- Inheriting from and modifying controls -->
-- [Custom Handlers](/guides/eto/custom-handlers)
+- Custom Handlers {{%comingsoon-label %}}
   <!-- Custom platform wrapping stuff -->
-- [Mouse Events](/guides/eto/mouse-events)
+- Mouse Events {{%comingsoon-label %}}
   <!-- Maybe even drag/drop? -->
-- [Async](/guides/eto/async)
+- Async {{%comingsoon-label %}}
   <!-- Line between async and non-async -->
   <!-- async events -->
   <!-- invoke async -->
   <!-- DO NOT FORCE WAIT ASYNC ON NON-ASYNC -->
-- [Localization](/guides/eto/localization)
-  - [Strings](/guides/eto/localization/strings)
-  - [Menus](/guides/eto/localization/menus)
+- Localization {{%comingsoon-label %}}
+  - Strings {{%comingsoon-label %}}
+  - Menus {{%comingsoon-label %}}
       <!-- bits to know about cross platform -->
       <!-- What is with that & thing -->
       <!-- Windows access keys? -->
@@ -195,10 +194,10 @@ n. [Creating the ...](/guides/eto/project-1/step-n)
 {{< row >}}
 {{< column >}}
 
-- [Eto Source](www.website.com)
-- [Eto API Reference](www.website.com)
-- [Eto License](www.website.com)
-- [How does Eto work?](/guides/eto/eto-explained) {{%comingsoon-label %}}
+- [Eto Source](https://github.com/picoe/eto)
+- [Eto API Reference](http://pages.picoe.ca/docs/api/)
+- [Eto License](https://github.com/picoe/eto/LICENSE.md)
+<!-- - [How does Eto work?](/guides/eto/eto-explained) {{%comingsoon-label %}} -->
 <!-- An explaination of How eto wraps other UIs, mostly for my own benefit -->
 
 {{< /column >}}
