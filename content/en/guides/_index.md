@@ -432,6 +432,8 @@ toc_type = "single"
 
 {{< dev-topic-list "guides" "Compute" "Hops" "weight" >}}
 
+## [Eto](/guides/eto)
+
 ## Developer Services
 
 ### [Localization](https://www.rhino3d.com/localization)
