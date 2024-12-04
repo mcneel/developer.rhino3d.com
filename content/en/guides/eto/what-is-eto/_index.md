@@ -1,7 +1,7 @@
 +++
-aliases = ["/en/wip/guides/eto/view-and-data/data-context/"]
+aliases = []
 authors = [ "curtis", "callum" ]
-categories = [ "Getting Started" ] # What is this?
+categories = [ "Eto" ] # What is this?
 description = "An introduction to Eto"
 keywords = [ "Eto", "UI", "Plugin" ]
 languages = [ "C#" ]
@@ -9,7 +9,6 @@ sdk = [ "Eto" ]
 title = "What is Eto?"
 type = "guides"
 weight = 4
-draft = true
 
 [admin]
 TODO = ""
@@ -28,7 +27,8 @@ toc_type = "single"
 
 ## What is Eto?
 
-TODO : Copy paste from GitHub
+Eto is a cross platform User Interface (UI) library for dotnet.
+It works on all operating systems, and across many mobile devices.
 
 ## Next Steps
 
