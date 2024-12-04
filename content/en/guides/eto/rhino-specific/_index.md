@@ -93,35 +93,40 @@ EtoExtensions.Show(form, sc.doc)
     var myDialog = new Dialog();
     var parent = RhinoEtoApp.MainWindowForDocument(doc);
     
-    diaog.ShowModal(parent)
+    dialog.ShowModal(parent)
     // or
-    diaog.ShowSemiModal(doc, parent);
+
+    // DefaultButton and AbortButton is required for SemiModal
+    dialog.DefaultButton = new Button()
+    dialog.AbortButton = new Button()
+
+    dialog.ShowSemiModal(doc, parent);
   }
   ```
 
   </div>
-
   <div class="codetab-content1" id="py1">
 
-```py
-#! python3
-import scriptcontext as sc
+  ```py
+  #! python3
+  import scriptcontext as sc
 
-from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import Dialog, Button
+  from Rhino.UI import RhinoEtoApp, EtoExtensions
+  from Eto.Forms import Dialog, Button
 
-parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+  parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog()
+  dialog = Dialog()
 
-dialog.ShowModal(parent)
-# or
+  dialog.ShowModal(parent)
+  # or
 
-# // DefaultButton is required for SemiModal
-dialog.DefaultButton = Button()
+  # DefaultButton and AbortButton is required for SemiModal
+  dialog.DefaultButton = Button()
+  dialog.AbortButton = Button()
 
-EtoExtensions.ShowSemiModal(dialog, sc.doc, parent)
-```
+  EtoExtensions.ShowSemiModal(dialog, sc.doc, parent)
+  ```
 
   </div>
 </div>
