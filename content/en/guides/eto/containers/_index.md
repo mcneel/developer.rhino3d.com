@@ -42,7 +42,7 @@ using Eto.Forms;
 using Eto.Drawing;
 using Rhino.UI;
 
-var parent = RhinoEtoApp.MainWindowForDocument(Rhino.__rhino_doc__);
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
 var dialog = new Dialog()
 {
@@ -72,7 +72,7 @@ from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import *
 from Eto.Drawing import *
 
-parent = RhinoEtoApp.MainWindowForDocument(Rhino.__rhino_doc__)
+parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
 dialog = Dialog()
 dialog.Padding = Padding(8)
@@ -121,7 +121,7 @@ using Eto.Drawing;
 using Rhino.UI;
 
 
-var parent = RhinoEtoApp.MainWindowForDocument(Rhino.__rhino_doc__);
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
 var tableLayout = new TableLayout()
 {
@@ -153,7 +153,7 @@ from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import *
 from Eto.Drawing import *
 
-parent = RhinoEtoApp.MainWindowForDocument(Rhino.__rhino_doc__)
+parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
 table_layout = TableLayout()
 table_layout.Padding = Padding(8)
@@ -251,7 +251,7 @@ using Eto.Forms;
 using Eto.Drawing;
 using Rhino.UI;
 
-var parent = RhinoEtoApp.MainWindowForDocument(Rhino.__rhino_doc__);
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
 var dialog = new Dialog();
 
@@ -276,7 +276,7 @@ from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import *
 from Eto.Drawing import *
 
-parent = RhinoEtoApp.MainWindowForDocument(Rhino.__rhino_doc__)
+parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
 dialog = Dialog();
 
@@ -333,7 +333,7 @@ using Eto.Forms;
 using Eto.Drawing;
 using Rhino.UI;
 
-var parent = RhinoEtoApp.MainWindowForDocument(Rhino.__rhino_doc__);
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
 var dialog = new Dialog()
 {
@@ -380,7 +380,7 @@ from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import *
 from Eto.Drawing import *
 
-parent = RhinoEtoApp.MainWindowForDocument(Rhino.__rhino_doc__)
+parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
 dialog = Dialog()
 dialog.Width = 300
@@ -450,7 +450,7 @@ using Eto.Forms;
 using Rhino.UI;
 
 // TODO : Avoid using __rhino_doc__!
-var parent = RhinoEtoApp.MainWindowForDocument(Rhino.__rhino_doc__);
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
 var dialog = new Dialog() { Padding = 20 };
 
