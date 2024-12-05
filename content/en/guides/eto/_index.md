@@ -74,11 +74,12 @@ platforms = [ "Windows", "Mac" ]
 
 ### Eto Native Controls
 <!-- A simple overview of eto native controls, nothing _too_ fancy -->
-- [Basic Controls](/guides/controls/)
-  - [Button](/guides/eto/controls/button/)
-  - [ComboBox](/guides/eto/controls/combobox/)
-  - [Radio Buttons](/guides/eto/controls/radiobuttons/)
-  - [Check Boxes](/guides/eto/controls/checkboxes/)
+- [Basic Controls](/guides/eto/controls/)
+  - [Button](/guides/eto/controls#button/)
+  - [DropDown](/guides/eto/controls#dropdown/)
+  - [ComboBox](/guides/eto/controls#combobox/)
+  - [Radio Buttons](/guides/eto/controls#radiobuttons/)
+  - [Check Boxes](/guides/eto/controls#checkboxes/)
   - [Text Inputs](/guides/eto/controls/textinput/)
     - [Text Box](/guides/eto/controls/textinput/box)
     - [Text Area](/guides/eto/controls/textinput/area)
