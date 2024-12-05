@@ -40,17 +40,11 @@ A dialog will temporarily hide the editor until it is closed.
   <div class="codetab-content" id="cs">
 
   ```cs
-  using Rhino;
   using Rhino.UI;
   using Eto.Forms;
 
-  // ... 
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
-  {
-    var myForm = new Form();
-    myForm.Show(doc);
-  }
+  var myForm = new Form();
+  myForm.Show(__rhino_doc__);
   ```
 
   </div>
@@ -85,13 +79,9 @@ EtoExtensions.Show(form, sc.doc)
 
   ```cs
   using Rhino.UI;
-
-  // ... 
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
-  {
+  
     var myDialog = new Dialog();
-    var parent = RhinoEtoApp.MainWindowForDocument(doc);
+    var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
     
     dialog.ShowModal(parent)
     // or
@@ -100,8 +90,7 @@ EtoExtensions.Show(form, sc.doc)
     dialog.DefaultButton = new Button()
     dialog.AbortButton = new Button()
 
-    dialog.ShowSemiModal(doc, parent);
-  }
+    dialog.ShowSemiModal(__rhino_doc__, parent);
   ```
 
   </div>
@@ -154,6 +143,7 @@ To ensure your form follows the same style as Rhino, and responds correctly to D
 
   ```cs
   using Rhino.UI;
+  using Eto.Forms;
 
   var myForm = new Form();
   myForm.UseRhinoStyle();

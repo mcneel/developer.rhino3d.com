@@ -1,5 +1,5 @@
 +++
-aliases = ["/en/wip/guides/eto/view-and-data/data-context/"]
+aliases = ["/wip/guides/eto/view-and-data/data-context/"]
 authors = [ "curtis", "callum" ]
 categories = [ "Getting Started" ] # What is this?
 description = "An introduction to the Eto Data Context"
@@ -40,7 +40,32 @@ A very useful feature to be aware of is the trickle-down effect of DataContext.
 Any Control, (including Forms and Dialogs) that has a DataContext will bequeath the DataContext to every child control meaning that this can be accessed anywhere in your UI Tree.
 If a child control overrides its DataContext with a new DataContext then a new lineage of this DataContext is created.
 
-// TODO : Add Graphic!
+``` cs
+var dialog = new Dialog()
+{
+  DataContext = new MyMainViewModel(), // <-- Start of Main View Model
+  Content = new TableLayout()
+  {
+    Rows = {
+      new TableRow(
+        new PixelLayout()
+        {
+          DataContext = new MyNewViewModel(), // <-- Start of New View Model
+          Items = {
+            new Drawable(),
+            new Button() // <-- Button has a DataContext of MyNewViewModel
+          }
+        }
+      ),
+      new TableRow(
+        new Button(),
+        new Button(), // <-- Buttons all have a DataContext of MyMainViewModel
+        new Button(), 
+      ),
+    }
+  }
+};
+```
 
 {{< call-out warning "Common DataContext Mistake" >}}
 DataContext is often not an available property until the Form has been constructed.

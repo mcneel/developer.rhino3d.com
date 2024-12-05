@@ -22,7 +22,7 @@ platforms = [ "Windows", "Mac" ]
 +++
 
 {{< call-out note "Follow Along" >}}
-  It is worth noting that many, if not all of these pages will have code samples. If you're new to Eto, or even an advanced user, it is recommended to open the [script editor](http://localhost:1313/en/guides/scripting/scripting-command/#first-script) and copy/paste (or better yet write out!) the sample code so you can walk through and understand how Eto works.
+  It is worth noting that many, if not all of these pages will have code samples. If you're new to Eto, or even an advanced user, it is recommended to open the [script editor](http://localhost:1313/guides/scripting/scripting-command/#first-script) and copy/paste (or better yet write out!) the sample code so you can walk through and understand how Eto works.
 
   Each page with samples will have both C# and Python 3, will work on both Windows and Mac and assumes minor familiarity with Rhino.
 {{< /call-out >}}
@@ -68,14 +68,13 @@ platforms = [ "Windows", "Mac" ]
 - [Layouts](/guides/eto/layouts)
   <!-- Spacing, Padding (using nulls to space things out!) all the good stuff  -->
 - [Sizing](/guides/eto/sizing)
-  <!-- Sizing, automatic, manual etc. -->
 
 {{< /column >}}
 {{< column >}}
 
 ### Eto Native Controls
 <!-- A simple overview of eto native controls, nothing _too_ fancy -->
-- [Controls](/guides/controls/)
+- [Basic Controls](/guides/controls/)
   - [Button](/guides/eto/controls/button/)
   - [ComboBox](/guides/eto/controls/combobox/)
   - [Radio Buttons](/guides/eto/controls/radiobuttons/)
@@ -83,6 +82,7 @@ platforms = [ "Windows", "Mac" ]
   - [Text Inputs](/guides/eto/controls/textinput/)
     - [Text Box](/guides/eto/controls/textinput/box)
     - [Text Area](/guides/eto/controls/textinput/area)
+- [Advanced Controls](/guides/advanced-controls/)
   - [Grid View](/guides/eto/containers#grid-view)
     <!-- Ensuring the data works on these is so annoying. Documenting this will be so helpful -->
   - [Tree Views](/guides/eto/controls/treeviews/)
@@ -102,8 +102,8 @@ platforms = [ "Windows", "Mac" ]
 
 ### Getting Started
 - [DataContext](/guides/eto/view-and-data/data-context/) <!-- Explain how the DataContext trickles downwards! -->
-- [What is a View Model?](/guides/etoview-and-data//view-models)
-- [Binding Data with a ViewModel](/guides/etoview-and-data//binding)
+- [What is a View Model?](/guides/eto/view-and-data//view-models)
+- [Binding Data with a ViewModel](/guides/eto/view-and-data/binding)
 - [Binding without a View Model](/guides/eto/view-and-data/no-view-model)
 
 {{< /column >}}
