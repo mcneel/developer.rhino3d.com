@@ -1,5 +1,5 @@
 +++
-aliases = [ "8/guides/eto", "/wip/guides/eto/"]
+aliases = [ "8/guides/eto", "/wip"]
 authors = [ "callum", "curtis" ]
 categories = [ "Eto" ]
 description = "Guides that apply to developing UIs across platforms using Eto."
@@ -32,17 +32,17 @@ platforms = [ "Windows", "Mac" ]
 
 ### Overview
 
-- [What is Eto?](/guides/eto/what-is-eto/)
-- [Why Eto?](/guides/eto/why-eto/)
-<!-- - [What's New?](/guides/eto/whats-new/) -->
+- [What is Eto?](what-is-eto/)
+- [Why Eto?](why-eto/)
+<!-- - [What's New?](whats-new/) -->
 
 {{< /column >}}
 {{< column >}}
 
 ### Getting Started
 
-- [Required Tools](/guides/eto/required-tools/)
-- [Your First UI](/guides/eto/your-first-ui/)
+- [Required Tools](required-tools/)
+- [Your First UI](your-first-ui/)
 
 {{< /column >}}
 {{< /row >}}
@@ -54,44 +54,44 @@ platforms = [ "Windows", "Mac" ]
 
 ### Overview 
 
-- [Forms & Dialogs](/guides/eto/forms-and-dialogs)
-- [Containers](/guides/eto/containers)
-    - [Panels](/guides/eto/containers#panels)
-    - [Tables](/guides/eto/containers#tables)
-    - [Stack Layouts](/guides/eto/containers#stack-layouts)
-    - [Dynamic Layouts](/guides/eto/containers#dynamic-layouts)
-    - [Pixel Layouts](/guides/eto/containers#pixel-layouts)
-- [Menu Bar](/guides/eto/menu-bar)
+- [Forms & Dialogs](forms-and-dialogs)
+- [Containers](containers)
+    - [Panels](containers#panels)
+    - [Tables](containers#tables)
+    - [Stack Layouts](containers#stack-layouts)
+    - [Dynamic Layouts](containers#dynamic-layouts)
+    - [Pixel Layouts](containers#pixel-layouts)
+- [Menu Bar](menu-bar)
   <!-- Ensure to mention advanced menu bars -->
-- [Commands](/guides/eto/commands)
+- [Commands](commands)
   <!-- I think commands are awesome and should be used more  -->
-- [Layouts](/guides/eto/layouts)
+- [Layouts](layouts)
   <!-- Spacing, Padding (using nulls to space things out!) all the good stuff  -->
-- [Sizing](/guides/eto/sizing)
+- [Sizing](sizing)
 
 {{< /column >}}
 {{< column >}}
 
 ### Eto Native Controls
 <!-- A simple overview of eto native controls, nothing _too_ fancy -->
-- [Basic Controls](/guides/eto/controls/)
-  - [Button](/guides/eto/controls#button/)
-  - [DropDown](/guides/eto/controls#dropdown/)
-  - [ComboBox](/guides/eto/controls#combobox/)
-  - [Radio Buttons](/guides/eto/controls#radiobuttons/)
-  - [Check Boxes](/guides/eto/controls#checkboxes/)
-  - [Text Inputs](/guides/eto/controls/textinput/)
-    - [Text Box](/guides/eto/controls/textinput/box)
-    - [Text Area](/guides/eto/controls/textinput/area)
-- [Advanced Controls](/guides/advanced-controls/)
-  - [Grid View](/guides/eto/containers#grid-view)
+- [Basic Controls](controls/)
+  - [Button](controls#button/)
+  - [DropDown](controls#dropdown/)
+  - [ComboBox](controls#combobox/)
+  - [Radio Buttons](controls#radiobuttons/)
+  - [Check Boxes](controls#checkboxes/)
+  - [Text Inputs](controls/textinput/)
+    - [Text Box](controls/textinput/box)
+    - [Text Area](controls/textinput/area)
+- [Advanced Controls](advanced-controls/)
+  - [Grid View](containers#grid-view)
     <!-- Ensuring the data works on these is so annoying. Documenting this will be so helpful -->
-  - [Tree Views](/guides/eto/controls/treeviews/)
+  - [Tree Views](controls/treeviews/)
     <!-- Ensuring the data works on these is so annoying. Documenting this will be so helpful -->
-  - [Image View](/guides/eto/controls/imageviews/)
-  - [Drawable](/guides/eto/controls//drawable)
+  - [Image View](advanced-controls/imageviews/)
+  - [Drawable](advanced-controls/drawable)
     <!-- I think this is worth being a bit more extensive than others -->
-  - [Numeric Input](/guides/eto/controls//numericUpDown)
+  - [Numeric Input](advanced-controls/numericUpDown)
 
 {{< /column >}}
 {{< /row >}}
@@ -102,21 +102,21 @@ platforms = [ "Windows", "Mac" ]
 {{< column >}}
 
 ### Getting Started
-- [DataContext](/guides/eto/view-and-data/data-context/) <!-- Explain how the DataContext trickles downwards! -->
-- [What is a View Model?](/guides/eto/view-and-data//view-models)
-- [Binding Data with a ViewModel](/guides/eto/view-and-data/binding)
-- [Binding without a View Model](/guides/eto/view-and-data/no-view-model)
+- [DataContext](view-and-data/data-context/) <!-- Explain how the DataContext trickles downwards! -->
+- [What is a View Model?](view-and-data//view-models)
+- [Binding Data with a ViewModel](view-and-data/binding)
+- [Binding without a View Model](view-and-data/no-view-model)
 
 {{< /column >}}
 {{< column >}}
 
 ### Advanced
-- [Complex Bindings](/guides/eto/view-and-data/complex-bindings)
+- [Complex Bindings](view-and-data/complex-bindings)
   <!-- Things such as Convert, etc. -->
-- [How do Bindings work?](/guides/eto/view-and-data/bindings-explained) {{%comingsoon-label %}}
+- [How do Bindings work?](view-and-data/bindings-explained) {{%comingsoon-label %}}
   <!-- Very detailed explination of Bindings -->
   <!-- Why do I need to bind to a property? -->
-- [Alternatives to Bindings](/guides/eto/view-and-data/alternatives) {{%comingsoon-label %}}
+- [Alternatives to Bindings](view-and-data/alternatives) {{%comingsoon-label %}}
 
 {{< /column >}}
 {{< /row >}}
@@ -159,16 +159,16 @@ n. Creating the ...
 
 {{< dev-topic-list "guides" "eto" "Advanced" "weight" >}}
 
-- [Extensions and Helpers](/guides/eto/rhino-specific)
-  - [Proper Parenting](/guides/eto/rhino-specific#showing-a-dialog)
-  - [Light and Dark Mode](/guides/eto/rhino-specific#rhinostyle)
-  - [Converters](/guides/eto/rhino-specific#converters)
-  - [Rhino Document](/guides/eto/rhino-specific#rhino-doc)
+- [Extensions and Helpers](rhino-specific)
+  - [Proper Parenting](rhino-specific#showing-a-dialog)
+  - [Light and Dark Mode](rhino-specific#rhinostyle)
+  - [Converters](rhino-specific#converters)
+  - [Rhino Document](rhino-specific#rhino-doc)
   - UIs in Grasshopper {{%comingsoon-label %}}
   - UIs in the Script Editor {{%comingsoon-label %}}
   - UIs in Commands {{%comingsoon-label %}}
 <!-- -->
-- [Rhino Controls](/guides/eto/rhino-specific/controls) {{%comingsoon-label %}}
+- [Rhino Controls](rhino-specific/controls) {{%comingsoon-label %}}
   - NumericUpDownWithUnitParsing {{%comingsoon-label %}}
   - ViewportControl {{%comingsoon-label %}}
   - RhinoButtonStackLayout {{%comingsoon-label %}}
@@ -196,7 +196,7 @@ n. Creating the ...
   <!-- Custom platform wrapping stuff -->
 - Mouse Events {{%comingsoon-label %}}
   <!-- Maybe even drag/drop? -->
-- Async {{%comingsoon-label %}}
+- [Async](async/)
   <!-- Line between async and non-async -->
   <!-- async events -->
   <!-- invoke async -->
@@ -221,7 +221,7 @@ n. Creating the ...
 - [Eto API Reference](http://pages.picoe.ca/docs/api/)
 - [Eto License](https://github.com/picoe/eto/LICENSE.md)
 
-<!-- - [How does Eto work?](/guides/eto/eto-explained) {{%comingsoon-label %}} -->
+<!-- - [How does Eto work?](eto-explained) {{%comingsoon-label %}} -->
 <!-- An explaination of How eto wraps other UIs, mostly for my own benefit -->
 
 #### Get Involved
