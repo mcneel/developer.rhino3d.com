@@ -33,11 +33,13 @@ Dialogs are modal, Forms are non-modal. Which just means that when you show a di
   <div class="codetab-content" id="cs">
 
   ```cs
-  var myForm = new Form();
-  myForm.Show(doc);
+  using Eto.Forms;
 
-  var myDialog = new Dialog();
-  myDialog.ShowModal(); // <-- Code execution stops here
+  var form = new Form();
+  form.Show();
+
+  var dialog = new Dialog();
+  dialog.ShowModal(); // <-- Code execution stops here
   ```
 
   </div>
@@ -48,14 +50,13 @@ Dialogs are modal, Forms are non-modal. Which just means that when you show a di
   #! python3
   import scriptcontext as sc
 
-  from Rhino.UI import EtoExtensions
   from Eto.Forms import Form, Dialog
 
   form = Form()
-  EtoExtensions.Show(form, sc.doc)
+  form.Show()
 
   dialog = Dialog()
-  dialog.ShowModal(parent) # <-- Code execusion stops here
+  dialog.ShowModal() # <-- Code execusion stops here
   ```
 
   </div>
@@ -90,21 +91,14 @@ Dialogs can also be run as semi-modal, meaning, code execution is blocked, but t
   <div class="codetab-content1" id="cs1">
 
   ```cs
-  using Rhino.UI;
-
-  // ... 
-
-  protected override Result RunCommand(RhinoDoc doc, RunMode mode)
-  {
-    var myDialog = new Dialog();
-    var parent = RhinoEtoApp.MainWindowForDocument(doc);
+    var dialog = new Dialog();
+    var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
     
     // DefaultButton and AbortButton is required for SemiModal
     dialog.DefaultButton = new Button()
     dialog.AbortButton = new Button()
 
     dialog.ShowSemiModal(doc, parent);
-  }
   ```
 
   </div>
@@ -136,8 +130,8 @@ Dialogs can also be run as semi-modal, meaning, code execution is blocked, but t
 <table class="rounded">
   <tr>
     <th>Type</th>
-    <th>Blocks Code Execution</th>
-    <th>Blocks Input outside the window</th>
+    <th>Stops Code Execution</th>
+    <th>Prevents input outside the window</th>
   </tr>
   <tr>
     <td><b>Form</b></td>
@@ -151,7 +145,7 @@ Dialogs can also be run as semi-modal, meaning, code execution is blocked, but t
   </tr>
   <tr>
     <td><b>Dialog (SemiModal)</b></td>
-    <td>❌</td>
     <td>✔️</td>
+    <td>❌</td>
   </tr>
 </table>
