@@ -29,12 +29,12 @@ since = 0
 {{< column >}}  
 
 <br>
-
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030213652" target="_blank"> Introduction video</a>
 {{< image url="ads-cover2nd.png" alt="Essential Algorithms and Data Structures" class="float_right" >}}
 
 The Essential Algorithms and Data Structures guide introduces to design professionals effective methodologies to develop complex 3D modeling algorithms using [Grasshopper® (GH)](https://www.grasshopper3d.com), the generative modeling environment for [Rhinoceros® (Rhino)](https://www.rhino3d.com). It also covers extensively the data structure adopted by Grasshopper and its core organization and management tools.
 
-The material is directed towards designers who are interested in parametric design and have little or no background in programming. All concepts are explained visually using Grasshopper. This guide is not intended as a beginners guide to Grasshopper in terms of user interface or tools. Basic knowledge of the interface and workflow is assumed. For more resources and getting started guides, go to the learn section in www.rhino3d.com.
+The material is directed towards designers who are interested in parametric design and have little or no background in programming. All concepts are explained visually using Grasshopper. This guide assumes prior knowledge in Grasshopper user interface and basic workflows. For resources on getting started with Grasshopper, please go through the [Grasshopper: Getting Started](https://vimeopro.com/rhino/grasshopper-getting-started-by-david-rutten) tutorials and check the [Grasshopper resources page](https://www.rhino3d.com/learn/?query=kind:%20grasshopper&modal=null) for additional learning material.
 
 The content is divided into three chapters. [Chapter 1](/guides/grasshopper/gh-algorithms-and-data-structures/algorithms-data/) discusses algorithms and data. It introduces a rigorous methodology to help create and manage parametric solutions. It also introduces basic data concepts such as data types, sources and common ways to process them. [Chapter 2](/guides/grasshopper/gh-algorithms-and-data-structures/data-structures) reviews basic data structures in Grasshopper. That includes single items and lists. [Chapter 3](/guides/grasshopper/gh-algorithms-and-data-structures/advanced-data-structures) includes an in-depth review of the tree data structure in Grasshopper and practical applications in design problems. All Grasshopper examples and tutorials are written with Rhinoceros version 6 and are included in the download.
 
@@ -49,10 +49,11 @@ The content is divided into three chapters. [Chapter 1](/guides/grasshopper/gh-a
 
 <br>
 
-#### Download:
-* [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms) [Essential Algorithms and Data Structures](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms) containing the guide text (PDF) and all the example Grasshopper files in this guide.
-
-<br>
+#### Resources:
+* [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms) [Download the guide PDF and all Grasshopper examples](https://www.rhino3d.com/download/rhino/6.0/essential-algorithms)
+* [{{< awesome "fas fa-solid fa-video">}}](https://vimeo.com/showcase/11456959) [Link to the guide video recordings](https://vimeo.com/showcase/11456959)
+* New to Grasshopper? Start here: {{< awesome "fas fa-solid fa-video">}} [Grasshopper Getting Started](ttps://vimeopro.com/rhino/grasshopper-getting-started-by-david-rutten)
+<br><br>
 
 ### Table of Contents  
 

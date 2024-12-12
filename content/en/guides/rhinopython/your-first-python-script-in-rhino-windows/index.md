@@ -76,7 +76,7 @@ In Python the functions definitions need to come before being called in the code
 
 #### Testing HelloWorld
 
-- At the command prompt, type EditScript and press Enter.
+- At the command prompt, type ScriptEditor and press Enter.
 - The Scripteditor dialog box appears.
 - In the script Code window, type
 
@@ -94,12 +94,12 @@ When you do more than write a couple lines of script, it becomes necessary to sa
 
 #### To save your script:
 
-In the Edit Script dialog box, Click the Save button. Save the file as "Hello World.py".
+In the Edit Script dialog box, Click the Save button. Save the file as "HelloWorld.py".
 
 #### Running HelloWorld.py
 
 - At the Command prompt, type RunPythonScript and press Enter.
-- In the Run python script dialog box, select "Hello World.py" and click Open.
+- In the Run python script dialog box, select "HelloWorld.py" and click Open.
 
 Your script will run, and display the familiar "Hello World" dialog box.
 

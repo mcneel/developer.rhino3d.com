@@ -33,6 +33,7 @@ This chapter is devoted to the advanced data structure in GH, namely the data tr
 ## 3.1 The Grasshopper data structure
 
 ### 3.1.1 Introduction
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030603776" target="_blank"> Introduction to data trees</a>
 
 In programming, there are many data structures to govern how data is stored and accessed. The most common data structures are variables, arrays, and nested arrays. There are other data structures that are optimised for specific purposes such as data sorting or mining. In Grasshopper, there is only one structure to store data, and that is the <b>data tree</b>. Hold on, what about what we have learned so far: <b>single</b> item and <b>list</b> of items? Well, in GH, those are nothing but simple trees. A single item is a tree with one branch, that has one element, and a list is a tree with one branch that has a number of elements. It is actually pretty elegant to be able to fit all data in one unifying data structure, but at the same time, this requires the user to be aware and vigilant about how their data structure changes between operations, and how that can affect intended results. This chapter attempts to demystify the data tree of Grasshopper.
 
@@ -131,6 +132,7 @@ Here are a few examples of various tree structures and how they show in the <b>P
 </table>
 
 ## 3.2 Generating trees
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030604678" target="_blank"> Generate data trees</a>
 
 There are many ways to generate complex data trees. Some explicit, but mostly as a result of some processes, and this is why you need to always be aware of the data structures of output before using it as input downstream. It is possible to enter the data and set the data structure directly inside any Grasshopper parameter. Once set, it is relatively hard to change and therefore is best suited for a constant input. The following is an example of how to set a data tree directly inside a parameter.
 
@@ -182,6 +184,7 @@ Perhaps one of the most common cases to generate a tree is when dividing a list 
 </table>
 
 ## 3.3 Tree matching
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030605453" target="_blank"> Matching data trees</a>
 
 We explained the <b>Long</b>, <b>Short</b> and <b>Cross</b> matching with lists. Trees follow similar conventions to expand the shorter branches by repeating the last element to match. If one tree has fewer branches, the last branch is repeated. The following illustrates common tree matching cases.
 
@@ -236,6 +239,7 @@ When working with trees, it is of utmost importance to examine the data structur
 </table>
 
 ## 3.4 Traversing trees
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030608072" target="_blank"> Traversing data trees</a>
 
 Grasshopper provides components to help extract branches and items from trees. If you have the path to a branch or to an item, then you can use <b>Branch</b> and <b>Item</b> components. You need to check the structure of your input so you can supply the correct path.
 
@@ -305,6 +309,7 @@ Tree information can be extracted using the <b>TStats</b> component. You can ext
 </figure>
 
 ### 3.5.2 List operations on trees
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030608733" target="_blank"> List operations on data trees</a>
 
 Trees can be thought of as a list of branches. When using list operations on trees, each branch is treated as a separate list and the operation is applied to each branch independently. It is tricky to predict the resulting data structure and therefore it is always important to check your input and output structures before and after applying any operation.
 To illustrate how list operations work in trees, we will use a simple tree, a grid of points, and apply different list operations on it. We will then examine the output and its data structure.
@@ -579,6 +584,7 @@ Processing data through multiple components can add unnecessary complexity to th
 As your solutions increase in complexity, so will your data structures. We will discuss three advanced tree operations that are necessary to solve specific problems, or are used to simplify your solution by tabbing directly into the power of the data tree structure.
 
 ### 3.6.1 Relative items
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030609100" target="_blank"> Advanced data trees operations: Relative item</a>
 
 The first operation has to do with solving the general problem of connectivity between elements in one tree or across multiple trees. Suppose you have a grid of points and you need to connect the points diagonally. For each point, you connect to another in the +1 branch and +1 index. For example a point in branch {0}, index [0], connects to the point in branch {1}, index [1].
 
@@ -679,6 +685,7 @@ The following GH definition achieves the above:
     <td>
         <details>
         <summary><b>Solution...</b></summary>
+        {{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030609607" target="_blank"> Solution video...</a>
         <br>
         <table>
           <tr>
@@ -732,6 +739,7 @@ The following GH definition achieves the above:
 </table>
 
 ### 3.6.2 Split trees
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030610313" target="_blank"> Split data trees</a>
 
 The ability to select a portion of a tree, or split into two parts is a very powerful tree operation in Grasshopper. You can split the tree using a string mask using specific syntax (see examples below). The mask filters, or helps select, the positive part of your tree. The portion of the tree left, is also given as an output and is called the negative part of the tree. Since all trees are made out of branches and indices, the split mask should include information about which branches and indices within these branches to split along. Here are the rules of the split mask:
 
@@ -958,7 +966,8 @@ One of the advantages of using <b>Split Tree</b> over relative trees is that the
     <td>
         <details>
         <summary><b>Solution...</b></summary>
-        <br>
+        {{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030611331" target="_blank"> Solution video...</a>
+        <br><br>
         <table>
           <tr>
             <td>
@@ -1003,6 +1012,8 @@ One of the advantages of using <b>Split Tree</b> over relative trees is that the
 </table>
 
 ### 3.6.3 Path mapper
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1032534380" target="_blank">Why use the Path Mapper?</a><br>
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeopro.com/rhino/grasshopper-masterclass-with-david-rutten/video/79914769" target="_blank">Syntax of the Path Mapper</a>
 
 When dealing with complex data structures such as the Grasshopper data trees, you’ll find that you need to simplify or rearrange your elements within the tree. There are a few components offered in Grasshopper for that purpose such as <b>Flatten</b>, <b>Graft</b> or <b>Flip</b>. While very useful, these might not suffice when operating on multiple trees or needing custom rearrangement. There is one very powerful component in Grasshopper that helps with reorganizing elements in trees or change the tree structure called the <b>Path Mapper</b>. It is perhaps the least intuitive to use and can cause a loss of data, but it is also the only way to find a solution in some cases, and hence it pays to address here.
 The <b>Path Mapper</b> maps data between source and target paths. The source path is fixed, and is given by the input tree. You can only set the target path. There is a set of constants that you can use to help construct the mapping. Those are listed in the table below.
@@ -1030,8 +1041,16 @@ Let’s start by familiarizing ourselves with the syntax using built-in mappings
 
 <figure>
    <img src="ads-295.png" class="image_center" width="75%">
-   <figcaption>Figure(5): Algorithmic solutions involve explicit definition of geometry, vectors and transformations</figcaption>
+   <figcaption>Figure(83): Algorithmic solutions involve explicit definition of geometry, vectors and transformations</figcaption>
 </figure>
+
+The **Null Mapping** does not change the data tree organization, but it offers a good start because it populates the editor with the input data structure. Set the mapping to **Null Mapping** and double click on the component to open the editor. The default tree source include the path only to start, but can add the data index part if needed for your mapping.
+
+<figure>
+   <img src="ads-295a.png" class="image_center" width="75%">
+   <figcaption>Figure(84): The Path Mapper syntax and editor</figcaption>
+</figure>
+
 
 The following example examines different built-in mapping in the <b>Path Mapper</b> and how it changes the data structure. The <b>Polyline</b> component creates one polyline through each branch of the tree. Notice how different mapping affect the result.
 

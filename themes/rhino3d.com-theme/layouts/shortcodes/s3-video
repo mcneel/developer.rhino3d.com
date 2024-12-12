@@ -1,6 +1,7 @@
 {{ $id := .Get "id" }}
 {{ $texttrack := .Get "texttrack" }}
 {{ $autoplay := .Get "autoplay" }}
+
 <div class="video-player">
     <div class="caption-locator">
         <center>
@@ -36,11 +37,23 @@
   <script>
     //window.onload = function() {
         let video = document.querySelector('video');
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const queryStringId = urlParams.get('video_id');
+        if (queryStringId) {
+            video.poster = `https://www.rhino3d.com/static-media/video/${queryStringId}/${queryStringId}.jpg`;
+            video.querySelector('source').src = `https://www.rhino3d.com/static-media/video/${queryStringId}/${queryStringId}-1080p.mp4`;
+            if ("{{ $texttrack }}"){
+              video.querySelector('track').src = `https://www.rhino3d.com/static-media/video/${queryStringId}/{{.Site.Language.Lang}}.vtt`; //If there's an id in the url, we assume it's being played from /video?id =..., which has the en texttrack already specified in the shortcode. Here we override it with the site language
+            }
+            video.load();
+        }
+
         const track = video.textTracks[0] //you should choose you text track
         track.addEventListener('cuechange', onCueChange);
         caption = document.querySelector('.rma-caption');
         caption.innerHTML = 'Blah';
-      
+
         function onCueChange(event) {
           console.log(event.currentTarget.activeCues);
           if (event.currentTarget.activeCues.length > 0) {

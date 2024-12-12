@@ -29,6 +29,7 @@ toc_type = "single"
 +++
 
 ## 1.1 Algorithmic design
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030214506" target="_blank"> Algorithmic design</a>
 
 We can define algorithmic design as a design method where the **output** is achieved through **well-defined steps**. In that sense, many human activities are algorithmic. Take, for example, baking a cake. You get the **cake** (output) by using a **recipe** (well-defined steps). Any change in the ingredients (input) or the baking process results in a different cake. We will analyze the parts of typical algorithms, and identify a strategy to build algorithmic solutions from scratch.
 
@@ -93,6 +94,9 @@ Some solutions are not written with styles and hence are hard to read and build 
 
 
 ## 1.3 Designing algorithms: the 4-step process
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030225149" target="_blank"> Modeling in Rhino vs Grasshopper</a>
+
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030216024" target="_blank"> The 4-step process to designing algorithms</a>
 
 Before we generalize a method to design algorithms, let’s examine an algorithm we commonly use in real life such as baking a cake. If you already have a recipe for a cake, you simply get the recommended ingredients, mix them, pour in a pan, put in a preheated oven for a certain amount of time, then serve. If the recipe is well documented, then it is relatively straightforward to use. As you become more proficient in baking cakes, you may start to modify the recipe. Perhaps add new ingredients (chocolate or nuts) or use different tools (cupcake container).
 
@@ -117,6 +121,7 @@ Back to our example, the task of baking a cake is much harder if you don’t hav
 We can use a similar methodology to design parametric algorithms from scratch. Keep in mind that creating new algorithms is a “skill” and it requires patience, practice and time to develop.
 
 **Algorithmic thinking in 3D modeling vs parametric design**
+
 3D modeling involves a certain level of algorithmic thinking, but it has many implicit steps and data. For example designing a mass model using a 3D modeler may involve the following steps:
 
 1. Think about the output (e.g. a mass out of few intersecting boxes)
@@ -139,6 +144,7 @@ Algorithmic solutions are not interactive and require explicit articulation of d
 </figure>  
 
 **Designing algorithms**
+
 Designing algorithms requires knowledge in geometry, mathematics and programming. Knowledge in geometry and mathematics is covered in the [Essential Mathematics for Computational Design](https://developer.rhino3d.com/guides/general/essential-mathematics/). As for programming skills, it takes time and practice to build the ability to formulate design intentions into logical steps to process and manage geometric data. To help get started, it is useful to think of any **algorithm as a 4-step process** as in the following:
 
 <table class="rounded">
@@ -245,6 +251,7 @@ In more complex algorithms, we will need to analyze the problems, investigate po
 Data is information stored in a computer and processed by a program. Data can be collected from different sources, it has many types and is stored in well defined structures so that it can be used efficiently. While there are commonalities when it comes to data across all scripting languages, there are also some differences. This book explores data and data structures specific to Grasshopper.
 
 ## 1.5 Data sources
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030590039" target="_blank"> Data and data sources</a>
 
 In Grasshopper, there are three main ways to supply data to processes (or what is called components): internal, referenced and external.
 
@@ -280,6 +287,9 @@ In Grasshopper, there are three main ways to supply data to processes (or what i
 </table>
 
 ## 1.6 Data types
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030590459" target="_blank"> Data types</a>
+
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030590809" target="_blank"> Data casting</a>
 
 All programming languages identify the kind of data used in terms of the values that can be assigned to and the operations and processes it can participate in. There are common data types such as <b>Integer, Number, Text, Boolean</b> (Boolean type can be set to <b>True</b> or <b>False</b>), and others. Grasshopper lists those under the <b>Params > Primitives</b> tab.
 
@@ -328,6 +338,7 @@ It is worth noting that sometimes GH components simply ignore invalid input (nul
 Algorithmic designs use many data operations and processes. In the context of this book, we will focus on five categories: numeric and logical operations, analysis, sorting and selection.
 
 ### 1.7.1 Numeric operations
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030591400" target="_blank"> Numeric operations in Grasshopper</a>
 
 Numeric operations include operations such as arithmetic, trigonometry, polynomials and complex numbers. GH has a rich set of numeric operations, and they are mostly found under the <b>Math</b> tab. There are two main ways to perform operations in GH. First by using designated components for specific operations such as <b>Addition, Subtraction</b> and <b>Multiplication</b>.
 
@@ -365,6 +376,7 @@ It is worth mentioning that most numeric input to components allow writing an ex
 </figure>  
 
 ### 1.7.2 Logical operations
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030591761" target="_blank"> Logical operations in Grasshopper</a>
 
 Main logical operations in GH include equalities, sets and logic gates.
 
@@ -381,6 +393,7 @@ Logical operations are used to create conditional flow of data. For example, if 
 </figure>  
 
 ### 1.7.3 Data analysis
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030592921" target="_blank"> Data analysis in Grasshopper</a>
 
 There are many tools in GH to examine and preview data. <b>Panel</b> is used to show the full details of the data and its structure, while the <b>Parameter Viewer</b> shows the data structure only. Other analysis components include <b>Quick Graph</b> that plots data in a graph, and <b>Bounds</b> to find the limits in a given set of numbers (the min and max values in the set).
 
@@ -389,7 +402,8 @@ There are many tools in GH to examine and preview data. <b>Panel</b> is used to 
    <figcaption>Figure(19):  Some of the ways to analyze data in Grasshopper</figcaption>
 </figure>  
 
-### 1.7.4 Sorting
+### 1.7.4 Data Sorting
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030593355" target="_blank"> Data sorting in Grasshopper</a>
 
 GH has designated components to sort numeric and geometry data. The Sort List component can sort a list of numeric keys. It can sort a list of numbers in ascending order or reverse the order. You can also use the Sort List component to sort geometry by some numeric keys, for example sort curves by length. GH has components designated to sort geometry sets such as Sort Points to sort points by their coordinates.
 
@@ -398,7 +412,8 @@ GH has designated components to sort numeric and geometry data. The Sort List co
    <figcaption>Figure(20):  Sorting numbers in Grasshopper</figcaption>
 </figure>  
 
-### 1.7.5 Selection
+### 1.7.5 Data Selection
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030593936" target="_blank"> Data selection in Grasshopper</a>
 
 3D modeling allows picking specific or a group of objects interactively, but this is not possible in algorithmic design. Data is selected in GH based on the location within the data structure, or by a selection pattern. For example <b>List</b> Item component allows selecting elements based on their indices.
 
@@ -417,6 +432,7 @@ The <b>Cull Pattern</b> component allows using some repeated patterns to select 
 As you can see from the examples, selecting specific items or using cull components yield a subset of the data, and the rest is thrown away. Many times you only need to isolate a subset to operate on, then recombine back with the original set. This is possible in GH, but involves more advanced operations. We will get into the details of these operations when we talk about advanced data structures in chapter 3.
 
 ### 1.7.6 Mapping
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1030594157" target="_blank"> Data mapping in Grasshopper</a>
 
 That refers to the linear mapping of a range of numbers where each number in a set is mapped to exactly one value in the new set. GH has a component to perform linear mapping called <b>ReMap</b>. You can use it to scale a set of numbers from its original range to a new one. This is useful to scale your range to a domain that suits your algorithm’s needs and limitations.
 
@@ -562,6 +578,7 @@ As you know, parametric curves have “domains” (the range of parameters that 
 </table>
 
 ## 1.8 Pitfalls of algorithmic design
+{{<awesome "fas fa-solid fa-video">}} <a href="https://vimeo.com/showcase/11456959/video/1032151256" target="_blank"> Pitfalls of algorithmic design</a>
 
 Writing elegant algorithms that are efficient and easy to read and debug is hard. We explained in this chapter how to write algorithms with style using color-coding and labeling. We also articulated a 4-step process to help develop algorithms. Following these guides help minimize bugs and improve the readability of the scripts. We will list a few of the common issues that lead to incorrect or unintended result.
 

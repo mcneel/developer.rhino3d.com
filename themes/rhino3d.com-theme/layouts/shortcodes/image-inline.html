@@ -1,0 +1,17 @@
+{{ $url := "" }}
+{{ $alt := "" }}
+{{ $class := "" }}
+{{ $width := "28" }}
+{{ $height := "" }}
+{{ if .IsNamedParams }}
+    {{ if .Get "url" }}{{ $url = .Get "url" }}{{ end }}
+    {{ if .Get "alt" }}{{ $alt = .Get "alt" }}{{ end }}
+    {{ if .Get "class"}}{{ $class = .Get "class" }}{{ end }}
+    {{ if .Get "width"}}{{ $width = .Get "width" }}{{ end }}
+    {{ if .Get "height"}}{{ $height = .Get "height" }}{{ end }}
+{{ else }}
+    {{ $url = .Get 0 }}
+    {{ if .Get 1 }}{{ $class = .Get 1 }}{{ end }}
+{{ end }}
+
+<img style="vertical-align: middle;" src="{{ $url }}" alt="{{ $alt }}" width="{{ $width }}">

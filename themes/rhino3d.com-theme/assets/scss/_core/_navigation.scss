@@ -286,6 +286,7 @@
 
 @media screen and (max-width: $global-mobile-maxwidth) {
 	.overlayMenuIcon {
+		display: block;
 		visibility: visible;
 		right: 10px;
 		position: absolute;
