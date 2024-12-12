@@ -76,15 +76,14 @@ platforms = [ "Windows", "Mac" ]
 ### Eto Native Controls
 <!-- A simple overview of eto native controls, nothing _too_ fancy -->
 - [Basic Controls](controls/)
-  - [Button](controls#button/)
-  - [DropDown](controls#dropdown/)
-  - [ComboBox](controls#combobox/)
-  - [Radio Buttons](controls#radiobuttons/)
-  - [Check Boxes](controls#checkboxes/)
-  - [Text Inputs](controls/textinput/)
-    - [Text Box](controls/textinput/box)
-    - [Text Area](controls/textinput/area)
-- [Advanced Controls](advanced-controls/)
+  - [Button](controls#button)
+  - [DropDown](controls#drop-down)
+  <!-- - [ComboBox](controls#combobox/) -->
+  - [Radio Buttons](controls#radio-buttons)
+  - [Check Boxes](controls#check-boxes)
+  - [Text Box](controls#text-box)
+  - [Text Area](controls#text-area)
+- [Advanced Controls](advanced-controls)
   - [Grid View](containers#grid-view)
     <!-- Ensuring the data works on these is so annoying. Documenting this will be so helpful -->
   - [Tree Views](controls/treeviews/)

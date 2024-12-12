@@ -318,8 +318,6 @@ dialog.ShowModal(parent)
 {{< /row >}}
 
 
-# Text Inputs
-
 ## Text Box
 
 
