@@ -299,7 +299,6 @@ stack_layout.Items.Add(StackLayoutItem(button_three))
 
 dialog.Content = stack_layout;
 dialog.ShowModal(parent);
-
   ```
 
   </div>

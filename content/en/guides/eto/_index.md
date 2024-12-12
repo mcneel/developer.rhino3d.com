@@ -24,7 +24,7 @@ platforms = [ "Windows", "Mac" ]
 {{< call-out note "Follow Along" >}}
   It is worth noting that many, if not all of these pages will have code samples. If you're new to Eto, or even an advanced user, it is recommended to open the [script editor](http://localhost:1313/guides/scripting/scripting-command/#first-script) and copy/paste (or better yet write out!) the sample code so you can walk through and understand how Eto works.
 
-  Each page with samples will have both C# and Python 3, will work on both Windows and Mac and assumes minor familiarity with Rhino.
+  Each page with samples will have both C# and Python 3, will work on both Windows and Mac and assumes little familiarity with Rhino.
 {{< /call-out >}}
 
 {{< row >}}
@@ -55,6 +55,7 @@ platforms = [ "Windows", "Mac" ]
 ### Overview 
 
 - [Forms & Dialogs](forms-and-dialogs)
+- [Existing Dialogs](existing-dialogs)
 - [Containers](containers)
     - [Panels](containers#panels)
     - [Tables](containers#tables)

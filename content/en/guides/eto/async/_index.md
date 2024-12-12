@@ -121,7 +121,6 @@ This will freeze your program
 using System.Net.Http;
 using Rhino;
 
-
 var http = new HttpClient();
 var httpTask = http.PostAsync("https://rhino3d.com", null);
 var result = httpTask.Result;

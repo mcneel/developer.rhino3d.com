@@ -4,7 +4,7 @@ authors = [ "curtis", "callum" ]
 categories = [ "Getting Started" ] # What is this?
 description = "An introduction to the Eto Data Context"
 keywords = [ "Eto", "UI", "Plugin", "DataContext", "Data", "View", "Model" ]
-languages = [ "C#" ]
+languages = [ "C#", "py" ]
 sdk = [ "Eto" ]
 title = "Data Context"
 type = "guides"
@@ -40,6 +40,7 @@ A very useful feature to be aware of is the trickle-down effect of DataContext.
 Any Control, (including Forms and Dialogs) that has a DataContext will bequeath the DataContext to every child control meaning that this can be accessed anywhere in your UI Tree.
 If a child control overrides its DataContext with a new DataContext then a new lineage of this DataContext is created.
 
+<!-- TODO : Include a python sample -->
 ``` cs
 var dialog = new Dialog()
 {
@@ -69,7 +70,7 @@ var dialog = new Dialog()
 
 {{< call-out warning "Common DataContext Mistake" >}}
 DataContext is often not an available property until the Form has been constructed.
-Trying to access the DataContext from the constructor of a control or form will likley fail.
+Trying to access the DataContext from the constructor of a control or form will likely fail.
 {{< /call-out >}}
 
 
