@@ -90,14 +90,14 @@ Script editor has completion support for all languages. There are a few kinds of
 
   ![](editor-autocomplete-signature.png)
 
-- **Shorthand Completion** usually triggers when typing space after a keyword and provides common templates:
+- **Snippet Completion** usually triggers when typing space after a keyword and provides templates for common language constructs like `if` statements or `foreach` loops. It is *Off* by default. Choose **Edit > Toggle Snippet in Autocomplete** to toggle snippets on.
   
-  ![](editor-autocomplete-shorthand.png)
+  ![](editor-autocomplete-snippet.png)
 
 
 ### Word-based Autocomplete
 
-Editor can collect words already used in the script to help with autocomplete. However as it does not have a full understanding of the context and meaning of these collected words, this type of autocompletion is not always useful. This option is Off by default. Choose **Edit > Toggle Word-based Autocomplete** to turn it on. See **Autocompletion** in [Language Support Options](/guides/scripting/editor-configs/#language-support-options) to toggle this option on for a specific language:
+Editor can collect words already used in the script to help with autocomplete. However as it does not have a full understanding of the context and meaning of these collected words, this type of autocompletion is not always useful. This option is *Off* by default. Choose **Edit > Toggle Word-based Autocomplete** to turn it on. See **Autocompletion** in [Language Support Options](/guides/scripting/editor-configs/#language-support-options) to toggle this option on for a specific language:
 
 ![](editor-autocomplete-wordBased.png)
 
