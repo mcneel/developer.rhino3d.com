@@ -26,8 +26,10 @@
 {{- with .Get "title" -}}<h4>{{.}}</h4>{{- end -}}
 {{- if or (.Get "caption") (.Get "attr") -}}
 <p>
+<div style="text-align: {{ with .Get "caption-align" }}{{.}}{{end}}">
 {{- .Get "caption" -}}
 {{- with .Get "attrlink" -}}<a href="{{.}}">{{- .Get "attr" -}}</a>{{- else -}}{{- .Get "attr" -}}{{- end -}}
+</div>
 </p>
 {{- end -}}
 </figcaption>

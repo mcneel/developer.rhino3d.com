@@ -143,7 +143,11 @@ namespace Launch
         filename = "hugo.tar.gz";
       } else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
       {
-        archive = string.Format("hugo_extended_{0}_windows-amd64.zip", requiredVersion);
+        if (System.Runtime.InteropServices.RuntimeInformation.OSArchitecture == Architecture.Arm64) {
+          archive = string.Format("hugo_{0}_windows-arm64.zip", requiredVersion);
+        } else {
+          archive = string.Format("hugo_extended_{0}_windows-amd64.zip", requiredVersion);
+        }
         filename = "hugo.zip";
       } else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
       {        
@@ -290,6 +294,13 @@ namespace Launch
 
     static bool ServeHugo(string[] args)
     {
+      string pathToHugo = Path.GetFullPath(Path.Combine(RepoRootPath, HugoExe));
+      if (!File.Exists(pathToHugo))
+      {
+        Console.WriteLine("Hugo executable not found at: {0}", pathToHugo);
+        return false;
+      }
+
       string arguments = "";
       
       if (args.Length > 0)
@@ -309,12 +320,13 @@ namespace Launch
       {
         StartInfo = new ProcessStartInfo
         {
-          FileName = HugoExe,
+          FileName = pathToHugo,
           Arguments = arguments,
           UseShellExecute = false,
           RedirectStandardOutput = true,
           RedirectStandardError = true,
           CreateNoWindow = true,
+          WorkingDirectory = RepoRootPath
         }
       })
       {

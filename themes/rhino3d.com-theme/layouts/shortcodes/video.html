@@ -1,0 +1,24 @@
+<div class="video-container">
+    <video 
+        {{ if not (eq (.Get "controls") "false") }}controls{{ end }} 
+        {{ with .Get "autoplay" }}autoplay{{ end }} 
+        {{ with .Get "loop" }}loop{{ end }} 
+        {{ with .Get "muted" }}muted{{ end }}>
+        <source src="{{ .Get "src" }}" type="video/{{ .Get "type" }}">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<style>
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+.video-container video {
+    width: 100%;
+    height: auto;
+}
+</style>

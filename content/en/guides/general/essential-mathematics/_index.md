@@ -47,12 +47,9 @@ The content is divided into three chapters. [Chapter 1](/guides/general/essentia
 
 Robert McNeel & Associates
 
-
 #### Downloads:
-* [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics) [Essential Mathematics for Computational Design (4th Edition)](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) in English, French, German, Spanish, Italian, or Simplified Chinese.
-* [{{< awesome "fas fa-download">}} ](/files/math-samplesandtutorials.zip.zip) [math-samplesandtutorials.zip](/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
+* [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics) [Download the guide PDF and all Grasshopper examples (4th Edition)](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) in English, French, German, Spanish, Italian, or Simplified Chinese.
 * <a href="https://www.youtube.com/playlist?list=PLWIvZT_UEpWW6Kgq8mxOgliGBFHhrI4mK"><span class="glyphicon glyphicon-play"></span></a> [Watch the Essential Mathematics Videos... ](https://www.youtube.com/playlist?list=PLWIvZT_UEpWW6Kgq8mxOgliGBFHhrI4mK)
-
 
 ### Table of Contents  
 

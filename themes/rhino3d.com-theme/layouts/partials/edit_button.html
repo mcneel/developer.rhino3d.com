@@ -1,6 +1,6 @@
 <span class="mcneel_only hidden">
-    <div style = "text-align: center;">
-        <div class="editdropdown" style="text-align: left;">        
+    <div style="text-align: center;">
+        <div class="editdropdown" style="text-align: left;">
             <button class="editbutton"><div class="fas fa-pencil-alt"></div> {{ i18n "Edit-this-page" }}</button>
             <div class="editdropdown-content">
                 {{- $path := "" -}}
@@ -9,6 +9,10 @@
                 {{- else -}}
                     {{- $path = .Path -}}
                 {{- end -}}
+                {{- $path = replace $path "NAPA/" "" -}} <!-- Remove the unwanted segment -->
+                {{- $path = replace $path "EMEA/" "" -}} <!-- Remove the unwanted segment -->
+                {{- $path = replace $path "LATA/" "" -}} <!-- Remove the unwanted segment -->
+                {{- $path = replace $path "ASIA/" "" -}} <!-- Remove the unwanted segment -->
                 {{ $.Scratch.Set "path_no_dashes" (replace $path "/" "-" )}}
                 {{ $.Scratch.Set "slugified_path" (replace ($.Scratch.Get "path_no_dashes") "." "-" )}}
                 <a href="https://github.com/{{ .Site.Params.nwo }}/edit/master/content/{{.Site.Language.Lang }}/{{ $path }}" target="_blank" rel="noopener noreferrer"><div class="fab fa-github"></div> {{ i18n "Edit-on-GitHub" }}</a>
