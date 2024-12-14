@@ -18,6 +18,9 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 
+[page_options]
+  block_webcrawlers = true
+
 +++
 
 # Rhino Controls

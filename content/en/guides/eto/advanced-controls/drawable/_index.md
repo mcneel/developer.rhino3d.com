@@ -18,6 +18,9 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 
+[page_options]
+  block_webcrawlers = true
+
 +++
 Drawable provides infinite flexibility in Eto, you can draw anything in a resuable UI control.
 

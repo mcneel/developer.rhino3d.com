@@ -62,13 +62,13 @@ platforms = [ "Windows", "Mac" ]
     - [Stack Layouts](containers#stack-layouts)
     - [Dynamic Layouts](containers#dynamic-layouts)
     - [Pixel Layouts](containers#pixel-layouts)
-- [Menu Bar](menu-bar)
+<!-- - [Menu Bar](menu-bar) -->
   <!-- Ensure to mention advanced menu bars -->
-- [Commands](commands)
+<!-- - [Commands](commands) -->
   <!-- I think commands are awesome and should be used more  -->
-- [Layouts](layouts)
+<!-- - [Layouts](layouts) -->
   <!-- Spacing, Padding (using nulls to space things out!) all the good stuff  -->
-- [Sizing](sizing)
+<!-- - [Sizing](sizing) -->
 
 {{< /column >}}
 {{< column >}}
@@ -83,15 +83,15 @@ platforms = [ "Windows", "Mac" ]
   - [Check Boxes](controls#check-boxes)
   - [Text Box](controls#text-box)
   - [Text Area](controls#text-area)
-- [Advanced Controls](advanced-controls)
-  - [Grid View](containers#grid-view)
-    <!-- Ensuring the data works on these is so annoying. Documenting this will be so helpful -->
-  - [Tree Views](controls/treeviews/)
-    <!-- Ensuring the data works on these is so annoying. Documenting this will be so helpful -->
-  - [Image View](advanced-controls/imageviews/)
+- Advanced Controls
   - [Drawable](advanced-controls/drawable)
-    <!-- I think this is worth being a bit more extensive than others -->
-  - [Numeric Input](advanced-controls/numericUpDown)
+<!--  - [Grid View](containers#grid-view) -->
+<!-- Ensuring the data works on these is so annoying. Documenting this will be so helpful -->
+  <!-- - [Tree Views](controls/treeviews/) -->
+<!-- Ensuring the data works on these is so annoying. Documenting this will be so helpful -->
+  <!-- - [Image View](advanced-controls/imageviews/) -->
+  <!-- I think this is worth being a bit more extensive than others -->
+<!-- - [Numeric Input](advanced-controls/numericUpDown) -->
 
 {{< /column >}}
 {{< /row >}}
@@ -105,7 +105,7 @@ platforms = [ "Windows", "Mac" ]
 - [DataContext](view-and-data/data-context/) <!-- Explain how the DataContext trickles downwards! -->
 - [What is a View Model?](view-and-data//view-models)
 - [Binding Data with a ViewModel](view-and-data/binding)
-- [Binding without a View Model](view-and-data/no-view-model)
+<!-- - [Binding without a View Model](view-and-data/no-view-model) -->
 
 {{< /column >}}
 {{< column >}}
@@ -116,11 +116,12 @@ platforms = [ "Windows", "Mac" ]
 - [How do Bindings work?](view-and-data/bindings-explained) {{%comingsoon-label %}}
   <!-- Very detailed explination of Bindings -->
   <!-- Why do I need to bind to a property? -->
-- [Alternatives to Bindings](view-and-data/alternatives) {{%comingsoon-label %}}
+<!-- - [Alternatives to Bindings](view-and-data/alternatives) {{%comingsoon-label %}} -->
 
 {{< /column >}}
 {{< /row >}}
 
+<!-- 
 ## Your First Eto Project {{%comingsoon-label %}}
 
 Building a cross platform UI Layout Manager
@@ -128,15 +129,15 @@ Building a cross platform UI Layout Manager
 {{< row >}}
 {{< column >}}
 
-1. [Setup](my-first-eto/setup) <!-- Creating the command and the initial space for our project -->
-1. The Form <!-- Set up the form -->
-1. The View Model <!-- Set up the view model -->
-1. The Rhino Command <!-- Set up the command -->
-1. Starting the View <!-- Set up the view with a layout -->
-1. The Eto Commands <!-- Set up the ui commands -->
-1. Creating a Toolbar <!-- Set up the toolbar, buttons with icons etc -->
-1. Styling <!-- Set up the styling -->
-1. The MenuBar <!-- Set up the MenuBar -->
+1. [Setup](my-first-eto/setup) // Creating the command and the initial space for our project
+1. The Form // Set up the form
+1. The View Model // Set up the view model
+1. The Rhino Command // Set up the command
+1. Starting the View // Set up the view with a layout
+1. The Eto Commands // Set up the ui commands
+1. Creating a Toolbar // Set up the toolbar, buttons with icons etc
+1. Styling // Set up the styling
+1. The MenuBar // Set up the MenuBar
 
 {{< /column >}}
 {{< column >}}
@@ -145,6 +146,8 @@ n. Creating the ...
 
 {{< /column >}}
 {{< /row >}}
+
+-->
 
 ## Further Reading
 
@@ -164,10 +167,13 @@ n. Creating the ...
   - [Light and Dark Mode](rhino-specific#rhinostyle)
   - [Converters](rhino-specific#converters)
   - [Rhino Document](rhino-specific#rhino-doc)
+<!--
   - UIs in Grasshopper {{%comingsoon-label %}}
   - UIs in the Script Editor {{%comingsoon-label %}}
   - UIs in Commands {{%comingsoon-label %}}
+-->
 <!-- -->
+<!--
 - [Rhino Controls](rhino-specific/controls) {{%comingsoon-label %}}
   - NumericUpDownWithUnitParsing {{%comingsoon-label %}}
   - ViewportControl {{%comingsoon-label %}}
@@ -175,39 +181,42 @@ n. Creating the ...
   - RhinoDialogPanel {{%comingsoon-label %}}
   - ImageButton {{%comingsoon-label %}}
   - AddRemoveButton {{%comingsoon-label %}}
-
+-->
 {{< /column >}}
 {{< column >}}
 
 ### Advanced
-
+- [Async](async/)
+<!--
 {{< dev-topic-list "guides" "eto" "Advanced" "weight" >}}
 
 - OS Specific eccentricities {{%comingsoon-label %}}
   - Windows {{%comingsoon-label %}}
-    <!-- I can't think of any in particular -->
+// I can't think of any in particular
   - Mac OSX {{%comingsoon-label %}}
     - Multiple Documents {{%comingsoon-label %}}
   - Styling {{%comingsoon-label %}}
-    <!-- How to create os specific styles  -->
+// How to create os specific styles 
 - Custom Controls {{%comingsoon-label %}}
-  <!-- Inheriting from and modifying controls -->
+// Inheriting from and modifying controls
 - Custom Handlers {{%comingsoon-label %}}
-  <!-- Custom platform wrapping stuff -->
+// Custom platform wrapping stuff
 - Mouse Events {{%comingsoon-label %}}
-  <!-- Maybe even drag/drop? -->
-- [Async](async/)
-  <!-- Line between async and non-async -->
-  <!-- async events -->
-  <!-- invoke async -->
-  <!-- DO NOT FORCE WAIT ASYNC ON NON-ASYNC -->
+// Maybe even drag/drop?
+- async was here
+// Line between async and non-async
+// async events
+// invoke async
+// DO NOT FORCE WAIT ASYNC ON NON-ASYNC
 - Localization {{%comingsoon-label %}}
   - Strings {{%comingsoon-label %}}
   - Menus {{%comingsoon-label %}}
-      <!-- bits to know about cross platform -->
-      <!-- What is with that & thing -->
-      <!-- Windows access keys? -->
-      <!-- Ensure to use GET not NEW -->
+// bits to know about cross platform
+// What is with that & thing
+// Windows access keys?
+// Ensure to use GET not NEW
+
+-->
 
 {{< /column >}}
 {{< /row >}}
@@ -218,15 +227,12 @@ n. Creating the ...
 {{< column >}}
 
 - [Eto Source](https://github.com/picoe/eto)
+- [Eto License](https://github.com/picoe/Eto/blob/develop/LICENSE.txt)
 - [Eto API Reference](http://pages.picoe.ca/docs/api/)
-- [Eto License](https://github.com/picoe/eto/LICENSE.md)
+- [Contributing to Eto](https://github.com/picoe/Eto/wiki/Contributing)
 
 <!-- - [How does Eto work?](eto-explained) {{%comingsoon-label %}} -->
 <!-- An explaination of How eto wraps other UIs, mostly for my own benefit -->
-
-#### Get Involved
-Eto is completely open source and accepting edits, fixes, changes and suggestions
-- [Work on Eto](https://github.com/picoe/eto)
 
 {{< /column >}}
 {{< /row >}}

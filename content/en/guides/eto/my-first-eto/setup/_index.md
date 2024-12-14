@@ -18,6 +18,9 @@ state = ""
 [included_in]
 platforms = [ "Windows", "Mac" ]
 
+[page_options]
+  block_webcrawlers = true
+
 +++
 
 This guide will showcase working with the Script Editor to create the project so that information and screenshots are platform and language agnostic. Feel free to follow along on Mac, Windows, Python or C#.
