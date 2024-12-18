@@ -2,7 +2,7 @@
 aliases = []
 authors = [ "curtis", "callum" ]
 categories = [ "Eto" ] # What is this?
-description = "An introduction to Eto"
+description = ""
 keywords = [ "Eto", "UI", "Plugin" ]
 languages = [ "C#" ]
 sdk = [ "Eto" ]
@@ -28,12 +28,8 @@ toc_type = "single"
 ## What is Eto?
 
 Eto is a cross platform User Interface (UI) library for dotnet.
-It works on all operating systems, and across many mobile devices.
-
-## Next Steps
-
-...
+Eto is the primary UI library used in Rhino.
 
 ## Related topics
 
-- [Why Eto?](/)
+- [Why Eto?](../why-eto/)
