@@ -3658,11 +3658,11 @@
         "Description": "Determine the orientation (counter-clockwise or clockwise) of a closed,\r\n    planar curve",
         "HasArguments": true,
         "ArgumentDesc": "curve_id (guid): identifier of a curve object\r\ndirection (vector, optional): 3d vector that identifies up, or Z axs, direction of\r\n                              the plane to test against",
-        "Returns": "number: 1 if the curve's orientation is clockwise\r\n       -1 if the curve's orientation is counter-clockwise\r\n        0 if unable to compute the curve's orientation",
+        "Returns": "number: 1 if the curve's orientation is counter-clockwise\r\n       -1 if the curve's orientation is clockwise\r\n        0 if unable to compute the curve's orientation",
         "Example": [],
         "ExampleString": "",
         "SeeAlso": [],
-        "DocString": "    \"\"\"Determine the orientation (counter-clockwise or clockwise) of a closed,\r\n    planar curve\r\n    Parameters:\r\n      curve_id (guid): identifier of a curve object\r\n      direction (vector, optional): 3d vector that identifies up, or Z axs, direction of\r\n                                    the plane to test against\r\n    Returns:\r\n      number: 1 if the curve's orientation is clockwise\r\n             -1 if the curve's orientation is counter-clockwise\r\n              0 if unable to compute the curve's orientation\r\n    Example:\r\n    See Also:\r\n    \"\"\"",
+        "DocString": "    \"\"\"Determine the orientation (counter-clockwise or clockwise) of a closed,\r\n    planar curve\r\n    Parameters:\r\n      curve_id (guid): identifier of a curve object\r\n      direction (vector, optional): 3d vector that identifies up, or Z axs, direction of\r\n                                    the plane to test against\r\n    Returns:\r\n      number: 1 if the curve's orientation is counter-clockwise\r\n             -1 if the curve's orientation is clockwise\r\n              0 if unable to compute the curve's orientation\r\n    Example:\r\n    See Also:\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -18635,7 +18635,7 @@
         "Description": "Returns the object type",
         "HasArguments": true,
         "ArgumentDesc": "object_id (guid): identifier of an object",
-        "Returns": "number: The object type if successful.\r\n  The valid object types are as follows:\r\n  Value   Description\r\n    0           Unknown object\r\n    1           Point\r\n    2           Point cloud\r\n    4           Curve\r\n    8           Surface or single-face brep\r\n    16          Polysurface or multiple-face\r\n    32          Mesh\r\n    256         Light\r\n    512         Annotation\r\n    4096        Instance or block reference\r\n    8192        Text dot object\r\n    16384       Grip object\r\n    32768       Detail\r\n    65536       Hatch\r\n    131072      Morph control\r\n    134217728   Cage\r\n    268435456   Phantom\r\n    536870912   Clipping plane\r\n    1073741824  Extrusion",
+        "Returns": "number: The object type if successful.\r\n  The valid object types are as follows:\r\n  Value   Description\r\n    0           Unknown object\r\n    1           Point\r\n    2           Point cloud\r\n    4           Curve\r\n    8           Surface or single-face brep\r\n    16          Polysurface or multiple-face\r\n    32          Mesh\r\n    256         Light\r\n    512         Annotation\r\n    4096        Instance or block reference\r\n    8192        Text dot object\r\n    16384       Grip object\r\n    32768       Detail\r\n    65536       Hatch\r\n    131072      Morph control\r\n    262144      SubD\r\n    134217728   Cage\r\n    268435456   Phantom\r\n    536870912   Clipping plane\r\n    1073741824  Extrusion",
         "Example": [
           "import rhinoscriptsyntax as rs",
           "obj = rs.GetObject(\"Select object\")",
@@ -18650,7 +18650,7 @@
             "FunctionName": "ObjectsByType"
           }
         ],
-        "DocString": "    \"\"\"Returns the object type\r\n    Parameters:\r\n      object_id (guid): identifier of an object\r\n    Returns:\r\n      number: The object type if successful.\r\n        The valid object types are as follows:\r\n        Value   Description\r\n          0           Unknown object\r\n          1           Point\r\n          2           Point cloud\r\n          4           Curve\r\n          8           Surface or single-face brep\r\n          16          Polysurface or multiple-face\r\n          32          Mesh\r\n          256         Light\r\n          512         Annotation\r\n          4096        Instance or block reference\r\n          8192        Text dot object\r\n          16384       Grip object\r\n          32768       Detail\r\n          65536       Hatch\r\n          131072      Morph control\r\n          134217728   Cage\r\n          268435456   Phantom\r\n          536870912   Clipping plane\r\n          1073741824  Extrusion\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select object\")\r\n      if obj:\r\n          objtype = rs.ObjectType(obj)\r\n          print(\"Object type:{}\".format(objtype))\r\n    See Also:\r\n      ObjectsByType\r\n    \"\"\"",
+        "DocString": "    \"\"\"Returns the object type\r\n    Parameters:\r\n      object_id (guid): identifier of an object\r\n    Returns:\r\n      number: The object type if successful.\r\n        The valid object types are as follows:\r\n        Value   Description\r\n          0           Unknown object\r\n          1           Point\r\n          2           Point cloud\r\n          4           Curve\r\n          8           Surface or single-face brep\r\n          16          Polysurface or multiple-face\r\n          32          Mesh\r\n          256         Light\r\n          512         Annotation\r\n          4096        Instance or block reference\r\n          8192        Text dot object\r\n          16384       Grip object\r\n          32768       Detail\r\n          65536       Hatch\r\n          131072      Morph control\r\n          262144      SubD\r\n          134217728   Cage\r\n          268435456   Phantom\r\n          536870912   Clipping plane\r\n          1073741824  Extrusion\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      obj = rs.GetObject(\"Select object\")\r\n      if obj:\r\n          objtype = rs.ObjectType(obj)\r\n          print(\"Object type:{}\".format(objtype))\r\n    See Also:\r\n      ObjectsByType\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -20358,7 +20358,7 @@
         "Description": "Transforms a 3D point",
         "HasArguments": true,
         "ArgumentDesc": "point (point): the point to transform\r\nxform (transform): a valid 4x4 transformation matrix",
-        "Returns": "vector: transformed vector on success",
+        "Returns": "point: transformed point on success",
         "Example": [
           "# Translate (move) objects by (10,10,0)",
           "import rhinoscriptsyntax as rs",
@@ -20390,7 +20390,7 @@
             "FunctionName": "PointSubtract"
           }
         ],
-        "DocString": "    \"\"\"Transforms a 3D point\r\n    Parameters:\r\n      point (point): the point to transform\r\n      xform (transform): a valid 4x4 transformation matrix\r\n    Returns:\r\n      vector: transformed vector on success\r\n    Example:\r\n      # Translate (move) objects by (10,10,0)\r\n      import rhinoscriptsyntax as rs\r\n      point = 5,5,0\r\n      matrix = rs.XformTranslation((10,10,0))\r\n      result = rs.PointTransform(point, matrix)\r\n      print(result)\r\n    See Also:\r\n      PointAdd\r\n      PointCompare\r\n      PointDivide\r\n      PointScale\r\n      PointSubtract\r\n    \"\"\"",
+        "DocString": "    \"\"\"Transforms a 3D point\r\n    Parameters:\r\n      point (point): the point to transform\r\n      xform (transform): a valid 4x4 transformation matrix\r\n    Returns:\r\n      point: transformed point on success\r\n    Example:\r\n      # Translate (move) objects by (10,10,0)\r\n      import rhinoscriptsyntax as rs\r\n      point = 5,5,0\r\n      matrix = rs.XformTranslation((10,10,0))\r\n      result = rs.PointTransform(point, matrix)\r\n      print(result)\r\n    See Also:\r\n      PointAdd\r\n      PointCompare\r\n      PointDivide\r\n      PointScale\r\n      PointSubtract\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -25712,7 +25712,7 @@
         "Name": "IsXformSimilarity",
         "Arguments": [],
         "Signature": "IsXformSimilarity(xform)",
-        "Description": "Verifies a matrix is a similarity transformation. A similarity\r\n    transformation can be broken into a sequence of dialations, translations,\r\n    rotations, and reflections",
+        "Description": "Verifies a matrix is a similarity transformation. A similarity\r\n    transformation can be broken into a sequence of dilations, translations,\r\n    rotations, and reflections",
         "HasArguments": true,
         "ArgumentDesc": "xform (transform): List or Rhino.Geometry.Transform.  A 4x4 transformation matrix.",
         "Returns": "bool: True if this transformation is an orientation preserving similarity, otherwise False.",
@@ -25732,7 +25732,7 @@
             "FunctionName": "IsXformZero"
           }
         ],
-        "DocString": "    \"\"\"Verifies a matrix is a similarity transformation. A similarity\r\n    transformation can be broken into a sequence of dialations, translations,\r\n    rotations, and reflections\r\n    Parameters:\r\n      xform (transform): List or Rhino.Geometry.Transform.  A 4x4 transformation matrix.\r\n    Returns:\r\n      bool: True if this transformation is an orientation preserving similarity, otherwise False.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      xform = rs.BlockInstanceXform(block)\r\n      print(rs.IsXformSimilarity(xform))\r\n    See Also:\r\n      IsXformIdentity\r\n      IsXformZero\r\n    \"\"\"",
+        "DocString": "    \"\"\"Verifies a matrix is a similarity transformation. A similarity\r\n    transformation can be broken into a sequence of dilations, translations,\r\n    rotations, and reflections\r\n    Parameters:\r\n      xform (transform): List or Rhino.Geometry.Transform.  A 4x4 transformation matrix.\r\n    Returns:\r\n      bool: True if this transformation is an orientation preserving similarity, otherwise False.\r\n    Example:\r\n      import rhinoscriptsyntax as rs\r\n      xform = rs.BlockInstanceXform(block)\r\n      print(rs.IsXformSimilarity(xform))\r\n    See Also:\r\n      IsXformIdentity\r\n      IsXformZero\r\n    \"\"\"",
         "SuccessLevel": 6,
         "IsDocStringWellFormed": true
       },
@@ -27198,7 +27198,7 @@
           "import rhinoscriptsyntax as  rs",
           "dist = rs.GetDistance()",
           "if dist:",
-          "    print(dist)"
+          "    print( dist)"
         ],
         "ExampleString": "import rhinoscriptsyntax as  rs\r\ndist = rs.GetDistance()\r\nif dist:\r\n    print( dist)",
         "SeeAlso": [
