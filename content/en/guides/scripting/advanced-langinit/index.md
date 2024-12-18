@@ -23,6 +23,42 @@ block_webcrawlers = false
     }
 </style>
 
+## Language Loading
+
+The scripting infrastructure (script editor, scripting languages, etc.) is accessed from a variety of sources depending on how it is used. Loading scripting languages uses memory so Rhino only loads languages when they are needed:
+
+- Running `ScriptEditor` command loads all the available languages and opens the script editor. Rhino progress bar (in status bar) shows the progress of loading languages:
+
+![]()
+
+- Dropping a Script Component on Grasshopper canvas loads the language associated with that component. The component draws a progress bar under the capsule (or on the canvas if it is zoomed out) reporting language load progress:
+
+![]()
+
+- Running `-_ScriptEditor _R "path/to/script.py"` command runs the given script file ([See ScriptEditor Macros](guides/scripting/advanced-scripteditor-macros)). Rhino progress bar (in status bar) shows the progress of loading languages:
+
+![]()
+
+This is not an exhaustive list and depending on the use case, the interface provides feedback.
+
+## Language Initialization
+
+Once a language is loaded it might need a first-time initialization. For example Python 3 prepares its runtime and installs a few useful pip packages. Rhino or Grasshopper interface shows a progress bar reporting initialization progress:
+
+- Running `ScriptEditor` loads languages and opens script editor. Script editor's main window shows independent progress bars reporting language initialization progress:
+
+![]()
+
+- Dropping a Script Component on Grasshopper canvas loads and initializes the language associated with that component. The component draws a progress bar under the capsule (or on the canvas if it is zoomed out) reporting language initialization progress:
+
+![]()
+
+- Running `-_ScriptEditor _R "path/to/script.py"` command runs the given script file ([See ScriptEditor Macros](guides/scripting/advanced-scripteditor-macros)). Rhino progress bar (in status bar) shows the progress of initializing languages:
+
+![]()
+
+This is not an exhaustive list and depending on the use case, the interface provides feedback.
+
 ## Scripting Root Directory
 
 All languages initialize their runtimes under the scripting root directory. This is usually placed under:
