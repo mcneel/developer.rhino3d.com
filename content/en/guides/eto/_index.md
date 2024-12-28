@@ -188,8 +188,6 @@ n. Creating the ...
 ### Advanced
 - [Async](async/)
 <!--
-{{< dev-topic-list "guides" "eto" "Advanced" "weight" >}}
-
 - OS Specific eccentricities {{%comingsoon-label %}}
   - Windows {{%comingsoon-label %}}
 // I can't think of any in particular
@@ -215,7 +213,6 @@ n. Creating the ...
 // What is with that & thing
 // Windows access keys?
 // Ensure to use GET not NEW
-
 -->
 
 {{< /column >}}

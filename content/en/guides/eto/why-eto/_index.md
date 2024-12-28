@@ -7,7 +7,7 @@ languages = [ "C#", "Python" ]
 sdk = "eto"
 type = "guides"
 title = "Why Eto?"
-description = "A short overview of reasons to choose Eto"
+description = "Why choose Eto over all the other UI libraries such as XAML, Maui, WPF, Blazor, React, Cocoa etc.?"
 
 [admin]
 TODO = ""
@@ -21,23 +21,20 @@ platforms = [ "Windows", "Mac" ]
 +++
 <!-- Sizing, automatic, manual etc. -->
 
-## 1. It's included with Rhino
-All the required Eto dependencies are bundled with Rhino, it's easy to get going quickly.
+## 1. Batteries Included
+All the required Eto dependencies are bundled with Rhino, it's easy to get going quickly and does not require any other dependencies
 
-## 2. It's Rhino
-Creating UIs in Rhino that match Rhino 
+## 2. It's Rhino!
+Rhino uses Eto! Creating UIs that match the Rhino style are a breeze.
 
 ## 3. Eto makes native cross-platform easy
-Eto makes writing apps that work cross platform seamless.
+Eto makes writing apps that work cross platform easy. You can go from 0 to fun in a few minutes.
 
-## 4. It's proven and mature
-Eto has been in development continuously improving for over 14 years, is actively developed and supported by McNeel and is the UI of choice for Rhino.
-- Maturity
-- Proven
+## 4. Stable & Mature
+Eto has been in development and continuously improving for over 14 years, is actively developed and supported by McNeel and is the UI of choice for Rhino.
 
 ## 5. Maximum Coverage
 Every method, class and feature of Eto is available on every platform.
 
-## Here are some of the interfaces created using Eto in the Rhino ecosystem
-
-<!-- TODO : grab screenshots and ask permissions (Lands Design is a good example!) -->
+## 6. Open Source
+Eto is, and has always been 100% Open Source.
