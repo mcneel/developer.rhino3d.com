@@ -26,10 +26,10 @@ toc_type = "single"
 +++
 
 ## What is a View Model?
-View Models contain the data and logic that accompnies our UI. 
+View Models contain the data and logic that accompnies our UI, separating view logic and model logic keeps our UIs more organised and promotes better coding.
 
 ## Why are View Models needed?
-It's good practice to split view 
+The simplest reason is to keep different things in different places.
 
 #### Examples of View Model data and logic
 ``` cs
@@ -53,3 +53,33 @@ public Color BackgroundColour { get; }
 internal void RedrawView();
 internal void CloseView();
 ```
+
+## A Very Basic View Model
+View Models do not need to be complex, they do not need to ...
+
+``` cs
+internal class ViewModel
+{
+  public int Count { get; set; } = 0;
+}
+```
+
+## A Better View Model
+
+
+``` cs
+public class ViewModel : INotifyPropertyChanged
+{
+  public event PropertyChangedEventHandler PropertyChanged;
+
+  protected virtual void RaisePropertyChanged(string propertyName)
+  {
+    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+  }
+}
+```
+
+## Related topics
+
+ - Notify Properties
+ - 

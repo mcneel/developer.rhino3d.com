@@ -2,7 +2,7 @@
 aliases = [ ]
 authors = [ "callum", "curtis" ]
 categories = [ "Eto" ]
-description = "An overview of Eto Native Controls"
+description = "An overview of Eto Native Controls with the minimum code to get started."
 keywords = [ "rhino", "developer", "eto", "ui", "ux" ]
 languages = [ "C#", "Python" ]
 sdk = "eto"
@@ -21,8 +21,7 @@ platforms = [ "Windows", "Mac" ]
 +++
 
 ## Buttons
-...
-
+Buttons offer simple click → action functionality.
 
 {{< row >}}
 {{< column >}}
@@ -93,8 +92,7 @@ dialog.ShowModal(parent)
 {{< /row >}}
 
 ## Drop Down
-...
-
+Drop Downs store a collection of items and force a user to choose one, drop downs are favourable when the length of data can change or is more than 3-4 items.
 
 {{< row >}}
 {{< column >}}
@@ -169,9 +167,7 @@ dialog.ShowModal(parent)
 {{< /row >}}
 
 ## Radio Buttons
-
-...
-
+Radio Button Lists store a list of items and force a user to choose one item. Radio Buttons are not suitable for longer lists and instead a [Drop Down](#drop-down) should be preferred.
 
 {{< row >}}
 {{< column >}}
@@ -249,7 +245,8 @@ dialog.ShowModal(parent)
 {{< /row >}}
 
 ## Check Boxes
-
+Check Boxes can exist individually or as a group by using the CheckBoxGroup.
+Check Boxes have 3 states, checked, unchecked and indeterminate. The 3rd state can be set using Null as the Checked value is `bool?`.
 
 {{< row >}}
 {{< column >}}
@@ -271,7 +268,8 @@ var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
 var checkBox = new CheckBox()
 {
-    Text = "Check Please"
+    Text = "Check Please",
+    Checked
 };
 
 var dialog = new Dialog()
@@ -319,7 +317,7 @@ dialog.ShowModal(parent)
 
 
 ## Text Box
-
+The Text box is meant for simple, short inputs like an email address, password, name, etc.
 
 {{< row >}}
 {{< column >}}
@@ -396,7 +394,7 @@ dialog.ShowModal(parent)
 
 
 ## Text Area
-
+The text area is for longer, multiline text values and offers more options suited to a larger text input.
 
 {{< row >}}
 {{< column >}}

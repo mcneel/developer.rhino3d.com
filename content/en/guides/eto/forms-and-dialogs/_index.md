@@ -62,22 +62,24 @@ Dialogs are modal, Forms are non-modal. Which just means that when you show a di
   </div>
 </div>
 
-If you paste this into your script editor and run, the Form will show, and then the dialog, however code written after the dialog will not be run until the dialog is closed. It is important to choose a Form or Dialog correctly. It can however be changed easily later on, without much work.
+If you paste this into your script editor and run, the Form will show, and then the dialog, however code written after the dialog will not be run until the dialog is closed. It is important to choose a Form or Dialog correctly. It can however be changed easily later on without too much extra effort.
 
-# Forms
+## Forms
+
 Forms are best used when you want to present information or controls to the user that mix input between the form and the parent window, i.e Rhino. If you want users to be able to run commands and interact with Rhino, a form is the most flexible choice.
 
-For example, a form would be best suited to a help window that the user might consult whilst using Rhino, or a window of controls a custom visibility mode on objects to help understand curvature.
+For example, a form would be best suited to a help window that the user might consult whilst using Rhino, or a window of custom visibility modes.
 
 
-# Dialogs
+## Dialogs
 
 Dialogs are best used when you need to force the user to make a decision before continuing. For example, choosing a file to open, or alerting the user that an error has occured.
 
 [Dialog](pages.picoe.ca/docs/api/html/N_Eto_Dialog.htm) is available in two flavours, `Dialog`, and `Dialog<T>`. 
-`Dialog<T>` returns a result on closing which is very useful for obtaining the result of a user choice, such as Ok or Cancel or even a filename.
+`Dialog<T>` returns a result on closing which is very useful for obtaining a users choice, such as Ok, Cancel or even a filename.
 
 <!-- TODO : Research DialogDisplayMode> -->
+
 
 ## Semi-Model Dialogs
 Dialogs can also be run as semi-modal, meaning, code execution is blocked, but the user can still input information to the command line and interact with Rhino.
@@ -98,7 +100,7 @@ Dialogs can also be run as semi-modal, meaning, code execution is blocked, but t
     dialog.DefaultButton = new Button()
     dialog.AbortButton = new Button()
 
-    dialog.ShowSemiModal(doc, parent);
+    dialog.ShowSemiModal(__rhino_doc__, parent); // <-- Code execution stops here
   ```
 
   </div>
@@ -118,7 +120,7 @@ Dialogs can also be run as semi-modal, meaning, code execution is blocked, but t
   dialog.DefaultButton = Button()
   dialog.AbortButton = Button()
 
-  EtoExtensions.ShowSemiModal(dialog, sc.doc, parent)
+  EtoExtensions.ShowSemiModal(dialog, sc.doc, parent) # <-- Code execution stops here
   ```
 
   </div>

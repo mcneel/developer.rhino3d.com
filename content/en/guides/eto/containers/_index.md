@@ -21,7 +21,7 @@ platforms = [ "Windows", "Mac" ]
 +++
 
 ## What are Containers?
-Containers in eto are controls designed to contain other eto controls. Containers (mostly) help us create responsive layouts which resize to the dialog or form.
+Containers in eto are controls designed to contain other eto controls. Containers help us create responsive layouts which resize to the dialog or form.
 
 ## Panels
 Panels are a single control container, and mostly used for adding padding.
@@ -102,7 +102,7 @@ dialog.ShowModal(parent)
 {{< /row >}}
 
 ## Tables
-Table layouts are tabley
+Table layouts make responsive grids very simple.
 
 {{< row >}}
 {{< column >}}
@@ -128,10 +128,18 @@ var tableLayout = new TableLayout()
     Padding = 8,
     Spacing = new (4, 4),
     Rows = {
-        new TableRow(new Button() { Text = "1" }, new Button() { Text = "2" }, new Button() { Text = "3" }),
-        new TableRow(new Button() { Text = "4" }, new Button() { Text = "5" }, new Button() { Text = "6" }),
-        new TableRow(new Button() { Text = "7" }, new Button() { Text = "8" }, new Button() { Text = "9" }),
-        new TableRow(null, new Button() { Text = "0" }, null),
+        new TableRow(new Button() { Text = "1" }, 
+                     new Button() { Text = "2" }, 
+                     new Button() { Text = "3" }),
+        new TableRow(new Button() { Text = "4" }, 
+                     new Button() { Text = "5" }, 
+                     new Button() { Text = "6" }),
+        new TableRow(new Button() { Text = "7" }, 
+                     new Button() { Text = "8" }, 
+                     new Button() { Text = "9" }),
+        new TableRow(null,
+                     new Button() { Text = "0" },
+                     null),
     }
 };
 

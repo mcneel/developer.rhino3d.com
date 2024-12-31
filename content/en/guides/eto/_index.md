@@ -22,9 +22,11 @@ platforms = [ "Windows", "Mac" ]
 +++
 
 {{< call-out note "Follow Along" >}}
-  It is worth noting that many, if not all of these pages will have code samples. If you're new to Eto, or even an advanced user, it is recommended to open the [script editor](http://localhost:1313/guides/scripting/scripting-command/#first-script) and copy/paste (or better yet write out!) the sample code so you can walk through and understand how Eto works.
+  If you're new to Eto, or even an advanced user, it is recommended to open the [script editor](http://localhost:1313/guides/scripting/scripting-command/#first-script) and copy/paste (or better yet write out!) the sample code so you can walk through and understand how Eto works.
 
-  Each page with samples will have both C# and Python 3, will work on both Windows and Mac and assumes little familiarity with Rhino.
+  Each page with samples will have both C# and Python 3 (The samples ARE NOT designed for Python 2), will work on both Windows and Mac and assumes little familiarity with Rhino.
+
+  If you're new to programming, this guide will not cover the basics, but will help you dive headfirst into C# or Python.
 {{< /call-out >}}
 
 {{< row >}}
@@ -34,7 +36,6 @@ platforms = [ "Windows", "Mac" ]
 
 - [What is Eto?](what-is-eto/)
 - [Why Eto?](why-eto/)
-<!-- - [What's New?](whats-new/) -->
 
 {{< /column >}}
 {{< column >}}
@@ -62,6 +63,7 @@ platforms = [ "Windows", "Mac" ]
     - [Stack Layouts](containers#stack-layouts)
     - [Dynamic Layouts](containers#dynamic-layouts)
     - [Pixel Layouts](containers#pixel-layouts)
+- [Control Properties](control-properties)
 <!-- - [Menu Bar](menu-bar) -->
   <!-- Ensure to mention advanced menu bars -->
 <!-- - [Commands](commands) -->
@@ -117,6 +119,7 @@ platforms = [ "Windows", "Mac" ]
   <!-- Very detailed explination of Bindings -->
   <!-- Why do I need to bind to a property? -->
 <!-- - [Alternatives to Bindings](view-and-data/alternatives) {{%comingsoon-label %}} -->
+<!-- - [Focus](focus) {{%comingsoon-label %}} -->
 
 {{< /column >}}
 {{< /row >}}

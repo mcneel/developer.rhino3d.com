@@ -26,27 +26,25 @@ toc_type = "single"
 +++
 
 Eto is a cross platform User Interface (UI) library for dotnet and the UI of choice for Rhino.
-It is an Open Source project created and maintained by [Curtis Wensley](https://www.rhino3d.com/mcneel/contact).
+It is an Open Source project created and maintained by [Curtis Wensley](https://discourse.mcneel.com/u/curtisw/summary).
 
 <!-- Script Editor -->
 
 ## Rhino Examples
+The below examples show simple and extensive projects created entirely in Eto.
 
 #### Grasshopper 2
 ![Grasshopper 2](/images/eto/examples/grasshopper-2.png)
 
-#### Svg Editor
-![Svg Editor](/images/eto/examples/svg-editor.png)
-
 #### Script Editor
 ![Script Editor](/images/eto/examples/script-editor.png)
 
-## Rhino Plug-In Examples
+#### Svg Editor
+![Svg Editor](/images/eto/examples/svg-editor.png)
 
-<!-- TODO : grab screenshots and ask permissions (Lands Design is a good example!) -->
+
+<!-- 
+## Rhino Plug-In Examples
 #### Lands Design
 ![Lands Design](/images/eto/examples/lands-design.png)
-
-## Related topics
-
-- [Why Eto?](../why-eto/)
+-->

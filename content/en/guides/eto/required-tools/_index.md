@@ -20,11 +20,14 @@ platforms = [ "Windows", "Mac" ]
 
 +++
 
+
 # Inside Rhino
 
 ## Scripting in the Script Editor (Rhino or GH) {{% recommended-label %}}
 
-The script editor offers very quick ways to write, test, build and publish plugins with Eto UIs from Rhino or Grasshopper (As of Rhino 8). It is recommended to use this when learning.
+The [Script Editor](/guides/scripting/) offers very quick ways to write, test, build and publish plugins with Eto UIs from Rhino or Grasshopper (As of Rhino 8). It is recommended to use this when learning.
+
+</br>
 
 ## Working from a C# Rhino Plugin
 
@@ -35,6 +38,8 @@ If you are not familiar with Rhino, or setting up Rhino plugins, it is advised t
 
 One you have a working plugin, it would be best to create a new command you can use for debugging.
 
+</br>
+
 # Outside of Rhino
 If you wish to work on eto outside of Rhino, you'll need to install some tools.
 
@@ -44,18 +49,24 @@ Open up your command line and run the following line.
 dotnet new install Eto.Templates
 ```
 
+</br>
+
 # Workflow Recommendations
 
 ## Feedback loop
 The shorter the loop between `Code Written` → `File Saved` → `UI Updated`, the quicker and easier it will be for you to try, experiment and learn.
 
+</br>
+
 ## Hot Reload in C#
 
-Hot reload makes this much much easier and quicker as you can change your UI without having to recompile, and re-run a command, which gets repetative and tiring very quickly.
+Hot reload reduces the feedback loop length by avoiding re-compiling and re-running commands. You can change your UI instantly avoiding repetative and tiring re-compile cycles.
 
 Within Rhino, Hot Reload is only available on Windows, and works best with Visual Studio.
 
-Outside of Rhino, Hot Reload works on both platformss as of net8.0 onwards, for Mac this means Visual Studio Code.
+Outside of Rhino, Hot Reload works on both platformss as of net8.0 onwards, for Mac this means Visual Studio Code or other IDEs such as Rider.
+
+</br>
 
 ### Extending Hot Reload (Advanced)
 This section is a little more advanced, is not mandatory, and can be safely skipped without impacting any of the other guides.
@@ -63,6 +74,8 @@ This section is a little more advanced, is not mandatory, and can be safely skip
 The below code can be copied into a new file in your project, and will automatically call any private or internal `InitializeControls` method on any Eto.Forms. Meaning if you set up your form/dialog correctly, you can have Hot Reload update the entire form allowing for very quick experimentations.
 
  <!-- TODO : Add Video. -->
+
+</br>
 
 ``` cs
 using System;

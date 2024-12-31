@@ -22,7 +22,7 @@ platforms = [ "Windows", "Mac" ]
 <!-- Sizing, automatic, manual etc. -->
 
 ## 1. Batteries Included
-All the required Eto dependencies are bundled with Rhino, it's easy to get going quickly and does not require any other dependencies
+All the required Eto dependencies are bundled with Rhino.
 
 ## 2. It's Rhino!
 Rhino uses Eto! Creating UIs that match the Rhino style are a breeze.

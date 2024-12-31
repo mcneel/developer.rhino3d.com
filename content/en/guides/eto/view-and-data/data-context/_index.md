@@ -26,53 +26,109 @@ toc_type = "single"
 +++
 
 ## An Overview
-All `Eto.Forms.Control` objects have the `DataContext` property.
+All `Eto.Forms.Control` objects have the [`DataContext`](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_BindableWidget_DataContext.htm) property.
 DataContext lets us choose a data object for our object to bind to, this will likely be a ViewModel, or a data object class. But it could even be as simple as an integer.
 If an object does not have bindngs, it will not need a DataContext object.
+The DataContext should not be used for arbitrary data storage, use [Tag](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_Control_Tag.htm) for this.
 
 ## The relationship between DataContext and DataStore
 Some Controls have a `DataStore` property, a good example is the [GridView](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_GridView.htm).
 The DataStore is _similar_ to the DataContext, but should be used differently.
-The DataStore *should always* be an enumerable, such as a list, array, or better yet, an `ObservableCollection<T>`.
+The DataStore *should always* be an enumerable, such as a list, array, or better yet, an [`ObservableCollection<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-7.0).
 
 ## Trickle Down
 A very useful feature to be aware of is the trickle-down effect of DataContext.
-Any Control, (including Forms and Dialogs) that has a DataContext will bequeath the DataContext to every child control meaning that this can be accessed anywhere in your UI Tree.
+Any Control, (including Forms and Dialogs) that has a DataContext will set the DataContext of every child control meaning that this can be accessed anywhere in your UI Tree.
 If a child control overrides its DataContext with a new DataContext then a new lineage of this DataContext is created.
 
-<!-- TODO : Include a python sample -->
-``` cs
+
+<div class="codetab">
+  <button class="tablinks1" onclick="openCodeTab(event, 'cs1')" id="defaultOpen1">C#</button>
+  <button class="tablinks1" onclick="openCodeTab(event, 'py1')">Python</button>
+</div>
+
+<div class="tab-content">
+  <div class="codetab-content1" id="cs1">
+
+```cs
+using Eto.Forms;
+
+using Rhino.UI;
+
+class MyMainViewModel {}
+class MyNewViewModel {}
+
 var dialog = new Dialog()
 {
   DataContext = new MyMainViewModel(), // <-- Start of Main View Model
   Content = new TableLayout()
   {
     Rows = {
-      new TableRow(
-        new PixelLayout()
+      new TableRow( // <-- TableRow has a DataContext of MyMainViewModel
+        new StackLayout() // <-- StackLayout has a DataContext of MyNewViewModel
         {
           DataContext = new MyNewViewModel(), // <-- Start of New View Model
           Items = {
-            new Drawable(),
-            new Button() // <-- Button has a DataContext of MyNewViewModel
+            new Drawable(), // <-- Drawable has a DataContext of MyNewViewModel
+            new Button()    // <-- Button has a DataContext of MyNewViewModel
           }
         }
       ),
-      new TableRow(
+      new TableRow(    // <-- TableRow has a DataContext of MyMainViewModel
         new Button(),
         new Button(), // <-- Buttons all have a DataContext of MyMainViewModel
-        new Button(), 
+        new Button()
       ),
     }
   }
 };
+
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.ShowModal(parent);
 ```
 
-{{< call-out warning "Common DataContext Mistake" >}}
-DataContext is often not an available property until the Form has been constructed.
-Trying to access the DataContext from the constructor of a control or form will likely fail.
-{{< /call-out >}}
+</div>
+<div class="codetab-content1" id="py1">
 
+```py
+import scriptcontext as sc
+ 
+import Rhino
+from Rhino.UI import RhinoEtoApp, EtoExtensions
+from Eto.Forms import *
+from Eto.Drawing import *
+ 
+parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+
+class MyMainViewModel():
+  pass
+
+class MyNewViewModel():
+  pass
+
+stack_layout = StackLayout()
+stack_layout.DataContext = MyNewViewModel()
+
+# Drawable has a DataContext of MyNewViewModel
+stack_layout.Items.Add(StackLayoutItem(Drawable()))
+
+# Button has a DataContext of MyNewViewModel
+stack_layout.Items.Add(StackLayoutItem(Button()))
+
+table_layout = TableLayout()
+table_layout.Rows.Add(TableRow(TableCell(stack_layout)))
+
+# Buttons and TableRow all have a DataContext of MyMainViewModel
+table_layout.Rows.Add(TableRow(TableCell(Button()), TableCell(Button()), TableCell(Button())))
+
+dialog = Dialog()
+dialog.DataContext = MyMainViewModel()
+dialog.Content = table_layout
+
+dialog.ShowModal(parent)
+```
+  </div>
+</div>
 
 ## Related topics
 

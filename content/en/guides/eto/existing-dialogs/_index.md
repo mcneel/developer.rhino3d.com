@@ -148,7 +148,7 @@ dialog.ShowModal()
 ## File Dialogs
 File dialogs make prompting users to choose new and existing files simple.
 
-If you need to prompt for a folder, there is the [SelectFoldereDialog](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_SelectFolderDialog.htm)
+If you need to prompt for a folder, there is the [SelectFolderDialog](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_SelectFolderDialog.htm)
 
 {{< call-out warning "Your Data is Safe" >}}
   The below example **does not** save or open any files you choose.

@@ -21,25 +21,25 @@ platforms = [ "Windows", "Mac" ]
 +++
 
 {{< call-out info "No Python yet" >}}
-  This guide does not cover async within the python context (yet).
+  This guide does not cover async within the python context.
 {{< /call-out >}}
 
 ## Fear not
-Asyncronous programming can seem like a tricky and even dangerous part of desktop programming, but this page will steer you in a safe direction away from potential crashes or a frozen rhino.
+Asynchronous programming can seem like a tricky and even dangerous part of desktop programming, but this page will steer you in a safe direction away from potential crashes or a frozen rhino.
 
 # The Line
-As Rhino is syncronous, our plugins and associated UIs must draw a clear line between sync and async. This is a very good line to understand clearly, and this page will go over it in detail.
+As Rhino is synchronous, our plugins and associated UIs must draw a clear line between sync and async. This is a very good line to understand clearly, and this page will go over it in detail.
 
 There are 3 ways async and non async can mix, with mixed outcomes.
 
 ### 1. Events
-Events are a quite seamless line between async and non-async. They allow us await async code, and run nicely in the background as we'd like async to do. They can however crash if not created carefully.
+Events are a quite seamless line between async and non-async. They allow us to use await async code, and run tasks nicely in the background as we'd like async to do. They can however crash if not created carefully.
 
 ``` cs
-// syncronous event invoker
+// synchronous event invoker
 RhinoApp.Idle += MyEvent;
 
-// asyncronous event handler
+// asynchronous event handler
 async void MyEvent(object sender, EventArgs e)
 {
   RhinoApp.Idle -= MyEvent;
@@ -47,7 +47,7 @@ async void MyEvent(object sender, EventArgs e)
 ```
 
 ### 2. Eto Invoke
-Eto's [AsyncInvoke](http://pages.picoe.ca/docs/api/html/M_Eto_Forms_Application_AsyncInvoke.htm) provides an asyncronous context within synronous methods. This method also has the same crash potential as described below with `async void`.
+Eto's [AsyncInvoke](http://pages.picoe.ca/docs/api/html/M_Eto_Forms_Application_AsyncInvoke.htm) provides an asynchronous context within synronous methods. This method also has the same crash potential as described below with `async void`.
 
 ``` cs
 using System.Net.Http;
@@ -112,7 +112,7 @@ async void MyEvent(object sender, EventArgs e)
 ```
 
 ### Blocking with await
-Async can never be awaited in syncronous contexts. There is no safe way to do this.
+Async can never be awaited in synchronous contexts. There is no safe way to do this.
 
 // TODO : Why does this work?
 
