@@ -90,14 +90,35 @@ d-topics-list iframe{
 	color: white;
   }
   
-  .codetab-content {
-	display: none;
-	padding: 6px 12px;
-	background-color: $codetab-background;
-	border: 1px solid #ccc;
+  /* This is a bit of a kludge due to how highlightjs.html selects the codetab-content, but
+  it is preferable to making the javascript slower and less maintainable. See: WWW-2746 */
+  .codetab-content,
+  .codetab-content1,
+  .codetab-content2,
+  .codetab-content3,
+  .codetab-content4,
+  .codetab-content5,
+  .codetab-content6,
+  .codetab-content7,
+  .codetab-content8,
+  .codetab-content9,
+  .codetab-content10,
+  .codetab-content11,
+  .codetab-content12,
+  .codetab-content13,
+  .codetab-content14,
+  .codetab-content15,
+  .codetab-content16,
+  .codetab-content17,
+  .codetab-content18,
+  .codetab-content19,
+  .codetab-content20, {
+	  display: none;
+	  padding: 6px 12px;
+	  background-color: $codetab-background;
+	  border: 1px solid #ccc;
     border-radius: 4px;
   }
-
 
 /* 
 ####################################################################
