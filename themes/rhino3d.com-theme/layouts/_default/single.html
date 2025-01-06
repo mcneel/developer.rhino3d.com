@@ -13,7 +13,7 @@
       {{ if .Params.page_options.toc }}
         {{ partial "toc.html" . }}
       {{ end }}
-      <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
+      <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ if .Params.page_options.narrow }} toc-no-narrow{{ end }}{{ end }}">
         {{/* partial "breadcrumbs.html" . */}}
         {{ if ne false (.Params.page_options.show_title) }}
         <h1>{{ .Page.Title }}</h1>

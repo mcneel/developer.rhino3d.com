@@ -1,1 +1,1 @@
-{{- if eq (getenv "MCNEEL_REGION") "EMEA" -}}€{{- else -}}${{- end -}}
+{{- if eq (.Page.Params.MCNEEL_REGION | default (getenv "MCNEEL_REGION"| default "NAPA")) "EMEA" -}}€{{- else -}}${{- end -}}

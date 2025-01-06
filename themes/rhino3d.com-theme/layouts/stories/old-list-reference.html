@@ -6,7 +6,7 @@
   {{ if .Params.page_options.toc }}
     {{ partial "toc.html" . }}
   {{ end }}
-  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ end }}">
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ if .Params.page_options.narrow }} toc-no-narrow{{ end }}{{ end }}">
     {{/*  Rhino 7  ------------------------------------------------------------------------------------ */}}
     {{ if eq .Site.Params.latestRhinoVersion 7 }}
         <h1>{{ .Title }}</h1>
