@@ -62,9 +62,22 @@ Dialogs are modal, Forms are non-modal. Which just means that when you show a di
   </div>
 </div>
 
+
 If you paste this into your script editor and run, the Form will show, and then the dialog, however code written after the dialog will not be run until the dialog is closed. It is important to choose a Form or Dialog correctly. It can however be changed easily later on without too much extra effort.
 
 ## Forms
+
+{{< code language="python" >}}
+import scriptcontext as sc
+
+  from Eto.Forms import Form, Dialog
+
+  form = Form()
+  form.Show()
+
+  dialog = Dialog()
+  dialog.ShowModal() # <-- Code execusion stops here
+{{< /code >}}
 
 Forms are best used when you want to present information or controls to the user that mix input between the form and the parent window, i.e Rhino. If you want users to be able to run commands and interact with Rhino, a form is the most flexible choice.
 
