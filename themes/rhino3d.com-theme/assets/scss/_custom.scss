@@ -497,11 +497,20 @@ li .new-callout-bullet {
 
 /*
 ##################################################################
-# Figures with square borders
+# Figures variations
 ##################################################################
 */
 .figure-bordered {
 	border: 1px solid $global-medium-grey;
+}
+
+.figure-no-margins {
+	margin: 0;
+	display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0em;
+    margin-inline-end: 0em;
 }
 
 
@@ -690,7 +699,8 @@ table.multiline-middle img{
 	font-weight: bold;
 	line-height: 1.2em;
 	text-align: center;
-	width: 1.2em;
+	min-width: 1.2em;
+    padding: .2em;
 }
 
 .keyboard-btn {

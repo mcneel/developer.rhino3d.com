@@ -48,18 +48,20 @@ CRhinoCommand::result CCommandTest::RunCommand(
   points.Append( ON_3dPoint(2, 4, 0) );
   points.Append( ON_3dPoint(4, 2, 0) );
   points.Append( ON_3dPoint(4, 0, 0) );
-
-  ON_NurbsCurve* nc = ON_NurbsCurve::New();
-  nc->CreateClampedUniformNurbs( 3, 4, points.Count(), points );
-
-  if( nc->IsValid() )
+ 
+  CRhinoCommand::result res;
+  ON_NurbsCurve nc;
+  if ( nc.CreateClampedUniformNurbs( 3, 4, points.Count(), points)
+    && nc.IsValid())
   {
-    context.m_doc.AddCurveObject( *nc );
-    context.m_doc.Redraw();
+    context.m_doc.AddCurveObject( nc );
+    res = CRhinoCommand::success;
   }
+  else
+    res = CRhinoCommand::failure;
 
-  RhinoApp().ActiveDoc()->Redraw();
-  return CRhinoCommand::success;
+  context.m_doc.Redraw();
+  return res;
 }
 ```
 
@@ -81,28 +83,34 @@ CRhinoCommand::result CCommandTest::RunCommand(
   int order = 4;
   int cv_count = points.Count();
 
-  ON_NurbsCurve* nc = ON_NurbsCurve::New(dimension, bIsRat, order, cv_count);
-  if( !nc )
-        return CRhinoCommand::failure;
+  ON_NurbsCurve nc(dimension, bIsRat, order, cv_count);
+  if( !nc.IsValid() )
+  {
+    return CRhinoCommand::failure;
+  }
 
   //Set CV points
-  nc->ReserveCVCapacity( cv_count );
-  for( int i = 0; i < points.Count(); i++ )
+  nc.ReserveCVCapacity( cv_count );
+  for( int i = 0; i < cv_count; i++ )
   {
-        nc->SetCV(i, points[i] );
+    nc.SetCV(i, points[i] );
   }
 
   //Set Knots
-  nc->ReserveKnotCapacity( order+cv_count-2 );
-  ON_MakeClampedUniformKnotVector( order, cv_count, nc->m_knot );
+  nc.ReserveKnotCapacity( order+cv_count-2 );
+  ON_MakeClampedUniformKnotVector( order, cv_count, nc.m_knot );
 
-  if( nc->IsValid() )
+  CRhinoCommand::result res;
+
+  if( nc.IsValid() )
   {
-    context.m_doc.AddCurveObject( *nc );
-    context.m_doc.Redraw();
+    context.m_doc.AddCurveObject( nc );
+    res = CRhinoCommand::success;
   }
+  else
+    res = CRhinoCommand::failure;
 
-  RhinoApp().ActiveDoc()->Redraw();
-  return CRhinoCommand::success;
+  context.m_doc.Redraw();
+  return res;
 }
 ```

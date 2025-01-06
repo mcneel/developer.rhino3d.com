@@ -265,9 +265,18 @@
 	}
 } 
 
-/* This moves the ming article page to the left with no TOC */
+/* This moves the main article page to the left with no TOC but maintains full width*/
 .toc-no {
 	margin-left: 0;
+}
+
+/* On some pages, we want to hide the TOC, but also have a more narrow width, but stay centered*/
+@media only screen and (min-width: $global-desktop-maxwidth) {
+  .toc-no-narrow {
+    max-width: $global-mobile-maxwidth + 2;
+    margin-right: ($global-desktop-maxwidth - ($global-mobile-maxwidth + 2)) / 2;
+    margin-left: ($global-desktop-maxwidth - ($global-mobile-maxwidth + 2)) / 2;
+  }
 }
 
 .footer-flex {

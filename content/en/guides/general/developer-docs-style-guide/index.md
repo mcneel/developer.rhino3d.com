@@ -679,12 +679,12 @@ produces
 Use the `figure` shortcode to insert images with captions like this:
 
 ```
-{{</* figure src="/images/light-falloff-after.png" caption="Lights have a falloff value that can be set to inverse squared which mimics how light fades with distance." */>}}
+{{</* figure src="/images/archimedean-spirals-01.png" caption="An Archimedean Spiral." caption-align="left" */>}}
 ```
 
 produces:
 
-{{< figure src="/images/light-falloff-after.png" caption="Lights have a falloff value that can be set to inverse squared which mimics how light fades with distance." >}}
+{{< figure src="/images/archimedean-spirals-01.png" caption="An Archimedean Spiral."  caption-align="left" >}}
 
 Optionally, you can also use the [gallery](#gallery) and [load-photoswipe](#load-photoswipe) shortcodes to embed figures in a gallery and pop-up an image overlay when users click or tap on the image.
 
