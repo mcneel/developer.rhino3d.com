@@ -20,6 +20,8 @@ platforms = [ "Windows", "Mac" ]
 
 +++
 
+<!-- cs -- Tested on Win/Mac -->
+
 ## What's the difference?
 Dialogs are modal, Forms are non-modal. Which just means that when you show a dialog, the program blocks further input until the dialog is closed. A form however allows for input to continue. Let's look at a simple example.
 

@@ -20,6 +20,8 @@ platforms = [ "Windows", "Mac" ]
 
 +++
 
+<!-- cs -- Tested on Win/Mac -->
+
 ## Message Box
 [MessageBox](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_MessageBox.htm) is a very simple and highly useful dialog for handling control flow and allowing users to make informed decisions.
 
@@ -110,8 +112,8 @@ The Color Picker is a button that shows the [ColorDialog](http://api.etoforms.pi
     Width = 80,
     Height = 80,
     Padding = 8,
-    Content = new ColorPicker();
-  }
+    Content = new ColorPicker()
+  };
   
   dialog.ShowModal();
   ```

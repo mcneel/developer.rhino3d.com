@@ -20,6 +20,8 @@ platforms = [ "Windows", "Mac" ]
 
 +++
 
+<!-- cs -- Tested on Win/Mac -->
+
 ## What are Containers?
 Containers in eto are controls designed to contain other eto controls. Containers help us create responsive layouts which resize to the dialog or form.
 
@@ -69,8 +71,9 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
+
 from Eto.Forms import *
-from Eto.Drawing import *
+from Eto.Drawing import Padding, Colors
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
@@ -158,7 +161,7 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import *
-from Eto.Drawing import *
+from Eto.Drawing import Padding, Size
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
@@ -281,7 +284,7 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import *
-from Eto.Drawing import *
+from Eto.Drawing import Padding, Size
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
@@ -304,8 +307,8 @@ stack_layout.Items.Add(StackLayoutItem(button_one))
 stack_layout.Items.Add(StackLayoutItem(button_two))
 stack_layout.Items.Add(StackLayoutItem(button_three))
 
-dialog.Content = stack_layout;
-dialog.ShowModal(parent);
+dialog.Content = stack_layout
+dialog.ShowModal(parent)
   ```
 
   </div>
@@ -383,7 +386,7 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import *
-from Eto.Drawing import *
+from Eto.Drawing import Padding, Size
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 

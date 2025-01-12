@@ -20,6 +20,8 @@ platforms = [ "Windows", "Mac" ]
 
 +++
 
+<!-- cs -- Tested on Win/Mac -->
+
 ## Enabled
 Controls are by default enabled, but can be disabled with `Enabled = false`. When a control is disabled it will not respond to any of its events, such as mouse interaction or keys,.
 
@@ -57,10 +59,10 @@ dialog.ShowModal(parent);
   ```py
 import scriptcontext as sc
 
-from Eto.Drawing import *
+from Eto.Drawing import Padding
 from Eto.Forms import *
 
-from Rhino.UI import *
+from Rhino.UI import RhinoEtoApp
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
@@ -109,6 +111,8 @@ var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
 var dialog = new Dialog()
 {
+    Width = 200,
+    Height = 200,
     Padding = 8,
     Content = new Button() { Text = "Invisible", Visible = false }
 };
@@ -122,10 +126,10 @@ dialog.ShowModal(parent);
   ```py
 import scriptcontext as sc
 
-from Eto.Drawing import *
+from Eto.Drawing import Padding
 from Eto.Forms import *
 
-from Rhino.UI import *
+from Rhino.UI import RhinoEtoApp
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
@@ -134,6 +138,8 @@ button.Text = "Invisible"
 button.Visible = False
 
 dialog = Dialog()
+dialog.Width = 200
+dialog.Height = 200
 dialog.Padding = Padding(8)
 dialog.Content = button
 dialog.ShowModal(parent)
@@ -190,7 +196,7 @@ var dialog = new Dialog()
 {
     Padding = 28,
     Content = button,
-    Cursor = Cursors.Crosshair;
+    Cursor = Cursors.Crosshair
 };
 
 dialog.ShowModal(parent);
@@ -202,10 +208,10 @@ dialog.ShowModal(parent);
   ```py
 import scriptcontext as sc
 
-from Eto.Drawing import *
+from Eto.Drawing import Padding
 from Eto.Forms import *
 
-from Rhino.UI import *
+from Rhino.UI import RhinoEtoApp
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 

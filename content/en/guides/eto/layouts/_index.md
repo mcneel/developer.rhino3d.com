@@ -87,7 +87,7 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import *
-from Eto.Drawing import *
+from Eto.Drawing import Padding, Size
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
@@ -181,7 +181,7 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import *
-from Eto.Drawing import *
+from Eto.Drawing import Padding, Size
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 

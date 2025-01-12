@@ -20,6 +20,8 @@ platforms = [ "Windows", "Mac" ]
 
 +++
 
+ <!-- cs -- Tested on Win/Mac -->
+
 ## Buttons
 Buttons offer simple click → action functionality.
 
@@ -61,8 +63,10 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
+
+from Eto.Drawing import Padding
 from Eto.Forms import *
-from Eto.Drawing import *
+
 
 def show_message(sender, e):
   MessageBox.Show("You clicked me")
@@ -139,8 +143,9 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
+
+from Eto.Drawing import Padding
 from Eto.Forms import *
-from Eto.Drawing import *
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
@@ -216,8 +221,9 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
+
+from Eto.Drawing import Padding, Size
 from Eto.Forms import *
-from Eto.Drawing import *
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
@@ -269,7 +275,7 @@ var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 var checkBox = new CheckBox()
 {
     Text = "Check Please",
-    Checked
+    Checked = true,
 };
 
 var dialog = new Dialog()
@@ -290,7 +296,7 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import *
-from Eto.Drawing import *
+from Eto.Drawing import Padding, Size
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
@@ -298,6 +304,7 @@ dialog = Dialog()
 dialog.Padding = Padding(8)
 
 check_box = CheckBox()
+check_box.Checked = True
 check_box.Text = "Check Please"
 
 dialog.Content = check_box
@@ -363,7 +370,7 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import *
-from Eto.Drawing import *
+from Eto.Drawing import Padding, Size
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
@@ -440,7 +447,7 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import *
-from Eto.Drawing import *
+from Eto.Drawing import Padding, Size
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
@@ -450,7 +457,7 @@ dialog.Padding = Padding(8)
 text_area = TextArea()
 
 text_area.TextAlignment = TextAlignment.Left
-text_area.AcceptsReturn = true
+text_area.AcceptsReturn = True
 text_area.Width = 200
 text_area.Height = 200
 
