@@ -34,11 +34,19 @@ Dialogs are modal, Forms are non-modal. Which just means that when you show a di
 
   ```cs
 using Eto.Forms;
-
-var form = new Form();
+ 
+var form = new Form()
+{
+    Width = 100,
+    Height = 100
+};
 form.Show();
-
-var dialog = new Dialog();
+ 
+var dialog = new Dialog()
+{
+    Width = 100,
+    Height = 100
+};
 dialog.ShowModal(); // <-- Code execution stops here
   ```
 
@@ -47,14 +55,16 @@ dialog.ShowModal(); // <-- Code execution stops here
   <div class="codetab-content" id="py">
 
   ```py
-import scriptcontext as sc
-
 from Eto.Forms import Form, Dialog
 
 form = Form()
+form.Width = 100
+form.Height = 100
 form.Show()
 
 dialog = Dialog()
+dialog.Width = 100
+dialog.Height = 100
 dialog.ShowModal() # <-- Code execusion stops here
   ```
 
@@ -92,12 +102,19 @@ Dialogs can also be run as semi-modal, meaning, code execution is blocked, but t
   <div class="codetab-content1" id="cs1">
 
   ```cs
-var dialog = new Dialog();
+using Eto.Forms;
+
+using Rhino.UI;
+
+var dialog = new Dialog() { 
+    Width = 100,
+    Height = 100
+};
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
 // DefaultButton and AbortButton is required for SemiModal
-dialog.DefaultButton = new Button()
-dialog.AbortButton = new Button()
+dialog.DefaultButton = new Button();
+dialog.AbortButton = new Button();
 
 dialog.ShowSemiModal(__rhino_doc__, parent); // <-- Code execution stops here
   ```
@@ -107,17 +124,20 @@ dialog.ShowSemiModal(__rhino_doc__, parent); // <-- Code execution stops here
 
   ```py
 import scriptcontext as sc
-
+ 
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Eto.Forms import Dialog, Button
-
+ 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
-
+ 
 dialog = Dialog()
+dialog.Width = 100
+dialog.Height = 100
+
 # DefaultButton and AbortButton is required for SemiModal
 dialog.DefaultButton = Button()
 dialog.AbortButton = Button()
-
+ 
 EtoExtensions.ShowSemiModal(dialog, sc.doc, parent) # <-- Code execution stops here
   ```
 

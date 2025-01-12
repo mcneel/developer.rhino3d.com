@@ -1,4 +1,4 @@
 {
     "git.ignoreLimitWarning": true,
-    "github.copilot.inlineSuggest.enable": true
+    "github.copilot.editor.enableAutoCompletions": true
 }
