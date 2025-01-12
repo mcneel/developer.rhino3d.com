@@ -26,7 +26,7 @@ platforms = [ "Windows", "Mac" ]
 
   Each page with samples will have both C# and Python 3 (The samples ARE NOT designed for Python 2), will work on both Windows and Mac and assumes little familiarity with Rhino.
 
-  If you're new to programming, this guide will not cover the basics, but will help you dive headfirst into C# or Python.
+  If you're new to programming, this guide will not cover the basics, but will help you dive headfirst into C# and/or Python.
 {{< /call-out >}}
 
 {{< row >}}

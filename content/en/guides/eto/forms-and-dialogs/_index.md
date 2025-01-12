@@ -33,13 +33,13 @@ Dialogs are modal, Forms are non-modal. Which just means that when you show a di
   <div class="codetab-content" id="cs">
 
   ```cs
-  using Eto.Forms;
+using Eto.Forms;
 
-  var form = new Form();
-  form.Show();
+var form = new Form();
+form.Show();
 
-  var dialog = new Dialog();
-  dialog.ShowModal(); // <-- Code execution stops here
+var dialog = new Dialog();
+dialog.ShowModal(); // <-- Code execution stops here
   ```
 
   </div>
@@ -47,16 +47,15 @@ Dialogs are modal, Forms are non-modal. Which just means that when you show a di
   <div class="codetab-content" id="py">
 
   ```py
-  #! python3
-  import scriptcontext as sc
+import scriptcontext as sc
 
-  from Eto.Forms import Form, Dialog
+from Eto.Forms import Form, Dialog
 
-  form = Form()
-  form.Show()
+form = Form()
+form.Show()
 
-  dialog = Dialog()
-  dialog.ShowModal() # <-- Code execusion stops here
+dialog = Dialog()
+dialog.ShowModal() # <-- Code execusion stops here
   ```
 
   </div>
@@ -93,34 +92,33 @@ Dialogs can also be run as semi-modal, meaning, code execution is blocked, but t
   <div class="codetab-content1" id="cs1">
 
   ```cs
-    var dialog = new Dialog();
-    var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-    
-    // DefaultButton and AbortButton is required for SemiModal
-    dialog.DefaultButton = new Button()
-    dialog.AbortButton = new Button()
+var dialog = new Dialog();
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
-    dialog.ShowSemiModal(__rhino_doc__, parent); // <-- Code execution stops here
+// DefaultButton and AbortButton is required for SemiModal
+dialog.DefaultButton = new Button()
+dialog.AbortButton = new Button()
+
+dialog.ShowSemiModal(__rhino_doc__, parent); // <-- Code execution stops here
   ```
 
   </div>
   <div class="codetab-content1" id="py1">
 
   ```py
-  #! python3
-  import scriptcontext as sc
+import scriptcontext as sc
 
-  from Rhino.UI import RhinoEtoApp, EtoExtensions
-  from Eto.Forms import Dialog, Button
+from Rhino.UI import RhinoEtoApp, EtoExtensions
+from Eto.Forms import Dialog, Button
 
-  parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-  dialog = Dialog()
-  # DefaultButton and AbortButton is required for SemiModal
-  dialog.DefaultButton = Button()
-  dialog.AbortButton = Button()
+dialog = Dialog()
+# DefaultButton and AbortButton is required for SemiModal
+dialog.DefaultButton = Button()
+dialog.AbortButton = Button()
 
-  EtoExtensions.ShowSemiModal(dialog, sc.doc, parent) # <-- Code execution stops here
+EtoExtensions.ShowSemiModal(dialog, sc.doc, parent) # <-- Code execution stops here
   ```
 
   </div>

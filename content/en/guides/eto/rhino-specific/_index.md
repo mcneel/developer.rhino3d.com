@@ -40,11 +40,11 @@ A dialog will temporarily hide the editor until it is closed.
   <div class="codetab-content" id="cs">
 
   ```cs
-  using Rhino.UI;
-  using Eto.Forms;
+using Rhino.UI;
+using Eto.Forms;
 
-  var myForm = new Form();
-  myForm.Show(__rhino_doc__);
+var myForm = new Form();
+myForm.Show(__rhino_doc__);
   ```
 
   </div>
@@ -52,7 +52,6 @@ A dialog will temporarily hide the editor until it is closed.
   <div class="codetab-content" id="py">
 
 ```py
-#! python3
 import scriptcontext as sc
 
 from Rhino.UI import EtoExtensions
@@ -78,43 +77,42 @@ EtoExtensions.Show(form, sc.doc)
   <div class="codetab-content1" id="cs1">
 
   ```cs
-  using Rhino.UI;
-  
-    var myDialog = new Dialog();
-    var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-    
-    dialog.ShowModal(parent)
-    // or
+using Rhino.UI;
 
-    // DefaultButton and AbortButton is required for SemiModal
-    dialog.DefaultButton = new Button()
-    dialog.AbortButton = new Button()
+var myDialog = new Dialog();
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
-    dialog.ShowSemiModal(__rhino_doc__, parent);
+dialog.ShowModal(parent)
+// or
+
+// DefaultButton and AbortButton is required for SemiModal
+dialog.DefaultButton = new Button()
+dialog.AbortButton = new Button()
+
+dialog.ShowSemiModal(__rhino_doc__, parent);
   ```
 
   </div>
   <div class="codetab-content1" id="py1">
 
   ```py
-  #! python3
-  import scriptcontext as sc
+import scriptcontext as sc
 
-  from Rhino.UI import RhinoEtoApp, EtoExtensions
-  from Eto.Forms import Dialog, Button
+from Rhino.UI import RhinoEtoApp, EtoExtensions
+from Eto.Forms import Dialog, Button
 
-  parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-  dialog = Dialog()
+dialog = Dialog()
 
-  dialog.ShowModal(parent)
-  # or
+dialog.ShowModal(parent)
+# or
 
-  # DefaultButton and AbortButton is required for SemiModal
-  dialog.DefaultButton = Button()
-  dialog.AbortButton = Button()
+# DefaultButton and AbortButton is required for SemiModal
+dialog.DefaultButton = Button()
+dialog.AbortButton = Button()
 
-  EtoExtensions.ShowSemiModal(dialog, sc.doc, parent)
+EtoExtensions.ShowSemiModal(dialog, sc.doc, parent)
   ```
 
   </div>
@@ -147,11 +145,11 @@ To ensure your form follows the same style as Rhino, and responds correctly to D
   <div class="codetab-content2" id="cs2">
 
   ```cs
-  using Rhino.UI;
-  using Eto.Forms;
+using Rhino.UI;
+using Eto.Forms;
 
-  var myForm = new Form();
-  myForm.UseRhinoStyle();
+var myForm = new Form();
+myForm.UseRhinoStyle();
   ```
 
   </div>
@@ -159,7 +157,6 @@ To ensure your form follows the same style as Rhino, and responds correctly to D
   <div class="codetab-content2" id="py2">
 
 ```py
-#! python3
 from Rhino.UI import EtoExtensions
 from Eto.Forms import form
 
@@ -310,14 +307,14 @@ NOTE : This does not work in the script editor.
   <div class="codetab-content3" id="cs3">
 
   ```cs
-  using Rhino.UI;
-  using Eto.Forms;
+using Rhino.UI;
+using Eto.Forms;
 
-  class MyForm : Form {}
+class MyForm : Form {}
 
-  var myForm = new MyForm();
-  myForm.SavePosition();
-  myForm.Show();
+var myForm = new MyForm();
+myForm.SavePosition();
+myForm.Show();
   ```
 
   </div>
@@ -352,7 +349,7 @@ public static Color ToEto(...);
 public static Image ToEto(...);
 ```
 
-Eto also includes many corresponding ToSD or ToSystemDrawing methods as well should you need to move from Eto to `System.Drawing` types.
+Eto also includes many corresponding ToSD or ToSystemDrawing methods as well should you need to move from `Eto.Forms` types to `System.Drawing` types.
 
 ``` cs
 public static SizeF ToSD(...);
@@ -364,8 +361,187 @@ public static Color ToSystemDrawing(...);
 
 ## Relative Positioning
 
+{{< call-out note "A note on Locations" >}}
+  The Location of any `Eto.Forms.Control` is always positioned at the Top Left.
+{{< /call-out >}}
+
+Locations of Eto Controls are relative. If you call `myControl.Location` the position returned is not the absolute position on the screen.
+
+Let's take the example of the [Table Layout](../containers/#tables) from the [Containers Page](../containers) and add a some code to get the positions of the buttons.
+
+{{< row >}}
+{{< column >}}
+
+<div class="codetab">
+  <button class="tablinks7" onclick="openCodeTab(event, 'cs7')" id="defaultOpen7">C#</button>
+  <button class="tablinks7" onclick="openCodeTab(event, 'py7')">Python</button>
+</div>
+
+<div class="tab-content">
+  <div class="codetab-content7" id="cs7">
+
+  ```cs
+dialog.LoadComplete += (s, e) => {
+    foreach(var button in dialog.Children.OfType<Button>())
+    {
+        button.Text = button.Location.ToString();
+    }
+};
+
+dialog.ShowModal(parent);
+  ```
+
+  </div>
+
+  <div class="codetab-content7" id="py7">
+
+```py
+# TODO : Fill this out
+...
+```
+
+  </div>
+</div>
+
+{{< /column >}}
+{{< column >}}
+
+![Relative Positions](/images/eto/relative-positions.png)
+
+{{< /column >}}
+{{< /row >}}
+
+</br>
+
+Obviously this is useful in the context of the Dynamic Layout, but outside of the context it's not useful. Enter `PointToScreen(...)` which returns the coordinates of a control relative to another control, such as the ParentWindow or even the Screen. Make sure to move the Dialog once its loaded.
+
+
+{{< row >}}
+{{< column >}}
+
+<div class="codetab">
+  <button class="tablinks8" onclick="openCodeTab(event, 'cs8')" id="defaultOpen8">C#</button>
+  <button class="tablinks8" onclick="openCodeTab(event, 'py8')">Python</button>
+</div>
+
+<div class="tab-content">
+  <div class="codetab-content8" id="cs8">
+
+  ```cs
+dialog.LocationChanged += (s, e) => {
+    foreach(var button in dialog.Children.OfType<Button>())
+    {
+        var location = button.PointToScreen(button.Location);
+        button.Text = location.ToString();
+    }
+};
+
+dialog.ShowModal(parent);
+  ```
+
+  </div>
+
+  <div class="codetab-content8" id="py8">
+
+```py
+# TODO : Fill this out
+...
+```
+
+  </div>
+</div>
+
+{{< /column >}}
+{{< column >}}
+
+![Screen Positions](/images/eto/screen-positions.png)
+
+{{< /column >}}
+{{< /row >}}
+
+</br>
+
+// TODO : This is kind of wonky and needs work.
+
+Below is a small dialog with a label that can be dragged to see the Controls Location relative to its Container, Parent Window and the Screen.
+
+{{< row >}}
+{{< column >}}
+
+<div class="codetab">
+  <button class="tablinks9" onclick="openCodeTab(event, 'cs9')" id="defaultOpen9">C#</button>
+  <button class="tablinks9" onclick="openCodeTab(event, 'py9')">Python</button>
+</div>
+
+<div class="tab-content">
+  <div class="codetab-content9" id="cs9">
+
+```cs
+using System.Linq;
+
+using Eto.Forms;
+using Eto.Drawing;
+using Rhino.UI;
+
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+
+var pixelLayout = new PixelLayout() {
+    Width = 400,
+    Height = 400
+};
+
+var dragLabel = new Label() { Text = "Drag Me!" };
+bool drag = false;
+
+dragLabel.MouseDown += (s, e) => {
+    drag = true;
+};
+
+dragLabel.MouseUp += (s, e) => {
+    drag = false;
+};
+
+dragLabel.MouseMove += (s, e) => {
+    if (!drag) return;
+    pixelLayout.Move(dragLabel, (int)e.Location.X, (int)e.Location.Y);
+    dragLabel.Text = e.Location.ToString();
+};
+
+pixelLayout.Add(dragLabel, 10, 10);
+
+var dialog = new Dialog()
+{
+    Content = new Panel() {
+        Content = pixelLayout,
+        Padding = 12
+    }
+};
+
+dialog.ShowModal(parent);
+```
+  </div>
+
+  <div class="codetab-content9" id="py9">
+
+```py
+# TODO : Fill this out
+...
+```
+
+  </div>
+</div>
+
+{{< /column >}}
+{{< column >}}
+
+![Drag Positions](/images/eto/drag-positions.png)
+
+{{< /column >}}
+{{< /row >}}
 
 ``` cs
+public static PointF PointToScreen(...);
+
 public static PointF ToEtoScreen(...);
 public static RectangleF ToEtoScreen(...);
 

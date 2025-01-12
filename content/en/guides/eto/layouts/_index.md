@@ -82,7 +82,6 @@ dialog.ShowModal(parent);
   <div class="codetab-content2" id="py2">
 
   ```py
-#! python3
 import scriptcontext as sc
 
 import Rhino

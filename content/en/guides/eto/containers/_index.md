@@ -153,7 +153,6 @@ dialog.ShowModal(parent);
   <div class="codetab-content2" id="py2">
 
   ```py
-#! python3
 import scriptcontext as sc
 
 import Rhino
@@ -379,7 +378,6 @@ dialog.ShowModal(parent);
   <div class="codetab-content4" id="py4">
 
   ```py
-#! python3
 import scriptcontext as sc
 
 import Rhino
@@ -475,7 +473,6 @@ dialog.ShowModal(parent);
   <div class="codetab-content5" id="py5">
 
   ```py
-#! python3
 import scriptcontext as sc
 
 from Rhino.UI import RhinoEtoApp, EtoExtensions

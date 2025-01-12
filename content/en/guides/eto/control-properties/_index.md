@@ -153,9 +153,13 @@ dialog.ShowModal(parent)
 ## Tag
 Tag allows for attaching an arbitratry piece of data to a Control, it is best to keep this piece of data simple. A number, string, enum or struct. Avoid larger items such as images, and especially other controls. 
 
-This can be very useful when
+This can be very useful when controls are not hard coded, and instead created in loops.
 
 ## Parent(s) & ParentWindow
+{{< call-out note "Parental Guidance" >}}
+  Parent and ParentWindow will not be set until the Control has been added to a Parent/Container, and the Parents to the Window.
+{{< /call-out >}}
+
 All Controls shown in the UI will have a Parent and ParentWindow.
 ParentWindow retrieves the Dialog or Form this control is hosted in. This can be very useful when wanting to set focus to the parent or show another window on top of the current window.
 
