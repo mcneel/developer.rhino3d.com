@@ -28,7 +28,7 @@ toc_type = "single"
 Ensuring a Form or Dialog has an appropriate parent host, and is correctly tied to the calling Rhino Document is very important to avoid dialogs hidden behind Rhino, and issues with multiple open documents.
 
 ## Showing a Form
-It is worth noting that at the time of writing when using the script editor, a form will show *behind* the editor in C# and python.
+It is worth noting that at the time of writing when using the script editor, a form may show *behind* the editor in C# and python.
 A dialog will temporarily hide the editor until it is closed.
 
 <div class="codetab">
@@ -79,16 +79,22 @@ EtoExtensions.Show(form, sc.doc)
   ```cs
 using Rhino.UI;
 
-var myDialog = new Dialog();
+using Eto.Forms;
+ 
+var dialog = new Dialog()
+{
+    Width = 200,
+    Height = 200
+};
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-
-dialog.ShowModal(parent)
+ 
+dialog.ShowModal(parent);
 // or
-
+ 
 // DefaultButton and AbortButton is required for SemiModal
-dialog.DefaultButton = new Button()
-dialog.AbortButton = new Button()
-
+dialog.DefaultButton = new Button();
+dialog.AbortButton = new Button();
+ 
 dialog.ShowSemiModal(__rhino_doc__, parent);
   ```
 
@@ -104,6 +110,8 @@ from Eto.Forms import Dialog, Button
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
 dialog = Dialog()
+dialog.Width = 200
+dialog.Height = 200
 
 dialog.ShowModal(parent)
 # or
@@ -148,8 +156,9 @@ To ensure your form follows the same style as Rhino, and responds correctly to D
 using Rhino.UI;
 using Eto.Forms;
 
-var myForm = new Form();
-myForm.UseRhinoStyle();
+var form = new Form();
+form.UseRhinoStyle();
+form.Show();
   ```
 
   </div>
@@ -158,14 +167,17 @@ myForm.UseRhinoStyle();
 
 ```py
 from Rhino.UI import EtoExtensions
-from Eto.Forms import form
+from Eto.Forms import Form
 
 form = Form()
 EtoExtensions.UseRhinoStyle(form)
+form.Show()
 ```
 
   </div>
 </div>
+
+<!-- cs -- Everything above this line has been Tested on Win/Mac -->
 
 // TODO : Organise this better
 

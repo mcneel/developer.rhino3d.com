@@ -25,6 +25,8 @@ toc = true
 toc_type = "single"
 +++
 
+<!-- cs -- WIP -->
+
 ## What is a View Model?
 View Models contain the data and logic that accompnies our UI, separating view logic and model logic keeps our UIs more organised and promotes better coding.
 
