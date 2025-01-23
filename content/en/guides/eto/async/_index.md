@@ -65,7 +65,7 @@ Normally the HttpClient would use `await` to await the results of the post and a
 using System.Net.Http;
 
 var http = new HttpClient();
-http.PostAsync("https://rhino3d.com", null);
+http.PostAsync("https://example.org", null);
 ```
 
 # Scenarios to be aware of
@@ -112,29 +112,39 @@ async void MyEvent(object sender, EventArgs e)
 ```
 
 ### Blocking with await
-Async can never be awaited in synchronous contexts. There is no safe way to do this.
+Async can never be awaited (safely) in synchronous contexts. There is no safe way to do this.
 
-// TODO : Why does this work?
-
-This will freeze your program
+This will freeze your Rhino.
 ``` cs
-using System.Net.Http;
-using Rhino;
+using System;
+using System.Threading.Tasks;
 
-var http = new HttpClient();
-var httpTask = http.PostAsync("https://rhino3d.com", null);
-var result = httpTask.Result;
+async Task<bool> MyAsyncMethod()
+{
+  await Task.Delay(2000);
+  return true;
+}
 
-RhinoApp.WriteLine($"{result.StatusCode}");
+var result = MyAsyncMethod().Result;
+
+RhinoApp.WriteLine("Done!");
 ```
 
-This will also freeze your program
+This will also freeze your Rhino.
 ``` cs
-using System.Net.Http;
-using Rhino;
+using System;
+using System.Threading.Tasks;
 
-var http = new HttpClient();
-var result = http.PostAsync("https://rhino3d.com", null).GetAwaiter().GetResult();
+async Task<bool> MyAsyncMethod()
+{
+  await Task.Delay(2000);
+  return true;
+}
 
-RhinoApp.WriteLine($"{result.StatusCode}");
+var result = MyAsyncMethod().GetAwaiter().GetResult();
+
+Rhino.RhinoApp.WriteLine("Done!");
 ```
+
+### Further Reading
+- [Avoiding Async Deadlocks](https://medium.com/rubrikkgroup/understanding-async-avoiding-deadlocks-e41f8f2c6f5d)
