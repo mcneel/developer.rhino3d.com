@@ -71,6 +71,8 @@ platforms = [ "Windows", "Mac" ]
 <!-- - [Layouts](layouts) -->
   <!-- Spacing, Padding (using nulls to space things out!) all the good stuff  -->
 <!-- - [Sizing](sizing) -->
+  <!-- Spacing, Padding (using nulls to space things out!) all the good stuff  -->
+<!-- - [Pixels](screen-pixels) -->
 
 {{< /column >}}
 {{< column >}}
