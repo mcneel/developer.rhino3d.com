@@ -1,6 +1,6 @@
 +++
 aliases = [ ]
-authors = [ "callum", "curtis" ]
+authors = [ "callum"]
 categories = [ "Eto" ]
 keywords = [ "rhino", "developer", "eto", "ui", "ux" ]
 languages = [ "C#", "Python" ]

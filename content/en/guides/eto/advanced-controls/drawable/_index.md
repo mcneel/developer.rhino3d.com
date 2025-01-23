@@ -1,6 +1,6 @@
 +++
 aliases = [ ]
-authors = [ "callum", "curtis" ]
+authors = [ "callum"]
 categories = [ "Eto" ]
 description = "An overview of the Eto Drawable Control"
 keywords = [ "rhino", "developer", "eto", "ui", "ux" ]

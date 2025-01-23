@@ -1,6 +1,6 @@
 +++
 aliases = [ "8/guides/eto", "/wip"]
-authors = [ "callum", "curtis" ]
+authors = [ "callum"]
 categories = [ "Eto" ]
 description = "Guides that apply to developing UIs across platforms using Eto."
 keywords = [ "rhino", "developer", "eto", "ui", "ux" ]

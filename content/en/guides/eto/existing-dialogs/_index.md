@@ -1,6 +1,6 @@
 +++
 aliases = [ ]
-authors = [ "callum", "curtis" ]
+authors = [ "callum"]
 categories = [ "Eto" ]
 description = "Using the already available dialogs available in Eto makes your application more consistent with Rhino and the operating system your Plug-in is running on. It also saves you time and effort."
 keywords = [ "rhino", "developer", "eto", "ui", "ux" ]

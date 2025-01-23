@@ -1,6 +1,6 @@
 +++
 aliases = [ ]
-authors = [ "callum", "curtis" ]
+authors = [ "callum"]
 categories = [ "Eto" ]
 description = "An overview of using async within a Rhino and Eto context."
 keywords = [ "rhino", "developer", "eto", "ui", "ux" ]

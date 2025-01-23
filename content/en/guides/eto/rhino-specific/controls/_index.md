@@ -1,6 +1,6 @@
 +++
 aliases = [ ]
-authors = [ "callum", "curtis" ]
+authors = [ "callum"]
 categories = [ "Eto" ]
 description = "An introduction to Forms and Dialogs"
 keywords = [ "rhino", "developer", "eto", "ui", "ux" ]

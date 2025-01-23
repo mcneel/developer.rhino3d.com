@@ -1,6 +1,6 @@
 +++
 aliases = [ ]
-authors = [ "callum", "curtis" ]
+authors = [ "callum"]
 categories = [ "Eto" ]
 description = "An overview of Eto Native Controls with the minimum code to get started."
 keywords = [ "rhino", "developer", "eto", "ui", "ux" ]
