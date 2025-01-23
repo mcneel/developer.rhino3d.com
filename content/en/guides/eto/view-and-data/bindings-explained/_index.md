@@ -146,6 +146,44 @@ public class ViewModel : INotifyPropertyChanged // 1.
 1. The DataContext is created and set
 1. Am abstract Binding with the Data Context is created (View Model does not need to exist yet)
 
+## Alternatives to IPropertyNotified
+IPropertyNotified isn't strictly necessary to ensure ViewModel -> UI changes are propagated.
+The following sample showcases the use of UpdateBindings, which will notify the UI as if `OnPropertyChange` was called for all bound properties.
+
+``` cs
+using System;
+
+using Eto.Forms;
+using Eto.Drawing;
+
+using Rhino;
+using Rhino.UI;
+
+var cb = new CheckBox() { Text = "Click Me" };
+var b = Binding.Property((MyViewModel vm) => vm.Checked);
+cb.BindDataContext(c => c.Checked, b.ToBool(true, false));
+
+var vm = new MyViewModel();
+var dialog = new Dialog()
+{
+	MinimumSize = new Size(200, 200),
+	DataContext = vm,
+	Content = cb,
+};
+
+dialog.KeyDown += (s, e) => {
+    vm.Checked = !vm.Checked;
+    dialog.UpdateBindings(BindingUpdateMode.Destination);
+};
+
+public class MyViewModel
+{
+	public bool Checked { get; set; }
+}
+
+dialog.ShowModal();
+```
+
 # Callum, what about the other binding styles? Property names etc?
 
 ## Notes

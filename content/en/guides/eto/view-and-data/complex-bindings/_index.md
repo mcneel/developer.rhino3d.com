@@ -33,64 +33,217 @@ If you haven't read [the introductory page](../binding) on bindings, start there
 
 Bindings in Eto are very powerful, very easy to chain together and as such can get complex. This page attempts to break all the exciting things that can be done with bindings and then use those knowledge chunks to build some of those complex bindings.
 
+# Knowledge Chunks
+
 ## Conversions
 ### Convert\<T>
-
+Convert\<t> makes converting a ViewModel property into a more View appropriate value very simple with the added bonus of keeping the data in the View Model and View simple. In the example below Enums are used for all the value operations whilst the binding takes care of the messy text.
 
 ``` cs
+using Eto;
+using Eto.Forms;
+using Eto.Drawing;
 
+using Rhino;
+using Rhino.UI;
+
+var lb = new Label() { Text = "Go Me" };
+
+var prop = Binding.Property((ViewModel vm) => vm.Value)
+            .Convert((v) => {
+    var str = v switch
+    {
+        MyEnum.Brie => "Brie.. Mmmm..",
+        MyEnum.Cheddar => "Cheddar, my favourite!",
+        MyEnum.Edam => "Edam? No Thanks,",
+        MyEnum.Peccorino => "MMMMMMM",
+        _ => "err!"
+    };
+    return str;
+});
+lb.BindDataContext(l => l.Text, prop);
+
+var viewModel = new ViewModel();
+var dialog = new Dialog()
+{
+  Padding = 8,
+  MinimumSize = new Size(200, 200),
+  Content = lb,
+  DataContext = viewModel,
+};
+
+dialog.KeyDown += (s, e) => {
+    if (e.Key == Keys.Up)
+    {
+        viewModel.MoveUp();
+        e.Handled = true;
+    }
+
+    if (e.Key == Keys.Down)
+    {
+        viewModel.MoveDown();
+        e.Handled = true;
+    }
+};
+
+public enum MyEnum { Brie = 0, Cheddar, Edam, Peccorino }
+
+public class ViewModel : Rhino.UI.ViewModel
+{
+  public MyEnum Value { get; set; }
+
+  public void MoveUp()
+  {
+    Value = ++Value;
+    if (Value > MyEnum.Peccorino)
+    Value = MyEnum.Peccorino;
+    RaisePropertyChanged(nameof(Value));
+  }
+
+  public void MoveDown()
+  {
+    Value = --Value;
+    if (Value < 0)
+        Value = 0;
+    RaisePropertyChanged(nameof(Value));
+  }
+
+}
+
+dialog.ShowModal();
 ```
 
 
 ### OfType\<T>
-
+OfType conveniently allows for objects to be cast into other compatible types.
+The below example uses a list of enums which can be exchanged for ints, very convenient for SelectedIndex.
 
 ``` cs
+using System;
+using System.Linq;
+using System.Collections.ObjectModel;
 
+using Eto;
+using Eto.Forms;
+using Eto.Drawing;
+
+using Rhino;
+using Rhino.UI;
+
+var dd = new DropDown()
+{
+    DataStore = new ObservableCollection<object>(Enum.GetValues<Days>().Cast<object>()),
+};
+
+var prop = Binding.Property((ViewModel vm) => vm.SelectedDay).OfType<int>();
+dd.BindDataContext(l => l.SelectedIndex, prop);
+
+var dialog = new Dialog()
+{
+  Padding = 8,
+  MinimumSize = new Size(200, 200),
+  Content = dd,
+  DataContext = new ViewModel()
+};
+
+public enum Days { Monday = 0, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday }
+
+public class ViewModel : Rhino.UI.ViewModel
+{
+    private Days _selectedDay { get; set; }
+
+    public Days SelectedDay
+    {
+      get => _selectedDay;
+      set
+      {
+        _selectedDay = value;
+      }
+    }
+}
+
+dialog.ShowModal();
 ```
 
 
 ### ToBool
-ToBool offers an easy way to convert `bool?` and `bool`.
+ToBool offers an easy way to convert `bool?` and `bool` bindings. It seems silly and small, but as many View Models will want to use `bool` and many toggleable controls use `bool?`, it's super handy.
 
 ``` cs
+using Eto.Forms;
+using Eto.Drawing;
 
-```
+using Rhino;
+using Rhino.UI;
 
-### EnumToString
+var cb = new CheckBox() { Text = "Click Me" };
 
+// NOTE : Removing ToBool(...) will result in compilation errors
+cb.BindDataContext(c => c.Checked, Binding.Property((MyViewModel vm) => vm.Checked).ToBool(true, false));
 
-``` cs
+var dialog = new Dialog()
+{
+	MinimumSize = new Size(200, 200),
+	DataContext = new MyViewModel(),
+	Content = cb,
+};
 
+public class MyViewModel : ViewModel
+{
+  public bool Checked { get; set; }
+}
+
+dialog.ShowModal();
 ```
 
 ### Child
-
-
-``` cs
-
-```
-
-
-### Inverse
-
+Child lets you access nested properties of a View Model, possibly even from a ViewModel inside the main Model.
 
 ``` cs
+using Eto;
+using Eto.Forms;
+using Eto.Drawing;
 
+using Rhino;
+using Rhino.UI;
+
+var cb = new CheckBox() { Text = "Click Me" };
+cb.BindDataContext(cb => cb.Checked, Binding.Property((ViewModel vm) => vm.Model).Child(vc => vc.Checked).ToBool(true, false));
+
+var dialog = new Dialog()
+{
+  Padding = 8,
+  MinimumSize = new Size(200, 200),
+  Content = cb,
+  DataContext = new ViewModel(),
+};
+
+public class ViewModel : Rhino.UI.ViewModel
+{
+  public InnerViewModel Model { get; set; }	 = new();
+}
+
+public class InnerViewModel : Rhino.UI.ViewModel
+{
+  private bool _checked { get; set; } = false;
+  public bool Checked
+  {
+    get => _checked;
+    set
+    {
+      _checked = value;
+      RaiseInvalidPropertyValue(nameof(Checked));
+      RhinoApp.WriteLine("Checked!");
+    }
+  }
+}
+
+dialog.ShowModal();
 ```
 
-
-### DefaultIfNull
-
-
-``` cs
-
-```
-
-
+<!-- TODO!
 ## Timings
 ### After Delay
-<!-- This needs a good example -->
 
 
 ``` cs
@@ -107,12 +260,17 @@ ToBool offers an easy way to convert `bool?` and `bool`.
 ```
 
 
-### GetValue & SetValue <-- No idea what these do mate
+### GetValue & SetValue <-- No idea what these do
 
 
 ``` cs
 
 ```
+
+-->
+
+# Tying many bindings together
+
 
 
 ## More Reading
