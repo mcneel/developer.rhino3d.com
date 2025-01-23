@@ -4,7 +4,7 @@ authors = [ "curtis", "callum" ]
 categories = [ "Eto"]
 description = "An introduction to Bindings in Eto"
 keywords = [ "Eto", "UI", "Plugin", "DataContext", "Data", "View", "Model", "Binding" ]
-languages = [ "C#", "Python" ]
+languages = [ "C#" ]
 sdk = [ "Eto" ]
 title = "Binding"
 type = "guides"
@@ -24,6 +24,10 @@ byline = true
 toc = true
 toc_type = "single"
 +++
+
+{{< call-out note "View Models" >}}
+  This section is not for Python, python cannot use View Models and bindings in the same way as C#.
+{{< /call-out >}}
 
 ## Introduction
 Bindings pair properties in view models with UI Elements in the Eto Layout.
