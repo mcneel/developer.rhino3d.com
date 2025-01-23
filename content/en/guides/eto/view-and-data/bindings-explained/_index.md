@@ -1,6 +1,6 @@
 +++
 aliases = []
-authors = [ "curtis", "callum" ]
+authors = [ "callum" ]
 categories = [ "Eto"]
 description = "A deep dive into Eto Bindings"
 keywords = [ "Eto", "UI", "Plugin", "DataContext", "Data", "View", "Model", "Binding" ]

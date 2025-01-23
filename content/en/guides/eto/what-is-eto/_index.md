@@ -1,7 +1,7 @@
 +++
 aliases = []
-authors = [ "curtis", "callum" ]
-categories = [ "Eto" ] # What is this?
+authors = [ "callum" ]
+categories = [ "Eto" ]
 description = ""
 keywords = [ "Eto", "UI", "Plugin" ]
 languages = [ "C#" ]

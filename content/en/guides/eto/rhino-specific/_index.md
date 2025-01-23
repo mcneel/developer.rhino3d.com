@@ -1,6 +1,6 @@
 +++
 aliases = []
-authors = [ "curtis", "callum" ]
+authors = [ "callum" ]
 categories = [ "Eto" ]
 description = "Rhino Specific Eto extensions that make your life easier."
 keywords = [ "Eto", "UI", "Plugin" ]

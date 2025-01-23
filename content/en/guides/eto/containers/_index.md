@@ -1,8 +1,8 @@
 +++
 aliases = [ ]
 authors = [ "callum"]
-categories = [ "Eto" ]
-keywords = [ "rhino", "developer", "eto", "ui", "ux" ]
+categories = [ "Fundamentals" ]
+keywords = [ "rhino", "developer", "eto", "ui", "ux", "Fundamentals" ]
 languages = [ "C#", "Python" ]
 sdk = "eto"
 type = "guides"

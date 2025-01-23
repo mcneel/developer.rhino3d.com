@@ -432,7 +432,27 @@ toc_type = "single"
 
 {{< dev-topic-list "guides" "Compute" "Hops" "weight" >}}
 
-## [Eto](/guides/eto)
+<!-- ## [Eto](/guides/eto) -->
+<h2 id="eto"><a href="/guides/eto">Eto</a></h2>
+
+### Getting Started
+
+- [What is Eto](/guides/eto/what-is-eto)
+- [Required Tools](/guides/eto/required-tools)
+- [Your First UI](/guides/eto/your-first-ui)
+
+### Fundamentals
+
+- [Forms and Dialogs](/guides/eto/forms-and-dialogs)
+- [Existing Dialogs](/guides/eto/existing-dialogs)
+- [Containers](/guides/eto/containers)
+- [Basic Controls](/guides/eto/controls)
+
+### DataContext and View Models
+
+- [Data Context](/guides/eto/view-and-data/data-context)
+- [View Models](/guides/eto/view-and-data/view-models)
+- [Bindings](/guides/eto/view-and-data/binding)
 
 ## Developer Services
 

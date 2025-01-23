@@ -1,7 +1,7 @@
 +++
 aliases = ["/wip/guides/eto/view-and-data/data-context/"]
-authors = [ "curtis", "callum" ]
-categories = [ "Getting Started" ] # What is this?
+authors = [ "callum" ]
+categories = [ "Getting Started" ]
 description = "An introduction to the Eto Data Context"
 keywords = [ "Eto", "UI", "Plugin", "DataContext", "Data", "View", "Model" ]
 languages = [ "C#", "py" ]
