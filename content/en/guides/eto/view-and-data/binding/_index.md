@@ -8,7 +8,6 @@ languages = [ "C#" ]
 sdk = [ "Eto" ]
 title = "Binding"
 type = "guides"
-weight = 4
 
 [admin]
 TODO = ""
@@ -29,49 +28,70 @@ toc_type = "single"
   This section is not for Python, python cannot use View Models and bindings in the same way as C#.
 {{< /call-out >}}
 
-## Introduction
+# Introduction
 Bindings pair properties in view models with UI Elements in the Eto Layout.
 Let's look at a very simple example.
 
-{{< row >}}
-{{< column >}}
-
-// TODO : Add Python
 ``` cs
-public class ViewModel()
+using Eto.Forms;
+using Eto.Drawing;
+
+using Rhino;
+using Rhino.UI;
+
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+
+public class ViewModel
 {
   public string Name { get; set; }
 }
 
-var nameInput = new TextBox();
+var nameInput = new TextBox() { Width = 300 };
 nameInput.BindDataContext(t => t.Text, (ViewModel vm) => vm.Name);
 
 var viewModel = new ViewModel();
-var myDialog = new Dialog<string>()
+var myDialog = new Dialog()
 {
+  Padding = 12,
   Title = "What is your Name?",
   DataContext = viewModel,
   Content = nameInput
 };
 
-myDialog.Show();
+myDialog.ShowModal(parent);
 RhinoApp.WriteLine(viewModel.Name);
 ```
-
-{{< /column >}}
-
-{{< column >}}
 
 If we use the Script Editor to run this script, a dialog appears with a text box. We can then enter text and hit close. You should see your inputted text printed to the command line.
 
 Let's examine what happened.
-1. A ViewModel with a `Name` property was set as the data context of a Dialog
-2. A TextBox's `Text` property was "bound" to the ViewModel's `Name` property.
-3. When changing the `Text` property, the `Name` property is updated
+1. A ViewModel with a `Name` property was strored as the data context of a Dialog
+2. A TextBox's `Text` property was "bound" to the ViewModel's `Name` property
+3. When changing the `Text` property of the TextBox, the `Name` property in the ViewModel is updated
+
+# More Binding
+Binding goes beyond BindDataContext, even if that might be enough for a simpler UI.
+
+Any binding in Eto can be created with [`control.Bind<T>`](http://pages.picoe.ca/docs/api/html/Methods_T_Eto_Forms_IBindable.htm), many controls will have binding methods or properties to simplify this.
+e.g
+
+- [`CheckBox.CheckedBinding`](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_CheckBox_CheckedBinding.htm)
+- [`TextControl.TextBinding`](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_TextControl_TextBinding.htm)
+- [`DropDown.ItemImageBinding`](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_DropDown_ItemImageBinding.htm)
+
+These create half the binding for you but aren't stricltly necessary. And lastly there are the [BindableExtensions](http://pages.picoe.ca/docs/api/html/Methods_T_Eto_Forms_BindableExtensions.htm).
+
+All bindings when created on an object are added to the [`IBindable.Bindings`](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_IBindable_Bindings.htm) property that all Controls have.
 
 
-{{< /column >}}
-{{< /row >}}
+# Some Examples
+
+CheckBox.CheckedBinding and the Binding alternative
+
+This should just be the same as the controls page loads of nice simple examples, gradually getting more complex.
+For example, we've only mentioned .BindDataContext, what about .Bind?
 
 ## More Reading
-[Eto Wiki Binding](https://github.com/picoe/Eto/wiki/Data-Binding)
+- [Eto Wiki Binding](https://github.com/picoe/Eto/wiki/Data-Binding)
+- [Complex Bindings](../complex-bindings)
+- [Bindings Deep Dive ](../bindings-explained)

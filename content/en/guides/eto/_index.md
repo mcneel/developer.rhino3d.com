@@ -102,6 +102,10 @@ platforms = [ "Windows", "Mac" ]
 
 ## DataContext and View Models
 
+{{< call-out note "View Models" >}}
+  This section is not for Python, python cannot use View Models and bindings in the same way as C#.
+{{< /call-out >}}
+
 {{< row >}}
 {{< column >}}
 
@@ -117,7 +121,7 @@ platforms = [ "Windows", "Mac" ]
 ### Advanced
 - [Complex Bindings](view-and-data/complex-bindings)
   <!-- Things such as Convert, etc. -->
-- [How do Bindings work?](view-and-data/bindings-explained) {{%comingsoon-label %}}
+- [How do Bindings work?](view-and-data/bindings-explained)
   <!-- Very detailed explination of Bindings -->
   <!-- Why do I need to bind to a property? -->
 <!-- - [Alternatives to Bindings](view-and-data/alternatives) {{%comingsoon-label %}} -->
