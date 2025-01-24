@@ -236,6 +236,7 @@ n. Creating the ...
 - [Eto License](https://github.com/picoe/Eto/blob/develop/LICENSE.txt)
 - [Eto API Reference](http://pages.picoe.ca/docs/api/)
 - [Contributing to Eto](https://github.com/picoe/Eto/wiki/Contributing)
+- [Discus Rhino and Eto](https://discourse.mcneel.com/tag/eto)
 
 <!-- - [How does Eto work?](eto-explained) {{%comingsoon-label %}} -->
 <!-- An explaination of How eto wraps other UIs, mostly for my own benefit -->

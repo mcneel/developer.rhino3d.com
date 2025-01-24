@@ -457,7 +457,6 @@ The best use of Pixel Layouts is to _overlay_ elements on top of another, which 
 using Eto.Forms;
 using Rhino.UI;
 
-// TODO : Avoid using __rhino_doc__!
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
 var dialog = new Dialog() { Padding = 20 };

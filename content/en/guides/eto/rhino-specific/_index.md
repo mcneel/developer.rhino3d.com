@@ -179,8 +179,6 @@ form.Show()
 
 <!-- cs -- Everything above this line has been Tested on Win/Mac -->
 
-// TODO : Organise this better
-
 ## PushPickButton
 Push Pick Button can be very helpful for hiding and showing your form whilst the user is performing an action, giving them the full use of their screen real estate.
 
@@ -195,14 +193,38 @@ Push Pick Button can be very helpful for hiding and showing your form whilst the
 ```cs
 using Rhino.UI;
 using Eto.Forms;
-using Rhino.Inputs;
 
-var form = new Form();
-form.Show(__rhino_doc__);
+using Rhino;
+using Rhino.Input;
 
-form.PushPickButton(() => {
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
-});
+var label = new Label() { Text = "None" };
+var button = new Button() { Text = "Click me!" }; 
+
+var dialog = new Dialog()
+{
+    Width = 120,
+    Height = 120,
+    Content = new TableLayout()
+    {
+        Rows = {
+            new TableRow(label),
+            new TableRow(button),
+        }
+    },
+    DefaultButton = new Button(),
+    AbortButton = new Button()
+};
+
+button.Click += (s, e) => {
+    dialog.PushPickButton((s, e) => {
+        RhinoGet.GetCircle(out var circle);
+        label.Text = ((int)circle.Radius).ToString();
+    });
+};
+
+EtoExtensions.ShowSemiModal(dialog, __rhino_doc__, parent);
 ```
 
   </div>
@@ -210,13 +232,40 @@ form.PushPickButton(() => {
 
 ```py
 import scriptcontext as sc
+import rhinoscriptsyntax as rs
 
-from Rhino.UI import EtoExtensions
-from Eto.Forms import Form
+from Eto.Forms import *
+from Rhino import Input, UI, RhinoApp
+from Rhino.UI import RhinoEtoApp, EtoExtensions
+from Rhino.Geometry import Rectangle3d, Plane
 
-form = Form()
-EtoExtensions.Show(form, sc.doc)
-doc = EtoExtensions.GetRhinoDoc(form)
+label = Label()
+label.Text = "None"
+button = Button()
+button.Text = "Click me!"
+
+dialog = Dialog()
+dialog.Width = 120
+dialog.Height = 120
+table_layout = TableLayout()
+table_layout.Rows.Add(TableRow(TableCell(label)))
+table_layout.Rows.Add(TableRow(TableCell(button)))
+dialog.Content = table_layout
+dialog.DefaultButton = Button()
+dialog.AbortButton = Button()
+
+def on_push_pick(s, e):
+  points = rs.GetRectangle(1)
+  rect = Rectangle3d(Plane.WorldXY, points[0], points[2])
+  label.Text = str(rect.Width)
+
+def on_click(sender, e):
+    EtoExtensions.PushPickButton(dialog, on_push_pick)
+
+button.Click += on_click
+
+parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
+EtoExtensions.ShowSemiModal(dialog, __rhino_doc__, parent)
 ```
 
   </div>

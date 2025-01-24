@@ -91,7 +91,6 @@ Dialogs are best used when you need to force the user to make a decision before 
 
 <!-- TODO : Research DialogDisplayMode> -->
 
-
 ## Semi-Model Dialogs
 Dialogs can also be run as semi-modal, meaning, code execution is blocked, but the user can still input information to the command line and interact with Rhino.
 
