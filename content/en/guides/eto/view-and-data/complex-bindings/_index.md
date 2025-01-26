@@ -269,35 +269,66 @@ dialog.ShowModal();
 
 -->
 
-# Tying many bindings together
+# Combining bindings together
 
 Here is a more fully formed UI project with some of the bindings we used above all brought togehter.
 
+Convert / Cast / Child / ToBool
+// Enabled Binding would be good too
+
 ``` cs
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 using Eto.Forms;
 using Eto.Drawing;
 
 using Rhino.UI;
+using Rhino.UI.Controls;
+
+public enum Geometry { None = 0, Point, Line, Curve, Brep, Mesh, Sphere, SubD }
 
 public class MyViewModel : ViewModel
 {
-  public ObservableCollection<string> Choices { get; set; } = new () {
-    "Point", "Curve", "Brep",
-  };
+  public ChoicesModel Top { get; set; } = new ChoicesModel(Enum.GetValues<Geometry>().Except(new Geometry[] { Geometry.None }).Cast<object>());
+  public ChoicesModel Bottom { get; set; } = new ChoicesModel( new object[] {});
+}
+
+public class ChoicesModel : ViewModel
+{
+  private int _selectedIndex { get; set; } = 0;
+
+  public ObservableCollection<object> Choices { get; set; } = new();
+  public int SelectedIndex {
+    get => _selectedIndex;
+    set
+    {
+        _selectedIndex = value;
+        RaisePropertyChanged(nameof(SelectedIndex));
+    }
+  }
+
+  public ChoicesModel(IEnumerable<object> data)
+  {
+    Choices = new(data);
+  }
 }
 
 class DropDownDialog : Dialog
 {
     private MyViewModel Model => DataContext as MyViewModel;
 
-    private Button Adder { get; set;}
-    private DropDown Chooser { get; set;}
+    private Button MoveUp { get; set; } = new Button() { Text = "↑" };
+    private Button MoveDown { get; set; } = new Button() { Text = "↓" };
+
+    private DropDown TopChoices { get; set; } = new DropDown() { Width = 200 };
+    private DropDown BottomChoices { get; set; } = new DropDown() { Width = 200 };
 
     public DropDownDialog()
     {
+        Width = 300;
         Padding = 8;
         DataContext = new MyViewModel();
         InitLayout();
@@ -306,40 +337,49 @@ class DropDownDialog : Dialog
 
     private void InitLayout()
     {
-        Chooser = new DropDown();
-        Adder = new Button() { Text = "+" };
 
         Content = new TableLayout() {
+            Spacing = new Size(8, 8),
             Rows = {
-                new TableRow(Chooser, Adder)
+                new TableRow(new Label() { Text = "Top" }),
+                new TableRow(TopChoices, MoveDown),
+                new TableRow(new Divider(), new Divider()),
+                // new TableRow(null),
+                new TableRow(new Label() { Text = "Bottom" }),
+                new TableRow(BottomChoices, MoveUp)
             },
         };
     }
 
     private void InitBindings()
     {
-        Chooser.BindDataContext(dd => dd.DataStore, (MyViewModel vm) => vm.Choices);
-        Adder.Click += (s,e) => {
-            var textBox = new TextBox() { PlaceholderText = "New Item" };
-            
-            var dialogPicker = new Dialog<string>()
-            {
-                Padding = 8,
-                Content = textBox
-            };
+        TopChoices.BindDataContext(tc => tc.DataStore, Binding.Property((MyViewModel vm) => vm.Top).Child(t => t.Choices).Cast<IEnumerable<object>>());
+        TopChoices.SelectedIndexBinding.BindDataContext(Binding.Property((MyViewModel vm) => vm.Top).Child(t => t.SelectedIndex));
+        
+        BottomChoices.BindDataContext(tc => tc.DataStore, Binding.Property((MyViewModel vm) => vm.Bottom).Child(t => t.Choices).Cast<IEnumerable<object>>());
+        BottomChoices.SelectedIndexBinding.BindDataContext(Binding.Property((MyViewModel vm) => vm.Bottom).Child(t => t.SelectedIndex));
 
-            textBox.KeyDown += (s, e) => {
-                if (e.KeyData == Keys.Enter)
-                    dialogPicker.Close(textBox.Text);
+        MoveDown.BindDataContext(md => md.Enabled, Binding.Property((MyViewModel vm) => vm.Top).Child(b => b.Choices).Convert(oc => oc.Count > 0));
+        MoveUp.BindDataContext(md => md.Enabled, Binding.Property((MyViewModel vm) => vm.Bottom).Child(b => b.Choices).Convert(oc => oc.Count > 0));
 
-                if (e.KeyData == Keys.Escape)
-                    dialogPicker.Close(string.Empty);
-            };
+        MoveDown.Click += (s,e) => {
+            var toMove = (Geometry)Model.Top.Choices.ElementAtOrDefault(Model.Top.SelectedIndex);
+            if (toMove == Geometry.None) return;
+            Model.Top.Choices.Remove(toMove);
+            Model.Bottom.Choices.Add(toMove);
 
-            var result = dialogPicker.ShowModal(Adder.ParentWindow);
+            this.UpdateBindings(BindingUpdateMode.Destination);
+            this.UpdateBindings(BindingUpdateMode.Source);
+        };
 
-            if (!string.IsNullOrEmpty(result) && !Model.Choices.Contains(result))
-                Model.Choices.Add(result);
+        MoveUp.Click += (s,e) => {
+            var toMove = (Geometry)Model.Bottom.Choices.ElementAtOrDefault(Model.Bottom.SelectedIndex);
+            if (toMove == Geometry.None) return;
+            Model.Bottom.Choices.Remove(toMove);
+            Model.Top.Choices.Add(toMove);
+
+            this.UpdateBindings(BindingUpdateMode.Destination);
+            this.UpdateBindings(BindingUpdateMode.Source);
         };
     }
 }
@@ -348,9 +388,6 @@ var dialog = new DropDownDialog();
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 dialog.ShowModal(parent);
 ```
-
-/ Convert / Cast / Child / ToBool
-
 
 ## More Reading
 - [Eto Wiki Binding](https://github.com/picoe/Eto/wiki/Data-Binding)

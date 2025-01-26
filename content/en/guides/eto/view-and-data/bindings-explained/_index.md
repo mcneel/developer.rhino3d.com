@@ -2,7 +2,7 @@
 aliases = []
 authors = [ "callum" ]
 categories = [ "Eto"]
-description = "A deep dive into Eto Bindings"
+description = "A deeper dive into Eto Bindings"
 keywords = [ "Eto", "UI", "Plugin", "DataContext", "Data", "View", "Model", "Binding" ]
 languages = [ "C#" ]
 sdk = [ "Eto" ]
@@ -184,19 +184,6 @@ public class MyViewModel
 dialog.ShowModal();
 ```
 
-# Callum, what about the other binding styles? Property names etc?
-
-## Notes
-- Bindings, when created, are added to the bindings in the Control (IBindable)
-- INotifyProperty is necessary for VM -> UI
-
-These 3 bindings are functionality identical
-
-``` cs
-cb.BindDataContext(c => c.Checked, (ViewModel vm) => vm.Checked);
-cb.Bind<bool>(nameof(CheckBox.Checked), DataContext, nameof(ViewModel.Checked));
-cb.CheckedBinding.BindDataContext(nameof(ViewModel.Checked));
-```
 
 ## TroubleShooting
 

@@ -79,20 +79,27 @@ e.g
 - [`TextControl.TextBinding`](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_TextControl_TextBinding.htm)
 - [`DropDown.ItemImageBinding`](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_DropDown_ItemImageBinding.htm)
 
-These create half the binding for you but aren't stricltly necessary. And lastly there are the [BindableExtensions](http://pages.picoe.ca/docs/api/html/Methods_T_Eto_Forms_BindableExtensions.htm).
+These create half the binding for you but aren't stricltly necessary.
+
+These 3 snippets are functionally identical but achieve it through helper methods and properties
+``` cs
+cb.Bind<bool>(nameof(CheckBox.Checked), DataContext, nameof(ViewModel.Checked));
+cb.BindDataContext(c => c.Checked, (ViewModel vm) => vm.Checked);
+cb.CheckedBinding.BindDataContext(nameof(ViewModel.Checked));
+```
+
+Lastly there are the [BindableExtensions](http://pages.picoe.ca/docs/api/html/Methods_T_Eto_Forms_BindableExtensions.htm).
 
 All bindings when created on an object are added to the [`IBindable.Bindings`](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_IBindable_Bindings.htm) property that all Controls have.
 
 
 # Examples
-Why are the properties more complex than above? Check out [this page](../bindings-explained/) to learn more
+Why are some of the View Models below more complex than above? This page conveniently side steps that for now, check out [this page](../bindings-explained/) to learn why.
 
 
 ### Check Box
 
 ``` cs
-using System.Linq;
-
 using Eto.Forms;
 using Eto.Drawing;
 
@@ -118,12 +125,53 @@ var checkBox = new CheckBox()
     Checked = true,
 };
 checkBox.BindDataContext(c => c.Checked, Binding.Property((MyViewModel vm) => vm.Checked).ToBool(true, false));
+// Also works
+// checkBox.CheckedBinding.BindDataContext(Binding.Property((MyViewModel vm) => vm.Checked).ToBool(true, false));
  
 var dialog = new Dialog()
 {
     Padding = 8,
     Content = checkBox,
     DataContext = new MyViewModel()
+};
+ 
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.ShowModal(parent);
+```
+
+### Text Box
+
+``` cs
+using Eto.Forms;
+using Eto.Drawing;
+using Rhino.UI;
+ 
+public class MyViewModel : ViewModel
+{
+  private string _text_ { get; set; }
+  public string Text
+  {
+    get => _text_;
+    set
+    {
+      _text_ = value;
+      RaisePropertyChanged(nameof(Text));
+    }
+  }
+}
+ 
+var textBox = new TextBox()
+{
+    TextAlignment = TextAlignment.Center,
+    Width = 200,
+    PlaceholderText = "example@email.com"
+};
+textBox.BindDataContext(tb => tb.Text, (MyViewModel vm) => vm.Text);
+ 
+var dialog = new Dialog()
+{
+    Padding = 8,
+    Content = textBox
 };
  
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
@@ -162,39 +210,6 @@ var dialog = new Dialog()
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 dialog.ShowModal(parent);
 ```
-
-### Text Box
-
-``` cs
-using Eto.Forms;
-using Eto.Drawing;
-using Rhino.UI;
- 
-var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
- 
-var textBox = new TextBox()
-{
-    TextAlignment = TextAlignment.Center,
-    Width = 200,
-    PlaceholderText = "example@email.com"
-};
- 
-var dialog = new Dialog()
-{
-    Padding = 8,
-    Content = textBox
-};
- 
-dialog.ShowModal(parent);
-```
-
-
-CheckBox.CheckedBinding and the Binding alternative
-
-This should just be the same as the controls page loads of nice simple examples, gradually getting more complex.
-For example, we've only mentioned .BindDataContext, what about .Bind?
-
-
 
 ## More Reading
 - [Eto Wiki Binding](https://github.com/picoe/Eto/wiki/Data-Binding)
