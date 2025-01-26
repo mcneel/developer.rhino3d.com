@@ -241,15 +241,17 @@ from Rhino.Geometry import Rectangle3d, Plane
 
 label = Label()
 label.Text = "None"
+
 button = Button()
 button.Text = "Click me!"
+
+table_layout = TableLayout()
+table_layout.Rows.Add(TableRow(TableCell(label)))
+table_layout.Rows.Add(TableRow(TableCell(button)))
 
 dialog = Dialog()
 dialog.Width = 120
 dialog.Height = 120
-table_layout = TableLayout()
-table_layout.Rows.Add(TableRow(TableCell(label)))
-table_layout.Rows.Add(TableRow(TableCell(button)))
 dialog.Content = table_layout
 dialog.DefaultButton = Button()
 dialog.AbortButton = Button()
@@ -259,7 +261,7 @@ def on_push_pick(s, e):
   rect = Rectangle3d(Plane.WorldXY, points[0], points[2])
   label.Text = str(rect.Width)
 
-def on_click(sender, e):
+def on_click(s, e):
     EtoExtensions.PushPickButton(dialog, on_push_pick)
 
 button.Click += on_click
@@ -333,31 +335,86 @@ using System.Linq;
 
 using Eto.Forms;
 
-var form = new Form();
-form.Content = new Label() { Text = "0" };
+class MyForm : Form {}
+var myForm = new MyForm() { Width = 100, Height = 100 };
+myForm.Content = new Label() { Text = "0" };
 
-form.Shown += (s, e) => RhinoDoc.AddRhinoObject += Incriment;
-form.Closing += (s, e) => RhinoDoc.AddRhinoObject -= Incriment;
-
-form.Shown += (a, b) => RhinoDoc.AddRhinoObject += (s, e) =>
+void IncrimentLabel(object sender, RhinoObjectEventArgs e)
 {
   var doc = e.TheObject.Document;
-  var form2 = EtoExtensions.WindowsFromDocument<Form>(doc).FirstOrDefault();
+  var form2 = EtoExtensions.WindowsFromDocument<MyForm>(doc).FirstOrDefault();
   var label = form2.FindChild<Label>();
   if (int.TryParse(label.Text, out var count))
     label.Text = $"{++count}";
+}
+
+myForm.Shown += (a, b) => 
+{
+    RhinoDoc.AddRhinoObject -= IncrimentLabel;
+    RhinoDoc.AddRhinoObject += IncrimentLabel;
 };
 
-form.Show(__rhino_doc__);
+myForm.Closed += (s, e) => {
+    RhinoDoc.AddRhinoObject -= IncrimentLabel;
+};
+
+myForm.Show(__rhino_doc__);
+```
+  </div>
+</div>
+
+
+<div class="tab-content">
+<div class="codetab-content6" id="py6">
+
+```py
+import scriptcontext as sc
+
+from Eto.Forms import *
+from Rhino import RhinoDoc
+from Rhino.UI import RhinoEtoApp, EtoExtensions
+
+try:
+    class MyForm(Form):
+        pass
+
+    label = Label()
+    label.Text = "0"
+
+    myForm = MyForm()
+    myForm.Width = 100
+    myForm.Height = 100
+    myForm.Content = label
+    myForm.count = 0
+
+    def IncrimentLabel(s, args):
+        doc = args.TheObject.Document
+        form = EtoExtensions.WindowsFromDocument[MyForm](doc)[0]
+        label = form.FindChild[Label]()
+        form.count += form.count
+        label.Text = form.count
+
+    def subscribe(s, e):
+        RhinoDoc.AddRhinoObject += IncrimentLabel
+
+    myForm.Shown += subscribe
+
+    EtoExtensions.Show(myForm, sc.doc)
+
+except Exception as e:
+    print (e)
 ```
   </div>
 </div>
 
 ## LocalizeAndRestore
 
-After constructing a window calling this will store the location of the window so when it is closed it reopens in the same place. This information is stored permanently, so the window will keep its permission between Rhino sessions.
+{{< call-out note "Script Editor" >}}
+  This script will not work in the Script Editor due to how LocalizeAndRestore works.
+  It will work with a plugin, and the code sample is included as it is very convenient.
+{{< /call-out >}}
 
-NOTE : This does not work in the script editor.
+After constructing a window calling this will store the location of the window so when it is closed it reopens in the same place. This information is stored permanently, so the window will keep its position between Rhino sessions.
 
 <div class="codetab">
   <button class="tablinks3" onclick="openCodeTab(event, 'cs3')" id="defaultOpen3">C#</button>
@@ -371,11 +428,11 @@ NOTE : This does not work in the script editor.
 using Rhino.UI;
 using Eto.Forms;
 
-class MyForm : Form {}
+class MyDialog : Dialog {}
 
-var myForm = new MyForm();
-myForm.SavePosition();
-myForm.Show();
+var myDialog = new MyDialog();
+myDialog.LoadComplete += (s, e) => myDialog.LocalizeAndRestore();
+myDialog.ShowModal();
   ```
 
   </div>
@@ -384,14 +441,18 @@ myForm.Show();
 
 ```py
 from Rhino.UI import EtoExtensions
-from Eto.Forms import form
+from Eto.Forms import Dialog
 
-class MyForm(Form):
+class MyDialog(Dialog):
   pass
 
-form = MyForm()
-EtoExtensions.SavePosition(form)
-form.Show()
+def on_load(s, e):
+  EtoExtensions.LocalizeAndRestore(dialog)
+
+dialog = MyDialog()
+dialog.LoadComplete += on_load
+
+dialog.Show()
 ```
 
   </div>
@@ -399,6 +460,10 @@ form.Show()
 
 
 ## To and from Eto 
+
+{{< call-out note "System.Drawing.Common" >}}
+  Outside of Rhino, ToSD and other System.Drawing.Common calls [will not work in dotnet 7.0 onwards.](https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/7.0/system-drawing)
+{{< /call-out >}}
 
 Moving between `System.Drawing` and Eto is often required when using Rhino SDKs or working with Non-Eto UIs on Windows. Eto provides lots of handy dandy `ToEto(...)` methods that can be called on most Eto types. See below for just a few. Note that some are available in Eto, but many additions are included within Rhino.
 
@@ -522,7 +587,7 @@ dialog.ShowModal(parent);
 
 </br>
 
-// TODO : This is kind of wonky and needs work.
+<!-- TODO : This is kind of wonky and needs work.
 
 Below is a small dialog with a label that can be dragged to see the Controls Location relative to its Container, Parent Window and the Screen.
 
@@ -600,6 +665,8 @@ dialog.ShowModal(parent);
 {{< /column >}}
 {{< /row >}}
 
+// TODO : Doc this
+
 ``` cs
 public static PointF PointToScreen(...);
 
@@ -608,3 +675,4 @@ public static RectangleF ToEtoScreen(...);
 
 public static Rectangle ToSystemDrawingScreen(...);
 ```
+-->

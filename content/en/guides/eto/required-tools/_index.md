@@ -25,7 +25,7 @@ platforms = [ "Windows", "Mac" ]
 
 ## Scripting in the Script Editor (Rhino or GH) {{% recommended-label %}}
 
-The [Script Editor](/guides/scripting/) offers very quick ways to write, test, build and publish plugins with Eto UIs from Rhino or Grasshopper (As of Rhino 8). It is recommended to use this when learning.
+The [Script Editor](/guides/scripting/) offers very quick ways to write, review, build and publish plugins with Eto UIs from Rhino or Grasshopper (As of Rhino 8). It is recommended to use this when learning.
 
 </br>
 
@@ -68,12 +68,12 @@ Outside of Rhino, Hot Reload works on both platformss as of net8.0 onwards, for 
 
 </br>
 
+<!-- I need to test this better, but it's useful.
+
 ### Extending Hot Reload (Advanced)
 This section is a little more advanced, is not mandatory, and can be safely skipped without impacting any of the other guides.
 
 The below code can be copied into a new file in your project, and will automatically call any private or internal `InitializeControls` method on any Eto.Forms. Meaning if you set up your form/dialog correctly, you can have Hot Reload update the entire form allowing for very quick experimentations.
-
- <!-- TODO : Add Video. -->
 
 </br>
 
@@ -132,3 +132,5 @@ public static class HotReloadService
 
 #endif
 ```
+
+-->
