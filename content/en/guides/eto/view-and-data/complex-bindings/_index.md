@@ -271,6 +271,85 @@ dialog.ShowModal();
 
 # Tying many bindings together
 
+Here is a more fully formed UI project with some of the bindings we used above all brought togehter.
+
+``` cs
+using System;
+using System.Collections.ObjectModel;
+
+using Eto.Forms;
+using Eto.Drawing;
+
+using Rhino.UI;
+
+public class MyViewModel : ViewModel
+{
+  public ObservableCollection<string> Choices { get; set; } = new () {
+    "Point", "Curve", "Brep",
+  };
+}
+
+class DropDownDialog : Dialog
+{
+    private MyViewModel Model => DataContext as MyViewModel;
+
+    private Button Adder { get; set;}
+    private DropDown Chooser { get; set;}
+
+    public DropDownDialog()
+    {
+        Padding = 8;
+        DataContext = new MyViewModel();
+        InitLayout();
+        InitBindings();
+    }
+
+    private void InitLayout()
+    {
+        Chooser = new DropDown();
+        Adder = new Button() { Text = "+" };
+
+        Content = new TableLayout() {
+            Rows = {
+                new TableRow(Chooser, Adder)
+            },
+        };
+    }
+
+    private void InitBindings()
+    {
+        Chooser.BindDataContext(dd => dd.DataStore, (MyViewModel vm) => vm.Choices);
+        Adder.Click += (s,e) => {
+            var textBox = new TextBox() { PlaceholderText = "New Item" };
+            
+            var dialogPicker = new Dialog<string>()
+            {
+                Padding = 8,
+                Content = textBox
+            };
+
+            textBox.KeyDown += (s, e) => {
+                if (e.KeyData == Keys.Enter)
+                    dialogPicker.Close(textBox.Text);
+
+                if (e.KeyData == Keys.Escape)
+                    dialogPicker.Close(string.Empty);
+            };
+
+            var result = dialogPicker.ShowModal(Adder.ParentWindow);
+
+            if (!string.IsNullOrEmpty(result) && !Model.Choices.Contains(result))
+                Model.Choices.Add(result);
+        };
+    }
+}
+
+var dialog = new DropDownDialog();
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.ShowModal(parent);
+```
+
+/ Convert / Cast / Child / ToBool
 
 
 ## More Reading
