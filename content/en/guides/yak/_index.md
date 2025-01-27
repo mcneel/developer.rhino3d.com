@@ -40,7 +40,7 @@ since = 0
 
 - [Package Restore in Grasshopper](/guides/yak/package-restore-in-grasshopper)
 
-### Advanced
+<!-- ### Advanced
 
-{{< dev-topic-list "guides" "Yak" "Advanced" "weight" >}}
+{{< dev-topic-list "guides" "Yak" "Advanced" "weight" >}} -->
 
