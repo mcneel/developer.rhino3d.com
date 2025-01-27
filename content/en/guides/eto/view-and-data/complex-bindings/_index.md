@@ -300,7 +300,9 @@ public class ChoicesModel : ViewModel
 {
   private int _selectedIndex { get; set; } = 0;
 
-  public ObservableCollection<object> Choices { get; set; } = new();
+  public bool Enabled => Choices.Count > 0;
+
+  public ObservableCollection<object> Choices { get; set; }
   public int SelectedIndex {
     get => _selectedIndex;
     set
@@ -313,6 +315,15 @@ public class ChoicesModel : ViewModel
   public ChoicesModel(IEnumerable<object> data)
   {
     Choices = new(data);
+    Choices.CollectionChanged += (s, e) => {
+        Application.Instance.AsyncInvoke(() => {
+            if (SelectedIndex < 0)
+                SelectedIndex = 0;
+            
+            RaisePropertyChanged(nameof(SelectedIndex));
+            RaisePropertyChanged(nameof(Enabled));
+        });
+    };
   }
 }
 
@@ -344,7 +355,6 @@ class DropDownDialog : Dialog
                 new TableRow(new Label() { Text = "Top" }),
                 new TableRow(TopChoices, MoveDown),
                 new TableRow(new Divider(), new Divider()),
-                // new TableRow(null),
                 new TableRow(new Label() { Text = "Bottom" }),
                 new TableRow(BottomChoices, MoveUp)
             },
@@ -359,17 +369,14 @@ class DropDownDialog : Dialog
         BottomChoices.BindDataContext(tc => tc.DataStore, Binding.Property((MyViewModel vm) => vm.Bottom).Child(t => t.Choices).Cast<IEnumerable<object>>());
         BottomChoices.SelectedIndexBinding.BindDataContext(Binding.Property((MyViewModel vm) => vm.Bottom).Child(t => t.SelectedIndex));
 
-        MoveDown.BindDataContext(md => md.Enabled, Binding.Property((MyViewModel vm) => vm.Top).Child(b => b.Choices).Convert(oc => oc.Count > 0));
-        MoveUp.BindDataContext(md => md.Enabled, Binding.Property((MyViewModel vm) => vm.Bottom).Child(b => b.Choices).Convert(oc => oc.Count > 0));
+        MoveDown.BindDataContext(md => md.Enabled, Binding.Property((MyViewModel vm) => vm.Top).Child(t => t.Enabled));
+        MoveUp.BindDataContext(md => md.Enabled, Binding.Property((MyViewModel vm) => vm.Bottom).Child(b => b.Enabled));
 
         MoveDown.Click += (s,e) => {
             var toMove = (Geometry)Model.Top.Choices.ElementAtOrDefault(Model.Top.SelectedIndex);
             if (toMove == Geometry.None) return;
             Model.Top.Choices.Remove(toMove);
             Model.Bottom.Choices.Add(toMove);
-
-            this.UpdateBindings(BindingUpdateMode.Destination);
-            this.UpdateBindings(BindingUpdateMode.Source);
         };
 
         MoveUp.Click += (s,e) => {
@@ -377,10 +384,8 @@ class DropDownDialog : Dialog
             if (toMove == Geometry.None) return;
             Model.Bottom.Choices.Remove(toMove);
             Model.Top.Choices.Add(toMove);
-
-            this.UpdateBindings(BindingUpdateMode.Destination);
-            this.UpdateBindings(BindingUpdateMode.Source);
         };
+
     }
 }
 
