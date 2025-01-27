@@ -273,9 +273,6 @@ dialog.ShowModal();
 
 Here is a more fully formed UI project with some of the bindings we used above all brought togehter.
 
-Convert / Cast / Child / ToBool
-// Enabled Binding would be good too
-
 ``` cs
 using System;
 using System.Linq;
@@ -290,12 +287,14 @@ using Rhino.UI.Controls;
 
 public enum Geometry { None = 0, Point, Line, Curve, Brep, Mesh, Sphere, SubD }
 
+// A Main View Model
 public class MyViewModel : ViewModel
 {
   public ChoicesModel Top { get; set; } = new ChoicesModel(Enum.GetValues<Geometry>().Except(new Geometry[] { Geometry.None }).Cast<object>());
   public ChoicesModel Bottom { get; set; } = new ChoicesModel( new object[] {});
 }
 
+// A nested ViewModel
 public class ChoicesModel : ViewModel
 {
   private int _selectedIndex { get; set; } = 0;
@@ -316,7 +315,12 @@ public class ChoicesModel : ViewModel
   {
     Choices = new(data);
     Choices.CollectionChanged += (s, e) => {
+
+        // The update must be updated Async as when the UI updates the VM
+        // RaisePropertyChanged is ignored to prevent loops
         Application.Instance.AsyncInvoke(() => {
+            
+            // SelectedIndex will be -1 when the selected item is removed
             if (SelectedIndex < 0)
                 SelectedIndex = 0;
             
@@ -327,10 +331,13 @@ public class ChoicesModel : ViewModel
   }
 }
 
+// We inherit from Dialog
 class DropDownDialog : Dialog
 {
+    // Helper property to make accessing DataContext easier
     private MyViewModel Model => DataContext as MyViewModel;
 
+    // Handle on Control Elements
     private Button MoveUp { get; set; } = new Button() { Text = "↑" };
     private Button MoveDown { get; set; } = new Button() { Text = "↓" };
 
@@ -348,7 +355,6 @@ class DropDownDialog : Dialog
 
     private void InitLayout()
     {
-
         Content = new TableLayout() {
             Spacing = new Size(8, 8),
             Rows = {
