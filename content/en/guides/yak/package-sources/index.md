@@ -50,3 +50,20 @@ On macOS the file share needs to be mounted first in Finder via _Go > Connect to
 ### Administrator-Enforced Settings
 
 See [Administrator-Enforced Settings](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#information/admin-enforced_settings.htm) for tips on how to deploy and enforce this setting for Windows users in your organisation.
+
+### Performance
+
+Rhino 8.15 included some performance improvements for private package repositories.
+
+The yak.exe tool has a new “cache” command that, when run inside the private package folder, will generate an index of the available packages. When the package manager sees this index file, it will use it _instead of_ traversing the directory. This greatly reduces the time it takes for the Package Manager to load when dealing with private repositories with many packages, large packages, or slow network connections.
+
+```
+$ cd X:\private\repo\directory
+$ "C:\Program Files\Rhino 8\System\yak.exe" cache
+
+Building cache for local package repository in X:\private\repo\directory
+
+[...]
+```
+
+Make sure to re-build the cache if package files are added or removed from the directory. Remove the _.cache*_ files from the directory to revert to the old behaviour.
