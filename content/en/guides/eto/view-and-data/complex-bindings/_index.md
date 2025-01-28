@@ -375,8 +375,12 @@ class DropDownDialog : Dialog
         BottomChoices.BindDataContext(tc => tc.DataStore, Binding.Property((MyViewModel vm) => vm.Bottom).Child(t => t.Choices).Cast<IEnumerable<object>>());
         BottomChoices.SelectedIndexBinding.BindDataContext(Binding.Property((MyViewModel vm) => vm.Bottom).Child(t => t.SelectedIndex));
 
+        // Disabling controls that will do nothing is a nice visual indicator for the user
         MoveDown.BindDataContext(md => md.Enabled, Binding.Property((MyViewModel vm) => vm.Top).Child(t => t.Enabled));
         MoveUp.BindDataContext(md => md.Enabled, Binding.Property((MyViewModel vm) => vm.Bottom).Child(b => b.Enabled));
+
+        TopChoices.BindDataContext(md => md.Enabled, Binding.Property((MyViewModel vm) => vm.Top).Child(t => t.Enabled));
+        BottomChoices.BindDataContext(md => md.Enabled, Binding.Property((MyViewModel vm) => vm.Bottom).Child(b => b.Enabled));
 
         MoveDown.Click += (s,e) => {
             var toMove = (Geometry)Model.Top.Choices.ElementAtOrDefault(Model.Top.SelectedIndex);
