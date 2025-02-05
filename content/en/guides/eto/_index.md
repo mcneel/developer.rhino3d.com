@@ -43,7 +43,7 @@ platforms = [ "Windows", "Mac" ]
 ### Getting Started
 
 - [Required Tools](required-tools/)
-- [Your First UI](your-first-ui/)
+<!-- - [Your First UI](your-first-ui/) -->
 
 {{< /column >}}
 {{< /row >}}
