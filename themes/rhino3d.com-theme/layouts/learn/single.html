@@ -322,8 +322,8 @@
             }
         else
             {
-                dataUrl = `${window.location.origin}/learn/learn.toml`;
-                localDataUrl = `${window.location.origin}/learn/learn-${pageLang}.toml`;
+                dataUrl = `${window.location.origin}/${pageLang}/learn/learn.toml`;
+                localDataUrl = `${window.location.origin}/${pageLang}/learn/learn-${pageLang}.toml`;
             }
         const res = await fetch(dataUrl);
         const localRes = await fetch(localDataUrl);
