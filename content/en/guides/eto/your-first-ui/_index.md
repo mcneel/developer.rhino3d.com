@@ -604,11 +604,6 @@ from Eto.Forms import *
 
 from Rhino.UI import *
 
-class ToDoItem():
-    def __init__(self, text: str, add_item:bool):
-        self.add_item = add_item
-        self.text = text
-
 class ToDoModel():
     def __init__(self, items:list):
         self.items = items
@@ -617,16 +612,16 @@ class ToDoList(Dialog):
     def __init__(self):
         super().__init__()
 
-        items = (
-            ToDoItem("Groceries", False),
-            ToDoItem("Feed Cat", False),
-            ToDoItem("Drink Water", False),
-            ToDoItem("+", True),
-        )
+        model = ToDoModel([
+            "Groceries",
+            "Feed Cat",
+            "Drink Water",
+            "",
+        ])
 
         self.width = 300
         self.height = 200
-        self.DataContext = ToDoModel(items)
+        self.DataContext = model
         self.init_layout()
 
     def init_layout(self):
@@ -643,10 +638,11 @@ class ToDoList(Dialog):
                 return Panel()
 
             def button_click(s, e):
-                self.DataContext.items[row].Add(RowItem())
+                self.DataContext.items.append("...")
 
             button = Button()
-            # button.Click += button_click
+            button.Text = "✗"
+            button.Click += button_click
             return button
 
         button_cell = CustomCell()
@@ -664,7 +660,7 @@ class ToDoList(Dialog):
         item_column.Editable = True
         item_column.Expand = True
         item_column.HeaderToolTip = "To Do Item"
-        item_column.DataCell = TextBoxCell("text")
+        item_column.DataCell = TextBoxCell(1)
 
         grid_view.Columns.Add(plus_column)
         grid_view.Columns.Add(item_column)
