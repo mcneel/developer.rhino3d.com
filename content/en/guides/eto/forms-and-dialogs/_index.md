@@ -86,7 +86,7 @@ For example, a form would be best suited to a help window that the user might co
 
 Dialogs are best used when you need to force the user to make a decision before continuing. For example, choosing a file to open, or alerting the user that an error has occured.
 
-[Dialog](pages.picoe.ca/docs/api/html/N_Eto_Dialog.htm) is available in two flavours, `Dialog`, and `Dialog<T>`. 
+[Dialog](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_Dialog.htm) is available in two flavours, `Dialog`, and `Dialog<T>`. 
 `Dialog<T>` returns a result on closing which is very useful for obtaining a users choice, such as Ok, Cancel or even a filename.
 
 <!-- TODO : Research DialogDisplayMode> -->
