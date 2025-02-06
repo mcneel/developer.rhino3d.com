@@ -418,6 +418,12 @@ li .new-callout-bullet {
 	display:inline-block;
 }
 
+.recommended-label {
+	@extend .comingsoon-label;
+	background-color: orangered;
+	padding-bottom: 2px;
+	padding-top: 2px;
+}
 
 /* 
 ##################################################################
