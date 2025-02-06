@@ -21,20 +21,14 @@ platforms = [ "Windows", "Mac" ]
 +++
 <!-- Sizing, automatic, manual etc. -->
 
-## 1. Batteries Included
-All the required Eto dependencies are bundled with Rhino.
+1. All the required Eto dependencies are bundled with Rhino.
 
-## 2. It's Rhino!
-Rhino uses Eto! Creating UIs that match the Rhino style are a breeze.
+1. Rhino uses Eto! Creating UIs that match the Rhino style are a breeze.
 
-## 3. Eto makes native cross-platform easy
-Eto makes writing apps that work cross platform easy. You can go from 0 to fun in a few minutes.
+1. Eto makes writing apps that work cross platform easy. You can go from 0 to fun in a few minutes.
 
-## 4. Stable & Mature
-Eto has been in development and continuously improving for over 14 years, is actively developed and supported by McNeel and is the UI of choice for Rhino.
+1. Eto has been in development and continuously improving for over 14 years, is actively developed and supported by McNeel and is the UI of choice for Rhino.
 
-## 5. Maximum Coverage
-Every method, class and feature of Eto is available on every platform.
+1. Every method, class and feature of Eto is available on every platform.
 
-## 6. Open Source
-Eto is, and has always been 100% Open Source.
+1. Eto is, and has always been 100% Open Source.
