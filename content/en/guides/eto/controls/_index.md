@@ -146,7 +146,7 @@ import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 
 from Eto.Drawing import Padding
-from Eto.Forms import *
+from Eto.Forms import Dialog, DropDown
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
