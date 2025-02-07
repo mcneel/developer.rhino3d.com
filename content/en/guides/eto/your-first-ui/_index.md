@@ -292,7 +292,7 @@ var buttonCell = new CustomCell()
 {
     CreateCell = (cc) => 
     {
-      var button = new Button() { Text = "+" };
+      var button = new Button() { Text = "x" };
       return button;
     }
 };
@@ -303,6 +303,7 @@ var gridView = new GridView()
         new GridColumn()
         {
           HeaderText = "+",
+          Width = 24,
           DataCell = buttonCell,
 ```
 
@@ -325,12 +326,9 @@ var gridView = new GridView()
 
 </br>
 
-The UI is starting to get chonky now! It still doesn't do anything, but at least it looks like it does!
+The UI still doesn't do anything, but it's starting to look like it does. Let's fix that and make it functional.
 
 </br>
-
-{{< row >}}
-{{< column >}}
 
 <div class="codetab">
   <button class="tablinks5" onclick="openCodeTab(event, 'cs5')" id="defaultOpen5">C#</button>
@@ -341,24 +339,16 @@ The UI is starting to get chonky now! It still doesn't do anything, but at least
   <div class="codetab-content5" id="cs5">
 
 ``` cs
-using System.Collections.ObjectModel;
-
-internal class ToDoModel
-{
-    public ObservableCollection<ToDoItem> Items { get; } = new();
-}
-
 var buttonCell = new CustomCell()
 {
     CreateCell = (cc) => {
-        int row = cc.Row;
-
         var button = new Button();
-        button.Text = "+";
+        button.Text = "x";
         button.Click += (s, e) => {
             try
             {
-                Model.Items.RemoveAt(row);
+              // Row/index can change, so we don't use that here
+                items.Remove((ToDoItem)cc.Item);
             } catch {}
         };
 
@@ -376,80 +366,62 @@ var buttonCell = new CustomCell()
   </div>
 </div>
 
-{{< /column >}}
-{{< column >}}
-
-![Your First Data](/images/eto/tutorials/your-first-vm.png)
-
-{{< /column >}}
-{{< /row >}}
-
-</br>
-</br>
+That's odd. Why doesn't the x button do anything?
+That's because the data behind our UI isn't informing our GridView of the updates.
+Luckily the solution is pretty simple.
 
 ``` cs
-var buttonCell = new CustomCell()
-{
-    CreateCell = (cc) => {
-        int row = cc.Row;
-
-        var button = new Button();
-        button.Text = "+";
-        button.Click += (s, e) => {
-            try
-            {
-                Model.Items.RemoveAt(row);
-            } catch {}
-        };
-
-        return new Panel() { Content = button, Padding = 2 };
-    },
-};
+var items = new List<ToDoItem>() // Old
+var items = new ObservableCollection<ToDoItem>() // New
 ```
 
-Awesome! Now we can remove items from the list, but we still can't add...
+[ObservableCollections](https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-9.0) notify the UI of changes in the collection. It is advisable to NEVER replace the collection with a new collection, but instead clear and refill.
 
+We'll create one last change, then a small refactor is in order.
 
 ``` cs
 internal class ToDoItem
 {
-    public bool AddItem { get; set; } = false; // <-- Add this
     public string Text { get; set; }
-
+    public bool AddItem { get; set; } = false; // <-- Add a new property
+ 
     public ToDoItem(string text)
     {
       Text = text;
     }
 }
-```
 
-``` cs
+var items = new ObservableCollection<ToDoItem>()
+{
+  new ToDoItem("Groceries"),
+  new ToDoItem("Feed Cat"),
+  new ToDoItem("Drink Water"),
+  new ToDoItem("..") { AddItem = true }, // <-- Add a new item
+};
+
 var buttonCell = new CustomCell()
 {
     CreateCell = (cc) => {
-        int row = cc.Row;
-        var element = Model.Items.ElementAtOrDefault(row);
-        if (element is null) return new Panel();
+        if (cc.Item is not ToDoItem element) return new Panel();
 
         var button = new Button();
-        if (element.AddItem)
+        if (element.AddItem) // <-- AddItems only add
         {
             button.Text = "+";
             button.Click += (s, e) => {
                 try
                 {
-                    Model.Items.Insert(Model.Items.Count - 1, new ToDoItem() { Text = "..." });
+                    items.Insert(items.Count - 1, new ToDoItem("..."));
                 } catch {}
             };
         }
-        else
+        else // <-- Otherwise they remove
         {
             button.Text = "✗";
             button.Click += (s, e) => {
                 try
                 {
-                    if (Model.Items[row].AddItem) return;
-                    Model.Items.RemoveAt(row);
+                    items.Remove(element);
                 } catch {}
             };
         }
@@ -458,6 +430,8 @@ var buttonCell = new CustomCell()
     },
 };
 ```
+
+Now we're cooking 
 
 Awesome! The UI can add or remove items from the list!
 
@@ -513,8 +487,8 @@ internal class ToDoList : Dialog
         Width = 300;
         Height = 200;
         DataContext = new ToDoModel();
-        Model.Items.Add(new ToDoItem() { Text = "Buy Groceries..."});
-        Model.Items.Add(new ToDoItem() { Text = "", AddItem = true });
+        Model.Items.Add(new ToDoItem("Buy Groceries..."));
+        Model.Items.Add(new ToDoItem("") { AddItem = true });
         InitLayout();
     }
 
@@ -530,11 +504,11 @@ internal class ToDoList : Dialog
                 var button = new Button();
                 if (element.AddItem)
                 {
-                    button.Text = "+";
+                    button.Text = "x";
                     button.Click += (s, e) => {
                         try
                         {
-                            Model.Items.Insert(Model.Items.Count - 1, new ToDoItem() { Text = "..." });
+                            Model.Items.Insert(Model.Items.Count - 1, new ToDoItem("..."));
                         } catch {}
                     };
                 }
@@ -592,86 +566,6 @@ internal class ToDoList : Dialog
 
 var list = new ToDoList();
 list.ShowModal(RhinoEtoApp.MainWindowForDocument(__rhino_doc__));
-```
-
-  </div>
-  <div class="codetab-content10" id="py10">
-
-``` py
-import scriptcontext as sc
-
-from Eto.Forms import *
-
-from Rhino.UI import *
-
-class ToDoModel():
-    def __init__(self, items:list):
-        self.items = items
-
-class ToDoList(Dialog):
-    def __init__(self):
-        super().__init__()
-
-        model = ToDoModel([
-            "Groceries",
-            "Feed Cat",
-            "Drink Water",
-            "",
-        ])
-
-        self.width = 300
-        self.height = 200
-        self.DataContext = model
-        self.init_layout()
-
-    def init_layout(self):
-        
-        grid_view = GridView()
-    # grid_view.CanDeleteItem = (e) => true,
-        grid_view.RowHeight = 24
-        grid_view.GridLines = GridLines.NONE
-
-        def create_cell(cc):
-            row = cc.Row
-            element = self.DataContext.items[row]
-            if (element is None):
-                return Panel()
-
-            def button_click(s, e):
-                self.DataContext.items.append("...")
-
-            button = Button()
-            button.Text = "✗"
-            button.Click += button_click
-            return button
-
-        button_cell = CustomCell()
-        button_cell.CreateCell = create_cell
-
-        plus_column = GridColumn()
-        plus_column.HeaderText = "+"
-        plus_column.HeaderToolTip = "Click + to add, ✗ to remove"
-        plus_column.DataCell = button_cell
-        plus_column.Width = 24
-        plus_column.Expand = False
-
-        item_column = GridColumn()
-        item_column.HeaderText = "Item"
-        item_column.Editable = True
-        item_column.Expand = True
-        item_column.HeaderToolTip = "To Do Item"
-        item_column.DataCell = TextBoxCell(1)
-
-        grid_view.Columns.Add(plus_column)
-        grid_view.Columns.Add(item_column)
-        grid_view.DataStore = self.DataContext.items
-
-        self.Content = grid_view
-
-parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
-
-to_do_list = ToDoList()
-to_do_list.ShowModal(parent)
 ```
 
   </div>
