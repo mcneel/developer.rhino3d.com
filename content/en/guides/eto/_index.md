@@ -111,7 +111,7 @@ platforms = [ "Windows", "Mac" ]
 
 ### Getting Started
 - [DataContext](view-and-data/data-context/) <!-- Explain how the DataContext trickles downwards! -->
-- [What is a View Model?](view-and-data//view-models)
+- [What is a View Model?](view-and-data/view-models)
 - [Binding Data with a ViewModel](view-and-data/binding)
 <!-- - [Binding without a View Model](view-and-data/no-view-model) -->
 
