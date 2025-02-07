@@ -230,11 +230,11 @@ class ToDoItem():
   def __init__(self, text: str):
     self.Text = text
 
-items = (
+items = [
   ToDoItem("Groceries"),
   ToDoItem("Feed Cat"),
   ToDoItem("Drink Water"),
-  )
+  ]
 
 plusColumn = GridColumn()
 plusColumn.HeaderText = "+"
@@ -311,6 +311,18 @@ var gridView = new GridView()
   <div class="codetab-content4" id="py4">
 
 ``` py
+def create_cell(self, args):
+    button = Button();
+    button.Text = "x";
+    return button
+
+buttonCell = CustomCell()
+buttonCell.CreateCell += create_cell
+
+plusColumn = GridColumn()
+plusColumn.Width = 24
+plusColumn.HeaderText = "+"
+plusColumn.DataCell = button_cell
 ```
 
   </div>
@@ -361,6 +373,19 @@ var buttonCell = new CustomCell()
   <div class="codetab-content5" id="py5">
 
 ``` py
+def create_cell(self, args):
+    
+    def button_click(self, args):
+        items.RemoveAt(cc.Row);
+
+    button = Button();
+    button.Text = "x";
+    button.Click += button_click
+
+    return button
+
+buttonCell = CustomCell()
+buttonCell.CreateCell += create_cell
 ```
 
   </div>
@@ -370,14 +395,41 @@ That's odd. Why doesn't the x button do anything?
 That's because the data behind our UI isn't informing our GridView of the updates.
 Luckily the solution is pretty simple.
 
+<div class="codetab">
+  <button class="tablinks6" onclick="openCodeTab(event, 'cs6')" id="defaultOpen6">C#</button>
+  <button class="tablinks6" onclick="openCodeTab(event, 'py6')">Python</button>
+</div>
+
+<div class="tab-content">
+  <div class="codetab-content6" id="cs6">
+
 ``` cs
 var items = new List<ToDoItem>() // Old
 var items = new ObservableCollection<ToDoItem>() // New
 ```
+</div>
+
+  <div class="codetab-content6" id="py6">
+
+``` py
+items = [] // Old
+items = ObservableCollection[type(ToDoItem)]() // New
+```
+
+  </div>
+</div>
 
 [ObservableCollections](https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-9.0) notify the UI of changes in the collection. It is advisable to NEVER replace the collection with a new collection, but instead clear and refill.
 
 We'll create one last change, then a small refactor is in order.
+
+<div class="codetab">
+  <button class="tablinks7" onclick="openCodeTab(event, 'cs7')" id="defaultOpen7">C#</button>
+  <button class="tablinks7" onclick="openCodeTab(event, 'py7')">Python</button>
+</div>
+
+<div class="tab-content">
+  <div class="codetab-content7" id="cs7">
 
 ``` cs
 internal class ToDoItem
@@ -432,6 +484,66 @@ var buttonCell = new CustomCell()
     },
 };
 ```
+</div>
+
+  <div class="codetab-content7" id="py7">
+
+``` py
+from System.Collections.ObjectModel import *
+
+from Eto.Forms import *
+
+class ToDoItem():
+  def __init__(self, text: str, add_item:bool = False):
+    self.text = text
+    self.add_item = add_item
+
+items = ObservableCollection[ToDoItem]()
+items.append(ToDoItem("Groceries"))
+items.append(ToDoItem("Feed Cat"))
+items.append(ToDoItem("Drink Water"))
+items.append(ToDoItem("..", True))
+
+def create_cell(self, args):
+    
+    def button_click(self, args):
+        items.RemoveAt(cc.Row);
+
+    button = Button();
+    button.Text = "x";
+    button.Click += button_click
+
+    return button
+
+buttonCell = CustomCell()
+buttonCell.CreateCell += create_cell
+
+plusColumn = GridColumn()
+plusColumn.HeaderText = "+"
+plusColumn.Width = 24
+plusColumn.HeaderText = "+"
+plusColumn.DataCell = button_cell
+
+itemColumn = GridColumn()
+itemColumn.HeaderText = "Item"
+itemColumn.Editable = True
+itemColumn.DataCell = TextBoxCell("Text")
+
+gridView = GridView()
+gridView.Columns.Add(plusColumn)
+gridView.Columns.Add(itemColumn)
+gridView.DataStore = items,
+
+dialog = Dialog()
+dialog.Width = 200
+dialog.Height = 200
+dialog.Content = gridView
+
+dialog.ShowModal()
+```
+
+  </div>
+</div>
 
 Now we're cooking 
 
@@ -440,7 +552,7 @@ Awesome! The UI can add or remove items from the list!
 </br>
 
 # Putting it all together
-Below I've compiled all the code, and even added a few extra little bits to make the UI a bit nicer, they're not strictly necessary, but they should make it a touch nicer.
+Below is all of the code with a few extra bits to make the UI a bit nicer, they're not strictly necessary, but they should make it easier to edit, work with, and extend.
 
 </br>
 
@@ -568,6 +680,13 @@ internal class ToDoList : Dialog
 
 var list = new ToDoList();
 list.ShowModal(RhinoEtoApp.MainWindowForDocument(__rhino_doc__));
+```
+
+  </div>
+  <div class="codetab-content10" id="py10">
+
+``` py
+
 ```
 
   </div>
