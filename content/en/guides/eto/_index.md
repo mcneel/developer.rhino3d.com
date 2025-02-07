@@ -196,6 +196,7 @@ n. Creating the ...
 
 ### Advanced
 - [Async](async/)
+- [Events](events/)
 <!--
 - OS Specific eccentricities {{%comingsoon-label %}}
   - Windows {{%comingsoon-label %}}
@@ -208,13 +209,7 @@ n. Creating the ...
 // Inheriting from and modifying controls
 - Custom Handlers {{%comingsoon-label %}}
 // Custom platform wrapping stuff
-- Mouse Events {{%comingsoon-label %}}
 // Maybe even drag/drop?
-- async was here
-// Line between async and non-async
-// async events
-// invoke async
-// DO NOT FORCE WAIT ASYNC ON NON-ASYNC
 - Localization {{%comingsoon-label %}}
   - Strings {{%comingsoon-label %}}
   - Menus {{%comingsoon-label %}}
