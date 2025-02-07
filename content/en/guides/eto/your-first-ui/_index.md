@@ -347,8 +347,8 @@ var buttonCell = new CustomCell()
         button.Click += (s, e) => {
             try
             {
-              // Row/index can change, so we don't use that here
-                items.Remove((ToDoItem)cc.Item);
+                int row = cc.Row;
+                items.RemoveAt(row);
             } catch {}
         };
 
@@ -403,6 +403,7 @@ var buttonCell = new CustomCell()
 {
     CreateCell = (cc) => {
         if (cc.Item is not ToDoItem element) return new Panel();
+        int row = cc.Row;
 
         var button = new Button();
         if (element.AddItem) // <-- AddItems only add
@@ -411,7 +412,7 @@ var buttonCell = new CustomCell()
             button.Click += (s, e) => {
                 try
                 {
-                    items.Insert(items.Count - 1, new ToDoItem("..."));
+                    items.Insert(items.Count - 1, new ToDoItem("...") { AddItem = true });
                 } catch {}
             };
         }
@@ -421,7 +422,8 @@ var buttonCell = new CustomCell()
             button.Click += (s, e) => {
                 try
                 {
-                    items.Remove(element);
+                  if (items[row].AddItem) return;
+                  items.RemoveAt(row);
                 } catch {}
             };
         }
