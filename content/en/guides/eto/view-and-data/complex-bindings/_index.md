@@ -56,7 +56,7 @@ var prop = Binding.Property((ViewModel vm) => vm.Value)
         MyEnum.Brie => "Brie.. Mmmm..",
         MyEnum.Cheddar => "Cheddar, my favourite!",
         MyEnum.Edam => "Edam? No Thanks,",
-        MyEnum.Peccorino => "MMMMMMM",
+        MyEnum.Pecorino => "MMMMMMM",
         _ => "err!"
     };
     return str;
@@ -86,7 +86,7 @@ dialog.KeyDown += (s, e) => {
     }
 };
 
-public enum MyEnum { Brie = 0, Cheddar, Edam, Peccorino }
+public enum MyEnum { Brie = 0, Cheddar, Edam, Pecorino }
 
 public class ViewModel : Rhino.UI.ViewModel
 {
@@ -95,8 +95,8 @@ public class ViewModel : Rhino.UI.ViewModel
   public void MoveUp()
   {
     Value = ++Value;
-    if (Value > MyEnum.Peccorino)
-    Value = MyEnum.Peccorino;
+    if (Value > MyEnum.Pecorino)
+    Value = MyEnum.Pecorino;
     RaisePropertyChanged(nameof(Value));
   }
 
@@ -271,7 +271,7 @@ dialog.ShowModal();
 
 # Combining bindings together
 
-Here is a more fully formed UI project with some of the bindings we used above all brought togehter.
+Here is a more fully formed UI project with some of the bindings we used above, all brought together.
 
 ``` cs
 using System;
