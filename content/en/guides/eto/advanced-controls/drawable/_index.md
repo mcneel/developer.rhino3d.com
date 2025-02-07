@@ -22,7 +22,7 @@ platforms = [ "Windows", "Mac" ]
   block_webcrawlers = true
 
 +++
-Drawable provides infinite flexibility in Eto, you can draw anything in a resuable UI control.
+Drawable provides infinite flexibility in Eto, you can draw anything in a reusable UI control.
 
 ## Your first Drawable
 Drawables let you draw anything in a 2d space.

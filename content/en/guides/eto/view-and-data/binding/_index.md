@@ -148,13 +148,13 @@ using Rhino.UI;
  
 public class MyViewModel : ViewModel
 {
-  private string _text_ { get; set; }
+  private string _text { get; set; }
   public string Text
   {
-    get => _text_;
+    get => _text;
     set
     {
-      _text_ = value;
+      _text = value;
       RaisePropertyChanged(nameof(Text));
     }
   }
