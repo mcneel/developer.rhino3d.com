@@ -67,7 +67,7 @@ form.Show()
 dialog = Dialog()
 dialog.Width = 100
 dialog.Height = 100
-dialog.ShowModal() # <-- Code execusion stops here
+dialog.ShowModal() # <-- Code execution stops here
   ```
 
   </div>
@@ -84,7 +84,7 @@ For example, a form would be best suited to a help window that the user might co
 
 ## Dialogs
 
-Dialogs are best used when you need to force the user to make a decision before continuing. For example, choosing a file to open, or alerting the user that an error has occured.
+Dialogs are best used when you need to force the user to make a decision before continuing. For example, choosing a file to open, or alerting the user that an error has occurred.
 
 [Dialog](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_Dialog.htm) is available in two flavours, `Dialog`, and `Dialog<T>`. 
 `Dialog<T>` returns a result on closing which is very useful for obtaining a users choice, such as Ok, Cancel or even a filename.

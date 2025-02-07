@@ -26,7 +26,7 @@ platforms = [ "Windows", "Mac" ]
 
   Each page with samples will have both C# and Python 3 (The samples ARE NOT designed for Python 2), will work on both Windows and Mac and assumes little familiarity with Rhino.
 
-  If you're new to programming, this guide will not cover the basics, but will help you dive headfirst into C# and/or Python.
+  If you're new to programming, this guide will not cover the basics, but will help you dive head-first into C# and/or Python.
 {{< /call-out >}}
 
 {{< row >}}
@@ -122,7 +122,7 @@ platforms = [ "Windows", "Mac" ]
 - [Complex Bindings](view-and-data/complex-bindings)
   <!-- Things such as Convert, etc. -->
 - [How do Bindings work?](view-and-data/bindings-explained)
-  <!-- Very detailed explination of Bindings -->
+  <!-- Very detailed explanation of Bindings -->
   <!-- Why do I need to bind to a property? -->
 <!-- - [Alternatives to Bindings](view-and-data/alternatives) {{%comingsoon-label %}} -->
 <!-- - [Focus](focus) {{%comingsoon-label %}} -->
@@ -236,4 +236,4 @@ n. Creating the ...
 - [Discus Rhino and Eto](https://discourse.mcneel.com/)
 
 <!-- - [How does Eto work?](eto-explained) {{%comingsoon-label %}} -->
-<!-- An explaination of How eto wraps other UIs, mostly for my own benefit -->
+<!-- An explanation of How eto wraps other UIs, mostly for my own benefit -->

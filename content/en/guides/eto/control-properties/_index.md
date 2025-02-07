@@ -89,7 +89,7 @@ dialog.ShowModal(parent)
 
 ## Visible
 
-Controls are by default visible, but can be made invisible with `Visible = false`. When a control is invisible it still exists. It will not recieve any events such as mouse of keyboard, and may not be considered when the control layout is calculated. Note that the dialog defaults to different size than when the button is visible.
+Controls are by default visible, but can be made invisible with `Visible = false`. When a control is invisible it still exists. It will not receive any events such as mouse of keyboard, and may not be considered when the control layout is calculated. Note that the dialog defaults to different size than when the button is visible.
 
 {{< row >}}
 {{< column >}}
@@ -157,7 +157,7 @@ dialog.ShowModal(parent)
 {{< /row >}}
 
 ## Tag
-Tag allows for attaching an arbitratry piece of data to a Control, it is best to keep this piece of data simple. A number, string, enum or struct. Avoid larger items such as images, and especially other controls. 
+Tag allows for attaching an arbitrary piece of data to a Control, it is best to keep this piece of data simple. A number, string, enum or struct. Avoid larger items such as images, and especially other controls. 
 
 This can be very useful when controls are not hard coded, and instead created in loops.
 
@@ -170,7 +170,7 @@ All Controls shown in the UI will have a Parent and ParentWindow.
 ParentWindow retrieves the Dialog or Form this control is hosted in. This can be very useful when wanting to set focus to the parent or show another window on top of the current window.
 
 ## Cursor
-The mouse cursor can easily be changed per control. This is a very powerful and intuitive way to indicate to the user how the control should be used. For Example indicating Drag functionaliy by using the grabbing hand cursor.
+The mouse cursor can easily be changed per control. This is a very powerful and intuitive way to indicate to the user how the control should be used. For Example indicating Drag functionally by using the grabbing hand cursor.
 
 {{< row >}}
 {{< column >}}

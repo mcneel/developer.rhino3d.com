@@ -65,7 +65,7 @@ RhinoApp.WriteLine(viewModel.Name);
 If we use the Script Editor to run this script, a dialog appears with a text box. We can then enter text and hit close. You should see your inputted text printed to the command line.
 
 Let's examine what happened.
-1. A ViewModel with a `Name` property was strored as the data context of a Dialog
+1. A ViewModel with a `Name` property was stored as the data context of a Dialog
 1. A TextBox's `Text` property was "bound" to the ViewModel's `Name` property in a binding that is stored in the Dialog
 1. When changing the `Text` property of the TextBox, the `Name` property in the ViewModel is updated with the value
 
@@ -79,7 +79,7 @@ e.g
 - [`TextControl.TextBinding`](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_TextControl_TextBinding.htm)
 - [`DropDown.ItemImageBinding`](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_DropDown_ItemImageBinding.htm)
 
-These create half the binding for you but aren't stricltly necessary.
+These create half the binding for you but aren't strictly necessary.
 
 These 3 snippets are functionally identical but achieve it through helper methods and properties
 ``` cs

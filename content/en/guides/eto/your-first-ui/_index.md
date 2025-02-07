@@ -77,7 +77,7 @@ dialog.ShowModal()
 {{< /column >}}
 {{< /row >}}
 
-Creating a window in Eto isn't too complex in C# or pytho. Only 6 or 7 lines of code and a we're already making progress. The window is a bit empty though, lets add some content.
+Creating a window in Eto isn't too complex in C# or python. Only 6 or 7 lines of code and a we're already making progress. The window is a bit empty though, lets add some content.
 
 </br>
 
@@ -513,7 +513,7 @@ internal class ToDoList : Dialog
         Width = 300;
         Height = 200;
         DataContext = new ToDoModel();
-        Model.Items.Add(new ToDoItem() { Text = "Buy Grocieries..."});
+        Model.Items.Add(new ToDoItem() { Text = "Buy Groceries..."});
         Model.Items.Add(new ToDoItem() { Text = "", AddItem = true });
         InitLayout();
     }

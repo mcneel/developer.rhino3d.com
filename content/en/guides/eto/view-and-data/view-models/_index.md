@@ -28,7 +28,7 @@ toc_type = "single"
 <!-- cs -- WIP -->
 
 ## What is a View Model?
-View Models contain the data and logic that accompnies our UI, separating view logic and model logic keeps our UIs more organised and promotes better coding.
+View Models contain the data and logic that accompanies our UI, separating view logic and model logic keeps our UIs more organised and promotes better coding.
 
 ## Why are View Models needed?
 The simplest reason is to keep different things in different places.
@@ -63,7 +63,7 @@ internal void CloseView();
 <!--
 # View Model structure
 
-## A very basic View Mdoel
+## A very basic View Model
 A very basic View Model with a single property.
 
 ``` cs

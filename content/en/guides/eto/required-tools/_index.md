@@ -60,11 +60,11 @@ The shorter the loop between `Code Written` → `File Saved` → `UI Updated`, t
 
 ## Hot Reload in C#
 
-Hot reload reduces the feedback loop length by avoiding re-compiling and re-running commands. You can change your UI instantly avoiding repetative and tiring re-compile cycles.
+Hot reload reduces the feedback loop length by avoiding re-compiling and re-running commands. You can change your UI instantly avoiding repetitive and tiring re-compile cycles.
 
 Within Rhino, Hot Reload is only available on Windows, and works best with Visual Studio.
 
-Outside of Rhino, Hot Reload works on both platformss as of net8.0 onwards, for Mac this means Visual Studio Code or other IDEs such as Rider.
+Outside of Rhino, Hot Reload works on both platforms as of net8.0 onwards, for Mac this means Visual Studio Code or other IDEs such as Rider.
 
 </br>
 

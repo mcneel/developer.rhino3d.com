@@ -21,7 +21,7 @@ platforms = [ "Windows", "Mac" ]
 +++
 
  <!-- cs -- Tested on Win/Mac -->
- <!-- TODO : Incldue these samples https://developer.rhino3d.com/guides/rhinopython/eto-controls-python/ -->
+ <!-- TODO : Include these samples https://developer.rhino3d.com/guides/rhinopython/eto-controls-python/ -->
 
 ## Buttons
 Buttons offer simple click → action functionality.

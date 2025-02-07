@@ -75,7 +75,7 @@ Obviously this is non-optimal, it would be better if changing the View Model upd
 
 
 The View Model needs to notify the UI when it is changed.
-We do this by implimenting `INotifyPropertyChanged` on the View Model, and expanding the properties.
+We do this by implementing `INotifyPropertyChanged` on the View Model, and expanding the properties.
 
 ``` cs
 public class ViewModel : INotifyPropertyChanged
@@ -104,7 +104,7 @@ public class ViewModel : INotifyPropertyChanged
 ```
 Looking at the View Model now, it seems a lot more complicated, let's walk through the changes and what they do.
 
-1. INotifyPropertyChanged has been implimented
+1. INotifyPropertyChanged has been implemented
 1. Checked has been expanded to also raise OnPropertyChanged when set
 1. The PropertyChanged event has been added
 1. A simple method to make calling the event easier has been added.
