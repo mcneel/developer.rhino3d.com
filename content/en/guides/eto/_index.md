@@ -219,6 +219,10 @@ n. Creating the ...
 // Ensure to use GET not NEW
 -->
 
+### Miscellaneous Eto examples
+- [Examples](misc-examples/)
+
+
 {{< /column >}}
 {{< /row >}}
 
