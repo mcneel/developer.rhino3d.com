@@ -15,6 +15,9 @@ origin = ""
 picky_sisters = ""
 state = ""
 
+[page_options]
+  block_webcrawlers = true
+
 [included_in]
 platforms = [ "Windows", "Mac" ]
 

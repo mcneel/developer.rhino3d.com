@@ -7,7 +7,7 @@ languages = [ "C#", "Python" ]
 sdk = "eto"
 type = "guides"
 title = "Your first Eto UI"
-description = "As you may be new to Rhino, Eto and/or programming, this guide will focus entirely on a small fun eto app to get you started."
+description = ""
 
 [admin]
 TODO = ""
@@ -20,15 +20,19 @@ platforms = [ "Windows", "Mac" ]
 
 +++
 
+  As you may be new to Rhino, Eto and/or programming, this guide will focus entirely on a small fun eto app to get you started.
+  
+  As we have so many exciting things to learn in Eto, it might be good to make a small To Do list.
+
 
 ![Your First UI](/images/eto/tutorials/your-first-ui.png)
 
-## A simple To Do list
 <!-- One of my favourite tutorials is the React beginner [tutorial](https://react.dev/learn/tutorial-tic-tac-toe). -->
 
-You have so many exciting things to learn in Eto, it might be good to make a small To Do list.
 
-Let's start simple and show a window.
+## Your first Window
+
+Let's start simple and show a window. In this case, we're going to use a [Dialog](../forms-and-dialogs/).
 
 {{< row >}}
 {{< column >}}
@@ -46,8 +50,8 @@ using Eto.Forms;
 
 var dialog = new Dialog()
 {
-  Width = 200,
-  Height = 200
+    Width = 200,
+    Height = 200
 };
 
 dialog.ShowModal();
@@ -57,7 +61,7 @@ dialog.ShowModal();
   <div class="codetab-content1" id="py1">
 
   ```py
-from Eto.Forms import *
+from Eto.Forms import Dialog
  
 dialog = Dialog()
 dialog.Width = 200
@@ -77,9 +81,9 @@ dialog.ShowModal()
 {{< /column >}}
 {{< /row >}}
 
-Creating a window in Eto isn't too complex in C# or python. Only 6 or 7 lines of code and a we're already making progress. The window is a bit empty though, lets add some content.
+## Creating Content
 
-</br>
+Creating a window in Eto isn't too complex in C# or python. Only a few lines of code and a we're already making progress! The window is a bit empty though, lets add some content. We're going to use a GridView.
 
 {{< row >}}
 {{< column >}}
@@ -100,7 +104,7 @@ var gridView = new GridView()
   Columns = {
     new GridColumn()
     {
-      HeaderText = "+"
+      HeaderText = "±"
     },
     new GridColumn()
     {
@@ -124,7 +128,7 @@ var dialog = new Dialog()
 from Eto.Forms import *
 
 plusColumn = GridColumn()
-plusColumn.HeaderText = "+"
+plusColumn.HeaderText = "±"
 
 itemColumn = GridColumn()
 itemColumn.HeaderText = "Item"
@@ -154,13 +158,14 @@ dialog.ShowModal()
 
 </br>
 
+## Adding Data
+
 We've added a GridView, our first Eto control along with some columns.
 The UI looks a little sparse still. It would be nice to have some items in the UI.
 
-</br>
-
 {{< row >}}
 {{< column >}}
+
 
 <div class="codetab">
   <button class="tablinks3" onclick="openCodeTab(event, 'cs3')" id="defaultOpen3">C#</button>
@@ -187,7 +192,7 @@ internal class ToDoItem
 
 var items = new List<ToDoItem>()
 {
-  new ToDoItem("Groceries"),
+  new ToDoItem("Buy Groceries"),
   new ToDoItem("Feed Cat"),
   new ToDoItem("Drink Water"),
 };
@@ -197,7 +202,7 @@ var gridView = new GridView()
   Columns = {
     new GridColumn()
     {
-      HeaderText = "+"
+      HeaderText = "±"
     },
     new GridColumn()
     {
@@ -206,7 +211,7 @@ var gridView = new GridView()
       DataCell = new TextBoxCell("Text")
     },
   },
-  DataStore = items,
+  DataStore = items, // <-- Don't miss this!
 };
 
 var dialog = new Dialog()
@@ -223,7 +228,6 @@ dialog.ShowModal();
   <div class="codetab-content3" id="py3">
 
   ```py
-# TODO : Items do not appear in python
 from Eto.Forms import *
 
 class ToDoItem():
@@ -231,13 +235,13 @@ class ToDoItem():
     self.Text = text
 
 items = [
-  ToDoItem("Groceries"),
+  ToDoItem("Buy Groceries"),
   ToDoItem("Feed Cat"),
   ToDoItem("Drink Water"),
   ]
 
 plusColumn = GridColumn()
-plusColumn.HeaderText = "+"
+plusColumn.HeaderText = "±"
 
 itemColumn = GridColumn()
 itemColumn.HeaderText = "Item"
@@ -247,7 +251,7 @@ itemColumn.DataCell = TextBoxCell("Text")
 gridView = GridView()
 gridView.Columns.Add(plusColumn)
 gridView.Columns.Add(itemColumn)
-gridView.DataStore = items,
+gridView.DataStore = items, # <-- Don't miss this!
 
 dialog = Dialog()
 dialog.Width = 200
@@ -255,7 +259,7 @@ dialog.Height = 200
 dialog.Content = gridView
 
 dialog.ShowModal()
-  ```
+```
 
   </div>
 </div>
@@ -270,11 +274,11 @@ dialog.ShowModal()
 
 </br>
 
+## Custom Cells
+
 The UI is looking great! It's starting to look like a list UI now, we have items in our list. It's just not very functional. Let's add some functionality.
 
 The code is getting big now, we're going to focus in on sections now that the skeleton is there.
-
-</br>
 
 {{< row >}}
 {{< column >}}
@@ -292,7 +296,7 @@ var buttonCell = new CustomCell()
 {
     CreateCell = (cc) => 
     {
-      var button = new Button() { Text = "x" };
+      var button = new Button() { Text = "-" };
       return button;
     }
 };
@@ -302,7 +306,7 @@ var gridView = new GridView()
     Columns = {
         new GridColumn()
         {
-          HeaderText = "+",
+          HeaderText = "±",
           Width = 24,
           DataCell = buttonCell,
 ```
@@ -312,8 +316,8 @@ var gridView = new GridView()
 
 ``` py
 def create_cell(self, args):
-    button = Button();
-    button.Text = "x";
+    button = Button()
+    button.Text = "-"
     return button
 
 buttonCell = CustomCell()
@@ -321,7 +325,7 @@ buttonCell.CreateCell += create_cell
 
 plusColumn = GridColumn()
 plusColumn.Width = 24
-plusColumn.HeaderText = "+"
+plusColumn.HeaderText = "±"
 plusColumn.DataCell = button_cell
 ```
 
@@ -338,9 +342,9 @@ plusColumn.DataCell = button_cell
 
 </br>
 
-The UI still doesn't do anything, but it's starting to look like it does. Let's fix that and make it functional.
+## Adding Functionality
 
-</br>
+The UI still doesn't do anything, but it's starting to look like it does. Let's fix that and make it functional.
 
 <div class="codetab">
   <button class="tablinks5" onclick="openCodeTab(event, 'cs5')" id="defaultOpen5">C#</button>
@@ -355,7 +359,7 @@ var buttonCell = new CustomCell()
 {
     CreateCell = (cc) => {
         var button = new Button();
-        button.Text = "x";
+        button.Text = "-";
         button.Click += (s, e) => {
             try
             {
@@ -379,7 +383,7 @@ def create_cell(self, args):
         items.RemoveAt(cc.Row);
 
     button = Button();
-    button.Text = "x";
+    button.Text = "-";
     button.Click += button_click
 
     return button
@@ -390,6 +394,8 @@ buttonCell.CreateCell += create_cell
 
   </div>
 </div>
+
+## Notify the UI
 
 That's odd. Why doesn't the x button do anything?
 That's because the data behind our UI isn't informing our GridView of the updates.
@@ -419,6 +425,8 @@ items = ObservableCollection[type(ToDoItem)]() // New
   </div>
 </div>
 
+## Smart Collections
+
 [ObservableCollections](https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-9.0) notify the UI of changes in the collection. It is advisable to NEVER replace the collection with a new collection, but instead clear and refill.
 
 We'll create one last change, then a small refactor is in order.
@@ -445,7 +453,7 @@ internal class ToDoItem
 
 var items = new ObservableCollection<ToDoItem>()
 {
-  new ToDoItem("Groceries"),
+  new ToDoItem("Buy Groceries"),
   new ToDoItem("Feed Cat"),
   new ToDoItem("Drink Water"),
   new ToDoItem("..") { AddItem = true }, // <-- Add a new item
@@ -499,7 +507,7 @@ class ToDoItem():
     self.add_item = add_item
 
 items = ObservableCollection[ToDoItem]()
-items.append(ToDoItem("Groceries"))
+items.append(ToDoItem("Buy Groceries"))
 items.append(ToDoItem("Feed Cat"))
 items.append(ToDoItem("Drink Water"))
 items.append(ToDoItem("..", True))
@@ -510,7 +518,7 @@ def create_cell(self, args):
         items.RemoveAt(cc.Row);
 
     button = Button();
-    button.Text = "x";
+    button.Text = "-";
     button.Click += button_click
 
     return button
@@ -519,9 +527,9 @@ buttonCell = CustomCell()
 buttonCell.CreateCell += create_cell
 
 plusColumn = GridColumn()
-plusColumn.HeaderText = "+"
+plusColumn.HeaderText = "±"
 plusColumn.Width = 24
-plusColumn.HeaderText = "+"
+plusColumn.HeaderText = "±"
 plusColumn.DataCell = button_cell
 
 itemColumn = GridColumn()
@@ -545,13 +553,15 @@ dialog.ShowModal()
   </div>
 </div>
 
+## It works!
+
 Now we're cooking 
 
 Awesome! The UI can add or remove items from the list!
 
 </br>
 
-# Putting it all together
+## Putting it all together
 Below is all of the code with a few extra bits to make the UI a bit nicer, they're not strictly necessary, but they should make it easier to edit, work with, and extend.
 
 </br>
@@ -601,7 +611,7 @@ internal class ToDoList : Dialog
         Width = 300;
         Height = 200;
         DataContext = new ToDoModel();
-        Model.Items.Add(new ToDoItem("Buy Groceries..."));
+        Model.Items.Add(new ToDoItem("Buy Buy Groceries..."));
         Model.Items.Add(new ToDoItem("") { AddItem = true });
         InitLayout();
     }
@@ -618,7 +628,7 @@ internal class ToDoList : Dialog
                 var button = new Button();
                 if (element.AddItem)
                 {
-                    button.Text = "x";
+                    button.Text = "-";
                     button.Click += (s, e) => {
                         try
                         {
@@ -651,7 +661,7 @@ internal class ToDoList : Dialog
             Columns = {
                 new GridColumn()
                 {
-                    HeaderText = "+",
+                    HeaderText = "±",
                     HeaderToolTip = "Click + to add, ✗ to remove",
                     DataCell = buttonCell,
                     Width = 24,
