@@ -1,8 +1,8 @@
 +++
-aliases = ["/fr/5/guides/general/", "/fr/6/guides/general/", "/fr/7/guides/general/", "/fr/wip/guides/general/"]
+aliases = ["/en/5/guides/general/", "/en/6/guides/general/", "/en/7/guides/general/", "/en/wip/guides/general/"]
 authors = "unset"
 categories = [ "Unsorted" ]
-description = "Guides qui s’appliquent à toutes les plateformes et à tous les SDK".
+description = "Guides qui s’appliquent à toutes les plateformes et à tous les SDK."
 keywords = [ "rhino", "developer" ]
 languages = [ "C/C++", "C#", "VB", "Python", "VBScript" ]
 sdk = "unset"
