@@ -1,7 +1,7 @@
 +++
-aliases = ["/fr/5/", "/fr/6/", "/fr/7/", "/fr/wip/"]
-description = "Official developer resources for Rhino and Grasshopper.  Rhino developer tools are royalty free and include support."
-title = "Rhino and Grasshopper Developer Documentation"
+aliases = ["/en/5/", "/en/6/", "/en/7/", "/en/wip/"]
+description = "Ressources officielles destinées aux développeurs de Rhino et Grasshopper.  Les outils de développement de Rhino sont libres de droits et incluent l'assistance."
+title = "Documentation pour les développeurs de Rhino et Grasshopper"
 type = "home"
 
 [admin]
@@ -15,36 +15,10 @@ since = 0
 [cascade]
 list_group = "uncategorized"
 +++
-<!--
-<div align="center"><h1 id="getting-started-with-rhino-development">Getting Started with Rhino Development</h1></div>
--->
-<!--
-<div>
-  <table style="width:100%; border: 1px; margin: 0 auto; padding:0; border-spacing: 0px; border-collapse: separate;">
-    <tbody>
-      <tr>
-        <td style="padding: 20px; text-align: center;">
-          <a href="/guides/grasshopper" title="Grasshopper Components">
-            <img src="/images/ghcomponent-logo-intro.png" class="index_use_images">
-          </a>
-        </td>
-        <td style="padding: 20px; text-align: center;">
-          <a href="/guides/#rhinocommon" title="RhinoCommon: The cross-platform .NET SDK for Rhino and Grasshopper">
-            <img src="/images/rhinocommon-logo-intro.png" class="index_use_images">
-          </a>
-        </td>
-        <td style="padding: 20px; text-align: center;">
-          <a href="/guides/#rhinopython" title="Rhino.Python: Pythonic in three dimensions!">
-            <img src="/images/rhino-python-logo-intro.png" class="index_use_images">
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
--->
 
-{{< alt-version "https://developer.rhino3d.com/guides/rhinocommon/moving-to-dotnet-7/" "Need help migrating C# to Rhino 8? Click here!">}}
+{{< call-out note "Need help migrating C# to Rhino 8?" >}}
+Veuillez consulter le guide [Passer à .NET 7](/guides/rhinocommon/moving-to-dotnet-7/).
+{{< /call-out >}}
 
 {{< vimeo 188730450 >}}
 
@@ -54,10 +28,10 @@ list_group = "uncategorized"
 <table class="table" style="width:940px;">
   <thead>
     <tr style="border-bottom:1pt solid black;">
-      <th style="text-align: left;">What</th>
-      <th style="text-align: left;">Where</th>
-      <th style="text-align: left;">How</th>
-      <th style="text-align: left;">Why</th>
+      <th style="text-align: left;">Quoi</th>
+      <th style="text-align: left;">Où</th>
+      <th style="text-align: left;">Comment</th>
+      <th style="text-align: left;">Pourquoi</th>
     </tr>
   </thead>
   <tbody class="table-striped index_table">
@@ -65,52 +39,52 @@ list_group = "uncategorized"
     <td><a href="/guides/rhinocommon" title="RhinoCommon: The cross-platform toolkit for Rhino and Grasshopper"> RhinoCommon</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="/images/mac-logo-small.png" alt="macOS" class="index_table_icon" title="Apple macOS"></td>
 	<td><img src="/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"><img src="/images/vb-logo-small.png" alt="Visual Basic" class="index_table_icon" title="Visual Basic"><img src="/images/python-logo-small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
-    <td class="index_table_primary_use">Write Rhino plugins & Grasshopper components</td>
+    <td class="index_table_primary_use">Écriture de modules pour Rhino et de composants pour Grasshopper</td>
   </tr>
   <tr>
     <td><a href="/guides/rhinopython" title="Rhino.Python: Pythonic in three dimensions!"> Rhino.Python</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="/images/mac-logo-small.png" alt="macOS" class="index_table_icon" title="Apple macOS"></td>
 	<td><img src="/images/python-logo-small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
-    <td class="index_table_primary_use">Cross-platform scripting</td>
+    <td class="index_table_primary_use">Écriture de scripts multiplateforme</td>
   </tr>
   <tr>
     <td><a href="/guides/opennurbs" title="openNURBS is free and open source"> openNURBS</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="/images/mac-logo-small.png" alt="macOS" class="index_table_icon" title="Apple macOS"></td>
 	<td><img src="/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"><img src="/images/cpp-logo-small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
-    <td class="index_table_primary_use">3dm file reading and writing</td>
+    <td class="index_table_primary_use">Lecture et écriture de fichiers 3dm</td>
   </tr>
   <tr>
     <td><a href="/guides/rhinoscript" title="RhinoScript is based on Microsoft's VBScript language"> RhinoScript</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="/images/vbscript-logo-small.png" alt="Microsoft VBScript" class="index_table_icon" title="Microsoft VBScript"></td>
-    <td class="index_table_primary_use">Rhino for Windows scripting</td>
+    <td class="index_table_primary_use">Écriture de scripts pour Rhino pour Windows</td>
   </tr>
   <tr>
     <td><a href="/guides/cpp" title="C/C++ SDK for Rhino for Windows"> C/C++</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="/images/cpp-logo-small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
-    <td class="index_table_primary_use">Rhino for Windows plugins</td>
+    <td class="index_table_primary_use">Modules pour Rhino pour Windows</td>
   </tr>
    <tr>
     <td><a href="/guides/grasshopper" title="Grasshopper Component Development"> Grasshopper</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="/images/mac-logo-small.png" alt="OS X" class="index_table_icon" title="Mac OS X"></td>
 	<td><img src="/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"><img src="/images/vb-logo-small.png" alt="Visual Basic" class="index_table_icon" title="Visual Basic"><img src="/images/python-logo-small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
-    <td class="index_table_primary_use">Grasshopper components</td>
+    <td class="index_table_primary_use">Composants de Grasshopper</td>
   </tr>
   <!--
   <tr>
     <td><a href="/guides/#rdk" title="Renderer Development Kit"> RDK</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"><img src="/images/cpp-logo-small.png" alt="C/C++" class="index_table_icon" title="C/C++"><img src="/images/vbscript-logo-small.png" alt="Microsoft VBScript" class="index_table_icon" title="Microsoft VBScript"></td>
-    <td class="index_table_primary_use">Renderer plugin development on Windows.</td>
+    <td class="index_table_primary_use">Développement de modules de rendu sous Windows.</td>
   </tr>
   -->
-  <!-- RAP is really just a feature of the C/C++ SDK and the RhinoCommon SDK
+  <!-- RAP est en réalité une fonctionnalité du SDK C/C++ et du SDK RhinoCommon.
   <tr>
     <td><a href="/guides/#rap" title="Rhino Application Platform"> RAP</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"><img src="/images/cpp-logo-small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
-    <td class="index_table_primary_use">"Skinning" Rhino for Windows.</td>
+    <td class="index_table_primary_use">« skinning » de Rhino pour Windows.</td>
   </tr>
   -->
   <!--
@@ -118,7 +92,7 @@ list_group = "uncategorized"
     <td><a href="/guides/#zoo" title="Zoo License Manager Plugins"> Zoo</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
 	<td><img src="/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"><img src="/images/cpp-logo-small.png" alt="C/C++" class="index_table_icon" title="C/C++"></td>
-    <td class="index_table_primary_use">Zoo license manager plugins on Windows</td>
+    <td class="index_table_primary_use">Modules pour le gestionnaire de licences Zoo sous Windows</td>
   </tr>
   -->
   <!--
@@ -126,7 +100,7 @@ list_group = "uncategorized"
     <td><a href="/guides/rhinomobile" title="Tools for using 3dm files in mobile applications"> RhinoMobile</a></td>
 	<td><img src="/images/android-logo-small.png" alt="Android" class="index_table_icon" title="Android"><img src="/images/ios-logo-small.png" alt="iOS" class="index_table_icon" title="Apple iOS"></td>
 	<td><img src="/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"></td>
-    <td class="index_table_primary_use">3D mobile application development</td>
+    <td class="index_table_primary_use">Développement d’applications mobiles 3D</td>
   </tr>
   -->
  </tbody>
@@ -138,30 +112,8 @@ list_group = "uncategorized"
 <div align="center">
 
 
-<p>Still unclear?  Browse the <a href="/guides/">Guides</a>.  Ask a question in <a href="/guides/general/contributing/#discourse">the Forum</a>.  Check out the <a href="/guides/general/frequently-asked-questions/">FAQ</a>. Ask <a href="/guides/general/contributing/#contacts">a developer</a>.</p>
+<p>Des questions ?  Parcourez les <a href="/guides/">Guides</a>.  Posez vos questions dans <a href="/guides/general/contributing/#discourse">le forum</a>.  Consultez les <a href="/guides/general/frequently-asked-questions/">FAQ</a>. Interrogez un <a href="/guides/general/contributing/#contacts">développeur</a>.</p>
 
-
+<p><a href="/license">{{< awesome "fas fa-balance-scale" >}} </a><a href="/license">Licence MIT</a>. Les outils de développement de Rhino sont libres de droits et incluent l'assistance. </p>
 </div>
 
-<h3>MIT License</h3>
-Rhino developer tools are royalty free and include support.
-
-Copyright (c) 1993-2024 Robert McNeel & Associates. All Rights Reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of Rhino SDKs and APIs, including openNURBS, rhino3dm, RhinoCommon, the Grasshopper API, and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
