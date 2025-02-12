@@ -136,7 +136,7 @@ Una cosa che vorremmo fare presto è rendere pubblici alcuni aspetti di sviluppo
 - Facilitare la creazione di plug-in pubblicando RhinoCommon come pacchetto NuGet.
 - Contribuire all'automazione delle compilazioni, se necessario.
 
-## =====Argomenti correlati =====
+## Argomenti correlati
 
 - [Panoramica sulla tecnologia di Rhino](/guides/general/rhino-technology-overview)
 - [Contributo](/guides/general/contributing)
