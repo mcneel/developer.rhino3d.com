@@ -42,19 +42,19 @@ Da es sich hier um einen Entwickler-Leitfaden handelt, beginnen wir mit dem Schr
 
 ### Code
 
-Das ist es, womit wir als Software-Entwickler eine Menge Yeit verbringen.  Wir lassen unsere bevorzugte IDE offen, wir schreiben Code, wir prüfen aus, wir lösen Probleme.  Wir kennen keinen Software-Entwickler, der es nicht liebt, Probleme zu lösen.
+Das ist etwas, womit wir als Software-Entwickler eine Menge Zeit verbringen.  Wir lassen unsere bevorzugte IDE offen, wir schreiben Code, wir prüfen aus, wir lösen Probleme.  Wir kennen keinen Software-Entwickler, der es nicht liebt, Probleme zu lösen.
 
-Wenn wir etwas haben, erfolgt das *Einchecken* in unsere Versionsverwaltung...
+Wenn wir ein Resultat haben, erfolgt das *Einchecken* in unsere Versionsverwaltung...
 
 ### Einchecken
 
-Wir checken Code in ein [Versionsverwaltungs-System](https://en.wikipedia.org/wiki/Version_control) ein.  In unserem Fall verwenden wir [git](https://git-scm.com/) mit [GitHub](https://github.com/).  Es sind aber auch viele andere Verionsverwaltungs-System verbreitet.  Früher verwendeten wir [Subversion](https://subversion.apache.org/), heute verwenden wir [GitHub](https://github.com/).  [GitHub](https://github.com/) harmoniert hervorragend mit vielen anderen Werkzeugen und verfügt über eine vielfältige API.  Es kommen aber auch andere in Frage: [BitBucket](https://bitbucket.org), [Mercurial](https://www.mercurial-scm.org/) usw.
+Wir checken Code in ein [Versionsverwaltungs-System](https://en.wikipedia.org/wiki/Version_control) ein.  In unserem Fall verwenden wir [git](https://git-scm.com/) mit [GitHub](https://github.com/).  Es sind aber auch viele andere Verionsverwaltungs-System verbreitet.  Früher verwendeten wir [Subversion](https://subversion.apache.org/), heute verwenden wir [GitHub](https://github.com/).  [GitHub](https://github.com/) harmoniert hervorragend mit zahlreichen anderen Werkzeugen und verfügt über eine vielfältige API.  Es kommen aber auch andere in Frage: [BitBucket](https://bitbucket.org), [Mercurial](https://www.mercurial-scm.org/) usw.
 
-Falls Sie noch keine Versionsverwaltung verwenden, raten wir Ihnen eindringlich: tun Sie es.  Es ist jetzt ganz einfach.  Sie ermöglicht Ihnen, zu anderen Versionen Ihrer Software zurückzukehren, bevor ein Problem auftrat.  Sie fördert Ihre Zusammenarbeit als Team.  Sie wird für jegliche Art von Build-Automatisierung benötigt.  Haben wir schon erwähnt, dass es leicht ist?
+Falls Sie noch keine Versionsverwaltung verwenden, raten wir Ihnen eindringlich: tun Sie es.  Es ist jetzt ganz einfach.  Sie ermöglicht Ihnen, zu älteren Versionen Ihrer Software zurückzukehren, bevor ein Problem auftrat.  Sie fördert Ihre Zusammenarbeit als Team.  Sie wird für jegliche Art von Build-Automatisierung benötigt.  Und wie gesagt: sie ist einfach
 
 Als Entwickler verwenden wir eine abgeänderte Version von [GitHub Flow](https://guides.github.com/introduction/flow/), um Pull Requests zu erstellen und in unsere Haupt-Branch zusammenzuführen.
 
-Nachdem wir unseren Code eingecheckt haben, erstellen wir ihn...
+Nachdem wir unseren Code eingecheckt haben, kompilieren wir ihn...
 
 ### Kompilieren
 
@@ -62,17 +62,17 @@ Zusätzlich zum Kompilieren auf unseren Desks haben wir eigens [TeamCity](https:
 
 Diese [TeamCity](https://www.jetbrains.com/teamcity/)-Server überprüfen das Einchecken und erstellen auch unsere täglichen Veröffentlichungen - viele davon - und zwar alle vier Stunden.  Sie erstellen auch unsere öffentliche WIP- und Service-Release-Builds.
 
-Mit jeder neuen Build testen wir...
+Mit jedem neuen Build testen wir...
 
-### Test
+### Testen
 
-Wenn Entwickler Fehler beheben und Probleme beenden, stellt unser internes Tespersonal sicher, dass die öffentliche Build korrekt funktioniert.  Beim Testen der WIP- und Release-Candidate-Builds sind wir auch auf unsere Kunden angewiesen.
+Wenn Entwickler Fehler beheben und Probleme beenden, stellt unser internes Tespersonal sicher, dass der öffentliche Build korrekt funktioniert.  Beim Testen der WIP- und Release-Candidate-Builds sind wir auch auf unsere Kunden angewiesen.
 
 Das Testen geschieht vor und nach dem folgenden Schritt: Veröffentlichung...
 
 ### Veröffentlichen
 
-Wann immer wir über eine auslieferungsbereite Build verfügen, stellen wir sie bereit (oder veröffentlichen sie).
+Wann immer wir über einen auslieferungsbereiten Build verfügen, stellen wir ihn bereit (oder veröffentlichen ihn).
 
 Dazu gehört auch die Veröffentlichung von...
 
@@ -82,16 +82,16 @@ Dazu gehört auch die Veröffentlichung von...
 
 ...sowie die Veröffentlichung von Bekanntgaben per E-Mail, in Blogs und in den Sozialen Medien.
 
-### Zuhören
+### Feedback
 
-Wir hören zu, wo immer die Möglichkeit gegeben ist.
+Feedback nehmen wir auf allen möglichen Kommunikationswegen entgegen.
 
 - [Chat](http://www.rhino3d.com/support#)
 - [E-Mail](mailto:tech@mcneel.com)
 - Telefonischer Support +34 933 199 002
 - [Forum (Discourse)](https://discourse.mcneel.com/)
 
-Und oft, wenn wir zuhören, stoßen wir auf Probleme, die einer Lösung bedürfen.  Manchmal handelt es sich um kleine, manchmal aber auch um GROSSE Probleme.  Immer erstellen wir einen Problembericht...
+Dank der Rückmeldungen stoßen wir oft auf Probleme, die einer Lösung bedürfen.  Manchmal handelt es sich um kleine, manchmal aber auch um BEDEUTENDE Probleme.  Immer erstellen wir einen Problembericht...
 
 ### Verfolgen
 
@@ -103,9 +103,9 @@ Die Problemberichte erstellen wir in [YouTrack](https://mcneel.myjetbrains.com).
 
 Herauszufinden, was gerade am wichtigsten ist, ist SCHWER:.  Wir sprechen mit unseren Kunden.  Wir sprechen miteinander.  We benutzen Gmail, Google Drive und Google Docs, um mitenander zu kommunizieren.  24 Stunden am Tag chatten wir auf [Slack](https://slack.com/).
 
-Jeden Dienstag haben wir gemeinsame Besprechung.  Davor teilen wir alles, was anliegt, in einem Google Doc. In diesem Dokument teilen wir die Ziele unserer demnächst zur Veröffentlichung anstehenden Produkte sowie alle Funktionsgruppen an denen wir arbeiten - einschließlich grafischer Darstellungen unserer Fortschritte -, zudem enthält es Links zu unseren Fehlerberichten in [YouTrack](https://mcneel.myjetbrains.com) und wir erhalten verbale Rückmeldung aller Leute, die an diesen Funktionen arbeiten.
+Jeden Dienstag haben wir eine gemeinsame Besprechung.  Davor teilen wir alles, was anliegt, in einem Google Doc. In diesem Dokument teilen wir die Ziele unserer demnächst zur Veröffentlichung anstehenden Produkte sowie alle Funktionsgruppen, an denen wir arbeiten - einschließlich grafischer Darstellungen unserer Fortschritte -; zudem enthält es Links zu unseren Fehlerberichten in [YouTrack](https://mcneel.myjetbrains.com) und wir erhalten verbale Rückmeldung aller Leute, die an diesen Funktionen arbeiten.
 
-Auch schreibt alle Entwickler auf woran sie gerade arbeiten, was als nächste für sie auf dem Plan steht und auf welche Hinernisse sie bei ihrer Arbeit stoßen.
+Auch schreiben alle Entwickler auf, woran sie gerade arbeiten, was als nächste für sie auf dem Plan steht und auf welche Hindernisse sie bei ihrer Arbeit stoßen.
 
 ### Automatisierung
 
@@ -114,27 +114,27 @@ Und nicht zuletzt wird auch VIEL automatisiert.
 Hier sind einige der Dinge, die wir automatisieren:
 
 - Erstellung aller Check-ins von allen Entwicklern, bevor sie Teil der Haupt-Branch unserer Enwicklung werden.
-- Schließung der Problemberichte in [YouTrack](https://mcneel.myjetbrains.com) wenn Fehlerbehebungen durch die [TeamCity](https://www.jetbrains.com/teamcity/)-Server in unsere Haupt-Entwicklungsbranch eingeführt werden.
+- Schließen der Problemberichte in [YouTrack](https://mcneel.myjetbrains.com), wenn Fehlerbehebungen durch die [TeamCity](https://www.jetbrains.com/teamcity/)-Server in unsere Haupt-Entwicklungsbranch eingeführt werden.
 - Erstellung interner und auslieferbarer Veröffentlichungen auf unseren [TeamCity](https://www.jetbrains.com/teamcity/)-Servern.
 - Herausgabe neuer WIP-Veröffentlichungen durch Befehlseingabe in [Slack](https://slack.com/).
 - Hochladen lieferbarer Veröffentlichungen auf unsere Download-Server.
 
-## Öffentlich
+## Publik
 
-Bis zuletzt waren dies die Teile unseres Prozesses, die wir öffentlich gemacht haben:
+Bis vor Kurzem waren dies die Teile unseres Prozesses, die wir öffentlich gemacht haben:
 
 - Testen
 - Veröffentlichen
 - Erhaltenes Feedback
 
-Und während der letzten zwei Jahre haben wir unseren Bugtracker öffentlich gemacht, indem wir zu YouTrack gewechselt sind.  Einige Probleme sind aus Sicherheits- oder Datenschutzgründen nicht öffentlich einsehbar.
+Und während der letzten zwei Jahre haben wir unseren Bugtracker öffentlich zugänglich gemacht, indem wir zu YouTrack gewechselt sind.  Einige Probleme sind aus Sicherheits- oder Datenschutzgründen nicht öffentlich einsehbar.
 
-Das nächste was wir tun möchten, ist noch mehr von all dem öffentlich zu machen:
+Das nächste was wir tun möchten, ist noch mehr von all dem publik zu machen, und zwar durch:
 
-- Unseren Code teilweise auf öffentlichen Repos auf GitHub zugänglich machen, so dass Sie über echte, produkerprobte Code-Beispiele als Arbeitsgrundlage verfügen können.
-- Ihnen die Möglichkeit zum Teilen von Fehlerbehebungen und Verbesserungen unseres Codes geben.
-- Es durch die Veröffentlichung von RhinoCommon als NuGet-Paket erleichtern, Plug-in-Projekte zu erstellen.
-- Im Bedarfsfall bei der Build-Automatisierung behilflich sein.
+- Teilweises Code-Sharing auf öffentlichen Repos auf GitHub, so dass Sie über echte, produkterprobte Code-Beispiele als Arbeitsgrundlage verfügen können.
+- Die Möglichkeit für Sie, Fehlerbehebungen und Verbesserungen unseres Codes zu teilen.
+- Leichtere Erstellung von Plug-in-Projekten durch die Veröffentlichung von RhinoCommon als NuGet-Paket.
+- Hilfe bei der Build-Automatisierung, falls erforderlich.
 
 ## Verwandte Themen
 
