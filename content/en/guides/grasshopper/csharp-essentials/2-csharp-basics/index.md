@@ -1,5 +1,5 @@
 +++
-aliases = ["/en"]
+aliases = []
 authors = [ "rajaa" ]
 categories = [ "Csharp Essentials" ]
 category_page = "guides/grasshopper/csharp-essentials/"
