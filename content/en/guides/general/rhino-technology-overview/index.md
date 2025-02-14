@@ -9,7 +9,6 @@ sdk = [ "General" ]
 title = "Rhino Technology Overview"
 type = "guides"
 weight = 0
-override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = ""
