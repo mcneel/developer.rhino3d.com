@@ -1,12 +1,12 @@
 +++
-aliases = ["/de/5/guides/general/rhino-technology-overview/", "/de/6/guides/general/rhino-technology-overview/", "/de/7/guides/general/rhino-technology-overview/", "/de/wip/guides/general/rhino-technology-overview/"]
+aliases = ["/en/5/guides/general/rhino-technology-overview/", "/en/6/guides/general/rhino-technology-overview/", "/en/7/guides/general/rhino-technology-overview/", "/en/wip/guides/general/rhino-technology-overview/"]
 authors = [ "brian" ]
 categories = [ "Overview" ]
-description = "A summary of the Rhino technology architecture."
+description = "Eine Zusammenfassung der Rhino-Technologiearchitektur."
 keywords = [ "developer", "rhino" ]
 languages = [ "All" ]
 sdk = [ "General" ]
-title = "Rhino Technology Overview"
+title = "Rhino-Technologie in der Übersicht"
 type = "guides"
 weight = 0
 override_last_modified = "2018-12-05T14:59:06Z"
@@ -28,123 +28,123 @@ toc_type = "single"
 +++
 
 
-## Overview
+## Übersicht
 
-Rhinoceros is composed of many layers - written in many languages - all stacked on top of each other.  The most foundational are on the bottom, but the top layers should by no means be considered superficial...
+Rhinoceros besteht aus einer Vielzahl von - in vielen Sprachen geschriebenen - Ebenen, die alle übereinander gestapelt sind.  Die grundlegendsten befinden sich zuunterst, aber die obersten Ebenen sollten keinesfalls als oberflächlich gelten...
 
 ![The Rhino Stack](/images/rhino-technology-overview-01.png)
 
-Let's discuss each of the layers in turn, starting on the bottom with the...
+Sprechen wir stattdessen über jede einzelne Ebene, angefangen bei der untersten, nämlich...
 
 ## Foundation
 
 ### C++ Rhino Core
 
-The C++ Core of Rhino is the oldest and broadest set of code.  We use Microsoft’s MFC in places, including the SDK.  This is where the runtime document is managed, where all the OpenGL viewport drawing code exists, and it’s where the computational geometry code written by our mathematicians lives.  Many of Rhino's commands are here.
+Der C++-Kern von Rhino ist der älteste und umfangreichste Codesatz.  Wir verwenden teilweise Microsofts MFC, auch im SDK.  Hier wird das Laufzeitdokument verwaltet, hier befindet sich der gesamte OpenGL-Zeichencode für das Ansichtsfenster, und hier befindet sich der von unseren Mathematikern geschriebene Code für die Berechnungsgeometrie.  Viele der Rhino-Befehle sind hier zu finden.
 
-Lots of user interface - the command line, the application mainframe, status bar, and the dialog boxes for many commands in the Rhino core.
+Ein Großteil der Bedienoberfläche - die Befehlszeile, das Anwendungs-Grundgerüst, die Statusleiste und die Dialogfenster für viele Befehle im Rhino-Kern.
 
 ### openNURBS
 
-openNURBS is free C++ source code that lets you read and write Rhino *3dm* files - all the way back to version 1.  openNURBS was our first open-source project.
+openNURBS ist ein kostenloser C++-Quellcode, mit dem Sie Rhino *3dm* -Dateien lesen und schreiben können - bis zurück zur Version 1.  openNURBS war unser erstes Open-Source-Projekt.
 
-The code compiles on Windows, macOS, Linux, iOS, and Android.  It's used in various third-party applications like ArchiCAD, SolidWorks, Inventor, SketchUp and many other products to read or write *3dm* files directly.
+Der Code lässt sich auf Windows, macOS, Linux, iOS und Android kompilieren.  Er wird in verschiedenen Anwendungen von Drittanbietern wie ArchiCAD, SolidWorks, Inventor, SketchUp und vielen anderen Produkten verwendet, um *3dm* -Dateien direkt zu lesen oder zu schreiben.
 
-openNURBS is what Rhino uses natively to read/write *3dm* files.  This toolkit is released before Rhino, so any product, including our competitors, can be compatible with the latest *3dm* files.  There is no difference between the *3dm* files Rhino writes and those of other applications using openNURBS to read and write *3dm*.
+openNURBS ist das, was Rhino nativ zum Lesen/Schreiben von *3dm* -Dateien verwendet.  Dieses Toolkit wird vor Rhino veröffentlicht, so dass alle Produkte, einschließlich der unserer Konkurrenten, mit den neuesten *3dm* -Dateien kompatibel sein können.  Es gibt keinen Unterschied zwischen den *3dm* -Dateien, die Rhino schreibt, und denen anderer Anwendungen, die openNURBS zum Lesen und Schreiben von *3dm*verwenden.
 
-For more information about openNURBS, please see the [openNURBS guides](/guides/opennurbs/).
+Weitere Informationen über openNURBS finden Sie in den [openNURBS-Anleitungen](/guides/opennurbs/).
 
 ### C++ SDK
 
-On top of all of this is our C++ SDK, available only on Windows.
+Hinzu kommt unser C++-SDK, das nur in Windows verfügbar ist.
 
-Compiling against the C++ SDK requires a specific version of Microsoft Visual Studio and the Microsoft C-Runtime.  You have to recompile for every major version of Rhino.
+Die Kompilierung mit dem C++ SDK erfordert eine bestimmte Version von Microsoft Visual Studio und Microsoft C-Runtime.  Sie müssen für jede Hauptversion von Rhino neu kompilieren.
 
-Virtually everything Rhino can do is exposed through the C++ SDK. Some commands and features haven’t been exposed yet, but this SDK is very broad and rich.
+Praktisch alles, was Rhino tun kann, wird durch das C++ SDK dargestellt. Einige Befehle und Funktionen wurden noch nicht dargestellt, aber dieses SDK ist sehr umfangreich und reichhaltig.
 
-Unfortunately, because it's so tightly coupled to the Rhino Core, plugin developers need to recompile their plugins for every Rhino release.
+Da es so eng an den Rhino-Kern gekoppelt ist, müssen Plug-in-Entwickler ihre Plug-ins leider für jede Rhino-Version neu kompilieren.
 
-For more information about the C++ SDK, check out the [C/C++ guides](/guides/cpp/).
+Weitere Informationen über das C++ SDK finden Sie in den [C/C++ Anleitungen](/guides/cpp/).
 
-## C++ Stack
+## C++ Stapel
 
-On the right column of the stack diagram above is the C++ portion of Rhino.  The C++ stack allows us - as well as third-party plugin developers - to write Rhino plugins using the same C++ SDK that we use to develop Rhino itself.  Note that you cannot author Grasshopper components using C++.
+In der rechten Spalte des obigen Stapeldiagramms befindet sich der C++ Anteil von Rhino.  Der C++ Stapel ermöglicht es uns - und auch unabhängigen Plug-in-Entwicklern - Rhino-Plug-ins mit demselben C++ SDK zu schreiben, das wir auch für die Entwicklung von Rhino selbst verwenden.  Beachten Sie, dass Sie Grasshopper-Komponenten nicht mit C++ erstellen können.
 
-### C++ Plugins
+### #### C++ Plug-ins
 
-On top of the C++ SDK are C++ plugins.  Many features that ship with Rhino, including some Commands, File I/O, Renderers are actually C++ plugins.  There are also dozens of third-party C++ plugins, like [VisualARQ by Asuni](http://www.visualarq.com/), [RhinoCAM by MecSoft](https://mecsoft.com/rhinocam-software/), and [V-Ray by Chaos Software](https://www.chaosgroup.com/vray/rhino).
+Zusätzlich zum C++ SDK gibt es C++ Plug-ins.  Viele in Rhino enthaltene Funktionen, einschließlich einiger Befehle, Datei-E/A und Renderer, sind eigentlich C++-Plug-ins.  Außerdem gibt es Dutzende von C++ Plug-ins von Drittanbietern, wie [VisualARQ von Asuni](http://www.visualarq.com/), [RhinoCAM von MecSoft](https://mecsoft.com/rhinocam-software/)und [V-Ray von Chaos Software](https://www.chaosgroup.com/vray/rhino).
 
-For more information about the C++ SDK, check out the [C/C++ guides](/guides/cpp/).
+Weitere Informationen über das C++ SDK finden Sie in den [C/C++ Anleitungen](/guides/cpp/).
 
 ### RhinoScript
 
-One of the C++ plugins we ship with Rhino is [RhinoScript](/guides/rhinoscript/what-are-vbscript-rhinoscript/).  RhinoScript exposes a useful subset of Rhino’s SDK via VBScript - a widely used and popular scripting language.  RhinoScript gives you access not only to Rhino, but to any other COM object on Windows.
+Eines der C++-Plugins, die wir mit Rhino liefern, ist [RhinoScript](/guides/rhinoscript/what-are-vbscript-rhinoscript/).  RhinoScript stellt eine nützliche Teilmenge des Rhino-SDKs über VBScript zur Verfügung - eine weit verbreitete und beliebte Skriptsprache.  RhinoScript ermöglicht Ihnen nicht nur den Zugriff auf Rhino, sondern auch auf jedes andere COM-Objekt in Windows.
 
-For more information, see the [RhinoScript guides](/guides/rhinoscript/), and more specifically the [What are VBScript and RhinoScript?](/guides/rhinoscript/what-are-vbscript-rhinoscript/) guide.
+Weitere Informationen finden Sie in den [RhinoScript-Anleitungen](/guides/rhinoscript/), insbesondere in [What are VBScript and RhinoScript?](/guides/rhinoscript/what-are-vbscript-rhinoscript/).
 
-## .NET Stack
+## .NET-Stapel
 
-The .NET SDK is represented here in three layers:
+Das .NET SDK wird hier in drei Schichten dargestellt:
 
 - C API
-- .NET Framework
+- .NET-Rahmenwerk
 - RhinoCommon
 - Eto
 
 ### C API
 
-A straight C API wraps the C++ SDK, allowing us to Platform Invoke (P/Invoke) into the C++ SDK, forming a bridge between the native C++ code and the managed .NET layers.
+Eine reine C-API wrappt das C++ SDK und ermöglicht es uns, Platform Invoke (P/Invoke) in das C++-SDK einzubinden und so eine Brücke zwischen dem nativen C++-Code und den verwalteten .NET-Schichten zu bilden.
 
-### .NET Framework
+### .NET-Rahmenwerk
 
-Microsoft develops the [.NET Framework](https://www.microsoft.com/net/framework).  .NET makes it possible to write plugins in C#, F#, VB.NET, and any other language that compiles down to Microsoft's IL.
+Microsoft entwickelt das [.NET Framework](https://www.microsoft.com/net/framework).  NET ermöglicht es, Plugins in C#, F#, VB.NET und jeder anderen Sprache zu schreiben, die sich mit Microsofts IL kompilieren lässt.
 
-The Microsoft .NET framework ships with Windows.
+Das Microsoft .NET-Framework ist im Lieferumfang von Windows enthalten.
 
-In Rhino for Mac product, we embed the [Mono Runtime](https://www.mono-project.com), a partial cross-platform implementation of the .NET Runtime.
+In Rhino für Mac betten wir die [Mono Runtime](https://www.mono-project.com)ein, eine teilweise plattformübergreifende Implementierung der .NET Runtime.
 
-For more information about .NET and how it relates to Rhino development, see the [What are Mono & Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/).
+Für weitere Informationen über .NET und wie es sich auf die Rhino-Entwicklung bezieht, siehe [What are Mono & Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/).
 
 ### RhinoCommon
 
-RhinoCommon is our .NET SDK for Rhino, built atop the portions of the .NET framework that are *common* on both Windows and macOS (via Mono).  RhinoCommon allows developers to run .NET code on both Rhino for Windows and Rhino for Mac.
+RhinoCommon ist unser .NET-SDK für Rhino, das auf den Teilen des .NET-Frameworks aufbaut, die sowohl auf Windows als auch macOS (über Mono) *gebräuchlich* sind.  RhinoCommon ermöglicht es Entwicklern, .NET-Code sowohl auf Rhino für Windows als auch auf Rhino für Mac auszuführen.
 
-For more information about RhinoCommon, see the [RhinoCommon guides](/guides/rhinocommon/), or more specifically, the [What is RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon) guide.
+Weitere Informationen über RhinoCommon finden Sie in den [RhinoCommon-Anleitungen](/guides/rhinocommon/), oder genauer gesagt in [What is RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon).
 
 ### Eto
 
-Using RhinoCommon, you can write .NET plugins that work on Windows and Mac...except for the User Interface.  The Mono team did not clone WinForms or WPF, so neither of those technologies work on the Mac.  To address this problem, Rhino now ships with Eto.Forms.  Eto lets you write user interface once in C#, XAML, or JSON and use it on Windows and macOS.  Actually, your UI written in Eto, can run on iOS, Android, and Linux, too.
+Mit RhinoCommon können Sie .NET-Plug-ins schreiben, die auf Windows und Mac funktionieren... mit Ausnahme der Benutzeroberfläche.  Das Mono-Team hat weder WinForms noch WPF geklont, so dass keine dieser Technologien auf dem Mac funktioniert.  Um dieses Problem zu lösen, wird Rhino jetzt mit Eto.Forms geliefert.  Mit Eto können Sie die Benutzeroberfläche einmal in C#, XAML oder JSON schreiben und auf Windows und macOS verwenden.  Tatsächlich kann Ihre in Eto geschriebene Benutzeroberfläche auch auf iOS, Android und Linux laufen.
 
-For more information about Eto, check out [Eto.Forms on GitHub](https://github.com/picoe/Eto).
+Weitere Informationen über Eto finden Sie unter [Eto.Forms auf GitHub](https://github.com/picoe/Eto).
 
-### .NET Plugins
+### .NET-Plug-ins
 
-Built on top of RhinoCommon are numerous plugins, both internal and third-party developed plugins.  [Grasshopper](http://www.grasshopper3d.com/), for example, is a RhinoCommon plugin.  Some commands, renderers, and file IO plugins in Rhino are actually written as RhinoCommon plugins.  As time goes on, we are moving more and more convenient functionality into RhinoCommon/.NET plugins so as to share more code between platforms.  Many successful third-party plugins are also written using RhinoCommon and .NET, such as [RhinoGold](http://www.tdmsolutions.com/) and [Matrix by GEMVision](http://www.stuller.com/matrix), and [Orca3D](http://orca3d.com/).
+Auf RhinoCommon bauen zahlreiche Plug-ins auf, sowohl interne als auch von Dritten entwickelte Plug-ins.  [Grasshopper](http://www.grasshopper3d.com/), zum Beispiel, ist ein RhinoCommon-Plug-in.  Einige Befehle, Renderer und Datei-IO-Plug-ins in Rhino sind eigentlich als RhinoCommon-Plug-ins geschrieben.  Im Laufe der Zeit verschieben wir mehr und mehr praktische Funktionen in RhinoCommon/.NET-Plug-ins, um mehr Code über die Plattformen hinweg zu teilen.  Viele erfolgreiche Plug-ins von Drittanbietern wurden ebenfalls mit RhinoCommon und .NET geschrieben, wie [RhinoGold](http://www.tdmsolutions.com/) und [Matrix von GEMVision](http://www.stuller.com/matrix)und [Orca3D](http://orca3d.com/).
 
-For more information about RhinoCommon, see the [RhinoCommon guides](/guides/rhinocommon/).
+Weitere Informationen über RhinoCommon finden Sie in den [RhinoCommon-Anleitungen](/guides/rhinocommon/).
 
 ### Grasshopper Components
 
-Rhino now ships with Grasshopper, our visual programming language for algorithmic and parametric design.  Grasshopper is a development platform unto itself, with [hundreds of third-party authored Grasshopper components](http://www.food4rhino.com/grasshopper-addons), for doing all sorts of things from [physics simulation](http://www.food4rhino.com/project/kangaroo), to [creating custom user-interfaces](http://www.food4rhino.com/project/human-ui), to [industrial robotic programming and control](http://www.food4rhino.com/project/hal).
+Rhino wird jetzt mit Grasshopper geliefert, unserer visuellen Programmiersprache für algorithmisches und parametrisches Design.  Grasshopper ist eine eigenständige Entwicklungsplattform mit [Hunderten von Grasshopper-Komponenten von Drittanbietern](http://www.food4rhino.com/grasshopper-addons), mit denen sich alle möglichen Dinge tun lassen, von [Physiksimulationen](http://www.food4rhino.com/project/kangaroo) über [Benutzeroberflächen](http://www.food4rhino.com/project/human-ui) bis hin zur [Industrieroboterprogrammierung und -steuerung](http://www.food4rhino.com/project/hal).
 
-For more information about Grasshopper, more specifically developing Grasshopper components, check out the [Grasshopper guides](/guides/grasshopper/).
+Weitere Informationen über Grasshopper, insbesondere über die Entwicklung von Grasshopper-Komponenten, finden Sie in den [Grasshopper-Anleitungen](/guides/grasshopper/).
 
-### Python Scripts
+### Python-Scripting
 
-One of the .NET plugins that ships with Rhino is RhinoPython.  Written using [IronPython](http://ironpython.net/), a .NET implementation of the [python](https://www.python.org/) runtime, RhinoPython exposes the entire RhinoCommon SDK to the python scripting language.  That means any time we add a feature to RhinoCommon, it shows up automatically in RhinoPython.
+Eines der .NET-Plugins, die wir mit Rhino liefern, ist RhinoPython.  Geschrieben mit [IronPython](http://ironpython.net/), einer .NET-Implementierung der [Python](https://www.python.org/) -Laufzeitumgebung, stellt RhinoPython das gesamte RhinoCommon-SDK der Python-Skriptsprache zur Verfügung.  Das bedeutet, dass jedes Mal, wenn wir eine Funktion zu RhinoCommon hinzufügen, diese automatisch in RhinoPython auftaucht.
 
-For more information about RhinoPython, see the [RhinoPython guides](/guides/rhinopython/).
+Weitere Informationen über RhinoPython finden Sie in den [RhinoPython-Anleitungen](/guides/rhinopython/).
 
-## Related Topics
+## Verwandte Themen
 
-- [C/C++ guides](/guides/cpp/)
-- [openNURBS guides](/guides/opennurbs/)
-- [RhinoScript guides](/guides/rhinoscript/)
-- [Microsoft .NET Framework (on microsoft.com)](https://www.microsoft.com/net/framework)
-- [What is RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon)
-- [RhinoCommon guides](/guides/rhinocommon/)
-- [What are Mono & Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/)
-- [Mono Project](https://www.mono-project.com)
-- [Eto.Forms on GitHub](https://github.com/picoe/Eto)
-- [Grasshopper guides](/guides/grasshopper/)
-- [RhinoPython guides](/guides/rhinopython/)
+- [C/C++ Anleitungen](/guides/cpp/)
+- [openNURBS-Führer](/guides/opennurbs/)
+- [RhinoScript-Anleitungen](/guides/rhinoscript/)
+- [Microsoft .NET Framework (auf microsoft.com)](https://www.microsoft.com/net/framework)
+- [Was ist RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon)
+- [RhinoCommon-Anleitungen](/guides/rhinocommon/)
+- [Was sind Mono und Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/)
+- [Mono-Projekt](https://www.mono-project.com)
+- [Eto.Forms auf GitHub](https://github.com/picoe/Eto)
+- [Grasshopper-Anleitungen](/guides/grasshopper/)
+- [RhinoPython-Anleitungen](/guides/rhinopython/)
