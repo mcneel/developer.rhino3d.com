@@ -101,9 +101,7 @@ Microsoft develops the [.NET Framework](https://www.microsoft.com/net/framework)
 
 The Microsoft .NET framework ships with Windows.
 
-In Rhino for Mac product, we embed the [Mono Runtime](https://www.mono-project.com), a partial cross-platform implementation of the .NET Runtime.
-
-For more information about .NET and how it relates to Rhino development, see the [What are Mono & Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/).
+In Rhino for Mac, we embed [.NET Core](/guides/rhinocommon/moving-to-dotnet-7/) within the app itself.
 
 ### RhinoCommon
 
@@ -143,7 +141,6 @@ For more information about RhinoPython, see the [RhinoPython guides](/guides/rhi
 - [Microsoft .NET Framework (on microsoft.com)](https://www.microsoft.com/net/framework)
 - [What is RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon)
 - [RhinoCommon guides](/guides/rhinocommon/)
-- [What are Mono & Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/)
 - [Mono Project](https://www.mono-project.com)
 - [Eto.Forms on GitHub](https://github.com/picoe/Eto)
 - [Grasshopper guides](/guides/grasshopper/)

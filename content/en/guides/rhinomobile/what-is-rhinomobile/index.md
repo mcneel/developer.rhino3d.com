@@ -99,6 +99,5 @@ If you are ready to get started with RhinoMobile, begin by making sure you have 
 ## Related Topics
 
 - [What is RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon/)
-- [What are Mono & Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/)
 - [Installing Tools (Mac)](/guides/rhinomobile/installing-tools-mac/)
 - [Installing Tools (Windows)](/guides/rhinomobile/installing-tools-windows/)
