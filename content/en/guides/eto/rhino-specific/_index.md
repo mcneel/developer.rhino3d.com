@@ -339,7 +339,7 @@ class MyForm : Form {}
 var myForm = new MyForm() { Width = 100, Height = 100 };
 myForm.Content = new Label() { Text = "0" };
 
-void IncrimentLabel(object sender, RhinoObjectEventArgs e)
+void IncrementLabel(object sender, RhinoObjectEventArgs e)
 {
   var doc = e.TheObject.Document;
   var form2 = EtoExtensions.WindowsFromDocument<MyForm>(doc).FirstOrDefault();
@@ -350,12 +350,12 @@ void IncrimentLabel(object sender, RhinoObjectEventArgs e)
 
 myForm.Shown += (a, b) => 
 {
-    RhinoDoc.AddRhinoObject -= IncrimentLabel;
-    RhinoDoc.AddRhinoObject += IncrimentLabel;
+    RhinoDoc.AddRhinoObject -= IncrementLabel;
+    RhinoDoc.AddRhinoObject += IncrementLabel;
 };
 
 myForm.Closed += (s, e) => {
-    RhinoDoc.AddRhinoObject -= IncrimentLabel;
+    RhinoDoc.AddRhinoObject -= IncrementLabel;
 };
 
 myForm.Show(__rhino_doc__);
@@ -387,7 +387,7 @@ try:
     myForm.Content = label
     myForm.count = 0
 
-    def IncrimentLabel(s, args):
+    def IncrementLabel(s, args):
         doc = args.TheObject.Document
         form = EtoExtensions.WindowsFromDocument[MyForm](doc)[0]
         label = form.FindChild[Label]()
@@ -395,7 +395,7 @@ try:
         label.Text = form.count
 
     def subscribe(s, e):
-        RhinoDoc.AddRhinoObject += IncrimentLabel
+        RhinoDoc.AddRhinoObject += IncrementLabel
 
     myForm.Shown += subscribe
 

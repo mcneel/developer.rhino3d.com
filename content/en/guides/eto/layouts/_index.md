@@ -119,7 +119,7 @@ dialog.ShowModal(parent)
 
 
 ## Extra adjustments in Spacing
-When working with multi-control Containers in eto, adding in extra spacing can be achieved through the use of `Null` or `None`. This can add nudges, force alignments and even be the area of the layout that expands incase you don't want anything else to.
+When working with multi-control Containers in eto, adding in extra spacing can be achieved through the use of `Null` or `None`. This can add nudges, force alignments and even be the area of the layout that expands in case you don't want anything else to.
 
 <!-- Table Layout -->
 <!-- Stack Layout -->
@@ -223,7 +223,7 @@ dialog.ShowModal(parent)
 {{< /column >}}
 {{< column >}}
 
-![Dyamic Layout](/images/eto/controls/null-spaced-layout-1.png)
+![Dynamic Layout](/images/eto/controls/null-spaced-layout-1.png)
 
 {{< /column>}}
 {{< /row >}}
