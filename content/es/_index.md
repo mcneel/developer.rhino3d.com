@@ -1,7 +1,7 @@
 +++
 aliases = ["/en/5/", "/en/6/", "/en/7/", "/en/wip/"]
-description = "Recursos oficiales para desarrolladores de Rhino y Grasshopper.  Las herramientas para desarrolladores de Rhino están libres de derechos e incluyen soporte técnico."
-title = "Documentación para desarrolladores de Rhino y Grasshopper"
+description = "Recursos oficiales para desarrolladores de Rhino y Grasshopper.  Las herramientas para desarrolladores de Rhino estÃ¡n libres de derechos e incluyen soporte tÃ©cnico."
+title = "DocumentaciÃ³n para desarrolladores de Rhino y Grasshopper"
 type = "home"
 
 [admin]
@@ -16,8 +16,8 @@ since = 0
 list_group = "uncategorized"
 +++
 
-{{< call-out note "¿Necesita ayuda para migrar C# a Rhino 8?" >}}
-Consulte la [Guía de migración a .NET 7](/guides/rhinocommon/moving-to-dotnet-7/).
+{{< call-out note "Â¿Necesita ayuda para migrar C# a Rhino 8?" >}}
+Consulte la [GuÃ­a de migraciÃ³n a .NET 7](/guides/rhinocommon/moving-to-dotnet-7/).
 {{< /call-out >}}
 
 {{< vimeo 188730450 >}}
@@ -29,9 +29,9 @@ Consulte la [Guía de migración a .NET 7](/guides/rhinocommon/moving-to-dotnet-7/
   <thead>
     <tr style="border-bottom:1pt solid black;">
       <th style="text-align: left;">Info</th>
-      <th style="text-align: left;">Qué</th>
-      <th style="text-align: left;">Cómo</th>
-      <th style="text-align: left;">Por qué</th>
+      <th style="text-align: left;">QuÃ©</th>
+      <th style="text-align: left;">CÃ³mo</th>
+      <th style="text-align: left;">Por quÃ©</th>
     </tr>
   </thead>
   <tbody class="table-striped index_table">
@@ -45,7 +45,7 @@ Consulte la [Guía de migración a .NET 7](/guides/rhinocommon/moving-to-dotnet-7/
     <td><a href="/guides/rhinopython" title="Rhino.Python: Pythonic in three dimensions!"> Rhino.Python</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="/images/mac-logo-small.png" alt="macOS" class="index_table_icon" title="Apple macOS"></td>
 	<td><img src="/images/python-logo-small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
-    <td class="index_table_primary_use">Programación multiplataforma</td>
+    <td class="index_table_primary_use">ProgramaciÃ³n multiplataforma</td>
   </tr>
   <tr>
     <td><a href="/guides/opennurbs" title="openNURBS is free and open source"> openNURBS</a></td>
@@ -79,7 +79,7 @@ Consulte la [Guía de migración a .NET 7](/guides/rhinocommon/moving-to-dotnet-7/
     <td class="index_table_primary_use">Desarrollo de plugins de renderizado en Windows.</td>
   </tr>
   -->
-  <!-- RAP es en realidad una característica del SDK de C/C++ y del SDK de RhinoCommon.
+  <!-- RAP es en realidad una caracterÃ­stica del SDK de C/C++ y del SDK de RhinoCommon.
   <tr>
     <td><a href="/guides/#rap" title="Rhino Application Platform"> RAP</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
@@ -100,7 +100,7 @@ Consulte la [Guía de migración a .NET 7](/guides/rhinocommon/moving-to-dotnet-7/
     <td><a href="/guides/rhinomobile" title="Tools for using 3dm files in mobile applications"> RhinoMobile</a></td>
 	<td><img src="/images/android-logo-small.png" alt="Android" class="index_table_icon" title="Android"><img src="/images/ios-logo-small.png" alt="iOS" class="index_table_icon" title="Apple iOS"></td>
 	<td><img src="/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"></td>
-    <td class="index_table_primary_use">Desarrollo de aplicaciones móviles 3D</td>
+    <td class="index_table_primary_use">Desarrollo de aplicaciones mÃ³viles 3D</td>
   </tr>
   -->
  </tbody>
@@ -112,8 +112,8 @@ Consulte la [Guía de migración a .NET 7](/guides/rhinocommon/moving-to-dotnet-7/
 <div align="center">
 
 
-<p>¿Necesita más información?  Navegue por las <a href="/guides/">Guías</a>.  Haga preguntas en el <a href="/guides/general/contributing/#discourse">Foro</a>.  Consulte las <a href="/guides/general/frequently-asked-questions/">FAQ</a>. Pregunte a un <a href="/guides/general/contributing/#contacts">desarrollador</a>.</p>
+<p>Â¿Necesita mÃ¡s informaciÃ³n?  Navegue por las <a href="/guides/">GuÃ­as</a>.  Haga preguntas en el <a href="/guides/general/contributing/#discourse">Foro</a>.  Consulte las <a href="/guides/general/frequently-asked-questions/">FAQ</a>. Pregunte a un <a href="/guides/general/contributing/#contacts">desarrollador</a>.</p>
 
-<p><a href="/license">{{< awesome "fas fa-balance-scale" >}} MIT License</a>. Las herramientas para desarrolladores de Rhino son gratuitas e incluyen soporte técnico. </p>
+<p><a href="/license">{{< awesome "fas fa-balance-scale" >}} MIT License</a>. Las herramientas para desarrolladores de Rhino son gratuitas e incluyen soporte tÃ©cnico. </p>
 </div>
 
