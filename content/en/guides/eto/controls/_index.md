@@ -65,19 +65,19 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 
-from Eto.Drawing import Padding
-from Eto.Forms import *
+import Eto.Drawing as ed
+import Eto.Forms as ef
 
 
 def show_message(sender, e):
-  MessageBox.Show("You clicked me")
+  ef.MessageBox.Show("You clicked me")
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog()
-dialog.Padding = Padding(8)
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(8)
 
-button = Button()
+button = ef.Button()
 button.Click += show_message
 button.Text = "I am a button"
 
@@ -145,15 +145,15 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 
-from Eto.Drawing import Padding
-from Eto.Forms import Dialog, DropDown
+import Eto.Drawing as ed
+import Eto.Forms as ef
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog()
-dialog.Padding = Padding(8)
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(8)
 
-drop_down = DropDown()
+drop_down = ef.DropDown()
 drop_down.DataStore = ["Point", "Curve", "Brep" ]
 drop_down.SelectedIndex = 0
 
@@ -223,18 +223,18 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 
-from Eto.Drawing import Padding, Size
-from Eto.Forms import *
+import Eto.Drawing as ed
+import Eto.Forms as ef
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog()
-dialog.Padding = Padding(8)
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(8)
 
-button_list = RadioButtonList()
+button_list = ef.RadioButtonList()
 button_list.DataStore = ["Earl Grey", "Rooibos", "Oolong"]
-button_list.Orientation = Orientation.Vertical
-button_list.Spacing = Size(4, 4)
+button_list.Orientation = ef.Orientation.Vertical
+button_list.Spacing = ed.Size(4, 4)
 
 dialog.Content = button_list
 dialog.ShowModal(parent)
@@ -296,15 +296,15 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import *
-from Eto.Drawing import Padding, Size
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog()
-dialog.Padding = Padding(8)
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(8)
 
-check_box = CheckBox()
+check_box = ef.CheckBox()
 check_box.Checked = True
 check_box.Text = "Check Please"
 
@@ -370,17 +370,17 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import *
-from Eto.Drawing import Padding, Size
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog()
-dialog.Padding = Padding(8)
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(8)
 
-text_box = TextBox()
+text_box = ef.TextBox()
 
-text_box.TextAlignment = TextAlignment.Center
+text_box.TextAlignment = ef.TextAlignment.Center
 text_box.Width = 200
 text_box.PlaceholderText = "example@email.com"
 
@@ -447,17 +447,17 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import *
-from Eto.Drawing import Padding, Size
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog()
-dialog.Padding = Padding(8)
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(8)
 
-text_area = TextArea()
+text_area = ef.TextArea()
 
-text_area.TextAlignment = TextAlignment.Left
+text_area.TextAlignment = ef.TextAlignment.Left
 text_area.AcceptsReturn = True
 text_area.Width = 200
 text_area.Height = 200

@@ -125,7 +125,7 @@ async Task<bool> MyAsyncMethod()
   return true;
 }
 
-var result = MyAsyncMethod().Result;
+var result = ef.MyAsyncMethod().Result;
 
 RhinoApp.WriteLine("Done!");
 ```
@@ -141,7 +141,7 @@ async Task<bool> MyAsyncMethod()
   return true;
 }
 
-var result = MyAsyncMethod().GetAwaiter().GetResult();
+var result = ef.MyAsyncMethod().GetAwaiter().GetResult();
 
 Rhino.RhinoApp.WriteLine("Done!");
 ```

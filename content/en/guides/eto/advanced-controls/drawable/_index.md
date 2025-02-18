@@ -82,33 +82,33 @@ dialog.ShowModal(parent);
 import scriptcontext as sc
 
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import *
-from Eto.Drawing import Padding, Size
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-drawable = Drawable()
+drawable = ef.Drawable()
 drawable.Width = 200
 drawable.Height = 200
 
 def draw(sender, e):
 
     # Circle
-    rect = RectangleF(0, 0, 50, 50)
-    e.Graphics.FillEllipse(Colors.Red, rect)
+    rect = ed.RectangleF(0, 0, 50, 50)
+    e.Graphics.FillEllipse(ed.Colors.Red, rect)
 
     # Line
-    linePen = Pen(Colors.Blue, 4)
+    linePen = ed.Pen(ed.Colors.Blue, 4)
     e.Graphics.DrawLine(linePen, 60, 60, 120, 60)
 
     # Rectangle
-    rectPen = Pen(Colors.Green, 6)
+    rectPen = ed.Pen(ed.Colors.Green, 6)
     e.Graphics.DrawRectangle(rectPen, 10, 80, 140, 80)
 
 drawable.Paint += draw
 
-dialog = Dialog()
-dialog.Padding = Padding(24)
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(24)
 dialog.Content = drawable
 
 dialog.ShowModal(parent)
@@ -153,14 +153,14 @@ var drawable = new Drawable() {
 bool over = false;
 
 drawable.Paint += (s, e) => {
-    var rect = new RectangleF(3, 3, 50, 50);
+    var rect = new RectangleF(1, 1, 50, 50);
     e.Graphics.FillEllipse(Color.FromArgb(255, 90, 89), rect);
 
     if (over)
     {
-        var pen = new Pen(Color.FromArgb(353, 0, 5), 5f);
-        e.Graphics.DrawLine(pen, 36, 36, 34, 34);
-        e.Graphics.DrawLine(pen, 36, 34, 34, 36);
+        var pen = new Pen(Color.FromArgb(170, 22, 1), 5f);
+        e.Graphics.DrawLine(pen, 16, 16, 34, 34)
+        e.Graphics.DrawLine(pen, 34, 16, 16, 34)
     }
 };
 
@@ -191,12 +191,12 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import *
-from Eto.Drawing import Padding, Size
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-drawable = Drawable()
+drawable = ef.Drawable()
 drawable.Width = 52
 drawable.Height = 52
 drawable.over = False
@@ -210,22 +210,22 @@ def mouse_leave(sender, e):
     drawable.Invalidate(True)
     
 def draw(sender, e):
-    rect = RectangleF(3, 3, 50, 50)
-    e.Graphics.FillEllipse(Color.FromArgb(255, 90, 89), rect)
+    rect = ed.RectangleF(1, 1, 50, 50)
+    e.Graphics.FillEllipse(ed.Color.FromArgb(255, 90, 89), rect)
 
     if drawable.over:
-        pen = Pen(Color.FromArgb(353, 0, 5), 5)
-        e.Graphics.DrawLine(pen, 36, 36, 34, 34)
-        e.Graphics.DrawLine(pen, 36, 34, 34, 36)
+        pen = ed.Pen(ed.Color.FromArgb(170, 22, 1), 5)
+        e.Graphics.DrawLine(pen, 16, 16, 34, 34)
+        e.Graphics.DrawLine(pen, 34, 16, 16, 34)
 
 drawable.Paint += draw
 drawable.MouseEnter += mouse_enter
 drawable.MouseLeave += mouse_leave
 
 
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Content = drawable
-dialog.Padding = Padding(24)
+dialog.Padding = ed.Padding(24)
 dialog.ShowModal(parent)
 ```
 
@@ -276,7 +276,7 @@ var drawable = new Drawable() {
 bool over = false;
 
 drawable.Paint += (s, e) => {
-    var rect = GetRect();
+    var rect = ef.GetRect();
     e.Graphics.FillEllipse(Colors.OrangeRed, rect);
     
     if (!mouseDown) return;
@@ -319,21 +319,21 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import *
-from Eto.Drawing import Padding, Size
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-drawable = Drawable()
+drawable = ef.Drawable()
 drawable.Width = 200
 drawable.Height = 200
 drawable.down = False
-drawable.mouse_location = PointF(100, 100)
+drawable.mouse_location = ed.PointF(100, 100)
 
 def get_rect():
-    point = PointF(drawable.mouse_location.X, drawable.mouse_location.Y)
-    size = SizeF(30, 30)
-    rect = RectangleF.FromCenter(point, size)
+    point = ed.PointF(drawable.mouse_location.X, drawable.mouse_location.Y)
+    size = ed.SizeF(30, 30)
+    rect = ed.RectangleF.FromCenter(point, size)
     return rect
 
 def mouse_move(sender, e):
@@ -352,17 +352,17 @@ def mouse_down(sender, e):
         pass
 
     drawable.down = True
-    drawable.mouse_location = e.Location;
+    drawable.mouse_location = e.Location
     drawable.Invalidate(True)
     
 def draw(sender, e):
     rect = get_rect()
-    e.Graphics.FillEllipse(Colors.OrangeRed, rect)
+    e.Graphics.FillEllipse(ed.Colors.OrangeRed, rect)
     
     if not drawable.down:
         pass
 
-    e.Graphics.DrawEllipse(Colors.Goldenrod, rect)
+    e.Graphics.DrawEllipse(ed.Colors.Goldenrod, rect)
 
 drawable.Paint += draw
 drawable.MouseMove += mouse_move
@@ -370,8 +370,8 @@ drawable.MouseUp += mouse_up
 drawable.MouseDown += mouse_down
 
 
-dialog = Dialog()
-dialog.Padding = Padding(24)
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(24)
 dialog.Content = drawable
 
 dialog.ShowModal(parent)

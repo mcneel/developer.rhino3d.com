@@ -16,7 +16,7 @@ since = 0
 list_group = "uncategorized"
 +++
 
-{{< call-out note "Need help migrating C# to Rhino 8?" >}}
+{{< call-out note "Besoin d'aide pour la migration de C# vers Rhino 8 ?" >}}
 Veuillez consulter le guide [Passer à .NET 7](/guides/rhinocommon/moving-to-dotnet-7/).
 {{< /call-out >}}
 
