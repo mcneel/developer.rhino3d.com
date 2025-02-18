@@ -25,8 +25,7 @@ platforms = [ "Windows", "Mac" ]
 
 A UI with 3 drop-downs, changing the choice in any drop down will change the available options to the right of it.
 
-{{< row >}}
-{{< column >}}
+![Your First Data](/images/eto/examples/three-prong-drop-down.png)
 
 <div class="codetab">
   <button class="tablinks7" onclick="openCodeTab(event, 'cs7')" id="defaultOpen7">C#</button>
@@ -289,18 +288,10 @@ dialog.ShowModal(parent)
   </div>
 </div>
 
-{{< /column >}}
-{{< column >}}
-
-![Your First Data](/images/eto/examples/three-prong-drop-down.png)
-
-{{< /column >}}
-{{< /row >}}
-
 ## Convert nested list to Eto Table
 
-{{< row >}}
-{{< column >}}
+![List to Table](/images/eto/examples/list-to-eto-table.png)
+
 <div class="codetab">
   <button class="tablinks2" onclick="openCodeTab(event, 'cs2')" id="defaultOpen2">C#</button>
   <button class="tablinks2" onclick="openCodeTab(event, 'py2')">Python</button>
@@ -312,9 +303,10 @@ dialog.ShowModal(parent)
 ``` cs
 using System;
 using System.Collections.Generic;
+
 using Eto.Forms;
 using Eto.Drawing;
-
+ 
 public class EtoTable
 {
   public static TableLayout ConvertToTable(List<List<string>> nestedList, bool ExpandTable = true)
@@ -323,54 +315,67 @@ public class EtoTable
     {
       Spacing = new Size(1, 1),
     };
+
     bool first = true;
     bool odd = true;
     foreach (var row in nestedList)
     {
       var tableRow = new TableRow();
+
       foreach (var cell in row)
       {
-        var label = new Label { Text = cell, VerticalAlignment = VerticalAlignment.Center };
-        var container = new Panel();
-        container.Padding = new Padding(5,2);
-        container.BackgroundColor = first? Colors.BlanchedAlmond: odd? Colors.White: Colors.FloralWhite;
-        container.Content = label;     
+        var label = new Label
+        {
+          Text = cell,
+          VerticalAlignment = VerticalAlignment.Center,
+          TextColor = Colors.Black
+        };
+
+        var container = new Panel()
+        {
+          Padding = new Padding(5,2),
+          BackgroundColor = first? Colors.BlanchedAlmond: odd? Colors.White: Colors.FloralWhite,
+          Content = label,
+        }
+
         tableRow.Cells.Add(new TableCell(container, ExpandTable? true: false));
       }
+      
       first = false;
       odd = !odd;
-      if (!ExpandTable) tableRow.Cells.Add(null);
+
+      if (!ExpandTable)
+        tableRow.Cells.Add(null);
+
       table.Rows.Add(tableRow);
     }
+
     table.Rows.Add(null);
+
     return table;
   }
-
-  public class MainForm : FloatingForm
-  {
-    public MainForm()
-    {
-      Padding = 10;
-      Title = "Eto Table Example";
-
-      var nestedList = new List<List<string>>
-      {
-        new List<string> { "ID", "Name",   "Age" },
-        new List<string> { "1",  "Alice",  "25" },
-        new List<string> { "2",  "Bob",    "30" },
-        new List<string> { "3",  "Charlie", "22" },
-        new List<string> { "4",  "Dan",     "44" },
-        new List<string> { "5",  "Edward",  "65" },
-        new List<string> { "6",  "Frederic", "9" },
-        new List<string> { "7",  "Gina",    "17" },
-      };
-
-      Content = ConvertToTable(nestedList, true);
-    }
-  }
 }
-var form = new EtoTable.MainForm();
-form.Show();
+ 
+var nestedList = new List<List<string>>
+{
+    new List<string> { "ID", "Name",   "Age" },
+    new List<string> { "1",  "Alice",  "25" },
+    new List<string> { "2",  "Bob",    "30" },
+    new List<string> { "3",  "Charlie", "22" },
+    new List<string> { "4",  "Dan",     "44" },
+    new List<string> { "5",  "Edward",  "65" },
+    new List<string> { "6",  "Frederic", "9" },
+    new List<string> { "7",  "Gina",    "17" },
+};
+
+var dialog = new Dialog()
+{
+    Padding = 10,
+    Title = "Eto Table Example",
+    Content = EtoTable.ConvertToTable(nestedList, true)
+};
+
+dialog.ShowModal();
 ```
 
   </div>
@@ -440,17 +445,7 @@ class EtoTable(forms.FloatingForm):
 
 form = EtoTable()
 form.Show()
-
-
 ```
 
 </div>
 </div>
-
-{{< /column >}}
-{{< column >}}
-</br>
-{{< image url="/images/eto/examples/list-to-eto-table.png" width="400px" >}}
-
-{{< /column >}}
-{{< /row >}}
