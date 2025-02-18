@@ -1,7 +1,7 @@
 +++
-aliases = ["/es/5/", "/es/6/", "/es/7/", "/es/wip/"]
-description = "Recursos oficiales para desarrolladores de Rhino y Grasshopper.  Las herramientas para desarrolladores de Rhino est√°n libres de derechos e incluyen soporte t√©cnico."
-title = "Documentaci√≥n para desarrolladores de Rhino y Grasshopper"
+aliases = ["/en/5/", "/en/6/", "/en/7/", "/en/wip/"]
+description = "Recursos oficiales para desarrolladores de Rhino y Grasshopper.  Las herramientas para desarrolladores de Rhino est·n libres de derechos e incluyen soporte tÈcnico."
+title = "DocumentaciÛn para desarrolladores de Rhino y Grasshopper"
 type = "home"
 
 [admin]
@@ -15,36 +15,10 @@ since = 0
 [cascade]
 list_group = "uncategorized"
 +++
-<!--
-<div align="center"><h1 id="getting-started-with-rhino-development">Empezar con el desarrollo de Rhino</h1></div>
--->
-<!--
-<div>
-  <table style="width:100%; border: 1px; margin: 0 auto; padding:0; border-spacing: 0px; border-collapse: separate;">
-    <tbody>
-      <tr>
-        <td style="padding: 20px; text-align: center;">
-          <a href="/guides/grasshopper" title="Grasshopper Components">
-            <img src="/images/ghcomponent-logo-intro.png" class="index_use_images">
-          </a>
-        </td>
-        <td style="padding: 20px; text-align: center;">
-          <a href="/guides/#rhinocommon" title="RhinoCommon: The cross-platform .NET SDK for Rhino and Grasshopper">
-            <img src="/images/rhinocommon-logo-intro.png" class="index_use_images">
-          </a>
-        </td>
-        <td style="padding: 20px; text-align: center;">
-          <a href="/guides/#rhinopython" title="Rhino.Python: Pythonic in three dimensions!">
-            <img src="/images/rhino-python-logo-intro.png" class="index_use_images">
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
--->
 
-{{< alt-version "https://developer.rhino3d.com/guides/rhinocommon/moving-to-dotnet-7/" "¬øNecesita ayuda para migrar C# a Rhino 8? ¬°Haa clic aqu√≠!">}}
+{{< call-out note "øNecesita ayuda para migrar C# a Rhino 8?" >}}
+Consulte la [GuÌa de migraciÛn a .NET 7](/guides/rhinocommon/moving-to-dotnet-7/).
+{{< /call-out >}}
 
 {{< vimeo 188730450 >}}
 
@@ -55,9 +29,9 @@ list_group = "uncategorized"
   <thead>
     <tr style="border-bottom:1pt solid black;">
       <th style="text-align: left;">Info</th>
-      <th style="text-align: left;">Qu√©</th>
-      <th style="text-align: left;">C√≥mo</th>
-      <th style="text-align: left;">Por qu√©</th>
+      <th style="text-align: left;">QuÈ</th>
+      <th style="text-align: left;">CÛmo</th>
+      <th style="text-align: left;">Por quÈ</th>
     </tr>
   </thead>
   <tbody class="table-striped index_table">
@@ -71,7 +45,7 @@ list_group = "uncategorized"
     <td><a href="/guides/rhinopython" title="Rhino.Python: Pythonic in three dimensions!"> Rhino.Python</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"><img src="/images/mac-logo-small.png" alt="macOS" class="index_table_icon" title="Apple macOS"></td>
 	<td><img src="/images/python-logo-small.png" alt="Python via IronPython" class="index_table_icon" title="Python via IronPython"></td>
-    <td class="index_table_primary_use">Programaci√≥n multiplataforma</td>
+    <td class="index_table_primary_use">ProgramaciÛn multiplataforma</td>
   </tr>
   <tr>
     <td><a href="/guides/opennurbs" title="openNURBS is free and open source"> openNURBS</a></td>
@@ -105,7 +79,7 @@ list_group = "uncategorized"
     <td class="index_table_primary_use">Desarrollo de plugins de renderizado en Windows.</td>
   </tr>
   -->
-  <!-- RAP es en realidad una caracter√≠stica del SDK de C/C++ y del SDK de RhinoCommon.
+  <!-- RAP es en realidad una caracterÌstica del SDK de C/C++ y del SDK de RhinoCommon.
   <tr>
     <td><a href="/guides/#rap" title="Rhino Application Platform"> RAP</a></td>
 	<td><img src="/images/win-logo-small.png" alt="Windows" class="index_table_icon" title="Windows"></td>
@@ -126,7 +100,7 @@ list_group = "uncategorized"
     <td><a href="/guides/rhinomobile" title="Tools for using 3dm files in mobile applications"> RhinoMobile</a></td>
 	<td><img src="/images/android-logo-small.png" alt="Android" class="index_table_icon" title="Android"><img src="/images/ios-logo-small.png" alt="iOS" class="index_table_icon" title="Apple iOS"></td>
 	<td><img src="/images/cs-logo-small.png" alt="C#" class="index_table_icon" title="C#"></td>
-    <td class="index_table_primary_use">Desarrollo de aplicaciones m√≥viles 3D</td>
+    <td class="index_table_primary_use">Desarrollo de aplicaciones mÛviles 3D</td>
   </tr>
   -->
  </tbody>
@@ -138,30 +112,8 @@ list_group = "uncategorized"
 <div align="center">
 
 
-<p>¬øNecesita m√°s informaci√≥n?  Navegue por las <a href="/guides/">Gu√≠as</a>.  Haga preguntas en el <a href="/guides/general/contributing/#discourse">Foro</a>.  Consulte las <a href="/guides/general/frequently-asked-questions/">FAQ</a>. Pregunte a un <a href="/guides/general/contributing/#contacts">desarrollador</a>.</p>
+<p>øNecesita m·s informaciÛn?  Navegue por las <a href="/guides/">GuÌas</a>.  Haga preguntas en el <a href="/guides/general/contributing/#discourse">Foro</a>.  Consulte las <a href="/guides/general/frequently-asked-questions/">FAQ</a>. Pregunte a un <a href="/guides/general/contributing/#contacts">desarrollador</a>.</p>
 
-
+<p><a href="/license">{{< awesome "fas fa-balance-scale" >}} MIT License</a>. Las herramientas para desarrolladores de Rhino son gratuitas e incluyen soporte tÈcnico. </p>
 </div>
 
-<h3>Licencia MIT</h3>
-Las herramientas para desarrolladores de Rhino son gratuitas e incluyen soporte t√©cnico.
-
-Copyright (c) 1993-2024 Robert McNeel & Associates. Todos los derechos reservados.
-
-Se concede por la presente, de forma gratuita, permiso a cualquier persona para obtener una copia
-de los SDK y API de Rhino, incluidos openNURBS, rhino3dm, RhinoCommon, la API de Grasshopper y los archivos de documentaci√≥n asociados (el "Software"), para tratar
-el Software sin restricciones, incluyendo, entre otros, los derechos
-de uso, copia, modificaci√≥n, fusi√≥n, publicaci√≥n, distribuci√≥n, sublicencia y/o venta de
-as√≠ como el derecho a permitir que las personas a quienes
-se proporcione el Software lo hagan bajo las siguientes condiciones:
-
-El aviso de copyright anterior y este aviso de permiso deber√°n incluirse en todas 
-las copias o partes sustanciales del Software.
-
-EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANT√çAS DE NING√öN TIPO, EXPRESAS O
-IMPL√çCITAS, INCLUIDAS, ENTRE OTRAS, LAS GARANT√çAS DE COMERCIABILIDAD,
-IDONEIDAD PARA UN FIN DETERMINADO Y NO INFRACCI√ìN. EN NING√öN CASO LOS
-AUTORES O TITULARES DEL COPYRIGHT SER√ÅN RESPONSABLES DE NINGUNA RECLAMACI√ìN, DA√ëO U
-OTRA RESPONSABILIDAD, YA SEA POR CONTRATO, AGRAVIO O CUALQUIER OTRA FIGURA LEGAL, DERIVADA DE,
-RELACIONADA CON O CONECTADA AL SOFTWARE O AL USO O A OTRAS INTERACCIONES CON EL
-SOFTWARE.
