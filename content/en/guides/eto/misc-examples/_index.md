@@ -173,15 +173,15 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
  
-from Eto.Drawing import Padding, Size
-from Eto.Forms import Dialog, DropDown, DynamicLayout
+import Eto.Drawing as ed
+import Eto.Forms as ef
 
 from System.Collections.ObjectModel import ObservableCollection
 
  
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Width = 300
-dialog.Padding = Padding(8)
+dialog.Padding = ed.Padding(8)
 
 # One data source for simplicity. Dictionaries are always good.
 data = {
@@ -212,13 +212,13 @@ dd1_data.Add(300)
 dd2_data = ObservableCollection[object]()
 dd3_data = ObservableCollection[object]()
 
-dd1 = DropDown()
+dd1 = ef.DropDown()
 dd1.DataStore = dd1_data
 
-dd2 = DropDown()
+dd2 = ef.DropDown()
 dd2.DataStore = dd2_data
 
-dd3 = DropDown()
+dd3 = ef.DropDown()
 dd3.DataStore = dd3_data
 
 # Cache indexes to avoid unnecessary state updates which can be a bit crashy
@@ -271,8 +271,8 @@ dd2.SelectedIndexChanged += update_state
 dd1.SelectedIndex = 0
  
 # Nice way to set up a UI with equal spacing
-dynamic = DynamicLayout()
-dynamic.Spacing = Size(4, 4) # Bit cramped otherwise
+dynamic = ef.DynamicLayout()
+dynamic.Spacing = ed.Size(4, 4) # Bit cramped otherwise
 dynamic.BeginHorizontal()
 dynamic.Add(dd1, True)
 dynamic.Add(dd2, True)

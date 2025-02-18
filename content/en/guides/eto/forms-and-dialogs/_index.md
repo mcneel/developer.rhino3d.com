@@ -57,14 +57,14 @@ dialog.ShowModal(); // <-- Code execution stops here
   <div class="codetab-content" id="py">
 
   ```py
-from Eto.Forms import Form, Dialog
+import Eto.Forms as ef
 
-form = Form()
+form = ef.Form()
 form.Width = 100
 form.Height = 100
 form.Show()
 
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Width = 100
 dialog.Height = 100
 dialog.ShowModal() # <-- Code execution stops here
@@ -127,17 +127,17 @@ dialog.ShowSemiModal(__rhino_doc__, parent); // <-- Code execution stops here
 import scriptcontext as sc
  
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import Dialog, Button
+import Eto.Forms as ef
  
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
  
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Width = 100
 dialog.Height = 100
 
 # DefaultButton and AbortButton is required for SemiModal
-dialog.DefaultButton = Button()
-dialog.AbortButton = Button()
+dialog.DefaultButton = ef.Button()
+dialog.AbortButton = ef.Button()
  
 EtoExtensions.ShowSemiModal(dialog, sc.doc, parent) # <-- Code execution stops here
   ```

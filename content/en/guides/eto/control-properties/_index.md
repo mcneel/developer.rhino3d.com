@@ -59,19 +59,19 @@ dialog.ShowModal(parent);
   ```py
 import scriptcontext as sc
 
-from Eto.Drawing import Padding
-from Eto.Forms import *
+import Eto.Drawing as ed
+import Eto.Forms as ef
 
 from Rhino.UI import RhinoEtoApp
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-button = Button()
+button = ef.Button()
 button.Text = "Disabled"
 button.Enabled = False
 
-dialog = Dialog()
-dialog.Padding = Padding(8)
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(8)
 dialog.Content = button
 dialog.ShowModal(parent)
   ```
@@ -126,21 +126,21 @@ dialog.ShowModal(parent);
   ```py
 import scriptcontext as sc
 
-from Eto.Drawing import Padding
-from Eto.Forms import *
+import Eto.Drawing as ed
+import Eto.Forms as ef
 
 from Rhino.UI import RhinoEtoApp
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-button = Button()
+button = ef.Button()
 button.Text = "Invisible"
 button.Visible = False
 
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Width = 200
 dialog.Height = 200
-dialog.Padding = Padding(8)
+dialog.Padding = ed.Padding(8)
 dialog.Content = button
 dialog.ShowModal(parent)
   ```
@@ -208,21 +208,21 @@ dialog.ShowModal(parent);
   ```py
 import scriptcontext as sc
 
-from Eto.Drawing import Padding
-from Eto.Forms import *
+import Eto.Drawing as ed
+import Eto.Forms as ef
 
 from Rhino.UI import RhinoEtoApp
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-button = Button()
+button = ef.Button()
 button.Text = "Move"
-button.Cursor = Cursors.Move
+button.Cursor = ef.Cursors.Move
 
-dialog = Dialog()
-dialog.Padding = Padding(28)
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(28)
 dialog.Content = button
-dialog.Cursor = Cursors.Crosshair
+dialog.Cursor = ef.Cursors.Crosshair
 
 dialog.ShowModal(parent)
   ```

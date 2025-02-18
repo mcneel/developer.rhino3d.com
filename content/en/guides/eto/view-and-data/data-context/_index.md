@@ -98,8 +98,8 @@ import scriptcontext as sc
  
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import *
-from Eto.Drawing import Padding, Size
+import Eto.Forms as ef
+import Eto.Drawing as ed
  
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
@@ -109,23 +109,23 @@ class MyMainViewModel():
 class MyNewViewModel():
   pass
 
-stack_layout = StackLayout()
-stack_layout.DataContext = MyNewViewModel()
+stack_layout = ef.StackLayout()
+stack_layout.DataContext = ef.MyNewViewModel()
 
 # Drawable has a DataContext of MyNewViewModel
-stack_layout.Items.Add(StackLayoutItem(Drawable()))
+stack_layout.Items.Add(ef.StackLayoutItem(ef.Drawable()))
 
 # Button has a DataContext of MyNewViewModel
-stack_layout.Items.Add(StackLayoutItem(Button()))
+stack_layout.Items.Add(ef.StackLayoutItem(ef.Button()))
 
-table_layout = TableLayout()
-table_layout.Rows.Add(TableRow(TableCell(stack_layout)))
+table_layout = ef.TableLayout()
+table_layout.Rows.Add(ef.TableRow(ef.TableCell(stack_layout)))
 
 # Buttons and TableRow all have a DataContext of MyMainViewModel
-table_layout.Rows.Add(TableRow(TableCell(Button()), TableCell(Button()), TableCell(Button())))
+table_layout.Rows.Add(ef.TableRow(ef.TableCell(ef.Button()), ef.TableCell(ef.Button()), ef.TableCell(ef.Button())))
 
-dialog = Dialog()
-dialog.DataContext = MyMainViewModel()
+dialog = ef.Dialog()
+dialog.DataContext = ef.MyMainViewModel()
 dialog.Content = table_layout
 
 dialog.ShowModal(parent)
