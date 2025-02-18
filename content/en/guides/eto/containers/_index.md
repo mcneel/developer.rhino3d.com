@@ -49,13 +49,13 @@ var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 var dialog = new Dialog()
 {
     Padding = 8,
-    BackgroundColor = Colors.DimGray
+    BackgroundColor = ed.Colors.DimGray
 };
 
 var panel = new Panel()
 {
     Padding = 8,
-    BackgroundColor = Colors.DarkGray,
+    BackgroundColor = ed.Colors.DarkGray,
     Content = new Button() { Text = "Click me!" }
 };
 
@@ -72,21 +72,21 @@ import scriptcontext as sc
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 
-from Eto.Forms import *
-from Eto.Drawing import Padding, Colors
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog()
-dialog.Padding = Padding(8)
-dialog.BackgroundColor = Colors.DimGray
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(8)
+dialog.BackgroundColor = ed.Colors.DimGray
 
-button = Button()
+button = ef.Button()
 button.Text = "Click me!"
 
-panel = Panel()
-panel.Padding = Padding(8)
-panel.BackgroundColor = Colors.DarkGray
+panel = ef.Panel()
+panel.Padding = ed.Padding(8)
+panel.BackgroundColor = ed.Colors.DarkGray
 panel.Content = button
 
 dialog.Content = panel
@@ -160,63 +160,63 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import *
-from Eto.Drawing import Padding, Size
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-table_layout = TableLayout()
-table_layout.Padding = Padding(8)
-table_layout.Spacing = Size(4, 4)
+table_layout = ef.TableLayout()
+table_layout.Padding = ed.Padding(8)
+table_layout.Spacing = ed.Size(4, 4)
 
-button_1 = Button()
+button_1 = ef.Button()
 button_1.Text = "1"
 
-button_2 = Button()
+button_2 = ef.Button()
 button_2.Text = "2"
 
-button_3 = Button()
+button_3 = ef.Button()
 button_3.Text = "3"
 
-button_4 = Button()
+button_4 = ef.Button()
 button_4.Text = "4"
 
-button_5 = Button()
+button_5 = ef.Button()
 button_5.Text = "5"
 
-button_6 = Button()
+button_6 = ef.Button()
 button_6.Text = "6"
 
-button_7 = Button()
+button_7 = ef.Button()
 button_7.Text = "7"
 
-button_8 = Button()
+button_8 = ef.Button()
 button_8.Text = "8"
 
-button_9 = Button()
+button_9 = ef.Button()
 button_9.Text = "9"
 
-button_0 = Button()
+button_0 = ef.Button()
 button_0.Text = "0"
 
-row_1 = TableRow()
-row_1.Cells.Add(TableCell(button_1))
-row_1.Cells.Add(TableCell(button_2))
-row_1.Cells.Add(TableCell(button_3))
+row_1 = ef.TableRow()
+row_1.Cells.Add(ef.TableCell(button_1))
+row_1.Cells.Add(ef.TableCell(button_2))
+row_1.Cells.Add(ef.TableCell(button_3))
 
-row_2 = TableRow()
-row_2.Cells.Add(TableCell(button_4))
-row_2.Cells.Add(TableCell(button_5))
-row_2.Cells.Add(TableCell(button_6))
+row_2 = ef.TableRow()
+row_2.Cells.Add(ef.TableCell(button_4))
+row_2.Cells.Add(ef.TableCell(button_5))
+row_2.Cells.Add(ef.TableCell(button_6))
 
-row_3 = TableRow()
-row_3.Cells.Add(TableCell(button_7))
-row_3.Cells.Add(TableCell(button_8))
-row_3.Cells.Add(TableCell(button_9))
+row_3 = ef.TableRow()
+row_3.Cells.Add(ef.TableCell(button_7))
+row_3.Cells.Add(ef.TableCell(button_8))
+row_3.Cells.Add(ef.TableCell(button_9))
 
-row_4 = TableRow()
+row_4 = ef.TableRow()
 row_4.Cells.Add(None)
-row_4.Cells.Add(TableCell(button_0))
+row_4.Cells.Add(ef.TableCell(button_0))
 row_4.Cells.Add(None)
 
 table_layout.Rows.Add(row_1) 
@@ -224,7 +224,7 @@ table_layout.Rows.Add(row_2)
 table_layout.Rows.Add(row_3) 
 table_layout.Rows.Add(row_4) 
 
-dialog = Dialog() 
+dialog = ef.Dialog() 
 
 dialog.Content = table_layout 
 dialog.ShowModal(parent) 
@@ -283,29 +283,29 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import *
-from Eto.Drawing import Padding, Size
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog();
+dialog = ef.Dialog()
 
-stack_layout = StackLayout()
+stack_layout = ef.StackLayout()
 stack_layout.Spacing = 8
-stack_layout.Padding = Padding(8)
+stack_layout.Padding = ed.Padding(8)
 
-stack_layout.Orientation = Orientation.Vertical;
+stack_layout.Orientation = Orientation.Vertical
 
-button_one = Button()
+button_one = ef.Button()
 button_one.Text = "One"
-button_two = Button()
+button_two = ef.Button()
 button_two.Text = "Two"
-button_three = Button()
+button_three = ef.Button()
 button_three.Text = "Three"
 
-stack_layout.Items.Add(StackLayoutItem(button_one))
-stack_layout.Items.Add(StackLayoutItem(button_two))
-stack_layout.Items.Add(StackLayoutItem(button_three))
+stack_layout.Items.Add(ef.StackLayoutItem(button_one))
+stack_layout.Items.Add(ef.StackLayoutItem(button_two))
+stack_layout.Items.Add(ef.StackLayoutItem(button_three))
 
 dialog.Content = stack_layout
 dialog.ShowModal(parent)
@@ -385,42 +385,42 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import *
-from Eto.Drawing import Padding, Size
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Width = 300
 dialog.Height = 300
 
-dynamicLayout = DynamicLayout()
-dynamicLayout.Padding = Padding(8)
+dynamic_layout = ef.DynamicLayout()
+dynamic_layout.Padding = ed.Padding(8)
 
-dynamicLayout.BeginVertical()
+dynamic_layout.BeginVertical()
 
-copy_button = Button()
+copy_button = ef.Button()
 copy_button.Text = "Copy"
 copy_button.Width = 50
 
-dynamicLayout.AddSeparateRow(Padding(4), None, True, False, [None, copy_button]);
+dynamic_layout.AddSeparateRow(ed.Padding(4), None, True, False, [None, copy_button])
 
-dynamicLayout.Add(TextArea(), True, True)
+dynamic_layout.Add(ef.TextArea(), True, True)
 
-help_button = Button()
+help_button = ef.Button()
 help_button.Text = "Help"
 
-cancel_button = Button()
+cancel_button = ef.Button()
 cancel_button.Text = "Cancel"
 
-apply_button = Button()
+apply_button = ef.Button()
 apply_button.Text = "Apply"
 
-dynamicLayout.AddSeparateRow(Padding(12), Size(8, 4), True, False, [help_button, cancel_button, apply_button])
+dynamic_layout.AddSeparateRow(ed.Padding(12), ed.Size(8, 4), True, False, [help_button, cancel_button, apply_button])
 
-dynamicLayout.EndVertical()
+dynamic_layout.EndVertical()
 
-dialog.Content = dynamicLayout
+dialog.Content = dynamic_layout
 dialog.ShowModal(parent)
   ```
 
@@ -478,23 +478,23 @@ dialog.ShowModal(parent);
 import scriptcontext as sc
 
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import Dialog, Button, PixelLayout
-from Eto.Drawing import Padding
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-pixel_layout = PixelLayout()
+pixel_layout = ef.PixelLayout()
 
-button_1 = Button()
+button_1 = ef.Button()
 button_1.Text = "Button 1"
-button_2 = Button()
+button_2 = ef.Button()
 button_2.Text = "Button 2"
 
 pixel_layout.Add(button_1, 0, 0)
 pixel_layout.Add(button_2, 0, 30)
 
-dialog = Dialog()
-dialog.Padding = Padding(20)
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(20)
 dialog.Content = pixel_layout
 
 dialog.ShowModal(parent)

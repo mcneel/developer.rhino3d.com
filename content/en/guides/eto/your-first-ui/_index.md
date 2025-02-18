@@ -61,9 +61,9 @@ dialog.ShowModal();
   <div class="codetab-content1" id="py1">
 
   ```py
-from Eto.Forms import Dialog
+import Eto.Forms as ef
  
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Width = 200
 dialog.Height = 200
 
@@ -125,19 +125,19 @@ var dialog = new Dialog()
   <div class="codetab-content2" id="py2">
 
   ```py
-from Eto.Forms import *
+import Eto.Forms as ef
 
-plusColumn = GridColumn()
+plusColumn = ef.GridColumn()
 plusColumn.HeaderText = "±"
 
-itemColumn = GridColumn()
+itemColumn = ef.GridColumn()
 itemColumn.HeaderText = "Item"
 
-gridView = GridView()
+gridView = ef.GridView()
 gridView.Columns.Add(plusColumn)
 gridView.Columns.Add(itemColumn)
 
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Width = 100
 dialog.Height = 100
 dialog.Content = gridView
@@ -228,7 +228,7 @@ dialog.ShowModal();
   <div class="codetab-content3" id="py3">
 
   ```py
-from Eto.Forms import *
+import Eto.Forms as ef
 
 class ToDoItem():
   def __init__(self, text: str):
@@ -240,20 +240,20 @@ items = [
   ToDoItem("Drink Water"),
   ]
 
-plusColumn = GridColumn()
+plusColumn = ef.GridColumn()
 plusColumn.HeaderText = "±"
 
-itemColumn = GridColumn()
+itemColumn = ef.GridColumn()
 itemColumn.HeaderText = "Item"
 itemColumn.Editable = True
-itemColumn.DataCell = TextBoxCell("Text")
+itemColumn.DataCell = ef.TextBoxCell("Text")
 
-gridView = GridView()
+gridView = ef.GridView()
 gridView.Columns.Add(plusColumn)
 gridView.Columns.Add(itemColumn)
 gridView.DataStore = items, # <-- Don't miss this!
 
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Width = 200
 dialog.Height = 200
 dialog.Content = gridView
@@ -278,7 +278,7 @@ dialog.ShowModal()
 
 The UI is looking great! It's starting to look like a list UI now, we have items in our list. It's just not very functional. Let's add some functionality.
 
-The code is getting big now, we're going to focus in on sections now that the skeleton is there.
+The code is getting big now, we're going to focus on sections now that the skeleton is there.
 
 {{< row >}}
 {{< column >}}
@@ -316,14 +316,14 @@ var gridView = new GridView()
 
 ``` py
 def create_cell(self, args):
-    button = Button()
+    button = ef.Button()
     button.Text = "-"
     return button
 
-buttonCell = CustomCell()
+buttonCell = ef.CustomCell()
 buttonCell.CreateCell += create_cell
 
-plusColumn = GridColumn()
+plusColumn = ef.GridColumn()
 plusColumn.Width = 24
 plusColumn.HeaderText = "±"
 plusColumn.DataCell = button_cell
@@ -380,15 +380,15 @@ var buttonCell = new CustomCell()
 def create_cell(self, args):
     
     def button_click(self, args):
-        items.RemoveAt(cc.Row);
+        items.RemoveAt(cc.Row)
 
-    button = Button();
-    button.Text = "-";
+    button = ef.Button()
+    button.Text = "-"
     button.Click += button_click
 
     return button
 
-buttonCell = CustomCell()
+buttonCell = ef.CustomCell()
 buttonCell.CreateCell += create_cell
 ```
 
@@ -397,7 +397,7 @@ buttonCell.CreateCell += create_cell
 
 ## Notify the UI
 
-That's odd. Why doesn't the x button do anything?
+That's odd. Why doesn't the `-` button do anything?
 That's because the data behind our UI isn't informing our GridView of the updates.
 Luckily the solution is pretty simple.
 
@@ -410,7 +410,7 @@ Luckily the solution is pretty simple.
   <div class="codetab-content6" id="cs6">
 
 ``` cs
-var items = new List<ToDoItem>() // Old
+var items = new List<ToDoItem>()                 // Old
 var items = new ObservableCollection<ToDoItem>() // New
 ```
 </div>
@@ -418,18 +418,16 @@ var items = new ObservableCollection<ToDoItem>() // New
   <div class="codetab-content6" id="py6">
 
 ``` py
-items = [] // Old
-items = ObservableCollection[type(ToDoItem)]() // New
+items = []                                     # Old
+items = ObservableCollection[type(ToDoItem)]() # New
 ```
 
   </div>
 </div>
 
-## Smart Collections
+## Finishing Up
 
 [ObservableCollections](https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-9.0) notify the UI of changes in the collection. It is advisable to NEVER replace the collection with a new collection, but instead clear and refill.
-
-We'll create one last change, then a small refactor is in order.
 
 <div class="codetab">
   <button class="tablinks7" onclick="openCodeTab(event, 'cs7')" id="defaultOpen7">C#</button>
@@ -478,7 +476,7 @@ var buttonCell = new CustomCell()
         }
         else // <-- Otherwise they remove
         {
-            button.Text = "✗";
+            button.Text = "-";
             button.Click += (s, e) => {
                 try
                 {
@@ -488,7 +486,7 @@ var buttonCell = new CustomCell()
             };
         }
 
-        return new Panel() { Content = button, Padding = 2 };
+        return button;
     },
 };
 ```
@@ -497,55 +495,69 @@ var buttonCell = new CustomCell()
   <div class="codetab-content7" id="py7">
 
 ``` py
-from System.Collections.ObjectModel import *
+from System.Collections.ObjectModel import ObservableCollection
 
-from Eto.Forms import *
+import Eto.Forms as ef
 
 class ToDoItem():
   def __init__(self, text: str, add_item:bool = False):
     self.text = text
-    self.add_item = add_item
+    self.add_item = add_item # <-- Add a new property
 
-items = ObservableCollection[ToDoItem]()
-items.append(ToDoItem("Buy Groceries"))
-items.append(ToDoItem("Feed Cat"))
-items.append(ToDoItem("Drink Water"))
-items.append(ToDoItem("..", True))
+items = ObservableCollection[object]()
+items.Add(ToDoItem("Buy Groceries"))
+items.Add(ToDoItem("Feed Cat"))
+items.Add(ToDoItem("Drink Water"))
+items.Add(ToDoItem("...", True)) # <-- Add a new item
 
-def create_cell(self, args):
+def create_cell(args):
     
-    def button_click(self, args):
-        items.RemoveAt(cc.Row);
+    def remove_click(self, rc_args):
+      if args.Row == -1:
+        return
+      items.RemoveAt(args.Row)
+      
+    def add_click(self, ac_args):
+      if items.Count <= 0:
+        return
 
-    button = Button();
-    button.Text = "-";
-    button.Click += button_click
+      items.Insert(items.Count - 1, ToDoItem("...", True))
+
+    button = ef.Button()
+
+    item = [ToDoItem]args.Item
+
+    if (args.Item.add_item): # <-- add_items only adds
+      button.Text = "+"
+      button.Click += add_click
+    else:                    # <-- Otherwise it removes
+      button.Text = "-"
+      button.Click += remove_click
 
     return button
 
-buttonCell = CustomCell()
-buttonCell.CreateCell += create_cell
+button_cell = ef.CustomCell()
+button_cell.CreateCell = create_cell
 
-plusColumn = GridColumn()
-plusColumn.HeaderText = "±"
-plusColumn.Width = 24
-plusColumn.HeaderText = "±"
-plusColumn.DataCell = button_cell
+plus_column = ef.GridColumn()
+plus_column.Width = 24
+plus_column.HeaderText = "±"
+plus_column.DataCell = button_cell
 
-itemColumn = GridColumn()
-itemColumn.HeaderText = "Item"
-itemColumn.Editable = True
-itemColumn.DataCell = TextBoxCell("Text")
+item_column = ef.GridColumn()
+item_column.HeaderText = "Item"
+item_column.Editable = True
+item_column.DataCell = ef.TextBoxCell("Text")
 
-gridView = GridView()
-gridView.Columns.Add(plusColumn)
-gridView.Columns.Add(itemColumn)
-gridView.DataStore = items,
+grid_view = ef.GridView()
+grid_view.Columns.Add(plus_column)
+grid_view.Columns.Add(item_column)
+grid_view.DataStore = items
 
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Width = 200
 dialog.Height = 200
-dialog.Content = gridView
+dialog.Content = grid_view
 
 dialog.ShowModal()
 ```
@@ -553,16 +565,12 @@ dialog.ShowModal()
   </div>
 </div>
 
-## It works!
-
-Now we're cooking 
-
-Awesome! The UI can add or remove items from the list!
-
 </br>
 
 ## Putting it all together
-Below is all of the code with a few extra bits to make the UI a bit nicer, they're not strictly necessary, but they should make it easier to edit, work with, and extend.
+Above we finish getting the UI working and now have a functioning UI. It's not perfect though, and the code can be a bit tricky to read, often this is good for brevity and tutorials.
+
+Below is all of the code with a few extra bits to make the UI a bit nicer, they're not strictly necessary, but they should make it easier to read, edit and extend.
 
 </br>
 
@@ -611,7 +619,9 @@ internal class ToDoList : Dialog
         Width = 300;
         Height = 200;
         DataContext = new ToDoModel();
-        Model.Items.Add(new ToDoItem("Buy Buy Groceries..."));
+        Model.Items.Add(new ToDoItem("Buy Groceries"));
+        Model.Items.Add(new ToDoItem("Feed Cat"));
+        Model.Items.Add(new ToDoItem("Drink Water"));
         Model.Items.Add(new ToDoItem("") { AddItem = true });
         InitLayout();
     }
@@ -638,7 +648,7 @@ internal class ToDoList : Dialog
                 }
                 else
                 {
-                    button.Text = "✗";
+                    button.Text = "-";
                     button.Click += (s, e) => {
                         try
                         {
@@ -662,7 +672,7 @@ internal class ToDoList : Dialog
                 new GridColumn()
                 {
                     HeaderText = "±",
-                    HeaderToolTip = "Click + to add, ✗ to remove",
+                    HeaderToolTip = "Click + to add, - to remove",
                     DataCell = buttonCell,
                     Width = 24,
                     Expand = false,

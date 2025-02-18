@@ -61,21 +61,21 @@ else
   ```py
 import scriptcontext as sc
 
-from Eto.Forms import *
+import Eto.Forms as ef
 from Rhino.UI import RhinoEtoApp
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-result = MessageBox.Show("Would you like to save before closing?",
+result = ef.("Would you like to save before closing?",
                              MessageBoxButtons.YesNo,
                              MessageBoxType.Question,
                              MessageBoxDefaultButton.Yes)
 
 if result != DialogResult.Yes:
-    MessageBox.Show("Model discarded successfully!", MessageBoxButtons.OK, MessageBoxType.Information)
+    ef.MessageBox.Show("Model discarded successfully!", MessageBoxButtons.OK, MessageBoxType.Information)
 
 else:
-    MessageBox.Show("Model saved successfully before closing.", MessageBoxButtons.OK, MessageBoxType.Information)
+    ef.MessageBox.Show("Model saved successfully before closing.", MessageBoxButtons.OK, MessageBoxType.Information)
   ```
 
   </div>
@@ -123,14 +123,14 @@ The Color Picker is a button that shows the [ColorDialog](http://api.etoforms.pi
   <div class="codetab-content1" id="py1">
 
   ```py
-from Eto.Forms import *
-from Eto.Drawing import Padding
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Width = 80
 dialog.Height = 80
-dialog.Padding = Padding(8)
-dialog.Content = ColorPicker()
+dialog.Padding = ed.Padding(8)
+dialog.Content = ef.ColorPicker()
 
 dialog.ShowModal()
   ```
@@ -214,14 +214,14 @@ if (result == DialogResult.Cancel)
   ```py
 import scriptcontext as sc
 
-from Eto.Forms import *
+import Eto.Forms as ef
 from Rhino.UI import RhinoEtoApp
 import Rhino
 
 parent = Rhino.UI.RhinoEtoApp.MainWindowForDocument(sc.doc);
 
-openDialog = OpenFileDialog()
-openDialog.Filters.Add(FileFilter("Any", "*.*"));
+openDialog = ef.OpenFileDialog()
+openDialog.Filters.Add(ef.FileFilter("Any", "*.*"));
 openDialog.CurrentFilterIndex = 0
 openDialog.CheckFileExists = True
 openDialog.MultiSelect = True
@@ -229,9 +229,9 @@ openDialog.Title = "Pick a file, any file"
 
 result = openDialog.ShowDialog(parent);
 if result == DialogResult.Cancel:
-    MessageBox.Show("No File chosen!", MessageBoxType.Warning)
+    ef.MessageBox.Show("No File chosen!", MessageBoxType.Warning)
 else:
-    saveDialog = SaveFileDialog()
+    saveDialog = ef.SaveFileDialog()
     saveDialog.Title = "Save your file"
     saveDialog.Directory = openDialog.Directory
     saveDialog.FileName = openDialog.FileName
@@ -239,9 +239,9 @@ else:
     result = saveDialog.ShowDialog(parent)
 
     if result == DialogResult.Cancel:
-        MessageBox.Show("File not saved!", MessageBoxType.Warning)
+        ef.MessageBox.Show("File not saved!", MessageBoxType.Warning)
     else:
-        MessageBox.Show("File saved", MessageBoxType.Information)
+        ef.MessageBox.Show("File saved", MessageBoxType.Information)
   ```
 
   </div>

@@ -86,29 +86,29 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import *
-from Eto.Drawing import Padding, Size
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog()
-dialog.Padding = Padding(8) # Comment out to remove Padding
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(8) # Comment out to remove Padding
 
-stack_layout = StackLayout()
+stack_layout = ef.StackLayout()
 stack_layout.Spacing = 8 # Comment out to remove Spacing
 
 stack_layout.Orientation = Orientation.Vertical
 
-button_one = Button()
+button_one = ef.Button()
 button_one.Text = "One"
-button_two = Button()
+button_two = ef.Button()
 button_two.Text = "Two"
-button_three = Button()
+button_three = ef.Button()
 button_three.Text = "Three"
 
-stack_layout.Items.Add(StackLayoutItem(button_one))
-stack_layout.Items.Add(StackLayoutItem(button_two))
-stack_layout.Items.Add(StackLayoutItem(button_three))
+stack_layout.Items.Add(ef.StackLayoutItem(button_one))
+stack_layout.Items.Add(ef.StackLayoutItem(button_two))
+stack_layout.Items.Add(ef.StackLayoutItem(button_three))
 
 dialog.Content = stack_layout
 dialog.ShowModal(parent)
@@ -180,27 +180,27 @@ import scriptcontext as sc
 
 import Rhino
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import *
-from Eto.Drawing import Padding, Size
+import Eto.Forms as ef
+import Eto.Drawing as ed
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog()
-dialog.Padding = Padding(12)
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(12)
 dialog.Width = 400
 dialog.Height = 120
 
-dynamic_layout = DynamicLayout()
-dynamic_layout.Spacing = Size(8, 8)
+dynamic_layout = ef.DynamicLayout()
+dynamic_layout.Spacing = ed.Size(8, 8)
 
-dynamic_layout.Add(TextBox(), True, True)
+dynamic_layout.Add(ef.TextBox(), True, True)
 dynamic_layout.Add(None, True, False) # Adds a little space
 
-apply_button = Button()
+apply_button = ef.Button()
 apply_button.Text = "Apply"
-ok_button = Button()
+ok_button = ef.Button()
 ok_button.Text = "Ok"
-cancel_button = Button()
+cancel_button = ef.Button()
 cancel_button.Text = "Cancel"
 
 rows = [

@@ -55,9 +55,9 @@ myForm.Show(__rhino_doc__);
 import scriptcontext as sc
 
 from Rhino.UI import EtoExtensions
-from Eto.Forms import Form
+import Eto.Forms as ef
 
-form = Form()
+form = ef.Form()
 
 EtoExtensions.Show(form, sc.doc)
 ```
@@ -105,11 +105,11 @@ dialog.ShowSemiModal(__rhino_doc__, parent);
 import scriptcontext as sc
 
 from Rhino.UI import RhinoEtoApp, EtoExtensions
-from Eto.Forms import Dialog, Button
+import Eto.Forms as ef
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Width = 200
 dialog.Height = 200
 
@@ -117,8 +117,8 @@ dialog.ShowModal(parent)
 # or
 
 # DefaultButton and AbortButton is required for SemiModal
-dialog.DefaultButton = Button()
-dialog.AbortButton = Button()
+dialog.DefaultButton = ef.Button()
+dialog.AbortButton = ef.Button()
 
 EtoExtensions.ShowSemiModal(dialog, sc.doc, parent)
   ```
@@ -167,9 +167,9 @@ form.Show();
 
 ```py
 from Rhino.UI import EtoExtensions
-from Eto.Forms import Form
+import Eto.Forms as ef
 
-form = Form()
+form = ef.Form()
 EtoExtensions.UseRhinoStyle(form)
 form.Show()
 ```
@@ -234,27 +234,27 @@ EtoExtensions.ShowSemiModal(dialog, __rhino_doc__, parent);
 import scriptcontext as sc
 import rhinoscriptsyntax as rs
 
-from Eto.Forms import *
+import Eto.Forms as ef
 from Rhino import Input, UI, RhinoApp
 from Rhino.UI import RhinoEtoApp, EtoExtensions
 from Rhino.Geometry import Rectangle3d, Plane
 
-label = Label()
+label = ef.Label()
 label.Text = "None"
 
-button = Button()
+button = ef.Button()
 button.Text = "Click me!"
 
-table_layout = TableLayout()
-table_layout.Rows.Add(TableRow(TableCell(label)))
-table_layout.Rows.Add(TableRow(TableCell(button)))
+table_layout = ef.TableLayout()
+table_layout.Rows.Add(ef.TableRow(ef.TableCell(label)))
+table_layout.Rows.Add(ef.TableRow(ef.TableCell(button)))
 
-dialog = Dialog()
+dialog = ef.Dialog()
 dialog.Width = 120
 dialog.Height = 120
 dialog.Content = table_layout
-dialog.DefaultButton = Button()
-dialog.AbortButton = Button()
+dialog.DefaultButton = ef.Button()
+dialog.AbortButton = ef.Button()
 
 def on_push_pick(s, e):
   points = rs.GetRectangle(1)
@@ -304,9 +304,9 @@ var doc = myForm.GetRhinoDoc();
 import scriptcontext as sc
 
 from Rhino.UI import EtoExtensions
-from Eto.Forms import Form
+import Eto.Forms as ef
 
-form = Form()
+form = ef.Form()
 EtoExtensions.Show(form, sc.doc)
 doc = EtoExtensions.GetRhinoDoc(form)
 ```
@@ -369,40 +369,36 @@ myForm.Show(__rhino_doc__);
 
 ```py
 import scriptcontext as sc
-
-from Eto.Forms import *
+ 
+import Eto.Forms as ef
 from Rhino import RhinoDoc
 from Rhino.UI import RhinoEtoApp, EtoExtensions
+ 
+class MyForm(ef.Form):
+    pass
 
-try:
-    class MyForm(Form):
-        pass
+label = ef.Label()
+label.Text = "0"
 
-    label = Label()
-    label.Text = "0"
+myForm = MyForm()
+myForm.Width = 100
+myForm.Height = 100
+myForm.Content = label
+myForm.count = 0
 
-    myForm = MyForm()
-    myForm.Width = 100
-    myForm.Height = 100
-    myForm.Content = label
-    myForm.count = 0
+def IncrementLabel(s, args):
+    doc = args.TheObject.Document
+    form = EtoExtensions.WindowsFromDocument[MyForm](doc)[0]
+    label = form.FindChild[ef.Label]()
+    form.count += form.count
+    label.Text = form.count
 
-    def IncrementLabel(s, args):
-        doc = args.TheObject.Document
-        form = EtoExtensions.WindowsFromDocument[MyForm](doc)[0]
-        label = form.FindChild[Label]()
-        form.count += form.count
-        label.Text = form.count
+def subscribe(s, e):
+    RhinoDoc.AddRhinoObject += IncrementLabel
 
-    def subscribe(s, e):
-        RhinoDoc.AddRhinoObject += IncrementLabel
+myForm.Shown += subscribe
 
-    myForm.Shown += subscribe
-
-    EtoExtensions.Show(myForm, sc.doc)
-
-except Exception as e:
-    print (e)
+EtoExtensions.Show(myForm, sc.doc)
 ```
   </div>
 </div>
@@ -441,9 +437,9 @@ myDialog.ShowModal();
 
 ```py
 from Rhino.UI import EtoExtensions
-from Eto.Forms import Dialog
+import Eto.Forms as ef
 
-class MyDialog(Dialog):
+class MyDialog(ef.Dialog):
   pass
 
 def on_load(s, e):
@@ -452,7 +448,7 @@ def on_load(s, e):
 dialog = MyDialog()
 dialog.LoadComplete += on_load
 
-dialog.Show()
+dialog.ShowModal()
 ```
 
   </div>
