@@ -1,5 +1,5 @@
 +++
-aliases = ["/es/5/", "/es/6/", "/es/7/", "/es/wip/"]
+aliases = ["/en/5/", "/en/6/", "/en/7/", "/en/wip/"]
 description = "Recursos oficiales para desarrolladores de Rhino y Grasshopper.  Las herramientas para desarrolladores de Rhino están libres de derechos e incluyen soporte técnico."
 title = "Documentación para desarrolladores de Rhino y Grasshopper"
 type = "home"
@@ -15,36 +15,10 @@ since = 0
 [cascade]
 list_group = "uncategorized"
 +++
-<!--
-<div align="center"><h1 id="getting-started-with-rhino-development">Empezar con el desarrollo de Rhino</h1></div>
--->
-<!--
-<div>
-  <table style="width:100%; border: 1px; margin: 0 auto; padding:0; border-spacing: 0px; border-collapse: separate;">
-    <tbody>
-      <tr>
-        <td style="padding: 20px; text-align: center;">
-          <a href="/guides/grasshopper" title="Grasshopper Components">
-            <img src="/images/ghcomponent-logo-intro.png" class="index_use_images">
-          </a>
-        </td>
-        <td style="padding: 20px; text-align: center;">
-          <a href="/guides/#rhinocommon" title="RhinoCommon: The cross-platform .NET SDK for Rhino and Grasshopper">
-            <img src="/images/rhinocommon-logo-intro.png" class="index_use_images">
-          </a>
-        </td>
-        <td style="padding: 20px; text-align: center;">
-          <a href="/guides/#rhinopython" title="Rhino.Python: Pythonic in three dimensions!">
-            <img src="/images/rhino-python-logo-intro.png" class="index_use_images">
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
--->
 
-{{< alt-version "https://developer.rhino3d.com/guides/rhinocommon/moving-to-dotnet-7/" "¿Necesita ayuda para migrar C# a Rhino 8? ¡Haa clic aquí!">}}
+{{< call-out note "¿Necesita ayuda para migrar C# a Rhino 8?" >}}
+Consulte la [Guía de migración a .NET 7](/guides/rhinocommon/moving-to-dotnet-7/).
+{{< /call-out >}}
 
 {{< vimeo 188730450 >}}
 
@@ -140,28 +114,6 @@ list_group = "uncategorized"
 
 <p>¿Necesita más información?  Navegue por las <a href="/guides/">Guías</a>.  Haga preguntas en el <a href="/guides/general/contributing/#discourse">Foro</a>.  Consulte las <a href="/guides/general/frequently-asked-questions/">FAQ</a>. Pregunte a un <a href="/guides/general/contributing/#contacts">desarrollador</a>.</p>
 
-
+<p><a href="/license">{{< awesome "fas fa-balance-scale" >}} MIT License</a>. Las herramientas para desarrolladores de Rhino son gratuitas e incluyen soporte técnico. </p>
 </div>
 
-<h3>Licencia MIT</h3>
-Las herramientas para desarrolladores de Rhino son gratuitas e incluyen soporte técnico.
-
-Copyright (c) 1993-2024 Robert McNeel & Associates. Todos los derechos reservados.
-
-Se concede por la presente, de forma gratuita, permiso a cualquier persona para obtener una copia
-de los SDK y API de Rhino, incluidos openNURBS, rhino3dm, RhinoCommon, la API de Grasshopper y los archivos de documentación asociados (el "Software"), para tratar
-el Software sin restricciones, incluyendo, entre otros, los derechos
-de uso, copia, modificación, fusión, publicación, distribución, sublicencia y/o venta de
-así como el derecho a permitir que las personas a quienes
-se proporcione el Software lo hagan bajo las siguientes condiciones:
-
-El aviso de copyright anterior y este aviso de permiso deberán incluirse en todas 
-las copias o partes sustanciales del Software.
-
-EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍAS DE NINGÚN TIPO, EXPRESAS O
-IMPLÍCITAS, INCLUIDAS, ENTRE OTRAS, LAS GARANTÍAS DE COMERCIABILIDAD,
-IDONEIDAD PARA UN FIN DETERMINADO Y NO INFRACCIÓN. EN NINGÚN CASO LOS
-AUTORES O TITULARES DEL COPYRIGHT SERÁN RESPONSABLES DE NINGUNA RECLAMACIÓN, DAÑO U
-OTRA RESPONSABILIDAD, YA SEA POR CONTRATO, AGRAVIO O CUALQUIER OTRA FIGURA LEGAL, DERIVADA DE,
-RELACIONADA CON O CONECTADA AL SOFTWARE O AL USO O A OTRAS INTERACCIONES CON EL
-SOFTWARE.
