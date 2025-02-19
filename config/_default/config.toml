@@ -212,7 +212,7 @@ target = 'assets'
 	  "Stufe" = "Stufen"
 	  "Version" = "Versionen"
     [languages.de.menu]
-      [[languages.en.menu.main]]
+      [[languages.de.menu.main]]
         identifier = "guides"
         pre = ""
         post = ""
