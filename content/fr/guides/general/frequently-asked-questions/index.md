@@ -36,10 +36,6 @@ Tout dépend de ce que vous voulez faire. Si vous cherchez à automatiser des t�
 
 Oui... et même en utilisant [le même code](/guides/rhinocommon/what-is-rhinocommon/).
 
-**Qu’est-ce que Mono/Xamarin ?**
-
-Mono est une version libre du moteur d’exécution .NET de Microsoft qui fonctionne sous Linux, macOS, iOS et Android.  Consultez le guide intitulé [Qu’est-ce que Mono et Xamarin ?](/guides/rhinocommon/what-are-mono-and-xamarin/) pour plus d’informations.
-
 **Qu’est-ce qu'une macro ?**
 Les macros sont des chaînes de commandes et d’options de commande de Rhino qui vous permettent de créer une séquence automatisée d’opérations.  Cette macro (séquence) peut ensuite être répétée en appuyant sur un bouton de la barre d’outils ou en tapant un alias.
 
