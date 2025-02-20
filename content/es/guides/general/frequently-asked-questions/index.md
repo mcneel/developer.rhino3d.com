@@ -36,10 +36,6 @@ Todo depende de lo que quiera hacer.  Si desea automatizar tareas repetitivas en
 
 Sí... incluso utilizando [el mismo código](/guides/rhinocommon/what-is-rhinocommon/).
 
-**¿Qué son Mono y Xamarin?**
-
-Mono es una versión de código abierto del tiempo de ejecución .NET de Microsoft que funciona en Linux, macOS, iOS y Android.  Consulte la guía [¿Qué son Mono y Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/) para obtener más información.
-
 **¿Qué son las macros?**
 Las macros son cadenas de comandos y opciones de comandos de Rhino que permiten crear una secuencia automatizada de operaciones.  Esta macro (secuencia) puede repetirse pulsando un botón de la barra de herramientas o escribiendo un alias.
 

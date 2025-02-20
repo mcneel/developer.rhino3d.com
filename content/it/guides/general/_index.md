@@ -1,12 +1,12 @@
-+++
-aliases = ["/it/5/guides/general/", "/it/6/guides/general/", "/it/7/guides/general/", "/it/wip/guides/general/"]
+﻿+++
+aliases = ["/en/5/guides/general/", "/en/6/guides/general/", "/en/7/guides/general/", "/en/wip/guides/general/"]
 authors = "unset"
 categories = [ "Unsorted" ]
-description = "Guides that apply across platforms and SDKs."
+description = "Guide applicabili a tutte le piattaforme e ai pacchetti SDK."
 keywords = [ "rhino", "developer" ]
 languages = [ "C/C++", "C#", "VB", "Python", "VBScript" ]
 sdk = "unset"
-title = "General Guides"
+title = "Guide generali"
 type = "guides"
 weight = 1
 
@@ -26,16 +26,16 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/general-guides-col1.png">](/guides/general/developing-software-in-public)
 
-### Overview
+### Panoramica
 
-- [Developing Software In Public](/guides/general/developing-software-in-public)
-- [Rhino Technology Overview](/guides/general/rhino-technology-overview)
-- [Frequently Asked Questions (FAQ)](/guides/general/frequently-asked-questions)
+- [Sviluppo pubblico di un software](/guides/general/developing-software-in-public)
+- [Panoramica sulla tecnologia di Rhino](/guides/general/rhino-technology-overview)
+- [Domande frequenti (FAQ)](/guides/general/frequently-asked-questions)
 
-### Getting Started
+### Per iniziare
 
-- [Developer Prerequisites](/guides/general/rhino-developer-prerequisites)
-- [Contributing](/guides/general/contributing)
+- [Prerequisiti per gli sviluppatori](/guides/general/rhino-developer-prerequisites)
+- [Contributo](/guides/general/contributing)
 
 {{< /column >}}
 {{< column >}}
@@ -43,20 +43,20 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/general-guides-col2.png">](/guides/general/what-is-a-rhino-plugin)
 
-### Fundamentals
+### Nozioni di base
 
-- [What is a Rhino Plugin?](/guides/general/what-is-a-rhino-plugin)
-- [Rhino Installer Engine](/guides/general/rhino-installer-engine)
-- [Rhino UI System](/guides/general/rhino-ui-system/)
-- [Simple Command Macros](/guides/general/creating-command-macros/)
+- [Che cos'è un plug-in di Rhino?](/guides/general/what-is-a-rhino-plugin)
+- [Programma di installazione di Rhino](/guides/general/rhino-installer-engine)
+- [Sistema interfaccia utente di Rhino](/guides/general/rhino-ui-system/)
+- [Macro di comandi semplici](/guides/general/creating-command-macros/)
 
-### [Essential Mathematics](/guides/general/essential-mathematics)
+### [Fndamenti di matematica](/guides/general/essential-mathematics)
 
-- [Introduction](/guides/general/essential-mathematics)
-- [Vector Mathematics](/guides/general/essential-mathematics/vector-mathematics)
-- [Matrices and Transformations](/guides/general/essential-mathematics/matrices-transformations)
-- [Parametric Curves and Surfaces](/guides/general/essential-mathematics/parametric-curves-surfaces)
-- [{{< awesome "fas fa-download">}} ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/) [Download Essential Mathematics for Computational Design as a single PDF ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/)
+- [Introduzione](/guides/general/essential-mathematics)
+- [Matematica vettoriale](/guides/general/essential-mathematics/vector-mathematics)
+- [Matrici e trasformazioni](/guides/general/essential-mathematics/matrices-transformations)
+- [Curve e superfici parametriche](/guides/general/essential-mathematics/parametric-curves-surfaces)
+- [{{< awesome "fas fa-download">}} ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/) [Scarica Essential Mathematics for Computational Design come file PDF. ](http://www.rhino3d.com/download/rhino/5.0/essentialmathematicsthirdedition/)
 
 {{< /column >}}
 {{< column >}}
@@ -64,11 +64,11 @@ since = 0
 <!--the .snagit project for this image can be found next to the image -->
 [<img src="/images/general-guides-col3.png">](/guides/general/how-this-site-works)
 
-### This Site
+### Questo sito
 
-- [How This Site Works](/guides/general/how-this-site-works)
-- [Getting Started with Developer Docs](https://github.com/mcneel/developer-rhino3d-com/blob/main/README.md)
-- [Developer Docs Style Guide](/guides/general/developer-docs-style-guide)
+- [Come funziona questo sito](/guides/general/how-this-site-works)
+- [Come iniziare con i documenti per sviluppatori](https://github.com/mcneel/developer-rhino3d-com/blob/main/README.md)
+- [Guida allo stile dei documenti per sviluppatori](/guides/general/developer-docs-style-guide)
 
 {{< /column >}}
 {{< /row >}}

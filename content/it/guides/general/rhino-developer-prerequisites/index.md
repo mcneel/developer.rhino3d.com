@@ -1,4 +1,4 @@
-+++
+ï»¿+++
 aliases = ["/en/5/guides/general/rhino-developer-prerequisites/", "/en/6/guides/general/rhino-developer-prerequisites/", "/en/7/guides/general/rhino-developer-prerequisites/", "/en/wip/guides/general/rhino-developer-prerequisites/"]
 authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
@@ -27,7 +27,7 @@ toc_type = "single"
 +++
 
 
-Esistono alcuni prerequisiti necessari per lo sviluppo in Rhino.  In linea di massima, si possono suddividere in tre categorie, classificate in ordine crescente di difficoltà:
+Esistono alcuni prerequisiti necessari per lo sviluppo in Rhino.  In linea di massima, si possono suddividere in tre categorie, classificate in ordine crescente di difficoltÃ :
 
 1. [Prerequisiti hardware.](#hardware)
 1. [Prerequisiti software.](#software)
@@ -35,14 +35,14 @@ Esistono alcuni prerequisiti necessari per lo sviluppo in Rhino.  In linea di ma
 
 ## Hardware
 
-Se stai leggendo questa guida, probabilmente ha già un computer in grado di eseguire Rhino. In caso contrario, l’utilizzo di Rhino prevede alcuni [requisiti di sistema minimi](http://www.rhino3d.com/system_requirements/) che dovresti esaminare prima di acquistare qualsiasi hardware.  In generale, qualsiasi computer che supporta Rhino *dovrebbe* essere in grado di eseguire gli strumenti di sviluppo descritti nella sezione [Software](#software) .
+Se stai leggendo questa guida, probabilmente ha giÃ  un computer in grado di eseguire Rhino. In caso contrario, lâ€™utilizzo di Rhino prevede alcuni [requisiti di sistema minimi](http://www.rhino3d.com/system_requirements/) che dovresti esaminare prima di acquistare qualsiasi hardware.  In generale, qualsiasi computer che supporta Rhino *dovrebbe* essere in grado di eseguire gli strumenti di sviluppo descritti nella sezione [Software](#software) .
 
 Se sei un utente Windows e desideri sviluppare plug-in per Rhino per Mac, ti occorre un computer Mac di Apple.  Al contrario, se sei un utente di macOS e desideri sviluppare plug-in per Rhino per Windows, ti serve un computer in grado di eseguire Rhino per Windows (tuttavia, le macchine virtuali che eseguono Windows in macOS possono potenzialmente funzionare benissimo).
 
 
 ## Software
 
-A seconda di ciò che si vuole fare, i prerequisiti del software variano.  Tuttavia, in generale, è necessario:
+A seconda di ciÃ² che si vuole fare, i prerequisiti del software variano.  Tuttavia, in generale, Ã¨ necessario:
 
 - [Rhinoceros.](http://www.rhino3d.com/download)
 - Un editor di codice.  Esistono molte opzioni. Eccone alcune:
@@ -53,11 +53,11 @@ Consulta le [guide specifiche per i pacchetti SDK](/guides/) per i prerequisiti 
 
 ## Conoscenze di programmazione
 
-L'acquisizione di conoscenze di programmazione è il prerequisito più impegnativo.  Tuttavia, imparare a programmare, anche provando un nuovo linguaggio, è divertente e stimolante.  Imparare a programmare con Rhino è un ottimo modo per iniziare.
+L'acquisizione di conoscenze di programmazione Ã¨ il prerequisito piÃ¹ impegnativo.  Tuttavia, imparare a programmare, anche provando un nuovo linguaggio, Ã¨ divertente e stimolante.  Imparare a programmare con Rhino Ã¨ un ottimo modo per iniziare.
 
 ### Imparare C# .NET
 
-Se desideri scrivere plug-in con RhinoCommon, dovrai conoscere un linguaggio di programmazione compatibile con .NET, come C# o VB.  Consigliamo [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) (C Sharp) perché è moderno, sicuro e facile da imparare, e si può sviluppare in C# sia su Windows che su macOS.
+Se desideri scrivere plug-in con RhinoCommon, dovrai conoscere un linguaggio di programmazione compatibile con .NET, come C# o VB.  Consigliamo [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) (C Sharp) perchÃ© Ã¨ moderno, sicuro e facile da imparare, e si puÃ² sviluppare in C# sia su Windows che su macOS.
 
 *Guarda*...
 
@@ -77,11 +77,11 @@ Se desideri scrivere plug-in con RhinoCommon, dovrai conoscere un linguaggio di 
 
 ### Imparare C/C++
 
-Per scrivere plug-in per Rhino usando il pacchetto SDK C/C++, devi innanzitutto imparare il linguaggio di programmazione [C++](https://en.wikipedia.org/wiki/C%2B%2B) .  Il linguaggio C/C++ è talvolta considerato un linguaggio di programmazione "avanzato".
+Per scrivere plug-in per Rhino usando il pacchetto SDK C/C++, devi innanzitutto imparare il linguaggio di programmazione [C++](https://en.wikipedia.org/wiki/C%2B%2B) .  Il linguaggio C/C++ Ã¨ talvolta considerato un linguaggio di programmazione "avanzato".
 
 *Guarda*...
 
-- [C++: A General Purpose Language](https://www.microsoftvirtualacademy.com/en-us/training-courses/c-a-general-purpose-language-and-library-jump-start-8251) su Microsoft Virtual Academy.
+- [C++: ](https://www.microsoftvirtualacademy.com/en-us/training-courses/c-a-general-purpose-language-and-library-jump-start-8251)[A General Purpose Language](https://www.microsoftvirtualacademy.com/en-us/training-courses/c-a-general-purpose-language-and-library-jump-start-8251) su Microsoft Virtual Academy.
 - [C++ Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/182674-2.html) con Bill Weinmann su Lynda.com.
 
 *Leggi*...
@@ -97,7 +97,7 @@ Per scrivere plug-in per Rhino usando il pacchetto SDK C/C++, devi innanzitutto 
 
 ### Imparare Python
 
-[Python](https://en.wikipedia.org/wiki/Python_(programming_language)) è un linguaggio di programmazione fantastico, incredibilmente flessibile, che consigliamo di aggiungere al tuo kit di strumenti.
+[Python](https://en.wikipedia.org/wiki/Python_(programming_language)) Ã¨ un linguaggio di programmazione fantastico, incredibilmente flessibile, che consigliamo di aggiungere al tuo kit di strumenti.
 
 *Guarda*...
 
@@ -120,7 +120,7 @@ Per scrivere plug-in per Rhino usando il pacchetto SDK C/C++, devi innanzitutto 
 
 ### Imparare RhinoScript
 
-RhinoScript è uno strumento di scripting basato sul linguaggio VBScript di Microsoft.  RhinoScript viene eseguito in Rhino per Windows.
+RhinoScript Ã¨ uno strumento di scripting basato sul linguaggio VBScript di Microsoft.  RhinoScript viene eseguito in Rhino per Windows.
 
 *Leggi*...
 
@@ -140,7 +140,7 @@ RhinoScript è uno strumento di scripting basato sul linguaggio VBScript di Micro
 
 ## Argomenti collegati
 
-- [Che cos'è un plug-in di Rhino?](/guides/general/what-is-a-rhino-plugin/)
+- [Che cos'Ã¨ un plug-in di Rhino?](/guides/general/what-is-a-rhino-plugin/)
 - <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language">C Sharp su Wikipedia.</a>
 - [C++ su Wikipedia.](https://en.wikipedia.org/wiki/C%2B%2B)
 - [Python su Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language))

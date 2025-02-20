@@ -143,7 +143,6 @@ Para obtener más información sobre RhinoPython, consulte las [guías de RhinoP
 - [Microsoft .NET Framework (en microsoft.com)](https://dotnet.microsoft.com/es-es/apps/desktop)
 - [¿Qué es RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon)
 - [Guías de RhinoCommon](/guides/rhinocommon/)
-- [Qué son Mono y Xamarin](/guides/rhinocommon/what-are-mono-and-xamarin/)
 - [Proyecto Mono](https://www.mono-project.com)
 - [Eto.Forms en GitHub](https://github.com/picoe/Eto)
 - [Guías de Grasshopper](/guides/grasshopper/)

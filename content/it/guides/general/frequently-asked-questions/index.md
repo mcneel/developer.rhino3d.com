@@ -38,7 +38,7 @@ Sì... anche usando [lo stesso codice](/guides/rhinocommon/what-is-rhinocommon/)
 
 **Cosa sono Mono e Xamarin?**
 
-Mono è una versione open-source di .NET runtime di Microsoft, che funziona su Linux, macOS, iOS e Android.  Per ulteriori informazioni, consulta la guida [Cosa sono Mono e Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/) .
+Mono è una versione open-source di .NET runtime di Microsoft, che funziona su Linux, macOS, iOS e Android.  Per ulteriori informazioni, consulta la guida [Cosa sono Mono e Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/) 
 
 **Cosa sono le macro?**
 Le macro sono stringhe di comandi e opzioni di comando di Rhino, che consentono di creare una sequenza automatizzata di operazioni.  Questa macro (sequenza) può essere ripetuta premendo un pulsante della barra degli strumenti o digitando un alias.
