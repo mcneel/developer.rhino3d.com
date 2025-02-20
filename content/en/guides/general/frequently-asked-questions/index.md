@@ -36,10 +36,6 @@ It all depends on what you want to do.  If you are looking to automate repetitiv
 
 Yes...even using [the same code](/guides/rhinocommon/what-is-rhinocommon/).
 
-**What is Mono/Xamarin?**
-
-Mono is an open-source version of Microsoft's .NET runtime that runs on Linux, macOS, iOS, and Android.  Check out the [What are Mono and Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/) guide for more information.
-
 **What are Macros?**
 Macros are string of Rhino commands and command options that allow you to create an automated sequence of operations.  This macro (sequence) can then be repeated at the push of a toolbar button or by typing an alias.
 

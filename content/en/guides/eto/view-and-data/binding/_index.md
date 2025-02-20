@@ -191,6 +191,17 @@ using Rhino.UI;
 
 public class MyViewModel : ViewModel
 {
+  private int _selectedIndex { get; set; }
+  public int SelectedIndex { get; set; }
+  {
+    get => _selectedIndex;
+    set
+    {
+      _selectedIndex = value;
+      RaisePropertyChanged(nameof(SelectedIndex));
+    }
+  }
+
   public ObservableCollection<string> Choices { get; set; } = new () {
     "Point", "Curve", "Brep",
   };
