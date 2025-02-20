@@ -1,4 +1,4 @@
-+++
+﻿+++
 aliases = ["/en/5/guides/general/developing-software-in-public/", "/en/6/guides/general/developing-software-in-public/", "/en/7/guides/general/developing-software-in-public/", "/en/wip/guides/general/developing-software-in-public/"]
 authors = [ "brian" ]
 categories = [ "Overview" ]
@@ -74,7 +74,7 @@ Il test avviene prima e dopo la fase successiva: La pubblicazione...
 
 Quando abbiamo una build pronta per essere distribuita ai clienti, la distribuiamo (o pubblichiamo).
 
-Questo include il rilascio di ...
+Questo include il rilascio di:
 
 - [Programmi di installazione scaricabili.](http://www.rhino3d.com/download)
 - [SDK.](http://developer.mcneel.com)
