@@ -66,7 +66,7 @@ You can also use Microsoft's [upgrade assistant](https://learn.microsoft.com/en-
 
 It is recommended to keep your plugin(s) targetted at .NET 4.8 so that it can run in either runtime on Windows. Most plugins won't need any changes to run in Rhino 8.
 
-For Mac-specific plugins you can target .NET 7 as that is the only runtime available in Rhino 8. If you want the plugin to be compatible with Rhino 7, keep the target at .NET 4.8.
+For Mac-specific plugins you must target .NET 7 as that is the only runtime available in Rhino 8. If you want the plugin to be compatible only with Rhino 7, keep the target at .NET 4.8.
 
 {{< call-out warning "AnyCPU" >}}
 
@@ -76,7 +76,7 @@ Since Rhino 8 can run natively on Apple Silicon or on Intel, you must compile yo
 
 If your plugin uses any unavailable or non-working APIs when running in .NET Core, some code changes may be necessary. The compat report will show you which APIs you need to avoid.
 
-If you [multi-target your project](https://learn.microsoft.com/en-us/nuget/create-packages/multiple-target-frameworks-project-file) to both .NET 4.8 and .NET 7.0, you can find compatibility issues during compilation. Keep in mind you should only distribute the .NET 4.8 version on Windows.
+If you [multi-target your project](https://learn.microsoft.com/en-us/nuget/create-packages/multiple-target-frameworks-project-file) to both .NET 4.8 and .NET 7.0, you can easily find and resolve compatibility issues during compilation. Keep in mind that .NET 4.8 only needs to be included for Windows and not Mac..
 
 ## Debugging .NET Core on Windows
 
