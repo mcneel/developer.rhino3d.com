@@ -36,10 +36,6 @@ Das hängt ganz davon ab, was Sie tun wollen.  Wenn es Ihre Absicht ist, repetit
 
 Ja ...sogar unter Verwendung [des gleichen Codes](/guides/rhinocommon/what-is-rhinocommon/).
 
-**Was ist Mono/Xamarin?**
-
-Mono ist eine Open-Source-Version von Microsofts .NET-Laufzeit, die auf Linux, macOS, iOS und Android ausgeführt wird.  Werfen Sie einen Blick in den Leitfaden [Was sind Mono und Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/) um mehr zu erfahren.
-
 **Was sind Makros?**
 Makros sind Zeichenketten von Rhino-Befehlen und Befehlsoptionen, die Ihnen die Erzeugung einer automatisierten Sequenz von Vorgängen ermöglichen.  Dieses Makro (Sequenz) kann dann durch Betätigung einer Werkzeugleistenschaltfläche oder durch Eingabe eines Verweises wiederholt werden.
 
