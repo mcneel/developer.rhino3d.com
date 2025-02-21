@@ -61,10 +61,12 @@ Before we step through the process of generating an SSL certificate, we need to 
 
 1. In the **Actions** pane on the right, click **Bindings**. {{< image url="/images/Site_Binding_2.png" alt="/images/Site_Binding_2.png" class="image_center" width="100%" >}}
 
-1. In the **Site Bindings** pane, select the row whose **Type** is set to **http**. On the right-hand side, click the **Edit** button.
+1. In the **Site Bindings** pane, select the **Add** button. {{< image url="/images/Site_Binding_3.png" alt="/images/Site_Binding_3.png" class="image_center" width="100%" >}}
 
 1. In the **Host name** text field, type in the subdomain name that you created when setting up the A-Record. Click **OK** when done.
 {{< image url="/images/Site_Binding_1.png" alt="/images/Site_Binding_1.png" class="image_center" width="80%" >}}
+
+1. At this point, you should have two site bindings listed. Click **Close** when done. {{< image url="/images/Site_Binding_4.png" alt="/images/Site_Binding_4.png" class="image_center" width="100%" >}}
 
 ## Generate the Certificate
 
@@ -88,27 +90,22 @@ To generate the certificate, we recommend using [Win-ACME](https://www.win-acme.
     C:\win-acme\wacs.exe
 ```
 1. You should see an interactive menu appear with a set of instructions which can be run by typing in a specific letter.
-{{< image url="/images/win_acme_2.png" alt="/images/win_acme_2.png" class="image_center" width="100%" >}} 
+{{< image url="/images/win_acme_7.png" alt="/images/win_acme_7.png" class="image_center" width="100%" >}} 
 
 1. Type the letter **N** and hit **Enter** to create a certificate with the default settings. You should see a list of available IIS sites that are available. If you do not see an entry for **Rhino.Compute (1 binding)** then it is likely that you have not set the host name correctly in the previous step. See the section on [modifying the host name](#modify-the-host-name).
-{{< image url="/images/win_acme_3.png" alt="/images/win_acme_3.png" class="image_center" width="100%" >}} 
+{{< image url="/images/win_acme_8.png" alt="/images/win_acme_8.png" class="image_center" width="100%" >}} 
 
 1. Type the number associated with the row for **Rhino.Compute (1 binding)** and hit **Enter**.
+{{< image url="/images/win_acme_9.png" alt="/images/win_acme_9.png" class="image_center" width="100%" >}} 
 
 1. Hit **Enter** again to accept the default **Pick all bindings**.
 
 1. When prompted to *Continue with this selection?* hit **Enter** or type **Y** for yes.
-{{< image url="/images/win_acme_4.png" alt="/images/win_acme_4.png" class="image_center" width="100%" >}} 
+{{< image url="/images/win_acme_10.png" alt="/images/win_acme_10.png" class="image_center" width="100%" >}} 
 
-1. When prompted to *Open in default application?* hit **Enter** or type **Y** for yes.
-
-1. When prompted *Do you agree with the terms?* hit **Enter** or type **Y** for yes.
-
-1. Enter a valid email(s) address to receive notifications about problems or abuses with this certificate. Hit **Enter** when the email address has been provided.
-{{< image url="/images/win_acme_5.png" alt="/images/win_acme_5.png" class="image_center" width="100%" >}} 
+1. You should see some information printed to the console as it generates the SSL certificate.
+{{< image url="/images/win_acme_11.png" alt="/images/win_acme_11.png" class="image_center" width="100%" >}} 
 
 Congratulations. If successful, the application will then run a series of authorization and validation tests to confirm host is secure. Win-ACME will then generate the SSL certificate and install it with IIS and add a new binding **(*:443)** to the Rhino.Compute site. The SSL certificate will be valid for 90 days. However, the Win-ACME application will create a task scheduler which will try to renew the certificate after 60 days. You should now be able to send an HTTPS request to your Rhino.Compute server and get a valid response back.
-
-{{< image url="/images/win_acme_6.png" alt="/images/win_acme_6.png" class="image_center" width="95%" >}} 
 
 <br>
