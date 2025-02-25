@@ -291,7 +291,7 @@ The code is getting big now, we're going to focus on sections now that the skele
 <div class="tab-content">
   <div class="codetab-content4" id="cs4">
 
-``` cs
+``` cs no-compile
 var buttonCell = new CustomCell()
 {
     CreateCell = (cc) => 
@@ -314,7 +314,7 @@ var gridView = new GridView()
   </div>
   <div class="codetab-content4" id="py4">
 
-``` py
+``` py no-compile
 def create_cell(self, args):
     button = ef.Button()
     button.Text = "-"
@@ -354,7 +354,7 @@ The UI still doesn't do anything, but it's starting to look like it does. Let's 
 <div class="tab-content">
   <div class="codetab-content5" id="cs5">
 
-``` cs
+``` cs no-compile
 var buttonCell = new CustomCell()
 {
     CreateCell = (cc) => {
@@ -376,7 +376,7 @@ var buttonCell = new CustomCell()
   </div>
   <div class="codetab-content5" id="py5">
 
-``` py
+``` py no-compile
 def create_cell(self, args):
     
     def button_click(self, args):
@@ -409,7 +409,7 @@ Luckily the solution is pretty simple.
 <div class="tab-content">
   <div class="codetab-content6" id="cs6">
 
-``` cs
+``` cs no-compile
 var items = new List<ToDoItem>()                 // Old
 var items = new ObservableCollection<ToDoItem>() // New
 ```
@@ -417,7 +417,7 @@ var items = new ObservableCollection<ToDoItem>() // New
 
   <div class="codetab-content6" id="py6">
 
-``` py
+``` py no-compile
 items = []                                     # Old
 items = ObservableCollection[type(ToDoItem)]() # New
 ```
@@ -437,7 +437,7 @@ items = ObservableCollection[type(ToDoItem)]() # New
 <div class="tab-content">
   <div class="codetab-content7" id="cs7">
 
-``` cs
+``` cs no-compile
 internal class ToDoItem
 {
     public string Text { get; set; }
@@ -494,7 +494,7 @@ var buttonCell = new CustomCell()
 
   <div class="codetab-content7" id="py7">
 
-``` py
+``` py 
 from System.Collections.ObjectModel import ObservableCollection
 
 import Eto.Forms as ef

@@ -77,7 +77,7 @@ The below code can be copied into a new file in your project, and will automatic
 
 </br>
 
-``` cs
+``` cs no-compile
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
