@@ -49,13 +49,13 @@ var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 var dialog = new Dialog()
 {
     Padding = 8,
-    BackgroundColor = ed.Colors.DimGray
+    BackgroundColor = Colors.DimGray
 };
 
 var panel = new Panel()
 {
     Padding = 8,
-    BackgroundColor = ed.Colors.DarkGray,
+    BackgroundColor = Colors.DarkGray,
     Content = new Button() { Text = "Click me!" }
 };
 

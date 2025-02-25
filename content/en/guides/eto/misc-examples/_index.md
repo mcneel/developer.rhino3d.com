@@ -336,7 +336,7 @@ public class EtoTable
           Padding = new Padding(5,2),
           BackgroundColor = first? Colors.BlanchedAlmond: odd? Colors.White: Colors.FloralWhite,
           Content = label,
-        }
+        };
 
         tableRow.Cells.Add(new TableCell(container, ExpandTable? true: false));
       }

@@ -139,6 +139,11 @@ _Congratulations!_ You have just built your first RhinoCommon plugin for Rhino f
 
 If you'd like to push your exciting new plugin to Yak so that everyone can use it, check out the [Creating a Yak Package](/guides/yak/creating-a-rhino-plugin-package/) guide.
 
+If you'd like to collaborate with colleagues and friends commit your plugin to a git repo.
+[Getting started with GitHub](https://github.blog/developer-skills/github/beginners-guide-to-github-repositories-how-to-create-your-first-repo/).
+
+`dotnet new gitignore` will add a gitignore file so unnecessary files will not be committed.
+
 Try debugging your new plugin on [Windows](/guides/rhinocommon/your-first-plugin-windows/), all plugins using the new templates are now cross-platform by default.
 
 ## Related topics

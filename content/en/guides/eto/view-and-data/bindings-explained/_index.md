@@ -54,7 +54,7 @@ public class MainForm : Form
         vm.Checked = !vm.Checked;
         Invalidate(true);
       }
-    }
+    };
   }
 }
 
@@ -78,6 +78,8 @@ The View Model needs to notify the UI when it is changed.
 We do this by implementing `INotifyPropertyChanged` on the View Model, and expanding the properties.
 
 ``` cs
+using System.ComponentModel;
+
 public class ViewModel : INotifyPropertyChanged
 {
 
@@ -110,6 +112,8 @@ Looking at the View Model now, it seems a lot more complicated, let's walk throu
 1. A simple method to make calling the event easier has been added.
 
 ``` cs
+using System.ComponentModel;
+
 public class ViewModel : INotifyPropertyChanged // 1.
 {
 
@@ -192,7 +196,7 @@ Likely the types you're attempting to use are not able to be cast correctly. e.g
 
 Declaring Binding.Property instead of a lambda and using ToBool() will help.
 
-``` cs
+``` cs no-compile
 cb.BindDataContext(c => c.Checked, (ViewModel vm) => vm.Checked);
 cb.BindDataContext(c => c.Checked, Binding.Property((ViewModel vm) => vm.Checked).ToBool(true, false));
 ```
