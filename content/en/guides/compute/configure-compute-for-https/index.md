@@ -8,7 +8,7 @@ sdk = [ "Compute" ]
 title = "Configure Compute to use HTTPS"
 type = "guides"
 weight = 5
-override_last_modified = "2021-12-14T13:16:19Z"
+override_last_modified = "2025-02-25T08:16:19Z"
 
 [admin]
 picky_sisters = ""
