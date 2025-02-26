@@ -36,7 +36,7 @@ The simplest reason is to keep different things in different places.
 #### Examples of View Model data and logic
 Notice how none of the properties or methods relate to the UI and focus entirely on Data and back end.
 
-``` cs
+``` cs no-compile
 // Data
 internal ObservableCollection<User> Users { get; }
 
@@ -49,7 +49,7 @@ internal void AddUser(User user);
 #### Examples of view data and logic
 Notice that the properties and methods are very much view specific only relating to the UI.
 
-``` cs
+``` cs no-compile
 // Data
 private bool IsButtonVisible { get; }
 private static float BorderThickness { get; }
@@ -66,7 +66,7 @@ internal void CloseView();
 ## A very basic View Model
 A very basic View Model with a single property.
 
-``` cs
+``` cs no-compile
 internal class MyViewModel
 {
   public int Count { get; set; } = 0;
@@ -76,7 +76,7 @@ internal class MyViewModel
 ## A better basic View Model
 
 
-``` cs
+``` cs no-compile
 public class MyViewModel : INotifyPropertyChanged
 {
 
@@ -103,7 +103,7 @@ public class MyViewModel : INotifyPropertyChanged
 ## A much better and simpler View Model
 Rhino.UI has a ViewModel that can be used to save repeating yourself
 
-``` cs
+``` cs no-compile
 public class MyViewModel : Rhino.UI.ViewModel
 {
 

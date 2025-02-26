@@ -82,7 +82,7 @@ e.g
 These create half the binding for you but aren't strictly necessary.
 
 These 3 snippets are functionally identical but achieve it through helper methods and properties
-``` cs
+``` cs no-compile
 cb.Bind<bool>(nameof(CheckBox.Checked), DataContext, nameof(ViewModel.Checked));
 cb.BindDataContext(c => c.Checked, (ViewModel vm) => vm.Checked);
 cb.CheckedBinding.BindDataContext(nameof(ViewModel.Checked));
@@ -192,7 +192,7 @@ using Rhino.UI;
 public class MyViewModel : ViewModel
 {
   private int _selectedIndex { get; set; }
-  public int SelectedIndex { get; set; }
+  public int SelectedIndex
   {
     get => _selectedIndex;
     set

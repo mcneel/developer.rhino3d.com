@@ -150,7 +150,7 @@ var drawable = new Drawable() {
     Height = 52
 };
 
-bool over = false;
+bool over;
 
 drawable.Paint += (s, e) => {
     var rect = new RectangleF(1, 1, 50, 50);
@@ -159,8 +159,8 @@ drawable.Paint += (s, e) => {
     if (over)
     {
         var pen = new Pen(Color.FromArgb(170, 22, 1), 5f);
-        e.Graphics.DrawLine(pen, 16, 16, 34, 34)
-        e.Graphics.DrawLine(pen, 34, 16, 16, 34)
+        e.Graphics.DrawLine(pen, 16, 16, 34, 34);
+        e.Graphics.DrawLine(pen, 34, 16, 16, 34);
     }
 };
 
@@ -273,10 +273,10 @@ var drawable = new Drawable() {
     Height = 200
 };
 
-bool over = false;
+bool over;
 
 drawable.Paint += (s, e) => {
-    var rect = ef.GetRect();
+    var rect = GetRect();
     e.Graphics.FillEllipse(Colors.OrangeRed, rect);
     
     if (!mouseDown) return;
