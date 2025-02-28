@@ -23,7 +23,7 @@ platforms = [ "Windows", "Mac" ]
  <!-- cs -- Tested on Win/Mac -->
  <!-- TODO : Include these samples https://developer.rhino3d.com/guides/rhinopython/eto-controls-python/ -->
 
-## Buttons
+## Buttons [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_Button.htm)
 Buttons offer simple click → action functionality.
 
 {{< row >}}
@@ -96,7 +96,7 @@ dialog.ShowModal(parent)
 {{< /column >}}
 {{< /row >}}
 
-## Drop Down
+## Drop Down [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_DropDown.htm)
 Drop Downs store a collection of items and force a user to choose one, drop downs are favourable when the length of data can change or is more than 3-4 items.
 
 {{< row >}}
@@ -172,7 +172,7 @@ dialog.ShowModal(parent)
 {{< /column >}}
 {{< /row >}}
 
-## Radio Buttons
+## Radio Buttons [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_RadioButtonList.htm)
 Radio Button Lists store a list of items and force a user to choose one item. Radio Buttons are not suitable for longer lists and instead a [Drop Down](#drop-down) should be preferred.
 
 {{< row >}}
@@ -251,7 +251,7 @@ dialog.ShowModal(parent)
 {{< /column >}}
 {{< /row >}}
 
-## Check Boxes
+## Check Boxes [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_CheckBox.htm)
 Check Boxes can exist individually or as a group by using the CheckBoxGroup.
 Check Boxes have 3 states, checked, unchecked and indeterminate. The 3rd state can be set using Null as the Checked value is `bool?`.
 
@@ -324,7 +324,7 @@ dialog.ShowModal(parent)
 {{< /row >}}
 
 
-## Text Box
+## Text Box [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_TextBox.htm)
 The Text box is meant for simple, short inputs like an email address, password, name, etc.
 
 {{< row >}}
@@ -401,7 +401,7 @@ dialog.ShowModal(parent)
 
 
 
-## Text Area
+## Text Area [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_TextArea.htm)
 The text area is for longer, multiline text values and offers more options suited to a larger text input.
 
 {{< row >}}
