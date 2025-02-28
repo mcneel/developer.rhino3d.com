@@ -89,6 +89,7 @@ platforms = [ "Windows", "Mac" ]
   - [Text Area](controls#text-area)
 - Advanced Controls
   - [Drawable](advanced-controls/drawable)
+  - [Tab Layout](tab-layout)
 - Grids
   - [Cells](cells)
   - [Grid View](grid-view)           <!-- Documenting this will be so helpful -->
