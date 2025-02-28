@@ -34,11 +34,7 @@ Cells are the backbone of the Eto Grid types, GridView and TreeGridView, two ver
 {{< /column >}}
 {{< /row >}}
 
-![Various Cells](/images/eto/controls/grid-view.png)
-
 </br>
-
-# Code Samples
 
 ## TextBox Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_TextBoxCell.htm)
 
@@ -133,6 +129,8 @@ dialog.ShowModal()
 
 {{< /column >}}
 {{< /row >}}
+
+</br>
 
 ## CheckBox Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_CheckBoxCell.htm)
 
@@ -341,43 +339,6 @@ dialog.ShowModal()
 
 </br>
 
-## ImageView Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_ImageViewCell.htm)
-
-{{< row >}}
-{{< column >}}
-
-<div class="codetab">
-  <button class="tablinks4" onclick="openCodeTab(event, 'cs4')" id="defaultOpen4">C#</button>
-  <button class="tablinks4" onclick="openCodeTab(event, 'py4')">Python</button> 
-</div>
-
-<div class="tab-content">
-  <div class="codetab-content4" id="cs4">
-
-```cs
-
-```
-
-  </div>
-  <div class="codetab-content4" id="py4">
-
-```py
-
-```
-
-  </div>
-</div>
-
-{{< /column >}}
-{{< column >}}
-
-![Combo Box Cell](/images/eto/controls/combobox-cell.png)
-
-{{< /column >}}
-{{< /row >}}
-
-</br>
-
 ## Drawable Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_DrawableCell.htm)
 
 Drawable Cells allow for rendering geometry and creating extensive interactive controls.
@@ -562,7 +523,33 @@ dialog.ShowModal(null);
   <div class="codetab-content6" id="py6">
 
 ```py
+import Eto.Forms as ef
 
+items = range(0, 100)
+
+def create(args):
+    text_box = ef.TextBox()
+    text_box.Text = str(args.Item)
+
+    return text_box
+
+custom_cell = ef.CustomCell()
+custom_cell.CreateCell = create
+
+value_column = ef.GridColumn()
+value_column.HeaderText = "Value"
+value_column.Editable = True
+value_column.DataCell = ef.TextBoxCell(1)
+
+gridView = ef.GridView()
+gridView.DataStore = items
+gridView.Columns.Add(value_column)
+
+dialog = ef.Dialog()
+dialog.Height = 200
+dialog.Content = gridView
+
+dialog.ShowModal()
 ```
 
   </div>
@@ -603,8 +590,17 @@ customCell.ConfigureCell = (args, control) => {
   </div>
   <div class="codetab-content7" id="py7">
 
-```py
+```py no-compile
+def create(args):
+    return ef.TextBox()
 
+def config(args, control):
+    config.Text = str(args.Item)
+
+custom_cell = ef.CustomCell()
+custom_cell.CreateCell = create
+# It is VERY important to ConfigureCell
+custom_cell.ConfigureCell = config
 ```
 
   </div>
@@ -612,6 +608,7 @@ customCell.ConfigureCell = (args, control) => {
 
 </br>
 
+<!--
 ## Property Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_PropertyCell.htm)
 
 {{< row >}}
@@ -647,3 +644,4 @@ customCell.ConfigureCell = (args, control) => {
 
 {{< /column >}}
 {{< /row >}}
+-->
