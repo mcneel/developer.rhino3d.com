@@ -64,6 +64,7 @@ platforms = [ "Windows", "Mac" ]
     - [Dynamic Layouts](containers#dynamic-layouts)
     - [Pixel Layouts](containers#pixel-layouts)
 - [Control Properties](control-properties)
+- [Clipboard (Copy & Paste)](clipboard)
 <!-- - [Menu Bar](menu-bar) -->
   <!-- Ensure to mention advanced menu bars -->
 <!-- - [Commands](commands) -->
