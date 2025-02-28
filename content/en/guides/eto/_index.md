@@ -82,19 +82,20 @@ platforms = [ "Windows", "Mac" ]
 - [Basic Controls](controls/)
   - [Button](controls#button)
   - [DropDown](controls#drop-down)
-  <!-- - [ComboBox](controls#combobox/) -->
   - [Radio Buttons](controls#radio-buttons)
   - [Check Boxes](controls#check-boxes)
   - [Text Box](controls#text-box)
   - [Text Area](controls#text-area)
 - Advanced Controls
   - [Drawable](advanced-controls/drawable)
-<!--  - [Grid View](containers#grid-view) -->
-<!-- Ensuring the data works on these is so annoying. Documenting this will be so helpful -->
-  <!-- - [Tree Views](controls/treeviews/) -->
-<!-- Ensuring the data works on these is so annoying. Documenting this will be so helpful -->
-  <!-- - [Image View](advanced-controls/imageviews/) -->
-  <!-- I think this is worth being a bit more extensive than others -->
+- Grids
+  - [Cells](cells)
+  - [Grid View](grid-view)           <!-- Documenting this will be so helpful -->
+  - [Tree Grid View](tree-grid-view) <!-- Documenting this will be so helpful -->
+  
+<!-- - [Image View](advanced-controls/imageviews/) -->
+<!-- - [ComboBox](controls#combobox/) -->
+<!-- I think this is worth being a bit more extensive than others -->
 <!-- - [Numeric Input](advanced-controls/numericUpDown) -->
 
 {{< /column >}}
