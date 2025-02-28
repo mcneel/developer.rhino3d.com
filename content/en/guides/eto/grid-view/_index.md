@@ -19,6 +19,10 @@ platforms = [ "Windows", "Mac" ]
 
 +++
 
+{{< call-out note "Cells" >}}
+  It's advisable to read about [Cells](../cells) before Grid Views
+{{< /call-out >}}
+
 {{< row >}}
 {{< column >}}
 

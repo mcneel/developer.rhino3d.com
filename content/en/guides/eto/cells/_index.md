@@ -24,7 +24,7 @@ platforms = [ "Windows", "Mac" ]
 {{< row >}}
 {{< column >}}
 
-Cells are the backbone of the Eto Grid types, GridView and TreeGridView, two very extensible and powerful containers in Eto.
+Cells are the backbone of the Eto Grid types, [GridView](../grid-view) and [TreeGridView](../tree-grid-view), two very extensible and powerful containers in Eto.
 
 {{< /column >}}
 {{< column >}}
@@ -605,6 +605,8 @@ custom_cell.ConfigureCell = config
 
   </div>
 </div>
+
+With both samples combined, the UI behaves as expected, remaining ordered.
 
 </br>
 

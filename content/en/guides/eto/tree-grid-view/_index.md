@@ -19,6 +19,9 @@ platforms = [ "Windows", "Mac" ]
 
 +++
 
+{{< call-out note "Cells" >}}
+  It's advisable to read about [Cells](../cells) before Tree Grid Views. It's also advisable to read about [Grid Views](../grid-view) before Tree Grid Views as an introductory step
+{{< /call-out >}}
 
 {{< row >}}
 {{< column >}}
