@@ -38,7 +38,7 @@ foreach(var file in files)
         if (startIndex > lines.Length) break;
 
         int firstIndex = lines.IndexOf("```", startIndex);
-        if (firstIndex < 0) continue;
+        if (firstIndex < 0) continue;   
 
         startIndex = firstIndex + 4;
 
@@ -83,6 +83,7 @@ foreach(var file in files)
         {
             var sc = new SourceCode(spec, code);
             Code codeObject = sc.CreateCode();
+            codeObject.Inputs.Add("__rhino_doc__", typeof(Rhino.RhinoDoc));
 
             var context = new BuildContext();
             if (!codeObject.TryBuild(context, out Diagnosis diagnosis))
