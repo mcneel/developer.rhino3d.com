@@ -41,7 +41,7 @@ An introduction to Tree Grid Views.
 Tree Grid Views allow us to create columns and rows which are bound to a View Model.
 This guide will cover all the eccentricities of Grid Views which can be confusing.
 
-![Pixel Layout](/images/eto/controls/grid-view.png)
+![Grid View](/images/eto/controls/tree-grid-view.png)
 
 ## Declaration
 
@@ -79,6 +79,9 @@ var dialog = new Dialog()
   Height = 200,
   Content = gridView,
 };
+
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.Show(parent);
 ```
 
   </div>
@@ -168,6 +171,8 @@ Reloading an ENTIRE GridView due to 1 cell changing would be very inefficient, a
 
 ```cs
 
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.Show(parent);
 ```
 
   </div>

@@ -36,12 +36,9 @@ An introduction to Grid Views.
 {{< /column >}}
 {{< /row >}}
 
-</br>
+Tree Grid Views are slightly more complex than Grid Views with a tree data structure backing them rather then collections. This guide will cover all the eccentricities of Tree Grid Views which can be confusing.
 
-Grid Views allow us to create columns and rows which are bound to a View Model.
-This guide will cover all the eccentricities of Grid Views which can be confusing.
-
-![Pixel Layout](/images/eto/controls/grid-view.png)
+![Grid View](/images/eto/controls/grid-view.png)
 
 ## Declaration
 
@@ -79,6 +76,9 @@ var dialog = new Dialog()
   Height = 200,
   Content = gridView,
 };
+
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.Show(parent);
 ```
 
   </div>

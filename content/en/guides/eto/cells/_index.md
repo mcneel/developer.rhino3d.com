@@ -83,7 +83,8 @@ var dialog = new Dialog()
   },
 };
 
-dialog.ShowModal(null);
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.Show(parent);
 ```
 
   </div>
@@ -179,7 +180,8 @@ var dialog = new Dialog()
   },
 };
 
-dialog.ShowModal(null);
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.Show(parent);
 ```
 
   </div>
@@ -285,7 +287,8 @@ var dialog = new Dialog()
   },
 };
 
-dialog.ShowModal(null);
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.Show(parent);
 ```
 
   </div>
@@ -405,7 +408,8 @@ var dialog = new Dialog()
   },
 };
 
-dialog.ShowModal(null);
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.Show(parent);
 ```
 
   </div>
@@ -516,7 +520,8 @@ var dialog = new Dialog()
     },
 };
 
-dialog.ShowModal(null);
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.Show(parent);
 ```
 
   </div>
@@ -564,7 +569,9 @@ For this reason it's important that Cells are not considered unique. Each Cell *
 
 ### Updating Data Context
 
-Only using CreateCell will cause this, the cell, when created, should be empty with no data set. [ConfigureCell](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_CustomCell_ConfigureCell.htm) is for setting data, handling bindings or managing 'state'.
+Only using CreateCell will cause this, the cell, when created, should be empty with no data set. [ConfigureCell](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_CustomCell_ConfigureCell.htm) is for setting data, and managing 'state'.
+
+CreateCell is called once and once only. ConfigureCell is called every time the Cell is given a new DataContext. Hence Bindings should still be created in CreateCell or else the Cell will quickly fill up with bindings causing the problem to slow down.
 
 </br>
 
