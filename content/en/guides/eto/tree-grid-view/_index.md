@@ -41,7 +41,7 @@ An introduction to Tree Grid Views.
 Tree Grid Views allow us to create columns and rows which are bound to a View Model.
 This guide will cover all the eccentricities of Grid Views which can be confusing.
 
-![Grid View](/images/eto/controls/tree-grid-view.png)
+![Tree Grid View](/images/eto/controls/tree-grid-view.png)
 
 ## Declaration
 
@@ -116,11 +116,7 @@ dialog.ShowModal()
 
 ## DataStore and Bindings
 
-The cell in the column is either a string from a 2D list, or a property of an element in a 1D List. 
-
-{{< call-out note "Python Note" >}}
-Note that Python MUST be a 2D list as bindings do not work the same way.
-{{< /call-out >}}
+Tree Grid View data stores differ to the GridView as they require a more rigid (tree) structure.
 
 
 <div class="codetab">
@@ -131,25 +127,15 @@ Note that Python MUST be a 2D list as bindings do not work the same way.
 <div class="tab-content">
   <div class="codetab-content4" id="cs4">
 
-
 ``` cs
-// 2D List
-List<List<string>> _2dList { get; }
-// 2D Array
-string[,] _2dArray_ { get; }
 
-// 1D List
-List<MyObject> _1dList { get; }
-// 1D Array
-MyObject[] _1dArray { get; }
 ```
 
   </div>
   <div class="codetab-content4" id="py4">
 
   ```py
-# 2D List
-list = [[1, 2], [3, 4]]
+
   ```
 
   </div>
@@ -157,7 +143,7 @@ list = [[1, 2], [3, 4]]
 
 ### Reloading Data
 
-Generally `ObservableCollection<T>` informs the UI of changes when the collection is updated. In GridViews this is not the case and a more specific reload is required `GridView.ReloadData()`. \
+Generally `ObservableCollection<T>` informs the UI of changes when the collection is updated. In TreeGridViews this is not possible as we must use a Tree structure. TreeGridView offers two reload options `ReloadItem()` which reloads 1 item (optionally including children)  and `ReloadData()` which reloads _everything_.
 
 Reloading an ENTIRE GridView due to 1 cell changing would be very inefficient, and hence ReloadData lets us specify a Row to reload which is much more efficient.
 
@@ -170,7 +156,6 @@ Reloading an ENTIRE GridView due to 1 cell changing would be very inefficient, a
   <div class="codetab-content3" id="cs3">
 
 ```cs
-
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 dialog.Show(parent);
 ```
@@ -197,141 +182,127 @@ dialog.Show(parent);
   <div class="codetab-content1" id="cs1">
 
 ```cs
-using System;
-using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Collections.ObjectModel;
+using System.Collections;
+using System.Linq;
+using System;
 
-using Eto.Forms;
 using Eto.Drawing;
+using Eto.Forms;
 
 using Rhino.UI;
- 
-var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
-class SheetModel : ViewModel
+class Flaggable
 {
-    public ObservableCollection<ObservableCollection<string>> Cells { get; } = new();
+    public string Name { get; set; }
 
-    public List<char> ColumnLabels { get; } = new List<char>() {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+    public string Flag { get; set; }
 
-    public SheetModel(int rows, int cols)
+    public Flaggable(string name, string flag)
     {
-        for(int i = 0; i < rows; i++)
-        {
-            // var row = new ObservableCollection<string>(Enumerable.Repeat(string.Empty, cols));
-            var row = new ObservableCollection<string>(Enumerable.Range(0, cols).Select(j => (j * i).ToString()));
-            Cells.Add(row);
-        }
-    }
-
-    public void Calculate()
-    {
-        for(int x = 0; x < Cells.Count; x++)
-        {
-            var currentRow = Cells[x];
-            for(int y = 0; y < currentRow.Count; y++)
-            {
-                var cell = currentRow[y] ?? string.Empty;
-                var match = Regex.Match(cell, @"=([a-zA-Z])([\d]+)");
-                if (match.Groups.Count < 3) continue;
-                
-                string letter = match.Groups[1].Value.ToUpper();
-                string number = match.Groups[2].Value;
-
-                if (!int.TryParse(number, out int row)) continue;
-                if (row < 0 || row > 10) continue;
-
-                char c = letter.FirstOrDefault();
-
-                int col = ColumnLabels .IndexOf(c);
-
-                currentRow[y] = Cells[row-1][col];
-                
-                // Cells[x][y]
-            }
-        }
-    }
-
-    public void Clear()
-    {
-        foreach(var cell in Cells)
-        {
-            cell.Clear();
-            for(int i = 0; i < 10; i++)
-                cell.Add("0");
-        }
+        Name = name; Flag = flag;
     }
 }
 
-var cols = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+var treeData = new TreeGridItemCollection()
+{
+    new TreeGridItem(new TreeGridItem[]
+    {
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("The South Pole", "💈"))
+            }, new Flaggable("Antarctica", "🇦🇶")),
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("South Africa", "🇿🇦")),
+                new TreeGridItem(new Flaggable("Kenya", "🇰🇪")),
+            }, new Flaggable("Africa", "🌍")),
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("China", "🇨🇳")),
+                new TreeGridItem(new Flaggable("Japan", "🇯🇵"))
+            }, new Flaggable("Asia", "🌏")),
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("Sydney", "🏖️")),
+                new TreeGridItem(new Flaggable("Canberra", "🐨")),
+            }, new Flaggable("Australia", "🇦🇺")),
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("Belgium", "🇧🇪")),
+                new TreeGridItem(new Flaggable("Monaco", "🇲🇨")),
+            }, new Flaggable("Europe", "🌍")),
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("Canada", "🇨🇦")),
+                new TreeGridItem(new Flaggable("Mexico", "🇲🇽")),
+            }, new Flaggable("North America", "🌎")),
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("Brazil", "🇧🇷")),
+                new TreeGridItem(new Flaggable("Colombia", "🇨🇴")),
+            }, new Flaggable("South America", "🌎")),
+    }, 
+    new Flaggable("Earth", "🗺️"))
+};
 
-var model = new SheetModel(10, cols.Length);
 
+
+class CustCell : CustomCell
+{
+    protected override Control OnCreateCell(CellEventArgs args)
+    {
+        var textBox = new Label() { TextAlignment = TextAlignment.Left };
+        return textBox;
+    }
+
+    protected override void OnConfigureCell(CellEventArgs args, Control control)
+    {
+        if (control is not Label text) return;
+        if (args.Item is not TreeGridItem item) return;
+        if (item.Values?.FirstOrDefault() is not Flaggable flag) return;
+
+        text.Text = flag.Name;
+    }
+}
+
+var treeGridView = new TreeGridView()
+{
+  AllowMultipleSelection = false,
+  Columns = {
+    new GridColumn()
+    {
+      HeaderText = "Place",
+      DataCell = new CustCell(), //(nameof(Flaggable.Name)),
+    },
+  },
+  DataStore = treeData,
+};
+
+var bigFont = new Font(FontFamilies.Sans, 150, FontStyle.None, FontDecoration.None);
+var label = new Label()
+{
+    Width = 200,
+    Font = bigFont,
+    Text = "🏁",
+    TextAlignment = TextAlignment.Center
+};
+
+treeGridView.SelectedItemChanged += (s, e) => {
+    if (treeGridView.SelectedItem is not TreeGridItem item) return;
+    if (item.Values?.FirstOrDefault() is not Flaggable flag) return;
+    label.Text = flag.Flag;
+};
+
+var layout = new DynamicLayout();
+layout.BeginHorizontal();
+layout.Add(treeGridView, true, true);
+layout.Add(label, false, true);
+layout.EndHorizontal();
+ 
 var dialog = new Dialog()
 {
-  Padding = 4,
-  DataContext = model
+  Width = 400,
+  Height = 400,
+  Content = layout,
+  Resizable = true,
 };
 
-var gridView = new GridView()
-{
-    DataStore = model.Cells,
-    Border = BorderType.Line,
-    CanDeleteItem = (s) => false,
-    AllowMultipleSelection = false,
-    AllowEmptySelection = true,
-    Cursor = Eto.Forms.Cursors.IBeam,
-    GridLines = GridLines.Both,
-};
-gridView.CellEdited += (s, e) => {
-    model.Calculate();
-};
-
-int i = 0;
-foreach(char c in cols)
-{
-    var col = new GridColumn()
-    {
-        HeaderText = $"{c}",
-        AutoSize = false,
-        Width = 80,
-        DataCell = new TextBoxCell(i++),
-        Editable = true
-    };
-
-    gridView.Columns.Add(col);
-};
-
-var clearButton = new Button() { Text = "Clear All" };
-clearButton.Click += (s,e) => {
-    model.Clear();
-    gridView.ReloadData(Enumerable.Range(0, cols.Length));
-};
-
-var closeButton = new Button() { Text = "Close" };
-closeButton.Click += (s, e) => dialog.Close();
-
-var buttonRow = new DynamicLayout() { Spacing = new Size(4, 0) };
-buttonRow.BeginHorizontal();
-buttonRow.AddSpace(true, true);
-buttonRow.Add(clearButton, false, false);
-buttonRow.Add(closeButton, false, false);
-buttonRow.EndHorizontal();
- 
-dialog.Content = new StackLayout()
-{
-    Spacing = 4,
-    Items = {
-        gridView,
-        buttonRow
-    }
-};
-dialog.UseRhinoStyle();
-dialog.ShowModal(parent);
-  ```
+dialog.ShowModal(null);
+```
 
   </div>
   <div class="codetab-content1" id="py1">

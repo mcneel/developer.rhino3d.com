@@ -109,17 +109,21 @@ dialog.ShowModal()
   </div>
 </div>
 
+</br>
+
 ## DataStore and Bindings
 
-It is worth noting that Cells in Grids make use of "Indirect Bindings". Bindings which are handed entirely internally by Eto and do not require `control.BindDataContext` to be created.
+Cells in Grids make use of "Indirect Bindings". Bindings which are handed entirely internally by Eto and do not require `control.BindDataContext` to be used.
 
-When we define our column, we can represent the row as data in one of two days.
+When we define our column, we can represent the row as data in one of two ways.
 
 #### 1. As a data Object
-Using a string allows us to specify a property name of the Data Object
+Defining a row as a data object is a very strong way to define a GridView. The constructor of most data cells allows a string which is the name of a property on the Data Object.
 
 #### 2. As an Array
-Using a number as an index in the constructor will bind the cell to the Nth object in a list.
+A row can also be defined as an Array or List of data. Using a number as an index in the constructor will bind the cell to the Nth object in a list.
+
+// TODO : How does this handle columns being reordered? Does it just handle it???
 
 <div class="codetab">
   <button class="tablinks3" onclick="openCodeTab(event, 'cs3')" id="defaultOpen3">C#</button>
@@ -135,34 +139,47 @@ var gridView = new GridView()
   Columns = {
     new GridColumn()
     {
+      // 1. This is an Indirect Binding
       // Python cannot use this style, c# can
-      DataCell = new TextBoxCell(nameof(MyDataObject.Property)), // <-- 1. This is an Indirect Binding
+      DataCell = new TextBoxCell(nameof(MyDataObject.Property)),
     },
     new GridColumn()
     {
+      // 2. This is an Indirect Binding
       // Python AND C# can both use this style
-      DataCell = new TextBoxCell(1), // <-- 2. This is an Indirect Binding
+      DataCell = new TextBoxCell(1),
     },
-  },
-  DataStore = items
+  }
 };
 ```
 
   </div>
   <div class="codetab-content3" id="py3">
 
-``` py
-# 2D List
-list = [[1, 2], [3, 4]]
+``` py no-compile
+# 1. This is an Indirect Binding
+# Python cannot use this style (even though the syntax is valid), c# can
+column_1 = GridColumn()
+column_1.DataCell = TextBoxCell("Property")
+
+# 2. This is an Indirect Binding
+# Python AND C# can both use this style
+column_2 = GridColumn()
+column_2.DataCell = TextBoxCell(0)
+
+grid_view = new GridView()
+grid_view.Columns.Add(column_1)
+grid_view.Columns.Add(column_2)
  ```
 
   </div>
 </div>
 
-{{< call-out note "Python Note" >}}
-Note that Python MUST be a 2D list as bindings do not work the same way.
-{{< /call-out >}}
+</br>
 
+## Data object examples
+
+Below are some examples of valid data store inputs.
 
 <div class="codetab">
   <button class="tablinks4" onclick="openCodeTab(event, 'cs4')" id="defaultOpen4">C#</button>
@@ -172,17 +189,20 @@ Note that Python MUST be a 2D list as bindings do not work the same way.
 <div class="tab-content">
   <div class="codetab-content4" id="cs4">
 
+``` cs no-compile
+// Lists of Lists
+var _2dList = new List<object> {
+  new List<int> { 1, 2, 3 },
+  new List<string> { "one", "two", "three" }
+};
 
-``` cs
-// 2D List
-List<List<string>> _2dList { get; }
-// 2D Array
-string[,] _2dArray_ { get; }
-
-// 1D List
-List<MyObject> _1dList { get; }
-// 1D Array
-MyObject[] _1dArray { get; }
+// Data Objects
+var _1dList = new List<MyObject>
+{
+    new MyObject(1, "one"),
+    new MyObject(2, "two"),
+    new MyObject(3, "three"),
+};
 ```
 
   </div>
@@ -190,15 +210,25 @@ MyObject[] _1dArray { get; }
 
   ```py
 # 2D List
-list = [[1, 2], [3, 4]]
+items = [[1, 2, 3], ["one", "two", "three"]]
+
+# Tuples and Lists
+col_1 = [1, 2, 3]
+col_2 = ["one", "two", "three"]
+
+items = (col_1, col_2)
   ```
 
   </div>
 </div>
 
-### Also mention ReloadData
+</br>
 
-Generally `ObservableCollection<T>` informs the UI of changes when the collection is updated. In GridViews this is not the case and a more specific reload is required `GridView.ReloadData()`. \
+### ReloadData
+
+Generally `ObservableCollection<T>` informs the UI of changes when the collection is updated. In GridViews this is not the case and a more specific reload is required `GridView.ReloadData()`.
+
+// TODO : Are you sure about this? Why do we EVER use this for samples then?
 
 Reloading an ENTIRE GridView due to 1 cell changing would be very inefficient, and hence ReloadData lets us specify a Row to reload which is much more efficient.
 
@@ -224,7 +254,14 @@ Reloading an ENTIRE GridView due to 1 cell changing would be very inefficient, a
   </div>
 </div>
 
-## Code
+# Example Code
+
+## Our first Grid View
+
+For this example we'll build a very simple spreadsheet application.
+Starting off with the Basic layout and some dummy data (otherwise the UI looks quite disappointing).
+
+![Empty Grid View](images/eto/tutorials/grid-view-01.png)
 
 <div class="codetab">
   <button class="tablinks1" onclick="openCodeTab(event, 'cs1')" id="defaultOpen1">C#</button>
@@ -233,6 +270,95 @@ Reloading an ENTIRE GridView due to 1 cell changing would be very inefficient, a
 
 <div class="tab-content">
   <div class="codetab-content1" id="cs1">
+
+```cs
+using System.Collections.Generic;
+
+using Eto.Forms;
+using Eto.Drawing;
+
+using Rhino.UI;
+
+var gridView = new GridView()
+{
+    // Styling
+    Border = BorderType.Line,
+    GridLines = GridLines.Both,
+    
+    // Dummy Data
+    DataStore = new List<List<string>>
+    {
+        new List<string>() { "None" }
+    }
+};
+
+// Use a series of letters to create all the Columns
+
+var cols = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
+foreach(var c in cols)
+{
+    var col = new GridColumn()
+    {
+        HeaderText = c,
+        
+        // The Data Cell is created for each Cell
+        DataCell = new TextBoxCell(0),
+    };
+
+    gridView.Columns.Add(col);
+};
+
+var clearButton = new Button() { Text = "Clear All" };
+var closeButton = new Button() { Text = "Close" };
+
+// Organise our layout nicely
+var buttonRow = new DynamicLayout() { Spacing = new Size(4, 0) };
+buttonRow.BeginHorizontal();
+buttonRow.AddSpace(true, true);
+buttonRow.Add(clearButton, false, false);
+buttonRow.Add(closeButton, false, false);
+buttonRow.EndHorizontal();
+
+// Create the Dialog that hosts our UI elements
+var dialog = new Dialog()
+{
+  Padding = 4,
+  Content = new StackLayout()
+  {
+      Spacing = 4,
+      Items = {
+          gridView,
+          buttonRow
+      }
+  }
+};
+
+// Make sure we parent the dialog correctly
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.ShowModal(parent);
+```
+
+  </div>
+  <div class="codetab-content1" id="py1">
+
+```py
+
+```
+
+  </div>
+</div>
+
+</br>
+
+## Adding ...
+
+<div class="codetab">
+  <button class="tablinks10" onclick="openCodeTab(event, 'cs10')" id="defaultOpen10">C#</button>
+  <button class="tablinks10" onclick="openCodeTab(event, 'py10')">Python</button>
+</div>
+
+<div class="tab-content">
+  <div class="codetab-content10" id="cs10">
 
 ```cs
 using System;
@@ -367,12 +493,12 @@ dialog.Content = new StackLayout()
         buttonRow
     }
 };
-dialog.UseRhinoStyle();
+
 dialog.ShowModal(parent);
   ```
 
   </div>
-  <div class="codetab-content1" id="py1">
+  <div class="codetab-content1" id="py10">
 
   ```py
 import scriptcontext as sc
@@ -388,9 +514,6 @@ parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 dialog = ef.Dialog()
 dialog.Padding = ed.Padding(8)
 dialog.BackgroundColor = ed.Colors.DimGray
-
-button = ef.Button()
-button.Text = "Click me!"
 
 panel = ef.Panel()
 panel.Padding = ed.Padding(8)

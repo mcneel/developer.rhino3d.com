@@ -36,7 +36,7 @@ Cells are the backbone of the Eto Grid types, [GridView](../grid-view) and [Tree
 
 </br>
 
-## TextBox Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_TextBoxCell.htm)
+## [TextBox Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_TextBoxCell.htm)
 
 TextBoxCells can be used for displaying text or creating editable text.
 As long as `Editable` is set to true, the text can be changed and will update the source.
@@ -133,7 +133,7 @@ dialog.ShowModal()
 
 </br>
 
-## CheckBox Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_CheckBoxCell.htm)
+## [CheckBox Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_CheckBoxCell.htm)
 
 CheckBoxCells are toggle-able, as long as `Editable` is set to true, the box can be toggled on and off which will update the source.
 
@@ -230,7 +230,7 @@ dialog.ShowModal()
 
 </br>
 
-## ComboBoxCell Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_ComboBoxCell.htm)
+## [ComboBoxCell Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_ComboBoxCell.htm)
 
 ComboBoxCell contain collections of items, as long as `Editable` is set to true, the combo box can be chosen from which will update the source.
 
@@ -342,7 +342,7 @@ dialog.ShowModal()
 
 </br>
 
-## Drawable Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_DrawableCell.htm)
+## [Drawable Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_DrawableCell.htm)
 
 Drawable Cells allow for rendering geometry and creating extensive interactive controls.
 
@@ -477,7 +477,7 @@ dialog.ShowModal()
 
 </br>
 
-## Custom Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_CustomCell.htm)
+## [Custom Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_CustomCell.htm)
 
 Custom Cells allow for very extensive Grid View customisation, with this extensibility comes difficulty however as everything must now be coded correctly.
 
@@ -563,9 +563,9 @@ dialog.ShowModal()
 </br>
 
 ### A note on Efficiency
-In our example we only have 100 items, consider however, that an excel spreadsheet even being 100x100 in size would equate to 10,000 cells. To avoid slowing the computer down and to ensure the application works at scale, the UI only renders the controls we can see. The UI even reuses Grid Cells, if we scroll down, Cells at the top are reused for the new bottom cells that appear on our screen, hence if you scroll slowly, the pattern will repeat.
+In our example we only have 100 items, consider however, that a small excel spreadsheet that is 100x100 in size, it would contain 10,000 cells. To ensure the application is not very laggy, the UI only renders the controls we can see. The UI even reuses Grid Cells, if we scroll down, Cells at the top are reused for the new bottom cells that appear on our screen.
 
-For this reason it's important that Cells are not considered unique. Each Cell **WILL** be re-used and updated regularly with a new DataContext. You **MUST** respond to this change to avoid messes.
+For this reason it is important that Cells are not considered unique. Each Cell **WILL** be re-used and updated regularly with a new DataContext. You **MUST** respond to this change to avoid messes.
 
 ### Updating Data Context
 
@@ -606,7 +606,7 @@ def config(args, control):
 
 custom_cell = ef.CustomCell()
 custom_cell.CreateCell = create
-# It is VERY important to ConfigureCell
+# It is VERY important to use ConfigureCell
 custom_cell.ConfigureCell = config
 ```
 
@@ -618,7 +618,7 @@ With both samples combined, the UI behaves as expected, remaining ordered.
 </br>
 
 <!--
-## Property Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_PropertyCell.htm)
+## [Property Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_PropertyCell.htm)
 
 {{< row >}}
 {{< column >}}
