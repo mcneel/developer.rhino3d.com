@@ -97,7 +97,7 @@ other = "di"
 
 # context: the bylines that sometimes show up under the title of a page, showing when the page was last updated
 [Last-updated]
-other = "Ultimo aggiornamento:"
+other = "Ultimo aggiornato:"
 
 # context: the bylines that sometimes show up under the title of a page, joining the different authors.  Such as: "di Scott Davidson e..."s
 [and]
