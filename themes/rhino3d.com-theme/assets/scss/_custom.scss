@@ -779,3 +779,13 @@ table.multiline-middle img{
 	stroke: #000;
 	shape-rendering: crispEdges;
   }
+
+  /*
+##############################################################################
+## Overload the learn grids
+##############################################################################
+*/
+
+  .learn-grid-width {
+	width: auto !important;
+}
