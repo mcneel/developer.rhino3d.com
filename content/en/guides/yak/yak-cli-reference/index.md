@@ -95,7 +95,11 @@ Options:
 
 On Windows, the token is stored in `%appdata%\McNeel\yak.yml`. On macOS, it is stored in `~/.mcneel/yak.yml`.
 
-During login, the user is registered on the server.
+During the first login, the user is registered on the server.
+
+{{< call-out "note" "Note" >}}
+  In an automated build environment – e.g. a build machine, GitHub Actions, etc. – the `yak` CLI tool can read the access token from the `YAK_TOKEN` environment variable. Use the `--ci` flag to login and generate a token for this purpose!
+{{< /call-out >}}
 
 ### Push
 
