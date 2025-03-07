@@ -204,6 +204,8 @@ Options:
 
 New owners can do everything that the original owner can do. Please bear this in mind!
 
+New owners must be registered on the server before they can be added to a package. They can do this by running the [`login`](#login) command.
+
 ## Downloads
 
 The `yak` CLI is available as a standalone executable for use in environments where Rhino isn't installed, such as on automated build machines.
