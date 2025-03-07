@@ -48,7 +48,7 @@ Innanzitutto, se sei utente di Rhino, utilizzi già le macro, anche se forse non
 
 ![Extrude](/images/extrudecrvbuttoneditor.gif)
 
-Questo è un esempio della macro più semplice, che imposta una serie di opzioni all'interno di un singolo comando, in modo da non doverle specificare ogni volta che si usa.  **ExtrudeCrv** ha diversi pulsanti con opzioni preimpostate, **Tapered, AlongCurve, ToPoint, Cap=Yes** (solido) ecc.  Controlla le macro sotto tutti i pulsanti **_ExtrudeCrv** per vedere come sono disposti.
+Questo è un esempio della macro più semplice, che imposta una serie di opzioni all'interno di un singolo comando, in modo da non doverle specificare ogni volta che si usa.  **ExtrudeCrv** ha diversi pulsanti con opzioni preimpostate, **Tapered, AlongCurve, ToPoint, Cap=Yes** (solido) ecc.  Controlla le macro sotto tutti i pulsanti **ExtrudeCrv** per vedere come sono disposti.
 
 In un certo senso, si fa la stessa cosa come quando si fa clic o si digita le opzioni una alla volta sulla linea di comando.  In realtà, le macro sono solo un insieme di istruzioni per ripetere una sequenza di comandi che altrimenti verrebbero inseriti manualmente uno alla volta.
 
@@ -219,16 +219,16 @@ Grazie, Jeff!
 Esistono alcuni trucchi pratici per eseguire macro più complesse.  Uno è l'uso discriminante di vari filtri di selezione, in particolare `SelLast`, che seleziona l'ultimo oggetto creato/trasformato, `SelPrev`, che seleziona l'oggetto di input precedente, e `SelNone`, che deseleziona tutto.  Esiste anche la possibilità di dare un nome agli oggetti, di raggrupparli (e di dare un nome al gruppo) e di richiamarli in seguito con il nome dell'oggetto o del gruppo.
 
 ```
-Seleziona
-SelUltimo
-SelPrec
-SelNessuno
-ImpostaNomeOggetto
-AssegnaNomeGruppo
-SelGruppo
-SelNome
-Gruppo
-AnnullaGruppo
+Select
+SelLast
+SelPrev
+SelNone
+SetObjectName
+SetGroupName
+SelGroup
+SelName
+Group
+Ungroup
 ```
 
 Per impostare il nome di un singolo oggetto (questa è di per sé una macro!):
