@@ -178,7 +178,7 @@ If all versions of a package are removed, it will no longer show up in the packa
 
 {{< call-out "danger" "Danger" >}}
   <p><strong>Deleting a package from the McNeel server</strong></p>
-  <p>If you absolutely need to delete your package from the public server, please email <a href="mailto:will@mcneel.com">will@mcneel.com</a>. Once a package has been deleted, the name can no longer be used.</p>
+  <p>If you absolutely need to delete your package from the public server, please email <a href="mailto:support@mcneel.com">support@mcneel.com</a>. Once a package has been deleted, the name can no longer be used.</p>
 {{< /call-out >}}
 
 ### Unyank
