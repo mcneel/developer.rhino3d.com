@@ -40,7 +40,7 @@ Mit dem Begriff "Makro" werden hier ausschließlich das Zusammensetzen von gewö
 
 2. Die Rhino-Hilfedatei - darin sind alle Rhino-Befehle samt Unterbefehlen aufgeführt. Dies ist Ihre wichtigste Referenz.
 
-3. Der Rhino-**MacroEditor**, mit dem Sie Ihre Makros einfach ausführen und Debuggen können.
+3. Der Rhino-**MakroEditor**, mit dem Sie Ihre Makros einfach ausführen und Debuggen können.
 
 
 ## Sie haben bereits ein wenig Erfahrung mit Makros ...
