@@ -33,7 +33,7 @@ Die Verwendung des Begriffs Scripting mag hier eventuell einige Verwirrung stift
 
 Dabei handelt es sich jedoch um zwei verschiedene Dinge. Das Schreiben von Funktionen in Rhinoscript und anderen Programmiersprachen ist weitaus komplexer als das Erstellen von Makros und erfordert echte Programmierkenntnisse.  Dies wird hier nicht behandelt.
 
-Mit dem Begriff "Makro" wird hier ausschließlich das Zusammensetzen von gewöhnlichen Rhino-Befehlen und die Optionen zur Erzeugung einer automatisierten Funktion bezeichnet.  Dies ist Scripting in seiner einfachsten Form und für jeden normalen Rhino-Nutzer leicht anwendbar, selbst wenn keine Programmierkenntnisse vorliegen.  Alles, was Sie dafür benötigen, ist ein grundlegendes Verständnis der Rhino-Befehle und ihrer Struktur sowie etwas logisches Denken und die Bereitschaft, sich auf kleine Experimente und das Debuggen einzulassen.
+Mit dem Begriff "Makro" werden hier ausschließlich das Zusammensetzen von gewöhnlichen Rhino-Befehlen und die Optionen zur Erzeugung einer automatisierten Funktion bezeichnet.  Dies ist Scripting in seiner einfachsten Form und für jeden normalen Rhino-Nutzer leicht anwendbar, selbst wenn keine Programmierkenntnisse vorliegen.  Alles, was Sie dafür benötigen, ist ein grundlegendes Verständnis der Rhino-Befehle und ihrer Struktur sowie etwas logisches Denken und die Bereitschaft, sich auf kleine Experimente und das Debuggen einzulassen.
 
 #### Verwendete Tools
 1. Ihr Gehirn.
