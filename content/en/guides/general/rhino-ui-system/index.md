@@ -181,7 +181,7 @@ RUI files are collections of the items above and are stored in a writable direct
 
 Rhino plug-ins can install a RUI file with the same name as the plug-in and it will get copied into a writable location and opened automatically when Rhino starts. This gives a plug-in the ability to extend the Rhino interface while allowing the plug-in to not load until it is referenced.
 
-Note, all of the above can be managed using Rhino 7's **[Toobars](https://docs.mcneel.com/rhino/7/help/en-us/index.htm#options/toolbars.htm#(null))** command.
+Note, all of the above can be managed using Rhino 7's **[Toolbars](https://docs.mcneel.com/rhino/7/help/en-us/index.htm#options/toolbars.htm#(null))** command.
 
 ### Rhino Panels
 

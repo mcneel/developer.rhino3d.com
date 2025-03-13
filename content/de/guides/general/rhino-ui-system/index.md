@@ -29,7 +29,7 @@ toc_type = "single"
 
 Dieses Handbuch bietet einen Überblick über das Sytem der Rhino-Benutzeroberfläche oder UI (User Interface) und vergleicht das neue System in Rhino 8 mit dem vorherigen System in Rhino 7 und früher.
 
-## UI-System in Rhino 8
+## UI-System in 8
 
 Die Zielsetzungen für das neue UI-System in  Rhino 8 waren die folgenden:
 
@@ -58,21 +58,21 @@ Container können geändert werden, indem man Reiter von einem Container in eine
 
 Containerdefinitionen, Sichtbarkeit, Position und Größe werden beim Schließen von Rhino gespeichert und beim Neustart von Rhino wiederhergestellt. Diese Informationen können auch über Fensterlayouts gespeichert und weitergegeben werden.
 
-Container können mit dem Befehl **[Container](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/containers.htm#(null))** von Rhino verwaltet werden.
+Container können mit dem Befehl **[Container](https://docs.mcneel.com/rhino/8/help/de-de/index.htm#commands/containers.htm#(null))** von Rhino verwaltet werden.
 
 ### Fenster-Layouts
 
 Fensterlayouts sind ein Schnappschuss von Containerdefinitionen, Sichtbarkeitsstatus, Position und Größe. Durch die Wiederherstellung eines Fensterlayouts wird die aktuelle Benutzeroberfläche wieder so konfiguriert, wie sie zum Zeitpunkt der Erstellung des Layouts aussah. Wiederhergestellte Container zeigen die Reiter in der Reihenfolge an, in der sie bei der Erstellung des Fensterlayouts angeordnet waren, und erscheinen an derselben Stelle und in derselben Größe. Die Reiter der Werkzeugleisten verweisen auf die aktuelle Definition einer Werkzeugleiste. Wenn die Werkzeugleiste nicht mehr vorhanden ist, wird der Reiter nicht angezeigt.
 
-Fensterlayouts können mit dem Rhino-Befehl **[FensterAnordnung](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/windowlayout.htm#(null))** verwaltet werden.
+Fensterlayouts können mit dem Rhino-Befehl **[FensterAnordnung](https://docs.mcneel.com/rhino/8/help/de-de/index.htm#commands/windowlayout.htm#(null))** verwaltet werden.
 
 #### Exportieren und Importieren von Fensterlayouts
 
 Fensterlayouts können in eine Rhino-Fensterlayoutdatei (RHW) exportiert werden. Exportierte RHW-Dateien enthalten referenzierte benutzerdefinierte RUI-Dateien und die mit allen RUI-Dateien verbundenen Änderungen zum Zeitpunkt der Erstellung der RHW-Datei.
 
-Beim Importieren einer RHW-Datei wird geprüft, ob eine eingebettete benutzerdefinierte RUI-Datei derzeit geöffnet ist. Wenn die Datei nicht geöffnet ist, wird die benutzerdefinierte Datei extrahiert und geöffnet. Sobald die benutzerdefinierte Liste extrahiert oder überprüft wurde, werden die in der RHW-Datei gespeicherten RUI-Änderungen auf die aktuellen RUI-Dateien angewendet. Änderungsinformationen, die mit Werkzeugleisten verbunden sind, die durch nicht vorhandene Plug-in-Dateien definiert sind, werden ignoriert. Sobald die RUI-Daten wiederhergestellt sind, werden die Container entsprechend der in der RHW-Datei gespeicherten Definition erstellt oder geändert. Container, die nur auf Werkzeugleisten von nicht installierten Plug-ins verweisen, werden ignoriert. Nach dem Import erscheint das Layout in der Liste der Fensterlayouts und kann dann wiederhergestellt werden.
+Beim Importieren einer RHW-Datei wird geprüft, ob eine eingebettete benutzerdefinierte RUI-Datei derzeit geöffnet ist. Wenn die Datei nicht geöffnet ist, wird die benutzerdefinierte Datei extrahiert und geöffnet. Sobald die benutzerdefinierte Liste extrahiert oder überprüft wurde, werden die in der RHW-Datei gespeicherten RUI-Änderungen auf die aktuellen RUI-Dateien angewendet. Mit Werkzeugleisten verbundene Änderungsinformationen, die durch nicht vorhandene Plug-in-Dateien definiert sind, werden ignoriert. Sobald die RUI-Daten wiederhergestellt sind, werden die Container entsprechend der in der RHW-Datei gespeicherten Definition erstellt oder geändert. Container, die nur auf Werkzeugleisten von nicht installierten Plug-ins verweisen, werden ignoriert. Nach dem Import erscheint das Layout in der Liste der Fensterlayouts und kann dann wiederhergestellt werden.
 
-Fensterlayouts können mit dem Rhino-Befehl **[FensterAnordung](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/windowlayout.htm#(null))** exportiert und importiert werden.
+Fensterlayouts können mit dem Rhino-Befehl **[FensterAnordung](https://docs.mcneel.com/rhino/8/help/de-de/index.htm#commands/windowlayout.htm#(null))** exportiert und importiert werden.
 
 ### RUI-Dateien
 
@@ -80,7 +80,7 @@ In Rhino 8 sind RUI-Dateien jetzt einfach eine Sammlung von Werkzeugleisten, Mak
 
 In RUI-Dateien definierte Werkzeugleistengruppen werden in Container umgewandelt, wenn sie geladen werden, um Legacy- und Plug-in-RUI-Dateien zu unterstützen und einer Plug-in-RUI-Datei die Möglichkeit zu geben, mit dem Plug-in verbundene Container zu erstellen.
 
-Verknüpfte RUI-Dateien können mit den **[Rhino-Optionen > Werkzeugleisten](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#options/appearance_toolbars.htm#(null))** verwaltet werden.
+Verknüpfte RUI-Dateien können mit den **[Rhino-Optionen > Werkzeugleisten](https://docs.mcneel.com/rhino/8/help/de-de/index.htm#options/appearance_toolbars.htm#(null))** verwaltet werden.
 
 ### Werkzeugleisten
 
@@ -94,7 +94,7 @@ Werkzeugleistengruppen werden jetzt beim ersten Laden in Container umgewandelt. 
 
 Werkzeugleisten sind Sammlungen von Werkzeugleistenschaltflächen und können von mehreren Containern referenziert werden. Sie können durch Ziehen und Ablegen von Schaltflächen aus anderen Werkzeugleisten oder mit dem Assistenten für neue Schaltflächen geändert werden.
 
-Werkzeugleisten können mit dem Befehl **[Werkzeugleiste](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/toolbar.htm#(null))** von Rhino verwaltet werden.
+Werkzeugleisten können mit dem Befehl **[Werkzeugleiste](https://docs.mcneel.com/rhino/8/help/de-de/index.htm#commands/toolbar.htm#(null))** von Rhino verwaltet werden.
 
 #### Werkzeugleistenschaltfläche
 
@@ -109,7 +109,7 @@ Das Rhino-Menüsystem kann mit Menüobjekten erweitert werden, die in einer RUI-
 - Der Hilfe-Text, der in der Statusleiste erscheint, wenn sich der Mauszeiger über einem Menüelement befindet.
 - Befehlsskript, das beim Klicken auf das Menüelement ausgeführt wird.
 
-Menüs können mit dem Befehl **[Menüs](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#toolbarsandmenus/workspace_editor.htm#(null))** in Rhino verwaltet werden.
+Menüs können mit dem Befehl **[Menüs](https://docs.mcneel.com/rhino/8/help/de-de/index.htm#toolbarsandmenus/workspace_editor.htm#(null))** in Rhino verwaltet werden.
 
 #### Makro
 
@@ -123,17 +123,17 @@ Makros enthalten Informationen, die zur Beschreibung des Befehlsskripts benötig
 - Menütext
 - Hilfetext
 
-Makros können mit dem Befehl **[Makros](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/macros.htm#(null))** in Rhino verwaltet werden.
+Makros können mit dem Befehl **[Makros](https://docs.mcneel.com/rhino/8/help/de-de/index.htm#commands/macros.htm#(null))** in Rhino verwaltet werden.
 
 ### Panels
 
-Tafeln sind amodale Formen der Benutzeroberfläche, die von Rhino oder von Plug-ins erstellt werden. Sie können in jedem Container als Reiter erscheinen und durch Ziehen und Ablegen zwischen Containern verschoben werden.
+Panels sind amodale Formen der Benutzeroberfläche, die von Rhino oder von Plug-ins erstellt werden. Sie können in jedem Container als Reiter erscheinen und durch Ziehen und Ablegen zwischen Containern verschoben werden.
 
 Panels können von mehreren Containern referenziert werden, aber sie können nicht mehr als einmal im selben Container erscheinen.
 
-## Vorheriges Rhino UI-System
+## Vorheriges Rhino-UI-System
 
-Das Rhino UI-System, das in Rhino für Windows Version 7 und früher zu finden ist, besteht aus folgenden Elementen:
+Das Rhino-UI-System, das in Rhino für Windows Version 7 und früher zu finden ist, besteht aus folgenden Elementen:
 
 ### Werkzeugleisten
 
@@ -181,7 +181,7 @@ RUI-Dateien sind Sammlungen der oben genannten Elemente und werden in einem besc
 
 Rhino-Plug-ins können eine RUI-Datei mit demselben Namen wie das Plug-in installieren, die dann in einen beschreibbaren Speicherort kopiert und beim Start von Rhino automatisch geöffnet wird. Dies gibt einem Plug-in die Möglichkeit, die Rhino-Schnittstelle zu erweitern, während das Plug-in nicht geladen wird, bis es referenziert wird.
 
-Beachten Sie, dass alle oben genannten Punkte mit dem Befehl **[Werkzeugleisten](https://docs.mcneel.com/rhino/7/help/en-us/index.htm#options/toolbars.htm#(null))** von Rhino 7 verwaltet werden können.
+Beachten Sie, dass alle oben genannten Punkte mit dem Befehl **[Werkzeugleisten](https://docs.mcneel.com/rhino/7/help/de-de/index.htm#options/toolbars.htm#(null))** von Rhino 7 verwaltet werden können.
 
 ### Rhino-Panels
 
