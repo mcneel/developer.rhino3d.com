@@ -203,13 +203,11 @@ Immer eingeschaltet:
 ```
   -_Options _Appearance _Visibility
   _Crosshairs=_Show !
-</code>
 ```
 
 Immer ausgeschaltet:
 
 ```
-<code>
   -_Options _Appearance _Visibility
   _Crosshairs=_Hide !
 ```
