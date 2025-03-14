@@ -283,5 +283,5 @@ C’est un article en cours de développement...
 
 - [Syntaxe de base de Python](/guides/rhinopython/)
 - [Rhinoscript](/guides/rhinoscript/)
-- [Rubrique d’aide sur la syntaxe des macros](http://docs.mcneel.com/rhino/6/help/en-us/information/rhinoscripting.htm)
+- [Rubrique d’aide sur la syntaxe des macros](http://docs.mcneel.com/rhino/6/help/fr-fr/information/rhinoscripting.htm)
 - [Lancer une macro](/guides/rhinoscript/running-scripts-from-macros/)
