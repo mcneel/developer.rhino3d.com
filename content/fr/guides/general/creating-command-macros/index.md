@@ -97,7 +97,7 @@ Comme il n’y a pas d’autre entrée nécessaire et qu’il n’y a plus d’a
  ! _Box _Center _Pause r5,5 _Enter
 ```
 
-À présent que la macro fonctionne, [[rhino:macroscriptsetup|créez un nouveau bouton dans la barre d’outils]] et copiez la macro dedans. Donnez-lui un nom reconnaissable comme « Boîte centrée base 10x10x10 ».  Souvenez-vous qu’une fois que la macro est exécutée, cliquer du bouton droit de la souris répète toute la séquence de cette macro. Vous pouvez donc l’utiliser plusieurs fois de suite sans cliquer sur le bouton à chaque fois.
+À présent que la macro fonctionne, [créez un nouveau bouton dans la barre d’outils](https://wiki.mcneel.com/rhino/macroscriptsetup) et copiez la macro dedans. Donnez-lui un nom reconnaissable comme « Boîte centrée base 10x10x10 ».  Souvenez-vous qu’une fois que la macro est exécutée, cliquer du bouton droit de la souris répète toute la séquence de cette macro. Vous pouvez donc l’utiliser plusieurs fois de suite sans cliquer sur le bouton à chaque fois.
 
 ## Et maintenant, compliquons un peu les choses…
 
@@ -203,9 +203,11 @@ Version toujours ACTIVÉ :
 ```
   -_Options _Appearance _Visibility
   _Crosshairs=_Show !
-</code>
+```
+
 Version toujours DÉSACTIVÉ :
-<code>
+
+```
   -_Options _Appearance _Visibility
   _Crosshairs=_Hide !
 ```
