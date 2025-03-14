@@ -39,7 +39,7 @@ There are 4 main sources of Python packages that may be installed or loaded into
 
 ## Built-in Modules
 
-Rhino comes with many built-in modules that add functionality.  To use methods within built-in modules they simply need to be imported first:
+Python comes with many built-in modules that add functionality.  To use methods within built-in modules they simply need to be imported first:
 
 ```python
 import math
@@ -67,9 +67,9 @@ A complete list of predefined modules in Python, see the [Python Standard Librar
 
 ## Local Modules
 
-Other Python files can be used to import functions using [Def](https://docs.python.org/3/tutorial/modules.html)
+In addition to built-in modules, you can define and import your own Python functions from other files. This allows you to organize your code into reusable components.
 
-For instance in a `tools.py` file here are two defined functions `print_rhino_version` and `get_python_version`
+For instance in a `python_functions.py` file here are two defined functions `print_rhino_version` and `get_python_version`
 
 ```python
 import Rhino
@@ -96,7 +96,7 @@ import python_functions as pf
 pf.print_rhino_version()
 ```
 
-Additonal details can be found on [Functions in Python](https://diveintopython.org/learn/functions)
+Additional details can be found on [Functions in Python](https://diveintopython.org/learn/functions) and [Modules in Python](https://docs.python.org/3/tutorial/modules.html)
 
 ## Python Package Index (PyPI)
 
