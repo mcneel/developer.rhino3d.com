@@ -338,7 +338,7 @@ def get_rect():
 
 def mouse_move(sender, e):
     if not drawable.down:
-        pass
+        return
         
     drawable.mouse_location = e.Location
     drawable.Invalidate(True)
@@ -349,7 +349,7 @@ def mouse_up(sender, e):
 
 def mouse_down(sender, e):
     if not get_rect().Contains(e.Location):
-        pass
+        return
 
     drawable.down = True
     drawable.mouse_location = e.Location
@@ -360,7 +360,7 @@ def draw(sender, e):
     e.Graphics.FillEllipse(ed.Colors.OrangeRed, rect)
     
     if not drawable.down:
-        pass
+        return
 
     e.Graphics.DrawEllipse(ed.Colors.Goldenrod, rect)
 
