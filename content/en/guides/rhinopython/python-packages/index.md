@@ -1,6 +1,6 @@
 +++
 aliases = []
-authors = [ "scott" ]
+authors = [ "scottd" ]
 categories = [ "Intermediate" ]
 description = "This guide covers the various ways to install packages in Python for Rhino."
 keywords = [ "Rhino.Python", "Python" ]
