@@ -171,7 +171,7 @@ Il vettore unitario di {{< mathjax >}}$$\mathbf{\vec a} = <a_1/\vert \mathbf{\ve
 
 {{< youtube yVSigpl3EUo >}}
 
-## 1.2 Operazioni di trasformazione
+## 1.2 Operazioni vettoriali
 
 {{< youtube uInxocphhxI >}}
 
