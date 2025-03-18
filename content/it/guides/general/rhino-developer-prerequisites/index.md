@@ -35,7 +35,7 @@ Esistono alcuni prerequisiti necessari per lo sviluppo in Rhino.  In linea di ma
 
 ## Hardware
 
-Se stai leggendo questa guida, probabilmente ha già un computer in grado di eseguire Rhino. In caso contrario, l’utilizzo di Rhino prevede alcuni [requisiti di sistema minimi](http://www.rhino3d.com/system_requirements/) che dovresti esaminare prima di acquistare qualsiasi hardware.  In generale, qualsiasi computer che supporta Rhino *dovrebbe* essere in grado di eseguire gli strumenti di sviluppo descritti nella sezione [Software](#software) .
+Se stai leggendo questa guida, probabilmente ha già un computer in grado di eseguire Rhino. In caso contrario, l’utilizzo di Rhino prevede alcuni [requisiti di sistema minimi](http://www.rhino3d.com/system_requirements/) che dovresti esaminare prima di acquistare qualsiasi hardware.  In generale, qualsiasi computer che supporta Rhino *dovrebbe* essere in grado di eseguire gli strumenti di sviluppo descritti nella sezione [Software](#software).
 
 Se sei un utente Windows e desideri sviluppare plug-in per Rhino per Mac, ti occorre un computer Mac di Apple.  Al contrario, se sei un utente di macOS e desideri sviluppare plug-in per Rhino per Windows, ti serve un computer in grado di eseguire Rhino per Windows (tuttavia, le macchine virtuali che eseguono Windows in macOS possono potenzialmente funzionare benissimo).
 
@@ -62,8 +62,8 @@ Se desideri scrivere plug-in con RhinoCommon, dovrai conoscere un linguaggio di 
 *Guarda*...
 
 - [Beginning C# Programming](http://shop.oreilly.com/product/0636920036036.do) di Eric Lippert - Pubblicato da O'Reilly Media.
-- [C# Fundamentals for Absolute Beginners](https://www.microsoftvirtualacademy.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169) su Microsoft's Virtual Academy.
-- [C# Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/188207-2.html) con David Gassner su Lynda.com.
+- [C# Fundamentals for Absolute Beginners](https://learn.microsoft.com/en-us/shows/csharp-fundamentals-for-absolute-beginners/) su Microsoft's Virtual Academy.
+- [C# and .NET Essential Training](https://www.linkedin.com/learning/c-sharp-and-dot-net-essential-training) su LinkedIn Learning.
 
 *Leggi*...
 
@@ -81,8 +81,8 @@ Per scrivere plug-in per Rhino usando il pacchetto SDK C/C++, devi innanzitutto 
 
 *Guarda*...
 
-- [C++: ](https://www.microsoftvirtualacademy.com/en-us/training-courses/c-a-general-purpose-language-and-library-jump-start-8251)[A General Purpose Language](https://www.microsoftvirtualacademy.com/en-us/training-courses/c-a-general-purpose-language-and-library-jump-start-8251) su Microsoft Virtual Academy.
-- [C++ Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/182674-2.html) con Bill Weinmann su Lynda.com.
+- [C++: A General Purpose Language](https://learn.microsoft.com/en-us/shows/cplusplus-language-library/) su Microsoft Virtual Academy.
+- [C++ Essential Training](https://www.linkedin.com/learning/c-plus-plus-essential-training-15106801) con Bill Weinmann su LinkedIn Learning.
 
 *Leggi*...
 
