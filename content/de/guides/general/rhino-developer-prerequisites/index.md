@@ -62,8 +62,8 @@ Wenn Sie Plug-ins mit RhinoCommon schreiben möchten, müssen Sie eine .NET-komp
 *Ansehen*...
 
 - [Beginning C# Programming](http://shop.oreilly.com/product/0636920036036.do) Von Eric Lippert - Veröffentlicht von O'Reilly Media
-- [C# Fundamentals for Absolute Beginners](https://www.microsoftvirtualacademy.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169) auf Microsofts Virtual Academy
-- [C# Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/188207-2.html) mit David Gassner auf Lynda.com
+- [C#-Grundlagen für Neueinsteiger](https://learn.microsoft.com/de-de/shows/csharp-fundamentals-for-absolute-beginners/) auf Microsofts Virtual Academy
+- [C# and .NET Essential Training](https://www.linkedin.com/learning/c-sharp-and-dot-net-essential-training) auf LinkedIn Learning
 
 *Lesen*...
 
@@ -81,8 +81,8 @@ Um Plug-ins für Rhino mit C/C++ SDK zu schreiben, müssen Sie zunächst die [C+
 
 *Ansehen*...
 
-- [C++: A General Purpose Language](https://www.microsoftvirtualacademy.com/en-us/training-courses/c-a-general-purpose-language-and-library-jump-start-8251) auf Microsofts Virtual Academy
-- [C++ Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/182674-2.html) mit Bill Weinmann auf Lynda.com
+- [C++: Eine universelle Sprache](https://learn.microsoft.com/de-de/shows/cplusplus-language-library/) auf Microsofts Virtual Academy
+- [C++ Essential Training](https://www.linkedin.com/learning/c-plus-plus-essential-training-15106801) mit Bill Weinmann auf Lynda.com
 
 *Lesen*...
 

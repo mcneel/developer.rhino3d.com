@@ -62,8 +62,8 @@ If you wish to write plugins with RhinoCommon, you will need to understand a .NE
 *Watch*...
 
 - [Beginning C# Programming](http://shop.oreilly.com/product/0636920036036.do) By Eric Lippert - Published by O'Reilly Media
-- [C# Fundamentals for Absolute Beginners](https://www.microsoftvirtualacademy.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169) on Microsoft's Virtual Academy
-- [C# Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/188207-2.html) with David Gassner on Lynda.com
+- [C# Fundamentals for Absolute Beginners](https://learn.microsoft.com/en-us/shows/csharp-fundamentals-for-absolute-beginners/) on Microsoft's Virtual Academy
+- [C# and .NET Essential Training](https://www.linkedin.com/learning/c-sharp-and-dot-net-essential-training) on LinkedIn Learning
 
 *Read*...
 
@@ -81,8 +81,8 @@ To write plugins for Rhino using the C/C++ SDK, you first need to learn the [C++
 
 *Watch*...
 
-- [C++: A General Purpose Language](https://www.microsoftvirtualacademy.com/en-us/training-courses/c-a-general-purpose-language-and-library-jump-start-8251) on Microsoft Virtual Academy
-- [C++ Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/182674-2.html) with Bill Weinmann on Lynda.com
+- [C++: A General Purpose Language](https://learn.microsoft.com/en-us/shows/cplusplus-language-library/) on Microsoft Virtual Academy
+- [C++ Essential Training](https://www.linkedin.com/learning/c-plus-plus-essential-training-15106801) with Bill Weinmann on LinkedIn Learning
 
 *Read*...
 
