@@ -573,6 +573,10 @@ Only using CreateCell will cause this, the cell, when created, should be empty w
 
 CreateCell is called once and once only. ConfigureCell is called every time the Cell is given a new DataContext. Hence Bindings should still be created in CreateCell or else the Cell will quickly fill up with bindings causing the problem to slow down.
 
+{{< call-out note "Events" >}}
+  Be very careful using Events. `Button.OnClicked` is fine [NEEDS CITATION], events such as `CheckBox.CheckedChanged` will fire constantly as the cells are reused, which will not only slow, but likely work incorrectly.
+{{< /call-out >}}
+
 </br>
 
 <div class="codetab">
