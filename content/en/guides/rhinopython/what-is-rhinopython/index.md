@@ -30,7 +30,7 @@ toc = true
 toc_type = "single"
 +++
 
-...but a better question is...
+Rhino.Python are the Python executables embedded in Rhino and the associated Python code editors (ScriptEditor in Rhino and Grasshopper). They let you write and run standard Python scripts in Rhino to create interactive scripts, new custom commands, and many more. Currently Rhino supports IronPython 2.7, and CPython 3.9. The main Python Rhino APIs that are accessible through the RhinoCommon and rhinoscriptsyntax namsspace.
 
 ## What is Python?
 
@@ -55,9 +55,9 @@ Rhino already has a scripting language called RhinoScript why do we need another
 
 ### What version of Python does Rhino use?
 
-Rhino 8 uses Python version 3.8. This is based on [Cpython](https://www.python.org/), the reference implementation of Python. 
+Rhino 8 uses Python version 3.9.11. This is based on [Cpython](https://www.python.org/), the reference implementation of Python. 
 
-Rhino 7 uses Python version 2.7. To be more specific Rhino uses [IronPython](http://ironpython.net/). This is an older open-source version of Python. See the [Rhino 7 Python Guides](/guides/rhinopython/7/).
+Rhino 7 uses Python version 2.712. To be more specific Rhino uses [IronPython](http://ironpython.net/). This is an older open-source version of Python. See the [Rhino 7 Python Guides](/guides/rhinopython/7/).
 
 ## Where can you use Python in Rhino?
 
