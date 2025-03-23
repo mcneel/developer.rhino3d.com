@@ -47,6 +47,7 @@ using Rhino.UI;
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
 
 var drawable = new Drawable() {
+    Padding = 5,
     Width = 200,
     Height = 200
 };
@@ -63,7 +64,13 @@ drawable.Paint += (s, e) => {
 
     // Rectangle
     var rectPen = new Pen(Colors.Green, 6f);
-    e.Graphics.DrawRectangle(rectPen, 10, 80, 140, 80);
+    e.Graphics.DrawRectangle(rectPen, 10, 80, 140, 40);
+
+    // Rounded Rectangle
+    var roundRect = new RectangleF(10, 140, 140, 40);
+    var roundedRectPen = new Pen(Colors.BlueViolet, 6);
+    var roundedRectPath = GraphicsPath.GetRoundRect(roundRect, 10);
+    e.Graphics.DrawPath(roundedRectPen, roundedRectPath);
 };
 
 var dialog = new Dialog()
