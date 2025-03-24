@@ -84,7 +84,7 @@ var dialog = new Dialog()
 };
 
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-dialog.Show(parent);
+dialog.ShowModal(parent);
 ```
 
   </div>
@@ -479,11 +479,11 @@ dialog.ShowModal()
 
 ## [Custom Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_CustomCell.htm)
 
-Custom Cells allow for very extensive Grid View customisation, with this extensibility comes difficulty however as everything must now be coded correctly.
+Custom Cells allow for very extensive Grid/Tree View customisation, however, with this extensibility comes great responsibility.
 
 The example below mirrors the TextBoxCell, a Cell we're already familiar with.
 
-Take the below example, if you scroll the nicely ordered number list will quite quickly turn into a disorganised mess, with different messes happening each time depending on scroll speed.
+Take the below example, if you scroll, the nicely ordered number list will quite quickly turn into a disorganised mess, with different messes happening each time depending on scroll speed. Something is clearly wrong with this code, even though it compiles and reads fine.
 
 <div class="codetab">
   <button class="tablinks6" onclick="openCodeTab(event, 'cs6')" id="defaultOpen6">C#</button>
@@ -497,6 +497,8 @@ Take the below example, if you scroll the nicely ordered number list will quite 
 using System.Linq;
 
 using Eto.Forms;
+
+using Rhino.UI;
 
 var items = Enumerable.Range(0, 100).Cast<object>();
 
@@ -521,7 +523,7 @@ var dialog = new Dialog()
 };
 
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-dialog.Show(parent);
+dialog.ShowModal(parent);
 ```
 
   </div>
@@ -529,6 +531,7 @@ dialog.Show(parent);
 
 ```py
 import Eto.Forms as ef
+from Rhino.UI import RhinoEtoApp
 
 items = range(0, 100)
 
@@ -554,7 +557,8 @@ dialog = ef.Dialog()
 dialog.Height = 200
 dialog.Content = gridView
 
-dialog.ShowModal()
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.ShowModal(parent)
 ```
 
   </div>
@@ -563,22 +567,30 @@ dialog.ShowModal()
 </br>
 
 ### A note on Efficiency
-In our example we only have 100 items, consider however, that a small excel spreadsheet that is 100x100 in size, it would contain 10,000 cells. To ensure the application is not very laggy, the UI only renders the controls we can see. The UI even reuses Grid Cells, if we scroll down, Cells at the top are reused for the new bottom cells that appear on our screen.
+In our example we only have 100 items, consider however, that a small excel spreadsheet that is 100x100 in size, would contain 10,000 cells. To ensure the application is responsive and does not consume excessive memory, the UI only renders the controls we can see. The UI even reuses Grid Cells, if we scroll down, Cells at the top are reused for the new bottom cells that appear on our screen.
 
-For this reason it is important that Cells are not considered unique. Each Cell **WILL** be re-used and updated regularly with a new DataContext. You **MUST** respond to this change to avoid messes.
-
-### Updating Data Context
-
-Only using CreateCell will cause this, the cell, when created, should be empty with no data set. [ConfigureCell](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_CustomCell_ConfigureCell.htm) is for setting data, and managing 'state'.
-
-CreateCell is called once and once only. ConfigureCell is called every time the Cell is given a new DataContext. Hence Bindings should still be created in CreateCell or else the Cell will quickly fill up with bindings causing the problem to slow down.
-
-{{< call-out note "Events" >}}
-  Be very careful using Events. `Button.OnClicked` is fine [NEEDS CITATION], events such as `CheckBox.CheckedChanged` will fire constantly as the cells are reused, which will not only slow, but likely work incorrectly.
-{{< /call-out >}}
+For this reason it is important that Cells are not considered unique. Each Cell **WILL** be re-used and updated regularly with a new DataContext. You **MUST** respond to this change to avoid messes. This can be done inside of [`ConfigureCell`](https://pages.picoe.ca/docs/api/html/P_Eto_Forms_CustomCell_ConfigureCell.htm).
 
 </br>
 
+### CreateCell
+
+[`CreateCell`](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_CustomCell_CreateCell.htm) is called once and once  only.
+
+Handling data context (also known as state) inside `CreateCell` will cause problems.`CreateCell` should **ONLY** create things that do not change per cell.
+- Control Layout
+- Bindings
+- Event Subscriptions (Be careful with these, avoid OnLoad, OnShown, OnUnload etc. as they will fire constantly as a user scrolls. Control specific events such as CheckedChanged should also be used with caution.)
+
+### ConfigureCell
+
+[`ConfigureCell`](http://pages.picoe.ca/docs/api/html/P_Eto_Forms_CustomCell_ConfigureCell.htm) is for setting data context, and managing state.
+
+`ConfigureCell` is called every time the Cell is given a new DataContext. Hence Bindings should still be created in CreateCell or else the Cell will quickly fill up with bindings causing the problem to slow down.
+
+</br>
+
+With both samples combined, the UI behaves as expected, remaining ordered.
 <div class="codetab">
   <button class="tablinks7" onclick="openCodeTab(event, 'cs7')" id="defaultOpen7">C#</button>
   <button class="tablinks7" onclick="openCodeTab(event, 'py7')">Python</button>
@@ -589,9 +601,9 @@ CreateCell is called once and once only. ConfigureCell is called every time the 
 
 ```cs no-compile
 var customCell = new CustomCell();
+
 customCell.CreateCell = (args) => new TextBox();
 
-// It is VERY important to ConfigureCell
 customCell.ConfigureCell = (args, control) => {
     if (control is not TextBox textBox) return;
     textBox.Text = args.Item?.ToString();
@@ -609,15 +621,14 @@ def config(args, control):
     config.Text = str(args.Item)
 
 custom_cell = ef.CustomCell()
+
 custom_cell.CreateCell = create
-# It is VERY important to use ConfigureCell
+
 custom_cell.ConfigureCell = config
 ```
 
   </div>
 </div>
-
-With both samples combined, the UI behaves as expected, remaining ordered.
 
 </br>
 

@@ -36,16 +36,24 @@ An introduction to Tree Grid Views.
 {{< /column >}}
 {{< /row >}}
 
-</br>
+![Tree Grid View](/images/eto/tutorials/tree-grid-view.png)
 
-Tree Grid Views allow us to create columns and rows which are bound to a View Model.
-This guide will cover all the eccentricities of Grid Views which can be confusing.
+Tree Grid Views allow us to create rows which are bound to a data structure.
+This guide will cover all the eccentricities of Tree Grid Views which can be confusing.
 
-![Tree Grid View](/images/eto/controls/tree-grid-view.png)
+## Trees
+Trees are a common data structure in programming. Trees are composed of nodes and branches with a common singular root.
+
+![Tree Data Structure](/images/eto/data/tree-diagram.png)
+
 
 ## Declaration
 
-GridViews are defined by Columns which are bound to a list defining the rows.
+TreeGridViews are defined by Columns which are bound to a tree defining the rows.
+Without data, they're not particularly interesting.
+
+{{< row >}}
+{{< column >}}
 
 <div class="codetab">
   <button class="tablinks2" onclick="openCodeTab(event, 'cs2')" id="defaultOpen2">C#</button>
@@ -58,16 +66,15 @@ GridViews are defined by Columns which are bound to a list defining the rows.
 ```cs
 using Eto.Forms;
 
-var gridView = new GridView()
+using Rhino.UI;
+
+var treeGridView = new TreeGridView()
 {
   Columns = {
     new GridColumn()
     {
-      HeaderText = "Key"
-    },
-    new GridColumn()
-    {
-      HeaderText = "Value"
+        HeaderText = "Name",
+        DataCell = new TextBoxCell(),
     },
   },
   // DataStore = ...
@@ -75,20 +82,22 @@ var gridView = new GridView()
 
 var dialog = new Dialog()
 {
-  Width = 200,
+  Width = 400,
   Height = 200,
-  Content = gridView,
+  Content = treeGridView,
 };
 
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-dialog.Show(parent);
+dialog.ShowModal(parent);
 ```
 
   </div>
   <div class="codetab-content2" id="py2">
 
 ```py
+import scriptcontext as sc
 import Eto.Forms as ef
+from Rhino.UI import RhinoEtoApp
 
 plusColumn = ef.GridColumn()
 plusColumn.HeaderText = "Key"
@@ -106,18 +115,27 @@ dialog.Width = 100
 dialog.Height = 100
 dialog.Content = gridView
 
-dialog.ShowModal()
+parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+dialog.ShowModal(parent)
 ```
 
   </div>
 </div>
 
+{{< /column >}}
+{{< column >}}
 
+![Empty Tree Grid View](/images/eto/tutorials/empty-tree-grid-view.png)
+
+{{< /column >}}
+{{< /row >}}
 
 ## DataStore and Bindings
 
 Tree Grid View data stores differ to the GridView as they require a more rigid (tree) structure.
 
+{{< row >}}
+{{< column >}}
 
 <div class="codetab">
   <button class="tablinks4" onclick="openCodeTab(event, 'cs4')" id="defaultOpen4">C#</button>
@@ -128,7 +146,48 @@ Tree Grid View data stores differ to the GridView as they require a more rigid (
   <div class="codetab-content4" id="cs4">
 
 ``` cs
+using Eto.Forms;
 
+using Rhino.UI;
+
+var treeData = new TreeGridItemCollection()
+{
+    new TreeGridItem(new TreeGridItem[]
+    {
+        new TreeGridItem("Antarctica"),
+        new TreeGridItem("Africa"),
+        new TreeGridItem("Asia"),
+        new TreeGridItem("Australia"),
+        new TreeGridItem("Europe"),
+        new TreeGridItem("North America"),
+        new TreeGridItem("South America"),
+    }, 
+    "Earth")
+};
+ 
+
+var treeGridView = new TreeGridView()
+{
+  Columns = {
+    new GridColumn()
+    {
+        HeaderText = "Name",
+        // 0 Binds to the first item in the list, if there is no list, then the only item available
+        DataCell = new TextBoxCell(0),
+    },
+  },
+  DataStore = treeData
+};
+
+var dialog = new Dialog()
+{
+  Width = 400,
+  Height = 200,
+  Content = treeGridView,
+};
+
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.ShowModal(parent);
 ```
 
   </div>
@@ -141,11 +200,23 @@ Tree Grid View data stores differ to the GridView as they require a more rigid (
   </div>
 </div>
 
+{{< /column >}}
+{{< column >}}
+
+![Simple Tree Grid View](/images/eto/tutorials/simple-tree-grid-view.png)
+
+{{< /column >}}
+{{< /row >}}
+
+</br>
+
 ### Reloading Data
 
-Generally `ObservableCollection<T>` informs the UI of changes when the collection is updated. In TreeGridViews this is not possible as we must use a Tree structure. TreeGridView offers two reload options `ReloadItem()` which reloads 1 item (optionally including children)  and `ReloadData()` which reloads _everything_.
+Generally `ObservableCollection<T>` is used to inform the UI of changes when the collection is changed. It is not possible to use an `ObservableCollection<t>` for a TreeGridView as a Tree structure is required, hence `TreeGridStore` is used.
 
-Reloading an ENTIRE GridView due to 1 cell changing would be very inefficient, and hence ReloadData lets us specify a Row to reload which is much more efficient.
+TreeGridView offers two reload options `ReloadItem()` which reloads 1 item (optionally including children)  and `ReloadData()` which reloads _everything_.
+
+Reloading an ENTIRE GridView due to 1 cell changing would be very inefficient, using ReloadItem is much more efficient.
 
 <div class="codetab">
   <button class="tablinks3" onclick="openCodeTab(event, 'cs3')" id="defaultOpen3">C#</button>
@@ -157,7 +228,7 @@ Reloading an ENTIRE GridView due to 1 cell changing would be very inefficient, a
 
 ```cs
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-dialog.Show(parent);
+dialog.ShowModal(parent);
 ```
 
   </div>
