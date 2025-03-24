@@ -39,7 +39,7 @@ To download the public C++ SDK and example 3DM files, visit https://www.rhino3d.
 
 The openNURBS C++ toolkit has been successfully used with the following compilers:
 
-- A version of *Microsoft Visual Studio* that includes the Visual Studio 2019 (v142) platform toolset. Thus, you can use either Visual Studio 2022 or Visual Studio 2019. To build openNURBS and the examples with **Microsoft Visual Studio*, use the solution *opennurbs_public.sln*.
+- A version of *Microsoft Visual Studio* that includes the Visual Studio 2019 (v142) platform toolset. Thus, you can use either Visual Studio 2022 or Visual Studio 2019. To build openNURBS and the examples with *Microsoft Visual Studio*, use the solution *opennurbs_public.sln*.
 
 To use C++ opennurbs in your Visual Studio project:
 
@@ -82,6 +82,7 @@ Use `ONX_Model::Read()` and `ONX_Model::Write()` to add support for reading and 
 1. *Version 5 3DM files*. The openNURBS toolkit will read and write version 5 files. Rhino 5 and applications using an openNURBS toolkit released on or after September 2009 create version 5 files.  (Rhino's 1.0, 2.0, 3.0 and 4.0 will not read version 5 files.)
 1. *Version 6 3DM files*. The openNURBS toolkit will read and write version 6 files. Rhino 6 and applications using an openNURBS toolkit released on or after January 2018 create version 6 files.  (Rhino's 1.0, 2.0, 3.0, 4.0 and 5 will not read version 6 files.)
 1. *Version 7 3DM files*. The openNURBS toolkit will read and write version 7 files. Rhino 7 and applications using an openNURBS toolkit released on or after November 2020 create version 7 files.  (Rhino's 1.0, 2.0, 3.0, 4.0, 5 and 6 will not read version 7 files.)
+1. *Version 8 3DM files*. The openNURBS toolkit will read and write version 8 files. Rhino 8 and applications using an openNURBS toolkit released on or after October 2023 create version 8 files.  (Rhino's 1.0, 2.0, 3.0, 4.0, 5, 6, and 7 will not read version 8 files.)
 
 Sample 3DM files are availble from https://www.rhino3d.com/opennurbs
 
