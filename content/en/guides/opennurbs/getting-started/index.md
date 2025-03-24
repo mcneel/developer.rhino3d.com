@@ -39,7 +39,7 @@ To download the public C++ SDK and example 3DM files, visit https://www.rhino3d.
 
 The openNURBS C++ toolkit has been successfully used with the following compilers:
 
-- *Microsoft Visual Studio 2019*: to build openNURBS and the examples with *Visual Studio 2019*, use the solution *opennurbs_public.sln*.
+- A version of *Microsoft Visual Studio* that includes the Visual Studio 2019 (v142) platform toolset. Thus, you can use either Visual Studio 2022 or Visual Studio 2019. To build openNURBS and the examples with **Microsoft Visual Studio*, use the solution *opennurbs_public.sln*.
 
 To use C++ opennurbs in your Visual Studio project:
 
@@ -55,7 +55,7 @@ To use C++ opennurbs in your Visual Studio project:
 ```
 
 - *Apple Xcode 9.2* (9C40b): To build openNURBS and the examples with *Xcode 9.2* (or later), use the workspace *opennurbs_public.xcworkspace*.
-- *Other C++ compilers* The compiler must support the C++11 standard. A *makefile* is provided as a starting point. The openNURBS C++ source code is clean and simple. If you are using a C++ compiler that supports the C++11 standard and run into some toolkit code that causes problems, please [let us know](http://discourse.mcneel.com/category/opennurbs).  We'll attempt to change the code to accommodate the compiler.
+- *Other C++ compilers* The compiler must support the C++14 standard. A *makefile* is provided as a starting point. The openNURBS C++ source code is clean and simple. If you are using a C++ compiler that supports the C++14 standard and run into some toolkit code that causes problems, please [let us know](http://discourse.mcneel.com/category/opennurbs).  We'll attempt to change the code to accommodate the compiler.
 
 ## Read and Write
 
