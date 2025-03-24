@@ -1,6 +1,6 @@
 +++
 aliases = ["/en/5/guides/opennurbs/getting-started/", "/en/6/guides/opennurbs/getting-started/", "/en/7/guides/opennurbs/getting-started/", "/en/wip/guides/opennurbs/getting-started/"]
-authors = [ "dalefugier" ]
+authors = [ "dale" ]
 categories = [ "Getting Started" ]
 description = "This guide explains how to use the openNURBS C++ toolkit in your project."
 keywords = [ "openNURBS", "C#", ".NET", "Rhino3dmIO" ]
