@@ -1,6 +1,6 @@
 +++
 aliases = ["/en/5/guides/opennurbs/getting-started/", "/en/6/guides/opennurbs/getting-started/", "/en/7/guides/opennurbs/getting-started/", "/en/wip/guides/opennurbs/getting-started/"]
-authors = [ "dalelear" ]
+authors = [ "dalefugier" ]
 categories = [ "Getting Started" ]
 description = "This guide explains how to use the openNURBS C++ toolkit in your project."
 keywords = [ "openNURBS", "C#", ".NET", "Rhino3dmIO" ]
@@ -9,7 +9,6 @@ sdk = [ "openNURBS" ]
 title = "Getting Started"
 type = "guides"
 weight = 1
-override_last_modified = "2021-07-01T11:00:09Z"
 
 [admin]
 TODO = ""
