@@ -1,5 +1,5 @@
 +++
-aliases = ["/en"]
+aliases = []
 authors = [ "rajaa" ]
 categories = [ "Basic" ]
 description = "A full course on RhinoComon in Grasshopper using C#"
