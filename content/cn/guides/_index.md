@@ -81,42 +81,45 @@ toc_type = "single"
   - [Editor Features](/guides/scripting/scripting-component/#editor-features)
 
 ### Python Scripting
-- <!-- [Python Scripting](/guides/scripting/scripting-python) --> Scripting: Python {{% comingsoon-label %}}
-- {{< dev-topic "Grasshopper Scripting: Python" "/guides/scripting/scripting-gh-python" >}}
+
+- Scripting: Python {{% comingsoon-label %}}
+- [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
 
 ### C# Scripting
-- <!-- [C# Scripting](/guides/scripting/scripting-csharp) --> Scripting: C# {{% comingsoon-label %}}
-- {{< dev-topic "Grasshopper Scripting: C#" "/guides/scripting/scripting-gh-csharp" >}}
+
+- Scripting: C# {{% comingsoon-label %}}  <!-- [C# Scripting](/guides/scripting/scripting-csharp) -->
+- [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
 
 ### Editor Features
-- {{< dev-topic "Editing Features" "/guides/scripting/editor-editing" >}}
+
+- [Editing Features](/guides/scripting/editor-editing)
 - <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
 - <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
-- {{< dev-topic "Terminal" "/guides/scripting/editor-terminal" >}}
+- [Terminal](/guides/scripting/editor-terminal)
 - <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
 - <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
 - <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
 - <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
 - <!-- [Help](/guides/scripting/editor-help) --> Help {{% comingsoon-label %}}
-- {{< dev-topic "Options" "/guides/scripting/editor-configs" >}}
-- {{< dev-topic "Logs" "/guides/scripting/editor-logs" >}}
+- [Options](/guides/scripting/editor-configs)
+- [Logs](/guides/scripting/editor-logs)
 
 ### Publishing Script Plugins
 
-- {{< dev-topic "Creating Rhino/Grasshopper Script Plugins" "/guides/scripting/projects-create" >}}
-- {{< dev-topic "Building & Publishing Script Plugins" "/guides/scripting/projects-publish" >}}
+- [Creating Rhino/Grasshopper Script Plugins](/guides/scripting/projects-create)
+- [Building & Publishing Script Plugins](/guides/scripting/projects-publish)
 
 ### Advanced
 
-- {{< dev-topic "ScriptEditor Macros" "/guides/scripting/advanced-scripteditor-macros" >}}
-- {{< dev-topic "Language Initialization" "/guides/scripting/advanced-langinit" >}}
+- [ScriptEditor Macros](/guides/scripting/advanced-scripteditor-macros)
+- [Language Initialization](/guides/scripting/advanced-langinit)
 - <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
-- {{< dev-topic "Python Path Files" "/guides/scripting/advanced-pthfiles" >}}
-- {{< dev-topic "Python Package Environments" "/guides/scripting/advanced-pyvenvs" >}}
+- [Python Path Files](/guides/scripting/advanced-pthfiles)
+- [Python Package Environments](/guides/scripting/advanced-pyvenvs)
 - <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
-- {{< dev-topic "Asynchronous Execution" "/guides/scripting/advanced-async" >}}
+- [Asynchronous Execution](/guides/scripting/advanced-async)
 - <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
-- {{< dev-topic "RhinoCode Command Line Interface" "/guides/scripting/advanced-cli" >}}
+- [RhinoCode Command Line Interface](/guides/scripting/advanced-cli)
 <!-- [RhinoCode API](/guides/scripting/advanced-core-api) -->
 <!-- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api) -->
 
