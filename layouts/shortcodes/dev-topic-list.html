@@ -22,14 +22,13 @@
 {{- end -}}
 
 <ul>
-    <!-- This is a dirty hack to get the guides page to render correctly in localized versions
-     where the files are missing for that language...ideally, we wouldn't have to do this and should
-     find a better way -->
-    {{- range where (where site.AllPages ".Lang" ($.Scratch.Get "fallbacklang")) "Section" ($.Scratch.Get "section") -}}
+<!-- This is a dirty hack to get the guides page to render correctly in localized versions where the files
+ are missing for that language...ideally, we wouldn't have to do this and should find a better way -->
+{{- range where (where site.AllPages ".Lang" ($.Scratch.Get "fallbacklang")) "Section" ($.Scratch.Get "section") -}}
         {{- if in .Params.sdk ($.Scratch.Get "sdk") -}}
             {{- if or (and ( ge ($.Scratch.Get "version") .Params.Included_in.Since) ( or (not .Params.Included_in.Until) ( lt ($.Scratch.Get "version") .Params.Included_in.Until))) (not ($.Scratch.Get "version")) -}}
                 {{- if in .Params.categories ($.Scratch.Get "category") -}}
-                    <li><a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a></li>
+<li><a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a></li>
                 {{- end -}}
             {{- end -}}
         {{- end -}}
