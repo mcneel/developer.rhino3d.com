@@ -19,6 +19,12 @@
     <meta name="robots" content="noindex, nofollow">
     {{ end }}
     {{ end }}
+    {{ with .Page.Params.page_options.draft }}
+    {{ if ne . false }}
+    <meta name="robots" content="noindex, nofollow">
+    {{ end }}
+    {{ end }}
+
 
     <!-- Favicon -->
     <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />

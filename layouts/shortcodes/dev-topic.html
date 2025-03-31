@@ -1,4 +1,11 @@
 {{- $.Scratch.Set "title" (.Get 0) -}}
-{{ with .Site.GetPage (.Get 1) }}
-    <a class="dev-topic" href="{{ .RelPermalink }}" title="{{ .Description }}" >{{ ($.Scratch.Get "title") }}</a>
+{{ $page := .Site.GetPage (.Get 1) }}
+{{ if not $page }}
+{{ $opts := dict "path" (.Get 1) "lang" "en" }}
+{{ $.Scratch.Set "fallbackURL" (relref . $opts) }}
+{{ end }}
+{{ with $page }}
+<a class="dev-topic" href="{{ .RelPermalink }}" title="{{ .Description }}" >{{ ($.Scratch.Get "title") }}</a>
+{{ else }}
+<a class="dev-topic" href="{{ $.Scratch.Get "fallbackURL" }}" title="Fallback to English" >{{ ($.Scratch.Get "title") }}</a>
 {{ end }}

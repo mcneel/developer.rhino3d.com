@@ -95,7 +95,11 @@ Options:
 
 On Windows, the token is stored in `%appdata%\McNeel\yak.yml`. On macOS, it is stored in `~/.mcneel/yak.yml`.
 
-During login, the user is registered on the server.
+During the first login, the user is registered on the server.
+
+{{< call-out "note" "Note" >}}
+  In an automated build environment – e.g. a build machine, GitHub Actions, etc. – the `yak` CLI tool can read the access token from the `YAK_TOKEN` environment variable. Use the `--ci` flag to login and generate a token for this purpose!
+{{< /call-out >}}
 
 ### Push
 
@@ -178,7 +182,7 @@ If all versions of a package are removed, it will no longer show up in the packa
 
 {{< call-out "danger" "Danger" >}}
   <p><strong>Deleting a package from the McNeel server</strong></p>
-  <p>If you absolutely need to delete your package from the public server, please email <a href="mailto:will@mcneel.com">will@mcneel.com</a>. Once a package has been deleted, the name can no longer be used.</p>
+  <p>If you absolutely need to delete your package from the public server, please email <a href="mailto:support@mcneel.com">support@mcneel.com</a>. Once a package has been deleted, the name can no longer be used.</p>
 {{< /call-out >}}
 
 ### Unyank
@@ -203,6 +207,8 @@ Options:
 ```
 
 New owners can do everything that the original owner can do. Please bear this in mind!
+
+New owners must be registered on the server before they can be added to a package. They can do this by running the [`login`](#login) command.
 
 ## Downloads
 

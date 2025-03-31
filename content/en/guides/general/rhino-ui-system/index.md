@@ -80,7 +80,7 @@ In Rhino 8, RUI files are now simply a collection of toolbars, macros and images
 
 Toolbar groups defined in RUI files are converted into containers when loaded to support legacy and plug-in RUI files and provide a plug-in RUI file a way to create containers associated with the plug-in.
 
-Linked RUI files can be managed using Rhino's **[Options > Appearance > Toolbars](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#options/appearance_toolbars.htm#(null))** option.
+Linked RUI files can be managed using Rhino's **[Options > Toolbars](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#options/appearance_toolbars.htm#(null))** option.
 
 ### Toolbars
 
@@ -181,7 +181,7 @@ RUI files are collections of the items above and are stored in a writable direct
 
 Rhino plug-ins can install a RUI file with the same name as the plug-in and it will get copied into a writable location and opened automatically when Rhino starts. This gives a plug-in the ability to extend the Rhino interface while allowing the plug-in to not load until it is referenced.
 
-Note, all of the above can be managed using Rhino 7's **[Toobars](https://docs.mcneel.com/rhino/7/help/en-us/index.htm#options/toolbars.htm#(null))** command.
+Note, all of the above can be managed using Rhino 7's **[Toolbars](https://docs.mcneel.com/rhino/7/help/en-us/index.htm#options/toolbars.htm#(null))** command.
 
 ### Rhino Panels
 

@@ -8,6 +8,11 @@
     {{- partial "head" . -}}
   {{ end }}
 
+  {{ with .Page.Params.page_options.block_webcrawlers }}
+  {{ if eq . "warn" }}
+  <div style="z-index: 99999;position:fixed;top:0;right:0;background-color:rgb(255, 255, 0);padding:6px;cursor:pointer;" onClick="javascript:this.style.display='none';" class="not-crawled">Congrats! You found a page Google can't! (set draft=false in your frontmatter to fix this)</div>
+  {{ end }}
+  {{ end }}
 {{ if (.Params.page_options.rhino_bg) }}
   <body class="rhino-bg">
 {{ else }}

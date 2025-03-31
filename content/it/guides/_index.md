@@ -61,7 +61,7 @@ toc_type = "single"
 
 ### Getting Started
 
-#### Script Editor
+#### ScriptEditor Command
   - [Opening Script Editor](/guides/scripting/scripting-command/#opening-script-editor)
   - [First Script](/guides/scripting/scripting-command/#first-script)
   - [Edit Script](/guides/scripting/scripting-command/#edit-script)
@@ -81,40 +81,45 @@ toc_type = "single"
   - [Editor Features](/guides/scripting/scripting-component/#editor-features)
 
 ### Python Scripting
-- <!-- [Python Scripting](/guides/scripting/scripting-python) --> Scripting: Python {{% comingsoon-label %}}
-- {{< dev-topic "Grasshopper Scripting: Python" "/guides/scripting/scripting-gh-python" >}}
+
+- Scripting: Python {{% comingsoon-label %}}
+- [Grasshopper Scripting: Python](/guides/scripting/scripting-gh-python)
 
 ### C# Scripting
-- <!-- [C# Scripting](/guides/scripting/scripting-csharp) --> Scripting: C# {{% comingsoon-label %}}
-- {{< dev-topic "Grasshopper Scripting: C#" "/guides/scripting/scripting-gh-csharp" >}}
+
+- Scripting: C# {{% comingsoon-label %}}  <!-- [C# Scripting](/guides/scripting/scripting-csharp) -->
+- [Grasshopper Scripting: C#](/guides/scripting/scripting-gh-csharp)
 
 ### Editor Features
-- {{< dev-topic "Editing Features" "/guides/scripting/editor-editing" >}}
+
+- [Editing Features](/guides/scripting/editor-editing)
 - <!-- [Explorer](/guides/scripting/editor-explorer) --> Explorer {{% comingsoon-label %}}
 - <!-- [Search & Replace](/guides/scripting/editor-search) --> Search & Replace {{% comingsoon-label %}}
-- <!-- [Terminal](/guides/scripting/editor-terminal) --> Terminal {{% comingsoon-label %}}
+- [Terminal](/guides/scripting/editor-terminal)
 - <!-- [Problems Tray](/guides/scripting/editor-problems) --> Problems Tray {{% comingsoon-label %}}
 - <!-- [Debugging Your Scripts](/guides/scripting/editor-debug) --> Debugger {{% comingsoon-label %}}
 - <!-- [Templates](/guides/scripting/editor-templates) --> Templates {{% comingsoon-label %}}
 - <!-- [Examples](/guides/scripting/editor-examples) --> Examples {{% comingsoon-label %}}
 - <!-- [Help](/guides/scripting/editor-help) --> Help {{% comingsoon-label %}}
-- {{< dev-topic "Options" "/guides/scripting/editor-configs" >}}
-- {{< dev-topic "Logs" "/guides/scripting/editor-logs" >}}
+- [Options](/guides/scripting/editor-configs)
+- [Logs](/guides/scripting/editor-logs)
 
-### Publishing
+### Publishing Script Plugins
 
-- {{< dev-topic "Creating Rhino Projects" "/guides/scripting/projects-create" >}}
-- {{< dev-topic "Creating Rhino and Grasshopper Plugins" "/guides/scripting/projects-publish" >}}
+- [Creating Rhino/Grasshopper Script Plugins](/guides/scripting/projects-create)
+- [Building & Publishing Script Plugins](/guides/scripting/projects-publish)
 
 ### Advanced
 
-- {{< dev-topic "Language Initialization" "/guides/scripting/advanced-langinit" >}}
+- [ScriptEditor Macros](/guides/scripting/advanced-scripteditor-macros)
+- [Language Initialization](/guides/scripting/advanced-langinit)
 - <!-- [CPython Runtime and Language Server](/guides/scripting/advanced-pyruntime) --> CPython Runtime and Language Server {{% comingsoon-label %}}
-- {{< dev-topic "Python Path Files" "/guides/scripting/advanced-pthfiles" >}}
+- [Python Path Files](/guides/scripting/advanced-pthfiles)
+- [Python Package Environments](/guides/scripting/advanced-pyvenvs)
 - <!-- [Language Libraries](/guides/scripting/advanced-libraries) --> Language Libraries {{% comingsoon-label %}}
-- {{< dev-topic "Asynchronous Execution" "/guides/scripting/advanced-async" >}}
+- [Asynchronous Execution](/guides/scripting/advanced-async)
 - <!-- [VisualStudioCode Extension](/guides/scripting/advanced-vscode) --> VisualStudioCode Extension {{% comingsoon-label %}}
-- {{< dev-topic "RhinoCode Command Line Interface" "/guides/scripting/advanced-cli" >}}
+- [RhinoCode Command Line Interface](/guides/scripting/advanced-cli)
 <!-- [RhinoCode API](/guides/scripting/advanced-core-api) -->
 <!-- [RhinoCodeEditor API](/guides/scripting/advanced-editor-api) -->
 
@@ -130,7 +135,7 @@ toc_type = "single"
 ### Getting Started
 
 - Installing Tools ([Windows](/guides/rhinocommon/installing-tools-windows/), [Mac](/guides/rhinocommon/installing-tools-mac/))
-- Your First Plugin ([Windows](/guides/rhinocommon/your-first-plugin-windows/), [Mac](/guides/rhinocommon/your-first-plugin-mac/), [Cross-Platform](/guides/rhinocommon/your-first-plugin-crossplatform/))
+- Your First Plugin ([Windows](/guides/rhinocommon/your-first-plugin-windows/), [Mac](/guides/rhinocommon/your-first-plugin-mac/))
 - Plugin Installers ([Windows](/guides/rhinocommon/plugin-installers-windows/), [Mac](/guides/rhinocommon/plugin-installers-mac/))
 - [Distributing a Rhino Plug-In with the Package Manager](/guides/yak/creating-a-rhino-plugin-package/)
 
@@ -429,6 +434,28 @@ toc_type = "single"
 ### Hops
 
 {{< dev-topic-list "guides" "Compute" "Hops" "weight" >}}
+
+<!-- ## [Eto](/guides/eto) -->
+<h2 id="eto"><a href="/guides/eto">Eto</a></h2>
+
+### Getting Started
+
+- [What is Eto](/guides/eto/what-is-eto)
+- [Required Tools](/guides/eto/required-tools)
+- [Your First UI](/guides/eto/your-first-ui)
+
+### Fundamentals
+
+- [Forms and Dialogs](/guides/eto/forms-and-dialogs)
+- [Existing Dialogs](/guides/eto/existing-dialogs)
+- [Containers](/guides/eto/containers)
+- [Basic Controls](/guides/eto/controls)
+
+### DataContext and View Models
+
+- [Data Context](/guides/eto/view-and-data/data-context)
+- [View Models](/guides/eto/view-and-data/view-models)
+- [Bindings](/guides/eto/view-and-data/binding)
 
 ## Developer Services
 

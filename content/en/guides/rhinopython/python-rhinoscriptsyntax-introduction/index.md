@@ -37,7 +37,7 @@ The RhinoScriptSyntax module contains hundreds of easy-to-use functions that per
 * Document objects
 * Application methods
 
-To make these methods easy-to-use, all RhinoScriptSyntax methods return simple Python variables or Python List-based data structures. Thus, once you are familiar with Python, you will be able to use any and all functions in the RhinoScriptSyntax methods library.
+To make these methods easy-to-use, all RhinoScriptSyntax methods return simple Python variables or Python List-based data structures. Thus, once you are familiar with Python, you will be able to use any and all functions in the RhinoScriptSyntax methods library. For the whole namespace, see the [Rhinoscriptsyntax API reference](https://developer.rhino3d.com/api/RhinoScriptSyntax/).
 
 ## Importing RhinoScriptSyntax
 

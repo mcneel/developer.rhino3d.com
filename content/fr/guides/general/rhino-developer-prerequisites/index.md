@@ -62,8 +62,8 @@ Si vous souhaitez écrire des modules avec RhinoCommon, vous devrez comprendre u
 *À regarder*...
 
 - [Beginning C# Programming](http://shop.oreilly.com/product/0636920036036.do) par Eric Lippert, Publié par O'Reilly Media
-- [C# Fundamentals for Absolute Beginners](https://www.microsoftvirtualacademy.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169) sur Microsoft Virtual Academy
-- [C# Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/188207-2.html) avec David Gassner sur Lynda.com
+- [C# Fundamentals for Absolute Beginners](https://learn.microsoft.com/fr-fr/shows/csharp-fundamentals-for-absolute-beginners/) sur Microsoft Virtual Academy
+- [C# et .NET Essential Training](https://www.linkedin.com/learning/c-sharp-and-dot-net-essential-training) sur LinkedIn Learning
 
 *À lire*...
 
@@ -81,8 +81,8 @@ Pour écrire des modules pour Rhino à l'aide du SDK C/C++, vous devez d’abord
 
 *À regarder*...
 
-- [C++ : Un langage à usage général](https://www.microsoftvirtualacademy.com/en-us/training-courses/c-a-general-purpose-language-and-library-jump-start-8251) sur Microsoft Virtual Academy
-- [C++ Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/182674-2.html) avec Bill Weinmann sur Lynda.com
+- [C++ : Un langage à usage général](https://learn.microsoft.com/fr-fr/shows/cplusplus-language-library/) sur Microsoft Virtual Academy
+- [C++ Essential Training](https://www.linkedin.com/learning/c-plus-plus-essential-training-15106801) avec Bill Weinmann sur LinkedIn Learning
 
 *À lire*...
 

@@ -141,7 +141,7 @@
                 </div>
             </div>
 
-            <div  class="discover-grid discover-grid-row" v-if="discoverCards.length>0">
+            <div  class="discover-grid learn-grid-width discover-grid-row" v-if="discoverCards.length>0">
                 <div v-for="card in discoverCards"  v-bind:itemid="card.url"
                     class="discover-item card learn-card-override">
                     <a v-bind:itemid="card.url" v-on:click="handleCardOpen">

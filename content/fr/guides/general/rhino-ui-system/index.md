@@ -58,13 +58,13 @@ L’utilisateur peut modifier un conteneur en faisant glisser des onglets d’un
 
 Les définitions, la visibilité, l’emplacement et la taille des conteneurs sont sauvegardés à la fermeture de Rhino et restaurés au redémarrage de Rhino. Ces informations peuvent également être stockées et partagées via les dispositions de l’écran.
 
-Dans Rhino, la commande **[Conteneurs](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/containers.htm#(null))** permet de gérer les conteneurs.
+Dans Rhino, la commande **[Conteneurs](https://docs.mcneel.com/rhino/8/help/fr-fr/index.htm#commands/containers.htm#(null))** permet de gérer les conteneurs.
 
 ### Dispositions de l’écran
 
 Les dispositions de l’écran sont un instantané des définitions, du statut de visibilité, des emplacements et de la taille des conteneurs. La restauration d’une disposition de l’écran reconfigure l’UI actuelle afin qu’elle apparaisse telle qu’elle était lorsque la disposition a été créée. Dans les conteneurs restaurés, les onglets s’afficheront dans l’ordre dans lequel ils se trouvaient lors de la création de la disposition de l’écran et apparaîtront au même endroit et dans la même taille. Les onglets des barres d’outils référencent la définition actuelle d’une barre d’outils ; si la barre d’outils n’existe plus, l’onglet ne s’affiche pas.
 
-Dans Rhino, la commande **[DispositionÉcran](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/windowlayout.htm#(null))** permet de gérer les dispositions de l’écran.
+Dans Rhino, la commande **[DispositionÉcran](https://docs.mcneel.com/rhino/8/help/fr-fr/index.htm#commands/windowlayout.htm#(null))** permet de gérer les dispositions de l’écran.
 
 #### Exporter et importer des dispositions de l’écran
 
@@ -72,7 +72,7 @@ Les dispositions de l’écran peuvent être exportées vers un fichier de dispo
 
 Lorsque l’utilisateur importe un fichier .rhw, le système vérifie si un fichier RUI personnalisé intégré est ouvert. Si ce n’est pas le cas, le système extrait et ouvre le fichier personnalisé. Une fois la liste personnalisée extraite ou vérifiée, les modifications apportées à l’interface et enregistrées dans le fichier .rhw seront appliquées aux actuels fichiers RUI. Les informations de modifications associées aux barres d’outils définies par des fichiers de modules qui n’existent pas seront ignorées. Une fois les données RUI restaurées, les conteneurs seront créés ou modifiés pour correspondre à la définition stockée dans le fichier .rhw. Les conteneurs qui ne référencent que des barres d’outils provenant de modules non installés seront ignorés. Une fois importée, la disposition apparaît dans la liste des dispositions de l’écran et peut ensuite être restaurée.
 
-Les dispositions de l’écran peuvent être exportées et importées à l’aide de la commande **[DispositionÉcran](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/windowlayout.htm#(null))** de Rhino.
+Les dispositions de l’écran peuvent être exportées et importées à l’aide de la commande **[DispositionÉcran](https://docs.mcneel.com/rhino/8/help/fr-fr/index.htm#commands/windowlayout.htm#(null))** de Rhino.
 
 ### Fichiers RUI
 
@@ -80,7 +80,7 @@ Dans Rhino 8, les fichiers RUI sont désormais un simple ensemble de barres d�
 
 Les groupes de barres d’outils définis dans les fichiers RUI sont convertis en conteneurs lorsqu’ils sont chargés afin de prendre en charge les fichiers RUI anciens et de modules ; ils fournissent aux fichiers RUI de modules un moyen de créer des conteneurs associés au module.
 
-Dans Rhino, il est possible de gérer les fichiers RUI liés en allant dans **[Options > Apparence > Barres d’outils](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#options/appearance_toolbars.htm#(null))**.
+Dans Rhino, il est possible de gérer les fichiers RUI liés en allant dans **[Options > Apparence > Barres d’outils](https://docs.mcneel.com/rhino/8/help/fr-fr/index.htm#options/appearance_toolbars.htm#(null))**.
 
 ### Barres d’outils
 
@@ -94,7 +94,7 @@ Les groupes de barres d’outils sont désormais convertis en conteneurs lors du
 
 Les barres d’outils sont des ensembles de boutons de barre d’outils et peuvent être référencées par plusieurs conteneurs. Pour les modifier, il suffit de faire un glisser-déposer à partir de boutons d’autres barres d’outils ou d’utiliser l’assistant de création de boutons.
 
-Dans Rhino, la commande **[BarreOutils](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/toolbar.htm#(null))** permet de gérer les barres d’outils.
+Dans Rhino, la commande **[BarreOutils](https://docs.mcneel.com/rhino/8/help/fr-fr/index.htm#commands/toolbar.htm#(null))** permet de gérer les barres d’outils.
 
 #### Boutons de barre d’outils
 
@@ -109,7 +109,7 @@ Le système de menus de Rhino peut être étendu à l’aide d’objets de menu 
 - Le texte d’aide qui apparaît dans la barre d’état quand l’utilisateur survole l’élément du menu avec la souris ;
 - Le script de la commande à exécuter lorsque l’utilisateur clique sur l’élément du menu.
 
-Dans Rhino, la commande **[Menus](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#toolbarsandmenus/workspace_editor.htm#(null))** permet de gérer les menus.
+Dans Rhino, la commande **[Menus](https://docs.mcneel.com/rhino/8/help/fr-fr/index.htm#toolbarsandmenus/workspace_editor.htm#(null))** permet de gérer les menus.
 
 #### Macros
 
@@ -123,7 +123,7 @@ Les macros contiennent les informations nécessaires pour décrire le script de 
 - Le texte du menu ;
 - Le texte d’aide.
 
-Dans Rhino, la commande **[Macros](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/macros.htm#(null))** permet de gérer les macros.
+Dans Rhino, la commande **[Macros](https://docs.mcneel.com/rhino/8/help/fr-fr/index.htm#commands/macros.htm#(null))** permet de gérer les macros.
 
 ### Panneaux
 
@@ -181,7 +181,7 @@ Les fichiers RUI contiennent les éléments ci-dessus et sont stockés dans un r
 
 Les modules de Rhino peuvent installer un fichier RUI portant le même nom que le module ; ce fichier sera alors copié dans un emplacement accessible en écriture et ouvert automatiquement au démarrage de Rhino. Cela permet à un module d’étendre l’interface de Rhino sans être chargé tant que le module n’est pas référencé.
 
-Remarque : dans Rhino 7, la commande **[BarreOutils](https://docs.mcneel.com/rhino/7/help/en-us/index.htm#options/toolbars.htm#(null))** permet de gérer tous les éléments précédents.
+Remarque : dans Rhino 7, la commande **[BarreOutils](https://docs.mcneel.com/rhino/7/help/fr-fr/index.htm#options/toolbars.htm#(null))** permet de gérer tous les éléments précédents.
 
 ### Panneaux de Rhino
 

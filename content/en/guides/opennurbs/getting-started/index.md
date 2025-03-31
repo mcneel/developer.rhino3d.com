@@ -1,6 +1,6 @@
 +++
 aliases = ["/en/5/guides/opennurbs/getting-started/", "/en/6/guides/opennurbs/getting-started/", "/en/7/guides/opennurbs/getting-started/", "/en/wip/guides/opennurbs/getting-started/"]
-authors = [ "dalelear" ]
+authors = [ "dale" ]
 categories = [ "Getting Started" ]
 description = "This guide explains how to use the openNURBS C++ toolkit in your project."
 keywords = [ "openNURBS", "C#", ".NET", "Rhino3dmIO" ]
@@ -9,7 +9,6 @@ sdk = [ "openNURBS" ]
 title = "Getting Started"
 type = "guides"
 weight = 1
-override_last_modified = "2021-07-01T11:00:09Z"
 
 [admin]
 TODO = ""
@@ -39,23 +38,23 @@ To download the public C++ SDK and example 3DM files, visit https://www.rhino3d.
 
 The openNURBS C++ toolkit has been successfully used with the following compilers:
 
-- *Microsoft Visual Studio 2019*: to build openNURBS and the examples with *Visual Studio 2019*, use the solution *opennurbs_public.sln*.
+- A version of *Microsoft Visual Studio* that includes the Visual Studio 2019 (v142) platform toolset. Thus, you can use either Visual Studio 2022 or Visual Studio 2019. To build openNURBS and the examples with *Microsoft Visual Studio*, use the solution *opennurbs_public.sln*.
 
-To use C++ opennurbs in your Visual Studio project:
+  To use C++ opennurbs in your Visual Studio project:
 
-1. Open opennurbs_public.sln in Visual Studio, select the platform and configuration, and rebuild all.
-1. In your project's stdafx.h, put the following lines. This will include all the header files you need to call C++ opennurbs and automatically link in the correct libraries:
+  1. Open opennurbs_public.sln in Visual Studio, select the platform and configuration, and rebuild all.
+  1. In your project's stdafx.h, put the following lines. This will include all the header files you need to call C++ opennurbs and automatically link in the correct libraries:
 
-```cpp
-// defining OPENNURBS_PUBLIC_INSTALL_DIR enables automatic linking using pragmas
-#define OPENNURBS_PUBLIC_INSTALL_DIR "<MY_INSTALLPATH>"
-// uncomment the next line if you want to use opennurbs as a DLL
-//#define OPENNURBS_IMPORTS
-#include "<MY_INSTALLPATH>/opennurbs_public.h"
-```
+  ```cpp
+  // defining OPENNURBS_PUBLIC_INSTALL_DIR enables automatic linking using pragmas
+  #define OPENNURBS_PUBLIC_INSTALL_DIR "<MY_INSTALLPATH>"
+  // uncomment the next line if you want to use opennurbs as a DLL
+  //#define OPENNURBS_IMPORTS
+  #include "<MY_INSTALLPATH>/opennurbs_public.h"
+  ```
 
 - *Apple Xcode 9.2* (9C40b): To build openNURBS and the examples with *Xcode 9.2* (or later), use the workspace *opennurbs_public.xcworkspace*.
-- *Other C++ compilers* The compiler must support the C++11 standard. A *makefile* is provided as a starting point. The openNURBS C++ source code is clean and simple. If you are using a C++ compiler that supports the C++11 standard and run into some toolkit code that causes problems, please [let us know](http://discourse.mcneel.com/category/opennurbs).  We'll attempt to change the code to accommodate the compiler.
+- *Other C++ compilers* The compiler must support the C++14 standard. A *makefile* is provided as a starting point. The openNURBS C++ source code is clean and simple. If you are using a C++ compiler that supports the C++14 standard and run into some toolkit code that causes problems, please [let us know](http://discourse.mcneel.com/category/opennurbs).  We'll attempt to change the code to accommodate the compiler.
 
 ## Read and Write
 
@@ -82,6 +81,7 @@ Use `ONX_Model::Read()` and `ONX_Model::Write()` to add support for reading and 
 1. *Version 5 3DM files*. The openNURBS toolkit will read and write version 5 files. Rhino 5 and applications using an openNURBS toolkit released on or after September 2009 create version 5 files.  (Rhino's 1.0, 2.0, 3.0 and 4.0 will not read version 5 files.)
 1. *Version 6 3DM files*. The openNURBS toolkit will read and write version 6 files. Rhino 6 and applications using an openNURBS toolkit released on or after January 2018 create version 6 files.  (Rhino's 1.0, 2.0, 3.0, 4.0 and 5 will not read version 6 files.)
 1. *Version 7 3DM files*. The openNURBS toolkit will read and write version 7 files. Rhino 7 and applications using an openNURBS toolkit released on or after November 2020 create version 7 files.  (Rhino's 1.0, 2.0, 3.0, 4.0, 5 and 6 will not read version 7 files.)
+1. *Version 8 3DM files*. The openNURBS toolkit will read and write version 8 files. Rhino 8 and applications using an openNURBS toolkit released on or after October 2023 create version 8 files.  (Rhino's 1.0, 2.0, 3.0, 4.0, 5, 6, and 7 will not read version 8 files.)
 
 Sample 3DM files are availble from https://www.rhino3d.com/opennurbs
 
