@@ -42,10 +42,23 @@ Tree Grid Views allow us to create rows which are bound to a data structure.
 This guide will cover all the eccentricities of Tree Grid Views which can be confusing.
 
 ## Trees
-Trees are a common data structure in programming. Trees are composed of nodes and branches with a common singular root.
 
-![Tree Data Structure](/images/eto/data/tree-diagram.png)
+{{< row >}}
+{{< column >}}
 
+Trees are a very common data structure in programming representing. Trees start as a single root node, from which all nodes are eventually connected. Nodes at the end of the tree are called leafs.
+
+Each node has a single parent (Except the root) and can have any number of children. A key rule of Trees is that any node must not be descended from either itself or any of its parents (or parents descendents), grandparents etc. In the diagram these kinds of relationships are shown with the red X.
+
+Tree Grid Views rely on this data structure and all of the rules that come with it.
+
+{{< /column >}}
+{{< column >}}
+
+![Tree Data Structure](/images/eto/diagrams/tree-diagram.svg)
+
+{{< /column >}}
+{{< /row >}}
 
 ## Declaration
 

@@ -19,24 +19,9 @@ platforms = [ "Windows", "Mac" ]
 
 +++
 
-</br>
-
-{{< row >}}
-{{< column >}}
-
 Cells are the backbone of the Eto Grid types, [GridView](../grid-view) and [TreeGridView](../tree-grid-view), two very extensible and powerful containers in Eto.
 
-{{< /column >}}
-{{< column >}}
-
-[Eto.Forms.Cells API Reference](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_Cell.htm)
-
-{{< /column >}}
-{{< /row >}}
-
-</br>
-
-## [TextBox Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_TextBoxCell.htm)
+## TextBox Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_TextBoxCell.htm)
 
 TextBoxCells can be used for displaying text or creating editable text.
 As long as `Editable` is set to true, the text can be changed and will update the source.
@@ -133,7 +118,7 @@ dialog.ShowModal()
 
 </br>
 
-## [CheckBox Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_CheckBoxCell.htm)
+## CheckBox Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_CheckBoxCell.htm)
 
 CheckBoxCells are toggle-able, as long as `Editable` is set to true, the box can be toggled on and off which will update the source.
 
@@ -230,7 +215,7 @@ dialog.ShowModal()
 
 </br>
 
-## [ComboBoxCell Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_ComboBoxCell.htm)
+## ComboBoxCell Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_ComboBoxCell.htm)
 
 ComboBoxCell contain collections of items, as long as `Editable` is set to true, the combo box can be chosen from which will update the source.
 
@@ -342,7 +327,7 @@ dialog.ShowModal()
 
 </br>
 
-## [Drawable Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_DrawableCell.htm)
+## Drawable Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_DrawableCell.htm)
 
 Drawable Cells allow for rendering geometry and creating extensive interactive controls.
 
@@ -477,7 +462,7 @@ dialog.ShowModal()
 
 </br>
 
-## [Custom Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_CustomCell.htm)
+## Custom Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_CustomCell.htm)
 
 Custom Cells allow for very extensive Grid/Tree View customisation, however, with this extensibility comes great responsibility.
 
@@ -633,7 +618,7 @@ custom_cell.ConfigureCell = config
 </br>
 
 <!--
-## [Property Cell](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_PropertyCell.htm)
+## Property Cell [API](http://pages.picoe.ca/docs/api/html/T_Eto_Forms_PropertyCell.htm)
 
 {{< row >}}
 {{< column >}}
