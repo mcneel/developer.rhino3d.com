@@ -234,5 +234,3 @@ n. Creating the ...
 - [Contributing to Eto](https://github.com/picoe/Eto/wiki/Contributing)
 - [Discus Rhino and Eto](https://discourse.mcneel.com/)
 
-<!-- - [How does Eto work?](eto-explained) {{%comingsoon-label %}} -->
-<!-- An explanation of How eto wraps other UIs, mostly for my own benefit -->
