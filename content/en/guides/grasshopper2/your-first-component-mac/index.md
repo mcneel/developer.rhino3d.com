@@ -90,8 +90,8 @@ Use the **Solution Explorer** to expand the **Solution** (_.sln_) so that it loo
 1. **References**: Just as with most projects, you will be referencing other libraries. The template added the necessary references to create a basic Grasshopper 2 component.
 1. **Grasshopper2** is the Rhino for Mac main grasshopper DLL. Classes in this DLL are subclassed and used by your custom component.
 1. **Icons** All Icons should be placed in Icons to load automatically.
-1. **HelloGrasshopper2Component.cs** is where a custom `Grasshopper.Components.Component` subclass is defined. Your project may contain multiple subclasses of GH*Component if you want to ship multiple components in a single gh2 plugin*.
-1. **HelloGrasshopper2Plugin.cs** is where the required Rhino Plugin is defined. In Grasshopper 2, Grasshopper plugins are actually Rhino Plugins.
+1. **HelloGrasshopper2Component.cs** is where a custom `Grasshopper.Components.Component` subclass is defined. Your project may contain multiple subclasses of Component if you want to ship multiple components in a single gh2 plugin*.
+1. **HelloGrasshopper2Plugin.cs** is where the Grasshopper Plugin is defined.
 1. **HelloGrasshopper2Info.cs** defines general information about this gh2 plugin.
 
 ### Debugging

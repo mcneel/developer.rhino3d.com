@@ -104,7 +104,7 @@ Depending on your edition of Visual Studio, it may look slightly different.
 ### Make Changes
 
 1.  Open **HelloGrasshopper 2Component.cs** in Visual Studio's Source Editor (if it isn't already).
-1.  Notice that `HelloGrasshopper 2Component` inherits from `GH_Component` ...
+1.  Notice that `HelloGrasshopper 2Component` inherits from `Component` ...
 
         public class HelloGrasshopper2Component : Component
 
