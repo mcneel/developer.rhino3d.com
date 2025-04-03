@@ -96,7 +96,7 @@ Use the **Solution Explorer** to expand the **Solution** (_.sln_) so that it loo
 
 ### Debugging
 
-1. Add a breakpoint to line 51 of _HelloGrasshopper 2Component.cs_. You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
+1. Add a breakpoint to line 52 of _HelloGrasshopper 2Component.cs_. You set breakpoints in Visual Studio Code by clicking in the gutter to the left of the line numbers.
    ![Set a breakpoint](/images/gh2/your-first-component-mac-05.png)
 1. _Run and Debug_. our project. The breakpoint will become an empty circle, this is because our code has not been loaded yet. Once we hit the breakpoint once and continue, the code will be loaded until we end our Debug session.
    ![Set a breakpoint](/images/gh2/your-first-component-mac-06.png)
