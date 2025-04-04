@@ -40,7 +40,7 @@ toc_type = "single"
 2. [Wikipedia: Kubisch Hermitescher Spline](https://de.wikipedia.org/wiki/Kubisch_Hermitescher_Spline).  
 3. [Wikipedia: Bézierkurve](https://de.wikipedia.org/wiki/B%C3%A9zierkurve).  
 4. [Wikipedia: Non-Uniform Rational B-Spline](https://de.wikipedia.org/wiki/Non-Uniform_Rational_B-Spline).  
-5. [Wikipedia: De-Casteljau-Algorithmus](https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm).  
+5. [Wikipedia: De-Casteljau-Algorithmus](https://de.wikipedia.org/wiki/De-Casteljau-Algorithmus).  
   1. [Wikipedia: NURBS](https://de.wikipedia.org/wiki/Non-Uniform_Rational_B-Spline)).  
 6. [Wikipedia: De Boor's algorithm](http://en.wikipedia.org/wiki/De_Boor's_algorithm).  
 7. [MichiganTech, Department of Computer Science, De Boor's algorithm](http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/spline/de-Boor.html).  
