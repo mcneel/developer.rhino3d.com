@@ -126,26 +126,26 @@ protected override void Process(IDataAccess access)
 6. As you can see, this is where the action happens. This boilerplate component creates a spiral on a plane. Just to make sure everything is working, let's change the default plane on which the spiral is constructed. On line[^1] 51, in `protected override void Process(IDataAccess access)`, notice that an XY plane is retrieved from the inputs...
 
 ```cs
-if (!access.GetItem(0, out Plane plane)) return;
+access.GetItem(0, out Plane plane);
 ```
 
 7. Go back to the `AddInputs`, and find the line where the _Plane_ input is registered. The chained method sets the default value of the input...
 
 ```cs
-inputs.AddPlane("Plane", "P", "Base plane for spiral").Set(Plane.WorldXY);
+inputs.AddPlane("Base Plane", "Bp", "Base plane for spiral").Set(Plane.WorldXY);
 ```
 
 8. Change the default value of the _Plane_ input to be `Plane.WorldYZ` ...
 
 ```cs
-inputs.AddPlane("Plane", "P", "Base plane for spiral").Set(Plane.WorldYZ);
+inputs.AddPlane("Base Plane", "Bp", "Base plane for spiral").Set(Plane.WorldYZ);
 ```
 
 10. Now let's examine what happens when inputs are given to this component...
 
 ### Debugging
 
-1. Set a breakpoint on line[^1] 75 of _HelloGrasshopper 2Component.cs_. You set breakpoints in Visual Studio by clicking in the gutter...
+1. Set a breakpoint on line[^1] 69 of _HelloGrasshopper 2Component.cs_. You set breakpoints in Visual Studio by clicking in the gutter...
    ![Set a breakpoint](/images/gh2/your-first-component-windows-07.png)
 1. **Build** and **Run**.
 1. Note that at first the breakpoint is not loaded, and won't be until Grasshopper 2 loads.
@@ -153,7 +153,7 @@ inputs.AddPlane("Plane", "P", "Base plane for spiral").Set(Plane.WorldYZ);
 1. In Grasshopper 2, place a _HelloGrasshopper2_ component on the canvas...as soon as you do, you should hit your breakpoint and pause...
    ![Hit a breakpoint](/images/gh2/your-first-component-windows-09.png)
 1. The reason you hit the breakpoint is because the `Process` method was called when the component was placed on the canvas. With Rhino and Grasshopper 2 paused.
-1. In **Visual Studio** let's open the autos panel, use **Ctrl + Q** and search Autos, double click the first result, make sure to _pin_ the panel on the right hand side or else it may auto close.
+1. In **Visual Studio** let's open the autos panel, use **Ctrl + Q** and search Autos, double click the first result, make sure to _pin_ the panel on the right hand side or else it may auto close. (You may need to be in Debug to see this Window)
    ![Open Autos](/images/gh2/your-first-component-windows-10.png)
 1. In the list, find the `plane` object. Our `plane` is a `Rhino.Geometry.Plane` with a value of `{Origin=0,0,0 XAxis=0,1,0, YAxis=0,0,1, ZAxis=1,0,0}` ...an YZ plane, the default, as expected.
    ![Continue Executing](/images/gh2/your-first-component-windows-11.png)
