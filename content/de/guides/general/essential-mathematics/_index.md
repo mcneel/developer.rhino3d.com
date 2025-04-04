@@ -35,7 +35,7 @@ since = 0
 
 Der Inhalt ist in drei Kapitel gegliedert. In [Kapitel 1](/guides/general/essential-mathematics/vector-mathematics/) geht es um Vektor-Mathematik einschließlich Vektordarstellung, Vektoroperation und Linien- und Ebenengleichungen. In [Kapitel 2](/guides/general/essential-mathematics/matrices-transformations/) werden Matrix-Operationen und -Transformationen erklärt. [Kapitel 3](/guides/general/essential-mathematics/parametric-curves-surfaces/) widmet sich eingehend den parametrischen Kurven mit besonderem Schwerpunkt auf NURBS-Kurven sowie den Konzepten Stetigkeit und Krümmung.  NURBS-Flächen und -Flächenverbände kommen ebenso zur Sprache.
 
-*Mein Dank geht an [Dr. Dale Lear](https://discourse.mcneel.com/u/dalelear/activity) von Robert McNeel & Associates für seine sorgfältige und fachmännische technische Nachprüfung. Seine Anmerkungen waren für die vorliegende Ausgabe von unschätzbarem Wert. Ich möchte auch Frau [Margaret Becker](https://discourse.mcneel.com/u/margaret/activity) von Robert McNeel & Associates für die Überprüfung der Technischen Redaktion und der Formatierung*.
+*Mein Dank geht an [Dr. Dale Lear](https://discourse.mcneel.com/u/dalelear/activity) von Robert McNeel & Associates für seine sorgfältige und fachmännische technische Nachprüfung. Seine Anmerkungen waren für die vorliegende Ausgabe von unschätzbarem Wert. Ich möchte auch Frau [Margaret Becker](https://discourse.mcneel.com/u/margaret/activity) von Robert McNeel & Associates für die Überprüfung der Technischen Redaktion und der Formatierung danken*.
 
 {{< /column >}}  
 </div>  
