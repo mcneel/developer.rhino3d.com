@@ -1066,7 +1066,7 @@ private void RunScript(Point3d A, Point3d B, double t, ref object S1, ref object
 
 ## Download Sample Files
 
-Download the [{{< awesome "fas fa-download">}} ](/files/math-samplesandtutorials.zip.zip) [math-samplesandtutorials.zip](/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
+Download the [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) [download samplesand tutorials](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) archive, containing all the example Grasshopper and code files in this guide.
 
 ## Next Steps
 
