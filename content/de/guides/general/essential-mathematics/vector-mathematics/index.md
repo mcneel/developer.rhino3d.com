@@ -975,7 +975,7 @@ $$A+t*(B-A)$$ : liefert einen Punkt auf dem Vektor zwischen A und B.
 
 <img src="/images/math-image10.png">  
 
-4\. Im letzten Schritt geht es um die Erzeugung der Kugel anhand einer Basisfläche und eines Radius. Wir müssen sicherstellen, dass die Ursprünge auf {{< /mathjax >}}$$C1$${{< mathjax >}} and {{< /mathjax >}}$$C2$${{< mathjax >}} festgelegt sind sowie den Radius von {{< /mathjax >}}$$r1$${{< mathjax >}} und {{< /mathjax >}}$$r2$$.  
+4\. Im letzten Schritt geht es um die Erzeugung der Kugel anhand einer Basisfläche und eines Radius. Wir müssen sicherstellen, dass die Ursprünge auf {{< /mathjax >}}$$C1$${{< mathjax >}} und {{< /mathjax >}}$$C2$${{< mathjax >}} festgelegt sind sowie den Radius von {{< /mathjax >}}$$r1$${{< mathjax >}} und {{< /mathjax >}}$$r2$$.  
 
 <img src="/images/math-image54.png">  
 
