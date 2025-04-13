@@ -46,7 +46,7 @@ This guide will cover all the eccentricities of Tree Grid Views which can be con
 {{< row >}}
 {{< column >}}
 
-Trees are a very common data structure in programming representing. Trees start as a single root node, from which all nodes are eventually connected. Nodes at the end of the tree are called leafs.
+Trees are a very common data structure in programming. Trees start as a single root node from which all nodes are eventually connected. Nodes at the end of the tree are called leafs.
 
 Each node has a single parent (Except the root) and can have any number of children. A key rule of Trees is that any node must not be descended from either itself or any of its parents (or parents descendents), grandparents etc. In the diagram these kinds of relationships are shown with the red X.
 
@@ -229,33 +229,116 @@ Generally `ObservableCollection<T>` is used to inform the UI of changes when the
 
 TreeGridView offers two reload options `ReloadItem()` which reloads 1 item (optionally including children)  and `ReloadData()` which reloads _everything_.
 
-Reloading an ENTIRE GridView due to 1 cell changing would be very inefficient, using ReloadItem is much more efficient.
+Reloading an ENTIRE GridView due to 1 cell changing is very inefficient, using ReloadItem is much more efficient.
 
-<div class="codetab">
-  <button class="tablinks3" onclick="openCodeTab(event, 'cs3')" id="defaultOpen3">C#</button>
-  <button class="tablinks3" onclick="openCodeTab(event, 'py3')">Python</button>
-</div>
+## Creating a responsive Tree Grid View UI
+Now that you're aware of the principles, it'd be good to see a fully implemented TreeGridView in action.
 
-<div class="tab-content">
-  <div class="codetab-content3" id="cs3">
+### Creating a Data Object
+Using strings to store data is simple, effective and efficient. It is however, not very extensible, what if we want to add more rows? Creating a simple small class to capture all the possible data of a row will solve this. Even if you already have a class you'd like to show in the UI, it is always worth creating a UI specific representation.
 
-```cs
-var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-dialog.ShowModal(parent);
+``` cs
+class Flaggable
+{
+    public string Name { get; set; }
+
+    public string Flag { get; set; }
+
+    public Flaggable(string name, string flag)
+    {
+        Name = name; Flag = flag;
+    }
+}
+
+var treeData = new TreeGridItemCollection()
+{
+    new TreeGridItem(new TreeGridItem[]
+    {
+        new TreeGridItem(new Flaggable("Antarctica", "🇦🇶")),
+        new TreeGridItem(new Flaggable("Africa", "🌍")),
+        new TreeGridItem(new Flaggable("Asia", "🌏")),
+        new TreeGridItem(new Flaggable("Australia", "🇦🇺")),
+        new TreeGridItem(new Flaggable("Europe", "🌍")),
+        new TreeGridItem(new Flaggable("North America", "🌎")),
+        new TreeGridItem(new Flaggable("South America", "🌎")),
+    }, 
+    new Flaggable("Earth", "🗺️"))
+};
 ```
 
-  </div>
-  <div class="codetab-content3" id="py3">
+### Extending the data set
+It's time to add more data. Why? Because we can.
 
-```py
-
+``` cs
+var treeData = new TreeGridItemCollection()
+{
+    new TreeGridItem(new TreeGridItem[]
+    {
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("The South Pole", "💈"))
+            }, new Flaggable("Antarctica", "🇦🇶")),
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("South Africa", "🇿🇦")),
+                new TreeGridItem(new Flaggable("Kenya", "🇰🇪")),
+            }, new Flaggable("Africa", "🌍")),
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("China", "🇨🇳")),
+                new TreeGridItem(new Flaggable("Japan", "🇯🇵"))
+            }, new Flaggable("Asia", "🌏")),
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("Sydney", "🏖️")),
+                new TreeGridItem(new Flaggable("Canberra", "🐨")),
+            }, new Flaggable("Australia", "🇦🇺")),
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("Belgium", "🇧🇪")),
+                new TreeGridItem(new Flaggable("Monaco", "🇲🇨")),
+            }, new Flaggable("Europe", "🌍")),
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("Canada", "🇨🇦")),
+                new TreeGridItem(new Flaggable("Mexico", "🇲🇽")),
+            }, new Flaggable("North America", "🌎")),
+        new TreeGridItem(new []{
+                new TreeGridItem(new Flaggable("Brazil", "🇧🇷")),
+                new TreeGridItem(new Flaggable("Colombia", "🇨🇴")),
+            }, new Flaggable("South America", "🌎")),
+    }, 
+    new Flaggable("Earth", "🗺️"))
+};
 ```
 
-  </div>
-</div>
+## The Custom Cell
+This example makes use of the Custom Cell. It's not strictly necessary, but it is the most tricky cell and understanding how to use it is very useful.
+
+Note that GridViews make use of Indirect Bindings...
+
+``` cs
+class CustCell : CustomCell
+{
+  protected override Control OnCreateCell(CellEventArgs args)
+  {
+    var label = new Label() { TextAlignment = TextAlignment.Left };
+    label.BindDataContext(l => l.Text, (Flaggable f) => f.Name);
+    return label;
+  }
+
+  protected override void OnConfigureCell(CellEventArgs args, Control control)
+  {
+    if (control is not Label text) return;
+    if (args.Item is not TreeGridItem item) return;
+    if (item.Values?.FirstOrDefault() is not Flaggable flag) return;
+
+    text.Text = flag.Name;
+  }
+}
+```
+
+### ...
+
+asdasdad
 
 
-## Code
+### Putting it all Together
+The final example includes a label to display the Flag of the selected item in the TreeGridView.
 
 <div class="codetab">
   <button class="tablinks1" onclick="openCodeTab(event, 'cs1')" id="defaultOpen1">C#</button>
@@ -324,23 +407,26 @@ var treeData = new TreeGridItemCollection()
 };
 
 
+// TODO : Create a ticket for Ehsan, if this code is Debugged with only the TODO's enabled, and a breakpoint is put on line 72 (control.DataContext = ...) the editor is SLOW AF and does not work well. A window called GetStringProxy appears?
+// ENSURE YOU INCLUDE LOGS
 
 class CustCell : CustomCell
 {
-    protected override Control OnCreateCell(CellEventArgs args)
-    {
-        var textBox = new Label() { TextAlignment = TextAlignment.Left };
-        return textBox;
-    }
+  protected override Control OnCreateCell(CellEventArgs args)
+  {
+    var label = new Label() { TextAlignment = TextAlignment.Left };
+    label.BindDataContext(l => l.Text, (Flaggable f) => f.Name);
+    return label;
+  }
 
-    protected override void OnConfigureCell(CellEventArgs args, Control control)
-    {
-        if (control is not Label text) return;
-        if (args.Item is not TreeGridItem item) return;
-        if (item.Values?.FirstOrDefault() is not Flaggable flag) return;
+  protected override void OnConfigureCell(CellEventArgs args, Control control)
+  {
+    if (control is not Label text) return;
+    if (args.Item is not TreeGridItem item) return;
+    if (item.Values?.FirstOrDefault() is not Flaggable flag) return;
 
-        text.Text = flag.Name;
-    }
+    text.Text = flag.Name;
+  }
 }
 
 var treeGridView = new TreeGridView()
@@ -350,7 +436,7 @@ var treeGridView = new TreeGridView()
     new GridColumn()
     {
       HeaderText = "Place",
-      DataCell = new CustCell(), //(nameof(Flaggable.Name)),
+      DataCell = new CustCell(),
     },
   },
   DataStore = treeData,
