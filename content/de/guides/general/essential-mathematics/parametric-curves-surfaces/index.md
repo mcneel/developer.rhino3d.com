@@ -48,7 +48,7 @@ Wir haben bereits gesehen, dass die parametrische Gleichung einer Linie hinsicht
 Wobei:
 
 &nbsp; {{< mathjax >}}$$x$${{< /mathjax >}}, {{< mathjax >}}$$y$${{< /mathjax >}} und {{< mathjax >}}$$z$${{< /mathjax >}} Funktionen von t sind und t eine Auswahl reeller Zahlen repräsentiert.<br>
-&nbsp; {{< mathjax >}}$$x’$${{< /mathjax >}}, {{< mathjax >}}$$y’$${{< /mathjax >}} und {{< mathjax >}}$$z’$${{< /mathjax >}} die Koordinaten eines Punktes auf dem Linienabschnitt sind.<br>
+&nbsp; {{< mathjax >}}$$x’$${{< /mathjax >}}, {{< mathjax >}}$$y’$${{< /mathjax >}} und {{< mathjax >}}$$z’$${{< /mathjax >}} sind die Koordinaten eines Punktes auf dem Linienabschnitt.<br>
 &nbsp; {{< mathjax >}}$$a$${{< /mathjax >}}, {{< mathjax >}}$$b$${{< /mathjax >}} und {{< mathjax >}}$$c$${{< /mathjax >}} die Neigung der Linie bestimmen, so dass der Vektor {{< mathjax >}}$$\mathbf{\vec v} <a, b, c>$${{< /mathjax >}} parallel zur Linie ist.
 
 {{< image url="/images/math-image108.png" alt="/images/math-image108.png" class="float_right" width="275" >}}   
@@ -328,16 +328,16 @@ Hier sehen Sie zwei Kurven mit gleichem Grad, sowie gleicher Anzahl und Position
 
 <table width="100%">  
 <tr style="border-bottom: 1px solid #ccc;border-top: 1px solid #ccc;">  
-<td>Grad = 3<br>
+<td>Degree = 3<br>
 Anzahl der Kontrollpunkte = 7<br>
-Knoten = <0,0,0,1,2,3,4,4,4> = 9 Knoten<br>
+knots = <0,0,0,1,2,3,4,4,4> = 9 knots<br>
 Domäne (0 bis 4)</td>  
 <td width="50%"><img src="/images/math-image151.png"></td>  
 </tr>  
 <tr style="border-bottom: 1px solid #ccc;">  
-<td>Grad = 3<br>
+<td>Degree = 3<br>
 Anzahl der Kontrollpunkte = 7<br>
-Knoten = <0,0,0,1,1,1,4,4,4> = 9 Knoten<br>
+knots = <0,0,0,1,1,1,4,4,4> = 9 knots<br>
 Domäne (0 bis 4)
 <b>Hinweis:</b> Ein vollständiger Mehrfachknoten in der Mitte erzeugt einen Knick und die Kurve wird durch den angegliederten Kontrollpunkt gezwungen.</td>  
 <td><img src="/images/math-image154.png"></td>  
@@ -365,7 +365,7 @@ NURBS-Kurven dürfen nicht-gleichförmige Abstände zwischen Knoten haben. Dies 
 </figure> 
 
 Ein Beispiel für eine Kurve, die sowohl nicht-gleichförmig als auch rational wäre, ist ein NURBS-Kreis. Die folgende ist eine Kurve zweiten Grades mit 9 Kontrollpunkten und 10 Knoten. Domäne ist 0-4, und die Abstände variieren zwischen 0 und 1.
-KnotenKnoten = <0,0,1,1,2,2,3,3,4,4> --- (volle Multiplizität in den inneren Knoten)
+knots = <0,0,1,1,2,2,3,3,4,4> --- (full multiplicity in the interior knots)
 Abstände zwischen Knoten = [0,1,0,1,0,1,0,1,0] --- (nicht-gleichförmig)
 
 <figure>
@@ -530,7 +530,7 @@ Suchen Sie den Punkt auf Kurve an {{< mathjax >}}$$u=0.4$${{< /mathjax >}}-Param
 Stetigkeit ist ein wichtiges Konzept in der 3D-Modellierung. Stetigkeit ist wichtig, um visuelle Glätte wie auch sanftes Licht und Luftströmung zu erhalten.
 Die folgende Tabelle enthält verschiedene Stetigkeiten und ihre Definitionen:  
 
- **G0**| (Positionsstetig) | Zwei miteinander verbundene Kurvensegmente |  
+**G0**| (Positionsstetig) | Zwei miteinander verbundene Kurvensegmente |  
 | **G1**| (Tangentenstetig) | Die Richtung der Tangente am Verbindungspunkt ist für beide Kurvensegmente gleich. |  
 | **G2**| ( Krümmungsstetig) | Krümmungen wie auch Tangenten stimmen für beide Kurvensegmente am gemeinsamen Endpunkt überein. |  
 | **GN**|....... | Die Kurven stimmen übergeordnet miteinander ein |  
@@ -597,9 +597,9 @@ Eine Punktumwandlung von kugelförmiger zu Cartesianischer Koordinate erhält ma
 
 Wobei:  
 
-&nbsp; {{< mathjax >}}$$r$${{< /mathjax >}} Entfernung vom Ursprung {{< mathjax >}}$$≥ 0$${{< /mathjax >}} ist   
-&nbsp; {{< mathjax >}}$$θ$${{< /mathjax >}} von {{< mathjax >}}$$0$${{< /mathjax >}} bis {{< mathjax >}}$$2π$${{< /mathjax >}} läuft  
-&nbsp; {{< mathjax >}}$$ø$${{< /mathjax >}} von {{< mathjax >}}$$0$${{< /mathjax >}} bis {{< mathjax >}}$$π$${{< /mathjax >}} läuft  
+&nbsp; {{< mathjax >}}$$r$${{< /mathjax >}} Entfernung vom Ursprung {{< mathjax >}}$$≥ 0$$ ist{{< /mathjax >}}   
+&nbsp; {{< mathjax >}}$$θ$${{< /mathjax >}} von {{< mathjax >}}$$0$${{< /mathjax >}} bis {{< mathjax >}}$$2π$$ läuft{{< /mathjax >}}  
+&nbsp; {{< mathjax >}}$$ø$${{< /mathjax >}} von {{< mathjax >}}$$0$${{< /mathjax >}} bis {{< mathjax >}}$$π$$ läuft{{< /mathjax >}}  
 
 Da {{< mathjax >}}$$r$${{< /mathjax >}} in einer kugelförmigen Oberfläche konstant ist, verbleiben uns nur zwei Variablen, daher können wir die obige zur Erstellung einer parametrischen Darstellung einer kugelförmigen Fläche verwenden:  
 
@@ -662,7 +662,7 @@ Viele Modelle können nicht anhand einer einzigen Füllfläche erzeugt werden. S
 Die folgende Tabelle enthält verschiedene Stetigkeiten und ihre Definitionen:
 
 
- **G0**| (Positionsstetig) | Zwei miteinander verbundene Flächen. |  
+**G0**| (Positionsstetig) | Zwei miteinander verbundene Flächen. |  
 | **G1**| (Tangentenstetig) | Die einander entsprechenden Tangenten der beiden Flächen entlang ihrer Verbindungskante sind sowohl in u- als auch v-Richtung parallel. |  
 | **G2**| ( Krümmungsstetig) | Krümmungen wie auch Tangenten stimmen für beide Flächen an der gemeinsamen Kante überein. |  
 | **GN**|....... Die Flächen stimmen übergeordnet miteinander ein. |  
@@ -1202,7 +1202,7 @@ private void RunScript(Brep srf, ref object A)
 
 ## Beispieldateien herunterladen
 
-Laden Sie das Archiv [{{< awesome "fas fa-download">}} ](/files/math-samplesandtutorials.zip.zip) [math-samplesandtutorials.zip](/files/math-samplesandtutorials.zip) herunter, das alle Grasshopper-Beispiele und Codedateien in diesem Handbuch enthält.
+Laden Sie das Archiv [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) [download samplesand tutorials](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) herunter, das alle Grasshopper-Beispiele und Codedateien in diesem Leitfaden enthält.
 
 ## Weitere Schritte:
 
