@@ -237,7 +237,17 @@ Now that you're aware of the principles, it'd be good to see a fully implemented
 ### Creating a Data Object
 Using strings to store data is simple, effective and efficient. It is however, not very extensible, what if we want to add more rows? Creating a simple small class to capture all the possible data of a row will solve this. Even if you already have a class you'd like to show in the UI, it is always worth creating a UI specific representation.
 
-``` cs
+
+<div class="codetab">
+  <button class="tablinks5" onclick="openCodeTab(event, 'cs5')" id="defaultOpen5">C#</button>
+  <button class="tablinks5" onclick="openCodeTab(event, 'py5')">Python</button>
+</div>
+
+<div class="tab-content">
+  <div class="codetab-content5" id="cs5">
+
+``` cs no-compile
+
 class Flaggable
 {
     public string Name { get; set; }
@@ -266,10 +276,38 @@ var treeData = new TreeGridItemCollection()
 };
 ```
 
-### Extending the data set
-It's time to add more data. Why? Because we can.
+  </div>
+  <div class="codetab-content5" id="py5">
 
-``` cs
+``` py
+from Eto.Collections import TreeGridItemCollection, TreeGridItem
+
+class Flaggable():
+  def __init__(self, name:str, flag: str):
+    self.name = name
+    self.flag = flag
+
+tree_data = TreeGridItemCollection()
+from Eto.Forms import TreeGridItemCollection, TreeGridItem
+
+class Flaggable():
+  def __init__(self, name:str, flag: str):
+    self.name = name
+    self.flag = flag
+
+tree_data = TreeGridItemCollection()
+tree_data.Add(TreeGridItem(Flaggable("Antarctica", "🇦🇶"))
+
+
+```
+
+  </div>
+</div>
+
+### Extending the data set
+It's time to add more data, specifically nested data so that the UI tree structure is fully utilised.
+
+``` cs no-compile
 var treeData = new TreeGridItemCollection()
 {
     new TreeGridItem(new TreeGridItem[]
@@ -311,7 +349,7 @@ This example makes use of the Custom Cell. It's not strictly necessary, but it i
 
 Note that GridViews make use of Indirect Bindings...
 
-``` cs
+``` cs no-compile
 class CustCell : CustomCell
 {
   protected override Control OnCreateCell(CellEventArgs args)
@@ -323,19 +361,12 @@ class CustCell : CustomCell
 
   protected override void OnConfigureCell(CellEventArgs args, Control control)
   {
-    if (control is not Label text) return;
     if (args.Item is not TreeGridItem item) return;
     if (item.Values?.FirstOrDefault() is not Flaggable flag) return;
-
-    text.Text = flag.Name;
+    control.DataContext = flag;
   }
 }
 ```
-
-### ...
-
-asdasdad
-
 
 ### Putting it all Together
 The final example includes a label to display the Flag of the selected item in the TreeGridView.
