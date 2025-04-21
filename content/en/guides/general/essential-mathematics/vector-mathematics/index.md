@@ -180,7 +180,7 @@ The unit vector of {{< mathjax >}}$$\mathbf{\vec a} = <a_1/\vert \mathbf{\vec a}
 Vector scalar operation involves multiplying a vector by a number. For example:  
 
 {{< mathjax >}}$$\mathbf{\vec a} = <4, 3, 0>$${{< /mathjax >}}  
-{{< mathjax >}}$$2* \mathbf{\vec a} = <2*4, 2*3, 2*0> $${{< /mathjax >}}  
+{{< mathjax >}}$$2* \mathbf{\vec a} = <2*4, 2*3, 2*0>$${{< /mathjax >}}  
 {{< mathjax >}}$$2*\mathbf{\vec a} = <8, 6, 0>$${{< /mathjax >}}  
 
 <figure>
