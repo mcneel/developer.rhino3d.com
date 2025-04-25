@@ -30,7 +30,7 @@ since = 0
 
 - [What is RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon/)
 - [What's New?](/guides/rhinocommon/whats-new/)
-- [Moving to .NET 7](/guides/rhinocommon/moving-to-dotnet-7)
+- [Moving to .NET Core](/guides/rhinocommon/moving-to-dotnet-core)
 
 ### Getting Started
 

@@ -100,7 +100,7 @@ Microsoft develops the [.NET Framework](https://www.microsoft.com/net/framework)
 
 The Microsoft .NET framework ships with Windows.
 
-In Rhino for Mac, we embed [.NET Core](/guides/rhinocommon/moving-to-dotnet-7/) within the app itself.
+In Rhino for Mac, we embed [.NET Core](/guides/rhinocommon/moving-to-dotnet-core/) within the app itself.
 
 ### RhinoCommon
 
