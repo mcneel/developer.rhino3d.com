@@ -17,7 +17,7 @@ list_group = "uncategorized"
 +++
 
 {{< call-out note "Need help migrating C# to Rhino 8?" >}}
-Please check out the [Moving to .NET 7 guide](/guides/rhinocommon/moving-to-dotnet-7/).
+Please check out the [Moving to .NET Core guide](/guides/rhinocommon/moving-to-dotnet-core/).
 {{< /call-out >}}
 
 {{< vimeo 188730450 >}}

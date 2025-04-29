@@ -1,11 +1,12 @@
 +++
+aliases = ["/en/guides/rhinocommon/moving-to-dotnet-7/"]
 authors = ["curtis", "callum"]
 categories = [ "Overview" ]
-description = "This guide walks you through making the transition to .NET 7"
+description = "This guide walks you through making the transition to .NET Core"
 keywords = [ ".NET", "RhinoCommon", "Plugin" ]
 languages = [ "C#", "VB" ]
 sdk = [ "RhinoCommon" ]
-title = "Moving to .NET 7"
+title = "Moving to .NET Core"
 type = "guides"
 weight = 3
 
@@ -41,10 +42,15 @@ Additionally, using .NET Core on Mac eliminates a lot of compatibility issues be
 
 ## Choosing the .NET Runtime on Windows
 
-There may be reasons to continue to use .NET Framework on Windows, in particular if you need to use 3rd party plugins that aren't compatible with .NET Core yet.  The disadvantage to using .NET Framework is that Rhino may run a little slower in certain use cases.  There are two ways to select the runtime that Rhino uses:
+There may be reasons to continue to use .NET Framework on Windows, in particular if you need to use 3rd party plugins that aren't compatible with .NET Core yet.  The disadvantage to using .NET Framework is that Rhino may run a little slower in certain use cases. 
+
+Rhino 8 initially shipped with the .NET 7.0.0 runtime.  Rhino 8.12 or later has the option to use a manually installed .NET 8 runtime, and Rhino 8.20 installs and defaults to using .NET 8.0.14 or later.
+
+There are a few ways to select the runtime and version that Rhino uses:
 
 1. Use the `SetDotNetRuntime` command, then restart Rhino.
 1. Pass either `/netcore` or `/netfx` as an argument when launching `Rhino.exe`. This overrides the `SetDotNetRuntime` setting.
+1. Pass either `/netcore-8` or `/netcore-7` to specify a particular .NET Core version. This requires that the chosen version is manually installed if it’s different from Rhino’s default.
 
 ## Rhino.Inside
 
@@ -64,9 +70,9 @@ You can also use Microsoft's [upgrade assistant](https://learn.microsoft.com/en-
 
 ## Migrating your plugin
 
-It is recommended to keep your plugin(s) targetted at .NET 4.8 so that it can run in either runtime on Windows. Most plugins won't need any changes to run in Rhino 8.
+Many plugins won't need any changes to run in Rhino 8 with .NET Core, but if they do it is recommended to multi-target your plugin(s) for .NET 4.8 and .NET 7.0 so that it can run in either runtime on Windows.
 
-For Mac-specific plugins you must target .NET 7 as that is the only runtime available in Rhino 8. If you want the plugin to be compatible only with Rhino 7, keep the target at .NET 4.8.
+For Mac-specific plugins you can target .NET 7.0 as .NET Core is the only runtime available in Rhino 8. If you want the plugin to be compatible with Rhino 7, target .NET 4.8 instead or use multi-targeting.
 
 {{< call-out warning "AnyCPU" >}}
 
@@ -74,9 +80,9 @@ Since Rhino 8 can run natively on Apple Silicon or on Intel, you must compile yo
 
 {{< /call-out >}}
 
-If your plugin uses any unavailable or non-working APIs when running in .NET Core, some code changes may be necessary. The compat report will show you which APIs you need to avoid.
+If your plugin uses any unavailable or non-working APIs when running in .NET Core, some code changes may be necessary. This is especially true with many 3rd party libraries that have different versions of their library for .NET 4.8 and .NET Core.  The compat report will show you which APIs and libraries you need to avoid or update.
 
-If you [multi-target your project](https://learn.microsoft.com/en-us/nuget/create-packages/multiple-target-frameworks-project-file) to both .NET 4.8 and .NET 7.0, you can easily find and resolve compatibility issues during compilation. Keep in mind that .NET 4.8 only needs to be included for Windows and not Mac..
+If you [multi-target your project](https://learn.microsoft.com/en-us/nuget/create-packages/multiple-target-frameworks-project-file) to both .NET 4.8 and .NET 7.0, you can easily find and resolve compatibility issues during compilation.
 
 ## Debugging .NET Core on Windows
 
@@ -86,9 +92,11 @@ Visual Studio determines the debugging runtime by the project's target framework
 
 With Visual Studio Code, use the `coreclr` debugger type from the C# extension. You do not need to multi-target or create a launcher project when using Visual Studio Code.
 
+Our [project templates](https://github.com/mcneel/RhinoVisualStudioExtensions?tab=readme-ov-file#rhinocommon-visual-studio-extensions) automatically create a multi-targeted plugin, creates launch configurations for both VS and VS Code, and has options to include a yak packaging step for multiple Rhino versions.
+
 ### How to add a .NET Core launcher project in Visual Studio
 
-This is only required when you want to debug in .NET Core using Visual Studio 2022 on Windows.
+This is only required when you want to debug in .NET Core using Visual Studio 2022 on Windows, and if you're not ready to multi-target your project(s).
 
 1. Right-click on your solution node and select *Add > New Project...*
 1. Select the C# **Console App** then click *Next*.

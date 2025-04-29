@@ -31,7 +31,7 @@ by Curtis Wensley.  Recorded May 4th, 2023.
 
 <br/>
 
-See the [Moving to .NET 7](/guides/rhinocommon/moving-to-dotnet-7) guide for additional details.
+See the [Moving to .NET Core](/guides/rhinocommon/moving-to-dotnet-core) guide for additional details.
 
 <br/>
 
