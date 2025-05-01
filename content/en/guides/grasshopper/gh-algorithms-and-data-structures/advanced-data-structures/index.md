@@ -1,5 +1,5 @@
 +++
-aliases = ["/en"]
+aliases = []
 authors = [ "rajaa" ]
 categories = [ "Essentials Algorithms and Data Structures" ]
 category_page = "guides/grasshopper/gh-algorithms-and-data/"

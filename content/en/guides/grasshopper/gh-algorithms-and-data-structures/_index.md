@@ -1,5 +1,5 @@
 +++
-aliases = ["/en"]
+aliases = []
 authors = [ "rajaa" ]
 categories = [ "" ]
 description = "Introduces the fundementals of algorithmic design and data structures using Grasshopper."
