@@ -2,11 +2,11 @@
 aliases = ["/en/5/guides/compute/compute-faq/", "/en/6/guides/compute/compute-faq/", "/en/7/guides/compute/compute-faq/", "/en/wip/guides/compute/compute-faq/", "/en/guides/compute/faq/"]
 authors = [ "andy.payne" ]
 categories = [ "Getting Started" ]
-description = "This guide is a list of Frequently Asked Questions (FAQ)."
+description = "This guide is a list of Frequently Asked Questions (FAQ) for Rhino.Compute."
 keywords = [ "developer", "compute", "faq" ]
 languages = []
 sdk = [ "Compute" ]
-title = "Frequently Asked Questions"
+title = "Frequently Asked Questions For Rhino.Compute"
 type = "guides"
 weight = 1
 override_last_modified = "2025-05-06T09:45:21Z"
