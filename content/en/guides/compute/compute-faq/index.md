@@ -88,7 +88,7 @@ At this point, you should see a new application appear in your task bar (if you 
 <br>
 If you are running Rhino.Compute on a VM, then the log files are saved as text files. New log files will be created daily. By default, the log files are saved under the following location: 
 
-```markdown
+```cs
 C:\inetpub\wwwroot\aspnet_client\system_web\4_0_30319\rhino.compute\logs\
 ```
 
