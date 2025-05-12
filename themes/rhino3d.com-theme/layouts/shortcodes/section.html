@@ -14,5 +14,5 @@
   {{- $label = .Inner -}}
 {{- end -}}
 <div class='section' style='display:none' data-group='{{ $group }}' data-name='{{ $name }}'>
-    {{ $label | markdownify }}
+    {{ $label | .Page.RenderString }}
 </div>

@@ -7,10 +7,10 @@
 {{- if .Get "image-override"}}{{- $imageOverride =  .Get "image-override" -}}{{- end -}}
 
 <span class="unfurl-link">
-    {{ .Inner | markdownify }}
+    {{ .Inner | .Page.RenderString }}
     <script>
         var parser = new DOMParser();
-        var linkDoc = parser.parseFromString("{{(.Inner | markdownify) }}", 'text/html');
+        var linkDoc = parser.parseFromString("{{(.Inner | .Page.RenderString) }}", 'text/html');
         var href = linkDoc.querySelector('a').getAttribute('href');
 
         //the current <script> element is also the last <script> element, at the time of execution. https://stackoverflow.com/questions/10299846/obtain-a-reference-to-script-parent-element

@@ -8,5 +8,5 @@
     {{ if .Get 1 }}{{ $style = .Get 1 }}{{ end }}
 {{ end }}
 <div {{ with $class }}class="{{ $class }}"{{ end }} {{ with $style }}style="{{ $style }}"{{ end }}>
-{{ .Inner | markdownify }}
+{{ .Inner | .Page.RenderString }}
 </div>

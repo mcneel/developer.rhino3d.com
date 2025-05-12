@@ -11,8 +11,8 @@
 {{- if eq ($.Scratch.Get "caption-position") "top" -}}
     {{ if .Get 2 }}
     <div id="textbox">
-        <p style="float: left; text-align:left;">{{ .Get 2 | markdownify }}</p>
-        <p style="float: right; text-align:right;">{{ if .Get 3 }}{{ .Get 3 | markdownify }}{{ end }}</p>
+        <p style="float: left; text-align:left;">{{ .Get 2 | .Page.RenderString }}</p>
+        <p style="float: right; text-align:right;">{{ if .Get 3 }}{{ .Get 3 | .Page.RenderString }}{{ end }}</p>
     </div>
     <div style="clear: both;"></div>
     {{ end }}
@@ -36,8 +36,8 @@
 {{- if eq ($.Scratch.Get "caption-position") "bottom" -}}
     {{ if .Get 2 }}
     <div id="textbox">
-        <p style="float: left; text-align:left;">{{ .Get 2 | markdownify }}</p>
-        <p style="float: right; text-align:right;">{{ if .Get 3 }}{{ .Get 3 | markdownify }}{{ end }}</p>
+        <p style="float: left; text-align:left;">{{ .Get 2 | .Page.RenderString }}</p>
+        <p style="float: right; text-align:right;">{{ if .Get 3 }}{{ .Get 3 | .Page.RenderString }}{{ end }}</p>
     </div>
     <div style="clear: both;"></div>
     {{ end }}

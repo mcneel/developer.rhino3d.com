@@ -1,0 +1,39 @@
+<script type="text/javascript" src='{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}'></script>
+<script type="module">
+    const tocData = TOML.parse(`{{ .Inner }}`);
+    document.addEventListener("DOMContentLoaded", () => {
+        const tocContainer = document.querySelector(".toc aside nav#TableOfContents");
+        if (tocData && tocContainer) {
+            tocContainer.innerHTML = ""; // Clear existing content
+            tocData.sections.forEach(section => {
+                const sectionWrapper = document.createElement("ul");
+                sectionWrapper.classList.add("nav-wrapper");
+
+                const sectionItem = document.createElement("li");
+                sectionItem.classList.add("nav-item");
+
+                const sectionLink = document.createElement("a");
+                sectionLink.classList.add("nav-group-link");
+                sectionLink.textContent = section.title;
+
+                sectionItem.appendChild(sectionLink);
+                sectionWrapper.appendChild(sectionItem);
+
+                section.items.forEach(item => {
+                    const itemElement = document.createElement("li");
+                    itemElement.classList.add("nav-item");
+
+                    const itemLink = document.createElement("a");
+                    itemLink.classList.add("toplevel-nav-link");
+                    itemLink.href = item.link;
+                    itemLink.textContent = item.text;
+
+                    itemElement.appendChild(itemLink);
+                    sectionWrapper.appendChild(itemElement);
+                });
+
+                tocContainer.appendChild(sectionWrapper);
+            });
+        }
+    });
+</script>

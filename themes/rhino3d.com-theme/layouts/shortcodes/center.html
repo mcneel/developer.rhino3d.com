@@ -2,15 +2,15 @@
 {{- $type := .Get 0 -}}
 {{- if eq $type "image" -}}
 <div style="display: flex; justify-content: center;">
-{{- .Inner | markdownify -}}
+{{- .Inner | .Page.RenderString -}}
 </div>
 {{- else -}}
 <div style="text-align: center;display: block;">
-{{- .Inner | markdownify -}}
+{{- .Inner | .Page.RenderString -}}
 </div>
 {{- end -}}
 {{- else -}}
 <div style="text-align: center; display: block;">
-{{- .Inner | markdownify -}}
+{{- .Inner | .Page.RenderString -}}
 </div>
 {{- end -}}

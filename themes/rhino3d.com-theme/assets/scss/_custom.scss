@@ -418,12 +418,6 @@ li .new-callout-bullet {
 	display:inline-block;
 }
 
-.recommended-label {
-	@extend .comingsoon-label;
-	background-color: orangered;
-	padding-bottom: 2px;
-	padding-top: 2px;
-}
 
 /* 
 ##################################################################
@@ -700,7 +694,7 @@ table.multiline-middle img{
 	line-height: 1.2em;
 	text-align: center;
 	min-width: 1.2em;
-    padding: .2em;
+    padding: .1em;
 }
 
 .keyboard-btn {
@@ -779,13 +773,3 @@ table.multiline-middle img{
 	stroke: #000;
 	shape-rendering: crispEdges;
   }
-
-  /*
-##############################################################################
-## Overload the learn grids
-##############################################################################
-*/
-
-  .learn-grid-width {
-	width: auto !important;
-}

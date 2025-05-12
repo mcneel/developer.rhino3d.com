@@ -4,22 +4,21 @@
 <div class="box{{ with .Get "caption-position" }} fancy-figure caption-position-{{.}}{{end}}{{ with .Get "caption-effect" }} caption-effect-{{.}}{{end}}" {{ with .Get "width" }}style="max-width:{{.}}"{{end}}>
 <figure {{ with .Get "class" }}class="{{.}}"{{- end -}} itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 {{ if hasPrefix $thumb "/images/"}}
-{{- $style_url := ($thumb | relURL ) -}}
-{{- if eq hugo.Environment "development" -}}
-<div class="img"{{- if .Parent -}} {{- if .Get "no-back" -}}{{- else -}}style="background-image: url({{ $style_url }});" {{- end -}}{{- end -}}{{- with .Get "size" -}} data-size="{{.}}"{{- end -}}>
-<img itemprop="thumbnail" src="{{ $thumb | relURL }}" {{ with .Get "alt" | default (.Get "caption") }}alt="{{.}}"{{ end }}/><!-- <img> hidden if in .gallery -->
-</div>
+    {{- if eq hugo.Environment "development" -}}
+        {{- $.Page.Scratch.Set "thumbnail_url" ($thumb | relURL ) -}}
+    {{- else -}}
+        {{- $.Page.Scratch.Set "thumbnail_url" (print .Site.Params.rhinoURLNewSource $thumb) -}}
+    {{- end -}}
+{{- else if hasPrefix $thumb ".." -}}
+    {{- $.Page.Scratch.Set "thumbnail_url" $thumb -}}
+{{- else if hasPrefix $thumb "http" -}}
+    {{- $.Page.Scratch.Set "thumbnail_url" $thumb -}}
 {{- else -}}
-{{- $abs_url := print .Site.Params.rhinoURLNewSource $thumb -}}
-<div class="img"{{- if .Parent -}} {{- if .Get "no-back" -}}{{- else -}}style="background-image: url({{ $abs_url }});" {{- end -}}{{- end -}}{{- with .Get "size" -}} data-size="{{.}}"{{- end -}}>
-<img itemprop="thumbnail" src="{{ $thumb | relURL }}" {{- with .Get "alt" | default (.Get "caption") -}}alt="{{.}}"{{- end -}}/><!-- <img> hidden if in .gallery -->
-</div>
+    {{- $.Page.Scratch.Set "thumbnail_url" (.Page.Resources.GetMatch ( printf "%s" $thumb)).RelPermalink -}}
 {{- end -}}
-{{- else -}}
-<div class="img"{{- if .Parent -}} {{- if .Get "no-back" -}}{{- else -}}style="background-image: url({{ $thumb }});" {{- end -}}{{- end -}}{{- with .Get "size" -}} data-size="{{.}}"{{- end -}}>
-<img itemprop="thumbnail" src="{{ $thumb }}" {{- with .Get "alt" | default (.Get "caption") -}}alt="{{.}}"{{- end -}}/><!-- <img> hidden if in .gallery -->
+<div class="img"{{- if .Parent -}} {{- if .Get "no-back" -}}{{- else -}}style="background-image: url({{ ($.Page.Scratch.Get "thumbnail_url")}});" {{- end -}}{{- end -}}{{- with .Get "size" -}} data-size="{{.}}"{{- end -}}>
+    <img itemprop="thumbnail" src="{{ ($.Page.Scratch.Get "thumbnail_url")}}" {{- with .Get "alt" | default (.Get "caption") -}}alt="{{.}}"{{- end -}}/>
 </div>
-{{- end -}}
 {{- with .Get "link" | default (.Get "src") -}}<a href="{{.}}" itemprop="contentUrl"></a>{{- end -}}
 {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
 <figcaption>

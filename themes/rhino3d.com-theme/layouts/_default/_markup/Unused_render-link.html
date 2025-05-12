@@ -86,7 +86,7 @@
 
     {{/*  <script>
         let parser = new DOMParser();
-        let doc = parser.parseFromString("{{(.Inner | markdownify) }}", 'text/html');
+        let doc = parser.parseFromString("{{(.Inner | .Page.RenderString) }}", 'text/html');
         let href = doc.querySelector('a').getAttribute('href');
         console.log("getting link info:", href)
 

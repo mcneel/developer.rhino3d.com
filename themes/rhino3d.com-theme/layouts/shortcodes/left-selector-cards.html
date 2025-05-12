@@ -113,7 +113,7 @@
     <td style="width: 200px; padding: 0">
       <ul id="leftSelectorCards" class="leftSelectorCards"></ul>
     </td>
-    <td>{{ .Inner | markdownify }}</td>
+    <td>{{ .Inner | .Page.RenderString }}</td>
   </tr>
 </table>
 

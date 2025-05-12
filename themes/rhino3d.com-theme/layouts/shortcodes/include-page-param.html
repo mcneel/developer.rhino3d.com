@@ -26,6 +26,6 @@
 <span class="shortcode-error">Error: {{ $.Scratch.Get "error_message" }}<br>Shortcode usage: &lbrace;&lbrace;&lt; include-page-param page=[path-to-page] param=[param-name] &gt;&rbrace;&rbrace;</span>
 {{- else -}}
     {{ with .Site.GetPage ($.Scratch.Get "page") }}
-        {{ .Param ($.Scratch.Get "param") | markdownify }}
+        {{ .Param ($.Scratch.Get "param") | .Page.RenderString }}
     {{ end }}
 {{- end -}}

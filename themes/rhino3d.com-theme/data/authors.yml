@@ -149,6 +149,12 @@ brianj:
   email: brianj@mcneel.com
   discourse: BrianJ
   github: BrianJames
+brittney.holmes:
+  name: Brittney Holmes
+  display_name: Brittney Holmes
+  email: 
+  discourse: 
+  github: 
 callum:
   name: Callum Sykes
   display_name: Callum @McNeel
@@ -879,6 +885,13 @@ sandy:
   email: sandy@mcneel.com
   discourse: sandy
   github: SMcNeel
+yoon:
+  name: Yoon Sang hoon
+  display_name: ByRhino3D
+  email: yoon@mcneel.com
+  discourse: yoon
+  github: yoon
+
 david.stasiuk:
   name: David Stasiuk
   email: ''
@@ -890,10 +903,11 @@ nicolas.sterling:
   discourse: ''
   github: ''
 yoon:
-  name: Sanghoon Yoon
+  name: Sang hoon Yoon
+  display_name: PlusPlastic
   email: yoon@mcneel.com
   discourse: yoon
-  github: JorinChi
+  github: yoon
 samw:
   name: Sam Whitworth
   email: https://www.youtube.com/@samwhitworth9540
@@ -951,11 +965,11 @@ steve:
   discourse: stevebaer
   github: sbaer
 stevef:
-name: Steve Fuchs
-display_name: SteveF @McNeel
-email: steve.fuchs@mcneel.com
-discourse: stevefuchs
-github: stevefuchs
+  name: Steve Fuchs
+  display_name: SteveF @McNeel
+  email: steve.fuchs@mcneel.com
+  discourse: stevefuchs
+  github: stevefuchs
 structured.parametrics:
   name: Structured Parametrics
   email: ''
