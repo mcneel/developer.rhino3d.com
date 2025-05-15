@@ -100,6 +100,15 @@ platforms = [ "Windows", "Mac" ]
 {{< /column >}}
 {{< /row >}}
 
+{{< row >}}
+{{< column >}}
+
+### Eto Events 
+- [Drag Drop](drag-drop/)
+
+{{< /column >}}
+{{< /row >}}
+
 ## DataContext and View Models
 
 {{< call-out note "View Models" >}}
