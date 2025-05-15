@@ -51,7 +51,7 @@ You can think of variables as labeled containers in your computer’s memory whe
 <figure>
    <img src="variable_container.png">
    <figcaption>Figure(16): How variables are stored in a computer's memory</figcaption>
-</figure>  
+</figure>
 
 Your script uses variable names to access the value stored in them. In general, you can assign new values to any variable at any point in your program, but each new value wipes out the old one. When you come to retrieve the value of your variable, you will only get the last one stored. For example, let’s define a variable and name it **x**. Suppose we want **x** to be of type integer. Also, suppose we would like to assign it an initial value of 10. This is how you write a statement in C# to declare and assign an integer:
 
@@ -271,7 +271,7 @@ Arrays are a common way to assemble an ordered group of data. Arrays are best su
 <figure>
    <img src="array_address.png">
    <figcaption>Figure(17): How arrays are stored in the computer memory</figcaption>
-</figure> 
+</figure>
 
 For example, you can organize the days of the week using an array. The following declares and initializes the weekdays array in one step:
 
@@ -296,7 +296,6 @@ weekdays[6] = "Saturday";
 
 Let’s take the statement that sets the first value in the weekdays array in the above.
 
-
 ```C#
 weekdays[0] = “Sunday”;
 ```
@@ -306,7 +305,6 @@ weekdays[0] = “Sunday”;
 **Lists**
 
 If you need to create an ordered collection of data dynamically, then use a **List**. You will need to use the **new** keyword and specify the data type of the list. The following example declares a new list of integers and appends elements incrementally in subsequent statements. *Note that the indices of a list are also zero based just like arrays.*
-
 
 ```C#
 // Declare a dynamic ordered collection using “List”
@@ -318,6 +316,7 @@ myWorkDays.Add("Wednesday");
 myWorkDays.Add("Thursday");
 myWorkDays.Add("Friday");
 ```
+
 You need to use the keyword **new** to declare an instance of a **List**. *We will explain what it means to be a reference type with some more details later.*
 
 ## 2.7 Flow Control
@@ -331,7 +330,7 @@ Conditional statements allow you to decide on which part of your code to use bas
 <figure>
    <img src="conditional_diagram.png">
    <figcaption>Figure(17): Conditional statements 1 & 2 and how they affect the flow of the program</figcaption>
-</figure> 
+</figure>
 
 The following script examines a number variable and prints “zero” if it equals zero:
 
@@ -405,7 +404,7 @@ Loops allow you to run the body of your loop a fixed number of times or until th
 <figure>
    <img src="loop_flow.png" class="image_center" width="75%" >
    <figcaption>Figure(18): Loops in the context of the overall flow of the program</figcaption>
-</figure> 
+</figure>
 
 There are two kinds of loops. The first is iterative where you can repeat code a defined number of times, and the second is conditional where you repeat until some condition is no longer satisfied.
 
@@ -414,6 +413,7 @@ There are two kinds of loops. The first is iterative where you can repeat code a
 This is a common way of looping when you need to run a block of code a specific number of times. Here is a simple example that prints numbers from 1 to 10. You first declare a counter and then increment in the loop to run the code a specific number of times. *Notice that the code statements you would like to repeat are bound by the block after the for statement.*
 
 {{< div class="line-numbers" >}}
+
 ```C#
 for (int i = 1; i <= 10; i++)
 {
@@ -421,6 +421,7 @@ for (int i = 1; i <= 10; i++)
   Print( i.ToString() );
 }
 ```
+
 {{< /div >}}
 
 <table class="multiline">
@@ -514,7 +515,7 @@ for (int i = 1; i <= 10; i++)
 Print( sum.ToString() );
 ```
 
-On the other hand, if you need to add consecutive positive even integers starting with 2 until the sum exceeds 1000, then you cannot simply use an iterative **for** loop because you do not know how many times you will have to loop. You only have a condition to stop looping. Here is how you might solve this problem using the conditional **while** loop: 
+On the other hand, if you need to add consecutive positive even integers starting with 2 until the sum exceeds 1000, then you cannot simply use an iterative **for** loop because you do not know how many times you will have to loop. You only have a condition to stop looping. Here is how you might solve this problem using the conditional **while** loop:
 
 ```C#
 int sum = 0;
@@ -557,9 +558,10 @@ A nested loop is a loop that contains another loop inside it. You can nest as ma
 <figure>
    <img src="nested_loops.png" class="image_center" width="75%">
    <figcaption>Figure(19): Nested loops</figcaption>
-</figure> 
+</figure>
 
 For example, suppose you have the following list of words as input: {apple, orange, banana, strawberry} and you need to calculate the number of letters **a**. You will have to do the following:
+
 1. Loop through each one of the fruits. This is the outer loop.
 2. For each fruit, loop through all the letters. This is the inner loop (nested).
 3. Whenever you find the letter “a”, increment your counter by 1.
@@ -567,7 +569,7 @@ For example, suppose you have the following list of words as input: {apple, oran
 
 ```C#
 // Declare and initialize the fruits
-string[ ] fruits =  {“apple”, “orange”, “banana”, “strawberry”};
+string[ ] fruits =  {"apple", "orange", "banana", "strawberry"};
 int count = 0;
 // Loop through the fruits
 foreach (string fruit in fruits)
@@ -576,7 +578,7 @@ foreach (string fruit in fruits)
    foreach (char letter in fruit)
    {
       // Check if the letter is "a"
-      If (letter == ‘a’)      {
+      If (letter == 'a')      {
          count = count + 1;
       }
    }
@@ -590,14 +592,13 @@ The **break** statement is used to terminate or exit the loop, while the **conti
 
 ```C#
 // Declare and initialize the fruits
-string[ ] fruits =  {“apple”, “orange”, “banana”, “strawberry”};
+string[ ] fruits =  {"apple", "orange", "banana", "strawberry"};
 //Check if there is at least one orange
 foreach (string fruit in fruits)
 {
    // Check if it is an orange
    if (fruit == "orange")
    {
-      // Check if the letter is ‘a"
       Print( "Found an orange" );
       // No need to check the rest of the list, exit the loop
       break;
@@ -611,11 +612,14 @@ foreach (string fruit in fruits)
    // Loop through the letters in each fruit
    foreach (char letter in fruit)
    {
-      // Check if the letter is "r"
-      if (letter == ‘r’)      {
-         count = count + 1;
-         // No need to check the rest of the letters, and skip to the next fruit
-         continue;
+      // Check if the letter is not an "r", else continue with the next letter
+      if (letter != 'r') {
+	continue;
+	}
+	// Found the first "r" in fruit
+	count = count + 1;
+	//No need to check the rest of the letters, and skip to the next fruit
+        break;
       }
    }
 }
@@ -631,33 +635,36 @@ A method is a self-contained block of code that performs a specific task. Method
 <figure>
    <img src="task_flow.png">
    <figcaption>Figure(20): Sequential flow of the script where tasks are repeated</figcaption>
-</figure> 
+</figure>
 
 Most programming languages let you organize your tasks into separate modules, known as functions or methods. Think of each Grasshopper component like a function. You write the instructions for a task once, give it a name, and then use that name to refer to it whenever you need to perform the task again in your program. This makes your code cleaner and easier to manage. Your program flow will look like the following:
-
 
 <figure>
    <img src="method_flow.png">
    <figcaption>Figure(21): Methods can be called and executed as many times as the program requires</figcaption>
-</figure> 
+</figure>
 
 When you need to do the same task multiple times in your code, it’s a good idea to put that task in its own function. Using functions has several advantages:
+
 1. It divides your program into smaller, easier-to-manage pieces. Smaller sections of code are simpler to understand, develop, test, and maintain than a large, single block.
 2. You write and test the code once, then reuse it wherever needed. If you need to make changes, you only have to update it in one place.
 
 Writing functions might not always be easy, and they need some planning. There are four general steps you need to satisfy when writing a function:
+
 1. Define the purpose of your function, and give it a descriptive name.
 2. Identify the data that goes into the function when it is called.
 3. Identify the data that the function needs to give back or return.
 4. Consider what you need to include inside the function to perform your task.
 
 For example, suppose you would like to develop a function that checks whether a given natural number is a prime number or not. Here are four things you need to do:
+
 1. **Purpose & name**: Check if a given number is prime. Find a descriptive name for your function, for example “**IsPrimeNumber**”.
 2. **Input parameters**: Pass your number as type integer.
 3. **Return**: True if the number is prime, otherwise return false.
 4. **Implementation**: Use a loop of integers between 2 and half the number. If the number is not divisible by any of those integers, then it must be a prime number. *Note: There are more efficient ways to quickly test for a prime number.*
 
 {{< div class="line-numbers" >}}
+
 ```C#
 bool IsPrimeNumber( int x)
 {
@@ -674,6 +681,7 @@ bool IsPrimeNumber( int x)
     return primeFlag;
 }
 ```
+
 {{< /div >}}
 
 Let us dissect the different parts of the **IsPrimeNumber** function to understand the different parts.
@@ -776,7 +784,6 @@ public bool Divide(double x, double y, ref double rc)
 As we explained before, **RunScript** is the main function that is available in the **C#** and other script components. This is where the main code lives. Notice that the scripting component output is passed by reference. This is what you see when you open a default **C#** script component in Grasshopper.
 
 <img src="runscript_ref.png">
-
 
 <table class="rounded">
   <tr>
@@ -943,6 +950,7 @@ However, methods typically include more complex functionality, multiple inputs, 
       return avPt;
     }
 ```
+
 Structures can include members and methods that can be called, even if there is no instance created of that type. Those use the keyword **static**. For example, we can add a member called OriginBlack that creates a black point located at the origin. We can also include a **static** method to compare if two existing points have the same color, as in the following:
 
 ```C#
@@ -958,7 +966,6 @@ Structures can include members and methods that can be called, even if there is 
 ```
 
 Because structs are value types, if you pass your colored points to a function and change the location (x,y,z), it will only be changed inside or within the scope of that function but will not affect the original data, unless explicitly passed by reference, as in the following example:
-
 
 ```C#
   void ChangeLocationByValue(ColorPoint cp)
@@ -1147,6 +1154,7 @@ struct ColorPoint: IEquatable<ColorPoint>
 ## 2.10 Read & Write Text Files
 
 There are many ways to read from and write to files in **C#** and many tutorials & documents are available online. In general, reading a file involves the following:
+
 - Open the file (generally, you need a path to point to).
 - Read a string (whole text or line by line).
 - Tokenize the string using some delimiter characters (such as a comma, space, etc.)
@@ -1274,7 +1282,6 @@ In the following recursive solution, note that inside the **DivideAndRotate** fu
 
 <img src="recursive_function.png">
 
-
 ```C#
 private void RunScript(Line inputLine, double angle, double minLength, ref object Lines)
 {
@@ -1328,9 +1335,7 @@ We can solve the same problem using an iterative solution through a conditional 
 - The stopping condition appears in the **while** loop condition.
 - The **DivideAndRotate** function parameters are passed by value (not changed inside the function). The function simply calculates and returns the new line.
 
-
 <img src="recursive_function.png">
-
 
 ```C#
 private void RunScript(Line inputLine, double angle, double minLength, ref object Lines)
