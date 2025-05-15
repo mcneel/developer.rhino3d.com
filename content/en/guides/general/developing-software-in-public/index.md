@@ -82,6 +82,18 @@ This includes releasing ...
 
 ...and making public announcements by email, blogs, and social media.
 
+{{< call-out "note" "Release Schedule" >}}
+
+We plan to release new versions of Rhino every 2nd Tuesday of each month, which includes a:
+
+- Service Release (SR)
+- [Service Release Candidate (SRC)](https://discourse.mcneel.com/t/rhino-service-release-candidates/53358). The SRC goes through final testing and will become the next Service Release the next month's 2nd Tuesday.
+- [Work-In-Progress (WIP)](https://discourse.mcneel.com/t/welcome-to-serengeti/9612) build.
+
+We encourage users to [install Service Release Candidates](https://discourse.mcneel.com/t/rhino-service-release-candidates/53358) as they help us test the next update.
+
+{{< /call-out >}}
+
 ### Listen
 
 We listen in as many ways as we can:
