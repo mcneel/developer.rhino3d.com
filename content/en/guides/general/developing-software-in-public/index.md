@@ -84,7 +84,7 @@ This includes releasing ...
 
 {{< call-out "note" "Release Schedule" >}}
 
-We plan to release new versions of Rhino every 2nd Tuesday of each month, which includes a:
+We plan to release new versions of Rhino the 2nd Tuesday of each month, which includes a:
 
 - Service Release (SR)
 - [Service Release Candidate (SRC)](https://discourse.mcneel.com/t/rhino-service-release-candidates/53358). The SRC goes through final testing and will become the next Service Release the next month's 2nd Tuesday.
