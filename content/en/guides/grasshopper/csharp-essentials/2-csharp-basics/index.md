@@ -178,18 +178,8 @@ Operators are used to perform arithmetic, logical, and other operations. Operato
   </tr>
   <tr>
     <td>Concatenation </n>Operators</td>
-    <td>=</td>
-    <td>Assigns a value to a variable</td>
-  </tr>
-  <tr>
-    <td> </td>
-    <td>&</td>
-    <td>Generates a string concatenation of two expressions</td>
-  </tr>
-  <tr>
-    <td> </td>
     <td>+</td>
-    <td>Concatenate two string expressions</td>
+    <td>Generates a string concatenation of two expressions</td>
   </tr>
   <tr>
     <td>Logical </n>Operators</td>
