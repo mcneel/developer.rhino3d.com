@@ -271,7 +271,7 @@ Remarque : Les courbes NURBS (expliquées dans le chapitre suivant) utilisent d
 
 ## Téléchargement de fichiers d’exemple
 
-Téléchargez le fichier [{{< awesome "fas fa-download">}} ](/files/math-samplesandtutorials.zip.zip) [math-samplesandtutorials.zip](/files/math-samplesandtutorials.zip), qui contient tous les exemples de Grasshopper et les fichiers de code de ce guide.
+Téléchargez le fichier [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) [Fondements mathématiques](https://www.rhino3d.com/download/rhino/6/essentialmathematics/), qui contient tous les exemples de Grasshopper et les fichiers de code de ce guide.
 
 ## Étapes suivantes
 
