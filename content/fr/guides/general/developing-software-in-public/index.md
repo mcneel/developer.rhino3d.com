@@ -81,7 +81,7 @@ Nous publions notamment...
 
 ...et communiquons publiquement par e-mail, sur nos blogs et nos réseaux sociaux.
 
-{{< call-out "note" "Calendrier de publication" >}}
+{{< call-out "note" "Planning de publication" >}}
 
 Nous nous attachons à publier de nouvelles versions de Rhino le **deuxième mardi de chaque mois** comprenant :
 
