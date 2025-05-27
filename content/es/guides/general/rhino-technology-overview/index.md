@@ -2,7 +2,7 @@
 aliases = ["/en/5/guides/general/rhino-technology-overview/", "/en/6/guides/general/rhino-technology-overview/", "/en/7/guides/general/rhino-technology-overview/", "/en/wip/guides/general/rhino-technology-overview/"]
 authors = [ "brian" ]
 categories = [ "Overview" ]
-description = "Resumen de la tecnología de Rhino".
+description = "Resumen de la tecnología de Rhino."
 keywords = [ "developer", "rhino" ]
 languages = [ "All" ]
 sdk = [ "General" ]
