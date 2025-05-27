@@ -6,7 +6,7 @@ description = "Esta guía describe el sistema de interfaz de usuario de Rhino."
 keywords = [ "developer", "rhino" ]
 languages = [ "All" ]
 sdk = [ "General" ]
-title = "El sistema de interfaz de usuario de Rhino"
+title = "El sistema de interfaz de usuario Rhino"
 type = "guides"
 weight = 3
 override_last_modified = "2023-11-20T08:29:10Z"
@@ -39,7 +39,7 @@ Los objetivos del nuevo sistema de interfaz de usuario de Rhino 8 eran:
 - Cambiar rápidamente la interfaz de usuario de Rhino para mostrar herramientas orientadas a tareas.
 - Compartir diseños de interfaz de usuario entre los usuarios.
 - Permitir a los usuarios modificar arbitrariamente la interfaz de usuario sin tener conocer la ubicación o el origen de un componente de interfaz de usuario y realizar un seguimiento automático de los cambios.
-- Proporcionar una interfaz de usuario unificada de Windows y Mac.
+- Proporcionar una interfaz de usuario unificada para Windows y Mac.
 
 Los principales cambios en el nuevo sistema de interfaz de usuario de Rhino 8 son:
 
@@ -52,7 +52,7 @@ El nuevo sistema de interfaz de Rhino 8 está diseñado para permitir la referen
 
 ### Contenedores
 
-Los contenedores pueden mostrar referencias tanto a paneles como a barras de herramientas. Las barras de herramientas pueden ser referenciadas desde cualquier fuente válida de RUI. Los elementos se muestran como una pestaña en un contenedor. Los contenedores pueden estar visibles u ocultos.
+Los contenedores contienen referencias a paneles y a barras de herramientas. Las barras de herramientas se pueden referenciar desde cualquier fuente válida de RUI. Los elementos se muestran como una pestaña en un contenedor. Los contenedores pueden estar visibles u ocultos.
 
 Los contenedores se pueden modificar arrastrando las pestañas de un contenedor a otro, o haciendo clic en el menú de "Engranaje" del contenedor para agregar o eliminar referencias a paneles o barras de herramientas. El mismo panel puede ser referenciado por múltiples contenedores, lo que significa que es posible tener la pestaña "Capas", por ejemplo, mostrada en múltiples contenedores.
 
@@ -84,17 +84,17 @@ Los archivos RUI vinculados se pueden gestionar mediante la opción **[Opciones 
 
 ### Barras de herramientas
 
-Las barras de herramientas son conjuntos de botones. Los botones de las barra de herramientas hacen referencia a macros que pueden proceder de cualquier fuente RUI válida. Las barras de herramientas se muestran como pestañas en un contenedor.
+Las barras de herramientas de son conjuntos de botones. Los botones de las barra de herramientas hacen referencia a macros que pueden proceder de cualquier fuente RUI válida. Las barras de herramientas se muestran como pestañas en un contenedor.
 
 #### Grupos de barras de herramientas
 
 Los grupos de barras de herramientas se convierten ahora en contenedores cuando se cargan por primera vez. Existen como forma de dar soporte a los archivos RUI heredados. Los grupos también pueden ser utilizados por los desarrolladores de plugins para proporcionar definiciones de contenedores asociados a un plugin.
 
-#### Barra de herramientas
+#### Barras de herramientas
 
 Las barras de herramientas son conjuntos de botones de barras de herramientas y pueden ser referenciadas por múltiples contenedores. Pueden modificarse arrastrando y soltando botones de otras barras de herramientas o utilizando el asistente para nuevos botones.
 
-Las barras de herramientas se pueden gestionar con el comando **[BarraDeHerramientas](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/toolbar.htm#(null))** de Rhino.
+Las barras de herramientas se pueden gestionar con el comando **[Contenedores](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/toolbar.htm#(null))** de Rhino.
 
 #### Botón de barra de herramientas
 
@@ -109,7 +109,7 @@ El sistema de menús de Rhino puede ampliarse utilizando objetos de menú defini
 - Texto de ayuda que se muestra en la barra de estado cuando el ratón está sobre un elemento del menú.
 - Script de comando que se ejecuta cuando se hace clic en el elemento del menú.
 
-Los menús se pueden gestionar con el comando **[Menús](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#toolbarsandmenus/workspace_editor.htm#(null))** de Rhino.
+Los menús se pueden gestionar con el comando **[Contenedores](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#toolbarsandmenus/workspace_editor.htm#(null))** de Rhino.
 
 #### Macro
 
@@ -123,7 +123,7 @@ Las macros contienen la información necesaria para describir el script de coman
 - Texto del menú
 - Texto de ayuda
 
-Las macros se pueden gestionar con el comando **[Macros](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/macros.htm#(null))** de Rhino.
+Las macros se pueden gestionar con el comando **[Contenedores](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#commands/macros.htm#(null))** de Rhino.
 
 ### Paneles
 
@@ -143,7 +143,7 @@ Las barras de herramientas de Rhino son conjuntos de botones de barras de herram
 
 Los grupos de barras de herramientas son conjuntos de referencias a barras de herramientas del mismo archivo RUI. Al arrastrar una barra de herramientas de un archivo a un grupo de otro archivo, la barra de herramientas y sus macros referenciadas se copian del archivo de origen al de destino. Los grupos de barras de herramientas no pueden hacer referencia a paneles de Rhino.
 
-### Barra de herramientas
+### Barras de herramientas
 
 Las barras de herramientas son conjuntos de botones de barras de herramientas y solo se referencian y muestran por grupos de barras de herramientas.
 
@@ -160,7 +160,7 @@ Los botones de las barras de herramientas solo pueden hacer referencia a macros 
 El sistema de menús de Rhino puede ampliarse utilizando objetos de menú definidos en un archivo RUI. El archivo RUI contiene información de ubicación que describe dónde insertar un elemento en el sistema de menús. Los nuevos elementos de menú se definen haciendo referencia a una macro que contiene:
 
 - Texto del menú.
-- Imagen del menú.
+- imagen del menú.
 - Texto de ayuda que se muestra en la barra de estado cuando el ratón está sobre un elemento del menú.
 - Script de comando que se ejecuta cuando se hace clic en el elemento del menú.
 

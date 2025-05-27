@@ -72,7 +72,7 @@ Si desea escribir plugins con RhinoCommon, tendrá que entender un lenguaje de pr
 
 *Haga*...
 
-- [Consulte ejemplos](/samples/#rhinocommon) en este sitio web
+- [Vea muestras](/samples/#rhinocommon) en este sitio web
 - [Pida ayuda en Discourse](http://discourse.mcneel.com/c/rhino-developer)
 
 ### Aprender C/C++
