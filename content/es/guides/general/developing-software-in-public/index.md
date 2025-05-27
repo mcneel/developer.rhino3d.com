@@ -81,7 +81,7 @@ Esto incluye la publicación de...
 
 ...y el envío de anuncios públicos por correo electrónico, blogs y redes sociales.
 
-{{< call-out "note" "Release Schedule" >}}
+{{< call-out "note" "Calendario de publicación" >}}
 
 Tenemos previsto publicar nuevas versiones de Rhino el **segundo martes de cada mes**, lo que incluye una:
 
