@@ -2,7 +2,7 @@
 aliases = ["/en/5/guides/general/rhino-developer-prerequisites/", "/en/6/guides/general/rhino-developer-prerequisites/", "/en/7/guides/general/rhino-developer-prerequisites/", "/en/wip/guides/general/rhino-developer-prerequisites/"]
 authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
-description = "Esta gu√≠a describe los principales requisitos para desarrollar en Rhino."
+description = "Esta guÌa describe los principales requisitos para desarrollar en Rhino."
 keywords = [ "developer", "rhino" ]
 languages = [ "All" ]
 sdk = [ "General" ]
@@ -27,43 +27,43 @@ toc_type = "single"
 +++
 
 
-Hay una serie de requisitos previos necesarios para desarrollar en Rhino.  A grandes rasgos, pueden dividirse en tres categor√≠as, clasificadas en orden ascendente de dificultad:
+Hay una serie de requisitos previos necesarios para desarrollar en Rhino.  A grandes rasgos, pueden dividirse en tres categorÌas, clasificadas en orden ascendente de dificultad:
 
 1. [Requisitos de hardware](#hardware)
 1. [Requisitos previos de software](#software)
-1. [Conocimientos de programaci√≥n](#programming-knowledge)
+1. [Conocimientos de programaciÛn](#programming-knowledge)
 
 ## Hardware
 
-Si est√° leyendo esta gu√≠a, es probable que ya tenga un equipo en el que puede ejecutar Rhino. (Si no es as√≠, Rhino tiene unos [requisitos m√≠nimos del sistema](http://www.rhino3d.com/system_requirements/) que deber√≠a revisar antes de adquirir cualquier hardware).  En general, cualquier equipo que pueda ejecutar Rhino *debe* poder ejecutar las herramientas de desarrollo descritas en la secci√≥n [Software](#software).
+Si est· leyendo esta guÌa, es probable que ya tenga un equipo en el que puede ejecutar Rhino. (Si no es asÌ, Rhino tiene unos [requisitos mÌnimos del sistema](http://www.rhino3d.com/system_requirements/) que deberÌa revisar antes de adquirir cualquier hardware).  En general, cualquier equipo que pueda ejecutar Rhino *debe* poder ejecutar las herramientas de desarrollo descritas en la secciÛn [Software](#software) .
 
-Si es usuario de Windows y desea desarrollar plugins para Rhino para Mac, necesitar√° un Mac de Apple.  Por el contrario, si es usuario de macOS y desea desarrollar para Rhino para Windows, necesitar√° un equipo que pueda ejecutar Rhino para Windows (las m√°quinas virtuales que ejecutan Windows en macOS pueden funcionar perfectamente).
+Si es usuario de Windows y desea desarrollar plugins para Rhino para Mac, necesitar· un Mac de Apple.  Por el contrario, si es usuario de macOS y desea desarrollar para Rhino para Windows, necesitar· un equipo que pueda ejecutar Rhino para Windows (las m·quinas virtuales que ejecutan Windows en macOS pueden funcionar perfectamente).
 
 
 ## Software
 
-Seg√∫n lo que quiera hacer, los requisitos previos del software var√≠an.  En general, necesitar√°:
+Seg˙n lo que quiera hacer, los requisitos previos del software varÌan.  En general, necesitar·:
 
 - [Rhinoceros](http://www.rhino3d.com/download)
-- Un editor de c√≥digo.  Hay muchas opciones... aqu√≠ tiene algunas:
+- Un editor de cÛdigo.  Hay muchas opciones... aquÌ tiene algunas:
    - [Visual Studio para Windows](https://www.visualstudio.com): El principal entorno de desarrollo integrado (IDE) de Microsoft para Windows.
    - [Visual Studio Code](https://code.visualstudio.com/): El mejor editor multiplataforma gratuito
 
-Consulte las [gu√≠as espec√≠ficas de SDK](/guides/) para conocer los requisitos previos de software, que normalmente se encuentran en las gu√≠as *"Instalaci√≥n de herramientas"* .
+Consulte las [guÌas especÌficas de SDK](/guides/) para conocer los requisitos previos de software, que normalmente se encuentran en las guÌas *"InstalaciÛn de herramientas"* .
 
-## Conocimientos de programaci√≥n
+## Conocimientos de programaciÛn
 
-Adquirir conocimientos de programaci√≥n es el requisito previo m√°s exigente.  Sin embargo, aprender a programar, incluso probar un nuevo lenguaje, es divertido y enriquecedor.  Aprender a programar con Rhino es una buena manera de empezar...
+Adquirir conocimientos de programaciÛn es el requisito previo m·s exigente.  Sin embargo, aprender a programar, incluso probar un nuevo lenguaje, es divertido y enriquecedor.  Aprender a programar con Rhino es una buena manera de empezar...
 
 ### Aprender C# .NET
 
-Si desea escribir plugins con RhinoCommon, tendr√° que entender un lenguaje de programaci√≥n compatible con .NET como C# (o VB).  Recomendamos [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) (C Sharp) porque es moderno, seguro y f√°cil de aprender (y puede desarrollar en C# tanto en Windows como en macOS).
+Si desea escribir plugins con RhinoCommon, tendr· que entender un lenguaje de programaciÛn compatible con .NET como C# (o VB).  Recomendamos [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) (C Sharp) porque es moderno, seguro y f·cil de aprender (y puede desarrollar en C# tanto en Windows como en macOS).
 
 *Vea*...
 
 - [Beginning C# Programming](http://shop.oreilly.com/product/0636920036036.do) por Eric Lippert, publicado por O'Reilly Media
-- [C# Fundamentals for Absolute Beginners](https://www.microsoftvirtualacademy.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169) en la Academia Virtual de Microsoft.
-- [C# Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/188207-2.html) con David Gassner en Lynda.com
+- [C# Fundamentals for Absolute Beginners](https://learn.microsoft.com/en-us/shows/csharp-fundamentals-for-absolute-beginners/) en la Academia Virtual de Microsoft.
+- [C# and .NET Essential Training](https://www.linkedin.com/learning/c-sharp-and-dot-net-essential-training) en LinkedIn Learning
 
 *Lea*...
 
@@ -77,12 +77,12 @@ Si desea escribir plugins con RhinoCommon, tendr√° que entender un lenguaje de p
 
 ### Aprender C/C++
 
-Para escribir plugins para Rhino con el SDK de C/C++, primero tiene que aprender el lenguaje de programaci√≥n [C++](https://en.wikipedia.org/wiki/C%2B%2B) .  C/C++ a veces se considera un lenguaje de programaci√≥n "avanzado".
+Para escribir plugins para Rhino con el SDK de C/C++, primero tiene que aprender el lenguaje de programaciÛn [C++](https://en.wikipedia.org/wiki/C%2B%2B) .  C/C++ a veces se considera un lenguaje de programaciÛn "avanzado".
 
 *Vea*...
 
-- [C++: A General Purpose Language](https://www.microsoftvirtualacademy.com/en-us/training-courses/c-a-general-purpose-language-and-library-jump-start-8251) en Microsoft Virtual Academy
-- [C++ Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/182674-2.html) con Bill Weinmann en Lynda.com
+- [C++: A General Purpose Language](https://learn.microsoft.com/en-us/shows/cplusplus-language-library/) en Microsoft Virtual Academy
+- [C++ Essential Training](https://www.linkedin.com/learning/c-plus-plus-essential-training-15106801) con Bill Weinmann en LinkedIn Learning
 
 *Lea*...
 
@@ -97,7 +97,7 @@ Para escribir plugins para Rhino con el SDK de C/C++, primero tiene que aprender
 
 ### Aprenda Python
 
-[Python](https://en.wikipedia.org/wiki/Python_(programming_language)) es un primer lenguaje fant√°stico y un lenguaje adicional muy flexible para a√±adir a su conjunto de herramientas.
+[Python](https://en.wikipedia.org/wiki/Python_(programming_language)) es un primer lenguaje fant·stico y un lenguaje adicional muy flexible para aÒadir a su conjunto de herramientas.
 
 *Vea*...
 
@@ -110,7 +110,7 @@ Para escribir plugins para Rhino con el SDK de C/C++, primero tiene que aprender
 - [The Python Tutorial](https://docs.python.org/2/tutorial/index.html)
 - [RhinoPython Primer](http://www.rhino3d.com/download/IronPython/5.0/RhinoPython101) por Skylar Tibbits, Arthur van der Harten, Steve Baer y David Rutten.
 - [The Python Tutorial](https://docs.python.org/2/tutorial/index.html) por Python Software Foundation
-- [Learn Python the Hard Way](http://learnpythonthehardway.org/book/) por Zed A. Shaw (a pesar del t√≠tulo, se trata de un libro para principiantes).
+- [Learn Python the Hard Way](http://learnpythonthehardway.org/book/) por Zed A. Shaw (a pesar del tÌtulo, se trata de un libro para principiantes).
 - [Automate The Boring Stuff With Python](https://automatetheboringstuff.com/) por Al Sweigart
 
 *Haga*...
@@ -120,7 +120,7 @@ Para escribir plugins para Rhino con el SDK de C/C++, primero tiene que aprender
 
 ### Aprenda RhinoScript
 
-RhinoScript es una herramienta de programaci√≥n basada en el lenguaje VBScript de Microsoft.  RhinoScript se ejecuta en Rhino para Windows.
+RhinoScript es una herramienta de programaciÛn basada en el lenguaje VBScript de Microsoft.  RhinoScript se ejecuta en Rhino para Windows.
 
 *Lea*...
 
@@ -132,7 +132,7 @@ RhinoScript es una herramienta de programaci√≥n basada en el lenguaje VBScript d
 - [Vea muestras](/samples/#rhinoscript) en este sitio web
 - [Pida ayuda en Discourse](http://discourse.mcneel.com/c/scripting)
 
-### M√°s informaci√≥n
+### M·s informaciÛn
 
 - [Crafting Interpreters](https://craftinginterpreters.com/) por Robert Nystrom
 - [Clean Code](https://www.oreilly.com/library/view/clean-code-a/9780136083238/) por Robert C. Martin
@@ -140,7 +140,7 @@ RhinoScript es una herramienta de programaci√≥n basada en el lenguaje VBScript d
 
 ## Temas relacionados
 
-- [¬øQu√© es un plugin de Rhino?](/guides/general/what-is-a-rhino-plugin/)
+- [øQuÈ es un plugin de Rhino?](/guides/general/what-is-a-rhino-plugin/)
 - <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language">C Sharp en Wikipedia</a>
 - [C++ en Wikipedia](https://en.wikipedia.org/wiki/C%2B%2B)
 - [Python en Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language))

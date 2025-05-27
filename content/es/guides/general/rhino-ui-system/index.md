@@ -48,7 +48,7 @@ Los principales cambios en el nuevo sistema de interfaz de usuario de Rhino 8 so
 - Se han agregado diseños de ventana y se pueden usar para cambiar rápidamente entre diferentes configuraciones de interfaz de usuario. Se pueden exportar como archivos e incluirán modificaciones en barras de herramientas y macros y archivos RUI del usuario.
 - La importación de un diseño de ventana extraerá los archivos RUI del usuario según sea necesario y aplicará modificaciones de RUI.
 
-El nuevo sistema de interfaz de usuario de Rhino 8 está diseñado para permitir la referencia de componentes de interfaz de usuario de muchas fuentes: paneles, barras de herramientas y macros, definidos por cualquier archivo o plug-in RUI.  Cuando Rhino se cierra, los cambios en la interfaz de usuario se guardan y los archivos RUI originales nunca se modifican a menos que se solicite específicamente. Las configuraciones de los diseños de interfaz de usuario se pueden guardar, restaurar, exportar e importar como diseños de ventana y compartir entre Windows y Mac.
+El nuevo sistema de interfaz de Rhino 8 está diseñado para permitir la referenciación de componentes de interfaz de muchas fuentes: paneles, barras de herramientas y macros, definidos por cualquier archivo RUI o plug-in. Cuando Rhino se cierra, los cambios en la interfaz de usuario se guardan y los archivos RUI originales nunca se modifican a menos que se solicite específicamente. Las configuraciones de los diseños de interfaz de usuario se pueden guardar, restaurar, exportar e importar como diseños de ventana y compartir entre Windows y Mac.
 
 ### Contenedores
 
@@ -80,7 +80,7 @@ En Rhino 8, los archivos RUI ahora simplemente son una colección de barras de h
 
 Los grupos de barras de herramientas definidos en archivos RUI se convierten en contenedores cuando se cargan para admitir archivos RUI heredados y de plugins y proporcionar a un archivo RUI de plugin una forma de crear contenedores asociados con el plugin.
 
-Los archivos RUI vinculados se pueden gestionar mediante la opción **[Opciones > Apariencia > Barras de herramientas](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#options/appearance_toolbars.htm#(null))** de Rhino.
+Los archivos RUI vinculados se pueden gestionar mediante la opción **[Opciones > Barras de herramientas](https://docs.mcneel.com/rhino/8/help/en-us/index.htm#options/appearance_toolbars.htm#(null))** de Rhino.
 
 ### Barras de herramientas
 

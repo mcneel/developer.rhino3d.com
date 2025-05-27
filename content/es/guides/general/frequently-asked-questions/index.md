@@ -9,7 +9,6 @@ sdk = [ "General" ]
 title = "Preguntas frecuentes"
 type = "guides"
 weight = 4
-override_last_modified = "2021-09-03T08:29:10Z"
 
 [admin]
 TODO = ""
@@ -37,10 +36,17 @@ Todo depende de lo que quiera hacer.  Si desea automatizar tareas repetitivas en
 Sí... incluso utilizando [el mismo código](/guides/rhinocommon/what-is-rhinocommon/).
 
 **¿Qué son las macros?**
+
 Las macros son cadenas de comandos y opciones de comandos de Rhino que permiten crear una secuencia automatizada de operaciones.  Esta macro (secuencia) puede repetirse pulsando un botón de la barra de herramientas o escribiendo un alias.
 
 **¿Qué son los scripts?**
+
 Para tareas más complejas, las macros son insuficientes.  Carecen de la capacidad de realizar cálculos complejos, almacenar y recuperar datos, analizar esos datos y tomar decisiones condicionales, o profundizar en el funcionamiento interno de Rhino.  Para ello, se necesita una verdadera herramienta de programación.  La más sencilla y accesible es Python, que también incluye su versión de la sintaxis de RhinoScript.  Cuando hablamos de scripts solemos referirnos a funciones escritas con RhinoScript o Python.
 
 **¿Qué son los plugins?**
+
 Los plugins son herramientas aún más sofisticadas: son programas informáticos compilados que pueden integrarse en Rhino.  Pueden ser desde simples funciones de scripts hasta complejos programas completos para renderizado, animación, mecanizado, etc.
+
+**¿Cuál es el calendario de publicaciones?**
+
+Es semanal (si todo va bien), pero para la mayoría de usuarios, la respuesta es mensual. Consulte nuestro [Calendario de publicación](/guides/general/developing-software-in-public/#publish) para obtener más información.
