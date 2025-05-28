@@ -32,7 +32,7 @@ list = "never"
 +++
 
 {{< call-out "warning" "RhinoMobile: Deprecated" >}}
-RhinoMobile wird nicht mehr unterstützt. Rhino 3dm File I/O ist weiterhin auf iOS und Android über die [rhino3dm Bibliothek](https://github.com/mcneel/rhino3dm)verfügbar.
+RhinoMobile wird nicht mehr unterstützt. Rhino 3dm File I/O ist weiterhin auf iOS und Android über die [rhino3dm Bibliothek](https://github.com/mcneel/rhino3dm) verfügbar.
 {{< /call-out >}}
 
 Am Ende dieses Leitfadens sollten Sie alle Tools installiert haben, die für das Verfassen, Erstellen und Debuggen von mobilen C#-Anwendungen mit RhinoMobile erforderlich sind.
@@ -57,7 +57,7 @@ Für die Zwecke dieser Anleitung gehen wir davon aus, dass Sie Visual Studio 201
 
 1. *[Visual Studio 2017 Community Edition](https://www.visualstudio.com/vs-2015-product-editions)* ist von Microsoft kostenlos für Studenten, Open-Source-Mitarbeiter und kleine Teams erhältlich. [Weitere Infos finden Sie hier](https://www.visualstudio.com/en-us/support/legal/mt171547).  Klicken Sie auf die Schaltfläche *Community*, um das Installationsprogramm herunterzuladen.
 1. Führen Sie das *Visual Studio Installationsprogramm* aus, das Sie von Microsoft heruntergeladen haben, in diesem Fall *vs_community.exe*.
-1. Folgen Sie den Anweisungen auf dem Bildschirm, um Visual Studio zu installieren.  Es wird empfohlen, die *Typische* Installation zu auszuführen.  Je nach Ihrer Internetverbindung kann dies Minuten oder Stunden dauern.  Wenn die Installation erfolgreich war, klicken Sie auf die Schaltfläche *Starten* , um zu überprüfen, ob sie ordnungsgemäß installiert wurde.
+1. Folgen Sie den Anweisungen auf dem Bildschirm, um Visual Studio zu installieren.  Es wird empfohlen, die *Typische* Installation auszuführen.  Je nach Ihrer Internetverbindung kann dies Minuten oder Stunden dauern.  Wenn die Installation erfolgreich war, klicken Sie auf die Schaltfläche *Starten* , um zu überprüfen, ob sie ordnungsgemäß installiert wurde.
 
 ## Xcode installieren (optional)
 
@@ -79,7 +79,7 @@ Die Plattform von Xamarin ist derzeit erforderlich, um RhinoMobile-Anwendungen z
 #### Schrittweise Anleitung
 
 1. *[Laden Sie die Xamarin-Plattform herunter](http://xamarin.com/download)*.
-1. Xamarin verwendet eine Installationsanwendung, die die von Ihnen ausgewählten Komponenten herunterlädt und installiert.  Sobald Sie die Datei *XamarinInstaller.dmg*heruntergeladen haben, doppelklicken Sie darauf, um die Image-Datei zu mounten.  Doppelklicken Sie auf das große Symbol *Install Xamarin* , um das Installationsprogramm einzuhängen.
+1. Xamarin verwendet eine Installationsanwendung, die die von Ihnen ausgewählten Komponenten herunterlädt und installiert.  Sobald Sie die Datei *XamarinInstaller.dmg* heruntergeladen haben, doppelklicken Sie darauf, um die Image-Datei zu mounten.  Doppelklicken Sie auf das große Symbol *Install Xamarin* , um das Installationsprogramm einzuhängen.
 1. Sie müssen die Xamarin-Software-Lizenzvereinbarung akzeptieren, um die Xamarin-Plattform nutzen zu können.
 1. Die *Xamarin-Plattform* besteht aus folgenden Teilen:
    - Xamarin Studio
