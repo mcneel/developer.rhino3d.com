@@ -32,7 +32,7 @@ list = "never"
 +++
 
 {{< call-out "warning" "RhinoMobile: Deprecated" >}}
-RhinoMobile wird nicht mehr unterstützt. Rhino 3dm File I/O ist weiterhin auf iOS und Android über die [rhino3dm Bibliothek](https://github.com/mcneel/rhino3dm)verfügbar.
+RhinoMobile wird nicht mehr unterstützt. Rhino 3dm File I/O ist weiterhin auf iOS und Android über die [rhino3dm Bibliothek](https://github.com/mcneel/rhino3dm) verfügbar.
 {{< /call-out >}}
  
 Am Ende dieses Leitfadens sollten Sie alle Tools installiert haben, die für das Verfassen, Erstellen und Debuggen von mobilen C#-Anwendungen mit RhinoMobile in Xamarin Studio erforderlich sind.
@@ -65,7 +65,7 @@ Die Plattform von Xamarin ist derzeit erforderlich, um RhinoMobile-Anwendungen z
 #### Schrittweise Anleitung
 
 1. *[Laden Sie die Xamarin-Plattform herunter](http://xamarin.com/download)*.
-1. Xamarin verwendet eine Installationsanwendung, die die von Ihnen ausgewählten Komponenten herunterlädt und installiert.  Sobald Sie die Datei *XamarinInstaller.dmg*heruntergeladen haben, doppelklicken Sie darauf, um die Image-Datei zu mounten.  Doppelklicken Sie auf das große Symbol *Install Xamarin* , um das Installationsprogramm einzuhängen.
+1. Xamarin verwendet eine Installationsanwendung, die die von Ihnen ausgewählten Komponenten herunterlädt und installiert.  Sobald Sie die Datei *XamarinInstaller.dmg* heruntergeladen haben, doppelklicken Sie darauf, um die Image-Datei einzuhängen.  Doppelklicken Sie auf das große Symbol *Install Xamarin*, um das Installationsprogramm zu starten.
 1. Sie müssen die Xamarin-Software-Lizenzvereinbarung akzeptieren, um die Xamarin-Plattform nutzen zu können.
 1. Die *Xamarin-Plattform* besteht aus folgenden Teilen:
    - Xamarin Studio
@@ -78,7 +78,7 @@ Die Plattform von Xamarin ist derzeit erforderlich, um RhinoMobile-Anwendungen z
 1. Xamarin wird nun heruntergeladen und installiert.  Je nachdem, welche Produkte Sie in Schritt 4 oben ausgewählt haben, kann dies eine Weile dauern.
 1. Wenn das Installationsprogramm abgeschlossen ist, klicken Sie auf die Schaltfläche *Launch Xamarin Studio* .
 1. *Xamarin Studio* - sowie das Mono Framework, Xamarin.Android und Xamarin.iOS - sind nun installiert.
-1. Xamarin Studio wird in Ihrem Ordner */Programme* installiert. Sie sollten *das Symbol in Ihr Dock* ziehen, um es später zu verwenden, oder - wenn es läuft - mit der rechten Maustaste auf das Symbol im Dock klicken und *Im Dock behalten*wählen.
+1. Xamarin Studio wird in Ihrem Ordner */Programme* installiert. Sie sollten *das Symbol in Ihr Dock* ziehen, um es später zu verwenden, oder - wenn es läuft - mit der rechten Maustaste auf das Symbol im Dock klicken und *Im Dock behalten* wählen.
 
 ## Aktualisieren Sie das Android-SDK
 
@@ -101,14 +101,14 @@ Der [Intel-HAXM ist der Intel Hardware Acceleration Execution Manager](http://so
 
 1. Besuchen Sie die [Website für beschleunigte Ausführung von Intel Hardware](http://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager/).
 1. Suchen Sie den Abschnitt *macOS* auf der Seite.
-1. Laden Sie die Datei *haxm-macosx_rxx.zip*herunter.  Möglicherweise werden Sie aufgefordert, eine Lizenzvereinbarung zu akzeptieren, bevor das Herunterladen beginnen kann.
+1. Laden Sie die Datei *haxm-macosx_rxx.zip* herunter.  Möglicherweise werden Sie aufgefordert, eine Lizenzvereinbarung zu akzeptieren, bevor das Herunterladen beginnen kann.
 1. Entpacken Sie *haxm-macosx_rxx.zip*.
 1. Hängen Sie die *IntelHAXM_x.x.x.dmg* ein, indem Sie darauf doppelklicken.
 1. Installieren Sie HAXM durch Doppelklick auf die Datei *IntelHAXM_x.x.x.mpkg* .
 
 ## RhinoCommon klonen
 
-RhinoMobile basiert auf [RhinoCommons rhino3dmio-Verzweigung](https://github.com/mcneel/rhinocommon/tree/rhino3dmio). Sie können RhinoCommon entweder als Zip-Datei herunterladen oder das Repository mit Git klonen (empfohlen). (Wenn Sie neu bei GitHub sind, gibt es eine [GitHub Mac Desktop](https://desktop.github.com/) App für den Einstieg).
+RhinoMobile basiert auf der [RhinoCommons rhino3dmio-Verzweigung](https://github.com/mcneel/rhinocommon/tree/rhino3dmio). Sie können RhinoCommon entweder als Zip-Datei herunterladen oder das Repository mit Git klonen (empfohlen). (Wenn Sie neu bei GitHub sind, gibt es eine [GitHub Mac Desktop](https://desktop.github.com/) App für den Einstieg).
 
 #### Schrittweise Anleitung
 
