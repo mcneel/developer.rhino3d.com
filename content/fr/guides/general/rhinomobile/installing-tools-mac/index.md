@@ -89,7 +89,7 @@ Une fois que Xamarin Studio a été mis à jour, vous devez aller chercher les m
 1. Dans *Xamarin Studio*, allez dans *Tools* > *Open Android SDK Manager...*.
 1. Dans la fenêtre *Android SDK Manager*, attendez que le gestionnaire ait fini de récupérer le manifeste de mise à jour.
 1. En fonction de la date à laquelle vous avez téléchargé les outils Xamarin, vous devrez installer l’API la plus récente (21 au moment de la rédaction de cet article) ainsi que les deux dernières (20 et 19) pour une compatibilité descendante. Cochez les cases à côté des noms et cliquez sur le bouton *Install N packages...*.
-1. Une fenêtre (remplie de bugs) s’affiche dans laquelle vous devez accepter toutes les licences de chaque élément avant de continuer. Si vous ne parvenez pas à faire fonctionner le bouton *Install*, quittez la fenêtre, ouvrez-la à nouveau et cliquez sur chaque bouton *Accept* sur la gauche jusqu’à ce que cela fonctionne.
+1. Une fenêtre (remplie de bugs) s’affiche dans laquelle vous devez accepter toutes les licences de chaque élément avant de continuer. Si vous ne parvenez pas à faire fonctionner le bouton *Install*, quittez la fenêtre, ouvrez-la à nouveau et acceptez différentes licences en cochant une par une les cases sur la gauche jusqu’à ce que cela fonctionne.
 ![android sdk](/images/rhinomobile-installing-tools-mac-01.png)
 1. *Remarque :* les téléchargements peuvent prendre un certain temps en fonction de votre connexion à Internet.
 
