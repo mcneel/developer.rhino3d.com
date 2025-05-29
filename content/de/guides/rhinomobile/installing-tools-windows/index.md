@@ -31,7 +31,7 @@ block_webcrawlers = true
 list = "never"
 +++
 
-{{< call-out "warning" "RhinoMobile: Deprecated" >}}
+{{< call-out "warning" "RhinoMobile: Veraltet" >}}
 RhinoMobile wird nicht mehr unterstützt. Rhino 3dm File I/O ist weiterhin auf iOS und Android über die [rhino3dm Bibliothek](https://github.com/mcneel/rhino3dm) verfügbar.
 {{< /call-out >}}
 
