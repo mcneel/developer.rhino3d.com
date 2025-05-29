@@ -79,4 +79,4 @@ Les deux derniers sont les plus importants pour les applications RhinoMobile. Le
 
 ## Voir aussi
 
-- [Utilisation de simulateurs](/guides/rhinomobile/using-simulators/)
+- [Utiliser des simulateurs](/guides/rhinomobile/using-simulators/)
