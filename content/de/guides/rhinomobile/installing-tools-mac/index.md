@@ -140,7 +140,7 @@ Im Leitfaden [Ihre erste App (Mac)](/guides/rhinomobile/your-first-app-mac) find
 - [Was ist RhinoMobile?](/guides/rhinomobile/what-is-rhinomobile/)
 - [Was ist RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon/)
 - [Was sind Mono und Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/)
-- [Installieren von Tools (Windows)](/guides/rhinomobile/installing-tools-windows/)
+- [Installation von Werkzeugen (Windows)](/guides/rhinomobile/installing-tools-windows/)
 - [Ihre erste App (Mac)](/guides/rhinomobile/your-first-app-mac)
 
 **Fußnoten**
