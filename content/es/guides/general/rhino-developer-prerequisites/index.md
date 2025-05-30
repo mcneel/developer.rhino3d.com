@@ -1,4 +1,4 @@
-+++
+﻿+++
 aliases = ["/en/5/guides/general/rhino-developer-prerequisites/", "/en/6/guides/general/rhino-developer-prerequisites/", "/en/7/guides/general/rhino-developer-prerequisites/", "/en/wip/guides/general/rhino-developer-prerequisites/"]
 authors = [ "dan", "callum" ]
 categories = [ "Getting Started" ]
@@ -35,7 +35,7 @@ Hay una serie de requisitos previos necesarios para desarrollar en Rhino.  A gra
 
 ## Hardware
 
-Si está leyendo esta guía, es probable que ya tenga un equipo en el que puede ejecutar Rhino. (Si no es así, Rhino tiene unos [requisitos mínimos del sistema](http://www.rhino3d.com/system_requirements/) que debería revisar antes de adquirir cualquier hardware).  En general, cualquier equipo que pueda ejecutar Rhino *debe* poder ejecutar las herramientas de desarrollo descritas en la sección [Software](#software).
+Si está leyendo esta guía, es probable que ya tenga un equipo en el que puede ejecutar Rhino. (Si no es así, Rhino tiene unos [requisitos mínimos del sistema](http://www.rhino3d.com/system_requirements/) que debería revisar antes de adquirir cualquier hardware).  En general, cualquier equipo que pueda ejecutar Rhino *debe* poder ejecutar las herramientas de desarrollo descritas en la sección [Software](#software) .
 
 Si es usuario de Windows y desea desarrollar plugins para Rhino para Mac, necesitará un Mac de Apple.  Por el contrario, si es usuario de macOS y desea desarrollar para Rhino para Windows, necesitará un equipo que pueda ejecutar Rhino para Windows (las máquinas virtuales que ejecutan Windows en macOS pueden funcionar perfectamente).
 
@@ -62,8 +62,8 @@ Si desea escribir plugins con RhinoCommon, tendrá que entender un lenguaje de p
 *Vea*...
 
 - [Beginning C# Programming](http://shop.oreilly.com/product/0636920036036.do) por Eric Lippert, publicado por O'Reilly Media
-- [C# Fundamentals for Absolute Beginners](https://www.microsoftvirtualacademy.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169) en la Academia Virtual de Microsoft.
-- [C# Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/188207-2.html) con David Gassner en Lynda.com
+- [C# Fundamentals for Absolute Beginners](https://learn.microsoft.com/en-us/shows/csharp-fundamentals-for-absolute-beginners/) en la Academia Virtual de Microsoft.
+- [C# and .NET Essential Training](https://www.linkedin.com/learning/c-sharp-and-dot-net-essential-training) en LinkedIn Learning
 
 *Lea*...
 
@@ -72,7 +72,7 @@ Si desea escribir plugins con RhinoCommon, tendrá que entender un lenguaje de p
 
 *Haga*...
 
-- [Consulte ejemplos](/samples/#rhinocommon) en este sitio web
+- [Vea muestras](/samples/#rhinocommon) en este sitio web
 - [Pida ayuda en Discourse](http://discourse.mcneel.com/c/rhino-developer)
 
 ### Aprender C/C++
@@ -81,8 +81,8 @@ Para escribir plugins para Rhino con el SDK de C/C++, primero tiene que aprender
 
 *Vea*...
 
-- [C++: A General Purpose Language](https://www.microsoftvirtualacademy.com/en-us/training-courses/c-a-general-purpose-language-and-library-jump-start-8251) en Microsoft Virtual Academy
-- [C++ Essential Training](http://www.lynda.com/C-tutorials/C-Essential-Training/182674-2.html) con Bill Weinmann en Lynda.com
+- [C++: A General Purpose Language](https://learn.microsoft.com/en-us/shows/cplusplus-language-library/) en Microsoft Virtual Academy
+- [C++ Essential Training](https://www.linkedin.com/learning/c-plus-plus-essential-training-15106801) con Bill Weinmann en LinkedIn Learning
 
 *Lea*...
 
