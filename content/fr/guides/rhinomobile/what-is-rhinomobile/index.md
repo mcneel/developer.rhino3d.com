@@ -51,17 +51,17 @@ Visitez le [Forum de Rhino](http://discourse.mcneel.com/) et posez votre questio
 
 ### Outils pour les développeurs
 
-- [Plateforme Xamarin](http://xamarin.com/download). Pour utiliser RhinoMobile, vous devez posséder une version d’essai gratuite de 30 jours de l’édition Business. - Xamarin propose des prix réduits pour les étudiants.
+- [Plateforme Xamarin](http://xamarin.com/download). Pour utiliser RhinoMobile, vous devez posséder une version d’essai gratuite de 30 jours de l’édition Business (Xamarin propose des prix réduits pour les étudiants).
 - [Xcode](http://developer.apple.com/xcode/) sur un Mac fonctionnant sous OS X 10.8 (Mountain Lion) ou une version supérieure pour la création d’applications iOS.
 - [Visual Studio 2012](http://https//www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx) ou une version supérieure : éditions non Express uniquement (les extensions de Xamarin nécessitent des versions payantes).
-- [Intel Hardware Accelerated Execution Manager (HAXM)](http://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager/) permet aux émulateurs Android de fonctionner plus rapidement et plus efficacement.
+- [Intel Hardware Accelerated Execution Manager (HAXM)](http://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager/) qui permet aux émulateurs Android de fonctionner plus rapidement et plus efficacement.
 
 ### Bibliothèques et échantillons
 
 - [RhinoCommon (branche rhino3dmio)](https://github.com/mcneel/rhinocommon/tree/rhino3dmio) : le kit de développement logiciel (SDK) .NET pour Rhino et Grasshopper.
-- [openNURBS](http://www.rhino3d.com/opennurbs) Télécharger SDK openNURBS C++.
-- [RhinoMobile](http://github.com/mcneel/RhinoMobile) Télécharger ou cloner la bibliothèque RhinoMobile.
-- [RhinoMobileSamples](http://github.com/mcneel/RhinoMobileSamples) Télécharger ou cloner quelques exemples de projets qui utilisent RhinoMobile.
+- [openNURBS](http://www.rhino3d.com/opennurbs) : pour télécharger SDK openNURBS C++.
+- [RhinoMobile](http://github.com/mcneel/RhinoMobile) : pour télécharger ou cloner la bibliothèque RhinoMobile.
+- [RhinoMobileSamples](http://github.com/mcneel/RhinoMobileSamples) : pour télécharger ou cloner quelques exemples de projets qui utilisent RhinoMobile.
 
 ## FAQ
 
@@ -81,7 +81,7 @@ Non, avec une réserve : bien que nous ne l’ayons pas encore ajouté à la bi
 
 Bien-sûr !
 
-**Attendez, c’est tout RhinoCommon ?**
+**Mais attendez, dans RhinoMobile il y a tout RhinoCommon ?**
 
 Non. RhinoMobile utilise un sous-ensemble de RhinoCommon (rhino3dmio), dont les limites sont définies par le symbole : MOBILE_BUILD. Il y a beaucoup de choses dedans : Rhino.DocObjects, Rhino.Geometry, Rhino.FileIO... à peu près tout ce dont vous avez besoin pour lire, écrire et dessiner dans Rhino 3dm.
 
