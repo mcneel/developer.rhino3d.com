@@ -73,7 +73,7 @@ Speichern Sie Ihr Profil und öffnen Sie ein Terminal-Fenster. Sie sollten nun i
 
 ![adb shell](/images/using-simulators-02.png)
 
-Sie können viele Standard-Linux-Befehle verwenden, um mit Dateien Unfug zu treiben. Beachten Sie, dass es eine Reihe spezieller Befehle gibt, um Dateien auf das Gerät/den Emulator zu schieben und von dort zu entfernen. In der [Android-ADB-Dokumentation](http://developer.android.com/tools/help/adb.html) finden Sie eine praktische Liste. Die Daten für viele Anwendungen werden im Ordner *data/data/AppName/* gespeichert.
+Sie können viele Standard-Linux-Befehle verwenden, um Dateien zu meiden und durcheinander zu bringen. Beachten Sie, dass es eine Reihe spezieller Befehle gibt, um Dateien auf das Gerät/den Emulator zu schieben und von dort zu entfernen. In der [Android-ADB-Dokumentation](http://developer.android.com/tools/help/adb.html) finden Sie eine praktische Liste. Die Daten für viele Anwendungen werden im Ordner *data/data/AppName/* gespeichert.
 
 **Windows**
 
@@ -87,11 +87,11 @@ Bevor wir die ADB-Tools starten, müssen wir sicherstellen, dass das Android-SDK
 1. Wir werden unseren Pfad zu adb hinzufügen, wo Xamarin das android-sdk installiert hat. Vergewissern Sie sich, dass sich Ihr Mauszeiger am Ende des letzten Eintrags befindet, und geben Sie dann ein: *;C:\Benutzer\Ihr_Name\AppData\Local\Android\android-sdk\platform-tools\* ersetzen Sie *you* durch den Namen Ihres Kontos. Achten Sie darauf, dass dieser Pfad keine Leerzeichen enthält. Wenn der Pfad zu Ihrem android-sdk an einer benutzerdefinierten Stelle liegt, ersetzen Sie ihn durch diesen Pfad.
 1. Klicken Sie bei allem auf *OK* und *schließen Sie die Systemsteuerung* , falls sie noch geöffnet ist.
 
-Öffnen Sie eine Eingabeaufforderung "cmd.exe". Geben Sie nun `adb shell` ein. Vergewissern Sie sich, dass ein Emulator gestartet oder ein Gerät angeschlossen ist, so sollten Sie ein adb-Shell-Tool sehen, das dem oben in der Mac-Anleitung gezeigten ähnelt. Sie können viele Standard-Linux-Befehle verwenden, um mit Dateien Unfug zu treiben. Beachten Sie, dass es eine Reihe spezieller Befehle gibt, um Dateien auf das Gerät/den Emulator zu schieben und von dort zu entfernen. In der [Android-ADB-Dokumentation](http://developer.android.com/tools/help/adb.html) finden Sie eine praktische Liste. Die Daten für viele Anwendungen werden im Ordner *data/data/AppName/* gespeichert.
+Öffnen Sie eine Eingabeaufforderung "cmd.exe". Geben Sie nun `adb shell` ein. Vergewissern Sie sich, dass ein Emulator gestartet oder ein Gerät angeschlossen ist, so sollten Sie ein adb-Shell-Tool sehen, das dem oben in der Mac-Anleitung gezeigten ähnelt. Sie können viele Standard-Linux-Befehle verwenden, um Dateien zu meiden und durcheinander zu bringen. Beachten Sie, dass es eine Reihe spezieller Befehle gibt, um Dateien auf das Gerät/den Emulator zu schieben und von dort zu entfernen. In der [Android-ADB-Dokumentation](http://developer.android.com/tools/help/adb.html) finden Sie eine praktische Liste. Die Daten für viele Anwendungen werden im Ordner *data/data/AppName/* gespeichert.
 
 ### Zurücksetzen von Emulatoren
 
-Es ist selten notwendig, die Android-Emulatoren zurückzusetzen, da die gesamte App zwischen den Builds entfernt wird. Wenn Sie sie zurücksetzen müssen, ist es am besten, das gesamte AVD zu löschen und ein neues zu erstellen. Öffnen Sie den Android Virtual Device Manager (navigieren Sie in Xamarin Studio zu *Tools* > *Open Android Emulator Manager...* in der Anwendungs-Werkzeugleiste), wählen Sie auf der Registerkarte *Android Virtual Devices*den Emulator aus der Liste der AVDs und klicken Sie auf die Schaltfläche *Delete* .
+Es ist selten notwendig, die Android-Emulatoren zurückzusetzen, da die gesamte App zwischen den Builds entfernt wird. Wenn Sie sie zurücksetzen müssen, ist es am besten, das gesamte AVD zu löschen und ein neues zu erstellen. Öffnen Sie den Android Virtual Device Manager (navigieren Sie in Xamarin Studio zu *Tools* > *Open Android Emulator Manager...* in der Anwendungs-Werkzeugleiste), wählen Sie auf der Registerkarte *Android Virtual Devices* den Emulator aus der Liste der AVDs und klicken Sie auf die Schaltfläche *Delete*.
 
 ## iOS-Simulatoren
 
@@ -111,8 +111,8 @@ Um ältere Versionen des iOS Simulators zu installieren, starten Sie Xcode und n
 Die folgenden Tastenkombinationen können verwendet werden, um mehrere Berührungen zu drehen und zu simulieren:
 
 - <kbd>Cmd</kbd> + <kbd>Pfeiltasten links/rechts</kbd> = Drehen des Simulators
-- <kbd>Option</kbd> + *Den Cursor herumverschieben* = Zwei Berührungen simulieren
-- <kbd>Option</kbd> + <kbd>Umschalttaste</kbd> + *Den Cursor herumbewegen* = Zwei Berührungen schwenken
+- <kbd>Option</kbd> + *Den Cursor herumverschieben* = Zweifingergeste simulieren
+- <kbd>Option</kbd> + <kbd>Umschalttaste</kbd> + *Den Cursor herumbewegen* = Schwenken mit zwei Fingern
 
 ### Dateisystem des Simulators
 
