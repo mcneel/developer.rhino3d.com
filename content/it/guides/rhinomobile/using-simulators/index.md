@@ -132,4 +132,4 @@ Spesso è necessario ripulire l'intero contenuto del simulatore tra una compilaz
 
 ## Argomenti correlati
 
-- [Test sui dispositivi](/guides/rhinomobile/testing-on-devices/)
+- [Test sui dispositivi](/guides/rhinomobile/testing-on-devices)

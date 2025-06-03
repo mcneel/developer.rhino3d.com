@@ -51,7 +51,7 @@ RhinoMobile non è più supportato. La funzione I/O dei file 3dm di Rhino è anc
 ### Per iniziare
 
 - Installazione degli strumenti ([Windows](/guides/rhinomobile/installing-tools-windows/), [Mac](/guides/rhinomobile/installing-tools-mac/))
-- La prima app ([Windows](/guides/rhinomobile/your-first-app-windows/), [Mac](/guides/rhinomobile/your-first-app-mac/))
+- Your First App ([Windows](/guides/rhinomobile/your-first-app-windows/), [Mac](/guides/rhinomobile/your-first-app-mac/))
 
 {{< /column >}}
 {{< column >}}
