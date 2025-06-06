@@ -42,7 +42,7 @@
 
         function addPreviewDiv(parent){ 
             const previewElement = document.createElement("span");
-            previewElement.classList.add("tooltip");
+            previewElement.classList.add("cmd_tooltip");
             previewElement.classList.add("arrow-top");
 
             const iframeElement = document.createElement("iframe");
@@ -60,54 +60,3 @@
     </script>
 </span>
 </a>
-
-
-<style>
-    .unfurl-link {
-        display:inline-block;
-        position:relative;
-        border-bottom:1px dotted #666;
-        text-align:left;
-    }
-    
-    .unfurl-link h3 {margin:12px 0;}
-    
-    .unfurl-link .tooltip {
-        width:max-content;
-        top:0px;
-        left:50%;
-        transform:translate(-50%, 0);
-        padding:10px;
-        color:#666666;
-        background-color:white;
-        font-weight:normal;
-        font-size:13px;
-        border-radius:8px;
-        position:absolute;
-        z-index:99999999;
-        box-sizing:border-box;
-        box-shadow:0 1px 50px rgba(0,0,0,0.5);
-        display:none;
-    }
-    
-    .unfurl-link:hover .tooltip {
-        display:block;
-    }
-    
-
-    .tooltip.arrow-top {
-        margin-top: 40px;
-    }
-      
-    .tooltip.arrow-top:after {
-        content: " ";
-        position: absolute;
-        left: inherit;
-        top: -15px;
-        border-top: none;
-        border-right: 15px solid transparent;
-        border-left: 15px solid transparent;
-        border-bottom: 15px solid white;
-      }
-    
-    </style>
