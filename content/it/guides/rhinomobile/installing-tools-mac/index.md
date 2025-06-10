@@ -133,7 +133,7 @@ RhinoMobile viene compilato usando il [ramo rhino3dmio di RhinoCommon](https://g
 
 *Congratulazioni!*  Adesso sono disponibile tutti gli strumenti necessari per creare un'applicazione mobile che utilizzi RhinoMobile.  *E adesso?*
 
-Consultare la guida [Your First App (Mac))](/guides/rhinomobile/your-first-app-mac) per le istruzioni sulla compilazione della prima applicazione.
+Consultare la guida [La tua prima app (Mac))](/guides/rhinomobile/your-first-app-mac) per le istruzioni sulla compilazione della prima applicazione.
 
 ## Argomenti correlati
 
@@ -141,7 +141,7 @@ Consultare la guida [Your First App (Mac))](/guides/rhinomobile/your-first-app-m
 - [Che cos'è RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon/)
 - [Cosa sono Mono e Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/)
 - [Installazione degli strumenti (Windows)](/guides/rhinomobile/installing-tools-windows/)
-- [Your First App (Mac)](/guides/rhinomobile/your-first-app-mac)
+- [La tua prima app (Mac)](/guides/rhinomobile/your-first-app-mac)
 
 **Note a piè di pagina**
 

@@ -91,9 +91,9 @@ No, non ancora. Mi dispiace. Considerando i limiti della CPU delle piattaforme m
 
 ## Passi successivi
 
-Per iniziare a lavorare con RhinoMobile, occorre assicurarsi di avere installato tutti gli strumenti.  Leggi:
+Per iniziare a lavorare con RhinoMobile, occorre assicurarsi di avere installato tutti gli strumenti.  Consultare:
 
-- [Installazione degli strumenti (Mac)](/guides/rhinomobile/installing-tools-mac/) o
+- [Installazione degli strumenti (Mac)](/guides/rhinomobile/installing-tools-mac/)
 - [Installazione degli strumenti (Windows)](/guides/rhinomobile/installing-tools-windows/)
 
 ## Argomenti correlati
