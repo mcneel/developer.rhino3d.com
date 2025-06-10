@@ -29,6 +29,29 @@
                     itemLink.textContent = item.text;
 
                     itemElement.appendChild(itemLink);
+
+                    // Handle third level of nesting
+                    if (item.items && item.items.length > 0) {
+                        const subItemWrapper = document.createElement("ul");
+                        subItemWrapper.classList.add("subitem-wrapper");
+                        subItemWrapper.style.display = "block";
+
+                        item.items.forEach(subitem => {
+                            const subItemElement = document.createElement("li");
+                            subItemElement.classList.add("nav-subitem");
+
+                            const subItemLink = document.createElement("a");
+                            subItemLink.classList.add("sublevel-nav-link");
+                            subItemLink.href = subitem.link;
+                            subItemLink.textContent = subitem.text;
+
+                            subItemElement.appendChild(subItemLink);
+                            subItemWrapper.appendChild(subItemElement);
+                        });
+
+                        itemElement.appendChild(subItemWrapper);
+                    }
+
                     sectionWrapper.appendChild(itemElement);
                 });
 
