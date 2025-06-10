@@ -140,7 +140,7 @@ Consultare la guida [Your First App (Mac))](/guides/rhinomobile/your-first-app-m
 - [Che cos'è RhinoMobile?](/guides/rhinomobile/what-is-rhinomobile/)
 - [Che cos'è RhinoCommon?](/guides/rhinocommon/what-is-rhinocommon/)
 - [Cosa sono Mono e Xamarin?](/guides/rhinocommon/what-are-mono-and-xamarin/)
-- [Installazione degli strumenti (Windows, Mac)](/guides/rhinomobile/installing-tools-windows/)
+- [Installazione degli strumenti (Windows)](/guides/rhinomobile/installing-tools-windows/)
 - [Your First App (Mac)](/guides/rhinomobile/your-first-app-mac)
 
 **Note a piè di pagina**
