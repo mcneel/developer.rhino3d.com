@@ -94,7 +94,7 @@ C:\inetpub\wwwroot\aspnet_client\system_web\4_0_30319\rhino.compute\logs\
 
 ### Kann ich ausführliche Protokollierungsinformationen aktivieren?
 
-Standardmäßig gibt Rhino.Compute einen minimalen Satz an Informationen in den Protokollen aus. Um eine ausführlichere Protokollierung zu ermöglichen, müssen Sie eine Umgebungsvariable auf Ihrem Rechner erstellen.
+Standardmäßig gibt Rhino.Compute einen minimalen Satz an Informationen in den Protokollen aus. Um eine ausführlichere Protokollierung zu ermöglichen, müssen Sie eine Umgebungsvariable auf Ihrer Maschine erstellen.
 
 1. Klicken Sie mit der rechten Maustaste auf das Symbol **Dieser PC** im Datei-Explorer und wählen Sie dann **Eigenschaften** oder **System** in der Systemsteuerung
 1. Klicken Sie im Fenster der Systemeigenschaften auf **Erweiterte Systemeinstellungen**
@@ -114,7 +114,7 @@ System.Runtime.InteropServices.COMException (0x80004005): Error HRESULT E_FAIL h
    at Rhino.Runtime.InProcess.RhinoCore.InternalStartup(Int32 argc, String[] argv, StartupInfo& info, IntPtr hostWnd)
 ```
 
-Dies wird höchstwahrscheinlich dadurch verursacht, dass Rhino.Compute beim Starten keine gültige Lizenz finden kann. Wenn Sie einen Windows-Server-basierten Rechner (d.h. eine virtuelle Maschine) verwenden, gehen Sie wie folgt vor:
+Dies wird höchstwahrscheinlich dadurch verursacht, dass Rhino.Compute beim Starten keine gültige Lizenz finden kann. Wenn Sie eine Windows-Server-basierte Maschine (d.h. eine virtuelle Maschine) verwenden, gehen Sie wie folgt vor:
 
 1. Gehen Sie zum [Lizenzportal](https://www.rhino3d.com/licenses?_forceEmpty=true) und wählen Sie das Team aus, das Sie mit der Kernzeitabrechnung eingerichtet haben.
 1. Klicken Sie auf **Team verwalten -> Kernstundenabrechnung verwalten**.
@@ -133,7 +133,7 @@ Wenn Sie Rhino auf diesem Computer starten, wird es von nun an Ihr Kernstunden-A
 
 ### Ich erhalte eine 401-Fehlermeldung. Was bedeutet das?
 
-Wenn Rhino.Compute eine 401-Fehlermeldung ausgibt, bedeutet dies, dass die Anfrage nicht autorisiert wurde. Dies geschieht in der Regel, wenn der Anfrage ein API-Schlüssel fehlt. Rhino.Compute sucht nach diesem Schlüssel - der als Umgebungsvariable auf dem Rechner, auf dem es läuft, gespeichert ist - um sicherzustellen, dass nur zugelassene Clients eine Verbindung herstellen können.
+Wenn Rhino.Compute eine 401-Fehlermeldung ausgibt, bedeutet dies, dass die Anfrage nicht autorisiert wurde. Dies geschieht in der Regel, wenn der Anfrage ein API-Schlüssel fehlt. Rhino.Compute sucht nach diesem Schlüssel - der als Umgebungsvariable auf der Maschine, auf der es läuft, gespeichert ist - um sicherzustellen, dass nur zugelassene Clients eine Verbindung herstellen können.
 
 Wenn Sie Hops verwenden, können Sie den API-Schlüssel im Bereich Einstellungen festlegen.
 
@@ -146,7 +146,7 @@ Wenn Sie Hops verwenden, können Sie den API-Schlüssel im Bereich Einstellungen
 {{< image url="/images/hops-api-key.png" alt="/images/hops-api-key.png" class="image_center" width="75%" >}}
 
 <br>
-Wenn Sie mit einer anderen Methode eine Webanfrage an Rhino.Compute senden, stellen Sie sicher, dass Sie ein Schlüssel/Wert-Paar in die Kopfzeile der Anfrage aufnehmen. Der Schlüssel sollte "RhinoComputeKey" heißen und sein Wert muss mit dem API-Schlüssel übereinstimmen, der auf dem Rechner festgelegt wurde, auf dem Rhino.Compute läuft.
+Wenn Sie mit einer anderen Methode eine Webanfrage an Rhino.Compute senden, stellen Sie sicher, dass Sie ein Schlüssel/Wert-Paar in die Kopfzeile der Anfrage aufnehmen. Der Schlüssel sollte "RhinoComputeKey" heißen und sein Wert muss mit dem API-Schlüssel übereinstimmen, der auf der Maschine festgelegt wurde, auf der Rhino.Compute läuft.
 
 ### Was bedeutet ein 500-Fehlercode?
 
@@ -168,7 +168,7 @@ Die Einstellung der Zeitüberschreitung, die Sie in den Hops-Einstellungen sehen
 
 {{< image url="/images/hops-timeout.png" alt="/images/hops-timeout.png" class="image_center" width="75%" >}}
 
-Die serverseitige Zeitüberschreitung wird separat verwaltet - sie wird durch eine Umgebungsvariable auf dem Rechner festgelegt, auf dem der Server läuft. Gehen Sie wie folgt vor, um die Umgebungsvariable zu setzen:
+Die serverseitige Zeitüberschreitung wird separat verwaltet - sie wird durch eine Umgebungsvariable auf der Maschine festgelegt, auf der der Server läuft. Gehen Sie wie folgt vor, um die Umgebungsvariable zu setzen:
 
 1. Klicken Sie mit der rechten Maustaste auf das Symbol **Dieser PC** im Datei-Explorer und wählen Sie dann **Eigenschaften** oder **System** in der Systemsteuerung
 1. Klicken Sie im Fenster der Systemeigenschaften auf **Erweiterte Systemeinstellungen**
