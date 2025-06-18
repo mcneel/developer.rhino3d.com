@@ -78,7 +78,7 @@ Zur Erstellung des Zertifikats empfehlen wir [Win-ACME](https://www.win-acme.com
 
 1. Klicken Sie mit der rechten Maustaste auf die heruntergeladene .zip-Datei und wählen Sie **Alles extrahieren**. Es spielt keine Rolle, in welches Verzeichnis Sie die Dateien extrahieren, da wir sie im nächsten Schritt manuell verschieben/umbenennen werden. Klicken Sie auf **Extrahieren**.
 
-1. Wählen Sie das neu extrahierte Verzeichnis aus und drücken Sie **Strg+X** zum **Ausschneiden**, und dann **Strg+V** zum **Einfügen** dieses Ordners in das Stammlaufwerk <i>C:\</i>. 
+1. Wählen Sie das neu extrahierte Verzeichnis aus und drücken Sie **Strg+X** zum **Ausschneiden**, und dann **Strg+V** zum **Einfügen** dieses Ordners in das Stammlaufwerk <i>C:\\</i>. 
 
 1. Klicken Sie nun mit der rechten Maustaste auf das Verzeichnis, das Sie gerade auf das Laufwerk <i>C:\\</i> kopiert haben, und wählen Sie **Umbenennen** aus dem Menü. Kürzen Sie den Ordnernamen auf *"win-acme"*. 
 {{< image url="/images/win_acme_1.png" alt="/images/win_acme_1.png" class="image_center" width="100%" >}}
@@ -100,7 +100,7 @@ Zur Erstellung des Zertifikats empfehlen wir [Win-ACME](https://www.win-acme.com
 
 1. Drücken Sie die **Eingabetaste** erneut, um die Standardeinstellung **Pick all bindings** zu akzeptieren.
 
-1. Wenn die Frage *Mit dieser Auswahl fortzufahren?* Erscheint, drücken Sie die **Eingabetaste** oder geben Sie **J** für Ja ein.
+1. Wenn die Frage *Mit dieser Auswahl fortzufahren?* erscheint, drücken Sie die **Eingabetaste** oder geben Sie **J** für Ja ein.
 {{< image url="/images/win_acme_10.png" alt="/images/win_acme_10.png" class="image_center" width="100%" >}} 
 
 1. Während das SSL-Zertifikat generiert wird, sollten Sie einige Informationen auf der Konsole sehen.
