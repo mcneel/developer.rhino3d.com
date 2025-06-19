@@ -33,7 +33,7 @@ To be able to make HTTP requests, it is necessary to have Rhino.Compute running 
 
 ## Prerequisites
 
-Before continuing, please ensure you need the right tools. This guide presumes you have an:
+Before continuing, please ensure you have the right tools. This guide presumes you have an:
 
 - Windows Operating System. Rhino.Compute only runs in Windows 7 or later.
 - Development Environment. You will need one of the IDEs from Microsoft Visual Studio
