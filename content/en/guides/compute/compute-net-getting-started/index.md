@@ -50,7 +50,7 @@ Once you have your Rhino.Compute server up and running (either local or remote),
 
 - [Rhino3dm](https://www.nuget.org/packages/Rhino3dm) -  The Dotnet wrapper for [OpenNurbs](https://developer.rhino3d.com/guides/opennurbs/) which contains the functions to read and write Rhino Geometry Objects. As it is available as a NuGet package, you can download directly using the NuGet Package Manager.
 - [NewtonSoft.JSON](https://www.nuget.org/packages/Newtonsoft.Json/) - The very popular JSON library. This package is called directly by RhinoCompute.cs as the information is defined in JSON format embedded in the body of a REST POST. As rhino3dm, it is also available as a NuGet Package.
-- [RhinoCompute.cs](https://github.com/mcneel/compute.rhino3d/blob/8.x/src/compute.geometry/RhinoCompute.cs) - This is a work in progress package which is meant to add classes available in RhinoCommon, but not available through Rhino3dm. RhinoCompute makes calls into RhinoCompute for these functions.
+- [RhinoCompute.cs](https://github.com/mcneel/compute.rhino3d/blob/8.x/src/compute.geometry/RhinoCompute.cs) - This is a work in progress package which is meant to add classes available in RhinoCommon, but not available through Rhino3dm. RhinoCompute makes calls into Rhino for these functions.
 
 Here are step by step instructions to setting up a basic project to use Rhino.Compute:
 
