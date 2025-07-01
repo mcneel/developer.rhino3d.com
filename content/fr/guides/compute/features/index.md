@@ -1,12 +1,12 @@
 +++
-aliases = ["/fr/5/guides/compute/features/", "/fr/6/guides/compute/features/", "/fr/7/guides/compute/features/", "/fr/wip/guides/compute/features/"]
+aliases = ["/en/5/guides/compute/features/", "/en/6/guides/compute/features/", "/en/7/guides/compute/features/", "/en/wip/guides/compute/features/"]
 authors = [ "brian" ]
 categories = [ "Getting Started" ]
-description = "Rhino SDK functions via REST API"
+description = "Fonctions du SDK Rhino via l’API REST"
 keywords = [ "developer", "compute" ]
 languages = [ "C#", "VB" ]
 sdk = [ "Compute" ]
-title = "Compute: Features"
+title = "Les fonctions de Compute"
 type = "guides"
 weight = 1
 override_last_modified = "2020-11-12T13:14:51Z"
@@ -28,26 +28,26 @@ toc_type = "single"
 +++
 
 
-## Compute can:
-  * Calculate Grasshopper definitions online in a serial or parallel solutions.
-  * Manipulate Rhino (3DM) and other file types anywhere on the net.
-  * Call to over 2400+ geometric operations on custom objects from within existing processes online. Including points, curves, surfaces, meshes and solids.
+## Compute peut :
+  * Calculer des définitions de Grasshopper en ligne sur des solutions en série ou en parallèle.
+  * Manipuler des fichiers de Rhino (3DM) et d’autres formats n’importe où sur Internet.
+  * Appeler plus de 2 400 opérations géométriques sur des objets personnalisés à partir de processus en ligne existants. Les objets peuvent être des points, des courbes, des surfaces, des maillages ou des solides.
 
-## Compute Features
-  * Do geometry calculations through a cloud based stateless REST API.
-  * Access [2400+ RhinoCommon API calls](https://compute.rhino3d.com/sdk) from outside Rhino.
-  * Access to additional RhinoCommon functions not available in [openNURBS](https://www.rhino3d.com/opennurbs), including:
-  * Closest point calculations
-  * Intersection calculations
-  * Surface tessellation (meshing)
+## Fonctions de Compute
+  * Exécution de calculs de géométrie à travers une API REST sans état basée sur le cloud.
+  * Accès à [plus de 2 400 appels API RhinoCommon ](https://compute.rhino3d.com/sdk) hors de Rhino.
+  * Accès à des fonctions RhinoCommon supplémentaires non disponibles dans [openNURBS](https://www.rhino3d.com/opennurbs), telles que :
+  * Calculs par la méthode des points les plus proches
+  * Calculs d’intersection
+  * Tessellation de surfaces (maillage)
   * Interpolation
-  * Booleans
-  * Area and mass property calculations
-  * Other miscellaneous geometry calculations
-  * Extendable REST method calls through a common declaration.
-  * Access existing Rhino/Grasshopper plugins through the online interface.
-  * Serialize operations in one request through grasshopper or python scripts.
-  * Client side libraries available for use with standalone C#(.NET), Python and JavaScript.
+  * Opérations booléennes
+  * Calculs d’aires et de propriétés de masse
+  * Autres calculs de géométrie divers
+  * Appels de méthode REST extensibles à travers une déclaration commune.
+  * Accès à des modules existants de Rhino/Grasshopper à travers l’interface en ligne.
+  * Sérialisation d’opérations en une seule requête à travers des scripts de Grasshopper ou de Python.
+  * Bibliothèques axées sur le client à utiliser avec C#(.NET), Python et JavaScript en autonome.
 
-## Open Source:
-Based on [Rhino Inside™ technology](https://www.rhino3d.com/inside), compute is an [open source project](https://github.com/mcneel/compute.rhino3d).
+## Open Source
+Basé sur la technologie [Rhino Inside™](https://www.rhino3d.com/inside), Compute est un [projet open source](https://github.com/mcneel/compute.rhino3d).
