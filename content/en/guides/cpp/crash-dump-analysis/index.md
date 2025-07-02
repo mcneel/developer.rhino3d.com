@@ -39,10 +39,10 @@ Before you can analyze crashes, you'll need to set up visual studio to help you 
     1. Open Visual Studio
     1. From the **Tools** menu, click **Options**
     1. Select **Debugging** > **General** and check the following options:
-        * Enable source server support
-        * Print source server diagnostic messages to the Output window
-        * Allow source server for partial trust assemblies (Managed only)
-        * Always run untrusted source server commands without prompting 
+        * *Enable source server support*
+        * *Print source server diagnostic messages to the Output window*
+        * *Allow source server for partial trust assemblies (Managed only)*
+        * *Always run untrusted source server commands without prompting*
     1. Select **Debugging** > **Symbols**
     1. In the *Symbol file (.pdb) locations* box, add:
         * http://s3.symbols.rhino3d.com/symbols/dujour
@@ -52,10 +52,9 @@ Before you can analyze crashes, you'll need to set up visual studio to help you 
         * https://download.amd.com/dir/bin_2018
         * https://download.amd.com/dir/bin
         * https://software.intel.com/sites/downloads/symbols
-    1. In the *Cache symbols in this directory* folder enter a folder where Visual Studio will cache symbols. Depending on the number of crashes you debug, this folder can get quite large.
+    1. In the *Cache symbols in this directory* folder, enter a folder where Visual Studio will cache symbols. Depending on the number of crashes you debug, this folder can get quite large.
     1. Under *Symbol search preferences:* select **Search for all modules unless excluded**
     (Note that this will make debugging your project slow. To speed this up, select *Automatically choose what module symbols to search for*)
-
 
 
 ### Debugging Crashes
@@ -63,7 +62,7 @@ Before you can analyze crashes, you'll need to set up visual studio to help you 
   1. Download and extract the Zip archive containing the crash dump.
   1. Start Visual Studio
   1. From the **File** menu, click **Open**
-  1. Browse to the RhinoCrashDump.dmp file in the extracted folder
+  1. Browse to the **RhinoCrashDump.dmp** file in the extracted folder
   1. Click **Debug with Mixed**
   1. For details we've extracted about the crash, view the **RhinoCrashDump.dmp.xml** file.
 
