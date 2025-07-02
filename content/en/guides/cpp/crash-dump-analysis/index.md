@@ -30,10 +30,10 @@ toc_type = "single"
 
 ## Overview
 
-If Rhino crashes, two files are created on the user's desktop: *RhinoCrashDump.dmp* and *RhinoCrashDump.3dm*. The *.3DM* file is Rhino's last ditch effort to save the model.  The *.DMP* file can be used in Visual Studio to find the place in the source code where a Rhino plugin crashed.
+If Rhino crashes, two files are created on the user's desktop: *RhinoCrashDump.dmp* and *RhinoCrashDump.3dm*. The *.3dm* file is Rhino's last ditch effort to save the model.  The *.dmp* file can be used in Visual Studio to find the place in the source code where a Rhino plugin crashed.
 
 ### Configuration
-Before you can analyze crashes, you'll need to set up visual studio to help you get symbols.
+Before you can analyze crashes, you'll need to set up Visual Studio to help you get symbols.
 
 1. **Enable Symbol Servers**
     1. Open Visual Studio
@@ -59,12 +59,10 @@ Before you can analyze crashes, you'll need to set up visual studio to help you 
 
 ### Debugging Crashes
 
-  1. Download and extract the Zip archive containing the crash dump.
   1. Start Visual Studio
   1. From the **File** menu, click **Open**
   1. Browse to the **RhinoCrashDump.dmp** file in the extracted folder
   1. Click **Debug with Mixed**
-  1. For details we've extracted about the crash, view the **RhinoCrashDump.dmp.xml** file.
 
 ### Try it!
 
@@ -77,4 +75,4 @@ Below is a sample C++ plugin that will crash Rhino.  To test out crash dump anal
 
 ### Storing symbols
 
-In order to get the most out of your crashes, you need to save the symbols and source code from each of the builds. You'll also need to add source information into your PDB files before you store them in the symbol server.
+In order to get the most out of your crashes, you need to save the symbols (.pdb) and source code from each of the builds. You'll also need to add source information into your .pdb files before you store them in the symbol server.
