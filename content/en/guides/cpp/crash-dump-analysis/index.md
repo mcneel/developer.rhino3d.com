@@ -38,7 +38,7 @@ Before you can analyze crashes, you'll need to set up visual studio to help you 
 1. **Enable Symbol Servers**
     1. Open Visual Studio
     1. From the **Tools** menu, click **Options**
-    1. Select **Debugging** > **General** and check the following options:
+    1. Select **Debugging** > **General** and enable the following options:
         * *Enable source server support*
         * *Print source server diagnostic messages to the Output window*
         * *Allow source server for partial trust assemblies (Managed only)*
