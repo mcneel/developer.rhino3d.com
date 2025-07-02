@@ -76,3 +76,7 @@ Below is a sample C++ plugin that will crash Rhino.  To test out crash dump anal
 ### Storing symbols
 
 In order to get the most out of your crashes, you need to save the symbols (.pdb) and source code from each of the builds. You'll also need to add source information into your .pdb files before you store them in the symbol server.
+
+### More
+
+[Working with Debug Symbols and Source](https://learn.microsoft.com/en-us/shows/visual-studio-2022-launch-event/tips-and-tricks-tips-for-working-with-debug-symbols-and-source)
