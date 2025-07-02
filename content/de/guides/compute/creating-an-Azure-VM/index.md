@@ -26,7 +26,7 @@ toc_type = "single"
 
 ## Erstellen der Virtuellen Maschine
 
-In diesem Leitfaden werden wir den Prozess der Einrichtung einer virtuellen Maschine mit Azure Services erläutern. 
+In diesem Leitfaden werden wir den Prozess der Einrichtung einer virtuellen Maschine mit Azure Services erläutern.
 
 Stellen Sie zunächst sicher, dass Sie über ein gültiges Azure-Abonnement verfügen und dass Sie bereits eine Ressourcengruppe für die verschiedenen Ressourcen dieser Instanz eingerichtet haben. Um mehr über die Einrichtung einer Ressourcengruppe in Azure zu erfahren, [besuchen Sie diese Seite](https://docs.microsoft.com/de-de/azure/azure-resource-manager/management/manage-resource-groups-portal).
 
