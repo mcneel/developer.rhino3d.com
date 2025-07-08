@@ -40,8 +40,9 @@ Les conditions suivantes doivent être satisfaites :
 1. La VM doit être accessible via Internet (ouvrez les ports 80 et 443).
 
 1. Une adresse IPv4 publique statique doit être associée à votre machine virtuelle. Pour en savoir plus sur la configuration d’une adresse IP statique, cliquez sur les liens suivants :
-     [Configurer les adresses IP pour une interface réseau Azure](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/virtual-network-network-interface-addresses?tabs=nic-address-portal#add-ip-addresses)
-     [Associer une adresse IP élastique à une instance EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
+
+    * [Configurer les adresses IP pour une interface réseau Azure](https://learn.microsoft.com/fr-fr/azure/virtual-network/ip-services/virtual-network-network-interface-addresses?tabs=nic-address-portal#add-ip-addresses)
+    * [Associer une adresse IP élastique à une instance EC2](https://docs.aws.amazon.com/fr_fr/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
 
 1. Vous devez avoir un domaine existant et avoir accès à ses paramètres DNS. Un **enregistrement A** dans vos paramètres DNS doit pointer vers l’adresse IPv4 publique de votre machine virtuelle.
 
