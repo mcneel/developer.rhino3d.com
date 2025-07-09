@@ -40,8 +40,8 @@ Die folgenden Angaben müssen ausgefüllt werden:
 1. Die VM muss für das Web zugänglich sein (Port 80 und 443 öffnen).
 
 1. Eine statische öffentliche IPv4-Adresse muss mit Ihrer virtuellen Maschine verknüpft sein. Weitere Informationen zur Konfiguration statischer IP-Adressen finden Sie unter den folgenden Links:
-    * [Konfigurieren von IP-Adressen für eine Azure-Netzwerkschnittstelle](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/virtual-network-network-interface-addresses?tabs=nic-address-portal#add-ip-addresses)
-    * [Zuordnen einer elastischen IP-Adresse zu einer EC2-Instanz](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
+    * [Konfigurieren von IP-Adressen für Azure-Netzwerkschnittstellen](https://learn.microsoft.com/de-de/azure/virtual-network/ip-services/virtual-network-network-interface-addresses?tabs=nic-address-portal#add-ip-addresses)
+    * [Zuordnen einer Elastic-IP-Adresse zu einer EC2-Instanz](https://docs.aws.amazon.com/de_de/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
 
 1. Sie müssen über eine bestehende Domäne verfügen und Zugriff auf deren DNS-Einstellungen haben. Ein **A-Eintrag** in Ihren DNS-Einstellungen muss auf die öffentliche IPv4-Adresse Ihrer virtuellen Maschine zeigen.
 
