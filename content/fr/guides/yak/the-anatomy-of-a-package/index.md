@@ -72,7 +72,7 @@ howler-0.4.0-rh8-any.yak
 1. Les paquets **doivent** contenir un fichier `manifest.yml` dans le répertoire de premier niveau. 
    Vous trouverez tous les détails concernant le manifeste dans le guide sur le [référencement du manifeste](../the-package-manifest).
 1. Tous les modules (fichiers `.rhp`, `.gha`, `.ghpy`) **doivent** se trouver dans le répertoire de premier niveau, ou dans un [répertoire multicible](#a-note-on-net-multi-targeting), afin que Rhino et Grasshopper puissent les trouver et les charger.
-1. Les numéros de version des paquets **doivent** soit suivre la [gestion sémantique de version 2.0.0](http://semver.org/spec/v2.0.0.html) (par exemple `1.1.0-beta`) ou `Système.Version`, que l’on appelle aussi norme à quatre chiffres de Microsoft (par exemple `1.2.3.4`). Il est recommandé d’utiliser la gestion sémantique de version car cette approche permet aux auteurs de paquets de spécifier des versions préliminaires. C’est pratique pour des essais limités, puisque la dernière version _stable_ est installée par défaut.
+1. Les numéros de version des paquets **doivent** soit suivre la [gestion sémantique de version 2.0.0](https://semver.org/lang/fr/) (par exemple `1.1.0-beta`) ou `Système.Version`, connu sous le nom de norme à quatre chiffres de Microsoft (par exemple `1.2.3.4`). Il est recommandé d’utiliser la gestion sémantique de version car cette approche permet aux auteurs de paquets de spécifier des versions préliminaires. C’est pratique pour des essais limités, puisque la dernière version _stable_ est installée par défaut.
 
 ## Distributions
 
