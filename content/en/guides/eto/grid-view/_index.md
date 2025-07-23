@@ -209,6 +209,9 @@ var _1dList = new List<MyObject>
   <div class="codetab-content4" id="py4">
 
   ```py
+# WORKS
+items = [ef.GridItem([False, "Cheese"])]
+
 # 2D List
 items = [[1, 2, 3], ["one", "two", "three"]]
 
