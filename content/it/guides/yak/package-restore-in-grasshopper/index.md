@@ -55,7 +55,7 @@ Per ogni file .gha, l'ID del plug-in viene estratto e aggiunto al file `manifest
 
 ### Numeri di versione
 
-I numeri di versione dei pacchetti possono seguire le specifiche [Semantic Versioning 2.0.0](https://semver.org) (SemVer) o possono essere di quattro cifre[^3], come da `System.Version`. Consultare la guida [package server](../the-package-server) per maggiori dettagli sui formati dei numeri di versione consentiti.
+I numeri di versione dei pacchetti possono seguire le specifiche [Semantic Versioning 2.0.0](https://semver.org) (SemVer) o possono essere di quattro cifre[^3], come da `System.Version`. Consultare la guida [Il server dei pacchetti](../the-package-server) per maggiori dettagli sui formati dei numeri di versione consentiti.
 
 Il server consente sia SemVer che quattro cifre perché alcuni plug-in di Grasshopper specificano il loro numero di versione come `string` in una classe derivata da `GH_AssemblyInfo` mentre altri si affidano all'attributo `AssemblyVersionAttribute`.
 
