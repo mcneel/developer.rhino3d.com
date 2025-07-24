@@ -35,16 +35,16 @@ Le fichier manifeste doit être nommé `manifest.yml` et doit se trouver à la r
 L’objectif du manifeste est de favoriser la rationalisation (et potentiellement l’automatisation) du processus de publication des paquets, en évitant de devoir avoir recours à des formulaires Web pour publier des paquets.
 
 **Attributs requis**
- - [Nom](#name)
+ - [Name](#name)
  - [Version](#version)
- - [Auteurs](#authors)
+ - [Authors](#authors)
  - [Description](#description)
 
 **Attributs recommandés**
  <!-- - [`licence`](#license) -->
  - [URL](#url)
- - [Mots clés](#keywords)
- - [Icône](#icon)
+ - [Keywords](#keywords)
+ - [Icon](#icon)
 
 <!-- ### Attributs facultatifs
  - [`dépendances`](#dependencies) -->
@@ -70,7 +70,7 @@ url: "https://github.com/meshmash/Plankton"
 
 ## Attributs requis
 
-### Nom
+### Name
 
 Il s’agit d’un nom court décrivant le paquet. Choisissez de préférence un seul mot ; mais il est aussi possible d’avoir plusieurs mots séparés par des tirets bas ou des tirets intermédiaires.
 
@@ -97,7 +97,7 @@ Pour faciliter le processus de création, il est possible de remplacer le numér
 version: 0.3.4
 ```
 
-### Auteurs
+### Authors
 
 Liste des auteurs du paquet.
 
@@ -162,7 +162,7 @@ Site Web pour le paquet. Il peut s’agir de n’importe quelle URL, par exemple
 url: "https://github.com/meshmash/Plankton"
 ```
 
-### Mots clés
+### Keywords
 
 Liste de mots clés qui aideront les utilisateurs à trouver le paquet.
 
@@ -172,7 +172,7 @@ keywords:
 - two
 ```
 
-### Icône
+### Icon
 
 Fichier d’icône dans le paquet. Il doit être de petite taille (par exemple 64x64) et doit être au format PNG ou JPEG.
 
@@ -219,10 +219,10 @@ dependencies:
 
 ## Attributs obsolètes
 
-### URL de l’icône
+### Icon URL
 
 {{< call-out "warning" "Avertissement" >}}
-⚠️ Remplacé par l’attribut <a href="#icon" class="alert-link">icône</a>.
+⚠️ Remplacé par l’attribut <a href="#icon" class="alert-link">icon</a>.
 {{< /call-out >}}
 
 Lien **direct** vers une icône qui sera utilisée par le gestionnaire de paquets dans Rhino. Elle doit être de petite taille (32x32 dans l’idéal) et être au format PNG ou JPEG.
