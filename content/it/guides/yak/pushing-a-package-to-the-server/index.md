@@ -123,7 +123,7 @@ Ci sono alcuni motivi per cui l’invio di un pacchetto potrebbe non funzionare.
    Date il numero di versione e informare gli utenti che c'è qualcosa di nuovo da provare!
   
 
-- Invio erroneo di contenuti
+- Invio erroneo di contenuti.
 
   _Usare il [comando `yank`](../yak-cli-reference/#yank) per escludere dall’elenco una versione specifica._
 
