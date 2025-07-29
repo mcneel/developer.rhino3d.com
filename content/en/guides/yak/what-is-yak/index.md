@@ -60,34 +60,23 @@ In addition to the public package server (https://yak.rhino3d.com), the package 
 
 ## Integrations
 
-Integrations provide direct access to the package ecosystem from inside of
-Rhino. Currently this has been done in two ways; "package restore" for
-Grasshopper and the package manager UI.
+Integrations provide direct access to the package ecosystem from inside of Rhino. Currently this has been done in two ways; "package restore" for Grasshopper and the package manager UI.
 
 ### Package restore for Grasshopper
 
-The Rhino Package Manager has been integrated into Grasshopper's "Unrecognized
-Objects" dialog, providing [package restore](../package-restore-in-grasshopper)
-functionality. When opening a new file which contains components from a plug-in
-not installed on the machine, the user is given the option to check the package
-server for the missing plug-ins and install them directly.
+The Rhino Package Manager has been integrated into Grasshopper's "Unrecognized Objects" dialog, providing [package restore](../package-restore-in-grasshopper) functionality. When opening a new file which contains components from a plug-in not installed on the machine, the user is given the option to check the package server for the missing plug-ins and install them directly.
 
 ![Package restore for Grasshopper](/images/yak-gh-restore-guid.gif)
 
 ### Package Manager UI
 
-The package manager UI is avilable via the `_PackageManager` command. It provides a NuGet-style interface that allows
-users to search for packages, install them and see if any updates are avilable
-to currently installed packages.
+The package manager UI is avilable via the `_PackageManager` command. It provides a NuGet-style interface that allows users to search for packages, install them and see if any updates are avilable to currently installed packages.
 
 ![The package manager UI](/images/testpackagemanager-wip.jpg)
 
 ## Command Line Tool
 
-The command line tool provides a basic interface but with full functionality.
-It is modelled on well known domain-specific package managers such as Ruby's
-`gem` and Python's `pip`. It communicates with the server as well as hooking
-into Rhino Accounts for authentication.
+The command line tool provides a basic interface but with full functionality. It is modelled on well known domain-specific package managers such as Ruby's `gem` and Python's `pip`. It communicates with the server as well as hooking into Rhino Accounts for authentication.
 
 On Windows, the tool can be found at `"C:\Program Files\Rhino {{< latest-rhino-version >}}\System\yak.exe"`.
 On Mac there is a script, `"/Applications/Rhino {{< latest-rhino-version >}}.app/Contents/Resources/bin/yak"`.
