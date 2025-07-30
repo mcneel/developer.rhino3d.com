@@ -1,12 +1,12 @@
-+++
-aliases = ["/es/5/guides/compute/deploy-to-iis/", "/es/6/guides/compute/deploy-to-iis/", "/es/7/guides/compute/deploy-to-iis/", "/es/wip/guides/compute/deploy-to-iis/", "/es/guides/compute/deploy/"]
+﻿+++
+aliases = ["/en/5/guides/compute/deploy-to-iis/", "/en/6/guides/compute/deploy-to-iis/", "/en/7/guides/compute/deploy-to-iis/", "/en/wip/guides/compute/deploy-to-iis/", "/en/guides/compute/deploy/"]
 authors = [ "andy.payne" ]
 categories = [ "Deployment" ]
-description = "How to deploy rhino compute for production on a machine running Internet Information Services (IIS)."
+description = "Cómo implementar Rhino.Compute para producción en una máquina que ejecuta Internet Information Services (IIS)."
 keywords = [ "developer", "compute", "production", "IIS" ]
 languages = [ "C#", "VB" ]
 sdk = [ "Compute" ]
-title = "Deployment to Production Servers"
+title = "Implementación en servidores de producción"
 type = "guides"
 weight = 4
 override_last_modified = "2022-05-18T09:45:21Z"
@@ -25,89 +25,89 @@ toc = true
 toc_type = "single"
 +++
 
-## Overview
+## Información general
 
-This guide will walk you through how to setup an instance of Rhino.Compute on a virtual machine running Internet Information Services (IIS). [IIS](https://www.iis.net/), is a flexible, general-purpose web server developed by Microsoft which can be configured to serve requested HTML pages or files. We can setup IIS to process incoming requests (either from Hops or some other client) and forward that request to the Rhino.Compute instance. 
+Esta guía muestra cómo configurar una instancia de Rhino.Compute en una máquina virtual que ejecute Internet Information Services (IIS). [IIS](https://www.iis.net/), es un servidor web flexible y de propósito general desarrollado por Microsoft que puede configurarse para servir páginas o archivos HTML solicitados. Podemos configurar IIS para que procese las peticiones entrantes (ya sean de Hops o de algún otro cliente) y las reenvíe a la instancia de Rhino.Compute. 
 
-You may be asking yourself, "Why do I need IIS at all? Why can't I simply launch the Rhino.Compute server and send API requests directly to that instance?". Technically speaking, you don't need IIS. However, you would need to figure out how to relaunch the compute server should it crash or malfunction. You would also need to configure Rhino.Compute to launch whenever the virtual machine is launched. 
+Quizá se pregunte: "¿Para qué necesito IIS? ¿Por qué no puedo simplemente lanzar el servidor Rhino.Compute y enviar solicitudes API directamente a esa instancia?". Técnicamente hablando, no necesita IIS. Sin embargo, tendrá que averiguar cómo relanzar el servidor informático en caso de que se bloquee o funcione mal. También deberá configurar Rhino.Compute para que se inicie siempre que se inicie la máquina virtual. 
 
-One of the main benefits of using IIS as a middleware is that it can automatically spin up an instance of the Rhino.Compute server whenever a request is recieved. With this configuration, you do not have to have compute running continuously. Instead, IIS can launch an instance of compute when it is needed which in turn will launch one or more child processes. These child processes are what perform the actual computation and also what require your license authorization. 
+Una de las principales ventajas de utilizar IIS como middleware es que puede generar automáticamente una instancia del servidor Rhino.Compute cada vez que se recibe una solicitud. Con esta configuración, no es necesario que Compute funcione continuamente. En su lugar, IIS puede lanzar una instancia de Compute cuando sea necesario, que a su vez lanzará uno o más procesos secundarios. Estos procesos secundarios son los que realizan el cálculo real y también los que requieren su autorización de licencia. 
 
-When Rhino.Compute.exe does not receive requests to solve over a period of seconds (this is called idlespans and the default is set to 1 hour), child compute.geometry.exe processes will shut down and stop incurring core hour billing. At some date in the future when a new request is received, IIS will make sure that Rhino.Compute.exe is running which will then relaunch the child processes. Note, there may be some small delay in the response while the child processes are launching.
+Cuando Rhino.Compute.exe no recibe peticiones para resolver durante un periodo de segundos (esto se denomina idlespans y el valor predeterminado es de 1 hora), los procesos secundarios de compute.geometry.exe se apagarán y dejarán de incurrir en facturación por hora de núcleo. En algún momento en el futuro, cuando se reciba una nueva solicitud, IIS se asegurará de que Rhino.Compute.exe se está ejecutando, lo que relanzará los procesos secundarios. Tenga en cuenta que puede haber un pequeño retraso en la respuesta mientras se inician los procesos secundarios.
 
 {{< image url="/images/IIS_Request.png" alt="/images/IIS_Request.png" class="image_center" width="100%" >}}
-<figcaption align = "left"><b>Fig.1 - A flow diagram showing how IIS recieves an incoming request and launches Rhino.Compute.exe which in turn spins up child processes.</b></figcaption>
+<figcaption align = "left"><b>Fig.1 - Diagrama de flujo que muestra cómo IIS recibe una solicitud entrante y ejecuta Rhino.Compute.exe, que a su vez inicia procesos secundarios.</b></figcaption>
 
-## Prerequisites
+## Requisitos previos
 
-Before running the bootstrap script on your server or virtual machine, you will need the following pieces of information.
+Antes de ejecutar el script Bootstrap en su servidor o máquina virtual, necesitará la siguiente información.
 
-* **`EmailAddress`** - The script will use this email to download a copy of Rhino to install. This is similar to the Rhino download page behavior.
-* **`ApiKey`** - The API key is a string of text that is secret to your compute server and your applications that are using the compute API e.g. `b8f91f04-3782-4f1c-87ac-8682f865bf1b`. It is basically how the compute server ensures that the API calls are coming from your apps only. You can enter any string that is unique and secret to you and your compute apps. Make sure to keep this in a safe place.
-* **`RhinoToken`** – This is a long token that identifies your instance of Rhino Compute to the core-hour billing system. Go to the [Licenses Portal](https://www.rhino3d.com/licenses?_forceEmpty=true) to generate this unique id based on your license. See the ["Core-Hour Billing" guide](../core-hour-billing/) for more information.
+* **`EmailAddress`** - El script utilizará este correo electrónico para descargar una copia de Rhino para instalar. Funciona de manera similar a la página de descarga de Rhino.
+* **`ApiKey`** - La clave API es una cadena de texto secreta para el servidor de Compute y las aplicaciones que utilizan la API de Compute, por ejemplo `b8f91f04-3782-4f1c-87ac-8682f865bf1b`. Es básicamente la forma en que el servidor de Compute se asegura de que las llamadas a la API proceden únicamente de sus aplicaciones. Puede introducir cualquier cadena que sea única y secreta para usted y sus aplicaciones informáticas. Asegúrese de guardarlo en un lugar seguro.
+* **`RhinoToken`** – Se trata de un token largo que identifica su instancia de Rhino Compute ante el sistema de facturación por hora de núcleo. Vaya al [Portal de licencias](https://www.rhino3d.com/licenses?_forceEmpty=true) para generar este identificador único basado en su licencia. Consulte la guía ["Facturación por hora de núcleo"](../core-hour-billing/) para obtener más información.
 
-{{< call-out "note" "Note" >}}
-Running rhino compute locally uses your existing Rhino license and does not cost any additional money (other than your initial rhino license investment). Running compute locally is the best option for development and testing and to find out more, read <a href="../development"><u>Running and Debugging Compute Locally</u></a>.<br><br>
+{{< call-out "note" "Nota" >}}
+Ejecutar Rhino Compute localmente utiliza su licencia de Rhino existente y tiene costes adicionales (aparte de la inversión inicial en la licencia de Rhino). Ejecutar Compute localmente es la mejor opción para el desarrollo y las pruebas. Para obtener más información, lea <a href="../development"><u>Ejecutar y depurar Compute localmente</u></a>.<br><br>.
 
-However, when setting up a production environment you will need a server or virtual machine pre-installed with Windows Server 2019 or higher. Licensing works differently when running Rhino (ie. via Compute) in a production environment (ie. server-setting) and you will be charged at a rate of <strong>$0.10 per core per hour</strong>. <br><br>
+Sin embargo, al configurar un entorno de producción, necesitará un servidor o una máquina virtual preinstalados con Windows Server 2019 o superior. Las licencias funcionan de forma diferente cuando se ejecuta Rhino (es decir, a través de Compute) en un entorno de producción (es decir, en un servidor) y se le cobrará una tarifa de 0,10 dólares por núcleo y hora. <br><br>
 
-Follow the <a href="../core-hour-billing"><u>"Core-Hour Billing" guide</u></a> to get set up. <b>This is important so do not skip.</b>
+Siga la guía <a href="../core-hour-billing"><u>"Facturación por hora de núcleo"</u></a> para configurarlo. Este paso es importante, así que no se lo salte.
 {{< /call-out >}}
 
-## Create the VM
+## Crear la máquina virtual
 
-The first step in the process of deploying **Rhino.Compute** for production is to either setup a physical machine to act as a server or create a virtual machine (VM). For this guide, we will be using a virtual machine. There are several popular services which can be configured to setup a wide array of virtual machines depending on your resource needs. Two of the most prominent providers include [Azure](https://azure.microsoft.com/en-us/free/virtual-machines/) and [AWS](https://aws.amazon.com/ec2/instance-types/).  
+El primer paso en el proceso de implementación de **Rhino.Compute** para producción es configurar una máquina física para que actúe como servidor o crear una máquina virtual (VM). Para esta guía, utilizaremos una máquina virtual. Existen varios servicios populares que pueden configurarse para crear una amplia gama de máquinas virtuales en función de sus necesidades de recursos. Dos de los proveedores más destacados son [Azure](https://azure.microsoft.com/en-us/free/virtual-machines/) y [AWS](https://aws.amazon.com/ec2/instance-types/).  
 
-Depending on your preferences, we recommend starting with an Azure or AWS VM. Use the following guides to walk through that process.
+Dependiendo de sus preferencias, le recomendamos comenzar con una máquina virtual de Azure o AWS. Utilice las siguientes guías para realizar ese proceso.
 
-* [Create a Virtual Machine on Azure](../creating-an-Azure-VM).
+* [Crear una máquina virtual en Azure](../creating-an-Azure-VM).
 
-* [Create a Virtual Machine on AWS](../creating-an-aws-vm).
+* [Crear una máquina virtual en AWS](../creating-an-aws-vm).
 
-### Connect via RDP
+### Conectarse mediante RDP
 
-Now that we've configured the virtual machine, we need to be able to log onto it so that we can setup IIS and the Rhino.Compute instance. We'll do this by using a remote desktop protocol (RDP) which connects two computers over a network.
+Ahora que hemos configurado la máquina virtual, necesitamos poder iniciar sesión en ella para poder configurar IIS y la instancia de Rhino.Compute. Para ello, utilizaremos un protocolo de escritorio remoto (RDP) que conecta dos equipos a través de una red.
 
-To start, let's download the RDP file. We'll use the Azure VM Portal but a similar process is used for AWS.
+Para empezar, vamos a descargar el archivo RDP. Usaremos el Azure VM Portal pero un proceso similar se usa para AWS.
 
-1. First, make sure the virtual machine is running. Click on the **Overview** tab in the left-hand menu. If the *Status* says *Stopped (Deallocated)*, click on the **Start** button at the top to start the remote machine. After a few seconds, the status should say *Running*.
+1. En primer lugar, asegúrese de que la máquina virtual está en funcionamiento. Haga clic en la pestaña **Overview** en el menú de la izquierda. Si el *Status* dice *Stopped (Deallocated)*, haga clic en el botón **Start** de la parte superior para iniciar la máquina remota. Después de unos segundos, el estado debe indicar *Running*.
 
-1. Click on the **Connect** menu item in the left-hand menu to pull out the connection settings blade.
+1. Haga clic en la opción **Connect** del menú de la izquierda para desplegar la hoja de configuración de la conexión.
 
-1. Click on the **Download RDP File** button and save the file somewhere on your computer.
+1. Haga clic en el botón **Download RDP File** y guarde el archivo en su equipo.
 {{< image url="/images/Azure_VM_Connect1.png" alt="/images/Azure_VM_Connect1.png" class="image_center" width="100%" >}}
 
-1. Click on the Windows **Start** menu and start typing *remote desktop connection* in the search bar. Click on the link to launch app.
+1. Haga clic en el menú **Inicio** de Windows y escriba *conexión remota a escritorio* en la barra de búsqueda. Haga clic en el enlace para iniciar la aplicación.
 
-1. Click on the button at the bottom of the app to **Show Options**
+1. Haga clic en el botón de la parte inferior de la aplicación para **Mostrar opciones**.
 
-1. Under the *Connection Settings* area, select **Open** and navigate to the directory where you saved your RDP file. Choose that file and hit Open.
+1. En el área *Configuración de la conexión* , seleccione **Abrir** y navegue hasta el directorio donde guardó el archivo RDP. Elija ese archivo y pulse Abrir.
 
-1. Select the checkbox to **Allow me to save credentials**
+1. Seleccione la casilla de verificación **Permitirme guardar credenciales**.
 
-1. Click **Connect**.
+1. Haga clic en **Conectar**.
 {{< image url="/images/Azure_VM_Connect2.png" alt="/images/Azure_VM_Connect2.png" class="image_center" width="60%" >}}
 
-1. A security pop-up will be opened. Click the checkbox for **Don't ask me again for connections to this computer** and then click **Connect**.
+1. Se abrirá una ventana emergente de seguridad. Haga clic en la casilla **No volver a pedirme conexiones con este equipo** y, a continuación, haga clic en **Conectar**.
 
-1. Enter the administrator credentials that you entered in step 7 of [Creating a Virtual Machine](../deploy-to-iis/#setting-up-a-virtual-machine).
+1. Introduzca las credenciales de administrador que introdujo en el paso 7 para [Crear una máquina virtual](../deploy-to-iis/#setting-up-a-virtual-machine).
 
-1. You may see another security pop-up. Again, select **Don't ask me again for connections to this computer** and click **Yes**.
+1. Es posible que aparezca otra ventana emergente de seguridad. De nuevo, seleccione **No volver a pedirme conexiones con este equipo** y haga clic en **Sí**.
 
-Congratulations. You should now have access to the desktop of the remote machine running Windows Server 2019 or higher.
+Enhorabuena. Ahora debería tener acceso al escritorio de la máquina remota que ejecuta Windows Server 2019 o superior.
 
-## Running the Bootstrap script
-Assuming that you are now logged into the virtual machine (using RDP), follow the following steps to install Rhino.Compute behind IIS. Note: The following steps assume that this is an installation on a new virtual machine or server (meaning Rhino.Compute has not been previously installed on this machine). If you have already setup Rhino.Compute and IIS on this machine and simply need to update Rhino and/or Rhino.Compute on this VM, please proceed to the section on [Updating Rhino Compute](../deploy-to-iis/#updating-the-deployment).
+## Ejecutar el script Bootstrap
+Suponiendo que ya ha iniciado sesión en la máquina virtual (mediante RDP), siga los siguientes pasos para instalar Rhino.Compute detrás de IIS. Nota: Los siguientes pasos suponen que se trata de una instalación en una nueva máquina o servidor virtual (lo que significa que Rhino.Compute no se ha instalado previamente en esta máquina). Si ya ha configurado Rhino.Compute e IIS en este equipo y solo necesita actualizar Rhino y/o Rhino.Compute en esta máquina virtual, vaya a la sección [Actualizar Rhino Compute](../deploy-to-iis/#updating-the-deployment).
 
-### Step 1
+### Paso 1
 
-1. Click on the Windows Start menu and type in "Powershell". In the menu that appears, right-click on the **Windows Powershell app** and choose **Run As Administrator**.
+1. Haga clic en el menú Inicio de Windows y escriba "Powershell". En el menú que aparece, haga clic con el botón derecho en la **aplicación Windows Powershell** y elija **Ejecutar como administrador**.
 {{< image url="/images/powershell_1.png" alt="/images/powershell_1.png" class="image_center" width="50%" >}}
 
-1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest step 1 bootstrap script and install Rhino and IIS onto your VM. Note: you will be prompted to enter your **Email Address**, **API Key**, and **Rhino Token**, so please have that information handy.
+1. **Copie y pegue** el siguiente comando en el prompt de Powershell y pulse **Intro**. Este comando descargará el último script Bootstrap del paso 1 e instalará Rhino e IIS en su máquina virtual. Nota: se le pedirá que introduzca su **Dirección de correo electrónico**, **Clave API**y **Token de Rhino**, así que tenga esa información a mano.
     <div class="codetab">
-      <button class="tablinks1" onclick="openCodeTab(event, 'r7-1')">Rhino 7: Step 1</button>
-      <button class="tablinks1" onclick="openCodeTab(event, 'r8-1')" id="defaultOpen1">Rhino 8: Step 1</button>
+      <button class="tablinks1" onclick="openCodeTab(event, 'r7-1')">Rhino 7: Paso 1</button>
+      <button class="tablinks1" onclick="openCodeTab(event, 'r8-1')" id="defaultOpen1">Rhino 8: Paso 1</button>
     </div>
 
     <div class="tab-content">
@@ -128,18 +128,18 @@ Assuming that you are now logged into the virtual machine (using RDP), follow th
     </div>
     </div>
 
-1. At the end of step 1, your VM will automatically be restarted (You will be logged out of Remote Desktop).
+1. Al final del paso 1, su máquina virtual se reiniciará automáticamente (se cerrará su sesión de Escritorio Remoto).
 
-### Step 2
+### Paso 2
 
-1. Log back into your VM using Remote Desktop.
+1. Vuelva a iniciar sesión en su máquina virtual mediante Escritorio remoto.
 
-1. Open a new instance of **Windows Powershell**. Make sure to right-click on the application and select **Run As Administrator**.
+1. Abra una nueva instancia de **Windows Powershell**. Asegúrese de hacer clic con el botón derecho en la aplicación y seleccione **Ejecutar como administrador**.
 
-1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest step 2 bootstrap script and will configure IIS to work with Rhino.Compute.
+1. **Copie y pegue** el siguiente comando en el indicador de Powershell y pulse **Intro**. Este comando descargará el último script Bootstrap del paso 2 y configurará IIS para que funcione con Rhino.Compute.
     <div class="codetab">
-      <button class="tablinks2" onclick="openCodeTab(event, 'r7-2')">Rhino 7: Step 2</button>
-      <button class="tablinks2" onclick="openCodeTab(event, 'r8-2')" id="defaultOpen2">Rhino 8: Step 2</button>
+      <button class="tablinks2" onclick="openCodeTab(event, 'r7-2')">Rhino 7: Paso 2</button>
+      <button class="tablinks2" onclick="openCodeTab(event, 'r8-2')" id="defaultOpen2">Rhino 8: Paso 2</button>
     </div>
 
     <div class="tab-content">
@@ -160,57 +160,57 @@ Assuming that you are now logged into the virtual machine (using RDP), follow th
     </div>
     </div>
 
-1. At the end of the step 2 installation script, you should see the message *Congratulations! All components have now been installed.* This will be followed by some instructions about how to install 3rd party plugins so that they will work properly with Rhino.Compute. Please take note of the new **Username** and **Password** which will be required when logging back in to install any additional plugin.
+1. Al final del script de instalación del paso 2, debería aparecer el mensaje *¡Felicidades!*.* Ya se han instalado todos los componentes.* A continuación se darán algunas instrucciones sobre cómo instalar plugins de terceros para que funcionen correctamente con Rhino.Compute. Tenga en cuenta el nuevo **Nombre de usuario** y **Contraseña** que serán necesarios cuando vuelva a iniciar sesión para instalar cualquier plugin adicional.
 
-## Testing the app
+## Probar la aplicación
 
-At this point, IIS should be configured to launch the Rhino.Compute instance when an API request is made. Let's try getting Hops to send a definition to our virtual machine's URL. 
+En este punto, IIS debe estar configurado para lanzar la instancia de Rhino.Compute cuando se realice una solicitud de API. Intentemos que Hops envíe una definición a la URL de nuestra máquina virtual. 
 
-1. Launch **Rhino** on your local machine.
+1. Inicie **Rhino** en su máquina local.
 
-1. If you have not already installed hops on this machine, please do so by searching for it in the Rhino **Package Manager**.
+1. Si aún no ha instalado Hops en este equipo, hágalo buscándolo en el **Administrador de paquetes** de Rhino.
 
-1. Start **Grasshopper** by typing the word *Grasshopper* into the command prompt and hitting enter.
+1. Inicie **Grasshopper** escribiendo la palabra *Grasshopper* en el símbolo del sistema y pulsando intro.
 
-1. Go to **File** and then **Preferences** to open the preferences dialog. 
+1. Vaya a **Archivo** y luego a **Preferencias** para abrir el cuadro de diálogo de preferencias. 
 
-1. Click on the **Solver** tab in the left-hand menu. 
+1. Haga clic en la pestaña **Solver** del menú de la izquierda. 
 
-1. In the **Hops - Compute server URLs** section, type in the web address of your virtual machine. Start by typing in `http://` followed by the IP address of the virtual machine followed by a `:` and the port number `80`. So, the full address would look something like this:
+1. En la sección **Hops - Compute server URLs** , escriba la dirección web de su máquina virtual. Comience escribiendo `http://` seguido de la dirección IP de la máquina virtual seguida de un `:` y el número de puerto `80`. La dirección completa sería algo parecido a esto:
             
         http://52.168.38.105:80/
 
-1. In the **API Key** section, enter the API Key that you saved in the [Prerequisites](../deploy-to-iis/#prerequisites) section.
+1. En la sección **API Key** , introduzca la clave de API que guardó en la sección [Requisitos previos](../deploy-to-iis/#prerequisites) .
 {{< image url="/images/Hops_To_IIS_4.png" alt="/images/Hops_To_IIS_4.png" class="image_center" width="80%" >}}
 
-1. Add a **Hops** component to the **Grasshopper canvas** (Params/Util)
+1. Añada un componente **Hops** al lienzo de **Grasshopper** (Params/Util)
 
-1. Right-click on the **Hops** component and set the **Path** to a valid Hops/Grasshopper definition. To learn more about setting up a Grasshopper definition that will work properly with Hops, [follow this guide](../hops-component/).
+1. Haga clic con el botón derecho en el componente **Hops** y establezca **Path** en una definición válida de Hops/Grasshopper. Para obtener más información sobre cómo configurar una definición de Grasshopper que funcione correctamente con Hops, [siga esta guía](../hops-component/).
 {{< image url="/images/Hops_To_IIS_2.png" alt="/images/Hops_To_IIS_2.png" class="image_center" width="50%" >}}
 
-Once the path is set, the Hops component will create the appropriate API request and sends it to the URL that we specified in step 6 (the Rhino.Compute server running on IIS). The compute server processes the request and sends a response back to Hops, which returns the result.
+Una vez establecida la ruta, el componente Hops creará la solicitud de API adecuada y la enviará a la URL que especificamos en el paso 6 (el servidor Rhino.Compute que se ejecuta en IIS). El servidor de cálculo procesa la solicitud y envía una respuesta a Hops, que devuelve el resultado.
 {{< image url="/images/Hops_To_IIS_3.png" alt="/images/Hops_To_IIS_3.png" class="image_center" width="70%" >}}
 
-Congratulations! You have successfully setup an instance of Rhino.Compute running behind IIS on a virtual machine. 
+¡Felicidades! Ha configurado correctamente una instancia de Rhino.Compute que se ejecuta detrás de IIS en una máquina virtual. 
 
-## Modifying Compute Parameters After Deployment
+## Modificación de los parámetros de Compute después de la implementación
 
-There are a number of command line arguments that can be used to modify how Rhino.Compute behaves. This section covers how to change those parameters after Rhino.Compute has been deployed.
+Hay una serie de argumentos de línea de comandos que se pueden utilizar para modificar el comportamiento de Rhino.Compute. En esta sección se explica cómo cambiar estos parámetros después de implementar Rhino.Compute.
 
-1. Log into your VM (via RDP). See the section [Connect via RDP](#connect-via-rdp) for more details.
+1. Inicie sesión en su máquina virtual (mediante RDP). Consulte la sección [Connect via RDP](#connect-via-rdp) para obtener más detalles.
 
-1. On the **Start** menu, click in the search area and type *Internet Information Services (IIS) Manager*. Click to launch the app.
+1. En el menú **Inicio**, haga clic en el área de búsqueda y escriba *Administrador de Internet Information Services (IIS)*. Haga clic para iniciar la aplicación.
 
-1. In the IIS Manager, **click** on the web server node in the **Connections** panel on the left. Note, this web server name should be the same name you used when setting up the name of your virtual machine. 
+1. En el Administrador de IIS, **haga clic** en el nodo del servidor web en el panel **Conexiones** de la izquierda. Nota, este nombre de servidor web debe ser el mismo que utilizó al configurar el nombre de su máquina virtual. 
 
-1. In the **Actions** pane on the right, click **Stop** to stop the web server.
+1. En el panel **Acciones** de la derecha, haga clic en **Detener** para detener el servidor web.
 {{< image url="/images/iis_manager.png" alt="/images/iis_manager.png" class="image_center" width="100%" >}}
 
-Now that the IIS web server has been stopped, we need to go and modify the **web.config* file for Rhino.Compute. The [web.config](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/web-config?view=aspnetcore-6.0) file is a file that is read by IIS and the ASP.NET Core module to configure an which is hosted by IIS. 
+Ahora que el servidor web IIS se ha detenido, tenemos que modificar el archivo **web.config* para Rhino.Compute. El archivo [web.config](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/web-config?view=aspnetcore-6.0) es un archivo que leen IIS y el módulo ASP.NET Core para configurar una aplicació alojada en IIS. 
 
-1. Open a **File Explorer** window and navigate to *C:\inetpub\wwwroot\aspnet_client\system_web\4_0_30319\rhino.compute*. At the end of this directory, you should see a file labled **web.config**. Note, you may need to click on the **View** tab and click the checkbox to turn on **file name extensions**. Open the web.config file with **Notepad** or any other text editor you prefer.
+1. Abra una ventana del **Explorador de archivos** y navegue hasta *C:\inetpub\wwwroot\aspnet_client\system_web\4_0_30319\rhino.compute*. Al final de este directorio, debería ver un archivo llamado **web.config**. Es posible que tenga que hacer clic en la pestaña **Ver** y hacer clic en la casilla de verificación para activar las **extensiones de nombre de archivo**. Abra el archivo web.config con **Notepad** o cualquier otro editor de texto que prefiera.
 
-The full web.config file should look like this:
+El archivo web.config completo debería verse así:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -223,48 +223,48 @@ The full web.config file should look like this:
   </system.webServer>
 </configuration>
 ```
-The line we are most interested in modifying is the one which starts with the **`<aspNetCore>`** tag. You can see the second parameter on this line is called **`arguments`**. This is the section that you would edit to add other command line arguments to modify Rhino.Compute. 
+La línea que más nos interesa modificar es la que empieza con la etiqueta **`<aspNetCore>`**. Puede ver que el segundo parámetro de esta línea se denomina **`arguments`**. Esta es la sección que debe editar para añadir otros argumentos de línea de comandos para modificar Rhino.Compute. 
 
-Below is a description of each command line argument which can be modified.
+A continuación se describe cada argumento de la línea de comandos que puede modificarse.
 
-- **port** - This is the port number to run Rhino.Compute on. Port number 80 is typically reserved for HTTP communication, while port number 443 is used for the HTTPS protocol. We have setup Rhino.Compute to be bound to port 80 in the bootstrap script, so do not modify this value unless you know what you are doing. Example usage: `--port 80`.
+- **port** - Es el número de puerto en el que se ejecutará Rhino.Compute. El puerto número 80 suele reservarse para la comunicación HTTP, mientras que el puerto número 443 se utiliza para el protocolo HTTPS. Hemos configurado Rhino.Compute para que se conecte al puerto 80 en el script Bootstrap, así que no modifique este valor a menos que sepa lo que está haciendo. Ejemplo de uso: `--port 80`.
 
-- **childcount** - This parameter controls the number of child compute.geometry processes to manage. The *default value is 4* which means that Rhino.Compute will spawn four child processes each of which can handle incoming requests. Example usage: `--childcount 8` would tell Rhino.Compute to launch eight child processes.
+- **childcount** - Este parámetro controla el número de procesos secundarios de compute.geometry a gestionar. El *valor predeterminado es 4* , lo que significa que Rhino.Compute generará cuatro procesos secundarios, cada uno de los cuales podrá gestionar las solicitudes entrantes. Ejemplo de uso: `--childcount 8` le dice a Rhino.Compute que lance ocho procesos secundarios.
 
-- **childof** - This is the process handle of parent process. Compute watches for the existence 
-of this handle and will shut down when this process has exited. Since we are relying on IIS starting and stopping Rhino.Compute, you do not need this parameter when running in a production environment.
+- **childof** - Este es el identificador del proceso principal. Compute revisa la existencia 
+de este identificador y se cerrará cuando este proceso haya terminado. Como dependemos de que IIS inicie y detenga Rhino.Compute, no necesita este parámetro cuando se ejecute en un entorno de producción.
 
-- **spawn-on-startup** - This flag determines whether to launch a child compute.geometry process when Rhino.Compute gets started. The *default value is false*. This parameter is a flag which means that if it is not included in the argument list, the value will be false. If you include this parameter, then its value will be true. For production environments, this value should remain false.
+- **spawn-on-startup** - Esta opción determina si se inicia un proceso secundario compute.geometry cuando se inicia Rhino.Compute. El *valor predeterminado es false*. Este parámetro es una bandera, lo que significa que si no se incluye en la lista de argumentos, el valor será false. Si incluye este parámetro, su valor será true. Para entornos de producción, este valor debe permanecer como false.
 
-- **idlespan** - This is the number of seconds that a child compute.geometry processes should remain open between requests. The *default value is 1 hour*. When Rhino.Compute.exe does not receive requests to solve over a period of `idlespan` seconds, child compute.geometry.exe processes will shut down and stop incurring core hour billing. At some date in the future when a new request is received, the child processes will be relaunched which will cause a small delay on requests while the child processes are launching. Example usage: `--idlespan 1800` would tell Rhino.Compute to shutdown the child processes after 30 minutes (30 mins x 60 secs = 1800).
+- **idlespan** - Es el número de segundos que un proceso secundario de compute.geometry debe permanecer abierto entre peticiones. El *valor predeterminado es 1 hora*. Cuando Rhino.Compute.exe no recibe peticiones para resolver durante un periodo de `idlespan` segundos, los procesos secundarios de compute.geometry.exe se apagarán y dejarán de incurrir en facturación por horas de núcleo. En algún momento en el futuro, cuando se reciba una nueva solicitud, los procesos secundarios se volverán a lanzar, lo que provocará un pequeño retraso en las solicitudes mientras se lanzan los procesos secundarios. Ejemplo de uso: `--idlespan 1800` le dice a Rhino.Compute que apague los procesos secundarios después de 30 minutos (30 min. x 60 seg. = 1800).
 
-    If you change the `idelspan` value in the command line arguments for Rhino.Compute, you will also need to make a modification to the IIS configuration. This is because IIS also contains a setting to shut down Rhino.Compute if no new requests are received after a period of time. When Rhino.Compute gets shutdown, it will in turn shutdown any child processes. 
+    Si cambia el valor `idelspan` en los argumentos de la línea de comandos para Rhino.Compute, también tendrá que hacer una modificación en la configuración de IIS. Esto se debe a que IIS también contiene una configuración para cerrar Rhino.Compute si no se reciben nuevas solicitudes después de un periodo de tiempo. Cuando Rhino.Compute se cierra, cerrará a su vez cualquier proceso secundario. 
 
-    For example, lets say you change the `idlespan` value to 7,200 (2 hours). The bootstrap script sets the IIS `IdleTimeout` value to 65 minutes (slightly longer than the default `idlespan` value). After 65 minutes, IIS would shutdown Rhino.Compute, which would then shutdown all of its child processes much earlier than the expected 2 hour time limit. So, if you change the `idlespan` value, it is recommended that you also change the `IdleTimeout` value in the IIS settings.
+    Por ejemplo, digamos que cambia el valor de `idlespan` a 7.200 (2 horas). El script Bootstrap establece el valor `IdleTimeout` de IIS en 65 minutos (ligeramente superior al valor `idlespan` predeterminado). Después de 65 minutos, IIS cierra Rhino.Compute, que a su vez cierra todos sus procesos secundarios mucho antes del límite de tiempo esperado de 2 horas. Por lo tanto, si cambia el valor de `idlespan`, se recomienda que también cambie el valor de `Tiempo de inactividad` en la configuración de IIS.
 
-    1. To do this, go back to the IIS Manager and click on the **Application Pools** item in the **Connections** pane on the left. 
+    1. Para ello, vuelva al Administrador de IIS y haga clic en el elemento **Grupos de aplicaciones** del panel **Conexiones** de la izquierda. 
     
-    1. In the center window click on the **RhinoComputeAppPool**.
+    1. En la ventana central, haga clic en **RhinoComputeAppPool**.
 
-    1. In the **Actions** pane on the right, click **Advanced Settings**.
+    1. En el panel **Acciones** de la derecha, haga clic en **Configuración avanzada**.
 
-    1. Find the **Idle Time-out** row under the **Process Model** section and change the time out value to be slightly longer than the `idlespan` value you set in the command line arguments. Note: the `idlespan` value is in seconds while the `Idle Timeout` value is in minutes.
+    1. Busque la fila **Tiempo de inactividad** en la sección **Modelo de proceso** y cambie el valor del tiempo de inactividad para que sea ligeramente superior al valor de `idlespan` que estableció en los argumentos de la línea de comandos. Nota: el valor `idlespan` está en segundos mientras que el valor `Tiempo de inactividad` está en minutos.
     {{< image url="/images/iis_idletimout.png" alt="/images/iis_idletimout.png" class="image_center" width="60%" >}}
 
-Once you have modified web.config file, **save** it and close the file. You can then go back to the IIS Manager and **Start** the web server by clicking on the web server node in the **Connections** panel on the left and clicking **Start** in the **Actions** pane on the right.
+Una vez que haya modificado el archivo web.config, **guárdelo** y cierre el archivo. A continuación, puede volver al Administrador de IIS e **Iniciar** el servidor web haciendo clic en el nodo del servidor web en el panel **Conexiones** de la izquierda y haciendo clic en **Iniciar** en el panel **Acciones** de la derecha.
 
-## Updating The Deployment
-If you have already setup Rhino.Compute and/or IIS on this machine, you may need to periodically update Rhino and/or the Rhino.Compute build files to the latest version. Follow the steps below to update these applications.
+## Actualizar la implementación
+Si ya ha configurado Rhino.Compute en este equipo, es posible que tenga que actualizar periódicamente Rhino y los archivos de compilación de Rhino.Compute a la última versión. Siga los pasos que se indican a continuación para actualizar estas aplicaciones.
 
-### Update Rhino
+### Actualizar Rhino
 
-1. Click on the Windows Start menu and type in "Powershell". In the menu that appears, right-click on the **Windows Powershell app** and choose **Run As Administrator**.
+1. Haga clic en el menú Inicio de Windows y escriba "Powershell". En el menú que aparece, haga clic con el botón derecho en la **aplicación Windows Powershell** y elija **Ejecutar como administrador**.
 
-1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino for Windows. Note: you will be prompted to enter your **Email Address** so please have that information available.
+1. **Copie y pegue** el siguiente comando en el indicador de Powershell y pulse **Enter**. Este comando descargará la última versión de Rhino para Windows. Nota: se le pedirá que introduzca su **Dirección de correo electrónico**, así que tenga a mano esa información.
 
     <div class="codetab">
-      <button class="tablinks1" onclick="openCodeTab(event, 'r7-3')">Update to Latest Rhino 7 Install</button>
-      <button class="tablinks1" onclick="openCodeTab(event, 'r8-3')" id="defaultOpen3">Update to Latest Rhino 8 Install</button>
+      <button class="tablinks1" onclick="openCodeTab(event, 'r7-3')">Actualizar a la última versión de Rhino 7</button>
+      <button class="tablinks1" onclick="openCodeTab(event, 'r8-3')" id="defaultOpen3">Actualizar a la última versión de Rhino 8</button>
     </div>
 
     <div class="tab-content">
@@ -285,15 +285,15 @@ If you have already setup Rhino.Compute and/or IIS on this machine, you may need
     </div>
     </div>
 
-### Update Compute
+### Actualizar Compute
 
-1. Click on the Windows Start menu and type in "Powershell". In the menu that appears, right-click on the **Windows Powershell app** and choose **Run As Administrator**.
+1. Haga clic en el menú Inicio de Windows y escriba "Powershell". En el menú que aparece, haga clic con el botón derecho en la **aplicación Windows Powershell** y elija **Ejecutar como administrador**.
 
-1. **Copy and paste** the command below into the Powershell prompt and hit **Enter**. This command will download the latest version of Rhino.Compute.
+1. **Copie y pegue** el siguiente comando en el símbolo del sistema de Powershell y pulse **Intro**. Este comando descargará la última versión de Rhino.Compute.
 
     <div class="codetab">
-      <button class="tablinks1" onclick="openCodeTab(event, 'r7-4')">Update Rhino.Compute for Rhino 7</button>
-      <button class="tablinks1" onclick="openCodeTab(event, 'r8-4')" id="defaultOpen4">Update Rhino.Compute for Rhino 8</button>
+      <button class="tablinks1" onclick="openCodeTab(event, 'r7-4')">Actualizar Rhino.Compute para Rhino 7</button>
+      <button class="tablinks1" onclick="openCodeTab(event, 'r8-4')" id="defaultOpen4">Actualizar Rhino.Compute para Rhino 8</button>
     </div>
 
     <div class="tab-content">
@@ -315,8 +315,8 @@ If you have already setup Rhino.Compute and/or IIS on this machine, you may need
     </div>
 
  
-## Quick Links
+## Enlaces rápidos
 
- - [What is Hops](../what-is-hops)
- - [How Hops Works](../how-hops-works)
- - [The Hops Component](../hops-component)
+ - [Qué es Hops](../what-is-hops)
+ - [Cómo funciona Hops](../how-hops-works)
+ - [El componente Hops](../hops-component)
