@@ -27,9 +27,7 @@ toc_type = "single"
 +++
 
 {{< call-out "note" "Note" >}}
-Yak is cross-platform. The examples below are for Windows.
-For Mac, replace the path to the Yak CLI tool with
-<code>"/Applications/Rhino {{< latest-rhino-version >}}.app/Contents/Resources/bin/yak"</code>.
+Yak is cross-platform. The examples below are for Windows. For Mac, replace the path to the Yak CLI tool with <code>"/Applications/Rhino {{< latest-rhino-version >}}.app/Contents/Resources/bin/yak"</code>.
 {{< /call-out >}}
 
 
@@ -59,8 +57,7 @@ You can also ask Yak to install a specific version.
 ...
 ```
 
-The package is installed to a special folder, similar to the Grasshopper
-Libraries folder but with a folder/file structure that Yak controls.
+The package is installed to a special folder, similar to the Grasshopper Libraries folder but with a folder/file structure that Yak controls.
 
 
 ## Uninstall

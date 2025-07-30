@@ -28,20 +28,15 @@ toc_type = "single"
 
 ## Overview
 
-For starters, this is less of a developer guide and more of a description of how
-this feature works, so that you, the developer, can better understand how your
-package and plug-in needs to be set up in order to leverage it.
+For starters, this is less of a developer guide and more of a description of how this feature works, so that you, the developer, can better understand how your package and plug-in needs to be set up in order to leverage it.
 
-It can be frustrating to open a Grasshopper definition only to find that the
-required plug-ins aren't installed on the system. The package manager can help by streamlining
-the process of satisfying those dependencies.
+It can be frustrating to open a Grasshopper definition only to find that the required plug-ins aren't installed on the system. The package manager can help by streamlining the process of satisfying those dependencies.
 
 Since Rhino 6, the "Unrecognized Objects" dialog presents the user with an option to _download and install_ missing plug-ins. This feature is called Package Restore.
 
 ![Grasshopper package restore](/images/yak-gh-restore.gif)
 
-Package Restore uses the name, ID and version of the missing plug-ins to search the package server. If any packages match the search query
-then they will be installed and, if possible, loaded prior to opening the definition[^3].
+Package Restore uses the name, ID and version of the missing plug-ins to search the package server. If any packages match the search query then they will be installed and, if possible, loaded prior to opening the definition[^3].
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MsjRdRtHW08" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
