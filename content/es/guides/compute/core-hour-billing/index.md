@@ -49,9 +49,9 @@ Cuando Rhino está conectado a una cuenta de servicio y se ejecuta en un sistema
 
 **Se permiten múltiples instancias** - Puede ejecutar tantas instancias de Rhino en el mismo equipo como desee, y el coste será el mismo que el de ejecutar una instancia.
 
-## Configuración de la facturación por horas de núcleo
+## Configuración de la facturación por hora de núcleo
 
-La facturación por horas de núcleo es necesaria cuando se ejecuta Rhino en un sistema operativo basado en Windows Server.
+La facturación por hora de núcleo es necesaria cuando se ejecuta Rhino en un sistema operativo basado en Windows Server.
 
 1. Vaya al [Portal de licencias](https://www.rhino3d.com/licenses?_forceEmpty=true) (inicie sesión en su cuenta de Rhino si se le solicita).
 2. Haga clic en _Crear nuevo grupo_ y cree un grupo para su proyecto de Compute. {{< call-out "note" "Nota" >}}

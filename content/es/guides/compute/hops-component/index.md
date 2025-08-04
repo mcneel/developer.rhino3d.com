@@ -48,10 +48,10 @@ Las funciones de Hops se almacenan como documentos separados de Grasshopper. El 
 ### Instalación de Hops:
 
 Hay varias maneras de instalar Hops en su máquina.
-  1. [Install Hops](rhino://package/search?name=hops) (se iniciará Rhino)
+  1. [Instale Hops](rhino://package/search?name=hops) (se iniciará Rhino)
   1. O escriba `AdministradorDePaquetes` en la línea de comandos de Rhino.
       1. A continuación, busque "Hops".
-      1. Seleccione Hops y, a continuación, Install.
+      1. Seleccione Hops y, a continuación, Instalar.
 
 {{< image url="/images/hops-package-manager.png" alt="/images/hops-package-manager.png" class="image_center" width="100%" >}}
 

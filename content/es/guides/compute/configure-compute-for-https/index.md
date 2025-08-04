@@ -86,7 +86,7 @@ Para generar el certificado, recomendamos utilizar [Win-ACME](https://www.win-ac
 1. Haga clic en el menú Inicio de Windows y escriba "Powershell". En el menú que aparece, haga clic con el botón derecho en la **aplicación Windows Powershell** y elija **Ejecutar como administrador**.
 
 1. Escriba el siguiente comando y pulse **Intro** para iniciar la aplicación Win-ACME.
-``powershell
+```powershell
     C:\win-acme\wacs.exe
 ```
 1. Debería aparecer un menú interactivo con una serie de instrucciones que pueden ejecutarse tecleando una letra determinada.
