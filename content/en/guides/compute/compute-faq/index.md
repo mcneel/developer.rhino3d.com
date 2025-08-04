@@ -116,7 +116,7 @@ System.Runtime.InteropServices.COMException (0x80004005): Error HRESULT E_FAIL h
 
 This is most likely caused because Rhino.Compute can not find a valid license on startup. If you are running a Windows Server based machine (i.e. on a virtual machine) then follow these steps:
 
-1. Go to the [Licenses Portal](https://www.rhino3d.com/licenses?_forceEmpty=true) and select the team that you set up with Core-hour billing.
+1. Go to the [Licenses Portal](https://www.rhino3d.com/licenses?_forceEmpty=true) and **select the team** that you set up with Core-hour billing.
 1. Click **Manage Team -> Manage Core-Hour Billing**.
 1. Click **Action -> Get Auth Token** to get a token.
 1. Create a new environment variable with the name `RHINO_TOKEN` and use the token as the value. Since the token is too long for Windows' Environment Variables dialog, it's easiest to do this via a PowerShell command.
@@ -130,6 +130,13 @@ From now on, when you start Rhino on this machine it will use your core-hour bil
 {{< call-out "warning" "Warning" >}}
 <strong>Warning!</strong> Your core-hour billing token allows anyone with it to charge your team at will. Do <strong>NOT</strong> share this token with anyone.
 {{< /call-out >}}
+
+### How do I find detailed usage statistics about my core-hour billing license?
+
+1. Go to the [Licenses Portal](https://www.rhino3d.com/licenses?_forceEmpty=true) and **select the team** that you set up with Core-hour billing.
+1. You should then see a table with a list of available McNeel products. **Click on the name of the product (i.e. Rhino 8)** that you wish to inspect.
+1. A new page will be opened which contains some live usage statistics. **Click on the blue button labeled "View Historical Usage"** at the bottom of this page.
+1. Another new page will be generated which allows you to set custom time ranges and inspect the historical usage of your core-hour billing license. You may even click on the blue button at the bottom of this page to download a comma-separated value list (CSV) of your usage statistics.
 
 ### I'm getting a 401 Error message. What does that mean?
 
