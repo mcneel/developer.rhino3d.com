@@ -154,10 +154,10 @@ Wenn Sie derzeit ein Paket mit einem <code>rh6*</code> Distribution Tag veröffe
 {{< /call-out >}}
 
 {{< call-out "note" "Anmerkung" >}}
-Vielleicht bemerken Sie, dass der GUID Ihres Plug-ins in den Schlüsselwörtern
-Versteckt hält. Weitere Informationen darüber, wie dies verwendet wird, finden Sie im
-<a href="../package-restore-in-grasshopper" class="alert-link">Benutzerhandbuch
-</a> “Paketwiederherstellung in Grasshopper“
+Vielleicht bemerken Sie, dass sich der GUID Ihres Plug-ins in den Schlüsselwörtern
+versteckt hält. Weitere Informationen darüber, wie dies verwendet wird, finden Sie im Leitfaden „Paketwiederherstellung in Grasshopper“
+<a href="../package-restore-in-grasshopper" class="alert-link">
+</a> 
 {{< /call-out >}}
 
 Herzlichen Glückwunsch! 🙌 Sie haben gerade ein Paket für Ihr Grasshopper-Plug-in erstellt.

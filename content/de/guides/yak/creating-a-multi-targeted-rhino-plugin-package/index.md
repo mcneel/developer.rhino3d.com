@@ -5,7 +5,7 @@ categories = [ "Getting Started" ]
 description = "Dies ist eine Schritt-für-Schritt-Anleitung zur Erstellung eines Pakets für ein Grasshopper-Plug-in (.rhp)."
 keywords = [ "developer", "yak", "C#", "multi", "target", "C/C++", "plugin", "installer" ]
 sdk = [ "Yak", "C#" ]
-title = "Erstellen eines Grasshopper-Plug-in-Pakets"
+title = "Erstellen eines Multi-Target-Pakets für Ihr Rhino-Plug-in"
 type = "guides"
 weight = 10
 
@@ -169,8 +169,8 @@ Der Dateiname enthält ein <a href="../the-anatomy-of-a-package#distributions" c
 {{< /call-out >}}
 
 {{< call-out "note" "Anmerkung" >}}
-Vielleicht bemerken Sie, dass der GUID Ihres Plug-ins in den Schlüsselwörtern
-Versteckt hält. Weitere Informationen darüber, wie dies verwendet wird, finden Sie im
+Vielleicht bemerken Sie, dass sich der GUID Ihres Plug-ins in den Schlüsselwörtern
+versteckt hält. Weitere Informationen darüber, wie dies verwendet wird, finden Sie im
 <a href="../package-restore-in-grasshopper" class="alert-link">Benutzerhandbuch
 </a> “Paketwiederherstellung in Grasshopper“
 {{< /call-out >}}
