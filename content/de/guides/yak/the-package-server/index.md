@@ -7,6 +7,9 @@ keywords = [ "yak" ]
 sdk = [ "Yak" ]
 title = "Der Paketserver"
 type = "guides"
+weight = 1
+override_last_modified = "2020-08-26T11:56:44Z"
+
 [admin]
 TODO = ""
 origin = ""
