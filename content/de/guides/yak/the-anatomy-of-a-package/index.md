@@ -43,7 +43,7 @@ howler-0.4.0-any-any.yak
 
 ### Eine Anmerkung zu .NET Multi-Targeting
 
-Ab Rhino 8 unterstützt Yak auch Mehrfach-Anwendungen, so dass Ihr Rhino-Plug-in entweder in dotnet core oder dotnet framework ausgeführt werden kann.
+Ab Rhino 8 unterstützt Yak auch Multitarget-Anwendungen, so dass Ihr Rhino-Plug-in entweder in dotnet core oder dotnet framework ausgeführt werden kann.
 Beachten Sie, dass die Datei `manifest.yml` nun außerhalb des Framework-Verzeichnisses liegen muss, anstatt innerhalb des Verzeichnisses.
 
 ```
