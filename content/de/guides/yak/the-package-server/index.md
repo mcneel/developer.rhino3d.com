@@ -34,7 +34,7 @@ Nachfolgend finden Sie einige nützliche Informationen über unseren Paketserver
 
 ## Authentifizierung und Autorisierung
 
-Die Authentifizierung, die von [Rhino Accounts](https://accounts.rhino3d.com)bereitgestellt wird, ist nur für [Veröffentlichung von Paketen](../pushing-a-package-to-the-server) erforderlich, nicht für das Herunterladen bzw. Installieren.
+Die Authentifizierung, die von [Rhino Accounts](https://accounts.rhino3d.com) bereitgestellt wird, ist nur für die [Veröffentlichung von Paketen](../pushing-a-package-to-the-server) erforderlich, nicht für das Herunterladen bzw. Installieren.
 
 Sobald ein Paketautor ein Paket veröffentlicht hat, kann nur er zukünftige Versionen unter demselben Paketnamen veröffentlichen.
 
