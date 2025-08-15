@@ -72,7 +72,7 @@ The clipboard can of course also include other items like bitmaps, which is done
 
 Text and Bitmaps are simple and universal, but what about a custom data type? Some data types are application specific, if I copy a 3d Sphere in Rhino we would only expect this to paste in Rhino, if we're lucky, maybe into other 3d applications. As there are no specific clipboard items for your custom data, we need to create our own.
 
-![Clipboard Example](/images/eto/examples/clipboard.png)
+![Clipboard Example](/images/eto/clipboard.png)
 
 This sample will add data to the clipboard with the key "PointF" and retrieve the data with the same key. Using keys for this is excellent as data from different sources can exist simultaneously.
 
