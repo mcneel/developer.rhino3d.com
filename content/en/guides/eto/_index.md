@@ -99,6 +99,8 @@ platforms = [ "Windows", "Mac" ]
 <!-- - [ComboBox](controls#combobox/) -->
 <!-- I think this is worth being a bit more extensive than others -->
 <!-- - [Numeric Input](advanced-controls/numericUpDown) -->
+- Grids
+  - [Cells](cells)
 
 {{< /column >}}
 {{< /row >}}
