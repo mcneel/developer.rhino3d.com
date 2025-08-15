@@ -12,7 +12,7 @@
             <div class='content-column'>
                 <div class='header'>{{- i18n .key -}}</div>
                 {{- range $data.data.rows -}}
-                <div class='status'>{{- if index $col . -}}<img src='tick.png' class='micro' >{{- end -}}</div>
+                <div class='status'>{{- if index $col . -}}<img src='/images/tick.png' class='micro' >{{- end -}}</div>
                 {{ end }}
             </div>
         {{ end }}

@@ -18,4 +18,4 @@
   {{ $url = printf "%s%s" .Page.Permalink $url }}
 {{ end }}
 
-<a class="rhinoProtocol" href="{{ $url }}" data-verb="{{ $verb }}"/>{{ $title | markdownify }}</a>
+<a class="rhinoProtocol" href="{{ $url }}" data-verb="{{ $verb }}"/>{{ $title | .Page.RenderString }}</a>

@@ -9,7 +9,6 @@ sdk = [ "General" ]
 title = "Développer un logiciel publiquement"
 type = "guides"
 weight = 0
-override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = ""
@@ -81,6 +80,16 @@ Nous publions notamment...
 - De la documentation (ce site)
 
 ...et communiquons publiquement par e-mail, sur nos blogs et nos réseaux sociaux.
+
+{{< call-out "note" "Planning de publication" >}}
+
+Nous nous attachons à publier de nouvelles versions de Rhino le **deuxième mardi de chaque mois** comprenant :
+
+- Une version révisée pour tous les utilisateurs ayant activé les mises à jour.
+- Une [candidate à la version révisée](https://discourse.mcneel.com/t/rhino-service-release-candidates/53358). Une fois qu’une version candidate à la version révisée a passé la phase finale de test, elle devient la prochaine version révisée qui sera publiée le deuxième mardi suivant. Des versions candidates sont également publiées chaque semaine (en général le mardi) et nous encourageons les utilisateurs à [installer les candidates à la version révisée](https://discourse.mcneel.com/t/rhino-service-release-candidates/53358) car ils nous aident ainsi à tester la mise à jour suivante.
+- Une [version WIP (en cours de développement)](https://discourse.mcneel.com/t/welcome-to-serengeti/9612).
+
+{{< /call-out >}}
 
 ### Écoute
 

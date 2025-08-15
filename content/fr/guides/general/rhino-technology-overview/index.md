@@ -9,7 +9,6 @@ sdk = [ "General" ]
 title = "Vue d’ensemble de la technologie de Rhino"
 type = "guides"
 weight = 0
-override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = ""
@@ -101,9 +100,7 @@ Microsoft développe [.NET Framework](https://www.microsoft.com/net/framework). 
 
 .NET framework de Microsoft est fourni avec Windows.
 
-Dans Rhino pour Mac, nous intégrons l’environnement d’exécution [Mono](https://www.mono-project.com), une implémentation multiplateforme partielle de .NET Runtime.
-
-Pour en savoir plus sur .NET et son rapport avec le développement de Rhino, lisez l’article [Que sont Mono et Xamarin ?](/guides/rhinocommon/what-are-mono-and-xamarin/).
+Dans Rhino pour Mac, nous intégrons [.NET Core](/guides/rhinocommon/moving-to-dotnet-core/) directement dans l’application.
 
 ### RhinoCommon
 
@@ -143,7 +140,6 @@ Pour plus d’informations sur RhinoPython, consultez les [guides de RhinoPython
 - [Microsoft .NET Framework (sur microsoft.com)](https://www.microsoft.com/net/framework)
 - [Qu’est-ce que RhinoCommon ?](/guides/rhinocommon/what-is-rhinocommon)
 - [Guides de RhinoCommon](/guides/rhinocommon/)
-- [Que sont Mono et Xamarin ?](/guides/rhinocommon/what-are-mono-and-xamarin/)
 - [Projet Mono](https://www.mono-project.com)
 - [Eto.Forms sur GitHub](https://github.com/picoe/Eto)
 - [Guides de Grasshopper](/guides/grasshopper/)

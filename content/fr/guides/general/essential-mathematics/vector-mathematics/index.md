@@ -180,8 +180,8 @@ Le vecteur unitaire de {{< mathjax >}}$$\mathbf{\vec a} = <a_1/\vert \mathbf{\ve
 Le produit d'un vecteur par un scalaire revient à multiplier un vecteur par un nombre. Par exemple :  
 
 {{< mathjax >}}$$\mathbf{\vec a} = <4, 3, 0>$${{< /mathjax >}}  
-{{< mathjax >}}$$2 * \mathbf{\vec a} = <2 * 4, 2 * 3, 2 * 0> $${{< /mathjax >}}  
-{{< mathjax >}}$$2 *\mathbf{\vec a} = <8, 6, 0>$${{< /mathjax >}}  
+{{< mathjax >}}$$2* \mathbf{\vec a} = <2*4, 2*3, 2*0>$${{< /mathjax >}}  
+{{< mathjax >}}$$2*\mathbf{\vec a} = <8, 6, 0>$${{< /mathjax >}}  
 
 <figure>
    <img src="/images/math-image175.png">
@@ -959,23 +959,23 @@ Voici la liste des paramètres dont nous avons besoin pour résoudre ce problèm
 
 {{< mathjax >}}$$D = A + t*(B-A)$${{< /mathjax >}}  
 
-{{< mathjax >}}$$B-A$${{< /mathjax >}} est le vecteur qui va de {{< mathjax >}}$$B$${{< /mathjax >}} à {{< mathjax >}}$$A  (\vec{BA}) en utilisant l’opération de soustraction de vecteurs.  
+{{< mathjax >}}$$B-A$${{< /mathjax >}} est le vecteur qui va du point {{< mathjax >}}$$A$${{< /mathjax >}} au point {{< mathjax >}}$$B$${{< /mathjax >}} en utilisant l’opération de soustraction de vecteurs.  
 
-$${{< /mathjax >}}t*(B-A){{< mathjax >}}$$ : où $${{< /mathjax >}}t{{< mathjax >}}$$ se trouve entre 0 et 1 pour obtenir une position sur le vecteur.  
+{{< mathjax >}}$$t*(B-A)$${{< /mathjax >}} : où {{< mathjax >}}$$t$${{< /mathjax >}} se trouve entre 0 et 1 pour obtenir une position sur le vecteur.  
 
-$${{< /mathjax >}}A+t*(B-A){{< mathjax >}}$$ : donne un point sur le vecteur entre A et B.  
+{{< mathjax >}}$$A+t*(B-A)$${{< /mathjax >}} : donne un point sur le vecteur entre A et B.  
 
 <img src="/images/math-image8.png">
 
-2\. Utilisez le composant Expression pour définir également les milieux $${{< /mathjax >}}C1{{< mathjax >}}$$ et $${{< /mathjax >}}C2{{< mathjax >}}$$.  
+2\. Utilisez le composant Expression pour définir également les milieux {{< mathjax >}}$$C1$${{< /mathjax >}} et {{< mathjax >}}$$C2$${{< /mathjax >}}.  
 
 <img src="/images/math-image9.png">  
 
-3\. Le rayon de la première sphère $${{< /mathjax >}}(r1){{< mathjax >}}$$ et le rayon de la deuxième sphère $${{< /mathjax >}}(r2){{< mathjax >}}$$ peuvent être calculés en utilisant le composant **Distance**.  
+3\. Le rayon de la première sphère {{< mathjax >}}$$(r1)$${{< /mathjax >}} et le rayon de la deuxième sphère {{< mathjax >}}$$(r2)$${{< /mathjax >}} peuvent être calculés en utilisant le composant **Distance**.  
 
 <img src="/images/math-image10.png">  
 
-4\. L'étape finale consiste à créer la sphère à partir d'un plan de base et d'un rayon. Nous devons vérifier que les origines sont verrouillées sur $${{< /mathjax >}}C1{{< mathjax >}}$$ et $${{< /mathjax >}}C2{{< mathjax >}}$$ et les rayons sur $${{< /mathjax >}}r1{{< mathjax >}}$$ et $${{< /mathjax >}}r2$$.  
+4\. L'étape finale consiste à créer la sphère à partir d'un plan de base et d'un rayon. Nous devons vérifier que les origines sont verrouillées sur {{< mathjax >}}$$C1$${{< /mathjax >}} et {{< mathjax >}}$$C2$${{< /mathjax >}} et les rayons sur {{< mathjax >}}$$r1$${{< /mathjax >}} et {{< mathjax >}}$$r2$${{< /mathjax >}}.  
 
 <img src="/images/math-image54.png">  
 
@@ -1066,7 +1066,7 @@ private void RunScript(Point3d A, Point3d B, double t, ref object S1, ref object
 
 ## Téléchargement de fichiers d’exemple
 
-Téléchargez le fichier [{{< awesome "fas fa-download">}} ](/files/math-samplesandtutorials.zip.zip) [math-samplesandtutorials.zip](/files/math-samplesandtutorials.zip), qui contient tous les exemples de Grasshopper et les fichiers de code de ce guide.
+Téléchargez le fichier [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) [Fondements mathématiques](https://www.rhino3d.com/download/rhino/6/essentialmathematics/), qui contient tous les exemples de Grasshopper et les fichiers de code de ce guide.
 
 ## Étapes suivantes
 

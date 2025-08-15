@@ -180,7 +180,7 @@ The unit vector of {{< mathjax >}}$$\mathbf{\vec a} = <a_1/\vert \mathbf{\vec a}
 Vector scalar operation involves multiplying a vector by a number. For example:  
 
 {{< mathjax >}}$$\mathbf{\vec a} = <4, 3, 0>$${{< /mathjax >}}  
-{{< mathjax >}}$$2* \mathbf{\vec a} = <2*4, 2*3, 2*0> $${{< /mathjax >}}  
+{{< mathjax >}}$$2* \mathbf{\vec a} = <2*4, 2*3, 2*0>$${{< /mathjax >}}  
 {{< mathjax >}}$$2*\mathbf{\vec a} = <8, 6, 0>$${{< /mathjax >}}  
 
 <figure>
@@ -955,27 +955,27 @@ The following is a diagram of the parameters that we will need in order to solve
 
 **Solution:**
 
-1\. Use the **Expression** component to definepoint {{< mathjax >}}$$D$${{< /mathjax >}} between {{< mathjax >}}$$A$${{< /mathjax >}} and {{< mathjax >}}$$B$${{< /mathjax >}} atsome parameter {{< mathjax >}}$$t$${{< /mathjax >}}. The expression we will use is based onthe vector equation of a line:  
+1\. Use the **Expression** component to define point {{< mathjax >}}$$D$${{< /mathjax >}} between {{< mathjax >}}$$A$${{< /mathjax >}} and {{< mathjax >}}$$B$${{< /mathjax >}} atsome parameter {{< mathjax >}}$$t$${{< /mathjax >}}. The expression we will use is based onthe vector equation of a line:  
 
 {{< mathjax >}}$$D = A + t*(B-A)$${{< /mathjax >}}  
 
-{{< mathjax >}}$$B-A$${{< /mathjax >}} : is the vector that goes from {{< mathjax >}}$$B$${{< /mathjax >}} to {{< mathjax >}}$$A  (\vec{BA}) using the vector subtraction   operation.  
+{{< mathjax >}}$$B-A$${{< /mathjax >}} : is the vector that goes from point {{< mathjax >}}$$A$${{< /mathjax >}} to point {{< mathjax >}}$$B$${{< /mathjax >}} using the vector subtraction operation.  
 
-$${{< /mathjax >}}t*(B-A){{< mathjax >}}$$ : where $${{< /mathjax >}}t{{< mathjax >}}$$ is between 0 and 1 to get us a location on the vector.  
+{{< mathjax >}}$$t*(B-A)$${{< /mathjax >}} : where {{< mathjax >}}$$t$${{< /mathjax >}} is between 0 and 1 to get us a location on the vector.  
 
-$${{< /mathjax >}}A+t*(B-A){{< mathjax >}}$$ : gets apoint on the vector between A and B.  
+{{< mathjax >}}$$A+t*(B-A)$${{< /mathjax >}} : gets apoint on the vector between A and B.  
 
 <img src="/images/math-image8.png">
 
-2\. Use the Expression component to also define the mid points $${{< /mathjax >}}C1{{< mathjax >}}$$ and $${{< /mathjax >}}C2{{< mathjax >}}$$.  
+2\. Use the Expression component to also define the mid points {{< mathjax >}}$$C1$${{< /mathjax >}} and{{< mathjax >}}$$C2$${{< /mathjax >}} .  
 
 <img src="/images/math-image9.png">  
 
-3\. The first sphere radius $${{< /mathjax >}}(r1){{< mathjax >}}$$ and the second sphere radius $${{< /mathjax >}}(r2){{< mathjax >}}$$ can be calculated using the **Distance** component.  
+3\. The first sphere radius {{< mathjax >}}$$(r1)$${{< /mathjax >}} and the second sphere radius {{< mathjax >}}$$(r2)$${{< /mathjax >}} can be calculated using the **Distance** component.  
 
 <img src="/images/math-image10.png">  
 
-4\. The final step involves creating the sphere from a base plane and radius. We need to make sure the origins are hooked to $${{< /mathjax >}}C1{{< mathjax >}}$$ and $${{< /mathjax >}}C2{{< mathjax >}}$$ and the radius from $${{< /mathjax >}}r1{{< mathjax >}}$$ and $${{< /mathjax >}}r2$$.  
+4\. The final step involves creating the sphere from a base plane and radius. We need to make sure the origins are hooked to {{< mathjax >}}$$C1$${{< /mathjax >}} and {{< mathjax >}}$$C2$${{< /mathjax >}} and the radius from {{< mathjax >}}$$r1$${{< /mathjax >}} and {{< mathjax >}}$$r2$${{< /mathjax >}}.  
 
 <img src="/images/math-image54.png">  
 
@@ -1066,7 +1066,7 @@ private void RunScript(Point3d A, Point3d B, double t, ref object S1, ref object
 
 ## Download Sample Files
 
-Download the [{{< awesome "fas fa-download">}} ](/files/math-samplesandtutorials.zip.zip) [math-samplesandtutorials.zip](/files/math-samplesandtutorials.zip) archive, containing all the example Grasshopper and code files in this guide.
+Download the [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) [download samplesand tutorials](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) archive, containing all the example Grasshopper and code files in this guide.
 
 ## Next Steps
 

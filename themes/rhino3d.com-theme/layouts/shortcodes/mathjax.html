@@ -2,5 +2,5 @@
 {{ if or (in .Inner "array") (in .Inner "bmatrix") }}
     {{ .Inner }}    
 {{- else -}}
-    {{ .Inner | markdownify }}
+    {{ .Inner | .Page.RenderString }}
 {{- end -}}

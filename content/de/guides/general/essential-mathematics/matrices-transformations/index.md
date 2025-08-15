@@ -1,4 +1,4 @@
-﻿+++
++++
 aliases = ["/en/5/guides/general/essential-mathematics/matrices-transformations/", "/en/6/guides/general/essential-mathematics/matrices-transformations/", "/en/7/guides/general/essential-mathematics/matrices-transformations/", "/en/wip/guides/general/essential-mathematics/matrices-transformations/"]
 authors = [ "rajaa" ]
 categories = [ "Essential Mathematics" ]
@@ -26,7 +26,7 @@ toc = true
 toc_type = "single"
 +++
 
-*Transformationen* bezieht sich auf Operationen wie das Verschieben (auch *Versetzen* genannt), Drehen und Skalieren von Objekten. Sie werden in der 3D-Programmierung gespeichert, mittels Matrices, welche nichts anderes sind als rechteckige Anordnungen von Zahlen. Mehrere Transformationen können bei Verwendung von Matrices sehr schnell bewältigt werden. Im Endeffekt kann eine [4x4]-Matrix alle Transformationen repräsentieren. Über eine vereinheitlichte Matrix-Dimension für alle Transformationen zu verfügen spart Zeit bei der Berechnung. 
+*Transformationen* bezieht sich auf Operationen wie das Verschieben (auch *Versetzen* genannt), Drehen und Skalieren von Objekten. Sie werden in der 3D-Programmierung gespeichert, mittels Matrices, welche nichts anderes sind als rechteckige Anordnungen von Zahlen. Mehrere Transformationen können bei Verwendung von Matrices sehr schnell bewältigt werden. Im Endeffekt kann eine [4x4]-Matrix alle Transformationen repräsentieren. Über eine vereinheitlichte Matrix-Dimension für alle Transformationen zu verfügen spart Zeit bei der Berechnung.
 
 {{< mathjax >}}$$\begin{array}{rcc} \mbox{Matrix}&\begin{array}{cccc} c1& c2&c3&c4\end{array}\\\begin{array}{c}Zeile(1)\\Zeile(2)\\Zeile(3)\\Zeile(4)\end{array}& \left[\begin{array}{cr} +&+&+&+\\  +&+&+&+\\ +&+&+&+\\ +&+&+&+\end{array}\right] \end{array}$${{< /mathjax >}}
 
@@ -271,7 +271,7 @@ Hinweis: NURBS-Kurven (die im nächsten Kapitel erklärt werden) verwenden Kontr
 
 ## Beispieldateien herunterladen
 
-Laden Sie das Archiv [{{< awesome "fas fa-download">}} ](/files/math-samplesandtutorials.zip.zip) [math-samplesandtutorials.zip](/files/math-samplesandtutorials.zip) herunter, das alle Grasshopper-Beispiele und Codedateien in diesem Handbuch enthält.
+Laden Sie das Archiv [{{< awesome "fas fa-download">}} ](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) [download samplesand tutorials](https://www.rhino3d.com/download/rhino/6/essentialmathematics/) herunter, das alle Grasshopper-Beispiele und Codedateien in diesem Leitfaden enthält.
 
 ## Weitere Schritte:
 

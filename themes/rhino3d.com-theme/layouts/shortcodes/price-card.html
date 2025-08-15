@@ -40,7 +40,7 @@
         <p class="plan-subtitle">
             <span>{{ $.Scratch.Get "subtitle" }}</span>
         </p>
-        <div class="plan-details">{{.Inner | markdownify}}</div>
+        <div class="plan-details">{{.Inner | .Page.RenderString }}</div>
     </div>
     <a class="button" href='{{ $.Scratch.Get "link" }}'>{{ $.Scratch.Get "action" }}</a>
 </div>

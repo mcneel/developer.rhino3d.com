@@ -38,7 +38,7 @@ On Windows, you can still optionally run using the .NET Framework runtime in the
 
 Most plugins are already compatible when running in .NET Core without any recompilation, but in the case of any incompatibilities you may need to update your plugin.
 
-For more details, see [Moving to .NET 7](/guides/rhinocommon/moving-to-dotnet-7).
+For more details, see [Moving to .NET Core](/guides/rhinocommon/moving-to-dotnet-core).
 
 Also, we've updated the [Rhino Visual Studio Extension](https://github.com/mcneel/RhinoVisualStudioExtensions/releases) for both Windows and Mac.
 

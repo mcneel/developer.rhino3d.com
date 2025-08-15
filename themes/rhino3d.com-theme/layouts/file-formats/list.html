@@ -5,10 +5,10 @@
     </div>
     <div>
         {{ with .Page.Params.what_why }}
-            <p>{{ . | markdownify }}</p>
+            <p>{{ . | markdownify }}</p> {{/* Use of markdownify is appropriate here */}}
         {{ end }}
         {{ with .Page.Params.whats_new.in_v8_summary }}
-            <p>{{ . | markdownify }}</p>
+            <p>{{ . | markdownify }}</p> {{/* Use of markdownify is appropriate here */}}
         {{ end }}
         <div>
             <table id="TableWithComments" style="table-layout: auto; width: 100%;">

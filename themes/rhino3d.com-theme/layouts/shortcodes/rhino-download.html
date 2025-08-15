@@ -92,6 +92,6 @@ Download link shortcode. Accepts params in any order.
     {{- $.Scratch.Set "result" (replace ($.Scratch.Get "result") "Mac" "<span class='platform-icon'><i class='fab fa-apple'></i></span> Mac" ) }}
     {{- $.Scratch.Set "result" (replace ($.Scratch.Get "result") "[/LINK]" "</span></a>") }}
 
-    {{ $.Scratch.Get "result" | markdownify }}
+    {{ $.Scratch.Get "result" | .Page.RenderString }}
 
 {{- end -}}

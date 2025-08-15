@@ -1,0 +1,62 @@
+<script type="text/javascript" src='{{ (resources.Get "/script/fast-toml.js" | resources.Fingerprint).Permalink }}'></script>
+<script type="module">
+    const tocData = TOML.parse(`{{ .Inner }}`);
+    document.addEventListener("DOMContentLoaded", () => {
+        const tocContainer = document.querySelector(".toc aside nav#TableOfContents");
+        if (tocData && tocContainer) {
+            tocContainer.innerHTML = ""; // Clear existing content
+            tocData.sections.forEach(section => {
+                const sectionWrapper = document.createElement("ul");
+                sectionWrapper.classList.add("nav-wrapper");
+
+                const sectionItem = document.createElement("li");
+                sectionItem.classList.add("nav-item");
+
+                const sectionLink = document.createElement("a");
+                sectionLink.classList.add("nav-group-link");
+                sectionLink.textContent = section.title;
+
+                sectionItem.appendChild(sectionLink);
+                sectionWrapper.appendChild(sectionItem);
+
+                section.items.forEach(item => {
+                    const itemElement = document.createElement("li");
+                    itemElement.classList.add("nav-item");
+
+                    const itemLink = document.createElement("a");
+                    itemLink.classList.add("toplevel-nav-link");
+                    itemLink.href = item.link;
+                    itemLink.textContent = item.text;
+
+                    itemElement.appendChild(itemLink);
+
+                    // Handle third level of nesting
+                    if (item.items && item.items.length > 0) {
+                        const subItemWrapper = document.createElement("ul");
+                        subItemWrapper.classList.add("subitem-wrapper");
+                        subItemWrapper.style.display = "block";
+
+                        item.items.forEach(subitem => {
+                            const subItemElement = document.createElement("li");
+                            subItemElement.classList.add("nav-subitem");
+
+                            const subItemLink = document.createElement("a");
+                            subItemLink.classList.add("sublevel-nav-link");
+                            subItemLink.href = subitem.link;
+                            subItemLink.textContent = subitem.text;
+
+                            subItemElement.appendChild(subItemLink);
+                            subItemWrapper.appendChild(subItemElement);
+                        });
+
+                        itemElement.appendChild(subItemWrapper);
+                    }
+
+                    sectionWrapper.appendChild(itemElement);
+                });
+
+                tocContainer.appendChild(sectionWrapper);
+            });
+        }
+    });
+</script>

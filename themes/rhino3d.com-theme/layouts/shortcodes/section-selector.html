@@ -17,5 +17,5 @@
   {{- $label = .Inner -}}
 {{- end -}}
 <span class='section-selector' data-section-group='{{- $group -}}' data-section-name='{{- $name -}}' data-section-behavior='{{- $behavior -}}'>
-    {{- $label | markdownify -}}
+    {{- $label | .Page.RenderString -}}
 </span>

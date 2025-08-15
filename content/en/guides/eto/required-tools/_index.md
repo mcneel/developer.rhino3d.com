@@ -46,7 +46,7 @@ If you wish to work on eto outside of Rhino, you'll need to install some tools.
 Open up your command line and run the following line.
 
 ```
-dotnet new install Eto.Templates
+dotnet new install Eto.Forms.Templates
 ```
 
 </br>

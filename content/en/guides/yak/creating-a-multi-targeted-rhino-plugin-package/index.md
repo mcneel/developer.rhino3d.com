@@ -29,13 +29,10 @@ toc_type = "single"
 The [Package Manager](/guides/yak/) was introduced in Rhino 7. It makes it easier to discover, install and manage Rhino plug-ins from within Rhino. This guide will describe how to create a package from a Rhino plug-in that can be published to the package server.
 
 {{< call-out "note" "Note" >}}
-The package manager is cross-platform. The examples below are for Windows.
-For Mac, replace the path to the Yak CLI tool with
-<code>"/Applications/Rhino {{< latest-rhino-version >}}.app/Contents/Resources/bin/yak"</code>.
+The package manager is cross-platform. The examples below are for Windows. For Mac, replace the path to the Yak CLI tool with <code>"/Applications/Rhino {{< latest-rhino-version >}}.app/Contents/Resources/bin/yak"</code>.
 {{< /call-out >}}
 
-First, let's assume you have a build directory on your computer which contains all the
-files that you would like to distribute in your multi-targeted package. Something like below.
+First, let's assume you have a build directory on your computer which contains all the files that you would like to distribute in your multi-targeted package. Something like below.
 
 ```commandline
 C:\Users\Bozo\dist\
@@ -57,16 +54,13 @@ C:\Users\Bozo\dist\
 This is just an example. The only files that matter are Tamarin.rhp and icon.png (we'll reference the icon in the manifest.yml file later).
 {{< /call-out >}}
 
-We're going to use the Yak CLI tool to create the package, so open up a Command
-Prompt and navigate to the directory above.
+We're going to use the Yak CLI tool to create the package, so open up a Command Prompt and navigate to the directory above.
 
 ``` commandline
 cd C:\Users\Bozo\dist\
 ```
 
-Now, we need a `manifest.yml` file! You can easily create your own by studying
-the [Manifest Reference Guide](../the-package-manifest). Alternatively, you can use the `spec`
-command to generate a skeleton file. We'll do the latter here.
+Now, we need a `manifest.yml` file! You can easily create your own by studying the [Manifest Reference Guide](../the-package-manifest). Alternatively, you can use the `spec` command to generate a skeleton file. We'll do the latter here.
 
 ``` commandline
 > "C:\Program Files\Rhino {{< latest-rhino-version >}}\System\Yak.exe" spec
@@ -85,25 +79,15 @@ url: https://example.com
 Saved to C:\Users\Bozo\dist\manifest.yml
 ```
 
-The `spec` command takes a look at the current directory and, if present, will
-glean useful information from the `.rhp` assembly and use it generate a
-`manifest.yml` with name, version, description etc. pre-populated. If you haven't
-added this information, then placeholders will be used.
+The `spec` command takes a look at the current directory and, if present, will glean useful information from the `.rhp` assembly and use it generate a `manifest.yml` with name, version, description etc. pre-populated. If you haven't added this information, then placeholders will be used.
 
-The RhinoCommon plug-in inspector extracts the assembly attributes that you set
-when creating your plug-in. The `AssemblyInformationalVersion` attribute is used
-to populate the version field, since this attribute isn't bound to the Microsoft
-four-digit version spec and can contain a SemVer-compatible version string. The
-`AssemblyVersion` attribute is used as a fallback.
+The RhinoCommon plug-in inspector extracts the assembly attributes that you set when creating your plug-in. The `AssemblyInformationalVersion` attribute is used to populate the version field, since this attribute isn't bound to the Microsoft four-digit version spec and can contain a SemVer-compatible version string. The `AssemblyVersion` attribute is used as a fallback.
 
 {{< call-out "note" "Note" >}}
-The `spec` command is useful for generating the
-manifest.yml file initially. Once you have one, keep it with your project and
-update it for each release.
+The `spec` command is useful for generating the manifest.yml file initially. Once you have one, keep it with your project and update it for each release.
 {{< /call-out >}}
 
-Next, open the manifest file with your [favourite editor](https://code.visualstudio.com)
-and fill in the gaps.
+Next, open the manifest file with your [favourite editor](https://code.visualstudio.com) and fill in the gaps.
 
 Afterwards, you should have something that looks a little like this...
 
@@ -169,18 +153,14 @@ The filename includes a <a href="../the-anatomy-of-a-package#distributions" clas
 {{< /call-out >}}
 
 {{< call-out "note" "Note" >}}
-You might notice your plug-in's GUID lurking in the
-keywords. More information on how this is used can be found in the
-<a href="../package-restore-in-grasshopper" class="alert-link">"Package Restore in Grasshopper"
-</a> guide.
+You might notice your plug-in's GUID lurking in the keywords. More information on how this is used can be found in the <a href="../package-restore-in-grasshopper" class="alert-link">"Package Restore in Grasshopper"</a> guide.
 {{< /call-out >}}
 
 Congratulations! 🙌 You've just created a multi-targeted package for your Rhino plug-in.
 
 ## Next Steps
 
-Now that you've created a package, [push it to the package server](../pushing-a-package-to-the-server) to make it
-available in the package manager!
+Now that you've created a package, [push it to the package server](../pushing-a-package-to-the-server) to make it available in the package manager!
 
 ## Related Topics
 

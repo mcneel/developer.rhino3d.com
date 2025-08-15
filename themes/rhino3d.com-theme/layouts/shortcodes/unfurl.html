@@ -7,10 +7,10 @@
 {{- if .Get "image-override"}}{{- $imageOverride =  .Get "image-override" -}}{{- end -}}
 
 <span class="unfurl-link">
-    {{ .Inner | markdownify }}
+    {{ .Inner | .Page.RenderString }}
     <script>
         var parser = new DOMParser();
-        var linkDoc = parser.parseFromString("{{(.Inner | markdownify) }}", 'text/html');
+        var linkDoc = parser.parseFromString("{{(.Inner | .Page.RenderString) }}", 'text/html');
         var href = linkDoc.querySelector('a').getAttribute('href');
 
         //the current <script> element is also the last <script> element, at the time of execution. https://stackoverflow.com/questions/10299846/obtain-a-reference-to-script-parent-element
@@ -90,57 +90,3 @@
 
     </script>
 </span>
-
-
-<style>
-    .unfurl-link {
-        display:inline-block;
-        position:relative;
-        border-bottom:1px dotted #666;
-        text-align:left;
-    }
-    
-    .unfurl-link h3 {margin:12px 0;}
-    
-    .unfurl-link .tooltip {
-        width:200px;
-        top:0px;
-        left:50%;
-        transform:translate(-50%, 0);
-        padding:20px;
-        color:#666666;
-        background-color:white;
-        font-weight:normal;
-        font-size:13px;
-        border-radius:8px;
-        position:absolute;
-        z-index:99999999;
-        box-sizing:border-box;
-        box-shadow:0 1px 50px rgba(0,0,0,0.5);
-        display:none;
-    }
-    
-    .unfurl-link:hover .tooltip {
-        display:block;
-    }
-    
-    .unfurl-link .tooltip img {
-        width:400px;
-    }
-
-    .tooltip.arrow-top {
-        margin-top: 40px;
-    }
-      
-    .tooltip.arrow-top:after {
-        content: " ";
-        position: absolute;
-        left: 93px;
-        top: -15px;
-        border-top: none;
-        border-right: 15px solid transparent;
-        border-left: 15px solid transparent;
-        border-bottom: 15px solid white;
-      }
-    
-    </style>

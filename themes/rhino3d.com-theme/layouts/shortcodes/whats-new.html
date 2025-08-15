@@ -2,5 +2,5 @@
 {{ $in_ver := print "in_v" ($.Scratch.Get "latestRhinoVersion") }}
 {{ with (index .Page.Params.whats_new $in_ver) }}
 <h2>{{ i18n "New-in-Rhino" }} {{ $.Scratch.Get "latestRhinoVersion"}}</h2>
-{{ . | markdownify}}
+{{ . | .Page.RenderString}}
 {{end }}

@@ -69,8 +69,7 @@ howler-0.4.0-rh8-any.yak
 
 ## Requirements
 
-1. Packages **must** have a [`manifest.yml`](manifest.md) file in the top-level directory. 
-   Details about the manifest can be found in the [Manifest Reference Guide](../the-package-manifest).
+1. Packages **must** have a `manifest.yml` file in the top-level directory. Details about the manifest can be found in the [Manifest Reference Guide](../the-package-manifest).
 1. Any plug-ins (`.rhp`, `.gha`, `.ghpy` files) **must** be in the top-level directory, or a [multi-targeting directory](#a-note-on-net-multi-targeting), so that Rhino and Grasshopper can find and load them.
 1. Package version numbers **must** either follow [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html) (e.g. `1.1.0-beta`) or `System.Version` a.k.a. Microsoft's four-digit standard (e.g. `1.2.3.4`). It's recommended to use Semantic Versioning because it allows package authors to specify prerelease versions. These are handy for limited testing, since by default the latest _stable_ version is installed.
 

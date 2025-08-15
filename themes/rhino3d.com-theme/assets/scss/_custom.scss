@@ -418,12 +418,6 @@ li .new-callout-bullet {
 	display:inline-block;
 }
 
-.recommended-label {
-	@extend .comingsoon-label;
-	background-color: orangered;
-	padding-bottom: 2px;
-	padding-top: 2px;
-}
 
 /* 
 ##################################################################
@@ -700,7 +694,7 @@ table.multiline-middle img{
 	line-height: 1.2em;
 	text-align: center;
 	min-width: 1.2em;
-    padding: .2em;
+    padding: .1em;
 }
 
 .keyboard-btn {
@@ -780,12 +774,100 @@ table.multiline-middle img{
 	shape-rendering: crispEdges;
   }
 
-  /*
+/*
 ##############################################################################
-## Overload the learn grids
+## unfurl tooltip styles
 ##############################################################################
 */
 
-  .learn-grid-width {
-	width: auto !important;
+
+.unfurl-link {
+	display:inline-block;
+	position:relative;
+	border-bottom:1px dotted #666;
+	text-align:left;
 }
+
+.unfurl-link h3 {margin:12px 0;}
+
+.unfurl-link .tooltip {
+	width:200px;
+	top:0px;
+	left:50%;
+	transform:translate(-50%, 0);
+	padding:20px;
+	color:#666666;
+	background-color:white;
+	font-weight:normal;
+	font-size:13px;
+	border-radius:8px;
+	position:absolute;
+	z-index:99999999;
+	box-sizing:border-box;
+	box-shadow:0 1px 50px rgba(0,0,0,0.5);
+	display:none;
+}
+
+.unfurl-link:hover .tooltip {
+	display:block;
+}
+
+.unfurl-link .tooltip img {
+	width:400px;
+}
+
+.tooltip.arrow-top {
+	margin-top: 40px;
+}
+  
+.tooltip.arrow-top:after {
+	content: " ";
+	position: absolute;
+	left: 93px;
+	top: -15px;
+	border-top: none;
+	border-right: 15px solid transparent;
+	border-left: 15px solid transparent;
+	border-bottom: 15px solid white;
+  }
+
+
+  //command
+
+.unfurl-link .cmd_tooltip {
+	width:max-content;
+	top:0px;
+	left:50%;
+	transform:translate(-50%, 0);
+	padding:10px;
+	color:#666666;
+	background-color:white;
+	font-weight:normal;
+	font-size:13px;
+	border-radius:8px;
+	position:absolute;
+	z-index:99999999;
+	box-sizing:border-box;
+	box-shadow:0 1px 50px rgba(0,0,0,0.5);
+	display:none;
+}
+
+.unfurl-link:hover .cmd_tooltip {
+	display:block;
+}
+
+
+.cmd_tooltip.arrow-top {
+	margin-top: 40px;
+}
+  
+.cmd_tooltip.arrow-top:after {
+	content: " ";
+	position: absolute;
+	left: inherit;
+	top: -15px;
+	border-top: none;
+	border-right: 15px solid transparent;
+	border-left: 15px solid transparent;
+	border-bottom: 15px solid white;
+  }

@@ -4,5 +4,5 @@
   header='{{ .Get "header" }}'
   cover='{{ .Get "cover" }}'
 >
-  {{ .Inner | markdownify }}
+  {{ .Inner | .Page.RenderString }}
 </div>

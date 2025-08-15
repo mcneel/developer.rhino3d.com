@@ -80,25 +80,15 @@ url: https://example.com
 Saved to C:\Users\Bozo\dist\manifest.yml
 ```
 
-The `spec` command takes a look at the current directory and, if present, will
-glean useful information from the `.rhp` assembly and use it generate a
-`manifest.yml` with name, version, description etc. pre-populated. If you haven't
-added this information, then placeholders will be used.
+The `spec` command takes a look at the current directory and, if present, will glean useful information from the `.rhp` assembly and use it generate a `manifest.yml` with name, version, description etc. pre-populated. If you haven't added this information, then placeholders will be used.
 
-The RhinoCommon plug-in inspector extracts the assembly attributes that you set
-when creating your plug-in. The `AssemblyInformationalVersion` attribute is used
-to populate the version field, since this attribute isn't bound to the Microsoft
-four-digit version spec and can contain a SemVer-compatible version string. The
-`AssemblyVersion` attribute is used as a fallback.
+The RhinoCommon plug-in inspector extracts the assembly attributes that you set when creating your plug-in. The `AssemblyInformationalVersion` attribute is used to populate the version field, since this attribute isn't bound to the Microsoft four-digit version spec and can contain a SemVer-compatible version string. The `AssemblyVersion` attribute is used as a fallback.
 
 {{< call-out "note" "Note" >}}
-The `spec` command is useful for generating the
-manifest.yml file initially. Once you have one, keep it with your project and
-update it for each release.
+The `spec` command is useful for generating the manifest.yml file initially. Once you have one, keep it with your project and update it for each release.
 {{< /call-out >}}
 
-Next, open the manifest file with your [favourite editor](https://code.visualstudio.com)
-and fill in the gaps.
+Next, open the manifest file with your [favourite editor](https://code.visualstudio.com) and fill in the gaps.
 
 Afterwards, you should have something that looks a little like this...
 
@@ -159,18 +149,14 @@ Currently, if you publish a package with a <code>rh6*</code> distribution tag, i
 {{< /call-out >}}
 
 {{< call-out "note" "Note" >}}
-You might notice your plug-in's GUID lurking in the
-keywords. More information on how this is used can be found in the
-<a href="../package-restore-in-grasshopper" class="alert-link">"Package Restore in Grasshopper"
-</a> guide.
+You might notice your plug-in's GUID lurking in the keywords. More information on how this is used can be found in the <a href="../package-restore-in-grasshopper" class="alert-link">"Package Restore in Grasshopper"</a> guide.
 {{< /call-out >}}
 
 Congratulations! 🙌 You've just created a package for your Rhino plug-in.
 
 ## Next Steps
 
-Now that you've created a package, [push it to the package server](../pushing-a-package-to-the-server) to make it
-available in the package manager!
+Now that you've created a package, [push it to the package server](../pushing-a-package-to-the-server) to make it available in the package manager!
 
 ## Related Topics
 

@@ -137,10 +137,7 @@ Usage: yak search [options] <query>
 * _Since 0.2: Command added_
 * _Since 0.4: Adds support for inspecting .rhp files (RhinoCommon only)_
 
-Creates a skeleton `manifest.yml` file based on the contents of the current directory.
-When run in a directory containing a Grasshopper assembly (`.gha`) or a RhinoCommon
-plug-in (`.rhp`) the file will be inspected and used to pre-populate the `manifest.yml`
-file.
+Creates a skeleton `manifest.yml` file based on the contents of the current directory. When run in a directory containing a Grasshopper assembly (`.gha`) or a RhinoCommon plug-in (`.rhp`) the file will be inspected and used to pre-populate the `manifest.yml` file.
 
 ```commandline
 yak spec

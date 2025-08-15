@@ -14,12 +14,12 @@
       {{ end }}
       <p>{{ partial "byline.html" . }}</p>
       {{ with .Page.Params.what_why }}
-        <p>{{ . | markdownify }}</p>
+        <p>{{ . | markdownify }}</p>  {{/* Use of markdownify is appropriate here */}}
       {{ end }}
       {{ with .Page.Params.whats_new.in_v7 }}
         <h3>{{ i18n "New-in-Rhino-7" }}</h3>
-        <p>{{ . | markdownify }}</p>
-      {{ end }}      
+        <p>{{ . | markdownify }}</p>  {{/* Use of markdownify is appropriate here */}}
+      {{ end }}
       {{ .Content }}
       {{- $docs_base_url := "https://docs.mcneel.com/rhino/" -}}
       {{- $docs_version_url := print $docs_base_url $.Site.Params.latestRhinoVersion -}}

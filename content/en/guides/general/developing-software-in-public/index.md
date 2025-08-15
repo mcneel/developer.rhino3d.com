@@ -9,7 +9,6 @@ sdk = [ "General" ]
 title = "Developing Software In Public"
 type = "guides"
 weight = 0
-override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
 TODO = ""
@@ -81,6 +80,16 @@ This includes releasing ...
 - Documentation (this here site)
 
 ...and making public announcements by email, blogs, and social media.
+
+{{< call-out "note" "Release Schedule" >}}
+
+We plan to release new versions of Rhino the **2nd Tuesday of each month**, which includes a:
+
+- Service Release (SR) for all users who have updates enabled.
+- [Service Release Candidate (SRC)](https://discourse.mcneel.com/t/rhino-service-release-candidates/53358). After the SRC goes through final testing, it becomes the next Service Release the following 2nd Tuesday. SRCs are also published weekly - typically on Tuesdays - and we encourage users to [install Service Release Candidates](https://discourse.mcneel.com/t/rhino-service-release-candidates/53358) as they help us test the next update.
+- [Work-In-Progress (WIP)](https://discourse.mcneel.com/t/welcome-to-serengeti/9612) build.
+
+{{< /call-out >}}
 
 ### Listen
 
