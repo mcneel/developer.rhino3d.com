@@ -37,6 +37,7 @@ Xeto is a way to describe Eto UIs layout using the XAML language.
 
 It is critical that the top xmlns is the eto spec. If this is not the case, the controls will not create eto controls.
 ``` xml
+<!-- MyForm.xeto -->
 <Panel
 xmlns="http://schema.picoe.ca/eto.forms" 
 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
@@ -46,16 +47,18 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 ### Key-Words
 
 #### x:Name
-Eto has the Id property, but this unique id property also sets a property on the host control.
-Of note `x:` is the Xaml namespace.
+Eto has the Id property, but this unique (XAML) unique id property can also set a property on the host control. Of note `x:` is the Xaml namespace.
+
+TODO :  Id also sets ID property
 
 ``` xml
 <!-- MyForm.xeto -->
 <CheckBox x:Name="MyCheckBox"/>
+<CheckBox Id="MyCheckBox"/>
 ```
 
 ``` cs
-// MyForm.cs
+// MyForm.cs (optional)
 protected CheckBox MyCheckBox { get; set; }
 ```
 
@@ -79,10 +82,22 @@ Properties can be set in a few ways.
 
 #### Properties
 
-This example binds to the property someText to the ViewModel but then uses a resource to convert the Binding
+This example binds to the property someText to the ViewModel.
+``` xml
+<!-- MyForm.xeto -->
+<TextBox Text="{Binding SomeText}}" />
+```
+
+This example binds to the property someText to the ViewModel (same as above) but then uses a resource to convert the value.
 ``` xml
 <!-- MyForm.xeto -->
 <TextBox Text="{Binding SomeText, Converter={StaticResource myConverter}}" />
+```
+
+Child bindings also work
+``` xml
+<!-- MyForm.xeto -->
+<TextBox Text="{Binding SomeChild.SomeText}}" />
 ```
 
 ``` cs
@@ -91,6 +106,7 @@ public string SomeText { get; set; }
 ```
 
 ``` cs
+// MyConverters.cs
 public class MyConverter : IValueConverter
 {
   public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -104,14 +120,21 @@ public class MyConverter : IValueConverter
 }
 ```
 
+More complex bindings like this are not possible in xeto.
+``` cs
+Binding.Property(p => p.Text).Convert(a => a == "value")
+```
+
 #### Events
 
 Events are much simpler. Text="text".
 ``` xml
+<!-- MyForm.xeto -->
 <TextBox TextChanged="HandleTextChanged" />
 ```
 ``` cs
-
+// MyForm.xeto
+public void HandleTextChanged(object sender, EventArgs e) { }
 ```
 
 #### Static Resource
@@ -155,12 +178,35 @@ The below syntax lets you bind to Images in Embedded Resources
 
 #### Buttons
 
+Buttons can be bound to either the View or the Model.
+
+**Model Binding**
+
 ``` xml
+<!-- MyForm.xeto -->
+// ViewModel
 <Button Command="{Binding ClickMe}">Click Me!</Button>
 ```
 
 ``` cs
+// MyModel.cs
 public Command ClickMe => new Command((sender, e) => MessageBox.Show("Clicked!"));
+```
+
+**View Binding**
+
+``` xml
+<!-- MyForm.xeto -->
+// View
+<Button Click="ClickMe">Click Me!</Button>
+```
+
+``` cs
+// Mydialog.cs
+public void ClickMe(object? sender, EventArgs)
+{
+
+}
 ```
 
 
@@ -185,7 +231,7 @@ Stack Layouts parent exactly as you'd expect,
 ``` xml
 <StackLayout>
   <Label>Button that executes command from model:</Label>
-  <Button Command="{Binding ClickMe}">Click Me!</Button>
+  <Button>Click Me!</Button>
   <StackLayoutItem Expand="true" HorizontalAlignment="Stretch">
     <TextArea />
   </StackLayoutItem>
@@ -212,6 +258,10 @@ XAML/xeto is Extensible and allows for certain parts of the syntax to be extende
 ### Access Keys
 [More info](https://wpf-tutorial.com/control-concepts/access-keys/)
 
+In Eto it is a `&` or `&amp;` in xeto.
+
+TODO : Examples
+
 ### Tab Inding
 [More info](https://wpf-tutorial.com/control-concepts/tab-order/)
 
@@ -224,4 +274,12 @@ Defines the order which tab moves through controls.
 The following syntax will cause a control to be part of the order, but it will be skipped.
 ``` xml
 <TextBox TabIndex="5" IsReadOnly="True" IsTabStop="False" />
+```
+
+### Spacing
+
+How to add Null
+
+``` xml
+<x:Null />
 ```
