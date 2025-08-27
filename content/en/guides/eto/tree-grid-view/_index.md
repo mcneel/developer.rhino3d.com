@@ -48,7 +48,7 @@ This guide will cover all the eccentricities of Tree Grid Views which can be con
 
 Trees are a very common data structure in programming. Trees start as a single root node from which all nodes are eventually connected. Nodes at the end of the tree are called leafs.
 
-Each node has a single parent (Except the root) and can have any number of children. A key rule of Trees is that any node must not be descended from either itself or any of its parents (or parents descendents), grandparents etc. In the diagram these kinds of relationships are shown with the red X.
+Each node has a single parent (Except the root) and can have any number of children. A key rule of Trees is that any node can only have 1 parent (that is not itself) and no relationship to its siblings other than via its parent. In the diagram these kinds of relationships are shown with the red X.
 
 Tree Grid Views rely on this data structure and all of the rules that come with it.
 
@@ -207,7 +207,43 @@ dialog.ShowModal(parent);
   <div class="codetab-content4" id="py4">
 
   ```py
+from System.Collections.Generic import List
+import System
 
+import Eto.Forms as ef
+import Rhino.UI as ui
+
+tree_data = ef.TreeGridItemCollection()
+
+items = List[ef.TreeGridItem]()
+items.Add(ef.TreeGridItem("Antarctica"))
+items.Add(ef.TreeGridItem("Africa"))
+items.Add(ef.TreeGridItem("Asia"))
+items.Add(ef.TreeGridItem("Australia"))
+items.Add(ef.TreeGridItem("Europe"))
+items.Add(ef.TreeGridItem("North America"))
+items.Add(ef.TreeGridItem("South America"))
+
+main_data = ef.TreeGridItem(items, "Earth")
+
+tree_data.Add(main_data)
+
+tree_grid_view = ef.TreeGridView()
+col = ef.GridColumn()
+col.HeaderText = "Name"
+# 0 Binds to the first item in the list, if there is no list, then the only item available
+col.DataCell = ef.TextBoxCell(0)
+
+tree_grid_view.Columns.Add(col)
+tree_grid_view.DataStore = tree_data
+
+dialog = ef.Dialog()
+dialog.Width = 400
+dialog.Height = 200
+dialog.Content = tree_grid_view
+
+parent = ui.RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
+dialog.ShowModal(parent)
   ```
 
   </div>
