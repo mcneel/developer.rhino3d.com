@@ -129,6 +129,7 @@ platforms = [ "Windows", "Mac" ]
   <!-- Why do I need to bind to a property? -->
 <!-- - [Alternatives to Bindings](view-and-data/alternatives) {{%comingsoon-label %}} -->
 <!-- - [Focus](focus) {{%comingsoon-label %}} -->
+- [Xeto](xeto)
 
 {{< /column >}}
 {{< /row >}}
