@@ -8,7 +8,7 @@
     {{- if eq hugo.Environment "development" -}}
         {{- $thumbnail_url = ($thumb | relURL ) -}}
     {{- else -}}
-        {{- $thumbnail_url = (print .Site.Params.rhinoURLNewSource $thumb) -}}
+        {{- $thumbnail_url = (print .Site.Params.baseURLForFigures $thumb) -}}
     {{- end -}}
 {{- else if hasPrefix $thumb ".." -}}
     {{- $thumbnail_url = $thumb -}}
