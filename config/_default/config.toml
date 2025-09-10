@@ -37,6 +37,7 @@ target = 'assets'
   siteRootURL = "/" # used in navigation banner
   rhinoURL = "https://www.rhino3d.com"
   rhinoURLNewSource = "https://www.rhino3d.com/new-source"
+  baseURLForFigures = "https://developer.rhino3d.com"
   sitemapBaseURL = "https://developer.rhino3d.com"
   navBarShouldResize = false
   supportsChat = false
