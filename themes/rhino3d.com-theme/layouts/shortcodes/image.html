@@ -14,4 +14,30 @@
     {{ if .Get 1 }}{{ $class = .Get 1 }}{{ end }}
 {{ end }}
 
-<img src="{{ $url }}" alt="{{ $alt }}" class="{{ $class }}" width="{{ $width }}" height="{{ $height }}">
+{{- $image_url := "" -}}
+{{ if hasPrefix $url "/images/"}}
+    {{- if eq hugo.Environment "development" -}}
+        {{- $image_url = ($url | relURL ) -}}
+    {{- else -}}
+        {{- $image_url = (print .Site.Params.baseURLForFigures $url) -}}
+    {{- end -}}
+{{- else if hasPrefix $url ".." -}}
+    {{- $image_url = $url -}}
+{{- else if hasPrefix $url "http" -}}
+    {{- $image_url = $url -}}
+{{- else -}}
+    {{- $res := .Page.Resources.GetMatch ( printf "%s" $url) -}}
+    {{- if not $res -}}
+        {{- $defaultPage := .Site.GetPage (printf "%s/%s" .Page.Section .Page.File.TranslationBaseName) -}}
+        {{- if $defaultPage -}}
+            {{- $res = $defaultPage.Resources.GetMatch ( printf "%s" $url) -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if $res -}}
+        {{- $image_url = $res.RelPermalink -}}
+    {{- else -}}
+        {{- $image_url = (print "/images/" $url) -}}
+    {{- end -}}
+{{- end -}}
+
+<img src="{{ $image_url }}" alt="{{ $alt }}" class="{{ $class }}" width="{{ $width }}" height="{{ $height }}">
