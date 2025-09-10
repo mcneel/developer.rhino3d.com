@@ -157,9 +157,13 @@
 .toc-page {
 	flex-direction: row;
 	display: flex;
-    width: fit-content;
+    // width: fit-content;
     justify-content: space-between;
 	grid-gap: 20px;
+}
+
+.toc-page .main-content {
+	width: 100%;
 }
 
 .toc {

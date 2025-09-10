@@ -96,16 +96,15 @@
             //console.log("clientId:", clientId);
             //console.log("infocookie:", infoCookie)
             infoCookie = JSON.parse(infoCookie);
-            const dropdownLogoutUrl = mca.utilities.buildURL(`/${encodeURIComponent(clientId)}/mcneel-accounts/logout`, {
+            const dropdownLogoutUrl = mca.utilities.buildURL("/user/logout", {
               nonce: infoCookie.nonce,
-              host_url: window.location.origin,
-              dest_url: window.location.href
+              redirect_uri: window.location.href
             });
             console.log("dropdownLogoutUrl:", dropdownLogoutUrl)
             window.location.href = dropdownLogoutUrl;
           }
           else{
-          console.log("not logged in")
+          console.log("not logged in");
           }
   }
 

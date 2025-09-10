@@ -3,6 +3,10 @@
 {{ if .Params.page_options.toc_type}}
     {{ $tocType = .Params.page_options.toc_type }}
 {{ end }}
+{{ $tocBack := false }}
+{{ if .Params.page_options.toc_back }}
+    {{ $tocBack = .Params.page_options.toc_back }}
+{{ end }}
 
 <script langage="javascript">
     document.addEventListener('DOMContentLoaded', function() {
@@ -24,6 +28,9 @@
     ">
         </div>
         <header>
+            {{ if $tocBack }}
+                <a href="{{ .Parent.RelPermalink }}" style="color: #901010; overflow: hidden; white-space: nowrap; display: block; text-overflow: ellipsis; font-size: small;"> < {{ .Parent.Title }}</a>
+            {{ end }}
             <a href="{{ .RelPermalink }}">{{.Title}}</a>
         </header>
         <nav id="TableOfContents" class="scrollbar">
