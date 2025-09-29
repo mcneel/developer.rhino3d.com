@@ -178,10 +178,10 @@ class CMyUserData2 : public ON_UserData
 
 public:
 
- static ON_UUID Id();
+  static ON_UUID Id();
 
- CMyUserData2();
- ~CMyUserData2();
+  CMyUserData2();
+  ~CMyUserData2();
 
   // override virtual ON_UserData::Archive()
   bool Archive() const override;
@@ -192,10 +192,8 @@ public:
   // override virtual ON_UserData::Read()
   bool Read(ON_BinaryArchive& binary_archive) override;
 
-  // ... download example for more details
-
- ON_wString m_my_string;
- ON_3dPoint m_my_point;
+  ON_wString m_my_string;
+  ON_3dPoint m_my_point;
 };
 ```
 
@@ -222,7 +220,7 @@ CMyUserData2::CMyUserData2()
   m_userdata_copycount = 1;  // enable copying
 
   // initialize your data members here
-  m_my_point.Set(0.0,0.0,0.0);
+  m_my_point.Set(0.0, 0.0, 0.0);
 }
 ```
 
@@ -237,8 +235,6 @@ bool CMyUserData2::Archive() const
 
 bool CMyUserData2::Write(ON_BinaryArchive& binary_archive) const
 {
-  // ... download example for more details about adding version support
-
   int minor_version = 0;
   bool rc = binary_archive.BeginWrite3dmChunk(
        TCODE_ANONYMOUS_CHUNK,
@@ -261,16 +257,14 @@ bool CMyUserData2::Write(ON_BinaryArchive& binary_archive) const
     break;
   }
 
-  if ( !binary_archive.EndWrite3dmChunk() )
-   rc = false;
+  if (!binary_archive.EndWrite3dmChunk())
+    rc = false;
 
   return rc;
 }
 
 bool CMyUserData2::Read(ON_BinaryArchive& binary_archive)
 {
-  // ... download example for more details about adding version support
-
   int major_version = 0;
   int minor_version = 0;
   bool rc = binary_archive.BeginRead3dmChunk(
@@ -330,8 +324,8 @@ public:
 
   //...
 
-  int m_i_count;
-  int* m_i_array;
+  int m_i_count = 0;
+  int* m_i_array = 0;
 };
 
 ON_OBJECT_IMPLEMENT(CMyUserData3, ON_UserData, "0D8FA7AB-F8A4-...");
@@ -355,17 +349,13 @@ CMyUserData3::CMyUserData3()
 {
   m_userdata_uuid = CMyUserData3::Id();
   m_application_uuid = CMyUserData3::ApplicationId();
-  m_userdata_copycount = 1;
-
-  // Initialize your class's fields
-  m_i_count = 0;
-  m_i_array = 0;
+  m_userdata_copycount = 1; // enable copying
 }
 
 CMyUserData3::~CMyUserData3()
 {
   // virtual function
-  if ( 0 != m_i_array )
+  if (m_i_array)
     onfree(m_i_array);
 }
 ```
@@ -385,7 +375,7 @@ CMyUserData3::CMyUserData3(const CMyUserData3& src )
   // Copy you class's fields
   m_i_count = 0;
   m_i_array = 0;
-  if( src.m_i_count > 0 && src.m_i_array != 0 )
+  if (src.m_i_count > 0 && src.m_i_array != 0)
   {
     m_i_array = (int*)onmalloc(src.m_i_count * sizeof(m_i_array[0]));
     if (m_i_array != 0)
@@ -405,13 +395,13 @@ When `operator=` is called, "this" has already been constructed and may already 
 ```cpp
 CMyUserData3& CMyUserData3::operator=(const CMyUserData3& src)
 {
-  if ( this != &src )
+  if (this != &src)
   {
    // Destroy your class's existing information
    // (Otherwise you will leak memory if "this"
    // has been used before.)
    m_i_count = 0;
-   if ( m_i_array != 0 )
+   if (m_i_array != 0)
    {
      onfree(m_i_array);
      m_i_array = 0
@@ -422,7 +412,7 @@ CMyUserData3& CMyUserData3::operator=(const CMyUserData3& src)
    ON_UserData::operator=(src);
 
    // Copy your class's fields
-   if( src.m_i_count > 0 && src.m_i_array != 0 )
+   if (src.m_i_count > 0 && src.m_i_array != 0)
    {
      m_i_array = (int*)onmalloc(src.m_i_count * sizeof(m_i_array[0]));
      if (m_i_array != 0)
