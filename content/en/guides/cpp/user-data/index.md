@@ -465,8 +465,8 @@ CPlugInUserData::CPlugInUserData()
   m_userdata_copycount = 1; // enable copying
 
   // initialize your data members here
-  m_point.Set( 0.0, 0.0, 0.0 );
-  m_string = L;
+  m_point.Set(0.0, 0.0, 0.0);
+  m_string = L"";
 }
 ```
 
