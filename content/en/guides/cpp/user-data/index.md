@@ -77,7 +77,7 @@ To attach object user data to the `CRhinoObject` itself, use `CRhinoObject::Atta
 
 The first sample, *CMyUserData1*, shows how to make a simple piece of user data that is not saved in *.3dm* files.  The second sample, *CMyUserData2*, shows how to make a piece of user data that is saved in *.3dm* files.
 
-You can download the source for the next two samples here: [{{< awesome "fas fa-download">}} ](/files/myuserdataexample.zip) [mcneelcodesigning.zip](/files/myuserdataexample.zip)
+For additional samples, see the [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples).
 
 ### CMyUserData1
 
