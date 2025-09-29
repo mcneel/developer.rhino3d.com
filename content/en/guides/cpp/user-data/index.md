@@ -484,12 +484,6 @@ CPlugInUserData::CPlugInUserData()
 }
 ```
 
-This plugin sample contains two plugin projects and one *DLL* project:  
-
-[{{< awesome "fas fa-download">}} ](/files/testshareduserdata.zip) [testshareduserdata.zip](/files/testshareduserdata.zip)
-
-To load the sample, just download and extract into some folder, and then open *Test.sln* is Visual Studio.
-
 ## Related Topics
 
 - [Attaching User Data to Brep Components](/samples/cpp/attaching-user-data-to-brep-components)
