@@ -118,7 +118,7 @@ CMyUserData1::CMyUserData1()
 {
   m_userdata_uuid = CMyUserData1::Id();
   m_application_uuid = MyPlugIn().PlugInID();
-  m_userdata_copycount = 1;  enable copying
+  m_userdata_copycount = 1;  // enable copying
 }
 
 // ... download example for more details
@@ -142,9 +142,9 @@ else
   // the parent object already has this kind
   // of user data attached.
   RhinoApp().Print("User data not attached.\n");
-  delete pMyUserData;
+  delete pMyUserData; // Don't leak...
 }
-pMyUserData = 0;
+pMyUserData = nullptr;
 ```
 
 The user data's *UUID* is used to retrieve the user data from a parent object...
@@ -152,8 +152,8 @@ The user data's *UUID* is used to retrieve the user data from a parent object...
 ```cpp
 ON_Mesh* pMesh = ...;
 ON_UserData1* pUserData = pMesh->GetUserData(CMyUserData1::Id());
-CMyUserData1** pMyUserData1 = static_cast<CMyUserData1**>(pUserData);
-if ( pMyUserData1 )
+CMyUserData1* pMyUserData1 = static_cast<CMyUserData1*>(pUserData);
+if (pMyUserData1)
 {
   RhinoApp().Print("Got user data.\n"):
 }
@@ -184,13 +184,13 @@ public:
  ~CMyUserData2();
 
   // override virtual ON_UserData::Archive()
-  BOOL Archive() const;
+  bool Archive() const override;
 
   // override virtual ON_UserData::Write()
-  BOOL Write(ON_BinaryArchive& binary_archive) const;
+  bool Write(ON_BinaryArchive& binary_archive) const override;
 
   // override virtual ON_UserData::Read()
-  BOOL Read(ON_BinaryArchive& binary_archive);
+  bool Read(ON_BinaryArchive& binary_archive) override;
 
   // ... download example for more details
 
@@ -212,7 +212,7 @@ The construction code for `CMyUserData2` looks like:
 ```cpp
 ON_UUID CMyUserData2::Id()
 {
-  return CMyUserData2::m_CMyUserData2_class_id.Uuid();
+  return ON_CLASS_ID(CMyUserData2);
 }
 
 CMyUserData2::CMyUserData2()
@@ -229,13 +229,13 @@ CMyUserData2::CMyUserData2()
 The `CMyUserData2::Archive()`, `CMyUserData2::Read()`, `CMyUserData2::Write()` functions look something like this...
 
 ```cpp
-BOOL CMyUserData2::Archive() const
+bool CMyUserData2::Archive() const
 {
   // If false is returned, nothing will be saved in 3dm archives.
   return true;
 }
 
-BOOL CMyUserData2::Write(ON_BinaryArchive& binary_archive) const
+bool CMyUserData2::Write(ON_BinaryArchive& binary_archive) const
 {
   // ... download example for more details about adding version support
 
@@ -267,7 +267,7 @@ BOOL CMyUserData2::Write(ON_BinaryArchive& binary_archive) const
   return rc;
 }
 
-BOOL CMyUserData2::Read(ON_BinaryArchive& binary_archive)
+bool CMyUserData2::Read(ON_BinaryArchive& binary_archive)
 {
   // ... download example for more details about adding version support
 
@@ -317,10 +317,11 @@ The main reason you have to explicitly implement a copy constructor and `operato
 class CMyUserData3 : public ON_UserData
 {
   ON_OBJECT_DECLARE(CMyUserData3);
+
 public:
   static ON_UUID Id();
   static ON_UUID ApplicationId();
-  static CMyUserData3** Get(const ON_Object**);
+  static CMyUserData3* Get(const ON_Object*);
 
   CMyUserData3();
   ~CMyUserData3();
@@ -333,26 +334,21 @@ public:
   int* m_i_array;
 };
 
-ON_OBJECT_IMPLEMENT(CMyUserData3,
-                    ON_UserData,
-                    <<guidgen generated uuid here>>
-                    );
+ON_OBJECT_IMPLEMENT(CMyUserData3, ON_UserData, "0D8FA7AB-F8A4-...");
 
 ON_UUID CMyUserData3::Id()
 {
-  return CMyUserData3::m_CMyUserData3_class_id.Uuid();
+  return ON_CLASS_ID(CMyUserData3);
 }
 
 ON_UUID CMyUserData3::ApplicationId()
 {
-  return <<your plugin name>>().PlugInID();
+  return MyPlugin().PlugInID();
 }
 
-CMyUserData3** CMyUserData3::Get(const ON_Object** object)
+CMyUserData3* CMyUserData3::Get(const ON_Object* object)
 {
-  return CMyUserData3::Cast( (object != 0)
-                             ? object->GetUserData( CMyUserData3::Id() )
-                          );
+  return CMyUserData3::Cast(object ? object->GetUserData(CMyUserData3::Id()) : nullptr);
 }
 
 CMyUserData3::CMyUserData3()
@@ -386,17 +382,17 @@ CMyUserData3::CMyUserData3(const CMyUserData3& src )
   // DO NOT SET OTHER ON_UserData fields
   // In particular, do not set m_userdata_copycount
 
-  Copy you class's fields
+  // Copy you class's fields
   m_i_count = 0;
   m_i_array = 0;
   if( src.m_i_count > 0 && src.m_i_array != 0 )
   {
-    m_i_array = (int**)onmalloc(src.m_i_count**sizeof(m_i_array[0]));
-    if ( m_i_array != 0 )
+    m_i_array = (int*)onmalloc(src.m_i_count * sizeof(m_i_array[0]));
+    if (m_i_array != 0)
     {
-      memcpy( m_i_array,
-              src.m_i_array,
-              src.m_i_count*sizeof(m_i_array[0])
+      memcpy(m_i_array,
+             src.m_i_array,
+             src.m_i_count*sizeof(m_i_array[0])
            );
       m_i_count = src.m_i_count;
     }
@@ -428,12 +424,12 @@ CMyUserData3& CMyUserData3::operator=(const CMyUserData3& src)
    // Copy your class's fields
    if( src.m_i_count > 0 && src.m_i_array != 0 )
    {
-     m_i_array = (int**)onmalloc(src.m_i_count**sizeof(m_i_array[0]));
-     if ( m_i_array != 0 )
+     m_i_array = (int*)onmalloc(src.m_i_count * sizeof(m_i_array[0]));
+     if (m_i_array != 0)
      {
-       memcpy( m_i_array,
-               src.m_i_array,
-               src.m_i_count*sizeof(m_i_array[0])
+       memcpy(m_i_array,
+              src.m_i_array,
+              src.m_i_count*sizeof(m_i_array[0])
              );
        m_i_count = src.m_i_count;
      }
