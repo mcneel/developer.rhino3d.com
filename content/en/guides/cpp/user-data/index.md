@@ -12,7 +12,7 @@ weight = 1
 override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
-TODO = "downloadable samples should be moved to GitHub and linked"
+TODO = ""
 origin = "http://wiki.mcneel.com/developer/userdata"
 picky_sisters = ""
 state = ""
@@ -77,8 +77,6 @@ To attach object user data to the `CRhinoObject` itself, use `CRhinoObject::Atta
 
 The first sample, *CMyUserData1*, shows how to make a simple piece of user data that is not saved in *.3dm* files.  The second sample, *CMyUserData2*, shows how to make a piece of user data that is saved in *.3dm* files.
 
-For additional samples, see the [Developer samples on GitHub](https://github.com/mcneel/rhino-developer-samples).
-
 ### CMyUserData1
 
 ```cpp
@@ -96,8 +94,6 @@ public:
 
   CMyUserData1();
   ~CMyUserData1();
-
-  //... download example for more details
 
   ON_wString m_my_string;
 };
@@ -120,8 +116,6 @@ CMyUserData1::CMyUserData1()
   m_application_uuid = MyPlugIn().PlugInID();
   m_userdata_copycount = 1;  // enable copying
 }
-
-// ... download example for more details
 ```
 
 Attaching object user data to a parent object is a simple matter...
@@ -434,6 +428,8 @@ CMyUserData3& CMyUserData3::operator=(const CMyUserData3& src)
 The best way to share user data between plugins is to have access to the plugins data controlled by a shared *DLL* - a *DLL* that is used by all interested plugins.  The user data class definitions and declarations, along with any helper functions used to access this data, are then added to and exported from this *DLL*.
 
 The easiest way to make *DLLs* for Rhino plugins is to simply run the *Rhino Plugin Wizard* from Visual Studio.  When the wizard finishes, simply delete the plugins object (*cpp* and *h* files) and the command file.  Then change the output file extension from *rhp* to *dll*.  Now, you have a *MFC DLL* that links with the Rhino C/C++ SDK.
+
+You can find a fully detailed example in the Rhino developper samples Github repository: [SampleSharedUserDataCoreLib](https://github.com/mcneel/rhino-developer-samples/tree/8/cpp/SampleSharedUserDataCoreLib), [SampleSharedUserData1](https://github.com/mcneel/rhino-developer-samples/tree/8/cpp/SampleSharedUserData1), [SampleSharedUserData2](https://github.com/mcneel/rhino-developer-samples/tree/8/cpp/SampleSharedUserData2)
 
 One important piece of information to keep in mind is that when you create a class derived from `ON_UserData` and you expect this data to be serialized in a *3dm* file, then you must assign the owning plugins's *UUID* to the `ON_UserData::m_application_uuid` data member.  This is how Rhino knows what plugins to load when it encounters plugin user data when reading a *3dm* file.  Note, it is not important what plugins's *UUID* is assigned to the user data because all of the plugins are going to dynamically load the *DLL* when they are loaded anyway.  But, some plugin must be "in charge."
 
