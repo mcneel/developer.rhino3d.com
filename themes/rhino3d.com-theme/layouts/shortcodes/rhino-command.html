@@ -21,42 +21,42 @@
 
 <a href="https://docs.mcneel.com/rhino/{{$version}}/help/{{.Site.Params.docLang}}/index.htm#commands/{{lower $englishCommand }}.htm" target="_blank">
 <span style="display: inline-block;" class="unfurl-link">
-    <strong>
-        <img style="
-        margin-top: -4px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        height: 24px;
-        vertical-align: middle;" src="https://docs.mcneel.com/rhino/{{$version}}/help/{{.Site.Params.docLang}}/image/command_icons/{{lower $imageName }}.png"
-        onerror="this.onerror=null;this.style.display='none';"
-        >
-        {{ $localCommand }}
-    </strong>
+<strong>
+    <img style="
+    margin-top: -4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 24px;
+    vertical-align: middle;" src="https://docs.mcneel.com/rhino/{{$version}}/help/{{.Site.Params.docLang}}/image/command_icons/{{lower $imageName }}.png"
+    onerror="this.onerror=null;this.style.display='none';"
+    >
+    {{ $localCommand }}
+</strong>
 
-    <script>
-        var parser = new DOMParser();
-        var href = "https://docs.mcneel.com/rhino/{{$version}}/help/{{.Site.Params.docLang}}/unfurl/{{lower $englishCommand }}.htm"
-        var scriptTag = document.getElementsByTagName('script');
-        scriptTag = scriptTag[scriptTag.length - 1];
-        var parentTag = scriptTag.parentNode;
+<script>
+var parser = new DOMParser();
+var href = "https://docs.mcneel.com/rhino/{{$version}}/help/{{.Site.Params.docLang}}/unfurl/{{lower $englishCommand }}.htm"
+var scriptTag = document.getElementsByTagName('script');
+scriptTag = scriptTag[scriptTag.length - 1];
+var parentTag = scriptTag.parentNode;
 
-        function addPreviewDiv(parent){ 
-            const previewElement = document.createElement("span");
-            previewElement.classList.add("cmd_tooltip");
-            previewElement.classList.add("arrow-top");
+function addPreviewDiv(parent){ 
+const previewElement = document.createElement("span");
+previewElement.classList.add("cmd_tooltip");
+previewElement.classList.add("arrow-top");
 
-            const iframeElement = document.createElement("iframe");
-            iframeElement.src = href;
-            iframeElement.style.width = "100%";
-            iframeElement.style.height = "100%";
-            iframeElement.style.border = "none";
-            previewElement.appendChild(iframeElement);
+const iframeElement = document.createElement("iframe");
+iframeElement.src = href;
+iframeElement.style.width = "100%";
+iframeElement.style.height = "100%";
+iframeElement.style.border = "none";
+previewElement.appendChild(iframeElement);
 
-            parent.appendChild(previewElement)
-        }
+parent.appendChild(previewElement)
+}
 
-        addPreviewDiv(parentTag)
+addPreviewDiv(parentTag)
 
-    </script>
+</script>
 </span>
 </a>
