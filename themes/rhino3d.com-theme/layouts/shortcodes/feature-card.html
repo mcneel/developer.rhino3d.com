@@ -86,10 +86,21 @@
             {{- end -}}
 
             {{- if ($.Scratch.Get "image") -}}
-                {{- $image := resources.Get ($.Scratch.Get "image") -}}
-                {{ $thumbnail := $image.Fill "800x450 Center" }}
-                {{ with $thumbnail }}
-                    <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                {{ if hasPrefix ($.Scratch.Get "image") "/images/" }}
+                    {{/*  Global image folder  */}}
+                    {{- $image := resources.Get ($.Scratch.Get "image") -}}
+                    {{ $thumbnail := $image.Fill "800x450 Center" }}
+                    {{ with $thumbnail }}
+                        <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                    {{ end }}
+                {{ else }}
+                    {{/*  Page bundle  */}}
+                    {{ with .Resources.GetMatch ( printf "%s" ($.Scratch.Get "image") ) }}
+                        {{ $thumbnail := .Fill "800x450 Center" }}
+                        {{ with $thumbnail }}
+                            <a href="{{ $.Scratch.Get "page_link" }}"><img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%"></a>
+                        {{ end }}
+                    {{ end }}
                 {{ end }}
             {{ else }}
                 {{ $.Scratch.Set "has-thumbnail" "false" }}

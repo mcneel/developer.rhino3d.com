@@ -178,7 +178,7 @@
         },
         {
             "label": "theme sync (DANGER)",
-            "command": "python",
+            "command": "python3",
             "args": [
                 "${workspaceRoot}/themes/rhino3d.com-theme/script/theme-sync.py"
             ],

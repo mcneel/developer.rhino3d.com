@@ -7,7 +7,7 @@
     <div class="banner">
         {{ $banner := .Params.banner }}
         {{ with .Resources.GetMatch  ( printf "%s" .Params.banner)  }}
-                <img src="{{ .RelPermalink }}" alt="{{ . }}"" style="width:100%">
+                <img src="{{ .RelPermalink }}" alt="{{ . }}" style="width:100%">
         {{ end }}
     </div>
     <section class="columns">
