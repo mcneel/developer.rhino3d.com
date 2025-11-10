@@ -271,16 +271,16 @@ td.hljs-ln-line.hljs-ln-code {
 
 /* 
 ####################################################################
-# (Back)Tick (Back)Tick code styling
+# (Back)Tick (Back)Tick inline code styling
 ####################################################################
 */
-// code {
-//   background-color: rgb(246, 246, 246);
-//   border-color: rgb(219,219,219);
-//   border-radius: 2px;
-//   border-width: 1px;
-//   border-style: solid;
-//   padding: 1px 3px 1px 3px; 
-//   color: rgb(211, 49, 93);
-//   font-size: 0.85em;
-// }
+:not(pre) > code {
+  background-color: rgb(246, 246, 246);
+  border-color: rgb(219,219,219);
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 1px 3px 1px 3px; 
+  color: rgb(211, 49, 93);
+  font-size: 0.85em;
+}
