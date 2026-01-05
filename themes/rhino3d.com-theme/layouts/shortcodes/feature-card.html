@@ -60,6 +60,12 @@
                     {{ $.Scratch.Set "updated_feature" "true" }}
                 {{- end -}}
             {{- end -}}
+            {{ if (eq (int .Site.Params.latestRhinoVersion) (int "9")) }}
+                {{- with .Params.whats_new.in_v9_summary -}}
+                    {{ $.Scratch.Set "latest_update" . }}
+                    {{ $.Scratch.Set "updated_feature" "true" }}
+                {{- end -}}
+            {{- end -}}
         {{- end -}}
 
         <div class="card">
