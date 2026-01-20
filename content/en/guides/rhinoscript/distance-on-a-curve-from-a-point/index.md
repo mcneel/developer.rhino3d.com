@@ -49,7 +49,7 @@ Sub OffsetPointOnCurve
 
   ' Select a point on the curve to offset from      
   Dim pt : pt = Rhino.GetPointOnCurve(crv, "Select point on curve")
-  If IsNull( pt) Then Exit Sub
+  If IsNull(pt) Then Exit Sub
 
   ' Specify the offset distance    
   Dim dist : dist = Rhino.GetReal("Distance to offset point")
@@ -59,13 +59,13 @@ Sub OffsetPointOnCurve
   Dim t : t = Rhino.CurveClosestPoint(crv, pt)
 
   ' Get the curve's domain
-  Dim d : dom = Rhino.CurveDomain(crv)
+  Dim dom : dom = Rhino.CurveDomain(crv)
 
   ' Get the total length of the curve
   Dim l : l = Rhino.CurveLength(crv)
 
   ' Determine the length from the start of the curve to the test point
-  Dim ls : ls = Rhino.CurveLength(crv,,Array(Dom(0),t))
+  Dim ls : ls = Rhino.CurveLength(crv,, Array(Dom(0), t))
 
   ' Offset a point in each direction    
   Rhino.AddPoint Rhino.CurveArcLengthPoint(crv, ls + dist, True)
