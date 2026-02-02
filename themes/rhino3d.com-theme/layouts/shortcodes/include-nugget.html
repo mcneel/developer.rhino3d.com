@@ -1,0 +1,22 @@
+{{- $src := path.Join .Page.File.Dir (.Get "src") -}}
+{{- $name := .Get "name" -}}
+
+{{- with .Site.GetPage $src -}}
+{{- $content := .Content -}}
+
+{{- if $name -}}
+{{- $marker := printf `<span data-nugget="%s" style="display:none"></span>` $name -}}
+{{- $a := split $content $marker -}}
+{{- if ge (len $a) 2 -}}
+{{- $after := index $a 1 -}}
+{{- $b := split $after `<span data-nugget="` -}}
+      {{- if ge (len $b) 2 -}}
+        {{- index $b 0 | safeHTML -}}
+      {{- else -}}
+        {{- $after | safeHTML -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $content -}}
+  {{- end -}}
+{{- end -}}
