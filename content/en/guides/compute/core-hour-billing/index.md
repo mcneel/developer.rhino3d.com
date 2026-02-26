@@ -54,8 +54,8 @@ When Rhino is logged in to a service account and is running on a Windows Server-
 Core-hour billing is required when running Rhino on a Windows Server-based operating system.
 
 1. Go to the [Licenses Portal](https://www.rhino3d.com/licenses?_forceEmpty=true) (login to your Rhino account if prompted).
-2. Click _Create New Team_ and create a team to use for your compute project. {{< call-out "note" "Note" >}}
-Creating a new team is not strictly required, but core-hour billing is *not compatible* with existing licenses in the team. So if your team has licenses in it, core-hour billing will not be allowed.
+2. Click _Create New Team_ and create a team to use for your compute project. {{< call-out "note" "Important" >}}
+The team you use for core-hour billing **must have no licenses in it**. Core-hour billing is not compatible with Rhino Educational or Commercial licenses. Core-hour billing cannot be enabled on a team that contains any licenses. If you have an existing team with licenses, you must create a fresh team with no licenses before proceeding.
 {{< /call-out >}}
 
 3. Click _Manage Team_ -> _Manage Core-Hour Billing_.
