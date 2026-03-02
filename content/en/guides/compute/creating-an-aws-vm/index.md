@@ -61,7 +61,7 @@ To create a new virtual machine instance on AWS, follow these steps:
 1. Now, on the far right select the **Launch Instance**.
 
 1. A confirmation page lets you know that your instance has successfully launched. In the top-most menu which reads **EC2 > Instances > Launch an instance**, select the **Instances** menu item to view the instances console window.</p>
-{{< image url="/images/AWS_Setup_15.png" alt="/images/AWS_Setup_15.png" class="image_left" width="90%" >}}
+{{< image url="/images/AWS_Setup_15.png" alt="/images/AWS_Setup_15.png" class="image_left" width="100%" >}}
 
 1. On the **Instances** screen, you can view the status of the launched instance. The instance should automatically be running after launch, but if not select the instance row checkbox and then select the **Instance State** menu item at the top. Select **Start Instance** to start the virtual machine.
 
