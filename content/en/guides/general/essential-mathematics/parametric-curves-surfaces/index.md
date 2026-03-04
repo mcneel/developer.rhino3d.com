@@ -661,12 +661,12 @@ The tangent plane to a surface at a given point is the plane that touches the su
 Many models cannot be constructed from one surface patch. Continuity between joined surface patches is important for visual smoothness, light reflection, and airflow.
 The following table shows various continuities and their definitions:
 
-
+|  |  |  |
+|---|---|---|
 | **G0**| (Position continuous) | Two surfaces joined together. |  
 | **G1**| (Tangent continuous) | The corresponding tangents of the two surfaces along their joint edge are parallel in both u‑ and v‑directions. |  
 | **G2**| ( Curvature Continuous) | Curvatures as well as tangents agree for both surfaces at the common edge. |  
 | **GN**|....... | The surfaces agree to higher order. |  
-
 
 <figure>
    <img src="/images/math-image126.png" >
