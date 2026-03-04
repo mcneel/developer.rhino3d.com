@@ -12,14 +12,62 @@
     {{- end -}}
 {{- else if hasPrefix $thumb ".." -}}
     {{- $thumbnail_url = $thumb -}}
+    {{- /* Extract the filename and directory path from the relative URL */ -}}
+    {{- $fileName := path.Base $thumb -}}
+    {{- $relDir := path.Dir $thumb -}}
+    {{- /* Calculate the target page path by joining current page's dir with the relative path */ -}}
+    {{- $currentDir := .Page.File.Dir -}}
+    {{- $targetPath := path.Join $currentDir $relDir -}}
+    {{- /* Clean up the path and get the target page */ -}}
+    {{- $targetPage := .Site.GetPage $targetPath -}}
+    {{- $res := "" -}}
+    {{- if $targetPage -}}
+        {{- $res = $targetPage.Resources.GetMatch $fileName -}}
+        {{- /* If resource not found, try the English translation of the target page */ -}}
+        {{- if not $res -}}
+            {{- range $targetPage.Translations -}}
+                {{- if eq .Language.Lang "en" -}}
+                    {{- $res = .Resources.GetMatch $fileName -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    {{- else -}}
+        {{- /* Target page not found in current language, try to find it in English site */ -}}
+        {{- $enSite := index (where site.Sites ".Language.Lang" "en") 0 -}}
+        {{- if $enSite -}}
+            {{- $enTargetPage := $enSite.GetPage $targetPath -}}
+            {{- if $enTargetPage -}}
+                {{- $res = $enTargetPage.Resources.GetMatch $fileName -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if $res -}}
+        {{- $thumbnail_url = $res.RelPermalink -}}
+    {{- end -}}
 {{- else if hasPrefix $thumb "http" -}}
     {{- $thumbnail_url = $thumb -}}
 {{- else -}}
     {{- $res := .Page.Resources.GetMatch ( printf "%s" $thumb) -}}
     {{- if not $res -}}
+        {{- /* Try the English translation of the current page */ -}}
+        {{- range .Page.Translations -}}
+            {{- if eq .Language.Lang "en" -}}
+                {{- $res = .Resources.GetMatch ( printf "%s" $thumb) -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if not $res -}}
         {{- $defaultPage := .Site.GetPage (printf "%s/%s" .Page.Section .Page.File.TranslationBaseName) -}}
         {{- if $defaultPage -}}
             {{- $res = $defaultPage.Resources.GetMatch ( printf "%s" $thumb) -}}
+            {{- if not $res -}}
+                {{- /* Try the English translation of the default page */ -}}
+                {{- range $defaultPage.Translations -}}
+                    {{- if eq .Language.Lang "en" -}}
+                        {{- $res = .Resources.GetMatch ( printf "%s" $thumb) -}}
+                    {{- end -}}
+                {{- end -}}
+            {{- end -}}
         {{- end -}}
     {{- end -}}
     {{- if $res -}}

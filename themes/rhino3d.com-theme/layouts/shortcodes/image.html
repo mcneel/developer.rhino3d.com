@@ -20,8 +20,49 @@
 
 {{- if or (hasPrefix $imageName "http://") (hasPrefix $imageName "https://") (hasPrefix $imageName "/") -}}
     {{- $.Scratch.Set "imageURL" $imageName }}
+{{- else if hasPrefix $imageName ".." -}}
+    {{- /* Handle relative paths to other page bundles */ -}}
+    {{- $fileName := path.Base $imageName -}}
+    {{- $relDir := path.Dir $imageName -}}
+    {{- $currentDir := .Page.File.Dir -}}
+    {{- $targetPath := path.Join $currentDir $relDir -}}
+    {{- $targetPage := .Site.GetPage $targetPath -}}
+    {{- $image := "" -}}
+    {{- if $targetPage -}}
+        {{- $image = $targetPage.Resources.GetMatch $fileName -}}
+        {{- /* If resource not found, try the English translation of the target page */ -}}
+        {{- if not $image -}}
+            {{- range $targetPage.Translations -}}
+                {{- if eq .Language.Lang "en" -}}
+                    {{- $image = .Resources.GetMatch $fileName -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    {{- else -}}
+        {{- /* Target page not found in current language, try to find it in English site */ -}}
+        {{- $enSite := index (where site.Sites ".Language.Lang" "en") 0 -}}
+        {{- if $enSite -}}
+            {{- $enTargetPage := $enSite.GetPage $targetPath -}}
+            {{- if $enTargetPage -}}
+                {{- $image = $enTargetPage.Resources.GetMatch $fileName -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if $image -}}
+        {{- $.Scratch.Set "imageURL" $image.RelPermalink }}
+    {{- else -}}
+        {{- $.Scratch.Set "imageURL" $imageName }}
+    {{- end -}}
 {{- else -}}
     {{- $image := .Page.Resources.GetMatch $imageName -}} 
+    {{- if not $image -}}
+        {{- /* Try the English translation of the current page */ -}}
+        {{- range .Page.Translations -}}
+            {{- if eq .Language.Lang "en" -}}
+                {{- $image = .Resources.GetMatch $imageName -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
     {{- if $image -}}
         {{- $.Scratch.Set "imageURL" $image.RelPermalink }}
     {{- end -}}
