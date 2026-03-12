@@ -18,7 +18,7 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "Windows" ]
+platforms = [ "Windows", "Linux" ]
 since = 0
 
 [page_options]
@@ -29,6 +29,7 @@ toc_type = "single"
 
 
 ## Compute can:
+  * Run on Windows and Linux Servers (Ubuntu 24.04 and AmazonLinux 2023).
   * Calculate Grasshopper definitions online in a serial or parallel solutions.
   * Manipulate Rhino (3DM) and other file types anywhere on the net.
   * Call to over 2400+ geometric operations on custom objects from within existing processes online. Including points, curves, surfaces, meshes and solids.

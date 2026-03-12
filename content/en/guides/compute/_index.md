@@ -17,7 +17,7 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "Windows", "Mac" ]
+platforms = [ "Windows", "Mac", "Linux" ]
 since = 0
 +++
 <div class="row">
@@ -28,7 +28,7 @@ since = 0
 </div>
 {{< column >}}  
 
-Write code to access the Rhino and Grasshopper SDKs through a stateless REST API running on Windows Servers. Use Compute to enhance any online solution you are developing to create and manipulate two and three-dimensional curves, surfaces, and solids. Install and customize Compute to run on any cloud services framework.
+Write code to access the Rhino and Grasshopper SDKs through a stateless REST API running on Windows and Linux Servers. Use Compute to enhance any online solution you are developing to create and manipulate two and three-dimensional curves, surfaces, and solids. Install and customize Compute to run on any cloud services framework.
 
 {{< /column >}}
 </div>
