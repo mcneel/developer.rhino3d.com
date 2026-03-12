@@ -27,7 +27,6 @@ toc_type = "single"
 +++
 
 {{< call-out "warning" "Warning" >}}
-<strong>Warning!</strong>
 
 - This project is part of the Rhino WIP (work in progress) and as such should be considered WIP software. We do not recommend using this for production work.
 - Things we are still working on:
@@ -43,7 +42,7 @@ toc_type = "single"
 - A Core-Hour Billing Token. Follow this guide to get a token: https://developer.rhino3d.com/guides/compute/core-hour-billing/#setting-up-core-hour-billing 
 
 {{< call-out "warning" "Warning" >}}
-<strong>Warning!</strong> Your core-hour billing token allows anyone with it to charge your team at will. Do <strong>NOT</strong> share this token with anyone.
+Your core-hour billing token allows anyone with it to charge your team at will. Do <strong>NOT</strong> share this token with anyone.
 {{< /call-out >}}
 
 ## Provision System
@@ -163,7 +162,7 @@ apt update && apt install -y rhino-compute
 The <code>RHINO_TOKEN</code> is your [Core-Hour Billing](/guides/compute/core-hour-billing/#setting-up-core-hour-billing) token.
 
 {{< call-out "warning" "Warning" >}}
-<strong>Warning!</strong> Your core-hour billing token allows anyone with it to charge your team at will. Do <strong>NOT</strong> share this token with anyone.
+Your core-hour billing token allows anyone with it to charge your team at will. Do <strong>NOT</strong> share this token with anyone.
 {{< /call-out >}}
 
 ```bash
