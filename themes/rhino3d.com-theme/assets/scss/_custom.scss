@@ -870,3 +870,54 @@ table.multiline-middle img{
 	border-left: 15px solid transparent;
 	border-bottom: 15px solid white;
   }
+
+
+/* 
+##################################################################
+# Copy Code Button for Code Blocks
+##################################################################
+*/
+
+.copy-code-button {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	padding: 4px 8px;
+	font-size: 14px;
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.9);
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	color: #666;
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	z-index: 10;
+	line-height: 1;
+
+	&:hover {
+		background-color: #f0f0f0;
+		color: #333;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&.copied {
+		background-color: #28a745;
+		border-color: #28a745;
+		color: white;
+
+		i {
+			font-size: 12px;
+		}
+	}
+}
+
+pre {
+	position: relative;
+
+	&:hover .copy-code-button {
+		opacity: 1;
+	}
+}
