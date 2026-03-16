@@ -9,7 +9,6 @@ sdk = [ "Compute" ]
 title = "Frequently Asked Questions"
 type = "guides"
 weight = 1
-override_last_modified = "2025-05-07T09:45:21Z"
 
 [admin]
 TODO = ""
@@ -51,11 +50,13 @@ The short answer is: it depends on *where* you run Rhino.Compute. If you're usin
 ### Can I make my own interface to work with Rhino.Compute?
 
 Yes. As mentioned earlier, any app that can send web requests can work with Rhino.Compute. To make things easier, we offer three libraries you can use depending on the language you prefer:
+
 1. [Python Rhino.Compute Library](https://pypi.org/project/compute-rhino3d/)
 1. [Javascript Rhino.Compute Library](https://www.npmjs.com/package/compute-rhino3d)
 1. [.NET (C#) Rhino.Compute Library](https://github.com/mcneel/compute.rhino3d/blob/8.x/src/compute.geometry/RhinoCompute.cs)
 
 We also have step-by-step guides to help you get started with the libraries above:
+
 1. [Calling Compute with Python](../compute-python-getting-started/)
 1. [Calling Compute with Javascript](../compute-javascript-getting-started/)
 1. [Calling Compute with .NET](../compute-net-getting-started/)
@@ -86,10 +87,9 @@ At this point, you should see a new application appear in your task bar (if you 
 {{< image url="/images/hops-console-2.png" alt="/images/hops-console-2.png" class="image_center" width="100%" >}}
 
 <br>
-If you are running Rhino.Compute on a VM, then the log files are saved as text files. New log files will be created daily. By default, the log files are saved under the following locations: 
+If you are running Rhino.Compute on a VM, then the log files are saved as text files. New log files will be created daily. By default, the log files are saved under the following locations:
 
 - Windows
-
 ```cs
 C:\inetpub\wwwroot\aspnet_client\system_web\4_0_30319\rhino.compute\logs\
 ```
