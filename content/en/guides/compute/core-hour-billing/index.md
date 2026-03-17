@@ -16,7 +16,7 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "Windows" ]
+platforms = [ "Windows", "Linux" ]
 since = 0
 
 [page_options]
