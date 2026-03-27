@@ -165,9 +165,10 @@ If you are on a VM or Production Environment, switch to root first: `sudo -s`
     apt update && apt install -y rhino-compute
     ```
 
-1. Set the `RHINO_TOKEN`:
+1. Set the `RHINO_TOKEN` and the `RHINO_COMPUTE_KEY`:
 
     The `RHINO_TOKEN` is your [Core-Hour Billing](../core-hour-billing/#setting-up-core-hour-billing) token.
+    The `RHINO_COMPUTE_KEY` is a key of your choosing. Use this key to authenticate clients calling this server.
 
     ```bash
     cp /etc/rhino-compute/environment.example /etc/rhino-compute/environment
@@ -217,9 +218,10 @@ Install additional dependencies if you are running AmazonLinux in a container:
     dnf install -y rhino-compute
     ```
 
-1. Set the `RHINO_TOKEN``
+1. Set the `RHINO_TOKEN` and the `RHINO_COMPUTE_KEY`
 
     The `RHINO_TOKEN` is your [Core-Hour Billing](../core-hour-billing/#setting-up-core-hour-billing) token.
+    The `RHINO_COMPUTE_KEY` is a key of your choosing. Use this key to authenticate clients calling this server.
 
     ```bash
     cp /etc/rhino-compute/environment.example /etc/rhino-compute/environment
@@ -294,9 +296,9 @@ Logs are written to `/var/log/rhino-compute` on the system running Rhino.Compute
 
 ## Solve a Grasshopper definition on Rhino.Compute
 
-This section requires the Host computer to have Rhino 8 or Rhino WIP with Hops installed for Grasshopper. Grasshopper should have the IP of the VM or container, as well as the API Key, which is the same as the `RHINO_TOKEN` set in the [Setup](#setup). It also helps to have a definition ready to pass to Hops.
+This section requires the Host computer to have Rhino 8 or Rhino WIP with Hops installed for Grasshopper. Grasshopper should have the IP of the VM or container, as well as the API Key, which is the same as the `RHINO_COMPUTE_KEY` set in the [Setup](#setup). It also helps to have a definition ready to pass to Hops.
 
 1. Open Rhino 8 or WIP, open GH, and navigate to the Grasshopper Solver Settings.
 1. In the text field under "Hops - Compute server URLs", enter in the IP and port of your Linux system
-1. In the text field next to "API Key" enter in your Core-Hour Billing token aka the `RHINO_TOKEN`.
+1. In the text field next to "API Key" enter in your Core-Hour Billing token aka the `RHINO_COMPUTE_KEY`.
 1. Drag the Hops component onto the canvas and reference a definition. If you are following the logs in real-time, you should see your Linux system start to log events related to Rhino.Compute.
