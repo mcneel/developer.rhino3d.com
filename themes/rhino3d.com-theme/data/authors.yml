@@ -81,6 +81,11 @@ anna.villafane:
   email: anna.villafane@mcneel.com
   discourse: ''
   github: ''
+ansen:
+  name: Ansen An
+  email: ansen@mcneel.com
+  discourse: Ansen.A
+  github: Ansen-An-McNA
 archihacks:
   name: Archi Hacks
   email: 'https://www.youtube.com/channel/UCNfL0P1MAXpM8pQEM9jqZAw'
@@ -370,7 +375,7 @@ gemma:
   email: gemma@mcneel.com
   discourse: ''
   github: ''
-gemma:
+gerard:
   name: Gerard Petersen
   email: gerard@rhinocentre.nl
   discourse: Gerard
@@ -902,7 +907,7 @@ nicolas.sterling:
   email: ''
   discourse: ''
   github: ''
-yoon:
+yoon.plusplastic:
   name: Sang hoon Yoon
   display_name: PlusPlastic
   email: yoon@mcneel.com
@@ -1052,11 +1057,6 @@ wim:
   name: Wim R. M. Dekeyser
   email: wim@mcneel.com
   discourse: wim
-  github: ''
-paul.wintour:
-  name: Paul Wintour
-  email: ''
-  discourse: ''
   github: ''
 valeriap:
   name: Valeria Palacio
