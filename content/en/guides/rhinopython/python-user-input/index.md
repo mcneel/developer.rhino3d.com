@@ -41,7 +41,7 @@ The RhinoscriptSyntax module contains many ways to interactively prompt for seve
 
 ## The GET methods  
 
-Get are basic ways to prompt for specifc user feedback on the commandline and mouse input.  Good examples of a Get might be get a point, a string, or a distance.  There are 25 get methods that can   
+Get are basic ways to prompt for specifc user feedback on the commandline and mouse input.  Good examples of a Get might be get a point, a string, or a distance.  There are 25 get methods that can:
 
 1. **Commandline Gets** - [GetReal](/api/RhinoScriptSyntax/#userinterface-GetReal), [GetString](/api/RhinoScriptSyntax/#userinterface-GetString), [GetInteger](/api/RhinoScriptSyntax/#userinterface-GetInteger), [GetBoolean](/api/RhinoScriptSyntax/#userinterface-GetBoolean)
 2. **Interactive Gets** - [GetPoint](/api/RhinoScriptSyntax/#userinterface-GetPoint)([s](/api/RhinoScriptSyntax/#userinterface-GetPoints)), [GetPointCoordinates](/api/RhinoScriptSyntax/#userinterface-GetPointCoordinates), [GetLine](/api/RhinoScriptSyntax/#userinterface-GetLine), [GetDistance](/api/RhinoScriptSyntax/#userinterface-GetDistance), [GetAngle](/api/RhinoScriptSyntax/#userinterface-GetAngle), [GetPolyline](/api/RhinoScriptSyntax/#userinterface-GetPolyline), [GetRectangle](/api/RhinoScriptSyntax/#userinterface-GetRectangle), [GetBox](/api/RhinoScriptSyntax/#userinterface-GetBox), [GetCursorPos](/api/RhinoScriptSyntax/#userinterface-GetCursorPos).
