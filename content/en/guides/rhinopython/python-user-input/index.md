@@ -43,9 +43,9 @@ The RhinoscriptSyntax module contains many ways to interactively prompt for seve
 
 Get are basic ways to prompt for specifc user feedback on the commandline and mouse input.  Good examples of a Get might be get a point, a string, or a distance.  There are 25 get methods that can   
 
-1. **Commandline Gets** - [GetReal](/api/RhinoScriptSyntax/#userinterface-GetReal), [GetString](/api/RhinoScriptSyntax/#userinterface-GetString), [GetInteger](/api/RhinoScriptSyntax/#userinterface-GetInteger), [GetBoolean](/api/RhinoScriptSyntax/#userinterface-GetBoolean)
-2. **Interactive Gets** - [GetPoint](/api/RhinoScriptSyntax/#userinterface-GetPoint)([s](/api/RhinoScriptSyntax/#userinterface-GetPoints)), [GetPointCoordinates](/api/RhinoScriptSyntax/#userinterface-GetPointCoordinates), [GetLine](/api/RhinoScriptSyntax/#userinterface-GetLine), [GetDistance](/api/RhinoScriptSyntax/#userinterface-GetDistance), [GetAngle](/api/RhinoScriptSyntax/#userinterface-GetAngle), [GetPolyline](/api/RhinoScriptSyntax/#userinterface-GetPolyline), [GetRectangle](/api/RhinoScriptSyntax/#userinterface-GetRectangle), [GetBox](/api/RhinoScriptSyntax/#userinterface-GetBox), [GetCursorPos](/api/RhinoScriptSyntax/#userinterface-GetCursorPos).
-3. **Geometry Gets** - [GetObject](/api/RhinoScriptSyntax/#userinterface-GetObject), [GetCurveObject](/api/RhinoScriptSyntax/#userinterface-GetCurveObject),  [GetSurfaceObject](/api/RhinoScriptSyntax/#userinterface-GetSurfaceObject), [GetEdgeCurves](/api/RhinoScriptSyntax/#userinterface-GetEdgeCurves), [GetMeshFaces](/api/RhinoScriptSyntax/#userinterface-GetMeshFaces), [GetMeshVertices](/api/RhinoScriptSyntax/#userinterface-GetMeshVertices), [GetPointOnCurve](/api/RhinoScriptSyntax/#userinterface-GetPointOnCurve), [GetPointOnMesh](/api/RhinoScriptSyntax/#userinterface-GetPointOnMesh), [GetPointOnSurface](/api/RhinoScriptSyntax/#userinterface-GetPointOnSurface).
+1. **Commandline Gets** - [GetReal](/api/rhinoscriptsyntax/#userinterface-GetReal), [GetString](/api/rhinoscriptsyntax/#userinterface-GetString), [GetInteger](/api/rhinoscriptsyntax/#userinterface-GetInteger), [GetBoolean](/api/rhinoscriptsyntax/#userinterface-GetBoolean)
+2. **Interactive Gets** - [GetPoint](/api/rhinoscriptsyntax/#userinterface-GetPoint)([s](/api/rhinoscriptsyntax/#userinterface-GetPoints)), [GetPointCoordinates](/api/rhinoscriptsyntax/#userinterface-GetPointCoordinates), [GetLine](/api/rhinoscriptsyntax/#userinterface-GetLine), [GetDistance](/api/rhinoscriptsyntax/#userinterface-GetDistance), [GetAngle](/api/rhinoscriptsyntax/#userinterface-GetAngle), [GetPolyline](/api/rhinoscriptsyntax/#userinterface-GetPolyline), [GetRectangle](/api/rhinoscriptsyntax/#userinterface-GetRectangle), [GetBox](/api/rhinoscriptsyntax/#userinterface-GetBox), [GetCursorPos](/api/rhinoscriptsyntax/#userinterface-GetCursorPos).
+3. **Geometry Gets** - [GetObject](/api/rhinoscriptsyntax/#userinterface-GetObject), [GetCurveObject](/api/rhinoscriptsyntax/#userinterface-GetCurveObject),  [GetSurfaceObject](/api/rhinoscriptsyntax/#userinterface-GetSurfaceObject), [GetEdgeCurves](/api/rhinoscriptsyntax/#userinterface-GetEdgeCurves), [GetMeshFaces](/api/rhinoscriptsyntax/#userinterface-GetMeshFaces), [GetMeshVertices](/api/rhinoscriptsyntax/#userinterface-GetMeshVertices), [GetPointOnCurve](/api/rhinoscriptsyntax/#userinterface-GetPointOnCurve), [GetPointOnMesh](/api/rhinoscriptsyntax/#userinterface-GetPointOnMesh), [GetPointOnSurface](/api/rhinoscriptsyntax/#userinterface-GetPointOnSurface).
 
 ### Command Line gets
 
@@ -64,7 +64,7 @@ if radius: rs.AddCircle( (0,0,0), radius )
 
 rs.GetReal() accepts any number, including decimals. In some cases your code may need only whole numbers- in this case use `rs.GetInteger()`
 
-The other command line gets are [GetString](/api/RhinoScriptSyntax/#userinterface-GetString), [GetInteger](/api/RhinoScriptSyntax/#userinterface-GetInteger), and [GetBoolean](/api/RhinoScriptSyntax/#userinterface-GetBoolean). They all work essentially the same as [GetReal](/api/RhinoScriptSyntax/#userinterface-GetReal).
+The other command line gets are [GetString](/api/rhinoscriptsyntax/#userinterface-GetString), [GetInteger](/api/rhinoscriptsyntax/#userinterface-GetInteger), and [GetBoolean](/api/rhinoscriptsyntax/#userinterface-GetBoolean). They all work essentially the same as [GetReal](/api/rhinoscriptsyntax/#userinterface-GetReal).
 
 ### Interactive gets
 
@@ -122,7 +122,7 @@ point1 = rs.GetPoint("Pick first point")
 point2 = rs.GetPoint("Pick second point", point1)
 ```
 
-The interactive gets have more options on how the input is filtered from the mouse.  For details on all the Get functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/#userinterface).  Additional interactive gets include: [GetLine](/api/RhinoScriptSyntax/#userinterface-GetLine), [GetDistance](/api/RhinoScriptSyntax/#userinterface-GetDistance), [GetAngle](/api/RhinoScriptSyntax/#userinterface-GetAngle), [GetPolyline](/api/RhinoScriptSyntax/#userinterface-GetPolyline), [GetRectangle](/api/RhinoScriptSyntax/#userinterface-GetRectangle), [GetBox](/api/RhinoScriptSyntax/#userinterface-GetBox), [GetCursorPos](/api/RhinoScriptSyntax/#userinterface-GetCursorPos).  
+The interactive gets have more options on how the input is filtered from the mouse.  For details on all the Get functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/rhinoscriptsyntax/#userinterface).  Additional interactive gets include: [GetLine](/api/rhinoscriptsyntax/#userinterface-GetLine), [GetDistance](/api/rhinoscriptsyntax/#userinterface-GetDistance), [GetAngle](/api/rhinoscriptsyntax/#userinterface-GetAngle), [GetPolyline](/api/rhinoscriptsyntax/#userinterface-GetPolyline), [GetRectangle](/api/rhinoscriptsyntax/#userinterface-GetRectangle), [GetBox](/api/rhinoscriptsyntax/#userinterface-GetBox), [GetCursorPos](/api/rhinoscriptsyntax/#userinterface-GetCursorPos).  
 
 ### Geometry Gets
 
@@ -145,7 +145,7 @@ objectId = rs.GetObject("Pick a curve or surface", rs.filter.curve | rs.filter.s
 if objectId: print objectID
 ```
 
-Additional geometry gets are: [GetCurveObject](/api/RhinoScriptSyntax/#userinterface-GetCurveObject),  [GetSurfaceObject](/api/RhinoScriptSyntax/#userinterface-GetSurfaceObject), [GetEdgeCurves](/api/RhinoScriptSyntax/#userinterface-GetEdgeCurves), [GetMeshFaces](/api/RhinoScriptSyntax/#userinterface-GetMeshFaces), [GetMeshVertices](/api/RhinoScriptSyntax/#userinterface-GetMeshVertices), [GetPointOnCurve](/api/RhinoScriptSyntax/#userinterface-GetPointOnCurve), [GetPointOnMesh](/api/RhinoScriptSyntax/#userinterface-GetPointOnMesh), [GetPointOnSurface](/api/RhinoScriptSyntax/#userinterface-GetPointOnSurface).
+Additional geometry gets are: [GetCurveObject](/api/rhinoscriptsyntax/#userinterface-GetCurveObject),  [GetSurfaceObject](/api/rhinoscriptsyntax/#userinterface-GetSurfaceObject), [GetEdgeCurves](/api/rhinoscriptsyntax/#userinterface-GetEdgeCurves), [GetMeshFaces](/api/rhinoscriptsyntax/#userinterface-GetMeshFaces), [GetMeshVertices](/api/rhinoscriptsyntax/#userinterface-GetMeshVertices), [GetPointOnCurve](/api/rhinoscriptsyntax/#userinterface-GetPointOnCurve), [GetPointOnMesh](/api/rhinoscriptsyntax/#userinterface-GetPointOnMesh), [GetPointOnSurface](/api/rhinoscriptsyntax/#userinterface-GetPointOnSurface).
 
 ## Special Dialogs
 
@@ -231,7 +231,7 @@ Will result in:
 
 {{< image url="/images/getlayer.png" alt="/images/getlayer.png" class="image_center" width="35%" >}}  
 
-For details on all the dialog box functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/win/#userinterface)  
+For details on all the dialog box functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/rhinoscriptsyntax/win/#userinterface)  
 
 ## File System dialogs  
 
@@ -273,5 +273,5 @@ Eto is very powerful, but that power comes with more sophisticated Python syntax
 ## Related Topics
 
 - [Reading and Writing files with Python](/guides/rhinopython/python-reading-writing)
-- [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/win/#userinterface)
+- [RhinoScriptSyntax User interface methods](/api/rhinoscriptsyntax/win/#userinterface)
 - [Eto Forms in Python](/guides/rhinopython/eto-forms-python/) guide
