@@ -43,9 +43,9 @@ The RhinoscriptSyntax module contains many ways to interactively prompt for seve
 
 Get are basic ways to prompt for specifc user feedback on the commandline and mouse input.  Good examples of a Get might be get a point, a string, or a distance.  There are 25 get methods that can   
 
-1. **Commandline Gets** - [GetReal](/api/RhinoScriptSyntax/#collapse-GetReal), [GetString](/api/RhinoScriptSyntax/#collapse-GetString), [GetInteger](/api/RhinoScriptSyntax/#collapse-GetInteger), [GetBoolean](/api/RhinoScriptSyntax/#collapse-GetBoolean)
-2. **Interactive Gets** - [GetPoint](/api/RhinoScriptSyntax/#collapse-GetPoint)([s](/api/RhinoScriptSyntax/#collapse-GetPoints)), [GetPointCoordinates](/api/RhinoScriptSyntax/#collapse-GetPointCoordinates), [GetLine](/api/RhinoScriptSyntax/#collapse-GetLine), [GetDistance](/api/RhinoScriptSyntax/#collapse-GetDistance), [GetAngle](/api/RhinoScriptSyntax/#collapse-GetAngle), [GetPolyline](/api/RhinoScriptSyntax/#collapse-GetPolyline), [GetRectangle](/api/RhinoScriptSyntax/#collapse-GetRectangle), [GetBox](/api/RhinoScriptSyntax/#collapse-GetBox), [GetCursorPos](/api/RhinoScriptSyntax/#collapse-GetCursorPos).
-3. **Geometry Gets** - [GetObject](/api/RhinoScriptSyntax/#collapse-GetObject), [GetCurveObject](/api/RhinoScriptSyntax/#collapse-GetCurveObject),  [GetSurfaceObject](/api/RhinoScriptSyntax/#collapse-GetSurfaceObject), [GetEdgeCurves](/api/RhinoScriptSyntax/#collapse-GetEdgeCurves), [GetMeshFaces](/api/RhinoScriptSyntax/#collapse-GetMeshFaces), [GetMeshVertices](/api/RhinoScriptSyntax/#collapse-GetMeshVertices), [GetPointOnCurve](/api/RhinoScriptSyntax/#collapse-GetPointOnCurve), [GetPointOnMesh](/api/RhinoScriptSyntax/#collapse-GetPointOnMesh), [GetPointOnSurface](/api/RhinoScriptSyntax/#collapse-GetPointOnSurface).
+1. **Commandline Gets** - [GetReal](/api/RhinoScriptSyntax/#userinterface-GetReal), [GetString](/api/RhinoScriptSyntax/#userinterface-GetString), [GetInteger](/api/RhinoScriptSyntax/#userinterface-GetInteger), [GetBoolean](/api/RhinoScriptSyntax/#userinterface-GetBoolean)
+2. **Interactive Gets** - [GetPoint](/api/RhinoScriptSyntax/#userinterface-GetPoint)([s](/api/RhinoScriptSyntax/#userinterface-GetPoints)), [GetPointCoordinates](/api/RhinoScriptSyntax/#userinterface-GetPointCoordinates), [GetLine](/api/RhinoScriptSyntax/#userinterface-GetLine), [GetDistance](/api/RhinoScriptSyntax/#userinterface-GetDistance), [GetAngle](/api/RhinoScriptSyntax/#userinterface-GetAngle), [GetPolyline](/api/RhinoScriptSyntax/#userinterface-GetPolyline), [GetRectangle](/api/RhinoScriptSyntax/#userinterface-GetRectangle), [GetBox](/api/RhinoScriptSyntax/#userinterface-GetBox), [GetCursorPos](/api/RhinoScriptSyntax/#userinterface-GetCursorPos).
+3. **Geometry Gets** - [GetObject](/api/RhinoScriptSyntax/#userinterface-GetObject), [GetCurveObject](/api/RhinoScriptSyntax/#userinterface-GetCurveObject),  [GetSurfaceObject](/api/RhinoScriptSyntax/#userinterface-GetSurfaceObject), [GetEdgeCurves](/api/RhinoScriptSyntax/#userinterface-GetEdgeCurves), [GetMeshFaces](/api/RhinoScriptSyntax/#userinterface-GetMeshFaces), [GetMeshVertices](/api/RhinoScriptSyntax/#userinterface-GetMeshVertices), [GetPointOnCurve](/api/RhinoScriptSyntax/#userinterface-GetPointOnCurve), [GetPointOnMesh](/api/RhinoScriptSyntax/#userinterface-GetPointOnMesh), [GetPointOnSurface](/api/RhinoScriptSyntax/#userinterface-GetPointOnSurface).
 
 ### Command Line gets
 
@@ -64,7 +64,7 @@ if radius: rs.AddCircle( (0,0,0), radius )
 
 rs.GetReal() accepts any number, including decimals. In some cases your code may need only whole numbers- in this case use `rs.GetInteger()`
 
-The other command line gets are [GetString](/api/RhinoScriptSyntax/#collapse-GetString), [GetInteger](/api/RhinoScriptSyntax/#collapse-GetInteger), and [GetBoolean](/api/RhinoScriptSyntax/#collapse-GetBoolean). They all work essentially the same as [GetReal](/api/RhinoScriptSyntax/#collapse-GetReal).
+The other command line gets are [GetString](/api/RhinoScriptSyntax/#userinterface-GetString), [GetInteger](/api/RhinoScriptSyntax/#userinterface-GetInteger), and [GetBoolean](/api/RhinoScriptSyntax/#userinterface-GetBoolean). They all work essentially the same as [GetReal](/api/RhinoScriptSyntax/#userinterface-GetReal).
 
 ### Interactive gets
 
@@ -122,7 +122,7 @@ point1 = rs.GetPoint("Pick first point")
 point2 = rs.GetPoint("Pick second point", point1)
 ```
 
-The interactive gets have more options on how the input is filtered from the mouse.  For details on all the Get functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/#userinterface).  Additional interactive gets include: [GetLine](/api/RhinoScriptSyntax/#collapse-GetLine), [GetDistance](/api/RhinoScriptSyntax/#collapse-GetDistance), [GetAngle](/api/RhinoScriptSyntax/#collapse-GetAngle), [GetPolyline](/api/RhinoScriptSyntax/#collapse-GetPolyline), [GetRectangle](/api/RhinoScriptSyntax/#collapse-GetRectangle), [GetBox](/api/RhinoScriptSyntax/#collapse-GetBox), [GetCursorPos](/api/RhinoScriptSyntax/#collapse-GetCursorPos).  
+The interactive gets have more options on how the input is filtered from the mouse.  For details on all the Get functions in RhinoScriptSyntax for Python go to the [RhinoScriptSyntax User interface methods](/api/RhinoScriptSyntax/#userinterface).  Additional interactive gets include: [GetLine](/api/RhinoScriptSyntax/#userinterface-GetLine), [GetDistance](/api/RhinoScriptSyntax/#userinterface-GetDistance), [GetAngle](/api/RhinoScriptSyntax/#userinterface-GetAngle), [GetPolyline](/api/RhinoScriptSyntax/#userinterface-GetPolyline), [GetRectangle](/api/RhinoScriptSyntax/#userinterface-GetRectangle), [GetBox](/api/RhinoScriptSyntax/#userinterface-GetBox), [GetCursorPos](/api/RhinoScriptSyntax/#userinterface-GetCursorPos).  
 
 ### Geometry Gets
 
@@ -145,7 +145,7 @@ objectId = rs.GetObject("Pick a curve or surface", rs.filter.curve | rs.filter.s
 if objectId: print objectID
 ```
 
-Additional geometry gets are: [GetCurveObject](/api/RhinoScriptSyntax/#collapse-GetCurveObject),  [GetSurfaceObject](/api/RhinoScriptSyntax/#collapse-GetSurfaceObject), [GetEdgeCurves](/api/RhinoScriptSyntax/#collapse-GetEdgeCurves), [GetMeshFaces](/api/RhinoScriptSyntax/#collapse-GetMeshFaces), [GetMeshVertices](/api/RhinoScriptSyntax/#collapse-GetMeshVertices), [GetPointOnCurve](/api/RhinoScriptSyntax/#collapse-GetPointOnCurve), [GetPointOnMesh](/api/RhinoScriptSyntax/#collapse-GetPointOnMesh), [GetPointOnSurface](/api/RhinoScriptSyntax/#collapse-GetPointOnSurface).
+Additional geometry gets are: [GetCurveObject](/api/RhinoScriptSyntax/#userinterface-GetCurveObject),  [GetSurfaceObject](/api/RhinoScriptSyntax/#userinterface-GetSurfaceObject), [GetEdgeCurves](/api/RhinoScriptSyntax/#userinterface-GetEdgeCurves), [GetMeshFaces](/api/RhinoScriptSyntax/#userinterface-GetMeshFaces), [GetMeshVertices](/api/RhinoScriptSyntax/#userinterface-GetMeshVertices), [GetPointOnCurve](/api/RhinoScriptSyntax/#userinterface-GetPointOnCurve), [GetPointOnMesh](/api/RhinoScriptSyntax/#userinterface-GetPointOnMesh), [GetPointOnSurface](/api/RhinoScriptSyntax/#userinterface-GetPointOnSurface).
 
 ## Special Dialogs
 
