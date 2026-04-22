@@ -11,6 +11,7 @@ theme = "rhino3d.com-theme"
 enableGitInfo = true
 disableKinds = ["RSS"]
 buildFuture = true
+disablePathToLower = true
 
 [[module.mounts]]
 source = 'assets'
