@@ -1,0 +1,8 @@
+{{- $file := .Get "src" -}}
+{{- $lang := .Page.Language.Lang -}}
+{{- $dir := .Page.File.Dir -}}
+{{- $path := printf "/%s/%s%s" $lang $dir $file -}}
+<video controls mute autoplay loop width="100%">
+  <source src="{{ $path }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
