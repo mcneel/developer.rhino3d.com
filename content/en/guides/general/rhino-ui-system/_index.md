@@ -10,7 +10,6 @@ title = "The Rhino UI System"
 type = "guides"
 layout = "single"
 weight = 3
-override_last_modified = "2023-11-20T08:29:10Z"
 
 [admin]
 TODO = ""
@@ -29,6 +28,31 @@ toc_type = "single"
 +++
 
 This guide proves an overview of Rhino's User Interface (UI) system, and it compares the new system found in Rhino 8 with the previous system found in Rhino 7 and earlier.
+
+## Rhino 9 UI System
+
+The goals of the new Rhino 9 UI system were to:
+
+- Simplify RUIs
+- Simplify moving setups across machines
+- Improve and simplify the prior 8 system
+- 100% compatibility with moving to 8 or sending files back to 8
+- A more fluid editing experience
+
+The Rhino 9 system is very similar to Rhino 8, with the following changes.
+
+### RUI Files
+
+- RUI files are modified directly again without diffs exactly as Rhino 7 worked
+- Any links to other RUIs are resolved and copied into the RUI (Except for fly-outs or sidebars)
+- Diffs will be combined with the respective RUI on migrating to Rhino 9
+- Every part of the RUI file (Except menus) is now edited in one dialog
+
+#### Macro
+
+Macros have been simplified and no longer need editing separately, nor do they have their own dialog
+
+---
 
 ## Rhino 8 UI System
 
@@ -178,9 +202,9 @@ Image which is displayed either on a referenced toolbar button or menu item.
 
 ### RUI File
 
-RUI files are collections of the items above and are stored in a writable directory. Items stored in an RUI file can only reference items defined in the same file. Changes to items in the file are saved automatically when Rhino is closed. You may open or close RUI files or manually choose to save a file at any time. The current version of a file is backed up and changes are saved to the file name. If a file gets damaged you can delete it and rename the backup file in an attempt to restore the previous version. If the backup file is damaged then nothing can be recovered.
+RUI files are collections of the items above and are stored in a writeable directory. Items stored in an RUI file can reference items defined in any file. Changes to items in the file are saved automatically when Rhino is closed. You may open or close RUI files or manually choose to save a file at any time. The current version of a file is backed up and changes are saved to the file name. If a file gets damaged you can delete it and rename the backup file in an attempt to restore the previous version. If the backup file is damaged then nothing can be recovered.
 
-Rhino plug-ins can install a RUI file with the same name as the plug-in and it will get copied into a writable location and opened automatically when Rhino starts. This gives a plug-in the ability to extend the Rhino interface while allowing the plug-in to not load until it is referenced.
+Rhino plug-ins can install a RUI file with the same name as the plug-in and it will get copied into a writeable location and opened automatically when Rhino starts. This gives a plug-in the ability to extend the Rhino interface while allowing the plug-in to not load until it is referenced.
 
 Note, all of the above can be managed using Rhino 7's **[Toolbars](https://docs.mcneel.com/rhino/7/help/en-us/index.htm#options/toolbars.htm#(null))** command.
 
