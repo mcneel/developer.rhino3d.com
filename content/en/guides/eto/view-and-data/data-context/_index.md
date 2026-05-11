@@ -110,7 +110,7 @@ class MyNewViewModel():
   pass
 
 stack_layout = ef.StackLayout()
-stack_layout.DataContext = ef.MyNewViewModel()
+stack_layout.DataContext = MyNewViewModel()
 
 # Drawable has a DataContext of MyNewViewModel
 stack_layout.Items.Add(ef.StackLayoutItem(ef.Drawable()))
@@ -125,7 +125,7 @@ table_layout.Rows.Add(ef.TableRow(ef.TableCell(stack_layout)))
 table_layout.Rows.Add(ef.TableRow(ef.TableCell(ef.Button()), ef.TableCell(ef.Button()), ef.TableCell(ef.Button())))
 
 dialog = ef.Dialog()
-dialog.DataContext = ef.MyMainViewModel()
+dialog.DataContext = MyMainViewModel()
 dialog.Content = table_layout
 
 dialog.ShowModal(parent)

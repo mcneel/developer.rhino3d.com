@@ -259,15 +259,15 @@ dialog.AbortButton = ef.Button()
 def on_push_pick(s, e):
   points = rs.GetRectangle(1)
   rect = Rectangle3d(Plane.WorldXY, points[0], points[2])
-  label.Text = str(rect.Width)
+  label.Text = str(int(rect.Width))
 
 def on_click(s, e):
     EtoExtensions.PushPickButton(dialog, on_push_pick)
 
 button.Click += on_click
 
-parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__)
-EtoExtensions.ShowSemiModal(dialog, __rhino_doc__, parent)
+parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+EtoExtensions.ShowSemiModal(dialog, sc.doc, parent)
 ```
 
   </div>
@@ -337,7 +337,12 @@ using Eto.Forms;
 
 class MyForm : Form {}
 var myForm = new MyForm() { Width = 100, Height = 100 };
-myForm.Content = new Label() { Text = "0" };
+myForm.Content = new Label()
+{
+    Text = "0",
+    TextAlignment = TextAlignment.Center,
+    VerticalAlignment = VerticalAlignment.Center,
+};
 
 void IncrementLabel(object sender, RhinoObjectEventArgs e)
 {
@@ -379,6 +384,8 @@ class MyForm(ef.Form):
 
 label = ef.Label()
 label.Text = "0"
+label.TextAlignment = ef.TextAlignment.Center
+label.VerticalAlignment = ef.VerticalAlignment.Center
 
 myForm = MyForm()
 myForm.Width = 100
@@ -388,15 +395,24 @@ myForm.count = 0
 
 def IncrementLabel(s, args):
     doc = args.TheObject.Document
-    form = EtoExtensions.WindowsFromDocument[MyForm](doc)[0]
+    form = next(iter(EtoExtensions.WindowsFromDocument[MyForm](doc)), None)
+    if form is None:
+        return
     label = form.FindChild[ef.Label]()
-    form.count += form.count
-    label.Text = form.count
+    form.count += 1
+    label.Text = str(form.count)
 
 def subscribe(s, e):
+    try: RhinoDoc.AddRhinoObject -= IncrementLabel
+    except: pass
     RhinoDoc.AddRhinoObject += IncrementLabel
 
+def unsubscribe(s, e):
+    try: RhinoDoc.AddRhinoObject -= IncrementLabel
+    except: pass
+
 myForm.Shown += subscribe
+myForm.Closed += unsubscribe
 
 EtoExtensions.Show(myForm, sc.doc)
 ```
