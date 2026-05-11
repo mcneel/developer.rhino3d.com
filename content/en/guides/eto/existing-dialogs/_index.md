@@ -66,16 +66,16 @@ from Rhino.UI import RhinoEtoApp
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
-result = ef.("Would you like to save before closing?",
-                             MessageBoxButtons.YesNo,
-                             MessageBoxType.Question,
-                             MessageBoxDefaultButton.Yes)
+result = ef.MessageBox.Show("Would you like to save before closing?",
+                             ef.MessageBoxButtons.YesNo,
+                             ef.MessageBoxType.Question,
+                             ef.MessageBoxDefaultButton.Yes)
 
-if result != DialogResult.Yes:
-    ef.MessageBox.Show("Model discarded successfully!", MessageBoxButtons.OK, MessageBoxType.Information)
+if result != ef.DialogResult.Yes:
+    ef.MessageBox.Show("Model discarded successfully!", ef.MessageBoxButtons.OK, ef.MessageBoxType.Information)
 
 else:
-    ef.MessageBox.Show("Model saved successfully before closing.", MessageBoxButtons.OK, MessageBoxType.Information)
+    ef.MessageBox.Show("Model saved successfully before closing.", ef.MessageBoxButtons.OK, ef.MessageBoxType.Information)
   ```
 
   </div>
@@ -218,18 +218,18 @@ import Eto.Forms as ef
 from Rhino.UI import RhinoEtoApp
 import Rhino
 
-parent = Rhino.UI.RhinoEtoApp.MainWindowForDocument(sc.doc);
+parent = Rhino.UI.RhinoEtoApp.MainWindowForDocument(sc.doc)
 
 openDialog = ef.OpenFileDialog()
-openDialog.Filters.Add(ef.FileFilter("Any", "*.*"));
+openDialog.Filters.Add(ef.FileFilter("Any", "*.*"))
 openDialog.CurrentFilterIndex = 0
 openDialog.CheckFileExists = True
 openDialog.MultiSelect = True
 openDialog.Title = "Pick a file, any file"
 
-result = openDialog.ShowDialog(parent);
-if result == DialogResult.Cancel:
-    ef.MessageBox.Show("No File chosen!", MessageBoxType.Warning)
+result = openDialog.ShowDialog(parent)
+if result == ef.DialogResult.Cancel:
+    ef.MessageBox.Show("No File chosen!", ef.MessageBoxType.Warning)
 else:
     saveDialog = ef.SaveFileDialog()
     saveDialog.Title = "Save your file"
@@ -238,10 +238,10 @@ else:
 
     result = saveDialog.ShowDialog(parent)
 
-    if result == DialogResult.Cancel:
-        ef.MessageBox.Show("File not saved!", MessageBoxType.Warning)
+    if result == ef.DialogResult.Cancel:
+        ef.MessageBox.Show("File not saved!", ef.MessageBoxType.Warning)
     else:
-        ef.MessageBox.Show("File saved", MessageBoxType.Information)
+        ef.MessageBox.Show("File saved", ef.MessageBoxType.Information)
   ```
 
   </div>
