@@ -169,7 +169,7 @@ var dialog = new Dialog()
 };
 
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-dialog.Show(parent);
+dialog.ShowModal(parent);
 ```
 
   </div>
@@ -279,7 +279,7 @@ var dialog = new Dialog()
 };
 
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-dialog.Show(parent);
+dialog.ShowModal(parent);
 ```
 
   </div>
@@ -403,7 +403,7 @@ var dialog = new Dialog()
 };
 
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-dialog.Show(parent);
+dialog.ShowModal(parent);
 ```
 
   </div>
