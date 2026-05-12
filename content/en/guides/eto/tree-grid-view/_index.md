@@ -46,7 +46,7 @@ This guide will cover all the eccentricities of Tree Grid Views which can be con
 {{< row >}}
 {{< column >}}
 
-Trees are a very common data structure in programming. Trees start as a single root node from which all nodes are eventually connected. Nodes at the end of the tree are called leafs.
+Trees are a very common data structure in programming. Trees start as a single root node from which all nodes are eventually connected. Nodes at the end of the tree are called leaves.
 
 Each node has a single parent (Except the root) and can have any number of children. A key rule of Trees is that any node can only have 1 parent (that is not itself) and no relationship to its siblings other than via its parent. In the diagram these kinds of relationships are shown with the red X.
 
@@ -109,24 +109,22 @@ dialog.ShowModal(parent);
 
 ```py
 import scriptcontext as sc
+
 import Eto.Forms as ef
 from Rhino.UI import RhinoEtoApp
 
-plusColumn = ef.GridColumn()
-plusColumn.HeaderText = "Key"
+nameColumn = ef.GridColumn()
+nameColumn.HeaderText = "Name"
+nameColumn.DataCell = ef.TextBoxCell()
 
-itemColumn = ef.GridColumn()
-itemColumn.HeaderText = "Value"
-
-gridView = ef.GridView()
-# gridView.DataStore = ...
-gridView.Columns.Add(plusColumn)
-gridView.Columns.Add(itemColumn)
+treeGridView = ef.TreeGridView()
+treeGridView.Columns.Add(nameColumn)
+# treeGridView.DataStore = ...
 
 dialog = ef.Dialog()
-dialog.Width = 100
-dialog.Height = 100
-dialog.Content = gridView
+dialog.Width = 400
+dialog.Height = 200
+dialog.Content = treeGridView
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 dialog.ShowModal(parent)
@@ -145,7 +143,7 @@ dialog.ShowModal(parent)
 
 ## DataStore and Bindings
 
-Tree Grid View data stores differ to the GridView as they require a more rigid (tree) structure.
+Tree Grid View data stores differ from the GridView as they require a more rigid (tree) structure.
 
 {{< row >}}
 {{< column >}}
@@ -315,26 +313,29 @@ var treeData = new TreeGridItemCollection()
   </div>
   <div class="codetab-content5" id="py5">
 
-``` py
-from Eto.Collections import TreeGridItemCollection, TreeGridItem
+``` py no-compile
+import Eto.Forms as ef
 
-class Flaggable():
-  def __init__(self, name:str, flag: str):
-    self.name = name
-    self.flag = flag
-
-tree_data = TreeGridItemCollection()
-from Eto.Forms import TreeGridItemCollection, TreeGridItem
-
-class Flaggable():
-  def __init__(self, name:str, flag: str):
-    self.name = name
-    self.flag = flag
-
-tree_data = TreeGridItemCollection()
-tree_data.Add(TreeGridItem(Flaggable("Antarctica", "🇦🇶"))
+from System.Collections.Generic import List
 
 
+class Flaggable:
+    def __init__(self, name, flag):
+        self.name = name
+        self.flag = flag
+
+
+children = List[ef.TreeGridItem]()
+children.Add(ef.TreeGridItem(Flaggable("Antarctica", "🇦🇶")))
+children.Add(ef.TreeGridItem(Flaggable("Africa", "🌍")))
+children.Add(ef.TreeGridItem(Flaggable("Asia", "🌏")))
+children.Add(ef.TreeGridItem(Flaggable("Australia", "🇦🇺")))
+children.Add(ef.TreeGridItem(Flaggable("Europe", "🌍")))
+children.Add(ef.TreeGridItem(Flaggable("North America", "🌎")))
+children.Add(ef.TreeGridItem(Flaggable("South America", "🌎")))
+
+tree_data = ef.TreeGridItemCollection()
+tree_data.Add(ef.TreeGridItem(children, Flaggable("Earth", "🗺️")))
 ```
 
   </div>
@@ -342,6 +343,14 @@ tree_data.Add(TreeGridItem(Flaggable("Antarctica", "🇦🇶"))
 
 ### Extending the data set
 It's time to add more data, specifically nested data so that the UI tree structure is fully utilised.
+
+<div class="codetab">
+  <button class="tablinks6" onclick="openCodeTab(event, 'cs6')" id="defaultOpen6">C#</button>
+  <button class="tablinks6" onclick="openCodeTab(event, 'py6')">Python</button>
+</div>
+
+<div class="tab-content">
+  <div class="codetab-content6" id="cs6">
 
 ``` cs no-compile
 var treeData = new TreeGridItemCollection()
@@ -380,10 +389,62 @@ var treeData = new TreeGridItemCollection()
 };
 ```
 
+  </div>
+  <div class="codetab-content6" id="py6">
+
+``` py no-compile
+import Eto.Forms as ef
+
+from System.Collections.Generic import List
+
+
+def branch(parent_flag, leaves):
+    items = List[ef.TreeGridItem]()
+    for leaf in leaves:
+        items.Add(ef.TreeGridItem(leaf))
+    return ef.TreeGridItem(items, parent_flag)
+
+
+continents = List[ef.TreeGridItem]()
+continents.Add(branch(Flaggable("Antarctica", "🇦🇶"), [
+    Flaggable("The South Pole", "💈"),
+]))
+continents.Add(branch(Flaggable("Africa", "🌍"), [
+    Flaggable("South Africa", "🇿🇦"),
+    Flaggable("Kenya", "🇰🇪"),
+]))
+continents.Add(branch(Flaggable("Asia", "🌏"), [
+    Flaggable("China", "🇨🇳"),
+    Flaggable("Japan", "🇯🇵"),
+]))
+continents.Add(branch(Flaggable("Australia", "🇦🇺"), [
+    Flaggable("Sydney", "🏖️"),
+    Flaggable("Canberra", "🐨"),
+]))
+continents.Add(branch(Flaggable("Europe", "🌍"), [
+    Flaggable("Belgium", "🇧🇪"),
+    Flaggable("Monaco", "🇲🇨"),
+]))
+continents.Add(branch(Flaggable("North America", "🌎"), [
+    Flaggable("Canada", "🇨🇦"),
+    Flaggable("Mexico", "🇲🇽"),
+]))
+continents.Add(branch(Flaggable("South America", "🌎"), [
+    Flaggable("Brazil", "🇧🇷"),
+    Flaggable("Colombia", "🇨🇴"),
+]))
+
+tree_data = ef.TreeGridItemCollection()
+tree_data.Add(ef.TreeGridItem(continents, Flaggable("Earth", "🗺️")))
+```
+
+  </div>
+</div>
+
 ## The Custom Cell
 This example makes use of the Custom Cell. It's not strictly necessary, but it is the most tricky cell and understanding how to use it is very useful.
 
-Note that GridViews make use of Indirect Bindings...
+There are two common ways to wire a CustomCell up to its row data. The first is the *binding* style — declare a binding once in `OnCreateCell` and push the row's value in as the `DataContext` from `OnConfigureCell`. Because Cells are reused as the user scrolls, the binding must be created in `OnCreateCell` (which runs once per reused control) and the per-row value must be assigned in `OnConfigureCell` (which runs every time a control is recycled onto a new row).
 
 ``` cs no-compile
 class CustCell : CustomCell
@@ -403,6 +464,8 @@ class CustCell : CustomCell
   }
 }
 ```
+
+The second style skips the binding entirely and writes the property directly inside `OnConfigureCell`. It's a little less idiomatic but easier to read; the final example below uses this style.
 
 ### Putting it all Together
 The final example includes a label to display the Flag of the selected item in the TreeGridView.
@@ -474,16 +537,11 @@ var treeData = new TreeGridItemCollection()
 };
 
 
-// TODO : Create a ticket for Ehsan, if this code is Debugged with only the TODO's enabled, and a breakpoint is put on line 72 (control.DataContext = ...) the editor is SLOW AF and does not work well. A window called GetStringProxy appears?
-// ENSURE YOU INCLUDE LOGS
-
 class CustCell : CustomCell
 {
   protected override Control OnCreateCell(CellEventArgs args)
   {
-    var label = new Label() { TextAlignment = TextAlignment.Left };
-    label.BindDataContext(l => l.Text, (Flaggable f) => f.Name);
-    return label;
+    return new Label() { TextAlignment = TextAlignment.Left };
   }
 
   protected override void OnConfigureCell(CellEventArgs args, Control control)
@@ -538,38 +596,129 @@ var dialog = new Dialog()
   Resizable = true,
 };
 
-dialog.ShowModal(null);
+var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
+dialog.ShowModal(parent);
 ```
 
   </div>
   <div class="codetab-content1" id="py1">
 
-  ```py
+```py
 import scriptcontext as sc
-
-import Rhino
-from Rhino.UI import RhinoEtoApp, EtoExtensions
 
 import Eto.Forms as ef
 import Eto.Drawing as ed
+from Rhino.UI import RhinoEtoApp
 
-parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+from System.Collections.Generic import List
+
+
+class Flaggable:
+    def __init__(self, name, flag):
+        self.name = name
+        self.flag = flag
+
+
+def branch(parent_flag, leaves):
+    items = List[ef.TreeGridItem]()
+    for leaf in leaves:
+        items.Add(ef.TreeGridItem(leaf))
+    return ef.TreeGridItem(items, parent_flag)
+
+
+continents = List[ef.TreeGridItem]()
+continents.Add(branch(Flaggable("Antarctica", "🇦🇶"), [
+    Flaggable("The South Pole", "💈"),
+]))
+continents.Add(branch(Flaggable("Africa", "🌍"), [
+    Flaggable("South Africa", "🇿🇦"),
+    Flaggable("Kenya", "🇰🇪"),
+]))
+continents.Add(branch(Flaggable("Asia", "🌏"), [
+    Flaggable("China", "🇨🇳"),
+    Flaggable("Japan", "🇯🇵"),
+]))
+continents.Add(branch(Flaggable("Australia", "🇦🇺"), [
+    Flaggable("Sydney", "🏖️"),
+    Flaggable("Canberra", "🐨"),
+]))
+continents.Add(branch(Flaggable("Europe", "🌍"), [
+    Flaggable("Belgium", "🇧🇪"),
+    Flaggable("Monaco", "🇲🇨"),
+]))
+continents.Add(branch(Flaggable("North America", "🌎"), [
+    Flaggable("Canada", "🇨🇦"),
+    Flaggable("Mexico", "🇲🇽"),
+]))
+continents.Add(branch(Flaggable("South America", "🌎"), [
+    Flaggable("Brazil", "🇧🇷"),
+    Flaggable("Colombia", "🇨🇴"),
+]))
+
+tree_data = ef.TreeGridItemCollection()
+tree_data.Add(ef.TreeGridItem(continents, Flaggable("Earth", "🗺️")))
+
+
+class CustCell(ef.CustomCell):
+    def OnCreateCell(self, args):
+        return ef.Label(TextAlignment=ef.TextAlignment.Left)
+
+    def OnConfigureCell(self, args, control):
+        if not isinstance(control, ef.Label):
+            return
+        if not isinstance(args.Item, ef.TreeGridItem):
+            return
+        values = list(args.Item.Values) if args.Item.Values is not None else []
+        if not values or not isinstance(values[0], Flaggable):
+            return
+        control.Text = values[0].name
+
+
+nameColumn = ef.GridColumn()
+nameColumn.HeaderText = "Place"
+nameColumn.DataCell = CustCell()
+
+treeGridView = ef.TreeGridView()
+treeGridView.AllowMultipleSelection = False
+treeGridView.Columns.Add(nameColumn)
+treeGridView.DataStore = tree_data
+
+bigFont = ed.Font(ed.FontFamilies.Sans, 150, ed.FontStyle.None, ed.FontDecoration.None)
+
+label = ef.Label()
+label.Width = 200
+label.Font = bigFont
+label.Text = "🏁"
+label.TextAlignment = ef.TextAlignment.Center
+
+
+def on_selected_changed(s, e):
+    item = treeGridView.SelectedItem
+    if not isinstance(item, ef.TreeGridItem):
+        return
+    values = list(item.Values) if item.Values is not None else []
+    if not values or not isinstance(values[0], Flaggable):
+        return
+    label.Text = values[0].flag
+
+
+treeGridView.SelectedItemChanged += on_selected_changed
+
+layout = ef.DynamicLayout()
+layout.BeginHorizontal()
+layout.Add(treeGridView, True, True)
+layout.Add(label, False, True)
+layout.EndHorizontal()
 
 dialog = ef.Dialog()
-dialog.Padding = ed.Padding(8)
-dialog.BackgroundColor = ed.Colors.DimGray
+dialog.Width = 400
+dialog.Height = 400
+dialog.Content = layout
+dialog.Resizable = True
 
-button = ef.Button()
-button.Text = "Click me!"
-
-panel = ef.Panel()
-panel.Padding = ed.Padding(8)
-panel.BackgroundColor = ed.Colors.DarkGray
-panel.Content = button
-
-dialog.Content = panel
+parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 dialog.ShowModal(parent)
-  ```
+```
 
   </div>
 </div>

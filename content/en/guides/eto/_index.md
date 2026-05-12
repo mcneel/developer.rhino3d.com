@@ -92,8 +92,8 @@ platforms = [ "Windows", "Mac" ]
   - [Tab Layout](tab-layout)
 - Grids
   - [Cells](cells)
-  - [Grid View](grid-view)           <!-- Documenting this will be so helpful -->
-  - [Tree Grid View](tree-grid-view) <!-- Documenting this will be so helpful -->
+  - [Grid View](grid-view)
+  - [Tree Grid View](tree-grid-view)
   
 <!-- - [Image View](advanced-controls/imageviews/) -->
 <!-- - [ComboBox](controls#combobox/) -->

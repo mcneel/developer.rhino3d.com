@@ -36,7 +36,7 @@ An introduction to Grid Views.
 {{< /column >}}
 {{< /row >}}
 
-Tree Grid Views are slightly more complex than Grid Views with a tree data structure backing them rather then collections. This guide will cover all the eccentricities of Tree Grid Views which can be confusing.
+Grid Views let you display a collection of items as a table of rows and columns. Each column controls how its cells are rendered and edited; the rows are driven by a single data store that you bind to the view. This guide covers how to declare a Grid View, how to populate it, and the binding model that ties cells to your data.
 
 ![Grid View](/images/eto/controls/grid-view.png)
 
@@ -113,7 +113,7 @@ dialog.ShowModal()
 
 ## DataStore and Bindings
 
-Cells in Grids make use of "Indirect Bindings". Bindings which are handed entirely internally by Eto and do not require `control.BindDataContext` to be used.
+Cells in Grids make use of "Indirect Bindings". Bindings which are handled entirely internally by Eto and do not require `control.BindDataContext` to be used.
 
 When we define our column, we can represent the row as data in one of two ways.
 
@@ -123,7 +123,7 @@ Defining a row as a data object is a very strong way to define a GridView. The c
 #### 2. As an Array
 A row can also be defined as an Array or List of data. Using a number as an index in the constructor will bind the cell to the Nth object in a list.
 
-// TODO : How does this handle columns being reordered? Does it just handle it???
+<!-- TODO : How does this handle columns being reordered? Does it just handle it??? -->
 
 <div class="codetab">
   <button class="tablinks3" onclick="openCodeTab(event, 'cs3')" id="defaultOpen3">C#</button>
@@ -231,7 +231,7 @@ items = (col_1, col_2)
 
 Generally `ObservableCollection<T>` informs the UI of changes when the collection is updated. In GridViews this is not the case and a more specific reload is required `GridView.ReloadData()`.
 
-// TODO : Are you sure about this? Why do we EVER use this for samples then?
+<!-- TODO : Are you sure about this? Why do we EVER use this for samples then? -->
 
 Reloading an ENTIRE GridView due to 1 cell changing would be very inefficient, and hence ReloadData lets us specify a Row to reload which is much more efficient.
 
@@ -243,28 +243,38 @@ Reloading an ENTIRE GridView due to 1 cell changing would be very inefficient, a
 <div class="tab-content">
   <div class="codetab-content5" id="cs5">
 
-```cs
+```cs no-compile
+// Reload a single row by index
+gridView.ReloadData(new[] { 0 });
 
+// Reload several rows at once
+gridView.ReloadData(Enumerable.Range(0, gridView.DataStore.Count()));
 ```
 
   </div>
   <div class="codetab-content5" id="py5">
 
-```py
+```py no-compile
+from System.Collections.Generic import List
 
+# Reload a single row by index
+gridView.ReloadData(List[int]([0]))
+
+# Reload several rows at once
+gridView.ReloadData(List[int](list(range(len(gridView.DataStore)))))
 ```
 
   </div>
 </div>
 
-# Example Code
+## Example Code
 
-## Our first Grid View
+### Our first Grid View
 
 For this example we'll build a very simple spreadsheet application.
 Starting off with the Basic layout and some dummy data (otherwise the UI looks quite disappointing).
 
-![Empty Grid View](images/eto/tutorials/grid-view-01.png)
+![Empty Grid View](/images/eto/tutorials/grid-view-01.png)
 
 <div class="codetab">
   <button class="tablinks1" onclick="openCodeTab(event, 'cs1')" id="defaultOpen1">C#</button>
@@ -345,7 +355,66 @@ dialog.ShowModal(parent);
   <div class="codetab-content1" id="py1">
 
 ```py
+import scriptcontext as sc
 
+import Eto.Forms as ef
+import Eto.Drawing as ed
+from Rhino.UI import RhinoEtoApp
+
+from System.Collections.Generic import List
+
+gridView = ef.GridView()
+gridView.Border = ef.BorderType.Line
+gridView.GridLines = ef.GridLines.Both
+
+# Dummy data so the grid renders with something in it
+row = List[object]()
+row.Add("None")
+
+data = List[List[object]]()
+data.Add(row)
+
+gridView.DataStore = data
+
+# Use a series of letters to create all the Columns
+cols = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+for c in cols:
+    col = ef.GridColumn()
+    col.HeaderText = c
+
+    # The Data Cell is created for each Cell
+    col.DataCell = ef.TextBoxCell(0)
+
+    gridView.Columns.Add(col)
+
+clearButton = ef.Button()
+clearButton.Text = "Clear All"
+
+closeButton = ef.Button()
+closeButton.Text = "Close"
+
+# Organise our layout nicely
+buttonRow = ef.DynamicLayout()
+buttonRow.Spacing = ed.Size(4, 0)
+buttonRow.BeginHorizontal()
+buttonRow.AddSpace(True, True)
+buttonRow.Add(clearButton, False, False)
+buttonRow.Add(closeButton, False, False)
+buttonRow.EndHorizontal()
+
+stackLayout = ef.StackLayout()
+stackLayout.Spacing = 4
+stackLayout.Items.Add(gridView)
+stackLayout.Items.Add(buttonRow)
+
+# Create the Dialog that hosts our UI elements
+dialog = ef.Dialog()
+dialog.Padding = ed.Padding(4)
+dialog.Content = stackLayout
+
+# Make sure we parent the dialog correctly
+parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
+dialog.ShowModal(parent)
 ```
 
   </div>
@@ -353,7 +422,9 @@ dialog.ShowModal(parent);
 
 </br>
 
-## Adding ...
+### Building a Mini Spreadsheet
+
+Building on the previous example, this version backs the grid with a view model, lets cells reference each other with a `=A1` style formula, and adds a Clear button that resets the sheet.
 
 <div class="codetab">
   <button class="tablinks10" onclick="openCodeTab(event, 'cs10')" id="defaultOpen10">C#</button>
@@ -403,32 +474,30 @@ class SheetModel : ViewModel
             {
                 var cell = currentRow[y] ?? string.Empty;
                 var match = Regex.Match(cell, @"=([a-zA-Z])([\d]+)");
-                if (match.Groups.Count < 3) continue;
-                
+                if (!match.Success) continue;
+
                 string letter = match.Groups[1].Value.ToUpper();
                 string number = match.Groups[2].Value;
 
                 if (!int.TryParse(number, out int row)) continue;
-                if (row < 0 || row > 10) continue;
+                if (row < 1 || row > Cells.Count) continue;
 
                 char c = letter.FirstOrDefault();
-
-                int col = ColumnLabels .IndexOf(c);
+                int col = ColumnLabels.IndexOf(c);
+                if (col < 0 || col >= currentRow.Count) continue;
 
                 currentRow[y] = Cells[row-1][col];
-                
-                // Cells[x][y]
             }
         }
     }
 
     public void Clear()
     {
-        foreach(var cell in Cells)
+        foreach(var row in Cells)
         {
-            cell.Clear();
-            for(int i = 0; i < 10; i++)
-                cell.Add("0");
+            row.Clear();
+            for(int i = 0; i < ColumnLabels.Count; i++)
+                row.Add("0");
         }
     }
 }
@@ -475,7 +544,7 @@ foreach(char c in cols)
 var clearButton = new Button() { Text = "Clear All" };
 clearButton.Click += (s,e) => {
     model.Clear();
-    gridView.ReloadData(Enumerable.Range(0, cols.Length));
+    gridView.ReloadData(Enumerable.Range(0, model.Cells.Count));
 };
 
 var closeButton = new Button() { Text = "Close" };
@@ -503,29 +572,125 @@ dialog.ShowModal(parent);
   </div>
   <div class="codetab-content1" id="py10">
 
-  ```py
+```py
+import re
 import scriptcontext as sc
-
-import Rhino
-from Rhino.UI import RhinoEtoApp, EtoExtensions
 
 import Eto.Forms as ef
 import Eto.Drawing as ed
+from Rhino.UI import RhinoEtoApp
+
+from System.Collections.ObjectModel import ObservableCollection
+from System.Collections.Generic import List
 
 parent = RhinoEtoApp.MainWindowForDocument(sc.doc)
 
+
+class SheetModel:
+    def __init__(self, rows, cols):
+        self.Cells = ObservableCollection[ObservableCollection[str]]()
+        self.ColumnLabels = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+        for i in range(rows):
+            row = ObservableCollection[str]()
+            for j in range(cols):
+                row.Add(str(i * j))
+            self.Cells.Add(row)
+
+    def Calculate(self):
+        for x in range(self.Cells.Count):
+            current_row = self.Cells[x]
+            for y in range(current_row.Count):
+                cell = current_row[y] or ""
+                match = re.match(r"=([a-zA-Z])(\d+)", cell)
+                if match is None:
+                    continue
+
+                letter = match.group(1).upper()
+                try:
+                    row = int(match.group(2))
+                except ValueError:
+                    continue
+                if row < 1 or row > self.Cells.Count:
+                    continue
+                if letter not in self.ColumnLabels:
+                    continue
+
+                col = self.ColumnLabels.index(letter)
+                if col < 0 or col >= current_row.Count:
+                    continue
+
+                current_row[y] = self.Cells[row - 1][col]
+
+    def Clear(self):
+        for row in self.Cells:
+            row.Clear()
+            for _ in range(len(self.ColumnLabels)):
+                row.Add("0")
+
+
+cols = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+model = SheetModel(10, len(cols))
+
 dialog = ef.Dialog()
-dialog.Padding = ed.Padding(8)
-dialog.BackgroundColor = ed.Colors.DimGray
+dialog.Padding = ed.Padding(4)
+dialog.DataContext = model
 
-panel = ef.Panel()
-panel.Padding = ed.Padding(8)
-panel.BackgroundColor = ed.Colors.DarkGray
-panel.Content = button
+gridView = ef.GridView()
+gridView.DataStore = model.Cells
+gridView.Border = ef.BorderType.Line
+gridView.AllowMultipleSelection = False
+gridView.AllowEmptySelection = True
+gridView.Cursor = ef.Cursors.IBeam
+gridView.GridLines = ef.GridLines.Both
 
-dialog.Content = panel
+
+def on_cell_edited(s, e):
+    model.Calculate()
+
+
+gridView.CellEdited += on_cell_edited
+
+for i, c in enumerate(cols):
+    col = ef.GridColumn()
+    col.HeaderText = c
+    col.AutoSize = False
+    col.Width = 80
+    col.DataCell = ef.TextBoxCell(i)
+    col.Editable = True
+    gridView.Columns.Add(col)
+
+clearButton = ef.Button()
+clearButton.Text = "Clear All"
+
+
+def on_clear(s, e):
+    model.Clear()
+    gridView.ReloadData(List[int](list(range(model.Cells.Count))))
+
+
+clearButton.Click += on_clear
+
+closeButton = ef.Button()
+closeButton.Text = "Close"
+closeButton.Click += lambda s, e: dialog.Close()
+
+buttonRow = ef.DynamicLayout()
+buttonRow.Spacing = ed.Size(4, 0)
+buttonRow.BeginHorizontal()
+buttonRow.AddSpace(True, True)
+buttonRow.Add(clearButton, False, False)
+buttonRow.Add(closeButton, False, False)
+buttonRow.EndHorizontal()
+
+stackLayout = ef.StackLayout()
+stackLayout.Spacing = 4
+stackLayout.Items.Add(gridView)
+stackLayout.Items.Add(buttonRow)
+
+dialog.Content = stackLayout
+
 dialog.ShowModal(parent)
-  ```
+```
 
   </div>
 </div>
