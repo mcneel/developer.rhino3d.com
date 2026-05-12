@@ -78,7 +78,7 @@ var dialog = new Dialog()
 };
 
 var parent = RhinoEtoApp.MainWindowForDocument(__rhino_doc__);
-dialog.Show(parent);
+dialog.ShowModal(parent);
 ```
 
   </div>
@@ -167,7 +167,7 @@ column_1.DataCell = TextBoxCell("Property")
 column_2 = GridColumn()
 column_2.DataCell = TextBoxCell(0)
 
-grid_view = new GridView()
+grid_view = GridView()
 grid_view.Columns.Add(column_1)
 grid_view.Columns.Add(column_2)
  ```
@@ -404,8 +404,8 @@ buttonRow.EndHorizontal()
 
 stackLayout = ef.StackLayout()
 stackLayout.Spacing = 4
-stackLayout.Items.Add(gridView)
-stackLayout.Items.Add(buttonRow)
+stackLayout.Items.Add(ef.StackLayoutItem(gridView))
+stackLayout.Items.Add(ef.StackLayoutItem(buttonRow))
 
 # Create the Dialog that hosts our UI elements
 dialog = ef.Dialog()
@@ -485,6 +485,9 @@ class SheetModel : ViewModel
                 char c = letter.FirstOrDefault();
                 int col = ColumnLabels.IndexOf(c);
                 if (col < 0 || col >= currentRow.Count) continue;
+
+                // Skip self-references (e.g. =A1 in A1) to avoid noop overwrites
+                if (row - 1 == x && col == y) continue;
 
                 currentRow[y] = Cells[row-1][col];
             }
@@ -619,6 +622,10 @@ class SheetModel:
                 if col < 0 or col >= current_row.Count:
                     continue
 
+                # Skip self-references (e.g. =A1 in A1) to avoid noop overwrites
+                if row - 1 == x and col == y:
+                    continue
+
                 current_row[y] = self.Cells[row - 1][col]
 
     def Clear(self):
@@ -684,8 +691,8 @@ buttonRow.EndHorizontal()
 
 stackLayout = ef.StackLayout()
 stackLayout.Spacing = 4
-stackLayout.Items.Add(gridView)
-stackLayout.Items.Add(buttonRow)
+stackLayout.Items.Add(ef.StackLayoutItem(gridView))
+stackLayout.Items.Add(ef.StackLayoutItem(buttonRow))
 
 dialog.Content = stackLayout
 

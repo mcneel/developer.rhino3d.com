@@ -205,32 +205,38 @@ dialog.ShowModal(parent);
   <div class="codetab-content4" id="py4">
 
   ```py
-from System.Collections.Generic import List
-import System
-
 import Eto.Forms as ef
 import Rhino.UI as ui
 
+
+# Small data object so each row has a stable .Name attribute to read from.
+class Place:
+    def __init__(self, name):
+        self.Name = name
+
+
+# Eto cells that bind via reflection (e.g. TextBoxCell("Name")) can't see
+# Python class attributes, so we render the cell ourselves.
+class NameCell(ef.CustomCell):
+    def OnCreateCell(self, args):
+        return ef.Label()
+
+    def OnConfigureCell(self, args, control):
+        if isinstance(args.Item, ef.TreeGridItem) and args.Item.Values:
+            control.Text = list(args.Item.Values)[0].Name
+
+
+root = ef.TreeGridItem(Place("Earth"))
+for name in ["Antarctica", "Africa", "Asia", "Australia", "Europe", "North America", "South America"]:
+    root.Children.Add(ef.TreeGridItem(Place(name)))
+
 tree_data = ef.TreeGridItemCollection()
-
-items = List[ef.TreeGridItem]()
-items.Add(ef.TreeGridItem("Antarctica"))
-items.Add(ef.TreeGridItem("Africa"))
-items.Add(ef.TreeGridItem("Asia"))
-items.Add(ef.TreeGridItem("Australia"))
-items.Add(ef.TreeGridItem("Europe"))
-items.Add(ef.TreeGridItem("North America"))
-items.Add(ef.TreeGridItem("South America"))
-
-main_data = ef.TreeGridItem(items, "Earth")
-
-tree_data.Add(main_data)
+tree_data.Add(root)
 
 tree_grid_view = ef.TreeGridView()
 col = ef.GridColumn()
 col.HeaderText = "Name"
-# 0 Binds to the first item in the list, if there is no list, then the only item available
-col.DataCell = ef.TextBoxCell(0)
+col.DataCell = NameCell()
 
 tree_grid_view.Columns.Add(col)
 tree_grid_view.DataStore = tree_data
@@ -399,43 +405,29 @@ from System.Collections.Generic import List
 
 
 def branch(parent_flag, leaves):
-    items = List[ef.TreeGridItem]()
+    # Build by adding children one at a time. Calling the two-arg
+    # TreeGridItem(children, value) form trips a pythonnet overload
+    # ambiguity on Mac that stuffs both args into Values.
+    node = ef.TreeGridItem(parent_flag)
     for leaf in leaves:
-        items.Add(ef.TreeGridItem(leaf))
-    return ef.TreeGridItem(items, parent_flag)
+        node.Children.Add(ef.TreeGridItem(leaf))
+    return node
 
 
-continents = List[ef.TreeGridItem]()
-continents.Add(branch(Flaggable("Antarctica", "🇦🇶"), [
-    Flaggable("The South Pole", "💈"),
-]))
-continents.Add(branch(Flaggable("Africa", "🌍"), [
-    Flaggable("South Africa", "🇿🇦"),
-    Flaggable("Kenya", "🇰🇪"),
-]))
-continents.Add(branch(Flaggable("Asia", "🌏"), [
-    Flaggable("China", "🇨🇳"),
-    Flaggable("Japan", "🇯🇵"),
-]))
-continents.Add(branch(Flaggable("Australia", "🇦🇺"), [
-    Flaggable("Sydney", "🏖️"),
-    Flaggable("Canberra", "🐨"),
-]))
-continents.Add(branch(Flaggable("Europe", "🌍"), [
-    Flaggable("Belgium", "🇧🇪"),
-    Flaggable("Monaco", "🇲🇨"),
-]))
-continents.Add(branch(Flaggable("North America", "🌎"), [
-    Flaggable("Canada", "🇨🇦"),
-    Flaggable("Mexico", "🇲🇽"),
-]))
-continents.Add(branch(Flaggable("South America", "🌎"), [
-    Flaggable("Brazil", "🇧🇷"),
-    Flaggable("Colombia", "🇨🇴"),
-]))
+root = ef.TreeGridItem(Flaggable("Earth", "🗺️"))
+for child in [
+    branch(Flaggable("Antarctica", "🇦🇶"), [Flaggable("The South Pole", "💈")]),
+    branch(Flaggable("Africa", "🌍"), [Flaggable("South Africa", "🇿🇦"), Flaggable("Kenya", "🇰🇪")]),
+    branch(Flaggable("Asia", "🌏"), [Flaggable("China", "🇨🇳"), Flaggable("Japan", "🇯🇵")]),
+    branch(Flaggable("Australia", "🇦🇺"), [Flaggable("Sydney", "🏖️"), Flaggable("Canberra", "🐨")]),
+    branch(Flaggable("Europe", "🌍"), [Flaggable("Belgium", "🇧🇪"), Flaggable("Monaco", "🇲🇨")]),
+    branch(Flaggable("North America", "🌎"), [Flaggable("Canada", "🇨🇦"), Flaggable("Mexico", "🇲🇽")]),
+    branch(Flaggable("South America", "🌎"), [Flaggable("Brazil", "🇧🇷"), Flaggable("Colombia", "🇨🇴")]),
+]:
+    root.Children.Add(child)
 
 tree_data = ef.TreeGridItemCollection()
-tree_data.Add(ef.TreeGridItem(continents, Flaggable("Earth", "🗺️")))
+tree_data.Add(root)
 ```
 
   </div>
@@ -620,48 +612,36 @@ class Flaggable:
 
 
 def branch(parent_flag, leaves):
-    items = List[ef.TreeGridItem]()
+    # Build by adding children one at a time. Calling the two-arg
+    # TreeGridItem(children, value) form trips a pythonnet overload
+    # ambiguity on Mac that stuffs both args into Values.
+    node = ef.TreeGridItem(parent_flag)
     for leaf in leaves:
-        items.Add(ef.TreeGridItem(leaf))
-    return ef.TreeGridItem(items, parent_flag)
+        node.Children.Add(ef.TreeGridItem(leaf))
+    return node
 
 
-continents = List[ef.TreeGridItem]()
-continents.Add(branch(Flaggable("Antarctica", "🇦🇶"), [
-    Flaggable("The South Pole", "💈"),
-]))
-continents.Add(branch(Flaggable("Africa", "🌍"), [
-    Flaggable("South Africa", "🇿🇦"),
-    Flaggable("Kenya", "🇰🇪"),
-]))
-continents.Add(branch(Flaggable("Asia", "🌏"), [
-    Flaggable("China", "🇨🇳"),
-    Flaggable("Japan", "🇯🇵"),
-]))
-continents.Add(branch(Flaggable("Australia", "🇦🇺"), [
-    Flaggable("Sydney", "🏖️"),
-    Flaggable("Canberra", "🐨"),
-]))
-continents.Add(branch(Flaggable("Europe", "🌍"), [
-    Flaggable("Belgium", "🇧🇪"),
-    Flaggable("Monaco", "🇲🇨"),
-]))
-continents.Add(branch(Flaggable("North America", "🌎"), [
-    Flaggable("Canada", "🇨🇦"),
-    Flaggable("Mexico", "🇲🇽"),
-]))
-continents.Add(branch(Flaggable("South America", "🌎"), [
-    Flaggable("Brazil", "🇧🇷"),
-    Flaggable("Colombia", "🇨🇴"),
-]))
+root = ef.TreeGridItem(Flaggable("Earth", "🗺️"))
+for child in [
+    branch(Flaggable("Antarctica", "🇦🇶"), [Flaggable("The South Pole", "💈")]),
+    branch(Flaggable("Africa", "🌍"), [Flaggable("South Africa", "🇿🇦"), Flaggable("Kenya", "🇰🇪")]),
+    branch(Flaggable("Asia", "🌏"), [Flaggable("China", "🇨🇳"), Flaggable("Japan", "🇯🇵")]),
+    branch(Flaggable("Australia", "🇦🇺"), [Flaggable("Sydney", "🏖️"), Flaggable("Canberra", "🐨")]),
+    branch(Flaggable("Europe", "🌍"), [Flaggable("Belgium", "🇧🇪"), Flaggable("Monaco", "🇲🇨")]),
+    branch(Flaggable("North America", "🌎"), [Flaggable("Canada", "🇨🇦"), Flaggable("Mexico", "🇲🇽")]),
+    branch(Flaggable("South America", "🌎"), [Flaggable("Brazil", "🇧🇷"), Flaggable("Colombia", "🇨🇴")]),
+]:
+    root.Children.Add(child)
 
 tree_data = ef.TreeGridItemCollection()
-tree_data.Add(ef.TreeGridItem(continents, Flaggable("Earth", "🗺️")))
+tree_data.Add(root)
 
 
 class CustCell(ef.CustomCell):
     def OnCreateCell(self, args):
-        return ef.Label(TextAlignment=ef.TextAlignment.Left)
+        label = ef.Label()
+        label.TextAlignment = ef.TextAlignment.Left
+        return label
 
     def OnConfigureCell(self, args, control):
         if not isinstance(control, ef.Label):
@@ -683,7 +663,7 @@ treeGridView.AllowMultipleSelection = False
 treeGridView.Columns.Add(nameColumn)
 treeGridView.DataStore = tree_data
 
-bigFont = ed.Font(ed.FontFamilies.Sans, 150, ed.FontStyle.None, ed.FontDecoration.None)
+bigFont = ed.Font(ed.FontFamilies.Sans, 150)
 
 label = ef.Label()
 label.Width = 200
