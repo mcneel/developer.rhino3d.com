@@ -92,8 +92,7 @@ The updated server works seamlessly with existing packages and old versions of R
 
 ## Next Steps
 
-Now that you've have seen what is in a package, why not create a package:
+Now that you've have seen what is in a package, why not create one?
 
-* [Create a Grasshopper package](../pushing-a-package-to-the-server) of your plugin.
-* [Create a Rhino package](../pushing-a-package-to-the-server) for everyone.
-* [Create a multi-targeted package](../creating-a-multi-targeted-rhino-plugin-package) for Rhino 8.
+* Create a package from your [Grasshopper plug-in](../creating-a-grasshopper-plugin-package) or [Rhino plug-in](../creating-a-rhino-plugin-package).
+* [Create a multi-targeted Rhino plug-in package](../creating-a-multi-targeted-rhino-plugin-package) for Rhino 8+.

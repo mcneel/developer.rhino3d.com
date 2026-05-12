@@ -5,6 +5,14 @@
         const tocContainer = document.querySelector(".toc aside nav#TableOfContents");
         if (tocData && tocContainer) {
             tocContainer.innerHTML = ""; // Clear existing content
+            if (tocData.parent) {
+                const parentLink = document.createElement("a");
+                parentLink.classList.add("parent-link");
+                parentLink.href = tocData.parent.link;
+                parentLink.textContent = tocData.parent.text;
+                tocContainer.appendChild(parentLink);
+            }
+
             tocData.sections.forEach(section => {
                 const sectionWrapper = document.createElement("ul");
                 sectionWrapper.classList.add("nav-wrapper");

@@ -18,20 +18,42 @@
     {{ end }}
 {{- end -}}
 
+{{- $beforeImageName := .Get 0 -}}
+{{- $.Scratch.Set "beforeImageURL" "" }}
+{{- $afterImageName := .Get 1 -}}
+{{- $.Scratch.Set "afterImageURL" "" }}
+
+{{- if or (hasPrefix $beforeImageName "http://") (hasPrefix $beforeImageName "https://") (hasPrefix $beforeImageName "/") -}}
+    {{- $.Scratch.Set "beforeImageURL" $beforeImageName }}
+{{- else -}}
+    {{- $beforeImage := .Page.Resources.GetMatch $beforeImageName -}} 
+    {{- if $beforeImage -}}
+        {{- $.Scratch.Set "beforeImageURL" $beforeImage.RelPermalink }}
+    {{- end -}}
+{{- end -}}
+
+{{- if or (hasPrefix $afterImageName "http://") (hasPrefix $afterImageName "https://") (hasPrefix $afterImageName "/") -}}
+    {{- $.Scratch.Set "afterImageURL" $afterImageName }}
+{{- else -}}
+    {{- $afterImage := .Page.Resources.GetMatch $afterImageName -}} 
+    {{- if $afterImage -}}
+        {{- $.Scratch.Set "afterImageURL" $afterImage.RelPermalink }}
+    {{- end -}}
+{{- end -}}
+
 <div class="twentytwenty-container">
-    <img alt="Before" src="{{ .Get 0 }}"/>
-    <img alt="After" src="{{ .Get 1 }}"/>
+    <img alt="Before" src="{{ $.Scratch.Get "beforeImageURL" }}"/>
+    <img alt="After" src="{{ $.Scratch.Get "afterImageURL" }}"/>
 </div>
 
 <div class="twentytwenty-container-print container-print">
     <div class="column-print">
-        <img class="img-print" alt="Before" src="{{ .Get 0 }}"/>
+        <img class="img-print" alt="Before" src="{{ $.Scratch.Get "beforeImageURL" }}"/>
     </div>
     <div class="column-print">
-        <img class="img-print" alt="After" src="{{ .Get 1 }}"/>
+        <img class="img-print" alt="After" src="{{ $.Scratch.Get "afterImageURL" }}"/>
     </div>
 </div>
-
 
 {{- if eq ($.Scratch.Get "caption-position") "bottom" -}}
     {{ if .Get 2 }}

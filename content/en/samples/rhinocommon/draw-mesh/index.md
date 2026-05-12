@@ -197,61 +197,59 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-import rhinoscriptsyntax as rs
-from scriptcontext import doc
+#! python 3
 import Rhino
 import System
-import System.Drawing
-
+import scriptcontext as sc
+ 
 def RunCommand():
     gs = Rhino.Input.Custom.GetObject()
-    gs.SetCommandPrompt("select sphere")
+    gs.SetCommandPrompt("Select sphere")
     gs.GeometryFilter = Rhino.DocObjects.ObjectType.Surface
-    gs.DisablePreSelect()
     gs.SubObjectSelect = False
     gs.Get()
     if gs.CommandResult() != Rhino.Commands.Result.Success:
         return gs.CommandResult()
+ 
+    rc, sphere = gs.Object(0).Surface().TryGetSphere()
+    if not rc or not sphere.IsValid:
+        return Rhino.Commands.Result.Cancel
 
-    b, sphere = gs.Object(0).Surface().TryGetSphere()
-    if sphere.IsValid:
-        mesh = Rhino.Geometry.Mesh.CreateFromSphere(sphere, 10, 10)
-        if mesh == None:
-            return Rhino.Commands.Result.Failure
-
-        conduit = DrawBlueMeshConduit(mesh)
-        conduit.Enabled = True
-        doc.Views.Redraw()
-
-        inStr = rs.GetString("press <Enter> to continue")
-
-        conduit.Enabled = False
-        doc.Views.Redraw()
-        return Rhino.Commands.Result.Success
-    else:
+    mesh = Rhino.Geometry.Mesh.CreateFromSphere(sphere, 10, 10)
+    if not mesh:
         return Rhino.Commands.Result.Failure
 
+    conduit = DrawBlueMeshConduit(mesh)
+    conduit.Enabled = True
+    sc.doc.Views.Redraw()
+
+    out_str = ""
+    rc = Rhino.Input.RhinoGet.GetString("Press <Enter> to continue", True, out_str);
+
+    conduit.Enabled = False
+    sc.doc.Views.Redraw()
+    
+    return Rhino.Commands.Result.Success
+ 
 class DrawBlueMeshConduit(Rhino.Display.DisplayConduit):
     def __init__(self, mesh):
+        super().__init__()
         self.mesh = mesh
         self.color = System.Drawing.Color.Blue
         self.material = Rhino.Display.DisplayMaterial()
         self.material.Diffuse = self.color
         if mesh != None and mesh.IsValid:
             self.bbox = mesh.GetBoundingBox(True)
-
-    def CalculateBoundingBox(self, calculateBoundingBoxEventArgs):
-        #super.CalculateBoundingBox(calculateBoundingBoxEventArgs)
-        calculateBoundingBoxEventArgs.BoundingBox.Union(self.bbox)
-
+ 
+    def CalculateBoundingBox(self, args):
+        args.BoundingBox.Union(self.bbox)
+ 
     def PreDrawObjects(self, drawEventArgs):
-        #base.PreDrawObjects(rawEventArgs)
         gvp = drawEventArgs.Display.Viewport
-        if gvp.DisplayMode.EnglishName.ToLower() == "wireframe":
-            drawEventArgs.Display.DrawMeshWires(self.mesh, self.color)
-        else:
+        if gvp.DisplayMode.Id != Rhino.Display.DisplayModeDescription.WireframeId:
             drawEventArgs.Display.DrawMeshShaded(self.mesh, self.material)
-
+        drawEventArgs.Display.DrawMeshWires(self.mesh, self.color)
+ 
 if __name__ == "__main__":
     RunCommand()
 ```

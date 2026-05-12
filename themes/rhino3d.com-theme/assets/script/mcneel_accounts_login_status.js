@@ -184,11 +184,14 @@ mca.addLogoutListenerForClientId = function (clientId, callbackFn) {
 };
 
 
+
 mca.startSecureCallback = function (controllerName, a, oauth2Token, callbackFn) {
     //callbackFn params: success, result
     a.controller = controllerName;
     a.secureCallback = "true";
     var childWindow = window.open(mca.utilities.buildURL(mca.model.origin + "/", a));
+    var shouldCheckChildClose = true;
+    var timer = undefined;
 
     //Now we wait for a message to be delivered.
     window.addEventListener("message", function (e) {
@@ -199,9 +202,41 @@ mca.startSecureCallback = function (controllerName, a, oauth2Token, callbackFn) 
         if (e.data.loaded) {
             childWindow.postMessage({token: oauth2Token}, mca.model.origin); //It's crucial that we only reveal the token to the origin.
         } else if (e.data.finished) {
+            shouldCheckChildClose = false;
             childWindow.close();
-            callbackFn(true, e.data.result);
+
+            if (e.data.error) {
+                callbackFn(false, new Error(e.data.error));
+            } else {
+                callbackFn(true, e.data.result);
+            }
         }
 
     }, false);
+
+    var checkChildClose = function () {
+
+        if (!shouldCheckChildClose) {
+            clearInterval(timer);
+        }
+
+        if (childWindow && childWindow.closed) {
+            clearInterval(timer);
+            callbackFn(false, new Error("error_window_closed"));
+        }
+    };
+
+    timer = setInterval(checkChildClose, 100);
+};
+
+mca.startSecurePromise = function (controllerName, a, oauth2Token) {
+    return new Promise(function (resolve, reject) {
+        mca.startSecureCallback(controllerName, a, oauth2Token, function (success, result) {
+            if (success) {
+                resolve(result);
+            } else {
+                reject(result);
+            }
+        });
+    });
 };

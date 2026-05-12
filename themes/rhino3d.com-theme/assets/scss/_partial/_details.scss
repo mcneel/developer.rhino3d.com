@@ -16,7 +16,7 @@
 
   .details-content {
     max-height: 0;
-    overflow-y: hidden;
+    overflow-y: visible;
     @include details-transition-open;
   }
 
@@ -24,6 +24,8 @@
     i.details-icon {
       @include transform(rotate(90deg));
     }
+
+    overflow: visible;
 
     .details-content {
       max-height: $MAX_LENGTH;

@@ -6,6 +6,10 @@
 
 <script>hljs.highlightAll();</script>
 <script>hljs.initLineNumbersOnLoad();</script>
+
+<!-- Copy to clipboard for code blocks -->
+<script type="text/javascript" src="{{ (resources.Get "/script/copy-code.js" | resources.Fingerprint).Permalink }}"></script>
+
 <script>
     function openCodeTab(evt, tabName) {
       // Declare all variables

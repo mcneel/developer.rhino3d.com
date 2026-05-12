@@ -8,6 +8,7 @@ languages = [ "All" ]
 sdk = [ "General" ]
 title = "The Rhino UI System"
 type = "guides"
+layout = "single"
 weight = 3
 override_last_modified = "2023-11-20T08:29:10Z"
 

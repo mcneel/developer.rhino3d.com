@@ -52,7 +52,7 @@ The 'CreatePoint()' function is very flexible.  It can take a tuple of two or 3 
 It is not always necessary to construct a point before passing it to a function that requires a point. It is possible to construct points directly as an argument to a function.  A Point is a list like structure. Wrap coordinates in parenthesis`()` when passing them directly to a function. For instance the `rs.addline(point, point)` function requires two points.  Use the following syntax to construct the points on the fly:
 
 ```python
-rs.AddLine(((45,56,32),(56,47,89))
+rs.AddLine((45,56,32),(56,47,89))
 ```
 
 Like 3-D points, Python represents a single 2-D point as a zero-based list of numbers.  The difference being that 2-D points contain only X and Y coordinate values.

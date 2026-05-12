@@ -9,7 +9,6 @@ sdk = [ "Compute" ]
 title = "Frequently Asked Questions"
 type = "guides"
 weight = 1
-override_last_modified = "2025-05-07T09:45:21Z"
 
 [admin]
 TODO = ""
@@ -17,7 +16,7 @@ picky_sisters = ""
 state = ""
 
 [included_in]
-platforms = [ "Windows", "Mac" ]
+platforms = [ "Windows", "Linux" ]
 since = 0
 
 [page_options]
@@ -38,11 +37,11 @@ Rhino.Compute lets you use Rhino’s powerful tools and features outside of the 
 
 ### Will it work on macOS?
 
-No. Rhino.Compute is dependent on [Rhino.Inside](https://www.rhino3d.com/features/rhino-inside/) which allows Rhino and Grasshopper to run *inside* other 64-bit applications. Currently, Rhino.Inside is only compatible with the Windows operating system.
+No. Rhino.Compute is dependent on [Rhino.Inside](https://www.rhino3d.com/features/rhino-inside/) which allows Rhino and Grasshopper to run *inside* other 64-bit applications. Currently, Rhino.Inside is only compatible with Windows and Linux (tested on Ubuntu 24.04 and AmazonLinux 2023) operating systems.
 
 ### Does it cost money?
 
-The short answer is: it depends on *where* you run Rhino.Compute. If you're using it on a regular Windows computer, like your personal PC, there’s no extra cost. Rhino.Compute will check for your standard Rhino licence on startup (note: [Rhino evaluation versions](https://www.rhino3d.com/download/) will work just fine). But if you're running it on a Windows Server (such as a virtual machine in the cloud), you’ll be charged based on our [Core-Hour Billing](../core-hour-billing/) model.
+The short answer is: it depends on *where* you run Rhino.Compute. If you're using it on a regular Windows computer, like your personal PC, there’s no extra cost. Rhino.Compute will check for your standard Rhino licence on startup (note: [Rhino evaluation versions](https://www.rhino3d.com/download/) will work just fine). But if you're running it on a Windows or Linux Server (such as a virtual machine in the cloud), you’ll be charged based on our [Core-Hour Billing](../core-hour-billing/) model.
 
 ### How is it different from Hops?
 
@@ -51,11 +50,13 @@ The short answer is: it depends on *where* you run Rhino.Compute. If you're usin
 ### Can I make my own interface to work with Rhino.Compute?
 
 Yes. As mentioned earlier, any app that can send web requests can work with Rhino.Compute. To make things easier, we offer three libraries you can use depending on the language you prefer:
+
 1. [Python Rhino.Compute Library](https://pypi.org/project/compute-rhino3d/)
 1. [Javascript Rhino.Compute Library](https://www.npmjs.com/package/compute-rhino3d)
 1. [.NET (C#) Rhino.Compute Library](https://github.com/mcneel/compute.rhino3d/blob/8.x/src/compute.geometry/RhinoCompute.cs)
 
 We also have step-by-step guides to help you get started with the libraries above:
+
 1. [Calling Compute with Python](../compute-python-getting-started/)
 1. [Calling Compute with Javascript](../compute-javascript-getting-started/)
 1. [Calling Compute with .NET](../compute-net-getting-started/)
@@ -86,10 +87,16 @@ At this point, you should see a new application appear in your task bar (if you 
 {{< image url="/images/hops-console-2.png" alt="/images/hops-console-2.png" class="image_center" width="100%" >}}
 
 <br>
-If you are running Rhino.Compute on a VM, then the log files are saved as text files. New log files will be created daily. By default, the log files are saved under the following location: 
+If you are running Rhino.Compute on a VM, then the log files are saved as text files. New log files will be created daily. By default, the log files are saved under the following locations:
 
+- Windows
 ```cs
 C:\inetpub\wwwroot\aspnet_client\system_web\4_0_30319\rhino.compute\logs\
+```
+
+- Linux
+```cs
+/var/log/rhino-compute
 ```
 
 ### Can I enable verbose logging information?

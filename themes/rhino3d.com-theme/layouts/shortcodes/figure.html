@@ -3,23 +3,83 @@
 {{- $thumb := .Get "src" | default (printf "%s." (.Get "thumb") | replace (.Get "link") ".") -}}
 <div class="box{{ with .Get "caption-position" }} fancy-figure caption-position-{{.}}{{end}}{{ with .Get "caption-effect" }} caption-effect-{{.}}{{end}}" {{ with .Get "width" }}style="max-width:{{.}}"{{end}}>
 <figure {{ with .Get "class" }}class="{{.}}"{{- end -}} itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+{{- $thumbnail_url := "" -}}
 {{ if hasPrefix $thumb "/images/"}}
     {{- if eq hugo.Environment "development" -}}
-        {{- $.Page.Scratch.Set "thumbnail_url" ($thumb | relURL ) -}}
+        {{- $thumbnail_url = ($thumb | relURL ) -}}
     {{- else -}}
-        {{- $.Page.Scratch.Set "thumbnail_url" (print .Site.Params.rhinoURLNewSource $thumb) -}}
+        {{- $thumbnail_url = (print .Site.Params.baseURLForFigures $thumb) -}}
     {{- end -}}
 {{- else if hasPrefix $thumb ".." -}}
-    {{- $.Page.Scratch.Set "thumbnail_url" $thumb -}}
+    {{- $thumbnail_url = $thumb -}}
+    {{- /* Extract the filename and directory path from the relative URL */ -}}
+    {{- $fileName := path.Base $thumb -}}
+    {{- $relDir := path.Dir $thumb -}}
+    {{- /* Calculate the target page path by joining current page's dir with the relative path */ -}}
+    {{- $currentDir := .Page.File.Dir -}}
+    {{- $targetPath := path.Join $currentDir $relDir -}}
+    {{- /* Clean up the path and get the target page */ -}}
+    {{- $targetPage := .Site.GetPage $targetPath -}}
+    {{- $res := "" -}}
+    {{- if $targetPage -}}
+        {{- $res = $targetPage.Resources.GetMatch $fileName -}}
+        {{- /* If resource not found, try the English translation of the target page */ -}}
+        {{- if not $res -}}
+            {{- range $targetPage.Translations -}}
+                {{- if eq .Language.Lang "en" -}}
+                    {{- $res = .Resources.GetMatch $fileName -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    {{- else -}}
+        {{- /* Target page not found in current language, try to find it in English site */ -}}
+        {{- $enSite := index (where site.Sites ".Language.Lang" "en") 0 -}}
+        {{- if $enSite -}}
+            {{- $enTargetPage := $enSite.GetPage $targetPath -}}
+            {{- if $enTargetPage -}}
+                {{- $res = $enTargetPage.Resources.GetMatch $fileName -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if $res -}}
+        {{- $thumbnail_url = $res.RelPermalink -}}
+    {{- end -}}
 {{- else if hasPrefix $thumb "http" -}}
-    {{- $.Page.Scratch.Set "thumbnail_url" $thumb -}}
+    {{- $thumbnail_url = $thumb -}}
 {{- else -}}
-    {{- $.Page.Scratch.Set "thumbnail_url" (.Page.Resources.GetMatch ( printf "%s" $thumb)).RelPermalink -}}
+    {{- $res := .Page.Resources.GetMatch ( printf "%s" $thumb) -}}
+    {{- if not $res -}}
+        {{- /* Try the English translation of the current page */ -}}
+        {{- range .Page.Translations -}}
+            {{- if eq .Language.Lang "en" -}}
+                {{- $res = .Resources.GetMatch ( printf "%s" $thumb) -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if not $res -}}
+        {{- $defaultPage := .Site.GetPage (printf "%s/%s" .Page.Section .Page.File.TranslationBaseName) -}}
+        {{- if $defaultPage -}}
+            {{- $res = $defaultPage.Resources.GetMatch ( printf "%s" $thumb) -}}
+            {{- if not $res -}}
+                {{- /* Try the English translation of the default page */ -}}
+                {{- range $defaultPage.Translations -}}
+                    {{- if eq .Language.Lang "en" -}}
+                        {{- $res = .Resources.GetMatch ( printf "%s" $thumb) -}}
+                    {{- end -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if $res -}}
+        {{- $thumbnail_url = $res.RelPermalink -}}
+    {{- else -}}
+        {{- $thumbnail_url = (print "/images/" $thumb) -}}
+    {{- end -}}
 {{- end -}}
-<div class="img"{{- if .Parent -}} {{- if .Get "no-back" -}}{{- else -}}style="background-image: url({{ ($.Page.Scratch.Get "thumbnail_url")}});" {{- end -}}{{- end -}}{{- with .Get "size" -}} data-size="{{.}}"{{- end -}}>
-    <img itemprop="thumbnail" src="{{ ($.Page.Scratch.Get "thumbnail_url")}}" {{- with .Get "alt" | default (.Get "caption") -}}alt="{{.}}"{{- end -}}/>
+<div class="img"{{- if .Parent -}} {{- if .Get "no-back" -}}{{- else -}}style="background-image: url({{ $thumbnail_url }});" {{- end -}}{{- end -}}{{- with .Get "size" -}} data-size="{{.}}"{{- end -}}>
+    <img itemprop="thumbnail" src="{{ $thumbnail_url }}" {{- with .Get "alt" | default (.Get "caption") -}}alt="{{.}}"{{- end -}}/>
 </div>
-{{- with .Get "link" | default (.Get "src") -}}<a href="{{.}}" itemprop="contentUrl"></a>{{- end -}}
+{{- with .Get "link" | default (.Get "src") -}}<a href="{{ $thumbnail_url }}" itemprop="contentUrl"></a>{{- end -}}
 {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
 <figcaption>
 {{- with .Get "title" -}}<h4>{{.}}</h4>{{- end -}}
@@ -27,7 +87,7 @@
 <p>
 <div style="text-align: {{ with .Get "caption-align" }}{{.}}{{end}}">
 {{- .Get "caption" -}}
-{{- with .Get "attrlink" -}}<a href="{{.}}">{{- .Get "attr" -}}</a>{{- else -}}{{- .Get "attr" -}}{{- end -}}
+{{- with .Get "attrlink" -}}<a href="{{ $thumbnail_url }}">{{- .Get "attr" -}}</a>{{- else -}}{{- .Get "attr" -}}{{- end -}}
 </div>
 </p>
 {{- end -}}

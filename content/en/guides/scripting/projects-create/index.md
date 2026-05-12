@@ -301,10 +301,10 @@ This is the project version and follows [Semantic Versioning](https://semver.org
 
 ![](project-edit-version.png)
 
-Note that the final version used in building assemblies is `0.1.28927+8991`. Script editor automatically generates patch and build numbers to completion the version and make it specific:
+Note that the final version used in building assemblies is `0.1.8991+28927`. Script editor automatically generates patch and build numbers to completion the version and make it specific:
 
-- *Patch* is the number of seconds since midnight divided by 2.
-- *Build* number is number of days since start of century (01/01/2000)
+- *Patch* number is number of days since start of century (01/01/2000)
+- *Build* is the number of seconds since midnight divided by 2.
 
 You can assign your own custom patch number by entering a value in the *Patch* field.
 

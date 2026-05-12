@@ -46,6 +46,10 @@ Download link shortcode. Accepts params in any order.
 {{- if ($.Scratch.Get "error") -}}
 <span class="shortcode-error">Error: {{ $.Scratch.Get "error_message" }}<br>Shortcode usage: &lbrace;&lbrace;&lt; rhino-download version=[integer] platform=[windows | mac | both] type=[wip | beta | commercial | evaluation] &gt;&rbrace;&rbrace; <br/>or: &lbrace;&lbrace;&lt; rhino-download &gt;&rbrace;&rbrace; defaults to version=latest platform=both type=commercial</span>
 {{- else -}}
+    {{/* If version is greater than latestRhinoVersion, use WIP path */}}
+    {{- if gt (int ($.Scratch.Get "version")) (int .Site.Params.latestRhinoVersion) -}}
+        {{- $.Scratch.Set "type" "wip" -}}
+    {{- end -}}
     {{/* Construct appropriate URLs */}}
     {{- if eq ($.Scratch.Get "type") "wip" -}}
         {{- $.Scratch.Set "url_both" "https://www.rhino3d.com/download/rhino/wip/" -}}

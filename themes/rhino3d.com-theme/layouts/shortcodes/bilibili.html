@@ -1,0 +1,25 @@
+{{ $id := .Get "id" }}
+{{ if not $id }}{{ $id = .Get 0 }}{{ end }}
+{{ $page := .Get "page" | default "1" }}
+{{ $width := .Get "width" | default "100%" }}
+{{ $quality := .Get "quality" | default (.Get "high_quality") | default "1" }}
+{{ $danmaku := .Get "danmaku" | default "0" }}
+{{ $simple := .Get "simple" | default "0" }}
+{{ $fullscreen := .Get "fullscreen" | default "0" }}
+{{ $autoplay := .Get "autoplay" | default "0" }}
+{{ $recommend := .Get "recommend" | default "0" }}
+{{ if eq $simple "1" }}
+{{/* Mobile player - cleaner UI without danmaku input bar */}}
+<div style="width:{{ $width }};margin:1em auto;">
+    <div style="padding:56.25% 0 0 0;position:relative;">
+        <iframe title="bilibili video" src="https://www.bilibili.com/blackboard/html5mobileplayer.html?bvid={{ $id }}&p={{ $page }}&danmaku={{ $danmaku }}&high_quality={{ $quality }}&autoplay={{ $autoplay }}&recommend={{ $recommend }}" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" {{ if eq $fullscreen "1" }}allowfullscreen{{ end }} scrolling="no"></iframe>
+    </div>
+</div>
+{{ else }}
+{{/* Standard player */}}
+<div style="width:{{ $width }};margin:1em auto;">
+    <div style="padding:56.25% 0 0 0;position:relative;">
+        <iframe title="bilibili video" src="https://player.bilibili.com/player.html?bvid={{ $id }}&page={{ $page }}&autoplay={{ $autoplay }}&high_quality={{ $quality }}&danmaku={{ $danmaku }}&as_wide=1&recommend={{ $recommend }}" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" {{ if eq $fullscreen "1" }}allowfullscreen{{ end }}></iframe>
+    </div>
+</div>
+{{ end }}

@@ -9,7 +9,7 @@ sdk = [ "Compute" ]
 title = "Deployment to Production Servers"
 type = "guides"
 weight = 4
-override_last_modified = "2022-05-18T09:45:21Z"
+override_last_modified = "2026-02-09T09:45:21Z"
 
 [admin]
 picky_sisters = ""
@@ -27,11 +27,11 @@ toc_type = "single"
 
 ## Overview
 
-This guide will walk you through how to setup an instance of Rhino.Compute on a virtual machine running Internet Information Services (IIS). [IIS](https://www.iis.net/), is a flexible, general-purpose web server developed by Microsoft which can be configured to serve requested HTML pages or files. We can setup IIS to process incoming requests (either from Hops or some other client) and forward that request to the Rhino.Compute instance. 
+This guide will walk you through how to setup an instance of Rhino.Compute on a virtual machine running Internet Information Services (IIS). [IIS](https://www.iis.net/), is a flexible, general-purpose web server developed by Microsoft which can be configured to serve requested HTML pages or files. We can setup IIS to process incoming requests (either from Hops or some other client) and forward that request to the Rhino.Compute instance.
 
 You may be asking yourself, "Why do I need IIS at all? Why can't I simply launch the Rhino.Compute server and send API requests directly to that instance?". Technically speaking, you don't need IIS. However, you would need to figure out how to relaunch the compute server should it crash or malfunction. You would also need to configure Rhino.Compute to launch whenever the virtual machine is launched. 
 
-One of the main benefits of using IIS as a middleware is that it can automatically spin up an instance of the Rhino.Compute server whenever a request is recieved. With this configuration, you do not have to have compute running continuously. Instead, IIS can launch an instance of compute when it is needed which in turn will launch one or more child processes. These child processes are what perform the actual computation and also what require your license authorization. 
+One of the main benefits of using IIS as a middleware is that it can automatically spin up an instance of the Rhino.Compute server whenever a request is recieved. With this configuration, you do not have to have compute running continuously. Instead, IIS can launch an instance of compute when it is needed which in turn will launch one or more child processes. These child processes are what perform the actual computation and also what require your license authorization.
 
 When Rhino.Compute.exe does not receive requests to solve over a period of seconds (this is called idlespans and the default is set to 1 hour), child compute.geometry.exe processes will shut down and stop incurring core hour billing. At some date in the future when a new request is received, IIS will make sure that Rhino.Compute.exe is running which will then relaunch the child processes. Note, there may be some small delay in the response while the child processes are launching.
 
@@ -47,9 +47,9 @@ Before running the bootstrap script on your server or virtual machine, you will 
 * **`RhinoToken`** – This is a long token that identifies your instance of Rhino Compute to the core-hour billing system. Go to the [Licenses Portal](https://www.rhino3d.com/licenses?_forceEmpty=true) to generate this unique id based on your license. See the ["Core-Hour Billing" guide](../core-hour-billing/) for more information.
 
 {{< call-out "note" "Note" >}}
-Running rhino compute locally uses your existing Rhino license and does not cost any additional money (other than your initial rhino license investment). Running compute locally is the best option for development and testing and to find out more, read <a href="../development"><u>Running and Debugging Compute Locally</u></a>.<br><br>
+Running rhino compute locally uses your existing Rhino license and does not cost any additional money (other than your initial rhino license investment). Running compute locally is the best option for development and testing and to find out more, read <a href="../development"><u>Running and Debugging Compute Locally</u></a>.<br>
 
-However, when setting up a production environment you will need a server or virtual machine pre-installed with Windows Server 2019 or higher. Licensing works differently when running Rhino (ie. via Compute) in a production environment (ie. server-setting) and you will be charged at a rate of <strong>$0.10 per core per hour</strong>. <br><br>
+However, when setting up a production environment you will need a server or virtual machine pre-installed with Windows Server 2019 or higher. Licensing works differently when running Rhino (ie. via Compute) in a production environment (ie. server-setting) and you will be charged at a rate of <strong>$0.10 per core per hour</strong>.<br>
 
 Follow the <a href="../core-hour-billing"><u>"Core-Hour Billing" guide</u></a> to get set up. <b>This is important so do not skip.</b>
 {{< /call-out >}}
@@ -227,22 +227,33 @@ The line we are most interested in modifying is the one which starts with the **
 
 Below is a description of each command line argument which can be modified.
 
-- **port** - This is the port number to run Rhino.Compute on. Port number 80 is typically reserved for HTTP communication, while port number 443 is used for the HTTPS protocol. We have setup Rhino.Compute to be bound to port 80 in the bootstrap script, so do not modify this value unless you know what you are doing. Example usage: `--port 80`.
+- **port** - This is the port number to run Rhino.Compute on. Port number 80 is typically reserved for HTTP communication, while port number 443 is used for the HTTPS protocol. Rhino.Compute is setup to be bound to port 80 in the bootstrap script, so do not modify this value unless you know what you are doing.
 
-- **childcount** - This parameter controls the number of child compute.geometry processes to manage. The *default value is 4* which means that Rhino.Compute will spawn four child processes each of which can handle incoming requests. Example usage: `--childcount 8` would tell Rhino.Compute to launch eight child processes.
+    <div style="background-color: #f8f8f8; padding:16px;"><span style= "color:#005cc5; font-family: monospace; font-size: 0.85em;">--port 80</span><span style= "color:#6a737d; font-family: monospace; font-size: 0.85em;"> //bind the process to port 80</span></div>
 
-- **childof** - This is the process handle of parent process. Compute watches for the existence 
-of this handle and will shut down when this process has exited. Since we are relying on IIS starting and stopping Rhino.Compute, you do not need this parameter when running in a production environment.
+- **urls** - This is used specifically in ASP.NET Core applications to define the server URL(s) and port(s) that the web server (Kestrel) should bind to at startup. Adding this option will override any default settings. Multiple URLs can be separated by a semicolon.
 
-- **spawn-on-startup** - This flag determines whether to launch a child compute.geometry process when Rhino.Compute gets started. The *default value is false*. This parameter is a flag which means that if it is not included in the argument list, the value will be false. If you include this parameter, then its value will be true. For production environments, this value should remain false.
+    <div style="background-color: #f8f8f8; padding:16px;"><span style= "color:#005cc5; font-family: monospace; font-size: 0.85em;">--urls "http://localhost:5000"</span><span style= "color:#6a737d; font-family: monospace; font-size: 0.85em;"> //bind the process to the url http://localhost/ and port 5000</span></div>
 
-- **idlespan** - This is the number of seconds that a child compute.geometry processes should remain open between requests. The *default value is 1 hour*. When Rhino.Compute.exe does not receive requests to solve over a period of `idlespan` seconds, child compute.geometry.exe processes will shut down and stop incurring core hour billing. At some date in the future when a new request is received, the child processes will be relaunched which will cause a small delay on requests while the child processes are launching. Example usage: `--idlespan 1800` would tell Rhino.Compute to shutdown the child processes after 30 minutes (30 mins x 60 secs = 1800).
+- **childcount** - This parameter controls the number of child compute.geometry processes to manage. The default value is `4` which means that Rhino.Compute will spawn four child processes each of which can handle incoming requests.
 
-    If you change the `idelspan` value in the command line arguments for Rhino.Compute, you will also need to make a modification to the IIS configuration. This is because IIS also contains a setting to shut down Rhino.Compute if no new requests are received after a period of time. When Rhino.Compute gets shutdown, it will in turn shutdown any child processes. 
+    <div style="background-color: #f8f8f8; padding:16px;"><span style= "color:#005cc5; font-family: monospace; font-size: 0.85em;">--childcount 8</span><span style= "color:#6a737d; font-family: monospace;font-size: 0.85em;"> //launch eight child processes</span></div>
 
-    For example, lets say you change the `idlespan` value to 7,200 (2 hours). The bootstrap script sets the IIS `IdleTimeout` value to 65 minutes (slightly longer than the default `idlespan` value). After 65 minutes, IIS would shutdown Rhino.Compute, which would then shutdown all of its child processes much earlier than the expected 2 hour time limit. So, if you change the `idlespan` value, it is recommended that you also change the `IdleTimeout` value in the IIS settings.
+- **childof** - This is the process handle of parent process. Compute watches for the existence of this handle and will shut down when this process has exited. Since we are relying on IIS starting and stopping Rhino.Compute, you do not need this parameter when running in a production environment.
 
-    1. To do this, go back to the IIS Manager and click on the **Application Pools** item in the **Connections** pane on the left. 
+- **spawn-on-startup** - This flag determines whether to launch a child compute.geometry process when Rhino.Compute gets started. The default value is `false`. This parameter is a flag which means that if it is not included in the argument list, the value will be false. If you include this parameter, then its value will be true. For production environments, this value should remain false.
+
+    <div style="background-color: #f8f8f8; padding:16px;"><span style= "color:#005cc5; font-family: monospace; font-size: 0.85em;">--spawn-on-startup</span><span style= "color:#6a737d; font-family: monospace;font-size: 0.85em;"> //automatically start the child processes when Rhino.Compute is launched</span></div>
+
+- **idlespan** - This is the number of seconds that a child compute.geometry processes should remain open between requests. The *default value is 1 hour*. When Rhino.Compute.exe does not receive requests to solve over a period of `idlespan` seconds, child compute.geometry.exe processes will shut down and stop incurring core hour billing. At some date in the future when a new request is received, the child processes will be relaunched which will cause a small delay on requests while the child processes are launching.
+
+    <div style="background-color: #f8f8f8; padding:16px;"><span style= "color:#005cc5; font-family: monospace; font-size: 0.85em;">--idlespan 1800</span><span style= "color:#6a737d; font-family: monospace;font-size: 0.85em;"> //shut down child processes after 30 mins of inactivity (30 mins x 60 secs/min = 1800)</span></div> 
+
+    If you change the `idelspan` value in the command line arguments for Rhino.Compute, you will also need to make a modification to the IIS configuration. This is because IIS also contains a setting to shut down Rhino.Compute if no new requests are received after a period of time. When Rhino.Compute gets shutdown, it will in turn shutdown any child processes.
+
+    For instance, lets say you change the `idlespan` value to 7,200 (2 hours). The bootstrap script sets the IIS `IdleTimeout` value to 65 minutes (slightly longer than the default `idlespan` value). After 65 minutes, IIS would shutdown Rhino.Compute, which would then shutdown all of its child processes much earlier than the expected 2 hour time limit. So, if you change the `idlespan` value, it is recommended that you also change the `IdleTimeout` value in the IIS settings.
+
+    1. To do this, go back to the IIS Manager and click on the **Application Pools** item in the **Connections** pane on the left.
     
     1. In the center window click on the **RhinoComputeAppPool**.
 
@@ -251,7 +262,31 @@ of this handle and will shut down when this process has exited. Since we are rel
     1. Find the **Idle Time-out** row under the **Process Model** section and change the time out value to be slightly longer than the `idlespan` value you set in the command line arguments. Note: the `idlespan` value is in seconds while the `Idle Timeout` value is in minutes.
     {{< image url="/images/iis_idletimout.png" alt="/images/iis_idletimout.png" class="image_center" width="60%" >}}
 
-Once you have modified web.config file, **save** it and close the file. You can then go back to the IIS Manager and **Start** the web server by clicking on the web server node in the **Connections** panel on the left and clicking **Start** in the **Actions** pane on the right.
+{{< call-out "note" "Note" >}}
+New command line arguments were added to Rhino.Compute on November 5, 2025. To use them, make sure you’re running a version released on or after that date.<br>
+{{< /call-out >}}
+
+- **load-grasshopper** - This parameter determines whether the Grasshopper plugin is loaded when Rhino.Compute starts. By default, it’s set to `true` for backward compatibility—so if you don’t specify a value, Grasshopper will load automatically. Setting it to `false` can make startup faster, but you won't be able to solve Grasshopper definitions using Rhino.Compute. You’ll still be able to use standard SDK functions and any custom endpoints you’ve added through Rhino plugins (click [here](../custom-endpoints/) to learn more about extending Rhino.Compute with custom endpoints).
+
+    <div style="background-color: #f8f8f8; padding:16px;"><span style= "color:#005cc5; font-family: monospace; font-size: 0.85em;">--load-grasshopper false</span><span style= "color:#6a737d; font-family: monospace;font-size: 0.85em;"> //skip loading the Grasshopper plugin during startup</span></div>
+
+- **max-request-size** | **\<bytes\>** - This parameter sets the maximum allowable payload for any incoming request. The default value is `52428800 bytes` which is 50mb.
+
+    <div style="background-color: #f8f8f8; padding:16px;"><span style= "color:#005cc5; font-family: monospace; font-size: 0.85em;">--max-request-size 104857600</span><span style= "color:#6a737d; font-family: monospace;font-size: 0.85em;"> //would allow requests up to 100mb (100mb = 104857600 bytes)</span></div>
+
+- **apikey** - This parameter allows you to set an API key to be used for authentication. Normally, this is set as an environment variable, but this parameter will override that setting for a given session.
+
+    <div style="background-color: #f8f8f8; padding:16px;"><span style= "color:#005cc5; font-family: monospace; font-size: 0.85em;">--apikey "MyCustomAPIKey"</span><span style= "color:#6a737d; font-family: monospace;font-size: 0.85em;"> //defines an API key to be used for authentication</span></div>
+
+- **timeout** - This parameter lets you specify a timespan (in seconds) to wait before a request times out. The default value is `100 seconds`.
+
+    <div style="background-color: #f8f8f8; padding:16px;"><span style= "color:#005cc5; font-family: monospace; font-size: 0.85em;">--timeout 300</span><span style= "color:#6a737d; font-family: monospace;font-size: 0.85em;"> //wait 5 mins before a request times out (5 mins * 60 sec/min = 300 seconds)</span></div>
+
+- **create-headless-doc** - This parameter defines whether or not you want to create a new headless Rhino document upon receiving a new request. Each time a request is received, it checks whether this value is `true`. If it is, a new headless document is instantiated with tolerances and units determined by the input object. This feature is useful for third party plugins which may make calls to the Rhino Document to retrieve certain properties.
+
+    <div style="background-color: #f8f8f8; padding:16px;"><span style= "color:#005cc5; font-family: monospace; font-size: 0.85em;">--create-headless-doc true</span><span style= "color:#6a737d; font-family: monospace;font-size: 0.85em;"> //create a new headless Rhino document on each request</span></div>
+
+Once you have modified web.config file, **save** it and close the file. You can then go back to the IIS Manager and **start** the web server by clicking on the web server node in the **Connections** panel on the left and clicking **start** in the **Actions** pane on the right.
 
 ## Updating The Deployment
 If you have already Rhino.Compute set up on this machine, you may need to periodically update Rhino and/or the Rhino.Compute build files to the latest version. Follow the steps below to update these applications.

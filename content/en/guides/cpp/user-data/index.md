@@ -12,7 +12,7 @@ weight = 1
 override_last_modified = "2018-12-05T14:59:06Z"
 
 [admin]
-TODO = "downloadable samples should be moved to GitHub and linked"
+TODO = ""
 origin = "http://wiki.mcneel.com/developer/userdata"
 picky_sisters = ""
 state = ""
@@ -77,8 +77,6 @@ To attach object user data to the `CRhinoObject` itself, use `CRhinoObject::Atta
 
 The first sample, *CMyUserData1*, shows how to make a simple piece of user data that is not saved in *.3dm* files.  The second sample, *CMyUserData2*, shows how to make a piece of user data that is saved in *.3dm* files.
 
-You can download the source for the next two samples here: [{{< awesome "fas fa-download">}} ](/files/myuserdataexample.zip) [mcneelcodesigning.zip](/files/myuserdataexample.zip)
-
 ### CMyUserData1
 
 ```cpp
@@ -96,8 +94,6 @@ public:
 
   CMyUserData1();
   ~CMyUserData1();
-
-  //... download example for more details
 
   ON_wString m_my_string;
 };
@@ -118,10 +114,8 @@ CMyUserData1::CMyUserData1()
 {
   m_userdata_uuid = CMyUserData1::Id();
   m_application_uuid = MyPlugIn().PlugInID();
-  m_userdata_copycount = 1;  enable copying
+  m_userdata_copycount = 1;  // enable copying
 }
-
-// ... download example for more details
 ```
 
 Attaching object user data to a parent object is a simple matter...
@@ -142,9 +136,9 @@ else
   // the parent object already has this kind
   // of user data attached.
   RhinoApp().Print("User data not attached.\n");
-  delete pMyUserData;
+  delete pMyUserData; // Don't leak...
 }
-pMyUserData = 0;
+pMyUserData = nullptr;
 ```
 
 The user data's *UUID* is used to retrieve the user data from a parent object...
@@ -152,8 +146,8 @@ The user data's *UUID* is used to retrieve the user data from a parent object...
 ```cpp
 ON_Mesh* pMesh = ...;
 ON_UserData1* pUserData = pMesh->GetUserData(CMyUserData1::Id());
-CMyUserData1** pMyUserData1 = static_cast<CMyUserData1**>(pUserData);
-if ( pMyUserData1 )
+CMyUserData1* pMyUserData1 = static_cast<CMyUserData1*>(pUserData);
+if (pMyUserData1)
 {
   RhinoApp().Print("Got user data.\n"):
 }
@@ -178,24 +172,22 @@ class CMyUserData2 : public ON_UserData
 
 public:
 
- static ON_UUID Id();
+  static ON_UUID Id();
 
- CMyUserData2();
- ~CMyUserData2();
+  CMyUserData2();
+  ~CMyUserData2();
 
   // override virtual ON_UserData::Archive()
-  BOOL Archive() const;
+  bool Archive() const override;
 
   // override virtual ON_UserData::Write()
-  BOOL Write(ON_BinaryArchive& binary_archive) const;
+  bool Write(ON_BinaryArchive& binary_archive) const override;
 
   // override virtual ON_UserData::Read()
-  BOOL Read(ON_BinaryArchive& binary_archive);
+  bool Read(ON_BinaryArchive& binary_archive) override;
 
-  // ... download example for more details
-
- ON_wString m_my_string;
- ON_3dPoint m_my_point;
+  ON_wString m_my_string;
+  ON_3dPoint m_my_point;
 };
 ```
 
@@ -212,7 +204,7 @@ The construction code for `CMyUserData2` looks like:
 ```cpp
 ON_UUID CMyUserData2::Id()
 {
-  return CMyUserData2::m_CMyUserData2_class_id.Uuid();
+  return ON_CLASS_ID(CMyUserData2);
 }
 
 CMyUserData2::CMyUserData2()
@@ -222,23 +214,21 @@ CMyUserData2::CMyUserData2()
   m_userdata_copycount = 1;  // enable copying
 
   // initialize your data members here
-  m_my_point.Set(0.0,0.0,0.0);
+  m_my_point.Set(0.0, 0.0, 0.0);
 }
 ```
 
 The `CMyUserData2::Archive()`, `CMyUserData2::Read()`, `CMyUserData2::Write()` functions look something like this...
 
 ```cpp
-BOOL CMyUserData2::Archive() const
+bool CMyUserData2::Archive() const
 {
   // If false is returned, nothing will be saved in 3dm archives.
   return true;
 }
 
-BOOL CMyUserData2::Write(ON_BinaryArchive& binary_archive) const
+bool CMyUserData2::Write(ON_BinaryArchive& binary_archive) const
 {
-  // ... download example for more details about adding version support
-
   int minor_version = 0;
   bool rc = binary_archive.BeginWrite3dmChunk(
        TCODE_ANONYMOUS_CHUNK,
@@ -261,16 +251,14 @@ BOOL CMyUserData2::Write(ON_BinaryArchive& binary_archive) const
     break;
   }
 
-  if ( !binary_archive.EndWrite3dmChunk() )
-   rc = false;
+  if (!binary_archive.EndWrite3dmChunk())
+    rc = false;
 
   return rc;
 }
 
-BOOL CMyUserData2::Read(ON_BinaryArchive& binary_archive)
+bool CMyUserData2::Read(ON_BinaryArchive& binary_archive)
 {
-  // ... download example for more details about adding version support
-
   int major_version = 0;
   int minor_version = 0;
   bool rc = binary_archive.BeginRead3dmChunk(
@@ -317,10 +305,11 @@ The main reason you have to explicitly implement a copy constructor and `operato
 class CMyUserData3 : public ON_UserData
 {
   ON_OBJECT_DECLARE(CMyUserData3);
+
 public:
   static ON_UUID Id();
   static ON_UUID ApplicationId();
-  static CMyUserData3** Get(const ON_Object**);
+  static CMyUserData3* Get(const ON_Object*);
 
   CMyUserData3();
   ~CMyUserData3();
@@ -329,47 +318,38 @@ public:
 
   //...
 
-  int m_i_count;
-  int* m_i_array;
+  int m_i_count = 0;
+  int* m_i_array = 0;
 };
 
-ON_OBJECT_IMPLEMENT(CMyUserData3,
-                    ON_UserData,
-                    <<guidgen generated uuid here>>
-                    );
+ON_OBJECT_IMPLEMENT(CMyUserData3, ON_UserData, "0D8FA7AB-F8A4-...");
 
 ON_UUID CMyUserData3::Id()
 {
-  return CMyUserData3::m_CMyUserData3_class_id.Uuid();
+  return ON_CLASS_ID(CMyUserData3);
 }
 
 ON_UUID CMyUserData3::ApplicationId()
 {
-  return <<your plugin name>>().PlugInID();
+  return MyPlugin().PlugInID();
 }
 
-CMyUserData3** CMyUserData3::Get(const ON_Object** object)
+CMyUserData3* CMyUserData3::Get(const ON_Object* object)
 {
-  return CMyUserData3::Cast( (object != 0)
-                             ? object->GetUserData( CMyUserData3::Id() )
-                          );
+  return CMyUserData3::Cast(object ? object->GetUserData(CMyUserData3::Id()) : nullptr);
 }
 
 CMyUserData3::CMyUserData3()
 {
   m_userdata_uuid = CMyUserData3::Id();
   m_application_uuid = CMyUserData3::ApplicationId();
-  m_userdata_copycount = 1;
-
-  // Initialize your class's fields
-  m_i_count = 0;
-  m_i_array = 0;
+  m_userdata_copycount = 1; // enable copying
 }
 
 CMyUserData3::~CMyUserData3()
 {
   // virtual function
-  if ( 0 != m_i_array )
+  if (m_i_array)
     onfree(m_i_array);
 }
 ```
@@ -386,17 +366,17 @@ CMyUserData3::CMyUserData3(const CMyUserData3& src )
   // DO NOT SET OTHER ON_UserData fields
   // In particular, do not set m_userdata_copycount
 
-  Copy you class's fields
+  // Copy you class's fields
   m_i_count = 0;
   m_i_array = 0;
-  if( src.m_i_count > 0 && src.m_i_array != 0 )
+  if (src.m_i_count > 0 && src.m_i_array != 0)
   {
-    m_i_array = (int**)onmalloc(src.m_i_count**sizeof(m_i_array[0]));
-    if ( m_i_array != 0 )
+    m_i_array = (int*)onmalloc(src.m_i_count * sizeof(m_i_array[0]));
+    if (m_i_array != 0)
     {
-      memcpy( m_i_array,
-              src.m_i_array,
-              src.m_i_count*sizeof(m_i_array[0])
+      memcpy(m_i_array,
+             src.m_i_array,
+             src.m_i_count*sizeof(m_i_array[0])
            );
       m_i_count = src.m_i_count;
     }
@@ -409,13 +389,13 @@ When `operator=` is called, "this" has already been constructed and may already 
 ```cpp
 CMyUserData3& CMyUserData3::operator=(const CMyUserData3& src)
 {
-  if ( this != &src )
+  if (this != &src)
   {
    // Destroy your class's existing information
    // (Otherwise you will leak memory if "this"
    // has been used before.)
    m_i_count = 0;
-   if ( m_i_array != 0 )
+   if (m_i_array != 0)
    {
      onfree(m_i_array);
      m_i_array = 0
@@ -426,14 +406,14 @@ CMyUserData3& CMyUserData3::operator=(const CMyUserData3& src)
    ON_UserData::operator=(src);
 
    // Copy your class's fields
-   if( src.m_i_count > 0 && src.m_i_array != 0 )
+   if (src.m_i_count > 0 && src.m_i_array != 0)
    {
-     m_i_array = (int**)onmalloc(src.m_i_count**sizeof(m_i_array[0]));
-     if ( m_i_array != 0 )
+     m_i_array = (int*)onmalloc(src.m_i_count * sizeof(m_i_array[0]));
+     if (m_i_array != 0)
      {
-       memcpy( m_i_array,
-               src.m_i_array,
-               src.m_i_count*sizeof(m_i_array[0])
+       memcpy(m_i_array,
+              src.m_i_array,
+              src.m_i_count*sizeof(m_i_array[0])
              );
        m_i_count = src.m_i_count;
      }
@@ -448,6 +428,8 @@ CMyUserData3& CMyUserData3::operator=(const CMyUserData3& src)
 The best way to share user data between plugins is to have access to the plugins data controlled by a shared *DLL* - a *DLL* that is used by all interested plugins.  The user data class definitions and declarations, along with any helper functions used to access this data, are then added to and exported from this *DLL*.
 
 The easiest way to make *DLLs* for Rhino plugins is to simply run the *Rhino Plugin Wizard* from Visual Studio.  When the wizard finishes, simply delete the plugins object (*cpp* and *h* files) and the command file.  Then change the output file extension from *rhp* to *dll*.  Now, you have a *MFC DLL* that links with the Rhino C/C++ SDK.
+
+You can find a fully detailed example in the Rhino developper samples Github repository: [SampleSharedUserDataCoreLib](https://github.com/mcneel/rhino-developer-samples/tree/8/cpp/SampleSharedUserDataCoreLib), [SampleSharedUserData1](https://github.com/mcneel/rhino-developer-samples/tree/8/cpp/SampleSharedUserData1), [SampleSharedUserData2](https://github.com/mcneel/rhino-developer-samples/tree/8/cpp/SampleSharedUserData2)
 
 One important piece of information to keep in mind is that when you create a class derived from `ON_UserData` and you expect this data to be serialized in a *3dm* file, then you must assign the owning plugins's *UUID* to the `ON_UserData::m_application_uuid` data member.  This is how Rhino knows what plugins to load when it encounters plugin user data when reading a *3dm* file.  Note, it is not important what plugins's *UUID* is assigned to the user data because all of the plugins are going to dynamically load the *DLL* when they are loaded anyway.  But, some plugin must be "in charge."
 
@@ -479,16 +461,10 @@ CPlugInUserData::CPlugInUserData()
   m_userdata_copycount = 1; // enable copying
 
   // initialize your data members here
-  m_point.Set( 0.0, 0.0, 0.0 );
-  m_string = L;
+  m_point.Set(0.0, 0.0, 0.0);
+  m_string = L"";
 }
 ```
-
-This plugin sample contains two plugin projects and one *DLL* project:  
-
-[{{< awesome "fas fa-download">}} ](/files/testshareduserdata.zip) [testshareduserdata.zip](/files/testshareduserdata.zip)
-
-To load the sample, just download and extract into some folder, and then open *Test.sln* is Visual Studio.
 
 ## Related Topics
 

@@ -97,7 +97,7 @@ dialog.Padding = ed.Padding(8) # Comment out to remove Padding
 stack_layout = ef.StackLayout()
 stack_layout.Spacing = 8 # Comment out to remove Spacing
 
-stack_layout.Orientation = Orientation.Vertical
+stack_layout.Orientation = ef.Orientation.Vertical
 
 button_one = ef.Button()
 button_one.Text = "One"
@@ -210,7 +210,7 @@ rows = [
     cancel_button,
 ]
 
-dynamic_layout.AddSeparateRow(None, Size(8,8), True, False, rows)
+dynamic_layout.AddSeparateRow(None, ed.Size(8,8), True, False, rows)
 
 dialog.Content = dynamic_layout
 dialog.ShowModal(parent)

@@ -1,10 +1,16 @@
 <div class="platform-callout">    
     {{ if .Params.included_in.platforms }}
-        {{ if not (in .Params.included_in.platforms "Mac") }}
+        {{ if and (not (in .Params.included_in.platforms "Mac")) (not (in .Params.included_in.platforms "Linux")) }}
             <i class="fab fa-windows"></i>  <div class="platform-callout-text">{{ i18n "Windows-only" }}</div>
         {{ end }}
-        {{ if not (in .Params.included_in.platforms "Windows") }}
+        {{ if and (not (in .Params.included_in.platforms "Windows")) (not (in .Params.included_in.platforms "Linux")) }}
             <i class="fab fa-apple"></i>  <div class="platform-callout-text">{{ i18n "macOS-only" }}</div>
+        {{ end }}
+        {{ if and (not (in .Params.included_in.platforms "Windows")) (not (in .Params.included_in.platforms "Mac")) }}
+            <i class="fab fa-linux"></i>  <div class="platform-callout-text">{{ i18n "Linux-only" }}</div>
+        {{ end }}
+        {{ if and (not (in .Params.included_in.platforms "Mac")) (in .Params.included_in.platforms "Windows") (in .Params.included_in.platforms "Linux") }}
+            <i class="fab fa-windows"></i> <i class="fab fa-linux"></i>  <div class="platform-callout-text">{{ i18n "Windows-and-Linux" }}</div>
         {{ end }}
     {{ end }}
 </div>
