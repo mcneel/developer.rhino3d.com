@@ -47,9 +47,9 @@ Here's a list of conceptually significant differences in no particular order:
 - Vector based icons are now supported and recommended.
 - Documentation content is created using authoring tools provided by Grasshopper 2.
 
-## Plugin Assembly Layout
+## Plugin Assembly
 
-For a .NET assembly to be considered a valid Grasshopper Plugin it should use the `.RHP` extension and it must contain a public class with an empty constructor which inherits from the `Grasshopper2.Framework.Plugin` type:
+For a .NET assembly to be considered a valid Grasshopper Plugin it should use the `.RHP` extension and it must contain a public class with an empty constructor which inherits from the `Grasshopper2.Framework.Plugin` type, which is the equivalent of the `GH_AssemblyInfo` type in GH1:
 
 ```cs
 public sealed class MyPluginInfo : Plugin
@@ -72,7 +72,113 @@ public sealed class MyPluginInfo : Plugin
 }
 ```
 
-Without this, Grasshopper will not attempt to load your plugin.
-The `Nomen` type bundles together relevant values for describing and positioning objects within the Grasshopper 2 user interface. It is used everywhere when objects need a name, a descriptive info text, and tab and panel locations.
+The `Nomen` type bundles together relevant values for describing and positioning objects within the Grasshopper user interface. It is used everywhere when objects need a name, a descriptive info text, and tab+panel locations.
 
-## Component Class Layout
+### Loading Plugins
+
+[[[Package Manager, G2PluginViewer.]]]
+
+
+## Component Class
+
+The basic layout for a component class in GH2 closesly tracks with what you're probably used to, with just a few minor administrative changes. As mentioned above, the component identifier is not a property of the class, but rather an attribute of the `IoIdAttribute` type, provided by the `GrasshopperIO.dll` assembly. The `Nomen` provided in the constructor provides not just the name, info, tab and panel data, but also the `Slot` (placing the component in a specific slot within the panel) and the `Rank` (specifying the importance of the component, affecting sort order within the UI).
+
+Due to the nature of the (de)serialisation api in GH2, a second constructor is required which takes a single `IReader` argument and calls the base class constructor. This is an unfortunate complication caused by the fact that the GH2 deserialisation logic must work for immutable types. C# OOP rules do not allow for such a constraint, so you're just going to have to remember that this is important.
+
+```cs
+[IoId("88888888-4444-4444-4444-121212121212")]
+public sealed class Component2 : Component
+{
+  public Component2() : base(new Nomen("Component 2", "An example component.", "Tab", "Panel", 0, Rank.Normal)) { }
+  public Component2(IReader reader) : base(reader) { }
+
+  protected override void AddInputs(InputAdder inputs) { }
+  protected override void AddOutputs(OutputAdder outputs) { }
+  protected override void Process(IDataAccess access) { }
+}
+```
+
+For comparison's sake, below is an equivalent example component class as it would be written in GH1. Note that the three properties at the bottom have all disappeared in the GH2 code. The `Exposure` property is now part of the `Nomen` type, the `ComponentGuid` has morphed into an attribute, and the `Icon` property can be omitted altogether, provided that an icon file with the same name as the component class is available as an embedded resource in the plugin assembly.
+
+```cs
+public class Component1 : GH_Component
+{
+  public Component1() : base("Component 1", "Cp1", "An example component.", "Tab", "Panel") { }
+
+  protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager) { }
+  protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager) { }
+  protected override void SolveInstance(IGH_DataAccess DA) { }
+
+  public override GH_Exposure Exposure
+  {
+    get { return GH_Exposure.primary; }
+  }
+  public override Guid ComponentGuid
+  {
+    get { return new System.Guid("{88888888-4444-4444-4444-121212121212}"); }
+  }
+  protected override System.Drawing.Bitmap Icon
+  {
+    get { return ThisAssembly.Properties.Resources.Icon_Component1; }
+  }
+}
+```
+
+### Component Parameters
+
+[[[new types in GH2, settings, default values.]]]
+
+```cs
+protected override void AddInputs(InputAdder inputs)
+{
+  inputs.AddPlane("Plane", "Pl", "Plane for circle centre and orientation.").Set(Plane.WorldXY);
+  inputs.AddField("Radius", "Rd", "Radius for circle.").Set(1.0);
+}
+protected override void AddOutputs(OutputAdder outputs)
+{
+  outputs.AddCircle("Circle", "Cr", "Circle defined by the plane and radius.");
+}
+```
+
+[[[Access, Requirement]]]
+[[[Enums as type, UiName, UiInfo, UiTint]]]
+
+
+### Component Processing
+
+[[[Multithreading, access.Solution, access.Solution.Token, temporary data.]]]
+
+### Variable Parameter Layouts
+
+[[[No interface, CanCreateInput, DoCreateInput, VariableParameterMaintenance, ...]]]
+
+### Modular Components
+
+[[[Mention, but don't elaborate.]]]
+
+
+## Data Types
+
+### Structured Storage
+
+[[[Tree, Twig, Path, Pear]]]
+
+### Garden
+
+[[[One-stop-shop for creating trees and twigs.]]]
+
+### Meta Data
+
+[[[Design, immutability, StandardNames, transformable entries.]]]
+
+### Type Assistants
+
+[[[TypeAssistantServer, ITypeAssistant, ZupportsXXXXX properties.]]]
+
+### Curve and Surface Assistants
+
+[[[Basic ideology, CurveBroker, SurfaceBroker]]]
+
+### Type Conversion
+
+[[[ConversionServer, ConversionRepository, Inspecting conversions in the UI.]]]
