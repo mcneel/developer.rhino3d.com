@@ -65,10 +65,9 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino import *
-from Rhino.Commands import *
-from Rhino.Input import *
-from Rhino.DocObjects import *
+from Rhino.Commands import Result
+from Rhino.Input import RhinoGet
+from Rhino.DocObjects import ObjectType
 from scriptcontext import doc
 
 def RunCommand():
@@ -93,7 +92,7 @@ def RunCommand():
             if doc.Objects.Replace(obj_ref.ObjectId, nurbs_surface):
                 rc = Result.Success
 
-    print "Result: {0}".format(rc)
+    print("Result: {0}".format(rc))
     doc.Views.Redraw()
     return rc
 

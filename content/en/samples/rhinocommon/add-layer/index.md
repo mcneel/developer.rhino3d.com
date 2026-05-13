@@ -82,7 +82,7 @@ partial class Examples
 ```python
 import Rhino
 import scriptcontext
-import System.Guid, System.Drawing.Color
+import System.Drawing
 
 def AddLayer():
     # Cook up an unused layer name
@@ -98,26 +98,26 @@ def AddLayer():
         return gs.CommandResult()
 
     # Was a layer named entered?
-    layer_name = gs.StringResult().Trim()
+    layer_name = gs.StringResult().strip()
     if not layer_name:
-        print "Layer name cannot be blank."
+        print("Layer name cannot be blank.")
         return Rhino.Commands.Result.Cancel
 
     # Is the layer name valid?
     if not Rhino.DocObjects.Layer.IsValidName(layer_name):
-        print layer_name, "is not a valid layer name."
+        print(layer_name, "is not a valid layer name.")
         return Rhino.Commands.Result.Cancel
 
     # Does a layer with the same name already exist?
-    layer_index = scriptcontext.doc.Layers.Find(layer_name, True)
+    layer_index = scriptcontext.doc.Layers.FindByFullPath(layer_name, -1)
     if layer_index>=0:
-        print "A layer with the name", layer_name, "already exists."
+        print("A layer with the name", layer_name, "already exists.")
         return Rhino.Commands.Result.Cancel
 
     # Add a new layer to the document
     layer_index = scriptcontext.doc.Layers.Add(layer_name, System.Drawing.Color.Black)
     if layer_index<0:
-        print "Unable to add", layer_name, "layer."
+        print("Unable to add", layer_name, "layer.")
         return Rhino.Commands.Result.Failure
 
     return Rhino.Commands.Result.Success

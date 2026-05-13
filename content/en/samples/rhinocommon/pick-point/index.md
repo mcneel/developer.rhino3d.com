@@ -94,11 +94,11 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino import *
-from Rhino.DocObjects import *
-from Rhino.Commands import *
-from Rhino.Input import *
-from Rhino.Input.Custom import *
+from Rhino import RhinoApp
+from Rhino.DocObjects import ObjectType
+from Rhino.Commands import Result
+from Rhino.Input import RhinoGet
+from Rhino.Input.Custom import GetPoint, GetObject
 from scriptcontext import doc
 import rhinoscriptsyntax as rs
 
@@ -149,7 +149,7 @@ def RunCommand():
     # using RhinoScript syntax
     point_id = rs.GetObject("Select point", rs.filter.point)
     if point_id == None: return Result.Nothing
-    print "point id: {0}".format(point_id)
+    print("point id: {0}".format(point_id))
     rs.UnselectAllObjects()
 
     # selects multiple points that already exist
@@ -165,7 +165,7 @@ def RunCommand():
     # using the RhinoScript syntax
     point_ids = rs.GetObjects("Select point", rs.filter.point)
     for p_id in point_ids:
-        print "point id: {0}".format(p_id)
+        print("point id: {0}".format(p_id))
 
     return Result.Success
 

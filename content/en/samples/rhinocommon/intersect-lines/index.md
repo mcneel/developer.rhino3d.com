@@ -99,12 +99,12 @@ def IntersectLines():
     v1.Unitize()
 
     if v0.IsParallelTo(v1)!=0:
-        print "Selected lines are parallel."
+        print("Selected lines are parallel.")
         return Rhino.Commands.Result.Nothing
 
     rc, a, b = Rhino.Geometry.Intersect.Intersection.LineLine(line0, line1)
     if not rc:
-        print "No intersection found."
+        print("No intersection found.")
         return Rhino.Commands.Result.Nothing
 
     pt0 = line0.PointAt(a)

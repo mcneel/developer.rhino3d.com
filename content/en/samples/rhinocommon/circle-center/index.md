@@ -85,7 +85,7 @@ def CircleCenter():
         if not curve: continue
         rc, circle = curve.TryGetCircle( tolerance )
         if rc:
-            print "Circle", i+1, ": center = ", circle.Center
+            print("Circle", i+1, ": center = ", circle.Center)
     return Rhino.Commands.Result.Success
 
 if __name__=="__main__":

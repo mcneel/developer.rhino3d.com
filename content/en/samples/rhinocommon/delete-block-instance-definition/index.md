@@ -72,7 +72,7 @@ def Delete():
     blockName = rs.GetString("block to delete")
     instanceDefinition = doc.InstanceDefinitions.Find(blockName, True)
     if not instanceDefinition:
-        print "{0} block does not exist".format(blockName)
+        print("{0} block does not exist".format(blockName))
         return
 
     rs.DeleteBlock(blockName)

@@ -73,7 +73,7 @@ partial class Examples
 ```python
 import Rhino
 import scriptcontext
-import System.Drawing.Color
+import System.Drawing
 
 def AddChildLayer():
     # Get an existing layer
@@ -88,8 +88,8 @@ def AddChildLayer():
         return gs.CommandResult()
 
     # Was a layer named entered?
-    layer_name = gs.StringResult().Trim()
-    index = scriptcontext.doc.Layers.Find(layer_name, True)
+    layer_name = gs.StringResult().strip()
+    index = scriptcontext.doc.Layers.FindByFullPath(layer_name, -1)
     if index<0: return Rhino.Commands.Result.Cancel
 
     parent_layer = scriptcontext.doc.Layers[index]
@@ -103,7 +103,7 @@ def AddChildLayer():
 
     index = scriptcontext.doc.Layers.Add(childlayer)
     if index<0:
-        print "Unable to add", child_name, "layer."
+        print("Unable to add", child_name, "layer.")
         return Rhino.Commands.Result.Failure
     return Rhino.Commands.Result.Success
 

@@ -150,7 +150,7 @@ def RunCommand():
     pts.sort(reverse=True)
 
     if pts == []:
-        print "no Z for given X, Y"
+        print("no Z for given X, Y")
     else:
         rs.AddPoint(Point3d(x, y, pts[0][1]))
 

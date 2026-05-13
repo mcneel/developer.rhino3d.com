@@ -87,7 +87,7 @@ def RunCommand():
     instanceDefinitionCount = instanceDefinitions.Count
 
     if instanceDefinitionCount == 0:
-        print "Document contains no instance definitions."
+        print("Document contains no instance definitions.")
         return
 
     dump = Rhino.FileIO.TextLog()
@@ -96,7 +96,7 @@ def RunCommand():
     for i in range(0, instanceDefinitionCount):
         DumpInstanceDefinition(instanceDefinitions[i], dump, True)
 
-    print dump.ToString()
+    print(dump.ToString())
 
 def DumpInstanceDefinition(instanceDefinition, dump, isRoot):
     if instanceDefinition != None and not instanceDefinition.IsDeleted:

@@ -89,10 +89,11 @@ def HatchCurve():
     rc, hatch_name = Rhino.Input.RhinoGet.GetString("Hatch pattern", True, hatch_name)
     if rc!=Rhino.Commands.Result.Success or not hatch_name: return
 
-    index = scriptcontext.doc.HatchPatterns.Find(hatch_name, True)
-    if index<0:
-        print "Hatch pattern does not exist."
+    pattern = scriptcontext.doc.HatchPatterns.FindName(hatch_name)
+    if pattern is None:
+        print("Hatch pattern does not exist.")
         return
+    index = pattern.Index
 
     hatches = Rhino.Geometry.Hatch.Create(curve, index, 0, 1)
     for hatch in hatches:

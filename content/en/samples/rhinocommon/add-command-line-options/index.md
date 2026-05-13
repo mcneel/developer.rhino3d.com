@@ -112,11 +112,11 @@ def CommandLineOptions():
             point = gp.Point()
             scriptcontext.doc.Objects.AddPoint(point)
             scriptcontext.doc.Views.Redraw()
-            print "Command line option values are"
-            print " Integer =", intOption.CurrentValue
-            print " Double =", dblOption.CurrentValue
-            print " Boolean =", boolOption.CurrentValue
-            print " List =", listValues[listIndex]
+            print("Command line option values are")
+            print(" Integer =", intOption.CurrentValue)
+            print(" Double =", dblOption.CurrentValue)
+            print(" Boolean =", boolOption.CurrentValue)
+            print(" List =", listValues[listIndex])
         elif get_rc==Rhino.Input.GetResult.Option:
             if gp.OptionIndex()==opList:
                 listIndex = gp.Option().CurrentListOptionIndex

@@ -80,7 +80,7 @@ partial class Examples
 
 ```python
 import rhinoscriptsyntax as rs
-from scriptcontext import *
+from scriptcontext import doc
 import Rhino
 import System.Collections.Generic as scg
 import System as s
@@ -94,7 +94,7 @@ def RunCommand():
 
     result = rs.CurveBrepIntersect(crvid, srfid)
     if result == None:
-        print "no intersection"
+        print("no intersection")
         return
 
     curves, points = result

@@ -66,10 +66,8 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino import *
-from Rhino.Commands import *
-from Rhino.Input import *
-from Rhino.Input.Custom import *
+from Rhino.Commands import Result
+from Rhino.Input.Custom import GetString
 from scriptcontext import doc
 
 def RunCommand():
@@ -97,7 +95,7 @@ def RunCommand():
         if selected_view_name in [seq[0] for seq in non_active_views]:
             doc.Views.ActiveView = [seq[1] for seq in non_active_views if seq[0] == selected_view_name][0]
         else:
-            print "\"{0}\" is not a view name".format(selected_view_name)
+            print("\"{0}\" is not a view name".format(selected_view_name))
 
     return Result.Success
 

@@ -75,7 +75,7 @@ def showafterscript():
     #
     # check to see if the conduit has been created and is in sticky
     conduit = None
-    if scriptcontext.sticky.has_key("myconduit"):
+    if "myconduit" in scriptcontext.sticky:
         conduit = scriptcontext.sticky["myconduit"]
     else:
         # create a conduit and place it in sticky
@@ -85,8 +85,8 @@ def showafterscript():
     # Toggle enabled state for conduit. Every time this script is
     # run, it will turn the conduit on and off
     conduit.Enabled = not conduit.Enabled
-    if conduit.Enabled: print "conduit enabled"
-    else: print "conduit disabled"
+    if conduit.Enabled: print("conduit enabled")
+    else: print("conduit disabled")
     scriptcontext.doc.Views.Redraw()
 
 def showinscript():

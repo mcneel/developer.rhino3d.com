@@ -1,0 +1,22 @@
+name: Check samples
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - "content/en/samples/**/index.md"
+      - ".github/scripts/check_python_samples.py"
+      - ".github/workflows/check-samples.yml"
+
+jobs:
+  python-syntax:
+    name: Python sample syntax checker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Parse every Python code block
+        run: python .github/scripts/check_python_samples.py

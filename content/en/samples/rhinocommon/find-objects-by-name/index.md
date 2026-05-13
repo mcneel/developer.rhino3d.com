@@ -65,11 +65,11 @@ def FindObjectsByName():
     settings.NameFilter = name
     ids = [rhobj.Id for rhobj in scriptcontext.doc.Objects.GetObjectList(settings)]
     if not ids:
-        print "No objects with the name", name
+        print("No objects with the name", name)
         return Rhino.Commands.Result.Failure
     else:
-        print "Found", len(ids), "objects"
-        for id in ids: print "  ", id
+        print("Found", len(ids), "objects")
+        for id in ids: print("  ", id)
     return Rhino.Commands.Result.Success
 
 if __name__ == "__main__":

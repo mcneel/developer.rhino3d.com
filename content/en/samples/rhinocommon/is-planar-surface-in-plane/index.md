@@ -66,7 +66,7 @@ partial class Examples
 
 ```python
 import Rhino
-from Rhino.Geometry import *
+from Rhino.Geometry import Plane
 import rhinoscriptsyntax as rs
 from scriptcontext import doc
 import math
@@ -84,7 +84,7 @@ def RunCommand():
     plane = Plane(corners[0], corners[1], corners[2])
 
     is_or_isnt = "" if IsSurfaceInPlane(surface, plane, doc.ModelAbsoluteTolerance) else " not "
-    print "Surface is{0} in plane.".format(is_or_isnt)
+    print("Surface is{0} in plane.".format(is_or_isnt))
 
 def IsSurfaceInPlane(surface, plane, tolerance):
     if not surface.IsPlanar(tolerance):

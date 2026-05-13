@@ -143,7 +143,7 @@ def dynamic_array():
     if not obj: return
 
     dist = 1
-    if scriptcontext.sticky.has_key("dynamic_array_distance"):
+    if "dynamic_array_distance" in scriptcontext.sticky:
         dist = scriptcontext.sticky["dynamic_array_distance"]
     # This is a function that is called whenever the GetPoint's
     # DynamicDraw event occurs

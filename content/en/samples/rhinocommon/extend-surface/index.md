@@ -87,10 +87,10 @@ partial class Examples
 
 ```python
 import Rhino
-from Rhino.Input.Custom import *
-from Rhino.DocObjects import *
-from Rhino.Commands import *
-from Rhino.Geometry import *
+from Rhino.Input.Custom import GeometryAttributeFilter
+from Rhino.DocObjects import ObjectType
+from Rhino.Commands import Result
+from Rhino.Geometry import Brep, BrepTrimType
 from scriptcontext import doc
 
 def RunCommand():
@@ -105,7 +105,7 @@ def RunCommand():
 
     surface = obj_ref.Surface()
     if surface == None:
-        print "Unable to extend polysurfaces."
+        print("Unable to extend polysurfaces.")
         return Result.Failure
 
     brep = obj_ref.Brep()
@@ -116,7 +116,7 @@ def RunCommand():
         return Result.Failure
 
     if not brep.IsSurface:
-        print "Unable to extend trimmed surfaces."
+        print("Unable to extend trimmed surfaces.")
         return Result.Nothing
 
     curve = obj_ref.Curve()
@@ -126,7 +126,7 @@ def RunCommand():
         return Result.Failure
 
     if trim.TrimType == BrepTrimType.Seam:
-        print "Unable to extend surface at seam."
+        print("Unable to extend surface at seam.")
         return Result.Nothing
 
     extended_surface = surface.Extend(trim.IsoStatus, 5.0, True)

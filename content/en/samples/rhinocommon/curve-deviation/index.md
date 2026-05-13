@@ -158,8 +158,8 @@ def RunCommand():
     minDistPtA = crvA.PointAt(mina)
     minDistPtB = crvB.PointAt(minb)
 
-    print "Minimum deviation = {0}   pointA({1}, {2}, {3}), pointB({4}, {5}, {6})".format(mind, minDistPtA.X, minDistPtA.Y, minDistPtA.Z, minDistPtB.X, minDistPtB.Y, minDistPtB.Z)
-    print "Maximum deviation = {0}   pointA({1}, {2}, {3}), pointB({4}, {5}, {6})".format(maxd, maxDistPtA.X, maxDistPtA.Y, maxDistPtA.Z, maxDistPtB.X, maxDistPtB.Y, maxDistPtB.Z)
+    print("Minimum deviation = {0}   pointA({1}, {2}, {3}), pointB({4}, {5}, {6})".format(mind, minDistPtA.X, minDistPtA.Y, minDistPtA.Z, minDistPtB.X, minDistPtB.Y, minDistPtB.Z))
+    print("Maximum deviation = {0}   pointA({1}, {2}, {3}), pointB({4}, {5}, {6})".format(maxd, maxDistPtA.X, maxDistPtA.Y, maxDistPtA.Z, maxDistPtB.X, maxDistPtB.Y, maxDistPtB.Z))
 
 if __name__=="__main__":
     RunCommand()
