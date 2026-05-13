@@ -126,7 +126,21 @@ public class Component1 : GH_Component
 
 ### Component Parameters
 
-[[[new types in GH2, settings, default values.]]]
+Adding inputs and outputs to a component is, again, conceptually very similar in GH1 and GH2. Two methods need to be overridden, and the provided parameter manager is used to add new parameters in the order in which they appear on the component from top to bottom. Consider the following code snippet which was taken from the GH1 `Circle` component:
+
+```cs
+protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
+{
+  pManager.AddPlaneParameter("Plane", "P", "Base plane of circle", GH_ParamAccess.item, Plane.WorldXY);
+  pManager.AddNumberParameter("Radius", "R", "Radius of circle", GH_ParamAccess.item, 1.0);
+}
+protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
+{
+  pManager.AddCircleParameter("Circle", "C", "Resulting circle", GH_ParamAccess.item);
+}
+```
+
+Apart from some name changes, the equivalent code in the GH2 `Circle Radius` component is nearly identical:
 
 ```cs
 protected override void AddInputs(InputAdder inputs)
@@ -140,11 +154,58 @@ protected override void AddOutputs(OutputAdder outputs)
 }
 ```
 
-[[[Access, Requirement]]]
-[[[Enums as type, UiName, UiInfo, UiTint]]]
+The minor differences worth noting include:
+- The `Item` access is implied and need not be specified in GH2. Only inputs and outputs which operate on twigs or trees need to have their `Access` property set.
+- Default values are no longer part of the `AddX()` methods, but are instead assigned using the `Set(...)` method on the returned parameter. It is recommended that all non-optional inputs have default values assigned, so that a component works "out of the box" when dragged onto the canvas.
+- Inputs and outputs in GH2 ought to have two-letter user names instead of single letter names. This provides a much richer layer of information to the user.
+- The optionality of inputs is slightly more advanced in GH2. Instead of a single boolean value marking an input as `Optional`, GH2 provides a three state enumeration. Inputs by default have `Requirement.MustExist`, but have two different optional states called `Requirement.MayBeNull` and `Requirement.MayBeMissing`. The component `Process()` function will not run if the input values are not compliant with the set requirement.
+
+Major differences worth noting include:
+- GH2 provides a larger set of native types and parameters, which should be used whenever they make sense. More on this below.
+- GH2 provides some additional options on some parameters (such as Indexing on Integer parameters, or Type Filters on Numeric parameters) which ought to be set accordingly.
+- GH2 parameters all have a `Preset` system, although this is used almost exclusively on Integer parameters to represents enumerations.
+
+The table below lists some new parameter types and when to use them.
+
+| Types | Usage |
+|----:|:----|
+| `Field` | Fields (although technically not new) replace number or vector inputs when the component operates on an unambiguous location in space. Using the example code above, the circle radius input is no longer a number in GH2, but a field, since the circle centre point provides a clear location for the sampling of the field. |
+| `Angle` | The angle type replaces `Number` whenever that number was used to represent an angle. Angles can be represented in Degrees, Radians, Turns, Grades and Spreads, allowing the user to specify them in whatever unit makes the most sense to them.  |
+| `Numeric` | The Numeric parameter supports all native number types in GH2, including `System.Double`, `System.Int32`, `System.Numerics.BigInteger`, `System.Numerics.Complex` and `Grasshopper2.Types.Numeric.Angle`. Exactly which of these is allowed in any specific numeric parameter depends on the filter set by the developer. |
+| `Function` | Functions sometimes replace numbers if the context allows for that. |
+| `Gradient` | Gradients sometimes replace colours if the context allows for that. |
+| `Random` | The `Random` parameter replaces an integer seed input. GH2 supports a variety of random engines, and the `RandomEngine` type combines the choice of engine plus seed value into one. |
+
+The use of enumerations as inputs is fairly common in GH2 and has been implemented via the `Integer` parameter along with presets. The `inputs.AddEnum(...)` method provides a shorthand for adding an integer parameter with registered presets. For an `Enum` to be used in this way it must derive from the `System.Int32` type, and ideally it provides detailed descriptions and a unique colour for each value. Below is the partial code for the `DistanceMetric` enumeration, which for each item provides a `UiInfo()` and `UiTint()` attribute, and for some items even a `UiName()` attribute to override the name as shown in the GH2 UI.
+
+```cs
+public enum DistanceMetric
+{
+  [UiInfo("Linear distance measured along the geodesic."), UiTint("Green 8")]
+  Euclidean,
+  [UiInfo("Square of the Euclidean distance."), UiTint("Green 7")]
+  Quadrance,
+  [UiInfo("Sum of absolute differences per dimension, also called the 'L1-norm'."), UiTint("Green 6")]
+  Manhattan,
+  [UiInfo("Weighted version of Manhattan distance."), UiTint("Green 5")]
+  Canberra,
+  [UiInfo("One minus the Pearson correlation coefficient."), UiTint("Pink 8")]
+  Pearson,
+  [UiName("MAE"), UiInfo("Normalised Manhattan distance. I.e. Manhattan distance divided by the dimensionality."), UiTint("Blue 8")]
+  MeanAbsoluteError
+}
+```
+
+When properly set up this way, presets can be chosen using the `Preset Picker` object:
+
+{{< image url="/images/EnumAsPresetInGH2.png" alt="/images/EnumAsPresetInGH2.png" class="image_center" width="75%" >}}
 
 
 ### Component Processing
+
+The key difference to bear in mind when writing processing code for GH2 components is that every component iteration by default runs on multiple threads. Because of this, the code inside the `Process(IDataAccess access)` method must be thread-safe. If this is impossible, the threading state of the component must be downgraded from the default `ThreadingState.MultiThreaded` to `ThreadingState.SingleThreaded` via the `Component.Threading` property.
+
+Furthermore, if the processing code is liable to take longer than a few milliseconds, the component should pay attention to cancellation requests by occasionally calling `access.Solution.Token.ThrowIfCancellationRequested()`.
 
 [[[Multithreading, access.Solution, access.Solution.Token, temporary data.]]]
 
