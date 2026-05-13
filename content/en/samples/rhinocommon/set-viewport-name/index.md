@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Viewports and Views" ]
 description = "Demonstrates how to set a viewport's name or title."
 keywords = [ "setting", "viewports", "title" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Set Viewport Name"
 type = "samples/rhinocommon"
@@ -39,26 +39,6 @@ partial class Examples
 ```
 
 </div>
-
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function SetViewName(ByVal doc As RhinoDoc) As Result
-	Dim view = doc.Views.ActiveView
-	If view Is Nothing Then
-	  Return Result.Failure
-	End If
-
-	view.MainViewport.Name = "Facade"
-	Return Result.Success
-  End Function
-End Class
-```
-
-</div>
-
 
 <div class="codetab-content" id="py">
 
