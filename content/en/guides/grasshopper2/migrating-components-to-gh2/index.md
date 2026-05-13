@@ -207,7 +207,8 @@ The key difference to bear in mind when writing processing code for GH2 componen
 
 Furthermore, if the processing code is liable to take longer than a few milliseconds, the component should pay attention to cancellation requests by occasionally calling `access.Solution.Token.ThrowIfCancellationRequested()`.
 
-[[[Multithreading, access.Solution, access.Solution.Token, temporary data.]]]
+
+
 
 ### Variable Parameter Layouts
 
