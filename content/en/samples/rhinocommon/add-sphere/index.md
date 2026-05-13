@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to create a sphere from a center point and radius."
 keywords = [ "add", "sphere" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Add Sphere"
 type = "samples/rhinocommon"
@@ -43,27 +43,6 @@ partial class Examples
 
 </div>
 
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function AddSphere(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-	Dim center As New Rhino.Geometry.Point3d(0, 0, 0)
-	Const radius As Double = 5.0
-	Dim sphere As New Rhino.Geometry.Sphere(center, radius)
-	If doc.Objects.AddSphere(sphere) <> Guid.Empty Then
-	  doc.Views.Redraw()
-	  Return Rhino.Commands.Result.Success
-	End If
-	Return Rhino.Commands.Result.Failure
-  End Function
-End Class
-```
-
-</div>
-
-
 <div class="codetab-content" id="py">
 
 ```python
@@ -79,7 +58,6 @@ def AddSphere():
         scriptcontext.doc.Views.Redraw()
         return Rhino.Commands.Result.Success
     return Rhino.Commands.Result.Failure
-
 
 if __name__ == "__main__":
     AddSphere()

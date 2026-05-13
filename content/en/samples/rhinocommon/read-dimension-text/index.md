@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to read dimension text from an annotation object."
 keywords = [ "read", "dimension", "text" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Read Dimension Text"
 type = "samples/rhinocommon"
@@ -46,34 +46,6 @@ partial class Examples
 ```
 
 </div>
-
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function ReadDimensionText(ByVal doc As RhinoDoc) As Result
-	Dim go = New GetObject()
-	go.SetCommandPrompt("Select annotation")
-	go.GeometryFilter = ObjectType.Annotation
-	go.Get()
-	If go.CommandResult() <> Result.Success Then
-	  Return Result.Failure
-	End If
-	Dim annotation = TryCast(go.Object(0).Object(), AnnotationObjectBase)
-	If annotation Is Nothing Then
-	  Return Result.Failure
-	End If
-
-	RhinoApp.WriteLine("Annotation text = {0}", annotation.DisplayText)
-
-	Return Result.Success
-  End Function
-End Class
-```
-
-</div>
-
 
 <div class="codetab-content" id="py">
 

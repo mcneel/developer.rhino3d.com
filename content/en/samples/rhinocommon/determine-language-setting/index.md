@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to determine Rhino's language setting."
 keywords = [ "determine", "rhinos", "language", "setting" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Determine Language Setting"
 type = "samples/rhinocommon"
@@ -37,23 +37,6 @@ partial class Examples
 ```
 
 </div>
-
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function DetermineCurrentLanguage(ByVal doc As RhinoDoc) As Result
-	Dim language_id = Rhino.ApplicationSettings.AppearanceSettings.LanguageIdentifier
-	Dim culture = New System.Globalization.CultureInfo(language_id)
-	RhinoApp.WriteLine("The current language is {0}", culture.EnglishName)
-	Return Result.Success
-  End Function
-End Class
-```
-
-</div>
-
 
 <div class="codetab-content" id="py">
 

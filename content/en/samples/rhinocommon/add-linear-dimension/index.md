@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a linear dimension to a Rhino model."
 keywords = [ "add", "linear", "dimension" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Add Linear Dimension"
 type = "samples/rhinocommon"
@@ -44,29 +44,6 @@ partial class Examples
 
 </div>
 
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function AddLinearDimension(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-	Dim dimension As Rhino.Geometry.LinearDimension = Nothing
-	Dim rc As Rhino.Commands.Result = Rhino.Input.RhinoGet.GetLinearDimension(dimension)
-	If rc Is Rhino.Commands.Result.Success AndAlso dimension IsNot Nothing Then
-	  If doc.Objects.AddLinearDimension(dimension) = Guid.Empty Then
-		rc = Rhino.Commands.Result.Failure
-	  Else
-		doc.Views.Redraw()
-	  End If
-	End If
-	Return rc
-  End Function
-End Class
-```
-
-</div>
-
-
 <div class="codetab-content" id="py">
 
 ```python
@@ -82,7 +59,6 @@ def AddLinearDimension():
         else:
             scriptcontext.doc.Views.Redraw()
     return rc
-
 
 if __name__=="__main__":
     AddLinearDimension()

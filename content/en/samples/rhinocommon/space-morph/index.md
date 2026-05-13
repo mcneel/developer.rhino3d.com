@@ -332,16 +332,6 @@ partial class Examples
 
 </div>
 
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-' No VB.NET sample available
-```
-
-</div>
-
-
 <div class="codetab-content" id="py">
 
 ```python
@@ -605,4 +595,3 @@ if __name__ == "__main__":
 ```
 
 </div>
-

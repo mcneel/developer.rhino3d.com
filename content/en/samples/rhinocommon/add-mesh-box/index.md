@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to construct a mesh box from a Brep box."
 keywords = [ "add", "mesh" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Add Mesh Box"
 type = "samples/rhinocommon"
@@ -48,31 +48,6 @@ partial class Examples
 
 </div>
 
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function AddMeshBox(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-	Dim box As Rhino.Geometry.Box = Nothing
-	Dim rc As Rhino.Commands.Result = Rhino.Input.RhinoGet.GetBox(box)
-	If rc Is Rhino.Commands.Result.Success Then
-	  Dim mesh As Rhino.Geometry.Mesh = Rhino.Geometry.Mesh.CreateFromBox(box, 2, 2, 2)
-	  If Nothing IsNot mesh Then
-		doc.Objects.AddMesh(mesh)
-		doc.Views.Redraw()
-		Return Rhino.Commands.Result.Success
-	  End If
-	End If
-
-	Return Rhino.Commands.Result.Failure
-  End Function
-End Class
-```
-
-</div>
-
-
 <div class="codetab-content" id="py">
 
 ```python
@@ -96,4 +71,3 @@ if __name__ == "__main__":
 ```
 
 </div>
-

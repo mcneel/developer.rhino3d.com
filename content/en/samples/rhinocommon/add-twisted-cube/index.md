@@ -36,7 +36,6 @@ partial class Examples
   // Symbolic face index constants to make code more readable
   const int ABCD = 0, BCGF = 1, CDHG = 2, ADHE = 3, ABFE = 4, EFGH = 5;
 
-
   public static Rhino.Commands.Result AddTwistedCube(Rhino.RhinoDoc doc)
   {
     Point3d[] points = new Point3d[8];
@@ -356,16 +355,6 @@ partial class Examples
 ```
 
 </div>
-
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-' No VB.NET sample available
-```
-
-</div>
-
 
 <div class="codetab-content" id="py">
 
