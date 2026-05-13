@@ -144,7 +144,7 @@ def RunCommand():
             if doc.Objects.Replace(obj_ref.ObjectId, nurbs_surface):
                 rc = Result.Success
 
-    print "Result: {0}".format(rc)
+    print("Result: {0}".format(rc))
     doc.Views.Redraw()
     return rc
 

@@ -96,7 +96,7 @@ import Rhino
 import scriptcontext
 
 def ZoomToObject():
-    rc, rhobject = Rhino.Input.RhinoGet.GetOneObject("Select object to zoom", False, Rhino.DocObjects.ObjectType.None)
+    rc, rhobject = Rhino.Input.RhinoGet.GetOneObject("Select object to zoom", False, getattr(Rhino.DocObjects.ObjectType, "None"))
     if rc != Rhino.Commands.Result.Success: return
 
     obj = rhobject.Object()

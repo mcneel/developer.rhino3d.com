@@ -188,14 +188,14 @@ def RunCommand():
         return Result.Failure
 
     curves = List[Curve]([curve])
-    split-brep = brep_face.Split(curves, doc.ModelAbsoluteTolerance)
+    split_brep = brep_face.Split(curves, doc.ModelAbsoluteTolerance)
 
-    if split-brep == None:
+    if split_brep == None:
         RhinoApp.WriteLine("Unable to split surface.")
         return Result.Nothing
 
-    meshes = Mesh.CreateFromBrep(split-brep)
-    print type(meshes)
+    meshes = Mesh.CreateFromBrep(split_brep)
+    print(type(meshes))
     for mesh in meshes:
         bbox = mesh.GetBoundingBox(True)
         bbox_type = bbox.IsDegenerate(doc.ModelAbsoluteTolerance)

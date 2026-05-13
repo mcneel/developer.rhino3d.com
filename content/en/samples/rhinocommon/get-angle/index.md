@@ -116,7 +116,7 @@ def RunCommand():
 
     rc, angle_radians = RhinoGet.GetAngle("Second reference point", base_point, first_point, 0)
     if rc == Result.Success:
-        print "Angle = {0} degrees".format(RhinoMath.ToDegrees(angle_radians))
+        print("Angle = {0} degrees".format(RhinoMath.ToDegrees(angle_radians)))
     return rc
 
 if __name__ == "__main__":

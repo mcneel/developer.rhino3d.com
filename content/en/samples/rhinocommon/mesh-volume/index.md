@@ -127,7 +127,7 @@ def RunCommand():
                 volume += mass_properties.Volume
                 volume_error += mass_properties.VolumeError
 
-    print "Total volume = {0:f} (+/- {1:f})".format(volume, volume_error)
+    print("Total volume = {0:f} (+/- {1:f})".format(volume, volume_error))
     return Result.Success
 
 if __name__ == "__main__":

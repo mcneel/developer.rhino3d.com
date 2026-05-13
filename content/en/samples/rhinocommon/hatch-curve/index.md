@@ -142,7 +142,7 @@ def HatchCurve():
 
     index = scriptcontext.doc.HatchPatterns.Find(hatch_name, True)
     if index<0:
-        print "Hatch pattern does not exist."
+        print("Hatch pattern does not exist.")
         return
 
     hatches = Rhino.Geometry.Hatch.Create(curve, index, 0, 1)

@@ -206,7 +206,7 @@ def CreateBlock():
     # See if block name already exists
     existing_idef = scriptcontext.doc.InstanceDefinitions.Find(idef_name, True)
     if existing_idef:
-        print "Block definition", idef_name, "already exists"
+        print("Block definition", idef_name, "already exists")
         return Rhino.Commands.Result.Nothing
 
     # Gather all of the selected objects
@@ -218,7 +218,7 @@ def CreateBlock():
     idef_index = scriptcontext.doc.InstanceDefinitions.Add(idef_name, "", base_point, geometry, attributes)
 
     if idef_index<0:
-        print "Unable to create block definition", idef_name
+        print("Unable to create block definition", idef_name)
         return Rhino.Commands.Result.Failure
     return Rhino.Commands.Result.Failure
 

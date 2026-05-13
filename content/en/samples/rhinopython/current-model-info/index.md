@@ -65,7 +65,7 @@ def CurrentModelInfo():
     if fileexists:
         __PrintFileInformation(filespec)
     else:
-        print "Current model not found. Make sure the model has been saved to disk."
+        print("Current model not found. Make sure the model has been saved to disk.")
 
 
 ##########################################################################

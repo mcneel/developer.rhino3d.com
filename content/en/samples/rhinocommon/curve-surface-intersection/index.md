@@ -153,7 +153,7 @@ def RunCommand():
 
     result = rs.CurveBrepIntersect(crvid, srfid)
     if result == None:
-        print "no intersection"
+        print("no intersection")
         return
 
     curves, points = result

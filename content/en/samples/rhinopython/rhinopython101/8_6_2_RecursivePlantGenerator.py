@@ -27,7 +27,7 @@ prop_AngleMutation = 0
 
 def getsticky(name, default_value):
     name = "PlaneGenerator_"+name
-    if scriptcontext.sticky.has_key(name):
+    if name in scriptcontext.sticky:
         return scriptcontext.sticky[name]
     return default_value
 def setsticky(name, value):

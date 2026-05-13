@@ -149,7 +149,7 @@ def OnUndoFavoriteNumber(sender, e):
     e.Document.AddCustomUndoEvent("Favorite Number", OnUndoFavoriteNumber, current_value)
 
     old_value = e.Tag
-    print "Going back to your favorite =", old_value
+    print("Going back to your favorite =", old_value)
     scriptcontext.sticky["FavoriteNumber"]= old_value;
 
 
@@ -164,7 +164,7 @@ def TestCustomUndo():
     a little extra work
     """
     current_value = 0
-    if scriptcontext.sticky.has_key("FavoriteNumber"):
+    if "FavoriteNumber" in scriptcontext.sticky:
         current_value = scriptcontext.sticky["FavoriteNumber"]
     rc, new_value = Rhino.Input.RhinoGet.GetNumber("Favorite number", True, current_value)
     if rc!=Rhino.Commands.Result.Success: return

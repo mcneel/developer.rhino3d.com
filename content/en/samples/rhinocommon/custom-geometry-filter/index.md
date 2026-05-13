@@ -187,11 +187,11 @@ def RunCommand():
 
     # for curves - only a simple filter is needed
     if rs.GetObject("select curve", rs.filter.curve): #Rhino.DocObjects.ObjectType.Curve):
-        print "curve vas selected"
+        print("curve vas selected")
 
     # for circles with a radius of 10 - a custom geometry filter is needed
     if rs.GetObject("select circle with radius of 10", rs.filter.curve, False, False, circleWithRadiusOf10GeometryFilter):
-        print "circle with radius of 10 was selected"
+        print("circle with radius of 10 was selected")
 
 if __name__=="__main__":
     RunCommand()

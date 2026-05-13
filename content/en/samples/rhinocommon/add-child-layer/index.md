@@ -151,7 +151,7 @@ def AddChildLayer():
 
     index = scriptcontext.doc.Layers.Add(childlayer)
     if index<0:
-        print "Unable to add", child_name, "layer."
+        print("Unable to add", child_name, "layer.")
         return Rhino.Commands.Result.Failure
     return Rhino.Commands.Result.Success
 

@@ -123,7 +123,7 @@ def RunCommand():
     if point == Point3d.Unset:
         return Result.Nothing
 
-    curves = curve.Offset(point, Vector3d.ZAxis, 1.0, doc.ModelAbsoluteTolerance, CurveOffsetCornerStyle.None)
+    curves = curve.Offset(point, Vector3d.ZAxis, 1.0, doc.ModelAbsoluteTolerance, getattr(CurveOffsetCornerStyle, "None"))
 
     for offset_curve in curves:
         doc.Objects.AddCurve(offset_curve)

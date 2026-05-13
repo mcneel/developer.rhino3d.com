@@ -143,19 +143,19 @@ def RunCommand():
         return Result.Failure
 
     if curve.IsLinear() or curve.IsPolyline():
-        print "Curve must be non-linear."
+        print("Curve must be non-linear.")
         return Result.Nothing
 
     # in this example just deal with planar curves
     if not curve.IsPlanar():
-        print "Curve must be planar."
+        print("Curve must be planar.")
         return Result.Nothing
 
     point_on_curve = curve.PointAt(curve_parameter)
     curvature_vector = curve.CurvatureAt(curve_parameter)
     len = curvature_vector.Length
     if len < RhinoMath.SqrtEpsilon:
-        print "Curve is almost linear and therefore has no curvature."
+        print("Curve is almost linear and therefore has no curvature.")
         return Result.Nothing
 
     center = point_on_curve + (curvature_vector/(len*len))
