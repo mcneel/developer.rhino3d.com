@@ -153,12 +153,11 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino import *
-from Rhino.Commands import *
-from Rhino.Geometry import *
-from Rhino.Input import *
-from Rhino.DocObjects import *
-from Rhino.Input.Custom import *
+from Rhino.Commands import Result
+from Rhino.Geometry import Point3d, Curve
+from Rhino.Input import RhinoGet
+from Rhino.DocObjects import ObjectType
+from Rhino.Input.Custom import GetObject, GeometryAttributeFilter
 from scriptcontext import doc
 
 def RunCommand():

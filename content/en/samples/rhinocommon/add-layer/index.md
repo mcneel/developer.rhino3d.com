@@ -135,7 +135,7 @@ End Class
 ```python
 import Rhino
 import scriptcontext
-import System.Guid, System.Drawing.Color
+import System.Drawing
 
 def AddLayer():
     # Cook up an unused layer name
@@ -151,7 +151,7 @@ def AddLayer():
         return gs.CommandResult()
 
     # Was a layer named entered?
-    layer_name = gs.StringResult().Trim()
+    layer_name = gs.StringResult().strip()
     if not layer_name:
         print("Layer name cannot be blank.")
         return Rhino.Commands.Result.Cancel
@@ -162,7 +162,7 @@ def AddLayer():
         return Rhino.Commands.Result.Cancel
 
     # Does a layer with the same name already exist?
-    layer_index = scriptcontext.doc.Layers.Find(layer_name, True)
+    layer_index = scriptcontext.doc.Layers.FindByFullPath(layer_name, -1)
     if layer_index>=0:
         print("A layer with the name", layer_name, "already exists.")
         return Rhino.Commands.Result.Cancel

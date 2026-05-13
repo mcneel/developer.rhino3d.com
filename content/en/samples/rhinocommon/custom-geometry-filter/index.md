@@ -170,7 +170,6 @@ End Class
 
 ```python
 import rhinoscriptsyntax as rs
-from scriptcontext import *
 import Rhino
 
 def circleWithRadiusOf10GeometryFilter (rhObject, geometry, componentIndex):

@@ -94,9 +94,10 @@ End Class
 ```python
 import Rhino
 import scriptcontext
+import System
 
 def ZoomToObject():
-    rc, rhobject = Rhino.Input.RhinoGet.GetOneObject("Select object to zoom", False, getattr(Rhino.DocObjects.ObjectType, "None"))
+    rc, rhobject = Rhino.Input.RhinoGet.GetOneObject("Select object to zoom", False, System.Enum.Parse(Rhino.DocObjects.ObjectType, "None"))
     if rc != Rhino.Commands.Result.Success: return
 
     obj = rhobject.Object()

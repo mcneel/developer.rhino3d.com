@@ -121,7 +121,7 @@ End Class
 ```python
 import Rhino
 import scriptcontext
-import System.Drawing.Color
+import System.Drawing
 
 def AddChildLayer():
     # Get an existing layer
@@ -136,8 +136,8 @@ def AddChildLayer():
         return gs.CommandResult()
 
     # Was a layer named entered?
-    layer_name = gs.StringResult().Trim()
-    index = scriptcontext.doc.Layers.Find(layer_name, True)
+    layer_name = gs.StringResult().strip()
+    index = scriptcontext.doc.Layers.FindByFullPath(layer_name, -1)
     if index<0: return Rhino.Commands.Result.Cancel
 
     parent_layer = scriptcontext.doc.Layers[index]

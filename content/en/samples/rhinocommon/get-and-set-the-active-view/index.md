@@ -108,10 +108,8 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino import *
-from Rhino.Commands import *
-from Rhino.Input import *
-from Rhino.Input.Custom import *
+from Rhino.Commands import Result
+from Rhino.Input.Custom import GetString
 from scriptcontext import doc
 
 def RunCommand():

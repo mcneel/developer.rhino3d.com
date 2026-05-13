@@ -166,11 +166,12 @@ End Class
 ```python
 from scriptcontext import doc
 import rhinoscriptsyntax as rs
-from Rhino.Geometry import *
-from Rhino.Input import *
-from Rhino.DocObjects import *
-from Rhino.Commands import *
-from System.Collections.Generic import *
+from Rhino import RhinoApp
+from Rhino.Geometry import Curve, Mesh, Box
+from Rhino.Input import RhinoGet
+from Rhino.DocObjects import ObjectType
+from Rhino.Commands import Result
+from System.Collections.Generic import List
 
 def RunCommand():
     rc, obj_ref = RhinoGet.GetOneObject("Select surface to split", True, ObjectType.Surface)

@@ -110,7 +110,7 @@ End Class
 
 ```python
 import Rhino
-from Rhino.Geometry import *
+from Rhino.Geometry import Plane
 import rhinoscriptsyntax as rs
 from scriptcontext import doc
 import math

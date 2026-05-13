@@ -158,11 +158,11 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino import *
-from Rhino.DocObjects import *
-from Rhino.Commands import *
-from Rhino.Input import *
-from Rhino.Input.Custom import *
+from Rhino import RhinoApp
+from Rhino.DocObjects import ObjectType
+from Rhino.Commands import Result
+from Rhino.Input import RhinoGet
+from Rhino.Input.Custom import GetPoint, GetObject
 from scriptcontext import doc
 import rhinoscriptsyntax as rs
 

@@ -80,9 +80,7 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino import *
-from Rhino.Input.Custom import *
-from Rhino.Commands import *
+from Rhino.Commands import Result
 from scriptcontext import doc
 import rhinoscriptsyntax as rs
 

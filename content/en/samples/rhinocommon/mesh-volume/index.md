@@ -102,9 +102,9 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino.Input.Custom import *
+from Rhino.Input.Custom import GetObject, GeometryAttributeFilter
 from Rhino.DocObjects import ObjectType
-from Rhino.Geometry import *
+from Rhino.Geometry import VolumeMassProperties
 from Rhino.Commands import Result
 
 def RunCommand():

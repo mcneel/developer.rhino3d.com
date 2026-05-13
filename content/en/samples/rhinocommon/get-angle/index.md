@@ -93,10 +93,10 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino import *
-from Rhino.Commands import *
-from Rhino.Input import *
-from Rhino.Input.Custom import *
+from Rhino import RhinoMath
+from Rhino.Commands import Result
+from Rhino.Input import RhinoGet
+from Rhino.Input.Custom import GetPoint
 
 def RunCommand():
     gp = GetPoint()

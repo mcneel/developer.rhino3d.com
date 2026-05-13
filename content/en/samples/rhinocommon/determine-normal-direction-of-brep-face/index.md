@@ -125,7 +125,6 @@ End Class
 
 ```python
 import rhinoscriptsyntax as rs
-from scriptcontext import *
 import Rhino
 from Rhino.Commands import Result
 

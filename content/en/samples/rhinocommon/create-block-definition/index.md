@@ -220,7 +220,7 @@ def CreateBlock():
     if idef_index<0:
         print("Unable to create block definition", idef_name)
         return Rhino.Commands.Result.Failure
-    return Rhino.Commands.Result.Failure
+    return Rhino.Commands.Result.Success
 
 
 if __name__=="__main__":

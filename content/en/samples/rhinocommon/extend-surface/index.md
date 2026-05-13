@@ -149,10 +149,10 @@ End Class
 
 ```python
 import Rhino
-from Rhino.Input.Custom import *
-from Rhino.DocObjects import *
-from Rhino.Commands import *
-from Rhino.Geometry import *
+from Rhino.Input.Custom import GeometryAttributeFilter
+from Rhino.DocObjects import ObjectType
+from Rhino.Commands import Result
+from Rhino.Geometry import Brep, BrepTrimType
 from scriptcontext import doc
 
 def RunCommand():

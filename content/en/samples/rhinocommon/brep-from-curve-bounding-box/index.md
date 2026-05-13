@@ -90,7 +90,7 @@ End Class
 
 ```python
 import Rhino
-from Rhino.Geometry import *
+from Rhino.Geometry import Brep
 from Rhino.Commands import Result
 from Rhino.Input import RhinoGet
 from Rhino.DocObjects import ObjectType

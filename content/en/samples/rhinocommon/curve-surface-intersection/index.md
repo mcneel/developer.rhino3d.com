@@ -139,7 +139,7 @@ End Class
 
 ```python
 import rhinoscriptsyntax as rs
-from scriptcontext import *
+from scriptcontext import doc
 import Rhino
 import System.Collections.Generic as scg
 import System as s
