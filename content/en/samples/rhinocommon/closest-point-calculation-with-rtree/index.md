@@ -252,7 +252,7 @@ def RunSearch():
             sphere = Rhino.Geometry.Sphere(point, distance * 1.1)
             if tree.Search(sphere, SearchCallback, data):
                 rs.AddPoint(mesh.Vertices[data.Index])
-                print "Found point in {0} tests".format(data.HitCount)
+                print("Found point in {0} tests".format(data.HitCount))
 
 if __name__=="__main__":
     RunSearch()

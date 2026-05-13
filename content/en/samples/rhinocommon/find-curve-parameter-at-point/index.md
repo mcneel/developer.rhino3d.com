@@ -122,7 +122,7 @@ def RunCommand():
     p = gp.Point()
     b, cp = crv.ClosestPoint(p)
     if (b):
-        print "point: ({0},{1},{2}), parameter: {3}".format(p.X, p.Y, p.Z, cp)
+        print("point: ({0},{1},{2}), parameter: {3}".format(p.X, p.Y, p.Z, cp))
         scriptcontext.doc.Objects.AddPoint(p)
         scriptcontext.doc.Views.Redraw()
 

@@ -90,7 +90,7 @@ End Class
 
 ```python
 import Rhino
-from Rhino.Geometry import *
+from Rhino.Geometry import Brep
 from Rhino.Commands import Result
 from Rhino.Input import RhinoGet
 from Rhino.DocObjects import ObjectType
@@ -111,7 +111,7 @@ def RunCommand():
     bbox = curve.GetBoundingBox(plane)
 
     if bbox.IsDegenerate(doc.ModelAbsoluteTolerance) > 0:
-        print "the curve's bounding box is degenerate (flat) in at least one direction so a box cannot be created."
+        print("the curve's bounding box is degenerate (flat) in at least one direction so a box cannot be created.")
         return Result.Failure
 
     brep = Brep.CreateFromBox(bbox)
@@ -121,7 +121,8 @@ def RunCommand():
     return Result.Success
 
 if __name__ == "__main__":
-    print RunCommand()
+    print(RunCommand())
+
 ```
 
 </div>

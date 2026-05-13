@@ -101,13 +101,13 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino import *
-from Rhino.DocObjects import *
-from Rhino.Geometry import *
-from Rhino.Input import *
-from Rhino.Commands import *
+from Rhino.DocObjects import ObjectType
+from Rhino.Geometry import Point3d, Vector3d, CurveOffsetCornerStyle
+from Rhino.Input import RhinoGet
+from Rhino.Commands import Result
 from scriptcontext import doc
 import rhinoscriptsyntax as rs
+import System
 
 def RunCommand():
     rc, obj_ref = RhinoGet.GetOneObject("Select Curve", False, ObjectType.Curve)
@@ -123,7 +123,7 @@ def RunCommand():
     if point == Point3d.Unset:
         return Result.Nothing
 
-    curves = curve.Offset(point, Vector3d.ZAxis, 1.0, doc.ModelAbsoluteTolerance, CurveOffsetCornerStyle.None)
+    curves = curve.Offset(point, Vector3d.ZAxis, 1.0, doc.ModelAbsoluteTolerance, System.Enum.Parse(CurveOffsetCornerStyle, "None"))
 
     for offset_curve in curves:
         doc.Objects.AddCurve(offset_curve)

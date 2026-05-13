@@ -102,9 +102,9 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino.Input.Custom import *
+from Rhino.Input.Custom import GetObject, GeometryAttributeFilter
 from Rhino.DocObjects import ObjectType
-from Rhino.Geometry import *
+from Rhino.Geometry import VolumeMassProperties
 from Rhino.Commands import Result
 
 def RunCommand():
@@ -127,7 +127,7 @@ def RunCommand():
                 volume += mass_properties.Volume
                 volume_error += mass_properties.VolumeError
 
-    print "Total volume = {0:f} (+/- {1:f})".format(volume, volume_error)
+    print("Total volume = {0:f} (+/- {1:f})".format(volume, volume_error))
     return Result.Success
 
 if __name__ == "__main__":
