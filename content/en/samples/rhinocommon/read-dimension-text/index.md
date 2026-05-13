@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to read dimension text from an annotation object."
 keywords = [ "read", "dimension", "text" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#", "Python", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Read Dimension Text"
 type = "samples/rhinocommon"
@@ -78,7 +78,26 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+
+def RunCommand():
+    go = Rhino.Input.Custom.GetObject()
+    go.SetCommandPrompt("Select annotation")
+    go.GeometryFilter = Rhino.DocObjects.ObjectType.Annotation
+    go.Get()
+    if go.CommandResult() != Rhino.Commands.Result.Success:
+        return Rhino.Commands.Result.Failure
+    annotation = go.Object(0).Object()
+    if not isinstance(annotation, Rhino.DocObjects.AnnotationObjectBase):
+        return Rhino.Commands.Result.Failure
+
+    Rhino.RhinoApp.WriteLine("Annotation text = {0}", annotation.DisplayText)
+
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

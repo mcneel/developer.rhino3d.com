@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Adding Objects", "Viewports and Views" ]
 description = "Demonstrates how to generate a layout with a single detail view that zooms to a list of objects."
 keywords = [ "add", "layout", "with", "detail", "view" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#", "Python", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Add Layout"
 type = "samples/rhinocommon"
@@ -108,7 +108,35 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+
+def RunCommand():
+    sc.doc.PageUnitSystem = Rhino.UnitSystem.Millimeters
+    page_views = sc.doc.Views.GetPageViews()
+    page_number = 1 if page_views is None else len(page_views) + 1
+    pageview = sc.doc.Views.AddPageView("A0_{0}".format(page_number), 1189, 841)
+    if pageview is not None:
+        top_left = Rhino.Geometry.Point2d(20, 821)
+        bottom_right = Rhino.Geometry.Point2d(1169, 20)
+        detail = pageview.AddDetailView("ModelView", top_left, bottom_right, Rhino.Display.DefinedViewportProjection.Top)
+        if detail is not None:
+            pageview.SetActiveDetail(detail.Id)
+            detail.Viewport.ZoomExtents()
+            detail.DetailGeometry.IsProjectionLocked = True
+            detail.DetailGeometry.SetScale(1, sc.doc.ModelUnitSystem, 10, sc.doc.PageUnitSystem)
+            # Commit changes tells the document to replace the document's detail object
+            # with the modified one that we just adjusted
+            detail.CommitChanges()
+        pageview.SetPageAsActive()
+        sc.doc.Views.ActiveView = pageview
+        sc.doc.Views.Redraw()
+        return Rhino.Commands.Result.Success
+    return Rhino.Commands.Result.Failure
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

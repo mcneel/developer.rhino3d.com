@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Draw" ]
 description = "Demonstrates how to draw a shaded mesh using a display conduit."
 keywords = [ "conduit", "draw", "shaded", "mesh" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#", "Python", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Conduit Draw Shaded Mesh"
 type = "samples/rhinocommon"
@@ -157,7 +157,75 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import System
+import scriptcontext as sc
+
+
+class DrawShadedMeshConduit(Rhino.Display.DisplayConduit):
+    def __init__(self):
+        super().__init__()
+        self.Mesh = None
+
+    def CalculateBoundingBox(self, e):
+        if self.Mesh is not None:
+            bbox = self.Mesh.GetBoundingBox(False)
+            # Unites a bounding box with the current display bounding box in
+            # order to ensure dynamic objects in "box" are drawn.
+            e.IncludeBoundingBox(bbox)
+
+    def PostDrawObjects(self, e):
+        if self.Mesh is not None:
+            material = Rhino.Display.DisplayMaterial()
+            material.Diffuse = System.Drawing.Color.Blue
+            e.Display.DrawMeshShaded(self.Mesh, material)
+
+
+def MeshBox(x, y, z):
+    mesh = Rhino.Geometry.Mesh()
+    mesh.Vertices.Add(0, 0, 0)
+    mesh.Vertices.Add(x, 0, 0)
+    mesh.Vertices.Add(x, y, 0)
+    mesh.Vertices.Add(0, y, 0)
+    mesh.Vertices.Add(0, 0, z)
+    mesh.Vertices.Add(x, 0, z)
+    mesh.Vertices.Add(x, y, z)
+    mesh.Vertices.Add(0, y, z)
+    mesh.Faces.AddFace(3, 2, 1, 0)
+    mesh.Faces.AddFace(4, 5, 6, 7)
+    mesh.Faces.AddFace(0, 1, 5, 4)
+    mesh.Faces.AddFace(1, 2, 6, 5)
+    mesh.Faces.AddFace(2, 3, 7, 6)
+    mesh.Faces.AddFace(3, 0, 4, 7)
+    mesh.Normals.ComputeNormals()
+    mesh.Compact()
+    if mesh.IsValid:
+        return mesh
+    return None
+
+
+def RunCommand():
+    mesh = MeshBox(100, 500, 10)
+    if mesh is None:
+        return Rhino.Commands.Result.Failure
+
+    conduit = DrawShadedMeshConduit()
+    conduit.Mesh = mesh
+    conduit.Enabled = True
+    sc.doc.Views.Redraw()
+
+    output_string = ""
+    Rhino.Input.RhinoGet.GetString("Press <Enter> to continue", True, output_string)
+
+    conduit.Enabled = False
+    sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

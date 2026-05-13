@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to run a custom python script from within a command."
 keywords = [ "custom", "python" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#", "Python", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Custom Python"
 type = "samples/rhinocommon"
@@ -164,7 +164,21 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+# This sample demonstrates how to host the Python script engine from a C#
+# command and run a custom Python script against a "fake" RhinoDoc. From
+# Python you do not need to host the engine: you can simply call the
+# rhinoscriptsyntax API directly, which is the script the C# host above
+# would execute.
+import rhinoscriptsyntax as rs
+
+
+def RunCommand():
+    rs.AddLine((0, 0, 0), (10, 10, 10))
+
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

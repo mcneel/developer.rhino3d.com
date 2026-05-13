@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to find the status of a file that contains an instance (block) definition."
 keywords = [ "instance", "archive", "file", "status" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#", "Python", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Instance Archive File Status"
 type = "samples/rhinocommon"
@@ -111,7 +111,37 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+
+def RunCommand():
+    for i in range(sc.doc.InstanceDefinitions.Count):
+        iDef = sc.doc.InstanceDefinitions[i]
+        iDefStatus = iDef.ArchiveFileStatus
+
+        status = "Unknown"
+        if iDefStatus == Rhino.DocObjects.InstanceDefinitionArchiveFileStatus.NotALinkedInstanceDefinition:
+            status = "not a linked instance definition."
+        elif iDefStatus == Rhino.DocObjects.InstanceDefinitionArchiveFileStatus.LinkedFileNotReadable:
+            status = "archive file is not readable."
+        elif iDefStatus == Rhino.DocObjects.InstanceDefinitionArchiveFileStatus.LinkedFileNotFound:
+            status = "archive file cannot be found."
+        elif iDefStatus == Rhino.DocObjects.InstanceDefinitionArchiveFileStatus.LinkedFileIsUpToDate:
+            status = "archive file is up-to-date."
+        elif iDefStatus == Rhino.DocObjects.InstanceDefinitionArchiveFileStatus.LinkedFileIsNewer:
+            status = "archive file is newer."
+        elif iDefStatus == Rhino.DocObjects.InstanceDefinitionArchiveFileStatus.LinkedFileIsOlder:
+            status = "archive file is older."
+        elif iDefStatus == Rhino.DocObjects.InstanceDefinitionArchiveFileStatus.LinkedFileIsDifferent:
+            status = "archive file is different."
+
+        Rhino.RhinoApp.WriteLine("{0} - {1}", iDef.Name, status)
+
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

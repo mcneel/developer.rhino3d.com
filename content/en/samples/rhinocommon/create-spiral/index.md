@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to create a spiral object from an axis and a radius point."
 keywords = [ "create", "spiral" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#", "Python", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Create Spiral"
 type = "samples/rhinocommon"
@@ -126,7 +126,48 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+
+def GetSpirial0():
+    axisStart = Rhino.Geometry.Point3d(0, 0, 0)
+    axisDir = Rhino.Geometry.Vector3d(1, 0, 0)
+    radiusPoint = Rhino.Geometry.Point3d(0, 1, 0)
+
+    return Rhino.Geometry.NurbsCurve.CreateSpiral(axisStart, axisDir, radiusPoint, 1, 10, 1.0, 1.0)
+
+def GetSpirial1():
+    railStart = Rhino.Geometry.Point3d(0, 0, 0)
+    railEnd = Rhino.Geometry.Point3d(0, 0, 10)
+    railCurve = Rhino.Geometry.LineCurve(railStart, railEnd)
+
+    t0 = railCurve.Domain.Min
+    t1 = railCurve.Domain.Max
+
+    radiusPoint = Rhino.Geometry.Point3d(1, 0, 0)
+
+    return Rhino.Geometry.NurbsCurve.CreateSpiral(railCurve, t0, t1, radiusPoint, 1, 10, 1.0, 1.0, 12)
+
+def RunCommand():
+    axisStart = Rhino.Geometry.Point3d(0, 0, 0)
+    axisDir = Rhino.Geometry.Vector3d(1, 0, 0)
+    radiusPoint = Rhino.Geometry.Point3d(0, 1, 0)
+
+    curve0 = GetSpirial0()
+    if curve0 is not None:
+        sc.doc.Objects.AddCurve(curve0)
+
+    curve1 = GetSpirial1()
+    if curve1 is not None:
+        sc.doc.Objects.AddCurve(curve1)
+
+    sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to set the RhinoPageView width and height dimensions."
 keywords = [ "rhinopageview", "width", "height" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#", "Python", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Set RhinoPageView Width and Height"
 type = "samples/rhinocommon"
@@ -90,7 +90,34 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+
+def RunCommand():
+    width = 1189
+    height = 841
+    page_views = sc.doc.Views.GetPageViews()
+    page_number = 1 if page_views is None else len(page_views) + 1
+    pageview = sc.doc.Views.AddPageView("A0_{0}".format(page_number), width, height)
+
+    new_width = width
+    rc, new_width = Rhino.Input.RhinoGet.GetInteger("new width", False, new_width)
+    if rc != Rhino.Commands.Result.Success or new_width <= 0:
+        return rc
+
+    new_height = height
+    rc, new_height = Rhino.Input.RhinoGet.GetInteger("new height", False, new_height)
+    if rc != Rhino.Commands.Result.Success or new_height <= 0:
+        return rc
+
+    pageview.PageWidth = new_width
+    pageview.PageHeight = new_height
+    sc.doc.Views.Redraw()
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

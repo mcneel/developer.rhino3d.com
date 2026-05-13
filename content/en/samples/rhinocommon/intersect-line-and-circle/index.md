@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to find the intersection point(s) of a circle and a line."
 keywords = [ "intersecting", "line", "with", "circle" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#", "Python", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Intersecting Line and Circle"
 type = "samples/rhinocommon"
@@ -120,7 +120,40 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+
+def RunCommand():
+    rc, circle = Rhino.Input.RhinoGet.GetCircle()
+    if rc != Rhino.Commands.Result.Success:
+        return rc
+    sc.doc.Objects.AddCircle(circle)
+    sc.doc.Views.Redraw()
+
+    rc, line = Rhino.Input.RhinoGet.GetLine()
+    if rc != Rhino.Commands.Result.Success:
+        return rc
+    sc.doc.Objects.AddLine(line)
+    sc.doc.Views.Redraw()
+
+    line_circle_intersect, t1, point1, t2, point2 = Rhino.Geometry.Intersect.Intersection.LineCircle(line, circle)
+    msg = ""
+    if line_circle_intersect == getattr(Rhino.Geometry.Intersect.LineCircleIntersection, "None"):
+        msg = "line does not intersect circle"
+    elif line_circle_intersect == Rhino.Geometry.Intersect.LineCircleIntersection.Single:
+        msg = "line intersects circle at point ({0})".format(point1)
+        sc.doc.Objects.AddPoint(point1)
+    elif line_circle_intersect == Rhino.Geometry.Intersect.LineCircleIntersection.Multiple:
+        msg = "line intersects circle at points ({0}) and ({1})".format(point1, point2)
+        sc.doc.Objects.AddPoint(point1)
+        sc.doc.Objects.AddPoint(point2)
+    Rhino.RhinoApp.WriteLine(msg)
+    sc.doc.Views.Redraw()
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

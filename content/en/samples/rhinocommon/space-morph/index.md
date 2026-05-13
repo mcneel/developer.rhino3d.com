@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to construct the Twist, Bend, Taper, Maelstrom, Stretch, Sporph, Flow, and Splop space morphs."
 keywords = [ "space", "morph" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Space Morph"
 type = "samples/rhinocommon"
@@ -345,7 +345,263 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+
+def SpaceMorphObjectFilter():
+    return (Rhino.DocObjects.ObjectType.Point |
+            Rhino.DocObjects.ObjectType.PointSet |
+            Rhino.DocObjects.ObjectType.Curve |
+            Rhino.DocObjects.ObjectType.Surface |
+            Rhino.DocObjects.ObjectType.PolysrfFilter |
+            Rhino.DocObjects.ObjectType.Mesh |
+            Rhino.DocObjects.ObjectType.Grip |
+            Rhino.DocObjects.ObjectType.Cage)
+
+def Twist():
+    filter = SpaceMorphObjectFilter()
+    rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select object to twist", False, filter)
+    if rc != Rhino.Commands.Result.Success or objref is None:
+        return rc
+
+    rc, axis = Rhino.Input.RhinoGet.GetLine()
+    if rc != Rhino.Commands.Result.Success or axis is None:
+        return rc
+
+    angle = Rhino.RhinoMath.UnsetValue
+    rc, angle = Rhino.Input.RhinoGet.GetNumber("Twist angle in degrees", False, angle)
+    if rc != Rhino.Commands.Result.Success or not Rhino.RhinoMath.IsValidDouble(angle):
+        return rc
+
+    morph = Rhino.Geometry.Morphs.TwistSpaceMorph()
+    morph.TwistAxis = axis
+    morph.TwistAngleRadians = Rhino.RhinoMath.ToRadians(angle)
+
+    geom = objref.Geometry().Duplicate()
+    if morph.Morph(geom):
+        sc.doc.Objects.Add(geom)
+        sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+def Bend():
+    filter = SpaceMorphObjectFilter()
+    rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select object to bend", False, filter)
+    if rc != Rhino.Commands.Result.Success or objref is None:
+        return rc
+
+    rc, axis = Rhino.Input.RhinoGet.GetLine()
+    if rc != Rhino.Commands.Result.Success or axis is None:
+        return rc
+
+    rc, point = Rhino.Input.RhinoGet.GetPoint("Point to bend through", False)
+    if rc != Rhino.Commands.Result.Success or not point.IsValid:
+        return rc
+
+    morph = Rhino.Geometry.Morphs.BendSpaceMorph(axis.From, axis.To, point, True, False)
+
+    geom = objref.Geometry().Duplicate()
+    if morph.Morph(geom):
+        sc.doc.Objects.Add(geom)
+        sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+def Taper():
+    filter = SpaceMorphObjectFilter()
+    rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select object to taper", False, filter)
+    if rc != Rhino.Commands.Result.Success or objref is None:
+        return rc
+
+    rc, axis = Rhino.Input.RhinoGet.GetLine()
+    if rc != Rhino.Commands.Result.Success or axis is None:
+        return rc
+
+    radius0 = Rhino.RhinoMath.UnsetValue
+    rc, radius0 = Rhino.Input.RhinoGet.GetNumber("Starting radius", False, radius0)
+    if rc != Rhino.Commands.Result.Success or not Rhino.RhinoMath.IsValidDouble(radius0):
+        return rc
+
+    radius1 = Rhino.RhinoMath.UnsetValue
+    rc, radius1 = Rhino.Input.RhinoGet.GetNumber("Ending radius", False, radius1)
+    if rc != Rhino.Commands.Result.Success or not Rhino.RhinoMath.IsValidDouble(radius1):
+        return rc
+
+    morph = Rhino.Geometry.Morphs.TaperSpaceMorph(axis.From, axis.To, radius0, radius1, False, False)
+
+    geom = objref.Geometry().Duplicate()
+    if morph.Morph(geom):
+        sc.doc.Objects.Add(geom)
+        sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+def Maelstrom():
+    filter = SpaceMorphObjectFilter()
+    rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select object to maelstrom", False, filter)
+    if rc != Rhino.Commands.Result.Success or objref is None:
+        return rc
+
+    plane = sc.doc.Views.ActiveView.ActiveViewport.ConstructionPlane()
+
+    radius0 = Rhino.RhinoMath.UnsetValue
+    rc, radius0 = Rhino.Input.RhinoGet.GetNumber("Starting radius", False, radius0)
+    if rc != Rhino.Commands.Result.Success or not Rhino.RhinoMath.IsValidDouble(radius0):
+        return rc
+
+    radius1 = Rhino.RhinoMath.UnsetValue
+    rc, radius1 = Rhino.Input.RhinoGet.GetNumber("Ending radius", False, radius1)
+    if rc != Rhino.Commands.Result.Success or not Rhino.RhinoMath.IsValidDouble(radius1):
+        return rc
+
+    angle = Rhino.RhinoMath.UnsetValue
+    rc, angle = Rhino.Input.RhinoGet.GetNumber("Twist angle in degrees", False, angle)
+    if rc != Rhino.Commands.Result.Success or not Rhino.RhinoMath.IsValidDouble(angle):
+        return rc
+
+    morph = Rhino.Geometry.Morphs.MaelstromSpaceMorph(plane, radius0, radius1, Rhino.RhinoMath.ToRadians(angle))
+
+    geom = objref.Geometry().Duplicate()
+    if morph.Morph(geom):
+        sc.doc.Objects.Add(geom)
+        sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+def Stretch():
+    filter = SpaceMorphObjectFilter()
+    rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select object to stretch", False, filter)
+    if rc != Rhino.Commands.Result.Success or objref is None:
+        return rc
+
+    plane = sc.doc.Views.ActiveView.ActiveViewport.ConstructionPlane()
+
+    rc, axis = Rhino.Input.RhinoGet.GetLine()
+    if rc != Rhino.Commands.Result.Success or axis is None:
+        return rc
+
+    morph = Rhino.Geometry.Morphs.StretchSpaceMorph(axis.From, axis.To, axis.Length * 1.5)
+
+    geom = objref.Geometry().Duplicate()
+    if morph.Morph(geom):
+        sc.doc.Objects.Add(geom)
+        sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+def Sporph():
+    filter = SpaceMorphObjectFilter()
+    rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select object to sporph", False, filter)
+    if rc != Rhino.Commands.Result.Success or objref is None:
+        return rc
+
+    go0 = Rhino.Input.Custom.GetObject()
+    go0.SetCommandPrompt("Source surface")
+    go0.GeometryFilter = Rhino.DocObjects.ObjectType.Surface
+    go0.SubObjectSelect = False
+    go0.EnablePreSelect(False, True)
+    go0.DeselectAllBeforePostSelect = False
+    go0.Get()
+    if go0.CommandResult() != Rhino.Commands.Result.Success:
+        return go0.CommandResult()
+
+    srf0_ref = go0.Object(0)
+
+    go1 = Rhino.Input.Custom.GetObject()
+    go1.SetCommandPrompt("Source surface")
+    go1.GeometryFilter = Rhino.DocObjects.ObjectType.Surface
+    go1.SubObjectSelect = False
+    go1.EnablePreSelect(False, True)
+    go1.DeselectAllBeforePostSelect = False
+    go1.Get()
+    if go1.CommandResult() != Rhino.Commands.Result.Success:
+        return go1.CommandResult()
+
+    srf1_ref = go1.Object(0)
+
+    morph = Rhino.Geometry.Morphs.SporphSpaceMorph(srf0_ref.Surface(), srf1_ref.Surface())
+
+    geom = objref.Geometry().Duplicate()
+    if morph.Morph(geom):
+        sc.doc.Objects.Add(geom)
+        sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+def Flow():
+    filter = SpaceMorphObjectFilter()
+    rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select object to flow", False, filter)
+    if rc != Rhino.Commands.Result.Success or objref is None:
+        return rc
+
+    go0 = Rhino.Input.Custom.GetObject()
+    go0.SetCommandPrompt("Source curve")
+    go0.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
+    go0.SubObjectSelect = False
+    go0.EnablePreSelect(False, True)
+    go0.DeselectAllBeforePostSelect = False
+    go0.Get()
+    if go0.CommandResult() != Rhino.Commands.Result.Success:
+        return go0.CommandResult()
+
+    crv0_ref = go0.Object(0)
+
+    go1 = Rhino.Input.Custom.GetObject()
+    go1.SetCommandPrompt("Source curve")
+    go1.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
+    go1.SubObjectSelect = False
+    go1.EnablePreSelect(False, True)
+    go1.DeselectAllBeforePostSelect = False
+    go1.Get()
+    if go1.CommandResult() != Rhino.Commands.Result.Success:
+        return go1.CommandResult()
+
+    crv1_ref = go1.Object(0)
+
+    morph = Rhino.Geometry.Morphs.FlowSpaceMorph(crv0_ref.Curve(), crv1_ref.Curve(), False)
+
+    geom = objref.Geometry().Duplicate()
+    if morph.Morph(geom):
+        sc.doc.Objects.Add(geom)
+        sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+def Splop():
+    filter = SpaceMorphObjectFilter()
+    rc, objref = Rhino.Input.RhinoGet.GetOneObject("Select object to splop", False, filter)
+    if rc != Rhino.Commands.Result.Success or objref is None:
+        return rc
+
+    plane = sc.doc.Views.ActiveView.ActiveViewport.ConstructionPlane()
+
+    go = Rhino.Input.Custom.GetObject()
+    go.SetCommandPrompt("Surface to splop on")
+    go.GeometryFilter = Rhino.DocObjects.ObjectType.Surface
+    go.SubObjectSelect = False
+    go.EnablePreSelect(False, True)
+    go.DeselectAllBeforePostSelect = False
+    go.Get()
+    if go.CommandResult() != Rhino.Commands.Result.Success:
+        return go.CommandResult()
+
+    srfref = go.Object(0)
+
+    rc, u, v = srfref.SurfaceParameter()
+
+    uv = Rhino.Geometry.Point2d(u, v)
+
+    morph = Rhino.Geometry.Morphs.SplopSpaceMorph(plane, srfref.Surface(), uv)
+    geom = objref.Geometry().Duplicate()
+    if morph.Morph(geom):
+        sc.doc.Objects.Add(geom)
+        sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    Twist()
 ```
 
 </div>

@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to show a surface's direction using a display conduit."
 keywords = [ "show", "surface", "direction" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#", "Python", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Show Surface Direction"
 type = "samples/rhinocommon"
@@ -331,7 +331,124 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+
+class TestSurfaceDirConduit(Rhino.Display.DisplayConduit):
+    def __init__(self, brep):
+        super().__init__()
+        self.m_brep = brep
+        self.Flip = False
+
+        SURFACE_ARROW_COUNT = 5
+        face_count = self.m_brep.Faces.Count
+        self.m_points = []
+        self.m_normals = []
+
+        for i in range(face_count):
+            face = brep.Faces[i]
+            loop = face.OuterLoop
+            if loop is None:
+                continue
+
+            udomain = face.Domain(0)
+            vdomain = face.Domain(1)
+            loop_bbox = loop.GetBoundingBox(True)
+            if loop_bbox.IsValid:
+                domain = Rhino.Geometry.Interval(loop_bbox.Min.X, loop_bbox.Max.X)
+                domain = Rhino.Geometry.Interval.FromIntersection(domain, udomain)
+                if domain.IsIncreasing:
+                    udomain = domain
+                domain = Rhino.Geometry.Interval(loop_bbox.Min.Y, loop_bbox.Max.Y)
+                domain = Rhino.Geometry.Interval.FromIntersection(domain, vdomain)
+                if domain.IsIncreasing:
+                    vdomain = domain
+
+            bUntrimmed = face.IsSurface
+            bRev = face.OrientationIsReversed
+            u = 0.0
+            while u < SURFACE_ARROW_COUNT:
+                d = u / (SURFACE_ARROW_COUNT - 1.0)
+                s = udomain.ParameterAt(d)
+
+                intervals = face.TrimAwareIsoIntervals(1, s)
+                if bUntrimmed or len(intervals) > 0:
+                    v = 0.0
+                    while v < SURFACE_ARROW_COUNT:
+                        d = v / (SURFACE_ARROW_COUNT - 1.0)
+                        t = vdomain.ParameterAt(d)
+                        bAdd = bUntrimmed
+                        k = 0
+                        while not bAdd and k < len(intervals):
+                            if intervals[k].IncludesParameter(t):
+                                bAdd = True
+                            k += 1
+                        if bAdd:
+                            pt = face.PointAt(s, t)
+                            vec = face.NormalAt(s, t)
+                            self.m_points.append(pt)
+                            if bRev:
+                                vec.Reverse()
+                            self.m_normals.append(vec)
+                        v += 1.0
+                u += 1.0
+
+    def DrawOverlay(self, e):
+        if len(self.m_points) > 0:
+            color = Rhino.ApplicationSettings.AppearanceSettings.TrackingColor
+            for i in range(len(self.m_points)):
+                if i % 100 == 0 and e.Display.InterruptDrawing():
+                    break
+
+                pt = self.m_points[i]
+                dir = self.m_normals[i]
+                if self.Flip:
+                    dir.Reverse()
+                e.Display.DrawDirectionArrow(pt, dir, color)
+
+def RunCommand():
+    rc, objref = Rhino.Input.RhinoGet.GetOneObject(
+        "Select surface or polysurface for direction display",
+        False,
+        Rhino.DocObjects.ObjectType.Surface | Rhino.DocObjects.ObjectType.PolysrfFilter)
+    if rc != Rhino.Commands.Result.Success:
+        return rc
+
+    brep = objref.Brep()
+    if brep is None:
+        return Rhino.Commands.Result.Failure
+
+    bIsSolid = brep.IsSolid
+
+    conduit = TestSurfaceDirConduit(brep)
+    conduit.Enabled = True
+    sc.doc.Views.Redraw()
+
+    gf = Rhino.Input.Custom.GetOption()
+    gf.SetCommandPrompt("Press enter when done")
+    gf.AcceptNothing(True)
+    if not bIsSolid:
+        gf.AddOption("Flip")
+
+    while True:
+        res = gf.Get()
+        if res == Rhino.Input.GetResult.Option:
+            conduit.Flip = not conduit.Flip
+            sc.doc.Views.Redraw()
+            continue
+        if res == Rhino.Input.GetResult.Nothing:
+            if not bIsSolid and conduit.Flip:
+                brep.Flip()
+                sc.doc.Objects.Replace(objref, brep)
+        break
+
+    conduit.Enabled = False
+    sc.doc.Views.Redraw()
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

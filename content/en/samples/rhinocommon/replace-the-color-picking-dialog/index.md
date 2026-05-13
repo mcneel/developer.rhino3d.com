@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to replace Rhino's color picking dialog."
 keywords = [ "replace", "rhinos", "color", "picking", "dialog" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#", "Python", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Replace the Color Picking Dialog"
 type = "samples/rhinocommon"
@@ -76,7 +76,26 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import Eto.Forms as forms
+import System
+
+m_dlg = None
+
+def OnSetCustomColorDialog(sender, e):
+    global m_dlg
+    m_dlg = forms.ColorDialog()
+    if m_dlg.ShowDialog(None) == forms.DialogResult.Ok:
+        c = m_dlg.Color
+        e.SelectedColor = System.Drawing.Color.FromArgb(c.Ab, c.Rb, c.Gb, c.Bb)
+
+def RunCommand():
+    Rhino.UI.Dialogs.SetCustomColorDialog(OnSetCustomColorDialog)
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

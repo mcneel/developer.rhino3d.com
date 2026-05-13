@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to tween two curves."
 keywords = [ "tween", "curve" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#", "Python", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Tween Curve"
 type = "samples/rhinocommon"
@@ -96,7 +96,32 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+
+def RunCommand():
+    go = Rhino.Input.Custom.GetObject()
+    go.SetCommandPrompt("Select two curves")
+    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
+    go.GetMultiple(2, 2)
+    if go.CommandResult() != Rhino.Commands.Result.Success:
+        return go.CommandResult()
+
+    curve0 = go.Object(0).Curve()
+    curve1 = go.Object(1).Curve()
+    if curve0 is not None and curve1 is not None:
+        curves = Rhino.Geometry.Curve.CreateTweenCurves(curve0, curve1, 1, sc.doc.ModelAbsoluteTolerance)
+        if curves is not None:
+            for curve in curves:
+                sc.doc.Objects.AddCurve(curve)
+            sc.doc.Views.Redraw()
+            return Rhino.Commands.Result.Success
+
+    return Rhino.Commands.Result.Failure
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

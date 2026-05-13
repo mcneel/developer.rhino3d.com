@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to set the color of user-specified objects."
 keywords = [ "object", "color" ]
-languages = [ "C#", "VB" ]
+languages = [ "C#", "Python", "VB" ]
 sdk = [ "RhinoCommon" ]
 title = "Object Color"
 type = "samples/rhinocommon"
@@ -105,7 +105,37 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import System
+import scriptcontext as sc
+
+def RunCommand():
+    rc, objRefs = Rhino.Input.RhinoGet.GetMultipleObjects("Select objects to change color", False, Rhino.DocObjects.ObjectType.AnyObject)
+    if rc != Rhino.Commands.Result.Success:
+        return rc
+
+    color = System.Drawing.Color.Black
+    b, color = Rhino.UI.Dialogs.ShowColorDialog(color)
+    if not b:
+        return Rhino.Commands.Result.Cancel
+
+    for i in range(objRefs.Length):
+        obj = objRefs[i].Object()
+        if obj is None or obj.IsReference:
+            continue
+
+        if color != obj.Attributes.ObjectColor:
+            obj.Attributes.ObjectColor = color
+            obj.Attributes.ColorSource = Rhino.DocObjects.ObjectColorSource.ColorFromObject
+            obj.CommitChanges()
+
+    sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>
