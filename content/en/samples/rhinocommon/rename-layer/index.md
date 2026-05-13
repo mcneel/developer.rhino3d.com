@@ -170,15 +170,15 @@ def rename():
 
     layerToRename = None
     if len(matchingLayers) == 0:
-        print "Layer \"{0}\" does not exist.".format(layerName)
+        print("Layer \"{0}\" does not exist.".format(layerName))
         return
     if len(matchingLayers) == 1:
         layerToRename = matchingLayers[0]
     elif len(matchingLayers) > 1:
         i = 0;
         for layer in matchingLayers:
-            print "({0}) {1}".format(
-                i+1, matchingLayers[i].FullPath.replace("::", "->"))
+            print("({0}) {1}".format(
+                i+1, matchingLayers[i].FullPath.replace("::", "->")))
             i += 1
 
         selectedLayer = rs.GetInteger(

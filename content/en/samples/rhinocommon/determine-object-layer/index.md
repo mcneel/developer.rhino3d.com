@@ -85,7 +85,7 @@ def DetermineObjectLayer():
     if rhobj is None: return Rhino.Commands.Result.Failure
     index = rhobj.Attributes.LayerIndex
     name = scriptcontext.doc.Layers[index].Name
-    print "The selected object's layer is '", name, "'"
+    print("The selected object's layer is '", name, "'")
     return Rhino.Commands.Result.Success
 
 if __name__ == "__main__":

@@ -166,11 +166,12 @@ End Class
 ```python
 from scriptcontext import doc
 import rhinoscriptsyntax as rs
-from Rhino.Geometry import *
-from Rhino.Input import *
-from Rhino.DocObjects import *
-from Rhino.Commands import *
-from System.Collections.Generic import *
+from Rhino import RhinoApp
+from Rhino.Geometry import Curve, Mesh, Box
+from Rhino.Input import RhinoGet
+from Rhino.DocObjects import ObjectType
+from Rhino.Commands import Result
+from System.Collections.Generic import List
 
 def RunCommand():
     rc, obj_ref = RhinoGet.GetOneObject("Select surface to split", True, ObjectType.Surface)
@@ -188,14 +189,14 @@ def RunCommand():
         return Result.Failure
 
     curves = List[Curve]([curve])
-    split-brep = brep_face.Split(curves, doc.ModelAbsoluteTolerance)
+    split_brep = brep_face.Split(curves, doc.ModelAbsoluteTolerance)
 
-    if split-brep == None:
+    if split_brep == None:
         RhinoApp.WriteLine("Unable to split surface.")
         return Result.Nothing
 
-    meshes = Mesh.CreateFromBrep(split-brep)
-    print type(meshes)
+    meshes = Mesh.CreateFromBrep(split_brep)
+    print(type(meshes))
     for mesh in meshes:
         bbox = mesh.GetBoundingBox(True)
         bbox_type = bbox.IsDegenerate(doc.ModelAbsoluteTolerance)

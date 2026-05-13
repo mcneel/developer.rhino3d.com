@@ -135,7 +135,7 @@ def ObjectDisplayMode():
 
     attr = objref.Object().Attributes
     if attr.HasDisplayModeOverride(viewportId):
-        print "Removing display mode override from object"
+        print("Removing display mode override from object")
         attr.RemoveDisplayModeOverride(viewportId)
     else:
         modes = Rhino.Display.DisplayModeDescription.GetDisplayModes()

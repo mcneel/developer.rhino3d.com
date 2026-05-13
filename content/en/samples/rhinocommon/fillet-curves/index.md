@@ -153,12 +153,11 @@ End Class
 <div class="codetab-content" id="py">
 
 ```python
-from Rhino import *
-from Rhino.Commands import *
-from Rhino.Geometry import *
-from Rhino.Input import *
-from Rhino.DocObjects import *
-from Rhino.Input.Custom import *
+from Rhino.Commands import Result
+from Rhino.Geometry import Point3d, Curve
+from Rhino.Input import RhinoGet
+from Rhino.DocObjects import ObjectType
+from Rhino.Input.Custom import GetObject, GeometryAttributeFilter
 from scriptcontext import doc
 
 def RunCommand():
@@ -196,11 +195,11 @@ def RunCommand():
     rc, radius = RhinoGet.GetNumber("fillet radius", False, radius)
     if rc != Result.Success: return rc
 
-    fillet-curve = Curve.CreateFilletCurves(curve1, curve1_point_near_end, curve2, curve2_point_near_end, radius, True, True, True, doc.ModelAbsoluteTolerance, doc.ModelAngleToleranceDegrees)
-    if fillet-curve == None or fillet-curve.Length != 1:
+    fillet_curve = Curve.CreateFilletCurves(curve1, curve1_point_near_end, curve2, curve2_point_near_end, radius, True, True, True, doc.ModelAbsoluteTolerance, doc.ModelAngleToleranceDegrees)
+    if fillet_curve == None or fillet_curve.Length != 1:
         return Result.Failure
 
-    doc.Objects.AddCurve(fillet-curve[0])
+    doc.Objects.AddCurve(fillet_curve[0])
     doc.Views.Redraw()
     return rc
 

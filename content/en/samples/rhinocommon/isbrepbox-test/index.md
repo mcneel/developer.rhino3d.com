@@ -196,8 +196,8 @@ if __name__=="__main__":
     if rc==Rhino.Commands.Result.Success:
         brep = objref.Brep()
         if brep:
-            if IsBrepBox(brep): print "Yes it is a box"
-            else: print "No it is not a box"
+            if IsBrepBox(brep): print("Yes it is a box")
+            else: print("No it is not a box")
 ```
 
 </div>

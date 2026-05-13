@@ -125,7 +125,6 @@ End Class
 
 ```python
 import rhinoscriptsyntax as rs
-from scriptcontext import *
 import Rhino
 from Rhino.Commands import Result
 
@@ -161,8 +160,8 @@ def RunCommand():
         dir = face.NormalAt(u, v)
         if face.OrientationIsReversed:
             dir.Reverse()
-        print "Surface normal at uv({0:f},{1:f}) = ({2:f},{3:f},{4:f})".format(
-            u, v, dir.X, dir.Y, dir.Z)
+        print("Surface normal at uv({0:f},{1:f}) = ({2:f},{3:f},{4:f})".format(
+            u, v, dir.X, dir.Y, dir.Z))
 
 if __name__ == "__main__":
     RunCommand()
