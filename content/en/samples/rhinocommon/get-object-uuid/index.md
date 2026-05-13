@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to get the UUID (sometimes called GUID) of a Rhino object."
 keywords = [ "objects", "uuid" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Get Object UUID"
 type = "samples/rhinocommon"
@@ -43,31 +43,6 @@ partial class Examples
 ```
 
 </div>
-
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function GetUUID(ByVal doc As RhinoDoc) As Result
-	Dim obj_ref As ObjRef = Nothing
-	Dim rc = RhinoGet.GetOneObject("Select object", False, ObjectType.AnyObject, obj_ref)
-	If rc IsNot Result.Success Then
-	  Return rc
-	End If
-	If obj_ref Is Nothing Then
-	  Return Result.Nothing
-	End If
-
-	Dim uuid = obj_ref.ObjectId
-	RhinoApp.WriteLine("The object's unique id is {0}", uuid.ToString())
-	Return Result.Success
-  End Function
-End Class
-```
-
-</div>
-
 
 <div class="codetab-content" id="py">
 

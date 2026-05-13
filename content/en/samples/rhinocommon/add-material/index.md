@@ -4,7 +4,7 @@ authors = [ "steve", "andy", "john.croudy" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to add a material to the document and apply it to a sphere object."
 keywords = [ "add", "basic", "material" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Add Material"
 type = "samples/rhinocommon"
@@ -67,42 +67,6 @@ partial class Examples
 ```
 
 </div>
-
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function AddMaterial(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-
-    Dim index As Integer = doc.Materials.Add()
-    Dim mat As Rhino.DocObjects.Material = New Rhino.DocObjects.Material
-    mat.DiffuseColor = System.Drawing.Color.Chocolate
-    mat.SpecularColor = System.Drawing.Color.CadetBlue
-
-    Dim texture As Rhino.DocObjects.Texture = New Rhino.DocObjects.Texture()
-    texture.FileName = "my_image.jpg"
-    mat.SetTexture(texture, TextureType.Bitmap)
-
-    Dim rm As Rhino.Render.RenderMaterial = Rhino.Render.RenderMaterial.CreateBasicMaterial(mat, doc)
-    doc.RenderMaterials.Add(rm)
-
-    Dim sp As New Rhino.Geometry.Sphere(Rhino.Geometry.Plane.WorldXY, 5)
-    Dim id As Guid = doc.Objects.AddSphere(sp)
-    Dim rhinoObject As RhinoObject = doc.Objects.Find(id)
-    rhinoObject.RenderMaterial = rm
-    rhinoObject.CommitChanges()
-
-    doc.Views.Redraw()
-
-    Return Rhino.Commands.Result.Success
-
-  End Function
-End Class
-```
-
-</div>
-
 
 <div class="codetab-content" id="py">
 

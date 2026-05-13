@@ -332,16 +332,6 @@ partial class Examples
 
 </div>
 
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-' No VB.NET sample available
-```
-
-</div>
-
-
 <div class="codetab-content" id="py">
 
 ```python
@@ -349,4 +339,3 @@ partial class Examples
 ```
 
 </div>
-

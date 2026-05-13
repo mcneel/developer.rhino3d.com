@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to offset curves to one side or another by a distance."
 keywords = [ "offset", "curve" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Offset Curve"
 type = "samples/rhinocommon"
@@ -57,46 +57,6 @@ partial class Examples
 ```
 
 </div>
-
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function OffsetCurve(ByVal doc As RhinoDoc) As Result
-	Dim obj_ref As ObjRef = Nothing
-	Dim rs = RhinoGet.GetOneObject("Select Curve", False, ObjectType.Curve, obj_ref)
-	If rs IsNot Result.Success Then
-	  Return rs
-	End If
-	Dim curve = obj_ref.Curve()
-	If curve Is Nothing Then
-	  Return Result.Nothing
-	End If
-
-	Dim point As Point3d = Nothing
-	rs = RhinoGet.GetPoint("Select Side", False, point)
-	If rs IsNot Result.Success Then
-	  Return rs
-	End If
-	If point Is Point3d.Unset Then
-	  Return Result.Nothing
-	End If
-
-	Dim curves = curve.Offset(point, Vector3d.ZAxis, 1.0, doc.ModelAbsoluteTolerance, CurveOffsetCornerStyle.None)
-
-	For Each offset-curve In curves
-	  doc.Objects.AddCurve(offset-curve)
-	Next offset-curve
-
-	doc.Views.Redraw()
-	Return Result.Success
-  End Function
-End Class
-```
-
-</div>
-
 
 <div class="codetab-content" id="py">
 

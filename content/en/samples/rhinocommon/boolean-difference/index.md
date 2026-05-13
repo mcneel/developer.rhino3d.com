@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to perform a boolean difference operation on two selected polysurfaces."
 keywords = [ "boolean", "difference" ]
-languages = [ "C#", "Python", "VB" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Boolean Difference"
 type = "samples/rhinocommon"
@@ -73,63 +73,6 @@ partial class Examples
 ```
 
 </div>
-
-
-<div class="codetab-content" id="vb">
-
-```vbnet
-Partial Friend Class Examples
-  Public Shared Function BooleanDifference(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
-	Dim objrefs() As Rhino.DocObjects.ObjRef = Nothing
-	Dim rc As Result = Rhino.Input.RhinoGet.GetMultipleObjects("Select first set of polysurfaces", False, Rhino.DocObjects.ObjectType.PolysrfFilter, objrefs)
-	If rc IsNot Rhino.Commands.Result.Success Then
-	  Return rc
-	End If
-	If objrefs Is Nothing OrElse objrefs.Length < 1 Then
-	  Return Rhino.Commands.Result.Failure
-	End If
-
-	Dim in_breps0 As New List(Of Rhino.Geometry.Brep)()
-	For i As Integer = 0 To objrefs.Length - 1
-	  Dim brep As Rhino.Geometry.Brep = objrefs(i).Brep()
-	  If brep IsNot Nothing Then
-		in_breps0.Add(brep)
-	  End If
-	Next i
-
-	doc.Objects.UnselectAll()
-	rc = Rhino.Input.RhinoGet.GetMultipleObjects("Select second set of polysurfaces", False, Rhino.DocObjects.ObjectType.PolysrfFilter, objrefs)
-	If rc IsNot Rhino.Commands.Result.Success Then
-	  Return rc
-	End If
-	If objrefs Is Nothing OrElse objrefs.Length < 1 Then
-	  Return Rhino.Commands.Result.Failure
-	End If
-
-	Dim in_breps1 As New List(Of Rhino.Geometry.Brep)()
-	For i As Integer = 0 To objrefs.Length - 1
-	  Dim brep As Rhino.Geometry.Brep = objrefs(i).Brep()
-	  If brep IsNot Nothing Then
-		in_breps1.Add(brep)
-	  End If
-	Next i
-
-	Dim tolerance As Double = doc.ModelAbsoluteTolerance
-	Dim breps() As Rhino.Geometry.Brep = Rhino.Geometry.Brep.CreateBooleanDifference(in_breps0, in_breps1, tolerance)
-	If breps.Length < 1 Then
-	  Return Rhino.Commands.Result.Nothing
-	End If
-	For i As Integer = 0 To breps.Length - 1
-	  doc.Objects.AddBrep(breps(i))
-	Next i
-	doc.Views.Redraw()
-	Return Rhino.Commands.Result.Success
-  End Function
-End Class
-```
-
-</div>
-
 
 <div class="codetab-content" id="py">
 
