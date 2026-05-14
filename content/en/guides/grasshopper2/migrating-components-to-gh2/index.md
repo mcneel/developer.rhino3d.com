@@ -47,7 +47,7 @@ Here's a list of conceptually significant differences in no particular order:
 - Vector based icons are now supported and recommended.
 - Documentation content is created using authoring tools provided by Grasshopper 2.
 
-## Plugin Assembly
+# Plugin Assembly
 
 For a .NET assembly to be considered a valid Grasshopper Plugin it should use the `.RHP` extension and it must contain a public class with an empty constructor which inherits from the `Grasshopper2.Framework.Plugin` type, which is the equivalent of the `GH_AssemblyInfo` type in GH1:
 
@@ -74,12 +74,12 @@ public sealed class MyPluginInfo : Plugin
 
 The `Nomen` type bundles together relevant values for describing and positioning objects within the Grasshopper user interface. It is used everywhere when objects need a name, a descriptive info text, and tab+panel locations.
 
-### Loading Plugins
+## Loading Plugins
 
 [[[Package Manager, G2PluginViewer.]]]
 
 
-## Component Class
+# Components
 
 The basic layout for a component class in GH2 closesly tracks with what you're probably used to, with just a few minor administrative changes. As mentioned above, the component identifier is not a property of the class, but rather an attribute of the `IoIdAttribute` type, provided by the `GrasshopperIO.dll` assembly. The `Nomen` provided in the constructor provides not just the name, info, tab and panel data, but also the `Slot` (placing the component in a specific slot within the panel) and the `Rank` (specifying the importance of the component, affecting sort order within the UI).
 
@@ -124,7 +124,7 @@ public class Component1 : GH_Component
 }
 ```
 
-### Component Parameters
+## Component Parameters
 
 Adding inputs and outputs to a component is, again, conceptually very similar in GH1 and GH2. Two methods need to be overridden, and the provided parameter manager is used to add new parameters in the order in which they appear on the component from top to bottom. Consider the following code snippet which was taken from the GH1 `Circle` component:
 
@@ -165,6 +165,8 @@ Major differences worth noting include:
 - GH2 provides some additional options on some parameters (such as Indexing on Integer parameters, or Type Filters on Numeric parameters) which ought to be set when appropriate.
 - GH2 parameters all have a `Preset` system, although this is used almost exclusively on Integer parameters to represents enumerations.
 
+### New Parameter Types
+
 The table below lists some new parameter types and when to use them.
 
 | Types | Usage |
@@ -176,9 +178,18 @@ The table below lists some new parameter types and when to use them.
 | `Gradient` | Gradients sometimes replace colours if the context allows for that. |
 | `Random` | The `Random` parameter replaces an integer seed input. GH2 supports a variety of random engines, and the `RandomEngine` type combines the choice of engine plus seed value into one. |
 | `Surface` | The `Surface` parameter in GH2 acts as a unified container for all surface types; `Rhino.Geometry.Surface`, `Rhino.Geometry.Brep`, `Rhino.Geometry.SubD`, `Rhino.Geometry.Sphere`, `Rhino.Geometry.Box`, and `Grasshopper2.Types.Shapes.Tube` for example. |
+| `Point 2` | A two-dimensional point, typically used to represent (uv) coordinates and sometimes statistical samples. |
+| `Triangle` | It's just for triangle primitives bro. |
+| `Polyline` | Polylines are their own type now bro. |
+| `Sphere` | Spheres are available now bro. |
+| `Tube` | Tubes are a GH2 native type able to represent cones, cylinders, and tubes, both with and without wall thickness. |
+| `Deform` | Deformations, i.e. SpaceMorphs are available as native types in GH2. |
+| `Region` | A region is a set of closed co-planar curves without self-intersections. Use this instead of regular curves when dealing with planar inside-outside logic. |
+| `Curve Locus` | Loci replace curve parameters in GH2. Do not use numbers to identify points on curves, use a curve locus. |
+| `Surface Locus` | Loci replace surface uv-parameters in GH2. Do not use numbers to identify points on surfaces, use a surface locus. |
 
 The use of enumerations as inputs is fairly common in GH2 and has been implemented via the `Integer` parameter along with presets. The `inputs.AddEnum(...)` method provides a shorthand for adding an integer parameter with registered presets. For an `Enum` to be used in this way it must derive from the `System.Int32` type, and ideally it provides detailed descriptions and a unique colour for each value. Below is the partial code for the `DistanceMetric` enumeration, which for each item provides a `UiInfo()` and `UiTint()` attribute, and for some items even a `UiName()` attribute to override the name as shown in the GH2 UI.
-
+    
 ```cs
 public enum DistanceMetric
 {
@@ -201,14 +212,16 @@ When properly set up this way, presets can be chosen using the `Preset Picker` o
 
 {{< image url="/images/gh2/EnumPresetsGH2Migration.png" alt="How UiName, UiInfo, and UiTint manifest in the GH2 interface." class="image_center" width="80%" >}}
 
+Also note that GH2 supports `Quaternions` alongside old-fashioned 4x4 transform matrices. *HOW-EVER*, quaternions are encoded inside `Transform` matrices so whenever your component consumes transforms, be sure to always check whether they actually represent quaternions using the `IsQuaternion()` and `ToQuaternion()` extension methods on `Rhino.Geometry.Transform`.
+  
 
-### Component Processing
+## Component Processing
 
 The key difference to bear in mind when writing processing code for GH2 components is that component iterations by default run on separate threads. Because of this, the code inside the `Process(IDataAccess access)` method must be thread-safe. If this is impossible, the threading state of the component must be downgraded from the default `ThreadingState.MultiThreaded` to `ThreadingState.SingleThreaded` via the `Component.Threading` property.
 
 Furthermore, if the processing code is liable to take longer than a few milliseconds, the component should pay attention to cancellation requests by occasionally calling `access.Solution.Token.ThrowIfCancellationRequested()`.
 
-#### A Random Walk Example
+### A Random Walk Example
 
 Let's start with a relatively simple example of a component which doesn't operate on lists or trees, and doesn't need to deal with meta data. This example will introduce getting and setting individual values, dealing with fields and random engines, and how to implement cancellation. The component contains three inputs; a `Sphere`, a `Field` and a `RandomEngine`, and outputs a single `Polyline` representing a random walk from the centre of the sphere to the boundary. First, the code:
 
@@ -249,7 +262,7 @@ protected override void Process(IDataAccess access)
 {{< image url="/images/gh2/RandomWalkGH2Migration.png" alt="The RandomWalk component running with 100 different random seeds." class="image_center" width="90%" >}}
 
 
-#### Working with Twigs and Curves
+### Working with Twigs and Curves
 
 Grasshopper 2 takes a different approach to curve values. There are still dedicated parameters for specific curve types such as `Line`, `Circle`, `Arc`, `Rectangle`, etc., but the `Curve` parameter does *not* convert all curve-like values into `Rhino.Geometry.Curve` compliant types. Instead, the `Curve` parameter stores all curve values as-is, and only makes sure that each value is associated with a centrally registered `CurveAssistant`. This new approach has two benefits. First, it allows values to be stored without converting them to a different type. Second, it allows plug-ins to add their own curve-like types and trust that all existing components that operate on curves will be able to handle these new values. The drawback to this approach is that dealing with curves can be somewhat or significantly more complicated for component developers, depending on what curve operations a component needs to perform.
 
@@ -328,7 +341,9 @@ protected override void Process(IDataAccess access)
 
 {{< image url="/images/gh2/CurveSortingGH2Migration.png" alt="Curve end-point sorting in action." class="image_center" width="90%" >}}
 
-#### Validation and Messaging
+### Working with 
+
+### Validation and Messaging
 
 Components in GH2 have the ability, just as they did in GH1, to collate warning and error messages during processing. In general, warnings ought to be used when there was a problem the component could work around, and errors ought to be used when the component could not complete its calculations. However, unlike in GH1, the `IDataAccess` argument provides a set of validation and rectification methods which automatically set warning and error messages, if need be. This tends to simplify the portion of the processing code which deals with input validation.
 
@@ -345,7 +360,7 @@ When a custom warning or error needs to be signaled to the user, the `access` ar
 [[[Overriding Store() and new(IReader) is possible, but discouraged.]]]
 
 
-### Variable Parameter Layouts
+## Variable Parameter Layouts
 
 As in GH1, components in GH2 can have variable numbers of inputs and outputs. All that is needed to enable the user interface for adding or removing inputs and outputs is to override the `CanCreateParameter()`, `DoCreateParameter()` and `CanRemoveParameter()` methods. The `DoRemoveParameter()` may be overridden as well, but the default behaviour already does what it says on the tin. Lastly, the `VariableParameterMaintenance()` method is still the best place to ensure that all properties of all parameters are correctly set.
 
@@ -426,33 +441,33 @@ protected override void Process(IDataAccess access)
 
 {{< image url="/images/gh2/VariableParametersGH2Migration.gif" alt="Variable parameter UI on the canvas.." class="image_center" width="40%" >}}
 
-### Modular Components
+## Modular Components
 
 [[[Mention, but don't elaborate.]]]
 
 
-## Data Types
+# Data Types
 
-### Structured Storage
+## Structured Storage
 
 [[[Tree, Twig, Path, Pear]]]
 
-### Garden
+## Garden
 
 [[[One-stop-shop for creating trees and twigs.]]]
 
-### Meta Data
+## Meta Data
 
 [[[Design, immutability, StandardNames, transformable entries.]]]
 
-### Type Assistants
+## Type Assistants
 
 [[[TypeAssistantServer, ITypeAssistant, ZupportsXXXXX properties.]]]
 
-### Curve and Surface Assistants
+## Curve and Surface Assistants
 
 [[[Basic ideology, CurveBroker, SurfaceBroker]]]
 
-### Type Conversion
+## Type Conversion
 
 [[[ConversionServer, ConversionRepository, Inspecting conversions in the UI.]]]
