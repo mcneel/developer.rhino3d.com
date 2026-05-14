@@ -198,7 +198,7 @@ public enum DistanceMetric
 
 When properly set up this way, presets can be chosen using the `Preset Picker` object:
 
-{{< image url="/images/EnumPresetsGH2Migration.png" alt="How UiName, UiInfo, and UiTint manifest in the GH2 interface." class="image_center" width="80%" >}}
+{{< image url="/images/gh2/EnumPresetsGH2Migration.png" alt="How UiName, UiInfo, and UiTint manifest in the GH2 interface." class="image_center" width="80%" >}}
 
 
 ### Component Processing
@@ -249,7 +249,7 @@ protected override void Process(IDataAccess access)
 3. Since the `while` loop in this component can potentially run for a *very* long time, it is important that cancellation is checked often. the `Solution` object passed to the component via the `IDataAccess` argument has a token which can be used for this. In GH2, very time a new solution starts in the same document, any currently running solution is automatically cancelled.
 4. Assignment of output values works exactly the same in GH2 as in GH1, at least when metadata or twigs or trees are not involved.
 
-{{< image url="/images/RandomWalkGH2Migration.png" alt="The RandomWalk component running with 100 different random seeds." class="image_center" width="90%" >}}
+{{< image url="/images/gh2/RandomWalkGH2Migration.png" alt="The RandomWalk component running with 100 different random seeds." class="image_center" width="90%" >}}
 
 
 #### Working with Twigs and Curves
@@ -329,7 +329,7 @@ protected override void Process(IDataAccess access)
 6. This part seems self-explanatory.
 7. Once all pear lists have been made they can be converted into twigs and assigned to each output.
 
-{{< image url="/images/CurveSortingGH2Migration.png" alt="Curve end-point sorting in action." class="image_center" width="90%" >}}
+{{< image url="/images/gh2/CurveSortingGH2Migration.png" alt="Curve end-point sorting in action." class="image_center" width="90%" >}}
 
 ### Custom Properties
 
