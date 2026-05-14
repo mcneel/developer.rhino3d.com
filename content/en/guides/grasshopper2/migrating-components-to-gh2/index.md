@@ -324,13 +324,19 @@ protected override void Process(IDataAccess access)
 4. The only reason this component needs cancellation support is because the twigs it operates on may contain thousands if not millions of values.
 5. We need to find the curve assistant for each curve-like value in the twig. The `TypeAssistantServer` is a static class which maintains all registered assistants and provides easy lookup based on values or types. The curve assistant allows us to query the start and end-points of the curve value, even if we don't know the type of that value. It could be a `Rhino.Geometry.Line`, or a `Rhino.Geometry.NurbsCurve`, or even a curve type which is shipped as part of a 3rd party plugin years after the code for this component was written.
 6. This part seems self-explanatory.
-7. Once all pear lists have been made they can be converted into twigs and assigned to each output.
+7. Once all pear lists have been made they can be converted into twigs and assigned to each output. The `Garden` static class provides a large number of utility functions for creating and modifying pears, twigs and trees.
 
 {{< image url="/images/gh2/CurveSortingGH2Migration.png" alt="Curve end-point sorting in action." class="image_center" width="90%" >}}
 
 #### Validation and Messaging
 
-[[Verify, Rectify, AddWarning, AddError]]
+Components in GH2 have the ability, just as they did in GH1, to collate warning and error messages during processing. In general, warnings ought to be used when there was a problem the component could work around, and errors ought to be used when the component could not complete its calculations. However, unlike in GH1, the `IDataAccess` argument provides a set of validation and rectification methods which automatically set warning and error messages, if need be. This tends to simplify the portion of the processing code which deals with input validation.
+
+Next time you need to make sure numbers are positive, or fall within a given range, or that two vectors aren't parallel, or three points aren't colinear, have a look at all the methods starting with `Rectify___` and `Verify___` on `IDataAccess.
+
+When a custom warning or error needs to be signaled to the user, the `access` argument also provides direct ways of adding runtime messages to the component. The `IDataAccess.AddWarning()` and `IDataAccess.AddError()` methods allow the developer to set runtime messages with custom phrasing and custom actions. Adding message actions which allow the user to fix problems is strongly encouraged whenever possible. When messages have actions, they will appear in the message menu as follows:
+
+{{< image url="/images/gh2/MessageActionGH2Migration.png" alt="Actions attached to runtime messages provide fast ways to fix issues." class="image_center" width="90%" >}}
 
 
 ### Custom Properties
@@ -341,8 +347,84 @@ protected override void Process(IDataAccess access)
 
 ### Variable Parameter Layouts
 
-[[[No interface, CanCreateInput, DoCreateInput, VariableParameterMaintenance, ...]]]
+As in GH1, components in GH2 can have variable numbers of inputs and outputs. All that is needed to enable the user interface for adding or removing inputs and outputs is to override the `CanCreateParameter()`, `DoCreateParameter()` and `CanRemoveParameter()` methods. The `DoRemoveParameter()` may be overridden as well, but the default behaviour already does what it says on the tin. Lastly, the `VariableParameterMaintenance()` method is still the best place to ensure that all properties of all parameters are correctly set.
 
+Let's explore this with a component which creates boundingboxes for points in a variable number of inputs. Since we are creating a component which has a fully functional `VariableParameterMaintenance()` implementation, we can avoid assinging names and requirements inside the `AddInputs()` method:
+
+```cs
+protected override void AddInputs(InputAdder inputs)
+{
+  inputs.AddPoint("", "", "");
+  inputs.AddPoint("", "", "");
+}
+protected override void AddOutputs(OutputAdder outputs)
+{
+  outputs.AddBox("Bounding Box", "Bx", "Box containing all paired up points.");
+}
+```
+
+Now the three required overrides, with an absolutely minimal implementation:
+
+```cs
+public override bool CanCreateParameter(Side side, int index)
+{
+  // Parameters can be added everywhere on the input side.
+  return side == Side.Input;
+}
+public override bool CanRemoveParameter(Side side, int index)
+{
+  // All inputs except for the last remaining one can be removed.
+  return side == Side.Input && Parameters.InputCount > 1;
+}
+public override void DoCreateParameter(Side side, int index, ActionList undo)
+{
+  // The access is assigned at construction, but the nomen is 
+  // left for the VariableParameterMaintenance() method.
+  // Note that we are required to pass the undo action list 
+  // to the AddInput() method.
+  var param = new Point3Parameter(Nomen.Empty, Access.Item);
+  Parameters.AddInput(param, index, undo);
+}
+```
+
+Lastly the implementation of the maintenance method, which does all the heavy lifting:
+
+```cs
+public override void VariableParameterMaintenance()
+{
+  // Each input must be set up correctly.
+  for (int i = 0; i < Parameters.InputCount; i++)
+  {
+    var param = Parameters.Input(i);
+    param.Requirement = Requirement.MayBeMissing;
+    param.ModifyNameAndInfo($"Point {i + 1}", 
+      "Point to include in bounding box.");
+    param.FallbackName = $"P{i + 1}";
+  }
+}
+```
+
+Note that this code assigns the `FallbackName` of each parameter rather than the `UserName`. This prevents us from overwriting user typed names on inputs. The `DisplayName` of a parameter is either the `UserName` or the `FallbackName`, depending on which one has been set.
+
+Iterating over a variable number of parameters is quite easy by using the `IDataAccess.CountIn` and `IDataAccess.CountOut` properties. Since the inputs have a requirement of `MayBeMissing`, we need to check to see whether the `IDataAccess.GetItem()` method returns `true` or `false`. An input with a null value or with no values at all will return `false` when queried.
+
+```cs
+protected override void Process(IDataAccess access)
+{
+  var points = new List<Point3d>();
+  for (int i = 0; i < access.CountIn; i++)
+    if (access.GetItem(i, out Point3d point))
+      points.Add(point);
+  
+  if (points.Count == 0)
+    access.AddError("Insufficient Points", 
+      "At least a single point is required for a valid bounding box.");
+  else
+    access.SetItem(0, new Box(new BoundingBox(points)));
+}
+```
+
+{{< image url="/images/gh2/VariableParametersGH2Migration.gif" alt="Variable parameter UI on the canvas.." class="image_center" width="40%" >}}
 
 ### Modular Components
 
