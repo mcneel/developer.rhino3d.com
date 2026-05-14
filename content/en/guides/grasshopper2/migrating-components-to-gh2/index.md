@@ -252,7 +252,7 @@ protected override void Process(IDataAccess access)
 {{< image url="/images/RandomWalkGH2Migration.png" alt="The RandomWalk component running with 100 different random seeds." class="image_center" width="90%" >}}
 
 
-#### Working With Curves
+#### Working with Twigs and Curves
 
 Grasshopper 2 takes a different approach to curve values. There are still dedicated parameters for specific curve types such as `Line`, `Circle`, `Arc`, `Rectangle`, etc., but the `Curve` parameter does *not* convert all curve-like values into `Rhino.Geometry.Curve` compliant types. Instead, the `Curve` parameter stores all curve values as-is, and only makes sure that each value is associated with a centrally registered `CurveAssistant`. This new approach has two benefits. First, it allows values to be stored without converting them to a different type. Second, it allows plug-ins to add their own curve-like types and trust that all existing components that operate on curves will be able to handle these new values. The drawback to this approach is that dealing with curves can be significantly more complicated for component developers, depending on what curve operations a component needs to perform.
 
@@ -265,16 +265,8 @@ As such, the first input and all three outputs need to be marked with `Access.Tw
 ```cs
 protected override void AddInputs(InputAdder inputs)
 {
-  var defaultCurves = new[]
-  {
-    new Line(-4, 0, 0, -4, 4, 0),
-    new Line(-2, 0, 0, -2, 4, 0),
-    new Line(2, -1, 0, 2, 1, 0),
-  };
-  var defaultBox = new Box(Plane.WorldXY, new Interval(-3, 3), new Interval(-2, 2), new Interval(-1, 1));
-  
-  inputs.AddCurve("Curves", "Cr", "Curves to sort.", Access.Twig).Set(defaultCurves);
-  inputs.AddBox("Box", "Bx", "Box volume used for sorting.").Set(defaultBox);
+  inputs.AddCurve("Curves", "Cr", "Curves to sort.", Access.Twig);
+  inputs.AddBox("Box", "Bx", "Box volume used for sorting.");
 }
 protected override void AddOutputs(OutputAdder outputs)
 {
@@ -286,7 +278,7 @@ protected override void AddOutputs(OutputAdder outputs)
 
 "Twigs" in GH2 are equivalent to "Branches" in GH1. The word "branch" wasn't only topologically slightly incorrect, it also did not consist of four letters. GH2 uses exclusively 4-letter words to refer to the various types involved in data trees; [tree, twig, item, path, pear, site, rule, null, meta].
 
-The `Process()` method for this component has to take care to correctly deal with null values in the twig, and to maintain the pairing of values with their original meta data.
+The `Process()` method for this component has to take care to correctly deal with null items in the twig, and to maintain the pairing of items with their original meta data. First consider the implementation, then we'll discuss the details:
 
 ```cs
 protected override void Process(IDataAccess access)
@@ -328,6 +320,16 @@ protected override void Process(IDataAccess access)
   access.SetTwig(2, Garden.ITwigFromPears(outside));
 }
 ```
+
+1. When the type constraint of an input is known, for example when the input is an Integer Parameter, then the generic `access.GetTwig<int>(0, out var integers)` method can be used. However in the case of curves it cannot be known ahead of time what the type constraint of the twig in question may be. If the input contains only `Circle` values, then it will be a `Twig<Circle>`, but a curve parameter may contain a mixture of different types, so we ought to revert to the non-generic `ITwig` approach.
+2. Similarly, since we can't know the type constraints ahead of time, it is not possible to use `Pear<T>` as a list constraint and we must fall back to the non-generic `IPear`. A pear is nothing more than the pairing of a value along with its meta data. It is called a "pear" rather than a "pair" because "pair" was already taken and "pear" fits nicely within the tree-paradigm. All data tree types in GH2 are immutable, which means we cannot build a twig or tree over time. Instead, we must aggregate the contents in mutable collection types which are then converted into the appropriate twig/tree all at once.
+3. There are several ways to iterate over the contents of a twig, but if the indices of values are not required, there are several handy enumerators which allow `foreach` to do all the heavy lifting.
+4. The only reason this component needs cancellation support is because the twigs it operates on may contain thousands if not millions of values.
+5. We need to find the curve assistant for each curve-like value in the twig. The `TypeAssistantServer` is a static class which maintains all registered assistants and provides easy lookup based on values or types. The curve assistant allows us to query the start and end-points of the curve value, even if we don't know the type of that value. It could be a `Rhino.Geometry.Line`, or a `Rhino.Geometry.NurbsCurve`, or even a curve type which is shipped as part of a 3rd party plugin years after the code for this component was written.
+6. This part seems self-explanatory.
+7. Once all pear lists have been made they can be converted into twigs and assigned to each output.
+
+{{< image url="/images/CurveSortingGH2Migration.png" alt="Curve end-point sorting in action." class="image_center" width="90%" >}}
 
 ### Custom Properties
 
