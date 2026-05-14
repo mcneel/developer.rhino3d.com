@@ -258,7 +258,76 @@ Grasshopper 2 takes a different approach to curve values. There are still dedica
 
 In the following example, we'll create a component which sorts curves based on whether their end-points are both within a box, both outside of that box, or one-within-and-one-without. This example will discuss how to deal with twigs, curve assistants, and how to correctly persist meta data from input curves to output curves. The default meta-data-copying-mechanism in components will fail if the order of input and output values is not consistent.
 
+This component must operate on entire twigs instead of individual values. If each curve was treated individually, a `null` value would be automatically inserted into the two outputs where the curve did not end up. If this is desired behaviour, then by all means operate on single values, but in this case we want the outputs to contain no nulls.
 
+As such, the first input and all three outputs need to be marked with `Access.Twig` when adding these parameters:
+
+```cs
+protected override void AddInputs(InputAdder inputs)
+{
+  var defaultCurves = new[]
+  {
+    new Line(-4, 0, 0, -4, 4, 0),
+    new Line(-2, 0, 0, -2, 4, 0),
+    new Line(2, -1, 0, 2, 1, 0),
+  };
+  var defaultBox = new Box(Plane.WorldXY, new Interval(-3, 3), new Interval(-2, 2), new Interval(-1, 1));
+  
+  inputs.AddCurve("Curves", "Cr", "Curves to sort.", Access.Twig).Set(defaultCurves);
+  inputs.AddBox("Box", "Bx", "Box volume used for sorting.").Set(defaultBox);
+}
+protected override void AddOutputs(OutputAdder outputs)
+{
+  outputs.AddCurve("Inside", "In", "Curves whose end-points fall within the box.", Access.Twig);
+  outputs.AddCurve("Crossing", "Cx", "Curves whose end-points fall on both sides of the box.", Access.Twig);
+  outputs.AddCurve("Outside", "Ot", "Curves whose end-points fall outside the box.", Access.Twig);
+}
+```
+
+"Twigs" in GH2 are equivalent to "Branches" in GH1. The word "branch" wasn't only topologically slightly incorrect, it also did not consist of four letters. GH2 uses exclusively 4-letter words to refer to the various types involved in data trees; [tree, twig, item, path, pear, site, rule, null, meta].
+
+The `Process()` method for this component has to take care to correctly deal with null values in the twig, and to maintain the pairing of values with their original meta data.
+
+```cs
+protected override void Process(IDataAccess access)
+{
+  // 1. Retrieve values from inputs.
+  access.GetITwig(0, out var curves);
+  access.GetItem(1, out Box box);
+  
+  // 2. Collections for aggregating pears.
+  var inside = new List<IPear>();
+  var crossing = new List<IPear>();
+  var outside = new List<IPear>();
+ 
+  // 3. Iterate over all pears in the twig.
+  foreach (var pear in curves.NonNullPears)
+  {
+    // 4. Cancellation support.
+    access.Solution.Token.ThrowIfCancellationRequested();
+  
+    // 5. Find the curve assistant associated with the current value.
+    var assistant = TypeAssistantServer.FindCurveAssistantByType(pear.Type);
+    assistant.GetEndPoints(pear.Item, out var p0, out var p1);
+ 
+    var i0 = box.Contains(p0);
+    var i1 = box.Contains(p1);
+ 
+    // 6. Copy the pears into the appropriate list.
+    if (i0 != i1)
+      crossing.Add(pear);
+    else if (i0)
+      inside.Add(pear);
+    else
+      outside.Add(pear);
+  }
+
+  // 7. Create new twigs from the pear collections.
+  access.SetTwig(0, Garden.ITwigFromPears(inside));
+  access.SetTwig(1, Garden.ITwigFromPears(crossing));
+  access.SetTwig(2, Garden.ITwigFromPears(outside));
+}
+```
 
 ### Custom Properties
 
