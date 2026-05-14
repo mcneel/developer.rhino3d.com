@@ -198,7 +198,7 @@ public enum DistanceMetric
 
 When properly set up this way, presets can be chosen using the `Preset Picker` object:
 
-{{< image url="/images/EnumAsPresetInGH2.png" alt="/images/EnumAsPresetInGH2.png" class="image_center" width="75%" >}}
+{{< image url="/images/EnumPresetsGH2Migration.png" alt="How UiName, UiInfo, and UiTint manifest in the GH2 interface." class="image_center" width="80%" >}}
 
 
 ### Component Processing
@@ -207,12 +207,69 @@ The key difference to bear in mind when writing processing code for GH2 componen
 
 Furthermore, if the processing code is liable to take longer than a few milliseconds, the component should pay attention to cancellation requests by occasionally calling `access.Solution.Token.ThrowIfCancellationRequested()`.
 
+[[[GetItem, GetPear, GetTwig, GetITwig, GetITree, GetTree]]]
+[[[Rectify vs. Verify]]]
+[[[access.AddWarning, access.AddError]]]
 
+#### A Random Walk Example
+
+Let's start with a relatively simple example of a component which doesn't operate on lists or trees, and doesn't need to deal with meta data. This example will introduce getting and setting individual values, dealing with fields and random engines, and how to implement cancellation. The component contains three inputs; a `Sphere`, a `Field` and a `RandomEngine`, and outputs a single `Polyline` representing a random walk from the centre of the sphere to the boundary. First, the code:
+
+```cs
+protected override void Process(IDataAccess access)
+{
+  // 1. Retrieve values from inputs.
+  access.GetItem(0, out Sphere sphere);
+  access.GetItem(1, out Field stepField);
+  access.GetItem(2, out RandomEngine engine);
+  
+  // 2. Start the computation.
+  var point = sphere.Center;
+  var track = new Polyline { point };
+  var random = engine.CreateInstance();
+  while (true)
+  {
+    // 3. Abort the computation when the solution is cancelled.
+    access.Solution.Token.ThrowIfCancellationRequested();
+    
+    var step = Math.Max(1e-8, stepField.ScalarAt(point));
+    point += step * random.NextUnitVector3D();
+    track.Add(point);
+    if (point.DistanceTo(sphere.Center) >= sphere.Radius)
+      break;
+  }
+  
+  // 4. Assign results to outputs.
+  access.SetItem(0, track);
+}
+```
+
+1. Getting values in GH2 components uses the `out` rather than the `ref` keyword, so is somewhat more economical. Null checks aren't required if the input `Requirement` is set to `MustExist`. Validity checks may be necessary, but we'll focus on those in a later example. 
+2. This component operates with a pseudo-random aspect, which means it requires a `RandomEngine` as an input. The `CreateInstance()` is used on an engine value to create a new random number generator of the correct type with the specified seed. Also note that GH2 provides a lot of useful extension methods via the `Grasshopper2.Extensions` namespace, so when that is added to the `using` block of your C# file you'll get access to methods like `Random.NextUnitVector3D()`.
+3. Since the `while` loop in this component can potentially run for a *very* long time, it is important that cancellation is checked often. the `Solution` object passed to the component via the `IDataAccess` argument has a token which can be used for this. In GH2, very time a new solution starts in the same document, any currently running solution is automatically cancelled.
+4. Assignment of output values works exactly the same in GH2 as in GH1, at least when metadata or twigs or trees are not involved.
+
+{{< image url="/images/RandomWalkGH2Migration.png" alt="The RandomWalk component running with 100 different random seeds." class="image_center" width="90%" >}}
+
+
+#### Working With Curves
+
+Grasshopper 2 takes a different approach to curve values. There are still dedicated parameters for specific curve types such as `Line`, `Circle`, `Arc`, `Rectangle`, etc., but the `Curve` parameter does *not* convert all curve-like values into `Rhino.Geometry.Curve` compliant types. Instead, the `Curve` parameter stores all curve values as-is, and only makes sure that each value is associated with a centrally registered `CurveAssistant`. This new approach has two benefits. First, it allows values to be stored without converting them to a different type. Second, it allows plug-ins to add their own curve-like types and trust that all existing components that operate on curves will be able to handle these new values. The drawback to this approach is that dealing with curves can be significantly more complicated for component developers, depending on what curve operations a component needs to perform.
+
+In the following example, we'll create a component which sorts curves based on whether their end-points are both within a box, both outside of that box, or one-within-and-one-without. This example will discuss how to deal with twigs, curve assistants, and how to correctly persist meta data from input curves to output curves. The default meta-data-copying-mechanism in components will fail if the order of input and output values is not consistent.
+
+
+
+### Custom Properties
+
+[[[Use CustomValues to store your simple properties since IO is taken care of.]]]
+[[[Overriding Store() and new(IReader) is possible, but discouraged.]]]
 
 
 ### Variable Parameter Layouts
 
 [[[No interface, CanCreateInput, DoCreateInput, VariableParameterMaintenance, ...]]]
+
 
 ### Modular Components
 
