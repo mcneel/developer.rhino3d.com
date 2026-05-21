@@ -26,7 +26,15 @@ toc_type = "single"
 block_webcrawlers = true
 +++
 
-TODO: Some warning that this is an old guide
+{{< call-out warning DEPRECATED >}}
+
+This guide covers information relevant to Rhino.Compute for Rhino 7. Rhino {{< latest-rhino-version >}} is the current shipping version.
+
+For updated guides see:
+
+- [Deployment to Production Servers](/guides/compute/deploy-to-iis/)
+
+{{< /call-out >}}
 
 ## Overview
 
