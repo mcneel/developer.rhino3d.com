@@ -17,16 +17,16 @@
         <div class="footer-column footer-left skin-not-napa">
             <a href="{{.Site.Params.rhinoURL }}/sales">{{ i18n "find-a-reseller" }}</a>
         </div>
-        <div class="footer-column footer-right">           
+        <div class="footer-column footer-center">
+            <a href="{{.Site.Params.rhinoURL }}/mcneel/about" alt="About McNeel">{{ replace .Site.Params.Copyright "{year}" now.Year}}</a>
+        </div>
+        <div class="footer-column footer-right">
                 <a href="{{.Site.Params.rhinoURL }}/privacy">{{ i18n "Privacy-Policy" }}</a> &bull;
                 <a href="{{.Site.Params.rhinoURL }}/mcneel/about">{{ i18n "About" }}</a> &bull;
                 <a href="{{.Site.Params.rhinoURL }}/mcneel/contact">{{ i18n "Contact-Us" }}</a> &bull;
                 <a href="{{.Site.Params.rhinoURL }}/language" title="{{ i18n "change-region-lang" }}">
-                    {{ i18n "Language" }}</a>            
+                    {{ i18n "Language" }}</a>
         </div>
-    </div>    
-    <div class="footer-middle">       
-        <a href="{{.Site.Params.rhinoURL }}/mcneel/about" alt="About McNeel">{{ replace .Site.Params.Copyright "{year}" now.Year}}</a>
     </div>
     <div class="footer-middle">
         <a href="{{ .Site.Params.facebookURL }}" aria-label="Facebook" class="fab fa-facebook" style="padding: 10px; font-size: 30px; text-decoration: none;" target="_blank" rel="noopener noreferrer"></a>

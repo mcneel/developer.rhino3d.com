@@ -11,13 +11,52 @@
 <script langage="javascript">
     document.addEventListener('DOMContentLoaded', function() {
         $('body').scrollspy({ target: '.toc', offset: 90 });
-        $(window).on('activate.bs.scrollspy', function (e, o) {
-            //var s = 'a[href$="' + o.relatedTarget + '"]'
-            //console.log(s);
-            //$.find(s)[0].scrollIntoView();
-        });
-      });    
 
+        var isScrolling = false;
+        var scrollTarget = null;
+        var scrollEndTimer;
+
+        // While animating, scrollspy fires activate events as it crosses sections.
+        // Override those back to the link we actually clicked.
+        $(window).on('activate.bs.scrollspy', function() {
+            if (!isScrolling || !scrollTarget) return;
+            document.querySelectorAll('#TableOfContents a.active').forEach(function(a) {
+                a.classList.remove('active');
+            });
+            scrollTarget.classList.add('active');
+        });
+
+        // Release control once scrolling has stopped (scrollend + debounce fallback).
+        function onScrollEnd() {
+            isScrolling = false;
+            scrollTarget = null;
+        }
+        window.addEventListener('scrollend', onScrollEnd);
+        window.addEventListener('scroll', function() {
+            if (!isScrolling) return;
+            clearTimeout(scrollEndTimer);
+            scrollEndTimer = setTimeout(onScrollEnd, 150);
+        });
+
+        // Intercept TOC anchor clicks for smooth scroll.
+        document.addEventListener('click', function(e) {
+            var link = e.target.closest('#TableOfContents a[href^="#"]');
+            if (!link) return;
+            var target = document.getElementById(link.getAttribute('href').slice(1));
+            if (!target) return;
+            e.preventDefault();
+            document.querySelectorAll('#TableOfContents a.active').forEach(function(a) {
+                a.classList.remove('active');
+            });
+            link.classList.add('active');
+            isScrolling = true;
+            scrollTarget = link;
+            clearTimeout(scrollEndTimer);
+            var top = target.getBoundingClientRect().top + window.pageYOffset - 85;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+            history.pushState(null, null, link.getAttribute('href'));
+        });
+    });
 </script>
 
 {{ if eq $tocType "single"}}

@@ -191,7 +191,7 @@ other = "Extension de fichier"
 other = "Ouvrir/Importer"
 
 [Save-Export]
-other = "Enregistrement/Exportation"
+other = "Enregistrer/Exporter"
 
 [Notes]
 other = "Notes"

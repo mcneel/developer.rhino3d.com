@@ -1,0 +1,1 @@
+<img src="{{ partial "resolve-image-src.html" . | safeURL }}" alt="{{ .Text }}"{{ if eq .Title "flat" }} class="img-flat"{{ else if .Title }} title="{{ .Title }}"{{ end }}>
