@@ -1,0 +1,10 @@
+{{ $keyframes := .Get "keyframes" }}
+{{ $easing := (.Get "easing" | default "linear") }}
+{{ $id := (print "scroll-section-driven-" .Ordinal) }}
+
+<div class="scroll-section-child"
+     id="{{ $id }}"
+     data-keyframes="{{ $keyframes }}"
+     data-easing="{{ $easing }}">
+  {{ .Inner }}
+</div>

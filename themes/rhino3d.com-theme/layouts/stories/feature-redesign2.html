@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<div class="single-content-area toc-page">
+  {{ if .Params.page_options.toc }}
+    {{ partial "toc.html" . }}
+  {{ end }}
+
+  <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ if .Params.page_options.narrow }} toc-no-narrow{{ end }}{{ end }}">
+
+    {{/* ============================================================
+         HERO 2
+         Grid background + border; full-width video below (moved by JS)
+         ============================================================ */}}
+    <div class="feature-hero2">
+      <div class="feature-hero2-top">
+        <div class="feature-hero2-top-inner">
+
+          <div class="hero2-title-row">
+            {{ $iconCmd := .Params.icon | default (index .Params.commands 0) }}
+            {{ with $iconCmd }}
+            <div class="hero2-icon">
+              <img src="https://docs.mcneel.com/rhino/{{ $.Site.Params.latestRhinoVersion }}/help/{{ $.Site.Params.docLang }}/image/command_icons/{{ lower . }}.png"
+                   onerror="this.parentElement.style.display='none'"
+                   alt="{{ . }}">
+            </div>
+            {{ end }}
+
+            {{ if ne false (.Params.page_options.show_title) }}
+            <h1 class="hero2-title">{{ .Page.Title }}</h1>
+            {{ end }}
+
+            {{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}
+            <div class="hero2-eyebrow">
+              <a href="/{{ .Site.Params.latestRhinoVersion }}/new">{{ i18n "NEW-in-Vx" . }}</a>
+            </div>
+            {{ end }}
+          </div>
+
+          {{ with .Page.Params.what_why }}
+            <p class="hero2-subtitle">{{ . | markdownify }}</p>
+          {{ end }}
+
+          {{- partial "platform-callout" . -}}
+
+        </div>
+      </div>
+
+      <div class="feature-hero2-video"></div>
+    </div>
+
+    {{- partial "feature-redesign2-body.html" . -}}
+
+  </div>
+</div>
+
+{{- partial "feature-redesign2-scripts.html" . -}}
+
+{{ end }}

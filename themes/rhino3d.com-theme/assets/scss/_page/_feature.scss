@@ -1,0 +1,836 @@
+// ------ Variables (local overrides) ------
+$feature-bg-hero:    #f5f6f7;   // light gray hero
+$feature-text-dark:  #1d1d1f;
+$feature-text-mid:   #424245;
+$feature-text-muted: #6e6e73;
+$feature-radius:     20px;
+$feature-box-shadow: 0 0px 10px rgba(133, 133, 133, 0.15);
+
+// ------ Full-bleed helper ------
+// Escapes the outerbox's 75px padding + auto-centering margin at large viewports.
+// On mobile the outerbox drops to 15px padding (see _core/_layout.scss).
+@mixin feature-full-bleed {
+  margin-left:  calc(-75px - max(0px, (100vw - #{$global-desktop-maxwidth}) / 2));
+  margin-right: calc(-75px - max(0px, (100vw - #{$global-desktop-maxwidth}) / 2));
+
+  @media only screen and (max-width: $global-mobile-maxwidth) {
+    margin-left:  -15px;
+    margin-right: -15px;
+  }
+}
+
+// =====================================================
+// Feature hero
+// =====================================================
+
+.feature-hero,
+.feature-hero2,
+.feature-body-content {
+  font-family: 'Inter', sans-serif;
+}
+
+.feature-hero {
+  @include feature-full-bleed;
+  position: relative;
+  z-index: 0;
+  background-color: $feature-bg-hero;
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 0;
+  overflow: hidden;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, transparent, $global-rhino-color 25%, $global-rhino-color 75%, transparent) 1;
+
+  // Perspective grid — right side closer, left recedes into distance
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    left: -50%;
+    right: -50%;
+    z-index: 0;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.10) 1px, transparent 1px),
+      linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    transform: perspective(600px) rotateY(-25deg) scaleX(0.6);
+    transform-origin: center center;
+  }
+
+  // Gradient overlay: solid on the left (covers clip area), grid visible on the right
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      to right,
+      #{$feature-bg-hero} 0%,
+      #{$feature-bg-hero} 30%,
+      rgba(245, 245, 247, 0.8) 52%,
+      rgba(245, 245, 247, 0.2) 72%,
+      transparent 100%
+    );
+  }
+
+  .feature-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: $global-desktop-maxwidth;
+    margin: 0 auto;
+    padding: 48px 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .feature-hero-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .feature-hero-title-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .feature-hero-command-icon {
+    flex-shrink: 0;
+    line-height: 0; // removes inline whitespace so bottom edges align cleanly
+
+    img {
+      width: clamp(40px, 6vw, 64px);
+      height: clamp(40px, 6vw, 64px);
+      object-fit: contain;
+      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+    }
+  }
+
+  .feature-hero-eyebrow {
+    display: inline-block;
+    background: $global-rhino-color;
+    border-radius: 100px;
+    padding: 4px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 20px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover,
+      &:visited { color: #fff; }
+    }
+  }
+
+  .feature-hero-title {
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.04;
+    color: $global-rhino-color;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .feature-hero-subtitle {
+    font-size: clamp(15px, 1.6vw, 19px);
+    font-weight: 400;
+    color: $feature-text-mid;
+    max-width: 600px;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0;
+  }
+
+  // Platform callout in hero — neutralise default float/colour
+  .platform-callout {
+    float: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: $feature-text-muted;
+    font-size: 18px;
+    margin: 20px 0 0;
+
+    // Template always renders the wrapper div even when no restriction applies.
+    // Hide it entirely when empty so it contributes no space at all.
+    &:not(:has(*)) {
+      display: none;
+    }
+
+    .platform-callout-text {
+      font-size: 13px;
+      color: $feature-text-muted;
+      margin: 0;
+    }
+  }
+}
+
+// =====================================================
+// Feature body content
+// =====================================================
+
+// =====================================================
+// Alternating sections (built by JS at runtime)
+// =====================================================
+
+.feature-section {
+  @include feature-full-bleed;
+
+  &.feature-section-white { background: #ffffff; }
+  &.feature-section-gray  { background: $feature-bg-hero; --video-frame: #{$feature-bg-hero}; } // #f5f5f7
+}
+
+// Re-apply the outerbox content width + padding inside each section
+.feature-section-inner {
+  max-width: $global-desktop-maxwidth;
+  margin: 0 auto;
+  padding: 72px 75px;
+
+  @media only screen and (max-width: $global-mobile-maxwidth) {
+    padding: 48px 15px;
+  }
+}
+
+// =====================================================
+// Feature body content
+// =====================================================
+
+.feature-body-content {
+  padding: 0;
+
+  // ---- Headings ----
+  h2 {
+    font-size: clamp(32px, 4vw, 36px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: $feature-text-dark;
+    margin-top: 0;
+    margin-bottom: 16px;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: $feature-text-dark;
+    margin-top: 52px;
+    margin-bottom: 12px;
+  }
+
+  // ---- Two-column layout ({{< row >}} / {{< column >}} shortcodes) ----
+  .flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 48px;
+    margin: 32px 0 0;
+
+    // Reset the old negative-margin gutter technique from _layout.scss
+    > .column,
+    > div {
+      flex: 1 1 280px;
+      min-width: 0;
+      margin: 0;
+
+      h3 {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0;
+        margin-top: 0;
+        margin-bottom: 12px;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+
+  // ---- Body text ----
+  p {
+    font-size: 17px;
+    color: $feature-text-mid;
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+
+  // ---- Section description divs ----
+  .v8-new-description,
+  .v9-new-description {
+    font-size: 17px;
+    color: $feature-text-mid;
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  // ---- Lists ----
+  ol {
+    color: $feature-text-mid;
+    font-size: 16px;
+    line-height: 1.75;
+
+    li { margin-bottom: 8px; }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    color: $feature-text-mid;
+    font-size: 16px;
+    line-height: 1.75;
+
+    li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 8px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: calc(0.85em - 2px);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $global-rhino-color;
+      }
+    }
+  }
+
+  // ---- Inline code ----
+  code {
+    font-size: 14px;
+    background: #f5f5f7;
+    border-radius: 6px;
+    padding: 2px 6px;
+    color: $feature-text-dark;
+  }
+
+  // ---- Rhino-command shortcode: keep icon + text together ----
+  // The shortcode renders <span.unfurl-link><strong><img> CommandName</strong>…</span>.
+  // Guard against any feature-page img rules breaking the inline icon.
+  .unfurl-link {
+    strong img {
+      display: inline !important;
+      height: 24px !important;
+      width: auto !important;
+      margin-right: 2px !important;
+      vertical-align: middle !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    strong {
+      white-space: nowrap;
+    }
+  }
+
+  // ---- Images from {{< figure >}} shortcode ----
+  // Override the global `figure { overflow: hidden }` from hugo-easy-gallery
+  // so the shadow on the img can breathe on all four sides.
+  // All visual styling goes directly on img — no styling on .img or figure —
+  // so there is only one rounded element and no double-border.
+  figure {
+    overflow: visible;
+    margin: 0;
+  }
+
+  .box {
+    margin: 40px auto 8px;
+
+    .img {
+      display: block;
+      line-height: 0;  // collapse inline whitespace under the img
+      background: none;
+      // intentionally no border-radius / overflow / shadow here
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      border-radius: $feature-radius;  // CSS clips replaced elements to this shape
+      box-shadow: $feature-box-shadow
+    }
+
+    figcaption {
+      padding: 10px 4px 0;
+      background: none;
+      border: none;
+
+      p, div {
+        font-size: 13px;
+        color: $feature-text-muted;
+        text-align: right;
+        font-style: normal;
+        margin: 0;
+        padding: 0;
+        line-height: 1.45;
+      }
+    }
+  }
+
+  // Breathing room after a captioned figure
+  .box + * { margin-top: 32px; }
+
+  // ---- Images/video from {{< image >}} shortcode (bare <img>/<video> direct children) ----
+  // > img targets pre-JS DOM; .feature-section-inner > img targets post-JS restructured DOM.
+  > img,
+  .feature-section-inner > img {
+    display: block;
+    margin: 32px auto;
+    border-radius: $feature-radius;
+    box-shadow: $feature-box-shadow;
+    max-width: 100%;
+  }
+
+  // ---- Image-fade shortcode ----
+  .imageFade {
+    border-radius: $feature-radius;
+    box-shadow: $feature-box-shadow;
+    margin: 32px 0;
+  }
+
+  // ---- Before/after (twentytwenty) shortcode ----
+  .twentytwenty-container {
+    border-radius: $feature-radius;
+    box-shadow: $feature-box-shadow;
+    overflow: hidden;
+    margin: 32px 0;
+  }
+
+  // ---- Vimeo embeds ----
+  .vimeo-embed,
+  .feature-section-inner .vimeo-embed {
+    position: relative;
+    margin: 32px 0;
+    border-radius: $feature-radius;
+    overflow: hidden;
+    box-shadow: $feature-box-shadow;
+    transform: translateZ(0); // force compositing layer so border-radius clips the iframe
+
+    iframe {
+      border-radius: $feature-radius;
+    }
+
+    // 1px inset overlay in section bg color — covers subpixel bleed at rounded corners
+    // and Windows display-scaling black border artifacts
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: $feature-radius;
+      box-shadow: inset 0 0 0 1px var(--video-frame, #ffffff);
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  // ---- Local video embeds ----
+  .local-video-embed,
+  .feature-section-inner .local-video-embed {
+    position: relative;
+    margin: 32px 0;
+    border-radius: $feature-radius;
+    overflow: hidden;
+    box-shadow: $feature-box-shadow;
+    transform: translateZ(0);
+    background: white;
+
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    // 1px inset overlay in section bg color — covers subpixel bleed at rounded corners
+    // and Windows display-scaling black border artifacts
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: $feature-radius;
+      box-shadow: inset 0 0 0 1px var(--video-frame, #ffffff);
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  // ---- "New in 9" badges: red, pill-shaped ----
+  .new-callout-small,
+  .new-callout-bullet,
+  .new-callout.new-callout-inline {
+    background: $global-rhino-color !important;
+    color: #fff !important;
+    border-radius: 100px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 4px 12px !important;
+    letter-spacing: 0.01em;
+    vertical-align: middle;
+    margin-left: 10px;
+
+    a {
+      color: #fff !important;
+      text-decoration: none;
+      &:visited { color: #fff !important; }
+    }
+  }
+
+  // ---- Rhino commands list heading ----
+  .feature-commands-heading {
+    font-size: 13px;
+    font-weight: 600;
+    color: $feature-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 8px;
+  }
+}
+
+// =====================================================
+// Feature hero 2 (feature-redesign2 variant)
+// Same perspective grid + border as feature-redesign, full-height with video below
+// =====================================================
+
+.feature-hero2 {
+  @include feature-full-bleed;
+  position: relative;
+  z-index: 0;
+  background-color: #fff;
+  margin-top: -10px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  height: calc(100dvh - 60px); // fill viewport below contracted navbar
+
+  // Header band — clips the grid so it doesn't bleed into the video below
+  .feature-hero2-top {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    background-color: $feature-bg-hero;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to right, transparent, $global-rhino-color 25%, $global-rhino-color 75%, transparent) 1;
+
+    // Perspective grid — clipped to this band only
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%; bottom: -50%;
+      left: -50%; right: -50%;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.10) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+      background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+      transform: perspective(600px) rotateY(-25deg) scaleX(0.6);
+      transform-origin: center center;
+    }
+
+    // Gradient overlay: solid left → transparent right, reveals grid on the right
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        to right,
+        #{$feature-bg-hero} 0%,
+        #{$feature-bg-hero} 30%,
+        rgba(245, 245, 247, 0.8) 52%,
+        rgba(245, 245, 247, 0.2) 72%,
+        transparent 100%
+      );
+    }
+  }
+
+  // Centered content wrapper — sits above the gradient overlay
+  .feature-hero2-top-inner {
+    position: relative;
+    z-index: 2;
+    max-width: $global-desktop-maxwidth;
+    margin: 0 auto;
+    padding: 32px 75px 0px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  // Icon + H1 row
+  .hero2-title-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+  }
+
+  .feature-hero2-video {
+    flex: 1;
+    min-height: 120px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    // Local video: height-primary — fill slot height, width follows aspect ratio
+    > .local-video-embed {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      margin: 0;
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: none;
+      transform: translateZ(0);
+      background: #000;
+      position: relative;
+
+      video {
+        display: block;
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        pointer-events: none;
+
+        &::-webkit-media-controls { display: none !important; }
+        &::-webkit-media-controls-enclosure { display: none !important; }
+      }
+
+      // 1px inset overlay in hero bg color — hides Windows display-scaling black border artifacts
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        box-shadow: inset 0 0 0 1px var(--video-frame, #ffffff);
+        pointer-events: none;
+        z-index: 10;
+      }
+    }
+
+    // Vimeo: width/height set by sizeHeroVimeo() in JS (height-primary)
+    > .vimeo-embed {
+      flex-shrink: 0;
+      position: relative !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border-radius: 0 !important;
+      overflow: hidden !important;
+      box-shadow: none !important;
+      transform: none !important;
+
+      iframe {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+        pointer-events: none !important;
+      }
+
+      // 1px inset overlay in hero bg color — hides Windows display-scaling black border artifacts
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        box-shadow: inset 0 0 0 1px var(--video-frame, #ffffff);
+        pointer-events: none;
+        z-index: 10;
+      }
+    }
+
+    // GIF / static image: height-primary
+    > img {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      object-fit: contain;
+    }
+  }
+
+  @media only screen and (max-width: $global-mobile-maxwidth) {
+    height: auto;
+
+    .feature-hero2-top-inner {
+      padding: 28px 24px 16px;
+      gap: 16px;
+    }
+
+
+    .feature-hero2-video {
+      flex: none;
+      height: 56vw;
+    }
+  }
+}
+
+.feature-hero2-compact {
+  height: auto;
+
+  .feature-hero2-top-inner {
+    padding-bottom: 48px;
+  }
+
+  .hero2-subtitle {
+    max-width: 700px;
+  }
+}
+
+.hero2-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  flex-shrink: 0;
+  margin-top: 8px;
+  background: $global-rhino-color;
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+
+  a { color: #fff; text-decoration: none; &:hover, &:visited { color: #fff; } }
+}
+
+.hero2-icon {
+  flex-shrink: 0;
+  line-height: 0; // removes inline whitespace so bottom edges align cleanly
+
+  img {
+    width: clamp(40px, 6vw, 64px);
+    height: clamp(40px, 6vw, 64px);
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  }
+}
+
+.hero2-title {
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.0;
+  color: $global-rhino-color;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.hero2-subtitle {
+  font-size: 17px;
+  font-weight: 400;
+  color: $feature-text-mid;
+  line-height: 1.65;
+  max-width: 700px;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: $global-mobile-maxwidth) {
+  .hero2-title    { font-size: 36px; }
+  .hero2-subtitle { font-size: 15px; max-width: none; }
+}
+
+// =====================================================
+// Search icon button injected into collapsed navbar on feature-redesign2 pages
+// =====================================================
+
+#nav-search-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  line-height: 0;
+  transform: translateY(-3px); // optical alignment with surrounding text
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover { color: $global-rhino-color; }
+  &:focus { outline: none; }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+}
+
+// =====================================================
+// Scroll-reveal animation
+// =====================================================
+
+.feature-reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.feature-revealed {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// =====================================================
+// Mobile overrides
+// =====================================================
+
+@media only screen and (max-width: $global-mobile-maxwidth) {
+  .feature-hero {
+    .feature-hero-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+      padding: 32px 24px;
+    }
+
+    .feature-hero-command-icon img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .feature-hero-title { font-size: 36px; }
+    .feature-hero-subtitle { font-size: 15px; }
+  }
+
+  .feature-body-content {
+    h2 { font-size: 28px; }
+    p, h2 + p { font-size: 16px; }
+    .flex-container { gap: 24px; }
+    .box { margin: 24px 0 6px; }
+    .box img { box-shadow: $feature-box-shadow; }
+  }
+}

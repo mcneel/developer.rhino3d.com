@@ -92,7 +92,7 @@ other = "Bob ❤️s Revit 😘"
 
 # This is optionally shown as a header in some feature pages
 [new-in-rhino-7]
-other = "Nuevo en Rhino 7"
+other = "Novedades de Rhino 7"
 
 # context: the bylines that sometimes show up under the title of a page.  Such as "por Scott Davidson..."
 [by]
@@ -258,11 +258,11 @@ other = "Más información"
 
 # Link title on homepage video captions
 [caption-try]
-other = "probar "
+other = "probar"
 
 # The conjoiner before the Buy link in the video caption
 [caption-or-conjoiner]
-other = "o "
+other = " o "
 
 # Link title on homepage video captions
 [caption-buy]

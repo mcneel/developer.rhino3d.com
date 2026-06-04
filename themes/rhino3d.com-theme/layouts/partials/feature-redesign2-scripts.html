@@ -1,0 +1,149 @@
+<script>
+(function () {
+  'use strict';
+
+  var body = document.querySelector('.feature-body-content');
+  if (!body) return;
+
+  // ── 1. Move first video/gif into the hero media slot (when present) ──────
+  var heroVideo = document.querySelector('.feature-hero2-video');
+  if (heroVideo) {
+    var firstMedia = body.querySelector('.local-video-embed, .vimeo-embed, img[src$=".gif"], img[src$=".GIF"]');
+
+    if (firstMedia) {
+      heroVideo.appendChild(firstMedia);
+
+      if (firstMedia.classList.contains('vimeo-embed')) {
+        var vimeoIframe = firstMedia.querySelector('iframe');
+
+        // Switch to background mode: hides player UI, enables autoplay+loop
+        if (vimeoIframe) {
+          var src = vimeoIframe.src;
+          if (src.indexOf('background=') === -1) src += '&background=1';
+          if (src.indexOf('autoplay=') === -1)   src += '&autoplay=1';
+          else src = src.replace(/autoplay=\d/, 'autoplay=1');
+          if (src.indexOf('loop=') === -1)        src += '&loop=1';
+          else src = src.replace(/loop=\d/, 'loop=1');
+          vimeoIframe.src = src;
+        }
+        // Sizing handled by sizeHeroVimeo() in the second script block
+      }
+
+      var vid = firstMedia.querySelector ? firstMedia.querySelector('video') : null;
+      if (vid) vid.removeAttribute('controls');
+    } else {
+      heroVideo.style.display = 'none';
+      // No media: collapse the hero to banner height only
+      var hero2 = document.querySelector('.feature-hero2');
+      if (hero2) hero2.style.height = 'auto';
+    }
+  }
+
+  // ── 2. Split body content into alternating sections at each H2 ──────────
+  var groups  = [];
+  var current = null;
+
+  Array.from(body.childNodes).forEach(function (node) {
+    var isEl   = node.nodeType === 1;
+    var isText = node.nodeType === 3 && node.textContent.trim() !== '';
+    if (isEl && node.matches('h2')) {
+      current = [node];
+      groups.push(current);
+    } else if (current && (isEl || isText)) {
+      current.push(node);
+    }
+  });
+
+  groups.forEach(function (group, i) {
+    var section = document.createElement('div');
+    section.className = 'feature-section ' +
+      (i % 2 === 0 ? 'feature-section-white' : 'feature-section-gray');
+    var inner = document.createElement('div');
+    inner.className = 'feature-section-inner';
+    group.forEach(function (el) { inner.appendChild(el); });
+    section.appendChild(inner);
+    body.appendChild(section);
+  });
+
+  // ── 3. Scroll-reveal ────────────────────────────────────────────────────
+  if (!('IntersectionObserver' in window)) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('feature-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -48px 0px' });
+
+  body.querySelectorAll('.feature-section-inner').forEach(function (inner) {
+    var delay = 0;
+    Array.from(inner.children).forEach(function (el) {
+      el.classList.add('feature-reveal');
+      el.style.transitionDelay = delay + 'ms';
+      observer.observe(el);
+      delay = el.matches('h2') ? 80 : Math.min(delay + 80, 320);
+    });
+  });
+
+  // ── 4. Suppress Vimeo unmute button ────────────────────────────────────
+  document.querySelectorAll('.vimeo-embed iframe').forEach(function (iframe) {
+    if (iframe.src.indexOf('player.vimeo.com') !== -1 && iframe.src.indexOf('unmute_button=') === -1) {
+      iframe.src += '&unmute_button=0';
+    }
+  });
+})();
+</script>
+
+<script>
+// Contracted navbar for feature-redesign2 pages
+(function () {
+  function init() {
+    document.documentElement.style.overflowX = 'hidden';
+    if (typeof contractNavBar !== 'function') return;
+
+    contractNavBar();
+    var outerbox = document.querySelector('.outerbox');
+    if (outerbox) outerbox.style.marginTop = '60px';
+
+    // Height-primary Vimeo sizing: fill slot height, only shrink when too wide for viewport
+    var heroSlot = document.querySelector('.feature-hero2-video');
+    if (heroSlot) {
+      function sizeHeroVimeo() {
+        var embed = heroSlot.querySelector('.vimeo-embed');
+        if (!embed) return;
+        var slotW = heroSlot.offsetWidth;
+        var slotH = heroSlot.offsetHeight;
+        if (!slotW || !slotH) return;
+        var ratio = 16 / 9;
+        var h = slotH, w = h * ratio;
+        if (w > slotW) { w = slotW; h = w / ratio; }
+        embed.style.width  = Math.round(w) + 'px';
+        embed.style.height = Math.round(h) + 'px';
+        var iframe = embed.querySelector('iframe');
+        if (iframe) iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
+      }
+      requestAnimationFrame(sizeHeroVimeo);
+      window.addEventListener('resize', sizeHeroVimeo);
+    }
+
+    window.onscroll = function () {
+      var scrollPos      = document.body.scrollTop || document.documentElement.scrollTop;
+      var footer         = $(".footer");
+      var footerFromTop  = footer.position().top - scrollPos;
+      var viewportHeight = $(window).height();
+      contractNavBar();
+      if (typeof setTocHeight === 'function') {
+        setTocHeight(viewportHeight - Math.max(viewportHeight - footerFromTop, 0) - 55);
+      }
+    };
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>

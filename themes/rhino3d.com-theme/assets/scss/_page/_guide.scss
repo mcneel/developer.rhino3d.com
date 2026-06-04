@@ -10,3 +10,113 @@
 	width:36px;
 	height:36px;
 }
+
+.docs-body-content {
+  h2 {
+    margin-top: 36px;
+  }
+
+  h3 {
+    margin-top: 32px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      position: relative;
+      padding-left: 22px;
+      line-height: 1.7;
+      margin-bottom: 6px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: calc(0.85em - 2px);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $global-rhino-color;
+      }
+    }
+  }
+
+  ol li {
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .box {
+    margin-top: 16px;
+  }
+
+  .imageFade {
+    margin-bottom: 32px;
+
+    & + .imageFade-caption-container {
+      margin-top: -28px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .box img,
+  > img,
+  .feature-section-inner > img,
+  .imageFade,
+  .vimeo-embed,
+  .local-video-embed {
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 16px;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+}
+
+.for-body-content {
+  .box figure {
+    border-radius: $feature-radius;
+    overflow: hidden;
+    box-shadow: $feature-box-shadow;
+  }
+
+  .box img,
+  > img,
+  p img,
+  .feature-section-inner > img,
+  .imageFade,
+  .vimeo-embed,
+  .local-video-embed {
+    border-radius: $feature-radius;
+    box-shadow: $feature-box-shadow;
+  }
+}
+
+img.img-flat,
+.box-flat img,
+.box-flat figure {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible;
+}
+
+.docs-page-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: #1d1d1f;
+  margin-top: 32px;
+  margin-bottom: 4px;
+  border-bottom: none;
+  padding-bottom: 0;
+}

@@ -4,12 +4,12 @@
   {{ if .Params.page_options.toc }}
     {{ partial "toc.html" . }}
   {{ end }}
-  
+
   <div class="main-content {{ if not .Params.page_options.toc }}toc-no{{ if .Params.page_options.narrow }} toc-no-narrow{{ end }}{{ end }}">
     {{/* partial "breadcrumbs.html" . */}}
       {{ if ne false (.Params.page_options.show_title) }}
       <div class="feature-title-container">
-        <div class="feature-title">{{ .Page.Title }}</div>{{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}<div class="new-callout"><a href="/{{ .Site.Params.latestRhinoVersion}}/new">{{ i18n "NEW-in-Vx" . }}</a></div>{{ end }}{{- partial "platform-callout" . -}}        
+        <div class="feature-title">{{ .Page.Title }}</div>{{ if eq (int .Site.Params.latestRhinoVersion) (int .Params.included_in.since) }}<div class="new-callout"><a href="/{{ .Site.Params.latestRhinoVersion}}/new">{{ i18n "NEW-in-Vx" . }}</a></div>{{ end }}{{- partial "platform-callout" . -}}
       </div>
       {{ end }}
       <p>{{ partial "byline.html" . }}</p>
@@ -27,7 +27,7 @@
       {{- $docs_lang_url := print $docs_help_url .Site.Params.docLang -}}
       {{- $docs_commands_url := print $docs_lang_url "/index.htm#commands/" -}}
       {{ $.Scratch.Set "base_url" $docs_commands_url }}
-      
+
       {{/*  If it's the non-english version, we need to look-up the english commands list... */}}
       {{/*  This presumes the lists are in the same order in the English and non-English version */}}
       {{- $.Scratch.Set "is-english" "false" -}}
@@ -67,7 +67,7 @@
           <ul>
             {{ range . }}
               <li><a href="{{ $.Scratch.Get "base_url" }}{{ lower . }}.htm" target="_blank" rel="noopener noreferrer">{{ . }}</a></li>
-            {{ end }}            
+            {{ end }}
           </ul>
         {{ end }}
       {{ end }}

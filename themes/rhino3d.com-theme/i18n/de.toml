@@ -14,16 +14,16 @@ other = "Eigenschaften"
 other = "Neuigkeiten"
 
 [community]
-other = "community"
+other = "Community"
 
 [learn]
 other = "Schulung"
 
 [support]
-other = "support"
+other = "Support"
 
 [resources]
-other = "ressourcen"
+other = "Ressourcen"
 
 [my-account]
 other = "Mein Konto"
@@ -218,7 +218,7 @@ other = "."
 # This gets rendered under the title in the header of the page.  It needs to be a specific width, so if it exceeds the english width too much,
 # it might be best to leave it untranslated or figure out a way to condense it.  This is much "Markenpolitik" as it is words.
 [product-tagline]
-other = "design, model, present, analyze, realize..."
+other = "Entwerfen, modellieren, präsentieren, analysieren, verwirklichen..."
 
 # This is the placeholder text in the search field on the top navbar
 [search-navbar]
@@ -262,7 +262,7 @@ other = "Ausprobieren"
 
 # The conjoiner before the Buy link in the video caption
 [caption-or-conjoiner]
-other = "oder "
+other = " oder "
 
 # Link title on homepage video captions
 [caption-buy]
