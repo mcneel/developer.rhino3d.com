@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Curves" ]
 description = "Demonstrates how to draw a line between two user-specified curves."
 keywords = [ "line", "between", "curves" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Line Between Curves"
 type = "samples/rhinocommon"
@@ -66,7 +66,36 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import System
+import Rhino
+import scriptcontext as sc
+
+def RunCommand():
+    go = Rhino.Input.Custom.GetObject()
+    go.SetCommandPrompt("Select two curves")
+    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve
+    go.GetMultiple(2, 2)
+    if go.CommandResult() != Rhino.Commands.Result.Success:
+        return go.CommandResult()
+
+    objRef0 = go.Object(0)
+    objRef1 = go.Object(1)
+
+    curve0, t0 = objRef0.CurveParameter()
+    curve1, t1 = objRef1.CurveParameter()
+    if curve0 is None or not Rhino.RhinoMath.IsValidDouble(t0) or curve1 is None or not Rhino.RhinoMath.IsValidDouble(t1):
+        return Rhino.Commands.Result.Failure
+
+    rc, line = Rhino.Geometry.Line.TryCreateBetweenCurves(curve0, curve1, t0, t1, False, False)
+    if rc:
+        if System.Guid.Empty != sc.doc.Objects.AddLine(line):
+            sc.doc.Views.Redraw()
+            return Rhino.Commands.Result.Success
+    return Rhino.Commands.Result.Failure
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

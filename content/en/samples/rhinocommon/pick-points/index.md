@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Picking and Selection" ]
 description = "Demonstrates how to pick and select point objects."
 keywords = [ "pick", "points" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Pick Points"
 type = "samples/rhinocommon"
@@ -126,7 +126,75 @@ class PointsConduit : Rhino.Display.DisplayConduit
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import System
+import scriptcontext as sc
+
+m_conduit_points = []
+
+class ConduitPoint:
+    def __init__(self, point):
+        self.Color = System.Drawing.Color.White
+        self.Point = point
+
+class GetConduitPoint(Rhino.Input.Custom.GetPoint):
+    def __init__(self, conduitPoints):
+        super().__init__()
+        self.m_conduit_points = conduitPoints
+
+    def OnMouseDown(self, e):
+        picker = Rhino.Input.Custom.PickContext()
+        picker.View = e.Viewport.ParentView
+        picker.PickStyle = Rhino.Input.Custom.PickStyle.PointPick
+
+        xform = e.Viewport.GetPickTransform(e.WindowPoint)
+        picker.SetPickTransform(xform)
+
+        for cp in self.m_conduit_points:
+            rc, depth, distance = picker.PickFrustumTest(cp.Point)
+            if rc:
+                cp.Color = System.Drawing.Color.Red
+            else:
+                cp.Color = System.Drawing.Color.White
+
+class PointsConduit(Rhino.Display.DisplayConduit):
+    def __init__(self, conduitPoints):
+        super().__init__()
+        self.m_conduit_points = conduitPoints
+
+    def DrawForeground(self, e):
+        if self.m_conduit_points is not None:
+            for cp in self.m_conduit_points:
+                e.Display.DrawPoint(cp.Point, Rhino.Display.PointStyle.Simple, 3, cp.Color)
+
+def RunCommand():
+    conduit = PointsConduit(m_conduit_points)
+    conduit.Enabled = True
+
+    gp = Rhino.Input.Custom.GetPoint()
+    while True:
+        gp.SetCommandPrompt("click location to create point. (<ESC> exit)")
+        gp.AcceptNothing(True)
+        gp.Get()
+        if gp.CommandResult() != Rhino.Commands.Result.Success:
+            break
+        m_conduit_points.append(ConduitPoint(gp.Point()))
+        sc.doc.Views.Redraw()
+
+    gcp = GetConduitPoint(m_conduit_points)
+    while True:
+        gcp.SetCommandPrompt("select conduit point. (<ESC> to exit)")
+        gcp.AcceptNothing(True)
+        gcp.Get(True)
+        sc.doc.Views.Redraw()
+        if gcp.CommandResult() != Rhino.Commands.Result.Success:
+            break
+
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>

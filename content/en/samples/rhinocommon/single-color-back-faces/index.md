@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Other" ]
 description = "Demonstrates how to determine the curve and object colors of back faces."
 keywords = [ "single", "color", "back", "faces" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Single Color Back Faces"
 type = "samples/rhinocommon"
@@ -48,7 +48,24 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+
+
+def RunCommand():
+    display_mode_descs = [
+        dm for dm in Rhino.Display.DisplayModeDescription.GetDisplayModes()
+        if dm.EnglishName == "Shaded"
+    ]
+
+    for dmd in display_mode_descs:
+        Rhino.RhinoApp.WriteLine("CurveColor {0}", dmd.DisplayAttributes.CurveColor.ToKnownColor())
+        Rhino.RhinoApp.WriteLine("ObjectColor {0}", dmd.DisplayAttributes.ObjectColor.ToKnownColor())
+    return Rhino.Commands.Result.Success
+
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>
