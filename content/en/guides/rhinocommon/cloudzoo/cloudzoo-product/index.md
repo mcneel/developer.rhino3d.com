@@ -51,7 +51,7 @@ toc_type = "single"
 	    "titles": {
 	        "en": "Rhino Unicorn"
 	    },
-		"relatedProducts":[
+		"relatedProducts": [
 			{"id":"59ff75c9-9c71-4ef8-a290-6b590f3fc63a"},
 			{"id":"55500d41-3a41-4474-99b3-684032a4f4df"}
 		]
