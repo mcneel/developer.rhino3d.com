@@ -42,15 +42,19 @@ toc_type = "single"
 	        "example": "RMA7-XXXX-XXXX-XXXX-XXXX-XXXX",
 	        "regexFilter": "[A-Za-z0-9]"
 	    },
-	    "version": "6",
+	    "version": "9",
 	    "platforms": [
 	        "Windows"
 	    ],
 	    "picture": "https://elisapi.mcneel.com/media/2",
 	    "downloadUrl": "https://www.rhino3d.com/download/rhino-for-mac/6/wip",
 	    "titles": {
-	        "en": "Rhino WIP"
+	        "en": "Rhino Unicorn"
 	    },
+		"relatedProducts":[
+			{"id":"59ff75c9-9c71-4ef8-a290-6b590f3fc63a"},
+			{"id":"55500d41-3a41-4474-99b3-684032a4f4df"}
+		]
 	}
 
 ## Description
@@ -64,6 +68,7 @@ toc_type = "single"
 - `picture`  - A url where an icon for this product may be found. The icon must not be larger than 1MP.
 - `downloadUrl`  - A url where the actual software the product represents may be downloaded. This link will be publicly available to users.
 -   `titles` - A dictionary of localized product names. Each key represents an ISO 639-1 language code. You may specify a two letter country code after the language with a dash or an underscore (i.e. such as `zh-tw`, case insensitive). If that exact language id is not available for a particular task in the system, the system will attempt to use a more generic language id (i.e. for example, if `es-CO` is not available, then the system will try to use `es`). If the region agnostic language id is also not available, en (English) will be used. At least one key-value pair must be present, preferably in English.
+-   `relatedProducts` - An array of related products. Related products allow Cloud Zoo to issue a lease for any related product listed in this array using a seat for the given product. For example, if the current product is Rhino 9 and it includes Rhino 8 and Rhino 7 in its related products array, a client who has a Rhino 9 seat available can request a lease for Rhino 8 or Rhino 7. In this manner, related products allow users to run previous and future versions of your product without having to have additional licenses in their respective entities.
 
 
 
