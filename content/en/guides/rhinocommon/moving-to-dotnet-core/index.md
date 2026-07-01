@@ -29,7 +29,7 @@ block_webcrawlers = false
 
 Rhino 8 introduced the open source [.NET Core Runtime](https://github.com/dotnet/runtime) for running .NET code on both Windows and Mac, replacing the [mono runtime](https://www.mono-project.com) previously used on Mac and .NET Framework on Windows.
 
-**Rhino 9** continues this transition with .NET 10 as the default runtime, and **.NET Framework is deprecated**. .NET Framework plugins may still load and run in Rhino 9, but support is not guaranteed to continue in future versions. **All plugin developers should migrate to .NET 8 or .NET 10.**
+**Rhino 9** continues this transition with .NET 10 as the default runtime, and **.NET Framework is deprecated**. .NET Framework runtime and plugins may still load and run in Rhino 9, but support is not guaranteed to continue in future versions. **All plugin developers should migrate to .NET 10.**
 
 On Windows, Rhino 8 still offered an optional .NET Framework fallback for compatibility with third-party plugins or Rhino.Inside scenarios. That fallback remains available in Rhino 9 but is deprecated and should not be relied upon for new or updated plugins.
 
@@ -45,7 +45,7 @@ Additionally, using .NET Core on Mac eliminates a lot of compatibility issues be
 
 {{< call-out warning "Rhino 9: .NET Framework Deprecated" >}}
 
-**The .NET Framework runtime is deprecated in Rhino 9.** It still works today, and plugins targeting .NET Framework continue to load and run, but the runtime itself is not guaranteed to remain available in future releases. You should **migrate your plugins to .NET 10** — do not ship new or updated plugins targeting .NET Framework.
+**The .NET Framework runtime is deprecated in Rhino 9.** It still works today, and plugins targeting .NET Framework continue to load and run, but the runtime itself is not guaranteed to remain available in future releases. You should **migrate your plugins to .NET 10** — do not ship new or updated plugins targeting .NET Framework only.
 
 {{< /call-out >}}
 
@@ -111,7 +111,7 @@ Many plugins won't need any changes to run in Rhino 8 with .NET Core, but if the
 
 For **Rhino 9**, you should target **.NET 10.0**. Since .NET Framework is deprecated in Rhino 9, multi-targeting .NET 4.8 is only necessary if you also need to support Rhino 8 on Windows with the .NET Framework fallback, or Rhino 7 and earlier.
 
-For Mac-specific plugins you can target .NET 8.0 (Rhino 8) or .NET 10.0 (Rhino 9) as .NET Core is the only runtime available on Mac. If you want the plugin to be compatible with Rhino 7, target .NET 4.8 instead or use multi-targeting.
+For Mac-specific plugins you can target .NET 8.0 (Rhino 8) or .NET 10.0 (Rhino 9) as .NET Core is the only runtime available on Mac. If you want the plugin to be compatible with Rhino 7, target .NET 4.8 and use multi-targeting.
 
 | Rhino Version | Recommended Target | Notes |
 |---|---|---|
