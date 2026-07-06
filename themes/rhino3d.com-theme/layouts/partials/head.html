@@ -50,6 +50,12 @@
     <link rel="preload" as="font" type="font/woff2" href="/webfonts/fa-solid-900.woff2" crossorigin="anonymous"/>
     <link rel="preload" as="font" type="font/woff2" href="/webfonts/fa-regular-400.woff2" crossorigin="anonymous"/>
 
+    <!-- llms.txt (Generative Engine Optimization): advertise the plain-text index. -->
+    <!-- Self-gating: only the home that actually renders the "llms" output (English) has it. -->
+    {{- with .Site.Home.OutputFormats.Get "llms" }}
+    <link rel="alternate" type="text/plain" href="{{ .RelPermalink }}" title="llms.txt">
+    {{- end }}
+
     <!-- Meta -->
     {{- partial "meta.html" . -}}
 </head>

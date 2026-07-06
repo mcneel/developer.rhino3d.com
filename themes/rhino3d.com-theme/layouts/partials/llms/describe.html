@@ -1,0 +1,15 @@
+{{- /*
+  Returns a clean, single-line description for a page's llms.txt entry:
+  the front-matter .Description if present, otherwise Hugo's auto .Summary.
+  HTML is stripped, entities decoded, whitespace (incl. newlines) collapsed to
+  single spaces, trimmed, and truncated so every entry stays on one line.
+  Usage:  {{ with partial "llms/describe.html" $page }}: {{ . }}{{ end }}
+*/ -}}
+{{- $d := .Description -}}
+{{- if not $d -}}{{- $d = .Summary -}}{{- end -}}
+{{- /* Decode entities to real characters (Summary yields &rsquo; &hellip; etc.), then
+       collapse and truncate. truncate is HTML-aware and re-escapes any bare "&", so
+       htmlUnescape again afterwards. Two passes handle both entity- and raw-& inputs. */ -}}
+{{- $d = $d | plainify | htmlUnescape | replaceRE `\s+` " " -}}
+{{- $d = trim $d " " -}}
+{{- return (truncate 200 $d | htmlUnescape) -}}
