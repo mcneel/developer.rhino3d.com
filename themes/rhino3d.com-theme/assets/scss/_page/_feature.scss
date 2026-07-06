@@ -338,17 +338,19 @@ $feature-box-shadow: 0 0px 10px rgba(133, 133, 133, 0.15);
     }
   }
 
-  // ---- Images from {{< figure >}} shortcode ----
+  // ---- Images from standalone {{< figure >}} shortcode ----
+  // Excludes figures/boxes nested in a {{< gallery >}} grid, which must keep
+  // hugo-easy-gallery's own tile/absolute-position layout (see .gallery overrides below).
   // Override the global `figure { overflow: hidden }` from hugo-easy-gallery
   // so the shadow on the img can breathe on all four sides.
   // All visual styling goes directly on img — no styling on .img or figure —
   // so there is only one rounded element and no double-border.
-  figure {
+  figure:not(.gallery figure) {
     overflow: visible;
     margin: 0;
   }
 
-  .box {
+  .box:not(.gallery .box) {
     margin: 40px auto 8px;
 
     .img {
@@ -384,8 +386,8 @@ $feature-box-shadow: 0 0px 10px rgba(133, 133, 133, 0.15);
     }
   }
 
-  // Breathing room after a captioned figure
-  .box + * { margin-top: 32px; }
+  // Breathing room after a captioned figure (not gallery tiles)
+  .box:not(.gallery .box) + * { margin-top: 32px; }
 
   // ---- Images/video from {{< image >}} shortcode (bare <img>/<video> direct children) ----
   // > img targets pre-JS DOM; .feature-section-inner > img targets post-JS restructured DOM.
@@ -509,6 +511,13 @@ $feature-box-shadow: 0 0px 10px rgba(133, 133, 133, 0.15);
 // Same perspective grid + border as feature-redesign, full-height with video below
 // =====================================================
 
+// The sitewide .outerbox margin-top ($global-nav-height-large) leaves a gap above
+// this hero — measured/confirmed in-browser at 68px for the real fixed navbar height.
+// Scoped to pages with .feature-hero2 so it doesn't affect the rest of the site.
+.outerbox:has(.feature-hero2) {
+  margin-top: 68px;
+}
+
 .feature-hero2 {
   @include feature-full-bleed;
   position: relative;
@@ -518,7 +527,7 @@ $feature-box-shadow: 0 0px 10px rgba(133, 133, 133, 0.15);
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  height: calc(100dvh - 60px); // fill viewport below contracted navbar
+  height: calc(100dvh - 68px); // fill viewport below the (fixed-height) navbar
 
   // Header band — clips the grid so it doesn't bleed into the video below
   .feature-hero2-top {
@@ -726,15 +735,15 @@ $feature-box-shadow: 0 0px 10px rgba(133, 133, 133, 0.15);
   line-height: 0; // removes inline whitespace so bottom edges align cleanly
 
   img {
-    width: clamp(40px, 6vw, 64px);
-    height: clamp(40px, 6vw, 64px);
+    width: clamp(36px, 5vw, 50px);
+    height: clamp(36px, 5vw, 50px);
     object-fit: contain;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
   }
 }
 
 .hero2-title {
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: clamp(36px, 5vw, 50px);
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.0;
@@ -830,7 +839,7 @@ $feature-box-shadow: 0 0px 10px rgba(133, 133, 133, 0.15);
     h2 { font-size: 28px; }
     p, h2 + p { font-size: 16px; }
     .flex-container { gap: 24px; }
-    .box { margin: 24px 0 6px; }
-    .box img { box-shadow: $feature-box-shadow; }
+    .box:not(.gallery .box) { margin: 24px 0 6px; }
+    .box:not(.gallery .box) img { box-shadow: $feature-box-shadow; }
   }
 }

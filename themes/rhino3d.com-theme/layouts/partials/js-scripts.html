@@ -25,6 +25,8 @@
   gtag('config', 'UA-512742-1');
 </script>
 
+{{- partial "clarity" . }}
+
 {{- if .Site.Params.supportsChat -}}
   {{- if not .Params.page_options.disableChat -}}
     {{- if in "en es fr de it" $.Site.Language -}}

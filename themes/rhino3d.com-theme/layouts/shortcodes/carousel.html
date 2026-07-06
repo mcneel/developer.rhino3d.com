@@ -41,36 +41,46 @@
       .carousel__item {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
         position: absolute;
         top: 0;
         left: 50%;
         margin-left: -25%;
         width: 50%;
         height: 100%;
-        background-position: center;
+        transition: transform 0.5s, opacity 0.5s;
+      }
+
+      .carousel__item-image {
+        flex: 1 1 auto;
+        min-height: 0;
+        background-position: center bottom;
         background-size: {{ $.Scratch.Get "mode" }};
         background-repeat: no-repeat;
         background-color: transparent;
-        transition: transform 0.5s, opacity 0.5s;
       }
-      
+
       .carousel__item.static {
         transition: none;
       }
-      
+
       .carousel__item--left {
         transform: translateX(-75%) scale(0.5);
         opacity: 0.4;
       }
-      
+
       .carousel__item--center {
-          {{/*  box-shadow: 0px 0px 8px #0000002e;  */}}
-          filter: drop-shadow(0px 0px 3px rgba(66,55,55, .1));
         z-index: 1;
       }
 
+      .carousel__item--center .carousel__item-image {
+          {{/*  box-shadow: 0px 0px 8px #0000002e;  */}}
+          filter: drop-shadow(0px 0px 3px rgba(66,55,55, .1));
+      }
+
       .caption {
+        flex: 0 0 auto;
+        margin: 8px 0 0;
+        text-align: center;
         color: #858585;
         pointer-events: none;
     }
@@ -221,6 +231,13 @@
         p.innerHTML = text;
         return p;
       }
+
+      image (url) {
+        const div = document.createElement("div");
+        div.classList.add('carousel__item-image');
+        if (url) div.style.backgroundImage = `url('${url}')`;
+        return div;
+      }
       
       updateValues (forward) {
           if (!this.animating) {
@@ -251,8 +268,8 @@
             break;
           }
     
-          this.elements.items.out.style.backgroundImage = `url('${this.items[newItem].image}')`;
-          this.elements.items.out.firstChild.innerHTML = this.items[newItem].caption;
+          this.elements.items.out.querySelector('.carousel__item-image').style.backgroundImage = `url('${this.items[newItem].image}')`;
+          this.elements.items.out.querySelector('.caption').innerHTML = this.items[newItem].caption;
 
           this.slide(forward);
         }
@@ -281,16 +298,20 @@
         this.elements.arrows = {};
         
         this.elements.items.left = document.createElement('div');
+        this.elements.items.left.appendChild(this.image(this.items[this.items.length - 1].image));
         this.elements.items.left.appendChild(this.caption(this.items[this.items.length - 1].caption));
         this.elements.items.center = document.createElement('div');
+        this.elements.items.center.appendChild(this.image(this.items[0].image));
         this.elements.items.center.appendChild(this.caption(this.items[0].caption));
         this.elements.items.right = document.createElement('div');
+        this.elements.items.right.appendChild(this.image(this.items[1].image));
         this.elements.items.right.appendChild(this.caption(this.items[1].caption));
         this.elements.items.out = document.createElement('div');
-        this.elements.items.out.appendChild(this.caption("out"));;
+        this.elements.items.out.appendChild(this.image());
+        this.elements.items.out.appendChild(this.caption("out"));
         this.elements.arrows.left = document.createElement('div');
         this.elements.arrows.right = document.createElement('div');
-        
+
         this.elements.items.left.classList.add('carousel__item');
         this.elements.items.center.classList.add('carousel__item');
         this.elements.items.right.classList.add('carousel__item');
@@ -304,11 +325,7 @@
         this.elements.arrows.right.classList.add('carousel__arrow');
         this.elements.arrows.left.classList.add('carousel__arrow--left');
         this.elements.arrows.right.classList.add('carousel__arrow--right');
-        
-        this.elements.items.left.style.backgroundImage = `url('${this.items[this.items.length - 1].image}')`;
-        this.elements.items.center.style.backgroundImage = `url('${this.items[0].image}')`;
-        this.elements.items.right.style.backgroundImage = `url('${this.items[1].image}')`;
-        
+
         append(this.elements, this.target);
         
         this.eventListeners();

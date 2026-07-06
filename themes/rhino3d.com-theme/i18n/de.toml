@@ -218,7 +218,7 @@ other = "."
 # This gets rendered under the title in the header of the page.  It needs to be a specific width, so if it exceeds the english width too much,
 # it might be best to leave it untranslated or figure out a way to condense it.  This is much "Markenpolitik" as it is words.
 [product-tagline]
-other = "Entwerfen, modellieren, präsentieren, analysieren, verwirklichen..."
+other = "entwerfen · modellieren · präsentieren · analysieren · verwirklichen"
 
 # This is the placeholder text in the search field on the top navbar
 [search-navbar]

@@ -97,17 +97,12 @@
 </script>
 
 <script>
-// Contracted navbar for feature-redesign2 pages
+// Vimeo hero sizing for feature-redesign2 pages
 (function () {
   function init() {
     document.documentElement.style.overflowX = 'hidden';
-    if (typeof contractNavBar !== 'function') return;
 
-    contractNavBar();
-    var outerbox = document.querySelector('.outerbox');
-    if (outerbox) outerbox.style.marginTop = '60px';
-
-    // Height-primary Vimeo sizing: fill slot height, only shrink when too wide for viewport
+    // Height-primary Vimeo sizing: fill slot height, only shrink when too wide for viewport.
     var heroSlot = document.querySelector('.feature-hero2-video');
     if (heroSlot) {
       function sizeHeroVimeo() {
@@ -127,17 +122,6 @@
       requestAnimationFrame(sizeHeroVimeo);
       window.addEventListener('resize', sizeHeroVimeo);
     }
-
-    window.onscroll = function () {
-      var scrollPos      = document.body.scrollTop || document.documentElement.scrollTop;
-      var footer         = $(".footer");
-      var footerFromTop  = footer.position().top - scrollPos;
-      var viewportHeight = $(window).height();
-      contractNavBar();
-      if (typeof setTocHeight === 'function') {
-        setTocHeight(viewportHeight - Math.max(viewportHeight - footerFromTop, 0) - 55);
-      }
-    };
   }
 
   if (document.readyState === 'loading') {

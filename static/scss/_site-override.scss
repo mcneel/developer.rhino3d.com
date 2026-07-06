@@ -37,23 +37,19 @@ h2 a:visited {
   margin-bottom: 2px;
 }
 
-.outerbox {
-  margin-top: 65px;
-}
+/*
+##################################################################
+# Site-specific tuning for the static (collapsed-by-default) navbar.
+# Shared structure/behavior lives in the theme:
+# assets/scss/_core/_navbar-static.scss (opt-in via navBarShouldResize
+# = false; these rules win over it purely by import order).
+##################################################################
+*/
 
-#logo-container {
-  height: 55px;
-}
-
-#site-nav-logo {
-  transition: none;
-  height: 55px;
-}
-
+/* Title is always vertically centered on the 55px logo row since
+   the tagline never shows on this site */
 #logo-title-text {
-  transition: none;
-  font-size: 25px;
-  top: 7px;
+  top: 12px;
   left: 62px;
 }
 
@@ -64,42 +60,13 @@ h2 a:visited {
   pointer-events: none;
 }
 
-.menu-items {
-  position: absolute;
-  bottom: 15px;
-  padding-left: 300px;
+/* Content offsets below were sized for the 125px expanded navbar */
+.content-container {
+  margin-top: 75px;
 }
 
-@media screen and (max-width: $global-mobile-maxwidth) {
-  .menu-items {
-    display: grid;
-    position: relative;
-    top: 5px;
-    padding-left: 0px;
-    justify-items: center;
-    height: 0vh;
-    transition: 0.4s;
-  }
-  .menu-items a {
-    text-decoration: none;
-    font-size: 26px;
-    color: #818181;
-  }
-}
-
-@media screen and (max-width: $global-mobile-maxwidth) {
-  .menu-items.responsive {
-    position: relative;
-  }
-  .menu-items.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-
-#sitesearch {
-  margin-top: 13px;
+.outerbox {
+  margin-top: 75px;
 }
 
 .toc {
