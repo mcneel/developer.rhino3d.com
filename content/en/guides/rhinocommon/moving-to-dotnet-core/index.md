@@ -107,7 +107,7 @@ You can also use Microsoft's [upgrade assistant](https://learn.microsoft.com/en-
 
 ## Migrating your plugin
 
-Many plugins won't need any changes to run in Rhino 8 with .NET Core, but if they do it is recommended to multi-target your plugin(s) for .NET 4.8, .NET 8.0 and .NET 10.0 so that it can run in either runtime on Windows.
+Many plugins won't need any changes to run in Rhino 8 with .NET Core, but if they do it is recommended to multi-target your plugin(s) for .NET 4.8, and .NET 8.0 so that it can run in either runtime on Windows.
 
 For **Rhino 9**, you should target **.NET 10.0**. Since .NET Framework is deprecated in Rhino 9, multi-targeting .NET 4.8 is only necessary if you also need to support Rhino 8 on Windows with the .NET Framework fallback, or Rhino 7 and earlier.
 
@@ -116,9 +116,9 @@ For Mac-specific plugins you can target .NET 8.0 (Rhino 8) or .NET 10.0 (Rhino 9
 | Rhino Version | Recommended Target | Notes |
 |---|---|---|
 | Rhino 7 | `net48` | .NET Framework or Mono |
-| Rhino 8 (Windows, .NET Core) | `net8.0` | Default from Rhino 8.20 |
+| Rhino 8 (Windows/Mac, .NET Core) | `net8.0` | Default from Rhino 8.20 |
 | Rhino 8 (Windows, .NET Framework) | `net48` | Deprecated path, avoid for new work |
-| Rhino 9 | `net10.0` | .NET Framework deprecated, but still works |
+| Rhino 9 (Windows/Mac) | `net10.0` | .NET Framework deprecated, but still works |
 
 {{< call-out warning "AnyCPU" >}}
 
