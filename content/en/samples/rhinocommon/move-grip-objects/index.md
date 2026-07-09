@@ -4,7 +4,7 @@ authors = [ "steve" ]
 categories = [ "Adding Objects" ]
 description = "Demonstrates how to move grip objects on a selected surface."
 keywords = [ "move", "grip", "objects" ]
-languages = [ "C#" ]
+languages = [ "C#", "Python" ]
 sdk = [ "RhinoCommon" ]
 title = "Move Grip Objects"
 type = "samples/rhinocommon"
@@ -87,7 +87,58 @@ partial class Examples
 <div class="codetab-content" id="py">
 
 ```python
-# No Python sample available
+#! python 3
+import Rhino
+import scriptcontext as sc
+
+def RunCommand():
+    # The following example demonstrates how to move a surface's grip objects.
+    # In this sample, all grips will be moved a fixed distance of 0.5 units
+    # in the normal direction of the surface at that grip location.
+
+    rc, objRef = Rhino.Input.RhinoGet.GetOneObject("Select surface for control point editing", False, Rhino.DocObjects.ObjectType.Surface)
+    if rc != Rhino.Commands.Result.Success:
+        return rc
+
+    obj = objRef.Object()
+    if obj is None:
+        return Rhino.Commands.Result.Failure
+
+    srf = objRef.Surface()
+    if srf is None:
+        return Rhino.Commands.Result.Failure
+
+    # Make sure the object's grips are enabled
+    obj.GripsOn = True
+    sc.doc.Views.Redraw()
+
+    grips = obj.GetGrips()
+    for i in range(grips.Length):
+        grip = grips[i]
+
+        # Calculate the point on the surface closest to our test point,
+        # which is the grip's 3-D location (for this example).
+        success, u, v = srf.ClosestPoint(grip.CurrentLocation)
+        if success:
+            # Compute the surface normal at a point
+            dir = srf.NormalAt(u, v)
+            dir.Unitize()
+
+            # Scale by our fixed distance
+            dir *= 0.5
+
+            # Move the grip to a new location
+            grip.Move(dir)
+
+    # Altered grip positions on a RhinoObject are used to calculate an updated
+    # object that is added to the document.
+    sc.doc.Objects.GripUpdate(obj, False)
+    sc.doc.Views.Redraw()
+
+    return Rhino.Commands.Result.Success
+
+if __name__ == "__main__":
+    RunCommand()
 ```
 
 </div>
