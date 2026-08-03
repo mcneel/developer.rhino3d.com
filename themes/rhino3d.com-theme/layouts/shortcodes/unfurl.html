@@ -9,20 +9,27 @@
 <span class="unfurl-link">
     {{ .Inner | .Page.RenderString }}
     <script>
+    (function(){
+        // Wrapped in an IIFE so each unfurl instance on the page gets its own
+        // scope. Without this, "var href" (and friends) would be a single
+        // shared global that every later unfurl's script overwrites, so a
+        // click handler registered here could end up navigating to whatever
+        // link happened to render last on the page instead of this one.
         var parser = new DOMParser();
         var linkDoc = parser.parseFromString("{{(.Inner | .Page.RenderString) }}", 'text/html');
         var href = linkDoc.querySelector('a').getAttribute('href');
 
-        //the current <script> element is also the last <script> element, at the time of execution. https://stackoverflow.com/questions/10299846/obtain-a-reference-to-script-parent-element
-        var scriptTag = document.getElementsByTagName('script');
-        scriptTag = scriptTag[scriptTag.length - 1];
-        var parentTag = scriptTag.parentNode;
+        var parentTag = document.currentScript.parentNode;
 
-        function addPreviewDiv(parent){ 
+        function addPreviewDiv(parent){
 
             const previewElement = document.createElement("span");
             previewElement.classList.add("tooltip");
             previewElement.classList.add("arrow-top");
+            previewElement.style.cursor = "pointer";
+            previewElement.addEventListener("click", function(){
+                window.location.href = href;
+            });
 
             const imageElement = document.createElement("img");
             previewElement.appendChild(imageElement);
@@ -87,6 +94,6 @@
         }
 
         addPreviewDiv(parentTag)
-
+    })();
     </script>
 </span>

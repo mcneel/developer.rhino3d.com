@@ -14,9 +14,9 @@
   {{ end }}
   {{ end }}
 {{ if (.Params.page_options.rhino_bg) }}
-  <body class="rhino-bg">
+  <body class="rhino-bg{{ if eq .Section "kb" }} kb-page{{ end }}">
 {{ else }}
-  <body>
+  <body{{ if eq .Section "kb" }} class="kb-page"{{ end }}>
   {{ end }}
     {{ if (.Params.page_options.container_layout) }} <!--New container layouts-->
 

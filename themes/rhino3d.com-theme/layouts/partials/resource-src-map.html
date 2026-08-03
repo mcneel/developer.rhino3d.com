@@ -1,0 +1,37 @@
+{{- /*
+  resource-src-map.html
+
+  Returns a {resource name -> RelPermalink} lookup for a page bundle, with an
+  English-bundle fallback for localized pages.
+
+  This is the inner-content counterpart to resolve-image-src.html. That partial
+  resolves markdown image destinations, but it only runs from the render-image
+  hook. Shortcodes that carry paths inside their own inner content (image-fade,
+  carousel, ... which parse TOML in the browser) never reach that hook, so a
+  relative path like "diagram.png" is left for the browser to resolve against
+  the current URL. Images are usually bundled only in content/en/..., so on a
+  /<lang>/... page that resolves to a 404.
+
+  English entries are added first and the current page's own resources second,
+  so a localized override wins when one is present -- matching the precedence in
+  resolve-image-src.html.
+
+  Consumers should look a path up in this map and fall back to the path
+  unchanged, so external URLs, site-absolute "/..." paths and data: URIs (none
+  of which are page resources) pass through untouched.
+
+  Call with a Page; returns a map. Pages without a bundle yield an empty map.
+*/ -}}
+{{- $s := newScratch -}}
+{{- $s.Set "m" dict -}}
+{{- range .AllTranslations -}}
+  {{- if eq .Language.Lang "en" -}}
+    {{- range .Resources -}}
+      {{- $s.SetInMap "m" .Name .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- range .Resources -}}
+  {{- $s.SetInMap "m" .Name .RelPermalink -}}
+{{- end -}}
+{{- return ($s.Get "m") -}}

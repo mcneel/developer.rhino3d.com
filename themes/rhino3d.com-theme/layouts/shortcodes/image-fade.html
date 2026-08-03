@@ -56,6 +56,15 @@ a.imageFade-caption:hover {
 {
 
     const items = TOML.parse("{{ .Inner }}").items;
+
+    // Page-bundle paths are relative to the English bundle the images live in,
+    // not to this page's URL, so resolve them here. See resource-src-map.html.
+    const srcMap = {{ partialCached "resource-src-map.html" $.Page $.Page.RelPermalink | jsonify | safeJS }};
+    items.forEach(function(item) {
+      const key = String(item.image).replace(/^\.\//, "");
+      if (srcMap[key]) { item.image = srcMap[key]; }
+    });
+
     const container = document.getElementById('imageFade-{{ $id }}');
     const customHeight = '{{ $.Scratch.Get "height" }}';
     const captionBelow = {{ if eq (.Get "captionBelow") "true" }}true{{ else }}false{{ end }};

@@ -1,14 +1,30 @@
 {{- /* Microsoft Clarity analytics (WWW-3371).
        Self-contained: only renders in production when supportsClarity is enabled
-       and a clarityProjectID is set in site params. Other sites sharing this theme
-       are unaffected unless they opt in via their own config. */ -}}
-{{- if and (hugo.IsProduction) .Site.Params.supportsClarity .Site.Params.clarityProjectID -}}
+       and a loader URL can be resolved. Other sites sharing this theme are
+       unaffected unless they opt in via their own config.
+
+       Two ways to opt in:
+         clarityProjectID  - load Clarity's tag directly. The plain setup.
+         clarityScriptURL  - load the tag through a URL of your own, which takes
+                             precedence. rhino3d.com points this at its proxy,
+                             which decides per visitor region whether to serve
+                             the tag at all; the built site is one artifact
+                             served worldwide, so it cannot make that call here. */ -}}
+{{- $src := "" -}}
+{{- with .Site.Params.clarityScriptURL -}}
+  {{- $src = . -}}
+{{- else -}}
+  {{- with $.Site.Params.clarityProjectID -}}
+    {{- $src = printf "https://www.clarity.ms/tag/%s" . -}}
+  {{- end -}}
+{{- end -}}
+{{- if and (hugo.IsProduction) .Site.Params.supportsClarity $src -}}
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      t=l.createElement(r);t.async=1;t.src=i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "{{ .Site.Params.clarityProjectID }}");
+  })(window, document, "clarity", "script", "{{ $src }}");
 </script>
 {{- end -}}

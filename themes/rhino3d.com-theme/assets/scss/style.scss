@@ -50,6 +50,15 @@
 
 @import "_custom";
 
+// Opt-in modernized guide chrome. Imported after _custom so the guide-scoped
+// TOC overrides win the cascade over the base .toc rules in _custom.
+@import "_page/guide-new";
+
+// Opt-in bold "modern-style" guide theme (dark hero + numbered TOC + restyled
+// content). Scoped under .modern-guide; imported after _custom for the same
+// cascade reason.
+@import "_page/modern-style";
+
 /* Static (collapsed-by-default) navbar for sites with navBarShouldResize = false.
    Must come before the site override so sites can still re-tune it. */
 @import "_core/navbar-static";

@@ -700,6 +700,53 @@ $feature-box-shadow: 0 0px 10px rgba(133, 133, 133, 0.15);
   }
 }
 
+// Scroll affordance — cues that the full-height hero continues below.
+// Deliberately quiet: the perspective grid is this page's signature, not this.
+// A thin, square-cornered chevron echoes the hero's hairline vocabulary.
+.hero2-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
+  color: $feature-text-dark;
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+
+  // Soft light halo keeps the mark legible over any video frame.
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 64px;
+    height: 64px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, rgba(245, 246, 247, 0.85), rgba(245, 246, 247, 0));
+    z-index: -1;
+  }
+
+  svg {
+    display: block;
+    animation: hero2-scroll-bob 2.4s ease-in-out infinite;
+  }
+
+  // Fades once the reader starts scrolling (class toggled in JS).
+  &.is-hidden {
+    opacity: 0;
+  }
+}
+
+@keyframes hero2-scroll-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero2-scroll-cue svg { animation: none; }
+}
+
 .feature-hero2-compact {
   height: auto;
 

@@ -36,7 +36,22 @@
       // No media: collapse the hero to banner height only
       var hero2 = document.querySelector('.feature-hero2');
       if (hero2) hero2.style.height = 'auto';
+      // A short banner-only hero doesn't hide content, so drop the scroll cue.
+      var cueEl = document.querySelector('.hero2-scroll-cue');
+      if (cueEl) cueEl.style.display = 'none';
     }
+  }
+
+  // ── 1b. Fade the scroll cue once the reader scrolls ─────────────────────
+  var cue = document.querySelector('.hero2-scroll-cue');
+  if (cue) {
+    var onCueScroll = function () {
+      if (window.scrollY > 40) {
+        cue.classList.add('is-hidden');
+        window.removeEventListener('scroll', onCueScroll);
+      }
+    };
+    window.addEventListener('scroll', onCueScroll, { passive: true });
   }
 
   // ── 2. Split body content into alternating sections at each H2 ──────────

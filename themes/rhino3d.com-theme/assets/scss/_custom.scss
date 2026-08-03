@@ -141,6 +141,16 @@
 		}
 	}
 
+	// Keep a section's sub-list expanded while the section OR any of its
+	// sub-items is the active link. Without this, clicking a sub-item makes it
+	// the active link, which deactivates the parent H2 — so `a.active + ul`
+	// above stops matching and the list collapses out from under the click,
+	// making sub-items effectively unclickable. (:has() is a progressive
+	// enhancement; the `a.active + ul` rule remains the fallback.)
+	#TableOfContents > ul > li:has(a.active) > ul {
+		display: block;
+	}
+
 	#TableOfContents {
 		overflow-y: scroll;
 

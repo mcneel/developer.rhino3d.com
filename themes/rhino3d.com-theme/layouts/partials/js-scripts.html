@@ -9,6 +9,7 @@
 {{ end }}
 <script type="text/javascript" src="{{ (resources.Get "/script/protocolcheck.js" | resources.Fingerprint).Permalink }}"></script>
 <script type="text/javascript" src="{{ (resources.Get "/script/theme.js" | resources.Fingerprint).Permalink }}"></script>
+<script type="text/javascript" src="{{ (resources.Get "/script/command-tooltip.js" | resources.Fingerprint).Permalink }}"></script>
 <script>
     mca.addLogoutListenerForClientId(window.location.host == "www.rhino3d.com" ? "rhino3dWebsite" : "rhino3dWebsiteDEBUG", function (url) {
       console.log("Redirecting to logout URL: " + url);

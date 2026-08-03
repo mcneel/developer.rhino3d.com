@@ -1,0 +1,731 @@
+// =====================================================
+// modern-style guide theme  (opt-in: page_options.modern_style = true)
+// =====================================================
+// A bold, standalone look for guide pages, ported from the Patch tutorial
+// redesign. A dark, grid-textured hero, a sticky numbered table of contents,
+// and content chrome (numbered sections, step badges, bordered figures, code
+// chips, callouts) that render from ordinary guide markdown — no per-section
+// hand-authoring required.
+//
+// Everything is scoped under `.modern-guide`, which also carries the design
+// tokens as CSS custom properties. Existing guides (new_style or otherwise),
+// help pages, and feature pages are untouched. Imported after _custom so the
+// scoped rules here win the cascade over the base `.toc` / body rules.
+//
+// Fonts (Lato / Roboto / Roboto Mono) are loaded in head.html for
+// modern_style pages; each family degrades to a system stack.
+
+// -----------------------------------------------------
+// Design tokens — scoped to the theme root so nothing leaks to the rest of
+// the site. Ported from the "Rhino Studio Series — Identity & Type Specimen".
+// Neutrals run warm at the dark end (brand charcoal) and cool toward the
+// light end; red is the sparing accent (the "eye").
+// -----------------------------------------------------
+.modern-guide {
+  // Neutral ramp (warm charcoal -> cool off-white)
+  --rh-gray-950: #1b1a18;
+  --rh-gray-900: #2c2926; // brand charcoal
+  --rh-gray-800: #3b3935;
+  --rh-gray-700: #51525b; // brand slate
+  --rh-gray-600: #6b6c74;
+  --rh-gray-500: #8a8b92;
+  --rh-gray-400: #adaeb4;
+  --rh-gray-300: #c9cbce;
+  --rh-gray-200: #dde0e5;
+  --rh-gray-100: #e9ebef; // brand off-white
+  --rh-gray-50:  #f5f6f8;
+  --rh-white:    #ffffff;
+
+  // Rhino red — the accent
+  --rh-red-800: #7a0000;
+  --rh-red-700: #970000;
+  --rh-red-600: #bb0000; // brand accent
+  --rh-red-500: #d11a1a;
+  --rh-red-100: #f6e2e2;
+  --rh-red-50:  #fbf1f1;
+
+  // Functional
+  --rh-info-600:    #2f63a3;
+  --rh-info-100:    #e4ecf5;
+  --rh-success-600: #2e7d4f;
+  --rh-warning-600: #b9791a;
+
+  // Specimen neutrals
+  --rh-ink:        #000000; // max contrast — titles
+  --rh-ink-body:   #1a1a1a; // body text
+  --rh-ink-meta:   #888888; // meta / captions
+  --rh-border:     #e2e2e2; // hairline
+
+  // Families
+  --rh-font-display: "Lato", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --rh-font-body:    "Roboto", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --rh-font-mono:    "Roboto Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  // Layout
+  --rh-container: 1180px;
+
+  // Motion
+  --rh-ease: cubic-bezier(0.2, 0, 0.1, 1);
+}
+
+// -----------------------------------------------------
+// Full-bleed break-out. The theme root sits inside `.outerbox`, which is a
+// centered, side-padded, max-width column. Neutralize that padding/width for
+// modern pages so the dark hero spans the full viewport while inner content
+// stays centered. `:has()` keeps the change scoped to modern pages only.
+// -----------------------------------------------------
+.outerbox:has(> .modern-guide) {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+.modern-guide {
+  font-family: var(--rh-font-body);
+  color: var(--rh-ink-body);
+  background: var(--rh-white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+// Shared centered content column
+%rh-inner {
+  max-width: var(--rh-container);
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+// -----------------------------------------------------
+// Scroll-progress bar
+// -----------------------------------------------------
+.modern-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.06);
+  z-index: 1200;
+
+  &__bar {
+    height: 100%;
+    width: 0;
+    background: var(--rh-red-600);
+    transition: width 90ms linear;
+  }
+}
+
+// -----------------------------------------------------
+// Hero
+// -----------------------------------------------------
+.modern-hero {
+  background: var(--rh-gray-900);
+  color: var(--rh-white);
+  background-image:
+    repeating-linear-gradient(to right, rgba(255, 255, 255, 0.055) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 0 1px, transparent 1px 64px);
+
+  &__inner { @extend %rh-inner; }
+
+  &__crumbs {
+    padding-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--rh-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+
+    a {
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      border: 0;
+      &:hover { color: rgba(255, 255, 255, 0.9); }
+    }
+    .modern-hero__crumb-current { color: rgba(255, 255, 255, 0.9); }
+    .modern-hero__crumb-sep { color: rgba(255, 255, 255, 0.3); }
+  }
+
+  &__grid {
+    padding: 34px 0 56px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  &__grid--no-image { grid-template-columns: minmax(0, 1fr); }
+
+  &__eyebrow {
+    margin: 0 0 18px;
+    font-family: var(--rh-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rh-red-500);
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    font-family: var(--rh-font-display);
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    color: var(--rh-white);
+    text-wrap: balance;
+  }
+
+  &__lead {
+    margin: 0 0 28px;
+    font-size: 18px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 46ch;
+    text-wrap: pretty;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__figure {
+    margin: 0;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+  }
+}
+
+.modern-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--rh-font-mono);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  padding: 6px 10px;
+}
+
+// -----------------------------------------------------
+// Body layout: sticky numbered TOC + main content
+// -----------------------------------------------------
+.modern-guide__body {
+  @extend %rh-inner;
+  display: grid;
+  grid-template-columns: 224px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.modern-guide__body--no-toc { grid-template-columns: minmax(0, 1fr); }
+
+// -----------------------------------------------------
+// Table of contents — hairline rail, numbered items, single red active marker
+// -----------------------------------------------------
+.modern-toc {
+  position: sticky;
+  top: 88px;
+  padding: 44px 0 0;
+  align-self: start;
+
+  &__label {
+    margin: 0 0 12px;
+    font-family: var(--rh-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rh-ink-meta);
+  }
+
+  &__back {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: var(--rh-ink-meta);
+    text-decoration: none;
+    border: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:hover { color: var(--rh-ink); }
+  }
+
+  #TableOfContents {
+    counter-reset: modern-toc;
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+
+    ul { padding-left: 0; margin: 0; list-style: none; }
+    li { margin: 0; }
+
+    // Numbered top-level entries; nested entries indent without a number.
+    > ul > li { counter-increment: modern-toc; }
+
+    a {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 8px;
+      padding: 7px 0 7px 10px;
+      border: 0;
+      border-left: 2px solid var(--rh-border);
+      font-size: 13.5px;
+      line-height: 1.35;
+      color: var(--rh-ink-meta);
+      text-decoration: none;
+      transition: color 140ms var(--rh-ease), border-color 140ms var(--rh-ease);
+
+      &:hover { color: var(--rh-ink-body); }
+    }
+
+    > ul > li > a::before {
+      content: counter(modern-toc, decimal-leading-zero);
+      font-family: var(--rh-font-mono);
+      font-size: 11px;
+      color: var(--rh-ink-meta);
+      padding-top: 1px;
+    }
+    // Nested links keep the two-column grid aligned but show no number.
+    ul ul a { padding-left: 20px; }
+    ul ul a::before { content: ""; }
+
+    a.active {
+      color: var(--rh-ink);
+      font-weight: 700;
+      border-left-color: var(--rh-red-600);
+      &::before { color: var(--rh-red-600); }
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Main content — restyles ordinary guide markdown
+// -----------------------------------------------------
+.modern-style {
+  counter-reset: modern-section;
+  padding: 32px 0 96px;
+  min-width: 0;
+  font-size: 16px;
+  line-height: 1.6;
+
+  // Lead paragraph — the guide's opening h3 reads as a deck.
+  > h3:first-child {
+    margin: 0 0 28px;
+    font-family: var(--rh-font-body);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--rh-ink-body);
+    max-width: 66ch;
+    &::before { content: none; }
+  }
+
+  p {
+    margin: 0 0 18px;
+    font-size: 16px;
+    line-height: 1.65;
+    // No max-width cap: a narrow measure made command sentences wrap early,
+    // dropping the (unbreakable) icon+name unit onto its own line. Letting
+    // paragraphs fill the content column keeps them inline, as on normal guides.
+    text-wrap: pretty;
+  }
+
+  strong { font-weight: 700; }
+
+  // Anchor targets clear the fixed site header when jumped to from the TOC.
+  :is(h2, h3, h4)[id] { scroll-margin-top: 88px; }
+
+  // Section headers — auto-numbered mono red index + Lato-900 title.
+  // The number is an inline ::before: it baseline-aligns with the title
+  // automatically (no font-metric guessing, scales with the responsive title
+  // size) and, as verified by headless render, does not get stranded on its own
+  // line even when the title wraps to multiple lines. 16px gap to the title.
+  h2 {
+    counter-increment: modern-section;
+    margin: 64px 0 18px;
+    font-family: var(--rh-font-display);
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--rh-ink);
+
+    &::before {
+      content: counter(modern-section, decimal-leading-zero);
+      margin-right: 16px;
+      font-family: var(--rh-font-mono);
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: 0;
+      color: var(--rh-red-600);
+    }
+  }
+
+  h3 {
+    margin: 44px 0 14px;
+    font-family: var(--rh-font-display);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.25;
+    color: var(--rh-ink);
+  }
+
+  h4 {
+    margin: 32px 0 12px;
+    font-family: var(--rh-font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--rh-ink);
+  }
+
+  a {
+    color: var(--rh-red-600);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(187, 0, 0, 0.28);
+    &:hover { color: var(--rh-red-700); border-bottom-color: var(--rh-red-700); }
+  }
+
+  // The text-underline must not appear on image links. Two cases:
+  //  - command icons: <a><span.unfurl-link>…<img></a>  (img is inside the <a>)
+  //  - figure/box lightbox links: an EMPTY <a itemprop="contentUrl"> overlaid on
+  //    the image — its border-bottom would draw a red rule across the image.
+  a:has(img),
+  .box a,
+  figure a { border-bottom: 0; }
+
+  // Rhino-command shortcode: <a><span.unfurl-link><strong><img> Name</strong></span>.
+  // Leave the icon at its native size (set inline by the shortcode). Just keep
+  // the icon and command name together as one unit so the name never splits from
+  // its icon; it still flows inline within the paragraph.
+  .unfurl-link strong { white-space: nowrap; }
+
+  // Numbered step lists — round badge per item.
+  // The badge is an absolutely-positioned ::before and the step content keeps
+  // normal inline flow (indented via padding-left). A CSS grid here would turn
+  // every inline child — command links, <code>, <strong> — into its own grid
+  // item, tearing them onto separate lines; the padding approach avoids that.
+  ol {
+    counter-reset: modern-step;
+    list-style: none;
+    margin: 22px 0;
+    padding: 0;
+
+    > li {
+      counter-increment: modern-step;
+      position: relative;
+      padding-left: 42px;
+      min-height: 26px;
+      margin: 0 0 16px;
+      line-height: 1.6;
+
+      &::before {
+        content: counter(modern-step);
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 26px;
+        width: 26px;
+        border-radius: 999px;
+        background: var(--rh-gray-100);
+        color: var(--rh-ink);
+        font-family: var(--rh-font-display);
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 26px;
+        text-align: center;
+      }
+
+      > *:first-child { margin-top: 0; }
+      &:last-child { margin-bottom: 0; }
+    }
+  }
+
+  // "What you'll learn" block (from the {{< learn >}} shortcode): an eyebrow
+  // heading + a list with red mono 01/02 numbers — distinct from step badges.
+  .modern-learn {
+    margin: 8px 0 40px;
+
+    &__title {
+      margin: 0 0 18px;
+      font-family: var(--rh-font-display);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rh-ink-meta);
+      max-width: none;
+    }
+
+    // The {{% learn %}} shortcode renders a markdown list into a plain <ol>
+    // (or <ul>); restyle it with a simple red dot per item — overriding the
+    // default step-badge / numbering look.
+    ol, ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      > li {
+        position: relative;
+        padding-left: 24px;
+        min-height: 0;
+        margin: 0 0 6px;
+        font-size: 16px;
+        line-height: 1.55;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: calc(0.8em - 3px);
+          // reset the ol step-badge box, then draw a small red dot
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: var(--rh-red-600);
+          font-size: inherit;
+        }
+      }
+    }
+  }
+
+  // Bulleted lists — small red dot, matching the site's guide vocabulary.
+  ul:not(.modern-hero__meta) {
+    list-style: none;
+    padding-left: 0;
+    margin: 18px 0;
+
+    > li {
+      position: relative;
+      padding-left: 22px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: calc(0.8em - 3px);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--rh-red-600);
+      }
+    }
+
+    // Task lists ("- [ ]" / "- [x]"): drop the red bullet, keep a clean
+    // checkbox. Goldmark renders these <li> with no class, so match by the
+    // checkbox they contain rather than a class name.
+    > li:has(> input[type="checkbox"]) {
+      padding-left: 0;
+      &::before { content: none; }
+
+      input[type="checkbox"] {
+        margin: 0 10px 0 0;
+        width: 15px;
+        height: 15px;
+        accent-color: var(--rh-red-600); // shows on interactive (non-disabled) boxes
+        vertical-align: -2px;
+      }
+    }
+  }
+
+  // Inline code -> chip.
+  code {
+    font-family: var(--rh-font-mono);
+    font-size: 0.9em;
+    background: var(--rh-gray-50);
+    border: 1px solid var(--rh-border);
+    border-radius: 4px;
+    padding: 1px 6px;
+  }
+
+  // Code blocks -> plain panel (strip the inline-chip treatment).
+  pre {
+    background: var(--rh-gray-50);
+    border: 1px solid var(--rh-border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    overflow-x: auto;
+    margin: 22px 0;
+
+    code {
+      background: none;
+      border: 0;
+      padding: 0;
+      font-size: 13.5px;
+    }
+  }
+
+  // Figures — rounded, hairline-bordered, muted caption.
+  figure,
+  .box figure {
+    margin: 22px 0;
+    max-width: 100%;
+
+    img {
+      display: block;
+      // border-box so width:100% includes the 1px border — otherwise, with the
+      // theme's `figure { overflow: hidden }`, the border spills ~2px past the
+      // figure and its right/bottom edge gets clipped.
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--rh-border);
+      border-radius: 10px;
+      margin: 0;
+      box-shadow: none;
+      cursor: zoom-in; // click to open the lightbox (see modern-scripts.html)
+    }
+
+    figcaption {
+      margin: 10px 0 0;
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--rh-ink-meta);
+      text-align: left;
+    }
+  }
+
+  // Local videos ({{< local-video >}}) — same rounded hairline frame as figures.
+  // The shortcode sets width/max-width inline; border-box keeps the border tucked
+  // inside so it isn't clipped.
+  video {
+    display: block;
+    box-sizing: border-box;
+    height: auto;
+    margin: 22px 0;
+    border: 1px solid var(--rh-border);
+    border-radius: 10px;
+  }
+
+  // Blockquotes -> quiet grey callout with a red rule.
+  blockquote {
+    margin: 24px 0;
+    border: 1px solid var(--rh-border);
+    border-left: 3px solid var(--rh-red-600);
+    border-radius: 10px;
+    padding: 16px 20px;
+    background: var(--rh-gray-50);
+    color: var(--rh-ink-body);
+    font-size: 15px;
+    line-height: 1.6;
+
+    p { margin: 0 0 8px; &:last-child { margin: 0; } }
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--rh-border);
+    margin: 48px 0;
+  }
+
+  // Call-out shortcode — keep its per-type left accent, soften the box to
+  // match the theme. Individual border sides (not shorthand) so the accented
+  // left border set by `.call-out.<type>` survives.
+  .call-out {
+    border-top: 1px solid var(--rh-border);
+    border-right: 1px solid var(--rh-border);
+    border-bottom: 1px solid var(--rh-border);
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: var(--rh-font-body);
+
+    .call-out-title { font-family: var(--rh-font-display); }
+  }
+
+  // Keyboard shortcode -> mono chip register.
+  .keyboard-btn { font-family: var(--rh-font-mono); }
+
+  // Tables — clean hairline grid.
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 22px 0;
+    font-size: 14px;
+
+    th, td {
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--rh-border);
+    }
+    th {
+      font-weight: 700;
+      color: var(--rh-ink);
+      border-bottom-color: var(--rh-gray-300);
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Lightbox — full-screen image overlay. Injected on <body> by
+// modern-scripts.html, so it lives at the top level (outside .modern-guide)
+// and uses literal colors rather than the scoped tokens.
+// -----------------------------------------------------
+.modern-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4vmin;
+  background: rgba(20, 19, 17, 0.88);
+  cursor: zoom-out;
+  opacity: 0;
+  transition: opacity 160ms cubic-bezier(0.2, 0, 0.1, 1);
+
+  &.is-open { display: flex; opacity: 1; }
+
+  img {
+    max-width: 96%;
+    max-height: 96%;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// -----------------------------------------------------
+// Responsive
+// -----------------------------------------------------
+@media only screen and (max-width: 980px) {
+  .modern-hero {
+    &__inner { padding-left: 24px; padding-right: 24px; }
+    &__grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 28px;
+      padding: 24px 0 40px;
+    }
+    &__title { font-size: 38px; }
+  }
+
+  .modern-guide__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  // On narrow screens the TOC collapses above the content rather than sticking.
+  .modern-toc {
+    position: static;
+    padding: 32px 0 0;
+    #TableOfContents { max-height: none; }
+  }
+
+  .modern-style { padding-top: 24px; }
+  .modern-style h2 { font-size: 28px; margin-top: 48px; }
+}

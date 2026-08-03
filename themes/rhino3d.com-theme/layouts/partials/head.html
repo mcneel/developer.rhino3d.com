@@ -33,7 +33,9 @@
     <!-- Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    {{ if or (eq .Layout "feature-redesign") (eq .Layout "feature-redesign2") }}
+    {{ if and .File (in .File.Dir "guides") .Params.page_options.modern_style }}
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@300;400;500;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    {{ else if or (eq .Layout "feature-redesign") (eq .Layout "feature-redesign2") (and .File (in .File.Dir "guides") .Params.page_options.new_style) }}
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100;200;300;400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
     {{ else }}
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
