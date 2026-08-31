@@ -96,7 +96,11 @@ All the properties in the table remain virtual, so whenever a value has to be co
 
 ## Loading Plugins
 
-[[[Package Manager, G2PluginViewer.]]]
+Since GH2 plugins are also Rhino plugins, they are distributed and installed through the regular Rhino *PackageManager* command. Grasshopper scans the Rhino plugin install folders for `*.rhp` files, works out which of them contain Grasshopper 2 content, and remembers the verdict per file so subsequent startups stay fast.
+
+Plugins which are still being developed or debugged can be installed directly from disc; they can be registered by file path from the plugin viewer, which opens with the `GH2Plugins` command in Rhino. The viewer lists every plugin Grasshopper knows about — loaded, failed, or deliberately skipped — along with the components each one provides, making it the first place to look when a plugin does not show up on the canvas.
+
+Finally, a note on runtimes. Rhino can start in either .NET Framework or .NET Core mode, and a plugin installed as a package may ship a separate build for each, placed in subfolders named after their target framework monikers (`net48`, `net8.0`, and so on). Grasshopper resolves the copy which best suits the running session at load time, so cross-platform plugins should ship both variants whenever they can.
 
 
 # Components
@@ -230,7 +234,7 @@ public enum DistanceMetric
 
 When properly set up this way, presets can be chosen using the `Preset Picker` object:
 
-{{< image url="/images/gh2/EnumPresetsGH2Migration.png" alt="How UiName, UiInfo, and UiTint manifest in the GH2 interface." class="image_center" width="80%" >}}
+{{< image url="/images/gh2/EnumPresetsGH2Migration.png" alt="How UiName, UiInfo, and UiTint manifest in the GH2 interface." class="image_center" width="70%" >}}
 
 Also note that GH2 supports `Quaternions` alongside old-fashioned 4x4 transform matrices. *HOW-EVER*, quaternions are encoded inside `Transform` matrices so whenever your component consumes transforms, be sure to always check whether they actually represent quaternions using the `IsQuaternion()` and `ToQuaternion()` extension methods on `Rhino.Geometry.Transform`.
   
@@ -240,6 +244,19 @@ Also note that GH2 supports `Quaternions` alongside old-fashioned 4x4 transform 
 The key difference to bear in mind when writing processing code for GH2 components is that component iterations by default run on separate threads. Because of this, the code inside the `Process(IDataAccess access)` method must be thread-safe. If this is impossible, the threading state of the component must be downgraded from the default `ThreadingState.MultiThreaded` to `ThreadingState.SingleThreaded` via the `Component.Threading` property.
 
 Furthermore, if the processing code is liable to take longer than a few milliseconds, the component should pay attention to cancellation requests by occasionally calling `access.Solution.Token.ThrowIfCancellationRequested()`.
+
+### Expiry and New Solutions
+
+In GH1, a single call to `ExpireSolution(true)` both marked a component as stale and scheduled a recompute. GH2 splits this into two separate steps: `Expire()` marks an object and everything downstream of it as expired (and request-cancels any solution currently running in the document), while `Document.Solution.Start()` actually begins a new solution. A typical menu or event handler therefore looks like this:
+
+```cs
+Expire();
+Document?.Solution.Start();
+```
+
+For objects which generate rapid-fire expiration waves (such as mouse-moves on sliders or key-presses in text fields) call `Document.Solution.DelayedExpire(obj)` instead. This method batches up expired objects and is smart about when to interrupt: if no solution is running it expires and restarts immediately. However, if a solution is already running, it is allowed a brief interval in which to complete, before it is cancelled anyway.
+
+Every solution is identified by a `SolutionId`, issued app-wide in ascending order. This id allows code to query the solution server about whether specific solutions have completed or were cancelled, and it allows code to determine which solution is newer.
 
 ### A Random Walk Example
 
