@@ -435,12 +435,12 @@ Let's explore this with a component which creates boundingboxes for points in a 
 ```cs
 protected override void AddInputs(InputAdder inputs)
 {
-  inputs.AddPoint("", "", "");
-  inputs.AddPoint("", "", "");
+  inputs.AddPoint(string.Empty, string.Empty, string.Empty);
+  inputs.AddPoint(string.Empty, string.Empty, string.Empty);
 }
 protected override void AddOutputs(OutputAdder outputs)
 {
-  outputs.AddBox("Bounding Box", "Bx", "Box containing all paired up points.");
+  outputs.AddBox("Bounding Box", "Bx", "Box containing all input points.");
 }
 ```
 
@@ -509,8 +509,9 @@ protected override void Process(IDataAccess access)
 
 ## Modular Components
 
-[[[Mention, but don't elaborate.]]]
+Whereas variable parameters are typically used for adding inputs or outputs that are all the same kind of thing, and for which is there is no upper limit, Grasshopper 2 adds the notion of a 'Modular Component' which is capable of hiding and showing specific inputs and outputs. When a component class is derived not from `Grasshopper2.Components.Component` but from `Grasshopper2.Components.ModularComponent`, the `AddInputs()` and `AddOutputs()` methods are replaced with their modular counterparts.
 
+Creating modular components is quite a bit more involved as modular inputs and outputs need to be grouped into categories, given UI tinting, and often even icons. This document will only mention this corner of the Grasshopper 2 SDK without providing any examples.
 
 # Data Types
 
