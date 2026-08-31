@@ -545,7 +545,17 @@ Modifying existing trees and twigs is often done with instance methods on `ITree
 
 ## Meta Data
 
-[[[Design, immutability, StandardNames, transformable entries.]]]
+Meta data has no GH1 equivalent whatsoever, and it is the reason several familiar operations require more care in GH2. Any value flowing through a Grasshopper document may carry an unbounded collection of named values alongside itself: an element identifier, a comment, a preview colour, a target layer for baking, a material density, .... Users can attach and inspect these values without any component being aware of them, and well-behaved components must make sure the meta data survives the trip through their processing logic. As explained in the Data Trees chapter, the pear is the mechanism for this: as long as data is shuffled around as pears, the meta data tags along automatically.
+
+The design rests on a few assumptions: most items carry no meta data at all, identical meta data is typically shared among many items, and meta data is read far more often than it is written. As a consequence `MetaData` is fully immutable — a single instance can be safely shared among thousands of items, and "modifying" meta data (via `Add()` or `Merge()`) always yields a new instance. The values themselves are limited to immutable types: booleans, integers, big integers, numbers, angles, intervals, text, guids, dates, time spans, colours, gradients, points, vectors, planes, transforms, and a few others.
+
+Entries are identified by `MetaName` instances rather than plain strings. A meta name is an immutable, case-insensitive list of name elements which are joined using the `.` separator, so they form textual hierarchies such as `Record.Author` and `Display.Colour`.
+
+The names Grasshopper itself uses are collected in the static `StandardNames` class, grouped into nested classes per topic: `Record` (author, comment, client, version), `Display` (preview colour, stroke, dashes, point size), `Rhino` (layer, name, colour, linetype, and other attributes applied when data is baked), `Data`, `Annotation`, and `Physics`.
+
+A complication developers need to be aware of:
+
+- **Transformable entries.** A meta name may carry a transformable hint, denoted by a trailing `#` in its textual form. When geometry is transformed or morphed, the geometric values (points, vectors, planes, transforms) stored under transformable names are transformed along with it, whereas entries under ordinary names are copied verbatim. Think of a gripping location on a beam: when the beam moves, the grip should move too. The `IDataAccess` method used in component `Process()` methods provides functions for transforming shapes along with their meta data.
 
 ## Type Handling
 
